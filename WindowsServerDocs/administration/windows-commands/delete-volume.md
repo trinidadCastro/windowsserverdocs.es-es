@@ -1,6 +1,6 @@
 ---
 title: delete volume
-description: Tema de referencia de DELETE Volume, que elimina el volumen seleccionado.
+description: Tema de referencia del comando DELETE Volume, que elimina el volumen seleccionado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b9a8ae0fc863cec5c1a3f6debccf8201e96badd0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 59856e89ff96d2881040365d157540dc62c1aeb0
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716690"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993096"
 ---
 # <a name="delete-volume"></a>delete volume
 
-Elimina el volumen seleccionado.
+Elimina el volumen seleccionado. Antes de comenzar, debe seleccionar un volumen para que esta operación se realice correctamente. Use el comando [seleccionar volumen](select-volume.md) para seleccionar un volumen y cambiar el foco a él.
+
+> [!IMPORTANT]
+> No se puede eliminar el volumen del sistema, el volumen de arranque o cualquier volumen que contenga el archivo de paginación activo o el volcado de memoria (volcado de memoria).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,14 +35,10 @@ delete volume [noerr]
 | --------- | ----------- |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
-## <a name="remarks"></a>Observaciones
-
--   No puedes eliminar el volumen del sistema, el volumen de arranque o cualquier otro volumen que incluya el archivo de paginación activo o de volcado (volcado de memoria).
--   Se debe seleccionar un volumen para que esta operación se realice correctamente. Use el comando **seleccionar volumen** para seleccionar un volumen y cambiar el foco a él.
-
 ## <a name="examples"></a>Ejemplos
 
 Para eliminar el volumen que tiene el foco, escriba:
+
 ```
 delete volume
 ```
@@ -48,3 +47,6 @@ delete volume
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
+- [select volume](select-volume.md)
+
+- [eliminar comando](delete.md)

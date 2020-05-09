@@ -1,6 +1,6 @@
 ---
-title: dfsdiag TestReferral
-description: Tema de referencia de dfsdiag TestReferral, que comprueba las referencias Sistema de archivos distribuido (DFS).
+title: dfsdiag testreferral
+description: Tema de referencia para el comando dfsdiag testreferral, que comprueba las referencias Sistema de archivos distribuido (DFS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,54 +9,58 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b4c616181d367a8a95efe6484f74af0ff88cc5f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 23abcd738170d5f53e12ae83c41d632d2d7ac738
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719568"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992934"
 ---
-# <a name="dfsdiag-testreferral"></a>dfsdiag TestReferral
+# <a name="dfsdiag-testreferral"></a>dfsdiag testreferral
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Comprueba las referencias de Sistema de archivos distribuido (DFS) mediante la realización de las siguientes pruebas:
 
-- Cuando se usa el parámetro DFSpath sin argumentos, este comando valida que la lista de referencias incluye todos los dominios de confianza.
+- Si usa el parámetro **DFSpath*** sin argumentos, el comando valida que la lista de referencias incluya todos los dominios de confianza.
 
-- Cuando se especifica un dominio, el comando realiza una comprobación de estado de los controladores de dominio (dfsdiag/testdcs) y prueba las asociaciones de sitio y la caché de dominio del host local.
+- Si especifica un dominio, el comando realiza una comprobación de estado de los controladores de`dfsdiag /testdcs`dominio () y prueba las asociaciones de sitio y la caché de dominio del host local.
 
-- Cuando se especifica un dominio y \SYSvol o \NETLOGON, además de realizar las mismas comprobaciones de estado que cuando se especifica un dominio, el comando comprueba que el período de vida (\TTL) de las referencias de SYSvol o NETLOGON coincide con el valor predeterminado de 900 segundos.
+- Si especifica un dominio y \SYSvol o \NETLOGON, el comando realiza las mismas comprobaciones de estado del controlador de dominio, además de comprobar que el período de vida **(TTL)** de las referencias de SYSVOL o Netlogon coincide con el valor predeterminado de 900 segundos.
 
-- Cuando se especifica una raíz de espacio de nombres, además de realizar las mismas comprobaciones de estado que cuando se especifica un dominio, el comando realiza una comprobación de configuración de DFS (dfsdiag/TestDFSConfig) y una comprobación de integridad del espacio de nombres (dfsdiag/TestDFSIntegrity).
+- Si especifica una raíz de espacio de nombres, el comando realiza las mismas comprobaciones de estado del controlador de dominio, además de`dfsdiag /testdfsconfig`realizar una comprobación de la configuración de`dfsdiag /testdfsintegrity`DFS () y una comprobación de integridad del espacio de nombres ().
 
-- Al especificar una carpeta DFS (vínculo), además de realizar las mismas comprobaciones de estado que cuando se especifica una raíz de espacio de nombres, el comando valida la configuración del sitio para los destinos de la carpeta (dfsdiag/testsites) y valida la Asociación del sitio del host local.
+- Si especifica una carpeta DFS (vínculo), el comando realiza las mismas comprobaciones de estado de la raíz del espacio de nombres, junto con la validación de la configuración del sitio para los destinos de la carpeta (dfsdiag/testsites) y la validación de la Asociación del sitio del host local.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-dfsdiag /TestReferral /DFSpath:<DFS path for getting referrals> [/Full]
+dfsdiag /testreferral /DFSpath:<DFS path to get referrals> [/full]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------|--------|
-| /DFSpath:<path for getting referrals>|Esta ruta de acceso DFS puede ser una de las siguientes:<p>-   \(en\)blanco: comprueba los dominios de confianza.<br />-   \\\\Dominio: referencias del controlador de dominio.<br />-   \\\\Dominio\\SYSVOL: referencias de SYSVOL.<br />-   \\\\Nombre en\\Netlogon: referencias de netlogon.<br />-   \\\\<Domain or server>\\<Namespace Root>: Referencias a la raíz del espacio de nombres.<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>: Referencias de \(vínculo\) de carpetas DFS.|
-|/Full|Solo se aplica a las referencias de dominio y raíz. comprueba la coherencia de la información de asociación del sitio entre el AD DS \(\)del registro y de servicios de dominio de Active Directory.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| /DFSpath:`<path to get referrals>` | Puede ser uno de los siguientes:<ul><li>**En blanco:** Solo comprueba dominios de confianza.</li><li>`\\Domain:`Comprueba solo las referencias del controlador de dominio.</li><li>`\\Domain\SYSvol:`Comprueba solo las referencias de SYSvol.</li><li>`\\Domain\NETLOGON:`Comprueba solo las referencias de NETLOGON.</li><li>`\\<domain or server>\<namespace root>:`Solo comprueba las referencias a la raíz del espacio de nombres.</li><li>`\\<domain or server>\<namespace root>\<DFS folder>:`Comprueba solo las referencias a la carpeta DFS (vínculo).</li></ul> |
+| /Full | Solo se aplica a las referencias de dominio y raíz. Comprueba la coherencia de la información de asociación del sitio entre el registro y los servicios de dominio de Active Directory (AD DS). |
 
 ## <a name="examples"></a>Ejemplos
 
-```
-dfsdiag /TestReferral /DFSpath:\\Contoso.com\MyNamespace
-```
+Para comprobar las referencias de Sistema de archivos distribuido (DFS) en *contoso. com\MyNamespace*, escriba:
 
 ```
-dfsdiag /TestReferral /DFSpath:
+dfsdiag /testreferral /DFSpath:\\contoso.com\MyNamespace
+```
+
+Para comprobar las referencias de Sistema de archivos distribuido (DFS) en todos los dominios de confianza, escriba:
+
+```
+dfsdiag /testreferral /DFSpath:
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-
+- [comando dfsdiag](dfsdiag.md)

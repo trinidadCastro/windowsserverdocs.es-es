@@ -1,6 +1,6 @@
 ---
 title: Dfsutil
-description: Tema de referencia de Dfsutil, que administra los espacios de nombres DFS, los servidores y los clientes. los comandos Dfsutil usan la terminología de Sistema de archivos distribuido original, con la terminología de espacios de nombres DFS actualizada que se proporciona como explicación para la mayoría de los comandos.
+description: Tema de referencia para el comando Dfsutil, que administra los espacios de nombres DFS, los servidores y los clientes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,25 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 999eef79227d4531ba724c9cac40127297ea38a0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d6905d90ee42958e47dfed4869520000a4fd3ddf
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719513"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992619"
 ---
 # <a name="dfsutil"></a>Dfsutil
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-El comando Dfsutil administra espacios de nombres DFS, servidores y clientes.
+El comando Dfsutil administra los espacios de nombres DFS, los servidores y los clientes.
 
->[!NOTE]
->El **módulo espacios de nombres DFS** proporciona reemplazos para algunos de los parámetros de Dfsutil, mientras que otros aún requieren el uso de Dfsutil. Para obtener más información sobre los equivalentes de PowerShell actualizados, vea [DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps).
+## <a name="functionality-available-in-powershell"></a>Funcionalidad disponible en PowerShell
 
-## <a name="parameters-available-in-powershell"></a>Parámetros disponibles en PowerShell
-
-Puede usar los siguientes parámetros de PowerShell:
+El módulo [DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps) PowerShell proporciona una funcionalidad equivalente a los siguientes parámetros de Dfsutil.
 
 | Parámetro | Descripción |
 | --------- | ----------- |
@@ -38,9 +35,9 @@ Puede usar los siguientes parámetros de PowerShell:
 | server | Muestra o modifica la configuración del espacio de nombres. |
 | dominio | Muestra todos los espacios de nombres basados en dominio de un dominio. |
 
-## <a name="parameters-only-available-in-dfsutil"></a>Los parámetros solo están disponibles en Dfsutil
+## <a name="functionality-available-only-in-dfsutil"></a>Funcionalidad disponible solo en Dfsutil
 
-Puede usar los siguientes parámetros solo de Dfsutil.
+La funcionalidad siguiente solo está disponible como parámetros de Dfsutil:
 
 | Parámetro | Descripción |
 | --------- | ----------- |

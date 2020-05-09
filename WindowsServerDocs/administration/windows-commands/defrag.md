@@ -1,6 +1,6 @@
 ---
 title: defrag
-description: Tema de referencia de Defrag, que busca y consolida archivos fragmentados en volúmenes locales para mejorar el rendimiento del sistema.
+description: Tema de referencia del comando Defrag, que busca y consolida archivos fragmentados en volúmenes locales para mejorar el rendimiento del sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47a19ec697da29b1eff152de8fc5930516d5b806
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bf3ca6febfa07c7780b959389ff57fe4f3a0018b
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716766"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993147"
 ---
 # <a name="defrag"></a>defrag
 
@@ -25,82 +25,120 @@ Busca y consolida archivos fragmentados en volúmenes locales para mejorar el re
 La pertenencia al grupo local **administradores** , o equivalente, es lo mínimo necesario para ejecutar este comando.
 
 ## <a name="syntax"></a>Sintaxis
+
 ```
-defrag <volumes> | /C | /E <volumes>    [/H] [/M [n]| [/U] [/V]]
-defrag <volumes> | /C | /E <volumes> /A [/H] [/M [n]| [/U] [/V]]
-defrag <volumes> | /C | /E <volumes> /X [/H] [/M [n]| [/U] [/V]]
-defrag <volume> [/<Parameter>]*
+defrag <volumes> | /c | /e <volumes>    [/h] [/m [n]| [/u] [v]]
+defrag <volumes> | /c | /e <volumes> /a [/h] [/m [n]| [/u] [v]]
+defrag <volumes> | /c | /e <volumes> /x [/h] [/m [n]| [/u] [v]]
+defrag <volume> [<parameters>]
 ```
+
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------|--------|
-|`<volume>`|Especifica la letra de unidad o la ruta de acceso del punto de montaje del volumen que se va a desfragmentar o analizar.|
-|Un|Realizar análisis en los volúmenes especificados.|
-|C|Realice la operación en todos los volúmenes.|
-|D|Realice la desfragmentación tradicional (este es el valor predeterminado). Sin embargo, en un volumen en capas, la desfragmentación tradicional solo se realiza en el nivel de capacidad.|
-|E|Realice la operación en todos los volúmenes excepto en los especificados.|
-|G|Optimice las capas de almacenamiento en los volúmenes especificados.|
-|H|Ejecute la operación con la prioridad normal (el valor predeterminado es low).|
-|N|La optimización de niveles se ejecutaría durante un máximo de n segundos en cada volumen.|
-|K|Realice la consolidación de bloques en los volúmenes especificados.|
-|L|Realice un recorte en los volúmenes especificados.|
-|M [n]|Ejecute la operación en cada volumen en paralelo en segundo plano. Como máximo, n subprocesos optimiza las capas de almacenamiento en paralelo.|
-|O|Realice la optimización adecuada para cada tipo de medio.|
-|T|Realiza un seguimiento de una operación que ya está en curso en el volumen especificado.|
-|U|imprime el progreso de la operación en la pantalla.|
-|V|imprime el resultado detallado que contiene las estadísticas de fragmentación.|
-|X|Realice la consolidación de espacio libre en los volúmenes especificados.|
-|?|Muestra esta información de ayuda.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<volume>` | Especifica la letra de unidad o la ruta de acceso del punto de montaje del volumen que se va a desfragmentar o analizar. |
+| /a | Realizar análisis en los volúmenes especificados. |
+| /C | Realice la operación en todos los volúmenes. |
+| /d | Realice la desfragmentación tradicional (este es el valor predeterminado). Sin embargo, en un volumen en capas, la desfragmentación tradicional solo se realiza en el nivel de capacidad. |
+| /e | Realice la operación en todos los volúmenes excepto en los especificados. |
+| /g | Optimice las capas de almacenamiento en los volúmenes especificados. |
+| /h | Ejecute la operación con la prioridad normal (el valor predeterminado es low). |
+| /i [n] | La optimización de niveles se ejecutaría durante un máximo de n segundos en cada volumen. |
+| /k | Realice la consolidación de bloques en los volúmenes especificados. |
+| /l | Realice un recorte en los volúmenes especificados. |
+| /m [n] | Ejecute la operación en cada volumen en paralelo en segundo plano. Como máximo, n subprocesos optimiza las capas de almacenamiento en paralelo. |
+| /o | Realice la optimización adecuada para cada tipo de medio. |
+| /t | Realiza un seguimiento de una operación que ya está en curso en el volumen especificado. |
+| /U | Imprime el progreso de la operación en la pantalla. |
+| /v | Imprime el resultado detallado que contiene las estadísticas de fragmentación. |
+| /x | Realice la consolidación de espacio libre en los volúmenes especificados. |
+| /? | Muestra esta información de ayuda. |
 
-## <a name="remarks"></a>Observaciones
-- No se pueden desfragmentar tipos específicos de volúmenes o unidades del sistema de archivos:
-  -   No se pueden desfragmentar los volúmenes bloqueados por el sistema de archivos.
-  -   No puede desfragmentar los volúmenes que el sistema de archivos marcó como modificados, lo que indica posibles daños. Debe ejecutar **CHKDSK** en un volumen sucio antes de poder desfragmentarlo. Puede determinar si un volumen se ha modificado mediante el comando **fsutil** Dirty Query. Para obtener más información acerca de **CHKDSK** y **fsutil** Dirty, consulte [referencias adicionales](defrag.md#BKMK_additionalRef).
-  -   No se pueden desfragmentar las unidades de red.
-  -   No puede desfragmentar cdROMs.
-  -   No se pueden desfragmentar volúmenes del sistema de archivos que no sean **NTFS**, **ReFS**, **FAT** o **FAT32**.
-- Con Windows Server 2008 R2, Windows Server 2008 y, Windows Vista, puede programar la desfragmentación de un volumen. Sin embargo, no se puede programar para desfragmentar una unidad de estado sólido (SSD) o un volumen en un disco duro virtual (VHD) que resida en una SSD.
+#### <a name="remarks"></a>Comentarios
+
+- No se pueden desfragmentar unidades o volúmenes del sistema de archivos específicos, como:
+
+  - Volúmenes bloqueados por el sistema de archivos.
+
+  - Volúmenes del sistema de archivos marcados como modificados, lo que indica posibles daños.<br>Debe ejecutar `chkdsk` antes de poder desfragmentar este volumen o unidad. Puede determinar si un volumen se ha modificado mediante el `fsutil dirty` comando.
+
+  - Unidades de red.
+
+  - CD-ROM.
+
+  - Volúmenes del sistema de archivos que no son **NTFS**, **ReFS**, **FAT** o **FAT32**.
+
+- No se puede programar para desfragmentar una unidad de estado sólido (SSD) o un volumen en un disco duro virtual (VHD) que resida en una SSD.
+
 - Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradores del equipo local o tener delegada la autoridad adecuada. Si el equipo está unido a un dominio, los miembros del grupo Administradores de dominio podrían llevar a cabo este procedimiento. Como práctica recomendada de seguridad, considere la posibilidad de usar **Ejecutar como** para realizar este procedimiento.
+
 - Un volumen debe tener al menos un 15% de espacio libre para que **Defrag** se desfragmente de forma completa y adecuada. **Defrag** usa este espacio como área de ordenación para los fragmentos de archivo. Si un volumen tiene menos del 15% de espacio libre, **Defrag** solo lo desfragmentará parcialmente. Para aumentar el espacio libre en un volumen, elimine los archivos innecesarios o muévalos a otro disco.
+
 - Mientras que **Defrag** está analizando y desfragmentando un volumen, muestra un cursor parpadeante. Cuando **Defrag** finaliza el análisis y desfragmentación del volumen, muestra el informe de análisis, el informe de desfragmentación o ambos informes y, a continuación, sale del símbolo del sistema.
+
 - De forma predeterminada, **Defrag** muestra un resumen de los informes de análisis y desfragmentación si no se especifican los parámetros **/a** o **/v** .
+
 - Puede enviar los informes a un archivo de texto escribiendo **>** <em>filename. txt</em>, donde *filename. txt* es el nombre de archivo que especifique. Por ejemplo: `defrag volume /v > FileName.txt`
+
 - Para interrumpir el proceso de desfragmentación, en la línea de comandos, presione **Ctrl + C**.
+
 - La ejecución del comando **Defrag** y del Desfragmentador de disco es mutuamente excluyente. Si usa el Desfragmentador de disco para desfragmentar un volumen y ejecuta el comando **Defrag** en una línea de comandos, se produce un error en el comando **Defrag** . Por el contrario, si ejecuta el comando **Defrag** y abre el Desfragmentador de disco, las opciones de desfragmentación del Desfragmentador de disco no estarán disponibles.
 
 ## <a name="examples"></a>Ejemplos
+
 Para desfragmentar el volumen de la unidad C a la vez que proporciona el progreso y el resultado detallado, escriba:
+
 ```
-defrag C: /U /V
+defrag c: /u /v
 ```
+
 Para desfragmentar los volúmenes en las unidades C y D en paralelo en segundo plano, escriba:
+
 ```
-defrag C: D: /M
+defrag c: d: /m
 ```
+
 Para realizar un análisis de fragmentación de un volumen montado en la unidad C y proporcionar el progreso, escriba:
+
 ```
-defrag C: mountpoint /A /U
+defrag c: mountpoint /a /u
 ```
+
 Para desfragmentar todos los volúmenes con prioridad normal y proporcionar una salida detallada, escriba:
+
 ```
-defrag /C /H /V
+defrag /c /h /v
 ```
 
-## <a name="scheduled-task"></a><a name=BKMK_scheduledTask></a>Tarea programada
-La tarea programada de Defrag se ejecuta como una tarea de mantenimiento y normalmente está programada para ejecutarse cada semana. El administrador puede cambiar la frecuencia con la aplicación **optimizar unidades** .
-- Cuando se ejecuta desde la tarea programada, **Defrag** tiene la Directiva siguiente para las SSD:
-   - La **desfragmentación tradicional** (es decir, mover archivos para que sean razonablemente contiguos) y **recortar** se ejecuta solo una vez al mes.
-   - Si se omiten la **desfragmentación tradicional** y el **recorte** , no se ejecuta el **análisis** .
-      - Si el usuario ejecutó la **desfragmentación tradicional** manualmente en una SSD, por ejemplo 3 semanas después de la última ejecución de la tarea programada, la siguiente ejecución de la tarea programada llevará a cabo el **análisis** y el **recorte** , pero omitirá la **desfragmentación tradicional** en esa SSD.
-   - Si se omite el **análisis** , no se actualizará la hora de la **última ejecución** en **optimizar unidades** .  Por lo tanto, para las SSD, la hora de la **última ejecución** en **Optimize Drives** puede ser un mes anterior.
-- Esta tarea de mantenimiento podría no desfragmentar todos los volúmenes a veces porque esta tarea hace lo siguiente:
-   - No reactiva el equipo para ejecutar Defrag
-   - Solo se inicia si el equipo está conectado a la corriente alterna y se detiene si el equipo cambia a la energía de la batería
-   - Detiene si el equipo deja de estar inactivo
+## <a name="scheduled-task"></a>Tarea programada
 
-## <a name="additional-references"></a><a name=BKMK_additionalRef></a>Referencias adicionales
--   [chkdsk](chkdsk.md)
--   [fsutil](fsutil.md)
--   [fsutil Dirty](fsutil-dirty.md)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+El proceso de desfragmentación ejecuta la tarea programada como una tarea de mantenimiento, que normalmente se ejecuta cada semana. Como administrador, puede cambiar la frecuencia con la que se ejecuta la tarea mediante la aplicación **optimizar unidades** .
+
+- Cuando se ejecuta desde la tarea programada, **Defrag** usa las siguientes directrices de directiva para SSD:
+
+  - **Procesos de optimización tradicionales**. Incluye **desfragmentación tradicional**, por ejemplo, mover archivos para que sean razonablemente contiguos y **recortar**. Esto se hace una vez al mes. Sin embargo, si se omiten la **desfragmentación tradicional** y el **recorte** , el **análisis** no se ejecuta.
+
+  - Si ejecuta manualmente la **desfragmentación tradicional** en una SSD, entre las ejecuciones programadas normalmente, la siguiente ejecución de la tarea programada realiza el **análisis** y el **recorte**, pero omite la **desfragmentación tradicional** en esa SSD.
+
+  - Si omite el **análisis**, no verá un último tiempo de **ejecución** actualizado en la aplicación **optimizar unidades** . Por eso, el último tiempo de **ejecución** puede ser hasta un mes anterior.
+
+  - Es posible que la tarea programada no desfragmente todos los volúmenes. Esto suele deberse a que:
+
+    - El proceso no reactivará el equipo para ejecutarse.
+
+    - El equipo no está conectado. El proceso no se ejecutará si el equipo está funcionando con batería.
+
+    - El equipo inició la copia de seguridad (se reanudó de inactivo).
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [chkdsk](chkdsk.md)
+
+- [fsutil](fsutil.md)
+
+- [fsutil Dirty](fsutil-dirty.md)
+
+- [Optimizar el volumen de PowerShell](https://docs.microsoft.com/powershell/module/storage/optimize-volume?view=win10-ps)

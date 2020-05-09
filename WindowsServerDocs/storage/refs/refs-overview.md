@@ -7,12 +7,12 @@ ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/17/2019
-ms.openlocfilehash: 8d32ef6bc4ce169ff73f9ab147783ac0607617f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: daa766b63cd99b86abb5a9fad791061c21aba766
+ms.sourcegitcommit: be4f67ae8e40a0bf1086881ba8963c69d7ea889f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857548"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82986031"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Información general del Sistema de archivos resistente (ReFS)
 
@@ -20,7 +20,7 @@ ms.locfileid: "80857548"
 
 El Sistema de archivos resistente (ReFS) es el nuevo sistema de archivos de Microsoft, que está diseñado para maximizar la disponibilidad de los datos, escalar de manera eficiente a conjuntos de datos de gran tamaño en diversas cargas de trabajo y proporciona la integridad de los datos por medio de la resistencia a los daños. Intenta solucionar un creciente conjunto de escenarios de almacenamiento y establecer una base para futuras innovaciones.
 
-## <a name="key-benefits"></a>Principales ventajas
+## <a name="key-benefits"></a>Ventajas principales
 
 ### <a name="resiliency"></a>Resistencia
 
@@ -37,9 +37,9 @@ Además de proporcionar mejoras de resistencia, ReFS presenta nuevas caracterís
 
 - **[Paridad acelerada para reflejo](./mirror-accelerated-parity.md)** : la paridad acelerada de reflejo ofrece un alto rendimiento y un almacenamiento eficaz para sus datos. 
 
-    - Para ofrecer alto rendimiento y capacidad de almacenamiento eficiente, ReFS divide un volumen en dos grupos de almacenamiento lógicos, denominados capas. Estas capas pueden tener sus propios tipos de unidad y resistencia, lo que permite a cada capa una optimización ya sea del rendimiento o la capacidad. Algunas configuraciones de ejemplo incluyen: 
+    - Para ofrecer almacenamiento eficaz y de alto rendimiento, ReFS divide un volumen en dos grupos de almacenamiento lógicos, conocidos como niveles. Estas capas pueden tener sus propios tipos de unidad y resistencia, lo que permite a cada capa una optimización ya sea del rendimiento o la capacidad. Algunas configuraciones de ejemplo incluyen: 
     
-      | Capa de rendimiento | Capacidad de nivel |
+      | Nivel de rendimiento | Capacidad de nivel |
       | ---------------- | ----------------- |
       | SSD de espejo | HDD de espejo |
       | SSD de espejo | SSD de paridad |
@@ -50,7 +50,7 @@ Además de proporcionar mejoras de resistencia, ReFS presenta nuevas caracterís
         - Si usa una implementación híbrida (que combina unidades Flash y HDD), [la memoria caché de espacios de almacenamiento directo](../storage-spaces/understand-the-cache.md) ayuda a acelerar las lecturas, lo que reduce el efecto de la característica de fragmentación de datos de cargas de trabajo virtualizadas. De lo contrario, si se usa una implementación de All-Flash, las lecturas también se producen en el nivel de rendimiento.
 
 > [!NOTE]
-> Para las implementaciones de servidor, la paridad acelerada por reflejos solo es compatible con [Espacios de almacenamiento directos](../storage-spaces/storage-spaces-direct-overview.md). Se recomienda usar la paridad acelerada para reflejo solo con cargas de trabajo de archivado y copia de seguridad. En el caso de cargas de trabajo aleatorias virtualizadas y otras de alto rendimiento, se recomienda utilizar reflejos triples para mejorar el rendimiento.
+> En el caso de las implementaciones de servidor, la paridad con aceleración de reflejo solo se admite en [espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md). Se recomienda usar la paridad acelerada para reflejo solo con cargas de trabajo de archivado y copia de seguridad. En el caso de cargas de trabajo aleatorias virtualizadas y otras de alto rendimiento, se recomienda utilizar reflejos triples para mejorar el rendimiento.
 
 - **Operaciones de VM con aceleración**: ReFS presenta nuevas funcionalidades especialmente dirigidas a mejorar el rendimiento de las cargas de trabajo virtualizadas:
     - [Bloque de clonación](./block-cloning.md): El bloque de clonación acelera las operaciones de copia, habilitando rápidas operaciones de fusión de punto de control con una VM de bajo impacto.
@@ -71,16 +71,16 @@ Microsoft ha desarrollado NTFS específicamente para uso general con una amplia 
 
 ### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directo
 
-La implementación de ReFS en los Espacios de almacenamiento directo es la configuración recomendada para las cargas de trabajo virtualizadas o el almacenamiento conectado a la red: 
-- La paridad acelerada por reflejos y [la memoria caché en los Espacios de almacenamiento directo](../storage-spaces/understand-the-cache.md) ofrecen un alto rendimiento y una capacidad de almacenamiento eficiente. 
+Se recomienda implementar ReFS en Espacios de almacenamiento directo para cargas de trabajo virtualizadas o almacenamiento conectado a la red: 
+- La paridad con aceleración de reflejo y [la memoria caché en espacios de almacenamiento directo](../storage-spaces/understand-the-cache.md) proporcionan un almacenamiento de alto rendimiento y con una capacidad eficaz. 
 - La introducción de la clonación de bloques y el VDL disperso acelera en gran medida las operaciones del archivo .vhdx, como la creación, combinación y expansión.
 - La integridad: las secuencias, la reparación en línea y las copias de datos alternativas permiten a ReFS y Espacios de almacenamiento directo conjuntamente detectar y corregir los daños en los medios de almacenamiento y el controlador de almacenamiento en los metadatos y los datos. 
-- ReFS proporciona la funcionalidad para escalar y ser compatible con grandes grupos de datos. 
+- ReFS proporciona la funcionalidad para escalar y admitir grandes conjuntos de datos. 
 
 ### <a name="storage-spaces"></a>Espacios de almacenamiento
 
 - Integridad: las secuencias, la reparación en línea y las copias de datos alternativas permiten que las referencias y los [espacios de almacenamiento](../storage-spaces/overview.md) permitan de forma conjunta detectar y corregir los daños en los medios de almacenamiento y el controlador de almacenamiento en los metadatos y los datos.
-- Las implementaciones de espacios de almacenamiento también pueden usar clonación de bloques y la escalabilidad que se ofrecen en ReFS.
+- Las implementaciones de espacios de almacenamiento también pueden emplear la clonación de bloque y la escalabilidad que se ofrece en ReFS.
 - La implementación de ReFS en espacios de almacenamiento con contenedores de SAS compartidos es adecuada para hospedar datos de archivo y almacenar documentos de usuario.
 
 > [!NOTE]
@@ -89,28 +89,28 @@ La implementación de ReFS en los Espacios de almacenamiento directo es la confi
 ### <a name="basic-disks"></a>Discos básicos
 
 La implementación de ReFS en discos básicos es más adecuada para las aplicaciones que implementan sus propias soluciones de disponibilidad y resistencia de software. 
-- Las aplicaciones que ofrecen sus propias soluciones de software de resistencia y disponibilidad pueden sacar partido de las secuencias de integridad, la clonación de bloques y la capacidad de escalar y ser compatible con grandes grupos de datos. 
+- Las aplicaciones que presentan sus propias soluciones de software de disponibilidad y resistencia pueden aprovechar las secuencias de integridad, la clonación de bloques y la capacidad de escalar y admitir grandes conjuntos de datos. 
 
 > [!NOTE]
-> Los discos básicos incluyen conexión directa no extraíble local a través de BusTypes SATA, SAS, NVME o RAID. 
+> Los discos básicos incluyen conexión directa no extraíble local a través de BusTypes SATA, SAS, NVME o RAID. Los discos básicos no incluyen espacios de almacenamiento.
 
 ### <a name="backup-target"></a>Destino de copia de seguridad
 
 La implementación de ReFS como destino de copia de seguridad es la más adecuada para las aplicaciones y el hardware que implementan sus propias soluciones de resistencia y disponibilidad.
-- Las aplicaciones que ofrecen sus propias soluciones de software de resistencia y disponibilidad pueden sacar partido de las secuencias de integridad, la clonación de bloques y la capacidad de escalar y ser compatible con grandes grupos de datos.
+- Las aplicaciones que presentan sus propias soluciones de software de disponibilidad y resistencia pueden aprovechar las secuencias de integridad, la clonación de bloques y la capacidad de escalar y admitir grandes conjuntos de datos.
 
 > [!NOTE]
 > Los destinos de copia de seguridad incluyen las configuraciones admitidas anteriormente. Póngase en contacto con proveedores de aplicaciones y de matrices de almacenamiento para obtener información detallada sobre el canal de fibra y las SAN iSCSI. En el caso de las redes SAN, si se requieren características como el aprovisionamiento fino, el recorte o la desasignación o el Transferencia de datos descargado (ODX), se debe usar NTFS.   
 
 ## <a name="feature-comparison"></a>Comparación de características
 
-### <a name="limits"></a>Límites
+### <a name="limits"></a>límites
 
 | Característica       | ReFS                                        | NTFS |
 |----------------|------------------------------------------------|-----------------------|
 | Longitud máxima del nombre del archivo | 255 caracteres Unicode  | 255 caracteres Unicode               |
 | Longitud máxima del nombre de la ruta |32 000 caracteres Unicode | 32 000 caracteres Unicode                |
-| Tamaño máximo del archivo | 35 PB (petabytes)  | 256 TB               |
+| Tamaño de archivo máximo | 35 PB (petabytes)  | 256 TB               |
 | Tamaño máximo del volumen | 35 PB                           | 256 TB                |
 
 ### <a name="functionality"></a>Funcionalidad
@@ -122,17 +122,17 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 | Cifrado de BitLocker | Sí | Sí |
 | Desduplicación de datos | Sí<sup>1</sup> | Sí |
 | Compatibilidad con volumen compartido en clúster (CSV) | Sí<sup>2</sup> | Sí |
-| Vínculos simbólicos | Sí | Sí |
+| Enlaces simbólicos | Sí | Sí |
 | Compatibilidad con clústeres de conmutación por error | Sí | Sí |
 | Listas de control de acceso | Sí | Sí |
-| Diario de USN | Sí | Sí |
+| Diario USN | Sí | Sí |
 | Notificación de cambios | Sí | Sí |
 | Puntos de unión | Sí | Sí |
 | Puntos de montaje | Sí | Sí |
-| Puntos de reanálisis | Sí | Sí |
+| Puntos de repetición de análisis | Sí | Sí |
 | Instantáneas de volumen | Sí | Sí |
 | Id. de archivo | Sí | Sí |
-| Bloqueos oportunistas | Sí | Sí |
+| Oplocks | Sí | Sí |
 | Archivos dispersos | Sí | Sí |
 | Secuencias con nombre | Sí | Sí |
 | Aprovisionamiento fino | Sí<sup>3</sup> | Sí |
@@ -160,13 +160,13 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 | Id. de objeto | No | Sí |
 | Transferencia de datos descargados (ODX) | No | Sí |
 | Nombres cortos | No | Sí |
-| Atributos extendidos | No | Sí |
+| Atributos ampliados | No | Sí |
 | Cuotas de disco | No | Sí |
 | Ejecutable | No | Sí |
 | Compatibilidad con archivos de paginación | No | Sí |
 | Compatible con medios extraíbles | No | Sí |
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Recomendaciones de tamaño de clúster para ReFS y NTFS](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
 - [Información general de Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)

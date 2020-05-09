@@ -1,6 +1,6 @@
 ---
 title: erase
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando Erase, que elimina uno o varios archivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,15 +9,91 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01803aa1328e71798098decb083e2bd9e32df45e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0ec812e9a455cc0060a3f0a6be4d0e7227821a0b
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725788"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992377"
 ---
 # <a name="erase"></a>erase
 
+Elimina uno o varios archivos. Este comando realiza las mismas acciones que el comando **del** .
 
+> [!WARNING]
+> Si usa **Borrar** para eliminar un archivo del disco, no podrá recuperarlo.
 
-Este comando es igual que el comando **del** . Vea [del](del.md) para ver la sintaxis y los parámetros.
+## <a name="syntax"></a>Sintaxis
+
+```
+erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
+del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<names>` | Especifica una lista de uno o varios archivos o directorios. Se pueden usar caracteres comodín para eliminar varios archivos. Si se especifica un directorio, se eliminarán todos los archivos del directorio. |
+| /p | Solicita confirmación antes de eliminar el archivo especificado. |
+| /f | Fuerza la eliminación de archivos de solo lectura. |
+| /s | Elimina los archivos especificados del directorio actual y todos los subdirectorios. Muestra los nombres de los archivos que se van a eliminar. |
+| /q | Especifica el modo silencioso. No se le pedirá confirmación de eliminación. |
+| /a [:]`<attributes>` | Elimina archivos en función de los siguientes atributos de archivo:<ul><li>archivos de solo lectura de **r**</li><li>**h** archivos ocultos</li><li>**no hay** archivos indizados de contenido</li><li>archivos **del sistema**</li><li>**archivos listos** para archivar</li><li>**l** puntos de reanálisis</li><li>**-** Se usa como significado de prefijo ' not '</li></ul>. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
+
+#### <a name="remarks"></a>Comentarios
+
+- Si usa el `erase /p` comando, verá el mensaje siguiente:
+
+    `FileName, Delete (Y/N)?`
+
+    Para confirmar la eliminación, presione **Y**. Para cancelar la eliminación y mostrar el siguiente nombre de archivo (si ha especificado un grupo de archivos), presione **N**. Para detener el comando de **borrado** , presione Ctrl + C.
+
+- Si deshabilita la extensión de comando, el parámetro **/s** mostrará los nombres de los archivos que no se hayan encontrado, en lugar de mostrar los nombres de los archivos que se van a eliminar.
+
+- Si especifica carpetas específicas en el `<names>` parámetro, también se eliminarán todos los archivos incluidos. Por ejemplo, si desea eliminar todos los archivos de la carpeta *\work* , escriba:
+
+  ```
+  erase \work
+  ```
+
+- Puede usar caracteres comodín (**&#42;** y **?**) para eliminar más de un archivo a la vez. Sin embargo, para evitar la eliminación accidental de archivos, debe usar caracteres comodín con precaución. Por ejemplo, si escribe el comando siguiente:
+
+  ```
+  erase *.*
+  ```
+
+  El comando **Erase** muestra el siguiente mensaje:
+
+  `Are you sure (Y/N)?`
+
+  Para eliminar todos los archivos del directorio actual, presione **y** y, a continuación, presione Entrar. Para cancelar la eliminación, presione **N** y, a continuación, presione Entrar.
+
+  > [!NOTE]
+  > Antes de usar caracteres comodín con el comando **Erase** , use los mismos caracteres comodín con el comando **dir** para enumerar todos los archivos que se van a eliminar.
+
+## <a name="examples"></a>Ejemplos
+
+Para eliminar todos los archivos de una carpeta denominada test en la unidad C, escriba cualquiera de los siguientes:
+
+```
+erase c:\test
+erase c:\test\*.*
+```
+
+Para eliminar todos los archivos con la extensión de nombre de archivo. bat del directorio actual, escriba:
+
+```
+erase *.bat
+```
+
+Para eliminar todos los archivos de solo lectura en el directorio actual, escriba:
+
+```
+erase /a:r *.*
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

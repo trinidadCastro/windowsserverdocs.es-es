@@ -1,6 +1,6 @@
 ---
 title: dcgpofix
-description: Tema de referencia de Dcgpofix, que vuelve a crear los objetos de directiva de grupo predeterminados (GPO) para un dominio.
+description: Tema de referencia del comando dcgpofix, que vuelve a crear los objetos de directiva de grupo predeterminados (GPO) para un dominio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,48 +9,48 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b30190f06e5e38031c8d205d8ccee9c573a8d84
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f11b7db8110cd2d7dcf08cd250eba411e7ff21a8
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716788"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993165"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 
-Vuelve a crear los objetos de directiva de grupo predeterminados (GPO) para un dominio.
+Vuelve a crear los objetos de directiva de grupo predeterminados (GPO) para un dominio. Para llegar al Consola de administración de directivas de grupo (GPMC), debe instalar la administración de directiva de grupo como una característica a través de Administrador del servidor.
+
+>[!IMPORTANT]
+> Como práctica recomendada, debe configurar el GPO de directiva de dominio predeterminada únicamente para administrar la configuración de **directivas de cuenta** predeterminada, la Directiva de contraseñas, la Directiva de bloqueo de cuentas y la Directiva de Kerberos. Además, debe configurar el GPO de directiva de controladores de dominio predeterminados únicamente para establecer derechos de usuario y directivas de auditoría.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-DCGPOFix [/ignoreschema] [/target: {Domain | DC | Both}] [/?]
+dcgpofix [/ignoreschema] [/target: {domain | dc | both}] [/?]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|    Parámetro    |                                                                                                 Descripción                                                                                                 |
-|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  /ignoreschema  | Omite la versión del Active Directory del esquema de®.</br>al ejecutar este comando. De lo contrario, el comando solo funciona en la misma versión de esquema que la versión de Windows en la que se envió el comando. |
-| /Target {dominio |                                                                                                     DC                                                                                                      |
-|       /?        |                                                                                    Muestra la Ayuda en el símbolo del sistema.                                                                                     |
-
-## <a name="remarks"></a>Observaciones
-
--   El comando **Dcgpofix** está disponible en windows Server 2008 R2 y windows Server 2008, excepto en las instalaciones Server Core.
--   Aunque el Consola de administración de directivas de grupo (GPMC) se distribuye con Windows Server 2008 R2 y Windows Server 2008, debe instalar la administración de directiva de grupo como una característica a través de Administrador del servidor.
+| Parámetro | Descripción |
+| --------- | ----------- |
+| /ignoreschema | Omite la versión del esquema de Active Directory cuando se ejecuta este comando. De lo contrario, el comando solo funciona en la misma versión de esquema que la versión de Windows en la que se envió el comando. |
+| `/target {domain | dc | both` | Especifica si se va a establecer como destino la Directiva de dominio predeterminada, la directiva predeterminada de controladores de dominio o ambos tipos de directivas. |
+| /? | Muestra la Ayuda en el símbolo del sistema. |
 
 ## <a name="examples"></a>Ejemplos
 
-Restaure el GPO de la Directiva de dominio predeterminada a su estado original. Perderá los cambios que haya realizado en este GPO. Como práctica recomendada, debe configurar el GPO de directiva de dominio predeterminada únicamente para administrar la configuración de directivas de cuenta predeterminada, la Directiva de contraseñas, la Directiva de bloqueo de cuentas y la Directiva de Kerberos. En este ejemplo, se omite la versión del esquema de Active Directory para que el comando **Dcgpofix** no esté limitado al mismo esquema que la versión de Windows en la que se envió el comando.
+Para administrar la configuración de **las directivas de cuentas** predeterminadas, la Directiva de contraseñas, la Directiva de bloqueo de cuentas y la Directiva de Kerberos, y omitir la versión de esquema Active Directory, escriba:
+
 ```
-dcgpofix /ignoreschema /target:Domain
+dcgpofix /ignoreschema /target:domain
 ```
-Restaure el GPO de la directiva predeterminada de controladores de dominio a su estado original. Perderá los cambios que haya realizado en este GPO. Como práctica recomendada, debe configurar el GPO de directiva de controladores de dominio predeterminados únicamente para establecer derechos de usuario y directivas de auditoría. En este ejemplo, se omite la versión del esquema de Active Directory para que el comando **Dcgpofix** no esté limitado al mismo esquema que la versión de Windows en la que se envió el comando.
+
+Para configurar el GPO de directiva de controladores de dominio predeterminados únicamente para establecer derechos de usuario y directivas de auditoría, y omitir la versión del esquema de Active Directory, escriba:
+
 ```
-dcgpofix /ignoreschema /target:DC
+dcgpofix /ignoreschema /target:dc
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [TechCenter de directiva de grupo](https://go.microsoft.com/fwlink/?LinkID=145531)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

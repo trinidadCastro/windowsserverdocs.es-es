@@ -1,6 +1,6 @@
 ---
-title: dfsdiag TestSites
-description: Tema de referencia de dfsdiag TestSites, que comprueba la configuración de los sitios de los servicios de dominio de Active Directory (AD DS) comprobando que los servidores que actúan como destinos de carpeta (vínculo) o servidores de espacio de nombres tienen las mismas asociaciones de sitio en todos los controladores de dominio.
+title: dfsdiag testsites
+description: Tema de referencia de dfsdiag testsites, que comprueba la configuración de los sitios de los servicios de dominio de Active Directory (AD DS) comprobando que los servidores que actúan como destinos de carpeta (vínculo) o servidores de espacio de nombres tienen las mismas asociaciones de sitio en todos los controladores de dominio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,52 +9,56 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68048699a812beac94fa121d6801da5f42e5393b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 54eb7c7ec44d7cd4872960ca29cd3146b710f472
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719556"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992849"
 ---
-# <a name="dfsdiag-testsites"></a>dfsdiag TestSites
+# <a name="dfsdiag-testsites"></a>dfsdiag testsites
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Comprueba la configuración de los sitios de servicios de dominio de Active Directory (AD DS) comprobando que los servidores que actúan como servidores de espacio de nombres o destinos de carpeta (vínculo) tienen las mismas asociaciones de sitio en todos los controladores de dominio.
 
-## <a name="syntax"></a>Sintaxis  
-  
-```  
-dfsdiag /TestSites </Machine:<server name>| /DFSpath:<namespace root or DFS folder> [/Recurse]> [/Full]  
-```  
-  
-#### <a name="parameters"></a>Parámetros  
-  
-|Parámetro|Descripción|  
-|-------|--------|  
-|\/Sistema<server name>|Nombre del servidor en el que se va a comprobar la Asociación del sitio.|  
-|\/DFSpath:<namespace root or DFS folder>|La raíz del espacio de nombres o la carpeta del Sistema de archivos distribuido (DFS) con destinos para los que se va a comprobar la Asociación del sitio.|  
-|\/Recurse|Enumera y comprueba las asociaciones del sitio para todos los destinos de carpeta en la raíz del espacio de nombres especificada.|  
-|\/Completo|comprueba que AD DS y el registro del servidor contienen la misma información de asociación del sitio.|  
-  
-## <a name="examples"></a>Ejemplos  
-  
-```  
-dfsdiag /TestSites /Machine:MyServer  
-```  
- 
-```  
-dfsdiag /TestSites /DFSpath:\\Contoso.com\Namespace1\Folder1 /Full  
-```  
-  
-```  
-dfsdiag /TestSites /DFSpath:\\Contoso.com\Namespace2 /Recurse /Full  
-```  
-  
-## <a name="additional-references"></a>Referencias adicionales  
-  
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
-  
--   [dfsdiag](dfsdiag.md)  
-  
+## <a name="syntax"></a>Sintaxis
 
+```
+dfsdiag /testsites </machine:<server name>| /DFSpath:<namespace root or DFS folder> [/recurse]> [/full]
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `/machine:<server name>` | Nombre del servidor en el que se va a comprobar la Asociación del sitio. |
+| `/DFSpath:<namespace root or DFS folder>` | La raíz del espacio de nombres o la carpeta del Sistema de archivos distribuido (DFS) con destinos para los que se va a comprobar la Asociación del sitio. |
+| /recurse | Enumera y comprueba las asociaciones del sitio para todos los destinos de carpeta en la raíz del espacio de nombres especificada. |
+| /Full | Comprueba que AD DS y el registro del servidor contienen la misma información de asociación del sitio. |
+
+## <a name="examples"></a>Ejemplos
+
+Para comprobar las asociaciones de sitio en *machine\MyServer*, escriba:
+
+```
+dfsdiag /testsites /machine:MyServer
+```
+
+Para comprobar una carpeta de Sistema de archivos distribuido (DFS) para comprobar la Asociación del sitio, junto con la comprobación de que AD DS y el registro del servidor contienen la misma información de asociación del sitio, escriba:
+
+```
+dfsdiag /TestSites /DFSpath:\\contoso.com\namespace1\folder1 /full
+```
+
+Para comprobar una raíz de espacio de nombres para comprobar la Asociación del sitio, junto con la enumeración y comprobación de las asociaciones del sitio para todos los destinos de carpeta en la raíz del espacio de nombres especificada, y la comprobación de que AD DS y el registro del servidor contienen la misma información de asociación del sitio, escriba:
+
+```
+dfsdiag /testsites /DFSpath:\\contoso.com\namespace2 /recurse /full
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comando dfsdiag](dfsdiag.md)

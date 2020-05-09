@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8fa956124e0c227d048d4c6eec844154187d5861
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4878377225f9c58e40256a3d151d0d8f3761afca
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725054"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993339"
 ---
 # <a name="ftp"></a>ftp
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Transfiere archivos a y desde un equipo que ejecuta un servicio de servidor de File Transfer Protocol (FTP). **FTP** se puede usar de forma interactiva o en modo por lotes mediante el procesamiento de archivos de texto ASCII. 
+Transfiere archivos a y desde un equipo que ejecuta un servicio de servidor de File Transfer Protocol (FTP). **FTP** se puede usar de forma interactiva o en modo por lotes mediante el procesamiento de archivos de texto ASCII.
 ## <a name="syntax"></a>Sintaxis
 ```
 ftp [-v] [-d] [-i] [-n] [-g] [-s:<FileName>] [-a] [-A] [-x:<SendBuffer>] [-r:<RecvBuffer>] [-b:<AsyncBuffers>][-w:<WindowsSize>]  [-?] [<Host>]
@@ -44,7 +44,7 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<FileName>] [-a] [-A] [-x:<SendBuffer>] [-r:<Re
 |        -?         |                                                                                                                                         Muestra la ayuda en el símbolo del sistema.                                                                                                                                          |
 |      <host>       |                                                                    Especifica el nombre del equipo, la dirección IP o la dirección IPv6 del servidor FTP al que se va a conectar. El nombre o la dirección de host, si se especifica, debe ser el último parámetro de la línea.                                                                    |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 - para obtener más información acerca de los comandos **FTP** en Windows Server 2003, consulte [FTP](https://technet.microsoft.com/library/cc756013(v=ws.10).aspx).
 - los parámetros de la línea de comandos **FTP** distinguen mayúsculas de minúsculas.
 - Este comando solo está disponible si el protocolo **Protocolo de Internet (TCP/IP)** se instala como componente en las propiedades de un adaptador de red en las conexiones de red.

@@ -1,6 +1,6 @@
 ---
 title: diantz
-description: Tema de referencia de diantz, que es igual que el comando MAKECAB.
+description: Tema de referencia para el comando diantz, que empaqueta los archivos existentes en un archivo. cab.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,40 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ce0094e1f1c24f8f1287ab680b9f4e9c7a8590c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e45c0c4f71bc7faf6d5de0fa198ac872f6ff2597
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719509"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992504"
 ---
 # <a name="diantz"></a>diantz
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Este comando es el mismo que el comando **MAKECAB** .
+Empaquetar los archivos existentes en un archivo contenedor (. cab). Este comando realiza las mismas acciones que el [comando MAKECAB](makecab.md)actualizado.
 
-Vea [MAKECAB](makecab.md) para ver la sintaxis y los parámetros.
+## <a name="syntax"></a>Sintaxis
+
+```
+diantz [/v[n]] [/d var=<value> ...] [/l <dir>] <source> [<destination>]
+diantz [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<source>` | Archivo que se va a comprimir. |
+| `<destination>` | Nombre de archivo que se va a asignar al archivo comprimido. Si se omite, el último carácter del nombre del archivo de código fuente se sustituye por un carácter de subrayado (_) y se usa como destino. |
+| /f `<directives_file>` | Un archivo con directivas **diantz** (se puede repetir). |
+| /d var =`<value>` | Define la variable con el valor especificado. |
+| l`<dir>` | Ubicación en la que se va a colocar el destino (el valor predeterminado es el directorio actual). |
+| /v [`<n>`] | Establezca el nivel de detalle de depuración (0 = ninguno,..., 3 = completo). |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="additional-references"></a>Referencias adicionales
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Formato de archivo. cab de Microsoft](https://docs.microsoft.com/previous-versions/bb417343(v=msdn.10))

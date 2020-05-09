@@ -1,6 +1,6 @@
 ---
-title: dfsdiag TestDCs
-description: Tema de referencia de dfsdiag TestDCs, que comprueba la configuración de los controladores de dominio en el dominio especificado.
+title: dfsdiag testdcs
+description: Tema de referencia para el comando dfsdiag testdcs, que comprueba la configuración de los controladores de dominio en el dominio especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,52 +9,47 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ac7fe1a7bae6a7b3dab9004b6212b7d93774ade
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0bbe47474f99edb1626e61a372b02090d3a45ee3
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719595"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993002"
 ---
-# <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
+# <a name="dfsdiag-testdcs"></a>dfsdiag testdcs
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Comprueba la configuración de los controladores de dominio mediante la realización de las siguientes pruebas en cada controlador de dominio del dominio especificado:  
-  
--   Comprueba que el servicio de espacio de nombres Sistema de archivos distribuido (DFS) se está ejecutando y que su tipo de inicio está establecido en automático.  
-  
--   Comprueba la compatibilidad de las referencias con costo de sitio para NETLOGON y SYSvol.  
-  
--   Comprueba la coherencia de la Asociación del sitio por el nombre de host y la dirección IP.
+Comprueba la configuración de los controladores de dominio mediante la realización de las siguientes pruebas en cada controlador de dominio del dominio especificado:
 
-## <a name="syntax"></a>Sintaxis  
-  
-```  
-dfsdiag /TestDCs [/Domain:<Domain name>]  
-```  
-  
-#### <a name="parameters"></a>Parámetros  
-  
-|Parámetro|Descripción|  
-|-------|--------|  
-|Dominio`<domain_name>`|Dominio que desea comprobar.|  
-  
-## <a name="remarks"></a>Observaciones  
+- Comprueba que el servicio de espacio de nombres Sistema de archivos distribuido (DFS) se está ejecutando y que su tipo de inicio está establecido en **automático**.
 
-/Domain es un parámetro opcional. El valor predeterminado es el dominio local al que está unido el host local.  
-  
-## <a name="examples"></a>Ejemplos  
-Para comprobar la configuración de los controladores de dominio en el dominio Contoso.com, escriba:  
-  
-```  
-dfsdiag /TestDCs /Domain:Contoso.com  
-```  
-  
-## <a name="additional-references"></a>Referencias adicionales  
-  
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
-  
--   [dfsdiag](dfsdiag.md)  
-  
+- Comprueba la compatibilidad de las referencias con costo de sitio para NETLOGON y SYSvol.
 
+- Comprueba la coherencia de la Asociación del sitio por el nombre de host y la dirección IP.
+
+## <a name="syntax"></a>Sintaxis
+
+```
+dfsdiag /testdcs [/domain:<domain_name>]
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| /Domain`<domain_name>` | Nombre del dominio que se va a comprobar. Este parámetro es opcional. El valor predeterminado es el dominio local al que se une el host local. |
+
+## <a name="examples"></a>Ejemplos
+
+Para comprobar la configuración de los controladores de dominio en el dominio *contoso.com* , escriba:
+
+```
+dfsdiag /testdcs /domain:contoso.com
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comando dfsdiag](dfsdiag.md)
