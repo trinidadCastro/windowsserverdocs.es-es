@@ -7,16 +7,16 @@ manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: b328bfcb5977e5c7117590b173dbb967214bf10d
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: c9f1256849d561c1cb3e454b2826628095c45c07
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624223"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235247"
 ---
-> Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Búsqueda de recursos adicionales para el diseño de la topología de sitio de Active Directory para Windows Server 2008
 
-# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Búsqueda adicional de Resou # RCEs para Windows Server 2008 Active Directory el diseño de la topología de sitio
+> Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Puede encontrar la siguiente documentación sobre Active Directory Domain Services (AD DS) en los sitios web de Windows Server 2003 y Windows Server 2008 TechCenter:
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: b8fd482d7c2e5933f269320df2bff75f65195bc2
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 99d1007a7c6f154b621e43d674d06f25b2911f00
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992534"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235185"
 ---
 # <a name="diskcopy"></a>diskcopy
 
@@ -34,7 +34,7 @@ diskcopy [<drive1>: [<drive2>:]] [/v]
 | /v | Comprueba que la información se ha copiado correctamente. Esta opción ralentiza el proceso de copia. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - **Diskcopy** solo funciona con discos extraíbles, como disquetes, que deben ser del mismo tipo. No se puede usar **diskcopy** con un disco duro. Si especifica una unidad de disco duro para *unidad1* o *unidad2*, **diskcopy** mostrará el siguiente mensaje de error:
 
@@ -93,7 +93,9 @@ diskcopy b: a:
 
 Para usar la unidad de disquete a para copiar un disquete en otro, cambie primero a la unidad C y, a continuación, escriba:
 
-diskcopy a:
+```
+diskcopy a: a:
+```
 
 ## <a name="additional-references"></a>Referencias adicionales
 

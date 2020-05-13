@@ -1,22 +1,22 @@
 ---
 title: Controles de recursos de máquina virtual
-description: Uso de grupos de CPU de máquina virtual
+description: Uso de grupos de CPU de VM
 author: allenma
 ms.date: 06/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: fcf61c22a24abb6b16baf75b4846cc188dcecd49
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ebb5f9a0ca9c50a5e5357e3dd2c755095da98d11
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860798"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203536"
 ---
->Se aplica a: Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
-
 # <a name="virtual-machine-resource-controls"></a>Controles de recursos de máquina virtual
+
+> Se aplica a: Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
 En este artículo se describen los controles de aislamiento y recursos de Hyper-V para máquinas virtuales.  Estas funcionalidades, a las que haremos referencia como grupos de CPU de máquinas virtuales o simplemente "grupos de CPU", se introdujeron en Windows Server 2016.  Los grupos de CPU permiten a los administradores de Hyper-V administrar mejor y asignar los recursos de CPU del host entre las máquinas virtuales invitadas.  Mediante el uso de grupos de CPU, los administradores de Hyper-V pueden:
 
@@ -30,7 +30,7 @@ En este artículo se describen los controles de aislamiento y recursos de Hyper-
 
 Los grupos de CPU se administran a través del servicio de proceso del host de Hyper-V o HCS. En el blog del equipo de virtualización de Microsoft, encontrará una excelente descripción de HCS, su Genesis, vínculos a las API de HCS y más información en el blog del equipo de virtualización de Microsoft, en la publicación que [presenta el servicio de proceso de host (HCS)](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/).
 
->[!NOTE] 
+>[!NOTE]
 >Solo se puede usar HCS para crear y administrar grupos de CPU. el applet de administrador de Hyper-V, las interfaces de administración de WMI y de PowerShell no admiten grupos de CPU.
 
 Microsoft proporciona una utilidad de línea de comandos, cpugroups. exe, en el [centro de descarga de Microsoft](https://go.microsoft.com/fwlink/?linkid=865968) que usa la interfaz HCS para administrar grupos de CPU.  Esta utilidad también puede mostrar la topología de CPU de un host.
@@ -51,7 +51,7 @@ Por ejemplo, Imagine un grupo de CPU configurado con 4 procesadores lógicos (LP
     G = 4 * 50%
     G = 2 LP's worth of CPU time for the entire group
 
-En este ejemplo, se asigna al grupo de CPU G el tiempo de CPU de LP.  
+En este ejemplo, se asigna al grupo de CPU G el tiempo de CPU de LP.
 
 Tenga en cuenta que el límite de grupo se aplica independientemente del número de máquinas virtuales o de procesadores virtuales enlazados al grupo, independientemente del estado (por ejemplo, apagado o iniciado) de las máquinas virtuales asignadas al grupo de CPU. Por lo tanto, cada máquina virtual enlazada al mismo grupo de CPU recibirá una fracción de la asignación total de CPU del grupo, lo que cambiará con el número de máquinas virtuales enlazadas al grupo de CPU. Por lo tanto, a medida que las máquinas virtuales son máquinas virtuales enlazadas o desenlazadas de un grupo de CPU, se debe reajustar el límite general del grupo de CPU y configurarlo para mantener el límite por máquina virtual que se desea. El nivel de software de administrador de host de VM o de administración de virtualización es responsable de administrar las Cap de grupo según sea necesario para lograr la asignación de recursos de CPU por máquina virtual deseada.
 
@@ -120,7 +120,7 @@ Para obtener más información acerca de la configuración de "minroot", consult
 
 Echemos un vistazo a algunos ejemplos de cómo usar la herramienta CpuGroups.
 
->[!NOTE] 
+>[!NOTE]
 >Los parámetros de línea de comandos para la herramienta CpuGroups se pasan usando solo espacios como delimitadores. Ningún carácter '/' o '-' debe continuar el modificador de línea de comandos deseado.
 
 ### <a name="discovering-the-cpu-topology"></a>Detección de la topología de CPU
@@ -128,7 +128,7 @@ Echemos un vistazo a algunos ejemplos de cómo usar la herramienta CpuGroups.
 Al ejecutar CpuGroups con GetCpuTopology, se devuelve información sobre el sistema actual, como se muestra a continuación, incluido el índice de LP, el nodo NUMA al que pertenece el LP, los identificadores de paquete y núcleo y el índice de VP raíz.
 
 En el ejemplo siguiente se muestra un sistema con dos sockets de CPU y nodos NUMA, un total de 32 LPs y varios subprocesos habilitados, y configurados para habilitar Minroot con 8 VPs raíz, 4 desde cada nodo NUMA.
-Los LPs que tienen VPs raíz tienen un RootVpIndex > = 0; LPs con un valor de RootVpIndex de-1 no está disponible para la partición raíz, pero el hipervisor sigue siendo administrado por el hipervisor y ejecutará VPs de invitado tal y como lo permitan otras opciones de configuración.
+Los LPs que tienen VPs raíz tienen un RootVpIndex >= 0; LPs con un valor de RootVpIndex de-1 no está disponible para la partición raíz, pero el hipervisor sigue siendo administrado por el hipervisor y ejecutará VPs de invitado tal y como lo permitan otras opciones de configuración.
 
 ```console
 C:\vm\tools>CpuGroups.exe GetCpuTopology

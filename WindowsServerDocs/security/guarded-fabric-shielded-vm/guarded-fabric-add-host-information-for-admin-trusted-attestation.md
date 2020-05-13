@@ -8,32 +8,32 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8da873fa10564be788261069b00a1afac1732c48
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0c05b4ecc3e245a6127584fbab1bac727a9306c7
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856958"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203426"
 ---
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
-
 # <a name="authorize-hyper-v-hosts-using-admin-trusted-attestation"></a>Autorizar a los hosts de Hyper-V mediante la atestación de confianza de administrador
 
->[!IMPORTANT]
->La atestación de confianza de administrador (modo AD) está en desuso a partir de Windows Server 2019. En entornos donde no es posible la atestación de TPM, configure la [atestación de clave de host](guarded-fabric-initialize-hgs-key-mode.md). La atestación de clave de host proporciona una garantía similar al modo de AD y es más fácil de configurar. 
+> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+
+> [!IMPORTANT]
+> La atestación de confianza de administrador (modo AD) está en desuso a partir de Windows Server 2019. En entornos donde no es posible la atestación de TPM, configure la [atestación de clave de host](guarded-fabric-initialize-hgs-key-mode.md). La atestación de clave de host proporciona una garantía similar al modo de AD y es más fácil de configurar.
 
 
-Para autorizar un host protegido en el modo AD: 
+Para autorizar un host protegido en el modo AD:
 
 1. En el dominio del tejido, agregue los hosts de Hyper-V a un grupo de seguridad.
-2. En el dominio HGS, registre el SID del grupo de seguridad con HGS. 
+2. En el dominio HGS, registre el SID del grupo de seguridad con HGS.
 
 ## <a name="add-the-hyper-v-host-to-a-security-group-and-reboot-the-host"></a>Agregar el host de Hyper-V a un grupo de seguridad y reiniciar el host
 
-1. Cree un grupo de seguridad **global** en el dominio de tejido y agregue hosts de Hyper-V que ejecutarán máquinas virtuales blindadas. 
+1. Cree un grupo de seguridad **global** en el dominio de tejido y agregue hosts de Hyper-V que ejecutarán máquinas virtuales blindadas.
    Reinicie los hosts para actualizar la pertenencia a grupos.
 
-2. Use Get-ADGroup para obtener el identificador de seguridad (SID) del grupo de seguridad y proporcionarlo al administrador de HGS. 
+2. Use Get-ADGroup para obtener el identificador de seguridad (SID) del grupo de seguridad y proporcionarlo al administrador de HGS.
 
    ```powershell
    Get-ADGroup "Guarded Hosts"
@@ -41,17 +41,17 @@ Para autorizar un host protegido en el modo AD:
 
    ![Comando Get-AdGroup con salida](../media/Guarded-Fabric-Shielded-VM/guarded-host-get-adgroup.png)
 
-## <a name="register-the-sid-of-the-security-group-with-hgs"></a>Registro del SID del grupo de seguridad con HGS  
+## <a name="register-the-sid-of-the-security-group-with-hgs"></a>Registro del SID del grupo de seguridad con HGS
 
-1. Obtenga el SID del grupo de seguridad para los hosts protegidos del administrador del tejido y ejecute el siguiente comando para registrar el grupo de seguridad con HGS. 
-   Vuelva a ejecutar el comando si es necesario para los grupos adicionales. 
-   Proporcione un nombre descriptivo para el grupo. 
-   No es necesario que coincida con el nombre del grupo de seguridad de Active Directory. 
+1. Obtenga el SID del grupo de seguridad para los hosts protegidos del administrador del tejido y ejecute el siguiente comando para registrar el grupo de seguridad con HGS.
+   Vuelva a ejecutar el comando si es necesario para los grupos adicionales.
+   Proporcione un nombre descriptivo para el grupo.
+   No es necesario que coincida con el nombre del grupo de seguridad de Active Directory.
 
    ```powershell
    Add-HgsAttestationHostGroup -Name "<GuardedHostGroup>" -Identifier "<SID>"
    ```
 
-2. Para comprobar que se ha agregado el grupo, ejecute [Get-HgsAttestationHostGroup](https://technet.microsoft.com/library/mt652172.aspx). 
+2. Para comprobar que se ha agregado el grupo, ejecute [Get-HgsAttestationHostGroup](https://technet.microsoft.com/library/mt652172.aspx).
 
 

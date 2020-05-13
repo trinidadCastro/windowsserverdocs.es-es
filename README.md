@@ -27,7 +27,7 @@ Estos repositorios se administran activamente e incluyen el origen del contenido
 
 ## <a name="markdown-info"></a>Información de Markdown
 
-Para obtener información sobre cómo usar Markdown en los temas de Docs.microsoft.com, consulte la [referencia de docs Markdown](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master). La versión de acceso público de este contenido está aquí: [referencia de documentos públicos de Markdown](https://docs.microsoft.com/contribute/how-to-write-use-markdown).
+Para obtener información sobre cómo usar Markdown en los temas de Docs.microsoft.com, consulte la [referencia de docs Markdown](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master). La versión de acceso público de este contenido está aquí: [referencia de documentos públicos de Markdown](https://docs.microsoft.com/contribute/markdown-reference).
 
 ## <a name="license"></a>Licencia
 
@@ -35,4 +35,4 @@ Consulte [LICENSE](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/ma
 
 ## <a name="code-of-conduct"></a>Código de conducta
 
-Este proyecto ha adoptado el [código de conducta del código abierto de Microsoft](https://opensource.microsoft.com/codeofconduct/). Para obtener más información, vea las [preguntas más frecuentes sobre el código de conducta](https://opensource.microsoft.com/codeofconduct/faq/) o póngase en contacto con [opencode@microsoft.com](mailto:opencode@microsoft.com) si tiene preguntas o comentarios adicionales.
+Este proyecto ha adoptado el [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) (Código de conducta de código abierto de Microsoft). Para obtener más información, consulte las [preguntas más frecuentes del código de conducta](https://opensource.microsoft.com/codeofconduct/faq/) o póngase en contacto con [opencode@microsoft.com](mailto:opencode@microsoft.com) si tiene cualquier otra pregunta o comentario.

@@ -9,16 +9,16 @@ ms.date: 12/20/2016
 ms.topic: article
 ms.prod: windows-server
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 2c5e2d67b391cd53a6995957da5dab108a34e1a9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4237da8ee393953a8eb2a2b577c2df201f96a7be
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820718"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235059"
 ---
->Se aplica a: Windows 10, Windows Server 2012, Windows Server 2012R2, Windows Server 2016 y Windows Server 2019
-
 # <a name="manage-hyper-v-integration-services"></a>Administrar Integration Services de Hyper-V
+
+> Se aplica a: Windows 10, Windows Server 2012, Windows Server 2012R2, Windows Server 2016 y Windows Server 2019
 
 Hyper-V Integration Services mejorar el rendimiento de las máquinas virtuales y proporcionar características útiles al aprovechar la comunicación bidireccional con el host de Hyper-V. Muchos de estos servicios son cómodos, como la copia de archivos de invitado, mientras que otros son importantes para la funcionalidad de la máquina virtual, como los controladores de dispositivos sintéticos. Este conjunto de servicios y controladores a veces se denominan "componentes de integración". Puede controlar si los servicios de comodidad individuales funcionan o no para una máquina virtual determinada. Los componentes del controlador no están pensados para que se puedan atender manualmente.
 
@@ -30,9 +30,9 @@ Para obtener más información sobre cada servicio de integración, consulte [In
 ## <a name="turn-an-integration-service-on-or-off-using-hyper-v-manager"></a>Activar o desactivar un servicio de integración con el administrador de Hyper-V
 
 1. En el panel central, haga clic con el botón secundario en la máquina virtual y haga clic en **configuración**.
-  
+
 2. En el panel izquierdo de la ventana de **configuración** , en **Administración**, haga clic en **Integration Services**.
-  
+
 En el panel Integration Services se enumeran todos los servicios de integración disponibles en el host de Hyper-V y si el host ha habilitado la máquina virtual para usarlos.
 
 ### <a name="turn-an-integration-service-on-or-off-using-powershell"></a>Activar o desactivar un servicio de integración mediante PowerShell
@@ -42,12 +42,12 @@ Para hacer esto en PowerShell, use [enable-VMIntegrationService](https://technet
 En los siguientes ejemplos se muestra cómo activar y desactivar el servicio de integración de copia de archivos invitados para una máquina virtual denominada "demovm".
 
 1. Obtiene una lista de los servicios de integración en ejecución:
-  
+
     ``` PowerShell
     Get-VMIntegrationService -VMName "DemoVM"
     ```
 
-1. La salida debe parecerse a la siguiente:
+1. El resultado debe ser similar al siguiente:
 
     ``` PowerShell
    VMName      Name                    Enabled PrimaryStatusDescription SecondaryStatusDescription
@@ -69,15 +69,15 @@ En los siguientes ejemplos se muestra cómo activar y desactivar el servicio de 
 1. Compruebe que la interfaz de servicio de invitado está habilitada:
 
    ```
-   Get-VMIntegrationService -VMName "DemoVM" 
-   ``` 
+   Get-VMIntegrationService -VMName "DemoVM"
+   ```
 
 1. Desactivar la interfaz del servicio de invitado:
 
     ```
     Disable-VMIntegrationService -VMName "DemoVM" -Name "Guest Service Interface"
     ```
-   
+
 ## <a name="checking-the-guests-integration-services-version"></a>Comprobando la versión de Integration Services del invitado
 Es posible que algunas características no funcionen correctamente o en absoluto si los servicios de integración del invitado no están actualizados. Para obtener la información de versión de una ventana de, inicie sesión en el sistema operativo invitado, abra un símbolo del sistema y ejecute este comando:
 
@@ -99,9 +99,9 @@ Para que un servicio de integración sea totalmente funcional, el servicio corre
 
 1. Abra el administrador de servicios ejecutando ```services.msc``` como administrador o haciendo doble clic en el icono servicios del panel de control.
 
-    ![Captura de pantalla que muestra el panel servicios de Windows](media/HVServices.png) 
+    ![Captura de pantalla que muestra el panel servicios de Windows](media/HVServices.png)
 
-1. Busque los servicios que empiezan por "Hyper-V". 
+1. Busque los servicios que empiezan por "Hyper-V".
 
 1. Haga clic con el botón secundario en el servicio que desee iniciar o detener. Haga clic en la acción deseada.
 
@@ -113,7 +113,7 @@ Para que un servicio de integración sea totalmente funcional, el servicio corre
     Get-Service -Name vm*
     ```
 
-1.  La salida debe tener un aspecto similar al siguiente:
+1.  La salida debe tener un aspecto similar a este:
 
     ```PowerShell
     Status   Name               DisplayName
@@ -134,7 +134,7 @@ Para que un servicio de integración sea totalmente funcional, el servicio corre
     Stop-Service -Name vmicvmsession
     ```
 
-## <a name="start-and-stop-an-integration-service-from-a-linux-guest"></a>Inicio y detención de un servicio de integración desde un invitado de Linux 
+## <a name="start-and-stop-an-integration-service-from-a-linux-guest"></a>Inicio y detención de un servicio de integración desde un invitado de Linux
 
 Los servicios de integración de Linux normalmente se ofrecen a través del kernel de Linux. El controlador de servicios de integración de Linux se denomina **hv_utils**.
 
@@ -142,10 +142,10 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
 
    ``` BASH
    lsmod | grep hv_utils
-   ``` 
-  
-2. La salida debe tener un aspecto similar al siguiente:  
-  
+   ```
+
+2. La salida debe tener un aspecto similar a este:
+
     ``` BASH
     Module                  Size   Used by
     hv_utils               20480   0
@@ -153,13 +153,13 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
     ```
 
 3. Use este comando para averiguar si se están ejecutando los demonios necesarios.
-  
+
     ``` BASH
     ps -ef | grep hv
     ```
-  
-4. La salida debe tener un aspecto similar al siguiente: 
-  
+
+4. La salida debe tener un aspecto similar a este:
+
     ```BASH
     root       236     2  0 Jul11 ?        00:00:00 [hv_vmbus_con]
     root       237     2  0 Jul11 ?        00:00:00 [hv_vmbus_ctl]
@@ -168,7 +168,7 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
     root      1286     1  0 Jul11 ?        00:01:11 /usr/lib/linux-tools/3.13.0-32-generic/hv_kvp_daemon
     root      9333     1  0 Oct12 ?        00:00:00 /usr/lib/linux-tools/3.13.0-32-generic/hv_kvp_daemon
     root      9365     1  0 Oct12 ?        00:00:00 /usr/lib/linux-tools/3.13.0-32-generic/hv_vss_daemon
-    scooley  43774 43755  0 21:20 pts/0    00:00:00 grep --color=auto hv          
+    scooley  43774 43755  0 21:20 pts/0    00:00:00 grep --color=auto hv
     ```
 
 5. Para ver los demonios que están disponibles, ejecute:
@@ -176,34 +176,34 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
     ``` BASH
     compgen -c hv_
     ```
-  
-6. La salida debe tener un aspecto similar al siguiente:
-  
+
+6. La salida debe tener un aspecto similar a este:
+
     ``` BASH
     hv_vss_daemon
     hv_get_dhcp_info
     hv_get_dns_info
     hv_set_ifconfig
     hv_kvp_daemon
-    hv_fcopy_daemon     
+    hv_fcopy_daemon
     ```
-  
-   Entre los demonios de servicio de integración que se pueden mostrar se incluyen los siguientes. Si falta alguno, es posible que no se admita en el sistema o que no esté instalado. Para obtener más información, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](https://technet.microsoft.com/library/dn531030.aspx).  
+
+   Entre los demonios de servicio de integración que se pueden mostrar se incluyen los siguientes. Si falta alguno, es posible que no se admita en el sistema o que no esté instalado. Para obtener más información, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](https://technet.microsoft.com/library/dn531030.aspx).
    - **hv_vss_daemon**: este demonio es necesario para crear copias de seguridad de máquinas virtuales de Linux en vivo.
    - **hv_kvp_daemon**: este demonio permite establecer y consultar los pares de valores de clave intrínsecos y extrínsecos.
-   - **hv_fcopy_daemon**: este demonio implementa un servicio de copia de archivos entre el host y el invitado.  
+   - **hv_fcopy_daemon**: este demonio implementa un servicio de copia de archivos entre el host y el invitado.
 
 ### <a name="examples"></a>Ejemplos
 
-En estos ejemplos se muestra cómo detener e iniciar el demonio KVP, denominado `hv_kvp_daemon`.
+En estos ejemplos se muestra cómo detener e iniciar el demonio KVP, denominado `hv_kvp_daemon` .
 
-1. Use el ID. de proceso \(PID\) para detener el proceso del demonio. Para buscar el PID, examine la segunda columna de la salida o use `pidof`. Los demonios de Hyper-V se ejecutan como raíz, por lo que necesitará permisos raíz.
+1. Use el PID de ID. de proceso \( \) para detener el proceso del demonio. Para buscar el PID, examine la segunda columna de la salida, o use `pidof` . Los demonios de Hyper-V se ejecutan como raíz, por lo que necesitará permisos raíz.
 
     ``` BASH
     sudo kill -15 `pidof hv_kvp_daemon`
     ```
 
-1. Para comprobar que todos los procesos de `hv_kvp_daemon` han desaparecido, ejecute:
+1. Para comprobar que todo el `hv_kvp_daemon` proceso ha desaparecido, ejecute:
 
     ```
     ps -ef | hv
@@ -213,9 +213,9 @@ En estos ejemplos se muestra cómo detener e iniciar el demonio KVP, denominado 
 
     ``` BASH
     sudo hv_kvp_daemon
-    ``` 
+    ```
 
-1. Para comprobar que el proceso de `hv_kvp_daemon` aparece con un nuevo identificador de proceso, ejecute:
+1. Para comprobar que el `hv_kvp_daemon` proceso aparece con un nuevo identificador de proceso, ejecute:
 
     ```
     ps -ef | hv
@@ -235,21 +235,21 @@ Se recomienda mantener actualizados los servicios de integración para obtener e
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
 | Windows 8 | Windows Update | Requiere el Servicio de integración de intercambio de datos.* |
-| Windows 7 | Windows Update | Requiere el Servicio de integración de intercambio de datos.* |
+| Windows 7 | Windows Update | Requiere el Servicio de integración de intercambio de datos.* |
 | Windows Vista (SP 2) | Windows Update | Requiere el Servicio de integración de intercambio de datos.* |
 | - | | |
 | Windows Server 2016 | Windows Update | |
 | Windows Server, Canal semianual | Windows Update | |
-| Windows Server 2012 R2 | Windows Update | |
+| Windows Server 2012 R2 | Windows Update | |
 | Windows Server 2012 | Windows Update | Requiere el Servicio de integración de intercambio de datos.* |
 | Windows Server 2008 R2 (SP 1) | Windows Update | Requiere el Servicio de integración de intercambio de datos.* |
 | Windows Server 2008 (SP 2) | Windows Update | Soporte extendido solo en Windows Server 2016 ([más información](https://support.microsoft.com/lifecycle?p1=12925)). |
-| Windows Home Server 2011 | Windows Update | No se admitirá en Windows Server 2016 ([Lea más](https://support.microsoft.com/lifecycle?p1=15820)). |
+| Windows Home Server 2011 | Windows Update | No se admitirá en Windows Server 2016 ([Lea más](https://support.microsoft.com/lifecycle?p1=15820)). |
 | Windows Small Business Server 2011 | Windows Update | No se admite con el soporte estándar ([más información](https://support.microsoft.com/lifecycle?p1=15817)). |
 | - | | |
 | Invitados Linux | administrador de paquetes | Integration Services para Linux está integrado en el distribución, pero puede que haya actualizaciones opcionales disponibles. ******** |
 
-\* si no se puede habilitar el servicio de integración de intercambio de datos, los servicios de integración de estos invitados están disponibles en el [centro de descarga](https://support.microsoft.com/kb/3071740) como un archivo. cab. Las instrucciones para aplicar un archivo. cab están disponibles en esta [entrada de blog](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247).
+\*Si no se puede habilitar el servicio de integración de intercambio de datos, los servicios de integración de estos invitados están disponibles en el [centro de descarga](https://support.microsoft.com/kb/3071740) como un archivo contenedor (CAB). Las instrucciones para aplicar un archivo. cab están disponibles en esta [entrada de blog](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247).
 
 **En el caso de las máquinas virtuales que se ejecutan en hosts de Windows 8.1/Windows Server 2012R2:**
 
@@ -258,17 +258,17 @@ Se recomienda mantener actualizados los servicios de integración para obtener e
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows 8 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
-| Windows 7 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
+| Windows 7 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Vista (SP 2) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows XP (SP 2, SP 3) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | - | | |
 | Windows Server 2016 | Windows Update | |
 | Windows Server, Canal semianual | Windows Update | |
-| Windows Server 2012 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
+| Windows Server 2012 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Server 2012 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
-| Windows Server 2008 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
+| Windows Server 2008 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Server 2008 (SP 2) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
-| Windows Home Server 2011 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
+| Windows Home Server 2011 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Small Business Server 2011 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Server 2003 R2 (SP 2) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Server 2003 (SP 2) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
@@ -282,15 +282,15 @@ Se recomienda mantener actualizados los servicios de integración para obtener e
 |:---------|:---------|:---------|
 | Windows 8.1 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows 8 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
-| Windows 7 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
+| Windows 7 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Vista (SP 2) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows XP (SP 2, SP 3) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | - | | |
-| Windows Server 2012 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
+| Windows Server 2012 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Server 2012 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
-| Windows Server 2008 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes.|
+| Windows Server 2008 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes.|
 | Windows Server 2008 (SP 2) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
-| Windows Home Server 2011 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
+| Windows Home Server 2011 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Small Business Server 2011 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Server 2003 R2 (SP 2) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Server 2003 (SP 2) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
@@ -302,16 +302,16 @@ Para obtener más información sobre los invitados de Linux, consulte [máquinas
 ## <a name="install-or-update-integration-services"></a>Instalar o actualizar los servicios de integración
 
 > [!NOTE]
-> En el caso de los hosts anteriores a Windows Server 2016 y Windows 10, deberá **instalar o actualizar manualmente** los servicios de integración en los sistemas operativos invitados. 
+> En el caso de los hosts anteriores a Windows Server 2016 y Windows 10, deberá **instalar o actualizar manualmente** los servicios de integración en los sistemas operativos invitados.
 
 Procedimiento para instalar o actualizar manualmente Integration Services:
 
-1.  Abre el Administrador Hyper-V. En el menú herramientas de Administrador del servidor, haga clic en **Administrador de Hyper-V**.  
-  
-2.  Conéctese a la máquina virtual. Haga clic con el botón secundario en la máquina virtual y haga clic en **conectar**.  
-  
-3.  En el menú Acción de Conexión a máquina virtual, haga clic en **Insertar disco de instalación de servicios de integración**. Esta acción carga el disco de instalación en la unidad de DVD virtual. En función del sistema operativo invitado, es posible que deba iniciar la instalación manualmente.  
-  
+1.  Abra el administrador de Hyper-V. En el menú herramientas de Administrador del servidor, haga clic en **Administrador de Hyper-V**.
+
+2.  Conexión a una máquina virtual. Haga clic con el botón secundario en la máquina virtual y haga clic en **conectar**.
+
+3.  En el menú Acción de Conexión a máquina virtual, haga clic en **Insertar disco de instalación de servicios de integración**. Esta acción carga el disco de instalación en la unidad de DVD virtual. En función del sistema operativo invitado, es posible que deba iniciar la instalación manualmente.
+
 4.  Al finalizar la instalación, todos los servicios de integración estarán disponibles para su uso.
 
 > [!NOTE]
