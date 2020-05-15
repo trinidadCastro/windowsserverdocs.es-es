@@ -1,5 +1,5 @@
 ---
-title: 'Paso 6: Disminuir de nivel y quitar el servidor de origen de la nueva red de Windows Server Essentials'
+title: 'Paso 6: Disminución de nivel y eliminación del servidor de origen de la nueva red de Windows Server Essentials'
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
 ms.prod: windows-server
@@ -8,20 +8,20 @@ ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b1b7836e976ef35aec66e206ec8b1de0e2150d62
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 406010234528a094bfb36a606072f98c043c397a
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852338"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404512"
 ---
-# <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>Paso 6: Disminuir de nivel y quitar el servidor de origen de la nueva red de Windows Server Essentials
+# <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>Paso 6: Disminución de nivel y eliminación del servidor de origen de la nueva red de Windows Server Essentials
 
->Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 Después de finalizar la instalación de Windows Server Essentials y completar la migración, debe realizar las siguientes tareas:  
   
-1.  [Quitar Active Directory servicios de Certificate Server](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_ADCS)  
+1.  [Quitar servicios de certificados de Active Directory](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_ADCS)  
   
 2.  [Desconectar las impresoras conectadas directamente al servidor de origen](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_PhysicallyDisconnect)  
   
@@ -38,7 +38,7 @@ Después de finalizar la instalación de Windows Server Essentials y completar l
   
 1.  Inicie sesión como administrador de dominio en el servidor de origen.  
   
-2.  Haga clic en **Inicio**, **Herramientas administrativas** y **Administrador del servidor**.  
+2.  Haga clic en **Inicio**, en **Herramientas administrativas** y, a continuación, en **Administrador del servidor**.  
   
 3.  Haga clic en **Continuar**, en el cuadro de diálogo **Control de cuentas de usuario**.  
   
@@ -74,7 +74,7 @@ Después de finalizar la instalación de Windows Server Essentials y completar l
   
 1. Inicie sesión en el equipo cliente como administrador.  
   
-2. Abra una ventana del símbolo del sistema como administrador.  
+2. Abra una ventana de símbolo del sistema como administrador.  
   
 3. En el símbolo del sistema, escriba **gpupdate /force** y, después, presione ENTRAR.  
   
@@ -88,7 +88,7 @@ Después de finalizar la instalación de Windows Server Essentials y completar l
   
 1.  En el servidor de destino, abra **Equipos y usuarios de Active Directory**.  
   
-2.  En el panel de navegación **Usuarios y equipos de Active Directory** , expanda el nombre de dominio y **Equipos**.  
+2.  En el panel de navegación **Usuarios y equipos de Active Directory**, expanda el nombre de dominio y **Equipos**.  
   
 3.  Si el servidor de origen todavía existe en la lista de servidores, haga clic con el botón secundario en su nombre y, con el botón primario, en **Eliminar** y **Sí**.  
   

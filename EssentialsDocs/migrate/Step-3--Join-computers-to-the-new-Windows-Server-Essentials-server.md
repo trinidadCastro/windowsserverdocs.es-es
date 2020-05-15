@@ -1,5 +1,5 @@
 ---
-title: 'Paso 3: Unir equipos al nuevo servidor de Windows Server Essentials'
+title: 'Paso 3: Unión de equipos al nuevo servidor de Windows Server Essentials'
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
 ms.prod: windows-server
@@ -8,16 +8,16 @@ ms.assetid: a0e07d1a-8409-429b-87d7-0f4a7e14d668
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3d004d89f6606c8b38360c9139f882f087b7c554
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8efb8251bd85638b8ad4b760a5292a2b6d6681fd
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852368"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404542"
 ---
-# <a name="step-3-join-computers-to-the-new-windows-server-essentials-server"></a>Paso 3: Unir equipos al nuevo servidor de Windows Server Essentials
+# <a name="step-3-join-computers-to-the-new-windows-server-essentials-server"></a>Paso 3: Unión de equipos al nuevo servidor de Windows Server Essentials
 
->Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 El siguiente paso del proceso de migración consiste en conectar los equipos cliente al nuevo servidor que ejecuta Windows Server Essentials.  
   
@@ -46,7 +46,7 @@ El siguiente paso del proceso de migración consiste en conectar los equipos cli
   
 2.  Abra un explorador de Internet, como, por ejemplo, Internet Explorer.  
   
-3.  En la barra de direcciones, escriba **http://< servername\>/Connect**y, a continuación, presione Entrar.  
+3.  En la barra de direcciones, escriba **http://<ServerName \> /Connect**y, a continuación, presione Entrar.  
   
 4.  Siga las instrucciones en pantalla para unir el equipo cliente al nuevo servidor de Windows Server Essentials.  
   

@@ -1,5 +1,5 @@
 ---
-title: 'Paso 8: Ejecutar el Analizador de procedimientos recomendados de Windows Server Essentials'
+title: 'Paso 8: Ejecución del Analizador de procedimientos recomendados de Windows Server Essentials'
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
 ms.prod: windows-server
@@ -8,16 +8,16 @@ ms.assetid: e6ba701d-7183-4c26-960e-44cc280bf3e6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e32033dafe48f5b5eac063af638c14267e82e62f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 43ec26b2a1ae4616363494a5e911c0464eacdab7
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852318"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404495"
 ---
-# <a name="step-8-run-the-windows-server-essentials-best-practices-analyzer"></a>Paso 8: Ejecutar el Analizador de procedimientos recomendados de Windows Server Essentials
+# <a name="step-8-run-the-windows-server-essentials-best-practices-analyzer"></a>Paso 8: Ejecución del Analizador de procedimientos recomendados de Windows Server Essentials
 
->Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 Cuando termine de migrar la configuración y los datos a Windows Server Essentials, debe ejecutar el Analizador de procedimientos recomendados de Windows Server Essentials (BPA) en el servidor de destino. El BPA examina un servidor que ejecuta Windows Server Essentials y presenta un informe que describe los problemas y proporciona recomendaciones para resolverlos. Las recomendaciones las desarrolla la organización de soporte técnico de Windows Server Essentials.  
   

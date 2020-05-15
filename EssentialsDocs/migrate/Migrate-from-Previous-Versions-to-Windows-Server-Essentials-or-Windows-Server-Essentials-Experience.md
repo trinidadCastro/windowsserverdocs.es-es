@@ -1,5 +1,5 @@
 ---
-title: Migración desde versiones anteriores a Windows Server R2 Essentials o a Experiencia con Windows Server Essentials
+title: Migración desde versiones anteriores a Windows Server Essentials o a Experiencia con Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
 ms.prod: windows-server
@@ -8,16 +8,16 @@ ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 55b31785de6e17232a717d534fcb21a24d9052bd
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5c73714dff2d89201ac93704105038c604f12e06
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318892"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404570"
 ---
-# <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>Migración desde versiones anteriores a Windows Server R2 Essentials o a Experiencia con Windows Server Essentials
+# <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>Migración desde versiones anteriores a Windows Server Essentials o a Experiencia con Windows Server Essentials
 
->Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Se aplica a: Windows Server 2012 R2 Essentials
 
 En esta guía se describe cómo migrar desde versiones anteriores de Windows Small Business Server y Windows Server Essentials (incluidos Windows Server Essentials, Windows Small Business Server 2011 Standard, Windows Small Business Server 2011 Essentials, Windows Small Business Server 2008 y Windows Small Business Server 2003) a Windows Server Essentials o a Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado.  
   
@@ -56,7 +56,7 @@ En esta guía se describe cómo migrar desde versiones anteriores de Windows Sma
   
 ###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>Para abrir una ventana del símbolo del sistema en el servidor de origen como administrador  
   
-1.  Haga clic en **Inicio**.  
+1.  Haga clic en **Iniciar**.  
   
 2.  En el cuadro de búsqueda, escriba **cmd**.  
   
@@ -68,7 +68,7 @@ En esta guía se describe cómo migrar desde versiones anteriores de Windows Sma
   
 2.  En la lista de resultados, haga clic con el botón secundario en **cmd** y, después, haga clic de nuevo en **Ejecutar como administrador**.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
   
 -   [Migrar datos del servidor a Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

@@ -8,16 +8,16 @@ ms.assetid: d3925f80-552d-431f-b2a6-2af202e50ca4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 710522f52791f3ee6c1c453c883f4265d08023be
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9f698111bd88619406e47db9d484c2197e91dd83
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852348"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404535"
 ---
 # <a name="step-5-enable-folder-redirection-on-the-destination-server-for-windows-server-essentials-migration"></a>Paso 5: Habilitar el redireccionamiento de carpetas en el servidor de destino para la migración a Windows Server Essentials
 
->Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 Si el redireccionamiento de carpetas está habilitado en el servidor de origen, puede habilitarlo en el servidor de destino y, a continuación, eliminar la antigua configuración de redireccionamiento de carpetas de la Directiva de grupo.  
   
@@ -39,7 +39,7 @@ Si el redireccionamiento de carpetas está habilitado en el servidor de origen, 
   
 1. En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.  
   
-2. En **Administración de directivas de grupo**, expandaaa **Bosque:** <em>NombreDominioRed</em>, expandaaa **Dominios**, expandaaa *NombreDominioRed*y **Objetos de directiva de grupo**.  
+2. En **Administración de directivas de grupo**, expandaaa **Bosque:**<em>NombreDominioRed</em>, expandaaa **Dominios**, expandaaa *NombreDominioRed*y **Objetos de directiva de grupo**.  
   
 3. Haga clic con el botón secundario en la directiva que desea eliminar y con el botón primario en **Eliminar**.  
   

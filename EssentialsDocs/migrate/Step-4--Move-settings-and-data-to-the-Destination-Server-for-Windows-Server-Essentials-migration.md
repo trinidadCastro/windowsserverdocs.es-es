@@ -8,24 +8,24 @@ ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e19f3a8333cc08568f8d437da2e35a6c64920df1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd3ba0b54e24a5fcafb72c970f05224c3606ff3a
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852358"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404526"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Paso 4: Mover la configuración y los datos al servidor de destino para la migración a Windows Server Essentials
 
->Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 Esta sección proporciona información sobre cómo migrar los datos y la configuración desde el servidor de origen. Para mover la configuración y los datos al servidor de destino, haga lo siguiente:  
   
--   [Copiar datos en el servidor de destino](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_CopyData)  
+-   [Copiar los datos en el servidor de destino](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_CopyData)  
   
--   [Configurar la red](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_Network)  
+-   [Configuración de la red](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_Network)  
   
--   [Asignar equipos permitidos a cuentas de usuario](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)  
+-   [Asignar los equipos permitidos a cuentas de usuario](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)  
   
 ##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a>Copiar datos en el servidor de destino  
  Antes de copiar los datos del servidor de origen en el servidor de destino, realice las siguientes tareas:  
@@ -48,17 +48,17 @@ Esta sección proporciona información sobre cómo migrar los datos y la configu
   
    `robocopy \\<SourceServerName>\<SharedSourceFolderName> "<PathOfTheDestination>\<SharedDestinationFolderName>" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
   
-    Donde:  
+    Dónde:  
   
-   - \<Nombreservidororigen\> es el nombre del servidor de origen  
+   - \<Nombreservidororigen \> es el nombre del servidor de origen.  
   
-   - \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen  
+   - \<Nombredecarpetadeorigencompartida \> es el nombre de la carpeta compartida en el servidor de origen.  
   
-   - \<rutaDeAccesoDeDestino\> es la ruta de acceso absoluta a la que desea trasladar la carpeta  
+   - \<RutaDeAccesoDeDestino \> es la ruta de acceso absoluta a la que desea desplace la carpeta  
   
-   - \<Nombredecarpetadedestinocompartida\> es la carpeta del servidor de destino en la que se copiarán los datos.  
+   - \<Nombredecarpetadedestinocompartida \> es la carpeta del servidor de destino en la que se copiarán los datos.  
   
-     Por ejemplo,  `robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`.  
+     Por ejemplo, `robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`.  
   
 3. Si usa Windows PowerShell, escriba el siguiente comando y presione ENTRAR.  
   

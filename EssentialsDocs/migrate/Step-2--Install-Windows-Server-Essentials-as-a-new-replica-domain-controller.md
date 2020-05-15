@@ -8,16 +8,16 @@ ms.assetid: c7ccfc34-63fd-436b-a1cd-e05810f60bfe
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 932ff1010ebe0be3b560375ac46b0372f86e3dc2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5d86f5ae25c67ffb9e0f00fc5d373e6a095df98
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852378"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404552"
 ---
 # <a name="step-2-install-windows-server-essentials-as-a-new-replica-domain-controller"></a>Paso 2: Instalar Windows Server Essentials como nuevo controlador de dominio de réplica
 
->Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 En esta sección se describe cómo instalar Windows Server Essentials y Windows Server 2012 R2 Standard (con el rol de experiencia con Windows Server Essentials habilitado) como controlador de dominio.  
   
@@ -75,7 +75,7 @@ En esta sección se describe cómo instalar Windows Server Essentials y Windows 
   
     3.  Escriba **connections** y, a continuación, presione ENTRAR.  
   
-    4.  Escriba **Connect to server** *< ServerName\>* (donde *< ServerName\>* es el nombre del servidor de destino) y, a continuación, presione Entrar.  
+    4.  Escriba **Connect to server** *<ServerName \> * (donde *<ServerName \> * es el nombre del servidor de destino) y, a continuación, presione Entrar.  
   
     5.  En el símbolo del sistema, escriba **q** y, a continuación, presione ENTRAR.  
   

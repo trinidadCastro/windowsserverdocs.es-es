@@ -8,16 +8,16 @@ ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 214f25d1743cca3693907b7a7a8380fd564d4114
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: f5696c473a8fcb04a60b9a4b6c51ac206a6ef0de
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203474"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404580"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>Paso 1: Preparación del servidor de origen para la migración a Windows Server Essentials
 
-> Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+> Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 En esta sección se explica cómo realizar copias de seguridad del servidor de origen, evaluar el estado del servidor de origen, instalar los Service Packs y las correcciones más recientes y comprobar la configuración de la red.
 

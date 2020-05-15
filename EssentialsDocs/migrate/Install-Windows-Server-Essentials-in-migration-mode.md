@@ -8,16 +8,16 @@ ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d253a550763f34409f25223e6319607b9abcd8e6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 977922d8f2af23afc058162e7455ac5099e4325b
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852588"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404571"
 ---
 # <a name="install-windows-server-essentials-in-migration-mode1"></a>Instalar Windows Server Essentials en la migración MODE1
 
->Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
+>Se aplica a: Windows Server 2012 Essentials
 
 Solo puede tener un servidor en la red que ejecute Windows Server Essentials y ese servidor debe ser un controlador de dominio para la red.  
   
@@ -30,7 +30,7 @@ Solo puede tener un servidor en la red que ejecute Windows Server Essentials y e
 3.  Une el servidor de destino al dominio existente. Tanto el servidor de origen como el servidor de destino pueden ser miembros del mismo dominio hasta que finalice el proceso de migración. Cuando haya finalizado la migración, debe quitar el servidor de origen de la red en un período de 21 días.  
   
     > [!WARNING]
-    >  Se agrega un mensaje de error al registro de eventos cada día durante el período de gracia de 21 días hasta que quite el servidor de origen de la red. El texto del mensaje dice: "La comprobación del rol FSMO detectó un estado en el entorno no compatible con la directiva de licencias. El Servidor de administración debe asumir las funciones de Active Directory de controlador del dominio principal y de maestro de nombres de dominio. Por lo tanto, debe mover las funciones de Active Directory al servidor de administración ahora. Este servidor se apagará automáticamente si no se corrige el problema en 21 días desde el momento en que se detectó el estado." Tras el período de gracia 21 días, el servidor de origen se apagará.  
+    >  Se agrega un mensaje de error al registro de eventos cada día durante el período de gracia de 21 días hasta que quite el servidor de origen de la red. El texto del mensaje dice: "La comprobación del rol FSMO detectó un estado en el entorno no compatible con la directiva de licencias. El Servidor de administración debe asumir los roles de Active Directory de controlador del dominio principal y de maestro de nomenclatura de dominios. Por lo tanto, debe mover las funciones de Active Directory al servidor de administración ahora. Este servidor se apagará automáticamente si no se corrige el problema en 21 días desde el momento en que se detectó el estado." Tras el período de gracia 21 días, el servidor de origen se apagará.  
   
 4.  Transfiera el maestro de operaciones, también conocidas como funciones FSMO (Flexible Single Master Operations) del servidor de origen al servidor de destino. Las funciones de maestro de operaciones son tareas de controlador de dominio especializadas que se usan cuando los métodos de actualización y transferencia de datos estándar no son adecuados. Cuando el servidor de destino se convierte en un controlador de dominio, debe conservar las funciones de maestro de operaciones.  
   
