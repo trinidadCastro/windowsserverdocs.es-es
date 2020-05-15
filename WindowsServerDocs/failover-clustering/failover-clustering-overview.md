@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: b646890ebc8b8e64d84e6d448ce4acb393422009
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 5b0193f18fe94f391f1bbbc41280c16e4a1bcd0c
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827718"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203506"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Conmutación de clústeres por error en Windows Server
 
@@ -32,7 +32,7 @@ La Conmutación de clústeres por error tiene muchas aplicaciones prácticas, in
 | **Descripción**                                                               |  **Planeamiento**                          |  **Implementación**       |
 | -------------                                                                |  --------------                        | --------------------- |
 | [Novedades de los clústeres de conmutación por error](whats-new-in-failover-clustering.md)    | [Planeamiento de los requisitos de hardware de los clústeres de conmutación por error y opciones de almacenamiento](clustering-requirements.md)  | [Creación de clústeres de conmutación por error](create-failover-cluster.md) |
-| [Servidor de archivos de escalabilidad horizontal para datos de aplicación](sofs-overview.md)               | [Usar volúmenes compartidos de clúster (CSV)](failover-cluster-csvs.md) | [Implementar un servidor de archivos de dos nodos](../storage/storage-spaces/storage-spaces-direct-in-vm.md) |
+| [Servidor de archivos de escalabilidad horizontal para datos de aplicación](sofs-overview.md)               | [Usar volúmenes compartidos de clúster (CSV)](failover-cluster-csvs.md) | [Implementar un servidor de archivos de dos nodos](deploy-two-node-clustered-file-server.md) |
 |  [Cuórum de clúster y grupo](../storage/storage-spaces/understand-quorum.md)   |  [Usar clústeres de máquina virtual de invitado con espacios de almacenamiento directo](../storage/storage-spaces/storage-spaces-direct-in-vm.md)       | [Preconfigurar objetos de equipo de clúster en Active Directory Domain Services](prestage-cluster-adds.md) |
 | [Reconocimiento de dominio de error](fault-domains.md)                                 |                                 | [Configuración de cuentas de clúster en Active Directory](configure-ad-accounts.md) |
 | [SMB multicanal simplificada y redes de clústeres de varias NIC](smb-multichannel.md) |                       | [Administrar el cuórum y los testigos](manage-cluster-quorum.md) |
