@@ -8,16 +8,16 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: a10cb3b27e3434ab818b41e051edb38ab77626db
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0190fc05a7bf82e35339d93accae3a998babe166
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827138"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433139"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Canales de servicio de Windows Server: LTSC y SAC
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Existen dos canales de versión principal disponibles para clientes de Windows Server, el Canal de mantenimiento a largo plazo y el Canal semianual.
 
@@ -27,7 +27,7 @@ Puedes mantener los servidores en el Canal de mantenimiento a largo plazo (LTSC)
 
 Este es el modelo de distribución con el que ya estás familiarizado (anteriormente denominado "*Rama* de mantenimiento a largo plazo"), en que se publica una nueva versión principal de Windows Server cada 2 o 3 años. Los usuarios tienen derecho a 5 años de soporte estándar y 5 años de soporte extendido. Este canal es adecuado para los sistemas que requieren una opción de mantenimiento prolongado y una estabilidad funcional. Las implementaciones de Windows Server 2016 y las versiones anteriores de Windows Server no se verán afectadas por las nuevas versiones del canal semianual. El Canal de mantenimiento a largo plazo seguirá recibiendo actualizaciones de seguridad y no relacionadas con la seguridad, pero no recibirá las nuevas funciones y funcionalidades.
 
-> [!Note]  
+> [!Note]
 > **El producto LTSC actual es Windows Server 2019**. Si quieres mantenerte en este canal, debes instalar (o seguir usando) Windows Server 2019, que puede instalarse en la opción de instalación básica de servidor o en la opción de instalación de experiencia de escritorio.
 
 ## <a name="semi-annual-channel"></a>Canal semianual
@@ -38,7 +38,7 @@ La mayoría de las funciones presentadas en el Canal semianual se acumularán en
 
 El Canal semianual estará disponible para los clientes de licencias por volumen con [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx), así como a través de Azure Marketplace u otros proveedores de servicios de hosting/nube y programas de fidelidad como, por ejemplo, Suscripciones de Visual Studio.
 
-> [!Note]  
+> [!Note]
 > **La versión actual del Canal semianual es Windows Server, versión 1903**. Si quieres poner servidores en este canal, debes instalar Windows Server, versión 1903, que puede instalarse en modo Server Core o en modo Nano Server ejecutado en un contenedor. No se admiten actualizaciones en contexto desde una versión de Canal de mantenimiento a largo plazo porque se encuentran en **canales de lanzamiento distintos**. Los lanzamientos del Canal semianual no son actualizaciones: son la siguiente versión de Windows Server en este canal.
 
 En este modelo, se identifican las versiones de Windows Server mediante el año y el mes de la versión: por ejemplo, en 2017, una versión en el mes 9 (septiembre) se identificaría como **versión 1709**. Las versiones nuevas de Windows Server en el Canal semianual aparecerán dos veces al año. El ciclo de vida de soporte técnico de cada versión es de 18 meses.
@@ -48,7 +48,7 @@ En este modelo, se identifican las versiones de Windows Server mediante el año 
 Estas son las diferencias clave a tener en cuenta:
 
 - ¿Necesitas innovar rápidamente? ¿Necesitas acceso anticipado a las funciones más recientes de Windows Server? ¿Necesitas trabajar con aplicaciones híbridas de cadencia rápida, dev-ops y tejidos Hyper-V? Si es así, debes plantearte **unirte al Canal semianual** instalando **Windows Server, versión 1903**. Como se describe en este tema, recibirás nuevas versiones dos veces al año, con 18 meses de soporte de producción estándar por versión. Se obtienen a través de licencias por volumen, Azure o servicios de suscripción de Visual Studio. Actualmente, las versiones del Canal semianual requieren licencias por volumen y Software Assurance, si vas a ejecutar el producto en producción.
-- ¿Necesitas estabilidad y previsibilidad? ¿Necesitas ejecutar máquinas virtuales y cargas de trabajo tradicionales en servidores físicos? Si es así, debes plantearte **mantener esos servidores en el Canal de mantenimiento a largo plazo**. La versión del LTSC actual es **Windows Server 2019**. Como se describe en este tema, tendrás acceso a las nuevas versiones cada 2-3 años, con 5 años de soporte estándar, seguidos de 5 años de soporte extendido por versión. Las versiones del LTSC están disponibles a través de todos los mecanismos de distribución. Las versiones del LTSC están disponibles para cualquiera, independientemente del modelo de licencias que estén usando. 
+- ¿Necesitas estabilidad y previsibilidad? ¿Necesitas ejecutar máquinas virtuales y cargas de trabajo tradicionales en servidores físicos? Si es así, debes plantearte **mantener esos servidores en el Canal de mantenimiento a largo plazo**. La versión del LTSC actual es **Windows Server 2019**. Como se describe en este tema, tendrás acceso a las nuevas versiones cada 2-3 años, con 5 años de soporte estándar, seguidos de 5 años de soporte extendido por versión. Las versiones del LTSC están disponibles a través de todos los mecanismos de distribución. Las versiones del LTSC están disponibles para cualquiera, independientemente del modelo de licencias que estén usando.
 
 La siguiente tabla resume las principales diferencias entre los canales:
 
@@ -84,13 +84,13 @@ Es probable que ya hayas elegido usar al menos una de estas opciones en función
 
 Las versiones del Canal semianual deben instalarse como una instalación limpia.
 
-- Centro de servicio de licencias por volumen (VLSC): los clientes de licencias por volumen con [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx) pueden obtener esta versión si se dirigen al [Centro de servicios de licencias por volumen](https://www.microsoft.com/Licensing/servicecenter/default.aspx) y haces clic en **Inicio de sesión**. Luego haz clic en **Descargas y claves** y busca esta versión. 
+- Centro de servicio de licencias por volumen (VLSC): los clientes de licencias por volumen con [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx) pueden obtener esta versión si se dirigen al [Centro de servicios de licencias por volumen](https://www.microsoft.com/Licensing/servicecenter/default.aspx) y haces clic en **Inicio de sesión**. Luego haz clic en **Descargas y claves** y busca esta versión.
 
 - Las versiones del Canal semianual también están disponibles en [Microsoft Azure](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview).
 
 - Suscripciones a Visual Studio: Los suscriptores de Visual Studio pueden obtener versiones del canal semianual descargándolas desde la [página de descargas del suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347). Si ya no eres un suscriptor, dirígete a [Suscripciones de Visual Studio](https://www.visualstudio.com/subscriptions/) para registrarte y luego visita la [página de descarga de suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347) tal y como se indica anteriormente. Las versiones obtenidas a través de suscripciones de Visual Studio son solo para desarrollo y pruebas.
 
-- Obtén las versiones preliminares mediante el Programa Windows Insider: las pruebas en las primeras compilaciones de Windows Server ayudan a Microsoft y a sus clientes, ya que tienen la oportunidad de detectar posibles problemas incluso antes del lanzamiento. También ofrece a los clientes una oportunidad única para influir directamente en la funcionalidad del producto.   
+- Obtén las versiones preliminares mediante el Programa Windows Insider: las pruebas en las primeras compilaciones de Windows Server ayudan a Microsoft y a sus clientes, ya que tienen la oportunidad de detectar posibles problemas incluso antes del lanzamiento. También ofrece a los clientes una oportunidad única para influir directamente en la funcionalidad del producto.
 Microsoft depende de la recepción de comentarios durante todo el proceso de desarrollo para poder realizar ajustes tan rápido como sea posible. Las primeras pruebas y los comentarios son esenciales para un modelo de lanzamiento rápido. Para involucrarse en el Programa Windows Insider, consulta la sección [Programa Windows Insider para documentos de servidor](https://docs.microsoft.com/windows-insider/at-work/).
 
 ## <a name="activating-semi-annual-channel-releases"></a>Activación de las versiones del Canal semianual
@@ -114,15 +114,15 @@ Nano Server está disponible como un sistema operativo de contenedor en el Canal
 
 Por lo general, las versiones del Canal de mantenimiento a largo plazo como Windows Server 2019 se lanzan al mismo tiempo que una nueva versión del Canal semianual, por ejemplo, Windows Server, versión 1809. Esto puede hacer un poco complicado determinar si un servidor está ejecutando una versión del Canal semianual. En lugar de mirar el número de compilación, debes mirar el nombre del producto: Las versiones del Canal semianual usan el nombre de producto Windows Server Standard o Windows Server Datacenter, sin ningún número de versión, mientras que las del Canal de mantenimiento a largo plazo incluyen un número de versión como, por ejemplo, Windows Server 2019 Datacenter.
 
->[!Note]  
+> [!Note]
 > La siguiente guía tiene como objetivo ayudar a identificar y diferenciar entre LTSC y SAC únicamente con fines de ciclo de vida y de inventario general.  No tiene como fin la compatibilidad de aplicaciones o la representación de una superficie de API específica.  Los desarrolladores de aplicaciones deben utilizar otras orientaciones para garantizar la compatibilidad correcta, ya que se pueden agregar componentes, API y funcionalidades durante el período de vida de un sistema o puede que aún no se agreguen. La [versión del sistema operativo](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version) es un punto de partida mejor para los desarrolladores de aplicaciones.
 
-Abre Powershell y usa el cmdlet Get-ItemProperty o el cmdlet Get-ComputerInfo para comprobar estas propiedades en el registro.  Junto con el número de compilación, sabrás si se trata de LTSC o SAC por la presencia o ausencia del año de publicación; es decir, 2019.  LTSC lo tiene, SAC no.  También se devolverá el momento del lanzamiento en ReleaseId o WindowsVersion (es decir, 1809), así como si la instalación es básica o con experiencia de escritorio. 
+Abre Powershell y usa el cmdlet Get-ItemProperty o el cmdlet Get-ComputerInfo para comprobar estas propiedades en el registro.  Junto con el número de compilación, sabrás si se trata de LTSC o SAC por la presencia o ausencia del año de publicación; es decir, 2019.  LTSC lo tiene, SAC no.  También se devolverá el momento del lanzamiento en ReleaseId o WindowsVersion (es decir, 1809), así como si la instalación es básica o con experiencia de escritorio.
 
 **Ejemplo de Windows Server 2019 Datacenter Edition (LTSC) con experiencia de escritorio:**
 
 ````PowerShell
-Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows NT\CurrentVersion | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
+Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion" | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
 ````
 
 ````
@@ -137,7 +137,7 @@ CurrentBuild              : 17763
 **Ejemplo de Windows Server, versión 1809 (SAC) Standard Edition con instalación básica:**
 
 ````PowerShell
-Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows NT\CurrentVersion | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
+Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion" | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
 ````
 
 ````
