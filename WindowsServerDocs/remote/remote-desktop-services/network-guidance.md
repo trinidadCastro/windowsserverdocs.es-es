@@ -1,5 +1,5 @@
 ---
-title: Guía de red
+title: Directrices de red
 description: Recomendaciones de ancho de banda para implementaciones de Escritorio remoto.
 ms.prod: windows-server
 ms.technology: remote-desktop-services
@@ -8,14 +8,14 @@ ms.date: 12/12/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 79db56d467ae0913446faebffc5a9598aae0b767
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ba084c58e725627e838c07b5b5b9849d131b2038
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852998"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203549"
 ---
-# <a name="network-guidance"></a>Guía de red
+# <a name="network-guidelines"></a>Directrices de red
 
 Cuando se usa una sesión remota de Windows, el ancho de banda disponible de la red afecta en gran medida a la calidad de la experiencia. Las diferentes aplicaciones y resoluciones de pantalla requieren configuraciones de red diferentes, por lo que es importante asegurarse de que la red está configurada para satisfacer tus necesidades.
 

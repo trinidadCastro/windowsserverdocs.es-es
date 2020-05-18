@@ -5,16 +5,16 @@ description: Preguntas más frecuentes sobre AD FS
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/17/2019
+ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a1041bdc189238c7da32896e6f867f730e392d24
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b1b6f7d38c4474ba3f69c4eac0c4569375185eb8
+ms.sourcegitcommit: 6d3f8780b67aa7865a9372cf2c1e10c79ebea8b1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80814435"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82587668"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Preguntas más frecuentes (P+F) sobre AD FS
 
@@ -72,6 +72,9 @@ AD FS admite distintas configuraciones de varios bosques y se basa en la red de 
 
 >[!NOTE]  
 >Si usas la autenticación optativa con una configuración de confianza bidireccional, asegúrate de que el usuario que es el autor de la llamada tenga el permiso "permitir la autenticación" en la cuenta de servicio de destino. 
+
+### <a name="does-ad-fs-extranet-smart-lockout-support-ipv6"></a>¿La protección de bloqueo inteligente de extranet de AD FS admite IPv6?
+Sí, se aceptan direcciones IPv6 de ubicaciones conocidas o desconocidas.
 
 
 ## <a name="design"></a>Diseño
@@ -310,3 +313,11 @@ Después de realizar una actualización a Windows Server 2019, la versión de 
 
 ### <a name="can-i-estimate-the-size-of-the-adfsartifactstore-before-enabling-esl"></a>¿Puedo calcular el tamaño de ADFSArtifactStore antes de habilitar ESL?
 Con ESL habilitado, AD FS realiza un seguimiento de la actividad de la cuenta y de las ubicaciones conocidas de los usuarios en la base de datos ADFSArtifactStore. Esta base de datos se escala en función del número de usuarios y de las ubicaciones conocidas a las que se realiza un seguimiento. Al planificar la habilitación de ESL, puedes calcular el tamaño de la base de datos ADFSArtifactStore para que crezca a una velocidad de hasta 1 GB por 100 000 usuarios. Si la granja de servidores de AD FS usa Windows Internal Database (WID), la ubicación predeterminada de los archivos de la base de datos será C:\Windows\WID\Data. Para evitar que esta unidad se llene, asegúrate de tener un mínimo de 5 GB de almacenamiento disponible antes de habilitar ESL. Además del almacenamiento en disco, planifica un aumento de la memoria de proceso total después de habilitar ESL de hasta un 1 GB de RAM adicional para los rellenados de usuarios de 500 000 o menos.
+
+### <a name="i-am-seeing-event-570-active-directory-trust-enumeration-was-unable-to-enumerate-one-of-more-domains-due-to-the-following-error-enumeration-will-continue-but-the-active-directory-identifier-list-may-not-be-correct-validate-that-all-expected-active-directory-identifiers-are-present-by-running-get-adfsdirectoryproperties-on-ad-fs-2019-what-is-the-mitigation-for-this-event"></a>Veo el evento 570 (La enumeración de confianza de Active Directory no pudo enumerar uno de varios dominios debido al siguiente error. La enumeración continuará, pero puede que la lista de identificadores de Active Directory no sea correcta. Ejecute Get-ADFSDirectoryProperties para comprobar que todos los identificadores de Active Directory previstos están presentes) en AD FS 2019. ¿Cuál es la mitigación de este evento?
+Este evento se produce cuando AD FS intenta enumerar todos los bosques en una cadena de bosques de confianza y se conecta a través de todos los bosques, pero los bosques no son de confianza. Por ejemplo, si el bosque A y el bosque B son de confianza, y el bosque B y el bosque C son de confianza, AD FS enumerará los tres bosques e intentará encontrar una relación de confianza entre el bosque A y el C. Si AD FS tiene que autenticar a los usuarios del bosque con errores, configura una relación de confianza entre el bosque de AD FS y el bosque con errores. Si AD FS no tiene que autenticar a los usuarios del bosque con errores, omite este error.
+
+### <a name="i-am-seeing-an-event-id-364-microsoftidentityserverauthenticationfailedexception-msis5015-authentication-of-the-presented-token-failed-token-binding-claim-in-token-must-match-the-binding-provided-by-the-channel-what-should-i-do-to-resolve-this"></a>Veo el mensaje "Evento 364: Microsoft.IdentityServer.AuthenticationFailedException: MSIS5015: no se pudo autenticar el token presentado. La notificación de enlace de token debe coincidir con el enlace proporcionado por el canal." ¿Qué debo hacer para solucionarlo?
+En AD FS 2016, el enlace de tokens se habilita automáticamente y provoca varios problemas conocidos con los escenarios de proxy y de federación que producen este error. Para resolverlo, ejecuta el siguiente comando de PowerShell y quita la compatibilidad con el enlace de tokens.
+
+`Set-AdfsProperties -IgnoreTokenBinding $true`

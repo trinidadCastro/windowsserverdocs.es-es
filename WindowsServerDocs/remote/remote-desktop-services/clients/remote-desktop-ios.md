@@ -8,14 +8,14 @@ ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
 manager: lizross
 ms.author: helohr
-date: 02/11/2020
+date: 05/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 686971ac3c56402bb42064e9f5babff6128c7df9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 972d85a9efed2142d16a8cb522bb095226b39f10
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80856038"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903424"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introducción al cliente de iOS
 
@@ -37,47 +37,52 @@ Sigue estos pasos para empezar a usar Escritorio remoto en un dispositivo iOS:
 
 1. Descarga el cliente de Escritorio remoto de Microsoft desde [iOS App Store](https://aka.ms/rdios) o [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8).
 2. [Configura tu equipo para que acepte conexiones remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop).
-3. Agrega una [conexión a Escritorio remoto](#add-a-remote-desktop-connection) o un [recurso remoto](#add-a-remote-resource). Usa una conexión para conectarte directamente a un equipo Windows y un recurso remoto para usar un programa de RemoteApp, un escritorio basado en sesión o un escritorio virtual publicado de forma local mediante Conexión de RemoteApp y Escritorio. Esta característica está disponible habitualmente en entornos corporativos.
+3. Agrega un [equipo](#add-a-pc) o un [área de trabajo](#add-a-workspace). Usa una conexión para conectarte directamente a un equipo Windows y un recurso remoto para usar un programa de RemoteApp, un escritorio basado en sesión o un escritorio virtual publicado de forma local mediante Conexión de RemoteApp y Escritorio. Esta característica está disponible habitualmente en entornos corporativos.
 
-### <a name="add-a-remote-desktop-connection"></a>Adición de una conexión a Escritorio remoto
+### <a name="add-a-pc"></a>Adición de un equipo
 
-Para crear una conexión a Escritorio remoto:
+Para agregar un equipo:
 
-1. En el Centro de conexión, pulsa **+** y luego **Agregar equipo o servidor**.
-2. Escribe la siguiente información de la conexión a Escritorio remoto:
+1. En el Centro de conexión, pulsa **+** y, después, pulsa **Add PC** (Agregar PC).
+2. Escribe la siguiente información:
    - **Nombre del equipo**: el nombre del equipo. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes anexar la información del puerto al nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
-   - **Nombre de usuario**: el nombre de usuario que se utiliza para acceder al equipo remoto. Puedes usar los siguientes formatos: *nombre_de_usuario*, *dominio\nombre_de_usuario* o `user_name@domain.com`. También puedes especificar si deseas que se soliciten el nombre de usuario y la contraseña.
+   - **Nombre de usuario**: el nombre de usuario que se utiliza para acceder al equipo remoto. Puedes usar los siguientes formatos: *nombre_de_usuario*, *dominio\nombre_de_usuario* o `user_name@domain.com`. También puedes elegir **Ask when required** (Preguntar cuando sea necesario) para que pida un nombre de usuario y una contraseña cuando sea necesario.
 3. También puedes establecer las siguientes opciones adicionales:
-   - **Nombre descriptivo (opcional)** : un nombre fácil de recordar para el equipo al que se conecta. Puedes utilizar cualquier cadena, pero si no especificas un nombre descriptivo, se muestra el nombre del equipo.
+   - **Nombre descriptivo (opcional)** : un nombre fácil de recordar para el equipo al que se conecta. Puedes utilizar cualquier cadena, pero si no especificas un nombre descriptivo, se muestra el nombre del equipo en su lugar.
    - **Puerta de enlace (opcional)** : la puerta de enlace de Escritorio remoto que deseas usar para conectarte a escritorios virtuales, programas RemoteApp y escritorios basados en sesión de una red corporativa interna. La información acerca de la puerta de enlace te la puede proporcionar el administrador del sistema.
    - **Sonido**: selecciona el dispositivo que se usa para audio durante la sesión remota. Puedes elegir reproducir el sonido en los dispositivos locales, en el dispositivo remoto o no reproducirlo.
    - **Intercambiar botones del ratón**: cada vez que un gesto del ratón enviaría un comando con el botón izquierdo, envía el mismo comando con el botón derecho. Es necesario si el equipo remoto está configurado para el modo de ratón para zurdos.
    - **Modo de administrador**: conéctate a una sesión de administración en un servidor que usa Windows Server 2003 o posterior.
+   - **Portapapeles**: elige si quieres redirigir el texto y las imágenes del portapapeles a tu equipo.
+   - **Almacenamiento**: elige si quieres redirigir el almacenamiento a tu equipo.
 4. Pulsa **Guardar**.
 
 ¿Es necesario editar esta configuración? Mantén presionado el escritorio que deseas editar y, a continuación, pulsa el icono de configuración.
 
-### <a name="add-a-remote-resource"></a>Adición de recursos remotos
+### <a name="add-a-workspace"></a>Adición de un área de trabajo
 
-Los recursos remotos son programas RemoteApp, escritorios basados en sesión y escritorios virtuales publicados mediante Conexión de RemoteApp y Escritorio.
+Para obtener una lista de recursos administrados a los que puedes acceder en iOS, agrega un área de trabajo; para ello, suscríbete a la fuente proporcionada por el administrador.
 
-- La dirección URL muestra el vínculo al servidor de Acceso web a Escritorio remoto que proporciona acceso a Conexión de RemoteApp y Escritorio.
-- Se enumeran los configurado conexiones de Conexión de RemoteApp y Escritorio configuradas.
+Para agregar un área de trabajo:
 
-Para agregar un recurso remoto:
+1. En el Centro de conexión, pulsa **+** y, después, pulsa **Agregar área de trabajo**.
+2. En el campo Dirección URL de la fuente, escribe la dirección URL de la fuente que quieres agregar. Puede ser una dirección URL o una dirección de correo electrónico.
+   - Si eliges una dirección URL, usa la que te proporcionó el administrador. Esta dirección URL normalmente es <https://rdweb.wvd.microsoft.com>.
+   - Si usas una dirección de correo electrónico, escribe tu dirección de correo electrónico. Esto indica al cliente que busque una dirección URL asociada a tu dirección de correo electrónico si el administrador lo ha configurado así.
+3. Pulsa **Siguiente**.
+4. Proporciona las credenciales cuando se te pidan.
+   - En **Nombre de usuario**, indica el nombre de usuario de una cuenta con permiso de acceso a los recursos.
+   - En **Contraseña**, indica la contraseña de la cuenta.
+   - También es posible que se te pida información adicional en función de cómo el administrador haya configurado la autenticación.
+5. Pulsa **Guardar**.
 
-1. En la pantalla Centro de conexión, pulsa **+** y, después, pulsa  **Add Remote Resources (Agregar recursos remotos)** .
-2. Escribe información para el recurso remoto:
-   - **Dirección URL de fuente**: la dirección URL del servidor de Acceso web a Escritorio remoto. En este campo también puedes escribir la cuenta de correo electrónico corporativa (esto indica al cliente que busque el servidor de Acceso web a Escritorio remoto asociado con la dirección de correo electrónico).
-   - **Nombre de usuario**: el nombre de usuario que se usa para servidor de Acceso web a Escritorio remoto al que se conecta.
-   - **Contraseña**la contraseña que se usa para servidor de Acceso web a Escritorio remoto al que se conecta.
-3. Pulsa **Guardar**.
+Después, el Centro de conexión mostrará los recursos remotos.
 
-Los recursos remotos se mostrarán en el Centro de conexión.
+Después de suscribirte a una fuente, el contenido de la fuente se actualizará automáticamente de forma periódica. Se pueden agregar, cambiar o quitar recursos en función de los cambios que realice el administrador.
 
 ## <a name="manage-your-user-accounts"></a>Administración de cuentas de usuario
 
-Cuando te conectas a un escritorio o a recursos remotos, puedes guardar las cuentas de usuario para volver a seleccionarlas más adelante.
+Cuando te conectas a un equipo o un área de trabajo, puedes guardar las cuentas de usuario para volver a seleccionarlas más adelante.
 
 Para crear una cuenta de usuario:
 
@@ -85,7 +90,7 @@ Para crear una cuenta de usuario:
 2. Pulsa **Agregar cuenta de usuario**.
 3. Escribe la siguiente información:
    - **Nombre de usuario**: el nombre del usuario que se guarda para usarlo con una conexión remota. El nombre de usuario se puede escribir en cualquiera de los siguientes formatos: nombre_de_usuario, dominio\nombre_de_usuario o user_name@domain.com.
-   - **Contraseña**: la contraseña del usuario que has especificado. Todas las cuentas de usuario que quieras guardar para usarlas para las conexiones remotas deben tener una contraseña asociada.
+   - **Contraseña**: la contraseña del usuario que has especificado.
 4. Pulsa **Guardar**.
 
 Para eliminar una cuenta de usuario:
@@ -101,9 +106,9 @@ Las puertas de enlace de Escritorio remoto te permiten conectarte a equipos remo
 Para configurar una puerta de enlace nueva:
 
 1. En el Centro de conexión, pulsa **Configuración** > **Puerta de enlace**.
-2. Pulsa **Agregar puerta de enlace de Escritorio remoto**.
+2. Pulsa **Agregar puerta de enlace**.
 3. Escribe la siguiente información:
-   - **Nombre del servidor**: el nombre del equipo que quieres usar como puerta de enlace. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes agregar información del puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
+   - **Nombre de puerta de enlace**: el nombre del equipo que quieres usar como puerta de enlace. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes agregar información del puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
    - **Nombre de usuario**: el nombre de usuario y la contraseña que se van a usar para la puerta de enlace de Escritorio remoto a la que se va a conectar. También puedes seleccionar **Usar credenciales de conexión** para usar el mismo nombre de usuario y la misma contraseña que para la conexión a Escritorio remoto.
 
 ## <a name="navigate-the-remote-desktop-session"></a>Desplazamiento a la sesión de Escritorio remoto

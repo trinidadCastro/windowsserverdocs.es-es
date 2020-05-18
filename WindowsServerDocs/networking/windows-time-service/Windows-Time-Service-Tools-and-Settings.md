@@ -7,12 +7,12 @@ ms.date: 02/24/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 7e7a233d17d8f2e32286a0869b283e450a34bbbc
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2f6ba34381e813247d0838853f688abf13fbd2fa
+ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860148"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605545"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Configuración y herramientas del servicio de hora de Windows
 
@@ -307,7 +307,7 @@ En las tablas siguientes, "Todas las versiones" hace referencia a las versiones 
 |**LargeSampleSkew** |Todas las versiones |Especifica el sesgo de muestras grande del registro, en segundos. Para cumplir con las especificaciones de la Comisión de Valores y Bolsa de EE. UU. (SEC), debe establecerse en tres segundos. Los eventos se registrarán para esta opción solo cuando **EventLogFlags** se configure explícitamente para el sesgo de muestra grande de 0x2. El valor predeterminado en los miembros del dominio es 3. El valor predeterminado en los servidores y clientes independientes es 3. |
 |**ResolvePeerBackOffMaxTimes** |Todas las versiones |Especifica el número máximo de veces que se debe duplicar el intervalo de espera cuando se intenta buscar repetidamente un elemento del mismo nivel para la sincronización sin éxito. Un valor de cero significa que el intervalo de espera siempre es el mínimo. El valor predeterminado en los miembros del dominio es **7**. El valor predeterminado en los servidores y clientes independientes es **7**. |
 |**ResolvePeerBackoffMinutes** |Todas las versiones |Especifica el intervalo inicial que hay que esperar, en minutos, antes de intentar buscar un elemento del mismo nivel para la sincronización. El valor predeterminado en los miembros del dominio es **15**. El valor predeterminado en los servidores y clientes independientes es **15**.  |
-|**SpecialPollInterval** |Todas las versiones |Especifica el intervalo de sondeo especial, en segundos, para los elementos del mismo nivel manuales. Cuando se habilita la marca **SpecialInterval** 0x1, W32Time usa este intervalo de sondeo en lugar de un intervalo de sondeo determinado por el sistema operativo. El valor predeterminado en los miembros del dominio es **3600**. El valor predeterminado en los servidores y clientes independientes es **604 800**.<br/><br/>Nuevo para la compilación 1702, **SpecialPollInterval** se incluye en los valores del Registro Config **MinPollInterval** y **MaxPollInterval**.|
+|**SpecialPollInterval** |Todas las versiones |Especifica el intervalo de sondeo especial, en segundos, para los elementos del mismo nivel manuales. Cuando se habilita la marca **SpecialInterval** 0x1, W32Time usa este intervalo de sondeo en lugar de un intervalo de sondeo determinado por el sistema operativo. El valor predeterminado en los miembros del dominio es **3600**. El valor predeterminado en los servidores y clientes independientes es **604 800**.<br/><br/>Nuevo en la compilación 1703: **SpecialPollInterval** se incluye en los valores del Registro Config **MinPollInterval** y **MaxPollInterval**.|
 |**SpecialPollTimeRemaining** |Todas las versiones |W32Time la mantiene. Contiene datos reservados que se usan en el sistema operativo Windows. Especifica el tiempo, en segundos, antes de que W32Time se vuelva a sincronizar después de reiniciar el equipo. Cualquier cambio en esta opción puede provocar resultados imprevisibles. El valor predeterminado en ambos miembros del dominio y en los servidores y clientes independientes se deja en blanco. |
 
 ### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver-subkey-entries"></a><a id="ntpserver"></a>Entradas de la clave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer"

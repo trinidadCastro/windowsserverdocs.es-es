@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0b7fef9c74ba5da1b94772cb5f6ff3d717a5359
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3804cfdf49d97f9b889129802e0d2c51730e3c86
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855978"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903469"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación
 Se aplica a AD FS 2016 y versiones posteriores
@@ -224,13 +224,13 @@ Host: https://webapi.com
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q... 
  ```
 
-### <a name="refresh-the-access-token"></a>Actualización del token de acceso 
- 
+### <a name="refresh-token-grant-flow"></a>Flujo de concesión de tokens de actualización
+ 
 Los parámetros access_token tienen una duración corta y deben actualizarse cuando expiren para seguir teniendo acceso a los recursos. Para hacerlo, puedes enviar otra solicitud POST al punto de conexión  `/token`  y proporcionar el parámetro refresh_token en lugar del código esta vez. Los tokens de actualización son válidos para todos los permisos para los que el cliente ha recibido el token de acceso. 
  
 Los tokens de actualización no tienen una duración especificada. Por lo general, las duraciones de los tokens de actualización son relativamente largas. Sin embargo, en algunos casos, los tokens de actualización expiran, se revocan o carecen de privilegios suficientes para la acción deseada. La aplicación necesita esperar y controlar correctamente los errores devueltos por el punto de conexión de emisión de tokens.  
  
-Aunque los tokens de actualización no se revocan cuando se usan para adquirir nuevos tokens de acceso, se espera que descartes el token de actualización anterior. La especificación OAuth 2.0 indica lo siguiente: "El servidor de autorización puede emitir un nuevo token de actualización, en cuyo caso el cliente debe descartar el token de actualización anterior y reemplazarlo por el nuevo. El servidor de autorización puede revocar el token de actualización anterior después de emitir uno nuevo para el cliente". 
+Aunque los tokens de actualización no se revocan cuando se usan para adquirir nuevos tokens de acceso, se espera que descartes el token de actualización anterior. La especificación OAuth 2.0 indica lo siguiente: "El servidor de autorización puede emitir un nuevo token de actualización, en cuyo caso el cliente debe descartar el token de actualización anterior y reemplazarlo por el nuevo. El servidor de autorización puede revocar el token de actualización anterior después de emitir uno nuevo para el cliente". AD FS emite el token de actualización cuando la vigencia del nuevo token de actualización es mayor que la vigencia anterior del token de actualización.  Para ver información adicional sobre la vigencia de los tokens de actualización de AD FS, visita [Configuración de inicio de sesión único de AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings).
  
 ```
 // Line breaks for legibility only 

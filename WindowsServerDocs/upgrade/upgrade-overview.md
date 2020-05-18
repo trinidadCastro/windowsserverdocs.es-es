@@ -1,31 +1,31 @@
 ---
-title: Información general acerca de las actualizaciones de Windows Server | Microsoft Docs
-description: Obtén información general sobre la actualización de Windows Server, junto con los aspectos a tener en cuenta antes de realizar la actualización real.
+title: Introducción a las actualizaciones de Windows Server | Microsoft Docs
+description: Información general sobre la actualización de Windows Server y qué aspectos hay que tener en cuenta antes de realizar la actualización real.
 ms.prod: windows-server
 ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/10/2019
-ms.openlocfilehash: 1ac4cbe8b9bda4ac2de2c7ad7ec27b1534c0de72
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2cf1916974b252669b64f10837d647a5cd60650a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854238"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725929"
 ---
-# <a name="overview-about-windows-server-upgrades"></a>Información general acerca de las actualizaciones de Windows Server
+# <a name="overview-of-windows-server-upgrades"></a>Introducción a las actualizaciones de Windows Server
 
 El proceso de actualización a una versión más reciente de Windows Server puede variar enormemente en función del sistema operativo desde el que se parte y el método elegido para hacerlo. Se usan los siguientes términos para distinguir las diferentes acciones que podrían tener lugar en una nueva implementación de Windows Server.
 
 - **Actualización.** También se conoce como "actualización local". Puedes pasar de una versión anterior del sistema operativo a una versión más reciente en el mismo hardware físico. **Este es el método que se tratará en esta sección.**
 
-    >[!Important]
-    >Es posible que las empresas de nube pública o privada también admitan actualizaciones locales; sin embargo, debe consultar a su proveedor de nube para obtener los detalles. Además, no podrá realizar una actualización local en ninguna instancia de Windows Server configurada en **Arranque desde VHD**.
+    > [!Important]
+    > Es posible que las empresas de nube pública o privada también admitan actualizaciones locales; sin embargo, debe consultar a su proveedor de nube para obtener los detalles. Además, no podrás realizar una actualización local en ninguna instancia de Windows Server configurada en **Arranque desde VHD**. No se admite una actualización local desde las ediciones de Windows Storage Server a Windows Server 2019. En su lugar, puedes realizar una **migración** o **instalación**.
 
 - **Instalación.** También se conoce como "instalación limpia". Puedes pasar de una versión anterior del sistema operativo a una versión más reciente y eliminar el sistema operativo anterior.
 
-- **Migración.** Para pasar de una versión anterior del sistema operativo a una más reciente, cambia a un conjunto diferente de hardware o máquina virtual.
+- **Migración.** Para pasar de una versión anterior del sistema operativo a una más reciente, cambia a otro conjunto de hardware o máquina virtual.
 
 - **Actualización gradual del sistema operativo del clúster.** El sistema operativo de los nodos de clúster se actualiza sin detener las cargas de trabajo de Hyper-V o del Servidor de archivos de escalabilidad horizontal. Esta característica permite evitar tiempos de inactividad que podrían afectar a los contratos de nivel de servicio. Para más información, consulta [Actualización gradual del sistema operativo del clúster](../failover-clustering/cluster-operating-system-rolling-upgrade.md).
 
@@ -42,4 +42,3 @@ Sin embargo, sabemos que no siempre es posible. Puedes usar el siguiente diagram
 Windows Server se puede actualizar normalmente a través de una versión (como mínimo) y, en ocasiones, incluso dos. Por ejemplo, se puede realizar la actualización local de Windows Server 2012 R2 y Windows Server 2016 a Windows Server 2019.
 
 También es posible actualizar de una versión de evaluación del sistema operativo a una versión comercial, de una versión comercial antigua a una nueva o, en algunos casos, de una edición de licencias por volumen del sistema operativo a una edición comercial normal. Para obtener más información sobre las opciones de actualización distintas de la actualización local, consulta [Opciones de actualización y conversión de Windows Server](../get-started/supported-upgrade-paths.md).
-""'

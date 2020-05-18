@@ -8,14 +8,14 @@ ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 1d6a7daa3966488c951117b083411587d13be56b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: beacd246639b5586c071a24bdd7b09c6aceeadab
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857108"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203387"
 ---
-# <a name="virtual-machine-sizing-guidance"></a>Guía de ajuste del tamaño de la máquina virtual
+# <a name="virtual-machine-sizing-guidelines"></a>Directrices de ajuste del tamaño de la máquina virtual
 
 Tanto si estás ejecutando la máquina virtual en Servicios de Escritorio remoto como en Windows Virtual Desktop, los distintos tipos de cargas de trabajo requieren diferentes configuraciones de máquina virtual (VM) del host de sesión. Para obtener la mejor experiencia posible, escala la implementación en función de las necesidades de los usuarios.
 

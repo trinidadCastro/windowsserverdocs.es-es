@@ -8,12 +8,12 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 510ad2cb1449f161658684eeceec4dbbb7ce6699
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 307da083db2e5cc76c4eda825f0e080d7f026821
+ms.sourcegitcommit: 7288aca86fc76b9ff6177a17027118d1f21707a9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857098"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380698"
 ---
 # <a name="remote-server-administration-tools"></a>Herramientas de administración remota del servidor
 
@@ -52,7 +52,7 @@ La administración remota de Windows PowerShell y el Administrador del servidor 
         
 ## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>Instalación, desinstalación y desactivación o activación de las herramientas de RSAT        
 
-### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-----r-l----ter"></a>Uso de características a petición (FoD) para instalar herramientas de RSAT específicas en la Actualización de octubre de 2018 de Windows 10 o posterior
+### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>Usa características a petición (FoD) para instalar herramientas de RSAT específicas en la Actualización de octubre de 2018 de Windows 10 o posterior.
 
 A partir de la Actualización de octubre de 2018 de Windows 10, RSAT se incluye como un conjunto de **características a petición** directamente en Windows 10. Ahora, en lugar de descargar un paquete de RSAT, solo tienes que ir a **Administrar características opcionales** en **Configuración** y hacer clic en **Agregar una característica** para ver la lista de herramientas de RSAT disponibles. Selecciona e instala las herramientas de RSAT específicas que necesites. Para ver el progreso de la instalación, haz clic en el botón **Atrás** para ver el estado en la página **Administrar características opcionales**.
         
@@ -91,7 +91,7 @@ Si tienes una versión de Windows 10 anterior a la Actualización de octubre de
 
 5.  La instalación tardará unos minutos en completarse.    
         
-##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-----aft----r-rsat-package-install"></a>Para desinstalar Herramientas de administración remota del servidor para Windows 10 (después de instalar el paquete de RSAT)
+##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>Para desinstalar Herramientas de administración remota del servidor para Windows 10 (después de instalar el paquete de RSAT)
         
 1. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows**y **Panel de control**.
 
@@ -103,9 +103,9 @@ Si tienes una versión de Windows 10 anterior a la Actualización de octubre de
 
 5. Cuando se le pregunte si está seguro de que desea desinstalar la actualización, haga clic en **Sí**.
    S
-   ##### <a name="to-turn----off-specific-tools-after-rsat-package-in----tall"></a>Para desactivar herramientas específicas (después de instalar el paquete de RSAT)
+   ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>Para desactivar herramientas específicas (después de instalar el paquete de RSAT)
         
-6. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows** y, a continuación, en **Panel de control**.
+6. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows**y **Panel de control**.
 
 7. Haga clic en **Programas**y, a continuación, en **Programas y características** ; haga clic en **Activar o desactivar las características de Windows**.
 
@@ -131,7 +131,7 @@ Las herramientas instaladas como parte de Herramientas de administración remota
 
 En Herramientas de administración remota del servidor para Windows 10, se obtiene acceso a todas las herramientas de administración del servidor basadas en GUI, como cuadros de diálogo y complementos de MMC, desde el menú **Herramientas** de la consola del Administrador del servidor. Aunque el equipo que ejecuta Herramientas de administración remota del servidor para Windows 10 ejecute un sistema operativo basado en cliente, después de instalar las herramientas, el Administrador del servidor (incluido con Herramientas de administración remota del servidor para Windows 10) se abrirá automáticamente de manera predeterminada en el equipo cliente. Ten en cuenta que no se ejecuta ninguna página **Servidor local** de la consola del Administrador del servidor en el equipo cliente.
 
-##### <a name="to-start-server-manager-on-a-clien-----co----puter"></a>Para iniciar el Administrador del servidor en un equipo cliente
+##### <a name="to-start-server-manager-on-a-client-computer"></a>Para iniciar el Administrador del servidor en un equipo cliente
 
 1.  En el menú **Inicio** , haga clic en **Todas las aplicaciones**y en **Herramientas administrativas**.
 

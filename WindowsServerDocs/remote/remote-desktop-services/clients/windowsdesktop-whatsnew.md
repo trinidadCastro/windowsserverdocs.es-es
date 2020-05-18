@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/14/2020
+ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: de7c685e544fd0bb193f995aeff3a20a29bd6db5
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81279701"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235052"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -26,14 +26,32 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |Version  |
 |-----------|---------|
-|Público     |1.2.790  |
-|Insider    |1.2.940  |
+|Público     |1.2.945  |
+|Insider    |1.2.1009 |
 
-## <a name="updates-for-version-12940"></a>Actualizaciones de la versión 1.2.940
+## <a name="updates-for-version-121009"></a>Actualizaciones de la versión 1.2.1009
 
-*Fecha de publicación: 14/04/2020*
+*Fecha de publicación: 12/05/2020*
 
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZU), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZV), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tM6I)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wseE), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wnf3), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wCIB)
+
+- Se ha agregado un nuevo cuadro de diálogo **Connection information** (Información de conexión), que proporciona detalles del cliente, la red y el servidor de las sesiones de escritorio y aplicación. Puedes acceder al cuadro de diálogo desde la barra de conexión en el modo de pantalla completa, o desde el menú del sistema cuando estés dentro de la ventana.
+- Las sesiones de escritorio iniciadas en modo de ventana ahora se maximizan siempre en lugar de pasar al modo de pantalla completa al maximizar la ventana. Usa la opción **Pantalla completa** del menú sistema para entrar en el modo de pantalla completa.
+- El aviso de cancelación de suscripción ahora muestra un icono de advertencia y muestra los nombres de área de trabajo como una lista con viñetas.
+- Se ha agregado una sección de detalles a otros cuadros de diálogo de error para ayudar a diagnosticar problemas.
+- Se ha agregado una marca de tiempo a la sección de detalles de los cuadros de diálogo de error.
+- Se ha corregido un problema por el que la opción del archivo RDP **desktop size id** no funcionaba correctamente.
+- Se ha corregido un problema por el que la opción de pantalla **Update the resolution on resize** (Actualizar la resolución al cambiar de tamaño) no se aplicaba después de iniciar la sesión.
+- Se han corregido los problemas de localización en el panel de configuración del escritorio.
+- Se ha corregido el tamaño del recuadro de enfoque al pasar con el tabulador por los controles del panel de configuración del escritorio.
+- Se ha corregido un problema que hacía que los nombres de los recursos resultaran difíciles de leer en el modo de contraste alto.
+- Se ha corregido un problema que hacía que la notificación de actualización en el centro de actividades se mostrara más de una vez al día.
+
+## <a name="updates-for-version-12945"></a>Actualizaciones de la versión 1.2.945
+
+*Fecha de publicación: 28/04/2020*
+
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNM), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNO), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vuSV)
 
 - Se han agregado nuevas opciones de configuración de pantalla para las conexiones de escritorio disponibles al hacer clic con el botón derecho en un icono de escritorio del centro de conexiones.
   - Ahora hay tres opciones de configuración de pantalla: **todas las pantallas**, **pantalla única** y **pantallas seleccionadas**.
@@ -42,8 +60,11 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
   - Se ha agregado la nueva opción **Single display when windowed** (Pantalla única para varias ventanas) para los modos de todas las pantallas y pantallas seleccionadas. Esta opción cambia la sesión automáticamente a una pantalla única al salir del modo de pantalla completa y vuelve automáticamente a varias pantallas al maximizar la ventana.
 - Hemos agregado un nuevo grupo de **Configuración de pantalla** al menú del sistema que aparece al hacer clic con el botón derecho en la barra de títulos de una sesión de escritorio en ventanas. Esto te permitirá cambiar algunas opciones de configuración de forma dinámica durante una sesión. Por ejemplo, puedes cambiar las nuevas opciones **Single display mode when windowed** (Modo de pantalla única para varias ventanas) y **Maximize to current displays** (Maximizar a pantallas actuales).
 - Al salir de la pantalla completa, la ventana de sesión volverá a la que era su ubicación original cuando se activó por primera vez a la pantalla completa.
+- La actualización en segundo plano de las áreas de trabajo se ha cambiado a cada cuatro horas en lugar de cada hora. Ahora se produce una actualización automáticamente al iniciar el cliente.
 - Al restablecer los datos de usuario desde la página Acerca de, ahora se redirige al centro de conexión al finalizar, en lugar de cerrar el cliente.
+- Se ha reordenado los elementos del menú del sistema de las conexiones de escritorio y el tema de ayuda ahora apunta a la documentación del cliente.
 - Se han solucionado algunos problemas de accesibilidad con la navegación por pestañas y los lectores de pantalla.
+- Se ha corregido un problema que hacía que el cuadro de diálogo de autenticación de Azure Active Directory apareciera detrás de la ventana de sesión.
 - Se ha corregido un problema de parpadeo y reducción al arrastrar una ventana de sesión de escritorio entre las pantallas de distintos factores de escala.
 - Se corrigió un error que se producía al redirigir las cámaras.
 - Se han corregido varios bloqueos para mejorar la confiabilidad.

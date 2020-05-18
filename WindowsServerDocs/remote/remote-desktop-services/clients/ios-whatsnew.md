@@ -7,21 +7,44 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/03/2020
+ms.date: 05/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e33ef5f187672d948b6734a9ae7f68b54b7608
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0943379b8f251d1548a0aa920a95931dc39a0624
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854658"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903448"
 ---
 # <a name="whats-new-in-the-ios-client"></a>Novedades del cliente de iOS
 
 El [cliente de Escritorio remoto para iOS](remote-desktop-ios.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. En esta página encontrarás las actualizaciones más recientes.
 
->[!IMPORTANT]
->Nos comprometemos a hacer que esta aplicación sea el mejor cliente de Escritorio remoto para iOS y a valorar tus comentarios. Puedes notificar cualquier problema en **Ayuda** > **Notificar un problema**.
+## <a name="how-to-report-issues"></a>Notificación de problemas
+
+Nos comprometemos a hacer que esta aplicación sea el mejor cliente posible de Escritorio remoto para iOS y, por ello, apreciamos tus comentarios. Puedes notificar cualquier problema en **Ayuda** > **Notificar un problema**.
+
+## <a name="updates-for-version-1007"></a>Actualizaciones de la versión 10.0.7
+
+*Fecha de publicación: 29/4/2020*
+
+En esta actualización, se ha agregado la capacidad de ordenar la vista de lista de equipos (disponible en iPhone) por nombre u hora de la última conexión.
+
+## <a name="updates-for-version-1006"></a>Actualizaciones de la versión 10.0.6
+
+*Fecha de publicación: 31/3/2020*
+
+Es el momento de una actualización rápida con algunas correcciones de errores. Las novedades de esta versión son las siguientes:
+
+- Se han corregido varios problemas de accesibilidad de VoiceOver.
+- Se ha corregido un problema por el que los usuarios no podían conectarse con credenciales en turco.
+- Las sesiones que se muestran en la interfaz de usuario del conmutador ahora se ordenan por fecha y hora de inicio.
+- Al seleccionar el botón atrás en el Centro de conexión, ahora se vuelve a la última sesión activa.
+- Los mouse de Swiftpoint ahora se liberan al cambiar del cliente a otra aplicación.
+- Se ha mejorado la interoperabilidad con el servicio Windows Virtual Desktop.
+- Se han corregido bloqueos que aparecían en los informe de errores.
+
+Agradecemos todos los comentarios que nos enviasteis a través de App Store, en la aplicación y por correo electrónico. Queremos dar las gracias especialmente a todos los usuarios que trabajaron con nosotros para diagnosticar los problemas.
 
 ## <a name="updates-for-version-1005"></a>Actualizaciones para la versión 10.0.5
 

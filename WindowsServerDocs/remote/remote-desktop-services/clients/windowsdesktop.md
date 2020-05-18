@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/04/2020
+ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a04d6058b40d87dba7116760bbab164979435ab
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 368dc3889c5275512e345c26fcef504c6ceaa8c2
+ms.sourcegitcommit: d06650cfab2972551c3a269b3271596f55c1bd3b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861308"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726704"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introducción al cliente de escritorio de Windows
 
@@ -47,14 +47,14 @@ También puedes buscar manualmente nuevas actualizaciones para el cliente:
 
 1. En el centro de conexiones, pulsa en el menú de desbordamiento ( **...** ) en la barra de comandos de la parte superior del cliente.
 2. Selecciona **Acerca de** en el menú desplegable.
-3. Pulsa en **Buscar actualizaciones**.
+3. El cliente busca actualizaciones automáticamente.
 4. Si hay una actualización disponible, pulsa en **Instalar actualización** para actualizar el cliente.
 
-## <a name="feeds"></a>Fuentes
+## <a name="workspaces"></a>Áreas de trabajo
 
-Obtén la lista de recursos administrados a los que puedes tener acceso, como aplicaciones y equipos de escritorio, al suscribirte a la fuente que te proporcionó el administrador. Al suscribirte, los recursos están disponibles en el equipo local. Actualmente, el cliente del escritorio de Windows admite los recursos publicados desde el escritorio virtual de Windows.
+Obtén la lista de recursos administrados a los que puedes tener acceso, como aplicaciones y equipos de escritorio, al suscribirte al área de trabajo que te proporcionó el administrador. Al suscribirte, los recursos están disponibles en el equipo local. Actualmente, el cliente del escritorio de Windows admite los recursos publicados desde el escritorio virtual de Windows.
 
-### <a name="subscribe-to-a-feed"></a>Suscribirse a una fuente
+### <a name="subscribe-to-a-workspace"></a>Suscripción a un área de trabajo
 
 1. Desde la página principal del cliente, también conocida como Centro de conexiones, pulsa en **Suscribirse**.
 2. Inicia sesión con tu cuenta de usuario cuando se te solicite.
@@ -83,11 +83,15 @@ Acceso al panel de detalles:
 
 Después de suscribirte, el área de trabajo se actualizará automáticamente de forma periódica. Se pueden agregar, cambiar o quitar recursos en función de los cambios que realiza el administrador.
 
-También puedes buscar manualmente las actualizaciones de los recursos cuando sea necesario. Para ello, selecciona **Actualizar ahora** en el panel de detalles.
+También puedes buscar manualmente las actualizaciones de los recursos cuando sea necesario. Para ello, selecciona **Actualizar** en el panel de detalles.
 
-### <a name="unsubscribe-from-a-feed"></a>Cancelar la suscripción a una fuente
+### <a name="refreshing-a-workspace"></a>Actualización de un área de trabajo
 
-En esta sección se indica el proceso para cancelar tu suscripción a una fuente. Puedes cancelar la suscripción para suscribirte de nuevo con una cuenta diferente o quitar los recursos del sistema.
+Para actualizar manualmente un área de trabajo, selecciona **Actualizar** en el menú de desbordamiento ( **...** ) situado junto al área de trabajo.
+
+### <a name="unsubscribe-from-a-workspace"></a>Cancelación de una suscripción a un área de trabajo
+
+En esta sección se indica el proceso para cancelar tu suscripción a un área de trabajo. Puedes cancelar la suscripción para suscribirte de nuevo con una cuenta diferente o quitar los recursos del sistema.
 
 1. En el centro de conexión, pulsa el menú de desbordamiento ( **...** ) que hay al lado del área de trabajo.
 2. Selecciona **Cancelar suscripción** en el menú desplegable.
@@ -103,15 +107,20 @@ Puedes configurar algunas de las opciones de configuración de los recursos de e
 
 El cliente usará las opciones que configuró el administrador, a menos que se desactive la opción **Usar configuración predeterminada**. Esto te permite configurar las siguientes opciones:
 
-- La opción **Use multiple displays** (Usar varias pantallas) cambia la sesión de escritorio entre el uso de una o varias pantallas.
-- La opción **Select the displays to use for the session** (Seleccionar las pantallas que se van a usar para la sesión) especifica qué pantallas locales se usarán para la sesión. Todas las pantallas seleccionadas deben ser adyacentes entre sí. Esta configuración se deshabilita automáticamente cuando se usa una sola pantalla.
-- La opción **Start in full screen** (Iniciar en pantalla completa) determina si la sesión se iniciará en modo de pantalla completa o de ventana. Esta configuración se habilita automáticamente cuando se usan varias pantallas.
-- La opción **Update the resolution on resize** (Actualizar la resolución al cambiar el tamaño) hace que la resolución del Escritorio remoto se actualice automáticamente al cambiar el tamaño de la sesión en modo de ventana. Cuando está deshabilitada, la sesión siempre permanece en la resolución que especifiques en **Resolución**. Esta configuración se habilita automáticamente cuando se usan varias pantallas.
-- La opción **Resolución** te permite especificar la resolución del escritorio remoto. La sesión conservará esta resolución durante toda la duración. Esta configuración se deshabilita automáticamente si la resolución está establecida para actualizarse al cambiar el tamaño.
-- La opción **Change the size of the text and apps** (Cambiar el tamaño del texto y las aplicaciones) especifica el tamaño del contenido de la sesión. Esta configuración solo se aplica al conectarse con Windows 8.1 y versiones posteriores o Windows Server 2012 R2 y versiones posteriores. Esta configuración se deshabilita automáticamente si la resolución está establecida para actualizarse al cambiar el tamaño.
-- La opción **Fit session to window** (Ajustar sesión a la ventana) determina cómo se muestra la sesión cuando la resolución del escritorio remoto difiere del tamaño de la ventana local. Cuando se habilite, se cambiará el tamaño del contenido de la sesión para ajustarse dentro de la ventana, a la vez que se conservará la relación de aspecto de la sesión. Cuando se deshabilite, las barras de desplazamiento o las áreas negras se mostrarán cuando la resolución y el tamaño de la ventana no coincidan.
+- **Display configuration** (Configuración de pantalla): selecciona las pantallas que se van a usar para la sesión de escritorio y afecta a la configuración adicional disponible.
+  - **All displays** (Todas las pantallas): garantiza que la sesión siempre usa todas las pantallas locales, aunque algunas de ellas se agreguen o se quiten más adelante.
+  - **Single display** (Pantalla única) garantiza que la sesión siempre usará una sola pantalla y permite configurar sus propiedades.
+  - **Select displays** (Seleccionar pantallas) permite elegir las pantallas que se usarán en la sesión y ofrece la opción de cambiar dinámicamente la lista de pantallas durante la sesión.
+- La opción **Select the displays to use for the session** (Seleccionar las pantallas que se van a usar para la sesión) especifica qué pantallas locales se usarán para la sesión. Todas las pantallas seleccionadas deben ser adyacentes entre sí. Esta opción solo está disponible en el modo **Select display** (Seleccionar pantalla).
+- **Maximize to current displays** (Maximizar a las pantallas actuales) determina qué pantallas usarán las sesiones al pasar al modo de pantalla completa. Cuando está habilitada, la sesión pasa a pantalla completa en las pantallas tocadas por la ventana de sesión. Esto te permite cambiar las pantallas durante la sesión. Cuando está deshabilitada, la sesión pasa a pantalla completa en las mismas pantallas en las que estaba la última vez que pasó a pantalla completa. Esta opción solo está disponible en el modo **Select display** (Seleccionar pantalla); en todos los demás, está deshabilitada.
+- **Single display when windowed** (Pantalla única en ventana) determina qué pantallas están disponibles en la sesión al salir de la pantalla completa. Cuando está habilitada, la sesión cambia a una sola pantalla en el modo de ventana. Cuando está deshabilitada, la sesión conserva las mismas pantallas en el modo de ventana que en el modo de pantalla completa. Esta opción solo está disponible en los modos **All displays** (Todas las pantallas) y **Select display** (Seleccionar pantalla), y está deshabilitada en todos los demás.
+- La opción **Start in full screen** (Iniciar en pantalla completa) determina si la sesión se iniciará en modo de pantalla completa o de ventana. Esta opción solo está disponible en el modo **Select display** (Seleccionar pantalla) y está deshabilitada en todos los demás.
+- La opción **Fit session to window** (Ajustar sesión a la ventana) determina cómo se muestra la sesión cuando la resolución del escritorio remoto difiere del tamaño de la ventana local. Cuando se habilite, se cambiará el tamaño del contenido de la sesión para ajustarse dentro de la ventana, a la vez que se conservará la relación de aspecto de la sesión. Cuando se deshabilite, las barras de desplazamiento o las áreas negras se mostrarán cuando la resolución y el tamaño de la ventana no coincidan. Esta opción está disponible en todos los modos.
+- La opción **Update the resolution on resize** (Actualizar la resolución al cambiar de tamaño) hace que la resolución del escritorio remoto se actualice automáticamente al cambiar el tamaño de la sesión en el modo de ventana. Cuando está deshabilitada, la sesión siempre permanece en la resolución que especifiques en **Resolución**. Esta opción solo está disponible en el modo **Select display** (Seleccionar pantalla) y está deshabilitada en todos los demás.
+- La opción **Resolución** te permite especificar la resolución del escritorio remoto. La sesión conservará esta resolución durante toda la duración. Esta opción solo está disponible en el modo **Single display** (Pantalla única) y cuando **Update the resolution on resize** (Actualizar la resolución al cambiar de tamaño) está deshabilitada.
+- La opción **Change the size of the text and apps** (Cambiar el tamaño del texto y las aplicaciones) especifica el tamaño del contenido de la sesión. Esta configuración solo se aplica al conectarse con Windows 8.1 y versiones posteriores o Windows Server 2012 R2 y versiones posteriores. Esta opción solo está disponible en el modo **Single display** (Pantalla única) y cuando **Update the resolution on resize** (Actualizar la resolución al cambiar de tamaño) está deshabilitada.
 
-## <a name="provide-feedback"></a>Proporcionar comentarios
+## <a name="provide-feedback"></a>Proporciona comentarios
 
 ¿Tienes alguna sugerencia de característica o quieres informar de un problema? Para indicárnoslo, utiliza el [Centro de opiniones](feedback-hub://?tabid=2&contextid=883). También puedes acceder al Centro de opiniones a través del cliente:
 
