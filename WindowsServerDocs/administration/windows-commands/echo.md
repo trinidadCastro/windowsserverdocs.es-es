@@ -1,6 +1,6 @@
 ---
 title: echo
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando echo, que muestra mensajes o activa o desactiva la característica de repetición de comandos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,45 +9,45 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05b42e4df38c3eafd3dcf3a92ced7b7b2c088e2b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c87a6cb5e3fb52af9a13a7be35218e35b24d7ddc
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720868"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436930"
 ---
 # <a name="echo"></a>echo
 
-
-
 Muestra mensajes o activa o desactiva la característica de repetición de comandos. Si se usa sin parámetros, **echo** muestra el valor de eco actual.
-
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-echo [<Message>]
+echo [<message>]
 echo [on | off]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|[on \| OFF]|Activa o desactiva la característica de repetición de comandos. El eco de comandos está activado de forma predeterminada.|
-|\<> de mensajes|Especifica el texto que se va a mostrar en la pantalla.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| en | habilitar | Activa o desactiva la característica de repetición de comandos. El eco de comandos está activado de forma predeterminada. |
+| `<message>` | Especifica el texto que se va a mostrar en la pantalla. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Observaciones
 
--   El comando **echo** *Message* es especialmente útil cuando se desactiva el **eco** . Para mostrar un mensaje con varias líneas de longitud sin mostrar ningún comando, puede incluir varios comandos de *mensaje* de **eco** después del comando **echo off** en el programa por lotes.
--   Cuando se desactiva el **eco** , el símbolo del sistema no aparece en la ventana del símbolo del sistema. Para mostrar el símbolo del sistema, escriba **echo.**
--   Si se usa en un archivo por lotes, el **eco** y el **eco** no afectan a la configuración del símbolo del sistema.
--   Para evitar que se repita un comando determinado en un archivo por lotes, inserte una arroba (@) delante del comando. Para evitar que se repitan todos los comandos en un archivo por lotes, incluya el comando **echo off** al principio del archivo.
--   Para mostrar una canalización**|**() o un carácter de**<** redireccionamiento (o **>**) cuando use el **eco**, use un símbolo de intercalación (^) inmediatamente antes del carácter de canalización o redirección (por ejemplo **^|** **^>**,, o **^<**). Para mostrar un símbolo de intercalación, escriba dos intercalaciones consecutivas (**^^**).
+- El `echo <message>` comando es especialmente útil cuando se desactiva el **eco** . Para mostrar un mensaje de varias líneas sin mostrar ningún comando, puede incluir varios `echo <message>` comandos después del comando **echo off** en el programa por lotes.
 
-## <a name="examples"></a>Ejemplos
+- Una vez desactivado el **eco** , el símbolo del sistema no aparece en la ventana del símbolo del sistema. Para mostrar el símbolo del sistema, escriba **echo.**
+
+- Si se usa en un archivo por lotes, la opción **eco** y **eco** no afecta a la configuración en el símbolo del sistema.
+
+- Para evitar que se repita un comando determinado en un archivo por lotes, inserte un `@` Inicio de sesión delante del comando. Para evitar que se repitan todos los comandos en un archivo por lotes, incluya el comando **echo off** al principio del archivo.
+
+- Para mostrar una canalización ( `|` ) o un carácter de redireccionamiento ( `<` o `>` ) cuando use el **eco**, use un símbolo de intercalación ( `^` ) inmediatamente antes del carácter de canalización o redirección. Por ejemplo, `^|` , `^>` o `^<` ). Para mostrar un símbolo de intercalación, escriba dos intercalaciones consecutivas ( `^^` ).
+
+### <a name="examples"></a>Ejemplos
 
 Para mostrar la configuración de **eco** actual, escriba:
 
@@ -62,12 +62,12 @@ echo.
 ```
 
 > [!NOTE]
-> No incluya un espacio antes del punto. De lo contrario, se mostrará el punto en lugar de una línea en blanco.
+> No incluya un espacio antes del período. De lo contrario, el punto aparece en lugar de una línea en blanco.
 
 Para evitar que se repitan los comandos en el símbolo del sistema, escriba:
 
 ```
-echo off 
+echo off
 ```
 
 > [!NOTE]

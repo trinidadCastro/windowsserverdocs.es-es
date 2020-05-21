@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8a0a4608a16df0336b90ea5df281278ae47a503
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9b3ae6858a70d22b3ad928474648a3b2ee156235
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722702"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436240"
 ---
 # <a name="query-termserver"></a>consulta termserver
 
@@ -29,7 +29,7 @@ Muestra una lista de todos los servidores host de sesión de Escritorio remoto (
 > query termserver [<ServerName>] [/domain:<Domain>] [/address] [/continue]
 > ```
 > ### <a name="parameters"></a>Parámetros
-> 
+>
 > |    Parámetro     |                                                                        Descripción                                                                         |
 > |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > |   <ServerName>   |                                               Especifica el nombre que identifica el servidor host de sesión de escritorio remoto.                                               |
@@ -37,8 +37,8 @@ Muestra una lista de todos los servidores host de sesión de Escritorio remoto (
 > |     /Address     |                                                  Muestra las direcciones de red y nodo para cada servidor.                                                  |
 > |    /Continue     |                                              Impide que se realice una pausa después de mostrar cada pantalla de información.                                               |
 > |        /?        |                                                            Muestra la ayuda en el símbolo del sistema.                                                            |
-> 
-> ## <a name="remarks"></a>Observaciones
+>
+>#### <a name="remarks"></a>Observaciones
 > - **query termserver** busca en la red todos los servidores host de sesión de escritorio remoto asociados y devuelve la siguiente información:
 >   - El nombre del servidor.
 >   - La red (y la dirección del nodo si se usa la opción/Address)
@@ -60,6 +60,6 @@ Muestra una lista de todos los servidores host de sesión de Escritorio remoto (
 >   query termserver Server3 /address
 >   ```
 >   ## <a name="additional-references"></a>Referencias adicionales
->   - [Referencia de comandos de servicios de escritorio remoto de](command-line-syntax-key.md)
->   [consulta](query.md)
->   de clave de sintaxis de línea de comandos[(Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+>   - Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+>    [consulta](query.md) 
+>    de [Referencia de comandos de servicios de escritorio remoto (Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)

@@ -1,65 +1,59 @@
 ---
-ms.assetid: 62d77150-1d9e-4069-ab4a-299f33024912
-title: Fsutil repair
+title: fsutil repair
+description: Tema de referencia del comando fsutil repair, que administra y supervisa las operaciones de reparación de recuperación automática de NTFS.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.technology: storage
-audience: IT Pro
+ms.assetid: 62d77150-1d9e-4069-ab4a-299f33024912
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a7931314f7064a62e45d2319e48d58162ab0e11
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 449bd39b6b2df0e302085b71ef9db87d2020b0f0
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725462"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435760"
 ---
-# <a name="fsutil-repair"></a>Fsutil repair
-> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2 y Windows 7
+# <a name="fsutil-repair"></a>fsutil repair
 
-Administra y supervisa las operaciones de reparación de recuperación automática de NTFS.
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8
 
-
+Administra y supervisa las operaciones de reparación de recuperación automática de NTFS. NTFS de recuperación automática intenta corregir los daños del sistema de archivos NTFS en línea, sin necesidad de ejecutar **CHKDSK. exe** . Para obtener más información, consulte [NTFS de recuperación automática](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10)).
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-fsutil repair [enumerate] <volumepath> [<LogName>]
-fsutil repair [initiate] <VolumePath> <FileReference>
-fsutil repair [query] <VolumePath>
-fsutil repair [set] <VolumePath> <Flags>
-fsutil repair [wait][<WaitType>] <VolumePath>
+fsutil repair [enumerate] <volumepath> [<logname>]
+fsutil repair [initiate] <volumepath> <filereference>
+fsutil repair [query] <volumepath>
+fsutil repair [set] <volumepath> <flags>
+fsutil repair [wait][<waittype>] <volumepath>
 
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------------|---------------|
-|enumerar|Enumera los enteros del registro de daños de un volumen.|
-|\<> VolumePath|Especifica el volumen como el nombre de la unidad seguido de dos puntos.|
-|\<LogName>|$Corrupt: el conjunto de daños confirmados en el volumen.<br />$Verify: un conjunto de posibles daños no comprobados en el volumen.|
-|lación|Inicia la recuperación automática de NTFS.|
-|\<> FileReference|Especifica el identificador de archivo específico del volumen NTFS (número de referencia de archivo). La referencia de archivo incluye el número de segmento del archivo.|
-|Query|Consulta el estado de recuperación automática del volumen NTFS.|
-|set|Establece el estado de recuperación automática del volumen.|
-|\<Marcas>|Especifica el método de reparación que se va a usar al establecer el estado de recuperación automática del volumen.<p>El parámetro **Flags** se puede establecer en tres valores:<p>-   **0x01**: habilita la reparación general.<br />-   **0x09**: advierte sobre la posible pérdida de datos sin reparación.<br />-   **0x00**: deshabilita las operaciones de reparación de recuperación automática de NTFS.|
-|state|Consulta el estado de daños del sistema o de un volumen determinado.|
-|wait|Espera a que se completen las reparaciones. Si NTFS ha detectado un problema en un volumen en el que está realizando reparaciones, esta opción permite que el sistema espere hasta que se complete la reparación antes de ejecutar los scripts pendientes.|
-|[WaitType {0&#124;1}]|Indica si se debe esperar a que se complete la reparación actual o esperar a que se completen todas las reparaciones. *WaitType* se puede establecer en los siguientes valores:<p>-   **0**: espera a que se completen todas las reparaciones.  (valor predeterminado)<br />-   **1**: espera a que se complete la reparación actual.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| enumerar | Enumera los enteros del registro de daños de un volumen. |
+| `<logname>` | Puede ser `$corrupt` , el conjunto de daños confirmados en el volumen o `$verify` , un conjunto de posibles daños no comprobados en el volumen. |
+| lación | Inicia la recuperación automática de NTFS. |
+| `<filereference>` | Especifica el identificador de archivo específico del volumen NTFS (número de referencia de archivo). La referencia de archivo incluye el número de segmento del archivo. |
+| Query | Consulta el estado de recuperación automática del volumen NTFS. |
+| set | Establece el estado de recuperación automática del volumen. |
+| `<flags>` | Especifica el método de reparación que se va a usar al establecer el estado de recuperación automática del volumen.<p>Este parámetro se puede establecer en tres valores:<ul><li>**0x01** : habilita la reparación general.</li><li>**0x09** : advierte sobre la posible pérdida de datos sin reparación.</li><li>**0x00** : deshabilita las operaciones de reparación de recuperación automática de NTFS.</li></ul> |
+| state | Consulta el estado de daños del sistema o de un volumen determinado. |
+| wait | Espera a que se completen las reparaciones. Si NTFS ha detectado un problema en un volumen en el que está realizando reparaciones, esta opción permite que el sistema espere hasta que se complete la reparación antes de ejecutar los scripts pendientes. |
+| `[waittype {0|1}]` | Indica si se debe esperar a que se complete la reparación actual o esperar a que se completen todas las reparaciones. El parámetro *waittype* se puede establecer en los valores siguientes:<ul><li>**0** : espera a que se completen todas las reparaciones.  (valor predeterminado)</li><li>**1** : espera a que se complete la reparación actual.</li></ul> |
 
-## <a name="remarks"></a>Observaciones
-
--   NTFS de recuperación automática intenta corregir los daños del sistema de archivos NTFS en línea, sin necesidad de ejecutar **CHKDSK. exe** . Esta característica se presentó en Windows Server 2008. Para obtener más información, vea [recuperación automática de NTFS](https://go.microsoft.com/fwlink/?LinkID=165401).
-
-## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
 
 Para enumerar los daños confirmados de un volumen, escriba:
 
 ```
-fsutil repair enumerate C: $Corrupt 
+fsutil repair enumerate C: $Corrupt
 ```
 
 Para habilitar la reparación de recuperación automática en la unidad C, escriba:
@@ -75,10 +69,9 @@ fsutil repair set c: 0
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
+
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[Fsutil](Fsutil.md)
+- [fsutil](fsutil.md)
 
-[Recuperación automática de NTFS](https://go.microsoft.com/fwlink/?LinkID=165401)
-
-
+- [NTFS de recuperación automática](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))

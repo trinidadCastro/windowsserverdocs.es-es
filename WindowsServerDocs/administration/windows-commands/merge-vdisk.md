@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bfcdde34d2c7dd6146222d04e982aa1ec8009c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cec8eeaa80436dbb34eb055950169b6895efa544
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723991"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437150"
 ---
 # <a name="merge-vdisk"></a>Merge vDisk
 
@@ -28,12 +28,12 @@ Combina un disco duro virtual (VHD) de diferenciación con su VHD primario corre
 > merge vdisk depth=<n>
 > ```
 > #### <a name="parameters"></a>Parámetros
-> 
+>
 > | Parámetro |                                                                                    Descripción                                                                                    |
 > |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | profundidad =<n> | Indica el número de archivos VHD primarios que se van a combinar. Por ejemplo, **Depth = 1** indica que el disco duro virtual de diferenciación se combinará con un nivel de la cadena de diferenciación. |
-> 
-> ## <a name="remarks"></a>Observaciones
+>
+>#### <a name="remarks"></a>Observaciones
 > - Para que esta operación se realice correctamente, se debe seleccionar y desasociar un disco duro virtual. Use el comando **Select vDisk** para seleccionar un disco duro virtual y desplazar el foco a él.
 > - Este parámetro modifica el VHD primario. Como resultado, otros VHD de diferenciación que dependen del elemento primario ya no serán válidos.
 >   ## <a name="examples"></a>Ejemplos

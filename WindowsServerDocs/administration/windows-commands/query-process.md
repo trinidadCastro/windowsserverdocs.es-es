@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81132ebf6b75115086ed7cc2ab9f73d9d06e65e4
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9ac3e5a458d88d945e857cd1922783e5b0ff5cf0
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722717"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436290"
 ---
 # <a name="query-process"></a>query process
 
@@ -30,7 +30,7 @@ Puede usar este comando para averiguar qué programas ejecuta un usuario especí
 > query process [* | <ProcessID> | <UserName> | <SessionName> | /id:<nn> | <ProgramName>] [/server:<ServerName>]
 > ```
 > ### <a name="parameters"></a>Parámetros
-> 
+>
 > |      Parámetro       |                                                                 Descripción                                                                  |
 > |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 > |          \*          |                                                    muestra los procesos de todas las sesiones.                                                     |
@@ -41,10 +41,10 @@ Puede usar este comando para averiguar qué programas ejecuta un usuario especí
 > |    <ProgramName>     |                     Especifica el nombre del programa cuyos procesos desea consultar. Se requiere la extensión. exe.                     |
 > | /server:<ServerName> | Especifica el servidor host de sesión de escritorio remoto cuyos procesos desea enumerar. Si no se especifica, se usa el servidor en el que ha iniciado sesión actualmente. |
 > |          /?          |                                                     Muestra la ayuda en el símbolo del sistema.                                                     |
-> 
-> ## <a name="remarks"></a>Observaciones
+>
+>#### <a name="remarks"></a>Observaciones
 > - Los administradores tienen acceso total a todas las funciones de **proceso de consulta** .
-> - Si no especifica el *nombre de usuario* <>, <*nombresesión*>, **/ID:**<*nn*>, <*nombreprograma*>, o **\\*** parámetros, el **proceso de consulta** solo muestra los procesos que pertenecen al usuario actual.
+> - Si no especifica el *nombre de usuario* <>, <*nombresesión*>, **/ID:** < *nn*>, <*nombreprograma*>, o **\\** * parámetros, el **proceso de consulta** solo muestra los procesos que pertenecen al usuario actual.
 > - Si se especifica una sesión, debe identificar una sesión activa.
 > - el **proceso de consulta** devuelve la siguiente información:
 >   -   El usuario propietario del proceso.
@@ -63,6 +63,6 @@ Puede usar este comando para averiguar qué programas ejecuta un usuario especí
 >   query process /ID:2
 >   ```
 >   ## <a name="additional-references"></a>Referencias adicionales
->   - [Referencia de comandos de servicios de escritorio remoto de](command-line-syntax-key.md)
->   [consulta](query.md)
->   de clave de sintaxis de línea de comandos[(Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+>   - Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+>    [consulta](query.md) 
+>    de [Referencia de comandos de servicios de escritorio remoto (Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)

@@ -9,12 +9,12 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: da9164eea4ab7e2fb38864fb69c47252448b77b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f5a7ec331c9d70214cbd0a772de6e2b2c7f4f58e
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854428"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433179"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>Requisitos para implementar la controladora de red
 
@@ -61,7 +61,7 @@ Lo siguiente que desea hacer es configurar las ubicaciones de archivo para almac
 Por último, lo siguiente que desea hacer es implementar nodos de clúster de controladora de red en la misma subred o en subredes diferentes. 
 
 
-|         Si...         |                                                                                                                                                         Entonces...                                                                                                                                                         |
+|         Si...         |                                                                                                                                                         En ese caso...                                                                                                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  En la misma subred,  |                                                                                                                                Debe proporcionar la dirección IP de REST de la controladora de red.                                                                                                                                 |
 | En subredes diferentes, | Debe proporcionar el nombre DNS de REST de la controladora de red, que se crea durante el proceso de implementación. También debe hacer lo siguiente:<ul><li>Configure las actualizaciones dinámicas de DNS para el nombre DNS de la controladora de red en el servidor DNS.</li><li>Restrinja las actualizaciones dinámicas de DNS solo a los nodos de la controladora de red.</li></ul> |
@@ -125,10 +125,6 @@ Para lograr una alta disponibilidad, hay dos o más nodos SLB/MUX.
 Hay tres máquinas virtuales de puerta de enlace; dos están activos y uno es redundante.
 
 ![Planeación de SDN de SDN](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
-
-
-
-Para la automatización de la implementación basada en TP5, Active Directory debe estar disponible y accesible desde estas subredes. Para obtener más información sobre Active Directory, consulte [información general sobre Active Directory Domain Services](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).  
 
 >[!IMPORTANT] 
 >Si implementa con VMM, asegúrese de que las máquinas virtuales de infraestructura (servidor VMM, AD/DNS, SQL Server, etc.) no se hospedan en ninguno de los cuatro hosts mostrados en los diagramas.  

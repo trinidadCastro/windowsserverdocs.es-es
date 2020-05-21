@@ -1,22 +1,23 @@
 ---
-ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
-title: Fsutil Wim
+title: fsutil wim
+description: Tema de referencia del comando fsutil Wim, que proporciona funciones para detectar y administrar archivos respaldados por la imagen de Windows (WIM).
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.technology: storage
-audience: IT Pro
+ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 12a9965515ef26e0cbccb2d20d25f66b54b23b8a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: db6a946eac59269d2bb4072c46552ac84366ed40
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720062"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436830"
 ---
-# <a name="fsutil-wim"></a>Fsutil Wim
+# <a name="fsutil-wim"></a>fsutil wim
+
 > Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016 y Windows 10
 
 Proporciona funciones para detectar y administrar archivos respaldados por la imagen de Windows (WIM).
@@ -30,20 +31,17 @@ fsutil wim [queryfile] <filename>
 fsutil wim [removewim] <drive name> <data source>
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------------|---------------|
-|enumfiles (|Enumera los archivos de copia de seguridad de WIM.|
-|\<nombre de unidad>|Especifica el nombre de la unidad.|
-|\<> de origen de datos|Especifica el origen de datos.|
-|enumwims|Enumera los archivos WIM de respaldo.|
-|queryfile|Consulta si el archivo está respaldado por WIM y, en caso afirmativo, muestra detalles sobre el archivo WIM.|
-|\<nombre de archivo>|Especifica el nombre de archivo.|
-|removewim|Quita un WIM de los archivos de copia de seguridad.|
-
-
-
+| Parámetro | Descripción |
+| --------- | ----------- |
+| enumfiles ( | Enumera los archivos de copia de seguridad de WIM. |
+| `<drive name>` | Especifica el nombre de la unidad. |
+| `<data source>` | Especifica el origen de datos. |
+| enumwims | Enumera los archivos WIM de respaldo. |
+| queryfile | Consulta si el archivo está respaldado por WIM y, en caso afirmativo, muestra detalles sobre el archivo WIM. |
+| `<filename>` | Especifica el nombre de archivo. |
+| removewim | Quita un WIM de los archivos de copia de seguridad. |
 
 ### <a name="examples"></a>Ejemplos
 
@@ -71,7 +69,8 @@ Para quitar WIM de archivos de copia de seguridad para el volumen C: y el origen
 fsutil wim removewims C: 2
 ```
 
-### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
+
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[Fsutil](Fsutil.md)
+- [fsutil](fsutil.md)

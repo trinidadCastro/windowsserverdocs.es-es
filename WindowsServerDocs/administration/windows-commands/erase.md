@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ec812e9a455cc0060a3f0a6be4d0e7227821a0b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 96e0f97e27de8933de44c437508ef59803765771
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992377"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437130"
 ---
 # <a name="erase"></a>erase
 
@@ -42,7 +42,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 | /a [:]`<attributes>` | Elimina archivos en función de los siguientes atributos de archivo:<ul><li>archivos de solo lectura de **r**</li><li>**h** archivos ocultos</li><li>**no hay** archivos indizados de contenido</li><li>archivos **del sistema**</li><li>**archivos listos** para archivar</li><li>**l** puntos de reanálisis</li><li>**-** Se usa como significado de prefijo ' not '</li></ul>. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si usa el `erase /p` comando, verá el mensaje siguiente:
 
@@ -73,7 +73,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
   > [!NOTE]
   > Antes de usar caracteres comodín con el comando **Erase** , use los mismos caracteres comodín con el comando **dir** para enumerar todos los archivos que se van a eliminar.
 
-## <a name="examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
 
 Para eliminar todos los archivos de una carpeta denominada test en la unidad C, escriba cualquiera de los siguientes:
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 7238d71ed35b5c9645e6b4061717011cc2a02820
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: facd846dd0c20ee2e5001b0592651ce310e19097
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203563"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716890"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>Migración de la base de datos de WSUS de WID a SQL
 
@@ -22,7 +22,7 @@ ms.locfileid: "83203563"
 
 Siga estos pasos para migrar la base de datos de WSUS (SUSDB) de una instancia de Windows Internal Database a una instancia local o remota de SQL Server.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 
 - Instancia de SQL. Puede ser el valor predeterminado **MSSQLSERVER** o una instancia personalizada.
 - SQL Server Management Studio
@@ -67,7 +67,7 @@ Desde PowerShell (elevado), ejecute:
 
 ### <a name="copy-the-susdb-files-to-the-sql-server"></a>Copie los archivos SUSDB en el SQL Server
 
-1. Copie **SUSDB. MDF** y **SUSDB \_ log. ldf** de la carpeta de datos de WID (**% SystemDrive%** \* * Windows\WID\Data * *) a la carpeta de datos de instancia de SQL.
+1. Copie **SUSDB. MDF** y **SUSDB \_ log. ldf** de la carpeta de datos de WID (**% SystemDrive%** \\ **Windows \\ WID \\ Data**) en la carpeta de datos de instancia de SQL.
 
 > [!TIP]
 > Por ejemplo, si la carpeta de instancia de SQL es **c:\Archivos de programa\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL**, y la carpeta de datos WID es **C:\Windows\WID\Data,** copie los archivos SUSDB de **C:\Windows\WID\Data** a **c:\Archivos de programa\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\Data**

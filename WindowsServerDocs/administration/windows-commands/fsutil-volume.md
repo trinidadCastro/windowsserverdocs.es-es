@@ -1,54 +1,54 @@
 ---
-ms.assetid: 0397c204-b3f8-4fd8-b71d-b7efb117766d
-title: Fsutil Volume
+title: fsutil volume
+description: Tema de referencia del comando fsutil Volume, que desmonta un volumen, o consulta la unidad de disco duro para determinar cuánto espacio libre está disponible actualmente en la unidad de disco duro o en qué archivo se usa un clúster determinado.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.technology: storage
-audience: IT Pro
+ms.assetid: 0397c204-b3f8-4fd8-b71d-b7efb117766d
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e332db921eeb64f890149d143fc13b6e27fe4aa
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 18671447664c47af48b4ca074aab823fd2b78625
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720071"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436840"
 ---
-# <a name="fsutil-volume"></a>Fsutil Volume
-> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2 y Windows 7
+# <a name="fsutil-volume"></a>fsutil volume
+
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8
 
 Desmonta un volumen o consulta la unidad de disco duro para determinar la cantidad de espacio libre disponible actualmente en la unidad de disco duro o el archivo que está utilizando un clúster determinado.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-fsutil volume [allocationreport] <VolumePath>
-fsutil volume [diskfree] <VolumePath>
-fsutil volume [dismount] <VolumePath>
-fsutil volume [filelayout] <VolumePath> <fileid>
+fsutil volume [allocationreport] <volumepath>
+fsutil volume [diskfree] <volumepath>
+fsutil volume [dismount] <volumepath>
+fsutil volume [filelayout] <volumepath> <fileID>
 fsutil volume [list]
-fsutil volume [querycluster] <VolumePath> <Cluster> [<Cluster>] … …
+fsutil volume [querycluster] <volumepath> <cluster> [<cluster>] … …
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------------|---------------|
-|allocationreport|Muestra información sobre cómo se usa el almacenamiento en un volumen determinado.|
-|\<> VolumePath|Especifica la letra de unidad (seguida de dos puntos).|
-|diskfree|Consulta la unidad de disco duro para determinar la cantidad de espacio disponible en ella.|
-|desmontar|Desmonta un volumen.|
-|filelayout|Muestra los metadatos NTFS del archivo especificado.|
-|\<> fileid|Especifica el identificador de archivo.|
-|list|Enumera todos los volúmenes del sistema.|
-|querycluster|Busca el archivo que está utilizando un clúster especificado. Puede especificar varios clústeres con el parámetro **querycluster** .<p>Este parámetro se aplica a: Windows Server 2008 R2 y Windows 7.|
-|\<> de clúster|Especifica el número de clúster lógico (LCN).|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| allocationreport | Muestra información sobre cómo se usa el almacenamiento en un volumen determinado. |
+| `<volumepath>` | Especifica la letra de unidad (seguida de dos puntos). |
+| diskfree | Consulta la unidad de disco duro para determinar la cantidad de espacio disponible en ella. |
+| desmontar | Desmonta un volumen. |
+| filelayout | Muestra los metadatos NTFS del archivo especificado. |
+| `<fileID>` | Especifica el identificador de archivo. |
+| list | Enumera todos los volúmenes del sistema. |
+| querycluster | Busca el archivo que está utilizando un clúster especificado. Puede especificar varios clústeres con el parámetro **querycluster** . |
+| `<cluster>` | Especifica el número de clúster lógico (LCN). |
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
+
 Para mostrar un informe de clústeres asignados, escriba:
 
 ```
@@ -88,10 +88,9 @@ fsutil volume querycluster C: 50 0x2000
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
+
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[Fsutil](Fsutil.md)
+- [fsutil](fsutil.md)
 
-[Cómo funciona NTFS](https://go.microsoft.com/fwlink/?LinkId=183396)
-
-
+- [Cómo funciona NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781134(v=ws.10))

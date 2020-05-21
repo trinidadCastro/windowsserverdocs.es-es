@@ -1,5 +1,5 @@
 ---
-title: Vssadmin list shadows
+title: Vssadmin List Shadows
 description: Una descripción del comando vssadmin List Shadows.
 ms.prod: windows-server
 ms.topic: article
@@ -8,14 +8,14 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bc715b3df9e4f4dd6d2de82be9346edc7d88805e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 38eda178b6c9e34fec1d63ed6c59f01023b859c4
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720261"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436685"
 ---
-# <a name="vssadmin-list-shadows"></a>Vssadmin list shadows
+# <a name="vssadmin-list-shadows"></a>Vssadmin List Shadows
 
 > Se aplica a: Windows 10, Windows 8.1, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
@@ -31,8 +31,8 @@ vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 
 |Parámetro|Descripción|
 |---|---|
-|/for =\<ParaVolumenEspec>|Especifica en qué volumen se mostrarán las instantáneas.|
-|/Shadow =\<ShadowID>|Muestra la instantánea especificada por ShadowID. Para obtener el identificador de la instantánea, use el comando **vssadmin List Shadows** . Cuando escriba un identificador de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/for = \< paravolumenespec>|Especifica en qué volumen se mostrarán las instantáneas.|
+|/Shadow = \< ShadowID>|Muestra la instantánea especificada por ShadowID. Para obtener el identificador de la instantánea, use el comando **vssadmin List Shadows** . Cuando escriba un identificador de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 
 ## <a name="additional-references"></a>Referencias adicionales
 

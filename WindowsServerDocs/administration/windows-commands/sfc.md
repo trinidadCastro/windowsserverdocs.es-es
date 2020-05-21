@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1319a688ea0e145857b5c36652b5fb007fcf53c8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8e0b6fc2563566485a15ba7168b864a8abc888f3
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721844"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436730"
 ---
 # <a name="sfc"></a>sfc
 

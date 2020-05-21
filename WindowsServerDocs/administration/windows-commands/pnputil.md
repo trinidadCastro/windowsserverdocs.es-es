@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 134e6ce4b1fc44450047de3287b7daac67da4b6a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4c6bcb138e8bd7308c01c2c53fba83b69362298a
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837518"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436370"
 ---
 # <a name="pnputil"></a>pnputil
 
@@ -32,16 +32,16 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 |---------|-----------|
 |-a|Especifica que se va a agregar el archivo INF identificado.|
 |-d|Especifica que se elimine el archivo INF identificado.|
-|-e|Especifica la enumeración de todos los archivos INF de terceros.|
+|-E|Especifica la enumeración de todos los archivos INF de terceros.|
 |-f|Especifica que se debe forzar la eliminación del archivo INF identificado. No se puede usar junto con el parámetro **– i** .|
 |-i|Especifica que se instale el archivo INF identificado. No se puede usar junto con el parámetro **-f** .|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
 
 ## <a name="examples"></a>Ejemplos
 
 -   pnputil. exe-a a:\usbcam\USBCAM. INF agrega el archivo INF especificado por USBCAM. INF
--   pnputil. exe: un c:\drivers\*. inf agrega todos los archivos INF en c:\drivers\
+-   pnputil. exe: un c:\drivers \* . inf agrega todos los archivos INF en c:\drivers\
 -   pnputil. exe-i-a a:\usbcam\USBCAM. INF agrega e instala el controlador especificado.
 -   pnputil. exe – e enumera todos los controladores de terceros.
 -   pnputil. exe-d oem0. inf elimina el especificado.

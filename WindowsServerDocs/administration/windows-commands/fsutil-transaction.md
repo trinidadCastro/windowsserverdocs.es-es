@@ -1,66 +1,61 @@
 ---
-ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
-title: Fsutil, transacción
+title: fsutil transaction
+description: Tema de referencia del comando fsutil Transaction, que administra las transacciones NTFS.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.technology: storage
-audience: IT Pro
+ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 18088bcedd077d5c8052bca91c648e2719304a78
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fc81934c5838fd81722b27a7b7e57b14709ed26a
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720092"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437050"
 ---
-# <a name="fsutil-transaction"></a>Fsutil, transacción
-> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista
+# <a name="fsutil-transaction"></a>fsutil transaction
+
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8
 
 Administra las transacciones NTFS.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
 fsutil transaction [commit] <GUID>
-fsutil transaction [fileinfo] <Filename>
+fsutil transaction [fileinfo] <filename>
 fsutil transaction [list]
-fsutil transaction [query] [{Files|All}] <GUID>
+fsutil transaction [query] [{files | all}] <GUID>
 fsutil transaction [rollback] <GUID>
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-| Parámetro  |                                                                                                                                                     Descripción                                                                                                                                                     |
-|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   confirmación   |                                                                                                                      Marca el final de una transacción especificada implícita o explícita correcta.                                                                                                                      |
-|   <GUID>   |                                                                                                                               Especifica el valor de GUID que representa una transacción.                                                                                                                               |
-|  FileInfo  |                                                                                                                              Muestra información de transacción para el archivo especificado.                                                                                                                               |
-| <Filename> |                                                                                                                                         Especifica la ruta de acceso completa y el nombre de archivo.                                                                                                                                          |
-|    list    |                                                                                                                                 Muestra una lista de las transacciones que se están ejecutando actualmente.                                                                                                                                  |
-|   Query    | Muestra información de la transacción especificada.<p>-Si se especifica **archivos de consulta de transacción fsutil** , la información de archivo solo se mostrará para la transacción especificada.<br />-Si se especifica **fsutil Transaction Query All** , se mostrará toda la información de la transacción. |
-|  revertir  |                                                                                                                                Revierte una transacción especificada al principio.                                                                                                                                 |
+| Parámetro | Descripción |
+| --------- | ----------- |
+| confirmación | Marca el final de una transacción especificada implícita o explícita correcta. |
+| `<GUID>` | Especifica el valor de GUID que representa una transacción. |
+| FileInfo  | Muestra información de transacción para el archivo especificado. |
+| `<filename>` | Especifica la ruta de acceso completa y el nombre de archivo. |
+| list | Muestra una lista de las transacciones que se están ejecutando actualmente. |
+| Query | Muestra información de la transacción especificada.<ul><li>Si `fsutil transaction query files` se especifica, la información de archivo solo se muestra para la transacción especificada.</li><li>Si `fsutil transaction query all` se especifica, se mostrará toda la información de la transacción.</li></ul> |
+| revertir | Revierte una transacción especificada al principio. |
 
-### <a name="remarks"></a>Observaciones
+### <a name="examples"></a>Ejemplos
 
--   NTFS transaccional se presentó en Windows Server 2008.
-
-### <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
-Para mostrar la información de transacción para el archivo c:\Test.txt, escriba:
+Para mostrar la información de transacción para el archivo *c:\Test.txt*, escriba:
 
 ```
-fsutil transaction fileinfo c:\test.txt  
+fsutil transaction fileinfo c:\test.txt
 ```
 
-### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
+
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[Fsutil](Fsutil.md)
+- [fsutil](fsutil.md)
 
-[NTFS de transacciones](https://go.microsoft.com/fwlink/?LinkID=165402)
-
-
+- [NTFS de transacciones](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730726(v=ws.10))

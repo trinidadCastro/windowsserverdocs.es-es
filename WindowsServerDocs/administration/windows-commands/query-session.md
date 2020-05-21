@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7a119cda5fad594638211bfcdbdc269fff13d20
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6b0d122beac43abfd826cb406adac4aa277fc72e
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722713"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436280"
 ---
 # <a name="query-session"></a>query session
 
@@ -30,7 +30,7 @@ La lista incluye información no solo sobre las sesiones activas, sino también 
 > query session [<SessionName> | <UserName> | <SessionID>] [/server:<ServerName>] [/mode] [/flow] [/connect] [/counter]
 > ```
 > ### <a name="parameters"></a>Parámetros
-> 
+>
 > |      Parámetro       |                                                      Descripción                                                      |
 > |----------------------|-----------------------------------------------------------------------------------------------------------------------|
 > |    <SessionName>     |                               Especifica el nombre de la sesión que desea consultar.                               |
@@ -42,8 +42,8 @@ La lista incluye información no solo sobre las sesiones activas, sino también 
 > |       /Connect       |                                          Muestra la configuración de conexión actual.                                           |
 > |       /Counter       | Muestra información de los contadores actuales, incluido el número total de sesiones creadas, desconectadas y reconectadas. |
 > |          /?          |                                         Muestra la ayuda en el símbolo del sistema.                                          |
-> 
-> ## <a name="remarks"></a>Observaciones
+>
+>#### <a name="remarks"></a>Observaciones
 > - Un usuario siempre puede consultar la sesión en la que el usuario ha iniciado sesión actualmente. Para consultar otras sesiones, el usuario debe tener el permiso de acceso especial información de consulta.
 > - Si no especifica una sesión mediante <*nombresesión*>, <*nombreusuario*> o <*SessionID*>, la sesión de la **consulta** muestra información acerca de todas las sesiones activas en el sistema.
 > - Cuando la **sesión de consulta** devuelve información, se muestra un signo mayor que (>) antes de la sesión actual. A continuación se muestra una salida de ejemplo para la **sesión de consulta**:
@@ -67,6 +67,6 @@ La lista incluye información no solo sobre las sesiones activas, sino también 
 >   query session modeM02
 >   ```
 >   ## <a name="additional-references"></a>Referencias adicionales
->   - [Referencia de comandos de servicios de escritorio remoto de](command-line-syntax-key.md)
->   [consulta](query.md)
->   de clave de sintaxis de línea de comandos[(Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+>   - Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+>    [consulta](query.md) 
+>    de [Referencia de comandos de servicios de escritorio remoto (Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)

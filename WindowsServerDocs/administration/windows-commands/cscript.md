@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfba4b6a1c75183d58664e74da22bb7f8b866739
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 24d5d46a0a994ca44230076786fbd59c00cbdc57
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993156"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437060"
 ---
 # <a name="cscript"></a>cscript
 
@@ -41,18 +41,18 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /e:`<engine>` | Especifica el motor que se usa para ejecutar el script. |
 | /h: cscript | Registra Cscript. exe como host de script predeterminado para ejecutar scripts. |
 | /h: Wscript | Registra Wscript. exe como host de script predeterminado para ejecutar scripts. Este es el valor predeterminado. |
-| /i | Especifica el modo interactivo, que muestra las alertas, los errores de scripting y los mensajes de entrada. Este es el valor predeterminado y el contrario `/b`de. |
+| /i | Especifica el modo interactivo, que muestra las alertas, los errores de scripting y los mensajes de entrada. Este es el valor predeterminado y el contrario de `/b` . |
 | /trabajo<identifier> | Ejecuta el trabajo identificado por el *identificador* en un archivo de script. wsf. |
-| /logo | Especifica que el banner de Windows Script Host se muestra en la consola antes de que se ejecute el script. Este es el valor predeterminado y el contrario `/nologo`de. |
+| /logo | Especifica que el banner de Windows Script Host se muestra en la consola antes de que se ejecute el script. Este es el valor predeterminado y el contrario de `/nologo` . |
 | /nologo | Especifica que el titular de Windows Script Host no se muestra antes de que se ejecute el script. |
 | /s | Guarda las opciones actuales del símbolo del sistema para el usuario actual. |
 | /t:<seconds> | Especifica el tiempo máximo que se puede ejecutar el script (en segundos). Puede especificar hasta 32.767 segundos. El valor predeterminado es sin límite de tiempo. |
 | /U | Especifica Unicode para la entrada y salida que se redirige desde la consola. |
 | /x | Inicia el script en el depurador. |
 | /? | Muestra los parámetros de comando disponibles y proporciona ayuda para usarlos. Esto es lo mismo que escribir **Cscript. exe** sin ningún parámetro y sin ningún script. |
-| scriptarguments | Especifica los argumentos que se pasan al script. Cada argumento de script debe ir precedido de una barra**/** diagonal (). |
+| scriptarguments | Especifica los argumentos que se pasan al script. Cada argumento de script debe ir precedido de una barra diagonal ( **/** ). |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Cada parámetro es opcional; sin embargo, no se pueden especificar argumentos de script sin especificar un script. Si no especifica ningún argumento de script o script, Cscript. exe muestra la sintaxis de Cscript. exe y las opciones de host válidas.
 

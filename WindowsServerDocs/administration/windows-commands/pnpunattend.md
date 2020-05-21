@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 569b879caf29aac6d1592d822072f35021cec9d3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d62edde425a00db23f150246df65166234604cef
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723304"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436470"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -43,15 +43,15 @@ Se requiere la preparación preliminar. Antes de utilizar este comando, debe com
 2. Descargue y extraiga el paquete de controladores del dispositivo. Copie el contenido de la subcarpeta que contiene el archivo INF de la versión del sistema operativo y de las subcarpetas que haya creado en la carpeta de vídeo. Por ejemplo, copie los archivos del controlador de vídeo en C:\Drivers\Video.
 3. Agregue una variable de ruta de acceso de entorno del sistema a la carpeta que creó en el paso 1. por ejemplo, **C:\Drivers\Video**.
 4. Cree la siguiente clave del registro y, a continuación, para la clave **DriverPaths** que cree, establezca los **datos del valor** en **1**.
-5. En Windows® 7, navegue por la ruta de acceso del registro: **HKEY_LOCAL_Machine \Software\Microsoft\Windows NT\CurrentVersion\\**y, a continuación, cree las claves: **UnattendSettings\PnPUnattend\DriverPaths\\ **
-6. En Windows Vista, vaya a la ruta de acceso del registro: **HK_LM \Software\Microsoft\Windows NT\CurrentVersion\\**y, a continuación, cree las claves = **\UnattendSettings\PnPUnattend\DriverPaths**.
+5. En Windows® 7, navegue por la ruta de acceso del registro: **HKEY_LOCAL_Machine \Software\microsoft\windows NT\CurrentVersion \\ **y, a continuación, cree las claves: **UnattendSettings\PnPUnattend\DriverPaths \\ **
+6. En Windows Vista, vaya a la ruta de acceso del registro: **HK_LM \Software\microsoft\windows NT\CurrentVersion \\ **y, a continuación, cree las claves = **\UnattendSettings\PnPUnattend\DriverPaths**.
 
 ## <a name="examples"></a>Ejemplos
 
 El comando to muestra cómo usar **PNPUnattend. exe** para auditar un equipo en busca de posibles actualizaciones de controladores y, a continuación, notificar los hallazgos en el símbolo del sistema.
 
 ```
-pnpunattend auditsystem /s /l 
+pnpunattend auditsystem /s /l
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

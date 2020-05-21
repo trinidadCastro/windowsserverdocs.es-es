@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 8ba413b831c7b11780113ee2ffd3cce598781a44
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: f82aab1b3a3af61afa08a1849392297ca5def2ab
+ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465579"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83551108"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Administrar tipos de programador de hipervisor de Hyper-V
 
@@ -22,8 +22,8 @@ ms.locfileid: "77465579"
 
 En este artículo se describen los nuevos modos de la lógica de programación del procesador virtual que se presentó por primera vez en Windows Server 2016. Estos modos, o tipos de programador, determinan cómo el hipervisor de Hyper-V asigna y administra el trabajo en los procesadores virtuales invitados. Un administrador de hosts de Hyper-V puede seleccionar los tipos de programador de hipervisor más adecuados para las máquinas virtuales (VM) invitadas y configurar las máquinas virtuales para aprovechar la lógica de programación.
 
->[!NOTE]
->Las actualizaciones son necesarias para usar las características del programador de hipervisor descritas en este documento. Para obtener más información, consulte [actualizaciones necesarias](#required-updates).
+> [!NOTE]
+> Las actualizaciones son necesarias para usar las características del programador de hipervisor descritas en este documento. Para obtener más información, consulte [actualizaciones necesarias](#required-updates).
 
 ## <a name="background"></a>Fondo
 
@@ -31,7 +31,7 @@ Antes de analizar la lógica y los controles que hay detrás de la programación
 
 ### <a name="understanding-smt"></a>Descripción de SMT
 
-Multithreading simultáneo, o SMT, es una técnica que se utiliza en los diseños de procesador modernos que permite compartir los recursos del procesador con subprocesos de ejecución independientes e independientes. SMT suele ofrecer un aumento modesto en el rendimiento de la mayoría de las cargas de trabajo mediante la ejecución en paralelo de los cálculos cuando sea posible, lo que aumenta el rendimiento de las instrucciones, aunque no se produzca ninguna mejora de rendimiento o incluso una ligera pérdida de rendimiento cuando se contención entre subprocesos para se producen recursos compartidos del procesador.
+Multithreading simultáneo, o SMT, es una técnica que se utiliza en los diseños de procesador modernos que permite compartir los recursos del procesador con subprocesos de ejecución independientes e independientes. SMT suele ofrecer un aumento modesto en el rendimiento de la mayoría de las cargas de trabajo mediante la ejecución en paralelo de los cálculos cuando sea posible, lo que aumenta el rendimiento de las instrucciones, aunque no se produzca ninguna mejora de rendimiento o incluso una ligera pérdida de rendimiento cuando se contención entre subprocesos para los recursos de procesador compartidos.
 Los procesadores que admiten SMT están disponibles en Intel y AMD. Intel hace referencia a sus ofertas de SMT como tecnología Intel Hyper Threading o Intel HT.
 
 Para los fines de este artículo, las descripciones de SMT y cómo las utiliza Hyper-V se aplican igualmente a los sistemas Intel y AMD.
@@ -48,7 +48,7 @@ Antes de considerar los tipos de programador de hipervisor, también resulta út
 
 * La partición raíz es en sí misma una partición de máquina virtual, aunque tiene propiedades únicas y privilegios mucho mayores que las máquinas virtuales invitadas. La partición raíz proporciona los servicios de administración que controlan todas las máquinas virtuales invitadas, proporcionan compatibilidad con dispositivos virtuales para los invitados y administran todas las e/s de dispositivos para las máquinas virtuales invitadas. Microsoft recomienda no ejecutar cargas de trabajo de aplicaciones en la partición raíz.
 
-* Cada procesador virtual (VP) de la partición raíz se asigna 1:1 a un procesador lógico subyacente (LP). Un Vicepresidente de host siempre se ejecutará en el mismo LP subyacente, ya que no se realiza ninguna migración del VPs de la partición raíz.
+* Cada procesador virtual (VP) de la partición raíz se asigna 1:1 a un procesador lógico subyacente (LP). Un Vicepresidente de host siempre se ejecuta en el mismo LP subyacente: no hay ninguna migración de la VPs de la partición raíz.
 
 * De forma predeterminada, el LPs en el que se ejecuta VPs de host también puede ejecutar el VPs invitado.
 
@@ -58,22 +58,18 @@ Antes de considerar los tipos de programador de hipervisor, también resulta út
 
 A partir de Windows Server 2016, el hipervisor de Hyper-V admite varios modos de lógica del programador, que determinan cómo programa el hipervisor los procesadores virtuales en los procesadores lógicos subyacentes. Estos tipos de programador son:
 
-- [El programador clásico de recursos compartidos](#the-classic-scheduler)
-- [Programador principal](#the-core-scheduler)
-- [Programador raíz](#the-root-scheduler)
-
 ### <a name="the-classic-scheduler"></a>Programador clásico
 
 El programador clásico es el valor predeterminado para todas las versiones del hipervisor de Hyper-V de Windows desde su inicio, incluido Windows Server 2016 Hyper-V. El programador clásico proporciona un modelo de programación de uso compartido equitativo y preventivo para los procesadores virtuales invitados.
 
-El tipo de programador clásico es el más apropiado para la mayoría de los usos tradicionales de Hyper-V: para nubes privadas, proveedores de hospedaje, etc. Las características de rendimiento se entienden bien y se optimizan mejor para admitir una amplia gama de escenarios de virtualización, como la suscripción excesiva de VPs a LPs, la ejecución simultánea de muchas máquinas virtuales y cargas de trabajo heterogéneas, lo que permite una mayor escala Máquinas virtuales de rendimiento, que admiten el conjunto completo de características de Hyper-V sin restricciones y mucho más.
+El tipo de programador clásico es el más apropiado para la mayoría de los usos tradicionales de Hyper-V: para nubes privadas, proveedores de hospedaje, etc. Las características de rendimiento se comprenden bien y se optimizan mejor para admitir una amplia gama de escenarios de virtualización, como la suscripción excesiva de VPs a LPs, la ejecución simultánea de muchas máquinas virtuales y cargas de trabajo heterogéneas, la ejecución de máquinas virtuales de alto rendimiento a gran escala, la compatibilidad con el conjunto completo de características de Hyper-V sin restricciones y mucho más.
 
 ### <a name="the-core-scheduler"></a>Programador principal
 
 Hipervisor Core Scheduler es una nueva alternativa a la lógica del programador clásico, que se incorporó en Windows Server 2016 y Windows 10, versión 1607. El programador principal ofrece un límite de seguridad fuerte para el aislamiento de la carga de trabajo invitado y la variabilidad del rendimiento reducida para las cargas de trabajo dentro de las máquinas virtuales que se ejecutan en un host de virtualización con SMT. El programador principal permite ejecutar máquinas virtuales de SMT y no SMT simultáneamente en el mismo host de virtualización compatible con SMT.
 
 El programador principal emplea la topología SMT del host de virtualización y, opcionalmente, expone los pares SMT a las máquinas virtuales invitadas y programa los grupos de procesadores virtuales invitados de la misma máquina virtual en grupos de procesadores lógicos SMT. Esto se realiza de forma simétrica, de modo que si LPs se encuentran en grupos de dos, los VPs se programan en grupos de dos, y un núcleo nunca se comparte entre máquinas virtuales.
-Cuando el VP está programado para una máquina virtual sin SMT habilitado, esa VP consumirá todo el núcleo cuando se ejecute.
+Cuando el VP está programado para una máquina virtual sin SMT habilitado, ese Vicepresidente consume todo el núcleo cuando se ejecuta.
 
 El resultado general del programador principal es que:
 
@@ -87,11 +83,11 @@ El resultado general del programador principal es que:
 
 * Un límite de seguridad fuerte para el aislamiento de la carga de trabajo invitado: los VPs de invitado están restringidos para ejecutarse en pares de núcleos físicos subyacentes, lo que reduce la vulnerabilidad a los ataques de supervisión de canal lateral.
 
-El programador principal se usará de forma predeterminada a partir de Windows Server 2019. En Windows Server 2016, el programador principal es opcional y debe habilitarse explícitamente mediante el administrador del host de Hyper-V, y el programador clásico es el predeterminado.
+El programador principal se utiliza de forma predeterminada a partir de Windows Server 2019. En Windows Server 2016, el programador principal es opcional y debe habilitarse explícitamente mediante el administrador del host de Hyper-V, y el programador clásico es el predeterminado.
 
 #### <a name="core-scheduler-behavior-with-host-smt-disabled"></a>Comportamiento del programador principal con SMT de host deshabilitado
 
-Si el hipervisor está configurado para usar el tipo de programador principal pero la capacidad de SMT está deshabilitada o no está presente en el host de virtualización, el hipervisor usará el comportamiento del programador clásico, independientemente de la configuración de tipo de programador del hipervisor.
+Si el hipervisor está configurado para usar el tipo de programador principal pero la capacidad de SMT está deshabilitada o no está presente en el host de virtualización, el hipervisor usa el comportamiento del programador clásico, independientemente de la configuración de tipo de programador del hipervisor.
 
 ### <a name="the-root-scheduler"></a>Programador raíz
 
@@ -101,11 +97,11 @@ El programador raíz aborda los requisitos únicos inherentes a la compatibilida
 
 #### <a name="root-scheduler-use-on-client-systems"></a>Uso del programador raíz en los sistemas cliente
 
-A partir de la versión 1803 de Windows 10, el programador raíz se utiliza de forma predeterminada en los sistemas cliente únicamente, donde el hipervisor puede estar habilitado para admitir la seguridad basada en la virtualización y el aislamiento de la carga de trabajo de WDAG, y para un correcto funcionamiento de sistemas futuros con arquitecturas de núcleos heterogéneas. Esta es la única configuración de programador de hipervisor admitida para los sistemas cliente. Los administradores no deben intentar invalidar el tipo de programador de hipervisor predeterminado en los sistemas cliente de Windows 10.
+A partir de la versión 1803 de Windows 10, el programador raíz solo se usa de forma predeterminada en los sistemas cliente, donde el hipervisor puede estar habilitado para admitir la seguridad basada en la virtualización y el aislamiento de la carga de trabajo WDAG, y para el correcto funcionamiento de futuros sistemas con arquitecturas de núcleo heterogéneas. Esta es la única configuración de programador de hipervisor admitida para los sistemas cliente. Los administradores no deben intentar invalidar el tipo de programador de hipervisor predeterminado en los sistemas cliente de Windows 10.
 
 #### <a name="virtual-machine-cpu-resource-controls-and-the-root-scheduler"></a>Controles de recursos de CPU de la máquina virtual y el programador raíz
 
-Los controles de recursos del procesador de la máquina virtual proporcionados por Hyper-V no se admiten cuando el programador raíz del hipervisor está habilitado, ya que la lógica del programador del sistema operativo raíz es la administración de los recursos de host de forma global y no tiene conocimiento de las máquinas virtuales. Opciones de configuración específicas. Los controles de recursos del procesador por máquina virtual de Hyper-V, como los Cap, los pesos y las reservas, solo se aplican cuando el hipervisor controla directamente la programación de VP, como con los tipos de programador clásico y principal.
+Los controles de recursos del procesador de la máquina virtual proporcionados por Hyper-V no se admiten cuando el programador raíz del hipervisor está habilitado, ya que la lógica del programador del sistema operativo raíz está administrando los recursos de host de forma global y no tiene conocimiento de las opciones de configuración específicas de la máquina virtual. Los controles de recursos del procesador por máquina virtual de Hyper-V, como los Cap, los pesos y las reservas, solo se aplican cuando el hipervisor controla directamente la programación de VP, como con los tipos de programador clásico y principal.
 
 #### <a name="root-scheduler-use-on-server-systems"></a>Uso del programador raíz en los sistemas de servidor
 
@@ -113,7 +109,7 @@ El programador raíz no se recomienda para su uso con Hyper-V en servidores en e
 
 ## <a name="enabling-smt-in-guest-virtual-machines"></a>Habilitación de SMT en máquinas virtuales invitadas
 
-Una vez que el hipervisor del host de virtualización está configurado para usar el tipo de programador principal, las máquinas virtuales invitadas se pueden configurar para utilizar SMT si se desea. Al exponer el hecho de que los VPs de subprocesos en una máquina virtual invitada, el programador del sistema operativo invitado y las cargas de trabajo que se ejecutan en la máquina virtual detectan y usan la topología de SMT en su propia programación de trabajo. En Windows Server 2016, el SMT de invitado no está configurado de forma predeterminada y debe habilitarse explícitamente mediante el administrador del host de Hyper-V. A partir de Windows Server 2019, las nuevas máquinas virtuales creadas en el host heredarán de forma predeterminada la topología SMT del host.  Es decir, una máquina virtual de la versión 9,0 creada en un host con 2 subprocesos SMT por núcleo también verá 2 subprocesos SMT por núcleo.
+Una vez que el hipervisor del host de virtualización está configurado para usar el tipo de programador principal, las máquinas virtuales invitadas se pueden configurar para utilizar SMT si se desea. Al exponer el hecho de que los VPs de subprocesos en una máquina virtual invitada, el programador del sistema operativo invitado y las cargas de trabajo que se ejecutan en la máquina virtual detectan y usan la topología de SMT en su propia programación de trabajo. En Windows Server 2016, el SMT de invitado no está configurado de forma predeterminada y debe habilitarse explícitamente mediante el administrador del host de Hyper-V. A partir de Windows Server 2019, las nuevas máquinas virtuales creadas en el host heredan de forma predeterminada la topología SMT del host.  Es decir, una máquina virtual de la versión 9,0 creada en un host con 2 subprocesos SMT por núcleo también verá 2 subprocesos SMT por núcleo.
 
 PowerShell debe usarse para habilitar SMT en una máquina virtual invitada; no se ha proporcionado ninguna interfaz de usuario en el administrador de Hyper-V.
 Para habilitar SMT en una máquina virtual invitada, abra una ventana de PowerShell con permisos suficientes y escriba:
@@ -122,11 +118,11 @@ Para habilitar SMT en una máquina virtual invitada, abra una ventana de PowerSh
 Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 ```
 
-Donde <n> es el número de subprocesos SMT por núcleo que verá la máquina virtual invitada.  
-Tenga en cuenta que <n> = 0 establecerá el valor de HwThreadCountPerCore para que coincida con el número de subprocesos SMT del host por valor principal.
+Donde <n> es el número de subprocesos de SMT por núcleo que ve la máquina virtual invitada.
+Tenga en cuenta que <n> = 0 establece el valor de HwThreadCountPerCore para que coincida con el número de subprocesos SMT del host por valor principal.
 
->[!NOTE] 
->La configuración de HwThreadCountPerCore = 0 se admite a partir de Windows Server 2019.
+> [!NOTE]
+> La configuración de HwThreadCountPerCore = 0 se admite a partir de Windows Server 2019.
 
 A continuación se muestra un ejemplo de información del sistema tomada del sistema operativo invitado que se ejecuta en una máquina virtual con dos procesadores virtuales y SMT habilitados. El sistema operativo invitado está detectando dos procesadores lógicos que pertenecen al mismo núcleo.
 
@@ -136,24 +132,24 @@ A continuación se muestra un ejemplo de información del sistema tomada del sis
 
 Windows Server 2016 Hyper-V usa el modelo de programador de hipervisor clásico de forma predeterminada. El hipervisor se puede configurar opcionalmente para usar el programador principal, con el fin de aumentar la seguridad mediante la restricción de los VPs de invitado para que se ejecuten en los pares de SMT físicos correspondientes y para admitir el uso de máquinas virtuales con la programación SMT para sus VPs de invitados.
 
->[!NOTE]
->Microsoft recomienda que todos los clientes que ejecutan Windows Server 2016 Hyper-V seleccionen el programador principal para asegurarse de que sus hosts de virtualización estén protegidos de manera óptima frente a máquinas virtuales invitadas potencialmente malintencionadas.
+> [!NOTE]
+> Microsoft recomienda que todos los clientes que ejecutan Windows Server 2016 Hyper-V seleccionen el programador principal para asegurarse de que sus hosts de virtualización estén protegidos de manera óptima frente a máquinas virtuales invitadas potencialmente malintencionadas.
 
 ## <a name="windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler"></a>Windows Server 2019, de forma predeterminada, Hyper-V usa el programador principal
 
-Para ayudar a garantizar que los hosts de Hyper-V se implementan en la configuración de seguridad óptima, Windows Server 2019 Hyper-V ahora usará el modelo de programador del hipervisor principal de forma predeterminada. Opcionalmente, el administrador del host puede configurar el host para usar el programador clásico heredado. Los administradores deben leer detenidamente, comprender y considerar los efectos que cada tipo de programador tiene en la seguridad y el rendimiento de los hosts de virtualización antes de invalidar la configuración predeterminada del tipo de programador.  Consulte [Descripción de la selección del tipo de programador de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection) para obtener más información.
+Para ayudar a garantizar que los hosts de Hyper-V se implementan en la configuración de seguridad óptima, Windows Server 2019 Hyper-V ahora usa el modelo de programador del hipervisor principal de forma predeterminada. Opcionalmente, el administrador del host puede configurar el host para usar el programador clásico heredado. Los administradores deben leer detenidamente, comprender y considerar los efectos que cada tipo de programador tiene en la seguridad y el rendimiento de los hosts de virtualización antes de invalidar la configuración predeterminada del tipo de programador.  Consulte [Descripción de la selección del tipo de programador de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection) para obtener más información.
 
 ### <a name="required-updates"></a>Actualizaciones necesarias
 
->[!NOTE]
->Las siguientes actualizaciones son necesarias para usar las características del programador de hipervisor descritas en este documento. Estas actualizaciones incluyen cambios para admitir la nueva opción de BCD ' hypervisorschedulertype ', que es necesaria para la configuración del host.
+> [!NOTE]
+> Las siguientes actualizaciones son necesarias para usar las características del programador de hipervisor descritas en este documento. Estas actualizaciones incluyen cambios para admitir la nueva `hypervisorschedulertype` opción de BCD, que es necesaria para la configuración del host.
 
-| Versión | Versión  | Actualización necesaria | Artículo de Knowledge base |
+| Versión | Release  | Actualización necesaria | KB Article |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018,07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018,07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
 |Windows Server 2016 | 1709 | 2018,07 C | [KB4338817](https://support.microsoft.com/help/4338817/windows-10-update-kb4338817) |
-|Windows Server 2019 | 1804 | Ninguno | Ninguno |
+|Windows Server 2019 | 1804 | None | None |
 
 ## <a name="selecting-the-hypervisor-scheduler-type-on-windows-server"></a>Selección del tipo de programador de hipervisor en Windows Server
 
@@ -161,20 +157,20 @@ La configuración del programador del hipervisor se controla a través de la ent
 
 Para seleccionar un tipo de programador, abra un símbolo del sistema con privilegios de administrador:
 
-``` command
-     bcdedit /set hypervisorschedulertype type
+```
+bcdedit /set hypervisorschedulertype type
 ```
 
-Donde `type` es uno de:
+Donde `type` es uno de los siguientes:
 
-* Classic
+* Clásico
 * Core
-* Raíz
+* Root
 
 El sistema debe reiniciarse para que los cambios en el tipo de programador del hipervisor surtan efecto.
 
->[!NOTE]
->En este momento, no se admite el programador raíz de hipervisor en Windows Server Hyper-V. Los administradores de Hyper-V no deben intentar configurar el programador raíz para su uso con escenarios de virtualización de servidores.
+> [!NOTE]
+> En este momento, no se admite el programador raíz de hipervisor en Windows Server Hyper-V. Los administradores de Hyper-V no deben intentar configurar el programador raíz para su uso con escenarios de virtualización de servidores.
 
 ## <a name="determining-the-current-scheduler-type"></a>Determinar el tipo de programador actual
 
@@ -182,13 +178,13 @@ Puede determinar el tipo de programador de hipervisor actual en uso examinando e
 
 El evento de inicio de hipervisor con ID. 2 denota el tipo de programador de hipervisor, donde:
 
-    1 = Classic scheduler, SMT disabled
+- 1 = programador clásico, SMT deshabilitado
 
-    2 = Classic scheduler
+- 2 = programador clásico
 
-    3 = Core scheduler
+- 3 = programador principal
 
-    4 = Root scheduler
+- 4 = programador raíz
 
 ![Captura de pantalla que muestra el ID. de evento de inicio de hipervisor 2 detalles](media/Hyper-V-CoreScheduler-EventID2-Details.png)
 

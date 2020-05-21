@@ -9,19 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43108fad0e1981bffd110264809acf30c1c12ba1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: eb4a9fa3105247695f1a50e5fc483ce608cd4816
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725016"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433129"
 ---
 # <a name="ftype"></a>ftype
 
 
 
-Muestra o modifica los tipos de archivo que se usan en las asociaciones de extensión de nombre de archivo. Si se utiliza sin un operador de**=** asignación (), **ftype** muestra la cadena de comando Open actual para el tipo de archivo especificado. Si se usa sin parámetros, **ftype** muestra los tipos de archivo que tienen definidas cadenas de comandos abiertas.
+Muestra o modifica los tipos de archivo que se usan en las asociaciones de extensión de nombre de archivo. Si se utiliza sin un operador de asignación ( **=** ), **ftype** muestra la cadena de comando Open actual para el tipo de archivo especificado. Si se usa sin parámetros, **ftype** muestra los tipos de archivo que tienen definidas cadenas de comandos abiertas.
 
+> [!NOTE]
+> Este comando solo se admite en CMD. EXE y no está disponible en PowerShell.  
+> Aunque puede usar `cmd /c ftype` como solución alternativa.
 
 
 ## <a name="syntax"></a>Sintaxis
