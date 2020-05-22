@@ -1,5 +1,5 @@
 ---
-title: Introducción a las cuentas de servicio administradas de grupo
+title: Getting Started with Group Managed Service Accounts
 description: Seguridad de Windows Server
 ms.prod: windows-server
 ms.technology: security-gmsa
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 52456b8027196f20c4ca52a08bcd7f7bba92eb82
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 70bdbc49bc1e173b488d5934bae0a5b4837c76f5
+ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856998"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775298"
 ---
-# <a name="getting-started-with-group-managed-service-accounts"></a>Introducción a las cuentas de servicio administradas de grupo
+# <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -29,9 +29,9 @@ En esta guía se proporcionan instrucciones paso a paso e información general p
 
 -   [Introducción](#BKMK_Intro)
 
--   [Implementar una nueva granja de servidores](#BKMK_DeployNewFarm)
+-   [Implementación de una nueva granja de servidores](#BKMK_DeployNewFarm)
 
--   [Agregar hosts miembros a una granja de servidores existente](#BKMK_AddMemberHosts)
+-   [Adición de hosts miembros a una granja de servidores existente](#BKMK_AddMemberHosts)
 
 -   [Actualización de las propiedades de la cuenta de servicio administrada de grupo](#BKMK_Update_gMSA)
 
@@ -39,12 +39,12 @@ En esta guía se proporcionan instrucciones paso a paso e información general p
 
 
 > [!NOTE]
-> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).
+> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, consulte [Uso de Cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).
 
 ## <a name="prerequisites"></a><a name="BKMK_Prereqs"></a>Requisitos previos
 Consulta la sección de este tema que trata de los [Requisitos de las cuentas de servicio administradas de grupo](#BKMK_gMSA_Req).
 
-## <a name="introduction"></a><a name="BKMK_Intro"></a>Aparición
+## <a name="introduction"></a><a name="BKMK_Intro"></a>Introducción
 Cuando un equipo cliente se conecta a un servicio hospedado en una granja de servidores con equilibrio de carga de red (NLB) o algún otro método en el que todos los servidores aparezcan como un mismo servicio de cara al cliente, no se pueden usar protocolos de autenticación que admitan la autenticación mutua, como Kerberos, salvo que todas las instancias de los servicios utilicen la misma entidad de seguridad. Esto implica que todos los servicios tienen que usar las mismas contraseñas o claves para demostrar su identidad.
 
 > [!NOTE]
@@ -52,13 +52,13 @@ Cuando un equipo cliente se conecta a un servicio hospedado en una granja de ser
 
 Los servicios tienen las siguientes entidades de seguridad entre las que pueden elegir, y cada una de ellas tiene determinadas limitaciones.
 
-|Entidades de seguridad|Ámbito|Servicios admitidos|Administración de contraseñas|
+|Principals|Ámbito|Servicios admitidos|Administración de contraseñas|
 |-------|-----|-----------|------------|
 |Cuenta de equipo del sistema de Windows|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
-|Cuenta de equipo sin sistema de Windows|Dominio|Cualquier servidor unido a un dominio|Ninguno|
+|Cuenta de equipo sin sistema de Windows|Dominio|Cualquier servidor unido a un dominio|None|
 |Cuenta virtual|Local|Limitado a un servidor|El equipo administra|
 |Cuenta de servicio administrada independiente de Windows 7|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
-|Cuenta de usuario|Dominio|Cualquier servidor unido a un dominio|Ninguno|
+|Cuenta de usuario|Dominio|Cualquier servidor unido a un dominio|None|
 |Cuenta de servicio administrada de grupo|Dominio|Cualquier servidor unido a un dominio de Windows Server 2012|El controlador de dominio administra y el host recupera|
 
 No se pueden compartir entre varios sistemas las cuentas de equipo de Windows, las cuentas de servicio administradas independientes (sMSA) de Windows 7 ni las cuentas virtuales. Si configuras una cuenta para que la compartan los servicios de las granjas de servidores, tendrás que elegir una cuenta de usuario o una cuenta de equipo aparte de un sistema de Windows. En cualquiera de estos dos casos, las cuentas no tienen la funcionalidad de administrar contraseñas con un solo punto de control. Esto genera un problema: cada organización se ve obligada a crear una solución costosa para actualizar las claves del servicio en Active Directory y, luego, distribuir las claves a todas las instancias de esos servicios.
@@ -73,7 +73,7 @@ Con Windows Server 2012, los servicios o los administradores de servicios no nec
 
 -   Las tareas que utilizan el Programador de tareas.
 
-### <a name="requirements-for-group-managed-service-accounts"></a><a name="BKMK_gMSA_Req"></a>Requisitos para las cuentas de servicio administradas de grupo
+### <a name="requirements-for-group-managed-service-accounts"></a><a name="BKMK_gMSA_Req"></a>Requisitos de las cuentas de servicio administradas de grupo
 En la siguiente tabla, se indican los requisitos del sistema operativo que se deben cumplir para que la autenticación Kerberos funcione con los servicios que usan gMSA. Los requisitos de Active Directory se indican debajo de la tabla.
 
 Para ejecutar los comandos de Windows PowerShell que se usan para administrar cuentas de servicio administradas de grupo, se necesita una arquitectura de 64 bits.
@@ -82,7 +82,7 @@ Para ejecutar los comandos de Windows PowerShell que se usan para administrar cu
 
 |Elemento|Requisito|Sistema operativo|
 |------|--------|----------|
-|Host de la aplicación cliente|Cliente Kerberos que cumpla RFC|Windows XP como mínimo|
+|Host de la aplicación cliente|Cliente Kerberos que cumpla RFC|Windows XP como mínimo|
 |Controladores de dominio de la cuenta de usuario|KDC que cumpla RFC|Windows Server 2003 como mínimo|
 |Hosts miembros de los servicios compartidos|| Windows Server 2012 |
 |Controladores de dominio del host del miembro|KDC que cumpla RFC|Windows Server 2003 como mínimo|
@@ -91,7 +91,7 @@ Para ejecutar los comandos de Windows PowerShell que se usan para administrar cu
 |Controladores de dominio de la cuenta de servicio back-end|KDC que cumpla RFC|Windows Server 2003 como mínimo|
 |Windows PowerShell para Active Directory|Windows PowerShell para Active Directory instalado localmente en un equipo que admita una arquitectura de 64 bits o en el equipo de administración remoto (por ejemplo, con el kit de herramientas de administración remota del servidor)| Windows Server 2012 |
 
-**Requisitos del servicio Dominio de Active Directory**
+**Requisitos de los Servicios de dominio de Active Directory**
 
 -   El esquema de Active Directory del bosque del dominio gMSA debe actualizarse a Windows Server 2012 para crear un gMSA.
 
@@ -107,7 +107,7 @@ Para ejecutar los comandos de Windows PowerShell que se usan para administrar cu
 
 Para obtener instrucciones sobre cómo crear la clave, consulte [crear la clave raíz KDS de servicios de distribución de claves](create-the-key-distribution-services-kds-root-key.md). Servicio de distribución de claves de Microsoft (kdssvc.dll): la clave raíz de AD.
 
-**Vida**
+**Ciclo de vida**
 
 El ciclo de vida de una granja de servidores que utiliza la característica de gMSA suele incluir las siguientes tareas:
 
@@ -121,7 +121,7 @@ El ciclo de vida de una granja de servidores que utiliza la característica de g
 
 -   Eliminación de un host miembro que perdió su carácter confidencial de una granja de servidores si es necesario.
 
-## <a name="deploying-a-new-server-farm"></a><a name="BKMK_DeployNewFarm"></a>Implementar una nueva granja de servidores
+## <a name="deploying-a-new-server-farm"></a><a name="BKMK_DeployNewFarm"></a>Implementación de una nueva granja de servidores
 Al implementar una nueva granja de servidores, el administrador de servicios tendrá que averiguar:
 
 -   Si el servicio admite el uso de gMSA.
@@ -136,9 +136,9 @@ Al implementar una nueva granja de servidores, el administrador de servicios ten
 
 -   Los nombres de las entidades de servicio (SPN) del servicio.
 
--   El intervalo de cambio de la contraseña (el valor predeterminado es 30 días).
+-   El intervalo de cambio de la contraseña (el valor predeterminado es 30 días).
 
-### <a name="step-1-provisioning-group-managed-service-accounts"></a><a name="BKMK_Step1"></a>Paso 1: aprovisionamiento de cuentas de servicio administradas de grupo
+### <a name="step-1-provisioning-group-managed-service-accounts"></a><a name="BKMK_Step1"></a>Paso 1: Aprovisionamiento de cuentas de servicio administradas de grupo
 Solo puede crear una gMSA si el esquema del bosque se ha actualizado a Windows Server 2012, se ha implementado la clave raíz maestra de Active Directory y hay al menos un DC de Windows Server 2012 en el dominio en el que se creará el gMSA.
 
 Para completar los siguientes procedimientos, el requisito mínimo es ser miembro de **Admins. del dominio** u **Opers. de cuentas** o poder crear objetos msDS-GroupManagedServiceAccount.
@@ -147,13 +147,13 @@ Para completar los siguientes procedimientos, el requisito mínimo es ser miembr
 > Siempre se requiere un valor para el parámetro-name (si se especifica-Name o not), con-DNSHostName,-RestrictToSingleComputer y-RestrictToOutboundAuthentication son requisitos secundarios para los tres escenarios de implementación.    
 
 
-#### <a name="to-create-a-gmsa-using-the-new-adserviceaccount-cmdlet"></a><a name="BKMK_CreateGMSA"></a>Para crear un gMSA con el cmdlet New-ADServiceAccount
+#### <a name="to-create-a-gmsa-using-the-new-adserviceaccount-cmdlet"></a><a name="BKMK_CreateGMSA"></a>Para crear una gMSA con el cmdlet New-ADServiceAccount
 
 1.  En el controlador de dominio de Windows Server 2012, ejecute Windows PowerShell desde la barra de tareas.
 
 2.  Escribe los siguientes comandos en el símbolo del sistema de Windows PowerShell y, luego, presiona ENTRAR. (El módulo de Active Directory se cargará automáticamente).
 
-    **New-ADServiceAccount [-name] &lt;cadena&gt;-DNSHostName &lt;cadena&gt; [-KerberosEncryptionType &lt;ADKerberosEncryptionType&gt;] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >] [-SamAccountName &lt;String&gt;] [-ServicePrincipalNames < String [] >]**
+    **New-ADServiceAccount [-name] &lt; cadena &gt; -DNSHostName &lt; cadena &gt; [-KerberosEncryptionType &lt; ADKerberosEncryptionType &gt; ] [-ManagedPasswordIntervalInDays <Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword <ADPrincipal [] >] [-SamAccountName &lt; cadena &gt; ] [-ServicePrincipalNames <String [] >]**
 
     |Parámetro|String|Ejemplo|
     |-------|-----|------|
@@ -176,7 +176,7 @@ Para completar los siguientes procedimientos, el requisito mínimo es ser miembr
     New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$ -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
     ```
 
-Para completar este procedimiento, el requisito mínimo es ser miembro de **Admins. del dominio** u **Opers. de cuentas** o poder crear objetos msDS-GroupManagedServiceAccount. Para ver información detallada sobre el uso de las cuentas adecuadas y las pertenencias a grupos, consulte [Grupos predeterminados locales y de dominio](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
+Para completar este procedimiento, el requisito mínimo es ser miembro de **Admins. del dominio** u **Opers. de cuentas** o poder crear objetos msDS-GroupManagedServiceAccount. Para obtener información detallada sobre el uso de las cuentas adecuadas y las pertenencias a grupos, vea [Grupos predeterminados locales y de dominio](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
 
 ##### <a name="to-create-a-gmsa-for-outbound-authentication-only-using-the-new-adserviceaccount-cmdlet"></a>Para crear una gMSA de autenticación de salida solamente con el cmdlet New-ADServiceAccount
 
@@ -184,7 +184,7 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 2.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **New-ADServiceAccount [-name] &lt;String&gt;-RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]**
+    **New-ADServiceAccount [-name] &lt; cadena &gt; -RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays <Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword <ADPrincipal [] >]**
 
     |Parámetro|String|Ejemplo|
     |-------|-----|------|
@@ -201,7 +201,7 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$
 ```
 
-### <a name="step-2-configuring-service-identity-application-service"></a><a name="BKMK_ConfigureServiceIdentity"></a>Paso 2: configuración del servicio de aplicación de identidad de servicio
+### <a name="step-2-configuring-service-identity-application-service"></a><a name="BKMK_ConfigureServiceIdentity"></a>Paso 2: Configuración del servicio de aplicación de identidad de servicio
 Para configurar los servicios en Windows Server 2012, consulte la siguiente documentación de características:
 
 -   Grupo de aplicaciones de IIS
@@ -218,7 +218,7 @@ Para configurar los servicios en Windows Server 2012, consulte la siguiente docu
 
 Puede haber otros servicios que admitan gMSA. Para ver información detallada sobre cómo configurar esos servicios, consulta la documentación del producto correspondiente.
 
-## <a name="adding-member-hosts-to-an-existing-server-farm"></a><a name="BKMK_AddMemberHosts"></a>Agregar hosts miembros a una granja de servidores existente
+## <a name="adding-member-hosts-to-an-existing-server-farm"></a><a name="BKMK_AddMemberHosts"></a>Adición de hosts miembros a una granja de servidores existente
 Si usa grupos de seguridad para administrar los hosts miembros, agregue la cuenta de equipo del nuevo host miembro al grupo de seguridad (al que pertenecen los hosts miembros de gMSA) mediante uno de los métodos siguientes.
 
 Para completar estos procedimientos, el requisito mínimo es ser miembro de **Admins. del dominio** o poder agregar miembros al objeto del grupo de seguridad.
@@ -245,11 +245,11 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 2.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **Get-ADServiceAccount [-name] &lt;cadena&gt;-PrincipalsAllowedToRetrieveManagedPassword**
+    **Get-ADServiceAccount [-Identity] &lt; cadena &gt; -propiedades PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **Set-ADServiceAccount [-name] &lt;cadena&gt;-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
+    **Set-ADServiceAccount [-Identity] &lt; cadena &gt; -PrincipalsAllowedToRetrieveManagedPassword <ADPrincipal [] >**
 
 |Parámetro|String|Ejemplo|
 |-------|-----|------|
@@ -261,14 +261,14 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 Por ejemplo, para agregar hosts miembros, escribe los siguientes comandos y, luego, presiona ENTRAR.
 
 ```PowerShell
-Get-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
+Get-ADServiceAccount [-Identity] ITFarm1 -Properties PrincipalsAllowedToRetrieveManagedPassword
 ```
 
 ```PowerShell
-Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host2$,Host3$
+Set-ADServiceAccount [-Identity] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host2$,Host3$
 ```
 
-## <a name="updating-the-group-managed-service-account-properties"></a><a name="BKMK_Update_gMSA"></a>Actualización de las propiedades de la cuenta de servicio administrada de grupo
+## <a name="updating-the-group-managed-service-account-properties"></a><a name="BKMK_Update_gMSA"></a>Actualización de las propiedades de las cuentas de servicio administradas de grupo
 Para completar estos procedimientos, el requisito mínimo es ser miembro de **Admins. del dominio** u **Opers. de cuentas** o poder escribir en objetos msDS-GroupManagedServiceAccount.
 
 Abre el módulo de Active Directory para Windows PowerShell y define las propiedades con el cmdlet Set-ADServiceAccount.
@@ -303,11 +303,11 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 2.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **Get-ADServiceAccount [-name] &lt;cadena&gt;-PrincipalsAllowedToRetrieveManagedPassword**
+    **Get-ADServiceAccount [-Identity] &lt; cadena &gt; -propiedades PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **Set-ADServiceAccount [-name] &lt;cadena&gt;-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
+    **Set-ADServiceAccount [-Identity] &lt; cadena &gt; -PrincipalsAllowedToRetrieveManagedPassword <ADPrincipal [] >**
 
 |Parámetro|String|Ejemplo|
 |-------|-----|------|
@@ -319,14 +319,14 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 Por ejemplo, para quitar hosts miembros, escribe los siguientes comandos y, luego, presiona ENTRAR.
 
 ```PowerShell
-Get-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
+Get-ADServiceAccount [-Identity] ITFarm1 -Properties PrincipalsAllowedToRetrieveManagedPassword
 ```
 
 ```PowerShell
-Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host3$
+Set-ADServiceAccount [-Identity] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host3$
 ```
 
-### <a name="step-2-removing-a-group-managed-service-account-from-the-system"></a><a name="BKMK_RemoveGMSA"></a>Paso 2: quitar una cuenta de servicio administrada de grupo del sistema
+### <a name="step-2-removing-a-group-managed-service-account-from-the-system"></a><a name="BKMK_RemoveGMSA"></a>Paso 2: Eliminación de una cuenta de servicio administrada de grupo del sistema
 Quita del host miembro las credenciales almacenadas en caché de la gMSA con Uninstall-ADServiceAccount o la API NetRemoveServiceAccount en el sistema host.
 
 El requisito mínimo para completar estos procedimientos es pertenecer al grupo **Administradores** u otro equivalente.
@@ -337,7 +337,7 @@ El requisito mínimo para completar estos procedimientos es pertenecer al grupo 
 
 2.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **Uninstall-ADServiceAccount &lt;ADServiceAccount&gt;**
+    **Uninstall-ADServiceAccount &lt; ADServiceAccount&gt;**
 
     **Ejemplo**
 
@@ -353,4 +353,4 @@ Para obtener más información sobre el cmdlet Uninstall-ADServiceAccount, en el
 
 ## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
 
--   [Introducción a las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
+-   [Información general sobre las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
