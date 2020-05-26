@@ -1,49 +1,65 @@
 ---
 title: FTP Get
-description: Tema de referencia de FTP Get
+description: Tema de referencia del comando FTP get, que copia un archivo remoto en el equipo local mediante el tipo de transferencia de archivos actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: d70355c4-58ef-43e0-916b-c7ecf77e6ee4 vhorne
+ms.assetid: d70355c4-58ef-43e0-916b-c7ecf77e6ee4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37423f81fd72e79cebcdf169160ad3e8033b69b2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b7254cac15afc446695f22ee1a63f2f4573d3565
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725293"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819715"
 ---
-# <a name="ftp-get"></a>FTP: get
+# <a name="ftp-get"></a>FTP Get
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Copia un archivo remoto en el equipo local mediante el tipo de transferencia de archivos actual.   
-## <a name="syntax"></a>Sintaxis  
-```  
-get <remoteFile> [<LocalFile>]  
-```  
-#### <a name="parameters"></a>Parámetros  
+Copia un archivo remoto en el equipo local mediante el tipo de transferencia de archivos actual.
 
-|   Parámetro   |                                                              Descripción                                                               |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| <remoteFile>  |                                                   Especifica el archivo remoto que se va a copiar.                                                   |
-| [<LocalFile>] | Especifica el nombre del archivo que se va a usar en el equipo local. Si no se especifica *archivolocal* , el archivo recibe el nombre de *archivoremoto* . |
+> [!NOTE]
+> Este comando es el mismo que el [comando recepción de FTP](ftp-recv.md).
 
-## <a name="remarks"></a>Observaciones  
-El comando **Get** es idéntico al comando **RECV** .  
-## <a name="examples"></a>Ejemplos  
-Copie **Test. txt** en el equipo local con el tipo de transferencia de archivos actual.  
-```  
-get test.txt  
-```  
-Copie **Test. txt** en el equipo local como **Test1. txt** con el tipo de transferencia de archivo actual.  
-```  
-Get test.txt test1.txt  
-```  
-## <a name="additional-references"></a>Referencias adicionales  
--   [FTP: ASCII](ftp-ascii.md)  
--   [FTP: binario](ftp-binary.md)  
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
+## <a name="syntax"></a>Sintaxis
+
+```
+get <remotefile> [<localfile>]
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<remotefile>` | Especifica el archivo remoto que se va a copiar. |
+| `[<localfile>]` | Especifica el nombre del archivo que se va a usar en el equipo local. Si no se especifica *archivolocal* , el archivo recibe el nombre del *archivoremoto*. |
+
+### <a name="examples"></a>Ejemplos
+
+Para copiar *Test. txt* en el equipo local mediante la transferencia de archivos actual, escriba:
+
+```
+get test.txt
+```
+
+Para copiar *Test. txt* en el equipo local como *Test1. txt* mediante la transferencia de archivos actual, escriba:
+
+```
+get test.txt test1.txt
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comando RECV de FTP](ftp-recv.md)
+
+- [comando ASCII de FTP](ftp-ascii.md)
+
+- [comando binario de FTP](ftp-binary.md)
+
+- [Guía de FTP adicional](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

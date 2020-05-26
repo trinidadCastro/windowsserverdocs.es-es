@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: getenctypeattr'
-description: Tema de referencia de * * * *-
+title: ksetup getenctypeattr
+description: Tema de referencia del comando ksetup getenctypeattr, que recupera el atributo de tipo de cifrado del dominio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,51 +9,51 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8363113d4fbb310d98b40d852b36a00f20320e6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2acead4ff1179002303c18d4feff262080203a28
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724634"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817705"
 ---
-# <a name="ksetupgetenctypeattr"></a>ksetup: getenctypeattr
+# <a name="ksetup-getenctypeattr"></a>ksetup getenctypeattr
 
+Recupera el atributo de tipo de cifrado del dominio. Se muestra un mensaje de estado cuando se completa correctamente o con errores.
 
-
-Recupera el atributo de tipo de cifrado del dominio.
+Puede ver el tipo de cifrado del vale de concesión de vales (TGT) de Kerberos y la clave de sesión; para ello, ejecute el comando **klist** y vea la salida. Puede configurar el dominio para que se conecte y use, mediante la ejecución del `ksetup /domain <domainname>` comando.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /getenctypeattr <DomainName> 
+ksetup /getenctypeattr <domainname>
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<DomainName>|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<domainname>` | Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso. |
 
-## <a name="remarks"></a>Observaciones
+### <a name="examples"></a>Ejemplos
 
-Para ver el tipo de cifrado del vale de concesión de vales (TGT) de Kerberos y la clave de sesión, ejecute el comando **klist** y vea la salida.
+Para comprobar el atributo de tipo de cifrado del dominio, escriba:
 
-Si el comando se ejecuta correctamente o produce un error, se muestra un mensaje de estado cuando se completa correctamente o con errores.
-
-Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<nombredominio>** .
-
-## <a name="examples"></a>Ejemplos
-
-Compruebe el atributo de tipo de cifrado del dominio:
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Klist](klist.md)
--   [Ksetup:domain](ksetup-domain.md)
--   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
--   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
--   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [klist (comando)](klist.md)
+
+- [ksetup, comando](ksetup.md)
+
+- [comando de dominio ksetup](ksetup-domain.md)
+
+- [ksetup addenctypeattr, comando](ksetup-addenctypeattr.md)
+
+- [ksetup setenctypeattr, comando](ksetup-setenctypeattr.md)
+
+- [ksetup delenctypeattr, comando](ksetup-delenctypeattr.md)

@@ -1,6 +1,6 @@
 ---
-title: importación
-description: Tema de referencia de * * * *-
+title: importar DiskPart
+description: Tema de referencia del comando de importación, que importa un grupo de discos externos en el grupo de discos del equipo local.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 569d986c57ae8b3d7253c050146ac0583c7c92df
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6912aa9698d484501cad5f3cdfb5b19955bb4931
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724845"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818455"
 ---
-# <a name="import"></a>importación
+# <a name="import-diskpart"></a>importar (DiskPart)
 
+Importa un grupo de discos externos en el grupo de discos del equipo local. Este comando importa todos los discos que se encuentra en el mismo grupo que el disco que tiene el foco.
 
-
-Importa un grupo de discos externos en el grupo de discos del equipo local.
+> AÚN Para poder usar este comando, debe usar el [comando Seleccionar disco](select-disk.md) para seleccionar un disco dinámico en un grupo de discos externos y cambiar el foco a él.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -30,18 +30,14 @@ import [noerr]
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|noerr|Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
-## <a name="remarks"></a>Observaciones
-
--   El comando IMPORT importa todos los discos que se encuentra en el mismo grupo que el disco que tiene el foco.
--   Para que esta operación se realice correctamente, debe seleccionarse un disco dinámico en un grupo de discos externos. Use el comando **Seleccionar disco** para seleccionar un disco y desplazar el foco a él.
-
-## <a name="examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
 
 Para importar todos los discos que se encuentra en el mismo grupo de discos que el disco con el foco en el grupo de discos del equipo local, escriba:
+
 ```
 import
 ```
@@ -50,3 +46,4 @@ import
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
+- [comando DiskPart](diskpart.md)

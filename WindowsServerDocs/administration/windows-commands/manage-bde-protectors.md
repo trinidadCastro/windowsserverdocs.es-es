@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: e01049a5fb3dc419e219fe4ec8b11dcdc790f919
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c248a5d7c6a25ccb6fa2917358223fd255a3c600
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724118"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820635"
 ---
 # <a name="manage-bde-protectors"></a>Manage-BDE: protectores
 
@@ -45,8 +45,8 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 ### <a name="-add-syntax-and-parameters"></a><a name=BKMK_addprotectors></a>-Agregar sintaxis y parámetros
 ```
 manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <NumericalPassword>] [-recoverykey <pathToExternalKeydirectory>]
-[-startupkey <pathToExternalKeydirectory>] [-certificate {-cf <pathToCertificateFile>|-ct <CertificateThumbprint>}] [-tpm] [-tpmandpin] 
-[-tpmandstartupkey <pathToExternalKeydirectory>] [-tpmandpinandstartupkey <pathToExternalKeydirectory>] [-password][-adaccountorgroup <securityidentifier> [-computername <Name>] 
+[-startupkey <pathToExternalKeydirectory>] [-certificate {-cf <pathToCertificateFile>|-ct <CertificateThumbprint>}] [-tpm] [-tpmandpin]
+[-tpmandstartupkey <pathToExternalKeydirectory>] [-tpmandpinandstartupkey <pathToExternalKeydirectory>] [-password][-adaccountorgroup <securityidentifier> [-computername <Name>]
 [{-?|/?}] [{-help|-h}]
 ```
 
@@ -74,7 +74,7 @@ manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <Nume
 
 ### <a name="-delete-syntax-and-parameters"></a><a name=BKMK_deleteprotectors></a>-eliminar sintaxis y parámetros
 ```
-manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}] 
+manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}]
 [-id <KeyProtectorID>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
@@ -90,7 +90,7 @@ manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|ce
 |       tpmandpin        |                                    Especifica que se deben eliminar los protectores de clave basados en TPM y en el PIN asociados a la unidad.                                    |
 | tpmandpinandstartupkey |                             Especifica que se deben eliminar los protectores de clave basados en el TPM, el PIN y la clave de inicio asociados con la unidad.                             |
 |        password        |                                        Especifica que se deben eliminar todos los protectores de clave de contraseña asociados a la unidad.                                         |
-|        identity        |                                        Especifica que se deben eliminar todos los protectores de clave de identidad asociados a la unidad.                                         |
+|        identidad        |                                        Especifica que se deben eliminar todos los protectores de clave de identidad asociados a la unidad.                                         |
 |          identificador de           |                Identifica el protector de clave que se va a eliminar mediante el identificador de clave. Este parámetro es una opción alternativa al parámetro **-Type** .                 |
 |    <KeyProtectorID>    |        Identifica un protector de clave individual en la unidad que se va a eliminar. Los identificadores de protector de clave se pueden mostrar con el comando **Manage-BDE-protectors-Get** .         |
 |     -COMPUTERNAME      | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
@@ -134,5 +134,5 @@ Ilustra el uso del comando **-protecters** para realizar una copia de seguridad 
 manage-bde  -protectors  -adbackup C:
 ```
 ## <a name="additional-references"></a>Referencias adicionales
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [manage-bde](manage-bde.md)

@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: setcomputerpassword'
-description: Tema de referencia de * * * *-
+title: ksetup setcomputerpassword
+description: Tema de referencia del comando ksetup setcomputerpassword, que establece la contraseña para el equipo local.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,47 +9,42 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9cb0c2ee36ed85ddfb015a80e86198fe788f8474
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1ec410cd85c13cb3a925c3fc65b8c9f86fba606a
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724581"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817435"
 ---
-# <a name="ksetupsetcomputerpassword"></a>ksetup: setcomputerpassword
+# <a name="ksetup-setcomputerpassword"></a>ksetup setcomputerpassword
 
+Establece la contraseña del equipo local. Este comando afecta solo a la cuenta de equipo y requiere un reinicio para que el cambio de contraseña surta efecto.
 
-
-Establece la contraseña del equipo local.
+> [!IMPORTANT]
+> La contraseña de la cuenta de equipo no se muestra en el registro o como salida del comando **ksetup** .
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /setcomputerpassword <Password>
+ksetup /setcomputerpassword <password>
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> de contraseña|Usa la contraseña proporcionada para establecer la cuenta de equipo en el equipo local.</br>La contraseña solo se puede establecer mediante una cuenta con privilegios administrativos. La contraseña puede tener de 1 a 156 caracteres alfanuméricos o especiales.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<password>` | Especifica la contraseña proporcionada para establecer la cuenta de equipo en el equipo local. La contraseña solo se puede establecer mediante una cuenta con privilegios de administrador y la contraseña debe tener entre 1 y 156 caracteres alfanuméricos o especiales. |
 
-## <a name="remarks"></a>Observaciones
+### <a name="examples"></a>Ejemplos
 
-Este comando afecta solo a la cuenta de equipo.
+Para cambiar la contraseña de la cuenta de equipo en el equipo local de *IPops897* a *IPop $897!*, escriba:
 
-Debe reiniciar el equipo para que el cambio de contraseña surta efecto.
-
-La contraseña de la cuenta de equipo no se muestra en el registro o como salida del comando **ksetup** .
-
-## <a name="examples"></a>Ejemplos
-
-Cambie la contraseña de la cuenta de equipo en el equipo local de IPops897 a IPop $897!.
 ```
 ksetup /setcomputerpassword IPop$897!
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Ksetup](ksetup.md)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [ksetup, comando](ksetup.md)

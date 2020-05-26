@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: delkdc'
-description: Tema de referencia de * * * *-
+title: ksetup delkdc
+description: Tema de referencia sobre el comando ksetup delkdc, que elimina instancias de los nombres de Centro de distribución de claves (KDC) del dominio Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,52 +9,53 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19ebe322d414d1ae9007275772ccd747f6f0ff8d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bd3901558f1cda0d2e1d4e7c12b0d2b151870fa8
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724649"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817855"
 ---
-# <a name="ksetupdelkdc"></a>ksetup: delkdc
-
-
+# <a name="ksetup-delkdc"></a>ksetup delkdc
 
 Elimina instancias de nombres de Centro de distribución de claves (KDC) para el dominio Kerberos.
+
+La asignación se almacena en el registro, en `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\LSA\Kerberos\Domains` . Después de ejecutar este comando, se recomienda asegurarse de que se ha quitado el KDC y que ya no aparece en la lista.
+
+> [!NOTE]
+> Para quitar los datos de configuración de dominio Kerberos de varios equipos, use el complemento de **plantilla de configuración de seguridad** con distribución de directivas, en lugar de usar el comando **ksetup** explícitamente en equipos individuales.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /delkdc <RealmName> <KDCName>
+ksetup /delkdc <realmname> <KDCname>
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> RealmName|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** . Es el dominio Kerberos desde el que está intentando eliminar el otro KDC.|
-|\<> KDCName|El nombre del KDC se indica como un nombre de dominio completo que no distingue entre mayúsculas y minúsculas, como mitkdc.contoso.com.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<realmname>` | Especifica el nombre DNS en mayúsculas, como CORP. CONTOSO.COM. Este es el dominio Kerberos predeterminado que aparece cuando se ejecuta el comando **ksetup** y es el dominio Kerberos del que se desea eliminar el KDC. |
+| `<KDCname>` | Especifica el nombre de dominio completo que distingue entre mayúsculas y minúsculas, como mitkdc.contoso.com. |
 
-## <a name="remarks"></a>Observaciones
+### <a name="examples"></a>Ejemplos
 
-Estas asignaciones se almacenan en el registro en **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains**. Para quitar los datos de configuración de dominio Kerberos de varios equipos, use el complemento de plantilla de configuración de seguridad y la distribución de directivas en lugar de usar **ksetup** explícitamente en equipos individuales.
+Para ver todas las asociaciones entre el dominio de Windows y el dominio que no es de Windows y para determinar cuáles se van a quitar, escriba:
 
-En los equipos que ejecutan Windows 2000 Server con Service Pack 1 (SP1) y versiones anteriores, el equipo debe reiniciarse antes de que se use la configuración de configuración de dominio Kerberos modificada.
-
-Para comprobar el nombre de dominio Kerberos predeterminado del equipo, o para comprobar que este comando funcionó como se esperaba, ejecute **ksetup** en el símbolo del sistema y compruebe que el KDC que se quitó no existe en la lista.
-
-## <a name="examples"></a>Ejemplos
-
-Los requisitos de seguridad de este equipo han cambiado, por lo que debe quitarse el vínculo entre el dominio Kerberos de Windows y el dominio que no es de Windows. En primer lugar, determine qué asociación desea quitar y generar la salida de las asociaciones existentes:
 ```
 ksetup
 ```
-Quite la asociación mediante el comando siguiente:
+
+Para quitar la asociación, escriba:
+
 ```
-Ksetup /delkdc CORP.CONTOSO.COM mitkdc.contoso.com
+ksetup /delkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Ksetup](ksetup.md)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [ksetup, comando](ksetup.md)
+
+- [ksetup addkdc, comando](ksetup-addkdc.md)

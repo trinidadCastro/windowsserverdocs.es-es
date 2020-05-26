@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: cf2d23c7d5773662f679a9a20b0aaba118f35548
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9b4727e985070e2e76fd53038d33148003d87ebb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720626"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820895"
 ---
 # <a name="wscript"></a>wscript
 
@@ -39,11 +39,11 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 |/h: cscript|Registra **Cscript. exe** como host de script predeterminado para ejecutar scripts.|
 |/h: Wscript|Registra **Wscript. exe** como host de script predeterminado para ejecutar scripts. Este es el valor predeterminado cuando se omite la opción **/h** .|
 |/i|Especifica el modo interactivo, que muestra las alertas, los errores de scripting y los mensajes de entrada.</br>Este es el valor predeterminado y el contrario de **/b**.|
-|/trabajo:\<identificador>|Ejecuta el trabajo identificado por el *identificador* en un archivo de script **. wsf** .|
+|/trabajo: \< identificador>|Ejecuta el trabajo identificado por el *identificador* en un archivo de script **. wsf** .|
 |/logo|Especifica que el banner de Windows Script Host se muestra en la consola antes de que se ejecute el script.</br>Este es el valor predeterminado y el contrario de **/nologo**.|
 |/nologo|Especifica que el titular de Windows Script Host no se muestra antes de que se ejecute el script. Es lo contrario de **/logo**.|
 |/s|Guarda las opciones actuales del símbolo del sistema para el usuario actual.|
-|/t:\<número>|Especifica el tiempo máximo que se puede ejecutar el script (en segundos). Puede especificar hasta 32.767 segundos.</br>El valor predeterminado es sin límite de tiempo.|
+|/t: \< número>|Especifica el tiempo máximo que se puede ejecutar el script (en segundos). Puede especificar hasta 32.767 segundos.</br>El valor predeterminado es sin límite de tiempo.|
 |/x|Inicia el script en el depurador.|
 |ScriptArguments|Especifica los argumentos que se pasan al script. Cada argumento de script debe ir precedido de una barra diagonal (/).|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
@@ -61,4 +61,4 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

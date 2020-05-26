@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3355aa310bb9919b5218052878d94416f577381
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bee9dabe0e9344c7870e53ed34e4c9dd057cfc42
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723829"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820845"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -37,7 +37,7 @@ mstsc.exe /migrate
 |        Parámetro        |                                                         Descripción                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   Especifica el nombre de un archivo. RDP para la conexión.                                    |
-|  /v: <servidor\>[: <puerto\>] |                Especifica el equipo remoto y, opcionalmente, el número de puerto al que desea conectarse.                 |
+|  /v: <servidor \> [: <puerto \> ] |                Especifica el equipo remoto y, opcionalmente, el número de puerto al que desea conectarse.                 |
 |         /admin          |                                   Le conecta a una sesión para administrar el servidor.                                   |
 |           /f            |                                    inicia Conexión a Escritorio remoto en modo de pantalla completa.                                    |
 |       /w<Width>        |                                      Especifica el ancho de la ventana de Escritorio remoto.                                      |
@@ -63,5 +63,5 @@ mstsc.exe /migrate
     ```
 
 ## <a name="additional-references"></a>Referencias adicionales
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)

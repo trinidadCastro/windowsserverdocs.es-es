@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6305c9036b611f879608386dbf71398e993ea03
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9987a3628682c47cde53433558ef89c01684ccf5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720173"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821205"
 ---
 # <a name="wbadmin-get-items"></a>elementos get de Wbadmin
 
@@ -47,13 +47,13 @@ Para enumerar los elementos de la copia de seguridad que se ejecutó el 31 de ma
 ```
 wbadmin get items -version:03/31/2013-09:00
 ```
-Para enumerar los elementos de la copia de seguridad de Server01 que se ejecutó el 30 de abril de 2013 a las 9:00 A.M. y se almacenan en \\ \\servername\share, escriba:
+Para enumerar los elementos de la copia de seguridad de Server01 que se ejecutó el 30 de abril de 2013 a las 9:00 A.M. y se almacenan en \\ \\ servername\share, escriba:
 ```
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Get-WBBackupSet](https://technet.microsoft.com/library/jj902473.aspx)

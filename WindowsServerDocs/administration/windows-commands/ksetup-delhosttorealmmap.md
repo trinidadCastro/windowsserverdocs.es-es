@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: delhosttorealmmap'
-description: Tema de referencia de * * * *-
+title: ksetup delhosttorealmmap
+description: Tema de referencia del comando ksetup delhosttorealmmap, que quita una asignación de nombre de entidad de seguridad de servicio (SPN) entre el host indicado y el dominio Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,48 +9,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b6b14785f254a63f0e16fcd16f1cd464a2d69c8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 17fc30e76247c570c653d5ec38501a2199435c7f
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724693"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817865"
 ---
-# <a name="ksetupdelhosttorealmmap"></a>ksetup: delhosttorealmmap
+# <a name="ksetup-delhosttorealmmap"></a>ksetup delhosttorealmmap
 
+Quita una asignación de nombre de entidad de seguridad de servicio (SPN) entre el host indicado y el dominio Kerberos. Este comando también quita cualquier asignación entre un host y un dominio (o varios hosts).
 
-
-Quita una asignación de nombre de entidad de seguridad de servicio (SPN) entre el host indicado y el dominio Kerberos.
+La asignación se almacena en el registro, en `HKEY_LOCAL_MACHINE\SYSTEM\CurrentContolSet\Lsa\Kerberos\HostToRealm` . Después de ejecutar este comando, se recomienda asegurarse de que la asignación aparece en el registro.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /delhosttorealmmap <HostName> <RealmName>
+ksetup /delhosttorealmmap <hostname> <realmname>
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<Nombre de host>|El nombre de host es el nombre del equipo y se puede indicar como el nombre de dominio completo del equipo.|
-|\<> RealmName|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<hostname>` | Especifica el nombre de dominio completo del equipo. |
+| `<realmname>` | Especifica el nombre DNS en mayúsculas, como CORP. CONTOSO.COM. |
 
-## <a name="remarks"></a>Observaciones
+### <a name="examples"></a>Ejemplos
 
-Cuando existe una asignación de host a dominio Kerberos (o varios hosts a dominio Kerberos), este comando quita esa asignación.
+Para cambiar la configuración del territorio CONTOSO y eliminar la asignación del equipo host IPops897 al dominio Kerberos, escriba:
 
-La asignación se registra en el registro en **HKEY_LOCAL_MACHINE \system\currentcontolset\lsa\kerberos\hosttorealm**. Debe comprobar la asignación en el registro después de usar este comando.
-
-## <a name="examples"></a>Ejemplos
-
-Modificando la configuración del dominio Kerberos CONTOSO, elimina la asignación del equipo host IPops897 al dominio Kerberos:
 ```
 ksetup /delhosttorealmmap IPops897 CONTOSO
 ```
-Después de ejecutar este comando, puede comprobar en el registro que la asignación es la prevista.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Ksetup:addhosttorealmmap](ksetup-addhosttorealmmap.md)
--   [Ksetup](ksetup.md)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [ksetup, comando](ksetup.md)
+
+- [ksetup addhosttorealmmap, comando](ksetup-addhosttorealmmap.md)

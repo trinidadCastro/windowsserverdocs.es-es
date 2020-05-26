@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: setrealmflags'
-description: Tema de referencia de * * * *-
+title: ksetup setrealmflags
+description: Tema de referencia del comando ksetup setrealmflags, que establece las marcas de dominio Kerberos para el dominio Kerberos especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,65 +9,73 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a32ea03f4f0e76f03c7a0b505563e6bcf972b80
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2de568ae3df522f43d7a84e22d76ee3975d8e209
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724569"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817325"
 ---
-# <a name="ksetupsetrealmflags"></a>ksetup: setrealmflags
-
-
+# <a name="ksetup-setrealmflags"></a>ksetup setrealmflags
 
 Establece marcas de dominio Kerberos para el dominio Kerberos especificado.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]
+ksetup /setrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> RealmName|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM.|
-|Marca de dominio Kerberos|Denota una de las marcas siguientes:</br>-SendAddress</br>- TcpSupported</br>-Delegado</br>- NcSupported</br>-RC4|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<realmname>` | Especifica el nombre DNS en mayúsculas, como CORP. CONTOSO.COM. |
 
-## <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Observaciones
 
-Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos que no se basa en el sistema operativo Windows Server. Los equipos que ejecutan Windows Server 2003, Windows Server 2008 o Windows Server 2008 R2 pueden usar un servidor Kerberos para administrar la autenticación en lugar de usar un dominio que ejecute un sistema operativo Windows Server, y estos sistemas participarán en un dominio Kerberos. Esta entrada establece las características del dominio Kerberos. En la tabla siguiente se describe cada uno de ellos.
+- Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos que no se basan en el sistema operativo Windows Server. Los equipos que ejecutan Windows Server pueden usar un servidor Kerberos para administrar la autenticación en el dominio Kerberos, en lugar de usar un dominio que ejecute un sistema operativo Windows Server. Esta entrada establece las características del dominio Kerberos y son las siguientes:
 
-|Value|Marca de dominio Kerberos|Descripción|
-|-----|----------|-----------|
-|0xF|All|Se establecen todas las marcas de dominio Kerberos.|
-|0x00|None|No se establecen marcas de dominio Kerberos y no se habilitan características adicionales.|
-|0x01|SendAddress|La dirección IP se incluirá en los vales de concesión de vales.|
-|0x02|TcpSupported|El protocolo de control de transmisión (TCP) y el protocolo de datagramas de usuario (UDP) se admiten en este dominio Kerberos.|
-|0x04|Delegar|Todos los usuarios de este dominio Kerberos son de confianza para la delegación.|
-|0x08|NcSupported|Este dominio Kerberos admite la canonización de nombres, que permite los estándares de nomenclatura DNS y dominio Kerberos.|
-|0x80|RC4|Este dominio Kerberos es compatible con el cifrado RC4 para habilitar la confianza entre dominios, lo que permite el uso de TLS.|
+| Value | Marca de dominio Kerberos | Descripción |
+| ----- | ---------- | ----------- |
+| 0xF | All | Se establecen todas las marcas de dominio Kerberos. |
+| 0x00 | None | No se establecen marcas de dominio Kerberos y no se habilitan características adicionales. |
+| 0x01 | sendaddress | La dirección IP se incluirá en los vales de concesión de vales. |
+| 0x02 | tcpsupported | El protocolo de control de transmisión (TCP) y el protocolo de datagramas de usuario (UDP) se admiten en este dominio Kerberos. |
+| 0x04 | delegado | Todos los usuarios de este dominio Kerberos son de confianza para la delegación. |
+| 0x08 | ncsupported | Este dominio Kerberos admite la canonización de nombres, que permite los estándares de nomenclatura DNS y dominio Kerberos. |
+| 0x80 | RC4 | Este dominio Kerberos es compatible con el cifrado RC4 para habilitar la confianza entre dominios, lo que permite el uso de TLS. |
 
-Las marcas de dominio Kerberos se almacenan en el registro en **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains\\**<em>RealmName</em>. Esta entrada no existe en el registro de forma predeterminada. Puede usar el comando [Ksetup: addrealmflags](ksetup-addrealmflags.md) para rellenar el registro.
+- Las marcas de dominio Kerberos se almacenan en el registro en `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\<realmname>` . Esta entrada no existe en el registro de forma predeterminada. Puede usar el comando [ksetup addrealmflags](ksetup-addrealmflags.md) para rellenar el registro.
 
-Puede ver qué marcas de dominio están disponibles y establecerse mediante la visualización de la salida de **ksetup**.
+- Puede ver las marcas disponibles y establecer el dominio Kerberos mediante la visualización de la salida de **ksetup** o `ksetup /dumpstate` .
 
-## <a name="examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
 
-Enumere las marcas disponibles y establezca el dominio Kerberos CONTOSO:
+Para enumerar el disponible y para establecer marcas de dominio Kerberos para el dominio Kerberos, escriba:
+
 ```
 ksetup
 ```
-Establezca dos marcas que no estén establecidas actualmente:
+
+Para establecer dos marcas que no están establecidas actualmente, escriba:
+
 ```
 ksetup /setrealmflags CONTOSO ncsupported delegate
 ```
-Ejecute el comando **ksetup** para comprobar que la marca de dominio Kerberos está establecida visualizando la salida y buscando **marcas de dominio Kerberos =**.
+
+Para comprobar que se ha establecido la marca de dominio Kerberos, escriba `ksetup` y, a continuación, vea la salida y busque el texto, **marcas de dominio Kerberos =**. Si no ve el texto, significa que no se ha establecido la marca.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Ksetup:listrealmflags](ksetup-listrealmflags.md)
--   [Ksetup:addrealmflags](ksetup-addrealmflags.md)
--   [Ksetup:delrealmflags](ksetup-delrealmflags.md)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [ksetup, comando](ksetup.md)
+
+- [ksetup listrealmflags, comando](ksetup-listrealmflags.md)
+
+- [ksetup addrealmflags, comando](ksetup-addrealmflags.md)
+
+- [ksetup delrealmflags, comando](ksetup-delrealmflags.md)
+
+- [ksetup dumpstate, comando](ksetup-dumpstate.md)

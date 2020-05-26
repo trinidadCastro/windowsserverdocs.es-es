@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 632573f317eafa254f6c434f959a06f2c24f7353
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 33e0dcaa59be3c1748763cce5c9979fe318b271a
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836248"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820155"
 ---
 # <a name="regini"></a>regini
 
@@ -32,15 +32,15 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputWidth][-b] text
 
 | Parámetro | Descripción |
 
-|-m \<\\\\ComputerName >|Especifica el nombre del equipo remoto con un registro que se va a modificar. Use el formato **\\\\NombreDeEquipo**.|
+|-m \< \\ \\ ComputerName>|Especifica el nombre del equipo remoto con un registro que se va a modificar. Use el formato ** \\ \\ ComputerName**.|
 |---------------------|-|
-|-h \<hivefile hiveroot >|Especifica el subárbol del registro local que se va a modificar. Debe especificar el nombre del archivo de Hive y la raíz del subárbol en el formato **hivefile hiveroot**.|
-|-i \<n >|Especifica el nivel de sangría que se va a utilizar para indicar la estructura de árbol de las claves del registro en el resultado del comando. La herramienta **Regdmp. exe** (que obtiene los permisos actuales de una clave del registro en formato binario) utiliza la sangría en múltiplos de cuatro, por lo que el valor predeterminado es **4**.|
-|-o \<outputwidth >|Especifica el ancho del resultado del comando, en caracteres. Si el resultado aparecerá en la ventana de comandos, el valor predeterminado es el ancho de la ventana. Si el resultado se dirige a un archivo, el valor predeterminado es **240** caracteres.|
+|-h \< hivefile hiveroot>|Especifica el subárbol del registro local que se va a modificar. Debe especificar el nombre del archivo de Hive y la raíz del subárbol en el formato **hivefile hiveroot**.|
+|- \< n>|Especifica el nivel de sangría que se va a utilizar para indicar la estructura de árbol de las claves del registro en el resultado del comando. La herramienta **Regdmp. exe** (que obtiene los permisos actuales de una clave del registro en formato binario) utiliza la sangría en múltiplos de cuatro, por lo que el valor predeterminado es **4**.|
+|-o \< outputwidth>|Especifica el ancho del resultado del comando, en caracteres. Si el resultado aparecerá en la ventana de comandos, el valor predeterminado es el ancho de la ventana. Si el resultado se dirige a un archivo, el valor predeterminado es **240** caracteres.|
 |-b|Especifica que la salida de **Regini. exe** es compatible con versiones anteriores de **Regini. exe**. Para obtener información detallada, consulte la sección Comentarios.|
 |textfiles|Especifica el nombre de uno o más archivos de texto que contienen datos del registro. Se puede enumerar cualquier número de archivos de texto ANSI o Unicode.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Las siguientes directrices se aplican principalmente al contenido de los archivos de texto que contienen los datos del registro que se aplican mediante **Regini. exe**.
 -   Use el punto y coma como un carácter de comentario de final de línea. Debe ser el primer carácter que no esté en blanco en una línea.
@@ -49,4 +49,4 @@ Las siguientes directrices se aplican principalmente al contenido de los archivo
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

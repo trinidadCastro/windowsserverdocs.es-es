@@ -1,6 +1,6 @@
 ---
 title: gpupdate
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando gpupdate, que actualiza la configuración directiva de grupo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,42 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f159acf1415ee48fe48c5d514a866ffc9f356db4
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a2047d6beb515350a534343ca484bc2deeb50daa
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724936"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818745"
 ---
 # <a name="gpupdate"></a>gpupdate
 
-Actualiza la configuración de directiva de grupo. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#examples).
+Actualiza la configuración de directiva de grupo.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-gpupdate [/target:{Computer | User}] [/force] [/wait:<VALUE>] [/logoff] [/boot] [/sync] [/?]
+gpupdate [/target:{computer | user}] [/force] [/wait:<VALUE>] [/logoff] [/boot] [/sync] [/?]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|     Parámetro     |                                                                                                                                                                                                                                                                                                                             Descripción                                                                                                                                                                                                                                                                                                                             |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /target: {equipo\|usuario} | Especifica que solo se actualiza la configuración de directiva de equipo o usuario. De forma predeterminada, se actualiza la configuración de directiva de usuario y equipo.                                                                                                                                                                                                                                                                                                                                |
-|      /force       |                                                                                                                                                                                                                                                                                   Vuelve a aplicar todas las configuraciones de directiva. De forma predeterminada, solo se aplican las configuraciones de directivas que han cambiado.                                                                                                                                                                                                                                                                                    |
-|  /Wait:\<valor>   | Establece el número de segundos que se esperará a que finalice el procesamiento de la Directiva antes de volver al símbolo del sistema. Cuando se supera el límite de tiempo, aparece el símbolo del sistema, pero continúa el procesamiento de directivas. El valor predeterminado es 600 segundos. El valor **0** significa no esperar. El valor **-1** significa esperar indefinidamente.</br>En un script, con este comando con un límite de tiempo especificado, puede ejecutar **gpupdate** y continuar con los comandos que no dependen de la finalización de **gpupdate**. Como alternativa, puede usar este comando sin ningún límite de tiempo especificado para permitir que **gpupdate** termine de ejecutarse antes de que se ejecuten otros comandos que dependen de él. |
-|      /logoff      |                                                                                                                                   Provoca un cierre de sesión después de que se actualice la configuración de directiva de grupo. Esto es necesario para los directiva de grupo extensiones del lado cliente que no procesan la Directiva en un ciclo de actualización en segundo plano, pero que procesan la Directiva cuando un usuario inicia sesión. Entre los ejemplos se incluyen la instalación de software de destino del usuario y el redireccionamiento de carpetas. Esta opción no tiene ningún efecto si no hay extensiones llamadas que requieran un cierre de sesión.                                                                                                                                    |
-|       /boot       |                                                                                                                                       Hace que se reinicie el equipo después de aplicar la configuración de directiva de grupo. Esto es necesario para los directiva de grupo extensiones del lado cliente que no procesan la Directiva en un ciclo de actualización en segundo plano, pero sí en la Directiva de procesos durante el inicio del equipo. Algunos ejemplos incluyen la instalación de software de destino del equipo. Esta opción no tiene ningún efecto si no hay extensiones llamadas que requieran un reinicio.                                                                                                                                        |
-|       ocasiona       |                                                                                                                                                                              Hace que la siguiente aplicación de directiva de primer plano se realice sincrónicamente. La Directiva de primer plano se aplica durante el arranque del equipo y el inicio de sesión del usuario. Puede especificar esto para el usuario, el equipo o ambos mediante el parámetro **/target** . Los parámetros **/Force** y **/Wait** se omiten si se especifican.                                                                                                                                                                               |
-|        /?         |                                                                                                                                                                                                                                                                                                                Muestra la Ayuda en el símbolo del sistema.                                                                                                                                                                                                                                                                                                                 |
+| Parámetro | Descripción |
+| --------- |------------ |
+| /target:`{computer|user}` | Especifica que solo se actualiza la configuración de directiva de equipo o usuario. De forma predeterminada, se actualiza la configuración de directiva de usuario y equipo. |
+| /force | Vuelve a aplicar todas las configuraciones de directiva. De forma predeterminada, solo se aplican las configuraciones de directivas que han cambiado. |
+| /Wait`<VALUE>` | Establece el número de segundos que se esperará a que finalice el procesamiento de la Directiva antes de volver al símbolo del sistema. Cuando se supera el límite de tiempo, aparece el símbolo del sistema, pero continúa el procesamiento de directivas. El valor predeterminado es 600 segundos. El valor **0** significa no esperar. El valor **-1** significa esperar indefinidamente.<p>En un script, con este comando con un límite de tiempo especificado, puede ejecutar **gpupdate** y continuar con los comandos que no dependen de la finalización de **gpupdate**. Como alternativa, puede usar este comando sin ningún límite de tiempo especificado para permitir que **gpupdate** termine de ejecutarse antes de que se ejecuten otros comandos que dependen de él. |
+| /logoff | Provoca un cierre de sesión después de que se actualice la configuración de directiva de grupo. Esto es necesario para los directiva de grupo extensiones del lado cliente que no procesan la Directiva en un ciclo de actualización en segundo plano, pero que procesan la Directiva cuando un usuario inicia sesión. Entre los ejemplos se incluyen la instalación de software de destino del usuario y el redireccionamiento de carpetas. Esta opción no tiene ningún efecto si no hay extensiones llamadas que requieran un cierre de sesión. |
+| /boot | Hace que se reinicie el equipo después de aplicar la configuración de directiva de grupo. Esto es necesario para los directiva de grupo extensiones del lado cliente que no procesan la Directiva en un ciclo de actualización en segundo plano, pero sí en la Directiva de procesos durante el inicio del equipo. Algunos ejemplos incluyen la instalación de software de destino del equipo. Esta opción no tiene ningún efecto si no hay extensiones llamadas que requieran un reinicio. |
+| ocasiona | Hace que la siguiente aplicación de directiva de primer plano se realice sincrónicamente. La Directiva de primer plano se aplica durante el arranque del equipo y el inicio de sesión del usuario. Puede especificar esto para el usuario, el equipo o ambos mediante el parámetro **/target** . Los parámetros **/Force** y **/Wait** se omiten si se especifican. |
+| /? | Muestra la Ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+### <a name="examples"></a>Ejemplos
 
--   El comando **gpupdate** está disponible en windows Server 2008 R2, windows Server 2008, Windows 7 Ultimate, Windows 7 Professional, Windows Vista Ultimate, Windows Vista Enterprise y Windows Vista Business.
-
-## <a name="examples"></a>Ejemplos
-
-Forzar una actualización en segundo plano de todas las configuraciones de directiva de grupo, independientemente de si han cambiado.
+Para forzar una actualización en segundo plano de todos los valores de directiva de grupo, independientemente de si han cambiado, escriba:
 
 ```
 gpupdate /force
@@ -52,5 +48,4 @@ gpupdate /force
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [TechCenter de directiva de grupo](https://go.microsoft.com/fwlink/?LinkID=145531)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

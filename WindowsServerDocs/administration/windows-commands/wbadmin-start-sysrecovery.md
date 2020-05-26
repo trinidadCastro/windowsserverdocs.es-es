@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3d826b0312091f00ef01d2efe9ee63572fade1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a7c32818461c46a7d582029ec127c574d6a8f3e3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725894"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819115"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>Wbadmin Start sysrecovery
 
@@ -60,13 +60,13 @@ Para iniciar la recuperación de la información de la copia de seguridad que se
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-Para iniciar la recuperación de la información de la copia de seguridad que se ejecutó el 30 de abril de 2013 a las 9:00 \\ \\A.M., que se encuentra en la carpeta compartida servername\shared: para Server01, escriba:
+Para iniciar la recuperación de la información de la copia de seguridad que se ejecutó el 30 de abril de 2013 a las 9:00 A.M., que se encuentra en la carpeta compartida \\ \\ servername\shared: para Server01, escriba:
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Get-WBBareMetalRecovery](https://technet.microsoft.com/library/jj902461.aspx)

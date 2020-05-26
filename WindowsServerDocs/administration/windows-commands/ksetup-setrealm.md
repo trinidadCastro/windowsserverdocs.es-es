@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: setrealm'
-description: Tema de referencia de * * * *-
+title: ksetup setrealm
+description: Tema de referencia del comando ksetup setrealm, que establece el nombre de un dominio Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,46 +9,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 453977ac39dd3a52b4f5a3104995f944e4a48392
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 03b33977f57e187a8bea69be78c1e9c094b9a73e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724555"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817285"
 ---
-# <a name="ksetupsetrealm"></a>ksetup: setrealm
-
-
+# <a name="ksetup-setrealm"></a>ksetup setrealm
 
 Establece el nombre de un dominio Kerberos.
+
+> [!IMPORTANT]
+> No se admite el establecimiento del dominio Kerberos en un controlador de dominio. Si intenta hacerlo, se producirá una advertencia y un error de comando.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /setrealm <DNSDomainName>
+ksetup /setrealm <DNSdomainname>
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<NombreDominioDns>|El nombre de dominio DNS puede tener el formato de un nombre de dominio completo o un nombre de dominio simple.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<DNSdomainname>` | Especifica el nombre DNS en mayúsculas, como CORP. CONTOSO.COM. Puede usar el nombre de dominio completo o una forma sencilla del nombre. Si no usa mayúsculas para el nombre DNS, se le pedirá que realice una comprobación para continuar. |
 
-## <a name="remarks"></a>Observaciones
+### <a name="examples"></a>Ejemplos
 
-El parámetro de nombre de dominio DNS debe escribirse en mayúsculas. De lo contrario, el comando **ksetup** solicitará la comprobación para continuar.
+Para establecer el dominio Kerberos de este equipo en un nombre de dominio específico y para restringir el acceso por parte de un controlador que no sea de dominio al dominio Kerberos de CONTOSO, escriba:
 
-No se admite el establecimiento del dominio Kerberos en un controlador de dominio. Si intenta hacerlo, se producirá una advertencia y un error de comando.
-
-## <a name="examples"></a>Ejemplos
-
-Establezca el dominio Kerberos para este equipo en un nombre de dominio específico para restringir el acceso por parte de un controlador que no sea de dominio al dominio Kerberos de CONTOSO:
 ```
 ksetup /setrealm CONTOSO
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
--   [Ksetup](ksetup.md)
--   [Ksetup:removerealm](ksetup-removerealm.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [ksetup, comando](ksetup.md)
+
+- [ksetup removerealm](ksetup-removerealm.md)

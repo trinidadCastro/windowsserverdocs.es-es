@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: setenctypeattr'
-description: Tema de referencia de * * * *-
+title: ksetup setenctypeattr
+description: Tema de referencia del comando ksetup setenctypeattr, que establece el atributo de tipo de cifrado para el dominio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,66 +9,74 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4cb7380a5fc65734902c6eed0b4b941eda6f6f5a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e76ad3d08505208346ff2a3e100194239187953d
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724560"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817365"
 ---
-# <a name="ksetupsetenctypeattr"></a>ksetup: setenctypeattr
+# <a name="ksetup-setenctypeattr"></a>ksetup setenctypeattr
 
+Establece el atributo de tipo de cifrado para el dominio. Se muestra un mensaje de estado cuando se completa correctamente o con errores.
 
-
-Establece el atributo de tipo de cifrado para el dominio.
+Puede ver el tipo de cifrado del vale de concesión de vales (TGT) de Kerberos y la clave de sesión; para ello, ejecute el comando **klist** y vea la salida. Puede configurar el dominio para que se conecte y use, mediante la ejecución del `ksetup /domain <domainname>` comando.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /setenctypeattr <Domain name> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | AES128-CTS-HMAC-SHA1-96 | AES256-CTS-HMAC-SHA1-96}
+ksetup /setenctypeattr <domainname> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | AES128-CTS-HMAC-SHA1-96 | AES256-CTS-HMAC-SHA1-96}
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<DomainName>|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
-|Tipo de cifrado|Debe ser uno de los siguientes tipos de cifrado admitidos:</br>-DES-CBC-CRC</br>-DES-CBC-MD5</br>-RC4-HMAC-MD5</br>-AES128-CTS-HMAC-SHA1-96</br>-AES256-CTS-HMAC-SHA1-96|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<domainname>` | Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso. |
+| tipo de cifrado | Debe ser uno de los siguientes tipos de cifrado admitidos:<ul><li>DES-CBC-CRC</li><li>DES-CBC-MD5</li><li>RC4-HMAC-MD5</li><li>AES128-CTS-HMAC-SHA1-96</li><li>AES256-CTS-HMAC-SHA1-96</li></ul> |
 
-## <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Observaciones
 
-Para ver el tipo de cifrado del vale de concesión de vales (TGT) de Kerberos y la clave de sesión, ejecute el comando **klist** y vea la salida.
+- Puede establecer o agregar varios tipos de cifrado separando los tipos de cifrado en el comando con un espacio. Sin embargo, solo puede hacerlo para un dominio a la vez.
 
-Puede establecer o agregar varios tipos de cifrado separando los tipos de cifrado en el comando con un espacio. Sin embargo, solo puede hacerlo para un dominio a la vez.
+### <a name="examples"></a>Ejemplos
 
-Si el comando se ejecuta correctamente o produce un error, se muestra un mensaje de estado.
+Para ver el tipo de cifrado del vale de concesión de vales (TGT) de Kerberos y la clave de sesión, escriba:
 
-Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<nombredominio>** .
-
-## <a name="examples"></a>Ejemplos
-
-Determinar los tipos de cifrado actuales que se establecen en este equipo:
 ```
 klist
 ```
-Establezca el dominio en corp.contoso.com:
+
+Para establecer el dominio en corp.contoso.com, escriba:
+
 ```
 ksetup /domain corp.contoso.com
 ```
-Establezca el atributo de tipo de cifrado en AES-256-CTS-HMAC-SHA1-96 para el dominio corp.contoso.com:
+
+Para establecer el atributo de tipo de cifrado en AES-256-CTS-HMAC-SHA1-96 para el dominio corp.contoso.com, escriba:
+
 ```
 ksetup /setenctypeattr corp.contoso.com AES-256-CTS-HMAC-SHA1-96
 ```
-Compruebe que el atributo de tipo de cifrado se ha establecido como previsto para el dominio:
+
+Para comprobar que el atributo de tipo de cifrado se ha establecido como previsto para el dominio, escriba:
+
 ```
 ksetup /getenctypeattr corp.contoso.com
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Klist](klist.md)
--   [Ksetup:domain](ksetup-domain.md)
--   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
--   [Ksetup:getenctypeattr](ksetup-getenctypeattr.md)
--   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [klist (comando)](klist.md)
+
+- [ksetup, comando](ksetup.md)
+
+- [comando de dominio ksetup](ksetup-domain.md)
+
+- [ksetup addenctypeattr, comando](ksetup-addenctypeattr.md)
+
+- [ksetup getenctypeattr, comando](ksetup-getenctypeattr.md)
+
+- [ksetup delenctypeattr, comando](ksetup-delenctypeattr.md)

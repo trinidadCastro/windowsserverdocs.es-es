@@ -1,47 +1,56 @@
 ---
 title: anexar FTP
-description: Tema de referencia para anexar FTP
+description: Tema de referencia del comando APPEND de FTP, que anexa un archivo local a un archivo en el equipo remoto con la configuración de tipo de archivo actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 7c1a133c-31dc-41a4-9eb9-258efd79804d vhorne
+ms.assetid: 7c1a133c-31dc-41a4-9eb9-258efd79804d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b53228473b8ea16a0955c244d60fae77cf4f7d7f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7d1b6ab4a6ae0c1654d4335d24f135b2893bdcb7
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725404"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819145"
 ---
-# <a name="ftp-append"></a>FTP: Append
+# <a name="ftp-append"></a>anexar FTP
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-anexa un archivo local a un archivo en el equipo remoto con la configuración de tipo de archivo actual.   
-## <a name="syntax"></a>Sintaxis  
-```  
-append <LocalFile> [remoteFile]  
-```  
-#### <a name="parameters"></a>Parámetros  
+Anexa un archivo local a un archivo en el equipo remoto con la configuración de tipo de archivo actual.
 
-|  Parámetro   |                               Descripción                                |
-|--------------|--------------------------------------------------------------------------|
-| <LocalFile>  |                     Especifica el archivo local que se va a agregar.                     |
-| Archivoremoto | Especifica el archivo en el equipo remoto al que <LocalFile> se agrega. |
+## <a name="syntax"></a>Sintaxis
 
-## <a name="remarks"></a>Observaciones  
-Si se omite *archivoremoto* , se usa el nombre de *archivolocal* en lugar del nombre de archivo remoto.  
-## <a name="examples"></a>Ejemplos  
-Anexe archivo1. txt a archivo2. txt en el equipo remoto.  
-```  
-append file1.txt file2.txt  
-```  
-Anexe el archivo1. txt local a un archivo denominado archivo1. txt en el equipo remoto.  
-```  
-append file1.txt  
-```  
-## <a name="additional-references"></a>Referencias adicionales  
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
+```
+append <localfile> [remotefile]
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<localfile>` | Especifica el archivo local que se va a agregar. |
+| archivoremoto | Especifica el archivo en el equipo remoto al que <localfile> se agrega. Si no usa este parámetro, `<localfile>` se usa el nombre en lugar del nombre de archivo remoto. |
+
+### <a name="examples"></a>Ejemplos
+
+Para anexar *archivo1. txt* a *archivo2. txt* en el equipo remoto, escriba:
+
+```
+append file1.txt file2.txt
+```
+
+Para anexar el *archivo1. txt* local a un archivo denominado *archivo1. txt* en el equipo remoto.
+
+```
+append file1.txt
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Guía de FTP adicional](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

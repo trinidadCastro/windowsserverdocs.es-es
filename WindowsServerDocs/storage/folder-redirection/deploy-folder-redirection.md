@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e6e5a29c75c117f6faa3c1d1b3f288582d81a2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4a53f28867904c163346fb7943790ff0659ab006
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855888"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716880"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implementar la redirección de carpetas con Archivos sin conexión
 
@@ -199,6 +199,6 @@ En la tabla siguiente se resumen los cambios más importantes realizados en este
 * [Redireccionamiento de carpetas, Archivos sin conexión y Perfiles de usuario móvil](folder-redirection-rup-overview.md)
 * [Implementar equipos principales para Redirección de carpetas y Perfiles de usuario móvil](deploy-primary-computers.md)
 * [Habilitar la funcionalidad de Archivos sin conexión avanzada](enable-always-offline.md)
-* [Declaración de soporte técnico de Microsoft sobre los datos de perfil de usuario replicados](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
+* [Declaración de soporte técnico de Microsoft sobre los datos de perfil de usuario replicados](https://docs.microsoft.com/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 * [Transferencia local de aplicaciones con DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [Solución de problemas de empaquetado, implementación y consulta de aplicaciones basadas en Windows Runtime](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)

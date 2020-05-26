@@ -1,6 +1,6 @@
 ---
 title: enumerar escritores
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando list Writers, que enumera los escritores que se encuentran en el sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef7fa0bd6e9857e22994178849e49afeb3305a2a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 85f351ca20332ad67f24c7d66142f7209c0ec425
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724484"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817165"
 ---
 # <a name="list-writers"></a>enumerar escritores
 
-
-
 Enumera los escritores que se encuentran en el sistema. Si se usa sin parámetros, **List** muestra la salida de los **metadatos de lista** de forma predeterminada.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,19 +28,22 @@ list writers [metadata | detailed | status]
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|metadata|Enumera la identidad y el estado de los escritores y muestra los metadatos, como los detalles de los componentes y los archivos excluidos. Este es el parámetro predeterminado.|
-|detallado|Muestra la misma información que los **metadatos**, pero **Detailed** incluye la lista completa de archivos de todos los componentes.|
-|status|Muestra solo la identidad y el estado de los escritores registrados.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| metadata | Enumera la identidad y el estado de los escritores y muestra los metadatos, como los detalles de los componentes y los archivos excluidos. Este es el parámetro predeterminado. |
+| detallado | Muestra la misma información que los **metadatos**, pero también incluye la lista completa de archivos de todos los componentes. |
+| status | Muestra solo la identidad y el estado de los escritores registrados. |
 
-## <a name="examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
 
 Para mostrar solo la identidad y el estado de los escritores, escriba:
+
 ```
 list writers status
 ```
+
 El resultado es similar al que se muestra a continuación:
+
 ```
 Listing writer status ...
 * WRITER System Writer
@@ -57,15 +56,12 @@ Listing writer status ...
         - Writer Failure code: 0x00000000 (S_OK)
         - Writer ID: {4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f}
         - Instance ID: {9e362607-9794-4dd4-a7cd-b3d5de0aad20}
-...
-...
-...
 * WRITER Registry Writer
         - Status: 1 (VSS_WS_STABLE)
         - Writer Failure code: 0x00000000 (S_OK)
         - Writer ID: {afbab4a2-367d-4d15-a586-71dbb18f8485}
         - Instance ID: {e87ba7e3-f8d8-42d8-b2ee-c76ae26b98e8}
-8 writers listed. 
+8 writers listed.
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
