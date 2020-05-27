@@ -1,39 +1,45 @@
 ---
-title: FTP pwd
-description: Tema de referencia del comando de FTP pwd, que muestra el directorio del equipo remoto actual.
+title: rmdir FTP
+description: Tema de referencia para el comando de FTP rmdir, que elimina un directorio raíz.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: bf40dede-5dd8-4d06-bfe4-17c8bada681f
+ms.assetid: cf4778a4-9534-49c7-a061-850dc3504a67
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d250dcca53308b99d3d629a8e60e60519a0525de
+ms.openlocfilehash: 1abbc66ee470d7939f45e7e961c502a3b4689f7b
 ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820365"
+ms.locfileid: "83821455"
 ---
-# <a name="ftp-pwd"></a>FTP pwd
+# <a name="ftp-rmdir"></a>rmdir FTP
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Muestra el directorio del equipo remoto actual.
+Elimina un directorio remoto.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-pwd
+rmdir <directory>
 ```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<directory>` | Especifica el nombre del directorio remoto que se va a eliminar. |
 
 ### <a name="examples"></a>Ejemplos
 
-Para mostrar el directorio del equipo remoto actual, escriba:
+Para eliminar el directorio remoto *imágenes* , escriba:
 
 ```
-pwd
+rmdir pictures
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

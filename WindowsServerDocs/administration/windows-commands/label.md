@@ -1,6 +1,6 @@
 ---
-title: etiqueta
-description: Tema de referencia de * * * *-
+title: label
+description: Tema de referencia del comando Label, que crea, cambia o elimina la etiqueta de volumen (es decir, el nombre) de un disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,74 +9,69 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63603eda8d23b6f7b89b8d1ba858575a60e3c65c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f2d09328f79215c497bcb0ea4549b1f6ac227994
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724511"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817265"
 ---
-# <a name="label"></a>etiqueta
-
-
+# <a name="label"></a>label
 
 Crea, cambia o elimina la etiqueta de volumen (es decir, el nombre) de un disco. Si se usa sin parámetros, el comando **Label** cambia la etiqueta de volumen actual o elimina la etiqueta existente.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-label [/mp] [<Volume>] [<Label>]
+label [/mp] [<volume>] [<label>]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/mp|Especifica que el volumen se debe tratar como un punto de montaje o un nombre de volumen.|
-|\<> de volumen|Especifica una letra de unidad (seguida de un signo de dos puntos), un punto de montaje o un nombre de volumen. Si se especifica un nombre de volumen, el parámetro **/MP** no es necesario.|
-|\<> de etiqueta|Especifica la etiqueta del volumen.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| /mp | Especifica que el volumen se debe tratar como un punto de montaje o un nombre de volumen. |
+| `<volume>` | Especifica una letra de unidad (seguida de un signo de dos puntos), un punto de montaje o un nombre de volumen. Si se especifica un nombre de volumen, el parámetro **/MP** no es necesario. |
+| `<label>` | Especifica la etiqueta del volumen. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="remarks"></a>Observaciones
 
 - Windows muestra la etiqueta de volumen y el número de serie (si tiene uno) como parte de la lista de directorios.
+
 - Una etiqueta de volumen NTFS puede tener una longitud de hasta 32 caracteres, incluidos espacios. Las etiquetas de volumen NTFS conservan y muestran el caso que se usó cuando se creó la etiqueta.
-- Si no especifica un valor para el parámetro **etiqueta** , el comando **etiqueta** mostrará el resultado en el siguiente formato:  
-  ```
-  Volume in drive C: xxxxxxxxxxx 
-  Volume Serial Number is xxxx-xxxx 
-  Volume label (32 characters, ENTER for none)?
-  ```  
-  Puede escribir una nueva etiqueta de volumen o presionar entrar para mantener la etiqueta actual. Si presiona entrar y el volumen tiene actualmente una etiqueta, el comando **etiqueta** le pedirá el mensaje siguiente:  
-  ```
-  Delete current volume label (Y/N)?
-  ```  
-  Presione Y para eliminar la etiqueta o presione N para conservar la etiqueta.
 
 ## <a name="examples"></a>Ejemplos
 
 Para etiquetar un disco en la unidad A que contiene información de ventas de julio, escriba:
+
 ```
 label a:sales-july
 ```
-Para eliminar la etiqueta actual de la unidad C, siga estos pasos:
-1. En el símbolo del sistema, escriba:  
+
+Para ver y eliminar la etiqueta actual de la unidad C, siga estos pasos:
+
+1. En el símbolo del sistema, escriba:
+
    ```
-   Label
-   ```  
-   Debe mostrarse una salida similar a la siguiente:  
+   label
+   ```
+
+   Debe mostrarse una salida similar a la siguiente:
+
    ```
    Volume in drive C: is Main Disk
    Volume Serial Number is 6789-ABCD
    Volume label (32 characters, ENTER for none)?
-   ```  
-2. Presione ENTRAR. Se debe mostrar el siguiente mensaje:  
+   ```
+
+2. Presione ENTRAR. Se debe mostrar el siguiente mensaje:
+
    ```
    Delete current volume label (Y/N)?
-   ```  
-3. Presione Y para eliminar la etiqueta actual.
+   ```
+
+3. Presione **Y** para eliminar la etiqueta actual o **N** si desea conservar la etiqueta existente.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

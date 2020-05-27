@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa35cc46af36bca17cc042c658f7613572823bc9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bb38d5100eab74573d5f5ffb4ec684b2b19c3bbb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722112"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820945"
 ---
 # <a name="scwcmd-view"></a>Scwcmd: view
 
@@ -32,8 +32,8 @@ scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/x:\<Xmlfile. XML>|Especifica el archivo. XML que se va a ver. Se debe especificar este parámetro.|
-|/s:\<xslfile. xsl>|Especifica la transformación. XSL que se va a aplicar al archivo. XML como parte del proceso de representación. Este parámetro es opcional para los archivos SCW. Xml. Cuando el comando **View** se usa para representar un archivo SCW. XML, intentará cargar automáticamente la transformación predeterminada correcta para el archivo. XML especificado. Si se especifica una transformación. xsl, se debe escribir la transformación bajo el supuesto de que el archivo. XML está en el mismo directorio que la transformación. Xsl.|
+|/x: \< Xmlfile. xml>|Especifica el archivo. XML que se va a ver. Se debe especificar este parámetro.|
+|/s: \< xslfile. xsl>|Especifica la transformación. XSL que se va a aplicar al archivo. XML como parte del proceso de representación. Este parámetro es opcional para los archivos SCW. Xml. Cuando el comando **View** se usa para representar un archivo SCW. XML, intentará cargar automáticamente la transformación predeterminada correcta para el archivo. XML especificado. Si se especifica una transformación. xsl, se debe escribir la transformación bajo el supuesto de que el archivo. XML está en el mismo directorio que la transformación. Xsl.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Observaciones
@@ -49,4 +49,4 @@ scwcmd view /x:C:\policies\Policyfile.xml /s:C:\viewers\Policyview.xsl
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: addkdc'
-description: Tema de referencia de * * * *-
+title: ksetup addkdc
+description: Tema de referencia del comando ksetup addkdc, que incluye una dirección Centro de distribución de claves (KDC) para el dominio Kerberos determinado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,53 +9,60 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76d592e4f1c32305d6f939a66a6ad42cd582b032
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e51279166bf60196d12f877506d3228b78c4a711
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724766"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818095"
 ---
-# <a name="ksetupaddkdc"></a>ksetup: addkdc
-
-
+# <a name="ksetup-addkdc"></a>ksetup addkdc
 
 Agrega una dirección Centro de distribución de claves (KDC) para el dominio Kerberos determinado.
+
+La asignación se almacena en el registro, en **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains** y el equipo debe reiniciarse antes de que se use la nueva configuración de dominio Kerberos.
+
+> [!NOTE]
+> Para implementar datos de configuración de dominio Kerberos en varios equipos, debe usar el complemento de **plantilla de configuración de seguridad** y la distribución de directivas, explícitamente en equipos individuales. No puede usar este comando.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /addkdc <RealmName> [<KDCName>] 
+ksetup /addkdc <realmname> [<KDCname>]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> RealmName|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** . Es el dominio Kerberos que está intentando agregar el otro KDC.|
-|\<> KDCName|El nombre del KDC se indica como un nombre de dominio completo sin distinción de mayúsculas y minúsculas, como mitkdc.microsoft.com. Si se omite el nombre del KDC, DNS buscará KDC.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<realmname>` | Especifica el nombre DNS en mayúsculas, como CORP. CONTOSO.COM. Este valor también aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** y es el dominio al que desea agregar el otro KDC. |
+| `<KDCname>` | Especifica el nombre de dominio completo que no distingue entre mayúsculas y minúsculas, como mitkdc.contoso.com. Si se omite el nombre del KDC, DNS buscará KDC. |
 
-## <a name="remarks"></a>Observaciones
+### <a name="examples"></a>Ejemplos
 
-Estas asignaciones se almacenan en el registro en **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains**. Para implementar datos de configuración de dominio Kerberos en varios equipos, use el complemento de plantilla de configuración de seguridad y la distribución de directivas en lugar de usar **ksetup** explícitamente en equipos individuales.
+Para configurar un servidor KDC que no sea de Windows y el dominio Kerberos que debe usar la estación de trabajo, escriba:
 
-El equipo debe reiniciarse antes de que se use la nueva configuración de dominio Kerberos.
-
-Para comprobar el nombre de dominio Kerberos predeterminado para el equipo, o para comprobar que este comando funcionó según lo previsto, ejecute **ksetup** en el símbolo del sistema y Compruebe la salida del KDC agregado.
-
-## <a name="examples"></a>Ejemplos
-
-Configure un servidor KDC que no sea de Windows y el dominio Kerberos que debe usar la estación de trabajo:
 ```
 ksetup /addkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-Ejecute la herramienta Ksetup en la línea de comandos del mismo equipo que en el comando anterior para establecer la contraseña de la cuenta del p@sswrd1equipo local en%. A continuación, reinicie el equipo.
+
+Para establecer la contraseña de la cuenta de equipo local en p@sswrd1 % en el mismo equipo que en el ejemplo anterior y, a continuación, para reiniciar el equipo, escriba:
+
 ```
-Ksetup /setcomputerpassword p@sswrd1%
+ksetup /setcomputerpassword p@sswrd1%
 ```
+
+Para comprobar el nombre de dominio Kerberos predeterminado para el equipo o para comprobar que este comando ha funcionado según lo previsto, escriba:
+
+```
+ksetup
+```
+Compruebe el registro para asegurarse de que la asignación se produjo según lo previsto.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Ksetup](ksetup.md)
--   [Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [ksetup, comando](ksetup.md)
+
+- [ksetup setcomputerpassword, comando](ksetup-setcomputerpassword.md)

@@ -1,39 +1,46 @@
 ---
-title: prompt_1 FTP
-description: Tema de referencia de * * * *-
+title: solicitud de FTP
+description: Tema de referencia del comando FTP prompt, que activa y desactiva el modo de solicitud.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 930df39b-45c4-4e0b-bfe2-1d1963be817a vhorne
+ms.assetid: 930df39b-45c4-4e0b-bfe2-1d1963be817a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1abb697316a1072a9185a5132dfd22a1d8fd67dd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 57f0e1eead36665c19845944bf22325b1aecebbb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725182"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820385"
 ---
-# <a name="ftp-prompt_1"></a>FTP: prompt_1
+# <a name="ftp-prompt"></a>solicitud de FTP
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Alterna entre el modo de **petición** activado y desactivado.   
-## <a name="syntax"></a>Sintaxis  
-```  
-prompt  
-```  
-#### <a name="parameters"></a>Parámetros  
-None  
-## <a name="remarks"></a>Observaciones  
-- De forma predeterminada, **prompt** es on.  
-- los mensajes **FTP** durante varias transferencias de archivos le permiten recuperar o almacenar archivos de forma selectiva.  **Mget** y **mput** transfieren todos los archivos si el **aviso** está desactivado.  
-  ## <a name="examples"></a>Ejemplos  
-  Activar y desactivar el modo de mensaje.  
-  ```  
-  prompt  
-  ```  
-  ## <a name="additional-references"></a>Referencias adicionales  
-- - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
+Activa o desactiva el modo de solicitud. De forma predeterminada, el modo de mensajes está activado. Si el modo de solicitud está activado, el comando FTP solicitará al usuario varias transferencias de archivos para que pueda recuperar o almacenar archivos de forma selectiva.
+
+> [!NOTE]
+> Puede usar los comandos [FTP mget](ftp-mget.md) y [FTP mput](ftp-mput_1.md) para transferir todos los archivos cuando el modo de solicitud esté desactivado.
+
+## <a name="syntax"></a>Sintaxis
+
+```
+prompt
+```
+
+### <a name="examples"></a>Ejemplos
+
+Para activar y desactivar el modo de solicitud, escriba:
+
+```
+prompt
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Guía de FTP adicional](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

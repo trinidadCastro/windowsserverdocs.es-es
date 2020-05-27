@@ -1,49 +1,59 @@
 ---
 title: tipo FTP
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando FTP Type, que establece o muestra el tipo de transferencia de archivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 6e96dcd4-08f8-4e7b-90b7-1e1761fea4c7 vhorne
+ms.assetid: 6e96dcd4-08f8-4e7b-90b7-1e1761fea4c7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5531da30118914599ed0f85bfd10bd02ae89ffcf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 02b6d5b4bd7944c9f4126ba4877360de02586cfb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725087"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820275"
 ---
-# <a name="ftp-type"></a>FTP: tipo
+# <a name="ftp-type"></a>tipo FTP
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Establece o muestra el tipo de transferencia de archivos.   
-## <a name="syntax"></a>Sintaxis  
-```  
-type [<typeName>]  
-```  
-#### <a name="parameters"></a>Parámetros  
+Establece o muestra el tipo de transferencia de archivos. El comando **FTP** admite los tipos de transferencia de archivos de imagen ASCII (predeterminada) y binaria:
 
-|  Parámetro   |            Descripción            |
-|--------------|-----------------------------------|
-| [<typeName>] | Especifica el tipo de transferencia de archivo. |
+- Se recomienda usar ASCII al transferir archivos de texto. En el modo ASCII, se realizan las conversiones de caracteres a y desde el juego de caracteres estándar de red. Por ejemplo, los caracteres de fin de línea se convierten según sea necesario, en función del sistema operativo de destino.
 
-## <a name="remarks"></a>Observaciones  
-- Si no se especifica *TypeName* , se muestra el tipo actual.  
-- **FTP** admite dos tipos de transferencia de archivos: ASCII y binario.  
-  El tipo de transferencia de archivo predeterminado es ASCII.  El comando **ASCII** se debe utilizar al transferir archivos de texto. En el modo ASCII, se realizan las conversiones de caracteres a y desde el juego de caracteres estándar de red. Por ejemplo, los caracteres de fin de línea se convierten según sea necesario, en función del sistema operativo en el destino.  
-  El comando **binario** debe usarse al transferir archivos ejecutables. En el modo binario, el archivo se mueve en unidades de un byte.  
-  ## <a name="examples"></a>Ejemplos  
-  Establezca el tipo de transferencia de archivo en ASCII.  
-  ```  
-  type ascii  
-  ```  
-  Establezca el tipo de archivo de transferencia en binario.  
-  ```  
-  type binary  
-  ```  
-  ## <a name="additional-references"></a>Referencias adicionales  
-- - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
+- Se recomienda usar Binary al transferir archivos ejecutables. En el modo binario, los archivos se transfieren en unidades de un byte.
+
+## <a name="syntax"></a>Sintaxis
+
+```
+type [<typename>]
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `[<typename>]` | Especifica el tipo de transferencia de archivo. Si no se especifica este parámetro, se muestra el tipo actual.|
+
+### <a name="examples"></a>Ejemplos
+
+Para establecer el tipo de transferencia de archivo en ASCII, escriba:
+
+```
+type ascii
+```
+
+Para establecer el tipo de archivo de transferencia en binario, escriba:
+
+```
+type binary
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Guía de FTP adicional](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

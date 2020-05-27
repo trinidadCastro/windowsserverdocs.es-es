@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1bf42da356d8326f459066fc168bbd38b7765b0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 494fb294e7eb0da1b8a0165182d33e799fe56371
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724085"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820605"
 ---
 # <a name="manage-bde-status"></a>Manage-BDE: estado
 
 
 
 Proporciona la siguiente información acerca de todas las unidades del equipo; tanto si están protegidos con BitLocker como si no:
--   Size
+-   Tamaño
 -   Versión de BitLocker
 -   Estado de la conversión
 -   Porcentaje cifrado
@@ -59,5 +59,5 @@ manage-bde –status C:
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Manage-BDE](manage-bde.md)

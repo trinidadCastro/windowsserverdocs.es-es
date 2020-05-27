@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: ChangePassword'
-description: Tema de referencia de * * * *-
+title: ksetup ChangePassword
+description: Tema de referencia sobre el comando ksetup ChangePassword, que usa el valor de Centro de distribución de claves (KDC) Password (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,59 +9,71 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32c48e896b77043820eea42159e20c089bd69fb8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5c1ed9d9b611a7911c4a22c7ca803b480f52f323
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724724"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817985"
 ---
-# <a name="ksetupchangepassword"></a>ksetup: ChangePassword
+# <a name="ksetup-changepassword"></a>ksetup ChangePassword
 
+Usa el valor de la contraseña del Centro de distribución de claves (KDC) (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión. La salida del comando le informa del estado de éxito o de error.
 
+Puede comprobar si se ha establecido el valor de **Kpasswd** ; para ello, ejecute el `ksetup /dumpstate` comando y vea la salida.
 
-Usa el valor de la contraseña del Centro de distribución de claves (KDC) (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /changepassword <OldPasswd> <NewPasswd>
+ksetup /changepassword <oldpassword> <newpassword>
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> OldPasswd|Indica la contraseña existente del usuario que ha iniciado sesión.|
-|\<> NewPasswd|Indica la nueva contraseña del usuario que ha iniciado sesión.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<oldpassword>` | Especifica la contraseña existente del usuario que ha iniciado sesión. |
+| `<newpassword>` | Especifica la nueva contraseña del usuario que ha iniciado sesión. Esta contraseña debe cumplir todos los requisitos de contraseña establecidos en este equipo. |
 
-## <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Observaciones
 
-Este comando usa el valor de la contraseña de KDC (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión. El Kpasswd, si se establece, se muestra en la salida ejecutando el comando **ksetup/dumpstate** .
+- Si la cuenta de usuario no se encuentra en el dominio actual, el sistema le pedirá que proporcione el nombre de dominio en el que reside la cuenta de usuario.
 
-La nueva contraseña del usuario debe cumplir todos los requisitos de contraseña que se establezcan en este equipo.
+- Si desea forzar un cambio de contraseña en el siguiente inicio de sesión, este comando permite el uso del asterisco (*), por lo que se solicitará al usuario una nueva contraseña.
 
-Si la cuenta de usuario no se encuentra en el dominio actual, el sistema le pedirá que proporcione el nombre de dominio en el que reside la cuenta de usuario.
+-
 
-Si desea forzar un cambio de contraseña en el siguiente inicio de sesión, este comando permite el uso del asterisco (*), por lo que se solicitará al usuario una nueva contraseña.
+### <a name="examples"></a>Ejemplos
 
-La salida del comando le informa del estado de éxito o de error.
+Para cambiar la contraseña de un usuario que ha iniciado sesión actualmente en este equipo en este dominio, escriba:
 
-## <a name="examples"></a>Ejemplos
-
-Cambiar la contraseña de un usuario que ha iniciado sesión actualmente en este equipo en este dominio:
 ```
 ksetup /changepassword Pas$w0rd Pa$$w0rd
 ```
-Cambiar la contraseña de un usuario que ha iniciado sesión actualmente en el dominio contoso:
+
+Para cambiar la contraseña de un usuario que ha iniciado sesión actualmente en el dominio de Contoso, escriba:
+
 ```
 ksetup /domain CONTOSO /changepassword Pas$w0rd Pa$$w0rd
 ```
-Forzar al usuario que ha iniciado sesión actualmente a cambiar la contraseña en el siguiente inicio de sesión:
+
+Para forzar que el usuario que ha iniciado la sesión actual cambie la contraseña en el siguiente inicio de sesión, escriba:
+
 ```
 ksetup /changepassword Pas$w0rd *
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [ksetup, comando](ksetup.md)
+
+- [ksetup dumpstate, comando](ksetup-dumpstate.md)
+
+- [ksetup addkpasswd, comando](ksetup-addkpasswd.md)
+
+- [ksetup delkpasswd, comando](ksetup-delkpasswd.md)
+
+- [ksetup dumpstate, comando](ksetup-dumpstate.md)

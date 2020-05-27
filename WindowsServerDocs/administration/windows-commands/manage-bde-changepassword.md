@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8606b5ea9cf49761c3fda1255ea56adb4f33679a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d29b5e9c3b85eb914c9ce66f9798a0f222183bdf
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724193"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820705"
 ---
 # <a name="manage-bde-changepassword"></a>Manage-BDE: ChangePassword
 
@@ -47,5 +47,5 @@ manage-bde –changepassword D:
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Manage-BDE](manage-bde.md)

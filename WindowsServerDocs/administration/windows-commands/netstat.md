@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b1dbe232ce297e987118616681b82332e81e930
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4daea8d096e6063b984a4657536c8a2b043b5025
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723780"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820865"
 ---
 # <a name="netstat"></a>netstat
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Muestra las conexiones TCP activas, los puertos en los que el equipo está escuchando, las estadísticas de Ethernet, la tabla de enrutamiento IP, las estadísticas de IPv4 (para los protocolos IP, ICMP, TCP y UDP) y las estadísticas de IPv6 (para los protocolos IPv6, ICMPv6, TCP a través de IPv6 y UDP a través de IPv6). Si se usa sin parámetros, **netstat** muestra las conexiones TCP activas. 
+Muestra las conexiones TCP activas, los puertos en los que el equipo está escuchando, las estadísticas de Ethernet, la tabla de enrutamiento IP, las estadísticas de IPv4 (para los protocolos IP, ICMP, TCP y UDP) y las estadísticas de IPv6 (para los protocolos IPv6, ICMPv6, TCP a través de IPv6 y UDP a través de IPv6). Si se usa sin parámetros, **netstat** muestra las conexiones TCP activas.
 
 ## <a name="syntax"></a>Sintaxis
 ```
@@ -42,7 +42,7 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
 |      /?       |                                                                                                                                 Muestra la ayuda en el símbolo del sistema.                                                                                                                                  |
 
 ## <a name="remarks"></a>Observaciones
--   Los parámetros que se usan con este comando deben ir precedidos**-** de un guion () en**/** lugar de una barra diagonal ().
+-   Los parámetros que se usan con este comando deben ir precedidos de un guion ( **-** ) en lugar de una barra diagonal ( **/** ).
 -   **netstat** proporciona estadísticas para lo siguiente:
     -   Proto el nombre del Protocolo (TCP o UDP).
     -   Dirección local la dirección IP del equipo local y el número de puerto que se está usando. Se muestra el nombre del equipo local que corresponde a la dirección IP y el nombre del puerto, a menos que se especifique el parámetro **-n** . Si aún no se ha establecido el puerto, el número de puerto se muestra como un asterisco (*).
@@ -69,4 +69,4 @@ netstat -n -o
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

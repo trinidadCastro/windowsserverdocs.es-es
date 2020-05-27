@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: addkpasswd'
-description: Tema de referencia de * * * *-
+title: ksetup addkpasswd
+description: Tema de referencia del comando ksetup addkpasswd, que agrega una dirección de servidor de contraseña Kerberos (Kpasswd) para un dominio Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,52 +9,50 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c260c711ae87f88be8b9466e73afaf3fe1c83a1e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e0cff2f3d74e6d862bbdd000602a1d03312373d2
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724736"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818075"
 ---
-# <a name="ksetupaddkpasswd"></a>ksetup: addkpasswd
-
-
+# <a name="ksetup-addkpasswd"></a>ksetup addkpasswd
 
 Agrega una dirección de servidor de contraseña Kerberos (Kpasswd) para un dominio Kerberos.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /addkpasswd <RealmName> [<KpasswdName>]
+ksetup /addkpasswd <realmname> [<kpasswdname>]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-Si el dominio Kerberos con el que se va a autenticar la estación de trabajo es compatible con el protocolo de cambio de contraseña de Kerberos, puede configurar un equipo cliente que ejecute el sistema operativo Windows para que use un servidor de contraseñas de Kerberos. Esta opción está configurada en el lado del dominio Kerberos.
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<realmname>` | Especifica el nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos o el **dominio Kerberos** predeterminados = cuando se ejecuta **ksetup** . |
+| `<kpasswdname>` | Especifica el servidor de contraseñas de Kerberos. Se indica como un nombre de dominio completo que no distingue entre mayúsculas y minúsculas, como mitkdc.contoso.com. Si se omite el nombre del KDC, se podría usar DNS para buscar KDC. |
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> RealmName|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos o el dominio Kerberos predeterminados = cuando se ejecuta **ksetup** .|
-|\<> KpasswdName|El nombre del KDC que se va a usar como servidor de contraseñas de Kerberos se indica como un nombre de dominio completo que no distingue mayúsculas de minúsculas, como mitkdc.microsoft.com. Si se omite el nombre del KDC, se podría usar DNS para buscar KDC.|
+#### <a name="remarks"></a>Observaciones
 
-## <a name="remarks"></a>Observaciones
+- Si el dominio Kerberos con el que se va a autenticar la estación de trabajo es compatible con el protocolo de cambio de contraseña de Kerberos, puede configurar un equipo cliente que ejecute el sistema operativo Windows para que use un servidor de contraseñas de Kerberos.
 
-Si el dominio Kerberos con el que se va a autenticar la estación de trabajo es compatible con el protocolo de cambio de contraseña de Kerberos, puede configurar un equipo cliente que ejecute el sistema operativo Windows para que use un servidor de contraseñas de Kerberos.
+- Puede Agregar nombres KDC adicionales de uno en uno.
 
-Ejecute el comando **ksetup** para comprobar el nombre del KDC. Si **Kpasswd =** no aparece en la salida, la asignación no se ha configurado.
+### <a name="examples"></a>Ejemplos
 
-Puede Agregar nombres KDC adicionales de uno en uno.
+Para configurar CORP. CONTOSO.COM dominio Kerberos para usar el servidor KDC que no es de Windows, mitkdc.contoso.com, como servidor de contraseñas, escriba:
 
-## <a name="examples"></a>Ejemplos
-
-Configure el dominio Kerberos, CORP. CONTOSO.COM, para que use el servidor KDC que no sea de Windows, mitkdc.contoso.com, como servidor de contraseña:
 ```
 ksetup /addkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-Esto da como resultado un servidor de contraseñas de Kerberos que no es de Windows y que controla todas las contraseñas para la autenticación entre él y el dominio Kerberos.
+
+Para comprobar que se ha establecido el nombre del KDC, escriba `ksetup` y, a continuación, vea la salida, buscando el texto **Kpasswd =**. Si no ve el texto, significa que la asignación no se ha configurado.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Ksetup](ksetup.md)
--   [Ksetup:delkpasswd](ksetup-delkpasswd.md)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [ksetup, comando](ksetup.md)
+
+- [ksetup delkpasswd, comando](ksetup-delkpasswd.md)

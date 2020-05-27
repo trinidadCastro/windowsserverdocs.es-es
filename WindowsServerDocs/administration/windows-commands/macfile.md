@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4384ce8d4f23966aea278e90b9ddddc42da6e77
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bf914e4e7da4f00c547353da4fc8d04ad6828646
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724232"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820525"
 ---
 # <a name="macfile"></a>macfile
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Administra el servidor de archivos para servidores, volúmenes, directorios y archivos de Macintosh. Puede automatizar las tareas administrativas mediante la inclusión de una serie de comandos en archivos por lotes y su inicio manual o en momentos predeterminados. 
+Administra el servidor de archivos para servidores, volúmenes, directorios y archivos de Macintosh. Puede automatizar las tareas administrativas mediante la inclusión de una serie de comandos en archivos por lotes y su inicio manual o en momentos predeterminados.
 -   [Para modificar directorios en volúmenes accesibles desde Macintosh](#BKMK_Moddirs)
 -   [Para unir los datos y las bifurcaciones de recursos de un archivo de Macintosh](#BKMK_Joinforks)
 -   [Para cambiar el mensaje de inicio de sesión y las sesiones de límite](#BKMK_LogonLimit)
@@ -34,11 +34,11 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 ```
 
 #### <a name="parameters"></a>Parámetros
--   /Server:\\ \\ <computerName> especifica el servidor en el que se va a cambiar un directorio. Si se omite, la operación se realiza en el equipo local.
--   /path:<directory> obligatorio. Especifica la ruta de acceso al directorio que desea cambiar. El directorio debe existir. el **directorio MacFile** no crea directorios.
--   /Owner:<OwnerName> cambia el propietario del directorio. Si se omite, el propietario permanece inalterado.
--   /Group:<GroupName> especifica o cambia el grupo principal de Macintosh que está asociado con el directorio. Si se omite, el grupo primario permanece inalterado.
--   /Permissions:<Permissions> establece permisos en el directorio para el propietario, el grupo principal y el mundo (todos). Se usa un número de 11 dígitos para establecer los permisos. El número 1 concede el permiso y 0 revoca el permiso (por ejemplo, 11111011000). Si se omite, los permisos permanecen inalterados.
+-   /Server: \\ \\ <computerName> especifica el servidor en el que se va a cambiar un directorio. Si se omite, la operación se realiza en el equipo local.
+-   /path: <directory> obligatorio. Especifica la ruta de acceso al directorio que desea cambiar. El directorio debe existir. el **directorio MacFile** no crea directorios.
+-   /Owner: <OwnerName> cambia el propietario del directorio. Si se omite, el propietario permanece inalterado.
+-   /Group: <GroupName> especifica o cambia el grupo principal de Macintosh que está asociado con el directorio. Si se omite, el grupo primario permanece inalterado.
+-   /Permissions: <Permissions> establece permisos en el directorio para el propietario, el grupo principal y el mundo (todos). Se usa un número de 11 dígitos para establecer los permisos. El número 1 concede el permiso y 0 revoca el permiso (por ejemplo, 11111011000). Si se omite, los permisos permanecen inalterados.
     La posición del dígito determina qué permiso se establece, tal y como se describe en la tabla siguiente.
 
     |Posición|Establece el permiso para|
@@ -94,7 +94,7 @@ Para crear el archivo treeapp en el volumen accesible para Macintosh D:\Release,
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\treeapp
 ```
-Para cambiar el creador del archivo a Microsoft Word 5,1, para el archivo WOrd. txt en el directorio D:\Word documents\Group files, en \\el servidor \SERverA, escriba:
+Para cambiar el creador del archivo a Microsoft Word 5,1, para el archivo WOrd. txt en el directorio D:\Word documents\Group files, en el servidor \\ \SERverA, escriba:
 ```
 macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt
 ```
@@ -141,7 +141,7 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 |    /ReadOnly: {true &#124; false}     | Especifica si los usuarios pueden cambiar los archivos del volumen. Escriba true para especificar que los usuarios no pueden cambiar los archivos del volumen. Escriba false para especificar que los usuarios pueden cambiar los archivos del volumen. Si se omite al agregar un volumen, se permiten los cambios en los archivos. Si se omite al cambiar un volumen, el valor **ReadOnly** del volumen permanece inalterado. |
 |  /guestsallowed: {true &#124; false}  |      Especifica si los usuarios que inician sesión como invitados pueden usar el volumen. Escriba true para especificar que los invitados pueden usar el volumen. Escriba false para especificar que los invitados no pueden usar el volumen. Si se omite al agregar un volumen, los invitados pueden usar el volumen. Si se omite al cambiar un volumen, el valor de **guestsallowed** para el volumen permanece inalterado.       |
 |         /Password<Password>         |                                                                               Especifica una contraseña que será necesaria para obtener acceso al volumen. Si se omite al agregar un volumen, no se crea ninguna contraseña. Si se omite al cambiar un volumen, la contraseña permanece inalterada.                                                                               |
-| /maxusers: {<Number>>&#124;Unlimited} |                                                 Especifica el número máximo de usuarios que pueden utilizar simultáneamente los archivos en el volumen. Si se omite al agregar un volumen, un número ilimitado de usuarios puede usar el volumen. Si se omite al cambiar un volumen, el valor de **maxusers** permanece inalterado.                                                 |
+| /maxusers: { <Number>>&#124;Unlimited} |                                                 Especifica el número máximo de usuarios que pueden utilizar simultáneamente los archivos en el volumen. Si se omite al agregar un volumen, un número ilimitado de usuarios puede usar el volumen. Si se omite al cambiar un volumen, el valor de **maxusers** permanece inalterado.                                                 |
 |               /remove                |                                                                                                                                Obligatorio cuando se quita un volumen accesible desde Macintosh. quita el volumen especificado.                                                                                                                                |
 |                  /?                  |                                                                                                                                                           Muestra la ayuda en el símbolo del sistema.                                                                                                                                                           |
 
@@ -157,7 +157,7 @@ Para cambiar el volumen creado anteriormente para que sea de solo lectura y requ
 ```
 macfile volume /set /name:US Marketing Statistics /readonly:true /password:saturn /maxusers:5
 ```
-Para agregar un volumen denominado diseño de paisajes, en el \\servidor \Magnolia, use el directorio árboles de la unidad e y para especificar que los invitados pueden tener acceso al volumen, escriba:
+Para agregar un volumen denominado diseño de paisajes, en el servidor \\ \Magnolia, use el directorio árboles de la unidad e y para especificar que los invitados pueden tener acceso al volumen, escriba:
 ```
 macfile volume /add /server:\\Magnolia /name:Landscape Design /path:e:\trees
 ```
@@ -167,4 +167,4 @@ macfile volume /remove /name:Sales Reports
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

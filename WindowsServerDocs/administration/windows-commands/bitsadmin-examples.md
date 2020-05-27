@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 2fcf7d3716ae45c24510b433ab125551a6d04c85
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1db9dd387d7b9cc39c582ce79e5163c83579b613
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718208"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819635"
 ---
 # <a name="bitsadmin-examples"></a>Ejemplos de bitsadmin
 
-En los siguientes ejemplos se muestra cómo usar `bitsadmin` la herramienta para realizar las tareas más comunes.
+En los siguientes ejemplos se muestra cómo usar la `bitsadmin` herramienta para realizar las tareas más comunes.
 
 ## <a name="transfer-a-file"></a>Transferir un archivo
 
@@ -64,7 +64,7 @@ Si varios trabajos usan *myDownloadJob* como nombre, debe usar el GUID del traba
 
 ## <a name="determine-the-progress-of-the-download-job"></a>Determinar el progreso del trabajo de descarga
 
-El modificador **/info** devuelve el estado del trabajo y el número de archivos y bytes transferidos. Cuando el estado se muestra como `TRANSFERRED`, significa que bits ha transferido correctamente todos los archivos del trabajo. También puede Agregar el argumento **/verbose** para obtener los detalles completos del trabajo y **/List** o **/monitor** para obtener todos los trabajos de la cola de transferencia.
+El modificador **/info** devuelve el estado del trabajo y el número de archivos y bytes transferidos. Cuando el estado se muestra como `TRANSFERRED` , significa que bits ha transferido correctamente todos los archivos del trabajo. También puede Agregar el argumento **/verbose** para obtener los detalles completos del trabajo y **/List** o **/monitor** para obtener todos los trabajos de la cola de transferencia.
 
 Para devolver el estado del trabajo:
 
@@ -76,7 +76,7 @@ Si varios trabajos usan *myDownloadJob* como nombre, debe usar el GUID del traba
 
 ## <a name="complete-the-download-job"></a>Completar el trabajo de descarga
 
-Para completar el trabajo después de que el estado cambie `TRANSFERRED`a:
+Para completar el trabajo después de que el estado cambie a `TRANSFERRED` :
 
 ```
 bitsadmin /complete myDownloadJob
@@ -142,7 +142,7 @@ RETRY DELAY: 600 NO PROGRESS TIMEOUT: 1209600 ERROR COUNT: 0
 PROXY USAGE: PRECONFIG PROXY LIST: NULL PROXY BYPASS LIST: NULL
 ERROR FILE:    https://downloadsrv/10mb.zip -> c:\10mb.zip
 ERROR CODE:    0x80072ee7 - The server name or address could not be resolved
-ERROR CONTEXT: 0x00000005 - The error occurred while the remote file was being 
+ERROR CONTEXT: 0x00000005 - The error occurred while the remote file was being
 processed.
 DESCRIPTION:
 JOB FILES:

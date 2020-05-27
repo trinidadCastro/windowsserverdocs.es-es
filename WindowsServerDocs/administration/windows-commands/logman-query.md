@@ -1,6 +1,6 @@
 ---
 title: logman query
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando Logman Query, que consulta las propiedades del recopilador de datos o del conjunto de recopiladores de datos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,45 +9,57 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05448a4f129a59145813dd0da7199d4adf845c5c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2179604bdc581fe24fa4d702ca5e223dc11579be
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724357"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820565"
 ---
 # <a name="logman-query"></a>logman query
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-propiedades del recopilador de datos de consulta o conjunto de recopiladores de datos.  
+Consulta las propiedades del recopilador de datos o del conjunto de recopiladores de datos.
 
-## <a name="syntax"></a>Sintaxis  
-```  
-logman query [providers|Data Collector Set name] [options]  
-```  
-### <a name="parameters"></a>Parámetros  
+## <a name="syntax"></a>Sintaxis
 
-|     Parámetro      |                                 Descripción                                  |
-|--------------------|------------------------------------------------------------------------------|
-|         /?         |                       Muestra la ayuda contextual.                       |
-| -s<computer name> |            Ejecute el comando en el equipo remoto especificado.             |
-|  -config <value>   |           Especifica el archivo de configuración que contiene opciones de comando.            |
-|    [-n]<name>     |                          Nombre del objeto de destino.                          |
-|        -ETS        | Enviar comandos a sesiones de seguimiento de eventos directamente sin guardar ni programar. |
+```
+logman query [providers|Data Collector Set name] [options]
+```
 
-## <a name="examples"></a>Ejemplos  
-El comando siguiente muestra todos los conjuntos de recopiladores de datos configurados en el sistema de destino.  
-```  
-logman query  
-```  
-El siguiente comando muestra los recopiladores de datos contenidos en el conjunto de recopiladores de datos denominado perf_log.  
-```  
-logman query perf_log  
-```  
-El siguiente comando muestra todos los proveedores disponibles de recopiladores de datos en el sistema de destino.  
-```  
-logman query providers  
-```  
-## <a name="additional-references"></a>Referencias adicionales  
-[logman](logman.md)  
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| -s`<computer name>` | Ejecute el comando en el equipo remoto especificado. |
+| -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
+| [-n]`<name>` | Nombre del objeto de destino. |
+| -ETS | Envía comandos a sesiones de seguimiento de eventos directamente sin guardar o programar. |
+| /? | Muestra la ayuda contextual. |
+
+### <a name="examples"></a>Ejemplos
+
+Para enumerar todos los conjuntos de recopiladores de datos configurados en el sistema de destino, escriba:
+
+```
+logman query
+```
+
+Para enumerar los recopiladores de datos contenidos en el conjunto de recopiladores de datos denominado *perf_log*, escriba:
+
+```
+logman query perf_log
+```
+
+Para enumerar todos los proveedores disponibles de recopiladores de datos en el sistema de destino, escriba:
+
+```
+logman query providers
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [logman](logman.md)

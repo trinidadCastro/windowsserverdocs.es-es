@@ -1,6 +1,6 @@
 ---
 title: cacls
-description: Tema de referencia del comando cacls, que muestra o modifica las listas de control de acceso discrecional (DACL) en los archivos especificados.
+description: Tema de referencia del comando cacls. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,31 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d827199ea319bd41511f9abadfde8c6e8949976e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8602157bf87e523d6d842d5636031c61b52e8ef4
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82726027"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819255"
 ---
 # <a name="cacls"></a>cacls
 
 >[!IMPORTANT]
-> Este comando está en desuso. En su lugar, use [icacls](icacls.md) .  
+> Este comando está en desuso. En su lugar, use [icacls](icacls.md) .
 
-Muestra o modifica las listas de control de acceso discrecional (DACL) en los archivos especificados.  
+Muestra o modifica las listas de control de acceso discrecional (DACL) en los archivos especificados.
 
 ## <a name="syntax"></a>Sintaxis
 
-```  
-cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user [...]] [/p user:<perm> [...]] [/d user [...]]  
+```
+cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user [...]] [/p user:<perm> [...]] [/d user [...]]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| `<filename>` | Necesario. Muestra las ACL de los archivos especificados. |
+| `<filename>` | Obligatorio. Muestra las ACL de los archivos especificados. |
 | /t | Cambia las ACL de los archivos especificados en el directorio actual y en todos los subdirectorios. |
 | /m | Cambia las ACL de los volúmenes montados en un directorio. |
 | /l | Funciona en el propio vínculo simbólico en lugar de en el destino. |
@@ -63,7 +63,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 
 - Puede usar caracteres comodín (**?** y **&#42;**) para especificar varios archivos.
 
-- Puede especificar más de un usuario.  
+- Puede especificar más de un usuario.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

@@ -1,6 +1,6 @@
 ---
 title: helpctr
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando helpctr. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2fa3c1210aaa903ffecda28604353cede2311060
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: b2dc9d0f5dfbd9ae61e0e4279596f68ccfae0055
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993317"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818585"
 ---
 # <a name="helpctr"></a>helpctr
 
+El comando helpctr está en desuso y no se garantiza que se admita en versiones futuras de Windows.
 
-
-Helpctr está en desuso y no se garantiza que se admita en versiones futuras de Windows.
-
-Esta herramienta se incluye en Windows Server 2003. Para obtener más información, consulte [helpctr](https://technet.microsoft.com/library/cc755821(v=ws.10).aspx).
+Esta herramienta se incluye en Windows Server 2003. Para obtener más información, consulte [helpctr](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755821(v=ws.10)).

@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: 295536afc77d0559fd7d2d4a22f555231a1aab75
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a11820b9c75bbcb928da562f3f74e4130e9c8096
+ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858078"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775312"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>Licencia para la implementación de RDS con licencias de acceso de cliente (CAL)
 
@@ -24,7 +24,7 @@ Cada usuario y dispositivo que se conecta a un host de sesión de Escritorio rem
 
 Cuando un usuario o un dispositivo se conecta a un servidor host de sesión de Escritorio remoto, el servidor host de sesión de Escritorio remoto determina si es necesaria una CAL de RDS. Luego, el servidor host de sesión de Escritorio remoto solicita una CAL de RDS al servidor de licencias de Escritorio remoto. Si hay disponible una CAL de RDS adecuada en un servidor de licencias, se emite esta CAL de RDS para el cliente, y el cliente puede conectarse al servidor host de sesión de Escritorio remoto y, desde allí, al escritorio o las aplicaciones que intenta usar.
 
-Aunque hay un período de gracia de la licencia durante el que no se necesita ningún servidor de licencias, después de que el período de gracia finaliza, los clientes deben tener una CAL de RDS válida emitida por un servidor de licencias para poder iniciar sesión en un servidor host de sesión de Escritorio remoto.
+Existe un período de gracia de licencia de 180 días durante el cual no se requiere ningún servidor de licencias. Una vez finalizado el período de gracia, los clientes deben tener una CAL de RDS válida emitida por un servidor de licencias para poder iniciar sesión en un servidor host de sesión de Escritorio remoto.
 
 Para saber cómo funcionan las licencias de acceso de cliente en servicios de Escritorio remoto y para implementar y administrar las licencias, usa la siguiente información:
 
@@ -53,6 +53,8 @@ En la tabla siguiente se describen las diferencias entre los dos tipos de CAL:
 Cuando se usa el modelo por dispositivo, se emite una licencia temporal la primera vez que un dispositivo se conecta al host de sesión de Escritorio remoto. La segunda vez que el dispositivo se conecta, siempre que el servidor de licencias esté activado y haya CAL de RDS disponibles, el servidor de licencias emite una CAL por dispositivo de RDS permanente.
 
 Cuando se usa el modelo por usuario, no se exige la concesión de licencias y se concede una licencia a cada usuario para que se conecte a un host de sesión de Escritorio remoto desde cualquier cantidad de dispositivos. El servidor de licencias emite licencias desde el grupo de CAL de RDS disponible o el grupo de CAL de RDS usado en exceso. Es tu responsabilidad asegurarte de que todos los usuarios tengan una licencia válida y ninguna CAL usada en exceso. En caso contrario, estarás en infracción de los términos de licencia de los Servicios de Escritorio remoto.
+
+Un ejemplo de dónde se usaría el modelo por dispositivo sería un entorno con dos o más turnos que usan los mismos equipos para acceder a los hosts de sesión de Escritorio remoto. El modelo por usuario sería idóneo para entornos en los que los usuarios tienen su propio dispositivo Windows dedicado para acceder a los hosts de sesión de Escritorio remoto.
 
 Para asegurarte de que cumples con los términos de licencia de los Servicios de Escritorio remoto, haz un seguimiento del número de CAL por usuario de RDS en tu organización y asegúrate de tener suficientes instaladas en el servidor de licencias para todos los usuarios.
 

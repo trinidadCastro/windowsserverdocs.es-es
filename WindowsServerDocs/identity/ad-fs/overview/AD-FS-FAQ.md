@@ -9,12 +9,12 @@ ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b1b6f7d38c4474ba3f69c4eac0c4569375185eb8
-ms.sourcegitcommit: 6d3f8780b67aa7865a9372cf2c1e10c79ebea8b1
+ms.openlocfilehash: 947c34e6c3a3b9a26a225221bbf29e46343b25df
+ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587668"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83546571"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Preguntas más frecuentes (P+F) sobre AD FS
 
@@ -85,7 +85,7 @@ AD FS proporciona un mecanismo extensible para que los proveedores de MFA de ter
 La lista de proveedores que han enviado una notificación a Microsoft se publica en [proveedores de MFA para AD FS](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md).  Puede que siempre haya proveedores disponibles que no conozcamos y actualizaremos la lista a medida que los descubramos.
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>¿Los proxies de terceros son compatibles con AD FS?
-Sí, los proxies de terceros se pueden colocar delante del Proxy de aplicación web, pero cualquier proxy de terceros debe admitir el uso del [protocolo MS-ADFSPIP](https://msdn.microsoft.com/library/dn392811.aspx) en lugar del Proxy de aplicación web.
+Sí, los proxies de terceros se pueden colocar delante de AD FS, pero cualquier proxy de terceros debe admitir el uso del [protocolo MS-ADFSPIP](https://msdn.microsoft.com/library/dn392811.aspx) en lugar del Proxy de aplicación web.
 
 A continuación, se muestra una lista de los proveedores de terceros que conocemos.  Puede que siempre haya proveedores disponibles que no conozcamos y actualizaremos la lista a medida que los descubramos.
 

@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f637e1f744ec412899320cfbb368633b222da8d3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 58735201a1a0711db4d0cee9c292363acf5121f3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718961"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819645"
 ---
 # <a name="assoc"></a>assoc
 
 Muestra o modifica las asociaciones de extensión de nombre de archivo. Si se usa sin parámetros, **Assoc** muestra una lista de todas las asociaciones de extensión de nombre de archivo actuales.
 
 > [!NOTE]
-> Este comando solo se admite en CMD. EXE y no está disponible en PowerShell.
+> Este comando solo se admite en cmd. exe y no está disponible en PowerShell.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -43,7 +43,7 @@ assoc [<.ext>[=[<filetype>]]]
 
 - Para ver los tipos de archivo actuales que tienen definidas cadenas de comandos abiertas, use el comando **ftype** .
 
-- Para redirigir la salida de **Assoc** a un archivo de texto, utilice `>` el operador de redireccionamiento.
+- Para redirigir la salida de **Assoc** a un archivo de texto, utilice el `>` operador de redireccionamiento.
 
 ## <a name="examples"></a>Ejemplos
 
@@ -56,7 +56,7 @@ assoc .txt
 Para quitar la Asociación de tipo de archivo para la extensión de nombre de archivo. bak, escriba:
 
 ```
-assoc .bak= 
+assoc .bak=
 ```
 
 > [!NOTE]

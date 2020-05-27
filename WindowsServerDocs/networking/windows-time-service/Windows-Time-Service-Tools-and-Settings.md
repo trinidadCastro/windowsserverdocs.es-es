@@ -7,12 +7,12 @@ ms.date: 02/24/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 2f6ba34381e813247d0838853f688abf13fbd2fa
-ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
+ms.openlocfilehash: 76ec8a817f0c500380c9bef6fc1ee7eb8dddc105
+ms.sourcegitcommit: 319796ec327530c9656ac103b89bd48cc8d373f6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605545"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790561"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Configuración y herramientas del servicio de hora de Windows
 
@@ -87,6 +87,15 @@ W32tm /query /computer:contosoW1 /configuration
 ```
 
 La salida de este comando es una lista de parámetros de configuración establecidos para el cliente de hora de Windows.
+
+> [!IMPORTANT]  
+> [Windows Server 2016 ha mejorado los algoritmos de sincronización de hora](https://aka.ms/WS2016Time) para cumplir con las especificaciones RFC. Por lo tanto, si deseas establecer el cliente de hora de Windows local para que apunte a varios elementos del mismo nivel, se recomienda encarecidamente preparar tres o más servidores horarios diferentes.
+>  
+> Si solo tienes dos servidores horarios, debes especificar la marca **UseAsFallbackOnly** (0X2) para anular la prioridad de uno de ellos. Por ejemplo, si quieres priorizar ntpserver.contoso.com ante clock.adatum.com, ejecuta el siguiente comando.
+> ```cmd
+> w32tm /config /manualpeerlist:"ntpserver.contoso.com,0x8 clock.adatum.com,0xa" /syncfromflags:manual /update
+> ```
+> Para conocer el significado de la marca especificada, consulta, [Entradas de la subclave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters"](#parameters).
 
 ## <a name="using-group-policy-to-configure-the-windows-time-service"></a>Uso de la directiva de grupo para configurar el servicio de hora de Windows
 

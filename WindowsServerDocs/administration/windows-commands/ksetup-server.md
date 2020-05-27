@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: servidor'
-description: Tema de referencia de * * * *-
+title: ksetup servidor
+description: Tema de referencia del comando ksetup Server, que le permite especificar un nombre para un equipo que ejecuta el sistema operativo Windows, de modo que los cambios realizados por el comando ksetup actualicen el equipo de destino.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,45 +9,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91549eb78f825264016ec0e03b7035f79132f260
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e39a3fbef4b99848d2a90c81007c526597c77275
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724591"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817525"
 ---
-# <a name="ksetupserver"></a>ksetup: servidor
+# <a name="ksetup-server"></a>ksetup servidor
 
+Permite especificar un nombre para un equipo que ejecuta el sistema operativo Windows, de modo que los cambios realizados por el comando **ksetup** actualicen el equipo de destino.
 
+El nombre del servidor de destino se almacena en el registro en `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\LSA\Kerberos` . Esta entrada no se muestra cuando se ejecuta el comando **ksetup** .
 
-Permite especificar un nombre para un equipo que ejecuta el sistema operativo Windows para que los cambios realizados mediante **ksetup** actualicen el equipo de destino.
+> [!IMPORTANT]
+> No hay ninguna manera de quitar el nombre del servidor de destino. En su lugar, puede volver a cambiarlo al nombre del equipo local, que es el valor predeterminado.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-ksetup /server <ServerName>
+ksetup /server <servername>
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<NombreDeServidor>|Nombre completo del equipo en el que la configuración será efectiva, como IPops897.corp.contoso.com.</br>Si se especifica un nombre completo de equipo de dominio completo, se producirá un error en el comando.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<servername>` | Especifica el nombre completo del equipo en el que la configuración será efectiva, como *IPops897.Corp.contoso.com*.<p>Si se especifica un nombre de equipo de dominio completo completo, se producirá un error en el comando. |
 
-## <a name="remarks"></a>Observaciones
+### <a name="examples"></a>Ejemplos
 
-No hay ninguna manera de quitar el nombre del servidor de destino; solo puede volver a cambiarlo al nombre del equipo local, que es el valor predeterminado.
+Para que las configuraciones de **ksetup** sean eficaces en el equipo *IPops897* , que está conectado en el dominio Contoso, escriba:
 
-El nombre del servidor de destino se almacena en el registro en **HKEY_LOCAL_MACHINE \system\controlset001\control\lsa\kerberos**. No se registra mediante **ksetup**.
-
-## <a name="examples"></a>Ejemplos
-
-Haga que las configuraciones de **ksetup** sean eficaces en el equipo IPops897 que está conectado en el dominio contoso:
 ```
 ksetup /server IPops897.corp.contoso.com
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Ksetup](ksetup.md)
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [ksetup, comando](ksetup.md)

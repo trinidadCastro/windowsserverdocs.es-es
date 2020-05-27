@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c3405818d3ed11d14dee6c2fc8796c024ef253e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f0589fcd094d60fd5c3d9bc8798d273c49fb042b
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723827"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820905"
 ---
 # <a name="nbtstat"></a>nbtstat
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Muestra las estadísticas de protocolo NetBIOS sobre TCP/IP (NetBT), las tablas de nombre NetBIOS para el equipo local y los equipos remotos, y la caché de nombres NetBIOS. **Nbtstat** permite una actualización de la caché de nombres NetBIOS y los nombres registrados en el servicio de nombres Internet de Windows (WINS). Si se usa sin parámetros, **Nbtstat** muestra la ayuda. 
+Muestra las estadísticas de protocolo NetBIOS sobre TCP/IP (NetBT), las tablas de nombre NetBIOS para el equipo local y los equipos remotos, y la caché de nombres NetBIOS. **Nbtstat** permite una actualización de la caché de nombres NetBIOS y los nombres registrados en el servicio de nombres Internet de Windows (WINS). Si se usa sin parámetros, **Nbtstat** muestra la ayuda.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -59,7 +59,7 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     |Nombre local|Nombre NetBIOS local asociado a la conexión.|
     |Host remoto|El nombre o la dirección IP asociada al equipo remoto.|
     |<03>|El último byte de un nombre NetBIOS convertido en hexadecimal. Cada nombre NetBIOS tiene una longitud de 16 caracteres. Este último byte suele tener una importancia especial, ya que el mismo nombre puede estar presente varias veces en un equipo, que solo difiere en el último byte. Por ejemplo, <20> es un espacio en texto ASCII.|
-    |type|Tipo de nombre. Un nombre puede ser un nombre único o un nombre de grupo.|
+    |tipo|Tipo de nombre. Un nombre puede ser un nombre único o un nombre de grupo.|
     |Status|Si el servicio NetBIOS del equipo remoto se está ejecutando (registrado) o un nombre de equipo duplicado ha registrado el mismo servicio (conflicto).|
     |State|El estado de las conexiones NetBIOS.|
 
@@ -74,8 +74,8 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     |Connecting|Una sesión se encuentra en la fase de conexión y se está resolviendo la asignación de nombre a dirección IP del destino.|
     |Aceptar|Una sesión entrante se está aceptando actualmente y se conectará en breve.|
     |Reconexión|Una sesión está intentando volver a conectarse (no se pudo conectar en el primer intento).|
-    |Salida|Una sesión se encuentra en la fase de conexión y la conexión TCP se está creando actualmente.|
-    |Entrada|Una sesión entrante está en la fase de conexión.|
+    |Saliente|Una sesión se encuentra en la fase de conexión y la conexión TCP se está creando actualmente.|
+    |Entrante|Una sesión entrante está en la fase de conexión.|
     |Desconectando|Una sesión se encuentra en el proceso de desconexión.|
     |Escenario desconectado|El equipo local ha emitido una desconexión y está esperando la confirmación del sistema remoto.|
 
@@ -126,6 +126,6 @@ nbtstat /S 5
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
 

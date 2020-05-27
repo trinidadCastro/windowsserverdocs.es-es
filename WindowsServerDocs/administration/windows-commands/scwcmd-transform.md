@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f1116b42d356cc36f478089cdf487a38e792e87
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 86c88f0207a53da813f5d4eaed399375bfc5bc02
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722119"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820955"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: transform
 
@@ -39,8 +39,8 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/p:\<policyFile. XML>|Especifica la ruta de acceso y el nombre de archivo del archivo de directiva. XML que se debe aplicar. Se debe especificar este parámetro.|
-|/g:\<GPODisplayName>|Especifica el nombre para mostrar del GPO. Se debe especificar este parámetro.|
+|/p: \< policyFile. xml>|Especifica la ruta de acceso y el nombre de archivo del archivo de directiva. XML que se debe aplicar. Se debe especificar este parámetro.|
+|/g: \< GPODisplayName>|Especifica el nombre para mostrar del GPO. Se debe especificar este parámetro.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Observaciones
@@ -56,4 +56,4 @@ scwcmd transform /p:FileServerPolicy.xml /g:FileServerSecurity
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

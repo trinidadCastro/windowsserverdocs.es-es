@@ -1,6 +1,6 @@
 ---
 title: eventtriggers
-description: Tema de referencia para el comando eventtriggers, que está en desuso y no se garantiza que se admita en versiones futuras de Windows.
+description: Tema de referencia para el comando eventtriggers. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64120df16d92484bfee8cfc1645c102fc325e400
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 83dc25f31294eb4655b6a1977a22250da4f97857
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436860"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819515"
 ---
 # <a name="eventtriggers"></a>eventtriggers
 

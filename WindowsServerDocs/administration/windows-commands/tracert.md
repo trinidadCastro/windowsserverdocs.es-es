@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b62558b1a2959fd441c246159c14daf0a1e9ca5
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 25dafb691513eae38dd99aef6288ee1bfb2d80be
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437250"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821405"
 ---
 # <a name="tracert"></a>tracert
 
@@ -59,4 +59,4 @@ Para realizar un seguimiento de la ruta de acceso al host denominado corp7.micro
 tracert /j 10.12.0.1 10.29.3.1 10.1.44.1 corp7.microsoft.com
 ```
 ## <a name="additional-references"></a>Referencias adicionales
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

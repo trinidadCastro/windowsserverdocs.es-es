@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa111934f93bf7fea5aade1f39b4fc6a014d6c9e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: edbd6acefe2ef921b9325de4808753d5929efd1e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725876"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821385"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>Inicio de systemstaterecovery de Wbadmin
 
@@ -70,17 +70,17 @@ wbadmin start systemstaterecovery
 
 ## <a name="examples"></a>Ejemplos
 
-- Para realizar una recuperación del estado del sistema de la copia de seguridad de 03/31/2013 a las 9:00 A.M., escriba:  
+- Para realizar una recuperación del estado del sistema de la copia de seguridad de 03/31/2013 a las 9:00 A.M., escriba:
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
-  ```  
-- Para realizar una recuperación del estado del sistema de la copia de seguridad de 04/30/2013 a las 9:00 A.M. que está almacenado en el recurso \\ \\compartido servername\share para Server01, escriba:  
+  ```
+- Para realizar una recuperación del estado del sistema de la copia de seguridad de 04/30/2013 a las 9:00 A.M. que está almacenado en el recurso compartido \\ \\ servername\share para Server01, escriba:
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Start-WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx)
