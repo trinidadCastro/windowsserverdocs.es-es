@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c87a6cb5e3fb52af9a13a7be35218e35b24d7ddc
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: ca2a10a5d52c9d175d453a164f3ab4f47ca0841d
+ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436930"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83855669"
 ---
 # <a name="echo"></a>echo
 
@@ -31,11 +31,11 @@ echo [on | off]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| en | habilitar | Activa o desactiva la característica de repetición de comandos. El eco de comandos está activado de forma predeterminada. |
+| [on \| OFF] | Activa o desactiva la característica de repetición de comandos. El eco de comandos está activado de forma predeterminada. |
 | `<message>` | Especifica el texto que se va a mostrar en la pantalla. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Notas
 
 - El `echo <message>` comando es especialmente útil cuando se desactiva el **eco** . Para mostrar un mensaje de varias líneas sin mostrar ningún comando, puede incluir varios `echo <message>` comandos después del comando **echo off** en el programa por lotes.
 

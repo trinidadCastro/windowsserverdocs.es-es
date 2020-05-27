@@ -1,6 +1,6 @@
 ---
-title: Crear certificados raíz para la autenticación de VPN con Azure AD
-description: Azure AD usa el certificado VPN para firmar los certificados emitidos para los clientes de Windows 10 al autenticarse en Azure AD para la conectividad VPN. El certificado marcado como principal es el emisor que usa Azure AD.
+title: Crear certificados raíz para la autenticación de VPN con Azure AD
+description: Azure AD usa el certificado VPN para firmar los certificados emitidos para los clientes de Windows 10 al autenticarse en Azure AD para la conectividad de VPN. El certificado marcado como principal es el emisor que usa Azure AD.
 ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
@@ -9,12 +9,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: f4501c244726ee9b23a6d517c4b835f0c9418302
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5058095fa4bd6f7ba769fd274f46bc8b96878158
+ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818808"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83855679"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>Paso 7.2. Crear certificados raíz de acceso condicional para la autenticación de VPN con Azure AD
 
@@ -23,10 +23,10 @@ ms.locfileid: "80818808"
 - [**Anterior:** Paso 7,1. Configurar EAP-TLS para omitir la comprobación de la lista de revocación de certificados (CRL)](vpn-config-eap-tls-to-ignore-crl-checking.md)
 - [**Siguiente:** Paso 7,3. Configuración de la Directiva de acceso condicional](vpn-config-conditional-access-policy.md)
 
-En este paso, configurará los certificados raíz de acceso condicional para la autenticación VPN con Azure AD, que crea automáticamente una aplicación en la nube llamada servidor VPN en el inquilino. Para configurar el acceso condicional para la conectividad VPN, debe:
+En este paso, configurará los certificados raíz de acceso condicional para la autenticación VPN con Azure AD, que crea automáticamente una aplicación en la nube llamada servidor VPN en el inquilino. Para configurar el acceso condicional para la conectividad de VPN, es preciso:
 
-1. Cree un certificado VPN en el Azure Portal.
-2. Descargue el certificado VPN.
+1. Crear un certificado VPN en Azure Portal.
+2. Descargar el certificado VPN.
 3. Implemente el certificado en los servidores VPN y NPS.
 
 > [!IMPORTANT]
@@ -41,11 +41,12 @@ A continuación, el cliente VPN envía los problemas de certificado Azure AD a l
 
 **Pasos**
 
-1. Inicie sesión en su [Azure portal](https://portal.azure.com) como administrador global.
-2. En el menú de la izquierda, haga clic en **Azure Active Directory**.
-3. En la página **Azure Active Directory** , en la sección **administrar** , haga clic en **acceso condicional**.
-4. En la página **acceso condicional** , en la sección **administrar** , haga clic en **Conectividad VPN (vista previa)** .
-5. En la página **Conectividad VPN** , haga clic en **nuevo certificado**.
+1. Inicie sesión en [Azure Portal](https://portal.azure.com) como administrador global.
+2. En la barra de navegación izquierda, haga clic en **Azure Active Directory**.
+3. En la página **Azure Active Directory** , en la sección **administrar** , haga clic en **seguridad**.
+4. En la página **seguridad** , en la sección **proteger** , haga clic en **acceso condicional**.
+5. En el **acceso condicional | Directivas** , en la sección **administrar** , haga clic en **Conectividad VPN**.
+5. En la página **Conectividad VPN**, haga clic en **Nuevo certificado**.
 6. En la página **nuevo** , realice los pasos siguientes: a. En **seleccionar duración**, seleccione 1, 2 o 3 años.
    b. Seleccione **Crear**.
 
