@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a53f28867904c163346fb7943790ff0659ab006
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: fbdef69f62a76fcc8d01aa0319b2b0859fc4f7cd
+ms.sourcegitcommit: 6973690a8705b24d09eb98f1713743d5e6079161
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716880"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84211914"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implementar la redirección de carpetas con Archivos sin conexión
 
->Se aplica a: Windows 10, Windows 7, Windows 8, Windows 8.1, Windows Vista, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2, Windows Server 2008 R2, Windows Server (canal semianual)
+> Se aplica a: Windows 10, Windows 7, Windows 8, Windows 8.1, Windows Vista, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2, Windows Server 2008 R2, Windows Server (canal semianual)
 
 En este tema se describe cómo usar Windows Server para implementar Redirección de carpetas con Archivos sin conexión en equipos cliente de Windows.
 
@@ -83,9 +83,9 @@ Aquí se muestra cómo crear un recurso compartido de archivos en Windows Serve
 7. En la página **Permisos**, selecciona **Personalizar permisos**. Se abrirá el cuadro de diálogo Configuración de seguridad avanzada.
 8. Selecciona **Deshabilitar herencia** y, después, **Convertir permisos heredados en permiso explícito en este objeto**.
 9. Establece los permisos como se describe en la tabla 1 y en la figura 1, elimina los permisos de los grupos y las cuentas que no aparecen en la lista y agrega permisos especiales al grupo Usuarios de Redirección de carpetas que creaste en el paso 1.
-    
+
     ![Establecer los permisos para el recurso compartido de carpetas redirigidas](media/deploy-folder-redirection/setting-the-permissions-for-the-redirected-folders-share.png)
-    
+
     **Figura 1** Establecer los permisos para el recurso compartido de carpetas redirigidas
 10. Si elige el perfil **Recurso compartido SMB - Avanzado** , en la página **Propiedades de administración** , seleccione el valor de uso de carpeta **Archivos de usuario** .
 11. Si elige el perfil **Recurso compartido SMB - Avanzado** , en la página **Cuota** , seleccione (de manera opcional) la cuota que quiera aplicar a los usuarios del recurso compartido.
@@ -95,7 +95,6 @@ Aquí se muestra cómo crear un recurso compartido de archivos en Windows Serve
 
 | Cuenta de usuario  | Acceso  | Aplicable a  |
 | --------- | --------- | --------- |
-| Cuenta de usuario | Acceso | Aplicable a |
 | System     | Control total        |    Esta carpeta, subcarpetas y archivos     |
 | Administradores     | Control total       | Solo esta carpeta        |
 | Creador/propietario     |   Control total      |   Solo subcarpetas y archivos      |
@@ -117,11 +116,11 @@ A continuación se indica cómo crear un GPO para Redirección de carpetas:
 7. En la sección **Filtrado de seguridad**, selecciona **Agregar**.
 8. En el cuadro de diálogo **Seleccionar usuario, equipo o grupo**, escribe el nombre del grupo de seguridad que creaste en el paso 1 (por ejemplo, **Usuarios de Redirección de carpetas**) y haz clic en **Aceptar**.
 9. Selecciona la pestaña **Delegación**, elige **Agregar**, escribe **Usuarios autenticados**, selecciona **Aceptar** y, a continuación, **Aceptar** de nuevo para aceptar los permisos de lectura predeterminados.
-    
+
     Este paso es necesario debido a los cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016).
 
 > [!IMPORTANT]
-> Debido a los cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), ahora debes conceder al grupo Usuarios autenticados permisos de lectura para el GPO de Redirección de carpetas; de lo contrario, el GPO no se aplicará a los usuarios o, si ya se ha aplicado, se quitará y se redirigirán las carpetas de nuevo al equipo local. Para más información, consulta [Implementación de la actualización de seguridad de la directiva de grupo MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/).
+> Debido a los cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), ahora debes conceder al grupo Usuarios autenticados permisos de lectura para el GPO de Redirección de carpetas; de lo contrario, el GPO no se aplicará a los usuarios o, si ya se ha aplicado, se quitará y se redirigirán las carpetas de nuevo al equipo local. Para más información, consulta [Implementación de la actualización de seguridad de la directiva de grupo MS16-072](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/deploying-group-policy-security-update-ms16-072-kb3163622/ba-p/400434).
 
 ## <a name="step-4-configure-folder-redirection-with-offline-files"></a>Paso 4: Configurar la redirección de carpetas con Archivos sin conexión
 
@@ -165,7 +164,7 @@ A continuación se indica cómo probar Redirección de carpetas:
 
 1. Inicia sesión en un equipo principal (si has habilitado el soporte de equipo principal) con una cuenta de usuario en la que hayas habilitado Redirección de carpetas.
 2. Si el usuario ha iniciado sesión en el equipo anteriormente, abre un símbolo del sistema con privilegios elevados y escribe el comando siguiente para asegurarte de que se aplique la última configuración de directiva de grupo en el equipo cliente:
-    
+
     ```PowerShell
     gpupdate /force
     ```
@@ -201,4 +200,4 @@ En la tabla siguiente se resumen los cambios más importantes realizados en este
 * [Habilitar la funcionalidad de Archivos sin conexión avanzada](enable-always-offline.md)
 * [Declaración de soporte técnico de Microsoft sobre los datos de perfil de usuario replicados](https://docs.microsoft.com/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 * [Transferencia local de aplicaciones con DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
-* [Solución de problemas de empaquetado, implementación y consulta de aplicaciones basadas en Windows Runtime](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)
+* [Solución de problemas de empaquetado, implementación y consulta de aplicaciones basadas en Windows Runtime](https://docs.microsoft.com/windows/win32/appxpkg/troubleshooting)
