@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d4bffd68d5b74d1d6f36750967911dfec3f299a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c4a68be098f868cdd9cd48c1e7c68fc183fa1fab
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820595"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222952"
 ---
 # <a name="logman-create"></a>logman create
 
@@ -41,3 +41,5 @@ logman create <counter | trace | alert | cfg | api> <[-n] <name>> [options]
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Logman (comando)](logman.md)

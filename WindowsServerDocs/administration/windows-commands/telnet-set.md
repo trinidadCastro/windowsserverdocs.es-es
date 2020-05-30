@@ -4,29 +4,29 @@ description: Tema de referencia para telnet Set, que establece opciones.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 67316b5f-9c6f-43e3-86d5-dcff9ae2ac3e vhorne
+ms.assetid: 67316b5f-9c6f-43e3-86d5-dcff9ae2ac3e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a785a9448860752c79dc1c2369b8dd870409990
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 477c2ee259301af26870339a2c329c2c3502963b
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721482"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222674"
 ---
 # <a name="telnet-set"></a>Telnet: establecer
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Establece opciones.   
+Establece opciones.
 
-## <a name="syntax"></a>Sintaxis  
-```  
-set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] [logging] [mode {console | stream}] [ntlm] [term {ansi | vt100 | vt52 | vtnt}] [?]  
-```  
-#### <a name="parameters"></a>Parámetros  
+## <a name="syntax"></a>Sintaxis
+```
+set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] [logging] [mode {console | stream}] [ntlm] [term {ansi | vt100 | vt52 | vtnt}] [?]
+```
+#### <a name="parameters"></a>Parámetros
 
 |                    Parámetro                     |                                                                                                                                              Descripción                                                                                                                                              |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -42,13 +42,13 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 | término {ANSI &#124; VT100 &#124; vt52 &#124; VTNT} |                                                                                                                                        Establece el tipo de terminal.                                                                                                                                        |
 |                        ?                         |                                                                                                                                    Muestra ayuda para este comando.                                                                                                                                    |
 
-## <a name="remarks"></a>Observaciones  
-1. Puede usar el comando **unset** para desactivar una opción que se estableció previamente.  
-2. En las versiones de telnet que no estén en inglés, el tipo de **códigos** <option> está disponible. **Conjunto de códigos** <option> establece el código actual en una opción, que puede ser cualquiera de los siguientes: **Shift JIS**, **japonés EUC**, **JIS kanji**, **JIS kanji (78)**, **Dec kanji**, **NEC kanji**. Debe establecer el mismo conjunto de código en el equipo remoto.  
-   ## <a name="examples"></a>Ejemplos  
-   Establezca el archivo de registro y comience a registrar el archivo local tnlog. txt.  
-   ```  
-   set logfile tnlog.txt  
-   ```  
-   ## <a name="additional-references"></a>Referencias adicionales  
-3. - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
+## <a name="remarks"></a>Comentarios
+1. Puede usar el comando **unset** para desactivar una opción que se estableció previamente.
+2. En las versiones de telnet que no estén en inglés, el tipo de **códigos** <option> está disponible. **Codeset** <option> establece el código actual establecido en una opción, que puede ser cualquiera de los siguientes: **Shift JIS**, **japonés EUC**, **JIS kanji**, **JIS kanji (78)**, **Dec kanji**, **NEC kanji**. Debe establecer el mismo conjunto de código en el equipo remoto.
+   ## <a name="examples"></a>Ejemplos
+   Establezca el archivo de registro y comience a registrar el archivo local tnlog. txt.
+   ```
+   set logfile tnlog.txt
+   ```
+   ## <a name="additional-references"></a>Referencias adicionales
+3. - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

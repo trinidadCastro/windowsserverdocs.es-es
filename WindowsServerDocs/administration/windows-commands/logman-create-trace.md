@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08a9b0a74c6da894eeadef8aef86f25761d6616e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 015fb7842146e372b36c71fe95a3598bdfa48676
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820455"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222983"
 ---
 # <a name="logman-create-trace"></a>Logman crear seguimiento
 
@@ -63,13 +63,13 @@ logman create trace <[-n] <name>> [options]
 | -modo`<globalsequence|localsequence|pagedmemory>` | Especifica el modo de registrador de sesión de seguimiento de eventos, incluidos:<ul><li>**Globalsequence** : especifica que el seguimiento de eventos agrega un número de secuencia a cada evento que recibe con independencia de qué sesión de seguimiento ha recibido el evento.</li><li>**Localsequence** : especifica que el seguimiento de eventos agrega los números de secuencia de los eventos recibidos en una sesión de seguimiento específica. Cuando se utiliza esta opción, los números de secuencia duplicados pueden existir en todas las sesiones, pero serán únicos en cada sesión de seguimiento.</li><li>**Pagedmemory** : especifica que el seguimiento de eventos utiliza la memoria paginada en lugar del bloque de memoria no paginado predeterminado para sus asignaciones de búfer internas.</li></ul> |
 | /? | Muestra la ayuda contextual. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Donde [-] aparece en la lista, al agregar un guion adicional (-) se anula la opción.
 
 ### <a name="examples"></a>Ejemplos
 
-Para crear un recopilador de datos de seguimiento de eventos denominado trace_log, con menos de 16 y no más de 256 búferes, cada uno de los cuales tiene un tamaño de 64 KB y los resultados se colocan en c:\logfile, escriba:
+Para crear un recopilador de datos de seguimiento de eventos denominado *trace_log*, con menos de 16 y no más de 256 búferes, cada uno de los cuales tiene un tamaño de 64 KB y los resultados se colocan en c:\logfile, escriba:
 
 ```
 logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
@@ -79,4 +79,6 @@ logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [comando Logman Update Trace](logman-update-trace.md)
+
+- [Logman (comando)](logman.md)

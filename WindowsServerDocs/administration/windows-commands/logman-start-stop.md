@@ -1,6 +1,6 @@
 ---
-title: ejecutar Logman | detener
-description: Tema de referencia de * * * *-
+title: Logman Start y Logman STOP
+description: Tema de referencia de los comandos Logman Start y Logman STOP, que inicia un recopilador de datos y establece el tiempo de inicio en manual, o detiene un conjunto de recopiladores de datos y establece la hora de finalización en manual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,39 +9,47 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68f570d99d4b3eaa818c9fbdcce76c42d1cb12d4
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: db0111c4f58f0a28ad76affd3e4d8e24d4a927c2
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724344"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222913"
 ---
-# <a name="logman-start--stop"></a>ejecutar Logman | detener
+# <a name="logman-start-and-logman-stop"></a>Logman Start y Logman STOP
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Inicie un recopilador de datos y establezca la hora de inicio en manual, o bien detenga un conjunto de recopiladores de datos y establezca la hora de finalización en manual.  
+El comando **Logman Start** inicia un recopilador de datos y establece la hora de inicio en manual. El comando **Logman STOP** detiene un conjunto de recopiladores de datos y establece la hora de finalización en manual.
 
-## <a name="syntax"></a>Sintaxis  
-```  
-logman start <[-n] <name>> [options]  
-logman stop <[-n] <name>> [options]  
-```  
-### <a name="parameters"></a>Parámetros  
+## <a name="syntax"></a>Sintaxis
 
-|     Parámetro      |                                 Descripción                                  |
-|--------------------|------------------------------------------------------------------------------|
-|         -?         |                       Muestra la ayuda contextual.                       |
-| -s<computer name> |            Ejecute el comando en el equipo remoto especificado.             |
-|  -config <value>   |           Especifica el archivo de configuración que contiene opciones de comando.            |
-|    [-n]<name>     |                          Nombre del objeto de destino.                          |
-|        -ETS        | Enviar comandos a sesiones de seguimiento de eventos directamente sin guardar ni programar. |
-|        -as         |               Realizar la operación solicitada de forma asincrónica.                |
+```
+logman start <[-n] <name>> [options]
+logman stop <[-n] <name>> [options]
+```
 
-## <a name="examples"></a>Ejemplos  
-El comando siguiente inicia el perf_log del recopilador de datos en el server_1 del equipo remoto.  
-```  
-logman start perf_log -s server_1  
-```  
-## <a name="additional-references"></a>Referencias adicionales  
-[logman](logman.md)  
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| -s`<computer name>` | Ejecute el comando en el equipo remoto especificado. |
+| -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
+| [-n]`<name>` | Especifica el nombre del objeto de destino. |
+| -ETS | Envía comandos a sesiones de seguimiento de eventos directamente, sin guardar ni programar. |
+| -as | Realiza la operación solicitada de forma asincrónica. |
+| -? | Muestra la ayuda contextual. |
+
+### <a name="examples"></a>Ejemplos
+
+Para iniciar el *perf_log*del recopilador de datos, en el *server_1*del equipo remoto, escriba:
+
+```
+logman start perf_log -s server_1
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Logman (comando)](logman.md)

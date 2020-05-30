@@ -4,17 +4,17 @@ description: Tema de referencia de la pantalla de Telnet, que muestra los parám
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 9272086c-3aaa-405d-ac71-652f25e2eb34 vhorne
+ms.assetid: 9272086c-3aaa-405d-ac71-652f25e2eb34
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79c43a6fcc81ea6832dff585bff90b1fb7f23581
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b91ab1619404e1cb5d1a2ba4c47282328b9e0920
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821335"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222701"
 ---
 # <a name="telnet-display"></a>Telnet: Mostrar
 
@@ -27,7 +27,7 @@ Muestra los parámetros operativos.
 d[isplay]
 ```
 #### <a name="parameters"></a>Parámetros
-None
+ninguno
 ## <a name="examples"></a>Ejemplos
 Mostrar parámetros operativos.
 ```

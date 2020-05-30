@@ -1,6 +1,6 @@
 ---
 title: Manage-BDE setidentifier
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando Manage-BDE setidentifier, que establece el campo de identificador de unidad en la unidad en el valor especificado en la opción proporcionar los identificadores únicos de la organización directiva de grupo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,38 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f3e0b553c324099ed3f80c158a5f14d9a31e4d54
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5b4a21df9d177d7bf6813abb0d418d7355d5e59a
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820615"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222604"
 ---
-# <a name="manage-bde-setidentifier"></a>Manage-BDE: setidentifier
-
-
+# <a name="manage-bde-setidentifier"></a>Manage-BDE setidentifier
 
 Establece el campo Identificador de unidad de la unidad en el valor especificado en la configuración **proporcionar los identificadores únicos de la organización** Directiva de grupo.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-manage-bde –setidentifier <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde –setidentifier <drive> [-computername <name>] [{-?|/?}] [{-help|-h}]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> de unidad|Representa la letra de una unidad seguida del signo de dos puntos.|
-|-COMPUTERNAME|Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
-|\<Name>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
-|-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
-|-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<drive>` | Representa la letra de una unidad seguida del signo de dos puntos. |
+| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
+| -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
+| -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |
 
-## <a name="examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
 
-Para ilustrar el uso del comando **-setidentifier** para establecer el campo de identificador de unidad BitLocker para C.
+Para establecer el campo de identificador de unidad BitLocker para C, escriba:
+
 ```
 manage-bde –setidentifier C:
 ```
@@ -48,5 +47,7 @@ manage-bde –setidentifier C:
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
--   [Manage-BDE](manage-bde.md)
--   [Uso de agentes de recuperación de datos con BitLocker](https://technet.microsoft.com/library/dd875560(WS.10).aspx)
+
+- [comando Manage-BDE](manage-bde.md)
+
+- [Guía de recuperación de BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-recovery-guide-plan)

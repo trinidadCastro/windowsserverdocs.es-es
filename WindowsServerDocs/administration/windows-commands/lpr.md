@@ -1,20 +1,20 @@
 ---
 title: lpr
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando lpr, que envía un archivo a un equipo o un dispositivo de uso compartido de impresoras que ejecuta el servicio line Printer daemon (LPD) como preparación para la impresión.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: afc8790b-8b52-45c4-acdf-be0ffa9da534 jpjofre
+ms.assetid: afc8790b-8b52-45c4-acdf-be0ffa9da534
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a63c74e3d25e11ccc8129a6ce28fd505e9227eb
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d11b72ee807869613505052cfb51e80a89a80d70
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820535"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223022"
 ---
 # <a name="lpr"></a>lpr
 
@@ -23,36 +23,41 @@ ms.locfileid: "83820535"
 Envía un archivo a un equipo o a un dispositivo de uso compartido de impresoras que ejecuta el servicio line Printer daemon (LPD) como preparación para la impresión.
 
 ## <a name="syntax"></a>Sintaxis
+
 ```
-lpr [-S <ServerName>] -P <printerName> [-C <BannerContent>] [-J <JobName>] [-o | -o l] [-x] [-d] <filename>
+lpr [-S <servername>] -P <printername> [-C <bannercontent>] [-J <jobname>] [-o | -o l] [-x] [-d] <filename>
 ```
+
 ### <a name="parameters"></a>Parámetros
 
-|     Parámetro      |                                                                                                           Descripción                                                                                                           |
-|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  -S<ServerName>   |                                    Especifica (por nombre o dirección IP) el equipo o el dispositivo de uso compartido de impresoras que hospeda la cola de impresión de LPD con el estado que desea mostrar. Necesario.                                    |
-|  -P<printerName>  |                                                              Especifica (por nombre) la impresora para la cola de impresión con el estado que desea mostrar. Necesario.                                                              |
-| -C<BannerContent> |                Especifica el contenido que se va a imprimir en la página de encabezado del trabajo de impresión. Si no incluye este parámetro, aparece el nombre del equipo desde el que se envió el trabajo de impresión en la página de encabezado.                 |
-|    -J<JobName>    |                           Especifica el nombre del trabajo de impresión que se imprimirá en la página de encabezado. Si no incluye este parámetro, el nombre del archivo que se va a imprimir aparece en la página de encabezado.                            |
-| [-o&#124;-o l]  | Especifica el tipo de archivo que desea imprimir. El parámetro **-o** especifica que desea imprimir un archivo de texto. El parámetro **-o l** especifica que desea imprimir un archivo binario (por ejemplo, un archivo PostScript). |
-|         -d         |              Especifica que el archivo de datos debe enviarse antes que el archivo de control. Use este parámetro si la impresora requiere que se envíe primero el archivo de datos. Para obtener más información, consulte la documentación de la impresora.               |
-|         -X         |                               Especifica que el comando **LPR** debe ser compatible con el sistema operativo Sun Microsystems (denominado SunOS) para las versiones hasta la versión 4.1.4_u1.                                |
-|     <FileName>     |                                                                                      Especifica (por nombre) el archivo que se va a imprimir. Necesario.                                                                                      |
-|         /?         |                                                                                              Muestra la ayuda en el símbolo del sistema.                                                                                               |
+| Parámetro | Descripción |
+| --------- | ----------- |
+| -S`<servername>` | Especifica (por nombre o dirección IP) el equipo o el dispositivo de uso compartido de impresoras que hospeda la cola de impresión de LPD con el estado que desea mostrar.  Este parámetro es obligatorio y debe escribirse en mayúsculas. |
+| -P`<printername> `| Especifica (por nombre) la impresora para la cola de impresión con el estado que desea mostrar. Para buscar el nombre de la impresora, abra la carpeta **impresoras** . Este parámetro es obligatorio y debe escribirse en mayúsculas. |
+| -C`<bannercontent>` | Especifica el contenido que se va a imprimir en la página de encabezado del trabajo de impresión. Si no incluye este parámetro, aparece el nombre del equipo desde el que se envió el trabajo de impresión en la página de encabezado. Este parámetro debe escribirse en mayúsculas. |
+| -J`<jobname>` | Especifica el nombre del trabajo de impresión que se imprimirá en la página de encabezado. Si no incluye este parámetro, el nombre del archivo que se va a imprimir aparece en la página de encabezado. Este parámetro debe escribirse en mayúsculas. |
+| `[-o | -o l]` | Especifica el tipo de archivo que desea imprimir. El parámetro **-o** especifica que desea imprimir un archivo de texto. El parámetro **-o l** especifica que desea imprimir un archivo binario (por ejemplo, un archivo PostScript). |
+| -d | Especifica que el archivo de datos debe enviarse antes que el archivo de control. Use este parámetro si la impresora requiere que se envíe primero el archivo de datos. Para obtener más información, consulte la documentación de la impresora. |
+| -X | Especifica que el comando **LPR** debe ser compatible con el sistema operativo Sun Microsystems (denominado SunOS) para las versiones hasta la versión 4.1.4_u1. |
+| `<filename>` | Especifica (por nombre) el archivo que se va a imprimir. Este parámetro es obligatorio. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
-- Para buscar el nombre de la impresora, abra la carpeta Impresoras.
-- Los parámetros **-S**, **-P**, **-C**y **-J** distinguen mayúsculas de minúsculas y deben escribirse en letras mayúsculas.
-  ## <a name="examples"></a>Ejemplos
-  En este ejemplo se muestra cómo imprimir el archivo de texto Document. txt en la cola de impresión Laserprinter1 en un host LPD en 10.0.0.45:
-  ```
-  lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt
-  ```
-  En este ejemplo se muestra cómo imprimir el archivo de Adobe PostScript PostScript_file. PS en la cola de impresión Laserprinter1 en un host de LPD en 10.0.0.45:
-  ```
-  lpr -S 10.0.0.45 -P Laserprinter1 -o l PostScript_file.ps
-  ```
+### <a name="examples"></a>Ejemplos
+
+Para imprimir el archivo de texto *Document. txt* en la cola de impresión *Laserprinter1* de un host LPD en *10.0.0.45*, escriba:
+
+```
+lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt
+```
+
+Para imprimir el archivo *PostScript_file. PS* de Adobe PostScript en la cola de impresión de *Laserprinter1* en un host de LPD en *10.0.0.45*, escriba:
+
+```
+lpr -S 10.0.0.45 -P Laserprinter1 -o l PostScript_file.ps
+```
 
 ## <a name="additional-references"></a>Referencias adicionales
+
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
--   [Referencia de comandos de impresión](print-command-reference.md)
+
+- [Referencia de comandos de impresión](print-command-reference.md)

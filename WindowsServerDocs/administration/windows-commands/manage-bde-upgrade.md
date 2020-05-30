@@ -1,6 +1,6 @@
 ---
 title: actualización de Manage-BDE
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando Manage-BDE upgrade, que actualiza la versión de BitLocker.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,38 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 34fc591e4b6903e67873cbce39e1f1080955d6c1
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2e1789e119db8a2886c19dab9acfe4c7b12d651d
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820764"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222142"
 ---
-# <a name="manage-bde-upgrade"></a>Manage-BDE: actualización
-
-
+# <a name="manage-bde-upgrade"></a>actualización de Manage-BDE
 
 Actualiza la versión de BitLocker.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-manage-bde -upgrade [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde -upgrade [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> de unidad|Representa la letra de una unidad seguida del signo de dos puntos.|
-|-COMPUTERNAME|Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
-|\<Name>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
-|-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
-|-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<drive>` | Representa la letra de una unidad seguida del signo de dos puntos. |
+| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
+| -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
+| -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |
 
 ## <a name="examples"></a>Ejemplos
 
-Ilustra el uso del comando **-upgrade** para actualizar el cifrado de BitLocker en la unidad C.
+Para actualizar el cifrado de BitLocker en la unidad C, escriba:
+
 ```
 manage-bde –upgrade C:
 ```
@@ -48,5 +47,5 @@ manage-bde –upgrade C:
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
--   [Manage-BDE](manage-bde.md)
--   [Actualizar un equipo protegido con BitLocker de Windows Vista a Windows 7](https://technet.microsoft.com/library/ee424325(v=ws.10).aspx)
+
+- [comando Manage-BDE](manage-bde.md)

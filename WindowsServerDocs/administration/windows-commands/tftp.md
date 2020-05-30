@@ -1,22 +1,22 @@
 ---
-title: TFTP
+title: tftp
 description: Transferir archivos a y desde un equipo remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef vhorne
+ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb9977d0bc4f45b610d8bf3409c6beeadfaf7ee5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8b3674cbfdbc01811ece57e2f9cbbea3aa31251d
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821025"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223046"
 ---
-# <a name="tftp"></a>TFTP
+# <a name="tftp"></a>tftp
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -34,10 +34,10 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 |\<Host\>|Especifica el equipo local o remoto.|
 |put|Transfiere el *origen* de archivo del equipo local al *destino* del archivo en el equipo remoto. Dado que el protocolo TFTP no admite la autenticación de usuario, el usuario debe haber iniciado sesión en el equipo remoto y los archivos deben poder escribirse en el equipo remoto.|
 |get|Transfiere el *destino* de archivo del equipo remoto al *origen* de archivo en el equipo local.|
-|\<Origen\>|Especifica el archivo que se va a transferir.|
-|\<Destino\>|Especifica dónde se debe transferir el archivo.|
+|\<Source\>|Especifica el archivo que se va a transferir.|
+|\<Destination\>|Especifica dónde se debe transferir el archivo.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 -   Puede instalar el cliente de TFTP mediante el Asistente para agregar características.
 -   El protocolo TFTP no admite ningún mecanismo de autenticación o cifrado y, por lo tanto, puede suponer un riesgo de seguridad cuando está presente. No se recomienda instalar el cliente TFTP para sistemas conectados a Internet.
 -   El cliente TFTP es software opcional y está marcado como en desuso en Windows Vista y versiones posteriores del sistema operativo Windows. Microsoft ya no proporciona un servicio de servidor TFTP por motivos de seguridad.

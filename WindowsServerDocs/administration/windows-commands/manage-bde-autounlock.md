@@ -1,6 +1,6 @@
 ---
 title: Manage-BDE AUTOLOCK
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando Manage-BDE AUTOLOCK, que administra el desbloqueo automático de las unidades de datos protegidas por BitLocker.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,42 +9,40 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 929469ad3d4bd8b3a76c3681a5f24424ba6d99df
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a214ba868e04a81e6282dc919c93ab626ef26725
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820725"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223004"
 ---
-# <a name="manage-bde-autounlock"></a>Manage-BDE: desbloqueo automático
-
-
+# <a name="manage-bde-autounlock"></a>Manage-BDE AUTOLOCK
 
 Administra el desbloqueo automático de las unidades de datos protegidas por BitLocker.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}]
-
+manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <drive> [-computername <name>] [{-?|/?}] [{-help|-h}]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|-enable|Habilita el desbloqueo automático para una unidad de datos.|
-|-disable|Deshabilita el desbloqueo automático para una unidad de datos.|
-|-clearallkeys|Quita todas las claves externas almacenadas en la unidad del sistema operativo.|
-|\<> de unidad|Representa la letra de una unidad seguida del signo de dos puntos.|
-|-COMPUTERNAME|Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
-|\<Name>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
-|-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
-|-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| -enable | Habilita el desbloqueo automático para una unidad de datos. |
+| -disable | Deshabilita el desbloqueo automático para una unidad de datos. |
+| -clearallkeys | Quita todas las claves externas almacenadas en la unidad del sistema operativo. |
+| `<drive>` | Representa la letra de una unidad seguida del signo de dos puntos. |
+| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
+| -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
+| -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |
 
 ## <a name="examples"></a>Ejemplos
 
-Para ilustrar el uso del comando **-AUTOLOCK** para habilitar el desbloqueo automático de la unidad de datos E.
+Para habilitar el desbloqueo automático de la unidad de datos E, escriba:
+
 ```
 manage-bde –autounlock -enable E:
 ```
@@ -52,4 +50,5 @@ manage-bde –autounlock -enable E:
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
--   [Manage-BDE](manage-bde.md)
+
+- [comando Manage-BDE](manage-bde.md)

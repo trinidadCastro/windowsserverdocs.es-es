@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60700190146a3a8b84e1121f01d9168196dad888
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 63fd94fb32fe27b48460922818d1a7220f7f5d7a
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820445"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222965"
 ---
 # <a name="logman-create-counter"></a>Logman Create Counter
 
@@ -56,7 +56,7 @@ logman create counter <[-n] <name>> [options]
 | -SC`<value>` | Especifica el número máximo de muestras que se van a recopilar con un recopilador de datos del contador de rendimiento. |
 | /? | Muestra la ayuda contextual. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Donde [-] aparece en la lista, al agregar un guion adicional (-) se anula la opción.
 
@@ -78,4 +78,6 @@ logman create counter perf_log -c \Processor(_Total)\% Processor time -max 10 -r
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [comando Logman Update Counter](logman-update-counter.md)
+
+- [Logman (comando)](logman.md)

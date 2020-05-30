@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf9154d2d81f9524e3a168770cd2ed0703703884
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f479fcdf3db4bb5a61b0cd0724220d27c934872f
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820475"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222806"
 ---
 # <a name="logman-create-api"></a>Logman Create API
 
@@ -59,7 +59,7 @@ logman create api <[-n] <name>> [options]
 | -exe`<value>` | Especifica la ruta de acceso completa a un archivo ejecutable para el seguimiento de la API. |
 | /? | Muestra la ayuda contextual. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Donde [-] aparece en la lista, al agregar un guion adicional (-) se anula la opción.
 
@@ -86,4 +86,6 @@ logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [comando Logman Update API](logman-update-api.md)
+
+- [Logman (comando)](logman.md)

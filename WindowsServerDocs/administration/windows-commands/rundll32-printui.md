@@ -4,17 +4,17 @@ description: Tema de referencia del comando rundll32 printui. dll, PrintUIEntry,
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 12fb48b6-5dd8-4cc0-8808-e6a681aceb84 jpjofre
+ms.assetid: 12fb48b6-5dd8-4cc0-8808-e6a681aceb84
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/25/2018
-ms.openlocfilehash: 4eb68d3ddb9b114abb5f32ddeb41de889943fa48
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3644af74918089e837b01c531099c0e61a6eb771
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722251"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223054"
 ---
 # <a name="rundll32-printuidllprintuientry"></a>rundll32 printui. dll, PrintUIEntry
 
@@ -22,29 +22,29 @@ ms.locfileid: "82722251"
 
 Automatiza muchas tareas de configuración de la impresora. printui. dll es el archivo ejecutable que contiene las funciones utilizadas por los cuadros de diálogo de configuración de la impresora. También se puede llamar a estas funciones desde un script o un archivo por lotes de línea de comandos, o bien se pueden ejecutar de forma interactiva desde el símbolo del sistema.
 
-## <a name="syntax"></a>Sintaxis  
+## <a name="syntax"></a>Sintaxis
 
-```  
-rundll32 printui.dll PrintUIEntry [BaseParameter] [ModificationParameter1] [ModificationParameter2] [ModificationParameterN]  
-```  
-
-También puede usar las siguientes sintaxis alternativas, aunque los ejemplos de este tema usan la sintaxis anterior:  
-
-```  
-rundll32 printui.dll,PrintUIEntry [BaseParameter] [ModificationParameter1] [ModificationParameter2] [ModificationParameterN]  
+```
+rundll32 printui.dll PrintUIEntry [BaseParameter] [ModificationParameter1] [ModificationParameter2] [ModificationParameterN]
 ```
 
-```  
-rundll32 printui PrintUIEntry [BaseParameter] [ModificationParameter1] [ModificationParameter2] [ModificationParameterN]  
+También puede usar las siguientes sintaxis alternativas, aunque los ejemplos de este tema usan la sintaxis anterior:
+
+```
+rundll32 printui.dll,PrintUIEntry [BaseParameter] [ModificationParameter1] [ModificationParameter2] [ModificationParameterN]
 ```
 
-```  
-rundll32 printui,PrintUIEntry [BaseParameter] [ModificationParameter1] [ModificationParameter2] [ModificationParameterN]  
+```
+rundll32 printui PrintUIEntry [BaseParameter] [ModificationParameter1] [ModificationParameter2] [ModificationParameterN]
+```
+
+```
+rundll32 printui,PrintUIEntry [BaseParameter] [ModificationParameter1] [ModificationParameter2] [ModificationParameterN]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-Hay dos tipos de parámetros: parámetros base y parámetros de modificación. Los parámetros base especifican la función que va a realizar el comando. Solo uno de estos parámetros puede aparecer en una línea de comandos determinada. A continuación, puede modificar el parámetro base mediante uno o varios parámetros de modificación si son aplicables al parámetro base (no todos los parámetros de modificación son compatibles con todos los parámetros base).  
+Hay dos tipos de parámetros: parámetros base y parámetros de modificación. Los parámetros base especifican la función que va a realizar el comando. Solo uno de estos parámetros puede aparecer en una línea de comandos determinada. A continuación, puede modificar el parámetro base mediante uno o varios parámetros de modificación si son aplicables al parámetro base (no todos los parámetros de modificación son compatibles con todos los parámetros base).
 
 |     Parámetros base     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -100,39 +100,39 @@ Hay dos tipos de parámetros: parámetros base y parámetros de modificación. L
 |        /W [marcas]        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Especifica los parámetros u opciones para el Asistente para agregar impresoras, el Asistente para agregar controladores de impresora y el Asistente para la instalación de impresoras de red.<p>**r**: permite reiniciar los asistentes desde la última página.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |        /G [marcas]        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Especifica los parámetros y las opciones globales que quiere usar.<p>**w**: suprime las advertencias del controlador de instalación al usuario.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
-## <a name="remarks"></a>Observaciones  
-- La palabra clave **PrintUIEntry** distingue mayúsculas de minúsculas y debe escribir la sintaxis de este comando con las mayúsculas exactas que se muestran en los ejemplos de este tema.  
-- Para obtener más ejemplos, en un símbolo del sistema, escriba: **rundll32 printui. dll, PrintUIEntry/?**  
-  ## <a name="examples"></a>Ejemplos  
-  Para agregar una nueva impresora remota, Printer1, para un equipo, Client1, que es visible para la cuenta de usuario en la que se ejecuta este comando, escriba:  
-  ```  
-  rundll32 printui.dll PrintUIEntry /in /n\\client1\printer1  
-  ```  
-  Para agregar una impresora mediante el Asistente para agregar impresoras y el uso de un archivo. inf, InfFile. inf, ubicado en la unidad c: en Infpath, escriba:  
-  ```  
-  rundll32 printui.dll PrintUIEntry /ii /f c:\Infpath\InfFile.inf  
-  ```  
-  Para eliminar una impresora existente, Printer1, en un equipo, Client1, escriba:  
-  ```  
-  rundll32 printui.dll PrintUIEntry /dn /n\\client1\printer1  
-  ```  
-  Para agregar una conexión de impresora por equipo, Printer2, para todos los usuarios de un equipo, cliente2, escriba (la conexión se aplicará cuando un usuario inicie sesión):  
-  ```  
-  rundll32 printui.dll PrintUIEntry /ga /n\\client2\printer2  
-  ```  
-  Para eliminar una conexión de impresora por equipo, Printer2, para todos los usuarios de un equipo, cliente2, escriba (la conexión se eliminará cuando un usuario inicie sesión):  
-  ```  
-  rundll32 printui.dll PrintUIEntry /gd /n\\client2\printer2  
-  ```  
-  Para ver las propiedades del servidor de impresión, Servidorimpresión1, escriba:  
-  ```  
-  rundll32 printui.dll PrintUIEntry /s /t1 /c\\printserver1  
-  ```  
-  Para ver las propiedades de una impresora, printer3, escriba:  
-  ```  
-  rundll32 printui.dll PrintUIEntry /p /n\\printer3  
-  ```  
-  ## <a name="additional-references"></a>Referencias adicionales  
+## <a name="remarks"></a>Comentarios
+- La palabra clave **PrintUIEntry** distingue mayúsculas de minúsculas y debe escribir la sintaxis de este comando con las mayúsculas exactas que se muestran en los ejemplos de este tema.
+- Para obtener más ejemplos, en un símbolo del sistema, escriba: **rundll32 printui. dll, PrintUIEntry/?**
+  ## <a name="examples"></a>Ejemplos
+  Para agregar una nueva impresora remota, Printer1, para un equipo, Client1, que es visible para la cuenta de usuario en la que se ejecuta este comando, escriba:
+  ```
+  rundll32 printui.dll PrintUIEntry /in /n\\client1\printer1
+  ```
+  Para agregar una impresora mediante el Asistente para agregar impresoras y el uso de un archivo. inf, InfFile. inf, ubicado en la unidad c: en Infpath, escriba:
+  ```
+  rundll32 printui.dll PrintUIEntry /ii /f c:\Infpath\InfFile.inf
+  ```
+  Para eliminar una impresora existente, Printer1, en un equipo, Client1, escriba:
+  ```
+  rundll32 printui.dll PrintUIEntry /dn /n\\client1\printer1
+  ```
+  Para agregar una conexión de impresora por equipo, Printer2, para todos los usuarios de un equipo, cliente2, escriba (la conexión se aplicará cuando un usuario inicie sesión):
+  ```
+  rundll32 printui.dll PrintUIEntry /ga /n\\client2\printer2
+  ```
+  Para eliminar una conexión de impresora por equipo, Printer2, para todos los usuarios de un equipo, cliente2, escriba (la conexión se eliminará cuando un usuario inicie sesión):
+  ```
+  rundll32 printui.dll PrintUIEntry /gd /n\\client2\printer2
+  ```
+  Para ver las propiedades del servidor de impresión, Servidorimpresión1, escriba:
+  ```
+  rundll32 printui.dll PrintUIEntry /s /t1 /c\\printserver1
+  ```
+  Para ver las propiedades de una impresora, printer3, escriba:
+  ```
+  rundll32 printui.dll PrintUIEntry /p /n\\printer3
+  ```
+  ## <a name="additional-references"></a>Referencias adicionales
 
-- [rundll32](rundll32.md)  
-- [Referencia de comandos de impresión](print-command-reference.md)  
+- [rundll32](rundll32.md)
+- [Referencia de comandos de impresión](print-command-reference.md)
