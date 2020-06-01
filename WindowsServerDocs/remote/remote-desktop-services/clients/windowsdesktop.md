@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/28/2020
+ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 368dc3889c5275512e345c26fcef504c6ceaa8c2
-ms.sourcegitcommit: d06650cfab2972551c3a269b3271596f55c1bd3b
+ms.openlocfilehash: c229eefbc0cc00ed1af940cd986c89e979873d29
+ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726704"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84025506"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introducción al cliente de escritorio de Windows
 
@@ -56,14 +56,28 @@ Obtén la lista de recursos administrados a los que puedes tener acceso, como ap
 
 ### <a name="subscribe-to-a-workspace"></a>Suscripción a un área de trabajo
 
-1. Desde la página principal del cliente, también conocida como Centro de conexiones, pulsa en **Suscribirse**.
-2. Inicia sesión con tu cuenta de usuario cuando se te solicite.
-3. Los recursos aparecerán en el centro de conexiones agrupados por área de trabajo.
-
-Puedes iniciar los recursos con uno de los métodos siguientes:
+Hay dos maneras de suscribirse a un área de trabajo. El cliente puede intentar detectar los recursos disponibles en tu cuenta profesional o educativa, o bien puedes especificar directamente la dirección URL en la que se encuentran los recursos para los casos en los que el cliente no pueda encontrarlos. Una vez que te hayas suscrito a un área de trabajo, podrás iniciar los recursos con uno de los métodos siguientes:
 
 - Ve al centro de conexiones y haz doble clic en un recurso para iniciarlo.
 - También puedes ir al menú Inicio y buscar una carpeta con el nombre del área de trabajo o escribir el nombre del recurso en la barra de búsqueda.
+
+#### <a name="subscribe-with-a-user-account"></a>Suscripción con una cuenta de usuario
+
+1. En la página principal del cliente, pulsa **Subscribirse**.
+2. Inicia sesión con tu cuenta de usuario cuando se te solicite.
+3. Los recursos aparecerán en el centro de conexiones agrupados por área de trabajo.
+
+#### <a name="subscribe-with-url"></a>Suscripción con dirección URL
+
+1. En la página principal del cliente, pulsa **Subscribe with URL** (Subscribirse con dirección URL).
+2. Escribe la dirección URL del área de trabajo o tu dirección de correo electrónico:
+   - Si usas la **URL del espacio de trabajo**, usa la que te proporcionó el administrador. Si accedes a los recursos de Windows Virtual Desktop, puedes usar una de las siguientes direcciones URL:
+     - Windows Virtual Desktop de otoño de 2019: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
+     - Windows Virtual Desktop de primavera de 2020: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+   - Para usar un **correo electrónico**, escribe tu dirección de correo. Esto indica al cliente que busque una dirección URL asociada a tu dirección de correo electrónico si el administrador ha configurado la [detección de correo electrónico](../rds-email-discovery.md).
+3. Pulsa **Siguiente**.
+4. Inicia sesión con tu cuenta de usuario cuando se te solicite.
+5. Los recursos aparecerán en el centro de conexiones agrupados por área de trabajo.
 
 ### <a name="workspace-details"></a>Detalles del área de trabajo
 

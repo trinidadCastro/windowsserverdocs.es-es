@@ -1,7 +1,7 @@
 # Introducción
 ## [Introducción a Windows Server 2016](Server-Basics.md)
 ## [Novedades de Windows Server](whats-new-in-windows-server.md)
-### [Novedades de Windows Server 2004](whats-new-in-windows-server-2004.md)
+### [Novedades de Windows Server, versión 2004](whats-new-in-windows-server-2004.md)
 ### [Novedades de Windows Server 2019](../get-started-19/whats-new-19.md)
 ### [Novedades en Windows Server 2016](whats-new-in-windows-server-2016.md)
 ### [Actualizaciones exprés disponibles para Windows Server 2016](express-updates.md)

@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/12/2020
+ms.date: 05/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: de7c685e544fd0bb193f995aeff3a20a29bd6db5
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 0d49c49def8b110f42a6d56354c73e5a75b04b7e
+ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235052"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84025516"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -26,15 +26,18 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |Version  |
 |-----------|---------|
-|Público     |1.2.945  |
-|Insider    |1.2.1009 |
+|Público     |1.2.1026 |
+|Insider    |1.2.1026 |
 
-## <a name="updates-for-version-121009"></a>Actualizaciones de la versión 1.2.1009
+## <a name="updates-for-version-121026"></a>Actualizaciones para la versión 1.2.1026
 
-*Fecha de publicación: 12/05/2020*
+*Fecha de publicación: 27/05/2020*
 
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wseE), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wnf3), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wCIB)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
+- Al suscribirte, ahora puedes elegir tu cuenta en lugar de escribir tu dirección de correo electrónico.
+- Se agregó una nueva opción **Subscribe with URL** (Suscribirse con dirección URL) que te permite especificar la dirección URL del área de trabajo a la que te vas a suscribir, o aprovechar la [detección de correo electrónico](../rds-email-discovery.md) cuando esté disponible en los casos en los que tus recursos no se encuentren automáticamente. Esto es similar al proceso de suscripción en el resto de los clientes de Escritorio remoto. Se puede usar para suscribirse directamente a las áreas de trabajo de la actualización de primavera de 2020 de WVD.
+- Se agregó compatibilidad para suscribirse a un área de trabajo mediante un nuevo [esquema de URI](remote-desktop-uri.md) que se puede enviar en un correo electrónico a los usuarios o agregarse a un sitio web de soporte técnico.
 - Se ha agregado un nuevo cuadro de diálogo **Connection information** (Información de conexión), que proporciona detalles del cliente, la red y el servidor de las sesiones de escritorio y aplicación. Puedes acceder al cuadro de diálogo desde la barra de conexión en el modo de pantalla completa, o desde el menú del sistema cuando estés dentro de la ventana.
 - Las sesiones de escritorio iniciadas en modo de ventana ahora se maximizan siempre en lugar de pasar al modo de pantalla completa al maximizar la ventana. Usa la opción **Pantalla completa** del menú sistema para entrar en el modo de pantalla completa.
 - El aviso de cancelación de suscripción ahora muestra un icono de advertencia y muestra los nombres de área de trabajo como una lista con viñetas.
