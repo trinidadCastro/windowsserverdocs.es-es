@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: eba7092a9a26b25b1fe77b39b8098d117b38981a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c55d6ae5ff701555eb9bfb7135ffa28692bd4391
+ms.sourcegitcommit: 4894649cc47dfa535306cc334871f81155198f76
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821005"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84254728"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -32,8 +32,8 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<> de origen|Necesario. Especifica la ubicación y los nombres de los archivos que desea copiar. Este parámetro debe incluir una unidad o una ruta de acceso.|
-|[ \< Destino>]|Especifica el destino de los archivos que desea copiar. Este parámetro puede incluir una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
+|\<Source>|Obligatorio. Especifica la ubicación y los nombres de los archivos que desea copiar. Este parámetro debe incluir una unidad o una ruta de acceso.|
+|[\<Destination>]|Especifica el destino de los archivos que desea copiar. Este parámetro puede incluir una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
 |/w|Muestra el siguiente mensaje y espera la respuesta antes de empezar a copiar los archivos:</br>**Presione cualquier tecla para empezar a copiar los archivos.**|
 |/p|Le pide que confirme si desea crear cada archivo de destino.|
 |/C|Omite los errores.|
@@ -192,7 +192,7 @@ copyit c:\prgmcode b:
 
 El intérprete de comandos sustituye a **C:\Prgmcode** para *%1* y **B:** para *%2*, utiliza **xcopy** con las opciones de línea de comandos **/e** y **/s** . Si **xcopy** detecta un error, el programa por lotes lee el código de salida y dirige a la etiqueta indicada en la instrucción **If ERRORLEVEL** adecuada y, a continuación, muestra el mensaje correspondiente y sale del programa por lotes.
 
-**9.** en este ejemplo, todos los directorios no vacíos, además de los archivos cuyo nombre coincide con el patrón dado con el símbolo de asterisco.
+**9.** en este ejemplo se copian todos los directorios no vacíos, además de los archivos cuyo nombre coincide con el patrón dado con el símbolo de asterisco.
 
 ```
 xcopy .\toc*.yml ..\..\Copy-To\ /S /Y
@@ -204,14 +204,14 @@ rem  .\d2\toc.yml
 rem  3 File(s) copied
 ```
 
-En el ejemplo anterior, este valor de parámetro de origen concreto **. \\ TOC \* . yml** copia los mismos 3 archivos **aunque se hayan \\ ** quitado los dos caracteres de la ruta de acceso. Sin embargo, no se copiará ningún archivo si se quitó el carácter comodín de asterisco del parámetro de origen, lo que lo hizo simplemente **. \\ TOC. yml**.
+En el ejemplo anterior, este valor de parámetro de origen concreto **. \\ TOC \* . yml** copia los mismos 3 archivos aunque se hayan quitado sus dos caracteres de ruta de acceso **. \\ ** Sin embargo, no se copiará ningún archivo si se quitó el carácter comodín de asterisco del parámetro de origen, lo que lo hizo simplemente **. \\ TOC. yml**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Copiar](copy.md)
--   [Mover](move.md)
--   [Dir](dir.md)
--   [Atributo](attrib.md)
--   [Diskcopy](diskcopy.md)
--   [Cuando](if.md)
+- [Copiar](copy.md)
+- [Mover](move.md)
+- [Dir](dir.md)
+- [Atributo](attrib.md)
+- [Diskcopy](diskcopy.md)
+- [Cuando](if.md)
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

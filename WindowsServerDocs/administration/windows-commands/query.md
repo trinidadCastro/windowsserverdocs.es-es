@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90ef2cc14ef0131978956de8df029eaf04baabd3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1dcea0fa4ea91de56e81c51bf9fe87ec7e3a49fa
+ms.sourcegitcommit: 4894649cc47dfa535306cc334871f81155198f76
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722682"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84254718"
 ---
 # <a name="query"></a>Query
 
@@ -23,9 +23,10 @@ ms.locfileid: "82722682"
 Muestra información sobre los procesos, las sesiones y los servidores de host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)) en la Microsoft docs biblioteca de Windows Server.
 
 ## <a name="syntax"></a>Sintaxis
+
 ```
 query process
 query session
@@ -34,6 +35,7 @@ query user
 ```
 
 ### <a name="parameters"></a>Parámetros
+
 |Parámetro|Descripción|
 |-------|--------|
 |[query process](query-process.md)|Muestra información sobre los procesos que se ejecutan en un servidor host de sesión de escritorio remoto.|
@@ -42,5 +44,6 @@ query user
 |[query user](query-user.md)|Muestra información acerca de las sesiones de usuario en un servidor host de sesión de escritorio remoto.|
 
 ## <a name="additional-references"></a>Referencias adicionales
-- [Referencia de comandos de servicios de escritorio remoto de la clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos[(Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)
