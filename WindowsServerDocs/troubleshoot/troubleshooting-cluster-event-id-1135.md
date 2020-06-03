@@ -2,18 +2,16 @@
 title: Solución de problemas de clúster con el identificador de evento 1135
 description: Describe cómo solucionar el problema de inicio del servicio de Cluster Server con el identificador de evento 1135.
 ms.date: 05/28/2020
-ms.openlocfilehash: 73357cc5b696a969de82123d3ca2a6fbb36fdc40
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: d59f8b89e89ea7ff42aecd79670465aee8d63524
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150463"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306534"
 ---
 # <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>Solución de problemas de clúster con el identificador de evento 1135
 
 Este artículo le ayuda a diagnosticar y resolver el ID. de evento 1135, que se puede registrar durante el inicio del Servicio de clúster en el entorno de clústeres de conmutación por error.
-
-En este artículo se proporciona información sobre cómo resolver
 
 ## <a name="start-page"></a>Página de inicio
 
@@ -154,7 +152,7 @@ El Servicio de clúster controla las operaciones de clúster de servidor y admin
 
 Nombre del servicio de sistema: **ClusSvc**  
 
-|Aplicación|Protocolo|Puertos|
+|Application|Protocolo|Puertos|
 |---|---|---|
 |Servicio de Cluster Server|UDP|3343|
 |Servicio de Cluster Server|TCP|3343 (este puerto es necesario durante una operación de unión de nodo).|

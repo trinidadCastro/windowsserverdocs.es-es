@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 067b4961aecc6149d6ff68872123acb2cfe99305
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: b6d5b99e905d70d81962f96a303e0bcaae0bd9e9
+ms.sourcegitcommit: 5e10afbd128befb7400a6bcf576f0239cf2ed47f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992540"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84302830"
 ---
 # <a name="dir"></a>dir
 
@@ -25,7 +25,7 @@ El comando **dir** también se puede ejecutar desde la consola de recuperación 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>]][/o[[:]<sortorder>]] [/t[[:]<timefield>]] [/s] [/b] [/l] [/n] [/x] [/c] [/4]
+dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>]][/o[[:]<sortorder>]] [/t[[:]<timefield>]] [/s] [/b] [/l] [/n] [/x] [/c] [/4] [/r]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -38,9 +38,9 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 | /q | Muestra información de propiedad del archivo. |
 | /w | Muestra la lista en formato ancho, con un máximo de cinco nombres de archivo o de directorio en cada línea. |
 | /d | Muestra la lista en el mismo formato que **/w**, pero los archivos se ordenan por columna. |
-| /a [[:]`<attributes>`] | Muestra solo los nombres de los directorios y archivos con los atributos especificados. Si no usa este parámetro, el comando muestra los nombres de todos los archivos excepto los archivos ocultos y del sistema. Si usa este parámetro sin especificar ningún *atributo*, el comando muestra los nombres de todos los archivos, incluidos los archivos ocultos y del sistema. La lista de valores de *atributos* posibles es:<ul><li>directorios **d**</li><li>**h** : archivos ocultos</li><li>archivos **s** -System</li><li>**l** -puntos de análisis</li><li>**r** : archivos de solo lectura</li><li>**a** -archivos listos para archivar</li><li>no hay archivos indizados **de contenido**</li></ul>Puede usar cualquier combinación de estos valores, pero no debe separar los valores mediante espacios. Opcionalmente, puede usar dos puntos (:) separador, o puede usar un guión (-) como prefijo para indicar "no". Por ejemplo, al usar el atributo **-s** no se mostrarán los archivos del sistema. |
-| /o [[:]`<sortorder>`] | Ordena la salida según *SortOrder*, que puede ser cualquier combinación de los valores siguientes:<ul><li>**n** -alfabéticamente por nombre</li><li>**e** -alfabéticamente por extensión</li><li>**g** -grupos directorios primero</li><li>**s** -por tamaño, más pequeño primero</li><li>**d** : por fecha y hora, más antiguo primero</li><li>Usar el **-** prefijo para invertir el criterio de ordenación</li></ul>Se procesan varios valores en el orden en que se enumeran. No separe varios valores con espacios, pero puede usar opcionalmente un signo de dos puntos (:).<p>Si *SortOrder* no se especifica, **dir/o** enumera los directorios alfabéticamente, seguidos de los archivos, que también están ordenados alfabéticamente. |
-| /t [[:]`<timefield>`] | Especifica el campo de tiempo que se va a mostrar o que se va a usar para la ordenación. Los valores de *timefield* disponibles son:<ul><li>creación de **c**</li><li>**a: último** acceso</li><li>**w** : última escritura</li></ul> |
+| /a [[:] `<attributes>` ] | Muestra solo los nombres de los directorios y archivos con los atributos especificados. Si no usa este parámetro, el comando muestra los nombres de todos los archivos excepto los archivos ocultos y del sistema. Si usa este parámetro sin especificar ningún *atributo*, el comando muestra los nombres de todos los archivos, incluidos los archivos ocultos y del sistema. La lista de valores de *atributos* posibles es:<ul><li>directorios **d**</li><li>**h** : archivos ocultos</li><li>archivos **s** -System</li><li>**l** -puntos de análisis</li><li>**r** : archivos de solo lectura</li><li>**a** -archivos listos para archivar</li><li>no hay archivos indizados **de contenido**</li></ul>Puede usar cualquier combinación de estos valores, pero no debe separar los valores mediante espacios. Opcionalmente, puede usar dos puntos (:) separador, o puede usar un guión (-) como prefijo para indicar "no". Por ejemplo, al usar el atributo **-s** no se mostrarán los archivos del sistema. |
+| /o [[:] `<sortorder>` ] | Ordena la salida según *SortOrder*, que puede ser cualquier combinación de los valores siguientes:<ul><li>**n** -alfabéticamente por nombre</li><li>**e** -alfabéticamente por extensión</li><li>**g** -grupos directorios primero</li><li>**s** -por tamaño, más pequeño primero</li><li>**d** : por fecha y hora, más antiguo primero</li><li>Usar el **-** prefijo para invertir el criterio de ordenación</li></ul>Se procesan varios valores en el orden en que se enumeran. No separe varios valores con espacios, pero puede usar opcionalmente un signo de dos puntos (:).<p>Si *SortOrder* no se especifica, **dir/o** enumera los directorios alfabéticamente, seguidos de los archivos, que también están ordenados alfabéticamente. |
+| /t [[:] `<timefield>` ] | Especifica el campo de tiempo que se va a mostrar o que se va a usar para la ordenación. Los valores de *timefield* disponibles son:<ul><li>creación de **c**</li><li>**a: último** acceso</li><li>**w** : última escritura</li></ul> |
 | /s | Muestra todas las apariciones del nombre de archivo especificado en el directorio especificado y en todos los subdirectorios. |
 | /b | Muestra una lista completa de directorios y archivos, sin información adicional. El parámetro **/b** invalida **/w**. |
 | /l | Muestra nombres de directorio y archivos no ordenados, con minúsculas. |
@@ -48,9 +48,10 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 | /x | Muestra los nombres cortos generados para los nombres de archivo no 8.3. La pantalla es la misma que la que se muestra para **/n**, pero el nombre corto se inserta antes del nombre largo. |
 | /C | Muestra el separador de miles en los tamaños de archivo. Este es el comportamiento predeterminado. Use **/c** para ocultar los separadores. |
 | /4 | Muestra los años en formato de cuatro dígitos. |
+| /r | Mostrar transmisiones de datos alternativas del archivo. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Para usar varios parámetros de *nombre* de archivo, separe cada nombre de archivo con un espacio, una coma o un punto y coma.
 
@@ -79,15 +80,15 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
   11/30/2004  01:16 PM 0 t97.txt
   ```
 
-  Podría esperar que la escritura `dir t97\*` devuelva el archivo T97. txt. Sin embargo, `dir t97\*` al escribir se devuelven ambos archivos, ya que el carácter comodín de asterisco coincide con el archivo t. txt2 con T97. txt mediante su mapa de nombre corto *T97B4 ~ 1. txt*. Del mismo modo `del t97\*` , si escribe, se eliminarán ambos archivos.
+  Podría esperar que la escritura `dir t97\*` devuelva el archivo T97. txt. Sin embargo, `dir t97\*` al escribir se devuelven ambos archivos, ya que el carácter comodín de asterisco coincide con el archivo t. txt2 con T97. txt mediante su mapa de nombre corto *T97B4 ~ 1. txt*. Del mismo modo, si escribe, se `del t97\*` eliminarán ambos archivos.
 
-- Puede usar el signo de interrogación (?) como sustituto de un solo carácter en un nombre. Por ejemplo, al `dir read???.txt` escribir se enumeran los archivos del directorio actual con la extensión. txt que comienza por Read y van seguidos de hasta tres caracteres. Esto incluye Read. txt, Read1. txt, Read12. txt, Read123. txt y Readme1. txt, pero no Readme12. txt.
+- Puede usar el signo de interrogación (?) como sustituto de un solo carácter en un nombre. Por ejemplo, `dir read???.txt` al escribir se enumeran los archivos del directorio actual con la extensión. txt que comienza por Read y van seguidos de hasta tres caracteres. Esto incluye Read. txt, Read1. txt, Read12. txt, Read123. txt y Readme1. txt, pero no Readme12. txt.
 
-- Si usa **/a** con más de un valor en *los atributos*, este comando muestra los nombres solo de los archivos con todos los atributos especificados. Por ejemplo, si usa **/a** con **r** y **-h** como atributos (mediante `/a:r-h` o `/ar-h`), este comando solo mostrará los nombres de los archivos de solo lectura que no están ocultos.
+- Si usa **/a** con más de un valor en *los atributos*, este comando muestra los nombres solo de los archivos con todos los atributos especificados. Por ejemplo, si usa **/a** con **r** y **-h** como atributos (mediante `/a:r-h` o `/ar-h` ), este comando solo mostrará los nombres de los archivos de solo lectura que no están ocultos.
 
-- Si especifica más de un valor *SortOrder* , este comando ordena los nombres de archivo por el primer criterio, después por el segundo criterio, etc. Por ejemplo, si usa **/o** con los parámetros **e** y **-s** para *SortOrder* (mediante `/o:e-s` o `/oe-s`), este comando ordena los nombres de los directorios y archivos por extensión, con el más grande primero y, a continuación, muestra el resultado final. La ordenación alfabética por extensión hace que los nombres de archivo sin extensiones aparezcan en primer lugar, los nombres de directorio y, a continuación, los nombres de archivo con extensiones.
+- Si especifica más de un valor *SortOrder* , este comando ordena los nombres de archivo por el primer criterio, después por el segundo criterio, etc. Por ejemplo, si usa **/o** con los parámetros **e** y **-s** para *SortOrder* (mediante `/o:e-s` o `/oe-s` ), este comando ordena los nombres de los directorios y archivos por extensión, con el más grande primero y, a continuación, muestra el resultado final. La ordenación alfabética por extensión hace que los nombres de archivo sin extensiones aparezcan en primer lugar, los nombres de directorio y, a continuación, los nombres de archivo con extensiones.
 
-- Si usa el símbolo de redirección (`>`) para enviar la salida de este comando a un archivo, o si usa una canalización`|`() para enviar la salida de este comando a otro comando, debe `/a:-d` usar y **/b** para mostrar solo los nombres de archivo. Puede utilizar *filename* con **/b** y **/s** para especificar que este comando busque en el directorio actual y en sus subdirectorios todos los nombres de archivo que coincidan con *filename*. Este comando muestra solo la letra de unidad, el nombre de directorio, el nombre de archivo y la extensión de nombre de archivo (una ruta de acceso por línea) para cada nombre de archivo que encuentre. Antes de usar una canalización para enviar la salida de este comando a otro comando, debe establecer la variable de entorno *temp* en el archivo Autoexec. NT.
+- Si usa el símbolo de redirección ( `>` ) para enviar la salida de este comando a un archivo, o si usa una canalización ( `|` ) para enviar la salida de este comando a otro comando, debe usar `/a:-d` y **/b** para mostrar solo los nombres de archivo. Puede utilizar *filename* con **/b** y **/s** para especificar que este comando busque en el directorio actual y en sus subdirectorios todos los nombres de archivo que coincidan con *filename*. Este comando muestra solo la letra de unidad, el nombre de directorio, el nombre de archivo y la extensión de nombre de archivo (una ruta de acceso por línea) para cada nombre de archivo que encuentre. Antes de usar una canalización para enviar la salida de este comando a otro comando, debe establecer la variable de entorno *temp* en el archivo Autoexec. NT.
 
 ## <a name="examples"></a>Ejemplos
 

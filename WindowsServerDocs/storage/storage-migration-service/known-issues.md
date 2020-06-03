@@ -4,16 +4,16 @@ description: Problemas conocidos y solución de problemas para el servicio de mi
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 02/10/2020
+ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: f8a1e70bba740875e19660d5a729a952c9fae8f2
-ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
+ms.openlocfilehash: 5a4a99434d67c08551d97589f8f2638e1024754d
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/04/2020
-ms.locfileid: "80661065"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306504"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -64,7 +64,7 @@ Hemos corregido este problema en una versión posterior de Windows Server.
 
 Al usar el centro de administración de Windows o PowerShell para descargar el registro CSV de operaciones de transferencia de errores detallados, recibe el error:
 
- >   Transferir registro: Compruebe que el uso compartido de archivos está permitido en el firewall. : Esta operación de solicitud enviada a net. TCP: psico: 28940/SMS/Service/1/Transfer no recibió una respuesta dentro del tiempo de espera configurado (00:01:00). El tiempo asignado a esta operación puede haber sido una parte de un tiempo de espera mayor. La razón puede ser que el servicio sigue procesando la operación o que no pudo enviar un mensaje de respuesta. Considere la posibilidad de aumentar el tiempo de espera de la operación (convirtiendo el canal o el proxy a IContextChannel y estableciendo la propiedad OperationTimeout) y asegúrese de que el servicio pueda conectarse al cliente.
+ >   Transferir registro: Compruebe que el uso compartido de archivos está permitido en el firewall. : Esta operación de solicitud enviada a net. TCP: psico: 28940/SMS/Service/1/Transfer no recibió una respuesta dentro del tiempo de espera configurado (00:01:00). El tiempo asignado a esta operación puede ser una porción de un tiempo de espera mayor. Esto puede deberse a que el servicio todavía está procesando la operación o a que el servicio no pudo enviar un mensaje de respuesta. Considere la posibilidad de aumentar el tiempo de espera de la operación (convirtiendo el canal o el proxy a IContextChannel y estableciendo la propiedad OperationTimeout) y asegúrese de que el servicio pueda conectarse al cliente.
 
 Este problema se debe a un gran número de archivos transferidos que no se pueden filtrar en el tiempo de espera predeterminado de un minuto permitido por el servicio de migración de almacenamiento. 
 
@@ -85,12 +85,12 @@ Para evitar este problema:
 
    `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
 
-5. En el menú Editar, seleccione Nuevo y a continuación, haga clic en Valor DWORD. 
+5. En el menú Edición, seleccione Nuevo y haga clic en Valor DWORD. 
 6. Escriba "WcfOperationTimeoutInMinutes" como nombre de la DWORD y, a continuación, presione Entrar.
 7. Haga clic con el botón secundario en "WcfOperationTimeoutInMinutes" y, a continuación, haga clic en modificar. 
 8. En el cuadro datos base, haga clic en "decimal".
 9. En el cuadro información del valor, escriba "10" y, a continuación, haga clic en Aceptar.
-10. Salga del editor del registro.
+10. Salga del Editor del Registro.
 11. Intente descargar el archivo CSV de solo errores de nuevo. 
 
 Tenemos previsto cambiar este comportamiento en una versión posterior de Windows Server 2019.  
@@ -136,7 +136,7 @@ Para resolver este problema, instale [Windows Update el 2 de abril de 2019: KB44
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>Los hashes de DFSR no coinciden al usar el servicio de migración de almacenamiento para preinicializar datos
 
-Al usar el servicio de migración de almacenamiento para transferir archivos a un nuevo destino, la configuración del Replicación DFS (DFSR) para replicar los datos con un servidor DFSR existente a través de la replicación preinicializada o la clonación de la base de datos DFSR, todos los archivos experimentan un hash no coinciden y se vuelven a replicar. Parece que todos los flujos de datos, secuencias de seguridad, tamaños y atributos están exactamente coincidentes después de usar SMS para transferirlos. El examen de los archivos con ICACLS o el registro de depuración de la clonación de la base de datos de DFSR revela:
+Al usar el servicio de migración de almacenamiento para transferir archivos a un nuevo destino, la configuración de Replicación DFS para replicar los datos con un servidor existente a través de la replicación preiniciada o la clonación de la base de datos Replicación DFS, todos los archivos experimentan un error de coincidencia de hash y se vuelven a replicar. Parece que todos los flujos de datos, flujos de seguridad, tamaños y atributos están perfectamente coincidentes después de usar el servicio de migración de almacenamiento para transferirlos. El examen de los archivos con ICACLS o el registro de depuración de la clonación de base de datos Replicación DFS revela:
 
 Archivo de origen:
 
@@ -260,7 +260,7 @@ Después de instalar [KB4512534](https://support.microsoft.com/help/4512534/wind
     Description:
     02/14/2020-13:18:21.097 [Erro] Failed device discovery stage SystemInfo with error: (0x80005000) Unknown error (0x80005000)   
   
-Este error se debe a un defecto de código en el servicio de migración de almacenamiento cuando se proporcionan credenciales de migración en forma de nombre principal de usuario (UPN), como "meghan@contoso.com". El servicio del orquestador de servicio de migración de almacenamiento no puede analizar correctamente este formato, lo que conduce a un error en una búsqueda de dominio que se agregó para la compatibilidad con la migración de clústeres en KB4512534 y 19H1.
+Este error se debe a un defecto de código en el servicio de migración de almacenamiento cuando se proporcionan credenciales de migración en forma de nombre principal de usuario (UPN), como ' meghan@contoso.com '. El servicio del orquestador de servicio de migración de almacenamiento no puede analizar correctamente este formato, lo que conduce a un error en una búsqueda de dominio que se agregó para la compatibilidad con la migración de clústeres en KB4512534 y 19H1.
 
 Para solucionar este problema, proporcione credenciales con el formato dominio\usuario, como "Contoso\Meghan".
 
@@ -301,9 +301,9 @@ Al intentar ejecutar el inventario con el orquestador del servicio de migración
 
 Este problema se resuelve con la actualización de [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) .
 
-## <a name="uninstalling-a-cumulutative-update-prevents-storage-migration-service-from-starting"></a>Al desinstalar una actualización de cumulutative se impide que se inicie el servicio de migración de almacenamiento
+## <a name="uninstalling-a-cumulative-update-prevents-storage-migration-service-from-starting"></a>La desinstalación de una actualización acumulativa impide que se inicie el servicio de migración de almacenamiento
 
-La desinstalación de las actualizaciones acumulativas de Windows Server puede impedir que se inicie el servicio de migración de almacenamiento. Para resolver este problema, puede hacer una copia de seguridad y eliminar la base de datos del servicio de migración de almacenamiento:
+La desinstalación de las actualizaciones acumulativas de Windows Server puede impedir que se inicie el servicio de migración de almacenamiento. Para resolver este problema, puede realizar una copia de seguridad y eliminar la base de datos del servicio de migración de almacenamiento:
 
 1.  Abra un símbolo del sistema con privilegios elevados, donde sea miembro de los administradores en el servidor de servicio de migración de almacenamiento y ejecute:
 
@@ -343,11 +343,11 @@ Al intentar ejecutar el corte en un origen de clúster de Windows Server 2008 R2
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-Este problema se debe a que falta una API en versiones anteriores de Windows Server. Actualmente no hay ninguna manera de migrar los clústeres de Windows Server 2008 y Windows Server 2003. Puede realizar el inventario y la transferencia sin problemas en los clústeres de Windows Server 2008 R2 y, a continuación, realizar manualmente el traslado cambiando manualmente la dirección IP y el recurso del servidor de archivos de origen del clúster y, después, cambiando la dirección IP y el código de acceso del clúster de destino para que coincida con el origen original. 
+Este problema se debe a que falta una API en versiones anteriores de Windows Server. Actualmente no hay ninguna manera de migrar los clústeres de Windows Server 2008 y Windows Server 2003. Puede realizar el inventario y la transferencia sin problemas en los clústeres de Windows Server 2008 R2 y, a continuación, realizar manualmente el traslado mediante el cambio manual de la dirección IP y el servidor de archivos de origen del clúster y, después, cambiar la dirección IP y el número de direcciones del clúster de destino para que coincida con el origen original. 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." al usar DHCP 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips"></a>El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." al usar direcciones IP estáticas 
 
-Al intentar ejecutar el recorte de un equipo de origen, cuando se establece que el equipo de origen use una nueva dirección IP estática (no DHCP) en una o varias interfaces de red, el cambio se bloquea en la fase "38% de la asignación de interfaces de red en el origen comnputer..." y recibe el siguiente error en el registro de eventos de SMS:
+Al intentar ejecutar el recorte de un equipo de origen, si establece que el equipo de origen use una nueva dirección IP estática (no DHCP) en una o varias interfaces de red, el cambio se bloqueará en la fase "38% de asignación de interfaces de red en el equipo de origen..." y recibe el siguiente error en el registro de eventos del servicio de migración de almacenamiento:
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
@@ -372,9 +372,13 @@ Al intentar ejecutar el recorte de un equipo de origen, cuando se establece que 
 
 Al examinar el equipo de origen, se muestra que no se puede cambiar la dirección IP original. 
 
-Este problema no se produce si seleccionó "usar DHCP" en la pantalla "configurar el traslado" del centro de administración de Windows, solo si especifica una nueva dirección IP estática, una subred y una puerta de enlace. 
+Este problema no se produce si seleccionó "usar DHCP" en la pantalla "configurar el traslado" del centro de administración de Windows, solo si especifica una nueva dirección IP estática. 
 
-Este problema se resuelve con la actualización de [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) .
+Hay dos soluciones para este problema: 
+
+1. Este problema se resolvió por primera vez con la actualización de [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) . El defecto de código anterior evitó el uso de direcciones IP estáticas.
+
+2. Si no ha especificado una dirección IP de puerta de enlace predeterminada en las interfaces de red del equipo de origen, este problema se producirá incluso con la actualización de KB4537818. Para solucionar este problema, establezca una dirección IP predeterminada válida en las interfaces de red mediante el applet de conexiones de red (NCPA. CPL) o el cmdlet de PowerShell Set-NetRoute.   
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>Rendimiento más lento que el rendimiento de retransferencia esperado
 
@@ -389,7 +393,7 @@ Después de iniciar la transferencia desde o a un controlador de dominio:
  1. No se migra ningún dato y no se crean recursos compartidos en el destino.
  2. Aparece un símbolo de error rojo en el centro de administración de Windows sin ningún mensaje de error
  3. Uno o varios usuarios de AD y grupos locales de dominio tienen su nombre y/o el atributo de inicio de sesión anterior a Windows 2000 cambiado
- 4. Verá el evento 3509 en SMS Orchestrator:
+ 4. Verá el evento 3509 en el orquestador del servicio de migración de almacenamiento:
  
         Log Name:      Microsoft-Windows-StorageMigrationService/Admin
         Source:        Microsoft-Windows-StorageMigrationService
@@ -415,7 +419,7 @@ Este es el comportamiento esperado si intenta migrar desde o a un controlador de
 
 Si ya ha ejecutado la transferencia una y varias veces:
 
- 1. Use el siguiente comando de PowerShell de AD en un controlador de dominio para localizar los usuarios o grupos modificados (cambiando SearchBase para que coincida con su nombre de dinstringuished de dominio): 
+ 1. Use el siguiente comando de PowerShell de AD en un controlador de dominio para buscar los usuarios o grupos modificados (cambiando SearchBase para que coincida con su nombre distintivo de dominio): 
 
     ```PowerShell
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
@@ -479,7 +483,7 @@ Al intentar ejecutar el inventario, recibirá lo siguiente:
        at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
        at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
 
-En esta fase, el orquestador del servicio de migración de almacenamiento está intentando lecturas remotas del registro para determinar la configuración de la máquina de origen, pero el servidor de origen rechaza la ruta de acceso del registro. Esto puede deberse a:
+En esta fase, el orquestador del servicio de migración de almacenamiento está intentando lecturas remotas del registro para determinar la configuración de la máquina de origen, pero el servidor de origen rechaza la ruta de acceso del registro. Esto se puede producir por:
 
  - El servicio de registro remoto no se está ejecutando en el equipo de origen.
  - el Firewall no permite conexiones remotas del registro con el servidor de origen desde el orquestador.
@@ -488,7 +492,7 @@ En esta fase, el orquestador del servicio de migración de almacenamiento está 
  
  ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." 
 
-Al intentar ejecutar el recorte de un equipo de origen, el cambio se detiene en la fase "38% de la asignación de interfaces de red en el origen comnputer..." y recibe el siguiente error en el registro de eventos de SMS:
+Al intentar ejecutar el recorte de un equipo de origen, el cambio se detiene en la fase "38% de la asignación de interfaces de red en el equipo de origen..." y recibe el siguiente error en el registro de eventos del servicio de migración de almacenamiento:
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
@@ -528,6 +532,6 @@ Para solucionar este problema, use una de las siguientes opciones:
 2. Deshabilitar temporalmente el GPO que aplica esta directiva en conflicto.
 3. Cree temporalmente un nuevo GPO que establezca esta opción en deshabilitado y se aplique a una unidad organizativa específica de servidores de origen, con una prioridad más alta que cualquier otro GPO.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)
