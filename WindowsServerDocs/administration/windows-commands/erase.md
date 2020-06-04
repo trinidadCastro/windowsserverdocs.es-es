@@ -9,19 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96e0f97e27de8933de44c437508ef59803765771
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1525f20549b6571975cb622534f8504eb4fa1f79
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437130"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354685"
 ---
 # <a name="erase"></a>erase
 
-Elimina uno o varios archivos. Este comando realiza las mismas acciones que el comando **del** .
+Elimina uno o varios archivos. Si usa **Borrar** para eliminar un archivo del disco, no podrá recuperarlo.
 
-> [!WARNING]
-> Si usa **Borrar** para eliminar un archivo del disco, no podrá recuperarlo.
+> [!NOTE]
+> Este comando es igual que el [comando del](del.md).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -97,3 +98,5 @@ erase /a:r *.*
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [del comando](del.md)

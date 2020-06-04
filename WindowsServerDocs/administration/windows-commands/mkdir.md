@@ -1,6 +1,6 @@
 ---
 title: mkdir
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando mkdir, que crea un directorio o subdirectorio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,15 +9,58 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3330674fb3f5c89b8e8c43ec589ea7a1fb80af07
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 921e369cb1550bca8e26cc0beada4c1f5c1c3d5b
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723987"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354605"
 ---
 # <a name="mkdir"></a>mkdir
 
+Crea un directorio o subdirectorio. Las extensiones de comandos, que están habilitadas de forma predeterminada, permiten usar un único comando **mkdir** para crear directorios intermedios en una ruta de acceso especificada.
 
+> [!NOTE]
+> Este comando es el mismo que el [comando MD](md.md).
 
-Este comando es el mismo que el comando **MD** . Consulte [MD](md.md) para ver la sintaxis y los parámetros.
+## <a name="syntax"></a>Sintaxis
+
+```
+mkdir [<drive>:]<path>
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<drive>`: | Especifica la unidad en la que desea crear el nuevo directorio. |
+| `<path>` | Especifica el nombre y la ubicación del nuevo directorio. El sistema de archivos determina la longitud máxima de cualquier ruta de acceso única. Es un parámetro obligatorio. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
+
+### <a name="examples"></a>Ejemplos
+
+Para crear un directorio denominado *Directory1* en el directorio actual, escriba:
+
+```
+mkdir Directory1
+```
+
+Para crear el árbol de directorios *Taxes\Property\Current* en el directorio raíz, con las extensiones de comando habilitadas, escriba:
+
+```
+mkdir \Taxes\Property\Current
+```
+
+Para crear el árbol de directorios *Taxes\Property\Current* en el directorio raíz como en el ejemplo anterior, pero con extensiones de comando deshabilitadas, escriba la siguiente secuencia de comandos:
+
+```
+mkdir \Taxes
+mkdir \Taxes\Property
+mkdir \Taxes\Property\Current
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [MD (comando)](md.md)

@@ -1,6 +1,6 @@
 ---
 title: mklink
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando Mklink, que crea un directorio o un vínculo simbólico o de archivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,45 +9,51 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e4bfa1c928b5bc5f4c5a885378f0f1d1c9b99cf5
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 2f998533ce3184213786a341c2413e7323496e96
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437140"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354615"
 ---
 # <a name="mklink"></a>mklink
-Crea un vínculo simbólico.
 
-
+Crea un directorio o un vínculo simbólico o de archivo.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-mklink [[/d] | [/h] | [/j]] <Link> <Target>
+mklink [[/d] | [/h] | [/j]] <link> <target>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/d|Crea un vínculo simbólico de directorio. De forma predeterminada, **Mklink** crea un vínculo simbólico de archivo.|
-|/h|Crea un vínculo físico en lugar de un vínculo simbólico.|
-|/j|Crea una Unión de directorio.|
-|\<> de vínculos|Especifica el nombre del vínculo simbólico que se va a crear.|
-|\<Target>|Especifica la ruta de acceso (relativa o absoluta) a la que hace referencia el nuevo vínculo simbólico.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| /d | Crea un vínculo simbólico de directorio. De forma predeterminada, este comando crea un vínculo simbólico de archivo. |
+| /h | Crea un vínculo físico en lugar de un vínculo simbólico. |
+| /j | Crea una Unión de directorio. |
+| `<link>` | Especifica el nombre del vínculo simbólico que se va a crear. |
+| `<target>` | Especifica la ruta de acceso (relativa o absoluta) a la que hace referencia el nuevo vínculo simbólico. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
 
-Para mostrar la creación y eliminación de un vínculo simbólico denominado mis carpetas y el archivo. file desde el directorio raíz al directorio \Users\User1\Documents y un archivo example ubicado en el directorio:
+Para crear y quitar un vínculo simbólico denominado, carpeta y archivo. File, desde el directorio raíz al directorio \Users\User1\Documents y un archivo example ubicado en el directorio, escriba:
+
 ```
 mklink /d \MyFolder \Users\User1\Documents
 mklink /h \MyFile.file \User1\Documents\example.file
 rd \MyFolder
 del \MyFile.file
 ```
+
 ## <a name="additional-references"></a>Referencias adicionales
--   [New-Item](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)
--   [del](https://docs.microsoft.com/windows-server/administration/windows-commands/del)
--   [rmdir](https://docs.microsoft.com/windows-server/administration/windows-commands/rd)
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [del comando](del.md)
+
+- [Rd (comando)](rd.md)
+
+- [New-item en Windows PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)
