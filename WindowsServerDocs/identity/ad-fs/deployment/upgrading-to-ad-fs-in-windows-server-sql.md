@@ -8,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: e9488357eecb4a2093d6989e4ebfcc195ce68567
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 090e5c9ffbbaaa6720eb8e938019c08baff681cf
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854008"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333936"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>Actualización a AD FS en Windows Server 2016 con SQL Server
 
@@ -53,12 +53,12 @@ En el diagrama arquitectónico siguiente se muestra la configuración que se us�
 1.  Usar Administrador del servidor instalar el rol de Servicios de federación de Active Directory (AD FS) en Windows Server 2016  
 
 2.  Mediante el Asistente para configuración de AD FS, una el nuevo servidor de Windows Server 2016 a la granja de AD FS existente.  En la pantalla de **bienvenida** , haga clic en **siguiente**.
- ![](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png) de la granja de servidores  
+ ![Unirse a una granja](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)  
 3.  En la pantalla **conectar a Active Directory Domain Services** , s**pecifique una cuenta de administrador** con permisos para realizar la configuración de servicios de Federación y haz clic en **siguiente**.
 4.  En la pantalla **especificar granja de servidores** , escriba el nombre de la instancia de SQL Server y, a continuación, haga clic en **siguiente**.
-![](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png) de la granja de servidores
+![Unirse a una granja](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
 5.  En la pantalla **especificar certificado SSL** , especifique el certificado y haga clic en **siguiente**.
-![](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png) de la granja de servidores
+![Unirse a una granja](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png)
 6.  En la pantalla **especificar cuenta de servicio** , especifique la cuenta de servicio y haga clic en **siguiente**.
 7.  En la pantalla **Opciones de revisión** , revise las opciones y haga clic en **siguiente**.
 8.  En la pantalla **comprobaciones de requisitos** previos, asegúrese de que se han superado todas las comprobaciones de requisitos previos y haga clic en **configurar**.
@@ -71,11 +71,11 @@ En el diagrama arquitectónico siguiente se muestra la configuración que se us�
 >No es necesario establecer el servidor de AD FS principal mediante Set-AdfsSyncProperties-role cuando se usa SQL como base de datos.  Esto se debe a que todos los nodos se consideran principales en esta configuración.
 
 1.  En el servidor de AD FS de Windows Server 2012 R2 en Administrador del servidor use **quitar roles y características** en **administrar**.
-![quitar](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png) de servidor
+![Quitar servidor](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png)
 2.  En la pantalla **Antes de comenzar**, haz clic en **Siguiente**.
 3.  En la pantalla **selección de servidor** , haga clic en **siguiente**.
 4.  En la pantalla **roles de servidor** , desactive la casilla situada junto a **servicios de Federación de Active Directory (AD FS)** y haga clic en **siguiente**.
-![quitar](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove2.png) de servidor
+![Quitar servidor](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove2.png)
 5.  En la pantalla **características** , haga clic en **siguiente**.
 6.  En la pantalla **confirmación** , haga clic en **quitar**.
 7.  Cuando se complete, reinicie el servidor.
@@ -84,13 +84,13 @@ En el diagrama arquitectónico siguiente se muestra la configuración que se us�
 Antes de este paso, debe asegurarse de que se han ejecutado ForestPrep y DomainPrep en el entorno de Active Directory y que Active Directory tiene el esquema 2016 de Windows Server.  Este documento se inició con un controlador de dominio de Windows 2016 y no requirió su ejecución porque se ejecutaba cuando se instaló AD.
 
 >[!NOTE]
->Antes de iniciar el proceso siguiente, asegúrese de que Windows Server 2016 está actualizado ejecutando Windows Update desde la configuración.  Continúa este proceso hasta que no se necesiten actualizaciones.
+>Antes de iniciar el proceso siguiente, asegúrese de que Windows Server 2016 está actualizado ejecutando Windows Update desde la configuración.  Continúe con este proceso hasta que no se necesiten más actualizaciones. Además, asegúrese de que la cuenta de la cuenta del servicio ADFS tiene los permisos administrativos en el servidor SQL Server y en cada servidor de la granja de AD FS.
 
 1. Ahora, en el servidor de Windows Server 2016, abra PowerShell y ejecute lo siguiente: **$CRED = Get-Credential** y presione Entrar.
 2. Escriba las credenciales que tienen privilegios de administrador en el SQL Server.
 3. Ahora en PowerShell, escriba lo siguiente: **Invoke-AdfsFarmBehaviorLevelRaise-Credential $CRED**
 2. Cuando se le solicite, escriba **Y**.  Esto comenzará a elevar el nivel.  Una vez completado esto, habrá generado correctamente el FBL.  
-![finalizar la actualización](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish1.png)
+![Finalizar actualización](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish1.png)
 3. Ahora, si va a la administración de AD FS, verá los nuevos nodos que se han agregado para AD FS en Windows Server 2016  
 4. Del mismo modo, puede usar el cmdlt de PowerShell: get-AdfsFarmInformation para mostrarle el FBL actual.  
 ![Finalizar actualización](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish2.png)
