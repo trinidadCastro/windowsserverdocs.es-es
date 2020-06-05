@@ -1,5 +1,5 @@
 ---
-title: registrar
+title: relog
 description: Aprenda a extraer información de contadores de rendimiento de los archivos de registro de coutner de rendimiento.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 0b958cbceff8657a35f080c704bb13b29ef55d78
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 00e3f4e67faa951466c59dc60bab1d75c8b2e80f
+ms.sourcegitcommit: d050f4d82f462572ccf26437be03bf9ec43ed60e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820145"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84436563"
 ---
-# <a name="relog"></a>registrar
+# <a name="relog"></a>relog
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -37,9 +37,9 @@ relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName
 |                                       -CF *nombre de archivo*                                       |                                            Especifica la ruta de acceso del archivo de texto que enumera los contadores de rendimiento que se van a incluir en un archivo de relog. Use esta opción para mostrar las rutas de acceso de contador en un archivo de entrada, una por línea. La configuración predeterminada es que se reinicien todos los contadores del archivo de registro original.                                            |
 |                                  -f {bin \| CSV \| TSV \| SQL}                                  |                                       Especifica la ruta de acceso del formato del archivo de salida. El formato predeterminado es **bin**. En el caso de una base de datos SQL, el archivo de salida especifica el *DSN. CounterLog*. Puede especificar la ubicación de la base de datos mediante el administrador de ODBC para configurar el DSN (nombre del sistema de la base de datos).                                        |
 |                                         *valor* -t                                         |                                                                                                           Especifica los intervalos de muestra en los registros "*N*". Incluye cada n punto de datos en el archivo relog. El valor predeterminado es cada punto de datos.                                                                                                           |
-| -o {*OutputFile* \| *"SQL: DSN! Counter_Log*}, donde DSN es un DSN de ODMC definido en el sistema. |                                                   Especifica la ruta de acceso del archivo de salida o la base de datos SQL donde se escribirán los contadores. <br>Nota: para las versiones de 64 bits y 32 bits de relog. exe, debe definir un DSN en el origen de datos ODBC (64 bits y 32 bits, respectivamente).                                                   |
-|                          -b \< *M* / *D* / *yyyy*> [[*HH*:]*mm*:]*SS*                           |                                                                          Especifica la hora de inicio para copiar el primer registro del archivo de entrada. la fecha y la hora deben tener el formato exacto <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em>**:**<em>mm</em>**:**<em>SS</em>.                                                                          |
-|                          -e \< *M* / *D* / *yyyy*> [[*HH*:]*mm*:]*SS*                           |                                                                           Especifica la hora de finalización para copiar el último registro del archivo de entrada. la fecha y la hora deben tener el formato exacto <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em>**:**<em>mm</em>**:**<em>SS</em>.                                                                            |
+| -o {*OutputFile* \| *"SQL: DSN! Counter_Log*}, donde DSN es un DSN ODBC definido en el sistema. |                                                   Especifica la ruta de acceso del archivo de salida o la base de datos SQL donde se escribirán los contadores. <br>Nota: para las versiones de 64 bits y 32 bits de relog. exe, debe definir un DSN en el origen de datos ODBC (64 bits y 32 bits respectivamente). Usar el controlador ODBC "SQL Server" para definir un DSN                                                   |
+|                          -b \<*M*/*D*/*YYYY*> [[*HH*:]*mm*:]*SS*                           |                                                                          Especifica la hora de inicio para copiar el primer registro del archivo de entrada. la fecha y la hora deben tener el formato exacto <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em>**:**<em>mm</em>**:**<em>SS</em>.                                                                          |
+|                          -e \<*M*/*D*/*YYYY*> [[*HH*:]*mm*:]*SS*                           |                                                                           Especifica la hora de finalización para copiar el último registro del archivo de entrada. la fecha y la hora deben tener el formato exacto <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em>**:**<em>mm</em>**:**<em>SS</em>.                                                                            |
 |                                -config {*filename* \| *i*}                                 | Especifica la ruta de acceso del archivo de configuración que contiene los parámetros de la línea de comandos. Use *-i* en el archivo de configuración como un marcador de posición para una lista de archivos de entrada que se pueden colocar en la línea de comandos. En la línea de comandos, sin embargo, no es necesario usar *i*. También puede utilizar caracteres comodín como \* . BLG para especificar muchos nombres de archivo de entrada. |
 |                                             -q                                             |                                                                                                                          Muestra los contadores de rendimiento y los intervalos de tiempo de los archivos de registro especificados en el archivo de entrada.                                                                                                                           |
 |                                             -y                                             |                                                                                                                                            Omite preguntar al responder "sí" a todas las preguntas.                                                                                                                                             |
@@ -47,16 +47,16 @@ relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName
 
 ## <a name="remarks"></a>Observaciones
 Formato de la ruta de acceso del contador:
-- El formato general de las rutas de acceso de contador es el siguiente: [ \\ \< Computer>] \\ \< objeto> [ \< Parent>\\<Instance # index>] \\ \< Counter>] donde los componentes primarios, de instancia, index y Counter del formato pueden contener un nombre válido o un carácter comodín. Los componentes equipo, primario, instancia e índice no son necesarios para todos los contadores.
+- El formato general de las rutas de acceso de contador es el siguiente: [ \\ \<computer> ] \\ \<Object> [ \<Parent> \\<instancia # index>] \\ \<Counter> ], donde los componentes primarios, de instancia, de índice y de contador del formato pueden contener un nombre válido o un carácter comodín. Los componentes equipo, primario, instancia e índice no son necesarios para todos los contadores.
 - Se determinan las rutas de acceso del contador que se van a usar en función del propio contador. Por ejemplo, el objeto LogicalDisk tiene una instancia de <Index> , por lo que debe proporcionar el < # index> o un carácter comodín. Por lo tanto, puede usar el siguiente formato: **\LogicalDisk ( \* / \* # \* ) \\ \\ ***
-- En comparación, el objeto de proceso no requiere un índice de instancia \<>. Por lo tanto, puede usar el siguiente formato: **\Process ( \* ) \ID Process**
+- En comparación, el objeto de proceso no requiere una instancia de \<Index> . Por lo tanto, puede usar el siguiente formato: **\Process ( \* ) \ID Process**
 - Si se especifica un carácter comodín en el nombre principal, se devolverán todas las instancias del objeto especificado que coincidan con la instancia y los campos de contador especificados.
 - Si se especifica un carácter comodín en el nombre de instancia, se devolverán todas las instancias del objeto y el objeto primario especificados si todos los nombres de instancia correspondientes al índice especificado coinciden con el carácter comodín.
 - Si se especifica un carácter comodín en el nombre del contador, se devuelven todos los contadores del objeto especificado.
 - No se admiten las coincidencias de cadena de ruta de contador parcial (por ejemplo, Pro *).
 
 Archivos de contador:
--   Los archivos de contador son archivos de texto que enumeran uno o varios de los contadores de rendimiento del registro existente. Copie el nombre completo del contador desde el registro o el resultado **/q** en el \< objeto de equipo>\\ \<>\\ \< instancia>\\ \< formato de> de contador. muestra una ruta de acceso de contador en cada línea.
+-   Los archivos de contador son archivos de texto que enumeran uno o varios de los contadores de rendimiento del registro existente. Copie el nombre completo del contador del registro o el resultado **/q** en \<computer> \\ \<Object> \\ \<Instance> \\ \<Counter> formato. muestra una ruta de acceso de contador en cada línea.
 
 Copiando contadores:
 -   Cuando se ejecuta, **relog** copia los contadores especificados de cada registro del archivo de entrada, lo que convierte el formato si es necesario. Se permiten las rutas de acceso comodín en el archivo de contador.
@@ -66,7 +66,7 @@ Usar los parámetros **/b** y **/e** con los archivos de registro
 -   Puede especificar que los registros de salida incluyan registros desde antes de que el tiempo de inicio (es decir, **/b**) proporcionen datos para los contadores que requieran valores de cálculo del valor con formato. El archivo de salida tendrá los últimos registros de los archivos de entrada con marcas de tiempo menores que el parámetro **/e** (es decir, hora de finalización).
 Usar la opción **/config** :
 -   El contenido del archivo de configuración que se usa con la opción **/config** debe tener el formato siguiente:
-    -   \<CommandOption>\\ \< valor>, donde \< CommandOption> es una opción de línea de comandos y un \< valor> especifica su valor.
+    -   \<CommandOption>\\\<Value>, donde \<CommandOption> es una opción de línea de comandos y \<Value> especifica su valor.
 
 Para obtener más información acerca de cómo incorporar **relog** en los scripts de instrumental de administración de Windows (WMI), vea el tema sobre el scripting de WMI en el [sitio web de los kits de recursos de Microsoft Windows](https://go.microsoft.com/fwlink/?LinkId=4665).
 
