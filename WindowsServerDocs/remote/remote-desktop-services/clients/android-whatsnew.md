@@ -7,18 +7,63 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0c5be0c4cf274224d25b62f7553ae49f8219b2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 176c601d98ebc743e455c5f83efe2c10267a38ba
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854678"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306454"
 ---
 # <a name="whats-new-in-the-android-client"></a>Novedades del cliente de Android
 
 El [cliente de Escritorio remoto para Android](remote-desktop-android.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
+
+## <a name="updates-for-version-8180"></a>Actualizaciones para la versión 8.1.80
+
+*Fecha de publicación: 26/05/2020*
+
+- Se cambió el icono del cliente para distinguirlo del del nuevo cliente que se encuentra en versión preliminar.
+- Se preparó el cliente para que admitiera la configuración y la transferencia de conexiones al nuevo cliente.
+
+## <a name="updates-for-version-8179"></a>Actualizaciones de la versión 8.1.79
+
+*Fecha de publicación: 24/03/2020*
+
+- Se corrigió un problema por el que los escáneres de códigos de barras no funcionaban.
+
+## <a name="updates-for-version-8177"></a>Actualizaciones de la versión 8.1.77
+
+*Fecha de publicación: 11/02/2020*
+
+- Se mejoró la accesibilidad para los usuarios que únicamente navegan con el teclado.
+
+## <a name="updates-for-version-8176"></a>Actualizaciones de la versión 8.1.76
+
+*Fecha de publicación: 09/01/2020*
+
+- Mejoras y correcciones de errores menores.
+
+## <a name="updates-for-version-8175"></a>Actualizaciones de la versión 8.1.75
+
+*Fecha de publicación: 31/10/2019*
+
+- Se ha corregido un problema por el que no se cargaban algunas direcciones URL de la fuente de recursos remotos.
+- Se mejoró la accesibilidad para los usuarios que únicamente navegan con el teclado y TalkBack.
+
+## <a name="updates-for-version-8174"></a>Actualizaciones de la versión 8.1.74
+
+*Fecha de publicación: 17/08/2019*
+
+- Se corrigió un bloqueo que se producía al establecer conexión con los servidores que envían certificados de propiedad.
+
+## <a name="updates-for-version-8173"></a>Actualizaciones de la versión 8.1.73
+
+*Fecha de publicación: 14/06/2019*
+
+- Se agregó compatibilidad con versiones de 64 bits.
+- Se solucionaron problemas de seguridad descritos en CVE-2019-1108.
 
 ## <a name="updates-for-version-8171"></a>Actualizaciones de la versión 8.1.71
 

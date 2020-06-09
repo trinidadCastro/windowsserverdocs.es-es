@@ -7,17 +7,21 @@ ms.technology: server-general
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a550ddd72dcdf8c1967fe4740dc0fe5f2ad93e7
-ms.sourcegitcommit: df94dac422d13566c32e1cdb8c6e7a4e82747947
+ms.custom:
+- CI ID 116803
+- CSSTroubleshoot
+manager: dcscontentpm
+ms.openlocfilehash: fe07636908dffc6bb59c544d512b132e7640bf51
+ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84205636"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84269223"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Resolver códigos de error de activación de Windows
 
-> **Usuarios particulares**  
-> Este artículo está pensado para que lo usen los agentes de soporte técnico y profesionales de TI. Si quiere obtener más información acerca de los mensajes de error de activación de Windows, consulte [Obtener ayuda con los errores de activación de Windows](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors).  
+> [!NOTE]  
+> Este artículo está pensado para agentes de soporte técnico y profesionales de TI. Si quiere obtener más información acerca de los mensajes de error de activación de Windows, consulte [Obtener ayuda con los errores de activación de Windows](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors).  
 
 En este artículo se proporciona información de solución de problemas que le ayudará a responder a los mensajes de error que puede recibir al intentar usar una clave de activación múltiple (MAK) o el Servicio de administración de claves (KMS) para realizar la activación de volumen en uno o varios equipos basados en Windows. Busque el código de error en la tabla siguiente y, a continuación, seleccione el vínculo para ver más información sobre el código de error y cómo resolverlo.
 
@@ -28,6 +32,10 @@ Para obtener más información acerca de la activación de volumen para las vers
 Para obtener más información acerca de la activación de volumen para versiones anteriores de Windows, consulte KB 929712, [información de activación de volumen para Windows Vista, Windows Server 2008, Windows Server 2008 R2 y Windows 7](https://support.microsoft.com/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi).
 
 ## <a name="diagnostic-tool"></a>Herramienta de diagnóstico
+
+> [!NOTE]  
+> Esta herramienta está pensada para ayudar a solucionar los problemas de activación de Windows en equipos que ejecutan la edición Enterprise, Professional o Server de Windows.
+
 
 El Asistente de soporte y recuperación (SaRA) de Microsoft simplifican la solución de problemas de activación de KMS de Windows. Descargue la herramienta de diagnóstico desde [aquí](https://aka.ms/SaRA-WindowsActivation).
 
