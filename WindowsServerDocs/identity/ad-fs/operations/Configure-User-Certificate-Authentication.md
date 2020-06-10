@@ -8,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5f2416e45fad8ca47cd756526dc6a554b3a952b1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4aa2f219852dc97833365645e7455f8141a0988e
+ms.sourcegitcommit: d23f880e144acf0912831557c70f777d48e3152b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817078"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84632789"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configuración de AD FS para la autenticación de certificados de usuario
 
@@ -29,16 +29,17 @@ La autenticación de certificados de usuario se usa principalmente en dos casos 
 4) Si usa AD FS en el modo de autenticación de certificados alternativo, asegúrese de que los servidores AD FS y WAP tengan certificados SSL que contengan el nombre de host AD FS con el prefijo "certauth", por ejemplo "certauth.fs.contoso.com", y que se permita el tráfico a este nombre de host a través del firewall.
 5) Si usa la autenticación de certificado de la extranet, asegúrese de que se puede acceder desde Internet al menos a un AIA y al menos a una ubicación de CDP o OCSP de la lista especificada en los certificados.
 6) Además, para la autenticación de certificados de Azure AD, para los clientes de Exchange ActiveSync, el certificado de cliente debe tener la dirección de correo electrónico enrutable de los usuarios en Exchange online en el nombre de la entidad de seguridad o el valor de nombre de RFC822 del campo Nombre alternativo del sujeto. (Azure Active Directory asigna el valor de RFC822 al atributo de dirección del proxy en el directorio).
+7) Al utilizar una autenticación basada en certificados o tarjeta inteligente, el sujeto del certificado podría no coincidir con el UserPricipalName de la cuenta de AD. En este caso, se produce un error de inicio de sesión con "usuario no encontrado".
 
 
-## <a name="configure-ad-fs-for-user-certificate-authentication"></a>Configurar AD FS para la autenticación de certificado de usuario  
+## <a name="configure-ad-fs-for-user-certificate-authentication"></a>Configurar AD FS para la autenticación de certificado de usuario  
 
-Habilite la autenticación de certificados de usuario como método de autenticación de intranet o extranet en AD FS, mediante la consola de administración de AD FS o el `Set-AdfsGlobalAuthenticationPolicy`cmdlet de PowerShell.
+Habilite la autenticación de certificados de usuario como método de autenticación de intranet o extranet en AD FS, mediante la consola de administración de AD FS o el cmdlet de PowerShell `Set-AdfsGlobalAuthenticationPolicy` .
 
 Si está configurando AD FS para la autenticación de certificados de Azure AD, asegúrese de que ha configurado la [Azure ad](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities) y las [reglas de notificaciones de AD FS necesarias](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements) para el emisor y el número de serie del certificado.
 
 Además, hay algunos aspectos opcionales.
-- Si desea usar notificaciones basadas en campos y extensiones de certificado además de EKU (tipo de notificación https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku), configure las reglas de paso de notificación adicionales en la Active Directory confianza del proveedor de notificaciones.  A continuación encontrará una lista completa de las notificaciones de certificado disponibles.  
+- Si desea usar notificaciones basadas en campos y extensiones de certificado además de EKU (tipo de notificación https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) , configure las reglas de paso de notificación adicionales en la Active Directory confianza del proveedor de notificaciones.  A continuación encontrará una lista completa de las notificaciones de certificado disponibles.  
 - Si necesita restringir el acceso en función del tipo de certificado, puede usar las propiedades adicionales en el certificado en AD FS reglas de autorización de emisión para la aplicación. Los escenarios comunes son "permitir solo certificados aprovisionados por un proveedor de MDM" o "permitir solo certificados de tarjeta inteligente"
 >[!IMPORTANT]
 > Los clientes que usan el flujo de código de dispositivo para la autenticación y la autenticación de dispositivos con un IDP distinto de Azure AD (por ejemplo, AD FS) no podrán aplicar el acceso basado en dispositivos (por ejemplo, permitir solo los dispositivos administrados que usan un servicio MDM de terceros) para Azure AD recursos. Para proteger el acceso a los recursos corporativos en Azure AD y evitar la fuga de datos, los clientes deben configurar Azure AD el acceso condicional basado en el dispositivo (es decir, "requerir que el dispositivo se marque como queja" en Azure AD acceso condicional).
@@ -55,7 +56,7 @@ Para obtener más información sobre cómo configurar esto para Chrome, consulte
 Este documento se centra en problemas comunes de solución de problemas cuando AD FS está configurado para la autenticación de certificados para los usuarios. 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>Comprobar si los emisores de confianza de certificados están configurados correctamente en todos los servidores AD FS/WAP
-*Síntoma común: HTTP 204 "no hay contenido de https\://certauth.adfs.contoso.com"*
+*Síntoma común: HTTP 204 "sin contenido de HTTPS \: //certauth.ADFS.contoso.com"*
 
 AD FS utiliza el sistema operativo Windows subyacente para demostrar la posesión del certificado de usuario y asegurarse de que coincide con un emisor de confianza mediante la validación de la cadena de confianza de certificados. Para que coincida con el emisor de confianza, debe asegurarse de que todas las autoridades raíz e intermedias estén configuradas como emisores de confianza en el almacén de entidades de certificación del equipo local. Para validar esto automáticamente, use la [herramienta analizador de diagnóstico de AD FS](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze). La herramienta consulta todos los servidores y garantiza que los certificados correctos se hayan aprovisionado correctamente. 
 1)  Descargue y ejecute la herramienta según las instrucciones proporcionadas en el vínculo anterior.
@@ -65,9 +66,9 @@ AD FS utiliza el sistema operativo Windows subyacente para demostrar la posesió
 AD FS no habilita la autenticación de certificados de forma predeterminada. Consulte el principio de este documento sobre cómo habilitar la autenticación de certificados. 
 
 ### <a name="check-if-certificate-authentication-is-enabled-in-the-ad-fs-authentication-policy"></a>Compruebe si la autenticación de certificados está habilitada en la Directiva de autenticación de AD FS
-AD FS realiza la autenticación de certificados de usuario de forma predeterminada en el puerto 49443 con el mismo nombre de host que AD FS (por ejemplo, `adfs.contoso.com`). También puede configurar AD FS para usar el puerto 443 (Puerto HTTPS predeterminado) mediante el enlace SSL alternativo. Sin embargo, la dirección URL usada en esta configuración es `certauth.<adfs-farm-name>` (por ejemplo, `certauth.contoso.com`). Consulte [este vínculo](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md) para obtener más información. El caso más común de conectividad de red es que un firewall se ha configurado incorrectamente y bloquea o interfiere el tráfico de autenticación de certificados de usuario. Normalmente, verá una pantalla en blanco o un error de servidor 500 cuando se produzca este problema. 
+AD FS realiza la autenticación de certificados de usuario de forma predeterminada en el puerto 49443 con el mismo nombre de host que AD FS (por ejemplo, `adfs.contoso.com` ). También puede configurar AD FS para usar el puerto 443 (Puerto HTTPS predeterminado) mediante el enlace SSL alternativo. Sin embargo, la dirección URL usada en esta configuración es `certauth.<adfs-farm-name>` (por ejemplo, `certauth.contoso.com` ). Consulte [este vínculo](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md) para obtener más información. El caso más común de conectividad de red es que un firewall se ha configurado incorrectamente y bloquea o interfiere el tráfico de autenticación de certificados de usuario. Normalmente, verá una pantalla en blanco o un error de servidor 500 cuando se produzca este problema. 
 1)  Anote el nombre de host y el puerto que ha configurado en AD FS
-2)  Asegúrese de que los firewalls delante de AD FS o el proxy de aplicación web (WAP) estén configurados para permitir la combinación de `hostname:port` para la granja de AD FS. Tendrá que consultar al ingeniero de red para realizar este paso. 
+2)  Asegúrese de que los firewalls delante de AD FS o el proxy de aplicación web (WAP) estén configurados para permitir la `hostname:port` combinación de la granja de AD FS. Tendrá que consultar al ingeniero de red para realizar este paso. 
 
 ### <a name="check-certificate-revocation-list-connectivity"></a>Comprobar la conectividad de la lista de revocación de certificados
 Las listas de revocación de certificados (CRL) son extremos que se codifican en el certificado de usuario para realizar comprobaciones de revocación en tiempo de ejecución. Por ejemplo, si se roba un dispositivo que contenía un certificado, un administrador puede Agregar el certificado a la lista de certificados revocados. Los puntos de conexión que aceptaron este certificado anteriormente no funcionarán correctamente.
@@ -77,7 +78,7 @@ Cada AD FS y el servidor WAP deberán alcanzar el punto de conexión de CRL para
 2)  En cada servidor AD FS/WAP, asegúrese de que los extremos de CRL son accesibles a través del protocolo usado (normalmente HTTPS o HTTP).
 3)  Para la validación avanzada, [habilite el registro de eventos CAPI2](https://blogs.msdn.microsoft.com/benjaminperkins/2013/09/30/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues/) en cada servidor AD FS/WAP.
 4) Busque el ID. de evento 41 (comprobar la revocación) en los registros operativos de CAPI2
-5) Comprobar `‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
+5) Comprobar`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
 ***Sugerencia***: puede tener como destino un solo servidor AD FS o WAP para facilitar la solución de problemas mediante la configuración de la resolución de DNS (archivo de host en Windows) para que apunte a un servidor específico. Esto le permite habilitar el seguimiento dirigido a un servidor. 
 
@@ -86,12 +87,12 @@ AD FS requiere que el dispositivo cliente (o los exploradores) y los equilibrado
 1)  Trabaje con su ingeniero de red para asegurarse de que la Load Balancer para AD FS/WAP admita SNI
 2)  En caso de que no se admita SNI AD FS tiene una solución alternativa mediante los pasos siguientes:
     *   Abra una ventana de símbolo del sistema con privilegios elevados en el servidor de AD FS principal
-    *   Escribir en ```Netsh http show sslcert```
+    *   Tipo en ```Netsh http show sslcert```
     *   Copiar el "GUID de aplicación" y el "hash de certificado" del servicio de Federación
-    *   Escribir en `netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
+    *   Tipo en `netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
 
 ### <a name="check-if-the-client-device-has-been-provisioned-with-the-certificate-correctly"></a>Compruebe si el dispositivo cliente se ha aprovisionado correctamente con el certificado.
-Es posible que observe que algunos dispositivos funcionan correctamente, pero otros no. En este caso, normalmente se debe a que el certificado de usuario no se ha aprovisionado correctamente en el dispositivo cliente. Siga los pasos que se indican a continuación. 
+Es posible que observe que algunos dispositivos funcionan correctamente, pero otros no. En este caso, normalmente se debe a que el certificado de usuario no se ha aprovisionado correctamente en el dispositivo cliente. Siga estos pasos: 
 1)  Si el problema es específico de un dispositivo Android, el problema más común es que la cadena de certificados no es de plena confianza en el dispositivo Android.  Consulte al proveedor de MDM para asegurarse de que el certificado se ha aprovisionado correctamente y de que toda la cadena es de plena confianza en el dispositivo Android. 
 2)  Si el problema es específico de un dispositivo Windows, compruebe si el certificado se ha aprovisionado correctamente comprobando el almacén de certificados de Windows para el usuario que ha iniciado sesión (no sistema/equipo).
 3)  Exporte el certificado de usuario cliente al archivo. cer y ejecute el comando "certutil-f-urlfetch-Verify certificatefilename. cer".
@@ -107,9 +108,9 @@ Muchas aplicaciones de Office 365 envían prompt = login a Azure AD. De forma pr
 
 Para obtener más información, consulte [este vínculo](ad-fs-prompt-login.md). 
 
-### <a name="additional-troubleshooting"></a>Solución de problemas adicionales
+### <a name="additional-troubleshooting"></a>Más soluciones de problemas
 Se trata de casos poco frecuentes
-1)  Si las listas de CRL son muy largas, puede agotar el tiempo de espera al intentar la descarga. En ese caso, debe actualizar "MaxFieldLength" y "MaxRequestByte" por https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows
+1)  Si las listas de CRL son muy largas, puede agotar el tiempo de espera al intentar la descarga. En ese caso, debe actualizar "MaxFieldLength" y "MaxRequestByte" segúnhttps://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows
 
 
 
@@ -124,15 +125,15 @@ Se trata de casos poco frecuentes
 |         https://schemas.microsoft.com/2012/12/certificatecontext/field/issuername          |                 CN = EntCA, DC = Domain, DC = Contoso, DC = com                  |
 |          https://schemas.microsoft.com/2012/12/certificatecontext/field/notbefore          |                           12/05/2016 20:50:18                            |
 |          https://schemas.microsoft.com/2012/12/certificatecontext/field/notafter           |                           12/05/2017 20:50:18                            |
-|           https://schemas.microsoft.com/2012/12/certificatecontext/field/subject           |   E =user@contoso.com, CN = user, CN = users, DC = Domain, DC = Contoso, DC = com   |
-|         https://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname         |   E =user@contoso.com, CN = user, CN = users, DC = Domain, DC = Contoso, DC = com   |
+|           https://schemas.microsoft.com/2012/12/certificatecontext/field/subject           |   E = user@contoso.com , CN = user, CN = users, DC = Domain, DC = Contoso, DC = com   |
+|         https://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname         |   E = user@contoso.com , CN = user, CN = users, DC = Domain, DC = Contoso, DC = com   |
 |           https://schemas.microsoft.com/2012/12/certificatecontext/field/rawdata           |                {Datos de certificado digital codificados en Base64}                 |
 |        https://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage         |                             DigitalSignature                             |
 |        https://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage         |                             KeyEncipherment                              |
 |  https://schemas.microsoft.com/2012/12/certificatecontext/extension/subjectkeyidentifier   |                 9D11941EC06FACCCCB1B116B56AA97F3987D620A                 |
 | https://schemas.microsoft.com/2012/12/certificatecontext/extension/authoritykeyidentifier  |    ID. de la = D6 13 E3 6B BC E5 D8 15 52 0A FD 36 6A D5 0B 51 F3 0B 25 7F     |
 | https://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename |                                   Usuario                                   |
-|           https://schemas.microsoft.com/2012/12/certificatecontext/extension/san           | Otro nombre: nombre principal =user@contoso.com, nombre RFC822 =user@contoso.com |
+|           https://schemas.microsoft.com/2012/12/certificatecontext/extension/san           | Otro nombre: nombre principal = user@contoso.com , nombre de RFC822 =user@contoso.com |
 |           https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku           |                          1.3.6.1.4.1.311.10.3.4                          |
 
 ## <a name="related-links"></a>Vínculos relacionados
