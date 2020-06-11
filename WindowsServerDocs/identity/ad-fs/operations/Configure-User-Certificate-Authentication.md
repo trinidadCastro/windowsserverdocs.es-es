@@ -8,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4aa2f219852dc97833365645e7455f8141a0988e
-ms.sourcegitcommit: d23f880e144acf0912831557c70f777d48e3152b
+ms.openlocfilehash: c443d596e8e35f7ccf4aa23b622323122a2778e9
+ms.sourcegitcommit: 76a3b5f66e47e08e8235e2d152185b304d03b68b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632789"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663188"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configuración de AD FS para la autenticación de certificados de usuario
 
@@ -29,7 +29,7 @@ La autenticación de certificados de usuario se usa principalmente en dos casos 
 4) Si usa AD FS en el modo de autenticación de certificados alternativo, asegúrese de que los servidores AD FS y WAP tengan certificados SSL que contengan el nombre de host AD FS con el prefijo "certauth", por ejemplo "certauth.fs.contoso.com", y que se permita el tráfico a este nombre de host a través del firewall.
 5) Si usa la autenticación de certificado de la extranet, asegúrese de que se puede acceder desde Internet al menos a un AIA y al menos a una ubicación de CDP o OCSP de la lista especificada en los certificados.
 6) Además, para la autenticación de certificados de Azure AD, para los clientes de Exchange ActiveSync, el certificado de cliente debe tener la dirección de correo electrónico enrutable de los usuarios en Exchange online en el nombre de la entidad de seguridad o el valor de nombre de RFC822 del campo Nombre alternativo del sujeto. (Azure Active Directory asigna el valor de RFC822 al atributo de dirección del proxy en el directorio).
-7) Al utilizar una autenticación basada en certificados o tarjeta inteligente, el sujeto del certificado podría no coincidir con el UserPricipalName de la cuenta de AD. En este caso, se produce un error de inicio de sesión con "usuario no encontrado".
+7) AD FS no admite sugerencias de nombre de usuario con autenticación basada en tarjetas inteligentes o certificados. 
 
 
 ## <a name="configure-ad-fs-for-user-certificate-authentication"></a>Configurar AD FS para la autenticación de certificado de usuario  
