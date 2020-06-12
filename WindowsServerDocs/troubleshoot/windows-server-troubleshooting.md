@@ -6,12 +6,12 @@ ms.technology: server-general
 ms.date: 1/24/2020
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: e5fdae6e005adf6ea221fb3c2bf3ea09bfbfb03a
-ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
+ms.openlocfilehash: f3012f499e67f73ec9e8ab20b24df122492ea0ea
+ms.sourcegitcommit: fa9a8badf4eb366aeeca7d2905e2cad711ee8dae
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81119254"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84714907"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Solucionar problemas de componentes de Windows Server
 
@@ -20,7 +20,7 @@ ms.locfileid: "81119254"
 >   
 > También puede [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
-Microsoft publica regularmente ambas actualizaciones para Windows Server. Para garantizar que los servidores pueden recibir actualizaciones futuras, incluidas las actualizaciones de seguridad, es importante mantenerlos actualizados. Echa un vistazo a [Historial de actualizaciones de Windows 10 y Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history) para obtener una lista completa de las actualizaciones publicadas.
+Microsoft publica regularmente ambas actualizaciones para Windows Server. Para asegurarse de que los servidores pueden recibir actualizaciones futuras, incluidas las actualizaciones de seguridad, es importante mantener actualizados los servidores. Consulte el historial de actualizaciones de [Windows 10 y Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history) para obtener una lista completa de las actualizaciones publicadas.
 
 Esta sección contiene temas de solución de problemas avanzados y vínculos para ayudarle a resolver problemas con Windows Server. Se agregarán temas adicionales a medida que estén disponibles.
 
@@ -39,7 +39,7 @@ Esta sección contiene temas de solución de problemas avanzados y vínculos par
 ## <a name="troubleshoot-startup-and-restart"></a>Solucionar problemas de inicio y reinicio
 
 - [Solución avanzada de problemas de inicio de Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
-- [Cómo determinar el tamaño de archivo de página adecuado para las versiones de 64 bits de Windows](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
+- [Determinar el tamaño apropiado del archivo de paginación para las versiones de 64 bits de Windows](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
 - [Generar un volcado de memoria de kernel o completo](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump)
 - [Introducción al archivo de paginación](https://docs.microsoft.com/windows/client-management/introduction-page-file)
 - [Configurar las opciones de recuperación y errores del sistema en Windows](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options)
@@ -63,7 +63,7 @@ Esta sección contiene temas de solución de problemas avanzados y vínculos par
 
 ## <a name="troubleshoot-ad-fs"></a>Solucionar problemas AD FS
 
-- [Solución de problemas AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-overview)
+- [Solución de problemas de AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-overview)
 - [AD FS solución de problemas: auditoría de eventos y registro](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-logging)
 - [Solución de problemas de AD FS-conectividad de SQL](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-sql)
 - [Solución de problemas de AD FS: emisión de notificaciones](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-issuance)
@@ -74,7 +74,7 @@ Esta sección contiene temas de solución de problemas avanzados y vínculos par
 - [Solución de problemas de AD FS: reglas de notificaciones](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-rules)
 - [Solución de problemas de AD FS la autenticación integrada de Windows](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-iwa)
 - [Solución de problemas de AD FS-Azure AD](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-azure)
-- [PREGUNTAS MÁS FRECUENTES SOBRE AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
+- [Preguntas más frecuentes sobre AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
 - [Analizador de diagnósticos de la Ayuda de AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-diagnostics-analyzer)
 
 ## <a name="troubleshoot-aovpn"></a>Solución de problemas de AoVPN
@@ -87,7 +87,7 @@ Esta sección contiene temas de solución de problemas avanzados y vínculos par
 
 ## <a name="troubleshoot-dfsr"></a>Solucionar problemas de DFSR
 
-- [Replicación DFS: preguntas más frecuentes (p + f)](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
+- [Replicación DFS: Preguntas más frecuentes (P+F)](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
 
 ## <a name="troubleshoot-directaccess"></a>solución de problemas de DirectAccess
 
@@ -108,6 +108,19 @@ Esta sección contiene temas de solución de problemas avanzados y vínculos par
 
 - [Solución de problemas de clúster de conmutación por error con el Informe de errores de Windows](https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports)
 - [Actualización compatible con clústeres: preguntas más frecuentes](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating-faq)
+- [Solución de problemas de clúster con el identificador de evento 1135](https://docs.microsoft.com/windows-server/troubleshoot/troubleshooting-cluster-event-id-1135)
+- [Problema con los nodos que se quitan de la pertenencia al clúster de conmutación por error activa](https://docs.microsoft.com/windows-server/troubleshoot/problem-nodes-failover-cluster)
+- [Nodos que se quitan de la pertenencia al clúster de conmutación por error en VMWare ESX](https://docs.microsoft.com/windows-server/troubleshoot/nodes-failover-cluster-vmware)
+- [IaaS con SQL AlwaysOn: Ajuste de umbrales de red de clústeres de conmutación por error](https://docs.microsoft.com/windows-server/troubleshoot/iaas-sql-failover-cluster)
+
+## <a name="troubleshoot-dhcp"></a>Solucionar problemas de DHCP
+
+- [Guía de solución de problemas del Protocolo de configuración dinámica de host (DHCP)](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-dhcp-issue)
+- [Aspectos básicos de DHCP (Protocolo de configuración dinámica de host)](https://docs.microsoft.com/windows-server/troubleshoot/dynamic-host-configuration-protocol-basics)
+- [Instrucciones generales para la solución de problemas de DHCP](https://docs.microsoft.com/windows-server/troubleshoot/general-guidance-to-troubleshoot-dhcp)
+- [Uso del direccionamiento automático de TCP/IP sin un servidor DHCP](https://docs.microsoft.com/windows-server/troubleshoot/how-to-use-automatic-tcpip-addressing-without-a-dh)
+- [Solución de problemas en el cliente DHCP](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-problems-on-dhcp-client)
+- [Solución de problemas en el servidor DHCP](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-problems-on-dhcp-server)
 
 ## <a name="troubleshoot-fsrm"></a>Solucionar problemas de FSRM
 
@@ -149,7 +162,7 @@ Esta sección contiene temas de solución de problemas avanzados y vínculos par
 - [Preguntas más frecuentes sobre Espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)
 - [Espacios de almacenamiento directo Estados operativos y de estado](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-states)
 - [Recopilación de datos de diagnóstico con Espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/data-collection)
-- [Administración de estado de memoria de clase de almacenamiento (NVDIMM-N) en Windows](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
+- [Administración de estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
 
 ## <a name="troubleshoot-sdn"></a>Solucionar problemas de SDN
 
@@ -182,12 +195,12 @@ Esta sección contiene temas de solución de problemas avanzados y vínculos par
 
 ## <a name="troubleshoot-storage-replica"></a>Solucionar problemas de réplica de almacenamiento
 
-- [Problemas conocidos de réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-known-issues)
-- [Preguntas más frecuentes sobre réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
+- [Problemas conocidos de Réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-known-issues)
+- [Preguntas frecuentes acerca de Réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
 
 ## <a name="troubleshoot-user-profiles"></a>Solucionar problemas de perfiles de usuario
 
-- [Solucionar problemas de perfiles de usuario con eventos](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
+- [Solución de problemas de perfiles de usuario con eventos](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
 
 ## <a name="troubleshoot-vrss"></a>Solucionar problemas de vRSS
 
@@ -201,4 +214,4 @@ Esta sección contiene temas de solución de problemas avanzados y vínculos par
 
 - [Pasos comunes de solución de problemas del centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
 - [Problemas conocidos del centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
-- [Preguntas más frecuentes sobre el centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)
+- [Preguntas más frecuentes acerca de Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)
