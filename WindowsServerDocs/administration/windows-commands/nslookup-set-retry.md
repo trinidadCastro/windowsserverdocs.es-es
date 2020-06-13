@@ -1,6 +1,6 @@
 ---
 title: nslookup set retry
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando Nslookup set retry, que establece el número de intentos para obtener información de un servidor especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1baeeaefedc211434f46bd0cfad713f093a873bf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 268a9f0023c0e7e19e8ed413895f639444fe3b88
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723583"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721468"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Establece el número de reintentos.
+Si no se recibe una respuesta dentro de un período de tiempo determinado, el tiempo de espera se duplica y se reenvía la solicitud. Este comando establece el número de veces que se reenvía una solicitud a un servidor para obtener información, antes de abandonarla.
+
+> [!NOTE]
+> Para cambiar el período de tiempo antes de que se agote el tiempo de espera de la solicitud, use el comando [nslookup Set timeout](nslookup-set-timeout.md) .
+
 ## <a name="syntax"></a>Sintaxis
+
 ```
-set retry=<Number>
+set retry=<number>
 ```
+
 ### <a name="parameters"></a>Parámetros
 
-|    Parámetro    |                                      Descripción                                       |
-|-----------------|----------------------------------------------------------------------------------------|
-|    <Number>     | Especifica el nuevo valor para el número de reintentos. El número predeterminado de reintentos es 4. |
-| {ayuda &#124;?} |                 Muestra un breve resumen de los subcomandos de **nslookup** .                  |
+| Parámetro | Descripción |
+| ---------- | ---------- |
+| `<number>` | Especifica el nuevo valor para el número de reintentos. El número predeterminado de reintentos es **4**. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
+| /help | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
-- Cuando no se recibe una respuesta a una solicitud en un período de tiempo determinado, el tiempo de espera se duplica y se reenvía la solicitud. El valor de reintento controla el número de veces que se reenvía una solicitud antes de abandonarla. Puede cambiar el período de tiempo de espera con el subcomando **establecer tiempo de espera** .
-  ## <a name="additional-references"></a>Referencias adicionales
-  - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup Set timeout](nslookup-set-timeout.md)
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [nslookup set timeout](nslookup-set-timeout.md)

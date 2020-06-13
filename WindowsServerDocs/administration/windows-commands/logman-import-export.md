@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ce18c615d45d4922c8819d30ff47d54328111170
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 3ad664548dce51d7631a6d1a02d628af91e1921f
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222938"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721148"
 ---
 # <a name="logman-import-and-logman-export"></a>Logman Import y Logman Export
 
@@ -25,8 +25,8 @@ Importa un conjunto de recopiladores de datos de un archivo XML o exporta un con
 ## <a name="syntax"></a>Sintaxis
 
 ```
-logman import <[-n] <name>> <-xml <name>> [options]
-logman export <[-n] <name>> <-xml <name>> [options]
+logman import <[-n] <name> <-xml <name> [options]
+logman export <[-n] <name> <-xml <name> [options]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -44,7 +44,7 @@ logman export <[-n] <name>> <-xml <name>> [options]
 
 ### <a name="examples"></a>Ejemplos
 
-Para importar el archivo XML *c:\windows\ perf_log. XML* del equipo *server_1* como un conjunto de recopiladores de datos denominado *perf_log*, escriba:
+Para importar el archivo XML *c:\windows\perf_log.xml* desde el equipo *server_1* como un conjunto de recopiladores de datos denominado *perf_log*, escriba:
 
 ```
 logman import perf_log -s server_1 -xml c:\windows\perf_log.xml

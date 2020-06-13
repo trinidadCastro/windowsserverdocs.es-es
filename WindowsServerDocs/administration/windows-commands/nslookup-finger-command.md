@@ -1,6 +1,6 @@
 ---
-title: Comando nslookup finger
-description: Tema de referencia de * * * *-
+title: dedo de nslookup
+description: Tema de referencia del comando Nslookup Finger, que se conecta con el servidor Finger en el dispositivo actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,32 +9,31 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 428c9e7e775c85992f861e30ae9628ea27f7ee70
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6341e7297ea661fd9afd4f4b0bb5048d82099b94
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723721"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721498"
 ---
-# <a name="nslookup-finger-command"></a>Comando nslookup finger
+# <a name="nslookup-finger"></a>nslookup/Finger
 
-
-
-Se conecta con el servidor Finger en el equipo actual.
+Se conecta con el servidor Finger en el dispositivo actual.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-finger [<UserName>] [{[>] <FileName>|[>>] <FileName>}]
+finger [<username>] [{[>] <filename> | [>>] <filename>}]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|  Parámetro  |                                                                               Descripción                                                                               |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<Nombre de usuario> |                                                               Especifica el nombre del usuario que se va a buscar.                                                                |
-| \<Nombre de archivo> | Especifica un nombre de archivo en el que se guardará la salida. Puede usar los caracteres mayor que (>) y Double mayor que (>>) para redirigir la salida de la manera habitual. |
-|    {ayuda    |                                                                                   ?}                                                                                    |
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<username>` | Especifica el nombre del usuario que se va a buscar. |
+| `<filename>` | Especifica un nombre de archivo en el que se guardará la salida. Puede usar los caracteres mayor que ( `>` ) y Double mayor que ( `>>` ) para redirigir la salida de la manera habitual. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
+| /help | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="additional-references"></a>Referencias adicionales
 

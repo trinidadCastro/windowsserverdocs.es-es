@@ -1,6 +1,6 @@
 ---
 title: nfsshare
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando nfsshare, que controla los recursos compartidos de Network File System (NFS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,49 +9,48 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dac9271568d8a18718b378de63dc5faa258df16a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4774d5ce929de5e79e2cde78e45b0cd9bdca163c
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723762"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721528"
 ---
 # <a name="nfsshare"></a>nfsshare
 
-
-
-Puede usar **nfsshare** para controlar los recursos compartidos de Network File System (NFS).
+Controla los recursos compartidos de Network File System (NFS). Si se usa sin parámetros, este comando muestra todos los recursos compartidos de Network File System (NFS) exportados por servidor para NFS.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-nfsshare <ShareName>=<Drive:Path> [-o <Option=value>...]
-nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
+nfsshare <sharename>=<drive:path> [-o <option=value>...]
+nfsshare {<sharename> | <drive>:<path> | * } /delete
 ```
 
-## <a name="description"></a>Descripción
+### <a name="parameters"></a>Parámetros
 
-Sin argumentos, la utilidad de línea de comandos **nfsshare** enumera todos los recursos compartidos de Network File System (NFS) exportados por servidor para NFS. Con *ShareName* como único argumento, **nfsshare** enumera las propiedades del recurso compartido de NFS identificado por *ShareName*. Cuando se proporcionan *ShareName* y <em>Drive</em>**:**<em>path</em> , **nfsshare** exporta la carpeta identificada por <em>Drive</em>**:**<em>path</em> como *ShareName*. Cuando se usa la opción **/Delete** , la carpeta especificada deja de estar disponible para los clientes NFS.
+| Parámetro | Descripción |
+| --------- | ----------- |
+| -o Anon =`{yes|no}` | Especifica si los usuarios anónimos (sin asignar) pueden tener acceso al directorio de recursos compartidos. |
+| -o RW =`[<host>[:<host>]...]` | Proporciona acceso de lectura y escritura al directorio compartido por los hosts o grupos de clientes especificados por el *host*. Debe separar los nombres de host y grupo con dos puntos (**:**). Si no se especifica un *host* , todos los hosts y grupos de clientes (excepto los especificados con la opción **ro** ) obtienen acceso de lectura y escritura. Si no se establece la opción **ro** ni **RW** , todos los clientes tienen acceso de lectura y escritura al directorio compartido. |
+| -o ro =`[<host>[:<host>]...]` | Proporciona acceso de solo lectura al directorio compartido por los hosts o grupos de clientes especificados por *host*. Debe separar los nombres de host y grupo con dos puntos (**:**). Si el *host* no se especifica, todos los clientes (excepto los especificados con la opción **RW** ) obtienen acceso de solo lectura. Si la opción **ro** está establecida para uno o más clientes, pero no se establece la opción **RW** , solo los clientes especificados con la opción **ro** tienen acceso al directorio compartido. |
+| -o codificación =`{euc-jp|euc-tw|euc-kr|shift-jis|Big5|Ksc5601|Gb2312-80|Ansi)` | Especifica la codificación de idioma que se va a configurar en un recurso compartido NFS. Solo puede utilizar un idioma en el recurso compartido. Este valor puede incluir cualquiera de los siguientes valores:<ul><li>**EUC-jp:** Japonés</li><li>**EUC-TW:** Chino</li><li>**EUC-KR:** Coreano</li><li>**Shift-JIS:** Japonés</li><li>**Big5:** Chino</li><li>**Ksc5601:** Coreano</li><li>**Gb2312-80:** Chino Simplificado</li><li>**ANSI:** Codificado con ANSI</li></ul> |
+| -o anongid =`<gid>` | Especifica que los usuarios anónimos (sin asignar) tienen acceso al directorio de recursos compartidos mediante *GID* como identificador de grupo (GID). El valor predeterminado es **-2**. El GID anónimo se usa al notificar al propietario de un archivo que pertenece a un usuario sin asignar, incluso si el acceso anónimo está deshabilitado. |
+| -o anonuid =`<uid>` | Especifica que los usuarios anónimos (sin asignar) tienen acceso al directorio de recursos compartidos mediante *UID* como identificador de usuario (UID). El valor predeterminado es **-2**. El UID anónimo se usa al notificar al propietario de un archivo que pertenece a un usuario sin asignar, incluso si el acceso anónimo está deshabilitado. |
+| -o raíz =`[<host>[:<host>]...]` | Proporciona acceso raíz al directorio compartido por los hosts o grupos de clientes especificados por *host*. Debe separar los nombres de host y grupo con dos puntos (**:**). Si el *host* no se especifica, todos los clientes obtienen acceso a la raíz. Si no se establece la opción **raíz** , ningún cliente tiene acceso raíz al directorio compartido. |
+| /delete | Si *sharename* `<drive>:<path>` se especifica ShareName o, este parámetro elimina el recurso compartido especificado. Si se especifica un carácter comodín (*), este parámetro elimina todos los recursos compartidos de NFS. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="options"></a>Opciones
+#### <a name="remarks"></a>Comentarios
 
-El comando **nfsshare** acepta las opciones y los argumentos siguientes:
+- Si *ShareName* es el único parámetro, este comando muestra las propiedades del recurso compartido de NFS identificado por *ShareName*.
 
+- Si *sharename* `<drive>:<path>` se usan ShareName y, este comando exporta la carpeta identificada por `<drive>:<path>` como *ShareName*. Si usa la opción **/Delete** , la carpeta especificada deja de estar disponible para los clientes NFS.
 
-|             Término              |                                                                                                                                                                                                                      Definición                                                                                                                                                                                                                       |
-|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         -o Anon = {sí          |                                                                                                                                                                                                                          ninguno                                                                                                                                                                                                                          |
-|  -o RW [=\<host> [:<Host>]...]  |                       Proporciona acceso de lectura y escritura al directorio compartido por los hosts o grupos de clientes especificados por el *host*. Separe los nombres de host y grupo con dos puntos (**:**). Si no se especifica *host* , todos los hosts y grupos de clientes (excepto los especificados con la opción **ro** ) tienen acceso de lectura y escritura. Si no se establece la opción **ro** ni **RW** , todos los clientes tienen acceso de lectura y escritura al directorio compartido.                       |
-|  -o ro [=\<host> [:<Host>]...]  | Proporciona acceso de solo lectura al directorio compartido por los hosts o grupos de clientes especificados por *host*. Separe los nombres de host y grupo con dos puntos (**:**). Si no se especifica *host* , todos los clientes (excepto los especificados con la opción **RW** ) tienen acceso de solo lectura. Si la opción **ro** está establecida para uno o más clientes, pero no se establece la opción **RW** , solo los clientes especificados con la opción **ro** tienen acceso al directorio compartido. |
-|       -o codificación = {Big5       |                                                                                                                                                                                                                        EUC-JP                                                                                                                                                                                                                         |
-|       -o anongid =\<GID>       |                                                                                     Especifica que los usuarios anónimos (sin asignar) tendrán acceso al directorio compartido mediante el uso de *GID* como identificador de grupo (GID). El valor predeterminado es-2. El GID anónimo se utilizará al notificar al propietario de un archivo propiedad de un usuario sin asignar, incluso si el acceso anónimo está deshabilitado.                                                                                      |
-|      -o anonuid =\<UID>       |                                                                                      Especifica que los usuarios anónimos (sin asignar) tendrán acceso al directorio compartido mediante el uso de *UID* como identificador de usuario (UID). El valor predeterminado es-2. El UID anónimo se utilizará al notificar al propietario de un archivo propiedad de un usuario sin asignar, incluso si el acceso anónimo está deshabilitado.                                                                                      |
-| -o raíz [=\<host> [:<Host>]...] |                                                                         Proporciona acceso raíz al directorio compartido por los hosts o grupos de clientes especificados por *host*. Separe los nombres de host y grupo con dos puntos (**:**). Si no se especifica un *host* , todos los clientes tienen acceso raíz. Si no se establece la opción **root** , ningún cliente tiene acceso raíz al directorio compartido.                                                                         |
-|            /delete            |                                                                                                                                                       Si se especifica *ShareName* o <em>unidad</em>**:**<em>ruta de acceso</em> , elimina el recurso compartido especificado. Si \* se especifica, elimina todos los recursos compartidos de NFS.                                                                                                                                                       |
+## <a name="additional-references"></a>Referencias adicionales
 
-> [!NOTE]
-> Para ver la sintaxis completa de este comando, en una ventana de símbolo del sistema, escriba:</br>> **nfsshare/?**
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-## <a name="see-also"></a>Vea también
+- [Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)
 
-[Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)
+- [Referencia de cmdlets de NFS](https://docs.microsoft.com/powershell/module/nfs)

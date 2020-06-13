@@ -1,6 +1,6 @@
 ---
 title: nslookup set search
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando Nslookup Set Search, que anexa los nombres de dominio del sistema de nombres de dominio (DNS) en la lista de búsqueda de dominios DNS a la solicitud hasta que se recibe una respuesta.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e3f5bce42d3614b535b2dfb00c4c9ea9cac2346
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c3219434f768a573c9e433c44b6b38bc9dc75f14
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723565"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721430"
 ---
 # <a name="nslookup-set-search"></a>nslookup set search
-
-
 
 Anexa los nombres de dominio del sistema de nombres de dominio (DNS) en la lista de búsqueda de dominios DNS a la solicitud hasta que se reciba una respuesta. Esto se aplica cuando el conjunto y la solicitud de búsqueda contienen al menos un punto, pero no finalizan con un punto final.
 
@@ -30,11 +28,12 @@ set [no]search
 
 ### <a name="parameters"></a>Parámetros
 
-|  Parámetro   |                                                                          Descripción                                                                          |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **nosearch** |                            Deja de anexar los nombres de dominio del sistema de nombres de dominio (DNS) en la lista de búsqueda de dominios DNS a la solicitud.                            |
-|  **search**  | Anexa los nombres de dominio del sistema de nombres de dominio (DNS) en la lista de búsqueda de dominios DNS a la solicitud hasta que se reciba una respuesta. La sintaxis predeterminada es **Search**. |
-|    {ayuda     |                                                                              ?}                                                                               |
+| Parámetro | Descripción |
+| --------- | ----------- |
+| nosearch | Deja de anexar los nombres de dominio del sistema de nombres de dominio (DNS) en la lista de búsqueda de dominios DNS para la solicitud. |
+| paquetes Bower | Anexa los nombres de dominio del sistema de nombres de dominio (DNS) en la lista de búsqueda de dominios DNS para la solicitud hasta que se reciba una respuesta. Este es el valor predeterminado. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
+| /help | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="additional-references"></a>Referencias adicionales
 

@@ -1,6 +1,6 @@
 ---
 title: nfsstat
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando nfsstat, que muestra información estadística acerca de las llamadas de Network File System (NFS) y llamada a procedimiento remoto (RPC).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,25 +9,70 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e2c02fdfeb9923993a1d4471862a6c8487c9d86
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 85eb1184d3eb8ee731cf698a6d805e3f11d878ce
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723753"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721518"
 ---
 # <a name="nfsstat"></a>nfsstat
 
-
-
-Puede usar **nfsstat** para mostrar o restablecer el número de llamadas realizadas a servidor para NFS.
+Utilidad de línea de comandos que muestra información estadística acerca de las llamadas de Network File System (NFS) y llamada a procedimiento remoto (RPC). Si se usa sin parámetros, este comando muestra todos los datos estadísticos sin restablecer nada.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-nfsstat [-z]
+nfsstat [-c][-s][-n][-r][-z][-m]
 ```
 
-## <a name="description"></a>Descripción
+### <a name="parameters"></a>Parámetros
 
-Cuando se usa sin la opción **-z** , la utilidad de línea de comandos **nfsstat** muestra el número de llamadas NFS V2, NFS V3 y Mount V3 realizadas al servidor desde que los contadores se establecieron en 0, cuando se inició el servicio o cuando se restablecieron los contadores con **nfsstat-z**.
+| Parámetro | Descripción |
+| --------- | ----------- |
+| -c | Muestra solo las llamadas NFS y RPC y NFS del lado cliente enviadas y rechazadas por el cliente. Para mostrar solo la información de NFS o RPC, combine esta marca con el parámetro **-n** o **-r** . |
+| -S | Muestra solo las llamadas NFS y RPC y NFS del servidor enviadas y rechazadas por el servidor. Para mostrar solo la información de NFS o RPC, combine esta marca con el parámetro **-n** o **-r** . |
+| -M | Muestra información sobre las marcas de montaje establecidas por las opciones de montaje, las marcas de montaje internas del sistema y otra información de montaje. |
+| -n | Muestra información de NFS tanto para el cliente como para el servidor. Para mostrar solo la información del cliente o del servidor NFS, combine esta marca con el parámetro **-c** o **-s** . |
+| -r | Muestra información de RPC para el cliente y el servidor. Para mostrar solo la información de servidor o cliente RPC, combine esta marca con el parámetro **-c** o **-s** . |
+| -Z | Restablece las estadísticas de llamadas. Esta marca solo está disponible para el usuario raíz y se puede combinar con cualquiera de los demás parámetros para restablecer determinados conjuntos de estadísticas después de mostrarlos. |
+
+### <a name="examples"></a>Ejemplos
+
+Para mostrar información sobre el número de llamadas de RPC y NFS enviadas y rechazadas por el cliente, escriba:
+
+```
+nfsstat -c
+```
+
+Para mostrar e imprimir la información relacionada con la llamada de NFS del cliente, escriba:
+
+```
+nfsstat -cn
+```
+
+Para mostrar información relacionada con llamadas RPC para el cliente y el servidor, escriba:
+
+```
+nfsstat -r
+```
+
+Para mostrar información sobre el número de llamadas de RPC y NFS recibidas y rechazadas por el servidor, escriba:
+
+```
+nfsstat -s
+```
+
+Para restablecer toda la información relacionada con llamadas a cero en el cliente y el servidor, escriba:
+
+```
+nfsstat -z
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)
+
+- [Referencia de cmdlets de NFS](https://docs.microsoft.com/powershell/module/nfs)

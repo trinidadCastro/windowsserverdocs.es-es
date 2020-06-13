@@ -1,6 +1,6 @@
 ---
 title: nslookup set class
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando Nslookup Set Class, que cambia la clase de consulta.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1ae3a5336815a5273aafa976b1dcad8b60fac9b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e939be13eedcab557dc6dcbe16f2e83f810c20d5
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723657"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721568"
 ---
 # <a name="nslookup-set-class"></a>nslookup set class
-
-
 
 Cambia la clase de consulta. La clase especifica el grupo de protocolos de la información.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-set class=<Class>
+set class=<class>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-| Parámetro |                                                                                                                                    Descripción                                                                                                                                    |
-|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<Class>  | La clase predeterminada está en. A continuación se enumeran los valores válidos para este comando.</br>-IN: especifica la clase de Internet.</br>-CAOS: especifica la clase caos.</br>-HESIOD: especifica la clase MIT Athena Hesiod.</br>-ANY: especifica cualquiera de los caracteres comodín enumerados anteriormente. |
-|   {ayuda   |                                                                                                                                        ?}                                                                                                                                         |
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<class>` | Los valores válidos son:<ul><li>**En:** Especifica la clase de Internet. Este es el valor predeterminado.</li><li>**Caos:** Especifica la clase caos.</li><li>**HESIOD:** Especifica la clase Hesiod de la clase MIT Athena.</li><li>**Cualquiera:** Especifica que se debe utilizar cualquiera de los valores enumerados anteriormente.</li></ul> |
+| /? | Muestra la ayuda en el símbolo del sistema. |
+| /help | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="additional-references"></a>Referencias adicionales
 

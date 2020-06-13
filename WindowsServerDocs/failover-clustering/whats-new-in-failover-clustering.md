@@ -8,12 +8,12 @@ manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 926c9c862d77c9fe082274a44af57e3b8339a655
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cdc9280c4c7129d2e76341bd97b0ae3b8209888f
+ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720505"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721743"
 ---
 # <a name="whats-new-in-failover-clustering"></a>What's new in Failover Clustering (Novedades de los clústeres de conmutación por error)
 
@@ -76,12 +76,12 @@ La actualización gradual del sistema operativo de clústeres permite a un admin
 
 **¿Qué valor aporta este cambio?**  
 
-La actualización de un clúster de Hyper-V o Servidor de archivos de escalabilidad horizontal de Windows Server 2012 R2 a Windows Server 2016 ya no requiere tiempo de inactividad. El clúster seguirá funcionando en el nivel de Windows Server 2012 R2 hasta que todos los nodos del clúster ejecuten Windows Server 2016. El nivel funcional del clúster se actualiza a Windows Server 2016 mediante el cmdlt `Update-ClusterFunctionalLevel`de Windows PowerShell.
+La actualización de un clúster de Hyper-V o Servidor de archivos de escalabilidad horizontal de Windows Server 2012 R2 a Windows Server 2016 ya no requiere tiempo de inactividad. El clúster seguirá funcionando en el nivel de Windows Server 2012 R2 hasta que todos los nodos del clúster ejecuten Windows Server 2016. El nivel funcional del clúster se actualiza a Windows Server 2016 mediante el cmdlt de Windows PowerShell `Update-ClusterFunctionalLevel` .
 
 > [!WARNING]  
 > - Después de actualizar el nivel funcional del clúster, no puede volver a un nivel funcional del clúster de Windows Server 2012 R2.
 >
-> - Hasta que `Update-ClusterFunctionalLevel` se ejecuta el cmdlet, el proceso es reversible y se pueden agregar nodos de windows Server 2012 R2 y se pueden quitar los nodos de windows Server 2016.
+> - Hasta que `Update-ClusterFunctionalLevel` se ejecuta el cmdlet, el proceso es reversible y se pueden agregar nodos de Windows server 2012 R2 y se pueden quitar los nodos de Windows server 2016.
 
 **¿Qué funciona de manera diferente?**  
 
@@ -95,7 +95,7 @@ Los sistemas operativos de clúster para la actualización en fases son los sigu
 -   En este momento, se dice que el clúster se está ejecutando en modo mixto, porque los nodos del clúster ejecutan Windows Server 2012 R2 o Windows Server 2016. 
 -   El nivel funcional del clúster se mantiene en Windows Server 2012 R2. En este nivel funcional, las nuevas características de Windows Server 2016 que afectan a la compatibilidad con versiones anteriores del sistema operativo no estarán disponibles. 
 -   Finalmente, todos los nodos se actualizan a Windows Server 2016. 
--   A continuación, se cambia el nivel funcional del clúster a Windows Server 2016 mediante `Update-ClusterFunctionalLevel`el cmdlet de Windows PowerShell. Llegados a este punto, puede aprovechar las características de Windows Server 2016. 
+-   A continuación, se cambia el nivel funcional del clúster a Windows Server 2016 mediante el cmdlet de Windows PowerShell `Update-ClusterFunctionalLevel` . Llegados a este punto, puede aprovechar las características de Windows Server 2016. 
 
 Para obtener más información, consulte [actualización gradual del sistema operativo del clúster](cluster-operating-system-rolling-upgrade.md). 
 
@@ -176,13 +176,13 @@ En Windows Server 2016, la resistencia de almacenamiento de máquinas virtuales 
 
 Para ayudar a diagnosticar problemas con los clústeres de conmutación por error, Windows Server 2016 incluye lo siguiente:  
 
-- Varias mejoras en los archivos de registro del clúster (como información de zona horaria y registro de DiagnosticVerbose) que facilita la solución de problemas de clústeres de conmutación por error. Para obtener más información, vea [mejoras en la solución de problemas del clúster de conmutación por error de Windows Server 2016: registro de clúster](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx). 
+- Varias mejoras en los archivos de registro del clúster (como información de zona horaria y registro de DiagnosticVerbose) que facilitan la solución de problemas de clústeres de conmutación por error. Para obtener más información, vea [mejoras en la solución de problemas del clúster de conmutación por error de Windows Server 2016: registro de clúster](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372005).
 
-- Un nuevo tipo de volcado de **memoria activo**, que filtra la mayoría de las páginas de memoria asignadas a las máquinas virtuales y, por tanto, hace que Memory. DMP sea mucho más pequeño y más fácil de guardar o copiar. Para obtener más información, consulte [mejoras en la solución de problemas del clúster de conmutación por error de Windows Server 2016: volcado activo](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx). 
+- Un nuevo tipo de volcado de **memoria activo**, que filtra la mayoría de las páginas de memoria asignadas a las máquinas virtuales y, por tanto, hace que Memory. DMP sea mucho más pequeño y más fácil de guardar o copiar. Para obtener más información, consulte [mejoras en la solución de problemas del clúster de conmutación por error de Windows Server 2016: volcado activo](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372008).
 
 ### <a name="site-aware-failover-clusters"></a><a name="BKMK_SiteAware"></a>Clústeres de conmutación por error con reconocimiento de sitios
 
-Windows Server 2016 incluye clústeres de conmutación por error que reconocen el sitio y que habilitan nodos de grupo en clústeres extendidos en función de su ubicación física (sitio). El reconocimiento de sitios de clúster mejora las operaciones clave durante el ciclo de vida del clúster, como el comportamiento de la conmutación por error, las directivas de colocación, el latido entre los nodos y el comportamiento del cuórum. Para obtener más información, consulte [clústeres de conmutación por error que reconocen el sitio en Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx). 
+Windows Server 2016 incluye clústeres de conmutación por error que reconocen el sitio y que habilitan nodos de grupo en clústeres extendidos, en función de su ubicación física (sitio). El reconocimiento de sitios de clúster mejora las operaciones clave durante el ciclo de vida del clúster, como el comportamiento de la conmutación por error, las directivas de colocación, el latido entre los nodos y el comportamiento del cuórum. Para obtener más información, consulte [clústeres de conmutación por error que reconocen el sitio en Windows Server 2016](https://techcommunity.microsoft.com/t5/failover-clustering/site-aware-failover-clusters-in-windows-server-2016/ba-p/372060).
 
 ### <a name="workgroup-and-multi-domain-clusters"></a><a name="BKMK_multidomainclusters"></a>Clústeres de grupo de trabajo y de dominios múltiples
 
@@ -194,7 +194,7 @@ En Windows Server 2012 R2 y versiones anteriores, un clúster solo se puede crea
 
 -   **Clústeres de grupo de trabajo.** Clústeres con nodos que son servidores miembro/Grupo de trabajo (no Unidos a un dominio). 
 
-Para obtener más información, consulte [clústeres de grupos de trabajo y varios dominios en Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)
+Para obtener más información, consulte [clústeres de grupos de trabajo y varios dominios en Windows Server 2016](https://techcommunity.microsoft.com/t5/failover-clustering/workgroup-and-multi-domain-clusters-in-windows-server-2016/ba-p/372059)
 
 ### <a name="virtual-machine-load-balancing"></a><a name="BKMK_VMLoadBalancing"></a>Equilibrio de carga de máquinas virtuales  
 
@@ -212,5 +212,5 @@ Para más información, consulte [redes de clústeres de varias NIC y SMB multic
 
 ## <a name="see-also"></a>Consulte también
 
-* [Storage](../storage/storage.md)  
+* [Almacenamiento](../storage/storage.md)  
 * [Novedades de almacenamiento en Windows Server 2016](../storage/whats-new-in-storage.md)  

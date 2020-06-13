@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: fdc90c6e5d6790348fafc12079eec5ac7e387b3f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a1e1a30530f937289770bcef9e71189bf69719ce
+ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815318"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721763"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>SMBv1 no se instala de forma predeterminada en Windows 10 versión 1709, Windows Server versión 1709 y versiones posteriores
 
@@ -30,7 +30,7 @@ SMBv1 tiene el siguiente comportamiento en Windows 10 Fall Creators Update y Win
 - Las actualizaciones en contexto y los vuelos internos de las ediciones Windows 10 Enterprise y Windows 10 Education no quitan automáticamente SMBv1. Un administrador debe decidir desinstalar SMBv1 en estos entornos administrados. En Windows 10, versión 1809 (RS5) y versiones posteriores, un administrador puede activar la eliminación automática de SMBv1 activando la característica "eliminación automática de SMB 1.0/CIFS".    
 - La eliminación automática de SMBv1 después de 15 días es una operación única. Si un administrador vuelve a instalar SMBv1, no se realizarán más intentos para desinstalarlo.
 - Las características de SMB versión 2,02, 2,1, 3,0, 3,02 y 3.1.1 siguen siendo totalmente compatibles y se incluyen de forma predeterminada como parte de los binarios de SMBv2.    
-- Dado que el servicio Examinador de equipos se basa en SMBv1, el servicio se desinstala si se desinstala el cliente o el servidor de SMBv1. Esto significa que el explorador Networkcan ya no muestra los equipos Windows mediante el método de exploración de datagramas NetBIOS heredado.    
+- Dado que el servicio Examinador de equipos se basa en SMBv1, el servicio se desinstala si se desinstala el cliente o el servidor de SMBv1. Esto significa que la red del explorador ya no puede mostrar equipos Windows mediante el método de exploración de datagramas NetBIOS heredado.    
 - SMBv1 todavía se pueden volver a instalar en todas las ediciones de Windows 10 y Windows Server 2016.    
  
   > [!NOTE]
@@ -108,7 +108,7 @@ Guidance:
 The client has SMB1 disabled or uninstalled. For more information: https://go.microsoft.com/fwlink/?linkid=852747.     
 ```
 
-Es probable que estos dispositivos no ejecuten Windows. Es más probable que ejecuten versiones anteriores de Linux, Samba u otros tipos de software de terceros para proporcionar servicios SMB. A menudo, estas versiones de Linux y samba ya no se admiten. 
+Es probable que estos dispositivos no ejecuten Windows.Es más probable que ejecuten versiones anteriores de Linux, Samba u otros tipos de software de terceros para proporcionar servicios SMB. A menudo, estas versiones de Linux y samba ya no se admiten. 
 
 > [!NOTE]
 > Windows 10, versión 1709 también se conoce como "Fall Creators Update".   
@@ -122,7 +122,7 @@ Para solucionar este problema, póngase en contacto con el fabricante del produc
 
 Si se requiere SMBv1 para proporcionar compatibilidad de aplicaciones para el comportamiento del software heredado, como un requisito para deshabilitar bloqueos oportunistas, Windows proporciona una nueva marca de recurso compartido de SMB que se conoce como modo de concesión. Esta marca especifica si un recurso compartido deshabilita la semántica moderna de SMB, como concesiones y bloqueos oportunistas.
 
-Puede especificar un recurso compartido sin usar bloqueos oportunistas o leasing para permitir que una aplicación heredada funcione con SMBv2 o una versión posterior. Para ello, use los cmdlets de PowerShell **New-SmbShare** o **set-SmbShare** junto con el parámetro **-LeasingMode None** .
+Puede especificar un recurso compartido sin usar bloqueos oportunistas o leasing para permitir que una aplicación heredada funcione con SMBv2 o una versión posterior. Para ello, use los cmdlets de PowerShell **New-SmbShare** o **set-SmbShare** junto con el parámetro **-LeasingMode None**   .
 
 > [!NOTE]
 > Esta opción solo se debe usar en los recursos compartidos que requiera una aplicación de terceros para la compatibilidad heredada si el proveedor indica que es necesario. No especifique el modo de concesión en recursos compartidos de datos de usuario o recursos compartidos de CA utilizados por servidores de archivos de escalabilidad horizontal. Esto se debe a que la eliminación de bloqueos oportunistas y concesiones provoca daños en los datos y la inestabilidad en la mayoría de las aplicaciones. El modo de concesión solo funciona en modo de uso compartido. Lo puede usar cualquier sistema operativo cliente.
@@ -133,14 +133,14 @@ El servicio Examinador de equipos se basa en el protocolo SMBv1 para rellenar el
 
 Sin embargo, si todavía tiene que usar el explorador Entrada de red los entornos Home y Small Business Workgroup para buscar equipos basados en Windows, puede seguir estos pasos en los equipos basados en Windows que ya no usan SMBv1: 
  
-1. Inicie los servicios "host del proveedor de detección de funciones" y "publicación de recursos de detección de funciones" y, a continuación, establézcalo en **automático (Inicio retrasado)** .
+1. Inicie los servicios "host del proveedor de detección de funciones" y "publicación de recursos de detección de funciones" y, a continuación, establézcalo en **automático (Inicio retrasado)**.
 
 2. Cuando abra el explorador de red, habilite la detección de redes cuando se le solicite.    
  
 Todos los dispositivos de Windows de esa subred que tienen esta configuración aparecerán ahora en la red para la exploración. Usa el protocolo WS-DISCOVERY. Póngase en contacto con otros proveedores y fabricantes si sus dispositivos todavía no aparecen en esta lista de exploración después de que aparezcan los dispositivos Windows. Es posible que este protocolo esté deshabilitado o que solo admita SMBv1.
 
 > [!NOTE]
-> se recomienda asignar unidades e impresoras en lugar de habilitar esta característica, que todavía requiere la búsqueda y exploración de sus dispositivos. Los recursos asignados son más fáciles de encontrar, requieren menos aprendizaje y son más seguros de usar. Esto es especialmente cierto si estos recursos se proporcionan automáticamente a través de directiva de grupo. Un administrador puede configurar impresoras para su ubicación mediante métodos distintos del servicio explorador de equipos heredado mediante el uso de direcciones IP, Active Directory Domain Services (AD DS), Bonjour, MDN, uPnP, etc.
+> Se recomienda asignar unidades e impresoras en lugar de habilitar esta característica, que todavía requiere la búsqueda y exploración de sus dispositivos. Los recursos asignados son más fáciles de encontrar, requieren menos aprendizaje y son más seguros de usar. Esto es especialmente cierto si estos recursos se proporcionan automáticamente a través de directiva de grupo.Un administrador puede configurar impresoras para su ubicación mediante métodos distintos del servicio explorador de equipos heredado mediante el uso de direcciones IP, Active Directory Domain Services (AD DS), Bonjour, MDN, uPnP, etc.
 
 Si no puede usar ninguna de estas soluciones alternativas o si el fabricante de la aplicación no puede proporcionar versiones compatibles de SMB, puede volver a habilitar SMBv1 manualmente siguiendo los pasos descritos en [Cómo detectar, habilitar y deshabilitar SMBv1, SMBv2 y SMBv3 en Windows](detect-enable-and-disable-smbv1-v2-v3.md).
 

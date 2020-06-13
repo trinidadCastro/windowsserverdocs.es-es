@@ -1,6 +1,6 @@
 ---
 title: netsh
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando netsh, que es una utilidad de scripting de línea de comandos que le permite, ya sea de forma local o remota, mostrar o modificar la configuración de red de un equipo actualmente en ejecución.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5413bbc4eba0f350025eb9f8e441bba5ba8f7548
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c538dd10f86d252390a4e862e7b97204d1c945c9
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723795"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721108"
 ---
 # <a name="netsh"></a>netsh
 
+> Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
+La utilidad de scripting de la línea de comandos de Shell de red que permite mostrar o modificar la configuración de red de un equipo actualmente en ejecución de forma local o remota. Puede iniciar esta utilidad en el símbolo del sistema o en Windows PowerShell.
 
-**Netsh** es una utilidad de scripting de línea de comandos que permite mostrar o modificar la configuración de red de un equipo que se está ejecutando actualmente, ya sea de forma local o remota.
+## <a name="syntax"></a>Sintaxis
 
-Existen diferencias funcionales entre los comandos **netsh** en windows server® 2003, windows server® 2008 y windows server® 2008 R2:
--   Para obtener más información acerca de los comandos **netsh** en Windows Server 2003, vea [netsh](https://technet.microsoft.com/library/cc779693(v=ws.10).aspx).
--   Para obtener más información acerca de los comandos **netsh** para windows Server 2008 y windows Server 2008 R2, consulte la [referencia técnica de Netsh](https://technet.microsoft.com/library/cc754753(v=ws.10).aspx).
+```
+netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<username>][-p <Password> | [{<NetshCommand> | -f <scriptfile>}]
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| -a`<Aliasfile>` | Especifica que se devuelva al símbolo del sistema de Netsh después de ejecutar Aliasfile y el nombre del archivo de texto que contiene uno o más comandos Netsh. |
+| -c `<Context>` | Especifica que netsh entra en el contexto de Netsh especificado y en el contexto de Netsh que se va a escribir. |
+| -r`<Remotecomputer>` | Especifica el equipo remoto que se va a configurar.<p>**Importante:** Si usa este parámetro, debe asegurarse de que el servicio de registro remoto se está ejecutando en el equipo remoto. Si no se está ejecutando, Windows muestra un mensaje de error "ruta de acceso de red no encontrada". |
+| -u`<domainname>\<username>` | Especifica el dominio y el nombre de la cuenta de usuario que se utilizará al ejecutar el comando netsh en una cuenta de usuario. Si omite el dominio, se utiliza el dominio local de forma predeterminada. |
+| -p`<Password>` | Especifica la contraseña de la cuenta de usuario especificada por el `-u <username>` parámetro. |
+| `<NetshCommand>` | Especifica el comando netsh que se va a ejecutar. |
+| -f`<scriptfile>` | Sale del comando netsh después de ejecutar el archivo de script especificado. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
+
+#### <a name="remarks"></a>Comentarios
+
+- Si especifica **-r** seguido de otro comando, netsh ejecuta el comando en el equipo remoto y, a continuación, vuelve al símbolo del sistema de Cmd.exe. Si especifica **-r** sin otro comando, netsh se abre en modo remoto. El proceso es similar al uso de **set machine** en el símbolo del sistema de netsh. Cuando se usa **-r**, solo se establece el equipo de destino para la instancia actual de Netsh. Después de salir de netsh y volver a entrar, el equipo de destino se restablece como equipo local. Puedes ejecutar comandos netsh en un equipo remoto si especificas un nombre de equipo almacenado en WINS, un nombre de UNC, un nombre de Internet que deba resolver el servidor DNS, o una dirección IP.
+
+- Si el valor de cadena contiene espacios entre caracteres, debe escribir el valor de cadena entre comillas. Por ejemplo: `-r "contoso remote device"`
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6910f7e3f3d2f100942897bd9712293f7eb0f4d9
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 5a308441df55873b205972d703ec52f53345beb5
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354265"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721558"
 ---
 # <a name="netcfg"></a>netcfg
 
@@ -40,7 +40,7 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 | /i | Proporciona el identificador del componente. |
 | /s | Proporciona el tipo de componentes que se van a mostrar, incluido **\ta** para los adaptadores o **n** para los componentes de net. |
 | /b | Muestra las rutas de acceso de enlace, cuando van seguidas de una cadena que contiene el nombre de la ruta de acceso. |
-| /? | Muestra la ayuda en el símbolo del sistema. |                                                    |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
 ### <a name="examples"></a>Ejemplos
 

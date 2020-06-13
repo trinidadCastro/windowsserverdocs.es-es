@@ -1,6 +1,6 @@
 ---
 title: nslookup lserver
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando Nslookup lserver, que cambia el servidor inicial al dominio del sistema de nombres de dominio (DNS) especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b2054c0fd427b41e7d6076258b29ab78d0fb7892
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 868142f251d62ebc3efd7913aded8e22aa077bd3
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723674"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721608"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Cambia el servidor predeterminado al dominio del sistema de nombres de dominio (DNS) especificado.
+Cambia el servidor inicial al dominio del sistema de nombres de dominio (DNS) especificado.
+
+Este comando usa el servidor inicial para buscar la información sobre el dominio DSN especificado. Si desea buscar información mediante el servidor predeterminado actual, use el comando [nslookup Server](nslookup-server.md) .
+
 ## <a name="syntax"></a>Sintaxis
+
 ```
-lserver <DNSDomain> 
+lserver <DNSdomain>
 ```
+
 ### <a name="parameters"></a>Parámetros
 
-|    Parámetro    |                      Descripción                      |
-|-----------------|-------------------------------------------------------|
-|   <DNSDomain>   | Especifica el nuevo dominio DNS para el servidor predeterminado.  |
-| {ayuda &#124;?} | Muestra un breve resumen de los subcomandos de **nslookup** . |
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<DNSdomain>` | Especifica el dominio DNS del servidor inicial. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
+| /help | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
-- El comando **lserver** usa el servidor inicial para buscar información sobre el dominio DNS especificado. Esto contrasta con el comando de **servidor** , que utiliza el servidor predeterminado actual.
-  ## <a name="additional-references"></a>Referencias adicionales
-  - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup Server](nslookup-server.md)
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [nslookup server](nslookup-server.md)

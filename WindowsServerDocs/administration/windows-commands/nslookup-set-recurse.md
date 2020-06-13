@@ -1,6 +1,6 @@
 ---
 title: nslookup set recurse
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando Nslookup set recurse, que indica al servidor de nombres del sistema de nombres de dominio (DNS) que consulte a otros servidores si no encuentra la información en el servidor especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4386bd5738806016b9ec15802faebf3efdcedf0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 082ba3bd926d1f47be5510c2340804b1b92991f1
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723592"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721626"
 ---
 # <a name="nslookup-set-recurse"></a>nslookup set recurse
 
-
-
-Indica al servidor de nombres del sistema de nombres de dominio (DNS) que consulte a otros servidores si no tiene la información.
+Indica al servidor de nombres del sistema de nombres de dominio (DNS) que consulte a otros servidores si no encuentra la información en el servidor especificado.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -30,11 +28,12 @@ set [no]recurse
 
 ### <a name="parameters"></a>Parámetros
 
-|   Parámetro   |                                                                  Descripción                                                                  |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| **repite** |                Detiene el servidor de nombres del sistema de nombres de dominio (DNS) para consultar otros servidores si no tiene la información.                |
-|  **recurse**  | Indica al servidor de nombres del sistema de nombres de dominio (DNS) que consulte a otros servidores si no tiene la información. La sintaxis predeterminada es **RECURSE**. |
-|     {ayuda     |                                                                      ?}                                                                       |
+| Parámetro | Descripción |
+| ---------- | ---------- |
+| repite | Detiene el servidor de nombres del sistema de nombres de dominio (DNS) para consultar otros servidores si no encuentra la información en el servidor especificado. |
+| recurse | Indica al servidor de nombres del sistema de nombres de dominio (DNS) que consulte a otros servidores si no encuentra la información en el servidor especificado. Este es el valor predeterminado. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
+| /help | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="additional-references"></a>Referencias adicionales
 
