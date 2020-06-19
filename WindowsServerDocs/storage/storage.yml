@@ -1,0 +1,89 @@
+### YamlMime:Landing
+title: Documentación de almacenamiento de Windows Server
+summary: 'El almacenamiento en Windows Server proporciona características nuevas y mejoradas para clientes de centros de información definidos por software (SDDC) que se centran en cargas de trabajo virtualizadas. Windows Server también proporciona una extensa compatibilidad para clientes empresariales que usan servidores de archivos con cargas de trabajo existentes. Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual).'
+metadata:
+  title: Documentación de almacenamiento de Windows Server
+  description: El almacenamiento en Windows Server proporciona características nuevas y mejoradas para clientes de centros de información definidos por software (SDDC) que se centran en cargas de trabajo virtualizadas.
+  ms.topic: landing-page
+  author: JasonGerend
+  ms.author: jgerend
+  ms.date: 06/09/2020
+  ms.openlocfilehash: 288c6da7afdd2b218227af0db83c487053a11d58
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: MT
+  ms.contentlocale: es-ES
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85070989"
+landingContent:
+- title: Acerca del almacenamiento de Windows Server
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Novedades
+      url: whats-new-in-storage.md
+- title: Almacenamiento definido por software para cargas de trabajo virtualizadas
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Espacios de almacenamiento directos
+      url: storage-spaces/overview.md
+    - text: Réplica de almacenamiento
+      url: storage-replica/storage-replica-overview.md
+    - text: Calidad de servicio (QoS) del almacenamiento
+      url: storage-qos/storage-qos-overview.md
+    - text: Desduplicación de datos
+      url: data-deduplication/overview.md
+- title: Servidores de archivos de propósito general
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Servicio de migración de almacenamiento
+      url: storage-migration-service/overview.md
+    - text: Carpetas de trabajo
+      url: work-folders/work-folders-overview.md
+    - text: Redirección de archivos y carpetas sin conexión
+      url: folder-redirection/folder-redirection-rup-overview.md
+    - text: Perfiles de usuario móviles
+      url: folder-redirection/deploy-roaming-user-profiles.md
+    - text: Espacios de nombres DFS
+      url: dfs-namespaces/dfs-overview.md
+    - text: Replicación DFS
+      url: dfs-replication/dfsr-overview.md
+    - text: File Server Resource Manager
+      url: fsrm/fsrm-overview.md
+    - text: iSCSI Target Server
+      url: iscsi/iscsi-target-server.md
+    - text: arranque de destino iSCSI
+      url: iscsi/iscsi-boot-overview.md
+- title: Sistemas de archivos, protocolos, etc.
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ReFS
+      url: refs/refs-overview.md
+    - text: Protocolo SMB (bloque de mensajes del servidor)
+      url: file-server/file-server-smb-overview.md
+    - text: Memoria de clase de almacenamiento
+      url: storage-spaces/Storage-class-memory-health.md
+    - text: Cifrado de unidad BitLocker
+      url: https://technet.microsoft.com/library/cc766295(v=ws.10).aspx
+    - text: NTFS
+      url: https://technet.microsoft.com/library/dn466522(v=ws.11).aspx
+    - text: Network File System (NFS)
+      url: https://technet.microsoft.com/library/jj592688(v=ws.11).aspx
+- title: En Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Storage
+      url: https://azure.microsoft.com/documentation/services/storage/
+    - text: Azure StorSimple
+      url: https://www.microsoft.com/cloud-platform/azure-storsimple
+- title: Versiones anteriores de Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Documentación de versiones anteriores de Windows
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: Buscar información específica
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

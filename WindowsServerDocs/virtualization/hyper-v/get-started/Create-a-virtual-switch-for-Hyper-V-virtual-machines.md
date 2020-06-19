@@ -1,5 +1,5 @@
 ---
-title: Crear un conmutador virtual para máquinas virtuales de Hyper-V
+title: Crear un conmutador virtual para las máquinas virtuales de Hyper-V
 description: Proporciona instrucciones sobre cómo crear un conmutador virtual con el administrador de Hyper-V o Windows PowerShell.
 ms.prod: windows-server
 manager: dongill
@@ -9,34 +9,34 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: e27d1286945671d3f44fe2fa3220a2e223ad7c4f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 654e574ffd44e7bbc7712defe165d75e4eae5663
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860848"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070506"
 ---
-# <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>Crear un conmutador virtual para máquinas virtuales de Hyper-V
+# <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>Crear un conmutador virtual para las máquinas virtuales de Hyper-V
 
 >Se aplica a: Windows 10, Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
   
-Un conmutador virtual permite que las máquinas virtuales creadas en hosts de Hyper-V se comuniquen con otros equipos. Puede crear un conmutador virtual la primera vez que instale el rol de Hyper-V en Windows Server. Para crear conmutadores virtuales adicionales, use el administrador de Hyper-V o Windows PowerShell. Para obtener más información acerca de los conmutadores virtuales, consulte [conmutador virtual de Hyper-V](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).  
+Un conmutador virtual permite que las máquinas virtuales creadas en hosts de Hyper-V se comuniquen con otros equipos. Puede crear un conmutador virtual la primera vez que instale el rol de Hyper-V en Windows Server. Para crear conmutadores virtuales adicionales, use el administrador de Hyper-V o Windows PowerShell. Para obtener más información acerca de los conmutadores virtuales, consulte [Conmutador virtual de Hyper-V](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).  
   
-Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias características nuevas del conmutador virtual que puede usar como [Switch Embedded Teaming (Set)](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#switch-embedded-teaming-set). Pero la red básica es bastante fácil de hacer. En este tema se trata lo suficiente para que pueda crear máquinas virtuales en red en Hyper-V. Para obtener más información acerca de cómo configurar la infraestructura de red, consulte la documentación de [red](../../../networking/Networking.md) .   
+Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias características nuevas del conmutador virtual que puede usar como [Switch Embedded Teaming (Set)](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#switch-embedded-teaming-set). Pero la red básica es bastante fácil de hacer. En este tema se trata lo suficiente para que pueda crear máquinas virtuales en red en Hyper-V. Para obtener más información acerca de cómo configurar la infraestructura de red, consulte la documentación de [red](../../../networking/index.yml) .   
   
 ## <a name="create-a-virtual-switch-by-using-hyper-v-manager"></a>Crear un conmutador virtual con el administrador de Hyper-V  
   
 1.  Abra el administrador de Hyper-V y seleccione el nombre del equipo host de Hyper-V.  
   
-2.  Seleccione la **acción** > **Administrador de conmutadores virtuales**.  
+2.  Seleccione **Action**  >  **Virtual Switch Manager**.  
   
-    ![Captura de pantalla que muestra la acción de la opción de menú > Administrador de conmutadores virtuales](../media/Hyper-V-Action-VSwitchManager.png)  
+    ![Captura de pantalla que muestra la acción de la opción de menú > administrador de conmutadores virtuales](../media/Hyper-V-Action-VSwitchManager.png)  
   
 3.  Elija el tipo de conmutador virtual que desee.  
   
-    |Tipo de conexión|Descripción|  
+    |Tipo de conexión|Description|  
     |-------------------|---------------|  
-    |External|Proporciona acceso a las máquinas virtuales a una red física para comunicarse con los servidores y los clientes de una red externa. Permite que las máquinas virtuales del mismo servidor de Hyper-V se comuniquen entre sí.|  
+    |Externo|Proporciona acceso a las máquinas virtuales a una red física para comunicarse con los servidores y los clientes de una red externa. Permite que las máquinas virtuales del mismo servidor de Hyper-V se comuniquen entre sí.|  
     |Interno|Permite la comunicación entre máquinas virtuales en el mismo servidor de Hyper-V y entre las máquinas virtuales y el sistema operativo del host de administración.|  
     |Private|Solo permite la comunicación entre máquinas virtuales en el mismo servidor de Hyper-V. Una red privada se aísla de todo el tráfico de red externo en el servidor de Hyper-V. Este tipo de red es útil cuando se debe crear un entorno de red aislado, como un dominio de prueba aislado.|  
   
@@ -48,7 +48,7 @@ Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias car
   
     ![Captura de pantalla que muestra las opciones de red externa](../media/Hyper-V-NewVSwitch-ExternalOptions.png)  
   
-    |Nombre del valor de configuración|Descripción|  
+    |Nombre del valor|Descripción|  
     |----------------|---------------|  
     |Permitir que el sistema operativo de administración comparta este adaptador de red|Seleccione esta opción si desea permitir que el host de Hyper-V comparta el uso del conmutador virtual y el equipo NIC o NIC con la máquina virtual. Con esta opción habilitada, el host puede usar cualquiera de las opciones que configure para el conmutador virtual, como la configuración de calidad de servicio (QoS), la configuración de seguridad u otras características del conmutador virtual de Hyper-V.|  
     |Habilitar virtualización de E/S de raíz única (SR-IOV)|Seleccione esta opción solo si desea permitir que el tráfico de la máquina virtual omita el conmutador de máquina virtual y vaya directamente a la NIC física. Para obtener más información, consulte [virtualización de e/s de raíz única](https://technet.microsoft.com/library/dn641211.aspx#Sec4) en la referencia complementaria de póster: redes de Hyper-V.|  
@@ -57,7 +57,7 @@ Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias car
   
     ![Captura de pantalla que muestra las opciones de ID. de VLAN](../media/Hyper-V-NewSwitch-VLAN.png)  
   
-8.  Haga clic en **Aceptar**.  
+8.  Haga clic en **OK**.  
   
 9. Haga clic en **Sí**.  
   

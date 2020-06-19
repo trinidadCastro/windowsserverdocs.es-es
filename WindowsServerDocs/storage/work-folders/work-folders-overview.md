@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: 'Información general de las carpetas de trabajo: un rol de servidor en Windows Server que proporciona una manera coherente de que los usuarios tengan acceso a los archivos de trabajo desde equipos y dispositivos.'
-ms.openlocfilehash: 8bd60cc0ab57935a7ce2da0ca33bd0d4c840fa2b
-ms.sourcegitcommit: cb266c8ea42b9800babbbe96b17885e82b55787d
+ms.openlocfilehash: 4e670d61729d35ee9569b09e91ef5a953961241e
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84795732"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070089"
 ---
 # <a name="work-folders-overview"></a>Introducción a carpetas de trabajo
 
@@ -56,7 +56,7 @@ Si busca descargar o usar carpetas de trabajo en Windows 10, Windows 7 o en un d
 
  Carpetas de trabajo incluye la siguiente funcionalidad.  
   
-| Funcionalidad | Disponibilidad | Descripción |  
+| Funcionalidad | Disponibilidad | Description |  
 | ------------------- | ------------------ | ----------------- |  
 | Servicio de rol carpetas de trabajo en Administrador del servidor | Windows Server 2019, Windows Server 2016 o Windows Server 2012 R2 | Los servicios de archivos y almacenamiento proporcionan una manera de configurar los recursos compartidos de sincronización (carpetas que almacenan los archivos de trabajo del usuario), supervisa las carpetas de trabajo y administra los recursos compartidos de sincronización y el acceso de usuario |
 | Cmdlets de carpetas de trabajo | Windows Server 2019, Windows Server 2016 o Windows Server 2012 R2 | Un módulo de Windows PowerShell que contiene cmdlets completos para administrar servidores de carpetas de trabajo |  
@@ -140,7 +140,7 @@ En la tabla siguiente se describe cómo se colocan varias tecnologías de Micros
 | | Carpetas de trabajo | Archivos sin conexión | OneDrive para la Empresa | OneDrive |
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
 | **Resumen de tecnología** | Sincroniza los archivos que se almacenan en un servidor de archivos con equipos y dispositivos | Sincroniza los archivos que se almacenan en un servidor de archivos con equipos que tienen acceso a la red corporativa (se pueden reemplazar por carpetas de trabajo) | Sincroniza los archivos que se almacenan en Office 365 o en SharePoint con equipos y dispositivos dentro o fuera de una red corporativa, y proporciona la funcionalidad de colaboración de documentos. | Sincroniza los archivos personales que se almacenan en OneDrive con equipos, equipos Mac y dispositivos. |
-| **Diseñado para proporcionar acceso de usuario a los archivos de trabajo** | Sí | Sí | Sí | No |
+| **Diseñado para proporcionar acceso de usuario a los archivos de trabajo** | Yes | Sí | Sí | No |
 | **servicio en la nube** | None | None | Office 365 | Microsoft OneDrive |
 | **Servidores de la red interna** | Servidores de archivos que ejecutan Windows Server 2012 R2 o Windows Server 2016 | Servidores de archivos | SharePoint Server (opcional) | None |
 | **Clientes compatibles** | Equipos, iOS y Android | Equipos en una red corporativa o conectados a través de DirectAccess, VPN u otras tecnologías de acceso remoto | PC, iOS, Android, Windows Phone | PC, equipos Mac, Windows Phone, iOS y Android |
@@ -164,7 +164,7 @@ Carpetas de trabajo forma parte del rol servicios de archivos y almacenamiento. 
   
 Para obtener información acerca de cómo empezar a trabajar con máquinas virtuales de Windows Azure, visite el [sitio web de Windows Azure](http://www.windowsazure.com/documentation/services/virtual-machines).  
   
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulte también:
 
  Para obtener más información relacionada, vea los siguientes recursos.  
   
@@ -175,4 +175,4 @@ Para obtener información acerca de cómo empezar a trabajar con máquinas virtu
 | **Operaciones** | -   [Carpetas de trabajo de la aplicación de iPad: preguntas más frecuentes](https://windows.microsoft.com/windows/work-folders-ipad-faq) (para usuarios)<br />-   [Administración de certificados de carpetas de trabajo](https://blogs.technet.com/b/filecab/archive/2013/08/09/work-folders-certificate-management.aspx) (entrada de blog)<br />-   [Supervisión de las implementaciones de carpetas de trabajo de Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/10/15/monitoring-windows-server-2012-r2-work-folders-deployments.aspx) (entrada de blog)<br />-   [Cmdlets de SyncShare (carpetas de trabajo) en Windows PowerShell](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)<br />-   [Tarjeta de referencia rápida de cmdlets de PowerShell para servicios de archivos y almacenamiento para Windows Server 2012 R2 Preview Edition](https://blogs.technet.com/b/filecab/archive/2013/07/30/storage-and-file-services-powershell-cmdlets-quick-reference-card-for-windows-server-2012-r2-preview-edition.aspx) |
 | **Solución de problemas** | -   [Windows Server 2012 R2: resolución de conflictos de puerto con sitios web y carpetas de trabajo de IIS](https://blogs.technet.com/b/filecab/archive/2013/10/15/windows-server-2012-r2-resolving-port-conflict-with-iis-websites-and-work-folders.aspx) (entrada de blog)<br />-   [Errores comunes en carpetas de trabajo](https://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx) |
 | **Recursos de la comunidad** | -   [Foro de almacenamiento y servicios de archivos](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [El equipo de almacenamiento en el blog de Microsoft-File Cabinet](https://blogs.technet.com/b/filecab/)<br />-   [Pregunte al blog del equipo de servicios de directorio](https://blogs.technet.com/b/askds/) |  
-| **Tecnologías relacionadas** | -   [Almacenamiento en Windows Server 2016](../storage.md)<br>-   [Servicios de archivos y almacenamiento](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />-   [Administrador de recursos de servidor de archivos](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx)<br />-   [Redirección de carpetas, Archivos sin conexión y perfiles de usuario móviles](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [Espacios de nombres DFS y Replicación DFS](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) |
+| **Tecnologías relacionadas** | -   [Almacenamiento en Windows Server 2016](../storage.yml)<br>-   [Servicios de archivos y almacenamiento](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />-   [Administrador de recursos de servidor de archivos](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx)<br />-   [Redirección de carpetas, Archivos sin conexión y perfiles de usuario móviles](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [Espacios de nombres DFS y Replicación DFS](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) |

@@ -1,0 +1,71 @@
+### YamlMime:Landing
+title: Documentación de administración de Windows Server
+summary: Una vez que hayas implementado Windows Server en tu entorno, incluyendo los roles específicos para las características y funciones que necesitas, el siguiente paso es la administración de esos servidores. Windows Server incluye una serie de herramientas para ayudarte a comprender el entorno de Windows Server, administrar servidores específicos, ajustar con precisión el rendimiento y finalmente automatizar muchas tareas de administración.
+metadata:
+  title: Documentación de administración de Windows Server
+  description: Obtenga información sobre herramientas, recomendaciones e instrucciones sobre la administración de Windows Server.
+  ms.topic: landing-page
+  author: lizap
+  ms.author: elizapo
+  ms.date: 06/09/2020
+  ms.openlocfilehash: a115a703071b52e7a27d925578d7703f270b925b
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: MT
+  ms.contentlocale: es-ES
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85070985"
+landingContent:
+- title: Administrar los sistemas y entornos de Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Administrar en sistemas locales, sistemas remotos y sistemas sin interfaz de usuario con Windows Admin Center
+      url: ../manage/windows-admin-center/overview.md
+    - text: Administrar sistemas locales con el Administrador de servidores
+      url: server-manager/server-manager.md
+    - text: Administrar sistemas remotos y sistemas sin interfaz de usuario con las herramientas de administración de servidores remotos (RSAT)
+      url: ../remote/remote-server-administration-tools.md
+    - text: Administrar las actualizaciones de sistemas Windows Server
+      url: windows-server-update-services/get-started/windows-server-update-services-wsus.md
+- title: Recopilar información sobre tu entorno
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Recopilación de eventos de configuración y arranque
+      url: get-started-with-setup-and-boot-event-collection.md
+    - text: Registro de inventario de software (SIL)
+      url: software-inventory-logging/get-started-with-software-inventory-logging.md
+    - text: Registro de acceso de usuarios (UAL)
+      url: user-access-logging/get-started-with-user-access-logging.md
+- title: Ajustar el entorno de Windows Server para conseguir rendimiento
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Directrices de ajuste del rendimiento
+      url: performance-tuning/index.md
+    - text: Microsoft Server Performance Advisor
+      url: server-performance-advisor/microsoft-server-performance-advisor.md
+- title: Automatizar la administración de Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows PowerShell
+      url: https://docs.microsoft.com/powershell/scripting/overview
+    - text: Comandos de Windows
+      url: windows-commands/windows-commands.md
+    - text: Conclusiones del sistema
+      url: ..\manage\system-insights\overview.md
+- title: Acceder a servidores locales, remotos y virtuales
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Servicios de Escritorio remoto
+      url: ../remote/remote-desktop-services/welcome-to-rds.md
+- title: Versiones anteriores de Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Documentación de versiones anteriores de Windows
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: Buscar información específica
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

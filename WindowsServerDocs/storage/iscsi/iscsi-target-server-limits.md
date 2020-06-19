@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: b5303a474b498bd82a133427243ced86980c6d7d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 31853f1adaed6794138861da0991aa47e79602bc
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949662"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070572"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>Límites de escalabilidad del servidor de destino iSCSI
 
@@ -54,26 +54,26 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 <tr class="odd">
 <td><p>unidades de disco virtual o UGM iSCSI por instancia de destino iSCSI</p></td>
 <td><p>256 (128 en Windows Server 2012)</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Sesiones que pueden conectarse simultáneamente a una instancia de destino iSCSI</p></td>
 <td><p>544 (512 en Windows Server 2012)</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Instantáneas por LU</p></td>
 <td><p>512</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td><p>Hay un límite de 512 instantáneas por volumen de aplicación iSCSI independiente.</p></td>
 </tr>
 <tr class="even">
 <td><p>Discos virtuales montados localmente o instantáneas por dispositivo de almacenamiento</p></td>
 <td><p>32</p></td>
-<td><p>Sí</p></td>
-<td><p>Los discos&#39;virtuales montados localmente no ofrecen ninguna funcionalidad específica de iSCSI y están en desuso. para obtener más información, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">características eliminadas o en desuso en Windows Server 2012 R2</a>.</p></td>
+<td><p>Yes</p></td>
+<td><p>Los discos virtuales montados localmente no&#39;t ofrecen ninguna funcionalidad específica de iSCSI y están en desuso. para obtener más información, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">características eliminadas o en desuso en Windows Server 2012 R2</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -104,15 +104,15 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 </tr>
 <tr class="even">
 <td><p>Varios nodos de clúster activos</p></td>
-<td><p>Se admite</p></td>
+<td><p>Compatible</p></td>
 <td> 
-<p>N/A</p></td>
+<p>N/D</p></td>
 <td><p>Cada nodo activo del clúster de conmutación por error posee una instancia en clúster de servidor de destino iSCSI diferente con otros nodos que actúan como posibles nodos propietarios.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Nivel de recuperación de errores (ERL)</p></td>
 <td><p>0</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -129,8 +129,8 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 </tr>
 <tr class="even">
 <td><p>Entrada/salida de múltiples rutas (MPIO)</p></td>
-<td><p>Se admite</p></td>
-<td><p>N/A</p></td>
+<td><p>Compatible</p></td>
+<td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -141,7 +141,7 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 </tr>
 <tr class="even">
 <td><p>Conversión de un servidor de destino iSCSI independiente en un servidor de destino iSCSI en clúster o viceversa</p></td>
-<td><p>Incompatible</p></td>
+<td><p>No compatibles</p></td>
 <td><p>No</p></td>
 <td><p>La instancia de destino iSCSI y los datos de configuración de disco virtual, incluidos los metadatos de instantánea, se pierden durante la conversión.</p></td>
 </tr>
@@ -175,7 +175,7 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 <tr class="even">
 <td><p>Portal (direcciones IP) admitido</p></td>
 <td><p>64</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -186,44 +186,44 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 </tr>
 <tr class="even">
 <td><p>IPv4</p></td>
-<td><p>Se admite</p></td>
-<td><p>N/A</p></td>
+<td><p>Compatible</p></td>
+<td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPv6</p></td>
-<td><p>Se admite</p></td>
-<td><p>N/A</p></td>
+<td><p>Compatible</p></td>
+<td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Descarga TCP</p></td>
-<td><p>Se admite</p></td>
-<td><p>N/A</p></td>
+<td><p>Compatible</p></td>
+<td><p>N/D</p></td>
 <td><p>Aproveche el envío de gran tamaño (segmentación), suma de comprobación, moderación de interrupciones y descarga RSS</p></td>
 </tr>
 <tr class="odd">
 <td><p>descarga de iSCSI</p></td>
-<td><p>Incompatible</p></td>
-<td><br/><p>N/A</p></td>
+<td><p>No compatible</p></td>
+<td><br/><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Tramas gigantes</p></td>
-<td><p>Se admite</p></td>
-<td><p>N/A</p></td>
+<td><p>Compatible</p></td>
+<td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPSec</p></td>
-<td><p>Se admite</p></td>
-<td><p>N/A</p></td>
+<td><p>Compatible</p></td>
+<td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Descarga de CRC</p></td>
-<td><p>Se admite</p></td>
-<td><p>N/A</p></td>
+<td><p>Compatible</p></td>
+<td><p>N/D</p></td>
 <td></td>
 </tr>
 </tbody>
@@ -264,39 +264,39 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 <td><p>Tamaño de formato mínimo de VHD</p></td>
 <td><p>. vhdx: 3 MB</p>
 <p>. vhd: 8 MB</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td><p>Se aplica a todos los tipos de VHD compatibles: primario, diferenciado y fijo.</p></td>
 </tr>
 <tr class="even">
 <td><p>Tamaño máximo de VHD primario</p></td>
 <td><p>. vhdx: 64 TB</p>
 <p>. vhd: 2 TB</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Tamaño máximo de VHD fijo</p></td>
 <td><p>. vhdx: 64 TB</p>
 <p>. vhd: 16 TB</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Tamaño máximo de VHD de diferenciación</p></td>
 <td><p>. vhdx: 64 TB</p>
 <p>. vhd: 2 TB</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Formato fijo de VHD</p></td>
-<td><p>Se admite</p></td>
+<td><p>Compatible</p></td>
 <td><p>No</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Formato de diferenciación de VHD</p></td>
-<td><p>Se admite</p></td>
+<td><p>Compatible</p></td>
 <td><p>No</p></td>
 <td><p>No se pueden tomar instantáneas de discos virtuales iSCSI basados en VHD de diferenciación.</p></td>
 </tr>
@@ -310,55 +310,55 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 <td><p>Formato dinámico de VHD</p></td>
 <td><p>. vhdx: sí</p>
 <p>. vhd: sí (no en Windows Server 2012)</p></td>
-<td><p>Sí</p></td>
-<td><p>&#39;No se admite la desasignación.</p></td>
+<td><p>Yes</p></td>
+<td><p>No se puede desasignar el&#39;t.</p></td>
 </tr>
 <tr class="odd">
 <td><p>exFAT/FAT32/FAT (volumen de hospedaje del VHD)</p></td>
-<td><p>Incompatible</p></td>
+<td><p>No compatible</p></td>
 <td><p>Sí</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>CSV V2</p></td>
-<td><p>Incompatible</p></td>
+<td><p>No compatible</p></td>
 <td><p>Sí</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>ReFS</p></td>
-<td><p>Se admite</p></td>
-<td><p>N/A</p></td>
+<td><p>Compatible</p></td>
+<td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>NTFS</p></td>
-<td><p>Se admite</p></td>
-<td><p>N/A</p></td>
+<td><p>Compatible</p></td>
+<td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>CFS que no es de Microsoft</p></td>
-<td><p>Incompatible</p></td>
+<td><p>No compatible</p></td>
 <td><p>Sí</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Aprovisionamiento fino</p></td>
 <td><p>No</p></td>
-<td><p>N/A</p></td>
-<td><p>Se admiten los VHD dinámicos,&#39;pero no se admite la asignación.</p></td>
+<td><p>N/D</p></td>
+<td><p>Se admiten los discos duros virtuales dinámicos, pero no se puede desasignar el&#39;t.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Reducción de unidad lógica</p></td>
 <td><p>Sí (solo Windows Server 2012 R2 y versiones más recientes)</p></td>
-<td><p>N/A</p></td>
+<td><p>N/D</p></td>
 <td><p>Use <a href="https://docs.microsoft.com/powershell/module/iscsitarget/resize-iscsivirtualdisk">Resize-iSCSIVirtualDisk</a> para reducir un LUN.</p></td>
 </tr>
 <tr class="even">
 <td><p>Clonación de unidad lógica</p></td>
-<td><p>Incompatible</p></td>
-<td><p>N/A</p></td>
+<td><p>No compatibles</p></td>
+<td><p>N/D</p></td>
 <td><p>Puede clonar rápidamente datos de disco mediante discos duros virtuales de diferenciación.</p></td>
 </tr>
 </tbody>
@@ -382,47 +382,47 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 <tbody>
 <tr class="odd">
 <td><p>Creación de instantáneas</p></td>
-<td><p>Se admite</p></td>
+<td><p>Compatible</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Restauración de instantáneas</p></td>
-<td><p>Se admite</p></td>
+<td><p>Compatible</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Instantáneas de escritura</p></td>
-<td><p>Incompatible</p></td>
+<td><p>No compatibles</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Instantánea: convertir en completo</p></td>
-<td><p>Incompatible</p></td>
+<td><p>No compatibles</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Instantánea: reversión en línea</p></td>
-<td><p>Incompatible</p></td>
+<td><p>No compatibles</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Instantánea: convertir en grabable</p></td>
-<td><p>Incompatible</p></td>
+<td><p>No compatibles</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Instantánea: redirección</p></td>
-<td><p>Incompatible</p></td>
+<td><p>No compatibles</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Anclaje de instantáneas</p></td>
-<td><p>Incompatible</p></td>
+<td><p>No compatibles</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Montaje local</p></td>
-<td><p>Se admite</p></td>
+<td><p>Compatible</p></td>
 <td><p>Los discos virtuales iSCSI montados localmente están en desuso. para obtener más información, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">características eliminadas o en desuso en Windows Server 2012 R2</a>. Las instantáneas de disco dinámico no se pueden montar localmente.</p></td>
 </tr>
 </tbody>
@@ -430,11 +430,11 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 
 ## <a name="iscsi-target-server-manageability-and-backup"></a>facilidad de administración y copia de seguridad del servidor de destino iSCSI
 
-Si desea crear instantáneas de volumen (instantáneas de archivo abierto VSS) de datos en discos virtuales iSCSI desde un servidor de aplicaciones, o si desea administrar discos virtuales iSCSI con una aplicación anterior (como el comando Diskraid) que requiere un hardware de servicio de disco virtual (VDS) , instale el proveedor de almacenamiento del destino iSCSI en el servidor desde el que desea tomar una instantánea o usar una aplicación de administración de VDS.
+Si desea crear instantáneas de volumen (instantáneas de archivo abierto VSS) de datos en discos virtuales iSCSI desde un servidor de aplicaciones, o bien, desea administrar los discos virtuales iSCSI con una aplicación anterior (como el comando de Diskraid) que requiere un proveedor de hardware de servicio de disco virtual (VDS), instalar el proveedor de almacenamiento del destino iSCSI en el servidor desde el que desea realizar una instantánea o usar una aplicación de administración de VDS.
 
 El proveedor de almacenamiento del destino iSCSI es un servicio de rol en Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012; también puede descargar e instalar [proveedores de almacenamiento de destino iSCSI (VDS/VSS) para servidores de aplicaciones de nivel inferior](https://www.microsoft.com/download/details.aspx?id=34759) en los siguientes sistemas operativos, siempre que el servidor de destino iSCSI se ejecute en Windows Server 2012:
 
-  - Windows Storage Server 2008 R2
+  - Windows Storage Server 2008 R2
 
   - Windows Server 2008 R2
 
@@ -442,7 +442,7 @@ El proveedor de almacenamiento del destino iSCSI es un servicio de rol en Window
 
   - Windows HPC Server 2008
 
-Tenga en cuenta que si el servidor de destino iSCSI está hospedado en un servidor que ejecuta Windows Server 2012 R2 o una versión más reciente y desea usar VSS o VDS desde un servidor remoto, el servidor remoto también debe ejecutar la misma versión de Windows Server y tener el servicio de rol proveedor de almacenamiento del destino iSCSI e instalado. Tenga en cuenta también que en todas las versiones de Windows debe instalar solo una versión del servicio de rol proveedor de almacenamiento del destino iSCSI.
+Tenga en cuenta que si el servidor de destino iSCSI está hospedado en un servidor que ejecuta Windows Server 2012 R2 o una versión más reciente y desea usar VSS o VDS desde un servidor remoto, el servidor remoto también debe ejecutar la misma versión de Windows Server y tener instalado el servicio de rol proveedor de almacenamiento del destino iSCSI. Tenga en cuenta también que en todas las versiones de Windows debe instalar solo una versión del servicio de rol proveedor de almacenamiento del destino iSCSI.
 
 Para obtener más información sobre el proveedor de almacenamiento del destino iSCSI, consulte [proveedor de almacenamiento de destino iSCSI (VDS/VSS)](https://blogs.technet.com/b/filecab/archive/2012/10/08/iscsi-target-storage-vds-vss-provider.aspx).
 
@@ -460,12 +460,12 @@ Hemos probado el software del servidor de destino iSCSI con los siguientes inici
 <tbody>
 <tr class="odd">
 <td><p>Iniciador</p></td>
-<td><p>R2 de Windows 2012 Server</p></td>
+<td><p>Windows Server 2012 R2</p></td>
 <td><p>Windows Server 2012</p></td>
-<td><p>Observaciones</p></td>
+<td><p>Comentarios</p></td>
 </tr>
 <tr class="even">
-<td><p>R2 de Windows 2012 Server</p></td>
+<td><p>Windows Server 2012 R2</p></td>
 <td><p>Validar</p></td>
 <td></td>
 <td></td>
@@ -529,7 +529,7 @@ Hemos probado el software del servidor de destino iSCSI con los siguientes inici
 
 También hemos probado los siguientes iniciadores iSCSI que realizan un arranque sin disco desde discos virtuales hospedados por el servidor de destino iSCSI:
 
-  - R2 de Windows 2012 Server
+  - Windows Server 2012 R2
 
   - Windows Server 2012
 
@@ -537,13 +537,13 @@ También hemos probado los siguientes iniciadores iSCSI que realizan un arranque
 
   - Disco CD o USB con iPXE
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Consulte también:
 
 En la siguiente lista se proporcionan recursos adicionales acerca del servidor de destino iSCSI y las tecnologías relacionadas.
 
 - [Información general de almacenamiento de bloque de destino iSCSI](iscsi-target-server.md)
 
-- [Información general de arranque de destino iSCSI](iscsi-boot-overview.md)
+- [iSCSI Target Boot Overview](iscsi-boot-overview.md)
 
-- [Almacenamiento en Windows Server](../storage.md)
+- [Almacenamiento en Windows Server](../storage.yml)
 

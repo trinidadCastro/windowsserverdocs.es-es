@@ -1,5 +1,5 @@
 ---
-title: Introducción al sistema de archivos de red
+title: Introducción a Network File System
 description: Explica qué es Network File System.
 ms.prod: windows-server
 ms.topic: article
@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f71bc6605103f8240bcd531da3a5b58d470181
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2589e21c54fa864629f81b5889d0442c6f0de254
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403046"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070560"
 ---
-# <a name="network-file-system-overview"></a>Introducción al sistema de archivos de red
+# <a name="network-file-system-overview"></a>Introducción a Network File System
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 En este tema se describen el servicio de rol sistema de archivos de red y las características incluidas con el rol de servidor servicios de archivos y almacenamiento en Windows Server. Network File System (NFS) proporciona una solución de uso compartido de archivos para empresas que tienen entornos heterogéneos que incluyen equipos Windows y otros que no son de Windows.
 
@@ -49,7 +49,7 @@ Estas son algunas formas de usar NFS:
 
 La funcionalidad nueva y modificada en Network File System incluye compatibilidad con la versión 4,1 de NFS y una mejor implementación y facilidad de administración. Para obtener información acerca de las funciones nuevas o modificadas en Windows Server 2012, revise la siguiente tabla:
 
-|Característica/funcionalidad|Nueva o actualizada|Descripción|
+|Característica/funcionalidad|Nueva o actualizada|Description|
 |---|---|---|
 |[Versión 4,1 de NFS](#nfs-version-41)|Nuevo|Aumento de la seguridad, el rendimiento y la interoperabilidad en comparación con la versión 3 de NFS.|
 |[Infraestructura de NFS](#nfs-infrastructure)|Actualizado|Mejora la implementación y la capacidad de administración, y aumenta la seguridad.|
@@ -117,5 +117,5 @@ En la tabla siguiente se proporcionan recursos adicionales para evaluar NFS.
 |Tipo de contenido|Referencias|
 |---|---|
 |Implementación|[Implementar el sistema de archivos de red](deploy-nfs.md)|
-|Operaciones|[Cmdlets de NFS en Windows PowerShell](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
-|Tecnologías relacionadas|[Almacenamiento en Windows Server](../storage.md)|
+|Operations|[Cmdlets de NFS en Windows PowerShell](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
+|Tecnologías relacionadas|[Almacenamiento en Windows Server](../storage.yml)|
