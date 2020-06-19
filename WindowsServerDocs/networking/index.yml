@@ -1,0 +1,120 @@
+### YamlMime:Landing
+title: Documentación de redes
+summary: Las redes son una parte fundamental de la plataforma del Centro de datos definido por software (SDDC), y Windows Server 2016 proporciona tecnologías nuevas y mejoradas de redes definidas por software (SDN) para ayudarle a pasar a una solución SDDC desarrollada por completo para su organización.
+metadata:
+  title: Documentación de redes
+  description: En este tema se proporciona una visión general de las tecnologías de redes definidas por software y la plataforma de redes que están disponibles en Windows Server 2016.
+  layout: LandingPage
+  ms.technology: networking
+  ms.topic: landing-page
+  manager: dougkim
+  author: AnirbanPaul
+  ms.author: anpaul
+  ms.date: 06/11/2020
+  ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
+  ms.localizationpriority: medium
+  ms.openlocfilehash: 9b419210689e0ca11bfc2c285cd6669d3a883679
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: HT
+  ms.contentlocale: es-ES
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85071010"
+landingContent:
+- title: Acerca de las redes
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Escenarios de redes que admite Windows Server
+      url: windows-server-supported-networking-scenarios.md
+  - linkListType: whats-new
+    links:
+    - text: Novedades de redes
+      url: What-s-New-in-Networking.md
+  - linkListType: reference
+    links:
+    - text: Bibliotecas de Windows Server
+      url: /previous-versions/windows/
+    - text: Contenido retirado de Windows Server 2003/2003 R2
+      url: https://www.microsoft.com/download/details.aspx?id=53314
+- title: Redes definidas por software
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Redes definidas por software (SDN)
+      url: sdn/index.yml
+    - text: Controladora de red
+      url: sdn/technologies/network-controller/Network-Controller.md
+    - text: Equilibrio de carga de software (SLB) para SDN
+      url: sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md
+    - text: Puerta de enlace RAS para SDN
+      url: sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md
+    - text: Virtualización de función de red
+      url: sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md
+    - text: Información general de Datacenter Firewall
+      url: sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md
+  - linkListType: deploy
+    links:
+    - text: Implementar una infraestructura SDN con scripts
+      url: sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md
+- title: Tecnologías de redes
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: BranchCache
+      url: branchcache/BranchCache.md
+    - text: guía de red principal
+      url: core-network-guide/core-network-guide-windows-server.md
+    - text: DirectAccess
+      url: ../remote/remote-access/da-stub.md
+    - text: Sistema de nombres de dominio (DNS)
+      url: dns/dns-top.md
+    - text: Protocolo de configuración dinámica de host (DHCP)
+      url: technologies/dhcp/dhcp-top.md
+    - text: Virtualización de red de Hyper-V
+      url: sdn/technologies/hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md
+    - text: Conmutador virtual de Hyper-V
+      url: ../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md
+    - text: Administración de direcciones IP (IPAM)
+      url: technologies/ipam/ipam-top.md
+    - text: Equilibrio de carga de red (NLB)
+      url: technologies/Network-Load-Balancing.md
+- title: Tecnologías de redes
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Servidor de directivas de redes
+      url: technologies/nps/nps-top.md
+    - text: Shell de red (Netsh)
+      url: technologies/netsh/netsh.md
+    - text: Ajuste de rendimiento del subsistema de red
+      url: technologies/network-subsystem/net-sub-performance-top.md
+    - text: Formación de equipos NIC
+      url: technologies/nic-teaming/NIC-Teaming.md
+    - text: Directiva de calidad de servicio (QoS)
+      url: technologies/qos/qos-policy-top.md
+    - text: Servicio de nombres Internet de Windows (WINS)
+      url: technologies/wins/wins-top.md
+    - text: Acceso remoto
+      url: ../remote/remote-access/remote-access.md
+    - text: Red de contenedores de Windows
+      url: /virtualization/windowscontainers/container-networking/architecture
+    - text: Redes privadas virtuales (VPN)
+      url: ../remote/remote-access/vpn/vpn-top.md
+  - linkListType: reference
+    links:
+    - text: Proxy de aplicación web en Windows Server 2016
+      url: /windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server
+    - text: Guía de implementación del Acceso remoto con VPN de Always On
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy
+- title: Redes de alto rendimiento
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Redes de alto rendimiento
+      url: technologies/hpn/hpn-top.md
+    - text: Tarjeta de interfaz de red (NIC) convergente
+      url: technologies/conv-nic/cnic-top.md
+    - text: Data Center Bridging (DCB)
+      url: technologies/dcb/dcb-top.md
+    - text: Ajuste de escala en lado de recepción virtual (vRSS)
+      url: technologies/vrss/vrss-top.md

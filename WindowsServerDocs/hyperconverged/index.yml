@@ -1,65 +1,60 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Hub
 title: Documentación de infraestructura hiperconvergida
+summary: Consolide los procesos, el almacenamiento y las redes definidos por software en un clúster para proporcionar alto rendimiento, rentabilidad y virtualización fácilmente escalable.
+brand: windows
 metadata:
-  document_id: null
   title: Documentación de infraestructura hiperconvergida
-  description: Documentación de infraestructura hiperconvergida
-  text: 'Consolide los procesos, el almacenamiento y las redes definidos por software en un clúster para proporcionar alto rendimiento, rentabilidad y virtualización fácilmente escalable'
-  keywords: 'Windows Server, Windows Server 2016, hyper-v, sdn, espacios de almacenamiento directos, wssd'
-  ms.localizationpriority: high
+  description: Consolide los procesos, el almacenamiento y las redes definidos por software en un clúster para proporcionar alto rendimiento, rentabilidad y virtualización fácilmente escalable.
+  ms.service: help
+  ms.topic: hub-page
   author: coreyp-at-msft
   ms.author: coreyp
-  ms.topic: article
-  ms.devlang: na
-sections:
-  - title: null
-  - items:
-      - type: markdown
-        text: 'Consolide los procesos, el almacenamiento y las redes definidos por software en un clúster para proporcionar alto rendimiento, rentabilidad y virtualización fácilmente escalable.'
-  - items:
-      - type: list
-        style: cards
-        className: cardsI
-        columns: 2
-        items:
-          - href: ../virtualization/hyper-v/index.md
-            html: '<p>Virtualiza el hardware de servidor, lo que le permite ejecutar máquinas virtuales entre servidores en un clúster hiperconvergido</p>'
-            image:
-              src: ../media/i-virtualize.svg
-            title: Hyper-V
-          - href: ../storage/storage-spaces/storage-spaces-direct-overview.md
-            html: '<p>Virtualiza el hardware de almacenamiento, lo que le permite crear volúmenes encima de un grupo virtualizado de unidades repartidas entre servidores en un clúster hiperconvergido.</p>'
-            image:
-              src: ../media/i-store.svg
-            title: Espacios de almacenamiento directos
-          - href: ../failover-clustering/failover-clustering-overview.md
-            html: '<p>Agrupa varios servidores para que las cargas de trabajo, como máquinas virtuales, puedan ejecutarse en cualquier servidor en el clúster, para el equilibrio de carga y la conmutación por error correcta entre servidores.</p>'
-            image:
-              src: ../media/i-cluster.svg
-            title: Clúster de conmutación por error
-          - href: 'https://docs.microsoft.com/windows-server/networking/sdn/'
-            html: '<p>Virtualiza el hardware de red, lo que le permite crear y administrar dinámicamente las redes y las directivas que abstraen las cargas de trabajo de redes físicas subyacentes.</p>'
-            image:
-              src: ../media/i-network.svg
-            title: Redes definidas por software
-          - href: ../manage/windows-admin-center/overview.md
-            html: <p>Administra el clúster y otros servidores Windows.</p>
-            image:
-              src: ../media/i-admin-center.svg
-            title: Windows Admin Center
-          - href: ../azure-hybrid-services.md
-            html: '<p>Conecta el clúster a los servicios híbridos de Azure con fines de recuperación de sitios, supervisión, etc.</p>'
-            image:
-              src: ../media/i-microsoft-azure.svg
-            title: Conexión a los servicios híbridos de Azure
-          - href: ../azure-stack-hci
-            html: '<p>Empareja las tecnologías de virtualización y agrupación en clústeres de Windows Server 2019 con las soluciones de hardware validadas por el asociado de su elección, lo que ayuda a eliminar las suposiciones al querer optimizar un centro de datos definido por software.</p>'
-            image:
-              src: ../media/i-azure-stack.svg
-            title: Azure Stack HCI
-          - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
-            html: '<p>Empareja las tecnologías de virtualización y agrupación en clústeres de Windows Server 2016 con las soluciones de hardware validadas por el asociado de su elección, lo que ayuda a eliminar las suposiciones al querer optimizar un centro de datos definido por software.</p>'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
-            title: Windows Server definido por software (WSSD)
+  ms.date: 06/10/2020
+  ms.openlocfilehash: 1d2ec270e90423f2405b664f22de7ca85c540498
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: HT
+  ms.contentlocale: es-ES
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85070164"
+productDirectory:
+  items:
+  - title: Hyper-V
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-virtualize.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/
+      text: Virtualiza el hardware de servidor, lo que le permite ejecutar máquinas virtuales entre servidores en un clúster hiperconvergido.
+  - title: Espacios de almacenamiento directos
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-store.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview
+      text: Virtualiza el hardware de almacenamiento, lo que le permite crear volúmenes encima de un grupo virtualizado de unidades repartidas entre servidores en un clúster hiperconvergido.
+  - title: Clúster de conmutación por error
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-cluster.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview
+      text: Agrupa varios servidores para que las cargas de trabajo, como máquinas virtuales, puedan ejecutarse en cualquier servidor en el clúster, para el equilibrio de carga y la conmutación por error correcta entre servidores.
+  - title: Redes definidas por software
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-network.svg
+    links:
+    - url: https://docs.microsoft.com/windows-server/networking/sdn/
+      text: Virtualiza el hardware de red, lo que le permite crear y administrar dinámicamente las redes y las directivas que abstraen las cargas de trabajo de redes físicas subyacentes.
+  - title: Windows Admin Center
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-admin-center.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview
+      text: Virtualiza el hardware de servidor, lo que le permite ejecutar máquinas virtuales entre servidores en un clúster hiperconvergido.
+  - title: Conexión a los servicios híbridos de Azure
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-microsoft-azure.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/azure-hybrid-services
+      text: Conecta el clúster a los servicios híbridos de Azure con fines de recuperación de sitios, supervisión, etc.
+  - title: Azure Stack HCI
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-azure-stack.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/azure-stack-hci
+      text: Empareja las tecnologías de virtualización y agrupación en clústeres de Windows Server 2019 con las soluciones de hardware validadas por el asociado de su elección, lo que ayuda a eliminar las suposiciones al querer optimizar un centro de datos definido por software.
+  - title: Windows Server definido por software (WSSD)
+    imageSrc: https://docs.microsoft.com/media/common/i_data-collection.svg
+    links:
+    - url: https://www.microsoft.com/cloud-platform/software-defined-datacenter
+      text: Empareja las tecnologías de virtualización y agrupación en clústeres de Windows Server 2016 con las soluciones de hardware validadas por el asociado de su elección, lo que ayuda a eliminar las suposiciones al querer optimizar un centro de datos definido por software.
