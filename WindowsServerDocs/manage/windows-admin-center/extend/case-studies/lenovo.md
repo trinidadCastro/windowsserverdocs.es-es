@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 812091715ed6541294650ba7e6ddde9ab1f2fecb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a51b4bb5f6dc7dcd002b8e7a8998ce731fa374ed
+ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407024"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942342"
 ---
 # <a name="lenovo-xclarity-integrator-extension"></a>Extensión de integrador de Lenovo XClarity
 
@@ -33,9 +33,19 @@ Las mismas herramientas también están disponibles como una extensión de herra
 
 ![Extensión de Lenovo](../../media/extend-case-study-lenovo/lenovo-3.png)
 
-La extensión de herramientas de clústeres de conmutación por error y clústeres hiperconvergidos proporciona un panel que muestra el estado general de mantenimiento del hardware del clúster, las alertas de estado, el estado de coherencia del firmware y el informe, el consumo de energía y la temperatura, y la fuente de alimentación y el ventilador. Estado de mantenimiento.
+La extensión de herramientas de clústeres de conmutación por error y clústeres hiperconvergidos proporciona un panel que muestra el estado general de mantenimiento del hardware del clúster, las alertas de estado, el estado de coherencia del firmware y el informe, el consumo de energía y la temperatura, y el estado de mantenimiento de la fuente de alimentación y el ventilador.
 
-extensión ![Lenovo](../../media/extend-case-study-lenovo/lenovo-4.png)
-![extensión Lenovo](../../media/extend-case-study-lenovo/lenovo-5.png)
+![](../../media/extend-case-study-lenovo/lenovo-4.png)
+Extensión Lenovo de extensión Lenovo ![](../../media/extend-case-study-lenovo/lenovo-5.png)
+
+La extensión de la solución y las extensiones de herramientas para los servidores y clústeres de Windows proporcionan las funciones de actualización del servidor (que reconocen clústeres). Esto puede ayudar a evitar cualquier interrupción de la carga de trabajo durante las actualizaciones del servidor. Actualmente, las extensiones admiten actualizaciones de firmware individuales y actualizaciones de firmware de directivas de cumplimiento para todos los servidores de Lenovo. También admiten las mejores actualizaciones de controladores y firmware de recetas para los servidores de clúster de HCl de Lenovo ThinkAgile MX.
+
+![Extensión de Lenovo](../../media/extend-case-study-lenovo/lenovo-6-fwupdate.png)
+
+La extensión de herramientas de los clústeres de hiperconvergido proporciona las funciones de administración del grupo de almacenamiento o del disco para los servidores de clúster de HCl de Lenovo ThinkAgile MX. Estas funciones incluyen la vista gráfica trasera/delantera del servidor para presentar el estado del servidor y del disco. Con la ayuda del asistente y la vista gráfica, las operaciones como la adición de un disco al bloque de almacenamiento, la eliminación de un disco del bloque de almacenamiento, el reemplazo de un disco o la localización de un servidor o disco por la iluminación en los LED de ubicación del servidor/disco son mucho más fáciles.
+
+![Extensión de Lenovo](../../media/extend-case-study-lenovo/lenovo-7-diskmgr.png)
+
+En la versión 2,1, las extensiones de Lenovo introdujeron funciones de control de acceso basado en roles. Estas funcionalidades están habilitadas si se aplica el administrador de Lenovo XClarity para la administración de hardware.
 
 Obtenga más información sobre las ofertas del integrador de Lenovo XClarity para el centro de administración de Windows en el [sitio web de Lenovo](https://support.lenovo.com/us/en/solutions/ht507549).

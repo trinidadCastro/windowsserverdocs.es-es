@@ -1,4 +1,4 @@
-# [Identidad y acceso](Identity-and-Access.md)
+# [Identidad y acceso](Identity-and-Access.yml)
 
 ## [Guías de soluciones y situaciones](solution-guides/Solutions-and-Scenario-Guides.md)
 ### [Control de acceso dinámico: Información general sobre el escenario](solution-guides/Dynamic-Access-Control--Scenario-Overview.md)

@@ -1,4 +1,4 @@
-# [Almacenamiento](storage.md)
+# [Almacenamiento](storage.yml)
 ## [Novedades de almacenamiento](whats-new-in-storage.md)
 ## [Desduplicación de datos](data-deduplication/overview.md)
 ### [Novedades de Desduplicación de datos](data-deduplication/whats-new.md)
