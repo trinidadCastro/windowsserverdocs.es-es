@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: 'Información general de las carpetas de trabajo: un rol de servidor en Windows Server que proporciona una manera coherente de que los usuarios tengan acceso a los archivos de trabajo desde equipos y dispositivos.'
-ms.openlocfilehash: 4e670d61729d35ee9569b09e91ef5a953961241e
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: f48c03d97cab94f836ef6fafa77fccf07a04331b
+ms.sourcegitcommit: 44a96d505b5c96da62937f5dd2d724342ee9d835
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070089"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141034"
 ---
 # <a name="work-folders-overview"></a>Introducción a carpetas de trabajo
 
@@ -56,7 +56,7 @@ Si busca descargar o usar carpetas de trabajo en Windows 10, Windows 7 o en un d
 
  Carpetas de trabajo incluye la siguiente funcionalidad.  
   
-| Funcionalidad | Disponibilidad | Description |  
+| Funcionalidad | Disponibilidad | Descripción |  
 | ------------------- | ------------------ | ----------------- |  
 | Servicio de rol carpetas de trabajo en Administrador del servidor | Windows Server 2019, Windows Server 2016 o Windows Server 2012 R2 | Los servicios de archivos y almacenamiento proporcionan una manera de configurar los recursos compartidos de sincronización (carpetas que almacenan los archivos de trabajo del usuario), supervisa las carpetas de trabajo y administra los recursos compartidos de sincronización y el acceso de usuario |
 | Cmdlets de carpetas de trabajo | Windows Server 2019, Windows Server 2016 o Windows Server 2012 R2 | Un módulo de Windows PowerShell que contiene cmdlets completos para administrar servidores de carpetas de trabajo |  
@@ -142,7 +142,7 @@ En la tabla siguiente se describe cómo se colocan varias tecnologías de Micros
 | **Resumen de tecnología** | Sincroniza los archivos que se almacenan en un servidor de archivos con equipos y dispositivos | Sincroniza los archivos que se almacenan en un servidor de archivos con equipos que tienen acceso a la red corporativa (se pueden reemplazar por carpetas de trabajo) | Sincroniza los archivos que se almacenan en Office 365 o en SharePoint con equipos y dispositivos dentro o fuera de una red corporativa, y proporciona la funcionalidad de colaboración de documentos. | Sincroniza los archivos personales que se almacenan en OneDrive con equipos, equipos Mac y dispositivos. |
 | **Diseñado para proporcionar acceso de usuario a los archivos de trabajo** | Yes | Sí | Sí | No |
 | **servicio en la nube** | None | None | Office 365 | Microsoft OneDrive |
-| **Servidores de la red interna** | Servidores de archivos que ejecutan Windows Server 2012 R2 o Windows Server 2016 | Servidores de archivos | SharePoint Server (opcional) | None |
+| **Servidores de la red interna** | Servidores de archivos que ejecutan Windows Server 2012 R2, Windows Server 2016 y Windows Server 2019 | Servidores de archivos | SharePoint Server (opcional) | None |
 | **Clientes compatibles** | Equipos, iOS y Android | Equipos en una red corporativa o conectados a través de DirectAccess, VPN u otras tecnologías de acceso remoto | PC, iOS, Android, Windows Phone | PC, equipos Mac, Windows Phone, iOS y Android |
   
 > [!NOTE]
@@ -160,11 +160,11 @@ Carpetas de trabajo forma parte del rol servicios de archivos y almacenamiento. 
   
 ## <a name="interoperability-with-windows-azure-virtual-machines"></a>Interoperabilidad con máquinas virtuales de Windows Azure
 
- Puede ejecutar este servicio de función de Windows Server en una máquina virtual de Windows Azure. Este escenario se ha probado con Windows Server 2012 R2 y Windows Server 2016.  
+ Puede ejecutar este servicio de función de Windows Server en una máquina virtual de Windows Azure. Este escenario se ha probado con Windows Server 2012 R2, Windows Server 2016 y Windows Server 2019.  
   
 Para obtener información acerca de cómo empezar a trabajar con máquinas virtuales de Windows Azure, visite el [sitio web de Windows Azure](http://www.windowsazure.com/documentation/services/virtual-machines).  
   
-## <a name="see-also"></a>Consulte también:
+## <a name="see-also"></a>Consulte también
 
  Para obtener más información relacionada, vea los siguientes recursos.  
   
