@@ -8,12 +8,12 @@ ms.assetid: cb7f3d7d-4225-409a-9f6b-34a106e8dd24
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6f81041a2a1938add2fd8bfc03aa492d1da266cd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0c0e72f37057d50f7d7164ea84c9c7771fca0de8
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852108"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217575"
 ---
 # <a name="use-shared-folders-in-windows-server-essentials"></a>Usar carpetas compartidas en Windows Server Essentials
 
@@ -26,22 +26,22 @@ ms.locfileid: "80852108"
 
 -   [Usar el Launchpad de Windows Server Essentials](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
   
--   [Usar acceso Web remoto](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
+-   [Usar Acceso Web remoto](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
   
--   [Usar la aplicación My Server para Windows Phone](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
+-   [Usar la aplicación Mi servidor para Windows Phone](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
   
--   [Usar la aplicación My Server para Windows 8](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
+-   [Usar la aplicación Mi servidor para Windows 8](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
   
 ##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a>Usar el Launchpad de Windows Server Essentials  
  Puede utilizar el Launchpad desde cualquier equipo que esté conectado al servidor usando el Asistente para conectar un equipo al servidor. Para obtener más información acerca de cómo conectar el equipo al servidor, consulte [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
 
 -   [Usar el Launchpad de Windows Server Essentials](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
   
--   [Usar acceso Web remoto](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
+-   [Usar Acceso Web remoto](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
   
--   [Usar la aplicación My Server para Windows Phone](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
+-   [Usar la aplicación Mi servidor para Windows Phone](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
   
--   [Usar la aplicación My Server para Windows 8](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
+-   [Usar la aplicación Mi servidor para Windows 8](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
   
 ##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a>Usar el Launchpad de Windows Server Essentials  
  Puede utilizar el Launchpad desde cualquier equipo que esté conectado al servidor usando el Asistente para conectar un equipo al servidor. Para obtener más información acerca de cómo conectar el equipo al servidor, consulte [Conectar equipos al servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
@@ -63,9 +63,9 @@ ms.locfileid: "80852108"
   
 ##  <a name="using-remote-web-access"></a><a name="BKMK_UsingRWA"></a>Usar acceso Web remoto  
 
- Puede acceder a los archivos y carpetas compartidas desde cualquier equipo remoto usando el sitio web de Acceso Web remoto. Desde un equipo de la red del servidor, para tener acceso al sitio web de acceso Web remoto, abra el explorador de Internet y escriba https://< ServerName\>/Remote. Con Acceso Web remoto puede ver y administrar archivos en las carpetas compartidas. Para obtener instrucciones paso a paso, consulte [usar acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md).  
+ Puede acceder a los archivos y carpetas compartidas desde cualquier equipo remoto usando el sitio web de Acceso Web remoto. Desde un equipo de la red del servidor, para tener acceso al sitio web de acceso Web remoto, abra el explorador de Internet y escriba https://<ServerName \> /Remote. Con Acceso Web remoto puede ver y administrar archivos en las carpetas compartidas. Para obtener instrucciones paso a paso, consulte [usar acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md).  
 
- Puede acceder a los archivos y carpetas compartidas desde cualquier equipo remoto usando el sitio web de Acceso Web remoto. Desde un equipo de la red del servidor, para tener acceso al sitio web de acceso Web remoto, abra el explorador de Internet y escriba https://< ServerName\>/Remote. Con Acceso Web remoto puede ver y administrar archivos en las carpetas compartidas. Para obtener instrucciones paso a paso, consulte [usar acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md).  
+ Puede acceder a los archivos y carpetas compartidas desde cualquier equipo remoto usando el sitio web de Acceso Web remoto. Desde un equipo de la red del servidor, para tener acceso al sitio web de acceso Web remoto, abra el explorador de Internet y escriba https://<ServerName \> /Remote. Con Acceso Web remoto puede ver y administrar archivos en las carpetas compartidas. Para obtener instrucciones paso a paso, consulte [usar acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md).  
 
   
 > [!NOTE]
@@ -94,18 +94,11 @@ ms.locfileid: "80852108"
   
 -   [Administrar carpetas de servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md)  
   
--   [Administrar el almacenamiento del servidor](../manage/Manage-Server-Storage-in-Windows-Server-Essentials.md)  
-  
+-   [Administrar el almacenamiento de servidor](../manage/Manage-Server-Storage-in-Windows-Server-Essentials.md)  
 
 -   [Conéctese](Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [Trabajar de forma remota](Work-Remotely-in-Windows-Server-Essentials.md)  
   
 -   [Reproducir medios digitales](Play-Digital-Media-in-Windows-Server-Essentials.md)
-
--   [Conéctese](../use/Get-Connected-in-Windows-Server-Essentials.md)  
-  
--   [Trabajar de forma remota](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
-  
--   [Reproducir medios digitales](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)
 

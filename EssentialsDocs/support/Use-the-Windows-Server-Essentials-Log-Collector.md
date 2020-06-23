@@ -8,12 +8,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fa7ad24eec7c2732ee1c840aae678e3b0bff768c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 16fc2c8b6029a4793eafd5ca7c51e66d6bc36d80
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852168"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217435"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>Uso del compilador de registros de Windows Server Essentials
 
@@ -30,15 +30,10 @@ Al solucionar problemas del equipo, un representante del servicio de atención a
 >[Descargue el paquete de instalación del recopilador de registros de Windows Server Essentials](https://www.microsoft.com/download/details.aspx?id=34821).  
   
  Para instalar y ejecutar el Compilador de registros, realice los pasos que se indican en los temas siguientes:  
-  
 
-1. [Instalación del recopilador de registros](Install-the-Windows-Server-Essentials-Log-Collector.md)  
+1. [Instalar el compilador de registros](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2. [Ejecutar el compilador de registros](Run-the-Windows-Server-Essentials-Log-Collector.md)  
-
-3. [Instalación del recopilador de registros](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
-  
-4. [Ejecutar el compilador de registros](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
+2. [Ejecutar el compilador de registros](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
 
 ## <a name="environment-information-collected"></a>Información del entorno recopilada  
@@ -109,7 +104,7 @@ Al solucionar problemas del equipo, un representante del servicio de atención a
   
 ### <a name="server-logs-and-registry-information"></a>Registros e información del registro del servidor  
   
--   Registros de producto de servidor, desde < ProgramData\>\Microsoft\Windows Server\Logs  
+-   Registros de producto de servidor, desde <ProgramData \> \Microsoft\Windows Server\Logs  
   
 -   Tareas programadas  
   
@@ -137,9 +132,9 @@ Al solucionar problemas del equipo, un representante del servicio de atención a
   
 ### <a name="network-computer-logs-and-registry-information"></a>Registros y la información del registro del equipo de red  
   
--   Registros de producto del equipo de red en < ProgramData\>\Microsoft\Windows Server\Logs  
+-   Registros de producto del equipo de red en <ProgramData \> \Microsoft\Windows Server\Logs  
   
--   Archivo de alertas de estado en < ProgramData\>\Microsoft\Windows Server\Data  
+-   Archivo de alertas de estado en <ProgramData \> \Microsoft\Windows Server\Data  
   
 -   Registros de Windows Update  
   
@@ -147,7 +142,7 @@ Al solucionar problemas del equipo, un representante del servicio de atención a
   
 -   Información de las tareas programadas  
   
--   Claves del registro de \\\ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows Server \  
+-   Claves del registro de \\ \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows Server \  
   
 ## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>Registros para los equipos que no ejecutan una versión del sistema operativo Windows  
  El Compilador de registros no recopilar archivos de registro de los equipos que no ejecutan una versión del sistema operativo Windows. Para los equipos que no ejecutan Windows, copie manualmente los siguientes archivos de registro en la misma ubicación donde se almacenan los archivos del Compilador de registros.  
@@ -156,14 +151,11 @@ Al solucionar problemas del equipo, un representante del servicio de atención a
   
 -   Library/Logs/Windows Server.log  
   
--   Library/Logs/CrashReporter/LaunchPad-< nnn\> (Copie todos los archivos LaunchPad-< nnn\>. Crash)  
+-   Library/Logs/CrashReporter/LaunchPad-<nnn \> (Copie todos los archivos de Launchpad-<nnn \> . Crash)  
   
--   Library/Logs/DiagnosticReports/LaunchPad-< nnn\> (Copie todos los archivos LaunchPad-< nnn\>. Crash)  
+-   Library/Logs/DiagnosticReports/LaunchPad-<nnn \> (Copie todos los archivos de Launchpad-<nnn \> . Crash)  
   
 ## <a name="see-also"></a>Vea también  
-  
 
--   [Solucionar errores del recopilador de registros](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
-
--   [Solucionar errores del recopilador de registros](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+-   [Solucionar problemas de errores del compilador de registros](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 

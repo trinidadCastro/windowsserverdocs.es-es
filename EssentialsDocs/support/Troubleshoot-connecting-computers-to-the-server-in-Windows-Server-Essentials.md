@@ -8,12 +8,12 @@ ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2d98d4cc561a3c29ce73455f38f787709149d056
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e3c6d58744f24e3027dedc41ad94ee133786a54
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852198"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217505"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Solucionar problemas de conexión de equipos al servidor en Windows Server Essentials
 
@@ -48,28 +48,6 @@ ms.locfileid: "80852198"
 -   Problema 10: [problema 10](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)  
   
 -   Problema 11: [problema 11](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)  
-
--   Problema 1: [problema 1](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BMRK_Package)  
-  
--   Problema 2: [problema 2](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssue2)  
-  
--   Problema 3: [problema 3](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssue2a)  
-  
--   Problema 4: [problema 4](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueNetFramework)  
-  
--   Problema 5: [problema 5](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_Time)  
-  
--   Problema 6: [problema 6](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ServiceStopped)  
-  
--   Problema 7: [problema 7](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueReconnect)  
-  
--   Problema 8: [problema 8](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_JoinWin7)  
-  
--   Problema 9: [problema 9](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueAutologon)  
-  
--   Problema 10: [problema 10](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)  
-  
--   Problema 11: [problema 11](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)  
 
   
 ##  <a name="issue-1"></a><a name="BMRK_Package"></a>Problema 1  
@@ -123,7 +101,7 @@ ms.locfileid: "80852198"
   
 5.  Haga clic con el botón derecho en una carpeta del servidor y, a continuación, haga clic en **Propiedades**.  
   
-6.  Haga clic en la pestaña **Security**.  
+6.  Haga clic en la pestaña **Seguridad**.  
   
 7.  Si no se permite **Control total** para la cuenta del sistema, haga clic en **Editar** y, a continuación, haga clic en **Sistema**. En **Permisos del sistema**, seleccione la casilla **Permitir** situada junto a **Control total**.  
   
@@ -272,7 +250,7 @@ ms.locfileid: "80852198"
   
  **Descripción**  
   
- Después de actualizar desde una versión preliminar (beta o RC) de Windows Server Essentials a la versión de lanzamiento, debe quitar el software del conector de cada equipo que se conectó al servidor y, a continuación, volver a conectar el equipo para instalar la versión de lanzamiento. versión del software del conector.  
+ Después de actualizar desde una versión preliminar (beta o RC) de Windows Server Essentials a la versión de lanzamiento, debe quitar el software del conector de cada equipo que se conectó al servidor y, a continuación, volver a conectar el equipo para instalar la versión de lanzamiento del software del conector.  
   
  Sin embargo, al quitar el software del conector de un equipo de red, no se eliminan los archivos de registro de la carpeta %ProgramData%\Microsoft\Windows Server\Logs\ de ese equipo. Si no elimina la carpeta logs, los archivos de registro pueden dañarse al conectar el equipo a la versión de lanzamiento de Windows Server Essentials.  
   
@@ -297,7 +275,7 @@ ms.locfileid: "80852198"
   
  **Solución**  
   
- Antes de actualizar el sistema operativo del cliente a una versión diferente (por ejemplo, actualizar Windows XP a Windows Vista, o Windows Vista a Windows 7), debe desinstalar el software del conector. Use **Agregar o quitar programas** en el Panel de control. Una vez finalizada la actualización del sistema operativo cliente, puede volver a instalar el conector de cliente abriendo http://<*server*>/Connect en un explorador Web, donde <*Server*> es el nombre del servidor de Windows Server Essentials.  
+ Antes de actualizar el sistema operativo del cliente a una versión diferente (por ejemplo, actualizar Windows XP a Windows Vista, o Windows Vista a Windows 7), debe desinstalar el software del conector. Use **Agregar o quitar programas** en el Panel de control. Una vez finalizada la actualización del sistema operativo del cliente, puede volver a instalar el conector de cliente abriendo http://<*server*>/Connect en un explorador Web, donde <*Server*> es el nombre del servidor de Windows Server Essentials.  
   
  Si ya actualizó el cliente con el software del conector instalado, use **Agregar o quitar programas** o **Programas y características** para desinstalar el software del conector. A continuación, vuelva a instalar el software del conector.  
   
@@ -305,4 +283,4 @@ ms.locfileid: "80852198"
   
 -   [Administrar Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   
--   [Solución de problemas de Windows 2012 Server Essentials ConnectComputer (wiki de TechNet)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)
+-   [Solución de problemas de ConnectComputer de Windows 2012 Server Essentials (Wiki de TechNet)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)

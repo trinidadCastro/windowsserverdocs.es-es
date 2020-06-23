@@ -8,12 +8,12 @@ ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4ea922142b43e35d6f17207d448c48b2da52ebc8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ecffbfd3157720ad2762ba77d528af05e5abf53f
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852288"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217545"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>Instalación del compilador de registros de Windows Server Essentials
 
@@ -45,13 +45,9 @@ El Asistente para la instalación del recopilador de registros de Windows Server
   
 1.  Abra el Panel.  
   
-2.  Haga clic en la pestaña **Complemento**, seleccione **Compilador de registros** en la lista y, a continuación, haga clic en **Desinstalar**.  
-  
+2.  Haga clic en la pestaña **Complemento**, seleccione **Compilador de registros** en la lista y, a continuación, haga clic en **Desinstalar**.
 
-3.  Descargue e instale el Compilador de registros siguiendo los pasos del procedimiento anterior [Para instalar el Compilador de registros](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall).  
-
-3.  Descargue e instale el Compilador de registros siguiendo los pasos del procedimiento anterior [Para instalar el Compilador de registros](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall).  
-
+3.  Descargue e instale el Compilador de registros siguiendo los pasos del procedimiento anterior [Para instalar el Compilador de registros](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall).   
   
 ### <a name="manually-install-the-log-collector"></a>Instalar manualmente el Compilador de registros  
  Si se produce un error en el asistente de instalación del Compilador de registros, puede instalarlo en un solo equipo con el siguiente procedimiento.  

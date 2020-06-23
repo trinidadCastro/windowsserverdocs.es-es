@@ -8,12 +8,12 @@ ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 62f3bf875b03328b0016261bf6aff7a39c4b65bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9fb3628ed519d5faae04787dbb84da37f27d96fb
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852248"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217495"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Solucionar los problemas de conectividad del acceso Web remoto en Windows Server Essentials
  
@@ -53,7 +53,7 @@ ms.locfileid: "80852248"
   
   - Configure el enrutamiento de puerto en el enrutador para los puertos siguientes:  
   
-    |Servicio o protocolo|Puerto|  
+    |Servicio o protocolo|Port|  
     |-------------------------|----------|  
     |HTTP|TCP 80|  
     |HTTPS|TCP 443|  
@@ -65,7 +65,7 @@ ms.locfileid: "80852248"
   > [!NOTE]
   >  En esta tabla, la dirección IP del equipo que ejecuta Windows Server Essentials es 192.168.0.100. Debe determinar la dirección IP del equipo y sustituirla por la dirección IP que se muestra en la tabla.  
   
-  |Dirección IP|Protocolo (TCP/UDP)|Programa|Filtro de entrada|  
+  |Dirección IP|Protocolo (TCP/UDP)|Programación|Filtro de entrada|  
   |----------------|---------------------------|--------------|--------------------|  
   |192.168.0.100|TCP 80|Siempre|Permitir todo|  
   |192.168.0.100|TCP 443|Siempre|Permitir todo|  
@@ -79,16 +79,13 @@ ms.locfileid: "80852248"
   
 ## <a name="see-also"></a>Vea también  
   
--   [Usar acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Usar Acceso web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Administrar el acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar Acceso web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Administrar el acceso desde cualquier lugar](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar Acceso desde cualquier lugar](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [Administrar Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
-  
-
--   [Soporte técnico de Windows Server Essentials](Support-Windows-Server-Essentials.md)
 
 -   [Soporte técnico de Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
 

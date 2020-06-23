@@ -8,12 +8,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ad75f815173c53ca40fdc5146f6f27fbc1e2740b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3f2cd1a9746b03ba7642e78c468dafd718f84959
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852148"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217615"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Reproducción de medios digitales en Windows Server Essentials
 
@@ -32,25 +32,11 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
   
 -   [Agregar archivos multimedia digitales al servidor](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)  
   
--   [Opciones de formato de descarga](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [Descargar opciones de formato](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_5)  
   
 -   [Herramienta de carga fácil de archivos](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)  
   
 -   [Ver y examinar medios digitales compartidos](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_7)  
-
--   [Información general de los medios digitales](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1)  
-  
--   [Reproducir y compartir medios digitales](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2)  
-  
--   [Reproducir archivos multimedia digitales compartidos desde una ubicación remota](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_3)  
-  
--   [Agregar archivos multimedia digitales al servidor](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)  
-  
--   [Opciones de formato de descarga](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_5)  
-  
--   [Herramienta de carga fácil de archivos](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)  
-  
--   [Ver y examinar medios digitales compartidos](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_7)  
 
   
 ##  <a name="digital-media-overview"></a><a name="BKMK_1"></a>Información general de los medios digitales  
@@ -85,9 +71,6 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
   
 -   [Enviar archivos multimedia en Windows Server Essentials a Windows Media Player, Xbox 360 o a un reproductor multimedia digital en red en la red](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)  
 
--   [Buscar y reproducir archivos multimedia en Windows Server Essentials desde un equipo o reproductor multimedia digital en la red](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1)  
-  
--   [Enviar archivos multimedia en Windows Server Essentials a Windows Media Player, Xbox 360 o a un reproductor multimedia digital en red en la red](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)  
 
   
 ###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a>Buscar y reproducir archivos multimedia en Windows Server Essentials desde un equipo o reproductor multimedia digital en la red  
@@ -96,27 +79,16 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 
 -   [Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows Media Center](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_WMC)  
   
--   [Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows mediante Windows Media Player](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_MWP)  
+-   [Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows mediante el Reproductor de Windows Media](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_MWP)  
   
 -   [Buscar y reproducir archivos multimedia con Xbox 360](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Xbox)  
   
 -   [Buscar y reproducir archivos multimedia con otros reproductores de medios digitales o receptores compatibles con Windows Server Essentials](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Other)  
   
--   [Buscar y reproducir archivos multimedia mediante la característica carpetas compartidas de Launchpad](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
+-   [Buscar y reproducir archivos multimedia mediante la característica Carpetas compartidas de Launchpad](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
--   [Buscar y reproducir archivos multimedia compartidos mediante acceso Web remoto](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)  
+-   [Buscar y reproducir archivos multimedia compartidos mediante Acceso Web remoto](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)  
 
--   [Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows Media Center](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_WMC)  
-  
--   [Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows mediante Windows Media Player](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_MWP)  
-  
--   [Buscar y reproducir archivos multimedia con Xbox 360](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Xbox)  
-  
--   [Buscar y reproducir archivos multimedia con otros reproductores de medios digitales o receptores compatibles con Windows Server Essentials](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_Other)  
-  
--   [Buscar y reproducir archivos multimedia mediante la característica carpetas compartidas de Launchpad](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
-  
--   [Buscar y reproducir archivos multimedia compartidos mediante acceso Web remoto](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)  
 
   
 ####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a>Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows Media Center  
@@ -165,7 +137,7 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
   
 2.  En Launchpad, haga clic en **Carpetas compartidas**. Aparece una ventana del explorador de Windows, que muestra las carpetas compartidas del servidor.  
   
-3.  En el cuadro **Búsqueda** , escriba el nombre de un archivo multimedia. Se mostrarán los resultados de la consulta de búsqueda.  
+3.  En el cuadro **Búsqueda**, escriba el nombre de un archivo multimedia. Se mostrarán los resultados de la consulta de búsqueda.  
   
     > [!NOTE]
     >  Como opción, puede hacer doble clic en una carpeta compartida para examinar el contenido de la carpeta.  
@@ -188,10 +160,10 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
   
 1. Abra un explorador de Internet.  
   
-2. Vaya al sitio web de Acceso Web remoto. Escriba **https://< sudominio\>/Remote** en la barra de direcciones del explorador de Internet y, a continuación, presione Entrar.  
+2. Vaya al sitio web de Acceso Web remoto. Escriba **https://<sudominio \> /Remote** en la barra de direcciones del explorador de Internet y, a continuación, presione Entrar.  
   
    > [!NOTE]
-   >  *< sudominio\>* es un marcador de posición. Será un nombre que sea único para el servidor, por lo que la dirección que escriba será similar a **https://contoso.com/remote** . Si no conoce el nombre del dominio, solicíteselo al administrador que ha elegido el nombre del dominio al establecer la funcionalidad de acceso remoto en el servidor. Para obtener más información, vea [Activar Acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).  
+   >  *<sudominio \> * es un marcador de posición. Será un nombre que sea único para el servidor, por lo que la dirección que escriba será similar a la siguiente **https://contoso.com/remote** . Si no conoce el nombre del dominio, solicíteselo al administrador que ha elegido el nombre del dominio al establecer la funcionalidad de acceso remoto en el servidor. Para obtener más información, vea [Activar Acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).  
   
 3. En la página de inicio de sesión de Acceso Web remoto, escriba el nombre de la cuenta de usuario y la contraseña y, a continuación, haga clic en la flecha.  
   
@@ -237,14 +209,14 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
   
  Elija la opción que mejor se adapte a sus necesidades relativas a las descargas:  
   
-- **Archivo ZIP comprimido (. zip)**  
+- **Archivo ZIP comprimido (.zip)**  
   
    Al comprimir un archivo se crea una versión comprimida del archivo, que es menor que el archivo original. La versión comprimida del archivo tiene la extensión de nombre de archivo .zip. Los tipos de archivo que se reducen al máximo al comprimirse son tipos de archivos de texto (como .txt, .doc y .xls) y archivos de gráficos que usan tipos de archivo no comprimidos (.bmp). Algunos archivos de gráficos, como por ejemplo los archivos .jpg y .gif, ya emplean la compresión, y el tamaño del archivo se reduce muy poco durante la compresión. Además, un documento de Word que contiene una gran cantidad de gráficos no se reduce tanto como un documento que está formado principalmente por texto.  
   
   > [!NOTE]
   >  Esta opción proporciona una compatibilidad limitada para los nombres de archivo internacionales.  
   
-- **Archivo ejecutable autoextraíble (. exe)**  
+- **Archivo ejecutable autoextraíble (.exe)**  
   
    Un archivo ejecutable autoextraíble es un archivo que se puede descargar y que combina el programa (ejecutable) de descompresión con los archivos comprimidos. Al ejecutar el programa ejecutable, este descomprime automáticamente los archivos comprimidos. Se trata de un método habitual de distribuir los datos comprimidos sin preocuparse de si el destinatario tiene la utilidad de descompresión adecuada.  
   
@@ -295,10 +267,4 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 -   [Usar carpetas compartidas](Use-Shared-Folders-in-Windows-Server-Essentials.md)  
   
 -   [Trabajar de forma remota](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [Conéctese](../use/Get-Connected-in-Windows-Server-Essentials.md)  
-  
--   [Usar carpetas compartidas](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)  
-  
--   [Trabajar de forma remota](../use/Work-Remotely-in-Windows-Server-Essentials.md)
 

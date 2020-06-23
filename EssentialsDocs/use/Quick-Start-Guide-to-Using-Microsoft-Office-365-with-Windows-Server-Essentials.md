@@ -8,12 +8,12 @@ ms.assetid: 51a7f1f1-088b-4487-b2c6-4f97aad3004d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 49ffab44c1d385bd149ec048ff0bd4b627529fef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ff8d3c1b467039bf16a7d598a22b84a284807e89
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852138"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217595"
 ---
 # <a name="quick-start-guide-to-using-microsoft-office-365-with-windows-server-essentials"></a>Guía de inicio rápido de Microsoft Office 365 con Windows Server Essentials
 
@@ -23,12 +23,12 @@ ms.locfileid: "80852138"
 
  Para obtener una introducción rápida a Office 365, vea los vídeos [office 365: Tour for users](https://onlinehelp.microsoft.com/office365-smallbusinesses/hh534379.aspx) en el sitio web de Office 365.  
 
- Si su organización usa aplicaciones Web de Office 365, puede abrir las aplicaciones en Office 365 usando herramientas conocidas como el Launchpad de Windows Server Essentials y mi servidor 2012 R2. (También puede, por supuesto, [iniciar sesión directamente en Office 365](https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=2&ct=1384059583&rver=6.1.6206.0&wp=MBI_KEY&wreply=https:%2F%2F www.outlook.com%2Fowa%2F&id=260563&whr=students.tamuk.edu&CBCXT=out) mediante el identificador en línea de la empresa y su contraseña de red).  
+ Si su organización usa aplicaciones Web de Office 365, puede abrir las aplicaciones en Office 365 usando herramientas conocidas como el Launchpad de Windows Server Essentials y mi servidor 2012 R2. (También puede, por supuesto, [iniciar sesión directamente en Office 365](https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=2&ct=1384059583&rver=6.1.6206.0&wp=MBI_KEY&wreply=https:%2F%2Fwww.outlook.com%2Fowa%2F&id=260563&whr=students.tamuk.edu&CBCXT=out) mediante el identificador en línea de la empresa y su contraseña de red).  
 
 > [!IMPORTANT]
 >  Si pierde un dispositivo móvil que usa para conectarse a Exchange Online, póngase en contacto con el administrador para que pueda quitar datos confidenciales del dispositivo la próxima vez que se active.  
 
-### <a name="before-you-begin"></a>Antes de comenzar  
+### <a name="before-you-begin"></a>Antes de empezar  
 
 1.  Debe tener una cuenta de Microsoft Online Services (en Windows Server Essentials, se denomina *cuenta de Office 365*) asignada a su cuenta de usuario. Si aún no tiene una cuenta en línea para Office 365, pida a la persona que mantenga la red del equipo que cree una.  
 
@@ -50,7 +50,7 @@ ms.locfileid: "80852138"
 >  Si no ha configurado el equipo para que funcione con Office 365, siga los pasos descritos en la sección **iniciar aquí** del portal de Office 365.  
 
 ## <a name="work-with-documents-in-your-sharepoint-online-libraries-from-my-server-2012-r2"></a>Trabajar con documentos en las bibliotecas de SharePoint Online desde My Server 2012 R2  
- Si el servidor tiene el sistema operativo Windows Server Essentials y el administrador administra Office 365 desde el servidor, puede trabajar con los documentos de las bibliotecas de SharePoint Online desde su portátil, dispositivo móvil o teléfono mediante el uso de My Server 2012 Aplicación R2. La aplicación es gratuita. Deberá instalarla primero.  
+ Si el servidor tiene el sistema operativo Windows Server Essentials y el administrador está administrando Office 365 desde el servidor, puede trabajar con los documentos de las bibliotecas de SharePoint Online desde su portátil, dispositivo móvil o teléfono con la aplicación My Server 2012 R2. La aplicación es gratuita. Deberá instalarla primero.  
 
 #### <a name="to-install-my-server-2012-r2"></a>Para instalar My Server 2012 R2  
 
@@ -58,8 +58,8 @@ ms.locfileid: "80852138"
 
     |Tipo de dispositivo|Descargar de la|  
     |-----------------|-------------------|  
-    |Portátil, equipo o dispositivo de superficie con Windows|[My Server 2012 R2 (aplicaciones para Windows)](https://apps.microsoft.com/windows/app/my-server-2012-r2/67e86695-bda3-4f32-96c4-2e20e56f1cf3)|  
-    | Windows 8 Phone o Windows 8.1 Phone|[My Server 2012 R2 (Windows Phone Store)](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)|  
+    |Portátil, equipo o dispositivo de superficie con Windows|[My Server 2012 R2 (aplicaciones de Windows)](https://apps.microsoft.com/windows/app/my-server-2012-r2/67e86695-bda3-4f32-96c4-2e20e56f1cf3)|  
+    | Windows 8 Phone o Windows 8.1 Phone|[My Server 2012 R2 (Tienda de Windows Phone)](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)|  
 
 #### <a name="to-work-with-documents-in-sharepoint-online-libraries-from-my-server-2012-r2"></a>Para trabajar con documentos en bibliotecas de SharePoint Online desde My Server 2012 R2  
 
@@ -82,16 +82,11 @@ ms.locfileid: "80852138"
 
 ## <a name="see-also"></a>Vea también  
 
--   [Información general sobre LaunchPad](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)  
+-   [Introducción a Launchpad](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)  
 
 -   [Administrar Office 365](../manage/Manage-Office-365-in-Windows-Server-Essentials.md)  
-
 
 -   [Trabajar de forma remota](Work-Remotely-in-Windows-Server-Essentials.md)  
 
 -   [Usar Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
--   [Trabajar de forma remota](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
-
--   [Usar Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
 
