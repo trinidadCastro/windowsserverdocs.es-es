@@ -1,5 +1,5 @@
 ---
-title: Migración de Windows Small Business Server 2008 a Windows Server Essentials
+title: Migración de Windows Small Business Server 2008 a Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
 ms.prod: windows-server
@@ -8,31 +8,29 @@ ms.assetid: 71e3243e-2da9-409a-ae1f-813d4c9062e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6a8c8a142cb40b8211450d16753ec9796987d208
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3a64bbb83f416d6791abbb51f3fc000b418bc0e4
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852518"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256563"
 ---
-# <a name="migrate-windows-small-business-server-2008-to-windows-server-essentials"></a>Migración de Windows Small Business Server 2008 a Windows Server Essentials
+# <a name="migrate-windows-small-business-server-2008-to-windows-server-essentials"></a>Migración de Windows Small Business Server 2008 a Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-En esta guía se describe cómo migrar un dominio existente de Windows SBS 2008 a Windows Server&reg; 2012 Essentials en hardware nuevo y, después, migrar la configuración y los datos. En esta guía también se describe cómo quitar el servidor existente de la red de Windows Server Essentials después de finalizar la migración.  
+En esta guía se describe cómo migrar un dominio existente de Windows SBS 2008 a Windows Server &reg; 2012 Essentials en hardware nuevo y, después, migrar la configuración y los datos. En esta guía también se describe cómo quitar el servidor existente de la red de Windows Server Essentials después de finalizar la migración.  
   
 > [!NOTE]
 >  Para evitar problemas durante la migración, el equipo de desarrollo de productos de Windows Server Essentials recomienda encarecidamente que lea este documento antes de comenzar la migración.  
 > 
 > [!NOTE]
 > 
->  Para migrar los datos del servidor a la versión más reciente de Windows Server Essentials, vea [migrar a Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).  
-> 
->  Para migrar los datos del servidor a la versión más reciente de Windows Server Essentials, vea [migrar a Windows Server Essentials](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).  
+>  Para migrar los datos del servidor a la versión más reciente de Windows Server Essentials, vea [migrar a Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).
 
   
 ## <a name="additional-resources"></a>Recursos adicionales  
- Para obtener vínculos a información adicional, herramientas y recursos de la comunidad que le guiarán a través del proceso de migración, visite el sitio web de [migración de Windows Small Business Server](https://go.microsoft.com/fwlink/?LinkId=217520) .  
+ Para obtener vínculos a información, herramientas y recursos de la comunidad adicionales que le ayudarán en el proceso de migración, visite el sitio web [Migración de Windows Small Business Server](https://go.microsoft.com/fwlink/?LinkId=217520).  
   
 ## <a name="terms-and-definitions"></a>Términos y definiciones  
  **Servidor de origen:** El servidor existente desde el que va a migrar la configuración y los datos.  
@@ -68,7 +66,7 @@ En esta guía se describe cómo migrar un dominio existente de Windows SBS 2008 
   
 2.  En el cuadro de búsqueda, escriba cmd.  
   
-3.  En la lista de resultados, haga clic con el botón secundario en cmd y, después, haga clic de nuevo en Ejecutar como administrador.  
+3.  En la lista de resultados, haga clic con el botón secundario en cmd y, después, con el botón primario en Ejecutar como administrador.  
   
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>Para abrir una ventana del símbolo del sistema como administrador en el servidor de destino  
   

@@ -8,12 +8,12 @@ ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ddcdb9576072af6b7014f6dc9b0c38e9f5bdd25d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 69a57333990a225663d2cd3cc61c75947d07cdab
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818368"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267376"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>Crear una unidad flash USB de arranque
 
@@ -36,17 +36,17 @@ Puede crear una unidad flash USB de arranque para usarla para implementar Window
   
 1.  Inserte una unidad flash USB en un equipo en ejecución.  
   
-2.  Abra una ventana del símbolo del sistema como administrador.  
+2.  Abra una ventana de símbolo del sistema como administrador.  
   
 3.  Escriba `diskpart`.  
   
-4.  Para determinar el número de la unidad flash USB o la letra de la unidad, escriba `list disk` en el símbolo del sistema de la nueva ventana de línea de comandos que se abre y, a continuación, haga clic en ENTRAR. El comando `list disk` muestra todos los discos del equipo. Tome nota del número o la letra de la unidad flash USB.  
+4.  Para determinar el número de la unidad flash USB o la letra de la unidad, escriba `list disk`en el símbolo del sistema de la nueva ventana de línea de comandos que se abre y, a continuación, haga clic en ENTRAR. El comando `list disk` muestra todos los discos del equipo. Tome nota del número o la letra de la unidad flash USB.  
   
-5.  En el símbolo del sistema, escriba `select disk <X>` (donde X es el número o la letra de la unidad flash USB) y haga clic en ENTRAR.  
+5.  En el símbolo del sistema, escriba `select disk <X>`(donde X es el número o la letra de la unidad flash USB) y haga clic en ENTRAR.  
   
 6.  Escriba `clean`y haga clic en ENTRAR. Este comando elimina todos los datos de la unidad flash USB.  
   
-7.  Para crear una nueva partición principal en la unidad flash USB, escriba `create partition primary` y haga clic en ENTRAR.  
+7.  Para crear una nueva partición principal en la unidad flash USB, escriba `create partition primary`y haga clic en ENTRAR.  
   
 8.  Para seleccionar la partición que acaba de crear, escriba `select partition 1`y haga clic en ENTRAR.  
   
@@ -61,18 +61,12 @@ Puede crear una unidad flash USB de arranque para usarla para implementar Window
   
 12. Cuando haya terminado de preparar la imagen personalizada, guárdela en la raíz de la unidad flash USB.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 
- [Introducción con el ADK de Windows Server essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
+ [Introducción con el ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)   
-
- [Introducción con el ADK de Windows Server essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)   
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)     
 
  [¿Cómo podemos ayudarle?](https://windows.microsoft.com/windows/support)

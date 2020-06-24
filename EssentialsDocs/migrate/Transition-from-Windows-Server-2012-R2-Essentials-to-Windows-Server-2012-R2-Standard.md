@@ -1,5 +1,5 @@
 ---
-title: Transición de Windows Server Essentials a Windows Server 2012 R2 Standard
+title: Transición de Windows Server Essentials a Windows Server 2012 R2 Standard
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
 ms.prod: windows-server
@@ -8,14 +8,14 @@ ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f7914ff205382ed2c74cb130061f850e2c0675f5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 145d4ef1039093f224e1dc73cb5d8286ddd8e494
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852298"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256485"
 ---
-# <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>Transición de Windows Server Essentials a Windows Server 2012 R2 Standard
+# <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>Transición de Windows Server Essentials a Windows Server 2012 R2 Standard
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
@@ -37,11 +37,11 @@ Windows Server 2016 es el sistema operativo preparado para la nube que es compat
   
 -   Además, asegúrese de leer y comprender el contrato de licencia para el usuario final (CLUF) para Windows Server 2012 R2 Standard. Para ver los términos de licencia:  
   
-    1.  Abra una ventana de comandos como administrador.  
+    1.  Abra una ventana del símbolo del sistema como administrador.  
   
-    2.  Ejecuta el siguiente comando:  
+    2.  Ejecute el siguiente comando:  
   
-         **DISM/online/Set-Edition: ServerStandard/geteula:** *EULA path* (donde *ruta del CLUF* representa la ubicación en la que desea guardar el archivo del cluf; por ejemplo: c:\ ws8std_eula. rtf). Asegúrese de usar .rtf como extensión de archivo.  
+         **dism /online /set-edition:ServerStandard /geteula:** *ruta del CLUF* (donde *ruta del CLUF* es la ubicación donde desea guardar el archivo del CLUF; por ejemplo: C:\ws8std_eula.rtf). Asegúrese de usar .rtf como extensión de archivo.  
   
     3.  Abra la ubicación donde guardó el archivo y haga doble clic en él para abrirlo.  
   
@@ -67,10 +67,8 @@ Windows Server 2016 es el sistema operativo preparado para la nube que es compat
   
    Después de la transición, las características de Windows Server Essentials permanecen en el servidor y se admiten hasta 100 usuarios y 200 dispositivos.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
   
 
 -   [Migrar datos del servidor a Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [Migrar datos del servidor a Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

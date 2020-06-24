@@ -8,12 +8,12 @@ ms.assetid: 3c96d66b-be4a-4572-9b9f-29555c00ae9a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c6dee3fdc1c77cedf9f17ffb71a157a1eeb7ec90
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 98f85767f6dddc887dcdeb4585af924d9e103aa8
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818058"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267636"
 ---
 # <a name="customize-storage-spaces"></a>Personalizar espacios de almacenamiento
 
@@ -21,13 +21,10 @@ ms.locfileid: "80818058"
 
 Para preconfigurar espacios de almacenamiento a fin de mejorar la experiencia del usuario, puede ejecutar el script de configuración de espacios de almacenamiento desde PostIC.cmd. El script de configuración de espacios de almacenamiento se debe ejecutar en el equipo de destino, después de haber completado la instalación de Windows Server Essentials.
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
+ [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del usuario](Testing-the-Customer-Experience.md) [crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
-
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
+ 

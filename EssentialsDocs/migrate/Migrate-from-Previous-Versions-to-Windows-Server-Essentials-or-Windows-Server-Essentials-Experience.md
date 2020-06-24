@@ -8,12 +8,12 @@ ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5c73714dff2d89201ac93704105038c604f12e06
-ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
+ms.openlocfilehash: 6af10244f0413204f6ee6d168e3db2d24e75747c
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404570"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256595"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>Migración desde versiones anteriores a Windows Server Essentials o a Experiencia con Windows Server Essentials
 
@@ -71,6 +71,4 @@ En esta guía se describe cómo migrar desde versiones anteriores de Windows Sma
 ## <a name="see-also"></a>Consulte también  
   
 -   [Migrar datos del servidor a Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [Migrar datos del servidor a Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

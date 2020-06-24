@@ -8,12 +8,12 @@ ms.assetid: 104d0412-2d77-4cd4-99f7-65a885522850
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e55dc757b93c7e11b29ed4fd579362900e54f909
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5281afa423360779924ff212ff300195fac5695
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819848"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267506"
 ---
 # <a name="replace-the-list-of-domain-name-providers"></a>Sustituir la lista de proveedores de nombre de dominio
 
@@ -22,13 +22,13 @@ ms.locfileid: "80819848"
 Para sustituir la lista de proveedores de nombres de dominio que aparece en el Asistente de configuración de nombre de dominio, siga estos pasos:  
 
 
--   [Crear los archivos de servicio de referencia](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
+-   [Cree los archivos de servicio de referencia](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
 
--   [Agregar una entrada al registro en el equipo de referencia](Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
+-   [Agregue una entrada al registro en el equipo de referencia](Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
 
--   [Crear los archivos de servicio de referencia](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
+-   [Cree los archivos de servicio de referencia](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
 
--   [Agregar una entrada al registro en el equipo de referencia](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
+-   [Agregue una entrada al registro en el equipo de referencia](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
 
 
 ###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a>Crear los archivos de servicio de referencia  
@@ -50,7 +50,7 @@ Para sustituir la lista de proveedores de nombres de dominio que aparece en el A
 
 7.  Para agregar un logotipo al proveedor de nombres de dominio, haga clic en **Cambiar logotipo**.  
 
-8.  Haga clic en **Guardar**.  
+8.  Haga clic en **Save**(Guardar).  
 
 9. Repita los pasos 2 al 8 con todos los proveedor de nombres de dominio que desee agregar a la lista del asistente.  
 
@@ -85,11 +85,11 @@ Para sustituir la lista de proveedores de nombres de dominio que aparece en el A
 ~~~
 
 ###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a>Problemas de estado de nombre de dominio  
- Si un asociado agrega proveedores de nombres de dominio y usa una interfaz de programación de aplicaciones (API) en el SDK de Windows Server Essentials para establecer los Estados Unknown, failed y CertificateRequestNotSubmitted del certificado, el cliente recibe un valor incorrecto. resultado de la configuración y el mensaje. Esto se debe a que los casos los tratan las excepciones, en lugar de devolver un estado.  
+ Si un asociado agrega proveedores de nombres de dominio y usa una interfaz de programación de aplicaciones (API) en el SDK de Windows Server Essentials para establecer los Estados Unknown, failed y CertificateRequestNotSubmitted del certificado, el cliente recibe un mensaje y un resultado de configuración incorrectos. Esto se debe a que los casos los tratan las excepciones, en lugar de devolver un estado.  
 
  Los siguientes estados de dominio son errores y deben notificarse como tales:  
 
-- No superadas  
+- Con error  
 
 - PendingCustomerInterventionRequired  
 
@@ -103,21 +103,16 @@ Para sustituir la lista de proveedores de nombres de dominio que aparece en el A
 
   Los siguientes estados de dominio son correctos y deben notificarse como tales:  
 
-- Listo  
+- Ready  
 
-- Pendiente  
+- Pending  
 
 - InRenewal  
 
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
+ [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
-
- [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

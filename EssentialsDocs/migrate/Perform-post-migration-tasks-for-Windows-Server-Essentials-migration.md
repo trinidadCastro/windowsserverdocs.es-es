@@ -8,12 +8,12 @@ ms.assetid: f2d236a4-0d62-4961-9d1f-332054e06f6d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b5093772e22fc95a19e800db5c83dec261e7b63a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b421ab7b234c9ae2ffb7d0765fe0937c4376996a
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852432"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267526"
 ---
 # <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>Realizar tareas posteriores a la migración para Windows Server Essentials migration1
 
@@ -24,19 +24,11 @@ Las siguientes tareas le ayudarán a configurar el servidor de destino con algun
 
 -   [Eliminar las entradas DNS del servidor de origen](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_DeleteDNSEntries)  
   
--   [Compartir las carpetas de datos de la aplicación y de la línea de negocio](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_ShareLineOfBusinessAndOtherApplications)  
+-   [Compartir carpetas de datos de la aplicación de negocios y otras aplicaciones](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_ShareLineOfBusinessAndOtherApplications)  
   
--   [Corregir problemas del equipo cliente después de la migración](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_FixClientComputerIssuesAfterMigrating)  
+-   [Corregir problemas de los equipos cliente tras la migración](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_FixClientComputerIssuesAfterMigrating)  
   
--   [Conceda al grupo de administradores integrado el derecho a iniciar sesión como un trabajo por lotes.](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_AdminGroup)  
-
--   [Eliminar las entradas DNS del servidor de origen](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_DeleteDNSEntries)  
-  
--   [Compartir las carpetas de datos de la aplicación y de la línea de negocio](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_ShareLineOfBusinessAndOtherApplications)  
-  
--   [Corregir problemas del equipo cliente después de la migración](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_FixClientComputerIssuesAfterMigrating)  
-  
--   [Conceda al grupo de administradores integrado el derecho a iniciar sesión como un trabajo por lotes.](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_AdminGroup)  
+-   [Conceder al grupo de administradores integrado el derecho a iniciar sesión como un proceso por lotes](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_AdminGroup)  
 
   
 ##  <a name="delete-dns-entries-of-the-source-server"></a><a name="BKMK_DeleteDNSEntries"></a>Eliminar las entradas DNS del servidor de origen  
@@ -70,9 +62,9 @@ Las siguientes tareas le ayudarán a configurar el servidor de destino con algun
  Si usa un script de inicio de sesión para asignar unidades a las carpetas compartidas, debe actualizar el script para realizar la asignación a las unidades de disco en el servidor de destino.  
   
 ##  <a name="fix-client-computer-issues-after-migrating"></a><a name="BKMK_FixClientComputerIssuesAfterMigrating"></a>Corregir problemas del equipo cliente después de la migración  
- Si migra a Windows Server Essentials desde Windows Small Business Server 2003 Premium Edition con Microsoft Internet Security and Acceleration (ISA) Server instalado, los equipos cliente en la red siguen teniendo el cliente firewall de Microsoft y Internet Explorador configurado para usar un servidor proxy.  
+ Si migra a Windows Server Essentials desde Windows Small Business Server 2003 Premium Edition con Microsoft Internet Security and Acceleration (ISA) Server instalado, los equipos cliente de la red todavía tienen el cliente de Firewall de Microsoft y Internet Explorer configurados para usar un servidor proxy.  
   
- Esto produce problemas de conectividad en los equipos cliente, porque el servidor proxy ya no existe. Si hay un servidor proxy diferente configurado, los equipos cliente siguen usando el servidor que ejecuta Windows SBS 2003 para el servidor proxy. Para corregir este problema, debe volver a configurar Internet Explorer para que deje de usar un servidor proxy o para que use el nuevo servidor proxy.  
+ Esto produce problemas de conectividad en los equipos cliente, porque el servidor proxy ya no existe. Si hay configurado un servidor proxy diferente, los equipos cliente seguirán utilizando el servidor que ejecute Windows SBS 2003 para el servidor proxy. Para corregir este problema, debe volver a configurar Internet Explorer para que deje de usar un servidor proxy o para que use el nuevo servidor proxy.  
   
 #### <a name="to-reconfigure-internet-explorer"></a>Para volver a configurar Internet Explorer  
   
@@ -80,11 +72,11 @@ Las siguientes tareas le ayudarán a configurar el servidor de destino con algun
   
 2.  Haga clic en la pestaña **Conexiones**, haga clic en **Configuración de LAN** y, después, realice una de las acciones siguientes:  
   
-    -   Si no está usando un servidor proxy en la red, desactive las casillas en el cuadro de diálogo **Configuración de red de área local (LAN)** .  
+    -   Si no está usando un servidor proxy en la red, desactive las casillas en el cuadro de diálogo **Configuración de red de área local (LAN)**.  
   
     -   Si desea usar un nuevo servidor proxy en la red:  
   
-        1.  En el cuadro de diálogo **Configuración de red de área local (LAN)** , desactive las casillas de la sección **Configuración automática**.  
+        1.  En el cuadro de diálogo **Configuración de red de área local (LAN)**, desactive las casillas de la sección **Configuración automática**.  
   
         2.  En la sección **Servidor proxy**, compruebe que las casillas estén activadas.  
   
@@ -103,11 +95,11 @@ Las siguientes tareas le ayudarán a configurar el servidor de destino con algun
   
 1. En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.  
   
-2. En el árbol de consola de **Administración de directiva de grupo** , expanda **bosque:** *< nombreservidor\>* , expanda dominios y, a continuación, expanda el servidor.  
+2. En el árbol de consola de **Administración de directiva de grupo** , expanda **Forest:** * \><ServerName*, expanda dominios y, a continuación, expanda el servidor.  
   
 3. Expanda **Controladores de dominio**, haga clic con el botón derecho en **Directiva predeterminada de controladores de dominio** y, después, haga clic en **Editar**.  
   
-4. En **Editor de administración de directivas de grupo**, haga clic en **directiva predeterminada de controladores de dominio**<em>< nombreservidor\></em> **Directiva**y, a continuación, expanda **configuración del equipo**.  
+4. En **Editor de administración de directivas de grupo**, haga clic en **directiva predeterminada de controladores de dominio** <em><\> </em>**Directiva**de nombreDeServidor y, a continuación, expanda **configuración del equipo**.  
   
 5. Expanda **Directivas**, expanda **Configuración de Windows** y, después, expanda **Configuración de seguridad**.  
   
@@ -123,14 +115,10 @@ Las siguientes tareas le ayudarán a configurar el servidor de destino con algun
   
 11. Haga clic en **Comprobar nombres** para comprobar que el grupo de administradores integrado aparezca y, después, haga clic en **Aceptar** tres veces para guardar la configuración.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
   
 
 -   [Migrar desde Windows SBS 2003](Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
   
 -   [Migrar datos del servidor a Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [Migrar desde Windows SBS 2003](../migrate/Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
-  
--   [Migrar datos del servidor a Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

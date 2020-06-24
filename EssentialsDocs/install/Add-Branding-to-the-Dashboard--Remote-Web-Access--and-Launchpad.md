@@ -8,12 +8,12 @@ ms.assetid: 166262f8-b2a5-4b1c-a4a7-a141e1c54f10
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 50f132d7f6422c32b2a72948ca96b5bd82e701df
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fbe1c042c965a639ac860a7151d16e6548324d9e
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817748"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267516"
 ---
 # <a name="add-branding-to-the-dashboard-remote-web-access-and-launchpad"></a>Agregar personalizaciones de marca al Panel, el acceso web remoto y Launchpad
 
@@ -30,7 +30,7 @@ ms.locfileid: "80817748"
   
 1.  En el servidor, mueva el ratón a la esquina superior derecha de la pantalla y haga clic en **Buscar**.  
   
-2.  En el cuadro de búsqueda, escriba **regedit**y después haga clic en la aplicación **Regedit** .  
+2.  En el cuadro de búsqueda, escriba **regedit** y después haga clic en la aplicación **Regedit**.  
   
 3.  En el panel de navegación, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE**, **Microsoft** y finalmente **Windows Server**. Si la clave **OEM** no existe, siga los pasos que se indican a continuación para crearla:  
   
@@ -75,9 +75,7 @@ ms.locfileid: "80817748"
 |Logotipo del sitio web|Cambia el logotipo predeterminado del sitio de Acceso web remoto. El tamaño esperado del logotipo es de 32 píxeles por 32 píxeles. Si el logotipo es más pequeño o más grande, se ampliará o reducirá para que coincida con estas dimensiones|WebsiteLogo|Nombre del archivo de imagen del logotipo|  
 |Logotipo del sitio web anexo|El logotipo de su asociado aparecerá inmediatamente debajo del logotipo de Microsoft que aparece en el sitio de Acceso web remoto. El tamaño esperado del logotipo es de 200 píxeles de alto por 50 píxeles de ancho. Si el tamaño de su logotipo es mayor, se reducirá para ajustarlo pero se mantendrá la relación de aspecto original. Si el logotipo es más pequeño, se centrará en el espacio de 200 por 50 píxeles y no se cambiarán ni el relación de aspecto ni la relación de aspecto.|OEMLogo|Nombre del archivo de imagen del logotipo|  
 
-| Vínculos en la Página principal del sitio web y la página de inicio de sesión | Anexe los vínculos a la página de inicio de sesión y la Página principal del sitio de acceso Web remoto. Debe copiar el .xml que contiene la información del enlace en %programFiles%\Windows Server\Bin\OEM. En el ejemplo siguiente se muestra el formato del archivo .xml:<br /><br /> < OemLinks\><br /> < LogonLinks\><br /> < nombre del vínculo\=LogonLinkName ><br /> < Text\>LogonLinkDescription </Text\><br /> < URL\>LogonLinkURL </URL\><br /> Icono de <\>LinkIcon </Icon NombreDeRuta\><br /> </Link\><br /> </LogonLinks\><br /> < HomepageLinks\><br /> < nombre del vínculo\=HomepageLinkName ><br /> < Text\>HomepageLinkDescription </Text\><br /> < URL\>HomepageLinkURL </URL\><br /> </Link\><br /> </HomepageLinks\><br /> </OemLinks\>| LinksXML | Consulte la tabla de [elementos LinksXML](Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md#BKMK_Links) para obtener una lista de los elementos y las descripciones. |  
-
-| Vínculos en la Página principal del sitio web y la página de inicio de sesión | Anexe los vínculos a la página de inicio de sesión y la Página principal del sitio de acceso Web remoto. Debe copiar el .xml que contiene la información del enlace en %programFiles%\Windows Server\Bin\OEM. En el ejemplo siguiente se muestra el formato del archivo .xml:<br /><br /> < OemLinks\><br /> < LogonLinks\><br /> < nombre del vínculo\=LogonLinkName ><br /> < Text\>LogonLinkDescription </Text\><br /> < URL\>LogonLinkURL </URL\><br /> Icono de <\>LinkIcon </Icon NombreDeRuta\><br /> </Link\><br /> </LogonLinks\><br /> < HomepageLinks\><br /> < nombre del vínculo\=HomepageLinkName ><br /> < Text\>HomepageLinkDescription </Text\><br /> < URL\>HomepageLinkURL </URL\><br /> </Link\><br /> </HomepageLinks\><br /> </OemLinks\>| LinksXML | Consulte la tabla de [elementos LinksXML](../install/Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md#BKMK_Links) para obtener una lista de los elementos y las descripciones. |  
+| Vínculos en la Página principal del sitio web y la página de inicio de sesión | Anexe los vínculos a la página de inicio de sesión y la Página principal del sitio de acceso Web remoto. Debe copiar el .xml que contiene la información del enlace en %programFiles%\Windows Server\Bin\OEM. En el ejemplo siguiente se muestra el formato del archivo .xml:<br /><br /> <OemLinks\><br /> <LogonLinks\><br /> <nombre de vínculo \= LogonLinkName><br /> <Text \> LogonLinkDescription</Text\><br /> <URL \> LogonLinkURL</URL\><br /> Icono de <\> LinkIcon</Icon NombreDeRuta\><br /> </Link\><br /> </LogonLinks\><br /> <HomepageLinks\><br /> <nombre de vínculo \= HomepageLinkName><br /> <Text \> HomepageLinkDescription</Text\><br /> <URL \> HomepageLinkURL</URL\><br /> </Link\><br /> </HomepageLinks\><br /> </OemLinks \> | LinksXML | Consulte la tabla de [elementos LinksXML](Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md#BKMK_Links) para obtener una lista de los elementos y las descripciones. |    
 
 | Logotipo de Launchpad | Agrega la imagen de logotipo al Launchpad. El logotipo de Launchpad debe tener el formato. png y no debe ser más alto que 64 píxeles. | LaunchpadLogo | Nombre del archivo de imagen del logotipo |  
   
@@ -98,15 +96,15 @@ ms.locfileid: "80817748"
 |HomepageLinkURL|La dirección URL que enlaza a la página de inicio.|  
 |HomepageLinkIcon|El nombre del archivo de icono del enlace de la página de inicio. El archivo debe encontrarse en la misma carpeta que el archivo .xml. Las imágenes de HomepageLinkIcon deben ser de 16x16 píxeles y estar en formato .png. Si no proporciona un HomepageLinkIcon, se utilizará el icono de vínculo de página de inicio predeterminado.|  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
+ [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
 
- [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
+ [Creación y personalización de la imagen](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
+ [Preparar la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

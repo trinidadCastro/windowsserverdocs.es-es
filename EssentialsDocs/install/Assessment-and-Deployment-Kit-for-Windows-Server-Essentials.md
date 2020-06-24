@@ -8,18 +8,18 @@ ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: daa8f75671c4dc663cca12dd0618a593c2010103
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8ef3af7fecf5fe07f5a88758fc6636a846f8e08
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817448"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267366"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Kit de evaluación e implementación para Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Windows Server&reg; 2012 Essentials Assessment and Deployment Kit (ADK) es una colección de herramientas, archivos binarios y paquetes de idioma del sistema operativo que puede usar para personalizar, evaluar e implementar Windows Server Essentials en equipos nuevos. Este documento incluye información específica para los socios que tienen pensado preinstalar el sistema operativo para sus clientes, e incluye los siguientes temas:  
+Windows Server &reg; 2012 Essentials Assessment and Deployment Kit (ADK) es una colección de herramientas, archivos binarios y paquetes de idioma del sistema operativo que puede usar para personalizar, evaluar e implementar Windows Server Essentials en equipos nuevos. Este documento incluye información específica para los socios que tienen pensado preinstalar el sistema operativo para sus clientes, e incluye los siguientes temas:  
   
 
 -   [Introducción al Kit de evaluación e implementación (ADK) de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)  
@@ -28,7 +28,7 @@ Windows Server&reg; 2012 Essentials Assessment and Deployment Kit (ADK) es una c
   
     -   [Requisitos de hardware para el equipo de destino](Hardware-Requirements-for-the-Target-Computer.md)  
   
-    -   [Preconfiguración de un enrutador](Preconfiguring-a-Router.md)  
+    -   [Configuración previa del enrutador](Preconfiguring-a-Router.md)  
   
     -   [Preparar el equipo del técnico](Prepare-the-Technician-Computer.md)  
   
@@ -80,72 +80,12 @@ Windows Server&reg; 2012 Essentials Assessment and Deployment Kit (ADK) es una c
   
 -   [Preparación de la imagen para su implementación](Preparing-the-Image-for-Deployment.md)  
   
--   [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)  
-
--   [Introducción al Kit de evaluación e implementación (ADK) de Windows Server Essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)  
-  
-    -   [Información importante para el uso del ADK de Windows Server Essentials](../install/Important-Information-for-Using-the-Windows-Server-Essentials-ADK.md)  
-  
-    -   [Requisitos de hardware para el equipo de destino](../install/Hardware-Requirements-for-the-Target-Computer.md)  
-  
-    -   [Preconfiguración de un enrutador](../install/Preconfiguring-a-Router.md)  
-  
-    -   [Preparar el equipo del técnico](../install/Prepare-the-Technician-Computer.md)  
-  
-    -   [Configurar el almacenamiento de servidor](../install/Configure-Server-Storage.md)  
-  
--   [Creación y personalización de la imagen](../install/Creating-and-Customizing-the-Image.md)  
-  
-    -   [Crear una imagen personalizada básica](../install/Create-a-Simple-Customized-Image.md)  
-  
-    -   [Crear una unidad flash USB de arranque](../install/Create-a-Bootable-USB-Flash-Drive.md)  
-  
-    -   [Crear una imagen con archivos de respuesta](../install/Create-an-Image-By-Using-Answer-Files.md)  
-  
-    -   [Personalizar la imagen](../install/Customize-the-Image.md)  
-  
--   [Personalizaciones adicionales](../install/Additional-Customizations.md)  
-  
-    -   [Agregar personalizaciones de marca al Panel, el acceso web remoto y Launchpad](../install/Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md)  
-  
-    -   [Agregar una pestaña a Configuración](../install/Add-a-Tab-to-Settings.md)  
-  
-    -   [Agregar categorías de nivel superior a LaunchPad (sistema operativo Macintosh)](../install/Add-Top-Level-Categories-to-the-Launchpad--Macintosh-Operating-System-.md)  
-  
-    -   [Cambiar la configuración de streaming multimedia](../install/Change-Media-Streaming-Settings.md)  
-  
-    -   [Cambiar la combinación de colores del panel y de LaunchPad](../install/Change-the-Color-Scheme-of-the-Dashboard-and-Launchpad.md)  
-  
-    -   [Cambiar el orden y la agrupación de las pestañas](../install/Change-the-Order-and-Grouping-of-Tabs.md)  
-  
-    -   [Instalar o quitar paquetes de idioma](../install/Install-or-Remove-Language-Packs.md)  
-  
-    -   [Administrar nombres de dominio y proveedores de nombres de dominio](../install/Manage-Domain-Names-and-Domain-Name-Providers.md)  
-  
-    -   [Personalizar la tarea Suscribirse a Microsoft Online Backup Service](../install/Customize-Sign-Up-for-Microsoft-Online-Backup-Service-task.md)  
-  
-    -   [Personalizar espacios de almacenamiento](../install/Customize-Storage-Spaces.md)  
-  
-    -   [Compilar medios de restauración de cliente multilingüe](../install/Build-Multi-Language-Client-Restore-Media.md)  
-  
-    -   [Automatizar la instalación de complementos durante la instalación](../install/Automate-Installation-of-Add-Ins-During-Setup.md)  
-  
-    -   [Agregar información de socio de registro del contrato de socio de servicio en línea de Microsoft](../install/Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)  
-  
-    -   [Reemplazar la dirección URL de punto de conexión de compra/prueba del módulo de integración de O365 en cumplimiento del contrato de revendedor de servicio en línea de Microsoft](../install/Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)  
-  
-    -   [Crear un DVD de recuperación del servidor para servidores administrados de forma remota](../install/Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)  
-  
-    -   [Crear un DVD de recuperación del servidor para compatibilidad con varios idiomas](../install/Create-a-Server-Recovery-DVD-for-Multi-Language-Support.md)  
-  
--   [Preparación de la imagen para su implementación](../install/Preparing-the-Image-for-Deployment.md)  
-  
--   [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)  
+-   [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
 
   
-## <a name="copyright-information"></a>Información de copyright  
- Este documento se proporciona tal cual. La información y las opiniones expresadas en este documento, incluidas las direcciones URL y otras referencias a sitios web de Internet, pueden cambiar sin previo aviso. Algunos de los ejemplos mencionados aquí son solamente ejemplos ficticios. No se pretende realizar ni debe interpretarse ninguna conexión o asociación reales. Este documento no le proporciona derechos legales sobre ninguna propiedad intelectual en ningún producto de Microsoft. Puedes copiarlo y usarlo como referencia interna.  
+## <a name="copyright-information"></a>Información sobre copyright  
+ Este documento se proporciona tal cual. La información y las vistas expresadas en este documento, incluidas las direcciones URL y otras referencias a sitios web de Internet, pueden cambiar sin previo aviso. Algunos ejemplos descritos aquí se proporcionan únicamente con fines ilustrativos y son ficticios. No debe deducirse ninguna asociación ni conexión reales. Este documento no le proporciona derechos legales sobre ninguna propiedad intelectual en ningún producto de Microsoft. Puede copiar y usar este documento para su referencia interna.  
   
- Active Directory, Microsoft, Windows Live, Windows PowerShell, Windows y Windows Server son marcas comerciales del grupo de empresas de Microsoft. Todas las demás marcas comerciales son propiedad de sus respectivos propietarios.  
+ Active Directory, Microsoft, Windows Live, Windows PowerShell, Windows y Windows Server son marcas comerciales del grupo de empresas de Microsoft. Las demás marcas comerciales pertenecen a sus respectivos propietarios.  
   
- &copy; 2012 Microsoft. Todos los derechos reservados.
+ &copy;2012 Microsoft. Todos los derechos reservados.

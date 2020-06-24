@@ -8,12 +8,12 @@ ms.assetid: 93a73556-22ef-402d-b8d4-582b74c22bcf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 241e7adf280e908ced8804969947d2a03400b06f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 52a4af1e5cadcec1bae46aacb4ac4624c3ecc584
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818288"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267656"
 ---
 # <a name="create-the-cfgini-file"></a>Cree el archivo Cfg.ini
 
@@ -96,20 +96,20 @@ El archivo cfg.ini se usa para automatizar una instalación del sistema operativ
     > [!NOTE]
     >  No se proporcionan opciones para seleccionar otro idioma en la configuración inicial. Si se restablece el sistema, el idioma del sistema operativo será el que se instaló originalmente.  
   
-    |Nombre de parámetro|Descripción de parámetro|  
+    |Nombre de parámetro|Descripción del parámetro|  
     |--------------------|---------------------------|  
     |*AcceptEula*|Indica que el usuario acepta los Términos de licencia de software de Microsoft. El valor puede ser verdadero o falso, pero la instalación solo se realizará cuando se especifica verdadero.|  
     |*AcceptOEMEula*|(Opcional) Indica que el usuario acepta el contrato de licencia del asociado. El valor puede ser verdadero o falso. Este campo solo se requiere si el servidor se adquirió a través de un asociado que proporciona un contrato de licencia aparte.|  
     |*Compañía*|(Opcional) Nombre de la empresa. El nombre de la empresa se usa para asociar el servidor con la empresa y personalizar los informes de la empresa. Puede tener hasta 254 caracteres|  
-    |*Pais*|(Opcional) Cadena que representa la región/país deseado. Ejemplo: US para Estados Unidos.|  
+    |*País*|(Opcional) Cadena que representa la región/país deseado. Ejemplo: US para Estados Unidos.|  
     |*ServerName*|El nombre del servidor identifica de forma única el servidor en la red. El nombre del servidor debe cumplir los criterios siguientes:<br /><br /> -Puede tener una longitud de hasta 15 caracteres.<br /><br /> : Puede contener letras, números y guiones (-).<br /><br /> -No debe comenzar con un guión.<br /><br /> : No debe contener espacios.<br /><br /> -No debe contener solo números.<br /><br /> Ejemplo: ContosoServer.|  
     |*DNSName*|Un dominio interno agrupa el servidor y los equipos cliente para compartir una base de datos común de nombres de usuario, contraseñas y otros datos comunes. Los usuarios ven este nombre al iniciar sesión en sus equipos, pero solo se usa internamente y no coincide con el nombre de dominio de Internet. El nombre de dominio interno debe cumplir los mismos criterios especificados para *ServerName*.<br /><br /> Ejemplo: contoso.local.|  
     |*NetbiosName*|Un nombre NetBIOS se usa para identificar recursos que se ejecutan en el servidor. Puede tener hasta 15 caracteres Ejemplo: Contoso.|  
-    |*Idioma*|(Opcional) Especifica el idioma que se mostrará. Solo puede ser uno de los idiomas instalados. Ejemplo: en-us para la variedad de inglés de los Estados Unidos.|  
+    |*Lenguaje*|(Opcional) Especifica el idioma que se mostrará. Solo puede ser uno de los idiomas instalados. Ejemplo: en-us para la variedad de inglés de los Estados Unidos.|  
     |*Configuración regional*|(Opcional) Especifica el formato de hora y moneda con el formato *LocaleID*. Ejemplo: en-us para el formato de hora y moneda mostrado en inglés según los estándares usados en los Estados Unidos.|  
     |*Teclado*|El teclado debe tener uno de los dos formatos siguientes:<br /><br /> - **idioma de entrada: distribución del teclado.** Por ejemplo, 0409:00000409, donde 0409 antes de **:** es el idioma de entrada y **00000409** es la disposición de teclado. Puede encontrar la lista de disposiciones de teclado en la clave del Registro **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard Layouts**.<br /><br /> - **idioma de entrada: el identificador de IME.** Abajo se muestra una lista completa de identificadores IME.<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {8F96574E-C86C-4bd6-9666-3F7327D4CBE8} método de entrada de amárico<br /><br /> -{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e} {FA550B04-5AD7-411F-A5AC-CA038EC515D7} Microsoft pinyin-simple rápido (Chino Simplificado)<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {B2F9C502-1742-11D4-9790-0080C882687E} chino (tradicional)-fonética nueva<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {4BDF9F03-C7D3-11D4-B2AB-0080C882687E} chino (tradicional)-ChangJie<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {6024B45F-5C54-11D4-B921-0080C882687E} chino (tradicional)-Quick<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {D38EFF65-AA46-4FD5-91A7-67845FB02F5B} matriz de chino tradicional<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {037B2C25-480C-4D7F-B027-D6CA6B69788A} chino tradicional DaYi<br /><br /> -{03B5835F-F03C-411B-9CE2-AA23E1171E36} {A76C93D9-5523-4E90-AAFA-4DB112F9AC76} Microsoft IME (japonés)<br /><br /> -{A028AE76-01B1-46C2-99C4-ACD9858AE02F} {B5FE1F02-D5F2-4445-9C03-C568F23C99A1} Microsoft IME (Coreano)<br /><br /> -{A1E2B86B-924A-4D43-80F6-8A820DF7190F} {B60AF051-257A-46BC-B9D3-84DAD819BAFB} IME hangul antiguo (Coreano)<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {409C8376-007B-4357-AE8E-26316EE3FB0D} método de entrada Yi<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {3CAB88B7-CC3E-46A6-9765-B772AD7761FF} Tigrinya método de entrada|  
-    |*Configuración*|Especifica la selección del usuario para las actualizaciones. Use uno de los siguientes valores:<br /><br /> **-Todos los** equivalentes usan la configuración recomendada.<br /><br /> **-Actualizaciones es la instalación de** actualizaciones importantes. solo<br /><br /> **-Ninguno** es igual a no buscar actualizaciones.|  
-    |*Nombre*|: El nombre de la nueva cuenta de administrador que se creó durante la instalación. El nombre de su cuenta de administrador y usuario estándar debe satisfacer los criterios siguientes:<br /><br /> -Puede tener una longitud de hasta 19 caracteres.<br /><br /> -No puede contener/\ [ &#124; ] < > + =; , ? *<br /><br /> -No debe comenzar ni terminar con un punto.<br /><br /> -No debe contener dos puntos consecutivos.<br /><br /> -No debe ser el mismo que el nombre del servidor o el nombre del dominio interno.<br /><br /> -No debe ser igual que un nombre de usuario predefinido, como administrador o invitado.|  
+    |*Configuración*|Especifica la selección del usuario para las actualizaciones. Utilice uno de los valores siguientes:<br /><br /> **-Todos los** equivalentes usan la configuración recomendada.<br /><br /> **-Actualizaciones es la instalación de** actualizaciones importantes. solo<br /><br /> **-Ninguno** es igual a no buscar actualizaciones.|  
+    |*Nombre*|: El nombre de la nueva cuenta de administrador que se creó durante la instalación. El nombre de su cuenta de administrador y usuario estándar debe satisfacer los criterios siguientes:<br /><br /> -Puede tener una longitud de hasta 19 caracteres.<br /><br /> -No puede contener/\ []  &#124; < > + =; , ? *<br /><br /> -No debe comenzar ni terminar con un punto.<br /><br /> -No debe contener dos puntos consecutivos.<br /><br /> -No debe ser el mismo que el nombre del servidor o el nombre del dominio interno.<br /><br /> -No debe ser igual que un nombre de usuario predefinido, como administrador o invitado.|  
     |*PlainTextPassword*|Se trata de la contraseña de la nueva cuenta de administrador que se creó durante la instalación.<br /><br /> -Debe tener una longitud de ocho caracteres como mínimo.<br /><br /> -Debe contener al menos tres de las cuatro categorías siguientes:<br /><br /> -Caracteres en mayúsculas.<br /><br /> -Caracteres en minúsculas.<br /><br /> Los.<br /><br /> Euro.|  
     |*StdUserName*|El nombre de la nueva cuenta de usuario estándar que se creó durante la instalación. Consulte el parámetro *UserName* para conocer los requisitos.|  
     |*StdUserPlainTextPassword*|La contraseña de la cuenta de usuario estándar que se creó durante la instalación.|  
@@ -143,17 +143,11 @@ El archivo cfg.ini se usa para automatizar una instalación del sistema operativ
 > [!IMPORTANT]
 >  La sección Configuración inicial del archivo cfg.ini solo debe ser usada por el usuario final para personalizar el servidor o para que un asociado compruebe la experiencia del usuario del servidor al utilizar un archivo de respuestas desatendido. Esta sección del archivo no se utiliza para crear la imagen.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 
- [Introducción con el ADK de Windows Server essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
+ [Introducción con el ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
-
- [Introducción con el ADK de Windows Server essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

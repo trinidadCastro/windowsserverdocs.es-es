@@ -8,12 +8,12 @@ ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a566a8f342ba076ee402d1f19e35f99c58b931e4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c4a2a6f0c19425103c96a3eb69fd8531ec7a122b
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817878"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267606"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>Requisitos de hardware para el equipo de destino
 
@@ -29,10 +29,10 @@ En esta sección se proporcionan los requisitos de hardware para Windows Server 
 |Componente|Mínima|Recomendado*|Máximo|  
 |---------------|-------------|-------------------|-------------|  
 |Socket de la CPU|1,4 GHz (procesador de 64 bits) o superior en el caso de un núcleo único<br /><br /> 1,3 GHz (procesador de 64 bits) o superior en el caso de varios núcleos|3,1 GHz (procesador de 64 bits) o superior en el caso de varios núcleos|2 zócalos|  
-|Memoria (RAM)|2 GB|16 GB|64 GB|  
+|Memoria (RAM)|2 GB|16 GB|64 GB|  
 |Unidades de disco duro y espacio de almacenamiento disponible|Unidad de disco duro de 160 GB con una partición de sistema de 60 GB||Sin límite|  
   
- \* Requisitos de hardware recomendados para admitir el límite máximo de usuarios y dispositivos de Windows Server Essentials.  
+ * Requisitos de hardware recomendados para admitir el límite máximo de usuarios y dispositivos de Windows Server Essentials.  
   
 ## <a name="additional-hardware-and-software-requirements"></a>Requisitos adicionales de hardware y software  
  En la tabla siguiente se incluyen los requisitos adicionales de hardware y software.  
@@ -40,28 +40,22 @@ En esta sección se proporcionan los requisitos de hardware para Windows Server 
 |Componente|Descripción|  
 |---------------|-----------------|  
 |Adaptador de red|Adaptador Ethernet Gigabit (10/100/1000baseT PHY/MAC)|  
-|Internet|Algunas funciones pueden requerir acceso a Internet (pueden aplicarse tarifas) o una cuenta de Windows Live&reg; ID.|  
+|Internet|Algunas funciones pueden requerir acceso a Internet (pueden aplicarse tarifas) o una cuenta de Windows Live &reg; ID.|  
 |Sistemas operativos de cliente compatibles|-Windows 7<br />-Windows 8<br />-Macintosh OS X 10,5 a 10,8.<br /><br /> **Nota:** Algunas características requieren ediciones Professional o superior.<br /><br /> 1 GB de espacio disponible en disco (se liberará una parte del disco después de la instalación)|  
-|Enrutador|Un enrutador o firewall compatible con IPv4 NAT|  
+|Router|Un enrutador o firewall compatible con IPv4 NAT|  
 |Requisitos adicionales|Unidad de DVD-ROM|  
   
  Los requisitos necesarios variarán según la configuración del sistema y las aplicaciones y características que instale. El rendimiento del procesador depende no solo de la frecuencia del reloj de este, sino también del número de núcleos y del tamaño de la memoria caché del procesador. Los requisitos de espacio en disco para la partición del sistema son aproximados. Es posible que sea necesario disponer de espacio adicional si se realiza la instalación a través de la red.  
   
  Para obtener más información acerca de los requisitos de hardware, consulte el [Catálogo de Windows Server](https://www.windowsservercatalog.com).  
   
- Todo el hardware del servidor debe cumplir los requisitos establecidos para el programa del logotipo de Windows Server 2012 para sistemas. Para obtener más información, consulte [Windows 7 Logo Program (Programa del logotipo de Windows)](https://www.microsoft.com/whdc/winlogo/hwrequirements.mspx).  
+ Todo el hardware del servidor debe cumplir los requisitos establecidos para el programa del logotipo de Windows Server 2012 para sistemas. Para obtener más información, consulte [Programa del logotipo de Windows](https://www.microsoft.com/whdc/winlogo/hwrequirements.mspx).  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 
- [Introducción con el ADK de Windows Server essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
+ [Introducción con el ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
-
- [Introducción con el ADK de Windows Server essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

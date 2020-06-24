@@ -1,5 +1,5 @@
 ---
-title: Transición de Windows Server Essentials a Windows Server 2012 Standard
+title: Transición de Windows Server Essentials a Windows Server 2012 Standard
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
 ms.prod: windows-server
@@ -8,18 +8,18 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: aace7849244bb65ec0042971e6ec899f554a62d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 20b38be01d091f5dfeb819712c57c1f87eaf770f
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852308"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256635"
 ---
-# <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Transición de Windows Server Essentials a Windows Server 2012 Standard
+# <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Transición de Windows Server Essentials a Windows Server 2012 Standard
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
- Windows Server&reg; 2012 Essentials admite hasta 25 usuarios y 50 dispositivos. Si sus necesidades empresariales superan el límite, puede realizar una transición de licencias local de Windows Server Essentials a Windows Server 2012 Standard para mantener la licencia conforme.  
+ Windows Server &reg; 2012 Essentials admite hasta 25 usuarios y dispositivos 50. Si sus necesidades empresariales superan el límite, puede realizar una transición de licencias local de Windows Server Essentials a Windows Server 2012 Standard para mantener la licencia conforme.  
   
 ## <a name="how-the-transition-affects-user-and-device-limits"></a>Cómo afecta la transición al límite de usuarios y dispositivos  
  Después de realizar la transición a Windows Server 2012 Standard, se quitan los límites de cuentas de usuario y dispositivos, pero las características que son exclusivas de Windows Server Essentials (como el panel, el acceso Web remoto y la copia de seguridad de equipos cliente) siguen estando disponibles. Sin embargo, las limitaciones técnicas de estas características permiten un máximo de 75 cuentas de usuario y 75 dispositivos. Si es necesario agregar más de 75 cuentas de usuario o dispositivos, debe desactivar las características de Windows Server Essentials y usar las herramientas nativas estándar de Windows Server 2012 para administrar las cuentas de usuario y los dispositivos.  
@@ -36,9 +36,9 @@ ms.locfileid: "80852308"
   
 -   Además, asegúrese de leer y comprender el contrato de licencia para el usuario final (CLUF) para Windows Server 2012 Standard. Para ver los términos de licencia:  
   
-    1.  Abra una ventana de comandos como administrador.  
+    1.  Abra una ventana del símbolo del sistema como administrador.  
   
-    2.  Ejecuta el siguiente comando:  
+    2.  Ejecute el siguiente comando:  
   
          **DISM/online/Set-Edition: ServerStandard/geteula: ruta de acceso del CLUF**  
   
@@ -62,7 +62,7 @@ ms.locfileid: "80852308"
   
 2. Abra Windows PowerShell como administrador y ejecute el siguiente comando.  
   
-    **DISM/online/Set-Edition: ServerStandard/ACCEPTEULA/ProductKey:** *clave de producto*  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *Clave de producto*  
   
     Donde *clave de producto* es la clave de producto de su copia de Windows Server 2012 Standard.  
   
@@ -101,14 +101,10 @@ ms.locfileid: "80852308"
   
    **%SystemDrive%\Archivos de Programa\windows Server\Bin\TurnOffFeaturesWizard.exe**  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
   
 
 -   [Transición a Windows Server 2012 R2 Standard](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
   
 -   [Migrar datos del servidor a Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [Transición a Windows Server 2012 R2 Standard](../migrate/Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
-  
--   [Migrar datos del servidor a Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

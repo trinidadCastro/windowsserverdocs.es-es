@@ -8,19 +8,19 @@ ms.assetid: 9bd191d6-ecc5-4230-a88e-f3fc281cb956
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7a297ed077f4c1457bd1e59fc0ea22feedd5de0d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8b397a8fd2047c1a6fcaf5de2f5e1af167f1029f
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817590"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267456"
 ---
 # <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>Agregar información de socio de registro del contrato de socio del servicio en línea de Microsoft
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_3rdLevelDomanNames"></a>   
- Si es socio del acuerdo de socio de servicio en línea de Microsoft (MOSPA) para Office 365, para asegurarse de que tiene una compensación correcta cuando una solicitud de suscripción se originó en Windows Server Essentials a través del módulo de integración de Office 365, debe crear un clave del registro que contiene la identificación de su asociado de registro (ID.). La siguiente información se lee y se pasa al proveedor de servicios a través de las direcciones URL de suscripción a Office 365.  
+ Si es socio del acuerdo de socio de servicio en línea de Microsoft (MOSPA) para Office 365, para asegurarse de que está correctamente compensada cuando una solicitud de suscripción se origina en Windows Server Essentials a través del módulo de integración de Office 365, debe crear una clave del registro que contenga su identificación de socio de registro (por identificador). La siguiente información se lee y se pasa al proveedor de servicios a través de las direcciones URL de suscripción a Office 365.  
   
 -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO  
   
@@ -32,7 +32,7 @@ ms.locfileid: "80817590"
   
 #### <a name="to-add-the-por-id-key-to-the-registry"></a>Para agregar la clave ID POR al Registro  
   
-1.  En el equipo de referencia, haga clic en **Inicio**, escriba **regedit** y después presione ENTRAR.  
+1.  En el equipo de referencia. haga clic en **Inicio**, escriba **regedit** y, a continuación, presione ENTRAR.  
   
 2.  En el panel izquierdo, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE**, **Microsoft** y finalmente **Windows Server**.  
   
@@ -48,15 +48,10 @@ ms.locfileid: "80817590"
   
 8.  Escriba su ID POR en el cuadro de texto **Información del valor** y haga clic en **Aceptar**.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
+ [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
-
- [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

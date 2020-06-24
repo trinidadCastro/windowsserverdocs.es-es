@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: b71fc748f7cc8d82420b7a62fe502135036db727
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9cafaf25a18ffe17894e11ff0676e492656e5831
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312114"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256674"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>Crear un DVD de recuperación del servidor para compatibilidad con varios idiomas
 
@@ -48,9 +48,9 @@ ms.locfileid: "80312114"
  Para agregar compatibilidad multilingüe al programa de instalación de Windows, necesita lo siguiente:  
   
 
--   El equipo del técnico con todas las herramientas y los archivos de origen necesarios para crear una imagen personalizada de WinPE. Para obtener más información, consulte [Prepare the Technician Computer](Prepare-the-Technician-Computer.md).  
+-   El equipo del técnico con todas las herramientas y los archivos de origen necesarios para crear una imagen personalizada de WinPE. Para obtener más información, consulte [Preparar el equipo del técnico](Prepare-the-Technician-Computer.md).  
 
--   El equipo del técnico con todas las herramientas y los archivos de origen necesarios para crear una imagen personalizada de WinPE. Para obtener más información, consulte [Prepare the Technician Computer](../install/Prepare-the-Technician-Computer.md).  
+-   El equipo del técnico con todas las herramientas y los archivos de origen necesarios para crear una imagen personalizada de WinPE. Para obtener más información, consulte [Preparar el equipo del técnico](../install/Prepare-the-Technician-Computer.md).  
 
   
 -   Un DVD de Windows Server Essentials.  
@@ -66,7 +66,7 @@ ms.locfileid: "80312114"
 > [!NOTE]
 >  Compruebe que ha instalado los paquetes de idioma para Windows Server 2012. Esto garantiza la personalización de marca adecuada. Los paquetes de idioma de la interfaz de usuario multilingüe de Windows Server 2012 están disponibles en [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx). Siga las instrucciones que se describen en el [Tutorial: creación de imágenes de Windows multilingües sobre la creación de un multilingüe](https://technet.microsoft.com/library/jj126995.aspx) en la creación de una imagen de Windows multilingüe antes de agregar el paquete de idioma de Windows Server Essentials a install. Wim.  
 >   
->  Los paquetes de idioma de Windows Server Essentials están disponibles en el medio del paquete de idioma en \Paquetes packs\\< CultureName\>.  
+>  Los paquetes de idioma de Windows Server Essentials están disponibles en el medio del paquete de idioma en \Paquetes packs \\<CultureName \> .  
   
 > [!NOTE]
 >  Es posible que no todos los paquetes de idioma estén disponibles antes del lanzamiento de Windows Server 2012.  
@@ -102,15 +102,10 @@ ms.locfileid: "80312114"
     Dism /Unmount-Wim /MountDir:C:\InstallMount /Commit  
     ```  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
+ [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
-
- [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

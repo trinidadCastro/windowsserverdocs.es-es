@@ -8,12 +8,12 @@ ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2605483de447e78fc1bd091d911867656c8ab8b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 46fd1ec7f76c6381ed9d725f5628a9a8fc760e9d
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820058"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267586"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>Instalación y configuración de Windows Server Essentials o Experiencia con Windows Server Essentials
 
@@ -21,7 +21,7 @@ ms.locfileid: "80820058"
 
 Windows Server Essentials es un primer servidor ideal para pequeñas empresas con hasta 25 usuarios y 50 dispositivos. En el caso de las organizaciones con hasta 100 usuarios y 200 dispositivos, ahora puede usar Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado. En este tema se describen dos escenarios.  
   
-La experiencia con Windows Server Essentials es un rol de Windows Server 2016 que le permite sacar partido de todas las características (como el acceso Web remoto y la copia de seguridad del equipo) que están disponibles en Windows Server Essentials sin los bloqueos y límites que se aplican en  Windows Server Essentials. Este rol de servidor también está disponible en Windows Server Essentials y está habilitado de forma predeterminada.
+La experiencia con Windows Server Essentials es un rol de Windows Server 2016 que le permite sacar partido de todas las características (como el acceso Web remoto y la copia de seguridad del equipo) que están disponibles en Windows Server Essentials sin los bloqueos y límites que se aplican en Windows Server Essentials. Este rol de servidor también está disponible en Windows Server Essentials y está habilitado de forma predeterminada.
   
 Antes de instalar Windows Server Essentials o el rol de experiencia de Essentials, tenga en cuenta las siguientes limitaciones.  
   
@@ -38,7 +38,7 @@ Antes de instalar Windows Server Essentials o el rol de experiencia de Essential
 >   
 >  [Descargar Windows Server Essentials](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016-essentials)
   
-## <a name="installation-options"></a>Opciones de instalación  
+## <a name="installation-options"></a>Opción de instalación  
  Este documento proporciona instrucciones paso a paso para instalar y configurar Windows Server Essentials. En función de su entorno de red, dispone de las siguientes opciones de instalación:  
   
 -    Windows Server Essentials (con el rol experiencia con Windows Server Essentials habilitado de forma predeterminada)  
@@ -49,10 +49,10 @@ Antes de instalar Windows Server Essentials o el rol de experiencia de Essential
 |----------------------------|-----------------|---------------------|  
 |Nuevo entorno de Active Directory|Puede instalar Windows Server Essentials para crear un entorno de Active Directory.|[Implementar Windows Server Essentials para configurar un nuevo entorno de Active Directory](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_NewAD)|  
 |Entorno de Active Directory existente|Puede instalar Windows Server Essentials en un entorno de Active Directory existente.|[Implementar Windows Server Essentials en un entorno de Active Directory existente](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_ExistingAD)|  
-|Entorno virtual|Puede implementar Windows Server Essentials como una máquina virtual.|[Virtualización del entorno](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_VirtualWSE)|  
+|Entorno virtual|Puede implementar Windows Server Essentials como una máquina virtual.|[Virtualizar su entorno](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_VirtualWSE)|  
 |Implementación automatizada|Puede automatizar la implementación de Windows Server Essentials mediante Windows PowerShell.|[Instalar y configurar Windows Server Essentials mediante Windows PowerShell](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_PowerShell)|  
   
-## <a name="before-you-begin"></a>Antes de comenzar  
+## <a name="before-you-begin"></a>Antes de empezar  
  Antes de comenzar la instalación, revise la siguiente documentación:  
   
 -   [Información general del producto de Windows Server Essentials](https://www.microsoft.com/server-cloud/windows-server-essentials/windows-server-2012-r2-essentials.aspx)  
@@ -170,10 +170,7 @@ Antes de instalar Windows Server Essentials o el rol de experiencia de Essential
   
 1.  Después de la página de bienvenida de Windows (según el proveedor del sistema "configuración de ¢ s"), la página **antes de comenzar** ofrece la opción de configurar Windows Server Essentials como una instancia virtual o en hardware físico. La disponibilidad de estas opciones depende del proveedor del sistema y no siempre están disponibles. Para instalar Windows Server Essentials como una máquina virtual, en **instalar Windows Server Essentials**, seleccione **instalar como instancia virtual**y, a continuación, haga clic en **configurar**.  
   
-2.  El asistente ofrece una máquina virtual que tarda aproximadamente cinco minutos.  
-  
-
-3.  Después, configure Windows Server Essentials como se describió anteriormente en la sección [implementación de Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_WSEDeploy) .  
+2.  El asistente ofrece una máquina virtual que tarda aproximadamente cinco minutos.
 
 3.  Después, configure Windows Server Essentials como se describió anteriormente en la sección [implementación de Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_WSEDeploy) .  
 
@@ -212,7 +209,7 @@ Antes de instalar Windows Server Essentials o el rol de experiencia de Essential
   
     -   Para obtener un progreso inmediato sin la barra de progreso, ejecute `Get-WssConfigurationStatus`.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
   
 -   [Novedades de Windows Server Essentials](../get-started/what-s-new.md)  
   

@@ -9,12 +9,12 @@ ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 8ae461f8e9236451e9a6b442cafecee4981ed8ce
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 133e44c83032976f08819529508b3990b6e78596
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853718"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256685"
 ---
 # <a name="nic-teaming-settings"></a>Configuración de la formación de equipos NIC
 En este tema se proporciona información general sobre las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
@@ -24,7 +24,7 @@ En este tema se proporciona información general sobre las propiedades del equip
 ![Propiedades del equipo NIC](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_06_properties.jpg)  
 
 ## <a name="teaming-modes"></a>Modos de formación de equipos 
-Las opciones para el modo de formación de equipos son **independiente del conmutador** y **dependiente del conmutador**. El modo dependiente del conmutador incluye la **formación de equipos estáticos** y el **Protocolo de control de agregación de vínculos (LACP)** . 
+Las opciones para el modo de formación de equipos son **independiente del conmutador** y **dependiente del conmutador**. El modo dependiente del conmutador incluye la **formación de equipos estáticos** y el **Protocolo de control de agregación de vínculos (LACP)**. 
 
 >[!TIP]
 >Para mejorar el rendimiento del equipo NIC, se recomienda usar un modo de equilibrio de carga de distribución dinámica.  
@@ -78,7 +78,7 @@ Dado que el conmutador adyacente siempre ve una dirección MAC determinada en un
   
 Sin embargo, si el host tiene solo algunas máquinas virtuales, este modo podría no ser lo suficientemente granular para lograr una distribución bien equilibrada. Este modo también limitará siempre una única máquina virtual (es decir, el tráfico de un solo puerto de conmutador) al ancho de banda que está disponible en una sola interfaz. La formación de equipos NIC usa el puerto del conmutador virtual de Hyper-V como identificador en lugar de usar la dirección MAC de origen porque, en algunos casos, una máquina virtual puede estar configurada con más de una dirección MAC en un puerto de conmutador.  
   
-### <a name="dynamic"></a>Dynamic
+### <a name="dynamic"></a>Dinámica
   
 [!INCLUDE [dynamic-shortdesc-include](../../includes/dynamic-shortdesc-include.md)]
   
@@ -108,7 +108,7 @@ Después de hacer clic en el vínculo resaltado, se abre el siguiente cuadro de 
   
 Si usa redes VLAN, puede utilizar este cuadro de diálogo para especificar un número de VLAN.  
   
-Tanto si usa redes VLAN como si no, puede especificar un nombre tNIC para el equipo NIC.  
+Tanto si usa redes VLAN como si no, puede especificar un nombre de NIC para el equipo NIC.  
   
 
 

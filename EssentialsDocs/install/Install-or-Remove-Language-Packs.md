@@ -8,12 +8,12 @@ ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c1fd1d21277d32672398d1dd201e2dda24682c2d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 64e982f7932f8ba3ecf83ffe6443391522ad0f12
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820028"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267556"
 ---
 # <a name="install-or-remove-language-packs"></a>Instalar o quitar paquetes de idiomas
 
@@ -32,11 +32,11 @@ ms.locfileid: "80820028"
   
  Para instalar los paquetes de idioma, debe utilizar el siguiente comando:  
   
- **DISM. exe/online/Add-Package/PackagePath: C:\\< ruta de acceso completa al directorio del archivo. cab\>\lp.cab**  
+ **dism.exe/online/Add-Package/PackagePath: C: \\<ruta de acceso completa al directorio del archivo. cab \>\lp.cab**  
   
  Por ejemplo, el siguiente comando muestra cómo agregar el paquete de idioma alemán:  
   
- **DISM. exe/online/Add-Package/PackagePath: C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
+ **dism.exe /online /Add-Package /PackagePath:C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
   
 > [!IMPORTANT]
 >  También debe aplicar paquetes de idioma para Windows Server Essentials para localizar completamente el sistema operativo.  
@@ -44,21 +44,16 @@ ms.locfileid: "80820028"
 ## <a name="removing-language-packs-from-an-image"></a>Eliminación de paquetes de idiomas de una imagen  
  Para quitar un paquete de idioma que no desee incluir en una imagen puede usar el siguiente comando:  
   
- **DISM. exe/online/Remove-Package/PackagePath: C:\\< ruta de acceso completa al directorio del archivo. cab\>\lp.cab**  
+ **dism.exe/online/Remove-Package/PackagePath: C: \\<ruta de acceso completa al directorio del archivo. cab \>\lp.cab**  
   
  Por ejemplo, el siguiente comando muestra cómo quitar el paquete de idioma alemán:  
   
- **DISM. exe/online/Remove-Package/PackagePath: C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
+ **dism.exe /online /Remove-Package /PackagePath:C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
+ [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
-
- [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 
