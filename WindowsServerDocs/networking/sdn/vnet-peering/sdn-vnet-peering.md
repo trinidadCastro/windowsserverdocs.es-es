@@ -1,5 +1,5 @@
 ---
-title: Interconexión de red virtual
+title: Emparejamiento de redes virtuales de Azure
 manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
@@ -7,26 +7,26 @@ ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: c5955ad8be987ebfd605bb59cfdc43b9011714c4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d4dadcabfb911c7722da493c45db112477eab34c
+ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853588"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345419"
 ---
-# <a name="virtual-network-peering"></a>Interconexión de red virtual
+# <a name="virtual-network-peering"></a>Emparejamiento de redes virtuales de Azure
 
 >Se aplica a: Windows Server
 
 El emparejamiento de redes virtuales permite conectar dos redes virtuales sin problemas. Una vez emparejadas, para fines de conectividad, las redes virtuales aparecen como una sola. 
 
-Las ventajas de usar el emparejamiento de redes virtuales son:
+Las ventajas del uso del emparejamiento de redes virtuales son las siguientes:
 
 -   El tráfico entre las máquinas virtuales de las redes virtuales emparejadas se enruta a través de la infraestructura de red troncal solo a través de direcciones IP *privadas* . La comunicación entre las redes virtuales no requiere Internet o puertas de enlace públicas.
 
--   Una conexión de baja latencia y alto ancho de banda entre los recursos de redes virtuales diferentes.
+-   Baja latencia, conexión de gran ancho de banda entre los recursos de redes virtuales diferentes.
 
--   La capacidad de los recursos de una red virtual de comunicarse con los recursos de una red virtual diferente.
+-   La capacidad de los recursos de una red virtual para comunicarse con los de otra red virtual.
 
 -   No hay tiempo de inactividad en los recursos de una red virtual al crear el emparejamiento.
 
@@ -47,15 +47,13 @@ El emparejamiento de redes virtuales tiene algunos requisitos y restricciones:
 
 - Puesto que el emparejamiento de redes virtuales se encuentra entre dos redes virtuales, no hay ninguna relación transitiva derivada entre los emparejamientos. Por ejemplo, si empareja red virtual a con red virtual b y red virtual b con red virtual c, red virtual a no se empareja con red virtual c.
 
-  [imagen aquí]
-
 ## <a name="connectivity"></a>Conectividad
 
 Después de emparejar las redes virtuales, los recursos de cualquiera de las redes virtuales pueden conectarse directamente con los recursos de la red virtual emparejada.
 
 -   La latencia de red entre máquinas virtuales en redes virtuales emparejadas es la misma que la latencia dentro de una única red virtual.
 
--   El rendimiento de la red se basa en el ancho de banda que se permite para la máquina virtual. No hay ninguna restricción adicional en el ancho de banda dentro del emparejamiento.
+-   El rendimiento de la red se basa en el ancho de banda que se permite para la máquina virtual. No hay restricciones adicionales con respecto al ancho de banda en el emparejamiento.
 
 -   El tráfico entre las máquinas virtuales de las redes virtuales emparejadas se enruta directamente a través de la infraestructura de red troncal, no a través de una puerta de enlace o a través de la red pública de Internet.
 
@@ -63,7 +61,7 @@ Después de emparejar las redes virtuales, los recursos de cualquiera de las red
 
 Si lo desea, puede aplicar listas de control de acceso (ACL) en cualquier red virtual para bloquear el acceso a otras redes virtuales o subredes. Si abre la conectividad completa entre las redes virtuales emparejadas (que es la opción predeterminada), puede aplicar ACL a subredes o máquinas virtuales concretas para bloquear o denegar el acceso específico. Para obtener más información acerca de las ACL, consulte [uso de listas de Access Control (ACL) para administrar el flujo de tráfico de red del centro de](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)información.
 
-## <a name="service-chaining"></a>Encadenamiento de servicio
+## <a name="service-chaining"></a>Encadenamiento de servicios
 
 Puede configurar rutas definidas por el usuario que apunten a máquinas virtuales de redes virtuales emparejadas como la dirección IP del próximo salto para habilitar el encadenamiento de servicio. El encadenamiento de servicios permite dirigir el tráfico de una red virtual a una aplicación virtual, en una red virtual emparejada, a través de rutas definidas por el usuario.
 
@@ -75,7 +73,7 @@ El emparejamiento de redes virtuales permite que el próximo salto en una ruta d
 
 Cada red virtual, independientemente de si está emparejada con otra red virtual, puede tener su propia puerta de enlace para conectarse a una red local. Cuando se emparejan redes virtuales, también puede configurar la puerta de enlace en la red virtual emparejada como punto de tránsito a una red local. En este caso, la red virtual que usa una puerta de enlace remota no puede tener su propia puerta de enlace. Una red virtual solo puede tener una puerta de enlace que puede ser una puerta de enlace local o remota (en la red virtual emparejada).
 
-## <a name="monitor"></a>Supervisar
+## <a name="monitor"></a>Supervisión
 
 Cuando se emparejan dos redes virtuales, se debe configurar un emparejamiento para cada red virtual en el emparejamiento.
 
@@ -83,7 +81,7 @@ Puede supervisar el estado de la conexión de emparejamiento, que puede estar en
 
 -   **Iniciado:** Se muestra cuando se crea el emparejamiento desde la primera red virtual a la segunda red virtual.
 
--   **Conectado:** Se muestra después de haber creado el emparejamiento desde la segunda red virtual a la primera red virtual. El estado de emparejamiento de la primera red virtual cambia de iniciado a conectado. Ambos equipos del mismo nivel de red virtual deben tener el estado conectado antes de establecer un emparejamiento de red virtual correctamente.
+-   **Conectado:** Se muestra después de haber creado el emparejamiento desde la segunda red virtual a la primera red virtual. El estado de emparejamiento para la primera red virtual cambia de Iniciado a Conectado. Ambos equipos del mismo nivel de red virtual deben tener el estado conectado antes de establecer un emparejamiento de red virtual correctamente.
 
 -   **Desconectado:** Se muestra si una red virtual se desconecta de otra red virtual.
 
