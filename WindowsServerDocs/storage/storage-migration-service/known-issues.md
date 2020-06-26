@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5a4a99434d67c08551d97589f8f2638e1024754d
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+ms.openlocfilehash: 638f4d122b25c870ed323b94d32b6cefca4be5ff
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306504"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372202"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -70,7 +70,7 @@ Este problema se debe a un gran número de archivos transferidos que no se puede
 
 Para evitar este problema:
 
-1. En el equipo de Orchestrator, edite el archivo *%systemroot%\SMS\Microsoft.StorageMigration.Service.exe.config* con Notepad. exe para cambiar el valor de "sendTimeout" de su valor predeterminado de 1 minuto a 10 minutos.
+1. En el equipo de Orchestrator, edite el archivo *% systemroot% \SMS\Microsoft.StorageMigration.Service.exe.config* con Notepad.exe para cambiar el valor predeterminado de "sendTimeout" de 1 minuto a 10 minutos.
 
    ```
      <bindings>
@@ -80,7 +80,7 @@ Para evitar este problema:
    ```
 
 2. Reinicie el servicio "Storage Migration Service" en el equipo de Orchestrator. 
-3. En el equipo de Orchestrator, inicie regedit. exe.
+3. En el equipo de Orchestrator, inicie Regedit.exe
 4. Busque y haga clic en la siguiente subclave del Registro: 
 
    `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
@@ -142,11 +142,11 @@ Archivo de origen:
 
   d:\test\Source icacls:
 
-  icacls d:\test\thatcher.png/Save out. txt/t Thatcher. png D:AI (A;; FA;;; BA) (A;; 0 x1200a9;;;D D) (A;; 0 x1301bf;;;D U) (A; ID; FA;;; BA) (A; ID; FA;;; SY) (A; ID; 0x1200a9;;; Bu
+  icacls d:\test\thatcher.png/Save out.txt/t thatcher.png D:AI (A;; FA;;; BA) (A;; 0 x1200a9;;;D D) (A;; 0 x1301bf;;;D U) (A; ID; FA;;; BA) (A; ID; FA;;; SY) (A; ID; 0x1200a9;;; Bu
 
 Archivo de destino:
 
-  icacls d:\test\thatcher.png/Save out. txt/t Thatcher. png D:AI (A;; FA;;; BA) (A;; 0 x1301bf;;;D U) (A;; 0 x1200a9;;;D D) (A; ID; FA;;; BA) (A; ID; FA;;; SY) (A; ID; 0x1200a9;;; BU)**S: PAINO_ACCESS_CONTROL**
+  icacls d:\test\thatcher.png/Save out.txt/t thatcher.png D:AI (A;; FA;;; BA) (A;; 0 x1301bf;;;D U) (A;; 0 x1200a9;;;D D) (A; ID; FA;;; BA) (A; ID; FA;;; SY) (A; ID; 0x1200a9;;; BU)**S: PAINO_ACCESS_CONTROL**
 
 Registro de depuración de DFSR:
 
@@ -378,7 +378,7 @@ Hay dos soluciones para este problema:
 
 1. Este problema se resolvió por primera vez con la actualización de [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) . El defecto de código anterior evitó el uso de direcciones IP estáticas.
 
-2. Si no ha especificado una dirección IP de puerta de enlace predeterminada en las interfaces de red del equipo de origen, este problema se producirá incluso con la actualización de KB4537818. Para solucionar este problema, establezca una dirección IP predeterminada válida en las interfaces de red mediante el applet de conexiones de red (NCPA. CPL) o el cmdlet de PowerShell Set-NetRoute.   
+2. Si no ha especificado una dirección IP de puerta de enlace predeterminada en las interfaces de red del equipo de origen, este problema se producirá incluso con la actualización de KB4537818. Para solucionar este problema, establezca una dirección IP predeterminada válida en las interfaces de red mediante el applet de conexiones de red (NCPA.CPL) o el cmdlet de PowerShell Set-NetRoute.   
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>Rendimiento más lento que el rendimiento de retransferencia esperado
 
@@ -431,7 +431,7 @@ Si ya ha ejecutado la transferencia una y varias veces:
  
  Si desea usar el servicio de migración de almacenamiento con controladores de dominio para la transferencia, asegúrese de seleccionar siempre "no transferir usuarios y grupos" en la página Configuración de transferencia del centro de administración de Windows.
  
- ## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>Error 53, "no se pudieron inventariar todos los dispositivos especificados" al ejecutar el inventario. 
+## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>Error 53, "no se pudieron inventariar todos los dispositivos especificados" al ejecutar el inventario. 
 
 Al intentar ejecutar el inventario, recibirá lo siguiente:
 
@@ -490,7 +490,7 @@ En esta fase, el orquestador del servicio de migración de almacenamiento está 
  - La cuenta de migración de origen no tiene permisos de registro remoto para conectarse al equipo de origen.
  - La cuenta de migración de origen no tiene permisos de lectura en el registro del equipo de origen, en "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" o en "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer"
  
- ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." 
 
 Al intentar ejecutar el recorte de un equipo de origen, el cambio se detiene en la fase "38% de la asignación de interfaces de red en el equipo de origen..." y recibe el siguiente error en el registro de eventos del servicio de migración de almacenamiento:
 
@@ -532,6 +532,16 @@ Para solucionar este problema, use una de las siguientes opciones:
 2. Deshabilitar temporalmente el GPO que aplica esta directiva en conflicto.
 3. Cree temporalmente un nuevo GPO que establezca esta opción en deshabilitado y se aplique a una unidad organizativa específica de servidores de origen, con una prioridad más alta que cualquier otro GPO.
 
-## <a name="see-also"></a>Consulte también
+## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>Error de inventario o transferencia al usar credenciales de un dominio diferente
+
+Al intentar ejecutar el inventario o la transferencia con el servicio de migración de almacenamiento y establecer como destino un servidor de Windows al utilizar las credenciales de migración de un dominio diferente al del servidor de destino, recibe los siguientes errores: 
+
+    The server was unable to process the request due to an internal error
+    
+    04/28/2020-11:31:01.169 [Erro] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+
+Este problema se debe a un defecto de código en el servicio de migración de almacenamiento. Para solucionar este problema, use las credenciales de migración del mismo dominio al que pertenecen los equipos de origen y de destino. Por ejemplo, si el equipo de origen y el de destino pertenecen al dominio "corp.contoso.com" del bosque "contoso.com", use "corp\myaccount" para realizar la migración, no una credencial "contoso\myaccount".
+
+## <a name="see-also"></a>Vea también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)

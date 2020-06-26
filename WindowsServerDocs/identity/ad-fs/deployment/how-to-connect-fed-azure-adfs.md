@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 16bf61ae4601848f12d7ecd56d751837dd153408
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 1786b7c9a10e11e95f736d1db20bdc12eb4844b7
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333966"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372222"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implementación de Active Directory Federation Services en Azure
 AD FS proporciona funcionalidades de una federación de identidades simplificada y protegida, así como de inicio de sesión único (SSO) web. La federación con Azure AD u Office 365 permite a los usuarios autenticarse con credenciales locales y acceder a todos los recursos en la nube. Por tanto, es importante disponer de una infraestructura de AD FS de alta disponibilidad para garantizar el acceso a los recursos locales y en la nube. La implementación de AD FS en Azure puede ayudar a lograr la alta disponibilidad necesaria con el mínimo esfuerzo.
@@ -107,7 +107,7 @@ Para cada rol (DC/AD FS y WAP), cree conjuntos de disponibilidad que contengan d
 
 Creación de los siguientes conjuntos de disponibilidad
 
-| Conjunto de disponibilidad | Role | Dominios de error | Dominios de actualización |
+| Conjunto de disponibilidad | Rol | Dominios de error | Dominios de actualización |
 |:---:|:---:|:---:|:--- |
 | contosodcset |DC/ADFS |3 |5 |
 | contosowapset |WAP |3 |5 |
@@ -115,7 +115,7 @@ Creación de los siguientes conjuntos de disponibilidad
 ### <a name="4-deploy-virtual-machines"></a>4. implementación de máquinas virtuales
 El siguiente paso es implementar las máquinas virtuales que hospedarán los distintos roles en su infraestructura. Se recomienda un mínimo de dos máquinas en cada conjunto de disponibilidad. Cree cuatro máquinas virtuales para la implementación básica.
 
-| Máquina | Role | Subnet | Conjunto de disponibilidad | Cuenta de almacenamiento | Dirección IP |
+| Máquina | Rol | Subnet | Conjunto de disponibilidad | Cuenta de almacenamiento | Dirección IP |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | contosodc1 |DC/ADFS |INT |contosodcset |contososac1 |estática |
 | contosodc2 |DC/ADFS |INT |contosodcset |contososac2 |estática |
@@ -131,7 +131,7 @@ Una vez completada la implementación, el panel Máquinas virtuales debe ser sim
 ### <a name="5-configuring-the-domain-controller--ad-fs-servers"></a>5. configurar el controlador de dominio o los servidores de AD FS
  Para autenticar cualquier solicitud entrante, AD FS deberá ponerse en contacto con el controlador de dominio. Para evitar el costoso recorrido de Azure a controlador de dominio local para la autenticación, se recomienda implementar una réplica del controlador de dominio en Azure. Para lograr una alta disponibilidad, se recomienda crear un conjunto de disponibilidad con al menos dos de controladores de dominio.
 
-| Controlador de dominio | Role | Cuenta de almacenamiento |
+| Controlador de dominio | Rol | Cuenta de almacenamiento |
 |:---:|:---:|:---:|
 | contosodc1 |Réplica |contososac1 |
 | contosodc2 |Réplica |contososac2 |
@@ -198,8 +198,13 @@ Con el fin de equilibrar el tráfico de forma eficaz, el ILB debe configurarse c
 
 **6.5. Actualización de DNS con el ILB**
 
-Vaya a su servidor DNS y cree un registro CNAME para el ILB. El registro CNAME debe ser para el servicio de federación con la dirección IP apuntando a la dirección IP del ILB. Por ejemplo, si la dirección DIP de ILB es 10.3.0.8 y el servicio de federación instalado es fs.contoso.com, cree un registro CNAME para fs.contoso.com apuntando a 10.3.0.8.
-Esto garantizará que todas las comunicaciones relativas a fs.contoso.com terminen en el ILB y se enruten correctamente.
+Con el servidor DNS interno, cree un registro A para el ILB. El registro A debe ser para el servicio de Federación con la dirección IP que apunta a la dirección IP del ILB. Por ejemplo, si la dirección IP de ILB es 10.3.0.8 y el servicio de Federación instalado es fs.contoso.com, cree un registro d para fs.contoso.com que apunte a 10.3.0.8.
+Esto garantizará que todos los trasmitted de datos que fs.contoso.com terminen en el ILB y se enruten correctamente. 
+
+> [!NOTE]
+>Si la implementación también usa IPv6, asegúrese de crear un registro AAAA correspondiente.
+>
+>
 
 ### <a name="7-configuring-the-web-application-proxy-server"></a>7. configurar el servidor proxy de aplicación Web
 **7.1. Configuración de los servidores proxy de aplicación web para acceder a servidores AD FS**
@@ -263,8 +268,8 @@ En general, necesita las siguientes reglas para proteger eficazmente la subred i
 
 | Regla | Descripción | Flujo |
 |:--- |:--- |:---:|
-| AllowHTTPSFromDMZ |Permitir la comunicación HTTPS desde la red perimetral |Entrada |
-| DenyInternetOutbound |Sin acceso a Internet |Salida |
+| AllowHTTPSFromDMZ |Permitir la comunicación HTTPS desde la red perimetral |Entrante |
+| DenyInternetOutbound |Sin acceso a Internet |Saliente |
 
 ![Reglas de acceso INT (entrantes)](./media/how-to-connect-fed-azure-adfs/nsg_int.png)
 
@@ -272,8 +277,8 @@ En general, necesita las siguientes reglas para proteger eficazmente la subred i
 
 | Regla | Descripción | Flujo |
 |:--- |:--- |:---:|
-| AllowHTTPSFromInternet |Permite HTTPS de Internet a la red perimetral |Entrada |
-| DenyInternetOutbound |No se bloquea nada, excepto HTTPS a Internet |Salida |
+| AllowHTTPSFromInternet |Permite HTTPS de Internet a la red perimetral |Entrante |
+| DenyInternetOutbound |No se bloquea nada, excepto HTTPS a Internet |Saliente |
 
 ![Reglas de acceso EXT (entrantes)](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
 
@@ -334,7 +339,7 @@ Puede usar una red virtual existente o crear una nueva red virtual durante la im
 ## <a name="additional-resources"></a>Recursos adicionales
 * [Conjuntos de disponibilidad](https://aka.ms/Azure/Availability) 
 * [Equilibrador de carga de Azure](https://aka.ms/Azure/ILB)
-* [Load Balancer interno](https://aka.ms/Azure/ILB/Internal)
+* [Equilibrador de carga interno](https://aka.ms/Azure/ILB/Internal)
 * [Equilibrador de carga accesible desde Internet](https://aka.ms/Azure/ILB/Internet)
 * [Cuentas de almacenamiento](https://aka.ms/Azure/Storage)
 * [Azure Virtual Network](https://aka.ms/Azure/VNet)

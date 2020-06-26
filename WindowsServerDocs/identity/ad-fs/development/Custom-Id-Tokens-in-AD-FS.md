@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: 331e5ff2dbe7f172488543d1d1f5ed0f757cd584
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 9ffc8351c2c5033346f04e3cd4dc6f8ba4914149
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333956"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372212"
 ---
 # <a name="customize-claims-to-be-emitted-in-id_token-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>Personalización de notificaciones para que se emitan en id_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior.
 
@@ -40,7 +40,7 @@ En algunos escenarios, es posible que la aplicación cliente no tenga un recurso
 
 ![Restringir](media/Custom-Id-Tokens-in-AD-FS/restrict2.png)
 
-Con [KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) instalado en los servidores de AD FS
+Con [KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) o una actualización de seguridad posterior instalada en los servidores de AD FS
 1. `response_mode`se establece como form_post
 2. Tanto los clientes públicos como los confidenciales pueden obtener notificaciones personalizadas en el token de identificador
 3. Asigne `allatclaims` el ámbito al par cliente – RP.
@@ -58,16 +58,16 @@ Siga los pasos que se indican a continuación para crear y configurar la aplicac
 ### <a name="create-and-configure-an-application-group-in-ad-fs-2016-or-later"></a>Crear y configurar un grupo de aplicaciones en AD FS 2016 o posterior
 
 1. En administración de AD FS, haga clic con el botón derecho en grupos de aplicaciones y seleccione **Agregar grupo de aplicaciones**.
-2. En el Asistente para grupos de aplicaciones, en nombre, escriba **ADFSSSO** y en aplicaciones cliente-servidor seleccione la plantilla **aplicación nativa que tiene acceso a una aplicación web** . Haga clic en **Next**.
+2. En el Asistente para grupos de aplicaciones, en nombre, escriba **ADFSSSO** y en aplicaciones cliente-servidor seleccione la plantilla **aplicación nativa que tiene acceso a una aplicación web** . Haga clic en **Siguiente**.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
-3. Copie el valor del **identificador de cliente** .  Se usará más adelante como valor de ida: ClientId en el archivo Web. config de aplicaciones.
-4. Escriba lo siguiente para el **URI de redirección:**  -  **https://localhost:44320/** .  Haga clic en **Agregar**. Haga clic en **Next**.
+3. Copie el valor del **identificador de cliente** .  Se usará más adelante como valor de ida: ClientId en el archivo de web.config de aplicaciones.
+4. Escriba lo siguiente para el **URI de redirección:**  -  **https://localhost:44320/** .  Haga clic en **Agregar**. Haga clic en **Siguiente**.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-5. En la pantalla **configurar API Web** , escriba lo siguiente para **Identifier**  -  **https://contoso.com/WebApp** .  Haga clic en **Agregar**. Haga clic en **Next**.  Este valor se usará más adelante para **ida: ResourceID** en el archivo Web. config de aplicaciones.
+5. En la pantalla **configurar API Web** , escriba lo siguiente para **Identifier**  -  **https://contoso.com/WebApp** .  Haga clic en **Agregar**. Haga clic en **Siguiente**.  Este valor se usará más adelante para **ida: ResourceID** en el archivo de web.config de aplicaciones.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
@@ -96,7 +96,7 @@ Siga los pasos que se indican a continuación para crear y configurar la aplicac
 
     ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.PNG)
 
-13. En la pantalla del **Asistente para agregar regla de notificaciones de transformación** , escriba **ForCustomIDToken** en el nombre de la **regla de notificaciones** y la siguiente regla de notificaciones en **regla personalizada**. Haga clic en **Finalizar**
+13. En la pantalla del **Asistente para agregar regla de notificaciones de transformación** , escriba **ForCustomIDToken** en el nombre de la **regla de notificaciones** y la siguiente regla de notificaciones en **regla personalizada**. Haga clic en **Finish** (Finalizar).
 
     ```
     x:[]
@@ -128,7 +128,7 @@ git clone https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-op
 
 1. Abra el ejemplo con Visual Studio.
 2. Vuelva a compilar la aplicación para que se restauren todos los paquetes Nuget que faltan.
-3. Abra el archivo Web. config.  Modifique los valores siguientes para que tengan el aspecto siguiente:
+3. Abra el archivo de web.config.  Modifique los valores siguientes para que tengan el aspecto siguiente:
 
    ```xml
    <add key="ida:ClientId" value="[Replace this Client Id from #3 above under section Create and configure an Application Group in AD FS 2016 or later]" />
