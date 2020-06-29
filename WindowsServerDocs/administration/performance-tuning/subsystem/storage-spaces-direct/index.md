@@ -8,12 +8,12 @@ ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
 ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: a24bbdb83ec1b08f56989368a4831549c594f6c0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 42d05529aed6f1c5f9c5247a143e256fd52d056a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851608"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471200"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>Optimización del rendimiento para Espacios de almacenamiento directo
 
@@ -36,7 +36,7 @@ Tenga en cuenta que, si se almacena en caché a través de un dispositivo SSD o 
 
 Para ver y modificar la configuración de caché, use los cmdlets [Get-ClusterStorageSpacesDirect](https://technet.microsoft.com/library/mt634616.aspx) y [Set-ClusterStorageSpacesDirect](https://technet.microsoft.com/library/mt763265.aspx). Las propiedades `CacheModeHDD` y `CacheModeSSD` definen cómo funciona la memoria caché en los medios de capacidad del tipo indicado.
 
-## <a name="see-also"></a>Consulta también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Descripción de Espacios de almacenamiento directo](../../../../storage/storage-spaces/understand-storage-spaces-direct.md)
 - [Planificar Espacios de almacenamiento directo](../../../../storage/storage-spaces/plan-storage-spaces-direct.md)

@@ -1,5 +1,5 @@
 ---
-title: Cree una aplicación Web de una sola página mediante OAuth y ADAL. JS con AD FS 2016 o posterior
+title: Compilar una aplicación Web de una sola página mediante OAuth y ADAL.JS con AD FS 2016 o posterior
 description: Un tutorial en el que se proporcionan instrucciones para la autenticación en AD FS el uso de ADAL para JavaScript para proteger una aplicación de una sola página basada en AngularJS
 author: billmath
 ms.author: billmath
@@ -8,14 +8,14 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f62b6ad288e2733083d535260f0b3f5ffb5b50bf
-ms.sourcegitcommit: f829a48b9b0c7b9ed6e181b37be828230c80fb8a
+ms.openlocfilehash: 09b789937c9ff1dad90c3533616a4ed800204267
+ms.sourcegitcommit: 046123d4f2d24dc00b35ea99adee6f8d322c76bf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82173630"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416298"
 ---
-# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Cree una aplicación Web de una sola página mediante OAuth y ADAL. JS con AD FS 2016 o posterior
+# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Compilar una aplicación Web de una sola página mediante OAuth y ADAL.JS con AD FS 2016 o posterior
 
 En este tutorial se proporcionan instrucciones para la autenticación en AD FS mediante ADAL para JavaScript para proteger una aplicación de una sola página basada en AngularJS, implementada con un back-end de ASP.NET Web API.
 
@@ -66,18 +66,18 @@ Desde el shell o la línea de comandos, ejecute:
 ## <a name="about-the-code"></a>Acerca del código
 Los archivos de clave que contienen la lógica de autenticación son los siguientes:
 
-**App. js** : inserta la dependencia del módulo Adal, proporciona los valores de configuración de la aplicación usados por Adal para conducir las interacciones de protocolo con AAD e indica a qué rutas no se debe tener acceso sin la autenticación anterior.
+**App.js** : inserta la dependencia del módulo Adal, proporciona los valores de configuración de la aplicación usados por Adal para conducir las interacciones de protocolo con AAD e indica a qué rutas no se debe tener acceso sin la autenticación anterior.
 
-**index. html** : contiene una referencia a Adal. js
+**index.html** : contiene una referencia a adal.js
 
-**HomeController. js**: muestra cómo sacar partido de los métodos login () y logOut () en Adal.
+**HomeController.js**: muestra cómo sacar partido de los métodos login () y logOut () en Adal.
 
-**UserDataController. js** : muestra cómo extraer información de usuario del ID_token almacenado en memoria caché.
+**UserDataController.js** : muestra cómo extraer información de usuario de la ID_token almacenada en caché.
 
 **Startup.auth.CS** : contiene la configuración de WebAPI para usar Active Directory servicio de Federación para la autenticación del portador.
 
 ## <a name="registering-the-public-client-in-ad-fs"></a>Registro del cliente público en AD FS
-En el ejemplo, WebAPI se configura para escuchar en https://localhost:44326/. El explorador Web del grupo de aplicaciones que **tiene acceso a una aplicación web** se puede usar para configurar la aplicación de flujo de concesión implícita.
+En el ejemplo, WebAPI se configura para escuchar en https://localhost:44326/ . El explorador Web del grupo de aplicaciones que **tiene acceso a una aplicación web** se puede usar para configurar la aplicación de flujo de concesión implícita.
 
 1. Abra la consola de administración de AD FS y haga clic en **Agregar grupo de aplicaciones**. En el **Asistente para agregar grupos de aplicaciones** , escriba el nombre de la aplicación, Description y seleccione el **explorador Web que tiene acceso a una plantilla de aplicación web** en la sección **aplicaciones cliente-servidor** , como se muestra a continuación
 
@@ -98,7 +98,7 @@ En el ejemplo, WebAPI se configura para escuchar en https://localhost:44326/. El
 ## <a name="modifying-the-sample"></a>Modificar el ejemplo
 Configuración de ADAL JS
 
-Abra el archivo **app. js** y cambie la definición de **adalProvider. init** a:
+Abra el archivo **app.js** y cambie la definición de **adalProvider.init** a:
 
     adalProvider.init(
         {
@@ -154,31 +154,31 @@ y agregue:
 ## <a name="add-application-configuration-for-ad-fs"></a>Agregar configuración de aplicación para AD FS
 Cambie el appSettings como se indica a continuación:
 ```xml
-    <appSettings>
-        <add key="ida:Audience" value="https://localhost:44326/" />
-        <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
-        <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
-    </appSettings>
-    ```
+<appSettings>
+    <add key="ida:Audience" value="https://localhost:44326/" />
+    <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
+    <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
+</appSettings>
+```
 
-## Running the solution
-Clean the solution, rebuild the solution and run it. If you want to see detailed traces, launch Fiddler and enable HTTPS decryption.
+## <a name="running-the-solution"></a>Ejecutar la solución
+Limpie la solución, vuelva a compilar la solución y ejecútela. Si desea ver seguimientos detallados, inicie Fiddler y habilite el descifrado HTTPS.
 
-The browser (use Chrome browser) will load the SPA and you will be presented with the following screen:
+El explorador (use chrome browser) cargará el SPA y aparecerá la siguiente pantalla:
 
-![Register the client](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
+![Registrar el cliente](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 
-Click on Login.  The ToDo List will trigger the authentication flow and ADAL JS will direct the authentication to AD FS
+Haga clic en Inicio de sesión.  La lista de tareas desencadenará el flujo de autenticación y ADAL JS dirigirá la autenticación a AD FS
 
-![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![Iniciar sesión](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
-In Fiddler you can see the token being returned as part of the URL in the # fragment.
+En Fiddler, puede ver el token que se devuelve como parte de la dirección URL en el # Fragment.
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.PNG)
 
-You will be able to now call the backend API to add ToDo List items for the logged-in user:
+Ahora podrá llamar a la API de back-end para agregar elementos de la lista de tareas pendientes para el usuario que ha iniciado sesión:
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## Next Steps
-[AD FS Development](../../ad-fs/AD-FS-Development.md)  
+## <a name="next-steps"></a>Pasos siguientes
+[Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)  

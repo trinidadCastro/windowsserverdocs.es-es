@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 47ff4a25f67e2b03655d17ab5a57aeaa3274a835
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fd154ef12bd356d872229cc5cb67a7b8d3e0e628
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851838"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471500"
 ---
 # <a name="hyper-v-architecture"></a>Arquitectura de Hyper-V
 
@@ -28,7 +28,7 @@ A partir de Windows Server 2008, el sistema operativo incluye habilitaciones par
 
 En las secciones siguientes se sugieren procedimientos recomendados que ofrecen un mayor rendimiento en los servidores que ejecutan el rol Hyper-V.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Terminología de Hyper-V](terminology.md)
 

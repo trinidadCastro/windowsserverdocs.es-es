@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 17551da6cd270f05cf2d6b1a8147958f82b2c9b3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dcf43bf41edada0a2e3df6fde825ff128a119a8f
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851808"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471360"
 ---
 # <a name="hyper-v-network-io-performance"></a>Rendimiento de e/s de red de Hyper-V
 
@@ -35,7 +35,7 @@ Además, el aumento del número de búferes de envío y recepción en cada adapt
 
 Windows Server 2012 R2 presentó una opción para acelerar Migración en vivo al comprimir la memoria antes de transferirla a través de la red o usar el acceso directo a memoria remota (RDMA), si el hardware lo admite.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Terminología de Hyper-V](terminology.md)
 

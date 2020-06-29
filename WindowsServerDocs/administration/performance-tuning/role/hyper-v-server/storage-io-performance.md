@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 83b22c47cb23b02bb9984e03d78fcae93be1ca0a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c77f084e06e71c9aafd658b59ff385af85ef0b9d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851818"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471320"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Rendimiento de e/s de almacenamiento de Hyper-V
 
@@ -160,7 +160,7 @@ El disco duro virtual apunta a un archivo VHD primario. Cualquier escritura en b
 
 ## <a name="block-size-considerations"></a>Consideraciones de tamaño de bloque
 
-El tamaño de bloque puede afectar significativamente al rendimiento. Es óptimo que coincida con el tamaño de bloque con los patrones de asignación de la carga de trabajo que está utilizando el disco. Por ejemplo, si una aplicación se asigna en fragmentos de 16 MB, sería óptimo tener un tamaño de bloque de disco duro virtual de 16 MB. Un tamaño de bloque de &gt;2 MB solo es posible en discos duros virtuales con el formato VHDX. Tener un tamaño de bloque mayor que el patrón de asignación para una carga de trabajo de e/s aleatoria aumentará significativamente el uso de espacio en el host.
+El tamaño de bloque puede afectar significativamente al rendimiento. Es óptimo que coincida con el tamaño de bloque con los patrones de asignación de la carga de trabajo que está utilizando el disco. Por ejemplo, si una aplicación se asigna en fragmentos de 16 MB, sería óptimo tener un tamaño de bloque de disco duro virtual de 16 MB. Un tamaño de bloque de &gt; 2 MB solo es posible en discos duros virtuales con el formato VHDX. Tener un tamaño de bloque mayor que el patrón de asignación para una carga de trabajo de e/s aleatoria aumentará significativamente el uso de espacio en el host.
 
 ## <a name="sector-size-implications"></a>Implicaciones de tamaño de sector
 
@@ -174,9 +174,9 @@ Un disco 512e puede realizar una escritura solo en términos de un sector físic
 
 -   El disco lee el sector físico de 4 KB en su caché interna, que contiene el sector lógico de 512 bytes al que se hace referencia en la escritura.
 
--   Los datos en el búfer de 4 KB se modifican para incluir el sector de 512 bytes actualizado.
+-   Los datos en el búfer de 4 KB se modifican para incluir el sector de 512 bytes actualizado.
 
--   El disco realiza una escritura del búfer de 4 KB actualizado en su sector físico del disco.
+-   El disco vuelve a realizar una escritura del búfer de 4 KB actualizado en su sector físico del disco.
 
 Este proceso se denomina lectura, modificación y escritura (RMW). El impacto general en el rendimiento del proceso RMW depende de las cargas de trabajo. El proceso RMW provoca la degradación del rendimiento en los discos duros virtuales por los siguientes motivos:
 
@@ -244,7 +244,7 @@ Las siguientes mejoras clave que se introdujeron por primera vez en la pila de a
 
 -   Un mecanismo de finalización de e/s más eficaz que implique la distribución de interrupciones entre los procesadores virtuales para evitar interrupciones de interprocesadores costosas.
 
-Introducida en Windows Server 2012, hay algunas entradas del registro, ubicadas en HKLM\\System\\CurrentControlSet\\enum\\VMBUS\\{ID. de dispositivo}\\{ID. de instancia}\\StorChannel, que permiten ajustar el número de canales. También alinean los procesadores virtuales que controlan las finalizaciones de e/s con las CPU virtuales asignadas por la aplicación para que sean los procesadores de e/s. La configuración del registro se configura por cada adaptador en la clave de hardware del dispositivo.
+Introducida en Windows Server 2012, hay algunas entradas del registro, ubicadas en HKLM \\ System \\ CurrentControlSet \\ enum \\ VMBUS \\ {Device ID} \\ {ID. \\ de instancia} StorChannel, que permiten ajustar el número de canales. También alinean los procesadores virtuales que controlan las finalizaciones de e/s con las CPU virtuales asignadas por la aplicación para que sean los procesadores de e/s. La configuración del registro se configura por cada adaptador en la clave de hardware del dispositivo.
 
 -   **ChannelCount (DWORD)** Número total de canales que se van a usar, con un máximo de 16. Su valor predeterminado es un límite superior, que es el número de procesadores virtuales/16.
 
@@ -270,7 +270,7 @@ Solo SCSI específico de Hyper-V, IDE habilitado y controladores de Canal de fib
 
 Por estos motivos, se recomienda usar archivos VHDX conectados a una controladora SCSI cuando no se usen discos Canal de fibra virtuales.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Terminología de Hyper-V](terminology.md)
 

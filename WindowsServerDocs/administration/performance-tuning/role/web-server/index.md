@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ec36d87957e5bbe897597e330e766c3193cd30d0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 249500249921d21184dc8cd14993741392927586
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851698"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471210"
 ---
 # <a name="performance-tuning-web-servers"></a>Optimización del rendimiento para servidores web
 
@@ -57,7 +57,7 @@ Deshabilitar las actualizaciones es eficaz cuando se usan grandes conjuntos de d
 >[!Warning]
 > Algunas aplicaciones, como las utilidades de copias de seguridad incrementales, dependen de esta información de actualización y no funcionan correctamente sin ella.
 
-## <a name="see-also"></a>Consulta también
+## <a name="additional-references"></a>Referencias adicionales
 - [Optimización del rendimiento de IIS 10.0](tuning-iis-10.md)
 - [Optimización de HTTP 1.1/2](http-performance.md)
 

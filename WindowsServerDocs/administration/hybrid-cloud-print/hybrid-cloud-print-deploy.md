@@ -1,21 +1,22 @@
 ---
-title: Implementar la impresión en la nube híbrida de Windows Server
+title: Implementar la impresión en la nube híbrida de Windows Server
 description: Cómo configurar la impresión en la nube híbrida de Microsoft
 ms.prod: windows-server
 ms.technology: windows server 2016
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247c5e9
+ms.topic: how-to
 author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: c06aafb015b065f307eca02abc7a6adaa8ba763c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fe1f2b11921950ea725cb996ce58e75033aaae4a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852118"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85470210"
 ---
-# <a name="deploy-windows-server-hybrid-cloud-print"></a>Implementar la impresión en la nube híbrida de Windows Server
+# <a name="deploy-windows-server-hybrid-cloud-print"></a>Implementar la impresión en la nube híbrida de Windows Server
 
 >Se aplica a: Windows Server 2016
 
@@ -23,7 +24,7 @@ En este tema, para los administradores de ti, se describe la implementación de 
 
 ## <a name="pre-requisites"></a>Requisitos previos
 
-Hay una serie de suscripciones, servicios y equipos que debe adquirir antes de iniciar esta instalación. Son las siguientes:
+Hay una serie de suscripciones, servicios y equipos que debe adquirir antes de iniciar esta instalación. Los pasos son los siguientes:
 
 - Azure AD suscripción premium.
 
@@ -68,7 +69,7 @@ Los pasos siguientes son para una implementación típica de impresión en la nu
 Para habilitar la comunicación autenticada con los servicios HCP, es necesario crear 3 aplicaciones: 2 aplicaciones web para representar los dos servicios HCP y 1 aplicación nativa para comunicarse con esos servicios.
 
 1. Inicie sesión en Azure Portal para registrar aplicaciones Web.
-    - En Azure Active Directory, vaya a **Registros de aplicaciones** > **nuevo registro**.
+    - En Azure Active Directory, vaya a **registros de aplicaciones**  >  **nuevo registro**.
 
     ![Registro de aplicación de AAD 1](../media/hybrid-cloud-print/AAD-AppRegistration.png)
 
@@ -103,7 +104,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
     ![API 5 de AAD expóngalo](../media/hybrid-cloud-print/AAD-AppRegistration-ECP-ExposeAPI-ScopeName.png)
 
-3. Agregar permisos de API
+3. Adición de permisos de API
     - Vuelva a Registros de aplicaciones hoja. Haga clic en la aplicación nativa y seleccione permisos de la API. Haga clic en **Agregar un permiso**.
 
     ![Permiso de API de AAD 1](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission.png)
@@ -120,7 +121,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
     ![Permiso de API de AAD 4](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-ECP-Add.png)
 
-    - Una vez que se devuelva a la hoja permisos de la API, espere 10 segundos antes de hacer clic en **consentimiento de administrador general..** ..
+    - Una vez que se devuelva a la hoja permisos de la API, espere 10 segundos antes de hacer clic en **consentimiento de administrador general..**..
 
     ![Permiso 5 de la API de AAD](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-GrantConsent.png)
 
@@ -133,33 +134,33 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
     ![Permiso de API de AAD 7](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-Verify.png)
 
 4. Configurar el proxy de aplicación para las aplicaciones Web
-    - Vaya a **Azure Active Directory** > **aplicaciones empresariales** > **todas las aplicaciones**. Busque el servicio de detección de Mopria y haga clic en él.
+    - Vaya a **Azure Active Directory**  >  **aplicaciones empresariales**  >  **todas las aplicaciones**. Busque el servicio de detección de Mopria y haga clic en él.
 
     ![Proxy de aplicación de AAD 1](../media/hybrid-cloud-print/AAD-EnterpriseApp-AllApps.png)
 
-    - Haga clic en **proxy de aplicación**. Escriba la dirección URL interna con el formato `https://<fully qualified domain name of the Print Server>/mcs/`. Haga clic en **Guardar** para finalizar.
+    - Haga clic en **proxy de aplicación**. Escriba la dirección URL interna con el formato `https://<fully qualified domain name of the Print Server>/mcs/` . Haga clic en **Guardar** para finalizar.
 
     ![Proxy de aplicación de AAD 2](../media/hybrid-cloud-print/AAD-EnterpriseApp-Mopria-AppProxy.png)
 
-    - Repita el servicio de impresión en la nube empresarial. Tenga en cuenta que la dirección URL interna está `https://<fully qualified domain name of the Print Server>/ecp/`.
+    - Repita el servicio de impresión en la nube empresarial. Tenga en cuenta que la dirección URL interna es `https://<fully qualified domain name of the Print Server>/ecp/` .
 
     ![Proxy de aplicación de AAD 3](../media/hybrid-cloud-print/AAD-EnterpriseApp-ECP-AppProxy.png)
 
-    - Vaya a **Azure Active Directory** > **registros de aplicaciones**. Haga clic en el servicio de detección Mopria. En **información general**, tenga en cuenta que el URI del ID. de aplicación se ha cambiado del valor predeterminado a la dirección URL externa en **proxy de aplicación**. El URI se utilizará durante la instalación del servidor de impresión, en la Directiva MDM de cliente, y en la impresora de publicación.
+    - Seleccione **Azure Active Directory** > **Registros de aplicaciones**. Haga clic en el servicio de detección Mopria. En **información general**, tenga en cuenta que el URI del ID. de aplicación se ha cambiado del valor predeterminado a la dirección URL externa en **proxy de aplicación**. El URI se utilizará durante la instalación del servidor de impresión, en la Directiva MDM de cliente, y en la impresora de publicación.
 
     ![Proxy de aplicación de AAD 4](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-Overview.png)
 
-5. Asignación de usuarios a aplicaciones
-    - Vaya a **Azure Active Directory** > **aplicaciones empresariales** > **todas las aplicaciones**. Busque el servicio de detección de Mopria y haga clic en él.
+5. Asignar usuarios a aplicaciones
+    - Vaya a **Azure Active Directory**  >  **aplicaciones empresariales**  >  **todas las aplicaciones**. Busque el servicio de detección de Mopria y haga clic en él.
     - Haga clic en **usuarios y grupos** y asigne usuarios, o haga clic en **propiedades** y **cambie se** requiere la **asignación de usuario** .
     - Repita el servicio de impresión en la nube empresarial.
 
 6. Configuración del URI de redirección en la aplicación nativa
-    - Vaya a **Azure Active Directory** > **registros de aplicaciones**. Haga clic en la aplicación nativa. Vaya a **información general** y copie el identificador de la **aplicación (cliente)** .
+    - Seleccione **Azure Active Directory** > **Registros de aplicaciones**. Haga clic en la aplicación nativa. Vaya a **información general** y copie el identificador de la **aplicación (cliente)**.
 
     ![URI de redireccionamiento de AAD 1](../media/hybrid-cloud-print/AAD-AppRegistration-Native-Overview.png)
 
-    - Vaya a **autenticación**. Cambie el cuadro desplegable **tipo** a `Public...`y escriba dos URI de redirección con el siguiente formato, donde `<NativeClientAppID>` proviene del paso anterior:
+    - Vaya a **autenticación**. Cambie el cuadro desplegable **tipo** a `Public...` y escriba dos URI de redirección con el formato siguiente, donde `<NativeClientAppID>` es el paso anterior:
 
         `ms-appx-web://Microsoft.AAD.BrokerPlugin/<NativeClientAppID>`
 
@@ -174,7 +175,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 1. Asegúrese de que el servidor de impresión tenga todos los Windows Update disponibles. Nota: el servidor 2019 debe revisarse para compilar 17763,165 o posterior.
     - Instale los siguientes roles de servidor:
         - Rol del servidor de impresión
-        - Internet Information Services (IIS)
+        - Internet Information Service (IIS)
     - Consulte [instalar roles, servicios de rol y características con el Asistente para agregar roles y características](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installarfw) para más información sobre cómo instalar roles de servidor.
 
     ![Roles del servidor de impresión](../media/hybrid-cloud-print/PrintServer-Roles.png)
@@ -182,7 +183,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 2. Instale los módulos de PowerShell de impresión en la nube híbrida.
     - Ejecute los siguientes comandos desde un símbolo del sistema de PowerShell con privilegios elevados:
 
-        `find-module -Name PublishCloudPrinter` para confirmar que el equipo puede tener acceso al Galería de PowerShell (PSGallery)
+        `find-module -Name PublishCloudPrinter`para confirmar que el equipo puede tener acceso al Galería de PowerShell (PSGallery)
 
         `install-module -Name PublishCloudPrinter`
 
@@ -195,7 +196,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
         `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0`
 
-    - Ejecución
+    - Ejecutar
 
         `.\CloudPrintDeploy.ps1 -AzureTenant <Azure Active Directory domain name> -AzureTenantGuid <Azure Active Directory ID>`
 
@@ -211,7 +212,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
     ![Implementación de impresión en la nube del servidor de impresión](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
-    - Compruebe el archivo de registro para ver si hay algún error: `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
+    - Compruebe el archivo de registro para ver si hay algún error:`C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
 4. Ejecute **RegitEdit** en un símbolo del sistema con privilegios elevados. Vaya a equipo \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService.
     - Asegúrese de que AzureAudience está establecido en el URI del ID. de aplicación de la aplicación de impresión en la nube de la empresa.
@@ -267,7 +268,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
     xcopy /y $source\$ef6.$version\lib\net46\System.Data.SQLite.EF6.dll $target\
     ```
 
-10. Actualice el archivo c:\inetpub\wwwroot\MopriaCloudService\web.config para incluir la versión x. x. x de SQLite en las siguientes secciones `<runtime>/<assemblyBinding>`. Se trata de la misma versión utilizada en el paso anterior.
+10. Actualice el archivo de c:\inetpub\wwwroot\MopriaCloudService\web.config para incluir la versión x. x. x de SQLite en las `<runtime>/<assemblyBinding>` secciones siguientes. Se trata de la misma versión utilizada en el paso anterior.
 
     ```xml
     ...
@@ -291,8 +292,8 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
     ```
 
 11. Cree la base de datos SQLite.
-    - Descargue e instale los archivos binarios de las herramientas de SQLite desde `https://www.sqlite.org/`.
-    - Vaya a `c:\inetpub\wwwroot\MopriaCloudService\Database` directorio.
+    - Descargue e instale los archivos binarios de las herramientas de SQLite desde `https://www.sqlite.org/` .
+    - Vaya al `c:\inetpub\wwwroot\MopriaCloudService\Database` directorio.
     - Ejecute el siguiente comando para crear la base de datos en este directorio:
 
         `sqlite3.exe MopriaDeviceDb.db .read MopriaSQLiteDb.sql`
@@ -302,48 +303,48 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
     ![Claves del registro Mopria del servidor de impresión](../media/hybrid-cloud-print/PrintServer-SQLiteDB.png)
 
-### <a name="step-5-optional---configure-pre-authentication-with-azure-ad"></a>Paso 5 \[\] opcional: configurar la autenticación previa con Azure AD
+### <a name="step-5-optional---configure-pre-authentication-with-azure-ad"></a>Paso 5 \[ opcional \] : configuración de la autenticación previa con Azure ad
 
 1. Revise el documento [delegación restringida de Kerberos para el inicio de sesión único en las aplicaciones con el proxy de aplicación](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd).
 
 2. Configurar la Active Directory local.
-    - En el equipo de Active Directory, abra Administrador del servidor y vaya a **herramientas** > **Active Directory usuarios y equipos**.
+    - En el equipo de Active Directory, abra administrador del servidor y vaya a **herramientas**  >  **Active Directory usuarios y equipos**.
     - Navegue hasta el nodo **equipos** y seleccione el servidor del conector.
-    - Haga clic con el botón derecho y seleccione **propiedades** -> pestaña de **delegación** .
+    - Haga clic con el botón **Properties**secundario en la  ->  pestaña**delegación**de propiedades   .
     - Seleccione **confiar en este equipo para la delegación solo a los servicios especificados**.
     - Seleccione **usar cualquier protocolo de autenticación**.
     - En **servicios en los que esta cuenta puede presentar credenciales delegadas**.
         - Agregue el nombre de entidad de seguridad de servicio (SPN) de la máquina del servidor de impresión.
         - Seleccione HOST para tipo de servicio.
-    ![Active Directory la delegación](../media/hybrid-cloud-print/AD-Delegation.png)
+    ![Delegación Active Directory](../media/hybrid-cloud-print/AD-Delegation.png)
 
 3. Compruebe que la autenticación de Windows está habilitada en IIS.
-    - En el servidor de impresión, abra Administrador del servidor herramientas de > > Administrador de Internet Information Services (IIS).
+    - En el servidor de impresión, abra Administrador del servidor herramientas de > > administrador de Internet Information Services (IIS).
     - Navegue al sitio.
     - Haga doble clic en **autenticación**.
     - Haga clic en **autenticación de Windows** y haga clic en **Habilitar** en **acciones**.
-    ![la autenticación IIS del servidor de impresión](../media/hybrid-cloud-print/PrintServer-IIS-Authentication.png)
+    ![Autenticación IIS del servidor de impresión](../media/hybrid-cloud-print/PrintServer-IIS-Authentication.png)
 
 4. Configurar el inicio de sesión único.
-    - En Azure Portal, vaya a **Azure Active Directory** > **aplicaciones empresariales** > **todas las aplicaciones**.
+    - En Azure portal, vaya a **Azure Active Directory**  >  **aplicaciones empresariales**  >  **todas las aplicaciones**.
     - Seleccione la aplicación MopriaDiscoveryService.
     - Vaya a **proxy de aplicación**. Cambie el método de autenticación previa a **Azure Active Directory**.
     - Vaya a **Inicio de sesión único**. Seleccione autenticación de Windows integrada como método de inicio de sesión único.
     - Establezca el SPN de la **aplicación interno** en el SPN del equipo del servidor de impresión.
     - Establezca **identidad de inicio de sesión delegada** en nombre principal de usuario.
     - Repita el procedimiento para la aplicación EntperiseCloudPrint.
-    ![IWA](../media/hybrid-cloud-print/AAD-SingleSignOn-IWA.png) de inicio de sesión único de AAD
+    ![Inicio de sesión único de AAD IWA](../media/hybrid-cloud-print/AAD-SingleSignOn-IWA.png)
 
 ### <a name="step-6---configure-the-required-mdm-policies"></a>Paso 6: configurar las directivas de MDM necesarias
 
 1. Inicie sesión en el proveedor de MDM.
 2. Busque el grupo de directivas de impresión en la nube de empresa y configure las directivas según las directrices siguientes:
-    - CloudPrintOAuthAuthority = `https://login.microsoftonline.com/<Azure AD Directory ID>`. El ID. de directorio se puede encontrar en Azure Active Directory propiedades de >.
-    - CloudPrintOAuthClientId = valor de ID. de\) de cliente de Application \(de la aplicación nativa. Puede encontrarlo en Azure Active Directory > Registros de aplicaciones > seleccione la aplicación nativa > información general.
-    - CloudPrinterDiscoveryEndPoint = dirección URL externa de la aplicación de servicio de detección Mopria. Puede encontrarlo en Azure Active Directory > aplicaciones empresariales > seleccione la aplicación de servicio de detección de Mopria > proxy de aplicación. **Debe ser exactamente el mismo, pero sin la finalización/** .
-    - MopriaDiscoveryResourceId = URI del ID. de aplicación de la aplicación del servicio de detección Mopria. Puede encontrarlo en Azure Active Directory > Registros de aplicaciones > seleccione la aplicación de servicio de detección de Mopria > información general. **Debe ser exactamente el mismo con el carácter/** .
-    - CloudPrintResourceId = URI de ID. de aplicación de la aplicación de impresión en la nube de la empresa. Puede encontrarlo en Azure Active Directory > Registros de aplicaciones > seleccione la aplicación de impresión en la nube de la nube de > información general. **Debe ser exactamente el mismo con el carácter/** .
-    - DiscoveryMaxPrinterLimit = \<un entero positivo\>.
+    - CloudPrintOAuthAuthority = `https://login.microsoftonline.com/<Azure AD Directory ID>` . El ID. de directorio se puede encontrar en Azure Active Directory propiedades de >.
+    - CloudPrintOAuthClientId = \( \) valor de identificador de cliente de aplicación de la aplicación nativa. Puede encontrarlo en Azure Active Directory > Registros de aplicaciones > seleccione la aplicación nativa > información general.
+    - CloudPrinterDiscoveryEndPoint = dirección URL externa de la aplicación de servicio de detección Mopria. Puede encontrarlo en Azure Active Directory > aplicaciones empresariales > seleccione la aplicación de servicio de detección de Mopria > proxy de aplicación. **Debe ser exactamente el mismo, pero sin la finalización/**.
+    - MopriaDiscoveryResourceId = URI del ID. de aplicación de la aplicación del servicio de detección Mopria. Puede encontrarlo en Azure Active Directory > Registros de aplicaciones > seleccione la aplicación de servicio de detección de Mopria > información general. **Debe ser exactamente el mismo con el carácter/**.
+    - CloudPrintResourceId = URI de ID. de aplicación de la aplicación de impresión en la nube de la empresa. Puede encontrarlo en Azure Active Directory > Registros de aplicaciones > seleccione la aplicación de impresión en la nube de la nube de > información general. **Debe ser exactamente el mismo con el carácter/**.
+    - DiscoveryMaxPrinterLimit = \<a positive integer\> .
 
 > Nota: Si usa Microsoft Intune servicio, puede encontrar esta configuración en la categoría impresora en la nube.
 
@@ -360,9 +361,9 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
     - Valores de OMA-URI
         - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
-            - Valor = https://login.microsoftonline.com/<Azure AD Directory ID>
+            - Valor =https://login.microsoftonline.com/<Azure AD Directory ID>
         - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
-            - Valor = < ID. de aplicación de la aplicación nativa Azure AD >
+            - Valor = <ID. de aplicación de la aplicación nativa Azure AD>
         - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
             - Valor = dirección URL externa de la aplicación de servicio de detección Mopria (debe ser exactamente la misma pero sin el final/)
         - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
@@ -371,7 +372,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
             - Valor = el URI del ID. de aplicación de la aplicación de impresión en la nube de la empresa
         - DiscoveryMaxPrinterLimit =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
             - Valor = un entero positivo
-    
+
 ### <a name="step-7---publish-the-shared-printer"></a>Paso 7: publicación de la impresora compartida
 
 1. Instale la impresora deseada en el servidor de impresión.
@@ -380,8 +381,8 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 4. Guarde los cambios y cierre la ventana Propiedades de la impresora.
 5. Preparar una actualización de Windows 10 Fall Creator o un equipo posterior. Una el equipo a Azure AD e inicie sesión como un usuario que esté sincronizado con Active Directory local y se le haya concedido el permiso adecuado para el archivo MopriaDeviceDb. dB.
 6. En el equipo con Windows 10, abra un símbolo del sistema de Windows PowerShell con privilegios elevados.
-    - Ejecute los siguientes comandos.
-        - `find-module -Name PublishCloudPrinter` para confirmar que el equipo puede tener acceso al Galería de PowerShell (PSGallery)
+    - Ejecute los comandos siguientes:
+        - `find-module -Name PublishCloudPrinter`para confirmar que el equipo puede tener acceso al Galería de PowerShell (PSGallery)
         - `install-module -Name PublishCloudPrinter`
 
             > Nota: es posible que vea un mensaje que indica que "PSGallery" es un repositorio que no es de confianza.  Escriba "y" para continuar con la instalación.
@@ -398,15 +399,15 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
             `{attrs: [{category:country, vs:USA, depth:0}, {category:organization, vs:Microsoft, depth:1}, {category:site, vs:Redmond, WA, depth:2}, {category:building, vs:Building 1, depth:3}, {category:floor_number, vs:1, depth:4}, {category:room_name, vs:1111, depth:5}]}`
 
         - SDDL = Cadena SDDL que representa los permisos de la impresora.
-            - Inicie sesión como administrador en el servidor de impresión y, a continuación, ejecute el siguiente comando de PowerShell en la impresora que desea publicar: `(Get-Printer PrinterName -full).PermissionSDDL`.
-            - Agregue **O:BA** como prefijo al resultado del comando anterior. P. ej. Si la cadena devuelta por el comando anterior es G:DUD: (A; OICI; FA;;; WD), después SDDL = O:BAG: DUD: (A; OICI; FA;;; WD).
+            - Inicie sesión como administrador en el servidor de impresión y, a continuación, ejecute el siguiente comando de PowerShell en la impresora que desea publicar: `(Get-Printer PrinterName -full).PermissionSDDL` .
+            - Agregue **O:BA** como prefijo al resultado del comando anterior. Por ejemplo, Si la cadena devuelta por el comando anterior es G:DUD: (A; OICI; FA;;; WD), después SDDL = O:BAG: DUD: (A; OICI; FA;;; WD).
         - DiscoveryEndpoint = inicie sesión en Azure Portal y, a continuación, obtenga la cadena de aplicaciones empresariales > aplicación de servicio de detección de Mopria > proxy de aplicación > dirección URL externa. Omita el carácter/.
         - PrintServerEndpoint = inicie sesión en Azure Portal y, a continuación, obtenga la cadena de aplicaciones empresariales > aplicación de impresión en la nube de Enterprise > proxy de aplicación > dirección URL externa. Omita el carácter/.
         - AzureClientId = ID. de aplicación de la aplicación nativa registrada.
         - AzureTenantGuid = ID. de directorio del inquilino de Azure AD.
         - DiscoveryResourceId = URI de ID. de aplicación de la aplicación de servicio de detección Mopria.
 
-    - También puede especificar todos los valores de parámetro necesarios en la línea de comandos. La sintaxis es:
+    - También puede especificar todos los valores de parámetro necesarios en la línea de comandos. La sintaxis es la siguiente:
 
         `Publish-CloudPrinter -Printer <string> -Manufacturer <string> -Model <string> -OrgLocation <string> -Sddl <string> -DiscoveryEndpoint <string> -PrintServerEndpoint <string> -AzureClientId <string> -AzureTenantGuid <string> -DiscoveryResourceId <string>`
 
@@ -422,12 +423,12 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
         `Publish-CloudPrinter -Query -DiscoveryEndpoint https://mopriadiscoveryservice-contoso.msappproxy.net/mcs -AzureClientId dbe4feeb-cb69-40fc-91aa-73272f6d8fe1 -AzureTenantGuid 8de6a14a-5a23-4c1c-9ae4-1481ce356034 -DiscoveryResourceId https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/`
 
-## <a name="verify-the-deployment"></a>Comprobar la implementación.
+## <a name="verify-the-deployment"></a>Comprobar la implementación
 
 En un Azure AD dispositivo Unido que tiene configuradas las directivas MDM:
-- Abra un explorador Web y vaya a https://mopriadiscoveryservice-*tenant-Name*. msappproxy.net/MCS/Services.
+- Abra un explorador Web y vaya a https://mopriadiscoveryservice- *tenant-name*. msappproxy.net/MCS/Services.
 - Debería ver el texto JSON que describe el conjunto de funcionalidad de este punto de conexión.
-- Vaya a **configuración** > **dispositivos** > **impresoras & escáneres**.
+- Vaya a **configuración**  >  **dispositivos**  >  **impresoras & escáneres**.
     - Haga clic en **Agregar impresora o escáner**.
     - Debería ver una búsqueda de impresoras en la nube (o buscar impresoras en mi organización en un vínculo más reciente de una máquina con Windows 10).
     - Haga clic en el vínculo.
@@ -437,9 +438,9 @@ En un Azure AD dispositivo Unido que tiene configuradas las directivas MDM:
     - Seleccione impresora y haga clic en el botón **Agregar dispositivo** .
     - Después de la instalación correcta de la impresora, imprima en la impresora desde la aplicación favorita.
 
-> Nota: Si usa la impresora EcpPrintTest, puede encontrar el archivo de salida en la máquina del servidor de impresión en C:\\ECPTestOutput\\EcpTestPrint. XPS.
+> Nota: Si usa la impresora EcpPrintTest, puede encontrar el archivo de salida en la máquina del servidor de impresión en la ubicación C: \\ ECPTestOutput \\ EcpTestPrint. XPS.
 
-## <a name="troubleshooting"></a>Solucionar problemas
+## <a name="troubleshooting"></a>Solución de problemas
 
 A continuación se muestran problemas comunes durante la implementación de HCP
 
@@ -454,6 +455,6 @@ A continuación se muestran las ubicaciones de los registros que pueden ayudarle
 
 |Componente |Ubicación del registro |
 |------|------|
-|Cliente de Windows 10 | <ul><li>Use Visor de eventos para ver el registro de las operaciones de Azure AD. Haga clic en **Inicio** y escriba visor de eventos. Vaya a registros de aplicaciones y servicios > operación > de > Microsoft Windows > AAD.</li><li>Usar el centro de comentarios para recopilar registros. Consulte [envío de comentarios a Microsoft con la aplicación de centro de comentarios](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
+|Cliente de Windows 10 | <ul><li>Use Visor de eventos para ver el registro de las operaciones de Azure AD. Haga clic en **Inicio** y escriba visor de eventos. Vaya a registros de aplicaciones y servicios > operación > de > Microsoft Windows > AAD.</li><li>Usar el centro de comentarios para recopilar registros. Consulte [envío de comentarios a Microsoft con la aplicación de centro de comentarios](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
 |Servidor de conector | Use Visor de eventos para ver el registro del proxy de aplicación. Haga clic en **Inicio** y escriba visor de eventos. Vaya a registros de aplicaciones y servicios > Microsoft > AadApplicationProxy > conector > admin. |
 |Servidor de impresión | Los registros de la aplicación de servicio de detección de Mopria y la aplicación de impresión de nube de empresa se pueden encontrar en C:\inetpub\logs\LogFiles\W3SVC1. |

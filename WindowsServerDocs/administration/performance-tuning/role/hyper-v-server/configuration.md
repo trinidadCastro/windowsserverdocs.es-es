@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e3c4fa32b97761ad05c88722ef090f96fff21cf3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fb1001c99e084ab69f37db9779e5d5ae7acf58e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851798"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471440"
 ---
 # <a name="hyper-v-configuration"></a>Configuración de Hyper-V
 
@@ -20,11 +20,11 @@ ms.locfileid: "80851798"
 
 Las consideraciones de hardware para los servidores que ejecutan Hyper-V suelen ser similares a las de los servidores no virtualizados, pero los servidores que ejecutan Hyper-V pueden mostrar un aumento del uso de CPU, consumir más memoria y necesitar mayor ancho de banda de e/s debido a la consolidación del servidor.
 
--   **Incrustrados**
+-   **Procesadores**
 
     Hyper-V en Windows Server 2016 presenta los procesadores lógicos como uno o más procesadores virtuales para cada máquina virtual activa. Hyper-V requiere ahora procesadores que admiten tecnologías de traducción de direcciones de segundo nivel (SLAT), como tablas de páginas extendidas (EPT) o tablas de páginas anidadas (NPT).
 
--   **Almacenar**
+-   **Caché**
 
     Hyper-V puede beneficiarse de cachés de procesador más grandes, especialmente para cargas que tienen un gran espacio de trabajo en la memoria y en configuraciones de máquinas virtuales en las que la proporción de procesadores virtuales a procesadores lógicos es alta.
 
@@ -38,9 +38,9 @@ Las consideraciones de hardware para los servidores que ejecutan Hyper-V suelen 
 
 ## <a name="power-plan-considerations"></a>Consideraciones sobre el plan de energía
 
-Como tecnología básica, la virtualización es una herramienta muy útil para aumentar la densidad de la carga de trabajo del servidor, lo que reduce el número de servidores físicos necesarios en el centro de trabajo, lo que aumenta la eficacia operativa y reduce los costos de consumo de energía. La administración de energía es fundamental para cost Management. 
+Como tecnología básica, la virtualización es una herramienta muy útil para aumentar la densidad de la carga de trabajo del servidor, lo que reduce el número de servidores físicos necesarios en el centro de trabajo, lo que aumenta la eficacia operativa y reduce los costos de consumo de energía. La administración de energía es fundamental para cost Management.
 
-En un entorno de centro de información ideal, el consumo de energía se administra mediante la consolidación del trabajo en las máquinas hasta que estén más ocupados y, a continuación, desactive los equipos inactivos. Si este enfoque no es práctico, los administradores pueden aprovechar los planes de energía en los hosts físicos para asegurarse de que no consumen más energía de lo necesario. 
+En un entorno de centro de información ideal, el consumo de energía se administra mediante la consolidación del trabajo en las máquinas hasta que estén más ocupados y, a continuación, desactive los equipos inactivos. Si este enfoque no es práctico, los administradores pueden aprovechar los planes de energía en los hosts físicos para asegurarse de que no consumen más energía de lo necesario.
 
 Las técnicas de administración de energía de servidor incluyen un costo, especialmente porque las cargas de trabajo de inquilinos no son de confianza para dictar la Directiva sobre la infraestructura física del anfitrión. Se deja el software de nivel de host para deducir cómo maximizar el rendimiento a la vez que se minimiza el consumo de energía. En las máquinas que se encuentran en un estado inactivo, esto puede hacer que la infraestructura física concluya que el dibujo de energía moderado es adecuado, lo que da lugar a cargas de trabajo de inquilinos individuales que se ejecutan más lentamente de lo contrario.
 
@@ -72,22 +72,22 @@ Hyper-V admite y se ha optimizado para varios sistemas operativos invitados dife
 
 ## <a name="cpu-statistics"></a>Estadísticas de CPU
 
-Hyper-V publica los contadores de rendimiento para ayudar a caracterizar el comportamiento del servidor de virtualización e informar del uso de recursos. El conjunto estándar de herramientas para ver contadores de rendimiento en Windows incluye el monitor de rendimiento y Logman. exe, que puede mostrar y registrar los contadores de rendimiento de Hyper-V. Los nombres de los objetos de contador relevantes tienen el prefijo **Hyper-V**.
+Hyper-V publica los contadores de rendimiento para ayudar a caracterizar el comportamiento del servidor de virtualización e informar del uso de recursos. El conjunto estándar de herramientas para ver contadores de rendimiento en Windows incluye el monitor de rendimiento y Logman.exe, que puede mostrar y registrar los contadores de rendimiento de Hyper-V. Los nombres de los objetos de contador relevantes tienen el prefijo **Hyper-V**.
 
 Siempre debe medir el uso de CPU del sistema físico mediante los contadores de rendimiento del procesador lógico de hipervisor de Hyper-V. Los contadores de uso de CPU que el administrador de tareas y el monitor de rendimiento notifican en las particiones raíz y secundarias no reflejan el uso de CPU físico real. Use los siguientes contadores de rendimiento para supervisar el rendimiento:
 
-- **Procesador lógico de hipervisor de Hyper-V (\*)\\% total de tiempo de ejecución** El tiempo total de inactividad de los procesadores lógicos
+- **Procesador lógico de hipervisor de Hyper-V ( \* ) \\ % total de tiempo de ejecución** el tiempo de inactividad total de los procesadores lógicos
 
-- **Procesador lógico de hipervisor de Hyper-V (\*)\\% de tiempo de ejecución de invitado** Tiempo empleado en ejecutar ciclos dentro de un invitado o en el host
+- **Procesador lógico de hipervisor de Hyper-V ( \* ) \\ % tiempo de ejecución del invitado** tiempo dedicado a ejecutar ciclos dentro de un invitado o en el host
 
-- **Procesador lógico de hipervisor de Hyper-V (\*)\\% tiempo de ejecución de hipervisor** Tiempo empleado en ejecutarse dentro del hipervisor
+- **Procesador lógico de hipervisor de Hyper-V ( \* ) \\ % tiempo de ejecución del hipervisor** el tiempo empleado en ejecutarse dentro del hipervisor
 
-- **Procesador virtual raíz del hipervisor de Hyper-V (\*)\\\\** * mide el uso de CPU de la partición raíz
+- El **procesador virtual raíz del hipervisor de Hyper-V ( \* ) \\ \\ *** mide el uso de CPU de la partición raíz
 
-- **Procesador virtual del hipervisor de Hyper-V (\*)\\\\** * mide el uso de CPU de las particiones invitadas
+- **Procesador virtual del hipervisor de Hyper- \* V \\ \\ ()*** mide el uso de CPU de las particiones de invitado
 
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Terminología de Hyper-V](terminology.md)
 

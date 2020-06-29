@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f683b85657b8dd263e93380b71c646ad677950c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b513dd3346d593ec4c823808f540bce68dd472ce
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851728"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471370"
 ---
 # <a name="hyper-v-memory-performance"></a>Rendimiento de la memoria de Hyper-V
 
@@ -41,7 +41,7 @@ La partición raíz debe tener suficiente memoria para proporcionar servicios co
 
 Hyper-V en Windows Server 2016 supervisa el estado de tiempo de ejecución del sistema operativo de administración de la partición raíz para determinar cuánta memoria se puede asignar con seguridad a las particiones secundarias, al tiempo que se garantiza un alto rendimiento y confiabilidad de la partición raíz.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Terminología de Hyper-V](terminology.md)
 

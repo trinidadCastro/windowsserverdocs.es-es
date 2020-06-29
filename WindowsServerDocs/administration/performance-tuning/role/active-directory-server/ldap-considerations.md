@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 86aef48575388ad76ff22fc6027c5ce2d4b6694a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2ef32b379dcc5d1c2d8217564b639f44d024e5ee
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851898"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471551"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>Consideraciones de LDAP en agrega optimización del rendimiento
 
@@ -47,12 +47,12 @@ Los atributos de indización son útiles al buscar objetos que tienen el nombre 
 
 - Los grandes volúmenes de consultas con duraciones altas provocan el consumo y el agotamiento de los subprocesos LDAP de ATQ. Supervise los siguientes contadores de rendimiento:
 
-    - **Latencia de solicitud de\\NTDS** : está sujeto a cuánto tiempo tarda la solicitud en procesarse. Active Directory agota el tiempo de espera de las solicitudes después de 120 segundos (valor predeterminado), sin embargo, la mayoría debe ejecutarse mucho más rápido y las consultas de ejecución extremadamente larga deben ocultarse en los números generales. Busque los cambios en esta línea de base, en lugar de los umbrales absolutos.
+    - **NTDS \\ Latencia de solicitudes** : esto está sujeto a cuánto tiempo tarda la solicitud en procesarse. Active Directory agota el tiempo de espera de las solicitudes después de 120 segundos (valor predeterminado), sin embargo, la mayoría debe ejecutarse mucho más rápido y las consultas de ejecución extremadamente larga deben ocultarse en los números generales. Busque los cambios en esta línea de base, en lugar de los umbrales absolutos.
 
         > [!NOTE]
         > Los valores altos aquí también pueden ser indicadores de retrasos en las solicitudes de "proxy" a otras comprobaciones de CRL y dominios.
 
-    - **NTDS\\retraso en la cola Estimado** : Idealmente, esto debería estar cerca de 0 para un rendimiento óptimo, ya que esto significa que las solicitudes no pasan ningún tiempo en espera de servicio.
+    - **NTDS \\ Retraso en la cola Estimado** : Idealmente, esto debería estar cerca de 0 para un rendimiento óptimo, ya que esto significa que las solicitudes no pasan ningún tiempo en espera de servicio.
 
 Estos escenarios se pueden detectar mediante uno o varios de los métodos siguientes:
 
@@ -64,7 +64,7 @@ Estos escenarios se pueden detectar mediante uno o varios de los métodos siguie
 
 -   [Asesor de rendimiento de servidor de Microsoft](../../../server-performance-advisor/microsoft-server-performance-advisor.md) Paquete de Active Directory Advisor
 
--   Realiza búsquedas con cualquier filtro además de "(objectClass =\*)" que usa el índice de antecesores.
+-   Realiza búsquedas con cualquier filtro además de "(objectClass = \* )" que usa el índice de antecesores.
 
 ### <a name="other-index-considerations"></a>Otras consideraciones sobre los índices
 
@@ -80,11 +80,11 @@ Estos escenarios se pueden detectar mediante uno o varios de los métodos siguie
 
 -   Los índices de tupla son necesarios para admitir cadenas de búsqueda medial y cadenas de búsqueda final. Los índices de tupla no son necesarios para las cadenas de búsqueda iniciales.
 
-    -   Cadena de búsqueda inicial: (samAccountName = MiPC\*)
+    -   Cadena de búsqueda inicial: (samAccountName = mi \* )
 
-    -   Cadena de búsqueda medial: (samAccountName =\*MiPC\*)
+    -   Cadena de búsqueda medial: (samAccountName = \* mi \* )
 
-    -   Cadena de búsqueda final: (samAccountName =\*miPC $)
+    -   Cadena de búsqueda final: (samAccountName = \* mi $)
 
 -   Al crear un índice se generará la e/s de disco mientras se compila el índice. Esto se hace en un subproceso en segundo plano con una prioridad más baja y las solicitudes entrantes se priorizarán en la compilación del índice. Si el planeamiento de la capacidad para el entorno se ha realizado correctamente, debería ser transparente. Sin embargo, los escenarios con mucha actividad de escritura o un entorno en el que se desconoce la carga en el almacenamiento del controlador de dominio podrían degradar la experiencia del cliente y deben deshacerse fuera del horario de trabajo.
 
@@ -98,10 +98,10 @@ Para obtener más información, vea lo siguiente:
 
 -   [Atributos indizados](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
-- [Optimizar el rendimiento de servidores Active Directory](index.md)
+- [Optimización del rendimiento para servidores de Active Directory](index.md)
 - [Consideraciones de hardware](hardware-considerations.md)
 - [Colocación adecuada de los controladores de dominio y consideraciones de sitio](site-definition-considerations.md)
-- [Solución de problemas de rendimiento de AD DS](troubleshoot.md) 
+- [Solución de problemas de rendimiento de AD DS](troubleshoot.md)
 - [Capacity Planning for Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) (Planeamiento de la capacidad para Active Directory Domain Services)

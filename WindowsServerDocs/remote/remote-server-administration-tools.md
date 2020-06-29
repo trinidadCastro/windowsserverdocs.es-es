@@ -8,12 +8,12 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 307da083db2e5cc76c4eda825f0e080d7f026821
-ms.sourcegitcommit: 7288aca86fc76b9ff6177a17027118d1f21707a9
+ms.openlocfilehash: 69b31c8ef0ce093604ee9fd8fe382d75f7f88595
+ms.sourcegitcommit: aeefdf7814a4672b2dcd7537204205bb7ee5f9a0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380698"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84514915"
 ---
 # <a name="remote-server-administration-tools"></a>Herramientas de administración remota del servidor
 
@@ -56,7 +56,7 @@ La administración remota de Windows PowerShell y el Administrador del servidor 
 
 A partir de la Actualización de octubre de 2018 de Windows 10, RSAT se incluye como un conjunto de **características a petición** directamente en Windows 10. Ahora, en lugar de descargar un paquete de RSAT, solo tienes que ir a **Administrar características opcionales** en **Configuración** y hacer clic en **Agregar una característica** para ver la lista de herramientas de RSAT disponibles. Selecciona e instala las herramientas de RSAT específicas que necesites. Para ver el progreso de la instalación, haz clic en el botón **Atrás** para ver el estado en la página **Administrar características opcionales**.
         
-Consulta la [lista de herramientas de RSAT disponibles a través de **características a petición**](https://docs.microsoft.co    /wi    dows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat). Además de la instalación a través de la aplicación gráfica **Configuración**, también puedes instalar herramientas de RSAT específicas mediante la línea de comandos o la automatización con [**DISM /Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods).
+Consulta la [lista de herramientas de RSAT disponibles a través de **características a petición**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat). Además de la instalación a través de la aplicación gráfica **Configuración**, también puedes instalar herramientas de RSAT específicas mediante la línea de comandos o la automatización con [**DISM /Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods).
 
 Una ventaja de las características a petición es que las características instaladas se mantienen entre las actualizaciones de la versión de Windows 10.        
         

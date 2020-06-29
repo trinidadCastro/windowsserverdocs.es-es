@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7abc1ef5473365dd26dce1167bb685f116822a7d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1109eb50bbe052b39fe7a91903fa0aea58b6e4f1
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851748"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471390"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Consideraciones sobre máquinas virtuales Linux
 
@@ -24,9 +24,9 @@ Incluso cuando el invitado se ejecuta Integration Services, se puede configurar 
 
 ## <a name="linux-network-performance"></a>Rendimiento de red de Linux
 
-De forma predeterminada, Linux habilita las descargas y la aceleración de hardware de forma predeterminada. Si vRSS está habilitado en las propiedades de una NIC en el host y el invitado de Linux tiene la capacidad de usar vRSS, se habilitará la funcionalidad. En PowerShell se puede cambiar este mismo parámetro con el comando `EnableNetAdapterRSS`.
+De forma predeterminada, Linux habilita las descargas y la aceleración de hardware de forma predeterminada. Si vRSS está habilitado en las propiedades de una NIC en el host y el invitado de Linux tiene la capacidad de usar vRSS, se habilitará la funcionalidad. En PowerShell se puede cambiar este mismo parámetro con el `EnableNetAdapterRSS` comando.
 
-Del mismo modo, la característica VMMQ (RSS de conmutador virtual) puede estar habilitada en la NIC física usada por las **propiedades** de invitado > **configurar...**  > pestaña **avanzadas** > establecer el valor **RSS del conmutador virtual** en **habilitado** o habilitar VMMQ en PowerShell mediante lo siguiente:
+Del mismo modo, la característica VMMQ (RSS de conmutador virtual) se puede habilitar en la NIC física que usa la configuración de **propiedades**de invitado  >  **...**  >  Pestaña **avanzadas** > establecer el **RSS del conmutador virtual** en **habilitado** o habilitar VMMQ en PowerShell mediante lo siguiente:
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True
@@ -49,15 +49,15 @@ net.ipv4.ip_local_port_range = 10240 65535
 net.ipv4.tcp_abort_on_overflow = 1
 ```
 
-Una herramienta útil para microbenchmarks de red es ntttcp, que está disponible en Linux y Windows. La versión de Linux es de código abierto y está disponible en [ntttcp-for-Linux en github.com](https://github.com/Microsoft/ntttcp-for-linux). La versión de Windows se puede encontrar en el [centro de descarga](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769). Cuando se optimizan las cargas de trabajo, es mejor usar tantas secuencias como sea necesario para obtener el mejor rendimiento. Al utilizar ntttcp para modelar el tráfico, el parámetro `-P` establece el número de conexiones paralelas usadas.
+Una herramienta útil para microbenchmarks de red es ntttcp, que está disponible en Linux y Windows. La versión de Linux es de código abierto y está disponible en [ntttcp-for-Linux en github.com](https://github.com/Microsoft/ntttcp-for-linux). La versión de Windows se puede encontrar en el [centro de descarga](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769). Cuando se optimizan las cargas de trabajo, es mejor usar tantas secuencias como sea necesario para obtener el mejor rendimiento. Con ntttcp para modelar el tráfico, el `-P` parámetro establece el número de conexiones paralelas usadas.
 
 ## <a name="linux-storage-performance"></a>Rendimiento de almacenamiento de Linux
 
-Algunos procedimientos recomendados, como los siguientes, se enumeran en [procedimientos recomendados para ejecutar Linux en Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v). El kernel de Linux tiene diferentes programadores de e/s para reordenar las solicitudes con diferentes algoritmos. NOOP es una cola primero en salir que pasa la decisión de programación que va a realizar el hipervisor. Se recomienda usar NOOP como programador al ejecutar la máquina virtual Linux en Hyper-V. Para cambiar el programador de un dispositivo específico, en la configuración del cargador de arranque (por ejemplo,/etc/grub.conf), agregue `elevator=noop` a los parámetros de kernel y, a continuación, reinicie.
+Algunos procedimientos recomendados, como los siguientes, se enumeran en [procedimientos recomendados para ejecutar Linux en Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v). El kernel de Linux tiene diferentes programadores de e/s para reordenar las solicitudes con diferentes algoritmos. NOOP es una cola primero en salir que pasa la decisión de programación que va a realizar el hipervisor. Se recomienda usar NOOP como programador al ejecutar la máquina virtual Linux en Hyper-V. Para cambiar el programador de un dispositivo específico, en la configuración del cargador de arranque (por ejemplo,/etc/grub.conf), agregue `elevator=noop` los parámetros de kernel y, a continuación, reinicie.
 
 De forma similar a las redes, el rendimiento de invitados de Linux con almacenamiento aprovecha al máximo varias colas con suficiente profundidad para mantener el host ocupado. La herramienta de pruebas comparativas de FIO con el motor de libaio es probablemente la mejor opción de rendimiento del almacenamiento.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Terminología de Hyper-V](terminology.md)
 

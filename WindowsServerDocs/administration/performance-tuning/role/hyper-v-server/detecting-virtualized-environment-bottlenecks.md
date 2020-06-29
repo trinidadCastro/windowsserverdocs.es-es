@@ -1,5 +1,5 @@
 ---
-title: Detección de cuellos de botella en un entorno virtualizado
+title: Detección de cuellos de botella en un entorno virtualizado.
 description: Detección y resolución de posibles cuellos de botella de rendimiento de Hyper-v
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 211f35c151e94bc8b8a11a614edad18053cb18b9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 11b2f596fc8c1f8c193100e4a9f1ee792d3d7502
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851788"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471420"
 ---
-# <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>Detección de cuellos de botella en un entorno virtualizado
+# <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>Detección de cuellos de botella en un entorno virtualizado.
 
 En esta sección se ofrecen algunas sugerencias sobre lo que se debe supervisar mediante el monitor de rendimiento y cómo identificar dónde podría ser el problema cuando el host o algunas de las máquinas virtuales no funcionan tal y como cabría esperar.
 
@@ -28,15 +28,15 @@ Estos son algunos escenarios comunes que pueden provocar cuellos de botella en e
 
 Puede usar los siguientes contadores de rendimiento del host:
 
--   Uso de procesador lógico: \\procesador lógico de hipervisor de Hyper-V (\*)\\% de tiempo de ejecución total
+-   Uso del procesador lógico: \\ procesador lógico de hipervisor de Hyper-V ( \* ) \\ % de tiempo total de ejecución
 
--   Uso de procesador virtual: \\procesador virtual del hipervisor de Hyper-V (\*)\\% de tiempo de ejecución total
+-   Uso de procesador virtual: \\ procesador virtual de hipervisor de Hyper-V ( \* ) \\ % de tiempo total de ejecución
 
--   Utilización del procesador virtual raíz: \\procesador virtual raíz del hipervisor de Hyper-V (\*)\\% de tiempo de ejecución total
+-   Utilización del procesador virtual raíz: \\ procesador virtual raíz del hipervisor de Hyper-V ( \* ) \\ % total de tiempo de ejecución
 
-Si el **procesador lógico del hipervisor de Hyper-V (\_total)\\% total del contador en tiempo de ejecución** es superior al 90%, el host está sobrecargado. Debe agregar más capacidad de procesamiento o trasladar algunas máquinas virtuales a otro host.
+Si el contador de ** \_ tiempo de \\ ejecución total del procesador lógico del hipervisor de Hyper-V (total)** es superior al 90%, el host está sobrecargado. Debe agregar más capacidad de procesamiento o trasladar algunas máquinas virtuales a otro host.
 
-Si el **procesador virtual del hipervisor de Hyper-V (nombre de VM: VP x)\\% total del contador en tiempo de ejecución** es superior al 90% para todos los procesadores virtuales, debe hacer lo siguiente:
+Si el contador de ** \\ tiempo de ejecución del procesador virtual del hipervisor de Hyper-V (nombre de VM: VP x)** es superior al 90% para todos los procesadores virtuales, debe hacer lo siguiente:
 
 -   Comprobar que el host no está sobrecargado
 
@@ -44,7 +44,7 @@ Si el **procesador virtual del hipervisor de Hyper-V (nombre de VM: VP x)\\% tot
 
 -   Asignar más procesadores virtuales a la máquina virtual
 
-Si el **procesador virtual del hipervisor de Hyper-V (nombre de VM: VP x)\\% total del contador en tiempo de ejecución** es superior al 90% para algunos, pero no todos, de los procesadores virtuales, debe hacer lo siguiente:
+Si el **procesador virtual del hipervisor de Hyper-V (nombre de VM: VP x) \\ % total del contador en tiempo de ejecución** es superior al 90% para algunos, pero no todos, de los procesadores virtuales, debe hacer lo siguiente:
 
 -   Si la carga de trabajo recibe un uso intensivo de la red, considere la posibilidad de usar vRSS.
 
@@ -52,7 +52,7 @@ Si el **procesador virtual del hipervisor de Hyper-V (nombre de VM: VP x)\\% tot
 
 -   Si la carga de trabajo requiere un uso intensivo del almacenamiento, debe habilitar NUMA virtual y agregar más discos virtuales.
 
-Si el **procesador virtual raíz del hipervisor de Hyper-V (directorio raíz VP x)\\% total del contador en tiempo de ejecución** es superior al 90% para algunos, pero no todos, los procesadores virtuales y el **procesador (x)\\porcentaje de tiempo de interrupción y procesador (x)\\% de tiempo de DPC** suman aproximadamente el valor para el **procesador virtual raíz (VP raíz)\\% total** del contador de tiempo de ejecución, debe asegurarse de habilitar VMQ en los adaptadores de red.
+Si el contador de ** \\ tiempo de ejecución del hipervisor de Hyper-V (directorio raíz VP x)** es superior al 90% para algunos, pero no todos, los procesadores virtuales y el contador del procesador **(x) \\ % de tiempo de interrupción y procesador (x) \\ % de tiempo de DPC** agregan aproximadamente el valor del contador de tiempo de ejecución del **procesador virtual de raíz (Vicepresidente de raíz) al \\ total** de tiempo de ejecución, debe asegurarse de habilitar VMQ en los adaptadores de red.
 
 ## <a name="memory-bottlenecks"></a>Cuellos de botella de memoria
 
@@ -66,17 +66,17 @@ Estos son algunos escenarios comunes que pueden provocar cuellos de botella de m
 
 Puede usar los siguientes contadores de rendimiento del host:
 
--   Mbytes disponibles de memoria\\
+-   \\Mbytes de memoria disponibles
 
--   Equilibrador de Memoria dinámica de Hyper-V (\*)\\memoria disponible
+-   \*Memoria disponible del equilibrador de memoria dinámica de Hyper-V () \\
 
 Puede usar los siguientes contadores de rendimiento de la máquina virtual:
 
--   Mbytes disponibles de memoria\\
+-   \\Mbytes de memoria disponibles
 
-Si la **memoria\\Mbytes disponibles** y el **equilibrador de memoria dinámica de Hyper-V (\*)\\** los contadores de memoria disponibles están bajo en el host, debe detener los servicios no esenciales y migrar una o varias máquinas virtuales a otro host.
+Si los contadores de memoria disponibles en ** \\ Mbytes** e **memoria dinámica de Hyper-V ( \* ) \\ ** están bajo en el host, debe detener los servicios no esenciales y migrar una o varias máquinas virtuales a otro host.
 
-Si el contador **memoria\\Mbytes disponibles** es bajo en la máquina virtual, debe asignar más memoria a la máquina virtual. Si usa Memoria dinámica, debe aumentar la configuración de memoria máxima.
+Si el **contador \\ MB de memoria disponible** está bajo en la máquina virtual, debe asignar más memoria a la máquina virtual. Si usa Memoria dinámica, debe aumentar la configuración de memoria máxima.
 
 ## <a name="network-bottlenecks"></a>Cuellos de botella de red
 
@@ -88,11 +88,11 @@ Estos son algunos escenarios comunes que pueden provocar cuellos de botella en l
 
 Puede usar los siguientes contadores de rendimiento del host:
 
--   Interfaz de red (*nombre de adaptador de red*)\\bytes por segundo
+-   Interfaz de red (*nombre de adaptador de red*) \\ bytes por segundo
 
 Puede usar los siguientes contadores de rendimiento de la máquina virtual:
 
--   Adaptador de Virtual Network de Hyper-V (*nombre de nombre de máquina Virtual&lt;GUID&gt;* )\\bytes por segundo
+-   Adaptador de Virtual Network de Hyper-V (* &lt; GUID &gt; de nombre de máquina virtual*) \\ bytes por segundo
 
 Si el contador de **bytes de NIC/s físicos** es mayor o igual que el 90% de la capacidad, debe agregar adaptadores de red adicionales, migrar máquinas virtuales a otro host y configurar QoS de red.
 
@@ -110,13 +110,13 @@ Estos son algunos escenarios comunes que pueden provocar cuellos de botella de a
 
 Puede usar los siguientes contadores de rendimiento del host:
 
--   Disco físico (*letra de disco*)\\promedio de segundos de disco/lectura
+-   Disco físico (*letra de disco*) \\ promedio de segundos de disco/lectura
 
--   Disco físico (*letra de disco*)\\promedio de segundos de disco/escritura
+-   Disco físico (*letra de disco*) \\ promedio de segundos de disco/escritura
 
--   Disco físico (*letra de disco*)\\longitud promedio de cola de lectura de disco
+-   Disco físico (*letra de disco*) \\ Longitud promedio de cola de lectura de disco
 
--   Disco físico (*letra de disco*)\\longitud promedio de cola de escritura de disco
+-   Disco físico (*letra de disco*) \\ Longitud promedio de cola de escritura de disco
 
 Si las latencias son constantemente mayores que 50 ms, debe hacer lo siguiente:
 
@@ -130,7 +130,7 @@ Si las latencias son constantemente mayores que 50 ms, debe hacer lo siguiente:
 
 -   Usar VHDX
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Terminología de Hyper-V](terminology.md)
 

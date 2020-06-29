@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c140c61a5887cc63b2a9d0b468f8d1daf02cd76
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c3eb62d53ef11d5531590e1a6d46cd6cacaf2e4a
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76822718"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094540"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>What's New in Windows Server 2016 (Novedades en Windows Server 2016)
 
@@ -59,7 +59,7 @@ Windows Server 2016 proporciona una nueva máquina virtual blindada basada en Hy
 
 Para obtener más detalles e instrucciones para trabajar con máquinas virtuales blindadas, consulte [Shielded VMs and Guarded Fabric Validation Guide for Windows Server 2016 (TPM)](https://aka.ms/shieldedvms) (Máquinas virtuales blindadas y guía de validación de tejido protegido para Windows Server 2016 [TPM]).  
 
-## <a name="identity-and-access"></a>[Identidad y acceso](../identity/Identity-and-Access.md)  
+## <a name="identity-and-access"></a>[Identidad y acceso](../identity/Identity-and-Access.yml)  
 Las nuevas características de Identidad aumentan la capacidad de las organizaciones de proteger los entornos de Active Directory y les ayudan a migrar a implementaciones de solo en la nube e implementaciones híbridas, donde algunas aplicaciones y servicios se hospedan en la nube y otros se hospedan de forma local.  
 
 ### <a name="active-directory-certificate-services"></a>Servicios de certificados de Active Directory  
@@ -74,7 +74,7 @@ Novedades de Servicios de federación de Active Directory Los Servicios de fede
 ### <a name="web-application-proxy"></a>Proxy de aplicación web  
 La versión más reciente del Proxy de aplicación web se centra en las nuevas características que permiten la publicación y la autenticación previa de más aplicaciones y una experiencia de usuario mejorada. Consulte la lista completa de las nuevas características que incluye autenticación previa para aplicaciones de cliente enriquecidas Exchange ActiveSync y dominios con comodín para una publicación más sencilla de aplicaciones de SharePoint. Para más información, consulta [Proxy de aplicación web en Windows Server 2016](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md).  
 
-##  <a name="administration"></a>[Administración](../administration/manage-windows-server.md)  
+##  <a name="administration"></a>[Administración](../administration/manage-windows-server.yml)  
 El área Administración y automatización se centra en la información de referencia y las herramientas para profesionales de TI que desean ejecutar y administrar Windows Server 2016, incluido Windows PowerShell.
 
 Windows PowerShell 5.1 incluye nuevas e importantes características, entre las que se incluyen el soporte para el desarrollo con clases y las nuevas características de seguridad, que amplían y mejoran su uso, y le permiten controlar y administrar entornos basados en Windows de manera más sencilla y completa. Consulta [Nuevos escenarios y características de WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features) para obtener más información.
@@ -98,7 +98,7 @@ Para ayudar al equipo responsable a investigar sistemas comprometidos, a veces c
 
 Para obtener información, consulta [PowerShell ♥ the Blue Team](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/).
 
-## <a name="networking"></a>[Redes](../networking/Networking.md)  
+## <a name="networking"></a>[Redes](../networking/index.yml)  
 Esta área abarca los productos y las características de redes dirigidos al profesional de TI para diseñar, implementar y mantener Windows Server 2016.  
 
 ### <a name="software-defined-networking"></a>Redes definidas por software
@@ -132,7 +132,7 @@ Device Guard proporciona integridad de código del modo kernel (KMCI) e integrid
 Protección de flujo de control (CFG) es una característica de seguridad de plataforma que se creó para luchar contra vulnerabilidades de corrupción de memoria. Para obtener más información, vea [Protección de flujo de control](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx).
 
 
-## <a name="storage"></a>[Almacenamiento](../storage/storage.md)
+## <a name="storage"></a>[Almacenamiento](../storage/storage.yml)
 
 El almacenamiento en Windows Server 2016 incluye nuevas características y mejoras de almacenamiento definido por el software, así como servidores de archivos tradicionales. A continuación se muestran algunas de las nuevas características; para consultar más mejoras y detalles, vea [Novedades de Espacios de almacenamiento en Windows Server 2016](../storage/whats-new-in-storage.md).
 

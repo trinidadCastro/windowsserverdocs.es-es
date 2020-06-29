@@ -3,15 +3,16 @@ title: Información general de impresión en la nube híbrida de Windows Server
 description: La impresión en la nube híbrida permite a los profesionales de ti admitir los requisitos de impresión de BYOD o dispositivos Unidos a un dominio.
 ms.prod: windows-server
 ms.technology: server-general
+ms.topic: conceptual
 author: trudyha
 ms.author: trudyha
 ms.date: 10/16/2017
-ms.openlocfilehash: f448e8709f9e73165ba1a477c59567fcff4a2008
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2585037412dd77435ec056336509dbf9c47c7dd2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852008"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469830"
 ---
 # <a name="windows-server-hybrid-cloud-print-overview"></a>Información general de impresión en la nube híbrida de Windows Server
 
@@ -26,7 +27,7 @@ Para los administradores de ti, **la impresión en la nube híbrida** proporcion
 La impresión en la **nube híbrida** permite que los usuarios de su organización impriman desde los dispositivos que usan para completar su trabajo, incluso cuando están fuera de su escritorio o lugar de trabajo.
 
 **La impresión de nube híbrida** es compatible con Windows 10 Creators Update y Windows 10 S.
- 
+
 ## <a name="feature-summary"></a>Resumen de características
 **La impresión en la nube híbrida** consta de dos componentes principales del servidor: servicio de **detección** y servicio de **impresión de Windows** .
 - Punto de conexión de servicio de **detección** que se ejecuta en un servicio IIS compatible con el estándar del sector de Mopria Alliance para la detección de impresoras en la nube.
@@ -40,11 +41,11 @@ La impresión en la **nube híbrida** permite que los usuarios de su organizaci�
 *Diagrama de la solución de impresión en la nube híbrida*
 
 En el diagrama se muestra:
-- **Impresión en la nube híbrida** mediante Azure Active Directory como proveedor de identidades de usuario. 
-- El servicio de **impresión de Windows** y los puntos de conexión de servicio de **detección** se registran con Azure Active Directory para permitir que el dispositivo cliente recupere el token de autenticación de usuario necesario para utilizarlo en estos servicios. 
+- **Impresión en la nube híbrida** mediante Azure Active Directory como proveedor de identidades de usuario.
+- El servicio de **impresión de Windows** y los puntos de conexión de servicio de **detección** se registran con Azure Active Directory para permitir que el dispositivo cliente recupere el token de autenticación de usuario necesario para utilizarlo en estos servicios.
 - Un servicio MDM, como **Microsoft Intune**, aprovisiona el dispositivo cliente con las directivas necesarias para conectarse Azure Active Directory al servicio de **impresión de Windows** y al servicio de **detección** .
 
-Esta tabla contiene más información sobre los elementos del diagrama.  
+Esta tabla contiene más información sobre los elementos del diagrama.
 
 | Elemento | Descripción |
 | ------- | ----------- |
@@ -53,12 +54,12 @@ Esta tabla contiene más información sobre los elementos del diagrama.
 | Azure AD Connect  | Sincroniza las credenciales de usuario entre Azure AD y AD local. |
 | Servicio MDM (Intune) | Proporciona la funcionalidad de aprovisionamiento de directivas de dispositivo para garantizar que el dispositivo cliente (dispositivo BYOD) cumple las directivas corporativas. |
 | Proxy de Azure AD | Proporciona una conexión de larga duración que se establece desde detrás del Firewall a Azure para permitir que el tráfico de aplicaciones configurado específico fluya desde Internet a la red corporativa. |
-| Aplicación Web de Azure | La base de la solución de impresión en la nube híbrida. Proporciona los puntos de conexión web necesarios para detectar impresoras y enviar contenido de impresión para dispositivos que no están Unidos a un dominio. |
+| Aplicación web de Azure | La base de la solución de impresión en la nube híbrida. Proporciona los puntos de conexión web necesarios para detectar impresoras y enviar contenido de impresión para dispositivos que no están Unidos a un dominio. |
 | Dispositivo BYOD/cola de impresión/Impresora del servidor de impresión de Windows | Son tal cual. No hay ningún cambio en la funcionalidad de la implementación. |
 
 Hay dos maneras de instalar **la impresión híbrida en la nube**:
-- \* * Características a petición, que ven [configurar características a petición en Windows Server](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server) para obtener más información sobre cómo agregar y quitar archivos de roles y características. 
-- \* * Configuración de Windows Server 2016, que los administradores pueden ir a **configuración** -> **aplicaciones** -> **administrar características opcionales** -> **Agregar una característica** y buscar el paquete de características a petición 
+- * * Características a petición, que ven [configurar características a petición en Windows Server](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server) para obtener más información sobre cómo agregar y quitar archivos de roles y características.
+- * * Configuración de Windows Server 2016, que los administradores pueden ir a **configuración**  ->  **aplicaciones**  ->  **administrar características opcionales**  ->  **Agregar una característica** y buscar el paquete de características a petición
 - Comandos de PowerShell: en una ventana de administrador de PowerShell, ejecute estos comandos:
 
 ```PowerShell

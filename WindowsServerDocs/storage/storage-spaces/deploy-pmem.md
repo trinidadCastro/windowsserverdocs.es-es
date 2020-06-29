@@ -1,5 +1,5 @@
 ---
-title: Comprensión e implementación de memoria persistente
+title: Descripción e implementación de una memoria persistente
 description: Información detallada sobre qué es la memoria persistente y cómo configurarla con espacios de almacenamiento directo en Windows Server 2019.
 ms.prod: windows-server
 ms.author: adagashe
@@ -8,14 +8,14 @@ ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 43268986f0ef42aabc218062ac19f1d98f27be6d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f5f88ac2ec728e176735ad58d9d67112583c527
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861038"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469650"
 ---
-# <a name="understand-and-deploy-persistent-memory"></a>Comprensión e implementación de memoria persistente
+# <a name="understand-and-deploy-persistent-memory"></a>Descripción e implementación de una memoria persistente
 
 > Se aplica a: Windows Server 2019
 
@@ -27,7 +27,7 @@ PMem es un tipo de RAM no volátil (NVDIMM) que conserva su contenido a través 
 
 Para ver algunas de estas ventajas, echemos un vistazo a la demostración siguiente de Microsoft encendido 2018.
 
-[demostración de ![de Microsoft encendido 2018 Pmem](http://img.youtube.com/vi/8WMXkMLJORc/0.jpg)](http://www.youtube.com/watch?v=8WMXkMLJORc)
+[![Demostración de Pmem de Microsoft encendido 2018](http://img.youtube.com/vi/8WMXkMLJORc/0.jpg)](http://www.youtube.com/watch?v=8WMXkMLJORc)
 
 Cualquier sistema de almacenamiento que proporcione tolerancia a errores realiza necesariamente copias distribuidas de escrituras. Dichas operaciones deben atravesar la red y amplificar el tráfico de escritura de back-end. Por esta razón, los números de banco de pruebas de IOPS más grandes se suelen lograr mediante la medición de las lecturas únicamente, especialmente si el sistema de almacenamiento tiene optimizaciones comunes para leer de la copia local siempre que sea posible. Espacios de almacenamiento directo está optimizado para ello.
 
@@ -37,40 +37,40 @@ Cualquier sistema de almacenamiento que proporcione tolerancia a errores realiza
 
 Si ve el vídeo en estrecha, observará que lo que es incluso más Jaw es la latencia. Incluso a más de 13,7 millones de IOPS, el sistema de archivos de Windows está informando de una latencia que es constantemente inferior a 40 μs. (Es decir, el símbolo de microsegundos, una-millonésimas de segundo). Esta velocidad es un orden de magnitud más rápido que la típica que los proveedores All-Flash anuncian hoy en día.
 
-Juntos, Espacios de almacenamiento directo en Windows Server 2019 e Intel&reg; Optane&trade; memoria persistente de DC ofrecen un rendimiento innovador. Este benchmark de HCl líder del sector de más de 13.7 M e/s por segundo, acompañado por una latencia predecible y extremadamente baja, es más que el doble de la prueba comparativa anterior líder del sector de 6,7 M IOPS. Lo que es más, esta vez necesitamos solo 12 nodos de servidor&mdash;25 por ciento menos de hace dos años.
+Juntos, Espacios de almacenamiento directo en Windows Server 2019 e Intel &reg; Optane &trade; DC persistent Memory ofrecen un rendimiento innovador. Este benchmark de HCl líder del sector de más de 13.7 M e/s por segundo, acompañado por una latencia predecible y extremadamente baja, es más que el doble de la prueba comparativa anterior líder del sector de 6,7 M IOPS. Lo que es más, esta vez solo necesitábamos 12 nodos de servidor en un &mdash; 25%, hace menos de dos años.
 
 ![Ventajas de IOPS](media/deploy-pmem/iops-gains.png)
 
-El hardware de prueba era un clúster de 12 servidores que se configuró para usar volúmenes de creación de reflejo triple y de ReFS delimitados. **12** x Intel&reg; S2600WFT, **384 GIB** Memory, 2 x 28-Core "CASCADELAKE", **1,5 TB** Intel&reg; Optane&trade; dc persistente Memory as cache, **32 TB** NVME (4 x 8 TB Intel&reg; DC P4510) como capacidad, **2** x Mellanox ConnectX-4 25 Gbps.
+El hardware de prueba era un clúster de 12 servidores que se configuró para usar volúmenes de la creación de reflejo triple y delimitados, **12** x Intel &reg; S2600WFT, **384 GIB** Memory, 2 x 28-core "CascadeLake", **1,5 TB** Intel &reg; OPTANE &trade; DC persistente Memory as cache, **32 TB** NVMe (4 x 8 TB Intel &reg; DC P4510) como capacidad, **2** x Mellanox ConnectX-4 25 Gbps.
 
-En la tabla siguiente se muestran los números de rendimiento completos.  
+En la tabla siguiente se muestran los números de rendimiento completos.
 
-| Analizar                   | Rendimiento         |
+| Prueba comparativa                   | Rendimiento         |
 |-----------------------------|---------------------|
 | lectura aleatoria de 4K 100%         | 13,8 millones IOPS   |
 | 4K 90/10% de lectura/escritura aleatoria | 9.450.000 IOPS   |
 | lectura secuencial de 2 MB         | rendimiento de 549 GB/s |
 
-### <a name="supported-hardware"></a>Hardware compatible
+### <a name="supported-hardware"></a>Hardware admitido
 
-En la tabla siguiente se muestra el hardware de memoria persistente compatible para Windows Server 2019 y Windows Server 2016.  
+En la tabla siguiente se muestra el hardware de memoria persistente compatible para Windows Server 2019 y Windows Server 2016.
 
 | Tecnología de memoria persistente                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
-| **NVDIMM-N** en modo persistente                                  | Se admite                | Se admite                |
-| **Memoria persistente de DC de&trade; de Intel Optane** en modo de aplicación directa             | No se admite            | Se admite                |
-| **Memoria persistente de DC de&trade; de Intel Optane** en modo de memoria | Se admite            | Se admite                |
+| **NVDIMM-N** en modo persistente                                  | Compatible                | Compatible.                |
+| **Intel Optane &trade; Memoria persistente de DC** en modo de aplicación directa             | No compatible            | Compatible                |
+| **Intel Optane &trade; Memoria persistente de DC** en modo de memoria | Compatible            | Compatible.                |
 
-> [!NOTE]  
+> [!NOTE]
 > Intel Optane admite los modos de *memoria* (volátil) y *aplicación directa* (persistente).
-   
-> [!NOTE]  
-> Cuando se reinicia un sistema que tiene varios módulos de Intel&reg; Optane&trade; PMem en modo de aplicación directa que se dividen en varios espacios de nombres, es posible que se pierda el acceso a algunos o a todos los discos de almacenamiento lógicos relacionados. Este problema se produce en las versiones de Windows Server 2019 anteriores a la versión 1903.
->   
+
+> [!NOTE]
+> Cuando se reinicia un sistema que tiene varios &reg; &trade; módulos de Intel Optane PMem en modo de aplicación directa que están divididos en varios espacios de nombres, es posible que se pierda el acceso a algunos o a todos los discos de almacenamiento lógicos relacionados. Este problema se produce en las versiones de Windows Server 2019 anteriores a la versión 1903.
+>
 > Esta pérdida de acceso se produce porque un módulo PMem no está entrenado o produce un error cuando se inicia el sistema. En tal caso, se produce un error en todos los espacios de nombres de almacenamiento de cualquier módulo de PMem en el sistema, incluidos los espacios de nombres que no se asignan físicamente al módulo con errores.
->   
+>
 > Para restaurar el acceso a todos los espacios de nombres, reemplace el módulo con error.
->   
+>
 > Si se produce un error en un módulo en Windows Server 2019 versión 1903 o versiones más recientes, se pierde el acceso solo a los espacios de nombres que se asignan físicamente al módulo afectado. Otros espacios de nombres no se ven afectados.
 
 Ahora, vamos a profundizar en cómo configurar la memoria persistente.
@@ -90,7 +90,7 @@ DiskNumber Size   HealthStatus AtomicityType CanBeRemoved PhysicalDeviceIds Unsa
 3          252 GB Healthy      None          True         {1020, 1120}      0
 ```
 
-Podemos ver que el disco lógico PMem #2 usa los dispositivos físicos Id20 y Id120 y el disco físico PMem #3 usa los dispositivos físicos Id1020 y Id1120.  
+Podemos ver que el disco lógico PMem #2 usa los dispositivos físicos Id20 y Id120 y el disco físico PMem #3 usa los dispositivos físicos Id1020 y Id1120.
 
 Para recuperar más información sobre el conjunto intercalado que usa una unidad lógica, ejecute el cmdlet **Get-PmemPhysicalDevice** :
 
@@ -158,9 +158,9 @@ Espacios de almacenamiento directo en Windows Server 2019 admite el uso de memor
 
 ### <a name="understanding-dax"></a>Descripción de DAX
 
-Hay dos métodos para tener acceso a la memoria persistente. Son:
+Hay dos métodos para tener acceso a la memoria persistente. Son las siguientes:
 
-1. **Acceso directo (Dax)** , que funciona como la memoria para obtener la latencia más baja. La aplicación modifica directamente la memoria persistente, omitiendo la pila. Tenga en cuenta que solo puede usar DAX en combinación con NTFS.
+1. **Acceso directo (Dax)**, que funciona como la memoria para obtener la latencia más baja. La aplicación modifica directamente la memoria persistente, omitiendo la pila. Tenga en cuenta que solo puede usar DAX en combinación con NTFS.
 1. **Bloquear el acceso**, que funciona como el almacenamiento para la compatibilidad de aplicaciones. En este configuración, los datos fluyen a través de la pila. Puede usar esta configuración en combinación con NTFS y ReFS.
 
 En la ilustración siguiente se muestra un ejemplo de una configuración de DAX:
@@ -253,7 +253,7 @@ SerialNumber               HealthStatus OperationalStatus  OperationalDetails
 802c-01-1602-117cb64f      Warning      Predictive Failure {Threshold Exceeded,NVDIMM_N Error}
 ```
 
-**HealthStatus** muestra si el disco PMem está en buen estado.  
+**HealthStatus** muestra si el disco PMem está en buen estado.
 
 El valor **UnsafeshutdownCount** realiza un seguimiento del número de apagados que pueden provocar la pérdida de datos en este disco lógico. Es la suma de los recuentos de cierres no seguros de todos los dispositivos PMem subyacentes de este disco. Para obtener más información sobre el estado de mantenimiento, use el cmdlet **Get-PmemPhysicalDevice** para buscar información como **OperationalStatus**.
 
@@ -289,7 +289,7 @@ Remove the persistent memory disk(s)?
 Removing the persistent memory disk. This may take a few moments.
 ```
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Al quitar un disco de memoria persistente, se produce una pérdida de datos en ese disco.
 
 Otro cmdlet que podría necesitar es **Initialize-PmemPhysicalDevice**. Este cmdlet inicializa las áreas de almacenamiento de etiquetas en los dispositivos de memoria persistentes física y puede borrar información de almacenamiento de etiquetas dañadas en los dispositivos PMem.
@@ -306,11 +306,11 @@ Initializing the physical persistent memory device. This may take a few moments.
 Initializing the physical persistent memory device. This may take a few moments.
 ```
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > **Initialize-PmemPhysicalDevice provoca la** pérdida de datos en la memoria persistente. Úselo como último recurso para corregir problemas persistentes relacionados con la memoria.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
-- [Administración de estado de memoria de clase de almacenamiento (NVDIMM-N) en Windows](storage-class-memory-health.md)
+- [Administración de estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows](storage-class-memory-health.md)
 - [Descripción de la memoria caché](understand-the-cache.md)

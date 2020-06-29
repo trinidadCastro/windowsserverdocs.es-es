@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 88aaebaac9161849fefe8116a1115eb628bcbf9e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bba2ef96be812c930fbf0c93d3c3c612fa9c9c5a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851768"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471270"
 ---
 # <a name="hyper-v-terminology"></a>Terminología de Hyper-V
 En esta sección se resume la terminología clave específica de la tecnología de máquina virtual que se usa a lo largo de este tema de optimización del rendimiento:
@@ -37,7 +37,7 @@ En esta sección se resume la terminología clave específica de la tecnología 
 | *pila de virtualización*|Colección de componentes de software en la partición raíz que funcionan conjuntamente para admitir máquinas virtuales. La pila de virtualización funciona con y se encuentra sobre el hipervisor. También proporciona capacidades de administración.|
 |*VMBus*|Mecanismo de comunicación basado en canales que se usa para la comunicación entre particiones y la enumeración de dispositivos en sistemas con varias particiones virtualizadas activas. El VMBus se instala con los servicios de integración de Hyper-V.|
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Arquitectura de Hyper-V](architecture.md)
 

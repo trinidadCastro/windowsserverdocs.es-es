@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: aac7b8f37de2132778bd681d2f2e29ad0ad0810d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19574c859e038374a4cf3fe1e452adae0891e067
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851878"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471490"
 ---
-# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Ubicación adecuada de los controladores de dominio y consideraciones del sitio
+# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Colocación adecuada de los controladores de dominio y consideraciones de sitio
 
 La definición adecuada del sitio es fundamental para el rendimiento. Los clientes que salen del sitio pueden experimentar un rendimiento deficiente de las autenticaciones y las consultas. Además, con la introducción de IPv6 en los clientes, la solicitud puede proviene de IPv4 o de la dirección IPv6 y Active Directory necesita tener sitios definidos correctamente para IPv6. El sistema operativo prefiere IPv6 a IPv4 cuando ambos están configurados.
 
@@ -34,7 +34,7 @@ Las referencias son el modo en que se redirigen las consultas LDAP cuando el con
 
 ## <a name="optimization-considerations-for-trusts"></a>Consideraciones de optimización para confianzas
 
-En un escenario dentro de un bosque, las confianzas se procesan de acuerdo con la siguiente jerarquía de dominio: dominio secundario&gt; secundario del dominio secundario&gt; dominio raíz del bosque-&gt; dominio secundario&gt; dominio secundario. Esto significa que los canales seguros en la raíz del bosque y cada elemento primario se pueden sobrecargar debido a la agregación de solicitudes de autenticación que transitan por los controladores de seguridad de la jerarquía de confianza. Esto también puede provocar retrasos en Active Directory de grandes dispersaciones geográficas cuando la autenticación también tiene que pasar vínculos de alta latencia para afectar al flujo anterior. Las sobrecargas pueden producirse en escenarios de confianza de nivel inferior y entre bosques. Las siguientes recomendaciones se aplican a todos los escenarios:
+En un escenario dentro de un bosque, las confianzas se procesan de acuerdo con la siguiente jerarquía de dominio: dominio secundario de los dominios secundarios-secundarios dominio raíz del bosque-dominio &gt; &gt; &gt; secundario-secundario &gt; . Esto significa que los canales seguros en la raíz del bosque y cada elemento primario se pueden sobrecargar debido a la agregación de solicitudes de autenticación que transitan por los controladores de seguridad de la jerarquía de confianza. Esto también puede provocar retrasos en Active Directory de grandes dispersaciones geográficas cuando la autenticación también tiene que pasar vínculos de alta latencia para afectar al flujo anterior. Las sobrecargas pueden producirse en escenarios de confianza de nivel inferior y entre bosques. Las siguientes recomendaciones se aplican a todos los escenarios:
 
 -   Ajuste correctamente el MaxConcurrentAPI para admitir la carga a través del canal seguro. Para obtener más información, vea [Cómo realizar el ajuste del rendimiento para la autenticación NTLM mediante la configuración MaxConcurrentApi](https://support.microsoft.com/kb/2688798/EN-US).
 
@@ -67,18 +67,18 @@ Los escenarios de confianza entre dominios son un área que ha sido sistemática
         > [!NOTE]
         > Hay un límite práctico de aproximadamente 50 al número de controladores de dominio que el cliente puede consumir. Estos deben ser los controladores de dominio de mayor capacidad y óptimas para el sitio.
 
-    
+
     -  Considere la posibilidad de colocar controladores de dominio de dominios de confianza y de confianza en la misma ubicación física.
 
 En todos los escenarios de confianza, las credenciales se enrutan según el dominio especificado en las solicitudes de autenticación. Esto también se aplica a las consultas a LookupAccountName y LsaLookupNames (así como a otras que son solo las que se usan con más frecuencia). Cuando se pasa un valor NULL a los parámetros de dominio para estas API, el controlador de dominio intentará encontrar el nombre de cuenta especificado en todos los dominios de confianza disponibles.
 
 -   Deshabilitar la comprobación de todas las confianzas disponibles cuando se especifica un dominio nulo. [Restricción de la búsqueda de nombres aislados en dominios de confianza externos mediante la entrada del registro LsaLookupRestrictIsolatedNameLevel](https://support.microsoft.com/kb/818024)
 
--   Deshabilitar el paso de solicitudes de autenticación con un dominio nulo especificado en todas las confianzas disponibles. [El proceso Lsass. exe puede dejar de responder si tiene muchas confianzas externas en un controlador de dominio de Active Directory](https://support.microsoft.com/kb/923241/EN-US)
+-   Deshabilitar el paso de solicitudes de autenticación con un dominio nulo especificado en todas las confianzas disponibles. [El proceso de Lsass.exe puede dejar de responder si tiene muchas confianzas externas en un controlador de dominio Active Directory](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>Vea también
-- [Optimizar el rendimiento de servidores Active Directory](index.md)
+## <a name="additional-references"></a>Referencias adicionales
+- [Optimización del rendimiento para servidores de Active Directory](index.md)
 - [Consideraciones de hardware](hardware-considerations.md)
-- [LDAP considerations](ldap-considerations.md) (Consideraciones de LDAP)
-- [Solución de problemas de rendimiento de AD DS](troubleshoot.md) 
+- [Consideraciones de LDAP](ldap-considerations.md)
+- [Solución de problemas de rendimiento de AD DS](troubleshoot.md)
 - [Capacity Planning for Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) (Planeamiento de la capacidad para Active Directory Domain Services)

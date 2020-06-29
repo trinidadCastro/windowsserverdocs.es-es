@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: 32020dba2ccca04e8d0bdc29d47dc9fef1f05a01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1ab4c0946c1081019747420448a0217359282bf1
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402930"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469730"
 ---
 # <a name="known-issues-with-storage-replica"></a>Problemas conocidos de Réplica de almacenamiento
 
@@ -23,78 +23,78 @@ En este tema se describen los problemas conocidos de réplica de almacenamiento 
 
 ## <a name="after-removing-replication-disks-are-offline-and-you-cannot-configure-replication-again"></a>Después de quitar la replicación, los discos están sin conexión y no se puede configurar la replicación de nuevo.
 
-En Windows Server 2016, es posible que no sea capaz de aprovisionar la replicación en un volumen que se replicó previamente o que encuentre volúmenes que no se pueden montar. Esto puede ocurrir cuando alguna condición de error evita la eliminación de replicación o cuando vuelve a instalar el sistema operativo en un equipo que anteriormente estaba replicando datos.  
+En Windows Server 2016, es posible que no sea capaz de aprovisionar la replicación en un volumen que se replicó previamente o que encuentre volúmenes que no se pueden montar. Esto puede ocurrir cuando alguna condición de error evita la eliminación de replicación o cuando vuelve a instalar el sistema operativo en un equipo que anteriormente estaba replicando datos.
 
-Para solucionar el problema, debe borrar la partición oculta de Réplica de almacenamiento de los discos y devolver a estos a un estado de escritura con el cmdlet `Clear-SRMetadata`.  
+Para solucionar el problema, debe borrar la partición oculta de Réplica de almacenamiento de los discos y devolver a estos a un estado de escritura con el cmdlet `Clear-SRMetadata`.
 
--   Para quitar todas las ranuras huérfanas de bases de datos de partición de Réplica de almacenamiento y volver a montar todas las particiones, use el parámetro `-AllPartitions` como sigue:  
-
-    ```PowerShell
-    Clear-SRMetadata -AllPartitions  
-    ```  
-
--   Para quitar todos los datos de registro huérfanos de Réplica de almacenamiento, utilice el parámetro `-AllLogs` como sigue:  
+-   Para quitar todas las ranuras huérfanas de bases de datos de partición de Réplica de almacenamiento y volver a montar todas las particiones, use el parámetro `-AllPartitions` como sigue:
 
     ```PowerShell
-    Clear-SRMetadata -AllLogs  
-    ```  
+    Clear-SRMetadata -AllPartitions
+    ```
 
--   Para quitar todos los datos de configuración huérfanos del clúster de conmutación por error, utilice el parámetro `-AllConfiguration` como sigue:  
-
-    ```PowerShell
-    Clear-SRMetadata -AllConfiguration  
-    ```  
-
--   Para quitar los metadatos individuales del grupo de replicación, utilice el parámetro `-Name` y especifique un grupo de replicación como sigue:  
+-   Para quitar todos los datos de registro huérfanos de Réplica de almacenamiento, utilice el parámetro `-AllLogs` como sigue:
 
     ```PowerShell
-    Clear-SRMetadata -Name RG01 -Logs -Partition  
-    ```  
+    Clear-SRMetadata -AllLogs
+    ```
 
-Es posible que el servidor tenga que reiniciarse después de limpiar la base de datos de la partición; puede obviar esto temporalmente con `-NoRestart`, pero no debe omitir el reinicio del servidor si lo solicita el cmdlet. Este cmdlet no elimina los volúmenes de datos ni los datos contenidos dentro de esos volúmenes.  
+-   Para quitar todos los datos de configuración huérfanos del clúster de conmutación por error, utilice el parámetro `-AllConfiguration` como sigue:
+
+    ```PowerShell
+    Clear-SRMetadata -AllConfiguration
+    ```
+
+-   Para quitar los metadatos individuales del grupo de replicación, utilice el parámetro `-Name` y especifique un grupo de replicación como sigue:
+
+    ```PowerShell
+    Clear-SRMetadata -Name RG01 -Logs -Partition
+    ```
+
+Es posible que el servidor tenga que reiniciarse después de limpiar la base de datos de la partición; puede obviar esto temporalmente con `-NoRestart`, pero no debe omitir el reinicio del servidor si lo solicita el cmdlet. Este cmdlet no elimina los volúmenes de datos ni los datos contenidos dentro de esos volúmenes.
 
 ## <a name="during-initial-sync-see-event-log-4004-warnings"></a>Durante la sincronización inicial, consulte las advertencias 4004 del registro de eventos.
 
-En Windows Server 2016, al configurar la replicación, es posible que tanto el servidor de origen como el de destino muestren cada uno varias advertencias 4004 del registro de eventos **StorageReplica\Admin** durante la sincronización inicial, con un estado de "No hay recursos de sistema suficientes para completar la llamada a la API". Es probable que vea también errores 5014. Estos indican que los servidores no tienen suficiente memoria disponible (RAM) para realizar la sincronización inicial y ejecutar cargas de trabajo. Agregue RAM o reduzca la cantidad de RAM usada en características y aplicaciones que no sean de Réplica de almacenamiento.  
+En Windows Server 2016, al configurar la replicación, es posible que tanto el servidor de origen como el de destino muestren cada uno varias advertencias 4004 del registro de eventos **StorageReplica\Admin** durante la sincronización inicial, con un estado de "No hay recursos de sistema suficientes para completar la llamada a la API". Es probable que vea también errores 5014. Estos indican que los servidores no tienen suficiente memoria disponible (RAM) para realizar la sincronización inicial y ejecutar cargas de trabajo. Agregue RAM o reduzca la cantidad de RAM usada en características y aplicaciones que no sean de Réplica de almacenamiento.
 
 ## <a name="when-using-guest-clusters-with-shared-vhdx-and-a-host-without-a-csv-virtual-machines-stop-responding-after-configuring-replication"></a>Al usar clústeres invitados con VHDX compartidos y un host sin CSV, las máquinas virtuales dejan de responder tras configurar la replicación.
 
-En Windows Server 2016 , al usar clústeres invitados de Hyper-V para fines de prueba o demostración de Réplica de almacenamiento, y con VHDX compartido como almacenamiento de clúster invitado, las máquinas virtuales dejan de responder después de configurar la replicación. Si reinicia el host de Hyper-V, las máquinas virtuales empiezan a responder, pero la configuración de replicación no se completará y no se producirá ninguna replicación.  
+En Windows Server 2016 , al usar clústeres invitados de Hyper-V para fines de prueba o demostración de Réplica de almacenamiento, y con VHDX compartido como almacenamiento de clúster invitado, las máquinas virtuales dejan de responder después de configurar la replicación. Si reinicia el host de Hyper-V, las máquinas virtuales empiezan a responder, pero la configuración de replicación no se completará y no se producirá ninguna replicación.
 
-Este comportamiento se produce cuando se usa **fltmc.exe attach svhdxflt** para omitir el requisito para el host de Hyper-V que ejecuta un CSV. El uso de este comando no se admite y está destinado únicamente a fines de prueba y demostración.  
+Este comportamiento se produce cuando se usa **fltmc.exe attach svhdxflt** para omitir el requisito para el host de Hyper-V que ejecuta un CSV. El uso de este comando no se admite y está destinado únicamente a fines de prueba y demostración.
 
-La causa de la ralentización es un problema de interoperabilidad de diseño entre la característica Calidad de servicio de almacenamiento de Windows Server 2016 y el filtro de VHDX compartido adjunto manualmente. Para resolver este problema, deshabilite el controlador de filtro de calidad de servicio de almacenamiento y reinicie el host de Hyper-V:  
+La causa de la ralentización es un problema de interoperabilidad de diseño entre la característica Calidad de servicio de almacenamiento de Windows Server 2016 y el filtro de VHDX compartido adjunto manualmente. Para resolver este problema, deshabilite el controlador de filtro de calidad de servicio de almacenamiento y reinicie el host de Hyper-V:
 
-```  
-SC config storqosflt start= disabled  
-```  
+```
+SC config storqosflt start= disabled
+```
 
 ## <a name="cannot-configure-replication-when-using-new-volume-and-differing-storage"></a>No se puede configurar la replicación al usar New-Volume y un almacenamiento diferente.
 
-Cuando se usa el cmdlet `New-Volume` con diferentes conjuntos de almacenamiento en el servidor de origen y de destino, como dos SAN diferentes o dos JBOD con discos diferentes, es posible que no pueda configurar posteriormente la replicación mediante `New-SRPartnership`. El error que aparece puede incluir:  
+Cuando se usa el cmdlet `New-Volume` con diferentes conjuntos de almacenamiento en el servidor de origen y de destino, como dos SAN diferentes o dos JBOD con discos diferentes, es posible que no pueda configurar posteriormente la replicación mediante `New-SRPartnership`. El error que aparece puede incluir:
 
-    Data partition sizes are different in those two groups  
+    Data partition sizes are different in those two groups
 
-Use el cmdlet `New-Partition**` para crear volúmenes y darles formato en lugar de `New-Volume`, ya que este último puede redondear el tamaño del volumen en diferentes matrices de almacenamiento. Si ya ha creado un volumen NTFS, puede usar `Resize-Partition` para aumentar o reducir uno de los volúmenes para que coincida con el otro (esto no es posible con volúmenes ReFS). Si usa **Diskmgmt** o el **Administrador del servidor**, no se producirá ningún redondeo.  
+Use el cmdlet `New-Partition**` para crear volúmenes y darles formato en lugar de `New-Volume`, ya que este último puede redondear el tamaño del volumen en diferentes matrices de almacenamiento. Si ya ha creado un volumen NTFS, puede usar `Resize-Partition` para aumentar o reducir uno de los volúmenes para que coincida con el otro (esto no es posible con volúmenes ReFS). Si usa **Diskmgmt** o el **Administrador del servidor**, no se producirá ningún redondeo.
 
 ## <a name="running-test-srtopology-fails-with-name-related-errors"></a>Error al ejecutarTest-SRTopology con errores relacionados con el nombre
 
-Al intentar utilizar `Test-SRTopology`, recibirá uno de los siguientes errores:  
+Al intentar utilizar `Test-SRTopology`, recibirá uno de los siguientes errores:
 
 **EJEMPLO DE ERROR 1:**
 
-    WARNING: Invalid value entered for target computer name: sr-srv03. Test-SrTopology cmdlet does not accept IP address as  
-    input for target computer name parameter. NetBIOS names and fully qualified domain names are acceptable inputs  
-    WARNING: System.Exception  
-    WARNING:    at Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand.BeginProcessing()  
-    Test-SRTopology : Invalid value entered for target computer name: sr-srv03. Test-SrTopology cmdlet does not accept IP  
-    address as input for target computer name parameter. NetBIOS names and fully qualified domain names are acceptable  
-    inputs  
-    At line:1 char:1  
-    + Test-SRTopology -SourceComputerName sr-srv01 -SourceVolumeName d: -So ...  
-    + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-        + CategoryInfo          : InvalidArgument: (:) [Test-SRTopology], Exception  
-        + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand  
+    WARNING: Invalid value entered for target computer name: sr-srv03. Test-SrTopology cmdlet does not accept IP address as
+    input for target computer name parameter. NetBIOS names and fully qualified domain names are acceptable inputs
+    WARNING: System.Exception
+    WARNING:    at Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand.BeginProcessing()
+    Test-SRTopology : Invalid value entered for target computer name: sr-srv03. Test-SrTopology cmdlet does not accept IP
+    address as input for target computer name parameter. NetBIOS names and fully qualified domain names are acceptable
+    inputs
+    At line:1 char:1
+    + Test-SRTopology -SourceComputerName sr-srv01 -SourceVolumeName d: -So ...
+    + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        + CategoryInfo          : InvalidArgument: (:) [Test-SRTopology], Exception
+        + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand
 
 **EJEMPLO DE ERROR 2:**
 
@@ -104,16 +104,16 @@ Al intentar utilizar `Test-SRTopology`, recibirá uno de los siguientes errores:
 
     The specified volume cannot be found G: cannot be found on computer SRCLUSTERNODE1
 
-Este cmdlet tiene limitado el informe de errores en Windows Server 2016 y devolverá el mismo resultado para muchos problemas comunes. El error puede aparecer por las razones siguientes:  
+Este cmdlet tiene limitado el informe de errores en Windows Server 2016 y devolverá el mismo resultado para muchos problemas comunes. El error puede aparecer por las razones siguientes:
 
-* Ha iniciado sesión en el equipo de origen como usuario local, no como usuario de dominio.  
-* El equipo de destino no se está ejecutando o no es accesible a través de la red.  
-* Ha especificado un nombre incorrecto para el equipo de destino.  
-* Ha especificado una dirección IP para el servidor de destino.  
-* El firewall del equipo de destino está bloqueando el acceso a PowerShell o las llamadas de CIM.  
-* El equipo de destino no está ejecutando el servicio WMI.   
+* Ha iniciado sesión en el equipo de origen como usuario local, no como usuario de dominio.
+* El equipo de destino no se está ejecutando o no es accesible a través de la red.
+* Ha especificado un nombre incorrecto para el equipo de destino.
+* Ha especificado una dirección IP para el servidor de destino.
+* El firewall del equipo de destino está bloqueando el acceso a PowerShell o las llamadas de CIM.
+* El equipo de destino no está ejecutando el servicio WMI.
 * No utilizó CREDSSP al ejecutar el cmdlet `Test-SRTopology` remotamente desde un equipo de administración.
-* El volumen de origen o de destino especificado es un disco local en un nodo de clúster, no discos agrupados.  
+* El volumen de origen o de destino especificado es un disco local en un nodo de clúster, no discos agrupados.
 
 ## <a name="configuring-new-storage-replica-partnership-returns-an-error---failed-to-provision-partition"></a>La configuración de nueva asociación de Réplica de almacenamiento devuelve un error que especifica que no se pudo aprovisionar la partición.
 
@@ -127,7 +127,7 @@ Al intentar crear una nueva asociación de replicación con `New-SRPartnership`,
 
 Esto se produce al seleccionar un volumen de datos que se encuentra en la misma partición que la unidad del sistema (es decir, la unidad **C:** con su carpeta de Windows). Por ejemplo, en una unidad que contiene los volúmenes **C:** y **D:** creados desde la misma partición. Esto no se admite en Réplica de almacenamiento; debe elegir un volumen diferente para replicar.
 
-## <a name="attempting-to-grow-a-replicated-volume-fails-due-to-missing-update"></a>No se puede ampliar un volumen replicado porque falta una actualización
+## <a name="attempting-to-grow-a-replicated-volume-fails-due-to-missing-update"></a>Se produce un error al intentar aumentar un volumen replicado debido a que falta una actualización
 
 Cuando intenta aumentar o extender un volumen replicado, recibe el error siguiente:
 
@@ -144,13 +144,13 @@ Si utiliza el complemento MMC de administración de discos, recibe este error:
 
     Element not found
 
-Esto ocurre incluso si habilitas correctamente el cambio de tamaño de volumen en el servidor de origen mediante `Set-SRGroup -Name rg01 -AllowVolumeResize $TRUE`. 
+Esto sucede incluso si habilita correctamente el cambio de tamaño del volumen en el servidor de origen mediante `Set-SRGroup -Name rg01 -AllowVolumeResize $TRUE` .
 
-Este problema se corrigió en la actualización acumulativa para Windows 10, versión 1607 (actualización de aniversario) y Windows Server 2016: 9 de diciembre de 2016 (KB3201845). 
+Este problema se corrigió en la actualización acumulativa para Windows 10, versión 1607 (actualización de aniversario) y Windows Server 2016:9 de diciembre de 2016 (KB3201845).
 
-## <a name="attempting-to-grow-a-replicated-volume-fails-due-to-missing-step"></a>No se puede ampliar un volumen replicado porque falta un paso
+## <a name="attempting-to-grow-a-replicated-volume-fails-due-to-missing-step"></a>Se produce un error al intentar aumentar un volumen replicado debido a que falta un paso
 
-Si intentas cambiar el tamaño de un volumen replicado en el servidor de origen sin configurar antes `-AllowResizeVolume $TRUE`, recibirás los siguientes errores:
+Si intenta cambiar el tamaño de un volumen replicado en el servidor de origen sin establecer `-AllowResizeVolume $TRUE` primero, recibirá los siguientes errores:
 
     PS C:\> Resize-Partition -DriveLetter I -Size 8GB
     Resize-Partition : Failed
@@ -176,11 +176,11 @@ Si intentas cambiar el tamaño de un volumen replicado en el servidor de origen 
 
     Before you grow the source data partition, ensure that the destination data partition has enough space to grow to an equal size. Shrinking of data partition protected by Storage Replica is blocked.
 
-Error de complemento de administración de discos: 
+Error en el complemento Administración de discos:
 
-    An unexpected error has occurred 
+    An unexpected error has occurred
 
-Después de cambiar el tamaño del volumen, recuerda que tienes que deshabilitar el cambio de tamaño con `Set-SRGroup -Name rg01 -AllowVolumeResize $FALSE`. Este parámetro impide que los administradores intenten cambiar el tamaño de los volúmenes antes de asegurarse de que hay espacio suficiente en el volumen de destino, normalmente porque no tenían conocimiento de la presencia de Réplica de almacenamiento. 
+Después de cambiar el tamaño del volumen, no olvide deshabilitar el cambio de tamaño con `Set-SRGroup -Name rg01 -AllowVolumeResize $FALSE` . Este parámetro impide que los administradores intenten cambiar el tamaño de los volúmenes antes de asegurarse de que hay suficiente espacio en el volumen de destino, normalmente porque no eran conscientes de la presencia de la réplica de almacenamiento.
 
 ## <a name="attempting-to-move-a-pdr-resource-between-sites-on-an-asynchronous-stretch-cluster-fails"></a>Si intenta mover un recurso PDR entre sitios en un clúster extendido asincrónico, se producirá un error
 
@@ -206,7 +206,7 @@ Si utiliza el cmdlet de PowerShell de clúster:
     + CategoryInfo          : NotSpecified: (:) [Move-ClusterGroup], ClusterCmdletException
     + FullyQualifiedErrorId : Move-ClusterGroup,Microsoft.FailoverClusters.PowerShell.MoveClusterGroupCommand
 
-Esto se produce debido a un comportamiento predeterminado de Windows Server 2016. Usa `Set-SRPartnership` para mover estos discos de PDR a un clúster extendido asincrónico.  
+Esto se produce debido a un comportamiento predeterminado de Windows Server 2016. Usa `Set-SRPartnership` para mover estos discos de PDR a un clúster extendido asincrónico.
 
 Este comportamiento se ha cambiado en Windows Server, versión 1709 para permitir conmutaciones por error manuales y automatizadas con la replicación asincrónica, en función de los comentarios de los clientes.
 
@@ -214,27 +214,27 @@ Este comportamiento se ha cambiado en Windows Server, versión 1709 para permiti
 
 Al intentar aprovisionar un clúster con solo dos nodos, antes de añadir la replicación elástica de réplica de almacenamiento, intente agregar los discos en el segundo sitio a los discos disponibles. Recibe el siguiente error:
 
-    "No disks suitable for cluster disks found. For diagnostic information about disks available to the cluster, use the Validate a Configuration Wizard to run Storage tests." 
+    "No disks suitable for cluster disks found. For diagnostic information about disks available to the cluster, use the Validate a Configuration Wizard to run Storage tests."
 
-Esto no ocurre si tiene al menos tres nodos en el clúster. Este problema se produce debido a un cambio de código predeterminado en Windows Server 2016 para comportamientos de clústeres de almacenamiento asimétrico. 
+Esto no ocurre si tiene al menos tres nodos en el clúster. Este problema se produce debido a un cambio de código predeterminado en Windows Server 2016 para comportamientos de clústeres de almacenamiento asimétrico.
 
 Para agregar el almacenamiento, puede ejecutar el siguiente comando en el nodo en el segundo sitio:
 
 `Get-ClusterAvailableDisk -All | Add-ClusterDisk`
 
-Esto no funcionará con almacenamiento local de nodos. Puedes usar réplica de almacenamiento para replicar un clúster extendido entre dos nodos totales, **cada uno con su propio conjunto de almacenamiento compartido**. 
+Esto no funcionará con el almacenamiento local de nodo. Puede usar réplica de almacenamiento para replicar un clúster extendido entre dos nodos en total, **cada uno con su propio conjunto de almacenamiento compartido.**
 
-## <a name="the-smb-bandwidth-limiter-fails-to-throttle-storage-replica-bandwidth"></a>El limitador de ancho de banda SMB no es capaz de limitar el ancho de banda de la réplica de almacenamiento
+## <a name="the-smb-bandwidth-limiter-fails-to-throttle-storage-replica-bandwidth"></a>El límite de ancho de banda SMB no puede limitar el ancho de banda de réplica de almacenamiento
 
-Cuando se especifica un límite de ancho de banda en la réplica del almacenamiento, el límite se omite y se usa el ancho de banda al completo. Por ejemplo:
+Al especificar un límite de ancho de banda para la réplica de almacenamiento, se omite el límite y se usa el ancho de banda completo. Por ejemplo:
 
 `Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond 32MB`
 
 Este problema se produce debido a un problema de interoperabilidad entre la réplica de almacenamiento y SMB. Este problema se corrigió por primera vez en la actualización acumulativa de julio de 2017 de Windows Server 2016 y en Windows Server, versión 1709.
 
-## <a name="event-1241-warning-repeated-during-initial-sync"></a>La advertencia de evento 1241 se repite durante la sincronización inicial
+## <a name="event-1241-warning-repeated-during-initial-sync"></a>ADVERTENCIA del evento 1241 repetida durante la sincronización inicial
 
-Cuando se especifica que una asociación de replicación es asincrónica, el equipo de origen registra repetidamente la advertencia de evento 1241 en el canal de administración de la réplica de almacenamiento. Por ejemplo:
+Cuando se especifica una asociación de replicación es asincrónica, el equipo de origen registra repetidamente el evento de advertencia 1241 en el canal de administración de réplica de almacenamiento. Por ejemplo:
 
     Log Name:      Microsoft-Windows-StorageReplica/Admin
     Source:        Microsoft-Windows-StorageReplica
@@ -257,17 +257,17 @@ Cuando se especifica que una asociación de replicación es asincrónica, el equ
     RemoteReplicationGroupId: {7f18e5ea-53ca-4b50-989c-9ac6afb3cc81}
     TargetRPO: 30
 
-    Guidance: This is typically due to one of the following reasons: 
+    Guidance: This is typically due to one of the following reasons:
 
-El destino asincrónico está actualmente desconectado. El objetivo de punto de recuperación (RPO) puede estar disponible una vez se restaure la conexión.
+El destino asincrónico está actualmente desconectado. El RPO puede estar disponible después de que se restaure la conexión.
 
     The asynchronous destination is unable to keep pace with the source such that the most recent destination log record is no longer present in the source log. The destination will start block copying. The RPO should become available after block copying completes.
 
-Este es el comportamiento que se espera durante la sincronización inicial y se puede pasar por alto sin problema. Este comportamiento puede cambiar en una versión posterior. Si ves este comportamiento durante la replicación asincrónica en curso, échale un vistazo a la asociación para determinar por qué la replicación se retrasa más allá del RPO configurado (30 segundos de manera predeterminada).
+Este es el comportamiento esperado durante la sincronización inicial y se puede omitir de forma segura. Este comportamiento puede cambiar en una versión posterior. Si ve este comportamiento durante la replicación asincrónica continua, investigue la Asociación para determinar por qué la replicación se retrasa más allá del RPO configurado (de forma predeterminada, 30 segundos).
 
-## <a name="event-4004-warning-repeated-after-rebooting-a-replicated-node"></a>La advertencia de evento 4004 se repite después de reiniciar un nodo replicado
+## <a name="event-4004-warning-repeated-after-rebooting-a-replicated-node"></a>ADVERTENCIA del evento 4004 repetida después de reiniciar un nodo replicado
 
-Si reinicias un servidor que se encuentre en una asociación, puede ocurrir que la replicación falle y el nodo reiniciado registre el evento de advertencia 4007 con un error de acceso denegado; recuerda que esto solo ocurre en circunstancias excepcionales y normalmente irreproducibles.
+En circunstancias poco frecuentes y normalmente unreproducable, el reinicio de un servidor que se encuentra en una asociación conduce a un error de replicación y el evento de advertencia de registro de nodo reiniciado 4004 con un error de acceso denegado.
 
     Log Name:      Microsoft-Windows-StorageReplica/Admin
     Source:        Microsoft-Windows-StorageReplica
@@ -293,11 +293,11 @@ Si reinicias un servidor que se encuentre en una asociación, puede ocurrir que 
 
     Guidance: Possible causes include network failures, share creation failures for the remote replication group, or firewall settings. Make sure SMB traffic is allowed and there are no connectivity issues between the local computer and the remote computer. You should expect this event when suspending replication or removing a replication partnership.
 
-Tenga en `Status: "{Access Denied}"` cuenta el y `A process has requested access to an object, but has not been granted those access rights.` el mensaje este es un problema conocido dentro de la réplica de almacenamiento y se corrigió en la actualización de la calidad 12 de septiembre de 2017: KB4038782 (compilación del sistema operativo 14393,1715) https://support.microsoft.com/help/4038782/windows-10-update-kb4038782 
+Tenga en cuenta el `Status: "{Access Denied}"` y el mensaje `A process has requested access to an object, but has not been granted those access rights.` este es un problema conocido dentro de la réplica de almacenamiento y se corrigió en la actualización de la calidad 12 de septiembre de 2017: KB4038782 (compilación del sistema operativo 14393,1715)https://support.microsoft.com/help/4038782/windows-10-update-kb4038782
 
-## <a name="error-failed-to-bring-the-resource-cluster-disk-x-online-with-a-stretch-cluster"></a>Error "No se pudo conectar el recurso "Disco de clúster x" en línea". con un clúster extendido
+## <a name="error-failed-to-bring-the-resource-cluster-disk-x-online-with-a-stretch-cluster"></a>Error "no se pudo conectar el recurso ' disco de clúster x ' en línea." con un clúster extendido
 
-Al intentar conectar un disco de clúster después de realizar una conmutación por error correcta en la que intentas que el sitio de origen original vuelva a ser el sitio primario, recibes un error en el Administrador de clústeres de conmutación por error. Por ejemplo:
+Al intentar poner un disco de clúster en línea después de una conmutación por error correcta, donde está intentando volver a crear el sitio de origen original, recibirá un error en Administrador de clústeres de conmutación por error. Por ejemplo:
 
     Error
     The operation has failed.
@@ -306,7 +306,7 @@ Al intentar conectar un disco de clúster después de realizar una conmutación 
     Error Code: 0x80071397
     The operation failed because either the specified cluster node is not the owner of the resource, or the node is not a possible owner of the resource.
 
-Si intentas mover el disco o CSV de forma manual, verás un error adicional. Por ejemplo:
+Si intenta trasladar el disco o CSV manualmente, recibirá un error adicional. Por ejemplo:
 
     Error
     The operation has failed.
@@ -315,13 +315,13 @@ Si intentas mover el disco o CSV de forma manual, verás un error adicional. Por
     Error Code: 0x8007138d
     A cluster node is not available for this operation
 
-Este problema se debe a que uno o varios discos no inicializados están conectados a uno o varios nodos del clúster. Para resolver este problema, debes inicializar todas las interfaces de almacenamiento adjuntas mediante DiskMgmt.msc, DISKPART.EXE o el cmdlet de PowerShell Initialize-Disk.
+Este problema se debe a que uno o varios discos no inicializados están conectados a uno o varios nodos del clúster. Para resolver el problema, inicialice todos los almacenamientos asociados mediante DiskMgmt. msc, DISKPART.EXE o el cmdlet de PowerShell Initialize-Disk.
 
-Estamos trabajando para proporcionarte una actualización que te permita resolver este problema de forma permanente. Si quieres echarnos una mano y tienes un contrato de soporte técnico Premier de Microsoft, envía un correo electrónico a SRFEED@microsoft.com para que podamos ayudarte a presentar una solicitud de corrección compatible.
+Estamos trabajando para proporcionar una actualización que resuelva permanentemente este problema. Si está interesado en ayudarnos y tiene un contrato de Microsoft soporte técnico Premier, envíe un mensaje de correo electrónico SRFEED@microsoft.com para que podamos trabajar con usted en el envío de una solicitud de reenvío.
 
-## <a name="gpt-error-when-attempting-to-create-a-new-sr-partnership"></a>Error GPT al intentar crear una nueva asociación de SR
+## <a name="gpt-error-when-attempting-to-create-a-new-sr-partnership"></a>Error de GPT al intentar crear una nueva asociación de SR
 
-Cuando se ejecuta New-SRPartnership, se produce el siguiente error:
+Al ejecutar New-SRPartnership, se produce el error:
 
     Disk layout type for volume \\?\Volume{GUID}\ is not a valid GPT style layout.
     New-SRPartnership : Unable to create replication group SRG01, detailed reason: Disk layout type for volume
@@ -333,9 +333,9 @@ Cuando se ejecuta New-SRPartnership, se produce el siguiente error:
     , CimException
     + FullyQualifiedErrorId : Windows System Error 5078,New-SRPartnership
 
-En la interfaz gráfica de usuario (GUI) del Administrador de clústeres de conmutación por error, no hay ninguna opción para configurar la replicación del disco.
+En la interfaz gráfica de usuario de Administrador de clústeres de conmutación por error, no hay ninguna opción para configurar la replicación para el disco.
 
-Cuando se ejecuta Test-SRTopology, se produce el siguiente error: 
+Al ejecutar test-SRTopology, se produce un error con:
 
     WARNING: Object reference not set to an instance of an object.
     WARNING: System.NullReferenceException
@@ -347,26 +347,26 @@ Cuando se ejecuta Test-SRTopology, se produce el siguiente error:
     + Test-SRTopology -SourceComputerName nodesrc01 -SourceVolumeName U: - ...
     + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo : InvalidArgument: (:) [Test-SRTopology], NullReferenceException
-    + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand 
+    + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand
 
-Esto se debe a que el nivel funcional del clúster aún se establece en Windows Server 2012 R2 (por ejemplo, FL 8). La réplica de almacenamiento debe devolver un error específico aquí, pero en su lugar, devuelve una asignación de error incorrecta.
+Esto se debe a que el nivel funcional del clúster todavía se está estableciendo en Windows Server 2012 R2 (es decir, FL 8). Se supone que la réplica de almacenamiento debe devolver un error específico aquí, pero en su lugar devuelve una asignación de errores incorrecta.
 
-Ejecuta Get-Cluster | fl * en todos los nodos.
+Ejecute Get-Cluster | FL * en cada nodo.
 
-Si ClusterFunctionalLevel = 9, quiere decir que es la versión de Windows 2016 ClusterFunctionalLevel necesaria para implementar la réplica de almacenamiento en este nodo.
-Si ClusterFunctionalLevel no es 9, debes actualizar ClusterFunctionalLevel para poder implementar la réplica de almacenamiento en este nodo.
+Si ClusterFunctionalLevel = 9, es la versión de ClusterFunctionalLevel de Windows 2016 necesaria para implementar la réplica de almacenamiento en este nodo.
+Si ClusterFunctionalLevel no es 9, el ClusterFunctionalLevel deberá actualizarse para poder implementar la réplica de almacenamiento en este nodo.
 
-Para resolver el problema, genere el nivel funcional del clúster mediante la ejecución del cmdlet de PowerShell: [Actualización: ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/update-clusterfunctionallevel)
+Para resolver el problema, eleve el nivel funcional del clúster mediante la ejecución del cmdlet de PowerShell: [Update-ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/update-clusterfunctionallevel)
 
-## <a name="small-unknown-partition-listed-in-diskmgmt-for-each-replicated-volume"></a>Pequeña partición desconocida mostrada en DISKMGMT por cada volumen replicado
+## <a name="small-unknown-partition-listed-in-diskmgmt-for-each-replicated-volume"></a>Pequeña partición desconocida enumerada en DISKMGMT para cada volumen replicado
 
-Al ejecutar ejecuta el complemento de administración de discos (DISKMGMT.MSC), se observa que aparecen uno o más volúmenes sin etiqueta o con la letra de unidad y 1 MB de tamaño. Es posible que puedas eliminar el volumen desconocido o puede que recibas:
+Al ejecutar el complemento Administración de discos (DISKMGMT. MSC), observará que uno o varios volúmenes aparecen sin etiqueta o letra de unidad y 1 MB de tamaño. Es posible que pueda eliminar el volumen desconocido o que reciba:
 
-    "An Unexpected Error has Occurred"  
+    "An Unexpected Error has Occurred"
 
-Este comportamiento es así por diseño. No s trata de un volumen, sino de una partición. La Réplica de almacenamiento crea una partición de 512 KB como un espacio de base de datos para las operaciones de replicación (la herramienta DiskMgmt.msc heredada redondea al MB más cercano). Disponer de una partición así para cada volumen replicado es normal y deseable. Cuando ya no se use, eres libre de eliminar esta partición de 512 KB; las que están en uso no se pueden eliminar. La partición nunca aumenta ni se reduce. Si recreas una replicación, se recomienda dejar la partición, ya que la Réplica de almacenamiento reclamará las que no se usen.
+Este comportamiento es así por diseño. No es un volumen, sino una partición. Réplica de almacenamiento crea una partición de 512 KB como una ranura de base de datos para las operaciones de replicación (la herramienta DiskMgmt. msc heredada se redondea al MB más cercano). Tener una partición como esta para cada volumen replicado es normal y deseable. Cuando ya no esté en uso, puede eliminar esta partición de 512 KB; los en uso no se pueden eliminar. La partición nunca aumentará ni se reducirá. Si va a volver a crear la replicación, se recomienda que abandone la partición, ya que la réplica de almacenamiento reclamará los no utilizados.
 
-Para ver los detalles, usa la herramienta DISKPART o el cmdlet Get-Partition. Estas particiones tendrán un tipo de GPT de `558d43c5-a1ac-43c0-aac8-d1472b2923d1`.
+Para ver los detalles, use la herramienta DiskPart o el cmdlet Get-Partition. Estas particiones tendrán el tipo GPT `558d43c5-a1ac-43c0-aac8-d1472b2923d1` .
 
 ## <a name="a-storage-replica-node-hangs-when-creating-snapshots"></a>Un nodo de réplica de almacenamiento se bloquea al crear instantáneas
 
@@ -380,7 +380,7 @@ Para evitar este comportamiento, no haga instantáneas de los volúmenes de regi
 
 Al usar Espacios de almacenamiento directo con una memoria caché de NVME o SSD, verá un aumento de latencia mayor que el esperado al configurar la replicación de réplica de almacenamiento entre los clústeres de Espacios de almacenamiento directo. El cambio de latencia es proporcionalmente mucho mayor de lo que se ve cuando se usa NVME y SSD en una configuración de rendimiento y capacidad, y no en el nivel de capacidad y en el de HDD.
 
-Este problema se produce debido a las limitaciones arquitectónicas en el mecanismo de registro de la réplica de almacenamiento combinado con la latencia extremadamente baja de NVME en comparación con los medios más lentos. Cuando se usa la memoria caché de Espacios de almacenamiento directo, todas las e/s de los registros de réplica de almacenamiento, junto con todas las operaciones de e/s de lectura/escritura recientes de las aplicaciones, se producirán en la memoria caché y nunca en los niveles de rendimiento o capacidad. Esto significa que toda la actividad de réplica de almacenamiento se produce en el mismo medio de velocidad ( https://aka.ms/srfaq se admite esta configuración, pero no se recomienda). 
+Este problema se produce debido a las limitaciones arquitectónicas en el mecanismo de registro de la réplica de almacenamiento combinado con la latencia extremadamente baja de NVME en comparación con los medios más lentos. Cuando se usa la memoria caché de Espacios de almacenamiento directo, todas las e/s de los registros de réplica de almacenamiento, junto con todas las operaciones de e/s de lectura/escritura recientes de las aplicaciones, se producirán en la memoria caché y nunca en los niveles de rendimiento o capacidad. Esto significa que toda la actividad de réplica de almacenamiento se produce en el mismo medio de velocidad (se admite esta configuración, pero no se recomienda https://aka.ms/srfaq ).
 
 Cuando se usa Espacios de almacenamiento directo con HDD, no se puede deshabilitar o evitar la memoria caché. Como solución alternativa, si usa solo SSD y NVME, puede configurar solo los niveles de rendimiento y capacidad. Si se usa esa configuración y se colocan los registros de SR en el nivel de rendimiento únicamente con los volúmenes de datos que solo están en el nivel de capacidad, se evitará el problema de latencia alta que se ha descrito anteriormente. Lo mismo puede hacerse con una combinación de SSD más rápidas y lentas y sin NVME.
 
@@ -388,7 +388,7 @@ Esta solución alternativa no es idónea y es posible que algunos clientes no pu
 
 ## <a name="error-could-not-find-file-when-running-test-srtopology-between-two-clusters"></a>Error "no se pudo encontrar el archivo" al ejecutar test-SRTopology entre dos clústeres
 
-Al ejecutar test-SRTopology entre dos clústeres y sus rutas de CSV, se produce el error: 
+Al ejecutar test-SRTopology entre dos clústeres y sus rutas de CSV, se produce el error:
 
     PS C:\Windows\system32> Test-SRTopology -SourceComputerName NedClusterA -SourceVolumeName C:\ClusterStorage\Volume1 -SourceLogVolumeName L: -DestinationComputerName NedClusterB -DestinationVolumeName C:\ClusterStorage\Volume1 -DestinationLogVolumeName L: -DurationInMinutes 1 -ResultPath C:\Temp
 
@@ -409,7 +409,7 @@ Al ejecutar test-SRTopology entre dos clústeres y sus rutas de CSV, se produce 
     + Test-SRTopology -SourceComputerName NedClusterA -SourceVolumeName  ...
     + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : ObjectNotFound: (:) [Test-SRTopology], FileNotFoundException
-    + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand 
+    + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand
 
 Esto se debe a un defecto de código conocido en Windows Server 2016. Este problema se corrigió por primera vez en Windows Server, versión 1709 y las herramientas de RSAT asociadas. Para una resolución de nivel inferior, póngase en contacto con Soporte técnico de Microsoft y solicite una actualización del puerto. No hay ninguna solución alternativa.
 
@@ -426,7 +426,7 @@ Al ejecutar test-SRTopology entre dos clústeres y sus rutas de CSV, se produce 
         + CategoryInfo          : ObjectNotFound: (:) [Test-SRTopology], Exception
         + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand
 
-Al especificar el CSV del nodo de origen como volumen de origen, debe seleccionar el nodo que posee el CSV. Puede trasladar el archivo CSV al nodo especificado o cambiar el nombre de nodo especificado en `-SourceComputerName`. Este error ha recibido un mensaje mejorado en Windows Server 2019.
+Al especificar el CSV del nodo de origen como volumen de origen, debe seleccionar el nodo que posee el CSV. Puede trasladar el archivo CSV al nodo especificado o cambiar el nombre de nodo especificado en `-SourceComputerName` . Este error ha recibido un mensaje mejorado en Windows Server 2019.
 
 ## <a name="unable-to-access-the-data-drive-in-storage-replica-after-unexpected-reboot-when-bitlocker-is-enabled"></a>No se puede obtener acceso a la unidad de datos en la réplica de almacenamiento tras un reinicio inesperado cuando BitLocker está habilitado
 
@@ -436,7 +436,7 @@ Este es un comportamiento esperado. Para recuperar los datos o tener acceso a la
 
 ## <a name="issue-unlocking-the-data-drive-on-secondary-server-after-breaking-the-storage-replica-partnership"></a>Problema al desbloquear la unidad de datos en el servidor secundario después de interrumpir la Asociación de réplica de almacenamiento
 
-Después de deshabilitar la Asociación de SR y quitar la réplica de almacenamiento, se espera si no puede desbloquear la unidad de datos del servidor secundario con su contraseña o clave respectivas. 
+Después de deshabilitar la Asociación de SR y quitar la réplica de almacenamiento, se espera si no puede desbloquear la unidad de datos del servidor secundario con su contraseña o clave respectivas.
 
 Debe usar la clave o la contraseña de la unidad de datos del servidor principal para desbloquear la unidad de datos del servidor secundario.
 
@@ -449,17 +449,17 @@ Al ejecutar Mount-SRDestination para poner en línea un volumen de destino como 
     + Mount-SRDestination -ComputerName SRV1 -Name TEST -TemporaryP . . .
     + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         + CategoryInfo          : NotSpecified: (MSFT WvrAdminTasks : root/Microsoft/...(MSFT WvrAdminTasks : root/Microsoft/. T_WvrAdminTasks) (Mount-SRDestination], CimException
-        + FullyQua1ifiedErrorId : Windows System Error 5823, Mount-SRDestination.  
+        + FullyQua1ifiedErrorId : Windows System Error 5823, Mount-SRDestination.
 
 Si se usa un tipo de asociación sincrónica, la conmutación por error de prueba funciona con normalidad.
 
 Esto se debe a un defecto de código conocido en Windows Server, versión 1709. Para resolver este problema, instale la [actualización del 18 de octubre de 2018](https://support.microsoft.com/help/4462932/windows-10-update-kb4462932). Este problema no está presente en Windows Server 2019 y Windows Server, versión 1809 y versiones más recientes.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
-- [Réplica de almacenamiento](storage-replica-overview.md)  
-- [Replicación de clúster extendido con almacenamiento compartido](stretch-cluster-replication-using-shared-storage.md)  
-- [Replicación de almacenamiento de servidor a servidor](server-to-server-storage-replication.md)  
-- [Replicación de almacenamiento de clúster a clúster](cluster-to-cluster-storage-replication.md)  
-- [Réplica de almacenamiento: Preguntas más frecuentes](storage-replica-frequently-asked-questions.md)  
-- [Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)  
+- [Réplica de almacenamiento](storage-replica-overview.md)
+- [Replicación de clúster extendido con almacenamiento compartido](stretch-cluster-replication-using-shared-storage.md)
+- [Replicación de almacenamiento de servidor a servidor](server-to-server-storage-replication.md)
+- [Replicación de almacenamiento de clúster a clúster](cluster-to-cluster-storage-replication.md)
+- [Réplica de almacenamiento: Preguntas más frecuentes](storage-replica-frequently-asked-questions.md)
+- [Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)

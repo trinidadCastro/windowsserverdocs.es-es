@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: aafcfcd4d0f2f14836c5b7dee2bdbccbf99fa887
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2c64914e840c4e8a84603144fd499e091f0cb46c
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78169625"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070531"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Información general sobre el uso compartido de archivos mediante el protocolo SMB 3 en Windows Server
 
@@ -119,7 +119,7 @@ SMB Direct tiene los siguientes requisitos:
 
 La siguiente lista proporciona recursos adicionales en la web sobre SMB y las tecnologías relacionadas en Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016.
 
-* [Almacenamiento en Windows Server](../storage.md)
+* [Almacenamiento en Windows Server](../storage.yml)
 * [Servidor de archivos de escalabilidad horizontal para datos de aplicación](../../failover-clustering/sofs-overview.md)
 * [Mejora del rendimiento de un servidor de archivos con SMB directo](smb-direct.md)
 * [Implementación de Hyper-V en SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

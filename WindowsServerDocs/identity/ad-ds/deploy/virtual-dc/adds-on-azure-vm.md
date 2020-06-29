@@ -8,16 +8,16 @@ ms.date: 04/11/2019
 ms.technology: identity-adds
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: e0a10e27e044fd1df7cbdb943964440983ce494c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 536c35077d402370eab7758b8b31cf1916f8ae6f
+ms.sourcegitcommit: 96db7769c3be9d7534bfed942697122ce907a28a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390647"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448477"
 ---
-# <a name="install-a-new-active-directory-forest-using-azure-cli"></a>Instalar un nuevo bosque de Active Directory con CLI de Azure
+# <a name="install-a-new-active-directory-forest-using-azure-cli"></a>Install a new Active Directory forest using Azure CLI (Instalación de un nuevo bosque de Active Directory en la CLI de Azure)
 
-AD DS se pueden ejecutar en una máquina virtual (VM) de Azure de la misma manera que se ejecuta en muchas instancias locales. En este artículo se explica cómo implementar un nuevo bosque de AD DS, en dos controladores de dominio nuevos, en un conjunto de disponibilidad de Azure mediante los Azure Portal y CLI de Azure. Muchos clientes encuentran esta guía útil a la hora de crear un laboratorio o de preparar la implementación de controladores de dominio en Azure.
+AD DS se pueden ejecutar en una máquina virtual (VM) de Azure de la misma manera que se ejecuta en muchas instancias locales. Este artículo le guiará a través de la implementación de un nuevo bosque de AD DS, en dos controladores de dominio nuevos, en un conjunto de disponibilidad de Azure mediante los Azure Portal y CLI de Azure. Muchos clientes encuentran esta guía útil a la hora de crear un laboratorio o de preparar la implementación de controladores de dominio en Azure.
 
 ## <a name="components"></a>Componentes
 
@@ -38,22 +38,22 @@ AD DS se pueden ejecutar en una máquina virtual (VM) de Azure de la misma maner
 
 Usamos el [Azure portal](https://portal.azure.com) y [CLI de Azure](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest) para crear el entorno.
 
-El CLI de Azure se usa para crear y administrar recursos de Azure desde la línea de comandos o en scripts. En este tutorial se detalla el uso de la CLI de Azure para implementar máquinas virtuales que ejecutan Windows Server 2019. Una vez completada la implementación, nos conectaremos a los servidores e instalaremos AD DS.
+La CLI de Azure se usa para crear y administrar recursos de Azure desde la línea de comandos o en scripts. En este tutorial se detalla el uso de la CLI de Azure para implementar máquinas virtuales que ejecutan Windows Server 2019. Una vez completada la implementación, nos conectaremos a los servidores e instalaremos AD DS.
 
-Si no tiene una suscripción a Azure, [cree una cuenta gratuita antes de](https://azure.microsoft.com/free) comenzar.
+Si no tiene una suscripción a Azure, cree una [cuenta gratuita](https://azure.microsoft.com/free) antes de empezar.
 
-### <a name="using-azure-cli"></a>Usar CLI de Azure
+### <a name="using-azure-cli"></a>Uso de la CLI de Azure
 
-El siguiente script automatiza el proceso de creación de dos máquinas virtuales con Windows Server 2019, con el fin de crear controladores de dominio para un nuevo bosque de Active Directory en Azure. Un administrador puede modificar las variables que se indican a continuación para satisfacer sus necesidades y, a continuación, completarse como una operación. El script crea el grupo de recursos necesario, el grupo de seguridad de red con una regla de tráfico para Escritorio remoto, la red virtual y la subred y el grupo de disponibilidad. Cada una de las máquinas virtuales se compila con un disco de datos de 20 GB con el almacenamiento en caché deshabilitado para la instalación de AD DS.
+El siguiente script automatiza el proceso de creación de dos máquinas virtuales con Windows Server 2019, con el fin de crear controladores de dominio para un nuevo bosque de Active Directory en Azure. Un administrador puede modificar las variables siguientes para que se adapten a sus necesidades y, a continuación, completar, como una operación. El script crea el grupo de recursos necesario, el grupo de seguridad de red con una regla de tráfico para Escritorio remoto, la red virtual y la subred y el grupo de disponibilidad. Cada una de las máquinas virtuales se compila con un disco de datos de 20 GB con el almacenamiento en caché deshabilitado para la instalación de AD DS.
 
-El siguiente script se puede ejecutar directamente desde el Azure Portal. Si decide instalar y usar la CLI localmente, para esta guía de inicio rápido es preciso que ejecute la CLI de Azure versión 2.0.4 o posterior. Ejecute `az --version` para encontrar la versión. Si necesita instalar o actualizar, consulte Instalación de [CLI de Azure 2,0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+El siguiente script se puede ejecutar directamente desde el Azure Portal. Si decide instalar y usar la CLI localmente, para esta guía de inicio rápido es preciso que ejecute la CLI de Azure versión 2.0.4 o posterior. Ejecute `az --version` para encontrar la versión. Si necesita instalarla o actualizarla, consulte [Instalación de la CLI de Azure 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-| Nombre de variable | Propósito |
+| Nombre de la variable | Propósito |
 | :---: | :--- |
 | AdminUsername | Nombre de usuario que se configurará en cada máquina virtual como administrador local. |
 | AdminPassword | Contraseña de texto no cifrado que se configurará en cada máquina virtual como la contraseña de administrador local. |
 | ResourceGroupName | Nombre que se va a usar para el grupo de recursos. No debe duplicar un nombre existente. |
-| Ubicación | Nombre de ubicación de Azure en el que desea realizar la implementación. Muestra las regiones admitidas para la suscripción actual mediante `az account list-locations`. |
+| Location | Nombre de ubicación de Azure en el que desea realizar la implementación. Muestra las regiones admitidas para la suscripción actual mediante `az account list-locations` . |
 | VNetName | Nombre para asignar la red virtual de Azure no debe duplicar un nombre existente. |
 | VNetAddress | Ámbito de IP que se usará para las redes de Azure. No debe duplicar un intervalo existente. |
 | SubnetName | Nombre para asignar la subred IP. No debe duplicar un nombre existente. |
@@ -172,7 +172,7 @@ Conéctese a AZDC01 con las credenciales que proporcionó en el script.
 
 * Inicialice y formatee el disco de datos como F:
    * Abra el menú Inicio y vaya a **Administración de equipos** .
-   * Vaya a **almacenamiento** > **Administración de discos**
+   * Vaya a **Storage**  >  **Disk Management**
    * Inicializar el disco como MBR
    * Cree un nuevo volumen simple y asigne la letra de unidad F: puede proporcionar una etiqueta de volumen si lo desea.
 * Instalación de Active Directory Domain Services mediante Administrador del servidor
@@ -189,12 +189,12 @@ Conéctese a AZDC01 con las credenciales que proporcionó en el script.
 
 Cuando el asistente complete el proceso de instalación, se reiniciará la máquina virtual.
 
-Cuando la máquina virtual se reinicia, vuelva a iniciar sesión con las credenciales usadas pero esta vez como miembro del dominio que creó.
+Cuando se haya completado el reinicio de la máquina virtual, vuelva a iniciar sesión con las credenciales usadas antes, pero esta vez como miembro del dominio que creó.
 
    > [!NOTE]
    > El primer inicio de sesión después de la promoción a un controlador de dominio puede tardar más de lo normal y esto es correcto. Captar una taza de té, café, agua u otra bebida de elección.
 
-Dado que las [redes virtuales de Azure no admiten IPv6](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) , querrá establecer las máquinas virtuales para que prefieran IPv4 a través de IPv6. Puede encontrar información sobre cómo completar esta tarea en el artículo de Knowledge base [Guía para configurar IPv6 en Windows para usuarios avanzados](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users).
+Las [redes virtuales de Azure ahora admiten IPv6](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) , pero en caso de que quiera configurar las máquinas virtuales para que prefieran IPv4 a través de IPv6, puede encontrar información sobre cómo completar esta tarea en el artículo de Knowledge base [Guía para configurar IPv6 en Windows para usuarios avanzados](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users).
 
 ### <a name="configure-the-second-domain-controller"></a>Configurar el segundo controlador de dominio
 
@@ -202,9 +202,9 @@ Conéctese a AZDC02 con las credenciales que proporcionó en el script.
 
 * Inicialice y formatee el disco de datos como F:
    * Abra el menú Inicio y vaya a **Administración de equipos** .
-   * Vaya a **almacenamiento** > **Administración de discos**
+   * Vaya a **Storage**  >  **Disk Management**
    * Inicializar el disco como MBR
-   * Cree un nuevo volumen simple y asigne la letra de unidad F: puede proporcionar una etiqueta de volumen si lo desea.
+   * Cree un nuevo volumen simple y asigne la letra de unidad F: (puede proporcionar una etiqueta de volumen si lo desea)
 * Instalación de Active Directory Domain Services mediante Administrador del servidor
 * Promover el controlador de dominio
    * Agregar un controlador de dominio a un dominio existente: CONTOSO.com
@@ -215,31 +215,31 @@ Conéctese a AZDC02 con las credenciales que proporcionó en el script.
    * Revise las selecciones realizadas en el asistente y elija **siguiente** .
 
 > [!NOTE]
-> La comprobación de requisitos previos le advertirá de que el adaptador de red físico no tiene asignada una dirección IP estática. puede omitir esta opción de forma segura a medida que se asignan direcciones IP estáticas en la red virtual de Azure.
+> La comprobación de requisitos previos le advertirá de que el adaptador de red físico no tiene asignada una dirección IP estática. Puede pasarlo por alto sin ningún riesgo, ya que las direcciones IP estáticas se asignan en la red virtual de Azure.
 
 * Elija **instalar** .
 
 Cuando el asistente complete el proceso de instalación, se reiniciará la máquina virtual.
 
-Cuando la máquina virtual se reinicia, vuelva a iniciar sesión con las credenciales usadas pero esta vez como miembro del dominio CONTOSO.com
+Cuando se haya completado el reinicio de la máquina virtual, vuelva a iniciar sesión con las credenciales usadas antes, pero esta vez como miembro del dominio CONTOSO.com
 
-Dado que las [redes virtuales de Azure no admiten IPv6](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) , querrá establecer las máquinas virtuales para que prefieran IPv4 a través de IPv6. Puede encontrar información sobre cómo completar esta tarea en el artículo de Knowledge base [Guía para configurar IPv6 en Windows para usuarios avanzados](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users).
+Las [redes virtuales de Azure ahora admiten IPv6](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) , pero en caso de que quiera configurar las máquinas virtuales para que prefieran IPv4 a través de IPv6, puede encontrar información sobre cómo completar esta tarea en el artículo de Knowledge base [Guía para configurar IPv6 en Windows para usuarios avanzados](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users).
 
 ### <a name="configure-dns"></a>Configurar el DNS
 
-Después de promocionar los nuevos controladores de dominio en Azure, deberán establecerse en los servidores DNS principal y secundario de la red virtual y los servidores DNS locales se degradarán a terciario y más. Puede encontrar más información sobre cómo cambiar los servidores DNS en el artículo [creación, cambio o eliminación de una red virtual](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers).
+Después de promocionar los nuevos controladores de dominio en Azure, tendrán que establecerse en los servidores DNS principal y secundario de la red virtual, y los servidores DNS locales se degradarán a terciario y más. Puede encontrar más información sobre cómo cambiar los servidores DNS en el artículo [creación, cambio o eliminación de una red virtual](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers).
 
-### <a name="wrap-up"></a>Ajustar
+### <a name="wrap-up"></a>Encapsulado
 
-En este momento, el entorno tiene un par de controladores de dominio y se ha configurado la red virtual de Azure para que se puedan agregar más servidores al entorno. En este momento se deben completar las tareas posteriores a la instalación para Active Directory Domain Services como la configuración de sitios y servicios, auditoría, copia de seguridad y protección de la cuenta de administrador integrada.
+En este momento, el entorno tiene un par de controladores de dominio y se ha configurado la red virtual de Azure para que se puedan agregar más servidores al entorno. En este momento, se deben completar las tareas posteriores a la instalación de Active Directory Domain Services, como la configuración de sitios y servicios, auditoría, copia de seguridad y protección de la cuenta de administrador integrada.
 
 ## <a name="removing-the-environment"></a>Quitar el entorno
 
-Para quitar el entorno una vez completada la prueba, se puede eliminar el grupo de recursos que se creó anteriormente. este paso quita todos los componentes que forman parte de ese grupo de recursos.
+Para quitar el entorno, cuando haya completado las pruebas, se puede eliminar el grupo de recursos que se creó anteriormente. Este paso quita todos los componentes que forman parte de ese grupo de recursos.
 
 ### <a name="remove-using-the-azure-portal"></a>Quitar mediante el Azure Portal
 
-En el Azure Portal, vaya a **grupos de recursos** y elija el grupo de recursos que hemos creado en este ejemplo ADonAzureVMs y luego seleccione **Eliminar grupo de recursos**. El proceso solicita confirmación antes de eliminar todos los recursos incluidos en el grupo de recursos.
+En el Azure Portal, vaya a **grupos de recursos** y elija el grupo de recursos que hemos creado (en este ejemplo, ADonAzureVMs) y, luego, seleccione **Eliminar grupo de recursos**. El proceso solicita confirmación antes de eliminar todos los recursos incluidos en el grupo de recursos.
 
 ### <a name="remove-using-the-azure-cli"></a>Quitar mediante el CLI de Azure
 
@@ -251,10 +251,10 @@ az group delete --name ADonAzureVMs
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-* [Virtualización Active Directory Domain Services de forma segura (AD DS)](../../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)
+* [Virtualización segura de Servicios de dominio de Active Directory (AD DS)](../../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)
 * [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-express)
 * [Copia de seguridad y recuperación](https://docs.microsoft.com/azure/virtual-machines/windows/backup-recovery)
 * [Conectividad VPN de sitio a sitio](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
-* [Evaluación](https://docs.microsoft.com/azure/virtual-machines/windows/monitor)
-* [Seguridad y Directiva](https://docs.microsoft.com/azure/virtual-machines/windows/security-policy)
+* [Supervisión](https://docs.microsoft.com/azure/virtual-machines/windows/monitor)
+* [Seguridad y directivas](https://docs.microsoft.com/azure/virtual-machines/windows/security-policy)
 * [Mantenimiento y actualizaciones](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates)
