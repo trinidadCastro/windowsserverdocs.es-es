@@ -1,5 +1,5 @@
 ---
-title: Configuración de directiva de grupo usada en la autenticación de Windows
+title: Configuración de directiva de grupo utilizada en la autenticación de Windows
 description: Seguridad de Windows Server
 ms.prod: windows-server
 ms.technology: security-windows-auth
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7acd7439ec2e0382f1e2c725d66363e6b3a50b40
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5268a5d95dd99bade89015863ea3eadf1b7913a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857578"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475512"
 ---
-# <a name="group-policy-settings-used-in-windows-authentication"></a>Configuración de directiva de grupo usada en la autenticación de Windows
+# <a name="group-policy-settings-used-in-windows-authentication"></a>Configuración de directiva de grupo utilizada en la autenticación de Windows
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -35,7 +35,7 @@ Por ejemplo, puede aplicar las directivas siguientes a los grupos, en función d
 
 -   Restablecer cuentas
 
--   Crear cuentas
+-   Creación de cuentas
 
 En la tabla siguiente se enumeran los grupos de directivas relevantes para la autenticación y se proporcionan vínculos a documentación que pueden ayudarle a configurar esas directivas.
 
@@ -48,11 +48,11 @@ En la tabla siguiente se enumeran los grupos de directivas relevantes para la au
 |**Asignación de derechos de usuario**|Equipo local \ \ configuración de seguridad\Directivas \ asignación de derechos|Los derechos de usuario se asignan normalmente en función de los grupos de seguridad a los que pertenece un usuario, como administradores, usuarios avanzados o usuarios. La configuración de directiva de esta categoría se usa normalmente para conceder o denegar el permiso para obtener acceso a un equipo en función del método de acceso y de la pertenencia a grupos de seguridad.|
 |**Opciones de seguridad**|Equipo local \ \ \ configuración de seguridad\Directivas Locales\opciones de opciones|Las directivas relacionadas con la autenticación incluyen:<p>-Dispositivos<br />-Controlador de dominio<br />-Miembro del dominio<br />-Inicio de sesión interactivo<br />-Servidor de red de Microsoft<br />-Acceso de red<br />-Seguridad de red<br />-Consola de recuperación<br />-Shutdown<p>|
 |**Delegación de credenciales**|Equipo Equipo\plantillas Templates\System\Credentials delegación|La delegación de credenciales es un mecanismo que permite usar las credenciales locales en otros sistemas, especialmente los servidores miembro y los controladores de dominio dentro de un dominio. Esta configuración se aplica a las aplicaciones mediante el proveedor de compatibilidad para seguridad de credenciales (CRED SSP). Conexión a Escritorio remoto es un ejemplo.|
-|**ÉL**|Equipo\plantillas Templates\System\KDC de equipo|Esta configuración de directiva afecta al modo en que el Centro de distribución de claves (KDC), que es un servicio en el controlador de dominio, controla las solicitudes de autenticación Kerberos.|
-|**V5**|Equipo\plantillas Templates\System\Kerberos de equipo|Esta configuración de directiva afecta a cómo se configura Kerberos para controlar la compatibilidad con notificaciones, protección de Kerberos, autenticación compuesta, identificación de servidores proxy y otras configuraciones.|
-|**Iniciar sesión**|Configuración del equipo\Plantillas administrativas\Sistema\Inicio de sesión|Esta configuración de directiva controla el modo en que el sistema presenta la experiencia de inicio de sesión para los usuarios.|
+|**KDC**|Equipo\plantillas Templates\System\KDC de equipo|Esta configuración de directiva afecta al modo en que el Centro de distribución de claves (KDC), que es un servicio en el controlador de dominio, controla las solicitudes de autenticación Kerberos.|
+|**Kerberos**|Equipo\plantillas Templates\System\Kerberos de equipo|Esta configuración de directiva afecta a cómo se configura Kerberos para controlar la compatibilidad con notificaciones, protección de Kerberos, autenticación compuesta, identificación de servidores proxy y otras configuraciones.|
+|**Iniciar sesión**|Equipo\plantillas Templates\System\Logon de equipo|Esta configuración de directiva controla el modo en que el sistema presenta la experiencia de inicio de sesión para los usuarios.|
 |**Net Logon**|Equipo Equipo\plantillas Templates\System\Net inicio de sesión|Esta configuración de directiva controla el modo en que el sistema controla las solicitudes de inicio de sesión de red, incluido el comportamiento del localizador de controladores de dominio.<p>Para obtener más información sobre cómo encaja el localizador del controlador de dominio en los procesos de replicación, consulte Descripción de la [replicación entre sitios](https://technet.microsoft.com/library/cc771251.aspx).|
-|**Metric**|Equipo\plantillas Administrativas\componentes de Components\Biometrics de equipo|Normalmente, esta configuración de directiva permite o deniega el uso de biometría como método de autenticación.<p>Para obtener información sobre la implementación de biométrica de Windows, consulte Plataforma de biometría de Windows Overview.|
+|**Biometría**|Equipo\plantillas Administrativas\componentes de Components\Biometrics de equipo|Normalmente, esta configuración de directiva permite o deniega el uso de biometría como método de autenticación.<p>Para obtener información sobre la implementación de biométrica de Windows, consulte Plataforma de biometría de Windows Overview.|
 |**Interfaz de usuario de credenciales**|Equipo\plantillas Administrativas\componentes de la interfaz de usuario de Components\Credential|Esta configuración de directiva controla cómo se administran las credenciales en el punto de entrada.|
 |**Sincronización de contraseñas**|Equipo\plantillas Administrativas\componentes de Components\Password sincronización de equipos|Esta configuración de directiva determina el modo en que el sistema administra la sincronización de contraseñas entre los sistemas operativos Windows y UNIX.<p>Para obtener más información, consulte [sincronización de contraseñas](https://technet.microsoft.com/library/cc732609.aspx).|
 |**Tarjeta inteligente**|Equipo\plantillas Administrativas\componentes de la tarjeta Components\Smart|Esta configuración de directiva controla el modo en que el sistema administra los inicios de sesión de tarjeta inteligente.<p>|
@@ -60,7 +60,7 @@ En la tabla siguiente se enumeran los grupos de directivas relevantes para la au
 |**Opciones de Ctrl + Alt + Supr**|Opciones del Equipo\plantillas Administrativas\componentes de Components\Ctrl + Alt + Supr|Esta configuración de directiva afecta a la apariencia y accesibilidad a las características de la interfaz de usuario de inicio de sesión (escritorio seguro), como el administrador de tareas y el bloqueo del teclado del equipo.|
 |**Iniciar sesión**|Equipo\plantillas Administrativas\componentes de Components\Logon de equipo|Esta configuración de directiva determina si los procesos pueden ejecutarse cuando el usuario inicia sesión.|
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 [Información técnica sobre autenticación de Windows](windows-authentication-technical-overview.md)
 
 

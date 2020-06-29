@@ -8,39 +8,39 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c78718508194cec834d248f30459b7e50a32b3b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5bdcada1b445298c8743bdb39491726b594d0a66
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403070"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475482"
 ---
 # <a name="storage-reports-management"></a>Administración de informes de almacenamiento
 
 > Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-En el nodo **Administración de informes de almacenamiento** del Complemento de la consola de administración de Microsoft<sup>®</sup> (MMC) del Administrador de recursos del servidor de archivos, puedes realizar las siguientes tareas:
+En el nodo **Administración de informes de almacenamiento** del complemento servidor de archivos Administrador de recursos Microsoft<sup>®</sup> Management Console (MMC), puede realizar las siguientes tareas:
 
--   Programar informes de almacenamiento periódicos que te permiten identificar tendencias de uso del disco.
--   Supervisar intentos de guardar archivos no autorizados de todos los usuarios o un grupo seleccionado de usuarios.
--   Generar informes de almacenamiento al instante.
+-   Programar informes de almacenamiento periódicos que permitan identificar las tendencias de uso de disco.
+-   Realizar un seguimiento de los intentos de guardar archivos no autorizados para todos los usuarios o para un grupo de usuarios seleccionado.
+-   Generar informes de almacenamiento inmediatamente.
 
-Por ejemplo, puedes:
+Por ejemplo, puede:
 
--   Programar un informe para que se ejecute todos los domingos a medianoche y hacer que se genere una lista que incluya los archivos a los que se ha obtenido acceso más recientemente en los dos últimos días. Con esta información, puedes supervisar la actividad de almacenamiento durante el fin de semana y planificar el tiempo de inactividad del servidor, lo que tendrá un impacto menor en los usuarios que se conecten desde casa durante el fin de semana.
--   Ejecutar un informe en cualquier momento para identificar todos los archivos duplicados en un volumen de un servidor para que el espacio de disco pueda recuperarse rápidamente sin perder ningún dato.
--   Ejecutar un informe Archivos por grupo de archivos para identificar cómo los recursos de almacenamiento se segmentan en distintos grupos de archivos. 
--   Ejecutar un informe Archivos por propietario para analizar cómo los usuarios individuales usan los recursos de almacenamiento compartidos.
+-   Programar un informe para que se ejecute todos los domingos a medianoche y hacer que se genere una lista que incluya los archivos a los que se ha obtenido acceso más recientemente en los dos últimos días. Con esta información, puede supervisar la actividad de almacenamiento del fin de semana y planear el tiempo de inactividad del servidor que tendrá menos impacto en los usuarios que se conectan desde casa durante el fin de semana.
+-   Ejecutar un informe en cualquier momento para identificar todos los archivos duplicados en un volumen de un servidor de modo que el espacio en disco pueda recuperarse rápidamente sin perder ningún dato.
+-   Ejecutar un informe de Archivos por grupo de archivos para identificar cómo se segmentan los recursos de almacenamiento en distintos grupos de archivos
+-   Ejecute un informe de Archivos por propietario para analizar la forma en que los usuarios individuales usan recursos de almacenamiento compartido.
 
-Esta sección incluye los temas siguientes:
+Esta sección contiene los siguientes temas:
 
 -   [Programar un conjunto de informes](schedule-set-of-reports.md)
 -   [Generar informes a petición](generate-reports-on-demand.md)
 
 > [!Note]
-> Para establecer notificaciones por correo electrónico y ciertas funcionalidades de informes, debes configurar primero las opciones generales del Administrador de recursos del servidor de archivos.
+> Para configurar las notificaciones de correo electrónico y algunas capacidades de informes, primero debe configurar las opciones generales del Administrador de recursos del servidor de archivos.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
 

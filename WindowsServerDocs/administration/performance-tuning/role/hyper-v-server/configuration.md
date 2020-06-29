@@ -24,7 +24,7 @@ Las consideraciones de hardware para los servidores que ejecutan Hyper-V suelen 
 
     Hyper-V en Windows Server 2016 presenta los procesadores lógicos como uno o más procesadores virtuales para cada máquina virtual activa. Hyper-V requiere ahora procesadores que admiten tecnologías de traducción de direcciones de segundo nivel (SLAT), como tablas de páginas extendidas (EPT) o tablas de páginas anidadas (NPT).
 
--   **Caché**
+-   **Memoria caché**
 
     Hyper-V puede beneficiarse de cachés de procesador más grandes, especialmente para cargas que tienen un gran espacio de trabajo en la memoria y en configuraciones de máquinas virtuales en las que la proporción de procesadores virtuales a procesadores lógicos es alta.
 

@@ -6,12 +6,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: 26454881279e1d33392a827f794788370def2cab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ce3b32bdb0dfb51237f934f23207167a215a0024
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858978"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475612"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimite la asignación de volúmenes en Espacios de almacenamiento directo
 > Se aplica a: Windows Server 2019
@@ -19,7 +19,7 @@ ms.locfileid: "80858978"
 Windows Server 2019 presenta una opción para delimitar manualmente la asignación de volúmenes en Espacios de almacenamiento directo. Esto puede aumentar significativamente la tolerancia a errores en determinadas condiciones, pero impone algunas consideraciones y complejidad de administración agregadas. En este tema se explica cómo funciona y se proporcionan ejemplos de PowerShell.
 
    > [!IMPORTANT]
-   > Esta característica es nueva en Windows Server 2019. No está disponible en Windows Server 2016. 
+   > Esta característica es nueva en Windows Server 2019. No está disponible en Windows Server 2016.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -33,7 +33,7 @@ Windows Server 2019 presenta una opción para delimitar manualmente la asignaci�
 - El clúster tiene menos de seis servidores; de
 - El [clúster utiliza la](storage-spaces-fault-tolerance.md#parity) resistencia de paridad de paridad o [de reflejos](storage-spaces-fault-tolerance.md#mirror-accelerated-parity)
 
-## <a name="understand"></a>Comprender
+## <a name="understand"></a>Descripción
 
 ### <a name="review-regular-allocation"></a>Revisión: asignación normal
 
@@ -62,19 +62,19 @@ Con la asignación de ejemplo, es probable que el volumen sobreviva a tres error
 
 La probabilidad de supervivencia depende del número de servidores y otros factores; consulte [análisis](#analysis) para obtener más información.
 
-#### <a name="disadvantages"></a>Desventajas
+#### <a name="disadvantages"></a>Inconvenientes
 
 La asignación delimitada impone algunas consideraciones y complejidad de administración agregadas:
 
 1. El administrador es responsable de delimitar la asignación de cada volumen para equilibrar el uso de almacenamiento en los servidores y mantener una probabilidad alta de supervivencia, tal como se describe en la sección de [procedimientos](#best-practices) recomendados.
 
-2. Con la asignación delimitada, Reserve el equivalente de **una unidad de capacidad por servidor (sin máximo)** . Esto es algo más que la [recomendación publicada](plan-volumes.md#choosing-the-size-of-volumes) para la asignación normal, que se llegar al máximo en un total de cuatro unidades de capacidad.
+2. Con la asignación delimitada, Reserve el equivalente de **una unidad de capacidad por servidor (sin máximo)**. Esto es algo más que la [recomendación publicada](plan-volumes.md#choosing-the-size-of-volumes) para la asignación normal, que se llegar al máximo en un total de cuatro unidades de capacidad.
 
 3. Si se produce un error en un servidor y es necesario reemplazarlo, tal y como se describe en [quitar un servidor y sus unidades](remove-servers.md#remove-a-server-and-its-drives), el administrador es responsable de actualizar la delimitación de los volúmenes afectados agregando el nuevo servidor y quitando el error uno de los siguientes: ejemplo.
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
-Puede usar el cmdlet `New-Volume` para crear volúmenes en Espacios de almacenamiento directo.
+Puede usar el `New-Volume` cmdlet para crear volúmenes en espacios de almacenamiento directo.
 
 Por ejemplo, para crear un volumen de reflejo triple normal:
 
@@ -86,7 +86,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 Para crear un volumen de reflejo triple y delimitar su asignación:
 
-1. En primer lugar, asigne los servidores del clúster a la variable `$Servers`:
+1. En primer lugar, asigne los servidores del clúster a la variable `$Servers` :
 
     ```PowerShell
     $Servers = Get-StorageFaultDomain -Type StorageScaleUnit | Sort FriendlyName
@@ -95,7 +95,7 @@ Para crear un volumen de reflejo triple y delimitar su asignación:
    > [!TIP]
    > En Espacios de almacenamiento directo, el término "unidad de escala de almacenamiento" hace referencia a todo el almacenamiento sin procesar conectado a un servidor, incluidas las unidades conectadas directamente y los alojamientos externos con conexión directa con las unidades. En este contexto, es lo mismo que ' Server '.
 
-2. Especifique los servidores que se van a usar con el nuevo parámetro de `-StorageFaultDomainsToUse` e indexando en `$Servers`. Por ejemplo, para delimitar la asignación a los servidores primero, segundo, tercero y cuarto (índices 0, 1, 2 y 3):
+2. Especifique los servidores que se van a usar con el nuevo `-StorageFaultDomainsToUse` parámetro e indexando en `$Servers` . Por ejemplo, para delimitar la asignación a los servidores primero, segundo, tercero y cuarto (índices 0, 1, 2 y 3):
 
     ```PowerShell
     New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2,3]
@@ -103,21 +103,21 @@ Para crear un volumen de reflejo triple y delimitar su asignación:
 
 ### <a name="see-a-delimited-allocation"></a>Ver una asignación delimitada
 
-Para ver cómo se asigna el *volumen* , use el script `Get-VirtualDiskFootprintBySSU.ps1` del [Apéndice](#appendix):
+Para ver cómo se asigna el *volumen* , use el `Get-VirtualDiskFootprintBySSU.ps1` script del [Apéndice](#appendix):
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0      
+MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
 ```
 
 Tenga en cuenta que solo server1, server2, Server3 y 4 contienen bloques de mi *volumen*.
 
 ### <a name="change-a-delimited-allocation"></a>Cambiar una asignación delimitada
 
-Use los nuevos cmdlets `Add-StorageFaultDomain` y `Remove-StorageFaultDomain` para cambiar la forma en que se delimita la asignación.
+Use los `Add-StorageFaultDomain` `Remove-StorageFaultDomain` cmdlets New y para cambiar cómo se delimita la asignación.
 
 Por ejemplo, para subir un *volumen* en un servidor:
 
@@ -139,21 +139,21 @@ Por ejemplo, para subir un *volumen* en un servidor:
     Get-StoragePool S2D* | Optimize-StoragePool
     ```
 
-Puede supervisar el progreso del reequilibrio con `Get-StorageJob`.
+Puede supervisar el progreso del reequilibrio con `Get-StorageJob` .
 
-Una vez que haya finalizado, compruebe que se ha desactivado el *volumen* mediante la ejecución de `Get-VirtualDiskFootprintBySSU.ps1` de nuevo.
+Una vez que haya finalizado, compruebe que se ha deshecho la ejecución de mi *volumen* `Get-VirtualDiskFootprintBySSU.ps1` .
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0      
+MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 ```
 
 Tenga en cuenta que server1 ya no contiene bloques de mi *volumen* ; en su lugar, Server5 sí.
 
-## <a name="best-practices"></a>Procedimiento recomendado
+## <a name="best-practices"></a>Procedimientos recomendados
 
 Estos son los procedimientos recomendados que se deben seguir al usar la asignación de volúmenes delimitados:
 
@@ -167,11 +167,11 @@ Equilibre la cantidad de almacenamiento que se asigna a cada servidor, teniendo 
 
 ### <a name="stagger-delimited-allocation-volumes"></a>Escalonar volúmenes de asignación delimitados
 
-Para maximizar la tolerancia a errores, haga que la asignación de cada volumen sea única, lo que significa que no comparte *todos* sus servidores con otro volumen (la superposición es correcta). 
+Para maximizar la tolerancia a errores, haga que la asignación de cada volumen sea única, lo que significa que no comparte *todos* sus servidores con otro volumen (la superposición es correcta).
 
 Por ejemplo, en un sistema de ocho nodos: volumen 1: servidores 1, 2, 3, 4 volumen 2: servidores 5, 6, 7, 8 volumen 3: servidores 3, 4, 5, 6 volumen 4: servidores 1, 2, 7, 8
 
-## <a name="analysis"></a>Analizar
+## <a name="analysis"></a>Análisis
 
 En esta sección se deriva la probabilidad matemática de que un volumen permanezca en línea y accesible (o equivalente, la fracción esperada de almacenamiento general que permanece en línea y accesible) como función del número de errores y del tamaño del clúster.
 
@@ -200,7 +200,7 @@ Sí. Puede elegir por volumen si quiere o no delimitar la asignación.
 
 No, es lo mismo que con la asignación normal.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Tolerancia a errores en Espacios de almacenamiento directo](storage-spaces-fault-tolerance.md)
@@ -209,7 +209,7 @@ No, es lo mismo que con la asignación normal.
 
 Este script le ayuda a ver cómo se asignan los volúmenes.
 
-Para usarlo como se describió anteriormente, Copie/pegue y guarde como `Get-VirtualDiskFootprintBySSU.ps1`.
+Para usarlo como se describió anteriormente, Copie/pegue y guarde como `Get-VirtualDiskFootprintBySSU.ps1` .
 
 ```PowerShell
 Function ConvertTo-PrettyCapacity {

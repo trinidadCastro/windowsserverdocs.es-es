@@ -1,6 +1,6 @@
 ---
 title: Add Folder Targets
-description: En este tema se describe cómo agregar destinos de carpeta (rutas UNC)
+description: En este tema se describe cómo agregar destinos de carpeta (rutas de acceso UNC)
 ms.prod: windows-server
 ms.author: jgerend
 manager: brianlic
@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: d2f3845a612556a51692aaf51d256bbedd518e7a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f4e0deb82f16c905f580c13115a5214556d4f5f
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854108"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475562"
 ---
 # <a name="add-folder-targets"></a>Add folder targets
 
@@ -23,23 +23,23 @@ Un destino de carpeta es la ruta de acceso UNC (convención de nomenclatura univ
 
 ## <a name="to-add-a-folder-target"></a>Para agregar un destino de carpeta
 
-Para agregar un destino de carpeta mediante la administración de DFS, usa el siguiente procedimiento:
+Para agregar un destino de carpeta mediante administración de DFS, utilice el siguiente procedimiento:
 
 1.  Haga clic sucesivamente en **Inicio**, **Herramientas administrativas** y **Administración de DFS**.
 
-2.  En el árbol de consola, en el nodo **Espacios de nombres**, haz clic con el botón derecho en una carpeta y luego haz clic en **Agregar destino de carpeta**.
+2.  En el árbol de consola, en el nodo **espacios de nombres** , haga clic con el botón secundario en una carpeta y, a continuación, haga clic en **Agregar destino de carpeta**.
 
-3.  Escribe la ruta de acceso al destino de carpeta o haz clic en **Examinar** para buscar la carpeta de destino.
+3.  Escriba la ruta de acceso al destino de la carpeta o haga clic en **examinar** para buscar el destino de la carpeta.
 
-4.  Si la carpeta se replica mediante la replicación DFS, puedes especificar si el nuevo destino de carpeta se agrega al grupo de replicación.
+4.  Si la carpeta se replica mediante Replicación DFS, puede especificar si desea agregar el nuevo destino de carpeta al grupo de replicación.
 
 > [!TIP]
-> Para agregar un destino de carpeta mediante Windows PowerShell, usa el cmdlet [New-DfsnFolderTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfoldertarget). El módulo de Windows PowerShell para DFSN se introdujo en Windows Server 2012.
+> Para agregar un destino de carpeta mediante Windows PowerShell, use el cmdlet [New-DfsnFolderTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfoldertarget) . El módulo de Windows PowerShell DFSN se presentó en Windows Server 2012.
 
 > [!NOTE]
 > Las carpetas pueden contener destinos de carpeta u otras carpetas DFS, pero no ambos en el mismo nivel de la jerarquía de carpetas.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Implementar espacios de nombres DFS](deploying-dfs-namespaces.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)

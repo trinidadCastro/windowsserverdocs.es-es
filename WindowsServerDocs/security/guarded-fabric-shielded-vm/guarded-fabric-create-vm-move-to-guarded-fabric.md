@@ -9,12 +9,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: a5ca3ab29b83d0cb6cb2d55507471790f65800a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c6753ae5d767f0c71b86fc47c1d8bf9971a2a5cc
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856728"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475532"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>Máquinas virtuales blindadas para inquilinos: creación de una nueva máquina virtual blindada en el entorno local y su traslado a un tejido protegido
 
@@ -34,7 +34,7 @@ Para entender cómo se ajusta este tema en el proceso general de implementación
 
     - Características
 
-        - Herramientas de administración de características de Herramientas de administración remota del servidor\\\\herramientas de máquinas virtuales blindadas
+        - Herramientas de \\ Administración de características herramientas de administración remota del servidor herramientas de \\ máquinas virtuales blindadas
 
     > [!NOTE]
     > El host que se usa aquí *no* debe ser un host en el tejido protegido. Se trata de un host independiente en el que se preparan las máquinas virtuales antes de moverlas al tejido protegido.
@@ -51,9 +51,9 @@ Para entender cómo se ajusta este tema en el proceso general de implementación
 
 4.  Para importar la clave de protección, que necesitará en un procedimiento posterior, ejecute el siguiente comando.
 
-    Por &lt;ruta de acceso&gt;&lt;nombre de archivo&gt;, sustituya la ruta de acceso y el nombre del archivo XML que guardó en el paso anterior, por ejemplo: **C:\\temp\\GuardianKey. XML**
+    En &lt; ruta de acceso del &gt; &lt; nombre &gt; de archivo, sustituya la ruta de acceso y el nombre del archivo XML que guardó en el paso anterior, por ejemplo: **C: \\ temp \\GuardianKey.xml**
 
-    En &lt;&gt;GuardianName, especifique un nombre para el proveedor de hospedaje o el centro de recursos de empresa, por ejemplo, **HostingProvider1**. Registre el nombre para el procedimiento siguiente.
+    En &lt; el caso de GuardianName &gt; , especifique un nombre para el proveedor de hospedaje o el centro de recursos de empresa, por ejemplo, **HostingProvider1**. Registre el nombre para el procedimiento siguiente.
 
     Incluya **-AllowUntrustedRoot** solo si el servidor HGS se configuró con certificados autofirmados. (Estos certificados forman parte del servicio de protección de claves en HGS).
 
@@ -73,11 +73,11 @@ Para ver una ilustración que muestra el protector de clave, que es un elemento 
 
 1. En un host de Hyper-V de inquilino, para crear una nueva máquina virtual de generación 2, ejecute el siguiente comando.
 
-   En &lt;&gt;ShieldedVMname, especifique un nombre para la máquina virtual, por ejemplo: **ShieldVM1**
-    
-   En &lt;&gt;VHDPath, especifique una ubicación para almacenar el VHDX de la máquina virtual, por ejemplo: **C:\\vm\\ShieldVM1\\ShieldVM1. VHDX.**
-    
-   En &lt;&gt;nnGB, especifique un tamaño para el VHDX, por ejemplo: **60 GB**
+   En &lt; el caso de ShieldedVMname &gt; , especifique un nombre para la máquina virtual, por ejemplo: **ShieldVM1**
+
+   En el caso de &lt; VHDPath &gt; , especifique una ubicación para almacenar el VHDX de la máquina virtual, por ejemplo: **C: \\ VMS \\ ShieldVM1 \\ ShieldVM1. vhdx.**
+
+   En &lt; el caso de nnGB &gt; , especifique un tamaño para el VHDX, por ejemplo: **60 GB**
 
        New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
 
@@ -87,7 +87,7 @@ Para ver una ilustración que muestra el protector de clave, que es un elemento 
 
 4. Para crear un nuevo protector de clave (que se describe al principio de esta sección), ejecute el siguiente comando.
 
-   En &lt;&gt;GuardianName, use el nombre que especificó en el procedimiento anterior, por ejemplo: **HostingProvider1**
+   &lt;En el caso de GuardianName &gt; , use el nombre que especificó en el procedimiento anterior, por ejemplo: **HostingProvider1**
 
    Incluya **-AllowUntrustedRoot** para permitir certificados autofirmados.
 
@@ -97,9 +97,9 @@ Para ver una ilustración que muestra el protector de clave, que es un elemento 
 
        $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
 
-   Si desea que más de un centro de información pueda ejecutar la máquina virtual blindada (por ejemplo, un sitio de recuperación ante desastres y un proveedor de nube pública), puede proporcionar una lista de protecciones al parámetro **-Guardian** . Para obtener más información, vea [New-HgsKeyProtector] (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps.
+   Si desea que más de un centro de información pueda ejecutar la máquina virtual blindada (por ejemplo, un sitio de recuperación ante desastres y un proveedor de nube pública), puede proporcionar una lista de protecciones al parámetro **-Guardian** . Para obtener más información, vea [New-HgsKeyProtector] ( https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps .
 
-5. Para habilitar vTPM mediante el protector de clave, ejecute el siguiente comando. En &lt;&gt;ShieldedVMname, use el mismo nombre de máquina virtual usado en los pasos anteriores.
+5. Para habilitar vTPM mediante el protector de clave, ejecute el siguiente comando. &lt;En el caso de ShieldedVMname &gt; , use el mismo nombre de máquina virtual usado en los pasos anteriores.
 
        $VMName="<ShieldedVMname>"
 
@@ -130,7 +130,7 @@ Para ver una ilustración que muestra el protector de clave, que es un elemento 
 
     Importe la máquina virtual blindada mediante el administrador de Hyper-V o Windows PowerShell. Debe importar el archivo de configuración de máquina virtual desde el propietario de la máquina virtual para iniciar la máquina virtual. Esto se debe a que el protector de clave y el TPM virtual de la máquina virtual se almacenan en el archivo de configuración. Si la máquina virtual está configurada para ejecutarse en el tejido protegido, debería poder iniciarse correctamente.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
-- [Pasos de configuración del proveedor de servicios de hospedaje para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [Pasos de configuración del proveedor de servicios de hosting para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

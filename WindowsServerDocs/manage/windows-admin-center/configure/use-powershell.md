@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 58b6f5dd064eb315ac2d4518283a870d137f837a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 31eb0e3c960d50ae4cbb8a3bab1b3d6db62e2807
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74908309"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475692"
 ---
 # <a name="use-powershell-to-manage-windows-admin-center-settings"></a>Usar PowerShell para administrar la configuración de Windows Admin Center
 
@@ -27,7 +27,7 @@ Si tienes una organización grande con varios servidores de Windows Admin Center
 
 [!INCLUDE [ps-extensions](../includes/ps-extensions.md)]
 
-### <a name="see-also"></a>Consulta también
+### <a name="additional-references"></a>Referencias adicionales
 
 * [Implementar una puerta de enlace de Windows Admin Center de alta disponibilidad en un clúster](../deploy/high-availability.md)
 * [Implementar una puerta de enlace de Windows Admin Center en Azure con Cloud Shell](../azure/deploy-wac-in-azure.md)

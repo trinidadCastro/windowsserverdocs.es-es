@@ -8,14 +8,14 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
-description: Una explicación de las opciones de resistencia en Espacios de almacenamiento directo, incluida creación de reflejos y paridad.
+description: Explicación de las opciones de resistencia en Espacios de almacenamiento directo como la creación de reflejo y la paridad.
 ms.localizationpriority: medium
-ms.openlocfilehash: b64592bf3cf5659410dcbbeb4c190d2d6a85485a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 540398e78b35d7cd61464e012d0f3ccfa85d7152
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859018"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475492"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>Tolerancia a errores y eficiencia del almacenamiento en Espacios de almacenamiento directo
 
@@ -27,51 +27,51 @@ Si ya estás familiarizado con Espacios de almacenamiento, puedes ir a la secci�
 
 ## <a name="overview"></a>Información general
 
-En esencia, Espacios de almacenamiento tiene que ver con proporcionar a los datos tolerancia a errores, lo que a menudo se denomina "resistencia". Su implementación es similar a RAID, excepto que se distribuye entre varios servidores y se implementa en el software.
+En su esencia, los espacios de almacenamiento están a punto de proporcionar tolerancia a errores, a menudo denominada "resistencia", para los datos. Su implementación es similar a RAID, excepto que se distribuye entre varios servidores y se implementa en el software.
 
-Al igual que sucede con RAID, existen varias formas distintas en las que Espacios de almacenamiento puede hacer esto, que equilibran de forma diferente la tolerancia a errores, la eficiencia del almacenamiento y la complejidad del cálculo. De manera general, se dividen en dos categorías: "creación de reflejos" y "paridad"; esta última a veces se conoce como "codificación del borrado".
+Al igual que sucede con RAID, existen varias formas distintas en las que Espacios de almacenamiento puede hacer esto, que equilibran de forma diferente la tolerancia a errores, la eficiencia del almacenamiento y la complejidad del cálculo. En general, se dividen en dos categorías: ' creación de reflejo ' y ' paridad '; a veces, la última denominada ' codificación de borrado '.
 
-## <a name="mirroring"></a>Creación de reflejos
+## <a name="mirroring"></a>Creación de reflejo
 
-Los reflejos proporcionan tolerancia a errores mediante el mantenimiento de varias copias de todos los datos. Esto se parece mucho a RAID-1. El modo en que se seccionan y colocan esos datos no es sencillo (para aprender más, consulta [este blog](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)), pero es completamente cierto que todos los datos almacenados mediante reflejos se escriben varias veces en su totalidad. Cada copia se escribe en hardware físico distinto (distintas unidades en distintos servidores), que se supone que no sufrirán errores a la vez.
+La creación de reflejo proporciona tolerancia a errores gracias al mantenimiento de varias copias de todos los datos. Esto se parece mucho a RAID-1. La forma en que los datos se seccionan y se colocan no es trivial (consulte [este blog](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/) para obtener más información), pero es absolutamente cierto que los datos almacenados mediante la creación de reflejo se escriben, en su totalidad, varias veces. Cada copia se escribe en distinto hardware físico (unidades diferentes en distintos servidores), que se supone que generan un error de forma independiente.
 
-En Windows Server 2016, Espacios de almacenamiento ofrece dos tipos de reflejos: "dobles" y "triples".
+En Windows Server 2016, espacios de almacenamiento ofrece dos tipos de creación de reflejo: ' bidireccional ' y ' triple '.
 
 ### <a name="two-way-mirror"></a>Reflejo doble
 
-Los reflejos dobles escriben dos copias de todo. Su eficiencia del almacenamiento es del 50 %: para escribir 1 TB de datos, se necesitan al menos 2 TB de capacidad de almacenamiento físico. De manera similar, se necesitan al menos dos ["dominios de error" de hardware](../../failover-clustering/fault-domains.md); en el caso de Espacios de almacenamiento directo, eso significa dos servidores.
+Los reflejos dobles escriben dos copias de todo. Su eficiencia del almacenamiento es del 50 %: para escribir 1 TB de datos, se necesitan al menos 2 TB de capacidad de almacenamiento físico. Del mismo modo, necesita al menos dos [dominios de error de hardware](../../failover-clustering/fault-domains.md) : con espacios de almacenamiento directo, es decir, dos servidores.
 
 ![two-way-mirror](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
 
    >[!WARNING]
-   > Si tienes más de dos servidores, se recomienda usar reflejos triples en su lugar.
+   > Si tiene más de dos servidores, se recomienda usar mirorring en su lugar.
 
 ### <a name="three-way-mirror"></a>Reflejo triple
 
 Los reflejos triples escriben tres copias de todo. Su eficiencia del almacenamiento es del 33,3 %: para escribir 1 TB de datos, se necesitan al menos 3 TB de capacidad de almacenamiento físico. De manera similar, se necesitan al menos tres "dominios de error" de hardware; en el caso de Espacios de almacenamiento directos, eso significa tres servidores.
 
-La creación de reflejos triple puede tolerar de forma segura [al menos dos problemas de hardware (en la unidad o el servidor) a la vez](#examples). Por ejemplo, si estás reiniciando un servidor cuando repentinamente se produce un error en otra unidad o servidor, todos los datos permanecen seguros y accesibles de forma continua.
+La creación de reflejo triple puede tolerar de manera segura al menos [dos problemas de hardware (unidad o servidor) a la vez](#examples). Por ejemplo, si se está reiniciando un servidor cuando, de repente, se produce un error en otra unidad u otro servidor, la seguridad y la accesibilidad de los datos se mantienen.
 
 ![reflejo triple](media/Storage-Spaces-Fault-Tolerance/three-way-mirror-180px.png)
 
-## <a name="parity"></a>Paridad
+## <a name="parity"></a>Parity
 
-La codificación de la paridad, que a menudo se denomina "codificación de borrado", proporciona tolerancia a errores mediante aritmética bit a bit, lo que llegar a ser [muy complicado](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf). Funciona de una forma menos obvia que los reflejos, y existen muchos recursos en línea excelentes (por ejemplo, esta [Dummies Guide to Erasure Coding](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/) [Guía para principiantes para la codificación del borrado, en inglés] de terceros), que pueden ayudarte a entender la idea. Basta decir que proporciona una mayor eficiencia del almacenamiento sin comprometer la tolerancia a errores.
+La codificación de paridad, a menudo denominada "codificación de borrado", proporciona tolerancia a errores mediante aritmética bit a bit, lo que puede resultar bastante [complicado](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf). Funciona de una forma menos obvia que los reflejos, y existen muchos recursos en línea excelentes (por ejemplo, esta [Dummies Guide to Erasure Coding](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/) [Guía para principiantes para la codificación del borrado, en inglés] de terceros), que pueden ayudarte a entender la idea. Basta decir que proporciona una mayor eficiencia del almacenamiento sin comprometer la tolerancia a errores.
 
-En Windows Server 2016, Espacios de almacenamiento ofrece dos tipos de paridad: la paridad "individual" y la paridad "doble". Esta última emplea una técnica avanzada denominada "códigos de reconstrucción local" a escalas mayores.
+En Windows Server 2016, espacios de almacenamiento ofrece dos tipos de paridad: paridad "única" y paridad "dual", que emplean una técnica avanzada denominada "códigos de reconstrucción local" a mayor escala.
 
 > [!IMPORTANT]
-> Te recomendamos usar el reflejo de la mayoría de las cargas de trabajo dependientes del rendimiento. Para obtener más información sobre cómo equilibrar entre rendimiento y capacidad en función de la carga de trabajo, consulta [Planificar los volúmenes](plan-volumes.md#choosing-the-resiliency-type).
+> Se recomienda utilizar la creación de reflejo para la mayoría de las cargas de trabajo sensibles al rendimiento. Para obtener más información sobre cómo equilibrar el rendimiento y la capacidad en función de la carga de trabajo, consulte [planear volúmenes](plan-volumes.md#choosing-the-resiliency-type).
 
 ### <a name="single-parity"></a>Paridad individual
-La paridad individual mantiene un solo símbolo de paridad bit a bit, que proporciona tolerancia a errores para un único error en cada momento. Se parece mucho a RAID-5. Para utilizar la paridad individual, se necesitan al menos tres "dominios de error" de hardware; en el caso de Espacios de almacenamiento directos, eso significa tres servidores. Debido a que los reflejos triples proporcionan más tolerancia a errores en la misma escala, se desaconseja el uso de la paridad individual. Pero está disponible si insistes en usarla y es completamente compatible.
+La paridad individual mantiene un solo símbolo de paridad bit a bit, que proporciona tolerancia a errores para un único error en cada momento. Se parece mucho a RAID-5. Para utilizar la paridad individual, se necesitan al menos tres "dominios de error" de hardware; en el caso de Espacios de almacenamiento directos, eso significa tres servidores. Debido a que los reflejos triples proporcionan más tolerancia a errores en la misma escala, se desaconseja el uso de la paridad individual. Sin embargo, se trata de una posible insista en usarlo y es totalmente compatible.
 
    >[!WARNING]
-   > Se desaconseja usar la paridad única porque solo tolera de forma segura un error de hardware a la vez: si estás reiniciando un servidor cuando repentinamente se produce un error en otra unidad o servidor, se producirá un tiempo de inactividad. Si solo dispones de tres servidores, recomendamos usar los reflejos triples. Si cuentas con cuatro o más, consulta la sección siguiente.
+   > Desaconsejamos el uso de una paridad única, ya que solo puede tolerar de manera segura un error de hardware a la vez: Si está reiniciando un servidor cuando se produce un error en otra unidad o servidor, se producirá un tiempo de inactividad. Si solo dispones de tres servidores, recomendamos usar los reflejos triples. Si cuentas con cuatro o más, consulta la sección siguiente.
 
-### <a name="dual-parity"></a>Paridad doble
+### <a name="dual-parity"></a>Paridad dual
 
-La paridad doble implementa códigos de corrección de errores de Reed-Solomon para mantener dos símbolos de paridad bit a bit, lo que proporciona la misma tolerancia a errores que los reflejos triples (es decir, hasta dos errores a la vez), pero con una eficacia del almacenamiento mejor. Se parece mucho a RAID-6. Para utilizar la paridad doble, se necesitan al menos cuatro "dominios de error" de hardware; en el caso de Espacios de almacenamiento directos, eso significa cuatro servidores. En esa escala, la eficiencia del almacenamiento es del 50 %: para almacenar 2 TB de datos, se necesitan 4 TB de capacidad de almacenamiento físico.
+La paridad dual implementa códigos de corrección de errores de la Reed-Solomon para mantener dos símbolos de paridad bit a bit, lo que proporciona la misma tolerancia a errores que la creación de reflejo triple (es decir, hasta dos errores a la vez), pero con una mayor eficacia de almacenamiento. Se parece mucho a RAID-6. Para utilizar la paridad doble, se necesitan al menos cuatro "dominios de error" de hardware; en el caso de Espacios de almacenamiento directos, eso significa cuatro servidores. En esa escala, la eficiencia del almacenamiento es del 50 %: para almacenar 2 TB de datos, se necesitan 4 TB de capacidad de almacenamiento físico.
 
 ![paridad doble](media/Storage-Spaces-Fault-Tolerance/dual-parity-180px.png)
 
@@ -83,26 +83,26 @@ Consulta la sección [Resumen](#summary) para conocer la eficacia de la paridad 
 
 ### <a name="local-reconstruction-codes"></a>Códigos de reconstrucción local
 
-Espacios de almacenamiento en Windows Server 2016 presenta una técnica avanzada desarrollada por Microsoft Research denominada "códigos de reconstrucción local" o LRC. A gran escala, la paridad doble usa los LRC para dividir su codificación y descodificación en grupos más pequeños, con el fin de reducir la sobrecarga necesaria para realizar escrituras o recuperarse de errores.
+Espacios de almacenamiento en Windows Server 2016 presenta una técnica avanzada desarrollada por Microsoft Research denominada "códigos de reconstrucción local" o LRC. A gran escala, la paridad doble usa los LRC para dividir su codificación y descodificación en grupos más pequeños, con el fin de reducir la sobrecarga necesaria para realizar escrituras o recuperarse de errores.
 
 En el caso de las unidades de disco duro (HDD), el tamaño del grupo es de 4 símbolos; en el caso de las unidades de estado sólido (SSD), el tamaño del grupo es de 6 símbolos. Por ejemplo, esta es la apariencia del diseño en el caso de unidades de disco duro y 12 dominios de error de hardware (es decir, 12 servidores): existen 2 grupos de 4 símbolos de datos. Consigue una eficiencia del almacenamiento del 72,7 %.
 
 ![códigos de reconstrucción local](media/Storage-Spaces-Fault-Tolerance/local-reconstruction-codes-180px.png)
 
-Recomendamos este tutorial detallado aunque perfectamente legible, acerca de [cómo los códigos reconstrucción local controlan diversos escenarios de error y por qué resultan atractivos](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/) (en inglés), escrito por nuestro compañero [Claus Joergensen](https://twitter.com/clausjor).
+Se recomienda este tutorial en profundidad y eminently legible de [cómo los códigos de reconstrucción locales controlan diversos escenarios de error y por qué son atractivos](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/), por nuestra propia [Claus Joergensen](https://twitter.com/clausjor).
 
 ## <a name="mirror-accelerated-parity"></a>Paridad acelerada por reflejos
 
-A partir de Windows Server 2016, un volumen de Espacios de almacenamiento directo puede ser parte reflejo y parte paridad. Las operaciones de escritura se dirigen primero a la porción reflejada y, más adelante, se mueven gradualmente a la porción de paridad. De hecho, con esto [se usa la creación de reflejos para acelerar la codificación de borrado](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/).
+A partir de Windows Server 2016, un volumen de Espacios de almacenamiento directo puede ser un reflejo de la parte y la paridad del elemento. Escribe las tierras primero en la parte reflejada y se mueven gradualmente a la parte de la paridad más adelante. De hecho, se [usa la creación de reflejo para acelerar la codificación de borrado](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/).
 
 Para combinar el reflejo triple y la paridad doble, se necesitan al menos 4 dominios de error, lo que significa 4 servidores.
 
-La eficiencia del almacenamiento de paridad acelerada por reflejos se sitúa entre lo que se obtiene al usar todo reflejo o todo paridad y depende de las proporciones que se elijan. Por ejemplo, la demostración que aparece en la marca temporal de los 37 minutos de esta presentación muestra [varias combinaciones que logran una eficiencia del 46 %, el 54 % y el 65 %](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s) (en inglés) con 12 servidores.
+La eficiencia de almacenamiento de la paridad de reflejo acelerado se encuentra entre lo que obtendría al usar todo el reflejo o toda la paridad y depende de las proporciones que elija. Por ejemplo, la demostración que aparece en la marca temporal de los 37 minutos de esta presentación muestra [varias combinaciones que logran una eficiencia del 46 %, el 54 % y el 65 %](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s) (en inglés) con 12 servidores.
 
 > [!IMPORTANT]
-> Te recomendamos usar el reflejo de la mayoría de las cargas de trabajo dependientes del rendimiento. Para obtener más información sobre cómo equilibrar entre rendimiento y capacidad en función de la carga de trabajo, consulta [Planificar los volúmenes](plan-volumes.md#choosing-the-resiliency-type).
+> Se recomienda utilizar la creación de reflejo para la mayoría de las cargas de trabajo sensibles al rendimiento. Para obtener más información sobre cómo equilibrar el rendimiento y la capacidad en función de la carga de trabajo, consulte [planear volúmenes](plan-volumes.md#choosing-the-resiliency-type).
 
-## <a name="summary"></a><a name="summary"></a>Sumido
+## <a name="summary"></a><a name="summary"></a>Resumen
 
 En esta sección se resumen los tipos de resistencia disponibles en Espacios de almacenamiento directo, los requisitos mínimos de escala para usar cada tipo, la cantidad de errores que puede tolerar cada tipo y la eficiencia de almacenamiento correspondiente.
 
@@ -112,26 +112,26 @@ En esta sección se resumen los tipos de resistencia disponibles en Espacios de 
 |------------------------|----------------------------|----------------------------|
 |    Reflejo doble      |    1                       |    50.0%                   |
 |    Reflejo triple    |    2                       |    33,3 %                   |
-|    Paridad doble         |    2                       |    50,0 %-80,0 %           |
+|    Paridad dual         |    2                       |    50,0 %-80,0 %           |
 |    Mixto               |    2                       |    33,3 %-80,0 %           |
 
 ### <a name="minimum-scale-requirements"></a>Requisitos mínimos de escala
 
-|    Resistencia          |    Mínimo obligatorio de dominios de error   |
+|    Resistencia          |    Dominios de error mínimos requeridos   |
 |------------------------|-------------------------------------|
 |    Reflejo doble      |    2                                |
 |    Reflejo triple    |    3                                |
-|    Paridad doble         |    4                                |
+|    Paridad dual         |    4                                |
 |    Mixto               |    4                                |
 
    >[!TIP]
-   > A menos que uses [tolerancia a errores de chasis o bastidor](../../failover-clustering/fault-domains.md), el número de dominios de error se refiere al número de servidores. El número de unidades de cada servidor no afecta a los tipos de resistencia que puedes usar, siempre que cumplas los requisitos mínimos de Espacios de almacenamiento directo. 
+   > A menos que uses [tolerancia a errores de chasis o bastidor](../../failover-clustering/fault-domains.md), el número de dominios de error se refiere al número de servidores. El número de unidades de cada servidor no afecta a los tipos de resistencia que puedes usar, siempre que cumplas los requisitos mínimos de Espacios de almacenamiento directo.
 
 ### <a name="dual-parity-efficiency-for-hybrid-deployments"></a>Eficiencia de la paridad doble para implementaciones híbridas
 
 En la siguiente tabla se muestran la eficiencia del almacenamiento de paridad doble y los códigos de reconstrucción local en cada escala para las implementaciones híbridas que contienen unidades de disco duro (HDD) y unidades de estado sólido (SSD).
 
-|    Dominios de error      |    Diseño           |    Eficacia   |
+|    Dominios de error      |    Layout           |    Eficacia   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -153,7 +153,7 @@ En la siguiente tabla se muestran la eficiencia del almacenamiento de paridad do
 
 En la siguiente tabla se muestran la eficiencia del almacenamiento de paridad doble y los códigos de reconstrucción local en cada escala para las implementaciones en memoria flash que contienen unidades de estado sólido (SSD) únicamente. El diseño de la paridad puede usar tamaños de grupo más grandes y lograr una mayor eficiencia de almacenamiento en una configuración de memoria flash.
 
-|    Dominios de error      |    Diseño           |    Eficacia   |
+|    Dominios de error      |    Layout           |    Eficacia   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -171,7 +171,7 @@ En la siguiente tabla se muestran la eficiencia del almacenamiento de paridad do
 |    15                 |    RS 6+2           |    75.0%        |
 |    16                 |    LRC (12, 2, 1)   |    80,0 %        |
 
-## <a name="examples"></a><a name="examples"></a>Example
+## <a name="examples"></a><a name="examples"></a>Ejemplos
 
 A menos que tengas solo dos servidores, te recomendamos usar el reflejo triple o la paridad doble, porque ofrecen mejor tolerancia a errores. En concreto, asegúrate de que todos los datos permanezcan seguros y accesibles continuamente incluso cuando dos dominios de error (con Espacios de almacenamiento directo, esto significa dos servidores) se vean afectados por errores simultáneos.
 
@@ -201,22 +201,22 @@ En estos seis ejemplos, se muestra lo que el reflejo triple o la paridad doble *
 A lo largo de su vida, Espacios de almacenamiento puede tolerar cualquier número de errores, ya que se restaura a resistencia completa después de cada uno de ellos, con el tiempo suficiente. Sin embargo, al menos dos dominios de error pueden verse afectados de forma segura por errores en un momento determinado. En los siguientes ejemplos se muestran lo que el reflejo triple o la paridad doble **no pueden** tolerar.
 
 - **7.** Unidades perdidas en tres o más servidores a la vez
-- **8.** Tres o más servidores perdidos a la vez
+- **8.** se han perdido tres o más servidores a la vez
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
 ## <a name="usage"></a>Uso
 
-Echa un vistazo a [Crear volúmenes en Espacios de almacenamiento directo](create-volumes.md).
+Consulte [creación de volúmenes en espacios de almacenamiento directo](create-volumes.md).
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 Cada uno de los siguientes vínculos se encuentra en línea en algún lugar del texto de este tema.
 
 - [Espacios de almacenamiento directo en Windows Server 2016](storage-spaces-direct-overview.md)
 - [Reconocimiento de dominios de error en Windows Server 2016](../../failover-clustering/fault-domains.md)
 - [Codificación de borrado en Azure por Microsoft Research](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
-- [Códigos de reconstrucción locales y aceleración de volúmenes de paridad](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
+- [Códigos de reconstrucción local y aceleración de los volúmenes de paridad](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
 - [Volúmenes en la API de administración de almacenamiento](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
-- [Demostración de la eficiencia del almacenamiento en Microsoft encendido 2016](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
-- [Versión preliminar de la calculadora de capacidad para Espacios de almacenamiento directo](https://aka.ms/s2dcalc)
+- [Demostración de la eficiencia del almacenamiento en Microsoft Ignite 2016](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
+- [Capacity Calculator PREVIEW for Storage Spaces Direct (Calculadora de capacidad [VISTA PREVIA] de Espacios de almacenamiento directo)](https://aka.ms/s2dcalc)

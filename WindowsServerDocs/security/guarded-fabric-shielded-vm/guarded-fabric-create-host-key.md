@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 664b3cfc1e529fe3591f6477ae0eb0b64e32441a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 24714e7af844116629fa4c0eebf5050f9c150c50
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856738"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475542"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>Crear una clave de host y agregarla a HGS
 
@@ -29,7 +29,7 @@ En este tema se describe cómo preparar hosts de Hyper-V para que se conviertan 
 
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
-    ``` 
+    ```
 
 3.    Generar una clave de host automáticamente o seleccionar un certificado existente. Si usa un certificado personalizado, debe tener al menos una clave RSA de 2048 bits, un EKU de autenticación de cliente y el uso de la clave de firma digital.
 
@@ -37,7 +37,7 @@ En este tema se describe cómo preparar hosts de Hyper-V para que se conviertan 
     Set-HgsClientHostKey
     ```
 
-    También puede especificar una huella digital si desea utilizar su propio certificado. 
+    También puede especificar una huella digital si desea utilizar su propio certificado.
     Esto puede ser útil si desea compartir un certificado entre varios equipos o usar un certificado enlazado a un TPM o a un HSM. A continuación se muestra un ejemplo de creación de un certificado enlazado a TPM (que impide que se robe y se use la clave privada en otra máquina y que solo requiera un TPM 1,2):
 
     ```powershell
@@ -59,13 +59,13 @@ Este paso se realiza en el servidor HGS y permite al host ejecutar máquinas vir
 
 ```powershell
 Add-HgsAttestationHostKey -Name MyHost01 -Path "C:\temp\MyHost01-HostKey.cer"
-``` 
+```
 
 ## <a name="next-step"></a>Paso siguiente
 
 > [!div class="nextstepaction"]
-> [Confirmar que los hosts pueden atestiguarse correctamente](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [Confirmación de que los host pueden atestiguar correctamente](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
-- [Implementación del servicio de protección de host para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-deploying-hgs-overview.md)
+- [Implementación del Servicio de protección de host para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-deploying-hgs-overview.md)

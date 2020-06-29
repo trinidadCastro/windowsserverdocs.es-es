@@ -1,6 +1,6 @@
 ---
-title: 'Lista de comprobación: ajustar un espacio de nombres DFS'
-description: En este artículo se describe cómo optimizar el modo en que el espacio de nombres DFS controla las referencias y sondea AD DS para obtener datos de espacios de nombres actualizados
+title: Lista de comprobación optimizar un espacio de nombres DFS
+description: En este artículo se describe cómo optimizar el modo en que el espacio de nombres DFS administra las referencias y los sondeos AD DS para los datos de espacio de nombres actualizados.
 ms.date: 6/5/2017
 ms.prod: windows-server
 ms.technology: storage
@@ -8,33 +8,33 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 8a4c581801cbb1dcfe3db2813fb66fb4514d6434
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a6632e363b933ff0bce2fd59999e0a1dcffbe665
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402182"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475622"
 ---
-# <a name="checklist-tune-a-dfs-namespace"></a>Lista de comprobación: Optimizar un espacio de nombres DFS
+# <a name="checklist-tune-a-dfs-namespace"></a>Lista de comprobación: optimizar un espacio de nombres DFS
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
 Después de crear un espacio de nombres y de agregar carpetas y destinos, use la siguiente lista de comprobación para optimizar u optimizar la forma en que el espacio de nombres DFS administra las referencias y los sondeos Active Directory Domain Services (AD DS) en busca de datos de espacio de nombres actualizados.
 
--   Impide que los usuarios vean carpetas de un espacio de nombres al que no tienen permiso para acceder. [Habilitar la enumeración basada en el acceso en un espacio de nombres](enable-access-based-enumeration-on-a-namespace.md) 
--   Permite o impide que los usuarios sean remitidos a un espacio de nombre o carpeta de destino cuando tienen acceso a una carpeta en el espacio de nombres. [Habilitar o deshabilitar las referencias y la conmutación por recuperación de clientes](enable-or-disable-referrals-and-client-failback.md) 
--   Ajusta durante cuánto tiempo los clientes mantienen en la caché las referencias antes de solicitar una nueva. [Cambiar la cantidad de tiempo que los clientes almacenan en caché las referencias](change-the-amount-of-time-that-clients-cache-referrals.md)
--   Optimiza cómo los servidores de espacio de nombres sondean AD DS para obtener los datos del espacio de nombres más recientes. [Optimizar el sondeo de los espacios de nombres](optimize-namespace-polling.md)
--   Usa permisos heredados para controlar qué usuarios pueden ver las carpetas de un espacio de nombres para el que está habilitada la enumeración basada en el acceso. [Usar permisos heredados con enumeración basada en el acceso](using-inherited-permissions-with-access-based-enumeration.md)
+-   Impedir que los usuarios vean carpetas en un espacio de nombres para el que no tienen permisos de acceso. [Habilitar la enumeración basada en el acceso en un espacio de nombres](enable-access-based-enumeration-on-a-namespace.md)
+-   Habilitar o impedir que los usuarios se hagan referencia a un espacio de nombres o a una carpeta de destino cuando tienen acceso a una carpeta en el espacio de nombres. [Habilitar o deshabilitar las referencias y la conmutación por recuperación de clientes](enable-or-disable-referrals-and-client-failback.md)
+-   Ajuste cuánto tiempo los clientes almacenan en caché una referencia antes de solicitar una nueva. [Cambiar la cantidad de tiempo que los clientes almacenan en caché las referencias](change-the-amount-of-time-that-clients-cache-referrals.md)
+-   Optimice el modo en que los servidores de espacio de nombres sondean AD DS para obtener los datos de espacio de nombres más recientes. [Optimizar el sondeo de los espacios de nombres](optimize-namespace-polling.md)
+-   Use permisos heredados para controlar qué usuarios pueden ver las carpetas de un espacio de nombres para el que está habilitada la enumeración basada en el acceso. [Usar permisos heredados con enumeración basada en el acceso](using-inherited-permissions-with-access-based-enumeration.md)
 
-Además, mediante el uso de una mejora de los espacios de nombres DFS conocida como prioridad de destino, puede especificar la prioridad de los servidores para que un servidor específico siempre se coloque en primer o último lugar en la lista de servidores (lo que se conoce como referencia) que el cliente recibe cuando tiene acceso a una carpeta. con destinos en el espacio de nombres.
+Además, al usar la mejora de espacios de nombres DFS llamada prioridad de destino, puede especificar la prioridad de los servidores de manera que un servidor específico siempre se encuentre en primer o último lugar en la lista de servidores (lo que se conoce como referencia) que el cliente recibe al tener acceso a una carpeta con destinos del espacio de nombres.
 
--   Especifica el orden en que los usuarios deben remitirse a destinos de carpeta. [Establecer el método para ordenar destinos en las referencias](set-the-ordering-method-for-targets-in-referrals.md)
--   Anula el orden de referencias para un servidor de espacio de nombres o destino de carpeta específicos. [Establecer la prioridad de destino para anular el orden de referencias](set-target-priority-to-override-referral-ordering.md)
+-   Especifique en qué orden se deben hacer referencia a los usuarios de los destinos de carpeta. [Establecer el método para ordenar destinos en las referencias](set-the-ordering-method-for-targets-in-referrals.md)
+-   Invalide el orden de referencia para un servidor de espacio de nombres o destino de carpeta específicos. [Establecer la prioridad de destino para anular el orden de referencias](set-target-priority-to-override-referral-ordering.md)
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Espacios](https://technet.microsoft.com/library/cc771914(v=ws.11).aspx)
+-   [Espacios de nombres](https://technet.microsoft.com/library/cc771914(v=ws.11).aspx)
 -   [Lista de comprobación: Implementar espacios de nombres DFS](checklist-deploy-dfs-namespaces.md)
 -   [Ajustar espacios de nombres DFS](tuning-dfs-namespaces.md)
 
