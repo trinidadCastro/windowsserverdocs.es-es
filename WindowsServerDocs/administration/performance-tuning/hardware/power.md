@@ -1,20 +1,20 @@
 ---
-title: Consideraciones de energía de hardware de servidor
-description: Consideraciones de energía de hardware de servidor
+title: Consideraciones sobre la energía de hardware de Windows Server
+description: Consideraciones acerca de la energía de hardware de Windows Server.
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 865899e5f33bde97dff97efaff6010b95aafd3e6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e110fbb41f44a4c8ac6ab014eeae44e542ade41
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851988"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471690"
 ---
-# <a name="server-hardware-power-considerations"></a>Consideraciones de energía de hardware de servidor
+# <a name="server-hardware-power-considerations"></a>Server Hardware Power Considerations (Consideraciones de alimentación del hardware de servidor)
 
 Es importante reconocer la importancia creciente de la eficacia energética en entornos empresariales y centros de datos. El uso de alto rendimiento y bajo consumo de energía suelen ser objetivos conflictivos, pero al seleccionar cuidadosamente los componentes de servidor, puede lograr el equilibrio correcto entre ellos. En las secciones siguientes se enumeran las directrices para las características y capacidades de energía de los componentes de hardware de servidor.
 
@@ -26,49 +26,55 @@ En general, opte por el procesador de TDP más bajo que se adaptará a sus objet
 
 Para obtener más información sobre las técnicas de administración de energía cooperativa, consulte la sección sobre el control de rendimiento de Collaborative Processor en la [especificación Advanced Configuration and Power Interface](http://www.uefi.org/sites/default/files/resources/ACPI_5_1release.pdf).
 
-
 ## <a name="memory-recommendations"></a>Recomendaciones de memoria
+
 Cuentas de memoria para una fracción cada vez mayor de la potencia total del sistema. Muchos factores afectan al consumo de energía de un DIMM de memoria, como la tecnología de memoria, el código de corrección de errores (ECC), la frecuencia de bus, la capacidad, la densidad y el número de rangos. Por lo tanto, es mejor comparar las clasificaciones de energía esperadas antes de adquirir grandes cantidades de memoria.
 
 La memoria de bajo consumo ya está disponible, pero debe tener en cuenta las ventajas y los costos de rendimiento. Si el servidor va a paginar, también debe tener en cuentan el coste energético de los discos de paginación.
 
-
 ## <a name="disks-recommendations"></a>Recomendaciones de discos
+
 Una mayor cantidad de RPM significa un aumento del consumo energético. Las unidades SSD son más eficientes en cuanto a las unidades de rotación. Además, las unidades de 2,5 pulgadas generalmente requieren menos energía que las unidades de 3,5 pulgadas.
 
 ## <a name="network-and-storage-adapter-recommendations"></a>Recomendaciones de adaptador de almacenamiento y red
+
 Algunos adaptadores reducen el consumo de energía durante los períodos de inactividad. Esta es una consideración importante para los adaptadores de red de 10 GB y los vínculos de almacenamiento de gran ancho de banda (4-8 GB). Estos dispositivos pueden consumir grandes cantidades de energía.
 
-
 ## <a name="power-supply-recommendations"></a>Recomendaciones de la fuente de alimentación
+
 Mejorar la eficacia de la fuente de alimentación es una excelente manera de reducir el consumo energético sin afectar al rendimiento. Las fuentes de alimentación de alta eficiencia pueden ahorrar muchos kilovatios-horas al año, por servidor.
 
-
 ## <a name="fan-recommendations"></a>Recomendaciones de ventilador
+
 Los aficionados, como las fuentes de alimentación, son un área en la que puede reducir el consumo energético sin que ello afecte al rendimiento del sistema. Los ventiladores de velocidad variable pueden reducir RPM a medida que disminuye la carga del sistema, lo que elimina el consumo energético innecesario.
 
-
 ## <a name="usb-devices-recommendations"></a>Recomendaciones de dispositivos USB
+
 Windows Server 2016 habilita la suspensión selectiva para dispositivos USB de forma predeterminada. Sin embargo, un controlador de dispositivo mal escrito puede seguir interrumpiendo la eficacia energética del sistema en un margen mayor. Para evitar posibles problemas, desconecte los dispositivos USB, deshabilítelo en el BIOS o elija los servidores que no requieran dispositivos USB.
 
-
 ## <a name="remotely-managed-power-strip-recommendations"></a>Recomendaciones de la franja de energía administrada de forma remota
+
 Las franjas eléctricas no son una parte integral del hardware de servidor, pero pueden hacer una gran diferencia en el centro de datos. Las medidas muestran que los servidores de volúmenes que están conectados, pero que se han desconectado de aparentemente formen, pueden requerir hasta 30 vatios de energía.
 
 Para evitar la pérdida de electricidad, puede implementar una franja de energía administrada de forma remota para cada bastidor de servidores con el fin de desconectar mediante programación la alimentación de servidores específicos.
 
 ## <a name="processor-terminology"></a>Terminología del procesador
+
 La terminología del procesador que se usa en este tema refleja la jerarquía de los componentes disponibles en la siguiente ilustración. Los términos que se usan de mayor a menor granularidad de los componentes son los siguientes:
 
--   Socket de procesador
--   Nodo NUMA
--   Core
--   Procesador lógico
+- Socket de procesador
+- nodo NUMA
+- Principal
+- Procesador lógico
 
-![Terminología del procesador](../media/perftune-guide-figure-1.png)
+![terminología del procesador](../media/perftune-guide-figure-1.png)
 
-## <a name="see-also"></a>Consulta también
-- [Consideraciones de rendimiento de hardware de servidor](index.md)
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Consideraciones de rendimiento del hardware de servidor](index.md)
+
 - [Power and Performance Tuning](power/power-performance-tuning.md) (Optimización de potencia y rendimiento)
+
 - [Processor Power Management Tuning](power/processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)
+
 - [Recommended Balanced Plan Parameters](power/recommended-balanced-plan-parameters.md) (Parámetros recomendados del plan equilibrado)

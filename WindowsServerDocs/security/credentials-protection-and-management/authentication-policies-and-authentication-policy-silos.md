@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 48171657b42ec8b6ba09aa6a35a2f898d6775d07
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72ad55fad515ea769ea739f037165547b1104889
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857088"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472962"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>Directivas de autenticación y silos de directivas de autenticación
 
@@ -61,7 +61,7 @@ Las directivas de autenticación controlan lo siguiente:
 
 El tipo de cuenta Active Directory determina el rol del llamador como uno de los siguientes:
 
--   **Usuario**
+-   **User**
 
     Los usuarios siempre deben ser miembros del grupo de seguridad Usuarios protegidos que, de forma predeterminada, rechaza los intentos de autenticación con NTLM.
 
@@ -73,7 +73,7 @@ El tipo de cuenta Active Directory determina el rol del llamador como uno de los
 
     Se usan cuentas de servicio administradas independientes, cuentas de servicio administradas de grupo o un objeto de cuenta personalizada que deriva de estos dos tipos de cuentas de servicio. Las directivas pueden establecer las condiciones de control de acceso de un dispositivo, que se usan para restringir las credenciales de la cuenta de servicio administrada a dispositivos específicos con una identidad Active Directory. Los servicios nunca deben ser miembros del grupo de seguridad Usuarios protegidos porque se producirá un error de autenticación de entrada.
 
--   **Computadora**
+-   **Equipo**
 
     Se usa el objeto de cuenta de equipo o el objeto de cuenta personalizada que deriva del objeto de cuenta de equipo. Las directivas pueden establecer las condiciones del control de acceso necesarias para permitir la autenticación de la cuenta en función de las propiedades del usuario y dispositivo. Los equipos nunca deben ser miembros del grupo de seguridad Usuarios protegidos porque se producirá un error de autenticación de entrada. De forma predeterminada, se rechazan los intentos de usar autenticación NTLM. No se debe configurar una vigencia de TGT para cuentas de equipo.
 
@@ -84,10 +84,10 @@ El tipo de cuenta Active Directory determina el rol del llamador como uno de los
 
 En el esquema de la siguiente tabla se definen las directivas para objetos de Active Directory para usuarios, equipos y servicios.
 
-|Tipo|Nombre para mostrar|Descripción|
+|Tipo|Display Name (Nombre para mostrar)|Descripción|
 |----|--------|--------|
 |Directiva|Directiva de autenticación|Una instancia de esta clase define los comportamientos de las directivas de autenticación para las entidades de seguridad asignadas.|
-|Directiva|Directivas de autenticación|Un contenedor de esta clase puede contener objetos de directiva de autenticación.|
+|Directiva|Authentication Policies|Un contenedor de esta clase puede contener objetos de directiva de autenticación.|
 |Directiva|Authentication Policy Enforced|Especifica si se aplica la directiva de autenticación.<p>Cuando no se aplica, la directiva está en modo de auditoría de forma predeterminada, y se generan eventos que indican posibles operaciones correctas o incorrectas, pero no se aplican protecciones al sistema.|
 |Directiva|Assigned Authentication Policy Backlink|Este atributo es el vínculo de retroceso de msDS-AssignedAuthNPolicy.|
 |Directiva|Assigned Authentication Policy|Especifica qué AuthNPolicy se debe aplicar a esta entidad de seguridad.|
@@ -96,22 +96,22 @@ En el esquema de la siguiente tabla se definen las directivas para objetos de Ac
 |Usuario|ms-DS-User-Allowed-To-Authenticate-To|Este atributo se usa para determinar el conjunto de entidades de seguridad que tienen permiso para autenticarse en un servicio que se ejecuta con la cuenta de usuario.|
 |Usuario|ms-DS-User-Allowed-To-Authenticate-From|Este atributo se usa para determinar el conjunto de dispositivos en los que la cuenta de usuario tiene permiso para iniciar sesión.|
 |Usuario|User TGT Lifetime|Especifica el tiempo máximo de un TGT de Kerberos emitido a un usuario (expresado en segundos). Los TGT resultantes no son renovables.|
-|Equipo|Computer Authentication Policy|Especifica qué AuthNPolicy se debe aplicar a los equipos que están asignados a este objeto de silo.|
-|Equipo|Computer Authentication Policy Backlink|Este atributo es el vínculo de retroceso de msDS-ComputerAuthNPolicy.|
-|Equipo|ms-DS-Computer-Allowed-To-Authenticate-To|Este atributo se usa para determinar el conjunto de entidades de seguridad que tienen permiso para autenticarse en un servicio que se ejecuta con la cuenta de equipo.|
-|Equipo|Computer TGT Lifetime|Especifica el tiempo máximo de un TGT de Kerberos emitido a un equipo (expresado en segundos). No se recomienda cambiar esta configuración.|
-|Service|Service Authentication Policy|Especifica qué AuthNPolicy se debe aplicar a los servicios que están asignados a este objeto de silo.|
-|Service|Service Authentication Policy Backlink|Este atributo es el vínculo de retroceso de msDS-ServiceAuthNPolicy.|
-|Service|ms-DS-Service-Allowed-To-Authenticate-To|Este atributo se usa para determinar el conjunto de entidades de seguridad que tienen permiso para autenticarse en un servicio que se ejecuta con la cuenta de servicio.|
-|Service|ms-DS-Service-Allowed-To-Authenticate-From|Este atributo se usa para determinar el conjunto de dispositivos en los que una cuenta de servicio tiene permiso para iniciar sesión.|
-|Service|Service TGT Lifetime|Especifica el tiempo máximo de un TGT de Kerberos emitido a un servicio (expresado en segundos).|
+|Computer|Computer Authentication Policy|Especifica qué AuthNPolicy se debe aplicar a los equipos que están asignados a este objeto de silo.|
+|Computer|Computer Authentication Policy Backlink|Este atributo es el vínculo de retroceso de msDS-ComputerAuthNPolicy.|
+|Computer|ms-DS-Computer-Allowed-To-Authenticate-To|Este atributo se usa para determinar el conjunto de entidades de seguridad que tienen permiso para autenticarse en un servicio que se ejecuta con la cuenta de equipo.|
+|Computer|Computer TGT Lifetime|Especifica el tiempo máximo de un TGT de Kerberos emitido a un equipo (expresado en segundos). No se recomienda cambiar esta configuración.|
+|Servicio|Service Authentication Policy|Especifica qué AuthNPolicy se debe aplicar a los servicios que están asignados a este objeto de silo.|
+|Servicio|Service Authentication Policy Backlink|Este atributo es el vínculo de retroceso de msDS-ServiceAuthNPolicy.|
+|Servicio|ms-DS-Service-Allowed-To-Authenticate-To|Este atributo se usa para determinar el conjunto de entidades de seguridad que tienen permiso para autenticarse en un servicio que se ejecuta con la cuenta de servicio.|
+|Servicio|ms-DS-Service-Allowed-To-Authenticate-From|Este atributo se usa para determinar el conjunto de dispositivos en los que una cuenta de servicio tiene permiso para iniciar sesión.|
+|Servicio|Service TGT Lifetime|Especifica el tiempo máximo de un TGT de Kerberos emitido a un servicio (expresado en segundos).|
 
 Las directivas de autenticación se pueden configurar para cada silo mediante la Consola de administración de Active Directory o Windows PowerShell. Para obtener más información, consulta [Configurar cuentas protegidas](how-to-configure-protected-accounts.md).
 
-## <a name="how-it-works"></a>Cómo funciona
+## <a name="how-it-works"></a>Funcionamiento
 En esta sección se describe cómo funcionan los silos de directivas de autenticación y las directivas de autenticación junto con el grupo de seguridad Usuarios protegidos y la implementación del protocolo Kerberos en Windows.
 
--   [Cómo se usa el protocolo Kerberos con silos y directivas de autenticación](#BKMK_HowKerbUsed)
+-   [Cómo se usa el protocolo Kerberos con los silos y las directivas de autenticación](#BKMK_HowKerbUsed)
 
 -   [Cómo funciona la restricción del inicio de sesión de un usuario](#BKMK_HowRestrictingSignOn)
 
@@ -135,11 +135,11 @@ Para obtener más información sobre este grupo de seguridad, consulta [Cómo fu
 
 Los silos de directivas de autenticación y las directivas de autenticación aprovechan la infraestructura de autenticación de Windows existente. Se rechaza el uso del protocolo NTLM y se usa el protocolo Kerberos con nuevos tipos de cifrado. Las directivas de autenticación complementan el grupo de seguridad Usuarios protegidos porque proporcionan una manera de aplicar restricciones configurables a las cuentas, además de restricciones a las cuentas de servicios y equipos. Las directivas de autenticación se aplican durante el intercambio del servicio de autenticación (AS) o del servicio de concesión de vales (TGS) del protocolo Kerberos. Para obtener más información sobre cómo usa Windows el protocolo Kerberos y qué cambios se han realizado para admitir silos de directivas de autenticación y directivas de autenticación, consulta:
 
--   [Cómo funciona el protocolo de autenticación Kerberos versión 5](https://technet.microsoft.com/library/cc772815(v=ws.10).aspx)
+-   [Funcionamiento del protocolo de autenticación Kerberos, versión 5](https://technet.microsoft.com/library/cc772815(v=ws.10).aspx)
 
--   [Cambios en la autenticación Kerberos](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) (Windows Server 2008 R2 y Windows 7)
+-   [Cambios en la autenticación Kerberos](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) (Windows Server 2008 R2 y Windows 7)
 
-### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>Cómo se usa el protocolo Kerberos con directivas y silos de directivas de autenticación
+### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>Cómo se usa el protocolo Kerberos con los silos de directivas de autenticación y las directivas de autenticación
 Cuando una cuenta de dominio se vincula a un silo de directivas de autenticación y el usuario inicia sesión, el Administrador de cuentas de seguridad agrega el tipo de notificación Silo de directivas de autenticación que incluye el silo como valor. Esta notificación en la cuenta proporciona acceso al silo de destino.
 
 Cuando se aplica una directiva de autenticación y en el controlador de dominio se recibe una solicitud del servicio de autenticación para una cuenta de servicio, el controlador de dominio devuelve un TGT no renovable con la vigencia configurada (a menos que la vigencia del TGT del dominio sea menor).
@@ -236,7 +236,7 @@ Para ver los pasos que usan estos eventos para solucionar problemas, consulta [S
 |106<p>**AuthenticationPolicyFailures-DomainController**|Motivo: Se produce un error de restricción Kerberos porque el usuario o dispositivo no están autorizados a autenticarse en el servidor.<p>Se registra un evento en el controlador de dominio para indicar que se denegó un vale de servicio de Kerberos porque el usuario, el dispositivo o ambos no cumplen las restricciones de control de acceso aplicadas.<p>Muestra los nombres de dispositivo, directiva y silo.|
 |306<p>**AuthenticationPolicyFailures-DomainController**|Motivo: Se podría producir un error de restricción Kerberos porque el usuario o dispositivo no están autorizados a autenticarse en el servidor.<p>En el modo de auditoría, se registra un evento informativo en el controlador de dominio para indicar que se denegará un vale de servicio de Kerberos porque el usuario, el dispositivo o ambos no cumplen las restricciones de control de acceso.<p>Muestra los nombres de dispositivo, directiva y silo.|
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 [Cómo configurar cuentas protegidas](how-to-configure-protected-accounts.md)
 
 [Protección y administración de credenciales](credentials-protection-and-management.md)

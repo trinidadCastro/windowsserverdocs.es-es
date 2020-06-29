@@ -3,16 +3,16 @@ title: Optimización de la administración de energía del procesador (PPM) para
 description: Optimización de la administración de energía del procesador (PPM) para el plan de energía del equilibrio de Windows Server
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c7319c843609f8bf846dd6ccf4bc2bf91f3b942
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25244ecb653f7a1b8461130bba40901b35945765
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851978"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471620"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Optimización de la administración de energía del procesador (PPM) para el plan de energía del equilibrio de Windows Server
 
@@ -25,30 +25,29 @@ Si ejecuta un sistema de servidor que tiene características de carga de trabajo
 
 ## <a name="windows-processor-power-tuning-methodology"></a>Metodología de optimización de energía del procesador de Windows
 
-
 ### <a name="tested-workloads"></a>Cargas de trabajo probadas
 
 Las cargas de trabajo se seleccionan para cubrir un mejor conjunto de cargas de trabajo de Windows Server "típicas". Obviamente, este conjunto no pretende ser representativo de toda la amplitud de entornos de servidor del mundo real.
 
 La optimización de cada directiva de energía se basa en las cinco cargas de trabajo siguientes:
 
--   **Carga de trabajo del servidor Web de IIS**
+- **Carga de trabajo del servidor Web de IIS**
 
     Se utiliza una prueba comparativa interna de Microsoft denominada aspectos básicos web para optimizar la eficacia energética de las plataformas que ejecutan el servidor Web de IIS. El programa de instalación contiene un servidor Web y varios clientes que simulan el tráfico de acceso web. La distribución de páginas web dinámicas, estáticas activas (en memoria) y estáticas en frío (acceso al disco necesario) se basa en los estudios estadísticos de los servidores de producción. Para que los núcleos de CPU del servidor se inserten en el uso completo (un extremo del espectro probado), el programa de instalación necesita suficientes recursos de red y de disco.
 
--   **SQL Server carga de trabajo de base de datos**
+- **SQL Server carga de trabajo de base de datos**
 
     La prueba comparativa [TPC-E](http://www.tpc.org/tpce/default.asp) es un punto de referencia común para el análisis de rendimiento de bases de datos. Se usa para generar una carga de trabajo OLTP para optimizaciones de optimización de PPM. Esta carga de trabajo tiene una e/s de disco significativa y, por tanto, tiene un requisito de alto rendimiento para el sistema de almacenamiento y el tamaño de la memoria.
 
--   **Carga de trabajo del servidor de archivos**
+- **Carga de trabajo del servidor de archivos**
 
     Una prueba comparativa desarrollada por Microsoft denominada [FSCT](http://www.snia.org/sites/default/files2/sdc_archives/2009_presentations/tuesday/BartoszNyczkowski-JianYan_FileServerCapacityTool.pdf) se usa para generar una carga de trabajo de servidor de archivos SMB. Crea un conjunto de archivos grandes en el servidor y utiliza muchos sistemas cliente (reales o virtualizados) para generar operaciones de apertura, cierre, lectura y escritura de archivos. La combinación de operaciones se basa en los estudios estadísticos de los servidores de producción. Enfatiza los recursos de CPU, disco y red.
 
--   **SPECpower: carga de trabajo de JAVA**
+- **SPECpower: carga de trabajo de JAVA**
 
-    [SPECpower\_ssj2008](http://spec.org/power_ssj2008/) es el primer Benchmark de especificación estándar del sector que evalúa conjuntamente las características de potencia y rendimiento. Es una carga de trabajo de Java del lado servidor con distintos niveles de carga de CPU. No requiere muchos recursos de disco o de red, pero tiene ciertos requisitos para el ancho de banda de memoria. Casi toda la actividad de la CPU se realiza en modo de usuario; la actividad de modo kernel no tiene un gran impacto en las características de potencia y rendimiento de las pruebas comparativas, excepto en las decisiones de administración de energía.
+    [SPECpower \_ ssj2008](http://spec.org/power_ssj2008/) es el primer Benchmark de especificación estándar del sector que evalúa conjuntamente las características de potencia y rendimiento. Es una carga de trabajo de Java del lado servidor con distintos niveles de carga de CPU. No requiere muchos recursos de disco o de red, pero tiene ciertos requisitos para el ancho de banda de memoria. Casi toda la actividad de la CPU se realiza en modo de usuario; la actividad de modo kernel no tiene un gran impacto en las características de potencia y rendimiento de las pruebas comparativas, excepto en las decisiones de administración de energía.
 
--   **Carga de trabajo del servidor de aplicaciones**
+- **Carga de trabajo del servidor de aplicaciones**
 
     La prueba comparativa [de SAP-SD](http://global.sap.com/campaigns/benchmark/index.epx) se usa para generar una carga de trabajo del servidor de aplicaciones. Se utiliza una configuración de dos niveles, con la base de datos y el servidor de aplicaciones en el mismo host de servidor. Esta carga de trabajo también emplea el tiempo de respuesta como una métrica de rendimiento, que difiere de otras cargas de trabajo probadas. Por lo tanto, se usa para comprobar el impacto de los parámetros PPM en la capacidad de respuesta. No obstante, no pretende ser representativa de todas las cargas de trabajo de producción sensibles a la latencia.
 
@@ -125,8 +124,8 @@ Una vez más, esto se suma a la complejidad del proceso de optimización, por lo
 
 Esta es la razón por la que Windows proporciona un plan de energía **equilibrado** en primer lugar, porque en muchos casos probablemente no merece la pena el esfuerzo de la optimización manual para una carga de trabajo específica en un servidor específico.
 
-## <a name="see-also"></a>Consulta también
-- [Consideraciones de rendimiento de hardware de servidor](../index.md)
+## <a name="see-also"></a>Consulte también
+- [Consideraciones de rendimiento del hardware de servidor](../index.md)
 - [Server Hardware Power Considerations](../power.md) (Consideraciones de alimentación del hardware de servidor)
 - [Power and Performance Tuning](power-performance-tuning.md) (Optimización de potencia y rendimiento)
 - [Processor Power Management Tuning](processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)

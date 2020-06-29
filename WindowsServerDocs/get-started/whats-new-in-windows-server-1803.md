@@ -8,12 +8,12 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 8b359ac883c24d559e2c3d47db5b68e4f5341338
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c4676ee720780ac7f347d98048c920bd4ce68e59
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826008"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473192"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Novedades de Windows Server, versión 1803
 
@@ -35,7 +35,7 @@ Windows Server versión 1709 se lanzó en septiembre de 2017 como la primera ver
 
 En función de la telemetría y los comentarios, estos canales han demostrado que se ajustan bien a la siguiente estrategia general:
 - El Canal semianual es ideal para escenarios de innovación y aplicaciones modernas, como contenedores y microservicios.
-- El Canal de mantenimiento a largo plazo es la versión preferida para escenarios de infraestructuras básicos, como el centro de datos definido por el software y la infraestructura hiperconvergida (HCI). 
+- El Canal de mantenimiento a largo plazo es la versión preferida para escenarios de infraestructuras básicos, como el centro de datos definido por el software y la infraestructura hiperconvergida (HCI).
 
 Los escenarios específicos para el Canal semianual y el Canal de mantenimiento a largo plazo son los siguientes:
 
@@ -51,7 +51,7 @@ Los escenarios específicos para el Canal semianual y el Canal de mantenimiento 
 ## <a name="application-platform-and-containers"></a>Contenedores y plataforma de aplicaciones
 
 - Optimization
-    - La imagen de contenedor base de Server Core se reduce en un 30 % con respecto a Windows Server, versión 1709. 
+    - La imagen de contenedor base de Server Core se reduce en un 30 % con respecto a Windows Server, versión 1709.
     - La compatibilidad de aplicaciones también se ha mejorado para ayudar con la introducción en contenedores de las aplicaciones tradicionales.
     - El rendimiento de inicio del contenedor y el rendimiento de tiempo de ejecución se han mejorado también gracias a varias revisiones y optimizaciones.
 - Red de contenedores: se ha agregado compatibilidad con el proxy Localhost y http, y se ha mejorado el tiempo de inicio y la escalabilidad de contenedor.
@@ -70,16 +70,16 @@ Ahora está disponible un contenedor más pequeño de Server Core con mejor comp
 
 WSL permite a los administradores de servidores usar las herramientas existentes y los scripts de Linux en Windows Server. Muchas mejoras expuestas en el [blog de línea de comandos](https://blogs.msdn.microsoft.com/commandline/tag/wsl/) ahora forman parte de Windows Server, incluidas Tareas en segundo plano, DriveFS, WSLPath y mucho más.
 
-### <a name="kubernetes"></a>Kubernetes 
+### <a name="kubernetes"></a>Kubernetes
 
-Kubernetes (normalmente denominado K8s) es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones incluidas en contenedor desarrollados bajo la protección de la [Cloud Native Computing Foundation](https://www.cncf.io). 
+Kubernetes (normalmente denominado K8s) es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones incluidas en contenedor desarrollados bajo la protección de la [Cloud Native Computing Foundation](https://www.cncf.io).
 
 En Windows Server, los usuarios de la versión 1709 podían aprovechar Kubernetes en características de redes de Windows, que incluye:
 - Compartimentos de pods compartidos: los pods de infraestructura y trabajadores ahora comparten un compartimiento de red (similar a un espacio de nombres de Linux).
 - Optimización de punto de conexión: gracias al uso compartido de compartimiento, los servicios de contenedor necesitan realizar un seguimiento de al menos la mitad de los muchos puntos de conexión.
 - Optimización de la ruta de acceso a datos: las mejoras en la plataforma de filtrado virtual y el servicio de redes de host permiten el equilibrio de carga basado en kernel
 
-Con el lanzamiento de Windows Server, versión 1803, estará disponibles más características en las próximas versiones de kubernetes: 
+Con el lanzamiento de Windows Server, versión 1803, estará disponibles más características en las próximas versiones de kubernetes:
 - [Complementos de almacenamiento](https://github.com/Microsoft/K8s-Storage-Plugins) para los contenedores de Windows organizados por Kubernetes.
 - Redes de escala de nube a través de iniciativas como nuestra asociación con soporte [Tigera on Project Calico](https://cloudblogs.microsoft.com/windowsserver/2017/12/07/securing-modernized-apps-and-simplified-networking-on-windows-with-calico/).
 - Soporte de plataforma de Windows para pods aislados de Hyper-V con varios contenedores por Pod.
@@ -90,7 +90,7 @@ Con el lanzamiento de Windows Server, versión 1803, estará disponibles más ca
 - Se ha corregido un problema que interrumpe los contadores de rendimiento de ASP.net.
 - Se ha corregido un problema donde los servicios que se ejecutan en los contenedores no recibían notificación de cierre.
     - En concreto, la notificación se ha cambiado a CTRL_SHUTDOWN_EVENT para las imágenes basadas en contenedor Server Core y Nano Server. Además, extiende la notificación en imágenes basadas en contenedor de Server Core para que afecten a todos los procesos que se ejecuten en el contenedor, incluido el envío de notificaciones de cierre de servicio a los servicios que se ejecuten en el contenedor.
-- Se ha corregido una incompatibilidad de docker pull y docker load con la configuración de directiva que determina si la protección de BitLocker es necesaria para que las unidades de datos fijas sean escribibles (FDVDenyWriteAccess). 
+- Se ha corregido una incompatibilidad de docker pull y docker load con la configuración de directiva que determina si la protección de BitLocker es necesaria para que las unidades de datos fijas sean escribibles (FDVDenyWriteAccess).
 
 ## <a name="storage"></a>Almacenamiento
 
@@ -108,7 +108,7 @@ Puedes usar el siguiente comando de Windows PowerShell para habilitar el servici
 Install-WindowsFeature -Name WDS
 ```
 
-## <a name="see-also"></a>Consulta también
+## <a name="additional-references"></a>Referencias adicionales
 
 [Información de versión de Windows Server](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
 [Novedades de Windows 10, contenido profesional de TI de la versión 1803](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)

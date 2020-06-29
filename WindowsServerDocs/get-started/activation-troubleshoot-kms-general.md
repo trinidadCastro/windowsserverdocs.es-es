@@ -8,12 +8,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: fc673d2c3e1404dbd750d4c0ef05ec6db50017aa
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: dc84edaebda64d3ae359e17b683411ac479c9397
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963081"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473222"
 ---
 # <a name="guidelines-for-troubleshooting-the-key-management-service-kms"></a>Instrucciones para solucionar problemas del Servicio de administración de claves (KMS)
 
@@ -44,14 +44,14 @@ Los campos más importantes para la solución de problemas son los siguientes. L
 - **Nombre**. Indica la edición de Windows que está instalada en el sistema host de KMS. Esto puede ser importante para solucionar problemas si tienes problemas para agregar o cambiar la clave de host de KMS (por ejemplo, para comprobar que la clave es compatible con esa edición del SO).
 - **Descripción**. Aquí es donde verás la clave que está instalada. Usa este campo para comprobar qué clave se usó para activar el servicio y si es la correcta o no para los clientes de KMS que has implementado.
 - **Estado de licencia**. Este es el estado del sistema host de KMS. El valor debe ser **Con licencia**. Cualquier otro valor significa que hay algún error y puede que tenga que volver a activar el host.
-- **Recuento actual**. El número mostrado estará entre **0** y **50**. El recuento es acumulativo (entre sistemas operativos) e indica el número de sistemas válidos que se han intentado activar en un período de 30 días.  
-  
-  Si el recuento es **0**, significa que el servicio se ha activado recientemente o que no hay clientes válidos conectados al host de KMS.  
-  
-  El recuento no aumentará por encima de **50**, independientemente del número de sistemas válidos que existan en el entorno. Esto se debe a que el recuento se establece para almacenarse en caché solo el doble que la directiva de licencias máxima devuelta por un cliente de KMS. Actualmente, el sistema operativo del cliente Windows establece la directiva máxima, que requiere un recuento de **25** o superior desde el host de KMS para activarse. Por lo tanto, el número más alto en el host de KMS es 2×25, o 50. Ten en cuenta que en entornos que contienen solo clientes de KMS de Windows Server, el recuento máximo en el host de KMS será de **10**. Esto se debe a que el umbral para las ediciones de Windows Server es de **5** (2×5, o 10).  
-  
-  Un problema común relacionado con el recuento es si el entorno tiene un host de KMS activado y suficientes clientes, pero el recuento no aumenta más allá de uno. El problema principal es que la imagen del cliente implementada no se haya configurado correctamente (**sysprep /generalize**) y los sistemas no tengan id. de máquina de cliente (CMID) exclusivos. Para obtener más información, consulta [Cliente KMS](#kms-client) y [The KMS current count does not increase when you add new Windows Vista or Windows 7-based client computers to the network](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista) (El recuento actual de KMS no aumenta al agregar a la red nuevos equipos cliente basados en Windows Vista o Windows 7). Uno de nuestros ingenieros de asignación de nivel de soporte también ha escrito sobre este problema, en [KMS Host Client Count not Increasing Due to Duplicate CMID’S](https://blogs.technet.microsoft.com/askcore/2009/10/16/kms-host-client-count-not-increasing-due-to-duplicate-cmids/) (El recuento de clientes en el host KMS no aumenta debido a CMID duplicados).  
-  
+- **Recuento actual**. El número mostrado estará entre **0** y **50**. El recuento es acumulativo (entre sistemas operativos) e indica el número de sistemas válidos que se han intentado activar en un período de 30 días.
+
+  Si el recuento es **0**, significa que el servicio se ha activado recientemente o que no hay clientes válidos conectados al host de KMS.
+
+  El recuento no aumentará por encima de **50**, independientemente del número de sistemas válidos que existan en el entorno. Esto se debe a que el recuento se establece para almacenarse en caché solo el doble que la directiva de licencias máxima devuelta por un cliente de KMS. Actualmente, el sistema operativo del cliente Windows establece la directiva máxima, que requiere un recuento de **25** o superior desde el host de KMS para activarse. Por lo tanto, el número más alto en el host de KMS es 2×25, o 50. Ten en cuenta que en entornos que contienen solo clientes de KMS de Windows Server, el recuento máximo en el host de KMS será de **10**. Esto se debe a que el umbral para las ediciones de Windows Server es de **5** (2×5, o 10).
+
+  Un problema común relacionado con el recuento es si el entorno tiene un host de KMS activado y suficientes clientes, pero el recuento no aumenta más allá de uno. El problema principal es que la imagen del cliente implementada no se haya configurado correctamente (**sysprep /generalize**) y los sistemas no tengan id. de máquina de cliente (CMID) exclusivos. Para obtener más información, consulta [Cliente KMS](#kms-client) y [The KMS current count does not increase when you add new Windows Vista or Windows 7-based client computers to the network](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista) (El recuento actual de KMS no aumenta al agregar a la red nuevos equipos cliente basados en Windows Vista o Windows 7). Uno de nuestros ingenieros de asignación de nivel de soporte también ha escrito sobre este problema, en [KMS Host Client Count not Increasing Due to Duplicate CMID’S](https://blogs.technet.microsoft.com/askcore/2009/10/16/kms-host-client-count-not-increasing-due-to-duplicate-cmids/) (El recuento de clientes en el host KMS no aumenta debido a CMID duplicados).
+
   Otro motivo por el que puede que el recuento no aumente es que hay demasiados hosts de KMS en el entorno y el recuento se distribuya en todos ellos.
 - **Escuchar en el puerto**. La comunicación con KMS usa RPC anónima. De forma predeterminada, los clientes usan el puerto TCP 1688 para conectarse al host de KMS. Asegúrate de que este puerto esté abierto entre los clientes de KMS y el host de KMS. Puedes cambiar o configurar el puerto en el host de KMS. Durante su comunicación, el host de KMS envía la designación de puerto a los clientes de KMS. Si cambias el puerto en un cliente de KMS, la designación de puerto se sobrescribe cuando el cliente se pone en contacto con el host.
 
@@ -61,7 +61,7 @@ A menudo nos preguntan sobre la sección "solicitudes acumulativas" de la salida
 
 #### <a name="event-id-12290"></a>Id. de evento 12290
 
-El host de KMS registra el Id. de evento 12290 cuando un cliente de KMS se pone en contacto con el host para activarlo. El Id. de evento 12290 brinda una cantidad significativa de información que puedes usar para averiguar qué tipo de cliente se ha puesto en contacto con el host y por qué se ha producido un error. El siguiente segmento de una entrada de Id. de evento 12290 procede del registro de eventos del Servicio de administración de claves del host de KMS.  
+El host de KMS registra el Id. de evento 12290 cuando un cliente de KMS se pone en contacto con el host para activarlo. El Id. de evento 12290 brinda una cantidad significativa de información que puedes usar para averiguar qué tipo de cliente se ha puesto en contacto con el host y por qué se ha producido un error. El siguiente segmento de una entrada de Id. de evento 12290 procede del registro de eventos del Servicio de administración de claves del host de KMS.
 
 ![Evento 12290 de KMS](./media/ee939272.kms_12290_event(en-us,technet.10).png)
 
@@ -113,7 +113,7 @@ Cuando un cliente de KMS se activa o se reactiva correctamente, el cliente regis
 
 ![Id. de evento 12288 del cliente de KMS](./media/ee939272.client_12288(en-us,technet.10).png)
 
-Si solo ves el Id. de evento 12288 (sin el Id. de evento 12289 correspondiente), significa que el cliente de KMS no ha podido comunicarse con el host de KMS, que el host de KMS no ha respondido o que el cliente no ha recibido la respuesta. En este caso, verifica si el host de KMS es reconocible y si los clientes de KMS pueden ponerse en contacto con él.  
+Si solo ves el Id. de evento 12288 (sin el Id. de evento 12289 correspondiente), significa que el cliente de KMS no ha podido comunicarse con el host de KMS, que el host de KMS no ha respondido o que el cliente no ha recibido la respuesta. En este caso, verifica si el host de KMS es reconocible y si los clientes de KMS pueden ponerse en contacto con él.
 
 La información más importante en el Id. de evento 12288 son los datos de la sección de información. Por ejemplo, en esta sección se muestra el estado actual del cliente más el FQDN y el puerto TCP que el cliente usó cuando intentó activarse. Puedes usar el FQDN para solucionar problemas de casos en los que el recuento de un host de KMS no aumente. Por ejemplo, si hay demasiados hosts de KMS disponibles para los clientes (ya sean sistemas legítimos o no autorizados), el recuento se puede distribuir entre todos ellos.
 
@@ -133,7 +133,7 @@ Si tienes que llamar a Soporte técnico para solucionar problemas de activación
 - La salida de **slmgr.vbs /dlv** del host de KMS y los sistemas cliente de KMS. Tanto si usas wscript como cscript para ejecutar el comando, puede usar CTRL+C para copiar el resultado y, luego, pegarlo en el Bloc de notas para enviarlo al contacto de Soporte técnico.
 - Registros de eventos del host de KMS (registro del Servicio de administración de claves) y de los sistemas cliente de KMS (registro de aplicación)
 
-## <a name="see-also"></a>Consulta también
+## <a name="additional-references"></a>Referencias adicionales
 - [Ask the Core Team: #Activation](https://blogs.technet.microsoft.com/askcore/tag/Activation/) (Pregunta al equipo principal: #Activación)
 
 

@@ -1,6 +1,6 @@
 ---
 title: prnmngr
-description: Obtenga información acerca de cómo agregar, eliminar y enumerar impresoras y conexiones.
+description: Tema de referencia del comando PRNMNGR, que agrega, elimina y enumera impresoras o conexiones de impresora, además de establecer y mostrar la impresora predeterminada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,61 +9,64 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 0851e5c24d743a80b7edc611306df4f65338d95d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1ccc04e7e040612d9243fe1e3f5ed67b8131ab9d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722823"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472220"
 ---
 # <a name="prnmngr"></a>prnmngr
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Agrega, elimina y enumera impresoras o conexiones de impresora, además de establecer y mostrar la impresora predeterminada.
+Agrega, elimina y enumera impresoras o conexiones de impresora, además de establecer y mostrar la impresora predeterminada. Este comando es un script de Visual Basic ubicado en el `%WINdir%\System32\printing_Admin_Scripts\<language>` directorio. Para usar este comando en un símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo PRNMNGR o cambie los directorios a la carpeta correspondiente. Por ejemplo: `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr`.
 
 ## <a name="syntax"></a>Sintaxis
+
 ```
-cscript Prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <ServerName>] 
-[-p <printerName>] [-m <printermodel>] [-r <PortName>] [-u <UserName>] 
-[-w <Password>]
+cscript prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <Servername>] [-p <Printername>] [-m <printermodel>] [-r <portname>] [-u <Username>]
+[-w <password>]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|           Parámetro           |                                                                                                                                                                                        Descripción                                                                                                                                                                                        |
-|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              -a               |                                                                                                                                                                             agrega una conexión de impresora local.                                                                                                                                                                              |
-|              -d               |                                                                                                                                                                               elimina una conexión de impresora.                                                                                                                                                                               |
-|              -X               |                                                                                                               elimina todas las impresoras del servidor especificado con el parámetro **-s** . Si no especifica un servidor, Windows elimina todas las impresoras en el equipo local.                                                                                                               |
-|              -g               |                                                                                                                                                                               Muestra la impresora predeterminada.                                                                                                                                                                               |
-|              -T               |                                                                                                                                                        Establece la impresora predeterminada en la impresora especificada por el parámetro **-p** .                                                                                                                                                         |
-|              -l               |                                                                                                         muestra todas las impresoras instaladas en el servidor especificado por el parámetro **-s** . Si no especifica un servidor, Windows enumera las impresoras instaladas en el equipo local.                                                                                                         |
-|               c               |                                                                                                                                      Especifica que el parámetro se aplica a las conexiones de impresora. Se puede usar con los parámetros **-a** y **-x** .                                                                                                                                      |
-|        -s<ServerName>        |                                                                                                                  Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local.                                                                                                                  |
-|       -p \<nombredeimpresora>       |                                                                                                                                                                Especifica el nombre de la impresora que desea administrar.                                                                                                                                                                 |
-|     -m \<DrivermodelName>     |                                                                                                          Especifica (por nombre) el controlador que desea instalar. Los controladores a menudo se denominan para el modelo de impresora que admiten. Consulte la documentación de la impresora para obtener más información.                                                                                                           |
-|        -r \<PortName>         |                                                                         Especifica el puerto al que está conectada la impresora. Si se trata de un puerto paralelo o serie, use el identificador del puerto (por ejemplo, LPT1: o COM1:). Si se trata de un puerto TCP/IP, utilice el nombre de puerto que se especificó cuando se agregó el puerto.                                                                          |
-| -u \<nombredeusuario>-w \<contraseña> | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
-|              /?               |                                                                                                                                                                           Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                            |
+| Parámetro | Descripción |
+|--|--|
+| -a | Agrega una conexión de impresora local. |
+| -d | Elimina una conexión de impresora. |
+| -X | Elimina todas las impresoras del servidor especificado por el parámetro **-s** . Si no especifica un servidor, Windows elimina todas las impresoras en el equipo local. |
+| -g | Muestra la impresora predeterminada. |
+| -T | Establece la impresora predeterminada en la impresora especificada por el parámetro **-p** . |
+| -l | Muestra todas las impresoras instaladas en el servidor especificado por el parámetro **-s** . Si no especifica un servidor, Windows enumera las impresoras instaladas en el equipo local. |
+| c | Especifica que el parámetro se aplica a las conexiones de impresora. Se puede usar con los parámetros **-a** y **-x** . |
+| -s`<Servername>` | Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local. |
+| -p`<Printername>` | Especifica el nombre de la impresora que desea administrar. |
+| -m`<Modelname>` | Especifica (por nombre) el controlador que desea instalar. Los controladores a menudo se denominan para el modelo de impresora que admiten. Consulte la documentación de la impresora para obtener más información. |
+| -r`<portname>` | Especifica el puerto al que está conectada la impresora. Si se trata de un puerto paralelo o serie, use el identificador del puerto (por ejemplo, LPT1: o COM1:). Si se trata de un puerto TCP/IP, utilice el nombre de puerto que se especificó cuando se agregó el puerto. |
+| -u `<Username>` -w`<password>` | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
--   El comando **prndrvr** es un script de Visual Basic ubicado en el directorio\\ <language> %WINDIR%\system32\ printing_Admin_Scripts. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo **PRNMNGR** o cambie los directorios a la carpeta correspondiente. Por ejemplo:
-    ```
-    cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr
-    ```
--   Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, `"computer Name"`).
+#### <a name="remarks"></a>Comentarios
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
+- Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, "nombre del equipo").
+
+### <a name="examples"></a>Ejemplos
+
 Para agregar una impresora llamada colorprinter_2 conectada a LPT1 en el equipo local y requiere un controlador de impresora llamado color Printer Driver1, escriba:
+
 ```
 cscript prnmngr -a -p colorprinter_2 -m "color printer Driver1" -r lpt1:
 ```
+
 Para eliminar la impresora denominada colorprinter_2 del equipo remoto llamado ServidorRH, escriba:
+
 ```
-cscript prnmngr -d -s HRServer -p colorprinter_2 
+cscript prnmngr -d -s HRServer -p colorprinter_2
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
-- [Referencia de la clave de sintaxis de la línea de comandos referencia del](command-line-syntax-key.md)
-[comando Print](print-command-reference.md)
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Referencia de comandos de impresión](print-command-reference.md)

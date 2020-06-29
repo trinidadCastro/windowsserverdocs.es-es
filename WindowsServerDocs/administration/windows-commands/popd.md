@@ -1,6 +1,6 @@
 ---
 title: popd
-description: Obtenga información acerca de cómo cambiar el directorio al directorio que se almacenó más recientemente con el comando Inserted.
+description: Tema de referencia del comando pnputil, que cambia el directorio actual al directorio que se almacenó más recientemente con el comando Inserted.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,38 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: a9cf2814afcab3e6d7373642ad5bf8bc828bf07b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0784d925eedb1202bf94fbd2951081efcc0c496b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821225"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472391"
 ---
 # <a name="popd"></a>popd
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Cambia el directorio actual al directorio que se almacenó más recientemente con el comando **Inserted** .
+El comando **popd** cambia el directorio actual al directorio que se almacenó más recientemente con el comando **Inserted** .
 
+Cada vez que se usa el comando **Inserted** , se almacena un solo directorio para su uso. Sin embargo, puede almacenar varios directorios mediante el comando **Inserted** varias veces. Los directorios se almacenan secuencialmente en una pila virtual, por lo que si usa el comando **insertado** una vez, el directorio en el que se usa el comando se coloca en la parte inferior de la pila. Si vuelve a usar el comando, el segundo directorio se coloca en la parte superior de la primera. El proceso se repite cada vez que se usa el comando **Inserted** .
+
+Si usa el comando **popd** , se quita el directorio de la parte superior de la pila y se cambia el directorio actual a ese directorio. Si vuelve a usar el comando **popd** , se quita el siguiente directorio de la pila. Si se habilitan las extensiones de comando, el comando **popd** quita todas las asignaciones de letra de unidad creadas por el comando **Inserted** .
 
 ## <a name="syntax"></a>Sintaxis
+
 ```
 popd
 ```
 
-#### <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+### <a name="parameters"></a>Parámetros
 
-## <a name="remarks"></a>Observaciones
--   Cada vez que se usa el comando **Inserted** , se almacena un solo directorio para su uso. Sin embargo, puede almacenar varios directorios mediante el comando **Inserted** varias veces.
-    Los directorios se almacenan secuencialmente en una pila virtual. Si usa el comando **insertado** una vez, el directorio en el que usa el comando se coloca en la parte inferior de la pila. Si vuelve a usar el comando, el segundo directorio se coloca en la parte superior de la primera. El proceso se repite cada vez que se usa el comando **Inserted** .
-    Puede usar el comando **popd** para cambiar el directorio actual al directorio almacenado más recientemente por el comando **Inserted** . Si usa el comando **popd** , el directorio en la parte superior de la pila se quita de la pila y el directorio actual se cambia a ese directorio. Si vuelve a usar el comando **popd** , se quita el siguiente directorio de la pila.
--   Cuando se habilitan las extensiones de comando, el comando **popd** quita todas las asignaciones de letra de unidad creadas por la **extracción**.
+| Parámetro | Descripción |
+|--|--|
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
-Para ver cómo puede usar el comando de **Inserted** y el comando **popd** en un programa de batch para cambiar el directorio actual de aquél en el que se ejecutó el programa de batch y, a continuación, cámbielo de nuevo:
+### <a name="examples"></a>Ejemplos
+
+Para cambiar el directorio actual de aquél en el que se ejecutó el programa de batch y, a continuación, volver a cambiarlo, escriba:
 
 ```
 @echo off
@@ -53,6 +53,7 @@ echo All text files deleted in the %1 directory
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
--   [pushd](pushd.md)
+
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
+- [pushd](pushd.md)

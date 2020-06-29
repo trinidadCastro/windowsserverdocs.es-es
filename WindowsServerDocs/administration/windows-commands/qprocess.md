@@ -1,6 +1,6 @@
 ---
 title: qprocess
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando qprocess, que muestra información sobre los procesos que se ejecutan en un servidor host de sesión Escritorio remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e0ebf422019d6e8023a2a3cc5da2085635c8422
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: e27902e363f067619543252552fd2f9ede906b62
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436350"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472040"
 ---
 # <a name="qprocess"></a>qprocess
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Muestra información sobre los procesos que se ejecutan en un servidor de host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
+Muestra información sobre los procesos que se ejecutan en un servidor host de sesión Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)).
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
-
-## <a name="remarks"></a>Observaciones
-Este comando es el mismo que el comando **query Process** .
+> Este comando es el mismo que el [comando QUERY Process](query-process.md).
 
 ## <a name="additional-references"></a>Referencias adicionales
-[query process](query-process.md)
-- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
- [Referencia de comandos de servicios de escritorio remoto (Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Query Process (comando)](query-process.md)
+
+- [Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)

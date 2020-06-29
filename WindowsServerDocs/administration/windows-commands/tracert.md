@@ -9,18 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00ae2f60181126657bfb3fe77144e6bc33167b4d
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: a6ef48350a0b8a4f67f1e564a9ca16db8b4dd5e6
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149758"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472932"
 ---
 # <a name="tracert"></a>tracert
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Determina la ruta de acceso tomada a un destino mediante el envío de solicitudes de eco del Protocolo de mensajes de control de Internet (ICMP) o mensajes ICMPv6 al destino con valores de campo de período de vida (TTL) que aumentan incrementalmente. La ruta de acceso que se muestra es la lista de interfaces de enrutador Near/Side de los enrutadores de la ruta de acceso entre un host de origen y un destino. La interfaz en paralelo es la interfaz del enrutador que está más cerca del host de envío en la ruta de acceso. Si se usa sin parámetros, tracert muestra la ayuda.
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,8 +39,8 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 |/w\<timeout>|Especifica la cantidad de tiempo en milisegundos que se debe esperar a que se reciba el mensaje de tiempo de ICMP superado o de respuesta de eco correspondiente a un mensaje de solicitud de eco determinado. Si no se recibe en el tiempo de espera, se muestra un asterisco (*). El tiempo de espera predeterminado es 4000 (4 segundos).|
 |/R|Especifica que el encabezado de extensión de enrutamiento IPv6 se utiliza para enviar un mensaje de solicitud de eco al host local, utilizando el destino como un destino intermedio y probando la ruta inversa.|
 |Modificado\<Srcaddr>|Especifica la dirección de origen que se va a usar en los mensajes de solicitud de eco. Use este parámetro solo cuando se realice el seguimiento de direcciones IPv6.|
-|/4|Especifica que Tracert. exe solo puede usar IPv4 para este seguimiento.|
-|/6|Especifica que Tracert. exe solo puede utilizar IPv6 para este seguimiento.|
+|/4|Especifica que tracert.exe solo puede usar IPv4 para este seguimiento.|
+|/6|Especifica que tracert.exe solo puede utilizar IPv6 para este seguimiento.|
 |\<TargetName>|Especifica el destino, identificado por la dirección IP o el nombre de host.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 

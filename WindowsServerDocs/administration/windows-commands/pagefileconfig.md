@@ -1,6 +1,6 @@
 ---
 title: pagefileconfig
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando pagefileconfig. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74accc6a1551530eaa967cc5896fc3bfe5f168bf
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 562421db96ebb62cc75a1ff04ffe532bc8c63652
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993392"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472581"
 ---
 # <a name="pagefileconfig"></a>pagefileconfig
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+> Se aplica a: Windows Server 2003, Windows Server 2003 R2, Windows Server 2003 con SP1, Windows Server 2003 con SP2
 
-PAGEFILECONFIG está en desuso y no se garantiza que se admita en versiones futuras de Windows.
-Esta herramienta se incluye en Windows Server 2003. Para obtener más información, consulte [pagefileconfig](https://technet.microsoft.com/library/cc772827.aspx).
+>[!IMPORTANT]
+> Este comando está en desuso.
+
+Permite a un administrador mostrar y configurar las opciones de memoria virtual del archivo de paginación de un sistema. Para obtener descripciones e información de uso, consulte [pagefileconfig](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc772827(v=ws.10)).
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c836da8f83510e6547e0e182ac06fd2151dd9c41
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9eb93e46adb0e8a7c956bd8db2795fe06bc04724
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857068"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472952"
 ---
 # <a name="credentials-protection-and-management"></a>Protección y administración de credenciales
 
@@ -47,7 +47,7 @@ Los miembros del grupo Usuarios protegidos están también limitados por los sig
 -   El ajuste predeterminado de cuatro horas para la duración de un vale de concesión de vales (TGT) de Kerberos puede configurarse mediante silos y directivas de autenticación, a los que se accede a través del Centro de administración de Active Directory (ADAC). esto quiere decir que, una vez transcurridas esas cuatro horas, el usuario debe volver a autenticarse.
 
 > [!WARNING]
-> Las cuentas de servicio y de equipo no deben ser miembros del grupo Usuarios protegidos. Este grupo no ofrece protección local, ya que la contraseña o certificado siempre está disponible en el host. Se producirá un error de autenticación con el mensaje "el nombre de usuario o la contraseña son incorrectos" para cualquier servicio o equipo que se agregue al grupo usuarios protegidos.
+> Las cuentas de servicio y de equipo no deben ser miembros del grupo de usuarios protegidos. Este grupo no ofrece protección local, ya que la contraseña o certificado siempre está disponible en el host. Se producirá un error de autenticación con el mensaje "el nombre de usuario o la contraseña son incorrectos" para cualquier servicio o equipo que se agregue al grupo usuarios protegidos.
 
 Para obtener más información acerca de este grupo, consulta [Grupo de seguridad Usuarios protegidos](protected-users-security-group.md).
 
@@ -58,7 +58,7 @@ La nueva clase de objeto de Active Directory, la Directiva de autenticación, pe
 
 -   Usuario
 
--   Equipo
+-   Computer
 
 -   Cuenta de servicio administrada
 
@@ -68,7 +68,7 @@ Para obtener más información, consulta [Directivas de autenticación y silos d
 
 Para obtener más información sobre cómo configurar cuentas protegidas, consulta [Cómo configurar cuentas protegidas](how-to-configure-protected-accounts.md).
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 Para obtener más información sobre LSA y LSASS, consulte [Información técnica de inicio de sesión y autenticación de Windows](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx).
 
 

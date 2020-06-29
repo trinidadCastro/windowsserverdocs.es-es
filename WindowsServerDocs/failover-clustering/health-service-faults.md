@@ -7,12 +7,12 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 5fe2f98c89d97325c1f59dc6ba292831e0ffa5ff
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de2e9939302c0b9937fb54b4082feeecf6de5295
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720560"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473112"
 ---
 # <a name="health-service-faults"></a>Errores de Servicio de mantenimiento
 
@@ -20,9 +20,9 @@ ms.locfileid: "82720560"
 
 ## <a name="what-are-faults"></a>Qué son los errores
 
-El Servicio de mantenimiento supervisa constantemente el clúster de Espacios de almacenamiento directo para detectar problemas y generar "errores". Un nuevo cmdlet muestra todos los errores actuales, lo que le permite comprobar fácilmente el estado de la implementación sin examinar cada entidad o característica a su vez. Los errores están diseñados para ser precisos, fáciles de entender y accionable.  
+El Servicio de mantenimiento supervisa constantemente el clúster de Espacios de almacenamiento directo para detectar problemas y generar "errores". Un nuevo cmdlet muestra todos los errores actuales, lo que le permite comprobar fácilmente el estado de la implementación sin examinar cada entidad o característica a su vez. Los errores están diseñados para ser precisos, fáciles de entender y accionable.
 
-Cada error contiene cinco campos importantes:  
+Cada error contiene cinco campos importantes:
 
 -   severity
 -   Descripción del problema
@@ -30,51 +30,51 @@ Cada error contiene cinco campos importantes:
 -   Información de identificación de la entidad con errores
 -   Su ubicación física (si procede)
 
-Por ejemplo, este es un error habitual:  
+Por ejemplo, este es un error habitual:
 
 ```
-Severity: MINOR                                         
-Reason: Connectivity has been lost to the physical disk.                           
-Recommendation: Check that the physical disk is working and properly connected.    
-Part: Manufacturer Contoso, Model XYZ9000, Serial 123456789                        
+Severity: MINOR
+Reason: Connectivity has been lost to the physical disk.
+Recommendation: Check that the physical disk is working and properly connected.
+Part: Manufacturer Contoso, Model XYZ9000, Serial 123456789
 Location: Seattle DC, Rack B07, Node 4, Slot 11
 ```
 
  >[!NOTE]
- > La ubicación física procede de la configuración del dominio de error. Para obtener más información acerca de los dominios de error, consulte [dominios de error en Windows Server 2016](fault-domains.md). Si no proporciona esta información, el campo de ubicación será menos útil, por ejemplo, puede mostrar solo el número de ranura.  
+ > La ubicación física procede de la configuración del dominio de error. Para obtener más información acerca de los dominios de error, consulte [dominios de error en Windows Server 2016](fault-domains.md). Si no proporciona esta información, el campo de ubicación será menos útil, por ejemplo, puede mostrar solo el número de ranura.
 
 ## <a name="root-cause-analysis"></a>Análisis de la causa raíz
 
-El Servicio de mantenimiento puede evaluar la causalidad potencial entre las entidades con errores para identificar y combinar los errores que son consecuencias del mismo problema subyacente. Al reconocer las cadenas de efectos, habrá menos informes innecesarios. Por ejemplo, si un servidor está inactivo, se espera que las unidades del servidor también estén sin conectividad. Por lo tanto, solo se generará un error para la causa raíz; en este caso, el servidor.  
+El Servicio de mantenimiento puede evaluar la causalidad potencial entre las entidades con errores para identificar y combinar los errores que son consecuencias del mismo problema subyacente. Al reconocer las cadenas de efectos, habrá menos informes innecesarios. Por ejemplo, si un servidor está inactivo, se espera que las unidades del servidor también estén sin conectividad. Por lo tanto, solo se generará un error para la causa raíz; en este caso, el servidor.
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
 Para ver los errores actuales de PowerShell, ejecute este cmdlet:
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Debug-StorageSubSystem  
+Get-StorageSubSystem Cluster* | Debug-StorageSubSystem
 ```
 
-Esto devuelve cualquier error que afecte al clúster global de Espacios de almacenamiento directo. A menudo, estos errores se relacionan con el hardware o la configuración. Si no hay ningún error, este cmdlet no devolverá nada.  
+Esto devuelve cualquier error que afecte al clúster global de Espacios de almacenamiento directo. A menudo, estos errores se relacionan con el hardware o la configuración. Si no hay ningún error, este cmdlet no devolverá nada.
 
 >[!NOTE]
 > En un entorno que no sea de producción y bajo su propio riesgo, puede experimentar con esta característica desencadenando los errores, por ejemplo, quitando un disco físico o apagando un nodo. Una vez que haya aparecido el error, vuelva a insertar el disco físico o reinicie el nodo y el error desaparecerá de nuevo.
 
-También puede ver los errores que solo afectan a los volúmenes o recursos compartidos de archivos específicos con los siguientes cmdlets:  
+También puede ver los errores que solo afectan a los volúmenes o recursos compartidos de archivos específicos con los siguientes cmdlets:
 
 ```PowerShell
-Get-Volume -FileSystemLabel <Label> | Debug-Volume  
+Get-Volume -FileSystemLabel <Label> | Debug-Volume
 
-Get-FileShare -Name <Name> | Debug-FileShare  
+Get-FileShare -Name <Name> | Debug-FileShare
 ```
 
-Esto devuelve los errores que afectan solo al volumen específico o al recurso compartido de archivos. A menudo, estos errores están relacionados con el planeamiento de la capacidad, la resistencia de los datos o características como la calidad de servicio o la réplica de almacenamiento. 
+Esto devuelve los errores que afectan solo al volumen específico o al recurso compartido de archivos. A menudo, estos errores están relacionados con el planeamiento de la capacidad, la resistencia de los datos o características como la calidad de servicio o la réplica de almacenamiento.
 
 ## <a name="usage-in-net-and-c"></a>Uso en .NET y C #
 
 ### <a name="connect"></a>Conectar
 
-Para consultar el Servicio de mantenimiento, tendrá que establecer un **CimSession** con el clúster. Para ello, necesitará algunas cosas que solo están disponibles en .NET completo, lo que significa que no puede hacerlo directamente desde una aplicación web o móvil. Estos ejemplos de código usarán\#C, la opción más sencilla para esta capa de acceso a datos.
+Para consultar el Servicio de mantenimiento, tendrá que establecer un **CimSession** con el clúster. Para ello, necesitará algunas cosas que solo están disponibles en .NET completo, lo que significa que no puede hacerlo directamente desde una aplicación web o móvil. Estos ejemplos de código usarán C \# , la opción más sencilla para esta capa de acceso a datos.
 
 ```
 using System.Security;
@@ -105,7 +105,7 @@ Se recomienda que construya la contraseña **SecureString** directamente a parti
 
 Con el **CimSession** establecido, puede consultar instrumental de administración de Windows (WMI) en el clúster.
 
-Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el **StorageSubSystem de msft\_** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los **StorageNode\_de msft** del clúster y todos los **volúmenes\_msft**, los volúmenes de datos. Por último, también necesitará **el\_StorageHealth de msft**, el propio servicio de mantenimiento.
+Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el ** \_ StorageSubSystem de msft** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los ** \_ StorageNode de msft** del clúster y todos los volúmenes **msft \_ **, los volúmenes de datos. Por último, también necesitará **el \_ StorageHealth de msft**, el propio servicio de mantenimiento.
 
 ```
 CimInstance Cluster;
@@ -153,7 +153,7 @@ Invocar **diagnóstico** para obtener cualquier error actual cuyo ámbito sea el
 
 A continuación se describe la lista completa de errores disponibles en cada ámbito en Windows Server 2016.
 
-```       
+```
 public void GetFaults(CimSession Session, CimInstance Target)
 {
     // Set Parameters (None)
@@ -176,7 +176,7 @@ public void GetFaults(CimSession Session, CimInstance Target)
 
 Puede que le resulte útil construir y conservar su propia representación de errores. Por ejemplo, esta clase de **error** almacena varias propiedades clave de errores, como **FaultId**, que se pueden usar más adelante para asociar la actualización o quitar notificaciones, o para desduplicar en caso de que se detecte el mismo error varias veces, por cualquier motivo.
 
-```       
+```
 public class MyFault {
     public String FaultId { get; set; }
     public String Reason { get; set; }
@@ -212,9 +212,9 @@ A continuación se describe la lista completa de las propiedades de cada error (
 
 Cuando se crean, quitan o actualizan errores, el Servicio de mantenimiento genera eventos WMI. Son esenciales para mantener el estado de la aplicación sincronizada sin sondeos frecuentes y pueden ayudar con cosas como determinar cuándo enviar alertas por correo electrónico, por ejemplo. Para suscribirse a estos eventos, este código de ejemplo utiliza de nuevo el modelo de diseño de observador.
 
-En primer lugar, suscríbase a los eventos **msft\_StorageFaultEvent** .
+En primer lugar, suscríbase a los eventos **msft \_ StorageFaultEvent** .
 
-```      
+```
 public void ListenForFaultEvents()
 {
     IObservable<CimSubscriptionResult> Events = Session.SubscribeAsync(
@@ -222,7 +222,7 @@ public void ListenForFaultEvents()
     // Subscribe the Observer
     FaultsObserver<CimSubscriptionResult> Observer = new FaultsObserver<CimSubscriptionResult>(this);
     IDisposable Disposeable = Events.Subscribe(Observer);
-}   
+}
 ```
 
 A continuación, implemente un observador cuyo método **Next ()** se invocará cada vez que se genere un nuevo evento.
@@ -241,7 +241,7 @@ class FaultsObserver : IObserver
 
         if (SubscriptionResult != null)
         {
-            // Unpack            
+            // Unpack
             CimKeyedCollection<CimProperty> Properties = SubscriptionResult.Instance.CimInstanceProperties;
             String ChangeType = Properties["ChangeType"].Value.ToString();
             String FaultId = Properties["FaultId"].Value.ToString();
@@ -283,7 +283,7 @@ Sin embargo, en algunos casos, el Servicio de mantenimiento puede volver a detec
 
 ### <a name="properties-of-faults"></a>Propiedades de los errores
 
-Esta tabla presenta varias propiedades clave del objeto de error. En el esquema completo, inspeccione la clase **msft\_StorageDiagnoseResult** en *storagewmi. mof*.
+Esta tabla presenta varias propiedades clave del objeto de error. En el esquema completo, inspeccione la clase **msft \_ StorageDiagnoseResult** en *storagewmi. mof*.
 
 | **Propiedad**              | **Ejemplo**                                                     |
 |---------------------------|-----------------------------------------------------------------|
@@ -307,7 +307,7 @@ Esta tabla presenta varias propiedades clave del objeto de error. En el esquema 
 
 ## <a name="properties-of-fault-events"></a>Propiedades de los eventos de error
 
-Esta tabla presenta varias propiedades clave del evento de error. En el esquema completo, inspeccione la clase **msft\_StorageFaultEvent** en *storagewmi. mof*.
+Esta tabla presenta varias propiedades clave del evento de error. En el esquema completo, inspeccione la clase **msft \_ StorageFaultEvent** en *storagewmi. mof*.
 
 Tenga en cuenta el **ChangeType**, que indica si se está creando, quitando o actualizando un error, y **FaultId**. Un evento también contiene todas las propiedades del error afectado.
 
@@ -326,7 +326,7 @@ Tenga en cuenta el **ChangeType**, que indica si se está creando, quitando o ac
 
 ## <a name="coverage"></a>Cobertura
 
-En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente cobertura de errores:  
+En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente cobertura de errores:
 
 ### <a name="physicaldisk-8"></a>**DiscoFísico (8)**
 
@@ -513,12 +513,12 @@ En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente co
 * Motivo: *"uno o más consumidores de almacenamiento (normalmente virtual machines) están usando una directiva que no existe con el identificador {ID}."*
 * RecommendedAction: *"volver a crear las directivas QoS de almacenamiento que faltan".*
 
-<sup>1</sup> indica que el volumen ha alcanzado el 80% completo (gravedad secundaria) o 90% completo (gravedad principal).  
-<sup>2</sup> indica que algunos. vhd del volumen no han cumplido su IOPS mínimo para más de un 10% (menor), 30% (principal) o 50% (crítico) de la ventana de 24 horas graduales.  
+<sup>1</sup> indica que el volumen ha alcanzado el 80% completo (gravedad secundaria) o 90% completo (gravedad principal).
+<sup>2</sup> indica que algunos. vhd del volumen no han cumplido su IOPS mínimo para más de un 10% (menor), 30% (principal) o 50% (crítico) de la ventana de 24 horas graduales.
 
 >[!NOTE]
-> El mantenimiento de los componentes de contenedor de almacenamiento como ventiladores, fuentes de alimentación y sensores proviene de SCSI Enclosure Services (SES). Si el proveedor no proporciona esta información, el servicio de mantenimiento no puede mostrarla.  
+> El mantenimiento de los componentes de contenedor de almacenamiento como ventiladores, fuentes de alimentación y sensores proviene de SCSI Enclosure Services (SES). Si el proveedor no proporciona esta información, el servicio de mantenimiento no puede mostrarla.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Servicio de mantenimiento de Windows Server 2016](health-service-overview.md)

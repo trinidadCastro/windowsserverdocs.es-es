@@ -8,26 +8,26 @@ ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1209a3e08922a380ef46d3be6d28ce489b748f22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79e5e1e9daba005a086c16dd1d8e3e3f9a28a8a2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820938"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473422"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>Comprender y controlar la resincronización de almacenamiento
 
 >Se aplica a: Windows Server 2019
 
-Las alertas de resincronización de almacenamiento son una nueva funcionalidad de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server 2019 que permite a los servicio de mantenimiento producir un error cuando el almacenamiento se está resincronizando. La alerta es útil para notificarle cuando se está produciendo una resincronización, de modo que no se pueden reducir accidentalmente más servidores (lo que puede provocar que se vean afectados varios dominios de error, lo que provoca que el clúster se quede inactivo). 
+Las alertas de resincronización de almacenamiento son una nueva funcionalidad de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server 2019 que permite a los servicio de mantenimiento producir un error cuando el almacenamiento se está resincronizando. La alerta es útil para notificarle cuando se está produciendo una resincronización, de modo que no se pueden reducir accidentalmente más servidores (lo que puede provocar que se vean afectados varios dominios de error, lo que provoca que el clúster se quede inactivo).
 
 En este tema se proporciona información general y los pasos para entender y ver la resincronización de almacenamiento en un clúster de conmutación por error de Windows Server con Espacios de almacenamiento directo.
 
 ## <a name="understanding-resync"></a>Descripción de resincronización
 
-Comencemos con un ejemplo sencillo para entender cómo el almacenamiento no está sincronizado. Tenga en cuenta que todas las soluciones de almacenamiento distribuido que no comparten nada (solo unidades locales) exhiben este comportamiento. Como verá a continuación, si un nodo de servidor deja de funcionar, sus unidades no se actualizarán hasta que vuelva a estar en línea; esto es cierto para cualquier arquitectura hiperconvergida. 
+Comencemos con un ejemplo sencillo para entender cómo el almacenamiento no está sincronizado. Tenga en cuenta que todas las soluciones de almacenamiento distribuido que no comparten nada (solo unidades locales) exhiben este comportamiento. Como verá a continuación, si un nodo de servidor deja de funcionar, sus unidades no se actualizarán hasta que vuelva a estar en línea; esto es cierto para cualquier arquitectura hiperconvergida.
 
-Supongamos que queremos almacenar la cadena "HELLO". 
+Supongamos que queremos almacenar la cadena "HELLO".
 
 ![ASCII de cadena "Hello"](media/understand-storage-resync/hello.png)
 
@@ -39,7 +39,7 @@ Supongamos que actualizamos nuestra cadena de "Hola" a "ayuda". en este momento.
 
 ![ASCII de cadena "ayuda"](media/understand-storage-resync/help.png)
 
-Una vez que actualice la cadena, copie #2 y #3 se actualizarán correctamente. Sin embargo, todavía no se puede tener acceso a la copia #1 porque el servidor #1 está inactivo temporalmente (para mantenimiento). 
+Una vez que actualice la cadena, copie #2 y #3 se actualizarán correctamente. Sin embargo, todavía no se puede tener acceso a la copia #1 porque el servidor #1 está inactivo temporalmente (para mantenimiento).
 
 ![GIF de escritura para copiar #2 y #2 "](media/understand-storage-resync/write.gif)
 
@@ -61,14 +61,14 @@ Para ver este error en PowerShell, ejecute:
 Get-HealthFault
 ```
 
-Se trata de un nuevo error en Windows Server 2019 y aparecerá en PowerShell, en el informe de validación de clúster y en cualquier otra parte que se compile en los errores de estado. 
+Se trata de un nuevo error en Windows Server 2019 y aparecerá en PowerShell, en el informe de validación de clúster y en cualquier otra parte que se compile en los errores de estado.
 
 Para obtener una vista más profunda, puede consultar la base de datos de la serie temporal en PowerShell de la siguiente manera:
 
 ```PowerShell
 Get-ClusterNode | Get-ClusterPerf -ClusterNodeSeriesName ClusterNode.Storage.Degraded
 ```
-Este es un ejemplo de los resultados:
+A continuación se muestra una salida de ejemplo:
 
 ```
 Object Description: ClusterNode Server1
@@ -86,7 +86,7 @@ Al mostrar el progreso general de la resincronización de almacenamiento, puede 
 
 ![Imagen de alerta en el centro de administración de Windows "](media/understand-storage-resync/alert.png)
 
-La alerta es útil para notificarle cuando se está produciendo una resincronización, de modo que no se pueden reducir accidentalmente más servidores (lo que puede provocar que se vean afectados varios dominios de error, lo que provoca que el clúster se quede inactivo). 
+La alerta es útil para notificarle cuando se está produciendo una resincronización, de modo que no se pueden reducir accidentalmente más servidores (lo que puede provocar que se vean afectados varios dominios de error, lo que provoca que el clúster se quede inactivo).
 
 Si navega a la página *servidores* del centro de administración de Windows, hace clic en *inventario*y, a continuación, elige un servidor específico, puede obtener una vista más detallada de la apariencia de esta resincronización de almacenamiento por servidor. Si navega al servidor y observa el gráfico de *almacenamiento* , verá la cantidad de datos que deben repararse en una línea *púrpura* con el número exacto justo antes. Esta cantidad aumentará cuando el servidor esté inactivo (es necesario volver a sincronizar más datos) y disminuirá gradualmente cuando el servidor vuelva a estar en línea (los datos se están sincronizando). Cuando la cantidad de datos que es necesario reparar es 0, el almacenamiento se realiza de forma gratuita, ya que ahora puede dejar de funcionar un servidor si es necesario. A continuación se muestra una captura de pantalla de esta experiencia en el centro de administración de Windows:
 
@@ -111,7 +111,7 @@ Regeneration          00:01:19              Running               50            
 
 Esta vista es mucho más granular, ya que los trabajos de almacenamiento enumerados son por volumen, puede ver la lista de trabajos que se están ejecutando y puede realizar un seguimiento de su progreso individual. Este cmdlet funciona en Windows Server 2016 y 2019.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Desconectar un servidor para realizar labores de mantenimiento](maintain-servers.md)
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)

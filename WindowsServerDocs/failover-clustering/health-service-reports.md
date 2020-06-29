@@ -7,20 +7,20 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 0a03dc5d646d24c9f24f979df36fb3fe1eafe631
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a1aedd4dc48abb38c33679f219a6825c6a9141bb
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720555"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473032"
 ---
 # <a name="health-service-reports"></a>Servicio de mantenimiento informes
 
 > Se aplica a: Windows Server 2019, Windows Server 2016
 
-## <a name="what-are-reports"></a>¿Qué son los informes?  
+## <a name="what-are-reports"></a>¿Qué son los informes?
 
-El Servicio de mantenimiento reduce el trabajo necesario para obtener información de rendimiento y capacidad en directo de su clúster de Espacios de almacenamiento directo. Un nuevo cmdlet proporciona una lista seleccionada de métricas esenciales que se recopilan de forma eficaz y se agregan dinámicamente entre nodos, con lógica integrada para detectar la pertenencia al clúster. Todos los valores son en tiempo real y únicamente en un momento dado.  
+El Servicio de mantenimiento reduce el trabajo necesario para obtener información de rendimiento y capacidad en directo de su clúster de Espacios de almacenamiento directo. Un nuevo cmdlet proporciona una lista seleccionada de métricas esenciales que se recopilan de forma eficaz y se agregan dinámicamente entre nodos, con lógica integrada para detectar la pertenencia al clúster. Todos los valores son en tiempo real y únicamente en un momento dado.
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
@@ -30,16 +30,16 @@ Use este cmdlet para obtener métricas de todo el clúster de Espacios de almace
 Get-StorageSubSystem Cluster* | Get-StorageHealthReport
 ```
 
-El parámetro de **recuento** opcional indica el número de conjuntos de valores que se van a devolver, en intervalos de un segundo.  
+El parámetro de **recuento** opcional indica el número de conjuntos de valores que se van a devolver, en intervalos de un segundo.
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Get-StorageHealthReport -Count <Count>  
+Get-StorageSubSystem Cluster* | Get-StorageHealthReport -Count <Count>
 ```
 
-También puede obtener métricas para un volumen o servidor específico:  
+También puede obtener métricas para un volumen o servidor específico:
 
 ```PowerShell
-Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>  
+Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>
 
 Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 ```
@@ -48,7 +48,7 @@ Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 
 ### <a name="connect"></a>Conectar
 
-Para consultar el Servicio de mantenimiento, tendrá que establecer un **CimSession** con el clúster. Para ello, necesitará algunas cosas que solo están disponibles en .NET completo, lo que significa que no puede hacerlo directamente desde una aplicación web o móvil. Estos ejemplos de código usarán\#C, la opción más sencilla para esta capa de acceso a datos.
+Para consultar el Servicio de mantenimiento, tendrá que establecer un **CimSession** con el clúster. Para ello, necesitará algunas cosas que solo están disponibles en .NET completo, lo que significa que no puede hacerlo directamente desde una aplicación web o móvil. Estos ejemplos de código usarán C \# , la opción más sencilla para esta capa de acceso a datos.
 
 ```
 using System.Security;
@@ -79,7 +79,7 @@ Se recomienda que construya la contraseña **SecureString** directamente a parti
 
 Con el **CimSession** establecido, puede consultar instrumental de administración de Windows (WMI) en el clúster.
 
-Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el **StorageSubSystem de msft\_** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los **StorageNode\_de msft** del clúster y todos los **volúmenes\_msft**, los volúmenes de datos. Por último, también necesitará **el\_StorageHealth de msft**, el propio servicio de mantenimiento.
+Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el ** \_ StorageSubSystem de msft** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los ** \_ StorageNode de msft** del clúster y todos los volúmenes **msft \_ **, los volúmenes de datos. Por último, también necesitará **el \_ StorageHealth de msft**, el propio servicio de mantenimiento.
 
 ```
 CimInstance Cluster;
@@ -207,7 +207,7 @@ No es necesario decir que estas métricas se pueden visualizar, almacenar en una
 
 Cada ejemplo de métricas es un "informe" que contiene muchos "registros" correspondientes a las métricas individuales.
 
-En el esquema completo, inspeccione las clases **msft\_StorageHealthReport** y **msft\_HealthRecord** en *storagewmi. mof*.
+En el esquema completo, inspeccione las clases **msft \_ StorageHealthReport** y **msft \_ HealthRecord** en *storagewmi. mof*.
 
 Cada métrica tiene solo tres propiedades, por esta tabla.
 
@@ -280,6 +280,6 @@ A continuación se muestran las métricas disponibles para cada ámbito en Windo
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Servicio de mantenimiento de Windows Server 2016](health-service-overview.md)

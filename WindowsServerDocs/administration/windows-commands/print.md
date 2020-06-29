@@ -1,6 +1,6 @@
 ---
 title: imprimir
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando Print, que envía un archivo de texto a una impresora.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,63 +9,54 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8937253da730c2ab77ff03cdeb9f31d24e608eab
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2d9cbb4230976572ddd7a26565d616c87ce2ea8d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722865"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472320"
 ---
 # <a name="print"></a>imprimir
 
+Envía un archivo de texto a una impresora. Un archivo puede imprimir en segundo plano si lo envía a una impresora conectada a un puerto serie o paralelo en el equipo local.
 
-
-Envía un archivo de texto a una impresora.
-
-
+> [!NOTE]
+> Puede realizar muchas tareas de configuración desde el símbolo del sistema mediante el [comando modo](mode.md), incluida la configuración de una impresora conectada a un puerto paralelo o serie, la visualización del estado de la impresora o la preparación de una impresora para el cambio de páginas de códigos.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
+print [/d:<printername>] [<drive>:][<path>]<filename>[ ...]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/d:\<nombredeimpresora>|Especifica la impresora en la que desea imprimir el trabajo. Para imprimir en una impresora conectada localmente, especifique el puerto del equipo en el que está conectada la impresora.</br>-Los valores válidos para puertos paralelos son LPT1, LPT2 y LPT3.</br>-Los valores válidos para los puertos serie son COM1, COM2, COM3 y COM4.</br>También puede especificar una impresora de red mediante su nombre de cola (\\\\*nombreServidor*\*nombredeimpresora *). Si no especifica una impresora, el trabajo de impresión se envía a LPT1 de forma predeterminada.|
-|\<> de unidad:|Especifica la unidad física o lógica en la que se encuentra el archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir se encuentra en la unidad actual.|
-|\<Ruta de acceso>|Especifica la ubicación del archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir está ubicado en el directorio actual.|
-|\<Nombre de archivo> [...]|Necesario. Especifica el archivo que desea imprimir. Puede incluir varios archivos en un solo comando.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+| Parámetro | Descripción |
+|--|--|
+| /d.`<printername>` | Especifica la impresora en la que desea imprimir el trabajo. Para imprimir en una impresora conectada localmente, especifique el puerto del equipo en el que está conectada la impresora. Los valores válidos para puertos paralelos son **LPT1**, **LPT2**y **LPT3**. Los valores válidos para los puertos serie son **COM1**, **COM2**, **COM3**y **COM4**. También puede especificar una impresora de red mediante su nombre de cola ( `\\server_name\printer_name` ). Si no especifica una impresora, el trabajo de impresión se envía a **LPT1** de forma predeterminada. |
+| `<drive>`: | Especifica la unidad física o lógica en la que se encuentra el archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir se encuentra en la unidad actual. |
+| `<path>` | Especifica la ubicación del archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir está ubicado en el directorio actual. |
+| `<filename>[ ...]` | Necesario. Especifica el archivo que desea imprimir. Puede incluir varios archivos en un solo comando. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+### <a name="examples"></a>Ejemplos
 
--   Un archivo puede imprimir en segundo plano si lo envía a una impresora conectada a un puerto serie o paralelo en el equipo local.
--   Puede realizar muchas tareas de configuración desde el símbolo del sistema mediante el comando **modo** .
+Para enviar el archivo de **report.txt** , que se encuentra en el directorio actual, a una impresora conectada a **LPT2** en el equipo local, escriba:
 
-    Vea el [modo](mode.md) para obtener más información acerca de:  
-    -   Configuración de una impresora conectada a un puerto paralelo
-    -   Configurar una impresora conectada a un puerto serie
-    -   Mostrar el estado de una impresora
-    -   Preparar una impresora para el cambio de páginas de códigos
-
-## <a name="examples"></a>Ejemplos
-
-Para enviar el archivo report. txt en el directorio actual a una impresora conectada a LPT2 en el equipo local, escriba:
 ```
 print /d:lpt2 report.txt
 ```
-Para enviar el archivo report. txt en el directorio c:\Accounting a la cola de impresión Printer1 \\ \\en el servidor CopyRoom, escriba:
+
+Para enviar el archivo de **report.txt** , ubicado en el directorio **c:\accounting** , a la cola de impresión **Printer1** en el servidor **/d: \\ copyroom** , escriba:
+
 ```
-print /d:\\copyroom\printer1 c:\accounting\report.txt 
+print /d:\\copyroom\printer1 c:\accounting\report.txt
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[Referencia de comandos de impresión](print-command-reference.md)
+- [Referencia de comandos de impresión](print-command-reference.md)
 
-[Modo](mode.md)
+- [Modo (comando)](mode.md)

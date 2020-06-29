@@ -1,6 +1,6 @@
 ---
 title: qappsrv
-description: Tema de referencia de * * * *-
+description: Tema de referencia para el comando qappsrv, que muestra una lista de todos los servidores host de sesión de Escritorio remoto en la red.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2757797e4f2177adf295618dbe7fa1080513888
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e3fe8c90d222ad9aeaf97f5451ede2658eb38e58
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722736"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472100"
 ---
 # <a name="qappsrv"></a>qappsrv
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Muestra una lista de todos los servidores host de sesión de Escritorio remoto (host de sesión de escritorio remoto) de la red.
+Muestra una lista de todos los servidores host de sesión de Escritorio remoto en la red. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)).
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
-
-## <a name="remarks"></a>Observaciones
-Este comando es el mismo que el comando **query termserver** .
+> Este comando es el mismo que el [comando QUERY termserver](query-termserver.md).
 
 ## <a name="additional-references"></a>Referencias adicionales
-[consulta termserver](query-termserver.md)
-- [Referencia de comandos de servicios de escritorio remoto de la clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos[(Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Query termserver (comando)](query-termserver.md)
+
+- [Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)

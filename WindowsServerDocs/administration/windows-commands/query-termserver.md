@@ -1,6 +1,6 @@
 ---
-title: consulta termserver
-description: Tema de referencia de * * * *-
+title: query termserver
+description: Tema de referencia del comando QUERY termserver, que muestra una lista de todos los servidores host de sesión de Escritorio remoto en la red.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,57 +9,72 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b3ae6858a70d22b3ad928474648a3b2ee156235
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c41ed824ee0b1e9dc2672646ef0af03e2593ec07
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436240"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471980"
 ---
-# <a name="query-termserver"></a>consulta termserver
+# <a name="query-termserver"></a>query termserver
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Muestra una lista de todos los servidores host de sesión de Escritorio remoto (host de sesión de escritorio remoto) de la red.
+Muestra una lista de todos los servidores host de sesión de Escritorio remoto en la red. Este comando busca todos los servidores host de sesión Escritorio remoto asociados en la red y devuelve la siguiente información:
+
+- Nombre del servidor
+
+- Red (y dirección de nodo si se usa la opción/Address)
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
-> ## <a name="syntax"></a>Sintaxis
-> ```
-> query termserver [<ServerName>] [/domain:<Domain>] [/address] [/continue]
-> ```
-> ### <a name="parameters"></a>Parámetros
->
-> |    Parámetro     |                                                                        Descripción                                                                         |
-> |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> |   <ServerName>   |                                               Especifica el nombre que identifica el servidor host de sesión de escritorio remoto.                                               |
-> | /Domain<Domain> | Especifica el dominio que se va a consultar para los servidores de Terminal Server. No es necesario especificar un dominio si está consultando el dominio en el que está trabajando actualmente. |
-> |     /Address     |                                                  Muestra las direcciones de red y nodo para cada servidor.                                                  |
-> |    /Continue     |                                              Impide que se realice una pausa después de mostrar cada pantalla de información.                                               |
-> |        /?        |                                                            Muestra la ayuda en el símbolo del sistema.                                                            |
->
->#### <a name="remarks"></a>Observaciones
-> - **query termserver** busca en la red todos los servidores host de sesión de escritorio remoto asociados y devuelve la siguiente información:
->   - El nombre del servidor.
->   - La red (y la dirección del nodo si se usa la opción/Address)
->     ## <a name="examples"></a>Ejemplos
-> - Para mostrar información acerca de todos los servidores host de sesión de escritorio remoto en la red, escriba:
->   ```
->   query termserver
->   ```
-> - Para mostrar información sobre el servidor host de sesión de escritorio remoto llamado Server3, escriba:
->   ```
->   query termserver Server3
->   ```
-> - Para mostrar información sobre todos los servidores host de sesión de escritorio remoto en el dominio CONTOSO, escriba:
->   ```
->   query termserver /domain:CONTOSO
->   ```
-> - Para mostrar la dirección de red y de nodo del servidor host de sesión de escritorio remoto llamado Server3, escriba:
->   ```
->   query termserver Server3 /address
->   ```
->   ## <a name="additional-references"></a>Referencias adicionales
->   - Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
->    [consulta](query.md) 
->    de [Referencia de comandos de servicios de escritorio remoto (Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)).
+
+## <a name="syntax"></a>Sintaxis
+
+```
+query termserver [<servername>] [/domain:<domain>] [/address] [/continue]
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+|--|--|
+| `<servername>` | Especifica el nombre que identifica el servidor host de sesión Escritorio remoto. |
+| /Domain`<domain>` | Especifica el dominio que se va a consultar para los servidores de Terminal Server. No es necesario especificar un dominio si está consultando el dominio en el que está trabajando actualmente. |
+| /Address | Muestra las direcciones de red y nodo para cada servidor. |
+| /Continue | Impide que se realice una pausa después de mostrar cada pantalla de información. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
+
+### <a name="examples"></a>Ejemplos
+
+Para mostrar información sobre todos los Escritorio remoto servidores host de sesión en la red, escriba:
+
+```
+query termserver
+```
+
+Para mostrar información sobre el servidor host de sesión de Escritorio remoto llamado *Server3*, escriba:
+
+```
+query termserver Server3
+```
+
+Para mostrar información acerca de todos los servidores host de sesión de Escritorio remoto en el dominio *contoso*, escriba:
+
+```
+query termserver /domain:CONTOSO
+```
+
+Para mostrar la dirección de red y nodo del servidor host de sesión de Escritorio remoto llamado *Server3*, escriba:
+
+```
+query termserver Server3 /address
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comando de consulta](query.md)
+
+- [Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)

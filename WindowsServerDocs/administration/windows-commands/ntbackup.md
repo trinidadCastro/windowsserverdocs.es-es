@@ -1,6 +1,6 @@
 ---
 title: ntbackup
-description: Tema de referencia de * * * *-
+description: Tema de referencia del comando ntbackup, que se ha reemplazado con el comando Wbadmin.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3aaaa192283e0e1dc1777a27fc13973949784b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9ca42abd326c2d5112e4d4a629f93afd814e7d59
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723482"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472791"
 ---
 # <a name="ntbackup"></a>ntbackup
 
+Realiza una copia de seguridad y restaura el equipo y los archivos desde un símbolo del sistema. Este comando se ha reemplazado por el [comando Wbadmin](wbadmin.md).
 
-
-El comando **NTBackup** no está disponible en Windows Vista o windows Server 2008. En su lugar, debe usar el comando **Wbadmin** y los subcomandos para realizar copias de seguridad y restaurar el equipo y los archivos desde un símbolo del sistema.
-
-No se pueden recuperar las copias de seguridad creadas con **ntbackup** mediante **wbadmin**. Sin embargo, existe una versión de **NTBackup** disponible como descarga para los usuarios de windows Server 2008 y Windows Vista que desean recuperar copias de seguridad creadas con **NTBackup**. Esta versión descargable de **NTBackup** solo permite realizar recuperaciones de copias de seguridad heredadas y no se puede usar en equipos que ejecutan windows Server 2008 o Windows Vista para crear nuevas copias de seguridad. Para descargar esta versión de **NTBackup**, vea [https://go.microsoft.com/fwlink/?LinkId=82917](https://go.microsoft.com/fwlink/?LinkId=82917).
+> [!IMPORTANT]
+> El comando **Wbadmin** no puede recuperar copias de seguridad creadas con el comando **NTBackup** . Sin embargo, una versión de **NTBackup** está disponible como descarga de la [utilidad de restauración de copias de seguridad de Windows NT](https://www.microsoft.com/download/details.aspx?id=4220). Esta versión descargable le ayuda a realizar recuperaciones de copias de seguridad heredadas, pero no puede crear nuevas copias de seguridad.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[Wbadmin](wbadmin.md)
+- [wbadmin](wbadmin.md)

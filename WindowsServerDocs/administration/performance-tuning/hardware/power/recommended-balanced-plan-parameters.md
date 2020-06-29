@@ -1,18 +1,18 @@
 ---
 title: Parámetros de plan de energía equilibrado recomendados para tiempos de respuesta rápidos
-description: Parámetros de plan de energía equilibrado recomendados para el tiempo de respuesta rápida
+description: Parámetros de plan de energía equilibrado recomendados para tiempos de respuesta rápidos
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 288746b5361c550e167f64886a929c96c81ff8d0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62dc6168e76bf3951443df0f06c47a8684d2df26
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851968"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471590"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>Parámetros de plan de energía equilibrado recomendados para cargas de trabajo que requieren tiempos de respuesta rápidos
 
@@ -26,7 +26,7 @@ Sin embargo, **el tiempo de respuesta** podría aumentar exponencialmente con au
 | Umbral de aumento de rendimiento de procesador | Umbral de uso por encima del cual se aumenta la frecuencia | 90 | 60 |
 | Umbral de reducción de rendimiento de procesador | Umbral de uso por debajo del cual se va a reducir la frecuencia | 80 | 40 |
 | Tiempo de aumento del rendimiento del procesador | Número de ventanas de comprobación de PPM antes de que la frecuencia sea aumentar | 3 | 1 |
-| Directiva de aumento de rendimiento de procesador | Velocidad de aumento de la frecuencia | único | Ideal |
+| Directiva de aumento de rendimiento de procesador | Velocidad de aumento de la frecuencia | Single | Ideal |
 
 Para establecer los valores propuestos, los usuarios pueden ejecutar los siguientes comandos en una ventana con administrador:
 
@@ -45,9 +45,9 @@ Este cambio se basa en el análisis de rendimiento y de equilibrio de energía m
 
 ## <a name="specpower--java-workload"></a>SPECpower: carga de trabajo de JAVA
 
-[SPECpower\_ssj2008](http://spec.org/power_ssj2008/), la prueba comparativa de especificación estándar del sector más popular para características de rendimiento y energía del servidor, se usa para comprobar el impacto en la energía. Puesto que solo usa el **rendimiento** como métrica de rendimiento, el plan de energía predeterminado **equilibrado** proporciona la mejor eficacia energética.
+[SPECpower \_ ssj2008](http://spec.org/power_ssj2008/), la prueba comparativa de especificación estándar del sector más popular para las características de potencia y rendimiento del servidor, se usa para comprobar el impacto en la energía. Puesto que solo usa el **rendimiento** como métrica de rendimiento, el plan de energía predeterminado **equilibrado** proporciona la mejor eficacia energética.
 
-El cambio de parámetro propuesto consume una potencia ligeramente mayor a la luz (es decir, < = 20%) niveles de carga. Pero con el nivel de carga superior, la diferencia aumenta y comienza a consumir la misma potencia que el plan de energía de **alto rendimiento** después del nivel de carga del 60%. Para usar los parámetros de cambio propuestos, los usuarios deben tener en cuenta el costo de energía en niveles de carga medio y alto durante el planeamiento de la capacidad del bastidor.
+El cambio de parámetro propuesto consume una potencia ligeramente mayor a la luz (es decir, <= 20%) niveles de carga. Pero con el nivel de carga superior, la diferencia aumenta y comienza a consumir la misma potencia que el plan de energía de **alto rendimiento** después del nivel de carga del 60%. Para usar los parámetros de cambio propuestos, los usuarios deben tener en cuenta el costo de energía en niveles de carga medio y alto durante el planeamiento de la capacidad del bastidor.
 
 ## <a name="geekbench-3"></a>GeekBench 3
 
@@ -64,8 +64,8 @@ Configuramos un [clúster de conmutación por error] y usabamos Diskspd para gen
 >[!Important]
 >A partir de procesadores Intel [Broadwell] que ejecutan Windows Server 2016, la mayoría de las decisiones de administración de energía del procesador se realizan en el procesador en lugar de en el nivel de sistema operativo para lograr una adaptación más rápida a los cambios de carga de trabajo. Los parámetros de PPM heredados que usa el sistema operativo tienen un impacto mínimo en las decisiones de frecuencia reales, excepto en indicar al procesador si se debe favorecer la potencia o el rendimiento, o bien limitar las frecuencias mínima y máxima. Por lo tanto, el cambio propuesto del parámetro PPM solo se dirige a los sistemas Broadwell.
 
-## <a name="see-also"></a>Consulta también
-- [Consideraciones de rendimiento de hardware de servidor](../index.md)
+## <a name="see-also"></a>Consulte también
+- [Consideraciones de rendimiento del hardware de servidor](../index.md)
 - [Server Hardware Power Considerations](../power.md) (Consideraciones de alimentación del hardware de servidor)
 - [Power and Performance Tuning](power-performance-tuning.md) (Optimización de potencia y rendimiento)
 - [Processor Power Management Tuning](processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)

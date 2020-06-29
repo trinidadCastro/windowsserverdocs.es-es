@@ -1,20 +1,20 @@
 ---
-title: Ajuste de potencia y rendimiento
-description: Optimización de la administración de energía del procesador (PPM) para el plan de energía del equilibrio de Windows Server
+title: Información general sobre el ajuste de energía y rendimiento para Windows Server
+description: Información general sobre la optimización de la administración de energía del procesador (PPM) para Windows Server.
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1457328a151c87d2d4cb41c4ee91b4759f4fb8e2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 67e72967d29fc96fe3f57b714bd8aaf19f406565
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851998"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471660"
 ---
-# <a name="power-and-performance-tuning"></a>Ajuste de potencia y rendimiento
+# <a name="power-and-performance-tuning"></a>Optimización energética y de rendimiento
 
 La eficiencia energética es cada vez más importante en entornos empresariales y centros de datos, y agrega otro conjunto de inconvenientes a la combinación de opciones de configuración.
 
@@ -58,22 +58,22 @@ Necesita comprender exhaustivamente los requisitos de carga de trabajo para eleg
 
 ## <a name="diagnosing-energy-efficiency-issues"></a>Diagnóstico de problemas de eficiencia energética
 
-**PowerCfg. exe** admite una opción de línea de comandos que puede usar para analizar la eficiencia energética inactiva de su servidor. Al ejecutar PowerCfg. exe con la opción **/Energy** , la herramienta realiza una prueba de 60 segundos para detectar posibles problemas de eficiencia energética. La herramienta genera un informe HTML sencillo en el directorio actual.
+**PowerCfg.exe** admite una opción de línea de comandos que puede usar para analizar la eficiencia energética inactiva de su servidor. Al ejecutar PowerCfg.exe con la opción **/Energy** , la herramienta realiza una prueba de 60 segundos para detectar posibles problemas de eficiencia energética. La herramienta genera un informe HTML sencillo en el directorio actual.
 
 > [!Important]
-> Para garantizar un análisis preciso, asegúrese de que todas las aplicaciones locales estén cerradas antes de ejecutar **PowerCfg. exe**. 
+> Para garantizar un análisis preciso, asegúrese de que todas las aplicaciones locales estén cerradas antes de ejecutar **PowerCfg.exe**. 
 
 Las tasas de TICs de temporizador reducidas, los controladores que carecen de compatibilidad con la administración de energía y un uso excesivo de la CPU son algunos de los problemas de comportamiento detectados por el comando **powercfg/Energy** . Esta herramienta proporciona una manera sencilla de identificar y corregir problemas de administración de energía, lo que puede dar lugar a importantes ahorros en los costos de un centro de recursos de gran tamaño.
 
-Para obtener más información acerca de PowerCfg. exe, consulte [uso de powercfg para evaluar la eficacia energética del sistema](https://msdn.microsoft.com/windows/hardware/gg463250.aspx).
+Para obtener más información sobre PowerCfg.exe, consulte [uso de PowerCfg para evaluar la eficacia energética del sistema](https://msdn.microsoft.com/windows/hardware/gg463250.aspx).
 
 ## <a name="using-power-plans-in-windows-server"></a>Uso de planes de energía en Windows Server
 
 Windows Server 2016 tiene tres planes de energía integrados diseñados para satisfacer diferentes conjuntos de necesidades empresariales. Estos planes proporcionan una manera sencilla de personalizar un servidor para satisfacer los objetivos de potencia o rendimiento. En la tabla siguiente se describen los planes, se enumeran los escenarios comunes en los que se usa cada plan y se proporcionan algunos detalles de implementación para cada plan.
 
-| **Planificar** | **Descripción** | **Escenarios aplicables comunes** | **Aspectos destacados de la implementación** |
+| **Plan** | **Descripción** | **Escenarios aplicables comunes** | **Aspectos destacados de la implementación** |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Equilibrado (recomendado) | Configuración predeterminada. Se dirige a una buena eficacia energética con un impacto mínimo en el rendimiento. | Informática general | Coincide con la capacidad de demanda. Las características de ahorro de energía equilibran la eficacia y el rendimiento. |
+| Equilibrado (recomendado) | valor predeterminado. Se dirige a una buena eficacia energética con un impacto mínimo en el rendimiento. | Informática general | Coincide con la capacidad de demanda. Las características de ahorro de energía equilibran la eficacia y el rendimiento. |
 | Alto rendimiento | Aumenta el rendimiento a costa de un consumo de energía elevado. Se aplican las limitaciones de energía y térmica, los gastos operativos y las consideraciones de confiabilidad. | Aplicaciones de baja latencia y código de la aplicación que es sensible a los cambios de rendimiento del procesador | Los procesadores siempre están bloqueados en el estado de rendimiento más alto (incluidas las frecuencias "Turbo"). Se desactivan todos los núcleos. La salida térmica puede ser significativa. |
 | Economizador de energía | Limita el rendimiento para ahorrar energía y reducir el costo operativo. No se recomienda sin realizar pruebas exhaustivas para asegurarse de que el rendimiento es adecuado. | Implementaciones con presupuestos de energía limitados y restricciones térmicas | La frecuencia del procesador es un porcentaje del máximo (si se admite) y habilita otras características de ahorro de energía. |
 
@@ -112,13 +112,13 @@ En Windows Server 2016, el valor predeterminado para el modo Boost es 3.
 
 | **Nombre** | **Comportamiento basado en el estado P** | **Comportamiento de CPPC** |
 |--------------------------|------------------------|-------------------|
-| 0 (deshabilitado) | Deshabilitado | Deshabilitado |
-| 1 (habilitado) | Habilitado | Eficaz habilitado |
-| 2 (agresivo) | Habilitado | Aggressive |
+| 0 (deshabilitado) | Disabled | Disabled |
+| 1 (habilitado) | habilitado | Eficaz habilitado |
+| 2 (agresivo) | habilitado | Aggressive |
 | 3 (eficaz habilitado) | Eficaz | Eficaz habilitado |
 | 4 (agresiva eficaz) | Eficaz | Aggressive |
 
- 
+
 Los siguientes comandos habilitan el modo de mejora del rendimiento del procesador en el plan de energía actual (especifique la Directiva mediante un alias de GUID):
 
 ``` syntax
@@ -129,7 +129,7 @@ Powercfg -setactive scheme_current
 > [!Important]
 > Debe ejecutar el comando **powercfg-SETACTIVE** para habilitar la nueva configuración. No es necesario reiniciar el servidor.
 
-Para establecer este valor para planes de energía distintos del plan seleccionado actualmente, puede usar alias como esquema\_máximo (economizador de energía), esquema\_mínimo (alto rendimiento) y esquema\_EQUILIBRAda (equilibrada) en lugar del esquema\_actual. Reemplace "Scheme Current" en los comandos powercfg-SETACTIVE mostrados anteriormente con el alias deseado para habilitar ese plan de energía.
+Para establecer este valor para planes de energía distintos del plan seleccionado actualmente, puede usar alias como el esquema \_ máximo (economizador de energía), el esquema \_ mínimo (alto rendimiento) y el esquema \_ equilibrado (equilibrado) en lugar del esquema \_ actual. Reemplace "Scheme Current" en los comandos powercfg-SETACTIVE mostrados anteriormente con el alias deseado para habilitar ese plan de energía.
 
 Por ejemplo, para ajustar el modo de mejora en el plan economizador de energía y hacer que el economizador de energía sea el plan actual, ejecute los siguientes comandos:
 
@@ -220,8 +220,9 @@ Powercfg -setacvalueindex scheme_current sub_processor DISTRIBUTEUTIL 0
 Powercfg -setactive scheme_current
 ```
 
-## <a name="see-also"></a>Consulta también
-- [Consideraciones de rendimiento de hardware de servidor](../index.md)
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Consideraciones de rendimiento del hardware de servidor](../index.md)
 - [Server Hardware Power Considerations](../power.md) (Consideraciones de alimentación del hardware de servidor)
 - [Processor Power Management Tuning](processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)
 - [Recommended Balanced Plan Parameters](recommended-balanced-plan-parameters.md) (Parámetros recomendados del plan equilibrado)

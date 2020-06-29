@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f2a2b9db60842ba7889116cf35163c579d9131d1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: da4f173a5d91f73c73d3f537f58228890f90b136
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861728"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471680"
 ---
 # <a name="windows-authentication-architecture"></a>Arquitectura de autenticación de Windows
 
@@ -40,7 +40,7 @@ La interfaz del proveedor de compatibilidad para seguridad (SSPI) es la API que 
 
 SSPI es la implementación de la API de servicio de seguridad genérico (GSSAPI). SSPI proporciona un mecanismo por el que una aplicación distribuida puede llamar a uno de varios proveedores de seguridad para obtener una conexión autenticada sin conocer los detalles del Protocolo de seguridad.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Security Support Provider Interface Architecture](security-support-provider-interface-architecture.md)
 

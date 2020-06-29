@@ -8,31 +8,31 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f87614d5884d25c4e462cdccd8de72a7980368ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e742b5f9f94da06d43127c437f6ce693d4bcfc16
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402004"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472891"
 ---
 # <a name="classification-management"></a>Administración de clasificaciones
 
 > Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-Las propiedades de clasificación se usan para clasificar y seleccionar archivos para tareas de administración de archivos programadas.
+Las propiedades de clasificación se utilizan para clasificar archivos y se pueden usar para seleccionar archivos para tareas de administración de archivos programadas.
 
-Existen muchas maneras de clasificar un archivo. Una forma es crear una propiedad de clasificación que asigna un valor a todos los archivos de un directorio especificado. Otra forma es crear reglas para decidir el valor que se establecerá en una propiedad determinada.
+Existen muchas maneras de clasificar un archivo. Una forma consiste en crear una propiedad de clasificación que asigne un valor a todos los archivos de un directorio especificado. Otra manera es crear reglas para decidir qué valor establecer para una propiedad determinada.
 
-Esta sección incluye los temas siguientes:
+Esta sección contiene los siguientes temas:
 
 -   [Crear una propiedad de clasificación](create-classification-property.md)
 -   [Crear una regla de clasificación automática](create-automatic-classification-rule.md)
 
 
 > [!Note]
-> Para establecer notificaciones por correo electrónico y ciertas funcionalidades de informes, debes configurar primero las opciones generales del Administrador de recursos del servidor de archivos.
+> Para configurar las notificaciones de correo electrónico y algunas capacidades de informes, primero debe configurar las opciones generales del Administrador de recursos del servidor de archivos.
 
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)

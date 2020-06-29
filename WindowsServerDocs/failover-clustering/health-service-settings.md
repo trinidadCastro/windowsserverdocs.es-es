@@ -7,12 +7,12 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: a8262567abdd18847e99026c43d722351a00d3f2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d2284587ca68bbcf8648adeb2de361cb95e0f6d2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720536"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473262"
 ---
 # <a name="health-service-settings"></a>Configuración de Servicio de mantenimiento
 
@@ -27,7 +27,7 @@ Use el siguiente cmdlet de PowerShell para establecer o modificar la configuraci
 ### <a name="usage"></a>Uso
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name <SettingName> -Value <Value>  
+Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name <SettingName> -Value <Value>
 ```
 
 #### <a name="example"></a>Ejemplo
@@ -99,7 +99,7 @@ Vea la sección anterior.
 "System.LogLevel" = 4
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Servicio de mantenimiento de Windows Server 2016](health-service-overview.md)
 - [Espacios de almacenamiento directo en Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md)

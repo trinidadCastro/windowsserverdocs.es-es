@@ -1,6 +1,6 @@
 ---
-title: disco en línea
-description: Tema de referencia de * * * *-
+title: online disk
+description: Tema de referencia del comando de disco en línea, que desconecta el disco sin conexión al estado en línea.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,24 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 110a73a46712e3cbe5b5ff22b7e4343afb103966
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 954e52788f3236cb9b2898a23edae25d5b22deb8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723413"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472691"
 ---
-# <a name="online-disk"></a>disco en línea
+# <a name="online-disk"></a>online disk
 
+Desconecta el disco sin conexión al estado en línea. En el caso de los discos básicos, este comando intenta poner en línea el disco seleccionado y todos los volúmenes del disco. En el caso de los discos dinámicos, este comando intenta poner en conexión todos los discos que no están marcados como externos en el equipo local. También intenta poner en línea todos los volúmenes del conjunto de discos dinámicos.
 
+Si se conecta un disco dinámico de un grupo de discos y es el único disco del grupo, se vuelve a crear el grupo original y el disco se mueve a ese grupo. Si hay otros discos en el grupo y están en línea, el disco simplemente se vuelve a agregar al grupo. Si el grupo de un disco seleccionado contiene volúmenes reflejados o RAID-5, este comando también vuelve a sincronizar estos volúmenes.
 
-Traslada los discos que están actualmente sin conexión a un estado en línea.
-
-> [!IMPORTANT]
-> Este comando no está disponible en ninguna edición de Windows Vista.
+> [!NOTE]
+> Se debe seleccionar un disco para que el comando de **disco en línea** se ejecute correctamente. Use el comando [Seleccionar disco](select-disk.md) para seleccionar un disco y desplazar el foco a él.
 
 > [!IMPORTANT]
 > Este comando producirá un error si se usa en un disco de solo lectura.
-
-Para obtener instrucciones sobre cómo usar este comando, consulte [reactivación de un disco dinámico que falta o que está sin conexión](https://go.microsoft.com/fwlink/?LinkId=207046) (https://go.microsoft.com/fwlink/?LinkId=207046).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,22 +36,16 @@ online disk [noerr]
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|noerr|Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
+Para obtener instrucciones sobre el uso de este comando, consulte [reactivación de un disco dinámico que falta o que está sin conexión](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732026(v=ws.11)).
 
-## <a name="remarks"></a>Observaciones
+| Parámetro | Descripción |
+|--|--|
+| noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
--   Cuando se usa sin parámetros en Windows Vista, este comando funciona en un grupo de discos. En el caso de los discos básicos, nunca hay más de un disco por grupo. En el caso de los discos dinámicos, el grupo incluye todos los discos dinámicos no externos.
--   En el caso de los discos básicos, este comando intentará poner en conexión el disco seleccionado y todos los volúmenes del disco.
--   En el caso de los discos dinámicos, este comando intentará conectar todos los discos que no estén marcados como externos en el equipo local. También intentará poner en conexión todos los volúmenes en el conjunto de discos dinámicos.
--   Si se conecta un disco dinámico de un grupo de discos y es el único disco del grupo, se vuelve a crear el grupo original y el disco se mueve a ese grupo. Si hay otros discos en el grupo y están en línea, el disco simplemente se vuelve a agregar al grupo.
--   Si el grupo de un disco seleccionado contiene volúmenes reflejados o RAID-5, este comando también vuelve a sincronizar estos volúmenes.
--   Se debe seleccionar un disco para que este comando se ejecute correctamente. Use el comando **Seleccionar disco** para seleccionar un disco y desplazar el foco a él.
+### <a name="examples"></a>Ejemplos
 
-## <a name="examples"></a>Ejemplos
+Para poner en línea el disco con el foco, escriba:
 
-Para poner en línea el disco que tiene el foco, escriba:
 ```
 online disk
 ```
@@ -61,4 +53,3 @@ online disk
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-

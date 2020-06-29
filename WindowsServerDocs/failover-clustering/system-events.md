@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: eea98579a66f1db7f7ec873bda6a2c934841736f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 24be2b39c8130b97d22ee182c0064986b3378549
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720510"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472982"
 ---
 # <a name="failover-clustering-system-log-events"></a>Eventos de registro del sistema de clústeres de conmutación por error
 
@@ -134,7 +134,7 @@ El servicio de clúster encontró un problema inesperado y se cerrará. El códi
 
 Servicio de clúster no se pudo iniciar porque este nodo detectó que no tiene la copia más reciente de los datos de configuración del clúster. Los cambios en el clúster se produjeron mientras este nodo no estaba en pertenencia y, como resultado, no podía recibir actualizaciones de datos de configuración.
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Intente iniciar el servicio de clúster en todos los nodos del clúster para que los nodos con la última copia de los datos de configuración del clúster puedan formar el clúster por primera vez. Este nodo podrá unirse al clúster y obtendrá automáticamente los datos de configuración del clúster actualizados. Si no hay ningún nodo disponible con la última copia de los datos de configuración del clúster, ejecute el cmdlet de Windows PowerShell "Start-ClusterNode-FQ". El uso del parámetro ForceQuorum (FQ) iniciará el servicio de clúster y marcará la copia de este nodo de los datos de configuración del clúster para que sean autoritativos. Forzar el cuórum en un nodo con una copia obsoleta de la base de datos del clúster puede dar lugar a cambios en la configuración del clúster que se produjeron mientras el nodo no estaba participando en el clúster para ser perdido.
 
@@ -185,7 +185,7 @@ Hora en que se borrará automáticamente la cuarentena: %3
 
 ### <a name="event-1024-cp_reg_ckpt_restore_failed"></a>Evento 1024: CP_REG_CKPT_RESTORE_FAILED
 
-No se pudo restaurar el punto de control del registro para el recurso de clúster ' %1\\' en la clave del registro HKEY_LOCAL_MACHINE %2. Es posible que el recurso no funcione correctamente.
+No se pudo restaurar el punto de control del registro para el recurso de clúster ' %1 ' en la clave del registro HKEY_LOCAL_MACHINE \\ %2. Es posible que el recurso no funcione correctamente.
 Asegúrese de que ningún otro proceso tiene identificadores abiertos a las claves del registro en este subárbol del registro.
 
 ### <a name="event-1034-res_disk_missing"></a>Evento 1034: RES_DISK_MISSING
@@ -464,7 +464,7 @@ Recurso de script genérico de clúster ' %1 ': no se procesará la solicitud pa
 
 ### <a name="event-1234-cluster_event_account_missing_privs"></a>Evento 1234: CLUSTER_EVENT_ACCOUNT_MISSING_PRIVS
 
-El Servicio de clúster ha detectado que faltan uno o varios de los privilegios necesarios en su cuenta de servicio. La lista de privilegios que faltan es: ' %1 ' y actualmente no se ha concedido a la cuenta de servicio. Use ' SC. exe qprivs ClusSvc ' para comprobar los privilegios del Servicio de clúster (ClusSvc). Compruebe también si hay directivas de seguridad o directivas de grupo en Active Directory Domain Services que puedan haber modificado los privilegios predeterminados. Escriba el comando siguiente para conceder a los Servicio de clúster los privilegios necesarios para que funcionen correctamente:
+El Servicio de clúster ha detectado que faltan uno o varios de los privilegios necesarios en su cuenta de servicio. La lista de privilegios que faltan es: ' %1 ' y actualmente no se ha concedido a la cuenta de servicio. Use ' sc.exe qprivs ClusSvc ' para comprobar los privilegios del Servicio de clúster (ClusSvc). Compruebe también si hay directivas de seguridad o directivas de grupo en Active Directory Domain Services que puedan haber modificado los privilegios predeterminados. Escriba el comando siguiente para conceder a los Servicio de clúster los privilegios necesarios para que funcionen correctamente:
 
 ```
 sc.exe privs
@@ -498,7 +498,7 @@ El recurso de clúster ' %1 ' en el rol en clúster ' %2 ' ha recibido una notif
 
 Error de registro de recurso de nombre de red de clúster de uno o varios nombres DNS asociados porque la zona DNS correspondiente no acepta actualizaciones dinámicas.<br><br>Nombre de red en clúster: ' %1 '<br>Zona DNS: ' %2 '
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Asegúrese de que el DNS esté configurado como una zona DNS dinámica. Si el servidor DNS no acepta actualizaciones dinámicas, desactive la casilla "registrar las direcciones de esta conexión en DNS" en las propiedades del adaptador de red.
 
@@ -518,7 +518,7 @@ Error de registro de recurso de nombre de red de clúster de uno o varios nombre
 
 El recurso de nombre de red de clústeres no pudo modificar el registro de DNS.<br><br>Nombre de red en clúster: ' %1 '<br>Código de error: ' %2 '
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Asegúrese de que los adaptadores de red asociados a los recursos de direcciones IP dependientes estén configurados con acceso a al menos un servidor DNS.
 
@@ -526,7 +526,7 @@ Asegúrese de que los adaptadores de red asociados a los recursos de direcciones
 
 El recurso de nombre de red de clústeres no pudo modificar el registro de DNS.<br><br>Nombre de red en clúster: ' %1 '<br>Motivo: ' %2 '
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Asegúrese de que los adaptadores de red asociados a los recursos de direcciones IP dependientes estén configurados con acceso a al menos un servidor DNS.
 
@@ -534,7 +534,7 @@ Asegúrese de que los adaptadores de red asociados a los recursos de direcciones
 
 El recurso de nombre de red de clústeres no pudo publicar el registro PTR en la zona de búsqueda inversa de DNS.<br><br>Nombre de red en clúster: ' %1 '<br>Código de error: ' %2 '
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Asegúrese de que los adaptadores de red asociados a los recursos de direcciones IP dependientes están configurados con acceso a al menos un servidor DNS y que existe la zona de búsqueda inversa DNS.
 
@@ -542,7 +542,7 @@ Asegúrese de que los adaptadores de red asociados a los recursos de direcciones
 
 El recurso de nombre de red de clústeres no pudo publicar el registro PTR en la zona de búsqueda inversa de DNS.<br><br>Nombre de red en clúster: ' %1 '<br>Motivo: ' %2 '
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Asegúrese de que los adaptadores de red asociados a los recursos de direcciones IP dependientes están configurados con acceso a al menos un servidor DNS y que existe la zona de búsqueda inversa DNS.
 
@@ -600,7 +600,7 @@ No se puede poner en línea el recurso de nombre de red de clúster ' %1 '. El s
 
 ### <a name="event-1567-service_failed_to_change_log_size"></a>Evento 1567: SERVICE_FAILED_TO_CHANGE_LOG_SIZE
 
-Servicio de clúster no pudo cambiar el tamaño del registro de seguimiento. Compruebe el valor de ClusterLogSize con el cmdlet de PowerShell " \| Get-Cluster \*Format-List". Además, use el complemento monitor de rendimiento para comprobar la configuración de la sesión de seguimiento de eventos para FailoverClustering.
+Servicio de clúster no pudo cambiar el tamaño del registro de seguimiento. Compruebe el valor de ClusterLogSize con el cmdlet de PowerShell "Get-Cluster \| Format-List \* ". Además, use el complemento monitor de rendimiento para comprobar la configuración de la sesión de seguimiento de eventos para FailoverClustering.
 
 ### <a name="event-1567-res_vipaddr_address_interface_failed"></a>Evento 1567: RES_VIPADDR_ADDRESS_INTERFACE_FAILED
 
@@ -608,9 +608,9 @@ Error en la comprobación de estado de la interfaz IP ' %1 ' (dirección ' %2 ')
 
 ### <a name="event-1568-res_cloud_witness_cant_communicate_to_azure"></a>Evento 1568: RES_CLOUD_WITNESS_CANT_COMMUNICATE_TO_AZURE
 
-El recurso de testigo en la nube no pudo acceder a los servicios de almacenamiento Microsoft Azure.<br><br>Recurso de clúster: %1 <br>Nodo de clúster: %2 
+El recurso de testigo en la nube no pudo acceder a los servicios de almacenamiento Microsoft Azure.<br><br>Recurso de clúster: %1 <br>Nodo de clúster: %2
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Esto puede deberse a la comunicación de red entre el nodo de clúster y el servicio de Microsoft Azure que se está bloqueando. Compruebe la conectividad de Internet del nodo con Microsoft Azure. Conéctese al Microsoft Azure Portal y compruebe que la cuenta de almacenamiento existe.
 
@@ -620,9 +620,9 @@ La red ' %1 ' que se ha deshabilitado para el uso del clúster de conmutación p
 
 ### <a name="event-1569-res_cloud_witness_token_expired"></a>Evento 1569: RES_CLOUD_WITNESS_TOKEN_EXPIRED
 
-No se pudo autenticar el recurso de testigo en la nube con servicios de Microsoft Azure Storage. Se devolvió un error de acceso denegado al intentar ponerse en contacto con la cuenta de almacenamiento de Microsoft Azure. <br><br>Recurso de clúster: %1 
+No se pudo autenticar el recurso de testigo en la nube con servicios de Microsoft Azure Storage. Se devolvió un error de acceso denegado al intentar ponerse en contacto con la cuenta de almacenamiento de Microsoft Azure. <br><br>Recurso de clúster: %1
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Es posible que la clave de acceso de la cuenta de almacenamiento ya no sea válida. Use el Asistente para configurar Cuórum de clúster en el Administrador de clústeres de conmutación por error o el cmdlet de Windows PowerShell Set-ClusterQuorum para configurar el recurso de testigo en la nube con la clave de acceso de la cuenta de almacenamiento actualizada.
 
@@ -664,11 +664,11 @@ No se pudo iniciar el servidor de archivos porque no se encontró la dependencia
 
 ### <a name="event-1606-res_disk_cno_check_failed"></a>Evento 1606: RES_DISK_CNO_CHECK_FAILED
 
-El recurso de disco de clúster ' %1 ' contiene un volumen protegido por BitLocker, ' %2 ', pero para este volumen, el Active Directory cuenta de nombre de clúster (también denominado objeto de nombre de clúster o CNO) no es un protector de BitLocker para el volumen. Esto es necesario para los volúmenes protegidos por BitLocker. Para corregirlo, quite primero el disco del clúster. A continuación, use la herramienta de línea de comandos Manage-Bde. exe para agregar el nombre de clúster como un protector de\\ADAccountOrGroup\$ , con el formato dominio ClusterName para el nombre del clúster. A continuación, vuelva a agregar el disco al clúster. Para obtener más información, consulte la documentación de Manage-Bde. exe.
+El recurso de disco de clúster ' %1 ' contiene un volumen protegido por BitLocker, ' %2 ', pero para este volumen, el Active Directory cuenta de nombre de clúster (también denominado objeto de nombre de clúster o CNO) no es un protector de BitLocker para el volumen. Esto es necesario para los volúmenes protegidos por BitLocker. Para corregirlo, quite primero el disco del clúster. A continuación, use la herramienta de línea de comandos Manage-bde.exe para agregar el nombre de clúster como un protector de ADAccountOrGroup, con el formato dominio \\ ClusterName \$ para el nombre del clúster. A continuación, vuelva a agregar el disco al clúster. Para obtener más información, consulte la documentación de Manage-bde.exe
 
 ### <a name="event-1607-res_disk_cno_unlock_failed"></a>Evento 1607: RES_DISK_CNO_UNLOCK_FAILED
 
-El recurso de disco de clúster ' %1 ' no pudo desbloquear el volumen protegido por BitLocker ' %2 '. El objeto de nombre de clúster (CNO) no está configurado para ser un protector de BitLocker válido para este volumen. Para corregirlo, quite el disco del clúster. A continuación, use la herramienta de línea de comandos Manage-Bde. exe para agregar el nombre de clúster como un protector\\de\$ADAccountOrGroup, con el formato dominio ClusterName, y vuelva a agregar el disco al clúster. Para obtener más información, consulte la documentación de Manage-Bde. exe.
+El recurso de disco de clúster ' %1 ' no pudo desbloquear el volumen protegido por BitLocker ' %2 '. El objeto de nombre de clúster (CNO) no está configurado para ser un protector de BitLocker válido para este volumen. Para corregirlo, quite el disco del clúster. A continuación, use la herramienta de línea de comandos Manage-bde.exe para agregar el nombre de clúster como un protector de ADAccountOrGroup, con el formato dominio \\ ClusterName \$ , y vuelva a agregar el disco al clúster. Para obtener más información, consulte la documentación de Manage-bde.exe.
 
 ### <a name="event-1608-res_fileserver_leader_failed"></a>Evento 1608: RES_FILESERVER_LEADER_FAILED
 
@@ -725,9 +725,9 @@ Error de purga de nodo en el nodo de clúster %1. <br><br>Haga referencia a los 
 
 ### <a name="event-1683-res_netname_computer_account_no_dc"></a>Evento 1683: RES_NETNAME_COMPUTER_ACCOUNT_NO_DC
 
-El servicio de Cluster Server no pudo conectar con ningún controlador de dominio disponible en el dominio. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Servidor DC: %1 
+El servicio de Cluster Server no pudo conectar con ningún controlador de dominio disponible en el dominio. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Servidor DC: %1
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Compruebe que los controladores de dominio son accesibles en la red a los nodos del clúster.
 
@@ -735,14 +735,14 @@ Compruebe que los controladores de dominio son accesibles en la red a los nodos 
 
 El recurso de nombre de red de clústeres no pudo encontrar el objeto de equipo asociado en Active Directory. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Nombre de red: %1<br>Unidad organizativa: %2
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Restaure el objeto de equipo para el nombre de red de la papelera de reciclaje de Active Directory. Como alternativa, desconecte el recurso de nombre de red en clúster y ejecute la acción reparar para volver a crear el objeto de equipo en Active Directory.
 
 ### <a name="event-1685-res_netname_computer_object_cno_not_found"></a>Evento 1685: RES_NETNAME_COMPUTER_OBJECT_CNO_NOT_FOUND
 
 El recurso de nombre de red de clústeres no pudo encontrar el objeto de equipo asociado en Active Directory. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Nombre de red: %1<br>Unidad organizativa: %2
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Restaure el objeto de equipo para el nombre de red de la papelera de reciclaje de Active Directory.
 
@@ -750,7 +750,7 @@ Restaure el objeto de equipo para el nombre de red de la papelera de reciclaje d
 
 El recurso de nombre de red de clústeres encontró el objeto de equipo asociado en Active Directory que se va a deshabilitar. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Nombre de red: %1<br>Unidad organizativa: %2
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Habilite el objeto de equipo para el nombre de red en Active Directory.
 
@@ -758,7 +758,7 @@ Habilite el objeto de equipo para el nombre de red en Active Directory.
 
 El recurso de nombre de red de clústeres encontró el objeto de equipo asociado en Active Directory que se va a deshabilitar. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Nombre de red: %1<br>Unidad organizativa: %2
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Habilite el objeto de equipo para el nombre de red en Active Directory. Como alternativa, desconecte el recurso de nombre de red en clúster y ejecute la acción reparar para habilitar el objeto de equipo en Active Directory.
 
@@ -766,7 +766,7 @@ Habilite el objeto de equipo para el nombre de red en Active Directory. Como alt
 
 El recurso de nombre de red en clúster detectó que el objeto de equipo asociado en Active Directory estaba deshabilitado y no se pudo habilitar. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Nombre de red: %1<br>Unidad organizativa: %2
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Habilite el objeto de equipo para el nombre de red en Active Directory.
 
@@ -780,7 +780,7 @@ El administrador de particiones no liberó el disco en clúster con el identific
 
 ### <a name="event-4613-nodecleanup_clear_clusdisk_database_failed"></a>Evento 4613: NODECLEANUP_CLEAR_CLUSDISK_DATABASE_FAILED
 
-El servicio de clúster no pudo limpiar correctamente un disco en clúster con el identificador ' %2 ' al destruir el clúster. El código de error era ' %1 '. Es posible que no pueda obtener acceso a este disco hasta que la limpieza se haya completado correctamente. Para la limpieza manual, elimine el valor ' AttachedDisks ' de la\\clave\\'\\HKEY_LOCAL_MACHINE\\System\\CurrentControlSet Services ClusDisk Parameters ' en el registro de Windows.
+El servicio de clúster no pudo limpiar correctamente un disco en clúster con el identificador ' %2 ' al destruir el clúster. El código de error era ' %1 '. Es posible que no pueda obtener acceso a este disco hasta que la limpieza se haya completado correctamente. Para la limpieza manual, elimine el valor ' AttachedDisks ' de la \\ clave ' HKEY_LOCAL_MACHINE System \\ CurrentControlSet \\ Services \\ ClusDisk \\ Parameters ' en el registro de Windows.
 
 ### <a name="event-4615-nodecleanup_disable_cluster_service_failed"></a>Evento 4615: NODECLEANUP_DISABLE_CLUSTER_SERVICE_FAILED
 
@@ -927,7 +927,7 @@ El recurso de clúster ' %1 ' no pudo crear o modificar la cuenta de usuario loc
 
 No se pudo iniciar el clúster. La copia más reciente de los datos de configuración del clúster no estaba disponible en el conjunto de nodos que intentan iniciar el clúster. Los cambios en el clúster se produjeron mientras el conjunto de nodos no estaba en pertenencia y, como resultado, no podía recibir actualizaciones de datos de configuración. .<br><br>Votos necesarios para iniciar el clúster: %1<br>Votos disponibles: %2<br>Nodos con votos: %3
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Intente iniciar el servicio de clúster en todos los nodos del clúster para que los nodos con la última copia de los datos de configuración del clúster puedan formar el clúster por primera vez. El clúster se podrá iniciar y los nodos obtendrán automáticamente los datos de configuración del clúster actualizados. Si no hay ningún nodo disponible con la última copia de los datos de configuración del clúster, ejecute el cmdlet de Windows PowerShell "Start-ClusterNode-FQ". El uso del parámetro ForceQuorum (FQ) iniciará el servicio de clúster y marcará la copia de este nodo de los datos de configuración del clúster para que sean autoritativos. Forzar el cuórum en un nodo con una copia obsoleta de la base de datos del clúster puede dar lugar a cambios en la configuración del clúster que se produjeron mientras el nodo no estaba participando en el clúster para ser perdido.
 
@@ -1106,7 +1106,7 @@ El recurso de disco de clúster ' %1 ' detectó daños en el volumen ' %2 '. Spo
 
 ### <a name="event-1605-res_disk_spotfix_performed"></a>Evento 1605: RES_DISK_SPOTFIX_PERFORMED
 
-El recurso de disco de clúster ' %1 ' completó la ejecución de ChkDsk. exe/spotfix x en el volumen ' %2 '.
+Se completó la ejecución del recurso de disco de clúster ' %1 ' ChkDsk.exe/spotfix x en el volumen ' %2 '.
 El código de retorno era ' %4 '. La salida de ChkDsk se ha registrado en el archivo ' %3 '.<br>
 Compruebe el registro de eventos de aplicación para obtener información adicional de ChkDsk.
 
@@ -1114,7 +1114,7 @@ Compruebe el registro de eventos de aplicación para obtener información adicio
 
 El recurso de disco físico de clúster no se puede poner en línea.<br><br>Nombre de recurso de disco físico: %1<br>Código de error: %2<br>Tiempo transcurrido (segundos): %3
 
-#### <a name="guidance"></a>Guía
+#### <a name="guidance"></a>Instrucciones
 
 Ejecute el Asistente para validar una configuración para comprobar la configuración del almacenamiento. Si el código de error se ERROR_CLUSTER_SHUTDOWN, el administrador ha cancelado el estado en línea pendiente. Si se trata de un volumen replicado, esto podría ser el resultado de un error al establecer los atributos del disco. Revise los eventos de replicación de almacenamiento para obtener información adicional.
 
@@ -1251,6 +1251,6 @@ Volumen compartido de clúster ' %1 ' (' %2 ') ya no es accesible directamente d
 El recurso de disco físico de clúster ' %1 ' eliminó una instantánea de software. La instantánea de software del Volumen compartido de clúster ' %2 ' se eliminó porque era anterior a ' %3 ' días. El ID. de instantánea era ' %4 ' y se creó a partir del nodo ' %5 ' en ' %6 '.
 Se espera que una aplicación de copia de seguridad elimine las instantáneas una vez completado un trabajo de copia de seguridad. Esta instantánea superó el tiempo que se espera para que exista una instantánea. Compruebe con la aplicación de copia de seguridad que los trabajos de copia de seguridad se están completando correctamente.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Información detallada sobre los eventos de los componentes de clústeres de conmutación por error en Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))
