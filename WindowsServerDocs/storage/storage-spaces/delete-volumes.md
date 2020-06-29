@@ -8,15 +8,15 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 05/07/2019
-ms.openlocfilehash: a144479c196f42939aee6eb26227ed2e2b22d87a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34df5ecc2ff085535878133db98cf345990165e0
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402859"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475232"
 ---
 # <a name="deleting-volumes-in-storage-spaces-direct"></a>Eliminar volúmenes en Espacios de almacenamiento directo
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se proporcionan instrucciones para eliminar volúmenes de en un clúster de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) mediante el centro de administración de Windows.
 
@@ -26,12 +26,12 @@ Vea un vídeo rápido sobre cómo eliminar un volumen.
 
 Para eliminar un volumen en el centro de administración de Windows:
 
-1. En el centro de administración de Windows, conéctese a un clúster de Espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** en el panel **herramientas** .
+1. En Windows Admin Center, conéctese a un clúster de Espacios de almacenamiento directo y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
 2. En la página volúmenes, seleccione la pestaña **inventario** y, a continuación, seleccione el volumen que desea eliminar.
-4. En la parte superior de la página de detalles de los volúmenes, seleccione **eliminar**.
-5. En el cuadro de diálogo confirmaciones, active la casilla para confirmar que desea eliminar el volumen y seleccione **eliminar**.
+4. En la parte superior de la página de detalles del volumen, seleccione **Delete** (Eliminar).
+5. En el cuadro de diálogo de confirmación, active la casilla para confirmar que desea eliminar el volumen y seleccione **Delete** (Eliminar).
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Espacios de almacenamiento directo en Windows Server 2016](storage-spaces-direct-overview.md)
 - [Planeación de volúmenes en Espacios de almacenamiento directo](plan-volumes.md)

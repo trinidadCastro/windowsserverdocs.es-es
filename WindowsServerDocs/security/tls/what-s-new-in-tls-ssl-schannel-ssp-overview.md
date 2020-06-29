@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 105225736d6b883e8451aa599af1937068ebe43d
-ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
+ms.openlocfilehash: fac7e780fc584f0ce4dde8bb87ce37035840a40a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546572"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474882"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>Información general sobre TLS-SSL (Schannel SSP)
 
@@ -58,7 +58,7 @@ Cuando el cliente TLS realiza la solicitud al servidor, el servidor TLS lee su l
 ### <a name="management-of-trusted-issuers-for-client-authentication"></a><a name="BKMK_TrustedIssuers"></a>Administración de los emisores de confianza en la autenticación de cliente
 Cuando se requiere la autenticación del equipo cliente mediante SSL o TLS, el servidor puede configurarse para enviar una lista de emisores de certificados de confianza. Esta lista contiene el conjunto de emisores de certificados en los que confiará el servidor y es una sugerencia para el equipo cliente en cuanto a qué certificado de cliente seleccionar si hay varios certificados presentes. Además, la cadena de certificados que el equipo cliente envía al servidor debe validarse con la lista de emisores de confianza configurados.
 
-Antes de Windows Server 2012 y Windows 8, las aplicaciones o los procesos que usaban el SSP de Schannel (incluidos HTTP. sys e IIS) podían proporcionar una lista de los emisores de confianza que admitían para la autenticación de cliente a través de una lista de certificados de confianza (CTL).
+Antes de Windows Server 2012 y Windows 8, las aplicaciones o los procesos que usaban el SSP de Schannel (incluido HTTP.sys e IIS) podían proporcionar una lista de los emisores de confianza que admitían para la autenticación de cliente a través de una lista de certificados de confianza (CTL).
 
 En Windows Server 2012 y Windows 8, se realizaron cambios en el proceso de autenticación subyacente para que:
 
@@ -147,7 +147,7 @@ Las aplicaciones que usan DTLS a través de UDP pueden usar el modelo SSPI en Wi
 ### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>Funciones obsoletas
 En Schannel SSP para Windows Server 2012 y Windows 8, no hay características ni funcionalidades desusadas.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 -   [Modelo de seguridad de nube privada: funcionalidad contenedora](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
 
 

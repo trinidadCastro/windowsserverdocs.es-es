@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: ac4edccf0c1f8882dd2544b2544c3d8555bbc716
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4faf4ade53074677b34b037c5ba6d551beb8542e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857348"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474912"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>Resistencia anidada para Espacios de almacenamiento directo
 
@@ -40,7 +40,7 @@ Los volúmenes que usan resistencia anidada pueden **permanecer en línea y ser 
 
 La desventaja es que la resistencia anidada tiene **menos eficiencia de la capacidad que la creación de reflejo bidireccional clásica**, lo que significa que se obtiene un espacio ligeramente menos utilizable. Para obtener más información, consulte la sección eficiencia de la [capacidad](#capacity-efficiency) más adelante.
 
-## <a name="how-it-works"></a>Cómo funciona
+## <a name="how-it-works"></a>Funcionamiento
 
 ### <a name="inspiration-raid-51"></a>Inspiración: RAID 5 + 1
 
@@ -73,7 +73,7 @@ La eficacia de la capacidad es la proporción de espacio utilizable para la [sup
   | 4                          | 35,7%      | 34,1%      | 32,6%      |
   | 5                          | 37,7%      | 35,7%      | 33,9%      |
   | 6                          | 39,1%      | 36,8%      | 34,7%      |
-  | 7 +                         | 40,0%      | 37,5%      | 35,3%      |
+  | 7 (o posterior)                         | 40,0%      | 37,5%      | 35,3%      |
 
   > [!NOTE]
   > **Si tiene curiosidad, este es un ejemplo de las matemáticas completas.** Supongamos que tenemos seis unidades de capacidad en cada uno de dos servidores y queremos crear un volumen de 1 100 GB formado por 10 GB de reflejo y 90 GB de paridad. El reflejo bidireccional local del servidor es del 50,0% eficaz, lo que significa que los 10 GB de datos reflejados tardan 20 GB en almacenarse en cada servidor. Reflejado en ambos servidores, su superficie total es de 40 GB. La paridad única local del servidor, en este caso, es 5/6 = 83,3% eficaz, lo que significa que los 90 GB de datos de paridad toman 108 GB para almacenar en cada servidor. Reflejado en ambos servidores, su superficie total es de 216 GB. La superficie total es, por lo tanto [(10 GB/50,0%) + (90 GB/83,3%)] × 2 = 256 GB, para la eficacia de la capacidad total del 39,1%.
@@ -88,30 +88,30 @@ Puede usar cmdlets de almacenamiento conocidos en PowerShell para crear volúmen
 
 ### <a name="step-1-create-storage-tier-templates"></a>Paso 1: creación de plantillas de capa de almacenamiento
 
-En primer lugar, cree nuevas plantillas de capa de almacenamiento con el cmdlet `New-StorageTier`. Solo tiene que hacer esto una vez y cada nuevo volumen que cree puede hacer referencia a estas plantillas. Especifique el `-MediaType` de las unidades de capacidad y, opcionalmente, el `-FriendlyName` de su elección. No modifique los otros parámetros.
+En primer lugar, cree nuevas plantillas de capa de almacenamiento mediante el `New-StorageTier` cmdlet. Solo tiene que hacer esto una vez y cada nuevo volumen que cree puede hacer referencia a estas plantillas. Especifique el `-MediaType` de las unidades de capacidad y, opcionalmente, el `-FriendlyName` de su elección. No modifique los otros parámetros.
 
 Si las unidades de capacidad son unidades de disco duro (HDD), inicie PowerShell como administrador y ejecute:
 
-```PowerShell 
+```PowerShell
 # For mirror
 New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedMirror -ResiliencySettingName Mirror -MediaType HDD -NumberOfDataCopies 4
 
 # For parity
-New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk 
-``` 
+New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk
+```
 
-Si las unidades de capacidad son unidades de estado sólido (SSD), establezca el `-MediaType` en `SSD` en su lugar. No modifique los otros parámetros.
+Si las unidades de capacidad son unidades de estado sólido (SSD), establezca `-MediaType` en `SSD` en su lugar. No modifique los otros parámetros.
 
 > [!TIP]
-> Compruebe que los niveles se crearon correctamente con `Get-StorageTier`.
+> Compruebe que los niveles se crearon correctamente con `Get-StorageTier` .
 
 ### <a name="step-2-create-volumes"></a>Paso 2: creación de volúmenes
 
-A continuación, cree nuevos volúmenes con el cmdlet `New-Volume`.
+A continuación, cree nuevos volúmenes con el `New-Volume` cmdlet.
 
 #### <a name="nested-two-way-mirror"></a>Reflejo doble anidado
 
-Para usar un reflejo bidireccional anidado, haga referencia a la plantilla de nivel de `NestedMirror` y especifique el tamaño. Por ejemplo:
+Para usar un reflejo bidireccional anidado, haga referencia a la `NestedMirror` plantilla de nivel y especifique el tamaño. Por ejemplo:
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
@@ -119,7 +119,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFrie
 
 #### <a name="nested-mirror-accelerated-parity"></a>Paridad anidada-con aceleración de reflejo
 
-Para usar la paridad anidada con aceleración de reflejo, haga referencia a las plantillas de nivel `NestedMirror` y `NestedParity` y especifique dos tamaños, uno para cada parte del volumen (reflejo primero, paridad segundo). Por ejemplo, para crear un volumen de 1 500 GB que tenga un 20% de reflejo doble anidado y una paridad anidada del 80%, ejecute:
+Para usar la paridad anidada con aceleración de reflejo, haga referencia tanto a las `NestedMirror` plantillas de nivel como a `NestedParity` y especifique dos tamaños, uno para cada parte del volumen (reflejo primero, paridad segundo). Por ejemplo, para crear un volumen de 1 500 GB que tenga un 20% de reflejo doble anidado y una paridad anidada del 80%, ejecute:
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFriendlyNames NestedMirror, NestedParity -StorageTierSizes 100GB, 400GB
@@ -145,7 +145,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 Una vez que se establece en **true**, el comportamiento de la memoria caché es:
 
-| Problema                       | Comportamiento de caché                           | ¿Puede tolerar la pérdida de la unidad de caché? |
+| Situación                       | Comportamiento de la caché                           | ¿Puede tolerar la pérdida de la unidad de caché? |
 |---------------------------------|------------------------------------------|--------------------------------|
 | Ambos servidores en vertical                 | Lecturas y escrituras en caché, rendimiento completo | Sí                            |
 | Servidor inactivo, primeros 30 minutos   | Lecturas y escrituras en caché, rendimiento completo | No (temporalmente)               |
@@ -159,7 +159,7 @@ No, los volúmenes no se pueden convertir entre tipos de resistencia. En el caso
 
 ### <a name="can-i-use-nested-resiliency-with-multiple-types-of-capacity-drives"></a>¿Puedo usar la resistencia anidada con varios tipos de unidades de capacidad?
 
-Sí, solo tiene que especificar el `-MediaType` de cada nivel como corresponda durante el [paso 1](#step-1-create-storage-tier-templates) anterior. Por ejemplo, con NVMe, SSD y HDD en el mismo clúster, NVMe proporciona memoria caché mientras que las dos últimas proporcionan capacidad: establezca el nivel de `NestedMirror` en `-MediaType SSD` y el nivel de `NestedParity` en `-MediaType HDD`. En este caso, tenga en cuenta que la eficacia de la capacidad de paridad depende solo del número de unidades HDD y necesita al menos 4 de ellas por servidor.
+Sí, solo tiene que especificar la `-MediaType` de cada nivel como corresponda durante el [paso 1](#step-1-create-storage-tier-templates) anterior. Por ejemplo, con NVMe, SSD y HDD en el mismo clúster, NVMe proporciona memoria caché mientras que las dos últimas proporcionan capacidad: establezca el `NestedMirror` nivel en `-MediaType SSD` y el `NestedParity` nivel en `-MediaType HDD` . En este caso, tenga en cuenta que la eficacia de la capacidad de paridad depende solo del número de unidades HDD y necesita al menos 4 de ellas por servidor.
 
 ### <a name="can-i-use-nested-resiliency-with-3-or-more-servers"></a>¿Puedo usar la resistencia anidada con 3 o más servidores?
 
@@ -184,7 +184,7 @@ No. Para reemplazar un nodo de servidor y sus unidades, siga este orden:
 
 Para obtener más información, consulte el tema [quitar servidores](remove-servers.md) .
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Comprender la tolerancia a errores en Espacios de almacenamiento directo](storage-spaces-fault-tolerance.md)

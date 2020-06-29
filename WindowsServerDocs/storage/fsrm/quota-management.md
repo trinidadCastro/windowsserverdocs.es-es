@@ -8,30 +8,30 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5a655e28020d08bb1c10fa862c007f914a8cf566
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f2d584e7d3a0239e38dcadcf6415683d91a4bec
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403076"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474203"
 ---
 # <a name="quota-management"></a>Administración de cuotas
 
 > Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-En el nodo **Administración de cuotas** del Complemento de la consola de administración de Microsoft<sup>®</sup> (MMC) del Administrador de recursos del servidor de archivos, puedes realizar las siguientes tareas:
+En el nodo **Administración de cuotas** del complemento servidor de archivos Administrador de recursos Microsoft<sup>®</sup> Management Console (MMC), puede realizar las siguientes tareas:
 
--   Crear cuotas para limitar el espacio permitido para un volumen o carpeta y generar notificaciones cuando alcancen o superen los límites de cuota.
--   Generar cuotas automáticas que se aplican a todas las subcarpetas existentes en un volumen o carpeta y a todas las subcarpetas que se creen en el futuro.
--   Definir plantillas de cuotas que pueden aplicarse fácilmente a volúmenes o carpetas nuevos y que pueden usarse en toda la organización.
+-   Crear cuotas para limitar el espacio asignado a un volumen o carpeta y generar notificaciones cuando se esté a punto de alcanzar o superar el límite de dichas cuotas.
+-   Generar cuotas automáticas aplicables a todas las carpetas existentes en un volumen o una carpeta y a todas las subcarpetas que se creen en lo sucesivo.
+-   Definir plantillas de cuota que puedan aplicarse fácilmente a nuevos volúmenes o carpetas y que puedan utilizarse en toda una organización.
 
-Por ejemplo, puedes:
+Por ejemplo, puede:
 
 -   Coloque un límite de 200 megabytes (MB) en las carpetas del servidor personal de los usuarios, con una notificación de correo electrónico enviada a usted y al usuario cuando se superen los 180 MB de almacenamiento.
--   Establezca una cuota de 500 MB flexible en la carpeta compartida de un grupo. Cuando se alcanza este límite de almacenamiento, todos los usuarios del Grupo reciben una notificación por correo electrónico de que la cuota de almacenamiento se ha ampliado temporalmente a 520 MB para que puedan eliminar archivos innecesarios y cumplir con la Directiva de cuota preestablecida 500 MB.
--   Recibir una notificación cuando una carpeta temporal alcance los 2 gigabytes (GB) de uso, pero no limitar la cuota de la carpeta, porque es necesaria para un servicio que se ejecuta en el servidor.
+-   Establecer una cuota de advertencia de 500 MB en la carpeta compartida de un grupo. Cuando se alcance este límite de almacenamiento, todos los usuarios del grupo recibirán por correo electrónico una notificación en la que se les informará de que la cuota de almacenamiento se ha ampliado temporalmente a 520 MB para que puedan eliminar los archivos que no necesiten y poder cumplir la cuota predefinida de 500 MB.
+-   Recibir una notificación cuando una carpeta temporal llegue a tener un uso de 2 gigabytes (GB) sin limitar la cuota de esa carpeta si es necesaria para ejecutar un servicio en el servidor.
 
-Esta sección incluye los temas siguientes:
+Esta sección contiene los siguientes temas:
 
 -   [Crear una cuota](create-quota.md)
 -   [Crear una cuota automática](create-auto-apply-quota.md)
@@ -40,9 +40,9 @@ Esta sección incluye los temas siguientes:
 -   [Editar propiedades de cuota automática](edit-auto-apply-quota-properties.md)
 
 > [!Note]
-> Para establecer notificaciones por correo electrónico y funcionalidades de informes, debes configurar primero las opciones generales del Administrador de recursos del servidor de archivos.
+> Para configurar las notificaciones de correo electrónico y las funciones de informes, primero debe configurar las opciones generales del Administrador de recursos del servidor de archivos.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
 

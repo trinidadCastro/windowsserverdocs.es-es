@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 766ea9688b7f08914ca68a960cc21393963bd0e9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 82725e654fb4c7296b092019db111f9d3debad6d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856778"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475392"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Creación de un disco de plantilla de máquina virtual blindada con Windows
 
@@ -26,19 +26,19 @@ Para entender cómo se ajusta este tema en el proceso general de implementación
 
 ## <a name="prepare-an-operating-system-vhdx"></a>Preparar un VHDX de sistema operativo
 
-En primer lugar, prepare un disco del sistema operativo que se ejecutará a través del Asistente para creación de discos de plantilla blindada. Este disco se usará como disco del sistema operativo en las máquinas virtuales del inquilino. Puede usar cualquier herramienta existente para crear este disco, como Microsoft Desktop Image Service Manager (DISM), o bien configurar manualmente una máquina virtual con un VHDX en blanco e instalar el sistema operativo en ese disco. Al configurar el disco, debe cumplir los siguientes requisitos específicos de la generación 2 o las máquinas virtuales blindadas: 
+En primer lugar, prepare un disco del sistema operativo que se ejecutará a través del Asistente para creación de discos de plantilla blindada. Este disco se usará como disco del sistema operativo en las máquinas virtuales del inquilino. Puede usar cualquier herramienta existente para crear este disco, como Microsoft Desktop Image Service Manager (DISM), o bien configurar manualmente una máquina virtual con un VHDX en blanco e instalar el sistema operativo en ese disco. Al configurar el disco, debe cumplir los siguientes requisitos específicos de la generación 2 o las máquinas virtuales blindadas:
 
-| Requisito para VHDX | Razón |
+| Requisito para VHDX | Motivo |
 |-----------|----|
 |Debe ser un disco de tabla de particiones GUID (GPT) | Necesario para que las máquinas virtuales de generación 2 admitan UEFI|
 |El tipo de disco debe ser **básico** en lugar de **dinámico**. <br>Nota: Esto hace referencia al tipo de disco lógico, no a la característica VHDX de "expansión dinámica" compatible con Hyper-V. | BitLocker no admite discos dinámicos.|
 |El disco tiene al menos dos particiones. Una partición debe incluir la unidad en la que está instalado Windows. Esta unidad será cifrada por BitLocker. La otra partición es la partición activa, que contiene el cargador de inicio y permanece sin cifrar para poder iniciar el equipo.|Necesario para BitLocker|
 |El sistema de archivos es NTFS | Necesario para BitLocker|
 |El sistema operativo instalado en VHDX es uno de los siguientes:<br>-Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 <br>-Windows 10, Windows 8.1, Windows 8| Necesario para admitir máquinas virtuales de generación 2 y la plantilla de arranque seguro de Microsoft|
-|El sistema operativo debe estar generalizado (ejecute Sysprep. exe) | El aprovisionamiento de plantillas implica máquinas virtuales especializadas para la carga de trabajo de un inquilino específico| 
+|El sistema operativo debe estar generalizado (ejecutar sysprep.exe) | El aprovisionamiento de plantillas implica máquinas virtuales especializadas para la carga de trabajo de un inquilino específico|
 
 > [!NOTE]
-> Si usa VMM, no copie el disco de plantilla en la biblioteca VMM en esta fase. 
+> Si usa VMM, no copie el disco de plantilla en la biblioteca VMM en esta fase.
 
 ## <a name="run-windows-update-on-the-template-operating-system"></a>Ejecutar Windows Update en el sistema operativo de la plantilla
 
@@ -58,7 +58,7 @@ Siga los pasos que se describen a continuación en un equipo que ejecute Windows
 2. Para administrar el servidor de forma local, instale la característica **herramientas de máquinas virtuales blindadas** desde **herramientas de administración remota del servidor** en el servidor.
 
         Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
-        
+
     También puede administrar el servidor desde un equipo cliente en el que haya instalado el [herramientas de administración remota del servidor de Windows 10](https://www.microsoft.com/download/details.aspx?id=45520).
 
 3. Obtenga o cree un certificado para firmar el VSC del VHDX que se convertirá en el disco de plantilla para nuevas máquinas virtuales blindadas. Los detalles sobre este certificado se mostrarán a los inquilinos cuando creen sus archivos de datos de blindaje y estén autorizando los discos en los que confían. Por lo tanto, es importante obtener este certificado de una entidad de certificación de confianza mutua para el usuario y los inquilinos. En escenarios empresariales en los que se encuentre el anfitrión y el inquilino, puede considerar la posibilidad de emitir este certificado desde su PKI.
@@ -67,9 +67,9 @@ Siga los pasos que se describen a continuación en un equipo que ejecute Windows
 
         New-SelfSignedCertificate -DnsName publisher.fabrikam.com
 
-4. Inicie el **Asistente para crear un disco de plantilla** desde la carpeta **herramientas administrativas** del menú Inicio o escriba **TemplateDiskWizard. exe** en un símbolo del sistema.
+4. Inicie el **Asistente para crear un disco de plantilla** desde la carpeta **herramientas administrativas** del menú Inicio o escriba **TemplateDiskWizard.exe** en el símbolo del sistema.
 
-5. En la página **certificado** , haga clic en **examinar** para mostrar una lista de certificados. Seleccione el certificado con el que desea preparar la plantilla de disco. Haga clic en **Aceptar** y, a continuación, en **Siguiente**.
+5. En la página **certificado** , haga clic en **examinar** para mostrar una lista de certificados. Seleccione el certificado con el que desea preparar la plantilla de disco. Haga clic en **Aceptar** y luego en **Siguiente**.
 
 6. En la página disco virtual, haga clic en **examinar** para seleccionar el VHDX que ha preparado y, a continuación, haga clic en **siguiente**.
 
@@ -85,15 +85,15 @@ Siga los pasos que se describen a continuación en un equipo que ejecute Windows
     > Los discos de plantilla solo se pueden usar con el proceso de aprovisionamiento seguro de máquinas virtuales blindadas.
     > Si intenta arrancar una máquina virtual normal (sin blindar) con un disco de plantilla, es probable que se produzca un error de detención (pantalla azul) y no se admita.
 
-9. En la página **Resumen** , se muestra información sobre la plantilla de disco, el certificado usado para firmar el VSC y el emisor de certificados. Haz clic en **Cerrar** para salir del asistente.
+9. En la página **Resumen** , se muestra información sobre la plantilla de disco, el certificado usado para firmar el VSC y el emisor de certificados. Haga clic en **Cerrar** para salir del asistente.
 
-Si usa VMM, siga los pasos descritos en las secciones restantes de este tema para incorporar un disco de plantilla a una plantilla de máquina virtual blindada en VMM. 
+Si usa VMM, siga los pasos descritos en las secciones restantes de este tema para incorporar un disco de plantilla a una plantilla de máquina virtual blindada en VMM.
 
 ## <a name="copy-the-template-disk-to-the-vmm-library"></a>Copiar el disco de plantilla en la biblioteca VMM
 
 Si usa VMM, después de crear un disco de plantilla, debe copiarlo en un recurso compartido de biblioteca VMM para que los hosts puedan descargar y usar el disco al aprovisionar nuevas máquinas virtuales. Use el procedimiento siguiente para copiar el disco de plantilla en la biblioteca VMM y, a continuación, actualice la biblioteca.
 
-1. Copie el archivo VHDX en la carpeta de recursos compartidos de biblioteca de VMM. Si usó la configuración predeterminada de VMM, copie el disco de plantilla en _\\<vmmserver>\MSSCVMMLibrary\VHDs_.
+1. Copie el archivo VHDX en la carpeta de recursos compartidos de biblioteca de VMM. Si usó la configuración predeterminada de VMM, copie el disco de plantilla en _ \\ <vmmserver> \MSSCVMMLibrary\VHDs_.
 
 2. Actualice el servidor de biblioteca. Abra el área de trabajo **biblioteca** , expanda **servidores de biblioteca**, haga clic con el botón secundario en el servidor de biblioteca que desee actualizar y haga clic en **Actualizar**.
 
@@ -125,9 +125,9 @@ Con un disco de plantilla preparado en la biblioteca VMM, está listo para crear
 
 5. En la página **configurar hardware** , especifique las capacidades de las máquinas virtuales creadas a partir de esta plantilla. Asegúrese de que haya al menos una NIC disponible y configurada en la plantilla de máquina virtual. La única manera de que un inquilino se conecte a una máquina virtual blindada es a través de Conexión a Escritorio remoto, Administración remota de Windows u otras herramientas de administración remota preconfiguradas que funcionan a través de protocolos de red.
 
-    Si opta por aprovechar los grupos de direcciones IP estáticas en VMM en lugar de ejecutar un servidor DHCP en la red de inquilinos, deberá avisar a los inquilinos de esta configuración. Cuando un inquilino suministra su archivo de datos de blindaje, que contiene el archivo de instalación desatendida para VMM, deberá proporcionar valores de marcador de posición especiales para la información del grupo de direcciones IP estáticas. Para obtener más información sobre los marcadores de posición de VMM en archivos de instalación desatendida de inquilinos, vea [crear un archivo de respuesta](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file). 
+    Si opta por aprovechar los grupos de direcciones IP estáticas en VMM en lugar de ejecutar un servidor DHCP en la red de inquilinos, deberá avisar a los inquilinos de esta configuración. Cuando un inquilino suministra su archivo de datos de blindaje, que contiene el archivo de instalación desatendida para VMM, deberá proporcionar valores de marcador de posición especiales para la información del grupo de direcciones IP estáticas. Para obtener más información sobre los marcadores de posición de VMM en archivos de instalación desatendida de inquilinos, vea [crear un archivo de respuesta](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file).
 
-6. En la página **configurar sistema operativo** , VMM solo mostrará algunas opciones para las máquinas virtuales blindadas, incluida la clave de producto, la zona horaria y el nombre del equipo. El inquilino especifica información segura, como la contraseña de administrador y el nombre de dominio, a través de un archivo de datos de blindaje (. Archivo PDK). 
+6. En la página **configurar sistema operativo** , VMM solo mostrará algunas opciones para las máquinas virtuales blindadas, incluida la clave de producto, la zona horaria y el nombre del equipo. El inquilino especifica información segura, como la contraseña de administrador y el nombre de dominio, a través de un archivo de datos de blindaje (. Archivo PDK).
 
     > [!NOTE]
     > Si decide especificar una clave de producto en esta página, asegúrese de que sea válida para el sistema operativo en el disco de plantilla. Si se usa una clave de producto incorrecta, se producirá un error en la creación de la máquina virtual.
@@ -139,7 +139,7 @@ Una vez creada la plantilla, los inquilinos pueden usarla para crear nuevas máq
 Como alternativa a la ejecución del Asistente para crear un disco de plantilla, puede copiar el disco de plantilla y el certificado en un equipo que ejecute RSAT y ejecutar [Protect-TemplateDisk](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps
 ) para iniciar el proceso de firma.
 En el ejemplo siguiente se usa el nombre y la información de versión especificados por los parámetros _TemplateName_ y _version_ .
-El VHDX que proporcione al parámetro `-Path` se sobrescribirá con el disco de plantilla actualizado, por lo que debe asegurarse de realizar una copia antes de ejecutar el comando.
+El VHDX que proporcione al `-Path` parámetro se sobrescribirá con el disco de plantilla actualizado, por lo que debe asegurarse de realizar una copia antes de ejecutar el comando.
 
 ```powershell
 # Replace "THUMBPRINT" with the thumbprint of your template disk signing certificate in the line below
@@ -167,7 +167,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 > [!div class="nextstepaction"]
 > [Creación de un archivo de datos de blindaje](guarded-fabric-tenant-creates-shielding-data.md)
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
-- [Pasos de configuración del proveedor de servicios de hospedaje para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [Pasos de configuración del proveedor de servicios de hosting para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

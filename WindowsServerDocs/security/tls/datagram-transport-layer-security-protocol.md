@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: d0c066b063cbfc8def54c2e0d02cbb0eaf7f1d40
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79477aa441b82854852fe35a9b45bafdee664532
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852928"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475272"
 ---
 # <a name="datagram-transport-layer-security-protocol"></a>Protocolo de seguridad de capa de transporte de datagrama
 
@@ -29,9 +29,8 @@ Los datagramas son comunes en el streaming multimedia, como juegos o videoconfer
 
 Los conjuntos de cifrado que están disponibles para la configuración se incluyen en el patrón después de los que se pueden configurar para TLS. No se permite RC4. Schannel sigue usando Cryptography Next Generation (CNG). Esto aprovecha la certificación FIPS 140, que se presentó en Windows Vista.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 [Seguridad de la capa de transporte de datagrama RFC 4347 de IETF](http://tools.ietf.org/html/rfc4347)
 
 
-                                        

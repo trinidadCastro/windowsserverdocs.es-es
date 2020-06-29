@@ -8,25 +8,25 @@ ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
 ms.date: 02/25/2020
-ms.openlocfilehash: fb53ae74e471d590f83e1017662f33bb5a4b7c1d
-ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
+ms.openlocfilehash: 40750acb260335e858a7763c950dfc4ad2cd7979
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77608800"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473832"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>Crear volúmenes en Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se describe cómo crear volúmenes en un clúster de Espacios de almacenamiento directo mediante el centro de administración de Windows y PowerShell.
 
 > [!TIP]
-> Si aún no lo hiciste, echa un vistazo primero a [Planificación de volúmenes en Espacios de almacenamiento directo](plan-volumes.md).
+> Si todavía no lo ha hecho, consulte en primer lugar la [planeación de los volúmenes en espacios de almacenamiento directo](plan-volumes.md) .
 
 ## <a name="create-a-three-way-mirror-volume"></a>Crear un volumen de reflejo triple
 
-Para crear un volumen de reflejo triple en el centro de administración de Windows: 
+Para crear un volumen de reflejo triple en el centro de administración de Windows:
 
 1. En el centro de administración de Windows, conéctese a un clúster de Espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** en el panel **herramientas** .
 2. En la página volúmenes, seleccione la pestaña **inventario** y, a continuación, seleccione **crear volumen**.
@@ -94,64 +94,64 @@ Vea un vídeo rápido sobre cómo activar la desduplicación y la compresión.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/PRibTacyKko]
 
-## <a name="create-volumes-using-powershell"></a>Crear volúmenes con PowerShell
+## <a name="create-volumes-using-powershell"></a>Creación de volúmenes con PowerShell
 
-Te recomendamos usar el cmdlet **New-Volume** para crear volúmenes para Espacios de almacenamiento directo. Proporciona la experiencia más rápida y sencilla. Este cmdlet crea automáticamente por sí solo el disco virtual, lo particiona y formatea, crea el volumen con nombre coincidente y lo agrega a los volúmenes compartidos de clúster: todo en un paso sencillo.
+Se recomienda usar el cmdlet **New-Volume** para crear volúmenes para espacios de almacenamiento directo. Ofrece la experiencia más rápida y sencilla. Este cmdlet crea automáticamente el disco virtual, las particiones y los formatea, crea el volumen con el nombre correspondiente y lo agrega a los volúmenes compartidos del clúster, todo en un solo paso.
 
-El cmdlet **New-Volume** tiene cuatro parámetros que siempre tendrás que proporcionar:
+El cmdlet **New-Volume** tiene cuatro parámetros que debe proporcionar siempre:
 
-- **FriendlyName:** cualquier cadena que quiera, por ejemplo *"Volume1"*
-- **FileSystem:** ya sea **CSVFS_ReFS** (recomendado) o **CSVFS_NTFS**
-- **StoragePoolFriendlyName:** el nombre de tu grupo de almacenamiento, por ejemplo *"S2D en NombreDeClúster"*
-- **Size:** el tamaño del volumen, por ejemplo *"10TB"*
+- **FriendlyName:** cualquier cadena que desee, por ejemplo *"Volume1"* .
+- **FileSystem:** **CSVFS_ReFS** (recomendado) o **CSVFS_NTFS**.
+- **StoragePoolFriendlyName:** el nombre del bloque de almacenamiento; por ejemplo *"S2D en ClusterName"* .
+- **Size:** el tamaño del volumen, por ejemplo *"10TB"* .
 
    > [!NOTE]
-   > Windows, incluido PowerShell, cuenta con números binarios (base 2), mientras que las unidades a menudo se etiquetan con números decimales (base 10). Esto explica por qué una unidad de "un terabyte", definida como 1 000 000 000 000 bytes, en Windows aparece como aproximadamente "909 GB". Esto es de esperar. Al crear volúmenes con **New-Volume**, debes especificar el parámetro **Size** en números binarios (base 2). Por ejemplo, especificar "909GB" o "0.909495 TB" creará un volumen de aproximadamente 1 000 000 000 000 bytes.
+   > Windows, incluido PowerShell, cuenta con números binarios (en base 2), mientras que las unidades suelen etiquetarte con números decimales (en base 10). Esto explica por qué una unidad de "un terabyte", definida como 1 billón de bytes, aparece en Windows como unos "909 GB". Se espera que esto sea así. Al crear volúmenes mediante **New-Volume**, debe especificar el parámetro **Size** (Tamaño) en números binarios (en base 2). Por ejemplo, si se especifica "909GB" o "0,909495TB", se creará un volumen de aproximadamente 1 billón de bytes.
 
-### <a name="example-with-2-or-3-servers"></a>Ejemplo: con 2 o 3 servidores
+### <a name="example-with-2-or-3-servers"></a>Ejemplo: Con dos o tres servidores
 
-Para facilitar las cosas, si la implementación tiene tan solo dos servidores, Espacios de almacenamiento directo usará automáticamente la creación de reflejos dobles para resistencia. Si la implementación tiene solo tres servidores, usará automáticamente la creación de reflejos triple.
+Para facilitar las cosas, si la implementación tiene solo dos servidores, Espacios de almacenamiento directo usará automáticamente la resistencia de reflejo bidireccional. Si la implementación tiene solo tres servidores, usará automáticamente el reflejo triple.
 
 ```PowerShell
 New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB
 ```
 
-### <a name="example-with-4-servers"></a>Ejemplo: con 4 servidores o más
+### <a name="example-with-4-servers"></a>Ejemplo: Con más de cuatro servidores
 
-Si tienes cuatro servidores o más, puedes usar el parámetro **ResiliencySettingName** opcional para elegir el tipo de resistencia.
+Si tiene cuatro o más servidores, puede usar el parámetro opcional **ResiliencySettingName** para elegir el tipo de resistencia.
 
--   **ResiliencySettingName:** ya sea **Reflejo** o **Paridad**.
+-   **ResiliencySettingName:** **Mirror** o **Parity**.
 
-En el siguiente ejemplo, *"Volume2"* usa la creación de reflejos triple, y *"Volume3"* usa paridad dual (a menudo llamada "codificación de borrado").
+En el ejemplo siguiente, *"Volume2"* usa el reflejo triple y *"Volume3"* usa paridad dual (también conocidad como "codificación de borrado").
 
 ```PowerShell
 New-Volume -FriendlyName "Volume2" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Mirror
 New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Parity
 ```
 
-### <a name="example-using-storage-tiers"></a>Ejemplo: con capas de almacenamiento
+### <a name="example-using-storage-tiers"></a>Ejemplo: Uso de capas de almacenamiento
 
-En las implementaciones con tres tipos de unidades, un volumen puede abarcar las capas SSD y HDD para residir parcialmente en cada una. De igual modo, en las implementaciones con cuatro servidores o más, un volumen puede combinar creación de reflejos y paridad dual para residir parcialmente en cada una.
+En las implementaciones con tres tipos de unidades, un volumen puede abarcar las capas SSD y HDD, y residir parcialmente en cada uno. Del mismo modo, en implementaciones con cuatro o más servidores, un volumen puede mezclar reflejo y paridad dual para residir parcialmente en cada uno de ellos.
 
-Para ayudarte a crear estos volúmenes, Espacios de almacenamiento directo proporciona plantillas de capa predeterminadas llamadas *Rendimiento* y *Capacidad*. Estas encapsulan las definiciones para la creación de reflejos triple en las unidades de capacidad más rápida (si procede) y paridad dual en las unidades de capacidad más lenta (si procede).
+Para ayudarle a crear estos volúmenes, Espacios de almacenamiento directo proporciona plantillas de capa predeterminadas llamadas *Performance* (Rendimiento) y *Capacity* (Capacidad). Incluyen definiciones para la creación de reflejo triple en las unidades más rápidas (si procede) y paridad dual en las unidades más lentas (si procede).
 
-Para verlas, puedes ejecutar el cmdlet **Get-StorageTier**.
+Para verlos, puede ejecutar el cmdlet **Get-StorageTier**.
 
 ```PowerShell
 Get-StorageTier | Select FriendlyName, ResiliencySettingName, PhysicalDiskRedundancy
 ```
 
-![Captura de pantalla de capas de almacenamiento en PowerShell](media/creating-volumes/storage-tiers-screenshot.png)
+![Captura de pantalla de las capas de almacenamiento de PowerShell](media/creating-volumes/storage-tiers-screenshot.png)
 
-Para crear volúmenes en capas, haz referencia a estas plantillas de capas con los parámetros **StorageTierFriendlyNames** y **StorageTierSizes** del cmdlet **New-Volume**. Por ejemplo, el siguiente cmdlet crea un volumen que combina la creación de reflejos triple y la paridad dual en proporciones de 30:70.
+Para crear volúmenes en capas, haga referencia a estas plantillas de capa con los parámetros **StorageTierFriendlyNames** y **StorageTierSizes** del cmdlet **New-Volume**. Por ejemplo, el siguiente cmdlet crea un volumen que combina reflejo triple y paridad dual en una proporción 30:70.
 
 ```PowerShell
 New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 300GB, 700GB
 ```
 
-Ha terminado. Repite según sea necesario para crear más de un volumen.
+¡Y ya está! Repita el procedimiento si necesita crear más de un volumen.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Planeación de volúmenes en Espacios de almacenamiento directo](plan-volumes.md)

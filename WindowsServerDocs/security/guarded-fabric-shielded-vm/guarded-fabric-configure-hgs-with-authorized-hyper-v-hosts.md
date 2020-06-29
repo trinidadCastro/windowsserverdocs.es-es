@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 0f678172d397ff61fd336b7c844d43f77bea7fad
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 59b6aaa22fa89620df2ce6757b2d9f5ffe91c652
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856838"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475352"
 ---
 # <a name="deploy-guarded-hosts"></a>Implementar hosts protegidos
 
@@ -28,16 +28,16 @@ En los temas de esta sección se describen los pasos necesarios para que un admi
 
 **Para la atestación de clave de host**:
 1. [Crear una clave de host](guarded-fabric-create-host-key.md#create-a-host-key): indica cómo configurar un reenviador de DNS desde el dominio de tejido al dominio HGS.
-2. [Agregar la clave de host al servicio de atestación](guarded-fabric-create-host-key.md#add-the-host-key-to-the-attestation-service): indica cómo configurar un grupo de seguridad de Active Directory en el dominio del tejido, agregar hosts protegidos como miembros de ese grupo y proporcionar ese identificador de grupo al administrador de HGS. 
+2. [Agregar la clave de host al servicio de atestación](guarded-fabric-create-host-key.md#add-the-host-key-to-the-attestation-service): indica cómo configurar un grupo de seguridad de Active Directory en el dominio del tejido, agregar hosts protegidos como miembros de ese grupo y proporcionar ese identificador de grupo al administrador de HGS.
 3. [Confirmar que los hosts protegidos pueden atestiguar](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
 **Para la atestación de confianza de administrador**:
 1. [Configuración del tejido DNS](guarded-fabric-configuring-fabric-dns.md): indica cómo configurar un reenviador de DNS desde el dominio del tejido al dominio HGS.
-2. [Crear un grupo de seguridad](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md): indica cómo configurar un grupo de seguridad de Active Directory en el dominio del tejido, agregar hosts protegidos como miembros de ese grupo y proporcionar ese identificador de grupo al administrador de HGS. 
+2. [Crear un grupo de seguridad](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md): indica cómo configurar un grupo de seguridad de Active Directory en el dominio del tejido, agregar hosts protegidos como miembros de ese grupo y proporcionar ese identificador de grupo al administrador de HGS.
 3. [Confirmar que los hosts protegidos pueden atestiguar](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Tareas de implementación de tejidos protegidos y máquinas virtuales blindadas](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)

@@ -1,6 +1,6 @@
 ---
 title: Crear una propiedad de clasificación
-description: En este artículo se describen las propiedades de clasificación que se usan para asignar valores a los archivos de un volumen o carpeta especificados.
+description: En este artículo se describen las propiedades de clasificación, que se usan para asignar valores a archivos dentro de una carpeta o un volumen especificado.
 ms.date: 7/7/2017
 ms.prod: windows-server
 ms.technology: storage
@@ -8,48 +8,48 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d330f896c71cced8e97701af2c1008b3531e065d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8e0ba45883385a2b2bf161b04f99f8077fdef28
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394215"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473762"
 ---
 # <a name="create-a-classification-property"></a>Crear una propiedad de clasificación
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-Las propiedades de clasificación se usan para asignar valores a los archivos de un volumen o carpeta especificados. Existen muchos tipos de propiedad entre los que puedes elegir, según tus necesidades. En la tabla siguiente se definen los tipos de propiedad disponibles.
+Las propiedades de clasificación se utilizan para asignar valores a archivos dentro de una carpeta o un volumen especificado. Hay muchos tipos de propiedades entre las que puede elegir, dependiendo de sus necesidades. En la tabla siguiente se definen los tipos de propiedad disponibles.
 
-|Property | Descripción |
+|Propiedad | Descripción |
 | --- | --- |
-| Sí/No | Una propiedad booleana que puede ser **Sí** o **No**. Al combinar varios valores durante la clasificación o desde el contenido del archivo, un valor **No** reemplazará un valor **Sí**. |
-| Fecha-hora | Una propiedad sencilla de fecha y hora. Al combinar varios valores durante la clasificación o desde el contenido del archivo, los valores en conflicto impedirán una nueva clasificación. |
-| Número | Una propiedad sencilla numérica. Al combinar varios valores durante la clasificación o desde el contenido del archivo, los valores en conflicto impedirán una nueva clasificación. |
-| Lista ordenada | Una lista de valores fijos. Solo se puede asignar un único valor a una propiedad a la vez. Al combinar varios valores durante la clasificación o desde el contenido del archivo, se usará el valor más alto de la lista. |
-| Cadena | Una propiedad sencilla de cadena. Al combinar varios valores durante la clasificación o desde el contenido del archivo, los valores en conflicto impedirán una nueva clasificación. |
-| Selección múltiple | Una lista de valores que se pueden asignar a una propiedad. Se puede asignar más de un valor a una propiedad a la vez. Al combinar varios valores durante la clasificación o desde el contenido del archivo, se usará cada valor de la lista. |
-| Cadena múltiple | Una lista de cadenas que se pueden asignar a una propiedad. Se puede asignar más de un valor a una propiedad a la vez. Al combinar varios valores durante la clasificación o desde el contenido del archivo, se usará cada valor de la lista. |
+| Sí/No | Una propiedad booleana que puede ser **sí** o **no**. Al combinar varios valores durante la clasificación o desde el contenido del archivo, un valor **no** se invalidará con un valor **sí** . |
+| Fecha y hora | Propiedad de fecha y hora simple. Cuando se combinan varios valores durante la clasificación o desde el contenido del archivo, los valores en conflicto impedirán la reclasificación. |
+| Number | Propiedad de número simple. Cuando se combinan varios valores durante la clasificación o desde el contenido del archivo, los valores en conflicto impedirán la reclasificación. |
+| Lista ordenada | Una lista de valores fijos. Solo se puede asignar un valor a una propiedad cada vez. Al combinar varios valores durante la clasificación o desde el contenido del archivo, se usará el valor más alto de la lista. |
+| String | Propiedad de cadena simple. Al combinar varios valores durante la clasificación o a partir de los valores conflictivos del contenido del archivo, impedirá la reclasificación. |
+| Múltiples opciones | Una lista de valores que se pueden asignar a una propiedad. Se puede asignar más de un valor a una propiedad a la vez. Al combinar varios valores durante la clasificación o desde el contenido del archivo, se utilizará cada valor de la lista. |
+| Cadena múltiple | Una lista de cadenas que se pueden asignar a una propiedad. Se puede asignar más de un valor a una propiedad a la vez. Al combinar varios valores durante la clasificación o desde el contenido del archivo, se utilizará cada valor de la lista. |
 
 <br />
 
-El siguiente procedimiento te guiará por el proceso de crear una propiedad de clasificación.
+El siguiente procedimiento le guía por el proceso de creación de una propiedad de clasificación.
 
 ## <a name="to-create-a-classification-property"></a>Para crear una propiedad de clasificación
 
-1.  En **Administración de clasificaciones**, haz clic en el nodo **Propiedades de clasificación**.
+1.  En **Administración de clasificaciones**, haga clic en el nodo **propiedades de clasificación** .
 
-2.  Haz clic con el botón derecho en **Propiedades de clasificación**y luego haz clic en **Crear propiedad** (o haz clic en **Crear propiedad** en el panel **Acciones**). Se abrirá el cuadro de diálogo **Definiciones de propiedad de clasificación**.
+2.  Haga clic con el botón secundario en **propiedades de clasificación**y, a continuación, haga clic en **crear propiedad** (o haga clic en **crear propiedad** en el panel **acciones** ). Se abrirá el cuadro de diálogo **definiciones de propiedad de clasificación** .
 
-3.  En el cuadro de texto **Nombre de propiedad**, escribe un nombre para el informe.
+3.  En el cuadro de texto **nombre de propiedad** , escriba un nombre para la propiedad.
 
-4.  En el cuadro de texto **Descripción**, agrega una descripción opcional para la propiedad.
+4.  En el cuadro de texto **Descripción** , agregue una descripción opcional para la propiedad.
 
-5.  En el menú desplegable **Tipo de propiedad**, selecciona un tipo de propiedad de la lista.
+5.  En el menú desplegable **tipo de propiedad** , seleccione un tipo de propiedad de la lista.
 
-6.  Haga clic en **Aceptar**.
+6.  Haga clic en **OK**.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Crear una regla de clasificación automática](create-automatic-classification-rule.md)
 -   [Administración de clasificaciones](classification-management.md)

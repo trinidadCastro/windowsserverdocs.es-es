@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: aa2075bda71c6713fa76577b685315118199e63b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 69ff4bcfb407d01e184abd039be8aa0117372b4a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856788"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475342"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>Confirmar que los hosts protegidos pueden atestiguar
 
@@ -31,7 +31,7 @@ Un administrador de tejido debe confirmar que los hosts de Hyper-V pueden ejecut
 
 3. Configure las direcciones URL de atestación y protección de claves del host:
 
-    - **A través de Windows PowerShell**: puede configurar la protección de claves y las direcciones URL de atestación ejecutando el siguiente comando en una consola de Windows PowerShell con privilegios elevados. Por &lt;FQDN&gt;, use el nombre de dominio completo (FQDN) del clúster de HGS (por ejemplo, HGS. bastión. local) o pida al administrador de HGS que ejecute el cmdlet **Get-HgsServer** en el servidor HGS para recuperar las direcciones URL.
+    - **A través de Windows PowerShell**: puede configurar la protección de claves y las direcciones URL de atestación ejecutando el siguiente comando en una consola de Windows PowerShell con privilegios elevados. En &lt; FQDN &gt; , use el nombre de dominio completo (FQDN) del clúster de HGS (por ejemplo, HGS. bastión. local o pida al administrador de HGS que ejecute el cmdlet **Get-HgsServer** en el servidor de HGS para recuperar las direcciones URL).
 
         ```PowerShell
         Set-HgsClientConfiguration -AttestationServerUrl 'http://<FQDN>/Attestation' -KeyProtectionServerUrl 'http://<FQDN>/KeyProtection'
@@ -41,8 +41,8 @@ Un administrador de tejido debe confirmar que los hosts de Hyper-V pueden ejecut
 
     - **A través de VMM**: Si usa System Center 2016-Virtual Machine Manager (VMM), puede configurar las direcciones URL de atestación y protección de claves en VMM. Para obtener más información, consulte [configuración global de HGS](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings) en **aprovisionamiento de hosts protegidos en VMM**.
 
-    >**Apunte**
-    > - Si el administrador de HGS [habilitó HTTPS en el servidor de HGS](guarded-fabric-configure-hgs-https.md), comience las direcciones url con `https://`.
+    >**Notas**
+    > - Si el administrador de HGS ha [habilitado HTTPS en el servidor de HGS](guarded-fabric-configure-hgs-https.md), inicie las direcciones URL con `https://` .
     > - Si el administrador de HGS ha habilitado HTTPS en el servidor de HGS y ha usado un certificado autofirmado, tendrá que importar el certificado en el almacén de entidades de certificación raíz de confianza en todos los hosts. Para ello, ejecute el siguiente comando en cada host:
        ```PowerShell
        Import-Certificate -FilePath "C:\temp\HttpsCertificate.cer" -CertStoreLocation Cert:\LocalMachine\Root
@@ -55,14 +55,14 @@ Un administrador de tejido debe confirmar que los hosts de Hyper-V pueden ejecut
     Get-HgsClientConfiguration
     ```
 
-    La salida del comando indica si el host ha pasado la atestación y ahora está protegido. Si `IsHostGuarded` no devuelve **true**, puede ejecutar la herramienta de diagnóstico de HGS, [Get-HgsTrace](https://technet.microsoft.com/library/mt718831.aspx), para investigar. Para ejecutar diagnósticos, escriba el siguiente comando en un símbolo del sistema de Windows PowerShell con privilegios elevados en el host:
+    La salida del comando indica si el host ha pasado la atestación y ahora está protegido. Si no `IsHostGuarded` devuelve **true**, puede ejecutar la herramienta de diagnóstico de HGS, [Get-HgsTrace](https://technet.microsoft.com/library/mt718831.aspx), para investigar. Para ejecutar diagnósticos, escriba el siguiente comando en un símbolo del sistema de Windows PowerShell con privilegios elevados en el host:
 
     ```powershell
     Get-HgsTrace -RunDiagnostics -Detailed
     ```
 
     > [!IMPORTANT]
-    > Si usa Windows Server 2019 o Windows 10, la versión 1809 y usa directivas de integridad de código, `Get-HgsTrace` devuelven un error para el diagnóstico activo de la **Directiva de integridad de código** .
+    > Si usa Windows Server 2019 o Windows 10, versión 1809 y usa directivas de integridad de código, `Get-HgsTrace` devuelva un error para el diagnóstico activo de la **Directiva de integridad de código** .
     > Puede omitir este resultado de forma segura cuando sea el único diagnóstico con errores.
 
 ## <a name="next-step"></a>Paso siguiente
@@ -70,7 +70,7 @@ Un administrador de tejido debe confirmar que los hosts de Hyper-V pueden ejecut
 > [!div class="nextstepaction"]
 > [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
-- [Implementación del servicio de protección de host (HGS)](guarded-fabric-deploying-hgs-overview.md)
+- [Implementación del Servicio de protección de host (HGS)](guarded-fabric-deploying-hgs-overview.md)
 - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)

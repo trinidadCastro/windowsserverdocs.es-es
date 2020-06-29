@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 1ab941e25da7171349bb24762940af3bf886c165
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d90030fe183e5cfcb94866e87793c0419b636433
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77675366"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475452"
 ---
 # <a name="volume-shadow-copy-service"></a>Servicio de instantáneas de volumen
 
@@ -620,6 +620,6 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas co
 </tbody>
 </table>
 
-## <a name="see-also"></a>Consulta también
+## <a name="additional-references"></a>Referencias adicionales
 
 [Servicio de instantáneas de volumen en el Centro para desarrolladores de Windows](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)

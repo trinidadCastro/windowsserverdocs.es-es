@@ -6,16 +6,16 @@ ms.author: cosdar
 ms.prod: windows-server
 ms.technology: manage
 ms.date: 11/04/2019
-ms.openlocfilehash: 62bf21dd0afcb99aa77cff8a733e80fc4cffe2fb
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 088fb7b8f03ab7e575b562572f2e29e1b5774760
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73587235"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474492"
 ---
 # <a name="deploy-hyperconverged-infrastructure-with-windows-admin-center"></a>Implementar la infraestructura de hiperconvergida con el centro de administración de Windows
 
-> Se aplica a: Centro de administración de Windows, versión preliminar del centro de administración de Windows
+> Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
 Puede usar el centro de administración de Windows [versión 1910](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center) o posterior para implementar la infraestructura de hiperconvergida con dos o más servidores de Windows adecuados. Esta nueva característica adopta la forma de un flujo de trabajo de varias fases que le guía a través de la instalación de características, la configuración de redes, la creación del clúster y la implementación de Espacios de almacenamiento directo y/o redes definidas por software (SDN) si se seleccionan.
 
@@ -26,12 +26,12 @@ Puede usar el centro de administración de Windows [versión 1910](https://docs.
 
 ## <a name="preview-the-workflow"></a>Obtener una vista previa del flujo de trabajo
 
-### <a name="1-prerequisites"></a>1. requisitos previos
+### <a name="1-prerequisites"></a>1. Prerrequisitos
 
 El flujo de trabajo de creación de clústeres en el centro de administración de Windows no realiza la instalación del sistema operativo sin sistema operativo, por lo que primero debe instalar Windows Server en cada servidor. Las versiones admitidas son Windows Server 2016, Windows Server 2019 y Windows Server Insider Preview. También debe unir cada servidor al mismo Active Directory dominio en el que se ejecuta el centro de administración de Windows antes de iniciar el flujo de trabajo.
 
 ### <a name="2-install-windows-admin-center"></a>2. instalar el centro de administración de Windows
- 
+
 Siga las instrucciones para [Descargar e instalar](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center) la versión más reciente del centro de administración de Windows.
 
 ### <a name="3-install-the-cluster-creation-extension"></a>3. instalar la extensión de creación de clústeres
@@ -68,7 +68,7 @@ Además de abordar estas limitaciones, existen innumerables características que
 
 Use estos cmdlets de Windows PowerShell para continuar y ver lo que está haciendo el flujo de trabajo.
 
-Para ver qué características de Windows están instaladas, use el cmdlet `Get-WindowsFeature`. Por ejemplo:
+Para ver qué características de Windows están instaladas, use el `Get-WindowsFeature` cmdlet. Por ejemplo:
 
 ```PowerShell
 Get-WindowsFeature "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "BitLocker"
@@ -79,7 +79,7 @@ Get-WindowsFeature "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "Bi
   > [!Note]
   > Las características que se instalan dependerán del tipo de clúster que seleccione.
 
-Para ver los adaptadores de red y sus propiedades, como el nombre, las direcciones IPv4 y el ID. de VLAN:
+Para ver los adaptadores de red y sus propiedades como la de nombre, direcciones IPv4 e identificador de VLAN:
 
 ```PowerShell
 Get-NetAdapter | Where Status -Eq "Up" | Sort InterfaceAlias | Format-Table Name, InterfaceDescription, Status, LinkSpeed, VLANID, MacAddress
@@ -176,7 +176,7 @@ Get-VMSwitch | Remove-VMSwitch
 ```
 
 > [!Note]
-> El cmdlet `Remove-VMSwitch` quita automáticamente los adaptadores virtuales y deshace la formación de equipos incrustados por el conmutador de adaptadores físicos.
+> El `Remove-VMSwitch` cmdlet quita automáticamente los adaptadores virtuales y deshace la formación de equipos incrustados por el conmutador de adaptadores físicos.
 
 Si ha modificado las propiedades del adaptador de red, como el nombre, la dirección IPv4 y el ID. de VLAN:
 
@@ -198,7 +198,7 @@ Esta versión preliminar está relacionada con sus comentarios. Estas son alguna
 - [Envíe y vote solicitudes de características en UserVoice](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
 - [Únase al foro del centro de administración de Windows en Microsoft Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
 - Correo electrónico de HCI: implementación [at] microsoft.com
-- Tweet en [@servermgmt](https://twitter.com/servermgmt)
+- Tweet hasta[@servermgmt](https://twitter.com/servermgmt)
 
 ## <a name="report-an-issue"></a>Notificar un problema
 
@@ -206,13 +206,13 @@ Use los canales enumerados anteriormente para informar de un problema con el flu
 
 Si es posible, incluya la siguiente información para ayudarnos a reproducir y resolver rápidamente el problema:
 
-- Tipo de clúster seleccionado (por ejemplo: *"hiperconvergido"* )
-- Paso en el que se encontró el problema (por ejemplo: *"3,2 Create cluster"* )
-- Versión de la extensión de creación de clústeres. Vaya a **configuración** > **extensiones** > **extensiones instaladas** y vea la columna **versión** (por ejemplo: *"1.0.30"* ).
+- Tipo de clúster seleccionado (por ejemplo: *"hiperconvergido"*)
+- Paso en el que se encontró el problema (por ejemplo: *"3,2 Create cluster"*)
+- Versión de la extensión de creación de clústeres. Vaya a **configuración**  >  **extensiones**  >  **instaladas extensiones** y vea la columna **versión** (por ejemplo: *"1.0.30"*).
 - Mensajes de error, ya sea en la pantalla o en la consola del explorador, que puede abrir presionando **F12**.
-- Cualquier otra información relevante sobre su entorno 
+- Cualquier otra información relevante sobre su entorno
 
-## <a name="see-also"></a>Consulta también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Hola, centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)
 - [Implementar espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/deploy-storage-spaces-direct)

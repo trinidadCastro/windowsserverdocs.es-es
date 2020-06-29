@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4051bfea26d5c96d02132b50373f56b7b17ce5fb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0b26dca42d64338adeb8d818629e6a5f8b037f30
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857478"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475242"
 ---
 # <a name="windows-authentication-concepts"></a>Conceptos de autenticación de Windows
 
@@ -54,7 +54,7 @@ Del mismo modo, puede conceder a todos los usuarios de determinados permisos de 
 ## <a name="credentials"></a>Credenciales
 Una cuenta de Passport y, posiblemente, visas asociadas son las credenciales aceptadas para un viajero. Sin embargo, es posible que esas credenciales no permitan a un viajero entrar o tener acceso a todos los recursos de un país. Por ejemplo, se requieren credenciales adicionales para asistir a una conferencia. En Windows, las credenciales se pueden administrar para que los titulares de la cuenta puedan acceder a los recursos a través de la red sin tener que proporcionar sus credenciales de forma repetida. Este tipo de acceso permite a los usuarios autenticarse una vez por el sistema para tener acceso a todas las aplicaciones y orígenes de datos que están autorizados a usar sin especificar otro identificador de cuenta o contraseña. La plataforma Windows aprovecha la capacidad de usar una única identidad de usuario (mantenida por Active Directory) en la red mediante el almacenamiento en caché local de las credenciales de usuario en la autoridad de seguridad local (LSA) del sistema operativo. Cuando un usuario inicia sesión en el dominio, los paquetes de autenticación de Windows utilizan las credenciales de forma transparente para proporcionar el inicio de sesión único al autenticar las credenciales en los recursos de red. Para obtener más información sobre las credenciales, consulte [procesos de credenciales en la autenticación de Windows](credentials-processes-in-windows-authentication.md).
 
-Una forma de autenticación multifactor para el viajero podría ser el requisito de transportar y presentar varios documentos para autenticar su identidad, como una cuenta de Passport e información de registro de conferencias. Windows implementa este formulario o autenticación a través de tarjetas inteligentes, tarjetas inteligentes virtuales y tecnologías biométricas. 
+Una forma de autenticación multifactor para el viajero podría ser el requisito de transportar y presentar varios documentos para autenticar su identidad, como una cuenta de Passport e información de registro de conferencias. Windows implementa este formulario o autenticación a través de tarjetas inteligentes, tarjetas inteligentes virtuales y tecnologías biométricas.
 
 ## <a name="security-principals-and-accounts"></a>Entidades de seguridad y cuentas
 En Windows, cualquier usuario, servicio, grupo o equipo que puede iniciar una acción es una entidad de seguridad. Las entidades de seguridad tienen cuentas, que pueden ser locales en un equipo o estar basadas en dominio. Por ejemplo, los equipos Unidos a un dominio de cliente de Windows pueden participar en un dominio de red mediante la comunicación con un controlador de dominio, incluso cuando ningún usuario humano haya iniciado sesión. Para iniciar las comunicaciones, el equipo debe tener una cuenta activa en el dominio. Antes de aceptar las comunicaciones del equipo, la autoridad de seguridad local del controlador de dominio autentica la identidad del equipo y, a continuación, define el contexto de seguridad del equipo tal como lo haría para una entidad de seguridad humana. Este contexto de seguridad define la identidad y las capacidades de un usuario o servicio en un equipo determinado o un usuario, un servicio, un grupo o un equipo de una red. Por ejemplo, define los recursos, como un recurso compartido de archivos o una impresora, a los que se puede tener acceso y las acciones, como lectura, escritura o modificación, que puede realizar un usuario, un servicio o un equipo de ese recurso. Para obtener más información, consulte [entidades de seguridad](https://technet.microsoft.com/itpro/windows/keep-secure/security-principals).
@@ -67,9 +67,9 @@ Las cuentas de servicio administradas independientes y las cuentas virtuales se 
 
 Para obtener más información acerca de las cuentas, consulte:
 
--   [Active Directory cuentas](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-accounts)
+-   [Cuentas de Active Directory](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-accounts)
 
--   [Active Directory grupos de seguridad](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-security-groups)
+-   [Grupos de seguridad de Active Directory](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-security-groups)
 
 -   [Cuentas locales](https://technet.microsoft.com/itpro/windows/keep-bastion.local-accounts)
 
@@ -103,7 +103,7 @@ La delegación restringida proporciona a los administradores la capacidad de esp
 
 Para obtener más información acerca de la delegación restringida, consulte [información general sobre la delegación restringida de Kerberos](../kerberos/kerberos-constrained-delegation-overview.md).
 
-## <a name="see-also"></a>Vea también
-[Información técnica de inicio de sesión y autenticación de Windows](https://technet.microsoft.com/library/dn269029.aspx)
+## <a name="additional-references"></a>Referencias adicionales
+[Información técnica sobre inicio de sesión y autenticación en Windows](https://technet.microsoft.com/library/dn269029.aspx)
 
 

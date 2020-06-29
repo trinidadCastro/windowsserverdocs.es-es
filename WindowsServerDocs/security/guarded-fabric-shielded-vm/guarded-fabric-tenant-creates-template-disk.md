@@ -8,37 +8,37 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1f51a0f90f60847929f6fe46732c98f355a6a859
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5cdaf915de94e73374459c41b090f197b8f56ef
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856448"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475082"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-template-disk-optional"></a>Máquinas virtuales blindadas para inquilinos: creación de un disco de plantilla (opcional)
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
-Para crear una nueva máquina virtual blindada, deberá usar un disco de plantilla firmado y preparado especialmente. Los metadatos de los discos de plantilla firmada ayudan a garantizar que los discos no se modifiquen después de que se hayan creado y le permitan como inquilino restringir qué discos se pueden usar para crear las máquinas virtuales blindadas. Una manera de proporcionar este disco es para usted, el inquilino, para crearlo, tal como se describe en este tema. 
+Para crear una nueva máquina virtual blindada, deberá usar un disco de plantilla firmado y preparado especialmente. Los metadatos de los discos de plantilla firmada ayudan a garantizar que los discos no se modifiquen después de que se hayan creado y le permitan como inquilino restringir qué discos se pueden usar para crear las máquinas virtuales blindadas. Una manera de proporcionar este disco es para usted, el inquilino, para crearlo, tal como se describe en este tema.
 
 > [!IMPORTANT]
 > Si lo prefiere, puede usar un disco de plantilla proporcionado por el proveedor de servicios de hosting. Si lo hace, es importante implementar una máquina virtual de prueba con ese disco de plantilla y ejecutar sus propias herramientas (antivirus, detectores de vulnerabilidades, etc.) para validar el disco, de hecho, en un estado en el que confíe.
 
 ## <a name="prepare-an-operating-system-vhdx"></a>Preparar un VHDX de sistema operativo
 
-Para crear un disco de plantilla blindada, primero debe preparar un disco del sistema operativo que se ejecutará a través del Asistente para crear un disco de plantilla. Este disco se usará como disco del sistema operativo en las máquinas virtuales blindadas. Puede usar cualquier herramienta existente para crear este disco, como Microsoft Desktop Image Service Manager (DISM), o bien configurar manualmente una máquina virtual con un VHDX en blanco e instalar el sistema operativo en ese disco. Al configurar el disco, debe cumplir los siguientes requisitos específicos de la generación 2 o las máquinas virtuales blindadas: 
+Para crear un disco de plantilla blindada, primero debe preparar un disco del sistema operativo que se ejecutará a través del Asistente para crear un disco de plantilla. Este disco se usará como disco del sistema operativo en las máquinas virtuales blindadas. Puede usar cualquier herramienta existente para crear este disco, como Microsoft Desktop Image Service Manager (DISM), o bien configurar manualmente una máquina virtual con un VHDX en blanco e instalar el sistema operativo en ese disco. Al configurar el disco, debe cumplir los siguientes requisitos específicos de la generación 2 o las máquinas virtuales blindadas:
 
-| Requisito para VHDX | Razón |
+| Requisito para VHDX | Motivo |
 |-----------|----|
 |Debe ser un disco de tabla de particiones GUID (GPT) | Necesario para que las máquinas virtuales de generación 2 admitan UEFI|
 |El tipo de disco debe ser **básico** en lugar de **dinámico**. <br>Nota: Esto hace referencia al tipo de disco lógico, no a la característica VHDX de "expansión dinámica" compatible con Hyper-V. | BitLocker no admite discos dinámicos.|
 |El disco tiene al menos dos particiones. Una partición debe incluir la unidad en la que está instalado Windows. Esta unidad será cifrada por BitLocker. La otra partición es la partición activa, que contiene el cargador de inicio y permanece sin cifrar para poder iniciar el equipo.|Necesario para BitLocker|
 |El sistema de archivos es NTFS | Necesario para BitLocker|
 |El sistema operativo instalado en VHDX es uno de los siguientes:<br>-Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 <br>-Windows 10, Windows 8.1, Windows 8| Necesario para admitir máquinas virtuales de generación 2 y la plantilla de arranque seguro de Microsoft|
-|El sistema operativo debe estar generalizado (ejecute Sysprep. exe) | El aprovisionamiento de plantillas implica máquinas virtuales especializadas para la carga de trabajo de un inquilino específico| 
+|El sistema operativo debe estar generalizado (ejecutar sysprep.exe) | El aprovisionamiento de plantillas implica máquinas virtuales especializadas para la carga de trabajo de un inquilino específico|
 
 > [!NOTE]
-> No copie el disco de plantilla en la biblioteca VMM en esta fase. 
+> No copie el disco de plantilla en la biblioteca VMM en esta fase.
 
 ### <a name="required-packages-to-create-a-nano-server-template-disk"></a>Paquetes necesarios para crear un disco de plantilla de nano Server
 
@@ -72,9 +72,9 @@ Realice los pasos siguientes en un equipo con Windows Server 2016 (no es necesar
 
         New-SelfSignedCertificate -DnsName publisher.fabrikam.com
 
-4. Inicie el **Asistente para crear un disco de plantilla** desde la carpeta **herramientas administrativas** del menú Inicio o escriba **TemplateDiskWizard. exe** en un símbolo del sistema.
+4. Inicie el **Asistente para crear un disco de plantilla** desde la carpeta **herramientas administrativas** del menú Inicio o escriba **TemplateDiskWizard.exe** en el símbolo del sistema.
 
-5. En la página **certificado** , haga clic en **examinar** para mostrar una lista de certificados. Seleccione el certificado con el que desea firmar la plantilla de disco. Haga clic en **Aceptar** y, a continuación, en **Siguiente**.
+5. En la página **certificado** , haga clic en **examinar** para mostrar una lista de certificados. Seleccione el certificado con el que desea firmar la plantilla de disco. Haga clic en **Aceptar** y luego en **Siguiente**.
 
 6. En la página disco virtual, haga clic en **examinar** para seleccionar el VHDX que ha preparado y, a continuación, haga clic en **siguiente**.
 
@@ -84,14 +84,14 @@ Realice los pasos siguientes en un equipo con Windows Server 2016 (no es necesar
 
 8. Revise las selecciones en la página revisar configuración del asistente. Al hacer clic en **generar**, el asistente habilitará BitLocker en el disco de plantilla, calculará el hash del disco y creará el catálogo de firmas de volumen, que se almacena en los metadatos de VHDX.
 
-    Espere hasta que finalice el proceso de firma antes de intentar montar o trasladar el disco de plantilla. Este proceso puede tardar varios minutos en completarse, en función del tamaño del disco. 
+    Espere hasta que finalice el proceso de firma antes de intentar montar o trasladar el disco de plantilla. Este proceso puede tardar varios minutos en completarse, en función del tamaño del disco.
 
-9. En la página **Resumen** , se muestra información sobre la plantilla de disco, el certificado usado para firmar la plantilla y el emisor de certificados. Haz clic en **Cerrar** para salir del asistente.
+9. En la página **Resumen** , se muestra información sobre la plantilla de disco, el certificado usado para firmar la plantilla y el emisor de certificados. Haga clic en **Cerrar** para salir del asistente.
 
 
 Proporcione la plantilla de disco blindada al proveedor de servicios de hospedaje, junto con un archivo de datos de blindaje que cree, tal como se describe en [creación de datos de blindaje para definir una máquina virtual blindada](guarded-fabric-tenant-creates-shielding-data.md).
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

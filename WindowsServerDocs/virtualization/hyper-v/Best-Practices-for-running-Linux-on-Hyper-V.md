@@ -9,12 +9,12 @@ ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 04/15/2020
-ms.openlocfilehash: d8861369abe24ea0d34dce209a5d98e854c4c95d
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 75b471d4083ef1597d5edcc775ea6fc847992483
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82072241"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474472"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>Prácticas recomendadas para ejecutar Linux en Hyper-V
 
@@ -78,7 +78,7 @@ Configure y use el adaptador Ethernet virtual, que es una tarjeta de red especí
 
 El kernel de Linux ofrece dos conjuntos de programadores de e/s de disco para reordenar las solicitudes.  Un conjunto es para el subsistema "BLK" anterior y un conjunto es para el subsistema "BLK-MQ" más reciente. En cualquier caso, con los discos de estado sólido de hoy en día, se recomienda usar un programador que pase las decisiones de programación al hipervisor de Hyper-V subyacente. En el caso de los kernels de Linux que usan el subsistema "BLK", este es el programador "noop". En el caso de los kernels de Linux que usan el subsistema "BLK-MQ", este es el programador "ninguno".
 
-En el caso de un disco determinado, los programadores disponibles pueden verse en esta ubicación del sistema`<diskname>`de archivos:/sys/class/Block//Queue/Scheduler, con el programador seleccionado actualmente entre corchetes. Puede cambiar el programador escribiendo en esta ubicación del sistema de archivos. El cambio se debe agregar a un script de inicialización para que pueda conservarse entre los reinicios. Consulte la documentación de distribución de Linux para obtener más información.
+En el caso de un disco determinado, los programadores disponibles pueden verse en esta ubicación del sistema de archivos:/sys/class/Block/ `<diskname>` /Queue/Scheduler, con el programador seleccionado actualmente entre corchetes. Puede cambiar el programador escribiendo en esta ubicación del sistema de archivos. El cambio se debe agregar a un script de inicialización para que pueda conservarse entre los reinicios. Consulte la documentación de distribución de Linux para obtener más información.
 
 ## <a name="numa"></a>NUMA
 
@@ -94,7 +94,7 @@ Hyper-V permite la reducción de archivos de disco virtual (VHDX) sin tener en c
 
 Después de cambiar el tamaño de un VHD o VHDX, los administradores deben usar una utilidad como fdisk o parte de para actualizar las estructuras de partición, volumen y sistema de archivos para reflejar el cambio en el tamaño del disco. Al reducir o expandir el tamaño de un VHD o VHDX que tenga una tabla de particiones GUID (GPT) se producirá una advertencia cuando se use una herramienta de administración de particiones para comprobar el diseño de las particiones, y se avisará al administrador para que corrija el primer y el secundario. Este paso manual es seguro para realizar sin pérdida de datos.
 
-## <a name="see-also"></a>Consulte también
+## <a name="additional-references"></a>Referencias adicionales
 
 * [Máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 

@@ -8,89 +8,89 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: 752073e4f12db3b994261a70a9306d45b9a00d77
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3efbc6ae29ddaa4f3a4a4f2a2409bbeb87fec2ed
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861518"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475172"
 ---
 # <a name="mirror-accelerated-parity"></a>Paridad acelerada por reflejos
 
->Se aplica a: Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
-Los espacios de almacenamiento pueden proporcionar tolerancia a errores para datos mediante dos técnicas fundamentales: reflejos y paridad. En [Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md), ReFS incluye la paridad acelerada por reflejos, lo que permite crear volúmenes que usan resistencias de reflejo y paridad. La paridad acelerada por reflejos ofrece almacenamiento económico que aprovecha el espacio sin sacrificar el rendimiento. 
+Los espacios de almacenamiento pueden proporcionar tolerancia a errores para los datos mediante dos técnicas fundamentales: reflejo y paridad. En [espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md), ReFS introduce una paridad acelerada para el reflejo, que permite crear volúmenes que usan resistencias de reflejo y paridad. La paridad con aceleración de reflejo ofrece almacenamiento económico y rentable sin sacrificar el rendimiento.
 
 ![Mirror-Accelerated-Parity-Volume](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume.png)
 
 ## <a name="background"></a>Fondo
 
-Los esquemas de resistencia de reflejo y paridad tienen distintas características de almacenamiento y rendimiento:
-- La resistencia reflejada permite a los usuarios lograr un rendimiento de escritura rápido, pero la replicación de los datos de cada copia no es eficaz. 
-- Por otra parte, la paridad debe volver a calcularse para cada escritura, lo que provoca un rendimiento aleatorio de la escritura. Sin embargo, la paridad permite a los usuarios almacenar sus datos con mayor eficacia de espacio. Para obtener más información, consulte [tolerancia a errores de espacios de almacenamiento](../storage-spaces/Storage-Spaces-Fault-Tolerance.md).
+Los esquemas de resistencia de reflejo y paridad tienen características de almacenamiento y rendimiento fundamentalmente diferentes:
+- La resistencia reflejada permite a los usuarios lograr un rendimiento de escritura rápido, pero la replicación de los datos de cada copia no es eficaz.
+- La paridad, por otro lado, debe volver a calcular la paridad para cada escritura, lo que provocará que el rendimiento de escritura aleatorio se vea afectado. Sin embargo, la paridad permite que los usuarios almacenen sus datos con mayor eficacia de espacio. Para obtener más información, consulte [tolerancia a errores de espacios de almacenamiento](../storage-spaces/Storage-Spaces-Fault-Tolerance.md).
 
-Por lo tanto, el reflejo debe estar predispuesto a ofrecer almacenamiento dependiente del rendimiento, mientras que la paridad ofrece un uso mejorado de la capacidad de almacenamiento. En la paridad acelerada por reflejos, ReFS saca partido de las ventajas de cada tipo de resistencia para proporcionar almacenamiento dependiente de la capacidad y del rendimiento mediante la combinación de ambos esquemas de resistencia en un único volumen.
+Por lo tanto, el reflejo se ha desechado para ofrecer almacenamiento sensible al rendimiento, mientras que la paridad ofrece una mejor utilización de la capacidad de almacenamiento. En la paridad con aceleración de reflejo, ReFS aprovecha las ventajas de cada tipo de resistencia para ofrecer almacenamiento de gran capacidad y sensible al rendimiento mediante la combinación de los esquemas de resistencia de un solo volumen.
 
-## <a name="data-rotation-on-mirror-accelerated-parity"></a>Cambio de datos en la paridad acelerada por reflejos
+## <a name="data-rotation-on-mirror-accelerated-parity"></a>Rotación de datos en paridad de reflejo acelerado
 
-ReFS cambia activamente datos entre el espejo y la paridad en tiempo real. Esto permite que las escrituras de entrada se escriban rápidamente en el reflejo y luego cambien a la paridad para almacenarse de forma eficaz. Al hacerlo, la E/S de entrada se realiza rápidamente en el reflejo mientras que los datos "fríos" se almacenan de forma eficaz en el reflejo, lo que ofrece un rendimiento óptimo y un almacenamiento rentable en el mismo volumen. 
+ReFS gira activamente los datos entre el reflejo y la paridad, en tiempo real. Esto permite escribir rápidamente las escrituras entrantes en el reflejo y luego girarlas a la paridad para que se almacenen de forma eficaz. Al hacerlo, la e/s de entrada se presta más rápido en el reflejo, mientras que los datos inactivos se almacenan de forma eficaz en paridad, lo que proporciona un rendimiento óptimo y almacenamiento de costos perdidos en el mismo volumen.
 
-Para cambiar los datos entre reflejo y paridad, ReFS divide lógicamente el volumen en regiones de 64 MiB, que es la unidad del cambio. La siguiente imagen ilustra un volumen de paridad acelerada por reflejos dividido en regiones. 
+Para girar datos entre el reflejo y la paridad, ReFS divide lógicamente el volumen en regiones de 64 MiB, que son la unidad de rotación. En la imagen siguiente se muestra un volumen de paridad acelerado para reflejo dividido en regiones.
 
-![Mirror-Accelerated-Parity-Volume-with-Storage-Containers](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume-with-Storage-Containers.png)
+![Mirror-Accelerated-Parity-Volume-with-Storage-containers](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume-with-Storage-Containers.png)
 
-ReFS empieza a cambiar regiones completas de reflejo a paridad cuando el nivel de reflejo llega a un nivel de capacidad especificado. En lugar de trasladar inmediatamente los datos de reflejo paridad, ReFS espera y conserva los datos en el reflejo, siempre que sea posible, lo que permite a ReFS continuar ofreciendo un rendimiento óptimo para los datos (consulta "Rendimiento de E/S" a continuación). 
+ReFS comienza a rotar las regiones completas de reflejo a paridad una vez que el nivel de reflejo ha alcanzado un nivel de capacidad especificado. En lugar de mover inmediatamente los datos del reflejo a la paridad, ReFS espera y retiene los datos en el reflejo siempre que sea posible, lo que permite que ReFS siga proporcionando un rendimiento óptimo para los datos (vea "rendimiento de e/s" a continuación).
 
-Cuando los datos se mueven desde el reflejo a la paridad, los datos se leen, las codificaciones de paridad se calculan y los datos se escriben en la paridad. La animación siguiente muestra cómo utilizar una región de reflejo triple que se convierte en una región de codificación de borrado durante el cambio:
+Cuando los datos se mueven del reflejo a la paridad, se leen los datos, se calculan las codificaciones de paridad y, a continuación, los datos se escriben en la paridad. La animación siguiente muestra esto con una región reflejada triple que se convierte en una región codificada de borrado durante la rotación:
 
-![Mirror-Accelerated-Parity-Rotation](media/mirror-accelerated-parity/Container-Rotation.gif)
+![Reflejo-acelerado-paridad-rotación](media/mirror-accelerated-parity/Container-Rotation.gif)
 
-## <a name="io-on-mirror-accelerated-parity"></a>E/S en la paridad acelerada por reflejos
-### <a name="io-behavior"></a>Comportamiento de E/S
-**Escrituras:** ReFS ofrece escrituras de entrada de tres formas distintas:
+## <a name="io-on-mirror-accelerated-parity"></a>E/s en paridad acelerada de reflejo
+### <a name="io-behavior"></a>Comportamiento de e/s
+**Escrituras:** ReFS Services entrantes escrituras de tres maneras distintas:
 
 1.  **Escribe en el reflejo:**
 
-    - **1Una.** Si la escritura de entrada modifica los datos existentes en el reflejo, ReFS modificará los datos.
-    - **ter.** Si la escritura de entrada es una nueva escritura y ReFS encuentra suficiente espacio libre en el reflejo para ofrecer esta escritura, ReFS escribirá en el reflejo.
-    ![](media/mirror-accelerated-parity/Write-to-Mirror.png) de escritura en reflejo
+    - **1Una.** Si la escritura entrante modifica los datos existentes en el reflejo, ReFS modificará los datos en su lugar.
+    - **ter.** Si la escritura entrante es una nueva escritura y ReFS puede encontrar correctamente suficiente espacio disponible en el reflejo para atender esta escritura, ReFS escribirá en el reflejo.
+    ![Escritura en reflejo](media/mirror-accelerated-parity/Write-to-Mirror.png)
 
 2. **Escribe en el reflejo, reasignado desde la paridad:**
 
-    Si la escritura entrante modifica los datos que están en paridad y ReFS puede encontrar correctamente suficiente espacio disponible en el reflejo para atender la escritura entrante, ReFS invalidará primero los datos anteriores en paridad y, a continuación, escribirá en el reflejo. Esta anulación es una operación de metadatos rápida y económica que ayuda considerablemente a mejorar el rendimiento de la escritura en la paridad.
-    ![](media/mirror-accelerated-parity/Reallocated-Write.png) de escritura reasignado
+    Si la escritura entrante modifica los datos que están en paridad y ReFS puede encontrar correctamente suficiente espacio disponible en el reflejo para atender la escritura entrante, ReFS invalidará primero los datos anteriores en paridad y, a continuación, escribirá en el reflejo. Esta invalidación es una operación de metadatos rápida y económica que ayuda a mejorar de forma significativa el rendimiento de escritura realizado en la paridad.
+    ![Reasignado: escritura](media/mirror-accelerated-parity/Reallocated-Write.png)
 
 3. **Escribe en la paridad:**
-    
-    Si ReFS no puede encontrar suficiente espacio libre en el reflejo, ReFS escribirá nuevos datos en la paridad o modificará los datos existentes directamente en la paridad. En la sección "Optimizaciones de rendimiento" que aparece a continuación se proporcionan instrucciones que ayudan a minimizar las escrituras en la paridad.
-    ![](media/mirror-accelerated-parity/Write-to-Parity.png) de escritura en paridad
 
-**Lecturas:** ReFS leerá directamente desde el nivel que incluya los datos relevantes. Si la paridad se crea con unidades de disco duro (HDD), la memoria caché de los espacios de almacenamiento directo almacenará estos datos para acelerar lecturas futuras. 
+    Si ReFS no puede encontrar correctamente suficiente espacio disponible en el reflejo, ReFS escribirá nuevos datos en la paridad o modificará los datos existentes en la paridad directamente. En la sección "optimizaciones de rendimiento" se proporcionan instrucciones que ayudan a minimizar las escrituras en la paridad.
+    ![Escritura a paridad](media/mirror-accelerated-parity/Write-to-Parity.png)
+
+**Lecturas:** ReFS leerá directamente desde el nivel que contiene los datos pertinentes. Si la paridad se construye con HDD, la memoria caché de Espacios de almacenamiento directo almacenará en caché estos datos para acelerar las lecturas futuras.
 
 > [!NOTE]
-> Las lecturas nunca hacen que ReFS vuelva a cambiar datos en el nivel de reflejo. 
+> Las lecturas nunca provocan que las referencias vuelvan a girar los datos en el nivel de reflejo.
 
 ### <a name="io-performance"></a>Rendimiento de e/s
 
-**Escrituras:** cada tipo de escritura que se ha descrito anteriormente tiene sus propias características de rendimiento. A grandes rasgos, las escrituras en el nivel de reflejo son mucho más rápidas que las escrituras reasignadas y las escrituras reasignadas son mucho más rápidas que las escrituras realizadas directamente en el nivel de paridad. Esta relación se muestra en la siguiente diferencia: 
+**Escrituras:** Cada tipo de escritura descrito anteriormente tiene sus propias características de rendimiento. En términos generales, las escrituras en el nivel de reflejo son mucho más rápidas que las escrituras reasignadas y las escrituras reasignadas son significativamente más rápidas que las escrituras realizadas directamente al nivel de paridad. Esta relación se muestra en la desigualdad siguiente:
 
 
-- **Nivel de reflejo > escrituras reasignadas > nivel de paridad >**
+- **Nivel de reflejo > escrituras reasignadas >> nivel de paridad**
 
 
-**Lecturas:** no hay ningún impacto negativo en la lectura desde la paridad:
-- Si el reflejo y la paridad se crean con el mismo tipo de medio, el rendimiento de la lectura será igual. 
-- Si el reflejo y la paridad se crean con distintos tipos de medios, por ejemplo, SSD de espejo y HDD de paridad, [la memoria caché de los espacios de almacenamiento directo](../storage-spaces/understand-the-cache.md) permitirá que los datos "en caliente" aceleren las lecturas desde la paridad.
+**Lecturas:** No hay ningún impacto negativo significativo en el rendimiento al leer de la paridad:
+- Si el reflejo y la paridad se construyen con el mismo tipo de medio, el rendimiento de lectura será equivalente.
+- Si el reflejo y la paridad se construyen con distintos tipos de medios (SSD reflejadas, HDD de paridad, por ejemplo),[la memoria caché de espacios de almacenamiento directo](../storage-spaces/understand-the-cache.md) ayudará a almacenar en caché los datos activos para acelerar las lecturas de la paridad.
 
 ## <a name="refs-compaction"></a>Compactación de ReFS
 
-En esta versión semestral, ReFS incorpora compactación, lo que mejora considerablemente el rendimiento de los volúmenes de paridad acelerados para reflejos que están llenos en el 90%. 
+En esta versión semestral, ReFS incorpora compactación, lo que mejora considerablemente el rendimiento de los volúmenes de paridad acelerados para reflejos que están llenos en el 90%.
 
-**En segundo plano:** dado que anteriormente los volúmenes de paridad acelerada por reflejos se llenaban, el rendimiento de estos volúmenes podía verse afectado. El rendimiento se ve afectado porque se mezclan datos "fríos" y "en caliente" durante las horas de extra del volumen. Esto significa que pueden almacenarse menos datos "en caliente" en el reflejo, ya que los datos "fríos" ocupan espacio en el reflejo que podrían utilizar los datos "en caliente". Almacenar datos "en caliente" en el reflejo es de vital importancia para mantener un alto nivel de rendimiento, ya que las escrituras directas al reflejo son mucho más rápidas que las escrituras reasignadas, así como las órdenes de magnitud son más rápidas que las escrituras directas a la paridad. Por lo tanto, tener datos "fríos" en el reflejo no es adecuado para el rendimiento, ya que reduce la probabilidad de que ReFS pueda escribir directamente en el reflejo. 
+**Información general:** Anteriormente, a medida que los volúmenes de paridad acelerada de reflejo se llenaban, el rendimiento de estos volúmenes podía degradarse. El rendimiento disminuye porque los datos activos y en frío se mezclan a lo largo de las horas extras del volumen. Esto significa que los datos inactivos se pueden almacenar en reflejo, ya que los datos inactivos ocupan espacio en reflejo que, de otro modo, podrían usar los datos activos. Almacenar los datos activos en reflejo es fundamental para mantener un alto rendimiento, ya que las escrituras directamente en el reflejo son mucho más rápidas que las escrituras reasignadas y los pedidos de magnitud más rápido que las escrituras directamente en la paridad. Por lo tanto, tener los datos inactivos en el reflejo es incorrecto para el rendimiento, ya que reduce la probabilidad de que ReFS pueda realizar escrituras directamente en el reflejo.
 
-La compactación de ReFS aborda estos problemas de rendimiento, liberando espacio en el reflejo para datos "en caliente". La compactación consolida primero todos los datos, de reflejo y paridad, en la paridad. Esto reduce la fragmentación del volumen y aumenta la cantidad de espacio direccionable en el reflejo. Y lo que más importante, este proceso permite a ReFS volver a consolidar los datos "en caliente" en el reflejo:
--   Cuando se introducen nuevas escrituras, se proporcionarán en el reflejo. Por lo tanto, los nuevos datos escritos "en caliente" residen en el reflejo. 
--   Al modificar una escritura realizada en los datos de la paridad, ReFS realiza un escritura reasignada, así que dicha escritura también puede proporcionarse al reflejo. Por lo tanto, los datos "en caliente" que se movieron a la paridad durante la compactación se volverán a asignar al reflejo. 
+La compactación ReFS soluciona estos problemas de rendimiento liberando espacio en el reflejo de los datos activos. En primer lugar, la compactación consolida todos los datos (desde el reflejo y la paridad) en la paridad. Esto reduce la fragmentación dentro del volumen y aumenta la cantidad de espacio direccionable en el reflejo. Y lo que es más importante, este proceso permite a las referencias consolidar los datos activos en el servidor reflejado:
+-   Cuando llegan nuevas escrituras, se les presta servicio en el reflejo. Por lo tanto, los datos activos recién escritos se encuentran en el reflejo.
+-   Cuando se realiza una escritura modificada en los datos en la paridad, ReFS realiza una escritura reasignada, por lo que esta escritura también se da servicio en el reflejo. Por lo tanto, los datos activos que se movieron a la paridad durante la compactación se volverán a asignar en reflejo.
 
 ## <a name="performance-optimizations"></a>Optimizaciones de rendimiento
 
@@ -99,8 +99,8 @@ La compactación de ReFS aborda estos problemas de rendimiento, liberando espaci
 
 ### <a name="performance-counters"></a>Contadores de rendimiento
 
-ReFS mantiene contadores de rendimiento para ayudar a evaluar el rendimiento de la paridad acelerada por reflejos. 
-- Tal y como se describió anteriormente en la sección escritura en paridad, ReFS escribirá directamente en la paridad cuando no encuentre espacio disponible en el reflejo. Por lo general, esto se produce cuando el nivel de reflejo se llena de forma más rápida que ReFS puede cambiar los datos a la paridad. En otras palabras, el cambio de ReFS no es capaz de seguir el ritmo de la velocidad de ingesta. Los siguientes contadores de rendimiento identifican si ReFS escribe directamente en la paridad:
+ReFS mantiene los contadores de rendimiento para ayudar a evaluar el rendimiento de la paridad con aceleración del reflejo.
+- Tal y como se describió anteriormente en la sección escritura en paridad, ReFS escribirá directamente en la paridad cuando no encuentre espacio disponible en el reflejo. Por lo general, esto ocurre cuando el nivel reflejado se llena más rápido que ReFS puede rotar los datos a la paridad. En otras palabras, la rotación de ReFS no puede mantener el ritmo de la ingesta. Los contadores de rendimiento que se indican a continuación identifican Cuándo ReFS escribe directamente en la paridad:
 
   ```
   # Windows Server 2016
@@ -112,24 +112,24 @@ ReFS mantiene contadores de rendimiento para ayudar a evaluar el rendimiento de 
   ReFS\Allocation of Metadata Clusters on Slow Tier/sec
   ```
 
-- Si estos contadores no están a cero, esto indica que ReFS no cambia los datos con la suficiente rapidez fuera del reflejo. Para ayudar a mitigar este problema, se puede cambiar la agresividad de cambio o aumentar el tamaño del nivel de reflejo.
+- Si estos contadores son distintos de cero, esto indica que ReFS no está girando los datos lo suficientemente rápido como para reflejarse. Para ayudar a mitigar esto, puede cambiar la intensidad de giro o aumentar el tamaño del nivel reflejado.
 
 ### <a name="rotation-aggressiveness"></a>Agresividad de giro
 
-ReFS empieza a cambiar datos cuando el reflejo llega a un umbral de capacidad especificado.
--   Los valores más altos de este umbral de cambio hacen que ReFS conserve los datos en el nivel de reflejo durante más tiempo. Dejar los datos "en caliente" en el nivel de reflejo es óptimo para el rendimiento, pero ReFS no podrá proporcionar de forma eficaz grandes cantidades de E/S de entrada. 
--   Los valores más bajos permiten que ReFS elimine copias intermedias de los datos y realice una mejor ingesta de E/S de entrada. Esto es aplica a las cargas de trabajo de ingesta intensiva, como el almacenamiento de archivos. Sin embargo, los valores más bajos, podrían afectar al rendimiento de las cargas de trabajo con fines generales. Cambiar de forma innecesaria los datos fuera del nivel de reflejo implica una disminución del rendimiento. 
+ReFS comienza a rotar los datos una vez que el reflejo ha alcanzado un umbral de capacidad especificado.
+-   Los valores más altos de este umbral de rotación hacen que las referencias retengan los datos en el nivel de reflejo más tiempo. La salida de los datos activos en el nivel de reflejo es óptima para el rendimiento, pero ReFS no podrá atender eficazmente grandes cantidades de e/s entrantes.
+-   Los valores inferiores permiten a ReFS desorganizar los datos de forma proactiva y mejorar la ingesta de entrada y salida. Esto se aplica a cargas de trabajo con una gran cantidad de ingesta, como el almacenamiento de archivo. Sin embargo, los valores inferiores podrían degradar el rendimiento de las cargas de trabajo de uso general. La rotación innecesaria de datos fuera del nivel de reflejo conlleva una reducción del rendimiento.
 
-ReFS incluye un parámetro ajustable para ajustar este umbral, que se puede configurar mediante una clave de registro. Esta clave de registro debe configurarse en **cada nodo de una implementación de espacios de almacenamiento directo**, por tanto, será necesario reiniciar para que los cambios entren en vigor. 
--   **Clave:** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
+ReFS introduce un parámetro ajustable para ajustar este umbral, que se puede configurar mediante una clave del registro. Esta clave del registro debe configurarse en **cada nodo de una implementación de espacios de almacenamiento directo**y se requiere un reinicio para que los cambios surtan efecto.
+-   **Clave:** HKEY_LOCAL_MACHINE \System\CurrentControlSet\Policies
 -   **ValueName (DWORD):** DataDestageSsdFillRatioThreshold
--   **ValueType:** porcentaje
+-   **ValueType:** Proporción
 
-Si no se establece esta clave de registro, ReFS usará un valor predeterminado de 85 %.  Se recomienda usar este valor predeterminado para la mayoría de las implementaciones y no se recomiendan los valores inferiores al 50 %. El siguiente comando de PowerShell muestra cómo establecer esta clave de registro con un valor de 75 %: 
+Si no se establece esta clave del registro, ReFS usará un valor predeterminado de 85%.  Este valor predeterminado se recomienda para la mayoría de las implementaciones y no se recomiendan los valores por debajo del 50%. El siguiente comando de PowerShell muestra cómo establecer esta clave del registro con un valor de 75%:
 ```PowerShell
 Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Policies -Name DataDestageSsdFillRatioThreshold -Value 75
  ```
- Para configurar esta clave de registro en cada nodo en una implementación de Espacios de almacenamiento directos, puedes usar el siguiente comando de PowerShell:
+ Para configurar esta clave del registro en cada nodo de una implementación de Espacios de almacenamiento directo, puede usar el siguiente comando de PowerShell:
  ```PowerShell
  $Nodes = 'S2D-01', 'S2D-02', 'S2D-03', 'S2D-04'
  Invoke-Command $Nodes {Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Policies -Name DataDestageSsdFillRatioThreshold -Value 75}
@@ -137,25 +137,25 @@ Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Policies -Name DataDestage
 
 ### <a name="increasing-the-size-of-the-mirrored-tier"></a>Aumentar el tamaño del nivel reflejado
 
-Aumentar el tamaño de la nivel de reflejo permite a ReFS conservar una mayor parte del conjunto de trabajo en el reflejo. Esto aumenta la probabilidad de que ReFS pueda escribir directamente en el reflejo, lo que ayudará a lograr un mejor rendimiento. Los siguientes cmdlets de PowerShell muestran cómo aumentar el tamaño del nivel de reflejo:
+Aumentar el tamaño del nivel reflejado permite a ReFS conservar una parte más grande del espacio de trabajo en el reflejo. Esto mejora la probabilidad de que ReFS pueda escribir directamente en el reflejo, lo que le ayudará a lograr un mejor rendimiento. Los cmdlets de PowerShell siguientes muestran cómo aumentar el tamaño del nivel reflejado:
 ```PowerShell
 Resize-StorageTier -FriendlyName “Performance” -Size 20GB
 Resize-StorageTier -InputObject (Get-StorageTier -FriendlyName “Performance”) -Size 20GB
 ```
 >[!TIP]
->Asegúrate de cambiar el tamaño de la **Partición** y **Volumen** después de cambiar el tamaño de **StorageTier**. Para obtener más información y ejemplos, consulta [Resize-Volumes](../storage-spaces/resize-volumes.md).
+>Asegúrese de cambiar el tamaño de la **partición** y el **volumen** después de cambiar el tamaño de **StorageTier**. Para obtener más información y ejemplos, consulte [cambiar el tamaño de los volúmenes](../storage-spaces/resize-volumes.md).
 
-## <a name="creating-a-mirror-accelerated-parity-volume"></a>Crear un volumen de paridad acelerada por reflejos
+## <a name="creating-a-mirror-accelerated-parity-volume"></a>Creación de un volumen de paridad acelerado para reflejo
 
-El siguiente cmdlet de PowerShell crea un volumen paridad acelerada por reflejos con una relación Reflejo:Paridad de 20:80, que es la configuración recomendada para la mayoría de las cargas de trabajo. Para obtener más información y ejemplos, echa un vistazo a [Crear volúmenes en espacios de almacenamiento directo](../storage-spaces/Create-volumes.md).
+El siguiente cmdlet de PowerShell crea un volumen de paridad acelerada para el reflejo con una proporción de paridad: paridad de 20:80, que es la configuración recomendada para la mayoría de las cargas de trabajo. Para obtener más información y ejemplos, consulte [creación de volúmenes en espacios de almacenamiento directo](../storage-spaces/Create-volumes.md).
 
 ```PowerShell
 New-Volume – FriendlyName “TestVolume” -FileSystem CSVFS_ReFS -StoragePoolFriendlyName “StoragePoolName” -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 200GB, 800GB
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Información general sobre ReFS](refs-overview.md)
+-   [Información general de ReFS](refs-overview.md)
 -   [Clonación de bloques de ReFS](block-cloning.md)
 -   [Flujos de integridad de ReFS](integrity-streams.md)
 -   [Información general de Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)

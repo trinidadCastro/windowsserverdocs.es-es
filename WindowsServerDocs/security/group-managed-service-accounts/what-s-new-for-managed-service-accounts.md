@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: facc816ef46ebeadb30ccabac9c0b3e6a896264d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1411f312def0da79de4c18d6d652e0223ea27b48
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856968"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474452"
 ---
-# <a name="what39s-new-for-managed-service-accounts"></a>Novedades&#39;de las cuentas de servicio administradas
+# <a name="what39s-new-for-managed-service-accounts"></a>Novedades de las cuentas de servicio administradas de&#39;s
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -44,15 +44,15 @@ La cuenta de servicio administrada de Grupo resuelve este problema porque la con
 
 En los equipos que ejecutan Windows Server 2012 o Windows 8, se puede crear una MSA de grupo y administrarla mediante el administrador de control de servicios para que se puedan administrar varias instancias del servicio, como se implementan en una granja de servidores, desde un servidor. Las herramientas y utilidades que se usan para administrar las cuentas de servicio administradas, tales como el Administrador de grupos de aplicaciones de IIS, se pueden utilizar con cuentas de servicio administradas por grupo. Los administradores de dominios pueden delegar la administración de servicios a los administradores de servicios, que pueden administrar todo el ciclo de vida de una cuenta de servicio administrada o una cuenta de servicio administrada por grupo. Los equipos cliente actuales podrán autenticarse con cualquier servicio sin saber con qué instancia de servicio se autentican.
 
-### <a name="removed-or-deprecated-functionality"></a><a name="interoperability"></a>Funcionalidad eliminada o desusada
+### <a name="removed-or-deprecated-functionality"></a><a name="interoperability"></a>Funcionalidad eliminada o en desuso
 En Windows Server 2012, los cmdlets de Windows PowerShell predeterminados para administrar las cuentas de servicio administradas de grupo en lugar de las cuentas de servicio administradas del servidor.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Introducción a las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
+-   [Información general sobre las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
 
--   [Introducción a los Servicios de dominio de Active Directory](active-directory-domain-services-overview.md)
+-   [Introducción a Active Directory Domain Services](active-directory-domain-services-overview.md)
 
--   [Cuentas de servicio administradas: Descripción, implementación, procedimientos recomendados y solución de problemas](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [Cuentas de servicio administradas: Comprensión, implementación, procedimientos recomendados y solución de problemas](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

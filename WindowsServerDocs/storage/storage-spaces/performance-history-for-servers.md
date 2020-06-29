@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cf4bdabb132c832370e5dffec215c24b54aebdd7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7ed910aba376ba7f78c628d7f47bdd21b366459d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856198"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474742"
 ---
 # <a name="performance-history-for-servers"></a>Historial de rendimiento para servidores
 
@@ -38,7 +38,7 @@ Estas series se recopilan para cada servidor válido:
 | `clusternode.memory.usage.guest` | bytes   |
 | `clusternode.memory.usage.host`  | bytes   |
 
-Además, las series de unidades como `physicaldisk.size.total` se agregan a todas las unidades válidas conectadas al servidor, y las series de adaptadores de red como `networkadapter.bytes.total` se agregan a todos los adaptadores de red válidos conectados al servidor.
+Además, las series de unidades como `physicaldisk.size.total` se agregan a todas las unidades válidas conectadas al servidor, y las series de adaptadores de red como `networkadapter.bytes.total` se agregan para todos los adaptadores de red válidos conectados al servidor.
 
 ## <a name="how-to-interpret"></a>Cómo interpretar
 
@@ -55,7 +55,7 @@ Además, las series de unidades como `physicaldisk.size.total` se agregan a toda
 
 ## <a name="where-they-come-from"></a>Desde dónde provienen
 
-La serie `cpu.*` se recopilan de diferentes contadores de rendimiento en función de si Hyper-V está habilitado o no.
+Las `cpu.*` series se recopilan de diferentes contadores de rendimiento en función de si Hyper-V está habilitado o no.
 
 Si Hyper-V está habilitado:
 
@@ -65,7 +65,7 @@ Si Hyper-V está habilitado:
 | `clusternode.cpu.usage.guest`    | `Hyper-V Hypervisor Virtual Processor` > `_Total` > `% Total Run Time`      |
 | `clusternode.cpu.usage.host`     | `Hyper-V Hypervisor Root Virtual Processor` > `_Total` > `% Total Run Time` |
 
-El uso de los contadores de `% Total Run Time` garantiza que el historial de rendimiento tiene todos los atributos.
+El uso de los `% Total Run Time` contadores garantiza que todo el uso de los atributos del historial de rendimiento.
 
 Si Hyper-V no está habilitado:
 
@@ -75,14 +75,14 @@ Si Hyper-V no está habilitado:
 | `clusternode.cpu.usage.guest`    | *nulo* |
 | `clusternode.cpu.usage.host`     | *igual que el uso total* |
 
-Sin perjuicio de la sincronización imperfecta, `clusternode.cpu.usage` siempre se `clusternode.cpu.usage.host` más `clusternode.cpu.usage.guest`.
+Sin perjuicio de la sincronización imperfecta, `clusternode.cpu.usage` siempre es `clusternode.cpu.usage.host` más `clusternode.cpu.usage.guest` .
 
 Con la misma salvedad, `clusternode.cpu.usage.guest` siempre es la suma de `vm.cpu.usage` para todas las máquinas virtuales del servidor host.
 
-La serie `memory.*` es (PRÓXIMAmente).
+La `memory.*` serie está disponible (próximamente).
 
   > [!NOTE]
-  > Los contadores se miden en todo el intervalo, no muestreado. Por ejemplo, si el servidor está inactivo durante 9 segundos pero picos al 100% de la CPU en el décimo segundo, su `clusternode.cpu.usage` se registrará como el 10% del promedio durante este intervalo de 10 segundos. Esto garantiza que el historial de rendimiento Capture todas las actividades y sea sólido para el ruido.
+  > Los contadores se miden en todo el intervalo, no muestreado. Por ejemplo, si el servidor está inactivo durante 9 segundos pero picos al 100% de CPU en el décimo segundo, se `clusternode.cpu.usage` registrará como un 10% de media durante este intervalo de 10 segundos. Esto garantiza que el historial de rendimiento Capture todas las actividades y sea sólido para el ruido.
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
@@ -92,6 +92,6 @@ Use el cmdlet [Get-ClusterNode](https://docs.microsoft.com/powershell/module/fai
 Get-ClusterNode <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Historial de rendimiento de Espacios de almacenamiento directo](performance-history.md)

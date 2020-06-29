@@ -8,19 +8,19 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9972ec77b78c6c4efa2d52fffd44d27d71a1afe0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 85cfdbe5e95c9177194a2b6ac7b5d22e1fd9fc0e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856368"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475018"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>Máquinas virtuales blindadas: preparación de una aplicación auxiliar de blindaje de máquinas virtuales VHD
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
 > [!IMPORTANT]
-> Antes de comenzar estos procedimientos, asegúrese de que ha instalado la actualización acumulativa más reciente para Windows Server 2016 o que usa la versión más reciente de Windows 10 [herramientas de administración remota del servidor](https://www.microsoft.com/download/details.aspx?id=45520). De lo contrario, los procedimientos no funcionarán. 
+> Antes de comenzar estos procedimientos, asegúrese de que ha instalado la actualización acumulativa más reciente para Windows Server 2016 o que usa la versión más reciente de Windows 10 [herramientas de administración remota del servidor](https://www.microsoft.com/download/details.aspx?id=45520). De lo contrario, los procedimientos no funcionarán.
 
 En esta sección se describen los pasos que realiza un proveedor de servicios de hosting para habilitar la compatibilidad con la conversión de máquinas virtuales existentes en blindadas.
 
@@ -59,7 +59,7 @@ En la consola VMM, abra el panel Configuración y, luego, **hospede la configura
 
 ![VMM: configuración del servicio de protección de host](../media/Guarded-Fabric-Shielded-VM/guarded-host-vmm-hgs-settings-01.png)
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
-- [Pasos de configuración del proveedor de servicios de hospedaje para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [Pasos de configuración del proveedor de servicios de hosting para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

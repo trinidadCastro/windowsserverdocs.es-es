@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d917c2d75c1e4078438b94e8aa4a6f921019af5a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 18694975e48d199f2f690aebe8af2a4613a4b1f0
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856168"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474712"
 ---
 # <a name="performance-history-for-virtual-hard-disks"></a>Historial de rendimiento de los discos duros virtuales
 
@@ -55,7 +55,7 @@ Estas series se recopilan para todos los discos duros virtuales válidos:
 
 ## <a name="where-they-come-from"></a>Desde dónde provienen
 
-Las series `iops.*`, `throughput.*`y `latency.*` se recopilan del contador de rendimiento de `Hyper-V Virtual Storage Device` en el servidor en el que se ejecuta la máquina virtual, una instancia por VHD o VHDX.
+Las `iops.*` `throughput.*` series, y `latency.*` se recopilan del `Hyper-V Virtual Storage Device` contador de rendimiento establecido en el servidor donde se ejecuta la máquina virtual, una instancia por VHD o VHDX.
 
 | Serie                    | Contador de origen         |
 |---------------------------|------------------------|
@@ -68,7 +68,7 @@ Las series `iops.*`, `throughput.*`y `latency.*` se recopilan del contador de re
 | `vhd.latency.average`     | `Latency`              |
 
    > [!NOTE]
-   > Los contadores se miden en todo el intervalo, no muestreado. Por ejemplo, si el disco duro virtual está inactivo durante 9 segundos pero completa 30 IOs en el décimo segundo, su `vhd.iops.total` se registrará como 3 e/s como promedio durante este intervalo de 10 segundos. Esto garantiza que el historial de rendimiento Capture todas las actividades y sea sólido para el ruido.
+   > Los contadores se miden en todo el intervalo, no muestreado. Por ejemplo, si el disco duro virtual está inactivo durante 9 segundos pero completa 30 IOs en el décimo segundo, se `vhd.iops.total` registrará como un promedio de 3 e/s por segundo durante este intervalo de 10 segundos. Esto garantiza que el historial de rendimiento Capture todas las actividades y sea sólido para el ruido.
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
@@ -87,6 +87,6 @@ Para obtener la ruta de acceso de todos los VHD de la máquina virtual:
    > [!NOTE]
    > El cmdlet Get-VHD requiere que se proporcione una ruta de acceso al archivo. No es compatible con la enumeración.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Historial de rendimiento de Espacios de almacenamiento directo](performance-history.md)

@@ -1,6 +1,6 @@
 ---
-title: Editar propiedades de plantillas de cuotas
-description: En este artículo se describe cómo editar las propiedades de plantillas de cuotas para ampliar los cambios en las cuotas creadas a partir de la plantilla original de la cuota
+title: Edit Quota Template Properties
+description: En este artículo se describe cómo editar las propiedades de la plantilla de cuota para extender los cambios a las cuotas creadas a partir de la plantilla de cuota original.
 ms.date: 7/7/2017
 ms.prod: windows-server
 ms.technology: storage
@@ -8,41 +8,41 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 37719656e107869b97045af98c1a63744e4f6b38
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4793616caf9ba4a8f9db09cd1902432323c081b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403028"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474042"
 ---
-# <a name="edit-quota-template-properties"></a>Editar propiedades de plantillas de cuotas
+# <a name="edit-quota-template-properties"></a>Edit Quota Template Properties
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-Al realizar cambios en una plantilla de cuota, tienes la opción de ampliar estos cambios a las cuotas que se crearon a partir de la plantilla original de la cuota. Puedes elegir entre modificar solo las cuotas que aún coincidan con la plantilla original o todas las cuotas que se derivaron de la plantilla original, independientemente de las modificaciones que se realizaron en las cuotas desde que se crearon. Esta característica simplifica el proceso de actualización de las propiedades de las cuotas, ya que ofrece un punto central donde se pueden llevar a cabo todos los cambios.
+Al realizar cambios en una plantilla de cuota, tiene la opción de extender dichos cambios a las cuotas creadas a partir de la plantilla de cuota original. Puede elegir entre modificar sólo las cuotas que coinciden con la plantilla original o modificar todas las que se derivan de la plantilla original, con independencia de las modificaciones que se hayan realizado en ellas desde que se crearon. Esta característica simplifica el proceso de actualización de las propiedades de las cuotas proporcionando un punto central en el que pueden realizarse todos los cambios.
 
 > [!Note]
-> Si decides aplicar los cambios a todas las cuotas que se derivaron de la plantilla original, se sobrescribirán las propiedades personalizadas de cuotas que hayas creado.
+> Si elige aplicar los cambios a todas las cuotas derivadas de la plantilla original, sobrescribirá todas las propiedades personalizadas de cuotas que haya creado.
 
-## <a name="to-edit-quota-template-properties"></a>Para editar propiedades de plantillas de cuotas
+## <a name="to-edit-quota-template-properties"></a>Para editar las propiedades de la plantilla de cuota
 
-1.  En **Plantillas de cuota**, selecciona la plantilla que quieres modificar.
+1.  En **plantillas de cuota**, seleccione la plantilla que desea modificar.
 
-2.  Haz clic con el botón derecho en la plantilla y luego haz clic en **Editar las propiedades de la plantilla** (o en el panel **Acciones**, en **Plantillas de cuota seleccionadas**, selecciona **Editar las propiedades de la plantilla**). Se abrirá el cuadro de diálogo **Propiedades de la plantilla de cuota**.
+2.  Haga clic con el botón secundario en la plantilla de cuota y, a continuación, haga clic en **Editar propiedades** de la plantilla (o en el panel **acciones** , en **plantillas de cuota seleccionadas,** seleccione **Editar propiedades de plantilla**). Se abrirá el cuadro de diálogo Propiedades de la **plantilla de cuota** .
 
-3.  Realiza todos los cambios necesarios. Las opciones de notificación y configuración son idénticas a las que puedes establecer cuando crear una plantilla de cuota. También puedes copiar las propiedades de una plantilla diferente y modificarlas para esta plantilla.
+3.  Realice todos los cambios necesarios. La configuración y las opciones de notificación son idénticas a las que se pueden establecer cuando se crea una plantilla de cuota. Otra opción es copiar las propiedades de otra plantilla y modificarlas en ésta.
 
-4.  Cuando hayas terminados de editar las propiedades de la plantilla, haz clic en **Aceptar**. Se abrirá el cuadro de diálogo **Actualizar cuotas derivadas de la plantilla**.
+4.  Cuando haya terminado de editar las propiedades de la plantilla, haga clic en **Aceptar**. Se abrirá el cuadro **de diálogo Actualizar cuotas derivadas de la plantilla** .
 
-5.  Selecciona el tipo de actualización que quieres aplicar:
+5.  Seleccione el tipo de actualización que desea aplicar:
 
-    -   Si tienes cuotas que se han modificado desde que se crearon con la plantilla original y no quieres cambiarlas, selecciona **Aplicar plantilla solo a las cuotas derivadas que coinciden con la plantilla original**. Esta opción actualizará solo las cuotas que no se han editado desde que se crearon con la plantilla original.
-    -   Si quieres modificar todas las cuotas existentes que se crearon a partir de la plantilla original, selecciona **Aplicar plantilla a todas las cuotas derivadas**.
-    -   Si quieres mantener las cuotas existentes sin modificar, selecciona **No aplicar la plantilla a las cuotas derivadas**.
+    -   Si tiene cuotas que se han modificado desde que se crearon con la plantilla original y no desea cambiarlas, seleccione **aplicar plantilla solo a las cuotas derivadas que coincidan con la plantilla original**. Con esta opción se actualizarán sólo las cuotas que no se hayan editado desde que se crearon con la plantilla original.
+    -   Si desea modificar todas las cuotas existentes que se crearon a partir de la plantilla original, seleccione **aplicar plantilla a todas las cuotas derivadas**.
+    -   Si desea mantener las cuotas existentes sin cambios, seleccione no **aplicar plantilla a las cuotas derivadas**.
 
-6.  Haga clic en **Aceptar**.
+6.  Haga clic en **OK**.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Administración de cuotas](quota-management.md)
 -   [Crear una plantilla de cuota](create-quota-template.md)

@@ -1,6 +1,6 @@
 ---
 title: Tareas de administración de archivos
-description: En este artículo se describe el proceso de automatizar tareas de administración de archivos
+description: En este artículo se describe el proceso de automatización de las tareas de administración de archivos
 ms.date: 7/7/2017
 ms.prod: windows-server
 ms.technology: storage
@@ -8,40 +8,40 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 257ee2955c4f521d14f01ec197fd45e5194eef02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 402af4bd7c00bedfc3d01d43071af4fcd374d428
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394102"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474002"
 ---
 # <a name="file-management-tasks"></a>Tareas de administración de archivos
 
 > Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-Las tareas de administración de archivos automatizan el proceso de encontrar subconjuntos de archivos en un servidor y aplicar comandos sencillos. Estas tareas se pueden programar para que tengan lugar periódicamente con el fin de reducir los costes repetitivos. Se pueden definir los archivos que se procesarán mediante una tarea de administración de archivos a través de cualquiera de las siguientes propiedades:
+Las tareas de administración de archivos automatizan el proceso de búsqueda de subconjuntos de archivos en un servidor y la aplicación de comandos sencillos. Estas tareas se pueden programar para que se realicen periódicamente a fin de reducir los costos repetitivos. Los archivos que se van a procesar mediante una tarea de administración de archivos se pueden definir con cualquiera de las siguientes propiedades:
 
 -   Location
 -   Propiedades de clasificación
 -   Hora de creación
 -   Hora de modificación
--   Acceso más reciente
+-   Última hora de acceso
 
-Las tareas de administración de archivos también pueden configurarse para notificar a los propietarios de archivos sobre cualquier directiva inminente que se aplicará a sus archivos.
+Las tareas de administración de archivos también se pueden configurar para notificar a los propietarios de archivos de cualquier directiva inminente que se aplique a sus archivos.
 
 > [!Note]
 > Las tareas de administración de archivos individuales se ejecutan en programaciones independientes.
 
 <br />
-Esta sección incluye los temas siguientes:
+Esta sección contiene los siguientes temas:
 
 -   [Crear una tarea de expiración de archivos](create-file-expiration-task.md)
 -   [Crear una tarea de administración de archivos personalizada](create-custom-file-management-task.md)
 
 > [!Note]
-> Para establecer notificaciones por correo electrónico y ciertas funcionalidades de informes, debes configurar primero las opciones generales del Administrador de recursos del servidor de archivos.
+> Para configurar las notificaciones de correo electrónico y algunas capacidades de informes, primero debe configurar las opciones generales del Administrador de recursos del servidor de archivos.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
 

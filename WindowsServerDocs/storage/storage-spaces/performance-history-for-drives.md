@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a6c6065b8d7963ada5d80844b270fe088eaa6e56
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e1620f7010d4f37713de20f2b4c12f100be61dc
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859458"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474772"
 ---
 # <a name="performance-history-for-drives"></a>Historial de rendimiento de las unidades
 
@@ -59,7 +59,7 @@ Estas series se recopilan para cada unidad válida:
 
 ## <a name="where-they-come-from"></a>Desde dónde provienen
 
-Las series `iops.*`, `throughput.*`y `latency.*` se recopilan del contador de rendimiento de `Physical Disk` en el servidor en el que está conectada la unidad, una instancia por unidad. Estos contadores se miden por `partmgr.sys` y no incluyen gran parte de la pila de software de Windows ni los saltos de red. Son representativos del rendimiento del hardware del dispositivo.
+Las `iops.*` `throughput.*` series, y `latency.*` se recopilan del `Physical Disk` contador de rendimiento establecido en el servidor al que está conectada la unidad, una instancia por unidad. Estos contadores se miden por `partmgr.sys` y no incluyen gran parte de la pila de software de Windows ni de ningún salto de red. Son representativos del rendimiento del hardware del dispositivo.
 
 | Serie                          | Contador de origen           |
 |---------------------------------|--------------------------|
@@ -74,11 +74,11 @@ Las series `iops.*`, `throughput.*`y `latency.*` se recopilan del contador de re
 | `physicaldisk.latency.average`  | `Avg. Disk sec/Transfer` |
 
    > [!NOTE]
-   > Los contadores se miden en todo el intervalo, no muestreado. Por ejemplo, si la unidad está inactiva durante 9 segundos pero finaliza 30 e/s en el décimo 10, su `physicaldisk.iops.total` se registrará como 3 e/s como promedio durante este intervalo de 10 segundos. Esto garantiza que el historial de rendimiento Capture todas las actividades y sea sólido para el ruido.
+   > Los contadores se miden en todo el intervalo, no muestreado. Por ejemplo, si la unidad está inactiva durante 9 segundos pero completa 30 e/s en el décimo segundo, su `physicaldisk.iops.total` se registrará como 3 e/s por segundo como promedio durante este intervalo de 10 segundos. Esto garantiza que el historial de rendimiento Capture todas las actividades y sea sólido para el ruido.
 
-La serie `size.*` se recopilan de la clase `MSFT_PhysicalDisk` en WMI, una instancia por unidad.
+La `size.*` serie se recopila de la `MSFT_PhysicalDisk` clase en WMI, una instancia por unidad.
 
-| Serie                          | Source (propiedad)        |
+| Serie                          | Source, propiedad        |
 |---------------------------------|------------------------|
 | `physicaldisk.size.total`       | `Size`                 |
 | `physicaldisk.size.used`        | `VirtualDiskFootprint` |
@@ -91,6 +91,6 @@ Use el cmdlet [Get-PhysicalDisk](https://docs.microsoft.com/powershell/module/st
 Get-PhysicalDisk -SerialNumber <SerialNumber> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Historial de rendimiento de Espacios de almacenamiento directo](performance-history.md)

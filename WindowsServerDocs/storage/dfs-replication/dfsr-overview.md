@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: c17fd78a2cf726ab156d3eda09b9c0e2d4ed6a75
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8164032ff4071facb33c1df0edf44dcc86a6d918
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77520361"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475422"
 ---
 # <a name="dfs-replication-overview"></a>Introducción a la replicación DFS
 
@@ -102,7 +102,7 @@ Para instalar las partes Replicación DFS y Herramientas del sistema de archivos
 Install-WindowsFeature "FS-DFS-Replication", "RSAT-DFS-Mgmt-Con"
 ```
 
-## <a name="see-also"></a>Consulta también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Introducción a Espacios de nombres DFS y Replicación DFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v%3dws.11))
 - [Lista de comprobación: implementación de la replicación DFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772201(v%3dws.11))

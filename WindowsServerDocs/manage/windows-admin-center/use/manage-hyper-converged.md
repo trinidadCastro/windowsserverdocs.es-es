@@ -8,16 +8,16 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 6795464bfbadd12fc220e941ad2175eb83d0f050
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 71e45622292f7393b19978ec3235492c5065a8a1
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322867"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474032"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Administrar la infraestructura hiperconvergida con el centro de administración de Windows
 
->Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>Qué es la infraestructura hiperconvergida
 
@@ -46,7 +46,7 @@ Los aspectos destacados del centro de administración de Windows para la infraes
 
 Microsoft está desarrollando activamente el centro de administración de Windows para la infraestructura hiperconvergida. Recibe actualizaciones frecuentes que mejoran las características existentes y agregan nuevas características.
 
-## <a name="before-you-start"></a>Antes de empezar
+## <a name="before-you-start"></a>Antes de comenzar
 
 Para administrar el clúster como una infraestructura hiperconvergida en el centro de administración de Windows, debe ejecutar Windows Server 2016 o Windows Server 2019 y tener habilitado Hyper-V y Espacios de almacenamiento directo. Opcionalmente, también puede tener habilitadas las redes definidas por software y administradas a través del centro de administración de Windows.
 
@@ -57,7 +57,7 @@ Para administrar el clúster como una infraestructura hiperconvergida en el cent
 
 El centro de administración de Windows para la infraestructura hiperconvergida depende de las API de administración agregadas después de que se publicara Windows Server 2016. Antes de poder administrar el clúster de Windows Server 2016 con el centro de administración de Windows, deberá realizar estos dos pasos:
 
-1. Compruebe que todos los servidores del clúster hayan instalado la [actualización acumulativa 2018-05 para Windows server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723) o posterior. Para descargar e instalar esta actualización, vaya a **configuración** > **actualizar & Security** > **Windows Update** y seleccione **Buscar actualizaciones en línea desde Microsoft Update**.
+1. Compruebe que todos los servidores del clúster hayan instalado la [actualización acumulativa 2018-05 para Windows server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723) o posterior. Para descargar e instalar esta actualización, vaya a **configuración**  >  **Actualizar & seguridad**  >  **Windows Update** y seleccione **Buscar actualizaciones en línea desde Microsoft Update**.
 2. Ejecute el siguiente cmdlet de PowerShell como administrador en el clúster:
 
 ```powershell
@@ -76,7 +76,7 @@ Si el clúster ejecuta Windows Server 2019, no es necesario realizar los pasos a
 Puede configurar la infraestructura hiperconvergida que ejecuta Windows Server 2016 o 2019 para usar redes definidas por software (SDN) con los siguientes pasos:
 
 1. Prepare el VHD del sistema operativo que es el mismo sistema operativo que instaló en los hosts de la infraestructura hiperconvergida. Este VHD se usará para todas las máquinas virtuales de NC/SLB/GW.
-2. Descargue todos los archivos y carpetas de SDN Express desde [https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress).
+2. Descargue todos los archivos y carpetas de SDN Express desde [https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress) .
 3. Preparar una máquina virtual diferente mediante la consola de implementación. Esta máquina virtual debe poder tener acceso a los hosts de SDN. Además, la máquina virtual debe tener instalada la herramienta de Hyper-V de RSAT.
 4. Copie todo lo que descargó para SDN Express en la máquina virtual de la consola de implementación. Y comparta esta carpeta **SDNExpress** . Asegúrese de que todos los hosts puedan tener acceso a la carpeta compartida **SDNExpress** , tal como se define en la línea 8 del archivo de configuración:
    ```
@@ -87,7 +87,7 @@ Puede configurar la infraestructura hiperconvergida que ejecuta Windows Server 2
 7. Ejecute PowerShell con privilegios de administrador para implementar SDN:
 
 ```powershell
-    .\SDNExpress.ps1 -ConfigurationDataFile .\your_fabricconfig.PSD1 -verbose 
+    .\SDNExpress.ps1 -ConfigurationDataFile .\your_fabricconfig.PSD1 -verbose
 ```
 
 La implementación tardará aproximadamente entre 30 y 45 minutos.
@@ -169,7 +169,7 @@ No.
 
 Aunque el centro de administración de Windows ofrece una integración eficaz y cómoda con la nube de Microsoft Azure, la experiencia de administración y supervisión básica para la infraestructura hiperconvergida es totalmente local. Se puede instalar y usar sin conexión a Internet.
 
-## <a name="things-to-try"></a>Cosas que debe probar
+## <a name="things-to-try"></a>Opciones que puede probar
 
 Si acaba de empezar, estos son algunos tutoriales rápidos que le ayudarán a saber cómo se organiza y funciona el centro de administración de Windows para la infraestructura hiperconvergida. Utilice buenos juicios y tenga cuidado con los entornos de producción. Estos vídeos se grabaron con la versión 1804 del centro de administración de Windows y una compilación de Insider Preview de Windows Server 2019.
 
@@ -187,17 +187,17 @@ Si acaba de empezar, estos son algunos tutoriales rápidos que le ayudarán a sa
 <table>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>Crear volumen,
-             reflejo triple</strong><iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/o66etKq70N8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+            <strong>Crear volumen, reflejo triple</strong>
+            <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/o66etKq70N8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>Crear volumen, paridad acelerada de reflejo</strong>
+            <strong>Crear volumen, paridad de reflejo acelerado</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/R72QHudqWpE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>Abra el volumen y agregue archivos</strong>
+            <strong>Abrir volumen y agregar archivos</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/j59z7ulohs4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
@@ -211,23 +211,23 @@ Si acaba de empezar, estos son algunos tutoriales rápidos que le ayudarán a sa
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/hqyBzipBoTI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>Eliminar</strong>
-             de volumen<iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/DbjF8r2F6Jo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+            <strong>Eliminar volumen</strong>
+            <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/DbjF8r2F6Jo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
 </table>
 
-### <a name="create-a-new-virtual-machine"></a>Crear una nueva máquina virtual
+### <a name="create-a-new-virtual-machine"></a>Crear una máquina virtual nueva
 
 1. Haga clic en la herramienta **virtual machines** del panel de navegación del lado izquierdo.
 2. En la parte superior de la herramienta Virtual Machines, elija la pestaña **inventario** y, a continuación, haga clic en **nuevo** para crear una nueva máquina virtual.
 3. Escriba el nombre de la máquina virtual y elija entre las máquinas virtuales de generación 1 y 2.
 4. A continuación, uou puede elegir en qué host se debe crear inicialmente la máquina virtual o usar el host recomendado.
-5. Elija una ruta de acceso para los archivos de la máquina virtual. Elija un volumen en la lista desplegable o haga clic en **examinar** para elegir una carpeta con el selector de carpetas. Los archivos de configuración de la máquina virtual y el archivo de disco duro virtual se guardarán en una sola carpeta en la ruta de acceso `\Hyper-V\[virtual machine name]` del volumen o la ruta de acceso seleccionados.
+5. Elija una ruta de acceso para los archivos de la máquina virtual. Elija un volumen en la lista desplegable o haga clic en **examinar** para elegir una carpeta con el selector de carpetas. Los archivos de configuración de la máquina virtual y el archivo de disco duro virtual se guardarán en una sola carpeta en la `\Hyper-V\[virtual machine name]` ruta de acceso del volumen o la ruta de acceso seleccionados.
 6. Elija el número de procesadores virtuales, si desea que la virtualización anidada esté habilitada, configure las opciones de memoria, los adaptadores de red, los discos duros virtuales y elija si desea instalar un sistema operativo desde un archivo de imagen. ISO o desde la red.
 7. Haga clic en **Crear** para crear la máquina virtual.
 8. Una vez creada la máquina virtual y aparece en la lista de máquinas virtuales, puede iniciar la máquina virtual.
-9. Una vez que se inicia la máquina virtual, puede conectarse a la consola de la máquina virtual a través de VMConnect para instalar el sistema operativo. Seleccione la máquina virtual en la lista, haga clic en **más** > **conectar** para descargar el archivo. RDP. Abra el archivo. RDP en la aplicación Conexión a Escritorio remoto. Puesto que se está conectando a la consola de la máquina virtual, deberá escribir las credenciales de administrador del host de Hyper-V.
+9. Una vez que se inicia la máquina virtual, puede conectarse a la consola de la máquina virtual a través de VMConnect para instalar el sistema operativo. Seleccione la máquina virtual en la lista, haga clic en **más**  >  **conectar** para descargar el archivo. RDP. Abra el archivo. RDP en la aplicación Conexión a Escritorio remoto. Puesto que se está conectando a la consola de la máquina virtual, deberá escribir las credenciales de administrador del host de Hyper-V.
 
 [Más información acerca de la administración de máquinas virtuales con el centro de administración de Windows](manage-virtual-machines.md).
 
@@ -259,7 +259,7 @@ Si acaba de empezar, estos son algunos tutoriales rápidos que le ayudarán a sa
 2. Haga clic en **nuevo** para crear una nueva red virtual y subredes, o elija una red virtual existente y haga clic en **configuración** para modificar su configuración.
 3. Haga clic en una red virtual existente para ver las conexiones de máquinas virtuales a las subredes de la red virtual y a las listas de control de acceso aplicadas a las subredes de la red virtual.
 
-![Administrar redes virtuales](../media/manage-hyper-converged/manage-virtual-networks.png)
+![Administración de redes virtuales](../media/manage-hyper-converged/manage-virtual-networks.png)
 
 ### <a name="connect-a-virtual-machine-to-a-virtual-network-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>Conectar una máquina virtual a una red virtual (clústeres HCI habilitados para SDN mediante la versión preliminar del centro de administración de Windows)
 
@@ -284,11 +284,11 @@ También puede configurar la red virtual al crear una máquina virtual.
 
 - [Envíe y vote solicitudes de características en UserVoice](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
 - [Únase al foro del centro de administración de Windows en Microsoft Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
-- Tweet en `@servermgmt`
+- Tweet hasta`@servermgmt`
 
-### <a name="see-also"></a>Vea también
+### <a name="additional-references"></a>Referencias adicionales
 
 - [Windows Admin Center](../overview.md)
 - [Espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
 - [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
-- [Redes definidas por software](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)
+- [Red definida por software](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)

@@ -8,21 +8,21 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: be099a234b7e2e73375d23b19161e59876f71d61
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 526ded03c877613766b8a0b762f1db1a693d2019
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856508"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475002"
 ---
 # <a name="create-os-specialization-answer-file"></a>Crear el archivo de respuesta de especialización del sistema operativo
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
-Como preparación para la implementación de máquinas virtuales blindadas, puede que tenga que crear un archivo de respuesta de especialización del sistema operativo. En Windows, esto se conoce normalmente como el archivo "Unattend. xml". La función **New-ShieldingDataAnswerFile de** Windows PowerShell le ayuda a hacerlo. Después, puede usar el archivo de respuesta al crear máquinas virtuales blindadas a partir de una plantilla mediante System Center Virtual Machine Manager (o cualquier otro controlador de tejido).
+Como preparación para la implementación de máquinas virtuales blindadas, puede que tenga que crear un archivo de respuesta de especialización del sistema operativo. En Windows, esto se conoce comúnmente como el archivo "unattend.xml". La función **New-ShieldingDataAnswerFile de** Windows PowerShell le ayuda a hacerlo. Después, puede usar el archivo de respuesta al crear máquinas virtuales blindadas a partir de una plantilla mediante System Center Virtual Machine Manager (o cualquier otro controlador de tejido).
 
 Para obtener instrucciones generales sobre los archivos de instalación desatendida para las máquinas virtuales blindadas, consulte [crear un archivo de respuesta](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file).
- 
+
 ## <a name="downloading-the-new-shieldingdataanswerfile-function"></a>Descarga de la función New-ShieldingDataAnswerFile
 
 Puede obtener la función **New-ShieldingDataAnswerFile** de la [Galería de PowerShell](https://aka.ms/gftools). Si el equipo tiene conectividad a Internet, puede instalarlo desde PowerShell con el siguiente comando:
@@ -31,9 +31,9 @@ Puede obtener la función **New-ShieldingDataAnswerFile** de la [Galería de Pow
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-La salida de `unattend.xml` se puede empaquetar en los datos de blindaje, junto con artefactos adicionales, para que se pueda usar para crear máquinas virtuales blindadas a partir de plantillas.
+La `unattend.xml` salida se puede empaquetar en los datos de blindaje, junto con artefactos adicionales, para que se pueda usar para crear máquinas virtuales blindadas a partir de plantillas.
 
-En las secciones siguientes se muestra cómo puede usar los parámetros de la función para un archivo `unattend.xml` que contiene varias opciones:
+En las secciones siguientes se muestra cómo puede usar los parámetros de función para un `unattend.xml` archivo que contiene varias opciones:
 
 - [Archivo de respuesta básico de Windows](#basic-windows-answer-file)
 - [Archivo de respuesta de Windows con Unión a un dominio](#windows-answer-file-with-domain-join)
@@ -92,7 +92,7 @@ Debe configurar el adaptador de red para la máquina virtual. En la captura de p
 
 ![Configurar el hardware para usar la dirección IP estática](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-network-adapter-settings.png)
 
-A continuación, puede usar el parámetro `-StaticIPPool` para incluir los elementos IP estáticos en el archivo de respuesta. Los parámetros `@IPAddr-1@`, `@NextHop-1-1@`y `@DNSAddr-1-1@` en el archivo de respuesta se reemplazarán por los valores reales que especificó en Virtual Machine Manager en el momento de la implementación.
+Después, puede usar el `-StaticIPPool` parámetro para incluir los elementos IP estáticos en el archivo de respuesta. Los parámetros `@IPAddr-1@` , `@NextHop-1-1@` y `@DNSAddr-1-1@` en el archivo de respuesta se reemplazarán por los valores reales especificados en Virtual Machine Manager en el momento de la implementación.
 
 ```powershell
 $adminCred = Get-Credential -Message "Local administrator account"
@@ -128,7 +128,7 @@ $rootPassword = Read-Host -Prompt "Root password" -AsSecureString
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -RootPassword $rootPassword -RootSshKey '~\.ssh\id_rsa.pub'
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

@@ -1,6 +1,6 @@
 ---
-title: Editar propiedades de cuota automática
-description: En este artículo se describe cómo editar propiedades de cuota automática
+title: Edit Auto Apply Quota Properties
+description: En este artículo se describe cómo editar las propiedades de la cuota automática
 ms.date: 7/7/2017
 ms.prod: windows-server
 ms.technology: storage
@@ -8,41 +8,41 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4b4fda5cdfeed8df02fee922c8dc5fddc75c56ff
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2d520d80dc06969f21211d461fc33e2e9336df12
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403112"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474942"
 ---
-# <a name="edit-auto-apply-quota-properties"></a>Editar propiedades de cuota automática
+# <a name="edit-auto-apply-quota-properties"></a>Edit Auto Apply Quota Properties
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-Al realizar cambios en una cuota automática, tienes la opción de ampliar estos cambios a las cuotas existentes en la ruta de acceso de cuota automática. Puedes elegir entre modificar solo las cuotas que aún coinciden con la cuota automática original o todas las cuotas de la ruta de acceso de cuota automática, independientemente de las modificaciones que se realizaron en las cuotas desde que se crearon. Esta característica simplifica el proceso de actualización de las propiedades de cuotas que se derivaron de una cuota automática, ya que ofrece un punto central donde puede realizar todos los cambios.
+Al realizar cambios en una cuota automática, tiene la opción de extender dichos cambios a las cuotas existentes en la ruta de acceso a la cuota automática. Puede elegir entre modificar sólo las cuotas que coinciden con la cuota automática original o modificar todas las de la ruta de acceso a la cuota automática, con independencia de las modificaciones que se hayan realizado en ellas desde que se crearon. Esta característica simplifica el proceso de actualización de las propiedades de las cuotas derivadas de una cuota automática proporcionando un punto central en el que pueden realizarse todos los cambios.
 
 > [!Note]
-> Si decides aplicar los cambios a todas las cuotas de la ruta de acceso de cuota automática, se sobrescribirán todas las propiedades de cuotas personalizadas que hayas creado.
+> Si elige aplicar los cambios a todas las cuotas de la ruta de acceso de la cuota automática, sobrescribirá las propiedades de cuota personalizadas que haya creado.
 
 ## <a name="to-edit-an-auto-apply-quota"></a>Para editar una cuota automática
 
-1.  En **Cuotas**, selecciona la cuota automática que quieras modificar. Puedes filtrar las cuotas para mostrar únicamente cuotas automáticas.
+1.  En **cuotas**, seleccione la cuota automática que desea modificar. Puede filtrar las cuotas para que sólo muestren cuotas automáticas.
 
-2.  Haz clic con el botón derecho en la entrada de cuota y luego haz clic en **Editar las propiedades de la cuota** (o en el panel **Acciones**, en **Cuotas seleccionadas**, selecciona **Editar las propiedades de la cuota**). Se abrirá el cuadro de diálogo **Editar cuota automática**.
+2.  Haga clic con el botón secundario en la entrada cuota y, a continuación, haga clic en **Editar propiedades de cuota** (o en el panel **acciones** , en **cuotas seleccionadas,** seleccione **Editar propiedades de cuota**). Se abrirá el cuadro de diálogo **Editar cuota automática** .
 
-3.  En **Derivar propiedades de esta plantilla de cuota**, selecciona la plantilla de cuota que quieres aplicar. Puede revisar las propiedades de cada plantilla de cuota en el cuadro de lista de resumen.
+3.  En **derivar propiedades de esta plantilla de cuota**, seleccione la plantilla de cuota que desea aplicar. Puede revisar las propiedades de cada plantilla de cuota en el cuadro de lista de resumen.
 
-4.  Haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Actualizar cuotas derivadas de la cuota automática**.
+4.  Haga clic en **OK**. Se abrirá el cuadro **de diálogo Actualizar cuotas derivadas de la cuota automática** .
 
-5.  Selecciona el tipo de actualización que quieres aplicar:
+5.  Seleccione el tipo de actualización que desea aplicar:
 
-    -   Si tienes cuotas que se han modificado desde que se generaron automáticamente y no quieres cambiarlas, selecciona **Emplear la cuota automática solo en las cuotas derivadas que coinciden con la cuota automática original**. Esta opción actualizará solo las cuotas de la ruta de acceso de cuota automático que no se han editado desde que se generaron automáticamente.
-    -   Si quieres modificar todas las cuotas existentes de la ruta de acceso de cuota automática, selecciona **Emplear la cuota automática en todas las cuotas derivadas**.
-    -   Si quieres mantener las cuotas existentes sin modificar, pero que la cuota automática modificada tenga validez en las nuevas subcarpetas de la ruta de acceso de cuota automática, selecciona **No emplear la cuota automática en las cuotas derivadas**.
+    -   Si tiene cuotas que se han modificado desde que se generaron automáticamente y no desea cambiarlas, seleccione **aplicar la cuota automática solo a las cuotas derivadas que coinciden con la cuota automática original**. Esta opción actualizará únicamente las cuotas de la ruta de acceso a la cuota automática que no se hayan editado desde que se generaron automáticamente.
+    -   Si desea modificar todas las cuotas existentes en la ruta de acceso de la cuota automática, seleccione **aplicar la cuota automática a todas las cuotas derivadas**.
+    -   Si desea mantener las cuotas existentes sin cambios, pero hacer que la cuota automática modificada sea efectiva para las nuevas subcarpetas de la ruta de acceso de la cuota automática, seleccione no **aplicar la cuota automática a las cuotas derivadas**.
 
-6.  Haga clic en **Aceptar**.
+6.  Haga clic en **OK**.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Administración de cuotas](quota-management.md)
 -   [Crear una cuota automática](create-auto-apply-quota.md)

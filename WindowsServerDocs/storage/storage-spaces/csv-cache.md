@@ -8,15 +8,15 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d9ebc40b69373dafbebdb87f2abe624a5a7a4375
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fff78ddc831ae9f6cba103d7630da3afec2c87d7
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858958"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474242"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>Uso de Espacios de almacenamiento directo con la memoria caché de lectura en memoria de CSV
-> Se aplica a: Windows Server 2016, Windows Server 2019
+> Se aplica a: Windows Server 2016 y Windows Server 2019
 
 En este tema se describe cómo utilizar la memoria del sistema para aumentar el rendimiento de [espacios de almacenamiento directo](storage-spaces-direct-overview.md).
 
@@ -24,7 +24,7 @@ Espacios de almacenamiento directo es compatible con la memoria caché de lectur
 
 Dado que la caché en memoria es local del servidor, mejora la ubicación de los datos para las implementaciones de Espacios de almacenamiento directo hiperconvergidas: las lecturas recientes se almacenan en la memoria caché en el mismo host en el que se ejecuta la máquina virtual, lo que reduce la frecuencia de las lecturas a través de la red. Esto produce una menor latencia y un mejor rendimiento de almacenamiento.
 
-## <a name="planning-considerations"></a>Consideraciones sobre planeación
+## <a name="planning-considerations"></a>Consideraciones de planeación
 
 La memoria caché de lectura en memoria es más eficaz para las cargas de trabajo de lectura intensiva, como la infraestructura de escritorio virtual (VDI). Por el contrario, si la carga de trabajo requiere una gran cantidad de escritura, la memoria caché puede introducir más sobrecarga que el valor y debe deshabilitarse.
 
@@ -40,10 +40,10 @@ Puede usar hasta el 80% de la memoria física total para la caché de lectura en
 
 La memoria caché de lectura en memoria de CSV está disponible en Windows Server 2016 y Windows Server 2019 con la misma funcionalidad. En Windows Server 2016, está desactivado de forma predeterminada. En Windows Server 2019, está activado de forma predeterminada con 1 GB asignado.
 
-| Versión de SO          | Tamaño predeterminado de caché de CSV |
+| Versión del SO          | Tamaño predeterminado de caché de CSV |
 |---------------------|------------------------|
-| Windows Server 2016 | 0 (deshabilitada)           |
-| Windows Server 2019 | 1 GiB                   |
+| Windows Server 2016 | 0 (deshabilitado)           |
+| Windows Server 2019 | 1 GiB                   |
 
 Para ver cuánta memoria se asigna mediante PowerShell, ejecute:
 
@@ -51,7 +51,7 @@ Para ver cuánta memoria se asigna mediante PowerShell, ejecute:
 (Get-Cluster).BlockCacheSize
 ```
 
-El valor devuelto está en mebibytes (MiB) por servidor. Por ejemplo, `1024` representa 1 Gibibyte (GiB).
+El valor devuelto está en mebibytes (MiB) por servidor. Por ejemplo, `1024` representa 1 Gibibyte (GIB).
 
 Para cambiar la cantidad de memoria que se asigna, modifique este valor mediante PowerShell. Por ejemplo, para asignar 2 GiB por servidor, ejecute:
 
@@ -69,6 +69,6 @@ Get-ClusterSharedVolume | ForEach {
 }
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)

@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 6ff502e7246c899a7b4f29125266bf05d07e40ef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 30f8f4db8f6bbfd4ead6ce2a31af3b2f6adbf72c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856458"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475102"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>Máquinas virtuales blindadas para inquilinos: creación de datos de blindaje para definir una máquina virtual blindada
 
@@ -56,7 +56,7 @@ Una manera de comprobar que se está conectando al servidor previsto es instalar
 
 Puesto que el disco de plantilla firmado en VMM está generalizado, los inquilinos deben proporcionar un archivo de respuesta para especializar sus máquinas virtuales blindadas durante el proceso de aprovisionamiento. El archivo de respuesta (a menudo denominado archivo de instalación desatendida) puede configurar la máquina virtual para su rol previsto; es decir, puede instalar características de Windows, registrar el certificado RDP creado en el paso anterior y realizar otras acciones personalizadas. También proporcionará la información necesaria para el programa de instalación de Windows, incluida la contraseña y la clave de producto del administrador predeterminado.
 
-Para obtener información sobre cómo obtener y usar la función **New-ShieldingDataAnswerFile** para generar un archivo de respuesta (archivo Unattend. xml) para crear máquinas virtuales blindadas, consulte [generación de un archivo de respuesta mediante la función New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md). Con la función, puede generar más fácilmente un archivo de respuesta que refleje opciones como las siguientes:
+Para obtener información sobre cómo obtener y usar la función **New-ShieldingDataAnswerFile** para generar un archivo de respuesta (archivo Unattend.xml) para la creación de máquinas virtuales blindadas, consulte [generación de un archivo de respuesta mediante la función New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md). Con la función, puede generar más fácilmente un archivo de respuesta que refleje opciones como las siguientes:
 
 - ¿La máquina virtual debe estar unida a un dominio al final del proceso de inicialización?
 - ¿Va a usar una licencia por volumen o una clave de producto específica por máquina virtual?
@@ -66,7 +66,7 @@ Para obtener información sobre cómo obtener y usar la función **New-Shielding
 
 Los archivos de respuesta usados en los archivos de datos de blindaje se usarán en todas las máquinas virtuales creadas con el archivo de datos de blindaje. Por lo tanto, debe asegurarse de no codificar de forma rígida cualquier información específica de la máquina virtual en el archivo de respuesta. VMM admite algunas cadenas de sustitución (vea la tabla siguiente) en el archivo de instalación desatendida para controlar los valores de especialización que pueden cambiar de una máquina virtual a una máquina virtual. No es necesario utilizarlos. sin embargo, si están presentes, VMM se beneficiará de ellos.
 
-Al crear un archivo Unattend. XML para máquinas virtuales blindadas, tenga en cuenta las siguientes restricciones:
+Al crear un archivo de unattend.xml para las máquinas virtuales blindadas, tenga en cuenta las siguientes restricciones:
 
 - Si usa VMM para administrar el centro de recursos, el archivo de instalación desatendida debe hacer que la máquina virtual se apague después de configurarla. Esto permite que VMM sepa cuándo debe informar al inquilino de que la máquina virtual ha finalizado el aprovisionamiento y está lista para su uso. VMM volverá a encender automáticamente la máquina virtual una vez que detecta que se ha desactivado durante el aprovisionamiento.
 
@@ -76,8 +76,8 @@ Al crear un archivo Unattend. XML para máquinas virtuales blindadas, tenga en c
 
     | Elemento reemplazable | Cadena de sustitución |
     |-----------|-----------|
-    | nombreDeEquipo        | @ComputerName@      |
-    | Zona horaria            | @TimeZone@          |
+    | ComputerName        | @ComputerName@      |
+    | TimeZone            | @TimeZone@          |
     | ProductKey          | @ProductKey@        |
     | IPAddr4-1           | @IP4Addr-1@         |
     | IPAddr6-1           | @IP6Addr-1@         |
@@ -100,12 +100,12 @@ Al crear un archivo Unattend. XML para máquinas virtuales blindadas, tenga en c
     | @Prefix-2-1@        | 24                   |
     | @NextHop-2-1@       | 10.0.20.1            |
 
-Al usar cadenas de sustitución, es importante asegurarse de que las cadenas se rellenarán durante el proceso de aprovisionamiento de la máquina virtual. Si no se proporciona una cadena como @ProductKey@ en el momento de la implementación, lo que deja en blanco el nodo &lt;ProductKey&gt; en el archivo de instalación desatendida, se producirá un error en el proceso de especialización y no podrá conectarse a la máquina virtual.
+Al usar cadenas de sustitución, es importante asegurarse de que las cadenas se rellenarán durante el proceso de aprovisionamiento de la máquina virtual. Si @ProductKey no se proporciona una cadena como @ en el momento de la implementación y deja en &lt; blanco el &gt; nodo ProductKey en el archivo de instalación desatendida, se producirá un error en el proceso de especialización y no podrá conectarse a la máquina virtual.
 
 Además, tenga en cuenta que las cadenas de sustitución relacionadas con redes hacia el final de la tabla solo se usan si está aprovechando grupos de direcciones IP estáticas de VMM. El proveedor de servicios de hosting debe ser capaz de indicarle si se requieren estas cadenas de sustitución. Para obtener más información acerca de las direcciones IP estáticas en las plantillas de VMM, consulte lo siguiente en la documentación de VMM:
 
 - [Directrices para grupos de direcciones IP](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools)
-- [Configuración de grupos de direcciones IP estáticas en el tejido de VMM](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-network-static-address-pools)
+- [Configurar grupos de direcciones IP estáticas en el tejido de VMM](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-network-static-address-pools)
 
 Por último, es importante tener en cuenta que el proceso de implementación de la máquina virtual blindada solo cifrará la unidad del sistema operativo. Si implementa una máquina virtual blindada con una o varias unidades de datos, se recomienda encarecidamente que agregue un comando de instalación desatendida o una configuración de directiva de grupo en el dominio del inquilino para cifrar automáticamente las unidades de datos.
 
@@ -161,13 +161,13 @@ Obtenga los archivos de metadatos de protección para cada tejido protegido en e
 
 Ejecute el Asistente para archivos de datos de blindaje para crear un archivo de datos de blindaje (PDK). Aquí, agregará el certificado RDP, el archivo de instalación desatendida, los catálogos de firmas de volumen, el guardián del propietario y los metadatos del guardián descargados obtenidos en el paso anterior.
 
-1. Instale **herramientas de administración remota del servidor herramientas de administración de características de &gt; &gt; herramientas de máquinas virtuales blindadas** en el equipo con administrador del servidor o el siguiente comando de Windows PowerShell:
+1. Instale **herramientas de administración remota del servidor herramientas de &gt; Administración de características herramientas de &gt; máquinas virtuales blindadas** en el equipo con administrador del servidor o el siguiente comando de Windows PowerShell:
 
     ```powershell
     Install-WindowsFeature RSAT-Shielded-VM-Tools
     ```
 
-2. Abra el Asistente para archivos de datos de blindaje en la sección herramientas de administrador del menú Inicio o ejecute el siguiente archivo ejecutable **C:\\Windows\\System32\\ShieldingDataFileWizard. exe**.
+2. Abra el Asistente para archivos de datos de blindaje en la sección herramientas de administración del menú Inicio o ejecute el siguiente archivo ejecutable **C: \\ Windows \\ system32 \\ShieldingDataFileWizard.exe**.
 
 3. En la primera página, use el segundo cuadro de selección de archivo para elegir una ubicación y un nombre de archivo para el archivo de datos de blindaje. Normalmente, debería asignar un nombre a un archivo de datos de blindaje después de la entidad que posee las máquinas virtuales creadas con los datos de blindaje (por ejemplo, HR, IT, Finance) y el rol de carga de trabajo que se está ejecutando (por ejemplo, servidor de archivos, servidor web o cualquier otro elemento configurado por el archivo de instalación desatendida). Deje el botón de radio establecido en **blindaje de los datos para las plantillas blindadas**.
 
@@ -198,9 +198,9 @@ Ejecute el Asistente para archivos de datos de blindaje para crear un archivo de
 
 5. En la página calificadores de ID. de volumen, haga clic en **Agregar** para autorizar un disco de plantilla firmado en el archivo de datos de blindaje. Al seleccionar un VSC en el cuadro de diálogo, se mostrará información sobre el nombre, la versión y el certificado del disco que se usó para firmarlo. Repita este proceso para cada disco de plantilla que desee autorizar.
 
-6. En la página **valores de especialización** , haga clic en **examinar** para seleccionar el archivo Unattend. XML que se usará para especializar las máquinas virtuales.
+6. En la página **valores de especialización** , haga clic en **examinar** para seleccionar el archivo de unattend.xml que se usará para especializar las máquinas virtuales.
 
-    Use el botón **Agregar** de la parte inferior para agregar cualquier archivo adicional al PDK que sea necesario durante el proceso de especialización. Por ejemplo, si el archivo de instalación desatendida está instalando un certificado RDP en la máquina virtual (como se describe en [generación de un archivo de respuesta mediante la función New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md)), debe agregar el archivo PFX del certificado RDP y el script RDPCertificateConfig. PS1 aquí. Tenga en cuenta que los archivos que especifique aquí se copiarán automáticamente en C:\\Temp\\ en la máquina virtual que se crea. El archivo de instalación desatendida debería esperar que los archivos estén en esa carpeta al hacer referencia a ellos mediante la ruta de acceso.
+    Use el botón **Agregar** de la parte inferior para agregar cualquier archivo adicional al PDK que sea necesario durante el proceso de especialización. Por ejemplo, si el archivo de instalación desatendida está instalando un certificado RDP en la máquina virtual (como se describe en [generación de un archivo de respuesta mediante la función New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md)), debe agregar el archivo PFX del certificado RDP y el script RDPCertificateConfig.ps1 aquí. Tenga en cuenta que los archivos que especifique aquí se copiarán automáticamente a C: \\ temp \\ en la máquina virtual que se crea. El archivo de instalación desatendida debería esperar que los archivos estén en esa carpeta al hacer referencia a ellos mediante la ruta de acceso.
 
 7. Revise las selecciones en la página siguiente y, a continuación, haga clic en **generar**.
 
@@ -230,11 +230,11 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 ```
 
 > [!TIP]
-> Si ha usado certificados autofirmados o los certificados registrados con HGS han expirado, puede que tenga que usar las marcas `-AllowUntrustedRoot` y/o `-AllowExpired` con el comando IMPORT-HgsGuardian para omitir las comprobaciones de seguridad.
+> Si ha usado certificados autofirmados o los certificados registrados con HGS han expirado, puede que tenga que usar las `-AllowUntrustedRoot` marcas y/o `-AllowExpired` con el comando IMPORT-HgsGuardian para omitir las comprobaciones de seguridad.
 
 También necesitará [obtener un catálogo de firmas de volumen](#get-the-volume-signature-catalog-file) para cada disco de plantilla que desee usar con este archivo de datos de blindaje y un [archivo de respuesta de datos de blindaje](#create-an-answer-file) para permitir que el sistema operativo complete automáticamente sus tareas de especialización.
 Por último, decida si desea que la máquina virtual esté completamente blindada o simplemente habilitada para vTPM.
-Use `-Policy Shielded` para una VM totalmente blindada o `-Policy EncryptionSupported` para una máquina virtual habilitada para vTPM que permita conexiones de consola básicas y PowerShell Direct.
+Se usa `-Policy Shielded` para una máquina virtual totalmente blindada o `-Policy EncryptionSupported` para una máquina virtual habilitada para vTPM que permite conexiones de consola básicas y PowerShell Direct.
 
 Cuando todo esté listo, ejecute el siguiente comando para crear el archivo de datos de blindaje:
 
@@ -244,18 +244,18 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 ```
 
 > [!TIP]
-> Si usa un certificado RDP personalizado, claves SSH u otros archivos que deben incluirse con el archivo de datos de blindaje, use el parámetro `-OtherFile` para incluirlos. Puede proporcionar una lista separada por comas de rutas de acceso de archivo, como `-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
+> Si usa un certificado RDP personalizado, claves SSH u otros archivos que deben incluirse con el archivo de datos de blindaje, use el `-OtherFile` parámetro para incluirlos. Puede proporcionar una lista separada por comas de rutas de acceso de archivo, como`-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
 
 En el comando anterior, el tutor denominado "Owner" (obtenido a través de Get-HgsGuardian) podrá cambiar la configuración de seguridad de la máquina virtual en el futuro, mientras que "EAST-US Datacenter" puede ejecutar la máquina virtual pero no cambiar su configuración.
-Si tiene más de un guardián, separe los nombres de los tutores con comas como `'EAST-US Datacenter', 'EMEA Datacenter'`.
+Si tiene más de un guardián, separe los nombres de los tutores con comas como `'EAST-US Datacenter', 'EMEA Datacenter'` .
 El calificador de ID. de volumen especifica si confía solo en la versión exacta (igual) del disco de plantilla o en versiones futuras (GreaterThanOrEquals).
 El nombre del disco y el certificado de firma deben coincidir exactamente para que la comparación de versiones se considere en el momento de la implementación.
-Puede confiar en más de un disco de plantilla proporcionando una lista separada por comas de calificadores de ID. de volumen para el parámetro `-VolumeIDQualifier`.
-Por último, si tiene otros archivos que deben acompañar el archivo de respuesta con la máquina virtual, use el parámetro `-OtherFile` y proporcione una lista separada por comas de rutas de acceso de archivo.
+Puede confiar en más de un disco de plantilla proporcionando una lista separada por comas de calificadores de ID. de volumen para el `-VolumeIDQualifier` parámetro.
+Por último, si tiene otros archivos que deben acompañar el archivo de respuesta con la máquina virtual, use el `-OtherFile` parámetro y proporcione una lista separada por comas de rutas de acceso de archivo.
 
 Consulte la documentación del cmdlet para [New-ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps) y [New-VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para obtener información sobre otras formas de configurar el archivo de datos de blindaje.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

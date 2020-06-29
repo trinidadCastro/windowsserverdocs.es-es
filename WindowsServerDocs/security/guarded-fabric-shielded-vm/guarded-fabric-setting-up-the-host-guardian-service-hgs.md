@@ -1,5 +1,5 @@
 ---
-title: Implementar el servicio de protección de host
+title: Implementación del Servicio de protección de host
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0bd96e2a-1612-4bbf-8c23-7602020f4eec
@@ -8,14 +8,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: 6301fc930818dbb190c0c9f997af1524c7f41245
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 22097d69185d88366843acc2bb157204401b468b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856488"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475122"
 ---
-# <a name="deploy-the-host-guardian-service-hgs"></a>Implementación del servicio de protección de host (HGS)
+# <a name="deploy-the-host-guardian-service-hgs"></a>Implementación del Servicio de protección de host (HGS)
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
@@ -28,7 +28,7 @@ Para implementar HGS, complete las siguientes tareas:
 - [Configuración de HTTPS (opcional)](guarded-fabric-configure-hgs-https.md)
 - [Agregar nodos](guarded-fabric-configure-additional-hgs-nodes.md)
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
-- [Implementación del servicio de protección de host para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-deploying-hgs-overview.md)
+- [Implementación del Servicio de protección de host para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-deploying-hgs-overview.md)
 - [Pasos de configuración para hosts de Hyper-V que se convertirán en hosts protegidos](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)

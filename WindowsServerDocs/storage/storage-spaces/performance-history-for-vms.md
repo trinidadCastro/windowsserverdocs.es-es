@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aefc9c3c33cb93be241aae4ef18d815a9f8defef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 418ab095f5f0af35f3aa176614ad73f48d727a35
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856148"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474692"
 ---
 # <a name="performance-history-for-virtual-machines"></a>Historial de rendimiento de las máquinas virtuales
 
@@ -41,7 +41,7 @@ Estas series se recopilan para cada máquina virtual válida:
 | `vmnetworkadapter.bandwidth.outbound` | bits por segundo |
 | `vmnetworkadapter.bandwidth.total`    | bits por segundo |
 
-Además, todas las series de discos duros virtuales (VHD), como `vhd.iops.total`, se agregan para todos los VHD conectados a la máquina virtual.
+Además, todas las series de discos duros virtuales (VHD), como `vhd.iops.total` , se agregan para todos los VHD conectados a la máquina virtual.
 
 ## <a name="how-to-interpret"></a>Cómo interpretar
 
@@ -61,7 +61,7 @@ Además, todas las series de discos duros virtuales (VHD), como `vhd.iops.total`
 | `vmnetworkadapter.bandwidth.total`    | Velocidad total de los datos recibidos o enviados por la máquina virtual en todos sus adaptadores de red virtuales.          |
 
    > [!NOTE]
-   > Los contadores se miden en todo el intervalo, no muestreado. Por ejemplo, si la máquina virtual está inactiva durante 9 segundos pero picos de uso del 50% de la CPU del host en el décimo segundo, su `vm.cpu.usage` se registrará como el 5% del promedio durante este intervalo de 10 segundos. Esto garantiza que el historial de rendimiento Capture todas las actividades y sea sólido para el ruido.
+   > Los contadores se miden en todo el intervalo, no muestreado. Por ejemplo, si la máquina virtual está inactiva durante 9 segundos pero picos de uso del 50% de la CPU del host en el décimo segundo, se `vm.cpu.usage` registrará como el 5% del promedio durante este intervalo de 10 segundos. Esto garantiza que el historial de rendimiento Capture todas las actividades y sea sólido para el ruido.
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
@@ -74,6 +74,6 @@ Get-VM <Name> | Get-ClusterPerf
    > [!NOTE]
    > El cmdlet Get-VM solo devuelve las máquinas virtuales en el servidor local (o especificado), no en el clúster.
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Historial de rendimiento de Espacios de almacenamiento directo](performance-history.md)

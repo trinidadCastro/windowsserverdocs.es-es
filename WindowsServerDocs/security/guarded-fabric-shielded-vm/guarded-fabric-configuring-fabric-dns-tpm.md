@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 3dcaa102926c85749ad95d0d1dadb2e05353654a
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: ed4c15d38c12ee4486be0994d3ede8274dd0aae5
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203419"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475372"
 ---
 # <a name="next-step"></a>Paso siguiente
 
@@ -24,7 +24,7 @@ ms.locfileid: "83203419"
 > [!div class="nextstepaction"]
 > [Configurar HTTPS](guarded-fabric-configure-hgs-https.md)
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Pasos de configuración para hosts de Hyper-V que se convertirán en hosts protegidos](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
 - [Tareas de implementación de tejidos protegidos y máquinas virtuales blindadas](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)

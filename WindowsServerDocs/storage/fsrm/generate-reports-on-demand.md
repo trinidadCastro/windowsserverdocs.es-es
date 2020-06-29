@@ -1,6 +1,6 @@
 ---
-title: Generar informes a petición
-description: En este artículo se describe cómo generar informes a petición para analizar el uso del disco en el servidor
+title: Generate Reports on Demand
+description: En este artículo se describe cómo generar informes a petición para analizar el uso de disco en el servidor.
 ms.date: 7/7/2017
 ms.prod: windows-server
 ms.technology: storage
@@ -8,65 +8,65 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9b3cde8a01c40a04df1bc433687029a2e0e7c394
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1802ab4fdabafd0a0344922fd861087c166d4499
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403007"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474222"
 ---
-# <a name="generate-reports-on-demand"></a>Generar informes a petición
+# <a name="generate-reports-on-demand"></a>Generate Reports on Demand
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-Durante las operaciones diarias, puedes usar la opción **Generar informes ahora** para generar uno o varios informes a petición. Con estos informes, puedes analizar los distintos aspectos del uso del disco actual en el servidor. Los datos actuales se recopilan antes de generar los informes.
+Durante las operaciones diarias, puede usar la opción **generar informes ahora** para generar uno o más informes a petición. Con estos informes puede analizar los distintos aspectos del uso actual del disco en el servidor. Los datos actuales se recopilan antes de generar los informes.
 
-Cuando se generan informes a petición, los informes se guardan en la ubicación predeterminada que especifiques en el cuadro de diálogo **Opción del Administrador de recursos del servidor de archivos**, pero no se crea ninguna tarea de informe para usarla más adelante. Puedes ver los informes inmediatamente después de que se generan o enviar por correo electrónico los informes a un grupo de administradores.
+Cuando se generan informes a petición, los informes se guardan en una ubicación predeterminada que se especifica en el cuadro de diálogo de la **opción servidor de archivos administrador de recursos** , pero no se crea ninguna tarea de informe para su uso posterior. Puede ver los informes inmediatamente después de generarse o enviarlos por correo electrónico a un grupo de administradores.
 
 > [!Note]
-> Si decides abrir los informes inmediatamente, debes esperar mientras los informes se generan. El tiempo de procesamiento varía en función de los tipos de informes y del ámbito de los datos.
+> Si elige abrir los informes inmediatamente, tendrá que esperar mientras se generan los informes. El tiempo de procesamiento varía según el tipo de informe y el ámbito de los datos.
 
 ## <a name="to-generate-reports-immediately"></a>Para generar informes inmediatamente
 
-1. Haz clic en el nodo **Administración de informes de almacenamiento**.
+1. Haga clic en el nodo **Administración de informes de almacenamiento**.
 
-2. Haz clic con el botón derecho en **Administración de informes de almacenamiento** y luego haz clic en **Generar informes ahora** (o selecciona **Generar informes ahora** en el panel **Acciones**). Se abrirá el cuadro de diálogo **Propiedades de la tarea de informes de almacenamiento**.
+2. Haga clic con el botón derecho en **Administración de informes de almacenamiento**y, a continuación, haga clic en **generar informes ahora** (o seleccione **generar informes ahora** en el panel **acciones** ). De este modo, se abrirá el cuadro de diálogo **Propiedades de la tarea de informes de almacenamiento**.
 
-3. Para seleccionar volúmenes o carpetas en los que se generarán informes:
+3. Para seleccionar volúmenes o carpetas en los que generar informes:
 
-   -   En **Ámbito**, haz clic en **Agregar**.
-   -   Busca el volumen o carpeta en los que quieres generar los informes, selecciónalos y luego haz clic en **Aceptar** para agregar la ruta de acceso a la lista.
-   -   Agregar todos los volúmenes o carpetas posibles que quieras incluir en los informes. (Para quitar un volumen o carpeta, haz clic en la ruta de acceso y luego haz clic en **Quitar**).
+   -   En **ámbito**, haga clic en **Agregar**.
+   -   Busque el volumen o la carpeta en la que desea generar los informes, selecciónelo y, a continuación, haga clic en **Aceptar** para agregar la ruta de acceso a la lista.
+   -   Agregue todos los volúmenes o carpetas que desee incluir en los informes. (Para quitar un volumen o una carpeta, haga clic en la ruta de acceso y, a continuación, haga clic en **quitar**).
 
-4. Para especificar los informes que han de generarse:
+4. Para especificar qué informes se deben generar:
 
-    -   En **Datos del informe**, selecciona cada informe que quieres incluir.
+    -   En **datos del informe**, seleccione cada uno de los informes que desee incluir.
 
    Para editar los parámetros de un informe:
 
-   -   Haz clic en la etiqueta del informe y luego haz clic en **Editar parámetros**.
-   -   En el cuadro de diálogo **Parámetros de informes**, edita los parámetros según sea necesario y luego haz clic en **Aceptar**.
-   -  Para ver una lista de parámetros de todos los informes seleccionados, haz clic en **Revisar informes seleccionados** y luego haz clic en **Cerrar**.
- 
-5. Para especificar los formatos para guardar los informes:
+   -   Haga clic en la etiqueta del informe y, a continuación, haga clic en **Editar parámetros**.
+   -   En el cuadro de diálogo **parámetros del informe** , modifique los parámetros según sea necesario y, a continuación, haga clic en **Aceptar**.
+   -  Para ver una lista de parámetros de todos los informes seleccionados, haga clic en **revisar informes seleccionados** y, a continuación, haga clic en **cerrar**.
 
-   -  En **Formatos de informes**, selecciona uno o varios formatos para los informes programados. De forma predeterminada, los informes se generan en Dynamic HTML (DHTML). También puedes seleccionar HTML, XML, CSV y formatos de texto. Los informes se guardan en la ubicación predeterminada para los informes a petición.
+5. Para especificar los formatos con los que guardar los informes:
 
-6. Para enviar copias de los informes a los administradores por correo electrónico:
+   -  En **formatos de informe**, seleccione uno o más formatos para los informes programados. De manera predeterminada, los informes se generan en un formato DHTML (HTML dinámico). También puede seleccionar los formatos HTML, XML, CSV y texto. Los informes se guardan en la ubicación predeterminada para los informes a petición.
 
-   - En la pestaña **Entrega**, selecciona la casilla de verificación **Enviar informes a los siguientes administradores** y luego escribe los nombres de las cuentas administrativas que recibirán los informes. 
-   - Usa el formato <em>account@domain</em> y usa punto y coma para separar varias cuentas.
+6. Para enviar copias de los informes a los administradores mediante correo electrónico:
 
-7. Para recopilar los datos y generar los informes, haz clic en **Aceptar**. Se abrirá el cuadro de diálogo **Generar informes de almacenamiento**.
+   - En la pestaña **entrega** , active la casilla **enviar informes a los siguientes administradores** y, a continuación, escriba los nombres de las cuentas administrativas que recibirán los informes.
+   - Use el formato <em>account@domain</em> y use punto y coma para separar varias cuentas.
 
-8. Selecciona cómo quieres generar los informes a petición:
+7. Para recopilar los datos y generar los informes, haga clic en **Aceptar**. De este modo, se abrirá el cuadro de diálogo **Generar informes de almacenamiento**.
 
-   -   Si quieres ver los informes inmediatamente después de que se generen, haz clic en **Esperar a que se generen los informes y mostrarlos a continuación**. Cada informe se abre en su propia ventana.
-   -   Para ver los informes más adelante, haz clic en **Generar informes en segundo plano**.
+8. Seleccione cómo desea generar los informes a petición:
 
-   Ambas opciones guardan los informes y, si habilitaste la entrega por correo electrónico, envían los informes a los administradores en los formatos que has seleccionado.
+   -   Si desea ver los informes inmediatamente después de generarlos, haga clic en **esperar a que se generen los informes y, a continuación, mostrarlos**. Cada informe se abre en su propia ventana.
+   -   Para ver los informes más adelante, haga clic en **generar informes en segundo plano**.
 
-## <a name="see-also"></a>Vea también
+   Ambas opciones guardan los informes y, si ha habilitado la entrega por correo electrónico, envíe los informes a los administradores con los formatos que haya seleccionado.
+
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Administración de informes de almacenamiento](storage-reports-management.md)
 -   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)

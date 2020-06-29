@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e2379ce540cb26c02bc79f591d2a597874ab287c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 597abd8e389421eb6875ff3cc94b457f341be3b7
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856218"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474752"
 ---
 # <a name="performance-history-for-network-adapters"></a>Historial de rendimiento de los adaptadores de red
 
@@ -52,24 +52,24 @@ Estas series se recopilan para cada adaptador de red válido:
 
 ## <a name="where-they-come-from"></a>Desde dónde provienen
 
-La serie `bytes.*` se recopilan del contador de rendimiento `Network Adapter` establecido en el servidor en el que está instalado el adaptador de red, una instancia por cada adaptador de red.
+Las `bytes.*` series se recopilan del `Network Adapter` contador de rendimiento establecido en el servidor donde está instalado el adaptador de red, una instancia por cada adaptador de red.
 
 | Serie                           | Contador de origen           |
 |----------------------------------|--------------------------|
-| `netadapter.bandwidth.inbound`   | 8 × `Bytes Received/sec` |
-| `netadapter.bandwidth.outbound`  | 8 × `Bytes Sent/sec`     |
-| `netadapter.bandwidth.total`     | 8 × `Bytes Total/sec`    |
+| `netadapter.bandwidth.inbound`   | 8 ×`Bytes Received/sec` |
+| `netadapter.bandwidth.outbound`  | 8 ×`Bytes Sent/sec`     |
+| `netadapter.bandwidth.total`     | 8 ×`Bytes Total/sec`    |
 
-La serie `rdma.*` se recopilan del contador de rendimiento `RDMA Activity` establecido en el servidor en el que está instalado el adaptador de red, una instancia por cada adaptador de red con RDMA habilitado.
+Las `rdma.*` series se recopilan del `RDMA Activity` contador de rendimiento establecido en el servidor donde está instalado el adaptador de red, una instancia por cada adaptador de red con RDMA habilitado.
 
 | Serie                               | Contador de origen           |
 |--------------------------------------|--------------------------|
-| `netadapter.bandwidth.rdma.inbound`  | 8 × `Inbound bytes/sec`  |
-| `netadapter.bandwidth.rdma.outbound` | 8 × `Outbound bytes/sec` |
+| `netadapter.bandwidth.rdma.inbound`  | 8 ×`Inbound bytes/sec`  |
+| `netadapter.bandwidth.rdma.outbound` | 8 ×`Outbound bytes/sec` |
 | `netadapter.bandwidth.rdma.total`    | 8 × *suma de lo anterior*   |
 
    > [!NOTE]
-   > Los contadores se miden en todo el intervalo, no muestreado. Por ejemplo, si el adaptador de red está inactivo durante 9 segundos pero transfiere 200 bits en el décimo segundo, su `netadapter.bandwidth.total` se registrará como 20 bits por segundo en promedio durante este intervalo de 10 segundos. Esto garantiza que el historial de rendimiento Capture todas las actividades y sea sólido para el ruido.
+   > Los contadores se miden en todo el intervalo, no muestreado. Por ejemplo, si el adaptador de red está inactivo durante 9 segundos pero transfiere 200 bits en el décimo segundo, se `netadapter.bandwidth.total` registrará como 20 bits por segundo en promedio durante este intervalo de 10 segundos. Esto garantiza que el historial de rendimiento Capture todas las actividades y sea sólido para el ruido.
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
@@ -79,6 +79,6 @@ Use el cmdlet [Get-NetAdapter](https://docs.microsoft.com/powershell/module/neta
 Get-NetAdapter <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="additional-references"></a>Referencias adicionales
 
 - [Historial de rendimiento de Espacios de almacenamiento directo](performance-history.md)
