@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 76665d91cc1e2997a837721ffbc51b0513dd7c1a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f6e600b41e4a485084bd0622c2be0753d0b11c0c
+ms.sourcegitcommit: 6d7a394edefba684f7b6983c65026679c1b7a485
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81524940"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84776717"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>Instrucciones para solucionar problemas de activación relacionados con DNS
 
@@ -29,7 +29,7 @@ Es posible que tenga que usar algunos de estos métodos si una o varias de las c
    - Windows 8
 - El Asistente para activación no puede conectarse a un equipo host de KMS.
 
-Al intentar activar un sistema de cliente, el Asistente para activación utiliza DNS para buscar un equipo correspondiente que ejecute el software de KMS. Si el asistente consulta DNS y no encuentra la entrada DNS para el equipo host de KMS, notificará un error.   
+Al intentar activar un sistema de cliente, el Asistente para activación utiliza DNS para buscar un equipo correspondiente que ejecute el software de KMS. Si el asistente consulta DNS y no encuentra la entrada DNS para el equipo host de KMS, notificará un error.
 
 <a id="list"></a>Revise la lista siguiente para buscar un enfoque que se ajuste a sus circunstancias:
 
@@ -37,7 +37,7 @@ Al intentar activar un sistema de cliente, el Asistente para activación utiliza
 - Si tiene que instalar y configurar un host de KMS, use el procedimiento [Configuración de un host de KMS para que los clientes puedan activarlo](#configure-a-kms-host-for-the-clients-to-activate-against).
 - Si el cliente no puede encontrar el host de KMS existente, use los procedimientos siguientes para solucionar los problemas de las configuraciones de enrutamiento. Estos procedimientos se organizan de simples a complejos.
   - [Verificación de la conectividad de IP básica con el servidor DNS](#verify-basic-ip-connectivity-to-the-dns-server)
-  - [Verificación de la configuración de host de KMS](#verify-the-configuration-of-the-kms-host)  
+  - [Verificación de la configuración de host de KMS](#verify-the-configuration-of-the-kms-host)
   - [Determinación del tipo de problema de enrutamiento](#determine-the-type-of-routing-issue)
   - [Verificación de la configuración de DNS](#verify-the-dns-configuration)
   - [Creación manual de un registro SRV de KMS](#manually-create-a-kms-srv-record)
@@ -56,7 +56,7 @@ Para cambiar la clave de producto a una de tipo MAK, siga estos pasos:
     slmgr -ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
    ```
    > [!NOTE]
-   > El marcador de posición **xxxxx-xxxxx-xxxxx-xxxxx-xxxxx** representa la clave de producto de MAK.  
+   > El marcador de posición **xxxxx-xxxxx-xxxxx-xxxxx-xxxxx** representa la clave de producto de MAK.
 
 [Vuelva a la lista de procedimientos.](#list)
 
@@ -84,33 +84,33 @@ Verifique la conectividad de IP básica con el servidor DNS mediante el comando 
 
 ## <a name="verify-the-configuration-of-the-kms-host"></a>Verificación de la configuración de host de KMS
 
-Compruebe el registro del servidor host de KMS para determinar si se está registrando con DNS. De forma predeterminada, un servidor host de KMS registra dinámicamente un registro SRV de DNS una vez cada 24 horas. 
+Compruebe el registro del servidor host de KMS para determinar si se está registrando con DNS. De forma predeterminada, un servidor host de KMS registra dinámicamente un registro SRV de DNS una vez cada 24 horas.
 > [!IMPORTANT]
-> Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modifica el Registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.  
+> Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modifica el Registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
 
 Para seleccionar esta configuración, realice estos pasos:
 1. Inicia el Editor del Registro. Para ello, haga clic con el botón derecho en **Inicio**, seleccione **Ejecutar**, escriba **regedit** y, a continuación, presione ENTRAR.
 1. Busque la subclave **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SL** y compruebe el valor de la entrada **DisableDnsPublishing**. Esta entrada tiene los siguientes valores posibles:
    - **0** o no definido (valor predeterminado): el servidor host de KMS registra un registro SRV una vez cada 24 horas.
-   - **1**: el servidor host de KMS no registra automáticamente los registros SRV. Si la implementación no admite actualizaciones dinámicas, vea [Creación manual de un registro SRV de KMS](#manually-create-a-kms-srv-record).  
+   - **1**: el servidor host de KMS no registra automáticamente los registros SRV. Si la implementación no admite actualizaciones dinámicas, vea [Creación manual de un registro SRV de KMS](#manually-create-a-kms-srv-record).
 1. Si falta la entrada **DisableDnsPublishing**, créela (el tipo es DWORD). Si el registro dinámico es aceptable, deje el valor sin definir o establézcalo en **0**.
 
 [Vuelva a la lista de procedimientos.](#list)
 
 ## <a name="determine-the-type-of-routing-issue"></a>Determinación del tipo de problema de enrutamiento
 
-Puede usar los comandos siguientes para determinar si se trata de un problema de resolución de nombres o un problema de registro SRV.  
+Puede usar los comandos siguientes para determinar si se trata de un problema de resolución de nombres o un problema de registro SRV.
 
-1. En un cliente de KMS, abra una ventana del símbolo del sistema con permisos elevados.  
+1. En un cliente de KMS, abra una ventana del símbolo del sistema con permisos elevados.
 1. En el símbolo del sistema, escriba los siguientes comandos:
    ```cmd
    cscript \windows\system32\slmgr.vbs -skms <KMS_FQDN>:<port>
    cscript \windows\system32\slmgr.vbs -ato
    ```
    > [!NOTE]
-   > En este comando, <KMS_FQDN> representa el nombre de dominio completo (FQDN) del equipo host de KMS y el \<puerto\> representa el puerto TCP que usa KMS.  
+   > En este comando, <KMS_FQDN> representa el nombre de dominio completo (FQDN) del equipo host de KMS y \<port\> representa el puerto TCP que usa KMS.
 
-   Si estos comandos resuelven el problema, significa que se trata de un problema del registro SRV. Puede solucionar el problema mediante el uso de uno de los comandos que se documentan en el procedimiento [Asignación manual de un host de KMS a un cliente de KMS](#manually-assign-a-kms-host-to-a-kms-client).  
+   Si estos comandos resuelven el problema, significa que se trata de un problema del registro SRV. Puede solucionar el problema mediante el uso de uno de los comandos que se documentan en el procedimiento [Asignación manual de un host de KMS a un cliente de KMS](#manually-assign-a-kms-host-to-a-kms-client).
 
 1. Si el problema continúa, ejecute los comandos siguientes:
    ```cmd
@@ -118,7 +118,7 @@ Puede usar los comandos siguientes para determinar si se trata de un problema de
    cscript \windows\system32\slmgr.vbs -ato
    ```
    > [!NOTE]
-   > En este comando, la \<dirección IP\> representa la dirección IP del equipo host de KMS y el \<puerto\> representa el puerto TCP que usa KMS.  
+   > En este comando, la \<IP Address\> representa la dirección IP del equipo host de KMS y \<port\> representa el puerto TCP que usa KMS.
 
    Si estos comandos resuelven el problema, lo más probable es que haya un problema de resolución de nombres. Para obtener información adicional sobre la solución de problemas, consulte el procedimiento [Verificación de la configuración de DNS](#verify-the-dns-configuration).
 
@@ -128,7 +128,7 @@ Puede usar los comandos siguientes para determinar si se trata de un problema de
 
 ## <a name="verify-the-dns-configuration"></a>Verificación de la configuración de DNS
 
->[!NOTE]
+> [!NOTE]
 > A menos que se indique lo contrario, siga estos pasos en un cliente de KMS que haya experimentado el error aplicable.
 
 1. Abra una ventana del símbolo del sistema con permisos elevados.
@@ -141,7 +141,7 @@ Puede usar los comandos siguientes para determinar si se trata de un problema de
    - La dirección IP del servidor DNS principal que usa el equipo cliente de KMS
    - La dirección IP de la puerta de enlace predeterminada que usa el equipo cliente de KMS
    - La lista de búsqueda de sufijos DNS que usa el equipo cliente de KMS
-1. Verifique que los registros SRV del host de KMS están registrados en DNS. Para ello, realice los pasos siguientes:  
+1. Verifique que los registros SRV del host de KMS están registrados en DNS. Para ello, realice los pasos siguientes:
    1. Abra una ventana del símbolo del sistema con permisos elevados.
    1. Escriba el siguiente comando en el símbolo del sistema:
       ```cmd
@@ -157,7 +157,7 @@ Puede usar los comandos siguientes para determinar si se trata de un problema de
        > [!NOTE]
        > En esta entrada, contoso.com representa el dominio del host de KMS.
       1. Verifique la dirección IP, el nombre de host, el puerto y el dominio del host de KMS.
-      1. Si existen estas entradas **_vlmcs** y contienen los nombres de host de KMS esperados, vaya a [Asignación manual de un host de KMS a un cliente de KMS](#manually-assign-a-kms-host-to-a-kms-client).  
+      1. Si existen estas entradas **_vlmcs** y contienen los nombres de host de KMS esperados, vaya a [Asignación manual de un host de KMS a un cliente de KMS](#manually-assign-a-kms-host-to-a-kms-client).
       > [!NOTE]
       > Si el comando [**nslookup**](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) encuentra el host de KMS, no significa que el cliente DNS pueda encontrar el host de KMS. Si el comando **nslookup** encuentra el host de KMS, pero todavía no lo puede activar mediante el host de KMS, compruebe la otra configuración de DNS, como el sufijo DNS principal y la lista de búsqueda del sufijo DNS.
 1. Verifique que la lista de búsqueda del sufijo DNS principal contiene el sufijo de dominio DNS que está asociado con el host de KMS. Si la lista de búsqueda no incluye esta información, vaya al procedimiento [Configuración del host de KMS para publicar en varios dominios DNS](#configure-the-kms-host-to-publish-in-multiple-dns-domains).
@@ -198,7 +198,7 @@ allow-update { any; };
 ```
 ## <a name="manually-assign-a-kms-host-to-a-kms-client"></a>Asignación manual de un host de KMS a un cliente de KMS
 
-De forma predeterminada, los clientes de KMS usan el proceso de detección automática. Según este proceso, un cliente de KMS consulta a DNS si hay una lista de servidores que han publicado registros SRV _vlmcs dentro de la zona de pertenencia del cliente. DNS devuelve la lista de hosts de KMS en orden aleatorio. El cliente elige un host de KMS e intenta establecer una sesión en él. Si este intento funciona, el cliente almacena en caché el nombre del host de KMS e intenta usarlo para el siguiente intento de renovación. Si se produce un error en la configuración de la sesión, el cliente elige otro host de KMS de forma aleatoria. Le recomendamos encarecidamente que use el proceso de detección automática.  
+De forma predeterminada, los clientes de KMS usan el proceso de detección automática. Según este proceso, un cliente de KMS consulta a DNS si hay una lista de servidores que han publicado registros SRV `_vlmcs` dentro de la zona de pertenencia del cliente. DNS devuelve la lista de hosts de KMS en orden aleatorio. El cliente elige un host de KMS e intenta establecer una sesión en él. Si este intento funciona, el cliente almacena en caché el nombre del host de KMS e intenta usarlo para el siguiente intento de renovación. Si se produce un error en la configuración de la sesión, el cliente elige otro host de KMS de forma aleatoria. Le recomendamos encarecidamente que use el proceso de detección automática.
 
 Sin embargo, puede asignar manualmente un host de KMS a un cliente de KMS determinado. Para ello, siga estos pasos.
 
@@ -226,26 +226,26 @@ Sin embargo, puede asignar manualmente un host de KMS a un cliente de KMS determ
      ```
      > [!NOTE]
      > Estos comandos usan los siguientes marcadores de posición:
-     >- **<KMS_FQDN>** representa el nombre de dominio completo (FQDN) del equipo host de KMS.
-     >- **\<IPv4Address\>** representa la dirección IP de la versión 4 del equipo host de KMS.
-     >- **\<IPv6Address\>** representa la dirección IP de la versión 6 del equipo host de KMS.
-     >- **\<\>NETBIOSName** representa el nombre NetBIOS del equipo host de KMS.
-     >- **\<port\>** representa el puerto TCP que usa KMS.  
+     > - **<KMS_FQDN>** representa el nombre de dominio completo (FQDN) del equipo host de KMS.
+     > - **\<IPv4Address\>** representa la dirección IP de la versión 4 del equipo host de KMS.
+     > - **\<IPv6Address\>** representa la dirección IP de la versión 6 del equipo host de KMS.
+     > - **\<NETBIOSName\>** representa el nombre NetBIOS del equipo host de KMS.
+     > - **\<port\>** representa el puerto TCP que usa KMS.
 
 ## <a name="configure-the-kms-host-to-publish-in-multiple-dns-domains"></a>Configuración del host de KMS para publicar en varios dominios DNS
 
 > [!IMPORTANT]
 > Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modifica el Registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
 
-Tal y como se describe en [Asignación manual de un host de KMS a un cliente de KMS](#manually-assign-a-kms-host-to-a-kms-client), los clientes de KMS suelen usar el proceso de detección automática para identificar los hosts de KMS. Este proceso requiere que los registros de _vlmcs SRV estén disponibles en la zona DNS del equipo cliente de KMS. La zona DNS se corresponde con el sufijo DNS principal del equipo o con uno de los siguientes dominios:
+Tal y como se describe en [Asignación manual de un host de KMS a un cliente de KMS](#manually-assign-a-kms-host-to-a-kms-client), los clientes de KMS suelen usar el proceso de detección automática para identificar los hosts de KMS. Este proceso requiere que los registros SRV `_vlmcs` estén disponibles en la zona DNS del equipo cliente de KMS. La zona DNS se corresponde con el sufijo DNS principal del equipo o con uno de los siguientes dominios:
 - En el caso de los equipos unidos a un dominio, el dominio del equipo asignado por el sistema de DNS (por ejemplo, el DNS de Active Directory Domain Services [AD DS]).
 - Para los equipos de grupo de trabajo, el dominio del equipo asignado por el Protocolo de configuración dinámica de host (DHCP). Este nombre de dominio se define mediante la opción que tiene el valor de código 15, tal y como se define en las Solicitudes de comentarios (RFC) 2132.
 
-De forma predeterminada, un host de KMS registra sus registros SRV en la zona DNS que corresponde al dominio del equipo host de KMS. Por ejemplo, supongamos que un host de KMS se une al dominio contoso.com. En este escenario, el host de KMS registra su registro SRV de _vmlcs en la zona DNS de contoso.com. Por lo tanto, el registro identifica el servicio como _VLMCS._TCP.CONTOSO.COM.
+De forma predeterminada, un host de KMS registra sus registros SRV en la zona DNS que corresponde al dominio del equipo host de KMS. Por ejemplo, supongamos que un host de KMS se une al dominio contoso.com. En este escenario, el host de KMS registra su registro SRV `_vlmcs` en la zona DNS de contoso.com. Por lo tanto, el registro identifica el servicio como `_VLMCS._TCP.CONTOSO.COM`.
 
 Si el host de KMS y los clientes de KMS usan diferentes zonas DNS, debe configurar el host de KMS para publicar automáticamente sus registros SRV en varios dominios DNS. Para ello, realice los pasos siguientes:
 
-1. En el host de KMS, inicie el Editor del Registro. 
+1. En el host de KMS, inicie el Editor del Registro.
 1. Busque la subclave **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SL** y selecciónela.
 1. En el panel **Detalles**, haga clic con el botón derecho en un área en blanco, seleccione **Nuevo** y, a continuación, seleccione **Valor de cadena múltiple**.
 1. Escriba **DnsDomainPublishList** como nombre de la nueva entrada.

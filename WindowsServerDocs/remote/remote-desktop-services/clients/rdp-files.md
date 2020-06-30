@@ -7,18 +7,18 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/08/2020
+ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 745f911367471d3708c57a3c777743a65c5bd4a8
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 4606938a6c01e20c847b3a6c198de8a1c61c59f0
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993350"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094532"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configuración admitida del archivo RDP de Escritorio remoto
 
-En la tabla siguiente se incluye la lista de las configuraciones admitidas del archivo RDP que puedes usar con los clientes de Escritorio remoto.
+En la tabla siguiente se incluye la lista de las configuraciones admitidas del archivo RDP que puedes usar con los clientes de Escritorio remoto. Al configurar las opciones, compruebe [Comparación de los clientes](./remote-desktop-app-compare.md) para ver qué redirecciones admite cada cliente.
 
 En la tabla también se resalta qué configuración se admite como propiedades personalizadas con Windows Virtual Desktop. Consulta [esta documentación](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409) para más información sobre cómo usar PowerShell para personalizar las propiedades de RDP de los grupos de hosts de Windows Virtual Desktop.
 
@@ -31,7 +31,7 @@ En la tabla también se resalta qué configuración se admite como propiedades p
 | username:s:value | Especifica el nombre de la cuenta de usuario que se utilizará para iniciar sesión en el equipo remoto. | Cualquier nombre de usuario válido. | | |
 | domain:s:value | Especifica el nombre del dominio donde se encuentra la cuenta de usuario que se usará para iniciar sesión en el equipo remoto. | Un nombre de dominio válido, como "CONTOSO". | | |
 | gatewayhostname:s:value | Especifica el nombre de host de Puerta de enlace de Escritorio remoto. | Un nombre, una dirección IPv4 o una dirección IPv6 válidos. | | |
-| gatewaycredentialssource:i:value | Especifica el método de autenticación de Puerta de enlace de Escritorio remoto. | - 0: Pedir la contraseña (NTLM)</br>- 1: Usar tarjeta inteligente</br>- 4: Permitir al usuario seleccionar más tarde | 0 | |
+| gatewaycredentialssource:i:value | Especifica el método de autenticación de Puerta de enlace de Escritorio remoto. | - 0: Pedir la contraseña (NTLM)</br>- 1: Usar tarjeta inteligente</br>- 2: usar las credenciales del usuario que tiene la sesión iniciada actualmente.</br>- 3: pedir al usuario sus credenciales y usar la autenticación básica.</br>- 4: Permitir al usuario seleccionar más tarde</br>- 5: usar la autenticación basada en cookies. | 0 | |
 | gatewayprofileusagemethod:i:value | Especifica si se debe usar la configuración predeterminada de Puerta de enlace de Escritorio remoto. | - 0: Usar el modo de perfil predeterminado, según lo especificado por el administrador</br>- 1: Usar la configuración explícita, según lo especificado por el usuario | 0 | |
 | gatewayusagemethod:i:value | Especifica cuándo se debe utilizar Puerta de enlace de Escritorio remoto para la conexión. | - 0: no usar Puerta de enlace de Escritorio remoto.</br>- 1: usar siempre Puerta de enlace de Escritorio remoto.</br>- 2: usar Puerta de enlace de Escritorio remoto si no se puede establecer una conexión directa al host de sesión de Escritorio remoto.</br>- 3: usar la configuración predeterminada de Puerta de enlace de Escritorio remoto.</br>- 4: no usar Puerta de enlace de Escritorio remoto, omitir la puerta de enlace para las direcciones locales.</br>Establecer el valor de esta propiedad en 0 o 4 es equivalente, pero establecer esta propiedad en 4 habilita la opción de omitir las direcciones locales. | 0 | |
 | promptcredentialonce:i:value | Establece si las credenciales del usuario se guardan y se usan para la Puerta de enlace de Escritorio remoto y el equipo remoto. | - 0: La sesión remota no usará las mismas credenciales</br>- 1: La sesión remota usará las mismas credenciales | 1 | |
@@ -87,7 +87,7 @@ En la tabla también se resalta qué configuración se admite como propiedades p
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|
 | remoteapplicationcmdline:s:value | Parámetros opcionales de línea de comandos para RemoteApp. | Parámetros de línea de comandos válidos. | | |
 | remoteapplicationexpandcmdline:i:value | Determina si las variables de entorno contenidas en el parámetro de línea de comandos de RemoteApp se deben expandir local o remotamente. | - 0: Las variables de entorno deben expandirse a los valores del equipo local</br>- 1: las variables de entorno deben expandirse a los valores del equipo remoto. | 1 | |
-| remoteapplicationexpandworkingdir | Determina si las variables de entorno contenidas en el directorio de trabajo de RemoteApp se deben expandir local o remotamente. | - 0: Las variables de entorno deben expandirse a los valores del equipo local</br> - 1: las variables de entorno deben expandirse a los valores del equipo remoto.</br>El directorio de trabajo de RemoteApp se especifica mediante el parámetro de shell del directorio de trabajo. | 1 | |
+| remoteapplicationexpandworkingdir:i:value | Determina si las variables de entorno contenidas en el directorio de trabajo de RemoteApp se deben expandir local o remotamente. | - 0: Las variables de entorno deben expandirse a los valores del equipo local</br> - 1: las variables de entorno deben expandirse a los valores del equipo remoto.</br>El directorio de trabajo de RemoteApp se especifica mediante el parámetro de shell del directorio de trabajo. | 1 | |
 | remoteapplicationfile:s:value | Especifica un archivo que RemoteApp abrirá en el equipo remoto.</br>Para abrir los archivos locales, también debes habilitar la redirección de unidad para la unidad de origen. | Ruta de acceso de archivo válida. | | |
 | remoteapplicationicon:s:value | Especifica el archivo de icono que se mostrará en la interfaz de usuario del cliente al iniciar una conexión de RemoteApp. Si no se especifica ningún nombre de archivo, el cliente usará el icono estándar de Escritorio remoto. Solo se admiten archivos ".ico". | Ruta de acceso de archivo válida. | | |
 | remoteapplicationmode:i:value | Determina si una conexión se inicia como sesión de RemoteApp. | - 0: No iniciar una sesión de RemoteApp</br>- 1: Iniciar una sesión de RemoteApp | 1 | |

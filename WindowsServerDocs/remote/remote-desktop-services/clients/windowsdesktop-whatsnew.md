@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/27/2020
+ms.date: 06/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d49c49def8b110f42a6d56354c73e5a75b04b7e
-ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
+ms.openlocfilehash: 5c3fc20ea42deaa9dd96fd9f7bfabfcb85462bdd
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84025516"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267666"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -26,8 +26,21 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |Version  |
 |-----------|---------|
-|Público     |1.2.1026 |
-|Insider    |1.2.1026 |
+|Público     |1.2.1104 |
+|Insider    |1.2.1104 |
+
+## <a name="updates-for-version-121104"></a>Actualizaciones para la versión 1.2.1104
+
+*Fecha de publicación: 23/06/2020*
+
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
+
+- Se actualizó la lógica de detección automática para la opción **Subscribir** para admitir la actualización de primavera de 2020 de Windows Virtual Desktop. Los clientes que solo tienen recursos de la actualización de primavera ya no tienen que dar su consentimiento para la versión de otoño de 2019.
+- Se mejoró la compatibilidad para dispositivos con valores altos de PPP con un factor de escala de hasta un 400 %.
+- Se corrigió un problema en el que el cuadro de diálogo de desconexión no aparecía.
+- Se corrigió un problema en que la información sobre herramientas de la barra de comandos permanecía visible más tiempo del esperado.
+- Se corrigió un bloqueo que se producía al intentar suscribirse inmediatamente después de una actualización.
+- Se corrigió un bloqueo del análisis incorrecto de fecha y hora en algunos idiomas.
 
 ## <a name="updates-for-version-121026"></a>Actualizaciones para la versión 1.2.1026
 
@@ -76,8 +89,6 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 
 *Fecha de publicación: 24/03/2020*
 
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSh), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSi), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4sllb)
-
 - Se ha cambiado el nombre de la acción "Actualizar" de las áreas de trabajo por "Actualizar" para mantener la coherencia con otros clientes de Escritorio remoto.
 - Ahora puedes actualizar un área de trabajo directamente desde su menú contextual.
 - La actualización manual de un área de trabajo ahora garantiza que se actualice todo el contenido local.
@@ -90,8 +101,6 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 
 *Fecha de publicación: 25/02/2020*
 
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qeak), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7h), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7g)
-
 - Ahora se bloquean las conexiones con el escritorio virtual de Windows si falta la firma en el archivo RDP o si se ha modificado alguna de las propiedades de signscope.
 - Cuando un área de trabajo está vacía o se ha quitado, el centro de conexión ya no parece estar vacío.
 - Se ha agregado el identificador de actividad y el código de error en los mensajes de desconexión para mejorar la solución de problemas. Puedes copiar el mensaje del cuadro de diálogo con **Control + C**.
@@ -102,8 +111,6 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 ## <a name="updates-for-version-12605"></a>Actualizaciones para la versión 1.2.605
 
 *Fecha de publicación: 29/01/2020*
-
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
 - Ahora puedes seleccionar las pantallas que se van a usar para las conexiones de escritorio. Para cambiar esta configuración, haz clic con el botón derecho en el icono de conexión a escritorio y selecciona **Configuración**.
 - Se ha corregido un problema que provocaba que la configuración de conexión no mostrara los factores de escala disponibles correctos.
@@ -116,8 +123,6 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 
 *Fecha de publicación: 04/12/2019*
 
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
-
 - Ahora puedes obtener acceso directo a la información sobre las actualizaciones, gracias al botón para obtener más opciones de la barra de comandos que está en la parte superior del cliente.
 - Ahora puedes notificar los comentarios desde la barra de comandos del cliente.
 - Ahora, la opción Comentarios solo se muestra si el Centro de opiniones está disponible.
@@ -128,8 +133,6 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 ## <a name="updates-for-version-12431"></a>Actualizaciones de la versión 1.2.431
 
 *Fecha de publicación: 12/11/2019*
-
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - Ya están disponibles las versiones de 32 bits y ARM64 del cliente.
 - Ahora, el cliente guarda los cambios que realizas en la barra de conexión (como su posición, tamaño y estado anclado) y aplica los cambios en las sesiones.
@@ -148,8 +151,6 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 ## <a name="updates-for-version-12247"></a>Actualizaciones de la versión 1.2.247
 
 *Fecha de publicación: 17/09/2019*
-
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - Se han mejorado los idiomas de reserva para la versión localizada. (Por ejemplo, FR-CA se mostrará correctamente en francés, en lugar de en inglés).
 - Al quitar una suscripción, el cliente ahora quita correctamente las credenciales guardadas del Administrador de credenciales.

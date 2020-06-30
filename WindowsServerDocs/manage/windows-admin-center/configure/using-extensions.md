@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 2b8a9f5ebab22891b8b97c9c56bba3837cbb9371
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4ba2e760d57f1c3f59e40b78b449a8831b8093d2
+ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269302"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942314"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar y administrar extensiones
 
@@ -56,12 +56,12 @@ Si Windows Admin Center está instalado en un equipo que no está conectado a In
 
 ### <a name="manually-downloading-extension-packages"></a>Descarga manual de paquetes de extensión
 
-1. En otro equipo que tenga conectividad a Internet, abre un explorador web y navega a la dirección URL siguiente: [https://msft-sme.myget.org/gallery/windows-admin-center-feed](https://msft-sme.myget.org/gallery/windows-admin-center-feed) 
+1. En otro equipo que tenga conectividad a Internet, abre un explorador web y navega a la dirección URL siguiente: [https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC) 
 
-   * Es posible que tengas que crear una cuenta en msft-sme.myget.org e iniciar sesión para ver los paquetes de extensión.
+   * Es posible que tenga que crear una cuenta de Microsoft e iniciar sesión para ver los paquetes de extensión.
 
 2. Haz clic en el nombre del paquete que quieras instalar para ver la página de detalles del paquete.
-3. Haz clic en el vínculo **Descargar** en el panel de la derecha de la página de detalles del paquete y descarga el archivo .nupkg para la extensión.
+3. Haga clic en el vínculo **Descargar** en el panel de la derecha de la página de detalles del paquete y descargue el archivo .nupkg para la extensión.
 4. Repite los pasos 2 y 3 para todos los paquetes que quieras descargar.
 5. Copia los archivos de paquete en un recurso compartido de archivos al que se pueda tener acceso desde el equipo en el que está instalado Windows Admin Center o en el disco local del equipo.
 6. [Sigue las instrucciones para instalar extensiones desde otra fuente](#installing-extensions-from-a-different-feed).
