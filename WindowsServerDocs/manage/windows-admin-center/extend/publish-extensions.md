@@ -8,16 +8,16 @@ ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 0182c4097ec3bc4432e2ba408d701a72d82a7c8d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 357c37ec395e5c51f3c3f946414f38ea5f95e9e4
+ms.sourcegitcommit: eaf3fb57517b9110082edad356b12daf3345bb2c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950083"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593996"
 ---
 # <a name="publishing-extensions"></a>Extensiones de publicación
 
->Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
 Una vez que haya desarrollado la extensión, querrá publicarla y ponerla a disposición de otros usuarios para que la prueben o usen. En función de la audiencia y el propósito de la publicación, existen algunas opciones que se presentan a continuación, junto con los pasos y los requisitos para la publicación.
 
@@ -77,15 +77,12 @@ Para crear el paquete NuGet, primero debe crear un archivo. nuspec. Un archivo. 
 A continuación se muestra un archivo. nuspec de ejemplo y la lista de propiedades necesarias o recomendadas. Para obtener el esquema completo, consulte la [referencia de. nuspec](https://docs.microsoft.com/nuget/reference/nuspec). Guarde el archivo. nuspec en la carpeta raíz del proyecto con un nombre de archivo de su elección.
 
 > [!IMPORTANT]
-> El valor ```<id>``` del archivo. nuspec debe coincidir con el valor ```"name"``` del archivo ```manifest.json``` del proyecto o, de lo contrario, la extensión publicada no se cargará correctamente en el centro de administración de Windows.
+> El ```<id>``` valor del archivo. nuspec debe coincidir con el ```"name"``` valor del archivo del proyecto ```manifest.json``` o, de lo contrario, la extensión publicada no se cargará correctamente en el centro de administración de Windows.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="https://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <packageTypes>
-      <packageType name="WindowsAdminCenterExtension" />
-    </packageTypes>  
     <id>contoso.project.extension</id>
     <version>1.0.0</version>
     <title>Contoso Hello Extension</title>
@@ -110,23 +107,23 @@ A continuación se muestra un archivo. nuspec de ejemplo y la lista de propiedad
 
 | Nombre de propiedad | Requerido/recomendado | Descripción |
 | ---- | ---- | ---- |
-| packageType | Necesario | Use "WindowsAdminCenterExtension", que es el tipo de paquete de NuGet definido para las extensiones del centro de administración de Windows. |
-| id | Necesario | Identificador de paquete único dentro de la fuente. Este valor debe coincidir con el valor "Name" en el archivo manifest. JSON del proyecto.  Vea [Choosing a unique package identifier](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) (Elegir un identificador de paquete único) para obtener instrucciones. |
+| packageType | Obligatorio | Use "WindowsAdminCenterExtension", que es el tipo de paquete de NuGet definido para las extensiones del centro de administración de Windows. |
+| id | Obligatorio | Identificador de paquete único dentro de la fuente. Este valor debe coincidir con el valor "Name" del manifest.jsdel proyecto en el archivo.  Vea [Choosing a unique package identifier](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) (Elegir un identificador de paquete único) para obtener instrucciones. |
 | title | Se requiere para la publicación en la fuente del centro de administración de Windows | Nombre descriptivo para el paquete que se muestra en el administrador de extensiones del centro de administración de Windows. |
-| Versión de | Necesario | Versión de la extensión. Se recomienda usar el [control de versiones semántico (Convención SemVer)](http://semver.org/spec/v1.0.0.html) , pero no es necesario. |
-| authors | Necesario | Si publica en nombre de su empresa, use el nombre de su empresa. |
-| descripción | Necesario | Proporcione una descripción de la funcionalidad de la extensión. |
+| version | Obligatorio | Versión de la extensión. Se recomienda usar el [control de versiones semántico (Convención SemVer)](http://semver.org/spec/v1.0.0.html) , pero no es necesario. |
+| authors | Obligatorio | Si publica en nombre de su empresa, use el nombre de su empresa. |
+| description | Obligatorio | Proporcione una descripción de la funcionalidad de la extensión. |
 | iconUrl | Recomendado al publicar en la fuente del centro de administración de Windows | Dirección URL del icono que se va a mostrar en el administrador de extensiones. |
 | projectUrl | Se requiere para la publicación en la fuente del centro de administración de Windows | Dirección URL del sitio web de la extensión. Si no tiene un sitio web independiente, utilice la dirección URL de la página web del paquete en la fuente de NuGet. |
 | licenseUrl | Se requiere para la publicación en la fuente del centro de administración de Windows | Dirección URL del contrato de licencia para el usuario final de la extensión. |
-| archivos | Necesario | Estos dos valores configuran la estructura de carpetas que el centro de administración de Windows espera para las extensiones de la interfaz de usuario y los complementos de puerta de enlace. |
+| files | Obligatorio | Estos dos valores configuran la estructura de carpetas que el centro de administración de Windows espera para las extensiones de la interfaz de usuario y los complementos de puerta de enlace. |
 
 ### <a name="3-build-the-extension-nuget-package"></a>3. compilar el paquete NuGet de la extensión
 
 Con el archivo. nuspec que creó anteriormente, ahora creará el archivo. nupkg de paquete NuGet que puede cargar y publicar en la fuente de NuGet.
 
-1. Descargue la herramienta de la CLI de Nuget. exe desde el [sitio web de herramientas de cliente de Nuget](https://docs.microsoft.com/nuget/install-nuget-client-tools).
-2. Ejecute "Nuget. exe Pack [. nuspec File name]" para crear el archivo. nupkg.
+1. Descargue la herramienta de la CLI de nuget.exe desde el [sitio web de herramientas de cliente de NuGet](https://docs.microsoft.com/nuget/install-nuget-client-tools).
+2. Ejecute "nuget.exe Pack [. nuspec File name]" para crear el archivo. nupkg.
 
 ### <a name="4-signing-your-extension-nuget-package"></a>4. firmar el paquete NuGet de la extensión
 
@@ -148,7 +145,7 @@ Posteriormente, si desea publicar una actualización de la extensión, deberá e
 
 ### <a name="submit-an-extension-review-request-to-microsoft"></a>Enviar una solicitud de revisión de extensión a Microsoft
 
-Para enviar una solicitud de revisión de extensión, escriba la siguiente información y envíela como un correo electrónico a [wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request). Responderemos a su correo electrónico dentro de una semana.
+Para enviar una solicitud de revisión de extensión, escriba la siguiente información y envíela como un correo electrónico a [wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request) . Responderemos a su correo electrónico dentro de una semana.
 
 ```
 Windows Admin Center Extension Review Request
