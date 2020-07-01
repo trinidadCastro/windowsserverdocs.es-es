@@ -8,12 +8,12 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e99cceb1acc6df7c9b30cef9f473531a6c35c5c7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2477cac206af4e70d10e28d7b1da637b7b7accff
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470250"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548819"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Transición de Windows Server Essentials a Windows Server 2012 Standard
 
@@ -75,11 +75,13 @@ ms.locfileid: "85470250"
 ## <a name="turn-off--windows-server-essentials-features"></a>Desactivar las características de Windows Server Essentials
  Si ya no necesita el panel de Windows Server Essentials ni otras características para administrar el servidor, puede desactivarlas y quitarlas de su servidor.
 
- El **Asistente para desactivar características de Windows Server Essentials** le ayuda a desinstalar las características de. También limpia el servidor de archivos creados por el software de servidor de Windows Server Essentials.  Algunas operaciones de limpieza se realizan inmediatamente, mientras que otras se inician después de reiniciar el servidor.
+ El **Asistente para desactivar características de Windows Server Essentials:**
+ 
+- ayuda a desinstalar las características de. También limpia el servidor de archivos creados por el software de servidor de Windows Server Essentials.  Algunas operaciones de limpieza se realizan inmediatamente, mientras que otras se inician después de reiniciar el servidor.
 
- El **Asistente para desactivar características de Windows Server Essentials** requiere que desinstale manualmente todos los complementos para poder completar el asistente. Para ver una lista de los complementos instalados, abra la página Aplicación en el panel. El asistente le alerta si detecta complementos instalados y le pide que los desinstale.
+- requiere que desinstale manualmente todos los complementos para poder completar el asistente. Para ver una lista de los complementos instalados, abra la página Aplicación en el panel. El asistente le alerta si detecta complementos instalados y le pide que los desinstale.
 
- El **Asistente para desactivar características de Windows Server Essentials** le permite elegir si desea conservar los archivos de copia de seguridad de los equipos cliente después de desactivar las características de Windows Server Essentials.
+- permite elegir si se deben conservar los archivos de copia de seguridad de los equipos cliente después de desactivar las características de Windows Server Essentials.
 
  Hay dos maneras de ejecutar el **Asistente para la desactivación de características de Windows Server Essentials** desde el panel:
 

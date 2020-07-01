@@ -6,13 +6,13 @@ manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
-ms.date: 06/17/2019
-ms.openlocfilehash: 7d33f15aafa432cb3f3174087c3b27855b4f35b2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.date: 06/29/2019
+ms.openlocfilehash: 5bcdbc76259d1dfecaaa5266bb952a21bcbc7825
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475142"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548900"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Información general del Sistema de archivos resistente (ReFS)
 
@@ -172,3 +172,4 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 - [Información general de Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)
 - [Clonación de bloques de ReFS](block-cloning.md)
 - [Flujos de integridad de ReFS](integrity-streams.md)
+- [Solución de problemas de ReFS con ReFSUtil](../../administration/windows-commands/refsutil.md)

@@ -1,0 +1,139 @@
+### YamlMime:Landing
+title: Documentación de seguridad de Windows Server
+summary: La seguridad de Windows Server proporciona capas de protección integradas en el sistema operativo para protegerse frente a infracciones de seguridad, ayudar a bloquear ataques malintencionados y mejorar la seguridad de las máquinas virtuales, las aplicaciones y los datos.
+metadata:
+  title: Documentación de seguridad de Windows Server
+  description: Información general sobre la seguridad en Windows Server.
+  ms.topic: landing-page
+  author: coreyp-at-msft
+  ms.author: coreyp
+  ms.date: 5/19/2020
+  ms.openlocfilehash: 5e20d4eabc7a9630e6a0eb880ddeabff3735f1ab
+  ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+  ms.translationtype: MT
+  ms.contentlocale: es-ES
+  ms.lasthandoff: 06/30/2020
+  ms.locfileid: "85549181"
+landingContent:
+- title: Introducción a la seguridad en Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Entrada de blog de seguridad de Windows Server
+      url: https://blogs.technet.microsoft.com/windowsserver/2016/04/25/ten-reasons-youll-love-windows-server-2016-8-security/
+    - text: Blob de seguridad de centro de datos y nube privada
+      url: https://blogs.technet.microsoft.com/datacentersecurity/
+    - text: Cómo abordar las amenazas emergentes y los cambios en el panorama de la seguridad
+      url: https://www.youtube.com/watch?v=B5JMYxYWx1k&feature=youtu.be
+    - text: Entrada del blob de protección del centro de datos y la nube de las amenazas emergentes
+      url: https://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx
+    - text: Sesión de introducción sobre seguridad y control en Ignite
+      url: https://channel9.msdn.com/events/ignite/2015/brk2482
+- title: Virtualización segura con máquinas virtuales blindada
+  linkLists:
+  - linkListType: video
+    links:
+    - text: VM blindada en Channel 9
+      url: https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016
+    - text: Demostración de máquina virtual blindada
+      url: https://www.youtube.com/watch?v=xip5Qtk-7d8
+    - text: Tutorial de vídeo sobre las máquinas virtuales blindadas en Windows Server
+      url: http://microsoft-cloud.cloudguides.com/Guides/Shielded%Virtual%Machines%in%Windows%Server.htm
+    - text: 'Protección del tejido: protección de los secretos de inquilino en Hyper-V (vídeo de Ignite)'
+      url: https://channel9.msdn.com/events/ignite/2015/brk3457
+  - linkListType: how-to-guide
+    links:
+    - text: Guía de implementación del tejido protegido
+      url: guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview.md
+    - text: Máquinas virtuales blindadas y tejido protegido en sucursales
+      url: guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md
+    - text: Guía de solución de problemas de máquinas virtuales blindadas y tejido protegido
+      url: guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-overview.md
+- title: Protección del sistema operativo y las aplicaciones
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Guía de implementación de Control de aplicaciones de Windows Defender (WDAC)
+      url: https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-contro
+    - text: Configuración del Registro de Seguridad de la capa de transporte
+      url: https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings
+    - text: Protección de flujo de control
+      url: https://docs.microsoft.com/windows/desktop/SecBP/control-flow-guard
+    - text: Windows Defender
+      url: https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server
+  - linkListType: video
+    links:
+    - text: Vídeo de demostración de Device Guard
+      url: https://www.youtube.com/watch?v=F-pTkesjkhI
+- title: Privileged Access Management
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Protección del acceso con privilegios
+      url: https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access
+    - text: Administración Just-in Time con Microsoft Identity Manager
+      url: https://technet.microsoft.com/library/mt150258.aspx
+    - text: Just Enough Administration (JEA)
+      url: https://aka.ms/JEA
+  - linkListType: video
+    links:
+    - text: Protección de Windows y Microsoft Azure Active Directory con Privileged Access Management
+      url: https://channel9.msdn.com/events/ignite/2015/brk3873
+    - text: Vídeo de demostración de Just Enough Administration
+      url: https://www.youtube.com/watch?v=xnBrbkY9P20
+- title: Protección de credenciales
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Protección de credenciales de dominio derivadas con Credential Guard
+      url: https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard
+    - text: Protección de credenciales de Escritorio remoto con Credential Guard remoto
+      url: https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard
+  - linkListType: video
+    links:
+    - text: Vídeo de demostración de Credential Guard
+      url: https://www.youtube.com/watch?v=eUpKOGSl7yk
+- title: Detección y respuesta a las amenazas
+  linkLists:
+  - linkListType: video
+    links:
+    - text: Análisis de las amenazas de seguridad mediante Microsoft Operations Management Suite
+      url: https://channel9.msdn.com/events/ignite/2015/brk3464
+    - text: Microsoft Operations Management Suite (OMS)
+      url: https://www.youtube.com/watch?v=_SaDw1dRy2k
+    - text: OMS y Windows Server 2016
+      url: https://www.youtube.com/watch?v=_SaDw1dRy2k
+  - linkListType: overview
+    links:
+    - text: Microsoft Advanced Threat Analytics
+      url: https://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx
+- title: Seguridad de redes
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Información general de Datacenter Firewall
+      url: https://technet.microsoft.com/library/dn920240.aspx
+    - text: Novedades de DNS en Windows Server
+      url: https://technet.microsoft.com/windows-server-docs/networking/dns/what-s-new-in-dns-server
+- title: Asignación de características de seguridad a los reglamentos de cumplimiento
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Notas del producto sobre la asignación de cumplimiento de máquinas virtuales blindadas de Hyper-V
+      url: https://download.microsoft.com/download/6/D/0/6D06E149-B4C1-4EED-ACD5-DF6066E93CC0/Coalfire_Branded_Hyper_V_Shielded_VMs_Whitepaper_EN_US.pdf
+    - text: Notas del producto sobre la asignación de cumplimiento de JEA y JIT
+      url: https://download.microsoft.com/download/2/7/A/27A2B5BB-6B52-4482-87C1-DA9D6B6D8C8D/Coalfire_Branded_Privileged_Identity_Manager_Whitepaper_EN_US.pdf
+    - text: Notas del producto sobre la asignación de cumplimiento de Credential Guard
+      url: https://download.microsoft.com/download/6/9/D/69D9E610-D23C-4F7E-A8CC-D65B87CEB4F8/Coalfire_Branded_Device_Guard_Whitepaper_EN_US.pdf
+    - text: Notas del producto sobre la asignación de cumplimiento de Credential Guard
+      url: https://download.microsoft.com/download/8/1/2/812009C9-E4B8-4D4B-AADD-FDC373D0A076/Coalfire_Branded_Credential_Guard_Whitepaper_EN_US.pdf
+    - text: Notas del producto sobre la asignación de cumplimiento de Windows Defender
+      url: https://download.microsoft.com/download/C/7/7/C778B7BB-0783-42D7-93A9-B86DFB5A7BAD/Coalfire_Branded_Windows_Defender_Whitepaper_EN_US.pdf
+- title: Versiones anteriores de Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Documentación de versiones anteriores de Windows
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: Buscar información específica
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

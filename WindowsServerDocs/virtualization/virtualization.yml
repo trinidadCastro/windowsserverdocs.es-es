@@ -1,0 +1,75 @@
+### YamlMime:Landing
+title: Documentación sobre la virtualización
+summary: Virtualización en Windows Server es una de las tecnologías fundamentales necesarias para crear tu infraestructura definida por software. Junto con las redes y el almacenamiento, las funciones de virtualización ofrecen la flexibilidad que necesitas para impulsar las cargas de trabajo para tus clientes.
+metadata:
+  title: Documentación sobre la virtualización
+  description: Virtualización en Windows Server es una de las tecnologías fundamentales necesarias para crear tu infraestructura definida por software.
+  ms.topic: landing-page
+  author: eross-msft
+  ms.author: lizross
+  ms.prod: windows-server
+  manager: brianlic
+  ms.technology: compute
+  ms.assetid: c248b41f-0de3-7136-9a25-b4b07e41ebf0
+  ms.localizationpriority: high
+  ms.openlocfilehash: 65230ad9d35239a86f5c213807c5f8eed9edfa68
+  ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+  ms.translationtype: MT
+  ms.contentlocale: es-ES
+  ms.lasthandoff: 06/30/2020
+  ms.locfileid: "85549180"
+landingContent:
+- title: Contenedores de Windows
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Contenedores de Windows
+      url: /virtualization/windowscontainers
+    - text: Acerca de los contenedores de ventanas
+      url: /virtualization/windowscontainers/about/
+    - text: Contenedores frente a máquinas virtuales
+      url: /virtualization/windowscontainers/about/containers-vs-vm
+- title: Hyper-V en Windows 10
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Información general de Hyper-V en Windows 10
+      url: /virtualization/hyper-v-on-windows
+    - text: Acerca de Hyper-V en Windows 10
+      url: /virtualization/hyper-v-on-windows/about/
+  - linkListType: get-started
+    links:
+    - text: Instalar Hyper-V
+      url: /virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+    - text: Creación de una máquina virtual
+      url: /virtualization/hyper-v-on-windows/quick-start/create-virtual-machine
+- title: Hyper-V en Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Hyper-V en Windows Server
+      url: hyper-v/Hyper-V-on-Windows-Server.md
+    - text: Información general sobre la tecnología Hyper-V
+      url: hyper-v/Hyper-V-Technology-Overview.md
+  - linkListType: reference
+    links:
+    - text: Microsoft Hyper-V Server 2016
+      url: /windows-server/virtualization/hyper-v/hyper-v-server-2016
+    - text: Requisitos del sistema para Hyper-V en Windows Server
+      url: hyper-v/System-requirements-for-Hyper-V-on-Windows.md
+- title: Conmutador virtual de Hyper-V
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Conmutador virtual de Hyper-V
+      url: hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md
+  - linkListType: how-to-guide
+    links:
+    - text: Administración de conmutador virtual de Hyper-V
+      url: hyper-v-virtual-switch/Manage-Hyper-V-Virtual-Switch.md
+- title: Uso de un tejido protegido para proporcionar un entorno seguro para máquinas virtuales
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Máquinas virtuales blindadas y tejido protegido
+      url: ../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md

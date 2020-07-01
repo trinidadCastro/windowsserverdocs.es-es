@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6eae779216724d82ef7ca05026bcfd9725e6ea35
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 6e9cd59169922bb6d76b6c65f3381e653df97109
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721548"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548849"
 ---
 # <a name="netstat"></a>netstat
 
@@ -28,7 +28,7 @@ Muestra las conexiones TCP activas, los puertos en los que el equipo está escuc
 ## <a name="syntax"></a>Sintaxis
 
 ```
-netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
+netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -36,6 +36,7 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | -a | Muestra todas las conexiones TCP activas y los puertos TCP y UDP en los que el equipo está escuchando. |
+| -b | Muestra el archivo ejecutable implicado en la creación de cada conexión o puerto de escucha. En algunos casos, los archivos ejecutables conocidos hospedan varios componentes independientes y, en estos casos, se muestra la secuencia de componentes que participan en la creación de la conexión o el puerto de escucha. En este caso, el nombre del archivo ejecutable está en [] en la parte inferior, en la parte superior, es el componente al que llamó, y así sucesivamente hasta que se alcanza TCP/IP. Tenga en cuenta que esta opción puede llevar mucho tiempo y producirá un error a menos que tenga permisos suficientes.
 | -E | Muestra las estadísticas de Ethernet, como el número de bytes y paquetes enviados y recibidos. Este parámetro se puede combinar con **-s**. |
 | -n | Muestra las conexiones TCP activas, sin embargo, las direcciones y los números de puerto se expresan numéricamente y no se realiza ningún intento para determinar los nombres. |
 | -o | Muestra las conexiones TCP activas e incluye el identificador de proceso (PID) de cada conexión. Puede encontrar la aplicación basada en el PID en la pestaña procesos del administrador de tareas de Windows. Este parámetro se puede combinar con **-a**, **-n**y **-p**. |
