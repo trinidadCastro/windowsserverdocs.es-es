@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: c3eb62d53ef11d5531590e1a6d46cd6cacaf2e4a
-ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
+ms.openlocfilehash: 01b06c2869469ee65e23df2b1f5ca35fb266d234
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85094540"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548738"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>What's New in Windows Server 2016 (Novedades en Windows Server 2016)
 
@@ -23,7 +23,7 @@ ms.locfileid: "85094540"
 
 ![Icono que muestra un periódico](media/whats-new.png) Para obtener información sobre las características más recientes de Windows, consulta [Novedades de Windows Server](whats-new-in-windows-server.md). El contenido de esta sección describe las novedades y los cambios de Windows Server&reg; 2016. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión.
 
-## <a name="compute"></a>[Compute](../virtualization/virtualization.md)
+## <a name="compute"></a>[Compute](../virtualization/virtualization.yml)
 
 El área Virtualización incluye características y productos de virtualización destinados a los profesionales de TI para diseñar, implementar y mantener Windows Server.  
 
@@ -109,8 +109,8 @@ El valor predeterminado del intervalo de congestión inicial (ICW) se ha aumenta
 
 Para mejorar el comportamiento de TCP al realizar la recuperación de pérdida de paquetes, se han implementado Tail Loss Probe (TLP) y Recent Acknowledgement (RACK) en TCP. TLP ayuda a convertir los tiempos de espera de retransmisión (RTO) para recuperaciones rápidas y RACK reduce el tiempo necesario para que la recuperación rápida retransmita un paquete perdido. 
 
-## <a name="security-and-assurance"></a>[Seguridad y control](../security/Security-and-Assurance.md)  
-Incluye soluciones y características de seguridad para que los profesionales de TI implementen en su entorno de nube y centro de datos. Para obtener información sobre la seguridad en Windows Server 2016 en general, vea [Seguridad y control](../security/Security-and-Assurance.md).  
+## <a name="security-and-assurance"></a>[Seguridad y control](../security/Security-and-Assurance.yml)  
+Incluye soluciones y características de seguridad para que los profesionales de TI implementen en su entorno de nube y centro de datos. Para obtener información sobre la seguridad en Windows Server 2016 en general, vea [Seguridad y control](../security/Security-and-Assurance.yml).  
 
 ### <a name="just-enough-administration"></a>Just Enough Administration (JEA)  
 Just Enough Administration (JEA) en Windows Server 2016 es la tecnología de seguridad que habilita la administración delegada para todo lo que se puede administrar con Windows PowerShell. Entre las funcionalidades se incluyen compatibilidad para la ejecución bajo una identidad de red, conexión a través de PowerShell Direct, copia segura hacia y desde puntos de conexión de JEA, y configuración de la consola de PowerShell para iniciar en un contexto de JEA de manera predeterminada. Para más información, consulte [JEA en GitHub](https://aka.ms/JEA).

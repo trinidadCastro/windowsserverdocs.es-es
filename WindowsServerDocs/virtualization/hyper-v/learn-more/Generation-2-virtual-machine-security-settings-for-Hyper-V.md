@@ -9,12 +9,12 @@ ms.assetid: 06ab4f5f-6b8e-4058-8108-76785aa93d4c
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 7eb867529d38ab21ee21c19f92c89ed4128b0ea4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1b3c7b636d9c93ff0392f266d1e6e18d36dfd15f
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860808"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548920"
 ---
 # <a name="generation-2-virtual-machine-security-settings-for-hyper-v"></a>Configuración de seguridad de las máquinas virtuales de generación 2 para Hyper-V
 
@@ -83,4 +83,4 @@ Para mejorar la seguridad de las máquinas virtuales, usa la opción **Habilitar
 
 Puedes ejecutar la máquina virtual blindada localmente sin configurar un Servicio de protección de host. No obstante, si se migra a otro host, es posible que no puedas iniciarla. Debes actualizar el protector de clave de esa máquina virtual para permitir que el nuevo host ejecute la máquina virtual. Para obtener más información, consulta [VM blindadas y tejido protegido](https://go.microsoft.com/fwlink/?LinkId=746381).  
 
-Para obtener información sobre la seguridad en Windows Server, consulta [Seguridad y control](../../../security/Security-and-Assurance.md).  
+Para obtener información sobre la seguridad en Windows Server, consulta [Seguridad y control](../../../security/Security-and-Assurance.yml).  

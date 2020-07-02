@@ -9,12 +9,12 @@ ms.assetid: f8f8c569-8b74-4c19-876e-1c7d00cce308
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f745ccd9e5a82aa79fb58798f233bf2662b00a70
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 01a4882ec766673af5ff8f57debb829ace743d77
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475642"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548708"
 ---
 # <a name="generation-1-virtual-machine-security-settings"></a>Configuración de seguridad de las máquinas virtuales de generación 1
 
@@ -39,11 +39,11 @@ Para descifrar el contenido de la unidad de almacenamiento de claves e iniciar l
 - Formar parte de un tejido protegido autorizado para esta máquina virtual.
 - Tener la clave privada de uno de los protectores de la máquina virtual.
 
-Para más información sobre los tejidos protegidos, consulta la sección Introducción a las máquinas virtuales blindadas en [Seguridad y control](../../../security/Security-and-Assurance.md).
+Para más información sobre los tejidos protegidos, consulta la sección Introducción a las máquinas virtuales blindadas en [Seguridad y control](../../../security/Security-and-Assurance.yml).
 
 Puedes agregar una unidad de almacenamiento de claves a una ranura vacía en uno de los controladores IDE de la máquina virtual. Para ello, haz clic en **Agregar unidad de almacenamiento de claves** para agregar una unidad de almacenamiento de claves a la primera ranura del controlador IDE disponible en esta máquina virtual.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Configuración de seguridad de las máquinas virtuales de generación 2 del Administrador de Hyper-V](Generation-2-virtual-machine-security-settings-for-hyper-v.md)
-- [Seguridad y control](../../../security/Security-and-Assurance.md)
+- [Seguridad y control](../../../security/Security-and-Assurance.yml)
