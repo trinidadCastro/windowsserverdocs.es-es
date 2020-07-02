@@ -7,18 +7,18 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 08/05/2019
+ms.date: 06/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 42022b6e2e3564d1440e2ba1d45f9f98430242c0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e34f74226edb56e8db0290fd5dc83f0c6e54221
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861058"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833328"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se describen los requisitos mínimos de hardware para Espacios de almacenamiento directo.
 
@@ -33,7 +33,7 @@ Los sistemas, los componentes, los dispositivos y los controladores deben tener 
 
 ![captura de pantalla del catálogo de Windows Server que muestra la AQs de SDDC](media/hardware-requirements/sddc-aqs.png)
 
-El clúster totalmente configurado (servidores, redes y almacenamiento) debe pasar todas las [pruebas de validación de clústeres](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) según el asistente en Administrador de clústeres de conmutación por error o con el [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) `Test-Cluster` en PowerShell.
+El clúster totalmente configurado (servidores, redes y almacenamiento) debe pasar todas las [pruebas de validación del clúster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) por el asistente en Administrador de clústeres de conmutación por error o con el `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) de PowerShell.
 
 Además, se aplican los siguientes requisitos:
 
@@ -58,7 +58,7 @@ Además, se aplican los siguientes requisitos:
 - El reflejo RAID 1 **no** es necesario, pero se admite para el arranque
 - Recomendado: 200 GB de tamaño mínimo
 
-## <a name="networking"></a>Funciones de red
+## <a name="networking"></a>Redes
 
 Espacios de almacenamiento directo requiere una conexión de red de baja latencia y ancho de banda alto confiable entre cada nodo.  
 
@@ -78,15 +78,16 @@ Interconexiones de nodo conmutado o sin conmutador
 
 ## <a name="drives"></a>Unidades
 
-Espacios de almacenamiento directo funciona con unidades SATA, SAS o NVMe conectadas directamente que están conectadas físicamente a un solo servidor. Para obtener más ayuda para elegir las unidades, consulte el tema [Elegir las unidades](choosing-drives.md).
+Espacios de almacenamiento directo funciona con unidades SATA, SAS, NVMe o memoria persistente (PMem) conectadas directamente que están conectadas físicamente a un solo servidor. Para obtener más información sobre cómo elegir las unidades, consulte los temas [elegir unidades](choosing-drives.md) y [comprender e implementar la memoria persistente](deploy-pmem.md) .
 
-- Se admiten todas las unidades SATA, SAS y NVMe (M. 2, U. 2 y de agregación).
+- Se admiten todas las unidades SATA, SAS, de memoria persistente y de NVMe (M. 2, U. 2 y de agregación).
 - se admiten todas las unidades nativas de 512n, 512e y 4K
 - Las unidades de estado sólido deben proporcionar [protección contra la pérdida de energía](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
 - El mismo número y tipos de unidades en cada servidor: consulte [consideraciones sobre la simetría de unidades](drive-symmetry-considerations.md)
 - Los dispositivos de caché deben tener 32 GB o más.
+- Los dispositivos de memoria persistentes se usan en el modo de almacenamiento en bloque
 - Al usar dispositivos de memoria persistentes como dispositivos de caché, debe usar dispositivos de capacidad de NVMe o SSD (no puede usar HDD).
-- El controlador de NVMe es el proporcionado por Microsoft que se incluye en Windows. (stornvme. sys)
+- El controlador de NVMe es el proporcionado por Microsoft que se incluye en Windows (stornvme.sys)
 - Recomendado: el número de unidades de capacidad es un múltiplo entero del número de unidades de caché
 - Recomendado: las unidades de caché deben tener una gran resistencia de escritura: al menos 3 unidades-escrituras por día (DWPD) o al menos 4 terabytes escritas (TBW) al día; vea [Descripción de las escrituras de unidad al día (DWPD), terabytes escritos (TBW) y el mínimo recomendado para espacios de almacenamiento directo](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
@@ -111,7 +112,7 @@ Las unidades pueden ser internas en el servidor o en un contenedor externo que e
 ### <a name="minimum-number-of-drives-excludes-boot-drive"></a>Número mínimo de unidades (excluye la unidad de arranque)
 
 - Si hay unidades que se usan como memoria caché, debe haber al menos 2 por servidor.
-- Debe haber al menos 4 unidades de capacidad (no de caché) por servidor.
+- Debe haber al menos 4 unidades de capacidad (no de caché) por servidor
 
 | Tipos de unidades presentes   | Número mínimo necesario |
 |-----------------------|-------------------------|
@@ -129,7 +130,7 @@ Las unidades pueden ser internas en el servidor o en un contenedor externo que e
 
 ### <a name="maximum-capacity"></a>Capacidad máxima
 
-| Valores máximos                | Windows Server 2019  | Windows Server 2016  |
+| Valores máximos                | Windows Server 2019  | Windows Server 2016  |
 | ---                     | ---------            | ---------            |
 | Capacidad sin procesar por servidor | 400 TB               | 100 TB               |
 | Capacidad de grupo           | 4 PB (4.000 TB)      | 1 PB                 |

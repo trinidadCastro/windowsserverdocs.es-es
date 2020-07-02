@@ -7,32 +7,40 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 09/19/2019
+ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 19679a6838d583ef93175f5f95aa21e8aeca9b36
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2ffe34097971f4477f0f536637b49b704678c93e
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475262"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833374"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Elección de unidades para Espacios de almacenamiento directo
 
->Se aplica a: Windows 2019, Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se proporcionan instrucciones sobre cómo elegir las unidades de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) para satisfacer los requisitos de rendimiento y capacidad.
 
 ## <a name="drive-types"></a>Tipos de unidad
 
-Espacios de almacenamiento directo actualmente funciona con tres tipos de unidades:
+Espacios de almacenamiento directo actualmente funciona con cuatro tipos de unidades:
 
 <table>
+    <tr style="border: 0;">
+        <td style="padding: 10px; border: 0; width:70px">
+            <img src="media/understand-the-cache/pmem-100px.png">
+        </td>
+        <td style="padding: 10px; border: 0;" valign="middle">
+            <b>PMem</b> hace referencia a la memoria persistente, un nuevo tipo de almacenamiento de baja latencia y alto rendimiento.
+        </td>
+    </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
             <img src="media/understand-the-cache/NVMe-100px.png">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>NVMe</b> (Express de memoria no volátil) hace referencia a las unidades de estado sólido que se encuentran directamente en el bus PCIe. Factores de forma común son 2.5" U.2, PCIe Add-In-Card (AIC) y M.2. NVMe ofrece un mayor rendimiento IOPS y E/S con una menor latencia que cualquier otro tipo de unidad admitida actualmente.
+            <b>NVMe</b> (Express de memoria no volátil) hace referencia a las unidades de estado sólido que se encuentran directamente en el bus PCIe. Factores de forma común son 2.5" U.2, PCIe Add-In-Card (AIC) y M.2. NVMe ofrece un mayor rendimiento de e/s e/s con una latencia menor que cualquier otro tipo de unidad que se admita hoy, excepto la memoria persistente.
         </td>
     </tr>
     <tr style="border: 0;">
