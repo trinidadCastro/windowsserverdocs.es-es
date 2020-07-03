@@ -1,6 +1,6 @@
 ---
 title: Opción SET
-description: Tema de referencia de la opción set, que establece las opciones para la creación de instantáneas.
+description: Artículo de referencia de la opción set, que establece las opciones para la creación de instantáneas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4aba049e29cd74450467cf28057a2ff4e4a7094
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b7944cd51adffabdc85bc6d419b527b1b643d4a8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721901"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937086"
 ---
 # <a name="set-option"></a>Opción SET
 

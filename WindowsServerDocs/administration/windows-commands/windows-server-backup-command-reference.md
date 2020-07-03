@@ -1,6 +1,6 @@
 ---
 title: Referencia de comandos de copia de seguridad de Windows Server
-description: Tema de referencia de referencia de comandos de copia de seguridad.
+description: Artículo de referencia de referencia de comandos de copia de seguridad.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69121e445e5c7a967c30b0a911c639431c7dd74a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 32dfcc619fd12f4ac2e409fe8119bfa5dca225a7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720720"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936252"
 ---
 # <a name="windows-server-backup-command-reference"></a>Referencia de comandos de copia de seguridad de Windows Server
 

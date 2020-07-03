@@ -1,6 +1,6 @@
 ---
-title: Telnet set
-description: Tema de referencia para telnet Set, que establece opciones.
+title: telnet set
+description: Artículo de referencia para telnet Set, que establece opciones.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 477c2ee259301af26870339a2c329c2c3502963b
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 7415f084e73d87eb767ed0b487f42e103b998c23
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222674"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937367"
 ---
 # <a name="telnet-set"></a>Telnet: establecer
 
@@ -46,7 +46,7 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 1. Puede usar el comando **unset** para desactivar una opción que se estableció previamente.
 2. En las versiones de telnet que no estén en inglés, el tipo de **códigos** <option> está disponible. **Codeset** <option> establece el código actual establecido en una opción, que puede ser cualquiera de los siguientes: **Shift JIS**, **japonés EUC**, **JIS kanji**, **JIS kanji (78)**, **Dec kanji**, **NEC kanji**. Debe establecer el mismo conjunto de código en el equipo remoto.
    ## <a name="examples"></a>Ejemplos
-   Establezca el archivo de registro y comience a registrar el archivo local tnlog. txt.
+   Establezca el archivo de registro y comience a registrar el archivo local tnlog.txt
    ```
    set logfile tnlog.txt
    ```

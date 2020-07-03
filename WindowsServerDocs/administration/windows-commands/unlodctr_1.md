@@ -1,6 +1,6 @@
 ---
 title: unlodctr
-description: Tema de referencia de Unlodctr, que quita nombres de contadores de rendimiento y texto explicativo de un servicio o controlador de dispositivo del registro del sistema
+description: Artículo de referencia para Unlodctr, que quita nombres de contadores de rendimiento y texto explicativo de un servicio o controlador de dispositivo del registro del sistema
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8551b6fc76984b06f28bdda92dcd63791721ec90
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a054673ada197c6b116abc7eda49c0e755f22af0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821295"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937276"
 ---
 # <a name="unlodctr"></a>unlodctr
 
@@ -32,7 +32,7 @@ Unlodctr <DriverName>
 |\<DriverName>|quita la configuración del nombre del contador de rendimiento y el texto explicativo del controlador o servicio <DriverName> del registro de Windows Server 2003.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 > [!WARNING]
 > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
 

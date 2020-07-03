@@ -1,6 +1,6 @@
 ---
 title: shutdown
-description: Tema de referencia para shutdown, que permite apagar o reiniciar equipos locales o remotos de uno en uno.
+description: Artículo de referencia para el apagado, que permite apagar o reiniciar equipos locales o remotos de uno en uno.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf911aaf13d0d042344139688bfd74f27aec9a10
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 64bfd5ceed29bff5d9ae39e03a99aba2f7a2f39e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721792"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936379"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -25,7 +25,7 @@ Permite apagar o reiniciar los equipos locales o remotos de uno en uno.
 ## <a name="syntax"></a>Sintaxis
 
 ```
-shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c comment]] 
+shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c comment]]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -41,16 +41,16 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/h|Pone el equipo local en hibernación si está habilitada la hibernación. Puede usar **/h** solo con **/f**.|
 |/e|Permite documentar el motivo del apagado inesperado en el equipo de destino.|
 |/f|Obliga a las aplicaciones en ejecución a cerrarse sin avisar a los usuarios.</br>PRECAUCIÓN: el uso de la opción **/f** podría provocar la pérdida de datos no guardados.|
-|\\ \\/m \<COMPUTERNAME>|Especifica el equipo de destino. No se puede usar con la opción **/l** .|
-|/t \<XXX>|Establece el período de tiempo de espera o el retraso en *XXX* segundos antes de un reinicio o apagado. Esto hace que se muestre una advertencia en la consola local. Puede especificar 0-600 segundos. Si no usa **/t**, el período de tiempo de espera es de 30 segundos de forma predeterminada.|
-|/d [p\|u:]\<XX>:\<YY>|Muestra el motivo del reinicio o apagado del sistema. Estos son los valores de parámetro:</br>**p** indica que el reinicio o el apagado están planeados.</br>**u** indica que el motivo es definido por el usuario.</br>Nota: Si no se especifican **p** o **u** , el reinicio o el apagado no están planeados.</br>*XX* especifica el número de motivo principal (entero positivo inferior a 256).</br>*AA* Especifica el número de motivo secundario (entero positivo inferior a 65536).|
-|/c \<comentario>|Le permite comentar con detalle el motivo del apagado. Primero debe proporcionar un motivo mediante la opción **/d** . Los comentarios deben ir entre comillas. Puede utilizar 511 caracteres como máximo.|
+|/m\\\\\<ComputerName>|Especifica el equipo de destino. No se puede usar con la opción **/l** .|
+|/t\<XXX>|Establece el período de tiempo de espera o el retraso en *XXX* segundos antes de un reinicio o apagado. Esto hace que se muestre una advertencia en la consola local. Puede especificar 0-600 segundos. Si no usa **/t**, el período de tiempo de espera es de 30 segundos de forma predeterminada.|
+|/d [p \| u:] \<XX> :\<YY>|Muestra el motivo del reinicio o apagado del sistema. Estos son los valores de parámetro:</br>**p** indica que el reinicio o el apagado están planeados.</br>**u** indica que el motivo es definido por el usuario.</br>Nota: Si no se especifican **p** o **u** , el reinicio o el apagado no están planeados.</br>*XX* especifica el número de motivo principal (entero positivo inferior a 256).</br>*AA* Especifica el número de motivo secundario (entero positivo inferior a 65536).|
+|/c\<Comment>|Le permite comentar con detalle el motivo del apagado. Primero debe proporcionar un motivo mediante la opción **/d** . Los comentarios deben ir entre comillas. Puede utilizar 511 caracteres como máximo.|
 |/?|Muestra la ayuda en el símbolo del sistema, incluida una lista de las razones principales y secundarias que se definen en el equipo local.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Los usuarios deben tener asignado el derecho de usuario **apagar el sistema** para apagar un equipo administrado de forma remota o local que use el comando **Shutdown** .
--   Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para más información, consulte:  
+-   Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para obtener más información, consulte:
     -   [Grupos locales predeterminados](https://technet.microsoft.com/library/cc785098(v=ws.10).aspx)
     -   [Grupos predeterminados](https://technet.microsoft.com/library/cc756898(v=ws.10).aspx)
 -   Si desea apagar más de un equipo a la vez, puede llamar a **Shutdown** para cada equipo mediante un script, o bien puede usar **Shutdown** **/i** para mostrar el cuadro de diálogo apagado remoto.
@@ -59,11 +59,11 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 ## <a name="examples"></a>Ejemplos
 
-Para obligar a las aplicaciones a cerrar y reiniciar el equipo local después de un retraso de un minuto con el motivo de la aplicación: mantenimiento (planeado) y el comentario volver a configurar el tipo MyApp. exe:
+Para forzar que las aplicaciones cierren y reinicien el equipo local después de un retraso de un minuto con el motivo aplicación: mantenimiento (planeado) y el comentario reconfigurando myapp.exe tipo:
 ```
 shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```
-Para reiniciar el equipo \\ \\remoto ServerName con los mismos parámetros, escriba:
+Para reiniciar el equipo remoto \\ \\ ServerName con los mismos parámetros, escriba:
 ```
 shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```

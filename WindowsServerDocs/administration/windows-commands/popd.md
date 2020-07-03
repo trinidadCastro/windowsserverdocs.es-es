@@ -1,6 +1,6 @@
 ---
 title: popd
-description: Tema de referencia del comando pnputil, que cambia el directorio actual al directorio que se almacenó más recientemente con el comando Inserted.
+description: Artículo de referencia para el comando pnputil, que cambia el directorio actual al directorio que se almacenó más recientemente con el comando Inserted.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 0784d925eedb1202bf94fbd2951081efcc0c496b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 002a0d84770738db2b00bedcd1e01df3b1b61b76
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472391"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937001"
 ---
 # <a name="popd"></a>popd
 

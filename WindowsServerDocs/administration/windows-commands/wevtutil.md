@@ -1,6 +1,6 @@
 ---
 title: wevtutil
-description: Tema de referencia de wevtutil, que le permite recuperar información acerca de los registros y publicadores de eventos.
+description: Artículo de referencia de wevtutil, que le permite recuperar información acerca de los registros y publicadores de eventos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22195f3a163e1a4123b51d005b0367cc61411651
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: f87ab51c0e24f9df421d7540e85d05a534635947
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222614"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936646"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -124,11 +124,11 @@ Mostrar información sobre el publicador de eventos Microsoft-Windows-EventLog, 
 ```
 wevtutil gp Microsoft-Windows-Eventlog /ge:true
 ```
-Instale los publicadores y registros del archivo de manifiesto de manifest. xml:
+Instale publicadores y registros desde el archivo de manifiesto de myManifest.xml:
 ```
 wevtutil im myManifest.xml
 ```
-Desinstale publicadores y registros del archivo de manifiesto de manifest. xml:
+Desinstale publicadores y registros del archivo de manifiesto de myManifest.xml:
 ```
 wevtutil um myManifest.xml
 ```

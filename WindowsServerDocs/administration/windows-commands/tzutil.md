@@ -1,6 +1,6 @@
 ---
 title: tzutil
-description: Tema de referencia de tzutil, que muestra la utilidad de zona horaria de Windows.
+description: Artículo de referencia de tzutil, que muestra la utilidad de zona horaria de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d4a94fa9f776af1ae21ad9057b6f9225691b516
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 99d88057c88a55aaf529d238088f8422c33e9ba7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821305"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937297"
 ---
 # <a name="tzutil"></a>tzutil
 
@@ -31,10 +31,10 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |-------|--------|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 |/g|Muestra el ID. de zona horaria actual.|
-|/s \< timeZoneID> [_dstoff]|Establece la zona horaria actual mediante el identificador de zona horaria especificado. El sufijo **_dstoff** deshabilita los ajustes del horario de verano de la zona horaria (si procede).|
-|/l|enumera todos los ID. de zona horaria y nombres para mostrar válidos. El resultado será:<p>-   \<nombre para mostrar><br />-   \<> de ID. de zona horaria|
+|/s \<timeZoneID> [_dstoff]|Establece la zona horaria actual mediante el identificador de zona horaria especificado. El sufijo **_dstoff** deshabilita los ajustes del horario de verano de la zona horaria (si procede).|
+|/l|enumera todos los ID. de zona horaria y nombres para mostrar válidos. El resultado será:<p>-   \<display name><br />-   \<time zone ID>|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 Un código de salida de **0** indica que el comando se completó correctamente.
 
 ## <a name="examples"></a>Ejemplos

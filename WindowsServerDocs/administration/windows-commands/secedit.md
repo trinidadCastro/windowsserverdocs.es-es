@@ -1,6 +1,6 @@
 ---
 title: secedit
-description: Tema de referencia de * * * *-
+description: Artículo de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 56c9cdecfe2a5553230f1c8120c827e7f05d0ba9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8e5918265feb7dc72759ea22d2f582e4754df96c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821103"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936490"
 ---
 # <a name="secedit"></a>secedit
 
@@ -45,7 +45,7 @@ secedit
 |[Secedit:import](secedit-import.md)|Permite importar una plantilla de seguridad en una base de datos de forma que la configuración especificada en la plantilla pueda aplicarse a un sistema o analizarse en un sistema.|
 |[Secedit:validate](secedit-validate.md)|Permite validar la sintaxis de una plantilla de seguridad.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 En todos los nombres de archivo, se usa el directorio actual si no se especifica ninguna ruta de acceso.
 

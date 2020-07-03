@@ -1,6 +1,6 @@
 ---
 title: Establecer metadatos
-description: Tema de referencia para conjuntos de metadatos, que establece el nombre y la ubicación del archivo de metadatos de creación de instantáneas que se usa para transferir instantáneas de un equipo a otro.
+description: Artículo de referencia para conjuntos de metadatos, que establece el nombre y la ubicación del archivo de metadatos de creación de instantáneas que se usa para transferir instantáneas de un equipo a otro.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 683e54a7efc072d8709d6257771ba6bc5bde206e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 50c9ceebf072db2e7cefada1601accc97b5d0f7f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721911"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937097"
 ---
 # <a name="set-metadata"></a>Establecer metadatos
 
@@ -30,8 +30,8 @@ set metadata [<Drive>:][<Path>]<MetaData.cab>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<> de unidad:] [<Path>]|Especifica la ubicación en la que se va a crear el archivo de metadatos.|
-|\<MetaData. cab>|Especifica el nombre del archivo. cab para almacenar los metadatos de creación de instantáneas.|
+|[\<Drive>:][<Path>]|Especifica la ubicación en la que se va a crear el archivo de metadatos.|
+|\<MetaData.cab>|Especifica el nombre del archivo. cab para almacenar los metadatos de creación de instantáneas.|
 
 ## <a name="additional-references"></a>Referencias adicionales
 

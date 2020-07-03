@@ -1,6 +1,6 @@
 ---
 title: 'habilitar: servidor'
-description: Tema de referencia de Enable-Server, que habilita todos los servicios para servicios de implementación de Windows.
+description: Artículo de referencia para Enable-Server, que habilita todos los servicios para servicios de implementación de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf7bf57c0784fa16719b9f77da50212bca0ef850
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a0c82614049540e658061bd55bf40f0d0b3beb16
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720930"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936826"
 ---
 # <a name="enable-server"></a>habilitar: servidor
 
@@ -37,11 +37,11 @@ wdsutil /Enable-Server
 wdsutil /verbose /Enable-Server /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos[mediante el comando DISABLE-Server](using-the-disable-server-command.md)
-mediante el
-[comando Get-Server](using-the-get-server-command.md)[mediante el subcomando Initialize-Server Command](using-the-initialize-server-command.md)
-[: set-Server](subcommand-set-server.md)
-Subcommand[: Start-Server](subcommand-start-server.md)
-[Subcommand: Stop-Server](subcommand-stop-server.md)
-[la opción UnInitialize-Server](the-uninitialize-server-option.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-disable-server-command.md) 
+ Disable-Server [Usar el comando](using-the-get-server-command.md) 
+ Get-Server [Usar el comando](using-the-initialize-server-command.md) 
+ Initialize-Server [Subcomando: set-Server](subcommand-set-server.md) 
+ [Subcomando: Start-Server](subcommand-start-server.md) 
+ [Subcomando: Stop-Server](subcommand-stop-server.md) 
+ [La opción UnInitialize-Server](the-uninitialize-server-option.md)

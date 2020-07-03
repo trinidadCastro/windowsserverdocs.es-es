@@ -1,6 +1,6 @@
 ---
-title: WAITFOR
-description: Tema de referencia de WAITFOR, que envía o espera una señal en un sistema. **WAITFOR** se usa para sincronizar los equipos a través de una red.
+title: waitfor
+description: Artículo de referencia para WAITFOR, que envía o espera una señal en un sistema. **WAITFOR** se usa para sincronizar los equipos a través de una red.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1264fa3bffde303577bd56a0f1f68a6d7b2d98c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9a80b606fc91ec146a6808bde97a8d7f0081d0ff
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720222"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937010"
 ---
-# <a name="waitfor"></a>WAITFOR
+# <a name="waitfor"></a>waitfor
 
 
 
@@ -35,15 +35,15 @@ waitfor [/t <Timeout>] <SignalName>
 
 |       Parámetro       |                                                                                         Descripción                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<equipo>     | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificados en el comando. |
-| /u [\<dominio>\]<User> |                              Ejecuta el script con las credenciales de la cuenta de usuario especificada. De forma predeterminada, **WAITFOR** usa las credenciales del usuario actual.                               |
-|   /p [\<contraseña>]    |                                                    Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                     |
+|    modificado\<Computer>     | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificados en el comando. |
+| 5.50\<Domain>\]<User> |                              Ejecuta el script con las credenciales de la cuenta de usuario especificada. De forma predeterminada, **WAITFOR** usa las credenciales del usuario actual.                               |
+|   /p [ \<Password> ]    |                                                    Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                     |
 |          /Si          |                                                                        Envía la señal especificada a través de la red.                                                                        |
-|     /t \<> de tiempo de espera     |                                              Especifica el número de segundos que hay que esperar una señal. De forma predeterminada, **WAITFOR** espera indefinidamente.                                               |
-|     \<> SignalName     |                                                Especifica la señal que **WAITFOR** espera o envía. *SignalName* no distingue entre mayúsculas y minúsculas.                                                 |
+|     /t\<Timeout>     |                                              Especifica el número de segundos que hay que esperar una señal. De forma predeterminada, **WAITFOR** espera indefinidamente.                                               |
+|     \<SignalName>     |                                                Especifica la señal que **WAITFOR** espera o envía. *SignalName* no distingue entre mayúsculas y minúsculas.                                                 |
 |          /?           |                                                                             Muestra la ayuda en el símbolo del sistema.                                                                             |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Los nombres de señal no pueden superar los 225 caracteres. Los caracteres válidos son a-z, A-Z, 0-9 y el juego de caracteres extendidos ASCII (128-255).
 -   Si no usa **/s**, la señal se difundirá a todos los sistemas de un dominio. Si utiliza **/s**, la señal se envía solo al sistema especificado.

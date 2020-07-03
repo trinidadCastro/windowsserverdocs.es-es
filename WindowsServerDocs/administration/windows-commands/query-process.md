@@ -1,6 +1,6 @@
 ---
 title: query process
-description: Tema de referencia del comando QUERY Process, que muestra información sobre los procesos que se ejecutan en un servidor host de sesión Escritorio remoto.
+description: Artículo de referencia del comando QUERY Process, que muestra información sobre los procesos que se ejecutan en un servidor host de sesión Escritorio remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32f755fe3e275f2f1adccffacaf2a6999d46298a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a11177ad62e83efd9dbe5da844b159b40266837d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472030"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936988"
 ---
 # <a name="query-process"></a>query process
 

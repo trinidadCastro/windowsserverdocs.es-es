@@ -1,6 +1,6 @@
 ---
 title: Remove-DriverGroupFilter
-description: Tema de referencia de Remove-DriverGroupFilter, que quita una regla de filtro de un grupo de controladores en un servidor.
+description: Artículo de referencia de Remove-DriverGroupFilter, que quita una regla de filtro de un grupo de controladores en un servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd6fcbc8f87539ac687927b9e58ed15edb524ef6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 98d2253cc5148ba4581399d688b74cd426a649fb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720415"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936333"
 ---
 # <a name="remove-drivergroupfilter"></a>Remove-DriverGroupFilter
 
@@ -32,9 +32,9 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server nam
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/DriverGroup:\<nombre de grupo>|Especifica el nombre del grupo de controladores.|
-|[/Server:\<nombre del servidor>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
-|[/FilterType:\<FilterType>]|Especifica el tipo de filtro que se va a quitar del grupo. \<La> FilterType puede ser una de las siguientes:</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Fabricante**</br>**UUID**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
+|/DriverGroup:\<Group Name>|Especifica el nombre del grupo de controladores.|
+|[/Server:\<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
+|[/FilterType: \<FilterType> ]|Especifica el tipo de filtro que se va a quitar del grupo. \<FilterType>puede ser uno de los siguientes:</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Fabricante**</br>**UUID**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
 
 ## <a name="examples"></a>Ejemplos
 

@@ -1,6 +1,6 @@
 ---
 title: mqbkup
-description: Tema de referencia del comando Mqbkup, que realiza una copia de seguridad de los archivos de mensajes de MSMQ y de la configuración del registro en un dispositivo de almacenamiento y restaura los mensajes y configuraciones almacenados previamente.
+description: Artículo de referencia del comando Mqbkup, que realiza una copia de seguridad de los archivos de mensajes de MSMQ y de la configuración del registro en un dispositivo de almacenamiento y restaura los mensajes y configuraciones almacenados previamente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c07dd5f912a70157052017fc17875c00eaedd3b
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 131d80f32a3c3324dad08b876dd4f4f8610b93e2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354426"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936307"
 ---
 # <a name="mqbkup"></a>mqbkup
 
@@ -41,7 +41,7 @@ mqbkup {/b | /r} <folder path_to_storage_device>
 | `<folder path_to_storage_device>` | Especifica la ruta de acceso donde se almacenan los archivos de mensajes y la configuración del registro de MSMQ. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si una carpeta especificada no existe mientras se realiza la operación de copia de seguridad o restauración, la utilidad crea automáticamente la carpeta.
 

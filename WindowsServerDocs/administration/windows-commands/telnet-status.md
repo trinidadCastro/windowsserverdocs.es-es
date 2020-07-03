@@ -1,6 +1,6 @@
 ---
-title: Estado de Telnet
-description: Tema de referencia sobre el estado de Telnet, que muestra información de estado.
+title: telnet status
+description: Artículo de referencia sobre el estado de Telnet, que muestra información de estado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d5960396846534cc65f0b2d5c6e8c9afb5dd3c5
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 9c66f412899e18351692e6aa6ae8920a0205b94e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222668"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937357"
 ---
 # <a name="telnet-status"></a>Telnet: estado
 

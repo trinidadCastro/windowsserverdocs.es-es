@@ -1,6 +1,6 @@
 ---
 title: tsprof
-description: Tema de referencia para tsprof, que copia la información de configuración de usuario de Servicios de Escritorio remoto de un usuario a otro.
+description: Artículo de referencia para tsprof, que copia la información de configuración de usuario de Servicios de Escritorio remoto de un usuario a otro.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5a4980455eb2901db949a06f0c6dfec9ecf5793
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b0b030f6f1353a6570883cf44c17e383b929cb3a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721232"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937330"
 ---
 # <a name="tsprof"></a>tsprof
 
@@ -41,17 +41,17 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 |Parámetro|Descripción|
 |-------|--------|
 |/update|Actualiza la información de la ruta de acceso del perfil para <*nombre de usuario*> en dominio <*DomainName*> para <*Profilepath*>.|
-|/Domain:\<nombreDeDominio>|Especifica el nombre del dominio en el que se aplica la operación.|
+|/Domain\<DomainName>|Especifica el nombre del dominio en el que se aplica la operación.|
 |/local|Aplica la operación solo a cuentas de usuario locales.|
-|/Profile:\<ruta de acceso>|Especifica la ruta de acceso del perfil tal y como se muestra en el Servicios de Escritorio remoto extensiones de usuarios y grupos locales y usuarios y equipos de Active Directory.|
-|\<Nombre de usuario>|Especifica el nombre del usuario para el que desea actualizar o consultar la ruta de acceso del perfil del servidor.|
-|/copy|Copia la información de configuración \<de usuario de *SourceUser*> a \< *DestinationUser*> y actualiza la información \<de la ruta de acceso del perfil para *DestinationUser*> a \< *Profilepath*>. Tanto \< *SourceUser*> como \<> *DestinationUser* deben ser locales o deben estar en el dominio \< *domainname*>.|
+|/Profile\<path>|Especifica la ruta de acceso del perfil tal y como se muestra en el Servicios de Escritorio remoto extensiones de usuarios y grupos locales y usuarios y equipos de Active Directory.|
+|\<UserName>|Especifica el nombre del usuario para el que desea actualizar o consultar la ruta de acceso del perfil del servidor.|
+|/copy|Copia la información de configuración de usuario de \<*SourceUser*> a \<*DestinationUser*> y actualiza la información de la ruta de acceso del perfil para \<*DestinationUser*> a \<*Profilepath*> . \<*SourceUser*>Y \<*DestinationUser*> deben ser locales o deben estar en el dominio \<*DomainName*> .|
 |\<Src_usr>|Especifica el nombre del usuario del que desea copiar la información de configuración de usuario.|
 |\<Dest_usr>|Especifica el nombre del usuario al que desea copiar la información de configuración de usuario.|
 |/q|Muestra la ruta de acceso del perfil actual del usuario para el que desea consultar la ruta de acceso del perfil del servidor.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 -   El comando **tsprof** solo está disponible cuando se ha instalado el servicio de rol Terminal Server en un equipo que ejecuta windows Server 2008 o el servicio de rol host de sesión de escritorio remoto en un equipo que ejecuta windows Server 2008 R2.
 
 ## <a name="examples"></a>Ejemplos
@@ -65,5 +65,5 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
     ```
 
 ## <a name="additional-references"></a>Referencias adicionales
-- [Referencia de comandos de servicios de escritorio remoto de la clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos[(Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Referencia de comandos de servicios de escritorio remoto (Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)

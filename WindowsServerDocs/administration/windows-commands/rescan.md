@@ -1,6 +1,6 @@
 ---
 title: volver a examinar
-description: Tema de referencia de * * * *-
+description: Artículo de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f79162b78a4fa9b28390bdd9c61b7c3b1d6f73f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ab046964a813ef25acbba1e9fa40f64c9de267d6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722375"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937068"
 ---
 # <a name="rescan"></a>volver a examinar
 

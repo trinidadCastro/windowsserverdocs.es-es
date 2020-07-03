@@ -1,6 +1,6 @@
 ---
-title: copiar reg
-description: Tema de referencia de * * * *-
+title: reg copy
+description: Artículo de referencia para el comando reg Copy, que copia una entrada del registro en una ubicación especificada en el equipo local o remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,56 +9,56 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91090faffbb925754a0d4ed610b37464872242db
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e98faa37f1d123c584a3e12ae013c35688c37680
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722584"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937035"
 ---
-# <a name="reg-copy"></a>copiar reg
-
-
+# <a name="reg-copy"></a>reg copy
 
 Copia una entrada del registro en una ubicación especificada en el equipo local o remoto.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-reg copy <KeyName1> <KeyName2> [/s] [/f]
+reg copy <keyname1> <keyname2> [/s] [/f]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> KeyName1|Especifica la ruta de acceso completa de la subclave que se va a copiar. Para especificar un equipo remoto, incluya el nombre del equipo (en el \\ \\formato\) COMPUTERNAME como parte del *keyName*). Si \\ \\se omite COMPUTERNAME \, la operación se realizará de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
-|\<> KeyName2|Especifica la ruta de acceso completa del destino de la subclave. Para especificar un equipo remoto, incluya el nombre del equipo (en el \\ \\formato\) COMPUTERNAME como parte del *keyName*). Si \\ \\se omite COMPUTERNAME \, la operación se realizará de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
-|/s|Copia todas las subclaves y entradas de la subclave especificada.|
-|/f|Copia la subclave sin pedir confirmación.|
-|/?|Muestra la ayuda de la copia **reg** en el símbolo del sistema.|
+| Parámetro | Descripción |
+|--|--|
+| `<keyname1>` | Especifica la ruta de acceso completa de la subclave o entrada que se va a agregar. Para especificar un equipo remoto, incluya el nombre del equipo (con el formato `\\<computername>\` ) como parte del nombre de *clave*. Si se omite `\\<computername>\` , la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: **HKLM**, **HKCU**, **HKCR**, **HKU**y **HKCC**. Si se especifica un equipo remoto, las claves raíz válidas son: **HKLM** y **HKU**. Si el nombre de la clave del registro contiene un espacio, incluya el nombre de la clave entre comillas. |
+| `<keyname2>` | Especifica la ruta de acceso completa de la segunda subclave que se va a comparar. Para especificar un equipo remoto, incluya el nombre del equipo (con el formato `\\<computername>\` ) como parte del nombre de *clave*. Si se omite `\\<computername>\` , la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: **HKLM**, **HKCU**, **HKCR**, **HKU**y **HKCC**. Si se especifica un equipo remoto, las claves raíz válidas son: **HKLM** y **HKU**. Si el nombre de la clave del registro contiene un espacio, incluya el nombre de la clave entre comillas. |
+| /s | Copia todas las subclaves y entradas de la subclave especificada. |
+| /f | Copia la subclave sin pedir confirmación. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
--   Reg no pide confirmación al copiar una subclave.
--   En la tabla siguiente se enumeran los valores devueltos para la operación de **copia de reg** .
+- Este comando no pide confirmación al copiar una subclave.
 
-|Value|Descripción|
-|-----|-----------|
-|0|Correcto|
-|1|Error|
+- Los valores devueltos para la operación de **comparación de reg** son:
 
-## <a name="examples"></a>Ejemplos
+    | Valor | Descripción |
+    |--|--|
+    | 0 | Correcto |
+    | 1 | Error |
+
+### <a name="examples"></a>Ejemplos
 
 Para copiar todas las subclaves y valores de la clave MyApp en la clave SaveMyApp, escriba:
+
 ```
-REG COPY HKLM\Software\MyCo\MyApp HKLM\Software\MyCo\SaveMyApp /s
+reg copy HKLM\Software\MyCo\MyApp HKLM\Software\MyCo\SaveMyApp /s
 ```
+
 Para copiar todos los valores de la clave MyCo del equipo denominado zodíaco en la clave MyCo1 del equipo actual, escriba:
+
 ```
-REG COPY \\ZODIAC\HKLM\Software\MyCo HKLM\Software\MyCo1
+reg copy \\ZODIAC\HKLM\Software\MyCo HKLM\Software\MyCo1
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

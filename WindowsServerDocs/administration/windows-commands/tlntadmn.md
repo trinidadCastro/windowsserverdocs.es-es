@@ -1,6 +1,6 @@
 ---
 title: tlntadmn
-description: Tema de referencia de tlntadmn, que administra un equipo local o remoto, que ejecuta el servicio del servidor Telnet.
+description: Artículo de referencia de tlntadmn, que administra un equipo local o remoto, que ejecuta el servicio del servidor Telnet.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fcade72f7170e94463abb9b473d4c6bd2251f086
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 602f3aa99f9d0e47fbbde1ab5c09b193446d8a7c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222648"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936917"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -30,7 +30,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 
 |                   Parámetro                    |                                                                                                                                                       Descripción                                                                                                                                                        |
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                \<computerName>                 |                                                                                                                    Especifica el nombre del servidor al que se va a conectar. El valor predeterminado es el equipo local.                                                                                                                    |
+|                \<computerName>                 |                                                                                                                    Especifica el nombre del servidor al que se va a conectar. La opción predeterminada es el equipo local.                                                                                                                    |
 |         -u \<UserName> -p\<Password>          |                                                Especifica las credenciales administrativas para un servidor remoto que desea administrar. Este parámetro es necesario si desea administrar un servidor remoto en el que no ha iniciado sesión con credenciales administrativas.                                                |
 |                     start                      |                                                                                                                                            inicia el servicio del servidor Telnet.                                                                                                                                             |
 |                      stop                      |                                                                                                                                             Detiene el servicio del servidor Telnet                                                                                                                                              |

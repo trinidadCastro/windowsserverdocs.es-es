@@ -1,6 +1,6 @@
 ---
 title: query session
-description: Tema de referencia del comando QUERY Session, que muestra información acerca de las sesiones de un servidor host de sesión Escritorio remoto.
+description: Artículo de referencia del comando QUERY Session, que muestra información acerca de las sesiones de un servidor host de sesión Escritorio remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57b8587c0a02067a3472561e08fbfa461c1448b9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 440830af55763fbb3ebee7cdbdca97ca11cde30c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472010"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937036"
 ---
 # <a name="query-session"></a>query session
 

@@ -1,6 +1,6 @@
 ---
 title: typeperf
-description: Tema de referencia de Typeperf, que escribe datos de rendimiento en la ventana comandos o en un archivo de registro.
+description: Artículo de referencia de Typeperf, que escribe datos de rendimiento en la ventana comandos o en un archivo de registro.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a996abc1417fdb6aa50370a942433716d8df2cbe
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 90a53224b733489464b7432c6f8c9304dd62df18
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721208"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937313"
 ---
 # <a name="typeperf"></a>typeperf
 
@@ -33,38 +33,38 @@ typeperf -qx [object] [options]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<contador [contador [...]] >|Especifica los contadores de rendimiento que se van a supervisar.|
+|\<counter [counter […]]>|Especifica los contadores de rendimiento que se van a supervisar.|
 
 > [!NOTE]
-> Counter>es el nombre completo de un contador de rendimiento en * \\ \\formato \Counter de Computer\Object (instancia)* , ** \\ \\como la hora del\% usuario Server1\Processor (0)**. ** \<**
+> **\<counter>** es el nombre completo de un contador de rendimiento en formato * \\ \\ \Counter de Computer\Object (instancia)* , como el ** \\ \\ tiempo de \% usuario de Server1\Processor (0)**.
 
 ## <a name="options"></a>Opciones
 
 |                   Opción                   |                                                         Descripción                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               Muestra la ayuda contextual.                                               |
-| -> \<de&verbar;SQL&verbar;de&verbar;la ubicación de f CSV TSV |                                    Especifica el formato del archivo de salida. El valor predeterminado es CSV.                                     |
-|              -CF \<nombre de archivo>               |              Especifica un archivo que contiene una lista de contadores de rendimiento que se van a supervisar, con un contador por línea.               |
+| -f\<CSV&verbar;TSV&verbar;BIN&verbar;SQL> |                                    Especifica el formato del archivo de salida. El valor predeterminado es CSV.                                     |
+|              -CF\<filename>               |              Especifica un archivo que contiene una lista de contadores de rendimiento que se van a supervisar, con un contador por línea.               |
 |             -Si < [[HH:] mm:] SS>             |                                  Especifica el intervalo de ejemplo. El valor predeterminado es un segundo.                                   |
-|               -o \<FILENAME>               |     Especifica la ruta de acceso del archivo de salida o la base de datos SQL. El valor predeterminado es STDOUT (se escribe en la ventana de comandos).      |
+|               -o\<filename>               |     Especifica la ruta de acceso del archivo de salida o la base de datos SQL. El valor predeterminado es STDOUT (se escribe en la ventana de comandos).      |
 |                -q [objeto]                 | Mostrar una lista de contadores instalados (sin instancias). Para enumerar los contadores de un objeto, incluya el nombre del objeto. \*\*\*EJEMPLO |
 |                -QX [objeto]                |        Mostrar una lista de contadores instalados con instancias. Para enumerar los contadores de un objeto, incluya el nombre del objeto.        |
-|               -ejemplos \<de SC>               |             Especifica el número de muestras que se van a recopilar. El valor predeterminado es recopilar datos hasta que se presiona CTRL + C.              |
-|            -config \<nombre de archivo>             |                                    Especifica un archivo de configuración que contiene opciones de comando.                                     |
-|            -s \<computer_name>             |                   Especifica un equipo remoto que se va a supervisar si no se especifica ningún equipo en la ruta de acceso del contador.                    |
+|               -SC\<samples>               |             Especifica el número de muestras que se van a recopilar. El valor predeterminado es recopilar datos hasta que se presiona CTRL + C.              |
+|            -config\<filename>             |                                    Especifica un archivo de configuración que contiene opciones de comando.                                     |
+|            -s\<computer_name>             |                   Especifica un equipo remoto que se va a supervisar si no se especifica ningún equipo en la ruta de acceso del contador.                    |
 |                     -y                     |                                        Responda sí a todas las preguntas sin preguntar.                                        |
 
 ## <a name="examples"></a>Ejemplos
 
-- Para escribir los valores de tiempo de procesador del procesador de contador ** \\ \\de rendimiento (\% _Total)** del equipo local en la ventana de comandos en un intervalo de ejemplo predeterminado de 1 segundo hasta que se presiona Ctrl + C.  
+- Para escribir los valores de tiempo de procesador del procesador de contador de rendimiento ** \\ \\ ( \% _Total)** del equipo local en la ventana de comandos en un intervalo de ejemplo predeterminado de 1 segundo hasta que se presiona Ctrl + C.
   ```
   typeperf \Processor(_Total)\% Processor Time
-  ```  
-- Para escribir los valores de la lista de contadores de file **Counters. txt** en el archivo delimitado por tabulaciones **dominio2. TSV** en un intervalo de ejemplo de 5 segundos hasta que se hayan recopilado 50 ejemplos.  
+  ```
+- Para escribir los valores de la lista de contadores en el archivo **counters.txt** al archivo delimitado por tabulaciones **dominio2. TSV** en un intervalo de ejemplo de 5 segundos hasta que se hayan recopilado 50 ejemplos.
   ```
   typeperf -cf counters.txt -si 5 -sc 50 -f TSV -o domain2.tsv
-  ```  
-- Para consultar los contadores instalados con instancias para el objeto de contador **DiscoFísico** y escribe la lista resultante en el archivo **Counters. txt**.  
+  ```
+- Para consultar los contadores instalados con instancias para el objeto de contador **DiscoFísico** y escribe la lista resultante en el archivo **counters.txt**.
   ```
   typeperf -qx PhysicalDisk -o counters.txt
   ```
