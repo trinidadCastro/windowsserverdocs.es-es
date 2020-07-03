@@ -1,6 +1,6 @@
 ---
 title: path
-description: Tema de referencia para establecer la ruta de acceso de comandos en la variable de entorno PATH, especificando el conjunto de directorios que se usa para buscar archivos ejecutables (. exe).
+description: Artículo de referencia para establecer la ruta de acceso de comandos en la variable de entorno PATH, que especifica el conjunto de directorios que se usa para buscar archivos ejecutables (. exe).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fadeb2108f0e59ee2f45f3cf45338046a345006
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f324c2b0fc84d2df05f7df93d83799b3ac463d5d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472571"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932023"
 ---
 # <a name="path"></a>path
 

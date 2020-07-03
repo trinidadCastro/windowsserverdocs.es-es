@@ -1,6 +1,6 @@
 ---
-title: Logman crear alerta
-description: Tema de referencia del comando Logman Create Alert, que crea un recopilador de datos de alertas.
+title: logman create alert
+description: Artículo de referencia para el comando Logman Create Alert, que crea un recopilador de datos de alertas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 10d19f6c86d09c698a6871ae0f0e530c5189c0ca
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: cb2c1372caefd18e9625eedfe71538a78bfc84e4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222827"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931638"
 ---
-# <a name="logman-create-alert"></a>Logman crear alerta
+# <a name="logman-create-alert"></a>logman create alert
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

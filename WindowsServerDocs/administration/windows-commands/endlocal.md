@@ -1,6 +1,6 @@
 ---
 title: endlocal
-description: Tema de referencia para el comando endlocal, que finaliza la localización de los cambios de entorno en un archivo por lotes y restaura las variables de entorno a sus valores antes de ejecutar el comando SETLOCAL correspondiente.
+description: Artículo de referencia para el comando endlocal, que finaliza la localización de los cambios de entorno en un archivo por lotes y restaura las variables de entorno a sus valores antes de ejecutar el comando SETLOCAL correspondiente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 229914ddbfa7361738cad79903630be9e749c795
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: a17ef4b25a0b0bb4d77068aa3bff3d879955aec5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436890"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932122"
 ---
 # <a name="endlocal"></a>endlocal
 
@@ -32,7 +32,7 @@ endlocal
 | --------- | ----------- |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - El comando **endlocal** no tiene ningún efecto fuera de un script o un archivo por lotes.
 

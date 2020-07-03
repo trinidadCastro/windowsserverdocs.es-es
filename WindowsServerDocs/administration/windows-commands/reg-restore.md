@@ -1,6 +1,6 @@
 ---
-title: REG restore
-description: Tema de referencia de * * * *-
+title: reg restore
+description: Artículo de referencia para el comando reg restore, que escribe las subclaves y entradas guardadas en el registro.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,52 +9,52 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d490f99f032b38c8bbbe9352b8571b4a85202e1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1483fc6998d7b286a81dc3cb1df021afb7e66650
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722521"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931046"
 ---
-# <a name="reg-restore"></a>REG restore
-
-
+# <a name="reg-restore"></a>reg restore
 
 Vuelve a escribir las subclaves y entradas guardadas en el registro.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-Reg restore <KeyName> <FileName>
+reg restore <keyname> <filename>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> KeyName|Especifica la ruta de acceso completa de la subclave que se va a restaurar. La operación de restauración solo funciona con el equipo local. KeyName debe incluir una clave raíz válida. Las claves raíz válidas son: HKLM, HKCU, HKCR, HKU y HKCC.|
-|\<Nombre de archivo>|Especifica el nombre y la ruta de acceso del archivo con el contenido que se va a escribir en el registro. Este archivo debe crearse de antemano con la operación de **Guardar reg** mediante la extensión. HIV.|
-|/?|Muestra la ayuda de **reg restore** en el símbolo del sistema.|
+| Parámetro | Descripción |
+|--|--|
+| `<keyname>` | Especifica la ruta de acceso completa de la subclave que se va a restaurar. La operación de restauración solo funciona con el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: **HKLM**, **HKCU**, **HKCR**, **HKU**y **HKCC**. Si el nombre de la clave del registro contiene un espacio, incluya el nombre de la clave entre comillas. |
+| `<filename>` | Especifica el nombre y la ruta de acceso del archivo con el contenido que se va a escribir en el registro. Este archivo debe crearse de antemano mediante el comando **reg Save** y debe tener la extensión. HIV. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
--   Antes de editar las entradas del registro, guarde la subclave primaria con la operación **reg Save** . Si se produce un error en la edición, restaure la subclave original con la operación **reg restore** .
--   En la tabla siguiente se enumeran los valores devueltos para la operación de **restauración de reg** .
+- Antes de editar las entradas del registro, debe guardar la subclave primaria con el comando **reg Save** . Si se produce un error en la edición, puede restaurar la subclave original mediante la operación **reg restore** .
 
-|Value|Descripción|
-|-----|-----------|
-|0|Correcto|
-|1|Error|
+- Los valores devueltos para la operación de **restauración de registro** son:
 
-## <a name="examples"></a>Ejemplos
+    | Valor | Descripción |
+    |--|--|
+    | 0 | Correcto |
+    | 1 | Error |
+
+### <a name="examples"></a>Ejemplos
 
 Para restaurar el archivo denominado NTRKBkUp. HIV en la clave HKLM\Software\Microsoft\ResKit y sobrescribir el contenido existente de la clave, escriba:
+
 ```
-REG RESTORE HKLM\Software\Microsoft\ResKit NTRKBkUp.hiv
+reg restore HKLM\Software\Microsoft\ResKit NTRKBkUp.hiv
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [REG Save (comando)](reg-save.md)

@@ -1,6 +1,6 @@
 ---
 title: rdpsign
-description: Obtenga información sobre cómo firmar digitalmente un archivo RDP.
+description: Artículo de referencia para el comando rdpsign, que permite firmar digitalmente un archivo Protocolo de escritorio remoto (. RDP).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4245ea533238d31457563f4d3521fdb09ff1f255
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2aefbc144820d0132bd4993d150dec955e22e01d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722628"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931976"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -22,51 +22,63 @@ ms.locfileid: "82722628"
 
 Permite firmar digitalmente un archivo Protocolo de escritorio remoto (. RDP).
 
-
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxis
+
 ```
 rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------|--------|
-|> \<hash de/SHA1|Especifica la huella digital, que es el hash Algoritmo hash seguro 1 (SHA1) del certificado de firma que se incluye en el almacén de certificados. Se usa en Windows Server 2012 R2 y versiones anteriores.|
-|> \<hash de/SHA256|Especifica la huella digital, que es el hash del algoritmo hash seguro 256 (SHA256) del certificado de firma que se incluye en el almacén de certificados. Reemplaza/SHA1 en Windows Server 2016 y versiones más recientes.|
-|/q|Modo silencioso. No hay ninguna salida cuando el comando se ejecuta correctamente y la salida mínima si se produce un error en el comando.|
-|/v|modo detallado. Muestra todas las advertencias, mensajes y estado.|
-|/l|Comprueba los resultados de la firma y la salida sin reemplazar realmente ninguno de los archivos de entrada.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+| Parámetro | Descripción |
+|--|--|
+| /sha1`<hash>` | Especifica la huella digital, que es el hash Algoritmo hash seguro 1 (SHA1) del certificado de firma que se incluye en el almacén de certificados. Se usa en Windows Server 2012 R2 y versiones anteriores. |
+| /sha256`<hash>` | Especifica la huella digital, que es el hash del algoritmo hash seguro 256 (SHA256) del certificado de firma que se incluye en el almacén de certificados. Reemplaza/SHA1 en Windows Server 2016 y versiones más recientes. |
+| /q | Modo silencioso. No hay ninguna salida cuando el comando se ejecuta correctamente y la salida mínima si se produce un error en el comando. |
+| /v | modo detallado. Muestra todas las advertencias, mensajes y estado. |
+| /l | Comprueba los resultados de la firma y la salida sin reemplazar realmente ninguno de los archivos de entrada. |
+| `<file_name.rdp>` | Nombre del archivo. RDP. Debe especificar el archivo. RDP (o archivos) para firmar con el nombre de archivo completo. No se aceptan caracteres comodín. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
--   La huella digital del certificado SHA1 o SHA256 debe representar un editor de archivos. RDP de confianza. Para obtener la huella digital del certificado, abra el complemento certificados, haga doble clic en el certificado que desea usar (ya sea en el almacén de certificados del equipo local o en el almacén de certificados personales), haga clic en la pestaña **detalles** y, a continuación, en la lista de **campos** , haga clic en **huella digital**.
+#### <a name="remarks"></a>Comentarios
+
+- La huella digital del certificado SHA1 o SHA256 debe representar un editor de archivos. RDP de confianza. Para obtener la huella digital del certificado, abra el complemento **certificados** , haga doble clic en el certificado que desea usar (ya sea en el almacén de certificados del equipo local o en el almacén de certificados personales), haga clic en la pestaña **detalles** y, a continuación, en la lista de **campos** , haga clic en **huella digital**.
 
     > [!NOTE]
-    > Al copiar la huella digital para usarla con la herramienta rdpsign. exe, debe quitar los espacios.
+    > Al copiar la huella digital para usarla con la herramienta rdpsign.exe, debe quitar los espacios.
 
--   Debe especificar el archivo. RDP (o archivos) para firmar con el nombre de archivo completo. No se aceptan caracteres comodín.
--   Los archivos de salida firmados sobrescribirán los archivos de entrada.
--   Si alguno de los archivos. RDP no se puede leer ni escribir en él, la herramienta continuará con el siguiente archivo si se especifican varios archivos.
+- Los archivos de salida firmados sobrescriben los archivos de entrada.
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
-- Para firmar un archivo. RDP denominado archivo1. RDP, navegue hasta la carpeta donde guardó el archivo. RDP y, a continuación, escriba lo siguiente:
-  ```
-  rdpsign /sha1 hash file1.rdp
-  ```
-  > [!NOTE]
-  > El valor *hash* representa la huella digital del certificado SHA1, sin espacios en blanco.
-- Para comprobar si la firma digital se realizará correctamente en un archivo. RDP sin firmar realmente el archivo, escriba lo siguiente:
-  ```
-  rdpsign /sha1 hash /l file1.rdp
-  ```
-- Para firmar varios archivos. RDP, separe los nombres de archivo mediante espacios. Por ejemplo, para firmar varios archivos. RDP denominados archivo1. RDP, archivo2. RDP y Archivo3. RDP, escriba lo siguiente:
-  ```
-  rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
-  ```
-  ## <a name="see-also"></a>Consulte también
-  - [Referencia de comandos de servicios de escritorio remoto de la clave](command-line-syntax-key.md)
-  de sintaxis de línea de comandos[(Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+- Si se especifican varios archivos y no se puede leer o escribir en alguno de los archivos. RDP, la herramienta continúa en el siguiente archivo.
+
+### <a name="examples"></a>Ejemplos
+
+Para firmar un archivo. RDP denominado *archivo1. RDP*, navegue hasta la carpeta donde guardó el archivo. RDP y, a continuación, escriba:
+
+```
+rdpsign /sha1 hash file1.rdp
+```
+
+> [!NOTE]
+> El valor *hash* representa la huella digital del certificado SHA1, sin espacios en blanco.
+
+Para comprobar si la firma digital se realizará correctamente en un archivo. RDP sin firmar realmente el archivo, escriba:
+
+```
+rdpsign /sha1 hash /l file1.rdp
+```
+
+Para firmar varios archivos. RDP denominados, *archivo1. RDP*, *archivo2. RDP*y *archivo3. RDP*, escriba (incluidos los espacios entre los nombres de archivo):
+
+```
+rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
+```
+
+## <a name="see-also"></a>Consulte también
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)

@@ -1,6 +1,6 @@
 ---
 title: dir
-description: Tema de referencia del comando dir, que muestra una lista de los archivos y subdirectorios de un directorio.
+description: Artículo de referencia para el comando dir, que muestra una lista de los archivos y subdirectorios de un directorio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6d5b99e905d70d81962f96a303e0bcaae0bd9e9
-ms.sourcegitcommit: 5e10afbd128befb7400a6bcf576f0239cf2ed47f
+ms.openlocfilehash: 2372476e153a6dc37b7d068201a40ba17c11fa54
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84302830"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930823"
 ---
 # <a name="dir"></a>dir
 
@@ -51,7 +51,7 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 | /r | Mostrar transmisiones de datos alternativas del archivo. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Para usar varios parámetros de *nombre* de archivo, separe cada nombre de archivo con un espacio, una coma o un punto y coma.
 
@@ -65,7 +65,7 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 
   - `dir read *.*`enumera todos los archivos del directorio actual que comienzan por Read con cualquier extensión.
 
-  El carácter comodín de asterisco siempre usa la asignación de nombres de archivo cortos, por lo que podría obtener resultados inesperados. Por ejemplo, el directorio siguiente contiene dos archivos (t. txt2 y T97. txt):
+  El carácter comodín de asterisco siempre usa la asignación de nombres de archivo cortos, por lo que podría obtener resultados inesperados. Por ejemplo, el directorio siguiente contiene dos archivos (t.txt2 y t97.txt):
 
   ```
   C:\test>dir /x
@@ -80,9 +80,9 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
   11/30/2004  01:16 PM 0 t97.txt
   ```
 
-  Podría esperar que la escritura `dir t97\*` devuelva el archivo T97. txt. Sin embargo, `dir t97\*` al escribir se devuelven ambos archivos, ya que el carácter comodín de asterisco coincide con el archivo t. txt2 con T97. txt mediante su mapa de nombre corto *T97B4 ~ 1. txt*. Del mismo modo, si escribe, se `del t97\*` eliminarán ambos archivos.
+  Podría esperar que la escritura `dir t97\*` devuelva el archivo t97.txt. Sin embargo, `dir t97\*` al escribir se devuelven ambos archivos, ya que el carácter comodín de asterisco coincide con el archivo t.txt2 para t97.txt mediante el uso de la asignación de nombre corto *T97B4 ~1.TXT*. Del mismo modo, si escribe, se `del t97\*` eliminarán ambos archivos.
 
-- Puede usar el signo de interrogación (?) como sustituto de un solo carácter en un nombre. Por ejemplo, `dir read???.txt` al escribir se enumeran los archivos del directorio actual con la extensión. txt que comienza por Read y van seguidos de hasta tres caracteres. Esto incluye Read. txt, Read1. txt, Read12. txt, Read123. txt y Readme1. txt, pero no Readme12. txt.
+- Puede usar el signo de interrogación (?) como sustituto de un solo carácter en un nombre. Por ejemplo, `dir read???.txt` al escribir se enumeran los archivos del directorio actual con la extensión. txt que comienza por Read y van seguidos de hasta tres caracteres. Esto incluye Read.txt, Read1.txt, Read12.txt, Read123.txt y Readme1.txt, pero no Readme12.txt.
 
 - Si usa **/a** con más de un valor en *los atributos*, este comando muestra los nombres solo de los archivos con todos los atributos especificados. Por ejemplo, si usa **/a** con **r** y **-h** como atributos (mediante `/a:r-h` o `/ar-h` ), este comando solo mostrará los nombres de los archivos de solo lectura que no están ocultos.
 
@@ -114,13 +114,13 @@ dir > prn
 
 Al especificar **PRN**, la lista de directorios se envía a la impresora conectada al puerto LPT1. Si la impresora está conectada a un puerto diferente, debe reemplazar **PRN** por el nombre del puerto correcto.
 
-También puede redirigir la salida del comando **dir** a un archivo reemplazando **PRN** por un nombre de archivo. También puede escribir una ruta de acceso. Por ejemplo, para dirigir la salida de **dir** al archivo dir. doc en el directorio de registros, escriba:
+También puede redirigir la salida del comando **dir** a un archivo reemplazando **PRN** por un nombre de archivo. También puede escribir una ruta de acceso. Por ejemplo, para dirigir la salida de **dir** al archivo dir.doc en el directorio de registros, escriba:
 
 ```
 dir > \records\dir.doc
 ```
 
-Si dir. doc no existe, **dir** lo crea, a menos que el directorio **Records** no exista. En ese caso, aparece el siguiente mensaje:
+Si dir.doc no existe, **dir** lo crea, a menos que el directorio de **registros** no exista. En ese caso, aparece el siguiente mensaje:
 
 ```
 File creation error

@@ -1,6 +1,6 @@
 ---
 title: Query
-description: Tema de referencia del comando de consulta, que muestra información sobre los procesos, sesiones y Escritorio remoto servidores host de sesión.
+description: Artículo de referencia para el comando de consulta, que muestra información sobre procesos, sesiones y Escritorio remoto servidores host de sesión.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba5785fb37821848f98383da5b972333dfc8a9cc
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a00ef08f72108643a045e5b48ec1c69155dd0fd8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471940"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931136"
 ---
 # <a name="query"></a>Query
 

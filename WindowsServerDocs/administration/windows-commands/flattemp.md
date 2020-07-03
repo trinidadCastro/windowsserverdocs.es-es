@@ -1,6 +1,6 @@
 ---
 title: flattemp
-description: Tema de referencia del comando flattemp, que habilita o deshabilita las carpetas temporales sin formato.
+description: Artículo de referencia del comando flattemp, que habilita o deshabilita las carpetas temporales sin formato.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a30a3f7eb6ec56a499864116debfbb6c09756d34
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1ec253182ce3071f03ce47e368c6fa87fe58fed0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437230"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932103"
 ---
 # <a name="flattemp"></a>flattemp
 
@@ -40,7 +40,7 @@ flattemp {/query | /enable | /disable}
 | /Disable | Deshabilita las carpetas temporales sin formato. Cada carpeta temporal de usuario residirá en una carpeta independiente (determinada por el identificador de sesión del usuario). |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Después de que cada usuario tenga una carpeta temporal única, use `flattemp /enable` para habilitar las carpetas temporales sin formato.
 

@@ -1,6 +1,6 @@
 ---
-title: FC
-description: Tema de referencia del comando FC, que compara dos archivos o conjuntos de archivos y muestra las diferencias entre ellos.
+title: fc
+description: Artículo de referencia para el comando FC, que compara dos archivos o conjuntos de archivos y muestra las diferencias entre ellos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 146ae51334f40284e15c2a4564de8dd04660bf25
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6d9e12853d2634f7e7bcbd976b6c301f8e02c0dc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437160"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930479"
 ---
-# <a name="fc"></a>FC
+# <a name="fc"></a>fc
 
 Compara dos archivos o conjuntos de archivos y muestra las diferencias entre ellos.
 
@@ -46,9 +46,9 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 | `[<drive2>:][<path2>]<filename2>` | Especifica la ubicación y el nombre del segundo archivo o conjunto de archivos que se van a comparar. se requiere *Nombredearchivo2* . |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
-- Este comando es implemeted por c:\WINDOWS\fc.exe. Puede usar este comando en PowerShell, pero asegúrese de deletrear el ejecutable completo (FC. exe) ya que ' FC ' también es un alias para Format-Custom.
+- Este comando se implemeted por c:\WINDOWS\fc.exe. Puede usar este comando en PowerShell, pero asegúrese de deletrear el ejecutable completo (fc.exe), ya que ' FC ' también es un alias para Format-Custom.
 
 - Cuando se usa **FC** para una comparación de ASCII, **FC** muestra las diferencias entre dos archivos en el siguiente orden:
 
@@ -86,7 +86,7 @@ Para realizar una comparación ASCII de dos archivos de texto, *Monthly. RPT* y 
 fc /a monthly.rpt sales.rpt
 ```
 
-Para realizar una comparación binaria de dos archivos por lotes, *relucros. bat* y *ganancias. bat*, escriba:
+Para realizar una comparación binaria de dos archivos por lotes, *profits.bat* y *earnings.bat*, escriba:
 
 ```
 fc /b profits.bat earnings.bat
@@ -102,20 +102,20 @@ Aparecen resultados similares a los siguientes:
 FC: earnings.bat longer than profits.bat
 ```
 
-Si los archivos relucros. bat y Refiles. bat son idénticos, **FC** muestra el siguiente mensaje:
+Si los archivos profits.bat y earnings.bat son idénticos, **FC** muestra el siguiente mensaje:
 
 ```
 Comparing files profits.bat and earnings.bat
 FC: no differences encountered
 ```
 
-Para comparar cada archivo. bat en el directorio actual con el archivo *New. bat*, escriba:
+Para comparar cada archivo. bat en el directorio actual con el archivo *new.bat*, escriba:
 
 ```
 fc *.bat new.bat
 ```
 
-Para comparar el archivo *New. bat* de la unidad C con el archivo *New. bat* de la unidad D, escriba:
+Para comparar el archivo *new.bat* de la unidad C con el archivo *new.bat* en la unidad D, escriba:
 
 ```
 fc c:new.bat d:*.bat

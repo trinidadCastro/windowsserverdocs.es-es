@@ -1,6 +1,6 @@
 ---
 title: dnscmd
-description: Tema de referencia para el comando DNSCmd, que es una interfaz de línea de comandos para administrar servidores DNS.
+description: Artículo de referencia para el comando DNSCmd, que es una interfaz de línea de comandos para administrar servidores DNS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c279513549ba149974933c33044fa861fa89a62
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 47be29e55c4626f5c05498074f10418730c6a6f3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437040"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931301"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -54,7 +54,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 | /tree | Especifica que todos los nodos secundarios también reciben la marca de tiempo. |
 | /f | Ejecuta el comando sin solicitar confirmación. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - El comando **ageallrecords** es para la compatibilidad con versiones anteriores de DNS y versiones anteriores de DNS en las que no se admitía la detección y eliminación de registros obsoletos. Agrega una marca de tiempo con la hora actual a los registros de recursos que no tienen una marca de tiempo y establece la hora actual en los registros de recursos que tienen una marca de tiempo.
 
@@ -355,7 +355,7 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 ## <a name="dnscmd-exportsettings-command"></a>comando DNSCmd/exportsettings
 
-Crea un archivo de texto que enumera los detalles de configuración de un servidor DNS. El archivo de texto se denomina *DnsSettings. txt*. Se encuentra en el `%systemroot%\system32\dns` directorio del servidor. Puede usar la información del archivo que **DNSCmd/exportsettings** crea para solucionar problemas de configuración o para asegurarse de que ha configurado varios servidores de forma idéntica.
+Crea un archivo de texto que enumera los detalles de configuración de un servidor DNS. El archivo de texto se denomina *DnsSettings.txt*. Se encuentra en el `%systemroot%\system32\dns` directorio del servidor. Puede usar la información del archivo que **DNSCmd/exportsettings** crea para solucionar problemas de configuración o para asegurarse de que ha configurado varios servidores de forma idéntica.
 
 ### <a name="syntax"></a>Sintaxis
 
@@ -520,7 +520,7 @@ dnscmd [<servername>] /resetforwarders <IPaddress> [,<IPaddress>]...][/timeout <
 | /noslave | Permite que el servidor DNS realice sus propias consultas iterativas si el reenviador no puede resolver una consulta. Esta es la configuración predeterminada. |
 | /f | Ejecuta el comando sin solicitar confirmación. Dado que los nodos pueden tener más de un registro de recursos, este comando requiere que sea muy específico sobre el tipo de registro de recursos que desea eliminar. Si especifica un tipo de datos y no especifica un tipo de datos de registro de recursos, se eliminarán todos los registros con ese tipo de datos específico para el nodo especificado. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - De forma predeterminada, un servidor DNS realiza consultas iterativas cuando no puede resolver una consulta.
 
@@ -576,7 +576,7 @@ dnscmd [<servername>] /startscavenging
 | ---------- | ----------- |
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - La finalización correcta de este comando inicia una eliminación de registros obsoletos inmediatamente. Si se produce un error en la eliminación de registros obsoletos, no aparece ningún mensaje de advertencia.
 
@@ -779,7 +779,7 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 | `<zonename>` | Especifica el nombre de la zona. |
 | `<setting>` | Puede especificar individualmente cualquier valor que devuelva el comando **zoneinfo** . Si no especifica un valor, se devolverá toda la configuración. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Para mostrar la configuración del registro en el nivel de servidor, use el comando **/info** .
 
@@ -808,7 +808,7 @@ dnscmd [<servername>] /zonepause <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a pausar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Para reanudar una zona y ponerla a disposición una vez que se haya pausado, use el comando **/zoneresume** .
 
@@ -858,7 +858,7 @@ dnscmd [<servername>] /zonerefresh <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a actualizar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - El comando **zonerefresh** fuerza una comprobación del número de versión en el registro de recursos de inicio de autoridad (SOA) del servidor maestro. Si el número de versión del servidor maestro es mayor que el número de versión del servidor secundario, se inicia una transferencia de zona que actualiza el servidor secundario. Si el número de versión es el mismo, no se produce ninguna transferencia de zona.
 
@@ -887,7 +887,7 @@ dnscmd [<servername>] /zonereload <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a recargar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Si la zona está integrada en Active Directory, se vuelve a cargar desde Active Directory Domain Services (AD DS).
 
@@ -918,7 +918,7 @@ dnscmd [<servername>] /zoneresetmasters <zonename> [/local] [<IPaddress> [<IPadd
 | /local | Establece una lista maestra local. Este parámetro se usa para las zonas integradas de Active Directory. |
 | `<IPaddress>` | Las direcciones IP de los servidores maestros de la zona secundaria. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Este valor se establece originalmente cuando se crea la zona secundaria. Use el comando **zoneresetmasters** en el servidor secundario. Este valor no tiene ningún efecto si se establece en el servidor DNS maestro.
 
@@ -948,7 +948,7 @@ dnscmd [<servername>] /zoneresetscavengeservers <zonename> [/local] [<IPaddress>
 | /local | Establece una lista maestra local. Este parámetro se usa para las zonas integradas de Active Directory. |
 | `<IPaddress>` | Muestra las direcciones IP de los servidores que pueden realizar la eliminación de registros obsoletos. Si se omite este parámetro, todos los servidores que hospedan esta zona podrán borrarlo. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - De forma predeterminada, todos los servidores que hospedan una zona pueden borrar dicha zona.
 
@@ -989,7 +989,7 @@ dnscmd [<servername>] /zoneresetsecondaries <zonename> {/noxfr | /nonsecure | /s
 | /notifylist | Especifica que las notificaciones de cambio solo se envían a la lista de servidores. Este comando debe ir seguido de una dirección IP o de las direcciones que usa el servidor maestro. |
 | `<notifyIPaddresses>` | Especifica la dirección o direcciones IP del servidor secundario o los servidores a los que se envían las notificaciones de cambios. Esta lista solo se usa con el parámetro **/notifylist** . |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Use el comando **zoneresetsecondaries** en el servidor maestro para especificar cómo responde a las solicitudes de transferencia de zona de los servidores secundarios.
 
@@ -1020,7 +1020,7 @@ dnscmd [<servername>] /zoneresettype <zonename> <zonetype> [/overwrite_mem | /ov
 | /overwrite_mem | Sobrescribe los datos DNS de los datos en AD DS. |
 | /overwrite_ds | Sobrescribe los datos existentes en AD DS. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Al establecer el tipo de zona como **/dsforwarder** , se crea una zona que realiza el reenvío condicional.
 
@@ -1048,7 +1048,7 @@ dnscmd [<servername>] /zoneresume <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a reanudar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Puede usar esta operación para reiniciar desde la operación **/zonepause** .
 
@@ -1075,7 +1075,7 @@ dnscmd [<servername>] /zoneupdatefromds <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a actualizar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Las zonas integradas de Active Directory realizan esta actualización de forma predeterminada cada cinco minutos. Para cambiar este parámetro, use el `dnscmd config dspollinginterval` comando.
 
@@ -1102,7 +1102,7 @@ dnscmd [<servername>] /zonewriteback <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a actualizar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Se trata de una operación de nivel de zona. Puede actualizar todas las zonas de un servidor DNS mediante la operación **/writebackfiles** .
 

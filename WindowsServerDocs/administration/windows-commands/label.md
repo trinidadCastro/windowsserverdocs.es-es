@@ -1,6 +1,6 @@
 ---
-title: label
-description: Tema de referencia del comando Label, que crea, cambia o elimina la etiqueta de volumen (es decir, el nombre) de un disco.
+title: etiqueta
+description: Artículo de referencia para el comando etiqueta, que crea, cambia o elimina la etiqueta de volumen (es decir, el nombre) de un disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2d09328f79215c497bcb0ea4549b1f6ac227994
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f8c13285c5dc5030e96d7d334bb65d15f04dff86
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817265"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931808"
 ---
-# <a name="label"></a>label
+# <a name="label"></a>etiqueta
 
 Crea, cambia o elimina la etiqueta de volumen (es decir, el nombre) de un disco. Si se usa sin parámetros, el comando **Label** cambia la etiqueta de volumen actual o elimina la etiqueta existente.
 
@@ -35,7 +35,7 @@ label [/mp] [<volume>] [<label>]
 | `<label>` | Especifica la etiqueta del volumen. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Windows muestra la etiqueta de volumen y el número de serie (si tiene uno) como parte de la lista de directorios.
 

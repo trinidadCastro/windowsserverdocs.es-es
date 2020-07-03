@@ -1,6 +1,6 @@
 ---
 title: ftype
-description: Tema de referencia del comando ftype, que muestra o modifica el tipo de archivo utilizado en las asociaciones de extensión de nombre de archivo.
+description: Artículo de referencia del comando ftype, que muestra o modifica el tipo de archivo utilizado en las asociaciones de extensión de nombre de archivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1387a9f8cb607d3563a381c757ea237104e6032
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0ab401c4dd4707cf05c69c1746368927c0bfaa83
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820215"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930462"
 ---
 # <a name="ftype"></a>ftype
 
 Muestra o modifica los tipos de archivo que se usan en las asociaciones de extensión de nombre de archivo. Si se utiliza sin un operador de asignación (=), este comando muestra la cadena de comandos Open actual para el tipo de archivo especificado. Si se usa sin parámetros, este comando muestra los tipos de archivo que tienen definidas cadenas de comandos abiertas.
 
 > [!NOTE]
-> Este comando solo se admite en cmd. exe y no está disponible en PowerShell.
+> Este comando solo se admite dentro de cmd.exe y no está disponible en PowerShell.
 > Aunque puede usar `cmd /c ftype` como solución alternativa.
 
 ## <a name="syntax"></a>Sintaxis
@@ -38,7 +38,7 @@ ftype [<filetype>[=[<opencommandstring>]]]
 | `<opencommandstring>` | Especifica la cadena de comandos abierta que se va a usar al abrir archivos del tipo de archivo especificado.|
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 En la tabla siguiente se describe cómo **ftype** sustituye las variables dentro de una cadena de comandos abierta:
 
@@ -73,7 +73,7 @@ Para eliminar la cadena de comandos Open para un tipo de archivo llamado *exampl
 ftype example=
 ```
 
-Para asociar la extensión de nombre de archivo. pl con el tipo de archivo PerlScript y habilitar el tipo de archivo PerlScript para ejecutar PERL. EXE, escriba los siguientes comandos:
+Para asociar la extensión de nombre de archivo. pl con el tipo de archivo PerlScript y habilitar el tipo de archivo PerlScript para que se ejecute PERL.EXE, escriba los siguientes comandos:
 
 ```
 assoc .pl=PerlScript

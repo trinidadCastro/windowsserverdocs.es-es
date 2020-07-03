@@ -1,6 +1,6 @@
 ---
-title: hash de FTP
-description: Tema de referencia del comando FTP hash, que alterna la impresión del signo de número (#) para cada bloque de datos transferido.
+title: ftp hash
+description: Artículo de referencia del comando FTP hash, que alterna la impresión de signo de número (#) para cada bloque de datos transferido.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aad92feb49e3ce8ab5bc0865c73983edf25e4a9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 38f53b06b9351c0c5d37c88bc29790767f55a23f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819697"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931290"
 ---
-# <a name="ftp-hash"></a>hash de FTP
+# <a name="ftp-hash"></a>ftp hash
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

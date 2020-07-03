@@ -1,6 +1,6 @@
 ---
 title: regsvr32
-description: Tema de referencia de * * * *-
+description: Artículo de referencia para el comando regsvr32, que registra los archivos. dll como componentes de comando en el registro.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: beadc9e9e614e2fe4cffad5dc263cfb1d4aecf67
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e7a1a9247b66e5eb1a23c1f5ef33fbcb98c53bd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722484"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930973"
 ---
 # <a name="regsvr32"></a>regsvr32
 
-
-
 Registra los archivos. dll como componentes de comando en el registro.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-regsvr32 [/u] [/s] [/n] [/i[:cmdline]] <DllName>
+regsvr32 [/u] [/s] [/n] [/i[:cmdline]] <Dllname>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/U|Anula el registro del servidor.|
-|/s|Ejecuta **regsvr32** sin mostrar mensajes.|
-|/n|Ejecuta **regsvr32** sin llamar a **DllRegisterServer**. (Requiere el parámetro **/i** ).|
-|/i:\<> cmdline|Pasa una cadena de línea de comandos (*cmdline*) opcional a **DllInstall**. Si usa este parámetro junto con el parámetro **/u** , llama a **DllUninstall**.|
-|\<DllName>|Nombre del archivo. dll que se va a registrar.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+| Parámetro | Descripción |
+|--|--|
+| /U | Anula el registro del servidor. |
+| /s | Impide que se muestren mensajes. |
+| /n | Evita la llamada a **DllRegisterServer**. Este parámetro requiere que también se use el parámetro **/i** . |
+| /i`<cmdline>` | Pasa una cadena de línea de comandos (*cmdline*) opcional a **DllInstall**. Si usa este parámetro con el parámetro **/u** , llama a **DllUninstall**. |
+| `<Dllname>` | Nombre del archivo. dll que se va a registrar. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
 
 Para registrar el archivo. dll para el esquema de Active Directory, escriba:
+
 ```
 regsvr32 schmmgmt.dll
 ```

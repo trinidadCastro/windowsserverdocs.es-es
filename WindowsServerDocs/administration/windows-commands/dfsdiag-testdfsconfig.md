@@ -1,6 +1,6 @@
 ---
 title: dfsdiag testdfsconfig
-description: Tema de referencia de dfsdiag testdfsconfig, que comprueba la configuración de un espacio de nombres Sistema de archivos distribuido (DFS).
+description: Artículo de referencia para dfsdiag testdfsconfig, que comprueba la configuración de un espacio de nombres Sistema de archivos distribuido (DFS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d9490f35c2d509c83d9008aa87627bd3c55a875
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 3387b661f454cff089f76f7c9c0d1abe59387010
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992992"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930645"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag testdfsconfig
 

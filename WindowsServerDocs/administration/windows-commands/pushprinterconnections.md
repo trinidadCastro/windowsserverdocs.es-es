@@ -1,6 +1,6 @@
 ---
 title: pushprinterconnections
-description: Tema de referencia del comando PushPrinterConnections, que lee la configuración de conexión de impresora implementada de directiva de grupo e implementa o quita conexiones de impresora según sea necesario.
+description: Artículo de referencia para el comando PushPrinterConnections, que lee la configuración de conexión de impresora implementada de directiva de grupo e implementa o quita conexiones de impresora según sea necesario.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 701089f2597b1d4e7bc05f7949dbc80dee3535bb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7b22fd5143a9477b40a515df44c9a0b5663dfd7a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472130"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931381"
 ---
 # <a name="pushprinterconnections"></a>pushprinterconnections
 

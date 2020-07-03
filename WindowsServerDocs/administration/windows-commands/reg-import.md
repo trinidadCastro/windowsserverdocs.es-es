@@ -1,6 +1,6 @@
 ---
-title: REG Import
-description: Tema de referencia de * * * *-
+title: reg import
+description: Artículo de referencia para el comando reg Import, que copia el contenido de un archivo que contiene subclaves del registro, entradas y valores exportados en el registro del equipo local.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,46 +9,43 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e7e033091752f97086fd27fcb94e62469f0cced
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 77c8284dd2341f37292afdfd810b2182686aad68
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722552"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931858"
 ---
-# <a name="reg-import"></a>REG Import
-
-
+# <a name="reg-import"></a>reg import
 
 Copia el contenido de un archivo que contiene las subclaves del registro exportadas, las entradas y los valores en el registro del equipo local.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-Reg import FileName
+reg import <filename>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<Nombre de archivo>|Especifica el nombre y la ruta de acceso del archivo que tiene el contenido que se va a copiar en el registro del equipo local. Este archivo debe crearse de antemano mediante **reg Export**.|
-|/?|Muestra ayuda para **reg Import** en el símbolo del sistema.|
+| Parámetro | Descripción |
+|--|--|
+| `<filename>` | Especifica el nombre y la ruta de acceso del archivo que tiene el contenido que se va a copiar en el registro del equipo local. Este archivo debe crearse de antemano mediante **reg Export**. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
-En la tabla siguiente se enumeran los valores devueltos para la operación de **importación de reg** .
+- Los valores devueltos para la operación de **importación de reg** son:
 
-|Value|Descripción|
-|-----|-----------|
-|0|Correcto|
-|1|Error|
+    | Valor | Descripción |
+    |--|--|
+    | 0 | Correcto |
+    | 1 | Error |
 
-## <a name="examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
 
 Para importar las entradas del registro desde el archivo llamado CopiaAp. reg, escriba:
+
 ```
 reg import AppBkUp.reg
 ```
@@ -56,3 +53,5 @@ reg import AppBkUp.reg
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [REG Export (comando)](reg-export.md)

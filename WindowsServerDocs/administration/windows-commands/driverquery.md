@@ -1,6 +1,6 @@
 ---
 title: driverquery
-description: Tema de referencia del comando DRIVERQUERY, que permite a un administrador mostrar una lista de los controladores de dispositivos instalados y sus propiedades.
+description: Artículo de referencia para el comando DRIVERQUERY, que permite a un administrador mostrar una lista de los controladores de dispositivos instalados y sus propiedades.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4754cba8cf4cb3a5f01b0aeb0095f727a072a5c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8ad0a028217e07d8c15b59dc96e31c8f236dd743
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436940"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931458"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -30,7 +30,7 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 
 | Parámetro | Descripción |
 | --------- |------------ |
-| modificado`<system>` | Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el equipo local. |
+| modificado`<system>` | Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. La opción predeterminada es el equipo local. |
 | /u`[<domain>]<username>` | Ejecuta el comando con las credenciales de la cuenta de usuario de acuerdo con lo especificado por el *usuario* o *dominio\usuario*. De forma predeterminada, */s* usa las credenciales del usuario que ha iniciado sesión actualmente en el equipo que emite el comando. **/u** no se puede usar a menos que se especifique **/s** . |
 | /p`<password>` | Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . **/p** no se puede usar a menos que se especifique **/u** . |
 | /FO Table | Aplica al resultado un formato de tabla. Este es el valor predeterminado. |

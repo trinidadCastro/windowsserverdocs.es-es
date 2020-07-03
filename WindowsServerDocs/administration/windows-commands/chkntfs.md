@@ -1,6 +1,6 @@
 ---
 title: chkntfs
-description: Tema de referencia del comando chkntfs, que muestra o modifica la comprobación automática del disco cuando se inicia el equipo.
+description: Artículo de referencia del comando chkntfs, que muestra o modifica la comprobación automática del disco cuando se inicia el equipo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b8e21a7b43538b6296666d813f2b33daa8045f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4d2a19a479ec3b00bda83ecded91f5fbb7941ca0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82713657"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930711"
 ---
 # <a name="chkntfs"></a>chkntfs
 
@@ -39,7 +39,7 @@ chkntfs [/c <volume> [...]]
 | --------- | ----------- |
 | `<volume>` [...] | Especifica uno o más volúmenes que se comprobarán cuando se inicie el equipo. Los volúmenes válidos incluyen Letras de unidad (seguidas de dos puntos), puntos de montaje o nombres de volumen. |
 | /d | Restaura todos los valores predeterminados de **chkntfs** , excepto el tiempo de cuenta atrás para la comprobación automática de archivos. De forma predeterminada, todos los volúmenes se comprueban cuando se inicia el equipo y **CHKDSK** se ejecuta en los que están sucios. |
-| /t [`:<time>`] | Cambia el tiempo de la cuenta de inicio de la inicialización de Autochk. exe a la cantidad de tiempo especificada en segundos. Si no especifica una hora, **/t** muestra el tiempo de cuenta atrás actual. |
+| /t [ `:<time>` ] | Cambia el tiempo de cuenta regresiva de inicio de Autochk.exe por la cantidad de tiempo especificada en segundos. Si no especifica una hora, **/t** muestra el tiempo de cuenta atrás actual. |
 | /x `<volume>` [...] | Especifica uno o más volúmenes que se excluirán de la comprobación cuando se inicie el equipo, incluso si el volumen está marcado como que requiere **CHKDSK**. |
 | /c `<volume>` [...] | Programa uno o más volúmenes para que se comprueben cuando se inicie el equipo y ejecute **CHKDSK** en los que han cambiado. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
@@ -55,20 +55,20 @@ chkntfs c:
 > [!NOTE]
 > Si la comprobación automática de archivos está programada para ejecutarse, se mostrará una salida adicional, que indica si la unidad está dañada o se ha programado manualmente para que se Compruebe la próxima vez que se inicie el equipo.
 
-Para mostrar el tiempo de la cuenta de inicio de la inicialización de Autochk. exe, escriba:
+Para mostrar el tiempo de cuenta regresiva de inicio de Autochk.exe, escriba:
 
 ```
 chkntfs /t
 ```
 
-Para cambiar el tiempo de la cuenta de inicio de Autochk. exe a 30 segundos, escriba:
+Para cambiar el tiempo de inactividad de inicio de Autochk.exe a 30 segundos, escriba:
 
 ```
 chkntfs /t:30
 ```
 
 > [!NOTE]
-> Aunque puede establecer el tiempo de inicio de la cuenta de inicio de Autochk. exe en cero, esto impedirá que cancele una comprobación de archivo automática que puede tardar mucho tiempo.
+> Aunque puede establecer el tiempo de inactividad de la inicialización de Autochk.exe en cero, esto impedirá que cancele una comprobación de archivos automática que puede tardar mucho tiempo.
 
 Para excluir la comprobación de varios volúmenes, debe enumerarlos en un solo comando. Por ejemplo, para excluir los volúmenes D e E, escriba:
 

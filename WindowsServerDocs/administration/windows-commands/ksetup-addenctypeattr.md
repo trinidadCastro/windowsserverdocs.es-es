@@ -1,6 +1,6 @@
 ---
 title: ksetup addenctypeattr
-description: Tema de referencia del comando ksetup addenctypeattr, que agrega el atributo de tipo de cifrado a la lista de posibles tipos para el dominio.
+description: Artículo de referencia para el comando ksetup addenctypeattr, que agrega el atributo de tipo de cifrado a la lista de posibles tipos para el dominio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7162e35c88cea0cfa2828e12cc4af59eaed66c9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e52a3fc7303bcd3db3f289ff8155bcb13b145b04
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818155"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931405"
 ---
 # <a name="ksetup-addenctypeattr"></a>ksetup addenctypeattr
 
@@ -33,7 +33,7 @@ ksetup /addenctypeattr <domainname> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 | `<domainname>` | Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso. |
 | tipo de cifrado | Debe ser uno de los siguientes tipos de cifrado admitidos:<ul><li>DES-CBC-CRC</li><li>DES-CBC-MD5</li><li>RC4-HMAC-MD5</li><li>AES128-CTS-HMAC-SHA1-96</li><li>AES256-CTS-HMAC-SHA1-96</li></ul> |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Puede establecer o agregar varios tipos de cifrado separando los tipos de cifrado en el comando con un espacio. Sin embargo, solo puede hacerlo para un dominio a la vez.
 

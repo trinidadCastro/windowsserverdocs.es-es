@@ -1,6 +1,6 @@
 ---
-title: finalizar restauración
-description: Tema de referencia del comando end restore, que finaliza una sesión de restauración y emite un evento **Postrestore** para escritores implicados.
+title: end restore
+description: Artículo de referencia del comando end restore, que finaliza una sesión de restauración y emite un evento **Postrestore** para escritores implicados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fc76727a4c668c7440fefe9dfc3ceaa08ee7cd4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 9bf5cb35617a64e07d830fd322b985c89663d2f4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436900"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930817"
 ---
-# <a name="end-restore"></a>finalizar restauración
+# <a name="end-restore"></a>end restore
 
 Finaliza una sesión de restauración y emite un evento **Postrestore** a escritores implicados.
 

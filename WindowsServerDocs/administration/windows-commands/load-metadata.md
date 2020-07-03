@@ -1,6 +1,6 @@
 ---
-title: cargar metadatos
-description: Tema de referencia para el comando cargar metadatos, que carga un archivo Metadata. cab antes de importar una instantánea transportable o cargar los metadatos del escritor en el caso de una restauración.
+title: load metadata
+description: Artículo de referencia para el comando cargar metadatos, que carga un archivo Metadata. cab antes de importar una instantánea transportable o carga los metadatos del escritor en el caso de una restauración.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7dc967476412261e7afc228088566f74ec4208c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 01e782d0214da70f831b81120aff3c5097895036
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820195"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931680"
 ---
 # <a name="load-metadata"></a>Cargar metadatos
 
@@ -31,9 +31,9 @@ load metadata [<drive>:][<path>]<metadata.cab>
 | Parámetro | Descripción |
 | --------- | ----------- |
 | `[<drive>:][<path>]` | Especifica la ubicación del archivo de metadatos. |
-| Metadata. cab | Especifica el archivo Metadata. cab que se va a cargar. |
+| metadata.cab | Especifica el archivo Metadata. cab que se va a cargar. |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Puede usar el comando **importar** para importar una instantánea transportable en función de los metadatos especificados por los **metadatos de carga**.
 
@@ -41,7 +41,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 
 ## <a name="examples"></a>Ejemplos
 
-Para cargar un archivo de metadatos denominado Metafile. cab desde la ubicación predeterminada, escriba:
+Para cargar un archivo de metadatos llamado metafile.cab desde la ubicación predeterminada, escriba:
 
 ```
 load metadata metafile.cab

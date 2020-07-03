@@ -1,6 +1,6 @@
 ---
 title: Manage-BDE AUTOLOCK
-description: Tema de referencia del comando Manage-BDE AUTOLOCK, que administra el desbloqueo automático de las unidades de datos protegidas por BitLocker.
+description: Artículo de referencia para el comando Manage-BDE AUTOLOCK, que administra el desbloqueo automático de unidades de datos protegidas por BitLocker.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a214ba868e04a81e6282dc919c93ab626ef26725
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: a81d3e864a33efd5a6a1c81a5a193338d2c25bfa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223004"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931637"
 ---
 # <a name="manage-bde-autounlock"></a>Manage-BDE AUTOLOCK
 
@@ -34,7 +34,7 @@ manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <drive> [-computername
 | -disable | Deshabilita el desbloqueo automático para una unidad de datos. |
 | -clearallkeys | Quita todas las claves externas almacenadas en la unidad del sistema operativo. |
 | `<drive>` | Representa la letra de una unidad seguida del signo de dos puntos. |
-| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| -COMPUTERNAME | Especifica que se utilizará manage-bde.exe para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
 | `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
 | -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
 | -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |

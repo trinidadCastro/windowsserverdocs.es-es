@@ -1,6 +1,6 @@
 ---
 title: nslookup set srchlist
-description: Tema de referencia del comando Nslookup Set srchlist, que cambia el nombre de dominio del sistema de nombres de dominio (DNS) y la lista de búsqueda predeterminados.
+description: Artículo de referencia del comando Nslookup Set srchlist, que cambia el nombre de dominio del sistema de nombres de dominio (DNS) y la lista de búsqueda predeterminados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed9bbce1910324c4cae5da4228a6d3d1f269d050
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 5d43107ed2c777349a8cac1a0411c035371bc0f7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721405"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930411"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 

@@ -1,6 +1,6 @@
 ---
 title: Inicializar-servidor
-description: Tema de referencia sobre Initialize-Server, que configura un servidor de servicios de implementación de Windows para su uso inicial después de haber instalado el rol de servidor.
+description: Artículo de referencia sobre Initialize-Server, que configura un servidor de servicios de implementación de Windows para su uso inicial después de haber instalado el rol de servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54180923a077c0b423e73588bcbd1c03b0154d08
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 22c93a07e4c2785e8cda497e9698b2031c764a42
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719721"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932159"
 ---
 # <a name="initialize-server"></a>Inicializar-servidor
 
@@ -41,11 +41,11 @@ Para inicializar el servidor y establecer la carpeta compartida remoteInstall en
 wdsutil /verbose /Progress /Initialize-Server /Server:MyWDSServer /remInst:C:\remoteInstall
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos[mediante el comando](using-the-disable-server-command.md)
-Disable
--Server mediante el[comando Enable-Server](using-the-enable-server-command.md)[mediante el comando Get-Server Command](using-the-get-server-command.md)
-[Subcommand: set-Server](subcommand-set-server.md)
-Subcommand[: Start-](subcommand-start-server.md)
-Server[Subcommand: Stop-Server](subcommand-stop-server.md)
-[la opción UnInitialize-Server](the-uninitialize-server-option.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-disable-server-command.md) 
+ Disable-Server [Usar el comando](using-the-enable-server-command.md) 
+ enable-Server [Usar el comando](using-the-get-server-command.md) 
+ Get-Server [Subcomando: set-Server](subcommand-set-server.md) 
+ [Subcomando: Start-Server](subcommand-start-server.md) 
+ [Subcomando: Stop-Server](subcommand-stop-server.md) 
+ [La opción UnInitialize-Server](the-uninitialize-server-option.md)

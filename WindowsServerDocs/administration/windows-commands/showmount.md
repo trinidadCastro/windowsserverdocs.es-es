@@ -1,6 +1,6 @@
 ---
 title: showmount
-description: Tema de referencia de showmount, que muestra los directorios montados.
+description: Artículo de referencia para showmount, que muestra los directorios montados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,32 +9,32 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60057c154e7a646d14a0e57d5cf4cd72d0f90876
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 131ecf9dea650dd127e4dff05838245ceece1ead
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721814"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931599"
 ---
 # <a name="showmount"></a>showmount
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Puede usar **showmount** para mostrar los directorios montados.  
-  
-## <a name="syntax"></a>Sintaxis  
+Puede usar **showmount** para mostrar los directorios montados.
+
+## <a name="syntax"></a>Sintaxis
 ```
-showmount {-e|-a|-d} <Server>  
+showmount {-e|-a|-d} <Server>
 ```
 
-## <a name="description"></a>Descripción  
-La **showmount** utilidad de\-línea de comandos showmount muestra información acerca de los sistemas de archivos montados exportados por servidor para NFS en el equipo especificado por *servidor*. Si no se proporciona el *servidor* , **showmount** muestra información sobre el equipo en el que se ejecuta el comando **showmount** .  
-  
-Debe proporcionar una de las siguientes opciones:  
-  
-- e-muestra todos los sistemas de archivos exportados en el servidor. ** \-**  
-- a: muestra todos los clientes NFS \(\) de Network File System y los directorios en el servidor que se han montado. ** \-**  
-- d-muestra todos los directorios del servidor que actualmente están montados por clientes NFS. ** \-**  
-  
-## <a name="see-also"></a>Consulte también  
-[Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)  
+## <a name="description"></a>Descripción
+La **showmount** utilidad de \- línea de comandos showmount muestra información acerca de los sistemas de archivos montados exportados por servidor para NFS en el equipo especificado por *servidor*. Si no se proporciona el *servidor* , **showmount** muestra información sobre el equipo en el que se ejecuta el comando **showmount** .
+
+Debe proporcionar una de las siguientes opciones:
+
+- ** \- e** -muestra todos los sistemas de archivos exportados en el servidor.
+- ** \- a** : muestra todos los clientes NFS de Network File System \( \) y los directorios en el servidor que se han montado.
+- ** \- d** -muestra todos los directorios del servidor que actualmente están montados por clientes NFS.
+
+## <a name="see-also"></a>Consulte también
+[Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)

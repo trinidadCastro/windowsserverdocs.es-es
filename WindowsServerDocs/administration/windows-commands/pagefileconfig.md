@@ -1,6 +1,6 @@
 ---
 title: pagefileconfig
-description: Tema de referencia para el comando pagefileconfig. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
+description: Artículo de referencia para el comando pagefileconfig. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 562421db96ebb62cc75a1ff04ffe532bc8c63652
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 558ec082dbbf20d9ba58b6256d4ebf49f9faaef4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472581"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932037"
 ---
 # <a name="pagefileconfig"></a>pagefileconfig
 

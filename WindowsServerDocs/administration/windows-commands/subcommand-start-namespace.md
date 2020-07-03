@@ -1,6 +1,6 @@
 ---
 title: Subcomando Start-namespace
-description: Tema de referencia para el subcomando Start-namespace, que inicia un espacio de nombres de difusión programada.
+description: Artículo de referencia para el subcomando Start-namespace, que inicia un espacio de nombres de difusión programada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1562fcb6c61533fcc9994e9011bf7d61154c06f7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d2d9bcd58a0a99d98d8679b84c223cfa42a67778
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721657"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931525"
 ---
 # <a name="subcommand-start-namespace"></a>Subcomando: Start-namespace
 
@@ -30,7 +30,7 @@ wdsutil /start-Namespace /Namespace:<Namespace name[/Server:<Server name>]
 
 |          Parámetro          |                                                                                                                                                                                             Descripción                                                                                                                                                                                             |
 |-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /Namespace: <nombre de espacio de nombres| Especifica el nombre del espacio de nombres. Tenga en cuenta que este no es el nombre descriptivo y debe ser único.<p>-   **Servidor de implementación**: la sintaxis del nombre de espacio de nombres es<Image group>/<Image name>/<Index>/Namspace: WDS:. Por ejemplo: **WDS: ImageGroup1/install. Wim/1**<br />-   **Servidor de transporte**: este nombre debe coincidir con el nombre asignado al espacio de nombres cuando se creó en el servidor. |
+| /Namespace: <nombre de espacio de nombres| Especifica el nombre del espacio de nombres. Tenga en cuenta que este no es el nombre descriptivo y debe ser único.<p>-   **Servidor de implementación**: la sintaxis del nombre de espacio de nombres es/NAMSPACE: WDS: <Image group> / <Image name> / <Index> . Por ejemplo: **WDS: ImageGroup1/install. Wim/1**<br />-   **Servidor de transporte**: este nombre debe coincidir con el nombre asignado al espacio de nombres cuando se creó en el servidor. |
 |   [/Server:<Server name>]   |                                                                                                           Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.                                                                                                           |
 
 ## <a name="examples"></a>Ejemplos
@@ -40,7 +40,7 @@ wdsutil /start-Namespace /Namespace:Custom Auto 1
 wdsutil /start-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos mediante el
-[comando Get-AllNamespaces](using-the-get-allnamespaces-command.md)con[el comando New-namespace](using-the-new-namespace-command.md)
-[mediante el comando Remove-namespace](using-the-remove-namespace-command.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-get-allnamespaces-command.md) 
+ Get-AllNamespaces [Usar el comando](using-the-new-namespace-command.md) 
+ New-namespace [Usar el comando Remove-namespace](using-the-remove-namespace-command.md)

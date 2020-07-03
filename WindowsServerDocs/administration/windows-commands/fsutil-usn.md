@@ -1,6 +1,6 @@
 ---
 title: fsutil usn
-description: Tema de referencia del comando fsutil USN, que administra el diario de cambios del número de secuencias actualizadas (USN).
+description: Artículo de referencia para el comando fsutil USN, que administra el diario de cambios del número de secuencias actualizadas (USN).
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: faad34aa-4ba1-4129-bc1f-08088399e2fa
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: d21de9ecb1d63116ee2d186965f7f47fc3a7235e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: b3f71588c7221f0ba8e3659d9a1a1dd133971ce9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437120"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930469"
 ---
 # <a name="fsutil-usn"></a>fsutil usn
 
@@ -60,7 +60,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 | maxver =`<number>` | Versión principal máxima de USN_RECORD que se va a devolver. Valor predeterminado = 4. |
 | startusn =`<USN number>` | USN del que se va a empezar a leer el diario USN. Valor predeterminado = 0. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Los programas pueden consultar el diario de cambios USN para determinar todas las modificaciones realizadas en un conjunto de archivos. El diario de cambios USN es mucho más eficaz que comprobar las marcas de tiempo o registrar las notificaciones de archivo. El diario de cambios USN está habilitado y utilizado por el servicio de indización, el servicio de replicación de archivos (FRS), los servicios de instalación remota (RIS) y el almacenamiento remoto.
 

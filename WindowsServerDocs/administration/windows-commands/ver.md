@@ -1,6 +1,6 @@
 ---
 title: ver
-description: Tema de referencia de ver, que muestra el número de versión del sistema operativo.
+description: Artículo de referencia para ver, que muestra el número de versión del sistema operativo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7050dddda6cc27c50980f2e44f40e1f682c1d375
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bd9b40fa526c2917b6cdcbc8d54da510eb40bc53
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720313"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931347"
 ---
 # <a name="ver"></a>ver
 
@@ -22,7 +22,7 @@ ms.locfileid: "82720313"
 
 Muestra el número de versión del sistema operativo.
 
-Este comando se admite en el símbolo del sistema de Windows (cmd. exe), pero no en PowerShell.
+Este comando se admite en el símbolo del sistema de Windows (Cmd.exe), pero no en PowerShell.
 
 
 
@@ -40,7 +40,7 @@ ver
 
 ## <a name="examples"></a>Ejemplos
 
-Para obtener el número de versión del sistema operativo desde el shell de comandos (cmd. exe), escriba:
+Para obtener el número de versión del sistema operativo desde el shell de comandos (cmd.exe), escriba:
 
 ```
 ver

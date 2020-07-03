@@ -1,6 +1,6 @@
 ---
 title: edición
-description: Tema de referencia del comando Edit, que inicia el editor de MS-DOS, para que pueda crear y cambiar archivos de texto ASCII.
+description: Artículo de referencia para el comando Editar, que inicia el editor de MS-DOS, para que pueda crear y cambiar archivos de texto ASCII.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a9f6c78889f466015d60149c27a87dcefe840133
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: a28af13c5f627010dce1321027b8a246560829f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436920"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930491"
 ---
 # <a name="edit"></a>edición
 
@@ -38,7 +38,7 @@ edit [/b] [/h] [/r] [/s] [/<nnn>] [[<drive>:][<path>]<filename> [<filename2> [..
 | `<nnn>` | Carga los archivos binarios, ajustando las líneas a *nnn* caracteres de ancho. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Para obtener ayuda adicional, abra el editor de MS-DOS y presione la tecla F1.
 
@@ -52,7 +52,7 @@ Para abrir el editor de MS-DOS, escriba:
 edit
 ```
 
-Para crear y editar un archivo denominado *newtextfile. txt* en el directorio actual, escriba:
+Para crear y editar un archivo llamado *newtextfile.txt* en el directorio actual, escriba:
 
 ```
 edit newtextfile.txt

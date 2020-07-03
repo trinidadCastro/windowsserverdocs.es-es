@@ -1,6 +1,6 @@
 ---
 title: prnqctl
-description: Tema de referencia del comando prnqctl, que imprime una página de prueba, y pausa o reanuda una impresora.
+description: Artículo de referencia para el comando prnqctl, que imprime una página de prueba, y pausa o reanuda una impresora.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b8a551e34754771a69af1b41e5da3fd726df1185
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7bcc6a36fb2387a82e25afd41be2d22615565bfe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472200"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931157"
 ---
 # <a name="prnqctl"></a>prnqctl
 
@@ -37,7 +37,7 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <Servername>] [-p <Printername>] [-
 | -E | Imprime una página de prueba en la impresora especificada por el parámetro **-p** . |
 | -X | Cancela todos los trabajos de impresión en la impresora especificada por el parámetro **-p** . |
 | -s`<Servername>` | Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local. |
-| -p`<Printername>` | Necesario. Especifica el nombre de la impresora que desea administrar. |
+| -p`<Printername>` | Obligatorio. Especifica el nombre de la impresora que desea administrar. |
 | -u `<Username>` -w`<password>` | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 

@@ -1,6 +1,6 @@
 ---
 title: reemplazar-imagen
-description: Tema de referencia de Replace-Image, que reemplaza una imagen existente por una nueva versión de la imagen.
+description: Artículo de referencia de Replace-Image, que reemplaza a una imagen existente por una nueva versión de la imagen.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9dad35e54f064e02b863059ae6da9378403ee4f9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b98bf14b944ce75a21efbbb38a211e60ca952d39
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720318"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931353"
 ---
 # <a name="using-the-replace-image-command"></a>Usar el comando Replace-Image
 
@@ -53,25 +53,25 @@ soporte<Image name>|Especifica el nombre de la imagen que se va a reemplazar.|
 mediatype: {boot &#124; instalar}|Especifica el tipo de imagen que se va a reemplazar.|
 |/Architecture: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen que se va a reemplazar. Dado que es posible tener el mismo nombre de imagen para diferentes imágenes de arranque en distintas arquitecturas, la especificación de la arquitectura garantiza que se reemplace la imagen correcta.|
 |[/Filename:<File name>]|Si la imagen no se puede identificar de forma única por nombre, debe usar esta opción para especificar el nombre de archivo.|
-|/replacementImage|Especifica los valores para la imagen de reemplazo. Puede establecer esta configuración con las siguientes opciones:<p>-mediaFile: <file path> -especifica el nombre y la ubicación (ruta de acceso completa) del nuevo archivo. Wim.<br />-[/SourceImage: <image name>]-especifica la imagen que se va a usar si el archivo. wim contiene varias imágenes. Esta opción solo se aplica a las imágenes de instalación.<br />-[/Name:<Image name>] establece el nombre para mostrar de la imagen.<br />-[/Description:<Image description>]-establece la descripción de la imagen.|
+|/replacementImage|Especifica los valores para la imagen de reemplazo. Puede establecer esta configuración con las siguientes opciones:<p>-mediaFile: <file path> -especifica el nombre y la ubicación (ruta de acceso completa) del nuevo archivo. Wim.<br />-[/SourceImage: <image name> ]-especifica la imagen que se va a usar si el archivo. wim contiene varias imágenes. Esta opción solo se aplica a las imágenes de instalación.<br />-[/Name: <Image name> ] establece el nombre para mostrar de la imagen.<br />-[/Description: <Image description> ]-establece la descripción de la imagen.|
 ## <a name="examples"></a>Ejemplos
 Para reemplazar una imagen de arranque, escriba uno de los siguientes:
 ```
 wdsutil /replace-Imagmedia:WinPE Boot Imagemediatype:Boot /Architecture:x86 /replacementImagmediaFile:C:\MyFolder\Boot.wim
-wdsutil /verbose /Progress /replace-Imagmedia:WinPE Boot Image /Server:MyWDSServemediatype:Boot /Architecture:x64 /Filename:boot.wim 
+wdsutil /verbose /Progress /replace-Imagmedia:WinPE Boot Image /Server:MyWDSServemediatype:Boot /Architecture:x64 /Filename:boot.wim
 /replacementImagmediaFile:\\MyServer\Share\Boot.wim /Name:My WinPE Image /Description:WinPE Image with drivers
 ```
 Para reemplazar una imagen de instalación, escriba una de las siguientes opciones:
 ```
 wdsutil /replace-Imagmedia:Windows Vista Homemediatype:Install /replacementImagmediaFile:C:\MyFolder\Install.wim
-wdsutil /verbose /Progress /replace-Imagmedia:Windows Vista Pro /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1 
+wdsutil /verbose /Progress /replace-Imagmedia:Windows Vista Pro /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1
 /Filename:Install.wim /replacementImagmediaFile:\\MyServer\Share \Install.wim /SourceImage:Windows Vista Ultimate /Name:Windows Vista Desktop /Description:Windows Vista Ultimate with standard business applications.
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos con el comando[Add-image](using-the-add-image-command.md)
-[mediante](using-the-copy-image-command.md)
-el comando copy-Image mediante el comando[Export-Image](using-the-export-image-command.md)
-[mediante el comando Get-Image](using-the-get-image-command.md)
-mediante el comando de
-[comando Replace-Image](using-the-replace-image-command.md)[: set-](subcommand-set-image.md) Image
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-add-image-command.md) 
+ Add-image [Usar el comando](using-the-copy-image-command.md) 
+ Copy-Image [Usar el comando](using-the-export-image-command.md) 
+ Export-Image [Usar el comando](using-the-get-image-command.md) 
+ Get-Image [Usar el comando](using-the-replace-image-command.md) 
+ Replace-Image [Subcomando: set-Image](subcommand-set-image.md)

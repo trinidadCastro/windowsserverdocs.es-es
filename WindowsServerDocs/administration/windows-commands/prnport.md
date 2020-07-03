@@ -1,6 +1,6 @@
 ---
 title: prnport
-description: Tema de referencia del comando prnport, que crea, elimina y enumera los puertos de impresora TCP/IP estándar, además de mostrar y cambiar la configuración del puerto.
+description: Artículo de referencia del comando prnport, que crea, elimina y enumera los puertos de impresora TCP/IP estándar, además de mostrar y cambiar la configuración del puerto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c209c06c2253e924e5a71753fec0b8ab0ee158d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4b373547050d3d3dfb1d64160959c8dbb9e6f5c5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472210"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931167"
 ---
 # <a name="prnport"></a>prnport
 

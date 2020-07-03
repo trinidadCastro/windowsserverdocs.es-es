@@ -1,6 +1,6 @@
 ---
 title: query user
-description: Tema de referencia del comando QUERY User, que muestra información acerca de las sesiones de usuario en un servidor host de sesión Escritorio remoto.
+description: Artículo de referencia para el comando QUERY User, que muestra información acerca de las sesiones de usuario en un servidor host de sesión Escritorio remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7885df2287134cca9935926abd926a077ac8fdb3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8c186e0945612bf7c84637f6b039dcdbac3d68f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471950"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930221"
 ---
 # <a name="query-user"></a>query user
 

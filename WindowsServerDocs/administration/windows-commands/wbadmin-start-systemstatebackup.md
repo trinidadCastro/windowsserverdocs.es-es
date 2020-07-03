@@ -1,6 +1,6 @@
 ---
-title: Inicio de systemstatebackup de Wbadmin
-description: Tema de referencia de Wbadmin Start systemstatebackup, que crea una copia de seguridad del estado del sistema del equipo local y la almacena en la ubicación especificada.
+title: wbadmin start systemstatebackup
+description: Artículo de referencia de Wbadmin Start systemstatebackup, que crea una copia de seguridad del estado del sistema del equipo local y la almacena en la ubicación especificada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5de3531f19312b9d0d7969a63639db6388487bc2
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1e92c508d2c9ca9ae759d81292ec3d511144dbd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821185"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930912"
 ---
-# <a name="wbadmin-start-systemstatebackup"></a>Inicio de systemstatebackup de Wbadmin
+# <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
 
 
@@ -42,7 +42,7 @@ wbadmin start systemstatebackup
 | -backupTarget | Especifica la ubicación en la que desea almacenar la copia de seguridad. La ubicación de almacenamiento requiere una letra de unidad o un volumen basado en GUID con el formato: \\ \\ ? \Volume{*GUID*}.</br>Una copia de seguridad de estado del sistema en una carpeta de red compartida no se admite en un equipo que ejecute Windows Server 2008. Si el servidor ejecuta Windows Server 2008 R2 o una versión posterior, puede usar el comando **-backupTarget: \\ \\ servername\sharedFolder \\ ** para almacenar copias de seguridad del estado del sistema. |
 |    -quiet     |                                                                                                                                                                                                   Ejecuta el subcomando sin preguntar al usuario.                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Para obtener información acerca de cómo guardar una copia de seguridad de estado del sistema en un volumen que, a su vez, contiene archivos de estado del sistema, consulte el artículo 944530 en Microsoft Knowledge base ( [https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439) ).
 

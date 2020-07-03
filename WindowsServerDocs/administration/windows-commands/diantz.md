@@ -1,6 +1,6 @@
 ---
 title: diantz
-description: Tema de referencia para el comando diantz, que empaqueta los archivos existentes en un archivo. cab.
+description: Artículo de referencia para el comando diantz, que empaqueta los archivos existentes en un archivo. cab.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e45c0c4f71bc7faf6d5de0fa198ac872f6ff2597
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 61a10c2fb67225de1060d64db6fda4e4ff703a7b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992504"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930600"
 ---
 # <a name="diantz"></a>diantz
 
@@ -38,7 +38,7 @@ diantz [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 | /f `<directives_file>` | Un archivo con directivas **diantz** (se puede repetir). |
 | /d var =`<value>` | Define la variable con el valor especificado. |
 | l`<dir>` | Ubicación en la que se va a colocar el destino (el valor predeterminado es el directorio actual). |
-| /v [`<n>`] | Establezca el nivel de detalle de depuración (0 = ninguno,..., 3 = completo). |
+| /v [ `<n>` ] | Establezca el nivel de detalle de depuración (0 = ninguno,..., 3 = completo). |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="additional-references"></a>Referencias adicionales

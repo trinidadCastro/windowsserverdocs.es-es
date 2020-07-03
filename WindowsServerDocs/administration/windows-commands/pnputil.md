@@ -1,6 +1,6 @@
 ---
 title: pnputil
-description: Tema de referencia del comando pnputil, que agrega paquetes de controladores, quita paquetes de controladores y enumera los paquetes de controladores que se encuentran en el almacén de controladores mediante la utilidad pnputil.exe.
+description: Artículo de referencia para el comando pnputil, que agrega paquetes de controladores, quita paquetes de controladores y enumera los paquetes de controladores que se encuentran en el almacén de controladores mediante la utilidad pnputil.exe.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6484a3e55c6e5f3b4cb51119ead5cb488dca0721
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 01b8aee1aa4dfb85b590c9d4abbec471fc437da8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472411"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930239"
 ---
 # <a name="pnputil"></a>pnputil
 

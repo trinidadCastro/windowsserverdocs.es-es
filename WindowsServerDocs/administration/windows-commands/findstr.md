@@ -1,6 +1,6 @@
 ---
 title: findstr
-description: Tema de referencia del comando findstr, que busca patrones de texto en archivos.
+description: Artículo de referencia del comando findstr, que busca patrones de texto en archivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f8d353b6d3aee77960b208d89372aee5dca07e3
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: f0cf30f19ef23c1b3275b6b7632b03f0dd8e433a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436121"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931436"
 ---
 # <a name="findstr"></a>findstr
 
@@ -48,11 +48,11 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 | /g`<file>` | Obtiene las cadenas de búsqueda del archivo especificado. |
 | /d.`<dirlist>` | Busca la lista de directorios especificada. Cada directorio debe estar separado por un punto y coma (;), por ejemplo `dir1;dir2;dir3` . |
 | /a`<colorattribute>` | Especifica los atributos de color con dos dígitos hexadecimales. Escriba `color /?` para obtener información adicional. |
-| `<strings>` | Especifica el texto que se va a buscar en el *nombre de archivo*. Necesario. |
+| `<strings>` | Especifica el texto que se va a buscar en el *nombre de archivo*. Obligatorio. |
 | `[\<drive>:][<path>]<filename>[ ...]` | Especifica la ubicación y el archivo o los archivos que se van a buscar. Se requiere al menos un nombre de archivo. |
 | /? | Muestra la Ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Todas las opciones de línea de comandos de **Findstr** deben preceder a las *cadenas* y el *nombre de archivo* en la cadena de comandos.
 
@@ -64,7 +64,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 
     Los metacaracteres aceptados son:
 
-    | Metacarácter | Value |
+    | Metacarácter | Valor |
     | -------------- | ----- |
     | `.` | Carácter **comodín** : cualquier carácter |
     | `*` | **REPEAT** : cero o más apariciones del carácter o la clase anterior. |
@@ -99,7 +99,7 @@ Para buscar *Hello* en el archivo *x. y*, escriba:
 findstr /c:hello there x.y
 ```
 
-Para buscar todas las apariciones de la palabra *Windows* (con una letra mayúscula inicial W) en el archivo *propuesta. txt*, escriba:
+Para buscar todas las apariciones de la palabra *Windows* (con una letra mayúscula inicial W) en el *proposal.txt*de archivo, escriba:
 
 ```
 findstr Windows proposal.txt
@@ -117,7 +117,7 @@ Para buscar todas las apariciones de líneas que comienzan por *para* y van prec
 findstr /b /n /r /c:^ *FOR *.bas
 ```
 
-Para enumerar los archivos exactos que desea buscar en un archivo de texto, use los criterios de búsqueda del archivo *StringList. txt*, para buscar los archivos enumerados en *FileList. txt*y, a continuación, para almacenar los resultados en el archivo *Results. out*, escriba:
+Para enumerar los archivos exactos que desea buscar en un archivo de texto, use los criterios de búsqueda del archivo *stringlist.txt*, para buscar los archivos enumerados en *filelist.txt*y, a continuación, para almacenar los resultados en el archivo *Results. out*, escriba:
 
 ```
 findstr /g:stringlist.txt /f:filelist.txt > results.out

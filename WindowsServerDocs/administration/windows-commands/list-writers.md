@@ -1,6 +1,6 @@
 ---
-title: enumerar escritores
-description: Tema de referencia del comando list Writers, que enumera los escritores que se encuentran en el sistema.
+title: list writers
+description: Artículo de referencia para el comando list Writers, que enumera los escritores que se encuentran en el sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85f351ca20332ad67f24c7d66142f7209c0ec425
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a3b4334d9f1f1a76b390a29a1b9cfd877da91185
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817165"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931769"
 ---
-# <a name="list-writers"></a>enumerar escritores
+# <a name="list-writers"></a>list writers
 
 Enumera los escritores que se encuentran en el sistema. Si se usa sin parámetros, **List** muestra la salida de los **metadatos de lista** de forma predeterminada.
 

@@ -1,6 +1,6 @@
 ---
 title: fsutil behavior
-description: Tema de referencia para el comando fsutil Behavior, que consulta o establece el comportamiento del volumen NTFS.
+description: Artículo de referencia para el comando fsutil Behavior, que consulta o establece el comportamiento del volumen NTFS.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.topic: article
 ms.date: 10/16/2017
 ms.assetid: 84eaba2c-c0af-49e1-bbbd-2ed2928e5e4b
-ms.openlocfilehash: f1196169ea1d198c4855f06edef542ef34876a2a
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 74a974bcb7f8138d28e563db35bbde7ae689e110
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436010"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931832"
 ---
 # <a name="fsutil-behavior"></a>fsutil behavior
 
@@ -68,7 +68,7 @@ fsutil behavior set {allowextchar {1|0} | bugcheckoncorrupt {1|0} | disable8dot3
 | symlinkevaluation`<symboliclinktype>` | Controla el tipo de vínculos simbólicos que se pueden crear en un equipo. Las opciones válidas son:<ul><li>**1** : vínculos simbólicos locales a locales,`L2L:{0|1}`</li><li>**2** -vínculos simbólicos locales a remotos,`L2R:{1|0}`</li><li>**3** -vínculos simbólicos remotos a locales,`R2R:{1|0}`</li><li>**4** -vínculos simbólicos remotos a remotos`R2L:{1|0}`</li></ul> |
 | disabledeletenotify | Deshabilita (**1**) o habilita (**0**) las notificaciones de eliminación. Las notificaciones de eliminación (también conocidas como recorte o desasignación) son una característica que notifica al dispositivo de almacenamiento subyacente de los clústeres que se han liberado debido a una operación de eliminación de archivos. Además:<ul><li>En los sistemas que usan ReFS V2, Trim está deshabilitado de forma predeterminada.</li><li>En los sistemas que usan ReFS v1, Trim está habilitado de forma predeterminada.</li><li>En los sistemas que usan NTFS, Trim está habilitado de forma predeterminada a menos que un administrador lo deshabilite.</li><li>Si la unidad de disco duro o SAN informa de que no admite Trim, la unidad de disco duro y las San no obtienen notificaciones de recorte.</li><li>La habilitación o deshabilitación de no requiere un reinicio.</li><li>Trim es efectivo cuando se emite el siguiente comando de desasignación.</li><li>La e/s de Inflight existente no se ve afectada por el cambio del registro.</li><li>No es necesario reiniciar el servicio al habilitar o deshabilitar Trim.</li></ul> |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - La zona MFT es un área reservada que permite que la tabla de archivos maestros (MFT) se expanda según sea necesario para evitar la fragmentación de MFT. Si el tamaño de archivo promedio en el volumen es de 2 KB o menos, puede ser beneficioso establecer el valor de **mftzone** en **2**. Si el tamaño de archivo promedio en el volumen es de 1 KB o menos, puede ser beneficioso establecer el valor de **mftzone** en **4**.
 

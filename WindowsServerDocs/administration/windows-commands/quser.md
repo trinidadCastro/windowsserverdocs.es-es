@@ -1,6 +1,6 @@
 ---
 title: quser
-description: Tema de referencia para el comando quser, que muestra información acerca de las sesiones de usuario en un servidor host de sesión Escritorio remoto.
+description: Artículo de referencia para el comando quser, que muestra información acerca de las sesiones de usuario en un servidor host de sesión Escritorio remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e51abe030ca0f473246cdc85fd01d89fddf8b056
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7df52ea8d2b30d9e365d6dc79d53aad9bd0782f9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471930"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931110"
 ---
 # <a name="quser"></a>quser
 

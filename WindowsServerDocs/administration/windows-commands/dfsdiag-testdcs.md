@@ -1,6 +1,6 @@
 ---
 title: dfsdiag testdcs
-description: Tema de referencia para el comando dfsdiag testdcs, que comprueba la configuración de los controladores de dominio en el dominio especificado.
+description: Artículo de referencia para el comando dfsdiag testdcs, que comprueba la configuración de los controladores de dominio en el dominio especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0bbe47474f99edb1626e61a372b02090d3a45ee3
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 1eca75d233661d51a36b52b79230ad36b704e203
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993002"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930667"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag testdcs
 

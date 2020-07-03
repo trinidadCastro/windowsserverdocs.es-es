@@ -1,6 +1,6 @@
 ---
 title: echo
-description: Tema de referencia para el comando echo, que muestra mensajes o activa o desactiva la característica de repetición de comandos.
+description: Artículo de referencia para el comando echo, que muestra mensajes o activa o desactiva la característica de repetición de comandos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca2a10a5d52c9d175d453a164f3ab4f47ca0841d
-ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
+ms.openlocfilehash: bc463efef38e07c1ce8b9ebee1ddd7bdfd7d3066
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83855669"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930523"
 ---
 # <a name="echo"></a>echo
 
@@ -35,7 +35,7 @@ echo [on | off]
 | `<message>` | Especifica el texto que se va a mostrar en la pantalla. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Notas
+#### <a name="remarks"></a>Comentarios
 
 - El `echo <message>` comando es especialmente útil cuando se desactiva el **eco** . Para mostrar un mensaje de varias líneas sin mostrar ningún comando, puede incluir varios `echo <message>` comandos después del comando **echo off** en el programa por lotes.
 
@@ -104,7 +104,7 @@ Si no se encuentran archivos. txt al ejecutar el archivo por lotes, se muestra e
 This directory contains no text files.
 ```
 
-Si se encuentran archivos. txt cuando se ejecuta el archivo por lotes, se muestran los resultados siguientes (en este ejemplo, se supone que existen los archivos archivo1. txt, archivo2. txt y Archivo3. txt):
+Si se encuentran archivos. txt cuando se ejecuta el archivo por lotes, se muestra la salida siguiente (en este ejemplo, suponga que los archivos File1.txt, File2.txt y existen File3.txt):
 
 ```
 This directory contains the following text files:

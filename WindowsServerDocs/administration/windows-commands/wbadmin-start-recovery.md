@@ -1,6 +1,6 @@
 ---
-title: recuperación de inicio de Wbadmin
-description: Tema de referencia de Wbadmin Start recovery, que ejecuta una operación de recuperación basada en los parámetros especificados.
+title: wbadmin start recovery
+description: Artículo de referencia de Wbadmin Start recovery, que ejecuta una operación de recuperación basada en los parámetros especificados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec116bb69dd70cb58f6cb71ccf9ccfa04dea2e54
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2a8934d9177d81cd05124175e64746ecdb4a1bc1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725887"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930951"
 ---
-# <a name="wbadmin-start-recovery"></a>recuperación de inicio de Wbadmin
+# <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
 Ejecuta una operación de recuperación basada en los parámetros que se especifiquen.
 
@@ -57,7 +57,7 @@ wbadmin start recovery
 |-noRollForward|Solo es válido cuando se recuperan aplicaciones. Permite la recuperación en un momento dado anterior de una aplicación si se selecciona la versión más reciente de las copias de seguridad. En el caso de otras versiones de la aplicación que no son la última recuperación a un momento dado anterior, se realiza como valor predeterminado.|
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Para ver una lista de los elementos que están disponibles para la recuperación a partir de una versión de copia de seguridad específica, use **Wbadmin get items**. Si un volumen no tenía un punto de montaje o una letra de unidad en el momento de la copia de seguridad, este subcomando devolvería un nombre de volumen basado en GUID que se debe usar para recuperar el volumen.
 -   Cuando **-itemType** es una **aplicación**, puede usar un valor de **ADIFM** para que realice una instalación desde el **medio de la** operación para recuperar todos los datos relacionados necesarios para Active Directory Domain Services. **ADIFM** crea una copia de la base de datos Active Directory, el registro y el estado de SYSVOL y, a continuación, guarda esta información en la ubicación especificada por **-recoveryTarget**. Use este parámetro solo cuando se especifica **-recoveryTarget** .
@@ -79,12 +79,12 @@ Para ejecutar una recuperación de la copia de seguridad desde el 31 de marzo de
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:File -items:d:\folder -recursive
 ```
-Para ejecutar una recuperación de la copia de seguridad a partir del 31 de marzo de 2013, tomada a las \\ \\9:00 A.M.\, , del volumen, escriba:
+Para ejecutar una recuperación de la copia de seguridad a partir del 31 de marzo de 2013, tomada a las 9:00 A.M., del volumen, \\ \\ \, escriba:
 ```
-wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume 
+wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume
 -items:\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 ```
-Para ejecutar una recuperación de la copia de seguridad del 30 de abril de 2013, tomada a las 9:00 A.M., \\ \\de la carpeta compartida servername\share de Server01, escriba:
+Para ejecutar una recuperación de la copia de seguridad del 30 de abril de 2013, tomada a las 9:00 A.M., de la carpeta compartida \\ \\ servername\share de Server01, escriba:
 ```
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

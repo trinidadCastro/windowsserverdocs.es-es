@@ -1,6 +1,6 @@
 ---
 title: extend
-description: Tema de referencia del comando Extend, que extiende el volumen o la partición con el foco y su sistema de archivos en un espacio libre (sin asignar) en un disco.
+description: Artículo de referencia del comando Extend, que extiende el volumen o la partición con el foco y su sistema de archivos en un espacio libre (sin asignar) en un disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd10e2ad4d6d647f37e1ad113f1516104e66315f
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4749b2ddcd47aa5445d9d77ff86c3473ae37b355
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437200"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931443"
 ---
 # <a name="extend"></a>extend
 
@@ -35,10 +35,10 @@ extend filesystem [noerr]
 | --------- | ----------- |
 | tamaño =`<n>` | Especifica la cantidad de espacio en megabytes (MB) que se va a agregar al volumen o partición actual. Si no se proporciona ningún tamaño, se usa todo el espacio libre contiguo que está disponible en el disco. |
 | disco =`<n>` | Especifica el disco en el que se extiende el volumen o la partición. Si no se especifica ningún disco, el volumen o la partición se amplía en el disco actual. |
-| Systems | Extiende el sistema de archivos del volumen que tiene el foco. Para su uso solo en discos en los que el sistema de archivos no se extendió con el volumen. |
+| fileSystem | Extiende el sistema de archivos del volumen que tiene el foco. Para su uso solo en discos en los que el sistema de archivos no se extendió con el volumen. |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - En los discos básicos, el espacio disponible debe estar en el mismo disco que el volumen o la partición que tiene el foco. También debe seguir inmediatamente el volumen o la partición que tiene el foco (es decir, debe comenzar en el siguiente desplazamiento del sector).
 

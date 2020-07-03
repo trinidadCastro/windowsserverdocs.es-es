@@ -1,6 +1,6 @@
 ---
 title: ktpass
-description: Tema de referencia del comando ktpass, que configura el nombre de la entidad de seguridad del servidor para el host o el servicio en AD DS y genera un archivo. clave de claves que contiene la clave secreta compartida del servicio.
+description: Artículo de referencia para el comando ktpass, que configura el nombre de la entidad de seguridad del servidor para el host o el servicio en AD DS y genera un archivo. de claves de claves que contiene la clave secreta compartida del servicio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 432918343ccee70f0c30d294a349fb721f18f705
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: fbf7b47f4f21a2c964d14dd1200b15ad635d7471
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817235"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931819"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -47,8 +47,8 @@ ktpass
 | Parámetro | Descripción |
 | --------- | ------------|
 | /out`<filename>` | Especifica el nombre del archivo de claves de claves de Kerberos versión 5 que se va a generar. **Nota:** Este es el archivo. la forma de claves que se transfiere a un equipo que no está ejecutando el sistema operativo Windows y, a continuación, se reemplaza o se combina con el archivo. *ad/etc/Krb5.keytab*existente. |
-| /princ`<principalname>` | Especifica el nombre de la entidad de seguridad en el formulario host/computer.contoso.com@CONTOSO.COM . **ADVERTENCIA:** Este parámetro distingue entre mayúsculas y minúsculas. |
-| /mapuser`<useraccount>` | Asigna el nombre de la entidad de seguridad de Kerberos, que se especifica mediante el parámetro **princ** , a la cuenta de dominio especificada. |
+| /princ `<principalname>` | Especifica el nombre de la entidad de seguridad en el formulario host/computer.contoso.com@CONTOSO.COM . **ADVERTENCIA:** Este parámetro distingue entre mayúsculas y minúsculas. |
+| /mapuser `<useraccount>` | Asigna el nombre de la entidad de seguridad de Kerberos, que se especifica mediante el parámetro **princ** , a la cuenta de dominio especificada. |
 | /mapop`{add|set}` | Especifica cómo se establece el atributo de asignación.<ul><li>**Agregar** : agrega el valor del nombre de usuario local especificado. Este es el valor predeterminado.</li><li>**Set** : establece el valor para el cifrado solo del estándar de cifrado de datos (des) para el nombre de usuario local especificado.</li></ul> |
 | `{-|+}`solo para | De forma predeterminada, se establece el cifrado de solo DES.<ul><li>**+** Establece una cuenta para el cifrado de solo DES.</li><li>**-** Libera la restricción en una cuenta para el cifrado solo DES. **Importante:** Windows no es compatible con DES de forma predeterminada.</li></ul> |
 | /in`<filename>` | Especifica el archivo. de la operación de escritura que se va a leer de un equipo host que no está ejecutando el sistema operativo Windows. |
@@ -67,7 +67,7 @@ ktpass
 | `{-|+}setpass <password>` | Establece la contraseña del usuario cuando se proporciona. Si se usa rndpass, en su lugar se genera una contraseña aleatoria. |
 | /? | Muestra ayuda para este comando. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Los servicios que se ejecutan en sistemas que no ejecutan el sistema operativo Windows se pueden configurar con cuentas de instancia de servicio en AD DS. Esto permite a cualquier cliente Kerberos autenticarse en servicios que no ejecutan el sistema operativo Windows mediante el uso de los KDC de Windows.
 
