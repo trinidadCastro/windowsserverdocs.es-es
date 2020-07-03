@@ -1,6 +1,6 @@
 ---
 title: mstsc
-description: Tema de referencia del comando mstsc, que crea conexiones a Escritorio remoto servidores host de sesión o a otros equipos remotos, edita un archivo de configuración existente de Conexión a Escritorio remoto (. RDP) y migra los archivos de conexión heredados que se crearon con el administrador de conexiones de cliente a los nuevos archivos de conexión. RDP.
+description: Artículo de referencia del comando mstsc, que crea conexiones a Escritorio remoto servidores host de sesión o a otros equipos remotos, edita un archivo de configuración existente de Conexión a Escritorio remoto (. RDP) y migra los archivos de conexión heredados que se crearon con el administrador de conexiones de cliente a los nuevos archivos de conexión. RDP.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6620cc2f954e43a6e68369f9b1f3480c1fc508c
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: cec9ef281c886964163c233022466d8478d65c79
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354355"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934844"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -46,7 +46,7 @@ mstsc.exe /migrate
 | /migrate | Migra los archivos de conexión heredados que se crearon con el administrador de conexiones de cliente a los nuevos archivos de conexión. RDP. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Default. RDP se almacena para cada usuario como un archivo oculto en la carpeta de **documentos** del usuario.
 

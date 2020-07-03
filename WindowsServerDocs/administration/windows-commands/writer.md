@@ -1,6 +1,6 @@
 ---
 title: escritor
-description: Tema de referencia del escritor, que comprueba que un escritor o componente está incluido o excluye un escritor o componente del procedimiento de copia de seguridad o restauración.
+description: Artículo de referencia del escritor, que comprueba que un escritor o componente está incluido o excluye un escritor o componente del procedimiento de copia de seguridad o restauración.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aed202ac774b17041f48df24333565727b110c53
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 16746f2f070b87e0c287f3a49b19a480ba5399c9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720641"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936091"
 ---
 # <a name="writer"></a>escritor
 
@@ -35,7 +35,7 @@ writer exclude [<Writer> | <Component>]
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   Comprobación   | Comprueba que el escritor o el componente especificado está incluido en el procedimiento de copia de seguridad o restauración. Se producirá un error en el procedimiento de copia de seguridad o restauración si no se incluye el escritor o el componente. |
 |  exclude   |                                                   Excluye el escritor o componente especificado del procedimiento de copia de seguridad o restauración.                                                    |
-| [\<Escritor> |                                                                                     <Component>]                                                                                      |
+| [\<Writer> |                                                                                     <Component>]                                                                                      |
 
 ## <a name="examples"></a>Ejemplos
 

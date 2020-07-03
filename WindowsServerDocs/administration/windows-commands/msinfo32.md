@@ -1,6 +1,6 @@
 ---
 title: msinfo32
-description: Tema de referencia del comando msinfo32, que abre la herramienta de información del sistema para mostrar una vista completa del hardware, los componentes del sistema y el entorno de software en el equipo local.
+description: Artículo de referencia para el comando msinfo32, que abre la herramienta de información del sistema para mostrar una vista completa del hardware, los componentes del sistema y el entorno de software en el equipo local.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6a97902d9988260a840d236e197d7361bcd3882
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: c6506ba51c768f92a19deb1627f5456231cee3f6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354437"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934865"
 ---
 # <a name="msinfo32"></a>msinfo32
 

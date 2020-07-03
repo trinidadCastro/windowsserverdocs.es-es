@@ -1,6 +1,6 @@
 ---
 title: mmc
-description: Tema de referencia del comando MMC, que le permite abrir una consola MMC específica, abrir MMC en el modo de autor o especificar que se abra la versión de 32 bits o 64 bits de MMC.
+description: Artículo de referencia del comando MMC, que le permite abrir una consola MMC específica, abrir MMC en el modo de autor o especificar que se abra la versión de 32 bits o 64 bits de MMC.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1de1bc7912b995bf7df0e1acb50cfee18747b700
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 8c93416c9939d37e8d672a7e8d52d01ddfebd48e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354595"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935764"
 ---
 # <a name="mmc"></a>mmc
 
@@ -38,7 +38,7 @@ mmc <path>\<filename>.msc [/a] [/64] [/32]
 | /32 | Abre la versión de 32 bits de **MMC** (mmc32). Al ejecutar un sistema operativo de Microsoft 64 bits, puede ejecutar complementos de 32 bits si abre MMC con esta opción de línea de comandos cuando tiene solo complementos de 32 bits. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Puede usar variables de entorno para crear líneas de comandos o accesos directos que no dependan de la ubicación explícita de los archivos de consola. Por ejemplo, si la ruta de acceso a un archivo de consola está en la carpeta del sistema (por ejemplo, **MMC c:\winnt\system32\ console_name. msc**), puede usar la cadena de datos expansibles **% systemroot%** para especificar la ubicación (**mmc% systemroot% \ system32 \ console_name. msc**). Esto puede resultar útil si está delegando tareas a personas de la organización que trabajan en equipos diferentes.
 

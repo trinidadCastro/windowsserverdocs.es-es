@@ -1,6 +1,6 @@
 ---
 title: mode
-description: Tema de referencia del comando modo, que muestra el estado del sistema, cambia la configuración del sistema o vuelve a configurar puertos o dispositivos.
+description: Artículo de referencia del comando modo, que muestra el estado del sistema, cambia la configuración del sistema o vuelve a configurar puertos o dispositivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4c895c59bb527b8bfb6973a72d0d4e163cb2ace
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 5794b80f7457b133d3e5b599cb12613469ad58eb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354585"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936048"
 ---
 # <a name="mode"></a>mode
 

@@ -1,6 +1,6 @@
 ---
 title: Get-AllNamespaces
-description: Tema de referencia de Get-AllNamespaces, que muestra información acerca de todos los espacios de nombres de un servidor.
+description: Artículo de referencia de Get-AllNamespaces, que muestra información acerca de todos los espacios de nombres de un servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 710918eb11ef7a746716a1a2bff9200cfa1d98c1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de44d659657a8d6df10c0f2ea7b7fb2a670b7f88
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720002"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935051"
 ---
 # <a name="get-allnamespaces"></a>Get-AllNamespaces
 
@@ -33,10 +33,10 @@ wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/d
 ```
 ### <a name="parameters"></a>Parámetros
 
-|         Parámetro         |                                                                               Windows Server 2008                                                                               | Windows Server 2008 R2 |
+|         Parámetro         |                                                                               Windows Server 2008                                                                               | Windows Server 2008 R2 |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
 |  [/Server:<Server name>]  | Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local. |                        |
-| [/ContentProvider:<name>] |                                                        Muestra solo los espacios de nombres del proveedor de contenido especificado.                                                         |                        |
+| [/ContentProvider: <name> ] |                                                        Muestra solo los espacios de nombres del proveedor de contenido especificado.                                                         |                        |
 |      [/Show: clients]      |                            Solo se admite para Windows Server 2008. Muestra información acerca de los equipos cliente que están conectados al espacio de nombres.                             |                        |
 |    [/Details: clientes]     |                           Solo se admite para Windows Server 2008 R2. Muestra información acerca de los equipos cliente que están conectados al espacio de nombres.                           |                        |
 |  [/ExcludedeletePending]  |                                                              Excluye cualquier transmisión desactivada de la lista.                                                              |                        |
@@ -51,12 +51,12 @@ Para ver todos los espacios de nombres excepto los que están desactivados, escr
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /Show:Clients /ExcludedeletePending
   ```
-- Windows Server 2008 R2
+- Windows Server 2008 R2
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /details:Clients /ExcludedeletePending
   ```
   ## <a name="additional-references"></a>Referencias adicionales
-  - [Clave](command-line-syntax-key.md)
-  de sintaxis de línea de comandos
-  [con el comando New-namespace](using-the-new-namespace-command.md)[mediante el comando Remove-namespace comando](using-the-remove-namespace-command.md)
-  [Subcommand: Start-namespace](subcommand-start-namespace.md)
+  - Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+   [Usar el comando](using-the-new-namespace-command.md) 
+   New-namespace [Usar el comando](using-the-remove-namespace-command.md) 
+   Remove-namespace [Subcomando: Start-namespace](subcommand-start-namespace.md)

@@ -1,6 +1,6 @@
 ---
 title: msiexec
-description: Tema de referencia para el comando msiexec, que proporciona los medios para instalar, modificar y realizar operaciones en Windows Installer desde la línea de comandos.
+description: Artículo de referencia para el comando msiexec, que proporciona los medios para instalar, modificar y realizar operaciones en Windows Installer desde la línea de comandos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f84df28104f581873fe1fd86a3abd6a51532b020
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: aacdc55ac3895efad7dd9499ea1402b538fb8a9b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354345"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934967"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -45,7 +45,7 @@ msiexec.exe [/i][/a][/j{u|m|/g|/t}][/x] <path_to_package>
 
 #### <a name="examples"></a>Ejemplos
 
-Para instalar un paquete denominado *example. msi* desde la unidad C:, mediante un proceso de instalación normal, escriba:
+Para instalar un paquete denominado *example.msi* desde la unidad C:, mediante un proceso de instalación normal, escriba:
 
 ```
 msiexec.exe /i "C:\example.msi"
@@ -75,7 +75,7 @@ msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
 | /QR | Especifica una experiencia de interfaz de usuario reducida durante el proceso de instalación. |
 | /qf | Especifica una experiencia de interfaz de usuario completa durante el proceso de instalación. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - No se muestra el cuadro modal si el usuario cancela la instalación. Puede usar **qb +!** o **qb! +** para ocultar el botón **Cancelar** .
 
@@ -231,6 +231,6 @@ Puede establecer propiedades públicas con este comando. Para obtener informaci�
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Opciones de la línea de comandos de msiexec. exe](https://docs.microsoft.com/windows/win32/msi/command-line-options)
+- [Msiexec.exe opciones de la línea de comandos](https://docs.microsoft.com/windows/win32/msi/command-line-options)
 
 - [Opciones de la línea de comandos del instalador estándar](https://docs.microsoft.com/windows/win32/msi/standard-installer-command-line-options)

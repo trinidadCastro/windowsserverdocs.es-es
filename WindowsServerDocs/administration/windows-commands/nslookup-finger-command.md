@@ -1,6 +1,6 @@
 ---
 title: dedo de nslookup
-description: Tema de referencia del comando Nslookup Finger, que se conecta con el servidor Finger en el dispositivo actual.
+description: Artículo de referencia del comando Nslookup Finger, que se conecta con el servidor Finger en el dispositivo actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6341e7297ea661fd9afd4f4b0bb5048d82099b94
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 413dc1a38b4fa7ee7bec28991547b5e0b5ef6fb9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721498"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934759"
 ---
 # <a name="nslookup-finger"></a>nslookup/Finger
 

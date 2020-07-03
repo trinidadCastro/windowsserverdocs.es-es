@@ -1,6 +1,6 @@
 ---
 title: nslookup set debug
-description: Tema de referencia del comando Nslookup Set debug, que activa y desactiva el modo de depuración.
+description: Artículo de referencia del comando Nslookup Set debug, que activa y desactiva el modo de depuración.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 910dd197fe756e733b61318243130e85b4410eb1
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 2c16bde1a702f43ae047aa9839ba7a63a4cce8ae
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721178"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934440"
 ---
 # <a name="nslookup-set-debug"></a>nslookup set debug
 

@@ -1,6 +1,6 @@
 ---
-title: Eliminar registro
-description: Tema de referencia de * * * *-
+title: reg delete
+description: Artículo de referencia para el comando reg Delete, que elimina una subclave o entradas del registro.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,56 +9,55 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4ff643970bac021a6b7dcb731e64c412deb8df3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c8f90578cdd291f5788fc53223d9dc471f7a1458
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722575"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934652"
 ---
-# <a name="reg-delete"></a>Eliminar registro
-
-
+# <a name="reg-delete"></a>reg delete
 
 Elimina una subclave o entradas del registro.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
+reg delete <keyname> [{/v Valuename | /ve | /va}] [/f]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<> KeyName|Especifica la ruta de acceso completa de la subclave o entrada que se va a eliminar. Para especificar un equipo remoto, incluya el nombre del equipo (en el \\ \\formato\) COMPUTERNAME como parte del *keyName*). Si \\ \\se omite COMPUTERNAME \, la operación se realizará de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
-|/v \<ValueName>|Elimina una entrada específica bajo la subclave. Si no se especifica ninguna entrada, se eliminarán todas las entradas y subclaves de la subclave.|
-|/ve|Especifica que solo se eliminarán las entradas que no tengan ningún valor.|
-|/va|Elimina todas las entradas de la subclave especificada. Las subclaves de la subclave especificada no se eliminan.|
-|/f|Elimina la subclave del registro existente o la entrada sin solicitar confirmación.|
-|/?|Muestra la ayuda de **reg Delete** en el símbolo del sistema.|
+| Parámetro | Descripción |
+|--|--|
+| `<keyname1>` | Especifica la ruta de acceso completa de la subclave o entrada que se va a agregar. Para especificar un equipo remoto, incluya el nombre del equipo (con el formato `\\<computername>\` ) como parte del nombre de *clave*. Si se omite `\\<computername>\` , la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: **HKLM**, **HKCU**, **HKCR**, **HKU**y **HKCC**. Si se especifica un equipo remoto, las claves raíz válidas son: **HKLM** y **HKU**. Si el nombre de la clave del registro contiene un espacio, incluya el nombre de la clave entre comillas. |
+| /v`<Valuename>` | Elimina una entrada específica bajo la subclave. Si no se especifica ninguna entrada, se eliminarán todas las entradas y subclaves de la subclave. |
+| /ve | Especifica que solo se eliminarán las entradas que no tengan ningún valor. |
+| /va | Elimina todas las entradas de la subclave especificada. Las subclaves de la subclave especificada no se eliminan. |
+| /f | Elimina la subclave del registro existente o la entrada sin solicitar confirmación. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
-En la tabla siguiente se enumeran los valores devueltos para la operación de **eliminación de registro** .
+- Los valores devueltos para la operación de **eliminación de registro** son:
 
-|Value|Descripción|
-|-----|-----------|
-|0|Correcto|
-|1|Error|
+    | Valor | Descripción |
+    |--|--|
+    | 0 | Correcto |
+    | 1 | Error |
 
-## <a name="examples"></a>Ejemplos
+### <a name="examples"></a>Ejemplos
 
 Para eliminar el tiempo de espera de la clave del registro y sus subclaves y valores, escriba:
+
 ```
-REG DELETE HKLM\Software\MyCo\MyApp\Timeout
+reg delete HKLM\Software\MyCo\MyApp\Timeout
 ```
+
 Para eliminar la MTU del valor del registro en HKLM\Software\MyCo en el equipo denominado zodíaco, escriba:
+
 ```
-REG DELETE \\ZODIAC\HKLM\Software\MyCo /v MTU
+reg delete \\ZODIAC\HKLM\Software\MyCo /v MTU
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

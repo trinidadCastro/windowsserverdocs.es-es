@@ -1,6 +1,6 @@
 ---
 title: Get-AllImages
-description: Tema de referencia de Get-AllImages, que recupera información acerca de todas las imágenes de un servidor.
+description: Artículo de referencia de Get-AllImages, que recupera información acerca de todas las imágenes de un servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1f32a1789b22d04b7b61979d0ea49d91f0cf157
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9834552ebe6395f13333e81fbc2996a8ff49f39c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720019"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935171"
 ---
 # <a name="get-allimages"></a>Get-AllImages
 
@@ -39,10 +39,10 @@ wdsutil /Get-AllImages /Show:Install
 wdsutil /verbose /Get-AllImages /Server:MyWDSServer /Show:All /detailed
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos con el comando[Add-image](using-the-add-image-command.md)
-[mediante](using-the-copy-image-command.md)
-el comando copy-Image mediante el comando[Export-](using-the-export-image-command.md)
-Image con el comando[Remove-image](using-the-remove-image-command.md)
-mediante el comando Replace-Image
-del[comando Replace-Image](using-the-replace-image-command.md)[: set-](subcommand-set-image.md) Image
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-add-image-command.md) 
+ Add-image [Usar el comando](using-the-copy-image-command.md) 
+ Copy-Image [Usar el comando](using-the-export-image-command.md) 
+ Export-Image [Usar el comando](using-the-remove-image-command.md) 
+ Remove-image [Usar el comando](using-the-replace-image-command.md) 
+ Replace-Image [Subcomando: set-Image](subcommand-set-image.md)

@@ -1,6 +1,6 @@
 ---
 title: setx
-description: Tema de referencia de setx, que crea o modifica variables de entorno en el entorno de usuario o del sistema, sin necesidad de programación o scripting.
+description: Artículo de referencia de setx, que crea o modifica variables de entorno en el entorno de usuario o del sistema, sin necesidad de programación o scripting.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63cfb28770f635f97c8f3c7a701d9e959cee4a05
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 69dcbca54419acb9ede0924e3e835bdfaf0633c1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721853"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935895"
 ---
 # <a name="setx"></a>setx
 
@@ -34,24 +34,24 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 |         Parámetro          |                                                                                                                                              Descripción                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s \<equipo>       |                                                                                  Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el nombre del equipo local.                                                                                  |
-| /u [\<dominio>\]<User name> |                                                                                           Ejecuta el script con las credenciales de la cuenta de usuario especificada. El valor predeterminado es los permisos del sistema.                                                                                            |
-|      /p [\<contraseña>]      |                                                                                                         Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                         |
-|        \<> de variable         |                                                                                                                 Especifica el nombre de la variable de entorno que desea establecer.                                                                                                                  |
-|          \<Valor>          |                                                                                                                Especifica el valor en el que desea establecer la variable de entorno.                                                                                                                 |
-|         /k \<rutaDeAcceso>         | Especifica que la variable se establece basándose en la información de una clave del registro. La*gistro* p usa la siguiente sintaxis:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por ejemplo, puede especificar la ruta de acceso siguiente:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
-|      /f \<> nombre de archivo       |                                                                                                                               Especifica el archivo que desea usar.                                                                                                                                |
-|        /a \<X>,<Y>         |                                                                                                                    Especifica las coordenadas absolutas y el desplazamiento como parámetros de búsqueda.                                                                                                                    |
-|   /r \<X>,<Y><String>   |                                                                                                            Especifica las coordenadas relativas y el desplazamiento de la **cadena** como parámetros de búsqueda.                                                                                                            |
+|       modificado\<Computer>       |                                                                                  Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el nombre del equipo local.                                                                                  |
+| 5.50\<Domain>\]<User name> |                                                                                           Ejecuta el script con las credenciales de la cuenta de usuario especificada. El valor predeterminado es los permisos del sistema.                                                                                            |
+|      /p [ \<Password> ]      |                                                                                                         Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                         |
+|        \<Variable>         |                                                                                                                 Especifica el nombre de la variable de entorno que desea establecer.                                                                                                                  |
+|          \<Value>          |                                                                                                                Especifica el valor en el que desea establecer la variable de entorno.                                                                                                                 |
+|         /k\<Path>         | Especifica que la variable se establece basándose en la información de una clave del registro. La*gistro* p usa la siguiente sintaxis:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por ejemplo, puede especificar la ruta de acceso siguiente:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|      /f \<File name>       |                                                                                                                               Especifica el archivo que desea usar.                                                                                                                                |
+|        /a \<X> ,<Y>         |                                                                                                                    Especifica las coordenadas absolutas y el desplazamiento como parámetros de búsqueda.                                                                                                                    |
+|   /r \<X> , <Y><String>   |                                                                                                            Especifica las coordenadas relativas y el desplazamiento de la **cadena** como parámetros de búsqueda.                                                                                                            |
 |             /m             |                                                                                                Especifica que se establezca la variable en el entorno del sistema. La configuración predeterminada es el entorno local.                                                                                                 |
 |             /x             |                                                                                                       Muestra las coordenadas del archivo, pasando por alto las opciones de la línea de comandos **/a**, **/r**y **/d** .                                                                                                        |
-|      /d \<delimitadores>      |                    Especifica los delimitadores como **,** o **\\** que se van a usar además de los cuatro delimitadores integrados: espacio, tabulación, entrada y avance de barra. Entre los delimitadores válidos se incluyen los caracteres ASCII. El número máximo de delimitadores es 15, incluidos los delimitadores integrados.                    |
+|      /d.\<Delimiters>      |                    Especifica los delimitadores como **,** o **\\** que se van a usar además de los cuatro delimitadores integrados: espacio, tabulación, entrada y avance de barra. Entre los delimitadores válidos se incluyen los caracteres ASCII. El número máximo de delimitadores es 15, incluidos los delimitadores integrados.                    |
 |             /?             |                                                                                                                                 Muestra la ayuda en el símbolo del sistema.                                                                                                                                  |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   El comando **setx** es similar a la utilidad de UNIX setenv.
--   **Setx** proporciona la única línea de comandos o la manera programática de establecer de forma directa y permanente valores de entorno del sistema. Las variables de entorno del sistema se pueden configurar manualmente mediante el **Panel de control** o mediante un editor del registro. El comando **set** , que es interno del intérprete de comandos (cmd. exe), solo establece las variables de entorno de usuario para la ventana de la consola actual.
+-   **Setx** proporciona la única línea de comandos o la manera programática de establecer de forma directa y permanente valores de entorno del sistema. Las variables de entorno del sistema se pueden configurar manualmente mediante el **Panel de control** o mediante un editor del registro. El comando **set** , que es interno del intérprete de comandos (Cmd.exe), solo establece las variables de entorno de usuario para la ventana de la consola actual.
 -   Puede usar el comando **setx** para establecer los valores de las variables de entorno de usuario y de sistema de uno de los tres orígenes (modos): modo de línea de comandos, modo de registro o modo de archivo.
 -   **Setx** escribe variables en el entorno principal del registro. Las variables establecidas con variables **setx** solo están disponibles en las ventanas de comandos futuras, no en la ventana de comandos actual.
 -   **HKEY_CURRENT_USER** y **HKEY_LOCAL_MACHINE** son los únicos subárboles admitidos. REG_DWORD, REG_EXPAND_SZ, REG_SZ y REG_MULTI_SZ son los tipos de datos **RegKey** válidos.
@@ -74,9 +74,9 @@ Para establecer la variable de entorno MYPATH en el entorno local para que use l
 ```
 setx MYPATH %PATH%
 ```
-Para establecer la variable de entorno MYPATH en el entorno local para que use la ruta de acceso de búsqueda definida en la variable **~** de **%** entorno PATH después de reemplazar por, escriba:
+Para establecer la variable de entorno MYPATH en el entorno local para que use la ruta de acceso de búsqueda definida en la variable de entorno PATH después de reemplazar **~** por **%** , escriba:
 ```
-setx MYPATH ~PATH~ 
+setx MYPATH ~PATH~
 ```
 Para establecer la variable de entorno del equipo en el entorno local en Brand1 en un equipo remoto denominado Equipo1, escriba:
 ```
@@ -88,11 +88,11 @@ setx /s computer1 /u maindom\hiropln /p p@ssW23 MYPATH %PATH%
 ```
 Para establecer la variable de entorno TZONE en el entorno local en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\timezoneinformation\standardname** , escriba:
 ```
-setx TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName 
+setx TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName
 ```
 Para establecer la variable de entorno TZONE en el entorno local de un equipo remoto llamado Equipo1 en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\timezoneinformation\standardname** , escriba:
 ```
-setx /s computer1 /u maindom\hiropln /p p@ssW23 TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName 
+setx /s computer1 /u maindom\hiropln /p p@ssW23 TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName
 ```
 Para establecer la variable de entorno de compilación en el entorno del sistema en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber** , escriba:
 ```
@@ -110,17 +110,17 @@ Para establecer la variable de entorno DIRIP en el entorno local en el valor que
 ```
 setx IPADDR /f ipconfig.out /a 5,11
 ```
-Para establecer la variable de entorno OCTET1 en el entorno local en el valor que se encuentra en la coordenada 5, 3 en el archivo ipconfig. out con delimitadores ** #$ \*.**, escriba:
+Para establecer la variable de entorno OCTET1 en el entorno local en el valor que se encuentra en la coordenada 5, 3 en el archivo ipconfig. out con delimitadores ** #$ \* .**, escriba:
 ```
-setx OCTET1 /f ipconfig.out /a 5,3 /d #$*. 
+setx OCTET1 /f ipconfig.out /a 5,3 /d #$*.
 ```
 Para establecer la variable de entorno IPGATEWAY en el entorno local en el valor que se encuentra en la coordenada 0, 7 con respecto a la coordenada de la puerta de enlace en el archivo ipconfig. out, escriba:
 ```
-setx IPGATEWAY /f ipconfig.out /r 0,7 Gateway 
+setx IPGATEWAY /f ipconfig.out /r 0,7 Gateway
 ```
 Para mostrar el contenido de un archivo denominado ipconfig. out, junto con las coordenadas correspondientes del contenido, en un equipo denominado Equipo1, escriba:
 ```
-setx /s computer1 /u maindom\hiropln /p p@ssW23 /f ipconfig.out /x 
+setx /s computer1 /u maindom\hiropln /p p@ssW23 /f ipconfig.out /x
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

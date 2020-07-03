@@ -1,6 +1,6 @@
 ---
 title: netstat
-description: Tema de referencia del comando netstat, que muestra las conexiones TCP activas, los puertos en los que el equipo está escuchando, las estadísticas de Ethernet, la tabla de enrutamiento IP, las estadísticas de IPv4 y las estadísticas de IPv6.
+description: Artículo de referencia del comando netstat, que muestra las conexiones TCP activas, los puertos en los que el equipo está escuchando, las estadísticas de Ethernet, la tabla de enrutamiento IP, las estadísticas de IPv4 y las estadísticas de IPv6.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e9cd59169922bb6d76b6c65f3381e653df97109
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: c53ac83c1037d5f4998bb6efa43d66b418119df8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548849"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934806"
 ---
 # <a name="netstat"></a>netstat
 
@@ -55,7 +55,7 @@ netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
     | Protocolo | Nombre del Protocolo (TCP o UDP). |
     | Dirección local | La dirección IP del equipo local y el número de puerto que se está usando. Se muestra el nombre del equipo local que corresponde a la dirección IP y el nombre del puerto, a menos que se especifique el parámetro **-n** . Si aún no se ha establecido el puerto, el número de puerto se muestra como un asterisco (*). |
     | Dirección externa | La dirección IP y el número de puerto del equipo remoto al que está conectado el socket. Los nombres que corresponden a la dirección IP y el puerto se muestran a menos que se especifique el parámetro **-n** . Si aún no se ha establecido el puerto, el número de puerto se muestra como un asterisco (*). |
-    | State | Indica el estado de una conexión TCP, incluidos:<ul><li>CLOSE_WAIT</li><li>CLOSED</li><li>RESTABLECE</li><li>FIN_WAIT_1</li><li>FIN_WAIT_2</li><li>LAST_ACK</li><li>ESCUCHAR</li><li>SYN_RECEIVED</li><li>SYN_SEND</li><li>TIMED_WAIT</li></ul> |
+    | Estado | Indica el estado de una conexión TCP, incluidos:<ul><li>CLOSE_WAIT</li><li>CLOSED</li><li>RESTABLECE</li><li>FIN_WAIT_1</li><li>FIN_WAIT_2</li><li>LAST_ACK</li><li>ESCUCHAR</li><li>SYN_RECEIVED</li><li>SYN_SEND</li><li>TIMED_WAIT</li></ul> |
 
 ### <a name="examples"></a>Ejemplos
 

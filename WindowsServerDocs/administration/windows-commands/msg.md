@@ -1,6 +1,6 @@
 ---
 title: msg
-description: Tema de referencia para el comando MSG, que envía un mensaje a un usuario en un servidor host de sesión Escritorio remoto
+description: Artículo de referencia para el comando MSG, que envía un mensaje a un usuario en un servidor host de sesión Escritorio remoto
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5eca19eee696e7a45cec2f16398055a7b06d00d6
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 6eff557b1fb7eb2c5f67b2902762786bbfc839c1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354365"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934977"
 ---
 # <a name="msg"></a>msg
 

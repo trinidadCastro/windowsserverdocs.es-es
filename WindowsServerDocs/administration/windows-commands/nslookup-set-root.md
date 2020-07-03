@@ -1,6 +1,6 @@
 ---
 title: nslookup set root
-description: Tema de referencia del comando Nslookup Set root, que cambia el nombre del servidor raíz que se usa para las consultas.
+description: Artículo de referencia del comando Nslookup Set root, que cambia el nombre del servidor raíz que se usa para las consultas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1271dbeb0381d01e70380bded82a94ba20163853
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 866cc0f9c7c7e4ea99416c1be1fd8de3d374ca64
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721458"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935668"
 ---
 # <a name="nslookup-set-root"></a>nslookup set root
 

@@ -1,6 +1,6 @@
 ---
 title: netsh
-description: Tema de referencia para el comando netsh, que es una utilidad de scripting de línea de comandos que le permite, ya sea de forma local o remota, mostrar o modificar la configuración de red de un equipo actualmente en ejecución.
+description: Artículo de referencia para el comando netsh, que es una utilidad de scripting de línea de comandos que le permite, ya sea de forma local o remota, mostrar o modificar la configuración de red de un equipo actualmente en ejecución.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c538dd10f86d252390a4e862e7b97204d1c945c9
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 4d39b891b9a8b6e313121756aa8266c79b5bfaca
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721108"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934785"
 ---
 # <a name="netsh"></a>netsh
 
@@ -45,7 +45,7 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 
 - Si especifica **-r** seguido de otro comando, netsh ejecuta el comando en el equipo remoto y, a continuación, vuelve al símbolo del sistema de Cmd.exe. Si especifica **-r** sin otro comando, netsh se abre en modo remoto. El proceso es similar al uso de **set machine** en el símbolo del sistema de netsh. Cuando se usa **-r**, solo se establece el equipo de destino para la instancia actual de Netsh. Después de salir de netsh y volver a entrar, el equipo de destino se restablece como equipo local. Puedes ejecutar comandos netsh en un equipo remoto si especificas un nombre de equipo almacenado en WINS, un nombre de UNC, un nombre de Internet que deba resolver el servidor DNS, o una dirección IP.
 
-- Si el valor de cadena contiene espacios entre caracteres, debe escribir el valor de cadena entre comillas. Por ejemplo: `-r "contoso remote device"`
+- Si el valor de cadena contiene espacios entre caracteres, debe escribir el valor de cadena entre comillas. Por ejemplo, `-r "contoso remote device"`.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

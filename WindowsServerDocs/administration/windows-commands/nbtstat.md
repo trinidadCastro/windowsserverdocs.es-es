@@ -1,6 +1,6 @@
 ---
 title: nbtstat
-description: Tema de referencia del comando nbtstat, que muestra las estadísticas de protocolo NetBIOS sobre TCP/IP (NetBT), las tablas de nombre NetBIOS para el equipo local y los equipos remotos, y la caché de nombres NetBIOS.
+description: Artículo de referencia del comando nbtstat, que muestra las estadísticas de protocolo de NetBIOS a través de TCP/IP (NetBT), las tablas de nombre NetBIOS para el equipo local y los equipos remotos, y la caché de nombres NetBIOS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e205013dc5716b76981e0c9bae667d48802dfc74
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: e663559686d95a4aaa123e2d43731a6b613de080
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354325"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934857"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -46,7 +46,7 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 | `<interval>` | Muestra las estadísticas seleccionadas y pausa el número de segundos especificado en *intervalo* entre cada pantalla. Presione CTRL + C para dejar de mostrar las estadísticas. Si se omite este parámetro, **Nbtstat** imprime la información de configuración actual una sola vez. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Los parámetros de la línea de comandos **Nbtstat** distinguen mayúsculas de minúsculas.
 
@@ -55,19 +55,19 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | Encabezado | Descripción |
     | ------- | ----------- |
     | Entrada | Número de bytes recibidos. |
-    | Resultados | Número de bytes enviados. |
+    | Output | Número de bytes enviados. |
     | Dentro/fuera | Si la conexión procede del equipo (saliente) o de otro equipo al equipo local (entrante). |
     | Life | La hora a la que se activará una entrada de la caché de tabla de nombres antes de que se purgue. |
     | Nombre local | Nombre NetBIOS local asociado a la conexión. |
     | Host remoto | El nombre o la dirección IP asociada al equipo remoto. |
     | `<03>` | El último byte de un nombre NetBIOS convertido en hexadecimal. Cada nombre NetBIOS tiene una longitud de 16 caracteres. Este último byte suele tener una importancia especial, ya que el mismo nombre puede estar presente varias veces en un equipo, que solo difiere en el último byte. Por ejemplo, `<20>` es un espacio en texto ASCII. |
-    | type | Tipo de nombre. Un nombre puede ser un nombre único o un nombre de grupo. |
+    | tipo | Tipo de nombre. Un nombre puede ser un nombre único o un nombre de grupo. |
     | Estado | Si el servicio NetBIOS del equipo remoto se está ejecutando (registrado) o un nombre de equipo duplicado ha registrado el mismo servicio (conflicto). |
-    | State | El estado de las conexiones NetBIOS. |
+    | Estado | El estado de las conexiones NetBIOS. |
 
 - Los posibles estados de conexión NetBIOS incluyen:
 
-    | State | Descripción |
+    | Estado | Descripción |
     | ------- | ----------- |
     | Conectado | Se ha establecido una sesión. |
     | escuchar | Este extremo está disponible para una conexión entrante. |
@@ -76,7 +76,7 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | Aceptar | Una sesión entrante se está aceptando actualmente y se conectará en breve. |
     | Reconexión | Una sesión está intentando volver a conectarse (no se pudo conectar en el primer intento). |
     | Salida | Una sesión se encuentra en la fase de conexión y la conexión TCP se está creando actualmente. |
-    | Entrada | Una sesión entrante está en la fase de conexión. |
+    | Entrante | Una sesión entrante está en la fase de conexión. |
     | Desconectando | Una sesión se encuentra en el proceso de desconexión. |
     | Escenario desconectado | El equipo local ha emitido una desconexión y está esperando la confirmación del sistema remoto. |
 

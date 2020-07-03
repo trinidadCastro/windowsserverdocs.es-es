@@ -1,6 +1,6 @@
 ---
 title: Get-AutoaddDevices
-description: Tema de referencia de Get-AutoaddDevices, que muestra todos los equipos que se encuentran en la base de datos de adición automática en un servidor de servicios de implementación de Windows.
+description: Artículo de referencia de Get-AutoaddDevices, que muestra todos los equipos que se encuentran en la base de datos de adición automática en un servidor de servicios de implementación de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c15836fa81c694aa9295d0a98376f4bef3125243
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f2d470f8443da4612e97a2aa488adef256727382
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719987"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935031"
 ---
 # <a name="get-autoadddevices"></a>Get-AutoaddDevices
 
@@ -41,7 +41,7 @@ Para ver todos los equipos rechazados, escriba:
 wdsutil /verbose /Get-AutoaddDevices /Devicetype:RejectedDevices /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos mediante el comando[Delete-AutoaddDevices](using-the-delete-autoadddevices-command.md)
-[mediante el comando APPROVE-AutoaddDevices](using-the-approve-autoadddevices-command.md)
-[con el comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-delete-autoadddevices-command.md) 
+ Delete-AutoaddDevices [Uso del comando](using-the-approve-autoadddevices-command.md) 
+ APPROVE-AutoaddDevices [Usar el comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)

@@ -1,6 +1,6 @@
 ---
 title: set_2
-description: Tema de referencia de set_2, que establece el contexto, las opciones, el modo detallado y el archivo de metadatos para la creación de instantáneas.
+description: Artículo de referencia para obtener set_2, que establece el contexto, las opciones, el modo detallado y el archivo de metadatos para la creación de instantáneas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 655f379dd8c2d633aad0cbb470b17c6ccb90c4f7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1b25b30ad729eb4e1cbf455f02cdacc76c0a3ab3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721870"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934630"
 ---
 # <a name="set_2"></a>set_2
 

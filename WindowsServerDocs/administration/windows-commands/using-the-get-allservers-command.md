@@ -1,6 +1,6 @@
 ---
 title: Get-AllServers
-description: Tema de referencia de Get-AllServers, que recupera información sobre todos los servidores de servicios de implementación de Windows.
+description: Artículo de referencia de Get-AllServers, que recupera información sobre todos los servidores de servicios de implementación de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b623b5e95e2a57147b7d9d191d42556191dd8e4d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a02515b138c9db6a1d320a4ad466700c15b84749
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719983"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935063"
 ---
 # <a name="get-allservers"></a>Get-AllServers
 

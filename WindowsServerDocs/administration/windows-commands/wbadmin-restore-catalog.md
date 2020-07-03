@@ -1,6 +1,6 @@
 ---
-title: Wbadmin restore Catalog
-description: Tema de referencia de Wbadmin restore Catalog, que recupera un catálogo de copia de seguridad del equipo local desde una ubicación de almacenamiento que especifique.
+title: wbadmin restore catalog
+description: Artículo de referencia de Wbadmin restore Catalog, que recupera un catálogo de copia de seguridad del equipo local desde una ubicación de almacenamiento que especifique.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82a399284862ef59f417efa0b6f17ab6e8c4cb71
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2584dde27560b5b8f28fb51b8fb5c2cf92a2d805
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820495"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934314"
 ---
-# <a name="wbadmin-restore-catalog"></a>Wbadmin restore Catalog
+# <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 
 Recupera un catálogo de copia de seguridad para el equipo local desde una ubicación de almacenamiento que especifique.
 
@@ -39,7 +39,7 @@ wbadmin restore catalog
 |-equipo|Especifica el nombre del equipo para el que desea recuperar el catálogo de copia de seguridad. Se utiliza cuando las copias de seguridad de varios equipos se han almacenado en la misma ubicación. Se debe usar cuando se especifica **-backupTarget** .|
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Si la ubicación (disco, DVD o carpeta compartida remota) donde se almacenan las copias de seguridad está dañada o se ha perdido y no se puede usar para restaurar el catálogo de copias de seguridad, use **Wbadmin Delete Catalog** para eliminar el catálogo dañado. En este caso, debe crear una nueva copia de seguridad una vez que se elimine el catálogo de copias de seguridad.
 

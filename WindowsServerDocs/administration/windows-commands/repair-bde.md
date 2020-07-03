@@ -1,6 +1,6 @@
 ---
 title: repair-bde
-description: Tema de referencia de * * * *-
+description: Artículo de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 235640cacc6c0cca5ee9e820606082afe5d39d41
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a2ba82708acd9c5830e2dc8a09cd804ade342066
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820115"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935643"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -41,8 +41,8 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<> InputVolume|Identifica la letra de unidad de la unidad cifrada con BitLocker que desea reparar. La letra de unidad debe incluir un signo de dos puntos. por ejemplo: **C:**.|
-|\<> OutputVolumeorImage|Identifica la unidad en la que se va a almacenar el contenido de la unidad reparada. Se sobrescribirá toda la información de la unidad de salida.|
+|\<InputVolume>|Identifica la letra de unidad de la unidad cifrada con BitLocker que desea reparar. La letra de unidad debe incluir un signo de dos puntos. por ejemplo: **C:**.|
+|\<OutputVolumeorImage>|Identifica la unidad en la que se va a almacenar el contenido de la unidad reparada. Se sobrescribirá toda la información de la unidad de salida.|
 |-RK|Identifica la ubicación de la clave de recuperación que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-RecoveryKey**.|
 |-RP|Identifica la contraseña de recuperación numérica que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-RecoveryPassword**.|
 |-PW|Identifica la contraseña que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-password** .|
@@ -51,13 +51,13 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 |-f|Fuerza el desmontaje de un volumen incluso si no se puede bloquear. Este comando también se puede especificar como **Force**.|
 |-? o/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Si no se especifica la ruta de acceso a un paquete de claves, **repair-BDE** buscará en la unidad un paquete de claves. Sin embargo, si el disco duro está dañado, **repair-BDE** no podrá encontrar el paquete y le pedirá que proporcione la ruta de acceso.
 
 ## <a name="examples"></a>Ejemplos
 
-Para intentar reparar la unidad C y escribir el contenido de la unidad C en la unidad D con el archivo de clave de recuperación (RecoveryKey. Bek) almacenado en la unidad F y escribe los resultados de este intento en el archivo de registro (log. txt) de la unidad Z.
+Para intentar reparar la unidad C y escribir el contenido de la unidad C en la unidad D con el archivo de clave de recuperación (RecoveryKey. Bek) almacenado en la unidad F y escribe los resultados de este intento en el archivo de registro (log.txt) de la unidad Z.
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```

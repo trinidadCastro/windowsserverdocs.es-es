@@ -1,6 +1,6 @@
 ---
-title: Estado de Wbadmin get
-description: Tema de referencia sobre el estado de Wbadmin get, que informa del estado de la operación de copia de seguridad o recuperación que se está ejecutando actualmente.
+title: wbadmin get status
+description: Artículo de referencia de Wbadmin get status, que informa del estado de la operación de copia de seguridad o recuperación que se está ejecutando actualmente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e41c54b9f916f0032a4976cdfa6d3ca101fb744
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a5f073941fa0d336e513c8de7502a601f1de5711
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821195"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934336"
 ---
-# <a name="wbadmin-get-status"></a>Estado de Wbadmin get
+# <a name="wbadmin-get-status"></a>wbadmin get status
 
 
 
@@ -34,7 +34,7 @@ wbadmin get status
 
 Este subcomando no tiene parámetros.
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Este subcomando no se detendrá hasta que finalice la operación de copia de seguridad o recuperación actual; el subcomando continuará ejecutándose incluso si cierra la ventana de comandos.
 -   Si desea detener la operación de copia de seguridad o de recuperación actual, use el subcomando **Wbadmin STOP Job** .

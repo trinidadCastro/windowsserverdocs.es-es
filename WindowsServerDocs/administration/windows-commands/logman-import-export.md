@@ -1,6 +1,6 @@
 ---
-title: Logman Import y Logman Export
-description: Tema de referencia sobre Logman Import y Logman Export, que importa un conjunto de recopiladores de datos desde un archivo XML o exporta un conjunto de recopiladores de datos a un archivo XML.
+title: logman import y logman export
+description: Artículo de referencia sobre Logman Import y Logman Export, que importa un conjunto de recopiladores de datos desde un archivo XML o exporta un conjunto de recopiladores de datos a un archivo XML.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ad664548dce51d7631a6d1a02d628af91e1921f
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: d5fbe0139a1c320056e4ba80a845b43755fc0026
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721148"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934397"
 ---
-# <a name="logman-import-and-logman-export"></a>Logman Import y Logman Export
+# <a name="logman-import-and-logman-export"></a>logman import y logman export
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
