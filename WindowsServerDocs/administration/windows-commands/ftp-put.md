@@ -1,6 +1,6 @@
 ---
-title: Put de FTP
-description: Tema de referencia del comando FTP Put, que copia un archivo local en el equipo remoto mediante el tipo de transferencia de archivos actual.
+title: ftp put
+description: Artículo de referencia del comando FTP Put, que copia un archivo local en el equipo remoto mediante el tipo de transferencia de archivos actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: aee76b95ac538868122d5137958723326575eb18
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7b382673be838af739c29ffa294e3d853f0507c2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820375"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925150"
 ---
-# <a name="ftp-put"></a>Put de FTP
+# <a name="ftp-put"></a>ftp put
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -40,13 +40,13 @@ put <localfile> [<remotefile>]
 
 ### <a name="examples"></a>Ejemplos
 
-Para copiar el archivo local *Test. txt* y asignarle el nombre *prueba1. txt* en el equipo remoto, escriba:
+Para copiar el archivo local *test.txt* y asignarle el nombre *test1.txt* en el equipo remoto, escriba:
 
 ```
 put test.txt test1.txt
 ```
 
-Para copiar el archivo local *Program. exe* en el equipo remoto, escriba:
+Para copiar el archivo local *program.exe* en el equipo remoto, escriba:
 
 ```
 put program.exe

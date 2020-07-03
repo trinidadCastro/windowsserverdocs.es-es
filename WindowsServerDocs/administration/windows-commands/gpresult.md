@@ -1,6 +1,6 @@
 ---
 title: gpresult
-description: Tema de referencia del comando Gpresult, que muestra la información del conjunto resultante de directivas (RSoP) para un usuario y un equipo remotos.
+description: Artículo de referencia del comando Gpresult, que muestra la información del conjunto resultante de directivas (RSoP) para un usuario y un equipo remotos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e88a75a15168baaf2e49ca08ff20d3a8ffb5620c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b55db74c0c8f9c527ade8412f50ef83ea675a5c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818865"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924634"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -35,7 +35,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| modificado`<system>` | Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el equipo local. |
+| modificado`<system>` | Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. La opción predeterminada es el equipo local. |
 | /u`<username>` | Usa las credenciales del usuario especificado para ejecutar el comando. El usuario predeterminado es el usuario que ha iniciado sesión en el equipo que emite el comando. |
 | /p`[<password>]` | Especifica la contraseña de la cuenta de usuario que se proporciona en el parámetro **/u** . Si se omite **/p** , **Gpresult** solicita la contraseña. El parámetro **/p** no se puede usar con **/x** o **/h**. |
 | /User`[<targetdomain>\]<targetuser>]` | Especifica el usuario remoto cuyos datos de RSoP se van a mostrar. |
@@ -47,7 +47,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 | /z | Muestra toda la información disponible sobre directiva de grupo. Esto incluye la configuración detallada que se aplicó con una prioridad de 1 y superior. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Directiva de grupo es la herramienta administrativa principal para definir y controlar el funcionamiento de los programas, los recursos de red y el sistema operativo para los usuarios y equipos de una organización. En un entorno de Active Directory, directiva de grupo se aplica a usuarios o equipos en función de su pertenencia a sitios, dominios o unidades organizativas.
 
@@ -63,7 +63,7 @@ Para recuperar datos RSoP solo para el usuario remoto, *maindom\hiropln* con la 
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /scope user /r
 ```
 
-Para guardar toda la información disponible sobre directiva de grupo en un archivo denominado, *Policy. txt*, solo para el usuario remoto *maindom\hiropln* con la contraseña *p@ssW23* , en el equipo *srvmain*, escriba:
+Para guardar toda la información disponible sobre directiva de grupo en un archivo denominado *policy.txt*, solo para el usuario remoto *maindom\hiropln* con la contraseña *p@ssW23* , en el equipo *srvmain*, escriba:
 
 ```
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /z > policy.txt

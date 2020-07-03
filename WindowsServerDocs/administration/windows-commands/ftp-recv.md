@@ -1,6 +1,6 @@
 ---
-title: recepción de FTP
-description: Tema de referencia del comando FTP RECV, que copia un archivo remoto en el equipo local mediante el tipo de transferencia de archivos actual.
+title: ftp recv
+description: Artículo de referencia para el comando recepción de FTP, que copia un archivo remoto en el equipo local con el tipo de transferencia de archivos actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 011a42d3279a2fa26202d7d886a992956e70f6a1
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 01f9fc1d8e233d8e2c38f606dea12f5d342d5e44
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820335"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925782"
 ---
-# <a name="ftp-recv"></a>recepción de FTP
+# <a name="ftp-recv"></a>ftp recv
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -40,13 +40,13 @@ recv <remotefile> [<localfile>]
 
 ### <a name="examples"></a>Ejemplos
 
-Para copiar *Test. txt* en el equipo local mediante la transferencia de archivos actual, escriba:
+Para copiar *test.txt* en el equipo local mediante la transferencia de archivos actual, escriba:
 
 ```
 recv test.txt
 ```
 
-Para copiar *Test. txt* en el equipo local como *Test1. txt* mediante la transferencia de archivos actual, escriba:
+Para copiar *test.txt* en el equipo local como *test1.txt* mediante la transferencia de archivos actual, escriba:
 
 ```
 recv test.txt test1.txt

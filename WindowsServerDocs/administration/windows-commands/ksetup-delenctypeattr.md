@@ -1,6 +1,6 @@
 ---
 title: ksetup delenctypeattr
-description: Tema de referencia de ksetup delenctypeattr, que quita el atributo de tipo de cifrado del dominio.
+description: Artículo de referencia de ksetup delenctypeattr, que quita el atributo de tipo de cifrado del dominio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3076a25b619615402a599bd8aaa6ce9d10d4fe0
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5aabbb99f40d8d22189d6abccc188161b7ee2f5c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817945"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925480"
 ---
 # <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 

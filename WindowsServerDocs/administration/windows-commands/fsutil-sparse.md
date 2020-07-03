@@ -1,6 +1,6 @@
 ---
 title: fsutil sparse
-description: Tema de referencia para el comando fsutil Sparse, que administra archivos dispersos.
+description: Artículo de referencia para el comando fsutil Sparse, que administra archivos dispersos.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 77545920-2d13-4f35-a4d1-14dbec8340dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e68ac844bb7aa7e22a9df0ddb0c982b3701231d7
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c765b096f1b41b211d3a779d8f838aa56f31aeb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435720"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925212"
 ---
 # <a name="fsutil-sparse"></a>fsutil sparse
 
@@ -45,7 +45,7 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 | `<beginningoffset>` | Especifica el desplazamiento en el archivo que se va a marcar como disperso. |
 | `<length>` | Especifica la longitud de la región en el archivo que se va a marcar como dispersa (en bytes). |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Se asignan todos los datos significativos o distintos de cero, mientras que no se asignan todos los datos no significativos (cadenas grandes de datos que se componen de ceros).
 
@@ -57,7 +57,7 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 
 ### <a name="examples"></a>Ejemplos
 
-Para marcar un archivo denominado *sample. txt* en el directorio *c:\temp* como disperso, escriba:
+Para marcar un archivo llamado *sample.txt* en el directorio *c:\temp* como disperso, escriba:
 
 ```
 fsutil sparse setflag c:\temp\sample.txt

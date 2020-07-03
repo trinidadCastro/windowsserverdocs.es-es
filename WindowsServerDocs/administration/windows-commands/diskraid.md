@@ -1,6 +1,6 @@
 ---
 title: Diskraid
-description: Tema de referencia de la herramienta de línea de comandos Diskraid, que permite configurar y administrar matrices redundantes de subsistemas de almacenamiento de discos independientes (o económicos) (RAID).
+description: Artículo de referencia de la herramienta de línea de comandos Diskraid, que permite configurar y administrar matrices redundantes de subsistemas de almacenamiento de discos independientes (o económicos) (RAID).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffceb9347921536a1bee59f46a4d5ab4800c1e70
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: d0745c708878fa9da6571666b5702b4408976164
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235205"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924762"
 ---
 # <a name="diskraid"></a>Diskraid
 
@@ -704,8 +704,8 @@ unmask lun {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| all | Especifica que el LUN debe ser accesible desde todos los hosts. Sin embargo, no se puede quitar la máscara del LUN a todos los destinos de un subsistema iSCSI.<P>Debe cerrar sesión en el destino antes de ejecutar el `unmask lun all` comando. |
-| None | Especifica que el LUN no debe ser accesible para ningún host.<P>Debe cerrar sesión en el destino antes de ejecutar el `unmask lun none` comando. |
+| todo | Especifica que el LUN debe ser accesible desde todos los hosts. Sin embargo, no se puede quitar la máscara del LUN a todos los destinos de un subsistema iSCSI.<P>Debe cerrar sesión en el destino antes de ejecutar el `unmask lun all` comando. |
+| ninguno | Especifica que el LUN no debe ser accesible para ningún host.<P>Debe cerrar sesión en el destino antes de ejecutar el `unmask lun none` comando. |
 | add | Especifica que los hosts especificados se deben agregar a la lista de hosts existente desde la que se puede tener acceso a este LUN. Si no se especifica este parámetro, la lista de hosts proporcionada reemplaza la lista existente de hosts de los que se puede tener acceso a este LUN. |
 | WWN = | Especifica una lista de números hexadecimales que representan los nombres de todo el mundo a partir del cual se debe hacer accesible el LUN o los hosts. Para enmascarar o desenmascarar un conjunto específico de hosts en un subsistema Canal de fibra, puede escribir una lista de WWN separada por punto y coma para los puertos de los equipos host de interés. |
 | iniciador = | Especifica una lista de iniciadores iSCSI a los que se debe hacer accesible el LUN seleccionado actualmente. Para enmascarar o desenmascarar un conjunto específico de hosts en un subsistema iSCSI, puede escribir una lista separada por punto y coma de nombres de iniciador iSCSI para los iniciadores en los equipos host de interés. |

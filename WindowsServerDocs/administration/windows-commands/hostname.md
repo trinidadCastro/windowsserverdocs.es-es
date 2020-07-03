@@ -1,6 +1,6 @@
 ---
 title: hostname
-description: Tema de referencia del comando hostname, que muestra la parte del nombre de host del nombre de equipo completo del equipo.
+description: Artículo de referencia del comando hostname, que muestra la parte del nombre de host del nombre de equipo completo del equipo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9a830d70d8497af2436daded2bd36a775b05ca2
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a1ac0e1955f431ef10c4189d05f031b54594cc88
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818575"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924531"
 ---
 # <a name="hostname"></a>hostname
 

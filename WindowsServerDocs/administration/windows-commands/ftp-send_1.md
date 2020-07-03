@@ -1,6 +1,6 @@
 ---
-title: envío FTP
-description: Tema de referencia del comando FTP Send, que copia un archivo local en el equipo remoto mediante el tipo de transferencia de archivos actual.
+title: ftp send
+description: Artículo de referencia para el comando FTP Send, que copia un archivo local en el equipo remoto mediante el tipo de transferencia de archivos actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12ce45a0eb26e1aa4a0d7daace831751e1b67f4a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 4d261db79483800507d62e9d4253a58b2b9359fe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820305"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925695"
 ---
-# <a name="ftp-send"></a>envío FTP
+# <a name="ftp-send"></a>ftp send
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -40,13 +40,13 @@ send <localfile> [<remotefile>]
 
 ### <a name="examples"></a>Ejemplos
 
-Para copiar el archivo local *Test. txt* y asignarle el nombre *prueba1. txt* en el equipo remoto, escriba:
+Para copiar el archivo local *test.txt* y asignarle el nombre *test1.txt* en el equipo remoto, escriba:
 
 ```
 send test.txt test1.txt
 ```
 
-Para copiar el archivo local *Program. exe* en el equipo remoto, escriba:
+Para copiar el archivo local *program.exe* en el equipo remoto, escriba:
 
 ```
 send program.exe

@@ -1,6 +1,6 @@
 ---
 title: gpfixup
-description: Tema de referencia para el comando gpfixup, que corrige las dependencias de nombre de dominio en directiva de grupo objetos y vínculos de directiva de grupo después de una operación de cambio de nombre de dominio.
+description: Artículo de referencia para el comando gpfixup, que corrige las dependencias de nombre de dominio en directiva de grupo objetos y vínculos de directiva de grupo después de una operación de cambio de nombre de dominio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14a225209e719707093ddd87918587e24e4572a6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c09efb2fc8b1de124cbefc1b2dff73df29d2a4f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818875"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924657"
 ---
 # <a name="gpfixup"></a>gpfixup
 

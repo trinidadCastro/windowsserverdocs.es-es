@@ -1,6 +1,6 @@
 ---
 title: ksetup addrealmflags
-description: Tema de referencia del comando ksetup addrealmflags, que agrega marcas de dominio Kerberos adicionales al dominio Kerberos especificado.
+description: Artículo de referencia para el comando ksetup addrealmflags, que agrega marcas de dominio Kerberos adicionales al dominio Kerberos especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c0862462f47189f4904421943e4d3de55c856ace
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0206d56563544e48fec5e714febdd3c3be52ab40
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818035"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925523"
 ---
 # <a name="ksetup-addrealmflags"></a>ksetup addrealmflags
 
@@ -32,13 +32,13 @@ ksetup /addrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 | --------- | ----------- |
 | `<realmname>` | Especifica el nombre DNS en mayúsculas, como CORP. CONTOSO.COM. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos que no se basan en el sistema operativo Windows Server. Los equipos que ejecutan Windows Server pueden usar un servidor Kerberos para administrar la autenticación en el dominio Kerberos, en lugar de usar un dominio que ejecute un sistema operativo Windows Server. Esta entrada establece las características del dominio Kerberos y son las siguientes:
 
-| Value | Marca de dominio Kerberos | Descripción |
+| Valor | Marca de dominio Kerberos | Descripción |
 | ----- | ---------- | ----------- |
-| 0xF | All | Se establecen todas las marcas de dominio Kerberos. |
+| 0xF | Todas | Se establecen todas las marcas de dominio Kerberos. |
 | 0x00 | None | No se establecen marcas de dominio Kerberos y no se habilitan características adicionales. |
 | 0x01 | sendaddress | La dirección IP se incluirá en los vales de concesión de vales. |
 | 0x02 | tcpsupported | El protocolo de control de transmisión (TCP) y el protocolo de datagramas de usuario (UDP) se admiten en este dominio Kerberos. |

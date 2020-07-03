@@ -1,6 +1,6 @@
 ---
 title: prnjobs
-description: Tema de referencia del comando prnjobs, que pone en pausa, reanuda, cancela y enumera los trabajos de impresión.
+description: Artículo de referencia para el comando prnjobs, que pone en pausa, reanuda, cancela y enumera los trabajos de impresión.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: e13e217d422aa6d8f2c585c8890915af7e396ddb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 79ad0631a2d1c871664ecebc11c26f2e005ca772
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472270"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924190"
 ---
 # <a name="prnjobs"></a>prnjobs
 
@@ -37,7 +37,7 @@ cscript prnjobs {-z | -m | -x | -l | -?} [-s <Servername>] [-p <Printername>] [-
 | -X | Cancela el trabajo de impresión especificado por el parámetro **-j** . |
 | -l | Enumera todos los trabajos de impresión de una cola de impresión. |
 | -s`<Servername>` | Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local. |
-| -p`<Printername>` | Necesario. Especifica el nombre de la impresora que desea administrar. |
+| -p`<Printername>` | Obligatorio. Especifica el nombre de la impresora que desea administrar. |
 | -j`<JobID>` | Especifica (por número de identificador) el trabajo de impresión que desea cancelar. |
 | -u `<Username>` -w`<password>` | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
 | /? | Muestra la ayuda en el símbolo del sistema. |

@@ -1,6 +1,6 @@
 ---
 title: break
-description: Tema de referencia del comando break, que desasocia un volumen de instantáneas de VSS y hace que sea accesible como volumen normal.
+description: Artículo de referencia para el comando break, que desasocia un volumen de instantáneas de VSS y hace que sea accesible como volumen normal.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e8789ab68ecb98d190a79c3f1088aad05b83562
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7f3974f183215a42920f7406a62ab335eb101f56
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707781"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924899"
 ---
 # <a name="break"></a>break
 
@@ -36,7 +36,7 @@ break [writable] <setid>
 | Parámetro | Descripción |
 | --------- | ----------- |
 | edita | Habilita el acceso de lectura y escritura en el volumen. |
-| \<> SetID | Especifica el identificador del conjunto de instantáneas. El alias del identificador de instantánea, que se almacena como una variable de entorno mediante el comando **cargar metadatos** , se puede usar en el parámetro *SetID* . |
+| \<setid> | Especifica el identificador del conjunto de instantáneas. El alias del identificador de instantánea, que se almacena como una variable de entorno mediante el comando **cargar metadatos** , se puede usar en el parámetro *SetID* . |
 
 ## <a name="examples"></a>Ejemplos
 

@@ -1,6 +1,6 @@
 ---
-title: Logman Start y Logman STOP
-description: Tema de referencia de los comandos Logman Start y Logman STOP, que inicia un recopilador de datos y establece el tiempo de inicio en manual, o detiene un conjunto de recopiladores de datos y establece la hora de finalización en manual.
+title: logman start y logman stop
+description: Artículo de referencia de los comandos Logman Start y Logman STOP, que inicia un recopilador de datos y establece el tiempo de inicio en manual, o detiene un conjunto de recopiladores de datos y establece la hora de finalización en manual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db0111c4f58f0a28ad76affd3e4d8e24d4a927c2
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: b7b7da9aad31b977c2343e6f784b19dd420c21e6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222913"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925424"
 ---
-# <a name="logman-start-and-logman-stop"></a>Logman Start y Logman STOP
+# <a name="logman-start-and-logman-stop"></a>logman start y logman stop
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

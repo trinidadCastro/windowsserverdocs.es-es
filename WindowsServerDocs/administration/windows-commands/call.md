@@ -1,6 +1,6 @@
 ---
 title: llamada
-description: Tema de referencia del comando call, que llama a un programa por lotes desde otro sin detener el programa de Batch primario.
+description: Artículo de referencia del comando call, que llama a un programa por lotes desde otro sin detener el programa de Batch primario.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 64c4b89d18ab869a7e6c8b1ee8537c4f808bce8f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e73199b9d5633d5b3f1f7b8afd2bd35eb826bfd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719668"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924839"
 ---
 # <a name="call"></a>llamada
 
@@ -36,7 +36,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 | `[<drive>:][<path>]<filename>` | Especifica la ubicación y el nombre del programa por lotes al que desea llamar. El `<filename>` parámetro es obligatorio y debe tener una extensión. bat o. cmd. |
 | `<batchparameters>` | Especifica la información de línea de comandos requerida por el programa por lotes. |
 | `:<label>` | Especifica la etiqueta a la que desea que salte un control de programa por lotes. |
-| `<arguments>` | Especifica la información de línea de comandos que se va a pasar a la nueva instancia del programa por lotes `:<label>`, a partir de.|
+| `<arguments>` | Especifica la información de línea de comandos que se va a pasar a la nueva instancia del programa por lotes, a partir de `:<label>` .|
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="batch-parameters"></a>Parámetros de Batch
@@ -70,9 +70,9 @@ En la tabla siguiente se muestra cómo se pueden combinar modificadores con los 
 | % ~ DP $ ruta de acceso: 1 | Busca en los directorios que aparecen en la variable de entorno PATH de **%1**y, a continuación, se expande a la letra de unidad y la ruta de acceso del primer directorio encontrado. |
 | % ~ ftza1 | Expande **%1** para mostrar una salida similar al comando **dir** . |
 
-En los ejemplos anteriores, **%1** y path se pueden reemplazar por otros valores válidos. La **%~** sintaxis termina con un número de argumento válido. Los **%~** modificadores no se pueden usar con **% &#42;**.
+En los ejemplos anteriores, **%1** y path se pueden reemplazar por otros valores válidos. La **%~** Sintaxis termina con un número de argumento válido. Los **%~** modificadores no se pueden usar con **% &#42;**.
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 - Usar parámetros de Batch:
 
@@ -80,11 +80,11 @@ En los ejemplos anteriores, **%1** y path se pueden reemplazar por otros valores
 
 - Usar el `<label>` parámetro:
 
-    Mediante la **llamada** a con `<label>` el parámetro, se crea un nuevo contexto de archivo por lotes y se pasa el control a la instrucción después de la etiqueta especificada. La primera vez que se encuentra el final del archivo por lotes (es decir, después de saltar a la etiqueta), el control vuelve a la instrucción después de la instrucción de **llamada** . La segunda vez que se encuentra el final del archivo por lotes, se sale del script por lotes.
+    Mediante la **llamada** a con el `<label>` parámetro, se crea un nuevo contexto de archivo por lotes y se pasa el control a la instrucción después de la etiqueta especificada. La primera vez que se encuentra el final del archivo por lotes (es decir, después de saltar a la etiqueta), el control vuelve a la instrucción después de la instrucción de **llamada** . La segunda vez que se encuentra el final del archivo por lotes, se sale del script por lotes.
 
 - Usar canalizaciones y símbolos de redireccionamiento:
 
-    No utilice canalizaciones `(|)` ni símbolos de`<` redireccionamiento `>`(o) con la **llamada**.
+    No utilice canalizaciones `(|)` ni símbolos de redireccionamiento ( `<` o `>` ) con la **llamada**.
 
 - Realización de una llamada recursiva
 
@@ -92,17 +92,17 @@ En los ejemplos anteriores, **%1** y path se pueden reemplazar por otros valores
 
 - Trabajar con extensiones de comandos
 
-    Si las extensiones de comando están habilitadas `<label>` , **llamar a** acepta como destino de la llamada. La sintaxis correcta es`call :<label> <arguments>`
+    Si las extensiones de comando están habilitadas, **llamar a** acepta `<label>` como destino de la llamada. La sintaxis correcta es`call :<label> <arguments>`
 
 ## <a name="examples"></a>Ejemplos
 
-Para ejecutar el programa Checknew. bat desde otro programa por lotes, escriba el siguiente comando en el programa de Batch primario:
+Para ejecutar el programa checknew.bat desde otro programa por lotes, escriba el siguiente comando en el programa por lotes primario:
 
 ```
 call checknew
 ```
 
-Si el programa de Batch primario acepta dos parámetros de batch y desea pasarlos a Checknew. bat, escriba el siguiente comando en el programa de Batch primario:
+Si el programa de Batch primario acepta dos parámetros de batch y desea pasar esos parámetros a checknew.bat, escriba el siguiente comando en el programa de Batch primario:
 
 ```
 call checknew %1 %2

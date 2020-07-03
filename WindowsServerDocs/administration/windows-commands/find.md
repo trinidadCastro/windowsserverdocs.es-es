@@ -1,6 +1,6 @@
 ---
 title: find
-description: Tema de referencia del comando Buscar, que busca una cadena de texto en archivos y muestra la cadena de texto especificada en el archivo.
+description: Artículo de referencia para el comando Buscar, que busca una cadena de texto en archivos y muestra la cadena de texto especificada en el archivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0273405ce5e5b4958a347cd1eaddee0a38897f0c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8ebebcd29faad50aec84dd464ff0f745d2ddf52c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437010"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925253"
 ---
 # <a name="find"></a>find
 
@@ -35,11 +35,11 @@ find [/v] [/c] [/n] [/i] [/off[line]] <string> [[<drive>:][<path>]<filename>[...
 | /n | Precede a cada línea con el número de línea del archivo. |
 | /i | Especifica que la búsqueda no distingue entre mayúsculas y minúsculas. |
 | [/OFF [línea]] | No omite los archivos que tienen el conjunto de atributos sin conexión. |
-| `<string>` | Necesario. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
+| `<string>` | Obligatorio. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
 | `[<drive>:][<path>]<filename>` | Especifica la ubicación y el nombre del archivo en el que se va a buscar la cadena especificada. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si no usa **/i**, este comando busca exactamente lo que especifica para la *cadena*. Por ejemplo, este comando trata los caracteres `a` y de `A` forma diferente. Sin embargo, si usa **/i**, la búsqueda no distingue entre mayúsculas y minúsculas y trata `a` y `A` como el mismo carácter.
 
@@ -63,7 +63,7 @@ Para mostrar todas las líneas de *Pencil.ad* que contienen el *enfoque de lápi
 find pencil sharpener pencil.ad
 ```
 
-Para encontrar el texto, "los científicos etiquetaron su papel únicamente para la discusión. No es un informe final ". en el archivo *. doc de informe* , escriba:
+Para encontrar el texto, "los científicos etiquetaron su papel únicamente para la discusión. No es un informe final ". en el archivo de *report.doc* , escriba:
 
 ```
 find ""The scientists labeled their paper for discussion only. It is not a final report."" report.doc

@@ -1,6 +1,6 @@
 ---
 title: inactivo
-description: Tema de referencia del comando inactivo, que marca la partición del sistema o la partición de arranque con el foco como inactivo en discos básicos de registro de arranque maestro (MBR).
+description: Artículo de referencia para el comando inactivo, que marca la partición del sistema o la partición de arranque con el foco como inactivo en discos básicos de registro de arranque maestro (MBR).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9861a54c284002e53b0a8fc354aa883d80fff0e7
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: db7d279577b8120137b4397551a480ea2d2a0e8a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818445"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924418"
 ---
 # <a name="inactive"></a>inactivo
 

@@ -1,6 +1,6 @@
 ---
-title: anexar FTP
-description: Tema de referencia del comando APPEND de FTP, que anexa un archivo local a un archivo en el equipo remoto con la configuración de tipo de archivo actual.
+title: ftp append
+description: Artículo de referencia del comando APPEND de FTP, que anexa un archivo local a un archivo en el equipo remoto con la configuración de tipo de archivo actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d1b6ab4a6ae0c1654d4335d24f135b2893bdcb7
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f1d1cf36139f00f3d61e400cb38960d2c8551532
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819145"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925169"
 ---
-# <a name="ftp-append"></a>anexar FTP
+# <a name="ftp-append"></a>ftp append
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -37,13 +37,13 @@ append <localfile> [remotefile]
 
 ### <a name="examples"></a>Ejemplos
 
-Para anexar *archivo1. txt* a *archivo2. txt* en el equipo remoto, escriba:
+Para anexar *file1.txt* a *file2.txt* en el equipo remoto, escriba:
 
 ```
 append file1.txt file2.txt
 ```
 
-Para anexar el *archivo1. txt* local a un archivo denominado *archivo1. txt* en el equipo remoto.
+Para anexar el *file1.txt* local a un archivo denominado *file1.txt* en el equipo remoto.
 
 ```
 append file1.txt

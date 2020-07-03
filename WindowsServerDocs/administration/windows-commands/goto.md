@@ -1,6 +1,6 @@
 ---
 title: goto
-description: Tema de referencia del comando Goto, que dirige cmd. exe a una línea etiquetada en un programa por lotes.
+description: Artículo de referencia para el comando Goto, que dirige cmd.exe a una línea etiquetada en un programa por lotes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1eb1b6b275887de535614fa5df4adabe33406a31
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: afc77f7837ddaeb0552052538537285f0d652682
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818975"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924682"
 ---
 # <a name="goto"></a>goto
 
-Dirige cmd. exe a una línea etiquetada en un programa por lotes. Dentro de un programa por lotes, este comando dirige el procesamiento de comandos a una línea identificada por una etiqueta. Cuando se encuentra la etiqueta, el procesamiento continúa a partir de los comandos que comienzan en la línea siguiente.
+Dirige cmd.exe a una línea etiquetada en un programa por lotes. Dentro de un programa por lotes, este comando dirige el procesamiento de comandos a una línea identificada por una etiqueta. Cuando se encuentra la etiqueta, el procesamiento continúa a partir de los comandos que comienzan en la línea siguiente.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -33,7 +33,7 @@ goto <label>
 | `<label>` | Especifica una cadena de texto que se utiliza como etiqueta en el programa por lotes. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 -  Si las extensiones de comando están habilitadas (el valor predeterminado) y se usa el comando **goto** con una etiqueta de destino de **: EOF**, se transfiere el control al final del archivo de script por lotes actual y se sale del archivo de script por lotes sin definir una etiqueta. Cuando use este comando con la etiqueta **: EOF** , debe insertar un signo de dos puntos delante de la etiqueta. Por ejemplo: `goto:EOF`.
 

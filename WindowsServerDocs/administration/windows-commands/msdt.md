@@ -1,6 +1,6 @@
 ---
 title: msdt
-description: Tema de referencia del comando MSDT, que invoca un paquete de solución de problemas en la línea de comandos o como parte de un script automatizado y habilita opciones adicionales sin intervención del usuario.
+description: Artículo de referencia del comando MSDT, que invoca un paquete de solución de problemas en la línea de comandos o como parte de un script automatizado y habilita opciones adicionales sin intervención del usuario.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47eaf859c86a939777ce8878937d36f2c581ab31
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 99ba1320171e4e305209f06fbee617e54c979d30
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354376"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925025"
 ---
 # <a name="msdt"></a>msdt
 

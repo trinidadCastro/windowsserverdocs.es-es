@@ -1,6 +1,6 @@
 ---
 title: eventcreate
-description: Tema de referencia del comando eventcreate, que permite a un administrador crear un evento personalizado en un registro de eventos especificado.
+description: Artículo de referencia para el comando eventcreate, que permite a un administrador crear un evento personalizado en un registro de eventos especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8348e61f6cd94c9b660d0ad9cac4cb1f96920cad
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 60ed97eeffc8ae2410fdd8f296a0e8348f376652
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436880"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925314"
 ---
 # <a name="eventcreate"></a>eventcreate
 
@@ -33,7 +33,7 @@ eventcreate [/s <computer> [/u <domain\user> [/p <password>]] {[/l {APPLICATION|
 
 | Parámetro | Descripción |
 | --------- |------------ |
-| modificado`<computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. |
+| modificado`<computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. |
 | /u`<domain\user>` | Ejecuta el comando con los permisos de cuenta del usuario especificado por `<user>` o `<domain\user>` . El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
 | /p`<password>` | Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . |
 | l`{APPLICATION | SYSTEM}` | Especifica el nombre del registro de eventos donde se creará el evento. Los nombres de registro válidos son **aplicación** o **sistema**. |

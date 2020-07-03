@@ -1,6 +1,6 @@
 ---
 title: jetpack
-description: Tema de referencia del comando jetpack, que compacta una base de datos del servicio de nombres Internet de Windows (WINS) o del Protocolo de configuración dinámica de host (DHCP).
+description: Artículo de referencia del comando jetpack, que compacta una base de datos del servicio de nombres Internet de Windows (WINS) o del Protocolo de configuración dinámica de host (DHCP).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d77f9c964f5820fc7a44b803bb765e94cb35637
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b0aa52bad06865641da5fabf25c27ceb8c7a0bbd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818255"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924322"
 ---
 # <a name="jetpack"></a>jetpack
 
@@ -22,7 +22,7 @@ ms.locfileid: "83818255"
 
 Compacta una base de datos del servicio de nombres Internet de Windows (WINS) o del Protocolo de configuración dinámica de host (DHCP). Se recomienda compactar la base de datos WINS cada vez que se aproxime a 30 MB.
 
-Jetpack. exe compacta la base de datos de la siguiente manera:
+Jetpack.exe compacta la base de datos de la siguiente manera:
 
 1. Copiar la información de base de datos en un archivo de base de datos temporal.
 
@@ -41,7 +41,7 @@ jetpack.exe <database_name> <temp_database_name>
 | Parámetro | Descripción |
 | ------- | -------- |
 | `<database_name>` | Especifica el nombre del archivo de base de datos original. |
-| `<temp_database_name>` | Especifica el nombre del archivo de base de datos temporal que va a crear jetpack. exe.<p>Nota: este archivo temporal se quita cuando se completa el proceso de compactación. Para que este comando funcione correctamente, debe asegurarse de que el nombre del archivo temporal es único y de que ya existe un archivo con ese nombre. |
+| `<temp_database_name>` | Especifica el nombre del archivo de base de datos temporal que va a crear jetpack.exe.<p>Nota: este archivo temporal se quita cuando se completa el proceso de compactación. Para que este comando funcione correctamente, debe asegurarse de que el nombre del archivo temporal es único y de que ya existe un archivo con ese nombre. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 ### <a name="examples"></a>Ejemplos

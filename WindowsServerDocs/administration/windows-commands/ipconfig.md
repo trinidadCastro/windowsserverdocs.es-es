@@ -1,6 +1,6 @@
 ---
 title: ipconfig
-description: Tema de referencia para el comando ipconfig, que muestra todos los valores de configuración de red TCP/IP actuales y actualiza la configuración del Protocolo de configuración dinámica de host (DHCP) y el sistema de nombres de dominio (DNS).
+description: Artículo de referencia para el comando ipconfig, que muestra todos los valores de configuración de red TCP/IP actuales y actualiza la configuración del Protocolo de configuración dinámica de host (DHCP) y el sistema de nombres de dominio (DNS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e08e8c493b40475ba61ea76be6b49b9c4e21c1cf
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 3567f855a6066ed318f10daa22f1ca8de0d565c4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818395"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924354"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -42,7 +42,7 @@ ipconfig [/allcompartments] [/all] [/renew [<adapter>]] [/release [<adapter>]] [
 | /showclassid`<adapter>` | Muestra el identificador de clase DHCP de un adaptador especificado. Para ver el identificador de clase de DHCP para todos los adaptadores, use el carácter comodín de asterisco (**&#42;**) en lugar del *adaptador*. Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IP automáticamente. |
 | /? | Muestra la Ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Este comando es muy útil en los equipos que están configurados para obtener una dirección IP automáticamente. Esto permite a los usuarios determinar qué valores de configuración de TCP/IP han sido configurados por DHCP, el direccionamiento IP privado automático (APIPA) o una configuración alternativa.
 

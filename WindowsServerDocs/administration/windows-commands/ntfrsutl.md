@@ -1,6 +1,6 @@
 ---
 title: ntfrsutl
-description: Tema de referencia del comando NTFRSUTL, que vuelca las tablas internas, el subproceso y la información de memoria para el servicio de replicación de archivos de NT (NTFRS).
+description: Artículo de referencia del comando NTFRSUTL, que vuelca las tablas internas, el subproceso y la información de memoria para el servicio de replicación de archivos de NT (NTFRS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f931d916888a372d66a1cc06cb7543067b9b9d3b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 56aefc1277f67dc6a06ba4686c26f81592afc2f3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472779"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925330"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 

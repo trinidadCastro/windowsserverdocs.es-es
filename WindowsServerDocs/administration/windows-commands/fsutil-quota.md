@@ -1,6 +1,6 @@
 ---
 title: fsutil quota
-description: Tema de referencia del comando fsutil quota, que administra las cuotas de disco en volúmenes NTFS para proporcionar un control más preciso del almacenamiento basado en red.
+description: Artículo de referencia del comando fsutil quota, que administra las cuotas de disco en volúmenes NTFS para proporcionar un control más preciso del almacenamiento basado en red.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 21225c11-7c72-4ea2-96bd-e63d4beb3be5
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 54c4f6fe5fd5ae7a43d5057cd5837374f1b94ecd
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: f757f822a903f6b5c6d221e17f87cf1e73d1555f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435822"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925225"
 ---
 # <a name="fsutil-quota"></a>fsutil quota
 
@@ -43,12 +43,12 @@ fsutil quota [violations]
 | Query | Muestra las cuotas de disco existentes. |
 | track | Realiza el seguimiento del uso del disco en el volumen especificado. |
 | dujeron | Busca en los registros del sistema y de la aplicación, y muestra un mensaje para indicar que se han detectado infracciones de cuota o que un usuario ha alcanzado un umbral de cuota o un límite de cuota. |
-| `<volumepath>` | Necesario. Especifica el nombre de la unidad seguido de dos puntos o del GUID en el formato `volume{GUID}` . |
+| `<volumepath>` | Obligatorio. Especifica el nombre de la unidad seguido de dos puntos o del GUID en el formato `volume{GUID}` . |
 | `<threshold>`  | Establece el límite (en bytes) en el que se emiten las advertencias. Este parámetro es necesario para el `fsutil quota modify` comando. |
 | `<limit>` | Establece el uso máximo permitido del disco (en bytes). Este parámetro es necesario para el `fsutil quota modify` comando. |
 | `<username>` | Especifica el nombre de dominio o de usuario. Este parámetro es necesario para el `fsutil quota modify` comando. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Las cuotas de disco se implementan por volumen y permiten que se implementen límites de almacenamiento tanto de forma rígida como por usuario.
 

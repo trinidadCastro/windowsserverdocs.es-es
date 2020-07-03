@@ -1,6 +1,6 @@
 ---
-title: seguimiento de FTP
-description: Tema de referencia del comando seguimiento de FTP, que alterna el seguimiento de paquetes.
+title: ftp trace
+description: Artículo de referencia para el comando seguimiento de FTP, que alterna el seguimiento de paquetes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 985f860f4a080fed9d6a0c6e2c8950bac8c4b143
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 554e660fd995febce425b6f56a857cd3048b1b0f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820295"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925665"
 ---
-# <a name="ftp-trace"></a>seguimiento de FTP
+# <a name="ftp-trace"></a>ftp trace
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

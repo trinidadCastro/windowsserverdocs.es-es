@@ -1,6 +1,6 @@
 ---
-title: mput FTP
-description: Tema de referencia para el comando FTP mput, que copia archivos locales en el equipo remoto mediante el tipo de transferencia de archivos actual.
+title: ftp mput
+description: Artículo de referencia para el comando FTP mput, que copia archivos locales en el equipo remoto mediante el tipo de transferencia de archivos actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5006c1ba19f0e017dea377b47bd0d89a68266382
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 506a4d9a64f1dd9b4b37088a30926190d7675695
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820415"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925809"
 ---
-# <a name="ftp-mput"></a>mput FTP
+# <a name="ftp-mput"></a>ftp mput
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -36,7 +36,7 @@ mput <localfile>[ ]
 
 ### <a name="examples"></a>Ejemplos
 
-Para copiar *Program1. exe* y *Program2. exe* en el equipo remoto mediante el tipo de transferencia de archivo actual, escriba:
+Para copiar *Program1.exe* y *Program2.exe* en el equipo remoto con el tipo de transferencia de archivo actual, escriba:
 
 ```
 mput Program1.exe Program2.exe

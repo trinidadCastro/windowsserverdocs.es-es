@@ -1,6 +1,6 @@
 ---
 title: ftp
-description: Tema de referencia del comando FTP, que transfiere archivos hacia y desde un equipo que ejecuta un servicio de servidor File Transfer Protocol (FTP).
+description: Artículo de referencia del comando FTP, que transfiere archivos hacia y desde un equipo que ejecuta un servicio de servidor File Transfer Protocol (FTP).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3920306ce05aeb1b1e364c8146c461ea187f6560
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e78148e1e7dc4f402d80bb4ebfbcbdac52249407
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820245"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925612"
 ---
 # <a name="ftp"></a>ftp
 
@@ -47,7 +47,7 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 | `<host>` | Especifica el nombre del equipo, la dirección IP o la dirección IPv6 del servidor FTP al que se va a conectar. El nombre o la dirección de host, si se especifica, debe ser el último parámetro de la línea. |
 | -? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Los parámetros de la línea de comandos de **FTP** distinguen mayúsculas de minúsculas.
 
@@ -65,7 +65,7 @@ Para iniciar sesión en el servidor FTP denominado `ftp.example.microsoft.com` ,
 ftp ftp.example.microsoft.com
 ```
 
-Para iniciar sesión en el servidor FTP denominado `ftp.example.microsoft.com` y ejecutar los comandos **FTP** contenidos en un archivo denominado *Resync. txt*, escriba:
+Para iniciar sesión en el servidor FTP denominado `ftp.example.microsoft.com` y ejecutar los comandos **FTP** contenidos en un archivo denominado *resync.txt*, escriba:
 
 ```
 ftp -s:resync.txt ftp.example.microsoft.com

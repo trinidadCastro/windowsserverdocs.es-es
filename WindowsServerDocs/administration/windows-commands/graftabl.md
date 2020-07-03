@@ -1,6 +1,6 @@
 ---
 title: graftabl
-description: Tema de referencia del comando Graftabl, que permite que los sistemas operativos Windows muestren un juego de caracteres extendido en modo gráficos.
+description: Artículo de referencia del comando Graftabl, que permite que los sistemas operativos Windows muestren un juego de caracteres extendido en el modo gráficos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 149ae92db534cef66c966462e51906304588b042
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 9259833856ec5c6de402b0db0a4de4636a66f508
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818695"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924599"
 ---
 # <a name="graftabl"></a>graftabl
 
@@ -35,7 +35,7 @@ graftabl /status
 | /status | Muestra la página de códigos actual utilizada por este comando. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - El comando **Graftabl** afecta solo a la presentación del monitor de caracteres extendidos de la página de códigos que especifique. No cambia la página de código de entrada de la consola real. Para cambiar la página de códigos de entrada de la consola, use el comando [mode](mode.md) o [chcp](chcp.md) .
 

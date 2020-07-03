@@ -1,6 +1,6 @@
 ---
-title: comilla de FTP
-description: Tema de referencia del comando presupuesto de FTP, que envía argumentos textuales al servidor FTP remoto.
+title: ftp quote
+description: Artículo de referencia para el comando presupuesto de FTP, que envía argumentos textuales al servidor FTP remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87dd81d4feb6a5509a8609f5c479e3352d5fb7ea
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: ce1f0c009ff9e68c4b8f1f9bc074d91d235d1955
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820345"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925071"
 ---
-# <a name="ftp-quote"></a>comilla de FTP
+# <a name="ftp-quote"></a>ftp quote
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

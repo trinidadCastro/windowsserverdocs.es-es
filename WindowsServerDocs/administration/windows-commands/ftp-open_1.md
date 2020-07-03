@@ -1,6 +1,6 @@
 ---
-title: FTP abierto
-description: Tema de referencia del comando FTP Open, que se conecta al servidor FTP especificado.
+title: ftp open
+description: Artículo de referencia para el comando FTP Open, que se conecta al servidor FTP especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63e428164ece405a6a83041edd46ffe332b13c3a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 888b8f917d82d72f47a737c2f0edc42451de7164
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820405"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925799"
 ---
-# <a name="ftp-open"></a>FTP abierto
+# <a name="ftp-open"></a>ftp open
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

@@ -1,6 +1,6 @@
 ---
-title: salir de FTP
-description: Tema de referencia del comando FTP Quit, que finaliza la sesión FTP con el equipo remoto y, a continuación, se cierra.
+title: ftp quit
+description: Artículo de referencia del comando FTP Quit, que finaliza la sesión FTP con el equipo remoto y, a continuación, se cierra.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bbe72d02029e50a64eb2c9892ea4d487d6e1c938
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c63df8c34bca410b9b9e2b77db1cf185cdfe20c8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820355"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925114"
 ---
-# <a name="ftp-quit"></a>salir de FTP
+# <a name="ftp-quit"></a>ftp quit
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

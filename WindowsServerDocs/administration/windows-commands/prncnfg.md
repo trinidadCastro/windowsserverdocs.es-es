@@ -1,6 +1,6 @@
 ---
 title: prncnfg
-description: Tema de referencia del comando prncnfg, que configura o muestra información de configuración sobre una impresora.
+description: Artículo de referencia del comando prncnfg, que configura o muestra información de configuración sobre una impresora.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b60faaa5537ebdf8860c9b0471cf879677b80f1d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 11eb66c3e1d4fb457f9655750d92ab90ad9b473b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472310"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924237"
 ---
 # <a name="prncnfg"></a>prncnfg
 
@@ -36,7 +36,7 @@ cscript prncnfg {-g | -t | -x | -?} [-S <Servername>] [-P <Printername>] [-z <ne
 | -T | Configura una impresora. |
 | -X | Cambia el nombre de una impresora. |
 | -S`<Servername>` | Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local. |
-| -P`<Printername>` | Especifica el nombre de la impresora que desea administrar. Necesario. |
+| -P`<Printername>` | Especifica el nombre de la impresora que desea administrar. Obligatorio. |
 | -z`<newprintername>` | Especifica el nuevo nombre de la impresora. Requiere los parámetros **-x** y **-P** . |
 | -u `<Username>` -w`<password>` | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
 | -r`<portname>` | Especifica el puerto al que está conectada la impresora. Si se trata de un puerto paralelo o de serie, use el identificador del puerto (por ejemplo, LPT1 o COM1). Si se trata de un puerto TCP/IP, utilice el nombre de puerto que se especificó cuando se agregó el puerto. |

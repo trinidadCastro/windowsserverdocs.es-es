@@ -1,6 +1,6 @@
 ---
 title: bootcfg rmsw
-description: Tema de referencia para el comando bootcfg Rmsw, que quita las opciones de carga del sistema operativo para una entrada específica del sistema operativo.
+description: Artículo de referencia para el comando bootcfg Rmsw, que quita las opciones de carga del sistema operativo para una entrada específica del sistema operativo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 41c9819fb3d669b24a5918077bef960869625a15
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c905712b898501f45cbfc036d771f18232e82d5b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82708912"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924977"
 ---
 # <a name="bootcfg-rmsw"></a>bootcfg rmsw
 
@@ -32,14 +32,14 @@ bootcfg /rmsw [/s <computer> [/u <domain>\<user> /p <password>]] [/mm] [/bv] [/s
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| `/s <computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. |
-| `/u <domain>\<user>`  | Ejecuta el comando con los permisos de cuenta del usuario especificado por `<user>` o `<domain>\<user>`. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
+| `/s <computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. |
+| `/u <domain>\<user>`  | Ejecuta el comando con los permisos de cuenta del usuario especificado por `<user>` o `<domain>\<user>` . El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
 | `/p <password>` | Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . |
-| Val | Quita la opción/MaxMem y su valor máximo de memoria asociado del especificado `<osentrylinenum>`. La opción/MaxMem especifica la cantidad máxima de memoria RAM que puede usar el sistema operativo. |
-| /bv | Quita la opción/basevideo del especificado `<osentrylinenum>`. La opción/basevideo indica al sistema operativo que use el modo VGA estándar para el controlador de vídeo instalado. |
-| /so | Quita la opción/SOS del especificado `<osentrylinenum>`. La opción/SOS indica al sistema operativo que muestre los nombres de los controladores de dispositivo mientras se cargan. |
-| /NG | Quita la opción/noguiboot del especificado `<osentrylinenum>`. La opción/noguiboot deshabilita la barra de progreso que aparece antes del símbolo del sistema de inicio de sesión CTRL + ALT + SUPR. |
-| `/id <osentrylinenum>` | Especifica el número de línea de entrada del sistema operativo en la sección [operating systems] del archivo boot. ini en el que se agregan las opciones de carga del sistema operativo. La primera línea después del encabezado de la sección [operating systems] es 1. |
+| Val | Quita la opción/MaxMem y su valor máximo de memoria asociado del especificado `<osentrylinenum>` . La opción/MaxMem especifica la cantidad máxima de memoria RAM que puede usar el sistema operativo. |
+| /bv | Quita la opción/basevideo del especificado `<osentrylinenum>` . La opción/basevideo indica al sistema operativo que use el modo VGA estándar para el controlador de vídeo instalado. |
+| /so | Quita la opción/SOS del especificado `<osentrylinenum>` . La opción/SOS indica al sistema operativo que muestre los nombres de los controladores de dispositivo mientras se cargan. |
+| /NG | Quita la opción/noguiboot del especificado `<osentrylinenum>` . La opción/noguiboot deshabilita la barra de progreso que aparece antes del símbolo del sistema de inicio de sesión CTRL + ALT + SUPR. |
+| `/id <osentrylinenum>` | Especifica el número de línea de entrada del sistema operativo en la sección [sistemas operativos] del archivo de Boot.ini al que se agregan las opciones de carga del sistema operativo. La primera línea después del encabezado de la sección [operating systems] es 1. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="examples"></a>Ejemplos

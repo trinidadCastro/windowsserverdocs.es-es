@@ -1,6 +1,6 @@
 ---
-title: binario de FTP
-description: Tema de referencia del comando binario FTP, que establece el tipo de transferencia de archivos en binario.
+title: ftp binary
+description: Artículo de referencia para el comando binario FTP, que establece el tipo de transferencia de archivos en binario.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 93b5bcdf473997b10eda86af4a865aed4bcaac0d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: daf300598f8a31fc35d5702b5bd42507dd9e8211
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820015"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925958"
 ---
-# <a name="ftp-binary"></a>binario de FTP
+# <a name="ftp-binary"></a>ftp binary
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

@@ -1,6 +1,6 @@
 ---
 title: freedisk
-description: Tema de referencia para el comando FREEDISK, que comprueba si la cantidad especificada de espacio en disco está disponible antes de continuar con un proceso de instalación.
+description: Artículo de referencia para el comando FREEDISK, que comprueba si la cantidad especificada de espacio en disco está disponible antes de continuar con un proceso de instalación.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2135bd24e24235de7c687ed58e0603db20c68262
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: d0cfce52c2eaf0917f8169d959b61832bd1779e0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436980"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924740"
 ---
 # <a name="freedisk"></a>freedisk
 
@@ -32,13 +32,13 @@ freedisk [/s <computer> [/u [<domain>\]<user> [/p [<password>]]]] [/d <drive>] [
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| modificado`<computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificados en el comando. |
+| modificado`<computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificados en el comando. |
 | /u`[<domain>\]<user>` | Ejecuta el script con los permisos de la cuenta de usuario especificada. El valor predeterminado es los permisos del sistema. |
 | /p [ <password> ] | Especifica la contraseña de la cuenta de usuario especificada en **/u**. |
 | /d.`<drive>` | Especifica la unidad para la que desea averiguar la disponibilidad de espacio disponible. Debe especificar `<drive>` para un equipo remoto. |
 | `<value>` | Comprueba una cantidad específica de espacio libre en disco. Puede especificar `<value>` en bytes, KB, MB, GB, TB, PB, EB, ZB o YB. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - El uso de las opciones de línea de comandos **/s**, **/u**y **/p** solo está disponible cuando se utiliza **/s**. Debe usar **/p** con **/u**para proporcionar la contraseña del usuario.
 

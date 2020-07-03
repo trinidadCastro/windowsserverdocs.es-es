@@ -1,6 +1,6 @@
 ---
 title: bootcfg copy
-description: Tema de referencia para el comando bootcfg Copy, que realiza una copia de una entrada de arranque existente, a la que puede agregar opciones de la línea de comandos.
+description: Artículo de referencia para el comando bootcfg Copy, que realiza una copia de una entrada de arranque existente, a la que puede agregar opciones de la línea de comandos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 033227ab1d9efcdf1d58708a75085067766a6af2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b158e4b9f892c0142d03281b6608f911afdf7b0a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82709681"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925005"
 ---
 # <a name="bootcfg-copy"></a>bootcfg copy
 
@@ -32,11 +32,11 @@ bootcfg /copy [/s <computer> [/u <domain>\<user> /p <password>]] [/d <descriptio
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| `/s <computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. |
-| `/u <domain>\<user>`  | Ejecuta el comando con los permisos de cuenta del usuario especificado por `<user>` o `<domain>\<user>`. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
+| `/s <computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. |
+| `/u <domain>\<user>`  | Ejecuta el comando con los permisos de cuenta del usuario especificado por `<user>` o `<domain>\<user>` . El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
 | `/p <password>` | Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . |
 | `/d <description>` | Especifica la descripción de la nueva entrada de sistema operativo. |
-| `/id <osentrylinenum>` | Especifica el número de línea de entrada del sistema operativo en la sección [operating systems] del archivo boot. ini en el que se agregan las opciones de carga del sistema operativo. La primera línea después del encabezado de la sección [operating systems] es 1. |
+| `/id <osentrylinenum>` | Especifica el número de línea de entrada del sistema operativo en la sección [sistemas operativos] del archivo de Boot.ini al que se agregan las opciones de carga del sistema operativo. La primera línea después del encabezado de la sección [operating systems] es 1. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="examples"></a>Ejemplos

@@ -1,6 +1,6 @@
 ---
 title: prndrvr
-description: Tema de referencia del comando prndrvr, que agrega, elimina y enumera los controladores de impresora.
+description: Artículo de referencia del comando prndrvr, que agrega, elimina y enumera los controladores de impresora.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62c63819c175f4b3f3770d90da0bd560443ccb77
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4f256d003ac0884b100aedb24bbb55e663444911
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472300"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924204"
 ---
 # <a name="prndrvr"></a>prndrvr
 
