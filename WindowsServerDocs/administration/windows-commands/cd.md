@@ -1,6 +1,6 @@
 ---
 title: cd
-description: Tema de referencia del comando CD, que muestra el nombre de o cambia el directorio actual.
+description: Artículo de referencia del comando CD, que muestra el nombre de o cambia el directorio actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c9ee57590cf165ba46f394cab06817c7c13f0a9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 37ce63cd4fce871c615ac64756f8fc17f1d28460
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719657"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922919"
 ---
 # <a name="cd"></a>cd
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Muestra el nombre del directorio actual o cambia el directorio actual. Si se usa solo con una letra de unidad (por `cd C:`ejemplo,), **CD** muestra los nombres del directorio actual en la unidad especificada. Si se usa sin parámetros, el **CD** muestra la unidad y el directorio actuales.
+Muestra el nombre del directorio actual o cambia el directorio actual. Si se usa solo con una letra de unidad (por ejemplo, `cd C:` ), **CD** muestra los nombres del directorio actual en la unidad especificada. Si se usa sin parámetros, el **CD** muestra la unidad y el directorio actuales.
 
 > [!NOTE]
 > Este comando es el mismo que el [comando CHDIR](chdir.md).
@@ -44,20 +44,20 @@ chdir [..]
 | [..] | Especifica que desea cambiar a la carpeta principal. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Si se habilitan las extensiones de comandos, se aplican las siguientes condiciones al comando de **CD** :
 
 - La cadena de directorio actual se convierte para usar el mismo caso que los nombres del disco. Por ejemplo, `cd c:\temp` establecería el directorio actual en C:\temp si ese es el caso en el disco.
 
-- Los espacios no se tratan como delimitadores `<path>` , por lo que pueden contener espacios sin comillas. Por ejemplo:
+- Los espacios no se tratan como delimitadores, por lo que `<path>` pueden contener espacios sin comillas. Por ejemplo:
 
   ```
   cd username\programs\start menu
   ```
 
-  es igual que:  
-  
+  es igual que:
+
   ```
   cd "username\programs\start menu"
   ```

@@ -1,6 +1,6 @@
 ---
 title: 'administrar: desbloqueo de BDE'
-description: Tema de referencia para el comando Manage-BDE Unlock, que desbloquea una unidad protegida con BitLocker mediante una contraseña de recuperación o una clave de recuperación.
+description: Artículo de referencia para el comando Manage-BDE Unlock, que desbloquea una unidad protegida con BitLocker mediante una contraseña de recuperación o una clave de recuperación.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 67d4c0ec78870af45f0b98f2ab04d85b19e92af9
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 1be2bf029a378015cd20f21c236c0d519f2e072a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222154"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922204"
 ---
 # <a name="manage-bde-unlock"></a>administrar: desbloqueo de BDE
 
@@ -39,7 +39,7 @@ manage-bde -unlock {-recoverypassword <password>|-recoverykey <pathtoexternalkey
 | -CF`<pathtocertificatefile>` | Ruta de acceso al archivo de certificado. |
 | -CT`<certificatethumbprint>` | Huella digital del certificado que puede incluir opcionalmente el PIN (-PIN). |
 | -password | Presenta un símbolo del sistema para la contraseña para desbloquear el volumen. También puede usar **-PW** como una versión abreviada de este comando. |
-| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| -COMPUTERNAME | Especifica que se utilizará manage-bde.exe para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
 | `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
 | -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
 | -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |

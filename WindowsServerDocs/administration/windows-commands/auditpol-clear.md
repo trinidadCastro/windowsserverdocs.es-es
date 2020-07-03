@@ -1,6 +1,6 @@
 ---
-title: borrado de Auditpol
-description: Tema de referencia del comando Auditpol Clear, que elimina la Directiva de auditoría por usuario para todos los usuarios, restablece (deshabilita) la Directiva de auditoría del sistema para todas las subcategorías y establece todas las opciones de auditoría en deshabilitado.
+title: auditpol clear
+description: Artículo de referencia del comando Auditpol Clear, que elimina la Directiva de auditoría por usuario para todos los usuarios, restablece (deshabilita) la Directiva de auditoría del sistema para todas las subcategorías y establece todas las opciones de auditoría en deshabilitado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3d4765907f1dd614f5d0a61585ea09069652ecb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 797f26ab9e191176808bbce917ca5ac0fa3d73a3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719148"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923793"
 ---
-# <a name="auditpol-clear"></a>borrado de Auditpol
+# <a name="auditpol-clear"></a>auditpol clear
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

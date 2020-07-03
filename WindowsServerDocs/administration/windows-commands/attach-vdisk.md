@@ -1,6 +1,6 @@
 ---
 title: attach vdisk
-description: Tema de referencia del comando Attach vDisk, que conecta (a veces denominados montajes o superficies) un disco duro virtual (VHD) para que aparezca en el equipo host como una unidad de disco duro local.
+description: Artículo de referencia para el comando Attach vDisk, que conecta (a veces denominados montajes o superficies) un disco duro virtual (VHD) para que aparezca en el equipo host como una unidad de disco duro local.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91f988d1f84869874dbd0d6a25dce43ef5138066
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d0d07af390a025a60fabf53635ce156cab7b71d6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718908"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923911"
 ---
 # <a name="attach-vdisk"></a>attach vdisk
 
@@ -36,7 +36,7 @@ attach vdisk [readonly] { [sd=<SDDL>] | [usefilesd] } [noerr]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | readonly | Conecta el VHD como de solo lectura. Cualquier operación de escritura devuelve un error. |
-| `sd=<SDDL string>` | Establece el filtro de usuario en el disco duro virtual. La cadena de filtro debe estar en el formato de lenguaje de definición de descriptores de seguridad (SDDL). De forma predeterminada, el filtro de usuario permite el acceso como en un disco físico. Las cadenas SDDL pueden ser complejas, pero en su forma más simple, un descriptor de seguridad que protege el acceso se conoce como una lista de control de acceso discrecional (DACL). Utiliza el formato: `D:<dacl_flags><string_ace1><string_ace2>`...`<string_acen>`<p>Las marcas DACL comunes son:<ul><li>**Un**. Permitir acceso</li><li>**D**. Denegación del acceso</li></ul>Los derechos comunes son:<ul><li>**GA**. Todo el acceso</li><li>**Gr**. acceso de lectura</li><li> **GW**. Acceso de escritura</li></ul>Las cuentas de usuario comunes son:<ul><li>**BA**. Administradores integrados</li><li>**Au**. Usuarios autenticados</li><li>**Co**. Propietario del creador</li><li>**WD**. Todos</li></ul>Ejemplos:<ul><li>**D:P: (A;; GR;;; AU**. Concede acceso de lectura a todos los usuarios autenticados.</li><li>**D:P: (A;; GA;;; WD**. Concede a todos los usuarios acceso completo.</li></ul> |
+| `sd=<SDDL string>` | Establece el filtro de usuario en el disco duro virtual. La cadena de filtro debe estar en el formato de lenguaje de definición de descriptores de seguridad (SDDL). De forma predeterminada, el filtro de usuario permite el acceso como en un disco físico. Las cadenas SDDL pueden ser complejas, pero en su forma más simple, un descriptor de seguridad que protege el acceso se conoce como una lista de control de acceso discrecional (DACL). Utiliza el formato: `D:<dacl_flags><string_ace1><string_ace2>` ...`<string_acen>`<p>Las marcas DACL comunes son:<ul><li>**Un**. Permitir acceso</li><li>**D**. Denegación del acceso</li></ul>Los derechos comunes son:<ul><li>**GA**. Todo el acceso</li><li>**Gr**. acceso de lectura</li><li> **GW**. Acceso de escritura</li></ul>Las cuentas de usuario comunes son:<ul><li>**BA**. Administradores integrados</li><li>**Au**. Usuarios autenticados</li><li>**Co**. Propietario del creador</li><li>**WD**. Todos</li></ul>Ejemplos:<ul><li>**D:P: (A;; GR;;; AU**. Concede acceso de lectura a todos los usuarios autenticados.</li><li>**D:P: (A;; GA;;; WD**. Concede a todos los usuarios acceso completo.</li></ul> |
 | usefilesd | Especifica que el descriptor de seguridad del archivo. VHD debe usarse en el disco duro virtual. Si no se especifica el parámetro **Usefilesd** , el disco duro virtual no tendrá un descriptor de seguridad explícito a menos que se especifique con el parámetro **SD** . |
 | noerr | Se usa solo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
@@ -52,16 +52,16 @@ attach vdisk readonly
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [seleccionar vDisk](select-vdisk.md)
+- [select vdisk](select-vdisk.md)
 
-- [Compact vDisk](compact-vdisk.md)
+- [compact vdisk](compact-vdisk.md)
 
-- [detalles del vDisk](detail-vdisk.md)
+- [detail vdisk](detail-vdisk.md)
 
 - [detach vdisk](detach-vdisk.md)
 
-- [expandir vDisk](expand-vdisk.md)
+- [expand vdisk](expand-vdisk.md)
 
-- [Merge vDisk](merge-vdisk.md)
+- [merge vdisk](merge-vdisk.md)
 
 - [list](list_1.md)

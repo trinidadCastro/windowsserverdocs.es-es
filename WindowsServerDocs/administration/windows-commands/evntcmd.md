@@ -1,6 +1,6 @@
 ---
 title: evntcmd
-description: Tema de referencia para el comando evntcmd, que configura la traducción de eventos a capturas, destinos de captura o ambos según la información de un archivo de configuración.
+description: Artículo de referencia para el comando evntcmd, que configura la traducción de eventos a capturas, destinos de captura o ambos según la información de un archivo de configuración.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e922d7876a8065a0e05e9fa7bf2cf8db45bffd25
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 291b13163f5c5a13442ed6dc80b769d0170df42e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437100"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922788"
 ---
 # <a name="evntcmd"></a>evntcmd
 
@@ -38,7 +38,7 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 | `<filename>` | Especifica, por nombre, el archivo de configuración que contiene información sobre la traducción de eventos a capturas y destinos de captura que desea configurar. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si desea configurar capturas pero no destinos de captura, puede crear un archivo de configuración válido mediante el traductor de eventos para captura, que es una utilidad gráfica. Si tiene el servicio SNMP instalado, puede iniciar el evento para capturar el traductor escribiendo **evntwin** en el símbolo del sistema. Una vez definidas las capturas que desee, haga clic en **exportar** para crear un archivo adecuado para su uso con **evntcmd**. Puede usar el traductor de eventos para interceptar para crear fácilmente un archivo de configuración y, a continuación, utilizar el archivo de configuración con **evntcmd** en el símbolo del sistema para configurar rápidamente las capturas en varios equipos.
 

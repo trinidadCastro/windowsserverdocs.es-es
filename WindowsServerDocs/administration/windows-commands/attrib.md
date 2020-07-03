@@ -1,6 +1,6 @@
 ---
 title: attrib
-description: Tema de referencia del comando attrib, que muestra, establece o quita atributos asignados a archivos o directorios.
+description: Artículo de referencia para el comando attrib, que muestra, establece o quita atributos asignados a archivos o directorios.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c525fe1dc5b78032f20358492a1bfde4df909add
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc5d780ffd32976df306e2221987f24ec8553854
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719194"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923904"
 ---
 # <a name="attrib"></a>attrib
 
@@ -30,11 +30,11 @@ attrib [{+|-}r] [{+|-}a] [{+|-}s] [{+|-}h] [{+|-}i] [<drive>:][<path>][<filename
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| `{+|-}r` | Establece (**+**) o borra (**-**) el atributo de archivo de solo lectura. |
-| `{+\|-}a` | Establece (**+**) o borra (**-**) el atributo de archivo de almacenamiento. Este conjunto de atributos marca los archivos que han cambiado desde la última vez que se realizó una copia de seguridad. Tenga en cuenta que el comando **xcopy** usa atributos de archivo. |
-| `{+\|-}s` | Establece (**+**) o borra (**-**) el atributo de archivo del sistema. Si un archivo utiliza este conjunto de atributos, debe borrar el atributo antes de poder cambiar cualquier otro atributo del archivo. |
-| `{+\|-}h` | Establece (**+**) o borra (**-**) el atributo de archivo oculto. Si un archivo utiliza este conjunto de atributos, debe borrar el atributo antes de poder cambiar cualquier otro atributo del archivo. |
-| `{+\|-}i` | Establece (**+**) o borra (**-**) el atributo de archivo no indizado de contenido. |
+| `{+|-}r` | Establece ( **+** ) o borra ( **-** ) el atributo de archivo de solo lectura. |
+| `{+\|-}a` | Establece ( **+** ) o borra ( **-** ) el atributo de archivo de almacenamiento. Este conjunto de atributos marca los archivos que han cambiado desde la última vez que se realizó una copia de seguridad. Tenga en cuenta que el comando **xcopy** usa atributos de archivo. |
+| `{+\|-}s` | Establece ( **+** ) o borra ( **-** ) el atributo de archivo del sistema. Si un archivo utiliza este conjunto de atributos, debe borrar el atributo antes de poder cambiar cualquier otro atributo del archivo. |
+| `{+\|-}h` | Establece ( **+** ) o borra ( **-** ) el atributo de archivo oculto. Si un archivo utiliza este conjunto de atributos, debe borrar el atributo antes de poder cambiar cualquier otro atributo del archivo. |
+| `{+\|-}i` | Establece ( **+** ) o borra ( **-** ) el atributo de archivo no indizado de contenido. |
 | `[<drive>:][<path>][<filename>]` | Especifica la ubicación y el nombre del directorio, el archivo o el grupo de archivos para los que desea mostrar o cambiar atributos.<p>Puede **usar el** y **&#42;** caracteres comodín en el parámetro *filename* para mostrar o cambiar los atributos de un grupo de archivos. |
 | /s | Aplica el **atributo attrib** y las opciones de línea de comandos a los archivos coincidentes en el directorio actual y en todos sus subdirectorios. |
 | /d | Aplica el **atributo attrib** y las opciones de línea de comandos a los directorios. |
@@ -49,7 +49,7 @@ Para mostrar los atributos de un archivo denominado News86 que se encuentra en e
 attrib news86
 ```
 
-Para asignar el atributo de solo lectura al archivo denominado Report. txt, escriba:
+Para asignar el atributo de solo lectura al archivo denominado report.txt, escriba:
 
 ```
 attrib +r report.txt

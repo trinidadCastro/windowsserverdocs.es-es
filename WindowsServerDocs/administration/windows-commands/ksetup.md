@@ -1,6 +1,6 @@
 ---
 title: ksetup
-description: Tema de referencia para el comando ksetup, que realiza tareas relacionadas con la configuración y el mantenimiento del protocolo Kerberos y el Centro de distribución de claves (KDC) para admitir dominios Kerberos.
+description: Artículo de referencia para el comando ksetup, que realiza tareas relacionadas con la configuración y el mantenimiento del protocolo Kerberos y el Centro de distribución de claves (KDC) para admitir dominios Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82b1627a8ddbc9e51ac32825c5a42c3df9effbf7
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a0398d53516f81de68a7de5854ed2c996a78d1e5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817355"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922639"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -63,11 +63,11 @@ ksetup
 | [ksetup delkdc](ksetup-delkdc.md) | Elimina una entrada KDC para el dominio Kerberos. |
 | [ksetup addkpasswd](ksetup-addkpasswd.md) | Agrega una dirección de servidor Kpasswd para un dominio Kerberos. |
 | [ksetup delkpasswd](ksetup-delkpasswd.md) | Elimina una dirección de servidor Kpasswd para un dominio Kerberos. |
-| [ksetup servidor](ksetup-server.md) | Permite especificar el nombre de un equipo Windows en el que se van a aplicar los cambios. |
+| [ksetup server](ksetup-server.md) | Permite especificar el nombre de un equipo Windows en el que se van a aplicar los cambios. |
 | [ksetup setcomputerpassword](ksetup-setcomputerpassword.md) | Establece la contraseña de la cuenta de dominio del equipo (o la entidad de seguridad del host). |
 | [ksetup removerealm](ksetup-removerealm.md) | Elimina toda la información del dominio Kerberos especificado del registro. |
-| [dominio ksetup](ksetup-domain.md) | Permite especificar un dominio (si aún no `<domainname>` se ha establecido mediante el parámetro **/Domain** ). |
-| [ksetup ChangePassword](ksetup-changepassword.md) | Permite usar Kpasswd para cambiar la contraseña del usuario que ha iniciado sesión. |
+| [ksetup domain](ksetup-domain.md) | Permite especificar un dominio (si aún no `<domainname>` se ha establecido mediante el parámetro **/Domain** ). |
+| [ksetup changepassword](ksetup-changepassword.md) | Permite usar Kpasswd para cambiar la contraseña del usuario que ha iniciado sesión. |
 | [ksetup listrealmflags](ksetup-listrealmflags.md) | Muestra las marcas de dominio Kerberos disponibles que **ksetup** puede detectar. |
 | [ksetup setrealmflags](ksetup-setrealmflags.md) | Establece marcas de dominio Kerberos para un dominio Kerberos específico. |
 | [ksetup addrealmflags](ksetup-addrealmflags.md) | Agrega marcas de dominio Kerberos adicionales a un dominio Kerberos. |

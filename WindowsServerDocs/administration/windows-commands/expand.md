@@ -1,6 +1,6 @@
 ---
 title: expand
-description: Tema de referencia del comando Expand, que expande uno o más archivos comprimidos.
+description: Artículo de referencia del comando Expand, que expande uno o más archivos comprimidos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1204f3db338f835b47db03eab3d178544a6acc85
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: aa032953255b3731f500bfb4d78eaca0d772d1d8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819125"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922723"
 ---
 # <a name="expand"></a>expand
 
@@ -39,7 +39,7 @@ expand <source>.cab /f:<files> <destination>
 | Parámetro | Descripción |
 | --------- | ----------- |
 | /r | Cambia el nombre de los archivos expandidos. |
-| origen | Especifica los archivos que se van a expandir. El *origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. Puede usar caracteres comodín (**&#42;** o **?**). |
+| source | Especifica los archivos que se van a expandir. El *origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. Puede usar caracteres comodín (**&#42;** o **?**). |
 | destination | Especifica la ubicación donde se van a expandir los archivos.<p>Si el *origen* consta de varios archivos y no especifica **/r**, el *destino* debe ser un directorio. El *destino* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. Especificación de destino `file | path` . |
 | /i | Cambia el nombre de los archivos expandidos pero omite la estructura de directorios. |
 | /d | Muestra una lista de los archivos que se encuentran en el origen. No expande ni extrae los archivos. |

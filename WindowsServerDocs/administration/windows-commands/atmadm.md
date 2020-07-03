@@ -1,6 +1,6 @@
 ---
 title: atmadm
-description: Tema de referencia del comando Atmadm, que supervisa las conexiones y direcciones registradas por el administrador de llamadas atM en una red de modo de transferencia asincrónico (atM).
+description: Artículo de referencia del comando Atmadm, que supervisa las conexiones y direcciones registradas por el administrador de llamadas atM en una red de modo de transferencia asincrónico (atM).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32dad00e5a4d03c905f95c48e112f512a9dbc2e5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1985634cdbaff0dfe0dcefd53395bc4f62614f2a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718918"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923927"
 ---
 # <a name="atmadm"></a>atmadm
 
@@ -37,7 +37,7 @@ atmadm [/c][/a][/s]
 | /s | Muestra estadísticas para supervisar el estado de las conexiones atM activas. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 - El comando **Atmadm/c** produce una salida similar a la siguiente:
 

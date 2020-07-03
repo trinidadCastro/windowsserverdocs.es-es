@@ -1,6 +1,6 @@
 ---
 title: protectores de Manage-BDE
-description: Tema de referencia para el comando Manage-BDE protecters, que administra los métodos de protección usados para la clave de cifrado de BitLocker.
+description: Artículo de referencia para el comando Manage-BDE protecters, que administra los métodos de protección usados para la clave de cifrado de BitLocker.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 999c92fd9f2bfedad92a9c68c1528ee66836f315
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: d277c070ff0cdee0d93d7a8be11dc13bea5adb95
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222624"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922300"
 ---
 # <a name="manage-bde-protectors"></a>protectores de Manage-BDE
 
@@ -40,7 +40,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 | -adbackup | Realiza una copia de seguridad de toda la información de recuperación de la unidad especificada en Active Directory Domain Services (AD DS). Para realizar una copia de seguridad de una sola clave de recuperación en AD DS, Anexe el parámetro **-ID** y especifique el ID. de una clave de recuperación específica para realizar la copia de seguridad. |
 | -aadbackup | Realiza una copia de seguridad de toda la información de recuperación de la unidad especificada en Azure Active Directory (Azure AD). Para realizar una copia de seguridad de una sola clave de recuperación en Azure AD, Anexe el parámetro **-ID** y especifique el ID. de una clave de recuperación específica para realizar la copia de seguridad. |
 | `<drive>` | Representa la letra de una unidad seguida del signo de dos puntos. |
-| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| -COMPUTERNAME | Especifica que se utilizará manage-bde.exe para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
 | `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
 | -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
 | -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |
@@ -94,15 +94,15 @@ manage-bde -protectors -delete <drive> [-type {recoverypassword|externalkey|cert
 | RecoveryPassword | Especifica que se deben eliminar los protectores de clave de la contraseña de recuperación. |
 | externalkey | Especifica que se debe eliminar cualquier protector de clave externa asociado a la unidad. |
 | certificado | Especifica que se deben eliminar todos los protectores de clave de certificado asociados con la unidad. |
-| tpm | Especifica que se deben eliminar todos los protectores de clave solo TPM asociados a la unidad. |
+| TPM | Especifica que se deben eliminar todos los protectores de clave solo TPM asociados a la unidad. |
 | tpmandstartupkey | Especifica que se deben eliminar todos los protectores de clave basados en el TPM y la clave de inicio asociados a la unidad. |
 | tpmandpin | Especifica que se deben eliminar los protectores de clave basados en TPM y en el PIN asociados a la unidad. |
 | tpmandpinandstartupkey | Especifica que se deben eliminar los protectores de clave basados en el TPM, el PIN y la clave de inicio asociados con la unidad. |
 | password | Especifica que se deben eliminar todos los protectores de clave de contraseña asociados a la unidad. |
-| identidad | Especifica que se deben eliminar todos los protectores de clave de identidad asociados a la unidad. |
+| identity | Especifica que se deben eliminar todos los protectores de clave de identidad asociados a la unidad. |
 | -ID | Identifica el protector de clave que se va a eliminar mediante el identificador de clave. Este parámetro es una opción alternativa al parámetro **-Type** . |
 | `<keyprotectorID>` | Identifica un protector de clave individual en la unidad que se va a eliminar. Los identificadores de protector de clave se pueden mostrar con el comando **Manage-BDE-protectors-Get** . |
-| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| -COMPUTERNAME | Especifica que se utilizará manage-bde.exe para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
 | `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
 | -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
 | -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |
@@ -117,7 +117,7 @@ manage-bde -protectors -disable <drive> [-rebootcount <integer 0 - 15>] [-comput
 | --------- | ----------- |
 | `<drive>` | Representa la letra de una unidad seguida del signo de dos puntos. |
 | rebootcount | Especifica que se ha suspendido la protección del volumen del sistema operativo y se reanudará después de que se haya reiniciado Windows el número de veces especificado en el parámetro **rebootcount** . Especifique **0** para suspender la protección indefinidamente. Si no se especifica este parámetro, la protección de BitLocker se reanudará automáticamente cuando se reinicie Windows. También puede usar **-RC** como una versión abreviada de este comando. |
-| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| -COMPUTERNAME | Especifica que se utilizará manage-bde.exe para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
 | `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
 | -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
 | -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |

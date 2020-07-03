@@ -1,6 +1,6 @@
 ---
-title: AuditPol set
-description: Tema de referencia del comando Auditpol Set, que establece la Directiva de auditoría por usuario, la Directiva de auditoría del sistema o las opciones de auditoría.
+title: auditpol set
+description: Artículo de referencia del comando Auditpol Set, que establece la Directiva de auditoría por usuario, la Directiva de auditoría del sistema o las opciones de auditoría.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73868d6044d8742d4d9e0ce76e0668402f230f86
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc42168d65116261d57053e0812cbb49e17021d5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718887"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923699"
 ---
-# <a name="auditpol-set"></a>AuditPol set
+# <a name="auditpol-set"></a>auditpol set
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

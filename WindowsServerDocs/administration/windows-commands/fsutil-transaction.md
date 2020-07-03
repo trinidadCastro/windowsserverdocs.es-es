@@ -1,6 +1,6 @@
 ---
 title: fsutil transaction
-description: Tema de referencia del comando fsutil Transaction, que administra las transacciones NTFS.
+description: Artículo de referencia para el comando fsutil Transaction, que administra las transacciones NTFS.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: fc81934c5838fd81722b27a7b7e57b14709ed26a
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 95cd9a8f62aa9dd64d46a875a90847a65589b447
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437050"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922335"
 ---
 # <a name="fsutil-transaction"></a>fsutil transaction
 
@@ -46,7 +46,7 @@ fsutil transaction [rollback] <GUID>
 
 ### <a name="examples"></a>Ejemplos
 
-Para mostrar la información de transacción para el archivo *c:\Test.txt*, escriba:
+Para mostrar la información de transacción del *c:\test.txt*de archivos, escriba:
 
 ```
 fsutil transaction fileinfo c:\test.txt

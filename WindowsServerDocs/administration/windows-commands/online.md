@@ -1,6 +1,6 @@
 ---
 title: online (en línea)
-description: Tema de referencia del comando en línea, que toma un disco o volumen sin conexión al estado en línea.
+description: Artículo de referencia para el comando en línea, que toma un disco o volumen sin conexión al estado en línea.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5983e033755cdc9cd28b2b149fea657a06bd164
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d18ba172af7ab003368b36daa89ef0d7ac88a7a3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472611"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922595"
 ---
 # <a name="online"></a>online (en línea)
 

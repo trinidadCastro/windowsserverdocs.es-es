@@ -1,6 +1,6 @@
 ---
 title: autoconv
-description: Tema de referencia del comando autoconv, que convierte volúmenes de tabla de asignación de archivos (FAT) y FAT32 en el sistema de archivos NTFS.
+description: Artículo de referencia para el comando autoconv, que convierte volúmenes de tabla de asignación de archivos (FAT) y FAT32 en el sistema de archivos NTFS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea8f55270435c6632be2e527569b4a4b4ca81136
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c6d54f413ab9d4f680f59294a3f01c1de02db222
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718774"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923563"
 ---
 # <a name="autoconv"></a>autoconv
 
@@ -23,7 +23,7 @@ ms.locfileid: "82718774"
 Convierte los volúmenes de tabla de asignación de archivos (FAT) y FAT32 en el sistema de archivos NTFS, de forma que los archivos y directorios existentes permanecen intactos al iniciarse después de ejecutar **Autochk** . los volúmenes convertidos en el sistema de archivos NTFS no se pueden volver a convertir a FAT o FAT32.
 
 > [!IMPORTANT]
-> No se puede ejecutar **autoconv** desde la línea de comandos. Solo se puede ejecutar durante el inicio, si se establece mediante **Convert. exe**.
+> No se puede ejecutar **autoconv** desde la línea de comandos. Solo se puede ejecutar durante el inicio, si se establece a través de **convert.exe**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

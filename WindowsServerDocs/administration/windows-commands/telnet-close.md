@@ -1,6 +1,6 @@
 ---
-title: cerrar Telnet
-description: Tema de referencia sobre el cierre de Telnet, que cierra la conexión de Telnet actual.
+title: telnet close
+description: Artículo de referencia para el cierre de Telnet, que cierra la conexión de Telnet actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 34a575fecaa33619611a28c54c018623ebcede3c
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: ec185f29f428e760e5cee9514e522723214a65ec
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223065"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922588"
 ---
 # <a name="telnet-close"></a>Telnet: cerrar
 

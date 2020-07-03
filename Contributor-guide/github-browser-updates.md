@@ -1,67 +1,69 @@
 ---
-title: Edite artículos existentes de Windows Server con un explorador web y GitHub
-description: Cómo hacer ediciones rápidas en la documentación de Windows Server existente con un explorador web y GitHub, como empleado de Microsoft.
+title: Editar artículos existentes de Windows Server mediante un explorador Web y GitHub
+description: Cómo hacer cambios rápidos en la documentación de Windows Server existente mediante un explorador Web y GitHub, como un empleado de Microsoft.
 author: eross-msft
 ms.author: lizross
-ms.date: 05/02/2019
-ms.openlocfilehash: d4574de7774a43092815a3d154020559c50fdcf9
-ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
+ms.date: 07/02/2020
+ms.openlocfilehash: 61ceb05b6cb9602faaa4d17b4dc2d978cb571ddb
+ms.sourcegitcommit: d754f9e39fc28e4c8768b77bcc9d02ffe2fa6535
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65624591"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85911224"
 ---
-# <a name="update-existing-windows-server-articles-using-a-web-browser-and-github"></a>Actualizar los artículos existentes de Windows Server con un explorador web y GitHub
+# <a name="update-existing-windows-server-and-azure-stack-hci-articles-using-a-web-browser-and-github"></a>Actualice los artículos existentes de Windows Server y Azure Stack HCI mediante un explorador Web y GitHub
 
-Hay dos ubicaciones independientes, que es donde guardamos el contenido técnico de Windows Server. Una de las ubicaciones es pública (windowsserverdocs) mientras la otra es privada (windowsserverdocs-pr). Quién es usted determina qué ubicación que contribuye al:
+Hay dos ubicaciones independientes donde se conserva el contenido técnico de Windows Server. Una de las ubicaciones es pública (windowsserverdocs), mientras que la otra es privada (windowsserverdocs-PR). A quién está determinando qué ubicación contribuye:
 
-- **No soy empleado de Microsoft.** Como un empleado que no sean de Microsoft, debe contribuir a la ubicación pública. Para obtener información acerca de cómo hacerlo, consulte el [Contributing.md](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/CONTRIBUTING.md) archivo.
+- **No soy un empleado de Microsoft.** Como empleado que no es de Microsoft, debe contribuir a la ubicación pública. Para obtener información sobre cómo hacerlo, vea el archivo [Contributing.MD](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/CONTRIBUTING.md) .
 
-- **Soy empleado de Microsoft.** Como empleado de Microsoft, dispone de opciones, según lo que está intentando hacer:
+- **Soy empleado de Microsoft.** Como empleado de Microsoft, tiene opciones, en función de lo que está intentando hacer:
 
-    - **Crear un nuevo artículo.** Para crear un nuevo artículo, debe crear y configurar su cuenta de GitHub y herramientas, bifurcar y clonar el repositorio windowsserverdocs-pr, configure la rama remota, crear el artículo y, por último, cree una nueva solicitud de incorporación de cambios para su aprobación y publicación. Para estas instrucciones, consulte el [crear artículos nuevos de Windows Server mediante GitHub y Visual Studio Code](create-new-using-github.md) artículo.
+    - **Cree un nuevo artículo de marca.** Para crear un nuevo artículo de marca, debe crear y configurar la cuenta y las herramientas de GitHub, bifurcar y clonar el repositorio windowsserverdocs-PR, configurar la rama remota, crear el artículo y, por último, crear una nueva solicitud de incorporación de cambios para su aprobación y publicación. Para estas instrucciones, consulte el artículo [creación de nuevos artículos de Windows Server con GitHub y Visual Studio Code](create-new-using-github.md) .
 
-    - **Asegúrese de realizar grandes cambios en un artículo existente.** Para realizar cambios sustanciales en un artículo existente, puede seguir las instrucciones de la [editar un artículo existente de Windows Server mediante GitHub y Visual Studio Code](edit-existing-using-github.md) artículo.
+    - **Realizar cambios importantes en un artículo existente.** Para realizar cambios importantes en un artículo existente, puede seguir las instrucciones del artículo [edición de un artículo existente de Windows Server con GitHub y Visual Studio Code](edit-existing-using-github.md) .
 
-    - **Realizar cambios menores a un artículo existente.** Para realizar cambios menores en un artículo existente, puede seguir las instrucciones de este artículo.
+    - **Realizar pequeños cambios en un artículo existente.** Para realizar cambios menores en un artículo existente, siga las instrucciones de este artículo.
 
     > [!IMPORTANT]
-    > Todos los repositorios que publican en docs.microsoft.com han adoptado el [Microsoft código de conducta de código abierto](https://opensource.microsoft.com/codeofconduct/) o [código de conducta de .NET Foundation](https://dotnetfoundation.org/code-of-conduct). Para obtener más información, consulte el [código de conducta preguntas más frecuentes sobre](https://opensource.microsoft.com/codeofconduct/faq/). O póngase en contacto con [ opencode@microsoft.com ](mailto:opencode@microsoft.com), o [ conduct@dotnetfoundation.org ](mailto:conduct@dotnetfoundation.org) con cualquier pregunta o comentario.
+    > Todos los repositorios que publican en docs.microsoft.com han adoptado el [Código de conducta de código abierto de Microsoft](https://opensource.microsoft.com/codeofconduct/) o el [Código de conducta de .NET Foundation](https://dotnetfoundation.org/code-of-conduct). Para obtener más información, vea las [preguntas más frecuentes del Código de conducta](https://opensource.microsoft.com/codeofconduct/faq/). O bien póngase en contacto con [opencode@microsoft.com](mailto:opencode@microsoft.com) o [conduct@dotnetfoundation.org](mailto:conduct@dotnetfoundation.org) para enviar sus preguntas o comentarios.
     >
-    > Las correcciones menores o aclaraciones de la documentación y ejemplos de código en repositorios públicos están cubiertos por el [docs.microsoft.com términos de uso](https://docs.microsoft.com/legal/termsofuse). Cambios importantes o nuevos generan un comentario en la solicitud de incorporación de cambios, pedirle que envíe un contrato de licencia de colaboración (CLA) en línea si no es un empleado de Microsoft. Necesitamos que rellene el formulario en línea antes de que podemos revisar o aceptar su solicitud de incorporación de cambios.
+    > Las correcciones menores o aclaraciones de la documentación y los ejemplos de código de los repositorios públicos se rigen por los [Términos de uso del sitio docs.microsoft.com](https://docs.microsoft.com/legal/termsofuse). Los cambios importantes o nuevos generan un comentario en la solicitud de incorporación de cambios que le pide que acepte el contrato de licencia de colaboración (CLA) si no es un empleado de Microsoft. Necesitamos que rellene el formulario en línea para revisar o aceptar su solicitud de incorporación de cambios.
 
-## <a name="quick-edits-to-existing-articles-using-github-and-a-web-browser"></a>Ediciones rápidas en artículos existentes con GitHub y un explorador web
+## <a name="quick-edits-to-existing-articles-using-github-and-a-web-browser"></a>Ediciones rápidas de artículos existentes mediante GitHub y un explorador Web
 
-Las ediciones rápidas optimizan el proceso de notificación y corrección de pequeños errores y omisiones en documentos. A pesar de todos los esfuerzos, pequeños errores gramaticales y erratas _hacer_ lleguen a nuestros documentos publicados.
+Las ediciones rápidas optimizan el proceso de notificación y corrección de pequeños errores y omisiones en los documentos. A pesar de todos los esfuerzos, en ocasiones los documentos que publicamos _contienen_ algunos errores gramaticales y erratas.
 
-1. Ve a https://github.com/MicrosoftDocs/windowsserverdocs-pr/tree/master/WindowsServerDocs.
+1. Siga las instrucciones de [configuración](https://review.docs.microsoft.com/en-us/help/contribute/contribute-get-started-setup-github?branch=master)de la cuenta de github.
 
-2. Vaya al artículo que desea editar y, a continuación, seleccione el **editar este archivo** botón.
+1. Vaya al repositorio privado de [Windows Server](https://github.com/MicrosoftDocs/windowsserverdocs-pr/tree/master/WindowsServerDocs) o [Azure Stack HCl](https://github.com/MicrosoftDocs/azure-stack-docs-pr/tree/master/azure-stack/hci) . Los repositorios privados se supervisan con mayor frecuencia, por lo que el tiempo de aprobación es más rápido, se benefician de las comprobaciones de mayor calidad y ofrecen la posibilidad de ver el contenido en el entorno de ensayo, ya que aparecerá en nuestro sitio activo.
 
-   ![Editar este botón de archivo](media/github-browser-updates/edit-this-file.png)
+2. Navegue hasta el artículo que desea editar y, a continuación, seleccione el botón **Editar este archivo** .
 
-3. Editar el tema, a continuación, desplácese hacia abajo hasta la parte inferior, se describen brevemente los cambios y, a continuación, seleccione **Confirmar cambios**.
+   ![Botón Editar este archivo](media/github-browser-updates/edit-this-file.png)
 
-    ![Confirmar los cambios con información de título](media/github-browser-updates/commit-changes.png)
+3. Edite el tema, desplácese hacia abajo hasta la parte inferior, describa brevemente los cambios y, a continuación, seleccione **confirmar cambios**.
+
+    ![Confirmar cambios con información de título](media/github-browser-updates/commit-changes.png)
 
 ## <a name="submit-the-pull-request"></a>Enviar la solicitud de incorporación de cambios
 
-Después de crear la solicitud de incorporación de cambios, debe enviarlo para su aprobación y publicación.
+Después de crear la solicitud de incorporación de cambios, debe enviarla para su aprobación y publicación.
 
 ### <a name="to-submit-your-pull-request"></a>Para enviar la solicitud de incorporación de cambios
 
-1. En el **abrir una solicitud de incorporación de cambios** página, actualice el mensaje de confirmación para que sea más adecuado para un PR. Por ejemplo: Corregir el error de escritura en el primer párrafo.
+1. En la página **abrir una solicitud de incorporación** de cambios, actualice el mensaje de confirmación para que sea más adecuado para un PR. Por ejemplo: corregir errores tipográficos en el primer párrafo.
 
-2. Asegúrese de que solo las confirmaciones y esperar a que se incluirán los archivos se incluyen. Compruebe también que la solicitud se dirige a la rama adecuada en el repositorio ascendente, maestro (normalmente) o una rama de versión (en ocasiones).
+2. Asegúrese de que solo se incluyan las confirmaciones y los archivos que espera incluir. Compruebe también que la solicitud de incorporación de existencias se dirige a la rama correcta del repositorio ascendente, ya sea maestra (normalmente) o una rama de versión (en ocasiones).
 
-3. En el **revisores** área del panel derecho, seleccione el icono de engranaje y, a continuación, escriba _windowsservercontent_. Será un miembro del alias en el punto para revisar los cambios y la extracción de mezcla cualquiera solicitar o agregue comentarios acerca de las cosas para cambiar antes de la fusión.
+3. En el área **revisores** del panel derecho, seleccione el icono de engranaje y, a continuación, escriba _windowsservercontent_. Un miembro del alias será en punto para revisar los cambios y mezclar la solicitud de incorporación de cambios o agregar comentarios sobre las cosas que se deben cambiar antes de la combinación.
 
-4. Seleccione **crear solicitud de incorporación de cambios**. La nueva incorporación de cambios está vinculado a la rama de trabajo en la bifurcación. Hasta que la solicitud se ha combinado, las nuevas confirmaciones que inserte en la misma rama de trabajo en la bifurcación se incluyen automáticamente en el PR. Se agrega una nueva etiqueta a la solicitud de incorporación de cambios que dice, **do-not-merge**. Esto significa simplemente que su contenido aún está en curso y no debe ser revisado o insertan en el sitio activo.
+4. Seleccione **Crear solicitud de incorporación de cambios**. El nuevo PR se vincula a la rama de trabajo en la bifurcación. Hasta que se combine la solicitud de incorporación de cambios, las nuevas confirmaciones que inserte en la misma rama de trabajo en la bifurcación se incluirán automáticamente en la solicitud de incorporación de cambios. Se agrega una nueva etiqueta a la solicitud de incorporación de cambios que indica que no se deben **combinar**. Esto significa simplemente que el contenido todavía está en curso y no debe revisarse ni insertarse en el sitio activo.
 
-5. Cuando esté listo para que alguien del alias para revisar el contenido, debe agregar el texto, **#sign-off** a los comentarios. Este comentario:
+5. Cuando esté listo para que un usuario del alias Revise su contenido, debe agregar el texto, **#sign** a los comentarios. Este comentario:
 
-    - Actualiza la etiqueta para la solicitud de incorporación de **do-not-merge** a **listo para combinar**.
+    - Actualiza la etiqueta de la solicitud de incorporación de cambios de **do-not-Merge** a **Ready-to Merge**.
 
-    - Permite que los alias y escritores que se sabe que está preparado para recibir el contenido revisado.
+    - Permite que el alias y los escritores sepan que está listo para que el contenido se revise.
 
-    - Permite que los administradores de saben que tras la aprobación, el contenido está listo go live.
+    - Permite que los administradores sepan que después de la aprobación, el contenido está listo.

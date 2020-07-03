@@ -1,6 +1,6 @@
 ---
 title: Manage-BDE setidentifier
-description: Tema de referencia para el comando Manage-BDE setidentifier, que establece el campo de identificador de unidad en la unidad en el valor especificado en la opción proporcionar los identificadores únicos de la organización directiva de grupo.
+description: Artículo de referencia para el comando Manage-BDE setidentifier, que establece el campo de identificador de unidad de la unidad en el valor especificado en la opción proporcionar los identificadores únicos de la organización directiva de grupo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b4a21df9d177d7bf6813abb0d418d7355d5e59a
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 7d20120bf4c6ec76fa6ba040141afadea2a748d5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222604"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922257"
 ---
 # <a name="manage-bde-setidentifier"></a>Manage-BDE setidentifier
 
@@ -31,7 +31,7 @@ manage-bde –setidentifier <drive> [-computername <name>] [{-?|/?}] [{-help|-h}
 | Parámetro | Descripción |
 | --------- | ----------- |
 | `<drive>` | Representa la letra de una unidad seguida del signo de dos puntos. |
-| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| -COMPUTERNAME | Especifica que se utilizará manage-bde.exe para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
 | `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
 | -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
 | -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |

@@ -1,6 +1,6 @@
 ---
 title: assoc
-description: Tema de referencia del comando Assoc, que muestra o modifica las asociaciones de la extensión de nombre de archivo.
+description: Artículo de referencia para el comando Assoc, que muestra o modifica las asociaciones de la extensión de nombre de archivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 58735201a1a0711db4d0cee9c292363acf5121f3
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6e6d72dce2a3e820b52a33bf11dbf38890278fb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819645"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924049"
 ---
 # <a name="assoc"></a>assoc
 
 Muestra o modifica las asociaciones de extensión de nombre de archivo. Si se usa sin parámetros, **Assoc** muestra una lista de todas las asociaciones de extensión de nombre de archivo actuales.
 
 > [!NOTE]
-> Este comando solo se admite en cmd. exe y no está disponible en PowerShell.
+> Este comando solo se admite dentro de cmd.exe y no está disponible en PowerShell.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,7 +37,7 @@ assoc [<.ext>[=[<filetype>]]]
 | `<filetype>` | Especifica el tipo de archivo que se va a asociar a la extensión de nombre de archivo especificada. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 - Para quitar la Asociación de tipo de archivo para una extensión de nombre de archivo, agregue un espacio en blanco después del signo igual presionando la barra ESPACIAdora.
 
@@ -68,7 +68,7 @@ Para ver la salida de **Assoc** en una pantalla a la vez, escriba:
 assoc | more
 ```
 
-Para enviar la salida de **Assoc** al archivo Assoc. txt, escriba:
+Para enviar la salida de **Assoc** al archivo assoc.txt, escriba:
 
 ```
 assoc>assoc.txt

@@ -1,6 +1,6 @@
 ---
 title: finger
-description: Tema de referencia del comando Finger, que muestra información acerca de los usuarios de un equipo remoto especificado que ejecuta el servicio Finger o el demonio.
+description: Artículo de referencia del comando Finger, que muestra información acerca de los usuarios de un equipo remoto especificado que ejecuta el servicio Finger o el demonio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3403e10a1777bc117659eb052958d3a20668557
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: fd629374b601686e91e5238ae8db060e0b6bf0f8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437240"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922428"
 ---
 # <a name="finger"></a>finger
 
@@ -40,7 +40,7 @@ finger [-l] [<user>] [@<host>] [...]
 | `@<host>` | Especifica el equipo remoto que ejecuta el servicio Finger en el que busca información de usuario. Puede especificar un nombre de equipo o una dirección IP. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Debe **anteponer** un guion (-) en lugar de una barra diagonal (/).
 

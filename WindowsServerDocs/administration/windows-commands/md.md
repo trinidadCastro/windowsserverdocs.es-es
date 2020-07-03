@@ -1,6 +1,6 @@
 ---
 title: md
-description: Tema de referencia del comando MD, que crea un directorio o subdirectorio.
+description: Artículo de referencia del comando MD, que crea un directorio o subdirectorio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 928454c406216547783921005c9ff036a2844686
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: e7d5dac14572bfe53f92333cddcdc68bfa0aab1a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354640"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922090"
 ---
 # <a name="md"></a>md
 

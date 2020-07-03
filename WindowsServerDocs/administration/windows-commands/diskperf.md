@@ -1,6 +1,6 @@
 ---
 title: diskperf
-description: Tema de referencia del comando diskperf, que se puede usar para habilitar o deshabilitar de forma remota los contadores de rendimiento de disco físico o lógico en equipos que ejecutan Windows.
+description: Artículo de referencia para el comando diskperf, que se puede usar para habilitar o deshabilitar de forma remota los contadores de rendimiento de disco físico o lógico en equipos que ejecutan Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 092518f414d6e27436c46ffd6f9f15b6e6c0407e
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: e1e33844849993c6d5a9f9330264f31e52af3b29
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992425"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922811"
 ---
 # <a name="diskperf"></a>diskperf
 

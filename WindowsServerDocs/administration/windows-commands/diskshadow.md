@@ -1,6 +1,6 @@
 ---
 title: Diskshadow
-description: Tema de referencia para el comando DiskShadow, que es una herramienta que expone la funcionalidad que ofrece el servicio de instantáneas de volumen (VSS).
+description: Artículo de referencia para el comando DiskShadow, que es una herramienta que expone la funcionalidad que ofrece el servicio de instantáneas de volumen (VSS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ae3a4ba57d9c29375c560c300a4e4ead807184fc
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 02e2836cd69b1fe85ea4f86da125c95c9ca1e4ea
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235189"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922795"
 ---
 # <a name="diskshadow"></a>Diskshadow
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-DiskShadow. exe es una herramienta que expone la funcionalidad que ofrece el servicio de instantáneas de volumen (VSS). De forma predeterminada, DiskShadow usa un intérprete de comandos interactivo similar al de Diskraid o Diskpart. DiskShadow también incluye un modo que admite scripts.
+Diskshadow.exe es una herramienta que expone la funcionalidad que ofrece el servicio de instantáneas de volumen (VSS). De forma predeterminada, DiskShadow usa un intérprete de comandos interactivo similar al de Diskraid o Diskpart. DiskShadow también incluye un modo que admite scripts.
 
 > [!NOTE]
 > La pertenencia al grupo local Administradores, o equivalente, es lo mínimo necesario para ejecutar DiskShadow.
@@ -33,7 +33,7 @@ En el modo interactivo, escriba lo siguiente en el símbolo del sistema para ini
 diskshadow
 ```
 
-En modo de script, escriba lo siguiente, donde *script. txt* es un archivo de script que contiene comandos de DiskShadow:
+En modo de script, escriba lo siguiente, donde *script.txt* es un archivo de script que contiene comandos de DiskShadow:
 
 ```
 diskshadow -s script.txt
@@ -43,7 +43,7 @@ diskshadow -s script.txt
 
 Puede ejecutar los siguientes comandos en el intérprete de comandos de DiskShadow o a través de un archivo de script. Como mínimo, solo se necesitan **Agregar** y **crear** para crear una instantánea. Sin embargo, esto perderá la configuración de contexto y de opciones, será una copia de seguridad de copia y creará una instantánea sin ningún script de ejecución de copia de seguridad.
 
-| Get-Help | Descripción |
+| Comando | Descripción |
 | --------- | ----------- |
 | [Set (comando)](set_2.md) | Establece el contexto, las opciones, el modo detallado y el archivo de metadatos para crear instantáneas. |
 | [comando cargar metadatos](load-metadata.md) | Carga un archivo Metadata. cab antes de importar una instantánea transportable o carga los metadatos del escritor en el caso de una restauración. |

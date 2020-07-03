@@ -1,6 +1,6 @@
 ---
-title: obtención de Auditpol
-description: Tema de referencia del comando Auditpol get, que recupera la Directiva del sistema, la Directiva por usuario, las opciones de auditoría y el objeto de descriptor de seguridad de auditoría.
+title: auditpol get
+description: Artículo de referencia del comando Auditpol get, que recupera la Directiva del sistema, la Directiva por usuario, las opciones de auditoría y el objeto de descriptor de seguridad de auditoría.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 859ea9e2e42af0fe7f34f4e378166685f8316b9e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 698823ae48dd4ca52cb26d583a35d3faf1c1d03a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719134"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923743"
 ---
-# <a name="auditpol-get"></a>obtención de Auditpol
+# <a name="auditpol-get"></a>auditpol get
 
 > Se aplica a: Windows Server (canal semianual), Windows Server, 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -48,7 +48,7 @@ auditpol /get
 | /r | Muestra la salida en formato de informe, valor separado por comas (CSV). |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 Todas las categorías y subcategorías se pueden especificar mediante el GUID o el nombre entre comillas ("). Los usuarios se pueden especificar por SID o nombre.
 
@@ -61,7 +61,7 @@ auditpol /get /user:{S-1-5-21-1443922412-3030960370-963420232-51} /category:Syst
 ```
 
 > [!NOTE]
-> Este comando es útil en dos escenarios. 1) al supervisar una cuenta de usuario específica para actividades sospechosas, puede usar `/get` el comando para recuperar los resultados en categorías específicas mediante el uso de una directiva de inclusión para habilitar la auditoría adicional. 2) si la configuración de auditoría de una cuenta está registrando numerosos eventos superfluos, puede `/get` usar el comando para filtrar los eventos superfluos para esa cuenta con una directiva de exclusión. Para obtener una lista de todas las categorías, `auditpol /list /category` use el comando.
+> Este comando es útil en dos escenarios. 1) al supervisar una cuenta de usuario específica para actividades sospechosas, puede usar el `/get` comando para recuperar los resultados en categorías específicas mediante el uso de una directiva de inclusión para habilitar la auditoría adicional. 2) si la configuración de auditoría de una cuenta está registrando numerosos eventos superfluos, puede usar el `/get` comando para filtrar los eventos superfluos para esa cuenta con una directiva de exclusión. Para obtener una lista de todas las categorías, use el `auditpol /list /category` comando.
 
 Para recuperar la Directiva de auditoría por usuario para una categoría y una subcategoría determinada, que notifica la configuración inclusiva y exclusiva de esa subcategoría en la categoría sistema de la cuenta invitado, escriba:
 

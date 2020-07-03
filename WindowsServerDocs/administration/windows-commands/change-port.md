@@ -1,6 +1,6 @@
 ---
 title: change port
-description: Tema de referencia del comando Change Port, que enumera o cambia las asignaciones de puertos COM para que sean compatibles con las aplicaciones de MS-DOS.
+description: Artículo de referencia del comando Change Port, que enumera o cambia las asignaciones de puertos COM para que sean compatibles con las aplicaciones de MS-DOS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8dcf1097ea037aff9269edafea6e640054a697e3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0735c4c21ae8e321da1cfe31c2874f3dcfc540c7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716077"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922501"
 ---
 # <a name="change-port"></a>change port
 
@@ -40,7 +40,7 @@ change port [<portX>=<portY| /d <portX | /query]
 | /Query | Muestra las asignaciones de puerto actuales. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - La mayoría de las aplicaciones de MS-DOS solo admiten puertos serie de COM1 a COM4. El comando **cambiar puerto** asigna un puerto serie a un número de puerto diferente, lo que permite que las aplicaciones que no admiten puertos com de gran número tengan acceso al puerto serie. La reasignación solo funciona para la sesión actual y no se conserva si cierra sesión en una sesión y vuelve a iniciarla.
 
@@ -49,13 +49,13 @@ change port [<portX>=<portY| /d <portX | /query]
 ## <a name="examples"></a>Ejemplos
 
 - Para asignar COM12 a COM1 para su uso por parte de una aplicación basada en MS-dos, escriba:
-  
+
   ```
   change port com12=com1
   ```
 
 - Para mostrar las asignaciones de puertos actuales, escriba:
-  
+
   ```
   change port /query
   ```

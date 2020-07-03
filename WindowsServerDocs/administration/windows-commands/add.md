@@ -1,6 +1,6 @@
 ---
 title: add
-description: Tema de referencia del comando Add, que agrega volúmenes al conjunto de volúmenes de los que se van a realizar instantáneas, o agrega alias al entorno de alias.
+description: Artículo de referencia para el comando Add, que agrega volúmenes al conjunto de volúmenes de los que se van a realizar instantáneas, o agrega alias al entorno de alias.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b621a3061c4e3366085c5cc44f91f26dd33d4e3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7b409b0355f4e112773c3f847466586fe3c84654
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719008"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924072"
 ---
 # <a name="add"></a>add
 

@@ -1,6 +1,6 @@
 ---
 title: en
-description: Tema de referencia del comando AT, que programa comandos y programas para que se ejecuten en un equipo a una hora y fecha especificadas.
+description: Artículo de referencia del comando AT, que programa comandos y programas para que se ejecuten en un equipo a una hora y fecha especificadas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3aafcf4cbc4a6626a3390fe5ad6a305b90dfaec0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1ead4132b70cc98d9bdd7f478a8e3f18ab6da1aa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718931"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923939"
 ---
 # <a name="at"></a>en
 
@@ -45,9 +45,9 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 | `<command>` | Especifica el comando de Windows, el programa (es decir, el archivo. exe o. com) o el programa de Batch (es decir, el archivo. bat o. cmd) que desea ejecutar. Cuando el comando requiere una ruta de acceso como argumento, utilice la ruta de acceso absoluta (es decir, toda la ruta de acceso que comienza con la letra de unidad). Si el comando se encuentra en un equipo remoto, especifique la notación de Convención de nomenclatura universal (UNC) para el servidor y el nombre del recurso compartido, en lugar de una letra de unidad remota. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
-- Este comando no carga automáticamente cmd. exe antes de ejecutar los comandos. Si no está ejecutando un archivo ejecutable (. exe), debe cargar explícitamente cmd. exe al principio del comando de la siguiente manera:
+- Este comando no carga automáticamente cmd.exe antes de ejecutar los comandos. Si no está ejecutando un archivo ejecutable (. exe), debe cargar explícitamente cmd.exe al principio del comando de la siguiente manera:
 
     ```
     cmd /c dir > c:\test.out
@@ -62,7 +62,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     OK      3    Each F     11:59 PM    backup2.bat
     ```
 
-- Si se incluye un número de identificación (*ID.*) con este comando, solo la información de una sola entrada aparece en un formato similar al siguiente:  
+- Si se incluye un número de identificación (*ID.*) con este comando, solo la información de una sola entrada aparece en un formato similar al siguiente:
 
     ```
     Task ID: 1
@@ -74,7 +74,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 - Después de programar un comando, especialmente un comando que tiene opciones de línea de comandos, compruebe que la sintaxis del comando es correcta escribiendo **en** sin ninguna opción de línea de comandos. Si la información de la columna de **línea de comandos** es incorrecta, elimine el comando y vuelva a escribirlo. Si todavía es incorrecto, vuelva a escribir el comando con menos opciones de la línea de comandos.
 
-- Comandos programados con **en** ejecución como procesos en segundo plano. La salida no se muestra en la pantalla del equipo. Para redirigir la salida a un archivo, use el símbolo `>`de redirección. Si redirige los resultados a un archivo, debe utilizar el símbolo `^` de escape antes del símbolo de redireccionamiento, tanto si está utilizando **at** en la línea de comandos o en un archivo por lotes. Por ejemplo, para redirigir la salida a *Output. txt*, escriba:
+- Comandos programados con **en** ejecución como procesos en segundo plano. La salida no se muestra en la pantalla del equipo. Para redirigir la salida a un archivo, use el símbolo de redirección `>` . Si redirige los resultados a un archivo, debe utilizar el símbolo de escape `^` antes del símbolo de redireccionamiento, tanto si está utilizando **at** en la línea de comandos o en un archivo por lotes. Por ejemplo, para redirigir la salida a *output.txt*, escriba:
 
     ```
     at 14:45 c:\test.bat ^>c:\output.txt
@@ -86,13 +86,13 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 - Los comandos programados se almacenan en el registro. Como resultado, no pierde tareas programadas Si reinicia el servicio de programación.
 
-- No use una unidad redirigida para los trabajos programados que tienen acceso a la red. Es posible que el servicio de programación no pueda obtener acceso a la unidad redirigida o que la unidad redirigida no esté presente si un usuario diferente ha iniciado sesión en el momento en que se ejecuta la tarea programada. En su lugar, use rutas de acceso UNC para los trabajos programados. Por ejemplo:  
+- No use una unidad redirigida para los trabajos programados que tienen acceso a la red. Es posible que el servicio de programación no pueda obtener acceso a la unidad redirigida o que la unidad redirigida no esté presente si un usuario diferente ha iniciado sesión en el momento en que se ejecuta la tarea programada. En su lugar, use rutas de acceso UNC para los trabajos programados. Por ejemplo:
 
     ```
     at 1:00pm my_backup \\server\share
     ```
 
-    No use la sintaxis siguiente, donde **x:** es una conexión realizada por el usuario:  
+    No use la sintaxis siguiente, donde **x:** es una conexión realizada por el usuario:
 
     ```
     at 1:00pm my_backup x:
@@ -107,7 +107,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     > [!Caution]
     > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
 
-    1. Inicie el editor del registro (regedit. exe).
+    1. Inicie el editor del registro (regedit.exe).
 
     2. Busque y haga clic en la clave siguiente en el registro:`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Schedule`
 
@@ -115,7 +115,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
         - **Nombre del valor.** atTaskMaxHours
 
-        - **Tipo de datos.** reg_DWOrd 
+        - **Tipo de datos.** reg_DWOrd
 
         - **Fijo.** Decimal
 
@@ -137,7 +137,7 @@ Para obtener más información acerca de un comando con el número de identifica
 at \\corp 3
 ```
 
-Para programar un comando net Share para que se ejecute en el servidor Corp a las 8:00 A.M. y redirija la lista al servidor de mantenimiento, en el directorio compartido de informes y el archivo Corp. txt, escriba:
+Para programar un comando net Share para que se ejecute en el servidor Corp a las 8:00 A.M. y redirija la lista al servidor de mantenimiento, en el directorio de informes compartido y el archivo de Corp.txt, escriba:
 
 ```
 at \\corp 08:00 cmd /c net share reports=d:\marketing\reports >> \\maintenance\reports\corp.txt
@@ -155,7 +155,7 @@ Para cancelar todos los comandos programados en el servidor actual, borre la inf
 at /delete
 ```
 
-Para ejecutar un comando que no es un archivo ejecutable (. exe), anteponga a **cmd/c** el comando para cargar cmd. exe de la siguiente manera:
+Para ejecutar un comando que no es un archivo ejecutable (. exe), anteponga a **cmd/c** el comando para cargar cmd.exe como se indica a continuación:
 
 ```
 cmd /c dir > c:\test.out

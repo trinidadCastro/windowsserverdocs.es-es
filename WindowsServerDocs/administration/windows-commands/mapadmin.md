@@ -1,6 +1,6 @@
 ---
 title: mapadmin
-description: Tema de referencia para el comando mapadmin, que administra Asignación de nombres de usuario para los servicios de Microsoft para Network File System.
+description: Artículo de referencia para el comando mapadmin, que administra Asignación de nombres de usuario para los servicios de Microsoft para Network File System.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 059419a134b62ec92b30feacd086e7d7116aab25
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: b2ebe5626057bd7f7ddac238360d171c87fd15c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354655"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922189"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -59,7 +59,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 | removedomainmap | Quita una asignación simple entre un dominio de Windows y un dominio NIS. Las siguientes opciones y el argumento están disponibles para este parámetro:<ul><li>**-d `<windowsdomain>` :** especifica el dominio de Windows del mapa que se va a quitar.</li><li>**-y `<NISdomain>` :** especifica el dominio NIS del mapa que se va a quitar.</li><li>**-todo:** Especifica que se van a quitar todas las asignaciones simples entre dominios de Windows y NIS. También se quitarán todas las asignaciones simples entre un dominio de Windows y los archivos de grupo y contraseña.</li></ul> |
 | listdomainmaps | Enumera los dominios de Windows que están asignados a los dominios NIS o a los archivos de contraseña y grupo. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si no especifica ningún valor de parámetros, el comando **mapadmin** muestra la configuración actual de asignación de nombres de usuario.
 

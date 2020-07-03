@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache y setexpirationtime
-description: Tema de referencia de la memoria caché de bitsadmin y el comando setexpirationtime, que establece la hora de expiración de la caché.
+description: Artículo de referencia de la memoria caché de bitsadmin y el comando setexpirationtime, que establece la hora de expiración de la caché.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eeb1dbd0439a1a39711e2a074ada4c772b9ca016
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 60372a74acc6ea5312afb5dafcb3ab7b3299f4d2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235035"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923258"
 ---
 # <a name="bitsadmin-cache-and-setexpirationtime"></a>bitsadmin cache y setexpirationtime
 

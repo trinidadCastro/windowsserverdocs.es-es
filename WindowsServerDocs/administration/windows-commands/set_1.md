@@ -1,6 +1,6 @@
 ---
 title: set
-description: Tema de referencia para Set, que muestra, establece o quita variables de entorno de cmd. exe.
+description: Artículo de referencia para Set, que muestra, establece o quita cmd.exe variables de entorno.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5de835dd591e1f70acc896772df501d5ddbdf237
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 002ac4624d9ed501fab7816a83c2a0c5fc6a2bce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819395"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922823"
 ---
 # <a name="set"></a>set
 
-Muestra, establece o quita las variables de entorno de cmd. exe. Si se usa sin parámetros, **set** muestra la configuración actual de las variables de entorno.
+Muestra, establece o quita cmd.exe variables de entorno. Si se usa sin parámetros, **set** muestra la configuración actual de las variables de entorno.
 
 
 
@@ -34,15 +34,15 @@ set /a <Variable>=<Expression>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<> de variable|Especifica la variable de entorno que se va a establecer o modificar.|
-|\<> de cadena|Especifica la cadena que se va a asociar a la variable de entorno especificada.|
+|\<Variable>|Especifica la variable de entorno que se va a establecer o modificar.|
+|\<String>|Especifica la cadena que se va a asociar a la variable de entorno especificada.|
 |/p|Establece el valor de la *variable* en una línea de entrada especificada por el usuario.|
-|\<> PromptString|Opcional. Especifica un mensaje para solicitar la intervención del usuario. Este parámetro se usa con la opción de línea de comandos **/p** .|
+|\<PromptString>|Opcional. Especifica un mensaje para solicitar la intervención del usuario. Este parámetro se usa con la opción de línea de comandos **/p** .|
 |/a|Establece una *cadena* en una expresión numérica que se evalúa.|
-|\<> de expresiones|Especifica una expresión numérica. Vea la sección Comentarios para ver los operadores válidos que se pueden usar en la *expresión*.|
+|\<Expression>|Especifica una expresión numérica. Vea la sección Comentarios para ver los operadores válidos que se pueden usar en la *expresión*.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Usar **set** con extensiones de comandos habilitadas
 
@@ -65,7 +65,7 @@ set /a <Variable>=<Expression>
 
   En la tabla siguiente se enumeran los operadores admitidos para **/a** en orden descendente de prioridad.
 
-  |        Operador         | Operación realizada  |
+  |        Operator         | Operación realizada  |
   |-------------------------|----------------------|
   |           ( )           |       Agrupar       |
   |          ! ~ -          |        Unario         |

@@ -1,6 +1,6 @@
 ---
 title: logman create
-description: Tema de referencia del comando Logman Create, que crea un contador, un seguimiento, un recopilador de datos de configuración o una API.
+description: Artículo de referencia para el comando Logman Create, que crea un contador, un seguimiento, un recopilador de datos de configuración o una API.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4a68be098f868cdd9cd48c1e7c68fc183fa1fab
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 695a101a0aa6a720b64ffee6617085d13b6e83d1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222952"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922327"
 ---
 # <a name="logman-create"></a>logman create
 
@@ -32,11 +32,11 @@ logman create <counter | trace | alert | cfg | api> <[-n] <name>> [options]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| [Logman Create Counter](logman-create-counter.md) | Crea un recopilador de datos de contador. |
-| [Logman crear seguimiento](logman-create-trace.md) | Crea un recopilador de datos de seguimiento. |
-| [Logman crear alerta](logman-create-alert.md) | Crea un recopilador de datos de alerta. |
-| [Logman crear cfg](logman-create-cfg.md) | Crea un recopilador de datos de configuración. |
-| [Logman Create API](logman-create-api.md) | Crea un recopilador de datos de seguimiento de API. |
+| [logman create counter](logman-create-counter.md) | Crea un recopilador de datos de contador. |
+| [logman create trace](logman-create-trace.md) | Crea un recopilador de datos de seguimiento. |
+| [logman create alert](logman-create-alert.md) | Crea un recopilador de datos de alerta. |
+| [logman create cfg](logman-create-cfg.md) | Crea un recopilador de datos de configuración. |
+| [logman create api](logman-create-api.md) | Crea un recopilador de datos de seguimiento de API. |
 
 ## <a name="additional-references"></a>Referencias adicionales
 

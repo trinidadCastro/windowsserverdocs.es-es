@@ -1,6 +1,6 @@
 ---
 title: arp
-description: Tema de referencia del comando ARP, que muestra y modifica las entradas de la caché del Protocolo de resolución de direcciones (ARP) que se usa para almacenar las direcciones IP y sus direcciones físicas resueltas.
+description: Artículo de referencia del comando ARP, que muestra y modifica las entradas de la caché del Protocolo de resolución de direcciones (ARP) que se usa para almacenar las direcciones IP y sus direcciones físicas resueltas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdbb9fe636bb30be90164d9a2163c495a9c2e704
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 41f9ebde5faa3eda99402aa86a0aef5e55b42eba
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819655"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924006"
 ---
 # <a name="arp"></a>arp
 
@@ -38,7 +38,7 @@ arp [/a [<inetaddr>] [/n <ifaceaddr>]] [/g [<inetaddr>] [-n <ifaceaddr>]] [/d <i
 | `[/s <inetaddr> <etheraddr> [<ifaceaddr>]` | Agrega una entrada estática a la caché ARP que resuelve la dirección IP **direccióndeinternet** en la dirección física **etheraddr**. Para agregar una entrada de caché ARP estática a la tabla para una interfaz específica, use el parámetro **direccióndeinterfaz** , donde **direccióndeinterfaz** es una dirección IP asignada a la interfaz. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 - Las direcciones IP de **direccióndeinternet** y **direccióndeinterfaz** se expresan en notación decimal con puntos.
 

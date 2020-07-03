@@ -1,6 +1,6 @@
 ---
 title: bdehdcfg newdriveletter
-description: Tema de referencia para el comando bdehdcfg newdriveletter, que asigna una nueva letra de unidad a la parte de una unidad utilizada como unidad del sistema.
+description: Artículo de referencia para el comando bdehdcfg newdriveletter, que asigna una nueva letra de unidad a la parte de una unidad utilizada como unidad del sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da09ae1469c6fc8370e6bd0f2f7a8f3efd8dc4f0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f210056f74e930ad39361c9fc0cbf05d6e1894f4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718662"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923493"
 ---
 # <a name="bdehdcfg-newdriveletter"></a>bdehdcfg: newdriveletter
 
@@ -34,7 +34,7 @@ bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge
 
 ## <a name="examples"></a>Ejemplos
 
-Para asignar la unidad predeterminada a la letra `P`de unidad:
+Para asignar la unidad predeterminada a la letra de unidad `P` :
 
 ```
 bdehdcfg -target default -newdriveletter P:

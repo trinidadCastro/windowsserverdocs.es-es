@@ -1,6 +1,6 @@
 ---
 title: fondue
-description: Tema de referencia para el comando fondue, que habilita las características opcionales de Windows mediante la descarga de los archivos necesarios de Windows Update u otro origen especificado por directiva de grupo.
+description: Artículo de referencia para el comando fondue, que habilita las características opcionales de Windows mediante la descarga de los archivos necesarios de Windows Update u otro origen especificado por directiva de grupo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a9e751a5ad46d557aa2317ebe4c144fa6f004fa
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 5d2b7e4b2a8ef3158f5528c43944020274204970
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437210"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922694"
 ---
 # <a name="fondue"></a>fondue
 
@@ -32,8 +32,8 @@ fondue.exe /enable-feature:<feature_name> [/caller-name:<program_name>] [/hide-u
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| /Enable-Feature`<feature_name>` | Especifica el nombre de la característica opcional de Windows que desea habilitar. Solo puede habilitar una característica por línea de comandos. Para habilitar varias características, use fondue. exe para cada característica. |
-| /caller-name:`<program_name>` | Especifica el nombre del programa o del proceso cuando se llama a fondue. exe desde un script o un archivo por lotes. Puede usar esta opción para agregar el nombre del programa al informe de SQM si se produce un error. |
+| /Enable-Feature`<feature_name>` | Especifica el nombre de la característica opcional de Windows que desea habilitar. Solo puede habilitar una característica por línea de comandos. Para habilitar varias características, utilice fondue.exe para cada característica. |
+| /caller-name:`<program_name>` | Especifica el nombre del programa o del proceso cuando se llama a fondue.exe desde un script o un archivo por lotes. Puede usar esta opción para agregar el nombre del programa al informe de SQM si se produce un error. |
 | /hide-ux:`{all | rebootrequest}` | Use **todo** para ocultar todos los mensajes al usuario, incluidas las solicitudes de progreso y de permiso para tener acceso a Windows Update. Si se requiere el permiso, se producirá un error en la operación.<p>Use **rebootrequest** para ocultar solo los mensajes de usuario que soliciten permiso para reiniciar el equipo. Utilice esta opción si tiene un script que controla las solicitudes de reinicio. |
 
 ### <a name="examples"></a>Ejemplos

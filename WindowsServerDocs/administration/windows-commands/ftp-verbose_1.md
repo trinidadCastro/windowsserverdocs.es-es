@@ -1,6 +1,6 @@
 ---
-title: detallado de FTP
-description: Tema de referencia para el comando detallado de FTP, que alterna el modo detallado.
+title: ftp verbose
+description: Artículo de referencia para el comando detallado de FTP, que alterna el modo detallado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b2fa15d17c872076ac154aaa6051e3243fdc30e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d0a00b03173d49c177c420ab574229d2ddb97e7d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820255"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922620"
 ---
-# <a name="ftp-verbose"></a>detallado de FTP
+# <a name="ftp-verbose"></a>ftp verbose
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

@@ -1,6 +1,6 @@
 ---
-title: bdehdcfg silencioso
-description: Tema de referencia del comando silencioso de bdehdcfg, que indica a bdehdcfg que no muestre todas las acciones y errores.
+title: bdehdcfg quiet
+description: Artículo de referencia del comando Quiet de bdehdcfg, que indica a bdehdcfg que no muestre todas las acciones y errores.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afb7a73899259b0f3823941ece014ea85568a4ce
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5b6a62314109d1c299187d87fba23b8e59669d66
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718639"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923451"
 ---
 # <a name="bdehdcfg-quiet"></a>bdehdcfg: Quiet
 

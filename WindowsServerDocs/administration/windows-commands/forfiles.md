@@ -1,6 +1,6 @@
 ---
 title: forfiles
-description: Tema de referencia sobre el comando forfiles, que selecciona y ejecuta un comando en un archivo o conjunto de archivos.
+description: Artículo de referencia para el comando forfiles, que selecciona y ejecuta un comando en un archivo o conjunto de archivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 96ef7d016bd13961a4814ba4cd09095aed4f0e97
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: 26c443aa05d081fc257dc49d2f2c7f6a9adae865
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716850"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922395"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -37,7 +37,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 | /D.`[{+\|-}][{<date> | <days>}]` | Selecciona los archivos con una fecha de última modificación dentro del período de tiempo especificado:<ul><li>Selecciona los archivos con una fecha de última modificación posterior o igual a ( **+** ) o anterior o igual a ( **-** ) la fecha especificada, donde la *fecha* tiene el formato mm/dd/aaaa.</li><li>Selecciona los archivos con una fecha de última modificación posterior o igual a ( **+** ) la fecha actual más el número de días especificado, o anterior o igual a ( **-** ) la fecha actual menos el número de días especificado.</li><li>Los valores válidos para los *días* incluyen cualquier número en el intervalo comprendido entre 0 y 32768. Si no se especifica ningún signo, **+** se usa de forma predeterminada.</li></ul> |
 | /? | Muestra el texto de ayuda en la ventana cmd. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - El `forfiles /S` comando es similar a `dir /S` .
 
@@ -55,7 +55,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
     | @FDATE | Marca de fecha de última modificación del archivo. |
     | @FTIME | Marca de tiempo de última modificación en el archivo. |
 
-- El comando **forfiles** permite ejecutar un comando en o pasar argumentos a varios archivos. Por ejemplo, puede ejecutar el comando **Type** en todos los archivos de un árbol con la extensión de nombre de archivo. txt. O bien, puede ejecutar todos los archivos por lotes (*. bat) en la unidad C, con el nombre de archivo myinput. txt como primer argumento.
+- El comando **forfiles** permite ejecutar un comando en o pasar argumentos a varios archivos. Por ejemplo, puede ejecutar el comando **Type** en todos los archivos de un árbol con la extensión de nombre de archivo. txt. O bien, puede ejecutar todos los archivos por lotes (*. bat) en la unidad C, con el nombre de archivo Myinput.txt como primer argumento.
 
 - Este comando puede:
 

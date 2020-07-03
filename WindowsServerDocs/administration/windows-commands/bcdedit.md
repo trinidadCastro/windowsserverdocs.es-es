@@ -1,6 +1,6 @@
 ---
 title: bcdedit
-description: Tema de referencia del comando bcdedit, que crea nuevos almacenes, modifica almacenes existentes y agrega parámetros de menú de arranque.
+description: Artículo de referencia para el comando bcdedit, que crea nuevos almacenes, modifica almacenes existentes y agrega parámetros de menú de arranque.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: df68c2c1b1087f7e32dbe270657a54e072261c46
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2e49ed45875b79dfc4d8bbbdad8a1221000bf2b5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718697"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923520"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -22,7 +22,7 @@ Los archivos de datos de la configuración de arranque (BCD) proporcionan un alm
 
 BCDEdit es una herramienta de la línea de comandos que sirve para administrar almacenes BCD. Se puede usar para una variedad de propósitos, como la creación de nuevos almacenes, la modificación de almacenes existentes, la adición de parámetros de menú de arranque, etc. Esencialmente, BCDEdit tiene el mismo objetivo que Bootcfg.exe en versiones anteriores de Windows, con dos mejoras destacables:
 
-- Expone una mayor variedad de parámetros de arranque que Bootcfg. exe.
+- Expone una gama más amplia de parámetros de arranque que Bootcfg.exe.
 
 - Ha mejorado la compatibilidad con scripting.
 

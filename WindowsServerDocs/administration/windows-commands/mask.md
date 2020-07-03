@@ -1,6 +1,6 @@
 ---
 title: mask
-description: Tema de referencia del comando Mask, que quita las instantáneas de hardware que se importaron mediante el comando IMPORT.
+description: Artículo de referencia del comando Mask, que quita las instantáneas de hardware que se importaron mediante el comando IMPORT.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee01bb74b1fef1bb31a266c01a9e9bde7743691d
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 2839fce0a64f187c1445a5f6a4af6c5f0ebc9fb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354645"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922103"
 ---
 # <a name="mask"></a>mask
 
@@ -32,7 +32,7 @@ mask <shadowsetID>
 | --------- | ----------- |
 | shadowsetID | Quita las instantáneas que pertenecen al identificador de conjunto de instantáneas especificado. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Puede usar un alias existente o una variable de entorno en lugar de *ShadowSetID*. Use **Agregar** sin parámetros para ver los alias existentes.
 

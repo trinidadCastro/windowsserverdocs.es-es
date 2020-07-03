@@ -1,6 +1,6 @@
 ---
 title: pause
-description: Tema de referencia del comando PAUSE, que suspende el procesamiento de programas por lotes.
+description: Artículo de referencia del comando PAUSE, que suspende el procesamiento de programas por lotes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f603802926d0f9418a82e1f4981181889fc573ef
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f604bbd205a074d8966cd2c1a1bc65506e7ca5e0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472521"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922898"
 ---
 # <a name="pause"></a>pause
 

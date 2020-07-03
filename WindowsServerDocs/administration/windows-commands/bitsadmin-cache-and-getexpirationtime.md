@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache y getexpirationtime
-description: Tema de referencia de la memoria caché de bitsadmin y el comando getexpirationtime, que recupera la hora de expiración de la caché.
+description: Artículo de referencia de la memoria caché de bitsadmin y el comando getexpirationtime, que recupera la hora de expiración de la caché.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ecd20a6f35637be3d2f1cad08cf2d060c944857c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a968653cadbeadd73296a994cc12ca68b54553c2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718430"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923294"
 ---
 # <a name="bitsadmin-cache-and-getexpirationtime"></a>bitsadmin cache y getexpirationtime
 

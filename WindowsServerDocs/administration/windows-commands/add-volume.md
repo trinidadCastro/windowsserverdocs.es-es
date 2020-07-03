@@ -1,6 +1,6 @@
 ---
-title: agregar volumen
-description: Tema de referencia del comando Add Volume, que agrega volúmenes al conjunto de instantáneas, que es el conjunto de volúmenes de los que se va a realizar la instantánea.
+title: add volume
+description: Artículo de referencia del comando Add Volume, que agrega volúmenes al conjunto de instantáneas, que es el conjunto de volúmenes de los que se va a realizar la instantánea.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8cfd3d8f7d9f008e3136d8f694dc00370b8b0f2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3cd80a60fd3215a2234d4eb5be8a62da91e2cba4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719210"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924089"
 ---
-# <a name="add-volume"></a>agregar volumen
+# <a name="add-volume"></a>add volume
 
 Agrega volúmenes al conjunto de instantáneas, que es el conjunto de volúmenes de los que se va a realizar la instantánea. Cuando se crea una instantánea, una variable de entorno vincula el alias con el identificador de la instantánea, de modo que el alias se puede usar para el scripting.
 
@@ -39,7 +39,7 @@ add volume <volume> [provider <providerid>]
 
 ## <a name="examples"></a>Ejemplos
 
-Para ver la lista actual de proveedores registrados, escriba lo `diskshadow>` siguiente en el símbolo del sistema:
+Para ver la lista actual de proveedores registrados, `diskshadow>` Escriba lo siguiente en el símbolo del sistema:
 
 ```
 list providers

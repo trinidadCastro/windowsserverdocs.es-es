@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getdisplayname
-description: Tema de referencia del comando bitsadmin getDisplayName, que recupera el nombre para mostrar del trabajo especificado.
+description: Artículo de referencia del comando bitsadmin getDisplayName, que recupera el nombre para mostrar del trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d47a70d34dbff0249a9d69f1db1deaa879c76c8
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4b0e768f377b9faa23eb59645cbecdc129f1e573
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437070"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923047"
 ---
 # <a name="bitsadmin-getdisplayname"></a>bitsadmin getdisplayname
 

@@ -1,6 +1,6 @@
 ---
-title: disco de atributos
-description: Tema de referencia del comando de disco Attributes, que muestra, establece o borra los atributos de un disco.
+title: attributes disk
+description: Artículo de referencia para el comando de disco Attributes, que muestra, establece o borra los atributos de un disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3d378439b30328e4df48020fa4b3288f7af31c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 02ad39b84afb2487b388d046d6409a682b58615b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718894"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923895"
 ---
-# <a name="attributes-disk"></a>disco de atributos
+# <a name="attributes-disk"></a>attributes disk
 
 Muestra, establece o borra los atributos de un disco. Cuando este comando se usa para mostrar los atributos actuales de un disco, el atributo disco de inicio denota el disco que se usa para iniciar el equipo. En el caso de una réplica dinámica, muestra el disco que contiene el Plex de arranque del volumen de arranque.
 
