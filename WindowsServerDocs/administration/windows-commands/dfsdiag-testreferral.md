@@ -1,6 +1,6 @@
 ---
 title: dfsdiag testreferral
-description: Tema de referencia para el comando dfsdiag testreferral, que comprueba las referencias Sistema de archivos distribuido (DFS).
+description: Artículo de referencia para el comando dfsdiag testreferral, que comprueba las referencias Sistema de archivos distribuido (DFS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23abcd738170d5f53e12ae83c41d632d2d7ac738
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 8ee88e6f9d75dc32bd7fd5dac4c14c72f3bbac02
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992934"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928692"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag testreferral
 
@@ -24,11 +24,11 @@ Comprueba las referencias de Sistema de archivos distribuido (DFS) mediante la r
 
 - Si usa el parámetro **DFSpath*** sin argumentos, el comando valida que la lista de referencias incluya todos los dominios de confianza.
 
-- Si especifica un dominio, el comando realiza una comprobación de estado de los controladores de`dfsdiag /testdcs`dominio () y prueba las asociaciones de sitio y la caché de dominio del host local.
+- Si especifica un dominio, el comando realiza una comprobación de estado de los controladores de dominio ( `dfsdiag /testdcs` ) y prueba las asociaciones de sitio y la caché de dominio del host local.
 
 - Si especifica un dominio y \SYSvol o \NETLOGON, el comando realiza las mismas comprobaciones de estado del controlador de dominio, además de comprobar que el período de vida **(TTL)** de las referencias de SYSVOL o Netlogon coincide con el valor predeterminado de 900 segundos.
 
-- Si especifica una raíz de espacio de nombres, el comando realiza las mismas comprobaciones de estado del controlador de dominio, además de`dfsdiag /testdfsconfig`realizar una comprobación de la configuración de`dfsdiag /testdfsintegrity`DFS () y una comprobación de integridad del espacio de nombres ().
+- Si especifica una raíz de espacio de nombres, el comando realiza las mismas comprobaciones de estado del controlador de dominio, además de realizar una comprobación de la configuración de DFS ( `dfsdiag /testdfsconfig` ) y una comprobación de integridad del espacio de nombres ( `dfsdiag /testdfsintegrity` ).
 
 - Si especifica una carpeta DFS (vínculo), el comando realiza las mismas comprobaciones de estado de la raíz del espacio de nombres, junto con la validación de la configuración del sitio para los destinos de la carpeta (dfsdiag/testsites) y la validación de la Asociación del sitio del host local.
 

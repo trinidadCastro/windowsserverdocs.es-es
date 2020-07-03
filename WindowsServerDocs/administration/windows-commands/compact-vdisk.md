@@ -1,6 +1,6 @@
 ---
-title: Compact vDisk
-description: Tema de referencia para el comando Compact vDisk, que reduce el tamaño físico de un archivo de disco duro virtual (VHD) de expansión dinámica.
+title: compact vdisk
+description: Artículo de referencia para el comando Compact vDisk, que reduce el tamaño físico de un archivo de disco duro virtual (VHD) de expansión dinámica.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4ae5c653645c9f6f3ef97501a59932682c24be3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7379975981c2df386b7180c814799f7129eee7da
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711149"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929058"
 ---
-# <a name="compact-vdisk"></a>Compact vDisk
+# <a name="compact-vdisk"></a>compact vdisk
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -28,7 +28,7 @@ Reduce el tamaño físico de un archivo de disco duro virtual (VHD) de expansió
 compact vdisk
 ```
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 - Se debe seleccionar un VHD de expansión dinámica para que esta operación se realice correctamente. Use el [comando SELECT vDisk](select-vdisk.md) para seleccionar un disco duro virtual y desplazar el foco a él.
 

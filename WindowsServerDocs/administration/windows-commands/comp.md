@@ -1,6 +1,6 @@
 ---
 title: comp
-description: Tema de referencia del comando COMP, que compara el contenido de dos archivos o conjuntos de archivos byte a byte.
+description: Artículo de referencia para el comando COMP, que compara el contenido de dos archivos o conjuntos de archivos byte a byte.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c2939ee2166d961cae8ae0699c130e91117dd8a6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 65008945e2994b9040fcac663185d0526910b8bc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711464"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929712"
 ---
 # <a name="comp"></a>comp
 
@@ -40,7 +40,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 | /OFF [línea] | Procesa archivos con el conjunto de atributos sin conexión. |
 | /? | Muestra la Ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Durante la comparación, **COMP** muestra mensajes que identifican las ubicaciones de información diferente entre los archivos. Cada mensaje indica la dirección de la memoria de desplazamiento de los bytes desiguales y el contenido de los bytes (en notación hexadecimal, a menos que se especifique el parámetro de línea de comandos **/a** o **/d** ). Los mensajes aparecen en el formato siguiente:
 
@@ -81,7 +81,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 
 ## <a name="examples"></a>Ejemplos
 
-Para comparar el contenido del directorio *c:\Informes* con el directorio `\\sales\backup\april`de copia de seguridad, escriba:
+Para comparar el contenido del directorio *c:\Informes* con el directorio de copia de seguridad `\\sales\backup\april` , escriba:
 
 ```
 comp c:\reports \\sales\backup\april

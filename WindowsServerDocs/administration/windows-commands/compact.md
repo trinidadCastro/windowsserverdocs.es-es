@@ -1,6 +1,6 @@
 ---
 title: compacto
-description: Tema de referencia del comando Compact, que muestra o modifica la compresión de archivos o directorios en particiones NTFS.
+description: Artículo de referencia para el comando Compact, que muestra o modifica la compresión de archivos o directorios en particiones NTFS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52830530fa281025fcfd970b7675b98004e2a918
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c17f7c934ecd4b6988b3ab606059a2acd31b852b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710948"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929008"
 ---
 # <a name="compact"></a>compacto
 
@@ -32,7 +32,7 @@ compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
 | --------- | ----------- |
 | /C | Comprime el directorio o el archivo especificado. |
 | /U | Descomprime el directorio o el archivo especificado. |
-| /s [:`<dir>`] | Aplica el comando **Compact** a todos los subdirectorios del directorio especificado (o del directorio actual si no se especifica ninguno). |
+| /s [: `<dir>` ] | Aplica el comando **Compact** a todos los subdirectorios del directorio especificado (o del directorio actual si no se especifica ninguno). |
 | /a | Muestra los archivos ocultos o del sistema. |
 | /i | Omite los errores. |
 | /f | Fuerza la compresión o descompresión del directorio o archivo especificado. **/f** se usa en el caso de un archivo que se comprimió parcialmente cuando la operación se interrumpió por un bloqueo del sistema. Para forzar que el archivo se comprima íntegramente, use los parámetros **/c** y **/f** y especifique el archivo parcialmente comprimido. |
@@ -40,7 +40,7 @@ compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
 | `<filename>` | Especifica el archivo o directorio. Puede usar varios nombres de archivo y el **&#42;** y **?** caracteres comodín. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Este comando es la versión de línea de comandos de la característica de compresión del sistema de archivos NTFS. El estado de compresión de un directorio indica si los archivos se comprimen automáticamente cuando se agregan al directorio. Establecer el estado de compresión de un directorio no cambia necesariamente el estado de compresión de los archivos que ya están en el directorio.
 
@@ -75,7 +75,7 @@ Para comprimir todos los archivos con la extensión de nombre de archivo. bmp en
 compact /c /s:\tmp *.bmp
 ```
 
-Para forzar la compresión completa del archivo *Zebra. bmp*, que se comprimió parcialmente durante un bloqueo del sistema, escriba:
+Para forzar la compresión completa del archivo *zebra.bmp*, que se comprimió parcialmente durante un bloqueo del sistema, escriba:
 
 ```
 compact /c /f zebra.bmp

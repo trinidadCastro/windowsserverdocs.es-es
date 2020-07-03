@@ -1,6 +1,6 @@
 ---
 title: detach vdisk
-description: Tema de referencia para el comando detach vDisk, que detiene el disco duro virtual (VHD) seleccionado para que aparezca como una unidad de disco duro local en el equipo host.
+description: Artículo de referencia para el comando detach vDisk, que detiene el disco duro virtual (VHD) seleccionado para que aparezca como una unidad de disco duro local en el equipo host.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 427b27630341589f3ff6dd422667e1247f5b64ec
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: bce18dcf55940ca8529e4bee21af2f09282d0e00
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993080"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928701"
 ---
 # <a name="detach-vdisk"></a>detach vdisk
 

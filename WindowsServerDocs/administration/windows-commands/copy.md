@@ -1,6 +1,6 @@
 ---
 title: copy
-description: Tema de referencia del comando copy, que copia uno o varios archivos de una ubicación a otra.
+description: Artículo de referencia para el comando copy, que copia uno o varios archivos de una ubicación a otra.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 909bcdf83c87440dafe2653711c4d7e215f8d66b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6ea742ab8fce296a88c8c9e6a41262c7aef88813
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719296"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928895"
 ---
 # <a name="copy"></a>copy
 
@@ -41,11 +41,11 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 | /z | Copia los archivos en red en modo reiniciable. |
 | /a | Indica un archivo de texto ASCII. |
 | /b | Indica un archivo binario. |
-| `<source>` | Necesario. Especifica la ubicación desde la que desea copiar un archivo o un conjunto de archivos. El *origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. |
-| `<destination>` | Necesario. Especifica la ubicación en la que desea copiar un archivo o un conjunto de archivos. El *destino* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. |
+| `<source>` | Obligatorio. Especifica la ubicación desde la que desea copiar un archivo o un conjunto de archivos. El *origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. |
+| `<destination>` | Obligatorio. Especifica la ubicación en la que desea copiar un archivo o un conjunto de archivos. El *destino* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Puede copiar un archivo de texto ASCII que use un carácter de fin de archivo (CTRL + Z) para indicar el final del archivo.
 
@@ -65,8 +65,8 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 - Si no se puede comprobar una operación de escritura, aparece un mensaje de error. Aunque raramente se producen errores de registro con el comando **Copy** , puede usar **/v** para comprobar que los datos críticos se han registrado correctamente. La opción de línea de comandos **/v** también ralentiza el comando de **copia** , ya que debe comprobarse cada sector registrado en el disco.
 
 - Si **/y** está preestablecido en la variable de entorno **COPYCMD** , puede invalidar esta configuración mediante el uso de **/-y** en la línea de comandos. De forma predeterminada, se le preguntará cuando reemplace este valor, a menos que el comando de **copia** se ejecute en un script por lotes.
-  
-- Para anexar archivos, especifique un único archivo para el *destino*, pero varios archivos para el *origen* (usar caracteres comodín o formato *archivo1*+*archivo2*+*archivo3* ).
+
+- Para anexar archivos, especifique un único archivo para el *destino*, pero varios archivos para el *origen* (usar caracteres comodín o formato *archivo1* + *archivo2* + *archivo3* ).
 
 - Si la conexión se pierde durante la fase de copia (por ejemplo, si el servidor se desconecta y se interrumpe la conexión), puede usar la **copia/z** para reanudar una vez que se haya restablecido la conexión. La opción **/z** también muestra el porcentaje de la operación de copia que se ha completado para cada archivo.
 
@@ -85,7 +85,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 - Para copiar los archivos que tienen una longitud de 0 bytes, o para copiar todos los archivos y subdirectorios de un directorio, use el [comando xcopy](xcopy.md).
 
-- Para asignar la fecha y hora actuales a un archivo sin modificar el archivo, use la sintaxis siguiente:  
+- Para asignar la fecha y hora actuales a un archivo sin modificar el archivo, use la sintaxis siguiente:
 
     ```
     copy /b <source> +,,
@@ -95,7 +95,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 
 ## <a name="examples"></a>Ejemplos
 
-Para copiar un archivo denominado *Memo. doc* en *Letter. doc* en la unidad actual y asegurarse de que el carácter de fin de archivo (Ctrl + Z) está al final del archivo copiado, escriba:
+Para copiar un archivo llamado *memo.doc* en *letter.doc* en la unidad actual y asegurarse de que el carácter de fin de archivo (Ctrl + Z) está al final del archivo copiado, escriba:
 
 ```
 copy memo.doc letter.doc /a
@@ -125,7 +125,7 @@ Para combinar todos los archivos del *Informe*, cuando ya exista un archivo con 
 copy report + mar89.rpt + apr89.rpt + may89.rpt
 ```
 
-Para combinar todos los archivos del directorio actual que tengan la extensión de nombre de archivo. txt en un único archivo denominado *Combined. doc*, escriba:
+Para combinar todos los archivos del directorio actual que tengan la extensión de nombre de archivo. txt en un único archivo denominado *Combined.doc*, escriba:
 
 ```
 copy *.txt Combined.doc
@@ -140,13 +140,13 @@ copy /b *.exe Combined.exe
 > [!CAUTION]
 > Si combina archivos binarios, el archivo resultante podría quedar inutilizable debido al formato interno.
 
-- La combinación de cada archivo que tiene una extensión. txt con su archivo. Ref correspondiente crea un archivo con el mismo nombre de archivo, pero con una extensión. doc. El comando **Copy** combina *archivo1. txt* con *archivo1. Ref* para formar *archivo1. doc*y, a continuación, el comando combina *archivo2. txt* con *archivo2. Ref* para formar *archivo2. doc*, etc. Por ejemplo, escriba:
+- La combinación de cada archivo que tiene una extensión. txt con su archivo. Ref correspondiente crea un archivo con el mismo nombre de archivo, pero con una extensión. doc. El comando **Copy** combina *file1.txt* con *archivo1. Ref* para formar *file1.doc*y, a continuación, el comando combina *file2.txt* con *archivo2. Ref* para formar *file2.doc*, etc. Por ejemplo, escriba:
 
 ```
 copy *.txt + *.ref *.doc
 ```
 
-Para combinar todos los archivos con la extensión. txt y, a continuación, combinar todos los archivos con la extensión. Ref en un archivo denominado *Combined. doc*, escriba:
+Para combinar todos los archivos con la extensión. txt y, a continuación, combinar todos los archivos con la extensión. Ref en un archivo denominado *Combined.doc*, escriba:
 
 ```
 copy *.txt + *.ref Combined.doc

@@ -1,6 +1,6 @@
 ---
 title: defrag
-description: Tema de referencia del comando Defrag, que busca y consolida archivos fragmentados en volúmenes locales para mejorar el rendimiento del sistema.
+description: Artículo de referencia para el comando Defrag, que busca y consolida archivos fragmentados en volúmenes locales para mejorar el rendimiento del sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf3ca6febfa07c7780b959389ff57fe4f3a0018b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c952ff78147d3b4c6097aaf9dd87e55ecc7911ad
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993147"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928798"
 ---
 # <a name="defrag"></a>defrag
 
@@ -79,7 +79,7 @@ defrag <volume> [<parameters>]
 
 - De forma predeterminada, **Defrag** muestra un resumen de los informes de análisis y desfragmentación si no se especifican los parámetros **/a** o **/v** .
 
-- Puede enviar los informes a un archivo de texto escribiendo **>** <em>filename. txt</em>, donde *filename. txt* es el nombre de archivo que especifique. Por ejemplo: `defrag volume /v > FileName.txt`
+- Puede enviar los informes a un archivo de texto escribiendo **>** <em>FileName.txt</em>, donde *FileName.txt* es el nombre de archivo que especifique. Por ejemplo: `defrag volume /v > FileName.txt`
 
 - Para interrumpir el proceso de desfragmentación, en la línea de comandos, presione **Ctrl + C**.
 
@@ -139,6 +139,6 @@ El proceso de desfragmentación ejecuta la tarea programada como una tarea de ma
 
 - [fsutil](fsutil.md)
 
-- [fsutil Dirty](fsutil-dirty.md)
+- [fsutil dirty](fsutil-dirty.md)
 
 - [Optimizar el volumen de PowerShell](https://docs.microsoft.com/powershell/module/storage/optimize-volume?view=win10-ps)

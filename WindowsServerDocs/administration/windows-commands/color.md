@@ -1,6 +1,6 @@
 ---
 title: color
-description: Tema de referencia del comando color, que cambia los colores de primer plano y de fondo de la ventana del símbolo del sistema para la sesión actual.
+description: Artículo de referencia del comando color, que cambia los colores de primer plano y de fondo de la ventana del símbolo del sistema para la sesión actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94b5a1e4ca4d4a01ea714adc45e64a6efaa32aa6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 93c51fdbf1909adfda06730c3a517f602f8024b8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711933"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929809"
 ---
 # <a name="color"></a>color
 
@@ -36,9 +36,9 @@ color [[<b>]<f>]
 
 Donde:
 
-En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede `<b>` usar `<f>`como valores para y:
+En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede usar como valores para `<b>` y `<f>` :
 
-| Value | Color |
+| Valor | Color |
 | ----- | ----- |
 | 0 | Negro |
 | 1 | Azul |
@@ -57,15 +57,15 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 | e | Amarillo claro |
 | f | Blanco brillante |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
-- No use caracteres de espacio `<b>` entre `<f>`y.
+- No use caracteres de espacio entre `<b>` y `<f>` .
 
 - Si especifica un solo dígito hexadecimal, el color correspondiente se utiliza como color de primer plano y el color de fondo se establece en el color predeterminado.
 
 - Para establecer el color predeterminado de la ventana del símbolo del sistema, seleccione la esquina superior izquierda de la ventana del **símbolo del sistema** , seleccione **valores predeterminados**, seleccione la pestaña **colores** y, a continuación, seleccione los colores que desee utilizar para el **texto de pantalla** y el fondo de la **pantalla**.
 
-- Si `<b>` y `<f>` son el mismo valor de color, ERRORLEVEL se establece en `1`y no se realiza ningún cambio en el color de primer plano o de fondo.
+- Si `<b>` y `<f>` son el mismo valor de color, ERRORLEVEL se establece en y `1` no se realiza ningún cambio en el color de primer plano o de fondo.
 
 ## <a name="examples"></a>Ejemplos
 

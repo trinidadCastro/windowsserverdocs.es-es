@@ -1,6 +1,6 @@
 ---
 title: cmd
-description: Tema de referencia del comando cmd, que inicia una nueva instancia del intérprete de comandos, cmd. exe.
+description: Artículo de referencia para el comando cmd, que inicia una nueva instancia del intérprete de comandos, Cmd.exe.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d381dd56d6648f749cd4a19d71422897e4b9b05
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 69176c69434813745f6039b607f2992675df879c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712589"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929862"
 ---
 # <a name="cmd"></a>cmd
 
-Inicia una nueva instancia del intérprete de comandos, cmd. exe. Si se usa sin parámetros, **cmd** muestra la versión y la información de copyright del sistema operativo.
+Inicia una nueva instancia del intérprete de comandos Cmd.exe. Si se usa sin parámetros, **cmd** muestra la versión y la información de copyright del sistema operativo.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -47,9 +47,9 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 | `<string>` | Especifica el comando que se desea llevar a cabo. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede `<b>` usar `<f>`como valores para y:
+En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede usar como valores para `<b>` y `<f>` :
 
-| Value | Color |
+| Valor | Color |
 | ----- | ----- |
 | 0 | Negro |
 | 1 | Azul |
@@ -68,9 +68,9 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 | e | Amarillo claro |
 | f | Blanco brillante |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
-- Para usar varios comandos para `<string>`, sepárelos mediante el separador de comandos **&&** y inclúyalo entre comillas. Por ejemplo:
+- Para usar varios comandos para `<string>` , sepárelos mediante el separador **&&** de comandos y inclúyalo entre comillas. Por ejemplo:
 
     ```
     "<command1>&&<command2>&&<command3>"
@@ -90,7 +90,7 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 
     Si no se cumplen las condiciones anteriores, la *cadena* se procesa examinando el primer carácter para comprobar si se trata de una comilla de apertura. Si el primer carácter es una comilla de apertura, se quita junto con la comilla de cierre. Se conserva cualquier texto que siga las comillas de cierre.
 
-- Si no especifica **/d** en *String*, cmd. exe busca las siguientes subclaves del registro:
+- Si no especifica **/d** en *cadena*, Cmd.exe busca las siguientes subclaves del registro:
 
     - **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\AutoRun\ REG_SZ**
 
@@ -107,12 +107,12 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 
     - **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\EnableExtensions\ REG_DWORD**
 
-    Establezca el valor de **REG_DWORD** en **0 × 1** (habilitado) o en **0 × 0** (deshabilitado) en el registro mediante regedit. exe. La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
+    Establezca el valor de **REG_DWORD** en **0 × 1** (habilitado) o en **0 × 0** (deshabilitado) en el registro mediante Regedit.exe. La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
     > [!CAUTION]
     > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
 
-    Cuando se habilitan las extensiones de comando, se ven afectados los siguientes comandos:  
+    Cuando se habilitan las extensiones de comando, se ven afectados los siguientes comandos:
     - **assoc**
 
     - **call**
@@ -151,7 +151,7 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 
 - Si habilita la expansión diferida de variables de entorno, puede usar el carácter de signo de exclamación para sustituir el valor de una variable de entorno en tiempo de ejecución.
 
-- La finalización de los nombres de archivos y directorios no está habilitada de forma predeterminada. Puede habilitar o deshabilitar la finalización de un nombre de archivo para un proceso determinado del comando **cmd** con **/f:**{**on** | **OFF**}. Puede habilitar o deshabilitar la finalización de nombres de archivos y directorios para todos los procesos del comando **cmd** en un equipo o para una sesión de inicio de sesión de usuario mediante el establecimiento de los siguientes valores de **REG_DWORD** :
+- La finalización de los nombres de archivos y directorios no está habilitada de forma predeterminada. Puede habilitar o deshabilitar la finalización de un nombre de archivo para un proceso determinado del comando **cmd** con **/f:**{**on**  |  **OFF**}. Puede habilitar o deshabilitar la finalización de nombres de archivos y directorios para todos los procesos del comando **cmd** en un equipo o para una sesión de inicio de sesión de usuario mediante el establecimiento de los siguientes valores de **REG_DWORD** :
 
     - **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\CompletionChar\ REG_DWORD**
 
@@ -161,7 +161,7 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 
     - **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\PathCompletionChar\ REG_DWORD**
 
-    Para establecer el valor de **REG_DWORD** , ejecute regedit. exe y use el valor hexadecimal de un carácter de control para una función determinada (por ejemplo, **0 × 9** es Tab y **0 × 08** es el retroceso). La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
+    Para establecer el valor de **REG_DWORD** , ejecute Regedit.exe y use el valor hexadecimal de un carácter de control para una función determinada (por ejemplo, **0 × 9** es Tab y **0 × 08** es el retroceso). La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
     > [!CAUTION]
     > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.

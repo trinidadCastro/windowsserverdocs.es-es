@@ -1,6 +1,6 @@
 ---
 title: choice
-description: Tema de referencia del comando Choice, que pide al usuario que seleccione un elemento de una lista de opciones de un solo carácter en un programa por lotes y, a continuación, devuelve el índice de la opción seleccionada.
+description: Artículo de referencia para el comando Choice, que pide al usuario que seleccione un elemento de una lista de opciones de un solo carácter en un programa por lotes y, a continuación, devuelve el índice de la opción seleccionada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32c0daa680178c1952015c62c6c6749acf5f6143
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 745321c6388e6faa9de1ce1a8a24afe66514d259
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82713532"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929988"
 ---
 # <a name="choice"></a>choice
 
@@ -30,7 +30,7 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| /c`<choice1><choice2><…>` | Especifica la lista de opciones que se van a crear. Entre las opciones válidas se incluyen los caracteres a-z, A-Z, 0-9 y ASCII extendido (128-254). La lista predeterminada es YN, que se muestra como `[Y,N]?`. |
+| /c`<choice1><choice2><…>` | Especifica la lista de opciones que se van a crear. Entre las opciones válidas se incluyen los caracteres a-z, A-Z, 0-9 y ASCII extendido (128-254). La lista predeterminada es YN, que se muestra como `[Y,N]?` . |
 | /n | Oculta la lista de opciones, aunque las opciones siguen estando habilitadas y se sigue mostrando el texto del mensaje (si se especifica en **/m**). |
 | /CS | Especifica que las opciones distinguen mayúsculas de minúsculas. De forma predeterminada, las opciones no distinguen mayúsculas de minúsculas. |
 | /t`<timeout>` | Especifica el número de segundos que se van a pausar antes de usar la opción predeterminada especificada por **/d**. Los valores aceptables son de **0** a **9999**. Si **/t** se establece en **0**, **Choice** no se pausa antes de devolver la opción predeterminada. |
@@ -38,11 +38,11 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 | /m`<text>` | Especifica el mensaje que se va a mostrar antes de la lista de opciones. Si no se especifica **/m** , solo se muestra el mensaje de elección. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
-- La variable de entorno **ERRORLEVEL** se establece en el índice de la clave que el usuario selecciona en la lista de opciones. La primera opción de la lista devuelve un valor de `1`, el segundo un valor de `2`, y así sucesivamente. Si el usuario presiona una tecla que no es una opción válida, la **opción** suena un pitido de advertencia. 
+- La variable de entorno **ERRORLEVEL** se establece en el índice de la clave que el usuario selecciona en la lista de opciones. La primera opción de la lista devuelve un valor de `1` , el segundo un valor de `2` , y así sucesivamente. Si el usuario presiona una tecla que no es una opción válida, la **opción** suena un pitido de advertencia.
 
-- Si **Choice** detecta una condición de error, devuelve un valor **ERRORLEVEL** de `255`. Si el usuario presiona CTRL + INTER o CTRL + C, **Choice** devuelve un valor **ERRORLEVEL** de `0`.
+- Si **Choice** detecta una condición de error, devuelve un valor **ERRORLEVEL** de `255` . Si el usuario presiona CTRL + INTER o CTRL + C, **Choice** devuelve un valor **ERRORLEVEL** de `0` .
 
 > [!NOTE]
 > Al usar valores de **ERRORLEVEL** en un programa por lotes, debe enumerarlos en orden decreciente.
@@ -83,7 +83,7 @@ choice /c ync /t 5 /d n
 ```
 
 > [!NOTE]
-> En este ejemplo, si el usuario no presiona una tecla en cinco segundos, **Choice** selecciona **N** de forma predeterminada y devuelve un valor de `2`error de. De lo contrario, **Choice** devuelve el valor correspondiente a la elección del usuario.
+> En este ejemplo, si el usuario no presiona una tecla en cinco segundos, **Choice** selecciona **N** de forma predeterminada y devuelve un valor de error de `2` . De lo contrario, **Choice** devuelve el valor correspondiente a la elección del usuario.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

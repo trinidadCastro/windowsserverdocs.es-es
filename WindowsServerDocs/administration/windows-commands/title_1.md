@@ -1,6 +1,6 @@
 ---
 title: title
-description: Tema de referencia del título, que crea un título para la ventana del símbolo del sistema.
+description: Artículo de referencia del título, que crea un título para la ventana del símbolo del sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a94fe033bfd43d825c5beb7c915937bc4419b18f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 732a0de30b9495e6281248120d2a90f85734ad8b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721344"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930059"
 ---
 # <a name="title"></a>title
 
@@ -32,17 +32,17 @@ title [<String>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<> de cadena|Especifica el título de la ventana del símbolo del sistema.|
+|\<String>|Especifica el título de la ventana del símbolo del sistema.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Para crear el título de una ventana para los programas por lotes, incluya el comando **título** al principio de un programa por lotes.
 -   Una vez establecido el título de una ventana, solo se puede restablecer mediante el comando **título** .
 
 ## <a name="examples"></a>Ejemplos
 
-En el siguiente script de ejemplo, se cambia el título de la ventana del símbolo del sistema a actualizar archivos mientras el archivo por lotes ejecuta el comando **Copy** . Después de ejecutar el comando, se muestra `Files Updated` el texto y el título de la ventana del símbolo del sistema se vuelve a cambiar al símbolo del sistema.
+En el siguiente script de ejemplo, se cambia el título de la ventana del símbolo del sistema a actualizar archivos mientras el archivo por lotes ejecuta el comando **Copy** . Después de ejecutar el comando, `Files Updated` se muestra el texto y el título de la ventana del símbolo del sistema se vuelve a cambiar al símbolo del sistema.
 ```
 @echo off
 title Updating Files

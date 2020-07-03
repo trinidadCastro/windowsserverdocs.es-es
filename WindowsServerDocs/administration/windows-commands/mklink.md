@@ -1,6 +1,6 @@
 ---
 title: mklink
-description: Tema de referencia para el comando Mklink, que crea un directorio o un vínculo simbólico o de archivo.
+description: Artículo de referencia para el comando Mklink, que crea un directorio o un vínculo simbólico o de archivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f998533ce3184213786a341c2413e7323496e96
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: cb8339f7dcb2f397d6b90105e2ccd9bdc8cc07a5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354615"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928532"
 ---
 # <a name="mklink"></a>mklink
 

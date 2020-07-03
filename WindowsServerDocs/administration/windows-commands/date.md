@@ -1,6 +1,6 @@
 ---
 title: date
-description: Tema de referencia del comando date, que muestra o establece la fecha del sistema. Si se usa sin parámetros,
+description: Artículo de referencia para el comando date, que muestra o establece la fecha del sistema. Si se usa sin parámetros,
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64d0d94061e1b5c7891b364f4c0fe153b44a564e
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: d22c354af45aa0c6383c0dde911b03704bd7a150
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993201"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928816"
 ---
 # <a name="date"></a>date
 

@@ -1,6 +1,6 @@
 ---
 title: Manage-BDE keypackage
-description: Tema de referencia para el comando Manage-BDE keypackage, que genera un paquete de claves para una unidad.
+description: Artículo de referencia para el comando Manage-BDE keypackage, que genera un paquete de claves para una unidad.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4d0956154d6b20d5ceedb44d0781614f8da5fb1
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 4bdbd9bb46b75e7dc87cae1cd6e9b3a101ff91ff
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222889"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928560"
 ---
 # <a name="manage-bde-keypackage"></a>Manage-BDE keypackage
 
@@ -33,7 +33,7 @@ manage-bde -keypackage [<drive>] [-ID <keyprotectoryID>] [-path <pathtoexternalk
 | `<drive>` | Representa la letra de una unidad seguida del signo de dos puntos. |
 | -ID | Crea un paquete de claves mediante el protector de clave con el identificador especificado por este valor de identificador. **Sugerencia:** Use el comando **Manage-BDE-protectors-Get** , junto con la letra de unidad para la que desea crear un paquete de claves, para obtener una lista de los GUID disponibles que se usarán como valor de identificador. |
 | -path | Especifica la ubicación donde se guardará el paquete de claves creado. |
-| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| -COMPUTERNAME | Especifica que se utilizará manage-bde.exe para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
 | `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
 | -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
 | -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |

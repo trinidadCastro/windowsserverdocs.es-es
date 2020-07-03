@@ -1,6 +1,6 @@
 ---
 title: delete disk
-description: Tema de referencia del comando DELETE Disk, que elimina un disco dinámico que falta en la lista de discos.
+description: Artículo de referencia del comando DELETE Disk, que elimina un disco dinámico que falta en la lista de discos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c8076f486251e428bce8805e15c2aa74caaf834
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 5ba9f3c965d4746a5a61f06b99e4601a131ed79e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993143"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928737"
 ---
 # <a name="delete-disk"></a>delete disk
 

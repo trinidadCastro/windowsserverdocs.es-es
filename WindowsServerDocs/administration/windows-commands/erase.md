@@ -1,6 +1,6 @@
 ---
 title: erase
-description: Tema de referencia del comando Erase, que elimina uno o varios archivos.
+description: Artículo de referencia del comando Erase, que elimina uno o varios archivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1525f20549b6571975cb622534f8504eb4fa1f79
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 0a22c738215671096373a7077fc89ac87fe03597
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354685"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929315"
 ---
 # <a name="erase"></a>erase
 
@@ -43,7 +43,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 | /a [:]`<attributes>` | Elimina archivos en función de los siguientes atributos de archivo:<ul><li>archivos de solo lectura de **r**</li><li>**h** archivos ocultos</li><li>**no hay** archivos indizados de contenido</li><li>archivos **del sistema**</li><li>**archivos listos** para archivar</li><li>**l** puntos de reanálisis</li><li>**-** Se usa como significado de prefijo ' not '</li></ul>. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si usa el `erase /p` comando, verá el mensaje siguiente:
 

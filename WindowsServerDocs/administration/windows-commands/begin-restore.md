@@ -1,6 +1,6 @@
 ---
-title: iniciar restauración
-description: Tema de referencia del comando Begin restore, que inicia una sesión de restauración y emite un evento de prerestauración para escritores implicados.
+title: begin restore
+description: Artículo de referencia del comando Begin restore, que inicia una sesión de restauración y emite un evento de prerestauración para escritores implicados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98967290bd7f15a518848b53b43e8c9daeb8b860
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6f97c35eb8a98aedecfd2f5a8dc87d4ddc3a3cd6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718510"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928529"
 ---
-# <a name="begin-restore"></a>iniciar restauración
+# <a name="begin-restore"></a>begin restore
 
 > Se aplica a: Windows Server 2012 R2, Windows Server 2012
 

@@ -1,6 +1,6 @@
 ---
 title: detail disk
-description: Tema de referencia del comando detail Disk, que muestra las propiedades del disco seleccionado y de los volúmenes de ese disco.
+description: Artículo de referencia del comando detail Disk, en el que se muestran las propiedades del disco seleccionado y de los volúmenes de ese disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 358d6762f382dc8461c73cbd557a906eb5189c6f
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 5bb5ec5a51f16aecf1b8ee35c78736f1791d3106
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993069"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929464"
 ---
 # <a name="detail-disk"></a>detail disk
 

@@ -1,6 +1,6 @@
 ---
 title: ksetup dumpstate
-description: Tema de referencia de ksetup dumpstate comandos, que muestra el estado actual de la configuración de dominio Kerberos para todos los territorios definidos en el equipo.
+description: Artículo de referencia de ksetup dumpstate comandos, que muestra el estado actual de la configuración de dominio Kerberos para todos los territorios definidos en el equipo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ccb75ac143239d97b823fb7030f9a8020b4b4f6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 86e3761af14da9e1b8f52f4ce6859128fcda7bb7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817745"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929169"
 ---
 # <a name="ksetup-dumpstate"></a>ksetup dumpstate
 
@@ -26,7 +26,7 @@ Muestra el estado actual de la configuración de dominio Kerberos para todos los
 ksetup /dumpstate
 ```
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 - La salida de este comando incluye el dominio Kerberos predeterminado (el dominio del que el equipo es miembro) y todos los territorios definidos en este equipo. Se incluye lo siguiente para cada dominio Kerberos:
 

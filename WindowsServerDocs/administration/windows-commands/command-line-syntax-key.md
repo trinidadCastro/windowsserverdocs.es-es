@@ -1,6 +1,6 @@
 ---
 title: Clave de sintaxis de línea de comandos
-description: Tema de referencia de la clave de sintaxis de línea de comandos, que describe la notación que se usa para indicar la sintaxis de línea de comandos.
+description: Artículo de referencia de la clave de sintaxis de línea de comandos, que describe la notación que se usa para indicar la sintaxis de línea de comandos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3a3c78b6081733164be3a656e67c35dd3e2b5e2d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7beaab6b6ac05f8e440276424d2cbdb81ddc73b4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711950"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929722"
 ---
 # <a name="command-line-syntax-key"></a>Clave de sintaxis de línea de comandos
 
 La siguiente tabla describe la notación que se usa para indicar la sintaxis de línea de comandos.
 
-| Notación | Descripción |
+| Notation | Descripción |
 | -------- | ----------- |
 | Texto sin corchetes ni llaves | Elementos que debe escribir como se muestra. |
 | `<Text inside angle brackets>` | Marcador de posición para el que se debe proporcionar un valor. |

@@ -1,6 +1,6 @@
 ---
 title: create partition logical
-description: Tema de referencia del comando lógico Create Partition, que crea una partición lógica en una partición extendida existente.
+description: Artículo de referencia del comando lógico Create Partition, que crea una partición lógica en una partición extendida existente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99b8c837fe5da295087f9b146bf429d91ebc8693
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 4860f61d23c9ae51732c1fb0e127047c4944d2ed
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993266"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929679"
 ---
 # <a name="create-partition-logical"></a>create partition logical
 
@@ -38,7 +38,7 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | tamaño =`<n>` | Especifica el tamaño de la partición lógica en megabytes (MB), que debe ser menor que la partición extendida. Si no se proporciona ningún tamaño, la partición continuará hasta que no haya más espacio libre en la partición extendida. |
-| desplazamiento =`<n>` | Especifica el desplazamiento en kilobytes (KB), en el que se crea la partición. El desplazamiento se redondea hacia arriba para llenar todo el tamaño del cilindro que se use. Si no se indica un desplazamiento, la partición se ubicará en la primera zona del disco que sea lo suficientemente grande como para albergarla. La partición es, como mínimo, en bytes como el número especificado por **size =`<n>`**. Si especifica un tamaño para la partición lógica, debe ser menor que la partición extendida. |
+| desplazamiento =`<n>` | Especifica el desplazamiento en kilobytes (KB), en el que se crea la partición. El desplazamiento se redondea hacia arriba para llenar todo el tamaño del cilindro que se use. Si no se indica un desplazamiento, la partición se ubicará en la primera zona del disco que sea lo suficientemente grande como para albergarla. La partición es, como mínimo, en bytes como el número especificado por **size = `<n>` **. Si especifica un tamaño para la partición lógica, debe ser menor que la partición extendida. |
 | align =`<n>` | Alinea todas las extensiones de volumen o partición con el límite de alineación más cercano. Normalmente se usa con matrices de número de unidad lógica (LUN) RAID de hardware para mejorar el rendimiento. `<n>`es el número de kilobytes (KB) desde el principio del disco hasta el límite de alineación más cercano. |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 

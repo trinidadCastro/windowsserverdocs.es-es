@@ -1,6 +1,6 @@
 ---
 title: create partition msr
-description: Tema de referencia de Create Partition MSR, que crea una partición reservada de Microsoft (MSR) en un disco de tabla de particiones GUID (GPT).
+description: Artículo de referencia para Create Partition MSR, que crea una partición reservada de Microsoft (MSR) en un disco de tabla de particiones GUID (GPT).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d427e9f96023f8b66f72e3895b30519ab7cd2de1
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 2714c47c467fda9c6ca3451331ab9bc7991d4591
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993259"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929640"
 ---
 # <a name="create-partition-msr"></a>create partition msr
 
@@ -37,7 +37,7 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| tamaño =`<n>` | Tamaño de la partición en megabytes (MB). La partición es, como mínimo, en bytes como el número especificado por `<n>`. Si no se proporciona ningún tamaño, la partición continúa hasta que no haya más espacio libre en la región actual. |
+| tamaño =`<n>` | Tamaño de la partición en megabytes (MB). La partición es, como mínimo, en bytes como el número especificado por `<n>` . Si no se proporciona ningún tamaño, la partición continúa hasta que no haya más espacio libre en la región actual. |
 | desplazamiento =`<n>` | Especifica el desplazamiento en kilobytes (KB), en el que se crea la partición. El desplazamiento se redondea hacia arriba para llenar completamente el tamaño del sector que se utiliza. Si no se indica un desplazamiento, la partición se colocará en la primera zona del disco que sea lo suficientemente grande como para albergarla. |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 

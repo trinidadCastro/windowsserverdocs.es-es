@@ -1,6 +1,6 @@
 ---
 title: chcp
-description: Tema de referencia del comando chcp, que cambia la página de códigos de la consola activa.
+description: Artículo de referencia del comando chcp, que cambia la página de códigos de la consola activa.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f1291176ed5245b06c68491f0d5cb0ae9b0b600
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a07d439a4738053ea9a76b4ca68fadec2a215ff0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82715330"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930024"
 ---
 # <a name="chcp"></a>chcp
 
@@ -50,13 +50,13 @@ En la tabla siguiente se enumeran todas las páginas de códigos admitidas y su 
 | 869 | Griego moderno |
 | 936 | Chino |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Solo la página de códigos del fabricante de equipos originales (OEM) que se instala con Windows aparece correctamente en una ventana del símbolo del sistema que usa fuentes de tramas. Otras páginas de códigos aparecen correctamente en el modo de pantalla completa o en las ventanas del símbolo del sistema que usan fuentes TrueType.
 
 - No es necesario preparar las páginas de códigos (como en MS-DOS).
 
-- Los programas que se inician después de asignar una nueva página de códigos usan la nueva página de códigos. Sin embargo, los programas (excepto cmd. exe) que se iniciaron antes de asignar la nueva página de códigos seguirán usando la página de códigos original.
+- Los programas que se inician después de asignar una nueva página de códigos usan la nueva página de códigos. Sin embargo, los programas (excepto Cmd.exe) que se iniciaron antes de asignar la nueva página de códigos seguirán usando la página de códigos original.
 
 ## <a name="examples"></a>Ejemplos
 

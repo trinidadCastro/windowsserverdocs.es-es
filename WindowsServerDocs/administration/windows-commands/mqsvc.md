@@ -1,6 +1,6 @@
 ---
 title: mqsvc
-description: Tema de referencia para el comando mqsvc, que permite que las aplicaciones que se ejecutan en distintos momentos se comuniquen a través de redes y sistemas heterogéneos que pueden estar sin conexión temporalmente.
+description: Artículo de referencia del comando mqsvc, que permite que las aplicaciones que se ejecutan en distintos momentos se comuniquen a través de redes y sistemas heterogéneos que pueden estar sin conexión temporalmente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ae02867c5dba942ac919edadf0d6ab63becf4f0
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: caf2cc4cd67795789ae61c0e8e958f605bb88523
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354335"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928545"
 ---
 # <a name="mqsvc"></a>mqsvc
 

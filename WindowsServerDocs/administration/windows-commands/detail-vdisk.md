@@ -1,6 +1,6 @@
 ---
-title: detalles del vDisk
-description: Tema de referencia del comando detail vDisk, que muestra las propiedades del disco duro virtual (VHD) seleccionado.
+title: detail vdisk
+description: Artículo de referencia para el comando detail vDisk, que muestra las propiedades del disco duro virtual (VHD) seleccionado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe754b5f089900ac97f288bc2cc8c72327a1bc82
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 5d3f061706bef2d4636e9f18ba428e7ddfb90bdd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993023"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929360"
 ---
-# <a name="detail-vdisk"></a>detalles del vDisk
+# <a name="detail-vdisk"></a>detail vdisk
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -52,6 +52,6 @@ detail vdisk
 
 - [Merge vDisk (comando)](merge-vdisk.md)
 
-- [seleccionar vDisk](select-vdisk.md)
+- [select vdisk](select-vdisk.md)
 
 - [List (comando)](list.md)

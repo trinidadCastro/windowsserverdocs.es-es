@@ -1,6 +1,6 @@
 ---
 title: bitsadmin help
-description: Tema de referencia del comando de ayuda de bitsadmin, que muestra el uso de la línea de comandos.
+description: Artículo de referencia del comando de ayuda de bitsadmin, que muestra el uso de la línea de comandos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d899ab94101505b69ac5cc4d86a612a4bbb91348
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b917a1a8ab3f81abe747f27e67a9e3e61104b156
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717447"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928154"
 ---
 # <a name="bitsadmin-help"></a>bitsadmin help
 

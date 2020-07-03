@@ -1,6 +1,6 @@
 ---
-title: fsutil Dirty
-description: Tema de referencia del comando fsutil Dirty, que consulta o establece el bit de integridad de un volumen.
+title: fsutil dirty
+description: Artículo de referencia para el comando fsutil Dirty, que consulta o establece el bit de integridad de un volumen.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,14 +9,14 @@ ms.technology: storage
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 72defd974177675f53e89fb8570f028580b7e167
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c61ab5405fb5b469b6f4513459e4096524f4b7fe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435870"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929261"
 ---
-# <a name="fsutil-dirty"></a>fsutil Dirty
+# <a name="fsutil-dirty"></a>fsutil dirty
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8
 
@@ -36,7 +36,7 @@ fsutil dirty {query | set} <volumepath>
 | set | Establece el bit de integridad del volumen especificado. |
 | `<volumepath>` | Especifica el nombre de la unidad seguido de dos puntos o un GUID con el siguiente formato: `volume{GUID}` . |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - El bit de integridad de un volumen indica que el sistema de archivos puede estar en un estado incoherente. El bit de integridad se puede establecer porque:
 

@@ -1,6 +1,6 @@
 ---
 title: create volume simple
-description: Tema de referencia para el comando CREATE Volume simple, que crea un volumen simple en el disco dinámico especificado.
+description: Artículo de referencia para el comando CREATE Volume simple, que crea un volumen simple en el disco dinámico especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eb5aeebbcbde581fe3259d6cb5aca6445a3b27aa
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 1e7924ca4394a64fd5a8d92577a3f3f62b917461
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993221"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929519"
 ---
 # <a name="create-volume-simple"></a>create volume simple
 

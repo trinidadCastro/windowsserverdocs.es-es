@@ -1,6 +1,6 @@
 ---
 title: cipher
-description: Tema de referencia del comando Cipher, que muestra o modifica el cifrado de directorios y archivos en volúmenes NTFS.
+description: Artículo de referencia para el comando Cipher, que muestra o modifica el cifrado de directorios y archivos en volúmenes NTFS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b07a0231b6cff6be9533136bf35ef013c854c2e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f23e2855c4542cc359d458f6825dd9420581657f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82713399"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929972"
 ---
 # <a name="cipher"></a>cipher
 
@@ -45,18 +45,18 @@ cipher /rekey [pathname [...]]
 | /e | Cifra los archivos o directorios especificados. Los directorios se marcan para que se cifren los archivos que se agregan después. |
 | /h | Muestra archivos con atributos ocultos o del sistema. De forma predeterminada, estos archivos no están cifrados o descifrados. |
 | /k | Crea un nuevo certificado y una clave para usarlos con archivos Sistema de cifrado de archivos (EFS). Si se especifica el parámetro **/k** , se omiten todos los demás parámetros. |
-| /r:`<filename>` [/SmartCard] | Genera una clave y un certificado del agente de recuperación de EFS y los escribe en un archivo. pfx (que contiene el certificado y la clave privada) y un archivo. cer (que solo contiene el certificado). Si se especifica **/SmartCard** , escribe la clave de recuperación y el certificado en una tarjeta inteligente, y no se genera ningún archivo. pfx. |
+| /r: `<filename>` [/SmartCard] | Genera una clave y un certificado del agente de recuperación de EFS y los escribe en un archivo. pfx (que contiene el certificado y la clave privada) y un archivo. cer (que solo contiene el certificado). Si se especifica **/SmartCard** , escribe la clave de recuperación y el certificado en una tarjeta inteligente, y no se genera ningún archivo. pfx. |
 | modificado`<directory>` | Realiza la operación especificada en todos los subdirectorios del *directorio*especificado. |
 | /u [/n] |  Busca todos los archivos cifrados en las unidades locales. Si se usa con el parámetro **/n** , no se realiza ninguna actualización. Si se usa sin **/n**, **/u** compara la clave de cifrado de archivos del usuario o la clave del agente de recuperación con las actuales, y las actualiza si han cambiado. Este parámetro solo funciona con **/n**. |
 | /w`<directory>` | Quita los datos del espacio en disco no utilizado disponible en todo el volumen. Si usa el parámetro **/w** , se omiten todos los demás parámetros. El directorio especificado se puede ubicar en cualquier parte de un volumen local. Si es un punto de montaje o apunta a un directorio de otro volumen, se quitan los datos de ese volumen. |
-| /x [: efsfile] [`<FileName>`] | Realiza una copia de seguridad del certificado EFS y de las claves en el nombre de archivo especificado. Si se usa con **: efsfile**, **/x** realiza una copia de seguridad de los certificados del usuario que se usaron para cifrar el archivo. De lo contrario, se realiza una copia de seguridad del certificado EFS y las claves actuales del usuario. |
+| /x [: efsfile] [ `<FileName>` ] | Realiza una copia de seguridad del certificado EFS y de las claves en el nombre de archivo especificado. Si se usa con **: efsfile**, **/x** realiza una copia de seguridad de los certificados del usuario que se usaron para cifrar el archivo. De lo contrario, se realiza una copia de seguridad del certificado EFS y las claves actuales del usuario. |
 | /y | Muestra la miniatura del certificado EFS actual en el equipo local. |
-| /adduser [/certhash:`<hash>` | /CERTFILE:`<filename>`] |
+| /adduser [/certhash:`<hash>` | /CERTFILE: `<filename>` ] |
 | /rekey | Actualiza los archivos cifrados especificados para usar la clave EFS configurada actualmente. |
 | /removeuser /certhash:`<hash>` | Quita un usuario de los archivos especificados. El *hash* proporcionado para **/certhash** debe ser el hash SHA1 del certificado que se va a quitar. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 - Si el directorio principal no está cifrado, se puede descifrar un archivo cifrado cuando se modifica. Por lo tanto, al cifrar un archivo, también debe cifrar el directorio principal.
 

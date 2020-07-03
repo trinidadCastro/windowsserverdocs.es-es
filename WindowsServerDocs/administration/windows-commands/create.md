@@ -1,6 +1,6 @@
 ---
 title: create
-description: Tema de referencia para el comando CREATE, que crea una partición o una partición de instantáneas en un disco, un volumen en uno o varios discos o un disco duro virtual (VHD).
+description: Artículo de referencia para el comando CREATE, que crea una partición o una partición de instantáneas en un disco, un volumen en uno o varios discos o un disco duro virtual (VHD).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f371bee591e29a45b1488b2c36112b55ed54d3f8
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 0b5b31f43e58b9e2eddb18f624c1054c9d028f4c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993190"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929537"
 ---
 # <a name="create"></a>create
 

@@ -1,6 +1,6 @@
 ---
 title: ejemplos y scripts de Diskpart
-description: Tema de referencia sobre los scripts de Diskpart y ejemplos sobre cómo automatizar tareas relacionadas con disco, como crear volúmenes o convertir discos en discos dinámicos.
+description: Artículo de referencia para scripts de Diskpart y ejemplos sobre cómo automatizar tareas relacionadas con disco, como crear volúmenes o convertir discos en discos dinámicos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 546f867b2cde199f54975a127b0faf11130996d2
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: f2715332a8a6adff29f31a4dbd7d3e7a27a4a6f2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354675"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929323"
 ---
 # <a name="diskpart-scripts-and-examples"></a>ejemplos y scripts de Diskpart
 
@@ -47,7 +47,7 @@ Para crear un script de DiskPart, cree un archivo de texto que contenga los coma
     diskpart /s scriptname.txt > logfile.txt
     ```
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 - Cuando se usa el comando **DiskPart** como parte de un script, se recomienda completar todas las operaciones de Diskpart juntas como parte de un único script de Diskpart. Puede ejecutar scripts de Diskpart consecutivos, pero debe permitir al menos 15 segundos entre cada script para un cierre completo de la ejecución anterior antes de volver a ejecutar el comando **DiskPart** en scripts sucesivos. De lo contrario, puede que los scripts sucesivos no funcionen. Puede Agregar una pausa entre scripts de Diskpart consecutivos agregando el `timeout /t 15` comando al archivo por lotes junto con los scripts de Diskpart.
 

@@ -1,6 +1,6 @@
 ---
 title: cmstp
-description: Tema de referencia de cmstp, que instala o quita un perfil de servicio de administrador de conexiones.
+description: Artículo de referencia de cmstp, que instala o quita un perfil de servicio de administrador de conexiones.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 11d2ec5b09cfd9440eb22d66578061ddfb157539
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8f7bc7bc4b90dced8074fa685ad79c65747e0ded
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712085"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929817"
 ---
 # <a name="cmstp"></a>cmstp
 
@@ -40,7 +40,7 @@ cmstp.exe [/nf] [/s] [/u] [drive:][path]serviceprofilefilename.inf
 | --------- | ----------- |
 | `<serviceprofilefilename>.exe` | Especifica, por nombre, el paquete de instalación que contiene el perfil que desea instalar.<p>Se requiere para la sintaxis 1, pero no es válida para la sintaxis 2. |
 | /q:a | Especifica que el perfil debe instalarse sin preguntar al usuario. El mensaje de comprobación que indica que la instalación se ha realizado correctamente seguirá apareciendo.<p>Se requiere para la sintaxis 1, pero no es válida para la sintaxis 2. |
-| [unidad:] camino`<serviceprofilefilename>.inf` | Necesario. Especifica, por nombre, el archivo de configuración que determina cómo se debe instalar el perfil.<p>El parámetro [unidad:] [ruta de acceso] no es válido para la sintaxis 1. |
+| [unidad:] camino`<serviceprofilefilename>.inf` | Obligatorio. Especifica, por nombre, el archivo de configuración que determina cómo se debe instalar el perfil.<p>El parámetro [unidad:] [ruta de acceso] no es válido para la sintaxis 1. |
 | /NF | Especifica que no se deben instalar los archivos de compatibilidad. |
 | /s | Especifica que el perfil de servicio debe instalarse o desinstalarse en modo silencioso (sin solicitar la respuesta del usuario ni mostrar el mensaje de comprobación). Este es el único parámetro que puede usar en combinación con **/u**.|
 | /U | Especifica que debe desinstalarse el perfil de servicio. |
