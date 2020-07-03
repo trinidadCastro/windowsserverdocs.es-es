@@ -1,6 +1,6 @@
 ---
 title: Manage-BDE ChangePassword
-description: Tema de referencia para el comando Manage-BDE ChangePassword, que modifica la contraseña de una unidad de datos.
+description: Artículo de referencia para el comando Manage-BDE ChangePassword, que modifica la contraseña de una unidad de datos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 28cc97165bfc33809c187630e37ad9b9bd24d7c6
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: dcac8ca0f62a34f8f436d4fb0dba822ffbfab4d7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222925"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933859"
 ---
 # <a name="manage-bde-changepassword"></a>Manage-BDE ChangePassword
 
@@ -31,7 +31,7 @@ manage-bde -changepassword [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h
 | Parámetro | Descripción |
 | --------- | ----------- |
 | `<drive>` | Representa la letra de una unidad seguida del signo de dos puntos. |
-| -COMPUTERNAME | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
+| -COMPUTERNAME | Especifica que se utilizará manage-bde.exe para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
 | `<name>` | Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo. |
 | -? o/? | Muestra una breve ayuda en el símbolo del sistema. |
 | -Help o-h | Muestra la ayuda completa en el símbolo del sistema. |

@@ -1,6 +1,6 @@
 ---
 title: Scwcmd
-description: Tema de referencia de * * * *-
+description: Artículo de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a8c002aa735b188fdd9ad75b0db7dbe06053516
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: bb651c2b527d332f70cd0686a7d57f089bc987ac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821165"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932625"
 ---
 # <a name="scwcmd"></a>Scwcmd
 
 > Se aplica a: Windows Server 2012 R2, Windows Server 2012
 
-La herramienta de línea de comandos scwcmd. exe incluida en el Asistente para configuración de seguridad (SCW) se puede usar para realizar las tareas siguientes:
+La herramienta de línea de comandos Scwcmd.exe incluida en el Asistente para configuración de seguridad (SCW) se puede usar para realizar las tareas siguientes:
 -   Configure uno o varios servidores con una directiva generada por SCW.
 -   Analizar uno o varios servidores con una directiva generada por SCW.
 -   Ver resultados de análisis en formato HTML.

@@ -1,6 +1,6 @@
 ---
 title: Scwcmd (transformación)
-description: Tema de referencia de * * * *-
+description: Artículo de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86c88f0207a53da813f5d4eaed399375bfc5bc02
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b70557b64a4cb68a0435bee9db033c893186dc0c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820955"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932632"
 ---
-# <a name="scwcmd-transform"></a>Scwcmd: transform
+# <a name="scwcmd-transform"></a>Scwcmd: transformación
 
 > Se aplica a: Windows Server 2012 R2, Windows Server 2012
 
@@ -39,17 +39,17 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/p: \< policyFile. xml>|Especifica la ruta de acceso y el nombre de archivo del archivo de directiva. XML que se debe aplicar. Se debe especificar este parámetro.|
-|/g: \< GPODisplayName>|Especifica el nombre para mostrar del GPO. Se debe especificar este parámetro.|
+|/p\<Policyfile.xml>|Especifica la ruta de acceso y el nombre de archivo del archivo de directiva. XML que se debe aplicar. Se debe especificar este parámetro.|
+|/g\<GPODisplayName>|Especifica el nombre para mostrar del GPO. Se debe especificar este parámetro.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
-Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
+Scwcmd.exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 
 ## <a name="examples"></a>Ejemplos
 
-Para crear un GPO denominado FileServerSecurity desde un archivo denominado FileServerPolicy. XML, escriba:
+Para crear un GPO denominado FileServerSecurity desde un archivo denominado FileServerPolicy.xml, escriba:
 ```
 scwcmd transform /p:FileServerPolicy.xml /g:FileServerSecurity
 ```

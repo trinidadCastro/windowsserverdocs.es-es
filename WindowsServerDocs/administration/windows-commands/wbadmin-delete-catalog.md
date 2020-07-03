@@ -1,6 +1,6 @@
 ---
-title: Wbadmin Delete Catalog
-description: Tema de referencia de Wbadmin Delete Catalog, que elimina el catálogo de copias de seguridad que se almacena en el equipo local.
+title: wbadmin delete catalog
+description: Artículo de referencia de Wbadmin Delete Catalog, que elimina el catálogo de copias de seguridad que se almacena en el equipo local.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4903c7ad2996a9f69d20f4711364669b87366527
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: ec2c35fc8a279c604f76c71dc6ed9aeb50a0ffd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821445"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933726"
 ---
-# <a name="wbadmin-delete-catalog"></a>Wbadmin Delete Catalog
+# <a name="wbadmin-delete-catalog"></a>wbadmin delete catalog
 
 
 
@@ -37,7 +37,7 @@ wbadmin delete catalog
 |---------|-----------|
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Si elimina el catálogo de copia de seguridad de un equipo, no podrá obtener acceso a las copias de seguridad creadas del equipo mediante el complemento Copias de seguridad de Windows Server. En este caso, si puede tener acceso a otra ubicación de copia de seguridad, use **Wbadmin restore Catalog** para restaurar el catálogo de copias de seguridad desde esa ubicación. Debe crear una nueva copia de seguridad una vez que se elimine el catálogo de copias de seguridad.
 

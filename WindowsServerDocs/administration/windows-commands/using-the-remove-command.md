@@ -1,6 +1,6 @@
 ---
 title: remove
-description: Tema de referencia de Remove, que elimina la información relacionada con el controlador.
+description: Artículo de referencia para Remove, que elimina la información relacionada con el controlador.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c80b21853b878fbe931c890b0d45acfa9aa188b1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 42d429099c135c1376cc831bf59f3d1aaa27dcef
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720430"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932377"
 ---
 # <a name="remove"></a>remove
 

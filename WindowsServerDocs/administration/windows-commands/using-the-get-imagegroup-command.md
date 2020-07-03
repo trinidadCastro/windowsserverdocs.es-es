@@ -1,6 +1,6 @@
 ---
 title: Get-ImageGroup
-description: Tema de referencia de Get-ImageGroup, que recupera información sobre un grupo de imágenes y las imágenes que hay en él.
+description: Artículo de referencia de Get-ImageGroup, que recupera información sobre un grupo de imágenes y las imágenes que hay en él.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30a87085cb935f95a209ffdd78ecf2b9fb45dc15
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 32ca965981b02bd951a0cc84160a2c5ea0643ae0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719899"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932217"
 ---
 # <a name="get-imagegroup"></a>Get-ImageGroup
 
@@ -42,8 +42,8 @@ Para ver información, incluidos los metadatos, escriba:
 wdsutil /verbose /Get-ImageGroumediaGroup:ImageGroup1 /Server:MyWDSServer /detailed
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos con el comando[Add-ImageGroup](using-the-add-imagegroup-command.md)
-mediante el comando[Get-AllImageGroups](using-the-get-allimagegroups-command.md)
-mediante[el comando Remove-ImageGroup comando](using-the-remove-imagegroup-command.md)
-[: set-ImageGroup](subcommand-set-imagegroup.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Uso del comando](using-the-add-imagegroup-command.md) 
+ Add-ImageGroup [Usar el comando](using-the-get-allimagegroups-command.md) 
+ Get-AllImageGroups [Usar el comando](using-the-remove-imagegroup-command.md) 
+ Remove-ImageGroup [Subcomando: set-ImageGroup](subcommand-set-imagegroup.md)

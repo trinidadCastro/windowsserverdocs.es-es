@@ -1,6 +1,6 @@
 ---
 title: getmac
-description: Tema de referencia del comando getmac, que devuelve la dirección Media Access Control (MAC) y la lista de protocolos de red asociados a cada uno de ellos, de forma local o a través de una red.
+description: Artículo de referencia para el comando getmac, que devuelve la dirección Media Access Control (MAC) y la lista de protocolos de red asociados a cada uno de ellos, de forma local o a través de una red.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b84218b5506770bbefd5af8c89801547cc658f88
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 345daa310b075f8a094dd8a87e7c1c0d3694ab10
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819095"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932338"
 ---
 # <a name="getmac"></a>getmac
 
@@ -32,7 +32,7 @@ getmac[.exe][/s <computer> [/u <domain\<user> [/p <password>]]][/fo {table | lis
 
 | Parámetro | Descripción |
 | --------- |------------ |
-| modificado`<computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. |
+| modificado`<computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. |
 | /u`<domain>\<user>` | Ejecuta el comando con los permisos de cuenta del usuario especificado por *User* o *dominio\usuario*. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
 | /p`<password>` | Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . |
 | /FO {Table | list | CVS | Especifica el formato que se va a usar para los resultados de la consulta. Los valores válidos son **TABLE**, **List**y **CSV**. El formato predeterminado de la salida es **TABLE**. |

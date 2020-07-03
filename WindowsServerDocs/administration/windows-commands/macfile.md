@@ -1,6 +1,6 @@
 ---
 title: macfile
-description: Tema de referencia del comando MacFile, que administra el servidor de archivos para servidores, volúmenes, directorios y archivos de Macintosh.
+description: Artículo de referencia del comando MacFile, que administra el servidor de archivos para servidores, volúmenes, directorios y archivos de Macintosh.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 740044088bef1537b5b41493f46be9275be84874
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 6937e8bbf40ec9ce908be095e5de0e04f793f40e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223019"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933653"
 ---
 # <a name="macfile"></a>macfile
 
@@ -49,8 +49,8 @@ La posición del dígito de permisos determina qué permiso se establece, inclui
 
 | Posición | Establece el permiso |
 | -------- | --------------- |
-| Primero | OwnerSeeFiles |
-| Segundo | OwnerSeeFolders |
+| First | OwnerSeeFiles |
+| Second | OwnerSeeFolders |
 | Tercero | OwnerMakechanges |
 | Cuarto | GroupSeeFiles |
 | Quinto | GroupSeeFolders |
@@ -113,7 +113,7 @@ Para crear el archivo *tree_app* en el volumen accesible para Macintosh *D:\Rele
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\tree_app
 ```
 
-Para cambiar el creador del archivo a *Microsoft word 5,1*, para el archivo *Word. txt* en el directorio *D:\Word documents\Group files*, en el servidor * \\ Servera*, escriba:
+Para cambiar el creador del archivo a *Microsoft Word 5,1*, para el archivo *Word.txt* en el directorio *D:\Word documents\Group files*, en el servidor * \\ Servera*, escriba:
 
 ```
 macfile forkize /server:\\ServerA /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt

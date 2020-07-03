@@ -1,6 +1,6 @@
 ---
 title: rem
-description: Tema de referencia de * * * *-
+description: Artículo de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d115548f15ff45087a771458062da8a3ef919eb3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5161a3ba0904396f29b7c567e3a16da5f95e5271
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722461"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933499"
 ---
 # <a name="rem"></a>rem
 
 
 
-Registra comentarios (comentarios) en un archivo por lotes o una configuración. Sist. Si no se especifica ningún comentario, **REM** agrega espaciado vertical.
+Registra comentarios (comentarios) en un archivo por lotes o CONFIG.SYS. Si no se especifica ningún comentario, **REM** agrega espaciado vertical.
 
 
 
@@ -34,13 +34,13 @@ rem [<Comment>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Comentario>|Especifica una cadena de caracteres que se va a incluir como comentario.|
+|\<Comment>|Especifica una cadena de caracteres que se va a incluir como comentario.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
--   El comando **REM** no muestra comentarios en la pantalla. Debe usar el comando **echo on** en el lote o la configuración. Archivo SYS para mostrar los comentarios en la pantalla.
--   No se puede usar un carácter de**<** redirección **>**(o) o**|** una barra vertical () en un Comentario de archivo por lotes.
+-   El comando **REM** no muestra comentarios en la pantalla. Debe usar el comando **echo on** del lote o el archivo de CONFIG.SYS para mostrar comentarios en la pantalla.
+-   No se puede usar un carácter de redirección ( **<** o **>** ) o una barra vertical ( **|** ) en un Comentario de archivo por lotes.
 -   Aunque puede usar **REM** sin un comentario para agregar espaciado vertical a un archivo por lotes, también puede usar líneas en blanco. Las líneas en blanco se omiten cuando se procesa un programa por lotes.
 
 ## <a name="examples"></a>Ejemplos
@@ -52,10 +52,10 @@ rem  This batch program formats and checks new disks.
 rem  It is named Checknew.bat.
 rem
 rem echo Insert new disk in Drive B.
-pause 
-format b: /v chkdsk b: 
+pause
+format b: /v chkdsk b:
 ```
-Para incluir un comentario explicativo antes del comando **prompt** en la configuración. SYS, agregue las líneas siguientes al archivo CONFIG. Sist
+Para incluir un comentario explicativo antes del comando **prompt** en el archivo de CONFIG.SYS, agregue las líneas siguientes a CONFIG.SYS:
 ```
 rem Set prompt to indicate current directory
 prompt $p$g

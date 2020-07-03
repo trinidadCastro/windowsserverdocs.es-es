@@ -1,6 +1,6 @@
 ---
-title: revertir
-description: Tema de referencia de * * * *-
+title: revert
+description: Artículo de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b967904c28661be82909ebcc0aa7cb42c73e418c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8d2d8bfbfa10df9776e849b1450c2fce47c097b7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722332"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933047"
 ---
-# <a name="revert"></a>revertir
+# <a name="revert"></a>revert
 
 
 
@@ -32,7 +32,7 @@ revert <ShadowCopyID>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<> ShadowCopyID|Especifica el identificador de la instantánea a la que se revierte el volumen.|
+|\<ShadowCopyID>|Especifica el identificador de la instantánea a la que se revierte el volumen.|
 
 ## <a name="additional-references"></a>Referencias adicionales
 

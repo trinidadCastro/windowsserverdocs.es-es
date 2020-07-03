@@ -1,6 +1,6 @@
 ---
-title: DIR FTP
-description: Tema de referencia del comando FTP dir, que muestra una lista de los archivos de directorio y los subdirectorios de un equipo remoto.
+title: ftp dir
+description: Artículo de referencia del comando FTP dir, que muestra una lista de los archivos de directorio y los subdirectorios de un equipo remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a120691964b7303cf3241ffef2f11d81573ba4d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b1234b11beb61027a8e56f713f76d2c2bdcc4618
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819865"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933156"
 ---
-# <a name="ftp-dir"></a>DIR FTP
+# <a name="ftp-dir"></a>ftp dir
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -43,7 +43,7 @@ Para mostrar una lista de directorios para *dir1* en el equipo remoto, escriba:
 dir dir1
 ```
 
-Para guardar una lista del directorio actual en el equipo remoto en el archivo local *dirlist. txt*, escriba:
+Para guardar una lista del directorio actual en el equipo remoto en el *dirlist.txt*de archivo local, escriba:
 
 ```
 dir . dirlist.txt

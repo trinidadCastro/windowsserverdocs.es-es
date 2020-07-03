@@ -1,6 +1,6 @@
 ---
-title: Wbadmin deshabilitar copia de seguridad
-description: Tema de referencia de Wbadmin Disable backup, que deja de ejecutar las copias de seguridad diarias programadas existentes.
+title: wbadmin disable backup
+description: Artículo de referencia de Wbadmin deshabilitar copia de seguridad, que detiene la ejecución de las copias de seguridad diarias programadas existentes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6bc211946c908b44b196995a9e5000d6ff3b7f82
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 88383975aa3ae8d6821698159e6ee445198301c5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821425"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933675"
 ---
-# <a name="wbadmin-disable-backup"></a>Wbadmin deshabilitar copia de seguridad
+# <a name="wbadmin-disable-backup"></a>wbadmin disable backup
 
 
 

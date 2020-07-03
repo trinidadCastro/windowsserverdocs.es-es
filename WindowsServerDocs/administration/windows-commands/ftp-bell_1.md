@@ -1,6 +1,6 @@
 ---
-title: campana de FTP
-description: Tema de referencia del comando de campana de FTP, que alterna un sonido audible para que se produzca después de que se complete cada comando de transferencia de archivos.
+title: ftp bell
+description: Artículo de referencia para el comando de campana de FTP, que alterna un sonido audible para que se produzca después de que se complete cada comando de transferencia de archivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c445e929c9d3adad2bfa620b522e4befbb7c1cff
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 9481911f9de9eb62baea492964987908daa94ce1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820025"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933307"
 ---
-# <a name="ftp-bell"></a>campana de FTP
+# <a name="ftp-bell"></a>ftp bell
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

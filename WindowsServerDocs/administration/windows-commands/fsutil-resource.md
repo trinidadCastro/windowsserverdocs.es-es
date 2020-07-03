@@ -1,6 +1,6 @@
 ---
 title: fsutil resource
-description: Tema de referencia para el comando fsutil Resource, que administra un Administrador de recursos transaccional y su comportamiento.
+description: Artículo de referencia para el comando fsutil Resource, que administra un Administrador de recursos transaccional y su comportamiento.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b64dab3a0d0e772f067b0d3fa548692aad38a4c5
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 75037d39a070f8c7391df4136ab958f671732e09
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435740"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933347"
 ---
 # <a name="fsutil-resource"></a>fsutil resource
 

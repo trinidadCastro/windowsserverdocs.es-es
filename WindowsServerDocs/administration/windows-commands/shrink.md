@@ -1,6 +1,6 @@
 ---
 title: shrink
-description: Tema de referencia sobre la reducción de DiskPart, que reduce el tamaño del volumen seleccionado en la cantidad especificada.
+description: Artículo de referencia para la reducción de DiskPart, lo que reduce el tamaño del volumen seleccionado en la cantidad especificada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 357a2320bf8b26130c9aa148d513edff6f1e85db
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 69405e7eda6b7565e9c8effe6639b6ba4dc9e4c2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721796"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932590"
 ---
 # <a name="shrink"></a>shrink
 
@@ -37,7 +37,7 @@ shrink querymax [noerr]
 |   nowait    |                                                       obliga a que el comando se devuelva inmediatamente mientras el proceso de reducción aún está en curso.                                                        |
 |    noerr    | solo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 - El tamaño de un volumen sólo se puede reducir si se ha formateado mediante el sistema de archivos NTFS o si no contiene un sistema de archivos.
 - Este comando funciona en volúmenes básicos y en volúmenes dinámicos simples o distribuidos.
 - Si no se especifica una cantidad deseada, el volumen se reducirá en la cantidad mínima (si se especifica).

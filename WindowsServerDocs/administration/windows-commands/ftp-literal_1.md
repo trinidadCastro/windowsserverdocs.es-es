@@ -1,6 +1,6 @@
 ---
-title: literal de FTP
-description: Tema de referencia del comando FTP literal, que envía argumentos textuales al servidor FTP remoto.
+title: ftp literal
+description: Artículo de referencia para el comando FTP literal, que envía argumentos textuales al servidor FTP remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5015f2184c9273aae6dbd01b18ee1f540d5b9aa3
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e71d80b5ddf8e3c92f810e295e21dee28376f03d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820165"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933138"
 ---
-# <a name="ftp-literal"></a>literal de FTP
+# <a name="ftp-literal"></a>ftp literal
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

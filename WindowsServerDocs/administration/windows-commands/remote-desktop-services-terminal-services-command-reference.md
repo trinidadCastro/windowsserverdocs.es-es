@@ -1,6 +1,6 @@
 ---
 title: Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto
-description: Tema de referencia de * * * *-
+description: Artículo de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 630b2274e96e446af07f7630d95056b40858209f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 55466409517b63c52f88a7acec3a8f4aba7d258d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722442"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933477"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto
 
@@ -23,8 +23,8 @@ ms.locfileid: "82722442"
 A continuación se muestra una lista de herramientas de línea de comandos de Servicios de Escritorio remoto.
 > [!NOTE]
 > En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
-> 
-> |                 Get-Help                 |                                                      Descripción                                                       |
+>
+> |                 Comando                 |                                                      Descripción                                                       |
 > |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 > |           [change](change.md)           | cambia Escritorio remoto configuración del servidor host de sesión de escritorio remoto para los inicios de sesión, las asignaciones de puertos COM y el modo de instalación. |
 > |     [change logon](change-logon.md)     |    Habilita o deshabilita los inicios de sesión de las sesiones de cliente en un servidor host de sesión de escritorio remoto o muestra el estado de inicio de sesión actual.     |
@@ -42,7 +42,7 @@ A continuación se muestra una lista de herramientas de línea de comandos de Se
 > |            [consulta](query.md)            |                      Muestra información acerca de los procesos, las sesiones y los servidores host de sesión de escritorio remoto.                      |
 > |    [query process](query-process.md)    |                  Muestra información sobre los procesos que se ejecutan en un servidor host de sesión de escritorio remoto.                   |
 > |    [query session](query-session.md)    |                           Muestra información acerca de las sesiones en un servidor host de sesión de escritorio remoto.                            |
-> | [consulta termserver](query-termserver.md) |                             Muestra una lista de todos los servidores host de sesión de escritorio remoto en la red.                             |
+> | [query termserver](query-termserver.md) |                             Muestra una lista de todos los servidores host de sesión de escritorio remoto en la red.                             |
 > |       [query user](query-user.md)       |                         Muestra información acerca de las sesiones de usuario en un servidor host de sesión de escritorio remoto.                         |
 > |            [quser](quser.md)            |                         Muestra información acerca de las sesiones de usuario en un servidor host de sesión de escritorio remoto.                         |
 > |          [qwinsta](qwinsta.md)          |                           Muestra información acerca de las sesiones en un servidor host de sesión de escritorio remoto.                            |

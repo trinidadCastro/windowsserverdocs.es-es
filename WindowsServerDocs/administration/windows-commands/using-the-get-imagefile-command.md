@@ -1,6 +1,6 @@
 ---
 title: Get-ImageFile
-description: Tema de referencia de Get-ImageFile, que recupera información sobre las imágenes contenidas en un archivo de imagen de Windows (. wim).
+description: Artículo de referencia de Get-ImageFile, que recupera información sobre las imágenes contenidas en un archivo de imagen de Windows (. wim).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f60be17f13e1436a0e895991c72d5ccb7130782
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 127b5282b74020f002c7ccc55663fc2571584582
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719914"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932223"
 ---
 # <a name="get-imagefile"></a>Get-ImageFile
 
@@ -30,7 +30,7 @@ WDSUTIL [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/ImageFile:\<ruta de acceso del archivo Wim>|Especifica la ruta de acceso completa y el nombre de archivo del archivo. Wim.|
+|/ImageFile:\<WIM file path>|Especifica la ruta de acceso completa y el nombre de archivo del archivo. Wim.|
 |[/Detailed]|Devuelve todos los metadatos de imagen de cada imagen. Si no se usa esta opción, el comportamiento predeterminado es devolver solo el nombre de la imagen, la descripción y el nombre de archivo.|
 
 ## <a name="examples"></a>Ejemplos

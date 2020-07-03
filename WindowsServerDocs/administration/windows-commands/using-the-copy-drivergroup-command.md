@@ -1,6 +1,6 @@
 ---
 title: Copy-DriverGroup
-description: Tema de referencia de Copy-DriverGroup, que duplica un grupo de controladores existente en el servidor, incluidos los filtros, los paquetes de controladores y el estado habilitado o deshabilitado.
+description: Artículo de referencia de Copy-DriverGroup, que duplica un grupo de controladores existente en el servidor, incluidos los filtros, los paquetes de controladores y el estado habilitado o deshabilitado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc157e9ef6d07a45efe2a19221fb3a046b2f65c1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d9be90f065cc76e16b7b45135c60b5206c7bf581
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721010"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934083"
 ---
 # <a name="copy-drivergroup"></a>Copy-DriverGroup
 
@@ -30,9 +30,9 @@ WDSUTIL /Copy-DriverGroup [/Server:<Server name>] /DriverGroup:<Source Group Nam
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[/Server:\<nombre del servidor>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se utiliza el servidor local.|
-|/DriverGroup:\<nombre del grupo de origen>|Especifica el nombre del grupo de controladores de origen.|
-|/GroupName:\<nuevo nombre de grupo>|Especifica el nombre del nuevo grupo de controladores.|
+|[/Server:\<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se utiliza el servidor local.|
+|/DriverGroup:\<Source Group Name>|Especifica el nombre del grupo de controladores de origen.|
+|GroupName\<New Group Name>|Especifica el nombre del nuevo grupo de controladores.|
 
 ## <a name="examples"></a>Ejemplos
 

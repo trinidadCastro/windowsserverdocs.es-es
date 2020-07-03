@@ -1,6 +1,6 @@
 ---
 title: Remove-DriverGroup
-description: Tema de referencia de Remove-DriverGroup, que quita un grupo de controladores de un servidor.
+description: Artículo de referencia de Remove-DriverGroup, que quita un grupo de controladores de un servidor.
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 1fefe9df-9782-433c-8abe-3f1a35e50da2
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 314c7a73c7aeb49bc6bb96de23ca5bf4387bd932
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: baeeac57c04113e1e9dfc8e9d02fc40518a6689b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720420"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932435"
 ---
 # <a name="remove-drivergroup"></a>Remove-DriverGroup
 
@@ -29,8 +29,8 @@ WDSUTIL /Remove-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/DriverGroup:\<nombre de grupo>|Especifica el nombre del grupo de controladores que se va a quitar.|
-|[/Server:\<nombre del servidor>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
+|/DriverGroup:\<Group Name>|Especifica el nombre del grupo de controladores que se va a quitar.|
+|[/Server:\<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
 
 ## <a name="examples"></a>Ejemplos
 

@@ -1,6 +1,6 @@
 ---
 title: logman update
-description: Tema de referencia del comando Logman Update, que actualiza un recopilador de datos existente.
+description: Artículo de referencia del comando Logman Update, que actualiza un recopilador de datos existente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0302607f3d2efd9c20f8629e73199567a459d7c8
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: d13dffc6ced3ebf011f8854ab27bbc9f18c41070
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222745"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933081"
 ---
 # <a name="logman-update"></a>logman update
 
@@ -30,10 +30,10 @@ logman update <counter | trace | alert | cfg | api> <[-n] <name>> [options]
 
 | Parámetro | Descripción |
 | ---------| ----------- |
-| [Logman (actualizar contador)](logman-update-counter.md) | Actualiza un recopilador de datos de contador. |
-| [alerta de actualización de Logman](logman-update-alert.md) | Actualiza un recopilador de datos de alertas. |
-| [Logman Update cfg](logman-update-cfg.md) | Actualiza un recopilador de datos de configuración. |
-| [Logman Update API](logman-update-api.md) | Actualiza un recopilador de datos de seguimiento de API. |
+| [logman update counter](logman-update-counter.md) | Actualiza un recopilador de datos de contador. |
+| [logman update alert](logman-update-alert.md) | Actualiza un recopilador de datos de alertas. |
+| [logman update cfg](logman-update-cfg.md) | Actualiza un recopilador de datos de configuración. |
+| [logman update api](logman-update-api.md) | Actualiza un recopilador de datos de seguimiento de API. |
 
 ## <a name="additional-references"></a>Referencias adicionales
 

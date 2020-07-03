@@ -1,6 +1,6 @@
 ---
 title: Scwcmd ANALYZE
-description: Tema de referencia de * * * *-
+description: Artículo de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13e33329c399a77c1dd9b2e6ff63de6196c30420
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: dc8616112cc94ae88995e9fd9fe635622b767f17
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820995"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932783"
 ---
-# <a name="scwcmd-analyze"></a>Scwcmd: analyze
+# <a name="scwcmd-analyze"></a>Scwcmd: analizar
 
 > Se aplica a: Windows Server 2012 R2, Windows Server 2012
 
@@ -33,40 +33,40 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/m: \< ComputerName>|Especifica el nombre NetBIOS, el nombre DNS o la dirección IP del equipo que se va a analizar. Si se especifica el parámetro **/m** , también se debe especificar el parámetro **/p** .|
-|/ou: \< OuName>|Especifica el nombre de dominio completo (FQDN) de una unidad organizativa (OU) en Active Directory Domain Services. Si se especifica el parámetro **/ou** , también se debe especificar el parámetro **/p** . Todos los equipos de la unidad organizativa se analizarán con la Directiva especificada.|
-|/p: \< directiva>|Especifica la ruta de acceso y el nombre del archivo de directiva. XML que se va a usar para realizar el análisis.|
-|/i: \< ComputerList>|Especifica la ruta de acceso y el nombre de un archivo. XML que contiene una lista de equipos junto con los archivos de directivas esperados. Todos los equipos del archivo. XML se analizarán con los archivos de directiva correspondientes. Un archivo. XML de ejemplo es%windir%\security\SampleMachineList.xml.|
-|/o: \< ResultDir>|Especifica la ruta de acceso y el directorio donde se deben guardar los archivos de resultados de análisis. El valor predeterminado es el directorio actual.|
-|/u: \< nombre de usuario>|Especifica una credencial de usuario alternativa para usar al realizar el análisis en un equipo remoto. El valor predeterminado es el usuario que ha iniciado sesión.|
-|/PW: \< contraseña>|Especifica una credencial de usuario alternativa para usar al realizar el análisis en un equipo remoto. El valor predeterminado es la contraseña del usuario que ha iniciado sesión.|
-|/t: \< subprocesos>|Especifica el número de operaciones de análisis pendientes simultáneas que se deben mantener durante el análisis (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
+|/m\<ComputerName>|Especifica el nombre NetBIOS, el nombre DNS o la dirección IP del equipo que se va a analizar. Si se especifica el parámetro **/m** , también se debe especificar el parámetro **/p** .|
+|/ou\<OuName>|Especifica el nombre de dominio completo (FQDN) de una unidad organizativa (OU) en Active Directory Domain Services. Si se especifica el parámetro **/ou** , también se debe especificar el parámetro **/p** . Todos los equipos de la unidad organizativa se analizarán con la Directiva especificada.|
+|/p\<Policy>|Especifica la ruta de acceso y el nombre del archivo de directiva. XML que se va a usar para realizar el análisis.|
+|/i\<ComputerList>|Especifica la ruta de acceso y el nombre de un archivo. XML que contiene una lista de equipos junto con los archivos de directivas esperados. Todos los equipos del archivo. XML se analizarán con los archivos de directiva correspondientes. Un archivo. XML de ejemplo es% WINDIR% \security\SampleMachineList.xml.|
+|/o\<ResultDir>|Especifica la ruta de acceso y el directorio donde se deben guardar los archivos de resultados de análisis. El valor predeterminado es el directorio actual.|
+|/u\<UserName>|Especifica una credencial de usuario alternativa para usar al realizar el análisis en un equipo remoto. El valor predeterminado es el usuario que ha iniciado sesión.|
+|/PW\<Password>|Especifica una credencial de usuario alternativa para usar al realizar el análisis en un equipo remoto. El valor predeterminado es la contraseña del usuario que ha iniciado sesión.|
+|/t:\<Threads>|Especifica el número de operaciones de análisis pendientes simultáneas que se deben mantener durante el análisis (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
 |/l|Hace que se registre el proceso de análisis. Se generará un archivo de registro para cada equipo que se está analizando. Los archivos de registro se almacenarán en el mismo directorio que los archivos de resultados. Use la opción **/o** para especificar el directorio de los archivos de resultados.|
 |/e|Registra un evento en el registro de eventos de la aplicación si se encuentra un error de coincidencia.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
-Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
+Scwcmd.exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 
 ## <a name="examples"></a>Ejemplos
 
-Para analizar una directiva de seguridad con el archivo webpolicy. XML, escriba:
+Para analizar una directiva de seguridad con el webpolicy.xml de archivos, escriba:
 ```
 scwcmd analyze /p:webpolicy.xml
 
 ```
-Para analizar una directiva de seguridad en el equipo denominado WebServer en el archivo webpolicy. XML con las credenciales de la cuenta WebAdmin, escriba:
+Para analizar una directiva de seguridad en el equipo denominado WebServer en el webpolicy.xml de archivos mediante las credenciales de la cuenta WebAdmin, escriba:
 ```
 scwcmd analyze /m:webserver /p:webpolicy.xml /u:webadmin
 
 ```
-Para analizar una directiva de seguridad con el archivo webpolicy. XML, con un máximo de 100 subprocesos y generar los resultados en un archivo denominado resultados en el recurso compartido resultserver, escriba:
+Para analizar una directiva de seguridad con el webpolicy.xml de archivo, con un máximo de 100 subprocesos y generar los resultados en un archivo denominado resultados en el recurso compartido resultserver, escriba:
 ```
 scwcmd analyze /i:webpolicy.xml /t:100 /o:\\resultserver\results
 
 ```
-Para analizar una directiva de seguridad para la unidad organizativa WebServers en el archivo webpolicy. XML con las credenciales del ID. de servidor, escriba:
+Para analizar una directiva de seguridad para la unidad organizativa WebServers con el webpolicy.xml de archivos mediante las credenciales del ID. de servidor, escriba:
 ```
 scwcmd analyze /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolicy.xml /u:DomainAdmin
 ```

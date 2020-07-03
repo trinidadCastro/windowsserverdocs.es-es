@@ -1,6 +1,6 @@
 ---
-title: aprovecha
-description: Tema de referencia del comando exponer, que expone una instantánea persistente como una letra de unidad, un recurso compartido o un punto de montaje.
+title: expose
+description: Artículo de referencia para el comando exponer, que expone una instantánea persistente como una letra de unidad, un recurso compartido o un punto de montaje.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d4e8ebf71f6ddcb457460f8174793586e81c73a6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 816aad0ba57a30d9d3a05709941b1915d9a97d03
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437180"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932406"
 ---
-# <a name="expose"></a>aprovecha
+# <a name="expose"></a>expose
 
 Expone una instantánea persistente como letra de unidad, recurso compartido o punto de montaje.
 

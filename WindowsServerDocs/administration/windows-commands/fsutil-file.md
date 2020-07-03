@@ -1,6 +1,6 @@
 ---
 title: fsutil file
-description: Tema de referencia para el comando fsutil File, que busca un archivo por nombre de usuario, consulta los intervalos asignados de un archivo, establece el nombre corto de un archivo, establece la longitud de los datos válidos de un archivo, establece cero datos para un archivo o crea un archivo nuevo.
+description: Artículo de referencia para el comando fsutil File, que busca un archivo por nombre de usuario, consulta los intervalos asignados de un archivo, establece el nombre corto de un archivo, establece la longitud de los datos válidos de un archivo, establece cero datos para un archivo o crea un archivo nuevo.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 9f3dc104-dd69-4b03-b824-a29896780164
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e9be8f6d21b89d1017371b9697e1227122826a7d
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6909d381ef5dfebb343e70ad117a1a5b400481fa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435880"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932291"
 ---
 # <a name="fsutil-file"></a>fsutil file
 
@@ -72,7 +72,7 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 | `<datalength>` | Especifica la longitud del archivo en bytes. |
 | setzerodata | Establece un intervalo (especificado por el *desplazamiento* y la *longitud*) del archivo en ceros, que vacía el archivo. Si el archivo es un archivo disperso, las unidades de asignación subyacentes se desasignan. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - En NTFS, hay dos conceptos importantes de longitud de archivo: el marcador de fin de archivo (EOF) y la longitud de datos válida (VDL). EOF indica la longitud real del archivo. VDL identifica la longitud de los datos válidos en el disco. Las lecturas entre VDL y EOF devuelven automáticamente 0 para conservar el requisito de reutilización del objeto C2.
 
@@ -116,13 +116,13 @@ Para establecer EOF para un archivo, escriba:
 fsutil file seteof C:\testfile.txt 1000
 ```
 
-Para establecer el nombre corto del archivo, *longfilename. txt* en la unidad C a *longfile. txt*, escriba:
+Para establecer el nombre corto del archivo, *longfilename.txt* en la unidad C para *longfile.txt*, escriba:
 
 ```
 fsutil file setshortname c:\longfilename.txt longfile.txt
 ```
 
-Para establecer la longitud de datos válida en *4096 bytes* para un archivo denominado *TestFile. txt* en un volumen NTFS, escriba:
+Para establecer la longitud de datos válida en *4096 bytes* para un archivo llamado *testfile.txt* en un volumen NTFS, escriba:
 
 ```
 fsutil file setvaliddata c:\testfile.txt 4096

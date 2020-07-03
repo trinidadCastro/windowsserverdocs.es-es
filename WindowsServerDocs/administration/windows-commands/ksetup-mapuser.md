@@ -1,6 +1,6 @@
 ---
 title: ksetup mapuser
-description: Tema de referencia del comando ksetup mapuser, que asigna el nombre de una entidad de seguridad de Kerberos a una cuenta.
+description: Artículo de referencia para el comando ksetup mapuser, que asigna el nombre de una entidad de seguridad de Kerberos a una cuenta.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ac2f3e30b3057ceea4376d7ffe8286875d5301d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f387b8c3ff7cf7515a4f2ed9b8ea62d379332ec7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817675"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933688"
 ---
 # <a name="ksetup-mapuser"></a>ksetup mapuser
 
@@ -30,10 +30,10 @@ ksetup /mapuser <principal> <account>
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| `<principal>` | Especifica el nombre de dominio completo de cualquier usuario principal. Por ejemplo, mike@corp.CONTOSO.COM. Si no especifica un parámetro de cuenta, se elimina la asignación de la entidad de seguridad especificada. |
+| `<principal>` | Especifica el nombre de dominio completo de cualquier usuario principal. Por ejemplo: mike@corp.CONTOSO.COM. Si no especifica un parámetro de cuenta, se elimina la asignación de la entidad de seguridad especificada. |
 | `<account>` | Especifica cualquier cuenta o nombre de grupo de seguridad que exista en este equipo, como **invitado**, **usuarios del dominio**o **Administrador**. Si se omite este parámetro, se elimina la asignación de la entidad de seguridad especificada. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Una cuenta se puede identificar específicamente, como los **invitados del dominio**, o puede usar un carácter comodín (*) para incluir todas las cuentas.
 

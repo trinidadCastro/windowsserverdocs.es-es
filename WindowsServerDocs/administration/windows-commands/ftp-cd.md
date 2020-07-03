@@ -1,6 +1,6 @@
 ---
-title: CD FTP
-description: Tema de referencia del comando FTP CD, que cambia el directorio de trabajo en el equipo remoto.
+title: ftp cd
+description: Artículo de referencia del comando FTP CD, que cambia el directorio de trabajo en el equipo remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbeff9c2fca654120347f0f616325b700f5c9be3
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0442e2ad6070b84e84632bc6d8646b979d7f948b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820005"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933295"
 ---
-# <a name="ftp-cd"></a>CD FTP
+# <a name="ftp-cd"></a>ftp cd
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

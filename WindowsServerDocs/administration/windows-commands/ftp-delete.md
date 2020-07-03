@@ -1,6 +1,6 @@
 ---
-title: eliminación de FTP
-description: Tema de referencia del comando FTP Delete, que elimina archivos en equipos remotos.
+title: ftp delete
+description: Artículo de referencia del comando FTP Delete, que elimina archivos en equipos remotos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43ea2ef90f29970a42b0196717ce4d2d3552a32c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5e59abdb18104ad23e5e46ffa01b9bfcf015768c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819956"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933260"
 ---
-# <a name="ftp-delete"></a>eliminación de FTP
+# <a name="ftp-delete"></a>ftp delete
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -36,7 +36,7 @@ delete <remotefile>
 
 ### <a name="examples"></a>Ejemplos
 
-Para eliminar el archivo *Test. txt* en el equipo remoto, escriba:
+Para eliminar el archivo de *test.txt* en el equipo remoto, escriba:
 
 ```
 delete test.txt

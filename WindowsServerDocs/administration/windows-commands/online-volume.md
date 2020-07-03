@@ -1,6 +1,6 @@
 ---
 title: online volume
-description: Tema de referencia para el comando volumen en línea, que desconecta el volumen sin conexión al estado en línea.
+description: Artículo de referencia para el comando volumen en línea, que desconecta el volumen sin conexión al estado en línea.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83a1e4bf1d6afe9485ab71c9af372166797900b3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2378b4cbc4f0624a0f1d65c62337d4c1a856648c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472671"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933523"
 ---
 # <a name="online-disk"></a>online disk
 

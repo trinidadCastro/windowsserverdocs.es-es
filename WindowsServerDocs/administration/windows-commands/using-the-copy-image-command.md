@@ -1,6 +1,6 @@
 ---
 title: Copiar imagen
-description: Tema de referencia de Copy-Image, que copia imágenes que se encuentran dentro del mismo grupo de imágenes.
+description: Artículo de referencia de Copy-Image, que copia imágenes que se encuentran dentro del mismo grupo de imágenes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3ffd590682ec36f78d3cbd53fd67fe3b5981e4c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 04af31680a99c5da60b721ad5dc31cbd3851538d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720998"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933997"
 ---
 # <a name="copy-image"></a>Copiar imagen
 
@@ -39,9 +39,9 @@ wdsutil [Options] /copy-Imagmedia:<Image name> [/Server:<Server name>]
 soporte<Image name>|Especifica el nombre de la imagen que se va a copiar.|
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
 mediatype: instalación|Especifica el tipo de imagen que se va a copiar. Esta opción debe estar configurada para **instalar**.|
-|\mediaGroup:<Image group name>]|Especifica el grupo de imágenes que contiene la imagen que se va a copiar. Si no se especifica ningún grupo de imágenes y solo existe un grupo en el servidor, se utilizará ese grupo de imágenes de forma predeterminada. Si existen varios grupos de imágenes en el servidor, debe especificar el grupo de imágenes.|
+|\mediaGroup: <Image group name> ]|Especifica el grupo de imágenes que contiene la imagen que se va a copiar. Si no se especifica ningún grupo de imágenes y solo existe un grupo en el servidor, se utilizará ese grupo de imágenes de forma predeterminada. Si existen varios grupos de imágenes en el servidor, debe especificar el grupo de imágenes.|
 |[/Filename:<Filename>]|Especifica el nombre de archivo de la imagen que se va a copiar. Si la imagen de origen no se puede identificar de forma única por nombre, debe especificar el nombre de archivo.|
-|/DestinationImage|Especifica la configuración de la imagen de destino, tal y como se describe en la tabla siguiente.<p>-/Name:<Name> : establece el nombre para mostrar de la imagen que se va a copiar.<br />-/Filename:<Filename> -establece el nombre del archivo de imagen de destino que contendrá la copia de la imagen.<br />-[/Description: <Description>]: Establece la descripción de la copia de la imagen.|
+|/DestinationImage|Especifica la configuración de la imagen de destino, tal y como se describe en la tabla siguiente.<p>-/Name:: <Name> establece el nombre para mostrar de la imagen que se va a copiar.<br />-/Filename: <Filename> -establece el nombre del archivo de imagen de destino que contendrá la copia de la imagen.<br />-[/Description: <Description>]: Establece la descripción de la copia de la imagen.|
 ## <a name="examples"></a>Ejemplos
 Para crear una copia de la imagen especificada y asignarle el nombre WindowsVista. Wim, escriba:
 ```
@@ -49,14 +49,14 @@ wdsutil /copy-Imagmedia:Windows Vista with Officemediatype:Install /DestinationI
 ```
 Para crear una copia de la imagen especificada, aplique la configuración especificada y asigne a la copia el nombre WindowsVista. Wim, escriba:
 ```
-wdsutil /verbose /Progress /copy-Imagmedia:Windows Vista with Office /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1 
+wdsutil /verbose /Progress /copy-Imagmedia:Windows Vista with Office /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1
 /Filename:install.wim /DestinationImage /Name:copy of Windows Vista with Office /Filename:WindowsVista.wim /Description:This is a copy of the original Windows image with Office installed
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos con el comando[Add-image](using-the-add-image-command.md)
-mediante el comando[Export-](using-the-export-image-command.md)
-Image mediante el comando[Get-](using-the-get-image-command.md)
-Image mediante el comando[Remove-image](using-the-remove-image-command.md)
-mediante el comando de[comando](using-the-replace-image-command.md)
-Replace-Image[: set-](subcommand-set-image.md) Image
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-add-image-command.md) 
+ Add-image [Usar el comando](using-the-export-image-command.md) 
+ Export-Image [Usar el comando](using-the-get-image-command.md) 
+ Get-Image [Usar el comando](using-the-remove-image-command.md) 
+ Remove-image [Usar el comando](using-the-replace-image-command.md) 
+ Replace-Image [Subcomando: set-Image](subcommand-set-image.md)

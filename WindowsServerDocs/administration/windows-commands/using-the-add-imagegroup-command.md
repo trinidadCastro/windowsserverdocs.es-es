@@ -1,6 +1,6 @@
 ---
 title: Add-ImageGroup
-description: Tema de referencia de Add-ImageGroup, que agrega un grupo de imágenes a un servidor de servicios de implementación de Windows.
+description: Artículo de referencia de Add-ImageGroup, que agrega un grupo de imágenes a un servidor de servicios de implementación de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b08042ac6b33c0ccfe0b66bb0fec70805d55d75f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5898b9bccb9ab0581cadd1ed51f4059a4c7c2dcc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721052"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934122"
 ---
 # <a name="add-imagegroup"></a>Add-ImageGroup
 
@@ -38,8 +38,8 @@ wdsutil /add-ImageGroumediaGroup:ImageGroup2
 wdsutil /verbose /add-ImageGroumediaGroup:My Image Group /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos mediante el
-[comando Get-AllImageGroups](using-the-get-allimagegroups-command.md)mediante el comando[Get-ImageGroup](using-the-get-imagegroup-command.md)
-con[el comando Remove-ImageGroup comando](using-the-remove-imagegroup-command.md)
-[: set-ImageGroup](subcommand-set-imagegroup.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-get-allimagegroups-command.md) 
+ Get-AllImageGroups [Usar el comando](using-the-get-imagegroup-command.md) 
+ Get-ImageGroup [Usar el comando](using-the-remove-imagegroup-command.md) 
+ Remove-ImageGroup [Subcomando: set-ImageGroup](subcommand-set-imagegroup.md)

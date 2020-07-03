@@ -1,6 +1,6 @@
 ---
 title: New-MulticastTransmission
-description: Tema de referencia sobre New-MulticastTransmission, que crea una nueva transmisión de multidifusión para una imagen.
+description: Artículo de referencia sobre New-MulticastTransmission, que crea una nueva transmisión de multidifusión para una imagen.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 779dd0937f6889f795268bf59aa35837e84aca42
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c3d9c2b507243b9a024728e99885c7a429b34178
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720878"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932452"
 ---
 # <a name="new-multicasttransmission"></a>New-MulticastTransmission
 
@@ -56,9 +56,9 @@ soporte<Image name>|Especifica el nombre de la imagen que se va a transmitir med
 |FriendlyName<Friendly name>|Especifica el nombre descriptivo de la transmisión.|
 |/Description<Description>]|Especifica la descripción de la transmisión.|
 mediatype: {boot&#124;instalar}|Especifica el tipo de imagen que se va a transmitir mediante multidifusión. Nota: el **arranque** solo se admite para Windows Server 2008 R2.|
-|\mediaGroup:<Image group name>]|Especifica el grupo de imágenes que contiene la imagen. Si no se especifica ningún nombre de grupo de imágenes y solo existe un grupo de imágenes en el servidor, se utiliza ese grupo de imágenes. Si existe más de un grupo de imágenes en el servidor, debe usar esta opción para especificar el nombre del grupo de imágenes.|
+|\mediaGroup: <Image group name> ]|Especifica el grupo de imágenes que contiene la imagen. Si no se especifica ningún nombre de grupo de imágenes y solo existe un grupo de imágenes en el servidor, se utiliza ese grupo de imágenes. Si existe más de un grupo de imágenes en el servidor, debe usar esta opción para especificar el nombre del grupo de imágenes.|
 |[/Filename:<File name>]|especifica el nombre de archivo. Si la imagen de origen no se puede identificar de forma única mediante el nombre, debe usar esta opción para especificar el nombre de archivo.|
-|/Transmissiontype: {autocast &#124; ScheduledCast}|Especifica si la transmisión se inicia automáticamente (autocast) o se basa en los criterios de inicio especificados (ScheduledCast).<p><ul><li>**Conversión automática**. Este tipo de transmisión indica que tan pronto como un cliente aplicable solicita una imagen de instalación, comienza una transmisión por multidifusión de la imagen seleccionada. A medida que otros clientes solicitan la misma imagen, se unen a la transmisión que ya se ha iniciado.</li><li>**Difusión programada**. Este tipo de transmisión establece los criterios de inicio de la transmisión según el número de clientes que solicitan una imagen o un día y hora específicos. Puede especificar las siguientes opciones:<p><ul><li>[/Time: <time>]: establece el tiempo que la transmisión debe comenzar con el siguiente formato: AAAA/MM/DD: HH: mm.</li><li>[/Clients: <Number of clients>]: establece el número mínimo de clientes que hay que esperar antes de que se inicie la transmisión.</li></ul></li></ul>|
+|/Transmissiontype: {autocast &#124; ScheduledCast}|Especifica si la transmisión se inicia automáticamente (autocast) o se basa en los criterios de inicio especificados (ScheduledCast).<p><ul><li>**Conversión automática**. Este tipo de transmisión indica que tan pronto como un cliente aplicable solicita una imagen de instalación, comienza una transmisión por multidifusión de la imagen seleccionada. A medida que otros clientes solicitan la misma imagen, se unen a la transmisión que ya se ha iniciado.</li><li>**Difusión programada**. Este tipo de transmisión establece los criterios de inicio de la transmisión según el número de clientes que solicitan una imagen o un día y hora específicos. Puede especificar las siguientes opciones:<p><ul><li>[/Time: <time> ] : Establece el tiempo que la transmisión debe comenzar con el siguiente formato: AAAA/MM/DD: HH: mm.</li><li>[/Clients: <Number of clients> ] : Establece el número mínimo de clientes que hay que esperar antes de que se inicie la transmisión.</li></ul></li></ul>|
 |/Architecture: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen de arranque que se va a transmitir mediante multidifusión. Dado que es posible tener el mismo nombre para las imágenes de arranque de distintas arquitecturas, debe especificar la arquitectura para asegurarse de que se usa la imagen correcta.|
 |[/Filename:<File name>]|especifica el nombre de archivo. Si la imagen de origen no se puede identificar de forma única por nombre, debe especificar el nombre de archivo.|
 ## <a name="examples"></a>Ejemplos
@@ -74,12 +74,12 @@ wdsutil /New-MulticastTransmission /FriendlyName:WDS AutoCast Transmission
 ```
 Para crear una transmisión de difusión programada de una imagen de instalación, escriba:
 ```
-wdsutil /New-MulticastTransmission /FriendlyName:WDS SchedCast Transmission /Server:MyWDSServemedia:Vista with Officemediatype:Install 
+wdsutil /New-MulticastTransmission /FriendlyName:WDS SchedCast Transmission /Server:MyWDSServemedia:Vista with Officemediatype:Install
 /Transmissiontype:ScheduledCast /time:2006/11/20:17:00 /Clients:100
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos mediante el
-[comando Get-AllMulticastTransmissions](using-the-get-allmulticasttransmissions-command.md)mediante el comando[Get-MulticastTransmission](using-the-get-multicasttransmission-command.md)
-con[el comando Remove-MulticastTransmission comando](using-the-remove-multicasttransmission-command.md)
-[: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-get-allmulticasttransmissions-command.md) 
+ Get-AllMulticastTransmissions [Usar el comando](using-the-get-multicasttransmission-command.md) 
+ Get-MulticastTransmission [Usar el comando](using-the-remove-multicasttransmission-command.md) 
+ Remove-MulticastTransmission [Subcomando: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)

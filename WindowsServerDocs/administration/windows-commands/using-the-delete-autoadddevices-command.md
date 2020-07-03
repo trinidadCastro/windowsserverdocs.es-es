@@ -1,6 +1,6 @@
 ---
 title: Delete-AutoaddDevices
-description: Tema de referencia de DELETE-AutoaddDevices, que elimina los equipos que están pendientes, rechazados o aprobados en la base de datos de adición automática.
+description: Artículo de referencia de DELETE-AutoaddDevices, que elimina los equipos que están pendientes, rechazados o aprobados en la base de datos de adición automática.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90b5b24b68b2cfe3d387cb02b3715b70edba4300
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 60acfbb5ec1bc3f9268044eb0dbcc9ea19ff8ab9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720991"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933968"
 ---
 # <a name="delete-autoadddevices"></a>Delete-AutoaddDevices
 
@@ -41,7 +41,7 @@ Para eliminar todos los equipos aprobados, escriba:
 wdsutil /verbose /delete-AutoaddDevices /Server:MyWDSServer /Devicetype:ApprovedDevices
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos con el comando[APPROVE-AutoaddDevices](using-the-approve-autoadddevices-command.md)
-mediante el comando[Get-AutoaddDevices](using-the-get-autoadddevices-command.md)
-[mediante el comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Uso del comando](using-the-approve-autoadddevices-command.md) 
+ APPROVE-AutoaddDevices [Usar el comando](using-the-get-autoadddevices-command.md) 
+ Get-AutoaddDevices [Usar el comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)

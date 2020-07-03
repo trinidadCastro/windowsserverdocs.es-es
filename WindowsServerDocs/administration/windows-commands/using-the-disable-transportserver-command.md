@@ -1,6 +1,6 @@
 ---
 title: Disable-TransportServer
-description: Tema de referencia de Disable-TransportServer, que deshabilita todos los servicios de un servidor de transporte.
+description: Artículo de referencia de Disable-TransportServer, que deshabilita todos los servicios de un servidor de transporte.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81ae150b4f8e4de577e377a2d10a7a69675adac7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e9d25159cb81408b5a8085fb830eec4479d953f4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720958"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933928"
 ---
 # <a name="disable-transportserver"></a>Disable-TransportServer
 
@@ -37,9 +37,9 @@ wdsutil /Disable-TransportServer
 wdsutil /verbose /Disable-TransportServer /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos[mediante el comando](using-the-enable-transportserver-command.md)
-enable-TransportServer[mediante el subcomando Get-TransportServer Command](using-the-get-transportserver-command.md)
-[: set-TransportServer](subcommand-set-transportserver.md)
-[Subcommand: Start-TransportServer](subcommand-start-transportserver.md)
-[Subcommand: Stop-TransportServer](subcommand-stop-transportserver.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-enable-transportserver-command.md) 
+ enable-TransportServer [Usar el comando](using-the-get-transportserver-command.md) 
+ Get-TransportServer [Subcomando: set-TransportServer](subcommand-set-transportserver.md) 
+ [Subcomando: Start-TransportServer](subcommand-start-transportserver.md) 
+ [Subcomando: Stop-TransportServer](subcommand-stop-transportserver.md)

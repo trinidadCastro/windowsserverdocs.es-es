@@ -1,6 +1,6 @@
 ---
 title: Subcomando STOP-TransportServer
-description: Tema de referencia de STOP-TransportServer
+description: Artículo de referencia para STOP-TransportServer
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4321ec991b2c20911f992e4c3c38e5c9cfa5f165
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ea749b9ff2f19b4b7c9e70e0a58024d4dd9e37f9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721622"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933746"
 ---
 # <a name="subcommand-stop-transportserver"></a>Subcomando: Stop-TransportServer
 
@@ -36,9 +36,9 @@ wdsutil /Stop-TransportServer
 wdsutil /verbose /Stop-TransportServer /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos[mediante el comando](using-the-disable-transportserver-command.md)
-Disable-TransportServer[con el comando enable-TransportServer](using-the-enable-transportserver-command.md)
-[mediante el subcomando Get-TransportServer comando](using-the-get-transportserver-command.md)
-[: set-TransportServer](subcommand-set-transportserver.md)
-[Subcommand: Start-TransportServer](subcommand-start-transportserver.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-disable-transportserver-command.md) 
+ Disable-TransportServer [Usar el comando](using-the-enable-transportserver-command.md) 
+ enable-TransportServer [Usar el comando](using-the-get-transportserver-command.md) 
+ Get-TransportServer [Subcomando: set-TransportServer](subcommand-set-transportserver.md) 
+ [Subcomando: Start-TransportServer](subcommand-start-transportserver.md)

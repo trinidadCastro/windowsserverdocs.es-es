@@ -1,6 +1,6 @@
 ---
 title: New-namespace
-description: Tema de referencia sobre New-namespace, que crea y configura un espacio de nombres nuevo.
+description: Artículo de referencia sobre New-namespace, que crea y configura un espacio de nombres nuevo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7bc6b365da274fc62df3bb24375c07b97c8e4bc
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3afbdd195f21450508bfa6992fc73c7d360092c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710533"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932416"
 ---
 # <a name="new-namespace"></a>New-namespace
 
@@ -39,10 +39,10 @@ wdsutil [Options] /New-Namespace [/Server:<Server name>]
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utiliza el servidor local.|
 |FriendlyName<Friendly name>|Especifica el nombre descriptivo del espacio de nombres.|
 |/Description<Description>]|Establece la descripción del espacio de nombres.|
-|System.IO<Namespace name>|Especifica el nombre del espacio de nombres. Tenga en cuenta que este no es el nombre descriptivo y debe ser único.<p>-   **Servicio de rol servidor de implementación**: la sintaxis de esta opción es/namespace:<Image group>/<Image name>/<Index>WDS:. Por ejemplo: **WDS: ImageGroup1/install. Wim/1**<br />-   **Servicio de función de servidor de transporte**: este valor debe coincidir con el nombre especificado cuando se creó el espacio de nombres en el servidor.|
-|/ContentProvider:<Name>]|Especifica el nombre del proveedor de contenido que proporcionará el contenido del espacio de nombres.|
-|[/ConfigString:<Configuration string>]|Especifica la cadena de configuración del proveedor de contenido.|
-|/Namespacetype: {autocast &#124; ScheduledCast}|Especifica la configuración de la transmisión. La configuración se especifica mediante las siguientes opciones:<p>-[/Time: <time>]-establece el tiempo que la transmisión debe comenzar con el siguiente formato: AAAA/MM/DD: HH: mm. Esta opción solo se aplica a las transmisiones de difusión programadas.<br />-[/Clients: <Number of clients>]: establece el número mínimo de clientes que hay que esperar antes de que se inicie la transmisión. Esta opción solo se aplica a las transmisiones de difusión programadas.|
+|System.IO<Namespace name>|Especifica el nombre del espacio de nombres. Tenga en cuenta que este no es el nombre descriptivo y debe ser único.<p>-   **Servicio de rol servidor de implementación**: la sintaxis de esta opción es/namespace: WDS: <Image group> / <Image name> / <Index> . Por ejemplo: **WDS: ImageGroup1/install. Wim/1**<br />-   **Servicio de función de servidor de transporte**: este valor debe coincidir con el nombre especificado cuando se creó el espacio de nombres en el servidor.|
+|/ContentProvider: <Name> ]|Especifica el nombre del proveedor de contenido que proporcionará el contenido del espacio de nombres.|
+|[/ConfigString: <Configuration string> ]|Especifica la cadena de configuración del proveedor de contenido.|
+|/Namespacetype: {autocast &#124; ScheduledCast}|Especifica la configuración de la transmisión. La configuración se especifica mediante las siguientes opciones:<p>-[/Time: <time> ]-establece el tiempo que la transmisión debe comenzar con el siguiente formato: AAAA/MM/DD: HH: mm. Esta opción solo se aplica a las transmisiones de difusión programadas.<br />-[/Clients: <Number of clients> ]: establece el número mínimo de clientes que hay que esperar antes de que se inicie la transmisión. Esta opción solo se aplica a las transmisiones de difusión programadas.|
 ## <a name="examples"></a>Ejemplos
 Para crear un espacio de nombres de conversión automática, escriba:
 ```
@@ -50,11 +50,11 @@ wdsutil /New-Namespace /FriendlyName:Custom AutoCast Namespace /Namespace:Custom
 ```
 Para crear un espacio de nombres de difusión programada, escriba:
 ```
-wdsutil /New-Namespace /Server:MyWDSServer /FriendlyName:Custom Scheduled Namespace /Namespace:Custom Auto 1 /ContentProvider:MyContentProvider 
+wdsutil /New-Namespace /Server:MyWDSServer /FriendlyName:Custom Scheduled Namespace /Namespace:Custom Auto 1 /ContentProvider:MyContentProvider
 /Namespacetype:ScheduledCast /time:2006/11/20:17:00 /Clients:20
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos
-[mediante el comando Get-AllNamespaces](using-the-get-allnamespaces-command.md)[mediante el comando Remove-namespace comando](using-the-remove-namespace-command.md)
-[Subcommand: Start-namespace](subcommand-start-namespace.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-get-allnamespaces-command.md) 
+ Get-AllNamespaces [Usar el comando](using-the-remove-namespace-command.md) 
+ Remove-namespace [Subcomando: Start-namespace](subcommand-start-namespace.md)

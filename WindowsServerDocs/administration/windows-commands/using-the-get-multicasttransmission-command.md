@@ -1,6 +1,6 @@
 ---
 title: Get-MulticastTransmission
-description: Tema de referencia de Get-MulticastTransmission, que muestra información sobre la transmisión por multidifusión para una imagen especificada.
+description: Artículo de referencia de Get-MulticastTransmission, que muestra información sobre la transmisión por multidifusión para una imagen especificada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a848a4aceb41b4da679d9182459df29c89008fea
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a764aa0a975fe29daed54e50b7ab0284a12a399f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719756"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932207"
 ---
 # <a name="get-multicasttransmission"></a>Get-MulticastTransmission
 
@@ -23,9 +23,9 @@ ms.locfileid: "82719756"
 Muestra información sobre la transmisión por multidifusión para una imagen especificada.
 
 ## <a name="syntax"></a>Sintaxis
-**Windows Server 2008**
+**Windows Server 2008**
 ```
-wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>] 
+wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>]
 [/Filename:<File name>] [/Show:Clients]
 ```
 **Windows Server 2008 R2** para transmisiones de imagen de arranque:
@@ -52,10 +52,10 @@ wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
 soporte<Image name>|Muestra la transmisión de multidifusión asociada a esta imagen.|
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utiliza el servidor local.|
 mediatype: instalación|Especifica el tipo de imagen. Tenga en cuenta que esta opción debe estar configurada para **instalar**.|
-|\mediaGroup:<Image group name>]|Especifica el grupo de imágenes que contiene la imagen. Si no se especifica ningún nombre de grupo de imágenes y solo existe un grupo de imágenes en el servidor, se utiliza ese grupo de imágenes. Si existe más de un grupo de imágenes en el servidor, debe usar esta opción para especificar un grupo de imágenes.|
+|\mediaGroup: <Image group name> ]|Especifica el grupo de imágenes que contiene la imagen. Si no se especifica ningún nombre de grupo de imágenes y solo existe un grupo de imágenes en el servidor, se utiliza ese grupo de imágenes. Si existe más de un grupo de imágenes en el servidor, debe usar esta opción para especificar un grupo de imágenes.|
 |/Architecture: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen de arranque que está asociada a la transmisión. Dado que es posible tener el mismo nombre de imagen para imágenes de arranque en diferentes arquitecturas, debe especificar la arquitectura para asegurarse de que se usa la imagen correcta.|
 |[/Filename:<File name>]|Especifica el archivo que contiene la imagen. Si la imagen no se puede identificar de forma única por nombre, debe usar esta opción para especificar el nombre de archivo.|
-|[/Show: clients]<p>or<p>[/Details: clientes]|Muestra información acerca de los equipos cliente que están conectados a la transmisión por multidifusión.|
+|[/Show: clients]<p>o<p>[/Details: clientes]|Muestra información acerca de los equipos cliente que están conectados a la transmisión por multidifusión.|
 ## <a name="examples"></a>Ejemplos
 **Windows Server 2008** Para ver información sobre la transmisión de una imagen denominada vista con Office, escriba uno de los siguientes:
 ```
@@ -74,8 +74,8 @@ wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:Vista with Officemedi
 wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:X64 Boot Imagemediatype:Boot /Architecture:x64 /Filename:boot.wim /details:Clients
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos mediante el
-[comando Get-AllMulticastTransmissions](using-the-get-allmulticasttransmissions-command.md)con el comando[New-MulticastTransmission](using-the-new-multicasttransmission-command.md)
-[con el comando Remove-MulticastTransmission comando](using-the-remove-multicasttransmission-command.md)
-[: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Usar el comando](using-the-get-allmulticasttransmissions-command.md) 
+ Get-AllMulticastTransmissions [Usar el comando](using-the-new-multicasttransmission-command.md) 
+ New-MulticastTransmission [Usar el comando](using-the-remove-multicasttransmission-command.md) 
+ Remove-MulticastTransmission [Subcomando: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)

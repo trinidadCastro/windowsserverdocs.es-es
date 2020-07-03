@@ -1,6 +1,6 @@
 ---
-title: Logman actualizar seguimiento
-description: Tema de referencia del comando Logman Update Trace, que actualiza las propiedades de un recopilador de datos de seguimiento de eventos existente.
+title: logman update trace
+description: Artículo de referencia del comando Logman Update Trace, que actualiza las propiedades de un recopilador de datos de seguimiento de eventos existente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9edb8df5d5d7e2f3c3f1ccf17fbd817efe4faa10
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 7eb8b034958e14009101848d0aca381cb915a579
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222754"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933123"
 ---
-# <a name="logman-update-trace"></a>Logman actualizar seguimiento
+# <a name="logman-update-trace"></a>logman update trace
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

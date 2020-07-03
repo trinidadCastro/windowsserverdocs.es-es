@@ -1,6 +1,6 @@
 ---
 title: extract
-description: Tema de referencia del comando Extract, que extrae archivos de una ubicación de origen.
+description: Artículo de referencia para el comando Extract, que extrae archivos de una ubicación de origen.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbadcc555fc9bb0b02e568b1126a317a9d59d336
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1de26d444f8c8fdc838fc2fe0c662afefe8c172c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437190"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932379"
 ---
 # <a name="extract"></a>extract
 
@@ -34,7 +34,7 @@ extract [/y] /c source destination
 | --------- | ----------- |
 | archiva | Use si desea extraer dos o más archivos. |
 | filename | Nombre del archivo que se va a extraer del archivo. cab. Se pueden usar caracteres comodín y varios nombres de archivo (separados por espacios en blanco). |
-| origen | Archivos comprimidos (un archivo. cab con un solo archivo). |
+| source | Archivos comprimidos (un archivo. cab con un solo archivo). |
 | nuevoNombre | Nuevo nombre de archivo para proporcionar el archivo extraído. Si no se proporciona, se utiliza el nombre original. |
 | /a | Procesar todos los archivadores. Sigue a la cadena de contenedores empezando en el primer contenedor mencionado. |
 | /C | Copiar el archivo de origen en el destino (copiar desde discos DMF). |
