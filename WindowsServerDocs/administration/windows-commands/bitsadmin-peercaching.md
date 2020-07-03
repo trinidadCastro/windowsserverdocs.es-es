@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peercaching
-description: Tema de referencia para el comando de la caché de bitsadmin, que enumera los modificadores de/peercaching.
+description: Artículo de referencia para el comando de la caché de bitsadmin, que enumera los modificadores de/peercaching.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a70ad9927a77c07fa4fd638d359cfcfda53d4005
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 57c0ab442c65494bbaf5c0ab6b6668dfa67b48ac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717213"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928104"
 ---
 # <a name="bitsadmin-peercaching"></a>bitsadmin peercaching
 

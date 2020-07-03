@@ -8,12 +8,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 314b53d41fde81936b70154feeee407e89d2cca3
-ms.sourcegitcommit: c710fea2c0591febfc1bc9a705d59979be6f699b
+ms.openlocfilehash: 71687bc7090eabfaf690dc526cce013798413fdb
+ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83705588"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85586718"
 ---
 # <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio
 
@@ -42,7 +42,7 @@ Tareas programadas:
 1. \Microsoft\XblGameSave\XblGameSaveTask
 2. \Microsoft\XblGameSave\XblGameSaveTaskLogon
 
-(También puedes acceder a la información sobre todos los servicios detallados en este artículo si consultas la hoja de cálculo de Microsoft Excel adjunta: [Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx))
+También puede acceder a la información sobre todos los servicios detallados en este artículo si consulta la hoja de cálculo de Microsoft Excel adjunta: [Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx))
 
 
 ### <a name="disabling-services-not-installed-by-default"></a>Deshabilitación de los servicios no instalados de manera predeterminada
@@ -244,7 +244,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 | **Instalación**   | Solo con Experiencia de escritorio
 | **Tipo de inicio**   | Manual
 | **Recomendación** | Se puede deshabilitar
-| **Comentarios**       | Se puede deshabilitar si no se usa. Otro mecanismo de deshabilitación: https://technet.microsoft.com/library/dd252791.aspx
+| **Comentarios**       | Se puede deshabilitar si no se usa. Otro mecanismo de deshabilitación: [Deshabilitación de la conexión Bluetooth y la emisión de infrarrojos](https://docs.microsoft.com/previous-versions/tn-archive/dd252791(v=technet.10))
 |||
 
 
@@ -1321,7 +1321,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 | **Instalación**   | Siempre instalado
 | **Tipo de inicio**   | Automático
 | **Recomendación** | Se puede deshabilitar si no se trata de un servidor de impresión ni un controlador de dominio.
-| **Comentarios**       | En un controlador de dominio, la instalación del rol del controlador de dominio agrega un subproceso al servicio del administrador de trabajos en cola que es responsable de realizar la eliminación de las impresiones, quitando de Active Directory los objetos de la cola de impresión obsoleta.  Si el servicio del administrador de trabajos en cola no se ejecuta en al menos un controlador de dominio de cada sitio, AD no tiene ninguna forma de quitar las colas antiguas que ya no existen. [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/ )
+| **Comentarios**       | En un controlador de dominio, la instalación del rol del controlador de dominio agrega un subproceso al servicio del administrador de trabajos en cola que es responsable de realizar la eliminación de las impresiones, quitando de Active Directory los objetos de la cola de impresión obsoleta.  Si el servicio del administrador de trabajos en cola no se ejecuta en al menos un controlador de dominio de cada sitio, AD no tiene ninguna forma de quitar las colas antiguas que ya no existen. [Solicite información en el blog del equipo de rendimiento](https://techcommunity.microsoft.com/t5/ask-the-performance-team/bg-p/AskPerf).
 |||
 
 

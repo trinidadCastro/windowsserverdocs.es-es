@@ -1,6 +1,6 @@
 ---
 title: bitsadmin wrap
-description: Tema de referencia del comando bitsadmin Wrap, que ajusta cualquier línea de texto de salida que se extienda más allá del borde derecho de la ventana de comandos a la línea siguiente.
+description: Artículo de referencia del comando bitsadmin Wrap, que ajusta cualquier línea de texto de salida que se extienda más allá del borde derecho de la ventana de comandos a la línea siguiente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c1c2c78fd3cc78674ef497526ba236ad058fe83
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e47f5e38555eb2464d3febf5f958ce5a6af20452
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707572"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927252"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 

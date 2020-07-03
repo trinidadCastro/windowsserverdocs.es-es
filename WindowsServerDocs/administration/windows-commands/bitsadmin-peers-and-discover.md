@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peers y discover
-description: Tema de referencia para el comando bitsadmin Peers y Discover, que detecta los elementos del mismo nivel de nuevo.
+description: Artículo de referencia para el comando bitsadmin Peers y Discover, que detecta los elementos del mismo nivel de nuevo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 094580bcf27b0968ebfab2d064a4a74dc8358a74
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b9e49111be7c36f6dde5acb82d29eac21d7af57c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717171"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928041"
 ---
 # <a name="bitsadmin-peers-and-discover"></a>bitsadmin peers y discover
 

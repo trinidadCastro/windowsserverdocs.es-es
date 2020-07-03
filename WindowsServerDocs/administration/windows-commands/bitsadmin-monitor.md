@@ -1,6 +1,6 @@
 ---
 title: bitsadmin monitor
-description: Tema de referencia para el comando bitsadmin monitor, que supervisa los trabajos de la cola de transferencia que son propiedad del usuario actual.
+description: Artículo de referencia para el comando bitsadmin monitor, que supervisa los trabajos de la cola de transferencia que son propiedad del usuario actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c8fa52f9fcf30a66b41c9cdbf7b7e1fab69f06e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7ce08eccf46fc17086d216bc6797bec451ace7eb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717378"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926494"
 ---
 # <a name="bitsadmin-monitor"></a>bitsadmin monitor
 
@@ -31,7 +31,7 @@ bitsadmin /monitor [/allusers] [/refresh <seconds>]
 | Parámetro | Descripción |
 | -------------- | -------------- |
 | /allusers | Opcional. Supervisa los trabajos de todos los usuarios. Debe tener privilegios de administrador para usar este parámetro. |
-| demorará | Opcional. Actualiza los datos en un intervalo especificado por `<seconds>`. El intervalo de actualización predeterminado es de cinco segundos. Para detener la actualización, presione CTRL + C. |
+| demorará | Opcional. Actualiza los datos en un intervalo especificado por `<seconds>` . El intervalo de actualización predeterminado es de cinco segundos. Para detener la actualización, presione CTRL + C. |
 
 ## <a name="examples"></a>Ejemplos
 

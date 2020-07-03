@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setpeercachingflags
-description: Tema de referencia para el comando bitsadmin setpeercachingflags, que establece las marcas que determinan si los archivos del trabajo se pueden almacenar en caché y servir a los elementos del mismo nivel y si el trabajo puede descargar contenido de elementos del mismo nivel.
+description: Artículo de referencia para el comando bitsadmin setpeercachingflags, que establece marcas que determinan si los archivos del trabajo pueden almacenarse en caché y servirse a los elementos del mismo nivel y si el trabajo puede descargar contenido de elementos del mismo nivel.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b66b169c38ac050ecaaf6546365547148faa9cf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3340c14bfaaaa4f904ac9cf7918588e45c8bdc57
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717267"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927609"
 ---
 # <a name="bitsadmin-setpeercachingflags"></a>bitsadmin setpeercachingflags
 

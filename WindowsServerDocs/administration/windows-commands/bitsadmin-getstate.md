@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getstate
-description: Tema de referencia del comando bitsadmin GetState, que recupera el estado del trabajo especificado.
+description: Artículo de referencia para el comando bitsadmin GetState, que recupera el estado del trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ab014c96c6d5d62232243d704d41d33cfcfc50f0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fd698727cba25f15a12a331f847e7f8436d3d54e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717536"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926671"
 ---
 # <a name="bitsadmin-getstate"></a>bitsadmin getstate
 
@@ -36,7 +36,7 @@ bitsadmin /getstate <job>
 
 Los valores de salida devueltos pueden ser:
 
-| State | Descripción |
+| Estado | Descripción |
 | --------------- | ----------- |
 | En cola | El trabajo está en espera de ejecutarse. |
 | Connecting | BITS está poniéndose en contacto con el servidor. |

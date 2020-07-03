@@ -1,6 +1,6 @@
 ---
-title: FTP LS
-description: Tema de referencia del comando FTP LS, que muestra una lista abreviada de archivos y subdirectorios del equipo remoto.
+title: ftp ls
+description: Artículo de referencia del comando FTP LS, que muestra una lista abreviada de archivos y subdirectorios del equipo remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ae913f001c3ddffce9ff81c9c5c5fd32f436da5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1e4bd476f87487e400751b7173f0c670867de54c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820175"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927209"
 ---
-# <a name="ftp-ls"></a>FTP LS
+# <a name="ftp-ls"></a>ftp ls
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
@@ -43,7 +43,7 @@ Para mostrar una lista abreviada de archivos y subdirectorios del equipo remoto,
 ls
 ```
 
-Para obtener una lista abreviada de directorios de *dir1* en el equipo remoto y guardarlo en un archivo local denominado *dirlist. txt*, escriba:
+Para obtener una lista abreviada de directorios de *dir1* en el equipo remoto y guardarlo en un archivo local denominado *dirlist.txt*, escriba:
 
 ```
 ls dir1 dirlist.txt

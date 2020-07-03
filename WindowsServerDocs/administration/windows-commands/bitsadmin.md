@@ -1,6 +1,6 @@
 ---
 title: bitsadmin
-description: Tema de referencia del comando bitsadmin, que es una herramienta de línea de comandos que se usa para crear, descargar o cargar trabajos y supervisar su progreso.
+description: Artículo de referencia para el comando bitsadmin, que es una herramienta de línea de comandos que se usa para crear, descargar o cargar trabajos y supervisar su progreso.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94a829ce21c4571188fb5ffeb9a0a1d991637d07
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e9fd70e4e74dc25c32ff3a74be2fc1c66d697367
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710046"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926379"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 y Windows 10
 
-Bitsadmin es una herramienta de línea de comandos que se usa para crear, descargar o cargar trabajos, y para supervisar su progreso. La herramienta bitsadmin usa modificadores para identificar el trabajo que se va a realizar. Puede llamar `bitsadmin /?` a o `bitsadmin /help` para obtener una lista de modificadores.
+Bitsadmin es una herramienta de línea de comandos que se usa para crear, descargar o cargar trabajos, y para supervisar su progreso. La herramienta bitsadmin usa modificadores para identificar el trabajo que se va a realizar. Puede llamar a `bitsadmin /?` o `bitsadmin /help` para obtener una lista de modificadores.
 
-La mayoría de los `<job>` conmutadores requieren un parámetro, que se establece en el nombre para mostrar del trabajo, o GUID. El nombre para mostrar de un trabajo no tiene que ser único. Los modificadores **/Create** y **/List** devuelven el GUID de un trabajo.
+La mayoría de los conmutadores requieren un `<job>` parámetro, que se establece en el nombre para mostrar del trabajo, o GUID. El nombre para mostrar de un trabajo no tiene que ser único. Los modificadores **/Create** y **/List** devuelven el GUID de un trabajo.
 
 De forma predeterminada, puede tener acceso a información sobre sus propios trabajos. Para tener acceso a la información de los trabajos de otro usuario, debe tener privilegios de administrador. Si el trabajo se ha creado en un estado con privilegios elevados, debe ejecutar **bitsadmin** desde una ventana con privilegios elevados. de lo contrario, tendrá acceso de solo lectura al trabajo.
 

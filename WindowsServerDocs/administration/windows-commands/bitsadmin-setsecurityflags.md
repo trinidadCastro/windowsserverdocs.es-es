@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setsecurityflags
-description: Tema de referencia del comando bitsadmin setsecurityflags, que establece marcas de seguridad para HTTP para determinar si los BITS deben comprobar la lista de revocación de certificados, omitir determinados errores de certificado y definir la Directiva que se va a usar cuando un servidor redirija la solicitud HTTP.
+description: Artículo de referencia del comando bitsadmin setsecurityflags, que establece marcas de seguridad para HTTP para determinar si los BITS deben comprobar la lista de revocación de certificados, omitir determinados errores de certificado y definir la Directiva que se va a usar cuando un servidor redirija la solicitud HTTP.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63430f9814037aeb948cc8b91e8590f13a4df00e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f6030316396e64c9884d6df9b56d5489ec2c6318
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720475"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927502"
 ---
 # <a name="bitsadmin-setsecurityflags"></a>bitsadmin setsecurityflags
 

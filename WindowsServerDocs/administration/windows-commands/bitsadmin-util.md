@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util
-description: Tema de referencia del comando bitsadmin util, que enumera los modificadores de la util.
+description: Artículo de referencia del comando bitsadmin util, que enumera los modificadores de la util.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0fa7e8f67dd1c7c77ac489b38aa967e55f0e3506
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 96708544053c760153fbb18d813880564fd49bac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707587"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927289"
 ---
 # <a name="bitsadmin-util"></a>bitsadmin util
 

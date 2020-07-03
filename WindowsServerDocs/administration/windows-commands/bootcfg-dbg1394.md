@@ -1,6 +1,6 @@
 ---
 title: bootcfg dbg1394
-description: Tema de referencia del comando bootcfg dbg1394, que configura la depuración de Puerto 1394 para una entrada de sistema operativo especificada
+description: Artículo de referencia para el comando bootcfg dbg1394, que configura la depuración de Puerto 1394 para una entrada de sistema operativo especificada
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 16230c52657fd5c9c14972726ed2465401995223
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f1f71edbabbf85c301bec24138a805523975d3f6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82709706"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926347"
 ---
 # <a name="bootcfg-dbg1394"></a>bootcfg dbg1394
 
@@ -32,12 +32,12 @@ bootcfg /dbg1394 {on | off}[/s <computer> [/u <domain>\<user> /p <password>]] [/
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| `{on | off}` | Especifica el valor para la depuración de Puerto 1394, incluido:<ul><li>**en.** Habilita la compatibilidad con la depuración remota agregando la opción `<osentrylinenum>`/dbg1394 al especificado.</li><li>**habilitar.** Deshabilita la compatibilidad con la depuración remota quitando la opción <osentrylinenum>/dbg1394 del especificado.</li></ul> |
-| `/s <computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. |
-| `/u <domain>\<user>`  | Ejecuta el comando con los permisos de cuenta del usuario especificado por `<user>` o `<domain>\<user>`. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
+| `{on | off}` | Especifica el valor para la depuración de Puerto 1394, incluido:<ul><li>**en.** Habilita la compatibilidad con la depuración remota agregando la opción/dbg1394 al especificado `<osentrylinenum>` .</li><li>**habilitar.** Deshabilita la compatibilidad con la depuración remota quitando la opción/dbg1394 del especificado <osentrylinenum> .</li></ul> |
+| `/s <computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. |
+| `/u <domain>\<user>`  | Ejecuta el comando con los permisos de cuenta del usuario especificado por `<user>` o `<domain>\<user>` . El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
 | `/p <password>` | Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . |
 | `/ch <channel>` | Especifica el canal que se va a usar para la depuración. Los valores válidos incluyen enteros, entre 1 y 64. No utilice este parámetro si está deshabilitada la depuración de Puerto 1394. |
-| `/id <osentrylinenum>` | Especifica el número de línea de entrada del sistema operativo en la sección [operating systems] del archivo boot. ini en el que se agregan las opciones de carga del sistema operativo. La primera línea después del encabezado de la sección [operating systems] es 1. |
+| `/id <osentrylinenum>` | Especifica el número de línea de entrada del sistema operativo en la sección [sistemas operativos] del archivo de Boot.ini al que se agregan las opciones de carga del sistema operativo. La primera línea después del encabezado de la sección [operating systems] es 1. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="examples"></a>Ejemplos

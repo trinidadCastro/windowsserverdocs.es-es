@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setcustomheaders
-description: Tema de referencia del comando bitsadmin setcustomheaders, que agrega un encabezado HTTP personalizado a una solicitud GET.
+description: Artículo de referencia para el comando bitsadmin setcustomheaders, que agrega un encabezado HTTP personalizado a una solicitud GET.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 92728f8d63a22cf9d13d6c02a69359583a9fc5cc
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 74a8c5f4aa464aa9f362a9761c9f1c449fbaad00
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719326"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927842"
 ---
 # <a name="bitsadmin-setcustomheaders"></a>bitsadmin setcustomheaders
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin addfilewithranges
-description: Tema de referencia del comando bitsadmin addfilewithranges, que agrega un archivo al trabajo especificado. BITS descarga los intervalos especificados del archivo remoto.
+description: Artículo de referencia para el comando bitsadmin addfilewithranges, que agrega un archivo al trabajo especificado. BITS descarga los intervalos especificados del archivo remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b878b4f48441808bf971c051397d3af9bd975fe
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5439cfb8330cda7c51150c720fe45faccca8e1ec
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718467"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927075"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 
@@ -35,9 +35,9 @@ bitsadmin /addfilewithranges <job> <remoteURL> <localname> <rangelist>
 | localname | Nombre del archivo en el equipo local. Debe contener una ruta de acceso absoluta al archivo. |
 | rangelist | Lista delimitada por comas de pares de desplazamiento: longitud. Use un signo de dos puntos para separar el valor de desplazamiento del valor de longitud. Por ejemplo, un valor de `0:100,2000:100,5000:eof` indica a bits que transfiera 100 bytes desde el desplazamiento 0, 100 bytes desde el desplazamiento 2000 y los bytes restantes desde el desplazamiento 5000 hasta el final del archivo. |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
-- El **EOF** del token es un valor de longitud válido dentro de los pares de longitud `<rangelist>`y desplazamiento en. Indica al servicio que lea hasta el final del archivo especificado.
+- El **EOF** del token es un valor de longitud válido dentro de los pares de longitud y desplazamiento en `<rangelist>` . Indica al servicio que lea hasta el final del archivo especificado.
 
 - El `addfilewithranges` comando producirá un error con el código 0x8020002c, si se especifica un intervalo de longitud cero junto con otro intervalo con el mismo desplazamiento, por ejemplo:
 

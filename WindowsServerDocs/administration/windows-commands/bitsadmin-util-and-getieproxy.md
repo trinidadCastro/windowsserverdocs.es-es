@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util y getieproxy
-description: Tema de referencia del comando bitsadmin util y GETIEPROXY, que recupera el uso del proxy para la cuenta de servicio especificada.
+description: Artículo de referencia del comando bitsadmin util y GETIEPROXY, que recupera el uso del proxy para la cuenta de servicio determinada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 576f308bc7fb9a4e448638d06621f95eebef0cd0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 15093341ef2dcaca6dd0f5efb4c48d4b9d1934a1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707660"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927403"
 ---
 # <a name="bitsadmin-util-and-getieproxy"></a>bitsadmin util y getieproxy
 

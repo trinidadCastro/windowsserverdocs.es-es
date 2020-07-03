@@ -1,6 +1,6 @@
 ---
-title: Logman Create Counter
-description: Tema de referencia del comando Logman Create Counter, que crea un recopilador de datos de contador.
+title: logman create counter
+description: Artículo de referencia para el comando Logman Create Counter, que crea un recopilador de datos de contador.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63fd94fb32fe27b48460922818d1a7220f7f5d7a
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 80ea79eb8c286a8dbe7c020b4c23ae1483d2cb9b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222965"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927208"
 ---
-# <a name="logman-create-counter"></a>Logman Create Counter
+# <a name="logman-create-counter"></a>logman create counter
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

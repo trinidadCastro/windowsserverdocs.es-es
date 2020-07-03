@@ -1,6 +1,6 @@
 ---
 title: bitsadmin addfileset
-description: Tema de referencia del comando bitsadmin addfileset, que agrega uno o varios archivos al trabajo especificado.
+description: Artículo de referencia para el comando bitsadmin addfileset, que agrega uno o varios archivos al trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d610c1330818cf820923b6d4f2e3555dc477444b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 861186dfc7ba1a230e1df05c98378d27bfff26b1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718474"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927080"
 ---
 # <a name="bitsadmin-addfileset"></a>bitsadmin addfileset
 
@@ -31,7 +31,7 @@ bitsadmin /addfileset <job> <textfile>
 | Parámetro | Descripción |
 | --------- | ----------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
-| textfile | Un archivo de texto, cada línea de que contiene un nombre de archivo remoto y otro local. **Nota:** Los nombres deben estar delimitados por espacios. Las líneas que comienzan `#` con un carácter se tratan como comentario. |
+| textfile | Un archivo de texto, cada línea de que contiene un nombre de archivo remoto y otro local. **Nota:** Los nombres deben estar delimitados por espacios. Las líneas que comienzan con un `#` carácter se tratan como comentario. |
 
 ## <a name="examples"></a>Ejemplos
 

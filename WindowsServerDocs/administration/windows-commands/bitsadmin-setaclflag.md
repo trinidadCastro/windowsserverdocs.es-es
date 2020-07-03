@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setaclflag
-description: Tema de referencia del comando bitsadmin setaclflag, que establece las marcas de propagación de la lista de control de acceso (ACL).
+description: Artículo de referencia para el comando bitsadmin setaclflag, que establece las marcas de propagación de la lista de control de acceso (ACL).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1852bd267fe22825d55f7522a81179e9290e2a00
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: dcf07f944813c0c8d7a4ff4c4f52c598c0f3bf47
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716987"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927951"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
-Establece las marcas de propagación de la lista de control de acceso (ACL) para el trabajo. Las marcas indican que desea mantener la información del propietario y de la ACL con el archivo que se está descargando. Por ejemplo, para mantener el propietario y el grupo con el archivo, establezca el parámetro **Flags** en `og`.
+Establece las marcas de propagación de la lista de control de acceso (ACL) para el trabajo. Las marcas indican que desea mantener la información del propietario y de la ACL con el archivo que se está descargando. Por ejemplo, para mantener el propietario y el grupo con el archivo, establezca el parámetro **Flags** en `og` .
 
 ## <a name="syntax"></a>Sintaxis
 

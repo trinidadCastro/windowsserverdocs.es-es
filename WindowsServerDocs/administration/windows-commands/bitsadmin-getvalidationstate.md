@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getvalidationstate
-description: Tema de referencia del comando bitsadmin getvalidationstate, que notifica el estado de validación del contenido del archivo especificado en el trabajo.
+description: Artículo de referencia para el comando bitsadmin getvalidationstate, que notifica el estado de validación del contenido del archivo especificado en el trabajo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca753b20a1b7834d2e05d4ff8729a08332256f8c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 72d53572411a33259467fa8023b9ef08fe4a5595
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717458"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926622"
 ---
 # <a name="bitsadmin-getvalidationstate"></a>bitsadmin getvalidationstate
 

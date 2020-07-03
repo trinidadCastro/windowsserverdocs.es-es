@@ -1,6 +1,6 @@
 ---
 title: bitsadmin replaceremoteprefix
-description: Tema de referencia del comando bitsadmin replaceremoteprefix, que cambia la dirección URL remota para todos los archivos del trabajo de *oldprefix* a *newprefix*, según sea necesario.
+description: Artículo de referencia para el comando bitsadmin replaceremoteprefix, que cambia la dirección URL remota para todos los archivos del trabajo de *oldprefix* a *newprefix*, según sea necesario.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 745d026513413db799e86df3422d5ee19c89274f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e2453ac4c223baa049980578c81d9bc6539baac7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717037"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927973"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
 
@@ -36,7 +36,7 @@ bitsadmin /replaceremoteprefix <job> <oldprefix> <newprefix>
 
 ## <a name="examples"></a>Ejemplos
 
-Para cambiar la dirección URL remota para todos los archivos del *myDownloadJob*trabajo denominado myDownloadJob *http://stageserver* , *http://prodserver*de a.
+Para cambiar la dirección URL remota para todos los archivos del trabajo denominado *myDownloadJob*, de *http://stageserver* a *http://prodserver* .
 
 ```
 bitsadmin /replaceremoteprefix myDownloadJob http://stageserver http://prodserver

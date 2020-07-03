@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getpeercachingflags
-description: Tema de referencia para el comando bitsadmin getpeercachingflags, que recupera marcas que determinan si los archivos del trabajo pueden almacenarse en caché y servirse a los elementos del mismo nivel, y si BITS puede descargar contenido del trabajo desde los elementos del mismo nivel.
+description: Artículo de referencia para el comando bitsadmin getpeercachingflags, que recupera marcas que determinan si los archivos del trabajo pueden almacenarse en caché y servirse a los elementos del mismo nivel, y si BITS puede descargar el contenido del trabajo desde los elementos del mismo nivel.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f30eead56958af3cd0fb0d91f6ee2bf9f79fdc4e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ad270fb8003c518c43bae86b066fea5ebc31d008
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717690"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926866"
 ---
 # <a name="bitsadmin-getpeercachingflags"></a>bitsadmin getpeercachingflags
 

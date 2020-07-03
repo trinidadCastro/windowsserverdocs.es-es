@@ -1,6 +1,6 @@
 ---
 title: bitsadmin makecustomheaderswriteonly
-description: Tema de referencia del comando bitsadmin makecustomheaderswriteonly, que hace que los encabezados HTTP personalizados de un trabajo sean de solo escritura.
+description: Artículo de referencia para el comando bitsadmin makecustomheaderswriteonly, que hace que los encabezados HTTP personalizados de un trabajo sean de solo escritura.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 2aeab7e0ee7797b3e0be7be1156920f3bafc84dc
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3a97054bb9e8156de23e07d18d9806e04c59e967
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717406"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926522"
 ---
 # <a name="bitsadmin-makecustomheaderswriteonly"></a>bitsadmin makecustomheaderswriteonly
 
