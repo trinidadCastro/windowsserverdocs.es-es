@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: 1094072935d463aa57eb6d44d14d008067745f03
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: cb91b884edfbd105bc9e88a9d11b3b96055247c9
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775328"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833338"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -25,7 +25,7 @@ Para descubrir las novedades, consulta el [historial de versiones](support/relea
 
 ## <a name="download-now"></a>Descargar ahora
 
-**Descarga [Windows Admin Center](https://www.microsoft.com/evalcenter/evaluate-windows-admin-center)** desde Microsoft Evaluation Center. Aunque ponga "Iniciar la evaluación", esta es la versión disponible con carácter general para su uso en producción. Se incluye como parte de la licencia de Windows o Windows Server.
+**Descarga [Windows Admin Center](https://www.microsoft.com/evalcenter/evaluate-windows-admin-center)** desde Microsoft Evaluation Center. Aunque ponga "Iniciar la evaluación", esta es la versión disponible con carácter general para su uso en producción.
 
 Para obtener ayuda con la instalación, consulta [Instalar](deploy/install.md). Para obtener sugerencias sobre cómo empezar a trabajar con Windows Admin Center, consulta [Introducción](use/get-started.md).
 
