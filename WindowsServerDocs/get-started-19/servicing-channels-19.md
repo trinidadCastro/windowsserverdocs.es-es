@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: a4b8f2f21a7d13c31d6c952a74d3026a750466ce
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2bf56e69d1a28007c35c320d1d5cc73c2ba9fa53
+ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472921"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85586688"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Canales de servicio de Windows Server: LTSC y SAC
 
@@ -25,21 +25,21 @@ Puedes mantener los servidores en el Canal de mantenimiento a largo plazo (LTSC)
 
 ## <a name="long-term-servicing-channel-ltsc"></a>Canal de mantenimiento a largo plazo (LTSC)
 
-Este es el modelo de distribución con el que ya estás familiarizado (anteriormente denominado "*Rama* de mantenimiento a largo plazo"), en que se publica una nueva versión principal de Windows Server cada 2 o 3 años. Los usuarios tienen derecho a 5 años de soporte estándar y 5 años de soporte extendido. Este canal es adecuado para los sistemas que requieren una opción de mantenimiento prolongado y una estabilidad funcional. Las implementaciones de Windows Server 2016 y las versiones anteriores de Windows Server no se verán afectadas por las nuevas versiones del canal semianual. El Canal de mantenimiento a largo plazo seguirá recibiendo actualizaciones de seguridad y no relacionadas con la seguridad, pero no recibirá las nuevas funciones y funcionalidades.
+Este es el modelo de distribución con el que ya estás familiarizado (anteriormente denominado "*Rama* de mantenimiento a largo plazo"), en que se publica una nueva versión principal de Windows Server cada 2 o 3 años. Los usuarios tienen derecho a 5 años de soporte estándar y 5 años de soporte extendido. Este canal es adecuado para los sistemas que requieren una opción de mantenimiento prolongado y una estabilidad funcional. Las implementaciones de Windows Server 2019 y versiones anteriores de Windows Server no se verán afectadas por las nuevas versiones del canal semianual. El Canal de mantenimiento a largo plazo seguirá recibiendo actualizaciones de seguridad y no relacionadas con la seguridad, pero no recibirá las nuevas funciones y funcionalidades.
 
 > [!Note]
 > **El producto LTSC actual es Windows Server 2019**. Si quieres mantenerte en este canal, debes instalar (o seguir usando) Windows Server 2019, que puede instalarse en la opción de instalación básica de servidor o en la opción de instalación de experiencia de escritorio.
 
 ## <a name="semi-annual-channel"></a>Canal semianual
 
-El canal semianual es ideal para los clientes que innovan de forma rápida para sacar partido de nuevas funciones del sistema operativo a un ritmo más rápido, tanto en aplicaciones, especialmente las integradas en contenedores y microservicios, como en el centro de datos híbrido definido por software. Los productos de Windows Server del canal semianual tendrán novedades disponibles dos veces al año, en primavera y en otoño. Cada lanzamiento de este canal tendrá soporte técnico durante 18 meses desde el lanzamiento inicial.
+El canal semianual es perfecto para los clientes que innovan de forma rápida para sacar partido de nuevas funcionalidades del sistema operativo a un ritmo más rápido, y se centra en contenedores y microservicios. Los productos de Windows Server del canal semianual tendrán novedades disponibles dos veces al año, en primavera y en otoño. Cada lanzamiento de este canal tendrá soporte técnico durante 18 meses desde el lanzamiento inicial.
 
 La mayoría de las funciones presentadas en el Canal semianual se acumularán en la próxima versión del Canal de mantenimiento a largo plazo de Windows Server. Las ediciones, la funcionalidad y el contenido de soporte pueden variar entre las distintas versiones, en función de los comentarios de los clientes.
 
 El Canal semianual estará disponible para los clientes de licencias por volumen con [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx), así como a través de Azure Marketplace u otros proveedores de servicios de hosting/nube y programas de fidelidad como, por ejemplo, Suscripciones de Visual Studio.
 
-> [!Note]
-> **La versión actual del Canal semianual es Windows Server, versión 1903**. Si quieres poner servidores en este canal, debes instalar Windows Server, versión 1903, que puede instalarse en modo Server Core o en modo Nano Server ejecutado en un contenedor. No se admiten actualizaciones en contexto desde una versión de Canal de mantenimiento a largo plazo porque se encuentran en **canales de lanzamiento distintos**. Los lanzamientos del Canal semianual no son actualizaciones: son la siguiente versión de Windows Server en este canal.
+> [!Note]  
+> **La versión actual del canal semianual es Windows Server, versión 1909**. Si quieres poner servidores en este canal, debes instalar Windows Server, versión 1909, que puede instalarse en modo Server Core o en modo Nano Server ejecutado en un contenedor. No se admiten actualizaciones en contexto desde una versión de Canal de mantenimiento a largo plazo porque se encuentran en **canales de lanzamiento distintos**. Los lanzamientos del Canal semianual no son actualizaciones: son la siguiente versión de Windows Server en este canal.
 
 En este modelo, se identifican las versiones de Windows Server mediante el año y el mes de la versión: por ejemplo, en 2017, una versión en el mes 9 (septiembre) se identificaría como **versión 1709**. Las versiones nuevas de Windows Server en el Canal semianual aparecerán dos veces al año. El ciclo de vida de soporte técnico de cada versión es de 18 meses.
 
@@ -47,8 +47,8 @@ En este modelo, se identifican las versiones de Windows Server mediante el año 
 
 Estas son las diferencias clave a tener en cuenta:
 
-- ¿Necesitas innovar rápidamente? ¿Necesitas acceso anticipado a las funciones más recientes de Windows Server? ¿Necesitas trabajar con aplicaciones híbridas de cadencia rápida, dev-ops y tejidos Hyper-V? Si es así, debes plantearte **unirte al Canal semianual** instalando **Windows Server, versión 1903**. Como se describe en este tema, recibirás nuevas versiones dos veces al año, con 18 meses de soporte de producción estándar por versión. Se obtienen a través de licencias por volumen, Azure o servicios de suscripción de Visual Studio. Actualmente, las versiones del Canal semianual requieren licencias por volumen y Software Assurance, si vas a ejecutar el producto en producción.
-- ¿Necesitas estabilidad y previsibilidad? ¿Necesitas ejecutar máquinas virtuales y cargas de trabajo tradicionales en servidores físicos? Si es así, debes plantearte **mantener esos servidores en el Canal de mantenimiento a largo plazo**. La versión del LTSC actual es **Windows Server 2019**. Como se describe en este tema, tendrás acceso a las nuevas versiones cada 2-3 años, con 5 años de soporte estándar, seguidos de 5 años de soporte extendido por versión. Las versiones del LTSC están disponibles a través de todos los mecanismos de distribución. Las versiones del LTSC están disponibles para cualquiera, independientemente del modelo de licencias que estén usando.
+- ¿Necesita un refuerzo en nuevas tecnologías de DevOps, contenedores y microservicios? Si es así, debe plantearse **unirse al canal semianual** mediante la instalación de **Windows Server, versión 1909**. Como se describe en este tema, recibirás nuevas versiones dos veces al año, con 18 meses de soporte de producción estándar por versión. Se obtienen a través de licencias por volumen, Azure o servicios de suscripción de Visual Studio. Actualmente, las versiones del Canal semianual requieren licencias por volumen y Software Assurance, si vas a ejecutar el producto en producción.
+- ¿Necesitas estabilidad y previsibilidad? ¿Necesitas ejecutar máquinas virtuales y cargas de trabajo tradicionales en servidores físicos? Si es así, debes plantearte **mantener esos servidores en el Canal de mantenimiento a largo plazo**. La versión del LTSC actual es **Windows Server 2019**. Como se describe en este tema, tendrás acceso a las nuevas versiones cada 2-3 años, con 5 años de soporte estándar, seguidos de 5 años de soporte extendido por versión. Las versiones del LTSC están disponibles a través de todos los mecanismos de distribución. Las versiones del LTSC están disponibles para cualquiera, independientemente del modelo de licencias que estén usando. 
 
 La siguiente tabla resume las principales diferencias entre los canales:
 
