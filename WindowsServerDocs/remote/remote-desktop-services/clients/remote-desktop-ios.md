@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 978c42b70f1c74a009640f7feda8dee7a82c9cff
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 4eae1c991b3ce418f95b6b47eda485845a336e2f
+ms.sourcegitcommit: 9a72fa784206a4b780d6d1d630ec6f21fecb8db3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269233"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052590"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introducción al cliente de iOS
 
@@ -167,7 +167,7 @@ El cliente utiliza gestos táctiles estándar. También se pueden usar gestos t�
 | Puntero | Haga clic con el botón secundario en          | Pulsar con dos dedos                                              |
 | Puntero | Clic con el botón derecho y arrastrar | Pulsar dos veces con dos dedos y mantener pulsado y, a continuación, arrastrar                    |
 | Puntero | Rueda del ratón          | Pulsar dos veces y mantener pulsado con dos dedos y, a continuación, arrastrar hacia arriba o hacia abajo                |
-| Puntero | Zoom                 | Con dos dedos, acérquelos para acercar el zoom y sepárelos para alejar. |
+| Puntero | Zoom                 | Con dos dedos, acérquelos para alejar el zoom y sepárelos para acercar. |
 
 ## <a name="supported-input-devices"></a>Dispositivos de entrada compatibles
 
