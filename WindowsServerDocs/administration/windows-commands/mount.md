@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 505094251ab6b0053cc3d46801ba5f6170201ecd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a81e5d6583eeb6859d5c82065b5bab5fff7c6c9f
+ms.sourcegitcommit: 102a929be3523dbd6523079f0a5738844cef81b4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935727"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384645"
 ---
 # <a name="mount"></a>montar
 
@@ -43,8 +43,8 @@ mount [-o <option>[...]] [-u:<username>] [-p:{<password> | *}] {\\<computername>
 | -o casesensitive | Fuerza a las búsquedas de archivos en el servidor a distinguir entre mayúsculas y minúsculas. |
 | -o FileAccess =`<mode>` | Especifica el modo de permisos predeterminado de los nuevos archivos creados en el recurso compartido de NFS. Especifique el *modo* como un número de tres dígitos con el formato *ogw*, donde *o*, *g*y *w* son un dígito que representa el acceso concedido al propietario, grupo y mundo del archivo, respectivamente. Los dígitos deben estar en el intervalo de 0-7, incluido:<ul><li>**0:** Sin acceso</li><li>**1:** x (ejecutar acceso)</li><li>**2:** w (acceso de escritura)</li><li>**3:** WX (acceso de escritura y ejecución)</li><li>**4:** r (acceso de lectura)</li><li>**5:** RX (acceso de lectura y ejecución)</li><li>**6:** RW (acceso de lectura y escritura)</li><li>**7:** rwx (acceso de lectura, escritura y ejecución)</li></ul> |
 | -o lang =`{euc-jp|euc-tw|euc-kr|shift-jis|Big5|Ksc5601|Gb2312-80|Ansi)` | Especifica la codificación de idioma que se va a configurar en un recurso compartido NFS. Solo puede utilizar un idioma en el recurso compartido. Este valor puede incluir cualquiera de los siguientes valores:<ul><li>**EUC-jp:** Japonés</li><li>**EUC-TW:** Chino</li><li>**EUC-KR:** Coreano</li><li>**Shift-JIS:** Japonés</li><li>**Big5:** Chino</li><li>**Ksc5601:** Coreano</li><li>**Gb2312-80:** Chino Simplificado</li><li>**ANSI:** Codificado con ANSI</li></ul> |
-| 5.50`<username>` | Especifica el nombre de usuario que se va a usar para montar el recurso compartido. Si *el* nombre de usuario no está precedido por una barra diagonal inversa (* *\** ), se trata como un nombre de usuario de Unix. |
-| -p:`<password>` | Contraseña que se va a usar para montar el recurso compartido. Si usa un asterisco (**&#42;**), se le pedirá la contraseña. |
+| 5.50`<username>` | Especifica el nombre de usuario que se va a usar para montar el recurso compartido. Si *el* nombre de usuario no está precedido por una barra diagonal inversa ( **\\** ), se trata como un nombre de usuario de Unix. |
+| m`<password>` | Contraseña que se va a usar para montar el recurso compartido. Si usa un asterisco (**&#42;**), se le pedirá la contraseña. |
 | `<computername>` | Especifica el nombre del servidor NFS. |
 | `<sharename>` | Especifica el nombre del sistema de archivos. |
 | `<devicename>` | Especifica la letra de unidad y el nombre del dispositivo. Si usa un asterisco (**&#42;**), este valor representa la primera letra de controlador disponible. |

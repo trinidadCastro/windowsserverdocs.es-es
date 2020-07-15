@@ -1,5 +1,5 @@
 ---
-title: Implementación de dispositivos de gráficos mediante vGPU de RemoteFX
+title: Implementar dispositivos gráficos con RemoteFX vGPU
 description: Obtenga información sobre cómo implementar y configurar vGPU de RemoteFX en Windows Server
 ms.prod: windows-server
 ms.reviewer: rickman
@@ -7,17 +7,20 @@ author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
-ms.date: 08/21/2019
-ms.openlocfilehash: 4ae185232ec39d92997929f8f916ff49caf26dcf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.date: 07/14/2020
+ms.openlocfilehash: ab16dcdc8ce29f2440207ea5bbc7c421f171ed4a
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310509"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390092"
 ---
-# <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>Implementación de dispositivos de gráficos mediante vGPU de RemoteFX
+# <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>Implementar dispositivos gráficos con RemoteFX vGPU
 
 > Se aplica a: Windows Server 2016, Microsoft Hyper-V Server 2016
+
+> [!NOTE]
+> Debido a los problemas de seguridad, vGPU de RemoteFX está deshabilitado de forma predeterminada en todas las versiones de Windows a partir de la actualización de seguridad del 14 de julio de 2020. Para obtener más información, consulte [KB 4570006](https://support.microsoft.com/help/4570006).
 
 La característica vGPU para RemoteFX permite que varias máquinas virtuales compartan una GPU física. Los recursos de representación y proceso se comparten dinámicamente entre las máquinas virtuales, lo que hace que el vGPU de RemoteFX sea adecuado para cargas de trabajo de alta ráfaga en las que no se requieren recursos de GPU dedicados. Por ejemplo, en un servicio VDI, el vGPU de RemoteFX se puede usar para descargar los costos de representación de la aplicación en la GPU, con el efecto de reducir la carga de la CPU y mejorar la escalabilidad del servicio.
 
@@ -80,7 +83,7 @@ Use los siguientes cmdlets de PowerShell para agregar, revisar y configurar el a
 
 ## <a name="monitor-performance"></a>Supervisión del rendimiento
 
-El rendimiento y la escala de un servicio habilitado para vGPU de RemoteFX vienen determinados por diversos factores, como el número de GPU del sistema, la memoria total de la GPU, la cantidad de memoria del sistema y la velocidad de memoria, el número de núcleos de CPU y la frecuencia del reloj de la CPU, la velocidad de almacenamiento y NUMA aplicación.
+El rendimiento y la escala de un servicio habilitado para vGPU de RemoteFX se determinan mediante una serie de factores, como el número de GPU del sistema, la memoria total de la GPU, la cantidad de memoria del sistema y la velocidad de memoria, el número de núcleos de CPU y la frecuencia del reloj de la CPU, la velocidad de almacenamiento y la implementación de NUMA.
 
 ### <a name="host-system-memory"></a>Memoria del sistema host
 
@@ -94,7 +97,7 @@ Cada escritorio virtual habilitado para vGPU usa la memoria de vídeo de hardwar
 
 ### <a name="host-cpu"></a>CPU del host
 
-El hipervisor programa el host y las máquinas virtuales en la CPU. La sobrecarga se aumenta en un host habilitado para RemoteFX porque el sistema ejecuta un proceso adicional (rdvgm. exe) por escritorio virtual habilitado para vGPU. Este proceso usa el controlador de dispositivo gráfico para ejecutar comandos en la GPU. El códec también utiliza la CPU para comprimir los datos de pantalla que se deben devolver al cliente.
+El hipervisor programa el host y las máquinas virtuales en la CPU. La sobrecarga se aumenta en un host habilitado para RemoteFX porque el sistema ejecuta un proceso adicional (rdvgm.exe) por escritorio virtual habilitado para vGPU. Este proceso usa el controlador de dispositivo gráfico para ejecutar comandos en la GPU. El códec también utiliza la CPU para comprimir los datos de pantalla que se deben devolver al cliente.
 
 Un mayor número de procesadores virtuales supone una mejor experiencia de usuario. Se recomienda asignar al menos dos CPU virtuales por escritorio virtual habilitado para vGPU. También se recomienda usar la arquitectura x64 para escritorios virtuales habilitados para vGPU porque el rendimiento de las máquinas virtuales x64 es mejor en comparación con las máquinas virtuales x86.
 
