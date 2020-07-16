@@ -7,20 +7,22 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 10/25/2017
+ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 77f82023b8ed5db6f329530bebc3162cb8565856
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 581b80fe07043314e573261a6735f121bc30e2e3
+ms.sourcegitcommit: a5badf6b08ec0b25ec73df4b827c4e40b5ccd974
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474552"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410369"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>Uso de Espacios de almacenamiento directo en clústeres de máquinas virtuales invitadas
 
 > Se aplica a: Windows Server 2019, Windows Server 2016
 
-Puede implementar Espacios de almacenamiento directo en un clúster de servidores físicos o en clústeres invitados de máquinas virtuales, como se describe en este tema. Este tipo de implementación ofrece almacenamiento virtual compartido en un conjunto de máquinas virtuales sobre una nube privada o pública para que las soluciones de alta disponibilidad de la aplicación se puedan usar para aumentar la disponibilidad de las aplicaciones.
+Puede implementar Espacios de almacenamiento directo (a veces denominado S2D) en un clúster de servidores físicos o en clústeres invitados de máquinas virtuales, como se describe en este tema. Este tipo de implementación ofrece almacenamiento virtual compartido en un conjunto de máquinas virtuales sobre una nube privada o pública para que las soluciones de alta disponibilidad de la aplicación se puedan usar para aumentar la disponibilidad de las aplicaciones.
+
+Para usar en su lugar discos compartidos de Azure para máquinas virtuales invitadas, consulte [Azure Shared Disks](/azure/virtual-machines/windows/disks-shared).
 
 ![](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
 
@@ -30,7 +32,7 @@ Puede implementar Espacios de almacenamiento directo en un clúster de servidore
 
 <iframe src="https://channel9.msdn.com/Series/Microsoft-Hybrid-Cloud-Best-Practices-for-IT-Pros/Step-by-Step-Deploy-Windows-Server-2016-Storage-Spaces-Direct-S2D-Cluster-in-Microsoft-Azure/player" width="960" height="540" allowfullscreen></iframe>
 
-## <a name="requirements"></a>Requisitos
+## <a name="requirements-for-guest-clusters"></a>Requisitos para los clústeres invitados
 
 Las consideraciones siguientes se aplican al implementar Espacios de almacenamiento directo en un entorno virtualizado.
 
@@ -62,29 +64,29 @@ Las consideraciones siguientes se aplican al implementar Espacios de almacenamie
 - Deshabilite las funciones de sustitución automática de unidad en el Servicio de mantenimiento ejecutando el siguiente cmdlet de PowerShell:
 
     ```powershell
-          Get-storagesubsystem clus* | set-storagehealthsetting -name "System.Storage.PhysicalDisk.AutoReplace.Enabled" -value "False"
-          ```
+    Get-storagesubsystem clus* | set-storagehealthsetting -name "System.Storage.PhysicalDisk.AutoReplace.Enabled" -value "False"
+    ```
 
-- To give greater resiliency to possible VHD / VHDX / VMDK storage latency in guest clusters, increase the Storage Spaces I/O timeout value:
+- Aumente el valor de tiempo de espera de e/s de espacios de almacenamiento para proporcionar mayor resistencia a la latencia de almacenamiento VHD/VHDX/VMDK posible en los clústeres invitados.
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
 
     `dword: 00007530`
 
-    The decimal equivalent of Hexadecimal 7530 is 30000, which is 30 seconds. Note that the default value is 1770 Hexadecimal, or 6000 Decimal, which is 6 seconds.
+    El equivalente decimal del hexadecimal 7530 es 30000, que es de 30 segundos. Tenga en cuenta que el valor predeterminado es 1770 hexadecimal o 6000 decimal, que es de 6 segundos.
 
-## Not supported
+## <a name="not-supported"></a>No compatible
 
-- Host level virtual disk snapshot/restore
+- Instantánea o restauración de disco virtual de nivel de host
 
-    Instead use traditional guest level backup solutions to backup and restore the data on the Storage Spaces Direct volumes.
+    En su lugar, use soluciones tradicionales de copia de seguridad de nivel de invitado para realizar copias de seguridad y restaurar los datos en los volúmenes de Espacios de almacenamiento directo.
 
-- Host level virtual disk size change
+- Cambio de tamaño de disco virtual de nivel de host
 
-    The virtual disks exposed through the virtual machine must retain the same size and characteristics. Adding more capacity to the storage pool can be accomplished by adding more virtual disks to each of the virtual machines and adding them to the pool. It's highly recommended to use virtual disks of the same size and characteristics as the current virtual disks.
+    Los discos virtuales expuestos a través de la máquina virtual deben tener el mismo tamaño y características. La adición de más capacidad al grupo de almacenamiento se puede realizar agregando más discos virtuales a cada una de las máquinas virtuales y agregándolas al grupo. Se recomienda encarecidamente usar discos virtuales del mismo tamaño y características que los discos virtuales actuales.
 
-## Additional References
+## <a name="additional-references"></a>Referencias adicionales
 
-- [Additional Azure Iaas VM templates for deploying Storage Spaces Direct, videos, and step-by-step guides](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126).
+- [Plantillas adicionales de máquinas virtuales de IaaS de Azure para implementar espacios de almacenamiento directo, vídeos y guías paso a paso](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126).
 
-- [Additional Storage Spaces Direct Overview](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+- [Información general adicional Espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
