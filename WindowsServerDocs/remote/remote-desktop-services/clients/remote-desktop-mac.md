@@ -8,14 +8,14 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/06/2020
+ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c219a6dbc5922e9d7240b3004c1dd92eb7d057a
-ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
+ms.openlocfilehash: 7be6b7542ca77c80a638df6404aefe77d8d7d19c
+ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82903463"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86445709"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introducción al cliente de macOS
 
@@ -50,7 +50,9 @@ Para suscribirte a una fuente:
 
 1. Selecciona **Add feed** (Agregar fuente) en la página principal para conectarte al servicio y recuperar los recursos.
 2. Escribe la dirección URL de la fuente. Puede ser una dirección URL o una dirección de correo electrónico:
-   - Si eliges una dirección URL, usa la que te proporcionó el administrador. Normalmente, la dirección URL es <https://rdweb.wvd.microsoft.com>.
+   - Esta dirección URL suele ser una URL de Windows Virtual Desktop. La que use dependerá de la versión de Windows Virtual Desktop que esté usando.
+      - En el caso de la versión de otoño de 2019, use `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+      - En el caso de la versión de primavera de 2020, use `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Para usar un correo electrónico, escribe tu dirección de correo: Esto indica al cliente que busque una dirección URL asociada a tu dirección de correo electrónico si el administrador lo ha configurado así.
 3. Selecciona **Subscribe** (Suscribirse).
 4. Inicia sesión con tu cuenta de usuario cuando se te solicite.
@@ -61,17 +63,19 @@ Una vez suscrito a una fuente, el contenido de la fuente se actualizará automá
 
 ### <a name="export-and-import-connections"></a>Exportación e importación de conexiones
 
-Puedes exportar una definición de conexión a Escritorio remoto y usarla en otro dispositivo. Los escritorios remotos se guardan en archivos .RDP separados.
+Puede exportar una definición de conexión a Escritorio remoto y usarla en otro dispositivo. Los escritorios remotos se guardan en archivos RDP separados.
+
+Para exportar un archivo RDP:
 
 1. En Connection Center, haz clic con el botón derecho en el escritorio remoto.
 2. Selecciona **Export** (Exportar).
-3. Ve a la ubicación donde quieres guardar el archivo .RDP del escritorio remoto.
-4. Selecciona **Aceptar**.
+3. Vaya a la ubicación donde quiere guardar el archivo RDP del escritorio remoto.
+4. Seleccione **Aceptar**.
 
-Sigue estos pasos para importar un archivo .RDP de escritorio remoto.
+Para importar un archivo RDP:
 
 1. En la barra de menús, haz clic en **File** > **Import** (Archivo > Importar).
-2. Ve al archivo .RDP.
+2. Vaya al archivo RDP.
 3. Selecciona **Open** (Abrir).
 
 ## <a name="add-a-remote-resource"></a>Adición de recursos remotos
@@ -83,7 +87,7 @@ Los recursos remotos son programas RemoteApp, escritorios basados en sesión y e
 
 Para agregar un recurso remoto:
 
-1. En el Centro de conexión, haz clic en **+** y, luego, en **Agregar recursos remotos**. 
+1. En el Centro de conexión, haz clic en **+** y, luego, en **Agregar recursos remotos**.
 2. Escribe información para el recurso remoto:
    - **Dirección URL de fuente**: la dirección URL del servidor de Acceso web a Escritorio remoto. En este campo también puedes escribir la cuenta de correo electrónico corporativa (esto indica al cliente que busque el servidor de Acceso web a Escritorio remoto asociado con la dirección de correo electrónico).
    - **Nombre de usuario**: el nombre de usuario que se usa para servidor de Acceso web a Escritorio remoto al que se conecta.
@@ -128,7 +132,9 @@ Puedes especificar la resolución de pantalla de la sesión de Escritorio remoto
 
 Para eliminar la resolución, selecciónala y selecciona **-** .
 
-**Displays have separate spaces** (Las pantallas tienen espacios separados). Si ejecutas Mac OS X 10.9 y deshabilitaste **Displays have separate spaces** (Las pantallas tienen espacios separados) en Mavericks (**Preferencias del sistema > Control de misiones**), debes establecer esta configuración en el cliente de Escritorio remoto con la misma opción.
+## <a name="displays-have-separate-spaces"></a>Las pantallas tienen espacios separados
+
+Si ejecuta Mac OS X 10.9 y deshabilitó **Las pantallas tienen espacios separados** en Mavericks (**Preferencias del sistema > Control de misiones**), debe establecer esta configuración en el cliente de Escritorio remoto con la misma opción.
 
 ### <a name="drive-redirection-for-remote-resources"></a>Redireccionamiento de unidades para los recursos remotos
 
@@ -139,18 +145,18 @@ El redireccionamiento de unidades se admite para los recursos remotos de modo qu
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>Uso de un teclado en una sesión remota
 
-Las distribuciones del teclado Mac son distintas de las distribución del teclado Windows. 
+Las distribuciones del teclado Mac son distintas de las distribución del teclado Windows.
 
 - La tecla de comando del teclado Mac es equivalente a la tecla Windows.
-- Para llevar a cabo las acciones que usan el botón de comando en Mac, deberás usar el botón de control en Windows (por ejemplo, Copiar = Ctrl + C).
-- Para activar las teclas de función en la sesión, debes presionar además la tecla FN (por ejemplo, FN + F1).
+- Para llevar a cabo las acciones que usan el botón de comando en Mac, deberá usar el botón de control en Windows (por ejemplo, Copiar = CTRL+C).
+- Para activar las teclas de función en la sesión, debe presionar además la tecla FN (por ejemplo, FN+F1).
 - La tecla Alt que está a la derecha de la barra espaciadora en el teclado Mac equivale a la tecla Alt Gr/Alt derecho en Windows.
 
 De manera predeterminada, la sesión remota usará la misma configuración regional del teclado que usa el sistema operativo donde se ejecuta el cliente. (Si el equipo Mac ejecuta un sistema operativo en en-us, esa configuración regional se usará también para las sesiones remotas). Si no se usa la configuración regional del teclado del sistema operativo, comprueba la configuración del teclado del equipo remoto y cámbiala manualmente. Consulta las [Preguntas más frecuentes del cliente de Escritorio remoto](remote-desktop-client-faq.md) para más información sobre los teclados y las configuraciones regionales.
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>Compatibilidad con la autorización y autenticación acoplables de la puerta de enlace de Escritorio remoto
 
-Windows Server 2012 R2 introdujo la compatibilidad con un nuevo método de autenticación, la autorización y autenticación acoplables de la puerta de enlace de Escritorio remoto, que proporciona más flexibilidad para las rutinas de autenticación personalizadas. Ahora puedes probar este modelo de autenticación con el cliente de Mac. 
+Windows Server 2012 R2 introdujo la compatibilidad con un nuevo método de autenticación, la autorización y autenticación acoplables de la puerta de enlace de Escritorio remoto, que proporciona más flexibilidad para las rutinas de autenticación personalizadas. Ahora puedes probar este modelo de autenticación con el cliente de Mac.
 
 > [!IMPORTANT]
 > No se admiten los modelos personalizados de autenticación y autorización antes de Windows 8.1, a pesar de que se analizan en el artículo mencionado.

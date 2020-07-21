@@ -8,14 +8,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/12/2020
+ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a9cb49f2570b297c81f41412ad041215090538d0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b76ded74b311265a22e32d836cb7a5dd5fe03f0d
+ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80856238"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86445729"
 ---
 # <a name="get-started-with-the-android-client"></a>Introducción al cliente de Android
 
@@ -76,7 +76,9 @@ Los recursos remotos son programas RemoteApp, escritorios basados en sesión y e
 
 1. En Connection Center (Centro de conexión), pulsa **+** y, después, **Remote Resources Feed** (Fuente de recursos remotos).
 2. Escribe la **Dirección URL de fuente**. Puede ser una dirección URL o una dirección de correo electrónico:
-   - La **dirección URL** es el servidor de acceso web de Escritorio remoto que te proporciona el administrador. Si tienes acceso a recursos de Windows Virtual Desktop, puedes usar `https://rdweb.wvd.microsoft.com`.
+   - La **dirección URL** es el servidor de acceso web de Escritorio remoto que te proporciona el administrador. Si accede a los recursos de Windows Virtual Desktop, puede usar una de las siguientes direcciones URL, según la versión que esté usando:
+     - Si usa la versión de otoño de 2019, use: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+     - Si usa la versión de primavera de 2020, use: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Si tienes previsto usar **Correo electrónico**, escribe tu dirección de correo electrónico en este campo. Esto indica al cliente que busque un servidor de acceso web de Escritorio remoto asociado a tu dirección de correo electrónico si el administrador lo ha configurado.
 3. Pulsa **Siguiente**.
 4. Escribe la información de inicio de sesión cuando se te pida. Esto puede variar en función de la implementación y puede incluir:

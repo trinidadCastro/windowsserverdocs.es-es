@@ -4,17 +4,17 @@ description: Proporciona información sobre las configuraciones admitidas para R
 ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: elizapo
-ms.date: 10/22/2019
+ms.date: 07/14/2020
 ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: dae6c00bd09e9c10e32932701095244a75f9ca7a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 406112eae884b1e34d54eb18700c3ad28c3f52c6
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860118"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390082"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>Configuraciones admitidas para Servicios de Escritorio remoto
 
@@ -53,7 +53,7 @@ Windows Server 2016 elimina la restricción del número de agentes de conexió
 
 Los Servicios de Escritorio remoto admiten sistemas equipados con GPU. Las aplicaciones que requieren una GPU se pueden usar a través de la conexión remota. Además, se puede habilitar la representación y la codificación acelerados por GPU para mejorar la escalabilidad y el rendimiento de las aplicaciones.
 
-Los host de sesión de los Servicios de Escritorio remoto y los sistemas operativos de cliente de sesión única pueden aprovechar las ventajas de una GPU física o virtual que se presenta en el sistema operativo de muchas maneras, entre las que se incluyen los [tamaños de máquina virtual optimizada para GPU de Azure](/en-us/azure/virtual-machines/windows/sizes-gpu), las GPU disponibles para el servidor de RDSH físico, las vGPU de RemoteFX (solo en Windows Server 2016) y las GPU que se presentan en las VM mediante hipervisores admitidos.
+Los host de sesión de los Servicios de Escritorio remoto y los sistemas operativos de cliente de sesión única pueden aprovechar las ventajas de una GPU física o virtual que se presenta en el sistema operativo de muchas maneras, entre las que se incluyen los [tamaños de máquina virtual optimizada para GPU de Azure](/en-us/azure/virtual-machines/windows/sizes-gpu), las GPU disponibles para el servidor de RDSH físico y las GPU que se presentan en las VM mediante hipervisores admitidos.
 
 Consulta [Which graphics virtualization technology is right for you?](rds-graphics-virtualization.md) (¿Qué tecnología de virtualización de gráficos es adecuada para usted?) para obtener ayuda para determinar lo que necesitas. Para más información sobre DDA, consulta [Planear la implementación de la asignación de dispositivos discreta](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md).
 
@@ -87,13 +87,15 @@ En la tabla siguiente se muestra la compatibilidad con escenarios de GPU en el s
 
 ### <a name="remotefx-3d-video-adapter-vgpu-support"></a>Compatibilidad del adaptador de vídeo 3D RemoteFX (vGPU)
 
+> [!NOTE]
+> Debido a los problemas de seguridad, vGPU de RemoteFX está deshabilitado de manera predeterminada en todas las versiones de Windows a partir de la actualización de seguridad del 14 de julio de 2020. Para obtener más información, consulte [KB 4570006](https://support.microsoft.com/help/4570006).
+
 Los Servicios de Escritorio remoto admiten vGPU de RemoteFX cuando la máquina virtual se ejecuta como invitado de Hyper-V en Windows Server 2012 R2 o Windows Server 2016. Los siguientes sistemas operativos invitados son compatibles con la vGPU de RemoteFX:
 
 - Windows 7 SP1
 - Windows 8.1
 - Windows 10 1703 o posterior
 - Windows Server 2016 solo en una implementación de sesión única
-- Windows Server 2019 solo en una implementación de sesión única
 
 ### <a name="discrete-device-assignment-support"></a>Compatibilidad de la asignación discreta de dispositivos
 
