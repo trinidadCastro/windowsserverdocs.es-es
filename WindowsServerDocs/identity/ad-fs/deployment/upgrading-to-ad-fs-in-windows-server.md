@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 9389d1565462572a5617856f0f2531580b069745
-ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
+ms.openlocfilehash: b6fc6c662630af5658e5f186c958f4ddaffccc42
+ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81650072"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866034"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Actualización a AD FS en Windows Server 2016 mediante una base de datos WID
 
@@ -122,7 +122,7 @@ Invoke-AdfsFarmBehaviorLevelRaise
 
 ![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
 
-11. Del mismo modo, puede usar el cmdlet de `Get-AdfsFarmInformation` PowerShell: para mostrar el FBL actual.
+11. Del mismo modo, puede usar el cmdlet de PowerShell: `Get-AdfsFarmInformation` para mostrar el FBL actual.
 
 ![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
 
@@ -144,6 +144,9 @@ Compruebe la configuración de WAP ejecutando el cmdlet Get-WebApplicationProxyC
 ```PowerShell
 Get-WebApplicationProxyConfiguration
 ```
+> [!NOTE]
+> Omita el paso siguiente si ConfigurationVersion es Windows Server 2016. Este es el valor correcto para el proxy de aplicación web en Windows Server 2016/2019.
+
 Para actualizar el ConfigurationVersion de los servidores WAP, ejecute el siguiente comando de PowerShell.
 
 ```PowerShell

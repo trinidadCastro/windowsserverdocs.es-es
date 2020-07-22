@@ -7,18 +7,19 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
 ms.prod: windows-server
-ms.openlocfilehash: 3976761836e4bbec2a3d06d56220066a595046b4
-ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
+ms.openlocfilehash: a047965c260198336d3a34386cb5dc72094e7a16
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81650098"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891340"
 ---
 # <a name="windows-admin-center-release-history"></a>Historial de versiones del centro de administración de Windows
 
 Esta es una lista de las últimas características publicadas:
 
-- La versión [1910,2](https://aka.ms/wac1910.2) es la versión más reciente de GA: incluye actualizaciones para la accesibilidad de la plataforma y numerosas correcciones de errores
+- La versión [2007](https://aka.ms/wac2007) es la versión más reciente de GA: incluye compatibilidad con la nueva Azure Stack HCl y las nuevas características de varias herramientas.
+- La versión [1910,2](https://aka.ms/wac1910.2) incluye actualizaciones de accesibilidad de la plataforma y numerosas correcciones de errores
 - La versión [1910](https://aka.ms/wac1910) presenta varios servicios híbridos de Azure nuevos y aporta características que anteriormente estaban en versión preliminar al canal de GA.
 - En la versión [1909](https://aka.ms/wac1909) se incorpora el tipo de conexión específico de la máquina virtual de Azure y se unifican los tipos de conexión para los clústeres de conmutación por error tradicionales y los clústeres de HCI.
 - En la versión [1908](https://aka.ms/wac1908) se agregaron actualizaciones visuales, Packetmon, FlowLog Audit, la incorporación de Azure Monitor para clústeres y compatibilidad con WinRM a través de HTTPS (puerto 5986).
