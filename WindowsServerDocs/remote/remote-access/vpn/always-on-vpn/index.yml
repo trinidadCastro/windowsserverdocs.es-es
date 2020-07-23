@@ -9,67 +9,67 @@ metadata:
   author: eross-msft
   ms.author: lizross
   ms.date: 06/10/2020
-  ms.openlocfilehash: 2196c278e66adbf910646ab1c080efe39e2a4fe7
-  ms.sourcegitcommit: 1c9cb4be74d92afb938cad870c0b4bf506b89e98
+  ms.openlocfilehash: c07ada45d2bb1c1d95901bd493754c93ae75d3d4
+  ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 06/24/2020
-  ms.locfileid: "85332620"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "86955097"
 landingContent:
 - title: Acerca de VPN de Always On
   linkLists:
   - linkListType: overview
     links:
     - text: Características y funcionalidad de VPN de Always On
-      url: /windows-server/remote/remote-access/vpn/vpn-map-da
+      url: ../vpn-map-da.md
     - text: Información general sobre la tecnología
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-technology-overview
+      url: ./always-on-vpn-technology-overview.md
     - text: Mejoras de VPN de Always On
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-technology-overview
+      url: ./always-on-vpn-technology-overview.md
     - text: Características avanzadas de VPN de Always On
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-adv-options
+      url: ./deploy/always-on-vpn-adv-options.md
     - text: Implementación de VPN de Always On para Windows Server y Windows 10
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy
+      url: ./deploy/always-on-vpn-deploy.md
 - title: Implementar VPN de Always On
   linkLists:
   - linkListType: deploy
     links:
     - text: Escenarios y flujo de trabajo de implementación
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment
+      url: ./deploy/always-on-vpn-deploy-deployment.md
     - text: Planear la implementación de VPN de Always On
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-planning
+      url: ./deploy/always-on-vpn-deploy-planning.md
     - text: Implementar la infraestructura de VPN
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure
+      url: ./deploy/vpn-deploy-server-infrastructure.md
     - text: Configurar el acceso condicional
-      url: /windows-server/remote/remote-access/vpn/ad-ca-vpn-connectivity-windows10
+      url: ../ad-ca-vpn-connectivity-windows10.md
 - title: Solución de problemas
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Problemas de script de VPN_Profile.ps1
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#vpnprofileps1-script-issues
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#vpn_profileps1-script-issues
     - text: Problemas de conexión de cliente VPN de Always On
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#always-on-vpn-client-connection-issues
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#always-on-vpn-client-connection-issues
     - text: Problemas de conexión de acceso condicional de Azure AD
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#azure-ad-conditional-access-connection-issues
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#azure-ad-conditional-access-connection-issues
   - linkListType: reference
     links:
     - text: Códigos de error
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#error-codes
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#error-codes
     - text: Archivos de registro
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#logs
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#logs
 - title: Recursos adicionales
   linkLists:
   - linkListType: overview
     links:
     - text: Guía técnica de VPN para Windows 10
-      url: https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide
+      url: /windows/access-protection/vpn/vpn-guide
     - text: VPNv2 CSP
-      url: https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp
+      url: /windows/client-management/mdm/vpnv2-csp
     - text: Servicios de certificados de Active Directory
-      url: https://technet.microsoft.com/library/hh831740.aspx
+      url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)
     - text: Plantillas de certificado
-      url: https://technet.microsoft.com/library/cc730705.aspx
+      url: /previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11)
     - text: Public Key Infrastructure Design Guidance (Guía de diseño de la infraestructura de clave pública)
       url: https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx
     - text: 'AD CS Step by Step Guide - Two Tier PKI Hierarchy Deployment (Guía paso a paso de AD CS: implementación de la jerarquía PKI de dos niveles)Guía paso a paso de AD CS: implementación de la jerarquía PKI de dos niveles'
