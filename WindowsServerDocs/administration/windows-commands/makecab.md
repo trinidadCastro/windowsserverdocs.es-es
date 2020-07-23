@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60203390ab0955e3f8a2c52887b21192d1ec32f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2364ebc2de3a0be1051a4450ebf60214986bd6e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933538"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957087"
 ---
 # <a name="makecab"></a>makecab
 
@@ -51,4 +51,4 @@ makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 
 - [comando diantz](diantz.md)
 
-- [Formato de archivo. cab de Microsoft](https://docs.microsoft.com/previous-versions/bb417343(v=msdn.10))
+- [Formato de archivo. cab de Microsoft](/previous-versions/bb417343(v=msdn.10))

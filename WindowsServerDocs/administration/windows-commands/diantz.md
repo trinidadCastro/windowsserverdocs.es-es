@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61a10c2fb67225de1060d64db6fda4e4ff703a7b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 339ffaa56b65b2b061923ab38ee172c5e933d675
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930600"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958347"
 ---
 # <a name="diantz"></a>diantz
 
@@ -45,4 +45,4 @@ diantz [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Formato de archivo. cab de Microsoft](https://docs.microsoft.com/previous-versions/bb417343(v=msdn.10))
+- [Formato de archivo. cab de Microsoft](/previous-versions/bb417343(v=msdn.10))

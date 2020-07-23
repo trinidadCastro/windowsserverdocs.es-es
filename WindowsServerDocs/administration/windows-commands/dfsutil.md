@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c741635b2566a7bec7775de691105c15591caa62
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cfb3d221e275a688f5c18a960681257077fb4f7f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930614"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958377"
 ---
 # <a name="dfsutil"></a>Dfsutil
 
@@ -24,11 +24,11 @@ El comando Dfsutil administra los espacios de nombres DFS, los servidores y los 
 
 ## <a name="functionality-available-in-powershell"></a>Funcionalidad disponible en PowerShell
 
-El módulo [DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps) PowerShell proporciona una funcionalidad equivalente a los siguientes parámetros de Dfsutil.
+El módulo [DFSN](/powershell/module/dfsn/?view=win10-ps) PowerShell proporciona una funcionalidad equivalente a los siguientes parámetros de Dfsutil.
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| raíz | Muestra, crea, quita, importa y exporta raíces de espacio de nombres. |
+| root | Muestra, crea, quita, importa y exporta raíces de espacio de nombres. |
 | link | Muestra, crea, quita o mueve carpetas (vínculos). |
 | Destino | Muestra, crea, quita el destino de carpeta o el servidor de espacio de nombres. |
 | propiedad | Muestra o modifica un destino de carpeta o un servidor de espacio de nombres. |

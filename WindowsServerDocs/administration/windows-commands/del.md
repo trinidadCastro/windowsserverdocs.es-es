@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57f0026aebd7ff2119c7de49a03679792c3e5f0c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: fe1ae558da0a4cb19159c68c67e1e72970e3b502
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928779"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958417"
 ---
 # <a name="del"></a>del
 
 Elimina uno o varios archivos. Este comando realiza las mismas acciones que el comando **Erase** .
 
-El comando **del** también se puede ejecutar desde la consola de recuperación de Windows, con parámetros diferentes. Para obtener más información, vea [entorno de recuperación de Windows (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
+El comando **del** también se puede ejecutar desde la consola de recuperación de Windows, con parámetros diferentes. Para obtener más información, vea [entorno de recuperación de Windows (WinRE)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
 
 > [!WARNING]
 > Si usa **Supr** para eliminar un archivo del disco, no podrá recuperarlo.
@@ -44,7 +44,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 | /a [:]`<attributes>` | Elimina archivos en función de los siguientes atributos de archivo:<ul><li>archivos de solo lectura de **r**</li><li>**h** archivos ocultos</li><li>**no hay** archivos indizados de contenido</li><li>archivos **del sistema**</li><li>**archivos listos** para archivar</li><li>**l** puntos de reanálisis</li><li>**-** Se usa como significado de prefijo ' not '</li></ul>. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si usa el `del /p` comando, verá el mensaje siguiente:
 
@@ -100,4 +100,4 @@ del /a:r *.*
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Entorno de recuperación de Windows (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+- [Entorno de recuperación de Windows (WinRE)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)

@@ -8,18 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2acce64aa14d60503a5b443b831a03338c204be2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 793c9d705cc225de2372d65bf92ce924b498032a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472821"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961547"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>Herramientas de línea de comandos del servidor de archivos Administrador de recursos
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-El servidor de archivos Administrador de recursos instala los cmdlets de PowerShell de [FileServerResourceManager](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager) y las siguientes herramientas de línea de comandos:
+El servidor de archivos Administrador de recursos instala los cmdlets de PowerShell de [FileServerResourceManager](/powershell/module/fileserverresourcemanager/?view=win10-ps) y las siguientes herramientas de línea de comandos:
 
 -   **Dirquota.exe**. Se usa para crear y administrar cuotas, cuotas automáticas y plantillas de cuota.
 -   **Filescrn.exe**. Se usa para crear y administrar filtros de archivos, plantillas de filtro de archivos, excepciones al filtro de archivos y grupos de archivos.

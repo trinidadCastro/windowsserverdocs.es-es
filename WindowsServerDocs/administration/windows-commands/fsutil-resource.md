@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 75037d39a070f8c7391df4136ab958f671732e09
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c0be84f00df2e0010f6c2a318f605532a3bc4d23
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933347"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958187"
 ---
 # <a name="fsutil-resource"></a>fsutil resource
 
@@ -63,7 +63,7 @@ fsutil resource [stop] <rmrootpathname>
 | rename | Cambia el GUID del Administrador de recursos transaccional. |
 | shrink | Especifica el porcentaje por el que se puede reducir automáticamente el registro de Administrador de recursos transaccionales. |
 | tamaño | Especifica el tamaño de la Administrador de recursos transaccional como un número especificado de *contenedores*. |
-| start | Inicia el Administrador de recursos transaccional especificado. |
+| start. | Inicia el Administrador de recursos transaccional especificado. |
 | stop | Detiene el Administrador de recursos transaccional especificado. |
 
 ### <a name="examples"></a>Ejemplos
@@ -92,4 +92,4 @@ fsutil resource setautoreset true c:\
 
 - [fsutil](fsutil.md)
 
-- [NTFS de transacciones](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730726(v=ws.10))
+- [NTFS de transacciones](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v=ws.10))

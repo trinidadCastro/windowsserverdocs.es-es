@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea0b2a319dae65104db8a215e17fa4b579ee6ffa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7bccbc7bc42c8250489de875bee960bbb65e41eb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931193"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957347"
 ---
 # <a name="ftp-type"></a>ftp type
 
@@ -56,4 +56,4 @@ type binary
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Guía de FTP adicional](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Guía de FTP adicional](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

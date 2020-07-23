@@ -9,18 +9,18 @@ ms.technology: storage
 ms.assetid: 62d77150-1d9e-4069-ab4a-299f33024912
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 700e1f713d503565321ab29f5384d74382c64f21
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 664415f7952add6ae4a52f6550d78c11fa2a2978
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931202"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958197"
 ---
 # <a name="fsutil-repair"></a>fsutil repair
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8
 
-Administra y supervisa las operaciones de reparación de recuperación automática de NTFS. NTFS de recuperación automática intenta corregir los daños del sistema de archivos NTFS en línea, sin necesidad de que se ejecute **Chkdsk.exe** . Para obtener más información, consulte [NTFS de recuperación automática](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10)).
+Administra y supervisa las operaciones de reparación de recuperación automática de NTFS. NTFS de recuperación automática intenta corregir los daños del sistema de archivos NTFS en línea, sin necesidad de que se ejecute **Chkdsk.exe** . Para obtener más información, consulte [NTFS de recuperación automática](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10)).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -74,4 +74,4 @@ fsutil repair set c: 0
 
 - [fsutil](fsutil.md)
 
-- [NTFS de recuperación automática](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))
+- [NTFS de recuperación automática](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10))

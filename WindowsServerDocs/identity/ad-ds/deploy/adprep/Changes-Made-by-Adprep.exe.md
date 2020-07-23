@@ -8,18 +8,18 @@ ms.prod: windows-server
 ms.technology: active-directory-domain-services
 ms.topic: article
 author: Femila
-ms.openlocfilehash: 034404a50b6943230e1438eae0c28cd3a11b7a7a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fa4be3acda6ba27d806311dc96552d5ccad4887
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824798"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960597"
 ---
 # <a name="changes-made-by-adprepexe"></a>Changes Made by Adprep.exe
 
 >Se aplica a: Windows Server Technical Preview
 
-En este tema se describen los cambios que adprep. exe realiza en Windows Server 2012 R2 y Windows Server 2012.  
+En este tema se describen los cambios que realiza Adprep.exe en Windows Server 2012 R2 y Windows Server 2012.  
   
 -   [Actualizaciones para todo el bosque](../../../ad-ds/deploy/RODC/Forest-Wide-Updates.md)  
   
@@ -29,9 +29,7 @@ En este tema se describen los cambios que adprep. exe realiza en Windows Server 
   
 -   [Actualizaciones de esquema](../../../ad-ds/deploy/Schema-Updates.md)  
   
-## <a name="see-also"></a>Consulta también  
-[Windows Server 2008 R2: Apéndice de cambios en adprep. exe para admitir AD DS](https://technet.microsoft.com/library/dd378876(v=ws.10).aspx)  
-[Windows Server 2008: Apéndice de cambios en adprep. exe para admitir AD DS](https://technet.microsoft.com/library/cc770703(v=ws.10).aspx)  
+## <a name="see-also"></a>Consulte también  
+[Windows Server 2008 R2: apéndice de cambios en Adprep.exe para admitir AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378876(v=ws.10))  
+[Windows Server 2008: apéndice de cambios en Adprep.exe para admitir AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770703(v=ws.10))  
   
-
-

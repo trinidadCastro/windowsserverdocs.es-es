@@ -8,12 +8,12 @@ ms.date: 03/20/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0c64d90fcbeaf2aa03312b9707bcfa43379271f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1bcd4268444f49489d3e7a04c55d10cddaf92e00
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859938"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966537"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>Configurar exploradores para usar la autenticación integrada de Windows (WIA) con AD FS
 
@@ -77,4 +77,4 @@ El comando anterior garantizará que AD FS solo cubre los siguientes casos de us
 
 ### <a name="additional-links"></a>Vínculos adicionales
 
-[Documentación de Microsoft Edge](https://docs.microsoft.com/microsoft-edge/web-platform/user-agent-string)
+[Documentación de Microsoft Edge](/microsoft-edge/web-platform/user-agent-string)

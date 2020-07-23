@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2c85bd48adafb7e171754aad9682e89020b95d0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 99fabb870fecb0957968d2a0e1fd30512b6d0013
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722231"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956177"
 ---
 # <a name="rwinsta"></a>rwinsta
 
@@ -23,12 +23,12 @@ ms.locfileid: "82722231"
 Permite restablecer (eliminar) una sesión en un servidor de host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) en la biblioteca de TechNet de Windows Server.
 
 ## <a name="remarks"></a>Observaciones
 Este comando es el mismo que el comando **restablecer sesión** .
 
 ## <a name="additional-references"></a>Referencias adicionales
 [reset session](reset-session.md)
-- [Referencia de comandos de servicios de escritorio remoto de la clave](command-line-syntax-key.md)
-de sintaxis de línea de comandos[(Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+- Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
+ [Referencia de comandos de servicios de escritorio remoto (Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)

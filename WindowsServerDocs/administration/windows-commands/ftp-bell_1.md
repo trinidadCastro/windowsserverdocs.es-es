@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9481911f9de9eb62baea492964987908daa94ce1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 047778013ba341f31f01c7c806e5d36390967be8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933307"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958037"
 ---
 # <a name="ftp-bell"></a>ftp bell
 
@@ -40,4 +40,4 @@ bell
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Guía de FTP adicional](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Guía de FTP adicional](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: 2f4e0deb82f16c905f580c13115a5214556d4f5f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e5a81f2967953b985028407d53d6a039fd8990eb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475562"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961277"
 ---
 # <a name="add-folder-targets"></a>Add folder targets
 
@@ -34,7 +34,7 @@ Para agregar un destino de carpeta mediante administración de DFS, utilice el s
 4.  Si la carpeta se replica mediante Replicación DFS, puede especificar si desea agregar el nuevo destino de carpeta al grupo de replicación.
 
 > [!TIP]
-> Para agregar un destino de carpeta mediante Windows PowerShell, use el cmdlet [New-DfsnFolderTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfoldertarget) . El módulo de Windows PowerShell DFSN se presentó en Windows Server 2012.
+> Para agregar un destino de carpeta mediante Windows PowerShell, use el cmdlet [New-DfsnFolderTarget](/powershell/module/dfsn/new-dfsnfoldertarget) . El módulo de Windows PowerShell DFSN se presentó en Windows Server 2012.
 
 > [!NOTE]
 > Las carpetas pueden contener destinos de carpeta u otras carpetas DFS, pero no ambos en el mismo nivel de la jerarquía de carpetas.

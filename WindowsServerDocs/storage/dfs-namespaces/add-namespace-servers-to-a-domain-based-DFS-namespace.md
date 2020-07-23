@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ee2ae5ddf40c6d8b49b9fbd40505f4e8c70fd92c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f00a6419bae1951a7c1597212d3c37676a4db90e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473502"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961257"
 ---
 # <a name="add-namespace-servers-to-a-domain-based-dfs-namespace"></a>Agregar servidores de espacio de nombres a un espacio de nombres DFS basado en dominio
 
@@ -36,12 +36,11 @@ Para agregar un servidor de espacio de nombres a un espacio de nombres basado en
 
 
 > [!TIP]
-> Para agregar un servidor de espacio de nombres mediante Windows PowerShell, use el [cmdlet New-DfsnRootTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnroottarget). El módulo de Windows PowerShell DFSN se presentó en Windows Server 2012.
+> Para agregar un servidor de espacio de nombres mediante Windows PowerShell, use el [cmdlet New-DfsnRootTarget](/powershell/module/dfsn/new-dfsnroottarget). El módulo de Windows PowerShell DFSN se presentó en Windows Server 2012.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 -   [Implementar espacios de nombres DFS](deploying-dfs-namespaces.md)
--   [Review DFS Namespaces Server Requirements](https://technet.microsoft.com/library/cc753448(v=ws.11).aspx)
+-   [Review DFS Namespaces Server Requirements](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753448(v=ws.11))
 -   [Crear un espacio de nombres DFS](create-a-dfs-namespace.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)
-

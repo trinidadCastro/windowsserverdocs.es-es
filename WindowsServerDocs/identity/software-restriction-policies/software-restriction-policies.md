@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 905af608bcf5f43ea8883bc62d0344887c89baa7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 28a4773899d0ccd53f6c7facd36898225ca7e007
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855748"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966157"
 ---
 # <a name="software-restriction-policies"></a>Directivas de restricción de software
 
@@ -57,7 +57,7 @@ Concretamente, los administradores pueden usar las directivas de restricción de
 ## <a name="new-and-changed-functionality"></a><a name="BKMK_NEW"></a>Funcionalidad nueva y modificada
 No hay cambios de funcionalidad en las directivas de restricción de software.
 
-## <a name="removed-or-deprecated-functionality"></a><a name="BKMK_DEP"></a>Funcionalidad eliminada o desusada
+## <a name="removed-or-deprecated-functionality"></a><a name="BKMK_DEP"></a>Funcionalidad eliminada o en desuso
 No hay funcionalidades eliminadas ni desusadas en las directivas de restricción de software.
 
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software
@@ -73,11 +73,11 @@ Se necesitan las siguientes características para crear y mantener las directiva
 
 Si el diseño requiere la implementaciones de estas directivas en el dominio, además de la lista anterior se necesitarán las siguientes características:
 
--   Servicios de dominio de Active Directory
+-   Active Directory Domain Services
 
 -   Directiva de grupo
 
-## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>Información de Administrador del servidor
+## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>Información sobre el Administrador del servidor
 Las directivas de restricción de software son una extensión del Editor de directivas de grupo local y no se instalan a través de Administrador del servidor, Agregar roles y características.
 
 ## <a name="see-also"></a><a name="BKMK_LINKS"></a>Vea también
@@ -85,14 +85,11 @@ En la tabla siguiente se proporcionan vínculos a recursos importantes para comp
 
 |Tipo de contenido|Referencias|
 |--------|-------|
-|**Evaluación del producto**|[Bloqueo de aplicaciones con directivas de restricción de software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-|**Planeamiento**|[Información técnica de directivas de restricción de software](software-restriction-policies-technical-overview.md) (Windows Server 2012)<p>[Referencia técnica de directivas de restricción de software](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx) (Windows Server 2003)|
+|**Evaluación del producto**|[Bloqueo de la aplicación con directivas de restricción de software](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|
+|**Planeamiento**|[Información técnica de directivas de restricción de software](software-restriction-policies-technical-overview.md) (Windows Server 2012)<p>[Referencia técnica de directivas de restricción de software](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10)) (Windows Server 2003)|
 |**Implementación**|No hay recursos disponibles.|
-|**Operaciones**|[Administrar directivas de restricción de software](administer-software-restriction-policies.md) (Windows Server 2012)<p>[Ayuda del producto de las directivas de restricción de software](https://technet.microsoft.com/library/cc779607(v=WS.10).aspx) (Windows Server 2003)|
-|**Solución de problemas**|[Solucionar problemas de directivas de restricción de software](troubleshoot-software-restriction-policies.md) (Windows Server 2012)<p>[Solución de problemas de las directivas de restricción de software](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx) (Windows Server 2003)|
-|**Seguridad**|[Amenazas y contramedidas para las directivas de restricción de software](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx) (Windows Server 2008)<p>[Amenazas y contramedidas para las directivas de restricción de software](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx) (Windows Server 2008 R2)|
-|**Herramientas y configuración**|[Herramientas y configuraciones de las directivas de restricción de software](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx) (Windows Server 2003)|
-|**Recursos de la comunidad**|[Bloqueo de aplicaciones con directivas de restricción de software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-
-
-
+|**Operaciones**|[Administrar directivas de restricción de software](administer-software-restriction-policies.md) (Windows Server 2012)<p>[Ayuda del producto de las directivas de restricción de software](/previous-versions/windows/it-pro/windows-server-2003/cc779607(v=ws.10)) (Windows Server 2003)|
+|**Solución de problemas**|[Solucionar problemas de directivas de restricción de software](troubleshoot-software-restriction-policies.md) (Windows Server 2012)<p>[Solución de problemas de directivas de restricción de software](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10)) (Windows Server 2003)|
+|**Seguridad**|[Amenazas y contramedidas para las directivas de restricción de software](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10)) (Windows Server 2008)<p>[Amenazas y contramedidas para las directivas de restricción de software](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10)) (Windows Server 2008 R2)|
+|**Herramientas y configuración**|[Herramientas y configuración de las directivas de restricción de software](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10)) (Windows Server 2003)|
+|**Recursos de la comunidad**|[Bloqueo de la aplicación con directivas de restricción de software](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

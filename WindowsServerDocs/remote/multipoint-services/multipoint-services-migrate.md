@@ -9,12 +9,12 @@ ms.assetid: 16c217ad-700a-48a3-8398-4a7f7e9edb52
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: a0a0e4f50134102bab7c258e47e63bf7d24e60c8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1609ff02c8e1b1480d004104bdc7e37f1240729a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858718"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959277"
 ---
 # <a name="multipoint-services-migration-in-windows-server-2016"></a>Migración de Multipoint Services en Windows Server 2016
 >Se aplica a: Windows Server 2016
@@ -29,7 +29,7 @@ Antes de comenzar el proceso de migración, tenga en cuenta lo siguiente:
 - El proceso de migración no recopila ni registra automáticamente la configuración de las aplicaciones en el rol Multipoint Services. Debe crear un plan de migración personalizado para las aplicaciones que desee migrar. Esto también es así cuando se usa la característica escritorios virtuales de Multipoint Services.
 - En esta guía no se proporcionan instrucciones para mover datos guardados en carpetas de usuario o compartidas en MultiPoint Server. Esto se aplica a las estaciones normales y a las estaciones de escritorios virtuales.
 - En esta guía no se incluyen instrucciones sobre cómo migrar cuando el servidor de origen ejecuta varios roles. Si el servidor ejecuta varios roles, debe diseñar un procedimiento de migración personalizado específico para el entorno del servidor, en función de la información proporcionada en las guías de migración de roles.
-- Esta guía no contiene información para migrar Servicios de Escritorio remoto cal. Para obtener esta información, vea [migrar servicios de escritorio remoto licencias de acceso de cliente (cal de RDS)](https://technet.microsoft.com/library/dd851844.aspx).
+- Esta guía no contiene información para migrar Servicios de Escritorio remoto cal. Para obtener esta información, vea [migrar servicios de escritorio remoto licencias de acceso de cliente (cal de RDS)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11)).
 
 ## <a name="supported-migration-scenarios-for-multipoint-services-in-windows-server-2016"></a>Escenarios de migración admitidos para Multipoint Services en Windows Server 2016
 Los servicios de rol de Multipoint Service están disponibles en Windows Server 2016 Standard y Datacenter. En esta guía de migración se describe cómo migrar los servicios de rol de Multipoint Services desde un servidor de origen que ejecuta Windows Server 2016 a un servidor de destino que ejecuta la misma versión.

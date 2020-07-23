@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 602f3aa99f9d0e47fbbde1ab5c09b193446d8a7c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 995b2332f98906a1a5b9cb53f504a87fb831c3e0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936917"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958807"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -32,7 +32,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                \<computerName>                 |                                                                                                                    Especifica el nombre del servidor al que se va a conectar. La opción predeterminada es el equipo local.                                                                                                                    |
 |         -u \<UserName> -p\<Password>          |                                                Especifica las credenciales administrativas para un servidor remoto que desea administrar. Este parámetro es necesario si desea administrar un servidor remoto en el que no ha iniciado sesión con credenciales administrativas.                                                |
-|                     start                      |                                                                                                                                            inicia el servicio del servidor Telnet.                                                                                                                                             |
+|                     start.                      |                                                                                                                                            inicia el servicio del servidor Telnet.                                                                                                                                             |
 |                      stop                      |                                                                                                                                             Detiene el servicio del servidor Telnet                                                                                                                                              |
 |                     pause                      |                                                                                                                          pausa el servicio del servidor Telnet. No se aceptarán nuevas conexiones.                                                                                                                          |
 |                    continue                    |                                                                                                                                            Reanuda el servicio del servidor Telnet.                                                                                                                                            |
@@ -50,7 +50,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 |     modo de configuración = {secuencia de &#124; de consola}      |                                                                                                                                             Especifica el modo de funcionamiento.                                                                                                                                             |
 |                       -?                       |                                                                                                                                           Muestra la ayuda en el símbolo del sistema.                                                                                                                                           |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 -   Para mostrar la configuración del servidor, escriba **tlntadmn** sin parámetros.
 -   Para usar el comando **tlntadmn** , debe iniciar sesión en el equipo local con credenciales administrativas. Para administrar un equipo remoto, también debe proporcionar credenciales administrativas para el equipo remoto. Para ello, inicie sesión en el equipo local con una cuenta que tenga credenciales administrativas tanto para el equipo local como para el equipo remoto. Si no puede usar este método, puede usar los parámetros **-u** y **-p** para proporcionar credenciales administrativas para el equipo remoto.
 
@@ -65,5 +65,5 @@ tlntadmn -s
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
--   [Guía de operaciones de Telnet](https://technet.microsoft.com/library/cc753164(v=ws.10).aspx)
+-   [Guía de operaciones de Telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753164(v=ws.10))
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

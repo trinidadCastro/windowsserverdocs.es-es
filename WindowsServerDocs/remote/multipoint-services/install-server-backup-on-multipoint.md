@@ -9,12 +9,12 @@ ms.assetid: e4331370-ba07-4529-92ab-db14a41bfc3b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: f8fe5ac8b57105d421af431b12c8dc17250b622d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7aa2c422151247d13dcb1dafd474fb70873f54e1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820338"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966917"
 ---
 # <a name="install-server-backup-on-your-multipoint-server"></a>Instalación de la copia de seguridad del servidor en MultiPoint Server
 Se recomienda que considere un plan de copia de seguridad y recuperación para los servidores multipoint.
@@ -56,4 +56,4 @@ Use los procedimientos siguientes para configurar el tipo de copia de seguridad 
   
 ## <a name="configure-backups-using-windows-server-backup"></a>Configurar copias de seguridad con Copias de seguridad de Windows Server  
   
--   Siga las instrucciones de [copia de seguridad del servidor](https://technet.microsoft.com/library/cc753528.aspx). 
+-   Siga las instrucciones de [copia de seguridad del servidor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753528(v=ws.11)). 

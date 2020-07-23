@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e6a01cbea0de80bfa78194d5b2d559a894d4ed77
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9b1eea449765b58461d410f0e015d4978c3ad016
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932360"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957359"
 ---
 # <a name="ftp-user"></a>ftp user
 
@@ -48,4 +48,4 @@ user User1 Password1
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Guía de FTP adicional](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Guía de FTP adicional](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

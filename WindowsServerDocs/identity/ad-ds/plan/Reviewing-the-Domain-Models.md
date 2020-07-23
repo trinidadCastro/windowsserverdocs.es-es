@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e86fac2a7d8251d6baf4f676d41ee7e9798005ab
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: db49a7e3c99e468e27c390acd58002eb09e72b3e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623931"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959367"
 ---
 # <a name="reviewing-the-domain-models"></a>Revisar los modelos de dominio
 
@@ -37,7 +37,7 @@ Es mejor minimizar el número de dominios que se implementan en el bosque. Esto 
 | Mayor probabilidad de que los objetos se muevan entre dominios | Cuanto mayor sea el número de dominios, mayor será la probabilidad de que los usuarios deban pasar de un dominio a otro. Este movimiento puede afectar potencialmente a los usuarios finales. |
 
 > [!NOTE]
-> Las directivas de bloqueo de cuenta y contraseña específica de Windows Server también pueden afectar al modelo de diseño de dominio que seleccione. Antes de esta versión de Windows Server 2008, solo podía aplicar una directiva de bloqueo de cuenta y contraseña, que se especifica en la Directiva de dominio predeterminada de dominio, a todos los usuarios del dominio. Como resultado, si desea una configuración de bloqueo de cuenta y contraseña diferente para diferentes conjuntos de usuarios, tenía que crear un filtro de contraseña o implementar varios dominios. Ahora puede usar directivas de contraseña específica para especificar varias directivas de contraseñas y aplicar restricciones de contraseña y directivas de bloqueo de cuentas diferentes a distintos conjuntos de usuarios dentro de un solo dominio. Para obtener más información sobre las directivas de bloqueo de cuenta y contraseña específica, consulte el artículo [AD DS guía paso a paso de la Directiva de bloqueo de cuentas y contraseña](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770842(v=ws.10))específica.
+> Las directivas de bloqueo de cuenta y contraseña específica de Windows Server también pueden afectar al modelo de diseño de dominio que seleccione. Antes de esta versión de Windows Server 2008, solo podía aplicar una directiva de bloqueo de cuenta y contraseña, que se especifica en la Directiva de dominio predeterminada de dominio, a todos los usuarios del dominio. Como resultado, si desea una configuración de bloqueo de cuenta y contraseña diferente para diferentes conjuntos de usuarios, tenía que crear un filtro de contraseña o implementar varios dominios. Ahora puede usar directivas de contraseña específica para especificar varias directivas de contraseñas y aplicar restricciones de contraseña y directivas de bloqueo de cuentas diferentes a distintos conjuntos de usuarios dentro de un solo dominio. Para obtener más información sobre las directivas de bloqueo de cuenta y contraseña específica, consulte el artículo [AD DS guía paso a paso de la Directiva de bloqueo de cuentas y contraseña](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770842(v=ws.10))específica.
 
 ## <a name="single-domain-model"></a>Modelo de dominio único
 

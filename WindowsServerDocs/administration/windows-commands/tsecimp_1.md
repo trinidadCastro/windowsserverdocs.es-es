@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d221479e23c737529305a2354e6a5a52b957bd8e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c5c3362571df5a3b22dda1b663fcbba749ee6df6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931487"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954897"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -31,13 +31,13 @@ tsecimp /d
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/f \<Filename>|Obligatorio. Especifica el nombre del archivo XML que contiene la información de asignaciones que desea importar.|
+|/f \<Filename>|Necesario. Especifica el nombre del archivo XML que contiene la información de asignaciones que desea importar.|
 |/v|Valida la estructura del archivo XML sin importar la información al archivo Tsec.ini.|
 |/U|Comprueba si cada usuario pertenece al dominio especificado en el archivo XML. El equipo donde use este parámetro deberá estar conectado a la red. Es posible que el parámetro reduzca considerablemente el rendimiento si se procesa una gran cantidad de información de asignaciones de usuarios.|
 |/d|Muestra una lista de los proveedores de telefonía instalados. Para cada proveedor de telefonía, se enumeran los dispositivos de línea asociados, así como las direcciones y los usuarios asociados a cada dispositivo de línea.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El archivo XML desde el cual desea importar la información de asignaciones debe respetar la estructura que se describe a continuación.
     -   Elemento **userList**
@@ -156,4 +156,4 @@ tsecimp /d
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[Información general del shell de comandos](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)
+[Información general del shell de comandos](/previous-versions/windows/it-pro/windows-server-2003/cc737438(v=ws.10))

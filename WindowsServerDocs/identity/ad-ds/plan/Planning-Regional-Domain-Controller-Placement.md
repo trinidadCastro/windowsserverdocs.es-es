@@ -8,18 +8,18 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f5b88afe50e9cb498eacf1bbc872718d50cd64da
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 574c5a4c0d009a34b1d327ac4aef3b9f5210b0bf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623933"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959397"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>Planeación de la ubicación del controlador de dominio regional
 
 > Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Para garantizar la eficacia de los costos, piense en colocar los controladores de dominio regionales que sea posible. En primer lugar, revise la hoja de cálculo "ubicaciones geográficas y vínculos de comunicación" (DSSTOPO_1. doc) que se usa en [recopilar información de red](../../ad-ds/plan/Collecting-Network-Information.md) para determinar si una ubicación es un concentrador.
+Para garantizar la eficacia de los costos, piense en colocar los controladores de dominio regionales que sea posible. En primer lugar, revise la hoja de cálculo "ubicaciones geográficas y vínculos de comunicación" (DSSTOPO_1.doc) que se usa en [recopilar información de red](../../ad-ds/plan/Collecting-Network-Information.md) para determinar si una ubicación es un centro.
 
 Planear la colocación de los controladores de dominio regionales para cada dominio que se representa en cada ubicación del concentrador. Después de colocar los controladores de dominio regionales en todas las ubicaciones del concentrador, evalúe la necesidad de colocar los controladores de dominio regionales en las ubicaciones de satélite. La eliminación de los controladores de dominio regionales innecesarios de ubicaciones satélite reduce los costos de soporte técnico necesarios para mantener una infraestructura de servidores remotos.
 
@@ -79,6 +79,6 @@ Por ejemplo, considere una red que tiene sucursales que se conectan a través de
 
 Si reducir el costo de mantenimiento de los controladores de dominio es más importante que el tráfico de red, Centralice los controladores de dominio para ese dominio y no coloque ningún controlador de dominio regional en la ubicación o considere la posibilidad de colocar RODC en la ubicación.
 
-Para obtener una hoja de cálculo que le ayude a documentar la ubicación de los controladores de dominio regionales y el número de usuarios para cada dominio que se representa en cada ubicación, vea el tema [sobre ayudas de trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608), descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abra "Ubicación del controlador de dominio" (DSSTOPO_4. doc).
+Para obtener una hoja de cálculo que le ayude a documentar la ubicación de los controladores de dominio regionales y el número de usuarios para cada dominio que se representa en cada ubicación, vea el tema [sobre ayudas de trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip y abrir "Ubicación del controlador de dominio" (DSSTOPO_4.doc).
 
-Tendrá que consultar la información acerca de las ubicaciones en las que necesita colocar controladores de dominio regionales al implementar dominios regionales. Para obtener más información acerca de la implementación de dominios regionales, consulte [implementación de dominios regionales de Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).
+Tendrá que consultar la información acerca de las ubicaciones en las que necesita colocar controladores de dominio regionales al implementar dominios regionales. Para obtener más información acerca de la implementación de dominios regionales, consulte [implementación de dominios regionales de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10)).

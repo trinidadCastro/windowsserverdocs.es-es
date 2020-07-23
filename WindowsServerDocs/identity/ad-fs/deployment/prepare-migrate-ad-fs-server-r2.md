@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 149e3d3fc4d4eee22fa9330475f0eed9d945f8b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 785a2a7c425e80b8f41e2c567826c34471cce9e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359310"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959817"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Preparar la migración del servidor de Federación AD FS 2,0 a AD FS en Windows Server 2012 R2
 
@@ -21,13 +21,13 @@ En este documento se describe cómo migrar una granja de servidores de Federaci�
   
 -   [Esquema del proceso de migración](prepare-migrate-ad-fs-server-r2.md#migration-process-outline)  
   
--   [Nueva funcionalidad de AD FS en Windows Server 2012 R2](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
+-   [Nuevas funciones de AD FS en Windows Server 2012 R2](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
   
 -   [Requisitos de AD FS en Windows Server 2012 R2](prepare-migrate-ad-fs-server-r2.md#ad-fs-requirements-in-windows-server-2012-r2)  
   
--   [Aumentar los límites de Windows PowerShell](prepare-migrate-ad-fs-server-r2.md#increasing-your-windows-powershell-limits)  
+-   [Cómo aumentar los límites de Windows PowerShell](prepare-migrate-ad-fs-server-r2.md#increasing-your-windows-powershell-limits)  
   
--   [Otras tareas y consideraciones de migración](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
+-   [Otras tareas y cuestiones a tener en cuenta al realizar la migración](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
   
 ##  <a name="migration-process-outline"></a>Esquema del proceso de migración
 
@@ -86,7 +86,7 @@ Para obtener más información, vea [Migración del servidor de federación de A
         -   Omitir la detección del dominio de inicio para la intranet  
         -   Crear temas web personalizados  
   
-Para obtener instrucciones detalladas para configurar la apariencia de las páginas de inicio de sesión de AD FS, vea [Customizing the AD FS Sign-in Pages](../operations/AD-FS-Customization-in-Windows-Server-2016.md).  
+Para obtener instrucciones detalladas para configurar la apariencia de las páginas de inicio de sesión de AD FS, vea [Customizing the AD FS Sign-in Pages](../operations/ad-fs-customization-in-windows-server.md).  
   
 Si tiene personalización de la página web en la granja de AD FS existente que desea migrar a Windows Server 2012 R2, puede volver a crearlos como parte del proceso de migración con las nuevas características de personalización de Windows Server 2012 R2.  
   
@@ -109,13 +109,13 @@ Si tiene personalización de la página web en la granja de AD FS existente que 
   
  Para que el AD FS que se ejecuta en Windows Server 2012 R2 funcione, el dominio de Active Directory debe ejecutar una de las siguientes opciones:  
   
-- Windows Server 2012 R2  
+- Windows Server 2012 R2  
   
 - Windows Server 2012  
   
 - Windows Server 2008 R2  
   
-- Windows Server 2008  
+- Windows Server 2008  
   
   Si planea usar una cuenta de servicio administrada de grupo (gMSA) como cuenta de servicio para AD FS, debe tener al menos un controlador de dominio en el entorno que se ejecute en el sistema operativo Windows Server 2012 o Windows Server 2012 R2.  
   
@@ -146,12 +146,12 @@ Durante la instalación del controlador de dominio, es posible que deba especifi
 ## <a name="other-migration-tasks-and-considerations"></a>Otras tareas y cuestiones a tener en cuenta al realizar la migración  
  Para migrar correctamente la granja de AD FS a Windows Server 2012 R2, tenga en cuenta lo siguiente:  
   
--   Los scripts de migración ubicados en la carpeta \support\adfs del CD de instalación de Windows Server 2012 R2 requieren que se conserve el mismo nombre de granja de servidores de Federación y nombre de identidad de cuenta de servicio que usó en la granja de AD FS heredada al migrarlo a Windows Servidor 2012 R2.  
+-   Los scripts de migración ubicados en la carpeta \support\adfs del CD de instalación de Windows Server 2012 R2 requieren que se conserve el mismo nombre de granja de servidores de Federación y nombre de identidad de cuenta de servicio que usó en la granja de AD FS heredada al migrarlo a Windows Server 2012 R2.  
   
 -   Si desea migrar una granja de AD FS de SQL Server, tenga en cuenta que el proceso de migración implica crear una instancia de la base de datos de SQL en la que deberá importar los datos de configuración originales.  
   
 ## <a name="next-steps"></a>Pasos siguientes
- [Migrar servicios de rol de servicios de Federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [Migrar servicios de rol de Servicios de federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
  [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)   
- [Migración del servidor proxy de AD FS Federation](migrate-fed-server-proxy-r2.md)   
- [Comprobar la migración de AD FS a Windows Server 2012 R2](verify-ad-fs-migration.md)
+ [Migración del servidor proxy de Federación de AD FS](migrate-fed-server-proxy-r2.md)   
+ [Comprobación de la migración de AD FS a Windows Server 2012 R2](verify-ad-fs-migration.md)

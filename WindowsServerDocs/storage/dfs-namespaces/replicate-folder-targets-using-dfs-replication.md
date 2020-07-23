@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3a4f76e43c2dbf5296afd163055adeafb36a5576
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 399d9915cccc5d66c2b25b1e9f51c30e37d8dff6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474402"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966447"
 ---
 # <a name="replicate-folder-targets-using-dfs-replication"></a>Replicate folder targets using DFS Replication
 
@@ -30,9 +30,9 @@ Puede usar la replicación DFS para mantener sincronizado el contenido de los de
 3.  Siga las instrucciones del Asistente para replicación de carpeta.
 
 > [!NOTE]
-> Los cambios de configuración no se aplican inmediatamente a todos los miembros excepto cuando se usan los cmdlets [Suspend-DfsReplicationGroup](https://technet.microsoft.com/itpro/powershell/windows/dfsr/suspend-dfsreplicationgroup) y [Sync-DfsReplicationGroup](https://technet.microsoft.com/itpro/powershell/windows/dfsr/sync-dfsreplicationgroup) . La nueva configuración debe replicarse en todos los controladores de dominio, y cada miembro del grupo de replicación debe sondear su controlador de dominio más cercano para obtener los cambios. La cantidad de tiempo que se tarda depende de la latencia de replicación de los servicios de directorio de Active Directory (AD DS) y el intervalo de sondeo largo (60 minutos) en cada miembro. Para sondear inmediatamente los cambios de configuración, abra una ventana del símbolo del sistema y, a continuación, escriba el siguiente comando una vez para cada miembro del grupo de replicación: <br /> dfsrdiag.exe PollAD /Member:DOMAIN\Server1
+> Los cambios de configuración no se aplican inmediatamente a todos los miembros excepto cuando se usan los cmdlets [Suspend-DfsReplicationGroup](/powershell/module/dfsr/suspend-dfsreplicationgroup?view=win10-ps) y [Sync-DfsReplicationGroup](/powershell/module/dfsr/sync-dfsreplicationgroup?view=win10-ps) . La nueva configuración debe replicarse en todos los controladores de dominio, y cada miembro del grupo de replicación debe sondear su controlador de dominio más cercano para obtener los cambios. La cantidad de tiempo que se tarda depende de la latencia de replicación de los servicios de directorio de Active Directory (AD DS) y el intervalo de sondeo largo (60 minutos) en cada miembro. Para sondear inmediatamente los cambios de configuración, abra una ventana del símbolo del sistema y, a continuación, escriba el siguiente comando una vez para cada miembro del grupo de replicación: <br /> dfsrdiag.exe PollAD /Member:DOMAIN\Server1
 <br />
-Para ello desde una sesión de Windows PowerShell, use el cmdlet [Update-DfsrConfigurationFromAD](https://technet.microsoft.com/itpro/powershell/windows/dfsr/update-dfsrconfigurationfromad) , que se presentó en windows Server 2012 R2.
+Para ello desde una sesión de Windows PowerShell, use el cmdlet [Update-DfsrConfigurationFromAD](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) , que se presentó en windows Server 2012 R2.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

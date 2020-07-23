@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d1dd406780dc61e1ce52d423ca6148d2a9dd2c3d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 02393a7f34e20b50b60a738ceb0f5f3a2ac17990
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823088"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958647"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>Cmdlets de Windows PowerShell para copia de seguridad y restauración de CA
 
@@ -32,14 +32,14 @@ El módulo ADCSAdministration de Windows PowerShell se presentó en Windows Serv
 -   Restore-CARoleService  
   
 ## <a name="backup-caroleservice"></a>Backup-CARoleService  
-**Tabla SEQ Table \\\* árabe 17: cmdlets de Windows PowerShell para copias de seguridad y restauración**  
+**Tabla SEQ \\ \* . árabe 17: copia de seguridad y restauración de cmdlets de Windows PowerShell**  
   
 **Cmdlet ADCSAdministration: backup-CARoleService**  
   
 |Arguments: se requieren argumentos en **negrita**|Descripción|  
 |------------------------------------------------|---------------|  
-|**-Path**|-String-Location para guardar la copia de seguridad<br />-Este es el único parámetro sin nombre<br />-parámetro posicional<p>**Ejemplo:**<p>Backup-CARoleService.-Path c:\adcsbackup1<p>Backup-CARoleService c:\adcsbackup2|  
-|-KeyOnly|-Hacer una copia de seguridad del certificado de CA sin la base de datos<p>**Ejemplo:**<p>Backup-CARoleService c:\adcsbackup3-KeyOnly|  
+|**-Path**|-String-Location para guardar la copia de seguridad<br />-Este es el único parámetro sin nombre<br />-parámetro posicional<p>**Ejemplo**:<p>Backup-CARoleService.-Path c:\adcsbackup1<p>Backup-CARoleService c:\adcsbackup2|  
+|-KeyOnly|-Hacer una copia de seguridad del certificado de CA sin la base de datos<p>**Ejemplo**:<p>Backup-CARoleService c:\adcsbackup3-KeyOnly|  
 |-Password|: Especifica la contraseña para proteger los certificados y las claves privadas de la entidad de certificación.<br />-Debe ser una cadena segura<br />-No es válido con el parámetro-DatabaseOnly<p>Ejemplo:<p>Backup-CARoleService c:\adcsbackup4-Password (Read-host-prompt "Password:"-AsSecureString)<p>Backup-CARoleService c:\adcsbackup5-Password (ConvertTo-SecureString "Pa55w0rd!" -AsPlainText-Force)|  
 |-DatabaseOnly|-Hacer una copia de seguridad de la base de datos sin el certificado de CA<p>Backup-CARoleService c:\adcsbackup6-DatabaseOnly|  
 |-Force|1. permite sobrescribir la copia de seguridad que existe en la ubicación especificada en el parámetro-Path.<p>Backup-CARoleService c:\adcsbackup1-Force|  
@@ -68,18 +68,18 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
   
 |Arguments: se requieren argumentos en **negrita**|Descripción|  
 |------------------------------------------------|---------------|  
-|**-Path**|-Cadena: ubicación de la que se va a restaurar la copia de seguridad<br />-Este es el único parámetro sin nombre<br />-parámetro posicional<p>**Ejemplo:**<p>Restore-CARoleService.-Path c:\adcsbackup1-Force<p>Restore-CARoleService c:\adcsbackup2-Force|  
-|-KeyOnly|-Restaurar el certificado de la entidad de certificación sin la base de datos<br />-Se debe especificar si la copia de seguridad se realizó con la opción-KeyOnly<p>**Ejemplo:**<p>Restore-CARoleService c:\adcsbackup3-KeyOnly-Force|  
-|-Password|: Especifica la contraseña de los certificados y las claves privadas de la entidad de certificación.<br />-Debe ser una cadena segura<p>**Ejemplo:**<p>Restore-CARoleService c:\adcsbackup4-Password (Read-host-prompt "contraseña:"-AsSecureString)-Force<p>Restore-CARoleService c:\adcsbackup5-Password (ConvertTo-SecureString "Pa55w0rd!" -AsPlainText-Force)-Force|  
+|**-Path**|-Cadena: ubicación de la que se va a restaurar la copia de seguridad<br />-Este es el único parámetro sin nombre<br />-parámetro posicional<p>**Ejemplo**:<p>Restore-CARoleService.-Path c:\adcsbackup1-Force<p>Restore-CARoleService c:\adcsbackup2-Force|  
+|-KeyOnly|-Restaurar el certificado de la entidad de certificación sin la base de datos<br />-Se debe especificar si la copia de seguridad se realizó con la opción-KeyOnly<p>**Ejemplo**:<p>Restore-CARoleService c:\adcsbackup3-KeyOnly-Force|  
+|-Password|: Especifica la contraseña de los certificados y las claves privadas de la entidad de certificación.<br />-Debe ser una cadena segura<p>**Ejemplo**:<p>Restore-CARoleService c:\adcsbackup4-Password (Read-host-prompt "contraseña:"-AsSecureString)-Force<p>Restore-CARoleService c:\adcsbackup5-Password (ConvertTo-SecureString "Pa55w0rd!" -AsPlainText-Force)-Force|  
 |-DatabaseOnly|-Restaurar la base de datos sin el certificado de CA<p>Restore-CARoleService c:\adcsbackup6-DatabaseOnly|  
 |-Force|: Permite sobrescribir las claves existentes<br />-Es un parámetro opcional, pero al restaurar en contexto, es probable que sea necesario.<p>Restore-CARoleService c:\adcsbackup1-Force|  
   
-### <a name="issues"></a>Problemas  
+### <a name="issues"></a>Issues  
 Se realiza una copia de seguridad sin protección por contraseña si se produce un error en la función ConvertTo-SecureString mientras se usa el parámetro backup-CARoleService con el parámetro-password.  
   
 ![Copia de seguridad y restauración de CA](media/CA-Backup-and-Restore-Windows-PowerShell-cmdlets/GTR_ADDS_BackupCARole.gif)  
   
-**Tabla SEQ \\\* árabe 18: errores comunes**  
+**Tabla SEQ \\ \* árabe 18: errores comunes**  
   
 |Acción|Error|Comentario|  
 |----------|---------|-----------|  
@@ -90,11 +90,11 @@ Se realiza una copia de seguridad sin protección por contraseña si se produce 
 |**Restore-CARoleService C:\ADCSBack14-Password (Read-host-prompt "Password:"-AsSecureString)**|Restore-CARoleService: el sistema no encuentra el archivo especificado. (Excepción de HRESULT: 0x80070002)|La ruta de acceso especificada no contiene una copia de seguridad de base de datos válida.  Quizás la ruta de acceso no es válida o la copia de seguridad se realizó con la opción-KeysOnly?|  
   
 ## <a name="additional-resources"></a>Recursos adicionales  
-[Guía de migración de los Servicios de certificados de Active Directory](https://technet.microsoft.com/library/ee126170(v=ws.10).aspx)  
+[Guía de migración de los Servicios de certificados de Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126170(v=ws.10))  
   
-[Hacer una copia de seguridad de una base de datos y clave privada de CA](https://technet.microsoft.com/library/ee126140(v=ws.10).aspx#BKMK_BackUpDB)  
+[Hacer una copia de seguridad de una base de datos y clave privada de CA](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126140(v=ws.10)#BKMK_BackUpDB)  
   
-[Restaurar la base de datos y configuración de CA en el servidor de destino](https://technet.microsoft.com/library/ee126140(v=ws.10).aspx#BKMK_RestoreCA)  
+[Restaurar la base de datos y configuración de CA en el servidor de destino](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126140(v=ws.10)#BKMK_RestoreCA)  
   
 ## <a name="try-this-backup-the-ca-in-your-lab-using-windows-powershell"></a>Pruebe esto: realizar una copia de seguridad de la CA en el laboratorio con Windows PowerShell  
   
@@ -102,5 +102,3 @@ Se realiza una copia de seguridad sin protección por contraseña si se produce 
   
 2.  Mantenga presionada la restauración de la CA en este momento.  
   
-
-

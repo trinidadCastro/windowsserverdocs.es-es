@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5f073941fa0d336e513c8de7502a601f1de5711
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a9a2a71ed8477722b32b06f37c88b373d6889568
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934336"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954627"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin get status
 
@@ -34,7 +34,7 @@ wbadmin get status
 
 Este subcomando no tiene parámetros.
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Este subcomando no se detendrá hasta que finalice la operación de copia de seguridad o recuperación actual; el subcomando continuará ejecutándose incluso si cierra la ventana de comandos.
 -   Si desea detener la operación de copia de seguridad o de recuperación actual, use el subcomando **Wbadmin STOP Job** .
@@ -43,4 +43,4 @@ Este subcomando no tiene parámetros.
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   Cmdlet [Get-WBJob](https://technet.microsoft.com/library/jj902426.aspx)
+-   Cmdlet [Get-WBJob](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)

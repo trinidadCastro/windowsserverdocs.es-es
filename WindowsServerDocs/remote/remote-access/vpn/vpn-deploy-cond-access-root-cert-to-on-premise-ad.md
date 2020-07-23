@@ -8,12 +8,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 27a99696f575afa61d3e39aff13fb58cc955936b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cc3e96ff0ea98acbfafef5aba37f4e20a103f029
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818788"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959667"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>Paso 7.4. Implementar certificados raíz de acceso condicional en AD local
 
@@ -56,4 +56,4 @@ En este paso, implementará el certificado raíz de acceso condicional como cert
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Paso 7,5. Creación de perfiles de VPNv2 basados en OMA-DM en dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md): en este paso, puede crear perfiles de VPNv2 basados en OMA-DM mediante Intune para implementar una directiva de configuración de dispositivos VPN. Si desea usar el punto de conexión de Microsoft Configuration Manager o el script de PowerShell para crear perfiles de VPNv2, consulte [configuración de CSP de VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obtener más detalles.
+[Paso 7,5. Creación de perfiles de VPNv2 basados en OMA-DM en dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md): en este paso, puede crear perfiles de VPNv2 basados en OMA-DM mediante Intune para implementar una directiva de configuración de dispositivos VPN. Si desea usar el punto de conexión de Microsoft Configuration Manager o el script de PowerShell para crear perfiles de VPNv2, consulte [configuración de CSP de VPNv2](/windows/client-management/mdm/vpnv2-csp) para obtener más detalles.

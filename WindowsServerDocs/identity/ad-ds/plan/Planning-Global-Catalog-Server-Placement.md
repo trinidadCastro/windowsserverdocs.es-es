@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b424d758d98315ff63f05926880a23970f54e49c
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 5a67e85a239036851d628ad1c261a21f6fbc4566
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623973"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959437"
 ---
 # <a name="planning-global-catalog-server-placement"></a>Planear la ubicación del servidor de catálogo global
 
@@ -49,6 +49,6 @@ Los usuarios móviles deben ponerse en contacto con los servidores de catálogo 
 
 ## <a name="enabling-universal-group-membership-caching"></a>Habilitación del almacenamiento en caché de pertenencia al grupo universal
 
-En las ubicaciones que incluyen menos de 100 usuarios y que no incluyen un gran número de usuarios móviles o aplicaciones que requieren un servidor de catálogo global, puede implementar controladores de dominio que ejecuten Windows Server 2008 y habilitar el almacenamiento en caché de pertenencia a grupos universales. Asegúrese de que los servidores de catálogo global no tengan más de un salto de replicación del controlador de dominio en el que esté habilitado el almacenamiento en caché de pertenencia a grupos universales para que se pueda actualizar la información del grupo universal en la memoria caché. Para obtener información acerca de cómo funciona el almacenamiento en caché de grupos universales, consulte el artículo sobre [Cómo funciona el catálogo global](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10)).
+En las ubicaciones que incluyen menos de 100 usuarios y que no incluyen un gran número de usuarios móviles o aplicaciones que requieren un servidor de catálogo global, puede implementar controladores de dominio que ejecuten Windows Server 2008 y habilitar el almacenamiento en caché de pertenencia a grupos universales. Asegúrese de que los servidores de catálogo global no tengan más de un salto de replicación del controlador de dominio en el que esté habilitado el almacenamiento en caché de pertenencia a grupos universales para que se pueda actualizar la información del grupo universal en la memoria caché. Para obtener información acerca de cómo funciona el almacenamiento en caché de grupos universales, consulte el artículo sobre [Cómo funciona el catálogo global](/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10)).
 
-Para ver una hoja de cálculo que le ayude a documentar dónde va a colocar los servidores de catálogo global y los controladores de dominio con el almacenamiento en caché de grupo universal habilitado, vea la [ayuda de trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abrir la ubicación del controlador de dominio (DSSTOPO_4. doc). Vea la información acerca de las ubicaciones en las que es necesario colocar los servidores de catálogo global al implementar el dominio raíz del bosque y los dominios regionales.
+Para ver una hoja de cálculo que le ayude a documentar dónde va a colocar los servidores de catálogo global y los controladores de dominio con el almacenamiento en caché de grupo universal habilitado, vea la [ayuda de trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip y abrir la ubicación del controlador de dominio (DSSTOPO_4.doc). Vea la información acerca de las ubicaciones en las que es necesario colocar los servidores de catálogo global al implementar el dominio raíz del bosque y los dominios regionales.

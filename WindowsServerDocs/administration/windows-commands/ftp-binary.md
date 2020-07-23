@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: daf300598f8a31fc35d5702b5bd42507dd9e8211
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a36d1ca21a1b5d745994b2a311e8265b78369f4e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925958"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958027"
 ---
 # <a name="ftp-binary"></a>ftp binary
 
@@ -42,4 +42,4 @@ binary
 
 - [comando ASCII de FTP](ftp-ascii.md)
 
-- [Guía de FTP adicional](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Guía de FTP adicional](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

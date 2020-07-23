@@ -9,12 +9,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: db85d71ed1b7d8d5b3c14ac8ea603789422ea2cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e97556ab35471c1745c01b6ebd047cd1451ffb27
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818888"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966757"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>Paso 7.1. Configurar EAP-TLS para omitir la comprobación de la lista de revocación de certificados (CRL)
 
@@ -37,7 +37,7 @@ Dado que el método de autenticación es EAP-TLS, este valor del registro solo e
 
 **Pasos**
 
-1. Abra **regedit. exe** en el servidor NPS.
+1. Abra **regedit.exe** en el servidor NPS.
 
 2. Vaya a **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\rasman\ppp\eap\13**.
 
@@ -47,7 +47,7 @@ Dado que el método de autenticación es EAP-TLS, este valor del registro solo e
 
 5. Seleccione **Aceptar** y reinicie el servidor. El reinicio de los servicios RRAS y NPS no basta.
 
-Para obtener más información, consulte [habilitar o deshabilitar la comprobación de revocación de certificados (CRL) en los clientes](https://technet.microsoft.com/library/bb680540.aspx).
+Para obtener más información, consulte [habilitar o deshabilitar la comprobación de revocación de certificados (CRL) en los clientes](/previous-versions/system-center/configuration-manager-2007/bb680540(v=technet.10)).
 
 
 |Ruta de acceso del Registro  |Extensión EAP  |

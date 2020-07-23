@@ -8,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 622ff33437a3aef14a185c9a4157dba68db0a2ee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a8061aa6488c97211506d321d0b38b1360be97eb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824794"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960587"
 ---
 # <a name="clean-up-active-directory-domain-controller-server-metadata"></a>Limpiar metadatos de servidor del controlador de Dominio de Active Directory
 
@@ -65,7 +65,7 @@ El requisito mínimo para completar estos procedimientos es la pertenencia al gr
 
 ## <a name="clean-up-server-metadata-using-the-command-line"></a>Limpiar metadatos de servidor mediante la línea de comandos
 
-Como alternativa, puede limpiar los metadatos mediante ntdsutil. exe, una herramienta de línea de comandos que se instala automáticamente en todos los controladores de dominio y servidores que tienen instalado Active Directory Lightweight Directory Services (AD LDS). Ntdsutil. exe también está disponible en los equipos que tienen instalado RSAT.
+Como alternativa, puede limpiar los metadatos mediante Ntdsutil.exe, una herramienta de línea de comandos que se instala automáticamente en todos los controladores de dominio y servidores que tienen instalado Active Directory Lightweight Directory Services (AD LDS). Ntdsutil.exe también está disponible en los equipos que tienen instalado RSAT.
 
 ## <a name="to-clean-up-server-metadata-by-using-ntdsutil"></a>Para limpiar los metadatos del servidor mediante ntdsutil
 
@@ -86,15 +86,15 @@ Como alternativa, puede limpiar los metadatos mediante ntdsutil. exe, una herram
 
    En este momento, Ntdsutil confirma que el controlador de dominio se quitó correctamente. Si recibe un mensaje de error que indica que no se puede encontrar el objeto, es posible que el controlador de dominio se haya quitado anteriormente.
 
-6. En el `metadata cleanup:` y `ntdsutil:` mensajes, escriba `quit`y, a continuación, presione Entrar.
+6. En el `metadata cleanup:` símbolo del sistema de y `ntdsutil:` , escriba y, `quit` a continuación, presione Entrar.
 
 7. Para confirmar la eliminación del controlador de dominio:
 
-   Abra Active Directory usuarios y equipos. En el dominio del controlador de dominio que se ha quitado, haga clic en **controladores de dominio**. En el panel de detalles, no debe aparecer un objeto para el controlador de dominio que ha quitado.
+   Abra Usuarios y equipos de Active Directory. En el dominio del controlador de dominio que se ha quitado, haga clic en **controladores de dominio**. En el panel de detalles, no debe aparecer un objeto para el controlador de dominio que ha quitado.
 
    Abra Active Directory sitios y servicios. Desplácese hasta el contenedor **servidores** y confirme que el objeto de servidor para el controlador de dominio que quitó no contiene un objeto de configuración NTDS. Si no aparecen objetos secundarios debajo del objeto de servidor, puede eliminar el objeto de servidor. Si aparece un objeto secundario, no elimine el objeto de servidor porque otra aplicación está usando el objeto.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Consulte también
 
 * [Degradación de controladores de dominio](Demoting-Domain-Controllers-and-Domains--Level-200-.md)
-* [Referencia de comandos de Ntdsutil](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753343(v=ws.10))
+* [Referencia de comandos de Ntdsutil](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc753343(v=ws.10))

@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 00dbf709139ef245b94a3f083ab83a12503131c2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ad806577c1daa46ba77895b6a422c6fdace23c98
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856298"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966817"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Réplica de almacenamiento de clúster a clúster en la misma región de Azure
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Puede configurar la replicación de clúster a almacenamiento de clúster en la misma región de Azure. En los ejemplos siguientes, usamos un clúster de dos nodos, pero la réplica de almacenamiento de clúster a clúster no está restringida a un clúster de dos nodos. La ilustración siguiente es un clúster de espacio de almacenamiento directo de dos nodos que se puede comunicar entre sí, que se encuentra en el mismo dominio y dentro de la misma región.
 
@@ -75,13 +75,13 @@ Parte dos
 11. Cree una SKU estándar interna [load balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) para cada clúster (**azlbr1**,**azlbr2**). 
    
     Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
-    - azlbr1 = > front-end IP: 10.3.0.100 (seleccione una dirección IP no usada de la subred de red virtual (**az2az-Vnet**))
+    - azlbr1 => front-end IP: 10.3.0.100 (seleccione una dirección IP no usada de la subred de red virtual (**az2az-Vnet**))
     - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
     - Crear sondeo de estado: Puerto 59999
     - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada. 
    
     Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
-    - azlbr2 = > front-end IP: 10.3.0.101 (seleccione una dirección IP no usada de la subred de red virtual (**az2az-Vnet**))
+    - azlbr2 => front-end IP: 10.3.0.101 (seleccione una dirección IP no usada de la subred de red virtual (**az2az-Vnet**))
     - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
     - Crear sondeo de estado: Puerto 59999
     - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada. 
@@ -95,7 +95,7 @@ Parte dos
 13. Indique al clúster que escuche los mensajes de sondeo de estado en el puerto 59999 y que responda desde el nodo que actualmente posee este recurso. 
     Ejecútelo una vez desde cualquier nodo del clúster, para cada clúster. 
     
-    En nuestro ejemplo, asegúrese de cambiar "ILBIP" según los valores de configuración. Ejecute el siguiente comando desde un nodo **az2az1**/**az2az2**:
+    En nuestro ejemplo, asegúrese de cambiar "ILBIP" según los valores de configuración. Ejecute el siguiente comando desde un nodo **az2az1** / **az2az2**:
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -105,7 +105,7 @@ Parte dos
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
-14. Ejecute el siguiente comando desde un nodo **az2az3**/**az2az4**. 
+14. Ejecute el siguiente comando desde un nodo **az2az3** / **az2az4**. 
 
     ```PowerShell
     $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -132,13 +132,13 @@ Parte dos
 
 16. Ejecute las [pruebas de validación del clúster](../../failover-clustering/create-failover-cluster.md#validate-the-configuration) antes de continuar con el siguiente paso.
 
-17. Inicie Windows PowerShell y use el cmdlet [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar si satisface todos los requisitos de la Réplica de almacenamiento. Puede usar el cmdlet en un modo de solo requisitos para una prueba rápida, así como un modo de evaluación del rendimiento de ejecución prolongada.
+17. Inicie Windows PowerShell y use el cmdlet [Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar si satisface todos los requisitos de la Réplica de almacenamiento. Puede usar el cmdlet en un modo de solo requisitos para una prueba rápida, así como un modo de evaluación del rendimiento de ejecución prolongada.
 
 18. Configure la réplica de almacenamiento de clúster a clúster.
    
     Conceder acceso de un clúster a otro en ambas direcciones:
 
-    En nuestro ejemplo:
+    En el ejemplo:
 
     ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2
@@ -158,7 +158,7 @@ Parte dos
     - Ubicación del volumen:-c:\ClusterStorage\DataDisk2
     - Ubicación del registro:-g:
 
-Ejecuta el siguiente comando:
+Ejecute el comando siguiente:
 
 ```PowerShell
 

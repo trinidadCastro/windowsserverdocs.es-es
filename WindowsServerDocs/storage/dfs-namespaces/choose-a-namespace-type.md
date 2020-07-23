@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b4addd18629bd54cd9d5fc2df5c660c621e735de
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce991a628b63732f645e859a4855a18eacbacd77
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473792"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953737"
 ---
 # <a name="choose-a-namespace-type"></a>Choose a namespace type
 
@@ -30,7 +30,7 @@ Elija un espacio de nombres independiente si se da alguna de las siguientes cond
 -   Debe crear un único espacio de nombres con más de 5.000 carpetas DFS en un dominio que no cumpla los requisitos de un espacio de nombres basado en dominio (modo Windows Server 2008) tal y como se describe más adelante en este tema.
 
 > [!NOTE]
-> Para comprobar el tamaño de un espacio de nombres, haga clic con el botón secundario en el espacio de nombres en el árbol de la consola de administración de DFS, haga clic en **propiedades**y vea el tamaño del espacio de nombres en el cuadro de diálogo **propiedades del espacio de nombres** . Para obtener más información acerca de la escalabilidad del espacio de nombres DFS, consulte los [servicios de archivo](https://technet.microsoft.com/library/cc771548.aspx)del sitio web de Microsoft.
+> Para comprobar el tamaño de un espacio de nombres, haga clic con el botón secundario en el espacio de nombres en el árbol de la consola de administración de DFS, haga clic en **propiedades**y vea el tamaño del espacio de nombres en el cuadro de diálogo **propiedades del espacio de nombres** . Para obtener más información acerca de la escalabilidad del espacio de nombres DFS, consulte los [servicios de archivo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771548(v=ws.10))del sitio web de Microsoft.
 
 Elija un espacio de nombres basado en el dominio si se da alguna de las siguientes condiciones en el entorno:
 
@@ -73,5 +73,3 @@ En la tabla siguiente se describen las características de cada tipo y modo de e
 
 -   [Implementar espacios de nombres DFS](deploying-dfs-namespaces.md)
 -   [Migrar un espacio de nombres basado en dominio al modo Windows Server 2008](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)
-
-

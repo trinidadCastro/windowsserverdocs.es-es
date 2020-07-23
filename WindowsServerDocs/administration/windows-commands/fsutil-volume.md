@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 0397c204-b3f8-4fd8-b71d-b7efb117766d
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: aef1012cef33aeb2718dac4681b9119ea1a16590
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6c486e47bde08ad002e39cec81e72ace90946cd7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929249"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958117"
 ---
 # <a name="fsutil-volume"></a>fsutil volume
 
@@ -93,4 +93,4 @@ fsutil volume querycluster C: 50 0x2000
 
 - [fsutil](fsutil.md)
 
-- [Cómo funciona NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781134(v=ws.10))
+- [Cómo funciona NTFS](/previous-versions/windows/it-pro/windows-server-2003/cc781134(v=ws.10))

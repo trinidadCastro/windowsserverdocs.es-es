@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af02ca14156c8a85ee54700983e2af6807752f91
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6ac91d2226e9a5394d6f7ea00ab6f268eb99015b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934827"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956807"
 ---
 # <a name="net-print"></a>net print
 
 > [!IMPORTANT]
-> Este comando está en desuso. Sin embargo, puede realizar muchas de las mismas tareas con el [comando prnjobs](prnjobs.md), [instrumental de administración de Windows (WMI)](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page), [PrintManagement en PowerShell](https://docs.microsoft.com/powershell/module/printmanagement)o [los recursos de script para los profesionales de ti](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing).
+> Este comando está en desuso. Sin embargo, puede realizar muchas de las mismas tareas con el [comando prnjobs](prnjobs.md), [instrumental de administración de Windows (WMI)](/windows/win32/wmisdk/wmi-start-page), [PrintManagement en PowerShell](/powershell/module/printmanagement)o [los recursos de script para los profesionales de ti](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing).
 
 Muestra información acerca de una cola de impresión especificada o de un trabajo de impresión especificado, o controla un trabajo de impresión especificado.
 
@@ -37,9 +37,9 @@ net print {\\<computername>\<sharename> | \\<computername> <jobnumber> [/hold | 
 | `\\<computername>` | Especifica (por nombre) el equipo que hospeda el trabajo de impresión que desea controlar. Si no especifica un equipo, se supone que se trata del equipo local. Requiere el `<jobnumber>` parámetro. |
 | `<jobnumber>` | Especifica el número del trabajo de impresión que desea controlar. Este número lo asigna el equipo que hospeda la cola de impresión donde se envía el trabajo de impresión. Una vez que un equipo asigna un número a un trabajo de impresión, ese número no se asigna a ningún otro trabajo de impresión en ninguna cola hospedada por ese equipo. Obligatorio cuando se usa el `\\<computername>` parámetro. |
 | `[/hold | /release | /delete]` | Especifica la acción que se realizará con el trabajo de impresión. Si especifica un número de trabajo, pero no especifica ninguna acción, se muestra información sobre el trabajo de impresión.<ul><li>**/Hold** : retrasa el trabajo, permitiendo que otros trabajos de impresión lo omitan hasta que se libere.</li><li>**/Release** : libera un trabajo de impresión que se ha retrasado.</li><li>**/Delete** : quita un trabajo de impresión de una cola de impresión.</li></ul> |
-| ayuda | Muestra la ayuda en el símbolo del sistema. |
+| help | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El `net print\\<computername>` comando muestra información acerca de los trabajos de impresión en una cola de impresora compartida. A continuación se presenta un ejemplo de un informe de todos los trabajos de impresión de una cola para una impresora compartida denominada *láser*:
 
@@ -101,8 +101,8 @@ net print \\Production 263 /release
 
 - [prnjobs (comando)](prnjobs.md)
 
-- [Instrumental de administración de Windows (WMI)](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page)
+- [Instrumental de administración de Windows (WMI)](/windows/win32/wmisdk/wmi-start-page)
 
-- [PrintManagement en PowerShell](https://docs.microsoft.com/powershell/module/printmanagement)
+- [PrintManagement en PowerShell](/powershell/module/printmanagement)
 
 - [Script de recursos para profesionales de ti](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)

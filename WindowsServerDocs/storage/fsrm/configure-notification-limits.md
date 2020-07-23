@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 32728fc9b19fca458b7ac4b86f3b550d9ff29490
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5b9bda5ffb225cc05df7d45e8b611e0154f9e582
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474172"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961537"
 ---
 # <a name="configure-notification-limits"></a>Configure Notification Limits
 
@@ -36,10 +36,10 @@ Para cada tipo de notificación se establece un límite predeterminado de 60 min
 
 2.  En la pestaña **límites de notificación** , escriba un valor en minutos para cada tipo de notificación que se muestra.
 
-3.  Haga clic en **OK**.
+3.  Haga clic en **Aceptar**.
 
 > [!Note]
-> Para personalizar los límites de tiempo asociados a las notificaciones de una cuota o un filtro de archivos específicos, puede usar las herramientas de línea de comandos del servidor de archivos Administrador de recursos **Dirquota.exe** y **Filescrn.exe**, o bien usar los cmdlets [Administrador de recursos del servidor de archivos](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager) .
+> Para personalizar los límites de tiempo asociados a las notificaciones de una cuota o un filtro de archivos específicos, puede usar las herramientas de línea de comandos del servidor de archivos Administrador de recursos **Dirquota.exe** y **Filescrn.exe**, o bien usar los cmdlets [Administrador de recursos del servidor de archivos](/powershell/module/fileserverresourcemanager/?view=win10-ps) .
 
 ## <a name="additional-references"></a>Referencias adicionales
 

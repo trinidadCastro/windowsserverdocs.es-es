@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c63df8c34bca410b9b9e2b77db1cf185cdfe20c8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7b31f4e7cbf8c549e33875e26ed8c87eaef87c8d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925114"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957537"
 ---
 # <a name="ftp-quit"></a>ftp quit
 
@@ -43,4 +43,4 @@ quit
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Guía de FTP adicional](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Guía de FTP adicional](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

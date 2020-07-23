@@ -1,5 +1,5 @@
 ---
-title: Implementación de VPN de Always On para Windows Server y Windows 10
+title: Implementación de VPN de Always On para Windows Server y Windows 10
 description: Puede usar esta implementación para implementar Always On conexiones de red privada virtual (VPN) para empleados remotos mediante el acceso remoto en Windows Server 2016 o posterior y Always On perfiles de VPN para equipos cliente de Windows 10.
 ms.prod: windows-server
 ms.technology: networking-ras
@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 ms.date: 12/20/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: e107ba0d36a1b59d4bc1bb365fb98aa9285677ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bab89611932316d165e805e96f0a6d2d357c0780
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860128"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959187"
 ---
-# <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Implementación de Always On VPN para Windows Server y Windows 10
+# <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Implementación de VPN de Always On para Windows Server y Windows 10
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
@@ -65,7 +65,7 @@ Esta implementación no proporciona instrucciones para:
 - Protocolo de configuración dinámica de host (DHCP).
 - Hardware de red, como cableado Ethernet, firewalls, conmutadores y concentradores.
 - Recursos de red adicionales, como servidores de archivos y aplicaciones, a los que los usuarios remotos pueden tener acceso a través de una conexión VPN Always On.
-- Conectividad a Internet o acceso condicional para la conectividad a Internet mediante Azure AD. Para obtener más información, consulte [acceso condicional en Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal).
+- Conectividad a Internet o acceso condicional para la conectividad a Internet mediante Azure AD. Para obtener más información, consulte [acceso condicional en Azure Active Directory](/azure/active-directory/active-directory-conditional-access-azure-portal).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

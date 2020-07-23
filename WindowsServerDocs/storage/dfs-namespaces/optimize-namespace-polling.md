@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ea867cbb36286297ff3c5274d11c36b5815ab9ac
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4ffcf974bd809d1692e16d632153c213081041c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475462"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961237"
 ---
 # <a name="optimize-namespace-polling"></a>Optimize Namespace Polling
 
@@ -35,7 +35,7 @@ Utilice el siguiente procedimiento para optimizar el modo en que se realiza el s
     -   Elija **optimizar para escalabilidad** si hay más de 16 servidores de espacio de nombres. Esto reduce la carga en el emulador del controlador de dominio principal (PDC), pero aumenta el tiempo necesario para que los cambios en el espacio de nombres se repliquen en todos los servidores de espacio de nombres. Hasta que los cambios se repliquen en todos los servidores, es posible que los usuarios tengan una vista incoherente del espacio de nombres.
 
 > [!NOTE]
-> Para establecer el modo de sondeo del espacio de nombres mediante Windows PowerShell, use el cmdlet [set-DfsnRoot EnableRootScalability](https://technet.microsoft.com/library/jj884281.aspx) , que se presentó en windows Server 2012.
+> Para establecer el modo de sondeo del espacio de nombres mediante Windows PowerShell, use el cmdlet [set-DfsnRoot EnableRootScalability](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) , que se presentó en windows Server 2012.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

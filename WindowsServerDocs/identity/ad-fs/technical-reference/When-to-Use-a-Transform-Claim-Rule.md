@@ -8,30 +8,30 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2b69156d1e2825f4287112735493ebc5cc8469d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9208fb39e71983792f1f0865ecb067a1574674f2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853788"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964196"
 ---
 # <a name="when-to-use-a-transform-claim-rule"></a>Cuándo usar una regla de notificaciones de transformación
-Puedes usar esta regla en Servicios de federación de Active Directory (AD FS) \(AD FS\) cuando necesites asignar un tipo de notificaciones entrantes a un tipo de notificaciones salientes y después aplicar una acción que determine qué resultado se debe producir en función de los valores que se originaron en la demanda entrante. Cuando usas esta regla, pasas a través o transformas notificaciones que coinciden con la lógica de la regla siguiente, según cualquiera de las opciones que configures en la regla, como se describe en la tabla siguiente.  
+Puedes usar esta regla en Servicios de federación de Active Directory (AD FS) \( AD FS \) cuando necesites asignar un tipo de notificaciones entrantes a un tipo de notificaciones salientes y después aplicar una acción que determine qué resultado se debe producir en función de los valores que se originaron en la demanda entrante. Cuando usas esta regla, pasas a través o transformas notificaciones que coinciden con la lógica de la regla siguiente, según cualquiera de las opciones que configures en la regla, como se describe en la tabla siguiente.  
   
 |Opción de regla|Lógica de regla|  
 |---------------|--------------|  
 |Pasar a través todas las notificaciones entrantes|Si el tipo de notificación entrante es igual a *tipo de notificación especificado* y el valor es igual a *cualquier valor*, pasa a través la notificación con el tipo de notificación saliente igual a *tipo de notificación especificado*|  
 |Reemplazar un valor de notificación entrante por un valor de notificación saliente diferente|Si el tipo de notificación entrante es igual a *tipo de notificación especificado* y el valor es igual a *valor de notificación especificado*, transforma la notificación con el nuevo valor de notificación saliente *valor de notificación especificado* y con el tipo de notificación saliente *tipo de notificación especificado*|  
-|Reemplazar las notificaciones entrantes de sufijos de correo e\-por un nuevo sufijo e\-correo electrónico|Si el tipo de notificación entrante es igual a *tipo de notificación especificado* y el valor es igual a *cualquier valor de sufijo*, transforma la notificación con el nuevo valor de notificación saliente *valor de sufijo especificado* y con el tipo de notificación saliente *tipo de notificación especificado*|  
+|Reemplazar las \- notificaciones de sufijos de correo electrónico entrantes por un nuevo \- sufijo de correo electrónico|Si el tipo de notificación entrante es igual a *tipo de notificación especificado* y el valor es igual a *cualquier valor de sufijo*, transforma la notificación con el nuevo valor de notificación saliente *valor de sufijo especificado* y con el tipo de notificación saliente *tipo de notificación especificado*|  
   
 Las secciones siguientes ofrecen una introducción básica a las reglas de notificación y proporcionan más detalles sobre cuándo utilizar esta regla.  
   
-## <a name="about-claim-rules"></a>Sobre las reglas de notificación  
-Una regla de notificaciones representa una instancia de la lógica de negocios que tomará una solicitud entrante, le aplicará una condición \(si x, entonces y\) y genera una notificaciones salientes en función de los parámetros de la condición. La lista siguiente destaca las sugerencias importantes que deberías conocer sobre las reglas de notificaciones antes de seguir leyendo este tema:  
+## <a name="about-claim-rules"></a>Acerca de las reglas de notificaciones  
+Una regla de notificaciones representa una instancia de la lógica de negocios que tomará una solicitud entrante, le aplicará una condición \( si x después \) y y generará una notificaciones salientes según los parámetros de la condición. La lista siguiente destaca las sugerencias importantes que deberías conocer sobre las reglas de notificaciones antes de seguir leyendo este tema:  
   
--   En el\-del complemento de administración de AD FS en, las reglas de notificaciones solo se pueden crear mediante plantillas de regla de notificaciones.  
+-   En el complemento de administración de AD FS \- , las reglas de notificaciones solo se pueden crear mediante plantillas de regla de notificaciones.  
   
--   Las reglas de notificación procesan las notificaciones entrantes directamente desde un proveedor de notificaciones \(como Active Directory u otro Servicio de federación\) o desde la salida de las reglas de transformación de aceptación en una confianza de proveedor de notificaciones.  
+-   Las reglas de notificación procesan las notificaciones entrantes directamente desde un proveedor de notificaciones \( como Active Directory u otro servicio de Federación \) o desde la salida de las reglas de transformación de aceptación en una relación de confianza para proveedor de notificaciones.  
   
 -   El motor de emisión de notificaciones procesa las reglas de notificación en orden cronológico dentro de un conjunto determinado de reglas. Al establecer una precedencia en las reglas, puedes perfeccionar o filtrar aún más las notificaciones que generan las reglas anteriores dentro de un conjunto determinado de reglas.  
   
@@ -51,7 +51,7 @@ Por ejemplo, como se muestra en la ilustración siguiente, cuando se configura u
   
 ![Cuándo usar una transformación](media/adfs2_transform.gif)  
   
-También puede usar esta regla para aplicar una condición que reemplazará todas las notificaciones entrantes por un valor de sufijo de correo de e\-especificado por un valor nuevo. Por ejemplo, podrías establecer una condición en esta regla para cambiar todos los valores de notificación por el sufijo de sales.corp.fabrikam.com to fabrikam.com.  
+También puede usar esta regla para aplicar una condición que reemplazará todas las notificaciones entrantes por un \- valor de sufijo de correo electrónico especificado por un nuevo valor. Por ejemplo, podrías establecer una condición en esta regla para cambiar todos los valores de notificación por el sufijo de sales.corp.fabrikam.com to fabrikam.com.  
   
 ## <a name="configuring-this-rule-on-a-claims-provider-trust"></a>Configurar esta regla en una confianza de proveedor de notificaciones  
 Cuando usas una confianza de proveedores de notificaciones, se puede configurar esta regla para transformar las notificaciones entrantes del proveedor de notificaciones en equivalentes de confianza. Los tipos de notificación o los valores de notificación pueden tener un significado diferente en tu organización y en las organizaciones del proveedor de notificaciones. Puedes usar esta regla para normalizar los tipos y valores de notificación que proceden del proveedor de notificaciones para que el usuario de confianza pueda entender sus notificaciones salientes equivalentes.  
@@ -60,9 +60,9 @@ Cuando usas una confianza de proveedores de notificaciones, se puede configurar 
 Cuando usas una relación de confianza para usuario autenticado, se puede configurar esta regla para transformar las notificaciones para el usuario de confianza específico. Los tipos de notificación o los valores de notificación podrían tener un significado diferente para un usuario de confianza específico y esta regla te permite cambiar los tipos y valores de notificación saliente para un único usuario de confianza.  
   
 ## <a name="how-to-create-this-rule"></a>Cómo crear esta regla  
-Esta regla se crea mediante el lenguaje de reglas de notificaciones o el uso de la plantilla de reglas de **transformación de notificaciones entrantes** en el complemento de administración de AD FS\-en. Esta plantilla de regla permite las siguientes opciones de configuración:  
+Esta regla se crea mediante el lenguaje de reglas de notificaciones o el uso de la plantilla de reglas de **transformación de notificaciones entrantes** en el complemento de administración \- de AD FS en. Esta plantilla de regla permite las siguientes opciones de configuración:  
   
--   Especificar un nombre de regla de notificación.  
+-   Especificar un nombre de regla de notificaciones  
   
 -   Transformar un tipo de notificación entrante especificado para un tipo de notificación saliente especificado  
   
@@ -70,9 +70,9 @@ Esta regla se crea mediante el lenguaje de reglas de notificaciones o el uso de 
   
 -   Reemplazar un valor de notificación entrante por un valor de notificación saliente diferente  
   
--   Reemplazar las notificaciones entrantes de sufijos de correo e\-por un nuevo sufijo e\-correo electrónico  
+-   Reemplazar las \- notificaciones de sufijo de correo electrónico entrante por un nuevo \- sufijo de correo electrónico  
   
-Para obtener más instrucciones sobre cómo crear esta plantilla, consulte [creación de una regla para transformar una demanda entrante](https://technet.microsoft.com/library/dd807068.aspx) en la guía de implementación de AD FS.  
+Para obtener más instrucciones sobre cómo crear esta plantilla, consulte [creación de una regla para transformar una demanda entrante](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807068(v=ws.11)) en la guía de implementación de AD FS.  
   
 ## <a name="using-the-claim-rule-language"></a>Uso del lenguaje de las reglas de notificación  
 Si la notificación saliente se tiene que crear a partir del contenido de más de una notificación entrante, tienes que usar una regla personalizada en su lugar. Si el valor de notificación de la notificación saliente tiene que estar basado en el valor de la notificación entrante, pero con contenido adicional, también tienes que usar una regla personalizada en ese contexto. Para obtener más información, consulte [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md).  
@@ -84,7 +84,7 @@ Cuando se utiliza la sintaxis del lenguaje de reglas de notificación para trans
 c:[type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/role", value == "Administrators"]  => issue(type = c.type, value = "root");  
 ```  
   
-También se pueden usar expresiones comunes para las transformaciones de notificaciones. Por ejemplo, la siguiente regla establecerá el dominio en las notificaciones de nombre de usuario de Windows en el dominio\\el formato de usuario en FABRIKAM:  
+También se pueden usar expresiones comunes para las transformaciones de notificaciones. Por ejemplo, la siguiente regla establecerá el dominio en las notificaciones de nombre de usuario de Windows en el formato de usuario de dominio en \\ Fabrikam:  
   
 ```  
 c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] => issue(type = c.type, value = regexreplace(c.value, "(?<domain>[^\\]+)\\(?<user>.+)", "FABRIKAM\${user}"));  
@@ -102,4 +102,3 @@ Las transformaciones de notificaciones se pueden aplicar selectivamente a solici
   
 Para obtener más información sobre cómo usar el lenguaje de reglas de notificaciones, vea [el rol del lenguaje de reglas de notificaciones](The-Role-of-the-Claim-Rule-Language.md).  
   
-

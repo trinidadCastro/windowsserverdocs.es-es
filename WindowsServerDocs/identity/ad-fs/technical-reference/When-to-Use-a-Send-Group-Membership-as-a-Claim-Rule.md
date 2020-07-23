@@ -8,15 +8,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 266f46ef30082541d49bf62d933c551f00fa08da
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 43d9e8767c0a179a23d015484b09a0228829870b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853798"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966487"
 ---
 # <a name="when-to-use-a-send-group-membership-as-a-claim-rule"></a>Cuando usar la pertenencia a un grupo de envío como una regla de notificación
-Puede usar esta regla en Servicios de federación de Active Directory (AD FS) \(AD FS\) cuando quiera emitir un nuevo valor de notificaciones salientes solo para los usuarios que son miembros de un grupo de seguridad de Active Directory especificado. Cuando usa esta regla, emitirá una notificación única solo para el grupo que especifique y que coincida con la lógica de la regla, como se describe en la tabla siguiente.  
+Puede usar esta regla en Servicios de federación de Active Directory (AD FS) \( AD FS \) cuando quiera emitir un nuevo valor de notificaciones salientes solo para los usuarios que son miembros de un grupo de seguridad de Active Directory especificado. Cuando usa esta regla, emitirá una notificación única solo para el grupo que especifique y que coincida con la lógica de la regla, como se describe en la tabla siguiente.  
   
 |Opción de regla|Lógica de regla|  
 |---------------|--------------|  
@@ -24,12 +24,12 @@ Puede usar esta regla en Servicios de federación de Active Directory (AD FS) \(
   
 Las secciones siguientes ofrecen una introducción básica a las reglas de notificación. También se proporcionan detalles sobre cuándo se debe usar la pertenencia al grupo de envío como una regla de notificación.  
   
-## <a name="about-claim-rules"></a>Sobre las reglas de notificación  
-Una regla de notificaciones representa una instancia de la lógica de negocios que tomará una solicitud entrante, le aplicará una condición \(si x, entonces y\) y genera una notificaciones salientes en función de los parámetros de la condición. La lista siguiente destaca las sugerencias importantes que deberías conocer sobre las reglas de notificaciones antes de seguir leyendo este tema:  
+## <a name="about-claim-rules"></a>Acerca de las reglas de notificaciones  
+Una regla de notificaciones representa una instancia de la lógica de negocios que tomará una solicitud entrante, le aplicará una condición \( si x después \) y y generará una notificaciones salientes según los parámetros de la condición. La lista siguiente destaca las sugerencias importantes que deberías conocer sobre las reglas de notificaciones antes de seguir leyendo este tema:  
   
--   En el\-del complemento de administración de AD FS en, las reglas de notificaciones solo se pueden crear mediante plantillas de regla de notificaciones.  
+-   En el complemento de administración de AD FS \- , las reglas de notificaciones solo se pueden crear mediante plantillas de regla de notificaciones.  
   
--   Las reglas de notificación procesan las notificaciones entrantes directamente desde un proveedor de notificaciones \(como Active Directory u otro Servicio de federación\) o desde la salida de las reglas de transformación de aceptación en una confianza de proveedor de notificaciones.  
+-   Las reglas de notificación procesan las notificaciones entrantes directamente desde un proveedor de notificaciones \( como Active Directory u otro servicio de Federación \) o desde la salida de las reglas de transformación de aceptación en una relación de confianza para proveedor de notificaciones.  
   
 -   El motor de emisión de notificaciones procesa las reglas de notificación en orden cronológico dentro de un conjunto determinado de reglas. Al establecer una precedencia en las reglas, puedes perfeccionar o filtrar aún más las notificaciones que generan las reglas anteriores dentro de un conjunto determinado de reglas.  
   
@@ -40,7 +40,7 @@ Para obtener información más detallada sobre las reglas de notificaciones y lo
 ## <a name="outgoing-claim-value"></a>Valor de notificación saliente  
 Si usa la pertenencia al grupo de envío como una plantilla de regla de notificación, puede emitir una notificación que dependa de si un usuario es miembro de un grupo que especifique.  
   
-En otras palabras, esta plantilla de regla emite una petición solo cuando el usuario tiene el identificador de seguridad de grupo \(SID\) que coincide con el grupo de Active Directory que el administrador especifica. Todos los usuarios que se autentiquen en Active Directory Domain Services \(AD DS\) tendrán notificaciones de SID de grupo entrantes para cada grupo al que pertenezcan. De forma predeterminada, las reglas de transformación de aceptación en la confianza del proveedor de notificaciones de Active Directory se pasan a través de estas notificaciones de SID de grupo. El uso de estos SID de grupo como base para emitir notificaciones es mucho más rápido que la búsqueda de grupos del usuario en AD DS.  
+En otras palabras, esta plantilla de regla emite una petición solo cuando el usuario tiene el SID del ID. de seguridad de grupo \( \) que coincide con el grupo de Active Directory que el administrador especifica. Todos los usuarios que se autentiquen en Active Directory Domain Services \( AD DS tendrán \) notificaciones de SID de grupo entrantes para cada grupo al que pertenezcan. De forma predeterminada, las reglas de transformación de aceptación en la confianza del proveedor de notificaciones de Active Directory se pasan a través de estas notificaciones de SID de grupo. El uso de estos SID de grupo como base para emitir notificaciones es mucho más rápido que la búsqueda de grupos del usuario en AD DS.  
   
 Cuando se usa esta regla, solo se envía una notificación única, en función del grupo de Active Directory que seleccione. Por ejemplo, puede usar esta plantilla de regla para crear una regla que envíe una notificación de grupo con un valor de "Admin" si el usuario es miembro del grupo de seguridad Administradores de dominio.  
   
@@ -48,19 +48,19 @@ Cuando se usa esta regla, solo se envía una notificación única, en función d
 Los administradores deben usar este tipo de regla en las reglas de transformación de aceptación de una confianza de proveedor de notificaciones solo cuando los SID de grupo se reciben desde el proveedor de notificaciones, lo que es muy raro en la mayoría de proveedores de notificaciones, excepto Active Directory o AD DS.  
   
 ## <a name="how-to-create-this-rule"></a>Cómo crear esta regla  
-Esta regla se crea mediante el lenguaje de reglas de notificaciones o mediante la opción de envío de pertenencia a grupos LDAP como una regla de notificaciones del complemento de administración de AD FS\-en. Esta plantilla de regla permite las siguientes opciones de configuración:  
+Esta regla se crea mediante el lenguaje de reglas de notificaciones o mediante el uso de la plantilla enviar pertenencia a grupos LDAP como una regla de notificaciones en el complemento de administración \- de AD FS en. Esta plantilla de regla permite las siguientes opciones de configuración:  
   
--   Especificar un nombre de regla de notificación.  
+-   Especificar un nombre de regla de notificaciones  
   
 -   Seleccionar el grupo de un usuario mediante el selector de objetos  
   
 -   Seleccionar un tipo de notificación saliente.  
   
--   Seleccione un formato de identificador de nombre saliente \(que solo está disponible cuando se elige el identificador de nombre en el campo tipo de notificaciones salientes\)  
+-   Seleccione un formato de identificador de nombre saliente \( que esté disponible solo si se elige ID. de nombre en el campo tipo de notificaciones salientes.\)  
   
 -   Especificar un valor de notificación saliente.  
   
-Para obtener más información sobre cómo crear esta regla, consulte [crear una regla para enviar la pertenencia a un grupo como una demanda](https://technet.microsoft.com/library/ee913569.aspx).  
+Para obtener más información sobre cómo crear esta regla, consulte [crear una regla para enviar la pertenencia a un grupo como una demanda](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913569(v=ws.11)).  
   
 ## <a name="using-the-claim-rule-language"></a>Uso del lenguaje de las reglas de notificación  
 Si quiere emitir notificaciones basadas en un SID entrante que no sea un SID de grupo, use la plantilla de regla Transformar una notificación entrante. Si el administrador quiere recuperar los nombres de todos los grupos de los que el usuario es miembro, use en su lugar Enviar atributos LDAP como plantilla de reglas de notificaciones con el atributo **tokenGroups**.  
@@ -74,6 +74,5 @@ c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", 
 ```  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Crear una regla para enviar atributos LDAP como notificaciones](https://technet.microsoft.com/library/dd807115.aspx)  
+[Crear una regla para enviar atributos LDAP como notificaciones](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807115(v=ws.11))  
   
-

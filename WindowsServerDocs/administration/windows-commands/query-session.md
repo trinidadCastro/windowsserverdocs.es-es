@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 440830af55763fbb3ebee7cdbdca97ca11cde30c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 75cb8deb61ebfe3a4b0db665da4353339ee8d314
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937036"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956507"
 ---
 # <a name="query-session"></a>query session
 
@@ -23,7 +23,7 @@ Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Serv
 Muestra información acerca de las sesiones en un servidor host de sesión Escritorio remoto. La lista incluye información no solo sobre las sesiones activas, sino también sobre otras sesiones que ejecuta el servidor.
 
 > [!NOTE]
-> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)).
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -45,7 +45,7 @@ query session [<sessionname> | <username> | <sessionID>] [/server:<servername>] 
 | /Counter | Muestra información de los contadores actuales, incluido el número total de sesiones creadas, desconectadas y reconectadas. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Un usuario siempre puede consultar la sesión en la que el usuario ha iniciado sesión actualmente. Para consultar otras sesiones, el usuario debe tener permiso de acceso especial.
 

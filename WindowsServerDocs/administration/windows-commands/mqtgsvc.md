@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd5222623931bbd940c7ff6e8c6285874c89a385
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4081a0e34911ef3b80d988fdb333c8b88e6fb982
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932067"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956907"
 ---
 # <a name="mqtgsvc"></a>mqtgsvc
 
-Supervisa una cola en busca de mensajes entrantes y realiza una acción, en forma de un archivo ejecutable o un componente COM, cuando las reglas de un desencadenador se evalúan como true. Para obtener ejemplos de cómo se puede usar el servicio Desencadenadores de Message Queue Server, vea [desencadenadores de Message Queue Server](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms703197(v=vs.85)).
+Supervisa una cola en busca de mensajes entrantes y realiza una acción, en forma de un archivo ejecutable o un componente COM, cuando las reglas de un desencadenador se evalúan como true. Para obtener ejemplos de cómo se puede usar el servicio Desencadenadores de Message Queue Server, vea [desencadenadores de Message Queue Server](/previous-versions/windows/desktop/legacy/ms703197(v=vs.85)).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -30,4 +30,4 @@ mqtgsvc.exe
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Referencia de PowerShell para MSMQ](https://docs.microsoft.com/powershell/module/msmq/?view=win10-ps)
+- [Referencia de PowerShell para MSMQ](/powershell/module/msmq/?view=win10-ps)

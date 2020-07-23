@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 57367cadd3c7ce3d031c6eb3a53c333422543dae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a9b5f6454ec93ec27f557588016295935827c18
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359373"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966217"
 ---
 # <a name="migrate-the-active-directory-federation-services-proxy-server-to-windows-server-2012-r2"></a>Migrar el servidor proxy Servicios de federación de Active Directory (AD FS) a Windows Server 2012 R2
 
@@ -26,19 +26,18 @@ Si desea configurar AD FS en una granja de servidores de Windows Server 2012 R2 
   
 Para planear la implementación de Web Application Proxy, puede consultar la información de los temas siguientes:  
   
-- [Planear la infraestructura del proxy de aplicación Web](https://technet.microsoft.com/library/dn383648.aspx)  
+- [Planear la infraestructura del Proxy de aplicación web](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))  
   
-- [Planear el servidor proxy de aplicación Web](https://technet.microsoft.com/library/dn383647.aspx)  
+- [Planear el servidor de Proxy de aplicación web](/previous-versions/orphan-topics/ws.11/dn383647(v=ws.11))  
   
   Para implementar Web Application Proxy, puede seguir los procedimientos de los temas siguientes:  
   
-- [Configurar la infraestructura del proxy de aplicación Web](https://technet.microsoft.com/library/dn383644.aspx)  
+- [Configurar la infraestructura del Proxy de aplicación web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383644(v=ws.11))  
   
-- [Instalación y configuración del servidor proxy de aplicación Web](https://technet.microsoft.com/library/dn383662.aspx)  
+- [Instalar y configurar el servidor de Proxy de aplicación web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383662(v=ws.11))  
   
 ## <a name="next-steps"></a>Pasos siguientes
- [Migrar servicios de rol de servicios de Federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [Preparando la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)   
+ [Migrar servicios de rol de Servicios de federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [Preparación de la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)   
  [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)    
- [Comprobar la migración de AD FS a Windows Server 2012 R2](verify-ad-fs-migration.md)
-
+ [Comprobación de la migración de AD FS a Windows Server 2012 R2](verify-ad-fs-migration.md)

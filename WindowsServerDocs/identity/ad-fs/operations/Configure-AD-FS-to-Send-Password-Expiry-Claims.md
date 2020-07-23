@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 84014df358726cd3d2d90bb68c18f9a051bc6308
-ms.sourcegitcommit: c857cb5eb487a0050352af86c96bbbacfe66962e
+ms.openlocfilehash: 2fd2e86e43b6d230a2c8b873ce8267a4e68ca4ed
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83865466"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962557"
 ---
 # <a name="configure-ad-fs-to-send-password-expiry-claims"></a>Configuración de AD FS para enviar notificaciones de expiración de contraseña
 
@@ -35,4 +35,4 @@ c1:[Type == "http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"]
 > Hay una ventana de 14 días, por lo que las notificaciones enviadas solo se rellenarán si la contraseña expira en 14 días.
 
 ## <a name="see-also"></a>Consulte también
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operaciones de AD FS](../ad-fs-operations.md)

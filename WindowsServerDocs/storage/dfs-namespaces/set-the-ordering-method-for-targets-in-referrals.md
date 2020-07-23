@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9b420e311c98477d369c81f10eca274e665dae3a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a993d53611382dcd0007bfecae95da6221cf6016
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475162"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966807"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>Establecer el método para ordenar destinos en las referencias
 
@@ -35,7 +35,7 @@ Use el procedimiento siguiente para establecer el método de ordenación en la r
 3.  En la pestaña **referencias** , seleccione un método de ordenación.
 
 > [!NOTE]
-> Para usar Windows PowerShell para establecer el método de ordenación para destinos en referencias raíz de espacio de nombres, use el cmdlet [set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) con uno de los parámetros siguientes:
+> Para usar Windows PowerShell para establecer el método de ordenación para destinos en referencias raíz de espacio de nombres, use el cmdlet [set-DfsnRoot](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) con uno de los parámetros siguientes:
 >    -   **EnableSiteCosting** especifica el método de **ordenación de costo más bajo**
 >    -   **EnableInsiteReferrals** especifica los **destinos de exclusión fuera del método de ordenación de sitios del cliente** .
 >    -   Si se omite el parámetro, se especifica el método de ordenación de referencia de **orden aleatorio** .
@@ -53,7 +53,7 @@ Las carpetas con destinos heredan el método de ordenación desde la raíz del e
 3.  En la pestaña **referencias** , active la casilla **excluir destinos fuera del sitio del cliente** .
 
 > [!NOTE]
-> Para usar Windows PowerShell para excluir destinos de carpeta fuera del sitio del cliente, use el cmdlet [set-DfsnFolder – EnableInsiteReferrals](https://technet.microsoft.com/library/jj884283.aspx) .
+> Para usar Windows PowerShell para excluir destinos de carpeta fuera del sitio del cliente, use el cmdlet [set-DfsnFolder – EnableInsiteReferrals](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) .
 
 ## <a name="target-referral-ordering-methods"></a>Métodos de ordenación de referencias a destinos
 

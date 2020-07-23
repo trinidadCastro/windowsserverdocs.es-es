@@ -1,5 +1,5 @@
 ---
-title: Delegación AD FS acceso Commandlet de PowerShell a usuarios que no son administradores
+title: Delegar el acceso de Commandlet de Powershell de AD FS a los usuarios que no son administradores
 description: Este documento descirbes cómo delegar permisos a usuarios que no son administradores para AD FS PowerShell cmdlts.
 author: billmath
 ms.author: billmath
@@ -9,14 +9,14 @@ ms.date: 01/31/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 334bb96c77b0bc1e76a54ed1e0871f53753ded87
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 485b36299727b25787b1ac46f77ef1222e01ad68
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357750"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960427"
 ---
-# <a name="delegate-ad-fs-powershell-commandlet-access-to-non-admin-users"></a>Delegación AD FS acceso Commandlet de PowerShell a usuarios que no son administradores 
+# <a name="delegate-ad-fs-powershell-commandlet-access-to-non-admin-users"></a>Delegar el acceso de Commandlet de Powershell de AD FS a los usuarios que no son administradores 
 De forma predeterminada, la administración de AD FS a través de PowerShell solo la pueden realizar los administradores de AD FS. En el caso de muchas organizaciones de gran tamaño, es posible que no sea un modelo operativo viable al tratar con otros usuarios, como el personal del Departamento de soporte técnico.  
 
 Con la suficiente administración (JEA), los clientes ahora pueden delegar commandlets específicos a distintos grupos de personal.  
@@ -29,11 +29,11 @@ Usamos este ejemplo en el resto de este documento. Sin embargo, se puede persona
 
 
 ##  <a name="create-the-required-groups-necessary-to-grant-users-permissions"></a>Crear los grupos requeridos necesarios para conceder permisos a los usuarios 
-1. Cree una [cuenta de servicio administrada de grupo](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview). La cuenta gMSA se usa para permitir que el usuario JEA tenga acceso a los recursos de red como otras máquinas o servicios Web. Proporciona una identidad de dominio que se puede usar para autenticarse en los recursos de cualquier equipo del dominio. A la cuenta gMSA se le conceden los derechos administrativos necesarios más adelante en la instalación. En este ejemplo, se llama a la cuenta **gMSAContoso**. 
+1. Cree una [cuenta de servicio administrada de grupo](../../../security/group-managed-service-accounts/group-managed-service-accounts-overview.md). La cuenta gMSA se usa para permitir que el usuario JEA tenga acceso a los recursos de red como otras máquinas o servicios Web. Proporciona una identidad de dominio que se puede usar para autenticarse en los recursos de cualquier equipo del dominio. A la cuenta gMSA se le conceden los derechos administrativos necesarios más adelante en la instalación. En este ejemplo, se llama a la cuenta **gMSAContoso**. 
 2. Crear un grupo de Active Directory se puede rellenar con usuarios a los que es necesario conceder los derechos de los comandos delegados. En este ejemplo, al personal del Departamento de soporte técnico se le conceden permisos para leer, actualizar y restablecer el estado de bloqueo de ADFS. Nos referimos a este grupo a lo largo del ejemplo como **JEAContoso**. 
 
 ### <a name="install-the-gmsa-account-on-the-adfs-server"></a>Instale la cuenta gMSA en el servidor de ADFS: 
-Cree una cuenta de servicio que tenga derechos administrativos en los servidores de ADFS. Esto puede realizarse en el controlador de dominio o de forma remota siempre que se instale el paquete de RSAT de AD.  La cuenta de servicio debe crearse en el mismo bosque que el servidor de ADFS. Modifique los valores de ejemplo para la configuración de la granja de servidores. 
+Cree una cuenta de servicio que tenga derechos administrativos en los servidores de ADFS. Esto puede realizarse en el controlador de dominio o de forma remota siempre que se instale el paquete de RSAT de AD.La cuenta de servicio debe crearse en el mismo bosque que el servidor de ADFS. Modifique los valores de ejemplo para la configuración de la granja de servidores. 
 
 ```powershell
  # This command should only be run if this is the first time gMSA accounts are enabled in the forest 
@@ -49,7 +49,7 @@ $serviceaccount = New-ADServiceAccount gMSAcontoso -DNSHostName <FQDN of the dom
 Add-ADComputerServiceAccount -Identity server01.contoso.com -ServiceAccount $ServiceAccount 
 ```
 
-Instale la cuenta gMSA en el servidor de ADFS.  Esto debe ejecutarse en todos los nodos de ADFS de la granja. 
+Instale la cuenta gMSA en el servidor de ADFS.Esto debe ejecutarse en todos los nodos de ADFS de la granja. 
  
 ```powershell
 Install-ADServiceAccount gMSAcontoso 
@@ -63,9 +63,9 @@ Si la granja no utiliza la administración delegada, conceda los derechos de adm
  
 ### <a name="create-the-jea-role-file"></a>Crear el archivo de rol JEA 
  
-En el servidor de AD FS, cree el rol JEA en un archivo del Bloc de notas. Las instrucciones para crear el rol se proporcionan en las [funcionalidades de rol de jea](https://docs.microsoft.com/powershell/jea/role-capabilities). 
+En el servidor de AD FS, cree el rol JEA en un archivo del Bloc de notas. Las instrucciones para crear el rol se proporcionan en las [funcionalidades de rol de jea](/powershell/jea/role-capabilities). 
  
-El commandlets delegado en este ejemplo es `Reset-AdfsAccountLockout, Get-ADFSAccountActivity, and Set-ADFSAccountActivity`. 
+El commandlets delegado en este ejemplo es `Reset-AdfsAccountLockout, Get-ADFSAccountActivity, and Set-ADFSAccountActivity` . 
 
 Rol JEA de ejemplo que delega el acceso de "RESET-ADFSAccountLockout", "Get-ADFSAccountActivity" y "Set-ADFSAccountActivity" commandlets:
 
@@ -79,11 +79,11 @@ VisibleCmdlets = 'Reset-AdfsAccountLockout', 'Get-ADFSAccountActivity', 'Set-ADF
 
 
 ### <a name="create-the-jea-session-configuration-file"></a>Crear el archivo de configuración de sesión de JEA 
-Siga las instrucciones para crear el archivo de [configuración de sesión jea](https://docs.microsoft.com/powershell/jea/session-configurations) . El archivo de configuración determina quién puede usar el punto de conexión JEA y las funciones a las que tienen acceso. 
+Siga las instrucciones para crear el archivo de [configuración de sesión jea](/powershell/jea/session-configurations) . El archivo de configuración determina quién puede usar el punto de conexión JEA y las funciones a las que tienen acceso. 
 
 Se hace referencia a las funciones de rol mediante el nombre plano (nombre de archivo sin la extensión) del archivo de funcionalidad de rol. Si hay varias funcionalidades de rol disponibles en el sistema con el mismo nombre plano, PowerShell usa su orden de búsqueda implícito para seleccionar el archivo de funcionalidad de rol efectivo. No proporciona acceso a todos los archivos de funcionalidad de rol con el mismo nombre. 
 
-Para especificar un archivo de funcionalidad de rol con una ruta de `RoleCapabilityFiles` acceso, use el argumento. En el caso de una subcarpeta, jea busca módulos de PowerShell válidos `RoleCapabilities` que contengan una `RoleCapabilityFiles` subcarpeta, donde el argumento debe `RoleCapabilities`modificarse para que sea. 
+Para especificar un archivo de funcionalidad de rol con una ruta de acceso, use el `RoleCapabilityFiles` argumento. En el caso de una subcarpeta, JEA busca módulos de PowerShell válidos que contengan una `RoleCapabilities` subcarpeta, donde el `RoleCapabilityFiles` argumento debe modificarse para que sea `RoleCapabilities` . 
 
 Archivo de configuración de sesión de ejemplo: 
 
@@ -99,7 +99,7 @@ RoleDefinitions = @{ JEAcontoso = @{ RoleCapabilityFiles = 'C:\Program Files\Win
 
 Guarde el archivo de configuración de sesión. 
  
-Se recomienda encarecidamente [probar el archivo de configuración de sesión](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Test-PSSessionConfigurationFile?view=powershell-5.1) si ha editado manualmente el archivo PSSC mediante un editor de texto para asegurarse de que la sintaxis es correcta. Si un archivo de configuración de sesión no pasa esta prueba, no se registra correctamente en el sistema.  
+Se recomienda encarecidamente [probar el archivo de configuración de sesión](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile?view=powershell-5.1) si ha editado manualmente el archivo PSSC mediante un editor de texto para asegurarse de que la sintaxis es correcta. Si un archivo de configuración de sesión no pasa esta prueba, no se registra correctamente en el sistema.  
  
 ### <a name="install-the-jea-session-configuration-on-the-ad-fs-server"></a>Instalación de la configuración de sesión de JEA en el servidor de AD FS 
 

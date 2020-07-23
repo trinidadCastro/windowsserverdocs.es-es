@@ -9,12 +9,12 @@ ms.assetid: 623b7c21-dcbb-402e-8b5a-8e434cd225bd
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 03b60b1d3a7a776448eaa18d926a87a00f56fc30
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: caa7611b47bd856648415358137609be41d4fca0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820248"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959117"
 ---
 # <a name="join-the-multipoint-services-computer-to-a-domain-optional"></a>Unir el equipo de Multipoint Services a un dominio (opcional)
 Si va a tener acceso al equipo de Multipoint Services a través de un dominio de Active Directory, el paso siguiente consiste en agregar el equipo al dominio.  
@@ -24,7 +24,7 @@ Si va a tener acceso al equipo de Multipoint Services a través de un dominio de
    
 1.  En la pantalla **Inicio**, abra el **Panel de control**. Haga clic en **sistema y seguridad**y, a continuación, en **sistema**.  
   
-2.  En **Configuración de nombre, dominio y grupo de trabajo del equipo**, haga clic en **Cambiar configuración**.  
+2.  En **Configuración de nombre, dominio y grupo de trabajo del equipo**, haga clic en **Cambiar la configuración**.  
   
 3.  En la pestaña **nombre de equipo** , haga clic en **cambiar**.  
   
@@ -33,4 +33,4 @@ Si va a tener acceso al equipo de Multipoint Services a través de un dominio de
 5.  Una vez reiniciado el equipo, inicie sesión como administrador y espere a que se abra Multipoint Manager.  
   
 > [!IMPORTANT]  
-> Para asegurarse de que la implementación de dominio de Multipoint Services funciona correctamente, deberá configurar un par de directivas de grupo y actualizar el registro. Para obtener más información, consulte [configurar directivas de grupo para una implementación de dominio](https://technet.microsoft.com/library/dn265982.aspx).  
+> Para asegurarse de que la implementación de dominio de Multipoint Services funciona correctamente, deberá configurar un par de directivas de grupo y actualizar el registro. Para obtener más información, consulte [configurar directivas de grupo para una implementación de dominio](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265982(v=ws.11)).  

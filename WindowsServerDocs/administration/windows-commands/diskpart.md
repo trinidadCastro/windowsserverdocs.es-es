@@ -6,12 +6,12 @@ ms.technology: storage
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 87fc3a2e91b2f5ac22e87485d9258ef369ff0da0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1df6abc3ab3ef99139ca50701bd45feab1e28f42
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929300"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958277"
 ---
 # <a name="diskpart"></a>diskpart
 
@@ -103,6 +103,6 @@ Puede ejecutar los siguientes comandos desde el intérprete de comandos de Diskp
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Introducción a la administración de discos](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management)
+- [Introducción a la administración de discos](../../storage/disk-management/overview-of-disk-management.md)
 
-- [Cmdlets de almacenamiento en Windows PowerShell](https://docs.microsoft.com/powershell/module/storage/)
+- [Cmdlets de almacenamiento en Windows PowerShell](/powershell/module/storage/)

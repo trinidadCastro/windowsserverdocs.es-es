@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: bfa92f7e80bbf89fac615a3cd6ddf7057c0d6a4c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a07ad9b33000b17f5c6f41835a1a36531b3945af
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936073"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958887"
 ---
 # <a name="wscript"></a>wscript
 
@@ -48,7 +48,7 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 |ScriptArguments|Especifica los argumentos que se pasan al script. Cada argumento de script debe ir precedido de una barra diagonal (/).|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   La realización de esta tarea no le exige que tenga credenciales administrativas. Por consiguiente, como medida de seguridad recomendada, considere la posibilidad de realizar esta tarea como un usuario sin credenciales administrativas.
 -   Para abrir un símbolo del sistema, en la pantalla **Inicio**, escriba **cmd** y, a continuación, haga clic en **símbolo del sistema**.
@@ -56,7 +56,7 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 -   El parámetro **/t** evita la ejecución excesiva de scripts mediante la configuración de un temporizador. Cuando el tiempo supera el valor especificado, **Wscript** interrumpe el motor de scripts y finaliza el proceso.
 -   Los archivos de script de Windows suelen tener una de las siguientes extensiones de nombre de archivo: **. wsf**, **. vbs**, **. js**.
 -   Si hace doble clic en un archivo de script con una extensión que no tiene ninguna asociación, aparece el cuadro de diálogo **abrir con** . Seleccione **Wscript** o **cscript**y, a continuación, seleccione **usar siempre este programa para abrir este tipo de archivo**. Esto registra **wscript.exe** o **cscript.exe** como host de script predeterminado para los archivos de este tipo de archivo.
--   Puede establecer propiedades para scripts individuales. Para obtener más información, consulte [Introducción a Windows Script Host](https://technet.microsoft.com/library/cc738350(v=ws.10).aspx) .
+-   Puede establecer propiedades para scripts individuales. Para obtener más información, consulte [Introducción a Windows Script Host](/previous-versions/windows/it-pro/windows-server-2003/cc738350(v=ws.10)) .
 -   Windows Script Host puede usar archivos de script **. wsf** . Cada archivo **. wsf** puede usar varios motores de scripting y realizar varios trabajos.
 
 ## <a name="additional-references"></a>Referencias adicionales

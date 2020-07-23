@@ -8,12 +8,12 @@ metadata:
   author: billmath
   ms.author: billmath
   ms.date: 5/18/2020
-  ms.openlocfilehash: 10723952ab4b146c491f469e6569670ad0f1c5e1
-  ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
+  ms.openlocfilehash: e2b31e25b420f15a8c30b496f1bfa654fcc957aa
+  ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
   ms.translationtype: MT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 06/19/2020
-  ms.locfileid: "85095690"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "86959837"
 landingContent:
 - title: Acerca de las tecnologías de identidad y acceso
   linkLists:
@@ -24,9 +24,9 @@ landingContent:
   - linkListType: overview
     links:
     - text: Privileged Access Management para Active Directory Domain Services y AD DS
-      url: https://technet.microsoft.com/library/dn903243.aspx
+      url: /microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services
     - text: 'Windows 10 para empresas: Formas de usar dispositivos para trabajar'
-      url: https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1
+      url: /azure/active-directory/devices/overview
     - text: Active Directory Domain Services
       url: ../identity/ad-ds/Active-Directory-Domain-Services.md
     - text: Servicios de federación de Active Directory
@@ -36,18 +36,18 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: Acceso seguro a los recursos de la empresa desde cualquier lugar y en cualquier dispositivo
-      url: https://technet.microsoft.com/library/dn550982.aspx
+      url: /previous-versions/windows/it-pro/solutions-guidance/dn550982(v=ws.11)
     - text: unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía
-      url: https://technet.microsoft.com/library/dn280945.aspx
+      url: ./ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md
     - text: administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales
-      url: https://technet.microsoft.com/library/dn280949.aspx
+      url: ./ad-fs/operations/manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications.md
     - text: Administración de riesgos con control de acceso condicional
-      url: https://technet.microsoft.com/library/dn280937.aspx
+      url: ./ad-fs/operations/manage-risk-with-conditional-access-control.md
 - title: Versiones anteriores de Windows Server
   linkLists:
   - linkListType: overview
     links:
     - text: Documentación de versiones anteriores de Windows
-      url: https://docs.microsoft.com/previous-versions/windows/
+      url: /previous-versions/windows/
     - text: Buscar información específica
-      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions
+      url: /search/?dataSource=previousVersions&search=Windows+Server

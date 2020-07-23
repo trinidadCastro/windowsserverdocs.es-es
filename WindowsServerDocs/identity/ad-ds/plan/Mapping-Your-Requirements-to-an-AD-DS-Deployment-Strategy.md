@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4862116253f51b7072f112c5f6ece72605b63ddb
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: e04f82094128dac3e00d28014541da480e56999d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624103"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959787"
 ---
 # <a name="mapping-your-requirements-to-an-ad-ds-deployment-strategy"></a>Asignación de requisitos a una estrategia de implementación de AD DS
 
@@ -35,12 +35,12 @@ Sin embargo, puede crear una estrategia de implementación híbrida o personaliz
 
 | Requisitos de diseño e implementación de AD DS | Implementación de AD DS en una nueva organización | Implementación de AD DS en una organización de Windows Server 2003 | Implementación de AD DS en una organización de Windows 2000 |
 | ---------------------------------------- | ------------------------------------- | ----------------------------------------------------- |----------------------------------------------- |
-| [Diseñar la estructura lógica para Windows Server 2008 AD DS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770806(v=ws.10)) | Sí | Sí | Sí |
+| [Diseñar la estructura lógica para Windows Server 2008 AD DS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770806(v=ws.10)) | Sí | Sí | Sí |
 | [Diseño de la topología de sitio para Windows Server 2008 AD DS](Designing-the-Site-Topology.md) | Sí | Sí | Sí |
 | Planear la capacidad del controlador de dominio | Sí | Sí | Sí |
-| [Implementar un dominio raíz del bosque de Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10)) | Sí | No | No |
-| [Implementación de dominios regionales de Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10)) | Sí | Sí | Sí |
+| [Implementar un dominio raíz del bosque de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10)) | Sí | No | No |
+| [Implementación de dominios regionales de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10)) | Sí | Sí | Sí |
 | [Habilitación de características avanzadas para AD DS](../../ad-ds/plan/Enabling-Advanced-Features-for-AD-DS.md) | Sí |Sí, pero todos los controladores de dominio del entorno deben ejecutar Windows Server 2008 antes de establecer el nivel funcional de dominio o bosque en Windows Server 2008. | Sí, pero todos los controladores de dominio del entorno deben ejecutar Windows Server 2008 antes de establecer el nivel funcional de dominio o bosque en Windows Server 2008. |
-| [Actualización de dominios de Active Directory a dominios de AD DS de Windows Server 2008 y Windows Server 2008 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731188(v=ws.10)) | No | Sí | Sí |
-| [Guía de ADMT: migración y reestructuración de dominios de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc974332(v=ws.10)) | Sí, si desea migrar un dominio piloto en el entorno de producción, combine con otra organización y consolide las dos infraestructuras de tecnologías de la información (TI), o bien consolide los dominios de cuentas y recursos que ha actualizado en su lugar desde entornos Windows 2000 o Windows Server 2003. | Sí, si desea fusionar mediante combinación con otra organización y consolidar las dos infraestructuras de ti o consolidar los dominios de cuentas y recursos que ha actualizado en su lugar desde entornos Windows 2000 o Windows Server 2003. | Sí, si desea fusionar mediante combinación con otra organización y consolidar las dos infraestructuras de ti o consolidar los dominios de cuentas y recursos que ha actualizado en su lugar desde entornos Windows 2000 o Windows Server 2003. |
-| [Guía de ADMT: migración y reestructuración de dominios de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc974332(v=ws.10)) | No | Sí, si necesita reducir el número de dominios, reduzca el tráfico de replicación y la cantidad de administración de usuarios y grupos necesaria, o bien simplifique la administración de directiva de grupo. | Sí, si necesita reducir el número de dominios, reduzca el tráfico de replicación y la cantidad de administración de usuarios y grupos necesaria, o bien simplifique la administración de directiva de grupo. |
+| [Actualización de dominios de Active Directory a dominios de AD DS de Windows Server 2008 y Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731188(v=ws.10)) | No | Sí | Sí |
+| [Guía de ADMT: migración y reestructuración de dominios de Active Directory](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10)) | Sí, si desea migrar un dominio piloto en el entorno de producción, combine con otra organización y consolide las dos infraestructuras de tecnologías de la información (TI), o bien consolide los dominios de cuentas y recursos que ha actualizado en su lugar desde entornos Windows 2000 o Windows Server 2003. | Sí, si desea fusionar mediante combinación con otra organización y consolidar las dos infraestructuras de ti o consolidar los dominios de cuentas y recursos que ha actualizado en su lugar desde entornos Windows 2000 o Windows Server 2003. | Sí, si desea fusionar mediante combinación con otra organización y consolidar las dos infraestructuras de ti o consolidar los dominios de cuentas y recursos que ha actualizado en su lugar desde entornos Windows 2000 o Windows Server 2003. |
+| [Guía de ADMT: migración y reestructuración de dominios de Active Directory](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10)) | No | Sí, si necesita reducir el número de dominios, reduzca el tráfico de replicación y la cantidad de administración de usuarios y grupos necesaria, o bien simplifique la administración de directiva de grupo. | Sí, si necesita reducir el número de dominios, reduzca el tráfico de replicación y la cantidad de administración de usuarios y grupos necesaria, o bien simplifique la administración de directiva de grupo. |

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5f588328deb51109ee9139b6e7dfaad8f0166dc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 70c4eb44a654094410432dd9d37d0ad0082f5874
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934227"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958817"
 ---
 # <a name="telnet"></a>telnet
 
@@ -37,8 +37,8 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |\<Host> [\<Port>]|Especifica el nombre de host o la dirección IP del equipo remoto al que se va a conectar y, opcionalmente, el puerto TCP que se va a usar (el valor predeterminado es el puerto TCP 23).|
 |/?|Muestra la ayuda en el símbolo del sistema. Como alternativa, puede escribir/h.|
 
-## <a name="remarks"></a>Comentarios
--   Debe instalar el software cliente de Telnet para poder ejecutar este comando. Para obtener más información, consulte [instalación de Telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx).
+## <a name="remarks"></a>Observaciones
+-   Debe instalar el software cliente de Telnet para poder ejecutar este comando. Para obtener más información, consulte [instalación de Telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10)).
 -   Puede ejecutar Telnet sin parámetros para especificar el contexto de Telnet, indicado por el símbolo del sistema de telnet (**Microsoft telnet>**). En el símbolo del sistema de Telnet, puede usar comandos Telnet para administrar el equipo que ejecuta el cliente Telnet.
 
 ## <a name="examples"></a>Ejemplos
@@ -52,6 +52,6 @@ telnet /f telnetlog.txt telnet.microsoft.com 44
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
--   [Instalación de Telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)
--   [Referencia técnica de Telnet](https://technet.microsoft.com/library/cc754987(v=ws.10).aspx)
+-   [Instalación de Telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))
+-   [Referencia técnica de Telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754987(v=ws.10))
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

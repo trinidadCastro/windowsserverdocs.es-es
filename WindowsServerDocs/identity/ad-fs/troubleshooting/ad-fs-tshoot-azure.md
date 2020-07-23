@@ -8,12 +8,12 @@ ms.date: 03/01/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 293618b3fe2a24caff8fd6b52c5528cc699f93de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e90ad9fbd2ae9dbb08d2137ead0705556184858
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407284"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966907"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>Solución de problemas de AD FS-Azure AD
 Con el crecimiento de la nube, una gran cantidad de empresas se han trasladado a usar Azure AD para sus diversas aplicaciones y servicios.  La Federación con Azure AD se ha convertido en una práctica estándar con muchas organizaciones.  En este documento se tratan algunos de los aspectos de la solución de problemas que surgen con esta Federación.  Algunos de los temas del documento general de solución de problemas siguen perteneciendo a la Federación con Azure, por lo que este documento se centrará solo en detalles con Azure AD y AD FS interacción.
@@ -59,26 +59,26 @@ Para aplicar un método de autenticación, use uno de los métodos siguientes:
 
 |Método de autenticación deseado|URI de wauth|
 |-----|-----|
-|Autenticación de nombre de usuario y contraseña|urn: oasis: names: TC: SAML: 1.0: AM: password|
-|Autenticación de cliente SSL|urn:ietf:rfc:2246|
+|Autenticación de nombre de usuario y contraseña|urn:oasis:names:tc:SAML:1.0:am:password|
+|Autenticación de cliente SSL|urn: IETF: RFC: 2246|
 |Autenticación integrada de Windows|urn: Federation: autenticación: Windows|
 
 Clases de contexto de autenticación SAML admitidas
 
 |Método de autenticación|URI de clase de contexto de autenticación|
 |-----|-----| 
-|Nombre de usuario y contraseña|urn: oasis: names: TC: SAML: 2.0: AC: classes: password|
+|Nombre de usuario y contraseña|urn:oasis:names:tc:SAML:2.0:ac:classes:Password|
 |Transporte protegido por contraseña|urn: oasis: names: TC: SAML: 2.0: AC: classes: PasswordProtectedTransport|
 |Cliente de seguridad de la capa de transporte (TLS)|urn: oasis: names: TC: SAML: 2.0: AC: classes: TLSClient
-|Certificado X. 509|urn: oasis: names: TC: SAML: 2.0: AC: classes: X509
+|Certificado X.509|urn: oasis: names: TC: SAML: 2.0: AC: classes: X509
 |Autenticación integrada de Windows|urn: Federation: autenticación: Windows|
 |Kerberos|urn: oasis: names: TC: SAML: 2.0: AC: classes: Kerberos|
 
 Para asegurarse de que se admite el método de autenticación en el nivel de AD FS, compruebe lo siguiente.
 
-#### <a name="ad-fs-20"></a>AD FS 2,0 
+#### <a name="ad-fs-20"></a>AD FS 2.0 
 
-En **/ADFS/LS/Web.config**, asegúrese de que la entrada para el tipo de autenticación está presente.
+En **/adfs/ls/web.config**, asegúrese de que la entrada para el tipo de autenticación está presente.
 
 ```
 <microsoft.identityServer.web>
@@ -98,7 +98,7 @@ En la sección **autenticación principal** , haga clic en Editar junto a config
 
 En la ventana Editar Directiva de autenticación global, en la pestaña principal, puede configurar las opciones como parte de la Directiva de autenticación global. Por ejemplo, para la autenticación principal, puede seleccionar métodos de autenticación disponibles en extranet y intranet.
 
-\* * Asegúrese de que la casilla de verificación método de autenticación necesario está activada. 
+* * Asegúrese de que la casilla de verificación método de autenticación necesario está activada. 
 
 #### <a name="ad-fs-2016"></a>AD FS 2016
 
@@ -117,18 +117,18 @@ Una vez que AD FS emite un token, Azure AD puede producir un error. En esta situ
 - Las notificaciones emitidas por AD FS en token deben coincidir con los atributos respectivos del usuario en Azure AD.
 - el token de Azure AD debe contener las siguientes notificaciones requeridas:
     - WSFED 
-        - UPN El valor de esta demanda debe coincidir con el UPN de los usuarios en Azure AD.
-        - ImmutableID El valor de esta demanda debe coincidir con el sourceAnchor o ImmutableID del usuario en Azure AD.
+        - UPN: el valor de esta demanda debe coincidir con el UPN de los usuarios en Azure AD.
+        - ImmutableID: el valor de esta demanda debe coincidir con el sourceAnchor o ImmutableID del usuario en Azure AD.
 
-Para obtener el valor de atributo de usuario en Azure AD, ejecute la siguiente línea de comandos: `Get-AzureADUser –UserPrincipalName <UPN>`
+Para obtener el valor de atributo de usuario en Azure AD, ejecute la siguiente línea de comandos:`Get-AzureADUser –UserPrincipalName <UPN>`
 
 ![](media/ad-fs-tshoot-azure/azure5.png)
 
    - SAML 2,0:
-       - IDPEmail El valor de esta demanda debe coincidir con el nombre principal de usuario de los usuarios de Azure AD.
-       - NAMEID El valor de esta demanda debe coincidir con el sourceAnchor o ImmutableID del usuario en Azure AD.
+       - IDPEmail: el valor de esta demanda debe coincidir con el nombre principal de usuario de los usuarios de Azure AD.
+       - NAMEID: el valor de esta notificación debe coincidir con el sourceAnchor o ImmutableID del usuario en Azure AD.
 
-Para obtener más información, consulte [uso de un proveedor de identidad SAML 2,0 para implementar el inicio de sesión único](https://technet.microsoft.com/library/dn641269.aspx).
+Para obtener más información, consulte [uso de un proveedor de identidad SAML 2,0 para implementar el inicio de sesión único](/previous-versions/azure/azure-services/dn641269(v=azure.100)).
 
 ### <a name="token-signing-certificate-mismatch-between-ad-fs-and-azure-ad"></a>Los certificados de firma de tokens no coinciden entre AD FS y Azure AD.
 
@@ -136,7 +136,7 @@ AD FS usa el certificado de firma de tokens para firmar el token que se envía a
 
 Sin embargo, si se cambia el certificado de firma de tokens del lado AD FS debido a la sustitución automática del certificado o por alguna intervención, los detalles del nuevo certificado deben actualizarse en el Azure AD lado del dominio federado. Cuando el certificado de firma de tokens principal del AD FS es diferente de los anuncios de Azure, el token que emite AD FS no es de confianza para Azure AD. Por lo tanto, no se permite que el usuario federado inicie sesión.
 
-Para solucionarlo, puede usar los pasos que se describen en [renovar certificados de Federación para Office 365 y Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs).
+Para solucionarlo, puede usar los pasos que se describen en [renovar certificados de Federación para Office 365 y Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect-o365-certs).
 
 ## <a name="other-common-things-to-check"></a>Otros aspectos comunes que se deben comprobar
 A continuación se muestra una lista rápida de aspectos que se deben comprobar si tiene problemas con AD FS y Azure AD interacción.

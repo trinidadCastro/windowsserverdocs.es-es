@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c186e0945612bf7c84637f6b039dcdbac3d68f1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6929f7828f82c50723ae0a8c658ee2c79e1f1499
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930221"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956457"
 ---
 # <a name="query-user"></a>query user
 
@@ -35,7 +35,7 @@ Muestra información acerca de las sesiones de usuario en un servidor host de se
 - Fecha y hora en que el usuario inició sesión
 
 > [!NOTE]
-> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)).
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -53,7 +53,7 @@ query user [<username> | <sessionname> | <sessionID>] [/server:<servername>]
 | /server:`<servername>` | Especifica el servidor host de sesión de Escritorio remoto que desea consultar. De lo contrario, se usa el servidor host de sesión Escritorio remoto actual. Este parámetro solo es necesario si utiliza este comando desde un servidor remoto. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Para usar este comando, debe tener el permiso control total o el permiso de acceso especial.
 

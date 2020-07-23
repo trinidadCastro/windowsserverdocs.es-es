@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 734d5eaef97b23b774eb286134d07a17dc380da1
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 72abc2b5b45ec1eefbff3ca82b619649ffd0fda9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623913"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959767"
 ---
 # <a name="understanding-ad-ds-design"></a>Descripción del diseño de AD LDS
 
@@ -25,6 +25,6 @@ Un proyecto de implementación de AD DS implica tres fases: una fase de diseño,
 
 Aunque las estrategias de diseño e implementación de Windows Server AD DS que se presentan en esta guía se basan en pruebas exhaustivas de laboratorios y programas piloto y en una implementación correcta en los entornos de los clientes, es posible que tenga que personalizar el diseño y la implementación de AD DS para adaptarse mejor a entornos específicos y complejos.
 
-- Para obtener más información acerca de la implementación de AD DS en un entorno de sucursal, vea la [Guía de planeación de la sucursal del controlador de dominio de solo lectura (RODC)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd734758(v=ws.10)).
-- Para obtener más información acerca de la implementación de AD DS en un entorno de Exchange, consulte el artículo [Active Directory en organizaciones de Exchange Server](https://docs.microsoft.com/Exchange/plan-and-deploy/active-directory/active-directory).
-- Para obtener más información sobre la implementación de AD DS en un entorno de varios bosques, vea el artículo [consideraciones sobre el bosque en windows 2000 y Windows Server 2003](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc739395(v=ws.10)).
+- Para obtener más información acerca de la implementación de AD DS en un entorno de sucursal, vea la [Guía de planeación de la sucursal del controlador de dominio de solo lectura (RODC)](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd734758(v=ws.10)).
+- Para obtener más información acerca de la implementación de AD DS en un entorno de Exchange, consulte el artículo [Active Directory en organizaciones de Exchange Server](/exchange/plan-and-deploy/active-directory/active-directory).
+- Para obtener más información sobre la implementación de AD DS en un entorno de varios bosques, vea el artículo [consideraciones sobre el bosque en windows 2000 y Windows Server 2003](/previous-versions/windows/it-pro/windows-server-2003/cc739395(v=ws.10)).

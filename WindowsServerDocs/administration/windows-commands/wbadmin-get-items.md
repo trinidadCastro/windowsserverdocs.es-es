@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d69ac0aa200a694b94d8428e4ae333ae21ed20e1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 122fa2033ca553f50a7ddf380faa4a31dbb150cd
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934359"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954647"
 ---
 # <a name="wbadmin-get-items"></a>wbadmin get items
 
@@ -56,4 +56,4 @@ wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -ma
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   Cmdlet [Get-WBBackupSet](https://technet.microsoft.com/library/jj902473.aspx)
+-   Cmdlet [Get-WBBackupSet](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)

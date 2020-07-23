@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2715332a8a6adff29f31a4dbd7d3e7a27a4a6f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 64355bd452934909d0600fa791e7a4c2d2066b6f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929323"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958297"
 ---
 # <a name="diskpart-scripts-and-examples"></a>ejemplos y scripts de Diskpart
 
@@ -47,7 +47,7 @@ Para crear un script de DiskPart, cree un archivo de texto que contenga los coma
     diskpart /s scriptname.txt > logfile.txt
     ```
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - Cuando se usa el comando **DiskPart** como parte de un script, se recomienda completar todas las operaciones de Diskpart juntas como parte de un único script de Diskpart. Puede ejecutar scripts de Diskpart consecutivos, pero debe permitir al menos 15 segundos entre cada script para un cierre completo de la ejecución anterior antes de volver a ejecutar el comando **DiskPart** en scripts sucesivos. De lo contrario, puede que los scripts sucesivos no funcionen. Puede Agregar una pausa entre scripts de Diskpart consecutivos agregando el `timeout /t 15` comando al archivo por lotes junto con los scripts de Diskpart.
 
@@ -57,8 +57,8 @@ Para crear un script de DiskPart, cree un archivo de texto que contenga los coma
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Ejemplo: configurar particiones de disco duro basadas en UEFI/GPT con Windows PE y DiskPart](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
+- [Ejemplo: configurar particiones de disco duro basadas en UEFI/GPT con Windows PE y DiskPart](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
 
-- [Ejemplo: configurar particiones de disco duro basadas en BIOS/MBR mediante Windows PE y DiskPart](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
+- [Ejemplo: configurar particiones de disco duro basadas en BIOS/MBR mediante Windows PE y DiskPart](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
 
-- [Cmdlets de almacenamiento en Windows PowerShell](https://docs.microsoft.com/powershell/module/storage/?view=win10-ps)
+- [Cmdlets de almacenamiento en Windows PowerShell](/powershell/module/storage/?view=win10-ps)

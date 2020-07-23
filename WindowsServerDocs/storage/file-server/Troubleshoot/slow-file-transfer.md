@@ -1,19 +1,19 @@
 ---
-title: Velocidad de transferencia lenta de archivos SMB
+title: Velocidad de transferencia de archivos SMB lenta
 description: Presenta cómo solucionar problemas de rendimiento de transferencia de archivos SMB.
 author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: af05daa164b5b2c5eca73eff51d97d4c25ba1ca3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cb575015ea8a8fc6cbc35358103774a931b0b749
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815398"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958867"
 ---
-# <a name="slow-smb-files-transfer-speed"></a>Velocidad de transferencia lenta de archivos SMB
+# <a name="slow-smb-files-transfer-speed"></a>Velocidad de transferencia de archivos SMB lenta
 
 En este artículo se proporcionan procedimientos de solución de problemas recomendados para la velocidad de transferencia de archivos lenta a través de SMB.
 
@@ -29,7 +29,7 @@ Si observa transferencias lentas de archivos grandes, tenga en cuenta los siguie
     
   - Esto suele ocurrir cuando la copia inicial se almacena en memoria caché o se almacena en búfer (ya sea en memoria o en la memoria caché de la controladora RAID) y se agota la memoria caché. Esto obliga a que los datos se escriban directamente en el disco (escritura a través). Se trata de un proceso más lento.
     
-  - Utilice los contadores del monitor de rendimiento de almacenamiento para determinar si el rendimiento del almacenamiento se degrada a lo largo del tiempo. Para obtener más información, vea [optimizar el rendimiento de los servidores de archivos SMB](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/file-server/smb-file-server).
+  - Utilice los contadores del monitor de rendimiento de almacenamiento para determinar si el rendimiento del almacenamiento se degrada a lo largo del tiempo. Para obtener más información, vea [optimizar el rendimiento de los servidores de archivos SMB](../../../administration/performance-tuning/role/file-server/smb-file-server.md).
 
 - Use RAMMap (SysInternals) para determinar si el uso de "archivo asignado" en la memoria deja de crecer debido a un agotamiento de la memoria libre.
 
@@ -37,7 +37,7 @@ Si observa transferencias lentas de archivos grandes, tenga en cuenta los siguie
 
 - En el caso de SMBv3 y versiones posteriores, asegúrese de que SMB multicanal está habilitado y en funcionamiento.
 
-- En el cliente SMB, habilite la MTU grande en SMB y deshabilite la limitación de ancho de banda. Para ello, ejecute el comando siguiente:  
+- En el cliente SMB, habilite la MTU grande en SMB y deshabilite la limitación de ancho de banda. Para ello, ejecute el siguiente comando:  
   
   ```PowerShell
   Set-SmbClientConfiguration -EnableBandwidthThrottling 0 -EnableLargeMtu 1
@@ -65,7 +65,7 @@ A continuación se muestran los detalles técnicos sobre este problema:
 
 Este problema se produce normalmente en una conexión WAN. Esto es habitual y normalmente se debe a la manera en que las aplicaciones de Office (Microsoft Excel, en particular) tienen acceso y leen los datos.
 
-Se recomienda asegurarse de que los archivos binarios de la oficina y el SMB estén actualizados y, a continuación, realizar pruebas con la concesión deshabilitada en el servidor SMB. Para ello, realice los pasos siguientes:
+Se recomienda asegurarse de que los archivos binarios de la oficina y el SMB estén actualizados y, a continuación, realizar pruebas con la concesión deshabilitada en el servidor SMB. Para ello, siga estos pasos:
    
 1. Ejecute el siguiente comando de PowerShell en Windows 8 y Windows Server 2012 o versiones posteriores de Windows:
       
@@ -89,4 +89,4 @@ Se recomienda asegurarse de que los archivos binarios de la oficina y el SMB est
    NET START SERVER
    ```
 
-Para evitar este problema, también puede replicar el archivo en un servidor de archivos local. Para obtener más información, consulte [uardar Office Documents to a Network Server is Slowly when using EFS](https://docs.microsoft.com/office/troubleshoot/office/saving-file-to-network-server-slow).
+Para evitar este problema, también puede replicar el archivo en un servidor de archivos local. Para obtener más información, consulte [uardar Office Documents to a Network Server is Slowly when using EFS](/office/troubleshoot/office/saving-file-to-network-server-slow).

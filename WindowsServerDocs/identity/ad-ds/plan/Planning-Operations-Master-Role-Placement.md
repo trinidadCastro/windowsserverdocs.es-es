@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e6142d3facb32a81d8d7c54afe9c2f60fc9eb674
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ad4e89be7eeb6190d27ee0e15e370bcaa1806cb8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623813"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959377"
 ---
 # <a name="planning-operations-master-role-placement"></a>Planear la ubicación del rol de maestro de operaciones
 
@@ -55,9 +55,9 @@ Incluso si todos los controladores de dominio se actualizan a Windows 2000, Wind
 
 Coloque el emulador de PDC en una ubicación que contenga un gran número de usuarios de ese dominio para operaciones de reenvío de contraseñas, si es necesario. Además, asegúrese de que la ubicación está bien conectada a otras ubicaciones para reducir la latencia de replicación.
 
-En el caso de una hoja de cálculo que le ayude a documentar la información sobre dónde planea colocar los emuladores de PDC y el número de usuarios para cada dominio que se representa en cada ubicación, consulte [ayudas de trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abrir la ubicación del controlador de dominio (DSSTOPO_4. doc).
+En el caso de una hoja de cálculo que le ayude a documentar la información acerca de dónde planea colocar los emuladores de PDC y el número de usuarios para cada dominio que se representa en cada ubicación, vea la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip y abrir la ubicación del controlador de dominio (DSSTOPO_4.doc).
 
-Debe consultar la información acerca de las ubicaciones en las que necesita colocar emuladores de PDC al implementar dominios regionales. Para obtener más información acerca de la implementación de dominios regionales, consulte [implementación de dominios regionales de Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).
+Debe consultar la información acerca de las ubicaciones en las que necesita colocar emuladores de PDC al implementar dominios regionales. Para obtener más información acerca de la implementación de dominios regionales, consulte [implementación de dominios regionales de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10)).
 
 ## <a name="requirements-for-infrastructure-master-placement"></a>Requisitos para la colocación del maestro de infraestructura
 
@@ -82,9 +82,9 @@ Aunque esta configuración produce una replicación correcta entre todos los sit
 - Los controladores de dominio de los sitios C y D no pueden agregar o quitar particiones de directorio, DNS o aplicaciones personalizadas.
 - Los controladores de dominio de los sitios C y D no pueden realizar cambios en el esquema.
 
-Para ver una hoja de cálculo que le ayude a planear la ubicación de los roles de maestro de operaciones, consulte el [Kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608), descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abra la ubicación del controlador de dominio (DSSTOPO_4. doc).
+Para ver una hoja de cálculo que le ayude a planear la ubicación de los roles de maestro de operaciones, consulte el [Kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip y abrir la ubicación del controlador de dominio (DSSTOPO_4.doc).
 
-Tendrá que consultar esta información al crear el dominio raíz del bosque y los dominios regionales. Para obtener más información acerca de la implementación del dominio raíz del bosque, vea implementar un [dominio raíz del bosque de Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx). Para obtener más información acerca de la implementación de dominios regionales, consulte [implementación de dominios regionales de Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).
+Tendrá que consultar esta información al crear el dominio raíz del bosque y los dominios regionales. Para obtener más información acerca de la implementación del dominio raíz del bosque, vea implementar un [dominio raíz del bosque de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10)). Para obtener más información acerca de la implementación de dominios regionales, consulte [implementación de dominios regionales de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10)).
 
 ## <a name="next-steps"></a>Pasos siguientes
 
