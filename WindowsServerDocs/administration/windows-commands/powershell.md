@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 8a252efe57cec1e77bd4d814ced75decb1f2ceb7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 765504ef9e21aedc367c55629a96501d8e8bd810
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931374"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956587"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -54,18 +54,18 @@ La herramienta de línea de comandos **PowerShell.exe** inicia una sesión de Wi
 
 - Para finalizar una sesión de Windows PowerShell en una ventana del símbolo del sistema, escriba `exit` . Se devuelve el símbolo del sistema típico.
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
-- Para obtener una lista completa de los parámetros de línea de comandos de **PowerShell.exe** , vea [about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe).
+- Para obtener una lista completa de los parámetros de línea de comandos de **PowerShell.exe** , vea [about_PowerShell.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe).
 
-- Para obtener información sobre otras maneras de iniciar Windows PowerShell, consulte [iniciar Windows PowerShell](https://docs.microsoft.com/powershell/scripting/windows-powershell/starting-windows-powershell).
+- Para obtener información sobre otras maneras de iniciar Windows PowerShell, consulte [iniciar Windows PowerShell](/powershell/scripting/windows-powershell/starting-windows-powershell).
 
-- Windows PowerShell se ejecuta en la opción de instalación Server Core de los sistemas operativos Windows Server. Sin embargo, las características que requieren una interfaz gráfica de usuario, como el [entorno de scripting integrado (ISE) de Windows PowerShell](https://docs.microsoft.com/previous-versions//hh849182(v=technet.10))y los cmdlets [out-GridView](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview) y [Show-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command) , no se ejecutan en instalaciones Server Core.
+- Windows PowerShell se ejecuta en la opción de instalación Server Core de los sistemas operativos Windows Server. Sin embargo, las características que requieren una interfaz gráfica de usuario, como el [entorno de scripting integrado (ISE) de Windows PowerShell](/previous-versions//hh849182(v=technet.10))y los cmdlets [out-GridView](/powershell/module/microsoft.powershell.utility/out-gridview) y [Show-Command](/powershell/module/microsoft.powershell.utility/show-command) , no se ejecutan en instalaciones Server Core.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
+- [about_PowerShell.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
 
-- [about_PowerShell_Ise.exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)
+- [about_PowerShell_Ise.exe](/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)
 
-- [Windows PowerShell](https://docs.microsoft.com/powershell/)
+- [Windows PowerShell](/powershell/)
