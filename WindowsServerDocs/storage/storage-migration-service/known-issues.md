@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 934dbc181131d395ea4fdeb79c5f32121746b5e8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a6ee550a0652f5b357a966e4074afdf499fcea34
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475302"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953917"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -384,7 +384,7 @@ Hay dos soluciones para este problema:
 
 Después de completar una transferencia y, a continuación, ejecutar una retransferencia posterior de los mismos datos, es posible que no vea muchas mejoras en el tiempo de transferencia aunque haya pocos datos que hayan cambiado mientras tanto en el servidor de origen.
 
-Este es el comportamiento esperado cuando se transfiere un número muy grande de archivos y carpetas anidadas. El tamaño de los datos no es relevante. Primero hemos realizado mejoras en este comportamiento en [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) y continúan optimizando el rendimiento de la transferencia. Para optimizar aún más el rendimiento, revise [optimización del inventario y rendimiento](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)de la transferencia.
+Este es el comportamiento esperado cuando se transfiere un número muy grande de archivos y carpetas anidadas. El tamaño de los datos no es relevante. Primero hemos realizado mejoras en este comportamiento en [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) y continúan optimizando el rendimiento de la transferencia. Para optimizar aún más el rendimiento, revise [optimización del inventario y rendimiento](./faq.md#optimizing-inventory-and-transfer-performance)de la transferencia.
 
 ## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>Los datos no se transfieren, el usuario cambia el nombre al migrar a o desde un controlador de dominio.
 
@@ -542,6 +542,6 @@ Al intentar ejecutar el inventario o la transferencia con el servicio de migraci
 
 Este problema se debe a un defecto de código en el servicio de migración de almacenamiento. Para solucionar este problema, use las credenciales de migración del mismo dominio al que pertenecen los equipos de origen y de destino. Por ejemplo, si el equipo de origen y el de destino pertenecen al dominio "corp.contoso.com" del bosque "contoso.com", use "corp\myaccount" para realizar la migración, no una credencial "contoso\myaccount".
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)

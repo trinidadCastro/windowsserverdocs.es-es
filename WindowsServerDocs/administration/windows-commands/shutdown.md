@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64bfd5ceed29bff5d9ae39e03a99aba2f7a2f39e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2f31e5b0ee1252bf015c964fa76dd2852df3515b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936379"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956127"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -47,12 +47,12 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/c\<Comment>|Le permite comentar con detalle el motivo del apagado. Primero debe proporcionar un motivo mediante la opción **/d** . Los comentarios deben ir entre comillas. Puede utilizar 511 caracteres como máximo.|
 |/?|Muestra la ayuda en el símbolo del sistema, incluida una lista de las razones principales y secundarias que se definen en el equipo local.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Los usuarios deben tener asignado el derecho de usuario **apagar el sistema** para apagar un equipo administrado de forma remota o local que use el comando **Shutdown** .
--   Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para obtener más información, consulte:
-    -   [Grupos locales predeterminados](https://technet.microsoft.com/library/cc785098(v=ws.10).aspx)
-    -   [Grupos predeterminados](https://technet.microsoft.com/library/cc756898(v=ws.10).aspx)
+-   Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para obtener más información, vea:
+    -   [Grupos locales predeterminados](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
+    -   [Grupos predeterminados](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
 -   Si desea apagar más de un equipo a la vez, puede llamar a **Shutdown** para cada equipo mediante un script, o bien puede usar **Shutdown** **/i** para mostrar el cuadro de diálogo apagado remoto.
 -   Si especifica códigos de motivo principales y secundarios, primero debe definir estos códigos de motivo en cada equipo en el que vaya a usar los motivos. Si los códigos de motivo no están definidos en el equipo de destino, el rastreador de eventos de apagado no puede registrar el texto de motivo correcto.
 -   Recuerde indicar que se ha planeado un apagado mediante el parámetro **p:** . La omisión de **p:** indica que un cierre no está planeado. Si escribe **p:** seguido del código de motivo para un apagado no planeado, el comando no llevará a cabo el cierre. Por el contrario, si se omite **p:** y se escribe el código de motivo para un cierre planeado, el comando no llevará a cabo el cierre.
