@@ -7,12 +7,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: d129772a16301c688c81d3a55f4a60c559fce0c9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 72d08b3e4461eeea07e161de1073f5320830028c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474062"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953989"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Uso de Azure Monitor para enviar correos electrónicos sobre errores del Servicio de mantenimiento
 
@@ -35,11 +35,11 @@ Este módulo de administración incluye:
 
 Todos los datos recopilados por Azure Monitor pueden clasificarse en uno de los dos tipos fundamentales: métricas y registros.
 
-1. Las [métricas](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#metrics) son valores numéricos que describen algún aspecto de un sistema en un momento dado. Las métricas son ligeras y capaces de admitir escenarios de tiempo casi real. Verá los datos recopilados por Azure Monitor derecha en su página de información general en el Azure Portal.
+1. Las [métricas](/azure/azure-monitor/platform/data-collection#metrics) son valores numéricos que describen algún aspecto de un sistema en un momento dado. Las métricas son ligeras y capaces de admitir escenarios de tiempo casi real. Verá los datos recopilados por Azure Monitor derecha en su página de información general en el Azure Portal.
 
 ![Imagen de la ingesta de métricas en el explorador de métricas](media/configure-azure-monitor/metrics.png)
 
-2. Los [registros](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#logs) contienen distintos tipos de datos organizados en grupos de registros, donde cada tipo tiene diferentes conjuntos de propiedades. Los datos de telemetría, como los eventos y los seguimientos, se almacenan como registros junto con los datos de rendimiento para poder analizarlos de forma combinada. Los datos de registro recopilados por Azure Monitor se pueden analizar con [consultas](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) que recuperan, consolidan y analizan rápidamente los datos recopilados. Puede crear y probar consultas mediante [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/portals) en Azure Portal y después analizar los datos directamente mediante estas herramientas o guardar las consultas para usarlas con las [visualizaciones](https://docs.microsoft.com/azure/azure-monitor/visualizations) o las [reglas de alertas](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview).
+2. Los [registros](/azure/azure-monitor/platform/data-collection#logs) contienen distintos tipos de datos organizados en grupos de registros, donde cada tipo tiene diferentes conjuntos de propiedades. Los datos de telemetría, como los eventos y los seguimientos, se almacenan como registros junto con los datos de rendimiento para poder analizarlos de forma combinada. Los datos de registro recopilados por Azure Monitor se pueden analizar con [consultas](/azure/azure-monitor/log-query/log-query-overview) que recuperan, consolidan y analizan rápidamente los datos recopilados. Puede crear y probar consultas mediante [Log Analytics](/azure/azure-monitor/log-query/portals) en Azure Portal y después analizar los datos directamente mediante estas herramientas o guardar las consultas para usarlas con las [visualizaciones](/azure/azure-monitor/visualizations) o las [reglas de alertas](/azure/azure-monitor/platform/alerts-overview).
 
 ![Imagen de la ingesta de registros en Log Analytics](media/configure-azure-monitor/logs.png)
 
@@ -76,9 +76,9 @@ Al ejecutar el cmdlet anterior para establecer la configuración de mantenimient
 
 Ahora que ha configurado el registro correcto en el clúster, el siguiente paso es configurar correctamente log Analytics.
 
-Para obtener información general, [Azure log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows) puede recopilar datos directamente de los equipos de Windows físicos o virtuales de su centro de datos o de otro entorno en la nube en un solo repositorio para el análisis y la correlación detallados.
+Para obtener información general, [Azure log Analytics](/azure/azure-monitor/platform/agent-windows) puede recopilar datos directamente de los equipos de Windows físicos o virtuales de su centro de datos o de otro entorno en la nube en un solo repositorio para el análisis y la correlación detallados.
 
-Para comprender la configuración compatible, revise los [sistemas operativos Windows admitidos](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) y la [configuración del firewall de red](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
+Para comprender la configuración compatible, revise los [sistemas operativos Windows admitidos](/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) y la [configuración del firewall de red](/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
 
 Si no tiene una suscripción a Azure, cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de empezar.
 
@@ -88,7 +88,7 @@ Inicie sesión en Azure Portal en [https://portal.azure.com](https://azure.micro
 
 #### <a name="create-a-workspace"></a>Crear un área de trabajo
 
-Para obtener más detalles sobre los pasos que se indican a continuación, consulte la [documentación de Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-windows-computer).
+Para obtener más detalles sobre los pasos que se indican a continuación, consulte la [documentación de Azure Monitor](/azure/azure-monitor/learn/quick-collect-windows-computer).
 
 1. En Azure Portal, haga clic en **Todos los servicios**. En la lista de recursos, escriba **Log Analytics**. Cuando comience a escribir, la lista se filtrará en función de la entrada. Seleccione **Log Analytics**.<br><br>
 
@@ -135,7 +135,7 @@ Una vez completado el proceso, el **Agente de administración de Microsoft** apa
 
 ![Estado de la conexión de MMA en Log Analytics](media/configure-azure-monitor/log-analytics-mma-laworkspace-status.png)
 
-Para comprender la configuración compatible, revise los [sistemas operativos Windows admitidos](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) y la [configuración del firewall de red](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
+Para comprender la configuración compatible, revise los [sistemas operativos Windows admitidos](/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) y la [configuración del firewall de red](/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
 
 ## <a name="setting-up-alerts-using-windows-admin-center"></a>Configuración de alertas mediante Windows Admin Center
 
@@ -206,7 +206,7 @@ Active la casilla situada junto a **Error** en **EVENTLEVELNAME** o escriba lo s
 Event | where (EventLevelName == "Error")
 ```
 
-![Filtrar](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
+![Filter](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
 
 Una vez realizadas las consultas de apropiados para los eventos que le interesan, guárdelas en el paso siguiente.
 
@@ -249,5 +249,5 @@ A continuación se muestra un ejemplo del correo electrónico que se enviará me
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
-- Para obtener información más detallada, lea la [documentación de Azure monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata).
+- Para obtener información más detallada, lea la [documentación de Azure monitor](/azure/azure-monitor/learn/tutorial-viewdata).
 - Lea este tema para obtener información general sobre cómo [conectarse a otros servicios híbridos de Azure](../../manage/windows-admin-center/azure/index.md).

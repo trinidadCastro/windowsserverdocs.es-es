@@ -8,12 +8,12 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 82c94adadb9241e2b7cd8d75ea1693957aaffc61
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea421bb274ec7f6a6b1ba5be03391dd92fb10b33
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816268"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955058"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía
 
@@ -30,13 +30,13 @@ El rápido aumento en el número de dispositivos de consumo y el acceso a la inf
 ### <a name="workplace-join"></a>Unión al área de trabajo
 Con la unión al área de trabajo, los trabajadores de la información pueden unir sus dispositivos personales con sus equipos de trabajo de la compañía para acceder a los recursos y servicios de la compañía. Cuando unas tu dispositivo personal al área de trabajo, se convertirá en un dispositivo conocido y proporciona autenticación de segundo factor sin problemas e inicio de sesión único para las aplicaciones y los recursos del área de trabajo. Cuando un dispositivo se une mediante unión al área de trabajo, los atributos del dispositivo se pueden recuperar del directorio para controlar el acceso condicional con el fin de autorizar la emisión de tokens de seguridad para las aplicaciones. Los dispositivos Windows 8.1, iOS 6.0+ y Android 4.0+ se pueden unir mediante unión al área de trabajo.
 
-### <a name="azure-active-directory-device-registration-service"></a><a name="BKMK_DRS"></a>Servicio de Registro de dispositivos de Azure Active Directory
+### <a name="azure-active-directory-device-registration-service"></a><a name="BKMK_DRS"></a>Servicio de registro de dispositivo de Azure Active Directory
 Unión al área de trabajo se realiza mediante el servicio de registro de dispositivo de Azure Active Directory. Cuando un dispositivo se une mediante unión al área de trabajo, el servicio aprovisiona un objeto de dispositivo en Active Directory y establece una clave en el dispositivo local que se usa para representar la identidad del dispositivo. Esta identidad de dispositivo puede usarse con las reglas de control de acceso para las aplicaciones que se hospedan en la nube y localmente.
 
-Para obtener más información, consulte [Introducción a la administración de dispositivos en Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-introduction).
+Para obtener más información, consulte [Introducción a la administración de dispositivos en Azure Active Directory](/azure/active-directory/device-management-introduction).
 
 ### <a name="workplace-join-as-a-seamless-second-factor-authentication"></a>La unión al área de trabajo como autenticación de segundo factor sin problemas
-Las empresas pueden controlar el riesgo que supone el acceso a la información, así como el gobierno y el cumplimiento normativo, al conceder a los dispositivos de consumo acceso a los recursos corporativos. La unión de dispositivos al área de trabajo ofrece las siguientes funcionalidades a los administradores:
+Las empresas pueden controlar el riesgo que supone el acceso a la información, así como la gobernanza y el cumplimiento normativo, al conceder a los dispositivos de consumo acceso a los recursos corporativos. La unión de dispositivos al área de trabajo ofrece las siguientes funcionalidades a los administradores:
 
 -   Identifica los dispositivos conocidos mediante la identificación de dispositivos. Los administradores pueden usar esta información para controlar el acceso condicional así como el acceso a los recursos.
 
@@ -45,11 +45,11 @@ Las empresas pueden controlar el riesgo que supone el acceso a la información, 
 ### <a name="single-sign-on"></a>Inicio de sesión único
 En el contexto de este escenario, el inicio de sesión único (SSO) es la funcionalidad que reduce el número de peticiones de contraseña que el usuario tiene que escribir para acceder a los recursos de la compañía desde dispositivos conocidos. El resultado de esta funcionalidad es que solo se pregunta una vez a los usuarios durante todo el inicio de sesión único para acceder a las aplicaciones y recursos de la compañía desde ese dispositivo. Si un dispositivo usa la unión al área de trabajo, el usuario que está registrado para este dispositivo obtiene un inicio de sesión único persistente para siete días de forma predeterminada. Este usuario tiene una experiencia de inicio de sesión sin problemas en la misma sesión o en sesiones nuevas.
 
-## <a name="solution-overview"></a>Introducción a la solución
+## <a name="solution-overview"></a>Información general de la solución
 Como parte de esta solución, aprenderá a usar la unión al área de trabajo en un dispositivo compatible y experimentará un inicio de sesión único en un recurso de la compañía.
 
 > [!NOTE]
-> Para disponer de compatibilidad con dispositivos Windows 8.1, iOS 6.0+ y Android 4.0+, debe configurar el registro de dispositivo de Azure Active Directory junto con la reescritura de objetos de dispositivo. Consulte [Guía paso a paso para el acceso condicional local con el servicio de registro de dispositivo de Azure Active Directory](https://msdn.microsoft.com/library/azure/dn788908.aspx)
+> Para disponer de compatibilidad con dispositivos Windows 8.1, iOS 6.0+ y Android 4.0+, debe configurar el registro de dispositivo de Azure Active Directory junto con la reescritura de objetos de dispositivo. Consulte [Guía paso a paso para el acceso condicional local con el servicio de registro de dispositivo de Azure Active Directory](/previous-versions/azure/dn788908(v=azure.100))
 
 Esta solución te lleva por los siguientes pasos del tutorial:
 
@@ -59,8 +59,5 @@ Esta solución te lleva por los siguientes pasos del tutorial:
 
 3.  [Tutorial: Workplace Join con un dispositivo Android](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Consulte también
 [Configuración de un servidor de Federación con el servicio de registro de dispositivos](../deployment/configure-a-federation-server-with-device-registration-service.md)
-
-
-

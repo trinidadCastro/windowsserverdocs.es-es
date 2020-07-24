@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 38eda178b6c9e34fec1d63ed6c59f01023b859c4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: ebe9056e1ae1393cebf0b1e2a719cd0c369b3e3e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436685"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954777"
 ---
 # <a name="vssadmin-list-shadows"></a>Vssadmin List Shadows
 
@@ -31,10 +31,10 @@ vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 
 |Parámetro|Descripción|
 |---|---|
-|/for = \< paravolumenespec>|Especifica en qué volumen se mostrarán las instantáneas.|
-|/Shadow = \< ShadowID>|Muestra la instantánea especificada por ShadowID. Para obtener el identificador de la instantánea, use el comando **vssadmin List Shadows** . Cuando escriba un identificador de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/for =\<ForVolumeSpec>|Especifica en qué volumen se mostrarán las instantáneas.|
+|/Shadow =\<ShadowID>|Muestra la instantánea especificada por ShadowID. Para obtener el identificador de la instantánea, use el comando **vssadmin List Shadows** . Cuando escriba un identificador de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-* [Clave de sintaxis de línea de comandos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
+* [Clave de sintaxis de línea de comandos](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
 * [List](vssadmin.md)

@@ -1,7 +1,7 @@
 ---
 ms.assetid: a3f50046-5d48-43d3-b0f8-ac2346b15285
-title: Administrar certificados SSL en AD FS y WAP en Windows Server 2016
-description: Administrar certificados SSL en AD FS y WAP en Windows Server 2016
+title: Administración de certificados SSL en AD FS y WAP en Windows Server 2016
+description: Administración de certificados SSL en AD FS y WAP en Windows Server 2016
 author: jenfieldmsft
 ms.author: billmath
 manager: samueld
@@ -9,32 +9,32 @@ ms.date: 10/02/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b832756e123bee0223738ee804ac3a4db2371e84
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a982df8ce7d1f335a1c2242f277b1983573c9ee1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855298"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954208"
 ---
-# <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>Administrar certificados SSL en AD FS y WAP en Windows Server 2016
+# <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>Administración de certificados SSL en AD FS y WAP en Windows Server 2016
 
 
 
 En este artículo se describe cómo implementar un nuevo certificado SSL en los servidores AD FS y WAP.
 
 >[!NOTE]
->El método recomendado para reemplazar el certificado SSL que se va a avanzar para una granja AD FS es usar Azure AD Connect.  Para obtener más información [, consulte Actualización del certificado SSL para una granja de servicios de Federación de Active Directory (AD FS) (AD FS)](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectfed-ssl-update)
+>El método recomendado para reemplazar el certificado SSL que se va a avanzar para una granja AD FS es usar Azure AD Connect.  Para obtener más información [, consulte Actualización del certificado SSL para una granja de servicios de Federación de Active Directory (AD FS) (AD FS)](/azure/active-directory/connect/active-directory-aadconnectfed-ssl-update)
 
 ## <a name="obtaining-your-ssl-certificates"></a>Obtención de los certificados SSL
 En el caso de las granjas de AD FS de producción, se recomienda un certificado SSL de confianza pública. Esto suele obtenerse mediante el envío de una solicitud de firma de certificado (CSR) a un proveedor de certificados público de terceros. Hay varias maneras de generar el CSR, incluido desde un equipo con Windows 7 o una versión posterior. El proveedor debe tener documentación para esto.
 
-- Asegúrese de que el certificado cumple los [requisitos de certificado SSL de AD FS y proxy de aplicación web](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)
+- Asegúrese de que el certificado cumple los [requisitos de certificado SSL de AD FS y proxy de aplicación web](../overview/ad-fs-requirements.md#BKMK_1)
 
 ### <a name="how-many-certificates-are-needed"></a>Cuántos certificados se necesitan
-Se recomienda usar un certificado SSL común en todos los servidores de AD FS y del proxy de aplicación Web. Para conocer los requisitos detallados, consulte los [requisitos de certificado SSL de AD FS y proxy de aplicación web](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)
+Se recomienda usar un certificado SSL común en todos los servidores de AD FS y del proxy de aplicación Web. Para conocer los requisitos detallados, consulte los [requisitos de certificado SSL de AD FS y proxy de aplicación web](../overview/ad-fs-requirements.md#BKMK_1)
 
-### <a name="ssl-certificate-requirements"></a>Requisitos de certificados SSL
-En cuanto a los requisitos, como la asignación de nombres, la raíz de confianza y las extensiones, consulte los requisitos de los [certificados SSL del proxy de aplicación web y el AD FS](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1) documento
+### <a name="ssl-certificate-requirements"></a>Requisitos del certificado SSL
+En cuanto a los requisitos, como la asignación de nombres, la raíz de confianza y las extensiones, consulte los requisitos de los [certificados SSL del proxy de aplicación web y el AD FS](../overview/ad-fs-requirements.md#BKMK_1) documento
 
 ## <a name="replacing-the-ssl-certificate-for-ad-fs"></a>Reemplazar el certificado SSL para AD FS
 > [!NOTE]
@@ -46,11 +46,11 @@ En primer lugar, determine el modo de enlace de certificados que ejecutan los se
 De forma predeterminada, AD FS realiza la autenticación de certificados de dispositivo en el puerto 443 y la autenticación de certificado de usuario en el puerto 49443 (o un puerto configurable que no sea 443).
 En este modo, use el cmdlet de PowerShell Set-AdfsSslCertificate para administrar el certificado SSL.
 
-Sigue los pasos siguientes:
+Siga estos pasos:
 
 1. En primer lugar, tendrá que obtener el nuevo certificado. Esto se suele hacer mediante el envío de una solicitud de firma de certificado (CSR) a un proveedor de certificados público de terceros. Hay varias maneras de generar el CSR, incluido desde un equipo con Windows 7 o una versión posterior. El proveedor debe tener documentación para esto.
 
-    * Asegúrese de que el certificado cumple los [requisitos de certificado SSL de AD FS y proxy de aplicación web](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)
+    * Asegúrese de que el certificado cumple los [requisitos de certificado SSL de AD FS y proxy de aplicación web](../overview/ad-fs-requirements.md#BKMK_1)
 
 1. Una vez que obtenga la respuesta del proveedor de certificados, impórtela en el almacén del equipo local en cada AD FS y en el servidor proxy de aplicación Web.
 
@@ -77,11 +77,11 @@ dir Cert:\LocalMachine\My\
 Cuando se configura en el modo de enlace TLS de cliente alternativo, AD FS realiza la autenticación de certificados de dispositivo en el puerto 443 y la autenticación de certificado de usuario en el puerto 443 también en un nombre de host diferente. El nombre de host del certificado de usuario es el AD FS nombre de host precedido de "certauth", por ejemplo, "certauth.fs.contoso.com".
 En este modo, use el cmdlet de PowerShell Set-AdfsAlternateTlsClientBinding para administrar el certificado SSL. Esto no solo administrará el enlace TLS de cliente alternativo, sino también todos los demás enlaces en los que AD FS establece el certificado SSL.
 
-Sigue los pasos siguientes:
+Siga estos pasos:
 
 1. En primer lugar, tendrá que obtener el nuevo certificado. Esto se suele hacer mediante el envío de una solicitud de firma de certificado (CSR) a un proveedor de certificados público de terceros. Hay varias maneras de generar el CSR, incluido desde un equipo con Windows 7 o una versión posterior. El proveedor debe tener documentación para esto.
 
-    * Asegúrese de que el certificado cumple los [requisitos de certificado SSL de AD FS y proxy de aplicación web](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)
+    * Asegúrese de que el certificado cumple los [requisitos de certificado SSL de AD FS y proxy de aplicación web](../overview/ad-fs-requirements.md#BKMK_1)
 
 1. Una vez que obtenga la respuesta del proveedor de certificados, impórtela en el almacén del equipo local en cada AD FS y en el servidor proxy de aplicación Web.
 

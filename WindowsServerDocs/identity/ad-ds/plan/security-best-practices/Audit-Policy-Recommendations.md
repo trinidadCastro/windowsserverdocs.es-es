@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c25df61246bf6a7c731e08e11cee54fd87d6ae4c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5a5af1691cdfec41cc4f821943b9b849c8822057
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821348"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953957"
 ---
 # <a name="audit-policy-recommendations"></a>Recomendaciones de la directiva de auditoría
 
@@ -21,12 +21,12 @@ ms.locfileid: "80821348"
 
 En esta sección se trata la configuración de directiva de auditoría predeterminada de Windows, la configuración de directiva de auditoría recomendada de línea de base y las recomendaciones más agresivas de Microsoft para los productos de servidor y estación de trabajo.  
 
-Las recomendaciones de línea base de SCM que se muestran aquí, junto con la configuración que se recomienda para ayudar a detectar el riesgo, solo están destinadas a una guía básica de inicio para los administradores. Cada organización debe tomar sus propias decisiones con respecto a las amenazas a las que se encuentran, sus tolerancias de riesgo aceptables y qué categorías o subcategorías de directivas de auditoría deben habilitar. Para obtener más información acerca de las amenazas, consulte la [Guía de amenazas y contramedidas](https://technet.microsoft.com/library/hh125921(v=ws.10).aspx). Se recomienda que los administradores sin una directiva de auditoría exhaustiva se empiecen con la configuración recomendada aquí y, a continuación, modificar y probar, antes de la implementación en su entorno de producción.  
+Las recomendaciones de línea base de SCM que se muestran aquí, junto con la configuración que se recomienda para ayudar a detectar el riesgo, solo están destinadas a una guía básica de inicio para los administradores. Cada organización debe tomar sus propias decisiones con respecto a las amenazas a las que se encuentran, sus tolerancias de riesgo aceptables y qué categorías o subcategorías de directivas de auditoría deben habilitar. Para obtener más información acerca de las amenazas, consulte la [Guía de amenazas y contramedidas](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125921(v=ws.10)). Se recomienda que los administradores sin una directiva de auditoría exhaustiva se empiecen con la configuración recomendada aquí y, a continuación, modificar y probar, antes de la implementación en su entorno de producción.  
 
 Las recomendaciones son para equipos de clase empresarial, que Microsoft define como equipos que tienen requisitos de seguridad medios y requieren un alto nivel de funcionalidad operativa. Las entidades que necesitan más requisitos de seguridad deberían tener en cuenta directivas de auditoría más agresivas.  
 
 > [!NOTE]  
-> Los valores predeterminados y las recomendaciones de línea de base de Microsoft se han tomado de la [herramienta Microsoft Security Compliance Manager](https://technet.microsoft.com/library/cc677002.aspx).  
+> Los valores predeterminados y las recomendaciones de línea de base de Microsoft se han tomado de la [herramienta Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc677002(v=technet.10)).  
 
 Se recomienda la siguiente configuración de la Directiva de auditoría de línea de base para los equipos de seguridad normales que no se sabe que están bajo ataque activo y correcto determinando los adversarios o malware.  
 
@@ -37,7 +37,7 @@ Esta sección contiene tablas que enumeran las recomendaciones de configuración
 
 -   Windows Server 2012  
 
--   Windows Server 2012 R2  
+-   Windows Server 2012 R2  
 
 -   Windows Server 2008  
 
@@ -45,7 +45,7 @@ Esta sección contiene tablas que enumeran las recomendaciones de configuración
 
 -   Windows 8.1  
 
--   Windows 7  
+-   Windows 7  
 
 Estas tablas contienen la configuración predeterminada de Windows, las recomendaciones de línea base y las recomendaciones más seguras para estos sistemas operativos.  
 
@@ -55,10 +55,10 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |-|-|  
 |**Notación**|**Recomendación**|  
 |SÍ|Habilitar en escenarios generales|  
-|NO|**No** habilitar en escenarios generales|  
+|No|**No** habilitar en escenarios generales|  
 |IF|Habilitar si es necesario para un escenario concreto, o si se instala en el equipo un rol o característica para el que se desea la auditoría|  
 |DC|Habilitar en controladores de dominio|  
-|En blanco|Ninguna recomendación|  
+|En blanco|Sin recomendación|  
 
 **Recomendaciones de configuración de auditoría de Windows 10, Windows 8 y Windows 7**  
 
@@ -66,7 +66,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 
 |Categoría o subcategoría de directiva de auditoría|Predeterminado de Windows<p>Error de operación correcta|Recomendación de línea de base<p>Error de operación correcta|Recomendación más fuerte<p>Error de operación correcta|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
-|**Inicio de sesión de cuenta**||||  
+|**Inicio de sesión de la cuenta**||||  
 |Auditar validación de credenciales|No no|Sí no|Sí sí|  
 |Auditar servicio de autenticación Kerberos|||Sí sí|  
 |Auditar operaciones de vales de servicio Kerberos|||Sí sí|  
@@ -83,7 +83,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar creación de procesos||Sí no|Sí sí|  
 |Auditar finalización de procesos||||  
 |Auditar eventos de RPC||||  
-|**Acceso a DS**||||  
+|**Acceso DS**||||  
 |Auditar replicación de servicio de directorio detallada||||  
 |Auditar el acceso del servicio de directorio||||  
 |Auditar cambios de servicio de directorio||||  
@@ -106,7 +106,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar recurso compartido de archivos||||  
 |Auditar sistema de archivos||||  
 |Auditar conexión de Plataforma de filtrado||||  
-|Auditar colocación de paquetes de la Plataforma de filtrado||||  
+|Auditar colocación de paquetes de Plataforma de filtrado||||  
 |Auditar manipulación de identificadores||||  
 |Auditar objeto de kernel||||  
 |Auditar otros eventos de acceso a objetos||||  
@@ -114,18 +114,18 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar almacenamiento extraíble||||  
 |Auditar SAM||||  
 |Auditar almacenamiento provisional de directiva de acceso central||||  
-|**Cambio de Directiva**||||  
+|**Cambio de directiva**||||  
 |Auditar cambio de directiva de auditoría|Sí no|Sí sí|Sí sí|  
 |Auditar cambio de directiva de autenticación|Sí no|Sí no|Sí sí|  
 |Auditar cambio de directiva de autorización||||  
-|Auditar cambio de directiva de la Plataforma de filtrado||||  
+|Auditar cambio de directiva de Plataforma de filtrado||||  
 |Auditar cambio de directiva del nivel de reglas de MPSSVC|||Sí  |  
 |Auditar otros eventos de cambio de directiva||||  
 |**Uso de privilegios**||||  
 |Auditar uso de privilegios no confidenciales||||  
 |Auditar otros eventos de uso de privilegios||||  
 |Auditar uso de privilegios confidenciales||||  
-|**Integrado**||||  
+|**Sistema**||||  
 |Auditar controlador IPsec||Sí sí|Sí sí|  
 |Auditar otros eventos del sistema|Sí sí|||  
 |Auditar cambio de estado de seguridad|Sí no|Sí sí|Sí sí|  
@@ -144,7 +144,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 
 |Categoría o subcategoría de directiva de auditoría|Predeterminado de Windows<p>Error de operación correcta|Recomendación de línea de base<p>Error de operación correcta|Recomendación más fuerte<p>Error de operación correcta|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
-|**Inicio de sesión de cuenta**||||  
+|**Inicio de sesión de la cuenta**||||  
 |Auditar validación de credenciales|No no|Sí sí|Sí sí|  
 |Auditar servicio de autenticación Kerberos|||Sí sí|  
 |Auditar operaciones de vales de servicio Kerberos|||Sí sí|  
@@ -161,7 +161,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar creación de procesos||Sí no|Sí sí|  
 |Auditar finalización de procesos||||  
 |Auditar eventos de RPC||||  
-|**Acceso a DS**||||  
+|**Acceso DS**||||  
 |Auditar replicación de servicio de directorio detallada||||  
 |Auditar el acceso del servicio de directorio||DC DC|DC DC|  
 |Auditar cambios de servicio de directorio||DC DC|DC DC|  
@@ -184,7 +184,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar recurso compartido de archivos||||  
 |Auditar sistema de archivos||||  
 |Auditar conexión de Plataforma de filtrado||||  
-|Auditar colocación de paquetes de la Plataforma de filtrado||||  
+|Auditar colocación de paquetes de Plataforma de filtrado||||  
 |Auditar manipulación de identificadores||||  
 |Auditar objeto de kernel||||  
 |Auditar otros eventos de acceso a objetos||||  
@@ -192,18 +192,18 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar almacenamiento extraíble||||  
 |Auditar SAM||||  
 |Auditar almacenamiento provisional de directiva de acceso central||||  
-|**Cambio de Directiva**||||  
+|**Cambio de directiva**||||  
 |Auditar cambio de directiva de auditoría|Sí no|Sí sí|Sí sí|  
 |Auditar cambio de directiva de autenticación|Sí no|Sí no|Sí sí|  
 |Auditar cambio de directiva de autorización||||  
-|Auditar cambio de directiva de la Plataforma de filtrado||||  
+|Auditar cambio de directiva de Plataforma de filtrado||||  
 |Auditar cambio de directiva del nivel de reglas de MPSSVC|||Sí  |  
 |Auditar otros eventos de cambio de directiva||||  
 |**Uso de privilegios**||||  
 |Auditar uso de privilegios no confidenciales||||  
 |Auditar otros eventos de uso de privilegios||||  
 |Auditar uso de privilegios confidenciales||||  
-|**Integrado**||||  
+|**Sistema**||||  
 |Auditar controlador IPsec||Sí sí|Sí sí|  
 |Auditar otros eventos del sistema|Sí sí|||  
 |Auditar cambio de estado de seguridad|Sí no|Sí sí|Sí sí|  
@@ -284,15 +284,15 @@ Consulte [Apéndice L: events to Monitor](../../../ad-ds/plan/Appendix-L--Events
 ## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>Información adicional para la supervisión de Active Directory Domain Services  
 Revise los siguientes vínculos para obtener información adicional sobre la supervisión de AD DS:  
   
--   La [Auditoría de acceso a objetos global es mágica](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) : proporciona información sobre la configuración y el uso de la configuración de directivas de auditoría avanzada que se agregó a Windows 7 y windows Server 2008 R2.  
+-   La [Auditoría de acceso a objetos global es mágica](/archive/blogs/askds/global-object-access-auditing-is-magic) : proporciona información sobre la configuración y el uso de la configuración de directivas de auditoría avanzada que se agregó a Windows 7 y windows Server 2008 R2.  
 
--   [Introducción a los cambios de auditoría en windows 2008](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) : presenta los cambios de auditoría realizados en Windows 2008.  
+-   [Introducción a los cambios de auditoría en windows 2008](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008) : presenta los cambios de auditoría realizados en Windows 2008.  
 
--   [Trucos de auditoría fantásticos en vista y 2008](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) : se explican las nuevas características interesantes de la auditoría en Windows Vista y windows Server 2008 que se pueden usar para solucionar problemas o ver lo que sucede en su entorno.  
+-   [Trucos de auditoría fantásticos en vista y 2008](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008) : se explican las nuevas características interesantes de la auditoría en Windows Vista y windows Server 2008 que se pueden usar para solucionar problemas o ver lo que sucede en su entorno.  
 
--   [Tienda única para la auditoría en Windows server 2008 y Windows Vista](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) : contiene una compilación de características de auditoría e información contenida en windows Server 2008 y Windows Vista.  
+-   [Tienda única para la auditoría en Windows server 2008 y Windows Vista](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista) : contiene una compilación de características de auditoría e información contenida en windows Server 2008 y Windows Vista.  
 
--   [AD DS guía paso a paso de auditoría](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx) : describe la nueva característica de auditoría de Active Directory Domain Services (AD DS) en Windows Server 2008. También se proporcionan procedimientos para implementar esta nueva característica.  
+-   [AD DS guía paso a paso de auditoría](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) : describe la nueva característica de auditoría de Active Directory Domain Services (AD DS) en Windows Server 2008. También se proporcionan procedimientos para implementar esta nueva característica.  
 
 ## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>Lista general de críticas de recomendaciones de ID. de eventos de seguridad  
 Todas las recomendaciones de ID. de evento van acompañadas de una clasificación de importancia crítica de la siguiente manera:  

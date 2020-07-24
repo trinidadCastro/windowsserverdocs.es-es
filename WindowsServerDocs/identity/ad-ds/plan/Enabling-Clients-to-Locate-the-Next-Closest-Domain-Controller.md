@@ -8,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 75e31a435e8d8411fbe4db242e6d31fd7676fe4e
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ce946fb0fe581a66f4a4e29cf8491f00294b5bcb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624253"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953587"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>Permitir que los clientes busquen el controlador de dominio más próximo siguiente
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Si tiene un controlador de dominio que ejecuta Windows Server 2008 o una versión más reciente, puede permitir que los equipos cliente que ejecutan Windows Vista o posterior o Windows Server 2008 o posterior busquen controladores de dominio de forma más eficaz si habilita la opción **intentar el sitio más cercano más próximo** Directiva de grupo. Esta configuración mejora el localizador de controladores de dominio (Ubicador de DC) ayudando a simplificar el tráfico de red, especialmente en grandes empresas que tienen muchas sucursales y sitios.
 
@@ -31,7 +31,7 @@ De forma predeterminada, la opción **intentar el siguiente sitio más cercano**
 - Si no hay ningún controlador de dominio disponible en el mismo sitio, intente encontrar cualquier controlador de dominio en el dominio.
 
 > [!NOTE]
-> Este es el mismo algoritmo que el ubicador de DC usado en las versiones anteriores de Active Directory. Para obtener más información, consulte el artículo [Cómo funciona la compatibilidad con DNS para Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10)).
+> Este es el mismo algoritmo que el ubicador de DC usado en las versiones anteriores de Active Directory. Para obtener más información, consulte el artículo [Cómo funciona la compatibilidad con DNS para Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10)).
 
 Si habilita la opción **probar el siguiente sitio más cercano** , el ubicador de DC usa el siguiente algoritmo para buscar un controlador de dominio:
 
@@ -54,4 +54,4 @@ Si la opción no está habilitada, el cliente intenta encontrar un controlador d
 > [!NOTE]
 > La configuración **intentar siguiente sitio más cercano** funciona en coordinación con la cobertura automática de sitios. Por ejemplo, si el siguiente sitio más cercano no tiene ningún controlador de dominio, el ubicador de DC intenta encontrar el controlador de dominio que realiza la cobertura automática de sitios para ese sitio.
 
-Para aplicar la configuración **intentar el siguiente sitio más cercano** , puede crear un objeto de directiva de grupo (GPO) y vincularlo al objeto adecuado para su organización, o bien puede modificar la Directiva de dominio predeterminada para que afecte a todos los clientes que ejecutan Windows Vista o posterior y windows Server 2008 o una versión más reciente en el dominio. Para obtener más información acerca de cómo establecer la configuración **probar el siguiente sitio más cercano** , consulte [habilitación de clientes para buscar un controlador de dominio en el siguiente sitio más cercano](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772592(v=ws.10)).
+Para aplicar la configuración **intentar el siguiente sitio más cercano** , puede crear un objeto de directiva de grupo (GPO) y vincularlo al objeto adecuado para su organización, o bien puede modificar la Directiva de dominio predeterminada para que afecte a todos los clientes que ejecutan Windows Vista o posterior y windows Server 2008 o una versión más reciente en el dominio. Para obtener más información acerca de cómo establecer la configuración **probar el siguiente sitio más cercano** , consulte [habilitación de clientes para buscar un controlador de dominio en el siguiente sitio más cercano](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772592(v=ws.10)).

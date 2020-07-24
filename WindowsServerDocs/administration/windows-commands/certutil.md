@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a2cea23d96c4cb438a2acac6d14c1bd37c67b56
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 159a3d2eb54d6a3040c4a22864a1c90e16bf2247
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922649"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955337"
 ---
 # <a name="certutil"></a>certutil
 
@@ -130,7 +130,7 @@ Donde:
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Los nombres y los valores deben estar separados por dos puntos, mientras que los pares de nombre y valor deben estar separados por una línea nueva. Por ejemplo: `CertificateTemplate:User\nEMail:User@Domain.com` donde la `\n` secuencia se convierte en un separador de nueva línea.
 
@@ -154,7 +154,7 @@ Donde:
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si el último parámetro es numérico, se toma como un **valor Long**.
 
@@ -519,7 +519,7 @@ Donde:
 [-silent] [-split] [-config Machine\CAName] [-restrict RestrictionList] [-out ColumnList]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Para mostrar la columna **StatusCode** para todas las entradas, escriba`-out StatusCode`
 
@@ -721,7 +721,7 @@ Donde:
 [-f] [-user] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El valor predeterminado es el almacén del equipo personal.
 
@@ -1096,7 +1096,7 @@ Donde:
 [-f] [-config Machine\CAName] [-dc DCName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - La `-config` opción tiene como destino una sola entidad de certificación (el valor predeterminado es todas las CA).
 
@@ -1360,7 +1360,7 @@ Donde:
 [-f] [-user] [-silent] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si no se especifica ningún argumento, se comprueba la clave privada de cada certificado de entidad de certificación de firma.
 
@@ -1399,7 +1399,7 @@ Donde:
 [-f] [-enterprise] [-user] [-silent] [-split] [-urlfetch] [-t timeout]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El uso de **applicationpolicylist** restringe la creación de cadenas solo a las cadenas válidas para las directivas de aplicación especificadas.
 
@@ -1493,7 +1493,7 @@ Donde:
 [-nullsign] [-f] [-silent] [-cert certID]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Al usar el signo menos (-), se quitan los números de serie y las extensiones.
 
@@ -1685,7 +1685,7 @@ Donde:
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si un valor de cadena comienza con `+` o `-` , y el valor existente es un `REG_MULTI_SZ` valor, la cadena se agrega o se quita del valor del registro existente. Para forzar la creación de un `REG_MULTI_SZ` valor, agregue `\n` al final del valor de la cadena.
 
@@ -1729,7 +1729,7 @@ Donde:
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si un valor de cadena comienza con `+` o `-` , y el valor existente es un `REG_MULTI_SZ` valor, la cadena se agrega o se quita del valor del registro existente. Para forzar la creación de un `REG_MULTI_SZ` valor, agregue `\n` al final del valor de la cadena.
 
@@ -1773,7 +1773,7 @@ Donde:
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si un valor de cadena comienza con `+` o `-` , y el valor existente es un `REG_MULTI_SZ` valor, la cadena se agrega o se quita del valor del registro existente. Para forzar la creación de un `REG_MULTI_SZ` valor, agregue `\n` al final del valor de la cadena.
 
@@ -1823,7 +1823,7 @@ Donde:
 [-f] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 Es posible que la entidad de certificación también deba configurarse para admitir certificados externos. Para ello, escriba `import - certutil -setreg ca\KRAFlags +KRAF_ENABLEFOREIGN` .
 
@@ -1901,7 +1901,7 @@ Donde:
 [-f] [-user] [-split] [-p password] [-protectto SAMnameAndSIDlist] [-csp provider]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - La contraseña especificada en la línea de comandos debe ser una lista de contraseñas separadas por comas.
 
@@ -1936,7 +1936,7 @@ Donde:
 [-f] [-silent] [-split] [-dc DCName] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - La contraseña especificada en la línea de comandos debe ser una lista de contraseñas separadas por comas.
 
@@ -2005,7 +2005,7 @@ Para obtener más ejemplos sobre cómo usar este comando, vea.
 
 - [Ejemplos de certutil para administrar Active Directory servicios de Certificate Server (AD CS) desde la línea de comandos](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
 
-- [Tareas certutil para administrar certificados](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
+- [Tareas certutil para administrar certificados](/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
 
 - [Exportación de la solicitud binaria mediante el tutorial de la herramienta de línea de comandos certutil.exe](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
 

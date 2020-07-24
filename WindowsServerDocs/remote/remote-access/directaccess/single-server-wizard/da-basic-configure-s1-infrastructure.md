@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 622e8e0f6b4b692cc9bec5bfebeca3336e1e77a1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a1312834c42a168111e544f9a1ef4cf119ea5a8a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819528"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953597"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>Paso 1 configurar la infraestructura de DirectAccess básica
 
@@ -25,16 +25,16 @@ En este tema se describe cómo configurar la infraestructura necesaria para una 
 |----|--------|  
 |Configurar los valores de red del servidor|Configura las opciones de red del servidor en el servidor de DirectAccess.|  
 |Configurar el enrutamiento en la red corporativa|Configura el enrutamiento en la red corporativa para asegurarte de que el tráfico se enruta correctamente.|  
-|Configurar los firewalls|Configure los firewalls adicionales, si es necesario.|  
+|Configuración de firewalls|Configure los firewalls adicionales, si es necesario.|  
 |Configurar el servidor DNS|Configurar los ajustes de DNS para el servidor de DirectAccess.|  
 |Configurar Active Directory|Une los equipos cliente y el servidor de DirectAccess al dominio de Active Directory.|  
 |Configurar GPO|Configura los GPO para la implementación, si es necesario.|  
 |Configurar grupos de seguridad|Configura los grupos de seguridad que contendrán equipos cliente de DirectAccess, y cualquier otro grupo de seguridad necesario en la implementación.|  
   
 > [!NOTE]  
-> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, consulte [Uso de Cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="configure-server-network-settings"></a><a name="ConfigNetworkSettings"></a>Configurar las opciones de red del servidor  
+## <a name="configure-server-network-settings"></a><a name="ConfigNetworkSettings"></a>Configurar los valores de red del servidor  
 Los siguientes valores de la interfaz de red son necesarios para una implementación de un solo servidor en un entorno con IPv4 e IPv6. Todas las direcciones IP se configuran mediante **Cambiar configuración del adaptador** en el **Centro de redes y recursos compartidos de Windows**.  
   
 -   Topología perimetral  
@@ -78,7 +78,7 @@ Configura el enrutamiento en la red corporativa de la siguiente manera:
 -   Configura manualmente las rutas de IPv4 e IPv6 de la organización en los servidores de acceso remoto. Agrega una ruta publicada para que todo el tráfico con un prefijo IPv6 (/48) de organización se reenvíe a la red interna. Además, para el tráfico IPv4, agrega rutas explícitas para que el tráfico IPv4 se reenvíe a la red interna.  
   
 ## <a name="configure-firewalls"></a><a name="ConfigFirewalls"></a>Configuración de firewalls  
-Si usa firewalls adicionales en la implementación, aplique las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv4:  
+Si usas firewalls adicionales en la implementación, aplica las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv4:  
   
 -   tráfico 6to4: protocolo IP 41 entrante y saliente.  
   
@@ -90,7 +90,7 @@ Si usa firewalls adicionales en la implementación, aplique las siguientes excep
 > [!NOTE]  
 > Para el tráfico Teredo y 6to4, estas excepciones se deben aplicar para las dos direcciones IPv4 públicas consecutivas con conexión a Internet del servidor de acceso remoto. Para IP-HTTPS, las excepciones solo se deben aplicar a la dirección en la que se resuelve el nombre externo del servidor.  
   
-Si usa firewalls adicionales, aplique las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv6:  
+Si usas firewalls adicionales, aplica las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv6:  
   
 -   Protocolo IP 50  
   
@@ -105,21 +105,21 @@ Si usa firewalls adicionales, aplique las siguientes excepciones de firewall de 
 ## <a name="configure-the-dns-server"></a><a name="ConfigDNS"></a>Configurar el servidor DNS  
 Debes configurar manualmente una entrada DNS para el sitio web del servidor de ubicación de red para la red interna de tu implementación.  
   
-### <a name="to-create-the-network-location-server-and-ncsi-probe-dns-records"></a><a name="NLS_DNS"></a>Para crear el servidor de ubicación de red y los registros DNS de sondeo de NCSI  
+### <a name="to-create-the-network-location-server-and-ncsi-probe-dns-records"></a><a name="NLS_DNS"></a>Para crear los registros del servidor de ubicación de red y del DNS de sondeo web  
   
 1.  En el servidor DNS de la red interna, ejecute **DNSMgmt. msc** y, a continuación, presione Entrar.  
   
-2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haz clic con el botón secundario en el dominio y haz clic en **Host nuevo (A o AAAA)** .  
+2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haz clic con el botón secundario en el dominio y haz clic en **Host nuevo (A o AAAA)**.  
   
-3.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)** , escribe el nombre DNS del sitio web del servidor de ubicación de red (es el nombre que los clientes de DirectAccess usan para conectarse al servidor de ubicación de red). En el cuadro **Dirección IP**, escribe la dirección IPv4 del servidor de ubicación de red y haz clic en **Agregar host**. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
+3.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)**, escribe el nombre DNS del sitio web del servidor de ubicación de red (es el nombre que los clientes de DirectAccess usan para conectarse al servidor de ubicación de red). En el cuadro **Dirección IP**, escribe la dirección IPv4 del servidor de ubicación de red y haz clic en **Agregar host**. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
   
-4.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)** , escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es directaccess-webprobehost). En el cuadro **Dirección IP**, escribe la dirección IPv4 del sondeo web y haz clic en **Agregar host**. Repite este proceso para directaccess-corpconnectivityhost y para los comprobadores de conectividad creados de forma manual. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
+4.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)**, escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es directaccess-webprobehost). En el cuadro **Dirección IP**, escribe la dirección IPv4 del sondeo web y haz clic en **Agregar host**. Repite este proceso para directaccess-corpconnectivityhost y todos los comprobadores de conectividad creados manualmente. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
   
-5.  Haga clic en **Done** (Listo).  
+5.  Haga clic en **Done**(Listo).  
   
-![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
 
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -155,13 +155,13 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 6.  Cuando se le indique que debe reiniciar el equipo, haga clic en **Aceptar**.  
   
-7.  En el cuadro de diálogo **Propiedades del sistema** , haga clic en **Cerrar**.  
+7.  En el cuadro de diálogo **Propiedades del sistema**, haga clic en **Cerrar**.  
   
 8.  Cuando se le pida que reinicie el equipo, haga clic en **Reiniciar ahora**.  
   
 #### <a name="to-join-client-computers-to-the-domain"></a>Cómo unir equipos cliente al dominio  
   
-1.  Ejecute **Explorer. exe**.  
+1.  Ejecute **explorer.exe**.  
   
 2.  Haz clic con el botón secundario en el icono del equipo y, a continuación, haz clic en **Propiedades**.  
   
@@ -179,9 +179,9 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 9. En el cuadro de diálogo **Propiedades del sistema**, haga clic en Cerrar. Haz clic en **Reiniciar ahora** cuando se te solicite.  
   
-![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 Tenga en cuenta que debe proporcionar credenciales de dominio después de introducir el comando Add-Computer a continuación.  
   
@@ -193,7 +193,7 @@ Restart-Computer
 ## <a name="configure-gpos"></a><a name="ConfigGPOs"></a>Configurar GPO  
 Para implementar el acceso remoto, se requiere un mínimo de dos objetos de directiva de Grupo: un objeto de directiva de grupo contiene la configuración para el servidor de acceso remoto y otra contiene la configuración de los equipos cliente de DirectAccess. Al configurar el acceso remoto, el asistente crea automáticamente el objeto de directiva de grupo requerido. Sin embargo, si su organización exige una Convención de nomenclatura, o si no tiene los permisos necesarios para crear o editar objetos de directiva de grupo, deben crearse antes de configurar el acceso remoto.  
   
-Para crear un objeto de directiva de grupo, vea [crear y editar un objeto de directiva de grupo](https://technet.microsoft.com/library/cc754740.aspx).  
+Para crear un objeto de directiva de grupo, vea [crear y editar un objeto de directiva de grupo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754740(v=ws.11)).  
   
 > [!IMPORTANT]  
 > El administrador puede vincular manualmente el objeto de directiva de grupo de DirectAccess a una unidad organizativa siguiendo estos pasos:  
@@ -201,7 +201,7 @@ Para crear un objeto de directiva de grupo, vea [crear y editar un objeto de dir
 > 1.  Antes de configurar DirectAccess, vincula los GPO creados a las unidades organizativas respectivas.  
 > 2.  Configura DirectAccess, especificando un grupo de seguridad para los equipos cliente.  
 > 3.  El administrador podría tener permisos para vincular los objetos de directiva de grupo al dominio. En cualquier caso, los objetos de directiva de grupo se configurarán automáticamente. Si los GPO ya están vinculados a una unidad organizativa, los vínculos no se eliminarán y los GPO no se vincularán al dominio. Para un GPO de servidor, la unidad organizativa debe contener el objeto de equipo del servidor, o el GPO se vinculará a la raíz del dominio.  
-> 4.  Si la unidad organizativa no se vinculó antes de ejecutar el asistente de DirectAccess, una vez finalizada la configuración, el administrador puede vincular los objetos de directiva de grupo de DirectAccess a las unidades organizativas necesarias. El vínculo al dominio puede eliminarse. [Aquí](https://technet.microsoft.com/library/cc732979.aspx) encontrará los pasos para vincular un objeto de directiva de grupo a una unidad organizativa.  
+> 4.  Si la unidad organizativa no se vinculó antes de ejecutar el asistente de DirectAccess, una vez finalizada la configuración, el administrador puede vincular los objetos de directiva de grupo de DirectAccess a las unidades organizativas necesarias. El vínculo al dominio puede eliminarse. [Aquí](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732979(v=ws.11)) encontrará los pasos para vincular un objeto de directiva de grupo a una unidad organizativa.  
   
 > [!NOTE]  
 > Si un objeto de directiva de grupo se creó manualmente, es posible que durante la configuración de DirectAccess el objeto de directiva de grupo no esté disponible. Es posible que el objeto de directiva de grupo no se haya replicado en el controlador de dominio más cercano al equipo de administración. En este caso, el administrador puede esperar a que la replicación finalice, o bien forzarla.
@@ -212,7 +212,7 @@ Para crear un objeto de directiva de grupo, vea [crear y editar un objeto de dir
 ## <a name="configure-security-groups"></a><a name="ConfigSGs"></a>Configurar grupos de seguridad  
 La configuración de DirectAccess contenida en los objetos de directiva de grupo del equipo cliente solo se aplica a los equipos que son miembros de los grupos de seguridad que se especifican al configurar el acceso remoto.  
   
-### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>Para crear un grupo de seguridad para clientes de DirectAccess  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>Cómo crear un grupo de seguridad para clientes de DirectAccess  
   
 1.  Ejecute **DSA. msc**. En la consola **Usuarios y equipos de Active Directory**, en el panel izquierdo, expande el dominio que contendrá el grupo de seguridad, haz clic con el botón secundario en **Usuarios**, elige **Nuevo** y haz clic en **Grupo**.  
   
@@ -226,9 +226,9 @@ La configuración de DirectAccess contenida en los objetos de directiva de grupo
   
 6.  En el cuadro de diálogo **Seleccionar Usuarios, Contactos, Equipos o Cuentas de servicio**, selecciona los equipos cliente que deseas habilitar para DirectAccess y haz clic en **Aceptar**.  
   
-![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes** de Windows PowerShell Windows PowerShell  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Comandos equivalentes** de Windows PowerShell Windows PowerShell  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
@@ -237,7 +237,5 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="next-step"></a><a name="BKMK_Links"></a>Paso siguiente  
   
--   [Paso 2: configurar el servidor de DirectAccess básico](da-basic-configure-s2-server.md)  
+-   [Paso 2: Configurar el servidor básico de DirectAccess](da-basic-configure-s2-server.md)  
   
-
-

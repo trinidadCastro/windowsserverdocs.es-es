@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f4675e8f465cc44597e16b0312911cae28bd7a1a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 226277b1247a365e3d46190b8ff3ae361f295204
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860498"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954178"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
@@ -21,7 +21,7 @@ ms.locfileid: "80860498"
 
 En este tema se explica cómo configurar una implementación de Acceso remoto con varios bosques en distintos escenarios posibles. En todos esos escenarios se da por hecho que DirectAccess está implementado en un solo bosque (denominado Bosque1) y que DirectAccess se va a configurar para que funcione con un bosque nuevo denominado Bosque2.  
   
-## <a name="access-resources-from-forest2"></a><a name="AccessForest2"></a>Acceder a los recursos desde Bosque2  
+## <a name="access-resources-from-forest2"></a><a name="AccessForest2"></a>Acceder a los recursos de Bosque2  
 En este escenario, DirectAccess ya está implementado en Bosque1 y está configurado para que los clientes de Bosque1 puedan acceder a la red corporativa. De forma predeterminada, los clientes que se conectan a través de DirectAccess solo tienen acceso a los recursos de Bosque1 y, como tal, no pueden acceder a los servidores de Bosque2.  
   
 #### <a name="to-enable-directaccess-clients-to-access-resources-from-forest2"></a>Para permitir que los clientes de DirectAccess accedan a los recursos de Bosque2  
@@ -30,14 +30,14 @@ En este escenario, DirectAccess ya está implementado en Bosque1 y está configu
   
 2.  En caso de que IPv6 esté implementado en la red interna, agregue los prefijos IPv6 internos pertinentes de Bosque2.  
   
-## <a name="enable-clients-from-forest2-to-connect-via-directaccess"></a><a name="EnableForest2DA"></a>Permitir que los clientes de Bosque2 se conecten a través de DirectAccess  
+## <a name="enable-clients-from-forest2-to-connect-via-directaccess"></a><a name="EnableForest2DA"></a>Permitir que los clientes de Bosque2 se conecten mediante DirectAccess  
 En este escenario la implementación de Acceso remoto se va a configurar de forma que los clientes de Bosque2 puedan acceder a la red corporativa. Aquí se da por hecho que se han creado los grupos de seguridad necesarios para los equipos cliente de Bosque2.   
   
 #### <a name="to-allow-clients-from-forest2-to-access-the-corporate-network"></a>Para permitir el acceso de los clientes de Bosque2 a la red corporativa  
   
 1.  Agregue el grupo de seguridad de los clientes de Bosque2.  
   
-2.  Si el sufijo DNS de Bosque2 no forma parte del sufijo DNS de Bosque1, agregue reglas NRPT con los sufijos del dominio de los clientes en Bosque2 para permitir el acceso a los controladores de dominio para la autenticación y, opcionalmente, agregue los sufijos de los dominios de Bosque2 al DNS lista de búsqueda de sufijos. 
+2.  Si el sufijo DNS de Bosque2 no forma parte del sufijo DNS de Bosque1, agregue reglas NRPT con los sufijos del dominio de los clientes en Bosque2 para permitir el acceso a los controladores de dominio para la autenticación y, opcionalmente, agregue los sufijos de los dominios de Bosque2 a la lista de búsqueda de sufijos DNS. 
   
 3.  Agregue los prefijos IPv6 internos de Bosque2 para permitir que DirectAccess cree el túnel IPsec hacia los controladores de dominio para la autenticación.  
   
@@ -58,7 +58,7 @@ En este escenario, DirectAccess está implementado en una configuración multisi
   
 5.  Actualice la lista de servidores de administración.  
   
-## <a name="configure-otp-in-a-multi-forest-deployment"></a><a name="OTPMultiForest"></a>Configurar OTP en una implementación de varios bosques  
+## <a name="configure-otp-in-a-multi-forest-deployment"></a><a name="OTPMultiForest"></a>Configurar OTP en una implementación con varios bosques  
 Tenga en cuenta los siguientes términos al configurar OTP en una implementación con varios bosques:  
   
 -   CA raíz: la CA de árbol PKI principal del bosque (s).  
@@ -69,12 +69,12 @@ Tenga en cuenta los siguientes términos al configurar OTP en una implementació
   
 -   Bosque de cuenta: todos los demás bosques en la topología.  
   
-En este procedimiento se necesita el script de PowerShell PKISync.ps1. Vea [AD CS: script PKISync.ps1 para la inscripción de certificados entre bosques](https://technet.microsoft.com/library/ff961506.aspx).  
+En este procedimiento se necesita el script de PowerShell PKISync.ps1. Vea [AD CS: script PKISync.ps1 para la inscripción de certificados entre bosques](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff961506(v=ws.10)).  
   
 > [!NOTE]  
-> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, consulte [Uso de Cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-### <a name="configure-cas-as-certificate-publishers"></a><a name="BKMK_CertPub"></a>Configurar CA como publicadores de certificados  
+### <a name="configure-cas-as-certificate-publishers"></a><a name="BKMK_CertPub"></a>Configurar CA como editores de certificados  
   
 1.  Ejecute el siguiente comando desde un símbolo del sistema con privilegios elevados para que se puedan realizar referencias LDAP en todos los CA empresariales de todos los bosques:  
   
@@ -96,7 +96,7 @@ En este procedimiento se necesita el script de PowerShell PKISync.ps1. Vea [AD C
     certutil -config <Computer-Name>\<Root-CA-Name> -ca.cert <root-ca-cert-filename.cer>  
     ```  
   
-    (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config < nombre del equipo >\\< raíz-CA-nombre >)  
+    (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config <nombre de equipo>\\<raíz-CA-name>).  
   
     1.  Ejecute el siguiente comando desde un símbolo del sistema con privilegios elevados para importar el certificado de CA raíz del paso anterior en la CA del bosque de cuenta:  
   
@@ -104,7 +104,7 @@ En este procedimiento se necesita el script de PowerShell PKISync.ps1. Vea [AD C
         certutil -dspublish -f <root-ca-cert-filename.cer> RootCA  
         ```  
   
-    2.  Conceda a las plantillas de certificado de bosque de recursos permisos de lectura y escritura en el \<bosque de cuenta\>\\< cuenta de administrador\>.  
+    2.  Conceda a las plantillas de certificado de bosque de recursos permisos de lectura y escritura para la \<Account Forest\> \\ cuenta de administrador de<\> .  
   
     3.  Ejecute el siguiente comando desde un símbolo del sistema con privilegios elevados para extraer todos los certificados de CA empresariales del bosque de recursos:  
   
@@ -112,7 +112,7 @@ En este procedimiento se necesita el script de PowerShell PKISync.ps1. Vea [AD C
         certutil -config <Computer-Name>\<Enterprise-CA-Name> -ca.cert <enterprise-ca-cert-filename.cer>  
         ```  
   
-        (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config < nombre del equipo >\\< raíz-CA-nombre >)  
+        (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config <nombre de equipo>\\<raíz-CA-name>).  
   
     4.  Ejecute los siguientes comandos desde un símbolo del sistema con privilegios elevados para importar los certificados de CA empresariales del paso anterior en la CA del bosque de cuenta:  
   
@@ -175,7 +175,7 @@ La lista de búsqueda de sufijos DNS permite que los clientes usen nombres de et
   
 3.  En la tabla de la página **DNS**, especifique los sufijos de nombre adicionales que formen parte de la red corporativa en Bosque2. En **Dirección de servidor DNS**, especifique la dirección del servidor DNS, ya sea manualmente o haciendo clic en **Detectar**. Si no especifica la dirección, las nuevas entradas se aplican como exenciones de NRPT. A continuación, haga clic en **Siguiente**.  
   
-4.  Opcional: En la página **Lista de búsqueda de sufijos DNS** , agregue sufijos DNS especificándolos en el cuadro **Nuevo sufijo** y haciendo clic en **Agregar**. A continuación, haga clic en **Siguiente**.  
+4.  Opcional: en la página **Lista de búsqueda de sufijos DNS**, agregue sufijos DNS especificándolos en el cuadro **Nuevo sufijo** y haciendo clic a continuación en **Agregar**. A continuación, haga clic en **Siguiente**.  
   
 5.  En la página **Administración**, haga clic en **Finalizar**.  
   
@@ -198,7 +198,7 @@ Acceso remoto administra una lista de prefijos IPv6 para los recursos corporativ
   
 2.  En el Asistente para instalación de acceso remoto, haga clic en **Configuración de prefijo**.  
   
-3.  En **Prefijos IPv6 de la red interna** en dichapágina, agregue prefijos IPv6 separados por puntos y coma (por ejemplo, 2001:db8:1::/64;2001:db8:2::/64). A continuación, haga clic en **Siguiente**.  
+3.  En **Prefijos IPv6 de la red interna** en dicha**** página, agregue prefijos IPv6 separados por puntos y coma (por ejemplo, 2001:db8:1::/64;2001:db8:2::/64). A continuación, haga clic en **Siguiente**.  
   
 4.  En la página **Autenticación**, haga clic en **Finalizar**.  
   
@@ -240,5 +240,3 @@ El proceso de detección automática de servidores de infraestructura es necesar
   
 2.  En el cuadro de diálogo **Actualizando servidores de administración**, haga clic en **Cerrar**.  
   
-
-

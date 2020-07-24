@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e0c581a29db92cfb73e4225c72e7e1c2bad4ca68
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: b97a9cb50743972a85826d10aba89f9e6fffb5a6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465285"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954467"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>Administración de los protocolos SSL/TLS y los conjuntos de cifrado para AD FS
 La siguiente documentación proporciona información sobre cómo deshabilitar y habilitar determinados protocolos TLS/SSL y conjuntos de cifrado que se usan en AD FS
@@ -30,11 +30,11 @@ Un conjunto de cifrado es un conjunto de algoritmos criptográficos. La implemen
 - Cifrado masivo
 - Autenticación de mensajes
 
-AD FS usa Schannel. dll para realizar las interacciones de comunicaciones seguras.  Actualmente AD FS admite todos los protocolos y conjuntos de cifrado compatibles con Schannel. dll.
+AD FS usa Schannel.dll para realizar sus interacciones de comunicaciones seguras.  Actualmente AD FS admite todos los protocolos y conjuntos de cifrado compatibles con Schannel.dll.
 
-## <a name="managing-the-tlsssl-protocols-and-cipher-suites"></a>Administrar los protocolos TLS/SSL y los conjuntos de cifrado
+## <a name="managing-the-tlsssl-protocols-and-cipher-suites"></a>Administración de los protocolos TLS/SSL y conjuntos de cifrado
 > [!IMPORTANT]
-> Esta sección contiene pasos que indican cómo modificar el registro. Sin embargo, pueden aparecer problemas graves si modifica el Registro incorrectamente. Por tanto, asegúrese de seguir estos pasos con cuidado. 
+> Esta sección contiene pasos que indican cómo modificar el registro. Pero pueden producirse problemas graves si modifica incorrectamente el Registro. Por lo tanto, asegúrese de que sigue estos pasos cuidadosamente. 
 > 
 > Tenga en cuenta que el cambio de la configuración de seguridad predeterminada para SCHANNEL podría interrumpir o impedir la comunicación entre determinados clientes y servidores.  Esto ocurrirá si se requiere una comunicación segura y no dispone de un protocolo para negociar las comunicaciones con.
 > 
@@ -87,7 +87,7 @@ Use las siguientes claves del registro y sus valores para habilitar y deshabilit
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ Client] "Habilitado" = dword: 00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ Client] "DisabledByDefault" = dword: 00000000 
 
-### <a name="disable-ssl-30"></a>Deshabilitar SSL 3,0
+### <a name="disable-ssl-30"></a>Deshabilitar SSL 3.0
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ Server] "Enabled" = dword: 00000000
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ Server] "DisabledByDefault" = dword: 00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ Client] "Enabled" = dword: 00000000
@@ -124,7 +124,7 @@ Use las siguientes claves del registro y sus valores para habilitar y deshabilit
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Client] "Habilitado" = dword: 00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Client] "DisabledByDefault" = dword: 00000000 
 
-### <a name="disable-tls-10"></a>Deshabilitar TLS 1,0
+### <a name="disable-tls-10"></a>Deshabilitación de TLS 1.0
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Server] "Enabled" = dword: 00000000
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Server] "DisabledByDefault" = dword: 00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Client] "Enabled" = dword: 00000000
@@ -184,17 +184,17 @@ Use las siguientes claves del registro y sus valores para habilitar y deshabilit
 
 Use las siguientes claves del registro y sus valores para habilitar y deshabilitar TLS 1,2.
 
-### <a name="enable-tls-12"></a>Habilitar TLS 1,2
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server] "Habilitado" = dword: 00000001
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server] "DisabledByDefault" = dword: 00000000 
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Client] "Habilitado" = dword: 00000001
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Client] "DisabledByDefault" = dword: 00000000
+### <a name="enable-tls-12"></a>Habilitar TLS 1.2
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "Enabled"=dword:00000001
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "Enabled"=dword:00000001
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000
 
-### <a name="disable-tls-12"></a>Deshabilitar TLS 1,2
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server] "Enabled" = dword: 00000000
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server] "DisabledByDefault" = dword: 00000001
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Client] "Enabled" = dword: 00000000
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Client] "DisabledByDefault" = dword: 00000001
+### <a name="disable-tls-12"></a>Deshabilitar TLS 1.2
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "Enabled"=dword:00000000
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000001
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "Enabled"=dword:00000000
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000001
 
 ### <a name="using-powershell-to-disable-tls-12"></a>Uso de PowerShell para deshabilitar TLS 1,2
 
@@ -235,7 +235,7 @@ Use las siguientes claves del registro y sus valores para habilitar y deshabilit
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128] "Enabled" = dword: 00000000
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128] "Enabled" = dword: 00000000 
 
-### <a name="using-powershell"></a>Uso de PowerShell
+### <a name="using-powershell"></a>Usar PowerShell
 
 ```powershell
     ([Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]::LocalMachine,$env:COMPUTERNAME)).CreateSubKey('SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128') 
@@ -256,22 +256,22 @@ Puede deshabilitar determinados cifrados específicos si los quita de HKEY_LOCAL
 
 Para habilitar un conjunto de cifrado, agregue su valor de cadena a la clave de valor de cadena múltiple de funciones.  Por ejemplo, si queremos habilitar TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521, lo agregaremos a la cadena.
 
-Para obtener una lista completa de los conjuntos de cifrado compatibles, consulte [conjuntos de cifrado en TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx).  En este documento se proporciona una tabla de conjuntos que están habilitados de forma predeterminada y los que se admiten, pero que no están habilitados de forma predeterminada.  Para priorizar los conjuntos de cifrado, consulte [priorización de conjuntos de cifrado Schannel](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx).
+Para obtener una lista completa de los conjuntos de cifrado compatibles, consulte [conjuntos de cifrado en TLS/SSL (Schannel SSP)](/windows/win32/secauthn/cipher-suites-in-schannel).  En este documento se proporciona una tabla de conjuntos que están habilitados de forma predeterminada y los que se admiten, pero que no están habilitados de forma predeterminada.  Para priorizar los conjuntos de cifrado, consulte [priorización de conjuntos de cifrado Schannel](/windows/win32/secauthn/prioritizing-schannel-cipher-suites).
 
 ## <a name="enabling-strong-authentication-for-net-applications"></a>Habilitación de la autenticación segura para aplicaciones .NET
 Las aplicaciones .NET Framework 3.5/4.0/4.5. x pueden cambiar el protocolo predeterminado a TLS 1,2 habilitando la clave del registro SchUseStrongCrypto.  Esta clave del registro forzará a las aplicaciones .NET a usar TLS 1,2.
 
 > [!IMPORTANT]
-> Para AD FS en Windows Server 2016 y Windows Server 2012 R2, debe usar la clave .NET Framework 4.0/4.5. x: HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\\. NETFramework\v4.0.30319
+> Para AD FS en Windows Server 2016 y Windows Server 2012 R2, debe usar la clave .NET Framework 4.0/4.5. x: HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft \\ . NETFramework\v4.0.30319
 
 
 En el .NET Framework 3,5, use la siguiente clave del registro:
 
-[HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\Microsoft\\. NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword: 00000001
+[HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\Microsoft \\ . NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword: 00000001
 
-Para el .NET Framework 4.0/4.5. x, use la siguiente clave del registro: HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\\. NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword: 00000001
+Para el .NET Framework 4.0/4.5. x, use la siguiente clave del registro: HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft \\ . NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword: 00000001
 
-![Autenticación segura](media/Managing-SSL-Protocols-in-AD-FS/strongauth.png)
+![Autenticación sólida](media/Managing-SSL-Protocols-in-AD-FS/strongauth.png)
 
 ```powershell
     
@@ -280,7 +280,7 @@ Para el .NET Framework 4.0/4.5. x, use la siguiente clave del registro: HKEY_LOC
 
 ## <a name="additional-information"></a>Información adicional
 
-- [Conjuntos de cifrado en TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)
-- [Conjuntos de cifrado TLS en Windows 8.1](https://msdn.microsoft.com/library/windows/desktop/mt767781.aspx)
-- [Dar prioridad a los conjuntos de cifrado Schannel](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)
-- [Hablar de los cifrados y otros términos de Enigmatic](https://blogs.technet.microsoft.com/askds/2015/12/08/speaking-in-ciphers-and-other-enigmatic-tonguesupdate/)
+- [Conjuntos de cifrado en TLS/SSL (Schannel SSP)](/windows/win32/secauthn/cipher-suites-in-schannel)
+- [Conjuntos de cifrado TLS en Windows 8.1](/windows/win32/secauthn/tls-cipher-suites-in-windows-8-1)
+- [Dar prioridad a los conjuntos de cifrado Schannel](/windows/win32/secauthn/prioritizing-schannel-cipher-suites)
+- [Hablar de los cifrados y otros términos de Enigmatic](/archive/blogs/askds/speaking-in-ciphers-and-other-enigmatic-tonguesupdate)

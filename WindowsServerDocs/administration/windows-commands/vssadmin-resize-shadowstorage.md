@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 03/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e32fe419899c0f553f36976ecee95fb3a922f1a6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8b723fd3768561da7d636dd1724bd0c75ee2ee85
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436630"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954707"
 ---
 # <a name="vssadmin-resize-shadowstorage"></a>Vssadmin cambiar el tamaño de shadowstorage
 
@@ -21,7 +21,7 @@ ms.locfileid: "83436630"
 
 Cambia el tamaño de la cantidad máxima de espacio de almacenamiento que se puede usar para el almacenamiento de instantáneas.
 
-La cantidad mínima de espacio de almacenamiento que se puede usar para el almacenamiento de instantáneas se puede especificar mediante el valor del registro **MinDiffAreaFileSize** . Para obtener más información, vea [MinDiffAreaFileSize](https://docs.microsoft.com/windows/win32/backup/registry-keys-for-backup-and-restore#mindiffareafilesize).
+La cantidad mínima de espacio de almacenamiento que se puede usar para el almacenamiento de instantáneas se puede especificar mediante el valor del registro **MinDiffAreaFileSize** . Para obtener más información, vea [MinDiffAreaFileSize](/windows/win32/backup/registry-keys-for-backup-and-restore#mindiffareafilesize).
 
 > [!WARNING]
 > Cambiar el tamaño de la Asociación de almacenamiento puede hacer desaparecer las instantáneas.
@@ -50,5 +50,5 @@ vssadmin Resize ShadowStorage /For=C: /On=C: /MaxSize=20%
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-* [Clave de sintaxis de línea de comandos](https://docs.microsoft.com/windows-server/administration/windows-commands/command-line-syntax-key)
+* [Clave de sintaxis de línea de comandos](./command-line-syntax-key.md)
 * [List](vssadmin.md)

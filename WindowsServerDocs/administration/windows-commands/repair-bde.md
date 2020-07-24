@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a2ba82708acd9c5830e2dc8a09cd804ade342066
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5aaa915ef416130dd2017b8f0f35cd255d207678
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935643"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956287"
 ---
 # <a name="repair-bde"></a>repair-bde
 
 
 
-Obtiene acceso a los datos cifrados en un disco duro gravemente dañado si la unidad se cifró mediante BitLocker. Repair-bde puede reconstruir partes críticas de la unidad y rescatar los datos recuperables, siempre que para descifrar los datos se use una clave de recuperación o una contraseña de recuperación válida. Si los metadatos de BitLocker en la unidad se han dañado, debe poder proporcionar un paquete de claves de copia de seguridad además de la contraseña de recuperación o la clave de recuperación. De este paquete de claves se realiza una copia de seguridad en los servicios de dominio de Active Directory (AD DS) si usas la configuración predeterminada para la copia de seguridad de AD DS. Con este paquete de claves y la contraseña de recuperación o la clave de recuperación puede descifrar partes de una unidad protegida con BitLocker si el disco se daña. Cada paquete de claves funcionará solo para una unidad que tenga el identificador de unidad correspondiente. Puede usar el [visor de contraseñas de recuperación de BitLocker para Active Directory](https://technet.microsoft.com/library/dd875531(v=ws.10).aspx) para obtener este paquete de claves de AD DS.
+Obtiene acceso a los datos cifrados en un disco duro gravemente dañado si la unidad se cifró mediante BitLocker. Repair-bde puede reconstruir partes críticas de la unidad y rescatar los datos recuperables, siempre que para descifrar los datos se use una clave de recuperación o una contraseña de recuperación válida. Si los metadatos de BitLocker en la unidad se han dañado, debe poder proporcionar un paquete de claves de copia de seguridad además de la contraseña de recuperación o la clave de recuperación. De este paquete de claves se realiza una copia de seguridad en los servicios de dominio de Active Directory (AD DS) si usas la configuración predeterminada para la copia de seguridad de AD DS. Con este paquete de claves y la contraseña de recuperación o la clave de recuperación puede descifrar partes de una unidad protegida con BitLocker si el disco se daña. Cada paquete de claves funcionará solo para una unidad que tenga el identificador de unidad correspondiente. Puede usar el [visor de contraseñas de recuperación de BitLocker para Active Directory](/previous-versions/windows/it-pro/windows-7/dd875531(v=ws.10)) para obtener este paquete de claves de AD DS.
 
 > [!NOTE]
 > El visor de contraseñas de recuperación de BitLocker se incluye como una de las características de administración opcionales instalables mediante el administrador de servidores en Windows Server 2012.
@@ -51,7 +51,7 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 |-f|Fuerza el desmontaje de un volumen incluso si no se puede bloquear. Este comando también se puede especificar como **Force**.|
 |-? o/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Si no se especifica la ruta de acceso a un paquete de claves, **repair-BDE** buscará en la unidad un paquete de claves. Sin embargo, si el disco duro está dañado, **repair-BDE** no podrá encontrar el paquete y le pedirá que proporcione la ruta de acceso.
 

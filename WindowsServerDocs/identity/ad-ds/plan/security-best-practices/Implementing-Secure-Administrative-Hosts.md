@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4a36f27bc64e6e135451818b27dc2319f18655f4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e62f64c998e13ca6b64c3a7c89ad8e504ab26e82
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821188"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953577"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>Implementación de hosts administrativos seguros
 
@@ -69,7 +69,7 @@ Todos los hosts administrativos, ya sean servidores o estaciones de trabajo, deb
 Si implementa servidores de saltos como parte de su estrategia de hosts administrativos, debe usar el Asistente para configuración de seguridad integrada para configurar el servicio, el registro, la auditoría y la configuración de Firewall para reducir la superficie expuesta a ataques del servidor. Cuando se recopilan y configuran los valores de configuración del Asistente para configuración de seguridad, la configuración se puede convertir en un GPO que se usa para aplicar una configuración de línea de base coherente en todos los servidores de salto. Puede modificar aún más el objeto de directiva de grupo para implementar la configuración de seguridad específica de los servidores de salto y puede combinar todas las opciones de configuración con una configuración de línea de base adicional extraída de Microsoft Security Compliance Manager.  
   
 ### <a name="microsoft-security-compliance-manager"></a>Administrador de cumplimiento de seguridad de Microsoft  
-[Microsoft Security Compliance Manager](https://technet.microsoft.com/library/cc677002.aspx) es una herramienta disponible gratuita que integra las configuraciones de seguridad recomendadas por Microsoft, según la versión del sistema operativo y la configuración de roles, y las recopila en una sola herramienta y interfaz de usuario que se pueden usar para crear y configurar las opciones de seguridad de línea de base para los controladores de dominio. Las plantillas del administrador de cumplimiento de seguridad de Microsoft se pueden combinar con la configuración del Asistente para configuración de seguridad para generar líneas de base de configuración completas para los servidores de salto implementados y aplicados por los GPO implementados en las unidades organizativas en las que se encuentran los servidores de salto en Active Directory.  
+[Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc677002(v=technet.10)) es una herramienta disponible gratuita que integra las configuraciones de seguridad recomendadas por Microsoft, según la versión del sistema operativo y la configuración de roles, y las recopila en una sola herramienta y interfaz de usuario que se pueden usar para crear y configurar las opciones de seguridad de línea de base para los controladores de dominio. Las plantillas del administrador de cumplimiento de seguridad de Microsoft se pueden combinar con la configuración del Asistente para configuración de seguridad para generar líneas de base de configuración completas para los servidores de salto implementados y aplicados por los GPO implementados en las unidades organizativas en las que se encuentran los servidores de salto en Active Directory.  
   
 > [!NOTE]  
 > En el que se redactó este documento, el administrador de cumplimiento de seguridad de Microsoft no incluye la configuración específica para los servidores de saltos u otros hosts administrativos seguros, pero el administrador de cumplimiento de seguridad (SCM) se puede seguir usando para crear líneas base iniciales para los hosts administrativos. Sin embargo, para proteger correctamente los hosts, debe aplicar una configuración de seguridad adicional adecuada a estaciones de trabajo y servidores altamente seguros.  
@@ -83,14 +83,14 @@ Aunque la configuración específica variará en función de la arquitectura de 
 Debe permitir los inicios de sesión interactivos por parte de usuarios autorizados y quitar o incluso bloquear otros tipos de inicio de sesión que no sean necesarios para el acceso al servidor.  
   
 ### <a name="patch-and-configuration-management"></a>Administración de revisiones y configuraciones  
-Las organizaciones más pequeñas pueden confiar en ofertas como Windows Update o [Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) (WSUS) para administrar la implementación de actualizaciones en sistemas Windows, mientras que las organizaciones más grandes pueden implementar software de administración de configuración y revisión empresarial, como Microsoft Endpoint Configuration Manager. Sin tener en cuenta los mecanismos que se usan para implementar actualizaciones en el servidor general y la población de la estación de trabajo, se deben considerar implementaciones independientes para sistemas altamente seguros, como controladores de dominio, entidades de certificación y hosts administrativos. Al separar estos sistemas de la infraestructura de administración general, si el software de administración o las cuentas de servicio están en peligro, el riesgo no se puede ampliar fácilmente a los sistemas más seguros de la infraestructura.  
+Las organizaciones más pequeñas pueden confiar en ofertas como Windows Update o [Windows Server Update Services](/windows/deployment/deploy-whats-new) (WSUS) para administrar la implementación de actualizaciones en sistemas Windows, mientras que las organizaciones más grandes pueden implementar software de administración de configuración y revisión empresarial, como Microsoft Endpoint Configuration Manager. Sin tener en cuenta los mecanismos que se usan para implementar actualizaciones en el servidor general y la población de la estación de trabajo, se deben considerar implementaciones independientes para sistemas altamente seguros, como controladores de dominio, entidades de certificación y hosts administrativos. Al separar estos sistemas de la infraestructura de administración general, si el software de administración o las cuentas de servicio están en peligro, el riesgo no se puede ampliar fácilmente a los sistemas más seguros de la infraestructura.  
   
 Aunque no debe implementar procesos de actualización manuales para sistemas seguros, debe configurar una infraestructura independiente para actualizar sistemas seguros. Incluso en organizaciones de gran tamaño, esta infraestructura normalmente se puede implementar a través de servidores WSUS dedicados y GPO para sistemas protegidos.  
   
 ### <a name="blocking-internet-access"></a>Bloquear el acceso a Internet  
 Los hosts administrativos no deben tener permiso de acceso a Internet ni deben ser capaces de examinar la intranet de una organización. Los exploradores Web y las aplicaciones similares no deben permitirse en los hosts administrativos. Puede bloquear el acceso a Internet para hosts seguros a través de una combinación de configuración de firewall perimetral, configuración de WFAS y configuración de proxy de "agujero negro" en hosts seguros. También puede usar la inclusión en listas blancas de aplicaciones para evitar que los exploradores Web se usen en los hosts administrativos.  
   
-### <a name="virtualization"></a>Virtualización  
+### <a name="virtualization"></a>La virtualización  
 Siempre que sea posible, considere la posibilidad de implementar máquinas virtuales como hosts administrativos. Con la virtualización, puede crear sistemas administrativos por usuario que se almacenan y administran de forma centralizada y que se pueden apagar fácilmente cuando no se usan, asegurándose de que las credenciales no se mantienen activas en los sistemas administrativos. También puede exigir que los hosts administrativos virtuales se restablezcan a una instantánea inicial después de cada uso, asegurándose de que las máquinas virtuales permanezcan imprecisas. En la sección siguiente se proporciona más información sobre las opciones de virtualización de hosts administrativos.  
   
 ## <a name="sample-approaches-to-implementing-secure-administrative-hosts"></a>Métodos de ejemplo para implementar hosts administrativos seguros  
@@ -105,10 +105,10 @@ En la estación de trabajo de productividad, el personal de ti puede tener cuent
   
 Si ha implementado tarjetas inteligentes, las estaciones de trabajo administrativas deben configurarse para requerir inicios de sesión de tarjeta inteligente y el personal de TI debe recibir cuentas independientes para uso administrativo, también configurada para requerir tarjetas inteligentes para el inicio de sesión interactivo. El host administrativo debe protegerse como se ha descrito anteriormente y solo los usuarios de ti designados deben tener permiso para iniciar sesión localmente en la estación de trabajo administrativa.  
   
-#### <a name="pros"></a>Pros  
+#### <a name="pros"></a>Ventajas  
 Mediante la implementación de sistemas físicos independientes, puede asegurarse de que cada equipo esté configurado correctamente para su rol y de que los usuarios de ti no puedan exponer accidentalmente los sistemas administrativos al riesgo.  
   
-#### <a name="cons"></a>Contras  
+#### <a name="cons"></a>Desventajas  
   
 -   La implementación de equipos físicos independientes aumenta los costos de hardware.  
   
@@ -119,13 +119,13 @@ Mediante la implementación de sistemas físicos independientes, puede asegurars
 ### <a name="implementing-a-secure-physical-workstation-with-a-virtualized-productivity-workstation"></a>Implementación de una estación de trabajo física segura con una estación de trabajo de productividad virtualizada  
 En este enfoque, se proporciona a los usuarios de ti una estación de trabajo administrativa segura desde la que pueden realizar funciones administrativas cotidianas, mediante el uso de Herramientas de administración remota del servidor (RSAT) o conexiones RDP a servidores dentro de su ámbito de responsabilidad. Cuando los usuarios necesitan realizar tareas de productividad, pueden conectarse a través de RDP a una estación de trabajo de productividad remota que se ejecuta como una máquina virtual. Se deben usar credenciales independientes para cada estación de trabajo y se deben implementar controles como tarjetas inteligentes.  
   
-#### <a name="pros"></a>Pros  
+#### <a name="pros"></a>Ventajas  
   
 -   Las estaciones de trabajo administrativas y las estaciones de trabajo de productividad están separadas.  
   
 -   El personal de ti que usa estaciones de trabajo seguras para conectarse a estaciones de trabajo de productividad puede usar credenciales y tarjetas inteligentes independientes, y las credenciales con privilegios no se depositan en el equipo menos seguro.  
   
-#### <a name="cons"></a>Contras  
+#### <a name="cons"></a>Desventajas  
   
 -   La implementación de la solución requiere un trabajo de diseño e implementación, así como opciones de virtualización sólidas.  
   
@@ -136,7 +136,7 @@ En este enfoque, puede emitir a los usuarios una única estación de trabajo fí
   
 Debe requerir una tarjeta inteligente u otro inicio de sesión multifactor para las máquinas virtuales, mediante cuentas independientes distintas de la cuenta que se usa para iniciar sesión en el equipo físico. Una vez que un usuario de ti inicia sesión en un equipo físico, puede usar su tarjeta inteligente de productividad para conectarse a su equipo de productividad remoto y una cuenta independiente y una tarjeta inteligente para conectarse a su equipo administrativo remoto.  
   
-#### <a name="pros"></a>Pros  
+#### <a name="pros"></a>Ventajas  
   
 -   Los usuarios de TI pueden usar una sola estación de trabajo física.  
   
@@ -148,7 +148,7 @@ Debe requerir una tarjeta inteligente u otro inicio de sesión multifactor para 
   
 -   Si el equipo físico está en peligro, no se almacenarán en memoria caché las credenciales con privilegios y el uso de tarjetas inteligentes puede impedir el riesgo de credenciales por parte de los registradores de pulsaciones de teclas.  
   
-#### <a name="cons"></a>Contras  
+#### <a name="cons"></a>Desventajas  
   
 -   La implementación de la solución requiere un trabajo de diseño e implementación, así como opciones de virtualización sólidas.  
   
@@ -157,7 +157,7 @@ Debe requerir una tarjeta inteligente u otro inicio de sesión multifactor para 
 ### <a name="implementing-secure-administrative-workstations-and-jump-servers"></a>Implementación de estaciones de trabajo administrativas seguras y servidores de salto  
 Como alternativa para proteger las estaciones de trabajo administrativas o en combinación con ellas, puede implementar servidores de saltos seguros, y los usuarios administrativos pueden conectarse a los servidores de salto mediante RDP y tarjetas inteligentes para realizar tareas administrativas.  
   
-Los servidores de salto deben configurarse para ejecutar el rol de puerta de enlace de Escritorio remoto para que pueda implementar restricciones en las conexiones con el servidor de saltos y en los servidores de destino que se administrarán desde él. Si es posible, también debe instalar el rol de Hyper-V y crear [escritorios virtuales personales](https://technet.microsoft.com/library/dd759174.aspx) u otras máquinas virtuales por usuario para que los usuarios administrativos puedan usar para sus tareas en los servidores de salto.  
+Los servidores de salto deben configurarse para ejecutar el rol de puerta de enlace de Escritorio remoto para que pueda implementar restricciones en las conexiones con el servidor de saltos y en los servidores de destino que se administrarán desde él. Si es posible, también debe instalar el rol de Hyper-V y crear [escritorios virtuales personales](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759174(v=ws.11)) u otras máquinas virtuales por usuario para que los usuarios administrativos puedan usar para sus tareas en los servidores de salto.  
   
 Al conceder a los usuarios administrativos máquinas virtuales por usuario en el servidor de Jump Server, se proporciona seguridad física para las estaciones de trabajo administrativas y los usuarios administrativos pueden restablecer o apagar sus máquinas virtuales cuando no estén en uso. Si prefiere no instalar el rol de Hyper-V y el rol de puerta de enlace de Escritorio remoto en el mismo host administrativo, puede instalarlos en equipos independientes.  
   
@@ -165,7 +165,7 @@ Siempre que sea posible, las herramientas de administración remota deben usarse
   
 En los casos en los que un usuario administrativo debe conectarse a través de RDP a un servidor de destino para administrarlo directamente, la puerta de enlace de escritorio remoto debe configurarse para permitir que se realice la conexión solo si el usuario y el equipo adecuados se usan para establecer la conexión al servidor de destino. La ejecución de herramientas de RSAT (o similares) debe prohibirse en sistemas que no son sistemas de administración designados, como las estaciones de trabajo de uso general y los servidores miembro que no son servidores de salto.  
   
-#### <a name="pros"></a>Pros  
+#### <a name="pros"></a>Ventajas  
   
 -   La creación de servidores de salto permite asignar servidores específicos a "zonas" (recopilaciones de sistemas con requisitos de configuración, conexión y seguridad similares) en la red y requerir que la administración de cada zona se lleve a cabo por el personal administrativo que se conecta desde hosts administrativos seguros a un servidor "zona" designado.  
   
@@ -173,11 +173,9 @@ En los casos en los que un usuario administrativo debe conectarse a través de R
   
 -   Mediante la implementación de máquinas virtuales por administrador en servidores de saltos, se exige el cierre y el restablecimiento de las máquinas virtuales a un estado limpio conocido cuando se completan las tareas administrativas. Al exigir el cierre (o reinicio) de las máquinas virtuales cuando se completan las tareas administrativas, los atacantes no pueden destinar las máquinas virtuales, ni tampoco los ataques de robo de credenciales, ya que las credenciales almacenadas en memoria caché no se conservan después de un reinicio.  
   
-#### <a name="cons"></a>Contras  
+#### <a name="cons"></a>Desventajas  
   
 -   Los servidores dedicados son necesarios para los servidores de saltos, ya sean físicos o virtuales.  
   
 -   La implementación de servidores de salto y estaciones de trabajo administrativas designadas requiere un cuidadoso planeamiento y configuración que se asignan a cualquier zona de seguridad configurada en el entorno.  
   
-
-

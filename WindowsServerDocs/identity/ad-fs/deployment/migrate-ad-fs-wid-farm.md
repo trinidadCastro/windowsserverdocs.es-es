@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 89da3de4bc626e12a1fc34752841f2de1afb5322
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d7d8d6f59a95ac343a95fe5e32dc5881a50050e0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408243"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953927"
 ---
 # <a name="migrate-an-ad-fs-20-wid-farm"></a>Migrar una granja AD FS 2,0 WID  
 En este documento se proporciona información detallada sobre cómo migrar una granja de servidores de Windows Internal Database (WID) AD FS 2,0 a Windows Server 2012.
@@ -25,7 +25,7 @@ Para migrar una granja WID a Windows Server 2012, realice el procedimiento sigui
   
 2.  Elimina los nodos no principales del equilibrador de carga.  
   
-3.  Actualización del sistema operativo de este servidor de Windows Server 2008 R2 o Windows Server 2008 a Windows Server 2012. Para obtener más información, consulte [Installing Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx).  
+3.  Actualización del sistema operativo de este servidor de Windows Server 2008 R2 o Windows Server 2008 a Windows Server 2012. Para obtener más información, consulte el tema sobre la [instalación de Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11)).  
   
 > [!IMPORTANT]
 >  Como resultado de la actualización del sistema operativo, se perderá la configuración de AD FS en el servidor y se eliminará el rol del servidor de AD FS 2.0. En su lugar, se instala el rol de servidor de AD FS de Windows Server 2012, pero no está configurado. Es necesario crear la configuración de AD FS original y restaurar la configuración de AD FS restante para completar la migración del servidor de federación.  
@@ -51,7 +51,7 @@ Para crear la configuración de AD FS original se puede usar el **Asistente para
   
 10. Degrada el servidor principal de la granja WID para que sea un servidor secundario mediante Windows PowerShell. Abra Windows PowerShell y ejecute el comando siguiente para agregar los cmdlets de AD FS a la sesión de Windows PowerShell: `PSH:>add-pssnapin “Microsoft.adfs.powershell”`. A continuación, ejecute el comando siguiente para degradar el servidor principal original a un servidor secundario: `PSH:> Set-AdfsSyncProperties – Role SecondaryComputer –PrimaryComputerName <FQDN of the Primary Federation Server>`.  
   
-11. Actualización del sistema operativo en este último nodo (servidor) de la granja WID de Windows Server 2008 R2 o Windows Server 2008 a Windows Server 2012. Para obtener más información, consulte [Installing Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx).  
+11. Actualización del sistema operativo en este último nodo (servidor) de la granja WID de Windows Server 2008 R2 o Windows Server 2008 a Windows Server 2012. Para obtener más información, consulte el tema sobre la [instalación de Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11)).  
   
 > [!IMPORTANT]
 >  Como resultado de la actualización del sistema operativo, se perderá la configuración de AD FS en el servidor y se eliminará el rol del servidor de AD FS 2.0. En su lugar, se instala el rol de servidor de AD FS de Windows Server 2012, pero no está configurado. Es necesario crear de forma manual la configuración de AD FS original y restaurar la configuración de AD FS restante para completar la migración del servidor de federación.  
@@ -72,8 +72,8 @@ Para crear la configuración de AD FS original se puede usar el **Asistente para
 15. Restaure el resto de las personalizaciones de AD FS, como los almacenes de atributos personalizados.  
   
 ## <a name="next-steps"></a>Pasos siguientes
- [Preparar la migración del servidor de federación AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Preparar la migración del servidor de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar la migración del servidor proxy de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [Migrar el servidor de federación AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
- [Migre el servidor proxy de Federación de AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [Migrar el servidor de Federación AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
+ [Migrar el servidor proxy de Federación AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [Migrar los agentes web de AD FS 1.1](migrate-the-ad-fs-web-agent.md)

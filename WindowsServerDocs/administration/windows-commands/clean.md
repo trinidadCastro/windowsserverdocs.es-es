@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a30e1f765959ed60efa662301f95defc21d6587
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 39029c82dffe004d65b1279e5baafc14fbcc8257
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929904"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955677"
 ---
 # <a name="clean"></a>clean
 
@@ -23,7 +23,7 @@ ms.locfileid: "85929904"
 Quita todas las particiones o el formato de volumen del disco que tiene el foco.
 
 >[!NOTE]
-> Para obtener una versión de PowerShell de este comando, consulte [comando CLEAR-Disk](https://docs.microsoft.com/powershell/module/storage/clear-disk).
+> Para obtener una versión de PowerShell de este comando, consulte [comando CLEAR-Disk](/powershell/module/storage/clear-disk).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,7 +37,7 @@ clean [all]
 | --------- | ----------- |
 | todo | Especifica que cada sector y cada sector del disco se establezcan en cero, lo que elimina completamente todos los datos contenidos en el disco. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - En los discos de registro de arranque maestro (MBR), solo se sobrescribe la información de particiones MBR y la información de sectores ocultos.
 
@@ -55,6 +55,6 @@ clean
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [comando CLEAR-Disk](https://docs.microsoft.com/powershell/module/storage/clear-disk)
+- [comando CLEAR-Disk](/powershell/module/storage/clear-disk)
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

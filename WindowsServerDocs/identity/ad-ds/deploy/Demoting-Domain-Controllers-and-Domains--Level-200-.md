@@ -1,6 +1,6 @@
 ---
 ms.assetid: 65ed5956-6140-4e06-8d99-8771553637d1
-title: Degradación de controladores de dominio y de dominios (nivel 200)
+title: Degradación de controladores de dominio y dominios (Nivel 200)
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -8,18 +8,18 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b8c5502f50b065e8c75d0167328868ac129dfad1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7fc5b8b2f29c0eee2f11f2b581e6ccdd56635236
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825435"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954297"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>Degradar controladores de dominio y dominios
 
 >Se aplica a: Windows Server
 
-En este tema se explica cómo quitar AD DS usando el Administrador del servidor o Windows PowerShell.
+En este tema se explica cómo quitar AD DS usando el Administrador del servidor o Windows PowerShell.
   
 ## <a name="ad-ds-removal-workflow"></a>Flujo de trabajo de eliminación de AD DS
 
@@ -41,9 +41,9 @@ En este tema se explica cómo quitar AD DS usando el Administrador del servidor
 > [!NOTE]  
 > El argumento **-credential** solo es obligatorio si no se ha iniciado sesión como miembro del grupo Administradores de empresas (disminuyendo de nivel el último DC en un dominio) o del grupo Admins. del dominio (disminuyendo de nivel una réplica de DC). El argumento **-includemanagementtools** solo es obligatorio si se quieren quitar las utilidades de administración de AD DS.  
   
-## <a name="demote"></a>Disminuir nivel  
+## <a name="demote"></a>Reducir de nivel  
   
-### <a name="remove-roles-and-features"></a>Quitar roles y características
+### <a name="remove-roles-and-features"></a>Quitar roles y funciones
 
 El Administrador del servidor ofrece dos interfaces para quitar el rol de Servicios de dominio de Active Directory:  
   
@@ -57,7 +57,7 @@ El Administrador del servidor ofrece dos interfaces para quitar el rol de Servic
 
 Los cmdlets de ServerManager **Uninstall-WindowsFeature** y **Remove-WindowsFeature** impedirán que quite el rol de AD DS hasta que disminuya el nivel del controlador de dominio.
   
-### <a name="server-selection"></a>Selección del servidor
+### <a name="server-selection"></a>Selección de servidor
 
 ![Asistente para quitar roles y características, seleccionar servidor de destino](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection2.png)  
 
@@ -67,7 +67,7 @@ El diálogo **Selección de servidor** te permite elegir uno de los servidores a
 
 ![Asistente para quitar roles y características: seleccionar roles para quitar](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerRoles.png)  
 
-Desactiva la casilla **Servicios de dominio de Active Directory** para disminuir un controlador de dominio de nivel; si el servidor es un controlador de dominio actualmente, esto no hace que se elimine el rol de AD DS, sino que se pasa al cuadro de diálogo **Resultados de la validación**, donde se propone la disminución de nivel. De lo contrario, quita los binarios como cualquier otra característica de rol.  
+Desactiva la casilla **Active Directory Domain Services** para disminuir un controlador de dominio de nivel; si el servidor es un controlador de dominio actualmente, esto no hace que se elimine el rol de AD DS, sino que se pasa al cuadro de diálogo **Resultados de la validación**, donde se propone la disminución de nivel. De lo contrario, quita los binarios como cualquier otra característica de rol.  
 
 * No quites ningún otro rol o característica relacionada con AD DS (como DNS, GPMC o las herramientas RSAT) si vas a volver a promover el controlador de dominio. Quitar más roles y características hace que aumente el tiempo que debas invertir en promoverlo, dado que el Administrador del servidor reinstala estas características cuando el rol se reinstala.  
 * Quita los roles y características de AD DS que no necesites según tus propios criterios si vas a disminuir el controlador de dominio de nivel permanentemente. Para ello, tienes que desactivar todas las casillas correspondientes a esos roles y características.  
@@ -78,7 +78,7 @@ Desactiva la casilla **Servicios de dominio de Active Directory** para disminui
    * La característica Herramientas de AD DS y AD LDS  
    * La característica Centro de administración de Active Directory  
    * La característica Complementos y herramientas de línea de comandos de AD DS  
-   * DNS Server  
+   * Servidor DNS  
    * Consola de administración de directivas de grupo  
   
 Los cmdlets equivalentes en Windows PowerShell para ADDSDeployment y ServerManager son:  
@@ -96,12 +96,12 @@ Uninstall-windowsfeature
 
 ![Asistente para configuración de Active Directory Domain Services: selección de credenciales](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Credentials.png)  
 
-Las opciones de degradación se configuran en la página **Credenciales** . Proporcione las credenciales necesarias para realizar la degradación de la siguiente lista:  
+Las opciones de degradación se configuran en la página **Credenciales**. Proporcione las credenciales necesarias para realizar la degradación de la siguiente lista:  
 
 * La degradación de un controlador de dominio adicional requiere credenciales de Administrador de dominio. Al seleccionar **forzar la eliminación de este controlador de dominio, se** degrada el controlador de dominio sin quitar los metadatos del objeto de controlador de dominio de Active Directory.  
 
    > [!WARNING]  
-   > No seleccione esta opción a menos que el controlador de dominio no pueda establecer contacto con otros controladores de dominio y no haya una *forma razonable* para resolver el problema de red. La degradación forzada deja metadatos huérfanos en Active Directory en los controladores de dominio restantes del bosque. Además, todos los cambios no replicados en ese controlador de dominio, como por ejemplo contraseñas o cuentas de usuario nuevas, se pierden para siempre. Los metadatos huérfanos son la causa raíz en un porcentaje significativo de casos del Soporte al cliente de Microsoft para AD DS, Exchange, SQL y otro software.  
+   > No seleccione esta opción a menos que el controlador de dominio no pueda establecer contacto con otros controladores de dominio y no haya una *forma razonable* para resolver el problema de red. La degradación forzada deja metadatos huérfanos en Active Directory en los controladores de dominio restantes del bosque. Además, todos los cambios no replicados en ese controlador de dominio, como por ejemplo contraseñas o cuentas de usuario nuevas, se pierden para siempre. Los metadatos huérfanos son la causa raíz en un porcentaje significativo de casos del Soporte al cliente de Microsoft para AD DS, Exchange, SQL y otro software.  
    >
    > Si degrada a la fuerza un controlador de dominio, *debe* realizar la limpieza manual de los metadatos en forma inmediata. Para conocer los pasos necesarios, consulta el tema [Limpiar metadatos de servidor](ad-ds-metadata-cleanup.md).  
 
@@ -124,7 +124,7 @@ Los argumentos equivalentes en el módulo ADDSDeployment de Windows PowerShell s
 En la página **Advertencias** verás alertas de las posibles consecuencias que conlleva eliminar este controlador de dominio. Para proseguir, debes seleccionar **Continuar con la eliminación**.
 
 > [!WARNING]  
-> Si activaste antes **Forzar la eliminación de este controlador de dominio** en la página **Credenciales**, la página **Advertencias** mostrará todos los roles de Operaciones de maestro único flexible que este controlador de dominio hospeda. *Debes* asumir los roles de otro controlador de dominio *de inmediato* tras disminuir este servidor de nivel. Para obtener más información sobre cómo asumir roles de FSMO, consulta [Asumir el rol de maestro de operaciones](https://technet.microsoft.com/library/cc816779(WS.10).aspx).
+> Si activaste antes **Forzar la eliminación de este controlador de dominio** en la página **Credenciales**, la página **Advertencias** mostrará todos los roles de Operaciones de maestro único flexible que este controlador de dominio hospeda. *Debes* asumir los roles de otro controlador de dominio *de inmediato* tras disminuir este servidor de nivel. Para obtener más información sobre cómo asumir roles de FSMO, consulta [Asumir el rol de maestro de operaciones](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816779(v=ws.10)).
 
 Esta página carece de argumento equivalente en Windows PowerShell para ADDSDeployment.
 
@@ -213,7 +213,7 @@ Como **Uninstall-ADDSDomainController** y **Uninstall-WindowsFeature** solo tien
 
 ![Ejemplo de desinstalación de PowerShell-WindowsFeature](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallWindowsFeature.png)
 
-Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos **-force** o **-confirm:$false** con cualquier cmdlet de ADDSDeployment de Windows PowerShell. Para evitar que el servidor se reinicie automáticamente al final de la promoción, usa el argumento **-norebootoncompletion:$false**.
+Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos **-force** o **-confirm:$false** con cualquier cmdlet de ADDSDeployment de Windows PowerShell. Para evitar que el servidor se reinicie automáticamente al final de la promoción, usa el argumento **-norebootoncompletion:$false**.
 
 > [!WARNING]
 > No se recomienda invalidar el reinicio. El servidor miembro debe reiniciarse para funcionar correctamente.

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: 2e49ed45875b79dfc4d8bbbdad8a1221000bf2b5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 59d6a4eafe2eb3383cfeed9e1cbcb9d3e10fe376
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923520"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955817"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -106,7 +106,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-Para obtener ejemplos de cómo usar BCDEdit, consulte el artículo de [referencia de las opciones de bcdedit](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference) .
+Para obtener ejemplos de cómo usar BCDEdit, consulte el artículo de [referencia de las opciones de bcdedit](/windows-hardware/drivers/devtest/bcd-boot-options-reference) .
 
 ## <a name="additional-references"></a>Referencias adicionales
 

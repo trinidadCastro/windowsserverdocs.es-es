@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: Instrucciones paso a paso para implementar el almacenamiento definido por software con Espacios de almacenamiento directo en Windows Server como una infraestructura hiperconvergida o una infraestructura convergente (también conocida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: 50bcdc175610d6e5c5264f9cb62c7d99d2990ac0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c18d3edc57ab04c9f9487bc39b52325fa1eb0ba9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472832"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955117"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implementar espacios de almacenamiento directo
 
@@ -29,7 +29,7 @@ En este tema se proporcionan instrucciones paso a paso para implementar [espacio
 > [!Tip]
 > Puede usar máquinas virtuales de Hyper-V, incluido en Microsoft Azure, para [evaluar espacios de almacenamiento directo sin hardware](storage-spaces-direct-in-vm.md). También puede revisar los útiles [scripts de implementación rápida de Windows Server](https://aka.ms/wslab), que se usan con fines de entrenamiento.
 
-## <a name="before-you-start"></a>Antes de comenzar
+## <a name="before-you-start"></a>Antes de empezar
 
 Revise los [requisitos de hardware de espacios de almacenamiento directo](Storage-Spaces-Direct-Hardware-Requirements.md) y consulte este documento para familiarizarse con el enfoque general y con las notas importantes asociadas a algunos pasos.
 
@@ -102,7 +102,7 @@ En el sistema de administración, abra una consola de PowerShell con privilegios
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force
 ```
 
-Si la cuenta de administrador de almacenamiento no es miembro del grupo Admins. del dominio, agregue su cuenta de administrador de almacenamiento al grupo de administradores locales en cada nodo, o bien, agregue el grupo que usa para los administradores de almacenamiento. Puede usar el siguiente comando (o escribir una función de Windows PowerShell para hacerlo; consulte [uso de PowerShell para agregar usuarios de dominio a un grupo local](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx) para obtener más información):
+Si la cuenta de administrador de almacenamiento no es miembro del grupo Admins. del dominio, agregue su cuenta de administrador de almacenamiento al grupo de administradores locales en cada nodo, o bien, agregue el grupo que usa para los administradores de almacenamiento. Puede usar el siguiente comando (o escribir una función de Windows PowerShell para hacerlo; consulte [uso de PowerShell para agregar usuarios de dominio a un grupo local](https://devblogs.microsoft.com/scripting/use-powershell-to-add-domain-users-to-a-local-group/) para obtener más información):
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -119,7 +119,7 @@ El siguiente paso consiste en instalar roles de servidor en cada servidor. Para 
 - RSAT: agrupación en clústeres-PowerShell
 - Hyper-V: PowerShell
 
-Para instalar a través de PowerShell, use el cmdlet [install-WindowsFeature](https://docs.microsoft.com/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature) . Puede utilizarlo en un solo servidor como este:
+Para instalar a través de PowerShell, use el cmdlet [install-WindowsFeature](/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature) . Puede utilizarlo en un solo servidor como este:
 
 ```PowerShell
 Install-WindowsFeature -Name "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "RSAT-Clustering-PowerShell", "Hyper-V-PowerShell", "FS-FileServer"
@@ -384,7 +384,7 @@ CD $ScriptFolder
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Después de implementar el servidor de archivos en clúster, se recomienda probar el rendimiento de la solución mediante cargas de trabajo sintéticas antes de que se muestren las cargas de trabajo reales. Esto le permite confirmar que la solución funciona correctamente y solucionar cualquier problema persistente antes de agregar la complejidad de las cargas de trabajo. Para obtener más información, vea rendimiento de los [espacios de almacenamiento de prueba con cargas de trabajo sintéticas](https://technet.microsoft.com/library/dn894707.aspx).
+Después de implementar el servidor de archivos en clúster, se recomienda probar el rendimiento de la solución mediante cargas de trabajo sintéticas antes de que se muestren las cargas de trabajo reales. Esto le permite confirmar que la solución funciona correctamente y solucionar cualquier problema persistente antes de agregar la complejidad de las cargas de trabajo. Para obtener más información, vea rendimiento de los [espacios de almacenamiento de prueba con cargas de trabajo sintéticas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11)).
 
 ## <a name="additional-references"></a>Referencias adicionales
 
@@ -392,5 +392,5 @@ Después de implementar el servidor de archivos en clúster, se recomienda proba
 -   [Conoce la memoria caché de Espacios de almacenamiento directo](understand-the-cache.md)
 -   [Planeación de volúmenes en Espacios de almacenamiento directo](plan-volumes.md)
 -   [Tolerancia a errores de espacios de almacenamiento](storage-spaces-fault-tolerance.md)
--   [Requisitos de hardware de Espacios de almacenamiento directo](Storage-Spaces-Direct-Hardware-Requirements.md)
--   [En RDMA, o no en RDMA, que es la pregunta](https://blogs.technet.microsoft.com/filecab/2017/03/27/to-rdma-or-not-to-rdma-that-is-the-question/) (blog de TechNet)
+-   [Requisitos de hardware Espacios de almacenamiento directo](Storage-Spaces-Direct-Hardware-Requirements.md)
+-   [En RDMA, o no en RDMA, que es la pregunta](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (blog de TechNet)

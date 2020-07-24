@@ -6,12 +6,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: ce3b32bdb0dfb51237f934f23207167a215a0024
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ccce763b437b461d33dd72cb3d656b825746e6da
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475612"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953848"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimite la asignación de volúmenes en Espacios de almacenamiento directo
 > Se aplica a: Windows Server 2019
@@ -37,7 +37,7 @@ Windows Server 2019 presenta una opción para delimitar manualmente la asignaci�
 
 ### <a name="review-regular-allocation"></a>Revisión: asignación normal
 
-Con la creación de reflejos tridireccionales normal, el volumen se divide en muchos "bloques" pequeños que se copian tres veces y se distribuyen uniformemente en todas las unidades de cada servidor del clúster. Para obtener más información, lea [este blog en profundidad](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/).
+Con la creación de reflejos tridireccionales normal, el volumen se divide en muchos "bloques" pequeños que se copian tres veces y se distribuyen uniformemente en todas las unidades de cada servidor del clúster. Para obtener más información, lea [este blog en profundidad](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959).
 
 ![Diagrama que muestra el volumen que se divide en tres pilas de bloques y se distribuye uniformemente en cada servidor.](media/delimit-volume-allocation/regular-allocation.png)
 

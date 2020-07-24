@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a8934d9177d81cd05124175e64746ecdb4a1bc1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 684e768979f54b772bffcb997b6ad44291dde8af
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930951"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954577"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
@@ -57,7 +57,7 @@ wbadmin start recovery
 |-noRollForward|Solo es válido cuando se recuperan aplicaciones. Permite la recuperación en un momento dado anterior de una aplicación si se selecciona la versión más reciente de las copias de seguridad. En el caso de otras versiones de la aplicación que no son la última recuperación a un momento dado anterior, se realiza como valor predeterminado.|
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Para ver una lista de los elementos que están disponibles para la recuperación a partir de una versión de copia de seguridad específica, use **Wbadmin get items**. Si un volumen no tenía un punto de montaje o una letra de unidad en el momento de la copia de seguridad, este subcomando devolvería un nombre de volumen basado en GUID que se debe usar para recuperar el volumen.
 -   Cuando **-itemType** es una **aplicación**, puede usar un valor de **ADIFM** para que realice una instalación desde el **medio de la** operación para recuperar todos los datos relacionados necesarios para Active Directory Domain Services. **ADIFM** crea una copia de la base de datos Active Directory, el registro y el estado de SYSVOL y, a continuación, guarda esta información en la ubicación especificada por **-recoveryTarget**. Use este parámetro solo cuando se especifica **-recoveryTarget** .
@@ -93,7 +93,7 @@ wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\shar
 
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   Cmdlet [Start-WBFileRecovery](https://technet.microsoft.com/library/jj902457.aspx)
--   Cmdlet [Start-WBHyperVRecovery](https://technet.microsoft.com/library/jj902463.aspx)
--   Cmdlet [Start-WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx)
--   Cmdlet [Start-WBVolumeRecovery](https://technet.microsoft.com/library/jj902470.aspx)
+-   Cmdlet [Start-WBFileRecovery](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)
+-   Cmdlet [Start-WBHyperVRecovery](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)
+-   Cmdlet [Start-WBSystemStateRecovery](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)
+-   Cmdlet [Start-WBVolumeRecovery](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)

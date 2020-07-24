@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: ee4f508cf0a65b59c3253d6865c649cc9652c569
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8a1d98fd6c36876aebaf2f9abe4bed29f5485e8a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856308"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955547"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Intercambio entre regiones de la Réplica de almacenamiento de clúster a clúster en Azure
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Puede configurar las réplicas de almacenamiento de clúster a clúster para aplicaciones entre regiones de Azure. En los ejemplos siguientes, usamos un clúster de dos nodos, pero la réplica de almacenamiento de clúster a clúster no está restringida a un clúster de dos nodos. La ilustración siguiente es un clúster de espacio de almacenamiento directo de dos nodos que se puede comunicar entre sí, que se encuentra en el mismo dominio y que son entre regiones.
 
@@ -31,7 +31,7 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
 
 1. En el Azure Portal, cree [grupos de recursos](https://ms.portal.azure.com/#create/Microsoft.ResourceGroup) en dos regiones diferentes.
 
-    Por ejemplo, **Sr-AZ2AZ** en el **oeste de EE. UU. 2** y **Sr-AZCROSS** en la región **centro-oeste de EE. UU.** , como se mostró anteriormente.
+    Por ejemplo, **Sr-AZ2AZ** en el **oeste de EE. UU. 2** y **Sr-AZCROSS** en la región **centro-oeste de EE. UU.**, como se mostró anteriormente.
 
 2. Cree dos [conjuntos de disponibilidad](https://ms.portal.azure.com/#create/Microsoft.AvailabilitySet-ARM), uno en cada grupo de recursos para cada clúster.
     - Conjunto de disponibilidad (**az2azAS1**) en (**Sr-AZ2AZ**)
@@ -92,13 +92,13 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
 8. Cree una SKU estándar interna [load balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) para cada clúster (**azlbr1**, **azlbazcross**).
 
    Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
-      - azlbr1 = > front-end IP: 10.3.0.100 (seleccione una dirección IP no usada de la subred de red virtual (**az2az-Vnet**))
+      - azlbr1 => front-end IP: 10.3.0.100 (seleccione una dirección IP no usada de la subred de red virtual (**az2az-Vnet**))
       - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
       - Crear sondeo de estado: Puerto 59999
       - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada.
 
    Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga. 
-      - azlbazcross = > front-end IP: 10.0.0.10 (seleccione una dirección IP no usada de la subred de red virtual (**azcross-VNET**))
+      - azlbazcross => front-end IP: 10.0.0.10 (seleccione una dirección IP no usada de la subred de red virtual (**azcross-VNET**))
       - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
       - Crear sondeo de estado: Puerto 59999
       - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada. 
@@ -127,7 +127,7 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
 
     Ejecútelo una vez desde cualquier nodo del clúster, para cada clúster. 
     
-    En nuestro ejemplo, asegúrese de cambiar "ILBIP" según los valores de configuración. Ejecute el siguiente comando desde un nodo **az2az1**/**az2az2**
+    En nuestro ejemplo, asegúrese de cambiar "ILBIP" según los valores de configuración. Ejecute el siguiente comando desde un nodo **az2az1** / **az2az2**
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -137,7 +137,7 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```
 
-12. Ejecute el siguiente comando desde un nodo **azcross1**/**azcross2**
+12. Ejecute el siguiente comando desde un nodo **azcross1** / **azcross2**
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
@@ -165,7 +165,7 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
 
 14. Ejecutar [pruebas de validación de clústeres](../../failover-clustering/create-failover-cluster.md#validate-the-configuration) antes de continuar con el paso siguiente
 
-15. Inicie Windows PowerShell y use el cmdlet [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar si satisface todos los requisitos de la Réplica de almacenamiento. Puede usar el cmdlet en modo de solo requisitos para una prueba rápida, o en modo de evaluación de rendimiento de ejecución más larga.
+15. Inicie Windows PowerShell y use el cmdlet [Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar si satisface todos los requisitos de la Réplica de almacenamiento. Puede usar el cmdlet en modo de solo requisitos para una prueba rápida, o en modo de evaluación de rendimiento de ejecución más larga.
  
 16. Configure la réplica de almacenamiento de clúster a clúster.
     Conceder acceso de un clúster a otro en ambas direcciones:

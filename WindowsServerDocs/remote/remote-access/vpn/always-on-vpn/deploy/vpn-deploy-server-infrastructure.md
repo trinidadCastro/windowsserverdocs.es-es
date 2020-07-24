@@ -9,12 +9,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 7c09ae7a792030152780ce4eb0029cea3ca234d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a9d9c139c721608e9104c4943dda2664432c94d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818928"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955107"
 ---
 # <a name="step-2-configure-the-server-infrastructure"></a>Paso 2. Configurar la infraestructura de servidor
 
@@ -43,7 +43,7 @@ Los certificados se inscriben manualmente en los servidores VPN.
 
 5. En el Editor de administración de directivas de grupo, complete los pasos siguientes para configurar la inscripción automática de certificados de equipo:
 
-    1. En el panel de navegación, vaya a **configuración del equipo** > **directivas** > **configuración de Windows** > configuración de **seguridad** > **directivas de clave pública**.
+    1. En el panel de navegación, vaya a **configuración del equipo**directivas configuración de Windows configuración de  >  **Policies**  >  **Windows Settings**  >  **seguridad**  >  **directivas de clave pública**.
 
     2. En el panel de detalles, haga clic con el botón secundario en **cliente de servicios de Certificate Server-inscripción automática**y, a continuación, seleccione **propiedades**.
 
@@ -55,9 +55,9 @@ Los certificados se inscriben manualmente en los servidores VPN.
 
 6. En el Editor de administración de directivas de grupo, complete los pasos siguientes para configurar la inscripción automática de certificados de usuario:
 
-    1. En el panel de navegación, vaya a **configuración de usuario** > **directivas** > **configuración de Windows** > configuración de **seguridad** > **directivas de clave pública**.
+    1. En el panel de navegación, vaya a **configuración de usuario**directivas configuración de Windows configuración de  >  **Policies**  >  **Windows Settings**  >  **seguridad**  >  **directivas de clave pública**.
 
-    2. En el panel de detalles, haz clic con el botón secundario en **Cliente de Servicios de certificados - Inscripción automática** y selecciona **Propiedades**.
+    2. En el panel de detalles, haga clic con el botón secundario en **cliente de servicios de Certificate Server-inscripción automática** y seleccione **propiedades**.
 
     3. En el cuadro de diálogo cliente de servicios de Certificate Server: propiedades de inscripción automática, en **modelo de configuración**, seleccione **habilitado**.
 
@@ -65,7 +65,7 @@ Los certificados se inscriben manualmente en los servidores VPN.
 
     5. Seleccione **Aceptar**.
 
-    6. Cierra el Editor de administración de directivas de grupo.
+    6. Cierre el Editor de administración de directivas de grupo.
 
 7. Cierre Administración de directivas de grupo.
 
@@ -109,7 +109,7 @@ Puesto que el servidor RRAS no está unido a un dominio, no se puede usar la ins
     certreq -accept VPNGateway.cer
     ```
 
-11. Ejecute el complemento MMC certificados tal y como se describe [aquí](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) selección de la opción **cuenta de equipo** .
+11. Ejecute el complemento MMC certificados tal y como se describe [aquí](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) selección de la opción **cuenta de equipo** .
 
 12. Asegúrese de que existe un certificado válido para el servidor RRAS con las siguientes propiedades:
 
@@ -122,7 +122,7 @@ Puesto que el servidor RRAS no está unido a un dominio, no se puede usar la ins
 Aquí puede ver un script de ejemplo de una directiva de solicitud de certificado que se usa para solicitar un certificado de puerta de enlace de VPN mediante un proceso fuera de banda.
 
 >[!TIP]
->Puede encontrar una copia del script VPNGateway. inf en el kit de direcciones IP de la oferta de VPN, en la carpeta de directivas de solicitud de certificado. Actualice solo ' subject ' y '\_continue\_' con valores específicos del cliente.
+>Puede encontrar una copia del script VPNGateway. inf en el kit de direcciones IP de la oferta de VPN, en la carpeta de directivas de solicitud de certificado. Actualice ' asunto ' y ' \_ continuar \_ ' con valores específicos del cliente.
 
 ```
 [Version] 
@@ -201,10 +201,10 @@ También agregará un grupo que contenga los servidores VPN y otro grupo que con
 
 ## <a name="create-the-user-authentication-template"></a>Crear la plantilla de autenticación de usuario
 
-En este procedimiento, configurará una plantilla de autenticación cliente-servidor personalizada. Esta plantilla es necesaria porque desea mejorar la seguridad global del certificado seleccionando niveles de compatibilidad actualizados y seleccionando el proveedor de criptografía de la plataforma Microsoft. Este último cambio le permite usar el TPM en los equipos cliente para proteger el certificado. Para obtener información general sobre el TPM, consulte [información general sobre la tecnología de módulo de plataforma segura](https://docs.microsoft.com/windows/device-security/tpm/trusted-platform-module-overview).
+En este procedimiento, configurará una plantilla de autenticación cliente-servidor personalizada. Esta plantilla es necesaria porque desea mejorar la seguridad global del certificado seleccionando niveles de compatibilidad actualizados y seleccionando el proveedor de criptografía de la plataforma Microsoft. Este último cambio le permite usar el TPM en los equipos cliente para proteger el certificado. Para obtener información general sobre el TPM, consulte [información general sobre la tecnología de módulo de plataforma segura](/windows/device-security/tpm/trusted-platform-module-overview).
 
 >[!IMPORTANT] 
->El proveedor de cifrado de plataforma de Microsoft "requiere un chip de TPM, en el caso de que se esté ejecutando una máquina virtual y se reciba el siguiente error:" no se puede encontrar un CSP válido en el equipo local "al intentar inscribir manualmente el certificado debe comprobar" almacenamiento de claves de software de Microsoft Y haga que sea segundo en orden después de "proveedor de cifrado de plataforma de Microsoft" en la pestaña criptografía de propiedades de certificado.
+>El proveedor de servicios criptográficos de la plataforma de Microsoft "requiere un chip TPM, en el caso de que se esté ejecutando una máquina virtual y se reciba el siguiente error:" no se puede encontrar un CSP válido en el equipo local "al intentar inscribir manualmente el certificado, se debe comprobar" proveedor de almacenamiento de claves de software de Microsoft "y hacer que se ejecute en segundo lugar después de"
 
 **Pasos**
 
@@ -277,7 +277,7 @@ En este procedimiento, puede configurar una nueva plantilla de autenticación de
 >[!IMPORTANT]
 >Dado que los clientes VPN tienen acceso a este servidor desde la red Internet pública, los nombres de asunto y alternativos son diferentes del nombre del servidor interno. Como resultado, no puede inscribir automáticamente este certificado en servidores VPN.
 
-**Requisitos previos**
+**Requisitos previos:**
 
 Servidores VPN Unidos a un dominio
 
@@ -415,7 +415,7 @@ A diferencia del certificado de usuario, debe inscribir manualmente el certifica
 
 2. Haga clic con el botón derecho en **personal**, seleccione **todas las tareas** y luego seleccione **solicitar nuevo certificado** para iniciar el Asistente para inscripción de certificados.
 
-3. En la página antes de comenzar, seleccione **siguiente**.
+3. En la página Antes de empezar, seleccione **Siguiente**.
 
 4. En la página seleccionar Directiva de inscripción de certificados, seleccione **siguiente**.
 
@@ -433,7 +433,7 @@ A diferencia del certificado de usuario, debe inscribir manualmente el certifica
 
     5. Seleccione **Agregar** después de escribir cada nombre.
 
-    6. Cuando termine, seleccione **Aceptar** .
+    6. Seleccione **Aceptar** cuando termine.
 
 7. Seleccione **inscribir**.
 

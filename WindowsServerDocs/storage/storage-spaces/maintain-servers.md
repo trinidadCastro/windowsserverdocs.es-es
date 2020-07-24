@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: a317f358c37f607475890efe773b57ee8efaeb14
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8dba155f8b8d7312a823dedc72d23268d7d13fbf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473482"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955917"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Desconectar un servidor de Espacios de almacenamiento directo para su mantenimiento
 
@@ -27,7 +27,7 @@ Con Espacios de almacenamiento directo, desconectar un servidor (detenerlo) tamb
 Use los procedimientos siguientes para pausar correctamente un servidor en un clúster de Espacios de almacenamiento directo antes de desconectarlo.
 
    > [!IMPORTANT]
-   > Para instalar actualizaciones en un clúster de Espacios de almacenamiento directo, use la actualización compatible con clústeres (CAU), que realiza automáticamente los procedimientos de este tema para que no tenga que hacerlo al instalar las actualizaciones. Para obtener más información, consulte [actualización compatible con clústeres (CAU)](https://technet.microsoft.com/library/hh831694.aspx).
+   > Para instalar actualizaciones en un clúster de Espacios de almacenamiento directo, use la actualización compatible con clústeres (CAU), que realiza automáticamente los procedimientos de este tema para que no tenga que hacerlo al instalar las actualizaciones. Para obtener más información, consulte [actualización compatible con clústeres (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11)).
 
 ## <a name="verifying-its-safe-to-take-the-server-offline"></a>Comprobando que es seguro desconectar el servidor
 
@@ -186,4 +186,4 @@ Siga estos pasos para realizar una ruta de acceso al sistema de Espacios de alma
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
-- [Actualización compatible con clústeres (CAU)](https://technet.microsoft.com/library/hh831694.aspx)
+- [Actualización compatible con clústeres (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11))

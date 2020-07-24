@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fab17e2d3f1806543eedd8a918ae679a32265742
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d8320ddd7c806999730ae1f8fd47ea559406e0a7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930843"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954427"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -49,4 +49,4 @@ Debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados
 ## <a name="additional-references"></a>Referencias adicionales
 
 -   [Copia de seguridad y recuperación](https://go.microsoft.com/fwlink/?LinkID=195054)
--   [Cmdlets de Copias de seguridad de Windows Server en Windows PowerShell](https://technet.microsoft.com/library/jj902428.aspx)
+-   [Cmdlets de Copias de seguridad de Windows Server en Windows PowerShell](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)

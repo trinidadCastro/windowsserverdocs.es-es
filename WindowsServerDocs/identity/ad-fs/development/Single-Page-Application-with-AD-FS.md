@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 09b789937c9ff1dad90c3533616a4ed800204267
-ms.sourcegitcommit: 046123d4f2d24dc00b35ea99adee6f8d322c76bf
+ms.openlocfilehash: 1bd5d95739bc1c975f5f0c4d7efb8dc6f91e0412
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85416298"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954407"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Compilar una aplicación Web de una sola página mediante OAuth y ADAL.JS con AD FS 2016 o posterior
 
@@ -38,7 +38,7 @@ Cuando se usa una aplicación de una sola página, el usuario navega a una ubica
 Si ADAL ve un desencadenador para la autenticación, usa la información proporcionada por la aplicación y dirige la autenticación a su AD FS STS.  La aplicación de una sola página, que se registra como un cliente público en AD FS, se configura automáticamente para el flujo de concesión implícita. La solicitud de autorización genera un token de identificador que se devuelve a la aplicación a través de un #fragment. Otras llamadas al back-end de WebAPI llevarán este token de identificador como el token de portador en el encabezado para obtener acceso a WebAPI.
 
 ## <a name="setting-up-the-development-box"></a>Configuración del cuadro de desarrollo
-En este tutorial se usa Visual Studio 2015. El proyecto usa la biblioteca de ADAL JS. Para obtener información sobre ADAL, lea [biblioteca de autenticación de Active Directory .net.](https://msdn.microsoft.com/library/azure/mt417579.aspx)
+En este tutorial se usa Visual Studio 2015. El proyecto usa la biblioteca de ADAL JS. Para obtener información sobre ADAL, lea [biblioteca de autenticación de Active Directory .net.](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
 
 ## <a name="setting-up-the-environment"></a>Configuración del entorno
 En este tutorial, usaremos una configuración básica de:
@@ -170,7 +170,7 @@ El explorador (use chrome browser) cargará el SPA y aparecerá la siguiente pan
 
 Haga clic en Inicio de sesión.  La lista de tareas desencadenará el flujo de autenticación y ADAL JS dirigirá la autenticación a AD FS
 
-![Iniciar sesión](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![Inicio de sesión](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
 En Fiddler, puede ver el token que se devuelve como parte de la dirección URL en el # Fragment.
 

@@ -10,12 +10,12 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: Explicación de las opciones de resistencia en Espacios de almacenamiento directo como la creación de reflejo y la paridad.
 ms.localizationpriority: medium
-ms.openlocfilehash: 540398e78b35d7cd61464e012d0f3ccfa85d7152
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 517b5484bc02e377f40df84422a1910014c9b830
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475492"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955397"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>Tolerancia a errores y eficiencia del almacenamiento en Espacios de almacenamiento directo
 
@@ -33,7 +33,7 @@ Al igual que sucede con RAID, existen varias formas distintas en las que Espacio
 
 ## <a name="mirroring"></a>Creación de reflejo
 
-La creación de reflejo proporciona tolerancia a errores gracias al mantenimiento de varias copias de todos los datos. Esto se parece mucho a RAID-1. La forma en que los datos se seccionan y se colocan no es trivial (consulte [este blog](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/) para obtener más información), pero es absolutamente cierto que los datos almacenados mediante la creación de reflejo se escriben, en su totalidad, varias veces. Cada copia se escribe en distinto hardware físico (unidades diferentes en distintos servidores), que se supone que generan un error de forma independiente.
+La creación de reflejo proporciona tolerancia a errores gracias al mantenimiento de varias copias de todos los datos. Esto se parece mucho a RAID-1. La forma en que los datos se seccionan y se colocan no es trivial (consulte [este blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959) para obtener más información), pero es absolutamente cierto que los datos almacenados mediante la creación de reflejo se escriben, en su totalidad, varias veces. Cada copia se escribe en distinto hardware físico (unidades diferentes en distintos servidores), que se supone que generan un error de forma independiente.
 
 En Windows Server 2016, espacios de almacenamiento ofrece dos tipos de creación de reflejo: ' bidireccional ' y ' triple '.
 
@@ -89,11 +89,11 @@ En el caso de las unidades de disco duro (HDD), el tamaño del grupo es de 4 sí
 
 ![códigos de reconstrucción local](media/Storage-Spaces-Fault-Tolerance/local-reconstruction-codes-180px.png)
 
-Se recomienda este tutorial en profundidad y eminently legible de [cómo los códigos de reconstrucción locales controlan diversos escenarios de error y por qué son atractivos](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/), por nuestra propia [Claus Joergensen](https://twitter.com/clausjor).
+Se recomienda este tutorial en profundidad y eminently legible de [cómo los códigos de reconstrucción locales controlan diversos escenarios de error y por qué son atractivos](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB), por nuestra propia [Claus Joergensen](https://twitter.com/clausjor).
 
 ## <a name="mirror-accelerated-parity"></a>Paridad acelerada por reflejos
 
-A partir de Windows Server 2016, un volumen de Espacios de almacenamiento directo puede ser un reflejo de la parte y la paridad del elemento. Escribe las tierras primero en la parte reflejada y se mueven gradualmente a la parte de la paridad más adelante. De hecho, se [usa la creación de reflejo para acelerar la codificación de borrado](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/).
+A partir de Windows Server 2016, un volumen de Espacios de almacenamiento directo puede ser un reflejo de la parte y la paridad del elemento. Escribe las tierras primero en la parte reflejada y se mueven gradualmente a la parte de la paridad más adelante. De hecho, se [usa la creación de reflejo para acelerar la codificación de borrado](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
 
 Para combinar el reflejo triple y la paridad doble, se necesitan al menos 4 dominios de error, lo que significa 4 servidores.
 
@@ -171,7 +171,7 @@ En la siguiente tabla se muestran la eficiencia del almacenamiento de paridad do
 |    15                 |    RS 6+2           |    75.0%        |
 |    16                 |    LRC (12, 2, 1)   |    80,0 %        |
 
-## <a name="examples"></a><a name="examples"></a>Ejemplos
+## <a name="examples"></a><a name="examples"></a>Example
 
 A menos que tengas solo dos servidores, te recomendamos usar el reflejo triple o la paridad doble, porque ofrecen mejor tolerancia a errores. En concreto, asegúrate de que todos los datos permanezcan seguros y accesibles continuamente incluso cuando dos dominios de error (con Espacios de almacenamiento directo, esto significa dos servidores) se vean afectados por errores simultáneos.
 
@@ -216,7 +216,7 @@ Cada uno de los siguientes vínculos se encuentra en línea en algún lugar del 
 - [Espacios de almacenamiento directo en Windows Server 2016](storage-spaces-direct-overview.md)
 - [Reconocimiento de dominios de error en Windows Server 2016](../../failover-clustering/fault-domains.md)
 - [Codificación de borrado en Azure por Microsoft Research](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
-- [Códigos de reconstrucción local y aceleración de los volúmenes de paridad](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [Volúmenes en la API de administración de almacenamiento](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [Códigos de reconstrucción local y aceleración de los volúmenes de paridad](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
+- [Volúmenes en la API de administración de almacenamiento](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
 - [Demostración de la eficiencia del almacenamiento en Microsoft Ignite 2016](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
 - [Capacity Calculator PREVIEW for Storage Spaces Direct (Calculadora de capacidad [VISTA PREVIA] de Espacios de almacenamiento directo)](https://aka.ms/s2dcalc)

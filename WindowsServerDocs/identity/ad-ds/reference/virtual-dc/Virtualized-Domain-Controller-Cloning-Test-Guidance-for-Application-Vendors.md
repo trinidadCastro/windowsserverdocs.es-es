@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7273c59022edf4b03276a9e26c8291849ef93b40
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2823e761ead46dc5180c540ce6faef8ef604cd18
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853998"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955087"
 ---
 # <a name="virtualized-domain-controller-cloning-test-guidance-for-application-vendors"></a>Guía de pruebas de clonación de controladores de dominio virtualizados para proveedores de aplicaciones
 
@@ -22,7 +22,7 @@ ms.locfileid: "80853998"
 En este tema se explica qué proveedores de aplicaciones deben tener en cuenta para asegurarse de que su aplicación sigue funcionando según lo previsto después de que se complete el proceso de clonación del controlador de dominio virtualizado (DC). En él se tratan los aspectos del proceso de clonación que interesan a los proveedores y escenarios de aplicaciones que pueden garantizar pruebas adicionales. Los proveedores de aplicaciones que han validado que su aplicación funciona en controladores de dominio virtualizados que se han clonado se recomienda que muestren el nombre de la aplicación en el contenido de la comunidad en la parte inferior de este tema, junto con un vínculo al sitio web de su organización en el que los usuarios pueden obtener más información sobre la validación.
 
 ## <a name="overview-of-virtualized-dc-cloning"></a>Información general de la clonación de controladores de dominio virtualizados
-El proceso de clonación del controlador de dominio virtualizado se describe en detalle en [Introducción a la virtualización de Active Directory Domain Services (AD DS) (nivel 100)](https://docs.microsoft.com/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100) y [referencia técnica del controlador de dominio virtualizado (nivel 300)](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-). Desde la perspectiva de un proveedor de la aplicación, estas son algunas consideraciones que se deben tener en cuenta al evaluar el impacto de la clonación en la aplicación:
+El proceso de clonación del controlador de dominio virtualizado se describe en detalle en [Introducción a la virtualización de Active Directory Domain Services (AD DS) (nivel 100)](../../introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md) y [referencia técnica del controlador de dominio virtualizado (nivel 300)](../../deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-.md). Desde la perspectiva de un proveedor de la aplicación, estas son algunas consideraciones que se deben tener en cuenta al evaluar el impacto de la clonación en la aplicación:
 
 -   No se destruye el equipo original. Permanece en la red, interactuando con los clientes. A diferencia de un cambio de nombre en el que se quitan los registros DNS del equipo original, permanecen los registros originales del controlador de dominio de origen.
 
@@ -34,7 +34,7 @@ El proceso de clonación del controlador de dominio virtualizado se describe en 
 
     -   Active Directory Certificate Services (AD CS)
 
-    -   Servicios de directorio ligero de Active Directory (AD LDS)
+    -   Active Directory Lightweight Directory Services (AD LDS)
 
 -   Como parte del proceso de clonación, se copia toda la máquina virtual que representa el controlador de dominio original, por lo que también se copia cualquier estado de aplicación en esa máquina virtual. Compruebe que la aplicación se adapta a este cambio en el estado del host local en el controlador de dominio clonado, o si se requiere alguna intervención, como un reinicio del servicio.
 
@@ -42,16 +42,16 @@ El proceso de clonación del controlador de dominio virtualizado se describe en 
 
 ## <a name="what-is-interesting-for-application-vendors"></a>¿Qué es interesante para los proveedores de aplicaciones?
 
-### <a name="customdccloneallowlistxml"></a>Archivo customdccloneallowlist. XML
+### <a name="customdccloneallowlistxml"></a>CustomDCCloneAllowList.xml
 No se puede clonar un controlador de dominio que ejecute su aplicación o servicio hasta que la aplicación o el servicio sea:
 
--   Se agrega al archivo archivo customdccloneallowlist. XML mediante el cmdlet Get-ADDCCloningExcludedApplicationList de Windows PowerShell.
+-   Agregado al archivo CustomDCCloneAllowList.xml mediante el cmdlet de Windows PowerShell Get-ADDCCloningExcludedApplicationList
 
-O bien:
+-O bien-
 
 -   Quitado del controlador de dominio
 
-La primera vez que el usuario ejecute el cmdlet Get-ADDCCloningExcludedApplicationList, devolverá una lista de servicios y aplicaciones que se ejecutan en el controlador de dominio, pero que no están en la lista predeterminada de servicios y aplicaciones que se admiten para la clonación. De forma predeterminada, el servicio o la aplicación no aparecerán en la lista. Para agregar el servicio o la aplicación a la lista de aplicaciones y servicios que se pueden clonar de forma segura, el usuario ejecuta de nuevo el cmdlet Get-ADDCCloningExcludedApplicationList con la opción-GenerateXML para agregarlo al archivo archivo customdccloneallowlist. Xml. Para obtener más información, vea [paso 2: ejecutar el cmdlet Get-ADDCCloningExcludedApplicationList](https://docs.microsoft.com/powershell/module/addsadministration/get-addccloningexcludedapplicationlist).
+La primera vez que el usuario ejecute el cmdlet Get-ADDCCloningExcludedApplicationList, devolverá una lista de servicios y aplicaciones que se ejecutan en el controlador de dominio, pero que no están en la lista predeterminada de servicios y aplicaciones que se admiten para la clonación. De forma predeterminada, el servicio o la aplicación no aparecerán en la lista. Para agregar el servicio o la aplicación a la lista de aplicaciones y servicios que se pueden clonar de forma segura, el usuario ejecuta de nuevo el cmdlet Get-ADDCCloningExcludedApplicationList con la opción-GenerateXML para agregarlo al archivo de CustomDCCloneAllowList.xml. Para obtener más información, vea [paso 2: ejecutar el cmdlet Get-ADDCCloningExcludedApplicationList](/powershell/module/addsadministration/get-addccloningexcludedapplicationlist).
 
 ### <a name="distributed-system-interactions"></a>Interacciones del sistema distribuido
 Normalmente, los servicios aislados en el equipo local se superan o no al participar en la clonación. Los servicios distribuidos deben preocuparse de tener dos instancias del equipo host en la red simultáneamente durante un breve período de tiempo. Esto puede manifestarse como una instancia de servicio que intenta extraer información de un sistema asociado en el que la clonación se ha registrado como el nuevo proveedor de la identidad. O ambas instancias del servicio pueden introducir información en la base de datos de AD DS al mismo tiempo con resultados diferentes. Por ejemplo, no es determinista a qué equipo se comunicará cuando dos equipos que tienen el servicio de tecnologías de pruebas de Windows (WTT) están en la red con el controlador de dominio.
@@ -71,7 +71,7 @@ Además, el nuevo equipo tiene una dirección IP diferente de la del equipo orig
 ### <a name="cloning-failure"></a>Error de clonación
 Los proveedores de servicios deben probar este escenario porque cuando se produce un error en la clonación, el equipo arranca en el modo de reparación de servicios de directorio (DSRM), una forma de modo seguro. En este momento, el equipo no ha completado la clonación. Es posible que algunos Estados hayan cambiado y que algún estado permanezca en el controlador de dominio original. Pruebe este escenario para comprender qué impacto puede tener en la aplicación.
 
-Para inducir un error de clonación, intente clonar un controlador de dominio sin concederle permiso para clonarse. En este caso, el equipo solo habrá cambiado las direcciones IP y seguirá teniendo la mayor parte de su estado del controlador de dominio original. Para obtener más información acerca de cómo conceder permiso para clonar un controlador de dominio, consulte [paso 1: conceder al controlador de dominio virtualizado de origen el permiso que se va a clonar](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/virtualized-domain-controller-deployment-and-configuration).
+Para inducir un error de clonación, intente clonar un controlador de dominio sin concederle permiso para clonarse. En este caso, el equipo solo habrá cambiado las direcciones IP y seguirá teniendo la mayor parte de su estado del controlador de dominio original. Para obtener más información acerca de cómo conceder permiso para clonar un controlador de dominio, consulte [paso 1: conceder al controlador de dominio virtualizado de origen el permiso que se va a clonar](../../get-started/virtual-dc/virtualized-domain-controller-deployment-and-configuration.md).
 
 ### <a name="pdc-emulator-cloning"></a>Clonación del emulador de PDC
 Los proveedores de servicios y aplicaciones deben probar este escenario, ya que hay un reinicio adicional cuando se clona el emulador de PDC. Además, la mayoría de la clonación se realiza en una identidad temporal para permitir que el nuevo clon interactúe con el emulador de PDC durante el proceso de clonación.

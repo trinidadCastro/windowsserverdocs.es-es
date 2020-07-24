@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b52701f831502c16487dbbaf0cd61d839c046c68
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 84135624377f589417c7524c40375ed8470d3269
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436710"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954798"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin eliminar sombras
 
@@ -31,10 +31,10 @@ vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID
 
 |Parámetro|Descripción|
 |---|---|
-|/for = \< paravolumenespec>|Especifica la instantánea del volumen que se eliminará.|
+|/for =\<ForVolumeSpec>|Especifica la instantánea del volumen que se eliminará.|
 |/oldest|Elimina solo la instantánea más antigua.|
 |/all|Elimina todas las instantáneas del volumen especificado.|
-|/Shadow = \< ShadowID>|Elimina la instantánea especificada por ShadowID. Para obtener el identificador de la instantánea, use el comando **vssadmin List Shadows** . Al escribir un identificador de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/Shadow =\<ShadowID>|Elimina la instantánea especificada por ShadowID. Para obtener el identificador de la instantánea, use el comando **vssadmin List Shadows** . Al escribir un identificador de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 |/quiet|Especifica que el comando no mostrará mensajes mientras se ejecuta.|
 
 ## <a name="remarks"></a>Observaciones
@@ -51,6 +51,6 @@ vssadmin delete shadows /for=c: /oldest
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-* [Clave de sintaxis de línea de comandos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
+* [Clave de sintaxis de línea de comandos](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
 * [List](vssadmin.md)
 * [Vssadmin list shadows](vssadmin-list-shadows.md)

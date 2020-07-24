@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1c33a82b34c803961abff6ee5a9693990a0ca00
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4558d18b065cd668294952131b494342d600aee0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923704"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955497"
 ---
 # <a name="auditpol-resourcesacl"></a>AuditPol resourceSACL
 
@@ -51,7 +51,7 @@ auditpol /resourceSACL
 | /type | Recurso para el que se está configurando la auditoría de acceso a objetos. Los valores de argumento admitidos, con distinción de mayúsculas y minúsculas, son *archivo* (para directorios y archivos) y *clave* (para las claves del registro). |
 | /Success | Especifica la auditoría de aciertos. |
 | /Failure | Especifica la auditoría de errores. |
-| /User | Especifica un usuario en uno de los siguientes formatos:<ul><li> DomainName\Account (por ejemplo, DOM\Administrators)</li><li>Cuenta StandaloneServer\Group (consulte la [función LookupAccountName](https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-lookupaccountnamea))</li><li>{S-1-x-x-x-x} (x se expresa en formato decimal y todo el SID debe ir entre llaves). Por ejemplo: {S-1-5-21-5624481-130208933-164394174-1001}<p>**Nota:** Si se usa el formulario de SID, no se realiza ninguna comprobación para comprobar la existencia de esta cuenta.</li></ul> |
+| /User | Especifica un usuario en uno de los siguientes formatos:<ul><li> DomainName\Account (por ejemplo, DOM\Administrators)</li><li>Cuenta StandaloneServer\Group (consulte la [función LookupAccountName](/windows/win32/api/winbase/nf-winbase-lookupaccountnamea))</li><li>{S-1-x-x-x-x} (x se expresa en formato decimal y todo el SID debe ir entre llaves). Por ejemplo: {S-1-5-21-5624481-130208933-164394174-1001}<p>**Nota:** Si se usa el formulario de SID, no se realiza ninguna comprobación para comprobar la existencia de esta cuenta.</li></ul> |
 | /access | Especifica una máscara de permisos que se puede especificar mediante:<p>Derechos de acceso genéricos, entre los que se incluyen:<ul><li>GA-GENÉRICO TODO</li><li>GR: LECTURA GENÉRICA</li><li>GW: ESCRITURA GENÉRICA</li><li>GX: EJECUCIÓN GENÉRICA</li></ul><p>Derechos de acceso para archivos, incluidos:<ul><li>FA-ARCHIVO TODO EL ACCESO</li><li>FR: LECTURA GENÉRICA DE ARCHIVO</li><li>ESCRITURA GENÉRICA DE ARCHIVO DE FW</li><li>FX-ARCHIVO GENÉRICO EXECUTE</li></ul><p>Derechos de acceso para las claves del registro, incluidos:<ul><li>KA-CLAVE TODOS ACCESO</li><li>KR-CLAVE DE LECTURA</li><li>KW-ESCRITURA DE CLAVES</li><li>EJECUCIÓN DE LA CLAVE KX</li></ul><p>Por ejemplo: `/access:FRFW` habilita los eventos de auditoría para las operaciones de lectura y escritura.<p>Un valor hexadecimal que representa la máscara de acceso (por ejemplo, 0x1200a9).<p>Esto resulta útil cuando se usan máscaras de bits específicas del recurso que no forman parte del estándar del lenguaje de definición de descriptores de seguridad (SDDL). Si se omite, se usa el acceso completo. |
 
 ## <a name="examples"></a>Ejemplos

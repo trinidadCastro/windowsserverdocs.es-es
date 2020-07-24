@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fea55dc5551198f7bc06afb2ec38077398b9cf77
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fbb1f0f0f1b21c626f344bb01b793211586c7cf3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824058"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953977"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>Determinar cómo recuperar el bosque
 
@@ -44,19 +44,19 @@ Si necesita restaurar Active Directory en hardware diferente, cree copias de seg
 > A partir de Windows Server 2008, no se admite la restauración de la copia de seguridad del estado del sistema en una nueva instalación de Windows Server en hardware nuevo o en el mismo hardware. Si Windows Server se vuelve a instalar en el mismo hardware, como se recomienda más adelante en esta guía, puede restaurar el controlador de dominio en este orden:
 >
 > 1. Realice una restauración completa del servidor para restaurar el sistema operativo y todos los archivos y aplicaciones.
-> 2. Realice una restauración del estado del sistema con Wbadmin. exe para marcar SYSVOL como autoritativo.
+> 2. Realice una restauración del estado del sistema mediante wbadmin.exe para marcar SYSVOL como autoritativo.
 >
 > Para obtener más información, consulte el artículo [249694](https://support.microsoft.com/kb/249694)de Microsoft Knowledge base.
 
 Si no se conoce la hora de la aparición del error, investigue más para identificar las copias de seguridad que contienen el último estado de seguridad del bosque. Este enfoque es menos deseable. Por lo tanto, se recomienda encarecidamente que mantenga registros detallados sobre el estado de mantenimiento de AD DS diariamente, de modo que, si se produce un error en todo el bosque, se pueda identificar el tiempo aproximado de error. También debe mantener una copia local de las copias de seguridad para permitir una recuperación más rápida.
 
-Si Active Directory papelera de reciclaje está habilitada, la duración de la copia de seguridad es igual al valor de **deletedObjectLifetime** o al valor de **tombstoneLifetime** , lo que sea menor. Para obtener más información, vea [Active Directory guía paso a paso](https://go.microsoft.com/fwlink/?LinkId=178657) de la papelera de reciclaje (https://go.microsoft.com/fwlink/?LinkId=178657).
+Si Active Directory papelera de reciclaje está habilitada, la duración de la copia de seguridad es igual al valor de **deletedObjectLifetime** o al valor de **tombstoneLifetime** , lo que sea menor. Para obtener más información, vea [Active Directory guía paso a paso](https://go.microsoft.com/fwlink/?LinkId=178657) de la papelera de reciclaje ( https://go.microsoft.com/fwlink/?LinkId=178657) .
 
-Como alternativa, también puede usar la herramienta de montaje de bases de datos Active Directory (DSAMain. exe) y una herramienta LDAP (Protocolo ligero de acceso a directorios), como LDP. exe o Active Directory usuarios y equipos, para identificar qué copia de seguridad tiene el último estado de seguridad del bosque. La herramienta de montaje de bases de datos de Active Directory, que se incluye en los sistemas operativos Windows Server 2008 y versiones posteriores, expone Active Directory datos almacenados en copias de seguridad o instantáneas como un servidor LDAP. A continuación, puede usar una herramienta LDAP para examinar los datos. Este enfoque tiene la ventaja de que no requiere reiniciar ningún controlador de dominio en Modo de restauración de servicios de directorio (DSRM) para examinar el contenido de la copia de seguridad de AD DS.
+Como alternativa, también puede usar la herramienta de montaje de bases de datos Active Directory (Dsamain.exe) y una herramienta LDAP (Protocolo ligero de acceso a directorios), como Ldp.exe o Active Directory usuarios y equipos, para identificar qué copia de seguridad tiene el último estado de seguridad del bosque. La herramienta de montaje de bases de datos de Active Directory, que se incluye en los sistemas operativos Windows Server 2008 y versiones posteriores, expone Active Directory datos almacenados en copias de seguridad o instantáneas como un servidor LDAP. A continuación, puede usar una herramienta LDAP para examinar los datos. Este enfoque tiene la ventaja de que no requiere reiniciar ningún controlador de dominio en Modo de restauración de servicios de directorio (DSRM) para examinar el contenido de la copia de seguridad de AD DS.
 
-Para obtener más información sobre el uso de la herramienta de montaje de bases de datos de Active Directory, consulte la [Guía paso a paso de la herramienta de montaje de Active Directory Database](https://technet.microsoft.com/library/cc753609\(WS.10\).aspx).
+Para obtener más información sobre el uso de la herramienta de montaje de bases de datos de Active Directory, consulte la [Guía paso a paso de la herramienta de montaje de Active Directory Database](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10)).
 
-También puede usar el comando de **instantánea de Ntdsutil** para crear instantáneas de la base de datos de Active Directory. Mediante la programación de una tarea para crear instantáneas periódicamente, puede obtener copias adicionales de la base de datos Active Directory a lo largo del tiempo. Puede usar estas copias para identificar mejor Cuándo se ha producido el error en todo el bosque y, a continuación, elegir la mejor copia de seguridad para restaurar. Para crear instantáneas, utilice la versión de **Ntdsutil** que se incluye con windows Server 2008 o el herramientas de administración remota del servidor (RSAT) para Windows Vista o posterior. El controlador de dominio de destino puede ejecutar cualquier versión de Windows Server. Para obtener más información acerca del uso del comando de **instantánea de Ntdsutil** , consulte [Snapshot](https://technet.microsoft.com/library/cc731620\(WS.10\).aspx).
+También puede usar el comando de **instantánea de Ntdsutil** para crear instantáneas de la base de datos de Active Directory. Mediante la programación de una tarea para crear instantáneas periódicamente, puede obtener copias adicionales de la base de datos Active Directory a lo largo del tiempo. Puede usar estas copias para identificar mejor Cuándo se ha producido el error en todo el bosque y, a continuación, elegir la mejor copia de seguridad para restaurar. Para crear instantáneas, utilice la versión de **Ntdsutil** que se incluye con windows Server 2008 o el herramientas de administración remota del servidor (RSAT) para Windows Vista o posterior. El controlador de dominio de destino puede ejecutar cualquier versión de Windows Server. Para obtener más información acerca del uso del comando de **instantánea de Ntdsutil** , consulte [Snapshot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10)).
 
 ## <a name="determining-which-domain-controllers-to-restore"></a>Determinar los controladores de dominio que se van a restaurar
 
@@ -81,7 +81,7 @@ Elija un controlador de dominio que se adapte mejor a los siguientes criterios:
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-Mantenga los procedimientos de seguridad al administrar o restaurar archivos de copia de seguridad que incluyan Active Directory. La urgencia que acompaña a la recuperación del bosque puede conducir involuntariamente a las prácticas recomendadas de seguridad. Para obtener más información, vea la sección titulada "establecer estrategias de copia de seguridad y restauración del controlador de dominio" en la [Guía de procedimientos recomendados para proteger las instalaciones de Active Directory y las operaciones cotidianas: parte II](https://technet.microsoft.com/library/bb727066.aspx).
+Mantenga los procedimientos de seguridad al administrar o restaurar archivos de copia de seguridad que incluyan Active Directory. La urgencia que acompaña a la recuperación del bosque puede conducir involuntariamente a las prácticas recomendadas de seguridad. Para obtener más información, vea la sección titulada "establecer estrategias de copia de seguridad y restauración del controlador de dominio" en la [Guía de procedimientos recomendados para proteger las instalaciones de Active Directory y las operaciones cotidianas: parte II](/previous-versions/windows/it-pro/windows-2000-server/bb727066(v=technet.10)).
 
 ## <a name="identify-the-current-forest-structure-and-dc-functions"></a>Identificación de la estructura del bosque actual y las funciones del controlador de dominio
 
@@ -89,15 +89,15 @@ Determinar la estructura del bosque actual identificando todos los dominios del 
 
 Prepare una tabla que muestre las funciones de cada DC del dominio, tal como se muestra en el ejemplo siguiente. Esto le ayudará a volver a la configuración de error previa del bosque después de la recuperación.
 
-|Nombre del controlador de dominio|Sistema operativo|FSMO|GC|RODC|Backup|DNS|Server Core|Máquina virtual|VM: genio|  
+|Nombre del controlador de dominio|Sistema operativo|FSMO|GC|RODC|Backup|DNS|Server Core|máquina virtual|VM: genio|  
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
 |DC_1|Windows Server 2012|Maestro de esquema, maestro de nomenclatura de dominios|Sí|No|Sí|No|No|Sí|Sí|  
-|DC_2|Windows Server 2012|Ninguno|Sí|No|Sí|Sí|No|Sí|Sí|  
+|DC_2|Windows Server 2012|None|Sí|No|Sí|Sí|No|Sí|Sí|  
 |DC_3|Windows Server 2012|Maestro de infraestructura|No|No|No|Sí|Sí|Sí|Sí|  
 |DC_4|Windows Server 2012|Emulador de PDC, maestro RID|Sí|No|No|No|No|Sí|No|  
-|DC_5|Windows Server 2012|Ninguno|No|No|Sí|Sí|No|Sí|Sí|  
-|RODC_1|Windows Server 2008 R2|Ninguno|Sí|Sí|Sí|Sí|Sí|Sí|No|  
-|RODC_2|Windows Server 2008|Ninguno|Sí|Sí|No|Sí|Sí|Sí|No|  
+|DC_5|Windows Server 2012|None|No|No|Sí|Sí|No|Sí|Sí|  
+|RODC_1|Windows Server 2008 R2|None|Sí|Sí|Sí|Sí|Sí|Sí|No|  
+|RODC_2|Windows Server 2008|None|Sí|Sí|No|Sí|Sí|Sí|No|  
 
 Para cada dominio del bosque, identifique un solo DC grabable que tenga una copia de seguridad de confianza de la base de datos de Active Directory para ese dominio. Tenga cuidado al elegir una copia de seguridad para restaurar un controlador de dominio. Si el día y la causa del error son aproximadamente conocidos, la recomendación general es usar una copia de seguridad que se haya realizado unos días antes de esa fecha.
   

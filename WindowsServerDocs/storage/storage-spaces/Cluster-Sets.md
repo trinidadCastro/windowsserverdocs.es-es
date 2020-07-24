@@ -9,16 +9,16 @@ ms.author: johnmar
 ms.date: 01/30/2019
 description: En este artículo se describe el escenario de conjuntos de clústeres
 ms.localizationpriority: medium
-ms.openlocfilehash: 64aeda27d5554e3f348a77b0ae785ddcf05dee00
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 06cf798a5adfeee1279f564df63c431a77affd18
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436620"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955037"
 ---
 # <a name="cluster-sets"></a>Conjuntos de clústeres
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Windows Server 2019
 
 Conjuntos de clústeres es la nueva tecnología de escalado horizontal en la nube de la versión 2019 de Windows Server que aumenta el número de nodos de clúster en una nube de centro de datos definido por software (SDDC) por orden de magnitud. Un conjunto de clústeres es una agrupación débilmente acoplada de varios clústeres de conmutación por error: compute, Storage o hiperconvergido. La tecnología de conjuntos de clústeres habilita la fluidez de máquinas virtuales en los clústeres de miembros de un conjunto de clústeres y un espacio de nombres de almacenamiento unificado en el conjunto de compatibilidad con la fluidez de máquinas virtuales.
 
@@ -64,7 +64,7 @@ En una implementación de conjunto de clústeres, CS-Master interactúa con un n
 
 Un dominio de error es la agrupación de artefactos de software y hardware que el administrador determina que pueden fallar conjuntamente cuando se produce un error. Aunque un administrador podría designar uno o varios clústeres como un dominio de error, cada nodo podría participar en un dominio de error en un conjunto de disponibilidad. Los conjuntos de clústeres por diseño dejan la decisión de determinación del límite del dominio de error al administrador, que se ha seguido con las consideraciones de la topología del centro de datos, por ejemplo, PDU y redes, que comparten los clústeres de miembros.
 
-**Conjunto de disponibilidad**
+**El conjunto de disponibilidad**
 
 Un conjunto de disponibilidad ayuda al administrador a configurar la redundancia deseada de las cargas de trabajo en clúster en los dominios de error, al organizarlos en un conjunto de disponibilidad e implementar cargas de trabajo en ese conjunto de disponibilidad. Supongamos que, si va a implementar una aplicación de dos niveles, se recomienda configurar al menos dos máquinas virtuales en un conjunto de disponibilidad para cada nivel, lo que garantizará que, cuando un dominio de error en ese conjunto de disponibilidad deje de funcionar, la aplicación tendrá al menos una máquina virtual en cada nivel hospedado en un dominio de error diferente del mismo conjunto de disponibilidad.
 
@@ -119,7 +119,7 @@ En el momento en que se crea el conjunto de clústeres, el administrador tiene l
 
 ## <a name="creating-a-cluster-set"></a>Creación de un conjunto de clústeres
 
-### <a name="prerequisites"></a>Prerrequisitos
+### <a name="prerequisites"></a>Requisitos previos
 
 Al crear un conjunto de clústeres, se recomiendan los siguientes requisitos previos:
 
@@ -287,7 +287,7 @@ WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualM
 
 Esta advertencia se puede omitir porque la advertencia es "no se detectó ningún cambio en la configuración de almacenamiento del rol de máquina virtual". La razón de la advertencia como la ubicación física real no cambia; solo las rutas de acceso de configuración.
 
-Para obtener más información sobre Move-VMStorage, consulte este [vínculo](https://docs.microsoft.com/powershell/module/hyper-v/move-vmstorage?view=win10-ps).
+Para obtener más información sobre Move-VMStorage, consulte este [vínculo](/powershell/module/hyper-v/move-vmstorage?view=win10-ps).
 
 La migración en vivo de una máquina virtual entre clústeres de conjuntos de clústeres diferentes no es la misma que en el pasado. En escenarios de conjuntos que no son de clúster, los pasos serían los siguientes:
 
@@ -376,7 +376,7 @@ Por ejemplo, el comando para quitar el clúster de CLUSTER1 de los conjuntos de 
 Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
 ```
 
-## <a name="frequently-asked-questions-faq"></a>Preguntas más frecuentes (P+F)
+## <a name="frequently-asked-questions-faq"></a>Preguntas más frecuentes
 
 **Pregunta:** En mi conjunto de clústeres, ¿estoy limitado a usar solo clústeres hiperconvergidos? <br>
 **Respuesta:** No. Puede mezclar Espacios de almacenamiento directo con los clústeres tradicionales.

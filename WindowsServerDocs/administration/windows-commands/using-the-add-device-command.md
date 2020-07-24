@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e410132ea3d7ce151c47d4708f284a8e44448aaf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 486cd3a567fe8742d680a77378d8f5a933b876ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937243"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954808"
 ---
 # <a name="add-device"></a>Agregar dispositivo
 
@@ -56,4 +56,4 @@ wdsutil /add-Device /Device:computer1 /ID:{E8A3EFAC-201F-4E69-953F-B2DAA1E8B1B6}
  [Usar el comando](using-the-get-alldevices-command.md) 
  Get-AllDevices [Uso del comando](using-the-get-device-command.md) 
  Get-Device [Subcomando: set-device](subcommand-set-device.md) 
- [Nuevo: Cliente WDS](https://technet.microsoft.com/library/dn283430.aspx)
+ [Nuevo: Cliente WDS](/previous-versions/windows/powershell-scripting/dn283430(v=wps.630))

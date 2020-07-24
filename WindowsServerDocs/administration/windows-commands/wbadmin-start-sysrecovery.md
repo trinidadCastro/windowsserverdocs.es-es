@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f7e23a82afba85ea8a670c636e0f700cb7def2e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a3d7be286e124af9e31c8607827a97f967b907ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930920"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954507"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -23,7 +23,7 @@ ms.locfileid: "85930920"
 Realiza una recuperación del sistema (reconstrucción completa) mediante los parámetros que especifique.
 
 > [!NOTE]
-> Este subcomando solo se puede ejecutar desde el entorno de recuperación de Windows y no se muestra de forma predeterminada en el texto de uso de **Wbadmin**. Para obtener más información, vea [información general sobre el entorno de recuperación de Windows (Windows re)](https://technet.microsoft.com/library/hh825173.aspx).
+> Este subcomando solo se puede ejecutar desde el entorno de recuperación de Windows y no se muestra de forma predeterminada en el texto de uso de **Wbadmin**. Para obtener más información, vea [información general sobre el entorno de recuperación de Windows (Windows re)](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10)).
 
 Para realizar una recuperación del sistema con este subcomando, debe ser miembro del grupo **operadores de copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados.
 
@@ -69,4 +69,4 @@ wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\s
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   Cmdlet [Get-WBBareMetalRecovery](https://technet.microsoft.com/library/jj902461.aspx)
+-   Cmdlet [Get-WBBareMetalRecovery](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10))

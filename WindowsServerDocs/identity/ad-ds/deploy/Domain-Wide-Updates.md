@@ -9,12 +9,12 @@ ms.date: 10/29/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3b82958471e5292f202aa338aee7f4f5863459af
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d32656963e52ab0f3a505c172aff3c2ebc8ce53d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825218"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954097"
 ---
 # <a name="domain-wide-schema-updates"></a>Actualizaciones de esquema en todo el dominio
 
@@ -22,9 +22,9 @@ ms.locfileid: "80825218"
 
 Puede revisar el siguiente conjunto de cambios para facilitar la comprensión y preparación de las actualizaciones de esquema realizadas por Adprep/DomainPrep en Windows Server.
 
-A partir de Windows Server 2012, los comandos adprep se ejecutan automáticamente según sea necesario durante la instalación de AD DS. También se pueden ejecutar por separado antes de AD DS instalación. Para obtener más información, consulta [Ejecutar Adprep.exe](https://technet.microsoft.com/library/dd464018(v=ws.10).aspx).
+A partir de Windows Server 2012, los comandos adprep se ejecutan automáticamente según sea necesario durante la instalación de AD DS. También se pueden ejecutar por separado antes de AD DS instalación. Para obtener más información, consulta [Ejecutar Adprep.exe](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)).
 
-Para obtener más información sobre cómo interpretar las cadenas de entrada de control de acceso (ACE), consulte [cadenas ACE](https://msdn.microsoft.com/library/aa374928(VS.85).aspx). Para obtener más información sobre cómo interpretar las cadenas de identificador de seguridad (SID), consulte [cadenas de SID](https://msdn.microsoft.com/library/aa379602(VS.85).aspx).
+Para obtener más información sobre cómo interpretar las cadenas de entrada de control de acceso (ACE), consulte [cadenas ACE](/windows/win32/secauthz/ace-strings). Para obtener más información sobre cómo interpretar las cadenas de identificador de seguridad (SID), consulte [cadenas de SID](/windows/win32/secauthz/sid-strings).
 
 ## <a name="windows-server-semi-annual-channel-domain-wide-updates"></a>Windows Server (canal semianual): actualizaciones en todo el dominio
 

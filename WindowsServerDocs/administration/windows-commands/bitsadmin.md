@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9fd70e4e74dc25c32ff3a74be2fc1c66d697367
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 51a64b059dd9d07dd6bd0ecccb1cd99382bdfaa5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926379"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955377"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
@@ -26,7 +26,7 @@ La mayoría de los conmutadores requieren un `<job>` parámetro, que se establec
 
 De forma predeterminada, puede tener acceso a información sobre sus propios trabajos. Para tener acceso a la información de los trabajos de otro usuario, debe tener privilegios de administrador. Si el trabajo se ha creado en un estado con privilegios elevados, debe ejecutar **bitsadmin** desde una ventana con privilegios elevados. de lo contrario, tendrá acceso de solo lectura al trabajo.
 
-Muchos de los modificadores se corresponden con los métodos de las [interfaces bits](https://docs.microsoft.com/windows/win32/bits/bits-interfaces). Para obtener detalles adicionales que pueden ser pertinentes para el uso de un modificador, vea el método correspondiente.
+Muchos de los modificadores se corresponden con los métodos de las [interfaces bits](/windows/win32/bits/bits-interfaces). Para obtener detalles adicionales que pueden ser pertinentes para el uso de un modificador, vea el método correspondiente.
 
 Use los modificadores siguientes para crear un trabajo, establecer y recuperar las propiedades de un trabajo, y supervisar el estado de un trabajo. Para obtener ejemplos que muestran cómo usar algunos de estos modificadores para realizar tareas, consulte [ejemplos de bitsadmin](bitsadmin-examples.md).
 

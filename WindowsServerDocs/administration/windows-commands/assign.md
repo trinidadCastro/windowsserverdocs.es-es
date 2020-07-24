@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8bfcb43b2e42ca65d767f0683bf13dc971073c27
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 41c6194b68414be65fcf6b93b662e25ae80e0309
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923995"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955507"
 ---
 # <a name="assign"></a>assign
 
@@ -38,7 +38,7 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | `letter=<d>` | La letra de la unidad que desea asignar al volumen. |
-| `mount=<path>` | La ruta de acceso del punto de montaje que desea asignar al volumen. Para obtener instrucciones sobre cómo usar este comando, consulte [asignar una ruta de carpeta de punto de montaje a una unidad](https://docs.microsoft.com/windows-server/storage/disk-management/assign-a-mount-point-folder-path-to-a-drive). |
+| `mount=<path>` | La ruta de acceso del punto de montaje que desea asignar al volumen. Para obtener instrucciones sobre cómo usar este comando, consulte [asignar una ruta de carpeta de punto de montaje a una unidad](../../storage/disk-management/assign-a-mount-point-folder-path-to-a-drive.md). |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
 ## <a name="examples"></a>Ejemplos

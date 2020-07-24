@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1abf845ce69b395bf46a0f155db2c683c359207c
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 451a0b46cd45d0dd28ceb3634da9d847864bd519
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623883"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953777"
 ---
 # <a name="selecting-the-forest-root-domain"></a>Seleccionar el dominio raíz del bosque
 
@@ -25,7 +25,7 @@ El dominio raíz del bosque contiene los grupos administradores de empresas y ad
 
 La selección del dominio raíz del bosque implica determinar si uno de los dominios Active Directory del diseño del dominio puede funcionar como dominio raíz del bosque o si necesita implementar un dominio raíz del bosque dedicado.
 
-Para obtener información acerca de la implementación de un dominio raíz del bosque, vea [implementar un dominio raíz del bosque de Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10)).
+Para obtener información acerca de la implementación de un dominio raíz del bosque, vea [implementar un dominio raíz del bosque de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10)).
 
 ## <a name="choosing-a-regional-or-dedicated-forest-root-domain"></a>Elección de un dominio raíz de bosque regional o dedicado
 
@@ -88,4 +88,4 @@ Es importante que el propietario de DNS Active Directory funcione con el propiet
 
 ## <a name="documenting-the-forest-root-domain-name"></a>Documentar el nombre de dominio raíz del bosque
 
-Documente el prefijo y el sufijo DNS que seleccione para el dominio raíz del bosque. En este punto, identifique el dominio que será la raíz del bosque. Puede Agregar la información del nombre de dominio raíz del bosque a la hoja de cálculo "planeamiento de dominios" que creó para documentar el plan de dominios nuevos y actualizados y los nombres de dominio. Para abrirlo, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "planeamiento de dominios" (DSSLOGI_5. doc).
+Documente el prefijo y el sufijo DNS que seleccione para el dominio raíz del bosque. En este punto, identifique el dominio que será la raíz del bosque. Puede Agregar la información del nombre de dominio raíz del bosque a la hoja de cálculo "planeamiento de dominios" que creó para documentar el plan de dominios nuevos y actualizados y los nombres de dominio. Para abrirlo, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "planeamiento de dominios" (DSSLOGI_5.doc).

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8206ddc43eab7a220a9f0f988c294c627bc8c977
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e49939615b02058e543974e3799b5c51b323353c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853028"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953999"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Prácticas recomendadas para proteger Servicios de federación de Active Directory (AD FS)
 
@@ -41,30 +41,30 @@ En el diagrama siguiente se muestran los puertos de firewall que se deben habili
 > El puerto 808 (Windows Server 2012R2) o el puerto 1501 (Windows Server 2016 +) es el puerto net. TCP AD FS usa para que el punto de conexión de WCF local transfiera los datos de configuración al proceso de servicio y PowerShell. Este puerto se puede ver mediante la ejecución de Get-AdfsProperties | Seleccione NetTcpPort. Se trata de un puerto local que no necesitará abrirse en el firewall, pero se mostrará en un examen de puerto. 
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Servidores de Azure AD Connect y Federación/WAP
-En esta tabla se describen los puertos y protocolos necesarios para la comunicación entre el servidor de Azure AD Connect y los servidores de Federación/WAP.  
+En esta tabla se describen los puertos y protocolos que son necesarios para la comunicación entre el servidor de Azure AD Connect y servidores de federación/WAP.  
 
 Protocolo |Puertos |Descripción
 --------- | --------- |---------
-HTTP|80 (TCP/UDP)|Se usa para descargar CRL (listas de revocación de certificados) para comprobar los certificados SSL.
-HTTPS|443 (TCP/UDP)|Se utiliza para sincronizar con Azure AD.
+HTTP|80 (TCP/UDP)|Se usa para descargar CRL (listas de revocación de certificados) para comprobar certificados SSL.
+HTTPS|443 (TCP/UDP)|Se usa para sincronizar con Azure AD.
 WinRM|5985| Agente de escucha de WinRM
 
 ### <a name="wap-and-federation-servers"></a>Servidores WAP y de Federación
-En esta tabla se describen los puertos y protocolos necesarios para la comunicación entre los servidores de Federación y los servidores WAP.
+En esta tabla se describen los puertos y protocolos que son necesarios para la comunicación entre los servidores de federación y los servidores WAP.
 
 Protocolo |Puertos |Descripción
 --------- | --------- |---------
-HTTPS|443 (TCP/UDP)|Se utiliza para la autenticación.
+HTTPS|443 (TCP/UDP)|Se usa para autenticación.
 
 ### <a name="wap-and-users"></a>WAP y usuarios
-En esta tabla se describen los puertos y protocolos necesarios para la comunicación entre los usuarios y los servidores WAP.
+En esta tabla se describen los puertos y protocolos que son necesarios para la comunicación entre los usuarios y los servidores WAP.
 
 Protocolo |Puertos |Descripción
 --------- | --------- |--------- |
 HTTPS|443 (TCP/UDP)|Se usa para la autenticación de dispositivos.
-TCP|49443 (TCP)|Se utiliza para la autenticación de certificados.
+TCP|49443 (TCP)|Se usa para la autenticación de certificados.
 
-Para obtener más información sobre los puertos y protocolos necesarios para las implementaciones híbridas, consulte el documento [aquí](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-ports).
+Para obtener más información sobre los puertos y protocolos necesarios para las implementaciones híbridas, consulte el documento [aquí](/azure/active-directory/hybrid/reference-connect-ports).
 
 Para obtener información detallada sobre los puertos y protocolos necesarios para una Azure AD y la implementación de Office 365, consulte el documento [aquí](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US).
 
@@ -76,14 +76,14 @@ Cuando se instalan AD FS y WAP, se habilita un conjunto predeterminado de puntos
 Las organizaciones que implementan AD FS y WAP solo para escenarios de Azure AD y Office 365 pueden limitar aún más el número de puntos de conexión de AD FS habilitados en el proxy para lograr una superficie de ataque más mínima.
 A continuación se muestra la lista de puntos de conexión que se deben habilitar en el proxy en estos escenarios:
 
-|Extremo|Propósito
+|Punto de conexión|Propósito
 |-----|-----
 |/ADFS/LS|Flujos de autenticación basados en explorador y versiones actuales de Microsoft Office usar este punto de conexión para la autenticación de Azure AD y Office 365
 |/adfs/services/trust/2005/usernamemixed|Se usa para Exchange Online con clientes de Office anteriores a Office 2013, 2015 de mayo de actualización.  Los clientes posteriores usan el punto de conexión \adfs\ls pasivo.
 |/adfs/services/trust/13/usernamemixed|Se usa para Exchange Online con clientes de Office anteriores a Office 2013, 2015 de mayo de actualización.  Los clientes posteriores usan el punto de conexión \adfs\ls pasivo.
 |/adfs/oauth2|Se usa para todas las aplicaciones modernas (locales o en la nube) que haya configurado para autenticarse directamente en AD FS (es decir, no a través de AAD).
 |/adfs/services/trust/mex|Se usa para Exchange Online con clientes de Office anteriores a Office 2013, 2015 de mayo de actualización.  Los clientes posteriores usan el punto de conexión \adfs\ls pasivo.
-|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml    |Requisito para los flujos pasivos; y lo usan Office 365/Azure AD para comprobar los certificados de AD FS
+|federationmetadata.xml/ADFS/LS/federationmetadata/2007-06/    |Requisito para los flujos pasivos; y lo usan Office 365/Azure AD para comprobar los certificados de AD FS
 
 
 AD FS puntos de conexión se pueden deshabilitar en el proxy con el siguiente cmdlet de PowerShell:
@@ -111,10 +111,10 @@ El proxy del servicio de Federación (parte del WAP) proporciona control de cong
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>Para comprobar la configuración, puede hacer lo siguiente:
 1.    En el equipo del proxy de aplicación web, inicia una ventana de comando con privilegios elevados.
 2.    Navegue hasta el directorio de ADFS, en%WINDIR%\adfs\config.
-3.    Cambie la configuración de control de congestión de sus valores predeterminados a '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />'.
+3.    Cambie la configuración del control de congestión de sus valores predeterminados a ' <congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" /> '.
 4.    Guarde y cierre el archivo.
 5.    Reinicie el servicio AD FS ejecutando ' net stop adfssrv ' y, a continuación, ' net start adfssrv '.
-Para su referencia, puede encontrar instrucciones sobre esta funcionalidad [aquí](https://msdn.microsoft.com/library/azure/dn528859.aspx ).
+Para su referencia, puede encontrar instrucciones sobre esta funcionalidad [aquí](/previous-versions/azure/azure-services/dn528859(v=azure.100)).
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>Comprobaciones de solicitud HTTP estándar en el proxy
 El proxy también realiza las siguientes comprobaciones estándar en todo el tráfico:
@@ -128,7 +128,7 @@ Asegúrese de que todos los servidores AD FS y WAP reciban las actualizaciones m
 
 La manera recomendada para que los clientes de Azure AD supervisen y mantengan su infraestructura actual es a través de Azure AD Connect Health para AD FS, una característica de Azure AD Premium.  Azure AD Connect Health incluye monitores y alertas que se activan si una máquina AD FS o WAP no tiene una de las actualizaciones importantes específicamente para AD FS y WAP.
 
-Puede encontrar información sobre la instalación de Azure AD Connect Health para AD FS [aquí](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health-agent-install/).
+Puede encontrar información sobre la instalación de Azure AD Connect Health para AD FS [aquí](/azure/active-directory/hybrid/how-to-connect-health-agent-install).
 
 ## <a name="additional-security-configurations"></a>Configuraciones de seguridad adicionales
 Las siguientes funcionalidades adicionales se pueden configurar opcionalmente para proporcionar protecciones adicionales a las ofrecidas en la implementación predeterminada.
@@ -140,11 +140,11 @@ Puede usar el siguiente comando de Windows PowerShell para establecer el AD FS e
 
     PS:\>Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow ( new-timespan -Minutes 30 )
 
-Como referencia, la documentación pública de esta característica está [aquí](https://technet.microsoft.com/library/dn486806.aspx ). 
+Como referencia, la documentación pública de esta característica está [aquí](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486806(v=ws.11)). 
 
 ### <a name="disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet"></a>Deshabilitar los puntos de conexión de Windows de WS-Trust en el proxy, es decir, desde la extranet
 
-Los puntos de conexión de Windows de WS-Trust ( */ADFS/Services/Trust/2005/windowstransport* y */ADFS/Services/Trust/13/windowstransport*) están diseñados únicamente para ser puntos de conexión orientados a la intranet que usan el enlace WIA en https. Exponerlos a la extranet podría permitir que las solicitudes a estos puntos de conexión omitan las protecciones de bloqueo. Estos extremos deben deshabilitarse en el proxy (es decir, deshabilitarse de la extranet) para proteger el bloqueo de cuentas de AD mediante los siguientes comandos de PowerShell. No hay ningún impacto en el usuario final conocido mediante la deshabilitación de estos puntos de conexión en el proxy.
+Los puntos de conexión de Windows de WS-Trust (*/ADFS/Services/Trust/2005/windowstransport* y */ADFS/Services/Trust/13/windowstransport*) están diseñados únicamente para ser puntos de conexión orientados a la intranet que usan el enlace WIA en https. Exponerlos a la extranet podría permitir que las solicitudes a estos puntos de conexión omitan las protecciones de bloqueo. Estos extremos deben deshabilitarse en el proxy (es decir, deshabilitarse de la extranet) para proteger el bloqueo de cuentas de AD mediante los siguientes comandos de PowerShell. No hay ningún impacto en el usuario final conocido mediante la deshabilitación de estos puntos de conexión en el proxy.
 
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/2005/windowstransport -Proxy $false
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/windowstransport -Proxy $false
@@ -155,19 +155,16 @@ AD FS tiene la capacidad de diferenciar las directivas de acceso para las solici
 ### <a name="require-multi-factor-authentication-mfa"></a>Requerir multi-factor Authentication (MFA)
 AD FS puede configurarse para requerir una autenticación segura (como multi-factor Authentication) específicamente para las solicitudes que entran a través del proxy, para las aplicaciones individuales y para el acceso condicional a los recursos de Azure AD/Office 365 y locales.  Los métodos admitidos de MFA incluyen Microsoft Azure MFA y proveedores de terceros.  Se solicita al usuario que proporcione la información adicional (como un texto de SMS que contiene un código de un solo tiempo) y AD FS funciona con el complemento específico del proveedor para permitir el acceso.  
 
-Entre los proveedores de MFA externos admitidos [se](https://technet.microsoft.com/library/dn758113.aspx) incluyen los que se enumeran en esta página, así como HDI global.
+Entre los proveedores de MFA externos admitidos [se](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn758113(v=ws.11)) incluyen los que se enumeran en esta página, así como HDI global.
 
 ### <a name="hardware-security-module-hsm"></a>Módulo de seguridad de hardware (HSM)
 En su configuración predeterminada, las claves AD FS usa para firmar los tokens nunca salen de los servidores de Federación en la intranet.  Nunca están presentes en la red perimetral o en las máquinas proxy.  Opcionalmente, para proporcionar protección adicional, estas claves se pueden proteger en un módulo de seguridad de hardware asociado a AD FS.  Microsoft no produce un producto HSM, pero hay varios en el mercado que admiten AD FS.  Para implementar esta recomendación, siga las instrucciones del proveedor para crear los certificados X509 para la firma y el cifrado y, a continuación, use el commandlets de PowerShell de instalación de AD FS, especificando los certificados personalizados como se indica a continuación:
 
     PS:\>Install-AdfsFarm -CertificateThumbprint <String> -DecryptionCertificateThumbprint <String> -FederationServiceName <String> -ServiceAccountCredential <PSCredential> -SigningCertificateThumbprint <String>
 
-Donde:
+donde:
 
 
-- `CertificateThumbprint` es el certificado SSL
-- `SigningCertificateThumbprint` es el certificado de firma (con clave protegida HSM)
-- `DecryptionCertificateThumbprint` es el certificado de cifrado (con clave protegida HSM)
-
-
-
+- `CertificateThumbprint`es el certificado SSL
+- `SigningCertificateThumbprint`es el certificado de firma (con clave protegida HSM)
+- `DecryptionCertificateThumbprint`es el certificado de cifrado (con clave protegida HSM)
