@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: 1579f8e88ea852ddf3f973b51b1b6ceed7c50a00
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e95c11007548c0e1db77132b6e872b88569d3b47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824283"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963007"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperación de bosque de AD: copia de seguridad de un servidor completo  
 
@@ -21,14 +21,14 @@ ms.locfileid: "80824283"
 
 Se recomienda una copia de seguridad completa del servidor para preparar la recuperación de un bosque, ya que se puede restaurar en otro hardware o en una instancia de sistema operativo diferente.  Con Copias de seguridad de Windows Server puede realizar una copia de seguridad completa del servidor. 
 
-## <a name="windows-server-backup"></a>Windows Server Backup
+## <a name="windows-server-backup"></a>Copias de seguridad de Windows Server
 
 Copias de seguridad de Windows Server no se instala de forma predeterminada. En Windows Server 2016 y Windows Server 2012 R2, instálelo siguiendo los pasos que se indican a continuación.
 
 >[!NOTE]
 >Tenga en cuenta que los pasos pueden variar ligeramente entre Windows Server 2016 y Windows Server 2012 R2.
 
-Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2008 R2, consulte [instalación de copias de seguridad de Windows Server](https://technet.microsoft.com/library/cc771232.aspx).  
+Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2008 R2, consulte [instalación de copias de seguridad de Windows Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10)).  
 
 ### <a name="to-install-windows-server-backup"></a>Para instalar Copias de seguridad de Windows Server
 
@@ -37,8 +37,8 @@ Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2
 3. En la pantalla **tipo de instalación** , deje la instalación predeterminada basada en **características o en roles** y haga clic en **siguiente**.
 4. En la pantalla **selección de servidor** , haga clic en **siguiente**.
 5. En la pantalla **roles de servidor** , haga clic en **siguiente**.
-6. En la pantalla **características** , seleccione **copias de seguridad de Windows Server** y haga clic en **siguiente**
-   ![instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
+6. En la pantalla **características** , seleccione **copias de seguridad de Windows Server** y haga clic en **siguiente** 
+    ![ instalar copia de seguridad.](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
 7. Haga clic en **Instalar**.
 8. Una vez completada la instalación, haga clic en **cerrar**.
 
@@ -70,11 +70,11 @@ Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2
 >Si recibe un error que indica que no hay ninguna ubicación de almacenamiento de copia de seguridad disponible, tendrá que excluir uno de los volúmenes seleccionados o agregar un nuevo volumen o recurso compartido remoto.
 >Si recibe una advertencia que indica que el volumen seleccionado también se incluye en la lista de elementos de la copia de seguridad, determine si desea quitarlo y haga clic en **Aceptar**.
 
-## <a name="using-wbadminexe-to-backup-a-windows-server"></a>Uso de Wbadmin. exe para realizar una copia de seguridad de Windows Server
+## <a name="using-wbadminexe-to-backup-a-windows-server"></a>Uso de Wbadmin.exe para hacer una copia de seguridad de Windows Server
 
-Wbadmin. exe es una utilidad de línea de comandos que permite realizar copias de seguridad y restaurar el sistema operativo, los volúmenes, los archivos, las carpetas y las aplicaciones desde un símbolo del sistema.
+Wbadmin.exe es una utilidad de línea de comandos que permite realizar copias de seguridad y restaurar el sistema operativo, los volúmenes, los archivos, las carpetas y las aplicaciones desde el símbolo del sistema.
 
-### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>Para realizar una copia de seguridad completa del servidor con Wbadmin. exe
+### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>Para realizar una copia de seguridad completa del servidor mediante Wbadmin.exe
   
 - Abra un símbolo del sistema con privilegios elevados, escriba el siguiente comando y presione ENTRAR:  
 

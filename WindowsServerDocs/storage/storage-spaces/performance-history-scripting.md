@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 53a5f2aa403c83d24acde1fc57e793141175d9b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7f3274210ea6c08d63862551570096ab10aa878e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474722"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961817"
 ---
 # <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>Scripting con PowerShell y Espacios de almacenamiento directo historial de rendimiento
 
@@ -489,6 +489,6 @@ Eso es todo. Afortunadamente, estos ejemplos le inspiren y le ayudarán a empeza
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Introducción a Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell)
+- [Introducción a Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Historial de rendimiento](performance-history.md)

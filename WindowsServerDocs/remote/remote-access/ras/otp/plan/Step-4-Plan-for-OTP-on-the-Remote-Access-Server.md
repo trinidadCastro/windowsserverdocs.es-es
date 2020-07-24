@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4b97b2fd-767a-45c1-a64e-5b3edd0c8a47
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 789fd72e2f3fc1693bf4803f33dcc1e7f1b3acc3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0f731dccc4c8dae720b3bf0c66cd601ec28be4ad
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855778"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961037"
 ---
 # <a name="step-4-plan-for-otp-on-the-remote-access-server"></a>Paso 4 Plan para OTP en el servidor de acceso remoto
 
@@ -41,7 +41,5 @@ Cuando está habilitada la autenticación de OTP, está disponible la opción pa
   
 ## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también  
   
--   [Configuración de DirectAccess con autenticación OTP](https://technet.microsoft.com/windows-server-docs/networking/remote-access/ras/otp/deploy-ra-otp)  
+-   [Configuración de DirectAccess con autenticación OTP](../deploy-ra-otp.md)  
   
-
-

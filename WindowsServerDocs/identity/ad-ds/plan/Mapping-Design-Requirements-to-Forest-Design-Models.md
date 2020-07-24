@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dbce6b4332b17d725837c6120e6ae36883c80bc1
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 2a389b00fbf983a24b745431fee98a760f0fc756
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624153"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963567"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>Asignar los requisitos de diseño a los modelos de diseño de bosque
 
@@ -32,11 +32,11 @@ Si no todos los grupos de su organización pueden compartir un solo bosque de la
 |------------|------------------------|------------------|-----------------|---------------------|--------------------|
 |[Escenario 1: unir un bosque existente para la autonomía de los datos](#BKMK_1)|No|Sin|Sí|No|Sin|
 |[Escenario 2: usar un bosque o dominio de la organización para la autonomía del servicio](#BKMK_2)|No|No|N/D|No|Sí|
-|[Escenario 3: usar un bosque de la organización o un bosque de recursos para el aislamiento del servicio](#BKMK_3)|No|No|N/D|Sí|N/D|
-|[Escenario 4: usar un bosque de la organización o un bosque de acceso restringido para el aislamiento de datos](#BKMK_4)|N/D|Sí|N/A|N/A|N/A|
+|[Escenario 3: usar un bosque de la organización o un bosque de recursos para el aislamiento del servicio](#BKMK_3)|No|No|N/D|Sí|No aplicable|
+|[Escenario 4: usar un bosque de la organización o un bosque de acceso restringido para el aislamiento de datos](#BKMK_4)|N/D|Sí|No aplicable|N/A|N/A|
 |[Escenario 5: usar un bosque de la organización o volver a configurar el firewall para una conectividad limitada](#BKMK_5)|Sí|No|N/D|No|Sin|
 |[Escenario 6: usar un bosque o dominio de la organización y volver a configurar el firewall para la autonomía del servicio con conectividad limitada](#BKMK_6)|Sí|No|N/D|No|Sí|
-|[Escenario 7: usar un bosque de recursos y volver a configurar el firewall para el aislamiento de servicio con conectividad limitada](#BKMK_7)|Sí|No|N/D|Sí|N/D|
+|[Escenario 7: usar un bosque de recursos y volver a configurar el firewall para el aislamiento de servicio con conectividad limitada](#BKMK_7)|Sí|No|N/D|Sí|No aplicable|
 
 ## <a name="scenario-1-join-an-existing-forest-for-data-autonomy"></a><a name="BKMK_1"></a>Escenario 1: unir un bosque existente para la autonomía de los datos
 
@@ -99,7 +99,7 @@ Entre las consideraciones para crear bosques para el aislamiento de datos se inc
 - Otros bosques se pueden configurar para confiar en el bosque de la organización creado para el aislamiento de datos, de modo que los usuarios del bosque aislado puedan tener acceso a los recursos de otros bosques. Sin embargo, los usuarios del bosque aislado nunca deben iniciar sesión de forma interactiva en las estaciones de trabajo del bosque que confía. El equipo del bosque que confía podría verse comprometido por software malintencionado y se puede usar para capturar las credenciales de inicio de sesión del usuario.
 
    > [!NOTE]
-   > Para evitar que los servidores de un bosque que confía en suplantar a los usuarios del bosque aislado y, a continuación, tener acceso a los recursos del bosque aislado, el propietario del bosque puede deshabilitar la autenticación delegada o usar la característica de delegación restringida. Para obtener más información sobre la autenticación delegada y la delegación restringida, vea [delegar la autenticación](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc739740(v=ws.10)).
+   > Para evitar que los servidores de un bosque que confía en suplantar a los usuarios del bosque aislado y, a continuación, tener acceso a los recursos del bosque aislado, el propietario del bosque puede deshabilitar la autenticación delegada o usar la característica de delegación restringida. Para obtener más información sobre la autenticación delegada y la delegación restringida, vea [delegar la autenticación](/previous-versions/windows/it-pro/windows-server-2003/cc739740(v=ws.10)).
 
 - Es posible que tenga que establecer un firewall entre el bosque de la organización y los otros bosques de la organización para limitar el acceso de los usuarios a información fuera de su bosque.
 

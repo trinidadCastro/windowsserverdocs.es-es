@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 267541be-2ea7-4af6-ab34-8b5a3fedee2d
 ms.technology: identity-adds
-ms.openlocfilehash: 13153358f50302de722109bfe101911e3bac4708
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 84ce874ea85cce7ea562fcd5169902086732b4c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823448"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960847"
 ---
 # <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>Recuperación del bosque de AD: recuperación de un solo dominio en un bosque de varios dominios
 
@@ -45,7 +45,7 @@ El origen de la limpieza del objeto persistente debe ser un DC en el dominio rec
 
 La eliminación de objetos persistentes es ventajosa para organizaciones de gran tamaño que no pueden arriesgar el tiempo de inactividad asociado a las otras opciones.  
 
-Para obtener más información, vea [uso de repadmin para quitar objetos persistentes](https://technet.microsoft.com/library/cc785298.aspx).
+Para obtener más información, vea [uso de repadmin para quitar objetos persistentes](/previous-versions/windows/it-pro/windows-server-2003/cc785298(v=ws.10)).
 
 ## <a name="next-steps"></a>Pasos siguientes
 

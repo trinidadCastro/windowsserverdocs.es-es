@@ -7,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f9939662c22e9500235bae014b7fb9064afd911b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6d049175c7d89670f82bb45addc929d57b60b7b0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858118"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960747"
 ---
 # <a name="controlling-access-to-organizational-data-with-active-directory-federation-services"></a>Controlar el acceso a los datos de la organización con Servicios de federación de Active Directory (AD FS)
 
@@ -26,7 +26,7 @@ Desde la introducción de Servicios de federación de Active Directory (AD FS), 
 
 ## <a name="ad-fs-and-conditional-access-in-a-hybrid-organization"></a>AD FS y acceso condicional en una organización híbrida  
 
-AD FS proporciona el componente local de la Directiva de acceso condicional en un escenario híbrido. Las reglas de autorización basadas en AD FS deben usarse para recursos que no son de Azure AD, como aplicaciones locales federadas directamente en AD FS.  [Azure ad el acceso condicional](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)proporciona el componente en la nube.  Azure AD Connect proporciona el plano de control que conecta los dos.
+AD FS proporciona el componente local de la Directiva de acceso condicional en un escenario híbrido. Las reglas de autorización basadas en AD FS deben usarse para recursos que no son de Azure AD, como aplicaciones locales federadas directamente en AD FS.  [Azure ad el acceso condicional](/azure/active-directory/active-directory-conditional-access)proporciona el componente en la nube.  Azure AD Connect proporciona el plano de control que conecta los dos.
 
 Por ejemplo, al registrar dispositivos con Azure AD para el acceso condicional a los recursos en la nube, la funcionalidad de reescritura de dispositivos Azure AD Connect hace que la información de registro de dispositivos esté disponible en el entorno local para que las directivas de AD FS utilicen y apliquen.  De este modo, tiene un enfoque coherente para las directivas de control de acceso para los recursos locales y en la nube.  
 
@@ -48,12 +48,12 @@ Aunque las directivas documentadas anteriores para AD FS funcionan en los escena
 
 Para abordar estas limitaciones y proporcionar una forma más sólida de usar directivas para administrar el acceso a los datos empresariales en Office 365 u otros recursos basados en Azure AD, Microsoft ha introducido Azure AD el acceso condicional.  Azure AD se pueden configurar directivas de acceso condicional para un recurso específico o para cualquiera de los recursos de Office 365, SaaS o aplicaciones personalizadas de Azure AD.  Estas directivas dinamizan la confianza de los dispositivos, la ubicación y otros factores.
 
-Para obtener más información sobre Azure AD el acceso condicional, consulte [acceso condicional en Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)
+Para obtener más información sobre Azure AD el acceso condicional, consulte [acceso condicional en Azure Active Directory](/azure/active-directory/active-directory-conditional-access)
 
 Un cambio de clave que habilita estos escenarios es la [autenticación moderna](https://blogs.office.com/2015/11/19/updated-office-365-modern-authentication-public-preview/), una nueva forma de autenticar a los usuarios y dispositivos que funcionan de la misma manera entre los clientes de Office, Skype, Outlook y exploradores.
 
 ## <a name="next-steps"></a>Pasos siguientes
 Para obtener más información sobre cómo controlar el acceso a través de la nube y de forma local, vea:
 
-- [Acceso condicional en Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)
+- [Acceso condicional en Azure Active Directory](/azure/active-directory/active-directory-conditional-access)
 - [Access Control directivas en AD FS 2016](Access-Control-Policies-in-AD-FS.md)

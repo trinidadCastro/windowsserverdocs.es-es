@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ed8bb6300360553e0809f4a30cec38bc37777ae9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: febd79ea6feb0ef3d4e6f6d5659f2eb13e403a4b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858848"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962197"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Compilar una aplicación de varios niveles mediante "en nombre de" (OBO) mediante OAuth con AD FS 2016 o posterior.
 
@@ -43,7 +43,7 @@ A continuación se muestra el flujo de autenticación que obtendrá el ejemplo
 El ejemplo consta de tres módulos
 
 
-Módulo | Descripción
+módulo | Descripción
 -------|------------
 ToDoClient | Cliente nativo con el que interactúa el usuario
 ToDoService | API Web de nivel intermedio que actúa como cliente de la WebAPI de back-end
@@ -54,11 +54,11 @@ WebAPIOBO | API Web de back-end que usa ToDoService para realizar la operación 
 
 ## <a name="setting-up-the-development-box"></a>Configuración del cuadro de desarrollo
 
-En este tutorial se usa Visual Studio 2015. El proyecto usa mucho Biblioteca de autenticación de Active Directory (ADAL). Para obtener información sobre ADAL, lea [biblioteca de autenticación de Active Directory .net](https://msdn.microsoft.com/library/azure/mt417579.aspx)
+En este tutorial se usa Visual Studio 2015. El proyecto usa mucho Biblioteca de autenticación de Active Directory (ADAL). Para obtener información sobre ADAL, lea [biblioteca de autenticación de Active Directory .net](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
 
 En el ejemplo también se usa SQL LocalDB v 11.0. Instale SQL LocalDB antes de trabajar en el ejemplo.
 
-## <a name="setting-up-the-environment"></a>Configurar el entorno
+## <a name="setting-up-the-environment"></a>Configuración del entorno
 Vamos a trabajar con una configuración básica de:
 
 1. **DC**: controlador de dominio para el dominio en el que se hospedará AD FS
@@ -74,9 +74,9 @@ Cómo configurar el controlador de dominio y AD FS está fuera del ámbito de es
 
 El ejemplo se basa en el ejemplo OBO existente en Azure creado por Vittorio BERTOCCI y disponible [aquí](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof). Siga las instrucciones para clonar el proyecto en el equipo de desarrollo y crear una copia del ejemplo para empezar a trabajar con.
 
-## <a name="clone-or-download-this-repository"></a>Clonar o descargar este repositorio
+## <a name="clone-or-download-this-repository"></a>Clonación o descarga de este repositorio
 
-Desde el shell o la línea de comandos:
+Desde el shell o la línea de comandos, ejecute:
 
     git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
 
@@ -157,7 +157,7 @@ Haga clic en siguiente y complete el asistente.
 
 #### <a name="modify-the-application-config"></a>Modificación de la configuración de la aplicación
 
-Vaya a su proyecto ToDoListClient en la solución WebAPI-Onbehalfof-DotNet. Abra el archivo app. config y realice las siguientes modificaciones:
+Vaya a su proyecto ToDoListClient en la solución WebAPI-Onbehalfof-DotNet. Abra el archivo App.config y realice las siguientes modificaciones:
 
 * Comentario de la entrada de clave ida: tenant
 * En el caso de ida: RedirectURI, escriba el URI arbitrario que proporcionó al configurar el MySampleGroup_ClientApplication en AD FS.
@@ -167,7 +167,7 @@ Vaya a su proyecto ToDoListClient en la solución WebAPI-Onbehalfof-DotNet. Abra
 * En el caso de ida: ToDoListBaseAddress, escriba el identificador de recurso de ToDoListServiceWebApi. Se usará al llamar a ToDoList WebAPI.
 * Agregue una clave ida: Authority y proporcione el valor como URI para AD FS.
 
-El **appSettings** del archivo app. config debería tener un aspecto similar al siguiente:
+El **appSettings** en App.Config debe tener un aspecto similar al siguiente:
 
     <appSettings>
     <!--<add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.onmicrosoft.com]" />-->
@@ -212,7 +212,7 @@ Para completar el flujo en nombre de, debe crear un recurso de back-end al que e
 
 * En el siguiente símbolo del sistema, haga clic en "cambiar autenticación"
 * Seleccione ' cuentas profesionales y educativas ' y, en la lista desplegable derecha, seleccione ' local '.
-* Escriba la ruta de acceso de federationmetadata. XML de la implementación de AD FS y proporcione un URI de la aplicación (proporcione cualquier URI por ahora, y lo cambiará más adelante) y haga clic en Aceptar para agregar el proyecto a la solución.
+* Escriba la ruta de acceso de federationmetadata.xml de la implementación de AD FS y proporcione un URI de la aplicación (proporcione cualquier URI por ahora, y lo cambiará más adelante) y haga clic en Aceptar para agregar el proyecto a la solución.
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO9.PNG)
 
@@ -270,24 +270,24 @@ Continúe con el resto del asistente, igual que cuando se configuró ToDoListSer
 
 #### <a name="modifying-the-application-config"></a>Modificación de la configuración de la aplicación
 
-* Abra el archivo Web. config.
+* Abrir el archivo de Web.config
 * Modificar las claves siguientes
 
-| Key                      | Valor                                                                                                                                                                                                                   |
+| Clave                      | Valor                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ida: audiencia             | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, https://localhost:44321/                                                                                         |
-| ida: ClientID             | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, <https://localhost:44321/> </br>**Es muy importante que ida: Audience y ida: ClientID coincidan entre sí.** |
-| ida: ClientSecret         | Este es el secreto que AD FS genera al configurar el cliente de ToDoListService en AD FS                                                                                                                   |
-| ida: AdfsMetadataEndpoint | Esta es la dirección URL de los metadatos de AD FS, por ejemplo, https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
-| ida: OBOWebAPIBase        | Esta es la dirección base que se utilizará para llamar a la API de back-end, por ejemplo, https://localhost:44300                                                                                                                     |
-| ida: autoridad            | Esta es la dirección URL del servicio AD FS, por ejemplo https://fs.anandmsft.com/adfs/                                                                                                                                          |
+| ida: audiencia             | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo,https://localhost:44321/                                                                                         |
+| ida: ClientID             | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo,<https://localhost:44321/> </br>**Es muy importante que ida: Audience y ida: ClientID coincidan entre sí.** |
+| ida:ClientSecret         | Este es el secreto que AD FS genera al configurar el cliente de ToDoListService en AD FS                                                                                                                   |
+| ida: AdfsMetadataEndpoint | Esta es la dirección URL de los metadatos de AD FS, por ejemplo,https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
+| ida: OBOWebAPIBase        | Esta es la dirección base que se utilizará para llamar a la API de back-end; por ejemplo,https://localhost:44300                                                                                                                     |
+| ida:Authority            | Esta es la dirección URL del servicio de AD FS, ejemplohttps://fs.anandmsft.com/adfs/                                                                                                                                          |
 
 Todas las demás claves ida: XXXXXXX del nodo **appSettings** se pueden eliminar o comentar
 
 #### <a name="change-authentication-from-azure-ad-to-ad-fs"></a>Cambiar la autenticación de Azure AD a AD FS
 
 * Abra el archivo Startup.Auth.cs
-* Quitar el siguiente código
+* Elimine el código siguiente:
 
         app.UseWindowsAzureActiveDirectoryBearerAuthentication(
             new WindowsAzureActiveDirectoryBearerAuthenticationOptions
@@ -297,7 +297,7 @@ Todas las demás claves ida: XXXXXXX del nodo **appSettings** se pueden eliminar
                 TokenValidationParameters = new TokenValidationParameters{ SaveSigninToken = true }
             });
 
-por
+con
 
         app.UseActiveDirectoryFederationServicesBearerAuthentication(
             new ActiveDirectoryFederationServicesBearerAuthenticationOptions
@@ -334,7 +334,7 @@ Agregue una referencia a System. Web. Extensions. Modifique los miembros de clas
     private static string graphUserUrl = ConfigurationManager.AppSettings["ida:GraphUserUrl"];
     private const string TenantIdClaimType = "https://schemas.microsoft.com/identity/claims/tenantid";
 
-por
+con
 
     //
     // The Client ID is used by the application to uniquely identify itself to Azure AD.
@@ -493,10 +493,10 @@ Si la operación se realiza correctamente, verá que el elemento se ha agregado 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 También puede ver los seguimientos detallados de Fiddler. Inicie Fiddler y habilite el descifrado HTTPS. Puede ver que realizamos dos solicitudes al punto de conexión/ADFS/oautincludes.
-En la primera interacción, presentamos el código de acceso al punto de conexión del token y obtenemos un token de acceso para https://localhost:44321/ ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+En la primera interacción, presentamos el código de acceso al punto de conexión del token y obtenemos un token de acceso para https://localhost:44321/ ![ AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
 En la segunda interacción con el punto de conexión del token, puede ver que hemos **requested_token_use** establecido como **on_behalf_of** y estamos usando el token de acceso obtenido para el servicio Web de nivel intermedio, es decir, https://localhost:44321/ como la aserción para obtener el token en nombre de.
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)  
+[Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)  

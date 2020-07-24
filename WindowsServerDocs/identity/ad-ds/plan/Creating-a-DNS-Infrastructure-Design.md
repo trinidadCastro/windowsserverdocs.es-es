@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f3a9fbb36b1146dca49d62ae05bbf2c9f5d81ab1
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: c48996945e648a8ad698b1746e722702371521f1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624373"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962357"
 ---
 # <a name="creating-a-dns-infrastructure-design"></a>Creación de un diseño de infraestructura de DNS
 
@@ -24,14 +24,14 @@ Después de crear el bosque de Active Directory y los diseños de dominio, debe 
 El proceso de diseño de DNS para admitir AD DS varía en función de si su organización ya tiene un servicio de servidor DNS existente o si está implementando un nuevo servicio de servidor DNS:
 
 - Si ya tiene una infraestructura DNS existente, debe integrar el espacio de nombres Active Directory en ese entorno. Para obtener más información, vea [integrar AD DS en una infraestructura DNS existente](../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md).
-- Si no tiene una infraestructura DNS, debe diseñar e implementar una nueva infraestructura DNS para admitir AD DS. Para obtener más información, consulte [implementación del sistema de nombres de dominio (DNS)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780661(v=ws.10)).
+- Si no tiene una infraestructura DNS, debe diseñar e implementar una nueva infraestructura DNS para admitir AD DS. Para obtener más información, consulte [implementación del sistema de nombres de dominio (DNS)](/previous-versions/windows/it-pro/windows-server-2003/cc780661(v=ws.10)).
 
-Si su organización tiene una infraestructura DNS existente, debe asegurarse de que comprende cómo la infraestructura DNS interactuará con el espacio de nombres Active Directory. Para obtener una hoja de cálculo que le ayude a documentar el diseño de la infraestructura de DNS existente, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra el "inventario de DNS" (DSSLOGI_8. doc).
+Si su organización tiene una infraestructura DNS existente, debe asegurarse de que comprende cómo la infraestructura DNS interactuará con el espacio de nombres Active Directory. Para obtener una hoja de cálculo que le ayude a documentar el diseño de la infraestructura de DNS existente, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip del [Kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra el "inventario de DNS" (DSSLOGI_8.doc).
 
 > [!NOTE]
 > Además de las direcciones IP versión 4 (IPv4), Windows Server también admite direcciones IP versión 6 (IPv6). Para ver una hoja de cálculo que le ayude a enumerar las direcciones IPv6 al documentar el método de resolución de nombres recursivo de la estructura DNS actual, consulte [apéndice a: inventario de DNS](../../ad-ds/plan/Appendix-A--DNS-Inventory.md).
 
-Antes de diseñar la infraestructura DNS para admitir AD DS, puede ser útil leer información acerca de la jerarquía de DNS, el proceso de resolución de nombres DNS y el modo en que DNS admite AD DS. Para obtener más información acerca de la jerarquía de DNS y el proceso de resolución de nombres, consulte la [referencia técnica de DNS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc779926(v=ws.10)). Para obtener más información sobre cómo DNS admite AD DS, consulte la [referencia técnica de compatibilidad de DNS con Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781627(v=ws.10)).
+Antes de diseñar la infraestructura DNS para admitir AD DS, puede ser útil leer información acerca de la jerarquía de DNS, el proceso de resolución de nombres DNS y el modo en que DNS admite AD DS. Para obtener más información acerca de la jerarquía de DNS y el proceso de resolución de nombres, consulte la [referencia técnica de DNS](/previous-versions/windows/it-pro/windows-server-2003/cc779926(v=ws.10)). Para obtener más información sobre cómo DNS admite AD DS, consulte la [referencia técnica de compatibilidad de DNS con Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc781627(v=ws.10)).
 
 ## <a name="in-this-section"></a>En esta sección
 

@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: En este tema se describen los espacios de nombres DFS, que es un servicio de rol de Windows Server que permite agrupar las carpetas compartidas ubicadas en distintos servidores en uno o más espacios de nombres estructurados lógicamente.
-ms.openlocfilehash: fd02f0b65cc57300c673d72c7879a80d48747fa2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 57d2d8bb7565677afcd2a031807061ab50b6ff16
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471890"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964097"
 ---
 # <a name="dfs-namespaces-overview"></a>Información general sobre espacios de nombres DFS
 
@@ -32,7 +32,7 @@ Esta es una descripción de los elementos que componen un espacio de nombres DFS
 
 En este tema se describe cómo instalar DFS, las novedades y dónde encontrar información de evaluación e implementación.
 
-Puede administrar los espacios de nombres mediante administración de DFS, los [cmdlets del espacio de nombres DFS (DFSN) en Windows PowerShell](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps), el comando **DfsUtil** o los scripts que llaman a WMI.
+Puede administrar los espacios de nombres mediante administración de DFS, los [cmdlets del espacio de nombres DFS (DFSN) en Windows PowerShell](/powershell/module/dfsn/?view=win10-ps), el comando **DfsUtil** o los scripts que llaman a WMI.
 
 ## <a name="server-requirements-and-limits"></a>Requisitos y límites del servidor
 
@@ -65,7 +65,7 @@ En la siguiente tabla se describen otros factores que debe tener en cuenta al se
 
 Espacios de nombres DFS y Replicación DFS forman parte del rol Servicios de archivos y almacenamiento. Las herramientas de administración de DFS (Administración de DFS, el módulo Espacios de nombres DFS para Windows PowerShell y las herramientas de línea de comandos) se instalan por separado como parte de las Herramientas de administración remota del servidor.
 
-Instale espacios de nombres DFS mediante el [centro de administración de Windows](../../manage/windows-admin-center/understand/windows-admin-center.md), administrador del servidor o PowerShell, tal como se describe en las secciones siguientes.
+Instale espacios de nombres DFS mediante el [centro de administración de Windows](../../manage/windows-admin-center/overview.md), administrador del servidor o PowerShell, tal como se describe en las secciones siguientes.
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>Para instalar DFS mediante el Administrador del servidor
 
@@ -114,7 +114,7 @@ Se ha probado el uso de espacios de nombres DFS en una máquina virtual en Micro
 
 - Puede hospedar espacios de nombres basados en dominio en máquinas virtuales de Azure, incluidos los entornos con Azure Active Directory.
 
-Para obtener información sobre cómo empezar a trabajar con Azure virtual machines, consulte la [documentación de Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/).
+Para obtener información sobre cómo empezar a trabajar con Azure virtual machines, consulte la [documentación de Azure virtual machines](/azure/virtual-machines/).
 
 ## <a name="additional-references"></a>Referencias adicionales
 
@@ -122,10 +122,10 @@ Para obtener más información relacionada, vea los siguientes recursos.
 
 | Tipo de contenido        | Referencias |
 | ------------------  | ----------------|
-| **Evaluación del producto** | [Novedades de los espacios de nombres DFS y Replicación DFS en Windows Server](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
-| **Implementación**    | [Consideraciones sobre la escalabilidad de espacios de nombres DFS](https://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
-| **Operaciones**    | [Espacios de nombres DFS: preguntas más frecuentes](https://technet.microsoft.com/library/ee404780.aspx) |
+| **Evaluación del producto** | [Novedades de los espacios de nombres DFS y Replicación DFS en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281957(v=ws.11)) |
+| **Implementación**    | [Consideraciones sobre la escalabilidad de espacios de nombres DFS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
+| **Operaciones**    | [Espacios de nombres DFS: preguntas más frecuentes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee404780(v=ws.10)) |
 | **Recursos de la comunidad** | [Foro de TechNet sobre servicios de archivos y almacenamiento](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
-| **Protocolos**        | [Protocolos de servicios de archivo en Windows Server](https://msdn.microsoft.com/library/cc239318.aspx) (desusado) |
+| **Protocolos**        | [Protocolos de servicios de archivo en Windows Server](/openspecs/windows_protocols/MS-WINPROTLP/df36f95e-6a6b-48d6-a3ae-35a17674f546) (desusado) |
 | **Tecnologías relacionadas** | [Clústeres de conmutación por error](../../failover-clustering/failover-clustering-overview.md)|
 | **Soporte técnico** | [Soporte técnico Windows IT Pro](https://www.microsoft.com/itpro/windows/support)|

@@ -8,18 +8,18 @@ ms.date: 07/13/2016
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 660915a9fc704a01b59b4eeb1107ef56599ecac7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bdd6aa39f09af6e11afb6d425db287bbf14d8b3e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818578"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961387"
 ---
 # <a name="web-application-proxy-in-windows-server-2016"></a>Proxy de aplicación web en Windows Server 2016
 
 >Se aplica a: Windows Server 2016
 
-**Este contenido es relevante para la versión local del proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido del proxy de aplicación Azure ad](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
+**Este contenido es relevante para la versión local del proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido del proxy de aplicación Azure ad](/azure/active-directory/manage-apps/application-proxy).**  
   
 El contenido de esta sección describe las novedades y los cambios en el proxy de aplicación web para Windows Server 2016. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan mayor impacto al trabajar con la versión preliminar.  
   
@@ -35,7 +35,7 @@ El contenido de esta sección describe las novedades y los cambios en el proxy d
   
   Para admitir escenarios como SharePoint 2013, la dirección URL externa de la aplicación ahora puede incluir un carácter comodín que le permita publicar varias aplicaciones desde dentro de un dominio concreto, por ejemplo, https://*. SP-apps. contoso. com. Esto simplificará la publicación de aplicaciones de SharePoint.  
   
-- Redirección de HTTP a HTTPS  
+- Redireccionamiento de HTTP a HTTPS  
   
   Para asegurarse de que los usuarios puedan tener acceso a la aplicación, aunque no tengan que escribir HTTPS en la dirección URL, el proxy de aplicación web ahora admite la redirección de HTTP a HTTPS.  
   
@@ -49,19 +49,17 @@ El contenido de esta sección describe las novedades y los cambios en el proxy d
   
 - Nuevo registro de depuración para una mejor solución de problemas y un registro de servicio mejorado para la pista de auditoría completa y el control de errores mejorado  
   
-  Para obtener más información sobre la solución de problemas, consulte [solución de problemas de proxy de aplicación web](https://technet.microsoft.com/library/dn770156.aspx)  
+  Para obtener más información sobre la solución de problemas, consulte [solución de problemas de proxy de aplicación web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))  
   
 - Mejoras de la interfaz de usuario de Consola de administrador  
   
 - Propagación de la dirección IP del cliente a las aplicaciones de back-end  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
   
--   [Novedades en Windows Server 2016](https://technet.microsoft.com/library/dn765472.aspx)  
+-   [Novedades en Windows Server 2016](../../../get-started/whats-new-in-windows-server-2016.md)  
   
 -   [Publicación de aplicaciones con autenticación previa de AD FS](../web-application-proxy/Publishing-Applications-using-AD-FS-Preauthentication.md)  
   
--   [Solución de problemas del Proxy de aplicación web](https://technet.microsoft.com/library/dn770156.aspx)  
+-   [Solución de problemas del Proxy de aplicación web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))  
   
-
-

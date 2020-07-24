@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 597abd8e389421eb6875ff3cc94b457f341be3b7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0b4391812c89a193113fcd442d220e45fbb8c257
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474752"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964487"
 ---
 # <a name="performance-history-for-network-adapters"></a>Historial de rendimiento de los adaptadores de red
 
@@ -73,7 +73,7 @@ Las `rdma.*` series se recopilan del `RDMA Activity` contador de rendimiento est
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
-Use el cmdlet [Get-NetAdapter](https://docs.microsoft.com/powershell/module/netadapter/get-netadapter) :
+Use el cmdlet [Get-NetAdapter](/powershell/module/netadapter/get-netadapter) :
 
 ```PowerShell
 Get-NetAdapter <Name> | Get-ClusterPerf

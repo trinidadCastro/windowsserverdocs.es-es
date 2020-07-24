@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: e0d92448774b277cff60d9b494cf388458ea32d3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 68f5af7f8fc4cd0214b872d96602cabe1aa32628
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475112"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961377"
 ---
 # <a name="iscsi-target-boot-overview"></a>Información general de arranque de destino iSCSI
 
@@ -48,6 +48,6 @@ El servidor de destino iSCSI se puede instalar como parte del servicio del rol S
 > No se admite el arranque de Nano Server desde iSCSI (ya sea desde el Servidor de destino iSCSI de Windows o una implementación de destino de terceros).
 
 ## <a name="additional-references"></a>Referencias adicionales
-* [Servidor de destino iSCSI](https://technet.microsoft.com/library/hh848272(v=ws.11).aspx)
-* [iSCSI initiator cmdlets (Cmdlets de iniciador iSCSI)](https://technet.microsoft.com/library/hh826099(v=wps.640).aspx)
-* [iSCSI Target Server cmdlets (Cmdlets de Servidor de destino iSCSI)](https://technet.microsoft.com/library/jj612803(v=wps.630).aspx)
+* [Servidor de destino iSCSI](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848272(v=ws.11))
+* [iSCSI initiator cmdlets (Cmdlets de iniciador iSCSI)](/powershell/module/iscsi/?view=win10-ps)
+* [iSCSI Target Server cmdlets (Cmdlets de Servidor de destino iSCSI)](/powershell/module/iscsi/?view=win10-ps)

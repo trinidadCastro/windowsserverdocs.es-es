@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 9978fd3e926ade4680ca6563d9d39b0851d893e9
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: d9e0a3855c324ca9b5c7de90d78535024a0a7a9d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070490"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964057"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>Preguntas frecuentes acerca de Réplica de almacenamiento
 
@@ -35,7 +35,7 @@ Notas importantes:
 
 1. Azure no admite clústeres invitados de VHDX compartidos, por lo que las máquinas virtuales de clúster de conmutación por error de Windows deben usar destinos iSCSI para la agrupación en clústeres o Espacios de almacenamiento directo de reserva de disco persistente de almacenamiento compartido clásico.
 2. Hay Azure Resource Manager plantillas para la agrupación en clústeres de réplica de almacenamiento basado en Espacios de almacenamiento directo en [creación de clústeres de espacios de almacenamiento directo sofs con réplica de almacenamiento para la recuperación ante desastres en regiones de Azure](https://aka.ms/azure-storage-replica-cluster).  
-3. La comunicación RPC de clúster a clúster en Azure (requerida por las API de clúster para conceder acceso entre el clúster) requiere configurar el acceso a la red para el CNO. Debe permitir el puerto TCP 135 y el intervalo dinámico por encima del puerto TCP 49152. Referencia [sobre la creación de clústeres de conmutación por error de Windows Server en una máquina virtual de IaaS de Azure: red y creación](https://blogs.technet.microsoft.com/askcore/2015/06/24/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation/).  
+3. La comunicación RPC de clúster a clúster en Azure (requerida por las API de clúster para conceder acceso entre el clúster) requiere configurar el acceso a la red para el CNO. Debe permitir el puerto TCP 135 y el intervalo dinámico por encima del puerto TCP 49152. Referencia [sobre la creación de clústeres de conmutación por error de Windows Server en una máquina virtual de IaaS de Azure: red y creación](/archive/blogs/askcore/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation).  
 4. Es posible usar clústeres invitados de dos nodos, donde cada nodo usa iSCSI de bucle invertido para un clúster asimétrico replicado por réplica de almacenamiento. Pero esto probablemente tendrá un rendimiento muy deficiente y debe usarse solo para cargas de trabajo o pruebas muy limitadas.  
 
 ## <a name="how-do-i-see-the-progress-of-replication-during-initial-sync"></a><a name="FAQ2"></a>Cómo ver el progreso de la replicación durante la sincronización inicial  

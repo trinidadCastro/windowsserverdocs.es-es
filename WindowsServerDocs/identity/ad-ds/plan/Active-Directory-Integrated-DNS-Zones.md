@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 19bde83e3ab93ced00226403fe0d031ca80ed357
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: be71b719853f82338769d08d608caf8935add672
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624413"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962397"
 ---
 # <a name="active-directory-integrated-dns-zones"></a>Zonas DNS integradas de Active Directory
 
@@ -31,7 +31,7 @@ Active Directory DNS integrado en Windows Server 2008 almacena datos de zona en 
 
 - Particiones de directorio de aplicaciones para todo el dominio para cada dominio del bosque, denominado DomainDnsZones
 
-Para obtener más información sobre cómo AD DS almacena la información de DNS en las particiones de aplicación, consulte la [referencia técnica de DNS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc779926(v=ws.10)).
+Para obtener más información sobre cómo AD DS almacena la información de DNS en las particiones de aplicación, consulte la [referencia técnica de DNS](/previous-versions/windows/it-pro/windows-server-2003/cc779926(v=ws.10)).
 
 > [!NOTE]
-> Se recomienda instalar DNS al ejecutar el Asistente para instalación de Active Directory Domain Services (Dcpromo. exe). Si lo hace, el asistente creará automáticamente la delegación de la zona DNS. Para obtener más información, vea [implementar un dominio raíz del bosque de Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10)).
+> Se recomienda instalar DNS al ejecutar el Asistente para instalación de Active Directory Domain Services (Dcpromo.exe). Si lo hace, el asistente creará automáticamente la delegación de la zona DNS. Para obtener más información, vea [implementar un dominio raíz del bosque de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10)).

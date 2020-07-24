@@ -8,18 +8,18 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8655c7bac977bf94add1531d299e2fa17ef530d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d6a740f0fdc76698114cace8ded8533cebffc5cb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821248"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964037"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>Implementación de modelos administrativos de menor privilegio
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-El siguiente fragmento procede de [la guía de planeamiento de la seguridad de las cuentas de administrador](https://technet.microsoft.com/library/cc162797.aspx), publicada por primera vez el 1 de abril de 1999:
+El siguiente fragmento procede de [la guía de planeamiento de la seguridad de las cuentas de administrador](/previous-versions/tn-archive/cc162797(v=technet.10)), publicada por primera vez el 1 de abril de 1999:
 
 > "La mayoría de los cursos de aprendizaje y la documentación relacionados con la seguridad describen la implementación de un principio de privilegios mínimos, pero las organizaciones raramente lo siguen. El principio es sencillo y el impacto de aplicarlo correctamente aumenta la seguridad y reduce el riesgo. El principio indica que todos los usuarios deben iniciar sesión con una cuenta de usuario que tenga los permisos mínimos necesarios para completar la tarea actual y nada más. Al hacerlo, se proporciona protección contra código malintencionado, entre otros ataques. Este principio se aplica a los equipos y a los usuarios de esos equipos.   
 > "Una de las razones por las que este principio funciona tan bien es que obliga a realizar alguna investigación interna. Por ejemplo, debe determinar los privilegios de acceso que realmente necesita un equipo o usuario y, a continuación, implementarlos. Para muchas organizaciones, es posible que esta tarea parezca inicialmente una gran cantidad de trabajo. sin embargo, es un paso esencial para proteger correctamente el entorno de red.
@@ -108,7 +108,7 @@ Si un servidor miembro o una estación de trabajo se separan del dominio sin nin
 
 ### <a name="securing-local-privileged-accounts-and-groups-in-active-directory"></a>Protección de grupos y cuentas con privilegios locales en Active Directory
 
-*Número de ley seis: un equipo es tan seguro como el administrador es de confianza.* - [diez leyes inmutables de seguridad (versión 2,0)](https://technet.microsoft.com/security/hh278941.aspx)  
+*Número de ley seis: un equipo es tan seguro como el administrador es de confianza.* - [Diez leyes inmutables de seguridad (versión 2,0)](https://www.microsoft.com/en-us/msrc?rtc=1)  
 
 La información que se proporciona aquí está pensada para proporcionar directrices generales para proteger las cuentas y los grupos integrados de privilegios más elevados en Active Directory. También se proporcionan instrucciones paso a paso detalladas en el [Apéndice D: protección de cuentas de administrador integradas en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md), [Apéndice E: protección de grupos de administradores de empresa en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md), [Apéndice F: protección de grupos de administradores de dominio en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)y en el [Apéndice G: protección de grupos de administradores en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md).  
 
@@ -208,7 +208,7 @@ Para el grupo Admins. del dominio en cada dominio del bosque:
 
 3. La auditoría debe estar configurada para enviar alertas si se realizan modificaciones en las propiedades o la pertenencia del grupo de DA. Estas alertas se deben enviar, como mínimo, a los usuarios o equipos responsables de AD DS la administración y la respuesta a los incidentes. También debe definir procesos y procedimientos para rellenar temporalmente el grupo de DA, incluidos los procedimientos de notificación cuando se realiza un rellenado legítimo del grupo.  
 
-#### <a name="securing-administrators-groups-in-active-directory"></a>Protección de grupos de administradores en Active Directory
+#### <a name="securing-administrators-groups-in-active-directory"></a>Protección de grupos de administradores en Active Directory
 
 Como es el caso de los grupos EA y DA, la pertenencia al grupo administradores (BA) solo debe ser necesaria en escenarios de compilación o recuperación ante desastres. No debe haber cuentas de usuario cotidianas en el grupo de administradores con la excepción de la cuenta de administrador local para el dominio, si se ha protegido como se describe en el [Apéndice D: protección de cuentas de administrador integradas en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 
@@ -224,7 +224,7 @@ De forma predeterminada, los administradores son los propietarios de la mayoría
    - Esto impedirá que los miembros del grupo administradores se usen para iniciar sesión o conectarse a estaciones de trabajo o servidores miembro (a menos que se infrinjan primero varios controles), donde sus credenciales se pueden almacenar en caché y, por tanto, estar en peligro. Nunca se debe usar una cuenta con privilegios para iniciar sesión en un sistema con menos privilegios y aplicar estos controles ofrece protección contra una serie de ataques.  
 
 3. En la unidad organizativa controladores de dominio de cada dominio del bosque, al grupo administradores se le deben conceder los siguientes derechos de usuario (si aún no tienen estos derechos), lo que permitirá a los miembros del grupo administradores realizar las funciones necesarias para un escenario de recuperación ante desastres en todo el bosque:  
-   - Tener acceso a este equipo desde la red  
+   - Obtener acceso a este equipo desde la red  
    - Permitir el inicio de sesión local  
    - Permitir inicio de sesión a través de Servicios de Escritorio remoto  
 
@@ -279,7 +279,7 @@ Sin embargo, si implementa RBAC nativo y PIM, debe considerar la creación de cu
 
 ### <a name="implementing-robust-authentication-controls"></a>Implementación de controles de autenticación sólidos
 
-*Número de la ley Six: en realidad, alguien está intentando adivinar sus contraseñas.* - [10 leyes inmutables de administración de seguridad](https://technet.microsoft.com/library/cc722488.aspx)  
+*Número de la ley Six: en realidad, alguien está intentando adivinar sus contraseñas.* - [10 leyes inmutables de administración de seguridad](/previous-versions//cc722488(v=technet.10))  
 
 Pass-The-hash y otros ataques de robo de credenciales no son específicos de los sistemas operativos Windows ni son nuevos. El primer ataque Pass-The-hash se creó en 1997. Históricamente, sin embargo, estos ataques requerían herramientas personalizadas, eran aciertos o faltaban en el éxito y requerían que los atacantes tuvieran un grado de habilidad relativamente alto. La introducción de herramientas disponibles y fáciles de usar que extraen de forma nativa las credenciales ha dado como resultado un aumento exponencial del número y el éxito de los ataques de robo de credenciales en los últimos años. Sin embargo, los ataques de robo de credenciales no son, por lo tanto, los únicos mecanismos por los que las credenciales están destinadas y en peligro.  
 
@@ -297,7 +297,7 @@ En los casos en que se ha demostrado que las contraseñas complejas son difícil
 
 Otra ventaja de implementar tarjetas inteligentes u otros mecanismos de autenticación basada en certificados es la posibilidad de aprovechar la garantía del mecanismo de autenticación para proteger datos confidenciales a los que pueden acceder los usuarios VIP. La garantía del mecanismo de autenticación está disponible en los dominios en los que el nivel funcional está establecido en Windows Server 2012 o Windows Server 2008 R2. Cuando está habilitada, la garantía de mecanismo de autenticación agrega una pertenencia a un grupo global designado por el administrador al token de Kerberos de un usuario cuando las credenciales del usuario se autentican durante el inicio de sesión mediante un método de inicio de sesión basado en certificados.  
 
-Esto permite a los administradores de recursos controlar el acceso a los recursos, como archivos, carpetas e impresoras, en función de si el usuario inicia sesión mediante un método de inicio de sesión basado en certificados, además del tipo de certificado utilizado. Por ejemplo, cuando un usuario inicia sesión mediante una tarjeta inteligente, el acceso del usuario a los recursos de la red puede especificarse como diferente del acceso cuando el usuario no usa una tarjeta inteligente (es decir, cuando el usuario inicia sesión escribiendo un nombre de usuario y una contraseña). Para obtener más información sobre la seguridad del mecanismo de autenticación, consulte la [Guía paso a paso de la comprobación del mecanismo de autenticación para AD DS en Windows Server 2008 R2](https://technet.microsoft.com/library/dd378897.aspx).  
+Esto permite a los administradores de recursos controlar el acceso a los recursos, como archivos, carpetas e impresoras, en función de si el usuario inicia sesión mediante un método de inicio de sesión basado en certificados, además del tipo de certificado utilizado. Por ejemplo, cuando un usuario inicia sesión mediante una tarjeta inteligente, el acceso del usuario a los recursos de la red puede especificarse como diferente del acceso cuando el usuario no usa una tarjeta inteligente (es decir, cuando el usuario inicia sesión escribiendo un nombre de usuario y una contraseña). Para obtener más información sobre la seguridad del mecanismo de autenticación, consulte la [Guía paso a paso de la comprobación del mecanismo de autenticación para AD DS en Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378897(v=ws.10)).  
 
 #### <a name="configuring-privileged-account-authentication"></a>Configuración de la autenticación de cuentas con privilegios
 

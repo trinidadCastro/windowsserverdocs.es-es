@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 37115e79044c9ddfd55e646fcde868ad6ac7048f
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 244444cc773e3b69ba09a2050ebaefa11ea9edef
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624343"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962287"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>Crear un diseño de puente vínculo de sitio
 
@@ -26,7 +26,7 @@ De forma predeterminada, todos los vínculos a sitios son transitivos. Se recomi
 - La red IP no está enrutada por completo. Cuando se deshabilita el **puente de todos los vínculos a sitios**, todos los vínculos a sitios se consideran no transitivos y se pueden crear y configurar objetos de puente de vínculos a sitios para modelar el comportamiento de enrutamiento real de la red.
 - Debe controlar el flujo de replicación de los cambios realizados en Active Directory Domain Services (AD DS). Al deshabilitar **Bridge todos los vínculos a sitios** para el transporte IP de vínculo a sitios y configurar un puente de vínculo a sitios, el puente de vínculo a sitios se convierte en el equivalente de una red separada. Todos los vínculos a sitios dentro del puente de vínculos a sitios pueden enrutarse de manera transitiva, pero no se enrutan fuera del puente de vínculos a sitios.
 
-Para obtener más información sobre cómo usar el complemento sitios y servicios de Active Directory para deshabilitar la configuración **enlazar todos los vínculos a sitios** , consulte el artículo [habilitar o deshabilitar puentes de vínculos a sitios](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10)).
+Para obtener más información sobre cómo usar el complemento sitios y servicios de Active Directory para deshabilitar la configuración **enlazar todos los vínculos a sitios** , consulte el artículo [habilitar o deshabilitar puentes de vínculos a sitios](/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10)).
 
 ## <a name="controlling-ad-ds-replication-flow"></a>Controlar el flujo de replicación de AD DS
 

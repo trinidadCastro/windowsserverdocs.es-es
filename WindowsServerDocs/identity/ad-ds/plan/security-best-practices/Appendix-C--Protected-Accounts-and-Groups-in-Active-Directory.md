@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 18a293f4ec7d96516bd89396c13562ba68dc471f
-ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
+ms.openlocfilehash: cfee6eedd1582c3df960cca1c32fce27c74f82cb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345439"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963237"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Anexo C: cuentas protegidas y grupos de Active Directory
 
@@ -31,7 +31,7 @@ La tabla siguiente contiene los grupos protegidos en Active Directory enumerados
 
 #### <a name="protected-accounts-and-groups-in-active-directory-by-operating-system"></a>Cuentas y grupos protegidos en Active Directory por sistema operativo
 
-| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012, <br> Windows Server 2008 R2, <br> Windows Server 2008 | Windows Server 2016 |
+| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012, <br> Windows Server 2008 R2, <br> Windows Server 2008 | Windows Server 2016 |
 | --- | --- | --- | --- |
 |Operadores de cuentas|Operadores de cuentas|Operadores de cuentas|Operadores de cuentas|
 |Administrador|Administrador|Administrador|Administrador|
@@ -70,7 +70,7 @@ El intervalo de valores está en segundos de 60 a 7200 (de un minuto a dos horas
 
 Un enfoque mejor para probar los cambios de AdminSDHolder es ejecutar SDProp manualmente, lo que hace que la tarea se ejecute inmediatamente, pero no afecta a la ejecución programada. La ejecución manual de SDProp se realiza de forma ligeramente diferente en los controladores de dominio que ejecutan Windows Server 2008 y versiones anteriores a los controladores de dominio que ejecutan Windows Server 2012 o Windows Server 2008 R2.  
 
-Los procedimientos para ejecutar SDProp manualmente en sistemas operativos anteriores se proporcionan en [soporte técnico de Microsoft artículo 251343](https://support.microsoft.com/kb/251343)y a continuación se indican instrucciones paso a paso para los sistemas operativos antiguos y más recientes. En cualquier caso, debe conectarse al objeto rootDSE en Active Directory y realizar una operación de modificación con un DN nulo para el objeto rootDSE, especificando el nombre de la operación como el atributo que se va a modificar. Para obtener más información acerca de las operaciones modificables en el objeto rootDSE, vea las [operaciones de modificación de RootDSE](https://msdn.microsoft.com/library/cc223297.aspx) en el sitio web de MSDN.  
+Los procedimientos para ejecutar SDProp manualmente en sistemas operativos anteriores se proporcionan en [soporte técnico de Microsoft artículo 251343](https://support.microsoft.com/kb/251343)y a continuación se indican instrucciones paso a paso para los sistemas operativos antiguos y más recientes. En cualquier caso, debe conectarse al objeto rootDSE en Active Directory y realizar una operación de modificación con un DN nulo para el objeto rootDSE, especificando el nombre de la operación como el atributo que se va a modificar. Para obtener más información acerca de las operaciones modificables en el objeto rootDSE, vea las [operaciones de modificación de RootDSE](/openspecs/windows_protocols/ms-adts/fc74972f-b267-4c1a-8716-0f5b48cf52b9) en el sitio web de MSDN.  
 
 ###### <a name="running-sdprop-manually-in-windows-server-2008-or-earlier"></a>Ejecutar SDProp manualmente en Windows Server 2008 o versiones anteriores
 

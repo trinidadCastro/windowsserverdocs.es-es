@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9be7ef4c4d07b522f683a403e46a11e109dbd226
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0ee3e30699c920a252646de67005675bdaeb849d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853648"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964297"
 ---
 # <a name="troubleshooting-enabling-otp"></a>Solucionar problemas relacionados con la activación de OTP
 
@@ -22,7 +22,7 @@ ms.locfileid: "80853648"
 Este tema contiene información para la solución de problemas relacionados con la habilitación de la autenticación OTP de DirectAccess mediante el cmdlet **de PowerShell enable-DAOtpAuthentication** o la consola de administración de acceso remoto.
   
 ## <a name="failed-to-enroll-the-otp-signing-certificate"></a>No se pudo inscribir el certificado de firma de OTP  
-**Error recibido** (registro de eventos de servidor). No se puede inscribir un certificado de firma de OTP con la plantilla de certificado < OTP_signing_template_name >  
+**Error recibido** (registro de eventos de servidor). No se puede inscribir un certificado de firma de OTP con la plantilla de certificado <OTP_signing_template_name>  
   
 **Causa**  
   
@@ -45,7 +45,7 @@ Hay tres causas posibles de este error:
 2.  Si la plantilla no existe, créela como se describe en 3,3 planear el certificado de la autoridad de registro, o bien, si existe otra plantilla que coincida, vuelva a configurar OTP de DirectAccess con el nuevo nombre de plantilla.  
   
 ## <a name="failed-to-enable-directaccess-otp-when-webdav-is-installed"></a>No se pudo habilitar OTP de DirectAccess al instalar WebDAV  
-**Escenario**. Al intentar aplicar la configuración de OTP de DirectAccess en la consola de administración de acceso remoto o mediante el cmdlet de PowerShell `Enable-DAOtpAuthentication`, se produce un error en la operación.  
+**Escenario**. Al intentar aplicar la configuración de OTP de DirectAccess en la consola de administración de acceso remoto o mediante el `Enable-DAOtpAuthentication` cmdlet de PowerShell, se produce un error en la operación.  
   
 **Error recibido** (registro de eventos de servidor). No se puede aplicar la configuración de OTP de DirectAccess porque la extensión de IIS WebDAV se está ejecutando en el servidor. Quite WebDAV y vuelva a aplicar la configuración.  
   
@@ -99,7 +99,5 @@ El complemento MMC plantillas de certificado de Windows Server 2003 no permite e
   
 **Solución**  
   
-Instalar el complemento plantillas de certificado en un servidor posterior a Windows Server 2003 y usarlo para configurar la plantilla de inicio de sesión de OTP, vea [instalar el complemento plantillas de certificado](https://technet.microsoft.com/library/cc732445.aspx).  
+Instalar el complemento plantillas de certificado en un servidor posterior a Windows Server 2003 y usarlo para configurar la plantilla de inicio de sesión de OTP, vea [instalar el complemento plantillas de certificado](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732445(v=ws.11)).  
   
-
-

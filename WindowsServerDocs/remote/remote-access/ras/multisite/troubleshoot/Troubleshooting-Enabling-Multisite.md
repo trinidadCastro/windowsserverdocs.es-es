@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 570c81d6-c4f4-464c-bee9-0acbd4993584
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ae01a63a494504120ca248ec56dd9bc9648c1ae4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8591cc0b0d9fae75067a8c9937f1e69af572c379
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858298"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962217"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>Solucionar problemas relacionados con la activación de multisitio
 
@@ -30,7 +30,7 @@ En una implementación multisitio, los equipos cliente de Windows 10 y Windows 8
   
 **Solución**  
   
-DirectAccess requiere al menos un grupo de seguridad para todos los equipos cliente de Windows 10 y Windows 8. se recomienda usar un grupo de seguridad para todos los equipos con Windows 10 y Windows 8 por dominio. DirectAccess también necesita un grupo de seguridad para equipos cliente de Windows 7 para cada punto de entrada. Cada equipo cliente debe estar en un solo grupo de seguridad. Por lo tanto, debe asegurarse de que los grupos de seguridad para los clientes de Windows 10 y Windows 8 contienen solo equipos que ejecutan Windows 10 o Windows 8 y que cada equipo cliente de Windows 7 pertenece a un solo grupo de seguridad dedicado para el punto de entrada correspondiente. que ningún cliente de Windows 10 o Windows 8 pertenezca a los grupos de seguridad de Windows 7.  
+DirectAccess requiere al menos un grupo de seguridad para todos los equipos cliente de Windows 10 y Windows 8. se recomienda usar un grupo de seguridad para todos los equipos con Windows 10 y Windows 8 por dominio. DirectAccess también necesita un grupo de seguridad para equipos cliente de Windows 7 para cada punto de entrada. Cada equipo cliente debe estar en un solo grupo de seguridad. Por lo tanto, debe asegurarse de que los grupos de seguridad para los clientes de Windows 10 y Windows 8 contienen solo equipos que ejecutan Windows 10 o Windows 8 y que cada equipo cliente de Windows 7 pertenece a un solo grupo de seguridad dedicado para el punto de entrada pertinente y que ningún cliente de Windows 10 o Windows 8 pertenece a los grupos de seguridad de Windows 7.  
   
 Configure los grupos de seguridad de Windows 8 en la página **seleccionar grupos** del Asistente para la **instalación del cliente de DirectAccess** . Configure los grupos de seguridad de Windows 7 en la página **compatibilidad con clientes** del Asistente para **Habilitar la implementación multisitio** o en la página **compatibilidad con clientes** del Asistente para **Agregar un punto de entrada** .  
   
@@ -49,7 +49,7 @@ Para habilitar la autenticación de certificados de equipo
   
 2.  En la página **Autenticación** del **Asistente para la instalación del servidor de acceso remoto**, active la casilla **Usar certificados de equipo** y seleccione la entidad de certificación raíz o intermedia que emite certificados en su implementación.  
   
-Para habilitar la autenticación de certificados de equipo mediante Windows PowerShell, use el cmdlet `Set-DAServer` y especifique el parámetro *IPsecRootCertificate* .  
+Para habilitar la autenticación de certificados de equipo mediante Windows PowerShell, use el `Set-DAServer` cmdlet y especifique el parámetro *IPsecRootCertificate* .  
   
 ## <a name="ip-https-certificates"></a>Certificados IP-HTTPS  
 **Error recibido**. El servidor de DirectAccess usa un certificado IP-HTTPS autofirmado. Configure IP-HTTPS para que use un certificado firmado de una CA conocida.  
@@ -111,10 +111,10 @@ En la implementación de DirectAccess existente, se habilitó la compatibilidad 
   
 **Solución**  
   
-DirectAccess requiere al menos un grupo de seguridad para todos los equipos cliente de Windows 8 y un grupo de seguridad para equipos cliente de Windows 7 para cada punto de entrada. Cada equipo cliente debe estar en un solo grupo de seguridad. Por lo tanto, debe asegurarse de que el grupo de seguridad para clientes de Windows 8 solo contiene equipos que ejecutan Windows 8 y que cada equipo cliente de Windows 7 pertenece a un solo grupo de seguridad dedicado para el punto de entrada relevante y que no hay clientes de Windows 8. pertenecer a los grupos de seguridad de Windows 7.  
+DirectAccess requiere al menos un grupo de seguridad para todos los equipos cliente de Windows 8 y un grupo de seguridad para equipos cliente de Windows 7 para cada punto de entrada. Cada equipo cliente debe estar en un solo grupo de seguridad. Por lo tanto, debe asegurarse de que el grupo de seguridad para los clientes de Windows 8 solo contiene equipos que ejecutan Windows 8 y que cada equipo cliente de Windows 7 pertenece a un solo grupo de seguridad dedicado para el punto de entrada pertinente y que ningún cliente de Windows 8 pertenece a los grupos de seguridad de Windows 7.  
   
 ## <a name="active-directory-site"></a>Sitio de Active Directory  
-**Error recibido**. El > de server_name del servidor < no está asociado a un sitio Active Directory.  
+**Error recibido**. El> de server_name del servidor <no está asociado a un sitio Active Directory.  
   
 **Causa**  
   
@@ -124,8 +124,8 @@ DirectAccess no pudo determinar el sitio de Active Directory. En la consola Siti
   
 Confirme que se trata de este problema; para ello, ejecute el comando `nltest /dsgetsite` en el servidor de acceso remoto. Si lo es, el comando devolverá ERROR_NO_SITENAME. Para solucionarlo, en el controlador de dominio, asegúrese de que existe una subred que contiene la dirección IP de servidor interna y de que está definida con un sitio de Active Directory.  
   
-## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>Guardando configuración de GPO de servidor  
-**Error recibido**. Error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>Guardar la configuración del GPO de servidor  
+**Error recibido**. Error al guardar la configuración de acceso remoto en el GPO <GPO_name>.  
   
 **Causa**  
   
@@ -135,8 +135,8 @@ No se pudieron guardar los cambios en el GPO de servidor debido a problemas de c
   
 Asegúrese de que hay conectividad entre el servidor de acceso remoto y el controlador de dominio. Si la hay, compruebe en el controlador de dominio si otro usuario ha bloqueado el archivo registry.pol y, en caso necesario, finalice la sesión de dicho usuario para desbloquearlo.  
   
-## <a name="internal-error-occurred"></a><a name="InternalServerError"></a>Se produjo un error interno  
-**Error recibido**. Error interno.  
+## <a name="internal-error-occurred"></a><a name="InternalServerError"></a>Error interno  
+**Error recibido**. Se ha producido un error interno.  
   
 **Causa**  
   
@@ -146,7 +146,5 @@ Esto puede deberse a una configuración inesperada de la tabla de puntos de entr
   
 Repase la configuración de la tabla de puntos de entrada en todos los GPO de cliente y arregle las incoherencias que pueda haber en la configuración multisitio entre las distintas instancias de los GPO de cliente y la configuración de DirectAccess. Use el cmdlet `Get-DaEntryPointTableItem` con el nombre del GPO de cliente para obtener la tabla de puntos de entrada relativa al cliente. Use el cmdlet `Get-NetIPHttpsConfiguration` para obtener todos los perfiles IP-HTTPS de todos los puntos de entrada.  
   
-Para obtener más información, vea [cmdlets de cliente de DirectAccess en Windows PowerShell](https://technet.microsoft.com/library/hh848426).  
+Para obtener más información, consulte el tema sobre [cmdlets de cliente de DirectAccess en Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj591658(v=ws.11)).  
   
-
-

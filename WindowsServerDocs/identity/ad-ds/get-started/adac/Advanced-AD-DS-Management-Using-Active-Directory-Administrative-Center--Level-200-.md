@@ -8,26 +8,26 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 197f994bdd5dedced24aa390dc562530c41e951d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 63764ff94c10376c76eec493c618214a183bf528
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824918"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961107"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En este tema se describe con detalle el Centro de administración de Active Directory actualizado, con la nueva papelera de reciclaje de Active Directory, la directiva de contraseña específica y el Visor del historial de Windows PowerShell, e incluye la arquitectura, ejemplos de tareas comunes e información sobre solución de problemas. Para obtener una introducción, vea la [Introducción al &#40;nivel 100&#41;de mejoras de centro de administración de Active Directory](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md).  
+En este tema se describe con detalle el Centro de administración de Active Directory actualizado, con la nueva papelera de reciclaje de Active Directory, la directiva de contraseña específica y el Visor del historial de Windows PowerShell, e incluye la arquitectura, ejemplos de tareas comunes e información sobre solución de problemas. Para obtener una introducción, consulte [Introducción a las mejoras de Centro de administración de Active Directory &#40;nivel 100&#41;](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md).  
   
-- [Arquitectura de Centro de administración de Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Arch)  
-- [Habilitar y administrar la papelera de reciclaje de Active Directory mediante Centro de administración de Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_EnableRecycleBin)  
-- [Configuración y administración de directivas de contraseña específica mediante Centro de administración de Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_FGPP)  
-- [Usar el visor del historial de Windows PowerShell Centro de administración de Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
-- [Solución de problemas de administración de AD DS](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Tshoot)  
+- [Arquitectura del Centro de administración de Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Arch)  
+- [Habilitar y administrar la papelera de reciclaje de Active Directory mediante el Centro de administración de Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_EnableRecycleBin)  
+- [Configurar y administrar directivas de contraseña específica mediante el Centro de administración de Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_FGPP)  
+- [Usar el Visor del historial de Windows PowerShell del Centro de administración de Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
+- [Solucionar problemas de administración de AD DS](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Tshoot)  
   
-## <a name="active-directory-administrative-center-architecture"></a><a name="BKMK_Arch"></a>Arquitectura de Centro de administración de Active Directory  
+## <a name="active-directory-administrative-center-architecture"></a><a name="BKMK_Arch"></a>Arquitectura del Centro de administración de Active Directory  
   
 ### <a name="active-directory-administrative-center-executables-dlls"></a>Centro de administración de Active Directory ejecutables, archivos dll  
 
@@ -43,16 +43,16 @@ A continuación se ilustran la capa de operaciones y de Windows PowerShell subya
   
 ![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)  
   
-## <a name="enabling-and-managing-the-active-directory-recycle-bin-using-active-directory-administrative-center"></a><a name="BKMK_EnableRecycleBin"></a>Habilitar y administrar la papelera de reciclaje de Active Directory mediante Centro de administración de Active Directory  
+## <a name="enabling-and-managing-the-active-directory-recycle-bin-using-active-directory-administrative-center"></a><a name="BKMK_EnableRecycleBin"></a>Habilitar y administrar la papelera de reciclaje de Active Directory mediante el Centro de administración de Active Directory  
   
-### <a name="capabilities"></a>Capacidades  
+### <a name="capabilities"></a>Funcionalidades  
   
 - El Centro de administración de Active Directory de Windows Server 2012 o posterior le permite configurar y administrar la papelera de reciclaje de Active Directory para cualquier partición de dominio de un bosque. Ya no es necesario usar Windows PowerShell o Ldp.exe para habilitar la papelera de reciclaje de Active Directory o restaurar objetos en particiones de dominio.
 - El Centro de administración de Active Directory tiene criterios de filtrado avanzados que facilitan la restauración específica en entornos grandes en los que muchos objetos se eliminan intencionadamente.
   
 ### <a name="limitations"></a>Limitaciones  
   
-- Debido a que el Centro de administración de Active Directory solo puede administrar particiones de dominio, no puede restaurar objetos eliminados de las particiones Configuración, DNS de dominio o DNS de bosque (no puedes eliminar objetos de la partición Esquema). Para restaurar objetos de particiones que no son de dominio, use [Restore-ADObject](https://technet.microsoft.com/library/ee617262.aspx).  
+- Debido a que el Centro de administración de Active Directory solo puede administrar particiones de dominio, no puede restaurar objetos eliminados de las particiones Configuración, DNS de dominio o DNS de bosque (no puedes eliminar objetos de la partición Esquema). Para restaurar objetos de particiones que no son de dominio, use [Restore-ADObject](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617262(v=technet.10)).  
 
 - El Centro de administración de Active Directory no puede restaurar subárboles de objetos en una sola acción. Por ejemplo, si eliminas una unidad organizativa (OU) con OU anidadas, usuarios, grupos y equipos, al restaurar la OU de base no se restauran los objetos secundarios.  
   
@@ -81,7 +81,7 @@ El Active Directory cmdlet de Windows PowerShell equivalente es:
 Enable-ADOptionalFeature  
 ```
 
-Para obtener más información sobre cómo usar Windows PowerShell para habilitar la papelera de reciclaje de Active Directory, consulte la [Guía paso a paso de la papelera de reciclaje de Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step).  
+Para obtener más información sobre cómo usar Windows PowerShell para habilitar la papelera de reciclaje de Active Directory, consulte la [Guía paso a paso de la papelera de reciclaje de Active Directory](./introduction-to-active-directory-administrative-center-enhancements--level-100-.md#active-directory-recycle-bin-step-by-step).  
   
 ### <a name="managing-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Administrar la papelera de reciclaje de Active Directory mediante el Centro de administración de Active Directory
 
@@ -97,7 +97,7 @@ La papelera de reciclaje de Active Directory conserva todos los objetos eliminad
   
 El contenedor **Objetos eliminados** muestra todos los objetos restaurables en la partición de dominio. Los objetos eliminados anteriores a **msDS-deletedObjectLifetime** se conocen como objetos reciclados. El Centro de administración de Active Directory no muestra los objetos reciclados y estos objetos no se pueden restaurar usando el Centro de administración de Active Directory.  
   
-Para obtener una explicación detallada de la arquitectura y las reglas de procesamiento de la papelera de reciclaje, consulte [La papelera de reciclaje de AD: Descripción, implementación, procedimientos recomendados y solución de problemas](https://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx).  
+Para obtener una explicación detallada de la arquitectura y las reglas de procesamiento de la papelera de reciclaje, consulte [La papelera de reciclaje de AD: Descripción, implementación, procedimientos recomendados y solución de problemas](/archive/blogs/askds/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting).  
   
 El Centro de administración de Active Directory limita artificialmente a 20.000 el número predeterminado de objetos que se devuelven de un contenedor. Puedes aumentar este límite hasta 100.000 objetos haciendo clic en el menú **Administrar** y, después, **Opciones de la lista de administración**.  
   
@@ -105,7 +105,7 @@ El Centro de administración de Active Directory limita artificialmente a 20.000
   
 #### <a name="restoration"></a>Restauración  
   
-##### <a name="filtering"></a>Filtrado
+##### <a name="filtering"></a>Filtros
 
 El Centro de administración de Active Directory ofrece unos criterios y unas opciones de filtrado eficaces con las que debes familiarizarte antes de que necesites usarlas en una restauración real. Los dominios eliminan intencionadamente muchos objetos a lo largo de su vida. La vigencia probable de un objeto eliminado es de 180 días, por lo que no puedes simplemente restaurar todos los objetos en caso de accidente.  
   
@@ -118,18 +118,18 @@ La operación de restauración admite todas las opciones de criterios de filtrad
 - *ANR (resolución de nombres ambiguos; no aparece en el menú, pero lo que se usa al escribir en el cuadro * * * * filtro * * *)*  
 - Última modificación entre las fechas indicadas  
 - El tipo de objeto es usuario, inetOrgPerson, equipo, grupo o unidad organizativa  
-- Name  
+- Nombre  
 - Al eliminar  
 - Principal último conocido  
 - Tipo  
 - Descripción  
-- Ciudad  
+- City  
 - País o región  
-- Departmento  
-- Identificador de empleado  
+- department  
+- Id. de empleado  
 - Nombre  
 - Puesto  
-- Último nombre  
+- Apellidos  
 - SAMaccountname  
 - Estado o provincia  
 - Número de teléfono  
@@ -142,7 +142,7 @@ También puedes agregar, modificar o reordenar los encabezados de columna para p
   
 ![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ColumnHeaders.png)  
   
-Para obtener más información sobre la resolución de nombres ambiguos, consulte [Atributos de ANR](https://msdn.microsoft.com/library/ms675092(VS.85).aspx).  
+Para obtener más información sobre la resolución de nombres ambiguos, consulte [Atributos de ANR](/windows/win32/adschema/attributes-anr).  
   
 ##### <a name="single-object"></a>Objeto único
 
@@ -183,7 +183,7 @@ El atributo **Principal último conocido** muestra la relación primaria de cada
   
 Piensa en un escenario en el que un administrador elimina accidentalmente la OU Sales, que contiene OU secundarias y usuarios.  
   
-En primer lugar, observe el valor del atributo **principal último conocido** de todos los usuarios eliminados y cómo Lee **ou = Sales\0ADEL:* < GUID + nombre distintivo del contenedor de objetos eliminados > * * *:  
+En primer lugar, observe el valor del atributo **principal último conocido** de todos los usuarios eliminados y cómo Lee **ou = Sales\0ADEL:*<GUID + nombre distintivo del contenedor de objetos eliminados> * * *:  
   
 ![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParent.gif)  
   
@@ -201,7 +201,7 @@ Filtra todos los usuarios de Sales. Presiona las teclas CTRL y A para selecciona
   
 Si la OU **Sales** contenía a su vez OU secundarias, restaurarías primero las OU secundarias antes de restaurar sus secundarias, y así sucesivamente.  
   
-Para restaurar todos los objetos eliminados anidados especificando un contenedor principal eliminado, consulte el [Apéndice B: Restaurar varios objetos eliminados de Active Directory (script de ejemplo)](https://technet.microsoft.com/library/dd379504(WS.10).aspx).  
+Para restaurar todos los objetos eliminados anidados especificando un contenedor principal eliminado, consulte el [Apéndice B: Restaurar varios objetos eliminados de Active Directory (script de ejemplo)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379504(v=ws.10)).  
   
 El cmdlet de Active Directory Windows PowerShell para restaurar objetos eliminados es:  
 
@@ -219,13 +219,13 @@ Es posible que, con el tiempo, el contenedor de objetos eliminados acumule más 
 2. Haz clic en el botón de contenido adicional para exponer el menú **+Agregar criterios** y selecciona y agrega **Última modificación entre las fechas indicadas**. La hora de Última modificación (el atributo **whenChanged**) es una aproximación cercana a la hora de eliminación; en la mayoría de los entornos, es idéntica. Esta consulta realiza una búsqueda en el lado del servidor.  
 3. Busca los objetos eliminados que quieres restaurar usando más filtrado y ordenación, entre otros, en los resultados mostrados, y restáuralos normalmente.  
   
-## <a name="configuring-and-managing-fine-grained-password-policies-using-active-directory-administrative-center"></a><a name="BKMK_FGPP"></a>Configuración y administración de directivas de contraseña específica mediante Centro de administración de Active Directory  
+## <a name="configuring-and-managing-fine-grained-password-policies-using-active-directory-administrative-center"></a><a name="BKMK_FGPP"></a>Configurar y administrar directivas de contraseña específica mediante el Centro de administración de Active Directory  
   
 ### <a name="configuring-fine-grained-password-policies"></a>Configurar directivas de contraseña específica
 
 El Centro de administración de Active Directory permite crear y administrar objetos de directiva de contraseña específica (FGPP). Windows Server 2008 incorporó la característica FGPP pero Windows Server 2012 tiene la primera interfaz gráfica de administración para ella. Las directivas de contraseña específica se aplican en el nivel del dominio y permiten invalidar la contraseña de dominio única que Windows Server 2003 necesita. Creando diferentes FGPP con diferentes configuraciones, cada usuario o grupo obtiene diferentes directivas de contraseña en un dominio.  
   
-Para obtener más información sobre la directiva de contraseña específica, consulte la [Guía paso a paso para la configuración de directivas de bloqueo de cuenta y contraseña específica de AD DS (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx).  
+Para obtener más información sobre la directiva de contraseña específica, consulte la [Guía paso a paso para la configuración de directivas de bloqueo de cuenta y contraseña específica de AD DS (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770842(v=ws.10)).  
   
 En el panel de navegación, haz clic en la Vista de árbol, en tu dominio, en **Sistema**, en **Contenedor de configuraciones de contraseña** y, en el panel tareas, haz clic en **Nuevo** y **Configuración de contraseña**.  
   
@@ -269,7 +269,7 @@ Al examinar las **Propiedades** de un usuario o grupo, se muestra la **Configura
   
 La asignación implícita de FGPP no se muestra aquí; para ello, debe usar la opción **Ver configuración de contraseña resultante...**  
   
-## <a name="using-the-active-directory-administrative-center-windows-powershell-history-viewer"></a><a name="BKMK_HistoryViewer"></a>Usar el visor del historial de Windows PowerShell Centro de administración de Active Directory
+## <a name="using-the-active-directory-administrative-center-windows-powershell-history-viewer"></a><a name="BKMK_HistoryViewer"></a>Usar el Visor del historial de Windows PowerShell del Centro de administración de Active Directory
 
 El futuro de la administración de Windows es Windows PowerShell. Las herramientas gráficas se distribuyen por capas en un entorno de automatización de tareas, lo que permite administrar los sistemas distribuidos más complejos de forma coherente y eficaz. Tienes que comprender cómo funciona Windows PowerShell para aprovechar todas sus posibilidades y maximizar la inversión en informática.  
   
@@ -315,7 +315,7 @@ set-aduser
 
 El diseño del Centro de administración de Active Directory requirió una modularidad y un uso de código mínimos. Por lo tanto, en lugar de un conjunto de funciones que crean nuevos usuarios y otras que modifican los usuarios existentes, realiza cada función mínimamente y, después, las encadena con los cmdlets. Ten esto en cuenta cuando estudies Active Directory Windows PowerShell. También puedes usarlo como técnica de aprendizaje, para ver lo simple que resulta usar Windows PowerShell para completar una sola tarea.  
   
-## <a name="troubleshooting-ad-ds-management"></a><a name="BKMK_Tshoot"></a>Solución de problemas de administración de AD DS  
+## <a name="troubleshooting-ad-ds-management"></a><a name="BKMK_Tshoot"></a>Solucionar problemas de administración de AD DS  
   
 ### <a name="introduction-to-troubleshooting"></a>Introducción a la solución de problemas
 
@@ -327,7 +327,7 @@ Debido a que es muy reciente y que no se ha usado en entornos de clientes existe
 
 El Centro de administración de Active Directory contiene ahora el registro integrado, como parte de un archivo de configuración de seguimiento. Crea o modifica el siguiente archivo en la misma carpeta que dsac.exe:  
   
-**DSAC. exe. config**
+**dsac.exe.config**
   
 Crea el contenido siguiente:  
   
@@ -449,7 +449,7 @@ Los errores que se muestran cuando no hay disponibles instancias de Servicios we
 |Error|Operación|
 | --- | --- |  
 |"No se pudo conectar a ningún dominio. Actualice o vuelva a intentarlo cuando la conexión esté disponible"|Se muestra al iniciar la aplicación Centro de administración de Active Directory.|
-|"No se puede encontrar un servidor disponible en el dominio de *<NetBIOS domain name>* que ejecuta el servicio Web Active Directory (ADWs)"|Se muestra al intentar seleccionar un nodo del dominio en la aplicación Centro de administración de Active Directory.|
+|"No se puede encontrar un servidor disponible en el *<NetBIOS domain name>* dominio que ejecuta el servicio Web de Active Directory (ADWs)"|Se muestra al intentar seleccionar un nodo del dominio en la aplicación Centro de administración de Active Directory.|
   
 Para solucionar este problema, sigue estos pasos:  
   
@@ -483,6 +483,6 @@ Para solucionar este problema, sigue estos pasos:
   
 4. Instala NetMon u otra utilidad de captura de red en el equipo donde se ejecuta el Centro de administración de Active Directory y en el controlador de dominio que NLTEST devuelve. Recopila capturas de red simultáneas en ambos equipos mientras inicias el Centro de administración de Active Directory y mira el error antes de detener las capturas. Comprueba si el cliente puede enviar y recibir desde el controlador de dominio en el puerto TCP 9389. Si los paquetes se envían pero no llegan, o llegan y el controlador de dominio responde pero no llegan nunca al cliente, es problema que haya un firewall entre los equipos en la red que pierda los paquetes de ese puerto. Este firewall puede ser de software o hardware, y quizás forme parte de un software de protección de extremos (antivirus) de terceros.  
   
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Consulte también
 
 [Papelera de reciclaje de AD, directivas de contraseña muy específicas e historial de PowerShell](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

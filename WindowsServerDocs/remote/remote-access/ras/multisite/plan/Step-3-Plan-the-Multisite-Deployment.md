@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 97705e3d6f5a4300c32ec98cc59e849862381607
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1d59e97453e4ecc4cd63a85368c6ea9566677029
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858328"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963727"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>Paso 3 planeación de la implementación multisitio
 
@@ -75,9 +75,9 @@ A la hora de obtener el certificado de sitio web que se va a usar para el servid
 3.  En el campo puntos de distribución CRL, use un punto de distribución CRL al que puedan tener acceso los clientes de DirectAccess que estén conectados a la intranet.  
   
 ### <a name="322dns-for-the-network-location-server"></a>3.2.2 DNS para el servidor de ubicación de red  
-Si hospeda el servidor de ubicación de red en el servidor de acceso remoto, debe agregar una entrada DNS para el sitio web del servidor de ubicación de red para cada punto de entrada de la implementación. Observe lo siguiente:  
+Si hospeda el servidor de ubicación de red en el servidor de acceso remoto, debe agregar una entrada DNS para el sitio web del servidor de ubicación de red para cada punto de entrada de la implementación. Tenga en cuenta lo siguiente:  
   
--   El nombre de sujeto del primer certificado de servidor de ubicación de red en la implementación multisitio se utiliza como dirección URL del servidor de ubicación de red para todos los puntos de entrada, por lo tanto, el nombre de sujeto y la dirección URL del servidor de ubicación de red no pueden ser iguales que el nombre de equipo del primer servidor de acceso remoto en la implementación. Debe ser un FQDN dedicado para el servidor de ubicación de red.  
+-   El nombre de sujeto del primer certificado de servidor de ubicación de red en la implementación multisitio se usa como dirección URL del servidor de ubicación de red para todos los puntos de entrada, por lo tanto, el nombre de sujeto y la dirección URL del servidor de ubicación de red no pueden ser iguales que el nombre de equipo del primer servidor de acceso remoto en la implementación. Debe ser un FQDN dedicado para el servidor de ubicación de red.  
   
 -   El servicio proporcionado por el tráfico del servidor de ubicación de red se equilibra entre los puntos de entrada mediante DNS y, por lo tanto, debe haber una entrada DNS con la misma dirección URL para cada punto de entrada, configurada con la dirección IP interna del punto de entrada.  
   
@@ -88,7 +88,7 @@ Si hospeda el servidor de ubicación de red en el servidor de acceso remoto, deb
 ## <a name="33-plan-the-ipsec-root-certificate-for-all-remote-access-servers"></a><a name="bkmk_3_3_IPsec"></a>3,3 planear el certificado raíz de IPsec para todos los servidores de acceso remoto  
 Tenga en cuenta lo siguiente al planear la autenticación del cliente de IPsec en una implementación multisitio:  
   
-1.  Si optó por usar el proxy Kerberos integrado para la autenticación de equipos al configurar el único servidor de acceso remoto, debe cambiar la configuración para usar certificados de equipo emitidos por una CA interna, ya que el proxy Kerberos no es compatible con un multisitio planta.  
+1.  Si optó por usar el proxy Kerberos integrado para la autenticación de equipos al configurar el único servidor de acceso remoto, debe cambiar la configuración para usar certificados de equipo emitidos por una CA interna, ya que el proxy Kerberos no es compatible con una implementación multisitio.  
   
 2.  Si ha usado un certificado autofirmado, debe volver a configurar la implementación de un solo servidor para que use un certificado emitido por una CA interna.  
   
@@ -103,12 +103,12 @@ En una implementación multisitio, también puede configurar un equilibrador de 
   
 2.  El equipo cliente de Windows 10 o Windows 8 intenta resolver el FQDN del equilibrador de carga del servidor global en el DNS público en una dirección IP. Si la dirección IP resuelta aparece como la dirección IP del equilibrador de carga del servidor global de un punto de entrada, el equipo cliente selecciona automáticamente ese punto de entrada y se conecta a su dirección URL de IP-HTTPS (dirección ConnectTo) o a la dirección IP del servidor Teredo. Tenga en cuenta que la dirección IP del equilibrador de carga del servidor global no tiene que ser idéntica a la dirección ConnectTo o a la dirección del servidor Teredo del punto de entrada, ya que los equipos cliente nunca intentan conectarse a la dirección IP del equilibrador de carga del servidor global.  
   
-3.  Si el equipo cliente está detrás de un proxy web (y no puede usar la resolución DNS) o si el FQDN del equilibrador de carga del servidor global no se resuelve en ninguna dirección IP del equilibrador de carga del servidor global configurada, se seleccionará automáticamente un punto de entrada con un sondeo HTTPS para Direcciones URL IP-HTTPS de todos los puntos de entrada. El cliente se conectará al servidor que responda primero.  
+3.  Si el equipo cliente está detrás de un proxy web (y no puede usar la resolución DNS), o si el FQDN del equilibrador de carga del servidor global no se resuelve en ninguna dirección IP del equilibrador de carga del servidor global configurada, se seleccionará automáticamente un punto de entrada con un sondeo HTTPS para las direcciones URL de IP-HTTPS de todos los puntos de entrada. El cliente se conectará al servidor que responda primero.  
   
 Para obtener una lista de los dispositivos globales de equilibrio de carga del servidor que admiten el acceso remoto, vaya a la página buscar un partner en [Microsoft Server y en la plataforma en la nube](https://www.microsoft.com/server-cloud/).  
   
 ## <a name="35-plan-directaccess-client-entry-point-selection"></a><a name="bkmk_3_5_EP_Selection"></a>3,5 planear la selección del punto de entrada de cliente de DirectAccess  
-Al configurar una implementación multisitio, de forma predeterminada, los equipos cliente de Windows 10 y Windows 8 se configuran con la información necesaria para conectarse a todos los puntos de entrada de la implementación y para conectarse automáticamente a un único punto de entrada en función de una selección. algoritmo. También puede configurar la implementación para permitir que los equipos cliente de Windows 10 y Windows 8 seleccionen manualmente el punto de entrada al que se conectarán. Si un equipo cliente de Windows 10 o Windows 8 está conectado actualmente al punto de entrada de Estados Unidos y la selección de punto de entrada automático está habilitada, si el punto de entrada de Estados Unidos deja de estar disponible, después de unos minutos el equipo cliente intentará conectarse. a través del punto de entrada de Europa. Se recomienda usar la selección automática de puntos de entrada; sin embargo, permitir la selección manual de puntos de entrada permite que los usuarios finales se conecten a un punto de entrada diferente en función de las condiciones de la red actual. Por ejemplo, si un equipo está conectado al punto de entrada de Estados Unidos y la conexión a la red interna se vuelve mucho más lenta de lo esperado. En esta situación, el usuario final puede seleccionar manualmente para conectarse al punto de entrada de Europa para mejorar la conexión a la red interna.  
+Al configurar una implementación multisitio, de forma predeterminada, los equipos cliente de Windows 10 y Windows 8 se configuran con la información necesaria para conectarse a todos los puntos de entrada de la implementación y para conectarse automáticamente a un único punto de entrada basado en un algoritmo de selección. También puede configurar la implementación para permitir que los equipos cliente de Windows 10 y Windows 8 seleccionen manualmente el punto de entrada al que se conectarán. Si un equipo cliente de Windows 10 o Windows 8 está conectado actualmente al punto de entrada de Estados Unidos y la selección de punto de entrada automático está habilitada, si el punto de entrada de Estados Unidos deja de estar disponible, después de unos minutos el equipo cliente intentará conectarse a través del punto de entrada de Europa. Se recomienda usar la selección automática de puntos de entrada; sin embargo, permitir la selección manual de puntos de entrada permite que los usuarios finales se conecten a un punto de entrada diferente en función de las condiciones de la red actual. Por ejemplo, si un equipo está conectado al punto de entrada de Estados Unidos y la conexión a la red interna se vuelve mucho más lenta de lo esperado. En esta situación, el usuario final puede seleccionar manualmente para conectarse al punto de entrada de Europa para mejorar la conexión a la red interna.  
   
 > [!NOTE]  
 > Después de que un usuario final Seleccione un punto de entrada manualmente, el equipo cliente no volverá a la selección automática de puntos de entrada. Es decir, si el punto de entrada seleccionado manualmente deja de estar disponible, el usuario final debe revertir a la selección de punto de entrada automático o seleccionar manualmente otro punto de entrada.  
@@ -158,11 +158,11 @@ En una implementación multisitio, el enrutamiento simétrico se aplica mediante
   
    3. Prefijo Teredo (opcional). Este prefijo solo es relevante si el servidor de acceso remoto está configurado con dos direcciones IPv4 públicas consecutivas en el adaptador externo. El prefijo se basa en la primera dirección IPv4 pública del par de direcciones. Por ejemplo, si las direcciones externas son:  
   
-      1. www\.xxx. yyy. zzz  
+      1. www \. xxx. yyy. zzz  
   
-      2. www\.xxx. yyy. zzz + 1  
+      2. www \. xxx. yyy. zzz + 1  
   
-      Después, el prefijo Teredo para configurar es 2001:0: WWXX: YYZZ::/64, donde WWXX: YYZZ es la representación hexadecimal de la dirección IPv4 www\.xxx. yyy. zzz.  
+      Después, el prefijo Teredo para configurar es 2001:0: WWXX: YYZZ::/64, donde WWXX: YYZZ es la representación hexadecimal de la dirección IPv4 www \. xxx. yyy. zzz.  
   
       Tenga en cuenta que puede usar el siguiente script para calcular el prefijo Teredo:  
   
@@ -181,12 +181,12 @@ En una implementación multisitio, el enrutamiento simétrico se aplica mediante
    4. Todas las rutas anteriores deben enrutarse a la dirección IPv6 en el adaptador interno del servidor de acceso remoto (o a la dirección IP virtual interna (VIP) para un punto de entrada con equilibrio de carga).  
   
 > [!NOTE]  
-> Cuando se implementa IPv6 en la red corporativa y la administración del servidor de acceso remoto se realiza de forma remota a través de DirectAccess, se deben agregar rutas para los prefijos de Teredo e IP-HTTPS de todos los demás puntos de entrada a cada servidor de acceso remoto para que el tráfico se se reenvía a la red interna.  
+> Cuando se implementa IPv6 en la red corporativa y la administración del servidor de acceso remoto se realiza de forma remota a través de DirectAccess, se deben agregar rutas para los prefijos de Teredo e IP-HTTPS de todos los demás puntos de entrada a cada servidor de acceso remoto para que el tráfico se reenvíe a la red interna.  
   
 ### <a name="active-directory-site-specific-ipv6-prefixes"></a>Active Directory prefijos IPv6 específicos del sitio  
 Cuando un equipo cliente que ejecuta Windows 10 o Windows 8 está conectado a un punto de entrada, el equipo cliente se asocia inmediatamente al sitio de Active Directory del punto de entrada y se configura con prefijos IPv6 asociados al punto de entrada. La preferencia es que los equipos cliente se conecten a los recursos mediante estos prefijos IPv6, ya que se configuran dinámicamente en la tabla de directivas de prefijo IPv6 con mayor precedencia al conectarse a un punto de entrada.  
   
-Si su organización usa una topología de Active Directory con prefijos IPv6 específicos del sitio (por ejemplo, un FQDN de recurso interno app.corp.com se hospeda en Norteamérica y en Europa con una dirección IP específica del sitio en cada ubicación), no lo configura. de forma predeterminada, el uso de la consola de acceso remoto y los prefijos IPv6 específicos del sitio no se configuran para cada punto de entrada. Si desea habilitar este escenario opcional, debe configurar cada punto de entrada con los prefijos IPv6 específicos que deberían ser preferidos por los equipos cliente que se conectan a un punto de entrada específico. Haga esto de la siguiente manera:  
+Si su organización usa una topología de Active Directory con prefijos IPv6 específicos del sitio (por ejemplo, un nombre de dominio completo (FQDN) app.corp.com se hospeda en Norteamérica y Europa con una dirección IP específica del sitio en cada ubicación), no se configura de forma predeterminada mediante la consola de acceso remoto y los prefijos IPv6 específicos del sitio no se configuran para cada punto de entrada. Si desea habilitar este escenario opcional, debe configurar cada punto de entrada con los prefijos IPv6 específicos que deberían ser preferidos por los equipos cliente que se conectan a un punto de entrada específico. Para ello, realice lo siguiente:  
   
 1.  Para cada GPO usado para equipos cliente de Windows 10 o Windows 8, ejecute el cmdlet de PowerShell Set-DAEntryPointTableItem.  
   
@@ -243,7 +243,7 @@ La transición de solo IPv4 a una red corporativa de solo IPv6 no se puede reali
     > [!NOTE]  
     > Al instalar una implementación de DirectAccess adicional junto con una actual, asegúrese de que no haya dos puntos de entrada que compartan el mismo prefijo de cliente.  
     >   
-    > Si instala DirectAccess mediante el Asistente para Introducción o con el cmdlet `Install-RemoteAccess`, el acceso remoto establece automáticamente el prefijo de cliente del primer punto de entrada de la implementación en un valor predeterminado de < subred IPv6\_prefijo >: 1000::/64. Si es necesario, debe cambiar el prefijo.  
+    > Si instala DirectAccess mediante el Asistente para Introducción o con el cmdlet `Install-RemoteAccess` , el acceso remoto establece automáticamente el prefijo de cliente del primer punto de entrada de la implementación en un valor predeterminado de <prefijo de subred IPv6 \_>:1000::/64. Si es necesario, debe cambiar el prefijo.  
   
 2.  Quite los grupos de seguridad de cliente elegidos de la primera implementación.  
   
@@ -256,7 +256,7 @@ La transición de solo IPv4 a una red corporativa de solo IPv6 no se puede reali
   
 Cuando haya completado la transición, puede desinstalar la primera implementación de DirectAccess. Al desinstalar, pueden producirse los siguientes problemas:  
   
--   Si la implementación se configuró para admitir solo clientes en equipos móviles, se eliminará el filtro WMI. Si los grupos de seguridad de cliente de la segunda implementación incluyen equipos de escritorio, el GPO de cliente de DirectAccess no filtrará los equipos de escritorio y puede causar problemas. Si se necesita un filtro de equipos móviles, vuelva a crearlo siguiendo las instrucciones de [creación de filtros WMI para el GPO](https://technet.microsoft.com/library/cc947846.aspx).  
+-   Si la implementación se configuró para admitir solo clientes en equipos móviles, se eliminará el filtro WMI. Si los grupos de seguridad de cliente de la segunda implementación incluyen equipos de escritorio, el GPO de cliente de DirectAccess no filtrará los equipos de escritorio y puede causar problemas. Si se necesita un filtro de equipos móviles, vuelva a crearlo siguiendo las instrucciones de [creación de filtros WMI para el GPO](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc947846(v=ws.10)).  
   
 -   Si ambas implementaciones se crearon originalmente en el mismo dominio de Active Directory, la entrada de sondeo de DNS que señala al localhost se eliminará y puede causar problemas de conectividad de cliente. Por ejemplo, los clientes pueden conectarse mediante IP-HTTPS en lugar de Teredo o cambiar entre puntos de entrada multisitio de DirectAccess. En este caso, debe agregar la siguiente entrada DNS al DNS corporativo:  
   
@@ -270,5 +270,3 @@ Cuando haya completado la transición, puede desinstalar la primera implementaci
   
   
   
-
-

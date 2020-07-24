@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 06/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e34f74226edb56e8db0290fd5dc83f0c6e54221
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 108e5a65b78370c40ba02da677e953eb2b122288
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833328"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964587"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
@@ -33,7 +33,7 @@ Los sistemas, los componentes, los dispositivos y los controladores deben tener 
 
 ![captura de pantalla del catálogo de Windows Server que muestra la AQs de SDDC](media/hardware-requirements/sddc-aqs.png)
 
-El clúster totalmente configurado (servidores, redes y almacenamiento) debe pasar todas las [pruebas de validación del clúster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) por el asistente en Administrador de clústeres de conmutación por error o con el `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) de PowerShell.
+El clúster totalmente configurado (servidores, redes y almacenamiento) debe pasar todas las [pruebas de validación del clúster](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10)) por el asistente en Administrador de clústeres de conmutación por error o con el `Test-Cluster` [cmdlet](/powershell/module/failoverclusters/test-cluster?view=win10-ps) de PowerShell.
 
 Además, se aplican los siguientes requisitos:
 
@@ -47,7 +47,7 @@ Además, se aplican los siguientes requisitos:
 - Procesador compatible con Intel Nehalem o posterior; de
 - Procesador compatible con AMD EPYC o posterior
 
-## <a name="memory"></a>Memoria
+## <a name="memory"></a>Memory
 
 - Memoria para Windows Server, máquinas virtuales y otras aplicaciones o cargas de trabajo; signos
 - 4 GB de RAM por terabyte (TB) de capacidad de la unidad de caché en cada servidor, para metadatos de Espacios de almacenamiento directo
@@ -82,14 +82,14 @@ Espacios de almacenamiento directo funciona con unidades SATA, SAS, NVMe o memor
 
 - Se admiten todas las unidades SATA, SAS, de memoria persistente y de NVMe (M. 2, U. 2 y de agregación).
 - se admiten todas las unidades nativas de 512n, 512e y 4K
-- Las unidades de estado sólido deben proporcionar [protección contra la pérdida de energía](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
+- Las unidades de estado sólido deben proporcionar [protección contra la pérdida de energía](https://techcommunity.microsoft.com/t5/storage-at-microsoft/don-t-do-it-consumer-grade-solid-state-drives-ssd-in-storage/ba-p/425914)
 - El mismo número y tipos de unidades en cada servidor: consulte [consideraciones sobre la simetría de unidades](drive-symmetry-considerations.md)
 - Los dispositivos de caché deben tener 32 GB o más.
 - Los dispositivos de memoria persistentes se usan en el modo de almacenamiento en bloque
 - Al usar dispositivos de memoria persistentes como dispositivos de caché, debe usar dispositivos de capacidad de NVMe o SSD (no puede usar HDD).
 - El controlador de NVMe es el proporcionado por Microsoft que se incluye en Windows (stornvme.sys)
 - Recomendado: el número de unidades de capacidad es un múltiplo entero del número de unidades de caché
-- Recomendado: las unidades de caché deben tener una gran resistencia de escritura: al menos 3 unidades-escrituras por día (DWPD) o al menos 4 terabytes escritas (TBW) al día; vea [Descripción de las escrituras de unidad al día (DWPD), terabytes escritos (TBW) y el mínimo recomendado para espacios de almacenamiento directo](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
+- Recomendado: las unidades de caché deben tener una gran resistencia de escritura: al menos 3 unidades-escrituras por día (DWPD) o al menos 4 terabytes escritas (TBW) al día; vea [Descripción de las escrituras de unidad al día (DWPD), terabytes escritos (TBW) y el mínimo recomendado para espacios de almacenamiento directo](https://techcommunity.microsoft.com/t5/storage-at-microsoft/understanding-ssd-endurance-drive-writes-per-day-dwpd-terabytes/ba-p/426024)
 
 A continuación se muestra cómo se pueden conectar las unidades de Espacios de almacenamiento directo:
 
@@ -130,7 +130,7 @@ Las unidades pueden ser internas en el servidor o en un contenedor externo que e
 
 ### <a name="maximum-capacity"></a>Capacidad máxima
 
-| Valores máximos                | Windows Server 2019  | Windows Server 2016  |
+| Valores máximos                | Windows Server 2019  | Windows Server 2016  |
 | ---                     | ---------            | ---------            |
 | Capacidad sin procesar por servidor | 400 TB               | 100 TB               |
 | Capacidad de grupo           | 4 PB (4.000 TB)      | 1 PB                 |

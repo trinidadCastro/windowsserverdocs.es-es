@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6af511ac1aff488f192f75b31801c6fed751cedd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9b85e6e10f8df3ec4d2c70e9aff687f264e055a8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859428"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962827"
 ---
-# <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Directivas de control de acceso en AD FS para Windows Server 2016
+# <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Directivas de Access Control en Windows Server 2016 AD FS
 
   
 ## <a name="access-control-policy-templates-in-ad-fs"></a>Access Control plantillas de directiva en AD FS  
@@ -39,7 +39,7 @@ Para proporcionar una mayor flexibilidad para satisfacer sus necesidades empresa
   
 Para crear una plantilla de Directiva, un administrador debe especificar primero en qué condiciones se autorizará una solicitud para la emisión y/o delegación de tokens. Las opciones de condición y acción se muestran en la tabla siguiente.   El administrador puede seguir configurando las condiciones en negrita con valores diferentes o nuevos. El administrador también puede especificar excepciones si hay alguna. Cuando se cumple una condición, una acción de permiso no se desencadenará si se especifica una excepción y la solicitud entrante coincide con la condición especificada en la excepción.  
   
-|Permitir a los usuarios|CEPT| 
+|Permitir a los usuarios|Except| 
 | --- | --- | 
  |Desde una red **específica**|Desde una red **específica**<p>De grupos **específicos**<p>Desde dispositivos con niveles de confianza **específicos**<p>Con notificaciones **específicas** en la solicitud|  
 |De grupos **específicos**|Desde una red **específica**<p>De grupos **específicos**<p>Desde dispositivos con niveles de confianza **específicos**<p>Con notificaciones **específicas** en la solicitud|  
@@ -49,12 +49,12 @@ Para crear una plantilla de Directiva, un administrador debe especificar primero
   
 Si un administrador selecciona varias condiciones, son de la relación **and** . Las acciones se excluyen mutuamente y, para una regla de Directiva, solo puede elegir una acción. Si el administrador selecciona varias excepciones, son de una relación de **o** . A continuación se muestran un par de ejemplos de reglas de directivas:  
   
-|**Directiva**|**Reglas de Directiva**|
+|**Directiva**|**Reglas de directiva**|
 | --- | --- |  
 |El acceso a Extranet requiere MFA<p>Se permiten todos los usuarios|**#1 de reglas**<p>desde **extranet**<p>y con MFA<p>Permitir<p>**Regla n.º 2**<p>desde la **intranet**<p>Permitir|  
-|No se permite el acceso externo excepto FTE<p>Se permite el acceso a la intranet para FTE en dispositivos Unidos al área de trabajo|**#1 de reglas**<p>desde **extranet**<p>y de grupo **no FTE**<p>Permitir<p>**#2 de reglas**<p>desde la **intranet**<p>y desde un dispositivo **unido al área de trabajo**<p>y desde el grupo **FTE**<p>Permitir|  
-|El acceso a Extranet requiere MFA excepto "administración de servicios"<p>A todos los usuarios se les permite el acceso|**#1 de reglas**<p>desde **extranet**<p>y con MFA<p>Permitir<p>Excepto **grupo de administradores de servicios**<p>**#2 de reglas**<p>deben<p>Permitir|  
-|el acceso a un dispositivo no laborable Unido desde extranet requiere MFA<p>Permitir el acceso de AD fabric para la intranet y la extranet|**#1 de reglas**<p>desde la **intranet**<p>y desde el grupo de **fabric de ad**<p>Permitir<p>**#2 de reglas**<p>desde **extranet**<p>y desde dispositivos **no Unidos al área de trabajo**<p>y desde el grupo de **fabric de ad**<p>y con MFA<p>Permitir<p>**#3 de reglas**<p>desde **extranet**<p>y desde un dispositivo **unido al área de trabajo**<p>y desde el grupo de **fabric de ad**<p>Permitir|  
+|No se permite el acceso externo excepto FTE<p>Se permite el acceso a la intranet para FTE en dispositivos Unidos al área de trabajo|**#1 de reglas**<p>Desde **extranet**<p>y de grupo **no FTE**<p>Permitir<p>**#2 de reglas**<p>desde la **intranet**<p>y desde un dispositivo **unido al área de trabajo**<p>y desde el grupo **FTE**<p>Permitir|  
+|El acceso a Extranet requiere MFA excepto "administración de servicios"<p>A todos los usuarios se les permite el acceso|**#1 de reglas**<p>desde **extranet**<p>y con MFA<p>Permitir<p>Excepto **grupo de administradores de servicios**<p>**#2 de reglas**<p>Siempre<p>Permitir|  
+|el acceso a un dispositivo no laborable Unido desde extranet requiere MFA<p>Permitir el acceso de AD fabric para la intranet y la extranet|**#1 de reglas**<p>desde la **intranet**<p>Y desde el grupo de **fabric de ad**<p>Permitir<p>**#2 de reglas**<p>desde **extranet**<p>y desde dispositivos **no Unidos al área de trabajo**<p>y desde el grupo de **fabric de ad**<p>y con MFA<p>Permitir<p>**#3 de reglas**<p>desde **extranet**<p>y desde un dispositivo **unido al área de trabajo**<p>y desde el grupo de **fabric de ad**<p>Permitir|  
   
 ## <a name="parameterized-policy-template-vs-non-parameterized-policy-template"></a>Plantilla de directiva con parámetros y plantilla de Directiva no parametrizada  
 Las directivas de control de acceso se pueden  
@@ -179,6 +179,5 @@ Aquí puede seleccionar la Directiva de control de acceso y aplicarla a la aplic
   
 ![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP15.PNG)  
   
-## <a name="see-also"></a>Consulta también  
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 
-
+## <a name="see-also"></a>Consulte también  
+[Operaciones de AD FS](../ad-fs-operations.md) 

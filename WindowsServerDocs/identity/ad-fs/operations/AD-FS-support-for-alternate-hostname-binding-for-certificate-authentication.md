@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e3764977e29413ea1e361fa78cadd040adabcf04
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fd459ac469d052b2c183520cbf434c1ac351c0c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858098"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962757"
 ---
 # <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>Compatibilidad de AD FS con el enlace de nombre de host alternativo para la autenticación de certificado
 
@@ -21,7 +21,7 @@ En muchas redes, es posible que las directivas de Firewall local no permitan el 
   
 Con AD FS en Windows Server 2016, esto puede realizarse.
   
-En AD FS en Windows Server 2016, esto ha cambiado. Ahora se admiten dos modos, el primero usa el mismo host (es decir, adfs.contoso.com) con distintos puertos (443, 49443). El segundo usa hosts diferentes (adfs.contoso.com y certauth.adfs.contoso.com) con el mismo puerto (443). Para ello, se necesitará un certificado SSL para admitir "certauth. < ADFS-Service-Name >" como nombre de sujeto alternativo. Esto puede hacerse en el momento de la creación de la granja o posteriormente a través de PowerShell.  
+En AD FS en Windows Server 2016, esto ha cambiado. Ahora se admiten dos modos, el primero usa el mismo host (es decir, adfs.contoso.com) con distintos puertos (443, 49443). El segundo usa hosts diferentes (adfs.contoso.com y certauth.adfs.contoso.com) con el mismo puerto (443). Para ello, se necesitará un certificado SSL para admitir "certauth. <ADFS-Service-Name>" como nombre de sujeto alternativo. Esto puede hacerse en el momento de la creación de la granja o posteriormente a través de PowerShell.  
   
 ## <a name="how-to-configure-alternate-host-name-binding-for-certificate-authentication"></a>Cómo configurar un enlace de nombre de host alternativo para la autenticación de certificados  
 Hay dos maneras de agregar el enlace de nombre de host alternativo para la autenticación de certificados. La primera es cuando se configura una nueva granja de AD FS con AD FS para Windows Server 2016, si el certificado contiene un nombre alternativo del firmante (SAN), se configurará automáticamente para usar el segundo método mencionado anteriormente. Es decir, configurará automáticamente dos hosts diferentes (sts.contoso.com y certauth.sts.contoso.com con el mismo puerto. Si el certificado no contiene una SAN, verá una advertencia que indica que los nombres alternativos del firmante del certificado no admiten certauth. *. Vea las capturas de pantallas siguientes. El primero muestra una instalación donde el certificado tenía una SAN y el segundo muestra un certificado que no lo hizo.  
@@ -42,4 +42,4 @@ Cuando se le solicite, haga clic en sí para confirmar.  Y eso debe ser.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-* [Administración de certificados SSL en AD FS y WAP en Windows Server 2016](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+* [Administración de certificados SSL en AD FS y WAP en Windows Server 2016](./manage-ssl-certificates-ad-fs-wap.md)

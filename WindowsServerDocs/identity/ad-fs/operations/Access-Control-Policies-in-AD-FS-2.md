@@ -7,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6ae1f34343e8574ce776fcc5761c078b12bc9977
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 110bc74d6b77c63fc6a9554049b5adb940f2641d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814828"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962677"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Directivas de Access Control de cliente en AD FS 2,0
 Las directivas de acceso de cliente en Servicios de federación de Active Directory (AD FS) 2,0 permiten restringir o conceder a los usuarios acceso a los recursos.  En este documento se describe cómo habilitar las directivas de acceso de cliente en AD FS 2,0 y cómo configurar los escenarios más comunes.
@@ -42,8 +42,8 @@ En la Active Directory confianza del proveedor de notificaciones, cree una nueva
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificaciones, seleccione pasar o filtrar una notificaciones entrantes de la lista y, a continuación, haga clic en siguiente.
 5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. en tipo de notificaciones entrantes, escriba la siguiente dirección URL de tipo de notificaciones y, después, seleccione pasar por todos los valores de notificaciones.</br>
         `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`</br>
-6. Para comprobar la regla, selecciónela en la lista, haga clic en Editar regla y, a continuación, haga clic en ver lenguaje de reglas. El lenguaje de reglas de notificaciones debe aparecer de la siguiente manera: `c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
-7. Haga clic en Finalizar.
+6. Para comprobar la regla, selecciónela en la lista, haga clic en Editar regla y, a continuación, haga clic en ver lenguaje de reglas. El lenguaje de reglas de notificaciones debe aparecer de la siguiente manera:`c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
+7. Haga clic en Finish.
 8. En el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar para guardar las reglas.
 9. Repita los pasos del 2 al 6 para crear una regla de notificaciones adicional para cada uno de los cuatro tipos de notificaciones restantes que se muestran a continuación hasta que se hayan creado las cinco reglas.
 
@@ -77,11 +77,11 @@ Este escenario de directiva de acceso de cliente permite el acceso desde todos l
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
-6. Haga clic en Finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
+6. Haga clic en Finish. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
 7. Para guardar la regla, en el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar.
 
 >[!NOTE]
@@ -100,7 +100,7 @@ En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
     Value=="Microsoft.Exchange.Autodiscover"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
@@ -108,7 +108,7 @@ En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. Haga clic en Finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
+6. Haga clic en Finish. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
 7. Para guardar la regla, en el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar.
 
 >[!NOTE]
@@ -129,12 +129,12 @@ El conjunto de reglas se basa en la regla de autorización de emisión predeterm
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. Haga clic en Finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
+6. Haga clic en Finish. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
 7. Para guardar la regla, en el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar.
 
 ### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Escenario 4: bloquear todo el acceso externo a Office 365 para los grupos de Active Directory designados
@@ -149,12 +149,12 @@ En el ejemplo siguiente se habilita el acceso desde clientes internos basados en
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "Group SID value of allowed AD group"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. Haga clic en Finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
+6. Haga clic en Finish. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
 7. Para guardar la regla, en el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar.
 
 
@@ -162,14 +162,14 @@ En el ejemplo siguiente se habilita el acceso desde clientes internos basados en
 
 |                                                                                                   Descripción                                                                                                   |                                                                     Sintaxis del lenguaje de reglas de notificaciones                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              La regla AD FS predeterminada para permitir el acceso a todos los usuarios. Esta regla debe existir ya en la lista de reglas de autorización de emisión de confianza del usuario de confianza de la plataforma de identidad Microsoft Office 365.              |                                  = > problema (Type = "<https://schemas.microsoft.com/authorization/claims/permit>", Value = "true");                                   |
+|              La regla AD FS predeterminada para permitir el acceso a todos los usuarios. Esta regla debe existir ya en la lista de reglas de autorización de emisión de confianza del usuario de confianza de la plataforma de identidad Microsoft Office 365.              |                                  => problema (Type = " <https://schemas.microsoft.com/authorization/claims/permit> ", Value = "true");                                   |
 |                               Al agregar esta cláusula a una nueva regla personalizada, se especifica que la solicitud proviene del servidor proxy de Federación (es decir, que tiene el encabezado x-MS-proxy)                                |                                                                                                                                                                    |
-|                                                                                 Se recomienda que todas las reglas lo incluyan.                                                                                  |                                    exists ([type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>"])                                    |
-|                                                         Se usa para establecer que la solicitud proviene de un cliente con una dirección IP en el intervalo aceptable definido.                                                         | NOT exists ([type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>", Value = ~ "Regex de dirección IP pública proporcionada por el cliente"]) |
-|                                    Esta cláusula se usa para especificar que si la aplicación a la que se tiene acceso no es Microsoft. Exchange. ActiveSync, se debe denegar la solicitud.                                     |       NOT exists ([type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>", Value = = "Microsoft. Exchange. ActiveSync"])        |
-|                                                      Esta regla permite determinar si la llamada se realizó a través de un explorador Web y no se denegará.                                                      |              NOT exists ([type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>", Value = = "/ADFS/LS/"])               |
-| Esta regla indica que se deben denegar los únicos usuarios de un grupo de Active Directory determinado (según el valor de SID). Agregar no a esta instrucción significa que se permite un grupo de usuarios, independientemente de la ubicación. |             exists ([type = = "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>", Value = ~ "{Grupo SID valor del grupo de AD permitido}"])              |
-|                                                                Esta es una cláusula necesaria para emitir una denegación cuando se cumplan todas las condiciones anteriores.                                                                 |                                   = > problema (Type = "<https://schemas.microsoft.com/authorization/claims/deny>", Value = "true");                                    |
+|                                                                                 Se recomienda que todas las reglas lo incluyan.                                                                                  |                                    exists ([type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy> "])                                    |
+|                                                         Se usa para establecer que la solicitud proviene de un cliente con una dirección IP en el intervalo aceptable definido.                                                         | NOT exists ([type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip> ", Value = ~ "Regex de dirección IP pública proporcionada por el cliente"]) |
+|                                    Esta cláusula se usa para especificar que si la aplicación a la que se tiene acceso no es Microsoft. Exchange. ActiveSync, se debe denegar la solicitud.                                     |       NOT exists ([type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application> ", Value = = "Microsoft. Exchange. ActiveSync"])        |
+|                                                      Esta regla permite determinar si la llamada se realizó a través de un explorador Web y no se denegará.                                                      |              NOT exists ([type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path> ", Value = = "/ADFS/LS/"])               |
+| Esta regla indica que se deben denegar los únicos usuarios de un grupo de Active Directory determinado (según el valor de SID). Agregar no a esta instrucción significa que se permite un grupo de usuarios, independientemente de la ubicación. |             exists ([type = = " <https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid> ", Value = ~ "{Grupo SID valor del grupo de ad permitido}"])              |
+|                                                                Esta es una cláusula necesaria para emitir una denegación cuando se cumplan todas las condiciones anteriores.                                                                 |                                   => problema (Type = " <https://schemas.microsoft.com/authorization/claims/deny> ", Value = "true");                                    |
 
 ### <a name="building-the-ip-address-range-expression"></a>Compilar la expresión de intervalo de direcciones IP
 
@@ -201,19 +201,19 @@ Cuando tiene que coincidir con un intervalo de direcciones IP, es necesario cons
 - 192.168.1.1 – 192.168.1.25
 - 10.0.0.1:10.0.0.14
 
-En primer lugar, el patrón básico que coincidirá con una sola dirección IP es el siguiente: \b # # #\.###\.###\.# # # \b
+En primer lugar, el patrón básico que coincidirá con una sola dirección IP es el siguiente: \b # # # \. ### \. ### \. # # # \b
 
-Extendiendo esto, podemos hacer coincidir dos direcciones IP diferentes con una expresión o como se indica a continuación: \b # # #\.###\.###\.# # # \b | \b # # #\.###\.###\.# # # \b
+Extendiendo esto, podemos hacer coincidir dos direcciones IP diferentes con una expresión o como se indica a continuación: \b # # # \. ### \. ### \. # # # \b | \b # # # \. ### \. ### \. # # # \b
 
-Por lo tanto, un ejemplo que coincida con solo dos direcciones (como 192.168.1.1 o 10.0.0.1) sería: \b192\.168\.1\.1 \ b | \b10\.0\.0\.1 \ b
+Por lo tanto, un ejemplo que coincida con solo dos direcciones (como 192.168.1.1 o 10.0.0.1) sería: \b192 \. 168 \. 1 \. 1 \ b | \b10 \. 0 \. 0 \. 1 \ b
 
-Esto le ofrece la técnica por la que puede escribir cualquier número de direcciones. En los casos en los que es necesario permitir un intervalo de direcciones (por ejemplo, 192.168.1.1 – 192.168.1.25), la coincidencia se debe hacer carácter por carácter: \b192\.168\.1\.([1-9] | 1 [0-9] | 2 [0-5]) \b
+Esto le ofrece la técnica por la que puede escribir cualquier número de direcciones. En los casos en los que es necesario permitir un intervalo de direcciones (por ejemplo, 192.168.1.1 – 192.168.1.25), la coincidencia se debe hacer carácter por carácter: \b192 \. 168 \. 1 \. ([1-9] | 1 [0-9] | 2 [0-5]) \b
 
 >[!Note] 
 >La dirección IP se trata como una cadena y no como un número.
 
 
-La regla se desglosa de la siguiente manera: \b192\.168\.1\.
+La regla se desglosa de la siguiente manera: \b192 \. 168 \. 1\.
 
 Coincide con cualquier valor que comience por 192.168.1.
 
@@ -227,9 +227,9 @@ El siguiente valor coincide con los intervalos necesarios para la parte de la di
 >[!Note]
 >Los paréntesis deben estar colocados correctamente, de modo que no empiece a buscar coincidencias con otras partes de direcciones IP.
 
-Con el bloque 192 coincidente, podemos escribir una expresión similar para el bloque 10: \b10\.0\.0\.([1-9] | 1 [0-4]) \b
+Con el bloque 192 coincidente, podemos escribir una expresión similar para el bloque 10: \b10 \. 0 \. 0 \. ([1-9] | 1 [0-4]) \b
 
-Además, la expresión siguiente debe coincidir con todas las direcciones de "192.168.1.1 ~ 25" y "10.0.0.1 ~ 14": \b192\.168\.1\.([1-9] | 1 [0-9] | 2 [0-5]) \b | \b10\.0\.0\.([1-9] | 1 [0-4]) \b
+Además de colocarlas juntas, la siguiente expresión debe coincidir con todas las direcciones de "192.168.1.1 ~ 25" y "10.0.0.1 ~ 14": \b192 \. 168 \. 1 \. ([1-9] | 1 [0-9] | 2 [0-5]) \b | \b10 \. 0 \. 0 \. ([1-9] | 1 [0-4]) \b
 
 #### <a name="testing-the-expression"></a>Probar la expresión
 
@@ -261,14 +261,13 @@ Para habilitar el registro de eventos de auditoría en el registro de seguridad 
 
 ### <a name="event-logging"></a>Registro de eventos
 
-De forma predeterminada, las solicitudes con error se registran en el registro de eventos de aplicación que se encuentra en registros de aplicaciones y servicios \ AD FS 2,0 \ administrador. para obtener más información sobre el registro de eventos para AD FS, vea [configurar el registro de eventos de AD FS 2,0](https://technet.microsoft.com/library/adfs2-troubleshooting-configuring-computers.aspx).
+De forma predeterminada, las solicitudes con error se registran en el registro de eventos de aplicación que se encuentra en registros de aplicaciones y servicios \ AD FS 2,0 \ administrador. para obtener más información sobre el registro de eventos para AD FS, vea [configurar el registro de eventos de AD FS 2,0](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641696(v=ws.10)).
 
 ### <a name="configuring-verbose-ad-fs-tracing-logs"></a>Configuración de registros de seguimiento de AD FS detallado
 
-AD FS eventos de seguimiento se registran en el registro de depuración de AD FS 2,0. Para habilitar el seguimiento, vea [configurar el seguimiento de depuración para AD FS 2,0](https://technet.microsoft.com/library/adfs2-troubleshooting-configuring-computers.aspx).
+AD FS eventos de seguimiento se registran en el registro de depuración de AD FS 2,0. Para habilitar el seguimiento, vea [configurar el seguimiento de depuración para AD FS 2,0](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641696(v=ws.10)).
 
-Después de habilitar el seguimiento, use la siguiente sintaxis de línea de comandos para habilitar el nivel de registro detallado: wevtutil. exe SL "AD FS 2,0 Tracing/debug"/l: 5  
+Después de habilitar el seguimiento, use la siguiente sintaxis de línea de comandos para habilitar el nivel de registro detallado: wevtutil.exe SL "AD FS 2,0 Tracing/debug"/l: 5  
 
-## <a name="related"></a>Relacionado
+## <a name="related"></a>Temas relacionados
 Para obtener más información sobre los nuevos tipos de notificación, consulte [AD FS tipos de notificaciones](AD-FS-Claims-Types.md).
-

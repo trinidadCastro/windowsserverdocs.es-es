@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6410936e50f4fad34b18fb8f287d9df710347863
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 555d309ca5de27b241eff00a0fed6dd253a34208
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823458"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961267"
 ---
 # <a name="how-to-configure-protected-accounts"></a>Cómo configurar cuentas protegidas
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En los ataques del tipo "pasar el hash" (PtH), un atacante puede autenticarse en un servidor o servicio remoto usando el hash de NTLM subyacente de la contraseña de un usuario (u otros derivados de las credenciales). Microsoft ya ha [publicado instrucciones](https://www.microsoft.com/download/details.aspx?id=36036) para mitigar los ataques pass-the-hash.  Windows Server 2012 R2 incluye nuevas características que ayudan a mitigar aún más estos ataques. Para obtener más información sobre otras características de seguridad que ayudan a proteger contra el robo de credenciales, consulte [Protección y administración de credenciales](https://technet.microsoft.com/library/dn408190.aspx). En este tema se explica cómo configurar las siguientes características nuevas:
+En los ataques del tipo "pasar el hash" (PtH), un atacante puede autenticarse en un servidor o servicio remoto usando el hash de NTLM subyacente de la contraseña de un usuario (u otros derivados de las credenciales). Microsoft ya ha [publicado instrucciones](https://www.microsoft.com/download/details.aspx?id=36036) para mitigar los ataques pass-the-hash.  Windows Server 2012 R2 incluye nuevas características que ayudan a mitigar aún más estos ataques. Para obtener más información sobre otras características de seguridad que ayudan a proteger contra el robo de credenciales, consulte [Protección y administración de credenciales](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408190(v=ws.11)). En este tema se explica cómo configurar las siguientes características nuevas:
 
 -   [Usuarios protegidos](../../ad-ds/manage/How-to-Configure-Protected-Accounts.md#BKMK_AddtoProtectedUsers)
 
@@ -29,9 +29,9 @@ En los ataques del tipo "pasar el hash" (PtH), un atacante puede autenticarse en
 
 Hay otras soluciones integradas en Windows 8.1 y Windows Server 2012 R2 para ayudar a proteger contra el robo de credenciales, que se tratan en los siguientes temas:
 
--   [Modo de administración restringida para Escritorio remoto](https://blogs.technet.com/b/kfalde/archive/2013/08/14/restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)
+-   [Modo de administración restringida para escritorio remoto](/archive/blogs/kfalde/restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2)
 
--   [Protección LSA](https://technet.microsoft.com/library/dn408187)
+-   [Protección LSA](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408187(v=ws.11))
 
 ## <a name="protected-users"></a><a name="BKMK_AddtoProtectedUsers"></a>Usuarios protegidos
 Usuarios protegidos es un nuevo grupo de seguridad global al que puedes agregar usuarios nuevos o existentes. Windows 8.1 los dispositivos y los hosts de Windows Server 2012 R2 tienen un comportamiento especial con los miembros de este grupo para proporcionar una mejor protección frente al robo de credenciales. Para un miembro del grupo, un dispositivo Windows 8.1 o un host de Windows Server 2012 R2 no almacena en caché las credenciales que no se admiten para los usuarios protegidos. Los miembros de este grupo no tienen protección adicional si han iniciado sesión en un dispositivo que ejecuta una versión de Windows anterior a Windows 8.1.
@@ -58,7 +58,7 @@ Si el nivel funcional del dominio es Windows Server 2012 R2, los miembros del gr
 
 -   Renovar los vales de usuario (TGT) más allá de las 4 horas de vigencia inicial.
 
-Para agregar usuarios al grupo, puede usar herramientas de [interfaz de usuario](https://technet.microsoft.com/library/cc753515.aspx) como centro de administración de Active Directory (ADAC) o Active Directory usuarios y equipos, o una herramienta de línea de comandos como [Dsmod Group](https://technet.microsoft.com/library/cc732423.aspx)o el cmdlet[Add-ADGroupMember](https://technet.microsoft.com/library/ee617210.aspx) de Windows PowerShell. Las cuentas de servicio y de equipo *no deben* ser miembros del grupo Usuarios protegidos. En estas cuentas, la pertenencia no proporciona protección local porque la contraseña o el certificado siempre están disponibles en el host.
+Para agregar usuarios al grupo, puede usar herramientas de [interfaz de usuario](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753515(v=ws.11)) como centro de administración de Active Directory (ADAC) o Active Directory usuarios y equipos, o una herramienta de línea de comandos como [Dsmod Group](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732423(v=ws.11))o el cmdlet[Add-ADGroupMember](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617210(v=technet.10)) de Windows PowerShell. Las cuentas de servicio y de equipo *no deben* ser miembros del grupo Usuarios protegidos. En estas cuentas, la pertenencia no proporciona protección local porque la contraseña o el certificado siempre están disponibles en el host.
 
 > [!WARNING]
 > Las restricciones de autenticación no tienen solución alternativa, lo que significa que los miembros de los grupos de privilegios elevados, como el grupo Administradores de organización o el grupo Admins. del dominio están sujetos a las mismas restricciones que los demás miembros del grupo Usuarios protegidos. Si todos los miembros de estos grupos se agregan al grupo usuarios protegidos, es posible que todas esas cuentas se bloqueen. Nunca debe agregar todas las cuentas con privilegios elevados al grupo usuarios protegidos hasta que haya probado exhaustivamente el posible impacto.
@@ -67,25 +67,25 @@ Los miembros del grupo Usuarios protegidos deben poder autenticarse mediante Ker
 
 -   No realice pruebas en dominios a menos que **todos los controladores de dominio ejecuten Windows Server 2008 o posterior**.
 
--   Usa**Cambiar contraseña** para todas las cuentas de dominio que se crearon *antes* de crear el dominio. De lo contrario, estas cuentas no se podrán autenticar.
+-   Usa **Cambiar contraseña** para todas las cuentas de dominio que se crearon *antes* de crear el dominio. De lo contrario, estas cuentas no se podrán autenticar.
 
 -   **Cambie la contraseña** de cada usuario antes de agregar la cuenta al grupo usuarios protegidos o asegúrese de que la contraseña se cambió recientemente en un controlador de dominio que ejecute Windows Server 2008 o posterior.
 
 ### <a name="requirements-for-using-protected-accounts"></a><a name="BKMK_Prereq"></a>Requisitos para usar cuentas protegidas
 Las cuentas protegidas tienen los siguientes requisitos de implementación:
 
--   Para proporcionar restricciones en el lado del cliente para los usuarios protegidos, los hosts deben ejecutar Windows 8.1 o Windows Server 2012 R2. Un usuario solo tiene que iniciar sesión con una cuenta que sea miembro del grupo Usuarios protegidos. En este caso, el grupo de usuarios protegidos se puede crear [transfiriendo el rol de emulador de controlador de dominio principal (PDC)](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx) a un controlador de dominio que ejecute Windows Server 2012 R2. Una vez replicado ese grupo a otros controladores de dominio, el rol de emulador de PDC se puede hospedar en un controlador de dominio que ejecuta una versión anterior de Windows Server.
+-   Para proporcionar restricciones en el lado del cliente para los usuarios protegidos, los hosts deben ejecutar Windows 8.1 o Windows Server 2012 R2. Un usuario solo tiene que iniciar sesión con una cuenta que sea miembro del grupo Usuarios protegidos. En este caso, el grupo de usuarios protegidos se puede crear [transfiriendo el rol de emulador de controlador de dominio principal (PDC)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10)) a un controlador de dominio que ejecute Windows Server 2012 R2. Una vez replicado ese grupo a otros controladores de dominio, el rol de emulador de PDC se puede hospedar en un controlador de dominio que ejecuta una versión anterior de Windows Server.
 
--   Para proporcionar restricciones en el lado del controlador de dominio para usuarios protegidos, es decir, para restringir el uso de la autenticación NTLM y otras restricciones, el nivel funcional del dominio debe ser Windows Server 2012 R2. Para obtener más información sobre los niveles funcionales inferiores, consulte [Descripción de los niveles funcionales de Servicios de dominio de Active Directory (AD DS)](../active-directory-functional-levels.md).
+-   Para proporcionar restricciones en el lado del controlador de dominio para usuarios protegidos, es decir, para restringir el uso de la autenticación NTLM y otras restricciones, el nivel funcional del dominio debe ser Windows Server 2012 R2. Para obtener más información sobre los niveles funcionales inferiores, consulte [Descripción de los niveles funcionales de Active Directory Domain Services (AD DS)](../active-directory-functional-levels.md).
 
-### <a name="troubleshoot-events-related-to-protected-users"></a><a name="BKMK_TrubleshootingEvents"></a>Solución de problemas de eventos relacionados con usuarios protegidos
+### <a name="troubleshoot-events-related-to-protected-users"></a><a name="BKMK_TrubleshootingEvents"></a>Solucionar problemas de eventos relativos a usuarios protegidos
 En esta sección se describen los nuevos registros que ayudan a solucionar problemas de eventos relativos a los usuarios protegidos, y cómo los usuarios protegidos pueden afectar a los cambios para solucionar problemas como la expiración de los vales de concesión de vales (TGT) o los problemas de delegación.
 
 #### <a name="new-logs-for-protected-users"></a>Nuevos registros para usuarios protegidos
 
 Hay disponibles dos nuevos registros administrativos operativos para ayudar a solucionar problemas de eventos relacionados con los usuarios protegidos: usuario protegido-registro de cliente y errores de usuarios protegidos-registro del controlador de dominio. Estos nuevos registros están ubicados en el Visor de eventos y están deshabilitados de forma predeterminada. Para habilitar un registro, haz clic en **Registros de aplicaciones y servicios**, en **Microsoft**, en **Windows**, en **Autenticación** y haz clic en el nombre del registro, en **Acción** (o haz clic con el botón derecho en el registro) y en **Habilitar registro**.
 
-Para obtener más información acerca de los eventos de estos registros, consulte [Directivas de autenticación y silos de directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx).
+Para obtener más información acerca de los eventos de estos registros, consulte [Directivas de autenticación y silos de directivas de autenticación](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11)).
 
 #### <a name="troubleshoot-tgt-expiration"></a>Solucionar problemas de expiración de TGT
 Normalmente, el controlador de dominio establece la vigencia del TGT y su renovación según la directiva del dominio, tal y como se muestra en la siguiente ventana del Editor de administración de directivas de grupo.
@@ -103,13 +103,13 @@ Anteriormente, si una tecnología que usa delegación de Kerberos producía un e
 
 ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
 
-### <a name="audit-authentication-attempts"></a><a name="BKMK_AuditAuthNattempts"></a>Auditar intentos de autenticación
-Para auditar los intentos de autenticación explícitamente para los miembros del grupo **Usuarios protegidos**, puedes continuar recopilando eventos de auditoría del registro de seguridad o puedes recopilar los datos de los nuevos registros administrativos operativos. Para obtener más información acerca de estos eventos, consulte [Directivas de autenticación y silos de directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx).
+### <a name="audit-authentication-attempts"></a><a name="BKMK_AuditAuthNattempts"></a>Auditar los intentos de autenticación
+Para auditar los intentos de autenticación explícitamente para los miembros del grupo **Usuarios protegidos**, puedes continuar recopilando eventos de auditoría del registro de seguridad o puedes recopilar los datos de los nuevos registros administrativos operativos. Para obtener más información sobre estos eventos, consulte [directivas de autenticación y silos de directivas de autenticación](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11)) .
 
 ### <a name="provide-dc-side-protections-for-services-and-computers"></a><a name="BKMK_ProvidePUdcProtections"></a>Proporcionar protección en el lado del controlador de dominio para servicios y equipos
 Las cuentas de servicios y equipos no pueden ser miembros de **Usuarios protegidos**. En esta sección se explica qué protecciones de controlador de dominio se pueden ofrecer para estas cuentas:
 
--   Rechazar la autenticación NTLM: Solo se puede configurar a través de [directivas de bloqueo de NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
+-   Rechazar la autenticación NTLM: Solo se puede configurar a través de [directivas de bloqueo de NTLM](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/jj865674(v=ws.10))
 
 -   Rechazar el estándar de cifrado de datos (DES) en la autenticación previa de Kerberos: los controladores de dominio de Windows Server 2012 R2 no aceptan DES para cuentas de equipo a menos que estén configurados para DES solo porque todas las versiones de Windows publicadas con Kerberos también admiten RC4.
 
@@ -131,7 +131,7 @@ En Windows Server 2012, Dynamic Access Control incorporó una clase de objeto Ac
 
 -   Usuario
 
--   Equipo
+-   Computer
 
 -   Cuenta de servicio administrada y cuenta de servicio administrada de grupo (GMSA)
 
@@ -152,7 +152,7 @@ El intercambio TGS es donde se usa el TGT de la cuenta para crear un autenticado
 
 El intercambio AP se produce con la misma frecuencia que los datos dentro del protocolo de la aplicación, y no se ve afectado por las directivas de autenticación.
 
-Para obtener información más detallada, consulte [Cómo funciona el protocolo de autenticación Kerberos versión 5](https://technet.microsoft.com/library/cc772815(v=WS.10).aspx).
+Para obtener información más detallada, consulte [Cómo funciona el protocolo de autenticación Kerberos versión 5](/previous-versions/windows/it-pro/windows-server-2003/cc772815(v=ws.10)).
 
 ### <a name="overview"></a>Información general
 Las directivas de autenticación complementan el grupo de usuarios protegidos porque proporcionan una manera de aplicar restricciones configurables a las cuentas, además de restricciones a las cuentas de servicios y equipos. Las directivas de autenticación se aplican durante el intercambio AS o el intercambio TGS.
@@ -183,9 +183,9 @@ Una cuenta de gran valor con privilegios administrativos debe ser miembro del gr
 
 #### <a name="configure-domain-controller-support"></a>Configurar la compatibilidad del controlador de dominio
 
-El dominio de la cuenta del usuario debe estar en el nivel funcional del dominio de Windows Server 2012 R2 (nivel funcional). Asegúrese de que todos los controladores de dominio son Windows Server 2012 R2 y, a continuación, use Active Directory dominios y confianzas para [elevar el nivel funcional](https://technet.microsoft.com/library/cc753104.aspx) a Windows Server 2012 R2.
+El dominio de la cuenta del usuario debe estar en el nivel funcional del dominio de Windows Server 2012 R2 (nivel funcional). Asegúrese de que todos los controladores de dominio son Windows Server 2012 R2 y, a continuación, use Active Directory dominios y confianzas para [elevar el nivel funcional](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11)) a Windows Server 2012 R2.
 
-**Para configurar la compatibilidad con el Access Control dinámico**
+**Para configurar la compatibilidad para el control de acceso dinámico**
 
 1.  En la Directiva predeterminada de controladores de dominio, haz clic en **Habilitada** para habilitar **Compatibilidad del cliente Kerberos con notificaciones, autenticación compuesta y protección de Kerberos** en Configuración del equipo | Plantillas administrativas | Sistema | KDC.
 
@@ -224,7 +224,7 @@ El dominio de la cuenta del usuario debe estar en el nivel funcional del dominio
 
     -   Usuario
 
-    -   Equipo
+    -   Computer
 
     -   Cuenta de servicio administrada y cuenta de servicio administrada de grupo
 
@@ -242,7 +242,7 @@ El dominio de la cuenta del usuario debe estar en el nivel funcional del dominio
 
     ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EditAuthNPolicy.gif)
 
-6.  En la ventana **Editar condiciones del control de acceso** , haz clic en **Agregar una condición**.
+6.  En la ventana **Editar condiciones de Access Control**, haz clic en **Agregar una condición**.
 
     ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCondition.png)
 
@@ -335,7 +335,7 @@ La sección de cuentas de la directiva de autenticación muestra las cuentas a l
 ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AccountsAssigned.gif)
 
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>Usar el registro administrativo errores de directiva de autenticación-controlador de dominio
-Se ha creado un nuevo registro administrativo **errores de directiva de autenticación: controlador de dominio** en **registros de aplicaciones y servicios** > la **autenticación** de **Microsoft** > **Windows** > para que sea más fácil detectar errores debidos a las directivas de autenticación. El registro está deshabilitado de forma predeterminada. Para habilitarlo, haz clic con el botón derecho en el nombre del registro y haz clic en **Habilitar registro**. El contenido de los nuevos eventos es muy similar al de los eventos de auditoría de TGT y de vales de servicio de Kerberos existentes. Para obtener más información acerca de estos eventos, consulte [Directivas de autenticación y silos de directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx).
+Un nuevo registro administrativo **errores de directiva de autenticación-controlador de dominio** en **registros de aplicaciones y servicios**se ha creado la autenticación de  >  **Microsoft**  >  **Windows**  >  **Authentication** para facilitar la detección de errores debidos a las directivas de autenticación. El registro está deshabilitado de forma predeterminada. Para habilitarlo, haz clic con el botón derecho en el nombre del registro y haz clic en **Habilitar registro**. El contenido de los nuevos eventos es muy similar al de los eventos de auditoría de TGT y de vales de servicio de Kerberos existentes. Para obtener más información acerca de estos eventos, consulte [Directivas de autenticación y silos de directivas de autenticación](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11)).
 
 ### <a name="manage-authentication-policies-by-using-windows-powershell"></a><a name="BKMK_ManageAuthnPoliciesUsingPSH"></a>Administrar directivas de autenticación mediante Windows PowerShell
 Este comando crea una directiva de autenticación llamada **TestAuthenticationPolicy**. El parámetro **UserAllowedToAuthenticateFrom** especifica los dispositivos desde los que los usuarios pueden autenticarse mediante una cadena SDDL en el archivo someFile.txt.
@@ -469,6 +469,3 @@ Este ejemplo usa primero el cmdlet **Get-ADComputer** para obtener todas las cue
 ```
 PS C:\>Get-ADComputer -Filter 'Name -like "newComputer*"' | Set-ADAccountAuthenticationPolicySilo -AuthenticationPolicySilo Silo -AuthenticationPolicy AuthenticationPolicy02
 ```
-
-
-

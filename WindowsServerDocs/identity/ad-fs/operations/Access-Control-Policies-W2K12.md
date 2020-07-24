@@ -8,12 +8,12 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7355ff9ed49a5e4ee8bca3a3d266a0ec1ecc0780
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b85e6b9d3a63796c75ce10c9cd90ed9c5d11c91f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814898"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962747"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Access Control directivas en Windows Server 2012 R2 y Windows Server 2012 AD FS
 
@@ -80,13 +80,13 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 5.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna demanda IP fuera del intervalo deseado, denegar". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
 `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
-6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  </br>
+6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  </br>
 
     `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
 
 7.  Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas de notificaciones** , haga clic en **Aceptar**. La lista resultante debería tener un aspecto similar al siguiente.  
 
-     ![Reglas de autenticación de emisión](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
+     ![Reglas de autorización de emisión](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
 
 ###  <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a><a name="scenario2"></a>Escenario 2: bloquear todo el acceso externo a Office 365 excepto Exchange ActiveSync  
  En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 365, incluido Exchange Online, desde clientes internos, incluido Outlook. Bloquea el acceso desde los clientes que se encuentran fuera de la red corporativa, como indica la dirección IP del cliente, excepto en el caso de los clientes de Exchange ActiveSync, como smartphones.  
@@ -105,7 +105,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
     `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
-6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 7.  A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -118,7 +118,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 ~~~
 
-10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 11. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -130,7 +130,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
    NOT EXISTS([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
    ```  
 
-14. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+14. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 15. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -139,7 +139,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 17. En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo "denegar a los usuarios con ipoutsiderange true y error de aplicación". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
-18. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:</br></br>      `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
+18. Haga clic en **Finalizar** Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:</br></br>      `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
 19. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas de notificaciones** , haga clic en Aceptar. La lista resultante debería tener un aspecto similar al siguiente.  
 
     ![Reglas de autorización de emisión](media/Access-Control-Policies-W2K12/clientaccess2.png )  
@@ -158,7 +158,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 5.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  </br>
 `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
-6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 7.  A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -171,7 +171,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
 ~~~
 
-10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br> Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
+10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br> Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
 
    `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
 
@@ -199,7 +199,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 `c1:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 ~~~
 
-6. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+6. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 7. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -209,7 +209,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
     `NOT EXISTS([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
 
-10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 11. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -219,7 +219,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
    `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 
-14. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
+14. Haga clic en **Finalizar** Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
 
    `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
 
@@ -252,19 +252,19 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 - 10.0.0.1:10.0.0.14  
 
-  En primer lugar, el patrón básico que coincidirá con una sola dirección IP es el siguiente: \b # # #\\. # # #\\. # # #\\. # # # \b  
+  En primer lugar, el patrón básico que coincidirá con una sola dirección IP es el siguiente: \b # # # \\ . # # # \\ . # # # \\ . # # # \b  
 
-  Extendiendo esto, podemos hacer coincidir dos direcciones IP diferentes con una expresión OR como se indica a continuación: \b # # #\\. # # #\\. # # #\\&#124;. # # # \b \b # # #\\. # # #\\. # # #\\. # # # \b  
+  Extendiendo esto, podemos hacer coincidir dos direcciones IP diferentes con una expresión or como se indica a continuación: \b # # # \\ . # # # \\ . # # # \\ . # # # \b&#124; \b # # # \\ . # # \\ \\ #. # # #. # # # \b  
 
-  Por lo tanto, un ejemplo para hacer coincidir solo dos direcciones (por ejemplo, 192.168.1.1 o 10.0.0.1) sería: \b192\\. 168\\,1&#124;\\,1 \ b \b10\\,0\\. 0\\. 1 \ b  
+  Por lo tanto, un ejemplo para hacer coincidir solo dos direcciones (por ejemplo, 192.168.1.1 o 10.0.0.1) sería: \b192 \\ . 168 \\ \\ ,0,1 \ b&#124; \b10 \\ 0. \\ 0 \\ . 1 \ b  
 
-  Esto le ofrece la técnica por la que puede escribir cualquier número de direcciones. En el caso de que sea necesario permitir un intervalo de direcciones, por ejemplo 192.168.1.1 – 192.168.1.25, la coincidencia se debe hacer carácter por carácter: \b192\\. 168\\. 1\\. ([1-9]&#124;1 [0-9]&#124;2 [0-5]) \b  
+  Esto le ofrece la técnica por la que puede escribir cualquier número de direcciones. En el caso de que sea necesario permitir un intervalo de direcciones, por ejemplo 192.168.1.1 – 192.168.1.25, la coincidencia se debe hacer carácter por carácter: \b192 \\ . 168 \\ . 1 \\ . ( [1-9] &#124;1 [0-9] &#124;2 [0-5]) \b  
 
   Tenga en cuenta lo siguiente:  
 
 - La dirección IP se trata como una cadena y no como un número.  
 
-- La regla se desglosa de la siguiente manera: \b192\\. 168\\. 1\\.  
+- La regla se desglosa de la siguiente manera: \b192 \\ . 168 \\ . 1 \\ .  
 
 - Coincide con cualquier valor que comience por 192.168.1.  
 
@@ -278,9 +278,9 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 - Tenga en cuenta que los paréntesis deben estar colocados correctamente, de modo que no empiece a buscar coincidencias con otras partes de direcciones IP.  
 
-- Con el bloque 192 coincidente, podemos escribir una expresión similar para el bloque 10: \b10\\,0\\. 0\\. ([1-9]&#124;1 [0-4]) \b  
+- Con el bloque 192 coincidente, podemos escribir una expresión similar para el bloque 10: \b10. \\ \\ 0 \\ . ( [1-9] &#124;1 [0-4]) \b  
 
-- Además de colocarlas juntas, la siguiente expresión debe coincidir con todas las direcciones de "192.168.1.1 ~ 25" y "10.0.0.1 ~ 14": \b192\\. 168\\. 1\\. ([1-9]&#124;1 [0-9]&#124;2 [0-5]) \b&#124;\b10\\,0\\. 0\\. ([1-9]&#124;1 [0-4]) \b  
+- Además de colocarlas juntas, la siguiente expresión debe coincidir con todas las direcciones de "192.168.1.1 ~ 25" y "10.0.0.1 ~ 14": \b192 \\ . 168 \\ . 1 \\ . ( [1-9] &#124;1 [0-9] &#124;2 [0-5]) \b&#124; \b10 \\ . \\ 0 \\ . ( [1-9] &#124;1 [0-4]) \b  
 
 ### <a name="testing-the-expression"></a>Probar la expresión  
  Las expresiones regex pueden resultar bastante complicadas, por lo que se recomienda encarecidamente usar una herramienta de comprobación de Regex. Si realiza una búsqueda en Internet de "generador de expresiones regex en línea", encontrará varias utilidades en línea adecuadas que le permitirán probar sus expresiones con datos de ejemplo.  
@@ -295,7 +295,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
  AD FS en Windows Server 2012 R2 proporciona información de contexto de la solicitud con los siguientes tipos de notificaciones:  
 
 ### <a name="x-ms-forwarded-client-ip"></a>X-MS-forwarded-Client-IP  
- Tipo de Claim: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
+ Tipo de Claim:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
 
  Esta demanda AD FS representa un "mejor intento" en la dirección IP del usuario (por ejemplo, el cliente de Outlook) que realiza la solicitud. Esta solicitud puede contener varias direcciones IP, incluida la dirección de cada proxy que reenvió la solicitud.  Esta demanda se rellena desde un HTTP. El valor de la demanda puede ser uno de los siguientes:  
 
@@ -317,7 +317,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 >  Actualmente, Exchange Online solo admite direcciones IPV4; no es compatible con las direcciones IPV6.  
 
 ### <a name="x-ms-client-application"></a>X-MS-Client-Application  
- Tipo de Claim: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
+ Tipo de Claim:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
 
  Esta demanda AD FS representa el protocolo usado por el cliente final, que se corresponde de forma flexible a la aplicación que se está usando.  Esta solicitud se rellena a partir de un encabezado HTTP que actualmente solo está establecido en Exchange Online, que rellena el encabezado al pasar la solicitud de autenticación a AD FS. En función de la aplicación, el valor de esta demanda será uno de los siguientes:  
 
@@ -344,7 +344,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
     -   Microsoft. Exchange. IMAP  
 
 ### <a name="x-ms-client-user-agent"></a>X-MS-Client-User-Agent  
- Tipo de Claim: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
+ Tipo de Claim:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
 
  Esta AD FS Claim proporciona una cadena que representa el tipo de dispositivo que el cliente está usando para obtener acceso al servicio. Se puede usar cuando los clientes deseen evitar el acceso a determinados dispositivos (por ejemplo, tipos particulares de teléfonos inteligentes).  Los valores de ejemplo de esta demanda incluyen (pero no se limitan a) los valores siguientes.  
 
@@ -367,23 +367,23 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
   También es posible que este valor esté vacío.  
 
 ### <a name="x-ms-proxy"></a>X-MS-proxy  
- Tipo de Claim: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
+ Tipo de Claim:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
 
  Esta AD FS notificaciones indica que la solicitud ha pasado a través del proxy de aplicación Web.  Esta solicitud se rellena mediante el proxy de aplicación Web, que rellena el encabezado al pasar la solicitud de autenticación al back-end Servicio de federación. A continuación, AD FS lo convierte en una demanda.  
 
  El valor de la demanda es el nombre DNS del proxy de aplicación web que pasó la solicitud.  
 
 ### <a name="insidecorporatenetwork"></a>InsideCorporateNetwork  
- Tipo de Claim: `https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
+ Tipo de Claim:`https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
 
  Similar al tipo de notificaciones x-MS-proxy anterior, este tipo de demanda indica si la solicitud se ha pasado a través del proxy de aplicación Web. A diferencia de x-MS-proxy, insidecorporatenetwork es un valor booleano con true que indica una solicitud directamente al servicio de Federación desde dentro de la red corporativa.  
 
 ### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-Endpoint-Absolute-Path (activo frente a pasivo)  
- Tipo de Claim: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
+ Tipo de Claim:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
 
  Este tipo de notificaciones se puede usar para determinar las solicitudes que se originan en clientes "activos" (enriquecidos) frente a clientes "pasivos" (basados en explorador Web). Esto permite que se permitan las solicitudes externas desde aplicaciones basadas en explorador como Outlook Web Access, SharePoint Online o el portal de Office 365 mientras se bloquean las solicitudes procedentes de clientes enriquecidos como Microsoft Outlook.  
 
  El valor de la demanda es el nombre del servicio AD FS que recibió la solicitud.  
 
-## <a name="see-also"></a>Consulta también  
- [Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+## <a name="see-also"></a>Consulte también  
+ [Operaciones de AD FS](../ad-fs-operations.md)

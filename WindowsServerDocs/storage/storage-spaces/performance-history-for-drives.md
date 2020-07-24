@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e1620f7010d4f37713de20f2b4c12f100be61dc
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2f54f06462818ca21ae10acee40d788211b38e37
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474772"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964527"
 ---
 # <a name="performance-history-for-drives"></a>Historial de rendimiento de las unidades
 
@@ -85,7 +85,7 @@ La `size.*` serie se recopila de la `MSFT_PhysicalDisk` clase en WMI, una instan
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
-Use el cmdlet [Get-PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/get-physicaldisk) :
+Use el cmdlet [Get-PhysicalDisk](/powershell/module/storage/get-physicaldisk) :
 
 ```PowerShell
 Get-PhysicalDisk -SerialNumber <SerialNumber> | Get-ClusterPerf

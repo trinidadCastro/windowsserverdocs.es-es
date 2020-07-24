@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: a7e98129c2fb4f2259364c547b426d46f0a24ef3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d9d24f1ce66ca691bfa31479a00b9ecf719abe1e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859468"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961307"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: Los puertos de compartir archivos e impresoras deben estar abiertos
 
@@ -34,8 +34,8 @@ Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y 
 <td><p>Windows Server</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Producto o característica</strong></p></td>
-<td><p>Servicios de archivo</p></td>
+<td><p><strong>Producto/Característica</strong></p></td>
+<td><p>Servicios de archivos</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Gravedad</strong></p></td>
@@ -48,7 +48,7 @@ Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y 
 </tbody>
 </table>
 
-## <a name="issue"></a>Problema
+## <a name="issue"></a>Incidencia
 
 > *Los puertos de Firewall necesarios para compartir archivos e impresoras no están abiertos (puertos 445 y 139).*
 
@@ -68,11 +68,10 @@ Para completar este procedimiento, se requiere como mínimo pertenecer al grupo 
 
 2.  En el panel izquierdo, haga clic en **Configuración avanzada**y, en el árbol de consola, haga clic en **reglas de entrada**.
 
-3.  En **reglas de entrada**, busque las reglas **compartir archivos e impresoras (sesión NB)** e **compartir impresoras y archivos (SMB de entrada)** .
+3.  En **reglas de entrada**, busque las reglas **compartir archivos e impresoras (sesión NB)** e **compartir impresoras y archivos (SMB de entrada)**.
 
-4.  Para cada regla, haga clic con el botón secundario en la regla y, a continuación, haga clic en **Habilitar regla**.
+4.  Para cada regla, haga clic con el botón derecho en la regla y, a continuación, haga clic en **Habilitar regla**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Descripción de las carpetas compartidas y el Firewall de Windows](https://technet.microsoft.com/library/cc731402.aspx)(https://technet.microsoft.com/library/cc731402.aspx)
-
+[Descripción de las carpetas compartidas y el Firewall de Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11))(https://technet.microsoft.com/library/cc731402.aspx)

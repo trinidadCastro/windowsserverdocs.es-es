@@ -8,16 +8,16 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 77e3b48874d2b8898b7510ff04ebb133b9358a73
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5cb6246b00d891bd18f30b75b591dd4aaae021f5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935543"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962657"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS Extranet Lockout and Extranet Smart Lockout (Bloqueo de extranet de AD FS y bloqueo inteligente de extranet)
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 
 El bloqueo inteligente de extranet (ESL) evita que los usuarios experimenten el bloqueo de cuentas de extranet de actividades malintencionadas.  
 
@@ -81,7 +81,7 @@ La tabla AccountActivity se rellena durante el modo ' solo registro ' y el modo 
 1. **Instalar actualizaciones en todos los nodos de la granja de servidores**
 
    En primer lugar, asegúrese de que todos los servidores de Windows Server 2016 AD FS estén actualizados a partir de las actualizaciones de Windows del 2018 de junio y de que la granja de AD FS 2016 se esté ejecutando en el nivel de comportamiento de la granja de 2016.
-1. **Comprobación de los permisos**
+1. **Comprobar permisos**
 
    El bloqueo inteligente de extranet requiere que la administración remota de Windows esté habilitada en cada servidor de AD FS.
 3. **Actualizar permisos de base de datos de artefactos**
@@ -236,7 +236,7 @@ Este comportamiento se puede invalidar pasando el parámetro-Server.
 ## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>Registro de eventos & información de actividad del usuario para el bloqueo de AD FS extranet
 
 ### <a name="connect-health"></a>Connect Health
-La manera recomendada de supervisar la actividad de la cuenta de usuario es a través de Connect Health. Connect Health genera informes descargables sobre direcciones IP de riesgo y intentos de contraseña incorrectos. Cada elemento del informe de direcciones IP de riesgo muestra información agregada sobre las actividades de inicio de sesión de AD FS con errores que sobrepasan el umbral designado. Las notificaciones por correo electrónico se pueden establecer para alertar a los administradores en cuanto esto suceda con la configuración de correo electrónico personalizable. Para obtener más información e instrucciones de configuración, visite la [documentación de Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs).
+La manera recomendada de supervisar la actividad de la cuenta de usuario es a través de Connect Health. Connect Health genera informes descargables sobre direcciones IP de riesgo y intentos de contraseña incorrectos. Cada elemento del informe de direcciones IP de riesgo muestra información agregada sobre las actividades de inicio de sesión de AD FS con errores que sobrepasan el umbral designado. Las notificaciones por correo electrónico se pueden establecer para alertar a los administradores en cuanto esto suceda con la configuración de correo electrónico personalizable. Para obtener más información e instrucciones de configuración, visite la [documentación de Connect Health](/azure/active-directory/hybrid/how-to-connect-health-adfs).
 
 ### <a name="ad-fs-extranet-smart-lockout-events"></a>AD FS eventos de bloqueo inteligente de extranet.
 
@@ -293,6 +293,6 @@ R: con ESL habilitado, AD FS realiza un seguimiento de la actividad de la cuenta
 ## <a name="additional-references"></a>Referencias adicionales  
 [Prácticas recomendadas para proteger Servicios de federación de Active Directory (AD FS)](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
-[Set-AdfsProperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
+[Set-AdfsProperties](/powershell/module/adfs/set-adfsproperties?view=win10-ps)
 
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operaciones de AD FS](../ad-fs-operations.md)

@@ -9,12 +9,12 @@ ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: Cómo usar réplica de almacenamiento para replicar volúmenes en un clúster en otro clúster que ejecuta Windows Server.
-ms.openlocfilehash: 21e054d42d0264bb22fbd0e02382ee429958a597
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d99a7ebf933427e8e065f72261816610e62a433d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475672"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961247"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>Replicación de almacenamiento de clúster a clúster
 
@@ -172,11 +172,11 @@ Ahora creará dos clústeres de conmutación por error normal. Después de la co
     > WIndows Server incluye ahora una opción para el testigo basado en la nube (Azure). Puede elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.
 
     > [!WARNING]
-    > Para obtener más información sobre la configuración de cuórum, consulte la sección **configuración de testigos** en [configurar y administrar el cuórum](../../failover-clustering/manage-cluster-quorum.md). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulte [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).
+    > Para obtener más información sobre la configuración de cuórum, consulte la sección **configuración de testigos** en [configurar y administrar el cuórum](../../failover-clustering/manage-cluster-quorum.md). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulte [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum).
 
 5.  Agregue un disco del sitio de **Redmond** al CSV del clúster. Para ello, haga clic con el botón derecho en un disco de origen el nodo **Discos** de la sección **Almacenamiento** y, a continuación, haga clic en **Agregar a volúmenes compartidos de clúster**.
 
-6.  Cree los servidores de archivos de escalabilidad horizontal en clúster en ambos clústeres con las instrucciones del artículo sobre [configuración de un servidor de archivos de escalabilidad horizontal](https://technet.microsoft.com/library/hh831718.aspx).
+6.  Cree los servidores de archivos de escalabilidad horizontal en clúster en ambos clústeres con las instrucciones del artículo sobre [configuración de un servidor de archivos de escalabilidad horizontal](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831718(v=ws.11)).
 
 ### <a name="windows-powershell-method"></a>Método de Windows PowerShell
 
@@ -204,9 +204,9 @@ Ahora creará dos clústeres de conmutación por error normal. Después de la co
     > WIndows Server incluye ahora una opción para el testigo basado en la nube (Azure). Puede elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.
 
     > [!WARNING]
-    > Para obtener más información sobre la configuración de cuórum, consulte la sección **configuración de testigos** en [configurar y administrar el cuórum](../../failover-clustering/manage-cluster-quorum.md). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulte [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).
+    > Para obtener más información sobre la configuración de cuórum, consulte la sección **configuración de testigos** en [configurar y administrar el cuórum](../../failover-clustering/manage-cluster-quorum.md). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulte [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum).
 
-4.  Cree los servidores de archivos de escalabilidad horizontal en clúster en ambos clústeres con las instrucciones del artículo sobre [configuración de un servidor de archivos de escalabilidad horizontal](https://technet.microsoft.com/library/hh831718.aspx).
+4.  Cree los servidores de archivos de escalabilidad horizontal en clúster en ambos clústeres con las instrucciones del artículo sobre [configuración de un servidor de archivos de escalabilidad horizontal](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831718(v=ws.11)).
 
 ## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>Paso 3: configurar el clúster para la replicación de clústeres mediante Windows PowerShell
 Ahora va a configurar la replicación de clúster a clúster mediante Windows PowerShell. Puede realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga Windows Server Herramientas de administración remota del servidor
@@ -355,7 +355,7 @@ Ahora podrá administrar y operar la replicación de clúster a clúster. Puede 
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Número de mensajes enviados
 
-    Para más información sobre los contadores de rendimiento en Windows PowerShell, consulte [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter).
+    Para más información sobre los contadores de rendimiento en Windows PowerShell, consulte [Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter).
 
 3.  Para mover la dirección de replicación de un sitio, use el cmdlet **Set-SRPartnership**.
 
@@ -384,7 +384,7 @@ Ahora podrá administrar y operar la replicación de clúster a clúster. Puede 
     ```
 
     > [!NOTE]
-    > La réplica de almacenamiento desmonta los volúmenes de destino. Esto es intencionado.
+    > La réplica de almacenamiento desmonta los volúmenes de destino. es así por diseño.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2e63d177abd0a6880c1825b821d265c8fa233a22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ca7ab368c9e15de15f733070a5bcb06584956500
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823168"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961137"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Error de replicación 1753: no hay más puntos de conexión disponibles desde el asignador de puntos de conexión
 
@@ -59,7 +59,7 @@ of starting up or shutting down, and is not available.
 Verify machine is not hung during boot.
 ```
 
-REPADMIN. EXE informa de que se ha producido un error en el intento de replicación con el estado 1753.
+REPADMIN.EXE informa de que se ha producido un error en el intento de replicación con el estado 1753.
 Los comandos REPADMIN que suelen mencionar el estado 1753 incluyen, pero no se limitan a:
 
 * REPADMIN/REPLSUM
@@ -95,16 +95,16 @@ El comando **Replicar ahora** en Active Directory sitios y servicios devuelve "n
 Al hacer clic con el botón derecho en el objeto de conexión desde un controlador de dominio de origen y elegir **Replicar ahora** se produce el error "no hay más extremos disponibles desde el asignador de extremos".
 A continuación se muestra el mensaje de error en pantalla:
 
-Texto del título del diálogo: replicar ahora texto del mensaje de diálogo: se produjo el siguiente error al intentar sincronizar el contexto de nomenclatura \<% nombre de la partición de directorio% > desde el controlador de dominio \<el DC de origen > al controlador de dominio \<DC de destino >:
+Texto del título del cuadro de diálogo: replicar ahora texto del mensaje de diálogo: se produjo el siguiente error al intentar sincronizar el contexto \<%directory partition name%> de nomenclatura del controlador de dominio \<Source DC> al controlador de dominio \<Destination DC> :
 
-No hay más extremos disponibles desde el asignador de extremos.
+no hay más puntos de conexión disponibles desde el asignador de puntos de conexión.
 La operación no continuará
 
 Los eventos NTDS KCC, NTDS general o Microsoft-Windows-ActiveDirectory_DomainService con el estado-2146893022 se registran en el registro de servicios de directorio en Visor de eventos.
 
 Active Directory eventos que suelen mencionar el estado-2146893022 incluyen, pero no se limitan a:
 
-| Id. de evento | Origen del evento | Cadena de evento|
+| Id. de evento | Origen de eventos | Cadena de evento|
 | --- | --- | --- |
 | 1655 | NTDS general | Active Directory intentó comunicarse con el catálogo global siguiente y los intentos fueron incorrectos. |
 | 1925 | KCC NTDS | Error al intentar establecer un vínculo de replicación para la siguiente partición de directorio grabable. |
@@ -149,7 +149,7 @@ Comprobar que se ha iniciado el servicio que registra su servicio con el asignad
 
 Compruebe que el cliente RPC (DC de destino) está conectado al servidor RPC deseado (DC de origen).
 
-Todos los controladores de dominio de un bosque de Active Directory común registran un registro CNAME del controlador de dominio en el _msdcs. \<dominio raíz del bosque > zona DNS independientemente del dominio en el que residen en el bosque. El registro CNAME de DC se deriva del atributo objectGUID del objeto de configuración NTDS para cada controlador de dominio.
+Todos los controladores de dominio de un bosque de Active Directory común registran un registro CNAME del controlador de dominio en el _msdcs. \<forest root domain>Zona DNS independientemente del dominio en el que residen en el bosque. El registro CNAME de DC se deriva del atributo objectGUID del objeto de configuración NTDS para cada controlador de dominio.
 
 Al realizar operaciones basadas en la replicación, un controlador de dominio de destino consulta DNS para el registro CNAME de DC de origen. El registro CNAME contiene el nombre de equipo completo del DC de origen que se usa para derivar la dirección IP de los DC de origen a través de la búsqueda de caché del cliente DNS, la búsqueda de archivos host/LMHost, el host A/AAAA en DNS o WINS.
 
@@ -195,13 +195,13 @@ Si las pruebas anteriores o un seguimiento de red no muestran una consulta de no
 * Compruebe que la aplicación de servidor (Active Directory et al) se ha registrado con el asignador de extremos en el servidor RPC (DC de origen).
 * Active Directory usa una mezcla de puertos conocidos y registrados dinámicamente. En esta tabla se enumeran los puertos y protocolos conocidos usados por Active Directory controladores de dominio.
 
-| Aplicación de servidor RPC | Puerto | TCP | UDP |
+| Aplicación de servidor RPC | Port | TCP | UDP |
 | --- | --- | --- | --- |
 | Servidor DNS | 53 | X | X |
 | Kerberos | 88 | X | X |
 | Servidor LDAP | 389 | X | X |
 | Microsoft-DS | 445 | X | X |
-| SSL DE LDAP | 636 | X | X |
+| SSL de LDAP | 636 | X | X |
 | Servidor del catálogo global (GC) | 3268 | X |   |
 | Servidor del catálogo global (GC) | 3269 | X |   |
 
@@ -239,7 +239,7 @@ Otras posibles formas de resolver este error:
 * Compruebe que el valor de inicio y el estado del servicio para el servicio RPC y el localizador de RPC son correctos para la versión del sistema operativo del cliente RPC (DC de destino) y el servidor RPC (DC de origen). Si el servicio está detenido o no está configurado con valores de inicio predeterminados, restablezca los valores de inicio predeterminados, reinicie el controlador de dominio modificado y vuelva a intentar la operación.
    * Además, asegúrese de que el contexto de servicio coincide con los valores de configuración predeterminados que se muestran en la tabla siguiente.
 
-      | Service | Estado predeterminado (tipo de inicio) en Windows Server 2003 y versiones posteriores | Estado predeterminado (tipo de inicio) en Windows Server 2000 |
+      | Servicio | Estado predeterminado (tipo de inicio) en Windows Server 2003 y versiones posteriores | Estado predeterminado (tipo de inicio) en Windows Server 2000 |
       | --- | --- | --- |
       | Llamada a procedimiento remoto | Iniciado (automático) | Iniciado (automático) |
       | Localizador de llamadas a procedimientos remotos | Null o detenido (manual) | Iniciado (automático) |
@@ -303,13 +303,13 @@ Resumen: en este ejemplo se produjo un error porque una asignación de host a IP
 * [Artículo de KB 832017 información general del servicio y requisitos de puerto de red para el sistema Windows Server](https://support.microsoft.com/kb/832017/)
 * [Artículo 224196 de Knowledge base sobre cómo restringir el tráfico de replicación de Active Directory y el tráfico RPC de cliente a un puerto específico](https://support.microsoft.com/kb/224196/)
 * [Artículo 154596 de Knowledge base sobre cómo configurar la asignación dinámica de puertos RPC para trabajar con firewalls](https://support.microsoft.com/kb/154596)
-* [Cómo funciona RPC](https://msdn.microsoft.com/library/aa373935(VS.85).aspx)
-* [Cómo se prepara el servidor para una conexión](https://msdn.microsoft.com/library/aa373938(VS.85).aspx)
-* [Cómo el cliente establece una conexión](https://msdn.microsoft.com/library/aa373937(VS.85).aspx)
-* [Registrar la interfaz](https://msdn.microsoft.com/library/aa375357(VS.85).aspx)
-* [Poner el servidor a disposición en la red](https://msdn.microsoft.com/library/aa373974(VS.85).aspx)
-* [Registro de puntos de conexión](https://msdn.microsoft.com/library/aa375255(VS.85).aspx)
-* [Escuchando llamadas de cliente](https://msdn.microsoft.com/library/aa373966(VS.85).aspx)
-* [Cómo el cliente establece una conexión](https://msdn.microsoft.com/library/aa373937(VS.85).aspx)
+* [Cómo funciona RPC](/windows/win32/rpc/how-rpc-works)
+* [Cómo se prepara el servidor para una conexión](/windows/win32/rpc/how-the-server-prepares-for-a-connection)
+* [Cómo el cliente establece una conexión](/windows/win32/rpc/how-the-client-establishes-a-connection)
+* [Registrar la interfaz](/windows/win32/rpc/registering-the-interface)
+* [Poner el servidor a disposición en la red](/windows/win32/rpc/making-the-server-available-on-the-network)
+* [Registro de puntos de conexión](/windows/win32/rpc/registering-endpoints)
+* [Escuchando llamadas de cliente](/windows/win32/rpc/listening-for-client-calls)
+* [Cómo el cliente establece una conexión](/windows/win32/rpc/how-the-client-establishes-a-connection)
 * [Restringir el tráfico de replicación de Active Directory y el tráfico de RPC de cliente a un puerto específico](https://support.microsoft.com/kb/224196)
-* [SPN para un controlador de dominio de destino en AD DS](https://msdn.microsoft.com/library/dd207688(PROT.13).aspx)
+* [SPN para un controlador de dominio de destino en AD DS](/openspecs/windows_protocols/ms-drsr/41efc56e-0007-4e88-bafe-d7af61efd91f)

@@ -9,16 +9,16 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 03/26/2020
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: 9873378d62ccc7b53dcc6fc629651df2aa1c6708
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b49c626bd5b8630d375c2984eac96a32b703cd2c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308112"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964107"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>Replicación de almacenamiento de servidor a servidor con réplica de almacenamiento
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Puede utilizar la Réplica de almacenamiento para configurar dos servidores para sincronizar datos, de forma que cada uno tenga una copia idéntica del mismo volumen. Este tema proporciona cierta información general de esta configuración de replicación de servidor a servidor, además de cómo configurar y administrar el entorno.
 
@@ -37,7 +37,7 @@ Este es un vídeo de información general sobre el uso de réplica de almacenami
 * Al menos una conexión de Ethernet/TCP en cada servidor para replicación sincrónica, pero preferiblemente RDMA.   
 * Reglas de firewall y enrutador correspondientes para permitir tráfico bidireccional ICMP, SMB (puerto 445, más 5445 para SMB directo) y WS-MAN (puerto 5985) entre todos los nodos.  
 * Una red entre servidores con ancho de banda suficiente para contener la carga de trabajo de escritura de E/S y un promedio de =5 ms de latencia de ida y vuelta para la replicación sincrónica. La replicación asincrónica no tiene una recomendación de latencia.<br>
-Si va a replicar entre servidores locales y máquinas virtuales de Azure, debe crear un vínculo de red entre los servidores locales y las máquinas virtuales de Azure. Para ello [, use expressroute](#add-azure-vm-expressroute), una conexión de [puerta de enlace de VPN de sitio a sitio](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)o instale el software de VPN en las máquinas virtuales de Azure para conectarlos con la red local.
+Si va a replicar entre servidores locales y máquinas virtuales de Azure, debe crear un vínculo de red entre los servidores locales y las máquinas virtuales de Azure. Para ello [, use expressroute](#add-azure-vm-expressroute), una conexión de [puerta de enlace de VPN de sitio a sitio](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)o instale el software de VPN en las máquinas virtuales de Azure para conectarlos con la red local.
 * El almacenamiento de información replicada no se encuentra en la unidad que contiene la carpeta del sistema operativo Windows.
 
 > [!IMPORTANT]
@@ -50,7 +50,7 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
 
 Para usar la réplica de almacenamiento y el centro de administración de Windows conjuntamente, necesita lo siguiente:
 
-| System                        | Sistema operativo                                            | Se requiere para     |
+| Sistema                        | Sistema operativo                                            | Requerido para     |
 |-------------------------------|-------------------------------------------------------------|------------------|
 | Dos servidores <br>(cualquier combinación de hardware local, máquinas virtuales y máquinas virtuales en la nube, incluidas las máquinas virtuales de Azure)| Windows Server 2019, Windows Server 2016 o Windows Server (canal semianual) | Réplica de almacenamiento  |
 | Un equipo                     | Windows 10                                                  | Windows Admin Center |
@@ -67,7 +67,7 @@ En este tutorial se utiliza como ejemplo el siguiente entorno:
 
 ![Diagrama que muestra un servidor en la replicación de la compilación 5 con un servidor de la compilación 9](media/Server-to-Server-Storage-Replication/Storage_SR_ServertoServer.png)  
 
-**Figura 1: replicación de servidor a servidor**  
+**Ilustración 1: Replicación de servidor a servidor**  
 
 ## <a name="step-1-install-and-configure-windows-admin-center-on-your-pc"></a>Paso 1: instalar y configurar el centro de administración de Windows en el equipo
 
@@ -86,7 +86,7 @@ Si usa el centro de administración de Windows para administrar réplica de alma
 
 ## <a name="step-2-provision-operating-system-features-roles-storage-and-network"></a><a name="provision-os"></a>Paso 2: aprovisionar el sistema operativo, las características, los roles, el almacenamiento y la red
 
-1.  Instale Windows Server en ambos nodos de servidor con un tipo de instalación de Windows Server **(experiencia de escritorio)** . 
+1.  Instale Windows Server en ambos nodos de servidor con un tipo de instalación de Windows Server **(experiencia de escritorio)**. 
  
     Para usar una máquina virtual de Azure conectada a la red a través de ExpressRoute, consulte [adición de una máquina virtual de Azure conectada a la red a través de expressroute](#add-azure-vm-expressroute).
     
@@ -114,7 +114,7 @@ Si usa el centro de administración de Windows para administrar réplica de alma
     -   **Método del centro de administración de Windows**
         1. En el centro de administración de Windows, vaya a Administrador del servidor y, a continuación, seleccione uno de los servidores.
         2. Vaya a **Roles & características**.
-        3. Seleccione **características** > **réplica de almacenamiento**y, a continuación, haga clic en **instalar**.
+        3. Seleccione **características**  >  **réplica de almacenamiento**y, a continuación, haga clic en **instalar**.
         4. Repita el procedimiento en el otro servidor.
     -   **Método Administrador del servidor**  
 
@@ -132,7 +132,7 @@ Si usa el centro de administración de Windows para administrar réplica de alma
         $Servers | ForEach { Install-WindowsFeature -ComputerName $_ -Name Storage-Replica,FS-FileServer -IncludeManagementTools -restart }  
         ```  
 
-        Para más información sobre estos pasos, consulte [Instalación o desinstalación de roles, servicios de rol o características](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md).  
+        Para obtener más información sobre estos pasos, consulte [instalación o desinstalación de roles, servicios de rol o características](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md) .  
 
 8.  Configure el almacenamiento como sigue:  
 
@@ -143,7 +143,7 @@ Si usa el centro de administración de Windows para administrar réplica de alma
     > -   Los dos volúmenes de registros deben tener un tamaño idéntico.  
     > -   Todos los discos de datos replicados deben tener los mismos tamaños de sector.  
     > -   Todos los discos de registro deben tener los mismos tamaños de sector.  
-    > -   Los volúmenes de registro deben usar almacenamiento basado en flash, como SSD. Microsoft recomienda que el almacenamiento de registro sea más rápido que el almacenamiento de datos. Nunca se debe utilizar volúmenes de registro para otras cargas de trabajo.
+    > -   Los volúmenes de registro deben usar almacenamiento basado en flash, como SSD. Microsoft recomienda que el almacenamiento de registros sea más rápido que el almacenamiento de datos. Los volúmenes de registro nunca deben usarse para otras cargas de trabajo.
     > -   Los discos de datos pueden usar HDD, SSD o una combinación en niveles, y pueden usar tanto espacios de paridad o reflejados como RAID 1 o 10, o RAID 5 o RAID 50.  
     > -   El volumen del registro debe ser al menos de 9 GB de forma predeterminada, aunque puede ser mayor o menor en función de los requisitos de registro.  
     > -   El rol Servidor de archivos solo es necesario para el funcionamiento de Test-SRTopology, ya que abre los puertos de firewall necesarios para las pruebas.
@@ -158,19 +158,19 @@ Si usa el centro de administración de Windows para administrar réplica de alma
 
         1.  Asegúrese de que cada clúster pueda ver solo los contenedores de almacenamiento de ese sitio. Debe usar más de un único adaptador de red si utiliza iSCSI.    
 
-        2.  Aprovisiona el almacenamiento mediante la documentación del proveedor. Si usa destinos iSCSI basados en Windows, consulte [Procedimientos de almacenamiento de bloque de destino iSCSI](../iscsi/iscsi-target-server.md).  
+        2.  Aprovisione el almacenamiento mediante la documentación del proveedor. Si usa destinos iSCSI basados en Windows, consulte [Procedimientos de almacenamiento de bloque de destino iSCSI](../iscsi/iscsi-target-server.md).  
 
-    - **Para almacenamiento SAN FC:**  
+    - **Para el almacenamiento SAN de FC:**  
 
         1.  Asegúrese de que cada clúster pueda ver solo los contenedores de almacenamiento de ese sitio y que esté en la zona correcta en los hosts.   
 
-        2.  Aprovisiona el almacenamiento mediante la documentación del proveedor.  
+        2.  Aprovisione el almacenamiento mediante la documentación del proveedor.  
 
     - **Para el almacenamiento en disco fijo local:**  
 
         -   Asegúrese de que el almacenamiento no contenga un volumen del sistema, un archivo de paginación o archivos de volcado.  
 
-        -   Aprovisiona el almacenamiento mediante la documentación del proveedor.  
+        -   Aprovisione el almacenamiento mediante la documentación del proveedor.  
 
 9. Inicie Windows PowerShell y use el cmdlet **Test-SRTopology** para determinar si satisface todos los requisitos de la Réplica de almacenamiento. Puede usar el cmdlet en modo de solo requisitos para una prueba rápida, o en modo de evaluación de rendimiento de ejecución más larga.  
 
@@ -183,11 +183,11 @@ Si usa el centro de administración de Windows para administrar réplica de alma
     ```
 
     > [!IMPORTANT]
-      > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o no se generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Otra alternativa es copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) para generar E/S de escritura. Por ejemplo, una muestra con una carga de trabajo de E/S de escritura baja durante diez minutos en el volumen D:  
+      > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o no se generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Como alternativa, solo tiene que copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) para generar e/s de escritura. Por ejemplo, una muestra con una carga de trabajo de E/S de escritura baja durante diez minutos en el volumen D:  
       >
       > `Diskspd.exe -c1g -d600 -W5 -C5 -b8k -t2 -o2 -r -w5 -i100 -j100 d:\test` 
 
-10. Examine el informe **Informe testsrtopologyreport. html** que se muestra en la figura 2 para asegurarse de que cumple los requisitos de réplica de almacenamiento.  
+10. Examine el informe de **TestSrTopologyReport.html** que se muestra en la figura 2 para asegurarse de que cumple los requisitos de réplica de almacenamiento.  
 
     ![Pantalla que muestra el informe de topología](media/Server-to-Server-Storage-Replication/SRTestSRTopologyReport.png)
 
@@ -197,7 +197,7 @@ Si usa el centro de administración de Windows para administrar réplica de alma
 ### <a name="using-windows-admin-center"></a>Usar el centro de administración de Windows
 
 1. Agregue el servidor de origen.
-    1. Seleccione el botón **Agregar** .
+    1. Seleccione el botón **Agregar**.
     2. Seleccione **Agregar conexión de servidor**.
     3. Escriba el nombre del servidor y, a continuación, seleccione **submit (enviar**).
 2. En la página **todas las conexiones** , seleccione el servidor de origen.
@@ -213,14 +213,14 @@ Si usa el centro de administración de Windows para administrar réplica de alma
     > [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
 
 5. Proporcione los detalles de la asociación y, a continuación, seleccione **crear** (como se muestra en la figura 3). <br>
-   ![la pantalla nueva asociación que muestra los detalles de la asociación, como un tamaño de registro de 8 GB.](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
+   ![La nueva pantalla de asociación que muestra los detalles de la asociación, como un tamaño de registro de 8 GB.](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
 
     **Figura 3: creación de una nueva asociación**
 
 > [!NOTE]
 > Al quitar la Asociación de la réplica de almacenamiento en el centro de administración de Windows, no se quita el nombre del grupo de replicación.
 
-### <a name="using-windows-powershell"></a>Usar Windows PowerShell
+### <a name="using-windows-powershell"></a>Uso de Windows PowerShell
 
 Ahora configurará la replicación de servidor a servidor mediante Windows PowerShell. Debe realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga el Herramientas de administración remota del servidor de Windows Server.  
 
@@ -268,7 +268,7 @@ Ahora configurará la replicación de servidor a servidor mediante Windows Power
 
 3.  Determine el progreso de la replicación del modo siguiente:  
 
-    1.  En el servidor de origen, ejecuta el siguiente comando y examina los eventos 5015, 5002, 5004, 1237, 5001 y 2200:  
+    1.  En el servidor de origen, ejecute el siguiente comando y examine los eventos 5015, 5002, 5004, 1237, 5001 y 2200:  
 
         ```PowerShell  
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20  
@@ -279,7 +279,7 @@ Ahora configurará la replicación de servidor a servidor mediante Windows Power
         ```PowerShell  
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | fl  
         ```
-        Este es un ejemplo de los resultados:
+        A continuación se muestra una salida de ejemplo:
         ```
         TimeCreated  : 4/8/2016 4:12:37 PM  
         ProviderName : Microsoft-Windows-StorageReplica  
@@ -299,7 +299,7 @@ Ahora configurará la replicación de servidor a servidor mediante Windows Power
         ```  
 
         > [!NOTE]
-        > Réplica de almacenamiento desmonta los volúmenes de destino y sus puntos de montaje o letras de unidad. Esto es así de forma intencionada.  
+        > Réplica de almacenamiento desmonta los volúmenes de destino y sus puntos de montaje o letras de unidad. es así por diseño.  
 
     3.  Como alternativa, el grupo de servidores de destino de la réplica indica el número de bytes que quedan por copiar en todo momento y se puede consultar mediante PowerShell. Por ejemplo:  
 
@@ -318,13 +318,13 @@ Ahora configurará la replicación de servidor a servidor mediante Windows Power
         }  
         ```  
 
-    4.  En el servidor de destino, ejecuta el siguiente comando y examina los eventos 5009, 1237, 5001, 5015, 5005 y 2200 para entender el progreso del procesamiento. No debería haber ninguna advertencia de errores en esta secuencia. Habrá muchos eventos 1237; estos indican el progreso.  
+    4.  En el servidor de destino, ejecute el siguiente comando y examine los eventos 5009, 1237, 5001, 5015, 5005 y 2200 para entender el progreso del procesamiento. No debería haber ninguna advertencia de errores en esta secuencia. Habrá muchos eventos 1237; estos indican el progreso.  
 
         ```PowerShell  
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL  
         ```  
 
-## <a name="step-4-manage-replication"></a>Paso 4: Administración de la replicación
+## <a name="step-4-manage-replication"></a>Paso 4: administración de la replicación
 
 Ahora administrará y usará su infraestructura replicada de servidor a servidor. Puede realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga el Herramientas de administración remota del servidor de Windows Server.  
 
@@ -338,23 +338,23 @@ Ahora administrará y usará su infraestructura replicada de servidor a servidor
 
     -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Número de solicitudes para la última escritura del registro  
 
-    -   \Estadísticas de E/S de partición de réplica de almacenamiento (*)\Longitud media de la cola de vaciado  
+    -   \ Estadísticas de e/s de partición de réplica (*) \Promedio de longitud de cola de vaciado  
 
     -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Longitud actual de la cola de vaciado  
 
     -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Número de solicitudes de escritura en aplicación  
 
-    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Número promedio de solicitudes por escritura del registro  
+    -   \ Estadísticas de e/s de partición de réplica (*) \Promedio número de solicitudes por escritura de registro  
 
-    -   \Estadísticas de E/S de partición de réplica de almacenamiento (*)\Latencia media de escritura de la aplicación  
+    -   \ Estadísticas de e/s de partición de réplica (*) \Promedio de la aplicación de la latencia de escritura  
 
-    -   \Estadísticas de E/S de partición de réplica de almacenamiento (*)\Latencia media de lectura de la aplicación  
+    -   \ Estadísticas de e/s de partición de réplica (*) \Promedio latencia de lectura de la aplicación  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\RPO de destino  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\RPO actual  
 
-    -   \Estadísticas de Réplica de almacenamiento(*)\Longitud media de cola del registro  
+    -   \ Estadísticas de réplica de \Promedio (*) longitud de cola de registro de  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Longitud de cola del registro actual  
 
@@ -362,11 +362,11 @@ Ahora administrará y usará su infraestructura replicada de servidor a servidor
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Nº total de bytes enviados  
 
-    -   \Estadísticas de réplica de almacenamiento (*)\Latencia media de envío de red  
+    -   \ Estadísticas de réplica de \Promedio (*) latencia de envío de red de  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Estado de la replicación  
 
-    -   \Estadísticas de réplica de almacenamiento(*)\Latencia medida del recorrido de ida y vuelta de mensaje  
+    -   \ Estadísticas de réplica de \Promedio (*) latencia de recorrido de ida y vuelta de mensajes  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Tiempo transcurrido de la última recuperación  
 
@@ -384,7 +384,7 @@ Ahora administrará y usará su infraestructura replicada de servidor a servidor
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Número de mensajes enviados  
 
-    Para más información sobre los contadores de rendimiento en Windows PowerShell, consulte [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter).  
+    Para más información sobre los contadores de rendimiento en Windows PowerShell, consulte [Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter).  
 
 3.  Para mover la dirección de replicación de un sitio, use el cmdlet `Set-SRPartnership`.  
 
@@ -428,7 +428,7 @@ Se trata de un proceso de alto nivel:
 3. Comparta los datos en el servidor de origen y haga que sea accesible a través de un espacio de nombres DFS. Esto es importante para asegurarse de que los usuarios pueden seguir teniendo acceso a él si el nombre del servidor cambia por uno de un sitio de desastres.  
    a.  Puede crear recursos compartidos de coincidencias en el servidor de destino no estará disponible durante las operaciones normales,   
    b.  No agregue el servidor de destino al espacio de nombres de espacios de nombres DFS, o bien, asegúrese de que todos sus destinos de carpeta estén deshabilitados.  
-4. Habilita la replicación de réplica de almacenamiento y la sincronización inicial completa. La replicación puede ser sincrónica o asincrónica.   
+4. Habilite la replicación de réplica de almacenamiento y la sincronización inicial completa. La replicación puede ser sincrónica o asincrónica.   
    a.  Sin embargo, se recomienda sincrónica con el fin de garantizar la coherencia de datos de E/S en el servidor de destino.   
    b.  Se recomienda firmemente habilitar las instantáneas de volumen y tomar periódicamente instantáneas con VSSADMIN u otras herramientas de su elección. De esta forma se garantiza que las aplicaciones vacían sus archivos de datos en el disco de forma coherente. En caso de desastres, puede recuperar archivos de instantáneas en el servidor de destino que se podrían haber replicado parcialmente de manera asincrónica. Las instantáneas se replican junto con los archivos.  
 5. Funcionan normalmente hasta que hay un desastre.  
@@ -442,26 +442,26 @@ Se trata de un proceso de alto nivel:
 
 ## <a name="adding-an-azure-vm-connected-to-your-network-via-expressroute"></a><a name="add-azure-vm-expressroute"></a>Incorporación de una máquina virtual de Azure conectada a la red a través de ExpressRoute
 
-1. [Cree una ExpressRoute en el Azure portal](https://docs.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager).<br>Una vez aprobada la ExpressRoute, se agrega un grupo de recursos a la suscripción: vaya a **grupos de recursos** para ver este nuevo grupo. Tome nota del nombre de la red virtual.
+1. [Cree una ExpressRoute en el Azure portal](/azure/expressroute/expressroute-howto-circuit-portal-resource-manager).<br>Una vez aprobada la ExpressRoute, se agrega un grupo de recursos a la suscripción: vaya a **grupos de recursos** para ver este nuevo grupo. Tome nota del nombre de la red virtual.
 ![Azure Portal que muestra el grupo de recursos agregado con ExpressRoute](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
     
     **Figura 4: los recursos asociados a un ExpressRoute: tome nota del nombre de la red virtual**
-1. [Cree un nuevo grupo de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).
-1. [Agregue un grupo de seguridad de red](https://docs.microsoft.com/azure/virtual-network/virtual-networks-create-nsg-arm-pportal). Al crearlo, seleccione el ID. de suscripción asociado al ExpressRoute que creó y, a continuación, seleccione el grupo de recursos que acaba de crear.
+1. [Cree un nuevo grupo de recursos](/azure/azure-resource-manager/resource-group-portal).
+1. [Agregue un grupo de seguridad de red](/azure/virtual-network/virtual-networks-create-nsg-arm-pportal). Al crearlo, seleccione el ID. de suscripción asociado al ExpressRoute que creó y, a continuación, seleccione el grupo de recursos que acaba de crear.
 <br><br>Agregue las reglas de seguridad de entrada y salida que necesite al grupo de seguridad de red. Por ejemplo, puede que desee permitir el acceso Escritorio remoto a la máquina virtual.
-1. [Cree una máquina virtual de Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal) con la siguiente configuración (que se muestra en la figura 5):
+1. [Cree una máquina virtual de Azure](/azure/virtual-machines/windows/quick-create-portal) con la siguiente configuración (que se muestra en la figura 5):
     - **Dirección IP pública**: ninguna
     - **Red virtual**: seleccione la red virtual que tomó nota del grupo de recursos agregado con ExpressRoute.
-    - **Grupo de seguridad de red (firewall)** : seleccione el grupo de seguridad de red que creó anteriormente.
-    ![crear una máquina virtual que muestre la configuración **de red de expressroute](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
-    Figura 5: creación de una máquina virtual al seleccionar la configuración de red de expressroute**
+    - **Grupo de seguridad de red (firewall)**: seleccione el grupo de seguridad de red que creó anteriormente.
+    ![Crear máquina virtual que muestra la configuración ](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
+     **de red de expressroute Figura 5: creación de una máquina virtual al seleccionar la configuración de red de expressroute**
 1. Una vez creada la máquina virtual, consulte [paso 2: aprovisionar el sistema operativo, las características, los roles, el almacenamiento y la red](#provision-os).
 
 
 ## <a name="related-topics"></a>Temas relacionados  
-- [Información general sobre réplica de almacenamiento](storage-replica-overview.md)  
+- [Información general sobre Réplica de almacenamiento](storage-replica-overview.md)  
 - [Replicación de clúster extendido con almacenamiento compartido](stretch-cluster-replication-using-shared-storage.md)  
 - [Replicación de almacenamiento de clúster a clúster](cluster-to-cluster-storage-replication.md)
 - [Réplica de almacenamiento: problemas conocidos](storage-replica-known-issues.md)  
-- [Réplica de almacenamiento: preguntas más frecuentes](storage-replica-frequently-asked-questions.md)
+- [Réplica de almacenamiento: Preguntas más frecuentes](storage-replica-frequently-asked-questions.md)
 - [Espacios de almacenamiento directo en Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)  

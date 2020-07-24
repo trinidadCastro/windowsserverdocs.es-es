@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: df2023bf-ba64-481e-b222-6f709edaa5c1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d246f0e56681f75e4336ed225d1557a0e05c581b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: dfa0d2df7ee18835542970cb9e185b5c8f4945ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308553"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961067"
 ---
 # <a name="gre-tunneling-in-windows-server-2016"></a>Tunelización de GRE en Windows Server 2016
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Windows Server 2016 proporciona actualizaciones a la encapsulación de enrutamiento genérico \(la funcionalidad de túnel\) GRE para la puerta de enlace de RAS.  
+Windows Server 2016 proporciona actualizaciones a \( \) la funcionalidad de túnel GRE de encapsulación de enrutamiento genérico para la puerta de enlace de Ras.  
   
 GRE es un protocolo de túnel ligero que puede encapsular una amplia variedad de protocolos de capa de red dentro de los vínculos de punto a punto virtuales en una conexión entre redes de protocolo de Internet. La implementación de Microsoft GRE puede encapsular IPv4 e IPv6.  
   
@@ -27,11 +27,11 @@ Los túneles GRE son útiles en muchos escenarios porque:
   
 -   Son compatibles con el estándar RFC 2890, lo que permite interoperar con varios dispositivos del proveedor.  
   
--   Puede usar Protocolo de puerta de enlace de borde \(\) BGP para el enrutamiento dinámico  
+-   Puede usar Protocolo de puerta de enlace de borde \( BGP \) para el enrutamiento dinámico  
   
--   Puede configurar las puertas de enlace RAS multiempresa GRE para usarla con redes definidas por software \(SDN\)
+-   Puede configurar las puertas de enlace RAS multiempresa GRE para usarla con redes definidas por software \( Sdn\)
   
--   Puede usar System Center Virtual Machine Manager para administrar puertas de enlace RAS basadas en\-GRE
+-   Puede usar System Center Virtual Machine Manager para administrar puertas de \- enlace ras basadas en GRE
   
 -   Puede conseguir un rendimiento de hasta 2,0 Gbps en una máquina virtual de 6 núcleos configurada como una puerta de enlace RAS GRE
   
@@ -60,7 +60,7 @@ Estos son algunos escenarios de ejemplo:
   
 -   [Servicios de dispositivos de terceros a los inquilinos](#BKMK_thirdparty)  
   
-## <a name="key-scenarios"></a>Escenarios clave
+## <a name="key-scenarios"></a>Escenarios principales
 
 Los siguientes son escenarios clave a los que se dirige la característica de túnel GRE.  
   
@@ -104,11 +104,11 @@ Este escenario se puede usar para integrar dispositivos de terceros (por ejemplo
   
 ## <a name="configuration-and-deployment"></a>Configuración e implementación
 
-Un túnel GRE se expone como un protocolo adicional dentro de una interfaz S2S. Se implementa de forma similar a un túnel S2S de IPSec descrito en el siguiente blog de redes: [VPN Gateway de sitio a sitio (s2s) multiempresa con Windows Server 2012 R2](https://blogs.technet.com/b/networking/archive/2013/09/29/multi-tenant-site-to-site-s2s-vpn-gateway-with-windows-server-2012-r2.aspx)  
+Un túnel GRE se expone como un protocolo adicional dentro de una interfaz S2S. Se implementa de forma similar a un túnel S2S de IPSec descrito en el siguiente blog de redes: [VPN Gateway de sitio a sitio (s2s) multiempresa con Windows Server 2012 R2](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)  
   
 Vea el tema siguiente para obtener un ejemplo en el que se implementan puertas de enlace, incluidas las puertas de enlace de túnel GRE:  
   
-[Implementar una infraestructura de red definida por software mediante scripts](../../../networking/sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
+[Implementación de una infraestructura de red definida por software con scripts](../../../networking/sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
   
 ## <a name="more-information"></a>Más información
 
@@ -116,11 +116,9 @@ Para obtener más información sobre la implementación de puertas de enlace de 
   
 -   [Puerta de enlace RAS](RAS-Gateway.md)  
   
--   [Protocolo de puerta de enlace de borde &#40;BGP&#41;](../bgp/Border-Gateway-Protocol-BGP.md)  
+-   [Protocolo de puerta de enlace de borde &#40;&#41;BGP](../bgp/Border-Gateway-Protocol-BGP.md)  
   
--   [¡Nuevo! Guía de implementación de puerta de enlace multiinquilino RAS de Windows Server 2012 R2](https://blogs.technet.com/b/wsnetdoc/archive/2014/03/26/new-windows-server-2012-r2-RAS-multitenant-gateway-deployment-guide.aspx)  
+-   [¡Nuevo! Guía de implementación de puerta de enlace multiinquilino RAS de Windows Server 2012 R2](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)  
   
--   [Implementación de Protocolo de puerta de enlace de borde (BGP) con la puerta de enlace multiinquilino de RAS](https://blogs.technet.com/b/wsnetdoc/archive/2014/04/03/deploy-border-gateway-protocol-bgp-with-the-RAS-multitenant-gateway.aspx)  
+-   [Implementación de Protocolo de puerta de enlace de borde (BGP) con la puerta de enlace multiinquilino de RAS](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)  
   
-
-

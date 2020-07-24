@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: Administrador de recursos de servidor de archivos (FSRM) es una herramienta que permite administrar y clasificar los datos en un servidor de archivos de Windows Server.
-ms.openlocfilehash: af54f08f8acc491553a4d42c1aabe8ea7e26fadd
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 58b410e51dae3ea102bb1a15f5bb60f00ab702fa
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473942"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964567"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>Información general de Administrador de recursos de servidor de archivos (FSRM)
 
@@ -57,7 +57,7 @@ Las características incluidas en el servidor de archivos Administrador de recur
 
 A partir de Windows Server, versión 1803, ahora puede impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como un diario USN) en los volúmenes cuando se inicia el servicio. Esto puede ahorrar un poco de espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real.
 
-Para conocer las nuevas características anteriores, consulte [novedades en el administrador de recursos del servidor de archivos](https://technet.microsoft.com/library/dn383587.aspx).
+Para conocer las nuevas características anteriores, consulte [novedades en el administrador de recursos del servidor de archivos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383587(v=ws.11)).
 
 Para evitar que el servidor de archivos Administrador de recursos cree un diario de cambios en algunos o en todos los volúmenes cuando se inicie el servicio, siga estos pasos:
 
@@ -106,4 +106,4 @@ Para evitar que el servidor de archivos Administrador de recursos cree un diario
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Access Control dinámico](https://technet.microsoft.com/library/dn408191(v=ws.11).aspx)
+- [Access Control dinámico](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408191(v=ws.11))

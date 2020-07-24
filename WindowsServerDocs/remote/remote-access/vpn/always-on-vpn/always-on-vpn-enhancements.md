@@ -1,5 +1,5 @@
 ---
-title: Mejoras de VPN de Always On
+title: Mejoras de VPN de Always On
 description: Always On VPN tiene muchas ventajas en comparación con las soluciones de VPN de Windows del pasado. Mejoras clave en la integración, la seguridad, la conectividad, el control de redes y la compatibilidad align Always On VPN con la primera visión móvil y en la nube de Microsoft.
 ms.prod: windows-server
 ms.technology: networking-ras
@@ -8,14 +8,14 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 53538466358256a8cd0955033503092f157eb562
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3aad4eeac3ba81def5a6a5c231745e8ac97cd9ca
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853638"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964247"
 ---
-# <a name="always-on-vpn-enhancements"></a>Mejoras de VPN de Always On
+# <a name="always-on-vpn-enhancements"></a>Mejoras de VPN de Always On
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10
 
@@ -26,7 +26,7 @@ Always On VPN tiene muchas ventajas en comparación con las soluciones de VPN de
 
 - **Integración de la plataforma:** Always On VPN ha mejorado la integración con el sistema operativo Windows y las soluciones de terceros para proporcionar una plataforma sólida para innumerables escenarios de conexión avanzados.
 
-- **Seguridad:** Always On VPN tiene nuevas capacidades de seguridad avanzadas para restringir el tipo de tráfico, las aplicaciones que pueden usar la conexión VPN y los métodos de autenticación que puede usar para iniciar la conexión. Cuando la conexión está activa la mayor parte del tiempo, es especialmente importante proteger la conexión. Para obtener más información, consulte [Opciones de autenticación de VPN](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-authentication).
+- **Seguridad:** Always On VPN tiene nuevas capacidades de seguridad avanzadas para restringir el tipo de tráfico, las aplicaciones que pueden usar la conexión VPN y los métodos de autenticación que puede usar para iniciar la conexión. Cuando la conexión está activa la mayor parte del tiempo, es especialmente importante proteger la conexión. Para obtener más información, consulte [Opciones de autenticación de VPN](/windows/security/identity-protection/vpn/vpn-authentication).
 
 - **Conectividad VPN:** Always On VPN, con o sin túnel de dispositivo, proporciona funcionalidad de desencadenador automático. Antes de Always On VPN, no era posible desencadenar una conexión automática a través de la autenticación de usuario o de dispositivo.  
 
@@ -44,9 +44,9 @@ Microsoft ha incorporado o mejorado las siguientes funcionalidades de integraci�
 
 | Mejora de las claves   |  Descripción  |
 |----------------|---|
-| **[Information Protection de Windows (WIP)](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip)** | La integración con WIP permite que la aplicación de directivas de red determine si se permite que el tráfico pase a través de la VPN. Si el perfil de usuario está activo y se aplican las directivas de WIP, Always On VPN se desencadena automáticamente para conectarse. Además, cuando se usa WIP, no es necesario especificar las reglas de AppTriggerList y TrafficFilterList por separado en el perfil de VPN (a menos que desee una configuración más avanzada) porque las directivas de WIP y las listas de aplicaciones surten efecto automáticamente. |
-|**[Windows Hello para empresas](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-overview)** |Always On VPN es compatible de forma nativa con Windows Hello para empresas (en el modo de autenticación basada en certificados) para proporcionar una experiencia de inicio de sesión único sin problemas para el inicio de sesión en la máquina y la conexión a la VPN. Por lo tanto, no se necesita ninguna autenticación secundaria (credenciales de usuario) para la conexión VPN, lo que permite usar una conexión Always On con la autenticación de Windows Hello para empresas. |
-| **[Microsoft Azure el acceso condicional](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-controls)**  |El cliente VPN de Always On puede integrarse con la plataforma de acceso condicional de Azure para exigir la autenticación multifactor (MFA), el cumplimiento de dispositivos o una combinación de ambos. Cuando cumple con las directivas de acceso condicional, Azure Active Directory (Azure AD) emite un certificado de autenticación de seguridad IP (IPsec) de corta duración (de forma predeterminada, 60 minutos) que se puede usar para autenticarse en la puerta de enlace de VPN. El cumplimiento de dispositivos usa directivas de cumplimiento de Configuration Manager/Intune, que pueden incluir el estado de atestación de estado de dispositivo como parte de la comprobación de cumplimiento de la conexión.|
+| **[Windows Information Protection (WIP)](/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip)** | La integración con WIP permite que la aplicación de directivas de red determine si se permite que el tráfico pase a través de la VPN. Si el perfil de usuario está activo y se aplican las directivas de WIP, Always On VPN se desencadena automáticamente para conectarse. Además, cuando se usa WIP, no es necesario especificar las reglas de AppTriggerList y TrafficFilterList por separado en el perfil de VPN (a menos que desee una configuración más avanzada) porque las directivas de WIP y las listas de aplicaciones surten efecto automáticamente. |
+|**[Windows Hello para empresas](/windows/access-protection/hello-for-business/hello-overview)** |Always On VPN es compatible de forma nativa con Windows Hello para empresas (en el modo de autenticación basada en certificados) para proporcionar una experiencia de inicio de sesión único sin problemas para el inicio de sesión en la máquina y la conexión a la VPN. Por lo tanto, no se necesita ninguna autenticación secundaria (credenciales de usuario) para la conexión VPN, lo que permite usar una conexión Always On con la autenticación de Windows Hello para empresas. |
+| **[Microsoft Azure el acceso condicional](/azure/active-directory/active-directory-conditional-access-controls)**  |El cliente VPN de Always On puede integrarse con la plataforma de acceso condicional de Azure para exigir la autenticación multifactor (MFA), el cumplimiento de dispositivos o una combinación de ambos. Cuando cumple con las directivas de acceso condicional, Azure Active Directory (Azure AD) emite un certificado de autenticación de seguridad IP (IPsec) de corta duración (de forma predeterminada, 60 minutos) que se puede usar para autenticarse en la puerta de enlace de VPN. El cumplimiento de dispositivos usa directivas de cumplimiento de Configuration Manager/Intune, que pueden incluir el estado de atestación de estado de dispositivo como parte de la comprobación de cumplimiento de la conexión.|
 |  **Azure MFA** |Cuando se combina con los servicios de Servicio de autenticación remota telefónica de usuario (RADIUS) y la extensión del servidor de directivas de redes (NPS) para Azure MFA, la autenticación VPN puede usar una MFA segura. | **Complemento de VPN de terceros**  | Con el Plataforma universal de Windows (UWP), los proveedores de VPN de terceros pueden crear una aplicación única para toda la gama de dispositivos Windows 10. UWP proporciona una capa de API principal garantizada en todos los dispositivos, lo que elimina la complejidad de los problemas y a menudo asociados con la escritura de controladores de nivel de kernel. Actualmente, existen complementos VPN de UWP de Windows 10 para [Pulse Secure](https://www.microsoft.com/p/pulse-secure/9nblggh3b0bp), [F5 Access](https://www.microsoft.com/p/f5-access/9wzdncrdsfn0), [Check Point cápsula VPN](https://www.microsoft.com/p/check-point-capsule-vpn/9wzdncrdjxtj), [FortiClient](https://www.microsoft.com/p/forticlient/9wzdncrdh6mc), [SonicWALL Mobile Connect](https://www.microsoft.com/p/sonicwall-mobile-connect/9wzdncrdsfkz)y [GlobalProtect](https://www.microsoft.com/p/globalprotect/9nblggh6bzl3); sin duda, otros aparecerán en el futuro. |
 
 ## <a name="security"></a>Seguridad
@@ -71,7 +71,7 @@ A continuación se enumeran las mejoras principales en Always On la conectividad
 |            **Detección de redes de confianza**            |                                                                                    Always On VPN incluye esta característica para asegurarse de que la conectividad VPN no se desencadene si un usuario está conectado a una red de confianza dentro del límite corporativo. Puede combinar esta característica con cualquiera de los métodos de activación mencionados anteriormente para proporcionar una experiencia de usuario "solo conectarse cuando sea necesario".                                                                                     |
 | **[Túnel de dispositivo](../vpn-device-tunnel-config.md)** | Always On VPN le ofrece la posibilidad de crear un perfil de VPN dedicado para el dispositivo o la máquina. A diferencia del *túnel de usuario*, que solo se conecta después de que un usuario inicie sesión en el dispositivo o equipo, el túnel de *dispositivo* permite que la VPN establezca la conectividad antes de que el usuario inicie sesión. Tanto el túnel de dispositivo como el túnel de usuario funcionan de forma independiente con sus perfiles de VPN, se pueden conectar al mismo tiempo y pueden usar diferentes métodos de autenticación y otras opciones de configuración de VPN según corresponda. |
 
-## <a name="networking"></a>Funciones de red
+## <a name="networking"></a>Redes
 
 A continuación se muestran algunas de las mejoras de red en Always On VPN:
 

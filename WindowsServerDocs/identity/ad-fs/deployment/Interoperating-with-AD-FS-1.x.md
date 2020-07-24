@@ -8,22 +8,22 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 800c7fc23c9b126a17e54311fc6df0d3dcf36b4c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 83d13386368ff1d6447231d465e01bcceae61d47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855368"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963767"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>Interoperabilidad con AD FS 1.x
 
-Para la interoperabilidad entre Servicios de federación de Active Directory (AD FS) \(AD FS\) en Windows Server&reg; 2012 y AD FS 1. *x*, realice una o varias de las siguientes tareas, en función de las necesidades de su organización:  
+Para la interoperabilidad entre Servicios de federación de Active Directory (AD FS) \( AD FS \) en Windows Server &reg; 2012 y AD FS 1.* x*, realice una o varias de las siguientes tareas, en función de las necesidades de su organización:  
   
--   Planee la interoperabilidad entre AD FS en Windows Server 2012 y versiones anteriores de AD FS y obtenga más información sobre el tipo de notificaciones de identificador de nombre. Para obtener más información, consulte [planificación de interoperabilidad con AD FS 1. x](https://technet.microsoft.com/library/ff678040.aspx).  
+-   Planee la interoperabilidad entre AD FS en Windows Server 2012 y versiones anteriores de AD FS y obtenga más información sobre el tipo de notificaciones de identificador de nombre. Para obtener más información, consulte [planificación de interoperabilidad con AD FS 1. x](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ff678040(v=ws.11)).  
   
 -   Si va a enviar notificaciones desde un AD FS Servicio de federación en Windows Server 2012 que se puede usar en una AD FS 1. *x* servicio de Federación, consulte [Checklist: Configuring AD FS to send Claims to a AD FS 1. x servicio de Federación](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Federation-Service.md).  
   
--   Si va a enviar notificaciones desde un AD FS Servicio de federación en Windows Server 2012 que puede ser consumida por una aplicación hospedada por un servidor Web que ejecuta la AD FS 1.\-agente Web compatible con notificaciones *x* , consulte [lista de comprobación: configuración de AD FS para enviar notificaciones a un agente Web compatible con notificaciones de AD FS 1. x](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md).  
+-   Si va a enviar notificaciones desde un AD FS Servicio de federación en Windows Server 2012 que puede ser consumida por una aplicación hospedada por un servidor Web que ejecuta la AD FS 1. *x* \- agente Web compatible con notificaciones, consulte [lista de comprobación: configuración de AD FS para enviar notificaciones a un agente Web compatible con notificaciones de AD FS 1. x](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md).  
   
 -   Si va a enviar notificaciones desde un AD FS 1. *x* servicio de Federación que va a consumir un AD FS servicio de Federación en Windows Server 2012, consulte [Checklist: Configuring AD FS para consumir notificaciones de AD FS 1. x](Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md).  
   
@@ -33,14 +33,13 @@ Aunque la mayoría de las AD FS 1. la configuración de la Servicio de federaci�
 |Configuración de Servicio de federación de AD FS 1. x|AD FS equivalente Servicio de federación en el valor 2012 de Windows Server  
 |----------------------------------------|---------------------------------------------------------------------------------------------------------- 
 |Asociado de cuenta|Confianza de proveedor de notificaciones  
-|Asociado de recurso|Relación de usuario de confianza 
-|Aplicación|Relación de usuario de confianza  
-|Administrar las propiedades de la aplicación|Propiedades de la relación de confianza para usuario autenticado  
-|Dirección URL de la aplicación|Identificador de usuario de confianza y dirección URL de extremo pasivo de Federación de WS\-  
+|Asociado de recurso|Confianza para usuario autenticado 
+|Application|Confianza para usuario autenticado  
+|Application Properties|Propiedades de la relación de confianza para usuario autenticado  
+|Dirección URL de la aplicación|Identificador de usuario de confianza y \- dirección URL de extremo pasivo de WS Federation  
 |URI Servicio de federación|Identificador del Servicio de federación  
-|Servicio de federación dirección URL del extremo|URL de extremo pasivo de Federación de WS\-  
+|Servicio de federación dirección URL del extremo|\-URL de extremo pasivo de Federación de WS  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 [Interoperabilidad de AD FS y AD FS 1. x](https://go.microsoft.com/fwlink/?LinkId=200776)  
   
-

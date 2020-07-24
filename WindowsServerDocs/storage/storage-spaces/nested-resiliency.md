@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 4faf4ade53074677b34b037c5ba6d551beb8542e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6c3e16f0965be5fc7de4bdc7bd751fb1dd193556
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474912"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962207"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>Resistencia anidada para Espacios de almacenamiento directo
 
@@ -56,7 +56,7 @@ Espacios de almacenamiento directo en Windows Server 2019 ofrece dos nuevas opci
 
   ![Reflejo doble anidado](media/nested-resiliency/nested-two-way-mirror.png)
 
-- **Paridad anidada con aceleración de reflejo.** Combina la creación de reflejo bidireccional anidada, anterior, con paridad anidada. Dentro de cada servidor, la resistencia local para la mayoría de los datos se proporciona mediante aritmética única de [paridad bit a bit](storage-spaces-fault-tolerance.md#parity), excepto las nuevas escrituras recientes que usan la creación de reflejo bidireccional. A continuación, la creación de reflejo bidireccional entre los servidores proporciona una mayor resistencia para todos los datos. Para obtener más información acerca de cómo funciona la paridad con aceleración de reflejo, consulte [paridad acelerada de reflejo](https://docs.microsoft.com/windows-server/storage/refs/mirror-accelerated-parity).
+- **Paridad anidada con aceleración de reflejo.** Combina la creación de reflejo bidireccional anidada, anterior, con paridad anidada. Dentro de cada servidor, la resistencia local para la mayoría de los datos se proporciona mediante aritmética única de [paridad bit a bit](storage-spaces-fault-tolerance.md#parity), excepto las nuevas escrituras recientes que usan la creación de reflejo bidireccional. A continuación, la creación de reflejo bidireccional entre los servidores proporciona una mayor resistencia para todos los datos. Para obtener más información acerca de cómo funciona la paridad con aceleración de reflejo, consulte [paridad acelerada de reflejo](../refs/mirror-accelerated-parity.md).
 
   ![Paridad anidada-con aceleración de reflejo](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
@@ -127,7 +127,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 ### <a name="step-3-continue-in-windows-admin-center"></a>Paso 3: continuar en el centro de administración de Windows
 
-Los volúmenes que usan resistencia anidada aparecen en el [centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center) con etiquetas claras, como se muestra en la captura de pantalla siguiente. Una vez creados, puede administrarlos y supervisarlos mediante el centro de administración de Windows como cualquier otro volumen en Espacios de almacenamiento directo.
+Los volúmenes que usan resistencia anidada aparecen en el [centro de administración de Windows](../../manage/windows-admin-center/overview.md) con etiquetas claras, como se muestra en la captura de pantalla siguiente. Una vez creados, puede administrarlos y supervisarlos mediante el centro de administración de Windows como cualquier otro volumen en Espacios de almacenamiento directo.
 
 ![](media/nested-resiliency/windows-admin-center.png)
 

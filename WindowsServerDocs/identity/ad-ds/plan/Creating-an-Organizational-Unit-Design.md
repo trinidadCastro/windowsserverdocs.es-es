@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8e92ad4b280572fc3b44a0161af9a4ea25653c89
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 186ad8d63a1d30ce56b1f6a2780893cfb744463d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624323"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962257"
 ---
 # <a name="creating-an-organizational-unit-design"></a>Creación de diseño de unidad organizativa
 
@@ -21,7 +21,7 @@ ms.locfileid: "81624323"
 
 Los propietarios de bosques son responsables de crear diseños de unidades organizativas (OU) para sus dominios. La creación de un diseño de Uo implica diseñar la estructura de la unidad organizativa, asignar el rol de propietario de la unidad organizativa y crear unidades organizativas de cuentas y recursos.
 
-Inicialmente, diseñe la estructura de la unidad organizativa para habilitar la delegación de la administración. Una vez completado el diseño de la unidad organizativa, puede crear estructuras de unidades organizativas adicionales para la aplicación de directiva de grupo a los usuarios y equipos, así como para limitar la visibilidad de los objetos. Para obtener más información, vea [diseñar una infraestructura de directiva de grupo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc786524(v=ws.10)).
+Inicialmente, diseñe la estructura de la unidad organizativa para habilitar la delegación de la administración. Una vez completado el diseño de la unidad organizativa, puede crear estructuras de unidades organizativas adicionales para la aplicación de directiva de grupo a los usuarios y equipos, así como para limitar la visibilidad de los objetos. Para obtener más información, vea [diseñar una infraestructura de directiva de grupo](/previous-versions/windows/it-pro/windows-server-2003/cc786524(v=ws.10)).
 
 ## <a name="ou-owner-role"></a>Rol de propietario de Uo
 El propietario del bosque designa a un propietario de la unidad organizativa que diseña para el dominio. Los propietarios de las unidades organizativas son administradores de datos que controlan un subárbol de objetos en Active Directory Domain Services (AD DS). Los propietarios de las unidades organizativas pueden controlar cómo se delega la administración y cómo se aplica la Directiva a los objetos de la unidad organizativa. También pueden crear nuevos subárboles y delegar la administración de las unidades organizativas dentro de esos subárboles.
@@ -40,7 +40,7 @@ Ensamble un equipo para diseñar la estructura de la unidad organizativa que se 
 
 Es importante documentar el diseño de la unidad organizativa. Enumere los nombres de las unidades organizativas que va a crear. Y, para cada unidad organizativa, documente el tipo de unidad organizativa, el propietario de la unidad organizativa, la unidad organizativa principal (si es aplicable) y el origen de esa unidad organizativa.
 
-Para obtener una hoja de cálculo que le ayude a documentar el diseño de la unidad organizativa, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "identificación de las unidades organizativas para cada dominio" (DSSLOGI_9. doc).
+Para obtener una hoja de cálculo que le ayude a documentar el diseño de la unidad organizativa, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "identificación de las unidades organizativas para cada dominio" (DSSLOGI_9.doc).
 
 ## <a name="in-this-section"></a>En esta sección
 

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7f011bc12c26567ed3a0e912dca3c3a8de9bfff9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 04b023a931f8d66205a07f05bb8d3e955f8b83ca
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474932"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964077"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>Habilitar la enumeración basada en el acceso en un espacio de nombres
 
@@ -36,7 +36,7 @@ Para usar la enumeración basada en el acceso con espacios de nombres DFS, debe 
 
 
 > [!WARNING]
-> La enumeración basada en el acceso no impide que los usuarios obtengan una referencia a un destino de carpeta si ya conocen la ruta de acceso DFS. Solo los permisos del recurso compartido o del sistema de archivos NTFS del destino de la carpeta (carpeta compartida) pueden impedir que los usuarios tengan acceso a un destino de carpeta. Los permisos de la carpeta DFS solo se usan para mostrar u ocultar carpetas DFS, no para controlar el acceso, haciendo que el acceso de lectura sea el único permiso pertinente en el nivel de carpeta DFS. Para obtener más información, vea [usar permisos heredados con enumeración basada en el acceso](https://technet.microsoft.com/library/dd834874(v=ws.11).aspx) .
+> La enumeración basada en el acceso no impide que los usuarios obtengan una referencia a un destino de carpeta si ya conocen la ruta de acceso DFS. Solo los permisos del recurso compartido o del sistema de archivos NTFS del destino de la carpeta (carpeta compartida) pueden impedir que los usuarios tengan acceso a un destino de carpeta. Los permisos de la carpeta DFS solo se usan para mostrar u ocultar carpetas DFS, no para controlar el acceso, haciendo que el acceso de lectura sea el único permiso pertinente en el nivel de carpeta DFS. Para obtener más información, vea [usar permisos heredados con enumeración basada en el acceso](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11)) .
 
 <br />
 Puede habilitar la enumeración basada en el acceso en un espacio de nombres mediante la interfaz de Windows o mediante una línea de comandos.
@@ -58,7 +58,7 @@ Puede habilitar la enumeración basada en el acceso en un espacio de nombres med
     ```
 
 > [!TIP]
-> Para administrar la enumeración basada en el acceso en un espacio de nombres mediante Windows PowerShell, use los cmdlets [set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx), [Grant-DfsnAccess](https://technet.microsoft.com/library/jj884272.aspx)y [REVOKE-DfsnAccess](https://technet.microsoft.com/library/jj884273.aspx) . El módulo de Windows PowerShell DFSN se presentó en Windows Server 2012.
+> Para administrar la enumeración basada en el acceso en un espacio de nombres mediante Windows PowerShell, use los cmdlets [set-DfsnRoot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11)), [Grant-DfsnAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11))y [REVOKE-DfsnAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11)) . El módulo de Windows PowerShell DFSN se presentó en Windows Server 2012.
 
 Puede controlar qué usuarios y grupos pueden ver carpetas DFS individuales mediante la interfaz de Windows o mediante una línea de comandos.
 
@@ -66,7 +66,7 @@ Puede controlar qué usuarios y grupos pueden ver carpetas DFS individuales medi
 
 1.  En el árbol de consola, en el nodo **espacios de nombres** , busque la carpeta con destinos para los que desea controlar la visibilidad, haga clic con el botón secundario en ella y, a continuación, haga clic en **propiedades**.
 
-2.  Haga clic en la ficha **Opciones avanzadas**.
+2.  Haga clic en la pestaña **Opciones avanzadas**.
 
 3.  Haga clic en **establecer permisos de vista explícitos en la carpeta DFS** y, a continuación, **Configure ver permisos**.
 
@@ -95,15 +95,15 @@ Puede controlar qué usuarios y grupos pueden ver carpetas DFS individuales medi
 3. Para realizar tareas adicionales desde el símbolo del sistema, use los comandos siguientes:
 
 
-| Comando | Descripción |
+| Get-Help | Descripción |
 |---|---|
-|[Propiedad Dfsutil SD deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|Deniega a un grupo o usuario la capacidad de ver la carpeta.|
-|[Propiedad Dfsutil de SD RESET](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |Quita todos los permisos de la carpeta.|
-|[Propiedad Dfsutil SD REVOKE](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| Quita una ACE de grupo o de usuario de la carpeta. |
+|[Propiedad Dfsutil SD deny](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))|Deniega a un grupo o usuario la capacidad de ver la carpeta.|
+|[Propiedad Dfsutil de SD RESET](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11)) |Quita todos los permisos de la carpeta.|
+|[Propiedad Dfsutil SD REVOKE](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))| Quita una ACE de grupo o de usuario de la carpeta. |
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 -   [Crear un espacio de nombres DFS](create-a-dfs-namespace.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)
--   [Instalación de DFS](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
+-   [Instalación de DFS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11))
 -   [Usar permisos heredados con enumeración basada en el acceso](using-inherited-permissions-with-access-based-enumeration.md)

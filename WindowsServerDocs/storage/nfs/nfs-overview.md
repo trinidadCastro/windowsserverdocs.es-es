@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2589e21c54fa864629f81b5889d0442c6f0de254
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: f18c880dd673b17f53815a57fa2fcc66558dad71
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070560"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961328"
 ---
 # <a name="network-file-system-overview"></a>Introducción a Network File System
 
@@ -49,7 +49,7 @@ Estas son algunas formas de usar NFS:
 
 La funcionalidad nueva y modificada en Network File System incluye compatibilidad con la versión 4,1 de NFS y una mejor implementación y facilidad de administración. Para obtener información acerca de las funciones nuevas o modificadas en Windows Server 2012, revise la siguiente tabla:
 
-|Característica/funcionalidad|Nueva o actualizada|Description|
+|Característica/funcionalidad|Nueva o actualizada|Descripción|
 |---|---|---|
 |[Versión 4,1 de NFS](#nfs-version-41)|Nuevo|Aumento de la seguridad, el rendimiento y la interoperabilidad en comparación con la versión 3 de NFS.|
 |[Infraestructura de NFS](#nfs-infrastructure)|Actualizado|Mejora la implementación y la capacidad de administración, y aumenta la seguridad.|
@@ -91,7 +91,7 @@ Observe que Servidor para NFS admite la conmutación por error transparente, per
 
 La implementación y administración de NFS se ha mejorado de las siguientes maneras:
 
-- Más de 40 nuevos cmdlets de Windows PowerShell facilitan la configuración y administración de recursos compartidos de archivos NFS. Para obtener más información, consulte [cmdlets de NFS en Windows PowerShell](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps).
+- Más de 40 nuevos cmdlets de Windows PowerShell facilitan la configuración y administración de recursos compartidos de archivos NFS. Para obtener más información, consulte [cmdlets de NFS en Windows PowerShell](/powershell/module/nfs/?view=win10-ps).
 - La asignación de identidades se ha mejorado con un almacén de asignación de archivos sin formato local y nuevos cmdlets de Windows PowerShell para configurar la asignación de identidades.
 - La interfaz gráfica de usuario Administrador del servidor es más fácil de usar.
 - El nuevo proveedor de WMI versión 2 está disponible para facilitar la administración.
@@ -99,7 +99,7 @@ La implementación y administración de NFS se ha mejorado de las siguientes man
 
 ## <a name="server-manager-information"></a>Información sobre el Administrador del servidor
 
-En Administrador del servidor-o en el [centro de administración de Windows](../../manage/windows-admin-center/understand/windows-admin-center.md) más reciente: Use el Asistente para agregar roles y características para agregar el servicio de rol servidor para NFS (en el rol servicios de archivos e iSCSI). Para obtener información general sobre la instalación de características, vea el tema sobre la [instalación o desinstalación de roles, servicios de rol o características](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>). Las herramientas de servidor para NFS incluyen el complemento Servicios para Network File System MMC para administrar los componentes de servidor para NFS y cliente para NFS. Con el complemento, puede administrar los componentes de servidor para NFS instalados en el equipo. Servidor para NFS también contiene varias herramientas de administración de línea de comandos de Windows:
+En Administrador del servidor-o en el [centro de administración de Windows](../../manage/windows-admin-center/overview.md) más reciente: Use el Asistente para agregar roles y características para agregar el servicio de rol servidor para NFS (en el rol servicios de archivos e iSCSI). Para obtener información general sobre la instalación de características, vea el tema sobre la [instalación o desinstalación de roles, servicios de rol o características](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>). Las herramientas de servidor para NFS incluyen el complemento Servicios para Network File System MMC para administrar los componentes de servidor para NFS y cliente para NFS. Con el complemento, puede administrar los componentes de servidor para NFS instalados en el equipo. Servidor para NFS también contiene varias herramientas de administración de línea de comandos de Windows:
 
 - **Montar** monta un recurso compartido de NFS remoto (también conocido como exportación) localmente y lo asigna a una letra de unidad local en el equipo cliente de Windows.
 - **Nfsadmin** administra los valores de configuración de los componentes de servidor para NFS y cliente para NFS.
@@ -108,7 +108,7 @@ En Administrador del servidor-o en el [centro de administración de Windows](../
 - **Showmount** muestra los sistemas de archivos montados exportados por servidor para NFS.
 - **Umount** quita las unidades montadas por NFS.
 
-NFS en Windows Server 2012 presenta el módulo NFS para Windows PowerShell con varios cmdlets nuevos específicamente para NFS. Estos cmdlets proporcionan una manera sencilla de automatizar las tareas de administración de NFS. Para obtener más información, consulte [cmdlets de NFS en Windows PowerShell](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps).
+NFS en Windows Server 2012 presenta el módulo NFS para Windows PowerShell con varios cmdlets nuevos específicamente para NFS. Estos cmdlets proporcionan una manera sencilla de automatizar las tareas de administración de NFS. Para obtener más información, consulte [cmdlets de NFS en Windows PowerShell](/powershell/module/nfs/?view=win10-ps).
 
 ## <a name="additional-information"></a>Información adicional
 
@@ -117,5 +117,5 @@ En la tabla siguiente se proporcionan recursos adicionales para evaluar NFS.
 |Tipo de contenido|Referencias|
 |---|---|
 |Implementación|[Implementar el sistema de archivos de red](deploy-nfs.md)|
-|Operations|[Cmdlets de NFS en Windows PowerShell](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
+|Operaciones|[Cmdlets de NFS en Windows PowerShell](/powershell/module/nfs/?view=win10-ps)|
 |Tecnologías relacionadas|[Almacenamiento en Windows Server](../storage.yml)|

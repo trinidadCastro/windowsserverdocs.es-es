@@ -8,15 +8,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2e8be891a8f09e38809503c40469e21a7e99687a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c73b68d67742321ddb79d14b1e24eb574bb22b8c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853768"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961617"
 ---
 # <a name="when-to-use-an-authorization-claim-rule"></a>Cuándo usar una regla de notificación de autorización
-Puede usar esta regla en Servicios de federación de Active Directory (AD FS) \(AD FS\) cuando necesite tomar un tipo de demanda entrante y, a continuación, aplicar una acción que determinará si se permitirá o denegará el acceso a un usuario en función del valor que especifique en la regla. Cuando usas esta regla, transformas o pasas por las notificaciones que coinciden con la lógica de la regla siguiente, según cualquiera de las opciones de que configuración de la regla:  
+Puede usar esta regla en Servicios de federación de Active Directory (AD FS) \( AD FS \) cuando necesite tomar un tipo de demanda entrante y después aplicar una acción que determinará si se permitirá o denegará el acceso a un usuario en función del valor que especifique en la regla. Cuando usas esta regla, transformas o pasas por las notificaciones que coinciden con la lógica de la regla siguiente, según cualquiera de las opciones de que configuración de la regla:  
   
 |Opción de regla|Lógica de regla|  
 |---------------|--------------|  
@@ -26,12 +26,12 @@ Puede usar esta regla en Servicios de federación de Active Directory (AD FS) \(
   
 Las secciones siguientes ofrecen una introducción básica a las reglas de notificación y proporcionan más detalles sobre cuándo utilizar esta regla.  
   
-## <a name="about-claim-rules"></a>Sobre las reglas de notificación  
-Una regla de notificaciones representa una instancia de la lógica de negocios que tomará una solicitud entrante, le aplicará una condición \(si x, entonces y\) y genera una notificaciones salientes en función de los parámetros de la condición. La lista siguiente destaca las sugerencias importantes que deberías conocer sobre las reglas de notificaciones antes de seguir leyendo este tema:  
+## <a name="about-claim-rules"></a>Acerca de las reglas de notificaciones  
+Una regla de notificaciones representa una instancia de la lógica de negocios que tomará una solicitud entrante, le aplicará una condición \( si x después \) y y generará una notificaciones salientes según los parámetros de la condición. La lista siguiente destaca las sugerencias importantes que deberías conocer sobre las reglas de notificaciones antes de seguir leyendo este tema:  
   
--   En el\-del complemento de administración de AD FS en, las reglas de notificaciones solo se pueden crear mediante plantillas de regla de notificaciones.  
+-   En el complemento de administración de AD FS \- , las reglas de notificaciones solo se pueden crear mediante plantillas de regla de notificaciones.  
   
--   Las reglas de notificación procesan las notificaciones entrantes directamente desde un proveedor de notificaciones \(como Active Directory u otro Servicio de federación\) o desde la salida de las reglas de transformación de aceptación en una confianza de proveedor de notificaciones.  
+-   Las reglas de notificación procesan las notificaciones entrantes directamente desde un proveedor de notificaciones \( como Active Directory u otro servicio de Federación \) o desde la salida de las reglas de transformación de aceptación en una relación de confianza para proveedor de notificaciones.  
   
 -   El motor de emisión de notificaciones procesa las reglas de notificación en orden cronológico dentro de un conjunto determinado de reglas. Al establecer una precedencia en las reglas, puedes perfeccionar o filtrar aún más las notificaciones que generan las reglas anteriores dentro de un conjunto determinado de reglas.  
   
@@ -57,7 +57,7 @@ Si quieres usar la condición de denegación pero también habilitar el acceso a
 Si a un usuario se le deniega el acceso cuando el motor de emisión de notificaciones procesa el conjunto de reglas, el procesamiento de reglas se cierra y AD FS devuelve un error de "acceso denegado" a la solicitud del usuario.  
   
 ## <a name="authorizing-users"></a>Permitir acceso a los usuarios  
-En AD FS, las reglas de autorización se usan para emitir un permiso o denegar una notificaciones que determinarán si un usuario o un grupo de usuarios \(según el tipo de demanda que se use\) podrá acceder a los recursos basados en\-Web de un usuario de confianza determinado o no. Las reglas de autorización solo se pueden establecer en relaciones de confianza para usuario autenticado.  
+En AD FS, las reglas de autorización se usan para emitir un permiso o denegar notificaciones que determinarán si un usuario o un grupo de usuarios en \( función del tipo de notificaciones que se usa se \) permitirá tener acceso a \- los recursos basados en Web de un determinado usuario de confianza o no. Las reglas de autorización solo se pueden establecer en relaciones de confianza para usuario autenticado.  
   
 ### <a name="authorization-rule-sets"></a>Conjuntos de reglas de autorización  
 Existen diferentes conjuntos de reglas de autorización según el tipo de operaciones de permiso o denegación que tengas que configurar. Estos conjuntos de reglas incluyen:  
@@ -71,16 +71,16 @@ Existen diferentes conjuntos de reglas de autorización según el tipo de operac
 Para obtener más información sobre cómo encaja el proceso de las regla de autorización en la canalización de emisión de notificaciones, consulta «El papel del Motor de emisión de notificaciones».  
   
 ### <a name="supported-claim-types"></a>Tipos de notificaciones admitidos  
-AD FS define dos tipos de notificaciones que se usan para determinar si se permite o se deniega un usuario. Estos identificadores de recursos uniformes \(URI\) son los siguientes:  
+AD FS define dos tipos de notificaciones que se usan para determinar si se permite o se deniega un usuario. Los URI de los identificadores uniformes \( de recursos de tipos de notificaciones \) son los siguientes:  
   
-1.  **Permitir**: http:\/\/schemas.Microsoft.com\/autorización\/notificaciones\/permitir  
+1.  **Permitir**: http: \/ \/ \/ permiso de \/ notificaciones de autorización de schemas.Microsoft.com \/  
   
-2.  **Deny**: http:\/\/schemas.Microsoft.com\/authorization\/claims\/deny  
+2.  **Deny**: http: \/ \/ schemas.Microsoft.com \/ de \/ notificaciones de autorización \/ denegar  
   
 ## <a name="how-to-create-this-rule"></a>Cómo crear esta regla  
-Puede crear ambas reglas de autorización mediante el lenguaje de reglas de notificaciones o mediante la plantilla de reglas **permitir a todos los usuarios** o la plantilla de reglas **permitir o denegar a los usuarios en función de una reclamación entrante** en el\-de administración de AD FS en. La plantilla de reglas «Permitir a todos los usuarios» no proporciona ninguna opción de configuración. Sin embargo, la plantilla de reglas «Permitir o denegar a los usuarios según una notificación entrante» proporciona las siguientes opciones de configuración:  
+Puede crear ambas reglas de autorización mediante el lenguaje de reglas de notificaciones o mediante la plantilla de reglas **permitir a todos los usuarios** o la plantilla de reglas **permitir o denegar a los usuarios según una reclamación entrante** en el complemento Administración \- de AD FS en. La plantilla de reglas «Permitir a todos los usuarios» no proporciona ninguna opción de configuración. Sin embargo, la plantilla de reglas «Permitir o denegar a los usuarios según una notificación entrante» proporciona las siguientes opciones de configuración:  
   
--   Especificar un nombre de regla de notificación.  
+-   Especificar un nombre de regla de notificaciones  
   
 -   Especificar un tipo de notificación entrante  
   
@@ -90,7 +90,7 @@ Puede crear ambas reglas de autorización mediante el lenguaje de reglas de noti
   
 -   Denegar acceso a los usuarios con esta notificación entrante  
   
-Para obtener más instrucciones sobre cómo crear esta plantilla, consulte [creación de una regla para permitir a todos los usuarios](https://technet.microsoft.com/library/ee913577.aspx) o [creación de una regla para permitir o denegar a los usuarios en función de una demanda entrante](https://technet.microsoft.com/library/ee913594.aspx) en la guía de implementación de AD FS.  
+Para obtener más instrucciones sobre cómo crear esta plantilla, consulte [creación de una regla para permitir a todos los usuarios](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913577(v=ws.11)) o [creación de una regla para permitir o denegar a los usuarios en función de una demanda entrante](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913594(v=ws.11)) en la guía de implementación de AD FS.  
   
 ## <a name="using-the-claim-rule-language"></a>Uso del lenguaje de las reglas de notificación  
 Si solo se debe enviar una notificación cuando el valor de notificación coincida con un patrón personalizado, tienes que usar una regla personalizada. Para obtener más información, consulte [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md).  
@@ -114,13 +114,13 @@ Antes de que un Servicio de federación pueda usar un servidor proxy de federaci
   
 Si quieres especificar qué usuario o usuarios pueden crear una confianza de proxy para un Servicio de federación determinado, puedes usar cualquiera de los siguientes métodos de delegación. Esta lista de métodos está en orden de prioridad, en función de las recomendaciones del equipo de productos AD FS de los métodos de delegación más seguros y menos problemáticos. Es necesario usar solo uno de estos métodos, según las necesidades de tu empresa:  
   
-1.  Cree un grupo de seguridad de dominio en Active Directory \(por ejemplo, FSProxyTrustCreators\), agregue este grupo al grupo local Administradores en cada uno de los servidores de Federación de la granja y, a continuación, agregue únicamente las cuentas de usuario a las que desea delegar este derecho al nuevo grupo. Este es el método preferido.  
+1.  Cree un grupo de seguridad de dominio en Active Directory \( por ejemplo, FSProxyTrustCreators \) , agregue este grupo al grupo local Administradores en cada uno de los servidores de Federación de la granja y, a continuación, agregue únicamente las cuentas de usuario a las que desea delegar este derecho al nuevo grupo. Este es el método preferido.  
   
 2.  Agregue la cuenta de dominio del usuario al grupo de administradores en cada uno de los servidores de Federación de la granja.  
   
 3.  Si por algún motivo no puedes usar cualquiera de estos métodos, también puedes crear una regla de autorización para este propósito. Aunque no es lo recomendado (debido a posibles complicaciones que pueden producirse si no se escribe correctamente esta regla), puedes usar una regla de autorización personalizada para delegar qué cuentas de usuario de dominio de Active Directory también pueden crear o incluso eliminar las confianzas entre todos los servidores proxy de federación que estén asociados a un Servicio de federación determinado.  
   
-    Si elige el método 3, puede usar la siguiente sintaxis de regla para emitir una demanda de autorización que permitirá a un usuario especificado \(en este caso, contoso\\frankm\) para crear confianzas para uno o más servidores proxy de Federación en el Servicio de federación. Debe aplicar esta regla mediante el conjunto de comandos de Windows PowerShell **\-ADFSProperties AddProxyAuthorizationRules**.  
+    Si eliges el método 3, puedes usar la siguiente sintaxis de regla para emitir una demanda de autorización que permita a un usuario especificado \( en este caso, contoso \\ frankm \) crear confianzas para uno o más servidores proxy de federación en el servicio de Federación. Debe aplicar esta regla mediante el conjunto de comandos de Windows PowerShell ** \- ADFSProperties AddProxyAuthorizationRules**.  
   
     ```  
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", issuer=~"^AD AUTHORITY$" value == "contoso\frankm" ] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true")  
@@ -133,7 +133,7 @@ Si quieres especificar qué usuario o usuarios pueden crear una confianza de pro
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/proxytrustid", Issuer =~ "^SELF AUTHORITY$" ] => issue(store="_ProxyCredentialStore",types=("https://schemas.microsoft.com/authorization/claims/permit"),query="isProxyTrustProvisioned({0})", param=c.Value );  
     ```  
   
-    Más adelante, si quieres eliminar el usuario para que no pueda crear confianzas de proxy, puedes volver a la regla de autorización de confianza de proxy predeterminada para eliminar el derecho del usuario a crear confianzas de proxy para el Servicio de federación. También debe aplicar esta regla mediante el conjunto de comandos de Windows PowerShell **\-ADFSProperties AddProxyAuthorizationRules**.  
+    Más adelante, si quieres eliminar el usuario para que no pueda crear confianzas de proxy, puedes volver a la regla de autorización de confianza de proxy predeterminada para eliminar el derecho del usuario a crear confianzas de proxy para el Servicio de federación. También debe aplicar esta regla mediante el conjunto de comandos de Windows PowerShell ** \- ADFSProperties AddProxyAuthorizationRules**.  
   
     ```  
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-544", Issuer =~ "^AD AUTHORITY$"])   
@@ -146,4 +146,3 @@ Si quieres especificar qué usuario o usuarios pueden crear una confianza de pro
   
 Para obtener más información sobre cómo usar el lenguaje de reglas de notificaciones, vea [el rol del lenguaje de reglas de notificaciones](The-Role-of-the-Claim-Rule-Language.md).  
   
-

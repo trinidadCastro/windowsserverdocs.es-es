@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5f88458c8e3f50853229f6f8f9c74fa4b8feba40
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 929530b8ee7dbb7b0486f3eb80a642cc5fdab20e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624423"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962467"
 ---
 # <a name="ad-ds-design-and-planning"></a>Planeación y diseño de AD DS
 
@@ -29,7 +29,7 @@ En esta guía se describen los conjuntos de tareas para varios puntos de partida
 
 Aunque las estrategias que se presentan en esta guía son adecuadas para casi todas las implementaciones de sistema operativo de servidor, se han probado y validado específicamente para entornos que contienen menos de 100.000 usuarios y menos de 1.000 sitios, con conexiones de red de un mínimo de 28,8 kilobits por segundo (kbps). Si su entorno no cumple estos criterios, considere la posibilidad de usar una empresa de consultoría que tenga experiencia en la implementación de AD DS en entornos más complejos.
 
-Para obtener más información acerca de cómo probar el proceso de implementación de AD DS, consulte el artículo [prueba y comprobación del proceso de implementación](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc772722(v=ws.10)).
+Para obtener más información acerca de cómo probar el proceso de implementación de AD DS, consulte el artículo [prueba y comprobación del proceso de implementación](/previous-versions/windows/it-pro/windows-server-2003/cc772722(v=ws.10)).
 
 ## <a name="in-this-guide"></a>En esta guía
 

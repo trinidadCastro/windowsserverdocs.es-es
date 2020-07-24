@@ -1,5 +1,5 @@
 ---
-title: Implementación de un solo servidor de DirectAccess con la configuración avanzada
+title: Deploy a Single DirectAccess Server with Advanced Settings
 description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
 manager: brianlic
 ms.prod: windows-server
@@ -8,14 +8,14 @@ ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7f6a6724a2ab7bb6da48a11d31fb04461912e388
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 199d4ce3ebb3c9cbc6ec1b8574133104b8129312
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859528"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964627"
 ---
-# <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Implementación de un solo servidor de DirectAccess con la configuración avanzada
+# <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Deploy a Single DirectAccess Server with Advanced Settings
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -32,7 +32,7 @@ Puede usar los temas siguientes para revisar los requisitos previos y otra infor
 En este escenario, un solo equipo que ejecute Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012, se configura como un servidor de DirectAccess con configuración avanzada.  
   
 > [!NOTE]  
-> Si quieres configurar una implementación básica solo con ajustes básicos, consulta [Deploy a Single DirectAccess Server Using the Getting Started Wizard](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md). En el escenario de configuración sencilla, DirectAccess se configura con opciones de configuración predeterminadas mediante un asistente, sin necesidad de establecer la configuración de infraestructura, como una entidad de certificación (CA) o grupos de seguridad de Active Directory.  
+> Si quieres configurar una implementación básica solo con ajustes básicos, consulta [Deploy a Single DirectAccess Server Using the Getting Started Wizard](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md). En el escenario de configuración sencilla, DirectAccess se configura con opciones de configuración predeterminadas mediante un asistente, sin necesidad de establecer la configuración de infraestructura, como una entidad de certificación (CA) o grupos de seguridad de Active Directory.  
   
 ## <a name="in-this-scenario"></a>En este escenario  
 Para configurar un único servidor de DirectAccess con configuración avanzada, debes realizar varios pasos de planificación e implementación.  
@@ -51,7 +51,7 @@ Revisa los siguientes requisitos antes de empezar.
 >   
 > -   El protocolo ISATAP (Intra-Site Automatic Tunnel Addressing Protocol) en la red corporativa no es compatible. Si usas ISATAP, deberás quitarlo y usar IPv6 nativo.  
   
-### <a name="planning-steps"></a>Pasos de planeamiento  
+### <a name="planning-steps"></a>Pasos de planeación  
 La planeación se divide en dos fases:  
   
 1.  **Planificación de la infraestructura de DirectAccess**. En esta fase se describe la planificación necesaria para configurar la infraestructura de red antes de comenzar la implementación de DirectAccess. Engloba planear la topología de servidores y de red y los certificados, DNS, la configuración del objeto de directiva de grupo (GPO) de Active Directory y el servidor de ubicación de red de DirectAccess.  
@@ -76,7 +76,7 @@ La implementación de un único servidor de DirectAccess reporta lo siguiente:
   
 -   **Administrabilidad**. Los equipos cliente de DirectAccess ubicados en Internet pueden administrarse de manera remota por administradores de acceso remoto en DirectAccess, aun cuando los equipos cliente no estén ubicados en la red corporativa interna. Los equipos cliente que no cumplan los requisitos corporativos pueden ser actualizados automáticamente por servidores de administración. Tanto DirectAccess como VPN se administran en la misma consola y con el mismo conjunto de asistentes. Además, se pueden administrar uno o más servidores de DirectAccess desde una sola consola de administración de acceso remoto.  
   
-## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>Roles y características necesarios para este escenario  
+## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>Roles y características necesarios en este escenario  
 En la siguiente tabla se recogen los roles y características necesarios en este escenario:  
   
 |Rol/característica|Compatibilidad con este escenario|  
@@ -145,9 +145,7 @@ En la siguiente tabla, se proporcionan los vínculos a recursos adicionales:
 |Tipo de contenido|Referencias|  
 |--------|-------|  
 |**Implementación**|[Rutas de acceso de implementación de DirectAccess en Windows Server](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[Implementar un único servidor de DirectAccess con el Asistente para Introducción](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
-|**Herramientas y configuración**|[Cmdlets de acceso remoto de PowerShell](https://technet.microsoft.com/library/hh918399.aspx)|  
-|**Recursos de la comunidad**|[Guía de supervivencia de DirectAccess](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[Entradas de wiki de DirectAccess](https://go.microsoft.com/fwlink/?LinkId=236871)|  
-|**Tecnologías relacionadas**|[Cómo funciona IPv6](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
+|**Herramientas y configuración**|[Cmdlets de acceso remoto en PowerShelll](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))|  
+|**Recursos de la comunidad**|[Guía de supervivencia de DirectAccess](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[Entradas wiki de DirectAccess](https://go.microsoft.com/fwlink/?LinkId=236871)|  
+|**Tecnologías relacionadas**|[Funcionamiento de IPv6](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|  
   
-
-
