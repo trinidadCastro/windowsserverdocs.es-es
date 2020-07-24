@@ -10,16 +10,16 @@ author: cosmosdarwin
 ms.date: 11/06/2017
 description: Cómo agregar servidores o unidades a un clúster de Espacios de almacenamiento directo
 ms.localizationpriority: medium
-ms.openlocfilehash: be79a2d3e0e8c56afc409298518d967c9bc80453
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 773bb3a55de27d049d26fa76659d3a4d8057f0fe
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859128"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966397"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>Agregar servidores o unidades a espacios de almacenamiento directo
 
->Se aplica a: Windows Server 2019 y Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se describe cómo agregar servidores o unidades a espacios de almacenamiento directo.
 
@@ -31,7 +31,7 @@ Mediante la adición de servidores, también conocida como escalado horizontal, 
 
 Las implementaciones típicas son fáciles de escalar horizontalmente mediante la adición de nodos: Tan solo se necesitan realizar dos pasos:
 
-1. Ejecutar el [asistente para validación de clúster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) usando el complemento de clústeres de conmutación por error o con el cmdlet **Test-Cluster** de PowerShell (ejecutar como administrador). Incluye el nuevo servidor *\<NewNode >* que quieras agregar.
+1. Ejecutar el [asistente para validación de clúster](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10)) usando el complemento de clústeres de conmutación por error o con el cmdlet **Test-Cluster** de PowerShell (ejecutar como administrador). Incluya el nuevo servidor *\<NewNode>* que desee agregar.
 
    ```PowerShell
    Test-Cluster -Node <Node>, <Node>, <Node>, <NewNode> -Include "Storage Spaces Direct", Inventory, Network, "System Configuration"
@@ -49,7 +49,7 @@ Add-ClusterNode -Name NewNode
 ```
 
    >[!NOTE]
-   > La agrupación automática depende de que solo tenga un grupo. Si has sorteado la configuración estándar para crear varios grupos, tendrás que agregar unidades nuevas a tu grupo preferido mediante **Add-PhysicalDisk**.
+   > La agrupación automática depende de que solo tenga un grupo. Si ha omitido la configuración estándar para crear varios grupos, deberá agregar nuevas unidades al grupo preferido mediante **Add-PhysicalDisk**.
 
 ### <a name="from-2-to-3-servers-unlocking-three-way-mirroring"></a>Entre 2 y 3 servidores: desbloquear un reflejo triple
 
@@ -115,7 +115,7 @@ Get-StoragePool S2D* | Get-ResiliencySetting -Name Parity | Set-ResiliencySettin
 New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size <Size> -ResiliencySettingName Parity
 ```
 
-Con cuatro servidores también puedes empezar a usar la paridad acelerada por reflejos, en cuyo caso un volumen individual es en parte reflejo y en parte paridad.
+Con cuatro servidores, también puede empezar a usar la paridad con aceleración de reflejo, en la que un volumen individual es parte del reflejo y la paridad del elemento.
 
 Para ello, debes actualizar la configuración de las plantillas **StorageTier** para tener las capas *Performance* y *Capacity*, tal y como se hubieran creado si hubieras ejecutado en primer lugar **Enable-ClusterS2D** en cuatro servidores. En concreto, las dos capas deben tener el valor de **MediaType** de los dispositivos de capacidad (por ejemplo, SSD o HDD) y **PhysicalDiskRedundancy = 2**. La capa *Performance* debe ser **ResiliencySettingName = Mirror** y la capa *Capacity* debe ser **ResiliencySettingName = Parity**.
 
@@ -130,7 +130,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedund
 New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedundancy 2 -ResiliencySettingName Parity -FriendlyName Capacity
 ```
 
-Ya está. Ya estás listo para crear volúmenes de paridad acelerada por reflejos haciendo referencia a estas plantillas de capa.
+Eso es todo. Ahora está listo para crear volúmenes de paridad acelerada para reflejo haciendo referencia a estas plantillas de nivel.
 
 #### <a name="example"></a>Ejemplo
 
@@ -150,13 +150,13 @@ Para más información, consulta [Tolerancia a errores y eficiencia del almacena
 
 Si la implementación usa la tolerancia a errores de chasis o bastidor, debes especificar el chasis o el bastidor de los servidores nuevos antes de agregarlos al clúster. Esto le indica a Espacios de almacenamiento directo la mejor forma de distribuir los datos para maximizar la tolerancia a errores.
 
-1. Cree un dominio de error temporal para el nodo. Para ello, abra una sesión de PowerShell con privilegios elevados y, después, use el comando siguiente, donde *\<NewNode>* es el nombre del nuevo nodo de clúster:
+1. Cree un dominio de error temporal para el nodo. para ello, abra una sesión de PowerShell con privilegios elevados y, después, use el siguiente comando, donde *\<NewNode>* es el nombre del nuevo nodo de clúster:
 
    ```PowerShell
    New-ClusterFaultDomain -Type Node -Name <NewNode> 
    ```
 
-2. Mueve este dominio de error temporal al chasis o al bastidor donde se encuentra en realidad el nuevo servidor, como se especifica en *\<ParentName>* :
+2. Mueva este dominio de error temporal al chasis o bastidor en el que se encuentra el nuevo servidor en el mundo real, tal como se especifica en *\<ParentName>* :
 
    ```PowerShell
    Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
@@ -181,12 +181,12 @@ Para escalar verticalmente, conecte las unidades y compruebe que Windows las det
 Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 ```
 
-Al poco tiempo, Espacios de almacenamiento directo reclamará automáticamente las unidades válidas, las agregará al grupo de almacenamiento y los volúmenes [se redistribuirán automáticamente de manera uniforme entre todas las unidades](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/). En este punto, has terminado y estás listo para [ampliar los volúmenes](resize-volumes.md) o [crea otros nuevos](create-volumes.md).
+En un breve período de tiempo, Espacios de almacenamiento directo se reclamarán automáticamente las unidades válidas, se agregarán al bloque de almacenamiento y los volúmenes se [redistribuirán de forma automática en todas las unidades](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959). En este momento, ha terminado y está listo para [ampliar los volúmenes](resize-volumes.md) o [crear otros nuevos](create-volumes.md).
 
 Si las unidades no aparecen, busque manualmente si se han producido cambios en el hardware. Esto puede hacerse mediante el **Administrador de dispositivos** en el menú **Acción**. Si contienen datos o metadatos antiguos, considere la posibilidad de volver a formatearlas. Esto puede hacerse con **Disk Management** o con el cmdlet **Reset-PhysicalDisk**.
 
    >[!NOTE]
-   > La agrupación automática depende de que solo tenga un grupo. Si has sorteado la configuración estándar para crear varios grupos, tendrás que agregar unidades nuevas a tu grupo preferido mediante **Add-PhysicalDisk**.
+   > La agrupación automática depende de que solo tenga un grupo. Si ha omitido la configuración estándar para crear varios grupos, deberá agregar nuevas unidades al grupo preferido mediante **Add-PhysicalDisk**.
 
 ## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>Optimizar el uso de la unidad después de agregar unidades o servidores
 
@@ -200,7 +200,7 @@ La optimización usa dos trabajos: uno denominado *optimizar* y otro denominado 
 Get-StorageJob
 ```
 
-Puede optimizar manualmente un grupo de almacenamiento con el cmdlet [Optimize-StoragePool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) . Por ejemplo:
+Puede optimizar manualmente un grupo de almacenamiento con el cmdlet [Optimize-StoragePool](/powershell/module/storage/optimize-storagepool?view=win10-ps) . Veamos un ejemplo:
 
 ```powershell
 Get-StoragePool <PoolName> | Optimize-StoragePool

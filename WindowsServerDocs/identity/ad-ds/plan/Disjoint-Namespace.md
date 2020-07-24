@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c402e5519bc0e5c37cb6d3818c8def40d98d49e5
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 6743a5fb902509d24f8f30d42b919e65fa40ccc0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624263"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965697"
 ---
 # <a name="disjoint-namespace"></a>Espacio de nombres separado
 
@@ -77,7 +77,7 @@ El uso de un espacio de nombres separado puede tener las siguientes desventajas:
 - Para optimizar la resolución de nombres, debe realizar pasos manuales para modificar y mantener directiva de grupo para configurar los equipos miembros con sufijos DNS principales alternativos.
 
 > [!NOTE]
-> El servicio de nombres Internet de Windows (WINS) se puede usar para desplazar este inconveniente resolviendo los nombres de etiqueta única. Para obtener más información acerca de WINS, consulte la [referencia técnica de WINS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10)).
+> El servicio de nombres Internet de Windows (WINS) se puede usar para desplazar este inconveniente resolviendo los nombres de etiqueta única. Para obtener más información acerca de WINS, consulte la [referencia técnica de WINS](/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10)).
 
 - Cuando su entorno requiere varios sufijos DNS principales, debe configurar el orden de búsqueda de sufijos DNS para todos los dominios de Active Directory del bosque de forma adecuada.
 
@@ -85,7 +85,7 @@ El uso de un espacio de nombres separado puede tener las siguientes desventajas:
 
 - Debe probar detenidamente todas las aplicaciones en busca de problemas de compatibilidad.
 
-Para obtener más información sobre los pasos que puede seguir para solucionar estas desventajas, consulte [crear un espacio de nombres discontinuo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10)).
+Para obtener más información sobre los pasos que puede seguir para solucionar estas desventajas, consulte [crear un espacio de nombres discontinuo](/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10)).
 
 ### <a name="planning-a-namespace-transition"></a>Planear una transición de espacio de nombres
 
@@ -93,11 +93,11 @@ Antes de modificar un espacio de nombres, revise las consideraciones siguientes,
 
 - Los nombres de entidad de seguridad de servicio (SPN) configurados manualmente ya no pueden coincidir con los nombres DNS tras un cambio de espacio de nombres. Esto puede producir errores de autenticación.
 
-    Para obtener más información, vea [errores de inicio de sesión de servicio debido a la configuración incorrecta de SPN](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10)).
+    Para obtener más información, vea [errores de inicio de sesión de servicio debido a la configuración incorrecta de SPN](/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10)).
 
     - Si usa equipos basados en Windows Server 2003 con delegación restringida, es posible que estos equipos requieran configuración adicional para cambiar los SPN. Para obtener más información, consulte el artículo 936628 en Microsoft Knowledge base, [el SPN no aparece en la lista de servicios que se pueden delegar a una cuenta cuando se intenta configurar la delegación restringida en un equipo que ejecuta Windows Server 2003](https://support.microsoft.com/help/936628) (404).
 
-    - Si desea delegar permisos para modificar SPN en administradores subordinados, vea [delegar autoridad para modificar SPN](https://technet.microsoft.com/library/cc772895(WS.10).aspx).
+    - Si desea delegar permisos para modificar SPN en administradores subordinados, vea [delegar autoridad para modificar SPN](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770439(v=ws.10)).
 
 - Si usa el Protocolo ligero de acceso a directorios (LDAP) sobre Capa de sockets seguros (SSL) (conocido como LDAPs) con una CA en una implementación que tiene controladores de dominio que están configurados en un espacio de nombres separado, debe usar el nombre de dominio de Active Directory apropiado y el sufijo DNS principal al configurar los certificados LDAPs.
 

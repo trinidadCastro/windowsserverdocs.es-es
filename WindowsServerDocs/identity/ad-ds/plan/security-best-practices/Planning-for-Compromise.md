@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5dcbea1ae0bd84ed517644d7c4fde03852bef304
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72265f5cb2ff0e1f80d4cca6d789cb2951066557
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821118"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966557"
 ---
 # <a name="planning-for-compromise"></a>Planeación de compromiso
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-*Número de la ley: nadie cree que se produzca nada malo, hasta que lo hace.* - [10 leyes inmutables de administración de seguridad](https://technet.microsoft.com/library/cc722488.aspx)  
+*Número de la ley: nadie cree que se produzca nada malo, hasta que lo hace.* - [10 leyes inmutables de administración de seguridad](/previous-versions//cc722488(v=technet.10))  
   
 Los planes de recuperación ante desastres de muchas organizaciones se centran en la recuperación de desastres o errores regionales que provocan la pérdida de servicios informáticos. Sin embargo, cuando se trabaja con clientes comprometidos, a menudo encontramos que la recuperación de un riesgo intencionado está ausente en sus planes de recuperación ante desastres. Esto es especialmente cierto cuando el riesgo es un robo de propiedad intelectual o de destrucción intencional que aprovecha los límites lógicos (por ejemplo, la destrucción de todos los dominios de Active Directory o todos los servidores) en lugar de los límites físicos (por ejemplo, la destrucción de un centro de recursos). Aunque una organización puede tener planes de respuesta a incidentes que definan las actividades iniciales que deben llevarse a cabo cuando se detecta un riesgo, estos planes omiten a menudo los pasos para recuperarse de un riesgo que afecte a toda la infraestructura de computación.  
   
@@ -34,7 +34,7 @@ Para crear defensas eficaces y, al mismo tiempo, proporcionar servicios a los us
 Las recomendaciones para la recuperación de un bosque de Active Directory se presentan en [Windows Server 2012: Planning for Active Directory Forest Recovery](https://www.microsoft.com/download/details.aspx?id=16506). Es posible que pueda evitar que el nuevo entorno se ponga en peligro por completo, pero incluso si no lo hace, tendrá herramientas para recuperar y volver a obtener el control de su entorno.  
   
 ## <a name="rethinking-the-approach"></a>Replanteamiento del enfoque  
-*Número de ley ocho: la dificultad de defender una red es directamente proporcional a su complejidad.* - [10 leyes inmutables de administración de seguridad](https://technet.microsoft.com/library/cc722488.aspx)  
+*Número de ley ocho: la dificultad de defender una red es directamente proporcional a su complejidad.* - [10 leyes inmutables de administración de seguridad](/previous-versions//cc722488(v=technet.10))  
   
 Por lo general, es aceptable que, si un atacante obtiene acceso de sistema, administrador, raíz o equivalente a un equipo, independientemente del sistema operativo, ese equipo ya no se considera de confianza, independientemente de cuántos esfuerzos se realicen para "limpiar" el sistema. Active Directory no es diferente. Si un atacante ha obtenido acceso con privilegios a un controlador de dominio o a una cuenta con privilegios elevados en Active Directory, a menos que tenga un registro de todas las modificaciones realizadas por el atacante o una copia de seguridad buena conocida, nunca podrá restaurar el directorio a un estado completamente confiable.  
   
@@ -107,7 +107,7 @@ En una migración de Active Directory tradicional de un bosque a otro, el atribu
   
 Sin embargo, mantener el historial de SID ha demostrado un problema en algunos entornos, ya que el rellenado de los tokens de acceso de los usuarios con SID actuales e históricos puede producir una recarga de tokens. La saturación de tokens es un problema en el que el número de SID que debe almacenarse en el token de acceso de un usuario usa o supera la cantidad de espacio disponible en el token.  
   
-Aunque los tamaños de los tokens se pueden aumentar hasta una extensión limitada, la solución final al aumento de los tokens es reducir el número de SID asociados a las cuentas de usuario, ya sea mediante la racionalización de la pertenencia a grupos, la eliminación del historial de SID o una combinación de ambos. Para obtener más información acerca de la saturación de tokens, consulte [MaxTokenSize y el incremento de los tokens de Kerberos](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx).  
+Aunque los tamaños de los tokens se pueden aumentar hasta una extensión limitada, la solución final al aumento de los tokens es reducir el número de SID asociados a las cuentas de usuario, ya sea mediante la racionalización de la pertenencia a grupos, la eliminación del historial de SID o una combinación de ambos. Para obtener más información acerca de la saturación de tokens, consulte [MaxTokenSize y el incremento de los tokens de Kerberos](/archive/blogs/shanecothran/maxtokensize-and-kerberos-token-bloat).  
   
 En lugar de migrar a los usuarios desde un entorno heredado (especialmente uno en el que se puedan poner en peligro las pertenencias a grupos y los historiales de SID) mediante el historial de SID, considere la posibilidad de aprovechar las aplicaciones de Metadirectorios para "migrar" los usuarios, sin tener que trasladar los historiales de SID al nuevo bosque. Cuando se crean cuentas de usuario en el nuevo bosque, puede usar una aplicación de metadirectorio para asignar las cuentas a sus cuentas correspondientes en el bosque heredado.  
   
@@ -118,7 +118,7 @@ Para proporcionar a las nuevas cuentas de usuario acceso a los recursos del bosq
 ### <a name="servers-and-workstations"></a>Servidores y estaciones de trabajo  
 En una migración tradicional de un bosque Active Directory a otro, la migración de equipos suele ser relativamente simple en comparación con la migración de usuarios, grupos y aplicaciones. En función del rol de equipo, la migración a un nuevo bosque puede ser tan simple como separar un dominio antiguo y unirse a uno nuevo. Sin embargo, la migración de cuentas de equipo intactas en un bosque puro anula el propósito de crear un nuevo entorno. En lugar de migrar cuentas de equipo (potencialmente en peligro, mal configuradas o no actualizadas) a un nuevo bosque, debe instalar los servidores y las estaciones de trabajo en el nuevo entorno. Puede migrar datos de sistemas del bosque heredado a sistemas del bosque original, pero no a los sistemas que hospedan los datos.  
   
-### <a name="applications"></a>Aplicaciones  
+### <a name="applications"></a>APLICACIONES  
 
 Las aplicaciones pueden presentar el mayor desafío en cualquier migración de un bosque a otro, pero en el caso de una migración "no migratoria", uno de los principios más básicos que debe aplicar es que las aplicaciones del bosque original deben estar actualizadas, admitidas y actualizadas. Los datos se pueden migrar desde instancias de aplicación en el bosque anterior siempre que sea posible. En situaciones en las que una aplicación no se puede "volver a crear" en el bosque original, debería considerar métodos como la destrucción creativa o el aislamiento de aplicaciones heredadas, como se describe en la sección siguiente.  
   
@@ -143,7 +143,7 @@ En la mayoría de las organizaciones, los usuarios que tienen acceso a la inform
   
 Por ejemplo, puede definir una directiva en la que los ejecutivos y otras VIP deban usar estaciones de trabajo seguras para acceder a datos confidenciales y sistemas, lo que les permite usar sus otros dispositivos para acceder a datos menos confidenciales. Este es un principio sencillo que los usuarios deben recordar, pero puede implementar una serie de controles de back-end para ayudar a aplicar el enfoque.  
 
-Puede usar la [garantía del mecanismo de autenticación](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx) para permitir que los usuarios accedan a datos confidenciales solo si han iniciado sesión en sus sistemas seguros con sus tarjetas inteligentes y pueden usar las restricciones de derechos de usuario y IPSec para controlar los sistemas desde los que pueden conectarse a los repositorios de datos confidenciales. Puede usar el [Kit de herramientas de clasificación de datos de Microsoft](https://www.microsoft.com/download/details.aspx?id=27123) para crear una sólida infraestructura de clasificación de archivos, y puede implementar [Access Control dinámicas](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx) para restringir el acceso a los datos en función de las características de un intento de acceso, trasladando las reglas de negocios a controles técnicos.  
+Puede usar la [garantía del mecanismo de autenticación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10)) para permitir que los usuarios accedan a datos confidenciales solo si han iniciado sesión en sus sistemas seguros con sus tarjetas inteligentes y pueden usar las restricciones de derechos de usuario y IPSec para controlar los sistemas desde los que pueden conectarse a los repositorios de datos confidenciales. Puede usar el [Kit de herramientas de clasificación de datos de Microsoft](https://www.microsoft.com/download/details.aspx?id=27123) para crear una sólida infraestructura de clasificación de archivos, y puede implementar [Access Control dinámicas](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10)) para restringir el acceso a los datos en función de las características de un intento de acceso, trasladando las reglas de negocios a controles técnicos.  
   
 Desde la perspectiva del usuario, el acceso a datos confidenciales desde un sistema protegido "simplemente funciona" y al intentar hacerlo desde un sistema no seguro "no solo". Sin embargo, desde el punto de vista de la supervisión y la administración de su entorno, está ayudando a crear patrones identificables en la forma en que los usuarios acceden a los sistemas y datos confidenciales, lo que facilita la detección de intentos de acceso anómalos.  
   

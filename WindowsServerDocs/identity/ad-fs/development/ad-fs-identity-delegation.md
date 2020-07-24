@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c36de1c3565be7f0f0e6c6203a21345f3d227e96
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2162937498a5c16ce33b67ba5e478d2a6bb1a687
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857328"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964987"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>Escenario de delegación de identidad con AD FS
 
@@ -57,7 +57,7 @@ Como se muestra en el diagrama anterior, el flujo en este escenario es:
 Hay tres opciones disponibles para el administrador de Fabrikam.com, Frank:
 
 
-1. Compre e instale un producto STS como Active Directory&reg; servicios de Federación (AD FS).
+1. Compre e instale un producto STS, como Active Directory &reg; servicios de Federación (AD FS).
 2. Suscríbase a un producto STS en la nube como STS de LiveID.
 3. Cree un STS personalizado mediante WIF.
 
@@ -99,9 +99,9 @@ if ( claimsPrincipal != null )
     bootstrapToken = claimsIdentity.BootstrapToken;
 }
 ```
-WIF proporciona un método, [CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx), que crea un canal del tipo especificado que aumenta las solicitudes de emisión de tokens con el token de seguridad especificado como un elemento ActAs. Puede pasar el token de arranque a este método y, a continuación, llamar al método de servicio necesario en el canal devuelto. En este escenario de ejemplo, la identidad de Frank tiene la propiedad [actor](https://msdn.microsoft.com/library/microsoft.identitymodel.claims.iclaimsidentity.actor.aspx) establecida en web1's Identity.
+WIF proporciona un método, [CreateChannelActingAs](/previous-versions/windows-identity-foundation/ee733863(v=msdn.10)), que crea un canal del tipo especificado que aumenta las solicitudes de emisión de tokens con el token de seguridad especificado como un elemento ActAs. Puede pasar el token de arranque a este método y, a continuación, llamar al método de servicio necesario en el canal devuelto. En este escenario de ejemplo, la identidad de Frank tiene la propiedad [actor](/previous-versions/windows-identity-foundation/ee766706(v=msdn.10)) establecida en web1's Identity.
 
-En el fragmento de código siguiente se muestra cómo llamar al servicio Web con [CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx) y, a continuación, llamar a uno de los métodos del servicio, ComputeResponse, en el canal devuelto:
+En el fragmento de código siguiente se muestra cómo llamar al servicio Web con [CreateChannelActingAs](/previous-versions/windows-identity-foundation/ee733863(v=msdn.10)) y, a continuación, llamar a uno de los métodos del servicio, ComputeResponse, en el canal devuelto:
 
 ```
 // Get the channel factory to the backend service from the application state
@@ -183,4 +183,4 @@ using ( ServiceHost host = new ServiceHost( typeof( Service2 ), new Uri( "http:/
 ```
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)  
+[Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)  

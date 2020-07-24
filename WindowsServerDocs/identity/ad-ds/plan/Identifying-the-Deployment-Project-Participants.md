@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: efb240fabc4272a4dbef4cb7e86d7058cedb9584
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 9fb864bcf74fb0fee921288165b1e042a34f027e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624173"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965537"
 ---
 # <a name="identifying-the-deployment-project-participants"></a>Determinación de los participantes en el proyecto de implementación
 
@@ -201,7 +201,7 @@ Entre las responsabilidades del equipo de diseño se incluyen las siguientes:
 
 - Trabajar con el equipo de implementación para probar el diseño en un entorno de laboratorio para asegurarse de que funciona según lo previsto y modificar el diseño según sea necesario para solucionar los problemas que se producen
 
-- Crear un diseño de topología de sitio que cumpla los requisitos de replicación del bosque a la vez que se evita la sobrecarga de ancho de banda disponible. Para obtener más información sobre el diseño de la topología de sitio, consulte [diseño de la topología de sitio para Windows Server 2008 AD DS](https://technet.microsoft.com/library/cc772013.aspx).
+- Crear un diseño de topología de sitio que cumpla los requisitos de replicación del bosque a la vez que se evita la sobrecarga de ancho de banda disponible. Para obtener más información sobre el diseño de la topología de sitio, consulte [diseño de la topología de sitio para Windows Server 2008 AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772013(v=ws.10)).
 
 - Trabajar con el equipo de implementación para asegurarse de que el diseño se implementa correctamente
 
@@ -251,4 +251,4 @@ El equipo de implementación de Active Directory incluye los siguientes miembros
 El equipo de implementación trabaja con el servicio y los administradores de datos durante la fase de implementación para asegurarse de que los miembros del equipo de operaciones estén familiarizados con el nuevo diseño. Esto ayuda a garantizar una transición fluida de la propiedad cuando se completa la operación de implementación. Al finalizar el proceso de implementación, la responsabilidad de mantener el nuevo entorno de Active Directory pasa al equipo de operaciones.
 
 ### <a name="documenting-the-design-and-deployment-teams"></a>Documentar los equipos de diseño e implementación
-Documente los nombres y la información de contacto de las personas que participarán en el diseño y la implementación de AD DS. Identifique quién será responsable de cada rol en los equipos de diseño e implementación. Inicialmente, esta lista incluye los posibles propietarios del bosque, el jefe de proyecto y el arquitecto del proyecto. Cuando determine el número de bosques que va a implementar, es posible que necesite crear nuevos equipos de diseño para otros bosques. Tenga en cuenta que deberá actualizar la documentación a medida que los miembros del equipo cambien y a medida que identifique los distintos propietarios de Active Directory durante el proceso de diseño. Para obtener una hoja de cálculo que le ayude a documentar los equipos de diseño e implementación de cada bosque, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "información del equipo de diseño e implementación" (DSSLOGI_1. doc).
+Documente los nombres y la información de contacto de las personas que participarán en el diseño y la implementación de AD DS. Identifique quién será responsable de cada rol en los equipos de diseño e implementación. Inicialmente, esta lista incluye los posibles propietarios del bosque, el jefe de proyecto y el arquitecto del proyecto. Cuando determine el número de bosques que va a implementar, es posible que necesite crear nuevos equipos de diseño para otros bosques. Tenga en cuenta que deberá actualizar la documentación a medida que los miembros del equipo cambien y a medida que identifique los distintos propietarios de Active Directory durante el proceso de diseño. Para obtener una hoja de cálculo que le ayude a documentar los equipos de diseño e implementación de cada bosque, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "información del equipo de diseño e implementación" (DSSLOGI_1.doc).

@@ -9,16 +9,16 @@ ms.author: johnmar
 ms.date: 03/29/2018
 description: En este artículo se describen los escenarios disponibles hoy en día para la recuperación ante desastres de HCl de Microsoft (Espacios de almacenamiento directo)
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3159e0c215d898848df71c6488cd491b7ded38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5c9c36e90f9bfae053197b6a36201748cb7e88d7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859168"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966457"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>Recuperación ante desastres con Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se proporcionan escenarios en los que se puede configurar la infraestructura hiperconvergida (HCl) para la recuperación ante desastres.
 
@@ -55,7 +55,7 @@ La réplica de almacenamiento se puede usar si tiene máquinas virtuales o un SO
 
 ## <a name="hyper-v-replica"></a>Réplica de Hyper-V
 
-[Réplica de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica) proporciona replicación de nivel de máquina virtual para la recuperación ante desastres en infraestructuras hiperconvergidas. Lo que puede hacer la réplica de Hyper-V es tomar una máquina virtual y replicarla en un sitio secundario o en Azure (réplica). A continuación, desde el sitio secundario, la réplica de Hyper-V puede replicar la máquina virtual en una tercera (réplica extendida).
+[Réplica de Hyper-V](../../virtualization/hyper-v/manage/set-up-hyper-v-replica.md) proporciona replicación de nivel de máquina virtual para la recuperación ante desastres en infraestructuras hiperconvergidas. Lo que puede hacer la réplica de Hyper-V es tomar una máquina virtual y replicarla en un sitio secundario o en Azure (réplica). A continuación, desde el sitio secundario, la réplica de Hyper-V puede replicar la máquina virtual en una tercera (réplica extendida).
 
 ![Diagrama de replicación de Hyper-V](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure2.png)
 
@@ -77,7 +77,7 @@ Otras consideraciones que necesitará son:
 - La frecuencia con la que desea que el Servicio de instantáneas de volumen (VSS) replique una instantánea incremental.
 - Frecuencia con la que se replican los cambios (30 segundos, 5 minutos, 15 minutos).
 
-Cuando HCI participa en la réplica de Hyper-V, debe tener el recurso del [agente de réplicas de Hyper-v](https://blogs.technet.microsoft.com/virtualization/2012/03/27/why-is-the-hyper-v-replica-broker-required/) creado en cada clúster. Este recurso realiza varias acciones:
+Cuando HCI participa en la réplica de Hyper-V, debe tener el recurso del [agente de réplicas de Hyper-v](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization) creado en cada clúster. Este recurso realiza varias acciones:
 
 1.    Proporciona un espacio de nombres único para cada clúster en el que la réplica de Hyper-V se conecta.
 2.    Determina qué nodo de ese clúster residirá la réplica (o réplica extendida) cuando reciba la copia por primera vez.
@@ -91,7 +91,7 @@ Siempre es una recomendación tener copias de seguridad periódicas de la infrae
 
 ### <a name="non-authoritative"></a>No autoritativo
 
-Una restauración no autoritativa puede realizarse mediante la copia de seguridad de Windows NT y equivale a una restauración completa solo del nodo del clúster. Si solo necesita restaurar un nodo de clúster (y la base de datos del registro del clúster) y toda la información del clúster actual, debe realizar la restauración mediante no autoritativo. Las restauraciones no autoritativas se pueden realizar a través de la interfaz de copia de seguridad de Windows NT o de la línea de comandos WBADMIN. Ejecutable.
+Una restauración no autoritativa puede realizarse mediante la copia de seguridad de Windows NT y equivale a una restauración completa solo del nodo del clúster. Si solo necesita restaurar un nodo de clúster (y la base de datos del registro del clúster) y toda la información del clúster actual, debe realizar la restauración mediante no autoritativo. Las restauraciones no autoritativas se pueden realizar a través de la interfaz de copia de seguridad de Windows NT o la WBADMIN.EXE de línea de comandos.
 
 Una vez que restaure el nodo, deje que se una al clúster. Lo que ocurrirá es que pasará al clúster en ejecución existente y actualizará toda su información con lo que hay actualmente.
 
@@ -103,7 +103,7 @@ Cuando se inicia una restauración autoritativa en un nodo de clúster, el servi
 
 Para ejecutar una restauración autoritativa, se pueden realizar los siguientes pasos.
 
-1.    Ejecute WBADMIN. EXE desde un símbolo del sistema administrativo para obtener la versión más reciente de las copias de seguridad que desea instalar y asegurarse de que el estado del sistema es uno de los componentes que se pueden restaurar.
+1.    Ejecute WBADMIN.EXE desde un símbolo del sistema administrativo para obtener la versión más reciente de las copias de seguridad que desea instalar y asegúrese de que el estado del sistema es uno de los componentes que se pueden restaurar.
 
     ```powershell
     Wbadmin get versions
@@ -126,5 +126,3 @@ Una vez que se realiza la restauración, este nodo debe ser el primero en inicia
 ## <a name="summary"></a>Resumen 
 
 Para sumar todo esto, la recuperación ante desastres hiperconvergida es algo que debe planearse con cuidado. Hay varios escenarios que se adaptan mejor a sus necesidades y deben probarse exhaustivamente. Un elemento a tener en cuenta es que si está familiarizado con los clústeres de conmutación por error en el pasado, los clústeres extendidos han sido una opción muy popular a lo largo de los años. Hubo un poco de un cambio de diseño con la solución hiperconvergida y se basa en la resistencia. Si pierde dos nodos en un clúster hiperconvergido, todo el clúster dejará de funcionar. En este caso, en un entorno hiperconvergido, no se admite el escenario de Stretch.
-
-

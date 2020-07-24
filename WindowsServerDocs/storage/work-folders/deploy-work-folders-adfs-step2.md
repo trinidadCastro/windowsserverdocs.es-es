@@ -1,5 +1,5 @@
 ---
-title: 'Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 2; trabajo posterior a la configuración de AD FS'
+title: 'Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 2 AD FS trabajo posterior a la configuración'
 ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
@@ -8,18 +8,18 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 06/06/2019
 ms.assetid: 0a48852e-48cc-4047-ae58-99f11c273942
-ms.openlocfilehash: 6364c3f8dc35fbafa518a106780ae6b767d4d40c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 42e7477c168b0b7c1230fd37b5fb26d77590ef1c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365779"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965777"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-2-ad-fs-post-configuration-work"></a>Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: Paso 2; trabajo posterior a la configuración de AD FS
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-2-ad-fs-post-configuration-work"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 2 AD FS trabajo posterior a la configuración
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema se describe el segundo paso para implementar Carpetas de trabajo con los Servicios de federación de Active Directory (AD FS) y el Proxy de aplicación web. Puedes encontrar el resto de pasos de este proceso en estos temas:  
+En este tema se describe el segundo paso en la implementación de carpetas de trabajo con Servicios de federación de Active Directory (AD FS) (AD FS) y el proxy de aplicación Web. Puede encontrar los demás pasos de este proceso en estos temas:  
   
 -   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: información general](deploy-work-folders-adfs-overview.md)  
   
@@ -32,21 +32,21 @@ En este tema se describe el segundo paso para implementar Carpetas de trabajo co
 -   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
-> Las instrucciones que se describen en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+> Las instrucciones que se describen en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si usa Windows Server 2012 R2, siga las instrucciones de [Windows server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11)).
 
-En el primer paso instalaste y configuraste AD FS. Ahora debes realizar los pasos posteriores a la configuración de AD FS.  
+En el paso 1, instaló y configuró AD FS. Ahora, debe realizar los siguientes pasos posteriores a la configuración para AD FS.  
   
-## <a name="configure-dns-entries"></a>Configurar las entradas DNS
+## <a name="configure-dns-entries"></a>Configurar entradas DNS
 
-Debes crear dos entradas DNS de AD FS. Estas son las mismas entradas que se usaron en los pasos de preinstalación cuando creaste el certificado de nombre alternativo del firmante (SAN).  
+Debe crear dos entradas DNS para AD FS. Se trata de las mismas dos entradas que se usaron en los pasos previos a la instalación al crear el certificado de nombre alternativo del firmante (SAN).  
   
-Las entradas DNS están en el siguiente formulario:  
+Las entradas DNS tienen el formato siguiente:  
   
--   nombre de servicio de AD FS.dominio  
+-   Nombre del servicio de AD FS. dominio  
   
--   enterpriseregistration.dominio  
+-   enterpriseregistration. dominio  
   
--   nombre del servidor de AD FS.dominio   (la entrada DNS ya debería estar indicada. Por ejemplo, 2016-ADFS.contoso.com)
+-   AD FS nombre del servidor. dominio (la entrada DNS debe existir ya. p. ej., 2016-ADFS.contoso.com)
   
 En el ejemplo de prueba, los valores son:  
   
@@ -54,101 +54,101 @@ En el ejemplo de prueba, los valores son:
   
 -   **enterpriseregistration.contoso.com**  
   
-## <a name="create-the-a-and-cname-records-for-ad-fs"></a>Crear los registros A y CNAME de AD FS
+## <a name="create-the-a-and-cname-records-for-ad-fs"></a>Cree los registros A y CNAME para AD FS
 
-Para crear los registros A y CNAME de AD FS, sigue estos pasos:  
+Para crear registros de y CNAME para AD FS, siga estos pasos:  
   
-1.  Desde el controlador de dominio, abre el administrador de DNS.  
+1.  En el controlador de dominio, abra el administrador de DNS.  
   
-2.  Expande la carpeta Zonas de búsqueda directa, haz clic con el botón derecho en el dominio y selecciona **Nuevo host (A)** .  
+2.  Expanda la carpeta zonas de búsqueda directa, haga clic con el botón derecho en el dominio y seleccione **host nuevo (A)**.  
   
-3.  Se abrirá la ventana **Nuevo host**. En el campo **Nombre**, escribe el alias del nombre de servicio de AD FS. En el ejemplo de prueba, este nombre es **blueadfs**.  
+3.  Se abre la ventana **nuevo host** . En el campo **nombre** , escriba el alias del nombre del servicio AD FS. En el ejemplo de prueba, es **blueadfs**.  
   
-    Recuerda que el alias debe ser igual al del firmante del certificado que se usó en AD FS. Por ejemplo, si el firmante es adfs.contoso.com, el alias que tienes que escribir aquí debe ser **adfs**.  
+    El alias debe ser el mismo que el sujeto del certificado que se usó para AD FS. Por ejemplo, si el asunto fuera adfs.contoso.com, el alias especificado aquí sería **ADFS**.  
   
     > [!IMPORTANT]  
-    > Cuando configures AD FS mediante la interfaz de usuario (UI) de Windows Server en lugar de Windows PowerShell, debes crear un registro A en lugar de un registro CNAME para AD FS. Esto es debido a que el nombre de entidad de seguridad de servicio (SPN) que se creó mediante la interfaz de usuario, solo contiene el alias que se usó para configurar el servicio de AD FS a modo de host.  
+    > Al configurar AD FS mediante la interfaz de usuario (UI) de Windows Server en lugar de Windows PowerShell, debe crear un registro A en lugar de un registro CNAME para AD FS. La razón es que el nombre de entidad de seguridad de servicio (SPN) que se crea a través de la interfaz de usuario solo contiene el alias que se usa para configurar el servicio de AD FS como host.  
 
-4.  En **Dirección IP**, escribe la dirección IP del servidor de AD FS. En el ejemplo de prueba, esta es **192.168.0.160**. Haga clic en **Agregar host**.  
+4.  En **dirección IP**, escriba la dirección IP del servidor de AD FS. En el ejemplo de prueba, es **192.168.0.160**. Haz clic en **Agregar host**.  
   
-5.  En la carpeta de zonas de búsqueda directa, haz clic de nuevo en el dominio y selecciona **Nuevo alias (CNAME)** .  
+5.  En la carpeta zonas de búsqueda directa, haga clic con el botón derecho en el dominio de nuevo y seleccione **nuevo alias (CNAME)**.  
   
-6.  En la ventana **Nuevo registro de recursos**, agrega el alias **enterpriseregistration** y escribe el nombre de dominio completo (FQDN) del servidor de AD FS. Este alias se usa para unir el dispositivo y debe llamarse **enterpriseregistration**.
+6.  En la ventana **nuevo registro de recursos** , agregue el nombre de alias **enterpriseregistration** y escriba el FQDN del servidor de AD FS. Este alias se usa para la Unión de dispositivos y se debe llamar **enterpriseregistration**.
   
-7.  Haga clic en **Aceptar**.  
+7.  Haga clic en **OK**.  
   
-Para realizar estos mismos pasos mediante Windows PowerShell, usa el siguiente comando. El comando debe ejecutarse en el controlador de dominio.  
+Para realizar los pasos equivalentes a través de Windows PowerShell, use el siguiente comando. El comando debe ejecutarse en el controlador de dominio.  
   
 ```Powershell  
 Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name blueadfs -A -IPv4Address 192.168.0.160   
 Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name enterpriseregistration -CName  -HostNameAlias 2016-ADFS.contoso.com
 ```  
   
-## <a name="set-up-the-ad-fs-relying-party-trust-for-work-folders"></a>Configurar la relación de confianza para el usuario autenticado de AD FS en Carpetas de trabajo
+## <a name="set-up-the-ad-fs-relying-party-trust-for-work-folders"></a>Configurar la AD FS relación de confianza para usuario autenticado para carpetas de trabajo
 
-Puedes instalar y configurar la relación de confianza para usuario autenticado en Carpetas de trabajo, incluso si todavía no has instalado Carpetas de trabajo. Recuerda que debes configurar la relación de confianza para usuario autenticado para que Carpetas de trabajo pueda usar AD FS. Como ya estás configurando AD FS, ahora es buen momento para realizar este paso.  
+Puede instalar y configurar la relación de confianza para usuario autenticado para carpetas de trabajo, aunque aún no se hayan configurado las carpetas de trabajo. La relación de confianza para usuario autenticado debe estar configurada para permitir que las carpetas de trabajo usen AD FS. Dado que se encuentra en el proceso de configuración de AD FS, ahora es un buen momento para realizar este paso.  
   
 Para configurar la relación de confianza para usuario autenticado:  
   
-1.  Abre el **Administrador del servidor**, en el menú **Herramientas**, selecciona **Administración de AD FS**.  
+1.  Abra **Administrador del servidor**, en el menú **herramientas** , seleccione **Administración de AD FS**.  
   
-2.  En el panel derecho, en la sección **Acciones**, haz clic en **Agregar relación de confianza para usuario autenticado**.  
+2.  En el panel derecho, en **acciones**, haga clic en **Agregar relación de confianza para usuario autenticado**.  
   
-3.  En la página de **Bienvenida**, selecciona **Compatible con notificaciones** y haz clic en **Inicio**.  
+3.  En la página de **bienvenida** , seleccione **reconocimiento de notificaciones** y haga clic en **iniciar**.  
   
-4.  En la página **Seleccionar origen de datos**, selecciona **Escribir manualmente los datos acerca del usuario de confianza** y, a continuación, haz clic en **Siguiente**.  
+4.  En la página **Seleccionar origen de datos** , seleccione **escribir manualmente los datos sobre el usuario de confianza**y, a continuación, haga clic en **siguiente**.  
   
-5.  En el campo **Nombre para mostrar**, escribe **WorkFolders** y, a continuación, haz clic en **Siguiente**.  
+5.  En el campo **nombre para mostrar** , escriba **WorkFolders**y, a continuación, haga clic en **siguiente**.  
   
-6.  En la página **Configurar certificado**, haz clic en **Siguiente**. Los certificados de cifrado de tokens son opcionales y no son necesarios para la realizar la configuración de prueba.  
+6.  En la página **configurar certificado** , haga clic en **siguiente**. Los certificados de cifrado de tokens son opcionales y no son necesarios para la configuración de prueba.  
   
-7.  En la página **Configurar URL**, haz clic en **Siguiente**.  
+7.  En la página **configurar dirección URL** , haga clic en **siguiente**.  
   
-8. En la página **configurar identificadores** , agregue el siguiente identificador: `https://windows-server-work-folders/V1`. Este identificador es un valor codificado de forma rígida que usa Carpetas de trabajo y que el servicio de Carpetas de trabajo envía cuando se está comunicando con AD FS. Haz clic en **Siguiente**.  
+8. En la página **configurar identificadores** , agregue el siguiente identificador: `https://windows-server-work-folders/V1` . Este identificador es un valor codificado de forma rígida que usan las carpetas de trabajo y lo envía el servicio carpetas de trabajo cuando se comunica con AD FS. Haga clic en **Next**.  
   
-9. En la página Elegir la directiva de control de acceso, selecciona **Permitir todos los usuarios** y, a continuación, haz clic en **Siguiente**.  
+9. En la página elegir Directiva de Access Control, seleccione **permitir todos**y, a continuación, haga clic en **siguiente**.  
   
 10. En la página **Listo para agregar confianza**, haz clic en **Siguiente**.  
   
-11. Una vez finalizada la configuración, la última página del asistente indica que la configuración se realizó correctamente. Selecciona la casilla para editar las reglas de notificaciones y haz clic en **Cerrar**.  
+11. Una vez finalizada la configuración, la última página del asistente indica que la configuración se realizó correctamente. Active la casilla para editar las reglas de notificaciones y haga clic en **cerrar**.  
   
-12. En el complemento de AD FS, selecciona la relación de confianza para usuario autenticado en **WorkFolders** y haz clic en **Editar directiva de emisión de notificaciones** que se encuentra en el apartado Acciones.
+12. En el complemento AD FS, seleccione la relación de confianza para usuario autenticado de **WorkFolders** y haga clic en **Editar Directiva de emisión de notificaciones** en acciones.
 
-13. Si abrirá la ventana **Editar directiva de emisión de notificaciones de WorkFolders**. Haz clic en **Agregar regla**.  
+13. Se abre la ventana **Editar Directiva de emisión de notificaciones para WorkFolders** . Haga clic en **Agregar regla**.  
   
-14. En la lista desplegable **Plantilla de regla de notificación**, selecciona **Enviar atributos LDAP como notificaciones** y haz clic en **Siguiente**.  
+14. En la lista desplegable **plantilla de regla de notificación** , seleccione **Enviar atributos LDAP como notificaciones**y haga clic en **siguiente**.  
   
-15. En la página **Configurar regla de notificación**, en el campo **Nombre de regla de notificación**, escribe **WorkFolders**.  
+15. En la página **configurar regla de notificaciones** , en el campo **nombre de regla de notificaciones** , escriba **WorkFolders**.  
   
-16. En la lista desplegable **Almacén de atributos**, selecciona **Active Directory**.  
+16. En la lista desplegable **almacén de atributos** , seleccione **Active Directory**.  
   
-17. En la tabla de asignaciones, escribe estos valores:  
+17. En la tabla de asignación, escriba estos valores:  
   
     -   Nombre principal de usuario: UPN  
   
     -   Nombre para mostrar: nombre  
   
-    -   Apellidos: Apellidos  
+    -   Apellidos: apellidos  
   
-    -   Nombre: nombre  
+    -   Nombre dado: nombre especificado  
   
-18. Haga clic en **Finalizar**. Verás que la regla WorkFolders aparece en la pestaña Reglas de transformación de emisión; haz clic en **Aceptar**.  
+18. Haga clic en **Finalizar** Verá la regla WorkFolders en la pestaña reglas de transformación de emisión y haga clic en **Aceptar**.  
   
-### <a name="set-relying-part-trust-options"></a>Establecer las opciones de la relación de confianza para usuario autenticado
+### <a name="set-relying-part-trust-options"></a>Establecer opciones de confianza de elementos de confianza
 
-Después configurar la relación de confianza para usuario autenticado en AD FS, debes finalizar la configuración ejecutando cinco comandos en Windows PowerShell. Estos comandos establecen las opciones necesarias para que Carpetas de trabajo se comunique correctamente con AD FS, y no se pueden establecer a través de la interfaz de usuario. Estas opciones son:  
+Una vez configurada la relación de confianza para usuario autenticado para AD FS, debe finalizar la configuración ejecutando cinco comandos en Windows PowerShell. Estos comandos establecen las opciones necesarias para que las carpetas de trabajo se comuniquen correctamente con AD FS y no se pueden establecer a través de la interfaz de usuario. Estas opciones son:  
   
--   Habilitar el uso de estándares de JSON Web Token (JWTs)  
+-   Habilitación del uso de tokens web JSON (JWT)  
   
--   Deshabilitar las notificaciones cifradas  
+-   Deshabilitar notificaciones cifradas  
   
--   Habilitar actualizaciones\-automáticas  
+-   Habilitar la \- actualización automática  
   
--   Establecer la emisión del token de actualización de Oauth a todos los dispositivos.  
+-   Establezca la emisión de tokens de actualización de OAuth en todos los dispositivos.  
 
 -   Conceder a los clientes acceso a la relación de confianza para usuario autenticado
 
-Para establecer estas opciones, usa los siguientes comandos:  
+Para establecer estas opciones, use los comandos siguientes:  
   
 ```powershell  
 Set-ADFSRelyingPartyTrust -TargetIdentifier "https://windows-server-work-folders/V1" -EnableJWT $true   
@@ -160,9 +160,9 @@ Grant-AdfsApplicationPermission -ServerRoleIdentifier "https://windows-server-wo
   
 ## <a name="enable-workplace-join"></a>Habilitar Workplace Join
 
-Puedes habilitar Workplace Join de manera opcional; recuerda que puede serte de utilidad si quieres permitir que los usuarios usen sus dispositivos personales para acceder a los recursos de la empresa.  
+Habilitar Workplace Join es opcional, pero puede ser útil si desea que los usuarios puedan usar sus dispositivos personales para acceder a los recursos del área de trabajo.  
   
-Para habilitar el registro del dispositivos de Workplace Join, debes ejecutar los siguientes comandos de Windows PowerShell; estos configurarán el registro de dispositivos y establecerán la directiva de autenticación global:  
+Para habilitar el registro de dispositivos para Workplace Join, debe ejecutar los siguientes comandos de Windows PowerShell, que configurarán el registro del dispositivo y establecerán la Directiva de autenticación global:  
   
 ```powershell  
 Initialize-ADDeviceRegistration -ServiceAccountName <your AD FS service account>
@@ -172,85 +172,85 @@ Set-ADFSGlobalAuthenticationPolicy -DeviceAuthenticationEnabled $true
   
 ## <a name="export-the-ad-fs-certificate"></a>Exportar el certificado de AD FS
 
-A continuación, exporta el certificado auto\-firmado de AD FS para que puedas instalarlo en las siguientes máquinas del entorno de prueba:  
+A continuación, exporte el \- certificado de AD FS autofirmado para que se pueda instalar en las siguientes máquinas del entorno de prueba:  
   
--   El servidor que se usó en Carpetas de trabajo  
+-   El servidor que se usa para carpetas de trabajo  
   
--   El servidor que se usó en el Proxy de aplicación web  
+-   El servidor que se usa para el proxy de aplicación Web  
   
--   El cliente de Windows unido a un dominio  
+-   Cliente de Windows unido a un dominio  
   
--   El cliente de Windows que no está unido a un dominio  
+-   Cliente de Windows no unido a un dominio  
   
-Para exportar el certificado, sigue los siguientes pasos:  
+Para exportar el certificado, siga estos pasos:  
   
-1.  Haga clic en **Inicio** y, a continuación, en **Ejecutar**.  
+1.  Haga clic en **Inicio**y, a continuación, haga clic en **Ejecutar**.  
   
-2.  Escribe **MMC**.  
+2.  Escriba **MMC**.  
   
-3.  En el menú **Archivo**, haga clic en **Agregar o quitar complemento**.  
+3.  En el menú **Archivo** , haga clic en **Agregar o quitar complemento**.  
   
-4.  En la lista **Complementos disponibles**, selecciona **Certificados** y, a continuación, haz clic en **Agregar**. Se iniciará el asistente del complemento de certificados.  
+4.  En la lista **complementos disponibles** , seleccione **certificados**y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.  
   
 5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.  
   
-6.  Selecciona **Equipo local: (el equipo en el que se ejecuta la consola)** y haz clic en **Finalizar**.  
+6.  Seleccione **equipo local: (el equipo en el que se está ejecutando esta consola)** y, a continuación, haga clic en **Finalizar**.  
   
-7.  Haga clic en **Aceptar**.  
+7.  Haga clic en **OK**.  
   
-8.  Expande la carpeta **Raíz de consola\Certificados\(equipo local) \Personal\Certificados**.  
+8.  Expanda la **consola de carpeta Root\Certificates \( equipo local) \personal\certificados**.  
   
-9.  Haz clic con el botón derecho en el **Certificado de AD FS**, haz clic en **Todas las tareas** y, a continuación, haz clic en **Exportar...** .  
+9.  Haga clic con el botón secundario en el **certificado AD FS**, haga clic en **todas las tareas**y, a continuación, haga clic en **exportar..**..  
   
-10. Se abre el Asistente para exportación de certificados. Selecciona **Sí, exportar la clave privada**.  
+10. Se abre el Asistente para exportar certificados. Selecciona **Sí, exportar la clave privada**.  
   
-11. En la página **Exportar formato de archivo**, deja seleccionadas las opciones predeterminadas y haz clic en **Siguiente**.  
+11. En la página **formato de archivo de exportación** , deje seleccionadas las opciones predeterminadas y haga clic en **siguiente**.  
   
-12. Crea una contraseña para el certificado. Esta es la contraseña que usarás cuando importes el certificado a otros dispositivos. Haz clic en **Siguiente**.  
+12. Cree una contraseña para el certificado. Se trata de la contraseña que utilizará más adelante cuando importe el certificado en otros dispositivos. Haga clic en **Next**.  
   
-13. Escribe una ubicación y un nombre para el certificado y, a continuación, haz clic en **Finalizar**.  
+13. Escriba una ubicación y un nombre para el certificado y, a continuación, haga clic en **Finalizar**.  
   
-La manera de instalar el certificado se explica más adelante en el procedimiento de implementación.  
+La instalación del certificado se trata más adelante en el procedimiento de implementación.  
   
 ## <a name="manage-the-private-key-setting"></a>Administrar la configuración de la clave privada
 
-Debes asignar el permiso de cuenta de servicio de AD FS para acceder a la clave privada del nuevo certificado. Asimismo, deberás conceder este permiso de nuevo al reemplazar el certificado de comunicación después de que expire. Para conceder el permiso, sigue estos pasos:  
+Debe conceder permiso a la cuenta de servicio de AD FS para tener acceso a la clave privada del nuevo certificado. Tendrá que conceder este permiso de nuevo cuando reemplace el certificado de comunicación después de que expire. Para conceder permiso, siga estos pasos:  
   
-1.  Haga clic en **Inicio** y, a continuación, en **Ejecutar**.  
+1.  Haga clic en **Inicio**y, a continuación, haga clic en **Ejecutar**.  
   
-2.  Escribe **MMC**.  
+2.  Escriba **MMC**.  
   
-3.  En el menú **Archivo**, haga clic en **Agregar o quitar complemento**.  
+3.  En el menú **Archivo** , haga clic en **Agregar o quitar complemento**.  
   
-4.  En la lista **Complementos disponibles**, selecciona **Certificados** y, a continuación, haz clic en **Agregar**. Se iniciará el asistente del complemento de certificados.  
+4.  En la lista **complementos disponibles** , seleccione **certificados**y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.  
   
 5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.  
   
-6.  Selecciona **Equipo local: (el equipo en el que se ejecuta la consola)** y haz clic en **Finalizar**.  
+6.  Seleccione **equipo local: (el equipo en el que se está ejecutando esta consola)** y, a continuación, haga clic en **Finalizar**.  
   
-7.  Haga clic en **Aceptar**.  
+7.  Haga clic en **OK**.  
   
-8.  Expande la carpeta **Raíz de consola\Certificados\(equipo local) \Personal\Certificados**.  
+8.  Expanda la **consola de carpeta Root\Certificates \( equipo local) \personal\certificados**.  
   
-9.  Haz clic con el botón derecho en el **Certificado de AD FS**, haz clic en **Todas las tareas** y, a continuación, haz clic en **Administrar claves privadas**.  
+9.  Haga clic con el botón secundario en el **certificado AD FS**, haga clic en **todas las tareas**y, a continuación, haga clic en **administrar claves privadas**.  
   
-10. En la ventana **Permisos**, haz clic en **Agregar**.  
+10. En la ventana **permisos** , haga clic en **Agregar**.  
   
-11. En la ventana **Tipos de objeto**, selecciona **Cuentas de servicio** y, a continuación, haz clic en **Aceptar**.  
+11. En la ventana **tipos de objeto** , seleccione cuentas de **servicio**y, a continuación, haga clic en **Aceptar**.  
   
-12. Escribe el nombre de la cuenta que ejecuta AD FS. En el ejemplo de prueba, este nombre es ADFSService. Haga clic en **Aceptar**.  
+12. Escriba el nombre de la cuenta que ejecuta AD FS. En el ejemplo de prueba, es ADFSService. Haga clic en **OK**.  
   
-13. En la ventana **Permisos**, concédele a la cuenta, como mínimo, permiso de lectura y haz clic en **Aceptar**.  
+13. En la ventana **permisos** , asigne a la cuenta como mínimo permisos de lectura y haga clic en **Aceptar**.  
   
-Si no tiene la opción de administrar claves privadas, puede que tenga que ejecutar el siguiente comando: `certutil -repairstore my *`  
+Si no tiene la opción de administrar claves privadas, puede que tenga que ejecutar el siguiente comando:`certutil -repairstore my *`  
   
-## <a name="verify-that-ad-fs-is-operational"></a>Comprobar que AD FS funciona correctamente
+## <a name="verify-that-ad-fs-is-operational"></a>Comprobar que AD FS está operativo
 
-Para comprobar que AD FS está operativo, abra una ventana del explorador y vaya a `https://blueadfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`, cambiando la dirección URL para que coincida con su entorno.
+Para comprobar que AD FS está operativo, abra una ventana del explorador y vaya a `https://blueadfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml` , cambiando la dirección URL para que coincida con su entorno.
   
-En la ventana del explorador verás los metadatos del servidor de federación sin formato. Si puedes ver los datos sin errores de SSL ni advertencias, eso quiere decir que el servidor de federación está operativo.  
+La ventana del explorador mostrará los metadatos del servidor de Federación sin ningún formato. Si puede ver los datos sin errores ni advertencias de SSL, el servidor de Federación está operativo.  
   
-Siguiente paso: [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 3; configurar Carpetas de trabajo](deploy-work-folders-adfs-step3.md)  
+Paso siguiente: [implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 3, configurar carpetas de trabajo](deploy-work-folders-adfs-step3.md)  
   
-## <a name="see-also"></a>Consulta también  
-[Introducción a carpetas de trabajo](Work-Folders-Overview.md)
+## <a name="see-also"></a>Consulte también  
+[Introducción a Carpetas de trabajo](Work-Folders-Overview.md)

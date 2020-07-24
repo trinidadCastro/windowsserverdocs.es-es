@@ -7,18 +7,18 @@ ms.date: 07/13/2016
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 97bfae42c873ecf7196138920a21d96714239da9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b09ab33b25e2d0766707b21718639e0abdb9be91
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818708"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966737"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>Publicación de aplicaciones con autenticación previa de AD FS
 
 >Se aplica a: Windows Server 2016
 
-**Este contenido es relevante para la versión local del proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido del proxy de aplicación Azure ad](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
+**Este contenido es relevante para la versión local del proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido del proxy de aplicación Azure ad](/azure/active-directory/manage-apps/application-proxy).**  
   
 En este tema se describe cómo publicar aplicaciones mediante el proxy de aplicación Web mediante la autenticación previa de Servicios de federación de Active Directory (AD FS) (AD FS).  
   
@@ -29,7 +29,7 @@ El flujo de autenticación previa AD FS general es el siguiente:
 > [!NOTE]  
 > Este flujo de autenticación no es aplicable a los clientes que usan aplicaciones de Microsoft Store.  
   
-1.  El dispositivo cliente intenta obtener acceso a una aplicación web publicada en una dirección URL de recurso determinada; por ejemplo https://app1.contoso.com/.  
+1.  El dispositivo cliente intenta obtener acceso a una aplicación web publicada en una dirección URL de recurso determinada; por ejemplo, https://app1.contoso.com/ .  
   
     La dirección URL del recurso es una dirección pública en la que el proxy de aplicación web escucha las solicitudes HTTPS entrantes.  
   
@@ -66,17 +66,17 @@ El flujo de autenticación previa AD FS general es el siguiente:
 7.  El proxy de aplicación web guarda una cookie en el dispositivo cliente. El proxy de aplicación Web usa la cookie para identificar que esta sesión ya se ha autenticado previamente y que no es necesaria ninguna autenticación previa adicional.  
   
 > [!IMPORTANT]  
-> Al configurar la dirección URL externa y la dirección URL del servidor back-end, procure especificar el nombre de dominio completo (FQDN), no una dirección IP.  
+> Al configurar la dirección URL externa y la dirección URL del servidor back-end, procure especificar el nombre de dominio completo (FQDN), no una dirección IP.  
   
 > [!NOTE]  
-> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, consulte [Uso de Cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="publish-a-claims-based-application-for-web-browser-clients"></a><a name="BKMK_1.1"></a>Publicación de una aplicación basada en notificaciones para clientes de explorador Web  
+## <a name="publish-a-claims-based-application-for-web-browser-clients"></a><a name="BKMK_1.1"></a>Publicar una aplicación basada en notificaciones para los clientes de explorador web  
 Para publicar una aplicación que utiliza notificaciones para la autenticación, debe agregar una relación de confianza para usuario autenticado para la aplicación al Servicio de federación.  
   
 Al publicar aplicaciones basadas en notificaciones y obtener acceso a la aplicación desde un explorador, el flujo de autenticación general es el siguiente:  
   
-1.  El cliente intenta obtener acceso a una aplicación basada en notificaciones mediante un explorador Web. por ejemplo, https://appserver.contoso.com/claimapp/.  
+1.  El cliente intenta obtener acceso a una aplicación basada en notificaciones mediante un explorador Web. por ejemplo, https://appserver.contoso.com/claimapp/ .  
   
 2.  El explorador Web envía una solicitud HTTPS al servidor proxy de aplicación web que redirige la solicitud al servidor de AD FS.  
   
@@ -108,7 +108,7 @@ En este procedimiento se describe cómo publicar una aplicación basada en notif
   
 5.  En la lista de usuarios de confianza de la página **Persona de confianza**, seleccione el usuario de confianza de la aplicación que desea publicar y haga clic en **Siguiente**.  
   
-6.  En la página **Configuración de publicación** , haga lo siguiente y, a continuación, haga clic en **Siguiente**:  
+6.  En la página **Configuración de publicación**, haga lo siguiente y, a continuación, haga clic en **Siguiente**:  
   
     -   En el cuadro **Nombre**, escriba un nombre descriptivo para la aplicación.  
   
@@ -116,20 +116,20 @@ En este procedimiento se describe cómo publicar una aplicación basada en notif
   
     -   En el cuadro **Dirección URL externa**, indique la dirección URL externa de esta aplicación; por ejemplo, https://sp.contoso.com/app1/.  
   
-    -   En la lista **Certificado externo** , seleccione un certificado cuyo sujeto abarque la dirección URL externa.  
+    -   En la lista **Certificado externo**, seleccione un certificado cuyo sujeto abarque la dirección URL externa.  
   
-    -   En el cuadro **Dirección URL del servidor back-end**, indique la dirección URL del servidor back-end. Tenga en cuenta que este valor se especifica automáticamente al escribir la dirección URL externa y debe cambiarla solo si la dirección URL del servidor back-end es diferente; por ejemplo, https://sp/app1/.  
+    -   En el cuadro **Dirección URL del servidor back-end**, indique la dirección URL del servidor back-end. Tenga en cuenta que este valor se especifica automáticamente al escribir la dirección URL externa y debe cambiarla solo si la dirección URL del servidor back-end es diferente; por ejemplo, https://sp/app1/ .  
   
         > [!NOTE]  
-        > El proxy de aplicación web puede traducir nombres de host en direcciones URL, pero no puede traducir nombres de ruta de acceso. Por lo tanto, se pueden especificar otros nombres de host, pero el nombre de la ruta de acceso debe ser el mismo. Por ejemplo, puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL del servidor back-end de https://app-server/app1/. Sin embargo, no puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL de servidor back-end de https://apps.contoso.com/internal-app1/.  
+        > El proxy de aplicación web puede traducir nombres de host en direcciones URL, pero no puede traducir nombres de ruta de acceso. Por lo tanto, se pueden especificar otros nombres de host, pero el nombre de la ruta de acceso debe ser el mismo. Por ejemplo, puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL del servidor back-end de https://app-server/app1/ . Sin embargo, no puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL del servidor back-end de https://apps.contoso.com/internal-app1/ .  
   
-7.  En la página **Confirmación** , revise la configuración y, a continuación, haga clic en **Publicar**. Puede copiar el comando de PowerShell para configurar más aplicaciones publicadas.  
+7.  En la página **Confirmación**, revise la configuración y, a continuación, haga clic en **Publicar**. Puede copiar el comando de PowerShell para configurar más aplicaciones publicadas.  
   
 8.  En la página **Resultados**, asegúrese de que la aplicación se publicó correctamente y, a continuación, haga clic en **Cerrar**.  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>comandos equivalentes de Windows PowerShell</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Comandos equivalentes de Windows PowerShell</em>***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 ```  
 Add-WebApplicationProxyApplication  
@@ -141,18 +141,18 @@ Add-WebApplicationProxyApplication
     -ADFSRelyingPartyName 'SP_Relying_Party'  
 ```  
   
-## <a name="publish-an-integrated-windows-authenticated-based-application-for-web-browser-clients"></a><a name="BKMK_1.2"></a>Publicación de una aplicación basada en autenticación integrada de Windows para clientes de explorador Web  
+## <a name="publish-an-integrated-windows-authenticated-based-application-for-web-browser-clients"></a><a name="BKMK_1.2"></a>Publicar una aplicación basada en la autenticación integrada de Windows para clientes de explorador web  
 El proxy de aplicación web se puede usar para publicar aplicaciones que utilizan la autenticación integrada de Windows. es decir, el proxy de aplicación web realiza la autenticación previa según sea necesario y, a continuación, puede realizar el inicio de sesión único en la aplicación publicada que utiliza la autenticación integrada de Windows. Para publicar una aplicación que utiliza la autenticación integrada de Windows, debe agregar una relación de confianza para usuario autenticado no compatible con notificaciones para la aplicación al Servicio de federación.  
   
-Para permitir que el proxy de aplicación web realice el inicio de sesión único (SSO) y para realizar la delegación de credenciales mediante la delegación limitada de Kerberos, el servidor proxy de aplicación Web debe estar unido a un dominio. Consulte [Active Directory del plan](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD).  
+Para permitir que el proxy de aplicación web realice el inicio de sesión único (SSO) y para realizar la delegación de credenciales mediante la delegación limitada de Kerberos, el servidor proxy de aplicación Web debe estar unido a un dominio. Consulte [Active Directory del plan](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11)#BKMK_AD).  
   
-Para permitir que los usuarios accedan a las aplicaciones que usan la autenticación integrada de Windows, el servidor proxy de aplicación Web debe ser capaz de proporcionar delegación a los usuarios para la aplicación publicada. Puede hacerlo en el controlador de dominio para cualquier aplicación. También puede hacerlo en el servidor back-end si se está ejecutando en Windows Server 2012 R2 o Windows Server 2012. Para más información, consulte [Novedades de la autenticación Kerberos](https://technet.microsoft.com/library/hh831747.aspx).  
+Para permitir que los usuarios accedan a las aplicaciones que usan la autenticación integrada de Windows, el servidor proxy de aplicación Web debe ser capaz de proporcionar delegación a los usuarios para la aplicación publicada. Puede hacerlo en el controlador de dominio para cualquier aplicación. También puede hacerlo en el servidor back-end si se está ejecutando en Windows Server 2012 R2 o Windows Server 2012. Para obtener más información, vea [novedades de la autenticación Kerberos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11)).  
   
-Para ver un tutorial sobre cómo configurar el proxy de aplicación web para publicar una aplicación mediante la autenticación integrada de Windows, consulte [configurar un sitio para usar la autenticación integrada de Windows](https://technet.microsoft.com/library/dn280943.aspx#BKMK_3).  
+Para ver un tutorial sobre cómo configurar el proxy de aplicación web para publicar una aplicación mediante la autenticación integrada de Windows, consulte [configurar un sitio para usar la autenticación integrada de Windows](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280943(v=ws.11)#BKMK_3).  
   
 Al usar la autenticación integrada de Windows en los servidores back-end, la autenticación entre el proxy de aplicación web y la aplicación publicada no está basada en notificaciones, sino que utiliza la delegación limitada de Kerberos para autenticar a los usuarios finales en la aplicación. El flujo general se describe a continuación:  
   
-1.  El cliente intenta obtener acceso a una aplicación no basada en notificaciones mediante un explorador Web. por ejemplo, https://appserver.contoso.com/nonclaimapp/.  
+1.  El cliente intenta obtener acceso a una aplicación no basada en notificaciones mediante un explorador Web. por ejemplo, https://appserver.contoso.com/nonclaimapp/ .  
   
 2.  El explorador Web envía una solicitud HTTPS al servidor proxy de aplicación web que redirige la solicitud al servidor de AD FS.  
   
@@ -188,7 +188,7 @@ En este procedimiento se describe cómo publicar una aplicación que usa la aute
   
 5.  En la lista de usuarios de confianza de la página **Persona de confianza**, seleccione el usuario de confianza de la aplicación que desea publicar y haga clic en **Siguiente**.  
   
-6.  En la página **Configuración de publicación** , haga lo siguiente y, a continuación, haga clic en **Siguiente**:  
+6.  En la página **Configuración de publicación**, haga lo siguiente y, a continuación, haga clic en **Siguiente**:  
   
     -   En el cuadro **Nombre**, escriba un nombre descriptivo para la aplicación.  
   
@@ -196,22 +196,22 @@ En este procedimiento se describe cómo publicar una aplicación que usa la aute
   
     -   En el cuadro **Dirección URL externa**, indique la dirección URL externa de esta aplicación; por ejemplo, https://owa.contoso.com/.  
   
-    -   En la lista **Certificado externo** , seleccione un certificado cuyo sujeto abarque la dirección URL externa.  
+    -   En la lista **Certificado externo**, seleccione un certificado cuyo sujeto abarque la dirección URL externa.  
   
-    -   En el cuadro **Dirección URL del servidor back-end**, indique la dirección URL del servidor back-end. Tenga en cuenta que este valor se especifica automáticamente al escribir la dirección URL externa y debe cambiarla solo si la dirección URL del servidor back-end es diferente; por ejemplo, https://owa/.  
+    -   En el cuadro **Dirección URL del servidor back-end**, indique la dirección URL del servidor back-end. Tenga en cuenta que este valor se especifica automáticamente al escribir la dirección URL externa y debe cambiarla solo si la dirección URL del servidor back-end es diferente; por ejemplo, https://owa/ .  
   
         > [!NOTE]  
-        > El proxy de aplicación web puede traducir nombres de host en direcciones URL, pero no puede traducir nombres de ruta de acceso. Por lo tanto, se pueden especificar otros nombres de host, pero el nombre de la ruta de acceso debe ser el mismo. Por ejemplo, puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL del servidor back-end de https://app-server/app1/. Sin embargo, no puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL de servidor back-end de https://apps.contoso.com/internal-app1/.  
+        > El proxy de aplicación web puede traducir nombres de host en direcciones URL, pero no puede traducir nombres de ruta de acceso. Por lo tanto, se pueden especificar otros nombres de host, pero el nombre de la ruta de acceso debe ser el mismo. Por ejemplo, puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL del servidor back-end de https://app-server/app1/ . Sin embargo, no puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL del servidor back-end de https://apps.contoso.com/internal-app1/ .  
   
     -   En el cuadro **SPN del servidor back-end**, escriba el nombre de entidad de seguridad de servicio del servidor back-end (por ejemplo, HTTP/owa.contoso.com).  
   
-7.  En la página **Confirmación** , revise la configuración y, a continuación, haga clic en **Publicar**. Puede copiar el comando de PowerShell para configurar más aplicaciones publicadas.  
+7.  En la página **Confirmación**, revise la configuración y, a continuación, haga clic en **Publicar**. Puede copiar el comando de PowerShell para configurar más aplicaciones publicadas.  
   
 8.  En la página **Resultados**, asegúrese de que la aplicación se publicó correctamente y, a continuación, haga clic en **Cerrar**.  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>comandos equivalentes de Windows PowerShell</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Comandos equivalentes de Windows PowerShell</em>***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 ```  
 Add-WebApplicationProxyApplication  
@@ -225,10 +225,10 @@ Add-WebApplicationProxyApplication
 ```  
   
 ## <a name="publish-an-application-that-uses-ms-ofba"></a><a name="BKMK_1.3"></a>Publicación de una aplicación que usa MS-OFBA  
-Proxy de aplicación Web admite el acceso desde Microsoft Office clientes como Microsoft Word que acceden a documentos y datos en servidores back-end. La única diferencia entre estas aplicaciones y un explorador estándar es que el redireccionamiento al STS no se realiza a través de la redirección HTTP normal, sino con encabezados MS-OFBA especiales, como se especifica en: [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx). La aplicación back-end pueden ser de notificaciones o IWA.   
+Proxy de aplicación Web admite el acceso desde Microsoft Office clientes como Microsoft Word que acceden a documentos y datos en servidores back-end. La única diferencia entre estas aplicaciones y un explorador estándar es que el redireccionamiento al STS no se realiza a través de la redirección HTTP normal, sino con encabezados MS-OFBA especiales, como se especifica en: [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](/openspecs/sharepoint_protocols/ms-ofba/868d129f-f1b5-46bc-9385-4af58610dbbe) . La aplicación back-end pueden ser de notificaciones o IWA.   
 Para publicar una aplicación para los clientes que usan MS-OFBA, debe agregar una relación de confianza para usuario autenticado para la aplicación en el Servicio de federación. En función de la aplicación, puede utilizar la autenticación basada en notificaciones o la autenticación integrada de Windows. Por lo tanto, debe agregar la relación de confianza para usuario autenticado relevante en función de la aplicación.  
   
-Para permitir que el proxy de aplicación web realice el inicio de sesión único (SSO) y para realizar la delegación de credenciales mediante la delegación limitada de Kerberos, el servidor proxy de aplicación Web debe estar unido a un dominio. Consulte [Active Directory del plan](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD).  
+Para permitir que el proxy de aplicación web realice el inicio de sesión único (SSO) y para realizar la delegación de credenciales mediante la delegación limitada de Kerberos, el servidor proxy de aplicación Web debe estar unido a un dominio. Consulte [Active Directory del plan](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11)#BKMK_AD).  
   
 Si la aplicación usa la autenticación basada en notificaciones, no hay más pasos de planificación. Si la aplicación usa la autenticación integrada de Windows, consulte [publicación de una aplicación basada en autenticación integrada de Windows para clientes de explorador Web](../web-application-proxy/../web-application-proxy/Publishing-Applications-using-AD-FS-Preauthentication.md#BKMK_1.2).  
   
@@ -257,7 +257,7 @@ Los pasos para publicar una aplicación que usa MS-OFBA son idénticos a los pas
   
 ## <a name="publish-an-application-that-uses-http-basic"></a>Publicación de una aplicación que usa HTTP Basic  
 
-HTTP Basic es el protocolo de autorización usado por muchos protocolos, para conectar clientes enriquecidos, incluidos smartphones, con el buzón de Exchange. Para obtener más información sobre HTTP Basic, consulte [RFC 2617](https://www.ietf.org/rfc/rfc2617.txt). El proxy de aplicación Web suele interactuar con AD FS mediante redireccionamientos; los clientes más enriquecidos no admiten cookies ni administración de Estados. De esta manera, el proxy de aplicación web permite a la aplicación HTTP recibir una relación de confianza para usuario autenticado no notificaciones para la aplicación en el Servicio de federación. Consulte [Active Directory del plan](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD).  
+HTTP Basic es el protocolo de autorización usado por muchos protocolos, para conectar clientes enriquecidos, incluidos smartphones, con el buzón de Exchange. Para obtener más información sobre HTTP Basic, consulte [RFC 2617](https://www.ietf.org/rfc/rfc2617.txt). El proxy de aplicación Web suele interactuar con AD FS mediante redireccionamientos; los clientes más enriquecidos no admiten cookies ni administración de Estados. De esta manera, el proxy de aplicación web permite a la aplicación HTTP recibir una relación de confianza para usuario autenticado no notificaciones para la aplicación en el Servicio de federación. Consulte [Active Directory del plan](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11)#BKMK_AD).  
   
 El flujo de autenticación para los clientes que usan HTTP Basic se describe a continuación y en este diagrama:  
   
@@ -289,11 +289,11 @@ En el procedimiento siguiente se explica cómo publicar aplicaciones HTTP Basic.
   
 4.  En la página **clientes admitidos** , seleccione **http básico** y, a continuación, haga clic en **siguiente**.  
   
-    Si desea habilitar el acceso al intercambio solo desde dispositivos Unidos al área de trabajo, seleccione el cuadro **Habilitar acceso solo para dispositivos Unidos al área de trabajo** . Para obtener más información [, consulte unirse al área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en las aplicaciones de la empresa](https://technet.microsoft.com/library/dn280945.aspx).  
+    Si desea habilitar el acceso al intercambio solo desde dispositivos Unidos al área de trabajo, seleccione el cuadro **Habilitar acceso solo para dispositivos Unidos al área de trabajo** . Para obtener más información [, consulte unirse al área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en las aplicaciones de la empresa](../../../identity/ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md).  
   
 5.  En la lista de usuarios de confianza de la página **Persona de confianza**, seleccione el usuario de confianza de la aplicación que desea publicar y haga clic en **Siguiente**. Tenga en cuenta que esta lista contiene solo los usuarios de confianza de notificaciones.  
   
-6.  En la página **Configuración de publicación** , haga lo siguiente y, a continuación, haga clic en **Siguiente**:  
+6.  En la página **Configuración de publicación**, haga lo siguiente y, a continuación, haga clic en **Siguiente**:  
   
     -   En el cuadro **Nombre**, escriba un nombre descriptivo para la aplicación.  
   
@@ -301,17 +301,17 @@ En el procedimiento siguiente se explica cómo publicar aplicaciones HTTP Basic.
   
     -   En el cuadro **dirección URL externa** , escriba la dirección URL externa de esta aplicación; por ejemplo, mail.contoso.com  
   
-    -   En la lista **Certificado externo** , seleccione un certificado cuyo sujeto abarque la dirección URL externa.  
+    -   En la lista **Certificado externo**, seleccione un certificado cuyo sujeto abarque la dirección URL externa.  
   
     -   En el cuadro **Dirección URL del servidor back-end**, indique la dirección URL del servidor back-end. Tenga en cuenta que este valor se especifica automáticamente al escribir la dirección URL externa y debe cambiarla solo si la dirección URL del servidor back-end es diferente; por ejemplo, mail.contoso.com.  
   
-7.  En la página **Confirmación** , revise la configuración y, a continuación, haga clic en **Publicar**. Puede copiar el comando de PowerShell para configurar más aplicaciones publicadas.  
+7.  En la página **Confirmación**, revise la configuración y, a continuación, haga clic en **Publicar**. Puede copiar el comando de PowerShell para configurar más aplicaciones publicadas.  
   
 8.  En la página **Resultados**, asegúrese de que la aplicación se publicó correctamente y, a continuación, haga clic en **Cerrar**.  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>comandos equivalentes de Windows PowerShell</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Comandos equivalentes de Windows PowerShell</em>***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 Este script de Windows PowerShell permite la autenticación previa en todos los dispositivos, no solo en los dispositivos Unidos al área de trabajo.  
   
@@ -341,7 +341,7 @@ Add-WebApplicationProxyApplication
 ## <a name="publish-an-application-that-uses-oauth2-such-as-a-microsoft-store-app"></a><a name="BKMK_1.4"></a>Publicación de una aplicación que usa OAuth2, como una aplicación Microsoft Store  
 Para publicar una aplicación para Microsoft Store aplicaciones, debe agregar una relación de confianza para usuario autenticado para la aplicación en el Servicio de federación.  
   
-Para permitir que el proxy de aplicación web realice el inicio de sesión único (SSO) y para realizar la delegación de credenciales mediante la delegación limitada de Kerberos, el servidor proxy de aplicación Web debe estar unido a un dominio. Consulte [Active Directory del plan](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD).  
+Para permitir que el proxy de aplicación web realice el inicio de sesión único (SSO) y para realizar la delegación de credenciales mediante la delegación limitada de Kerberos, el servidor proxy de aplicación Web debe estar unido a un dominio. Consulte [Active Directory del plan](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11)#BKMK_AD).  
   
 > [!NOTE]  
 > Proxy de aplicación Web admite la publicación solo para Microsoft Store aplicaciones que usan el protocolo OAuth 2,0.  
@@ -366,7 +366,7 @@ A continuación se describe el flujo de autenticación para los clientes que usa
   
 4.  La aplicación envía una solicitud HTTPS al servidor de AD FS.  
   
-5.  La aplicación usa el agente de autenticación Web para generar un cuadro de diálogo en el que el usuario escribe las credenciales para autenticarse en el servidor de AD FS. Para obtener información sobre el agente de autenticación web, consulta [Agente de autenticación web](https://msdn.microsoft.com/library/windows/apps/hh750287.aspx).  
+5.  La aplicación usa el agente de autenticación Web para generar un cuadro de diálogo en el que el usuario escribe las credenciales para autenticarse en el servidor de AD FS. Para obtener información sobre el agente de autenticación web, consulta [Agente de autenticación web](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11)).  
   
 6.  Después de la autenticación correcta, el servidor de AD FS crea un token combinado que contiene el token OAuth y el token perimetral y envía el token a la aplicación.  
   
@@ -396,7 +396,7 @@ En este procedimiento se explica cómo publicar una aplicación para OAuth2. Est
   
 5.  En la lista de usuarios de confianza de la página **Persona de confianza**, seleccione el usuario de confianza de la aplicación que desea publicar y haga clic en **Siguiente**.  
   
-6.  En la página **Configuración de publicación** , haga lo siguiente y, a continuación, haga clic en **Siguiente**:  
+6.  En la página **Configuración de publicación**, haga lo siguiente y, a continuación, haga clic en **Siguiente**:  
   
     -   En el cuadro **Nombre**, escriba un nombre descriptivo para la aplicación.  
   
@@ -404,20 +404,20 @@ En este procedimiento se explica cómo publicar una aplicación para OAuth2. Est
   
     -   En el cuadro **Dirección URL externa**, indique la dirección URL externa de esta aplicación; por ejemplo, https://server1.contoso.com/app1/.  
   
-    -   En la lista **Certificado externo** , seleccione un certificado cuyo sujeto abarque la dirección URL externa.  
+    -   En la lista **Certificado externo**, seleccione un certificado cuyo sujeto abarque la dirección URL externa.  
   
         Para asegurarse de que los usuarios puedan tener acceso a la aplicación, aunque no tengan que escribir HTTPS en la dirección URL, seleccione el cuadro **Habilitar redirección de http a https** .  
   
-    -   En el cuadro **Dirección URL del servidor back-end**, indique la dirección URL del servidor back-end. Tenga en cuenta que este valor se especifica automáticamente al escribir la dirección URL externa y debe cambiarla solo si la dirección URL del servidor back-end es diferente; por ejemplo, https://sp/app1/.  
+    -   En el cuadro **Dirección URL del servidor back-end**, indique la dirección URL del servidor back-end. Tenga en cuenta que este valor se especifica automáticamente al escribir la dirección URL externa y debe cambiarla solo si la dirección URL del servidor back-end es diferente; por ejemplo, https://sp/app1/ .  
   
         > [!NOTE]  
-        > El proxy de aplicación web puede traducir nombres de host en direcciones URL, pero no puede traducir nombres de ruta de acceso. Por lo tanto, se pueden especificar otros nombres de host, pero el nombre de la ruta de acceso debe ser el mismo. Por ejemplo, puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL del servidor back-end de https://app-server/app1/. Sin embargo, no puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL de servidor back-end de https://apps.contoso.com/internal-app1/.  
+        > El proxy de aplicación web puede traducir nombres de host en direcciones URL, pero no puede traducir nombres de ruta de acceso. Por lo tanto, se pueden especificar otros nombres de host, pero el nombre de la ruta de acceso debe ser el mismo. Por ejemplo, puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL del servidor back-end de https://app-server/app1/ . Sin embargo, no puede especificar una dirección URL externa de https://apps.contoso.com/app1/ y una dirección URL del servidor back-end de https://apps.contoso.com/internal-app1/ .  
   
-7.  En la página **Confirmación** , revise la configuración y, a continuación, haga clic en **Publicar**. Puede copiar el comando de PowerShell para configurar más aplicaciones publicadas.  
+7.  En la página **Confirmación**, revise la configuración y, a continuación, haga clic en **Publicar**. Puede copiar el comando de PowerShell para configurar más aplicaciones publicadas.  
   
 8.  En la página **Resultados**, asegúrese de que la aplicación se publicó correctamente y, a continuación, haga clic en **Cerrar**.  
   
-Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
+Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 Para establecer la dirección URL de autenticación de OAuth para una dirección de servidor de Federación de fs.contoso.com y una ruta de acceso de dirección URL de/ADFS/OAuth2/:  
   
@@ -440,19 +440,17 @@ Add-WebApplicationProxyApplication
   
 ## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también  
   
--   [Solución de problemas del Proxy de aplicación web](https://technet.microsoft.com/library/dn770156.aspx)  
+-   [Solución de problemas del Proxy de aplicación web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))  
   
--   [Publicación de aplicaciones mediante el proxy de aplicación Web](https://technet.microsoft.com/library/dn383659.aspx)  
+-   [Publicación de aplicaciones mediante el proxy de aplicación Web](/previous-versions/orphan-topics/ws.11/dn383659(v=ws.11))  
   
--   [Planeación de la publicación de aplicaciones mediante el proxy de aplicación Web](https://technet.microsoft.com/library/dn383650.aspx)  
+-   [Planeamiento de publicación de aplicaciones mediante el Proxy de aplicación web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383650(v=ws.11))  
   
--   [Guía de tutorial de proxy de aplicación Web](https://technet.microsoft.com/library/dn280944.aspx)  
+-   [Guía de tutorial de proxy de aplicación web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280944(v=ws.11))  
   
--   [Cmdlets del proxy de aplicación web en Windows PowerShell](https://technet.microsoft.com/library/dn283404.aspx)  
+-   [Cmdlets del Proxy de aplicación web en Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280944(v=ws.11))  
   
--   [Add-WebApplicationProxyApplication](https://technet.microsoft.com/library/dn283409.aspx)  
+-   [Add-WebApplicationProxyApplication](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280944(v=ws.11))  
   
--   [Set-WebApplicationProxyConfiguration](https://technet.microsoft.com/library/dn283406.aspx)  
+-   [Set-WebApplicationProxyConfiguration](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280944(v=ws.11))  
   
-
-

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 680d0435d77164e101f045b439be6ccb6601dfef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3b9f727107ac9d392b52ab683aca510849fc534a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855738"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964697"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>Uso de directivas de restricción de software para ayudar a proteger equipos frente a virus de correo electrónico
 
@@ -31,9 +31,9 @@ A partir de Windows Server 2008 R2 y Windows 7, se puede usar Windows AppLocker 
 
 1.  Revise los procedimientos recomendados para las directivas de restricción de software para comprender el funcionamiento de SRP.
 
-    -   [Procedimientos recomendados](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
+    -   [procedimientos recomendados](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
 
-    -   [Cómo funcionan las directivas de restricción de software](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)
+    -   [Cómo funcionan las directivas de restricción de software](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))
 
 2.  Abra Directivas de restricción de software.
 
@@ -62,5 +62,3 @@ A partir de Windows Server 2008 R2 y Windows 7, se puede usar Windows AppLocker 
         -   [Para evitar que las directivas de restricción de software se apliquen a los administradores locales](administer-software-restriction-policies.md#BKMK_Prevent_Admin)
 
 7.  Pruebe la Directiva.
-
-

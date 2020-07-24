@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: 742e0ce781225303c623461439f8d4460fec97c9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 675deeee19deccb26f5db4f17da7265d843224e3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860108"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966607"
 ---
 # <a name="the-role-of-the-claim-rule-language"></a>El papel del lenguaje de reglas de notificaciones
 El lenguaje de reglas de notificación de Servicios de federación de Active Directory (AD FS) (AD FS) actúa como el bloque de creación administrativo para el comportamiento de las notificaciones entrantes y salientes, mientras que el motor de notificaciones actúa como motor de procesamiento de la lógica en el lenguaje de reglas de notificación que define la regla personalizada. Para obtener más información sobre el modo en que el motor de notificaciones procesa todas las reglas, consulte [The role of the Claims Engine](The-Role-of-the-Claims-Engine.md).  
@@ -31,14 +31,14 @@ AD FS también proporciona un conjunto de plantillas de reglas de emisión de no
 Para obtener información más detallada sobre las reglas de notificaciones y las plantillas de reglas de notificaciones, consulte [el rol de las reglas de notificaciones](The-Role-of-Claim-Rules.md).  
 
 ## <a name="understanding-the-components-of-the-claim-rule-language"></a>Descripción de los componentes del lenguaje de reglas de notificaciones  
-El lenguaje de reglas de notificaciones consta de los siguientes componentes, separados por el operador "= >":  
+El lenguaje de reglas de notificaciones consta de los siguientes componentes, separados por el operador "=>":  
 
 -   Una condición  
 
 -   Una declaración de emisión  
 
 ### <a name="conditions"></a>Condiciones  
-Puede usar las condiciones de una regla para comprobar las notificaciones de entrada y determinar si se debe ejecutar la instrucción de emisión de la regla. Una condición representa una expresión lógica que debe evaluarse si es verdadera para ejecutar la parte del cuerpo de la regla. Si falta esta parte, se supone que es un valor lógico true; es decir, siempre se ejecuta el cuerpo de la regla. La parte de condiciones contiene una lista de condiciones que se combinan con el operador lógico conjunción ("& &"). Debe evaluarse si todas las condiciones de la lista son verdaderas para evaluar toda la parte condicional como verdadera. La condición puede ser un operador de selección de notificaciones o una llamada de función agregada. Estas dos se excluyen mutuamente, lo que significa que los selectores de notificación y las funciones totales no se pueden combinar en una parte de condiciones de una sola regla.  
+Puede usar las condiciones de una regla para comprobar las notificaciones de entrada y determinar si se debe ejecutar la instrucción de emisión de la regla. Una condición representa una expresión lógica que debe evaluarse si es verdadera para ejecutar la parte del cuerpo de la regla. Si falta esta parte, se supone que es un valor lógico true; es decir, siempre se ejecuta el cuerpo de la regla. La parte de condiciones contiene una lista de condiciones que se combinan con el operador lógico conjunción ("&&"). Debe evaluarse si todas las condiciones de la lista son verdaderas para evaluar toda la parte condicional como verdadera. La condición puede ser un operador de selección de notificaciones o una llamada de función agregada. Estas dos se excluyen mutuamente, lo que significa que los selectores de notificación y las funciones totales no se pueden combinar en una parte de condiciones de una sola regla.  
 
 Las condiciones son opcionales en las reglas. Por ejemplo, la siguiente regla no tiene una condición:  
 
@@ -63,8 +63,8 @@ En la tabla siguiente se describen las condiciones de una sola expresión. Se co
 
 |                                                                                                                   Descripción de la condición                                                                                                                    |                           Ejemplo de sintaxis de condición                            |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-|               Esta regla tiene una condición para comprobar si hay una notificaciones de entrada con un tipo de demanda especificado ("<http://test/name>"). Si una notificación coincidente se encuentra en las notificaciones de entrada, la regla copia la notificación o notificaciones correspondientes en el conjunto de notificaciones de salida.               |         ``` c: [type == "http://test/name"] => issue(claim = c );```          |
-| Esta regla tiene una condición para comprobar una notificaciones de entrada con un tipo de demanda especificado ("<http://test/name>") y el valor de la petición ("Terry"). Si una notificación coincidente se encuentra en las notificaciones de entrada, la regla copia la notificación o notificaciones correspondientes en el conjunto de notificaciones de salida. | ``` c: [type == "http://test/name", value == "Terry"] => issue(claim = c);``` |
+|               Esta regla tiene una condición para comprobar si hay una notificaciones de entrada con un tipo de demanda especificado (" <http://test/name> "). Si una notificación coincidente se encuentra en las notificaciones de entrada, la regla copia la notificación o notificaciones correspondientes en el conjunto de notificaciones de salida.               |         ``` c: [type == "http://test/name"] => issue(claim = c );```          |
+| Esta regla tiene una condición para comprobar si hay una notificaciones de entrada con un tipo de demanda especificado (" <http://test/name> ") y un valor de notificaciones ("Terry"). Si una notificación coincidente se encuentra en las notificaciones de entrada, la regla copia la notificación o notificaciones correspondientes en el conjunto de notificaciones de salida. | ``` c: [type == "http://test/name", value == "Terry"] => issue(claim = c);``` |
 
 En la sección siguiente se muestran condiciones más complejas, incluidas las condiciones para buscar varias notificaciones, las condiciones para comprobar el emisor de una notificación y las condiciones para comprobar los valores que coinciden con un patrón de expresión regular.  
 
@@ -74,19 +74,19 @@ En la tabla siguiente se proporciona un ejemplo de condiciones de varias expresi
 
 |                                                                                                                   Descripción de la condición                                                                                                                    |                                        Ejemplo de sintaxis de condición                                        |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| Esta regla tiene una condición para comprobar dos notificaciones de entrada, cada una con un tipo de notificación especificado ("<http://test/name>" y "<http://test/email>"). Si las dos notificaciones coincidentes se encuentran en las notificaciones de entrada, la regla copia la notificación de nombre en el conjunto de notificaciones de salida. | ``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );``` |
+| Esta regla tiene una condición para comprobar dos notificaciones de entrada, cada una con un tipo de notificación especificado (" <http://test/name> " y " <http://test/email> "). Si las dos notificaciones coincidentes se encuentran en las notificaciones de entrada, la regla copia la notificación de nombre en el conjunto de notificaciones de salida. | ``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );``` |
 
 #### <a name="regular--condition-examples"></a>Ejemplos de condiciones regulares  
 En la tabla siguiente se proporciona un ejemplo de una condición normal basada en expresiones.  
 
 |Descripción de la condición|Ejemplo de sintaxis de condición|  
 |-------------------------|----------------------------|  
-|Esta regla tiene una condición que usa una expresión regular para comprobar si hay una declaración de correo electrónico que termine en "@fabrikam.com". Si se encuentra una notificación coincidente en las notificaciones de entrada, la regla copia la notificación correspondiente en el conjunto de notificaciones de salida.|```c: [type  == "http://test/email", value  =~ "^. +@fabrikam.com$" ] => issue (claim  = c );```|  
+|Esta regla tiene una condición que usa una expresión regular para comprobar si hay una declaración de correo electrónico que termine en " @fabrikam.com ". Si se encuentra una notificación coincidente en las notificaciones de entrada, la regla copia la notificación correspondiente en el conjunto de notificaciones de salida.|```c: [type  == "http://test/email", value  =~ "^. +@fabrikam.com$" ] => issue (claim  = c );```|  
 
 ### <a name="issuance-statements"></a>Declaraciones de emisión  
 Las reglas personalizadas se procesan en función de las instrucciones de emisión (*problema* o *adición* ) que se programan en la regla de notificaciones. En función del resultado deseado, la instrucción de problema o de agregar se puede escribir en la regla para rellenar el conjunto de notificaciones de entrada o de salida. Una regla personalizada que usa la instrucción de agregar explícitamente rellena valores de notificación solamente en el conjunto de notificaciones de entrada mientras una regla de notificación personalizada que usa la instrucción de problema rellena los valores de la notificación en el conjunto de notificaciones de entrada y de salida. Esto puede ser útil cuando un valor de notificación está pensado para ser usado únicamente por parte de reglas futuras en el conjunto de reglas de notificación.  
 
-Por ejemplo, en la siguiente ilustración, la notificación entrante se agrega a la notificación de entrada establecida por el motor de emisión de notificaciones. Cuando se ejecuta la primera regla de notificación personalizada y se cumplen los criterios del usuario del dominio, el motor de emisión de notificaciones procesa la lógica de la regla mediante la instrucción Add y el valor del **Editor** se agrega al conjunto de notificaciones de entrada. Dado que el valor del editor está presente en el conjunto de notificaciones de entrada, la regla 2 puede procesar correctamente la instrucción del problema en su lógica y generar un nuevo valor de **Hello**, que se agrega al conjunto de notificaciones de salida y al conjunto de notificaciones de entrada para que la use la siguiente regla del conjunto de reglas. La regla 3 ahora puede usar todos los valores que se encuentran en el conjunto de notificaciones de entrada como entrada para procesar su lógica.  
+Por ejemplo, en la siguiente ilustración, la notificación entrante se agrega a la notificación de entrada establecida por el motor de emisión de notificaciones. Cuando se ejecuta la primera regla de notificación personalizada y se cumplen los criterios del usuario del dominio, el motor de emisión de notificaciones procesa la lógica de la regla mediante la instrucción Add y el valor del **Editor** se agrega al conjunto de notificaciones de entrada. Dado que el valor del Editor está presente en el conjunto de notificaciones de entrada, la regla 2 puede procesar la instrucción del problema correctamente en su lógica y generar un nuevo valor de **Hello**, que se agrega al conjunto de notificaciones de salida y de entrada para ser usado por la regla siguiente del conjunto. Ahora la regla 3 puede usar todos los valores que se encuentran en el conjunto de notificaciones de entrada como entrada para procesar su lógica.  
 
 ![Roles AD FS](media/adfs2_customrule.gif)  
 
@@ -109,7 +109,7 @@ La instrucción de emisión de una regla define qué notificaciones emitirá la 
 
     -   *Nueva demanda*: este formato crea una nueva demanda, dados los valores de varias propiedades de notificaciones. Se debe especificar Claim.Type; todas las demás propiedades de notificación son opcionales. El orden de los argumentos de este formulario se ignora.  
 
--   **Almacén de atributos**: este formulario crea notificaciones con valores que se recuperan de un almacén de atributos. Es posible crear varios tipos de notificaciones mediante una única instrucción de emisión, que es importante para los almacenes de atributos que realizan operaciones de entrada/salida (e/s) de red o de disco durante la recuperación de atributos. Por lo tanto, es conveniente limitar el número de viajes de ida y vuelta entre el motor de directivas y el almacén de atributos. También es legal crear varias notificaciones para un tipo de notificación determinado. Cuando el almacén de atributos devuelve varios valores para un tipo de reclamación determinado, la instrucción de emisión crea automáticamente una notificación para cada valor de notificación devuelto. Una implementación de almacén de atributos usa los argumentos de parámetro para sustituir los marcadores de posición del argumento de la consulta por los valores proporcionados en los argumentos de parámetro. Los marcadores de posición utilizan la misma sintaxis que la función String. Format () de .NET (por ejemplo, {1}, {2}, etc.). El orden de los argumentos de esta forma de emisión es importante y debe ser el orden que se indica en la siguiente gramática.  
+-   **Almacén de atributos**: este formulario crea notificaciones con valores que se recuperan de un almacén de atributos. Es posible crear varios tipos de notificaciones mediante una única instrucción de emisión, que es importante para los almacenes de atributos que realizan operaciones de entrada/salida (e/s) de red o de disco durante la recuperación de atributos. Por lo tanto, es conveniente limitar el número de viajes de ida y vuelta entre el motor de directivas y el almacén de atributos. También es legal crear varias notificaciones para un tipo de notificación determinado. Cuando el almacén de atributos devuelve varios valores para un tipo de reclamación determinado, la instrucción de emisión crea automáticamente una notificación para cada valor de notificación devuelto. Una implementación de almacén de atributos usa los argumentos de parámetro para sustituir los marcadores de posición del argumento de la consulta por los valores proporcionados en los argumentos de parámetro. Los marcadores de posición utilizan la misma sintaxis que la función String. Format () de .NET (por ejemplo, {1} , {2} , etc.). El orden de los argumentos de esta forma de emisión es importante y debe ser el orden que se indica en la siguiente gramática.  
 
 En la tabla siguiente se describen algunas construcciones sintácticas comunes para ambos tipos de instrucciones de emisión de reglas de notificación.  
 
@@ -117,7 +117,7 @@ En la tabla siguiente se describen algunas construcciones sintácticas comunes p
 |---------------------------|----------------------------------|-------------------------------------|  
 |Normal|La siguiente regla siempre emite la misma notificación cada vez que un usuario tiene el tipo de notificación y el valor especificado:|```c: [type  == "http://test/employee", value  == "true"] => issue (type = "http://test/role", value = "employee");```|  
 |Normal|La siguiente regla convierte un tipo de notificación en otro. Observe que el valor de la notificación que coincide con la condición "c" se usa en la instrucción de emisión.|```c: [type  == "http://test/group" ] => issue (type  = "http://test/role", value  = c.Value );```|  
-|Almacén de atributos|La siguiente regla usa el valor de una solicitud entrante para consultar el almacén de atributos de Active Directory:|```c: [Type  == "http://test/name" ] => issue (store  = "Enterprise AD Attribute Store", types  =  ("http://test/email" ), query  = ";mail;{0}", param  = c.Value )```|  
+|Almacén de atributos|La siguiente regla usa el valor de una notificación entrante para consultar el almacén de atributos de Active Directory:|```c: [Type  == "http://test/name" ] => issue (store  = "Enterprise AD Attribute Store", types  =  ("http://test/email" ), query  = ";mail;{0}", param  = c.Value )```|  
 |Almacén de atributos|La siguiente regla usa el valor de una solicitud entrante para consultar un almacén de atributos Lenguaje de consulta estructurado (SQL) configurado previamente:|```c: [type  == "http://test/name"] => issue (store  = "Custom SQL store", types  =  ("http://test/email","http://test/displayname" ), query  = "SELECT mail, displayname FROM users WHERE name ={0}", param  = c.value );```|  
 
 #### <a name="expressions"></a>Expresiones  
@@ -143,7 +143,7 @@ Las siguientes propiedades de notificación están disponibles para acceder a el
 
 -   Claim.ValueType  
 
--   Claim. Properties\[propiedad\_nombre\] (esta propiedad devuelve una cadena vacía si no se encuentra la propiedad _name en la colección de propiedades de la demanda. )  
+-   Nombre de la propiedad Claim. Properties \[ \_ \] (esta propiedad devuelve una cadena vacía si no se encuentra la propiedad _name en la colección de propiedades de la demanda. )  
 
 Puede usar la función RegexReplace llamar a dentro de una expresión. Esta función toma una expresión de entrada y la hace coincidir con el modelo especificado. Si el patrón coincide, el resultado de la coincidencia se reemplaza por el valor de la sustitución.  
 
@@ -159,6 +159,4 @@ exists([issuer == "MSFT"])
 El cuerpo de la regla puede contener una única instrucción de emisión. Si las condiciones se usan sin usar la función Exists, el cuerpo de la regla se ejecuta una vez por cada vez que se produce una coincidencia con la parte de las condiciones.  
 
 ## <a name="additional-references"></a>Referencias adicionales  
-[Crear una regla para enviar notificaciones mediante una regla personalizada](https://technet.microsoft.com/library/dd807049.aspx)  
-
-
+[Crear una regla para enviar notificaciones mediante una regla personalizada](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807049(v=ws.11))  

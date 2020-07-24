@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9fb1b91ff389f6abacccaa7464276fc8556c11c5
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a28132d87fe0b10ac5ab2969f94cdf8905d731fe
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948914"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966747"
 ---
 # <a name="scenario-web-api-calling-web-api-on-behalf-of-scenario"></a>Escenario: API Web que llama a la API Web (en nombre de escenario) 
 > Se aplica a: AD FS 2019 y versiones posteriores 
@@ -22,14 +22,14 @@ Obtenga información sobre cómo crear una API Web que llama a otra API Web en n
  
 Antes de leer este artículo, debe estar familiarizado con los [conceptos de AD FS](../ad-fs-openid-connect-oauth-concepts.md) y el [flujo Behalf_Of](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md#on-behalf-of-flow)
 
-## <a name="overview"></a>Introducción 
+## <a name="overview"></a>Información general 
 
 
 - Un cliente (aplicación web), no representado en el diagrama siguiente, llama a una API Web protegida y proporciona un token de portador JWT en su encabezado HTTP "Authorization". 
-- La API Web protegida valida el token y usa el método de MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) para solicitar (desde AD FS) otro token, de modo que se pueda llamar a una segunda API Web (llamada API Web de bajada) en nombre del usuario. 
-- La API web protegida usa este token para llamar a una API de bajada. También puede llamar a AcquireTokenSilentlater para solicitar tokens para otras API de nivel inferior (pero todavía en nombre del mismo usuario). AcquireTokenSilent actualiza el token cuando sea necesario.  
+- La API Web protegida valida el token y usa el método [AcquireTokenOnBehalfOf](/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_)de MSAL   para solicitar (desde AD FS) otro token, de modo que se pueda llamar a una segunda API Web (llamada API Web de bajada) en nombre del usuario. 
+- La API web protegida usa este token para llamar a una API de bajada. También puede llamar a AcquireTokenSilentlater para solicitar tokens para otras API de nivel inferior (pero todavía en nombre del mismo usuario).AcquireTokenSilent actualiza el token cuando sea necesario.  
  
-     ![introducción](media/adfs-msal-web-api-web-api/webapi1.png)
+     ![Información general](media/adfs-msal-web-api-web-api/webapi1.png)
  
 Para comprender mejor cómo configurar en nombre del escenario de autenticación en ADFS, vamos a usar un ejemplo disponible [aquí](https://github.com/microsoft/adfs-sample-msal-dotnet-webapi-to-webapi-onbehalfof) y guiaremos en el registro de la aplicación y los pasos de configuración del código.  
  
@@ -45,15 +45,15 @@ En esta sección se muestra cómo registrar la aplicación nativa como un client
 
   1. En administración de AD FS, haga clic con el botón derecho en **grupos de aplicaciones** y seleccione **Agregar grupo de aplicaciones**.  
   
-  2. En el Asistente para grupos de aplicaciones, en **nombre** , escriba **WebApiToWebApi** y en **aplicaciones cliente-servidor** seleccione la plantilla **aplicación nativa que tiene acceso a una API Web** . Haz clic en **Siguiente**.
+  2. En el Asistente para grupos de aplicaciones, en **nombre** , escriba **WebApiToWebApi** y en **aplicaciones cliente-servidor** seleccione la plantilla **aplicación nativa que tiene acceso a una API Web** . Haga clic en **Next**.
 
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi2.png)
 
-  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ClientID** en el archivo **app. config** de la aplicación. Escriba lo siguiente en **URI de redirección:**  - https://ToDoListClient. Haz clic en **Agregar**. Haz clic en **Siguiente**. 
+  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ClientID** en el archivo de **App.config** de la aplicación. Escriba lo siguiente para el **URI de redirección:**  -  https://ToDoListClient . Haga clic en **Agregar**. Haga clic en **Next**. 
   
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi3.png)
   
-  4. En la pantalla configurar API Web, escriba el **identificador:** https://localhost:44321/. Haz clic en **Agregar**. Haz clic en **Siguiente**. Este valor se usará más adelante en los archivos **app. config** y **Web. config** de la aplicación.  
+  4. En la pantalla configurar API Web, escriba el **identificador:** https://localhost:44321/ . Haga clic en **Agregar**. Haga clic en **Next**. Este valor se usará más adelante en los archivos de **App.config** y **Web.Config** de la aplicación.  
  
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi4.png)
 
@@ -61,7 +61,7 @@ En esta sección se muestra cómo registrar la aplicación nativa como un client
   
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi5.png)  
 
-  6. En la pantalla configurar permisos de aplicación, seleccione **OpenID** y **user_impersonation**. Haz clic en **Siguiente**.  
+  6. En la pantalla configurar permisos de aplicación, seleccione **OpenID** y **user_impersonation**. Haga clic en **Next**.  
   
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi6.png)  
 
@@ -74,7 +74,7 @@ En esta sección se muestra cómo registrar la aplicación nativa como un client
   
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi7.png)  
 
-  10. En la pantalla de propiedades de WebApiToWebApi, haga clic en **Agregar aplicación.** . 
+  10. En la pantalla de propiedades de WebApiToWebApi, haga clic en **Agregar aplicación..**.. 
   
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi8.png)
 
@@ -98,7 +98,7 @@ En esta sección se muestra cómo registrar la aplicación nativa como un client
   
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi12.png)
 
-  17. En la pantalla de propiedades de WebApiToWebApi, haga clic en **Agregar aplicación.** . 
+  17. En la pantalla de propiedades de WebApiToWebApi, haga clic en **Agregar aplicación..**.. 
   
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi13.png)
 
@@ -124,11 +124,11 @@ En esta sección se muestra cómo registrar la aplicación nativa como un client
 
   24. Haga clic en aceptar en WebApiToWebApi: pantalla de propiedades de Web API 2  
 
-  25. En la pantalla de propiedades de WebApiToWebApi, seleccione **WebApiToWebApi – Web API** y haga clic en **Editar.** .  
+  25. En la pantalla de propiedades de WebApiToWebApi, seleccione **WebApiToWebApi – Web API** y haga clic en **Editar..**..  
   
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi18.png)
 
-  26. En WebApiToWebApi: pantalla de propiedades de la API Web, seleccione la pestaña **reglas de transformación de emisión** y haga clic en **Agregar regla.** ... 
+  26. En WebApiToWebApi: pantalla de propiedades de la API Web, seleccione la pestaña **reglas de transformación de emisión** y haga clic en **Agregar regla.**... 
   
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi19.png)
 
@@ -136,20 +136,20 @@ En esta sección se muestra cómo registrar la aplicación nativa como un client
   
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi20.png)
 
-  28. Escriba **PassAllClaims** en **nombre de regla de notificaciones:** campo y **x: [] = > problema (Claim = x);** regla de notificaciones en regla personalizada: campo y haga clic en finalizar.  
+  28. Escriba **PassAllClaims** en **nombre de regla de notificaciones:** campo y **x: [] => problema (Claim = x);** regla de notificaciones en regla personalizada: campo y haga clic en finalizar.  
    
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi21.png)
 
   29. Haga clic en aceptar en WebApiToWebApi: pantalla de propiedades de la API Web
 
   30. En la pantalla de propiedades de WebApiToWebApi, seleccione Select WebApiToWebApi – Web API 2 y haga clic en Editar...</br> 
-  ![de registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi22.png)
+  ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi22.png)
 
   31. En la pantalla WebApiToWebApi – propiedades de Web API 2, seleccione la pestaña reglas de transformación de emisión y haga clic en Agregar regla... 
 
-  32. En el Asistente para agregar regla de notificación de transformación, seleccione enviar notificaciones mediante una regla personalizada en dopdown y haga clic en siguiente ![registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi23.png)
+  32. En el Asistente para agregar regla de notificación de transformación, seleccione enviar notificaciones mediante una regla personalizada en dopdown y haga clic en siguiente de la ![ aplicación reg.](media/adfs-msal-web-api-web-api/webapi23.png)
 
-  33. Escriba PassAllClaims en nombre de regla de notificaciones: campo y **x: [] = > problema (Claim = x);** regla de notificaciones en **regla personalizada:** campo y haga clic en **Finalizar**.  
+  33. Escriba PassAllClaims en nombre de regla de notificaciones: campo y **x: [] => problema (Claim = x);** regla de notificaciones en **regla personalizada:** campo y haga clic en **Finalizar**.  
    
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi24.png)
 
@@ -173,19 +173,19 @@ En esta sección se muestra cómo configurar una API Web para llamar a otra API 
       
             ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi25.png)
 
-  4. Abra el archivo Web. config en ToDoListService. Modifique lo siguiente: 
+  4. Abra el archivo de Web.config en ToDoListService. Modifique lo siguiente: 
        - ida: Audience: escriba el valor del identificador de cliente de #12 en el registro de la aplicación en AD FS sección anterior
        - ida: ClientId: escriba el valor del identificador de cliente de #12 en el registro de la aplicación en AD FS sección anterior. 
        - Ida: ClientSecret: escriba el secreto compartido copiado de #13 en el registro de la aplicación en AD FS sección anterior.
        - ida: RedirectUri: escriba el valor de RedirectUri de #12 en el registro de la aplicación en AD FS sección anterior. 
-       - ida: AdfsMetadataEndpoint: escriba https://[su nombre de host de AD FS]/federationmetadata/2007-06/federationmetadata.XML 
+       - ida: AdfsMetadataEndpoint: escriba https://[su nombre de host de AD FS]/federationmetadata/2007-06/federationmetadata.xml 
        - ida: OBOWebAPIBase: escriba el valor del identificador de #19 en el registro de la aplicación en AD FS sección anterior. 
        - ida: autoridad: escriba https://[su nombre de host de AD FS]/ADFS 
   
           ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi26.png) 
 
- 5. Abra el archivo Web. config en WebAPIOBO. Modifique lo siguiente: 
-       - ida: AdfsMetadataEndpoint: escriba https://[su nombre de host de AD FS]/federationmetadata/2007-06/federationmetadata.XML 
+ 5. Abra el archivo de Web.config en WebAPIOBO. Modifique lo siguiente: 
+       - ida: AdfsMetadataEndpoint: escriba https://[su nombre de host de AD FS]/federationmetadata/2007-06/federationmetadata.xml 
        - ida: Audience: escriba el valor del identificador de cliente de #12 en el registro de la aplicación en AD FS sección anterior 
  
           ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi27.png)
@@ -196,7 +196,7 @@ En esta sección se muestra cómo probar el ejemplo configurado anteriormente.
 
 Una vez realizados los cambios en el código, vuelva a generar la solución 
  
-  1. En Visual Studio, haga clic con el botón derecho en la solución y seleccione **establecer proyectos de inicio.** . 
+  1. En Visual Studio, haga clic con el botón derecho en la solución y seleccione **establecer proyectos de inicio..** . 
       
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi28.png)
 
@@ -222,7 +222,7 @@ Una vez realizados los cambios en el código, vuelva a generar la solución
  
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi33.png)
  
- ## <a name="next-steps"></a>Pasos a seguir
+ ## <a name="next-steps"></a>Pasos siguientes
 [Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  
  

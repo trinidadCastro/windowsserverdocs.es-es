@@ -1,5 +1,5 @@
 ---
-title: 'Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 4; configurar el Proxy de aplicación web'
+title: 'Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 4, configurar el proxy de aplicación Web'
 ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
@@ -8,18 +8,18 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 06/24/2017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: f0222226191719fd11e68def8970c0e83529f801
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: 78636aa1f245450f6c5f133fb1a11a38de17dc22
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145911"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965737"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: Paso 4; configurar el Proxy de aplicación web
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 4: configurar el proxy de aplicación Web
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema se describe el cuarto paso para implementar Carpetas de trabajo con los Servicios de federación de Active Directory (AD FS) y el Proxy de aplicación web. Puedes encontrar el resto de pasos de este proceso en estos temas:  
+En este tema se describe el cuarto paso en la implementación de carpetas de trabajo con Servicios de federación de Active Directory (AD FS) (AD FS) y proxy de aplicación Web. Puede encontrar los demás pasos de este proceso en estos temas:  
   
 -   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: información general](deploy-work-folders-adfs-overview.md)  
   
@@ -32,127 +32,126 @@ En este tema se describe el cuarto paso para implementar Carpetas de trabajo con
 -   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
 
 > [!NOTE]
->   Las instrucciones que se describen en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   Las instrucciones que se describen en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si usa Windows Server 2012 R2, siga las instrucciones de [Windows server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11)).
 
-Para configurar el Proxy de aplicación web y así poder usarlo con Carpetas de trabajo, usa los siguientes procedimientos.  
+Para configurar el proxy de aplicación web para su uso con carpetas de trabajo, utilice los procedimientos siguientes.  
   
-## <a name="install-the-ad-fs-and-work-folder-certificates"></a>Instalar los certificados de AD FS y de Carpetas de trabajo  
-Debes instalar los certificados de AD FS y Carpetas de trabajo que creaste anteriormente (en el paso 1, Configurar AD FS y, en el paso 3, Configurar carpetas de trabajo) en el almacén de certificados del equipo local que se encuentra en el equipo donde se instalará el rol Proxy de aplicación web.  
+## <a name="install-the-ad-fs-and-work-folder-certificates"></a>Instalar los certificados de carpeta de AD FS y de trabajo  
+Debe instalar los certificados de AD FS y carpetas de trabajo que creó anteriormente (en el paso 1, configurar AD FS y el paso 3, configurar carpetas de trabajo) en el almacén de certificados del equipo local en el equipo en el que se instalará el rol proxy de aplicación Web.  
   
-Como estás instalando certificados autofirmados cuyo origen no se puede rastrear hasta ningún editor del almacén de certificados Entidades de certificación raíz de confianza, debes copiar esos certificados en ese almacén.  
+Dado que está instalando certificados autofirmados de los que no se puede realizar un seguimiento en un publicador del almacén de certificados de entidades de certificación raíz de confianza, también debe copiar los certificados en ese almacén.  
   
-Para instalar los certificados, sigue estos pasos:  
+Para instalar los certificados, siga estos pasos:  
   
-1.  Haz clic en **Inicio**y en **Ejecutar**.  
+1.  Haga clic en **Inicio**y, a continuación, haga clic en **Ejecutar**.  
   
-2.  Escribe **MMC**.  
+2.  Escriba **MMC**.  
   
-3.  En el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
+3.  En el menú **Archivo** , haga clic en **Agregar o quitar complemento**.  
   
-4.  En la lista **Complementos disponibles**, selecciona **Certificados** y, a continuación, haz clic en **Agregar**. Se iniciará el asistente del complemento de certificados.  
+4.  En la lista **complementos disponibles** , seleccione **certificados**y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.  
   
-5.  Selecciona **Cuenta de equipo** y, a continuación, haz clic en **Siguiente**.  
+5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.  
   
-6.  Selecciona **Equipo local: (el equipo en el que se ejecuta la consola)** y haz clic en **Finalizar**.  
+6.  Seleccione **equipo local: (el equipo en el que se está ejecutando esta consola)** y, a continuación, haga clic en **Finalizar**.  
   
-7.  Haz clic en **Aceptar**.  
+7.  Haga clic en **OK**.  
   
-8.  Expande la carpeta **Raíz de consola\Certificados\(equipo local) \Personal\Certificados**.  
+8.  Expanda la **consola de carpeta Root\Certificates \( equipo local) \personal\certificados**.  
   
-9. Haz clic con el botón derecho en **Certificados**, haz clic en **Todas las tareas** y, a continuación, haz clic en **Importar**.  
+9. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**y haga clic en **importar**.  
   
-10. Busca la carpeta que contiene el certificado de AD FS y sigue las instrucciones del asistente para importar el archivo; a continuación, colócalo en el almacén de certificados.  
+10. Vaya a la carpeta que contiene el certificado AD FS y siga las instrucciones del Asistente para importar el archivo y colocarlo en el almacén de certificados.  
   
-11. Repite los pasos 9 y 10, y esta vez busca el certificado de Carpetas de trabajo e impórtalo.  
+11. Repita los pasos 9 y 10, esta vez, busque el certificado de carpetas de trabajo e impórtelo.  
   
-12. Expande la carpeta **Raíz de consola\Certificados\(equipo local) \Entidades de certificación raíz de confianza\Certificados**.  
+12. Expanda la **consola de carpeta Root\Certificates \( equipo local) \Trusted raíz confianza\certificados**.  
   
-13. Haz clic con el botón derecho en **Certificados**, haz clic en **Todas las tareas** y, a continuación, haz clic en **Importar**.  
+13. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**y haga clic en **importar**.  
   
-14. Busca la carpeta que contiene el certificado de AD FS y sigue las instrucciones del asistente para importar el archivo; a continuación, colócalo en el almacén Entidades de certificación raíz de confianza.  
+14. Vaya a la carpeta que contiene el certificado de AD FS y siga las instrucciones del Asistente para importar el archivo y colocarlo en el almacén de entidades de certificación raíz de confianza.  
   
-15. Repite los pasos 13 y 14; esta vez busca el certificado de Carpetas de trabajo e impórtalo.  
+15. Repita los pasos 13 y 14, esta vez, busque el certificado de carpetas de trabajo e impórtelo.  
   
-## <a name="install-web-application-proxy"></a>Instalar el Proxy de aplicación web  
-Para instalar el Proxy de aplicación web, sigue estos pasos:  
+## <a name="install-web-application-proxy"></a>Instalar el proxy de aplicación Web  
+Para instalar el proxy de aplicación Web, siga estos pasos:  
   
-1.  En el servidor donde vayas a instalar el Proxy de aplicación Web, abre **Administrador del servidor** e inicia el asistente para **Agregar roles y características**.  
+1.  En el servidor donde va a instalar el proxy de aplicación Web, Abra **Administrador del servidor** e inicie el Asistente para **Agregar roles y características** .  
   
-2.  Haz clic en **Siguiente** en la primera y segunda páginas del asistente.  
+2.  Haga clic en **siguiente** en la primera y en la segunda página del asistente.  
   
-3.  En la página **Selección de servidores**, selecciona tu servidor y haz clic en **Siguiente**.  
+3.  En la página **selección de servidor** , seleccione el servidor y, a continuación, haga clic en **siguiente**.  
   
-4.  En la página **Rol del servidor**, selecciona el rol **Acceso remoto** y, a continuación, haz clic en **Siguiente**.  
+4.  En la página **rol de servidor** , seleccione el rol de **acceso remoto** y, a continuación, haga clic en **siguiente**.  
   
-5.  En la página de características y acceso remoto, haz clic en **Siguiente**.  
+5.  En la página características y acceso remoto, haga clic en **siguiente**.  
   
-6.  En la página **Servicios de rol**, selecciona **Proxy de aplicación web**, haz clic en **Agregar características** y, a continuación, haz clic en **Siguiente**.
+6.  En la página **servicios de rol** , seleccione proxy de **aplicación web**, haga clic en **Agregar características**y, a continuación, haga clic en **siguiente**.
 
-7.  En la página **Confirm installation selections**, haz clic en **Install**.  
+7.  En la página **Confirmar selecciones de instalación**, haga clic en **Instalar**.  
   
 ## <a name="configure-web-application-proxy"></a>Configurar el Proxy de aplicación web  
-Para configurar el Proxy de aplicación web, sigue estos pasos:  
+Para configurar el proxy de aplicación Web, siga estos pasos:  
   
-1.  Haz clic en el marcador de advertencia que se encuentra en la parte superior del Administrador del servidor y, a continuación, haz clic en el vínculo para abrir el asistente para la configuración del Proxy de aplicación web.  
+1.  Haga clic en la marca de advertencia en la parte superior de Administrador del servidor y, a continuación, haga clic en el vínculo para abrir el Asistente para la configuración del proxy de aplicación Web.  
   
-2.  En la página principal, haz clic en **Siguiente**.  
+2.  En la página de bienvenida, presione **siguiente**.  
   
-3.  En la página **Servidor de federación**, escribe el nombre del Servicio de federación. En este ejemplo de prueba, el valor es **blueadfs.contoso.com**.  
+3.  En la página **servidor de Federación** , escriba el nombre del servicio de Federación. En el ejemplo de prueba, es **blueadfs.contoso.com**.  
   
-4.  Escribe las credenciales de una cuenta de administrador local en los servidores de federación. Recuerda que no debes acceder a las credenciales de dominio (por ejemplo, contoso\administrador); tienes que acceder a las credenciales locales (por ejemplo, administrador).  
+4.  Escriba las credenciales de una cuenta de administrador local en los servidores de Federación. No escriba las credenciales del dominio (por ejemplo, Contoso\Administrador), pero las credenciales locales (por ejemplo, administrador).  
   
-5.  En la página **Certificado de proxy de AD FS**, selecciona el certificado de AD FS que hayas importado anteriormente. En este caso de prueba, el valor es **blueadfs.contoso.com**. Haz clic en **Siguiente**.  
+5.  En la página **AD FS certificado de proxy** , seleccione el certificado de AD FS que importó anteriormente. En el caso de prueba, es **blueadfs.contoso.com**. Haga clic en **Next**.  
   
-6.  La página de confirmación te mostrará el comando de Windows PowerShell que se ejecutará para configurar el servicio. Haz clic en **Configurar**.  
+6.  La página Confirmación muestra el comando de Windows PowerShell que se ejecutará para configurar el servicio. Haga clic en **Configurar**.  
   
-## <a name="publish-the-work-folders-web-application"></a>Publicar la aplicación web Carpetas de trabajo  
-En el siguiente paso publicaremos una aplicación web que pondrá a disposición de los clientes Carpetas de trabajo. Para publicar la aplicación web Carpetas de trabajo, sigue estos pasos:  
+## <a name="publish-the-work-folders-web-application"></a>Publicar la aplicación Web de carpetas de trabajo  
+El siguiente paso es publicar una aplicación web que pondrá las carpetas de trabajo a disposición de los clientes. Para publicar la aplicación Web de carpetas de trabajo, siga estos pasos:  
   
-1. Abre el **Administrador del servidor** y, en el menú **Herramientas**, haz clic en **Administración de acceso remoto** para abrir la consola de administración de acceso remoto.  
+1. Abra **Administrador del servidor**y, en el menú **herramientas** , haga clic en **Administración de acceso remoto** para abrir la consola de administración de acceso remoto.  
   
-2. En **Configuración**, haz clic en **Proxy de aplicación web**.  
+2. En **configuración**, haga clic en **proxy de aplicación web**.  
   
-3. En **Tareas**, haz clic en **Publicar**. Se abrirá el asistente para publicar nuevas aplicaciones.  
+3. En **tareas**, haga clic en **publicar**. Se abre el Asistente para publicar nueva aplicación.  
   
-4. En la página principal, haz clic en **Siguiente**.  
+4. En la página de bienvenida, haga clic en **Siguiente**.  
   
-5. En la página **Autenticación previa**, selecciona **Servicios de federación de Active Directory (AD FS)** y, a continuación, haz clic en **Siguiente**.  
+5. En la página **autenticación previa** , seleccione **servicios de Federación de Active Directory (AD FS) (AD FS)** y haga clic en **siguiente**.  
   
-6. En la página **Admitir clientes**, selecciona **OAuth2** y haz clic en **Siguiente**.
+6. En la página **clientes de soporte técnico** , seleccione **OAuth2**y haga clic en **siguiente**.
 
-7. En la página **Usuario de confianza**, selecciona **Carpetas de trabajo** y, a continuación, haz clic en **Siguiente**. Esta lista se publica en el Proxy de aplicación web de AD FS.  
+7. En la página **usuario de confianza** , seleccione **carpetas de trabajo**y, a continuación, haga clic en **siguiente**. Esta lista se publica en el proxy de aplicación web desde AD FS.  
   
-8. En la página **Configuración de publicación**, escribe lo siguiente y, a continuación, haz clic en **Siguiente**:  
+8. En la página **configuración de publicación** , escriba lo siguiente y, a continuación, haga clic en **siguiente**:  
   
-   -   El nombre de la aplicación web  
+   -   El nombre que desea utilizar para la aplicación Web  
   
-   -   La dirección URL externa de Carpetas de trabajo  
+   -   La dirección URL externa para carpetas de trabajo  
   
-   -   El nombre del certificado de Carpetas de trabajo  
+   -   El nombre del certificado de carpetas de trabajo  
   
-   -   La dirección URL de back-end de Carpetas de trabajo  
+   -   La dirección URL de back-end para carpetas de trabajo  
   
-   El asistente creará tanto la URL de back-end como la URL externa de manera predeterminada.  
+   De forma predeterminada, el asistente hace que la dirección URL de back-end sea la misma que la dirección URL externa.  
   
-   En el ejemplo de prueba, usa estos valores:  
+   En el ejemplo de prueba, use estos valores:  
   
    Nombre: **WorkFolders**  
   
-   Dirección URL externa: **https://workfolders.contoso.com**  
+   Dirección URL externa:**https://workfolders.contoso.com**  
   
-   Certificado externo: **es el certificado de Carpetas de trabajo que se instaló anteriormente**  
+   Certificado externo: **el certificado de carpetas de trabajo que instaló anteriormente**  
   
-   Dirección URL del servidor back-end: **https://workfolders.contoso.com**  
+   Dirección URL del servidor back-end:**https://workfolders.contoso.com**  
   
-9. La página de confirmación muestra el comando de Windows PowerShell que se ejecutará para publicar la aplicación. Haz clic en **Publicar**.  
+9. La página Confirmación muestra el comando de Windows PowerShell que se ejecutará para publicar la aplicación. Haga clic en **Publicar**.  
   
-10. En la página **Resultados** verás que la aplicación se publicó correctamente.
+10. En la página **resultados** , debería ver que la aplicación se publicó correctamente.
     >[!NOTE]
-    > Si tienes varios servidores de Carpetas de trabajo, debes publicar una aplicación web de Carpetas de trabajo para cada servidor de Carpetas de trabajo (repite los pasos 1 a 10).  
+    > Si tiene varios servidores de carpetas de trabajo, debe publicar una aplicación Web de carpetas de trabajo para cada servidor de carpetas de trabajo (Repita los pasos 1-10).  
   
-Siguiente paso: [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 5; configurar clientes](deploy-work-folders-adfs-step5.md)  
+Paso siguiente: [implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
   
-## <a name="see-also"></a>Consulta también  
-[Introducción a carpetas de trabajo](Work-Folders-Overview.md)  
+## <a name="see-also"></a>Consulte también  
+[Introducción a Carpetas de trabajo](Work-Folders-Overview.md)  
   
-

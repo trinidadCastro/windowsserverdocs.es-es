@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4b0240a3-b927-4a1e-b241-5f8f29a9552f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e206ead9d4af53c0ee404eb5077c88fef2b87ba7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e7a32f3da4554462226fd7315708b94a8a61e19
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815848"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965607"
 ---
 # <a name="bgp-windows-powershell-command-reference"></a>Referencia de comandos de Windows PowerShell de BGP
 
@@ -23,14 +23,14 @@ Puede usar este tema como referencia, al escribir scripts de Windows PowerShell,
   
 Estos comandos BGP forman parte del conjunto de comandos de acceso remoto de Windows PowerShell para Windows Server 2016. Este tema le ayuda a encontrar rápidamente los comandos BGP que quiere usar en los scripts.  
   
-Para obtener más información sobre todos los comandos de acceso remoto, consulte [cmdlets de acceso remoto](https://technet.microsoft.com/library/hh918399.aspx).  
+Para obtener más información sobre todos los comandos de acceso remoto, consulte [cmdlets de acceso remoto](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11)).  
   
 ## <a name="bgp-command-reference"></a>Referencia de comandos de BGP  
 En las secciones siguientes se proporciona el nombre del comando, el propósito y la sintaxis de cada comando BGP, así como un vínculo al comando en la referencia de acceso remoto, que contiene información más detallada sobre cada comando.  
   
 Esta referencia contiene las siguientes secciones.  
   
--   [Agregar comandos](#bkmk_add)  
+-   [Adición de comandos](#bkmk_add)  
   
 -   [Borrar comandos](#bkmk_clear)  
   
@@ -48,10 +48,10 @@ Esta referencia contiene las siguientes secciones.
   
 -   [Comandos de desinstalación](#bkmk_uninstall)  
   
-### <a name="add-commands"></a><a name="bkmk_add"></a>Agregar comandos  
+### <a name="add-commands"></a><a name="bkmk_add"></a>Adición de comandos  
 A continuación se muestran los comandos de adición de BGP.  
   
-[Add-BgpCustomRoute](https://technet.microsoft.com/library/dn262684.aspx)  
+[Add-BgpCustomRoute](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Agrega rutas personalizadas a la tabla de enrutamiento de BGP.  
   
@@ -59,7 +59,7 @@ Agrega rutas personalizadas a la tabla de enrutamiento de BGP.
 Add-BgpCustomRoute [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-Interface <String[]> ] [-Network <String[]> ] [-PassThru] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Add-eliminara](https://technet.microsoft.com/library/dn262687.aspx)  
+[Add-eliminara](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Agrega un nuevo par BGP.  
   
@@ -67,7 +67,7 @@ Agrega un nuevo par BGP.
 Add-BgpPeer [-Name] <String> -LocalIPAddress <IPAddress> -PeerASN <UInt32> -PeerIPAddress <IPAddress> [-CimSession <CimSession[]> ] [-HoldTimeSec <UInt16> ] [-IdleHoldTimeSec <UInt16> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-LocalASN <UInt32> ] [-MaxAllowedPrefix <UInt32> ] [-OperationMode <OperationMode> {Mixed | Server} ] [-PassThru] [-PeeringMode <PeeringMode> {Automatic | Manual} ] [-RouteReflectorClient <Boolean> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Weight <UInt16> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Add-BgpRouteAggregate](https://technet.microsoft.com/library/mt463113.aspx)  
+[Add-BgpRouteAggregate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Agrega una nueva ruta agregada para rutas BGP específicas.  
   
@@ -75,7 +75,7 @@ Agrega una nueva ruta agregada para rutas BGP específicas.
 Add-BgpRouteAggregate -Prefix <String> [-AttributePolicy <String[]> ] [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-PassThru] [-PreserveASPath <PreserveASPath> ] [-RoutingDomain <String> ] [-SummaryOnly <SummaryOnly> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Add-BgpRouter](https://technet.microsoft.com/library/dn262665.aspx)  
+[Add-BgpRouter](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Agrega un enrutador BGP para el ID. de inquilino especificado.  
   
@@ -83,7 +83,7 @@ Agrega un enrutador BGP para el ID. de inquilino especificado.
 Add-BgpRouter -BgpIdentifier <IPAddress> -LocalASN <UInt32> [-CimSession <CimSession[]> ] [-ClientToClientReflection <ClientToClientReflection> ] [-ClusterId <UInt32> ] [-CompareMEDAcrossASN <Boolean> ] [-DefaultGatewayRouting <Boolean> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-IPv6Routing <IPv6RoutingState> {Disabled | Enabled} ] [-LocalIPv6Address <IPAddress> ] [-PassThru] [-RouteReflector <RouteReflector> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-TransitRouting <TransitRouting> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Add-BgpRoutingPolicy](https://technet.microsoft.com/library/dn262662.aspx)  
+[Add-BgpRoutingPolicy](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Agrega una directiva de enrutamiento de BGP al almacén de directivas.  
   
@@ -91,7 +91,7 @@ Agrega una directiva de enrutamiento de BGP al almacén de directivas.
 Add-BgpRoutingPolicy [-Name] <String> [-PolicyType] <PolicyType> {Deny | Allow | ModifyAttribute} [-AddCommunity <String[]> ] [-CimSession <CimSession[]> ] [-ClearMED] [-Force] [-IgnorePrefix <String[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-MatchASNRange <UInt32[]> ] [-MatchCommunity <String[]> ] [-MatchNextHop <IPAddress[]> ] [-MatchPrefix <String[]> ] [-NewLocalPref <UInt32]> ] [-NewMED <UInt32]> ] [-NewNextHop <IPAddress> ] [-PassThru] [-RemoveAllCommunities] [-RemoveCommunity <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Add-BgpRoutingPolicyForPeer](https://technet.microsoft.com/library/dn262680.aspx)  
+[Add-BgpRoutingPolicyForPeer](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Agrega directivas de enrutamiento BGP a pares BGP.  
   
@@ -102,7 +102,7 @@ Add-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -Pol
 ### <a name="clear-commands"></a><a name="bkmk_clear"></a>Borrar comandos  
 A continuación se indican los comandos Clear para BGP  
   
-[Clear-BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463114.aspx)  
+[Clear-BgpRouteFlapDampening](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Borra la información de estabilización ligera de rutas para el conjunto especificado de rutas BGP.  
   
@@ -113,7 +113,7 @@ Clear-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-Information
 ### <a name="disable-and-enable-commands"></a><a name="bkmk_disable"></a>Deshabilitar y habilitar comandos  
 A continuación se indican los comandos de deshabilitar y habilitar para BGP  
   
-[Disable-BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463100.aspx)  
+[Disable-BgpRouteFlapDampening](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Deshabilita la amortiguación de rutas para las rutas BGP de oscilación.  
   
@@ -121,7 +121,7 @@ Deshabilita la amortiguación de rutas para las rutas BGP de oscilación.
 Disable-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Enable-BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463102.aspx)  
+[Enable-BgpRouteFlapDampening](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Habilita la amortiguación de rutas para las rutas BGP de oscilación.  
   
@@ -132,7 +132,7 @@ Enable-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-Informatio
 ### <a name="get-commands"></a><a name="bkmk_get"></a>Obtener comandos  
 A continuación se muestran los comandos GET para BGP.  
   
-[Get-BgpCustomRoute](https://technet.microsoft.com/library/dn262664.aspx)  
+[Get-BgpCustomRoute](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Obtiene información de ruta personalizada del enrutador BGP.  
   
@@ -140,7 +140,7 @@ Obtiene información de ruta personalizada del enrutador BGP.
 Get-BgpCustomRoute [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Get-eliminara](https://technet.microsoft.com/library/dn262659.aspx)  
+[Get-eliminara](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Obtiene información de configuración para los pares BGP.  
   
@@ -148,7 +148,7 @@ Obtiene información de configuración para los pares BGP.
 Get-BgpPeer [[-Name] <String[]> ] [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Get-BgpRouteAggregate](https://technet.microsoft.com/library/mt463103.aspx)  
+[Get-BgpRouteAggregate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Obtiene todas las rutas BGP agregadas configuradas por el administrador.  
   
@@ -156,7 +156,7 @@ Obtiene todas las rutas BGP agregadas configuradas por el administrador.
 Get-BgpRouteAggregate [-CimSession <CimSession[]> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-Prefix <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Get-BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463108.aspx)  
+[Get-BgpRouteFlapDampening](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Recupera la configuración de un motor de estabilización de rutas BGP.  
   
@@ -164,7 +164,7 @@ Recupera la configuración de un motor de estabilización de rutas BGP.
 Get-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Get-BgpRouteInformation](https://technet.microsoft.com/library/dn262667.aspx)  
+[Get-BgpRouteInformation](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Recupera información de la ruta BGP para uno o más prefijos de red de la tabla de enrutamiento BGP.  
   
@@ -172,7 +172,7 @@ Recupera información de la ruta BGP para uno o más prefijos de red de la tabla
 Get-BgpRouteInformation [-CimSession <CimSession[]> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-Network <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Type <RouteType> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Get-BgpRouter](https://technet.microsoft.com/library/dn262660.aspx)  
+[Get-BgpRouter](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Obtiene información de configuración para los enrutadores BGP.  
   
@@ -180,7 +180,7 @@ Obtiene información de configuración para los enrutadores BGP.
 Get-BgpRouter [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String[]> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Get-BgpRoutingPolicy](https://technet.microsoft.com/library/dn262672.aspx)  
+[Get-BgpRoutingPolicy](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Obtiene la información de configuración de las directivas de enrutamiento BGP.  
   
@@ -188,7 +188,7 @@ Obtiene la información de configuración de las directivas de enrutamiento BGP.
 Get-BgpRoutingPolicy [[-Name] <String[]> ] [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PolicyType <PolicyType> {Deny | Allow | ModifyAttribute} ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Get-BgpStatistics](https://technet.microsoft.com/library/dn262685.aspx)  
+[Get-BgpStatistics](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Recupera estadísticas de anuncios de rutas y mensajes relacionados con el emparejamiento BGP.  
   
@@ -199,9 +199,9 @@ Get-BgpStatistics [-CimSession <CimSession[]> ] [-InformationAction <System.Mana
 ### <a name="install-commands"></a><a name="bkmk_install"></a>Comandos de instalación  
 A continuación se indican los comandos de instalación para la puerta de enlace RAS y BGP.  
   
-[Instalación-acceso remoto](https://technet.microsoft.com/library/hh918408.aspx)  
+[Instalación-acceso remoto](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
-Realiza comprobaciones de requisitos previos de DirectAccess (DA) para asegurarse de que se puede instalar, instala DA para acceso remoto (RA) (incluye la administración de clientes remotos) o para la administración de clientes remotos solamente, instala VPN (VPN de acceso remoto y VPN de sitio a sitio). y instala el enrutamiento de BGP.  
+Realiza comprobaciones de requisitos previos de DirectAccess (DA) para asegurarse de que se puede instalar, instala DA para acceso remoto (RA) (incluye la administración de clientes remotos) o para la administración de clientes remotos solamente, instala VPN (VPN de acceso remoto y VPN de sitio a sitio) e instala el enrutamiento de BGP.  
   
 ```  
 Parameter Set: MultiTenant  
@@ -233,7 +233,7 @@ Install-RemoteAccess -VpnType RoutingOnly
 ### <a name="remove-commands"></a><a name="bkmk_remove"></a>Quitar comandos  
 A continuación se muestran los comandos de eliminación de BGP.  
   
-[Remove-BgpCustomRoute](https://technet.microsoft.com/library/dn262669.aspx)  
+[Remove-BgpCustomRoute](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Quita las rutas personalizadas del enrutador BGP.  
   
@@ -241,7 +241,7 @@ Quita las rutas personalizadas del enrutador BGP.
 Remove-BgpCustomRoute [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-Interface <String[]> ] [-Network <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Remove-eliminara](https://technet.microsoft.com/library/dn262675.aspx)  
+[Remove-eliminara](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Quita los pares BGP de un enrutador.  
   
@@ -249,7 +249,7 @@ Quita los pares BGP de un enrutador.
 Remove-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Remove-BgpRouteAggregate](https://technet.microsoft.com/library/mt463110.aspx)  
+[Remove-BgpRouteAggregate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Quita el conjunto de rutas BGP agregadas especificadas.  
   
@@ -257,7 +257,7 @@ Quita el conjunto de rutas BGP agregadas especificadas.
 Remove-BgpRouteAggregate [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-Prefix <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Remove-BgpRouter](https://technet.microsoft.com/library/dn262678.aspx)  
+[Remove-BgpRouter](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Quita un enrutador BGP.  
   
@@ -265,7 +265,7 @@ Quita un enrutador BGP.
 Remove-BgpRouter [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String[]> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Remove-BgpRoutingPolicy](https://technet.microsoft.com/library/dn262656.aspx)  
+[Remove-BgpRoutingPolicy](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Quita las directivas de enrutamiento del almacén de directivas.  
   
@@ -273,7 +273,7 @@ Quita las directivas de enrutamiento del almacén de directivas.
 Remove-BgpRoutingPolicy [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Remove-BgpRoutingPolicyForPeer](https://technet.microsoft.com/library/dn262681.aspx)  
+[Remove-BgpRoutingPolicyForPeer](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Quita las directivas de enrutamiento de los pares BGP.  
   
@@ -285,7 +285,7 @@ Remove-BgpRoutingPolicyForPeer [-CimSession <CimSession[]> ] [-Direction <Policy
 ### <a name="set-commands"></a><a name="bkmk_set"></a>Comandos SET  
 A continuación se indican los comandos SET para BGP.  
   
-[Set-eliminara](https://technet.microsoft.com/library/dn262673.aspx)  
+[Set-eliminara](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Actualiza la configuración del elemento BGP del mismo nivel especificado.  
   
@@ -293,7 +293,7 @@ Actualiza la configuración del elemento BGP del mismo nivel especificado.
 Set-BgpPeer [-Name] <String> [-CimSession <CimSession[]> ] [-ClearPrefixLimit] [-Force] [-HoldTimeSec <UInt16> ] [-IdleHoldTimeSec <UInt16> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-LocalASN <UInt32> ] [-LocalIPAddress <IPAddress> ] [-MaxAllowedPrefix <UInt32> ] [-OperationMode <OperationMode> {Mixed | Server} ] [-PassThru] [-PeerASN <UInt32> ] [-PeeringMode <PeeringMode> {Automatic | Manual} ] [-PeerIPAddress <IPAddress> ] [-RouteReflectorClient <Boolean> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Weight <UInt16> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Set-BgpRouteAggregate](https://technet.microsoft.com/library/mt463115.aspx)  
+[Set-BgpRouteAggregate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Actualiza las propiedades de la ruta BGP agregada especificada.  
   
@@ -301,7 +301,7 @@ Actualiza las propiedades de la ruta BGP agregada especificada.
 Set-BgpRouteAggregate -Prefix <String> [-AttributePolicy <String[]> ] [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-PassThru] [-PreserveASPath <PreserveASPath> ] [-RoutingDomain <String> ] [-SummaryOnly <SummaryOnly> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Set-BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463116.aspx)  
+[Set-BgpRouteFlapDampening](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Configura el motor de estabilización de rutas BGP.  
   
@@ -309,7 +309,7 @@ Configura el motor de estabilización de rutas BGP.
 Set-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-HalfLife <UInt32> ] [-HalfLifeUnreachable <UInt32> ] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-MaxSuppressTime <UInt32> ] [-PassThru] [-ReuseThreshold <UInt32> ] [-RoutingDomain <String> ] [-SuppressThreshold <UInt32> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Set-BgpRouter](https://technet.microsoft.com/library/dn262652.aspx)  
+[Set-BgpRouter](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Actualiza la configuración del enrutador BGP local para el ID. de inquilino especificado.  
   
@@ -317,7 +317,7 @@ Actualiza la configuración del enrutador BGP local para el ID. de inquilino esp
 Set-BgpRouter [-BgpIdentifier <IPAddress> ] [-CimSession <CimSession[]> ] [-ClientToClientReflection <ClientToClientReflection> ] [-ClusterId <UInt32> ] [-CompareMEDAcrossASN <Boolean> ] [-DefaultGatewayRouting <Boolean> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-IPv6Routing <IPv6RoutingState> {Disabled | Enabled} ] [-LocalASN <UInt32> ] [-LocalIPv6Address <IPAddress> ] [-PassThru] [-RouteReflector <RouteReflector> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-TransitRouting <TransitRouting> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Set-BgpRoutingPolicy](https://technet.microsoft.com/library/dn262670.aspx)  
+[Set-BgpRoutingPolicy](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Modifica una configuración de directiva de enrutamiento.  
   
@@ -325,7 +325,7 @@ Modifica una configuración de directiva de enrutamiento.
 Set-BgpRoutingPolicy [-Name] <String> [-AddCommunity <String[]> ] [-CimSession <CimSession[]> ] [-ClearMED] [-Force] [-IgnorePrefix <String[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-MatchASNRange <UInt32[]> ] [-MatchCommunity <String[]> ] [-MatchNextHop <IPAddress[]> ] [-MatchPrefix <String[]> ] [-NewLocalPref <UInt32]> ] [-NewMED <UInt32]> ] [-NewNextHop <IPAddress> ] [-PassThru] [-PolicyType <PolicyType> {Deny | Allow | ModifyAttribute} ] [-RemoveAllCommunities] [-RemoveCommunity <String[]> ] [-RemovePolicyClause <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Set-BgpRoutingPolicyForPeer](https://technet.microsoft.com/library/dn262674.aspx)  
+[Set-BgpRoutingPolicyForPeer](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Modifica las directivas de enrutamiento BGP para los pares BGP.  
   
@@ -336,7 +336,7 @@ Set-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -Pol
 ### <a name="start-and-stop-commands"></a><a name="bkmk_start"></a>Comandos START y STOP  
 A continuación se indican los comandos de inicio y detención para BGP.  
   
-[Start-eliminara](https://technet.microsoft.com/library/dn262683.aspx)  
+[Start-eliminara](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Inicia las sesiones de enrutamiento para los pares BGP.  
   
@@ -344,7 +344,7 @@ Inicia las sesiones de enrutamiento para los pares BGP.
 Start-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-[Stop-eliminara](https://technet.microsoft.com/library/dn262661.aspx)  
+[Stop-eliminara](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Detiene las sesiones de enrutamiento para los pares BGP.  
   
@@ -355,7 +355,7 @@ Stop-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-Informa
 ### <a name="uninstall-commands"></a><a name="bkmk_uninstall"></a>Comandos de desinstalación  
 A continuación se muestran los comandos de desinstalación para la puerta de enlace RAS y BGP.  
   
-[Desinstalar-RemoteAccess](https://technet.microsoft.com/library/hh918390.aspx)  
+[Desinstalar-RemoteAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))  
   
 Desinstala el acceso remoto del equipo, incluidas todas las características y funcionalidades de acceso remoto (puerta de enlace RAS, BGP, etc.).  
   
@@ -363,5 +363,3 @@ Desinstala el acceso remoto del equipo, incluidas todas las características y f
 Uninstall-RemoteAccess [-CimSession <CimSession[]> ] [-ComputerName <String> ] [-EntrypointName <String> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-ThrottleLimit <Int32> ] [-VpnType <String> {Vpn | VpnS2S} ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-
-

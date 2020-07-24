@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1d00ab702ab6b4ff4307f96f9e266a1cb3420197
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2924b04e0853549f86934f0145f2cb46f07a4939
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821148"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966587"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Supervisión de Active Directory en busca de indicios de riesgo
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-*Ley número 5: la vigilancia del infinitas es el precio de la seguridad.* - [10 leyes inmutables de administración de seguridad](https://technet.microsoft.com/library/cc722488.aspx)  
+*Ley número 5: la vigilancia del infinitas es el precio de la seguridad.* - [10 leyes inmutables de administración de seguridad](/previous-versions//cc722488(v=technet.10))  
   
 Un sistema de supervisión de registro de eventos sólido es una parte fundamental de cualquier diseño de Active Directory seguro. Muchos peligros de seguridad del equipo podrían detectarse en el primer momento en el caso de que las víctimas hayan actuado en la supervisión y las alertas adecuadas del registro de eventos. Los informes independientes tienen una larga compatibilidad con esta conclusión. Por ejemplo, el [Informe de infracciones de datos 2009 de Verizon](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf) indica:  
   
@@ -31,15 +31,15 @@ Esta falta de supervisión de los registros de eventos activos sigue siendo una 
 
 A continuación se incluyen vínculos al blog de soporte técnico de Microsoft Official Enterprise. El contenido de estos blogs proporciona consejos, instrucciones y recomendaciones sobre la auditoría que le ayudarán a mejorar la seguridad de la infraestructura de Active Directory y son un recurso valioso al diseñar una directiva de auditoría.  
   
-* La [Auditoría de acceso a objetos global es mágica](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) : describe un mecanismo de control denominado configuración de directiva de auditoría avanzada que se agregó a Windows 7 y windows Server 2008 R2 que le permite establecer los tipos de datos que desea auditar fácilmente y no los scripts y Auditpol. exe.  
-* [Introducción a los cambios de auditoría en windows 2008](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) : presenta los cambios de auditoría realizados en windows Server 2008.  
-* [Trucos de auditoría fantásticos en vista y 2008](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) : se explican las características de auditoría interesantes de Windows Vista y windows Server 2008 que se pueden usar para solucionar problemas o ver lo que sucede en su entorno.  
-* [Tienda única para la auditoría en Windows server 2008 y Windows Vista](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) : contiene una compilación de características de auditoría e información contenida en windows Server 2008 y Windows Vista.  
+* La [Auditoría de acceso a objetos global es mágica](/archive/blogs/askds/global-object-access-auditing-is-magic) : describe un mecanismo de control denominado configuración de directiva de auditoría avanzada que se agregó a Windows 7 y windows Server 2008 R2 que le permite establecer los tipos de datos que desea auditar fácilmente y no los scripts y auditpol.exe.  
+* [Introducción a los cambios de auditoría en windows 2008](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008) : presenta los cambios de auditoría realizados en windows Server 2008.  
+* [Trucos de auditoría fantásticos en vista y 2008](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008) : se explican las características de auditoría interesantes de Windows Vista y windows Server 2008 que se pueden usar para solucionar problemas o ver lo que sucede en su entorno.  
+* [Tienda única para la auditoría en Windows server 2008 y Windows Vista](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista) : contiene una compilación de características de auditoría e información contenida en windows Server 2008 y Windows Vista.  
   
 Los vínculos siguientes proporcionan información acerca de las mejoras en la auditoría de Windows en Windows 8 y Windows Server 2012, e información sobre la auditoría de AD DS en Windows Server 2008.  
   
-* [Novedades de la auditoría de seguridad](https://technet.microsoft.com/library/hh849638.aspx) : proporciona información general sobre las nuevas características de auditoría de seguridad de Windows 8 y windows Server 2012.  
-* [AD DS guía paso a paso de auditoría](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx) : describe la nueva característica de auditoría de Active Directory Domain Services (AD DS) en Windows Server 2008. También se proporcionan procedimientos para implementar esta nueva característica.  
+* [Novedades de la auditoría de seguridad](/previous-versions/orphan-topics/ws.11/hh849638(v=ws.11)) : proporciona información general sobre las nuevas características de auditoría de seguridad de Windows 8 y windows Server 2012.  
+* [AD DS guía paso a paso de auditoría](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) : describe la nueva característica de auditoría de Active Directory Domain Services (AD DS) en Windows Server 2008. También se proporcionan procedimientos para implementar esta nueva característica.  
   
 ### <a name="windows-audit-categories"></a>Categorías de auditoría de Windows
 
@@ -108,19 +108,19 @@ Para obtener una lista de las subcategorías de auditoría configuradas actualme
   
 `auditpol /get /category:*`
   
-En la captura de pantalla siguiente se muestra un ejemplo de Auditpol. exe que enumera la Directiva de auditoría actual.  
+En la captura de pantalla siguiente se muestra un ejemplo de auditpol.exe que enumeran la Directiva de auditoría actual.  
   
 ![supervisar AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)  
   
 > [!NOTE]  
-> Directiva de grupo no notifica siempre con precisión el estado de todas las directivas de auditoría habilitadas, mientras que Auditpol. exe sí lo hace. Consulte [obtención de la Directiva de auditoría efectiva en Windows 7 y 2008 R2](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obtener más detalles.  
+> Directiva de grupo no notifica siempre con precisión el estado de todas las directivas de auditoría habilitadas, mientras auditpol.exe sí. Consulte [obtención de la Directiva de auditoría efectiva en Windows 7 y 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) para obtener más detalles.  
   
 Cada categoría principal tiene varias subcategorías. A continuación se muestra una lista de categorías, sus subcategorías y una descripción de sus funciones.  
   
 ### <a name="auditing-subcategories-descriptions"></a>Descripciones de subcategorías de auditoría  
 Las subcategorías de directiva de auditoría habilitan los siguientes tipos de mensaje de registro de eventos:  
   
-#### <a name="account-logon"></a>Inicio de sesión de cuenta  
+#### <a name="account-logon"></a>Inicio de sesión de la cuenta  
   
 ##### <a name="credential-validation"></a>Validación de credenciales  
 Esta subcategoría informa de los resultados de las pruebas de validación de las credenciales enviadas para una solicitud de inicio de sesión de cuenta de usuario. Estos eventos se producen en el equipo autorizado para las credenciales. En el caso de las cuentas de dominio, el controlador de dominio es autoritativo, mientras que para las cuentas locales, el equipo local es autoritativo.  
@@ -169,7 +169,7 @@ Esta subcategoría notifica otros eventos de administración de la cuenta.
   
 #### <a name="detailed-process-tracking"></a>Seguimiento detallado de procesos  
   
-##### <a name="process-creation"></a>Creación de procesos  
+##### <a name="process-creation"></a>Creación de un proceso  
 Esta subcategoría informa de la creación de un proceso y el nombre del usuario o programa que lo creó.  
   
 ##### <a name="process-termination"></a>Finalización del proceso  
@@ -189,7 +189,7 @@ Esta subcategoría informa cuando se tiene acceso a un objeto de AD DS. Solo los
 ##### <a name="directory-service-changes"></a>Cambios en el servicio de directorio  
 Esta subcategoría informa de los cambios en los objetos de AD DS. Los tipos de cambios que se indican son las operaciones de creación, modificación, movimiento y eliminación que se realizan en un objeto. La auditoría de cambios del servicio de directorio, si procede, indica los valores antiguos y nuevos de las propiedades cambiadas de los objetos que se cambiaron. Solo los objetos con SACL provocan que se generen eventos de auditoría y solo cuando se tiene acceso a ellos de forma que coincida con sus entradas SACL. Algunos objetos y propiedades no hacen que se generen eventos de auditoría debido a la configuración de la clase de objeto en el esquema. Esta subcategoría solo se aplica a los controladores de dominio.  
   
-##### <a name="directory-service-replication"></a>Replicación del servicio de directorio  
+##### <a name="directory-service-replication"></a>Replicación de servicio de directorio  
 Esta subcategoría informa cuando se inicia y finaliza la replicación entre dos controladores de dominio.  
   
 ##### <a name="detailed-directory-service-replication"></a>Replicación de servicio de directorio detallada  
@@ -212,7 +212,7 @@ Esta subcategoría informa de los resultados de AuthIP durante las negociaciones
 ##### <a name="other-logonlogoff-events"></a>Otros eventos Logon/Logoff  
 Esta subcategoría informa de otros eventos relacionados con el inicio de sesión y el cierre de sesión, como Servicios de Escritorio remoto sesión se desconecta y se vuelve a conectar, mediante runas para ejecutar procesos en una cuenta diferente y bloquear y desbloquear una estación de trabajo.  
   
-##### <a name="logoff"></a>Logoff  
+##### <a name="logoff"></a>La opción de cierre de sesión  
 Esta subcategoría informa cuando un usuario cierra la sesión del sistema. Estos eventos se producen en el equipo al que se accede. En el caso de los inicios de sesión interactivos, la generación de estos eventos se produce en el equipo en el que se ha iniciado sesión. Si se produce un inicio de sesión de red para tener acceso a un recurso compartido, estos eventos se generan en el equipo que hospeda el recurso al que se accede. Si esta opción se configura como **sin auditoría**, es difícil o imposible determinar qué usuario ha tenido acceso o ha intentado tener acceso a los equipos de la organización.  
   
 ##### <a name="account-lockout"></a>Bloqueo de cuenta  
@@ -236,7 +236,7 @@ Esta subcategoría informa de los cambios en la Directiva de autenticación.
 Esta subcategoría informa de los cambios en la Directiva de autorización, incluidos los cambios de permisos (DACL).  
   
 ##### <a name="mpssvc-rule-level-policy-change"></a>Cambio de directiva de nivel de regla de MPSSVC  
-Esta subcategoría informa de los cambios en las reglas de directiva usadas por el servicio de protección de Microsoft (MPSSVC. exe). El Firewall de Windows usa este servicio.  
+Esta subcategoría informa de los cambios en las reglas de directiva usadas por el servicio de protección de Microsoft (MPSSVC.exe). El Firewall de Windows usa este servicio.  
   
 ##### <a name="filtering-platform-policy-change"></a>Filtrar cambio de directiva de plataforma  
 Esta subcategoría informa de la adición y eliminación de objetos de WFP, incluidos los filtros de inicio. Estos eventos pueden ser muy altos en el volumen.  
@@ -262,7 +262,7 @@ Esta subcategoría informa de Cuándo se tiene acceso a los objetos del sistema 
   
 Si el valor auditar el acceso a objetos se configura como **correcto**, se genera una entrada de auditoría cada vez que un usuario obtiene acceso correctamente a un objeto con una SACL especificada. Si esta configuración de Directiva se configura como **error**, se genera una entrada de auditoría cada vez que un usuario produce un error al intentar obtener acceso a un objeto con una SACL especificada.  
   
-##### <a name="registry"></a>Registro  
+##### <a name="registry"></a>Registro del sistema  
 Esta subcategoría informa cuando se tiene acceso a los objetos del registro. Solo los objetos del registro con SACL provocan que se generen eventos de auditoría y solo cuando se tiene acceso a ellos de forma que coincidan con sus entradas SACL. Por sí solo, esta configuración de Directiva no provocará la auditoría de ningún evento.  
   
 ##### <a name="kernel-object"></a>Objeto de kernel  
@@ -292,7 +292,7 @@ Esta subcategoría informa cuando WFP permite o bloquea las conexiones. Estos ev
 ##### <a name="other-object-access-events"></a>Otros eventos de acceso a objetos  
 Esta subcategoría informa sobre otros eventos relacionados con el acceso a objetos, como Programador de tareas trabajos y objetos COM+.  
   
-#### <a name="system"></a>System  
+#### <a name="system"></a>Sistema  
   
 ##### <a name="security-state-change"></a>Cambio de estado de seguridad  
 Esta subcategoría informa de los cambios en el estado de seguridad del sistema, como cuando se inicia y se detiene el subsistema de seguridad.  
@@ -310,13 +310,13 @@ Esta subcategoría informa sobre las actividades del controlador del Protocolo d
 ##### <a name="other-system-events"></a>Otros eventos del sistema  
 Esta subcategoría informa sobre otros eventos del sistema.  
   
-Para obtener más información acerca de las descripciones de subcategoría, consulte la [herramienta Administrador de cumplimiento de seguridad de Microsoft](https://technet.microsoft.com/library/cc677002.aspx).  
+Para obtener más información acerca de las descripciones de subcategoría, consulte la [herramienta Administrador de cumplimiento de seguridad de Microsoft](/previous-versions/tn-archive/cc677002(v=technet.10)).  
   
 Cada organización debe revisar las categorías y subcategorías anteriores y habilitar las que mejor se adaptan a su entorno. Los cambios en la Directiva de auditoría siempre deben probarse antes de la implementación en un entorno de producción.  
   
 ## <a name="configuring-windows-audit-policy"></a>Configuración de la Directiva de auditoría de Windows
 
-La Directiva de auditoría de Windows se puede establecer mediante directivas de grupo, Auditpol. exe, API o ediciones del registro. Los métodos recomendados para configurar la Directiva de auditoría para la mayoría de las empresas son directiva de grupo o Auditpol. exe. La configuración de la Directiva de auditoría del sistema requiere permisos de cuenta de nivel de administrador o los permisos delegados adecuados.  
+La Directiva de auditoría de Windows se puede establecer mediante directivas de grupo, auditpol.exe, API o ediciones del registro. Los métodos recomendados para configurar la Directiva de auditoría para la mayoría de las empresas son directiva de grupo o auditpol.exe. La configuración de la Directiva de auditoría del sistema requiere permisos de cuenta de nivel de administrador o los permisos delegados adecuados.  
   
 > [!NOTE]  
 > Se debe conceder el privilegio **Administrar registro de seguridad y auditoría** a las entidades de seguridad (los administradores lo tienen de forma predeterminada) para permitir la modificación de las opciones de auditoría de acceso a objetos de recursos individuales, como archivos, objetos de Active Directory y claves del registro.  
@@ -331,15 +331,15 @@ La Directiva de auditoría avanzada se puede establecer mediante el Active Direc
   
 ![supervisar AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)  
   
-### <a name="setting-windows-audit-policy-using-auditpolexe"></a>Configuración de la Directiva de auditoría de Windows mediante Auditpol. exe
+### <a name="setting-windows-audit-policy-using-auditpolexe"></a>Configuración de la Directiva de auditoría de Windows mediante Auditpol.exe
 
-AuditPol. exe (para establecer la Directiva de auditoría de Windows) se incorporó en Windows Server 2008 y Windows Vista. Inicialmente, solo se podía usar Auditpol. exe para establecer la Directiva de auditoría avanzada, pero directiva de grupo se puede usar en Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008, Windows 8 y Windows 7.  
+Auditpol.exe (para establecer la Directiva de auditoría de Windows) se incorporó en Windows Server 2008 y Windows Vista. Inicialmente, solo auditpol.exe podría usarse para establecer la Directiva de auditoría avanzada, pero directiva de grupo puede usarse en Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008, Windows 8 y Windows 7.  
   
-AuditPol. exe es una utilidad de línea de comandos. La sintaxis es la siguiente:  
+Auditpol.exe es una utilidad de línea de comandos. La sintaxis es la siguiente:  
   
 `auditpol /set /<Category|Subcategory>:<audit category> /<success|failure:> /<enable|disable>`
   
-Ejemplos de sintaxis de Auditpol. exe:  
+Auditpol.exe ejemplos de sintaxis:  
   
 `auditpol /set /subcategory:"user account management" /success:enable /failure:enable`
   
@@ -348,34 +348,34 @@ Ejemplos de sintaxis de Auditpol. exe:
 `auditpol /set /subcategory:"IPSEC Main Mode" /failure:enable`
   
 > [!NOTE]  
-> AuditPol. exe establece localmente la Directiva de auditoría avanzada. Si la directiva local entra en conflicto con Active Directory o directiva de grupo local, la configuración de directiva de grupo normalmente prevalece sobre la configuración de Auditpol. exe. Cuando existen varios conflictos de directiva de grupo o local, solo se prevalecerá una directiva (es decir, reemplazar). Las directivas de auditoría no se combinarán.  
+> Auditpol.exe establece localmente la Directiva de auditoría avanzada. Si la directiva local entra en conflicto con Active Directory o directiva de grupo local, la configuración de directiva de grupo normalmente prevalece sobre la configuración de auditpol.exe. Cuando existen varios conflictos de directiva de grupo o local, solo se prevalecerá una directiva (es decir, reemplazar). Las directivas de auditoría no se combinarán.  
   
 #### <a name="scripting-auditpol"></a>Scripting Auditpol
 
-Microsoft proporciona un [script de ejemplo](https://support.microsoft.com/kb/921469) para los administradores que desean establecer una directiva de auditoría avanzada mediante el uso de un script en lugar de escribir manualmente en cada comando Auditpol. exe.  
+Microsoft proporciona un [script de ejemplo](https://support.microsoft.com/kb/921469) para los administradores que desean establecer una directiva de auditoría avanzada mediante el uso de un script en lugar de escribir manualmente en cada auditpol.exe comando.  
   
-**Nota:** Directiva de grupo no notifica siempre con precisión el estado de todas las directivas de auditoría habilitadas, mientras que Auditpol. exe sí lo hace. Consulte [obtención de la Directiva de auditoría efectiva en Windows 7 y windows 2008 R2](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obtener más detalles.  
+**Nota:** Directiva de grupo no notifica siempre con precisión el estado de todas las directivas de auditoría habilitadas, mientras auditpol.exe sí. Consulte [obtención de la Directiva de auditoría efectiva en Windows 7 y windows 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) para obtener más detalles.  
   
 #### <a name="other-auditpol-commands"></a>Otros comandos Auditpol
 
-AuditPol. exe se puede usar para guardar y restaurar una directiva de auditoría local y para ver otros comandos relacionados con la auditoría. Estos son los otros comandos **Auditpol** .  
+Auditpol.exe se puede usar para guardar y restaurar una directiva de auditoría local y para ver otros comandos relacionados con la auditoría. Estos son los otros comandos **Auditpol** .  
   
-`auditpol /clear`: se usa para borrar y restablecer directivas de auditoría local  
+`auditpol /clear`-Se usa para borrar y restablecer las directivas de auditoría local  
   
-`auditpol /backup /file:<filename>`: se usa para hacer una copia de seguridad de una directiva de auditoría local actual en un archivo binario  
+`auditpol /backup /file:<filename>`: Se usa para hacer una copia de seguridad de una directiva de auditoría local actual en un archivo binario.  
   
-`auditpol /restore /file:<filename>`: se usa para importar un archivo de directiva de auditoría guardado previamente a una directiva de auditoría local  
+`auditpol /restore /file:<filename>`: Se usa para importar un archivo de directiva de auditoría guardado previamente en una directiva de auditoría local.  
   
-`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`: Si esta configuración de directiva de auditoría está habilitada, hace que el sistema se detenga inmediatamente (con STOP: C0000244 {Audit FAIL} Message) si no se puede registrar una auditoría de seguridad por alguna razón. Normalmente, un evento no se registra cuando el registro de auditoría de seguridad está lleno y el método de retención especificado para el registro de seguridad **no sobrescribe eventos** o **sobrescribe eventos por días**. Normalmente solo lo habilitan los entornos que necesitan una mayor garantía de que el registro de seguridad está registrando. Si está habilitada, los administradores deben observar atentamente el tamaño del registro de seguridad y girar los registros según sea necesario. También se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: apagar el sistema inmediatamente si no se pueden registrar las auditorías de seguridad** (valor predeterminado = deshabilitado).  
+`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-Si esta configuración de directiva de auditoría está habilitada, hace que el sistema se detenga inmediatamente (con STOP: C0000244 {Audit FAIL} Message) si no se puede registrar una auditoría de seguridad por alguna razón. Normalmente, un evento no se registra cuando el registro de auditoría de seguridad está lleno y el método de retención especificado para el registro de seguridad **no sobrescribe eventos** o **sobrescribe eventos por días**. Normalmente solo lo habilitan los entornos que necesitan una mayor garantía de que el registro de seguridad está registrando. Si está habilitada, los administradores deben observar atentamente el tamaño del registro de seguridad y girar los registros según sea necesario. También se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: apagar el sistema inmediatamente si no se pueden registrar las auditorías de seguridad** (valor predeterminado = deshabilitado).  
   
-`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`: esta configuración de directiva de auditoría determina si se debe auditar el acceso de los objetos globales del sistema. Si esta directiva está habilitada, hace que los objetos del sistema, como exclusiones mutuas, eventos, semáforos y dispositivos DOS, se creen con una lista de control de acceso de sistema (SACL) predeterminada. La mayoría de los administradores consideran que las auditorías de objetos globales del sistema son demasiado "ruidosos" y solo lo habilitan si se sospecha de ataques malintencionados. Solo se proporciona una SACL a los objetos con nombre. Si la Directiva auditar el acceso a objetos (o la subcategoría de auditoría de objetos de kernel) también está habilitada, se audita el acceso a estos objetos del sistema. Al configurar esta configuración de seguridad, los cambios no surtirán efecto hasta que reinicie Windows. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad auditar el acceso de objetos globales del sistema (valor predeterminado = deshabilitado).  
+`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`: Esta configuración de directiva de auditoría determina si se debe auditar el acceso de los objetos globales del sistema. Si esta directiva está habilitada, hace que los objetos del sistema, como exclusiones mutuas, eventos, semáforos y dispositivos DOS, se creen con una lista de control de acceso de sistema (SACL) predeterminada. La mayoría de los administradores consideran que las auditorías de objetos globales del sistema son demasiado "ruidosos" y solo lo habilitan si se sospecha de ataques malintencionados. Solo se proporciona una SACL a los objetos con nombre. Si la Directiva auditar el acceso a objetos (o la subcategoría de auditoría de objetos de kernel) también está habilitada, se audita el acceso a estos objetos del sistema. Al configurar esta configuración de seguridad, los cambios no surtirán efecto hasta que reinicie Windows. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad auditar el acceso de objetos globales del sistema (valor predeterminado = deshabilitado).  
   
-`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`: esta configuración de directiva de auditoría especifica que los objetos de kernel con nombre (como exclusiones mutuas y semáforos) se les asignarán SACL cuando se creen. AuditBaseDirectories afecta a los objetos de contenedor, mientras que AuditBaseObjects afecta a objetos que no pueden contener otros objetos.  
+`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`: Esta configuración de directiva de auditoría especifica que los objetos de kernel con nombre (como exclusiones mutuas y semáforos) deben recibir las SACL cuando se crean. AuditBaseDirectories afecta a los objetos de contenedor, mientras que AuditBaseObjects afecta a objetos que no pueden contener otros objetos.  
   
-`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`: esta configuración de directiva de auditoría especifica si el cliente genera un evento cuando uno o varios de estos privilegios se asignan a un token de seguridad de usuario: AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege, TakeOwnershipPrivilege y TcbPrivilege. Si esta opción no está habilitada (valor predeterminado = deshabilitado), los privilegios BackupPrivilege y RestorePrivilege no se registran. La habilitación de esta opción puede hacer que el registro de seguridad sea extremadamente ruidoso (a veces cientos de eventos por segundo) durante una operación de copia de seguridad. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: auditar el uso de los privilegios de copia de seguridad y restauración**.  
+`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`: Esta configuración de directiva de auditoría especifica si el cliente genera un evento cuando uno o varios de estos privilegios se asignan a un token de seguridad de usuario: AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege, TakeOwnershipPrivilege y TcbPrivilege. Si esta opción no está habilitada (valor predeterminado = deshabilitado), los privilegios BackupPrivilege y RestorePrivilege no se registran. La habilitación de esta opción puede hacer que el registro de seguridad sea extremadamente ruidoso (a veces cientos de eventos por segundo) durante una operación de copia de seguridad. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: auditar el uso de los privilegios de copia de seguridad y restauración**.  
   
 > [!NOTE]  
-> La información que se proporciona aquí se tomó del [tipo de opción de auditoría](https://msdn.microsoft.com/library/dd973862(prot.20).aspx) de Microsoft y de la herramienta SCM de Microsoft.  
+> La información que se proporciona aquí se tomó del [tipo de opción de auditoría](/openspecs/windows_protocols/ms-gpac/262a2bed-93d4-4c04-abec-cf06e9ec72fd) de Microsoft y de la herramienta SCM de Microsoft.  
   
 ## <a name="enforcing-traditional-auditing-or-advanced-auditing"></a>Aplicación de auditorías y auditorías avanzadas tradicionales
 
@@ -385,14 +385,14 @@ Para evitar que la Directiva de categoría tradicional heredada sobrescriba las 
   
 Se recomienda que las subcategorías estén habilitadas y configuradas en lugar de las nueve categorías principales. Esto requiere que se habilite una configuración de directiva de grupo (para permitir que las subcategorías invaliden las categorías de auditoría) junto con la configuración de las diferentes subcategorías que admiten las directivas de auditoría.  
   
-Las subcategorías de auditoría se pueden configurar mediante varios métodos, como directiva de grupo y el programa de línea de comandos, Auditpol. exe.  
+Las subcategorías de auditoría se pueden configurar utilizando varios métodos, como directiva de grupo y el programa de línea de comandos auditpol.exe.  
   
 ## <a name="next-steps"></a>Pasos siguientes
   
 * [Auditoría de seguridad avanzada en Windows 7 y Windows Server 2008 R2](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)  
   
-* [Auditoría y cumplimiento en Windows Server 2008](https://technet.microsoft.com/magazine/2008.03.auditing.aspx)  
+* [Auditoría y cumplimiento en Windows Server 2008](/previous-versions/technet-magazine/cc194392(v=msdn.10))  
   
 * [Cómo usar directiva de grupo para configurar las opciones detalladas de auditoría de seguridad para equipos basados en Windows Vista y Windows Server 2008 en un dominio de Windows Server 2008, en un dominio de Windows Server 2003 o en un dominio de Windows 2000](https://support.microsoft.com/kb/921469)  
   
-* [Guía paso a paso de la Directiva de auditoría de seguridad avanzada](https://technet.microsoft.com/library/dd408940(WS.10).aspx)  
+* [Guía paso a paso de la directiva de auditoría de seguridad avanzada](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd408940(v=ws.10))  

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c2141e4fad564579fd687b2dfc7e4a12e1634acb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fefb0681af818e06ad29d7c9fdf6b690cd993cd2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823488"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965767"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Anexo I: creación de cuentas de administración para cuentas protegidas y grupos en Active Directory
 
@@ -26,7 +26,7 @@ En este apéndice se proporciona información que puede usar para soluciones PIM
 > [!NOTE]  
 > Los procedimientos descritos en este apéndice proporcionan un enfoque para la administración de grupos con privilegios elevados en Active Directory. Puede adaptar estos procedimientos para que se adapten a sus necesidades, agregar restricciones adicionales u omitir algunas de las restricciones que se describen aquí.  
   
-## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Creación de cuentas de administración para cuentas y grupos protegidos en Active Directory
+## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Creación de cuentas de administración para cuentas protegidas y grupos en Active Directory
 
 La creación de cuentas que se pueden usar para administrar la pertenencia de grupos con privilegios sin necesidad de que se concedan derechos y permisos excesivos a las cuentas de administración consta de cuatro actividades generales que se describen en las instrucciones paso a paso que se indican a continuación:  
   
@@ -38,7 +38,7 @@ La creación de cuentas que se pueden usar para administrar la pertenencia de gr
   
 4.  Configure permisos en el objeto AdminSDHolder de cada dominio para permitir que las cuentas de administración cambien la pertenencia de los grupos con privilegios del dominio.  
   
-Debe probar exhaustivamente todos estos procedimientos y modificarlos según sea necesario para su entorno antes de implementarlos en un entorno de producción. También debe comprobar que todas las configuraciones funcionan según lo previsto (en este apéndice se proporcionan algunos procedimientos de prueba) y debe probar un escenario de recuperación ante desastres en el que las cuentas de administración no estén disponibles para rellenar grupos protegidos con fines de recuperación. Para obtener más información sobre la copia de seguridad y la restauración de Active Directory, consulte la [Guía paso a paso de AD DS de copia de seguridad y recuperación](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx).  
+Debe probar exhaustivamente todos estos procedimientos y modificarlos según sea necesario para su entorno antes de implementarlos en un entorno de producción. También debe comprobar que todas las configuraciones funcionan según lo previsto (en este apéndice se proporcionan algunos procedimientos de prueba) y debe probar un escenario de recuperación ante desastres en el que las cuentas de administración no estén disponibles para rellenar grupos protegidos con fines de recuperación. Para obtener más información sobre la copia de seguridad y la restauración de Active Directory, consulte la [Guía paso a paso de AD DS de copia de seguridad y recuperación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771290(v=ws.10)).  
   
 > [!NOTE]  
 > Mediante la implementación de los pasos descritos en este apéndice, creará cuentas que podrán administrar la pertenencia a todos los grupos protegidos de cada dominio, no solo los grupos de Active Directory con privilegios más altos, como EAs, DAs y BAs. Para obtener más información acerca de los grupos protegidos en Active Directory, vea [Apéndice C: cuentas y grupos protegidos en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).  
@@ -80,13 +80,13 @@ Para crear un grupo con el fin de habilitar y deshabilitar cuentas de administra
   
 7.  En la pestaña **seguridad** , quite los grupos a los que no se les permite el acceso a este grupo. Por ejemplo, si no desea que los usuarios autenticados puedan leer el nombre y las propiedades generales del grupo, puede quitar esa ACE. También puede quitar las ACE, como las de los operadores de cuentas y el acceso compatible con versiones anteriores a Windows 2000 Server. Sin embargo, debe dejar un conjunto mínimo de permisos de objeto en su lugar. Deje intactas las siguientes ACE:  
   
-    -   MISMO  
+    -   SELF  
   
-    -   SISTEMA  
+    -   SYSTEM  
   
-    -   Administradores del dominio  
+    -   Administradores de dominio  
   
-    -   Administradores de organización  
+    -   Administradores de empresas  
   
     -   Administradores  
   
@@ -132,7 +132,7 @@ Para crear las cuentas de administración, realice los pasos siguientes:
 
 7. Haga clic con el botón secundario en el objeto de usuario que acaba de crear y haga clic en **propiedades**.  
 
-8. Haga clic en la pestaña **cuenta** .  
+8. Haga clic en la pestaña **Account** (Cuenta).  
 
 9. En el campo **Opciones de cuenta** , seleccione la marca la **cuenta es importante y no se puede delegar** , seleccione la marca de cifrado la **cuenta compatible con Kerberos AES 128 bits** y/o **esta cuenta es compatible con Kerberos AES 256** y haga clic en **Aceptar**.  
 
@@ -185,7 +185,7 @@ Para crear las cuentas de administración, realice los pasos siguientes:
 
 19. Escriba **denegado grupo de replicación de contraseña RODC** en el cuadro de diálogo **Seleccionar usuarios, contactos, equipos** y haga clic en **Comprobar nombres**. Cuando el nombre del grupo esté subrayado en el selector de objetos, haga clic en **Aceptar** y compruebe que la cuenta es ahora miembro de los dos grupos mostrados en la captura de pantalla siguiente. No agregue la cuenta a ninguno de los grupos protegidos.  
 
-20. Haga clic en **Aceptar**.  
+20. Haga clic en **OK**.  
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
 
@@ -263,7 +263,7 @@ En este caso, va a conceder las cuentas de administración que acaba de crear pa
    ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_138.gif)  
   
    > [!NOTE]  
-   > Para obtener más información acerca de la elevación y el control de cuentas de usuario (UAC) en Windows, consulte [procesos e interacciones de UAC](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx) en el sitio web de TechNet.  
+   > Para obtener más información acerca de la elevación y el control de cuentas de usuario (UAC) en Windows, consulte [procesos e interacciones de UAC](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd835561(v=ws.10)) en el sitio web de TechNet.  
   
 4. En el símbolo del sistema, escriba (sustituyendo la información específica del dominio) **DSACLS [nombre distintivo del objeto AdminSDHolder en el dominio]/g [nombre de la cuenta de administración UPN]: RPWP; miembro**.  
   
@@ -277,7 +277,7 @@ En este caso, va a conceder las cuentas de administración que acaba de crear pa
   
    - /G indica que se está configurando una ACE Grant  
   
-   - PIM001@tailspintoys.msft es el nombre principal de usuario (UPN) de la entidad de seguridad a la que se concederán las ACE  
+   - PIM001@tailspintoys.msftes el nombre principal de usuario (UPN) de la entidad de seguridad a la que se concederán las ACE  
   
    - RPWP concede permisos de propiedad de lectura y de escritura  
   

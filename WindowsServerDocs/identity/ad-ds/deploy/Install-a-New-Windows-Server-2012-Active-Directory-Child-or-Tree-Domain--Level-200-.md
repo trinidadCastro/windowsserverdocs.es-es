@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f7244b76364c8e2ce7249af8e76825a08b2a75c8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7a3ea43b513535d6b7d5a815039869b71c7d7c92
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825338"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965787"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-child-or-tree-domain-level-200"></a>Instalar un nuevo dominio secundario o de árbol de Active Directory de Windows Server 2012 (nivel 200)
 
@@ -23,7 +23,7 @@ En este tema se explica cómo agregar dominios secundarios y de árbol a un bosq
   
 -   [Flujo de trabajo de dominios secundarios y de árbol](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_Workflow)  
   
--   [Dominio secundario y de árbol de Windows PowerShell](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_PS)  
+-   [Windows PowerShell de dominios secundarios y de árbol](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_PS)  
   
 -   [Implementación](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_Deployment)  
   
@@ -32,7 +32,7 @@ En el diagrama siguiente se muestra el proceso de configuración de Servicios de
   
 ![Instalación de un nuevo elemento secundario de AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/adds_childtreedeploy_beta1.png)  
   
-## <a name="child-and-tree-domain-windows-powershell"></a><a name="BKMK_PS"></a>Dominio secundario y de árbol de Windows PowerShell  
+## <a name="child-and-tree-domain-windows-powershell"></a><a name="BKMK_PS"></a>Windows PowerShell de dominios secundarios y de árbol  
   
 |||  
 |-|-|  
@@ -40,11 +40,11 @@ En el diagrama siguiente se muestra el proceso de configuración de Servicios de
 |**Install-AddsDomain**|-SkipPreChecks<p>***-NewDomainName***<p>***-ParentDomainName***<p>***-SafeModeAdministratorPassword***<p>*-ADPrepCredential*<p>-AllowDomainReinstall<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-NoDNSOnNetwork<p>*-DomainMode*<p>***-DomainType***<p>-Force<p>*-InstallDNS*<p>*-LogPath*<p>*-NewDomainNetBIOSName*<p>*-NoGlobalCatalog*<p>-NoNorebootoncompletion<p>*-ReplicationSourceDC*<p>*-SiteName*<p>-SkipAutoConfigureDNS<p>*-SYSVOLPath*<p>*-Whatif*|  
   
 > [!NOTE]  
-> El argumento **-credential** solo es necesario si no has iniciado sesión como miembro del grupo Administradores de empresas. El argumento **-NewDomainNetBIOSName** solo es necesario para cambiar el nombre de 15 caracteres que se genera automáticamente según el prefijo del nombre de dominio DNS, o bien si el nombre supera los 15 caracteres.  
+> El argumento **-credential** solo es necesario si no has iniciado sesión como miembro del grupo Administradores de empresas. El argumento **-NewDomainNetBIOSName** solo es necesario para cambiar el nombre de 15 caracteres que se genera automáticamente según el prefijo del nombre de dominio DNS, o bien si el nombre supera los 15 caracteres.  
   
 ## <a name="deployment"></a><a name="BKMK_Deployment"></a>Planta  
   
-### <a name="deployment-configuration"></a>Configuración de implementación  
+### <a name="deployment-configuration"></a>Configuración de la implementación  
 En la siguiente captura de pantalla verás las opciones para agregar un dominio secundario:  
   
 ![Instalación de un nuevo elemento secundario de AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildDeployConfig.png)  
@@ -53,7 +53,7 @@ En la siguiente captura de pantalla verás las opciones para agregar un dominio 
   
 ![Instalación de un nuevo elemento secundario de AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_TreeDeployConfig.png)  
   
-El Administrador del servidor comienza la promoción de cada controlador de dominio con la página **Configuración de implementación** . Las opciones restantes y los campos requeridos cambian en esta página y en las páginas siguientes, según qué operación de implementación se seleccione.  
+El Administrador del servidor comienza la promoción de cada controlador de dominio con la página **Configuración de implementación**. Las opciones restantes y los campos requeridos cambian en esta página y en las páginas siguientes, según qué operación de implementación se seleccione.  
   
 En este tema se combinan dos operaciones discretas: la promoción de dominios secundarios y la promoción de dominios de árbol. La única diferencia entre las dos operaciones es el tipo de dominio que crees. El resto de pasos son idénticos en las dos operaciones.  
   
@@ -61,9 +61,9 @@ En este tema se combinan dos operaciones discretas: la promoción de dominios se
   
 -   Para crear un nuevo dominio de árbol, haz clic en **Agregar un nuevo dominio a un bosque existente** y selecciona **Dominio de árbol**. Escribe el nombre del dominio raíz del bosque y después el nombre del nuevo dominio. Especifica un nombre de dominio raíz completo y válido; el nombre no puede ser de etiqueta única y debe cumplir los requisitos de nombre de dominio DNS.  
   
-Para obtener más información sobre nombres DNS, consulte [Convenciones de nomenclatura en Active Directory para equipos, dominios, sitios y unidades organizativas](https://support.microsoft.com/kb/909264).  
+Para obtener más información sobre nombres DNS, consulte [Convenciones de nomenclatura en Active Directory para equipos, dominios, sitios y unidades organizativas](https://support.microsoft.com/kb/909264).  
   
-El Asistente para configuración de Servicios de dominio de Active Directory del Administrador del servidor pide confirmación de las credenciales de dominio si las credenciales actuales no se corresponden con el dominio. Haz clic en **Cambiar** para proporcionar las credenciales de dominio para la operación de promoción.  
+El Asistente para configuración de Servicios de dominio de Active Directory del Administrador del servidor pide confirmación de las credenciales de dominio si las credenciales actuales no se corresponden con el dominio. Haz clic en **Cambiar** para proporcionar las credenciales de dominio para la operación de promoción.  
   
 Los argumentos del cmdlet de ADDSDeployment de la página Configuración de la implementación son los siguientes:  
   
@@ -75,12 +75,12 @@ Install-AddsDomain
 -credential <pscredential>  
 ```  
   
-### <a name="domain-controller-options"></a>Domain Controller Options  
+### <a name="domain-controller-options"></a>Opciones del controlador de dominio  
 ![Instalación de un nuevo elemento secundario de AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_DCOptions_Child.gif)  
   
 En la página **Opciones del controlador de dominio** se especifican las opciones del controlador de dominio para el nuevo controlador de dominio. Las opciones del controlador de dominio que pueden configurarse incluyen **Servidor DNS** y **Catálogo global**; el controlador de dominio de solo lectura no puede configurarse como el primer controlador de dominio de un dominio nuevo.  
   
-Microsoft recomienda que todos los controladores de dominio proporcionen servicios de DNS y GC para alta disponibilidad en entornos distribuidos. GC siempre está seleccionado de manera predeterminada, excepto si el dominio actual ya hospeda DNS en sus controladores de dominio basándose en la consulta Inicio de autoridad, en cuyo caso la opción predeterminada será Servidor DNS. También es necesario especificar un **Nivel funcional de dominio**. El nivel funcional predeterminado es Windows Server 2012 y se puede elegir cualquier otro valor que sea igual o superior al nivel funcional del bosque actual.  
+Microsoft recomienda que todos los controladores de dominio proporcionen servicios de DNS y GC para alta disponibilidad en entornos distribuidos. GC siempre está seleccionado de manera predeterminada, excepto si el dominio actual ya hospeda DNS en sus controladores de dominio basándose en la consulta Inicio de autoridad, en cuyo caso la opción predeterminada será Servidor DNS. También es necesario especificar un **Nivel funcional de dominio**. El nivel funcional predeterminado es Windows Server 2012 y se puede elegir cualquier otro valor que sea igual o superior al nivel funcional del bosque actual.  
   
 La página **Opciones del controlador de dominio** también permite elegir el **nombre de sitio** lógico apropiado de Active Directory de la configuración del bosque. De manera predeterminada, se selecciona el sitio con la subred más correcta. Si solo hay un sitio, este se seleccionará automáticamente.  
   
@@ -101,7 +101,7 @@ Los argumentos del cmdlet ADDSDeployment **Opciones del controlador de dominio**
 ```  
   
 > [!IMPORTANT]  
-> El nombre del sitio ya debe existir cuando se proporciona como valor para el argumento **-sitename** . El cmdlet **install-AddsDomainController** no crea nombres de sitios. Se puede usar el cmdlet **new-adreplicationsite** para crear sitios nuevos.  
+> El nombre del sitio ya debe existir cuando se proporciona como valor para el argumento **-sitename**. El cmdlet **install-AddsDomainController** no crea nombres de sitios. Se puede usar el cmdlet **new-adreplicationsite** para crear sitios nuevos.  
   
 Si no se especifican, los argumentos del cmdlet **Install-ADDSDomainController** tendrán los mismos valores predeterminados que el Administrador del servidor.  
   
@@ -162,14 +162,14 @@ La página **Opciones de DNS** permite especificar credenciales de administrador
   
 Al instalar un nuevo dominio en un bosque existente (si seleccionas la instalación de DNS en la página **Opciones del controlador de dominio**) no se pueden configurar otras opciones; la delegación se produce automáticamente y de forma irrevocable. Puedes especificar credenciales administrativas de DNS alternativas con derechos para actualizar la estructura.  
   
-Los argumentos de ADDSDeployment para Windows PowerShell **Opciones de DNS** son los siguientes:  
+Los argumentos de ADDSDeployment para Windows PowerShell **Opciones de DNS** son los siguientes:  
   
 ```  
 -creatednsdelegation   
 -dnsdelegationcredential <pscredential>  
 ```  
   
-Para obtener más información acerca de la delegación de DNS, consulte [Descripción de tipos de confianza](https://technet.microsoft.com/library/cc771640.aspx).  
+Para obtener más información acerca de la delegación de DNS, consulte [Descripción de tipos de confianza](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771640(v=ws.11)).  
   
 ### <a name="additional-options"></a>Opciones adicionales  
 ![Instalación de un nuevo elemento secundario de AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildAdditionalOptions.png)  
@@ -178,7 +178,7 @@ La página **Opciones adicionales** muestra el nombre NetBIOS del dominio y te p
   
 Si el nombre tiene 15 caracteres o menos y no entra en conflicto con otro nombre NetBIOS, no se modificará. Si entra en conflicto con otro nombre NetBIOS, se anexará un número al nombre. Si el nombre tiene más de 15 caracteres, el asistente proporcionará una sugerencia truncada que sea única. En cualquiera de estos casos, el asistente validará primero si el nombre no se está usando ya con una búsqueda WINS y difusión NetBIOS.  
   
-Para obtener más información sobre nombres DNS, consulte [Convenciones de nomenclatura en Active Directory para equipos, dominios, sitios y unidades organizativas](https://support.microsoft.com/kb/909264).  
+Para obtener más información sobre nombres DNS, consulte [Convenciones de nomenclatura en Active Directory para equipos, dominios, sitios y unidades organizativas](https://support.microsoft.com/kb/909264).  
   
 Si no se especifican, los argumentos de **Install-AddsDomain** tendrán los mismos valores predeterminados que el Administrador del servidor. La operación de **DomainNetBIOSName** es especial:  
   
@@ -188,7 +188,7 @@ Si no se especifican, los argumentos de **Install-AddsDomain** tendrán los mism
   
 3.  Si se especifica el argumento **NewDomainNetBIOSName** con un nombre de dominio NetBIOS de 15 caracteres o menos, la promoción continuará con el nombre especificado.  
   
-4.  Si se especifica el argumento **NewDomainNetBIOSName** con un nombre de dominio NetBIOS de 16 caracteres o más, la promoción producirá errores.  
+4.  Si se especifica el argumento **NewDomainNetBIOSName** con un nombre de dominio NetBIOS de 16 caracteres o más, la promoción producirá errores.  
   
 El argumento del cmdlet de ADDSDeployment correspondiente a las **Opciones adicionales** es el siguiente:  
   
@@ -199,7 +199,7 @@ El argumento del cmdlet de ADDSDeployment correspondiente a las **Opciones adici
 ### <a name="paths"></a>Rutas de acceso  
 ![Instalación de un nuevo elemento secundario de AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_UpgradePaths.png)  
   
-La página **Rutas de acceso** permite reemplazar las ubicaciones de carpeta predeterminadas de la base de datos AD DS, los registros de transacciones de la base de datos y el recurso compartido SYSVOL. Las ubicaciones predeterminadas siempre están en subdirectorios de %systemroot%.  
+La página **Rutas de acceso** permite reemplazar las ubicaciones de carpeta predeterminadas de la base de datos AD DS, los registros de transacciones de la base de datos y el recurso compartido SYSVOL. Las ubicaciones predeterminadas siempre están en subdirectorios de %systemroot%.  
   
 Los argumentos del cmdlet ADDSDeployment correspondientes a **Rutas de acceso** son:  
   
@@ -248,7 +248,7 @@ Utiliza el argumento opcional **Whatif** con el cmdlet **Install-ADDSForest** pa
   
 ![Instalación de un nuevo elemento secundario de AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildWhatIf.png)  
   
-### <a name="prerequisites-check"></a>Comprobación de requisitos previos  
+### <a name="prerequisites-check"></a>Prerequisites Check  
 ![Instalación de un nuevo elemento secundario de AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildPrereqCheck.png)  
   
 La **Comprobación de requisitos previos** es una característica nueva en la configuración de dominios de AD DS. En esta nueva fase se comprueba si la configuración del servidor admite un nuevo dominio de AD DS.  
@@ -266,20 +266,20 @@ No puedes omitir la **Comprobación de requisitos previos** al usar el Administr
 ```  
   
 > [!WARNING]  
-> Microsoft no recomienda omitir la comprobación de requisitos previos: omitirla puede hacer que los controladores de dominio se promuevan parcialmente o puede provocar daños en el bosque de AD DS.  
+> Microsoft no recomienda omitir la comprobación de requisitos previos: omitirla puede hacer que los controladores de dominio se promuevan parcialmente o puede provocar daños en el bosque de AD DS.  
   
 Haz clic en **Instalar** para comenzar el proceso de promoción del controlador de dominio. Esta es la última oportunidad para cancelar la instalación. Una vez iniciado, el proceso de promoción no se puede cancelar. El equipo se reiniciará automáticamente al finalizar la promoción, independientemente del resultado de la misma.  
   
-### <a name="installation"></a>Installation  
+### <a name="installation"></a>Instalación  
 ![Instalación de un nuevo elemento secundario de AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildInstallation.png)  
   
-Cuando se muestra la página **Instalación** , la configuración del controlador de dominio comienza y no se puede detener ni cancelar. Las operaciones detalladas se muestran en esta página y se escriben en los registros:  
+Cuando se muestra la página **Instalación**, la configuración del controlador de dominio comienza y no se puede detener ni cancelar. Las operaciones detalladas se muestran en esta página y se escriben en los registros:  
   
 -   %systemroot%\debug\dcpromo.log  
   
 -   %systemroot%\debug\dcpromoui.log  
   
-Para instalar un nuevo dominio de Active Directory con ADDSDeployment, usa el siguiente cmdlet:  
+Para instalar un nuevo dominio de Active Directory con ADDSDeployment, usa el siguiente cmdlet:  
   
 ```  
 Install-addsdomain  
@@ -291,7 +291,7 @@ Consulta los argumentos obligatorios y opcionales en [Windows PowerShell de dom
   
 ![Instalación de un nuevo elemento secundario de AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_PSInstallADDSDomainProgress.png)  
   
-Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos **-force** o **-confirm:$false** con cualquier cmdlet de ADDSDeployment de Windows PowerShell. Para impedir que el servidor se reinicie automáticamente al finalizar la promoción, utiliza el argumento **-norebootoncompletion**.  
+Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos **-force** o **-confirm:$false** con cualquier cmdlet de ADDSDeployment de Windows PowerShell. Para impedir que el servidor se reinicie automáticamente al finalizar la promoción, utiliza el argumento **-norebootoncompletion**.  
   
 > [!WARNING]  
 > Se recomienda no invalidar el reinicio. El controlador de dominio debe reiniciarse para funcionar correctamente  
@@ -301,4 +301,3 @@ Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos *
   
 La página **Resultados** indica si la promoción se realizó correctamente o si se produjo algún error, junto con toda la información administrativa importante que corresponda. El controlador de dominio se reiniciará automáticamente 10 segundos después.  
   
-

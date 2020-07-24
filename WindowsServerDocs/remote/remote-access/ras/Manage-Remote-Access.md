@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 19798c5fb29d3b8aea68b29e5a42775970eeca46
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8379818d22d51fe8c4cc983f32d017d3cdee52b6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857458"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965587"
 ---
 # <a name="manage-remote-access"></a>Administrar el acceso remoto
 
@@ -52,7 +52,7 @@ Solo hay unos pocos requisitos de equipo y de red para planear este escenario: I
 -   **Clientes de DirectAccess**: Decide qué equipos administrados se configurarán como clientes de DirectAccess.  
   
 ### <a name="configure-the-deployment"></a>Configurar la implementación  
-La configuración de la implementación consta de una serie de pasos. Entre ellos se incluyen los siguientes:  
+La configuración de la implementación consta de una serie de pasos. Entre ellas se incluyen las siguientes:  
   
 1.  **Configurar la infraestructura**: configure DNS, una el servidor y los equipos cliente a un dominio si fuera necesario y configure los grupos de seguridad de Active Directory.  
   
@@ -82,7 +82,7 @@ En la siguiente tabla, se muestran los roles y características requeridos para 
   
 |Rol o característica|Compatibilidad con este escenario|  
 |----------|-----------------|  
-|*Rol de acceso remoto*|Este rol se instala y desinstala con la consola del Administrador del servidor o con Windows PowerShell. Este rol incluye tanto DirectAccess (que antes era una característica de Windows Server 2008 R2) como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol de Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<p>1. DirectAccess y VPN de servicios de enrutamiento y acceso remoto (RRAS): DirectAccess y VPN se administran en la consola de administración de acceso remoto.<br />2. RRAS: las características se administran en la consola de enrutamiento y acceso remoto.<p>El rol del servidor de Acceso remoto depende de las siguientes características:<p>-Servidor Web (IIS): se requiere para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|  
+|*Rol de acceso remoto*|Este rol se instala y desinstala con la consola del Administrador del servidor o con Windows PowerShell. Este rol incluye tanto DirectAccess (que antes era una característica de Windows Server 2008 R2) como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol de Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<p>1. DirectAccess y VPN de servicios de enrutamiento y acceso remoto (RRAS): DirectAccess y VPN se administran en la consola de administración de acceso remoto.<br />2. RRAS: las características se administran en la consola de enrutamiento y acceso remoto.<p>El rol del servidor de Acceso remoto depende de las siguientes características:<p>-Servidor Web (IIS): se requiere para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|  
 |Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<p>: De forma predeterminada, en un servidor de acceso remoto, cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Como opción en un servidor que no ejecuta el rol de servidor de acceso remoto. En ese caso, se usa para la administración remota de un servidor de Acceso remoto.<p>Esta característica consiste en lo siguiente:<p>-Herramientas de línea de comandos y GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<p>Las dependencias incluyen:<p>-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware  
@@ -90,7 +90,7 @@ Los requisitos de hardware para este escenario incluyen los siguientes:
   
 ### <a name="server-requirements"></a>Requisitos de servidor  
   
--   Un equipo que cumpla los requisitos de hardware para Windows Server 2016. Para obtener más información, consulte [requisitos del sistema](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements-and-installation)de Windows Server 2016.  
+-   Un equipo que cumpla los requisitos de hardware para Windows Server 2016. Para obtener más información, consulte [requisitos del sistema](../directaccess/prerequisites-for-deploying-directaccess.md)de Windows Server 2016.  
   
 -   El servidor debe tener al menos un adaptador de red instalado y habilitado. Debería haber solo un adaptador conectado a la red interna corporativa y solo uno conectado a la red externa (Internet).  
   
@@ -129,4 +129,3 @@ Los requisitos de software para este escenario son los siguientes:
   
 -   Se requiere un grupo de seguridad de Active Directory para contener los equipos que se configurarán como clientes de DirectAccess. Los equipos no deben estar incluidos en más de un grupo de seguridad que incluya clientes de DirectAccess. Si los clientes están incluidos en varios grupos, la resolución de nombres para las solicitudes de los clientes no funcionará según lo esperado.  
   
-

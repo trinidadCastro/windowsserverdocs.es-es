@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 03ae91c0360153789658e0c31cb17980fad32bab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a65ddec97bcdd911d0cf81bfd54e2ddbb286ed54
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855768"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965267"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>Paso 3 planear la implementación de certificados OTP
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Después de planear el servidor RADIUS, debe planear los requisitos de entidad de certificación (CA), incluida la CA que emitirá certificados de contraseña de un solo uso (OTP), la plantilla de certificado OTP y el certificado de entidad de registro que usa el remoto. Acceso al servidor para firmar todas las solicitudes de certificado OTP de cliente de DirectAccess. Estos certificados se utilizan de la siguiente manera:  
+Después de planear el servidor RADIUS, debe planear los requisitos de entidad de certificación (CA), incluida la CA que emitirá certificados de contraseña de un solo uso (OTP), la plantilla de certificado OTP y el certificado de entidad de registro que usa el servidor de acceso remoto para firmar todas las solicitudes de certificado OTP de cliente de DirectAccess. Estos certificados se utilizan de la siguiente manera:  
   
 1.  El cliente de DirectAccess solicita un certificado OTP y el servidor de acceso remoto recibe la solicitud.  
   
@@ -54,7 +54,7 @@ Cada cliente de DirectAccess requiere un certificado de autenticación de OTP pa
 -   El período de validez debe establecerse en una hora.  
   
     > [!NOTE]  
-    > En situaciones en las que el servidor de CA es un equipo con Windows Server 2003, la plantilla debe estar configurada en un equipo diferente. Esto se debe al hecho de que no es posible establecer el **período de validez** en horas cuando se ejecutan versiones de Windows anteriores a 2008/vista. Si el equipo que utiliza para configurar la plantilla no tiene instalado el rol de servicio de certificación o es un equipo cliente, es posible que tenga que instalar el complemento plantillas de certificado. Para obtener más información sobre este tema, haga clic [aquí](https://technet.microsoft.com/library/cc732445.aspx).  
+    > En situaciones en las que el servidor de CA es un equipo con Windows Server 2003, la plantilla debe estar configurada en un equipo diferente. Esto se debe al hecho de que no es posible establecer el **período de validez** en horas cuando se ejecutan versiones de Windows anteriores a 2008/vista. Si el equipo que utiliza para configurar la plantilla no tiene instalado el rol de servicio de certificación o es un equipo cliente, es posible que tenga que instalar el complemento plantillas de certificado. Para obtener más información sobre este tema, haga clic [aquí](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732445(v=ws.11)).  
   
 -   El período de renovación debe establecerse en 0.  
   
@@ -73,5 +73,3 @@ Cuando los clientes de DirectAccess solicitan un certificado OTP, el servidor de
   
 -   [Paso 4: planear la OTP para el servidor de acceso remoto](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   
-
-

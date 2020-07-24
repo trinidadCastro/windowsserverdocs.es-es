@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: cae164de90738996a6c4663dfcbde794b6c2a18e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 447c8fe33a0454179d8c9aacc9c324ac7bcf1f49
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473782"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965827"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Novedades de almacenamiento en Windows Server
 
@@ -49,7 +49,7 @@ Esta funcionalidad también está disponible para los servidores que ejecutan Wi
 
 ### <a name="windows-admin-center-enhancements"></a>Mejoras de Windows Admin Center
 
-Hay una nueva versión de Windows Admin Center disponible, que aporta nueva funcionalidad a Windows Server. Para obtener información sobre las características más recientes, consulta [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md).
+Hay una nueva versión de Windows Admin Center disponible, que aporta nueva funcionalidad a Windows Server. Para obtener información sobre las características más recientes, consulta [Windows Admin Center](../manage/windows-admin-center/overview.md).
 
 ## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>Novedades de almacenamiento en Windows Server 2019 y Windows Server, versión 1809
 
@@ -83,7 +83,7 @@ Hay una serie de mejoras en Espacios de almacenamiento directo en Windows Server
 
 - **Clústeres de dos servidores usando una unidad flash USB como testigo**
 
-    Use una unidad flash USB de bajo costo conectada en el enrutador para que actúe como testigo en los clústeres de dos servidores. Si un servidor deja de funcionar y, a continuación, realiza una copia de seguridad, el clúster de unidad USB sabe qué servidor tiene los datos más actualizados. Para obtener más información, consulte el [blog de Storage en Microsoft](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/).
+    Use una unidad flash USB de bajo costo conectada en el enrutador para que actúe como testigo en los clústeres de dos servidores. Si un servidor deja de funcionar y, a continuación, realiza una copia de seguridad, el clúster de unidad USB sabe qué servidor tiene los datos más actualizados. Para obtener más información, consulte el [blog de Storage en Microsoft](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
 
 - **Windows Admin Center**
 
@@ -95,7 +95,7 @@ Hay una serie de mejoras en Espacios de almacenamiento directo en Windows Server
 
 - **Escalar hasta 4 PB por clúster**
 
-    Consiga una escala de varios petabytes: excelente para casos de uso de archivos multimedia, copias de seguridad y archivado. En Windows Server 2019, Espacios de almacenamiento directo admite hasta 4 petabytes (PB) = 4.000 terabytes de capacidad sin procesar por grupo de almacenamiento. También se aumentan las instrucciones de capacidad relacionadas: por ejemplo, puede crear dos veces el número de volúmenes (64 en lugar de 32), cada dos veces mayor que antes (64 TB en lugar de 32 TB). Unir varios clústeres en un [conjunto de clústeres](storage-spaces/cluster-sets.md) para una escala aún mayor en un espacio de nombres de almacenamiento. Para obtener más información, consulte el [blog de Storage en Microsoft](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/).
+    Consiga una escala de varios petabytes: excelente para casos de uso de archivos multimedia, copias de seguridad y archivado. En Windows Server 2019, Espacios de almacenamiento directo admite hasta 4 petabytes (PB) = 4.000 terabytes de capacidad sin procesar por grupo de almacenamiento. También se aumentan las instrucciones de capacidad relacionadas: por ejemplo, puede crear dos veces el número de volúmenes (64 en lugar de 32), cada dos veces mayor que antes (64 TB en lugar de 32 TB). Unir varios clústeres en un [conjunto de clústeres](storage-spaces/cluster-sets.md) para una escala aún mayor en un espacio de nombres de almacenamiento. Para obtener más información, consulte el [blog de Storage en Microsoft](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
 
 - **La paridad acelerada por reflejos es el doble de rápida**
 
@@ -166,7 +166,7 @@ Windows Server, versión 1803 incluye la posibilidad de impedir que el servidor 
 
 Windows Server, versión 1709 es la primera versión de Windows Server en el canal semianual. El canal semianual es una ventaja de software Assurance y se admite totalmente en producción durante 18 meses, con una versión nueva cada seis meses.
 
-Para obtener más información, consulte [información general del canal semianual de Windows Server](../get-started/semi-annual-channel-overview.md).
+Para obtener más información, consulte [información general del canal semianual de Windows Server](../get-started-19/servicing-channels-19.md).
 
 ### <a name="storage-replica"></a>Réplica de almacenamiento
 
@@ -253,7 +253,7 @@ Para obtener más información, consulte [calidad de servicio de almacenamiento]
 | [Compatibilidad con volúmenes grandes](data-deduplication/whats-new.md#large-volume-support) | Actualizado | Antes de Windows Server 2016, los volúmenes debían tener un tamaño específico para la renovación esperada, y aquellos tamaños de volúmenes por encima de los 10 TB no eran buenos candidatos para la desduplicación. En Windows Server 2016, desduplicación de datos admite tamaños **de volúmenes de hasta 64 TB**. |
 | [Compatibilidad con Archivos grandes](data-deduplication/whats-new.md#large-file-support) | Actualizado | Antes de Windows Server 2016, los archivos cuyo tamaño se aproximase a 1 TB no eran buenos candidatos para la desduplicación. En Windows Server 2016, los archivos de **hasta 1 TB** son totalmente compatibles. |
 | [Compatibilidad con Nano Server](data-deduplication/whats-new.md#nano-server-support) | Nuevo | Desduplicación de datos está disponible y es totalmente compatible con la nueva opción de implementación de Nano Server para Windows Server 2016. |
-| [Compatibilidad con copia de seguridad simplificada](data-deduplication/whats-new.md#simple-backup-support) | Nuevo | En Windows Server 2012 R2, las aplicaciones virtualizadas de copia de seguridad, como [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) de Microsoft, se admitían a través de una serie de pasos de configuración manual. En Windows Server 2016, se ha agregado un nuevo tipo de uso de "Copia de seguridad" predeterminado para una implementación fluida de Desduplicación de datos para aplicaciones virtualizadas de copia de seguridad. |
+| [Compatibilidad con copia de seguridad simplificada](data-deduplication/whats-new.md#simple-backup-support) | Nuevo | En Windows Server 2012 R2, las aplicaciones virtualizadas de copia de seguridad, como [Data Protection Manager](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) de Microsoft, se admitían a través de una serie de pasos de configuración manual. En Windows Server 2016, se ha agregado un nuevo tipo de uso de "Copia de seguridad" predeterminado para una implementación fluida de Desduplicación de datos para aplicaciones virtualizadas de copia de seguridad. |
 | [Compatibilidad con las actualizaciones graduales de sistema operativo de clúster](data-deduplication/whats-new.md#cluster-upgrade-support) | Nuevo | Desduplicación de datos es totalmente compatible con la nueva característica [Actualización gradual de sistema operativo de clúster](..//failover-clustering/cluster-operating-system-rolling-upgrade.md) de Windows Server 2016. |
 
 ### <a name="smb-hardening-improvements-for-sysvol-and-netlogon-connections"></a><a name="smb-hardening-improvements"></a>Mejoras de protección de SMB para conexiones de SYSVOL y NETLOGON
@@ -268,7 +268,7 @@ Si la firma SMB y la autenticación mutua no están disponibles, un equipo con W
 > [!NOTE]
 > Los valores del Registro para esta configuración no están presentes de forma predeterminada, pero se siguen aplicando las reglas de protección hasta que se reemplacen por la Directiva de grupo u otros valores del registro.
 
-Para más información sobre estas mejoras de seguridad (también conocidas como protección UNC), vea el artículo de Microsoft Knowledge Base [3000483](https://support.microsoft.com/kb/3000483) y [MS15-011 & MS15-014: Hardening Group Policy](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy) (Protección de directiva de grupo).
+Para más información sobre estas mejoras de seguridad (también conocidas como protección UNC), vea el artículo de Microsoft Knowledge Base [3000483](https://support.microsoft.com/kb/3000483) y [MS15-011 & MS15-014: Hardening Group Policy](https://msrc-blog.microsoft.com/2015/02/10/ms15-011-ms15-014-hardening-group-policy) (Protección de directiva de grupo).
 
 ### <a name="work-folders"></a>Carpetas de trabajo
 Se ha mejorado la notificación de cambios cuando el servidor de carpetas de trabajo ejecuta Windows Server 2016 y el cliente de carpetas de trabajo es Windows 10.
@@ -297,4 +297,4 @@ ReFS presenta las siguientes mejoras:
 Estas funcionalidades son nuevas en Windows Server 2016.
 
 ## <a name="additional-references"></a>Referencias adicionales
-* [Novedades en Windows Server 2016](../get-started/what-s-new-in-windows-server-2016.md)
+* [Novedades en Windows Server 2016](../get-started/whats-new-in-windows-server-2016.md)

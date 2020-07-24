@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d421a14c2a6021d45cd16f30c526ff1670ae62e3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ddbb799cc46da040bfc2f62445cc2b41945d09f1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475202"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966297"
 ---
 # <a name="change-the-amount-of-time-that-clients-cache-referrals"></a>Change the amount of time that clients cache referrals
 
@@ -30,7 +30,7 @@ Una referencia es una lista ordenada de destinos que un equipo cliente recibe de
 3.  En la pestaña **Referencias**, en el cuadro de texto **Duración de la caché (en segundos)**, escriba la cantidad de tiempo (en segundos) que los clientes conservarán en la memoria caché las referencias a la raíz del espacio de nombres. La configuración predeterminada es de 300 segundos (cinco minutos).
 
 > [!TIP]
-> Para cambiar la cantidad de tiempo que los clientes almacenan en caché las referencias a la raíz del espacio de nombres mediante Windows PowerShell, use el cmdlet [set-DfsnRoot TimeToLiveSec](https://technet.microsoft.com/library/jj884281.aspx) . Estos cmdlets se introdujeron en Windows Server 2012.
+> Para cambiar la cantidad de tiempo que los clientes almacenan en caché las referencias a la raíz del espacio de nombres mediante Windows PowerShell, use el cmdlet [set-DfsnRoot TimeToLiveSec](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753448(v=ws.11)) . Estos cmdlets se introdujeron en Windows Server 2012.
 
 ## <a name="to-change-the-amount-of-time-that-clients-cache-folder-referrals"></a>Para cambiar la cantidad de tiempo que los clientes mantienen en la memoria caché las referencias a las carpetas
 
@@ -44,5 +44,3 @@ Una referencia es una lista ordenada de destinos que un equipo cliente recibe de
 
 -   [Ajustar espacios de nombres DFS](tuning-dfs-namespaces.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)
-
-

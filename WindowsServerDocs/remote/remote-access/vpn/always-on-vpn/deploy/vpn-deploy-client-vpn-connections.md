@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.reviewer: deverette
-ms.openlocfilehash: 9f942d7af5215680cf2707901293161a6208708b
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: fc8b2646019292576abb638c7abdba1882eeedaa
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775354"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965447"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>Paso 6. Configuración de conexiones VPN de Always On cliente de Windows 10
 
@@ -41,7 +41,7 @@ Use ProfileXML en todos los métodos de entrega que describe esta implementació
 
 - **Puente de instrumental de administración de Windows (WMI) a CSP**. El segundo método para configurar el nodo ProfileXML CSP es usar el puente de WMI a CSP, una clase WMI llamada **MDM_VPNv2_01**, que puede tener acceso al CSP VPNv2 y al nodo ProfileXML. Cuando se crea una nueva instancia de esa clase WMI, WMI usa el CSP para crear el perfil de VPN al usar Windows PowerShell y Configuration Manager.
 
-Aunque estos métodos de configuración difieren, ambos requieren un perfil de VPN XML con el formato correcto. Para usar la configuración de ProfileXML VPNv2 CSP, cree XML mediante el esquema ProfileXML para configurar las etiquetas necesarias para el escenario de implementación simple. Para obtener más información, vea [PROFILEXML XSD](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-profile-xsd).
+Aunque estos métodos de configuración difieren, ambos requieren un perfil de VPN XML con el formato correcto. Para usar la configuración de ProfileXML VPNv2 CSP, cree XML mediante el esquema ProfileXML para configurar las etiquetas necesarias para el escenario de implementación simple. Para obtener más información, vea [PROFILEXML XSD](/windows/client-management/mdm/vpnv2-profile-xsd).
 
 A continuación, encontrará cada una de las configuraciones necesarias y su etiqueta ProfileXML correspondiente. Configure cada opción en una etiqueta específica dentro del esquema ProfileXML y no todas ellas se encuentran en el perfil nativo. Para obtener más ubicación de etiquetas, consulte el esquema ProfileXML.
 
@@ -100,7 +100,7 @@ Elementos ProfileXML:
 
 Puede usar etiquetas simples para configurar algunos mecanismos de autenticación de VPN. Sin embargo, EAP y PEAP son más complicados. La forma más fácil de crear el marcado XML es configurar un cliente VPN con su configuración de EAP y, a continuación, exportar esa configuración a XML.
 
-Para obtener más información acerca de la configuración de EAP, consulte [configuración de EAP](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/eap-configuration).
+Para obtener más información acerca de la configuración de EAP, consulte [configuración de EAP](/windows/client-management/mdm/eap-configuration).
 
 ## <a name="manually-create-a-template-connection-profile"></a>Crear manualmente un perfil de conexión de plantilla
 
@@ -212,31 +212,31 @@ Antes de completar esta sección, asegúrese de que ha creado y probado la conex
 
 El script de Windows PowerShell de la lista 1 crea dos archivos en el escritorio, que contienen etiquetas **EAPConfiguration** basadas en el perfil de conexión de plantilla que creó anteriormente:
 
-- **VPN_Profile. Xml.** Este archivo contiene el marcado XML necesario para configurar el nodo ProfileXML en el CSP VPNv2. Use este archivo con servicios MDM-DM compatibles, como Intune.
+- **VPN_Profile.xml.** Este archivo contiene el marcado XML necesario para configurar el nodo ProfileXML en el CSP VPNv2. Use este archivo con servicios MDM-DM compatibles, como Intune.
 
-- **VPN_Profile. ps1.** Este archivo es un script de Windows PowerShell que se puede ejecutar en los equipos cliente para configurar el nodo ProfileXML en el CSP VPNv2. También puede configurar el CSP implementando este script a través de Configuration Manager. No se puede ejecutar este script en una sesión de Escritorio remoto, incluida una sesión mejorada de Hyper-V.
+- **VPN_Profile.ps1.** Este archivo es un script de Windows PowerShell que se puede ejecutar en los equipos cliente para configurar el nodo ProfileXML en el CSP VPNv2. También puede configurar el CSP implementando este script a través de Configuration Manager. No se puede ejecutar este script en una sesión de Escritorio remoto, incluida una sesión mejorada de Hyper-V.
 
 >[!IMPORTANT]
 >Los siguientes comandos de ejemplo requieren la compilación 1607 de Windows 10 o posterior.
 
-**Cree VPN_Profile. XML y VPN_Proflie. ps1**
+**Crear VPN_Profile.xml y VPN_Proflie.ps1**
 
 1. Inicie sesión en el equipo cliente unido a un dominio que contiene el perfil de VPN de plantilla con la misma cuenta de usuario que la sección [crea manualmente un perfil de conexión de plantilla](#manually-create-a-template-connection-profile) descrito.
 
 2. Pegue la lista 1 en el entorno de scripting integrado (ISE) de Windows PowerShell y personalice los parámetros descritos en los comentarios. Se trata de $Template, $ProfileName, $Servers, $DnsSuffix, $DomainName, $TrustedNetwork y $DNSServers. Una descripción completa de cada opción de configuración se encuentra en los comentarios.
 
-3. Ejecute el script para generar **VPN_Profile. XML** y **VPN_Profile. PS1** en el escritorio.
+3. Ejecute el script para generar **VPN_Profile.xml** y **VPN_Profile.ps1** en el escritorio.
 
-#### <a name="listing-1-understanding-makeprofileps1"></a>Lista 1. Descripción de MakeProfile. ps1
+#### <a name="listing-1-understanding-makeprofileps1"></a>Lista 1. Descripción de MakeProfile.ps1
 
 En esta sección se explica el código de ejemplo que puede usar para comprender cómo crear un perfil de VPN, específicamente para configurar ProfileXML en el CSP VPNv2.
 
-Después de ensamblar un script de este código de ejemplo y ejecutar el script, el script genera dos archivos: VPN_Profile. XML y VPN_Profile. ps1. Use VPN_Profile. XML para configurar ProfileXML en servicios MDM-DM compatibles, como Microsoft Intune.
+Después de ensamblar un script de este código de ejemplo y ejecutar el script, el script genera dos archivos: VPN_Profile.xml y VPN_Profile.ps1. Use VPN_Profile.xml para configurar ProfileXML en servicios MDM-DM compatibles, como Microsoft Intune.
 
-Use el script **VPN_Profile. PS1** de Windows PowerShell o el punto de conexión de Microsoft Configuration Manager para configurar ProfileXML en el escritorio de Windows 10.
+Use el script de **VPN_Profile.ps1** en Windows PowerShell o en el punto de conexión de Microsoft Configuration Manager para configurar ProfileXML en el escritorio de Windows 10.
 
 >[!NOTE]
->Para ver el script de ejemplo completo, vea la sección [script completo MakeProfile. PS1](#makeprofileps1-full-script).
+>Para ver el script de ejemplo completo, vea la sección [MakeProfile.ps1 script completo](#makeprofileps1-full-script).
 
 ##### <a name="parameters"></a>Parámetros
 
@@ -318,7 +318,7 @@ $ProfileXML = @("
 ")
 ```
 
-### <a name="output-vpn_profilexml-for-intune"></a>Salida VPN_Profile. XML para Intune
+### <a name="output-vpn_profilexml-for-intune"></a>VPN_Profile.xml de salida de Intune
 
 Puede usar el siguiente comando de ejemplo para guardar el archivo XML de perfil:
 
@@ -326,7 +326,7 @@ Puede usar el siguiente comando de ejemplo para guardar el archivo XML de perfil
 $ProfileXML | Out-File -FilePath ($env:USERPROFILE + '\desktop\VPN_Profile.xml')
 ```
 
-### <a name="output-vpn_profileps1-for-the-desktop-and-configuration-manager"></a>OUTPUT VPN_Profile. PS1 para el escritorio y Configuration Manager
+### <a name="output-vpn_profileps1-for-the-desktop-and-configuration-manager"></a>VPN_Profile.ps1 de salida para el escritorio y Configuration Manager
 
 En el código de ejemplo siguiente se configura una conexión VPN de IKEv2 AlwaysOn mediante el nodo ProfileXML en el CSP VPNv2.
 
@@ -450,7 +450,7 @@ $Message = "Successfully created VPN_Profile.xml and VPN_Profile.ps1 on the desk
 Write-Host "$Message"
 ```
 
-## <a name="makeprofileps1-full-script"></a>Script completo de MakeProfile. ps1
+## <a name="makeprofileps1-full-script"></a>MakeProfile.ps1 script completo
 
 La mayoría de los ejemplos usan el cmdlet Set-WmiInstance de Windows PowerShell para insertar ProfileXML en una nueva instancia del MDM_VPNv2_01 clase WMI. 
 
@@ -460,7 +460,7 @@ Sin embargo, esto no funciona en Configuration Manager porque no se puede ejecut
 >El puente de WMI a CSP requiere derechos de administrador local, por diseño. Para implementar perfiles de VPN por usuario, debe usar Configuration Manager o MDM.
 
 >[!NOTE]
->El script VPN_Profile. PS1 usa el SID del usuario actual para identificar el contexto del usuario. Dado que no hay ningún SID disponible en una sesión de Escritorio remoto, el script no funciona en una sesión de Escritorio remoto. Del mismo modo, no funciona en una sesión mejorada de Hyper-V. Si va a probar un acceso remoto Always On VPN en máquinas virtuales, deshabilite la sesión mejorada en las máquinas virtuales de cliente antes de ejecutar este script.
+>El script VPN_Profile.ps1 usa el SID del usuario actual para identificar el contexto del usuario. Dado que no hay ningún SID disponible en una sesión de Escritorio remoto, el script no funciona en una sesión de Escritorio remoto. Del mismo modo, no funciona en una sesión mejorada de Hyper-V. Si va a probar un acceso remoto Always On VPN en máquinas virtuales, deshabilite la sesión mejorada en las máquinas virtuales de cliente antes de ejecutar este script.
 
 El siguiente script de ejemplo incluye todos los ejemplos de código de las secciones anteriores. Asegúrese de cambiar los valores de ejemplo a los valores adecuados para su entorno.
     
@@ -603,9 +603,9 @@ El siguiente script de ejemplo incluye todos los ejemplos de código de las secc
 
 ## <a name="configure-the-vpn-client-by-using-windows-powershell"></a>Configuración del cliente VPN mediante Windows PowerShell
 
-Para configurar el CSP de VPNv2 en un equipo cliente de Windows 10, ejecute el script de Windows PowerShell VPN_Profile. PS1 que creó en la sección [creación del perfil XML](#create-the-profile-xml) . Abra Windows PowerShell como administrador. de lo contrario, recibirá un error que indica que se _denegó el acceso_.
+Para configurar el CSP de VPNv2 en un equipo cliente de Windows 10, ejecute el VPN_Profile.ps1 script de Windows PowerShell que creó en la sección [creación del perfil XML](#create-the-profile-xml) . Abra Windows PowerShell como administrador. de lo contrario, recibirá un error que indica que se _denegó el acceso_.
 
-Después de ejecutar VPN_Profile. PS1 para configurar el perfil de VPN, puede comprobar en cualquier momento que se ejecutó correctamente ejecutando el siguiente comando en el Windows PowerShell ISE:
+Después de ejecutar VPN_Profile.ps1 para configurar el perfil de VPN, puede comprobar en cualquier momento que se ejecutó correctamente ejecutando el siguiente comando en el Windows PowerShell ISE:
 
 ```powershell
 Get-WmiObject -Namespace root\cimv2\mdm\dmmap -Class MDM_VPNv2_01
@@ -694,7 +694,7 @@ Si necesita solucionar los problemas de marcado, es más fácil colocarlo en un 
 
 ## <a name="configure-the-vpn-client-by-using-configuration-manager"></a>Configurar el cliente VPN mediante Configuration Manager
 
-En Configuration Manager, puede implementar perfiles de VPN mediante el nodo CSP ProfileXML, tal como hizo en Windows PowerShell. Aquí se usa el script de Windows PowerShell VPN_Profile. PS1 que creó en la sección [crear los archivos de configuración de ProfileXML](#create-the-profilexml-configuration-files).
+En Configuration Manager, puede implementar perfiles de VPN mediante el nodo CSP ProfileXML, tal como hizo en Windows PowerShell. Aquí se usa el VPN_Profile.ps1 script de Windows PowerShell que creó en la sección creación de los [archivos de configuración de ProfileXML](#create-the-profilexml-configuration-files).
 
 Para usar Configuration Manager para implementar un perfil de VPN de Always On de acceso remoto en los equipos cliente de Windows 10, debe empezar por crear un grupo de equipos o usuarios en los que implemente el perfil. En este escenario, cree un grupo de usuarios para implementar el script de configuración.
 
@@ -710,7 +710,7 @@ Para usar Configuration Manager para implementar un perfil de VPN de Always On d
 
     b. Haga clic en **examinar**, en **todos los usuarios** y en **Aceptar**.
 
-    c. Haga clic en **Siguiente**.
+    c. Haga clic en **Next**.
 
 4.  En la página reglas de pertenencia, complete los pasos siguientes:
 
@@ -718,7 +718,7 @@ Para usar Configuration Manager para implementar un perfil de VPN de Always On d
 
     b.  En la página **principal**, haga clic en **Siguiente**.
 
-    c.  En la página buscar recursos, en **valor**, escriba el nombre del usuario que desea agregar. El nombre del recurso incluye el dominio del usuario. Para incluir resultados basados en una coincidencia parcial, inserte el **%** carácter en cualquier extremo del criterio de búsqueda. Por ejemplo, para buscar todos los usuarios que contengan la cadena "Lori", escriba **% Lori%**. Haga clic en **Siguiente**.
+    c.  En la página buscar recursos, en **valor**, escriba el nombre del usuario que desea agregar. El nombre del recurso incluye el dominio del usuario. Para incluir resultados basados en una coincidencia parcial, inserte el **%** carácter en cualquier extremo del criterio de búsqueda. Por ejemplo, para buscar todos los usuarios que contengan la cadena "Lori", escriba **% Lori%**. Haga clic en **Next**.
 
     d.  En la página seleccionar recursos, seleccione los usuarios que desea agregar al grupo y haga clic en **siguiente**.
 
@@ -736,7 +736,7 @@ Después de crear el grupo de usuarios para recibir el perfil de VPN, puede crea
 
 ### <a name="create-a-package-containing-the-profilexml-configuration-script"></a>Crear un paquete que contenga el script de configuración de ProfileXML
 
-1.  Hospede el script VPN_Profile. PS1 en un recurso compartido de red al que puede tener acceso la cuenta de equipo del servidor de sitio.
+1.  Hospede el script VPN_Profile.ps1 en un recurso compartido de red al que pueda tener acceso la cuenta de equipo del servidor de sitio.
 
 2.  En la consola de Configuration Manager, Abra **biblioteca de software \\ Administración de aplicaciones \\ paquetes**.
 
@@ -748,10 +748,10 @@ Después de crear el grupo de usuarios para recibir el perfil de VPN, puede crea
 
     b. Active la casilla **este paquete contiene archivos de origen** y haga clic en **examinar**.
 
-    c. En el cuadro de diálogo establecer carpeta de origen, haga clic en **examinar**, seleccione el recurso compartido de archivos que contiene VPN_Profile. PS1 y haga clic en **Aceptar**.
+    c. En el cuadro de diálogo establecer carpeta de origen, haga clic en **examinar**, seleccione el recurso compartido de archivos que contiene VPN_Profile.ps1 y haga clic en **Aceptar**.
         Asegúrese de seleccionar una ruta de acceso de red, no una ruta de acceso local. En otras palabras, la ruta de acceso debe ser similar a * \\ fileserver \\ vpnscript*, no *c: \\ vpnscript*.
 
-1.  Haga clic en **Siguiente**.
+1.  Haga clic en **Next**.
 
 2.  En la página tipo de programa, haga clic en **siguiente**.
 
@@ -759,11 +759,11 @@ Después de crear el grupo de usuarios para recibir el perfil de VPN, puede crea
 
     a.  En **nombre**, escriba **script de Perfil de VPN**.
 
-    b.  En la **línea de comandos**, escriba **PowerShell. exe-ExecutionPolicy bypass-File "VPN_Profile. PS1"**.
+    b.  En la **línea de comandos**, escriba **PowerShell.exe-ExecutionPolicy bypass-File "VPN_Profile.ps1"**.
 
     c.  En el **modo de ejecución**, haga clic en **ejecutar con derechos administrativos**.
 
-    d.  Haga clic en **Siguiente**.
+    d.  Haga clic en **Next**.
 
 4.  En la página requisitos, complete los pasos siguientes:
 
@@ -775,7 +775,7 @@ Después de crear el grupo de usuarios para recibir el perfil de VPN, puede crea
 
     d.  En **tiempo de ejecución máximo permitido (minutos)**, escriba **15**.
 
-    e.  Haga clic en **Siguiente**.
+    e.  Haga clic en **Next**.
 
 5.  En la página Resumen, haga clic en **siguiente**.
 
@@ -805,7 +805,7 @@ Con el paquete y el programa creados, debe implementarlo en el grupo de **usuari
 
     c.  Haga clic en **usuarios de VPN**y en **Aceptar**.
 
-    d.  Haga clic en **Siguiente**.
+    d.  Haga clic en **Next**.
 
 6.  En la página contenido, realice los pasos siguientes:
 
@@ -813,7 +813,7 @@ Con el paquete y el programa creados, debe implementarlo en el grupo de **usuari
 
     b.  En **puntos de distribución disponibles**, seleccione los puntos de distribución a los que desea distribuir el script de configuración de ProfileXML y haga clic en **Aceptar**.
 
-    c.  Haga clic en **Siguiente**.
+    c.  Haga clic en **Next**.
 
 7.  En la página Configuración de implementación, haga clic en **siguiente**.
 
@@ -823,7 +823,7 @@ Con el paquete y el programa creados, debe implementarlo en el grupo de **usuari
 
     b.  Haga clic en **asignar inmediatamente después de este evento**y haga clic en **Aceptar**.
 
-    c.  Haga clic en **Siguiente**.
+    c.  Haga clic en **Next**.
 
 9.  En la página experiencia del usuario, complete los pasos siguientes:
 
@@ -838,7 +838,7 @@ Con el paquete y el programa creados, debe implementarlo en el grupo de **usuari
 Con el script de configuración de ProfileXML implementado, inicie sesión en un equipo cliente de Windows 10 con la cuenta de usuario que seleccionó al generar la recopilación de usuarios. Compruebe la configuración del cliente de VPN.
 
 >[!NOTE]
->El script VPN_Profile. PS1 no funciona en una sesión de Escritorio remoto. Del mismo modo, no funciona en una sesión mejorada de Hyper-V. Si va a probar un acceso remoto Always On VPN en máquinas virtuales, deshabilite la sesión mejorada en las máquinas virtuales cliente antes de continuar.
+>El script VPN_Profile.ps1 no funciona en una sesión de Escritorio remoto. Del mismo modo, no funciona en una sesión mejorada de Hyper-V. Si va a probar un acceso remoto Always On VPN en máquinas virtuales, deshabilite la sesión mejorada en las máquinas virtuales cliente antes de continuar.
 
 ### <a name="verify-the-configuration-of-the-vpn-client"></a>Comprobar la configuración del cliente de VPN
 
@@ -863,11 +863,11 @@ Para usar Intune para implementar el acceso remoto de Windows 10 Always On perfi
 >[!NOTE]
 >Intune ahora usa grupos de Azure AD. Si Azure AD Connect sincronizar el grupo de usuarios de VPN de local a Azure AD y los usuarios se asignan al grupo de usuarios de VPN, está listo para continuar.
 
-Cree la Directiva de configuración de dispositivos VPN para configurar los equipos cliente de Windows 10 para todos los usuarios agregados al grupo. Dado que la plantilla de Intune proporciona parámetros de VPN, copie solo la \< parte EapHostConfig> \< /EapHostConfig> del archivo VPN_ProfileXML.
+Cree la Directiva de configuración de dispositivos VPN para configurar los equipos cliente de Windows 10 para todos los usuarios agregados al grupo. Dado que la plantilla de Intune proporciona parámetros de VPN, copie solo la \<EapHostConfig> \</EapHostConfig> parte del archivo de VPN_ProfileXML.
 
 ### <a name="create-the-always-on-vpn-configuration-policy"></a>Crear la Directiva de configuración de VPN de Always On
 
-1.    Inicie sesión en [Azure Portal](https://portal.azure.com/).
+1.    Inicie sesión en el [Portal de Azure](https://portal.azure.com/).
 
 2.    Vaya a **Intune**  >  **configuración de dispositivos**  >  **perfiles**.
 
@@ -878,7 +878,7 @@ Cree la Directiva de configuración de dispositivos VPN para configurar los equi
 1.   En **plataforma**, seleccione **Windows 10 o posterior**y elija **VPN** en la lista desplegable tipo de perfil.
 
      >[!TIP]
-     >Si va a crear un profileXML de VPN personalizado, consulte [aplicación de profileXML con Intune](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-profile-options#apply-profilexml-using-intune) para obtener instrucciones.
+     >Si va a crear un profileXML de VPN personalizado, consulte [aplicación de profileXML con Intune](/windows/security/identity-protection/vpn/vpn-profile-options#apply-profilexml-using-intune) para obtener instrucciones.
 
 2. En la pestaña **base VPN** , compruebe o establezca la configuración siguiente:
 
@@ -905,12 +905,12 @@ Cree la Directiva de configuración de dispositivos VPN para configurar los equi
     <EapHostConfig xmlns="https://www.microsoft.com/provisioning/EapHostConfig"><EapMethod><Type xmlns="https://www.microsoft.com/provisioning/EapCommon">25</Type><VendorId xmlns="https://www.microsoft.com/provisioning/EapCommon">0</VendorId><VendorType xmlns="https://www.microsoft.com/provisioning/EapCommon">0</VendorType><AuthorId xmlns="https://www.microsoft.com/provisioning/EapCommon">0</AuthorId></EapMethod><Config xmlns="https://www.microsoft.com/provisioning/EapHostConfig"><Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>25</Type><EapType xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV1"><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames>NPS.contoso.com</ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><FastReconnect>true</FastReconnect><InnerEapOptional>false</InnerEapOptional><Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>13</Type><EapType xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV1"><CredentialsSource><CertificateStore><SimpleCertSelection>true</SimpleCertSelection></CertificateStore></CredentialsSource><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames>NPS.contoso.com</ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><DifferentUsername>false</DifferentUsername><PerformServerValidation xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2">true</PerformServerValidation><AcceptServerName xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2">true</AcceptServerName></EapType></Eap><EnableQuarantineChecks>false</EnableQuarantineChecks><RequireCryptoBinding>false</RequireCryptoBinding><PeapExtensions><PerformServerValidation xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2">true</PerformServerValidation><AcceptServerName xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2">true</AcceptServerName></PeapExtensions></EapType></Eap></Config></EapHostConfig>
     ```
 
-4.  Reemplace el ** \< TrustedRootCA>5A 89 fe cb 5B 49 A7 0b 1A 52 63 B7 35 EE D7 1c C2 68 a 4B<\/ TrustedRootCA>** en el ejemplo con la huella digital del certificado de la entidad de certificación raíz local en ambos lugares.
+4.  Reemplace el ** \<TrustedRootCA> 5A 89 fe cb 5B 49 A7 0b 1A 52 63 B7 35 EE D7 1c C2 68 a 4B<\/ TrustedRootCA>** en el ejemplo con la huella digital del certificado de la entidad de certificación raíz local en ambos lugares.
   
     >[!Important]
-    >No use la huella digital de ejemplo en la \< sección TrustedRootCA>\< /TrustedRootCA> a continuación.  TrustedRootCA debe ser la huella digital del certificado de la entidad de certificación raíz local que emitió el certificado de autenticación de servidor para los servidores RRAS y NPS. **No debe ser el certificado raíz de la nube ni la huella digital del certificado de CA emisora intermedia**.
+    >No use la huella digital de ejemplo en la \<TrustedRootCA> \</TrustedRootCA> sección siguiente.  TrustedRootCA debe ser la huella digital del certificado de la entidad de certificación raíz local que emitió el certificado de autenticación de servidor para los servidores RRAS y NPS. **No debe ser el certificado raíz de la nube ni la huella digital del certificado de CA emisora intermedia**.
 
-5.  Reemplace la ** \<>servernames>NPS.contoso.com \< /SERVERNAMES** en el XML de ejemplo con el FQDN del NPS unido al dominio donde se realiza la autenticación. 
+5.  Reemplace el ** \<ServerNames> nps.contoso.com \</ServerNames> ** en el XML de ejemplo por el FQDN del NPS unido al dominio donde se realiza la autenticación. 
 
 6.  Copie la cadena XML revisada y péguela en el cuadro **EAP XML** en la pestaña base VPN y haga clic en **Aceptar**.
     Una Always On Directiva de configuración de dispositivos VPN que usa EAP se crea en Intune.
@@ -936,5 +936,5 @@ Ha terminado de implementar Always On VPN.  Para ver otras características que 
 
 |Si desea...  |A continuación, vea...  |
 |---------|---------|
-|Configuración del acceso condicional para VPN    |[Paso 7. Opta Configurar el acceso condicional para la conectividad VPN mediante Azure AD](../../ad-ca-vpn-connectivity-windows10.md): en este paso, puede ajustar el modo en que los usuarios de VPN autorizados acceden a los recursos mediante el [acceso condicional de Azure Active Directory (Azure ad)](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). Con Azure AD acceso condicional para la conectividad de la red privada virtual (VPN), puede ayudar a proteger las conexiones VPN. Acceso condicional es un motor de evaluación basado en directivas que te permite crear reglas de acceso para cualquier aplicación conectada de Azure Active Directory (Azure AD).         |
+|Configuración del acceso condicional para VPN    |[Paso 7. Opta Configurar el acceso condicional para la conectividad VPN mediante Azure AD](../../ad-ca-vpn-connectivity-windows10.md): en este paso, puede ajustar el modo en que los usuarios de VPN autorizados acceden a los recursos mediante el [acceso condicional de Azure Active Directory (Azure ad)](/azure/active-directory/active-directory-conditional-access-azure-portal). Con Azure AD acceso condicional para la conectividad de la red privada virtual (VPN), puede ayudar a proteger las conexiones VPN. Acceso condicional es un motor de evaluación basado en directivas que te permite crear reglas de acceso para cualquier aplicación conectada de Azure Active Directory (Azure AD).         |
 |Más información acerca de las características avanzadas de VPN  |[Características avanzadas de VPN](always-on-vpn-adv-options.md#advanced-vpn-features): en esta página se proporcionan instrucciones sobre cómo habilitar los filtros de tráfico VPN, cómo configurar conexiones VPN automáticas mediante desencadenadores de aplicaciones y cómo configurar NPS para permitir solo las conexiones VPN de los clientes que usan certificados emitidos por Azure ad.        |

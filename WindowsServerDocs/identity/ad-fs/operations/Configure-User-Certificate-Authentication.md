@@ -8,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c443d596e8e35f7ccf4aa23b622323122a2778e9
-ms.sourcegitcommit: 76a3b5f66e47e08e8235e2d152185b304d03b68b
+ms.openlocfilehash: 6fa77276aa41dc59c3dd5a131b5d8fb8a3dd2e58
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663188"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965457"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configuración de AD FS para la autenticación de certificados de usuario
 
@@ -36,14 +36,14 @@ La autenticación de certificados de usuario se usa principalmente en dos casos 
 
 Habilite la autenticación de certificados de usuario como método de autenticación de intranet o extranet en AD FS, mediante la consola de administración de AD FS o el cmdlet de PowerShell `Set-AdfsGlobalAuthenticationPolicy` .
 
-Si está configurando AD FS para la autenticación de certificados de Azure AD, asegúrese de que ha configurado la [Azure ad](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities) y las [reglas de notificaciones de AD FS necesarias](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements) para el emisor y el número de serie del certificado.
+Si está configurando AD FS para la autenticación de certificados de Azure AD, asegúrese de que ha configurado la [Azure ad](/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities) y las [reglas de notificaciones de AD FS necesarias](/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements) para el emisor y el número de serie del certificado.
 
 Además, hay algunos aspectos opcionales.
 - Si desea usar notificaciones basadas en campos y extensiones de certificado además de EKU (tipo de notificación https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) , configure las reglas de paso de notificación adicionales en la Active Directory confianza del proveedor de notificaciones.  A continuación encontrará una lista completa de las notificaciones de certificado disponibles.  
 - Si necesita restringir el acceso en función del tipo de certificado, puede usar las propiedades adicionales en el certificado en AD FS reglas de autorización de emisión para la aplicación. Los escenarios comunes son "permitir solo certificados aprovisionados por un proveedor de MDM" o "permitir solo certificados de tarjeta inteligente"
 >[!IMPORTANT]
 > Los clientes que usan el flujo de código de dispositivo para la autenticación y la autenticación de dispositivos con un IDP distinto de Azure AD (por ejemplo, AD FS) no podrán aplicar el acceso basado en dispositivos (por ejemplo, permitir solo los dispositivos administrados que usan un servicio MDM de terceros) para Azure AD recursos. Para proteger el acceso a los recursos corporativos en Azure AD y evitar la fuga de datos, los clientes deben configurar Azure AD el acceso condicional basado en el dispositivo (es decir, "requerir que el dispositivo se marque como queja" en Azure AD acceso condicional).
-- Configure las entidades de certificación de emisión permitidas para los certificados de cliente siguiendo las instrucciones de la sección "administración de emisores de confianza para la autenticación de cliente" en [este artículo](https://technet.microsoft.com/library/dn786429(v=ws.11).aspx).
+- Configure las entidades de certificación de emisión permitidas para los certificados de cliente siguiendo las instrucciones de la sección "administración de emisores de confianza para la autenticación de cliente" en [este artículo](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn786429(v=ws.11)).
 - Puede que desee considerar la posibilidad de modificar las páginas de inicio de sesión para que se adapten a las necesidades de los usuarios finales al realizar la autenticación de certificados. Los casos comunes son para (a) cambiar el "Inicio de sesión con el certificado X509" por algo más descriptivo para el usuario final
 
 ## <a name="configure-seamless-certificate-authentication-for-chrome-browser-on-windows-desktops"></a>Configurar la autenticación de certificados sin problemas para el explorador Chrome en escritorios de Windows
@@ -76,7 +76,7 @@ Las listas de revocación de certificados (CRL) son extremos que se codifican en
 Cada AD FS y el servidor WAP deberán alcanzar el punto de conexión de CRL para validar si el certificado que se presentó todavía es válido y no se ha revocado. La validación de CRL puede producirse a través de HTTPS, HTTP, LDAP o mediante OCSP (Protocolo de estado de certificados en línea). Si los servidores AD FS/WAP no pueden alcanzar el punto de conexión, se producirá un error en la autenticación. Siga los pasos que se indican a continuación para solucionar el problema. 
 1) Póngase en contacto con su ingeniero de PKI para determinar los puntos de conexión de CRL usados para revocar los certificados de usuario del sistema PKI. 
 2)  En cada servidor AD FS/WAP, asegúrese de que los extremos de CRL son accesibles a través del protocolo usado (normalmente HTTPS o HTTP).
-3)  Para la validación avanzada, [habilite el registro de eventos CAPI2](https://blogs.msdn.microsoft.com/benjaminperkins/2013/09/30/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues/) en cada servidor AD FS/WAP.
+3)  Para la validación avanzada, [habilite el registro de eventos CAPI2](/archive/blogs/benjaminperkins/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues) en cada servidor AD FS/WAP.
 4) Busque el ID. de evento 41 (comprobar la revocación) en los registros operativos de CAPI2
 5) Comprobar`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
@@ -92,7 +92,7 @@ AD FS requiere que el dispositivo cliente (o los exploradores) y los equilibrado
     *   Tipo en `netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
 
 ### <a name="check-if-the-client-device-has-been-provisioned-with-the-certificate-correctly"></a>Compruebe si el dispositivo cliente se ha aprovisionado correctamente con el certificado.
-Es posible que observe que algunos dispositivos funcionan correctamente, pero otros no. En este caso, normalmente se debe a que el certificado de usuario no se ha aprovisionado correctamente en el dispositivo cliente. Siga estos pasos: 
+Es posible que observe que algunos dispositivos funcionan correctamente, pero otros no. En este caso, normalmente se debe a que el certificado de usuario no se ha aprovisionado correctamente en el dispositivo cliente. Siga los pasos siguientes. 
 1)  Si el problema es específico de un dispositivo Android, el problema más común es que la cadena de certificados no es de plena confianza en el dispositivo Android.  Consulte al proveedor de MDM para asegurarse de que el certificado se ha aprovisionado correctamente y de que toda la cadena es de plena confianza en el dispositivo Android. 
 2)  Si el problema es específico de un dispositivo Windows, compruebe si el certificado se ha aprovisionado correctamente comprobando el almacén de certificados de Windows para el usuario que ha iniciado sesión (no sistema/equipo).
 3)  Exporte el certificado de usuario cliente al archivo. cer y ejecute el comando "certutil-f-urlfetch-Verify certificatefilename. cer".
@@ -138,4 +138,4 @@ Se trata de casos poco frecuentes
 
 ## <a name="related-links"></a>Vínculos relacionados
 * [Configurar el enlace de nombre de host alternativo para la autenticación de AD FS certificado](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
-* [Configurar entidades de certificación en Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)
+* [Configurar entidades de certificación en Azure AD](/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 661f1b3f227a3e04c1328798a632b10b55df1c20
-ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
+ms.openlocfilehash: a7da23b592f495b45e337520179d414900183a1b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721753"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966617"
 ---
 # <a name="the-role-of-claims"></a>El papel de las notificaciones
 
@@ -63,9 +63,9 @@ Un tipo de notificación ofrece contexto para el valor de la notificación Norma
 |UPN|El \( UPN del nombre principal \) de usuario del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ identidad \/ UPN de notificaciones \/|
 |Nombre común|Nombre común del usuario|http: \/ \/schemas.xmlSOAP.org \/ notificaciones de \/ CommonName|
 |Dirección de correo electrónico de AD FS 1. x \-|La \- dirección de correo electrónico del usuario al interoperar con AD FS 1,1 o ADFS 1,0|http: \/ \/schemas.xmlSOAP.org \/ Claims \/ EmailAddress|
-|Agrupar|Grupo al que pertenece el usuario|http: \/ \/schemas.xmlSOAP.org \/ grupo de notificaciones \/|
+|Grupo|Grupo al que pertenece el usuario|http: \/ \/schemas.xmlSOAP.org \/ grupo de notificaciones \/|
 |UPN para AD FS 1.x|UPN del usuario al interoperar con AD FS 1.1 o AD FS 1.0|http: \/ \/schemas.xml\/ UPN de notificaciones de SOAP.org \/|
-|Rol|Rol que tiene el usuario|http: \/ \/ schemas.microsoft.com \/ WS \/ 2008 \/ 06 \/ \/ rol de notificaciones de identidad \/|
+|Role|Rol que tiene el usuario|http: \/ \/ schemas.microsoft.com \/ WS \/ 2008 \/ 06 \/ \/ rol de notificaciones de identidad \/|
 |Surname|Apellido del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ \/ notificaciones de identidad \/ apellidos|
 |PPID|Identificador privado del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ \/ notificaciones de identidad \/ privatepersonalidentifier|
 |Identificador de nombre|Identificador de nombre SAML del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ \/ notificaciones de identidad \/ nameidentifier|
@@ -90,7 +90,7 @@ De igual modo, cada descripción incluye un URI, un nombre, un estado de publica
 
 - **Publicar esta demanda en los metadatos de Federación como un tipo de demanda que este servicio de Federación puede enviar** \( Publicar como enviado \) : indica los tipos de notificaciones que ofrece esta servicio de Federación. Se trata de los tipos de notificaciones que el Servicio de federación publica ante los demás como los tipos que quiere enviar. Los tipos de notificaciones reales que el proveedor de notificaciones envía son con frecuencia un subconjunto de esta lista.
 
-Para obtener más información sobre cómo establecer el estado de publicación de un tipo de demanda, consulte [adición de una descripción de notificaciones](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/add-a-claim-description) en la guía de implementación de AD FS.
+Para obtener más información sobre cómo establecer el estado de publicación de un tipo de demanda, consulte [adición de una descripción de notificaciones](../operations/add-a-claim-description.md) en la guía de implementación de AD FS.
 
 ### <a name="when-generating-federation-metadata"></a>Cuándo generar metadatos de federación
 

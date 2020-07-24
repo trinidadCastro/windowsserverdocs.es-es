@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 15c02897df0710653a6a3663ce6f8e87bfa416b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3896b411ee8b02a0efde6b46484e043b27ffea77
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471810"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966517"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>Habilitar o deshabilitar las referencias y la conmutación por recuperación de clientes
 
@@ -39,15 +39,15 @@ Al deshabilitar la referencia de un servidor de espacio de nombres o un destino 
 
 
 > [!TIP]
-> Para habilitar o deshabilitar las referencias mediante Windows PowerShell, use los cmdlets [set-DfsnRootTarget – State](https://technet.microsoft.com/library/jj884266.aspx) o [set-DfsnServerConfiguration](https://technet.microsoft.com/library/jj884277.aspx) , que se introdujeron en Windows Server 2012.
+> Para habilitar o deshabilitar las referencias mediante Windows PowerShell, use los cmdlets [set-DfsnRootTarget – State](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11)) o [set-DfsnServerConfiguration](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11)) , que se introdujeron en Windows Server 2012.
 
 ## <a name="enable-client-failback"></a>Habilitar la conmutación por recuperación de clientes
 
-Si un destino no está disponible, puede configurar los clientes para que conmuten por recuperación al destino en cuanto éste se restaure. Para que la conmutación por recuperación funcione, los equipos cliente deben cumplir los requisitos enumerados en el siguiente tema: [revisar los requisitos del cliente de los espacios de nombres DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx).
+Si un destino no está disponible, puede configurar los clientes para que conmuten por recuperación al destino en cuanto éste se restaure. Para que la conmutación por recuperación funcione, los equipos cliente deben cumplir los requisitos enumerados en el siguiente tema: [revisar los requisitos del cliente de los espacios de nombres DFS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)).
 
 
 > [!NOTE]
-> Para habilitar la conmutación por recuperación de cliente en una raíz de espacio de nombres mediante Windows PowerShell, use el cmdlet [set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) . Para habilitar la conmutación por recuperación de cliente en una carpeta DFS, use el cmdlet [set-DfsnFolder](https://technet.microsoft.com/library/jj884283.aspx) .
+> Para habilitar la conmutación por recuperación de cliente en una raíz de espacio de nombres mediante Windows PowerShell, use el cmdlet [set-DfsnRoot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) . Para habilitar la conmutación por recuperación de cliente en una carpeta DFS, use el cmdlet [set-DfsnFolder](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) .
 
 
 ## <a name="to-enable-client-failback-for-a-namespace-root"></a>Para habilitar la conmutación por recuperación de clientes para una raíz de espacio de nombres
@@ -71,5 +71,5 @@ Las carpetas con destinos heredan la configuración de conmutación por recupera
 ## <a name="additional-references"></a>Referencias adicionales
 
 -   [Ajustar espacios de nombres DFS](tuning-dfs-namespaces.md)
--   [Revisión de los requisitos del cliente de espacio de nombres DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
+-   [Revisión de los requisitos del cliente de espacio de nombres DFS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11))
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)

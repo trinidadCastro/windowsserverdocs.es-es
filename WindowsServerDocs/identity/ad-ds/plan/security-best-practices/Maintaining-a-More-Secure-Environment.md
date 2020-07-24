@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a22b1a0d776540e8ee2f2c223a1087bd88adaa47
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd8c2d4635071a199bdeff6a2bd518d746d82bc3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821178"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966327"
 ---
 # <a name="maintaining-a-more-secure-environment"></a>Mantenimiento de un entorno más seguro
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-*Ley número 10: la tecnología no es una panacea.* - [10 leyes inmutables de administración de seguridad](https://technet.microsoft.com/library/cc722488.aspx)  
+*Ley número 10: la tecnología no es una panacea.* - [10 leyes inmutables de administración de seguridad](/previous-versions//cc722488(v=technet.10))  
   
 Cuando haya creado un entorno seguro y administrable para sus activos empresariales críticos, el enfoque debe cambiar para asegurarse de que se mantiene de forma segura. Aunque se han dado controles técnicos específicos para aumentar la seguridad de las instalaciones de AD DS, la tecnología por sí sola no protegerá un entorno en el que no trabaje en colaboración con la empresa para mantener una infraestructura segura y utilizable. Las recomendaciones de alto nivel de esta sección están pensadas para usarse como directrices que puede usar para desarrollar no solo una seguridad eficaz, sino una administración de ciclo de vida eficaz.  
   
@@ -59,10 +59,10 @@ Algunas organizaciones implementan directivas de clasificación de datos que eti
   
 Dentro del modelo de clasificación de datos, debe incluir la clasificación de AD DS datos como los siguientes.  
   
-### <a name="systems"></a>Systems  
+### <a name="systems"></a>Sistemas  
 No solo se deben clasificar los datos, sino también sus rellenados de servidor. Para cada servidor, debe saber qué sistema operativo está instalado, qué roles generales proporciona el servidor, qué aplicaciones se están ejecutando en el servidor, el propietario de TI del registro y el propietario empresarial del registro, si procede. En el caso de todos los datos o aplicaciones que se ejecutan en el servidor, debe requerir la clasificación y el servidor debe protegerse según los requisitos de las cargas de trabajo que admite y las clasificaciones aplicadas al sistema y a los datos. También puede agrupar los servidores según la clasificación de sus cargas de trabajo, lo que le permite identificar rápidamente los servidores que deben ser los más supervisados y configurados de forma más rigurosa.  
   
-### <a name="applications"></a>Aplicaciones  
+### <a name="applications"></a>APLICACIONES  
 Debe clasificar las aplicaciones por funcionalidad (lo que hacen), usuario base (que usa las aplicaciones) y el sistema operativo en el que se ejecutan. Debe mantener registros que contengan información de versión, estado de revisión y cualquier otra información pertinente. También debe clasificar las aplicaciones por los tipos de datos que administran, como se ha descrito anteriormente.  
   
 ### <a name="users"></a>Usuarios  
@@ -74,5 +74,3 @@ Al integrar la información empresarial en la infraestructura de, puede usar esa
   
 Supongamos que el Ejecutivo A se encuentra normalmente en Chicago y utiliza una estación de trabajo protegida para acceder a los datos críticos para la empresa de su escritorio, y un evento se desencadena por un intento fallido de acceder a los datos desde una estación de trabajo no segura ubicada en Atlanta. Si es capaz de comprobar que el Ejecutivo está actualmente en Atlanta, puede resolver el evento poniéndose en contacto con el Ejecutivo o con el asistente del Ejecutivo para determinar si el error de acceso fue el resultado de que el Ejecutivo olvidase de usar la estación de trabajo protegida para acceder a los datos. Mediante la creación de un programa que usa los enfoques descritos en [planeación del riesgo](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md), puede empezar a crear una base de datos de comportamientos previstos para las cuentas más "importantes" en la instalación de Active Directory que pueden ayudarle a detectar y responder a ataques con mayor rapidez.  
   
-
-

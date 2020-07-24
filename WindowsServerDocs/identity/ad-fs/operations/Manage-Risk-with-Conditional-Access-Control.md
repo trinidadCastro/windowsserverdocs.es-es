@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 719c8ad0b39ccb4e252243e64385b12f8dbe6a28
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b72f324d7037df30a9a8b1f0b9a966a633d30950
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816228"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966497"
 ---
 # <a name="manage-risk-with-conditional-access-control"></a>Administración de riesgos con control de acceso condicional
 
@@ -22,7 +22,7 @@ ms.locfileid: "80816228"
 
 -   [Conceptos clave: control de acceso condicional en AD FS](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [Administración de riesgos con Access Control condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
+-   [Administración de riesgos con control de acceso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
 
 ## <a name="key-concepts---conditional-access-control-in-ad-fs"></a><a name="BKMK_1"></a>Conceptos clave: control de acceso condicional en AD FS
 La función general de AD FS es emitir un token de acceso que contenga un conjunto de notificaciones. La decisión con respecto a las notificaciones que AD FS acepta y luego emite se rige por las reglas de notificación.
@@ -35,7 +35,7 @@ El control de acceso en AD FS se implementa con reglas de notificación de autor
 |Permitir acceso a los usuarios con esta notificación entrante|Si el tipo de notificación entrante es igual a *tipo de notificación especificado* y el valor es igual a *valor de notificación especificado*, emitir una notificación con un valor igual a *Permitir*|
 |Denegar acceso a los usuarios con esta notificación entrante|Si el tipo de notificación entrante es igual a *tipo de notificación especificado* y el valor es igual a *valor de notificación especificado*, emitir una notificación con un valor igual a *Denegar*|
 
-Para obtener más información acerca de estas opciones y lógica de reglas, vea [Cuándo usar una regla de notificación de autorización](https://technet.microsoft.com/library/ee913560.aspx).
+Para obtener más información acerca de estas opciones y lógica de reglas, vea [Cuándo usar una regla de notificación de autorización](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913560(v=ws.11)).
 
 En AD FS en Windows Server 2012 R2, el control de acceso se ha mejorado con varios factores, incluidos los datos de usuario, dispositivo, ubicación y autenticación. Esto es posible porque hay una gran variedad de tipos de notificación disponibles para las reglas de notificación de autorización.  En otras palabras, en AD FS en Windows Server 2012 R2, puede aplicar el control de acceso condicional en función de la identidad del usuario o la pertenencia a grupos, la ubicación de red, el dispositivo (si está unido al área de trabajo, para obtener más información, consulte [unirse al área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en las aplicaciones](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)de la empresa) y
 
@@ -49,24 +49,24 @@ El control de acceso condicional en AD FS en Windows Server 2012 R2, ofrece las 
 
 -   Lenguaje de notificaciones completo y compatibilidad con Windows PowerShell para los escenarios avanzados de control de acceso condicional
 
--   Mensajes de "acceso denegado" personalizados (por aplicación de usuario de confianza). Para obtener más información, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx). Al poder personalizar estos mensajes, puede explicar por qué se deniega el acceso a un usuario y, además, facilitar una corrección de autoservicio cuando sea posible, por ejemplo, solicitar a los usuarios que unan sus dispositivos al área de trabajo. Para obtener más información, consulte [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+-   Mensajes de "acceso denegado" personalizados (por aplicación de usuario de confianza). Para más información, consulte el artículo sobre la [personalización de las páginas de inicio de sesión de AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)). Al poder personalizar estos mensajes, puede explicar por qué se deniega el acceso a un usuario y, además, facilitar una corrección de autoservicio cuando sea posible, por ejemplo, solicitar a los usuarios que unan sus dispositivos al área de trabajo. Para obtener más información, consulte [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
 En la tabla siguiente se incluyen todos los tipos de notificaciones disponibles en AD FS en Windows Server 2012 R2 que se usarán para implementar el control de acceso condicional.
 
 |Tipo de notificación|Descripción|
 |--------------|---------------|
-|Email Address|Dirección de correo electrónico del usuario|
-|Nombre|Nombre propio del usuario|
-|Name|Nombre del usuario|
-|UPN|Nombre principal de usuario (UPN) del usuario|
+|Dirección de correo electrónico|La dirección de correo electrónico del usuario.|
+|Nombre propio|Nombre propio del usuario|
+|Nombre|Nombre del usuario|
+|UPN|El nombre principal de usuario (UPN) del usuario.|
 |Nombre común|Nombre común del usuario|
 |Dirección de correo electrónico para AD FS 1|Dirección de correo electrónico del usuario al interoperar con AD FS 1.1 o AD FS 1.0|
 |Grupo|Grupo al que pertenece el usuario|
 |UPN para AD FS 1|UPN del usuario al interoperar con AD FS 1.1 o AD FS 1.0|
 |Role|Rol que tiene el usuario|
-|Apellido|Apellido del usuario|
+|Surname|Apellido del usuario|
 |PPID|Identificador privado del usuario|
-|Id. de nombre|Identificador de nombre SAML del usuario|
+|Identificador de nombre|Identificador de nombre SAML del usuario|
 |Marca de tiempo de autenticación|Se usa para mostrar la hora y la fecha en que se autenticó al usuario.|
 |Método de autenticación|Método usado para autenticar al usuario|
 |SID de grupo de solo denegación|SID de grupo usado solo para denegar del usuario|
@@ -81,12 +81,12 @@ En la tabla siguiente se incluyen todos los tipos de notificaciones disponibles 
 |Identificador de registro de dispositivo|Identificador para el registro del dispositivo|
 |Nombre para mostrar de registro de dispositivo|Nombre para mostrar del registro de dispositivo|
 |Tipo de SO del dispositivo|Tipo de sistema operativo del dispositivo|
-|Versión de SO del dispositivo|Versión de sistema operativo del dispositivo|
+|Versión del sistema operativo del dispositivo|Versión del sistema operativo del dispositivo.|
 |Dispositivo administrado|El dispositivo se administra mediante un servicio de administración.|
 |IP de cliente reenviada|Dirección IP del usuario|
 |Aplicación cliente|Tipo de aplicación cliente|
 |Agente de usuario del cliente|Tipo de dispositivo usado por el cliente para tener acceso a la aplicación|
-|¿Dirección IP de cliente|Dirección IP del cliente|
+|IP del cliente|Dirección IP del cliente.|
 |Ruta de acceso de extremo|Ruta de acceso absoluta al extremo, que se puede usar para determinar si un cliente es activo o pasivo|
 |Proxy|Nombre DNS del servidor proxy de federación que pasó la solicitud|
 |Identificador de la aplicación|Identificador de la aplicación de confianza para usuario autenticado|
@@ -94,34 +94,34 @@ En la tabla siguiente se incluyen todos los tipos de notificaciones disponibles 
 |Identificador de clave de entidad emisora|Extensión de identificador de clave de entidad emisora del certificado que firmó un certificado emitido|
 |Restricción básica|Una de las restricciones básicas del certificado|
 |Uso mejorado de clave|Describe uno de los usos mejorados de clave del certificado.|
-|Emisor|Nombre de la entidad de certificación que emitió el certificado X.509|
+|Emisor|Nombre de la entidad de certificación que emitió el certificado X.509.|
 |Nombre del emisor|Nombre distintivo del emisor del certificado|
-|Key Usage|Uno de los usos de clave del certificado|
-|Hasta el|Fecha en hora local después de la cual un certificado ya no es válido|
-|A partir del|Fecha en hora local en la cual un certificado empieza a ser válido|
+|Uso de claves|Uno de los usos de clave del certificado|
+|No después de|Fecha en hora local después de la cual un certificado ya no es válido|
+|No antes de|Fecha en hora local en la cual un certificado empieza a ser válido|
 |Directivas de certificado|Directivas en virtud de las cuales se emitió el certificado|
 |Clave pública|Clave pública del certificado|
 |Datos sin procesar del certificado|Datos sin procesar del certificado|
-|Nombre alternativo del firmante|Uno de los nombres alternativos del certificado|
+|Nombre alternativo del sujeto|Uno de los nombres alternativos del certificado|
 |Número de serie|Numero de serie del certificado|
 |Algoritmo de firma|Algoritmo usado para crear la firma de un certificado|
-|Firmante|Firmante del certificado|
+|Asunto|Firmante del certificado|
 |Identificador de clave del firmante|Identificador de clave del firmante del certificado|
-|Nombre de sujeto|Nombre distintivo del firmante de un certificado|
+|Nombre del firmante|Nombre distintivo del firmante de un certificado|
 |Nombre de plantilla V2|Es el nombre de la plantilla de certificado de la versión 2 que se usa al emitir o renovar un certificado. Se trata de un valor específico de Microsoft.|
 |Nombre de plantilla V1|Es el nombre de la plantilla de certificado de la versión 1 que se usa al emitir o renovar un certificado. Se trata de un valor específico de Microsoft.|
-|Thumbprint|Huella digital del certificado.|
+|Huella digital|Huella digital del certificado|
 |Versión X.509|Versión en formato X.509 del certificado|
-|Dentro de la red corporativa|Se utiliza para indicar si una solicitud tiene su origen dentro de la red corporativa.|
-|Hora de expiración de la contraseña|Se usa para mostrar la hora en la que expirará la contraseña.|
+|Dentro de red corporativa|Se utiliza para indicar si una solicitud tiene su origen dentro de la red corporativa.|
+|Tiempo de expiración de la contraseña|Se usa para mostrar la hora en la que expirará la contraseña.|
 |Días hasta la expiración de la contraseña|Se usa para mostrar el número de días que quedan hasta la expiración de la contraseña.|
 |Dirección URL de actualización de contraseña|Se usa para mostrar la dirección web del servicio de actualización de contraseña.|
 |Referencias de métodos de autenticación|Se usa para indicar los métodos de autenticación que se usan para autenticar al usuario.|
 
-## <a name="managing-risk-with-conditional-access-control"></a><a name="BKMK_2"></a>Administración de riesgos con Access Control condicional
+## <a name="managing-risk-with-conditional-access-control"></a><a name="BKMK_2"></a>Administración de riesgos con control de acceso condicional
 Con la configuración disponible hay muchas maneras de administrar los riesgos mediante la implementación del control de acceso condicional.
 
-### <a name="common-scenarios"></a>Escenarios habituales
+### <a name="common-scenarios"></a>Escenarios comunes
 Por ejemplo, Imagine un escenario sencillo de implementación del control de acceso condicional basado en los datos de pertenencia a grupos del usuario para una aplicación concreta (relación de confianza para usuario autenticado). En otras palabras, puede configurar una regla de autorización de emisión en el servidor de Federación para permitir que los usuarios que pertenecen a un grupo determinado en el dominio de AD tengan acceso a una aplicación concreta protegida por AD FS.  Las instrucciones paso a paso detalladas (mediante la interfaz de usuario y Windows PowerShell) para implementar este escenario se tratan en [Walkthrough Guide: Manage Risk with Conditional Access Control](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md). Para completar los pasos de este tutorial, debe configurar un entorno de laboratorio y seguir los pasos descritos en [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 ### <a name="advanced-scenarios"></a>Escenarios avanzados
@@ -173,9 +173,6 @@ Otros ejemplos de la implementación del control de acceso condicional en AD FS 
 
     ```
 
-## <a name="see-also"></a>Consulta también
-[Guía de tutorial: administración de riesgos con Access Control condicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-[configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-
-
-
+## <a name="see-also"></a>Consulte también
+[Guía de tutorial: administración de riesgos con Access Control condicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md) 
+ [Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)

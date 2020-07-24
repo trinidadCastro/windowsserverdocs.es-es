@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5f529e6b0176b7ad416a728163b4ae9671040bf8
-ms.sourcegitcommit: d1fc59d53055952f8e55aacebeb29547eef0bca7
+ms.openlocfilehash: 30667f68b25bda9ae86212be34466762d825ec0b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "80861288"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966177"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>Apéndice B: Configuración del entorno de pruebas
 
@@ -21,8 +21,8 @@ ms.locfileid: "80861288"
 
 En este tema se describen los pasos para crear un laboratorio práctico para probar el control de acceso dinámico. Las instrucciones deben seguirse secuencialmente porque hay muchos componentes que tienen dependencias.  
 
-## <a name="prerequisites"></a>Prerrequisitos  
-**Requisitos de hardware y software**  
+## <a name="prerequisites"></a>Requisitos previos  
+**Requisitos de hardware y de software para SharePoint 2013**  
 
 Requisitos para configurar el laboratorio de pruebas:  
 
@@ -172,7 +172,7 @@ Crea los siguientes usuarios con el Centro de administración de Active Director
    |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       EE. UU.       |
    |    Servidor RMS    |    rms     |    rms@contoso.com     |            |                  |                |
 
-   Para obtener más información sobre cómo crear grupos de seguridad, consulte [Crear un nuevo grupo](https://technet.microsoft.com/library/dd861305.aspx) en el sitio web de Windows Server.  
+   Para obtener más información sobre cómo crear grupos de seguridad, consulte [Crear un nuevo grupo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd861305(v=ws.11)) en el sitio web de Windows Server.  
 
 ##### <a name="to-create-a-group-policy-object"></a>Para crear un objeto de directiva de grupo  
 
@@ -381,7 +381,7 @@ Agrega Active Directory Rights Management Services (AD RMS) y todas las caracter
 >     -   NLTEST /SC_RESET:contoso.com  
 > 2.  En el controlador de dominio (DC1), replica Active Directory.  
 >   
->     Para obtener más información acerca de los pasos para aplicar la replicación de Active Directory, consulte [Replicación de Active Directory](https://technet.microsoft.com/library/cc794809(WS.10).aspx)  
+>     Para obtener más información acerca de los pasos para aplicar la replicación de Active Directory, consulte [Replicación de Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794809(v=ws.10))  
 
 En lugar de usar el Asistente para agregar roles y características en el Administrador del servidor, también puedes usar Windows PowerShell para instalar y configurar el rol de servidor de AD RMS tal y como se muestra en el procedimiento siguiente.  
 
@@ -562,7 +562,7 @@ Configura Microsoft Exchange Server en este equipo. Para obtener más informaci�
 -   Conecta la máquina virtual a ID_AD_Network.  
 
 > [!IMPORTANT]  
-> Para unir máquinas virtuales a un dominio e implementar tipos de notificaciones en bosques es necesario que las máquinas virtuales puedan resolver los nombres completos de los dominios relevantes. Para ello, puede que tengas que configurar manualmente las opciones de DNS en las máquinas virtuales. Para obtener más información, consulte [Configuración de una red virtual](https://technet.microsoft.com/library/cc732470%28v=ws.10%29.aspx).  
+> Para unir máquinas virtuales a un dominio e implementar tipos de notificaciones en bosques es necesario que las máquinas virtuales puedan resolver los nombres completos de los dominios relevantes. Para ello, puede que tengas que configurar manualmente las opciones de DNS en las máquinas virtuales. Para obtener más información, consulte [Configuración de una red virtual](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732470(v=ws.10)).  
 >   
 > Todas las imágenes de máquinas virtuales (servidores y clientes) deben reconfigurarse para que usen una dirección IP estática de la versión 4 (IPv4) y la configuración de cliente del Sistema de nombres de dominio (DNS). Para obtener más información, consulte [Configurar un cliente DNS con una dirección IP estática](https://go.microsoft.com/fwlink/?LinkId=150952).  
 
@@ -747,7 +747,7 @@ Cree el usuario Jeff Low con la contraseña <strong>pass@word1</strong> y asigne
 
 5. En el cuadro de diálogo **Entrada de permiso para permisos**, haga clic en **Agregar una condición** y especifique las condiciones siguientes:  [**Usuario**] [**Empresa**] [**Igual**] [**Valor**] [**Adatum**]. Los permisos deben ser **Modificar, Leer y ejecutar, Leer, Escribir**.  
 
-6. Haga clic en **Aceptar**.  
+6. Haga clic en **OK**.  
 
 7. Haz clic en **Aceptar** tres veces para terminar y volver al Centro de administración de Active Directory.  
 
@@ -835,6 +835,3 @@ Crea un nuevo volumen NTFS en FILE1 y crea la siguiente carpeta: D:\Earnings.
 7. Haga clic en la pestaña **seguridad** , haga clic en **Opciones avanzadas**y, a continuación, haga clic en la pestaña **directiva central** . Debería ver la lista **AdatumEmployeeAccessRule** . Puedes expandir el elemento para ver todos los permisos que estableciste cuando creaste la regla en Active Directory.  
 
 8. Haz clic en **Aceptar** para volver al Explorador de Windows.  
-
-
-

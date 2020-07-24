@@ -8,12 +8,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e1989630cadd7d63f8ed041174135722d568484f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0790ea13f18383666a090f5c846b2b20bee9aba
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824428"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966277"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administración simplificada de AD DS
 
@@ -21,23 +21,23 @@ ms.locfileid: "80824428"
 
 En este tema se explican las capacidades y ventajas de la implementación y administración de controladores de dominio de Windows Server 2012, así como las diferencias entre la implementación del controlador de dominio del sistema operativo anterior y la nueva implementación de Windows Server 2012.  
   
-Windows Server 2012 presentó la próxima generación de Active Directory Domain Services administración simplificada y era la reutilización más radical del dominio desde el servidor Windows 2000. La Administración simplificada de AD DS se ha inspirado en lo aprendido a lo largo de doce años de Active Directory para crear una experiencia de administración más compatible, flexible e intuitiva para arquitectos y administradores. Esto ha conllevado la creación de nuevas versiones de las tecnologías existentes y la ampliación de las capacidades de los componentes incluidos en Windows Server 2008 R2.  
+Windows Server 2012 presentó la próxima generación de Active Directory Domain Services administración simplificada y era la reutilización más radical del dominio desde el servidor Windows 2000. La Administración simplificada de AD DS se ha inspirado en lo aprendido a lo largo de doce años de Active Directory para crear una experiencia de administración más compatible, flexible e intuitiva para arquitectos y administradores. Esto ha conllevado la creación de nuevas versiones de las tecnologías existentes y la ampliación de las capacidades de los componentes incluidos en Windows Server 2008 R2.  
   
 La Administración simplificada de AD DS supone un nuevo concepto de implementación de dominio.  
   
-- La implementación de roles de AD DS ahora forma parte de la nueva arquitectura de Administrador del servidor y permite la instalación remota  
+- La implementación de roles de AD DS ahora forma parte de la nueva arquitectura de Administrador del servidor y permite la instalación remota  
 - El motor de implementación y configuración de AD DS es ahora Windows PowerShell, incluso cuando se utiliza el nuevo asistente de configuración de AD DS  
 - La extensión de esquema, la preparación de bosques y la preparación de dominios forman parte automáticamente de la promoción de controladores de dominio y ya no requieren tareas separadas en servidores especiales, como el maestro de esquema  
 - La promoción ahora incluye la comprobación de requisitos previos, que valida la disponibilidad del bosque y del dominio para el nuevo controlador de dominio, de modo que se reduce la posibilidad de promociones erróneas  
 - El módulo de Active Directory para Windows PowerShell ahora incluye cmdlets para la administración de la topología de replicación, el control de acceso dinámico y otras operaciones  
 - El nivel funcional de bosque de Windows Server 2012 no implementa nuevas características, y el nivel funcional de dominio se requiere únicamente para un subconjunto de características nuevas de Kerberos, lo que exime a los administradores de la necesidad frecuente de un entorno de controlador de dominio homogéneo  
 - Se ha añadido compatibilidad completa con controladores de dominio virtualizados, para incluir la implementación automatizada y la protección de la reversión  
-   - Para obtener más información acerca de los controladores de dominio virtualizados, consulte [Introducción &#40;a Active Directory Domain Services AD DS&#41;&#41; &#40;nivel de virtualización 100](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md).
+   - Para obtener más información acerca de los controladores de dominio virtualizados, consulte la [Introducción a la &#40;de Active Directory Domain Services AD DS&#41; virtualización &#40;nivel 100&#41;](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md).
 
 Además, se han introducido numerosas mejoras administrativas y de mantenimiento:  
 
 - El Centro de administración de Active Directory incluye una papelera de reciclaje gráfica de Active Directory, la administración de la directiva de contraseña específica y el visor del historial de Windows PowerShell
-- El nuevo Administrador del servidor tiene interfaces específicas de AD DS para la supervisión del rendimiento, análisis de procedimientos recomendados, servicios críticos y registros de eventos  
+- El nuevo Administrador del servidor tiene interfaces específicas de AD DS para la supervisión del rendimiento, análisis de procedimientos recomendados, servicios críticos y registros de eventos  
 - Las cuentas de servicio administradas de grupo son compatibles con varios equipos que utilicen las mismas entidades de seguridad  
 - Las mejoras en la emisión y la supervisión de los identificadores relativos (RID) mejoran la capacidad de administración en dominios desarrollados de Active Directory  
 
@@ -55,7 +55,7 @@ La extensión de esquema de bosque y la preparación de dominios de Active Direc
   
 Adprep.exe permanece en el DVD para la preparación independiente de bosques y de dominios. La versión de la herramienta incluida en Windows Server 2012 es compatible con las versiones anteriores (Windows Server 2008 x64 y Windows Server 2008 R2). Adprep.exe también es compatible con forestprep y domainprep remotos, igual que las herramientas de configuración de controladores de dominio basadas en ADDSDeployment.  
   
-Para obtener más información sobre Adprep y la preparación de bosques de sistemas operativos anteriores, consulte [Ejecutar Adprep (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd464018(WS.10).aspx).  
+Para obtener más información sobre Adprep y la preparación de bosques de sistemas operativos anteriores, consulte [Ejecutar Adprep (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)).  
 
 ## <a name="server-manager-ad-ds-integration"></a>Integración de AD DS con el Administrador del servidor
 
@@ -65,7 +65,7 @@ El Administrador del servidor actúa como concentrador de las tareas de administ
   
 Active Directory Domain Services es uno de esos roles de concentrador; al ejecutar Administrador del servidor en un controlador de dominio o en el Herramientas de administración remota del servidor en Windows 8, verá problemas importantes recientes en los controladores de dominio del bosque.  
   
-Dichas vistas son las siguientes:  
+Estas vistas incluyen:  
   
 - Disponibilidad del servidor  
 - Alertas del monitor de rendimiento por un elevado uso de CPU y memoria  
@@ -81,7 +81,7 @@ Windows Server 2008 R2 introdujo la papelera de reciclaje de Active Directory, q
   
 Windows Server 2012 mejora las capacidades existentes de restauración basadas en Windows PowerShell con una nueva interfaz gráfica en el Centro de administración de Active Directory. Esto permite a los administradores habilitar la papelera de reciclaje y ubicar o restaurar objetos eliminados en los contextos de dominio del bosque, sin ejecutar directamente cmdlets de Windows PowerShell. El Centro de administración de Active Directory y la papelera de reciclaje de Active Directory siguen usando Windows PowerShell a un nivel más profundo, por lo que los scripts y procedimientos anteriores todavía resultan valiosos.  
   
-Para obtener más información sobre la papelera de reciclaje de Active Directory, consulte la [Guía paso a paso de la papelera de reciclaje de Active Directory (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd392261(WS.10).aspx).  
+Para obtener más información sobre la papelera de reciclaje de Active Directory, consulte la [Guía paso a paso de la papelera de reciclaje de Active Directory (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd392261(v=ws.10)).  
   
 ## <a name="active-directory-administrative-center-fine-grained-password-policy"></a>Directiva de contraseña específica del Centro de administración de Active Directory
 
@@ -91,7 +91,7 @@ Windows Server 2008 introdujo la directiva de contraseña específica (FGPP), qu
   
 Windows Server 2012 aporta una interfaz gráfica para la directiva de contraseña específica. El Centro de administración de Active Directory es donde se encuentra este nuevo cuadro de diálogo, que ofrece una administración de FGPP simplificada para todos los administradores.  
   
-Para obtener más información sobre la directiva de contraseña específica, consulte la [Guía paso a paso para la configuración de directivas de bloqueo de cuenta y contraseña específica de AD DS (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx).  
+Para obtener más información sobre la directiva de contraseña específica, consulte la [Guía paso a paso para la configuración de directivas de bloqueo de cuenta y contraseña específica de AD DS (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770842(v=ws.10)).  
   
 ## <a name="active-directory-administrative-center-windows-powershell-history-viewer"></a>Visor del historial de Windows PowerShell del Centro de administración de Active Directory
 
@@ -107,13 +107,13 @@ Aunque el módulo de Active Directory contiene más de un centenar de cmdlets, e
   
 Windows Server 2012 agrega más cmdlets de replicación de Active Directory al módulo de Windows PowerShell de Active Directory. Estos permiten la configuración de sitios, subredes, conexiones, vínculos a sitios y puentes nuevos o existentes. Asimismo, devuelven metadatos de replicación, estado de replicación, puesta en cola e información sobre vectores de versión de actualización de Active Directory. La introducción de los cmdlets de replicación (combinados con los cmdlets de implementación y otros cmdlets existentes de AD DS) permite administrar un bosque utilizando solo Windows PowerShell. De este modo se ofrecen nuevas oportunidades a los administradores que desean aprovisionar y administrar Windows Server 2012 sin una interfaz gráfica, lo que reduce la superficie de ataque del sistema operativo y los requisitos de mantenimiento. Esto es especialmente importante cuando se implementan servidores en redes de alta seguridad, como el Enrutador de protocolo de Internet secreto (SIPR) y DMZ corporativas.  
   
-Para obtener más información sobre la replicación y la topología de sitio de AD DS, consulte la [Referencia técnica de Windows Server](https://technet.microsoft.com/library/cc739127(WS.10).aspx).  
+Para obtener más información sobre la replicación y la topología de sitio de AD DS, consulte la [Referencia técnica de Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10)).  
 
 ## <a name="rid-management-and-issuance-improvements"></a>Mejoras en la emisión y la administración de RID
 
 Active Directory de Windows 2000 introdujo el maestro RID, que emite grupos de identificadores relativos para controladores de dominio, con el fin de crear identificadores de seguridad (SID) de elementos de confianza de seguridad, como usuarios, grupos y equipos.  De manera predeterminada, este espacio global de RID se limita a 2<sup>30</sup> (o 1.073.741.823) SID totales creados en un dominio. Los SID no pueden regresar al grupo o volver a emitirse. Con el paso del tiempo, los RID podrían empezar a escasear en un dominio grande, o podrían producirse accidentes que conllevaran la disminución innecesaria de los RID y su agotamiento final.  
   
-Windows Server 2012 aborda una serie de problemas de emisión y administración de RID que descubrieron los clientes y el Servicio de soporte al cliente de Microsoft a medida que AD DS se iban desarrollando desde la creación de los primeros dominios de Active Directory en 1999. Entre ellos se incluyen los siguientes:  
+Windows Server 2012 aborda una serie de problemas de emisión y administración de RID que descubrieron los clientes y el Servicio de soporte al cliente de Microsoft a medida que AD DS se iban desarrollando desde la creación de los primeros dominios de Active Directory en 1999. Entre ellas se incluyen las siguientes:  
 
 - Las advertencias de consumo de RID periódico se escriben en el registro de eventos  
 - Los eventos se registran cuando un administrador invalida un grupo de RID  
@@ -121,9 +121,9 @@ Windows Server 2012 aborda una serie de problemas de emisión y administración 
 - Ahora se aplican y se registran límites de RID artificiales cuando el espacio global de RID es reducido, lo que permite al administrador tomar medidas cuando se agota el espacio global
 - El espacio global de RID ya puede aumentarse en un bit, lo que duplica el tamaño a 2<sup>31</sup> (2.147.483.648 SID)  
 
-Para obtener más información sobre los RID y el maestro RID, consulte [Funcionamiento de los identificadores de seguridad](https://technet.microsoft.com/library/cc778824(WS.10).aspx).  
+Para obtener más información sobre los RID y el maestro RID, consulte [Funcionamiento de los identificadores de seguridad](/previous-versions/windows/it-pro/windows-server-2003/cc778824(v=ws.10)).  
   
-## <a name="ad-ds-role-deployment-and-management-architecture"></a>Arquitectura de administración e implementación del rol de AD DS
+## <a name="ad-ds-role-deployment-and-management-architecture"></a>Arquitectura de administración e implementación del rol de AD DS
 
 El Administrador del servidor y el módulo ADDSDeployment de Windows PowerShell confían en los siguientes ensamblados básicos para la funcionalidad cuando implementan o administran el rol de AD DS:  
 
@@ -170,13 +170,13 @@ El código para la preparación de AD anteriormente almacenado en ADprep.exe se 
 ![administración simplificada](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_AdprepDLLs.png)  
   
 > [!IMPORTANT]  
-> No existe ninguna herramienta Adprep32.exe de 32 bits para Windows Server 2012. Debes tener por lo menos un equipo con Windows Server 2008 x64, Windows Server 2008 R2 o Windows Server 2012, que se ejecute como controlador de dominio, servidor miembro o en un grupo de trabajo, para preparar el bosque y el dominio. Adprep.exe no se ejecuta en Windows Server 2003 x64.  
+> No existe ninguna herramienta Adprep32.exe de 32 bits para Windows Server 2012. Debes tener por lo menos un equipo con Windows Server 2008 x64, Windows Server 2008 R2 o Windows Server 2012, que se ejecute como controlador de dominio, servidor miembro o en un grupo de trabajo, para preparar el bosque y el dominio. Adprep.exe no se ejecuta en Windows Server 2003 x64.  
   
 ## <a name="prerequisite-checking"></a><a name="BKMK_PrereuisiteChecking"></a>Comprobación de requisitos previos
 
 El sistema de comprobación de requisitos previos integrado en el código administrado de ADDSDeployment de Windows PowerShell funciona de maneras diferentes, en función de la operación. Las tablas incluidas a continuación describen cada prueba, cuándo se utiliza y una explicación de cómo y qué comprueba. Estas tablas pueden resultar muy útiles si se produce algún problema cuando la comprobación es incorrecta y el error no es suficiente para encontrar una solución.  
   
-Estas pruebas se registran en el canal de registro de eventos operativos **DirectoryServices-Deployment** en la categoría de tarea **Básica**, siempre con el identificador de evento **103**.  
+Estas pruebas se registran en el canal de registro de eventos operativos **DirectoryServices-Deployment** en la categoría de tarea **Básica**, siempre con el identificador de evento **103**.  
   
 ### <a name="prerequisite-windows-powershell"></a>Windows PowerShell con requisitos previos
 
@@ -194,7 +194,7 @@ En general, no es necesario ejecutar estos cmdlets; se ejecutan automáticamente
 
 ||||  
 |-|-|-|  
-|Nombre de la prueba|Protocolos<p>usado|Explicación y notas|  
+|Nombre de la prueba|Protocolos<p>usados|Explicación y notas|  
 |VerifyAdminTrusted<p>ForDelegationProvider|LDAP|Comprueba que tienes el privilegio "Habilitar confianza con el equipo y las cuentas de usuario para delegación" (SeEnableDelegationPrivilege) en el controlador de dominio asociado existente. Para ello es necesario tener acceso al atributo tokenGroups construido.<p>No se utiliza al contactar con controladores de dominio de Windows Server 2003. Debes confirmar manualmente este privilegio antes de la promoción.|  
 |VerifyADPrep<p>Prerequisites (forest)|LDAP|Detecta y contacta con el maestro de esquema mediante el atributo namingContexts de rootDSE y el atributo fsmoRoleOwner de contexto de nombre de esquema. Determina qué operaciones de preparación (forestprep, domainprep o rodcprep) son necesarias para la instalación de AD DS. Comprueba que se espera el objectVersion de esquema y si necesita más extensión.|  
 |VerifyADPrep<p>Prerequisites (domain and RODC)|LDAP|Detecta y contacta con el maestro de infraestructura mediante el atributo namingContexts de rootDSE y el atributo fsmoRoleOwner de contenedor de infraestructura. En el caso de una instalación de RODC, esta prueba descubre el maestro de nomenclatura de dominios y se asegura de que está en línea.|  
@@ -203,10 +203,10 @@ En general, no es necesario ejecutar estos cmdlets; se ejecutan automáticamente
 |CheckDomainPrep<p>GroupMembership|LDAP,<p>RPC a través de SMB (LSARPC)|Comprueba que el usuario pertenece al grupo Administradores de dominio y que tiene el privilegio Administrar registros de eventos de auditoría y seguridad (SesScurityPrivilege) en los controladores de dominio existentes.|  
 |CheckRODCPrep<p>GroupMembership|LDAP,<p>RPC a través de SMB (LSARPC)|Comprueba que el usuario pertenece al grupo Administradores de organización y que tiene el privilegio Administrar registros de eventos de auditoría y seguridad (SesScurityPrivilege) en los controladores de dominio existentes.|  
 |VerifyInitSync<p>AfterReboot|LDAP|Comprueba que el maestro de esquema se ha replicado por lo menos una vez desde que se reinició estableciendo un valor ficticio en el atributo rootDSE becomeSchemaMaster.|  
-|VerifySFUHotFix<p>Applied|LDAP|Comprueba que el esquema de bosque existente no contiene la extensión SFU2 de problema conocido para el atributo UID con el OID 1.2.840.113556.1.4.7000.187.102.<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
-|VerifyExchange<p>SchemaFixed|LDAP, WMI, DCOM, RPC|Validar que el esquema de bosque existente todavía no contiene las extensiones Exchange 2000 de problema MS-Exch-Assistant-Name, MS-Exch-LabeledURI y MS-Exch-House-Identifier ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))|  
-|VerifyWin2KSchema<p>Consistency|LDAP|Comprueba que el esquema de bosque existente tiene clases y atributos básicos coherentes (no modificados incorrectamente por terceros).|  
+|VerifySFUHotFix<p>Aplicado|LDAP|Comprueba que el esquema de bosque existente no contiene la extensión SFU2 de problema conocido para el atributo UID con el OID 1.2.840.113556.1.4.7000.187.102.<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
+|VerifyExchange<p>SchemaFixed|LDAP, WMI, DCOM, RPC|Validar que el esquema de bosque existente todavía no contiene las extensiones Exchange 2000 de problema MS-Exch-Assistant-Name, MS-Exch-LabeledURI y MS-Exch-House-Identifier ( [https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649) )|  
+|VerifyWin2KSchema<p>Coherencia|LDAP|Comprueba que el esquema de bosque existente tiene clases y atributos básicos coherentes (no modificados incorrectamente por terceros).|  
 |DCPromo|DRSR a través de RPC,<p>LDAP,<p>DNS<p>RPC a través de SMB (SAMR)|Comprueba la sintaxis de línea de comandos que ha pasado al código de promoción y a la promoción de prueba. Comprueba que el bosque o dominio todavía no existe cuando se crea uno nuevo.|  
 |VerifyOutbound<p>ReplicationEnabled|LDAP, DRSR a través de SMB, RPC a través de SMB (LSARPC)|Comprueba que el controlador de dominio existente especificado como asociado de replicación tiene la replicación de salida habilitada mediante la comprobación del atributo de opciones del objeto de configuración NTDS para NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)|  
-|VerifyMachineAdmin<p>Password|DRSR a través de RPC,<p>LDAP,<p>DNS<p>RPC a través de SMB (SAMR)|Comprueba que la contraseña del modo seguro establecida para DSRM cumple los requisitos de complejidad del dominio.|  
+|VerifyMachineAdmin<p>Contraseña|DRSR a través de RPC,<p>LDAP,<p>DNS<p>RPC a través de SMB (SAMR)|Comprueba que la contraseña del modo seguro establecida para DSRM cumple los requisitos de complejidad del dominio.|  
 |VerifySafeModePassword|*N/D*|Comprueba que la contraseña establecida para el administrador local cumple los requisitos de complejidad de la directiva de seguridad del equipo.|  

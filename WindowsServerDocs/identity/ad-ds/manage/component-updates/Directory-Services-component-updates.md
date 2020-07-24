@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cde839feda47d55415b2b6cc1026a7a3e6515a44
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 54a2ef82d5eccabaf8be0971ca0324498e75bb78
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823098"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966417"
 ---
 # <a name="directory-services-component-updates"></a>Actualizaciones de componentes de Servicios de directorio
 
@@ -26,7 +26,7 @@ ms.locfileid: "80823098"
   
 En esta lección se explican las actualizaciones de componentes de servicios de directorio en Windows Server 2012 R2.  
   
-## <a name="what-you-will-learn"></a>Qué aprenderá  
+## <a name="what-you-will-learn"></a>Aprendizaje  
 Explique las siguientes nuevas actualizaciones de componentes de servicios de directorio:  
   
 -   Explique las siguientes nuevas actualizaciones de componentes de servicios de directorio:  
@@ -67,7 +67,7 @@ Con la versión, hay nuevos niveles funcionales de dominio y bosque:
   
     -   Renovar los vales de usuario (TGT) más allá de las 4 horas de vigencia inicial  
   
-2.  Directivas de autenticación  
+2.  Authentication Policies  
   
     Nuevas directivas de Active Directory basadas en bosques que se pueden aplicar a las cuentas de dominios de Windows Server 2012 R2 para controlar a qué hosts puede iniciar sesión una cuenta y aplicar condiciones de control de acceso para la autenticación en los servicios que se ejecutan como una cuenta  
   
@@ -144,7 +144,7 @@ Estos archivos. ldf contienen cambios de esquema para el **servicio de registro 
   
 2.  Sch69  
   
-## <a name="deprecation-of-ntfrs"></a><a name="BKMK_NTFRS"></a>Desuso de NTFRS  
+## <a name="deprecation-of-ntfrs"></a><a name="BKMK_NTFRS"></a>Degradación de NTFRS  
   
 ### <a name="overview"></a>Información general  
 FRS está en desuso en Windows Server 2012 R2.  La degradación de FRS se logra aplicando un nivel funcional de dominio mínimo (nivel funcional) de Windows Server 2008.  Esta aplicación solo está presente si el nuevo dominio se crea con Administrador del servidor o Windows PowerShell.  
@@ -269,7 +269,7 @@ Log Record Bytes Generated: 0
   
 ### <a name="to-enable-the-stats-control-in-ldp"></a><a name="BKMK_EnableStats"></a>Para habilitar el control de estadísticas en LDP  
   
-1.  Abra LDP. exe y conéctese y enlace a un controlador de dominio.  
+1.  Abra LDP.exe y conéctese y enlace con un controlador de dominio.  
   
 2.  En el menú **Opciones** , haga clic en **controles**.  
   
@@ -288,7 +288,7 @@ Log Record Bytes Generated: 0
 ### <a name="try-this-use-ldp-to-return-query-statistics"></a>Pruebe esto: usar LDP para devolver estadísticas de consulta  
 Realice lo siguiente en un controlador de dominio o en un cliente o servidor unido a un dominio que tenga instaladas las herramientas de AD DS.  Repita el siguiente destino con el controlador de dominio de Windows Server 2012 y el controlador de dominio de Windows Server 2012 R2.  
   
-1.  Revise el artículo [sobre la creación de aplicaciones habilitadas para Microsoft ad más eficaces](https://msdn.microsoft.com/library/ms808539.aspx) y vuelva a hacer referencia a ella según sea necesario.  
+1.  Revise el artículo [sobre la creación de aplicaciones habilitadas para Microsoft ad más eficaces](/previous-versions/ms808539(v=msdn.10)) y vuelva a hacer referencia a ella según sea necesario.  
   
 2.  Usar LDP, habilitar las estadísticas de búsqueda (vea [para habilitar el control de estadísticas en LDP](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_EnableStats))  
   
@@ -299,15 +299,15 @@ Realice lo siguiente en un controlador de dominio o en un cliente o servidor uni
 5.  Intente crear una búsqueda que tarde mucho tiempo en completarse (es posible que desee aumentar la opción de **límite de tiempo** para que la búsqueda no agote el tiempo de espera).  
   
 ### <a name="additional-resources"></a>Recursos adicionales  
-[¿Qué son las búsquedas Active Directory?](https://technet.microsoft.com/library/cc783845(v=ws.10).aspx)  
+[¿Qué son las búsquedas Active Directory?](/previous-versions/windows/it-pro/windows-server-2003/cc783845(v=ws.10))  
   
-[Cómo funcionan las búsquedas de Active Directory](https://technet.microsoft.com/library/cc755809(v=WS.10).aspx)  
+[Cómo funcionan las búsquedas de Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10))  
   
-[Creación de aplicaciones más eficaces habilitadas para Microsoft Active Directory](https://msdn.microsoft.com/library/ms808539.aspx)  
+[Creación de aplicaciones más eficaces habilitadas para Microsoft Active Directory](/previous-versions/ms808539(v=msdn.10))  
   
 [951581](https://support.microsoft.com/kb/951581) las consultas LDAP se ejecutan más lentamente de lo esperado en el servicio de directorio ad o LDS/Adam y el ID. de evento 1644 se puede registrar  
   
-## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>mejoras en el evento 1644  
+## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>Mejoras en el evento 1644  
   
 ### <a name="overview"></a>Información general  
 Esta actualización agrega estadísticas de resultados de búsqueda LDAP adicionales al ID. de evento 1644 para ayudar a solucionar problemas.  Además, hay un nuevo valor del registro que se puede usar para habilitar el registro en un umbral basado en el tiempo.  Estas mejoras están disponibles en Windows Server 2012 y Windows Server 2008 R2 SP1 a través de KB [2800945](https://support.microsoft.com/kb/2800945) y estarán disponibles para windows Server 2008 SP2.  
@@ -325,7 +325,7 @@ El evento contiene:
   
 -   Nodo inicial  
   
--   Filtro  
+-   Filter  
   
 -   Ámbito de búsqueda  
   
@@ -367,11 +367,11 @@ Windows Registry Editor Version 5.00
 ```  
   
 #### <a name="comparison-of-the-old-and-new-event-id-1644"></a>Comparación del ID. de evento anterior y nuevo 1644  
-ANTIGÜEDAD  
+OLD  
   
 ![actualizaciones de servicios de directorio](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012.gif)  
   
-NUEVO  
+NEW  
   
 ![actualizaciones de servicios de directorio](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012R2.gif)  
   
@@ -402,7 +402,5 @@ Estas actualizaciones aumentan el rendimiento máximo de alrededor de 600 Mbps a
 > No hay ninguna configuración configurable para modificar este comportamiento.  
   
 ### <a name="additional-resources"></a>Recursos adicionales  
-[Cómo funciona el modelo de replicación de Active Directory](https://technet.microsoft.com/library/cc772726(v=WS.10).aspx)  
+[Cómo funciona el modelo de replicación de Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc772726(v=ws.10))  
   
-
-

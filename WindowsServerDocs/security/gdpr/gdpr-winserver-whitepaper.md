@@ -1,101 +1,101 @@
 ---
 title: Inicio de tu viaje por el Reglamento general de protección de datos (GDPR) para Windows Server 2016
-description: Usa este artículo para comprender qué es GDPR y cuáles son los productos que Microsoft proporciona para ayudarte a empezar en el camino del cumplimiento.
+description: Use este artículo para entender qué es RGPD y sobre los productos que Microsoft proporciona para ayudarle a empezar a cumplir con el cumplimiento normativo.
 ms.technology: techgroup-security
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 51768dc65128f27dcbf78cbfc776500ac3832615
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6e105171a9d645eb93ce4739514752698cd45c02
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949832"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118649"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Inicio del viaje de Reglamento general de protección de datos (RGPD) para Windows Server 
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este artículo se proporciona información sobre la GDPR, entre la que se incluye en qué consiste y los productos que Microsoft proporciona para ayudarte a cumplirla.
+En este artículo se proporciona información sobre RGPD, incluido lo que es, y los productos que Microsoft proporciona para ayudarle a ser compatible.
 
 ## <a name="introduction"></a>Introducción
-El 25 de mayo de 2018 entrará en vigor una ley de privacidad europea que establece un nuevo listón global de derechos de privacidad, seguridad y cumplimiento.
+El 25 de mayo de 2018 entrará en vigor una ley de privacidad Europaa que establecerá una nueva barrera global en materia de derechos de privacidad, seguridad y cumplimiento.
 
-La GDPR (normativa general de protección de datos) se ocupa fundamentalmente de la protección y la habilitación de los derechos de privacidad de las personas. La GDPR establece estrictos requisitos de privacidad global que rigen la manera en que se administran y protegen los datos personales a la vez que se respecta la elección individual, independientemente de dónde se envían, procesan o almacenan los datos.
+El Reglamento general de protección de datos, o RGPD, es fundamental para proteger y habilitar los derechos de privacidad de los usuarios. El RGPD establece requisitos de privacidad globales estrictos que rigen cómo administrar y proteger los datos personales, a la vez que respeta la elección individual, independientemente de dónde se envíen, se procese o se almacenen los datos.
 
-Microsoft y nuestros clientes se encuentran ahora en el camino de lograr los objetivos de privacidad de la GDPR. En Microsoft, creemos que la privacidad es un derecho fundamental y que la GDPR supone un importante paso hacia adelante para aclarar y permitir los derechos de privacidad individuales. Pero también sabemos que la GDPR requerirá cambios importantes por parte de las organizaciones de todo el mundo.
+Microsoft y nuestros clientes están ahora en un viaje para lograr los objetivos de privacidad de RGPD. En Microsoft, creemos que la privacidad es un derecho fundamental y creemos que el RGPD es un paso importante para aclarar y habilitar los derechos de privacidad individuales. Pero también reconocemos que RGPD requerirá cambios significativos por parte de las organizaciones de todo el mundo.
 
-Hemos explicado nuestro compromiso con la GDPR y la manera en que damos soporte a nuestros clientes en la entrada de blog [Get GDPR compliant with the Microsoft Cloud](https://blogs.microsoft.com/on-the-issues/2017/02/15/get-gdpr-compliant-with-the-microsoft-cloud/#hv52B68OZTwhUj2c.99) de nuestro Director de privacidad [Brendon Lynch](https://blogs.microsoft.com/on-the-issues/author/brendonlynch/) y la entrada de blog [Earning your trust with contractual commitments to the General Data Protection Regulation](https://blogs.microsoft.com/on-the-issues/2017/04/17/earning-trust-contractual-commitments-general-data-protection-regulation/#6QbqoGWXCLavGM63.99)"de [Rich Sauer](https://blogs.microsoft.com/on-the-issues/author/rsauer/), vicepresidente corporativo y consejero general adjunto de Microsoft.
+Hemos descrito nuestro compromiso con el RGPD y la forma en que ofrecemos soporte técnico a nuestros clientes en [el RGPD de obtención](https://blogs.microsoft.com/on-the-issues/2017/02/15/get-gdpr-compliant-with-the-microsoft-cloud/#hv52B68OZTwhUj2c.99) de la publicación de blog de la Microsoft Cloud de nuestro jefe de privacidad [Brendon Lynch](https://blogs.microsoft.com/on-the-issues/author/brendonlynch/) y la [obtención de su confianza con compromisos contractuales en la](https://blogs.microsoft.com/on-the-issues/2017/04/17/earning-trust-contractual-commitments-general-data-protection-regulation/#6QbqoGWXCLavGM63.99)publicación de blog de la Reglamento General de protección de datos ", que es [enriquecida Sauer](https://blogs.microsoft.com/on-the-issues/author/rsauer/) , el vicepresidente corporativo de Microsoft & consejero general adjunto.
 
-Aunque su viaje hasta el cumplimiento de GDPR puede parecer un desafío, estamos aquí para ayudarte. Para obtener información específica sobre la GDPR, nuestros compromisos y cómo comenzar el viaje, visita la [sección GDPR del Microsoft Trust Center](https://www.microsoft.com/trustcenter/privacy/gdpr).
+Aunque el viaje al cumplimiento de RGPD puede parecer un desafío, estamos aquí para ayudarle. Para obtener información específica sobre RGPD, nuestros compromisos y cómo comenzar el viaje, visite la [sección RGPD del centro de confianza de Microsoft](https://www.microsoft.com/trustcenter/privacy/gdpr).
 
-## <a name="gdpr-and-its-implications"></a>GDPR y sus implicaciones
-La GDPR es una normativa compleja que puede requerir cambios importantes respecto a cómo se recopila, usan y administran datos personales. Microsoft cuenta con una larga trayectoria ayudando a nuestros clientes a cumplir complejas disposiciones reglamentarias y, en lo referente a tu preparación para la GDPR, somos tu partner en este viaje.
+## <a name="gdpr-and-its-implications"></a>RGPD y sus implicaciones
+RGPD es un Reglamento complejo que puede requerir cambios significativos en la forma en que se recopilan, usan y administran los datos personales. Microsoft tiene un largo historial de ayuda a nuestros clientes a cumplir con las normativas complejas y, cuando se trata de prepararse para el RGPD, somos su socio en este viaje.
 
-La GDPR impone reglas en las organizaciones que ofrecen bienes y servicios a las personas de la Unión Europea (UE), o que recopilan y analizan datos vinculados a los residentes de la UE, independientemente de dónde se encuentren esas empresas. Entre los elementos clave de la GDPR se encuentran los siguientes:
+El RGPD impone reglas sobre las organizaciones que ofrecen bienes y servicios a personas de la Unión Europea (UE) o que recopilan y analizan datos vinculados a residentes en la UE, independientemente de dónde se encuentren esas empresas. Entre los elementos clave de RGPD se encuentran los siguientes:
 
-- **Derechos de privacidad personal mejorados.** Se ha reforzado la protección de datos para residentes de la UE garantizando que tienen el derecho de tener acceso a sus datos personales, a corregir imprecisiones de dichos datos, a borrar dichos datos, a oponerse al procesamiento de sus datos personales y a moverlos.
+- **Derechos de privacidad personal mejorados.** Protección de datos reforzada para los residentes de la Unión Europea garantizando el derecho de acceso a sus datos personales, para corregir imprecisiones en esos datos, para borrar los datos, para el objeto para el procesamiento de sus datos personales y para moverlo.
 
-- **Aumento del deber de protección de datos personales.** Responsabilidad reforzada de las organizaciones que procesan datos personales, lo que proporciona una mayor claridad de la responsabilidad en la garantía del cumplimiento.
+- **Aumento del deber de protección de datos personales.** Una responsabilidad reforzada de las organizaciones que procesan datos personales, lo que proporciona una mayor claridad de la responsabilidad en garantizar el cumplimiento.
 
-- **Informes de infracciones de datos personales obligatorios.** Las organizaciones que controlan datos personales son necesarias para notificar las infracciones de datos personales que suponen un riesgo para los derechos y las libertades de las personas a sus autoridades de control sin retraso debido y, cuando sea posible, en un plazo no posterior a 72 horas una vez que conozcan la infracción.
+- **Informes de infracciones de datos personales obligatorios.** Las organizaciones que controlan los datos personales son necesarias para informar de las infracciones de datos personales que suponen un riesgo para los derechos y libertades de las personas a sus autoridades de supervisión sin ningún retraso inesperado y, en caso de que sea factible, no más tarde de 72 horas una vez que conocen la brecha.
 
-Como se podría esperar, la GDPR puede tener un impacto importante en tu empresa, lo que puede requerir que actualices las directivas de privacidad, implementes y refuerces los controles de protección de datos y los procedimientos de notificación de incumplimiento, implementes directivas muy transparentes e inviertas más en TI y formación. Microsoft Windows 10 puede ayudarte a abordar de forma eficaz y eficiente algunos de estos requisitos.
+Como es posible, el RGPD puede tener un impacto significativo en su empresa, lo que podría requerir la actualización de directivas de privacidad, implementar y fortalecer los controles de protección de datos y los procedimientos de notificación de incumplimiento, implementar directivas muy transparentes e invertir más en ti y entrenar. Microsoft Windows 10 puede ayudarle a solucionar de forma eficaz algunos de estos requisitos.
 
 ## <a name="personal-and-sensitive-data"></a>Datos personales y confidenciales
-Como parte de tu esfuerzo por cumplir con la GDPR, debes comprender de qué manera la normativa define los datos personales y confidenciales, y cómo se relacionan esas definiciones con los datos mantenidos por tu organización. En función de esta comprensión, podrá detectar dónde se crean, procesan, administran y almacenan los datos.
+Como parte de su esfuerzo por cumplir con el RGPD, debe comprender cómo define el Reglamento la información personal y confidencial y cómo se relacionan esas definiciones con los datos de su organización. En función de esta comprensión, podrá detectar dónde se crean, procesan, administran y almacenan los datos.
 
-La GDPR considera que los datos personales son cualquier información relacionada con una persona física identificada o identificable. Eso puede incluir tanto identificación directa (por ejemplo, la razón social) como la identificación indirecta (por ejemplo, información específica que hace que resulte evidente que es a ti a quien se refieren los datos). La GDPR también deja claro que el concepto de datos personales incluye identificadores en línea (por ejemplo, direcciones IP, id. de dispositivos móviles) y datos de ubicación.
+RGPD considera que los datos personales son cualquier información relacionada con una persona física identificada o identificable. Esto puede incluir tanto la identificación directa (por ejemplo, el nombre legal) como la identificación indirecta (como, por ejemplo, información específica que hace que se desactive). El RGPD también hace evidente que el concepto de datos personales incluye identificadores en línea (como direcciones IP, identificadores de dispositivos móviles) y datos de ubicación.
 
-RGPD introduce definiciones específicas para datos genéticos (como, por ejemplo, una secuencia de genes de un individuo) y datos biométricos. Datos genéticos y datos biométricos junto con otras subcategorías de datos personales (datos personales que revelan el origen racial o étnico, opiniones políticas, creencias religiosas o filosóficas o pertenencia a la Unión comercial: datos relativos al mantenimiento; o datos relativos a la vida sexual o la orientación sexual de la persona se trata como datos personales confidenciales en RGPD. Los datos personales confidenciales ofrecen protecciones mejoradas y, por lo general, requieren el consentimiento explícito de un individuo en el que se van a procesar estos datos.
+RGPD introduce definiciones específicas para datos genéticos (como, por ejemplo, una secuencia de genes de un individuo) y datos biométricos. Datos genéticos y datos biométricos, junto con otras subcategorías de datos personales (datos personales que revelan el origen racial o étnico, opiniones políticas, creencias religiosas o filosóficas o pertenencia a la Unión comercial: datos relativos al estado de salud, o datos relativos a la vida sexual de una persona o orientación sexual) se tratan como datos personales confidenciales en RGPD. Los datos personales confidenciales ofrecen protecciones mejoradas y, por lo general, requieren el consentimiento explícito de un individuo en el que se van a procesar estos datos.
 
-### <a name="examples-of-info-relating-to-an-identified-or-identifiable-natural-person-data-subject"></a>Ejemplos de información relacionada con una persona natural identificada o identificable (interesado)
-En esta lista se proporcionan ejemplos de varios tipos de información que se regularán a través de GDPR. No se trata de una lista exhaustiva.
+### <a name="examples-of-info-relating-to-an-identified-or-identifiable-natural-person-data-subject"></a>Ejemplos de información relacionada con una persona física identificada o identificable (sujeto de datos)
+En esta lista se proporcionan ejemplos de varios tipos de información que se regularán a través de RGPD. Esta no es una lista exhaustiva.
 
 -   Nombre
 
--   Número de identificación (por ejemplo, SSN)
+-   Número de identificación (como, SSN)
 
 -   Datos de ubicación (por ejemplo, dirección particular)
 
--   Identificador en línea (por ejemplo, dirección de correo electrónico, nombres de pantalla, dirección IP, id. de dispositivo)
+-   Identificador en línea (como la dirección de correo electrónico, los nombres de pantalla, la dirección IP, los identificadores de dispositivo)
 
--   Datos seudónimos (por ejemplo, usando una clave para identificar individuos)
+-   Seudónimos datos (como, con una clave para identificar a los usuarios)
 
--   Datos genéticos (por ejemplo, muestras biológicas de una persona)
+-   Datos genéticos (como, por ejemplo, muestras biológicas de un individuo)
 
 -   Datos biométricos (por ejemplo, huellas digitales, reconocimiento facial)
 
-## <a name="getting-started-on-the-journey-towards-gdpr-compliance"></a>Tareas iniciales en el camino hacia el cumplimiento de GDPR
-Dado todo lo que implica el cumplimiento de la GDPR, te recomendamos encarecidamente que no esperes a prepararte hasta que comience su aplicación. Debes revisar ahora tus prácticas de administración de datos y privacidad. Te recomendamos que comiences tu viaje hacia el cumplimiento de la GDPR centrándote en cuatro pasos clave:
+## <a name="getting-started-on-the-journey-towards-gdpr-compliance"></a>Introducción al cumplimiento de RGPD
+Dado que se trata de la cantidad necesaria para ser compatible con RGPD, se recomienda encarecidamente no esperar a prepararse hasta que comience la aplicación. Ahora debe revisar sus prácticas de privacidad y administración de datos. Se recomienda que comience el viaje al cumplimiento de RGPD centrándose en cuatro pasos clave:
 
--   **Cubierto.** Identifica qué datos personales tienes y dónde se encuentran. 
+-   **Cubierto.** Identifique qué datos personales tiene y dónde residen. 
 
--   **No.** Controla cómo se usan los datos personales y se obtiene acceso a ellos.
+-   **No.** controlar cómo se utilizan los datos personales y cómo se accede a ellos.
 
--   **Proteger.** Establece controles de seguridad para evitar y detectar vulnerabilidades e infracciones de datos, y responder ante ellas.  
+-   **Proteger.** establecer controles de seguridad para prevenir, detectar y responder a vulnerabilidades e infracciones de datos.  
 
--   **Enviar.** Actúa sobre solicitudes de datos, infracciones de datos de informe y mantén la documentación necesaria.
+-   **Enviar.** Actúe con las solicitudes de datos, las infracciones de datos del informe y mantenga la documentación necesaria.
 
-    ![Diagrama sobre cómo funcionan conjuntamente los 4 pasos clave de GDPR](../media/GDPR-Windows-Server-Overview/gdpr-steps-diagram.png)
+    ![Diagrama sobre cómo funcionan conjuntamente los 4 pasos principales de RGPD](../media/GDPR-Windows-Server-Overview/gdpr-steps-diagram.png)
 
-Para cada uno de los pasos, hemos descrito herramientas de ejemplo, recursos y características en distintas soluciones de Microsoft, que se pueden usar para ayudarte a cumplir los requisitos de ese paso. Aunque este artículo no es una guía completa de "procedimientos", hemos incluido vínculos para obtener más detalles y hay más información disponible en la [sección RGPD del centro de confianza de Microsoft](https://www.microsoft.com/trustcenter/privacy/gdpr).
+En cada uno de los pasos, se han descrito herramientas, recursos y características de ejemplo en diversas soluciones de Microsoft, que se pueden usar para ayudarle a abordar los requisitos de ese paso. Aunque este artículo no es una guía completa de "procedimientos", hemos incluido vínculos para obtener más detalles y hay más información disponible en la [sección RGPD del centro de confianza de Microsoft](https://www.microsoft.com/trustcenter/privacy/gdpr).
 
 ## <a name="windows-server-security-and-privacy"></a>Seguridad y privacidad de Windows Server
 RGPD requiere la implementación de las medidas de seguridad técnicas y organizativas adecuadas para proteger los datos personales y los sistemas de procesamiento. En el contexto del RGPD, los entornos de servidores físicos y virtuales pueden procesar potencialmente datos personales y confidenciales. El procesamiento puede significar cualquier operación o conjunto de operaciones, como la recopilación, el almacenamiento y la recuperación de datos.
 
-La capacidad de cumplir este requisito y de implementar las medidas de seguridad técnicas adecuadas debe reflejar las amenazas a las que se enfrentan en el entorno de ti cada vez más hostil. El panorama de amenazas de seguridad de hoy en día es una de las amenazas agresivas y Tenacious. En años anteriores, los atacantes malintencionados se centraban principalmente en obtener el reconocimiento de la comunidad a través de sus ataques la emoción que resulta de desconectar un sistema temporalmente. Desde entonces, el motivos del atacante ha desplazado hacia el dinero, incluidos los dispositivos de retención y los Hostage de datos hasta que el propietario paga el Ransom solicitado.
+La capacidad de cumplir este requisito y de implementar las medidas de seguridad técnicas adecuadas debe reflejar las amenazas a las que se enfrentan en el entorno de ti cada vez más hostil. El panorama de amenazas de seguridad de hoy en día es una de las amenazas agresivas y Tenacious. En años anteriores, los atacantes malintencionados nos centraron principalmente en obtener el reconocimiento de la comunidad a través de sus ataques o la emoción de desconectar temporalmente un sistema. Desde entonces, el motivos del atacante ha desplazado hacia el dinero, incluidos los dispositivos de retención y los Hostage de datos hasta que el propietario paga el Ransom solicitado.
 
-Los ataques modernos se centran cada vez más en el robo de propiedad intelectual a gran escala, la degradación de los sistemas dirigidos, que se pueden traducir en pérdidas financieras y, ahora, incluso el ciberterrorismo, que amenaza la seguridad de personas, empresas e intereses nacionales en todo el mundo. Estos atacantes suelen ser individuos con una alta formación y expertos en seguridad, algunos de los cuales están contratados por Estados nación con grandes presupuestos y recursos humanos aparentemente ilimitados. Estos tipos de amenaza requieren un enfoque que pueda hacer frente a este desafío.
+Los ataques modernos se centran cada vez en el robo de propiedad intelectual a gran escala. degradación del sistema de destino que puede provocar la pérdida financiera; y ahora, incluso Cyberterrorism, que pone en peligro la seguridad de personas, empresas y intereses nacionales en todo el mundo. Estos atacantes suelen ser usuarios altamente entrenados y expertos en seguridad, algunos de los cuales se encuentran en el empleo de Estados de nación que tienen grandes presupuestos y recursos humanos aparentemente ilimitados. Amenazas como estas requieren un enfoque que pueda cumplir este desafío.
 
-No solo estas amenazas suponen un riesgo para tu capacidad de mantener el control de los datos personales o confidenciales que puedes tener, sino que también constituyen un riesgo material para toda tu empresa en general. Considere los datos recientes de McKinsey, Ponemon Institute, Verizon y Microsoft:
+Estas amenazas no solo son un riesgo para la capacidad de mantener el control de los datos personales o confidenciales que pueda tener, pero también constituyen un riesgo importante para el negocio en general. Considere los datos recientes de McKinsey, Ponemon Institute, Verizon y Microsoft:
 
-- El coste medio del tipo de la infracción de datos que la GDPR espera que notifique es de 3.500.000 $.
+- El costo medio del tipo de infracción de datos que RGPD esperará que informe sea de $3,5 M.
 
-- El 63 % de estas infracciones implican contraseñas débiles o robadas que la GDPR espera que corrijas.
+- el 63% de estas brechas implican contraseñas poco seguras o robadas que el RGPD espera que usted solucione.
 
-- Todos los días se crean y se propagan más de 300.000 nuevas muestras de malware, lo que hace que tu tarea de abordar la protección de datos resulte aún más difícil.
+- Se crean y propagan más de 300.000 nuevos ejemplos de malware cada día, lo que permite que la tarea abordar la protección de datos aún más desafiante.
 
 Tal como se ha mostrado con los ataques de ransomware recientes, una vez que se ha llamado a la plaga de Internet, los atacantes van después de objetivos más grandes que pueden permitirse pagar más, con consecuencias catastróficas. El RGPD incluye penalizaciones que hacen que sus sistemas, incluidos equipos de escritorio y portátiles, contengan de hecho datos personales y con objetivos enriquecidos.
 
@@ -121,7 +121,7 @@ La postura de seguridad de Windows Server 2016 no es un Bolt. es un principio ar
 
 - **Aislar.** Aísle los componentes del sistema operativo y los secretos de datos, limite los privilegios de administrador y mida rigurosamente el estado del host.
 
-Con Windows Server, su capacidad de proteger, detectar y defender contra los tipos de ataques que pueden provocar infracciones de datos se ha mejorado considerablemente. Dados los estrictos requisitos en torno a la notificación de infracciones en la GDPR, garantizar que los sistemas de escritorio y portátiles están bien protegidos disminuirán los riesgos a los que te enfrentas y que podrían dar lugar a costosas notificaciones y análisis de incumplimientos.
+Con Windows Server, su capacidad de proteger, detectar y defender contra los tipos de ataques que pueden provocar infracciones de datos se ha mejorado considerablemente. Dados los requisitos rigurosos en torno a la notificación de brechas en el RGPD, garantizar que los sistemas de escritorio y portátiles estén bien defenderse reducirá los riesgos que enfrente, lo que podría dar lugar a costosas análisis de brechas y notificaciones.
 
 En la siguiente sección, verá cómo Windows Server proporciona funcionalidades que se ajustan de forma cuadrada en la fase de protección del recorrido de cumplimiento de RGPD. Estas funciones se dividen en tres escenarios de protección:
 
@@ -141,9 +141,9 @@ El chip incluye varios mecanismos de seguridad física que hacen que sea resiste
 
 -   Use la tecnología TPM para la autenticación de dispositivos de plataforma mediante la clave RSA única del TPM, que se graba en sí misma.
 
--   Garantizar la integridad de la plataforma llevando y almacenando medidas de seguridad.
+-   Ayudar a garantizar la integridad de la plataforma mediante la toma y el almacenamiento de las medidas de seguridad.
 
-La protección de dispositivo avanzada adicional relevante para el funcionamiento sin las infracciones de datos incluyen el Arranque seguro de Windows para ayudar a mantener la integridad del sistema al garantizar que el malware no se puede iniciar antes de las defensas del sistema.
+La protección de dispositivos avanzada adicional relacionada con el funcionamiento sin infracciones de datos incluye el arranque de confianza de Windows para ayudar a mantener la integridad del sistema, ya que garantiza que el malware no se puede iniciar antes que las defensas del sistema.
 
 ## <a name="windows-server-supporting-your-gdpr-compliance-journey"></a>Windows Server: compatibilidad con el recorrido de cumplimiento de RGPD
 Las principales características de Windows Server pueden ayudarle a implementar de forma eficaz y eficaz los mecanismos de seguridad y privacidad que RGPD requiere para el cumplimiento. Aunque el uso de estas características no garantizará su cumplimiento, se apoyará en sus esfuerzos por hacerlo.
@@ -152,7 +152,7 @@ El sistema operativo del servidor se encuentra en una capa estratégica de la in
 
 Al trabajar para proteger la identidad, el sistema operativo y los niveles de virtualización, Windows Server 2016 ayuda a bloquear los vectores de ataque comunes que se usan para obtener acceso ilícito a los sistemas: credenciales robadas, malware y un tejido de virtualización en peligro. Además de reducir el riesgo empresarial, los componentes de seguridad integrados en Windows Server 2016 ayudan a satisfacer los requisitos de cumplimiento de normas de seguridad del sector y del gobierno clave. 
 
-Estas protecciones de identidad, sistema operativo y virtualización permiten proteger mejor su centro de recursos que ejecuta Windows Server como una máquina virtual en cualquier nube, y limitar la capacidad de los atacantes de poner en peligro las credenciales, iniciar malware y permanecer sin detectar en el Storage. Del mismo modo, cuando se implementa como un host de Hyper-V, Windows Server 2016 ofrece garantía de seguridad para los entornos de virtualización a través de las funciones blindadas Virtual Machines y el Firewall distribuido. Con Windows Server 2016, el sistema operativo del servidor se convierte en un participante activo en su centro de seguridad.
+Estas protecciones de identidad, sistema operativo y virtualización permiten proteger mejor su centro de recursos que ejecuta Windows Server como una máquina virtual en cualquier nube, y limitar la capacidad de los atacantes de poner en peligro las credenciales, iniciar malware y permanecer sin detectar en la red. Del mismo modo, cuando se implementa como un host de Hyper-V, Windows Server 2016 ofrece garantía de seguridad para los entornos de virtualización a través de las funciones blindadas Virtual Machines y el Firewall distribuido. Con Windows Server 2016, el sistema operativo del servidor se convierte en un participante activo en su centro de seguridad.
 
 ### <a name="protect-your-credentials-and-limit-administrator-privileges"></a>Proteja sus credenciales y limite los privilegios de administrador 
 El control sobre el acceso a los datos personales y los sistemas que procesan los datos, es un área con el RGPD que tiene requisitos específicos, incluido el acceso por parte de los administradores. Las identidades con privilegios son aquellas que tienen privilegios elevados, como cuentas de usuario que son miembros de los grupos administradores de dominio, administradores de empresas, administradores locales o incluso usuarios avanzados. Estas identidades también pueden incluir cuentas a las que se les han concedido privilegios directamente, como la realización de copias de seguridad, el apagado del sistema u otros derechos que aparecen en el nodo asignación de derechos de usuario de la consola de la Directiva de seguridad local.
@@ -160,7 +160,7 @@ El control sobre el acceso a los datos personales y los sistemas que procesan lo
 Como principio de control de acceso general y en línea con el RGPD, debe proteger estas identidades privilegiadas frente a posibles atacantes. En primer lugar, es importante comprender cómo se ven comprometidas las identidades. a continuación, puede planear impedir que los atacantes obtengan acceso a estas identidades con privilegios.
 
 #### <a name="how-do-privileged-identities-get-compromised"></a>¿Cómo se comprometen las identidades con privilegios?
-Las identidades con privilegios pueden ponerse en peligro cuando las organizaciones no tienen directrices para protegerlas. A continuación, se exponen algunos ejemplos:
+Las identidades con privilegios pueden ponerse en peligro cuando las organizaciones no tienen directrices para protegerlas. A continuación, se muestran algunos ejemplos:
 
 - **Más privilegios de los necesarios.** Uno de los problemas más comunes es que los usuarios tienen más privilegios de los necesarios para realizar su función de trabajo. Por ejemplo, un usuario que administre DNS podría ser un administrador de AD. A menudo, esto se hace para evitar la necesidad de configurar distintos niveles de administración. Sin embargo, si una cuenta se ve comprometida, el atacante automáticamente tendrá privilegios elevados.
 
@@ -191,7 +191,7 @@ Como se indica en la [Guía de mitigación de robo de credenciales de Windows](h
 
 > "_las herramientas y las técnicas que los delincuentes usan para llevar a cabo el robo de credenciales y los ataques de reutilización mejoran, los atacantes malintencionados están encontrando más fácilmente alcanzar sus objetivos. El robo de credenciales suele basarse en prácticas operativas o en la exposición de credenciales de usuario, de modo que las mitigaciones eficaces requieren un enfoque holístico que aborda personas, procesos y tecnología. Además, estos ataques se basan en el ataque de robo de credenciales después de poner en peligro un sistema para expandir o conservar el acceso, por lo que las organizaciones deben contener infracciones rápidamente mediante la implementación de estrategias que impidan que los atacantes se muevan libremente y no se detecten en una red en peligro "._
 
-Una consideración de diseño importante para Windows Server fue la mitigación del robo de credenciales, en particular, las credenciales derivadas. Credential Guard proporciona una seguridad significativamente mejorada contra el robo de credenciales derivadas y la reutilización mediante la implementación de un importante cambio arquitectónico en Windows diseñado para ayudar a eliminar ataques de aislamiento basados en hardware en lugar de simplemente intentar defenderse contra ellos.
+Una consideración de diseño importante para Windows Server fue la mitigación del robo de credenciales, en particular, las credenciales derivadas. Credential Guard proporciona una seguridad significativamente mejorada contra el robo de credenciales derivadas y la reutilización mediante la implementación de un importante cambio arquitectónico en Windows diseñado para evitar ataques de aislamiento basados en hardware en lugar de simplemente intentar defenderse frente a ellos.
 
 Al usar credenciales de protección de credenciales de Windows Defender, NTLM y Kerberos derivadas protegidas mediante la seguridad basada en la virtualización, se bloquean las técnicas y las herramientas de ataque de robo de credenciales usadas en muchos ataques dirigidos. Con la ejecución de malware en el sistema operativo con privilegios administrativos no se pueden extraer secretos que están protegidos con la seguridad basada en la virtualización. Aunque la protección de credenciales de Windows Defender es una mitigación eficaz, los ataques de amenazas persistentes probablemente se desplazarán a nuevas técnicas de ataque y también debe incorporar Device Guard, tal y como se describe a continuación, junto con otras estrategias de seguridad y arquitecturas.
 
@@ -210,7 +210,7 @@ Credential Guard de Windows Defender usa:
 
 - Arranque seguro (obligatorio)
 
-- TPM 2.0 discreto o de firmware (preferido: proporciona el enlace al hardware)
+- TPM 2,0 ya sea discreto o de firmware (preferido: proporciona enlace al hardware)
 
 Puede usar Credential Guard de Windows Defender para ayudar a proteger las identidades con privilegios mediante la protección de las credenciales y los derivados de las credenciales en Windows Server 2016. Para obtener más información sobre los requisitos de Credential Guard de Windows Defender, consulte [protección de las credenciales de dominio derivadas con protección de credenciales de Windows Defender](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard).
 
@@ -232,7 +232,7 @@ Puede habilitar Credential Guard remoto de Windows Defender mediante una configu
 ### <a name="secure-the-operating-system-to-run-your-apps-and-infrastructure"></a>Protección del sistema operativo para ejecutar las aplicaciones y la infraestructura
 La prevención de amenazas de Cyber también requiere la búsqueda y el bloqueo de malware y ataques que buscan obtener control mediante la reversión de las prácticas operativas estándar de la infraestructura. Si los atacantes pueden obtener un sistema operativo o una aplicación para que se ejecuten de manera no predeterminada y no viable, es probable que utilicen ese sistema para realizar acciones malintencionadas. Windows Server 2016 proporciona capas de protección que bloquean a los atacantes externos que ejecutan software malintencionado o vulnerabilidades de seguridad. El sistema operativo toma un rol activo en la protección de la infraestructura y las aplicaciones al avisar a los administradores de la actividad que indica que se ha infringido el sistema.
 
-#### <a name="windows-defender-device-guard"></a>Device Guard de Windows Defender
+#### <a name="windows-defender-device-guard"></a>Protección de dispositivos de Windows Defender
 Windows Server 2016 incluye Windows Defender Device Guard para asegurarse de que solo se puede ejecutar en el servidor software de confianza. Con la seguridad basada en la virtualización, puede limitar los archivos binarios que se pueden ejecutar en el sistema en función de la Directiva de la organización. Si algo que no sea el binario especificado intenta ejecutarse, Windows Server 2016 lo bloquea y registra el intento con error para que los administradores puedan ver que se ha producido una posible brecha. La notificación de infracciones es una parte fundamental de los requisitos de cumplimiento de RGPD.
 
 Windows Defender Device Guard también se integra con PowerShell para que pueda autorizar qué scripts se pueden ejecutar en el sistema. En versiones anteriores de Windows Server, los administradores podían omitir el cumplimiento de la integridad de código simplemente eliminando la Directiva del archivo de código. Con Windows Server 2016, puede configurar una directiva que esté firmada por su organización para que solo una persona con acceso al certificado que firmó la directiva pueda cambiar la Directiva.
@@ -253,9 +253,9 @@ Windows Server 2016 incluye las capacidades de detección activa y líder del se
 
 AV de Windows Defender es una solución antimalware integrada que ofrece administración de seguridad y antimalware para escritorios, equipos portátiles y servidores. Windows Defender AV se ha mejorado significativamente desde que se presentó en Windows 8. El antivirus de Windows Defender en Windows Server usa un enfoque de varias puntas para mejorar el antimalware:
 
-- La **protección de entrega en la nube** ayuda a detectar y bloquear nuevo malware en segundos, incluso si el malware no se ha visto nunca antes.
+- La **protección entregada en la nube** ayuda a detectar y bloquear el nuevo malware en cuestión de segundos, incluso si nunca se ha detectado el malware.
 
-- El **Contexto local enriquecido** mejora la manera en que se identifica el malware. Windows Server informa a AV de Windows Defender no solo sobre contenido como archivos y procesos, sino también de dónde procede el contenido, dónde se ha almacenado, etc. 
+- El **contexto local enriquecido** mejora el modo en que se identifica el malware. Windows Server informa a AV de Windows Defender no solo sobre contenido como archivos y procesos, sino también de dónde procede el contenido, dónde se ha almacenado, etc. 
 
 - Los **sensores globales extensivos** ayudan a mantener el AV de Windows Defender actualizado y a reconocer incluso el malware más reciente. Esto se logra de dos maneras: mediante la recopilación de los datos de contexto local enriquecido de extremos y analizando los datos de forma centralizada.
 
@@ -282,7 +282,7 @@ Windows Server 2016 fundamentalmente cambia el modo en que las empresas pueden p
 #### <a name="shielded-virtual-machines"></a>Máquinas virtuales blindadas
 Lo mismo que hace que las máquinas virtuales sean tan fáciles de migrar, realizar copias de seguridad y replicar, también facilitan la modificación y la copia. Una máquina virtual es simplemente un archivo, por lo que no está protegida en la red, en almacenamiento, en copias de seguridad o en otro lugar. Otro problema es que los administradores del tejido, ya sean administradores de almacenamiento o administradores de red, tienen acceso a todas las máquinas virtuales.
 
-Un administrador en peligro en el tejido puede producir fácilmente datos en peligro en las máquinas virtuales. Todo el atacante debe usar las credenciales en peligro para copiar los archivos de la máquina virtual que desee en una unidad USB y desplazarlo fuera de la organización, donde se puede tener acceso a esos archivos de la máquina virtual desde cualquier otro sistema. Si alguna de esas máquinas virtuales robadas fuera un controlador de dominio de Active Directory, por ejemplo, el atacante podría ver fácilmente el contenido y usar las técnicas de fuerza bruta de fácil disponibilidad para descifrar las contraseñas en la base de datos de Active Directory y, en última instancia, darles acceso a todo lo demás dentro de la infraestructura.
+Un administrador en peligro en el tejido puede producir fácilmente datos en peligro en las máquinas virtuales. Todo el atacante debe usar las credenciales en peligro para copiar los archivos de la máquina virtual que desee en una unidad USB y desplazarlo fuera de la organización, donde se puede tener acceso a esos archivos de la máquina virtual desde cualquier otro sistema. Si alguna de esas máquinas virtuales robadas fuera un controlador de dominio de Active Directory, por ejemplo, el atacante podría ver fácilmente el contenido y usar las técnicas de fuerza bruta de fácil disponibilidad para descifrar las contraseñas en la base de datos Active Directory, lo que, en última instancia, les permite acceder a todo lo demás dentro de la infraestructura.
 
 Windows Server 2016 presenta Virtual Machines blindadas (máquinas virtuales blindadas) para ayudar a protegerse frente a escenarios como el que se acaba de describir. Las máquinas virtuales blindadas incluyen un dispositivo TPM virtual, que permite a las organizaciones aplicar cifrado de BitLocker a las máquinas virtuales y asegurarse de que solo se ejecutan en hosts de confianza para ayudar a protegerse frente a administradores de hosts, redes y almacenamiento en peligro. Las máquinas virtuales blindadas se crean mediante máquinas virtuales de generación 2, que admiten el firmware de Unified Extensible Firmware Interface (UEFI) y tienen un TPM virtual.
 
@@ -299,30 +299,30 @@ Windows Server 2016 admite TPM para máquinas virtuales, lo que le permite admit
 Puede proteger el TPM virtual (vTPM) mediante las claves de cifrado locales almacenadas en el host o almacenadas en el servicio de protección de host. Por lo tanto, aunque el servicio de protección de host requiere más infraestructura, también proporciona más protección.
 
 #### <a name="distributed-network-firewall-using-software-defined-networking"></a>Firewall de red distribuido mediante redes definidas por software
-Una manera de mejorar la protección en entornos virtualizados es segmentar la red de forma que permita que las máquinas virtuales se comuniquen solo con los sistemas específicos que se necesitan para funcionar. Por ejemplo, si la aplicación no necesita conectarse a Internet, puede crear particiones y eliminar esos sistemas como destinos de atacantes externos. Las redes definidas por software (SDN) en Windows Server 2016 incluyen un firewall de red distribuida que le permite crear dinámicamente las directivas de seguridad que pueden proteger sus aplicaciones frente a ataques procedentes de dentro o fuera de una red. Este Firewall de red distribuido agrega capas a la seguridad permitiéndole aislar las aplicaciones en la red. Las directivas se pueden aplicar en cualquier parte de la infraestructura de red virtual, aislar el tráfico de máquina virtual a máquina virtual, el tráfico de máquina virtual a host o el tráfico de máquina virtual a Internet cuando sea necesario, ya sea para sistemas individuales que puedan estar en peligro o mediante programación en varias subredes. Las capacidades de red definidas por software de Windows Server 2016 también permiten enrutar o reflejar el tráfico entrante en dispositivos virtuales que no son de Microsoft. Por ejemplo, podría optar por enviar todo el tráfico de correo electrónico a través de una aplicación virtual de Barracuda para la protección adicional del filtrado de correo no deseado. Esto le permite disponer fácilmente en capas de seguridad adicionales tanto en el entorno local como en la nube.
+Una manera de mejorar la protección en entornos virtualizados es segmentar la red de forma que permita que las máquinas virtuales se comuniquen solo con los sistemas específicos que se necesitan para funcionar. Por ejemplo, si la aplicación no necesita conectarse a Internet, puede crear particiones y eliminar esos sistemas como destinos de atacantes externos. Las redes definidas por software (SDN) en Windows Server 2016 incluyen un firewall de red distribuida que le permite crear dinámicamente las directivas de seguridad que pueden proteger sus aplicaciones frente a ataques procedentes de dentro o fuera de una red. Este Firewall de red distribuido agrega capas a la seguridad permitiéndole aislar las aplicaciones en la red. Las directivas se pueden aplicar en cualquier parte de la infraestructura de la red virtual, aislar el tráfico de máquina virtual a máquina virtual, el tráfico de máquina virtual a host o el tráfico de máquina virtual a Internet cuando sea necesario, ya sea para sistemas individuales que puedan estar en peligro o mediante programación en varias subredes. Las capacidades de red definidas por software de Windows Server 2016 también permiten enrutar o reflejar el tráfico entrante en dispositivos virtuales que no son de Microsoft. Por ejemplo, podría optar por enviar todo el tráfico de correo electrónico a través de una aplicación virtual de Barracuda para la protección adicional del filtrado de correo no deseado. Esto le permite disponer fácilmente en capas de seguridad adicionales tanto en el entorno local como en la nube.
 
 ### <a name="other-gdpr-considerations-for-servers"></a>Otras consideraciones de RGPD para servidores
 RGPD incluye requisitos explícitos para la notificación de brechas en los que una infracción de datos personales significa "_una infracción de seguridad que conduce a la destrucción, pérdida, alteración o divulgación accidental o ilícita de datos personales transmitidos, almacenados o procesados de otro modo"._  Obviamente, no puede empezar a avanzar para cumplir los estrictos requisitos de notificación de RGPD en 72 horas si no puede detectar la brecha en primer lugar.
 
-Como se indicó en las notas del producto de Windows Security Center, [post infracción: tratamiento de amenazas avanzadas](http://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
+Como se indicó en las notas del producto de Windows Security Center, [post infracción: tratamiento de amenazas avanzadas](https://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
 
 > "_A diferencia de la prefracción previa, la infracción posterior supone que ya se ha producido una infracción: actuar como una caja negra y un investigador de la escena de delitos (CSI). La infracción posterior proporciona a los equipos de seguridad la información y el conjunto de herramientas necesarios para identificar, investigar y responder a los ataques que, de lo contrario, permanecerán sin detectar y por debajo del radar "._
 
 En esta sección, veremos cómo Windows Server puede ayudarle a cumplir sus obligaciones de notificación de incumplimiento de RGPD. Esto comienza con la comprensión de los datos de amenazas subyacentes disponibles para Microsoft que se recopilan y analizan para su beneficio y cómo, a través de protección contra amenazas avanzada (ATP) de Windows Defender, los datos pueden ser críticos para usted.
 
-#### <a name="insightful-security-diagnostic-data"></a>Datos de diagnóstico de seguridad detallados
-En casi dos décadas, Microsoft ha estado convirtiendo las amenazas en una inteligencia útil que puede ayudar a fortalecer su plataforma y a proteger a los clientes. En la actualidad, con las grandes ventajas informáticas que ofrece la nube, estamos encontrando nuevas maneras de usar nuestros motores de análisis enriquecidos controlados por medio de inteligencia contra amenazas para proteger a nuestros clientes.
+#### <a name="insightful-security-diagnostic-data"></a>Datos de diagnóstico de seguridad de Insights
+En casi dos décadas, Microsoft ha estado convirtiendo las amenazas en una inteligencia útil que puede ayudar a fortalecer su plataforma y a proteger a los clientes. En la actualidad, con las grandes ventajas de computación que ofrece la nube, encontramos nuevas formas de usar nuestros motores de análisis enriquecidos basados en la inteligencia de amenazas para proteger a nuestros clientes.
 
-Al aplicar una combinación de procesos manuales y automatizados, aprendizaje automático y expertos humanos, podemos crear un gráfico de seguridad inteligente que aprende de sí mismo y evoluciona en tiempo real, reduciendo nuestro tiempo colectivo para detectar y responder a nuevos incidentes a través de nuestros productos.
+Al aplicar una combinación de procesos manuales y automatizados, aprendizaje automático y expertos humanos, podemos crear un Intelligent Security Graph que aprenda de sí mismo y evolucione en tiempo real, lo que reduce nuestro tiempo colectivo para detectar y responder a nuevos incidentes en nuestros productos.
 
 ![Gráfico de seguridad de Microsoft Intelligence](../media/GDPR-Windows-Server-Overview/gdpr-intelligent-security-graph.png)
 
-El ámbito de los intervalos de inteligencia de amenazas de Microsoft, literalmente, miles de millones de puntos de datos: 35 mil millones mensajes examinados mensualmente, 1 mil millones clientes a través de segmentos de empresa y de consumidores que obtienen acceso a más de 200 servicios en la nube y 14 mil millones autenticaciones realizadas diario. Microsoft reúne todos estos datos en su nombre para crear los Intelligent Security Graph que pueden ayudarle a proteger la puerta de la puerta de una forma dinámica de mantener la seguridad, ser productivo y cumplir los requisitos de RGPD.
+El ámbito de los intervalos de inteligencia de amenazas de Microsoft, literalmente, miles de millones de puntos de datos: 35 mil millones mensajes examinados mensualmente, 1 mil millones clientes a través de segmentos de empresa y de consumidores que obtienen acceso a más de 200 servicios en la nube y 14 mil millones autenticaciones realizadas a diario. Microsoft reúne todos estos datos en su nombre para crear los Intelligent Security Graph que pueden ayudarle a proteger la puerta de la puerta de una forma dinámica de mantener la seguridad, ser productivo y cumplir los requisitos de RGPD.
 
 #### <a name="detecting-attacks-and-forensic-investigation"></a>Detección de ataques e investigación forense
-Incluso las mejores defensas de extremo se pueden infringir a la larga, a medida que los ciberataques se vuelven más sofisticados y dirigidos. Se pueden usar dos funciones para ayudar a detectar posibles infracciones: protección contra amenazas avanzada (ATP) de Windows Defender y Microsoft Advanced Threat Analytics (ATA).
+Incluso las mejores defensas de punto de conexión se pueden infringir finalmente, ya que los ciberataques se vuelven más sofisticados y tienen como destino. Se pueden usar dos funciones para ayudar a detectar posibles infracciones: protección contra amenazas avanzada (ATP) de Windows Defender y Microsoft Advanced Threat Analytics (ATA).
 
-La Protección contra amenazas avanzada de Windows Defender (ATP) te ayuda a detectar, investigar y responder a ataques avanzados e infracciones de datos en las redes. Los tipos de infracción de datos que RGPD espera que proteja mediante medidas de seguridad técnicas para garantizar la confidencialidad, integridad y disponibilidad continua de los datos personales y los sistemas de procesamiento.
+La protección contra amenazas avanzada (ATP) de Windows Defender le ayuda a detectar, investigar y responder a ataques avanzados e infracciones de datos en sus redes. Los tipos de infracción de datos que RGPD espera que proteja mediante medidas de seguridad técnicas para garantizar la confidencialidad, integridad y disponibilidad continua de los datos personales y los sistemas de procesamiento.
 
 Entre las principales ventajas de ATP de Windows Defender se encuentran las siguientes:
 
@@ -342,35 +342,35 @@ ATA es un producto local que ayuda a detectar el riesgo de identidad en una orga
 |Tipo de ataque |Descripción |
 |---------|---------|
 |Ataques malintencionados |Estos ataques se detectan mediante la búsqueda de ataques a partir de una lista conocida de tipos de ataque, incluidos:<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>PAC falsificado (MS14-068)</li><li>Golden ticket</li><li>Replicaciones malintencionadas</li><li>Reconocimiento</li><li>Fuerza bruta</li><li>Ejecución remota</li></ul>Para obtener una lista completa de los ataques malintencionados que se pueden detectar y su descripción, vea [¿qué actividades sospechosas puede detectar ATA?](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats).|
-|Comportamiento anómalo |Estos ataques se detectan mediante el análisis de comportamiento y usan el aprendizaje automático para identificar actividades cuestionables, entre las que se incluyen:<ul><li>Inicios de sesión anómalos</li><li>Amenazas desconocidas</li><li>Uso compartido de contraseña</li><li>Movimiento lateral</li></ul>|
+|Comportamiento anómalo |Estos ataques se detectan mediante el análisis de comportamiento y usan el aprendizaje automático para identificar actividades cuestionables, entre las que se incluyen:<ul><li>Inicios de sesión anómalos</li><li>Amenazas desconocidas</li><li>Uso compartido de contraseña</li><li>Desplazamiento lateral</li></ul>|
 |Problemas y riesgos de seguridad |Estos ataques se detectan examinando la configuración actual de la red y del sistema, incluidos:<ul><li>Confianza rota</li><li>Protocolos débiles</li><li>Vulnerabilidades conocidas de protocolos</li></ul>|
 
 Puede usar ATA para ayudar a detectar atacantes que intenten poner en peligro las identidades con privilegios. Para obtener más información sobre la implementación de ATA, consulte los temas planeación, diseño e implementación de la [documentación de Advanced Threat Analytics](https://docs.microsoft.com/advanced-threat-analytics/).
 
 ## <a name="related-content-for-associated-windows-server-2016-solutions"></a>Contenido relacionado para las soluciones de Windows Server 2016 asociadas
 
-- **Antivirus de Windows Defender:** https://www.youtube.com/watch?v=P1aNEy09NaI y https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10
+- **Antivirus de Windows Defender:** https://www.youtube.com/watch?v=P1aNEy09NaI etchttps://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10
 
-- **Protección contra amenazas avanzada de Windows Defender:** https://www.youtube.com/watch?v=qxeGa3pxIwg y https://docs.microsoft.com/windows/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection
+- **Protección contra amenazas avanzada de Windows Defender:** https://www.youtube.com/watch?v=qxeGa3pxIwg etchttps://docs.microsoft.com/windows/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection
 
-- **Protección de dispositivos de Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI y https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
+- **Protección de dispositivos de Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI etchttps://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
 
-- **Protección de credenciales de Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI y https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
+- **Protección de credenciales de Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI etchttps://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
 
-- **Protección de flujo de control:** https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
+- **Protección de flujo de control:**https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
 
-- **Seguridad y seguros:** https://docs.microsoft.com/windows-server/security/security-and-assurance
+- **Seguridad y garantía:**https://docs.microsoft.com/windows-server/security/security-and-assurance
 
-## <a name="disclaimer"></a>Descargo de responsabilidades
-Este artículo es un comentario sobre la GDPR, como la interpreta Microsoft, desde la fecha de publicación. Hemos dedicado mucho tiempo a RGPD y me gustaría pensar en su intención y el significado. Pero la aplicación de GDPR se refiere a hechos muy concretos y no todos los aspectos y las interpretaciones de la GDPR están bien establecidos.
+## <a name="disclaimer"></a>Renuncia de responsabilidades
+Este artículo es un Comentario sobre el RGPD, a medida que Microsoft lo interpreta, a partir de la fecha de publicación. Hemos dedicado mucho tiempo a RGPD y me gustaría pensar en su intención y el significado. Pero la aplicación de RGPD es muy específica, y no todos los aspectos e interpretaciones de RGPD están bien liquidados.
 
-Como resultado, este artículo se proporciona solo con fines informativos y no se debería usar como asesoramiento legal o para determinar la manera en que la GDPR puede aplicarse para ti y tu organización. Te animamos a trabajar con un profesional con cualificación legal para hablar de la GDPR, de cómo se aplica de manera específica a tu organización y de la mejor manera para garantizar el cumplimiento.
+Como resultado, este artículo se proporciona solo con fines informativos y no se debe confiar en ellos como asesoría legal o para determinar cómo se puede aplicar RGPD a usted y a su organización. Le recomendamos que trabaje con un profesional calificado legalmente para discutir RGPD, cómo se aplica específicamente a su organización y cómo garantizar el cumplimiento normativo.
 
-MICROSOFT NO OTORGA NINGUNA GARANTÍA, YA SEA EXPRESA, IMPLÍCITA O REGLAMENTARIA, EN CUANTO A LA INFORMACIÓN DE ESTE ARTÍCULO. Este artículo se proporciona “tal cual”. La información y las opiniones expresadas en este artículo, incluidas las direcciones URL y otras referencias a sitios web de Internet, pueden sufrir cambios sin previo aviso.
+MICROSOFT NO OTORGA NINGUNA GARANTÍA, EXPRESA, IMPLÍCITA O ESTATUTARIA, EN LO QUE SE REFIERE A LA INFORMACIÓN DE ESTE ARTÍCULO. Este artículo se proporciona "tal cual". La información y las vistas expresadas en este artículo, incluidas las direcciones URL y otras referencias a sitios web de Internet, pueden cambiar sin previo aviso.
 
-Este artículo no proporciona derechos legales sobre ninguna propiedad intelectual en ningún producto de Microsoft.  Puedes copiar y usar este artículo solo para tu referencia interna.  
+En este artículo no se le proporciona ningún derecho legal sobre ninguna propiedad intelectual de ningún producto de Microsoft.  Puede copiar y usar este artículo solo con fines de referencia internos.  
 
-Publicado en septiembre de 2017<br>
+Publicado en septiembre 2017<br>
 Versión 1.0<br>
 © 2017 Microsoft. Todos los derechos reservados.
 

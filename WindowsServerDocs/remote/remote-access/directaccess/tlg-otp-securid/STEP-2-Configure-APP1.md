@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 19a7a4a6-9a04-42ea-a5d0-ecb28a34dbaa
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6d8720c71efba6f461aa0789fc2a143d1b1dab3f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 03cddb638277f04a79cf4f41d6d2df308a1cf50e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855588"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966147"
 ---
 # <a name="step-2-configure-app1"></a>Paso 2 configurar APP1
 
@@ -59,11 +59,11 @@ Siga estos pasos para preparar APP1 para la compatibilidad con OTP:
 4.  En la pestaña **General** , en **nombre para mostrar**de la plantilla, escriba **DAOTPLogon**. En **período de validez**, en la lista desplegable, haga clic en **horas**, en el cuadro de diálogo **plantillas de certificados** , haga clic en **Aceptar**y asegúrese de que el número de horas está establecido en 1. En **período de renovación**, escriba **0**.  
   
     > [!IMPORTANT]  
-    > **CA de Windows Server 2003**. En situaciones en las que la entidad de certificación (CA) se encuentra en un equipo que ejecuta Windows Server 2003, la plantilla de certificado debe configurarse en un equipo diferente. Esto es necesario porque no es posible establecer el **período de validez** en horas cuando se ejecutan versiones de Windows anteriores a windows Server 2008 y Windows Vista. Si el equipo que utiliza para configurar la plantilla no tiene instalado el rol de servidor de servicios de Certificate Server de Active Directory o si es un equipo cliente, es posible que tenga que instalar el complemento plantillas de certificado. Para obtener más información, vea [instalar el complemento plantillas de certificado](https://technet.microsoft.com/library/cc732445.aspx).  
+    > **CA de Windows Server 2003**. En situaciones en las que la entidad de certificación (CA) se encuentra en un equipo que ejecuta Windows Server 2003, la plantilla de certificado debe configurarse en un equipo diferente. Esto es necesario porque no es posible establecer el **período de validez** en horas cuando se ejecutan versiones de Windows anteriores a windows Server 2008 y Windows Vista. Si el equipo que utiliza para configurar la plantilla no tiene instalado el rol de servidor de servicios de Certificate Server de Active Directory o si es un equipo cliente, es posible que tenga que instalar el complemento plantillas de certificado. Para obtener más información, vea [instalar el complemento plantillas de certificado](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732445(v=ws.11)).  
     >   
     > **CA de Windows Server 2008 R2**. Si ya ha implementado una entidad de certificación (CA) que ejecuta Windows Server 2008 R2, debe configurar el **período de renovación** de la plantilla de certificado en 1 o 2 horas y el **período de validez** será mayor que el período de **renovación**, pero no más de 4 horas. Si configura un **período de validez** de plantilla de certificado de más de 4 horas con una CA que ejecuta Windows Server 2008 R2, el Asistente para la instalación de DirectAccess no puede detectar la plantilla de certificado y se produce un error en la instalación de DirectAccess.  
   
-5.  Haga clic en la pestaña **seguridad** , seleccione **usuarios autenticados**, en la columna **permitir** y active las casillas **leer** e **inscribir** . Haga clic en **Aceptar**. Haga clic en **Admins** . del dominio y **administradores de organización**y haga clic en **control total** en la columna **permitir** para ambos. Haga clic en **Aplicar**.  
+5.  Haga clic en la pestaña **seguridad** , seleccione **usuarios autenticados**, en la columna **permitir** y active las casillas **leer** e **inscribir** . Haga clic en **OK**. Haga clic en **Admins** . del dominio y **administradores de organización**y haga clic en **control total** en la columna **permitir** para ambos. Haga clic en **Aplicar**.  
   
 6.  Haga clic en la pestaña **nombre de sujeto** y, a continuación, haga clic en **compilar a partir de esta información Active Directory**. En la lista **formato de nombre de sujeto:** seleccione **nombre**completo, asegúrese de que el cuadro **nombre principal de usuario (UPN)** está activado y haga clic en **aplicar**.  
   
@@ -73,7 +73,7 @@ Siga estos pasos para preparar APP1 para la compatibilidad con OTP:
   
 9. Haga clic en la pestaña **extensiones** y, en **directivas de aplicación** , haga clic en **Editar**. Elimine la **autenticación del cliente**, mantenga **iniciosesióntarjetainteligente marcando**y haga clic en **Aceptar** dos veces.  
   
-10. Cierre la Consola de plantillas de certificado.  
+10. Cierra la Consola de plantillas de certificado.  
   
 11. En la pantalla **Inicio** , escriba**CertSrv. msc**y, a continuación, presione Entrar.  
   
@@ -85,11 +85,9 @@ Siga estos pasos para preparar APP1 para la compatibilidad con OTP:
   
 15. Reinicie los servicios.  
   
-16. Cierre la consola Entidad de certificación.  
+16. Cierre la consola de entidad de certificación.  
   
-17. Abra un símbolo del sistema con privilegios elevados. Escriba **certutil. exe-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**y presione Entrar.  
+17. Abra un símbolo del sistema con privilegios elevados. Escriba **CertUtil.exe-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**y presione Entrar.  
   
 18. Deje abierta la ventana del símbolo del sistema para el siguiente paso.  
   
-
-

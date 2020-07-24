@@ -1,5 +1,5 @@
 ---
-title: AD FS de los conceptos de OpenID Connect/OAuth
+title: Conceptos de AD FS OpenID Connect/OAuth
 description: Obtenga información sobre AD FS conceptos de autenticación moderna.
 author: billmath
 ms.author: billmath
@@ -8,14 +8,14 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 26c1635d4218c7d33377b6b8a90bc96ea4ad37b3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 353546be17f096b692c2429aa65529d302a2df7e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948781"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966857"
 ---
-# <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS de los conceptos de OpenID Connect/OAuth
+# <a name="ad-fs-openid-connectoauth-concepts"></a>Conceptos de AD FS OpenID Connect/OAuth
 Se aplica a AD FS 2016 y versiones posteriores
  
 ## <a name="modern-authentication-actors"></a>Actores de autenticación moderna 
@@ -34,7 +34,7 @@ En el siguiente diagrama se proporciona la relación más básica entre los acto
 ## <a name="application-types"></a>Tipos de aplicación 
  
 
-|Tipo de aplicación|Descripción|Rol|
+|Tipo de aplicación|Descripción|Role|
 |-----|-----|-----|
 |Aplicación nativa|A veces denominado **cliente público**, se ha diseñado para ser una aplicación cliente que se ejecuta en un equipo o dispositivo y con el que interactúa el usuario.|Solicita tokens del servidor de autorización (AD FS) para el acceso de los usuarios a los recursos. Envía solicitudes HTTP a recursos protegidos, utilizando los tokens como encabezados HTTP.| 
 |Aplicación de servidor (aplicación web)|Una aplicación web que se ejecuta en un servidor y a la que los usuarios suelen tener acceso a través de un explorador. Dado que es capaz de mantener su propia credencial o "secreto" de cliente, a veces se denomina **cliente confidencial**. |Solicita tokens del servidor de autorización (AD FS) para el acceso de los usuarios a los recursos. Antes de solicitar el token, el cliente (aplicación web) debe autenticarse con su secreto. | 
@@ -55,14 +55,14 @@ La autenticación moderna usa los siguientes tipos de token:
  
 Al registrar un recurso en AD FS, se pueden configurar ámbitos para permitir que AD FS realice acciones específicas. Además de configurar el ámbito, también se requiere que el valor de ámbito se envíe en la solicitud de AD FS para realizar la acción. Por ejemplo, el administrador debe configurar el ámbito como OpenID durante el registro de recursos y la aplicación (cliente) debe enviar el ámbito = OpenID en la solicitud de autenticación para que AD FS emita el token de identificador. A continuación se proporcionan detalles sobre los ámbitos disponibles en AD FS 
  
-- AZA: si se usan [las extensiones de protocolo de OAuth 2,0 para los clientes de broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) y si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el campo refresh_token de la respuesta, además de establecer el campo refresh_token_expires_in en la duración del nuevo token de actualización principal si se aplica uno. 
-- OpenID: permite que la aplicación solicite el uso del Protocolo de autorización OpenID Connect. 
-- logon_cert: el ámbito de logon_cert permite a una aplicación solicitar certificados de inicio de sesión, que se pueden usar para iniciar sesión de forma interactiva en usuarios autenticados. El servidor de AD FS omite el parámetro access_token de la respuesta y, en su lugar, proporciona una cadena de certificados CMS codificada en base64 o una respuesta de PKI completa de CMC. Puede encontrar más información [aquí](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
-- user_impersonation: el ámbito de user_impersonation es necesario para solicitar correctamente un token de acceso en nombre de AD FS. Para obtener más información sobre cómo usar este ámbito, consulte [creación de una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016](ad-fs-on-behalf-of-authentication-in-windows-server.md). 
+- AZA: si se usan [las extensiones de protocolo de OAuth 2,0 para los clientes de Broker](/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)   y si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el refresh_token campo de la respuesta, además de establecer el campo refresh_token_expires_in en la duración del nuevo token de actualización principal si se aplica uno. 
+- openid: permite que la aplicación solicite el uso del protocolo de autorización OpenID Connect. 
+- logon_cert: el ámbito logon_cert permite a una aplicación solicitar certificados de inicio de sesión, que se pueden usar para iniciar sesión de forma interactiva de usuarios autenticados. El servidor de AD FS omite el parámetro access_token de la respuesta y, en su lugar, proporciona una cadena de certificados CMS codificada en Base 64 o una respuesta de PKI completa de CMC. Puede encontrar más información [aquí](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
+- user_impersonation: el ámbito de user_impersonation es necesario para solicitar correctamente un token de acceso "en nombre de" de AD FS. Para obtener más información sobre cómo usar este ámbito, consulte [creación de una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016](ad-fs-on-behalf-of-authentication-in-windows-server.md). 
 - allatclaims: el ámbito allatclaims permite que la aplicación solicite notificaciones en el token de acceso que se van a agregar también en el token de identificador.   
 - vpn_cert: el ámbito de vpn_cert permite a una aplicación solicitar certificados VPN, que se pueden usar para establecer conexiones VPN mediante la autenticación EAP-TLS. Esto ya no se admite. 
-- correo electrónico: permite que la aplicación solicite una solicitud de correo electrónico para el usuario que ha iniciado sesión.  
-- Perfil: permite que la aplicación solicite notificaciones relacionadas con el perfil para el usuario de inicio de sesión.  
+- email: permite que la aplicación solicite una notificación por correo electrónico para el usuario que ha iniciado sesión.  
+- profile: permite que la aplicación solicite notificaciones relacionadas con el perfil para el usuario que ha iniciado sesión.  
 
 ## <a name="claims"></a>Notificaciones 
  
@@ -81,7 +81,7 @@ Los tokens de seguridad (acceso y tokens de identificador) emitidos por AD FS co
  
  2. AD FS valida el identificador de cliente en la solicitud de autenticación con el identificador de cliente obtenido durante el registro del cliente y del recurso en AD FS. Si usa un cliente confidencial, AD FS también valida el secreto de cliente proporcionado en la solicitud de autenticación. AD FS validar también el URI de redirección del cliente. 
  
- 3. AD FS identifica el recurso al que el cliente desea obtener acceso a través del parámetro de recurso pasado en la solicitud de autenticación. Si se usa la biblioteca de cliente de MSAL, no se envía el parámetro de recurso. En su lugar, la dirección URL del recurso se envía como parte del parámetro de ámbito: *Scope = [URL del recurso]//[valores de ámbito, por ejemplo, OpenID]* . 
+ 3. AD FS identifica el recurso al que el cliente desea obtener acceso a través del parámetro de recurso pasado en la solicitud de autenticación. Si se usa la biblioteca de cliente de MSAL, no se envía el parámetro de recurso. En su lugar, la dirección URL del recurso se envía como parte del parámetro de ámbito: *Scope = [URL del recurso]//[valores de ámbito, por ejemplo, OpenID]*. 
 
     Si el recurso no se pasa mediante el parámetro de recurso o de ámbito, ADFS usará un recurso predeterminado urn: Microsoft: UserInfo cuyas directivas (por ejemplo, MFA, emisión o Directiva de autorización) no se pueden configurar. 
  

@@ -8,12 +8,12 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e012706eeb9d483f19eff6f4ba2e1f57e0c0852d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cd8c41e67baf0ffa0399e62ad2a697e4efa1433f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475332"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965187"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar el servicio de migración de almacenamiento para migrar un servidor
 
@@ -23,7 +23,7 @@ En este tema se describe cómo migrar un servidor, incluidos los archivos y la c
 
 Antes de empezar, instale el servicio de migración de almacenamiento y asegúrese de que estén abiertos los puertos de Firewall necesarios.
 
-1. Compruebe los [requisitos del servicio de migración de almacenamiento](overview.md#requirements) e instale el [centro de administración de Windows](../../manage/windows-admin-center/understand/windows-admin-center.md) en su PC o un servidor de administración si aún no lo ha hecho. Si va a migrar los equipos de origen Unidos a un dominio, debe instalar y ejecutar el servicio de migración de almacenamiento en un servidor que esté unido al mismo dominio o bosque que los equipos de origen.
+1. Compruebe los [requisitos del servicio de migración de almacenamiento](overview.md#requirements) e instale el [centro de administración de Windows](../../manage/windows-admin-center/overview.md) en su PC o un servidor de administración si aún no lo ha hecho. Si va a migrar los equipos de origen Unidos a un dominio, debe instalar y ejecutar el servicio de migración de almacenamiento en un servidor que esté unido al mismo dominio o bosque que los equipos de origen.
 2. En el centro de administración de Windows, conéctese al servidor de Orchestrator que ejecuta Windows Server 2019. <br>Este es el servidor en el que instalará el servicio de migración de almacenamiento y lo usará para administrar la migración. Si va a migrar un solo servidor, puede usar el servidor de destino siempre y cuando ejecute Windows Server 2019. Se recomienda usar un servidor de orquestación independiente para las migraciones de varios servidores.
 3. Vaya a **Administrador del servidor** (en el centro de administración de Windows) > **servicio de migración de almacenamiento** y seleccione **instalar** para instalar el servicio de migración de almacenamiento y sus componentes necesarios (se muestra en la figura 1).
     ![Captura de pantalla de la página del servicio de migración de almacenamiento que muestra el botón instalar, ](media/migrate/install.png) **figura 1: instalación del servicio de migración de almacenamiento**
@@ -95,7 +95,7 @@ En este momento, tiene tres opciones:
 - **Tenga en cuenta que la migración se ha completado** sin asumir las identidades de los servidores de origen.
 - **Transferir de nuevo**, copiando solo los archivos que se actualizaron desde la última transferencia.
 
-Si su objetivo es sincronizar los archivos con Azure, puede configurar los servidores de destino con Azure File Sync después de transferir los archivos o después de recurrir a los servidores de destino (consulte [planeación de una implementación de Azure File Sync](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)).
+Si su objetivo es sincronizar los archivos con Azure, puede configurar los servidores de destino con Azure File Sync después de transferir los archivos o después de recurrir a los servidores de destino (consulte [planeación de una implementación de Azure File Sync](/azure/storage/files/storage-sync-files-planning)).
 
 ## <a name="step-3-cut-over-to-the-new-servers"></a>Paso 3: pasar a los nuevos servidores
 
@@ -109,7 +109,7 @@ En este paso, se recortan de los servidores de origen a los servidores de destin
 3. En la página **configurar traslado** , especifique qué adaptador de red del destino debe tomar la configuración de cada adaptador del origen. De esta forma, se mueve la dirección IP del origen al destino como parte de la transferencia, y se asigna al servidor de origen una nueva dirección IP DHCP o estática. Tiene la opción de omitir todas las migraciones de red o ciertas interfaces.
 4. Especifique la dirección IP que se usará para el servidor de origen después de que el traslado traslade su dirección al destino. Puede usar DHCP o una dirección estática. Si usa una dirección estática, la nueva subred debe ser la misma que la antigua o bien se producirá un error en la misma.
     ![Captura de pantalla que muestra un servidor de origen y sus direcciones IP y nombres de equipo y de qué se reemplazarán después de la ](media/migrate/cutover.png) **figura 4 de destino: un servidor de origen y cómo se moverá su configuración de red al destino**
-5. Especifique cómo cambiar el nombre del servidor de origen después de que el servidor de destino adopte el nombre. Puede usar un nombre generado de forma aleatoria o escribir uno personalmente. Luego, seleccione **Siguiente**.
+5. Especifique cómo cambiar el nombre del servidor de origen después de que el servidor de destino adopte el nombre. Puede usar un nombre generado de forma aleatoria o escribir uno personalmente. A continuación, seleccione **Siguiente**.
 6. Seleccione **siguiente** en la página **ajustar la configuración de transferencia** .
 7. Seleccione **validar** en la página **validar el dispositivo de origen y de destino** y, a continuación, seleccione **siguiente**.
 8. Cuando esté listo para realizar el traslado, seleccione **iniciar el traslado**. <br>Es posible que los usuarios y las aplicaciones experimenten una interrupción mientras se mueven la dirección y los nombres y los servidores se reinician varias veces, pero no se verán afectados por la migración. El tiempo que tarda la transferencia depende de la rapidez con que se reinicien los servidores, así como de los tiempos de replicación de DNS y Active Directory.
@@ -118,4 +118,4 @@ En este paso, se recortan de los servidores de origen a los servidores de destin
 
 - [Información general del servicio de migración de almacenamiento](overview.md)
 - [Preguntas más frecuentes (p + f) sobre Storage Migration Services](faq.md)
-- [Planeamiento de una implementación de Azure File Sync](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)
+- [Planeamiento de una implementación de Azure File Sync](/azure/storage/files/storage-sync-files-planning)

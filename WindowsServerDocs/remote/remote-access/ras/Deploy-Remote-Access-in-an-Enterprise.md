@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6d0a9248865dca4afb3db9609b284048155f9eef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0cf216cb785d01ed08bb3a4490b25d4c4549b1c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857438"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965597"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>Implementar el acceso directo en una empresa
 
@@ -27,17 +27,17 @@ En este tema se proporciona una introducción al escenario de DirectAccess para 
   
 ## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>Antes de proceder a la implementación, consulte la siguiente lista de configuraciones no compatibles, problemas conocidos y requisitos previos.  
   
--   [Configuraciones no compatibles de DirectAccess](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-unsupported-configurations)  
+-   [Configuraciones no compatibles de DirectAccess](../directaccess/directaccess-unsupported-configurations.md)  
   
--   [Problemas conocidos de DirectAccess](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-known-issues)  
+-   [Problemas conocidos de DirectAccess](../directaccess/directaccess-known-issues.md)  
   
--   [Requisitos previos para la implementación de DirectAccess)](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/prerequisites-for-deploying-directaccess)  
+-   [Requisitos previos para la implementación de DirectAccess)](../directaccess/prerequisites-for-deploying-directaccess.md)  
   
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>Descripción del escenario  
 El acceso remoto incluye varias características empresariales, como la implementación de varios servidores de Acceso remoto en una carga de clúster equilibrada con el equilibrio de carga de red (NLB) de Windows o un equilibrio de carga externo, y configura una implementación de multisitio con servidores de Acceso remoto situados en ubicaciones geográficas dispersas, e implementa DirectAccess con autenticación de cliente de dos fases mediante una contraseña de un solo uso (OTP).  
   
 ## <a name="in-this-scenario"></a>En este escenario  
-Cada escenario empresarial está descrito en un documento que incluye instrucciones de planeación e implementación. Para más información, consulta lo siguiente:  
+Cada escenario empresarial está descrito en un documento que incluye instrucciones de planeación e implementación. Para más información, consulte:  
   
 -   [Implementar el acceso remoto en un clúster](cluster/Deploy-Remote-Access-In-Cluster.md)  
   
@@ -69,5 +69,3 @@ En la siguiente tabla, se muestran los roles y características que se usan en e
   
 
   
-
-

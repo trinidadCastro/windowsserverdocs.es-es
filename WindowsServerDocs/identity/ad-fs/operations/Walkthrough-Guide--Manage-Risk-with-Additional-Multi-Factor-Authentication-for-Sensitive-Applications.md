@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 99d1ac21953091cb69a85efa1795412a2c43493c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: be9eaa7b742f554539fa5bbd08f46d47a347c1ad
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815958"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118568"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>Guía de tutorial: administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales
 
@@ -27,15 +27,15 @@ Para obtener más información acerca de MFA y los mecanismos de autenticación 
 
 Este tutorial incluye las secciones siguientes:
 
--   [Paso 1: configurar el entorno de laboratorio](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
+-   [Paso 1: Configuración del entorno de laboratorio](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [Paso 2: comprobar el mecanismo de autenticación de AD FS predeterminado](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)
+-   [Paso 2: Comprobar el mecanismo de autenticación predeterminado de AD FS](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)
 
--   [Paso 3: configurar MFA en el servidor de Federación](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_3)
+-   [Paso 3: Configurar MFA en el servidor de federación](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_3)
 
--   [Paso 4: comprobar el mecanismo de MFA](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_4)
+-   [Paso 4: Comprobar el mecanismo de MFA](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_4)
 
-## <a name="step-1-setting-up-the-lab-environment"></a><a name="BKMK_1"></a>Paso 1: configurar el entorno de laboratorio
+## <a name="step-1-setting-up-the-lab-environment"></a><a name="BKMK_1"></a>Paso 1: Configuración del entorno de laboratorio
 Para completar este tutorial, necesita un entorno con los siguientes componentes:
 
 -   Un dominio de Active Directory con cuentas de grupo y usuario de prueba que se ejecutan en Windows Server 2012 R2 o un dominio Active Directory que se ejecuta en Windows Server 2008, Windows Server 2008 R2 o Windows Server 2012 con su esquema actualizado a Windows Server 2012 R2
@@ -53,7 +53,7 @@ En este entorno, el servidor de federación emite las notificaciones necesarias 
 
 Para obtener instrucciones sobre cómo configurar este entorno, vea [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
-## <a name="step-2-verify-the-default-ad-fs-authentication-mechanism"></a><a name="BKMK_2"></a>Paso 2: comprobar el mecanismo de autenticación de AD FS predeterminado
+## <a name="step-2-verify-the-default-ad-fs-authentication-mechanism"></a><a name="BKMK_2"></a>Paso 2: Comprobar el mecanismo de autenticación predeterminado de AD FS
 En este paso comprobará el mecanismo de control de acceso predeterminado de AD FS (**Autenticación mediante formularios** para la extranet y **Autenticación de Windows** para la intranet), en el que se redirige al usuario a la página de inicio de sesión de AD FS, el usuario proporciona credenciales válidas y se le concede acceso a la aplicación. Puede usar la cuenta de ad de **Robert Hatley** y la aplicación de ejemplo **claimapp** que configuró en [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 1.  En el equipo cliente, abra una ventana del explorador y vaya a la aplicación de ejemplo: **https://webserv1.contoso.com/claimapp** .
@@ -64,12 +64,12 @@ En este paso comprobará el mecanismo de control de acceso predeterminado de AD 
 
     Se le concederá acceso a la aplicación.
 
-## <a name="step-3-configure-mfa-on-your-federation-server"></a><a name="BKMK_3"></a>Paso 3: configurar MFA en el servidor de Federación
+## <a name="step-3-configure-mfa-on-your-federation-server"></a><a name="BKMK_3"></a>Paso 3: Configurar MFA en el servidor de federación
 La configuración de MFA en AD FS en Windows Server 2012 R2 tiene dos partes:
 
 -   [Seleccionar un método de autenticación adicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_5)
 
--   [Configuración de la Directiva de MFA](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_6)
+-   [Configurar la directiva de MFA](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_6)
 
 ### <a name="select-an-additional-authentication-method"></a><a name="BKMK_5"></a>Seleccionar un método de autenticación adicional
 Para configurar MFA debe seleccionar un método de autenticación adicional. En este tutorial, para el método de autenticación adicional, puede elegir entre las siguientes opciones:
@@ -78,7 +78,7 @@ Para configurar MFA debe seleccionar un método de autenticación adicional. En 
 
 -   Configurar y seleccionar la [autenticación multifactor de Windows Azure](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_8)
 
-#### <a name="certificate-authentication"></a><a name="BKMK_7"></a>Autenticación de certificados
+#### <a name="certificate-authentication"></a><a name="BKMK_7"></a>Autenticación de certificado
 Complete uno de los dos procedimientos siguientes para seleccionar la autenticación de certificado como método de autenticación adicional:
 
 ###### <a name="to-configure-certificate-authentication-as-an-additional-authentication-method-via-the-ad-fs-management-console"></a>Para configurar la autenticación de certificado como método de autenticación adicional mediante la Consola de administración de AD FS
@@ -99,28 +99,28 @@ Complete uno de los dos procedimientos siguientes para seleccionar la autenticac
     > [!WARNING]
     > Para comprobar si este comando se ejecutó correctamente, puede ejecutar el comando `Get-AdfsGlobalAuthenticationPolicy` .
 
-#### <a name="windows-azure-multi-factor-authentication"></a><a name="BKMK_8"></a>Multi-Factor Authentication de Windows Azure
+#### <a name="windows-azure-multi-factor-authentication"></a><a name="BKMK_8"></a>Windows Azure Multi-Factor Authentication
 Complete los siguientes procedimientos para descargar, configurar y seleccionar **Autenticación multifactor de Windows Azure** como autenticación adicional en el servidor de federación:
 
-1.  [Creación de un proveedor de Multi-Factor Authentication a través del portal de Windows Azure](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_a)
+1.  [Crear un proveedor de autenticación multifactor a través del portal de Windows Azure](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_a)
 
-2.  [Descargar Windows Azure Servidor Multi-Factor Authentication](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_b)
+2.  [Descargar el Servidor de autenticación multifactor de Windows Azure](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_b)
 
-3.  [Instalar el Servidor Multi-Factor Authentication de Windows Azure en el servidor de Federación](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_c)
+3.  [Instalar el Servidor de autenticación multifactor de Windows Azure en el servidor de federación](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_c)
 
-4.  [Configuración de Multi-Factor Authentication de Windows Azure como método de autenticación adicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_d)
+4.  [Configurar la autenticación multifactor de Windows Azure como método de autenticación adicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_d)
 
-##### <a name="create-a-multi-factor-authentication-provider-via-the-windows-azure-portal"></a><a name="BKMK_a"></a>Creación de un proveedor de Multi-Factor Authentication a través del portal de Windows Azure
+##### <a name="create-a-multi-factor-authentication-provider-via-the-windows-azure-portal"></a><a name="BKMK_a"></a>Crear un proveedor de autenticación multifactor a través del portal de Windows Azure
 
-1.  Inicie sesión en el portal de Microsoft Azure como administrador.
+1.  Inicie sesión en el portal de Windows Azure como administrador.
 
-2.  Seleccione Active Directory a la izquierda.
+2.  En la parte izquierda, seleccione Active Directory.
 
 3.  En la parte superior de la página Active Directory, seleccione **Proveedores de autenticación multifactor**.  En la parte inferior, haga clic en **Nuevo**.
 
 4.  En **Servicios de aplicaciones->Active Directory**, seleccione **Proveedor de autenticación multifactor** y seleccione **Creación rápida**.
 
-5.  En **App Services**, selecciona **Proveedores de autenticación activos** y **Creación rápida**.
+5.  En **App Services**, seleccione **Proveedores de Active Auth** y seleccione **Creación rápida**.
 
 6.  Rellene los siguientes campos y seleccione **Crear**.
 
@@ -132,7 +132,7 @@ Complete los siguientes procedimientos para descargar, configurar y seleccionar 
 
         -   Por cada modelo de compra de **usuarios habilitado** que se carga por usuario habilitado.  Se suele usar para escenarios de uso por parte de empleados, como Office 365.
 
-        Para obtener más información acerca de los modelos de uso, consulte [Información de precios de Windows Azure](http://www.windowsazure.com/pricing/details/active-directory/).
+        Para obtener más información acerca de los modelos de uso, consulte [Información de precios de Windows Azure](https://www.windowsazure.com/pricing/details/active-directory/).
 
     3.  **Directorio** : el inquilino de Windows Azure Active Directory al que está asociado el proveedor de multi-factor Authentication. Este dato es opcional, ya que no es necesario que el proveedor esté vinculado con Active Directory de Windows Azure al proteger aplicaciones locales.
 
@@ -140,7 +140,7 @@ Complete los siguientes procedimientos para descargar, configurar y seleccionar 
 
 A continuación, debe descargar el Servidor de autenticación multifactor de Windows Azure. Para ello, puede iniciar el portal de autenticación multifactor de Windows Azure a través del portal de Windows Azure.
 
-##### <a name="download-the-windows-azure-multi-factor-authentication-server"></a><a name="BKMK_b"></a>Descargar Windows Azure Servidor Multi-Factor Authentication
+##### <a name="download-the-windows-azure-multi-factor-authentication-server"></a><a name="BKMK_b"></a>Descargar el Servidor de autenticación multifactor de Windows Azure
 
 1.  Inicie sesión en el portal de Windows Azure como administrador y haga clic en el proveedor de autenticación multifactor que creó en el procedimiento anterior. A continuación, haga clic en el botón **Administrar**.
 
@@ -150,9 +150,9 @@ A continuación, debe descargar el Servidor de autenticación multifactor de Win
 
 En cuanto haya descargado el archivo ejecutable para el Servidor de autenticación multifactor de Windows Azure, debe instalarlo en el servidor de federación.
 
-##### <a name="install-the-windows-azure-multi-factor-authentication-server-on-your-federation-server"></a><a name="BKMK_c"></a>Instalar el Servidor Multi-Factor Authentication de Windows Azure en el servidor de Federación
+##### <a name="install-the-windows-azure-multi-factor-authentication-server-on-your-federation-server"></a><a name="BKMK_c"></a>Instalar el Servidor de autenticación multifactor de Windows Azure en el servidor de federación
 
-1.  Descargue el archivo ejecutable del Servidor de autenticación multifactor de Windows Azure y haga doble clic en él.  Se iniciará la instalación.
+1.  Descargue el archivo ejecutable del Servidor de autenticación multifactor de Windows Azure y haga doble clic en él.  Esto comenzará la instalación.
 
 2.  En la pantalla del contrato de licencia, lea el contrato, seleccione **Acepto** y haga clic en **Siguiente**.
 
@@ -162,7 +162,7 @@ En cuanto haya descargado el archivo ejecutable para el Servidor de autenticaci�
 
 Ahora ya puede iniciar el Servidor de autenticación multifactor de Windows Azure que ha instalado en el servidor de federación para configurarlo como método de autenticación adicional.
 
-##### <a name="configure-windows-azure-multi-factor-authentication-as-an-additional-authentication-method"></a><a name="BKMK_d"></a>Configuración de Multi-Factor Authentication de Windows Azure como método de autenticación adicional
+##### <a name="configure-windows-azure-multi-factor-authentication-as-an-additional-authentication-method"></a><a name="BKMK_d"></a>Configurar la autenticación multifactor de Windows Azure como método de autenticación adicional
 
 1.  Inicie **Autenticación multifactor de Windows Azure** desde su ubicación de instalación en el servidor de federación y, en la página principal, active la casilla **Omitir el asistente de configuración de autenticación** y haga clic en **Siguiente**.
 
@@ -192,19 +192,19 @@ Ahora ya puede iniciar el Servidor de autenticación multifactor de Windows Azur
 
 8.  Para registrar el adaptador en el servicio de federación, en el servidor de federación, inicie la ventana de comandos de Windows PowerShell y ejecute el siguiente comando: `\Program Files\Multi-Factor Authentication Server\Register-MultiFactorAuthenticationAdfsAdapter.ps1`. El adaptador se registra como **WindowsAzureMultiFactorAuthentication**.  Debe reiniciar el servicio AD FS para que el registro surta efecto.
 
-9. Para configurar la autenticación multifactor de Windows Azure como método de autenticación adicional, en la Consola de administración de AD FS, navegue hasta el nodo **Directivas de autenticación** y, en la sección **Autenticación multifactor**, haga clic en el vínculo **Editar** junto al subapartado **Configuración global**. En la ventana **Editar directiva de autenticación global**, seleccione **Autenticación multifactor** como método de autenticación adicional y, a continuación, haga clic en **Aceptar**.
+9. Para configurar la autenticación multifactor de Windows Azure como método de autenticación adicional, en la Consola de administración de AD FS, navegue hasta el nodo **Directivas de autenticación** y, en la sección **Autenticación multifactor**, haga clic en el vínculo **Editar** junto al subapartado **Configuración global**. En la ventana **Editar directiva de autenticación global**, seleccione **Multi-Factor Authentication** como método de autenticación adicional y haga clic en **Aceptar**.
 
     > [!NOTE]
-    > Para personalizar el nombre y la descripción del método de autenticación multifactor de Windows Azure, así como de cualquier método de autenticación de terceros, tal como aparecen en la interfaz de usuario de AD FS, ejecute el cmdlet **Set-AdfsAuthenticationProviderWebContent**. Para obtener más información, vea [https://technet.microsoft.com/library/dn479401.aspx](https://technet.microsoft.com/library/dn479401.aspx)
+    > Para personalizar el nombre y la descripción del método de autenticación multifactor de Windows Azure, así como de cualquier método de autenticación de terceros, tal como aparecen en la interfaz de usuario de AD FS, ejecute el cmdlet **Set-AdfsAuthenticationProviderWebContent**. Para obtener más información, vea.[https://technet.microsoft.com/library/dn479401.aspx](/powershell/module/adfs/set-adfsauthenticationproviderwebcontent?view=win10-ps)
 
-### <a name="set-up-mfa-policy"></a><a name="BKMK_6"></a>Configuración de la Directiva de MFA
+### <a name="set-up-mfa-policy"></a><a name="BKMK_6"></a>Configurar la directiva de MFA
 Para habilitar MFA, debe configurar la directiva de MFA en el servidor de federación. En este tutorial, según nuestra directiva de MFA, la cuenta de **Robert Hatley** debe someterse a MFA porque pertenece al grupo **Finance** que configuró en [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 Puede configurar la directiva de MFA mediante la Consola de administración de AD FS o con Windows PowerShell.
 
 ##### <a name="to-configure-the-mfa-policy-based-on-users-group-membership-data-for-claimapp--via-the-ad-fs-management-console"></a>Para configurar la Directiva de MFA en función de los datos de pertenencia a grupos del usuario para "claimapp" a través de la consola de administración de AD FS
 
-1.  En la Consola de administración de AD FS del servidor de federación, navegue hasta el nodo **Directivas de autenticación**\\**Por relación de confianza para usuario autenticado** y seleccione la relación de confianza para usuario autenticado que representa la aplicación de ejemplo (**claimapp**).
+1.  En el servidor de Federación, en la consola de administración de AD FS, navegue hasta el nodo **directivas de autenticación** \\ **por relación de confianza para usuario autenticado** y seleccione la relación de confianza para usuario autenticado que representa la aplicación de ejemplo (**claimapp**).
 
 2.  En la página **Acciones** o haciendo clic con el botón secundario en **claimapp**, seleccione **Editar autenticación multifactor personalizada**.
 
@@ -220,7 +220,7 @@ Puede configurar la directiva de MFA mediante la Consola de administración de A
     $rp = Get-AdfsRelyingPartyTrust -Name claimapp
     ```
 
-2.  En la misma ventana de comandos de Windows PowerShell, ejecuta el siguiente comando:
+2.  En la misma ventana de Windows PowerShell, ejecute el siguiente comando:
 
     ```
     $GroupMfaClaimTriggerRule = 'c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "^(?i) <group_SID>$"] => issue(Type = "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", Value = "https://schemas.microsoft.com/claims/multipleauthn");'
@@ -231,8 +231,8 @@ Puede configurar la directiva de MFA mediante la Consola de administración de A
     > [!NOTE]
     > Asegúrese de reemplazar <group_SID> con el valor del SID de grupo de AD **Finanzas**.
 
-## <a name="step-4-verify-mfa-mechanism"></a><a name="BKMK_4"></a>Paso 4: comprobar el mecanismo de MFA
-En este paso comprobará la funcionalidad de MFA que configuró en el paso anterior. Puede usar el procedimiento siguiente para comprobar que el usuario de AD **Robert Hatley** puede tener acceso a la aplicación de ejemplo y que debe someterse a MFA porque pertenece al grupo **Finance**.
+## <a name="step-4-verify-mfa-mechanism"></a><a name="BKMK_4"></a>Paso 4: Comprobar el mecanismo de MFA
+En este paso comprobará la funcionalidad de MFA que configuró en el paso anterior. Puede usar el procedimiento siguiente para comprobar que el usuario de AD de **Robert Hatley** puede tener acceso a la aplicación de ejemplo y que debe someterse a MFA porque pertenece al grupo **Finanzas**.
 
 1.  En el equipo cliente, abra una ventana del explorador y vaya a la aplicación de ejemplo: **https://webserv1.contoso.com/claimapp** .
 
@@ -240,15 +240,12 @@ En este paso comprobará la funcionalidad de MFA que configuró en el paso anter
 
 2.  Escriba las credenciales de la cuenta de AD de **Robert Hatley**.
 
-    En este punto, a causa de la directiva de MFA que configuró, se solicitará al usuario que realice una autenticación adicional. El texto del mensaje predeterminado es **Por razones de seguridad, necesitamos más información para comprobar su cuenta.** No obstante, este texto se puede personalizar. Para obtener más información sobre cómo personalizar la experiencia de inicio de sesión, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).
+    En este punto, a causa de la directiva de MFA que configuró, se solicitará al usuario que realice una autenticación adicional. El mensaje predeterminado es **Por razones de seguridad, necesitamos más información para comprobar su cuenta.** No obstante, este texto se puede personalizar. Para obtener más información sobre cómo personalizar la experiencia de inicio de sesión, consulte [Customizing the AD FS Sign-in Pages](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)).
 
     Si configuró la autenticación de certificado como método de autenticación adicional, el texto del mensaje predeterminado será **Seleccione el certificado que desea usar para la autenticación. Si cancela la operación, cierre el explorador e inténtelo de nuevo.**
 
-    Si configura la autenticación multifactor de Windows Azure como método de autenticación adicional, el texto del mensaje predeterminado será **Se realizará una llamada a su teléfono para completar la autenticación.** Para obtener más información acerca del inicio de sesión con Autenticación multifactor de Windows Azure y con distintas opciones para el método de comprobación preferido, consulte [Introducción a la autenticación multifactor de Windows Azure](https://technet.microsoft.com/library/dn249479.aspx).
+    Si configura la autenticación multifactor de Windows Azure como método de autenticación adicional, el texto del mensaje predeterminado será **Se realizará una llamada a su teléfono para completar la autenticación.** Para obtener más información acerca del inicio de sesión con Autenticación multifactor de Windows Azure y con distintas opciones para el método de comprobación preferido, consulte [Introducción a la autenticación multifactor de Windows Azure](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)).
 
-## <a name="see-also"></a>Consulta también
-[Administración de riesgos con multi-factor Authentication adicionales para las aplicaciones confidenciales](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-[configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-
-
-
+## <a name="see-also"></a>Consulte también
+[Administración de riesgos con multi-factor Authentication adicionales para aplicaciones](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) 
+ confidenciales [Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)

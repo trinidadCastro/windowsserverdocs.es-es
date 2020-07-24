@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 9ce9aa052290b82b2f085cb4637fcffbdf7b42ce
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d7f1b5387d82d487e50b217b28367e82617a66ea
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473122"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966257"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)
 
@@ -67,7 +67,7 @@ El servicio de migración de almacenamiento migra todas las marcas, la configura
     - Comunicación remota de identidad
     - Infraestructura
     - Nombre
-    - Ruta de acceso
+    - Path
     - Con ámbito
     - Nombre de ámbito
     - Descriptor de seguridad
@@ -128,7 +128,7 @@ El servicio de migración de almacenamiento contiene un motor de lectura y copia
 
 - **Habilitar el procesamiento de alto rendimiento.** Asegúrese de que la configuración de BIOS o UEFI para los servidores permite un alto rendimiento; por ejemplo, deshabilite el estado C, establezca la velocidad de QPI, habilite NUMA y configure la frecuencia de la memoria en el valor más elevado. Asegúrese de que la administración de energía en Windows Server está establecida en alto rendimiento. Reinicie si es necesario. No olvide devolverlos a los Estados correspondientes después de completar la migración.
 
-- **Ajustar hardware** Revise las [directrices para la optimización del rendimiento de Windows server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/) para optimizar el orquestador y los equipos de destino que ejecutan windows Server 2019 y windows Server 2016. La sección de [ajuste del rendimiento del subsistema de red](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) contiene información especialmente valiosa.
+- **Ajustar hardware** Revise las [directrices para la optimización del rendimiento de Windows server 2016](/windows-server/administration/performance-tuning/) para optimizar el orquestador y los equipos de destino que ejecutan windows Server 2019 y windows Server 2016. La sección de [ajuste del rendimiento del subsistema de red](../../networking/technologies/network-subsystem/net-sub-performance-tuning-nics.md) contiene información especialmente valiosa.
 
 - **Use un almacenamiento más rápido.** Aunque puede ser difícil actualizar la velocidad de almacenamiento del equipo de origen, debe asegurarse de que el almacenamiento de destino sea al menos tan rápido como el rendimiento de e/s de escritura, ya que el origen está en el rendimiento de e/s de lectura para asegurarse de que no hay ningún cuello de botella innecesario en las transferencias. Si el destino es una máquina virtual, asegúrese de que, al menos para los fines de la migración, se ejecute en la capa de almacenamiento más rápida de los hosts del hipervisor, como en el nivel de Flash o en los clústeres de HCI de Espacios de almacenamiento directo que usan espacios de ejecución o de todo el flash reflejados. Una vez completada la migración de SMS, la máquina virtual se puede migrar en vivo a un nivel o host más lento.
 
@@ -164,7 +164,7 @@ Al realizar una transferencia, el servicio de migración de almacenamiento busca
 
 ## <a name="what-do-the-error-numbers-mean-in-the-transfer-csv"></a>¿Qué significan los números de error en el CSV de transferencia?
 
-La mayoría de los errores encontrados en el archivo CSV de transferencia son códigos de error del sistema de Windows. Puede averiguar lo que significa cada error revisando la documentación de los [códigos de error de Win32](https://docs.microsoft.com/windows/win32/debug/system-error-codes).
+La mayoría de los errores encontrados en el archivo CSV de transferencia son códigos de error del sistema de Windows. Puede averiguar lo que significa cada error revisando la documentación de los [códigos de error de Win32](/windows/win32/debug/system-error-codes).
 
 ## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a>¿Cuáles son mis opciones para proporcionar comentarios, errores de archivos u obtener soporte técnico?
 

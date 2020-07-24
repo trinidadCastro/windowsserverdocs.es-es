@@ -1,5 +1,5 @@
 ---
-title: Usar ETW para solucionar problemas de conexiones LDAP
+title: Uso de ETW para solucionar problemas con conexiones LDAP
 description: Cómo activar y usar ETW para realizar un seguimiento de las conexiones LDAP entre AD DS controladores de dominio.
 author: Teresa-Motiv
 manager: dcscontentpm
@@ -9,16 +9,16 @@ audience: Admin
 ms.author: v-tea
 ms.topic: article
 ms.date: 11/22/2019
-ms.openlocfilehash: f7b7df714dbd02b15555fa20c70c1e995e121a48
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 516304498206523a1ce618da6aa21640e38c9654
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822938"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965657"
 ---
-# <a name="using-etw-to-troubleshoot-ldap-connections"></a>Usar ETW para solucionar problemas de conexiones LDAP
+# <a name="using-etw-to-troubleshoot-ldap-connections"></a>Uso de ETW para solucionar problemas con conexiones LDAP
 
-[Seguimiento de eventos para Windows (ETW)](https://docs.microsoft.com/windows/win32/etw/event-tracing-portal) puede ser una valiosa herramienta para la solución de problemas de Active Directory Domain Services (AD DS). Puede usar ETW para realizar el seguimiento de las comunicaciones del Protocolo ligero de acceso a directorios ([LDAP](https://docs.microsoft.com/previous-versions/windows/desktop/ldap/lightweight-directory-access-protocol-ldap-api)) entre los clientes de Windows y los servidores LDAP, incluidos los controladores de dominio de AD DS.
+[Seguimiento de eventos para Windows (ETW)](/windows/win32/etw/event-tracing-portal) puede ser una valiosa herramienta para la solución de problemas de Active Directory Domain Services (AD DS). Puede usar ETW para realizar el seguimiento de las comunicaciones del Protocolo ligero de acceso a directorios ([LDAP](/previous-versions/windows/desktop/ldap/lightweight-directory-access-protocol-ldap-api)) entre los clientes de Windows y los servidores LDAP, incluidos los controladores de dominio de AD DS.
 
 ## <a name="how-to-turn-on-etw-and-start-a-trace"></a>Cómo activar ETW e iniciar un seguimiento
 
@@ -26,9 +26,9 @@ ms.locfileid: "80822938"
 
 1. Abra el editor del registro y cree la siguiente subclave del registro:
 
-   **HKEY\_equipo LOCAL\_\\sistema\\CurrentControlSet\\Services\\ldap\\Tracing\\* Processname***
+   **HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ Services \\ LDAP \\ Tracing \\ * processName***
 
-   En esta subclave, *processName* es el nombre completo del proceso del que se desea realizar un seguimiento, incluida su extensión (por ejemplo, "svchost. exe").
+   En esta subclave, *processName* es el nombre completo del proceso del que se desea realizar un seguimiento, incluida su extensión (por ejemplo, "Svchost.exe").
 
 1. (**Opcional**) En esta subclave, cree una nueva entrada denominada **PID**. Para usar esta entrada, asigne un identificador de proceso como un valor DWORD.  
 
@@ -44,11 +44,11 @@ ms.locfileid: "80822938"
 
    Los marcadores de posición de este comando representan los valores siguientes.
 
-  - \<*nombresesión*> es un identificador arbitrario que se utiliza para etiquetar la sesión de seguimiento.  
+  - \<*SessionName*>es un identificador arbitrario que se utiliza para etiquetar la sesión de seguimiento.  
   > [!NOTE]  
   > Tendrá que hacer referencia a este nombre de sesión más adelante al detener la sesión de seguimiento.
-  - \<*nombre*de archivo > especifica el archivo de registro en el que se escribirán los eventos.
-  - \<*TraceFlags*> debe ser uno o varios de los valores enumerados en la [tabla de marcas de seguimiento](#values-for-trace-flags).
+  - \<*FileName*>especifica el archivo de registro en el que se escribirán los eventos.
+  - \<*TraceFlags*>debe ser uno o varios de los valores enumerados en la [tabla marcas de seguimiento](#values-for-trace-flags).
 
 ## <a name="how-to-end-a-tracing-session-and-turn-off-event-tracing"></a>Cómo finalizar una sesión de seguimiento y desactivar el seguimiento de eventos
 
@@ -60,18 +60,18 @@ ms.locfileid: "80822938"
    tracelog.exe -stop <SessionName>
    ```
 
-   En este comando, \<*nombresesión*> es el mismo nombre que usó en el comando **tracelog. exe-start** .
+   En este comando, \<*SessionName*> es el mismo nombre que usó en el comando **tracelog.exe-Start** .
 
 **Para desactivar ETW**
 
-- En el editor del registro, elimine la subclave **HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Services\\ldap\\Tracing\\* processName***.
+- En el editor del registro, elimine la subclave **HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ Services \\ LDAP \\ Tracing \\ * processName**.
 
 ## <a name="values-for-trace-flags"></a>Valores de marcas de seguimiento
 
-Para usar una marca, sustituya el valor de marca del marcador de posición <*TraceFlags*> en los argumentos del comando **tracelog. exe-start** .
+Para usar una marca, sustituya el valor de marca del marcador de posición <*TraceFlags*> en los argumentos del comando **tracelog.exe-Start** .
 
 > [!NOTE]  
-> Puede especificar varias marcas mediante la suma de los valores de marca adecuados. Por ejemplo, para especificar las marcas **debug\_Search** (0x00000001) y **Debug\_cache** (0x00000010), el valor adecuado \<*TraceFlags*> es **0x00000011**.
+> Puede especificar varias marcas mediante la suma de los valores de marca adecuados. Por ejemplo, para especificar las marcas **Debug \_ Search** (0X00000001) y **Debug \_ Cache** (0x00000010), el valor adecuado \<*TraceFlags*> es **0x00000011**.
 
 |Nombre del marcador |Valor de marca |Descripción de la marca |
 | --- | --- | --- |
@@ -108,11 +108,11 @@ Para usar una marca, sustituya el valor de marca del marcador de posición <*Tra
 
 ## <a name="example"></a>Ejemplo
 
-Considere una aplicación, app1. exe, que establece contraseñas para las cuentas de usuario. Supongamos que app1. exe genera un error inesperado. Para usar ETW para ayudar a diagnosticar este problema, siga estos pasos:
+Considere una aplicación, App1.exe, que establece contraseñas para las cuentas de usuario. Supongamos que App1.exe produce un error inesperado. Para usar ETW para ayudar a diagnosticar este problema, siga estos pasos:
 
 1. En el editor del registro, cree la siguiente entrada del registro:
 
-   **HKEY\_equipo LOCAL de\_\\sistema\\CurrentControlSet\\Services\\seguimiento de\\LDAP\\app1. exe**
+   **HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ Services \\ LDAP \\ Tracing \\App1.exe**
 
 1. Para iniciar una sesión de seguimiento, abra una ventana del símbolo del sistema y ejecute el siguiente comando:
 
@@ -120,9 +120,9 @@ Considere una aplicación, app1. exe, que establece contraseñas para las cuenta
    tracelog.exe -start ldaptrace -guid \#099614a5-5dd7-4788-8bc9-e29f43db28fc -f .\ldap.etl -flag 0x80000
    ```
 
-   Una vez que se inicia este comando, **DEBUG\_BIND** se asegura de que ETW escribe mensajes de seguimiento en.\\LDAP. ETL.
+   Una vez que se inicia este comando, el ** \_ enlace de depuración** se asegura de que ETW escribe mensajes de seguimiento en. \\ LDAP. ETL.
 
-1. Inicie app1. exe y reproduzca el error inesperado.
+1. Inicie App1.exe y reproduzca el error inesperado.
 
 1. Para detener la sesión de seguimiento, ejecute el siguiente comando en el símbolo del sistema:
 
@@ -130,7 +130,7 @@ Considere una aplicación, app1. exe, que establece contraseñas para las cuenta
     tracelog.exe -stop ldaptrace
    ```
 
-1. Para evitar que otros usuarios puedan hacer un seguimiento de la aplicación, elimine el seguimiento **HKEY\_LOCAL\_MACHINE**\\**System**\\**CurrentControlSet**\\**Services**\\**LDAP**\\**Tracing**\\la entrada del registro **app1. exe** .
+1. Para evitar que otros usuarios puedan hacer un seguimiento de la aplicación, elimine la entrada del registro **HKEY \_ local \_ Machine** \\ **System** \\ **CurrentControlSet** \\ **Services** \\ **ldap** \\ **Tracing** \\ **App1.exe** .
 
 1. Para revisar la información del registro de seguimiento, ejecute el siguiente comando en el símbolo del sistema:
 
@@ -139,4 +139,4 @@ Considere una aplicación, app1. exe, que establece contraseñas para las cuenta
     ```
 
    > [!NOTE]  
-   > En este comando, **tracerpt. exe** es una herramienta de [consumidor de seguimiento](https://go.microsoft.com/fwlink/p/?linkid=83876) .
+   > En este comando, **tracerpt.exe** es una herramienta de [consumidor de seguimiento](https://go.microsoft.com/fwlink/p/?linkid=83876) .

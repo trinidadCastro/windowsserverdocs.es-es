@@ -1,5 +1,5 @@
 ---
-title: Introducción técnica a las directivas de restricción de software
+title: Información técnica de Directivas de restricción de software
 description: Seguridad de Windows Server
 ms.prod: windows-server
 ms.technology: security-software-restriction-policies
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 38625a8d416345a6a7ed40c021b55aa10d1fd92f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9a9a44cd4ab1f4c8ee1c4dadf5cc09de2208b46a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855278"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966167"
 ---
-# <a name="software-restriction-policies-technical-overview"></a>Introducción técnica a las directivas de restricción de software
+# <a name="software-restriction-policies-technical-overview"></a>Información técnica de Directivas de restricción de software
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -78,7 +78,7 @@ Las directivas de restricción de software solo se pueden configurar y aplicar e
 > [!NOTE]
 > Ciertas ediciones del sistema operativo cliente de Windows a partir de Windows Vista no tienen directivas de restricciones de software. Es posible que los equipos no administrados en un dominio por directiva de grupo no reciban directivas distribuidas.
 
-**Comparar funciones de control de aplicaciones en las directivas de restricción de software y AppLocker**
+**Comparación de las funciones de control de aplicaciones en Directivas de restricción de software y AppLocker**
 
 En la tabla siguiente se comparan las características y funciones de la característica Directivas de restricción de software (SRP) y AppLocker.
 
@@ -96,7 +96,7 @@ En la tabla siguiente se comparan las características y funciones de la caracte
 |Compatibilidad con diferentes niveles de seguridad|Los administradores de SRP pueden especificar los permisos con los que se puede ejecutar una aplicación. Por lo tanto, un administrador puede configurar una regla de modo que el Bloc de notas siempre se ejecute con permisos restringidos y nunca con privilegios de administrador.<p>SRP en Windows Vista y varios niveles de seguridad anteriores compatibles. En Windows 7, esa lista se restringe a solo dos niveles: no permitido y no restringido (el usuario básico se traduce en no permitido).|AppLocker no admite niveles de seguridad.|
 |Administración de aplicaciones empaquetadas e instaladores de aplicaciones empaquetadas|No se puede|.appx es un tipo de archivo válido que puede administrar AppLocker.|
 |Selección del destino de una regla para un usuario o un grupo de usuarios|Las reglas de SRP se aplican a todos los usuarios en un equipo determinado.|Las reglas de AppLocker pueden destinarse a un usuario específico o un grupo de usuarios.|
-|Compatibilidad con las excepciones de regla|SRP no admite excepciones de reglas.|Las reglas de AppLocker pueden tener excepciones que permiten a los administradores crear reglas como "permitir todo desde Windows excepto regedit. exe".|
+|Compatibilidad con las excepciones de regla|SRP no admite excepciones de reglas.|Las reglas de AppLocker pueden tener excepciones que permiten a los administradores crear reglas como "permitir todo desde Windows excepto para Regedit.exe".|
 |Compatibilidad con el modo auditoría|SRP no admite el modo auditoría. La única manera de probar las directivas de SRP es configurar un entorno de prueba y ejecutar algunos experimentos.|AppLocker admite el modo de auditoría, que permite a los administradores probar el efecto de la directiva en el entorno de producción real sin afectar a la experiencia del usuario. Una vez que estés satisfecho con los resultados, puedes iniciar la aplicación de la directiva.|
 |Compatibilidad para exportar e importar directivas|SRP no admite la importación o la exportación de directivas.|AppLocker admite la importación y la exportación de directivas. Esto te permite crear la directiva de AppLocker en un equipo de muestra, probarla, exportar esa directiva y volver a importarla al GPO deseado.|
 |Aplicación de reglas|De forma interna, el cumplimiento de las reglas de SRP se realiza en el modo de usuario, que es menos seguro.|Internamente, las reglas de AppLocker para archivos exe y dll se aplican en el modo kernel, que es más seguro que aplicarlas en el modo de usuario.|
@@ -123,7 +123,7 @@ En un nivel alto, las directivas de restricción de software constan de los sigu
 
 -   Conjunto resultante de directivas (RSoP), que puede ayudar en el diagnóstico de la Directiva vigente que se aplicará a un cliente.
 
-Para obtener más información acerca de la arquitectura de SRP, cómo administra SRP las reglas, los procesos y las interacciones, vea [Cómo funcionan las directivas de restricción de software](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx) en la biblioteca técnica de Windows Server 2003.
+Para obtener más información acerca de la arquitectura de SRP, cómo administra SRP las reglas, los procesos y las interacciones, vea [Cómo funcionan las directivas de restricción de software](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10)) en la biblioteca técnica de Windows Server 2003.
 
 ## <a name="best-practices"></a><a name="BKMK_Best_Practices"></a>Procedimientos recomendados
 
@@ -173,11 +173,9 @@ Para obtener más información acerca de la arquitectura de SRP, cómo administr
 
 |Tipo de contenido|Referencias|
 |--------|-------|
-|**Planeamiento**|[Referencia técnica de directivas de restricción de software](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx)|
+|**Planeamiento**|[Referencia técnica de directivas de restricción de software](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10))|
 |**Operaciones**|[Administración de las directivas de restricción de software](administer-software-restriction-policies.md)|
-|**Solución de problemas**|[Solución de problemas de directivas de restricción de software (2003)](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx)|
-|**Seguridad**|[Amenazas y contramedidas para las directivas de restricción de software (2008)](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx)<p>[Amenazas y contramedidas para las directivas de restricción de software (2008 R2)](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx)|
-|**Herramientas y configuración**|[Herramientas y configuración de las directivas de restricción de software (2003)](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx)|
-|**Recursos de la comunidad**|[Bloqueo de aplicaciones con directivas de restricción de software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-
-
+|**Solución de problemas**|[Solución de problemas de directivas de restricción de software (2003)](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
+|**Seguridad**|[Amenazas y contramedidas para las directivas de restricción de software (2008)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[Amenazas y contramedidas para las directivas de restricción de software (2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
+|**Herramientas y configuración**|[Herramientas y configuración de las directivas de restricción de software (2003)](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))|
+|**Recursos de la comunidad**|[Bloqueo de la aplicación con directivas de restricción de software](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

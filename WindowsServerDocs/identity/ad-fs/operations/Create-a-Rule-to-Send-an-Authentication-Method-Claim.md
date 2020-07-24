@@ -8,34 +8,34 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2c011c3b15f6223a6cea2f9c7226d9319641a693
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a26566fc094c4d37566d1f5972b91c203e234d6e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816588"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965297"
 ---
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>Crear una regla para enviar una notificación de método de autenticación
 
 
-Puede usar la plantilla de regla **Enviar pertenencia a grupos como notificaciones** o la plantilla de regla **transformar una notificación entrante** para enviar una notificación de método de autenticación. El usuario de confianza puede usar una notificación de método de autenticación para determinar el mecanismo de inicio de sesión que utiliza el usuario para autenticar y obtener notificaciones de Servicios de federación de Active Directory (AD FS) \(AD FS\). También puede usar la característica de comprobación del mecanismo de autenticación de Servicios de federación de Active Directory (AD FS) \(AD FS\) en Windows Server 2012 R2 como entrada para generar notificaciones de método de autenticación para las situaciones en las que el usuario de confianza desea determinar el nivel de acceso que se basa en los inicios de sesión de tarjeta inteligente. Por ejemplo, un desarrollador puede asignar distintos niveles de acceso a usuarios federados de la aplicación de usuario de confianza. Los niveles de acceso se basan en si los usuarios inician sesión con sus credenciales de nombre de usuario y contraseña, en lugar de en sus tarjetas inteligentes.  
+Puede usar la plantilla de regla **Enviar pertenencia a grupos como notificaciones** o la plantilla de regla **transformar una notificación entrante** para enviar una notificación de método de autenticación. El usuario de confianza puede usar una notificación de método de autenticación para determinar el mecanismo de inicio de sesión que utiliza el usuario para autenticar y obtener notificaciones de Servicios de federación de Active Directory (AD FS) \( AD FS \) . También puede usar la característica de comprobación del mecanismo de autenticación de Servicios de federación de Active Directory (AD FS) \( AD FS \) en Windows Server 2012 R2 como entrada para generar notificaciones de método de autenticación para las situaciones en las que el usuario de confianza desea determinar el nivel de acceso que se basa en los inicios de sesión de tarjeta inteligente. Por ejemplo, un desarrollador puede asignar distintos niveles de acceso a usuarios federados de la aplicación de usuario de confianza. Los niveles de acceso se basan en si los usuarios inician sesión con sus credenciales de nombre de usuario y contraseña, en lugar de en sus tarjetas inteligentes.  
 
 En función de los requisitos de su organización, use uno de los procedimientos siguientes:  
 
--   Cree esta regla mediante la plantilla de regla **Enviar pertenencia a grupos como notificaciones** \- puede usar esta plantilla de regla cuando desee que el grupo que especifique en esta plantilla determine en última instancia qué notificación del método de autenticación se debe emitir.  
+-   Crear esta regla mediante la plantilla de regla **Enviar pertenencia a grupos como notificaciones** puede \- usar esta plantilla de regla si desea que el grupo que especifique en esta plantilla determine en última instancia qué notificación del método de autenticación se debe emitir.  
 
--   Cree esta regla mediante la plantilla de regla **transformar una notificación entrante** \- puede usar esta plantilla de regla si desea cambiar el método de autenticación existente a un nuevo método de autenticación que funcione con un producto que no reconozca las notificaciones de método de autenticación estándar AD FS.  
+-   Crear esta regla mediante la plantilla de regla **transformar una notificación entrante** puede \- usar esta plantilla de regla si desea cambiar el método de autenticación existente a un nuevo método de autenticación que funcione con un producto que no reconozca las notificaciones estándar AD FS método de autenticación.  
 
 
 
 ## <a name="to-create-by-using-the-send-group-membership-as-claims-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear mediante la plantilla de regla enviar pertenencia a grupos como notificaciones en una relación de confianza para usuario autenticado en Windows Server 2016 
 
-1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
+1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.  
 
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**. 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
 
-3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **Editar Directiva de emisión de notificaciones**.
+3.  \-Haga clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
 
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas. 
@@ -50,25 +50,25 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 8.  En **tipo de notificaciones salientes**, seleccione **método de autenticación** en la lista.  
 
-9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados de identificador uniforme de recursos \(URI\) en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
+9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados del URI del identificador uniforme \( \) de recursos en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
 
 |                            Método de autenticación real                             |                                URI correspondiente                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        Autenticación de nombre de usuario y contraseña                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Autenticación de Windows                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| Seguridad de la capa de transporte \(TLS\) autenticación mutua que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  Autenticación basada en\-X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| \( \) Autenticación mutua TLS de seguridad de la capa de transporte que utiliza certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  \-Autenticación basada en X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
 ## <a name="to-create-by-using-the-send-group-membership-as-claims-rule-template-on-a-claims-provider-trust-in-windows-server-2016"></a>Para crear mediante la plantilla de regla enviar pertenencia a grupos como notificaciones en una confianza de proveedor de notificaciones en Windows Server 2016 
 
-1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
+1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.  
 
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**. 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
 
-3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
+3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
@@ -83,26 +83,26 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 8.  En **tipo de notificaciones salientes**, seleccione **método de autenticación** en la lista.  
 
-9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados de identificador uniforme de recursos \(URI\) en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
+9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados del URI del identificador uniforme \( \) de recursos en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
 
 |                            Método de autenticación real                             |                                URI correspondiente                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        Autenticación de nombre de usuario y contraseña                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Autenticación de Windows                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| Seguridad de la capa de transporte \(TLS\) autenticación mutua que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  Autenticación basada en\-X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| \( \) Autenticación mutua TLS de seguridad de la capa de transporte que utiliza certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  \-Autenticación basada en X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
 
 ## <a name="to-create-this-rule-by-using-the-transform-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear esta regla mediante la plantilla de regla transformar una notificaciones entrantes en una relación de confianza para usuario autenticado en Windows Server 2016 
 
-1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
+1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.  
 
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**. 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
 
-3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **Editar Directiva de emisión de notificaciones**.
+3.  \-Haga clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
 
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas. 
@@ -128,7 +128,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 |         Autenticación de nombre de usuario y contraseña          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Autenticación de Windows                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | Autenticación mutua de TLS que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   Autenticación basada en\-X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   \-Autenticación basada en X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
@@ -137,12 +137,12 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 ## <a name="to-create-this-rule-by-using-the-transform-an-incoming-claim-rule-template-on-a-claims-provider-trust-in-windows-server-2016"></a>Para crear esta regla mediante la plantilla de regla transformar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016 
 
-1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
+1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.  
 
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**. 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
 
-3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
+3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
@@ -168,7 +168,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 |         Autenticación de nombre de usuario y contraseña          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Autenticación de Windows                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | Autenticación mutua de TLS que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   Autenticación basada en\-X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   \-Autenticación basada en X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
@@ -196,11 +196,11 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 ## <a name="to-create-this-rule-by-using-the-send-group-membership-as-claims-rule-template-in-windows-server-2012-r2"></a>Para crear esta regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones en Windows Server 2012 R2  
 
-1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
+1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.  
 
-2.  En el árbol de consola, en **AD FS\\relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas para usuario autenticado**y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
+2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas**de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
 
-3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
+3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, en función de la confianza que esté editando y el conjunto de reglas en el que desee crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:  
@@ -223,14 +223,14 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 8.  En **tipo de notificaciones salientes**, seleccione **método de autenticación** en la lista.  
 
-9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados de identificador uniforme de recursos \(URI\) en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
+9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados del URI del identificador uniforme \( \) de recursos en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
 
 |                            Método de autenticación real                             |                                URI correspondiente                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        Autenticación de nombre de usuario y contraseña                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                               Autenticación de Windows                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| Seguridad de la capa de transporte \(TLS\) autenticación mutua que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  Autenticación basada en\-X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+| \( \) Autenticación mutua TLS de seguridad de la capa de transporte que utiliza certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  \-Autenticación basada en X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth1.PNG)
 
@@ -243,9 +243,9 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **Administración de AD FS**.  
 
-2.  En el árbol de consola, en **AD FS\\relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas para usuario autenticado**y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
+2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas**de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
 
-3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.  
+3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.  
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, que depende de la confianza que está editando y en qué conjunto de reglas desea crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:  
@@ -279,7 +279,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 |         Autenticación de nombre de usuario y contraseña          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
 |                 Autenticación de Windows                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | Autenticación mutua de TLS que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   Autenticación basada en\-X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   \-Autenticación basada en X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth3.PNG)
 
@@ -289,11 +289,11 @@ En función de los requisitos de su organización, use uno de los procedimientos
 ## <a name="additional-references"></a>Referencias adicionales 
 [Configuración de regla de notificación](Configure-Claim-Rules.md)  
 
-[Lista de comprobación: creación de reglas de notificaciones para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de comprobación: crear reglas de notificación para una relación de confianza para usuario autenticado](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913578(v=ws.11))  
 
-[Lista de comprobación: creación de reglas de notificación para una confianza de proveedor de notificaciones](https://technet.microsoft.com/library/ee913564.aspx)  
+[Lista de comprobación: Lista de comprobación: crear reglas de notificación para confianza de proveedores de notificaciones](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913564(v=ws.11))  
 
-[Cuándo usar una regla de notificaciones de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
+[Cuándo usar una regla de notificación de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
 [El papel de las notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
 

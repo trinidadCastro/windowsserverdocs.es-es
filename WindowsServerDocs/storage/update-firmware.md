@@ -8,42 +8,42 @@ ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 55a4fc94440b763c48735ffe44099da702857489
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e117b486fd628397bfe36aa897ff64cdd26f98b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820878"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965837"
 ---
 # <a name="updating-drive-firmware"></a>Actualización del firmware de la unidad
 >Se aplica a: Windows Server 2019, Windows Server 2016 y Windows 10
 
-La actualización del firmware para unidades ha sido tradicionalmente una tarea compleja con posibles tiempos de inactividad. Esa es la razón por la que estamos realizando mejoras en Espacios de almacenamiento, Windows Server y Windows 10, versión 1703 y versiones posteriores. Si tienes unidades que admitan el nuevo mecanismo de actualización de firmware incluido en Windows, puedes actualizar el firmware de la unidad de las unidades en producción sin tiempo de inactividad. Sin embargo, si vas a actualizar el firmware de una unidad de producción, asegúrate de leer nuestras sugerencias sobre cómo minimizar el riesgo al usar esta nueva funcionalidad de gran capacidad.
+La actualización del firmware de las unidades ha sido históricamente una tarea complicada con un potencial de tiempo de inactividad, por lo que estamos realizando mejoras en los espacios de almacenamiento, Windows Server y Windows 10, versión 1703 y versiones más recientes. Si tiene unidades que admiten el nuevo mecanismo de actualización de firmware incluido en Windows, puede actualizar el firmware de la unidad de las unidades en producción sin tiempo de inactividad. Sin embargo, si va a actualizar el firmware de una unidad de producción, asegúrese de leer nuestras sugerencias sobre cómo minimizar el riesgo al usar esta eficaz funcionalidad nueva.
 
   > [!Warning]
   > Las actualizaciones de firmware son una operación de mantenimiento potencialmente peligrosa y solo se deben aplicar después de realizar pruebas minuciosas de la nueva imagen de firmware. Es posible que el nuevo firmware en hardware no compatible afecte negativamente a la estabilidad y la confiabilidad o que incluso provoque la pérdida de datos. Los administradores deben leer las notas de la versión que incluye una actualización determinada para determinar su impacto y aplicabilidad.
 
 ## <a name="drive-compatibility"></a>Compatibilidad con las unidades
 
-Para usar Windows Server para actualizar el firmware de la unidad, debe tener unidades compatibles. Para garantizar el comportamiento común del dispositivo, comenzamos definiendo nuevos requisitos y, para Windows 10 y Windows Server 2016, requisitos opcionales del Hardware Lab Kit (HLK) para dispositivos SAS, SATA y NVMe. Estos requisitos resumen los comandos que un dispositivo SATA, SAS o NVMe debe admitir para que se pueda actualizar su firmware mediante estos nuevos cmdlets de PowerShell nativos de Windows. Para admitir estos requisitos, hay una nueva prueba de HLK para comprobar si los productos del proveedor admiten los comandos adecuados y si estos se implementan en revisiones futuras. 
+Para usar Windows Server para actualizar el firmware de la unidad, debe tener unidades compatibles. Para garantizar un comportamiento de dispositivo común, comenzamos definiendo nuevos y-para Windows 10 y Windows Server 2016: requisitos del kit de laboratorio de hardware (HLK) opcionales para dispositivos SAS, SATA y NVMe. Estos requisitos resumen los comandos que un dispositivo SATA, SAS o NVMe debe admitir para que se pueda actualizar su firmware mediante estos nuevos cmdlets de PowerShell nativos de Windows. Para admitir estos requisitos, hay una nueva prueba de HLK para comprobar si los productos del proveedor admiten los comandos adecuados y si estos se implementan en revisiones futuras. 
 
 Para obtener información sobre si su hardware admite que Windows actualice el firmware de la unidad, póngase en contacto con su proveedor de soluciones.
 A continuación se enumeran vínculos a los distintos requisitos:
 
--   SAS [Device. Storage. HD. SATA](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) : en la sección **[si está implementado\] descargar el firmware & activar**
+-   SATA: [Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) (en la sección **Descarga y activación del firmware \][si está implementado]**).
     
--   ASOCIACIONES [Device. Storage. HD. SAS](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) : en la sección **[si está implementado\] descargar el firmware & activar**
+-   SAS: [Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) (en la sección **Descarga y activación del firmware \][si está implementado]**).
 
--   NVMe [Device. Storage. ControllerDrive. NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) : en las secciones **5,7** y **5,8**.
+-   NVMe: [Device.Storage.ControllerDrive.NVMe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragecontrollerdrivenvme) (en las secciones **5.7** y **5.8)**.
 
 ## <a name="powershell-cmdlets"></a>Cmdlets de PowerShell
 
-Los dos cmdlets agregados a Windows son:
+Los dos cmdlets que se agregan a Windows son:
 
 -   Get-StorageFirmwareInformation
 -   Update-StorageFirmware
 
-El primer cmdlet proporciona información detallada sobre las capacidades del dispositivo, las imágenes de firmware y las revisiones. En este caso, la máquina solo contiene una sola SATA SSD con una ranura de firmware. Por ejemplo:
+El primer cmdlet proporciona información detallada sobre las capacidades del dispositivo, las imágenes de firmware y las revisiones. En este caso, la máquina solo contiene una sola SATA SSD con una ranura de firmware. Este es un ejemplo:
 
    ```powershell
    Get-PhysicalDisk | Get-StorageFirmwareInformation
@@ -56,14 +56,14 @@ El primer cmdlet proporciona información detallada sobre las capacidades del di
    FirmwareVersionInSlot : {J3E16101}
    ```
 
-Ten en cuenta que los dispositivos SAS siempre notifican "SupportsUpdate" como "True", porque no hay ninguna manera de consultar explícitamente al dispositivo acerca de la compatibilidad con estos comandos.
+Tenga en cuenta que los dispositivos SAS siempre notifican "SupportsUpdate" como "true", ya que no hay ninguna manera de consultar explícitamente el dispositivo para la compatibilidad con estos comandos.
 
 El segundo cmdlet, Update-StorageFirmware, permite a los administradores actualizar el firmware de la unidad con un archivo de imagen si la unidad es compatible con el nuevo mecanismo de actualización de firmware. Debe obtener este archivo de imagen directamente del OEM o del proveedor de la unidad.
 
   > [!Note]
   > Antes de actualizar cualquier hardware de producción, pruebe la imagen de firmware concreta en un hardware idéntico en un entorno de laboratorio.
 
-La unidad cargará en primer lugar la nueva imagen de firmware en un área de ensayo interna. Mientras esto sucede, E/S continúa normalmente. La imagen se activa después de la descarga. Durante este tiempo, la unidad no podrá responder a comandos de E/S, ya que, de lo contrario, se producirá una reinicialización interna. Esto significa que esta unidad no proporciona datos durante la activación. Una aplicación que tuviera acceso a los datos de esta unidad tendría que esperar una respuesta hasta que la activación de firmware se completase. A continuación se muestra un ejemplo del cmdlet en acción:
+La unidad cargará en primer lugar la nueva imagen de firmware en un área de ensayo interna. Mientras esto sucede, E/S continúa normalmente. La imagen se activa después de la descarga. Durante este tiempo, la unidad no podrá responder a comandos de E/S, ya que, de lo contrario, se producirá una reinicialización interna. Esto significa que esta unidad no proporciona datos durante la activación. Una aplicación que tuviera acceso a los datos de esta unidad tendría que esperar una respuesta hasta que la activación de firmware se completase. Este es un ejemplo del cmdlet en acción:
 
    ```powershell 
    $pd | Update-StorageFirmware -ImagePath C:\Firmware\J3E160@3.enc -SlotNumber 0
@@ -101,15 +101,15 @@ Measure-Command {$pd | Update-StorageFirmware -ImagePath C:\\Firmware\\J3E16101.
 
 Antes de colocar un servidor en producción, se recomienda encarecidamente actualizar el firmware de las unidades de disco al firmware recomendado por el OEM o proveedor de hardware que le vendió y que le proporciona asistencia para su solución (contenedores de almacenamiento, unidades y servidores).
 
-Una vez que el servidor esté en producción, se recomienda hacer los mínimos cambios posibles. Sin embargo, en ocasiones su proveedor de soluciones le informará de que hay una actualización de firmware crítica para sus unidades. En ese caso, a continuación se describen algunos procedimientos recomendados que debe seguir antes de aplicar cualquier actualización de firmware de la unidad:
+Una vez que un servidor se encuentra en producción, es una buena idea realizar tan solo algunos cambios en el servidor, como es práctico. Sin embargo, en ocasiones su proveedor de soluciones le informará de que hay una actualización de firmware crítica para sus unidades. En ese caso, a continuación se describen algunos procedimientos recomendados que debe seguir antes de aplicar cualquier actualización de firmware de la unidad:
 
-1. Revisa las notas de la versión del firmware y confirma tanto que la actualización aborda los problemas que podrían afectar a tu entorno como que el firmware no entraña ningún problema conocido que podría afectarte negativamente.
+1. Revise las notas de la versión del firmware y confirme que la actualización soluciona los problemas que pueden afectar a su entorno y que el firmware no contiene ningún problema conocido que pueda afectar negativamente.
 
-2. Instale el firmware en un servidor de su laboratorio que tenga unidades idénticas (incluida la revisión de la unidad si hay varias revisiones de la misma unidad) y pruebe la unidad bajo carga con el nuevo firmware. Para obtener información sobre cómo realizar pruebas de carga sintética, consulte [Rendimiento de Espacios de almacenamiento de prueba con cargas de trabajo sintéticas en Windows Server](https://technet.microsoft.com/library/dn894707.aspx).
+2. Instale el firmware en un servidor de su laboratorio que tenga unidades idénticas (incluida la revisión de la unidad si hay varias revisiones de la misma unidad) y pruebe la unidad bajo carga con el nuevo firmware. Para obtener información sobre cómo realizar pruebas de carga sintética, consulte [Rendimiento de Espacios de almacenamiento de prueba con cargas de trabajo sintéticas en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11)).
 
 ## <a name="automated-firmware-updates-with-storage-spaces-direct"></a>Actualizaciones de firmware automatizadas con Espacios de almacenamiento directo
 
-Windows Server 2016 incluye un Servicio de mantenimiento para las implementaciones de Espacios de almacenamiento directo (incluidas las soluciones de Microsoft Azure Stack). El propósito principal del Servicio de mantenimiento es facilitar la supervisión y administración de la implementación del hardware. Como parte de sus funciones de administración, tiene la capacidad de implementar el firmware de la unidad en todo un clúster sin desconectar las cargas de trabajo ni incurrir en tiempo de inactividad. Esta capacidad está controlada por directivas, y el control está en manos del administrador.
+Windows Server 2016 incluye un Servicio de mantenimiento para las implementaciones de Espacios de almacenamiento directo (incluidas las soluciones de Microsoft Azure Stack). El propósito principal del Servicio de mantenimiento es facilitar la supervisión y administración de la implementación del hardware. Como parte de sus funciones de administración, tiene la capacidad de implementar el firmware de la unidad en todo un clúster sin desconectar las cargas de trabajo ni incurrir en tiempo de inactividad. Esta funcionalidad está controlada por directivas, con el control en las manos del administrador.
 
 El uso del Servicio de mantenimiento para implementar el firmware en un clúster es muy sencillo e implica los pasos siguientes:
 
@@ -164,19 +164,19 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-Si desea ver el Servicio de mantenimiento en acción y obtener más información sobre su mecanismo de implementación, consulte este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+Si desea ver el Servicio de mantenimiento en acción y obtener más información sobre su mecanismo de implementación, consulte este vídeo:https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
-Consulta también [Solución de problemas de las actualizaciones de firmware de unidad](troubleshoot-firmware-update.md).
+Vea también [solución de problemas de actualizaciones de firmware de unidad](troubleshoot-firmware-update.md).
 
 ### <a name="will-this-work-on-any-storage-device"></a>¿Funcionará en cualquier dispositivo de almacenamiento?
 
-Funcionará en dispositivos de almacenamiento que implementen los comandos correctos en su firmware. El cmdlet Get-StorageFirmwareInformation mostrará si el firmware de una unidad es compatible con los comandos correctos (para SATA/NVMe) y la prueba de HLK permite a los proveedores y los OEM probar este comportamiento.
+Funcionará en dispositivos de almacenamiento que implementen los comandos correctos en su firmware. El cmdlet Get-StorageFirmwareInformation mostrará si el firmware de una unidad es compatible con los comandos correctos (para SATA/NVMe) y la prueba de HLK permite a los proveedores y OEM probar este comportamiento.
 
 ### <a name="after-i-update-a-sata-drive-it-reports-to-no-longer-support-the-update-mechanism-is-something-wrong-with-the-drive"></a>Después de actualizar una unidad SATA, informa de que el mecanismo de actualización ya no es compatible. ¿Hay algún problema con la unidad?
 
-No, la unidad está bien, a menos que el nuevo firmware ya no permita realizar actualizaciones. Estás experimentando un problema conocido por el que una versión en caché de las capacidades de la unidad no es correcta. Si se ejecuta "Update-StorageProviderCache -DiscoveryLevel Full", se volverán a mostrar las capacidades de la unidad y se actualizará la copia en caché. Como solución alternativa, se recomienda ejecutar el comando anterior una vez antes de iniciar una actualización de firmware o completar la implementación en un clúster de Espacios de almacenamiento directo.
+No, la unidad está bien, a menos que el firmware nuevo ya no permita actualizaciones. Está llegando a un problema conocido por el que una versión en caché de las capacidades de la unidad es incorrecta. Al ejecutar "Update-StorageProviderCache-DiscoveryLevel Full", se volverán a enumerar las capacidades de la unidad y se actualizará la copia en caché. Como solución alternativa, se recomienda ejecutar el comando anterior una vez antes de iniciar una actualización de firmware o completar la implementación en un clúster de Espacios de almacenamiento directo.
 
 ### <a name="can-i-update-firmware-on-my-san-through-this-mechanism"></a>¿Puedo actualizar firmware en mi dispositivo SAN a mediante este mecanismo?
 No. Normalmente, los dispositivos SAN tienen sus propias utilidades e interfaces para esas operaciones de mantenimiento. Este nuevo mecanismo es para el almacenamiento conectado directamente, como los dispositivos SATA, SAS o NVMe.
@@ -199,7 +199,7 @@ Se puede producir un error en la actualización por varias razones, algunas de e
 
 Si la unidad no responde después de una actualización de firmware, probablemente está experimentando un error en el propio firmware de la unidad. Pruebe todas las actualizaciones de firmware en un entorno de laboratorio antes de ponerlas en producción. Puede que la única corrección sea reemplazar la unidad.
 
-Para obtener más información, consulta [Solución de problemas de las actualizaciones de firmware de unidad](troubleshoot-firmware-update.md).
+Para obtener más información, consulte [solución de problemas de actualizaciones de firmware de unidad](troubleshoot-firmware-update.md).
 
 ### <a name="how-do-i-stop-an-in-progress-firmware-roll-out"></a>¿Cómo detengo la implementación de un firmware en progreso?
 
@@ -208,6 +208,6 @@ Deshabilite la implementación en PowerShell mediante:
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.PhysicalDisk.AutoFirmwareUpdate.RollOut.Enabled" -Value false
 ```
 
-### <a name="i-am-seeing-an-access-denied-or-path-not-found-error-during-roll-out-how-do-i-fix-this"></a>Obtengo un acceso denegado o un error de ruta de acceso no encontrada durante la implementación. ¿Cómo lo corrijo?
+### <a name="i-am-seeing-an-access-denied-or-path-not-found-error-during-roll-out-how-do-i-fix-this"></a>Veo un error de acceso denegado o de ruta de acceso no encontrada durante la implementación. Cómo corregir este
 
 Asegúrese de que todos los nodos del clúster tienen acceso a la imagen de firmware que desea usar para la actualización. La forma más sencilla de asegurarse de esto es colocar la imagen en un volumen compartido de clúster.

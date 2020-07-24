@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dc6cba306a36589d8b585b23ecb43e7d16b7d201
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5ca29f1eef61bd11b2ceede4f335c029412e7331
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823078"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966407"
 ---
 # <a name="command-line-process-auditing"></a>Auditoría de proceso de línea de comandos
 
@@ -38,9 +38,9 @@ ms.locfileid: "80823078"
   
 ![auditoría de línea de comandos](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)  
   
-**Figura SEQ figura \\\* evento 4688 árabe 16**  
+**Figura SEQ figura \\ \* árabe 16 evento 4688**  
   
-Revise el ID. de evento 4688 actualizado en REF _Ref366427278 \h Figura 16.  Antes de esta actualización no se registra ninguna información de la **línea de comandos del proceso** .  Debido a este registro adicional, ahora podemos ver que no solo se ha iniciado el proceso Wscript. exe, sino que también se ha usado para ejecutar un script de VB.  
+Revise el ID. de evento 4688 actualizado en REF _Ref366427278 \h Figura 16.  Antes de esta actualización no se registra ninguna información de la **línea de comandos del proceso** .  Debido a este registro adicional, ahora podemos ver que no solo se ha iniciado el proceso de wscript.exe, sino que también se ha usado para ejecutar un script de VB.  
   
 ## <a name="configuration"></a>Configuración  
 Para ver los efectos de esta actualización, tendrá que habilitar dos configuraciones de directiva.  
@@ -48,7 +48,7 @@ Para ver los efectos de esta actualización, tendrá que habilitar dos configura
 ### <a name="you-must-have-audit-process-creation-auditing-enabled-to-see-event-id-4688"></a>Debe tener habilitada la auditoría de creación de procesos de auditoría para ver el ID. de evento 4688.  
 Para habilitar la Directiva de creación de procesos de auditoría, edite la siguiente directiva de Grupo:  
   
-**Ubicación de la Directiva:** Configuración del equipo directivas de > > configuración de Windows > configuración de seguridad > Configuración avanzada de auditoría > seguimiento detallado  
+**Ubicación de la Directiva:** Configuración del equipo directivas de > > configuración de Windows > configuración de seguridad > configuración avanzada de auditoría > seguimiento detallado  
   
 **Nombre de la Directiva:** Auditar creación de procesos  
   
@@ -65,12 +65,12 @@ Volumen de eventos: bajo a medio, según del uso del sistema
 **Valor predeterminado:** No configurado  
   
 ### <a name="in-order-to-see-the-additions-to-event-id-4688-you-must-enable-the-new-policy-setting-include-command-line-in-process-creation-events"></a>Para ver las adiciones al ID. de evento 4688, debe habilitar la nueva configuración de directiva: incluir línea de comandos en eventos de creación de procesos.  
-**Tabla SEQ \\\* configuración de la Directiva de proceso de línea de comandos árabe 19**  
+**Tabla SEQ tabla de la configuración de la \\ \* Directiva de proceso de línea de comandos 19**  
   
-|Configuración de directiva|Detalles|  
+|Configuración de Directiva|Detalles|  
 |------------------------|-----------|  
-|**Camino**|Creación de procesos de Templates\System\Audit de administración|  
-|**Configuraciones**|**Incluir línea de comandos en eventos de creación de procesos**|  
+|**Path**|Creación de procesos de Templates\System\Audit de administración|  
+|**Configuración**|**Incluir línea de comandos en eventos de creación de procesos**|  
 |**Configuración predeterminada**|No configurado (no habilitado)|  
 |**Compatible con:**|?|  
 |**Descripción**|Esta configuración de directiva determina la información que se registra en los eventos de auditoría de seguridad cuando se ha creado un nuevo proceso.<p>Esta configuración solo se aplica cuando está habilitada la Directiva de creación de procesos de auditoría. Si habilita esta Directiva, la información de la línea de comandos de cada proceso se registrará en texto sin formato en el registro de eventos de seguridad como parte del evento 4688 de creación de proceso de auditoría, "se ha creado un nuevo proceso", en las estaciones de trabajo y los servidores en los que se aplica esta configuración de directiva.<p>Si deshabilita o no establece esta configuración de Directiva, la información de línea de comandos del proceso no se incluirá en los eventos de creación de procesos de auditoría.<p>Valor predeterminado: no configurado<p>Nota: cuando esta configuración de directiva está habilitada, cualquier usuario con acceso para leer los eventos de seguridad podrá leer los argumentos de la línea de comandos para cualquier proceso creado correctamente. Los argumentos de la línea de comandos pueden contener información confidencial o privada como contraseñas o datos de usuario.|  
@@ -90,20 +90,20 @@ En el procedimiento siguiente se muestra cómo evitar conflictos bloqueando la a
   
 2.  Haga clic con el botón secundario en Directiva predeterminada de dominio y, a continuación, haga clic en Editar.  
   
-3.  Haga doble clic en configuración del equipo, haga doble clic en directivas y, a continuación, haga doble clic en configuración de Windows.  
+3.  Haga doble clic en Configuración del equipo, haga doble clic en Directivasy, a continuación, haga doble clic en Configuración de Windows.  
   
 4.  Haga doble clic en configuración de seguridad, haga doble clic en directivas locales y, a continuación, haga clic en opciones de seguridad.  
   
 5.  Haga doble clic en Auditoría: forzar la configuración de subcategorías de la directiva de auditoría (Windows Vista o posterior) para invalidar la configuración de la categoría de directiva de auditoría y, a continuación, haga clic en Definir esta configuración de directiva.  
   
-6.  Haga clic en habilitado y, a continuación, en Aceptar.  
+6.  Haga clic en Habilitaday, a continuación, haga clic en Aceptar.  
   
 ## <a name="additional-resources"></a>Recursos adicionales  
-[Auditar creación de procesos](https://technet.microsoft.com/library/dd941613(v=WS.10).aspx)  
+[Auditar creación de procesos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941613(v=ws.10))  
   
-[Guía paso a paso de la Directiva de auditoría de seguridad avanzada](https://technet.microsoft.com/library/dd408940(v=WS.10).aspx)  
+[Guía paso a paso de la directiva de auditoría de seguridad avanzada](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd408940(v=ws.10))  
   
-[AppLocker: preguntas más frecuentes](https://technet.microsoft.com/library/ee619725(v=ws.10).aspx)  
+[AppLocker: preguntas más frecuentes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee619725(v=ws.10))  
   
 ## <a name="try-this-explore-command-line-process-auditing"></a>Pruebe esto: explorar la auditoría de procesos de línea de comandos  
   
@@ -122,5 +122,3 @@ En el procedimiento siguiente se muestra cómo evitar conflictos bloqueando la a
   
 4.  Ejecutar el mismo script que antes y observar los eventos  
   
-
-
