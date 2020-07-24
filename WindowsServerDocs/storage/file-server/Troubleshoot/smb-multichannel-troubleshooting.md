@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 210bc2057f25dc196fe9d76495c42f76c8b36311
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 662a58fdeb3cda14a0e54c8d0ab7bd0b85387fd7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815348"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960137"
 ---
 # <a name="smb-multichannel-troubleshooting"></a>Solución de problemas de SMB multicanal
 
@@ -19,7 +19,7 @@ En este artículo se describe cómo solucionar problemas relacionados con SMB mu
 
 ## <a name="check-the-network-interface-status"></a>Comprobar el estado de la interfaz de red
 
-Asegúrese de que el enlace para la interfaz de red está establecido en **true** en el cliente SMB (MS\_Client) y en el servidor SMB (MS\_Server). Al ejecutar el comando siguiente, la salida debería mostrar **true** en **habilitado** para ambas interfaces de red:
+Asegúrese de que el enlace de la interfaz de red está establecido en **true** en el cliente SMB (MS \_ Client) y en el servidor SMB (MS \_ Server). Al ejecutar el comando siguiente, la salida debería mostrar **true** en **habilitado** para ambas interfaces de red:
 
 ```PowerShell
 Get-NetAdapterBinding -ComponentID ms_server,ms_msclient
@@ -59,23 +59,23 @@ Necesita la información de seguimiento de la conexión SMB que se inicia en el 
 
 Asegúrese de que la conexión de SMBv3.*x* se está negociando y de que no hay nada entre el servidor y el cliente que afecte a la negociación del dialecto. SMBv2 y versiones anteriores no son compatibles con multicanal.
 
-Busque los paquetes de la interfaz de\_de red\_INFO. Aquí es donde el cliente SMB solicita una lista de adaptadores del servidor SMB. Si estos paquetes no se intercambian, multicanal no funciona.
+Busque los paquetes de información de la interfaz de red \_ \_ . Aquí es donde el cliente SMB solicita una lista de adaptadores del servidor SMB. Si estos paquetes no se intercambian, multicanal no funciona.
 
 El servidor responde devolviendo una lista de interfaces de red válidas. A continuación, el cliente SMB lo agrega a la lista de adaptadores disponibles para multicanal. En este punto, multicanal debe iniciar y, al menos, intentar iniciar la conexión.
 
 Para obtener más información, consulta los artículos siguientes:
 
-- [la aplicación 3.2.4.20.10 solicita consultas a las interfaces de red del servidor](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/147adde4-d936-4597-924a-8caa3429c6b0)
+- [la aplicación 3.2.4.20.10 solicita consultas a las interfaces de red del servidor](/openspecs/windows_protocols/ms-smb2/147adde4-d936-4597-924a-8caa3429c6b0)
 
-- [2.2.32.5\_respuesta de información de la interfaz de\_de red](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/fcd862d1-1b85-42df-92b1-e103199f531f)
+- [Respuesta de información de la interfaz de red 2.2.32.5 \_ \_](/openspecs/windows_protocols/ms-smb2/fcd862d1-1b85-42df-92b1-e103199f531f)
 
-- [3.2.5.14.11 controlar una respuesta de interfaces de red](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/5459722b-1eaa-4ead-b465-284363264cad)
+- [3.2.5.14.11 controlar una respuesta de interfaces de red](/openspecs/windows_protocols/ms-smb2/5459722b-1eaa-4ead-b465-284363264cad)
 
 En los siguientes escenarios, no se puede usar un adaptador:
 
 - Hay un problema de enrutamiento en el cliente. Esto se debe normalmente a una tabla de enrutamiento incorrecta que fuerza el tráfico a través de la interfaz equivocada.
 
-- Se han establecido restricciones multicanal. Para obtener más información, consulte [New-SmbMultichannelConstraint](https://docs.microsoft.com/powershell/module/smbshare/new-smbmultichannelconstraint).
+- Se han establecido restricciones multicanal. Para obtener más información, consulte [New-SmbMultichannelConstraint](/powershell/module/smbshare/new-smbmultichannelconstraint).
 
 - Algo bloqueó los paquetes de solicitud y respuesta de la interfaz de red.
 

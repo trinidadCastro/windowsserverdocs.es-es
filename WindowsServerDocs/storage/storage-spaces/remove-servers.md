@@ -10,12 +10,12 @@ author: cosmosdarwin
 description: Cómo quitar servidores de un clúster de Espacios de almacenamiento directo en Windows Server.
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dd888048edc96d6001492e92ba6d519c751bdaa
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4fa3fe64cb5d7448a7e71eb344309ecb9990ebcd
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474572"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960027"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>Quitar servidores en Espacios de almacenamiento directo
 
@@ -27,7 +27,7 @@ En este tema se describe cómo quitar servidores de [espacios de almacenamiento 
 
 Si piensa volver a agregar el servidor al clúster en breve, o si tiene previsto mantener sus unidades moviéndolos a otro servidor, puede quitar el servidor del clúster *sin* quitar sus unidades del bloque de almacenamiento. Este es el comportamiento predeterminado si usa Administrador de clústeres de conmutación por error para quitar el servidor.
 
-Use el cmdlet [Remove-ClusterNode](https://technet.microsoft.com/library/hh847251.aspx) en PowerShell:
+Use el cmdlet [Remove-ClusterNode](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11)) en PowerShell:
 
 ```PowerShell
 Remove-ClusterNode <Name>

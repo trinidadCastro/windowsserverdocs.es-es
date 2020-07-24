@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99ba1320171e4e305209f06fbee617e54c979d30
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b5f00f34da20e9e151f093b919244fe3b49a85d6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925025"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956897"
 ---
 # <a name="msdt"></a>msdt
 
@@ -30,14 +30,14 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| /ID`<packagename>` | Especifica el paquete de diagnóstico que se va a ejecutar. Para obtener una lista de los paquetes disponibles, consulte los [paquetes de solución de problemas disponibles](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs). |
+| /ID`<packagename>` | Especifica el paquete de diagnóstico que se va a ejecutar. Para obtener una lista de los paquetes disponibles, consulte los [paquetes de solución de problemas disponibles](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs). |
 | /path`<directory|.diagpkg file|.diagcfg file>` | Especifica la ruta de acceso completa a un paquete de diagnóstico. Si especifica un directorio, el directorio debe contener un paquete de diagnóstico. No se puede usar el parámetro **/path** junto con los parámetros * */ID * *, **/DCI**o **/Cab** |                                                                                   |
 | /dci`<passkey>` | Rellena previamente el campo clave de paso. Este parámetro solo se usa cuando un proveedor de soporte técnico ha proporcionado una clave de paso. |
 | /DT`<directory>` | Muestra el historial de solución de problemas en el directorio especificado. Los resultados de diagnóstico se almacenan en los directorios **%LOCALAPPDATA%\Diagnostics** o **%LOCALAPPDATA%\ElevatedDiagnostics** del usuario. |
 | /af`<answerfile>` | Especifica un archivo de respuesta en formato XML que contiene respuestas a una o más interacciones de diagnóstico. |
 | /modal`<ownerHWND>` | Convierte el módulo de solución de problemas en modal en una ventana designada por el identificador de la ventana de consola primaria (HWND), en formato decimal. Este parámetro lo suelen usar las aplicaciones que inician un paquete de solución de problemas. Para obtener más información sobre cómo obtener los identificadores de la ventana de la consola, vea [Cómo obtener un identificador de ventana de consola (HWND)](https://support.microsoft.com/help/124103/how-to-obtain-a-console-window-handle-hwnd). |
 | /moreoptions`<true|false>` | Habilita (true) o suprime (false) la pantalla de solución de problemas final que pregunta si el usuario desea explorar opciones adicionales. Este parámetro se utiliza normalmente cuando el paquete de solución de problemas lo inicia un solucionador de problemas que no forma parte del sistema operativo. |
-| /param Returns`<parameters>` | Especifica un conjunto de respuestas de interacción en la línea de comandos, similar a un archivo de respuesta. Este parámetro no se usa normalmente en el contexto de los paquetes de solución de problemas creados con el diseñador de TSP. Para obtener más información sobre el desarrollo de parámetros personalizados, consulte [plataforma de solución de problemas de Windows](https://docs.microsoft.com/previous-versions/windows/desktop/wintt/windows-troubleshooting-toolkit-portal). |
+| /param Returns`<parameters>` | Especifica un conjunto de respuestas de interacción en la línea de comandos, similar a un archivo de respuesta. Este parámetro no se usa normalmente en el contexto de los paquetes de solución de problemas creados con el diseñador de TSP. Para obtener más información sobre el desarrollo de parámetros personalizados, consulte [plataforma de solución de problemas de Windows](/previous-versions/windows/desktop/wintt/windows-troubleshooting-toolkit-portal). |
 | /advanced | Expande el vínculo avanzado en la página de bienvenida de forma predeterminada cuando se inicia el paquete de solución de problemas. |
 | /custom | Solicita al usuario que confirme cada posible solución antes de aplicarla. |
 
@@ -56,6 +56,6 @@ Los paquetes de solución de problemas comprenden un conjunto de causas raíz, c
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Paquetes de solución de problemas disponibles](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)
+- [Paquetes de solución de problemas disponibles](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)
 
-- [Referencia de PowerShell para TroubleshootingPack](https://docs.microsoft.com/powershell/module/troubleshootingpack/?view=win10-ps)
+- [Referencia de PowerShell para TroubleshootingPack](/powershell/module/troubleshootingpack/?view=win10-ps)

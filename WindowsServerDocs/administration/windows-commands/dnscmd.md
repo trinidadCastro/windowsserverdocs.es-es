@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47be29e55c4626f5c05498074f10418730c6a6f3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8c8d865643c12377a3f4b14250f9d3dbead1e2ac
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931301"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958247"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -54,7 +54,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 | /tree | Especifica que todos los nodos secundarios también reciben la marca de tiempo. |
 | /f | Ejecuta el comando sin solicitar confirmación. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - El comando **ageallrecords** es para la compatibilidad con versiones anteriores de DNS y versiones anteriores de DNS en las que no se admitía la detección y eliminación de registros obsoletos. Agrega una marca de tiempo con la hora actual a los registros de recursos que no tienen una marca de tiempo y establece la hora actual en los registros de recursos que tienen una marca de tiempo.
 
@@ -68,7 +68,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 ### <a name="examples"></a>Ejemplos
 
-[Ejemplo 1: establecer la hora actual de una marca de tiempo en registros de recursos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-1-set-the-current-time-on-a-time-stamp-to-resource-records)
+[Ejemplo 1: establecer la hora actual de una marca de tiempo en registros de recursos](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-1-set-the-current-time-on-a-time-stamp-to-resource-records)
 
 ## <a name="dnscmd-clearcache-command"></a>comando DNSCmd/clearcache
 
@@ -349,9 +349,9 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 #### <a name="examples"></a>Ejemplos
 
-- [Ejemplo 2: mostrar una lista completa de zonas en un servidor DNS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server))
+- [Ejemplo 2: mostrar una lista completa de zonas en un servidor DNS](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server))
 
-- [Ejemplo 3: mostrar una lista de zonas creadas en un servidor DNS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server)
+- [Ejemplo 3: mostrar una lista de zonas creadas en un servidor DNS](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server)
 
 ## <a name="dnscmd-exportsettings-command"></a>comando DNSCmd/exportsettings
 
@@ -388,9 +388,9 @@ dnscmd [<servername>] /info [<settings>]
 
 #### <a name="example"></a>Ejemplo
 
-- [Ejemplo 4: mostrar el valor de IsSlave desde un servidor DNS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-4-display-the-isslave-setting-from-a-dns-server)
+- [Ejemplo 4: mostrar el valor de IsSlave desde un servidor DNS](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-4-display-the-isslave-setting-from-a-dns-server)
 
-- [Ejemplo 5: mostrar el valor de RecursionTimeout desde un servidor DNS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-5-display-the-recursiontimeout-setting-from-a-dns-server)
+- [Ejemplo 5: mostrar el valor de RecursionTimeout desde un servidor DNS](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-5-display-the-recursiontimeout-setting-from-a-dns-server)
 
 ## <a name="dnscmd-ipvalidate-command"></a>comando DNSCmd/ipvalidate
 
@@ -440,7 +440,7 @@ dnscmd [<servername>] /nodedelete <zonename> <nodename> [/tree] [/f]
 
 #### <a name="example"></a>Ejemplo
 
-[Ejemplo 6: eliminación de los registros de un nodo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-6-delete-the-records-from-a-node)
+[Ejemplo 6: eliminación de los registros de un nodo](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-6-delete-the-records-from-a-node)
 
 ## <a name="dnscmd-recordadd-command"></a>comando DNSCmd/recordadd
 
@@ -463,7 +463,7 @@ dnscmd [<servername>] /recordadd <zonename> <nodename> <rrtype> <rrdata>
 | `<rrdata>` | Especifica el tipo de datos que se espera. |
 
 > [!NOTE]
-> Después de agregar un registro, asegúrese de usar el tipo de datos y el formato de datos correctos. Para obtener una lista de tipos de registro de recursos y los tipos de datos adecuados, vea [ejemplos de DNSCmd](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)).
+> Después de agregar un registro, asegúrese de usar el tipo de datos y el formato de datos correctos. Para obtener una lista de tipos de registro de recursos y los tipos de datos adecuados, vea [ejemplos de DNSCmd](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)).
 
 #### <a name="examples"></a>Ejemplos
 
@@ -520,7 +520,7 @@ dnscmd [<servername>] /resetforwarders <IPaddress> [,<IPaddress>]...][/timeout <
 | /noslave | Permite que el servidor DNS realice sus propias consultas iterativas si el reenviador no puede resolver una consulta. Esta es la configuración predeterminada. |
 | /f | Ejecuta el comando sin solicitar confirmación. Dado que los nodos pueden tener más de un registro de recursos, este comando requiere que sea muy específico sobre el tipo de registro de recursos que desea eliminar. Si especifica un tipo de datos y no especifica un tipo de datos de registro de recursos, se eliminarán todos los registros con ese tipo de datos específico para el nodo especificado. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - De forma predeterminada, un servidor DNS realiza consultas iterativas cuando no puede resolver una consulta.
 
@@ -576,7 +576,7 @@ dnscmd [<servername>] /startscavenging
 | ---------- | ----------- |
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - La finalización correcta de este comando inicia una eliminación de registros obsoletos inmediatamente. Si se produce un error en la eliminación de registros obsoletos, no aparece ningún mensaje de advertencia.
 
@@ -621,9 +621,9 @@ dnscmd [<servername>] /statistics [<statid>] [/clear]
 
 #### <a name="examples"></a>Ejemplos
 
-- [Ejemplo 7:](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-7-display-time-statistics-for-a-dns-server)
+- [Ejemplo 7:](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-7-display-time-statistics-for-a-dns-server)
 
-- [Ejemplo 8: Mostrar estadísticas de NbstatMem para un servidor DNS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-8-display-nbstatmem-statistics-for-a-dns-server)
+- [Ejemplo 8: Mostrar estadísticas de NbstatMem para un servidor DNS](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-8-display-nbstatmem-statistics-for-a-dns-server)
 
 ## <a name="dnscmd-unenlistdirectorypartition-command"></a>comando DNSCmd/unenlistdirectorypartition
 
@@ -737,7 +737,7 @@ dnscmd [<servername>] /zonedelete <zonename> [/dsdel] [/f]
 
 #### <a name="examples"></a>Ejemplos
 
-- [Ejemplo 9: eliminar una zona de un servidor DNS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-9-delete-a-zone-from-a-dns-server)
+- [Ejemplo 9: eliminar una zona de un servidor DNS](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-9-delete-a-zone-from-a-dns-server)
 
 ## <a name="dnscmd-zoneexport-command"></a>comando DNSCmd/zoneexport
 
@@ -759,7 +759,7 @@ dnscmd [<servername>] /zoneexport <zonename> <zoneexportfile>
 
 #### <a name="examples"></a>Ejemplos
 
-- [Ejemplo 10: exportar la lista de registros de recursos de zona a un archivo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-10-export-zone-resource-records-list-to-a-file)
+- [Ejemplo 10: exportar la lista de registros de recursos de zona a un archivo](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-10-export-zone-resource-records-list-to-a-file)
 
 ## <a name="dnscmd-zoneinfo"></a>DNSCmd/zoneinfo
 
@@ -779,7 +779,7 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 | `<zonename>` | Especifica el nombre de la zona. |
 | `<setting>` | Puede especificar individualmente cualquier valor que devuelva el comando **zoneinfo** . Si no especifica un valor, se devolverá toda la configuración. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Para mostrar la configuración del registro en el nivel de servidor, use el comando **/info** .
 
@@ -787,9 +787,9 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 
 #### <a name="examples"></a>Ejemplos
 
-- [Ejemplo 11: Mostrar la configuración de RefreshInterval desde el registro](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-11-display-refreshinterval-setting-from-the-registry)
+- [Ejemplo 11: Mostrar la configuración de RefreshInterval desde el registro](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-11-display-refreshinterval-setting-from-the-registry)
 
-- [Ejemplo 12: Mostrar la configuración de caducidad del registro](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-12-display-aging-setting-from-the-registry)
+- [Ejemplo 12: Mostrar la configuración de caducidad del registro](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-12-display-aging-setting-from-the-registry)
 
 ## <a name="dnscmd-zonepause-command"></a>comando DNSCmd/zonepause
 
@@ -808,7 +808,7 @@ dnscmd [<servername>] /zonepause <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a pausar. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Para reanudar una zona y ponerla a disposición una vez que se haya pausado, use el comando **/zoneresume** .
 
@@ -858,7 +858,7 @@ dnscmd [<servername>] /zonerefresh <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a actualizar. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - El comando **zonerefresh** fuerza una comprobación del número de versión en el registro de recursos de inicio de autoridad (SOA) del servidor maestro. Si el número de versión del servidor maestro es mayor que el número de versión del servidor secundario, se inicia una transferencia de zona que actualiza el servidor secundario. Si el número de versión es el mismo, no se produce ninguna transferencia de zona.
 
@@ -887,7 +887,7 @@ dnscmd [<servername>] /zonereload <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a recargar. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Si la zona está integrada en Active Directory, se vuelve a cargar desde Active Directory Domain Services (AD DS).
 
@@ -918,7 +918,7 @@ dnscmd [<servername>] /zoneresetmasters <zonename> [/local] [<IPaddress> [<IPadd
 | /local | Establece una lista maestra local. Este parámetro se usa para las zonas integradas de Active Directory. |
 | `<IPaddress>` | Las direcciones IP de los servidores maestros de la zona secundaria. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Este valor se establece originalmente cuando se crea la zona secundaria. Use el comando **zoneresetmasters** en el servidor secundario. Este valor no tiene ningún efecto si se establece en el servidor DNS maestro.
 
@@ -948,7 +948,7 @@ dnscmd [<servername>] /zoneresetscavengeservers <zonename> [/local] [<IPaddress>
 | /local | Establece una lista maestra local. Este parámetro se usa para las zonas integradas de Active Directory. |
 | `<IPaddress>` | Muestra las direcciones IP de los servidores que pueden realizar la eliminación de registros obsoletos. Si se omite este parámetro, todos los servidores que hospedan esta zona podrán borrarlo. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - De forma predeterminada, todos los servidores que hospedan una zona pueden borrar dicha zona.
 
@@ -989,7 +989,7 @@ dnscmd [<servername>] /zoneresetsecondaries <zonename> {/noxfr | /nonsecure | /s
 | /notifylist | Especifica que las notificaciones de cambio solo se envían a la lista de servidores. Este comando debe ir seguido de una dirección IP o de las direcciones que usa el servidor maestro. |
 | `<notifyIPaddresses>` | Especifica la dirección o direcciones IP del servidor secundario o los servidores a los que se envían las notificaciones de cambios. Esta lista solo se usa con el parámetro **/notifylist** . |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Use el comando **zoneresetsecondaries** en el servidor maestro para especificar cómo responde a las solicitudes de transferencia de zona de los servidores secundarios.
 
@@ -1020,7 +1020,7 @@ dnscmd [<servername>] /zoneresettype <zonename> <zonetype> [/overwrite_mem | /ov
 | /overwrite_mem | Sobrescribe los datos DNS de los datos en AD DS. |
 | /overwrite_ds | Sobrescribe los datos existentes en AD DS. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Al establecer el tipo de zona como **/dsforwarder** , se crea una zona que realiza el reenvío condicional.
 
@@ -1048,7 +1048,7 @@ dnscmd [<servername>] /zoneresume <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a reanudar. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Puede usar esta operación para reiniciar desde la operación **/zonepause** .
 
@@ -1075,7 +1075,7 @@ dnscmd [<servername>] /zoneupdatefromds <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a actualizar. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Las zonas integradas de Active Directory realizan esta actualización de forma predeterminada cada cinco minutos. Para cambiar este parámetro, use el `dnscmd config dspollinginterval` comando.
 
@@ -1102,7 +1102,7 @@ dnscmd [<servername>] /zonewriteback <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a actualizar. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Se trata de una operación de nivel de zona. Puede actualizar todas las zonas de un servidor DNS mediante la operación **/writebackfiles** .
 

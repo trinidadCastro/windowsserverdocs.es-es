@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: de5a38ff6f811046d06c52a1ca4598f9650b3cfe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ae7106e0c0fc1d9caca58b3a9a435886fc56b6f7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823018"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959947"
 ---
 # <a name="tpm-key-attestation"></a>Atestación de clave de TPM
 
@@ -28,7 +28,7 @@ ms.locfileid: "80823018"
 Aunque la compatibilidad con las claves protegidas con TPM ha existido desde Windows 8, no había ningún mecanismo para que las CA atestiguaran criptográficamente que la clave privada del solicitante de certificados está protegida realmente por un Módulo de plataforma segura (TPM). Esta actualización permite a una CA realizar esa atestación y reflejar la atestación en el certificado emitido.  
   
 > [!NOTE]  
-> En este artículo se da por supuesto que el lector está familiarizado con el concepto de plantilla de certificado (como referencia, consulte [plantillas de certificado](https://technet.microsoft.com/library/cc730705.aspx)). También se da por supuesto que el lector está familiarizado con la configuración de las CA empresariales para emitir certificados basados en plantillas de certificado (como referencia, consulte [Checklist: configure CAS to Issue and Manage Certificates](https://technet.microsoft.com/library/cc771533.aspx)).  
+> En este artículo se da por supuesto que el lector está familiarizado con el concepto de plantilla de certificado (como referencia, consulte [plantillas de certificado](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))). También se da por supuesto que el lector está familiarizado con la configuración de las CA empresariales para emitir certificados basados en plantillas de certificado (como referencia, consulte [Checklist: configure CAS to Issue and Manage Certificates](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771533(v=ws.11))).  
   
 ### <a name="terminology"></a>Terminología  
   
@@ -66,7 +66,7 @@ En general, la atestación de clave de TPM se basa en los pilares siguientes:
   
 4.  La CA emite un certificado con un OID de directiva de emisión especial para indicar que ahora se ha atestado a la clave para que la proteja un TPM.  
   
-## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>Información general sobre la implementación  
+## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>Introducción a la implementación  
 En esta implementación, se supone que se ha configurado una CA de Windows Server 2012 R2 Enterprise. Además, los clientes (Windows 8.1) se configuran para inscribirse en esa CA de empresa mediante plantillas de certificado. 
 
 Hay tres pasos para implementar la atestación de clave de TPM:  
@@ -83,7 +83,7 @@ Hay tres pasos para implementar la atestación de clave de TPM:
   
     Tenga en cuenta que es posible elegir una combinación de modelos de confianza de TPM. En este caso, la CA aceptará cualquiera de los métodos de atestación y los OID de la Directiva de emisión reflejarán todos los métodos de atestación que se hayan realizado correctamente.  
   
-2.  **Configurar la plantilla de certificado:** La configuración de la plantilla de certificado se describe en la sección [detalles de implementación](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails) de este tema. En este artículo no se explica cómo se asigna esta plantilla de certificado a la CA de empresa o cómo se concede el acceso de inscripción a un grupo de usuarios. Para obtener más información, consulte [Checklist: configure CAS to Issue and Manage Certificates](https://technet.microsoft.com/library/cc771533.aspx).  
+2.  **Configurar la plantilla de certificado:** La configuración de la plantilla de certificado se describe en la sección [detalles de implementación](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails) de este tema. En este artículo no se explica cómo se asigna esta plantilla de certificado a la CA de empresa o cómo se concede el acceso de inscripción a un grupo de usuarios. Para obtener más información, consulte [Checklist: configure CAS to Issue and Manage Certificates](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771533(v=ws.11)).  
   
 3.  **Configurar la CA para el modelo de confianza de TPM**  
   
@@ -98,14 +98,14 @@ Hay tres pasos para implementar la atestación de clave de TPM:
     > -   No se admite la atestación de clave de TPM para KSP de tarjeta inteligente de terceros. Debe usarse el KSP de proveedor de cifrado de plataforma de Microsoft.  
     > -   La atestación de clave de TPM solo funciona con claves RSA.  
     > -   No se admite la atestación de clave de TPM para una CA independiente.  
-    > -   La atestación de clave de TPM no admite [el procesamiento de certificados no persistente](https://technet.microsoft.com/library/ff934598).  
+    > -   La atestación de clave de TPM no admite [el procesamiento de certificados no persistente](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff934598(v=ws.10)).  
   
-## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>Detalles de la implementación  
+## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>Detalles de implementación  
   
 ### <a name="configure-a-certificate-template"></a><a name="BKMK_ConfigCertTemplate"></a>Configurar una plantilla de certificado  
 Para configurar la plantilla de certificado para la atestación de clave de TPM, realice los pasos de configuración siguientes:  
   
-1.  Pestaña **compatibilidad**  
+1.  Pestaña **Compatibilidad**  
   
     En la sección **configuración de compatibilidad** :  
   
@@ -193,16 +193,16 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
   
         |Operación|Sintaxis de comandos|  
         |-------------|------------------|  
-        |Agregar ubicaciones de carpeta|certutil. exe-setreg CA\EndorsementKeyListDirectories + "<folder>"|  
-        |Quitar ubicaciones de carpeta|certutil. exe-setreg CA\EndorsementKeyListDirectories-"<folder>"|  
+        |Agregar ubicaciones de carpeta|certutil.exe-setreg CA\EndorsementKeyListDirectories + " <folder> "|  
+        |Quitar ubicaciones de carpeta|certutil.exe-setreg CA\EndorsementKeyListDirectories-" <folder> "|  
   
         El comando EndorsementKeyListDirectories en certutil es una configuración del registro como se describe en la tabla siguiente.  
   
-        |Nombre de valor|Tipo|Datos|  
+        |Nombre del valor|Tipo|Datos|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|< ruta de acceso LOCAL o UNC a EKPUB permitir listas ><p>Ejemplo:<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|<ruta de acceso LOCAL o UNC a EKPUB permitir listas ><p>Ejemplo:<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
   
-        \\HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration <CA Sanitized Name>  
+        HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\\<CA Sanitized Name>  
   
         *EndorsementKeyListDirectories* contendrá una lista de rutas de acceso del sistema de archivos local o UNC, cada una de las cuales apunta a una carpeta a la que la CA tiene acceso de lectura. Cada carpeta puede contener cero o más entradas de la lista de permitidos, donde cada entrada es un archivo con un nombre que es el hash SHA-2 de un EKpub de confianza, sin extensión de archivo. 
         La creación o edición de esta configuración de clave del registro requiere un reinicio de la CA, al igual que las opciones de configuración del registro de CA existentes. Sin embargo, las modificaciones en el valor de configuración surtirán efecto inmediatamente y no requerirán que se reinicie la CA.  
@@ -217,7 +217,7 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
         PS C:>$b=new-item $a.PublicKeyHash -ItemType file  
         ```  
   
-## <a name="troubleshooting"></a>Solucionar problemas  
+## <a name="troubleshooting"></a>Solución de problemas  
   
 ### <a name="key-attestation-fields-are-unavailable-on-a-certificate-template"></a>Los campos de atestación de clave no están disponibles en una plantilla de certificado  
 Los campos de atestación de clave no están disponibles si la configuración de la plantilla no cumple los requisitos de atestación. Los motivos comunes son los siguientes:  
@@ -274,6 +274,6 @@ Use el cmdlet de Windows PowerShell, **CONFIRM-CAEndorsementKeyInfo**, para comp
         PS C:>new-object System.Security.Cryptography.X509Certificates.X509Certificate2 "c:\diagnose\myEKcert.cer" | Confirm-CAEndorsementKeyInfo  
         ```  
   
-## <a name="see-also"></a>Consulta también  
-[Información general sobre tecnología de Módulo de plataforma segura](https://technet.microsoft.com/library/jj131725.aspx)  
+## <a name="see-also"></a>Consulte también  
+[Información general sobre la tecnología del Módulo de plataforma segura](/previous-versions/windows/it-pro/windows-8.1-and-8/jj131725(v=ws.11))  
 [Recurso externo: Módulo de plataforma segura](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)  

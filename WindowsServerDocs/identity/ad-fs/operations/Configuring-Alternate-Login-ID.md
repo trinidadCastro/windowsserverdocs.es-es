@@ -8,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7e7a881a2e6bae499ed7d4713bd70a804c3412e6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0872131de7ba2a201b0a0e70fb6157b0e2706def
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816968"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958637"
 ---
 # <a name="configuring-alternate-login-id"></a>Configuración de identificador de inicio de sesión alternativo
 
@@ -24,20 +24,20 @@ En la mayoría de los escenarios, los usuarios usan sus UPN (nombres de entidad 
 >[!NOTE]
 >Los procedimientos recomendados de Microsoft hacen coincidir el UPN con la dirección SMTP principal. En este artículo se aborda el pequeño porcentaje de clientes que no pueden corregir los UPN para que coincidan.
 
-Por ejemplo, pueden utilizar su identificador de correo electrónico para el inicio de sesión y que pueden ser diferentes de sus UPN. Esto es especialmente frecuente en escenarios en los que su UPN no es enrutable. Considere la posibilidad de que un usuario Jane Doe con UPN jdoe@contoso.local y la dirección de correo electrónico jdoe@contoso.com. Es posible que Julia no sea aún consciente del UPN, ya que siempre ha usado su identificador de correo electrónico para iniciar sesión. El uso de cualquier otro método de inicio de sesión en lugar de UPN constituye un identificador alternativo. Para obtener más información sobre cómo se crea el UPN, consulte [Azure ad rellenado de UserPrincipalName](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-userprincipalname).
+Por ejemplo, pueden utilizar su identificador de correo electrónico para el inicio de sesión y que pueden ser diferentes de sus UPN. Esto es especialmente frecuente en escenarios en los que su UPN no es enrutable. Considere la posibilidad de que un usuario Jane Doe con el UPN jdoe@contoso.local y la dirección de correo electrónico jdoe@contoso.com . Es posible que Julia no sea aún consciente del UPN, ya que siempre ha usado su identificador de correo electrónico para iniciar sesión. El uso de cualquier otro método de inicio de sesión en lugar de UPN constituye un identificador alternativo. Para obtener más información sobre cómo se crea el UPN, consulte [Azure ad rellenado de UserPrincipalName](/azure/active-directory/connect/active-directory-aadconnect-userprincipalname).
 
 Servicios de federación de Active Directory (AD FS) (AD FS) permite que las aplicaciones federadas usen AD FS para iniciar sesión con el identificador alternativo. Esto permite a los administradores especificar una alternativa al UPN predeterminado que se usará para el inicio de sesión. AD FS ya admite el uso de cualquier forma de identificador de usuario aceptada por Active Directory Domain Services (AD DS). Cuando se configura para el identificador alternativo, AD FS permite a los usuarios iniciar sesión con el valor de identificador alternativo configurado, por ejemplo, el identificador de correo electrónico. El uso del identificador alternativo permite adoptar proveedores de SaaS, como Office 365 sin modificar los UPN locales. También permite admitir aplicaciones de servicio de línea de negocio con identidades aprovisionadas por el consumidor.
 
 ## <a name="alternate-id-in-azure-ad"></a>Identificador alternativo en Azure AD
 Una organización puede tener que usar un identificador alternativo en los escenarios siguientes:
-1. El nombre de dominio local no es enrutable, por ejemplo, Contoso. local y, como resultado, el nombre principal de usuario predeterminado es no enrutable (jdoe@contoso.local). No se puede cambiar el UPN existente debido a las dependencias de la aplicación local o a las directivas de la empresa. Azure AD y Office 365 requieren que todos los sufijos de dominio asociados con Azure AD directorio sean totalmente enrutables a Internet. 
+1. El nombre de dominio local no es enrutable, por ejemplo, Contoso. local y, como resultado, el nombre principal de usuario predeterminado es no enrutable ( jdoe@contoso.local ). No se puede cambiar el UPN existente debido a las dependencias de la aplicación local o a las directivas de la empresa. Azure AD y Office 365 requieren que todos los sufijos de dominio asociados con Azure AD directorio sean totalmente enrutables a Internet. 
 2. El UPN local no es el mismo que la dirección de correo electrónico del usuario y, para iniciar sesión en Office 365, los usuarios usan la dirección de correo electrónico y el UPN no se puede usar debido a restricciones de la organización.
    En los escenarios mencionados anteriormente, el identificador alternativo con AD FS permite a los usuarios iniciar sesión en Azure AD sin modificar los UPN locales. 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>Experiencia del usuario final con ID. de inicio de sesión alternativo
-La experiencia del usuario final varía en función del método de autenticación usado con el identificador de inicio de sesión alternativo.  Actualmente existen tres maneras diferentes en las que se puede lograr el uso del identificador de inicio de sesión alternativo.  Son:
+La experiencia del usuario final varía en función del método de autenticación usado con el identificador de inicio de sesión alternativo.  Actualmente existen tres maneras diferentes en las que se puede lograr el uso del identificador de inicio de sesión alternativo.  Son las siguientes:
 
-- **Autenticación normal (heredada)** : usa el protocolo de autenticación básica.
+- **Autenticación normal (heredada)**: usa el protocolo de autenticación básica.
 - **Autenticación moderna** : proporciona inicio de sesión basado en biblioteca de autenticación de Active Directory (Adal) a las aplicaciones. Esto permite características de inicio de sesión como Multi-Factor Authentication (MFA), proveedores de identidades de terceros basados en SAML con aplicaciones cliente de Office, tarjetas inteligentes y autenticación basada en certificados.
 - **Autenticación moderna híbrida** : proporciona todas las ventajas de la autenticación moderna y proporciona a los usuarios la capacidad de acceder a aplicaciones locales mediante tokens de autorización obtenidos de la nube.
 
@@ -155,23 +155,23 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>Clientes que no son de Exchange y Skype empresarial
 
-|Cliente|Instrucción de soporte técnico|Comentarios|
+|Cliente|Declaración de compatibilidad|Observaciones|
 | ----- | -----|-----|
-|Microsoft Teams|Se admite|<li>Microsoft Teams admite AD FS (SAML-P, WS-FED, WS-Trust y OAuth) y la autenticación moderna.</li><li> Los principales equipos de Microsoft, como las funcionalidades de canales, chats y archivos, funcionan con un identificador de inicio de sesión alternativo.</li><li>el cliente debe investigar por separado la primera y las aplicaciones de terceros. Esto se debe a que cada aplicación tiene sus propios protocolos de autenticación.</li>|     
+|Microsoft Teams|Compatible|<li>Microsoft Teams admite AD FS (SAML-P, WS-FED, WS-Trust y OAuth) y la autenticación moderna.</li><li> Los principales equipos de Microsoft, como las funcionalidades de canales, chats y archivos, funcionan con un identificador de inicio de sesión alternativo.</li><li>el cliente debe investigar por separado la primera y las aplicaciones de terceros. Esto se debe a que cada aplicación tiene sus propios protocolos de autenticación.</li>|     
 |OneDrive para la Empresa|Compatible: se recomienda la clave del registro del lado cliente |Con el identificador alternativo configurado, verá que el UPN local se rellena previamente en el campo de comprobación. Esto debe cambiarse a la identidad alternativa que se está usando. Se recomienda usar la clave del registro del lado cliente que se indica en este artículo: Office 2013 y Lync 2013 solicitan periódicamente las credenciales a SharePoint Online, OneDrive y Lync Online.|
-|Cliente móvil de OneDrive para la empresa|Se admite|| 
+|Cliente móvil de OneDrive para la empresa|Compatible|| 
 |Página de activación de Office 365 Pro Plus|Compatible: se recomienda la clave del registro del lado cliente|Con el identificador alternativo configurado, verá que el UPN local se rellena previamente en el campo de comprobación. Esto debe cambiarse a la identidad alternativa que se está usando. Se recomienda usar la clave del registro del lado cliente que se indica en este artículo: Office 2013 y Lync 2013 solicitan periódicamente las credenciales a SharePoint Online, OneDrive y Lync Online.|
 
 ### <a name="exchange-and-skype-for-business-clients"></a>Clientes de Exchange y Skype empresarial
 
 |Cliente|Declaración de soporte: con HMA|Instrucción de soporte técnico: sin HMA|
 | ----- |----- | ----- |
-|Outlook|Compatible, sin mensajes adicionales|Se admite</br></br>Con **autenticación moderna** para Exchange Online: compatible</br></br>Con **autenticación normal** para Exchange Online: se admite con las siguientes advertencias:</br><li>Debe estar en un equipo unido a un dominio y estar conectado a la red corporativa </li><li>Solo se puede usar un identificador alternativo en entornos que no permiten el acceso externo a los usuarios de buzones. Esto significa que los usuarios solo pueden autenticarse en su buzón de una manera compatible cuando están conectados y Unidos a la red corporativa, en una VPN o conectados a través de máquinas de acceso directo, pero obtiene un par de mensajes adicionales al configurar el perfil de Outlook.| 
+|Outlook|Compatible, sin mensajes adicionales|Compatible</br></br>Con **autenticación moderna** para Exchange Online: compatible</br></br>Con **autenticación normal** para Exchange Online: se admite con las siguientes advertencias:</br><li>Debe estar en un equipo unido a un dominio y estar conectado a la red corporativa </li><li>Solo se puede usar un identificador alternativo en entornos que no permiten el acceso externo a los usuarios de buzones. Esto significa que los usuarios solo pueden autenticarse en su buzón de una manera compatible cuando están conectados y Unidos a la red corporativa, en una VPN o conectados a través de máquinas de acceso directo, pero obtiene un par de mensajes adicionales al configurar el perfil de Outlook.| 
 |Carpetas públicas híbridas|Compatible, no hay ningún mensaje adicional.|Con **autenticación moderna** para Exchange Online: compatible</br></br>Con **autenticación normal** para Exchange Online: no compatible</br></br><li>Las carpetas públicas híbridas no pueden expandirse si se usan IDENTIFICADOres alternativos y, por lo tanto, no deben usarse actualmente con métodos de autenticación normales.|
-|Delegación entre locales|Consulte [configuración de Exchange para admitir permisos de buzón delegados en una implementación híbrida](https://technet.microsoft.com/library/mt784505.aspx)|Consulte [configuración de Exchange para admitir permisos de buzón delegados en una implementación híbrida](https://technet.microsoft.com/library/mt784505.aspx)|
+|Delegación entre locales|Consulte [configuración de Exchange para admitir permisos de buzón delegados en una implementación híbrida](/exchange/hybrid-deployment/set-up-delegated-mailbox-permissions)|Consulte [configuración de Exchange para admitir permisos de buzón delegados en una implementación híbrida](/exchange/hybrid-deployment/set-up-delegated-mailbox-permissions)|
 |Acceso al buzón de archivo (buzón local: archivar en la nube)|Compatible, sin mensajes adicionales|Compatible: los usuarios obtienen una solicitud adicional de credenciales al acceder al archivo, por lo que deben proporcionar su identificador alternativo cuando se le solicite.| 
-|Outlook Web Access|Se admite|Se admite|
-|Mobile Apps de Outlook para Android, IOS y Windows Phone|Se admite|Se admite|
+|Outlook Web Access|Compatible|Compatible|
+|Mobile Apps de Outlook para Android, IOS y Windows Phone|Compatible|Compatible|
 |Skype empresarial/Lync|Compatible, sin mensajes adicionales|Compatible (a menos que se indique), pero existe una posibilidad de confusión del usuario.</br></br>En los clientes móviles, el identificador alternativo solo se admite si la dirección SIP = dirección de correo electrónico = identificador alternativo.</br></br> Es posible que los usuarios tengan que iniciar sesión dos veces en el cliente de escritorio de Skype empresarial, usando primero el UPN local y, a continuación, usando el identificador alternativo. (Tenga en cuenta que la "dirección de inicio de sesión" es realmente la dirección SIP, que puede no ser la misma que el "nombre de usuario", aunque a menudo es). Cuando se solicita un nombre de usuario por primera vez, el usuario debe escribir el UPN, incluso si se ha rellenado previamente con el identificador alternativo o la dirección SIP. Después de que el usuario haga clic en el inicio de sesión con el UPN, volverá a aparecer el mensaje de nombre de usuario, esta vez rellenado con el UPN. Esta vez, el usuario debe reemplazarlo por el identificador alternativo y hacer clic en iniciar sesión para completar el proceso de inicio de sesión. En los clientes móviles, los usuarios deben escribir el ID. de usuario local en la página avanzadas, con el formato de estilo SAM (dominio\nombre de usuario), no el formato UPN.</br></br>Después del inicio de sesión correcto, si Skype empresarial o Lync dice "Exchange necesita sus credenciales", debe proporcionar las credenciales válidas para el lugar donde se encuentra el buzón. Si el buzón está en la nube, debe proporcionar el identificador alternativo. Si el buzón de correo es local, debe proporcionar el UPN local.| 
 
 ## <a name="additional-details--considerations"></a>Detalles adicionales & consideraciones
@@ -194,7 +194,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 -   Si uno de los bosques configurados por el administrador está inactivo, AD FS continúa buscando una cuenta de usuario con un identificador de inicio de sesión alternativo en otros bosques que están configurados. Si AD FS servidor encuentra objetos de usuario únicos en los bosques en los que se ha buscado, un usuario inicia sesión correctamente.
 
--   Además, puede que desee personalizar la página de inicio de sesión de AD FS para proporcionar a los usuarios finales alguna sugerencia sobre el ID. de inicio de sesión alternativo. Puede hacerlo agregando la descripción de la página de inicio de sesión personalizada (para obtener más información, consulte [Personalización de las páginas de inicio](https://technet.microsoft.com/library/dn280950.aspx) de sesión de AD FS o personalización de la cadena "iniciar sesión con la cuenta de la organización" sobre el campo de nombre de usuario (para obtener más información, consulte [Personalización avanzada de páginas de inicio de sesión de AD FS](https://technet.microsoft.com/library/dn636121.aspx).
+-   Además, puede que desee personalizar la página de inicio de sesión de AD FS para proporcionar a los usuarios finales alguna sugerencia sobre el ID. de inicio de sesión alternativo. Puede hacerlo agregando la descripción de la página de inicio de sesión personalizada (para obtener más información, consulte [Personalización de las páginas de inicio](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)) de sesión de AD FS o personalización de la cadena "iniciar sesión con la cuenta de la organización" sobre el campo de nombre de usuario (para obtener más información, consulte [Personalización avanzada de páginas de inicio de sesión de AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn636121(v=ws.11)).
 
 -   El nuevo tipo de notificaciones que contiene el valor del identificador de inicio de sesión alternativo es **http: schemas. Microsoft. com/ws/2013/11/alternateloginid**
 
@@ -211,14 +211,12 @@ A continuación se muestran varios casos de error y el impacto correspondiente e
 
 
 
-|                       **Casos de error**                        | **Impacto en la experiencia de inicio de sesión** |                                                              **Ceso**                                                              |
+|                       **Casos de error**                        | **Impacto en la experiencia de inicio de sesión** |                                                              **Evento**                                                              |
 |--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| No se puede obtener un valor para SAMAccountName para el objeto de usuario |          Error de inicio de sesión           |                  ID. de evento 364 con el mensaje de excepción MSIS8012: no se puede encontrar samAccountName para el usuario: '{0}'.                   |
-|        No se puede obtener acceso al atributo CanonicalName         |          Error de inicio de sesión           |               ID. de evento 364 con el mensaje de excepción MSIS8013: CanonicalName: '{0}' del usuario: '{1}' tiene un formato incorrecto.                |
-|        Se encuentran varios objetos de usuario en un bosque        |          Error de inicio de sesión           | ID. de evento 364 con el mensaje de excepción MSIS8015: se encontraron varias cuentas de usuario con la identidad '{0}' en el bosque '{1}' con identidades: {2} |
-|   Se encuentran varios objetos de usuario en varios bosques    |          Error de inicio de sesión           |           ID. de evento 364 con el mensaje de excepción MSIS8014: se encontraron varias cuentas de usuario con la identidad '{0}' en los bosques: {1}            |
+| No se puede obtener un valor para SAMAccountName para el objeto de usuario |          Error de inicio de sesión           |                  ID. de evento 364 con el mensaje de excepción MSIS8012: no se puede encontrar samAccountName para el usuario: ' {0} '.                   |
+|        No se puede obtener acceso al atributo CanonicalName         |          Error de inicio de sesión           |               El ID. de evento 364 con el mensaje de excepción MSIS8013: CanonicalName: ' {0} ' del usuario: ' {1} ' tiene un formato incorrecto.                |
+|        Se encuentran varios objetos de usuario en un bosque        |          Error de inicio de sesión           | ID. de evento 364 con el mensaje de excepción MSIS8015: se encontraron varias cuentas de usuario con la identidad ' {0} ' en el bosque ' {1} ' con identidades:{2} |
+|   Se encuentran varios objetos de usuario en varios bosques    |          Error de inicio de sesión           |           ID. de evento 364 con el mensaje de excepción MSIS8014: se encontraron varias cuentas de usuario con la identidad ' {0} ' en los bosques:{1}            |
 
-## <a name="see-also"></a>Consulta también
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
-
-
+## <a name="see-also"></a>Consulte también
+[Operaciones de AD FS](../ad-fs-operations.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4901e0c9ee0701261dc6abb8cfd69cc02d4dd02e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9db04752ad7982f78dc72c02108fe706cdf2fa04
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932047"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956767"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -41,7 +41,7 @@ nfsshare {<sharename> | <drive>:<path> | * } /delete
 | /delete | Si *sharename* `<drive>:<path>` se especifica ShareName o, este parámetro elimina el recurso compartido especificado. Si se especifica un carácter comodín (*), este parámetro elimina todos los recursos compartidos de NFS. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si *ShareName* es el único parámetro, este comando muestra las propiedades del recurso compartido de NFS identificado por *ShareName*.
 
@@ -53,4 +53,4 @@ nfsshare {<sharename> | <drive>:<path> | * } /delete
 
 - [Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)
 
-- [Referencia de cmdlets de NFS](https://docs.microsoft.com/powershell/module/nfs)
+- [Referencia de cmdlets de NFS](/powershell/module/nfs)

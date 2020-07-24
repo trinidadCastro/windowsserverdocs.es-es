@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c09efb2fc8b1de124cbefc1b2dff73df29d2a4f1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 15bef10afa49fafebfad485836bd6f9cdd5f496e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924657"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957177"
 ---
 # <a name="gpfixup"></a>gpfixup
 
@@ -65,4 +65,4 @@ gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /dc:MyDcDnsName 2>&1 >gpfixup
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Administrar Dominio de Active Directory cambiar el nombre](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794869(v=ws.10))
+- [Administrar Dominio de Active Directory cambiar el nombre](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc794869(v=ws.10))

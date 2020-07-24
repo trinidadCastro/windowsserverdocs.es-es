@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db7d279577b8120137b4397551a480ea2d2a0e8a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f7e9679dee2bb8a75da14e1d7ee6c75b80bb1ef1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924418"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957137"
 ---
 # <a name="inactive"></a>inactivo
 
@@ -45,4 +45,4 @@ inactive
 
 - [seleccionar partición (comando)](select-partition.md)
 
-- [Solución avanzada de problemas de arranque de Windows](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [Solución avanzada de problemas de arranque de Windows](/windows/client-management/advanced-troubleshooting-boot-problems)

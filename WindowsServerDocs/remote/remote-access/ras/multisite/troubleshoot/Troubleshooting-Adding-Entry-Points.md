@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: dcc1037f-1a65-4497-99e6-0df9aef748a8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9e8f67709e6059b879eab92fdd06609df90cb9a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89d4773e18f6e38999a1c1db1c17a089ee183bbc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858308"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960178"
 ---
 # <a name="troubleshooting-adding-entry-points"></a>Solucionar problemas relacionados con la adición de puntos de entrada
 
@@ -33,7 +33,7 @@ Al agregar un punto de entrada nuevo a una implementación multisitio, hay que e
 Ejecute el comando y cuide de especificar el parámetro *RemoteAccessServer* con el nombre del servidor que se va a agregar como punto de entrada.  
   
 ## <a name="remote-access-is-not-configured"></a>Acceso remoto no está configurado  
-**Error recibido**. El acceso remoto no está configurado en < server_name >. Especifique el nombre de un servidor que forme parte de una implementación multisitio.  
+**Error recibido**. El acceso remoto no está configurado en <server_name>. Especifique el nombre de un servidor que forme parte de una implementación multisitio.  
   
 **Causa**  
   
@@ -54,7 +54,7 @@ La funcionalidad de multisitio no está habilitada en el servidor especificado e
   
 **Solución**  
   
-Habilite la funcionalidad de multisitio mediante el cmdlet `Enable-DaMultiSite`. Para obtener más información, vea [implementar el acceso remoto multisitio](https://technet.microsoft.com/library/hh831664.aspx).  
+Habilite la funcionalidad de multisitio mediante el cmdlet `Enable-DaMultiSite`. Para obtener más información, consulte el tema sobre cómo [implementar el Acceso remoto multisitio](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831664(v=ws.11)).  
   
 ## <a name="ipv6-prefix-issues"></a>Problemas de prefijo IPv6  
   
@@ -87,7 +87,7 @@ Habilite la funcionalidad de multisitio mediante el cmdlet `Enable-DaMultiSite`.
     2.  Ejecute el cmdlet `Add-DAEntryPoint` e indique el prefijo IP-HTTPS en el parámetro *ClientIPv6Prefix*.  
   
 ## <a name="connectto-address"></a>Dirección ConnectTo  
-**Error recibido**. La dirección (< connect_to_address >) a la que se conectan los clientes de DirectAccess en el servidor de acceso remoto es la misma que la dirección del servidor de ubicación de red. Especifique un valor alternativo.  
+**Error recibido**. La dirección (<connect_to_address>) a la que se conectan los clientes de DirectAccess en el servidor de acceso remoto es la misma que la dirección del servidor de ubicación de red. Especifique un valor alternativo.  
   
 **Causa**  
   
@@ -98,11 +98,11 @@ La dirección ConnectTo y la dirección del servidor de ubicación de red son la
 La dirección ConnectTo se debe poder resolver a través de Internet para que los equipos cliente puedan conectarse mediante IP-HTTPS. Sin embargo, la dirección del servidor de ubicación de red se debe poder resolver a través de la red corporativa, pero no a través de Internet. Asegúrese de que las direcciones ConnectTo y del servidor de ubicación de red son distintas. Seleccione otras direcciones e inténtelo de nuevo.  
   
 ## <a name="directaccess-or-vpn-already-installed"></a>DirectAccess o VPN ya instalados  
-**Error recibido**. Se detectó una instalación de VPN en el servidor < server_name >. Especifique un servidor alternativo que no tenga instalado el acceso remoto o quite la configuración de VPN del servidor.  
+**Error recibido**. Se detectó una instalación de VPN en el servidor <server_name>. Especifique un servidor alternativo que no tenga instalado el acceso remoto o quite la configuración de VPN del servidor.  
   
-O  
+Or  
   
-Acceso remoto ya está instalado en el servidor < server_name >. Especifique un servidor alternativo que no ejecute DirectAccess o quite la configuración de DirectAccess existente del servidor.  
+Acceso remoto ya está instalado en el servidor <server_name>. Especifique un servidor alternativo que no ejecute DirectAccess o quite la configuración de DirectAccess existente del servidor.  
   
 **Causa**  
   
@@ -115,7 +115,7 @@ Para agregar un servidor a una implementación multisitio, el rol Acceso remoto 
 Ejecute el comando y asegúrese de que el servidor que indique en el parámetro *RemoteAccessServer* no tiene DirectAccess o VPN configurados.  
   
 ## <a name="ipsec-root-certificate"></a>Certificado raíz IPsec  
-**Error recibido**. No se encuentra el certificado raíz IPsec configurado en el servidor < server_name >.  
+**Error recibido**. No se encuentra el certificado raíz IPsec configurado en el servidor <server_name>.  
   
 **Causa**  
   
@@ -187,7 +187,7 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
   
 -   **Problema 1**  
   
-    **Error recibido**. El dominio especificado en el parámetro ServerGpoName < server_GPO > no existe. En su lugar, especifique el dominio < domain_name >.  
+    **Error recibido**. El dominio especificado en el parámetro ServerGpoName <server_GPO> no existe. En su lugar, especifique el dominio <domain_name>.  
   
     **Causa**  
   
@@ -199,7 +199,7 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
   
 -   **Problema 2**  
   
-    **Error recibido**. El GPO de servidor debe estar ubicado en el dominio del servidor de acceso remoto. Especifique el < de dominio domain_name > en el parámetro ServerGpoName.  
+    **Error recibido**. El GPO de servidor debe estar ubicado en el dominio del servidor de acceso remoto. Especifique el <de dominio domain_name> en el parámetro ServerGpoName.  
   
     **Causa**  
   
@@ -210,7 +210,7 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
     El GPO de servidor debe estar en el mismo dominio que el servidor de acceso remoto. Use el nombre de dominio del servidor correspondiente al GPO de servidor e inténtelo de nuevo.  
   
 ## <a name="split-brain-dns"></a>DNS de cerebro dividido  
-**ADVERTENCIA recibida**. La entrada de NRPT para el sufijo DNS < DNS_suffix > contiene el nombre público usado por los equipos cliente para conectarse al servidor de acceso remoto. Agregue el nombre < connect_to_address > como una exención en NRPT.  
+**ADVERTENCIA recibida**. La entrada de NRPT para el sufijo DNS <DNS_suffix> contiene el nombre público usado por los equipos cliente para conectarse al servidor de acceso remoto. Agregue el nombre <connect_to_address> como una exención en NRPT.  
   
 **Causa**  
   
@@ -231,12 +231,12 @@ Para eximir una dirección en las reglas NRPT:
 Cuando se agrega un sufijo de nombre sin indicar una dirección de servidor, dicho sufijo se considera una exención de NRPT.  
   
 ## <a name="saving-server-gpo-settings"></a>Guardar la configuración del GPO de servidor  
-**Error recibido**. Error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
+**Error recibido**. Error al guardar la configuración de acceso remoto en el GPO <GPO_name>.  
   
-Para solucionar este error, consulte el tema sobre cómo guardar la configuración de GPO de servidor en [solución de problemas al habilitar multisitio](https://technet.microsoft.com/library/jj591658.aspx).  
+Para solucionar este error, consulte el tema sobre cómo guardar la configuración de GPO de servidor en [solución de problemas al habilitar multisitio](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj591658(v=ws.11)).  
   
 ## <a name="gpo-updates-cannot-be-applied"></a>No se pueden aplicar actualizaciones de GPO  
-**ADVERTENCIA recibida**. No se pueden aplicar actualizaciones de GPO en < server_name >. Los cambios no surtirán efecto hasta la siguiente actualización de directiva.  
+**ADVERTENCIA recibida**. No se pueden aplicar actualizaciones de GPO en <server_name>. Los cambios no surtirán efecto hasta la siguiente actualización de directiva.  
   
 **Causa**  
   
@@ -246,5 +246,3 @@ Se ha producido un error al intentar actualizar las directivas en el equipo espe
   
 Para aplicar una actualización de directiva, ejecute `gpupdate /force` en el equipo especificado.  
   
-
-

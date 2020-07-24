@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 480f44c6467587918ad347413315b208c874f8cd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e7e248f507ca6d38248bc931cb3d1b98aa385c88
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922129"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956997"
 ---
 # <a name="manage-bde"></a>manage-bde
 
@@ -59,4 +59,4 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Habilitar BitLocker mediante la línea de comandos](https://technet.microsoft.com/library/dd894351(v=ws.10).aspx)
+- [Habilitar BitLocker mediante la línea de comandos](/previous-versions/windows/it-pro/windows-7/dd894351(v=ws.10))

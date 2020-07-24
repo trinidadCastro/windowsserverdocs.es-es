@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 833081baa3ae9a0c2493623a7d015334087ee26d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0eb2836b15c24dc946953c0c82c4b3586971c5bc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934790"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956737"
 ---
 # <a name="nfsstat"></a>nfsstat
 
@@ -75,4 +75,4 @@ nfsstat -z
 
 - [Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)
 
-- [Referencia de cmdlets de NFS](https://docs.microsoft.com/powershell/module/nfs)
+- [Referencia de cmdlets de NFS](/powershell/module/nfs)

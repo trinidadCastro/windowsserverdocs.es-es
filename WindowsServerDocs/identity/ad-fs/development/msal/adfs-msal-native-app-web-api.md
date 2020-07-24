@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8b27097ac64f981343c1d455c826fa1b9004133e
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bd4752f95fbe483cf4c706acfd8766ce18aa8be9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949585"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960437"
 ---
 # <a name="scenario-native-app-calling-web-api"></a>Escenario: aplicación nativa que llama a la API Web 
 >Se aplica a: AD FS 2019 y versiones posteriores 
@@ -22,11 +22,11 @@ Obtenga información sobre cómo crear un usuario de sesión de aplicación nati
  
 Antes de leer este artículo, debe estar familiarizado con los [conceptos de AD FS](../ad-fs-openid-connect-oauth-concepts.md) y el flujo de concesión de código de [autorización](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md#authorization-code-grant-flow)
  
-## <a name="overview"></a>Introducción 
+## <a name="overview"></a>Información general 
  
- ![Introducción](media/adfs-msal-native-app-web-api/native1.png)
+ ![Información general](media/adfs-msal-native-app-web-api/native1.png)
 
-En este flujo, agregará autenticación a la aplicación nativa (cliente público), que puede iniciar sesión a los usuarios y llamar a una API Web. Para llamar a una API Web desde una aplicación nativa que inicia la sesión de los usuarios, puede usar el método de adquisición de tokens de [AcquireTokenInteractive](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__) de MSAL. Para habilitar esta interacción, MSAL aprovecha un explorador web. 
+En este flujo, agregará autenticación a la aplicación nativa (cliente público), que puede iniciar sesión a los usuarios y llamar a una API Web. Para llamar a una API Web desde una aplicación nativa que inicia la sesión de los usuarios, puede usar el método de adquisición de tokens de [AcquireTokenInteractive](/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__) de MSAL. Para habilitar esta interacción, MSAL aprovecha un explorador web. 
 
  
 Para comprender mejor cómo configurar una aplicación nativa en ADFS para adquirir el token de acceso de forma interactiva, vamos a usar un ejemplo disponible [aquí](https://github.com/microsoft/adfs-sample-msal-dotnet-native-to-webapi) y se guiará por el registro de la aplicación y los pasos de configuración del código.  
@@ -45,15 +45,15 @@ En esta sección se muestra cómo registrar la aplicación nativa como cliente p
 
   1. En **Administración de AD FS**, haga clic con el botón derecho en **grupos de aplicaciones** y seleccione **Agregar grupo de aplicaciones**.   
   
-  2. En el Asistente para grupos de aplicaciones, en **nombre** , escriba **NativeAppToWebApi** y en **aplicaciones cliente-servidor** seleccione la plantilla **aplicación nativa que tiene acceso a una API Web** . Haz clic en **Siguiente**.  
+  2. En el Asistente para grupos de aplicaciones, en **nombre** , escriba **NativeAppToWebApi** y en **aplicaciones cliente-servidor** seleccione la plantilla **aplicación nativa que tiene acceso a una API Web** . Haga clic en **Next**.  
   
       ![REG. de aplicación](media/adfs-msal-native-app-web-api/native2.png)  
 
-  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ClientID** en el archivo **app. config** de la aplicación. Escriba lo siguiente en **URI de redirección:** https://ToDoListClient. Haz clic en **Agregar**. Haz clic en **Siguiente**.  
+  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ClientID** en el archivo de **App.config** de la aplicación. Escriba lo siguiente para el **URI de redirección:** https://ToDoListClient . Haga clic en **Agregar**. Haga clic en **Next**.  
  
      ![REG. de aplicación](media/adfs-msal-native-app-web-api/native3.png) 
 
-  4. En la pantalla configurar API Web, escriba el **identificador:** https://localhost:44321/. Haz clic en **Agregar**. Haz clic en **Siguiente**. Este valor se usará más adelante en los archivos **app. config** y **Web. config** de la aplicación.
+  4. En la pantalla configurar API Web, escriba el **identificador:** https://localhost:44321/ . Haga clic en **Agregar**. Haga clic en **Next**. Este valor se usará más adelante en los archivos de **App.config** y **Web.config** de la aplicación.
  
      ![REG. de aplicación](media/adfs-msal-native-app-web-api/native4.png)   
   
@@ -85,7 +85,7 @@ En esta sección se muestra cómo registrar la aplicación nativa como cliente p
   
       ![REG. de aplicación](media/adfs-msal-native-app-web-api/native10.png) 
 
-  13. Escriba **NameID** en **el campo Nombre de regla de notificaciones:** . Seleccione **el nombre** para el **tipo de notificaciones entrantes:** , **ID. de nombre** para el **tipo de notificaciones salientes:** y **nombre común** para **el formato de identificador de nombre saliente:** . Haga clic en **Finalizar**.
+  13. Escriba **NameID** en **el campo Nombre de regla de notificaciones:** . Seleccione **el nombre** para el **tipo de notificaciones entrantes:**, **ID. de nombre** para el **tipo de notificaciones salientes:** y **nombre común** para **el formato de identificador de nombre saliente:**. Haga clic en **Finalizar**.
   
       ![REG. de aplicación](media/adfs-msal-native-app-web-api/native11.png) 
 
@@ -107,9 +107,9 @@ En esta sección se muestra cómo configurar una aplicación nativa para iniciar
  
      ![configuración de código](media/adfs-msal-native-app-web-api/native12.png)
 
- 4. Abra el archivo Web. config. Modifique lo siguiente: 
+ 4. Abra el archivo de Web.config. Modifique lo siguiente: 
     - ida: Audience: escriba el valor del **identificador** de #4 en el registro de la aplicación en AD FS sección anterior 
-    - ida: AdfsMetadataEndpoint: escriba https://[su nombre de host de AD FS]/federationmetadata/2007-06/federationmetadata.XML 
+    - ida: AdfsMetadataEndpoint: escriba https://[su nombre de host de AD FS]/federationmetadata/2007-06/federationmetadata.xml 
     
       ![configuración de código](media/adfs-msal-native-app-web-api/native13.png)
  
@@ -145,6 +145,6 @@ En esta sección se muestra cómo probar el ejemplo configurado anteriormente.
     
        ![Prueba de la aplicación](media/adfs-msal-native-app-web-api/native19.png)
  
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 [Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  

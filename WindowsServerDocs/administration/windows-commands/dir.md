@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2372476e153a6dc37b7d068201a40ba17c11fa54
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6abc9e1e760502047c5c740c72b79e302dd19249
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930823"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958317"
 ---
 # <a name="dir"></a>dir
 
 Muestra una lista de los archivos y subdirectorios de un directorio. Si se usa sin parámetros, este comando muestra la etiqueta de volumen del disco y el número de serie, seguido de una lista de directorios y archivos del disco (incluidos sus nombres y la fecha y hora en que se modificó por última vez). En el caso de los archivos, este comando muestra la extensión de nombre y el tamaño en bytes. Este comando también muestra el número total de archivos y directorios enumerados, su tamaño acumulativo y el espacio libre (en bytes) restante en el disco.
 
-El comando **dir** también se puede ejecutar desde la consola de recuperación de Windows, con parámetros diferentes. Para obtener más información, vea [entorno de recuperación de Windows (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
+El comando **dir** también se puede ejecutar desde la consola de recuperación de Windows, con parámetros diferentes. Para obtener más información, vea [entorno de recuperación de Windows (WinRE)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -51,7 +51,7 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 | /r | Mostrar transmisiones de datos alternativas del archivo. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Para usar varios parámetros de *nombre* de archivo, separe cada nombre de archivo con un espacio, una coma o un punto y coma.
 

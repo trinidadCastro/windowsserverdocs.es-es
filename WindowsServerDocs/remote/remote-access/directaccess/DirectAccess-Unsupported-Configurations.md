@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 23d05e61-95c3-4e70-aa83-b9a8cae92304
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3908989b02f6388c994664aa8679c9198da4eea7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e59fd85fae3333ec3a5751ba611b615f4af92cb0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309397"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960247"
 ---
 # <a name="directaccess-unsupported-configurations"></a>Configuraciones no compatibles de DirectAccess
 
@@ -30,13 +30,13 @@ Si implementa DirectAccess con replicación SYSVOL de FRS, corre el riesgo de la
   
 Si planea implementar DirectAccess, debe usar controladores de dominio que ejecuten sistemas operativos posteriores a Windows Server 2003 R2 y debe usar DFS-R.  
   
-Para obtener información acerca de la migración de FRS a DFS-R, consulte la [Guía de migración de replicación de SYSVOL: FRS to replicación DFS](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx).  
+Para obtener información acerca de la migración de FRS a DFS-R, consulte la [Guía de migración de replicación de SYSVOL: FRS to replicación DFS](../../../storage/dfs-replication/migrate-sysvol-to-dfsr.md).  
   
 ## <a name="network-access-protection-for-directaccess-clients"></a><a name="bkmk_nap"></a>Protección de acceso a redes para clientes de DirectAccess  
 La protección de acceso a redes (NAP) se usa para determinar si los equipos cliente remotos cumplen las directivas de ti antes de que se les conceda acceso a la red corporativa. NAP quedó en desuso en Windows Server 2012 R2 y no se incluye en Windows Server 2016. Por esta razón, no se recomienda iniciar una nueva implementación de DirectAccess con NAP. Se recomienda un método diferente de control de punto final para la seguridad de los clientes de DirectAccess.  
   
 ## <a name="multisite-support-for-windows-7-clients"></a><a name="bkmk_multi"></a>Compatibilidad con multisitio para clientes de Windows 7  
-Cuando DirectAccess se configura en una implementación multisitio, los clientes de Windows 10&reg;, Windows&reg; 8,1 y Windows&reg; 8 tienen la capacidad de conectarse al sitio más cercano.  Los equipos cliente de Windows 7&reg; no tienen la misma capacidad. La selección de sitio para los clientes de Windows 7 se establece en un sitio determinado en el momento de la configuración de la Directiva, y estos clientes siempre se conectarán a ese sitio designado, independientemente de su ubicación.  
+Cuando DirectAccess se configura en una implementación multisitio, &reg; los clientes de Windows 10, windows &reg; 8,1 y Windows &reg; 8 tienen la capacidad de conectarse al sitio más cercano.  &reg;Los equipos cliente de Windows 7 no tienen la misma capacidad. La selección de sitio para los clientes de Windows 7 se establece en un sitio determinado en el momento de la configuración de la Directiva, y estos clientes siempre se conectarán a ese sitio designado, independientemente de su ubicación.  
   
 ## <a name="user-based-access-control"></a><a name="bkmk_user"></a>Control de acceso basado en usuario  
 Las directivas de DirectAccess están basadas en equipos, no en función del usuario. No se admite la especificación de directivas de usuario de DirectAccess para controlar el acceso a la red corporativa.  
@@ -45,7 +45,7 @@ Las directivas de DirectAccess están basadas en equipos, no en función del usu
 DirectAccess se puede configurar mediante el Asistente para configuración de DirectAccess, la consola de administración de acceso remoto o los cmdlets de acceso remoto de Windows PowerShell. No se admite el uso de ningún medio que no sea el Asistente para configuración de DirectAccess para configurar DirectAccess, como la modificación de objetos de directiva de grupo de DirectAccess directamente o la modificación manual de la configuración de directivas predeterminada en el servidor o cliente. Estas modificaciones pueden dar lugar a una configuración inutilizable.  
   
 ## <a name="kerbproxy-authentication"></a><a name="bkmk_kerb"></a>Autenticación de KerbProxy  
-Al configurar un servidor de DirectAccess con el Asistente para Introducción, el servidor de DirectAccess se configura automáticamente para usar la autenticación KerbProxy para la autenticación de equipos y usuarios. Por este motivo, solo debe usar el Asistente para Introducción para implementaciones de sitio único donde solo se implementan clientes de Windows 10&reg;, Windows 8.1 o Windows 8.  
+Al configurar un servidor de DirectAccess con el Asistente para Introducción, el servidor de DirectAccess se configura automáticamente para usar la autenticación KerbProxy para la autenticación de equipos y usuarios. Por este motivo, solo debe usar el Asistente para Introducción para implementaciones de un solo sitio en las que solo &reg; se implementan clientes de Windows 10, Windows 8.1 o Windows 8.  
   
 Además, las siguientes características no deben usarse con la autenticación de KerbProxy:  
   
@@ -69,7 +69,7 @@ No se admiten los planes de implementación siguientes si habilita la autenticac
 > [!NOTE]  
 > En el caso de las implementaciones anteriores, debe usar el Asistente para configuración avanzada, que usa una configuración de dos túneles con un equipo basado en certificados y la autenticación de usuario. Para obtener más información, vea [implementar un único servidor de DirectAccess con configuración avanzada](../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md).  
   
-## <a name="using-isatap"></a><a name="bkmk_isa"></a>Usar ISATAP  
+## <a name="using-isatap"></a><a name="bkmk_isa"></a>Con ISATAP  
 ISATAP es una tecnología de transición que proporciona conectividad IPv6 en redes corporativas solo IPv4. Está limitado a organizaciones pequeñas y medianas con una única implementación de servidor de DirectAccess y permite la administración remota de los clientes de DirectAccess. Si ISATAP está implementado en un entorno multisitio, de equilibrio de carga o de multidominio, debe quitarlo o moverlo a una implementación IPv6 nativa antes de configurar DirectAccess.  
   
 ## <a name="iphttps-and-one-time-password-otp-endpoint-configuration"></a><a name="bkmk_iphttps"></a>IPHTTPS y configuración de punto de conexión de contraseña de un solo tiempo (OTP)  
@@ -91,5 +91,3 @@ Se requiere un controlador de dominio de lectura y escritura por muchos motivos,
   
 Debido a estos requisitos, no implemente DirectAccess con un RODC.  
   
-
-

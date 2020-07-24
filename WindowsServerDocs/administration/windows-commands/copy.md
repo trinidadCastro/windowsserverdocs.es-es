@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ea742ab8fce296a88c8c9e6a41262c7aef88813
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3e15db58ab8fa8c3a0114b695cb85eec7684039e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928895"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958477"
 ---
 # <a name="copy"></a>copy
 
 Copia uno o varios archivos de una ubicación a otra.
 
 > [!NOTE]
-> También puede usar el comando **copiar** , con parámetros diferentes, de la consola de recuperación. Para obtener más información acerca de la consola de recuperación, consulte [entorno de recuperación de Windows (Windows re)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
+> También puede usar el comando **copiar** , con parámetros diferentes, de la consola de recuperación. Para obtener más información acerca de la consola de recuperación, consulte [entorno de recuperación de Windows (Windows re)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -41,11 +41,11 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 | /z | Copia los archivos en red en modo reiniciable. |
 | /a | Indica un archivo de texto ASCII. |
 | /b | Indica un archivo binario. |
-| `<source>` | Obligatorio. Especifica la ubicación desde la que desea copiar un archivo o un conjunto de archivos. El *origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. |
-| `<destination>` | Obligatorio. Especifica la ubicación en la que desea copiar un archivo o un conjunto de archivos. El *destino* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. |
+| `<source>` | Necesario. Especifica la ubicación desde la que desea copiar un archivo o un conjunto de archivos. El *origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. |
+| `<destination>` | Necesario. Especifica la ubicación en la que desea copiar un archivo o un conjunto de archivos. El *destino* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Puede copiar un archivo de texto ASCII que use un carácter de fin de archivo (CTRL + Z) para indicar el final del archivo.
 

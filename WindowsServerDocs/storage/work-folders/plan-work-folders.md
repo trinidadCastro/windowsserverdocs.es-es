@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: Cómo planear una implementación de carpetas de trabajo, incluidos los requisitos del sistema y cómo preparar el entorno de red.
-ms.openlocfilehash: 1453ff54c2213445f6f443d34d21747eb875412b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 603711676aa5f35047b0623694f3a16922a2b240
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475602"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960007"
 ---
 # <a name="planning-a-work-folders-deployment"></a>Planeación de una implementación de carpetas de trabajo
 
@@ -139,9 +139,9 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
 
 Carpetas de trabajo admite el uso de proxy de aplicación Web, Azure AD proxy de aplicación o soluciones de proxy inverso de terceros:
 
--  Proxy de aplicación web es una solución de proxy inverso local. Para obtener más información, vea [proxy de aplicación web en Windows Server 2016](https://technet.microsoft.com/windows-server-docs/identity/web-application-proxy/web-application-proxy-windows-server).
+-  Proxy de aplicación web es una solución de proxy inverso local. Para obtener más información, vea [proxy de aplicación web en Windows Server 2016](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md).
 
--  Azure AD proxy de aplicación es una solución de proxy inverso en la nube. Para obtener más información, consulte [cómo proporcionar acceso remoto seguro a aplicaciones locales](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started) .
+-  Azure AD proxy de aplicación es una solución de proxy inverso en la nube. Para obtener más información, consulte [cómo proporcionar acceso remoto seguro a aplicaciones locales](/azure/active-directory/active-directory-application-proxy-get-started) .
 
 ## <a name="additional-design-considerations"></a>Otras consideraciones de diseño
  Aparte de conocer cada uno de los componentes anteriores, los clientes deben dedicar tiempo a pensar en el número de servidores y recursos de sincronización que debe haber y, asimismo, si conviene usar clústeres de conmutación por error para que exista tolerancia a errores en estos servidores de sincronización.
@@ -155,7 +155,7 @@ Carpetas de trabajo admite el uso de proxy de aplicación Web, Azure AD proxy de
 
 - Equilibrio de carga: en entornos de gran tamaño, el rendimiento y el tiempo de actividad de los servidores pueden aumentar si los datos se almacenan en varios servidores.
 
-  Para obtener información sobre el rendimiento y la escala de los servidores de Carpetas de trabajo, vea [Consideraciones de rendimiento de las implementaciones de Carpetas de trabajo](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx).
+  Para obtener información sobre el rendimiento y la escala de los servidores de Carpetas de trabajo, vea [Consideraciones de rendimiento de las implementaciones de Carpetas de trabajo](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md).
 
 > [!NOTE]
 >  Cuando se usen varios servidores de sincronización, recomendamos configurar la detección automática de servidores para los usuarios. Este proceso se basa en la configuración de un atributo de cada cuenta de usuario en AD DS. El atributo se denomina **MSDS-SyncServerURL** y está disponible en las cuentas de usuario después de agregar un controlador de dominio de Windows Server 2012 R2 al dominio o de aplicar las actualizaciones del esquema Active Directory. Este atributo debe definirse en cada usuario si se quiere garantizar que los usuarios se conecten al servidor de sincronización adecuado. Mediante el uso de la detección automática de servidores, las organizaciones pueden publicar carpetas de trabajo detrás de una dirección URL "descriptiva" como *https://workfolders.contoso.com* , independientemente del número de servidores de sincronización en funcionamiento.
@@ -255,5 +255,5 @@ La siguiente relación de preguntas está pensada para ayudar a los clientes a d
 
 |Tipo de contenido|Referencias|
 |------------------|----------------|
-|**Evaluación del producto**|-   [Carpetas de trabajo](work-folders-overview.md)<br />-   [Carpetas de trabajo para Windows 7](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (entrada de blog)|
-|**Implementación**|-   [Diseñar una implementación de carpetas de trabajo](plan-work-folders.md)<br />-   [Implementar carpetas de trabajo](deploy-work-folders.md)<br />-   [Implementación de carpetas de trabajo con AD FS y proxy de aplicación web (WAP)](deploy-work-folders-adfs-overview.md)<br />- [Implementación de carpetas de trabajo con Azure AD proxy de aplicación](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [Consideraciones de rendimiento para las implementaciones de carpetas de trabajo](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [Carpetas de trabajo para Windows 7 (descarga de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Carpetas de trabajo para Windows 7 (descarga de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [Implementación del laboratorio de pruebas de carpetas de trabajo](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (entrada de blog)|
+|**Evaluación del producto**|-   [Carpetas de trabajo](work-folders-overview.md)<br />-   [Carpetas de trabajo para Windows 7](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog)|
+|**Implementación**|-   [Diseñar una implementación de carpetas de trabajo](plan-work-folders.md)<br />-   [Implementar carpetas de trabajo](deploy-work-folders.md)<br />-   [Implementación de carpetas de trabajo con AD FS y proxy de aplicación web (WAP)](deploy-work-folders-adfs-overview.md)<br />- [Implementación de carpetas de trabajo con Azure AD proxy de aplicación](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [Consideraciones de rendimiento para las implementaciones de carpetas de trabajo](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)<br />-   [Carpetas de trabajo para Windows 7 (descarga de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Carpetas de trabajo para Windows 7 (descarga de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [Implementación del laboratorio de pruebas de carpetas de trabajo](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog)|

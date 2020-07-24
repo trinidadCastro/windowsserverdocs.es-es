@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aacdc55ac3895efad7dd9499ea1402b538fb8a9b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b1224d4dfeefd850dcc29e523972351b8cdd9778
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934967"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956877"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -75,7 +75,7 @@ msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
 | /QR | Especifica una experiencia de interfaz de usuario reducida durante el proceso de instalación. |
 | /qf | Especifica una experiencia de interfaz de usuario completa durante el proceso de instalación. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - No se muestra el cuadro modal si el usuario cancela la instalación. Puede usar **qb +!** o **qb! +** para ocultar el botón **Cancelar** .
 
@@ -225,12 +225,12 @@ msiexec.exe /fa {AAD3D77A-7476-469F-ADF4-04424124E91D}
 
 ## <a name="set-public-properties"></a>Establecer propiedades públicas
 
-Puede establecer propiedades públicas con este comando. Para obtener información sobre las propiedades disponibles y cómo establecerlas, consulte [propiedades públicas](https://docs.microsoft.com/windows/win32/msi/public-properties).
+Puede establecer propiedades públicas con este comando. Para obtener información sobre las propiedades disponibles y cómo establecerlas, consulte [propiedades públicas](/windows/win32/msi/public-properties).
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Msiexec.exe opciones de la línea de comandos](https://docs.microsoft.com/windows/win32/msi/command-line-options)
+- [Msiexec.exe opciones de la línea de comandos](/windows/win32/msi/command-line-options)
 
-- [Opciones de la línea de comandos del instalador estándar](https://docs.microsoft.com/windows/win32/msi/standard-installer-command-line-options)
+- [Opciones de la línea de comandos del instalador estándar](/windows/win32/msi/standard-installer-command-line-options)

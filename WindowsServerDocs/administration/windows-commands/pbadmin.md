@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da114c6b6501e9a8c305cd416d58ca0396745f27
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: eb0e70826175ebabe9d1a2c058104c0e7113e9df
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922864"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956697"
 ---
 # <a name="pbadmin"></a>pbadmin
 
@@ -23,7 +23,7 @@ ms.locfileid: "85922864"
 >[!IMPORTANT]
 > Este comando está en desuso.
 
-Administra las libretas de teléfonos. Si se usa sin parámetros, pbadmin inicia el administrador de la libreta de teléfonos. Para obtener descripciones e información de uso, vea [pbadmin](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755767(v=ws.10)).
+Administra las libretas de teléfonos. Si se usa sin parámetros, pbadmin inicia el administrador de la libreta de teléfonos. Para obtener descripciones e información de uso, vea [pbadmin](/previous-versions/orphan-topics/ws.10/cc755767(v=ws.10)).
 
 ## <a name="additional-references"></a>Referencias adicionales
 

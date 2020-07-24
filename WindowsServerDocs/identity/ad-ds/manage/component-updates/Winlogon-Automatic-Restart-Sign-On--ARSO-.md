@@ -10,12 +10,12 @@ ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53626c4cfac17cb11402ada9ce3397c487cd0720
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ad6658c504cc90eedef2c1cb6688c6f12233b3c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389852"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959877"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Inicio de sesión con reinicio automático de Winlogon (ARSO)
 
@@ -31,7 +31,7 @@ Al iniciar sesión automáticamente y bloquear el usuario en la consola de, Wind
 
 ARSO trata los dispositivos administrados y no administrados de forma diferente. En el caso de los dispositivos no administrados, se usa el cifrado de dispositivos, pero no es necesario para que el usuario obtenga ARSO. En el caso de los dispositivos administrados, se necesitan TPM 2,0, SecureBoot y BitLocker para la configuración de ARSO. Los administradores de TI pueden invalidar este requisito a través de directiva de grupo. ARSO para dispositivos administrados solo está disponible actualmente para dispositivos Unidos a Azure Active Directory.
 
-|   | Windows Update| apagado-g-t 0  | Reinicios iniciados por el usuario | API con marcas SHUTDOWN_ARSO/EWX_ARSO |
+|   | Windows Update| apagado-g-t 0  | Reinicios iniciados por el usuario | API con marcas de SHUTDOWN_ARSO/EWX_ARSO |
 | --- | :---: | :---: | :---: | :---: |
 | Dispositivos administrados | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
 | Dispositivos no administrados | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
@@ -39,7 +39,7 @@ ARSO trata los dispositivos administrados y no administrados de forma diferente.
 > [!NOTE]
 > Después de un reinicio inducido por Windows Update, el último usuario interactivo inicia sesión automáticamente y la sesión está bloqueada. Esto permite que las aplicaciones de la pantalla de bloqueo de un usuario sigan ejecutándose a pesar del reinicio de la Windows Update.
 
-![Página Configuración](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-lockscreenapp.png)
+![Página de configuración](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-lockscreenapp.png)
 
 ## <a name="policy-1"></a>#1 de Directiva
 
@@ -47,11 +47,11 @@ ARSO trata los dispositivos administrados y no administrados de forma diferente.
 
 En Windows 10, ARSO está deshabilitado para las SKU de servidor y no se tiene en de las SKU de cliente.
 
-**Ubicación de la Directiva de Grupo:** Configuración del equipo > Plantillas administrativas > componentes de Windows > Opciones de inicio de sesión de Windows
+**Ubicación de la Directiva de Grupo:** Configuración del equipo > Plantillas administrativas > componentes de Windows > opciones de inicio de sesión de Windows
 
 **Directiva de Intune:**
 
-- Plataforma Windows 10 y versiones posteriores
+- Plataforma: Windows 10 y versiones posteriores
 - Tipo de perfil: Plantillas administrativas
 - Ruta de acceso: \Windows Windows\windows Logon Options
 
@@ -88,11 +88,11 @@ Si deshabilita esta configuración de Directiva, el dispositivo no configura el 
 
 ### <a name="configure-the-mode-of-automatically-signing-in-and-locking-last-interactive-user-after-a-restart-or-cold-boot"></a>Configurar el modo de inicio de sesión automático y bloqueo del último usuario interactivo después de un reinicio o un arranque en frío
 
-**Ubicación de la Directiva de Grupo:** Configuración del equipo > Plantillas administrativas > componentes de Windows > Opciones de inicio de sesión de Windows
+**Ubicación de la Directiva de Grupo:** Configuración del equipo > Plantillas administrativas > componentes de Windows > opciones de inicio de sesión de Windows
 
 **Directiva de Intune:**
 
-- Plataforma Windows 10 y versiones posteriores
+- Plataforma: Windows 10 y versiones posteriores
 - Tipo de perfil: Plantillas administrativas
 - Ruta de acceso: \Windows Windows\windows Logon Options
 
@@ -112,7 +112,7 @@ Si habilita esta configuración de Directiva, puede elegir una de las dos opcion
 
 Si deshabilita o no configura esta opción, el inicio de sesión automático se establecerá de forma predeterminada en el comportamiento "habilitado si BitLocker está activado y no suspendido".
 
-**Editor del registro**
+**Editor del Registro**
 
 | Nombre del valor | Tipo | Datos |
 | --- | --- | --- |
@@ -172,4 +172,4 @@ Si un dispositivo tiene habilitada la protección de credenciales, los secretos 
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
-El inicio de sesión automático es una característica que está presente en Windows para varias versiones. Se trata de una característica documentada de Windows que incluso tiene herramientas como el inicio de sesión automático para Windows [http:/technet. Microsoft. com/Sysinternals/bb963905. aspx](https://technet.microsoft.com/sysinternals/bb963905.aspx). Permite a un solo usuario del dispositivo iniciar sesión automáticamente sin escribir credenciales. Las credenciales se configuran y almacenan en el registro como secreto de LSA cifrado. Esto podría ser problemático para muchos casos secundarios en los que puede producirse un bloqueo de cuenta entre el tiempo de cama y la reactivación, especialmente si la ventana de mantenimiento es normalmente durante este tiempo.
+El inicio de sesión automático es una característica que está presente en Windows para varias versiones. Se trata de una característica documentada de Windows que incluso tiene herramientas como el inicio de sesión automático para Windows [http:/technet. Microsoft. com/Sysinternals/bb963905. aspx](/sysinternals/downloads/autologon). Permite a un solo usuario del dispositivo iniciar sesión automáticamente sin escribir credenciales. Las credenciales se configuran y almacenan en el registro como secreto de LSA cifrado. Esto podría ser problemático para muchos casos secundarios en los que puede producirse un bloqueo de cuenta entre el tiempo de cama y la reactivación, especialmente si la ventana de mantenimiento es normalmente durante este tiempo.
