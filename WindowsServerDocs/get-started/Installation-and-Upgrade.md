@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 140f67a9dab5cf1f10cdb0c5c51a031a0dfb9dd3
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4d282e2aa543070fcea0f4931419de0be5745c7d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323647"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959637"
 ---
 # <a name="windows-server-installation-and-upgrade"></a>Instalación y actualización de Windows Server
 
@@ -30,7 +30,7 @@ ms.locfileid: "79323647"
 
 ## <a name="installation"></a>Instalación
 
-Si quieres pasar a una versión más reciente de Windows Server en el mismo hardware, una forma que siempre funciona es una **instalación limpia**, en la que basta con instalar el sistema operativo más reciente directamente sobre el más antiguo en el mismo hardware, lo que elimina el sistema operativo anterior. Esta es la forma más sencilla, pero antes tendrás que hacer una copia de seguridad de los datos y planear la reinstalación de las aplicaciones. Hay algunas cosas que debes tener en cuenta, como los requisitos del sistema, así que asegúrate de consultar los detalles referentes a [Windows Server 2016](https://go.microsoft.com/fwlink/?LinkID=825558), [Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418) y [Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx).
+Si quieres pasar a una versión más reciente de Windows Server en el mismo hardware, una forma que siempre funciona es una **instalación limpia**, en la que basta con instalar el sistema operativo más reciente directamente sobre el más antiguo en el mismo hardware, lo que elimina el sistema operativo anterior. Esta es la forma más sencilla, pero antes tendrás que hacer una copia de seguridad de los datos y planear la reinstalación de las aplicaciones. Hay algunas cosas que debes tener en cuenta, como los requisitos del sistema, así que asegúrate de consultar los detalles referentes a [Windows Server 2016](https://go.microsoft.com/fwlink/?LinkID=825558), [Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303418(v=ws.11)) y [Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11)).
 
 El paso de cualquier versión preliminar (por ejemplo, Windows Server 2016 Technical Preview) a la versión de lanzamiento (Windows Server 2016) siempre requiere una instalación limpia.
 
@@ -39,7 +39,7 @@ El paso de cualquier versión preliminar (por ejemplo, Windows Server 2016 Techn
 La documentación sobre la migración de Windows Server ayuda a migrar un rol o característica a la vez desde un equipo de origen que ejecute Windows Server a otro equipo de destino que ejecute Windows Server, ya sea la misma versión o una más reciente. Para tales fines, la migración se define como mover un rol o una característica y sus datos a un equipo diferente, no a actualizar la característica en el mismo equipo. Esta es la manera recomendada de mover los datos y la carga de trabajo existentes a una versión más reciente de Windows Server. Para empezar, consulta la [matriz de actualización y migración del rol de servidor](https://go.microsoft.com/fwlink/?LinkId=828595) de Windows Server.
 
 ## <a name="cluster-os-rolling-upgrade"></a>Actualización gradual del sistema operativo del clúster
-La actualización gradual del sistema operativo del clúster es una nueva característica de Windows Server 2016 que permite a un administrador actualizar el sistema operativo de los nodos del clúster de Windows Server 2012 R2 a Windows Server 2016 sin detener la función Hyper-V ni las cargas de trabajo del Servidor de archivos de escalabilidad horizontal. Esta característica permite evitar tiempos de inactividad que podrían afectar a los contratos de nivel de servicio. Esta nueva característica se describe con más detalle en [Actualización gradual del sistema operativo del clúster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).
+La actualización gradual del sistema operativo del clúster es una nueva característica de Windows Server 2016 que permite a un administrador actualizar el sistema operativo de los nodos del clúster de Windows Server 2012 R2 a Windows Server 2016 sin detener la función Hyper-V ni las cargas de trabajo del Servidor de archivos de escalabilidad horizontal. Esta característica permite evitar tiempos de inactividad que podrían afectar a los contratos de nivel de servicio. Esta nueva característica se describe con más detalle en [Actualización gradual del sistema operativo del clúster](../failover-clustering/cluster-operating-system-rolling-upgrade.md).
 
 ## <a name="license-conversion"></a>Conversión de licencia
 En algunas versiones de los sistemas operativos, es posible convertir una edición concreta de la versión a otra edición de la misma versión en un solo paso, con un sencillo comando y la clave de licencia correspondiente. Esto se denomina **conversión de licencia**. Por ejemplo, si el servidor ejecuta Windows Server 2016 Standard, puedes realizar la conversión a Windows Server 2016 Datacenter. En algunas versiones de Windows Server, es posible convertir también libremente entre las versiones de OEM, de licencia por volumen y comerciales con el mismo comando y la clave apropiada.
@@ -92,7 +92,7 @@ Puede convertir la versión de evaluación de Windows Server 2016 Standard a Win
 Puedes convertir la versión de evaluación de Windows Server 2016 Datacenter a Windows Server 2016 Datacenter (versión comercial).
  
 ## <a name="upgrading-to-windows-server-2012-r2"></a>Actualización a Windows Server 2012 R2
-Para información detallada, incluidas advertencias y limitaciones importantes aplicables a la actualización, la conversión de licencia entre ediciones de Windows Server 2012 R2 y la conversión de ediciones de evaluación a la versión comercial, consulta [Opciones de actualización para Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx).
+Para información detallada, incluidas advertencias y limitaciones importantes aplicables a la actualización, la conversión de licencia entre ediciones de Windows Server 2012 R2 y la conversión de ediciones de evaluación a la versión comercial, consulta [Opciones de actualización para Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11)).
 
 Tabla de referencia rápida de rutas de actualización admitidas desde ediciones comerciales anteriores de Windows Server a ediciones comerciales de Windows Server 2012 R2:
 
@@ -114,7 +114,7 @@ Puedes convertir Windows Server 2012 Essentials (versión comercial) a Windows S
 Puede convertir la versión de evaluación de Windows Server 2012 Standard a Windows Server 2012 Standard (versión comercial) o Datacenter (versión comercial).
 
 ## <a name="upgrading-to-windows-server-2012"></a>Actualización a Windows Server 2012
-Para información detallada, incluidas advertencias y limitaciones importantes aplicables a la actualización y a la conversión de ediciones de evaluación a la versión comercial, consulta [Versiones de evaluación y opciones de actualización para Windows Server 2012](https://technet.microsoft.com/library/jj574204.aspx).
+Para información detallada, incluidas advertencias y limitaciones importantes aplicables a la actualización y a la conversión de ediciones de evaluación a la versión comercial, consulta [Versiones de evaluación y opciones de actualización para Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574204(v=ws.11)).
  
 Tabla de referencia rápida de rutas de actualización admitidas desde ediciones comerciales anteriores de Windows Server a ediciones comerciales de Windows Server 2012:
 
@@ -148,5 +148,4 @@ Al planear la actualización, ten en cuenta las siguientes directrices para el p
 
   - No puedes migrar desde una instalación básica de Windows Server 2008 a Windows Server 2012 R2 con la GUI de servidor (lo que se denomina "Servidor con escritorio completo" en Windows Server). Puedes cambiar la instalación básica actualizada a Servidor con escritorio completo, pero solo en Windows Server 2012 R2. Windows Server 2016 y versiones posterior *no* admiten el cambio de la instalación básica a escritorio completo, así que haz ese cambio antes de actualizar a Windows Server 2016.
   
-Para más información, consulta [Versiones de evaluación y opciones de actualización para Windows Server 2012](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574204\(v=ws.11\)), que incluye detalles de actualización específicos para los roles.
-
+Para más información, consulta [Versiones de evaluación y opciones de actualización para Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj574204\(v=ws.11\)), que incluye detalles de actualización específicos para los roles.

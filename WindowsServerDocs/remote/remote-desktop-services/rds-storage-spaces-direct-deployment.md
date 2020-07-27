@@ -9,12 +9,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 2386a231edf80fa611daf71c171bc0de3a7b497e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 14e63969d64a25ca0c7fb9b3efd5e966b64fa376
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855548"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961207"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>Implementar un servidor de archivos de escalabilidad horizontal de Espacios de almacenamiento directo de dos nodos para almacenar UPD en Azure
 
@@ -47,7 +47,7 @@ Sigue estos pasos para crear un controlador de dominio (el nuestro tiene el nomb
 
 1. Crea una [suscripción a Microsoft Azure](https://azure.microsoft.com).
 2. Inicia sesión en [Azure Portal](https://ms.portal.azure.com).
-3. Crea una [cuenta de Azure Storage](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account) en Azure Resource Manager. Créala en un grupo de recursos nuevo y usa las siguientes configuraciones:
+3. Crea una [cuenta de Azure Storage](/azure/storage/common/storage-account-create#create-a-storage-account) en Azure Resource Manager. Créala en un grupo de recursos nuevo y usa las siguientes configuraciones:
    - Modelo de implementación: Resource Manager
    - Tipo de cuenta de almacenamiento: Uso general
    - Nivel de rendimiento: Premium
@@ -56,7 +56,7 @@ Sigue estos pasos para crear un controlador de dominio (el nuestro tiene el nomb
    - Para realizar la implementación con una plantilla de inicio rápido de Azure:
       - [Create an Azure VM with a new AD forest](https://azure.microsoft.com/documentation/templates/active-directory-new-domain/) (Crear una VM de Azure con un nuevo bosque de AD)
       - [Create a new AD domain with 2 domain controllers](https://azure.microsoft.com/documentation/templates/active-directory-new-domain-ha-2-dc/) (Crear un nuevo dominio de AD con dos controladores de dominio) (para alta disponibilidad)
-   - Para [implementar el bosque](https://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/) de forma manual con las siguientes configuraciones:
+   - Para [implementar el bosque](../../identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md) de forma manual con las siguientes configuraciones:
       - Crea la red virtual en el mismo grupo de recursos que la cuenta de almacenamiento.
       - Tamaño recomendado: DS2 (aumenta el tamaño si el controlador de dominio va a hospedar más objetos de dominio)
       - Usa una red virtual generada automáticamente.
@@ -76,12 +76,12 @@ Sigue estos pasos para crear un controlador de dominio (el nuestro tiene el nomb
    2. Crea el segundo nodo. Repite el paso anterior con los siguientes cambios:
       - Nombre: my-fsn2
       - Alta disponibilidad: selecciona el conjunto de disponibilidad que creaste anteriormente.  
-7. [Adjunta los discos de datos](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-attach-disk-portal/) a las VM del nodo de clúster según tus necesidades de usuario (tal como se indica en la tabla anterior). Después de crear los discos de datos y adjuntarlos a la máquina virtual, configura el **almacenamiento en caché del servidor** como **Ninguno**.
+7. [Adjunta los discos de datos](/azure/virtual-machines/windows/attach-managed-disk-portal) a las VM del nodo de clúster según tus necesidades de usuario (tal como se indica en la tabla anterior). Después de crear los discos de datos y adjuntarlos a la máquina virtual, configura el **almacenamiento en caché del servidor** como **Ninguno**.
 8. Asimismo, debes establecer las direcciones IP de todas las VM con el estado **Estática**. 
    1. En el grupo de recursos, selecciona una VM y, a continuación, haz clic en **Interfaces de red** (está en la sección **Configuración**). Selecciona la interfaz de red en la lista y, a continuación, haz clic en **Configuraciones de IP**. Selecciona la configuración de IP en la lista, selecciona **Estático** y, a continuación, haz clic en **Guardar**.
    2. Ten en cuenta que la dirección IP privada (10.x.x.x) del controlador de dominio (que es my-dc, en nuestro ejemplo).
 9. Establece la dirección del servidor DNS principal en las NIC de las VM del nodo de clúster en el servidor my-dc. Selecciona la VM y haz clic en **Interfaces de red > Servidores DNS > DNS personalizado**. Escribe la dirección IP privada que anotaste anteriormente y haz clic en **Guardar**.
-10. Crea una [cuenta de almacenamiento de Azure para que sea tu testigo en la nube](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness). (Si usas las instrucciones vinculadas, detente cuando llegues a "Configuración del testigo en la nube con la GUI del administrador de clústeres de conmutación por error"; haremos ese paso a continuación).
+10. Crea una [cuenta de almacenamiento de Azure para que sea tu testigo en la nube](../../failover-clustering/deploy-cloud-witness.md). (Si usas las instrucciones vinculadas, detente cuando llegues a "Configuración del testigo en la nube con la GUI del administrador de clústeres de conmutación por error"; haremos ese paso a continuación).
 11. Configura el servidor de archivos de Espacios de almacenamiento directo. Conéctate a una VM de nodo y ejecuta los siguientes cmdlets de Windows PowerShell.
     1. Instala la característica para la agrupación de clústeres de conmutación por error y la característica del servidor de archivos en las dos VM del nodo de clústeres del servidor de archivos:
 

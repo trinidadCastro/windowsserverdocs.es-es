@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 03/22/2019
 ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: 25a5c2222f50b37bff2bcfe41184d6d9fa35995c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b9009e4688665e972531b1d38a5ecc92fa990556
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77465509"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955627"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>Virtualización segura de Servicios de dominio de Active Directory (AD DS)
 
@@ -32,7 +32,7 @@ Por ejemplo, en la siguiente ilustración se muestra la secuencia de eventos que
 
 ![La secuencia de eventos cuando se detecta una reversión de USN](../media/Introduction-to-Active-Directory-Domain-Services--AD-DS--Virtualization--Level-100-/ADDS_Exampleofhowreplicationcanbecomeinconsistent.png)
 
-Una máquina virtual (VM) facilita a los administradores del hipervisor la reversión al USN de un controlador de dominio (su reloj lógico); esto es posible, por ejemplo, mediante la aplicación de una instantánea sin el conocimiento del controlador de dominio. Para obtener más información acerca de USN y la reversión de USN, incluida otra ilustración donde se muestran instancias no detectadas de la reversión de USN, consulte [USN y reversión de USN](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx#usn_and_usn_rollback).
+Una máquina virtual (VM) facilita a los administradores del hipervisor la reversión al USN de un controlador de dominio (su reloj lógico); esto es posible, por ejemplo, mediante la aplicación de una instantánea sin el conocimiento del controlador de dominio. Para obtener más información acerca de USN y la reversión de USN, incluida otra ilustración donde se muestran instancias no detectadas de la reversión de USN, consulte [USN y reversión de USN](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10)#usn_and_usn_rollback).
 
 A partir de Windows Server 2012, los controladores de dominio virtuales de AD DS hospedados en plataformas del hipervisor que expongan un identificador denominado identificador de generación de VM pueden detectar y aplicar las medidas de seguridad necesarias para proteger el entorno de AD DS si se revierte en el tiempo la máquina virtual como consecuencia de la aplicación de una instantánea de VM. El diseño de VM-GenerationID utiliza un mecanismo independiente del proveedor del hipervisor para exponer este identificador en el espacio de dirección de la máquina virtual invitada, de modo que cualquier hipervisor que admita VM-GenerationID puede proporcionar una experiencia de virtualización segura. Los servicios y las aplicaciones que se ejecutan en la máquina virtual pueden muestrear este identificador para detectar si una máquina virtual se ha revertido en el tiempo.
 
@@ -127,7 +127,7 @@ Hay dos enfoques para recuperarse de una reversión de USN:
 
 Evalúa si existen copias de seguridad del estado del sistema válidas para este controlador de dominio. Si se realizó una copia de seguridad válida del estado del sistema antes de que se restaurara incorrectamente el controlador de dominio revertido y la copia de seguridad contiene los cambios recientes realizados en el controlador de dominio, restaura el estado del sistema desde la copia de seguridad más reciente.
 
-También puedes usar la instantánea como origen de una copia de seguridad. O bien, puedes definir la base de datos para que se asigne un nuevo identificador de invocación mediante el procedimiento de la sección [Restaurar un controlador de dominio virtual cuando no hay disponible una copia de seguridad de los datos del estado del sistema adecuado](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553%28v%3dws.10%29#restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available)
+También puedes usar la instantánea como origen de una copia de seguridad. O bien, puedes definir la base de datos para que se asigne un nuevo identificador de invocación mediante el procedimiento de la sección [Restaurar un controlador de dominio virtual cuando no hay disponible una copia de seguridad de los datos del estado del sistema adecuado](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd363553%28v%3dws.10%29#restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

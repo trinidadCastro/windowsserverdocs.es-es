@@ -9,12 +9,12 @@ ms.author: mikeblodge
 ms.date: 07/12/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 3d2c55430a78eaabfe55b764275c6e61fa80368a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 271c571229f18d596a67616a1b0dd93743928002
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826218"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961346"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Actualizar Windows Server 2008 y Windows Server 2008 R2
 
@@ -28,7 +28,7 @@ Si necesitas mantener los servidores localmente y ejecutas Windows Server 2008 o
 
 Consulta [Actualización desde Windows Server 2008 R2 o Windows Server 2008](installation-and-upgrade.md#upgrading-from-windows-server-2008-r2-or-windows-server-2008), para obtener más información sobre la actualización local.
 
-Si estás ejecutando Windows Server 2003, tendrás que [actualizar a Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff972408(v%3dws.10)). Consulta [rutas de actualización para Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd979563(v=ws.10)) para obtener más información sobre las opciones de actualización local.
+Si estás ejecutando Windows Server 2003, tendrás que [actualizar a Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff972408(v%3dws.10)). Consulta [rutas de actualización para Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd979563(v=ws.10)) para obtener más información sobre las opciones de actualización local.
 
 
 ## <a name="migrate-to-azure"></a>Migrar a Azure
@@ -51,8 +51,8 @@ Para ayudarte a conocer cómo analizar los recursos de TI existentes e identific
 
 ![Logotipo de SQL Server](media/sqlr2.jpg)
 
-Si estás ejecutando SQL Server 2008/2008 R2, puedes actualizar a SQL Server [2016](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation?view=sql-server-2016) o [2017](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation?view=sql-server-2017).
+Si estás ejecutando SQL Server 2008/2008 R2, puedes actualizar a SQL Server [2016](/sql/sql-server/sql-server-technical-documentation?view=sql-server-2016) o [2017](/sql/sql-server/sql-server-technical-documentation?view=sql-server-2017).
 
 
 ## <a name="additional-resources"></a>Recursos adicionales
-[Microsoft Azure](https://docs.microsoft.com/azure/#pivot=products)
+[Microsoft Azure](/azure/#pivot=products)

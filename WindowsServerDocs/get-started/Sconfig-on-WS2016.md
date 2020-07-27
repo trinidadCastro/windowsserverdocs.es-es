@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c218b08cc39edd9b3d93ae78b0b5c7aa293858
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: db1a4fe48460a957369c2ca3ced24e0ccb54fef7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826678"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959127"
 ---
 # <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>Configuración de una instalación básica de Windows Server 2016 o Windows Server, versión 1709, con Sconfig.cmd
 
@@ -58,7 +58,7 @@ Para agregar usuarios adicionales al grupo de administradores local, use la opci
 Puede configurar la dirección IP para que un servidor DHCP la asigne automáticamente, o puede asignar manualmente una dirección IP estática. Esta opción le permite configurar las opciones del servidor DNS también para el servidor.
 
 > [!NOTE]
-> Estas opciones y muchas otras están ahora disponibles con los cmdlets de Windows PowerShell de funciones de red. Para obtener más información, consulte [cmdlets de adaptador de red](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps) en la biblioteca de Windows Server.
+> Estas opciones y muchas otras están ahora disponibles con los cmdlets de Windows PowerShell de funciones de red. Para obtener más información, consulte [cmdlets de adaptador de red](/powershell/module/netadapter/?view=win10-ps) en la biblioteca de Windows Server.
 
 ## <a name="windows-update-settings"></a>Configuración de Windows Update
 

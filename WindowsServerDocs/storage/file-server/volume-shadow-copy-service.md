@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d90030fe183e5cfcb94866e87793c0419b636433
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9948fab77ab4869c27fd63e623315bd1b3e9ff47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475452"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966697"
 ---
 # <a name="volume-shadow-copy-service"></a>Servicio de instantáneas de volumen
 
@@ -247,7 +247,7 @@ El sistema operativo Windows incluye un conjunto de VSS Writer que son responsab
 
 Para más información sobre estos escritores, visita la siguiente página web de Microsoft Docs:
 
-- [Instancias de VSS Writer incluidas](https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
+- [Instancias de VSS Writer incluidas](/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
 
 
 ## <a name="how-shadow-copies-are-used"></a>Uso de las instantáneas
@@ -375,7 +375,7 @@ Para excluir archivos específicos de las instantáneas, usa la siguiente clave 
 > <UL>
 > <LI>No puede eliminar archivos de una instantánea creada en Windows Server mediante la característica Versiones anteriores.<BR><BR>
 > <LI>No puede eliminar archivos de las instantáneas para carpetas compartidas.<BR><BR>
-> <LI>Puede eliminar archivos de una instantánea creada con la utilidad <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow)">DiskShadow</a>, pero no de una que se haya creado con la utilidad <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a>.<BR><BR>
+> <LI>Puede eliminar archivos de una instantánea creada con la utilidad <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](../../administration/windows-commands/diskshadow.md)">DiskShadow</a>, pero no de una que se haya creado con la utilidad <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](../../administration/windows-commands/vssadmin.md)">Vssadmin</a>.<BR><BR>
 > <LI>Los archivos se eliminan de una instantánea en función de la mejor opción. Como resultado, no se garantiza que se eliminen.<BR><BR></LI></UL>
 
 
@@ -622,4 +622,4 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas co
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Servicio de instantáneas de volumen en el Centro para desarrolladores de Windows](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)
+[Servicio de instantáneas de volumen en el Centro para desarrolladores de Windows](/windows/desktop/vss/volume-shadow-copy-service-overview)

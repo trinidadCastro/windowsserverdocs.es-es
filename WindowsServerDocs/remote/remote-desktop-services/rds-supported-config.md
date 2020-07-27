@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 406112eae884b1e34d54eb18700c3ad28c3f52c6
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 1285a63b3b283914a439817886cd84c4b93b59c8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390082"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965687"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>Configuraciones admitidas para Servicios de Escritorio remoto
 
@@ -137,4 +137,4 @@ Para más información sobre la creación de la implementación de VDI de Servic
 
 ## <a name="using-remote-desktop-services-with-application-proxy-services"></a>Uso de Servicios de Escritorio remoto con los servicios de proxy de la aplicación
 
-Puedes utilizar los Servicios de Escritorio remoto, excepto el cliente web, con [Azure AD Application Proxy](https://docs.microsoft.com/azure/active-directory/application-proxy-publish-remote-desktop). Servicios de Escritorio remoto no admite el uso de [Proxy de aplicación web](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server), que se incluye en Windows Server 2016 y versiones anteriores.
+Puedes utilizar los Servicios de Escritorio remoto, excepto el cliente web, con [Azure AD Application Proxy](/azure/active-directory/application-proxy-publish-remote-desktop). Servicios de Escritorio remoto no admite el uso de [Proxy de aplicación web](../remote-access/web-application-proxy/web-application-proxy-windows-server.md), que se incluye en Windows Server 2016 y versiones anteriores.

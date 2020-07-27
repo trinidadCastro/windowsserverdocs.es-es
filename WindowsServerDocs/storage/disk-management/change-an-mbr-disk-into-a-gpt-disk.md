@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6bd97802fbef342520e92a857a1a53acf3e8d7a3
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3aedb8ed1edb8476642b86ec66d306187d4badf0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385941"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966067"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>Conversión de un disco MBR en un disco GPT
 
@@ -39,7 +39,7 @@ Puedes cambiar un disco con un estilo de partición MBR al estilo de partición 
 
 ## <a name="converting-using-a-command-line"></a>Conversión desde la línea de comandos
 
-Sigue estos pasos para convertir un disco MBR vacío en un disco GPT. También puedes usar una herramienta, MBR2GPT.EXE, pero el proceso es un poco complicado (para más información, consulta [Conversión de una partición MBR en GPT](https://docs.microsoft.com/windows/deployment/mbr-to-gpt)).
+Sigue estos pasos para convertir un disco MBR vacío en un disco GPT. También puedes usar una herramienta, MBR2GPT.EXE, pero el proceso es un poco complicado (para más información, consulta [Conversión de una partición MBR en GPT](/windows/deployment/mbr-to-gpt)).
 
 1.  Realiza una copia de seguridad o mueve los datos del disco MBR básico que quieras convertir en un disco GPT.
 
@@ -67,4 +67,4 @@ Sigue estos pasos para convertir un disco MBR vacío en un disco GPT. También p
 
 ## <a name="see-also"></a>Consulte también
 
--   [Notación de sintaxis de línea de comandos](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
+-   [Notación de sintaxis de línea de comandos](/previous-versions/orphan-topics/ws.11/cc742449(v=ws.11))

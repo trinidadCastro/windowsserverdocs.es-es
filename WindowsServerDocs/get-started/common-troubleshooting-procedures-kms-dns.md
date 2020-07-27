@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e600b41e4a485084bd0622c2be0753d0b11c0c
-ms.sourcegitcommit: 6d7a394edefba684f7b6983c65026679c1b7a485
+ms.openlocfilehash: 0ab2a0eb7c9d29f8d42bd004aad27f9084e38641
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776717"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962487"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>Instrucciones para solucionar problemas de activación relacionados con DNS
 
@@ -64,7 +64,7 @@ Para cambiar la clave de producto a una de tipo MAK, siga estos pasos:
 
 La activación de KMS requiere la configuración de un host de KMS para que los clientes puedan activarlo. Si no hay ningún host de KMS configurado en su entorno, instale y active uno mediante una clave de host de KMS adecuada. Después de configurar un equipo en la red para hospedar el software de KMS, publique la configuración del Sistema de nombres de dominio (DNS).
 
-Para obtener información sobre el proceso de configuración de host de KMS, consulta [Activar con el Servicio de administración de claves](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt) e [Instalar y configurar VAMT](https://docs.microsoft.com/windows/deployment/volume-activation/install-configure-vamt).
+Para obtener información sobre el proceso de configuración de host de KMS, consulta [Activar con el Servicio de administración de claves](/windows/deployment/volume-activation/activate-using-key-management-service-vamt) e [Instalar y configurar VAMT](/windows/deployment/volume-activation/install-configure-vamt).
 
 [Vuelva a la lista de procedimientos.](#list)
 
@@ -78,7 +78,7 @@ Verifique la conectividad de IP básica con el servidor DNS mediante el comando 
    ping <DNS_Server_IP_address>
    ```
    > [!NOTE]
-   > Si la salida de este comando no incluye la frase "Reply from", significa que hay un problema de red o un problema de DNS que debe resolver para poder usar los otros procedimientos de este artículo. Para obtener más información acerca de cómo solucionar problemas de TCP/IP si no puede hacer ping en el servidor DNS, consulte [Solución de problemas de TCP/IP avanzada](https://docs.microsoft.com/windows/client-management/troubleshoot-tcpip).
+   > Si la salida de este comando no incluye la frase "Reply from", significa que hay un problema de red o un problema de DNS que debe resolver para poder usar los otros procedimientos de este artículo. Para obtener más información acerca de cómo solucionar problemas de TCP/IP si no puede hacer ping en el servidor DNS, consulte [Solución de problemas de TCP/IP avanzada](/windows/client-management/troubleshoot-tcpip).
 
 [Vuelva a la lista de procedimientos.](#list)
 
@@ -159,7 +159,7 @@ Puede usar los comandos siguientes para determinar si se trata de un problema de
       1. Verifique la dirección IP, el nombre de host, el puerto y el dominio del host de KMS.
       1. Si existen estas entradas **_vlmcs** y contienen los nombres de host de KMS esperados, vaya a [Asignación manual de un host de KMS a un cliente de KMS](#manually-assign-a-kms-host-to-a-kms-client).
       > [!NOTE]
-      > Si el comando [**nslookup**](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) encuentra el host de KMS, no significa que el cliente DNS pueda encontrar el host de KMS. Si el comando **nslookup** encuentra el host de KMS, pero todavía no lo puede activar mediante el host de KMS, compruebe la otra configuración de DNS, como el sufijo DNS principal y la lista de búsqueda del sufijo DNS.
+      > Si el comando [**nslookup**](../administration/windows-commands/nslookup.md) encuentra el host de KMS, no significa que el cliente DNS pueda encontrar el host de KMS. Si el comando **nslookup** encuentra el host de KMS, pero todavía no lo puede activar mediante el host de KMS, compruebe la otra configuración de DNS, como el sufijo DNS principal y la lista de búsqueda del sufijo DNS.
 1. Verifique que la lista de búsqueda del sufijo DNS principal contiene el sufijo de dominio DNS que está asociado con el host de KMS. Si la lista de búsqueda no incluye esta información, vaya al procedimiento [Configuración del host de KMS para publicar en varios dominios DNS](#configure-the-kms-host-to-publish-in-multiple-dns-domains).
 
 [Vuelva a la lista de procedimientos.](#list)

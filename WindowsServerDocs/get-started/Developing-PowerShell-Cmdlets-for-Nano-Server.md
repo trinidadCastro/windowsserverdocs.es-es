@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3965e453483b3515e4957ecfaba39cf9a0b8104f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b792b6734da2fe643862529c0de41e8763117c83
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827078"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961987"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Desarrollo de cmdlets de PowerShell para Nano Server
 
@@ -123,7 +123,7 @@ Si no está seguro de qué implementación ha usado para los cmdlets existentes 
 * %windir%\system32\WindowsPowerShell\v1.0\Modules   
 * %ProgramFiles%\WindowsPowerShell\Modules   
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
-* \<la ubicación de la instalación del producto>   
+* \<your product installation location>   
     
   Compruebe en estas ubicaciones estos detalles:  
   * Los cmdlets CIM tienen extensiones de archivo .cdxml.  
@@ -136,7 +136,7 @@ Por lo general, estos cmdlets deben funcionar en Nano Server sin que sea necesar
 ### <a name="building-c-for-nano-server"></a>Compilación en C++ para Nano Server  
 Para que los archivos DLL escritos en C++ funcionen en Nano Server, compílelos para Nano Server en lugar de para una edición específica.  
   
-Para consultar los requisitos previos y un tutorial de desarrollo con C++ en Nano Server, vea [Developing Native Apps on Nano Server](https://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx) (Desarrollo de aplicaciones nativas en Nano Server).  
+Para consultar los requisitos previos y un tutorial de desarrollo con C++ en Nano Server, vea [Developing Native Apps on Nano Server](/archive/blogs/nanoserver/developing-native-apps-on-nano-server) (Desarrollo de aplicaciones nativas en Nano Server).  
   
   
 ## <a name="porting-net-cmdlets"></a>Migración de los cmdlets de .NET  
@@ -176,7 +176,7 @@ Puede buscar en el catálogo de API para .NET Core o desensamblar los ensamblado
 ### <a name="pinvoke"></a>PInvoke  
 En CoreCLR que Nano Server utiliza, algunos archivos DLL fundamentales, como kernel32.dll y advapi32.dll, se dividieron en varios conjuntos de API, por lo que deberá asegurarse de que las llamadas a PInvoke hacen referencia a la API correcta. Cualquier incompatibilidad se manifiesta como un error en tiempo de ejecución.  
   
-Para obtener una lista de las API nativas admitidas en Nano Server, vea [Nano Server APIs](https://msdn.microsoft.com/library/mt588480(v=vs.85).aspx) (API de Nano Server).  
+Para obtener una lista de las API nativas admitidas en Nano Server, vea [Nano Server APIs](/previous-versions/windows/desktop/legacy/mt588480(v=vs.85)) (API de Nano Server).  
   
 ### <a name="building-c-for-nano-server"></a>Compilación en C# para Nano Server  
   
@@ -240,7 +240,7 @@ Para depurar un script de forma remota, conéctese al equipo remoto utilizando `
   
 ### <a name="migrating-from-wmi-net-to-mi-net"></a>Migración de WMI .NET a MI .NET  
   
-[WMI .NET](https://msdn.microsoft.com/library/mt481551(v=vs.110).aspx) no es compatible, por lo que se deben migrar todos los cmdlets que usan la API anterior a la API de WMI admitida: [MI. .NET](https://msdn.microsoft.com/library/dn387184(v=vs.85).aspx). Puede acceder a MI .NET directamente a través de C# o a través de los cmdlets en el módulo CimCmdlets.   
+[WMI .NET](/dotnet/api/?view=netframework-4.7.1) no es compatible, por lo que se deben migrar todos los cmdlets que usan la API anterior a la API de WMI admitida: [MI. .NET](/previous-versions//dn387184(v=vs.85)). Puede acceder a MI .NET directamente a través de C# o a través de los cmdlets en el módulo CimCmdlets.   
   
 ### <a name="cimcmdlets-module"></a>Módulo CimCmdlets  
   
@@ -251,5 +251,3 @@ Los cmdlets WMI v1 (por ejemplo, Get-WmiObject) no se admiten en Nano Server. Si
 WMI .NET contiene la interfaz de WMIv1, mientras que MI .NET contiene la interfaz de WMIv2 (CIM). Las clases expuestas pueden ser distintas, pero las operaciones subyacentes son muy similares. Enumere u obtenga instancias de objetos e invoque operaciones en ellos para realizar las tareas.   
   
   
-
-

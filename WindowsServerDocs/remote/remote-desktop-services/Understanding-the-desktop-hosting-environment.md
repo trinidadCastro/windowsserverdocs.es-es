@@ -8,12 +8,12 @@ ms.date: 08/01/2016
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 8fdebcad1370e06c19752944e85363c714f1fbcd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 29d7417ff82be77efeb02d16093c88c53777d1fa
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854698"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118644"
 ---
 # <a name="understanding-the-desktop-hosting-environment"></a>Introducción al entorno de hospedaje de escritorio
 
@@ -46,20 +46,20 @@ Con Servicios de Escritorio remoto, el inquilino debe tener un Active Directory 
     
 Información adicional:  
 [Documentación de Active Directory Domain Services en Azure](https://azure.microsoft.com/documentation/services/active-directory-ds/)  
-[Instalar un nuevo bosque de Active Directory en una red virtual de Azure](https://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/)  
-[Creación de una red virtual de Resource Manager con conexión VPN de sitio a sitio mediante Azure Portal](https://azure.microsoft.com/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)  
+[Instalar un nuevo bosque de Active Directory en una red virtual de Azure](../../identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md)  
+[Creación de una red virtual de Resource Manager con conexión VPN de sitio a sitio mediante Azure Portal](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)  
   
 ## <a name="azure-sql-database"></a>Base de datos SQL de Azure  
 Azure SQL Database permite a los proveedores de servicios de hosting ampliar su implementación de Servicios de Escritorio remoto sin necesidad de implementar y mantener un clúster de SQL Server Always-On completo. El Agente de conexión a Escritorio remoto usa Azure SQL Database para almacenar información de implementación, como la asignación de conexiones de los usuarios actuales con los servidores de host final. Al igual que otros servicios de Azure, Azure SQL DB sigue un modelo de consumo, ideal para implementaciones de cualquier tamaño.   
   
 Información adicional:  
-[¿Qué es SQL Database?](https://azure.microsoft.com/documentation/articles/sql-database-technical-overview/)  
+[¿Qué es SQL Database?](/azure/azure-sql/database/sql-database-paas-overview)  
   
 ## <a name="azure-active-directory-application-proxy"></a>Azure Active Directory Application Proxy  
 Azure Active Directory Application Proxy es un servicio proporcionado en SKU de pago de Azure Active Directory, que permite a los usuarios conectarse a aplicaciones internas a través del servicio propio de proxy inverso de Azure. Esto permite que los puntos de conexión web de Escritorio remoto y de Puerta de enlace de Escritorio remoto estén ocultos dentro de la red virtual, lo que elimina la necesidad de exponerlos a Internet a través de una dirección IP pública. Además, esto permite a los proveedores de servicios de hosting condensar el número de máquinas virtuales en el entorno del inquilino, a la vez que mantienen una implementación completa.
   
 Información adicional:  
-[Habilitación de Azure AD Application Proxy](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-enable/)  
+[Habilitación de Azure AD Application Proxy](/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)  
     
 ## <a name="file-server"></a>Servidor de archivos  
 El servidor de archivos proporciona las carpetas compartidas mediante el protocolo Bloque de mensajes del servidor (SMB) 3.0. Las carpetas compartidas se usan para crear y almacenar archivos de disco de perfiles de usuario (.vhdx), para hacer copias de seguridad de los datos y para brindar a los usuarios un lugar para compartir datos con otros usuarios de la red virtual del inquilino.
@@ -69,11 +69,9 @@ La VM que se usa para implementar el servidor de archivos debe tener un disco de
 Para inquilinos pequeños, el costo se puede reducir al combinar el servidor de archivos con la máquina virtual que se ejecuta los roles de Agente de conexión a Escritorio remoto y de licencias de Escritorio remoto en una sola máquina virtual en el entorno del inquilino.  
   
 Información adicional  
-[Introducción a los servicios de archivos y almacenamiento](https://technet.microsoft.com/library/hh831487.aspx)  
-[Conexión de un disco de datos a una máquina virtual](http://www.windowsazure.com/manage/windows/how-to-guides/attach-a-disk/)  
+[Introducción a los servicios de archivos y almacenamiento](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))  
+[Conexión de un disco de datos a una máquina virtual](https://www.windowsazure.com/manage/windows/how-to-guides/attach-a-disk/)  
   
 ### <a name="user-profile-disks"></a>Discos de perfiles de usuario  
 Los discos de perfil de usuario permiten a los usuarios guardar archivos y configuraciones personales cuando inician una sesión en un servidor host de sesión de Escritorio remoto en una colección para que, luego, tengan acceso a la misma configuración y archivos al iniciar sesión en otro servidor host de sesión de Escritorio remoto de la colección. Cuando el usuario inicia sesión por primera vez, se crea un disco de perfil de usuario en el servidor de archivos del inquilino, y ese disco se monta en el servidor host de sesión de Escritorio remoto al que se conecta el usuario. En cada inicio de sesión posterior, se monta el disco de perfil de usuario en el servidor host de sesión de Escritorio remoto adecuado y, con cada cierre de sesión, se desmonta. Solo ese usuario puede acceder al contenido del disco de perfil.  
   
-
-

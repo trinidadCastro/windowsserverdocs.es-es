@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0596dbd847ae8e64e1f4c780f142f28e34656ae8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 27f6a361ffd3bc5082cea57f6e09264520110d40
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855908"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959137"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>Escritorio remoto: permitir el acceso al equipo
 
@@ -61,6 +61,6 @@ Debes asegurarte de que todas las cuentas que tienen acceso a tu equipo estén c
 
 ## <a name="why-allow-connections-only-with-network-level-authentication"></a>¿Por qué permitir conexiones solo con Autenticación a nivel de red? 
 
-Si quieres restringir quién puede acceder a tu equipo, elige permitir el acceso solo con Autenticación a nivel de red (NLA). Cuando se habilita esta opción, los usuarios deben autenticarse en la red antes de conectarse a tu equipo. Permitir conexiones solo desde equipos que ejecutan Escritorio remoto con NLA es un método de autenticación más seguro que puede ayudar a proteger el equipo de usuarios y software malintencionados. Para más información acerca de NLA y el Escritorio remoto, consulta [Configuración de las conexiones NLA para RDS](https://technet.microsoft.com/library/cc732713(v=ws.11).aspx).
+Si quieres restringir quién puede acceder a tu equipo, elige permitir el acceso solo con Autenticación a nivel de red (NLA). Cuando se habilita esta opción, los usuarios deben autenticarse en la red antes de conectarse a tu equipo. Permitir conexiones solo desde equipos que ejecutan Escritorio remoto con NLA es un método de autenticación más seguro que puede ayudar a proteger el equipo de usuarios y software malintencionados. Para más información acerca de NLA y el Escritorio remoto, consulta [Configuración de las conexiones NLA para RDS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732713(v=ws.11)).
 
 Si te conectas de forma remota a un equipo en la red doméstica desde fuera de esa red, no selecciones esta opción.

@@ -10,18 +10,18 @@ ms.date: 11/06/2018
 ms.topic: article
 ms.assetid: a8c6d5fa-399b-4823-8f10-affec1bbfe65
 ms.localizationpriority: medium
-ms.openlocfilehash: 068599b63a000566db86f29a93bfa91a4b4cd72e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0e6700cd02d040caaee0588106b27185e5427ee5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858168"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959527"
 ---
 # <a name="remote-desktop-services---planning-poster"></a>Servicios de Escritorio remoto: póster de planeamiento
 
 ## <a name="windows-virtual-desktop"></a>Windows Virtual Desktop
 
-Puede que nos hayas oído hablar de una nueva "infraestructura moderna" para Escritorio remoto. Quizás nos hayas escuchado usar la frase "RDmi". La frase que necesitas conocer es "Windows Virtual Desktop". Obtén más información en nuestra [página de documentación de Windows Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/).
+Puede que nos hayas oído hablar de una nueva "infraestructura moderna" para Escritorio remoto. Quizás nos hayas escuchado usar la frase "RDmi". La frase que necesitas conocer es "Windows Virtual Desktop". Obtén más información en nuestra [página de documentación de Windows Virtual Desktop](/azure/virtual-desktop/).
 
 El equipo de Servicios de Escritorio remoto ha creado un póster para ayudarte a planear, compilar y ejecutar tu entorno de Windows Virtual Desktop.
 

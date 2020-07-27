@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: beacd246639b5586c071a24bdd7b09c6aceeadab
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 644799ba9c6ebde4943b678199c678da376e05ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203387"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963147"
 ---
 # <a name="virtual-machine-sizing-guidelines"></a>Directrices de ajuste del tamaño de la máquina virtual
 
@@ -40,9 +40,9 @@ Para conocer los requisitos de VM para ejecutar el sistema operativo, consulta [
 
 Se recomienda usar almacenamiento SSD Premium en el disco del sistema operativo para las cargas de trabajo de producción que requieran un contrato de nivel de servicio (SLA). Para obtener más información, consulta el [SLA para máquinas virtuales](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/).
 
-Las unidades de procesamiento gráfico (GPU) suelen ser una buena elección para los usuarios que usan programas con muchos gráficos para representar vídeo, diseño 3D y simulaciones. Para obtener más información sobre la aceleración de gráficos, consulta [Elección de la tecnología de representación de gráficos](rds-graphics-virtualization.md). Azure tiene disponibles varias opciones de implementación de aceleración de gráficos y varios tamaños de máquina virtual de GPU. Más información en [Tamaños de máquinas virtuales optimizadas para GPU](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu).
+Las unidades de procesamiento gráfico (GPU) suelen ser una buena elección para los usuarios que usan programas con muchos gráficos para representar vídeo, diseño 3D y simulaciones. Para obtener más información sobre la aceleración de gráficos, consulta [Elección de la tecnología de representación de gráficos](rds-graphics-virtualization.md). Azure tiene disponibles varias opciones de implementación de aceleración de gráficos y varios tamaños de máquina virtual de GPU. Más información en [Tamaños de máquinas virtuales optimizadas para GPU](/azure/virtual-machines/windows/sizes-gpu).
 
-Las [VM ampliables de serie B](https://docs.microsoft.com/azure/virtual-machines/windows/b-series-burstable) son una buena elección para los usuarios que no siempre necesitan un rendimiento máximo de la CPU. Para obtener más información sobre los tipos y tamaños de VM, consulta [Tamaños de las máquinas virtuales Windows en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes) y la información de precios en [nuestra página de series de máquinas virtuales](https://azure.microsoft.com/pricing/details/virtual-machines/series/).
+Las [VM ampliables de serie B](/azure/virtual-machines/windows/b-series-burstable) son una buena elección para los usuarios que no siempre necesitan un rendimiento máximo de la CPU. Para obtener más información sobre los tipos y tamaños de VM, consulta [Tamaños de las máquinas virtuales Windows en Azure](/azure/virtual-machines/windows/sizes) y la información de precios en [nuestra página de series de máquinas virtuales](https://azure.microsoft.com/pricing/details/virtual-machines/series/).
 
 ## <a name="test-your-workload"></a>Prueba de la carga de trabajo
 

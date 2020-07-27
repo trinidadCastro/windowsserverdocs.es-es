@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a74f3c6ec629df7d1cc40199091e84989606a50e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 98632ee7147c3041b0f13d0a0e90bf8115268d36
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826688"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959477"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Características eliminadas o que está previsto su reemplazo a partir de Windows Server, versión 1709
 
@@ -55,14 +55,13 @@ También debes iniciar la migración desde IIS 6.0 o versiones anteriores y pas
 
 
 ### <a name="iis-digest-authentication"></a>Autenticación implícita IIS
-Este método de autenticación está previsto para su reemplazo. En su lugar, debes empezar a usar otros métodos de autenticación, como por ejemplo, la asignación de certificados de cliente (consulta [Configuring One-to-One Client Certificate Mappings](https://docs.microsoft.com/iis/manage/configuring-security/configuring-one-to-one-client-certificate-mappings) [Configuración de las asignaciones de certificados de cliente de uno a uno]) o la autenticación de Windows (consulta [Application Settings](https://docs.microsoft.com/iis-administration/configuration/appsettings.json) [Configuración de la aplicación]).
+Este método de autenticación está previsto para su reemplazo. En su lugar, debes empezar a usar otros métodos de autenticación, como por ejemplo, la asignación de certificados de cliente (consulta [Configuring One-to-One Client Certificate Mappings](/iis/manage/configuring-security/configuring-one-to-one-client-certificate-mappings) [Configuración de las asignaciones de certificados de cliente de uno a uno]) o la autenticación de Windows (consulta [Application Settings](/iis-administration/configuration/appsettings.json) [Configuración de la aplicación]).
 
 ### <a name="internet-storage-name-service-isns"></a>Servicio de nombres de almacenamiento de Internet (iSNS)
-Se está considerando el reemplazo de iSNS. La característica Bloque de mensajes delº servidor (SMB) ofrece básicamente la misma funcionalidad con características adicionales. Consulta [Server Message Block Overview](https://technet.microsoft.com/library/hh831795(v=ws.11).aspx) (Introducción a Bloque de mensajes del servidor) para obtener información detallada sobre esta característica.
+Se está considerando el reemplazo de iSNS. La característica Bloque de mensajes delº servidor (SMB) ofrece básicamente la misma funcionalidad con características adicionales. Consulta [Server Message Block Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) (Introducción a Bloque de mensajes del servidor) para obtener información detallada sobre esta característica.
 
 ### <a name="rsaaes-encryption-for-iis"></a>Cifrado de RSA/AES para IIS 
-Se está considerando el reemplazo de este método de cifrado porque el método superior de API de criptografía: Next Generation (CNG) ya está disponible. Si quieres obtener más información sobre el cifrado de CNG, consulta [Acerca de CNG](https://msdn.microsoft.com/library/windows/desktop/aa375276(v=vs.85).aspx).
+Se está considerando el reemplazo de este método de cifrado porque el método superior de API de criptografía: Next Generation (CNG) ya está disponible. Si quieres obtener más información sobre el cifrado de CNG, consulta [Acerca de CNG](/windows/win32/seccng/about-cng).
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0
-Esta versión anterior de Windows PowerShell se ha reemplazado por varias versiones más recientes. Para obtener las mejores características y un rendimiento excepcional, migra a Windows PowerShell 5.0 o una versión posterior. Consulta la [documentación de PowerShell](https://docs.microsoft.com/powershell/index?view=powershell-5.1) para obtener más información.
-
+Esta versión anterior de Windows PowerShell se ha reemplazado por varias versiones más recientes. Para obtener las mejores características y un rendimiento excepcional, migra a Windows PowerShell 5.0 o una versión posterior. Consulta la [documentación de PowerShell](/powershell/index?view=powershell-5.1) para obtener más información.

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5c6efb0697af663b32ce6f0e27634c3962eca492
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 5a387f7672fd04917e8c3e76543cba73f7195b42
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71402105"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966077"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>Conversión de un disco GPT en un disco MBR
 
@@ -64,4 +64,4 @@ Puedes cambiar un disco de un estilo de partición GPT a un estilo de partición
 
 ## <a name="see-also"></a>Consulte también
 
--   [Notación de sintaxis de línea de comandos](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
+-   [Notación de sintaxis de línea de comandos](/previous-versions/orphan-topics/ws.11/cc742449(v=ws.11))

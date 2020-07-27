@@ -9,12 +9,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a424a28be835fa2a941187b110907fff76e6f220
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7e08e4aa0cd1298502c59a1a8275293910345d6a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81650065"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966197"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Uso de contadores de rendimiento para diagnosticar problemas de rendimiento de las aplicaciones en los hosts de sesión de Escritorio remoto
 
@@ -33,7 +33,7 @@ La siguiente imagen muestra una representación somera del flujo de entrada del 
 
 ![Escritorio remoto: flujos de entrada de usuario desde el cliente de Escritorio remoto del usuario a la aplicación](./media/rds-user-input.png)
 
-El contador de retraso de entrada del usuario mide la diferencia máxima (en un intervalo dado) entre la entrada que está en la cola y el momento en que la recoge la aplicación en un [bucle de mensajes tradicional](https://docs.microsoft.com/windows/win32/winmsg/about-messages-and-message-queues#message-loop), tal como se muestra en el siguiente diagrama de flujo:
+El contador de retraso de entrada del usuario mide la diferencia máxima (en un intervalo dado) entre la entrada que está en la cola y el momento en que la recoge la aplicación en un [bucle de mensajes tradicional](/windows/win32/winmsg/about-messages-and-message-queues#message-loop), tal como se muestra en el siguiente diagrama de flujo:
 
 ![Escritorio remoto: flujo del contador de rendimiento de User Input Delay (Retraso de entrada del usuario)](./media/rds-user-input-delay.png)
 
@@ -68,7 +68,7 @@ Tras ello, deberías ver el cuadro de diálogo Agregar contadores, donde puedes 
 
 Si seleccionas **User Input Delay per Process** (Retraso de entrada del usuario por proceso), verás **Instances of the selected object** (Instancias del objeto seleccionado), es decir, los procesos, en formato ```SessionID:ProcessID <Process Image>```.
 
-Por ejemplo, si la aplicación Calculadora se ejecuta en [Session ID 1](https://docs.microsoft.com/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)), verá ```1:4232 <Calculator.exe>```.
+Por ejemplo, si la aplicación Calculadora se ejecuta en [Session ID 1](/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)), verá ```1:4232 <Calculator.exe>```.
 
 > [!NOTE]
 > No están incluidos todos los procesos. No verás ningún proceso que se ejecute como SISTEMA.
@@ -135,7 +135,7 @@ Este es su aspecto si se activan las dos claves:
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>Uso de los nuevos contadores con herramientas ajenas a Microsoft
 
-Las herramientas de supervisión pueden consumir este contador mediante [contadores de rendimiento](https://docs.microsoft.com/windows/win32/perfctrs/using-performance-counters).
+Las herramientas de supervisión pueden consumir este contador mediante [contadores de rendimiento](/windows/win32/perfctrs/using-performance-counters).
 
 ## <a name="download-windows-server-insider-software"></a>Descarga del software Windows Server Insider
 

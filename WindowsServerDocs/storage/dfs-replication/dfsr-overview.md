@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 8164032ff4071facb33c1df0edf44dcc86a6d918
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 380c8ba0e91db47c3313542b2d294a516f7a9466
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475422"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961187"
 ---
 # <a name="dfs-replication-overview"></a>Introducción a la replicación DFS
 
@@ -50,18 +50,18 @@ Para poder implementar Replicación DFS, debe configurar los servidores del modo
 
 Se ha probado el uso de la replicación DFS en una máquina virtual en Azure con Windows Server; sin embargo, hay algunas limitaciones y requisitos que se deben seguir.
 
-- El uso de instantáneas o estados guardados para restaurar un servidor que ejecuta Replicación DFS para la replicación de todo salvo la carpeta SYSVOL hace que Replicación DFS no pueda llevarse a cabo, lo que requiere pasos de recuperación de bases de datos especiales. De forma similar, no exportes, clones ni copies las máquinas virtuales. Para obtener más información, consulte el artículo [2517913](https://support.microsoft.com/kb/2517913) de Microsoft Knowledge Base y [Virtualización segura de DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/).
+- El uso de instantáneas o estados guardados para restaurar un servidor que ejecuta Replicación DFS para la replicación de todo salvo la carpeta SYSVOL hace que Replicación DFS no pueda llevarse a cabo, lo que requiere pasos de recuperación de bases de datos especiales. De forma similar, no exportes, clones ni copies las máquinas virtuales. Para obtener más información, consulte el artículo [2517913](https://support.microsoft.com/kb/2517913) de Microsoft Knowledge Base y [Virtualización segura de DFSR](https://techcommunity.microsoft.com/t5/storage-at-microsoft/safely-virtualizing-dfsr/ba-p/424671).
 - Cuando realices copias de seguridad de los datos en una carpeta replicada hospedada en una máquina virtual, debes usar software de copia de seguridad de la máquina virtual invitada.
 - La replicación DFS requiere acceso a los controladores de dominio físicos o virtualizados: no se puede comunicar directamente con Azure AD.
-- Replicación DFS requiere una conexión VPN entre los miembros del grupo de replicación local y cualquier miembro hospedado en máquinas virtuales de Azure. También deberás configurar el enrutador local (por ejemplo, Forefront Threat Management Gateway) para permitir el asignador de extremos de RPC (puerto 135) y un puerto asignado de forma aleatoria entre 49152 y 65535 para pasar a través de la conexión VPN. Puedes usar el cmdlet Set-DfsrMachineConfiguration o la herramienta de línea de comandos Dfsrdiag para especificar un puerto estático en lugar del puerto aleatorio. Para obtener más información sobre cómo especificar un puerto estático para la Replicación DFS, consulte [Set DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration). Para obtener información sobre los puertos relacionados que deben abrirse para administrar Windows Server, consulte el artículo [832017](https://support.microsoft.com/kb/832017) en Microsoft Knowledge Base.
+- Replicación DFS requiere una conexión VPN entre los miembros del grupo de replicación local y cualquier miembro hospedado en máquinas virtuales de Azure. También deberás configurar el enrutador local (por ejemplo, Forefront Threat Management Gateway) para permitir el asignador de extremos de RPC (puerto 135) y un puerto asignado de forma aleatoria entre 49152 y 65535 para pasar a través de la conexión VPN. Puedes usar el cmdlet Set-DfsrMachineConfiguration o la herramienta de línea de comandos Dfsrdiag para especificar un puerto estático en lugar del puerto aleatorio. Para obtener más información sobre cómo especificar un puerto estático para la Replicación DFS, consulte [Set DfsrServiceConfiguration](/powershell/module/dfsr/set-dfsrserviceconfiguration). Para obtener información sobre los puertos relacionados que deben abrirse para administrar Windows Server, consulte el artículo [832017](https://support.microsoft.com/kb/832017) en Microsoft Knowledge Base.
 
-Para obtener una introducción sobre las máquinas virtuales de Azure, visite el [sitio web de Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/).
+Para obtener una introducción sobre las máquinas virtuales de Azure, visite el [sitio web de Microsoft Azure](/azure/virtual-machines/).
 
 ## <a name="installing-dfs-replication"></a>Instalación de Replicación DFS
 
 Replicación DFS es parte del rol Servicios de archivos y almacenamiento. Las herramientas de administración de DFS (Administración de DFS, el módulo Replicación DFS para Windows PowerShell y las herramientas de línea de comandos) se instalan por separado como parte de las Herramientas de administración remota del servidor.
 
-Instala Replicación DFS mediante [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md), el Administrador del servidor o PowerShell, tal y como se describe en las secciones siguientes.
+Instala Replicación DFS mediante [Windows Admin Center](../../manage/windows-admin-center/overview.md), el Administrador del servidor o PowerShell, tal y como se describe en las secciones siguientes.
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>Para instalar DFS mediante el Administrador del servidor
 
@@ -104,9 +104,9 @@ Install-WindowsFeature "FS-DFS-Replication", "RSAT-DFS-Mgmt-Con"
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Introducción a Espacios de nombres DFS y Replicación DFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v%3dws.11))
-- [Lista de comprobación: implementación de la replicación DFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772201(v%3dws.11))
-- [Lista de comprobación: administración de la replicación DFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755035(v%3dws.11))
-- [Implementación de Replicación DFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770925(v%3dws.11))
-- [Administración de Replicación DFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770925(v%3dws.11))
-- [Solución de problemas de la replicación DFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732802(v%3dws.11))
+- [Introducción a Espacios de nombres DFS y Replicación DFS](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj127250(v%3dws.11))
+- [Lista de comprobación: implementación de la replicación DFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772201(v%3dws.11))
+- [Lista de comprobación: administración de la replicación DFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755035(v%3dws.11))
+- [Implementación de Replicación DFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770925(v%3dws.11))
+- [Administración de Replicación DFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770925(v%3dws.11))
+- [Solución de problemas de la replicación DFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732802(v%3dws.11))

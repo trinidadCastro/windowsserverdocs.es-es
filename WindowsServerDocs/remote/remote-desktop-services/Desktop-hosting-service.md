@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 2ee11e40d5fb69141ad5dd5342f8574b22232bbd
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 57e9e25881d948ec705dc51d8e61377e0beb78a8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070481"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960397"
 ---
 # <a name="desktop-hosting-service"></a>Servicio de hospedaje de escritorio
 
@@ -41,9 +41,9 @@ Hay varias maneras de implementar AD DS:
 
 Para obtener más información, consulta los artículos siguientes:
 
-* [Documentación de Azure Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/)
-* [Guía de arquitectura de referencia de hospedaje de escritorio para Windows Server 2012 R2](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
-* [Creación de una conexión de sitio a sitio en Azure Portal](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [Documentación de Azure Active Directory Domain Services](/azure/active-directory-domain-services/)
+* [Guía de arquitectura de referencia de hospedaje de escritorio para Windows Server 2012 R2](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [Creación de una conexión de sitio a sitio en Azure Portal](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
 
 ## <a name="sql-database"></a>Base de datos SQL
 
@@ -56,8 +56,8 @@ Hay varias maneras de implementar una base de datos SQL:
 
 Para más información acerca de cómo configurar una infraestructura de base datos SQL con alta disponibilidad, consulta los siguientes artículos:
 
-* [¿Qué es el servicio Azure SQL Database?](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
-* [Creación y configuración de grupos de disponibilidad (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017).
+* [¿Qué es el servicio Azure SQL Database?](/azure/sql-database/sql-database-technical-overview)
+* [Creación y configuración de grupos de disponibilidad (SQL Server)](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017).
 * [Adición del servidor de Agente de conexión a Escritorio remoto para la implementación y la configuración de alta disponibilidad](rds-connection-broker-cluster.md).
 
 ## <a name="file-server"></a>Servidor de archivos
@@ -71,7 +71,7 @@ Los inquilinos pequeños pueden reducir los costos combinando el servidor de arc
 Para obtener más información, consulta los artículos siguientes:
 
 * [Almacenamiento en Windows Server](../../storage/storage.yml)
-* [Conexión de un disco de datos administrado a una máquina virtual Windows en Azure Portal](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json)
+* [Conexión de un disco de datos administrado a una máquina virtual Windows en Azure Portal](/azure/virtual-machines/windows/attach-managed-disk-portal?toc=/azure/virtual-machines/windows/classic/toc.json)
 
 ### <a name="user-profile-disks"></a>Discos de perfiles de usuario
 

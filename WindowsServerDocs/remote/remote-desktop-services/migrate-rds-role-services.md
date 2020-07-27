@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 88806c7302474b111b700376c75b9b09f4da9236
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2e4628e9ec7b5d75b88bb07282e2183a2f16fff2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853008"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959157"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>Migración de la implementación de Servicios de Escritorio remoto en Windows Server 2016
 
@@ -22,7 +22,7 @@ Si actualmente ejecutas Servicios de Escritorio remoto en Windows Server 2012 R2
 
 Se admite la migración de una implementación de Servicios de Escritorio remoto desde servidores de origen que ejecutan Windows Server 2016 a servidores de destino que ejecutan Windows Server 2016. En otras palabras, no hay ninguna migración local directa de RDS en Windows Server 2012 R2 a Windows Server 2016. En su lugar, para la mayoría de los componentes de RDS, primero se actualiza a Windows Server 2016 y, a continuación, se migran los datos y las licencias. Los únicos componentes con una migración directa son web de Escritorio remoto, puerta de enlace de Escritorio remoto y el servidor de licencias.
 
-Para obtener más información sobre los requisitos y el proceso de actualización, consulta [Actualizar las implementaciones de Servicios de Escritorio remoto a Windows Server 2016](upgrade-to-rds-2016.md).
+Para obtener más información sobre los requisitos y el proceso de actualización, consulta [Actualizar las implementaciones de Servicios de Escritorio remoto a Windows Server 2016](./upgrade-to-rds.md).
 
 Lleva a cabo los siguientes pasos para migrar las implementaciones de Servicios de Escritorio remoto:
 
@@ -45,11 +45,11 @@ Lleva a cabo los siguientes pasos para migrar las implementaciones de Servicios 
 Este es el primer y más importante paso para la migración: migrar los agentes de conexión a Escritorio remoto a los servidores de destino que ejecutan Windows Server 2016.
 
 > [!IMPORTANT]
-> Para que se pueda admitir la migración, los servidores de origen de Agente de conexión a Escritorio remoto deben configurarse para alta disponibilidad. Para obtener más información, consulta [Implementación de un clúster de Agente de conexión a Escritorio remoto](Deploy-a-Remote-Desktop-Connection-Broker-cluster.md).
+> Para que se pueda admitir la migración, los servidores de origen de Agente de conexión a Escritorio remoto deben configurarse para alta disponibilidad. Para obtener más información, consulta [Implementación de un clúster de Agente de conexión a Escritorio remoto](./rds-connection-broker-cluster.md).
 
 1. Si tiene más de un servidor de Agente de conexión a Escritorio remoto en la configuración de alta disponibilidad, quite todos los servidores de Agente de conexión a Escritorio remoto excepto el que está actualmente activo.
 
-2. [Actualiza](upgrade-to-rds-2016.md) el servidor de Agente de conexión a Escritorio remoto que queda en la implementación a Windows Server 2016.
+2. [Actualiza](./upgrade-to-rds.md) el servidor de Agente de conexión a Escritorio remoto que queda en la implementación a Windows Server 2016.
 
 3. Agrega servidores de Agente de conexión a Escritorio remoto de Windows Server 2016 en la implementación de alta disponibilidad.
 
@@ -63,7 +63,7 @@ Sigue estos pasos para migrar una colección de sesiones en Windows Server 2012 
 > [!IMPORTANT]
 > Migra las colecciones de sesiones únicamente después de haber completado correctamente el paso anterior, [Migrar los servidores de Agente de conexión a Escritorio remoto](#migrate-rdconnection-broker-servers).
 
-1. [Actualiza la colección de sesiones](Upgrade-to-RDSH-2016.md) de Windows Server 2012 R2 a Windows Server 2016.
+1. [Actualiza la colección de sesiones](./upgrade-to-rdsh.md) de Windows Server 2012 R2 a Windows Server 2016.
 
 2. Agrega el nuevo servidor de host de sesión de Escritorio remoto que ejecuta Windows Server 2016 a la colección de sesiones.
 
@@ -81,7 +81,7 @@ Sigue estos pasos para migrar una colección de escritorios virtuales desde un s
 > [!IMPORTANT]
 > Migra las colecciones de escritorios virtuales después de completar correctamente el paso anterior, [Migrar los servidores de agente de conexión a Escritorio remoto](#migrate-rdconnection-broker-servers).
 
-1. [Actualiza la colección de escritorios virtuales](Upgrade-to-RDVH-2016.md) desde el servidor que ejecuta Windows Server 2012 R2 a Windows Server 2016.
+1. [Actualiza la colección de escritorios virtuales](./upgrade-to-rdvh.md) desde el servidor que ejecuta Windows Server 2012 R2 a Windows Server 2016.
 
 2. Agrega los nuevos servidores de host de virtualización de Escritorio remoto de Windows Server 2016 a la colección de escritorios virtuales.
 

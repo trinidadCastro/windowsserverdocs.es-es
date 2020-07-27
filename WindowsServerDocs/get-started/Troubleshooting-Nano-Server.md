@@ -10,12 +10,12 @@ ms.assetid: e427c66f-9571-4b8c-b65d-e7370d91544d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: f134680792eda33343bb6743708b37cf4f9e5faa
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ce71c2d11343be62d47f8957fa9414915fcc7847
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826458"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964417"
 ---
 # <a name="troubleshooting-nano-server"></a>Solución de problemas de Nano Server
 
@@ -45,7 +45,7 @@ La consola de recuperación permite ver y configurar adaptadores de red y la con
 > La Consola de recuperación solo admite funciones básicas de teclado. No se admiten las luces del teclado, las secciones de 10 teclas y el cambio de la distribución del teclado entre Bloq Mayús y Bloq num. Solo se admiten los teclados en inglés y el juego de caracteres.
 
 ## <a name="accessing-nano-server-over-a-serial-port-with-emergency-management-services"></a>Acceso a Nano Server a través de un puerto serie con los Servicios de administración de emergencia  
-Los Servicios de administración de emergencia (EMS) permiten realizar la solución básica, obtener el estado de la red y abrir las sesiones de consola (incluidos CMD o PowerShell) mediante un emulador de terminal a través de un puerto serie. Esto reemplaza la necesidad de un teclado y un monitor para solucionar problemas de un servidor. Para obtener más información sobre EMS, vea [Emergency Management Services Technical Reference](https://technet.microsoft.com/library/cc784411(v=ws.10).aspx) (Referencia técnica de servicios de administración de emergencia).
+Los Servicios de administración de emergencia (EMS) permiten realizar la solución básica, obtener el estado de la red y abrir las sesiones de consola (incluidos CMD o PowerShell) mediante un emulador de terminal a través de un puerto serie. Esto reemplaza la necesidad de un teclado y un monitor para solucionar problemas de un servidor. Para obtener más información sobre EMS, vea [Emergency Management Services Technical Reference](/previous-versions/windows/it-pro/windows-server-2003/cc784411(v=ws.10)) (Referencia técnica de servicios de administración de emergencia).
 
 Para habilitar EMS en una imagen Nano Server para que esté listo cuando lo necesite más adelante, ejecute este cmdlet:  
   
@@ -54,7 +54,7 @@ Para habilitar EMS en una imagen Nano Server para que esté listo cuando lo nece
 Este ejemplo habilita EMS en el puerto serie 3 con una velocidad en baudios de 9600 bps. Si no incluye los parámetros, los valores predeterminados son el puerto 1 y 115200 bps. Para usar este cmdlet para medios VHDX, asegúrese de incluir la característica de Hyper-V y los módulos de Windows PowerShell correspondientes.
 
 ## <a name="kernel-debugging"></a>Depuración del kernel  
-Puede configurar la imagen Nano Server para admitir la depuración del kernel mediante una amplia variedad de métodos. Para usar al depuración del kernel con una imagen VHDX, asegúrese de incluir la característica de Hyper-V y los módulos de Windows PowerShell correspondientes. Para obtener más información sobre la depuración remota de kernel, por lo general, vea [Setting Up Kernel-Mode Debugging over a Network Cable Manually](https://msdn.microsoft.com/library/windows/hardware/hh439346%28v=vs.85%29.aspx) (Configuración manual de la depuración de modo kernel a través de un cable de red) y [Remote Debugging Using WinDbg](https://msdn.microsoft.com/library/windows/hardware/hh451173%28v=vs.85%29.aspx) (Depuración remota con WinDbg).  
+Puede configurar la imagen Nano Server para admitir la depuración del kernel mediante una amplia variedad de métodos. Para usar al depuración del kernel con una imagen VHDX, asegúrese de incluir la característica de Hyper-V y los módulos de Windows PowerShell correspondientes. Para obtener más información sobre la depuración remota de kernel, por lo general, vea [Setting Up Kernel-Mode Debugging over a Network Cable Manually](/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection) (Configuración manual de la depuración de modo kernel a través de un cable de red) y [Remote Debugging Using WinDbg](/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection) (Depuración remota con WinDbg).  
   
 ### <a name="debugging-using-a-serial-port"></a>Depuración con un puerto serie  
 Use este cmdlet de ejemplo para habilitar la imagen que se desea depurar mediante un puerto serie:  

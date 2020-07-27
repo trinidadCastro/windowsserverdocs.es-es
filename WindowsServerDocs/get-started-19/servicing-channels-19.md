@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 2bf56e69d1a28007c35c320d1d5cc73c2ba9fa53
-ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
+ms.openlocfilehash: 1823816d2218c09c84e5eb61bf8af6bd3411a0d7
+ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85586688"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86946599"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Canales de servicio de Windows Server: LTSC y SAC
 
@@ -91,7 +91,7 @@ Las versiones del Canal semianual deben instalarse como una instalación limpia.
 - Suscripciones a Visual Studio: Los suscriptores de Visual Studio pueden obtener versiones del canal semianual descargándolas desde la [página de descargas del suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347). Si ya no eres un suscriptor, dirígete a [Suscripciones de Visual Studio](https://www.visualstudio.com/subscriptions/) para registrarte y luego visita la [página de descarga de suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347) tal y como se indica anteriormente. Las versiones obtenidas a través de suscripciones de Visual Studio son solo para desarrollo y pruebas.
 
 - Obtén las versiones preliminares mediante el Programa Windows Insider: las pruebas en las primeras compilaciones de Windows Server ayudan a Microsoft y a sus clientes, ya que tienen la oportunidad de detectar posibles problemas incluso antes del lanzamiento. También ofrece a los clientes una oportunidad única para influir directamente en la funcionalidad del producto.
-Microsoft depende de la recepción de comentarios durante todo el proceso de desarrollo para poder realizar ajustes tan rápido como sea posible. Las primeras pruebas y los comentarios son esenciales para un modelo de lanzamiento rápido. Para involucrarse en el Programa Windows Insider, consulta la sección [Programa Windows Insider para documentos de servidor](https://docs.microsoft.com/windows-insider/at-work/).
+Microsoft depende de la recepción de comentarios durante todo el proceso de desarrollo para poder realizar ajustes tan rápido como sea posible. Las primeras pruebas y los comentarios son esenciales para un modelo de lanzamiento rápido. Para involucrarse en el Programa Windows Insider, consulta la sección [Programa Windows Insider para documentos de servidor](/windows-insider/at-work/).
 
 ## <a name="activating-semi-annual-channel-releases"></a>Activación de las versiones del Canal semianual
 
@@ -115,7 +115,7 @@ Nano Server está disponible como un sistema operativo de contenedor en el Canal
 Por lo general, las versiones del Canal de mantenimiento a largo plazo como Windows Server 2019 se lanzan al mismo tiempo que una nueva versión del Canal semianual, por ejemplo, Windows Server, versión 1809. Esto puede hacer un poco complicado determinar si un servidor está ejecutando una versión del Canal semianual. En lugar de mirar el número de compilación, debes mirar el nombre del producto: Las versiones del Canal semianual usan el nombre de producto Windows Server Standard o Windows Server Datacenter, sin ningún número de versión, mientras que las del Canal de mantenimiento a largo plazo incluyen un número de versión como, por ejemplo, Windows Server 2019 Datacenter.
 
 > [!Note]
-> La siguiente guía tiene como objetivo ayudar a identificar y diferenciar entre LTSC y SAC únicamente con fines de ciclo de vida y de inventario general.  No tiene como fin la compatibilidad de aplicaciones o la representación de una superficie de API específica.  Los desarrolladores de aplicaciones deben utilizar otras orientaciones para garantizar la compatibilidad correcta, ya que se pueden agregar componentes, API y funcionalidades durante el período de vida de un sistema o puede que aún no se agreguen. La [versión del sistema operativo](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version) es un punto de partida mejor para los desarrolladores de aplicaciones.
+> La siguiente guía tiene como objetivo ayudar a identificar y diferenciar entre LTSC y SAC únicamente con fines de ciclo de vida y de inventario general.  No tiene como fin la compatibilidad de aplicaciones o la representación de una superficie de API específica.  Los desarrolladores de aplicaciones deben utilizar otras orientaciones para garantizar la compatibilidad correcta, ya que se pueden agregar componentes, API y funcionalidades durante el período de vida de un sistema o puede que aún no se agreguen. La [versión del sistema operativo](/windows/desktop/sysinfo/operating-system-version) es un punto de partida mejor para los desarrolladores de aplicaciones.
 
 Abre Powershell y usa el cmdlet Get-ItemProperty o el cmdlet Get-ComputerInfo para comprobar estas propiedades en el registro.  Junto con el número de compilación, sabrás si se trata de LTSC o SAC por la presencia o ausencia del año de publicación; es decir, 2019.  LTSC lo tiene, SAC no.  También se devolverá el momento del lanzamiento en ReleaseId o WindowsVersion (es decir, 1809), así como si la instalación es básica o con experiencia de escritorio.
 
@@ -165,7 +165,7 @@ OsVersion                     : 10.0.17763
 OsHardwareAbstractionLayer    : 10.0.17763.107
 ````
 
-Para consultar si en un servidor está presente la nueva [característica de compatibilidad de aplicaciones de instalación básica a petición](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19), usa el cmdlet [Get-WindowsCapability](https://docs.microsoft.com/powershell/module/dism/get-windowscapability?view=win10-ps) y busca:
+Para consultar si en un servidor está presente la nueva [característica de compatibilidad de aplicaciones de instalación básica a petición](./install-fod-19.md), usa el cmdlet [Get-WindowsCapability](/powershell/module/dism/get-windowscapability?view=win10-ps) y busca:
 ````
 Name    :     ServerCore.AppCompatibility~~~~0.0.1.0
 State   :     Installed
@@ -177,8 +177,8 @@ State   :     Installed
 
 [Ciclo de vida de soporte técnico de Windows Server](https://support.microsoft.com/lifecycle)
 
-[Determinar si se está ejecutando Server Core](https://msdn.microsoft.com/library/hh846315%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
+[Determinar si se está ejecutando Server Core](/previous-versions/windows/desktop/legacy/hh846315(v=vs.85)?f=255&MSPPError=-2147217396)
 
-[Función GetProductInfo](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
+[Función GetProductInfo](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
 
-[Cmdlets de registro de inventario de software](https://docs.microsoft.com/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
+[Cmdlets de registro de inventario de software](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)

@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c454d9ef4deb8c9ea681a486e85f356ad5c9cd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a1ac967743dcb9e38cb36e5c16f7e3dd6ec0c7d2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826948"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953557"
 ---
 # <a name="install-server-with-desktop-experience"></a>Instalación de servidor con Experiencia de escritorio
 > Se aplica a: Windows Server 2016
@@ -60,7 +60,7 @@ Si ya tiene una instalación completa del producto Windows Server adecuado, pued
 
 - No se admiten actualizaciones inmediatas de arquitecturas de 32 a 64 bits. Todas las ediciones de Windows Server 2016 son solo de 64 bits.
 - No se admiten actualizaciones inmediatas de un idioma a otro.
-- Si el servidor es un controlador de dominio, vea [Actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx) para obtener información importante.
+- Si el servidor es un controlador de dominio, vea [Actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012](../identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012.md) para obtener información importante.
 - No se admiten las actualizaciones desde versiones preliminares (vista preliminar) de Windows Server 2016. Realice una instalación limpia a Windows Server 2016.
 - No se admiten actualizaciones que cambian de la instalación Server Core al modo Servidor con Experiencia de escritorio (o viceversa).
 
@@ -83,9 +83,9 @@ Si ve más de una edición en la columna de la derecha, se admite la actualizaci
 Para muchas opciones adicionales para migrar a Windows Server 2016, como la conversión de licencia entre ediciones de licencia por volumen, versiones de evaluación y otras, vea los detalles de las [opciones de actualización](Supported-Upgrade-Paths.md).
 
 ### <a name="migration"></a>Migración
-**Migración** significa mover desde el sistema operativo existente a Windows Server 2016 mediante una instalación limpia en un conjunto diferente de hardware o máquina virtual y después transferir las cargas de trabajo del servidor anterior al nuevo servidor. La migración, que puede variar de forma notable según los roles de servidor que haya instalados, se aborda en profundidad en [Windows Server Installation, Upgrade, and Migration](https://technet.microsoft.com/windowsserver/dn458795) (Instalación, actualización y migración de Windows Server).
+**Migración** significa mover desde el sistema operativo existente a Windows Server 2016 mediante una instalación limpia en un conjunto diferente de hardware o máquina virtual y después transferir las cargas de trabajo del servidor anterior al nuevo servidor. La migración, que puede variar de forma notable según los roles de servidor que haya instalados, se aborda en profundidad en [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md) (Instalación, actualización y migración de Windows Server).
 
-La capacidad de migración varía entre los diferentes roles de servidor. En la cuadrícula siguiente se explican las opciones de actualización y migración de roles de servidor específicamente para migrar a Windows Server 2016. Para obtener instrucciones para la migración de roles individuales, visite [Migración de roles y características en Windows Server](https://technet.microsoft.com/windowsserver/jj554790.aspx). Para más información sobre la instalación y las actualizaciones, vea [Windows Server Installation, Upgrade, and Migration](https://technet.microsoft.com/windowsserver/dn458795) (Instalación, actualización y migración de Windows Server).
+La capacidad de migración varía entre los diferentes roles de servidor. En la cuadrícula siguiente se explican las opciones de actualización y migración de roles de servidor específicamente para migrar a Windows Server 2016. Para obtener instrucciones para la migración de roles individuales, visite [Migración de roles y características en Windows Server](./migrate-roles-and-features.md). Para más información sobre la instalación y las actualizaciones, vea [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md) (Instalación, actualización y migración de Windows Server).
 
 |Rol de servidor|¿Se puede actualizar desde Windows Server 2012 R2?|¿Se puede actualizar desde Windows Server 2012?|¿Se admite la migración?|¿La migración puede completarse sin tiempo de inactividad?|  
 |-------------------|----------|--------------|--------------|----------|  
@@ -94,14 +94,14 @@ La capacidad de migración varía entre los diferentes roles de servidor. En la 
 |Servicios de federación de Active Directory (AD FS)|    No|    No|    Sí|    No (es necesario agregar nuevos nodos a la granja)|
 |Active Directory Lightweight Directory Services|    Sí|    Sí|    Sí|    Sí|
 |Active Directory Rights Management Services|    Sí|    Sí|    Sí|    No|
-|Clúster de conmutación por error|Sí, con el proceso de [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (Actualización gradual de sistema operativo de clúster) que incluye el nodo Pause-Drain, Evict, actualizar a Windows Server 2016 y volver a unir el clúster original. Sí, cuando el servidor se quita del clúster para la actualización y después se agrega a un clúster diferente.|No mientras el servidor forma parte de un clúster. Sí, cuando el servidor se quita del clúster para la actualización y después se agrega a un clúster diferente.    |Sí|No para clústeres de conmutación por error en Windows Server 2012. Sí, para clústeres de conmutación por error de Windows Server 2012 R2 con máquinas virtuales de Hyper-V o clústeres de conmutación por error de Windows Server 2012 R2 que ejecutan el rol de Servidor de archivos de escalabilidad horizontal. Vea [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (Actualización gradual de sistema operativo de clúster).|
+|Clúster de conmutación por error|Sí, con el proceso de [Cluster OS Rolling Upgrade](../failover-clustering/cluster-operating-system-rolling-upgrade.md) (Actualización gradual de sistema operativo de clúster) que incluye el nodo Pause-Drain, Evict, actualizar a Windows Server 2016 y volver a unir el clúster original. Sí, cuando el servidor se quita del clúster para la actualización y después se agrega a un clúster diferente.|No mientras el servidor forma parte de un clúster. Sí, cuando el servidor se quita del clúster para la actualización y después se agrega a un clúster diferente.    |Sí|No para clústeres de conmutación por error en Windows Server 2012. Sí, para clústeres de conmutación por error de Windows Server 2012 R2 con máquinas virtuales de Hyper-V o clústeres de conmutación por error de Windows Server 2012 R2 que ejecutan el rol de Servidor de archivos de escalabilidad horizontal. Vea [Cluster OS Rolling Upgrade](../failover-clustering/cluster-operating-system-rolling-upgrade.md) (Actualización gradual de sistema operativo de clúster).|
 |Servicios de archivos y almacenamiento|    Sí|    Sí|    Varía según la subcaracterística|    No|
 |Servicios de impresión y fax|    No|    No|    Sí (Printbrm.exe)|    No|
 |Servicios de Escritorio remoto|    Sí, para todos los subroles, pero no se admite la granja de modo mixto|    Sí, para todos los subroles, pero no se admite la granja de modo mixto|    Sí|    No|
 |Servidor web (IIS)|    Sí|    Sí|    Sí|    No|
 |Experiencia con Windows Server Essentials|    Sí|    N/A: nueva característica|    Sí|    No|
 |Windows Server Update Services|    Sí|    Sí|    Sí|    No|
-|Carpetas de trabajo|    Sí|    Sí|    Sí|    Sí, en el clúster de WS 2012 R2, cuando se usa la [Actualización gradual de sistema operativo de clúster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|
+|Carpetas de trabajo|    Sí|    Sí|    Sí|    Sí, en el clúster de WS 2012 R2, cuando se usa la [Actualización gradual de sistema operativo de clúster](../failover-clustering/cluster-operating-system-rolling-upgrade.md).|
 
 > [!IMPORTANT]  
 > Una vez completada la instalación e inmediatamente después de instalar todos los roles de servidor y las características que necesita, busque e instale las actualizaciones disponibles para Windows Server 2016 mediante Windows Update u otros métodos de actualización.

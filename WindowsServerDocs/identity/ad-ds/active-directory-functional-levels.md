@@ -10,12 +10,12 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 5f7a8f08ff10102fbc04b6f8272320bd3b77785d
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b6a9a5c08e24f5c7bb7ac50ac1c72386ef8a6d0f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825498"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963057"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de bosque y dominio
 
@@ -27,7 +27,7 @@ Cuando implementes AD DS, establece los niveles funcionales de dominio y bosque
 
 Con el fin del ciclo de vida de Windows 2003, los controladores de dominio (DC) de Windows 2003 deben actualizarse a Windows Server 2008, 2008R2, 2012, 2012R2, 2016 o 2019. Como resultado, todos los controladores de dominio que ejecuten Windows Server 2003 deben quitarse del dominio.
 
-En los niveles funcionales de dominio de Windows Server 2008 y superior, se usa la Replicación del sistema de archivos distribuido (DFS) para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si creas un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o superior, se usa automáticamente Replicación DFS para replicar SYSVOL. Si has creado el dominio en un nivel funcional inferior, tendrás que migrar del uso de FRS a la replicación DFS para SYSVOL. En el caso de los pasos de migración, puedes seguir los [procedimientos de TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) o puedes consultar el [conjunto de pasos simplificado en el blog de contenedor de archivos del equipo de almacenamiento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).
+En los niveles funcionales de dominio de Windows Server 2008 y superior, se usa la Replicación del sistema de archivos distribuido (DFS) para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si creas un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o superior, se usa automáticamente Replicación DFS para replicar SYSVOL. Si has creado el dominio en un nivel funcional inferior, tendrás que migrar del uso de FRS a la replicación DFS para SYSVOL. En el caso de los pasos de migración, puedes seguir los [procedimientos de TechNet](../../storage/dfs-replication/migrate-sysvol-to-dfsr.md) o puedes consultar el [conjunto de pasos simplificado en el blog de contenedor de archivos del equipo de almacenamiento](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -45,7 +45,7 @@ Sistema operativo de controlador de dominio admitido:
 ### <a name="windows-server-2016-forest-functional-level-features"></a>Características del nivel funcional de bosque de Windows Server 2016
 
 * Todas las características disponibles en el nivel funcional del bosque de Windows Server 2012R2, además las siguientes características. están disponibles:
-   * [Privileged Access Management (PAM) con Microsoft Identity Manager (MIM)](https://docs.microsoft.com/windows-server/identity/whats-new-active-directory-domain-services#a-namebkmkpamaprivileged-access-management)
+   * [Privileged Access Management (PAM) con Microsoft Identity Manager (MIM)](../whats-new-active-directory-domain-services.md#privileged-access-management)
 
 ### <a name="windows-server-2016-domain-functional-level-features"></a>Características del nivel funcional de dominio de Windows Server 2016
 
@@ -54,7 +54,7 @@ Sistema operativo de controlador de dominio admitido:
    * Los controladores de dominio pueden admitir NTLM de red cuando un usuario está restringido a determinados dispositivos unidos a un dominio.
    * Los clientes Kerberos que se autentican correctamente con la extensión de actualización PKInit obtendrán el SID de identidad de clave pública actualizado.
 
-    Para más información, consulta [Novedades de la autenticación Kerberos](https://docs.microsoft.com/windows-server/security/kerberos/whats-new-in-kerberos-authentication) y [Novedades en la protección de credenciales](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/whats-new-in-credential-protection)
+    Para más información, consulta [Novedades de la autenticación Kerberos](../../security/kerberos/whats-new-in-kerberos-authentication.md) y [Novedades en la protección de credenciales](../../security/credentials-protection-and-management/whats-new-in-credential-protection.md)
 
 ## <a name="windows-server-2012r2"></a>Windows Server 2012R2
 
@@ -97,7 +97,7 @@ Sistema operativo de controlador de dominio admitido:
 ### <a name="windows-server-2012-domain-functional-level-features"></a>Características del nivel funcional de dominio de Windows Server 2012
 
 * Todas las características predeterminadas de Active Directory, todas las características del nivel funcional del dominio de Windows Server 2008R2 y las características siguientes:
-   * La directiva de plantilla administrativa de compatibilidad de KDC con notificaciones, autenticación compuesta y protección de Kerberos tiene dos configuraciones (proporcionar siempre notificaciones y error de solicitudes de autenticación sin blindar) que requieren el nivel funcional de dominio de Windows Server 2012. Para más información, consulta [Novedades de la autenticación Kerberos](https://technet.microsoft.com/library/hh831747.aspx).
+   * La directiva de plantilla administrativa de compatibilidad de KDC con notificaciones, autenticación compuesta y protección de Kerberos tiene dos configuraciones (proporcionar siempre notificaciones y error de solicitudes de autenticación sin blindar) que requieren el nivel funcional de dominio de Windows Server 2012. Para más información, consulta [Novedades de la autenticación Kerberos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11)).
 
 ## <a name="windows-server-2008r2"></a>Windows Server 2008R2
 
@@ -146,7 +146,7 @@ Sistema operativo de controlador de dominio admitido:
 
   * Los espacios de nombres de DFS basados en dominio que se ejecutan en modo Windows Server 2008, que incluyen compatibilidad con la enumeración basada en el acceso y mayor escalabilidad. Los espacios de nombres basados en dominio en modo Windows Server 2008 también requieren que el bosque use el nivel funcional del bosque de Windows Server 2003. Para obtener más información, consulta [Elegir un tipo de espacio de nombres](https://go.microsoft.com/fwlink/?LinkId=180400).
   * Compatibilidad del Estándar de cifrado avanzado (AES 128 y 256) con el protocolo Kerberos. Para que se puedan emitir TGT mediante AES, el nivel funcional del dominio debe ser Windows Server 2008 o superior y es necesario cambiar la contraseña del dominio. 
-    * Para obtener más información, consulta [Mejoras de Kerberos](https://technet.microsoft.com/library/cc749438(ws.10).aspx).
+    * Para obtener más información, consulta [Mejoras de Kerberos](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10)).
 
       > [!NOTE]
       >Pueden producirse errores de autenticación en un controlador de dominio después de que el nivel funcional del dominio se eleve a Windows Server 2008 o superior si el controlador de dominio ya ha replicado el cambio de DFL pero aún no ha actualizado la contraseña de krbtgt. En este caso, si se reinicia el servicio KDC en el controlador de dominio, se desencadenará una actualización en memoria de la nueva contraseña de krbtgt y se resolverán los errores de autenticación relacionados.
@@ -226,5 +226,5 @@ Sistema operativo de controlador de dominio admitido:
 
 ## <a name="next-steps"></a>Pasos a seguir
 
-* [Elevar el nivel funcional del dominio](https://technet.microsoft.com/library/cc753104.aspx)  
-* [Elevar el nivel funcional del bosque](https://technet.microsoft.com/library/cc730985.aspx)
+* [Elevar el nivel funcional del dominio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))  
+* [Elevar el nivel funcional del bosque](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985(v=ws.11))

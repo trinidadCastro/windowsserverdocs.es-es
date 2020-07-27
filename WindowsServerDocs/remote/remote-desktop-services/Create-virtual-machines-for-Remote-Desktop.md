@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: b0f62d6f-0915-44ca-afef-be44a922e20e
 author: lizap
 manager: dongill
-ms.openlocfilehash: fa17c472e3311e4e34ac7b2176d0045886463274
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 9eba68e3dfce817208763ed11c4a7af68bb60be3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80818468"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966527"
 ---
 # <a name="create-virtual-machines-for-remote-desktop"></a>Creación de máquinas virtuales para Escritorio remoto
 
@@ -24,9 +24,9 @@ Siga estos pasos para crear los equipos virtuales en el entorno del inquilino qu
   
 Para este ejemplo de una implementación básica, se creará el mínimo de tres máquinas virtuales. Una de ellas hospedará los servicios de rol Servidor de licencias y Agente de conexión a Escritorio remoto (RD), y un recurso compartido de archivos para la implementación. Una segunda hospedará los servicios de rol Puerta de enlace y Acceso web de Escritorio remoto.  La tercera máquina virtual hospedará el servicio de rol Host de sesión de Escritorio remoto. En las implementaciones muy pequeñas se puede reducir los costos de máquinas virtuales mediante el uso de un proxy de aplicación de AAD para eliminar todos los puntos de conexión públicos de la implementación y combinar todos los servicios de rol en una sola máquina virtual. En el caso de implementaciones mayores, puede instalar los distintos servicios de rol en máquinas virtuales individuales para permitir un mejor escalado.  
   
-En esta sección se describen los pasos necesarios para implementar máquinas virtuales para cada rol basadas en imágenes de Windows Server de [Microsoft Azure Marketplace](https://azure.microsoft.com/marketplace/). Si necesitas crear máquinas virtuales a partir de una imagen personalizada, que requiere PowerShell, consulta [Creación de una máquina virtual Windows con Resource Manager y PowerShell](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-ps-create/). Luego, regresa aquí para conectar los discos de datos de Azure para el recurso compartido de archivos y especifica una dirección URL externa para la implementación.  
+En esta sección se describen los pasos necesarios para implementar máquinas virtuales para cada rol basadas en imágenes de Windows Server de [Microsoft Azure Marketplace](https://azure.microsoft.com/marketplace/). Si necesitas crear máquinas virtuales a partir de una imagen personalizada, que requiere PowerShell, consulta [Creación de una máquina virtual Windows con Resource Manager y PowerShell](/azure/virtual-machines/windows/quick-create-powershell). Luego, regresa aquí para conectar los discos de datos de Azure para el recurso compartido de archivos y especifica una dirección URL externa para la implementación.  
   
-1. [Cree máquinas virtuales Windows](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-hero-tutorial/) para hospedar el Agente de conexión a Escritorio remoto, el servidor de licencias de Escritorio remoto y el servidor de archivos.  
+1. [Cree máquinas virtuales Windows](/azure/virtual-machines/windows/quick-create-portal) para hospedar el Agente de conexión a Escritorio remoto, el servidor de licencias de Escritorio remoto y el servidor de archivos.  
   
    Para lograr nuestro fin, hemos usado las convenciones de nomenclatura siguientes:  
    - Agente de conexión a Escritorio remoto, servidor de licencias y servidor de archivos:   
@@ -79,4 +79,3 @@ En esta sección se describen los pasos necesarios para implementar máquinas vi
 5. Escriba un nombre DNS o una dirección URL externos para la implementación, con el fin de acceder a ellos externamente:  
    1.  En Azure Portal, haz clic en **Examinar > Grupos de recursos**, haz clic en el grupo de recursos de la implementación y, luego, en la dirección IP pública que creaste para Acceso web de Escritorio remoto y Puerta de enlace de Escritorio remoto.  
    2.  Haz clic en **Configuración**, escribe una etiqueta de nombre DNS (por ejemplo, contoso) y haz clic en **Guardar**. Esta etiqueta de nombre DNS (contoso.westus.cloudapp.azure.com) es el nombre DNS que usará para conectarse al servidor de Acceso web de Escritorio remoto y Puerta de enlace de Escritorio remoto.  
-

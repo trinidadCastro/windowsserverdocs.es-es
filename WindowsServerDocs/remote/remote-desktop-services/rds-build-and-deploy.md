@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: ce8c6e2089c3130d078513287b661a42e5754690
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c0a2676cc5e7043cd1f96d6c1d393d7b0e443fe8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857608"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961217"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>Crea e implementa la implementación de Servicios de Escritorio remoto.
 
@@ -27,7 +27,7 @@ Consulta [Arquitectura de Servicios de Escritorio remoto](desktop-hosting-logica
 ¿Tienes una implementación de Escritorio remoto existente basada en una versión anterior de Windows Server? Comprueba tus opciones para migrar a Windows Server 2016, donde puedes aprovechar las nuevas y mejores funcionalidades en cuanto a rendimiento y escalabilidad:
 
 - [Migración de la implementación de RDS en Windows Server 2016](migrate-rds-role-services.md)
-- [Actualización de la implementación de RDS en Windows Server 2016](upgrade-to-rds-2016.md)
+- [Actualización de la implementación de RDS en Windows Server 2016](./upgrade-to-rds.md)
 
 ¿Quieres crear una nueva implementación de Escritorio remoto? Utiliza la siguiente información para implementar un Escritorio remoto en Windows Server 2016:
 

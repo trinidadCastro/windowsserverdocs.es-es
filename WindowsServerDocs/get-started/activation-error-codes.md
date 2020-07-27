@@ -11,12 +11,12 @@ ms.custom:
 - CI ID 116803
 - CSSTroubleshoot
 manager: dcscontentpm
-ms.openlocfilehash: fe07636908dffc6bb59c544d512b132e7640bf51
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 6a38dad3362b2fa6c95c48cf613577941ffcc82c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269223"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963586"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Resolver códigos de error de activación de Windows
 
@@ -25,7 +25,7 @@ ms.locfileid: "84269223"
 
 En este artículo se proporciona información de solución de problemas que le ayudará a responder a los mensajes de error que puede recibir al intentar usar una clave de activación múltiple (MAK) o el Servicio de administración de claves (KMS) para realizar la activación de volumen en uno o varios equipos basados en Windows. Busque el código de error en la tabla siguiente y, a continuación, seleccione el vínculo para ver más información sobre el código de error y cómo resolverlo.
 
-Para obtener más información sobre la activación de volumen, vea [Plan para la activación de volumen](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client).
+Para obtener más información sobre la activación de volumen, vea [Plan para la activación de volumen](/windows/deployment/volume-activation/plan-for-volume-activation-client).
 
 Para obtener más información acerca de la activación de volumen para las versiones actuales y recientes de Windows, consulte [Activación de volumen [cliente]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10).
 

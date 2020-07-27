@@ -9,12 +9,12 @@ ms.assetid: 9b25b939-1e2c-4bed-a8d3-2a8e8e46b53d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 4879ae58c24596d64d24b6bece54d4c35837f00f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6535cb9cc6ad77d4ea5e5e33c2d28e03fd447968
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826768"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963587"
 ---
 # <a name="powershell-on-nano-server"></a>PowerShell en Nano Server
 
@@ -127,5 +127,4 @@ Nano Server incluye PowerShell Core de forma predeterminada en todas las instala
 
 Puede administrar Nano Server como nodos de destino con la configuración de estado deseado (DSC) de Windows PowerShell. Actualmente, puede administrar los nodos que ejecutan Nano Server con DSC en modo de inserción solo. No todas las características de DSC funcionan con Nano Server.
 
-Para obtener todos los detalles, vea [Uso de DSC en Nano Server](https://docs.microsoft.com/powershell/scripting/dsc/getting-started/nanodsc).
-
+Para obtener todos los detalles, vea [Uso de DSC en Nano Server](/powershell/scripting/dsc/getting-started/nanodsc).

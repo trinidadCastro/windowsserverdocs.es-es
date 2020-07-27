@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c2cb88d5b30be28a8ab7709e3a3908ce82ae8408
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 68e51cff5b70ed0b11488e44cebba057e7432d99
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75352359"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965277"
 ---
 # <a name="initialize-new-disks"></a>Inicialización de discos nuevos
 
@@ -26,7 +26,7 @@ Si agregas un disco nuevo a un equipo y no se ve en el Explorador de archivos, e
 
 ## <a name="to-initialize-new-disks"></a>Para inicializar discos nuevos
 
-Aquí se muestra cómo inicializar un disco nuevo mediante Administración de discos. Si prefiere usar PowerShell, utilice el cmdlet [initialize-disk](https://docs.microsoft.com/powershell/module/storage/initialize-disk) en su lugar.
+Aquí se muestra cómo inicializar un disco nuevo mediante Administración de discos. Si prefiere usar PowerShell, utilice el cmdlet [initialize-disk](/powershell/module/storage/initialize-disk) en su lugar.
 
 1. Abre Administración de discos con permisos de administrador.
  

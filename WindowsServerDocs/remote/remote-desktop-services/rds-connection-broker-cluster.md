@@ -8,12 +8,12 @@ ms.date: 04/10/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: dc6a9fa0d6834f63c9935518e4b2c26320a04082
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6e7e70b8adfcba78e50757be671d38f4d62c99db
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852968"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958707"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>Adición del servidor de Agente de conexión a Escritorio remoto para la implementación y la configuración de alta disponibilidad
 
@@ -25,7 +25,7 @@ Puedes implementar un clúster de Agente de conexión a Escritorio remoto (Agent
 
 Configura un servidor para que actúe como un segundo Agente de conexión a Escritorio remoto; puede ser un servidor físico o una VM.
 
-Configura una base de datos para el agente de conexión. Puedes usar una instancia de [Azure SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-get-started/#create-a-new-aure-sql-database) o SQL Server en tu entorno local. Hablaremos sobre cómo usar Azure SQL a continuación, pero estos pasos aún se aplican a SQL Server. Asimismo, necesitarás encontrar la cadena de conexión de la base de datos y asegurarte de tener el controlador ODBC correcto.
+Configura una base de datos para el agente de conexión. Puedes usar una instancia de [Azure SQL Database](/azure/azure-sql/database/single-database-create-quickstart#create-a-new-aure-sql-database) o SQL Server en tu entorno local. Hablaremos sobre cómo usar Azure SQL a continuación, pero estos pasos aún se aplican a SQL Server. Asimismo, necesitarás encontrar la cadena de conexión de la base de datos y asegurarte de tener el controlador ODBC correcto.
 
 ## <a name="step-1-configure-the-database-for-the-connection-broker"></a>Paso 1: Configurar la base de datos del Agente de conexión
 
@@ -70,7 +70,7 @@ Si estás usando la infraestructura de Azure, puedes crear un [equilibrador de c
       4. Selecciona **Estática** en la **asignación de dirección IP** y escribe una **dirección IP privada** que no esté actualmente en uso (por ejemplo, 10.0.0.32).   
       5. Selecciona la **suscripción** apropiada, el **grupo de recursos** con todos tus recursos y la **ubicación** correspondiente.   
       6. Selecciona **Crear**.   
-2. Crea un [sondeo](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/) para supervisar qué servidores están activos:   
+2. Crea un [sondeo](/azure/load-balancer/load-balancer-custom-probe-overview) para supervisar qué servidores están activos:   
       1. En Azure Portal, haz clic en  **Examinar> Equilibradores de carga** y en el equilibrador de carga que acabas de crear (por ejemplo, CBLB). Haga clic en **Configuración**.   
       2. Haga clic en **Sondeos > Agregar**.   
       3. Escribe un nombre para el sondeo (por ejemplo, **RDP**), selecciona **TCP** como **protocolo**, escribe **3389** en el **puerto** y haz clic en **Aceptar**.   
@@ -83,7 +83,7 @@ Si estás usando la infraestructura de Azure, puedes crear un [equilibrador de c
       1. En **Configuración**, haz clic en **Reglas de equilibrio de carga** y en **Agregar**.   
       2. Escribe un nombre (por ejemplo, RDP), selecciona **TCP** para el **protocolo**, escribe **3389** en el **puerto** y el **puerto de back-end** y haz clic en **Aceptar**.   
 5. Agrega un registro DNS para el equilibrador de carga:   
-      1. Conéctate a la máquina virtual del servidor RDMS (por ejemplo, Contoso-CB1). Consulta el artículo [Prepare the RD Connection Broker VM](Prepare-the-RD-Connection-Broker-VM-for-Remote-Desktop.md) (Preparación de la VM del Agente de conexión a Escritorio remoto) para conocer los pasos sobre cómo te puedes conectar a la VM.   
+      1. Conéctate a la máquina virtual del servidor RDMS (por ejemplo, Contoso-CB1). Consulta el artículo [Prepare the RD Connection Broker VM](./rds-prepare-vms.md) (Preparación de la VM del Agente de conexión a Escritorio remoto) para conocer los pasos sobre cómo te puedes conectar a la VM.   
       2. En el Administrador del servidor, haz clic en **Herramientas > DNS**.   
       3. En el panel de la izquierda, expande **DNS**, haz clic en la máquina DNS, en **Zonas de búsqueda directa** y, a continuación, haz clic en tu nombre de dominio (por ejemplo, Contoso.com). (Te puede llevar unos segundos procesar la consulta al servidor DNS para obtener la información).  
       4. Haz clic en **Acción> Nuevo host (A o AAAA)** .   
@@ -124,4 +124,3 @@ Por ejemplo, si las direcciones IP de las dos máquinas virtuales del Agente de 
    3. Realiza los pasos del asistente hasta que llegues a la opción de selección del servidor y selecciona el servidor del Agente de conexión a Escritorio remoto que creaste recientemente (por ejemplo, Contoso-CB2).
    4. Completa el asistente, aceptando los valores predeterminados.
 4. Configuración de certificados de confianza en clientes y servidores de Agente de conexión a Escritorio remoto.
-

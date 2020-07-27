@@ -8,12 +8,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 09206b90dc8b829aaa70d0cca34bd05a9e0eb693
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: cdd597e77d35b154385cf9de35f3d51a3d9c4e8b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963051"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961347"
 ---
 # <a name="troubleshooting-windows-volume-activation"></a>Solución de problemas de activación del volumen de Windows
 
@@ -29,30 +29,30 @@ En los siguientes artículos se proporciona información técnica y procedimient
 
 ### <a name="key-management-service-kms"></a>Servicio de administración de claves (KMS)
 
-- [Plan de activación de volumen](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client)
-- [Descripción de KMS](https://docs.microsoft.com/previous-versions/tn-archive/ff793434(v=technet.10))
-- [Implementación de la activación de KMS](https://docs.microsoft.com/previous-versions/tn-archive/ff793409%28v=technet.10%29)
-- [Configuración de hosts de KMS](https://docs.microsoft.com/previous-versions/tn-archive/ff793407%28v%3dtechnet.10%29)
-- [Configuring DNS](https://docs.microsoft.com/previous-versions/tn-archive/ff793405%28v%3dtechnet.10%29) (Configuración de DNS)
-- [Activar con el Servicio de administración de claves](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt)
+- [Plan de activación de volumen](/windows/deployment/volume-activation/plan-for-volume-activation-client)
+- [Descripción de KMS](/previous-versions/tn-archive/ff793434(v=technet.10))
+- [Implementación de la activación de KMS](/previous-versions/tn-archive/ff793409%28v=technet.10%29)
+- [Configuración de hosts de KMS](/previous-versions/tn-archive/ff793407%28v%3dtechnet.10%29)
+- [Configuring DNS](/previous-versions/tn-archive/ff793405%28v%3dtechnet.10%29) (Configuración de DNS)
+- [Activar con el Servicio de administración de claves](/windows/deployment/volume-activation/activate-using-key-management-service-vamt)
 
 ### <a name="active-directory-based-activation-adba"></a>Activación basada en Active Directory (ADBA)
 
-- [Deploy Active-Directory-based Activation](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502534%28v%3Dws.11%29) (Implementación de la activación basada en Active Directory)
-- [Activar con la activación basada en Active Directory](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-active-directory-based-activation-client)
-- [Información general sobre la activación basada en Active Directory](https://docs.microsoft.com/windows/deployment/volume-activation/active-directory-based-activation-overview)
+- [Deploy Active-Directory-based Activation](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502534%28v%3dws.11%29) (Implementación de la activación basada en Active Directory)
+- [Activar con la activación basada en Active Directory](/windows/deployment/volume-activation/activate-using-active-directory-based-activation-client)
+- [Información general sobre la activación basada en Active Directory](/windows/deployment/volume-activation/active-directory-based-activation-overview)
 
 ### <a name="multiple-activation-key-mak-activation"></a>Activación de la Clave de activación múltiple (MAK)
 
-- [Using MAK Activation](https://docs.microsoft.com/previous-versions/tn-archive/ff793438%28v=technet.10%29) (Uso de la activación de MAK)
-- [Understanding MAK Activation](https://docs.microsoft.com/previous-versions/tn-archive/ff793435%28v%3dtechnet.10%29) (Descripción de la activación de MAK)
-- [Activating MAK Clients](https://docs.microsoft.com/previous-versions/tn-archive/ff793398%28v%3dtechnet.10%29) (Activación de clientes de MAK)
+- [Using MAK Activation](/previous-versions/tn-archive/ff793438%28v=technet.10%29) (Uso de la activación de MAK)
+- [Understanding MAK Activation](/previous-versions/tn-archive/ff793435%28v%3dtechnet.10%29) (Descripción de la activación de MAK)
+- [Activating MAK Clients](/previous-versions/tn-archive/ff793398%28v%3dtechnet.10%29) (Activación de clientes de MAK)
 
 ### <a name="subscription-activation"></a>Activación de suscripciones
 
-- [Activación de la suscripción de Windows 10](https://docs.microsoft.com/windows/deployment/windows-10-subscription-activation)
-- [Implementar licencias de Windows 10 Enterprise](https://docs.microsoft.com/windows/deployment/deploy-enterprise-licenses)
-- [Windows 10 Enterprise E3 en CSP](https://docs.microsoft.com/windows/deployment/windows-10-enterprise-e3-overview)
+- [Activación de la suscripción de Windows 10](/windows/deployment/windows-10-subscription-activation)
+- [Implementar licencias de Windows 10 Enterprise](/windows/deployment/deploy-enterprise-licenses)
+- [Windows 10 Enterprise E3 en CSP](/windows/deployment/windows-10-enterprise-e3-overview)
 
 ## <a name="resources-for-troubleshooting-activation-issues"></a>Recursos para la solución de problemas de activación
 

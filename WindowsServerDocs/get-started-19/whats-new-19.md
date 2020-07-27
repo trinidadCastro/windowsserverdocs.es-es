@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 47269fbfac6aea3fe46513ad67d2cfa2f0c9b78e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: fd094347679d147a04faefdf3741a06addda2026
+ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80639917"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86946583"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novedades de Windows Server 2019
 
@@ -31,7 +31,7 @@ Windows Admin Center es una aplicación implementada localmente, basada en explo
 
 Puede instalar Windows Admin Center en Windows Server 2019, así como Windows 10 y versiones anteriores de Windows y Windows Server, y usarlo para administrar servidores y clústeres con Windows Server 2008 R2 y versiones posteriores.
 
-Para obtener más información, consulta [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md).
+Para obtener más información, consulta [Windows Admin Center](../manage/windows-admin-center/overview.md).
 
 ### <a name="desktop-experience"></a>Experiencia de escritorio
 
@@ -45,7 +45,7 @@ Información del sistema es una nueva característica disponible en Windows Serv
 
 ### <a name="server-core-app-compatibility-feature-on-demand"></a>Función de compatibilidad de aplicaciones de Server Core a petición
 
-La [característica de compatibilidad de aplicaciones de Server Core a petición (FOD)](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19) mejora significativamente la compatibilidad de las aplicaciones de la opción de instalación de Windows Server Core, al incluir un subconjunto de archivos binarios y componentes de Windows Server con la experiencia de escritorio sin agregar el propio entorno gráfico de la experiencia de escritorio de Windows Server.  Esto se hace para aumentar la funcionalidad y la compatibilidad de Server Core a la vez que se mantiene lo más simple posible.  
+La [característica de compatibilidad de aplicaciones de Server Core a petición (FOD)](./install-fod-19.md) mejora significativamente la compatibilidad de las aplicaciones de la opción de instalación de Windows Server Core, al incluir un subconjunto de archivos binarios y componentes de Windows Server con la experiencia de escritorio sin agregar el propio entorno gráfico de la experiencia de escritorio de Windows Server.  Esto se hace para aumentar la funcionalidad y la compatibilidad de Server Core a la vez que se mantiene lo más simple posible.  
 
 Esta característica opcional a petición está disponible en una ISO independiente y se puede agregar solo a imágenes e instalaciones de Windows Server Core mediante DISM. 
 
@@ -55,43 +55,43 @@ Esta característica opcional a petición está disponible en una ISO independie
 
 Los sensores de plataforma profunda y las acciones de respuesta de ATP exponen ataques de nivel de kernel y memoria, y responden suprimiendo archivos malintencionados y finalizando procesos dañinos.
 
--   Para obtener más información acerca de ATP de Windows Defender, consulta [Información general de las funcionalidades de ATP de Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/overview).
+-   Para obtener más información acerca de ATP de Windows Defender, consulta [Información general de las funcionalidades de ATP de Windows Defender](/windows/security/threat-protection/windows-defender-atp/overview).
 
--   Para obtener más información sobre la incorporación de servidores, consulta [Incorporar servidores al servicio de ATP de Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection).
+-   Para obtener más información sobre la incorporación de servidores, consulta [Incorporar servidores al servicio de ATP de Windows Defender](/windows/security/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection).
 
 **Protección contra vulnerabilidades de ATP de Windows Defender** es un nuevo conjunto de funcionalidades de prevención de intrusiones de host. Los cuatro componentes de Protección contra vulnerabilidades de seguridad de Windows Defender están diseñados para bloquear el dispositivo frente a una amplia variedad de vectores de ataque y bloquear comportamientos usados normalmente en ataques de malware, mientras te permite equilibrar los requisitos de productividad y riesgos de seguridad.
 
--   [Reducción de la superficie expuesta a ataques (ASR)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) es un conjunto de controles que las empresas pueden habilitar para impedir que el malware entre en la máquina bloqueando archivos sospechosos malintencionados (por ejemplo, archivos de Office), scripts, desplazamiento lateral, comportamiento de ransomware y amenazas basadas en correo electrónico.
+-   [Reducción de la superficie expuesta a ataques (ASR)](/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) es un conjunto de controles que las empresas pueden habilitar para impedir que el malware entre en la máquina bloqueando archivos sospechosos malintencionados (por ejemplo, archivos de Office), scripts, desplazamiento lateral, comportamiento de ransomware y amenazas basadas en correo electrónico.
 
--   [Protección de red](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/network-protection) protege el punto de conexión frente a amenazas basadas en web bloqueando cualquier proceso de salida en el dispositivo para hosts o direcciones IP que no son de confianza a través de SmartScreen de Windows Defender.
+-   [Protección de red](/windows/security/threat-protection/microsoft-defender-atp/network-protection) protege el punto de conexión frente a amenazas basadas en web bloqueando cualquier proceso de salida en el dispositivo para hosts o direcciones IP que no son de confianza a través de SmartScreen de Windows Defender.
 
 -   [Acceso controlado a carpetas](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc) protege los datos confidenciales del ransomware bloqueando para los procesos que no son de confianza el acceso a las carpetas protegidas.
 
--   [Protección contra vulnerabilidades](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-exploit-guard) es un conjunto de las mitigaciones para vulnerabilidades de seguridad (reemplazando EMET) que se pueden configurar con facilidad para proteger sus aplicaciones y el sistema.
+-   [Protección contra vulnerabilidades](/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-exploit-guard) es un conjunto de las mitigaciones para vulnerabilidades de seguridad (reemplazando EMET) que se pueden configurar con facilidad para proteger sus aplicaciones y el sistema.
 
-[Control de aplicaciones de Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (también conocido como la directiva de integridad de código (CI)) se lanzó en Windows Server 2016.
+[Control de aplicaciones de Windows Defender](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (también conocido como la directiva de integridad de código (CI)) se lanzó en Windows Server 2016.
 Los comentarios de los clientes sugieren que es un concepto excelente, pero difícil de implementar.
 Para solucionar esta problemática, se crearon directivas de CI predeterminadas que habilitan a todos los archivos incluidos en Windows y aplicaciones de Microsoft, como SQL Server, y bloquean archivos ejecutables conocidos que pueden omitir la CI. 
 
 ### <a name="security-with-software-defined-networking-sdn"></a>Seguridad con Redes definidas por software (SDN)
 
-[Seguridad con SDN](https://docs.microsoft.com/windows-server/networking/sdn/security/sdn-security-top) ofrece muchas características para aumentar la confianza del cliente en la ejecución de cargas de trabajo, de forma local, o como proveedor de servicios en la nube. 
+[Seguridad con SDN](../networking/sdn/security/sdn-security-top.md) ofrece muchas características para aumentar la confianza del cliente en la ejecución de cargas de trabajo, de forma local, o como proveedor de servicios en la nube. 
 
 Estas mejoras de seguridad están integradas en la plataforma completa de SDN que se introdujo en Windows Server 2016.
 
-Para obtener una lista completa de las novedades de SDN, consulta [Novedades de SDN para Windows Server 2019](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new).
+Para obtener una lista completa de las novedades de SDN, consulta [Novedades de SDN para Windows Server 2019](../networking/sdn/sdn-whats-new.md).
 
 ### <a name="shielded-virtual-machines-improvements"></a>Mejoras de las máquinas virtuales blindadas
 
 - **Mejoras de sucursal**
 
-    Ahora puedes ejecutar máquinas virtuales blindadas en máquinas con conectividad intermitente para el Servicio de protección de host al aprovechar las nuevas características [HGS reserva](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) y [modo sin conexión](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode). HGS de reserva te permite configurar un segundo conjunto de direcciones URL para Hyper-V para probar si no puede conectar con el servidor HGS principal.
+    Ahora puedes ejecutar máquinas virtuales blindadas en máquinas con conectividad intermitente para el Servicio de protección de host al aprovechar las nuevas características [HGS reserva](../security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md#fallback-configuration) y [modo sin conexión](../security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md#offline-mode). HGS de reserva te permite configurar un segundo conjunto de direcciones URL para Hyper-V para probar si no puede conectar con el servidor HGS principal.
 
     El modo sin conexión te permite continuar iniciando las máquinas virtuales blindadas, incluso si no se puede conectar a HGS, siempre y cuando la máquina virtual se haya iniciado correctamente una vez y no haya cambiado la configuración de seguridad del host.
 
 - **Solución de problemas de las mejoras**
 
-    También hemos facilitado la [solución de problemas de las máquinas virtuales blindadas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms) habilitando el soporte con el modo de sesión mejorada de VMConnect y PowerShell Direct. Estas herramientas son especialmente útiles si perdiste la conectividad de red con la VM y necesitas actualizar su configuración para restaurar el acceso. 
+    También hemos facilitado la [solución de problemas de las máquinas virtuales blindadas](../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md) habilitando el soporte con el modo de sesión mejorada de VMConnect y PowerShell Direct. Estas herramientas son especialmente útiles si perdiste la conectividad de red con la VM y necesitas actualizar su configuración para restaurar el acceso. 
 
     No es necesario configurar estas características y están disponibles automáticamente cuando se coloca una VM blindada en un host de Hyper-V con Windows Server, versión 1803 o posterior.
 
@@ -117,7 +117,7 @@ Servicio de migración de almacenamiento es una nueva tecnología que facilita m
 
 ### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directos
 
-Esta es una lista de novedades de Espacios de almacenamiento directo. Para obtener más información, consulta [Novedades de Espacios de almacenamiento directo](../storage/whats-new-in-storage.md#storage-spaces-direct). Consulta también [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview) para más información acerca de cómo adquirir sistemas de espacio de almacenamiento directo validados.
+Esta es una lista de novedades de Espacios de almacenamiento directo. Para obtener más información, consulta [Novedades de Espacios de almacenamiento directo](../storage/whats-new-in-storage.md#storage-spaces-direct). Consulta también [Azure Stack HCI](/azure-stack/operator/azure-stack-hci-overview) para más información acerca de cómo adquirir sistemas de espacio de almacenamiento directo validados.
 
 - **Desduplicación y compresión de volúmenes ReFS**
 - **Compatibilidad nativa con memoria persistente**
@@ -163,7 +163,7 @@ Ahora es posible ejecutar contenedores basados en Linux y Windows en el mismo ho
 
 Windows Server 2019 continúa con las mejoras de cálculo, redes y almacenamiento de las versiones del canal semianual necesarias para la compatibilidad con Kubernetes en Windows. Habrá más detalles disponibles en las próximas versiones de Kubernetes.
 
-- [Redes de contenedores](https://docs.microsoft.com/windows-server/networking/sdn/technologies/containers/container-networking-overview) en Windows Server 2019 mejora en gran medida la facilidad de uso de Kubernetes en Windows al mejorar la resistencia de las redes de plataforma y el soporte de los complementos de redes de contenedor.
+- [Redes de contenedores](../networking/sdn/technologies/containers/container-networking-overview.md) en Windows Server 2019 mejora en gran medida la facilidad de uso de Kubernetes en Windows al mejorar la resistencia de las redes de plataforma y el soporte de los complementos de redes de contenedor.
 
 - Las cargas de trabajo implementadas en Kubernetes pueden usar la seguridad de red para proteger los servicios de Windows y Linux con herramientas incrustadas.
 
@@ -183,15 +183,15 @@ Windows Server 2019 continúa con las mejoras de cálculo, redes y almacenamient
 
 - **Experiencia de administración con Windows Admin Center \((versión preliminar)\)**
 
-    Hemos hecho que sea más sencillo que nunca antes la acción de ver qué contenedores se ejecutan en el equipo y de administrar contenedores individuales con una nueva extensión para Windows Admin Center. Busca la extensión "Contenedores" en la [fuente pública de Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/using-extensions).
+    Hemos hecho que sea más sencillo que nunca antes la acción de ver qué contenedores se ejecutan en el equipo y de administrar contenedores individuales con una nueva extensión para Windows Admin Center. Busca la extensión "Contenedores" en la [fuente pública de Windows Admin Center](../manage/windows-admin-center/configure/using-extensions.md).
 
 ### <a name="encrypted-networks"></a>Redes cifradas
 
-[Redes cifradas](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new): el cifrado de red virtual permite el cifrado del tráfico de red virtual entre máquinas virtuales que se comunican entre sí dentro de subredes marcadas como **Cifrado habilitado**. También utiliza la Seguridad de la capa de transporte de datagrama (DTLS) en la subred virtual para cifrar los paquetes. DTLS protege frente a las interceptaciones, alteraciones y falsificaciones realizadas por cualquier persona con acceso a la red física.
+[Redes cifradas](../networking/sdn/sdn-whats-new.md): el cifrado de red virtual permite el cifrado del tráfico de red virtual entre máquinas virtuales que se comunican entre sí dentro de subredes marcadas como **Cifrado habilitado**. También utiliza la Seguridad de la capa de transporte de datagrama (DTLS) en la subred virtual para cifrar los paquetes. DTLS protege frente a las interceptaciones, alteraciones y falsificaciones realizadas por cualquier persona con acceso a la red física.
 
 ### <a name="network-performance-improvements-for-virtual-workloads"></a>Mejoras de rendimiento de red para las cargas de trabajo virtuales
 
-Las [mejoras de rendimiento de red para las cargas de trabajo virtuales](https://docs.microsoft.com/windows-server/networking/technologies/hpn/hpn-insider-preview) maximizan el rendimiento de red para las máquinas virtuales sin necesidad de realizar ajustes constantemente o de aprovisionar en exceso al host. Esto reduce las operaciones y el costo de mantenimiento a la vez que aumenta la densidad disponible de los hosts. Estas nuevas características son:
+Las [mejoras de rendimiento de red para las cargas de trabajo virtuales](../networking/technologies/hpn/hpn-insider-preview.md) maximizan el rendimiento de red para las máquinas virtuales sin necesidad de realizar ajustes constantemente o de aprovisionar en exceso al host. Esto reduce las operaciones y el costo de mantenimiento a la vez que aumenta la densidad disponible de los hosts. Estas nuevas características son:
 
 * Recibir segmentos de recepción en el vSwitch
 
@@ -204,12 +204,12 @@ Esta tecnología está pensada para usarla en la implementación de actualizacio
 
 ### <a name="windows-time-service"></a>Servicio de hora de Windows
 
-El [Servicio de hora de Windows](https://docs.microsoft.com/windows-server/networking/windows-time-service/insider-preview) incluye soporte de segundo intercalar compatible con UTC real, un nuevo protocolo de hora denominado protocolo de tiempo de precisión y rastreabilidad integral.
+El [Servicio de hora de Windows](../networking/windows-time-service/insider-preview.md) incluye soporte de segundo intercalar compatible con UTC real, un nuevo protocolo de hora denominado protocolo de tiempo de precisión y rastreabilidad integral.
 
 
 ### <a name="high-performance-sdn-gateways"></a>Puertas de enlace SDN de alto rendimiento
 
-[Puertas de enlace SDN de alto rendimiento](https://docs.microsoft.com/windows-server/networking/sdn/gateway-performance) en Windows Server 2019 mejora considerablemente el rendimiento para las conexiones IPsec y GRE, proporcionando un rendimiento muy elevado con un uso mucho menor de la CPU.
+[Puertas de enlace SDN de alto rendimiento](../networking/sdn/gateway-performance.md) en Windows Server 2019 mejora considerablemente el rendimiento para las conexiones IPsec y GRE, proporcionando un rendimiento muy elevado con un uso mucho menor de la CPU.
 <br/>
 
 ### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>Nueva extensión de Windows Admin Center e interfaz de usuario de implementación para SDN
@@ -219,4 +219,3 @@ Ahora, con Windows Server 2019, la implementación y administración son fáci
 ### <a name="persistent-memory-support-for-hyper-v-vms"></a>Soporte de memoria persistente para máquinas virtuales de Hyper-V
 
 Para aprovechar el alto rendimiento y la baja latencia de la memoria persistente (también conocida como memoria de clase de almacenamiento) en máquinas virtuales, ahora se puede proyectar directamente en las máquinas virtuales. Esto puede ayudar a reducir drásticamente la latencia de transacción de base de datos o reducir los tiempos de recuperación para bases de datos en memoria de latencia baja en caso de error.
-

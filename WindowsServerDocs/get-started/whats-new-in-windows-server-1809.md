@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 05/21/2019
 ms.localizationpriority: high
-ms.openlocfilehash: ba1d6156ad3ba20e5f166a3c0eb9a36aa1ffe516
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e94bb064b94c657d5e931363e2dc0a1c54ecf5e1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825958"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956077"
 ---
 # <a name="whats-new-in-windows-server-version-1809"></a>Novedades de Windows Server, versión 1809
 
@@ -23,7 +23,7 @@ Para obtener información sobre las características más recientes de Windows, 
 
 ## <a name="container-networking-with-kubernetes"></a>Redes de contenedores con Kubernetes
 
-Las [Redes de contenedores con Kubernetes](https://docs.microsoft.com/windows-server/networking/sdn/technologies/containers/container-networking-overview) de Windows Server 2019 mejoran en gran medida la facilidad de uso de Kubernetes en Windows al mejorar la resistencia de las redes de plataforma y el soporte de complementos de redes de contenedores. Además, los clientes que implementan cargas de trabajo en la seguridad de red de Kubernetes para proteger tanto los servicios de Linux como de Windows mediante las herramientas incrustadas.
+Las [Redes de contenedores con Kubernetes](../networking/sdn/technologies/containers/container-networking-overview.md) de Windows Server 2019 mejoran en gran medida la facilidad de uso de Kubernetes en Windows al mejorar la resistencia de las redes de plataforma y el soporte de complementos de redes de contenedores. Además, los clientes que implementan cargas de trabajo en la seguridad de red de Kubernetes para proteger tanto los servicios de Linux como de Windows mediante las herramientas incrustadas.
 
 ## <a name="group-managed-service-accounts-for-containers"></a>Cuentas de servicio administradas de grupo para contenedores
 
@@ -40,13 +40,12 @@ Además de las nuevas características de Windows Server, versión 1809, las sig
 * HTTP/2
 * Soporte técnico de Kubernetes
 * Contenedores de Linux en Windows
-* [Transporte en segundo plano de retraso adicional bajo (LEDBAT)](https://blogs.technet.microsoft.com/networking/2018/07/25/ledbat/)
+* [Transporte en segundo plano de retraso adicional bajo (LEDBAT)](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)
 * Mejoras de rendimiento de red para las cargas de trabajo virtuales
-* [Característica de compatibilidad de aplicación de Server Core a petición (FOD)](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
+* [Característica de compatibilidad de aplicación de Server Core a petición (FOD)](../get-started-19/install-fod-19.md)
 * [Servicio de migración de almacenamiento (SMS)](../storage/whats-new-in-storage.md#storage-spaces-direct)
 * Réplica de almacenamiento
 * Conclusiones del sistema 
 * Protección contra amenazas avanzada de Windows Defender (ATP)
 * Protección contra vulnerabilidades de seguridad de ATP de Windows Defender
-* [Servicio de hora de Windows](https://docs.microsoft.com/windows-server/networking/windows-time-service/insider-preview)
-
+* [Servicio de hora de Windows](../networking/windows-time-service/insider-preview.md)

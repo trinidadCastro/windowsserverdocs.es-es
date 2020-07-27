@@ -9,12 +9,12 @@ ms.author: mikeblodge
 ms.date: 07/11/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: de9233e31c5530abd207a1bbba0e1e16a07d1561
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f8f8cc63740c6823a01e0c86b387d57b54a06419
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826128"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960297"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Cargar una imagen especializada de Windows Server 2008/2008 R2 en Azure 
 
@@ -85,12 +85,12 @@ En esta sección, implementarás la imagen VHD in Azure.
 > [!IMPORTANT]
 > No uses imágenes de usuario predefinidas en Azure.
 
-1.    Crear un nuevo [grupo de recursos](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate). 
-2.    Crea un nuevo [blob de almacenamiento](https://docs.microsoft.com/rest/api/storageservices/put-blob) dentro del grupo de recursos.
-3.    Crea un [contenedor](https://docs.microsoft.com/rest/api/storageservices/create-container) dentro del blob de almacenamiento.
+1.    Crear un nuevo [grupo de recursos](/rest/api/resources/resourcegroups/createorupdate). 
+2.    Crea un nuevo [blob de almacenamiento](/rest/api/storageservices/put-blob) dentro del grupo de recursos.
+3.    Crea un [contenedor](/rest/api/storageservices/create-container) dentro del blob de almacenamiento.
 4.    Copia el URL del blob de almacenamiento desde las propiedades.
 5.    Usa el script facilitado anteriormente para cargar tu imagen al nuevo blob de almacenamiento.
-6.    Crea un [disco](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image) para el VHD.   
+6.    Crea un [disco](/azure/virtual-machines/windows/prepare-for-upload-vhd-image) para el VHD.   
      a.    Ve a Discos y haz clic en **Agregar**.  
      b.    Introduce un nombre para el disco. Selecciona la suscripción que quieres usar, configura la región y elige el tipo de cuenta.   
      c. En Tipo de fuente, selecciona Almacenamiento. Explora la ubicación del VHD del blob creado usando el script.  
@@ -105,7 +105,3 @@ En esta sección, implementarás la imagen VHD in Azure.
  
         PUERTO: 3389 Protocolo: TCP Acción: Permitir Prioridad: 1000 Nombre: "Regla-RDP".   
      e.    Haga clic en **Crear**.
-
-
-
-

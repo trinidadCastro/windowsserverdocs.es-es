@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 1e11f6c596d7e5eb0bdf379adcf47d21e74e9f6b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4c4d5310fa6cf47945483c9ee7a3f89afd313da9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815628"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966137"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>Replicación DFS: Preguntas más frecuentes
 
@@ -22,15 +22,15 @@ Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, W
 
 En estas preguntas frecuentes se responde a preguntas sobre la característica Replicación de Sistema de archivos distribuido (DFS) (también conocida como DFS-R o DFSR) para Windows Server.
 
-Para obtener información sobre los espacios de nombres DFS, vea [Espacios de nombres DFS: Preguntas más frecuentes](https://technet.microsoft.com/library/ee404780).
+Para obtener información sobre los espacios de nombres DFS, vea [Espacios de nombres DFS: Preguntas más frecuentes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee404780(v=ws.10)).
 
 Para obtener más información sobre las novedades de Replicación DFS, consulta los siguientes temas:
 
-  - [Introducción a Espacios de nombres DFS y Replicación DFS](https://technet.microsoft.com/library/jj127250) (en Windows Server 2012)  
+  - [Introducción a Espacios de nombres DFS y Replicación DFS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) (en Windows Server 2012)  
       
-  - El tema [Novedades de Sistema de archivos distribuido](https://technet.microsoft.com/library/ee307957) de [Cambios de funcionalidad de Windows Server 2008 a Windows Server 2008 R2](https://technet.microsoft.com/library/dd391932)  
+  - El tema [Novedades de Sistema de archivos distribuido](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee307957(v=ws.10)) de [Cambios de funcionalidad de Windows Server 2008 a Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391932(v=ws.10))  
       
-  - El tema [Sistema de archivos distribuido](https://technet.microsoft.com/library/cc753479) en [Cambios de funcionalidad de Windows Server 2003 con SP1 a Windows Server 2008](https://technet.microsoft.com/library/cc753208)  
+  - El tema [Sistema de archivos distribuido](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753479(v=ws.10)) en [Cambios de funcionalidad de Windows Server 2003 con SP1 a Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753208(v=ws.10))  
       
 
 Para ver una lista de los cambios recientes realizados en este tema, consulte la sección [Historial de cambios](#change-history) de este tema.
@@ -47,7 +47,7 @@ No. Replicación DFS no se comunica con Servicio de replicación de archivos (FR
 
 Sí, Replicación DFS puede reemplazar a FRS para la replicación de SYSVOL en servidores que ejecutan Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008. Los servidores que ejecutan Windows Server 2003 R2 no admiten el uso de Replicación DFS para replicar la carpeta SYSVOL.
 
-Para obtener más información sobre la replicación de SYSVOL mediante Replicación DFS, consulta la [Guía de migración de la replicación de SYSVOL: FRS a Replicación DFS](https://technet.microsoft.com/library/dd640019).
+Para obtener más información sobre la replicación de SYSVOL mediante Replicación DFS, consulta la [Guía de migración de la replicación de SYSVOL: FRS a Replicación DFS](./migrate-sysvol-to-dfsr.md).
 
 ### <a name="can-i-upgrade-from-frs-to-dfs-replication-without-losing-configuration-settings"></a>¿Puedo actualizar de FRS a Replicación DFS sin perder los ajustes de configuración?
 
@@ -55,7 +55,7 @@ Sí. Para migrar la replicación de FRS a Replicación DFS, consulta los siguien
 
   - Para migrar la replicación de otras carpetas que no son la carpeta SYSVOL, consulta la [Guía de operaciones DFS: Migración de FRS a Replicación DFS](https://go.microsoft.com/fwlink/?linkid=192776) y [FRS2DFSR: utilidad de migración de FRS a DFSR](https://go.microsoft.com/fwlink/?linkid=195437) (https://go.microsoft.com/fwlink/?LinkID=195437).  
       
-  - Para migrar la replicación de la carpeta SYSVOL a Replicación DFS, consulta la [Guía de migración de la replicación de SYSVOL: FRS a Replicación DFS](https://technet.microsoft.com/library/dd640019).  
+  - Para migrar la replicación de la carpeta SYSVOL a Replicación DFS, consulta la [Guía de migración de la replicación de SYSVOL: FRS a Replicación DFS](./migrate-sysvol-to-dfsr.md).  
       
 
 ### <a name="can-i-use-dfs-replication-in-a-mixed-windowsunix-environment"></a>¿Puedo usar Replicación DFS en un entorno mixto de Windows/UNIX?
@@ -74,7 +74,7 @@ Sí. Replicación DFS es compatible con los volúmenes de Servicio de instantán
 
 No, no se admite el uso de Copias de seguridad de Windows (Ntbackup.exe) en un equipo que ejecuta Windows Server 2003 o una versión anterior para realizar una copia de seguridad del contenido de una carpeta replicada en un equipo que ejecuta Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008.
 
-Para realizar una copia de seguridad de los archivos almacenados en una carpeta replicada, usa Copias de seguridad de Windows Server o Microsoft&reg; System Center Data Protection Manager. Para obtener información sobre la funcionalidad de copia de seguridad y recuperación en Windows Server 2008 R2 y Windows Server 2008, consulta el tema [Copia de seguridad y recuperación](https://technet.microsoft.com/library/Cc754097). Para obtener más información, consulta el tema [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261) (https://go.microsoft.com/fwlink/?LinkId=182261).
+Para realizar una copia de seguridad de los archivos almacenados en una carpeta replicada, usa Copias de seguridad de Windows Server o Microsoft&reg; System Center Data Protection Manager. Para obtener información sobre la funcionalidad de copia de seguridad y recuperación en Windows Server 2008 R2 y Windows Server 2008, consulta el tema [Copia de seguridad y recuperación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754097(v=ws.10)). Para obtener más información, consulta el tema [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261) (https://go.microsoft.com/fwlink/?LinkId=182261).
 
 ### <a name="do-file-system-policies-impact-dfs-replication"></a>¿Afectan las directivas del sistema de archivos a Replicación DFS?
 
@@ -201,7 +201,7 @@ Para obtener más información, consulta "Requisitos de seguridad y delegación 
 
 ### <a name="how-can-i-upgrade-or-replace-a-dfs-replication-member"></a>¿Cómo puedo actualizar o reemplazar un miembro de Replicación DFS?
 
-Para actualizar o reemplazar un miembro de Replicación DFS, consulta esta entrada en Pregunta en el Blog del equipo de servicios de directorio: [Sustitución del hardware o sistema operativo de un miembro de DFSR](https://blogs.technet.com/b/askds/archive/2010/09/10/series-wrap-up-and-downloads-replacing-dfsr-member-hardware-or-os.aspx).
+Para actualizar o reemplazar un miembro de Replicación DFS, consulta esta entrada en Pregunta en el Blog del equipo de servicios de directorio: [Sustitución del hardware o sistema operativo de un miembro de DFSR](/archive/blogs/askds/series-wrap-up-and-downloads-replacing-dfsr-member-hardware-or-os).
 
 ### <a name="is-dfs-replication-suitable-for-replicating-roaming-profiles"></a>¿Es Replicación DFS adecuada para replicar perfiles itinerantes?
 
@@ -280,7 +280,7 @@ Sí. Para obtener más información, consulte [Módulo de administración de Rep
 
 Sí. Replicación DFS admite la administración remota mediante la consola de administración de DFS y el comando **Agregar grupo de replicación**. Por ejemplo, en el servidor A, puedes conectarte a un grupo de replicación definido en el bosque con los servidores A y B como miembros.
 
-Administración de DFS se incluye en Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008 y Windows Server 2003 R2. Para administrar Replicación DFS desde otras versiones de Windows, usa Escritorio remoto o [Herramientas de administración remota del servidor para Windows 7](https://technet.microsoft.com/library/Ee449475).
+Administración de DFS se incluye en Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008 y Windows Server 2003 R2. Para administrar Replicación DFS desde otras versiones de Windows, usa Escritorio remoto o [Herramientas de administración remota del servidor para Windows 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10)).
 
 
 > [!IMPORTANT]
@@ -304,7 +304,7 @@ Sí. Hay varias maneras de supervisar la replicación:
       
   - Administración de DFS incluye un informe de diagnóstico del trabajo pendiente de replicación, la eficacia de la replicación y el número de archivos y carpetas de un grupo de replicación determinado.  
       
-  - El módulo de Windows PowerShell de DFSR en Windows Server 2012 R2 contiene cmdlets para iniciar pruebas de propagación y escribir informes de propagación y mantenimiento. Para obtener más información, consulta [Cmdlets de replicación de Sistema de archivos distribuido en Windows PowerShell](https://technet.microsoft.com/library/dn296601.aspx).  
+  - El módulo de Windows PowerShell de DFSR en Windows Server 2012 R2 contiene cmdlets para iniciar pruebas de propagación y escribir informes de propagación y mantenimiento. Para obtener más información, consulta [Cmdlets de replicación de Sistema de archivos distribuido en Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10)).  
       
   - Dfsrdiag.exe es una herramienta de línea de comandos que puede generar un recuento de los trabajos pendientes o desencadenar una prueba de propagación. Ambas acciones muestran el estado de replicación. La propagación muestra si los archivos se replican en todos los nodos. El trabajo pendiente muestra cuántos archivos se deben replicar aún para que los dos equipos estén sincronizados. El recuento de trabajos pendientes es el número de actualizaciones que un miembro del grupo de replicación no ha procesado. En los equipos que ejecutan Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2, Dfsrdiag.exe también se pueden mostrar las actualizaciones que Replicación DFS está replicando actualmente.  
       
@@ -331,7 +331,7 @@ No. Replicación DFS usa la topología definida por el administrador, que es ind
 
 ### <a name="how-can-i-improve-replication-performance"></a>¿Cómo puedo mejorar el rendimiento de la replicación?
 
-Para obtener información acerca de los distintos métodos para optimizar el rendimiento de la replicación, consulta [Ajuste del rendimiento de la replicación en DFSR](https://blogs.technet.com/b/askds/archive/2010/03/31/tuning-replication-performance-in-dfsr-especially-on-win2008-r2.aspx) en [Pregunta en el Blog del equipo de servicios de directorio](https://blogs.technet.com/b/askds/).
+Para obtener información acerca de los distintos métodos para optimizar el rendimiento de la replicación, consulta [Ajuste del rendimiento de la replicación en DFSR](/archive/blogs/askds/tuning-replication-performance-in-dfsr-especially-on-win2008-r2) en [Pregunta en el Blog del equipo de servicios de directorio](/archive/blogs/askds/).
 
 ### <a name="how-does-dfs-replication-avoid-saturating-a-connection"></a>¿Cómo evita Replicación DFS la saturación de una conexión?
 
@@ -339,7 +339,7 @@ En Replicación DFS, puedes establecer el ancho de banda máximo que deseas usar
 
 Sin embargo, el límite de ancho de banda no tiene una precisión de 100 % y Replicación DFS puede saturar el vínculo durante breves períodos de tiempo. Esto se debe a que Replicación DFS limita el ancho de banda mediante la limitación de las llamadas RPC. Dado que este proceso se basa en varios búferes en niveles inferiores de la pila de red, incluido RPC, el tráfico de la replicación tiende a viajar en ráfagas que, en ocasiones, pueden saturar los vínculos de red.
 
-Replicación DFS en Windows Server 2008 incluye varias mejoras de rendimiento, como se describe en [Sistema de archivos distribuido](https://technet.microsoft.com/library/Cc753479), un tema de [Cambios en la funcionalidad de Windows Server 2003 con SP1 a Windows Server 2008](https://technet.microsoft.com/library/cc753208).
+Replicación DFS en Windows Server 2008 incluye varias mejoras de rendimiento, como se describe en [Sistema de archivos distribuido](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753479(v=ws.10)), un tema de [Cambios en la funcionalidad de Windows Server 2003 con SP1 a Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753208(v=ws.10)).
 
 ### <a name="how-does-dfs-replication-performance-compare-with-frs"></a>¿Cómo es el rendimiento de Replicación DFS en comparación con FRS?
 
@@ -533,9 +533,9 @@ La replicación inicial no necesita replicar contenido cuando los archivos solo 
 
 Para preconfigurar un miembro del grupo de replicación, copia los archivos en la carpeta adecuada de los servidores de destino, crea el grupo de replicación y, a continuación, elige un miembro principal. Selecciona el miembro que contenga los archivos más actualizados que deseas replicar, ya que el contenido del miembro principal se considera "autoritativo". Esto significa que, durante la replicación inicial, los archivos del miembro principal siempre sobrescribirán otras versiones de los archivos en otros miembros del grupo de replicación.
 
-Para obtener información sobre la inicialización previa y la clonación de la base de datos de DFSR, consulta [Sincronización inicial de Replicación DFS en Windows Server 2012 R2: ataque de los clones](https://blogs.technet.com/b/filecab/archive/2013/08/21/dfs-replication-initial-sync-in-windows-server-2012-r2-attack-of-the-clones.aspx).
+Para obtener información sobre la inicialización previa y la clonación de la base de datos de DFSR, consulta [Sincronización inicial de Replicación DFS en Windows Server 2012 R2: ataque de los clones](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
 
-Para obtener más información sobre la replicación inicial, consulta [Crear un grupo de replicación](https://technet.microsoft.com/library/cc725893).
+Para obtener más información sobre la replicación inicial, consulta [Crear un grupo de replicación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725893(v=ws.11)).
 
 ### <a name="does-dfs-replication-overcome-common-file-replication-service-issues"></a>¿Soluciona Replicación DFS los problemas comunes del servicio de replicación de archivos?
 
@@ -562,7 +562,7 @@ Si una aplicación abre un archivo y crea un bloqueo de archivo (evitando que lo
       
   - Microsoft no admite la creación de vínculos físicos NTFS en o desde archivos de una carpeta replicada; si lo haces, pueden producirse problemas de replicación con los archivos afectados. Replicación DFS omite los archivos de vínculo físico y no se replican. Los puntos de unión tampoco se replican y Replicación DFS registra el evento 4406 para cada punto de unión que encuentra.  
       
-  - Los únicos puntos de reanálisis que Replicación DFS replica son los que usan la etiqueta IO\_REPARSE\_TAG\_SYMLINK; sin embargo, Replicación DFS no garantiza que también se replique el destino de symlink. Para obtener más información, consulta [Pregunta en el Blog del equipo de servicios de directorio](https://blogs.technet.com/b/askds/archive/2011/09/30/friday-mail-sack-super-slo-mo-edition.aspx).  
+  - Los únicos puntos de reanálisis que Replicación DFS replica son los que usan la etiqueta IO\_REPARSE\_TAG\_SYMLINK; sin embargo, Replicación DFS no garantiza que también se replique el destino de symlink. Para obtener más información, consulta [Pregunta en el Blog del equipo de servicios de directorio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725893(v=ws.11)).  
       
   - Los archivos con las etiquetas de reanálisis IO\_REPARSE\_TAG\_DEDUP, IO\_REPARSE\_TAG\_SIS o IO\_REPARSE\_TAG\_HSM se replican como archivos normales. La etiqueta de reanálisis y los búferes de datos de reanálisis no se replican en otros servidores porque el punto de reanálisis solo funciona en el sistema local. Por lo tanto, Replicación DFS puede replicar carpetas en volúmenes que usan la desduplicación de datos en Windows Server 2012 o Almacenamiento de instancia única (SIS); sin embargo, la información de desduplicación de datos se mantiene por separado en cada servidor en el que está habilitado el servicio de rol.  
       
@@ -610,7 +610,7 @@ De forma predeterminada, se comparten un máximo de 16 (cuatro en Windows Server
 
 ### <a name="how-do-i-force-replication-or-polling"></a>¿Cómo fuerzo la replicación o el sondeo?
 
-Puedes forzar la replicación de inmediato mediante Administración de DFS, tal como se describe en [Edición de programaciones de replicación](https://technet.microsoft.com/library/Cc732278). También puedes forzar la replicación mediante el cmdlet `Sync-DfsReplicationGroup`, incluido en el módulo de PowerShell de DFSR, que se presentó con Windows Server 2012 R2, o el comando **Dfsrdiag SyncNow**. Puedes forzar el sondeo mediante el cmdlet `Update-DfsrConfigurationFromAD` o el comando **Dfsrdiag PollAD**.
+Puedes forzar la replicación de inmediato mediante Administración de DFS, tal como se describe en [Edición de programaciones de replicación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732278(v=ws.11)). También puedes forzar la replicación mediante el cmdlet `Sync-DfsReplicationGroup`, incluido en el módulo de PowerShell de DFSR, que se presentó con Windows Server 2012 R2, o el comando **Dfsrdiag SyncNow**. Puedes forzar el sondeo mediante el cmdlet `Update-DfsrConfigurationFromAD` o el comando **Dfsrdiag PollAD**.
 
 ### <a name="is-it-possible-to-configure-a-quiet-time-between-replications-for-files-that-change-frequently"></a>¿Es posible configurar un tiempo de espera entre las replicaciones de los archivos que cambian con frecuencia?
 
@@ -639,7 +639,7 @@ Durante la replicación inicial, los archivos del miembro principal siempre tend
 
 Si se produce un error en la replicación inicial o el servicio Replicación DFS se reinicia durante la replicación, el miembro principal verá la designación de miembro principal en la base de datos de Replicación DFS local y volverá a intentar la replicación inicial. Si se pierde la base de datos de Replicación DFS del miembro principal después de borrar la designación principal en Active Directory Domain Services, pero antes de que se complete la replicación inicial de todos los miembros del grupo de replicación, se producirá un error en todos los miembros del grupo de replicación al replicar la carpeta porque no hay ningún servidor designado como miembro principal. Si ocurre esto, usa el comando **Dfsradmin membership /set /isprimary:true** en el servidor del miembro principal para restaurar manualmente la designación del miembro principal.
 
-Para obtener más información sobre la replicación inicial, consulta [Crear un grupo de replicación](https://technet.microsoft.com/library/cc725893).
+Para obtener más información sobre la replicación inicial, consulta [Crear un grupo de replicación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725893(v=ws.11)).
 
 
 > [!WARNING]
@@ -787,4 +787,3 @@ Si ya se está transmitiendo alguna parte del archivo, Replicación DFS continú
 </tr>
 </tbody>
 </table>
-

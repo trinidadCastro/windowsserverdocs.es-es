@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 658875f132712d34a2c59967ebd316e8c5edca7c
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 9052e9e6a1327b67fd75b07ab2ee6fc56b1190ac
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070550"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962143"
 ---
 # <a name="smb-security-enhancements"></a>Mejoras de seguridad SMB
 
@@ -76,7 +76,7 @@ Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 La funcionalidad de negociación segura de dialectos que se describe en la sección siguiente evita que un ataque de tipo "Man in the Middle" cambie una conexión de SMB 3.0 a SMB 2.0 (que usaría acceso sin cifrar). Sin embargo, no impide el cambio a SMB 1.0, lo que también daría lugar a un acceso sin cifrar. Para garantizar que los clientes SMB 3.0 usen siempre el cifrado SMB para acceder a los recursos compartidos cifrados, debes deshabilitar el servidor SMB 1.0. (Para obtener instrucciones, consulta la sección [Deshabilitación de SMB 1.0](#disabling-smb-10)). Si la opción de configuración **–RejectUnencryptedAccess** se deja en su valor predeterminado **$true**, solo los clientes SMB 3.0 compatibles con cifrado podrán acceder a los recursos compartidos de archivos (también se rechazará a los clientes SMB 1.0).
 
 >[!NOTE]
->* El cifrado SMB usa el algoritmo Estándar de cifrado avanzado (AES)-CCM para cifrar y descifrar los datos. AES-CCM también proporciona validación de integridad de datos (firma) para los recursos compartidos de archivos cifrados, independientemente de la configuración de firma de SMB. Si quieres habilitar la firma SMB sin cifrado, puedes continuar. Para obtener más información, consulta [los aspectos básicos de la firma SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
+>* El cifrado SMB usa el algoritmo Estándar de cifrado avanzado (AES)-CCM para cifrar y descifrar los datos. AES-CCM también proporciona validación de integridad de datos (firma) para los recursos compartidos de archivos cifrados, independientemente de la configuración de firma de SMB. Si quieres habilitar la firma SMB sin cifrado, puedes continuar. Para obtener más información, consulta [los aspectos básicos de la firma SMB](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2).
 >* Puedes tener problemas al tratar de acceder al recurso compartido de archivos o al servidor si tu organización usa dispositivos de aceleración de red de área extensa (WAN).
 >* Con una configuración predeterminada (donde no se permite el acceso sin cifrar a los recursos compartidos de archivos cifrados), si los clientes que no admiten SMB 3.0 intentan acceder a un recurso compartido de archivos cifrado, el identificador de evento 1003 se registra en el registro de eventos Microsoft-Windows-SmbServer/Operational y el cliente recibe un mensaje de error **Acceso denegado**.
 >* El cifrado SMB y el Sistema de cifrado de archivos (EFS) del sistema de archivos NTFS no están relacionados, y el cifrado SMB no requiere ni depende del uso de EFS.
@@ -90,7 +90,7 @@ La funcionalidad de negociación segura de dialectos que se describe en la secci
 
 ## <a name="new-signing-algorithm"></a>Nuevo algoritmo de firma
 
-SMB 3.0 usa un algoritmo de cifrado más reciente para la firma: el código de autenticación de mensajes basado en cifrado con Estándar de cifrado avanzado (AES). SMB 2.0 usaba el algoritmo de cifrado HMAC-SHA256 anterior. AES-CMAC y AES-CCM pueden acelerar significativamente el cifrado de datos en la mayoría de las CPU modernas que son compatibles con las instrucciones AES. Para obtener más información, consulta [los aspectos básicos de la firma SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
+SMB 3.0 usa un algoritmo de cifrado más reciente para la firma: el código de autenticación de mensajes basado en cifrado con Estándar de cifrado avanzado (AES). SMB 2.0 usaba el algoritmo de cifrado HMAC-SHA256 anterior. AES-CMAC y AES-CCM pueden acelerar significativamente el cifrado de datos en la mayoría de las CPU modernas que son compatibles con las instrucciones AES. Para obtener más información, consulta [los aspectos básicos de la firma SMB](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2).
 
 ## <a name="disabling-smb-10"></a>Deshabilitación de SMB 1.0
 

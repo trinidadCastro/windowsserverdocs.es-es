@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
-ms.openlocfilehash: 441b0b24fd4b4dc18d3afd65283bbf7ff2417048
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2635302c79f5bfb8ca446f78d543e19656644102
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80818447"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966717"
 ---
 # <a name="remote-desktop-services-architecture"></a>Arquitectura de Servicios de Escritorio remoto
 
@@ -45,13 +45,13 @@ Aunque las arquitecturas estándar de implementación de RDS se adaptan a la may
 
 ### <a name="rds-deployment-with-azure-ad-domain-services"></a>Implementación de RDS con Azure AD Domain Services
 
-Los dos diagramas de arquitecturas estándar anteriores se basan en una instancia tradicional de Active Directory (AD) implementada en una máquina virtual de Windows Server. Sin embargo, si no dispones de una instancia tradicional de AD y solo tienes un inquilino de Azure AD a través de servicios como Office 365, pero quieres sacar el máximo partido a los Servicios de Escritorio remoto, puedes usar [Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) para crear un dominio totalmente administrado en el entorno de IaaS de Azure que utilice los mismos usuarios que ya existen en el inquilino de Azure AD. Esto acaba con la dificultad a la hora de sincronizar manualmente usuarios y de administrar más máquinas virtuales. Azure AD Domain Services puede funcionar con cualquier tipo de implementación: básica o de alta disponibilidad.
+Los dos diagramas de arquitecturas estándar anteriores se basan en una instancia tradicional de Active Directory (AD) implementada en una máquina virtual de Windows Server. Sin embargo, si no dispones de una instancia tradicional de AD y solo tienes un inquilino de Azure AD a través de servicios como Office 365, pero quieres sacar el máximo partido a los Servicios de Escritorio remoto, puedes usar [Azure AD Domain Services](/azure/active-directory-domain-services/active-directory-ds-overview) para crear un dominio totalmente administrado en el entorno de IaaS de Azure que utilice los mismos usuarios que ya existen en el inquilino de Azure AD. Esto acaba con la dificultad a la hora de sincronizar manualmente usuarios y de administrar más máquinas virtuales. Azure AD Domain Services puede funcionar con cualquier tipo de implementación: básica o de alta disponibilidad.
 
 ![Azure AD e implementación de RDS](./media/aadds-rds.png)
 
 ### <a name="rds-deployment-with-azure-ad-application-proxy"></a>Implementación de RDS con Azure AD Application Proxy
 
-Los dos diagramas de arquitectura estándar anteriores utilizan los servidores de acceso web y puerta de enlace de Escritorio remoto como punto de entrada desde Internet al sistema de RDS. En algunos entornos, los administradores prefieren quitar sus propios servidores del perímetro y, en su lugar, usar las tecnologías de proxy inverso que también proporcionan seguridad adicional. El rol de PaaS de [Azure AD Application Proxy](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started) se adapta perfectamente a este escenario.
+Los dos diagramas de arquitectura estándar anteriores utilizan los servidores de acceso web y puerta de enlace de Escritorio remoto como punto de entrada desde Internet al sistema de RDS. En algunos entornos, los administradores prefieren quitar sus propios servidores del perímetro y, en su lugar, usar las tecnologías de proxy inverso que también proporcionan seguridad adicional. El rol de PaaS de [Azure AD Application Proxy](/azure/active-directory/active-directory-application-proxy-get-started) se adapta perfectamente a este escenario.
 
 Para ver las configuraciones admitidas y cómo crear esta configuración, consulta cómo [publicar el Escritorio remoto con Azure AD Application Proxy](/azure/active-directory/application-proxy-publish-remote-desktop).
 

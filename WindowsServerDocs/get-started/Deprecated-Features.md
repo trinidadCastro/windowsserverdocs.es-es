@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e13886395040619a7509c3cf896112288c48115
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d2a1627a0a941f12da4731291a032e4b2e1ad887
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74945205"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962027"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Características eliminadas o en desuso en Windows Server 2016
 
@@ -31,7 +31,7 @@ A continuación se enumeran las características y funcionalidades de Windows Se
 Las siguientes características y funcionalidades se quitaron de esta versión de Windows Server 2016. Las aplicaciones, el código o el uso que dependen de estas características no funcionarán en esta versión, a menos que se emplee un método alternativo.  
 
 > [!NOTE]  
-> Si va a pasar a Windows Server 2016 desde una versión de servidor anterior a Windows Server 2012 R2 o Windows Server 2012, también debe consultar [Características quitadas o desusadas en Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx) y [Características o funcionalidades desusadas en Windows Server 2012](https://technet.microsoft.com/library/hh831568.aspx).  
+> Si va a pasar a Windows Server 2016 desde una versión de servidor anterior a Windows Server 2012 R2 o Windows Server 2012, también debe consultar [Características quitadas o desusadas en Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)) y [Características o funcionalidades desusadas en Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831568(v=ws.11)).  
 
 ### <a name="share-and-storage-management"></a>Administración de almacenamiento y recursos compartidos
 
@@ -49,7 +49,7 @@ El archivo Journal.dll se ha suprimido en Windows Server 2016. No hay sustituci�
 
 ### <a name="security-configuration-wizard"></a>Asistente para configuración de seguridad
 
-El Asistente para configuración de seguridad se ha quitado. En su lugar, se protegen las características de forma predeterminada. Si necesita controlar la configuración de seguridad específica, puede usar una directiva de grupo o el [Administrador de cumplimiento de normas de seguridad de Microsoft](https://technet.microsoft.com/solutionaccelerators/cc835245.aspx).  
+El Asistente para configuración de seguridad se ha quitado. En su lugar, se protegen las características de forma predeterminada. Si necesita controlar la configuración de seguridad específica, puede usar una directiva de grupo o el [Administrador de cumplimiento de normas de seguridad de Microsoft](/previous-versions/tn-archive/cc936627(v=technet.10)).  
 
 ### <a name="sqm"></a>SQM
 
@@ -79,7 +79,7 @@ Las siguientes características y funcionalidades quedarán en desuso a partir d
 
 -   **Scregedit.exe** ha quedado en desuso. Si tiene scripts que dependen de Scregedit.exe, ajústelos para que utilicen los métodos Reg.exe o de Windows PowerShell.  
 
--   **Sconfig.exe** ha quedado en desuso. En su lugar, utiliza [Sconfig. cmd](https://docs.microsoft.com/windows-server/get-started/sconfig-on-ws2016). 
+-   **Sconfig.exe** ha quedado en desuso. En su lugar, utiliza [Sconfig. cmd](./sconfig-on-ws2016.md). 
 
 ### <a name="netcfg-custom-apis"></a>API personalizadas de NetCfg
 

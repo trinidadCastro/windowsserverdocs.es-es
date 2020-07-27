@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 86c5f59fcd403e838a316174840b93608d7f06ec
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 36996d7f69c33198587dbe5297650c16ffeb1da2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858148"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959327"
 ---
 # <a name="remote-desktop-services---high-availability"></a>Servicios de Escritorio remoto: Alta disponibilidad
 
@@ -23,10 +23,10 @@ ms.locfileid: "80858148"
 Los errores y la limitación son inevitables en sistemas a gran escala. Resulta fácil configurar roles de infraestructura de Escritorio remoto que admitan la alta disponibilidad y permitan que los usuarios finales se conecten siempre fácilmente.
 
 En Servicios de Escritorio remoto, los siguientes elementos representan los roles de infraestructura de Escritorio remoto, con sus correspondientes instrucciones para establecer la alta disponibilidad:
-- [Agente de conexión a Escritorio remoto](Deploy-a-Remote-Desktop-Connection-Broker-cluster.md)
-- [Puerta de enlace de Escritorio remoto](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
+- [Agente de conexión a Escritorio remoto](./rds-connection-broker-cluster.md)
+- [Puerta de enlace de Escritorio remoto](./rds-rdweb-gateway-ha.md)
 - Administración de licencias de Escritorio remoto
-- [Acceso web de Escritorio remoto](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
+- [Acceso web de Escritorio remoto](./rds-rdweb-gateway-ha.md)
 
 La alta disponibilidad se establece mediante la duplicación de cada uno de los servicios de roles en segundas máquinas. En Azure, puedes recibir un tiempo de actividad garantizado al colocar el conjunto de las dos máquinas virtuales (que hospedan el mismo rol) en un conjunto de disponibilidad.
 

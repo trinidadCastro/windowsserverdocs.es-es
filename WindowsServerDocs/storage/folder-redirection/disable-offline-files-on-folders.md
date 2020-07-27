@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c2614c0180b32a0215454f2d725d6a962986ef1f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0219c669a52d961cc98d6b0ee16bcbcfbbb78417
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394395"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961577"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>Deshabilitación de Archivos sin conexión en carpetas redirigidas individuales
 
@@ -22,7 +22,7 @@ ms.locfileid: "71394395"
 En este tema se describe cómo deshabilitar el almacenamiento en caché de Archivos sin conexión en carpetas individuales que se redirigen a recursos compartidos de red mediante Redirección de carpetas. Este proceso permite especificar las carpetas que se excluirán del almacenamiento en caché de forma local, lo que reduce el tamaño de la caché de Archivos sin conexión y el tiempo necesario para sincronizar Archivos sin conexión.
 
 >[!NOTE]
->Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, consulta [Conceptos básicos de Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6).
+>Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, consulta [Conceptos básicos de Windows PowerShell](/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6).
 
 ## <a name="prerequisites"></a>Requisitos previos
 

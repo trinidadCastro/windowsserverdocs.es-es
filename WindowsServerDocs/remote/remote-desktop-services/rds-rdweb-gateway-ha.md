@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: e98bbda5460311dd379eab6f5a5bde0ec3845d5c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c34d0bd2654d36e447053348392b4b9a6957e60f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860288"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960197"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>Adición de alta disponibilidad al front-end web de la puerta de enlace y de la web de Escritorio remoto
 
@@ -96,7 +96,7 @@ Si usas la infraestructura de Azure, puedes crear un equilibrador de carga exter
     4.  En **Dirección IP pública**, selecciona **Elegir una dirección IP pública** y, a continuación, elige una dirección IP pública existente o crea una nueva.
     5.  Selecciona los valores apropiados para la **suscripción**, el **grupo de recursos** y la **ubicación**.
     6.  Haga clic en **Crear**.  
-2. Crea un [sondeo](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/) para supervisar los servidores que están activos:  
+2. Crea un [sondeo](/azure/load-balancer/load-balancer-custom-probe-overview) para supervisar los servidores que están activos:  
     1.  En Azure Portal, selecciona **Examinar** > **Equilibradores de carga** y, a continuación, elige el equilibrador de carga que creaste en el paso anterior.
     2.  Selecciona **Toda la configuración** > **Sondeos** > **Agregar**.  
     3.  Escribe un nombre, por ejemplo, **HTTPS**, para el sondeo. Selecciona **TCP** en **Protocolo** y escribe **443** para **Puerto**; a continuación,haz clic en **Aceptar**.   

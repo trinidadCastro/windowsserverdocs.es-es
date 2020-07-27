@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 7b42db8c0be5e1a447ad0a3b794b07672c164514
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: a37c7e8765ba6f83fc1ebe20aaba3dfb8bc29a3d
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433149"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891350"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Preparación del entorno para Windows Admin Center
 
@@ -63,7 +63,7 @@ Para habilitar el Rol de servidor de archivos para el uso compartido básico de 
 1. Haz clic en **Roles y características** en el menú **Herramientas**.
 2. En **Roles y características**, busca **Servicios de archivos y almacenamiento** y marca **Servicios de iSCSI y archivo** y **Servidor de archivos**:
 
-![Captura de pantalla de roles y características que muestran el rol Servicios de iSCSI y archivo seleccionado](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![Captura de pantalla de roles y características que muestran el rol Servicios de iSCSI y archivo seleccionado](../media/prepare-environment/prepare-your-environment-image-1.png)
 
 ### <a name="step-3-enable-hyper-v-module-for-powershell"></a>**Paso 3:** Habilita el módulo de Hyper-V para PowerShell
 
@@ -72,7 +72,7 @@ Para habilitar el módulo de Hyper-V para las características de PowerShell:
 1. Haz clic en **Roles y características** en el menú **Herramientas**.
 2. En **Roles y características**, busca **Herramientas de administración remota del servidor** y marca **Herramientas de administración de roles** y **Módulo de Hyper-V para PowerShell**:
 
-![Captura de pantalla de Roles y características que muestran los roles de Hyper-V seleccionados](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![Captura de pantalla de Roles y características que muestran los roles de Hyper-V seleccionados](../media/prepare-environment/prepare-your-environment-image-2.png)
 
 Microsoft Hyper-V Server 2016 ahora está listo para la administración con Windows Admin Center.
 
@@ -111,7 +111,7 @@ Para habilitar el Rol de servidor de archivos para el uso compartido básico de 
 1. Haz clic en **Roles y características** en el menú **Herramientas**.
 2. En **Roles y características**, busca **Servicios de archivos y almacenamiento** y marca **Servicios de iSCSI y archivo** y **Servidor de archivos**:
 
-![Captura de pantalla de roles y características que muestran el rol Servicios de iSCSI y archivo seleccionado](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![Captura de pantalla de roles y características que muestran el rol Servicios de iSCSI y archivo seleccionado](../media/prepare-environment/prepare-your-environment-image-1.png)
 
 ### <a name="step-4-enable-hyper-v-module-for-powershell"></a>Paso 4: Habilita el módulo de Hyper-V para PowerShell
 
@@ -120,7 +120,7 @@ Para habilitar el módulo de Hyper-V para las características de PowerShell:
 1. Haz clic en **Roles y características** en el menú **Herramientas**.
 2. En **Roles y características**, busca **Herramientas de administración remota del servidor** y marca **Herramientas de administración de roles** y **Módulo de Hyper-V para PowerShell**:
 
-![Captura de pantalla de Roles y características que muestran las herramientas de administración remota del servidor de Hyper-V seleccionadas](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![Captura de pantalla de Roles y características que muestran las herramientas de administración remota del servidor de Hyper-V seleccionadas](../media/prepare-environment/prepare-your-environment-image-2.png)
 
 Microsoft Hyper-V Server 2012 R2 ahora está listo para la administración con Windows Admin Center.
 

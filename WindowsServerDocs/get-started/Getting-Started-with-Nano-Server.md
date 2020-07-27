@@ -10,12 +10,12 @@ ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 68de1697c8655075041cd9e598ccd2bbc2e6237b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4002126ee6d9919c0a7fbfb3c068587c9acbecef
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826988"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953687"
 ---
 # <a name="install-nano-server"></a>Instalación de Nano Server
 
@@ -45,18 +45,18 @@ Debido a que Nano Server está optimizado como un sistema operativo ligero para 
 - Nano Server es un equipo sin periféricos; es decir, no hay interfaz de usuario gráfica ni capacidades de inicio de sesión local.
 - Solo se admiten aplicaciones, herramientas y agentes de 64 bits.
 - Nano Server no puede actuar como un controlador de dominio de Active Directory.
-- No se admiten directivas de grupo. Sin embargo, puede usar [configuración de estado deseado](https://msdn.microsoft.com/powershell/dsc/nanoDsc) para aplicar opciones de configuración a escala.
+- No se admiten directivas de grupo. Sin embargo, puede usar [configuración de estado deseado](/previous-versions//dn387184(v=vs.85)) para aplicar opciones de configuración a escala.
 - Nano Server no puede configurarse para utilizar un servidor proxy para acceder a Internet.
 - No se admite la formación de equipos NIC (concretamente, el equilibrio de carga y la conmutación por error o LBFO). En su lugar, se admite Switch Embedded Teaming (SET).
 - Microsoft Endpoint Configuration Manager y System Center Data Protection Manager no son compatibles.
 - Los cmdlets Analizador de procedimientos recomendados (BPA) y la integración de BPA con el Administrador del servidor no son compatibles.
 - Nano Server no admite adaptadores de bus host virtuales (HBA).
-- No es necesario activar Nano Server con una clave de producto. Cuando Nano Server funciona como host de Hyper-V, no admite la [activación automática de máquina virtual](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx) (AVMA). Las máquinas virtuales que se ejecutan en un host de Nano Server pueden activarse mediante el [Servicio de administración de claves](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) (KMS) con una clave de licencia de volumen genérica o usando la [activación basada en Active Directory](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx).
+- No es necesario activar Nano Server con una clave de producto. Cuando Nano Server funciona como host de Hyper-V, no admite la [activación automática de máquina virtual](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)) (AVMA). Las máquinas virtuales que se ejecutan en un host de Nano Server pueden activarse mediante el [Servicio de administración de claves](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867(v=ws.11)) (KMS) con una clave de licencia de volumen genérica o usando la [activación basada en Active Directory](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502534(v=ws.11)).
 - La versión de Windows PowerShell proporcionada con Nano Server tiene diferencias importantes. Para obtener más información, consulte [PowerShell en Nano Server](PowerShell-on-Nano-Server.md).
 - Nano Server solo es compatible con el modelo de Rama actual para empresas (CBB), pues actualmente no hay ninguna versión de Rama de mantenimiento a largo plazo (LTSB). Consulte las siguientes subsección para obtener más información.
 
 ### <a name="current-branch-for-business"></a>Rama actual para empresas
-Nano Server se provee con un modelo más activo, llamado Rama actual para empresas (CBB) para ofrecer compatibilidad con clientes que están migrando en una cadencia en la nube, con ciclos de desarrollo rápidos. En este modelo, las actualizaciones de características de Nano Server se publicarán de dos a tres veces al año. Este modelo requiere [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx) para Nano Server implementados y operados en producción. Para mantener la compatibilidad, los administradores no deben tener más de dos versiones atrasadas de CBB con respecto a la actual. Sin embargo, estas versiones no actualizan automáticamente las implementaciones existentes; los administradores deben realizar una instalación manual de las nuevas versiones de CBB según les convenga. Para obtener más información, consulte [Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/) (Nueva opción de mantenimiento de Rama actual para empresas de Windows Server 2016).
+Nano Server se provee con un modelo más activo, llamado Rama actual para empresas (CBB) para ofrecer compatibilidad con clientes que están migrando en una cadencia en la nube, con ciclos de desarrollo rápidos. En este modelo, las actualizaciones de características de Nano Server se publicarán de dos a tres veces al año. Este modelo requiere [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx) para Nano Server implementados y operados en producción. Para mantener la compatibilidad, los administradores no deben tener más de dos versiones atrasadas de CBB con respecto a la actual. Sin embargo, estas versiones no actualizan automáticamente las implementaciones existentes; los administradores deben realizar una instalación manual de las nuevas versiones de CBB según les convenga. Para obtener más información, consulte [Windows Server 2016 new Current Branch for Business servicing option](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/) (Nueva opción de mantenimiento de Rama actual para empresas de Windows Server 2016).
 
 Las opciones de instalación Server Core y Server con experiencia de escritorio todavía se proporcionan en el [modelo de Rama de mantenimiento a largo plazo (LTSB)](https://support.microsoft.com/lifecycle#gp%2Fgp_msl_policy), que comprende 5 años de soporte general y 5 años de soporte extendido.
 

@@ -8,19 +8,19 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e31cfa892019e4f3bbcd3b67dbb42751cc58dd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d56b2d002b0403971dc50fab639f77bddf1f8809
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963041"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959887"
 ---
 # <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>Ejemplo: Solución de problemas de clientes de activación basada en Active Directory (ADBA) que no se activan
 
 > [!NOTE]
 > Este artículo se publicó originalmente como blog de TechNet el 26 de marzo de 2018.
 
-¡Hola a todos! Mi nombre es Mike Kammer y he sido PFE de plataformas en Microsoft durante tan solo dos años. Recientemente, he ayudado a un cliente a implementar Windows Server 2016 en su entorno. Aprovechamos esta oportunidad para también migrar su metodología de activación desde un servidor de KMS a la [activación basada en Active Directory](https://docs.microsoft.com/previous-versions/windows/hh852637(v=win.10)).
+¡Hola a todos! Mi nombre es Mike Kammer y he sido PFE de plataformas en Microsoft durante tan solo dos años. Recientemente, he ayudado a un cliente a implementar Windows Server 2016 en su entorno. Aprovechamos esta oportunidad para también migrar su metodología de activación desde un servidor de KMS a la [activación basada en Active Directory](/previous-versions/windows/hh852637(v=win.10)).
 
 Como procedimiento adecuado para hacer todos los cambios, comenzamos la migración en el entorno de prueba del cliente. Para comenzar la implementación, seguimos las instrucciones de esta excelente publicación de blog de Charity Shelbourne, la activación basada en directorios [Active Directory-Based Activation vs. Key Management Services](https://techcommunity.microsoft.com/t5/Core-Infrastructure-and-Security/Active-Directory-Based-Activation-vs-Key-Management-Services/ba-p/256016) (Activación basada en Active Directory frente a Servicios de administración de claves). Los controladores de dominio del entorno de prueba se ejecutaban todos en Windows Server 2012 R2, por lo que no fue necesario preparar el bosque. Instalamos el rol en un controlador de dominio de Windows Server 2012 R2 y elegimos la activación basada en Active Directory como método de activación por volumen. Instalamos la clave de KMS y le asignamos el nombre "KMS AD Activation ( ** LAB)". Prácticamente seguimos la publicación de blog paso a paso.
 
@@ -70,7 +70,7 @@ Al buscar este código, encontré un artículo que dice que el código de error 
 
 Así que sé que el DNS está bien. Active Directory está configurado correctamente como origen de activación de KMS. El servidor físico se ha activado correctamente. ¿Podría tratarse de un problema solo con las VM? Como nota colateral interesante en este momento, mi cliente me informa que alguien de otro departamento ha decidido crear también más de una decena de máquinas virtuales de Windows Server 2016. Así que ahora supongo que tengo que lidiar con otra decena de servidores que no se van a activar. Pero no. Esos servidores se activaron sin problemas.
 
-Bueno, volví al comando **slmgr** para descubrir cómo se activan estos monstruos. Esta vez voy a usar el modificador **/ipk**, que me permitirá instalar una clave de producto. Fui a [este sitio](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867(v=ws.11)) para obtener las claves adecuadas para la versión Standard de Windows Server 2016. Algunos de los servidores son Datacenter, pero necesito corregir este primero.
+Bueno, volví al comando **slmgr** para descubrir cómo se activan estos monstruos. Esta vez voy a usar el modificador **/ipk**, que me permitirá instalar una clave de producto. Fui a [este sitio](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj612867(v=ws.11)) para obtener las claves adecuadas para la versión Standard de Windows Server 2016. Algunos de los servidores son Datacenter, pero necesito corregir este primero.
 
 ![Imagen que muestra la lista de claves de configuración de cliente KMS](./media/032618_1700_Troubleshoo9.png)
 

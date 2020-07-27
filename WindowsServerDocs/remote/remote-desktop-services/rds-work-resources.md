@@ -7,12 +7,12 @@ ms.author: helohr
 ms.date: 10/26/2017
 ms.topic: article
 author: Heidilohr
-ms.openlocfilehash: ea7e1505f705c87e58145e7a306ed355ab3acf7f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ec07fe6c93f1f2c3350af7a9bd0bc2be0a384b93
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71387051"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963247"
 ---
 # <a name="customize-the-rds-title-work-resources-using-powershell-on-windows-server"></a>Personalizar el título de RDS "Recursos de trabajo" con PowerShell en Windows Server
 
@@ -42,4 +42,4 @@ Si ejecutas a varios Agentes de conexión en modo de Alta disponibilidad, debes 
     Set-RDWorkspace -Name "Contoso RemoteApps" -ConnectionBroker (Get-RDConnectionBrokerHighAvailability).ActiveManagementServer
 ```
 
-Para más información sobre el cmdlet Set-RDWorkspace, consulta la referencia [Set-RDSWorkspace](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdworkspace?view=win10-ps).
+Para más información sobre el cmdlet Set-RDWorkspace, consulta la referencia [Set-RDSWorkspace](/powershell/module/remotedesktop/set-rdworkspace?view=win10-ps).

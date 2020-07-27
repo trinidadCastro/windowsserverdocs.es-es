@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 806a2aced95421bd469ba885d4a81c219ae1b651
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 4165561524dcb8572dbafc3904638fcb4513d06d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548839"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964728"
 ---
 # <a name="securing-privileged-access"></a>Protección del acceso con privilegios
 
@@ -62,11 +62,11 @@ El mapa de ruta está diseñado para maximizar el uso de tecnologías de Microso
 
 El mapa de ruta de recomendaciones de Microsoft se divide en 3 fases:
 
-* [Fase 1: Primeros 30 días](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-1-quick-wins-with-minimal-operational-complexity)
+* [Fase 1: Primeros 30 días](#phase-1-quick-wins-with-minimal-operational-complexity)
    * Resultados rápidos con un impacto positivo significativo.
-* [Fase 2: 90 días](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-2-significant-incremental-improvements)
+* [Fase 2: 90 días](#phase-2-significant-incremental-improvements)
    * Mejoras incrementales significativas.
-* [Fase 3: En curso](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-3-security-improvement-and-sustainment)
+* [Fase 3: En curso](#phase-3-security-improvement-and-sustainment)
    * Mejora de la seguridad y sostenimiento.
 
 El mapa de ruta está clasificado en orden de prioridad para programar las implementaciones más rápidas y efectivas primero en función de nuestras experiencias con estos ataques y la implementación de soluciones. 

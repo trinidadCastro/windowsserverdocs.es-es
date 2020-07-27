@@ -9,12 +9,12 @@ author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 5c0f5d6937a79f36df264597400fe71af3f3779b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 18ed49472a00790a1c713016c4da9a056066a88a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855598"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953717"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>Creación de una implementación de RDS de varios centros de datos con redundancia geográfica para la recuperación ante desastres
 
@@ -52,7 +52,7 @@ Crea los siguientes recursos en Azure para crear una implementación de RDS de v
 2. Una implementación de Active Directory de alta disponibilidad en GR A. Puedes usar la [plantilla Create an new AD Domain with 2 Domain Controllers](https://azure.microsoft.com/resources/templates/active-directory-new-domain-ha-2-dc/) (Crear un nuevo dominio de AD con 2 controladores de dominio) para crear la implementación.
 3. Una implementación de RDS de alta disponibilidad en GR A. Usa la plantilla [RDS farm deployment using existing active directory](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/) (Implementación de granja de RDS mediante una instancia existente de Active Directory) para crear la implementación básica de RDS y, luego, sigue la información de [Servicios de Escritorio remoto: alta disponibilidad](rds-plan-high-availability.md) para configurar los demás componentes de RDS para alta disponibilidad.
 4. Una red virtual en GR B; asegúrate de usar un espacio de direcciones que no se superponga con la implementación en GR A.
-5. Un [conexión de red virtual a red virtual](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps) entre los dos grupos de recursos.
+5. Un [conexión de red virtual a red virtual](/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps) entre los dos grupos de recursos.
 6. Dos máquinas virtuales de AD en un conjunto de disponibilidad en GR B; asegúrate de que los nombres de las VM sean diferentes de las VM de AD en GR A. Implementa dos VM de Windows Server 2016 en un único conjunto de disponibilidad, instala el rol Servicios de dominio de Active Directory y, luego, promuévelas al controlador de dominio en el dominio que creaste en el paso 1.
 7. Una segunda implementación de RDS de alta disponibilidad en GR B. 
    1. Usa la plantilla [RDS farm deployment using existing active directory](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/) de nuevo, pero esta vez con los cambios siguientes. (Para personalizar la plantilla, selecciónala en la galería, haz clic en **Implementar en Azure** y, luego, **Editar plantilla**).
@@ -81,7 +81,7 @@ Réplica de almacenamiento replica los datos de un volumen de origen (asociado a
 
 Para habilitar las UPD en ambas implementaciones, haz lo siguiente:
 
-1. Ejecuta el [cmdlet Set-RDSessionCollectionConfiguration](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) para habilitar los discos de perfil de usuario para la implementación principal (activa): proporciona una ruta de acceso al recurso compartido de archivos en el volumen de origen (que creaste en el paso 7 de la implementación).
+1. Ejecuta el [cmdlet Set-RDSessionCollectionConfiguration](/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) para habilitar los discos de perfil de usuario para la implementación principal (activa): proporciona una ruta de acceso al recurso compartido de archivos en el volumen de origen (que creaste en el paso 7 de la implementación).
 2. Invierte la dirección de la Réplica de almacenamiento para que el volumen de destino se convierta en el volumen de origen (con esto, se monta el volumen y hace que la implementación secundaria pueda acceder a él). Puedes ejecutar el cmdlet **Set-SRPartnership** para ello. Por ejemplo:
 
    ```powershell
@@ -160,4 +160,4 @@ Si bien una implementación local no pude usar las plantillas de inicio rápido 
 
 Puedes usar Azure Traffic Manager con puntos de conexión locales, pero se requiere una suscripción a Azure. Como alternativa, para el DNS proporcionado a los usuarios finales, asígnales un registro CNAME que simplemente dirija a los usuarios a la implementación principal. En caso de conmutación por error, modifica el registro CNAME de DNS para redirigir a la implementación secundaria. De este modo, el usuario final usa una sola dirección URL, al igual que con Azure Traffic Manager, que dirige al usuario a la implementación apropiada. 
 
-Si estás interesado en crear un modelo que vaya del entorno local a un sitio de Azure, ten en cuenta el uso de [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview).
+Si estás interesado en crear un modelo que vaya del entorno local a un sitio de Azure, ten en cuenta el uso de [Azure Site Recovery](/azure/site-recovery/site-recovery-overview).

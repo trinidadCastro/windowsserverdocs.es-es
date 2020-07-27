@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7eeb462d31391a228ec0e89afb09673ef14b51cf
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 359b4bed3090463bfb92431e06e325d981568248
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323447"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961027"
 ---
 # <a name="troubleshooting-disk-management"></a>Solución de problemas de Administración de discos
 
@@ -119,7 +119,7 @@ Si el estado del disco es **Desconectado** y el nombre del disco cambia a **Falt
 **Para conectar un disco que está desconectado y sigue denominándose Disco \# (no falta), prueba uno o varios de los siguientes procedimientos:**
 
 1. En Administración de discos, selecciona y mantén pulsado el disco (o haz clic con el botón derecho en este) y luego haz clic en **Reactivar disco** para conectar el disco. Si el estado del disco permanece **Desconectado**, comprueba los cables y la controladora de disco y asegúrate de que el disco físico sea el correcto. Corrige los problemas e intenta activar de nuevo el disco. Si la reactivación del disco se realiza correctamente, los volúmenes en el disco deben volver automáticamente al estado **Correcto**.
-2. En Visor de eventos, comprueba los registros de eventos de los errores relacionados con el disco, como por ejemplo, "Sin copias de configuración buenas". Si los registros de eventos incluyen este error, ponte en contacto con los [Servicios de soporte técnico de productos de Microsoft](https://msdn.microsoft.com/library/aa263468(v=vs.60).aspx).
+2. En Visor de eventos, comprueba los registros de eventos de los errores relacionados con el disco, como por ejemplo, "Sin copias de configuración buenas". Si los registros de eventos incluyen este error, ponte en contacto con los [Servicios de soporte técnico de productos de Microsoft](/previous-versions/visualstudio/visual-basic-6/aa263468(v=vs.60)).
 
 3. Intenta mover el disco a otro equipo. Si puedes hacer que el disco cambie al estado **Conectado** en otro equipo, es muy probable que el problema se deba a la configuración del equipo en la que el disco no cambia al estado **Conectado**.
 

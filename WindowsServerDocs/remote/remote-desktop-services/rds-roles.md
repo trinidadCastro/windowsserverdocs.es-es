@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 44b98b485b69720a1459f052b68d15617954bffe
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 42116323dce36b071b2af20ff46330a8d39c13ed
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75949823"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963067"
 ---
 # <a name="remote-desktop-services-roles"></a>Roles de Servicios de Escritorio remoto
 
@@ -38,7 +38,7 @@ Puedes personalizar aún más los escritorios mediante la creación y carga de u
 Para obtener más información, consulta los artículos siguientes:
 
 * [Servicios de Escritorio remoto: Almacenamiento de datos seguro](rds-plan-secure-data-storage.md)
-* [Carga de un disco duro virtual generalizado y cómo usarlo para crear nuevas máquinas virtuales en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/upload-generalized-managed?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json)
+* [Carga de un disco duro virtual generalizado y cómo usarlo para crear nuevas máquinas virtuales en Azure](/azure/virtual-machines/windows/upload-generalized-managed?toc=/azure/virtual-machines/windows/toc.json)
 * [Actualización de una colección de host de sesión de Escritorio remoto (plantilla de ARM)](https://azure.microsoft.com/resources/templates/rds-update-rdsh-collection/)
 
 ## <a name="remote-desktop-connection-broker"></a>Agente de conexión a Escritorio remoto

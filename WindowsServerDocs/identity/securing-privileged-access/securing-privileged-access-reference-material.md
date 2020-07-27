@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 00335fb2ca7a54031430c6c606fb6ffa23a8f7a2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 08a315dc362d7de872f47ca702c4401eb327245a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855138"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966187"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Modelo de nivel administrativo de Active Directory
 
@@ -133,7 +133,7 @@ Por ejemplo, es aceptable que Active Directory controle un escritorio de usuario
 
 La relación de control puede introducirse a través de diversos medios, incluida la seguridad de las listas de control de acceso (ACL) de objetos como sistemas de archivo, pertenencia al grupo de administradores local en un equipo o agentes instalados en un equipo que se ejecuta como sistema (con la capacidad de ejecutar código arbitrario y scripts).
 
-Un ejemplo que con frecuencia se pasa por alto es la exposición mediante el inicio de sesión, que crea una relación de control al exponer las credenciales administrativas de un sistema a otro. Esta es la razón subyacente de por qué pasar los ataques de robo de credenciales como pasar el hash son muy potentes. Cuando un administrador inicia sesión en un escritorio de usuario estándar con las credenciales de nivel 0, expone dichas credenciales a ese escritorio, permitiendo el control de AD y creando un escalamiento de la ruta de privilegios a Active Directory. Para más información sobre estos ataques, consulte [esta página](https://technet.microsoft.com/security/dn785092).
+Un ejemplo que con frecuencia se pasa por alto es la exposición mediante el inicio de sesión, que crea una relación de control al exponer las credenciales administrativas de un sistema a otro. Esta es la razón subyacente de por qué pasar los ataques de robo de credenciales como pasar el hash son muy potentes. Cuando un administrador inicia sesión en un escritorio de usuario estándar con las credenciales de nivel 0, expone dichas credenciales a ese escritorio, permitiendo el control de AD y creando un escalamiento de la ruta de privilegios a Active Directory. Para más información sobre estos ataques, consulte [esta página](/previous-versions/dn785092(v=msdn.10)).
 
 Debido a la gran cantidad de recursos que dependen de sistemas de identidad como Active Directory, debe minimizar el número de sistemas que dependen de Active Directory y de controladores de dominio.
 
@@ -464,7 +464,7 @@ Aunque este enfoque agrega un bosque a un entorno de Active Directory, el costo 
 > [!NOTE]
 > Este enfoque funciona bien para administrar Active Directory, pero muchas aplicaciones no son compatibles con la que están administrando las cuentas de un bosque externo mediante una relación de confianza estándar.
 
-Esta ilustración muestra un bosque ESAE usado para la administración de recursos de nivel 0 y un bosque PRIV configurado para su uso con la funcionalidad Privileged Access Management de Microsoft Identity Manager. Para más información acerca de cómo implementar una instancia de MIM PAM, consulte el artículo [Privileged Identity Management para Active Directory Domain Services (AD DS)](https://technet.microsoft.com/library/mt150258.aspx).
+Esta ilustración muestra un bosque ESAE usado para la administración de recursos de nivel 0 y un bosque PRIV configurado para su uso con la funcionalidad Privileged Access Management de Microsoft Identity Manager. Para más información acerca de cómo implementar una instancia de MIM PAM, consulte el artículo [Privileged Identity Management para Active Directory Domain Services (AD DS)](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services).
 
 ![Ilustración que muestra un bosque ESAE usado para la administración de recursos de nivel 0 y un bosque PRIV configurado para su uso con la funcionalidad Privileged Access Management de Microsoft Identity Manager.](../media/securing-privileged-access-reference-material/PAW_RM_Fig14.JPG)
 
@@ -509,12 +509,12 @@ El diseño de un bosque administrativo debe incluir las consideraciones siguient
    - Cifrado del volumen completo, para mitigar la pérdida física de equipos, como equipos portátiles administrativos que se usan de forma remota.
 
       > [!NOTE]
-      > Para más información, consulte [BitLocker](https://technet.microsoft.com/library/dn641993.aspx).
+      > Para más información, consulte [BitLocker](/previous-versions/windows/it-pro/windows-8.1-and-8/dn641993(v=ws.11)).
 
    - Restricciones USB, para proteger contra vectores de infección físicos.
 
       > [!NOTE]
-      > Consulte [Control Read or Write Access to Removable Devices or Media](https://technet.microsoft.com/library/cc730808(v=ws.10).aspx) (Control de acceso de lectura o escritura en dispositivos o medios extraíbles) para más información.
+      > Consulte [Control Read or Write Access to Removable Devices or Media](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730808(v=ws.10)) (Control de acceso de lectura o escritura en dispositivos o medios extraíbles) para más información.
 
    - Aislamiento de la red, para proteger contra ataques a la red y acciones administrativas involuntarias. Los firewalls de host deben bloquear todas las conexiones entrantes, excepto las que se requieren de forma explícita, y bloquear todo el acceso a Internet saliente.
 
@@ -608,7 +608,7 @@ Los símbolos de esta tabla se definen como sigue:
 - (-) indica cuándo las credenciales no están expuestas.
 - (v) indica cuándo las credenciales están expuestas.
 
-Para las aplicaciones de administración que no están en esta tabla, puede determinar el tipo de inicio de sesión en el campo de tipo de inicio de sesión en los eventos de inicio de sesión de auditoría. Para más información, consulte [Auditar sucesos de inicio de sesión](https://technet.microsoft.com/library/cc787567(v=ws.10).aspx).
+Para las aplicaciones de administración que no están en esta tabla, puede determinar el tipo de inicio de sesión en el campo de tipo de inicio de sesión en los eventos de inicio de sesión de auditoría. Para más información, consulte [Auditar sucesos de inicio de sesión](/previous-versions/windows/it-pro/windows-server-2003/cc787567(v=ws.10)).
 
 En los equipos basados en Windows, se procesan todas las autenticaciones como uno de los distintos tipos de inicio de sesión, con independencia del protocolo de autenticación o autenticador que se utilice. En esta tabla se incluyen los tipos más comunes de inicio de sesión y sus atributos en relación con el robo de credenciales:
 
@@ -631,4 +631,4 @@ Definiciones de columna:
 - **Ejemplos** muestra los escenarios comunes en los que se utiliza el tipo de inicio de sesión.
 
 > [!NOTE]
-> Para más información acerca de los tipos de inicio de sesión, consulte [Enumeración SECURITY_LOGON_TYPE](https://technet.microsoft.com/library/aa380129(VS.85).aspx).
+> Para más información acerca de los tipos de inicio de sesión, consulte [Enumeración SECURITY_LOGON_TYPE](/windows/win32/api/ntsecapi/ne-ntsecapi-security_logon_type).

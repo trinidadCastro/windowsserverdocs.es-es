@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 2a44dc9f-c221-4bf7-89c3-fb4c86a90f8c
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: 2ab78ccbc4e49bd95a74fe1e17d5ea14891eb1b8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4d666abea6ab79ee29bd5bf93255426289c8deee
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857278"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963367"
 ---
 # <a name="recommended-settings-for-vdi-desktops"></a>Configuración recomendada para dispositivos de escritorio VDI
 
@@ -31,7 +31,7 @@ Estas instrucciones y la configuración recomendada son pertinentes para Windows
 > [!NOTE]
 > Cualquier configuración que no se mencione expresamente en este tema puede dejarse en sus valores predeterminados (o ajustarla en función de los requisitos y directivas) sin que repercuta en la funcionalidad de VDI.
 
-Cuando se crea una imagen que se basará la implementación de VDI, hay que asegurarse de usar la **rama actual**. Para obtener más información sobre la rama actual, consulta [Información de versión de Windows 10](https://technet.microsoft.com/windows/release-info.aspx).
+Cuando se crea una imagen que se basará la implementación de VDI, hay que asegurarse de usar la **rama actual**. Para obtener más información sobre la rama actual, consulta [Información de versión de Windows 10](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update).
 
 ## <a name="creating-the-windows-10-image"></a>Creación de la imagen de Windows 10
 El primer paso es instalar una imagen de referencia de Windows 10 1607 (versión 10.0.1393) en la máquina virtual o física. Realizar la instalación en una máquina virtual es fácil y permite guardar las versiones del archivo de disco duro virtual (VHD), en caso de que quieras revertir a una versión anterior.

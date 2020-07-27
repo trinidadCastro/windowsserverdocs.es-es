@@ -9,18 +9,18 @@ author: lizap
 ms.author: elizapo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a511c9888f27fe97fdeaf65cde022e5c2aa999d4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7dc63afba827e2a58ba28d2c4398f1ba80d7e7b5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826088"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962497"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1803"></a>Notas de la versión: Problemas importantes en Windows Server, versión 1803
 
 >Se aplica a: Canal semianual de Windows Server
 
-En estas notas se resumen los problemas más críticos del sistema operativo Windows Server junto con soluciones alternativas y formas de evitar los problemas. Para obtener información sobre las nuevas características de esta versión, consulta [Novedades de Windows Server, versión 1803](whats-new-in-windows-server-1803.md). Consulta [Acerca de los contenedores de Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/) si estás interesado en ejecutar un contenedor de Windows Server, versión 1803. 
+En estas notas se resumen los problemas más críticos del sistema operativo Windows Server junto con soluciones alternativas y formas de evitar los problemas. Para obtener información sobre las nuevas características de esta versión, consulta [Novedades de Windows Server, versión 1803](whats-new-in-windows-server-1803.md). Consulta [Acerca de los contenedores de Windows](/virtualization/windowscontainers/about/) si estás interesado en ejecutar un contenedor de Windows Server, versión 1803. 
 
 A menos que se especifique lo contrario, cada problema notificado se aplica a todas las ediciones y opciones de instalación de Windows Server, versión 1803.  
 
@@ -33,4 +33,4 @@ Las características de centro de datos definidas por software como, por ejemplo
 
 Si necesitas roles de infraestructura, usa una versión de Canal de mantenimiento a largo plazo: Windows Server 2016 (ya está disponible) o [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview) (que se lanzará más adelante en este año).
 
-Estamos comprometidos a crear la mejor plataforma para la infraestructura hiperconvergida y seguimos desarrollando nuevas características y mejorando las existentes según tus comentarios. Gracias por ayudarnos a superar los [10 000 clústeres de espacios de almacenamiento directo](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum). Estamos deseando compartir más información próximamente este año.
+Estamos comprometidos a crear la mejor plataforma para la infraestructura hiperconvergida y seguimos desarrollando nuevas características y mejorando las existentes según tus comentarios. Gracias por ayudarnos a superar los [10 000 clústeres de espacios de almacenamiento directo](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185). Estamos deseando compartir más información próximamente este año.

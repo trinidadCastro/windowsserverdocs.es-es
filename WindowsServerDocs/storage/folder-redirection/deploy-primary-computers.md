@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: be2b41cf32e2020422c32415e2d8f4273eb09859
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 935d3ccf7de777a71d7c75179629b448dbb73a08
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394441"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966287"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>Implementación de equipos principales para Redirección de carpetas y Perfiles de usuario móvil
 
@@ -118,4 +118,4 @@ A continuación se explica cómo probar la funcionalidad del equipo principal:
 - [Implementar la redirección de carpetas con Archivos sin conexión](deploy-folder-redirection.md)
 - [Implementar perfiles de usuario móviles](deploy-roaming-user-profiles.md)
 - [Introducción al redireccionamiento de carpetas, archivos sin conexión y perfiles de usuario móvil](folder-redirection-rup-overview.md)
-- [Profundizar un poco más en el equipo principal de Windows 8](https://blogs.technet.com/b/askds/archive/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer.aspx)
+- [Profundizar un poco más en el equipo principal de Windows 8](/archive/blogs/askds/digging-a-little-deeper-into-windows-8-primary-computer)

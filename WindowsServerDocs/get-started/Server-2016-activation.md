@@ -10,16 +10,16 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9ea63785e8de313d2177113a466fa67c17410b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d95d02dc9aa4adb2f64e88d2307efd0143225bba
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826648"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959047"
 ---
 # <a name="windows-server-2016-activation"></a>Activación de Windows Server 2016
 
-La siguiente información describe las consideraciones de planeación iniciales que debes revisar para la activación de Servicios de administración de claves en relación con Windows Server 2016. Para obtener información sobre la activación de KMS en relación con los sistemas operativos anteriores a los que se indican aquí, consulta [Paso 1: Revisar y seleccionar métodos de activación](https://technet.microsoft.com/library/jj134256(WS.11).aspx).
+La siguiente información describe las consideraciones de planeación iniciales que debes revisar para la activación de Servicios de administración de claves en relación con Windows Server 2016. Para obtener información sobre la activación de KMS en relación con los sistemas operativos anteriores a los que se indican aquí, consulta [Paso 1: Revisar y seleccionar métodos de activación](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134256(v=ws.11)).
 
 KMS usa un modelo de cliente-servidor para activar los clientes. Los clientes de KMS se conectan a un servidor de KMS, denominado host de KMS, para la activación. El host de KMS debe residir en su red local.
 
