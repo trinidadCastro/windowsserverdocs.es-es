@@ -9,12 +9,12 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f95f25d365b1b30a9e4e2d311128b8c7cb13b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8bcfb53b04a03a259c712dd4b3003f8c4a66d8ff
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827418"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181721"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
 
@@ -25,7 +25,7 @@ El Servidor de archivos de escalabilidad horizontal es una característica que s
 Puedes implementar y configurar un servidor de archivos en clúster usando los métodos siguientes:
 
 - **Servidor de archivos de escalabilidad horizontal para los datos de la aplicación** Esta característica de servidor de archivos en clúster se presentó en Windows Server 2012 y permite almacenar datos de aplicaciones de servidor, como archivos de máquina virtual de Hyper-V, en recursos compartidos de archivos y obtener un nivel similar de confiabilidad, disponibilidad, facilidad de uso y alto rendimiento que se esperaría de una red de área de almacenamiento. Todos los recursos compartidos de archivos se encuentran en línea en todos los nodos de forma simultánea. Los recursos compartidos de archivos asociados con este tipo de servidor de archivos en clúster se denominan recursos compartidos de archivos de escalabilidad horizontal. A menudo, esto se denomina activo-activo. Este es el tipo de servidor de archivos recomendado al implementar tanto Hyper-V en el Bloque de mensajes del servidor (SMB) como Microsoft SQL Server en SMB.
-- **Servidor de archivos para uso general** : esta es la continuación del servidor de archivos en clúster compatible con Windows Server desde la introducción del clúster de conmutación por error. Este tipo de servidor de archivos en clúster (y, por lo tanto, todos los recursos compartidos asociados con el servidor de archivos en clúster) se encuentra en línea en un nodo a la vez. Algunas veces, esto se denomina activo-pasivo o doble-activo. Los recursos compartidos de archivos asociados con este tipo de servidor de archivos en clúster se denominan recursos compartidos de archivos en clúster. Este es el tipo de servidor de archivos recomendado al implementar escenarios de Trabajador de la información.
+- **Servidor de archivos para uso general** Esta es la continuación del servidor de archivos en clúster que se admite en Windows Server desde la introducción de los clústeres de conmutación por error. Este tipo de servidor de archivos en clúster (y, por lo tanto, todos los recursos compartidos asociados con el servidor de archivos en clúster) se encuentra en línea en un nodo a la vez. Algunas veces, esto se denomina activo-pasivo o doble-activo. Los recursos compartidos de archivos asociados con este tipo de servidor de archivos en clúster se denominan recursos compartidos de archivos en clúster. Este es el tipo de servidor de archivos recomendado al implementar escenarios de Trabajador de la información.
 
 ## <a name="scenario-description"></a>Descripción del escenario
 
@@ -44,17 +44,17 @@ Entre los beneficios clave que proporciona el servidor de archivos de escalabili
 
 Los temas siguientes están disponibles para ayudarte a implementar un servidor de archivos de escalabilidad horizontal:
 
-- [Planeación de Servidor de archivos de escalabilidad horizontal](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134258(v%3dws.11)>)
+- [Plan para servidor de archivos de escalabilidad horizontal](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134258(v%3dws.11)>)
 
-  - [Paso 1: planear el almacenamiento en Servidor de archivos de escalabilidad horizontal](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134181%28v%3dws.11%29>)
-  - [Paso 2: planear las funciones de red en Servidor de archivos de escalabilidad horizontal](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134253%28v%3dws.11%29>)
+  - [Paso 1: Plan para almacenamiento en servidor de archivos de escalabilidad horizontal](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134181%28v%3dws.11%29>)
+  - [Step 2: Plan for Networking in Scale-Out File Server](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134253%28v%3dws.11%29>)
 
-- [Implementar Servidor de archivos de escalabilidad horizontal](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831359%28v%3dws.11%29>)
+- [Deploy Scale-Out File Server](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831359%28v%3dws.11%29>)
 
-  - [Paso 1: instalación de los requisitos previos para Servidor de archivos de escalabilidad horizontal](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831478%28v%3dws.11%29>)
-  - [Paso 2: configurar Servidor de archivos de escalabilidad horizontal](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831718%28v%3dws.11%29>)
-  - [Paso 3: configurar Hyper-V para usar Servidor de archivos de escalabilidad horizontal](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831463%28v%3dws.11%29>)
-  - [Paso 4: configurar Microsoft SQL Server para usar Servidor de archivos de escalabilidad horizontal](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831815%28v%3dws.11%29>)
+  - [Paso 1: Instalar requisitos previos para el servidor de archivos de escalabilidad horizontal](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831478%28v%3dws.11%29>)
+  - [Paso 2: Configurar el servidor de archivos de escalabilidad horizontal](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831718%28v%3dws.11%29>)
+  - [Paso 3: Configurar Hyper-V para usar el servidor de archivos de escalabilidad horizontal](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831463%28v%3dws.11%29>)
+  - [Paso 4: Configurar Microsoft SQL Server para usar el servidor de archivos de escalabilidad horizontal](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831815%28v%3dws.11%29>)
 
 ## <a name="when-to-use-scale-out-file-server"></a>Cuándo utilizar el servidor de archivos de escalabilidad horizontal
 
@@ -65,7 +65,7 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <table>
 <thead>
 <tr class="header">
-<th>Ámbito tecnológico</th>
+<th>Área de tecnología</th>
 <th>Característica</th>
 <th>Clúster de servidor de archivos de uso general</th>
 <th>Servidor de archivos de escalabilidad horizontal</th>
@@ -106,7 +106,7 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <td>Sistema de archivos</td>
 <td>NTFS</td>
 <td>Sí</td>
-<td>N/A</td>
+<td>N/D</td>
 </tr>
 <tr class="odd">
 <td>Sistema de archivos</td>
@@ -117,7 +117,7 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <tr class="even">
 <td>Sistema de archivos</td>
 <td>Sistema de archivos de Volúmen compartido de clúster (CSV)</td>
-<td>N/A</td>
+<td>N/D</td>
 <td>Sí</td>
 </tr>
 <tr class="odd">
@@ -178,25 +178,25 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <td>Administración de archivos</td>
 <td>Redirección de carpetas</td>
 <td>Sí</td>
-<td><em> no recomendado</td>
+<td>No recomendado<em></td>
 </tr>
 <tr class="odd">
 <td>Administración de archivos</td>
 <td>Archivos sin conexión (caché del lado cliente)</td>
 <td>Sí</td>
-<td>No recomendada</em></td>
+<td>No recomendado</em></td>
 </tr>
 <tr class="even">
 <td>Administración de archivos</td>
 <td>Perfiles de usuario móviles</td>
 <td>Sí</td>
-<td><em> no recomendado</td>
+<td>No recomendado<em></td>
 </tr>
 <tr class="odd">
 <td>Administración de archivos</td>
 <td>Directorios principales</td>
 <td>Sí</td>
-<td>No recomendada</em></td>
+<td>No recomendado</em></td>
 </tr>
 <tr class="even">
 <td>Administración de archivos</td>
@@ -213,26 +213,26 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <tr class="even">
 <td>Aplicaciones</td>
 <td>Hyper-V</td>
-<td>No recomendada</td>
+<td>No recomendado</td>
 <td>Sí</td>
 </tr>
 <tr class="odd">
 <td>Aplicaciones</td>
 <td>Microsoft SQL Server</td>
-<td>No recomendada</td>
+<td>No recomendado</td>
 <td>Sí</td>
 </tr>
 </tbody>
 </table>
 
-\* el redireccionamiento de carpetas, la Archivos sin conexión, los perfiles de usuario móviles o los directorios principales generan un gran número de escrituras que se deben escribir inmediatamente en el disco (sin almacenamiento en búfer) al usar recursos compartidos de archivos disponibles continuamente, lo que reduce el rendimiento en comparación con los recursos compartidos de archivos de uso general. Los recursos compartidos de archivos disponibles continuamente también son incompatibles con el Administrador de recursos del servidor de archivos y con los equipos que ejecutan Windows XP. Además, es posible que Archivos sin conexión no pase al modo sin conexión durante 3-6 minutos después de que un usuario pierda el acceso a un recurso compartido, lo que podría frustrar a los usuarios que todavía no utilicen el modo sin conexión de Archivos sin conexión.
+\*La redirección de carpetas, Archivos sin conexión, perfiles de usuario móviles o directorios principales generan un gran número de escrituras que se deben escribir inmediatamente en el disco (sin almacenamiento en búfer) al usar recursos compartidos de archivos disponibles continuamente, lo que reduce el rendimiento en comparación con los recursos compartidos de archivos de uso general. Los recursos compartidos de archivos disponibles continuamente también son incompatibles con el Administrador de recursos del servidor de archivos y con los equipos que ejecutan Windows XP. Además, es posible que Archivos sin conexión no pase al modo sin conexión durante 3-6 minutos después de que un usuario pierda el acceso a un recurso compartido, lo que podría frustrar a los usuarios que todavía no utilicen el modo sin conexión de Archivos sin conexión.
 
 ## <a name="practical-applications"></a>Aplicaciones prácticas
 
 Los Servidores de archivos de escalabilidad horizontal son ideales para el almacenamiento de aplicaciones de servidor. A continuación se muestran algunos ejemplos de aplicaciones de servidor que pueden almacenar sus datos en un recurso compartido de archivos de escalabilidad horizontal:
 
 - El servidor web de Internet Information Services (IIS) puede almacenar datos y la configuración de sitios web en un recurso compartido de archivos de escalabilidad horizontal. Para obtener más información, consulta [Configuración compartida](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264).
-- Hyper-V puede almacenar la configuración y los discos virtuales activos en un recurso compartido de archivos de escalabilidad horizontal. Para obtener más información, consulte [Implementación de Hyper-V en SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>).
+- Hyper-V puede almacenar la configuración y los discos virtuales activos en un recurso compartido de archivos de escalabilidad horizontal. Para obtener más información, consulte [Implementación de Hyper-V en SMB](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>).
 - SQL Server puede almacenar archivos de bases de datos activos en un recurso compartido de archivos de escalabilidad horizontal. Para obtener más información, consulta [Instalar SQL Server con recurso compartido de archivos SMB como una opción de almacenamiento](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option).
 - El Virtual Machine Manager (VMM) puede almacenar un recurso compartido de biblioteca (que contiene plantillas de máquinas virtuales y archivos relacionados) en un recurso compartido de archivos de escalabilidad horizontal. Sin embargo, el propio servidor de biblioteca no puede ser un Servidor de archivos de escalabilidad horizontal; debe estar en un servidor independiente o en un clúster de conmutación por error que no utilice el rol de clúster de Servidor de archivos de escalabilidad horizontal.
 
@@ -256,23 +256,23 @@ En la tabla siguiente, se enumeran las características que forman parte de este
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="failover-clustering.md">Clúster de conmutación por error</a></td>
-<td>Los clústeres de conmutación por error agregaron las siguientes características en Windows Server 2012 para admitir el servidor de archivos de escalabilidad horizontal: nombre de red distribuida, el tipo de recurso Servidor de archivos de escalabilidad horizontal, volúmenes compartidos de clúster (CSV) 2 y el rol de alta disponibilidad Servidor de archivos de escalabilidad horizontal. Para obtener más información acerca de estas características, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">novedades&#39;de los clústeres de conmutación por error en Windows Server 2012 [Redirigido]</a>.</td>
+<td><a href="failover-clustering.md">Clústeres de conmutación por error</a></td>
+<td>Los clústeres de conmutación por error agregaron las siguientes características en Windows Server 2012 para admitir el servidor de archivos de escalabilidad horizontal: nombre de red distribuida, el tipo de recurso Servidor de archivos de escalabilidad horizontal, volúmenes compartidos de clúster (CSV) 2 y el rol de alta disponibilidad Servidor de archivos de escalabilidad horizontal. Para obtener más información acerca de estas características, vea <a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">qué&#39;s novedades en los clústeres de conmutación por error en Windows Server 2012 [Redirigido]</a>.</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">Bloque de mensajes del servidor</a></td>
+<td><a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">Bloque de mensajes del servidor</a></td>
 <td>SMB 3,0 agregó las siguientes características en Windows Server 2012 para admitir el servidor de archivos de escalabilidad horizontal: conmutación por error transparente de SMB, SMB multicanal y SMB directo.<br />
 <br />
-Para obtener más información sobre las funciones nuevas y modificadas para SMB en Windows Server 2012 R2, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">novedades&#39;de SMB en Windows Server</a>.</td>
+Para obtener más información sobre las funciones nuevas y modificadas para SMB en Windows Server 2012 R2, consulte <a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">¿qué&#39;es nuevo en SMB en Windows Server</a>?.</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="more-information"></a>Más información
 
-- [Guía de consideraciones de diseño de almacenamiento definidas por software](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
-- [Aumento de la disponibilidad del servidor, el almacenamiento y la red](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
-- [Implementación de Hyper-V en SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-- [Implementación de servidores de archivos rápidos y eficaces para aplicaciones de servidores](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-- Entrada de blog[Escalar horizontalmente o no escalar horizontalmente, esa es la cuestión](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)
-- [Redireccionamiento de carpetas, Archivos sin conexión y Perfiles de usuario móvil](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)
+- [Guía de consideraciones de diseño de almacenamiento definidas mediante software](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
+- [Increasing Server, Storage, and Network Availability](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [Implementación de Hyper-V en SMB](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+- [Implementación de servidores de archivos rápidos y eficaces para aplicaciones de servidores](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+- Entrada de blog [Escalar horizontalmente o no escalar horizontalmente, esa es la cuestión](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)
+- [Redireccionamiento de carpetas, Archivos sin conexión y Perfiles de usuario móvil](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)

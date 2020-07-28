@@ -8,12 +8,12 @@ metadata:
   author: lizap
   ms.author: elizapo
   ms.date: 06/09/2020
-  ms.openlocfilehash: a115a703071b52e7a27d925578d7703f270b925b
-  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.openlocfilehash: f04fc0407eb43f78433aca0dda70aa05e951a19d
+  ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
   ms.translationtype: MT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "85070985"
+  ms.lasthandoff: 07/27/2020
+  ms.locfileid: "87179251"
 landingContent:
 - title: Administrar los sistemas y entornos de Windows Server
   linkLists:
@@ -66,6 +66,6 @@ landingContent:
   - linkListType: overview
     links:
     - text: Documentación de versiones anteriores de Windows
-      url: https://docs.microsoft.com/previous-versions/windows/
+      url: /previous-versions/windows/
     - text: Buscar información específica
       url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

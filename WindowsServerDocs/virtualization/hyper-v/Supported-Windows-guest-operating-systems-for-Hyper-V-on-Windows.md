@@ -9,12 +9,12 @@ ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: 514f43447f808aabfe2a20ea01b2d8fd65d628ea
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ddcb4f080183b6a1c8ae0ed0d705597c1a0dd4a5
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474372"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181801"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server
 
@@ -34,7 +34,7 @@ A continuación se muestran las versiones de Windows Server que se admiten como 
 |Windows Server, versión 1903 |240 para la generación 2;<br>64 para la generación 1|Integrada||
 |Windows Server, versión 1809 |240 para la generación 2;<br>64 para la generación 1|Integrada||
 |Windows Server 2019 |240 para la generación 2;<br>64 para la generación 1|Integrada||
-|Windows Server, versión 1803 |240 para la generación 2;<br>64 para la generación 1|Integrada||
+|Windows Server, versión 1803 |240 para la generación 2;<br>64 para la generación 1|Integrada||
 |Windows Server 2016 |240 para la generación 2;<br>64 para la generación 1|Integrada||
 |Windows Server 2012 R2 |64|Integrada||
 |Windows Server 2012 |64|Integrada||
@@ -58,9 +58,9 @@ En la tabla siguiente se proporcionan vínculos a información acerca de los sis
 |Sistema operativo host|Tema|
 |-------------------------|---------|
 |Windows 10|[Sistemas operativos invitados admitidos para el cliente Hyper-V en Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)|
-|Windows Server 2012 R2 y Windows 8.1|-   [Sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server 2012 R2 y Windows 8.1](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Virtual Machines de Linux y FreeBSD en Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
-|Windows Server 2012 y Windows 8|[Sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server 2012 y Windows 8](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
-|Windows Server 2008 y Windows Server 2008 R2|[Acerca de las máquinas virtuales y los sistemas operativos invitados](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
+|Windows Server 2012 R2 y Windows 8.1|-   [Sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server 2012 R2 y Windows 8.1](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Virtual Machines de Linux y FreeBSD en Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
+|Windows Server 2012 y Windows 8|[Sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server 2012 y Windows 8](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
+|Windows Server 2008 y Windows Server 2008 R2|[Acerca de las máquinas virtuales y los sistemas operativos invitados](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
 
 ## <a name="how-microsoft-provides-support-for-guest-operating-systems"></a>Cómo Microsoft proporciona compatibilidad con los sistemas operativos invitados
 

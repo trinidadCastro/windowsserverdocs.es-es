@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 55421cb1f01d654c4c424e8534f4c678ac38e6f5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 21af2aae837b7a570638c2eb3f3c96cb8997fa84
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959337"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182071"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implementar la redirección de carpetas con Archivos sin conexión
 
@@ -128,7 +128,7 @@ Después de crear un GPO para la configuración de Redirección de carpetas, edi
 
 > [!NOTE]
 > La característica Archivos sin conexión está habilitada de forma predeterminada para las carpetas redirigidas en equipos cliente de Windows y deshabilitada en los equipos que ejecutan Windows Server, a menos que el usuario lo cambie. Para usar directiva de grupo con el fin de controlar si Archivos sin conexión está habilitado, usa la configuración de directiva **Permitir o denegar el uso de la característica Archivos sin conexión**.
-> Para obtener información acerca de algunas de las demás opciones de configuración de directiva de grupo de Archivos sin conexión, consulta [Habilitar la funcionalidad de Archivos sin conexión avanzada](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>) y [Configuración de la directiva de grupo para Archivos sin conexión](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>).
+> Para obtener información acerca de algunas de las demás opciones de configuración de directiva de grupo de Archivos sin conexión, consulta [Habilitar la funcionalidad de Archivos sin conexión avanzada](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>) y [Configuración de la directiva de grupo para Archivos sin conexión](</previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>).
 
 Aquí se muestra cómo configurar Redirección de carpetas en Directiva de grupo:
 
@@ -199,5 +199,5 @@ En la tabla siguiente se resumen los cambios más importantes realizados en este
 * [Implementar equipos principales para Redirección de carpetas y Perfiles de usuario móvil](deploy-primary-computers.md)
 * [Habilitar la funcionalidad de Archivos sin conexión avanzada](enable-always-offline.md)
 * [Declaración de soporte técnico de Microsoft sobre los datos de perfil de usuario replicados](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
-* [Transferencia local de aplicaciones con DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
+* [Transferencia local de aplicaciones con DISM](</previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [Solución de problemas de empaquetado, implementación y consulta de aplicaciones basadas en Windows Runtime](/windows/win32/appxpkg/troubleshooting)

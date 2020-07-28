@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 5b0193f18fe94f391f1bbbc41280c16e4a1bcd0c
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 657cf161086047ca87ca7dbd2adcd2b8e6bde892
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203506"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177891"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Conmutación de clústeres por error en Windows Server
 
@@ -40,7 +40,7 @@ La Conmutación de clústeres por error tiene muchas aplicaciones prácticas, in
 | [Conjuntos de clústeres](../storage/storage-spaces/cluster-sets.md)                  |                             |[Implementar un testigo del recurso compartido de archivos](file-share-witness.md) |
 | [Afinidad de clústeres](cluster-affinity.md)                                     |                            | [Actualizaciones graduales del sistema operativo del clúster](cluster-operating-system-rolling-upgrade.md) |
 |                                                                             |                            | [Actualizar un clúster de conmutación por error en el mismo hardware](upgrade-option-same-hardware.md) |
-|                                                                            |                             | [Implementar un clúster desconectado de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\))
+|                                                                            |                             | [Implementar un clúster desconectado de Active Directory](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\))
 
 |**Administrar**  |  **Herramientas y configuración**  |  **Recursos de la comunidad**       |
 | ------------- |  -------------- | --------------------- |

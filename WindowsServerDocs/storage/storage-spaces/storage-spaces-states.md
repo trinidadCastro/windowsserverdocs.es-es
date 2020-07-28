@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: 95ccfec436ba4143ea7ec70120878a29289d14f7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d7bbef54d0ec554c6a3cf184dcb0414f7456547c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966797"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182161"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>Solución de problemas de espacios de almacenamiento y Estados operativos y estado de Espacios de almacenamiento directo
 
@@ -73,7 +73,7 @@ Cuando un grupo de almacenamiento se encuentra en un estado de mantenimiento **d
 ||Directiva|Un administrador establece el grupo de almacenamiento en solo lectura.<br><br>**Acción:** Para establecer un grupo de almacenamiento en clúster en acceso de lectura y escritura en Administrador de clústeres de conmutación por error, vaya a **grupos**, haga clic con el botón secundario en el grupo y seleccione **poner en línea**.<br><br>Para otros servidores y equipos, abra una sesión de PowerShell con permisos administrativos y, a continuación, escriba:<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
 ||Iniciando|Espacios de almacenamiento está iniciando o esperando que las unidades estén conectadas en el grupo. Debe ser un estado temporal. Una vez iniciado por completo, el grupo debe realizar la transición a un estado operativo diferente.<br><br>**Acción:** Si el grupo permanece en el estado *iniciando* , asegúrese de que todas las unidades del grupo estén conectadas correctamente.|
 
-Vea también [modificar un grupo de almacenamiento que tiene una configuración de solo lectura](https://social.technet.microsoft.com/wiki/contents/articles/14861.modifying-a-storage-pool-that-has-a-read-only-configuration.aspx).
+Vea también el [Foro de almacenamiento de Windows Server](https://docs.microsoft.com/answers/topics/windows-server-storage.html).
 
 ## <a name="virtual-disk-states"></a>Estados de disco virtual
 

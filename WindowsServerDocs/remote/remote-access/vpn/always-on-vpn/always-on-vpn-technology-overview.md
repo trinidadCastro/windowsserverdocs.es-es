@@ -8,12 +8,12 @@ ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: e1291b377c408c23493ce5a7a946a343f5e28ead
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 12c80e7e266ac3a8c788781a4d98f0a856164084
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958737"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182021"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Información general sobre la tecnología VPN Always On
 
@@ -84,7 +84,7 @@ Consulte [Servidor de directivas de redes (NPS)](../../../../networking/technolo
 
 El servidor de la entidad de certificación (CA) es una entidad de certificación que ejecuta Active Directory servicios de Certificate Server. La configuración de VPN requiere una infraestructura de clave pública (PKI) basada en Active Directory.
 
-Las organizaciones pueden usar AD CS para mejorar la seguridad mediante el enlace de la identidad de una persona, un dispositivo o un servicio con la clave pública correspondiente. AD CS también incluye características que permiten administrar la inscripción y revocación de certificados en una variedad de entornos escalables. Para obtener más información, vea [información general de servicios de certificados de Active Directory](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)) y guía de diseño de infraestructura de [clave pública](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx).
+Las organizaciones pueden usar AD CS para mejorar la seguridad mediante el enlace de la identidad de una persona, un dispositivo o un servicio con la clave pública correspondiente. AD CS también incluye características que permiten administrar la inscripción y revocación de certificados en una variedad de entornos escalables. Para obtener más información, vea [información general de servicios de certificados de Active Directory](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)) y guía de diseño de infraestructura de [clave pública](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/designing-and-implementing-a-pki-part-i-design-and-planning/ba-p/396953).
 
 Durante la realización de la implementación, configurará las siguientes plantillas de certificado en la entidad de certificación.
 
@@ -122,7 +122,7 @@ Cuando se usan certificados de servidor digital para la autenticación entre equ
 
 3. Autenticación mediante la Asociación de claves de certificado con cuentas de equipos, usuarios o dispositivos en una red de equipos.
 
-Para obtener más información, consulte [Guía paso a paso de AD CS: implementación de la jerarquía de PKI de dos niveles](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx).
+Para obtener más información, vea [Active Directory información general de servicios de certificado](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)).
 
 ## <a name="active-directory-domain-services-ad-ds"></a>Active Directory Domain Services (AD DS)
 
@@ -159,7 +159,7 @@ Con directiva de grupo, puede especificar la configuración de las entradas del 
 Además de los componentes de servidor, asegúrese de que los equipos cliente que configure para usar VPN ejecuten la actualización de aniversario de Windows 10 (versión 1607). Los clientes de VPN de Windows 10 deben estar Unidos a un dominio en el dominio de Active Directory.
 
 
-El cliente VPN de Windows 10 es muy configurable y ofrece muchas opciones. Para ilustrar mejor las características específicas que usa este escenario, la tabla 1 identifica las categorías de características de VPN y las configuraciones específicas a las que hace referencia esta implementación. Configurará la configuración individual de estas características mediante el proveedor de servicios de configuración de VPNv2 (CSP) que se describe más adelante en esta implementación. 
+El cliente VPN de Windows 10 es muy configurable y ofrece muchas opciones. Para ilustrar mejor las características específicas que usa este escenario, la tabla 1 identifica las categorías de características de VPN y las configuraciones específicas a las que hace referencia esta implementación. Configurará la configuración individual de estas características mediante el proveedor de servicios de configuración de VPNv2 (CSP) que se describe más adelante en esta implementación.
 
 Tabla 1. Características y configuraciones de VPN descritas en esta implementación
 
@@ -169,7 +169,7 @@ Tabla 1. Características y configuraciones de VPN descritas en esta implementac
 |     Enrutamiento     |                Tunelización dividida                |
 | Resolución de nombres |  Lista de información de nombres de dominio y sufijo DNS  |
 |   Desencadenar    |    Always On y detección de redes de confianza    |
-| Autenticación  | PEAP-TLS con TPM: certificados de usuario protegidos |
+| Authentication  | PEAP-TLS con TPM: certificados de usuario protegidos |
 
 >[!NOTE]
 >PEAP-TLS y TPM son "Protocolo de autenticación extensible protegido con seguridad de la capa de transporte" y "Módulo de plataforma segura", respectivamente.
@@ -204,8 +204,8 @@ Windows 10 ofrece muchos CSP, pero esta implementación se centra en el uso del 
 
 - [Información general de servicios de certificados de Active Directory](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)): este documento proporciona información general sobre Active Directory servicios de Certificate Server (AD CS) en Windows Server &reg; 2012. AD CS es el rol de servidor que permite crear una infraestructura de clave pública (PKI) y proporcionar criptografía de clave pública, certificados digitales y capacidad de forma digital a su organización.
 
-- [Guía de diseño de infraestructura de clave pública](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx): este wiki proporciona instrucciones sobre el diseño de infraestructuras de clave pública (PKI). Antes de configurar una PKI y una jerarquía de entidad de certificación (CA), debe tener en cuenta la Directiva de seguridad de la organización y el informe de prácticas de certificados (CPS).
+- [Guía de diseño de infraestructura de clave pública](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/designing-and-implementing-a-pki-part-i-design-and-planning/ba-p/396953): este foro proporciona instrucciones sobre el diseño de infraestructuras de clave pública (PKI). Antes de configurar una PKI y una jerarquía de entidad de certificación (CA), debe tener en cuenta la Directiva de seguridad de la organización y el informe de prácticas de certificados (CPS).
 
-- [Guía paso a paso de AD CS: implementación de una jerarquía de PKI de dos niveles](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): en esta guía paso a paso se describen los pasos necesarios para configurar una configuración básica de Active Directory &reg; servicios de Certificate Server (AD CS) en un entorno de laboratorio. AD CS en Windows Server &reg; 2008 R2 proporciona servicios personalizables para la creación y administración de certificados de clave pública usados en sistemas de seguridad de software que emplean tecnologías de clave pública.
+- [Información general de servicios de certificados de Active Directory](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)): esta guía paso a paso describe los pasos necesarios para configurar una configuración básica de &reg; servicios de Certificate Server de Active Directory (AD CS) en un entorno de laboratorio. AD CS en Windows Server &reg; 2008 R2 proporciona servicios personalizables para la creación y administración de certificados de clave pública usados en sistemas de seguridad de software que emplean tecnologías de clave pública.
 
 - [Servidor de directivas de redes (NPS)](../../../../networking/technologies/nps/nps-top.md): en este tema se proporciona información general sobre el servidor de directivas de redes en Windows Server 2016. El servidor de directivas de redes (NPS) permite crear y aplicar directivas de acceso a la red de toda la organización para la autenticación y autorización de solicitudes de conexión.

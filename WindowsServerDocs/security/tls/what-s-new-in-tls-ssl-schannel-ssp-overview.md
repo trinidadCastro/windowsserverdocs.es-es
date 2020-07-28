@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: fac7e780fc584f0ce4dde8bb87ce37035840a40a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b70a8fefc05723b78dbf5e652bf35f7b8b5cff4d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474882"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182321"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>Información general sobre TLS-SSL (Schannel SSP)
 
@@ -148,6 +148,4 @@ Las aplicaciones que usan DTLS a través de UDP pueden usar el modelo SSPI en Wi
 En Schannel SSP para Windows Server 2012 y Windows 8, no hay características ni funcionalidades desusadas.
 
 ## <a name="additional-references"></a>Referencias adicionales
--   [Modelo de seguridad de nube privada: funcionalidad contenedora](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
-
-
+-   [Modelo de seguridad de nube privada: funcionalidad contenedora](https://docs.microsoft.com/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)

@@ -7,14 +7,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 20e0d5e73713c0d6280e95d51ec8de8fde612350
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 331fc5a4e825dc4e7faf6f0a65605d7aaebf8314
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856588"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181701"
 ---
-# <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalación de HGS en un bosque bastión existente 
+# <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalación de HGS en un bosque bastión existente
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
@@ -27,7 +27,7 @@ En un bosque bastión existente, se debe agregar HGS al dominio raíz. Use Admin
 
 Ejecute todos los comandos de este tema en una sesión de PowerShell con privilegios elevados.
 
-[!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)] 
+[!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)]
 
 Si el centro de seguridad tiene un bosque bastión seguro al que desea unir nodos HGS, siga estos pasos.
 También puede usar estos pasos para configurar 2 o más clústeres de HGS independientes que están Unidos al mismo dominio.
@@ -70,7 +70,7 @@ New-ADServiceAccount -Name 'HGSgMSA' -DnsHostName 'HGSgMSA.yourdomain.com' -Prin
 ```
 
 El gMSA requerirá el derecho a generar eventos en el registro de seguridad de cada servidor de HGS.
-Si usa directiva de grupo para configurar la asignación de derechos de usuario, asegúrese de que la cuenta gMSA tenga el [privilegio generar eventos de auditoría](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29) en los servidores HGS.
+Si usa directiva de grupo para configurar la asignación de derechos de usuario, asegúrese de que la cuenta gMSA tenga el [privilegio generar eventos de auditoría](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29) en los servidores HGS.
 
 > [!NOTE]
 > Las cuentas de servicio administradas de grupo están disponibles a partir del esquema de Active Directory de Windows Server 2012.
@@ -100,7 +100,7 @@ El CNO representa el nombre del clúster y se usa principalmente internamente en
 La VCO representa el servicio HGS que se encuentra en la parte superior del clúster y será el nombre registrado con el servidor DNS.
 
 > [!IMPORTANT]
-> El usuario que va a ejecutar `Initialize-HgsServer` requiere un **control total** sobre los objetos CNO y VCO en Active Directory.
+> El usuario que ejecutará `Initialize-HgsServer` requiere **control total** sobre los objetos CNO y VCO en Active Directory.
 
 Para preconfigurar rápidamente el CNO y el VCO, haga que un administrador de Active Directory ejecute los siguientes comandos de PowerShell:
 
@@ -142,7 +142,7 @@ Compruebe los objetos de directiva de grupo para ver la configuración siguiente
 
 **Nombre de la Directiva:** Seguridad de red: configurar tipos de cifrado permitidos para Kerberos
 
-**Acción**: si se configura esta Directiva, debe actualizar la cuenta de GMSA con [set-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar solo los tipos de cifrado admitidos en esta Directiva. Por ejemplo, si la Directiva solo permite AES128\_HMAC\_SHA1 y AES256\_HMAC\_SHA1, debe ejecutar `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`.
+**Acción**: si se configura esta Directiva, debe actualizar la cuenta de GMSA con [set-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar solo los tipos de cifrado admitidos en esta Directiva. Por ejemplo, si la Directiva solo permite \_ HMAC \_ SHA1 y AES256 \_ HMAC \_ SHA1, debe ejecutar `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` .
 
 
 

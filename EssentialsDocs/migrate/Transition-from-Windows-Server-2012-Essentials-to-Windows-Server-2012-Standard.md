@@ -2,18 +2,17 @@
 title: Transición de Windows Server Essentials a Windows Server 2012 Standard
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2477cac206af4e70d10e28d7b1da637b7b7accff
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 4cc616c0e23c58ab1298526784574f6bc8f65f23
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548819"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180391"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Transición de Windows Server Essentials a Windows Server 2012 Standard
 
@@ -76,7 +75,7 @@ ms.locfileid: "85548819"
  Si ya no necesita el panel de Windows Server Essentials ni otras características para administrar el servidor, puede desactivarlas y quitarlas de su servidor.
 
  El **Asistente para desactivar características de Windows Server Essentials:**
- 
+
 - ayuda a desinstalar las características de. También limpia el servidor de archivos creados por el software de servidor de Windows Server Essentials.  Algunas operaciones de limpieza se realizan inmediatamente, mientras que otras se inician después de reiniciar el servidor.
 
 - requiere que desinstale manualmente todos los complementos para poder completar el asistente. Para ver una lista de los complementos instalados, abra la página Aplicación en el panel. El asistente le alerta si detecta complementos instalados y le pide que los desinstale.

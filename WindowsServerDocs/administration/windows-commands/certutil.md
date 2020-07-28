@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 159a3d2eb54d6a3040c4a22864a1c90e16bf2247
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 12ef5e7fa5ff305b1670c2f88645f57500c4fb5b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955337"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178591"
 ---
 # <a name="certutil"></a>certutil
 
@@ -1103,7 +1103,7 @@ Donde:
 - La `-f` opción se puede usar para invalidar los errores de validación del **siteName** especificado o para eliminar todos los sitenames de CA.
 
 > [!NOTE]
-> Para obtener más información acerca de la configuración de las CA para el reconocimiento de sitios de Active Directory Domain Services (AD DS), consulte [reconocimiento de sitios de AD DS para clientes de AD CS y PKI](https://social.technet.microsoft.com/wiki/contents/articles/14106.ad-ds-site-awareness-for-ad-cs-and-pki-clients.aspx).
+> Para obtener más información acerca de la configuración de las CA para el reconocimiento de sitios de Active Directory Domain Services (AD DS), consulte [reconocimiento de sitios de AD DS para clientes de AD CS y PKI](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)).
 
 ### <a name="-enrollmentserverurl"></a>-enrollmentserverURL
 
@@ -2003,12 +2003,8 @@ En esta sección se definen todas las opciones que se pueden especificar, basán
 
 Para obtener más ejemplos sobre cómo usar este comando, vea.
 
-- [Ejemplos de certutil para administrar Active Directory servicios de Certificate Server (AD CS) desde la línea de comandos](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
+- [Servicios de certificados de Active Directory (AD CS)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 
 - [Tareas certutil para administrar certificados](/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
-
-- [Exportación de la solicitud binaria mediante el tutorial de la herramienta de línea de comandos certutil.exe](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
-
-- [Renovación del certificado de CA raíz](https://social.technet.microsoft.com/wiki/contents/articles/2016.root-ca-certificate-renewal.aspx)
 
 - [comando certutil](certutil.md)

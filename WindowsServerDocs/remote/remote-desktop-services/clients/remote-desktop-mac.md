@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be6b7542ca77c80a638df6404aefe77d8d7d19c
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 57072fe5a92bcc59a1ccd46b1c0db7a6828a165d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445709"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181961"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introducción al cliente de macOS
 
@@ -40,7 +40,7 @@ Sigue estos pasos para empezar a usar Escritorio remoto en un equipo Mac:
 
 Estamos probando características nuevas en el canal de versión preliminar en AppCenter. ¿Quieres echarle un vistazo? Ve a [Microsoft Remote Desktop for Mac](https://aka.ms/rdmacbeta) y selecciona **Descargar**. No es necesario que crees una cuenta ni que inicies sesión en AppCenter para descargar el cliente beta.
 
-Si ya tienes el cliente, puedes comprobar las actualizaciones para asegurarte de que tienes la última versión. En el cliente beta, selecciona **Microsoft Remote Desktop Beta** (Escritorio remoto de Microsoft versión beta) en la parte superior y, luego, selecciona **Check for updates** (Buscar actualizaciones). 
+Si ya tienes el cliente, puedes comprobar las actualizaciones para asegurarte de que tienes la última versión. En el cliente beta, selecciona **Microsoft Remote Desktop Beta** (Escritorio remoto de Microsoft versión beta) en la parte superior y, luego, selecciona **Check for updates** (Buscar actualizaciones).
 
 ## <a name="add-a-workspace"></a>Adición de un área de trabajo
 
@@ -102,7 +102,7 @@ Las puertas de enlace de Escritorio remoto te permiten conectarte a equipos remo
 
 Para configurar una puerta de enlace nueva en las preferencias:
 
-1. En el Centro de conexión, selecciona **Preferencias > Puertas de enlace**. 
+1. En el Centro de conexión, selecciona **Preferencias > Puertas de enlace**.
 2. Selecciona el botón **+** que aparece en la parte inferior de la tabla y escribe esta información:
    - **Nombre del servidor**: el nombre del equipo que quieres usar como puerta de enlace. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes agregar información del puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
    - **Nombre de usuario**: el nombre de usuario y la contraseña que se van a usar para la puerta de enlace de Escritorio remoto a la que se va a conectar. También puedes seleccionar **Usar credenciales de conexión** para usar el mismo nombre de usuario y la misma contraseña que para la conexión a Escritorio remoto.
@@ -164,4 +164,4 @@ Windows Server 2012 R2 introdujo la compatibilidad con un nuevo método de aut
 Para más información sobre esta característica, revisa [https://aka.ms/paa-sample](https://aka.ms/paa-sample).
 
 > [!TIP]
-> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, ve al [foro del cliente de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, ve al [foro del cliente de Escritorio remoto](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

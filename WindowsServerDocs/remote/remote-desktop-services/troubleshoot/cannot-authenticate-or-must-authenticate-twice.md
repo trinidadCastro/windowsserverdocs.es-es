@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fd7cfda8814347f8bab9dc7b3f7632e3b992ecb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 65bf81d80d5cfd5566d66005728cd3677f131085
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857238"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963227"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>El usuario no se puede autenticar o debe autenticarse dos veces
 
@@ -59,7 +59,7 @@ A partir de Windows Server 2016, RCM ya no consulta el objeto del usuario en A
 
 Para habilitar el comportamiento heredado de RCM en un servidor host de sesión de Escritorio remoto, configura las siguientes entradas del Registro y reinicia el servicio **Servicios de Escritorio remoto**:  
   - **HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services**
-  - **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<NombreDeWinstation\>\\**  
+  - **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<Winstation name\>\\**  
       - Nombre: **fQueryUserConfigFromDC**
       - Tipo: **Reg\_DWORD**
       - Valor: **1** (decimal)
@@ -168,4 +168,4 @@ Este problema se produce en las implementaciones de alta disponibilidad que util
 
 Este problema se produce porque Credential Guard remoto usa Kerberos para la autenticación y restringe NTLM. Pero en una configuración de alta disponibilidad con equilibrio de carga, los agentes de conexión a Escritorio remoto no admiten operaciones de Kerberos.
 
-Si necesitas usar una configuración de alta disponibilidad con agentes de conexión a Escritorio remoto con equilibrio de carga, puedes solucionar el problema mediante la deshabilitación de Credential Guard remoto. Para más información acerca de cómo administrar Credential Guard remoto de Windows Defender, consulta [Protección de credenciales de escritorio remoto con Credential Guard remoto de Windows Defender](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard#enable-windows-defender-remote-credential-guard).
+Si necesitas usar una configuración de alta disponibilidad con agentes de conexión a Escritorio remoto con equilibrio de carga, puedes solucionar el problema mediante la deshabilitación de Credential Guard remoto. Para más información acerca de cómo administrar Credential Guard remoto de Windows Defender, consulta [Protección de credenciales de escritorio remoto con Credential Guard remoto de Windows Defender](/windows/security/identity-protection/remote-credential-guard#enable-windows-defender-remote-credential-guard).

@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03c3c8daa8dc4bea0e03ed285a98401f91cdf1cb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7d94b6a2211cd9fbaefb8318ebdcc4eb52ba9ba1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857218"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963307"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>Solución de problemas generales de conexión con Escritorio remoto
 
@@ -23,7 +23,7 @@ Sigue estos pasos si un cliente de Escritorio remoto no se puede conectar a un e
 
 ### <a name="check-the-status-of-the-rdp-protocol-on-a-local-computer"></a>Comprobación del estado del RDP en un equipo local
 
-Para comprobar y cambiar el estado de RDP en un equipo local, consulta [Cómo habilitar Escritorio remoto](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access#how-to-enable-remote-desktop).
+Para comprobar y cambiar el estado de RDP en un equipo local, consulta [Cómo habilitar Escritorio remoto](../clients/remote-desktop-allow-access.md#how-to-enable-remote-desktop).
 
 > [!NOTE]  
 > Si las opciones de Escritorio remoto no están disponibles, consulta [Compruebe si un objeto de directiva de grupo (GPO) está bloqueando el RDP en un equipo local](#check-whether-a-group-policy-object-gpo-is-blocking-rdp-on-a-local-computer).
@@ -70,11 +70,11 @@ Para comprobar la configuración de la directiva de grupo en un equipo remoto, e
 gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 ```
 
-El archivo que genera este comando (**gpresult -\<nombre de equipo\>.html**) usa el mismo formato de información que la versión del equipo local (**gpresult.html**).
+El archivo que genera este comando (**gpresult-\<computer name\>.html**) usa el mismo formato de información que la versión del equipo local (**gpresult.html**).
 
 ### <a name="modifying-a-blocking-gpo"></a>Modificación de un GPO de bloqueo
 
-Esta configuración se puede modificar en el Editor de objetos de directiva de grupo (GPE) y en la Consola de administración de directivas de grupo (GPM). Para más información acerca de cómo usar la directiva de grupo, consulta [Administración avanzada de directivas de grupo](https://docs.microsoft.com/microsoft-desktop-optimization-pack/agpm/).
+Esta configuración se puede modificar en el Editor de objetos de directiva de grupo (GPE) y en la Consola de administración de directivas de grupo (GPM). Para más información acerca de cómo usar la directiva de grupo, consulta [Administración avanzada de directivas de grupo](/microsoft-desktop-optimization-pack/agpm/).
 
 Para modificar la directiva de bloqueo, usa uno de estos métodos:
 
@@ -144,7 +144,7 @@ Para este procedimiento, usa una instancia de PowerShell que tenga permisos admi
       Restart-Service TermService -Force  
       ```
       
-      Reemplaza \<nombreDeArchivo\> por el nombre del archivo .reg exportado.
+      Reemplace \<filename\> por el nombre del archivo .reg exportado.
 
 6. Para probar la configuración vuelve a intentar establecer la conexión a Escritorio remoto. Si sigues sin poder conectarte, reinicia el equipo afectado.
 7. Si sigues sin poder conectarte, [comprueba el estado del certificado autofirmado de RDP](#check-the-status-of-the-rdp-self-signed-certificate).
@@ -178,7 +178,7 @@ Para comprobar o cambiar el puerto de RDP, usa el Editor del Registro:
 1. En el menú Inicio, selecciona **Ejecutar** y, después, escribe **regedt32** en el cuadro de texto que aparece.
       - Para establecer una conexión con un equipo remoto, selecciona **Archivo**y, después, selecciona **Conectar al Registro de red**.
       - En el cuadro de diálogo **Seleccionar Equipo**, escriba el nombre del equipo remoto, seleccione **Comprobar nombres**y, después, selecciona **Aceptar**.
-2. Abre el registro y vete al cliente de escucha **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<\>** . 
+2. Abra el registro y vaya a **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<listener\>** . 
     ![La subclave PortNumber de RDP.](../media/troubleshoot-remote-desktop-connections/RegEntry_PortNumber.png)
 3. Si el valor de **PortNumber** no es **3389**, cámbialo a **3389**. 
    > [!IMPORTANT]  
@@ -189,7 +189,7 @@ Para comprobar o cambiar el puerto de RDP, usa el Editor del Registro:
 
 Para este procedimiento, usa una instancia de PowerShell que tenga permisos administrativos. En los equipos locales, también puedes usar un símbolo del sistema en el que tengas permisos administrativos. Pero en este procedimiento se usa PowerShell porque los mismos cmdlets funcionan de forma local y remota.
 
-1. Abra una ventana de PowerShell. Para conectarse a un equipo remoto, escribe **Enter-PSSession - ComputerName \<nombrede equipo\>** .
+1. Abra una ventana de PowerShell. Para conectarse a un equipo remoto, escriba **Enter-PSSession -ComputerName \<computer name\>** .
 2. Escriba el comando siguiente:  
    
      ```powershell  
@@ -225,7 +225,7 @@ Usa la herramienta **psping** para probar si puedes acceder al equipo afectado a
    ```
    
 3. Comprueba si la salida del comando **psping** contiene resultados como los siguientes:  
-      - **Conectando a \<IP de equipo\>** : se puede acceder al equipo remoto.
+      - **Conectando a \<computer IP\>** : se puede acceder al equipo remoto.
       - **(0 % perdidos)** : todos los intentos de conexión han fructificado.
       - **El equipo remoto ha rechazado la conexión de red**: no se puede acceder al equipo remoto.
       - **(100 % perdidos)** : error en todos los intentos de conexión.

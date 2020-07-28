@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 5b2da1858a7f0a3669accfdb2dda88a23f64edc0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c4c74fc5fef01c21d5c1818c212c004786caca66
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964257"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182221"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>Configuración del Servicio web de inscripción de certificados para la renovación basada en claves de certificados en un puerto personalizado
 
@@ -47,11 +47,11 @@ En este ejemplo, las instrucciones se basan en un entorno que utiliza la configu
 
 ## <a name="configuration-instructions"></a>Instrucciones de configuración
 
-### <a name="overview"></a>Información general 
+### <a name="overview"></a>Información general
 
 1. Configure la plantilla para la renovación basada en claves.
 
-2. Como requisito previo, configure un servidor de procesamiento de eventos complejos y CES para la autenticación de nombre de usuario y contraseña.   
+2. Como requisito previo, configure un servidor de procesamiento de eventos complejos y CES para la autenticación de nombre de usuario y contraseña.
    En este entorno, se hace referencia a la instancia como "CEPCES01".
 
 3.  Configure otra instancia de procesamiento de eventos complejos y CES mediante PowerShell para la autenticación basada en certificados en el mismo servidor. La instancia de CES usará una cuenta de servicio.
@@ -74,10 +74,10 @@ Como requisito previo, debe configurar los CEP y CES en un servidor mediante la 
 Puede duplicar una plantilla de equipo existente y configurar las siguientes opciones de la plantilla:
 
 1. En la pestaña Nombre de sujeto de la plantilla de certificado, asegúrese de que esté seleccionada la opción **suministro en las opciones solicitar** y **usar información de asunto de los certificados existentes para las solicitudes de renovación de inscripción automática** .
-   ![Nuevas plantillas](media/certificate-enrollment-certificate-key-based-renewal-2.png) 
+   ![Nuevas plantillas](media/certificate-enrollment-certificate-key-based-renewal-2.png)
 
 2. Cambie a la pestaña **requisitos de emisión** y, a continuación, active la casilla aprobación del administrador de certificados de entidad de **certificación** .
-   ![Requisitos de emisión](media/certificate-enrollment-certificate-key-based-renewal-3.png) 
+   ![Requisitos de emisión](media/certificate-enrollment-certificate-key-based-renewal-3.png)
 
 3. Asigne el permiso de **lectura** e **inscripción** a la cuenta de servicio de **cepcessvc** para esta plantilla.
 
@@ -118,7 +118,7 @@ Add-WindowsFeature Adcs-Enroll-Web-Svc
 Install-AdcsEnrollmentPolicyWebService -AuthenticationType Username -SSLCertThumbprint "sslCertThumbPrint"
 ```
 
-Este comando instala el Servicio web de directiva de inscripción de certificados (CEP) especificando que se usa un nombre de usuario y una contraseña para la autenticación. 
+Este comando instala el Servicio web de directiva de inscripción de certificados (CEP) especificando que se usa un nombre de usuario y una contraseña para la autenticación.
 
 > [!Note]
 > En este comando, \<**SSLCertThumbPrint**\> es la huella digital del certificado que se usará para enlazar IIS.
@@ -132,7 +132,7 @@ Este comando instala el Servicio web de inscripción de certificados (CES) para 
 ##### <a name="step-2-check-the-internet-information-services-iis-manager-console"></a>Paso 2 comprobar la consola del administrador de Internet Information Services (IIS)
 
 Después de una instalación correcta, espera ver la siguiente pantalla en la consola del administrador de Internet Information Services (IIS).
-![Administrador de IIS](media/certificate-enrollment-certificate-key-based-renewal-4.png) 
+![Administrador de IIS](media/certificate-enrollment-certificate-key-based-renewal-4.png)
 
 En **sitio web predeterminado**, seleccione **ADPolicyProvider_CEP_UsernamePassword**y, a continuación, abra configuración de la **aplicación**. Anote el **identificador** y el **URI**.
 
@@ -140,7 +140,7 @@ Puede Agregar un **nombre descriptivo** para la administración.
 
 #### <a name="configure-the-cepces02-instance"></a>Configuración de la instancia de CEPCES02
 
-##### <a name="step-1-install-the-cep-and-ces-for-key-based-renewal-on-the-same-server"></a>Paso 1: instalar el procesamiento de eventos complejos y CES para la renovación basada en claves en el mismo servidor. 
+##### <a name="step-1-install-the-cep-and-ces-for-key-based-renewal-on-the-same-server"></a>Paso 1: instalar el procesamiento de eventos complejos y CES para la renovación basada en claves en el mismo servidor.
 
 Ejecute el siguiente comando en PowerShell:
 
@@ -148,10 +148,10 @@ Ejecute el siguiente comando en PowerShell:
 Install-AdcsEnrollmentPolicyWebService -AuthenticationType Certificate -SSLCertThumbprint "sslCertThumbPrint" -KeyBasedRenewal
 ```
 
-Este comando instala el Servicio web de directiva de inscripción de certificados (CEP) y especifica que se usa un certificado para la autenticación. 
+Este comando instala el Servicio web de directiva de inscripción de certificados (CEP) y especifica que se usa un certificado para la autenticación.
 
 > [!Note]
-> En este comando, \<SSLCertThumbPrint\> es la huella digital del certificado que se usará para enlazar IIS. 
+> En este comando, \<SSLCertThumbPrint\> es la huella digital del certificado que se usará para enlazar IIS.
 
 La renovación basada en claves permite a los clientes de certificados renovar sus certificados con la clave de su certificado existente para la autenticación. En el modo de renovación basada en claves, el servicio solo devolverá las plantillas de certificado que se hayan establecido para la renovación basada en claves.
 
@@ -159,7 +159,7 @@ La renovación basada en claves permite a los clientes de certificados renovar s
 Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSLCertThumbprint "sslCertThumbPrint" -AuthenticationType Certificate -ServiceAccountName "Contoso\cepcessvc" -ServiceAccountPassword (read-host "Set user password" -assecurestring) -RenewalOnly -AllowKeyBasedRenewal
 ```
 
-Este comando instala el Servicio web de inscripción de certificados (CES) para usar la entidad de certificación para un nombre de equipo de **CA1.contoso.com** y un nombre común de CA de **contoso-CA1-CA**. 
+Este comando instala el Servicio web de inscripción de certificados (CES) para usar la entidad de certificación para un nombre de equipo de **CA1.contoso.com** y un nombre común de CA de **contoso-CA1-CA**.
 
 En este comando, la identidad del Servicio web de inscripción de certificados se especifica como la cuenta de servicio **cepcessvc** . El tipo de autenticación es **Certificate**. **SSLCertThumbPrint** es la huella digital del certificado que se usará para enlazar IIS.
 
@@ -171,7 +171,7 @@ El cmdlet **RenewalOnly** permite que CES se ejecute en modo de solo renovación
 ##### <a name="step-2-check-the-iis-manager-console"></a>Paso 2 comprobar la consola del administrador de IIS
 
 Después de una instalación correcta, espera ver la siguiente pantalla en la consola del administrador de IIS.
-![Administrador de IIS](media/certificate-enrollment-certificate-key-based-renewal-5.png) 
+![Administrador de IIS](media/certificate-enrollment-certificate-key-based-renewal-5.png)
 
 Seleccione **KeyBasedRenewal_ADPolicyProvider_CEP_Certificate** en **sitio web predeterminado** y Abra **configuración**de la aplicación. Anote el **identificador** y el **URI**. Puede Agregar un **nombre descriptivo** para la administración.
 
@@ -189,8 +189,8 @@ Esta cuenta se usará para la autenticación para la renovación basada en clave
 > [!Note]
 > No es necesario unir el equipo cliente a un dominio. Esta cuenta entra en imagen mientras realiza la autenticación basada en certificados en KBR para el servicio dsmapper.
 
-![Nuevo objeto](media/certificate-enrollment-certificate-key-based-renewal-6.png) 
- 
+![Nuevo objeto](media/certificate-enrollment-certificate-key-based-renewal-6.png)
+
 ##### <a name="step-2-configure-the-service-account-for-constrained-delegation-s4u2self"></a>Paso 2: configurar la cuenta de servicio para la delegación restringida (S4U2Self)
 
 Ejecute el siguiente comando de PowerShell para habilitar la delegación restringida (S4U2Self o cualquier protocolo de autenticación):
@@ -210,31 +210,31 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 1. En la consola del administrador de IIS, seleccione sitio web predeterminado.
 
-2. En el panel acción, seleccione Editar enlace de sitio. 
+2. En el panel acción, seleccione Editar enlace de sitio.
 
 3. Cambie la configuración de Puerto predeterminada de 443 a su puerto personalizado. La captura de pantalla de ejemplo muestra un valor de puerto de 49999.
-   ![Cambiar puerto](media/certificate-enrollment-certificate-key-based-renewal-7.png) 
+   ![Cambiar puerto](media/certificate-enrollment-certificate-key-based-renewal-7.png)
 
 ##### <a name="step-4-edit-the-ca-enrollment-services-object-on-active-directory"></a>Paso 4: editar el objeto de servicios de inscripción de CA en Active Directory
 
 1. En un controlador de dominio, abra ADSIEdit. msc.
 
 2. [Conéctese a la partición de configuración](/previous-versions/windows/it-pro/windows-server-2003/ff730188(v=ws.10))y navegue hasta el objeto de servicios de inscripción de CA:
-   
+
    CN = ENTCA, CN = Servicios de inscripción, CN = Public Key Services, CN = Services, CN = Configuration, DC = Contoso, DC = com
 
 3. Haga clic con el botón derecho en el objeto CA y edítelo. Cambie el atributo **atributo mspki-Enrollment-** Servers mediante el puerto personalizado con los URI de servidor de procesamiento de eventos complejos y CES encontrados en la configuración de la aplicación. Por ejemplo:
 
    ```
-   140https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
+   140https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0
    181https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
    ```
-   
-   ![Editor ADSI](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
+
+   ![Editor ADSI](media/certificate-enrollment-certificate-key-based-renewal-8.png)
 
 #### <a name="configure-the-client-computer"></a>Configuración del equipo cliente
 
-En el equipo cliente, configure las directivas de inscripción y la Directiva de inscripción automática. Para ello, siga estos pasos:
+En el equipo cliente, configure las directivas de inscripción y la Directiva de inscripción automática. Para ello, realice los pasos siguientes:
 
 1. Seleccione **iniciar**  >  **ejecución**y escriba **gpedit. msc**.
 
@@ -242,13 +242,13 @@ En el equipo cliente, configure las directivas de inscripción y la Directiva de
 
 3. Habilite la **Directiva cliente de servicios de certificados-inscripción automática** para que coincida con la configuración de la siguiente captura de pantalla.
    ![Directiva de grupo de certificados](media/certificate-enrollment-certificate-key-based-renewal-9.png)
- 
+
 4. Habilite **la Directiva de inscripción de certificados de cliente de servicios de Certificate Server**.
 
    a. Haga clic en **Agregar** para agregar la Directiva de inscripción y escriba el URI de procesamiento de eventos complejos con **UsernamePassword** que se editó en ADSI.
-   
+
    b. En **tipo de autenticación**, seleccione **nombre de usuario y contraseña**.
-   
+
    c. Establezca una prioridad de **10**y, a continuación, valide el servidor de directivas.
       ![Directiva de inscripción](media/certificate-enrollment-certificate-key-based-renewal-10.png)
 
@@ -263,11 +263,11 @@ En el equipo cliente, configure las directivas de inscripción y la Directiva de
 
 6. Abra **gpedit. msc** de nuevo. Edite el **cliente de servicios de certificados: Directiva de inscripción de certificados**y, a continuación, agregue la Directiva de inscripción de la renovación basada en claves:
 
-   a. Haga clic en **Agregar**, escriba el URI de procesamiento de eventos complejos con el **certificado** que se editó en ADSI. 
-   
+   a. Haga clic en **Agregar**, escriba el URI de procesamiento de eventos complejos con el **certificado** que se editó en ADSI.
+
    b. Establezca una prioridad de **1**y, a continuación, valide el servidor de directivas. Se le pedirá que realice la autenticación y elija el certificado que inscribió inicialmente.
 
-   ![Directiva de inscripción](media/certificate-enrollment-certificate-key-based-renewal-13.png) 
+   ![Directiva de inscripción](media/certificate-enrollment-certificate-key-based-renewal-13.png)
 
 > [!Note]
 > Asegúrese de que el valor de prioridad de la Directiva de inscripción de la renovación basada en claves es inferior a la prioridad de la prioridad de la Directiva de inscripción de contraseña de nombre de usuario. La primera preferencia se da a la prioridad más baja.
@@ -278,7 +278,7 @@ Para asegurarse de que la renovación automática funciona, debe renovar el cert
 
 Abra el almacén de certificados personal del equipo y agregue la vista "certificados archivados". Para ello, agregue el complemento cuenta de equipo local a mmc.exe, resalte **certificados (equipo local)** . para ello, haga clic en él, haga clic en **Ver** en la **pestaña acción** situada a la derecha o en la parte superior de MMC, haga clic en **Ver opciones**, seleccione **certificados archivados**y, a continuación, haga clic en **Aceptar**.
 
-### <a name="method-1"></a>Método 1 
+### <a name="method-1"></a>Método 1
 
 Ejecute el siguiente comando:
 
@@ -297,7 +297,7 @@ Por ejemplo, la plantilla de certificado tiene una configuración de validez de 
 Por lo tanto, si avanza el tiempo hasta 8:10 P.M. el 19 desde que nuestra ventana de renovación se estableció en 8 horas en la plantilla, la ejecución de certutil-Pulse (para desencadenar el motor de AE) inscribe el certificado automáticamente.
 
 ![.](media/certificate-enrollment-certificate-key-based-renewal-15.png)
- 
+
 Una vez finalizada la prueba, revierta la configuración de tiempo al valor original y, a continuación, reinicie el equipo cliente.
 
 > [!Note]
@@ -313,13 +313,13 @@ Una vez finalizada la prueba, revierta la configuración de tiempo al valor orig
 
 [Install-AdcsEnrollmentWebService](/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
 
-Consulta también
+Consulte también
 
 [Foro de seguridad de Windows Server](https://aka.ms/adcsforum)
 
 [Preguntas más frecuentes (P+F) sobre la infraestructura de clave pública (PKI) de los Servicios de certificados de Active Directory (AD CS)](https://aka.ms/adcsfaq)
 
-[Biblioteca y referencia de documentación de Windows PKI](https://social.technet.microsoft.com/wiki/contents/articles/987.windows-pki-documentation-reference-and-library.aspx)
+[Biblioteca y referencia de documentación de Windows PKI](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/windows-pki-documentation-reference/ba-p/1128393)
 
 [Blog de Windows PKI](/archive/blogs/pki/)
 

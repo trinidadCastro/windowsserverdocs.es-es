@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d51cc178ee5b689071336b0dabd1e8d3565bcd2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4610db6755f5177306dfcf4feec005eab6efabfd
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955367"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178681"
 ---
 # <a name="certreq"></a>certreq
 
@@ -132,7 +132,7 @@ Esta área del archivo INF es obligatoria para todas las plantillas de solicitud
 | KeyProtection | Especifica un valor que indica cómo se protege una clave privada antes de su uso. | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | Especifica un valor booleano que indica si las extensiones y atributos predeterminados se incluyen en la solicitud. Los valores predeterminados se representan mediante sus identificadores de objeto (OID). | `true | false` | `SuppressDefaults = true` |
 | FriendlyName | Un nombre descriptivo para el nuevo certificado. | Texto | `FriendlyName = Server1` |
-| ValidityPeriodUnits | Especifica el número de unidades que se va a utilizar con ValidityPeriod. Nota: solo se usa cuando el `request type=cert` . | Numeric | `ValidityPeriodUnits = 3` |
+| ValidityPeriodUnits | Especifica el número de unidades que se va a utilizar con ValidityPeriod. Nota: solo se usa cuando el `request type=cert` . | Numérico | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod debe ser un período de tiempo plural del Inglés de EE. UU. Nota: solo se usa cuando el tipo de solicitud = cert. | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup> A la izquierda del signo igual (=)
@@ -341,10 +341,8 @@ Los artículos siguientes contienen ejemplos de uso de CertReq:
 
 - [Creación manual de un certificado SSL de servidor Web](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [Solicitar un certificado de aprovisionamiento de AMT mediante una CA de Windows Server 2008](https://social.technet.microsoft.com/wiki/contents/articles/548.request-an-amt-provisioning-certificate-using-a-windows-server-2008-ca.aspx)
+- [Inscripción de certificados para el agente de System Center Operations Manager](https://docs.microsoft.com/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
 
-- [Inscripción de certificados para el agente de System Center Operations Manager](https://social.technet.microsoft.com/wiki/contents/articles/2017.certificate-enrollment-for-system-center-operations-manager-agent.aspx)
-
-- [Guía paso a paso de AD CS: implementación de la jerarquía de PKI de dos niveles](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)
+- [Introducción a los Servicios de certificados de Active Directory](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 
 - [Habilitación de LDAP a través de SSL con una entidad de certificación de terceros](https://support.microsoft.com/help/321051/how-to-enable-ldap-over-ssl-with-a-third-party-certification-authority)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 09af41a544cacb0fd0977847b7bc2e6b0d8a59f7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 74e7f3936418bd2f04234d07b2f600197e94b357
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860078"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182351"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>Deshabilitar el almacenamiento en caché del lado cliente DNS en clientes DNS
 
@@ -51,7 +51,7 @@ Este comando muestra el contenido de la memoria caché de resolución DNS, inclu
 ## <a name="using-the-registry-to-control-the-caching-time"></a>Usar el registro para controlar el tiempo de almacenamiento en caché
 
 > [!IMPORTANT]  
-> Sigue meticulosamente los pasos que se describen en esta sección. Podrían producirse problemas graves si lo modifica de forma incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
+> Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modifica el Registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
 
 El período de tiempo durante el que una respuesta positiva o negativa se almacena en caché depende de los valores de las entradas de la siguiente clave del registro:
 
@@ -66,12 +66,12 @@ El TTL para las respuestas positivas es el menor de los siguientes valores:
 >[!Note]
 >- El TTL predeterminado para las respuestas positivas es de 86.400 segundos (1 día).
 >- El TTL para las respuestas negativas es el número de segundos especificado en la configuración del registro MaxNegativeCacheTtl.
->- El TTL predeterminado para las respuestas negativas es de 900 segundos (15 minutos).
+>- El TTL predeterminado para las respuestas negativas es de 5 segundos. antes de Windows 10, la versión 1703 el valor predeterminado era 900 segundos (15 minutos).
 Si no desea almacenar en caché las respuestas negativas, establezca el valor del registro MaxNegativeCacheTtl en 0.
 
 Para establecer la hora de almacenamiento en caché en un equipo cliente:
 
-1. Inicie el editor del registro (regedit. exe).
+1. Inicie el editor del registro (Regedit.exe).
 
 2. Busque y, a continuación, haga clic en la clave siguiente en el registro:
 
@@ -83,16 +83,16 @@ Para establecer la hora de almacenamiento en caché en un equipo cliente:
 
      Tipo de datos: REG_DWORD
 
-     Datos del valor: valor predeterminado 86400 segundos. 
-     
-     Si reduce el valor de TTL máximo en la memoria caché de DNS del cliente a 1 segundo, esto da la impresión de que la memoria caché de DNS del cliente se ha deshabilitado.    
+     Datos del valor: valor predeterminado 86400 segundos.
+
+     Si reduce el valor de TTL máximo en la memoria caché de DNS del cliente a 1 segundo, esto da la impresión de que la memoria caché de DNS del cliente se ha deshabilitado.
 
    - Nombre del valor: MaxNegativeCacheTtl
 
      Tipo de datos: REG_DWORD
 
-     Datos del valor: valor predeterminado 900 segundos. 
-     
+     Datos del valor: valor predeterminado de 5 segundos.
+
      Establezca el valor en 0 si no desea que se almacenen en caché las respuestas negativas.
 
 4. Escriba el valor que desea utilizar y, a continuación, haga clic en Aceptar.

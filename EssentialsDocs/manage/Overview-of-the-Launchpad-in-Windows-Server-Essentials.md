@@ -2,18 +2,17 @@
 title: Introducción al Launchpad en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e3a25a574e932d9a6a66ca706472dfed5a67a6ee
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c648ab5921d50a2b1178b44104977b8bb3abd692
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470420"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180841"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Introducción al Launchpad en Windows Server Essentials
 
@@ -66,7 +65,7 @@ Launchpad de Windows Server Essentials es una pequeña aplicación que se instal
 > [!NOTE]
 >  Para usar esta característica debe tener el acceso o los permisos adecuados para iniciar sesión en el servidor.
 
-### <a name="microsoft-office-365"></a>Microsoft Office 365
+### <a name="microsoft-office-365"></a>Microsoft Office 365
  El vínculo **Microsoft Office 365** solo aparece en Launchpad si el usuario tiene una cuenta de Office 365. Haga clic en  **Microsoft Office 365** para obtener acceso a vínculos adicionales a los recursos de Office 365. Para obtener más información, vea [Guía de inicio rápido para usar Microsoft Office 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md).
 
 ### <a name="computer-health-alerts"></a>Alertas de estado del equipo

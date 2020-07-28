@@ -9,18 +9,18 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 095e40528d27be4509e3235a0ab4c03e59759f99
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 636c0c56c52f501a54679a569213bcd4e4646b72
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966767"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181991"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Configuración de túneles de dispositivo VPN en Windows 10
 
 >Se aplica a: Windows 10 versión 1709
 
-Always On VPN le ofrece la posibilidad de crear un perfil de VPN dedicado para el dispositivo o la máquina. Las conexiones VPN de Always On incluyen dos tipos de túneles: 
+Always On VPN le ofrece la posibilidad de crear un perfil de VPN dedicado para el dispositivo o la máquina. Las conexiones VPN de Always On incluyen dos tipos de túneles:
 
 - El _túnel de dispositivo_ se conecta a los servidores VPN especificados antes de que los usuarios inicien sesión en el dispositivo. Los túneles de dispositivo se utilizan en escenarios de conectividad previos al inicio de sesión y para administrar dispositivos.
 
@@ -34,7 +34,7 @@ El túnel de dispositivo solo se puede configurar en dispositivos Unidos a un do
 
 
 ## <a name="device-tunnel-requirements-and-features"></a>Características y requisitos del túnel de dispositivo
-Debe habilitar la autenticación de certificados de equipo para las conexiones VPN y definir una entidad de certificación raíz para autenticar las conexiones VPN entrantes. 
+Debe habilitar la autenticación de certificados de equipo para las conexiones VPN y definir una entidad de certificación raíz para autenticar las conexiones VPN entrantes.
 
 ```PowerShell
 $VPNRootCertAuthority = "Common Name of trusted root certification authority"
@@ -46,7 +46,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>Configuración de túnel de dispositivo VPN
 
-El XML de Perfil de ejemplo siguiente proporciona una buena guía para escenarios en los que solo se requieren las extracciones iniciadas por el cliente a través del túnel de dispositivo.  Los filtros de tráfico se aprovechan para restringir el túnel de dispositivo solo al tráfico de administración.  Esta configuración funciona bien para los escenarios de Windows Update, directiva de grupo típicos (GP) y Microsoft Endpoint Configuration Manager Update, así como la conectividad VPN para el primer inicio de sesión sin credenciales almacenadas en caché o escenarios de restablecimiento de contraseña. 
+El XML de Perfil de ejemplo siguiente proporciona una buena guía para escenarios en los que solo se requieren las extracciones iniciadas por el cliente a través del túnel de dispositivo.  Los filtros de tráfico se aprovechan para restringir el túnel de dispositivo solo al tráfico de administración.  Esta configuración funciona bien para los escenarios de Windows Update, directiva de grupo típicos (GP) y Microsoft Endpoint Configuration Manager Update, así como la conectividad VPN para el primer inicio de sesión sin credenciales almacenadas en caché o escenarios de restablecimiento de contraseña.
 
 En el caso de los casos de inserciones iniciados por el servidor, como Administración remota de Windows (WinRM), los escenarios de la actualización remota de los Configuration Manager y los de actualización, debe permitir el tráfico entrante en el túnel del dispositivo, por lo que no se pueden usar filtros de tráfico.  Si en el perfil de túnel de dispositivo activa los filtros de tráfico, el túnel de dispositivo deniega el tráfico entrante.  Esta limitación se va a quitar en futuras versiones.
 
@@ -56,40 +56,40 @@ En el caso de los casos de inserciones iniciados por el servidor, como Administr
 A continuación se muestra el profileXML de VPN de ejemplo.
 
 ``` xml
-<VPNProfile>  
-  <NativeProfile>  
-<Servers>vpn.contoso.com</Servers>  
-<NativeProtocolType>IKEv2</NativeProtocolType>  
-<Authentication>  
-  <MachineMethod>Certificate</MachineMethod>  
-</Authentication>  
-<RoutingPolicyType>SplitTunnel</RoutingPolicyType>  
+<VPNProfile>
+  <NativeProfile>
+<Servers>vpn.contoso.com</Servers>
+<NativeProtocolType>IKEv2</NativeProtocolType>
+<Authentication>
+  <MachineMethod>Certificate</MachineMethod>
+</Authentication>
+<RoutingPolicyType>SplitTunnel</RoutingPolicyType>
  <!-- disable the addition of a class based route for the assigned IP address on the VPN interface -->
-<DisableClassBasedDefaultRoute>true</DisableClassBasedDefaultRoute>  
-  </NativeProfile> 
-  <!-- use host routes(/32) to prevent routing conflicts -->  
-  <Route>  
-<Address>10.10.0.2</Address>  
-<PrefixSize>32</PrefixSize>  
-  </Route>  
-  <Route>  
-<Address>10.10.0.3</Address>  
-<PrefixSize>32</PrefixSize>  
-  </Route>  
-<!-- traffic filters for the routes specified above so that only this traffic can go over the device tunnel --> 
-  <TrafficFilter>  
-<RemoteAddressRanges>10.10.0.2, 10.10.0.3</RemoteAddressRanges>  
+<DisableClassBasedDefaultRoute>true</DisableClassBasedDefaultRoute>
+  </NativeProfile>
+  <!-- use host routes(/32) to prevent routing conflicts -->
+  <Route>
+<Address>10.10.0.2</Address>
+<PrefixSize>32</PrefixSize>
+  </Route>
+  <Route>
+<Address>10.10.0.3</Address>
+<PrefixSize>32</PrefixSize>
+  </Route>
+<!-- traffic filters for the routes specified above so that only this traffic can go over the device tunnel -->
+  <TrafficFilter>
+<RemoteAddressRanges>10.10.0.2, 10.10.0.3</RemoteAddressRanges>
   </TrafficFilter>
-<!-- need to specify always on = true --> 
-  <AlwaysOn>true</AlwaysOn> 
-<!-- new node to specify that this is a device tunnel -->  
+<!-- need to specify always on = true -->
+  <AlwaysOn>true</AlwaysOn>
+<!-- new node to specify that this is a device tunnel -->
  <DeviceTunnel>true</DeviceTunnel>
 <!--new node to register client IP address in DNS to enable manage out -->
 <RegisterDNS>true</RegisterDNS>
 </VPNProfile>
 ```
 
-En función de las necesidades de cada escenario de implementación concreto, otra característica de VPN que se puede configurar con el túnel de dispositivo es la [detección de redes de confianza](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection).
+En función de las necesidades de cada escenario de implementación concreto, otra característica de VPN que se puede configurar con el túnel de dispositivo es la [detección de redes de confianza](https://docs.microsoft.com/answers/topics/windows-server-infrastructure.html).
 
 ```
  <!-- inside/outside detection -->

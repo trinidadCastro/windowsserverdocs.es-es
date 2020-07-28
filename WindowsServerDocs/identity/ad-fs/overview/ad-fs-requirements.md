@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8f1af40f54536ca380db7fe810506c937bb2d478
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77517540"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118613"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos de AD FS
 
@@ -52,8 +52,8 @@ Los certificados SSL en servidores de federación tienen que cumplir los siguien
 - El certificado es de confianza pública (para implementaciones de producción).
 - El certificado contiene el valor de Uso mejorado de clave (EKU) de autenticación de servidores.
 - El certificado contiene el nombre del servicio de federación, por ejemplo, "fs.contoso.com" en el Firmante o Nombre alternativo del firmante (SAN).
-- Para la autenticación de certificados de usuario en el puerto 443, el certificado contiene "certauth.\<nombre del servicio de federación\>", por ejemplo: "certauth.fs.contoso.com"en el SAN.
-- Para el registro de dispositivos o la autenticación moderna en recursos locales mediante clientes anteriores a Windows 10, el SAN debe contener "enterpriseregistration.\<sufijo upn\>"para cada sufijo UPN en uso en tu organización.
+- Para la autenticación de certificados de usuario en el puerto 443, el certificado contiene "certauth.\<federation service name\>"; por ejemplo: "certauth.fs.contoso.com" en el SAN.
+- Para el registro de dispositivos o la autenticación moderna en recursos locales mediante clientes anteriores a Windows 10, el SAN debe contener "enterpriseregistration.\<upn suffix\>" para cada sufijo UPN en uso en su organización.
 
 Los certificados SSL en el Proxy de aplicación web tienen que cumplir los siguientes requisitos:
 - Si el proxy se usa para redirigir mediante proxy las solicitudes de AD FS que usan la autenticación integrada de Windows, el certificado SSL del proxy debe ser el mismo (usar la misma clave) que el certificado SSL del servidor de federación.
@@ -92,7 +92,7 @@ Los proveedores de notificaciones que cifran los tokens emitidos para AD FS usa
 
 ## <a name="hardware-requirements"></a><a name="BKMK_2"></a>Requisitos de hardware  
 Los requisitos de hardware (físico o virtual) de AD FS y Proxy de aplicación web dependen de la CPU, por lo que debes ajustar el tamaño de la granja para la capacidad de procesamiento.  
-- Usa la [hoja de cálculo de planeamiento de capacidad de AD FS 2016](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx) para determinar el número de servidores de AD FS y de Proxy de aplicación web que necesitarás.
+- Usa la [hoja de cálculo de planeamiento de capacidad de AD FS 2016](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx) para determinar el número de servidores de AD FS y de Proxy de aplicación web que necesitarás.
 
 Los requisitos de memoria y disco para AD FS son bastante estáticos, consulta la tabla siguiente:
 
@@ -110,7 +110,7 @@ Si usas SQL Server para la base de datos de configuración de AD FS, ajusta el
   
 -   Para el acceso desde una extranet, tienes que implementar el servicio de rol de Proxy de aplicación web, parte del rol de servidor de Acceso remoto. 
 
--   Los servidores proxy de terceros deben admitir el protocolo [MS-ADFSPIP](https://msdn.microsoft.com/library/dn392811.aspx) para que se admitan como proxy de AD FS.  Para obtener una lista de terceros proveedores, consulta las [preguntas más frecuentes](AD-FS-FAQ.md).
+-   Los servidores proxy de terceros deben admitir el protocolo [MS-ADFSPIP](/openspecs/windows_protocols/ms-adfspip/76deccb1-1429-4c80-8349-d38e61da5cbb) para que se admitan como proxy de AD FS.  Para obtener una lista de terceros proveedores, consulta las [preguntas más frecuentes](AD-FS-FAQ.md).
 
 -   AD FS 2016 requiere servidores de Proxy de aplicación web en Windows Server 2016.  No se puede configurar un proxy de nivel inferior para una granja de AD FS 2016 que se ejecute en el nivel de comportamiento de la granja de 2016.
   
@@ -208,7 +208,7 @@ Tanto el firewall que se encuentra entre el Proxy de aplicación web y la granja
   
 Además, si se requiere la autenticación de certificados de usuario de cliente \(autenticación de clientTLS mediante certificados de usuario X509\) y el punto de conexión certauth en el puerto 443 no está habilitado, AD FS 2016 requiere que el puerto 49443 TCP esté habilitado en el firewall entre los clientes y el Proxy de aplicación web. Esto no es necesario en el firewall entre el Proxy de aplicación web y los servidores de federación. 
 
-Para obtener información adicional sobre los requisitos de puerto híbrido, consulta [Puertos y protocolos requeridos para Identidad híbrida](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports). 
+Para obtener información adicional sobre los requisitos de puerto híbrido, consulta [Puertos y protocolos requeridos para Identidad híbrida](/azure/active-directory/connect/active-directory-aadconnect-ports). 
 
 Para obtener más información, consulta [Procedimientos recomendados para proteger Servicios de federación de Active Directory (AD FS)](../deployment/Best-Practices-Securing-AD-FS.md).
   
@@ -222,9 +222,9 @@ Para obtener más información, consulta [Procedimientos recomendados para prote
   
 -   Para la Autenticación integrada de Windows, tienes que usar un registro A de DNS \(no CNAME\) para el nombre del servicio de federación.  
 
--   Para la autenticación de certificados de usuario en el puerto 443, "certauth.\<nombre del servicio de federación\>" debe estar configurado en DNS para resolver el servidor de federación o el Proxy de aplicación web.
+-   Para la autenticación de certificados de usuario en el puerto 443, "certauth.\<federation service name\>" debe estar configurado en DNS para resolver el servidor de federación o el Proxy de aplicación web.
 
--   Para el registro de dispositivos o la autenticación moderna en recursos locales mediante clientes anteriores a Windows 10, "enterpriseregistration.\<sufijo upn\>", para cada sufijo UPN en uso en tu organización, debe estar configurado para resolver el servidor de federación o el Proxy de aplicación web.
+-   Para el registro de dispositivos o la autenticación moderna en recursos locales mediante clientes anteriores a Windows 10, "enterpriseregistration.\<upn suffix\>", para cada sufijo UPN en uso en su organización, debe estar configurado para resolver el servidor de federación o el Proxy de aplicación web.
 
 **Requisitos del equilibrador de carga**
 - El equilibrador de carga NO DEBE finalizar SSL. AD FS admite varios casos de uso con autenticación de certificados que se interrumpirán al finalizar SSL. No se admite la finalización de SSL en el equilibrador de carga en ningún caso de uso. 
@@ -241,4 +241,3 @@ Para obtener más información, consulta [Procedimientos recomendados para prote
 El administrador que se encarga de la instalación y la configuración inicial de AD FS debe tener permisos de administrador local en el servidor de AD FS.  Si el administrador local no tiene permisos para crear objetos en Active Directory, primero debe hacer que un administrador de dominio cree los objetos de AD necesarios y, luego, configure la granja de AD FS con el parámetro AdminConfiguration.  
   
   
-

@@ -8,22 +8,22 @@ ms.author: jgerend
 ms.technology: storage-spaces
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8383d93983f6620f15099573e527ad89d250727d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b5f1ccab7e4c0ca2bbd478509a76a4a37559c345
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960107"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181871"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implementar espacios de almacenamiento en un servidor independiente
 
 >Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En este tema se describe cómo implementar espacios de almacenamiento en un servidor independiente. Para obtener información sobre cómo crear un espacio de almacenamiento en clúster, vea [implementar un clúster de espacios de almacenamiento en Windows Server 2012 R2](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>).
+En este tema se describe cómo implementar espacios de almacenamiento en un servidor independiente. Para obtener información sobre cómo crear un espacio de almacenamiento en clúster, vea [implementar un clúster de espacios de almacenamiento en Windows Server 2012 R2](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>).
 
 Para crear un espacio de almacenamiento, debes crear primero uno o varios grupos de almacenamiento. Un grupo de almacenamiento es una colección de discos físicos. Un grupo de almacenamiento permite agregar almacenamiento, expandir la capacidad flexible y delegar la administración.
 
-Desde un grupo de almacenamiento, puedes crear uno o varios discos virtuales. Los discos virtuales también se denominan *espacios de almacenamiento*. Un espacio de almacenamiento aparece en el sistema operativo Windows como un disco normal desde el que puedes crear volúmenes formateados. Cuando creas un disco virtual a través de la interfaz de usuario de Servicios de archivos y almacenamiento, puedes configurar el tipo de resistencia (simple, reflejo o paridad), el tipo de aprovisionamiento (fino o fijo) y el tamaño. Mediante Windows PowerShell, puedes configurar otros parámetros, como el número de columnas, el valor de intercalación y qué discos físicos del grupo deben usarse. Para obtener información sobre estos parámetros adicionales, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) y [¿Qué son las columnas y cómo decide Espacios de almacenamiento cuántas usar?](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx%23what_are_columns_and_how_does_storage_spaces_decide_how_many_to_use) en la sección de preguntas más frecuentes de Espacios de almacenamiento (P+F).
+Desde un grupo de almacenamiento, puedes crear uno o varios discos virtuales. Los discos virtuales también se denominan *espacios de almacenamiento*. Un espacio de almacenamiento aparece en el sistema operativo Windows como un disco normal desde el que puedes crear volúmenes formateados. Cuando creas un disco virtual a través de la interfaz de usuario de Servicios de archivos y almacenamiento, puedes configurar el tipo de resistencia (simple, reflejo o paridad), el tipo de aprovisionamiento (fino o fijo) y el tamaño. Mediante Windows PowerShell, puedes configurar otros parámetros, como el número de columnas, el valor de intercalación y qué discos físicos del grupo deben usarse. Para obtener información sobre estos parámetros adicionales, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) y el [Foro de almacenamiento de Windows Server](https://docs.microsoft.com/answers/topics/windows-server-storage.html).
 
 >[!NOTE]
 >No se puede usar un espacio de almacenamiento para hospedar el sistema operativo Windows.
@@ -39,12 +39,12 @@ La siguiente figura ilustra el flujo de trabajo de los Espacios de almacenamient
 >[!NOTE]
 >Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, vea [PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6).
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 
 Para usar espacios de almacenamiento en un servidor independiente basado en Windows Server 2012 −, asegúrese de que los discos físicos que desea utilizar cumplan los siguientes requisitos previos.
 
 > [!IMPORTANT]
-> Si quiere obtener información sobre cómo implementar espacios de almacenamiento en un clúster de conmutación por error, consulte [implementar un clúster de espacios de almacenamiento en Windows Server 2012 R2](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>). Una implementación de clústeres de conmutación por error tiene diferentes requisitos previos, como los tipos de bus de disco compatibles, los tipos de resistencia compatibles y el número mínimo de discos necesarios.
+> Si quiere obtener información sobre cómo implementar espacios de almacenamiento en un clúster de conmutación por error, consulte [implementar un clúster de espacios de almacenamiento en Windows Server 2012 R2](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>). Una implementación de clústeres de conmutación por error tiene diferentes requisitos previos, como los tipos de bus de disco compatibles, los tipos de resistencia compatibles y el número mínimo de discos necesarios.
 
 |Área|Requisito|Notas|
 |---|---|---|
@@ -68,9 +68,9 @@ Primero debes agrupar los discos físicos disponibles en uno o varios grupos de 
 1. En el panel de navegación Administrador del servidor, seleccione **servicios de archivos y almacenamiento**.
 
 2. En el panel de navegación, seleccione la página **grupos de almacenamiento** .
-    
+
     De manera predeterminada, los discos disponibles se incluyen en un grupo llamado *primordial*. Si no se muestra ningún grupo primordial en **GRUPOS DE ALMACENAMIENTO**, el almacenamiento no cumple los requisitos de los Espacios de almacenamiento. Asegúrate de que los discos cumplen los requisitos indicados en la sección Requisitos previos.
-    
+
     >[!TIP]
     >Si seleccionas el grupo de almacenamiento **Primordial**, los discos físicos disponibles se muestran en **DISCOS FÍSICOS**.
 
@@ -81,15 +81,15 @@ Primero debes agrupar los discos físicos disponibles en uno o varios grupos de 
 5. En la página **Especifique un nombre y un subsistema** para el grupo de almacenamiento, escriba un nombre y una descripción opcional para el grupo de almacenamiento, seleccione el grupo de discos físicos disponibles que desea usar y, después, seleccione **siguiente**.
 
 6. En la página **seleccionar discos físicos para el grupo de almacenamiento** , haga lo siguiente y, a continuación, seleccione **siguiente**:
-    
+
     1. Selecciona la casilla situada junto a cada disco físico que desees incluir en el grupo de almacenamiento.
-    
+
     2. Si desea designar uno o varios discos como reservas activas, en **asignación**, seleccione la flecha desplegable y, a continuación, seleccione **reserva activa**.
 
 7. En la página **confirmar selecciones** , compruebe que la configuración sea correcta y, a continuación, seleccione **crear**.
 
 8. En la página **ver resultados** , compruebe que todas las tareas se han completado y, a continuación, seleccione **cerrar**.
-    
+
     >[!NOTE]
     >Si deseas ir directamente al siguiente paso, selecciona la casilla **Crear un disco virtual cuando este asistente se cierre**.
 
@@ -139,48 +139,48 @@ A continuación, debes crear uno o más discos virtuales desde el grupo de almac
 5. En la página **especificar el nombre del disco virtual** , escriba un nombre y una descripción opcional y, a continuación, seleccione **siguiente**.
 
 6. En la página **seleccionar la distribución de almacenamiento** , seleccione el diseño que desee y, a continuación, seleccione **siguiente**.
-    
+
     >[!NOTE]
     >Si selecciona un diseño en el que no tiene suficientes discos físicos, recibirá un mensaje de error al seleccionar **siguiente**. Para obtener información acerca del diseño que se va a usar y los requisitos de disco, consulte [requisitos previos](#prerequisites).
 
 7. Si seleccionó **reflejo** como distribución de almacenamiento y tiene cinco o más discos en el grupo, aparecerá la página **configurar las opciones de resistencia** . Seleccione una de las siguientes opciones:
-    
+
       - **Reflejo doble**
       - **Reflejo triple**
 
 8. En la página **especificar el tipo de aprovisionamiento** , seleccione una de las siguientes opciones y, a continuación, seleccione **siguiente**.
-    
+
    - **Fino**
-        
+
      Con el aprovisionamiento fino, el espacio se asigna según haga falta. De este modo, se optimiza el uso del almacenamiento disponible. Sin embargo, como esto te permite sobreasignar almacenamiento, debes supervisar cuidadosamente de cuánto espacio en disco dispones.
-    
-   - **Resuelto**
-        
+
+   - **Fijo**
+
      Con el aprovisionamiento fijo, la capacidad de almacenamiento se asigna inmediatamente, cuando se crea un disco virtual. Por lo tanto, el aprovisionamiento fijo utiliza un espacio del grupo de almacenamiento que es igual al tamaño del disco virtual.
-    
+
      >[!TIP]
      >Con los Espacios de almacenamiento, puedes crear discos virtuales con aprovisionamiento fino y fijo en el mismo grupo de almacenamiento. Por ejemplo, puedes usar un disco virtual con aprovisionamiento fino para hospedar una base de datos y un disco virtual con aprovisionamiento fijo para hospedar los archivos de registro asociados.
 
 9. En la página **Especificar el tamaño del disco virtual**, haz lo siguiente:
-    
+
     Si seleccionó el aprovisionamiento fino en el paso anterior, en el cuadro **tamaño de disco virtual** , escriba un tamaño de disco virtual, seleccione las unidades (**MB**, **GB**o **TB**) y, después, seleccione **siguiente**.
-    
+
     Si seleccionó aprovisionamiento fijo en el paso anterior, seleccione una de las siguientes opciones:
-    
+
       - **Especificar tamaño**
-        
+
         Para especificar un tamaño, escriba un valor en el cuadro **tamaño de disco virtual** y, a continuación, seleccione las unidades (**MB**, **GB**o **TB**).
-        
+
         Si usas una distribución de almacenamiento que no sea la simple, el disco virtual usará más espacio libre que el especificado. Para evitar un posible error si el tamaño del volumen supera el espacio libre del grupo de almacenamiento, puedes seleccionar la casilla **Crear el disco virtual más grande posible, hasta el tamaño especificado**.
-    
+
       - **Tamaño máximo**
-        
+
         Selecciona esta opción para crear un disco virtual que use la capacidad máxima del grupo de almacenamiento.
 
 10. En la página **confirmar selecciones** , compruebe que la configuración sea correcta y, a continuación, seleccione **crear**.
 
 11. En la página **ver resultados** , compruebe que todas las tareas se han completado y, a continuación, seleccione **cerrar**.
-    
+
     >[!TIP]
     >De manera predeterminada, está seleccionada la casilla **Crear un volumen cuando este asistente se cierre**. Esto te llevará directamente al paso siguiente.
 
@@ -220,15 +220,15 @@ New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1
 A continuación, debes crear un volumen desde el disco virtual. Puede asignar una letra de unidad o carpeta opcional, y después formatear el volumen con un sistema de archivos.
 
 1. Si el Asistente para nuevo volumen todavía no está abierto, en la página **grupos de almacenamiento** en Administrador del servidor, en **discos virtuales**, haga clic con el botón secundario en el disco virtual deseado y, a continuación, seleccione **nuevo volumen**.
-    
+
     Se abre el Asistente para nuevo volumen.
 
 2. En la página **antes de comenzar** , seleccione **siguiente**.
 
 3. En la página **seleccionar el servidor y el disco** , realice lo siguiente y, a continuación, seleccione **siguiente**.
-    
+
     1. En el área **servidor** , seleccione el servidor en el que desea aprovisionar el volumen.
-    
+
     2. En el área **disco** , seleccione el disco virtual en el que desea crear el volumen.
 
 4. En la página **especificar el tamaño del volumen** , escriba un tamaño de volumen, especifique las unidades (**MB**, **GB**o **TB**) y, a continuación, seleccione **siguiente**.
@@ -236,15 +236,15 @@ A continuación, debes crear un volumen desde el disco virtual. Puede asignar un
 5. En la página **asignar a una letra de unidad o carpeta** , configure la opción deseada y, a continuación, seleccione **siguiente**.
 
 6. En la página **seleccionar configuración del sistema de archivos** , haga lo siguiente y, a continuación, seleccione **siguiente**.
-    
+
     1. En la lista **sistema de archivos** , seleccione **NTFS** o **ReFS**.
-    
+
     2. En la lista **Tamaño de unidad de asignación**, deja el valor en **Predeterminado** o establece el tamaño de la unidad de asignación.
-        
+
         >[!NOTE]
         >Para más información sobre el tamaño de la unidad de asignación, consulte [Tamaño de clúster predeterminado para NTFS, FAT y exFAT](https://support.microsoft.com/help/140365/default-cluster-size-for-ntfs-fat-and-exfat).
 
-    
+
     3. Opcionalmente, en el cuadro **Etiqueta de volumen**, escribe un nombre para la etiqueta de volumen, por ejemplo **Datos de RR. HH.**
 
 7. En la página **confirmar selecciones** , compruebe que la configuración sea correcta y, a continuación, seleccione **crear**.
@@ -268,4 +268,4 @@ Get-VirtualDisk –FriendlyName VirtualDisk1 | Get-Disk | Initialize-Disk –Pas
 - [Espacios de almacenamiento](overview.md)
 - [Cmdlets de almacenamiento en Windows PowerShell](/powershell/module/storage/index?view=win10-ps)
 - [Implementar espacios de almacenamiento en clúster](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))
-- [Preguntas más frecuentes (P+F) sobre Espacios de almacenamiento](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx)
+- [Foro de almacenamiento de Windows Server](https://docs.microsoft.com/answers/topics/windows-server-storage.html)

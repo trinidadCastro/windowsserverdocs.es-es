@@ -2,24 +2,23 @@
 title: Compatibilidad con implementaciones de gran tamaño
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 07d0c4c6-3e92-4969-82b8-105e46ab8d97
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c54defee45e8950d878ba70f627c1e645a2c8586
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d98ab8b203bc73da4129d63b5a2b7518742a3667
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817828"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181651"
 ---
 # <a name="support-for-larger-deployments"></a>Compatibilidad con implementaciones de gran tamaño
 
 >Se aplica a: Windows Server 2016 Essentials
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Las características descritas en este tema solo funcionan en Windows Server 2016 con el rol de experiencia de Essentials habilitado y no con la SKU de Windows Server 2016 Essentials.
 
 
@@ -38,11 +37,11 @@ Windows Server 2012 R2 Essentials solo admite un dominio por servidor, que es ne
 
  Windows Server Essentials 2012 R2 bloquea todos los servicios que aprovechan Azure Active Directory, como Office 365, donde se implementa más de un controlador de dominio. La razón es que la sincronización de cuentas y contraseñas entre los controladores de dominio locales y Azure Active Directory puede conducir a las credenciales de cuenta con contraseñas que no están sincronizadas. Esta limitación se ha quitado en Windows Server 2016 Essentials.
 
-## <a name="ability-to-specify-a-designated-domain-controller"></a>capacidad para especificar un controlador de dominio designado
+## <a name="ability-to-specify-a-designated-domain-controller"></a>Capacidad para especificar un controlador de dominio designado
 
 Ahora puede elegir un controlador de dominio designado para mejorar los tiempos de recuperación de Active Directory objetos de dominio, así como coordinar la sincronización de cambios de cuenta en otros controladores de dominio del dominio.
 
-El controlador de dominio designado predeterminado será el mismo servidor que ejecuta el rol de servidor experiencia con Windows Server Essentials. Si ese servidor es un servidor miembro, lo que significa que no es un controlador de dominio, el controlador de dominio designado predeterminado se determinará automáticamente en función de la prueba de qué controlador de dominio del dominio tiene la latencia de red más baja para el servidor que ejecuta el Función de servidor de experiencia con Windows Server. Si desea cambiar manualmente el servidor que es el controlador de dominio designado, puede hacerlo en la **configuración** del panel de **Windows Server Essentials** , como se muestra a continuación.
+El controlador de dominio designado predeterminado será el mismo servidor que ejecuta el rol de servidor experiencia con Windows Server Essentials. Si ese servidor es un servidor miembro, lo que significa que no es un controlador de dominio, el controlador de dominio designado predeterminado se determinará automáticamente en función de la prueba de qué controlador de dominio del dominio tiene la latencia de red más baja para el servidor que ejecuta el rol de servidor de experiencia con Windows Server. Si desea cambiar manualmente el servidor que es el controlador de dominio designado, puede hacerlo en la **configuración** del panel de **Windows Server Essentials** , como se muestra a continuación.
 
 ![Captura de pantalla que muestra el panel de control de configuración en primer plano y en el panel de Windows Server Essentials en segundo plano. La página controlador de dominio designado del panel de control configuración está seleccionada actualmente.](media/larger-deployments-1.PNG)
 
@@ -57,9 +56,9 @@ Windows Server 2016 Essentials admite 500 usuarios y dispositivos 500. Hacer est
 
 Captura de pantalla que muestra el uso de la característica de búsqueda del panel de Windows Server Essentials para buscar la cadena "d5c". Los resultados de esta búsqueda incluyen dos archivos y carpetas y dos usuarios.
 
-> [!NOTE]  
+> [!NOTE]
 > Aunque el límite de usuarios y dispositivos admitidos ha aumentado para el rol de servidor de Windows Server Essentials, el límite admitido para la copia de seguridad del cliente se mantiene en 75.
 
-<a name="see-also"></a>Vea también
+<a name="see-also"></a>Consulte también
 --------
 [Introducción a Windows Server Essentials](get-started.md)

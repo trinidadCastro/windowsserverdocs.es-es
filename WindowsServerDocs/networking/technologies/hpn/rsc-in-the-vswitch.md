@@ -1,6 +1,6 @@
 ---
 title: Fusión de segmentos de recepción (RSC) en el vSwitch
-description: La fusión de segmentos de recepción (RSC) en el vSwitch es una característica de Windows Server 2019 y la actualización de Windows 10 de octubre de 2018 que ayuda a reducir el uso de CPU del host y aumenta el rendimiento de las cargas de trabajo virtuales combinando varios segmentos TCP en menos, pero más grandes sectores. El procesamiento de menos segmentos de gran tamaño (fusionados) es más eficaz que el procesamiento de numerosos segmentos pequeños.
+description: La fusión de segmentos de recepción (RSC) en el vSwitch es una característica de Windows Server 2019 y la actualización de Windows 10 de octubre de 2018 que ayuda a reducir el uso de la CPU del host y aumenta el rendimiento de las cargas de trabajo virtuales mediante la combinación de varios segmentos TCP en menos segmentos, pero más grandes. El procesamiento de menos segmentos de gran tamaño (fusionados) es más eficaz que el procesamiento de numerosos segmentos pequeños.
 manager: dougkim
 ms.prod: windows-server
 ms.technology: networking
@@ -8,19 +8,19 @@ ms.topic: article
 ms.author: dacuo
 author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: 0ffb417728bbdb73d8fb462ff7783b17b511bcd3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e7db6656bd9331e5cc6c2deaee143b3602ef1239
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814778"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181821"
 ---
 # <a name="rsc-in-the-vswitch"></a>RSC en vSwitch
 >Se aplica a: Windows Server 2019
 
-La fusión de segmentos de recepción (RSC) en el vSwitch es una característica de Windows Server 2019 y la actualización de Windows 10 de octubre de 2018 que ayuda a reducir el uso de CPU del host y aumenta el rendimiento de las cargas de trabajo virtuales combinando varios segmentos TCP en menos, pero más grandes sectores. El procesamiento de menos segmentos de gran tamaño (fusionados) es más eficaz que el procesamiento de numerosos segmentos pequeños.
+La fusión de segmentos de recepción (RSC) en el vSwitch es una característica de Windows Server 2019 y la actualización de Windows 10 de octubre de 2018 que ayuda a reducir el uso de la CPU del host y aumenta el rendimiento de las cargas de trabajo virtuales mediante la combinación de varios segmentos TCP en menos segmentos, pero más grandes. El procesamiento de menos segmentos de gran tamaño (fusionados) es más eficaz que el procesamiento de numerosos segmentos pequeños.
 
-Windows Server 2012 y versiones posteriores incluían una versión de descarga de hardware (implementada en el adaptador de red físico) de la tecnología, también conocida como fusión de segmentos de recepción. Esta versión descargada de RSC todavía está disponible en versiones posteriores de Windows. Sin embargo, no es compatible con las cargas de trabajo virtuales y se ha deshabilitado una vez que se ha conectado un adaptador de red físico a un vSwitch. Para obtener más información sobre la versión solo de hardware de RSC, consulte [Receive Segment COALESCE (RSC)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh997024(v=ws.11)).
+Windows Server 2012 y versiones posteriores incluían una versión de descarga de hardware (implementada en el adaptador de red físico) de la tecnología, también conocida como fusión de segmentos de recepción. Esta versión descargada de RSC todavía está disponible en versiones posteriores de Windows. Sin embargo, no es compatible con las cargas de trabajo virtuales y se ha deshabilitado una vez que se ha conectado un adaptador de red físico a un vSwitch. Para obtener más información sobre la versión solo de hardware de RSC, consulte [Receive Segment COALESCE (RSC)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh997024(v=ws.11)).
 
 ## <a name="scenarios-that-benefit-from-rsc-in-the-vswitch"></a>Escenarios que se benefician de RSC en el vSwitch
 
@@ -30,7 +30,7 @@ Por ejemplo:
 
 -   Hospedar NIC virtuales, incluidos:
 
-    -   Redes definidas por software
+    -   Red definida por software
 
     -   Host de Hyper-V
 

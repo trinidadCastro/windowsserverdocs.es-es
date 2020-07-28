@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0047a9f2d4b6b66cec85b2746b1975af2ced3316
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 726b2701e5b84dd17e157283b0ca06c51c7ad2e0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851458"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178691"
 ---
 # <a name="view-task-details-and-notifications"></a>Visualización de tareas de detalles y notificaciones
 
@@ -35,11 +35,11 @@ El área **notificaciones** en la barra de menús administrador del servidor, ma
 
 -   agregar servidores remotos para administrarlos (se muestran notificaciones para los errores de contacto o actualización de los datos que se muestran para los servidores remotos)
 
-Los elementos del menú **Notificaciones** muestran una barra de progreso, una breve descripción de la tarea, el nombre del servidor de destino de la tarea (o uno de los servidores de destino, si hay varios seleccionados), un vínculo a un control o cuadro de diálogo relacionado si procede y un menú **Tareas** . El menú **Tareas** muestra los comandos que se aplican a la notificación activa (la notificación sobre la que mantiene el cursor del mouse). Por ejemplo, si detiene un servicio, puede hacer clic en **Reiniciar** en el menú **Tareas** de la notificación para reiniciarlo.
+Los elementos del menú **Notificaciones** muestran una barra de progreso, una breve descripción de la tarea, el nombre del servidor de destino de la tarea (o uno de los servidores de destino, si hay varios seleccionados), un vínculo a un control o cuadro de diálogo relacionado si procede y un menú **Tareas**. El menú **Tareas** muestra los comandos que se aplican a la notificación activa (la notificación sobre la que mantiene el cursor del mouse). Por ejemplo, si detiene un servicio, puede hacer clic en **Reiniciar** en el menú **Tareas** de la notificación para reiniciarlo.
 
 Las notificaciones son especialmente útiles para instalar o desinstalar roles, servicios de función y características. Por ejemplo, si inicia una instalación de características en un servidor remoto, puede cerrar el Asistente para agregar roles y características mientras la instalación todavía está en curso, pero la tarea activa permanece en la lista de **notificaciones** . El elemento **notificaciones** muestra una barra de progreso para la instalación y le permite volver a abrir el Asistente para agregar roles y características, si es necesario, haciendo clic en **Asistente para agregar roles y características**. Los elementos de esta lista le notifican si se ha producido un error en la instalación o si es necesario seguir pasos de configuración adicionales para finalizar la implementación de la característica.
 
-Las notificaciones también desempeñan un papel importante en la solución de problemas con tareas o procesos en Administrador del servidor. Para obtener más información sobre cómo usar los mensajes en el área **notificaciones** y en el cuadro de diálogo **detalles de tarea** para solucionar problemas de tareas o procesos incorrectos, consulte la [Guía de solución de problemas de administrador del servidor](https://social.technet.microsoft.com/wiki/contents/articles/13443.windows-server-2012-server-manager-troubleshooting-guide-part-i-overview.aspx).
+Las notificaciones también desempeñan un papel importante en la solución de problemas con tareas o procesos en Administrador del servidor. Para obtener más información sobre cómo usar los mensajes en el área **notificaciones** y en el cuadro de diálogo **detalles de tarea** para solucionar problemas de tareas o procesos incorrectos, consulte el [Foro de administrador del servidor](https://docs.microsoft.com/answers/topics/windows-server-manager.html).
 
 Para eliminar una notificación que ya no desee ver en la lista de **notificaciones** , mantenga el cursor del mouse sobre la notificación y, a continuación, haga clic en **quitar tarea** (**X**).
 
@@ -48,6 +48,6 @@ El comando **detalles de tarea** de la parte inferior del menú **notificaciones
 
 El panel inferior es especialmente útil para solucionar los errores de las tareas. Si Administrador del servidor no se puede conectar a un servidor que sea miembro del grupo de servidores ni obtener datos de este, las entradas de este panel contienen a menudo mensajes detallados, incluido el texto completo de los problemas subyacentes de administración remota de Windows (WinRM), redes o seguridad que impiden que Administrador del servidor se comunique con un servidor de destino.
 
-## <a name="see-also"></a>Consulta también
-[Filtrar, ordenar y consultar datos en Administrador del servidor mosaicos](filter-sort-and-query-data-in-server-manager-tiles.md)
-[Guía de solución de problemas administrador del servidor](https://social.technet.microsoft.com/wiki/contents/articles/13443.windows-server-2012-server-manager-troubleshooting-guide-part-i-overview.aspx)
+## <a name="see-also"></a>Consulte también
+[Filtrar, ordenar y consultar datos en Administrador del servidor mosaicos](filter-sort-and-query-data-in-server-manager-tiles.md) 
+ [Foro de administrador del servidor](https://docs.microsoft.com/answers/topics/windows-server-manager.html).

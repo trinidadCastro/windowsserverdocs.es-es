@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 1bbb8f06ab66ced50024f4ff17b73229d50ec5c6
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1eeaa76af345d3f05effe2afe35c40d594adfc3a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80391709"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959627"
 ---
 # <a name="kms-client-setup-keys"></a>Claves de configuración del cliente KMS
 
@@ -25,9 +25,9 @@ Los ordenadores que ejecutan ediciones con licencias por volumen de Windows Serv
 > [!NOTE]
 > En las tablas siguientes, "LTSC" se refiere a "Canal de mantenimiento a largo plazo", mientras que "LTSB" hace referencia a la "Rama de mantenimiento a largo plazo". 
 
-**Para usar las claves que aquí se indican (que son GVLK), en la implementación debe haber un host de KMS en ejecución**. Si aún no has configurado un host de KMS, consulta [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) (Implementar la activación de KMS) para ver los pasos para configurar uno.
+**Para usar las claves que aquí se indican (que son GVLK), en la implementación debe haber un host de KMS en ejecución**. Si aún no has configurado un host de KMS, consulta [Deploy KMS Activation](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502531(v=ws.11)) (Implementar la activación de KMS) para ver los pasos para configurar uno.
 
-Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a un cliente de KMS, instale la clave de configuración correspondiente (GVLK) que se incluye en las tablas siguientes. Para instalar una clave de configuración de cliente, abre un símbolo del sistema administrativo en el cliente, escriba **slmgr /ipk \<setup key\>** y después presione **ENTRAR**.
+Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a un cliente de KMS, instale la clave de configuración correspondiente (GVLK) que se incluye en las tablas siguientes. Para instalar una clave de configuración de cliente, abra un símbolo del sistema administrativo en el cliente, escriba **slmgr /ipk \<setup key\>** y, a continuación, presione **Entrar**.
 
 | Si desea...    | ...use estos recursos   |
 |--------------------|------------------------|
@@ -209,6 +209,4 @@ Consulta la [hoja de información del ciclo de vida de Windows](https://support.
 
 Consulta también
 
-• [Plan de activación de volumen](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
-
-
+• [Plan de activación de volumen](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134042(v=ws.11))

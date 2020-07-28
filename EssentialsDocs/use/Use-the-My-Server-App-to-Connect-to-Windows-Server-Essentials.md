@@ -2,17 +2,16 @@
 title: Usar la aplicación My Server para conectarse a Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 4e40b57f-6917-43ef-92e0-030baa9d2b99
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: da125fec78a609aff0d7572cbe448115f03fe501
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6b1e6d46013d98970e694176426be2ac1f57195d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469890"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179361"
 ---
 # <a name="use-the-my-server-app-to-connect-to-windows-server-essentials"></a>Usar la aplicación My Server para conectarse a Windows Server Essentials
 
@@ -87,7 +86,7 @@ Las aplicaciones My Server para Windows Server Essentials le permiten conectarse
 
     6.  Seleccione **Equipo local** como ubicación de instalación y, a continuación, haga clic en **Siguiente**.
 
-    7.  En la pantalla del asistente **Almacén de certificados**, seleccione **Colocar todos los certificados en el siguiente almacén** y use **Explorar** para elegir el almacén **Entidades de certificación raíz de confianza**. Haga clic en **Finalizar**.
+    7.  En la pantalla del asistente **Almacén de certificados**, seleccione **Colocar todos los certificados en el siguiente almacén** y use **Explorar** para elegir el almacén **Entidades de certificación raíz de confianza**. Tras ello, haga clic en **Finalizar**.
 
 ##  <a name="use-my-server"></a><a name="BKMK_UseServer"></a>Usar mi servidor
  Para comenzar a usar la aplicación My Server o My Server 2012 R2, abra la aplicación y realice el paseo introductorio de sus características.
@@ -110,7 +109,7 @@ Las aplicaciones My Server para Windows Server Essentials le permiten conectarse
 |Conjunto de características|Descripción|
 |-----------------|-----------------|
 |Administración de alertas|-(Solo administradores) resuelva las alertas en el servidor u omita las alertas que no requieren ninguna acción. Activar o desactivar notificaciones (Configuración de **Permisos**, opción **Notificaciones**)<br />-(Cuentas de usuario estándar) ver las alertas de estado de la red.<br />     **Nota:** Para que un usuario pueda ver las alertas en mi servidor, la opción el **usuario puede ver alertas de estado** de la red debe estar seleccionada en la configuración **General** de la cuenta de usuario. Para obtener más información, consulte [Manage user accounts using the Dashboard](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8).|
-|Administrar los dispositivos|(Solo administradores)<br /><br /> -Cuando esté conectado al servidor de Windows Server Essentials, vea los detalles de cada equipo conectado en la vista **dispositivos** . Los dispositivos sin conexión aparecen sombreados.<br />-Iniciar y detener copias de seguridad de equipos conectados.<br />-Activar o desactivar notificaciones en mi servidor. (Configuración de **Permisos**, opción **Notificaciones**)<br /><br /> Todos los usuarios:<br /><br /> -Ver los equipos cliente a los que tiene acceso la cuenta de usuario. (Pantalla **Dispositivos**)<br />-Supervisar las alertas de esos equipos. (Pantalla **Alertas**)<br />-(Solo en My Server 2012 R2) Conéctese a esos equipos mediante el acceso Web remoto. (Pantalla **Dispositivo**, botón **Conexión remota**)|
+|Administración de dispositivos|(Solo administradores)<br /><br /> -Cuando esté conectado al servidor de Windows Server Essentials, vea los detalles de cada equipo conectado en la vista **dispositivos** . Los dispositivos sin conexión aparecen sombreados.<br />-Iniciar y detener copias de seguridad de equipos conectados.<br />-Activar o desactivar notificaciones en mi servidor. (Configuración de **Permisos**, opción **Notificaciones**)<br /><br /> Todos los usuarios:<br /><br /> -Ver los equipos cliente a los que tiene acceso la cuenta de usuario. (Pantalla **Dispositivos**)<br />-Supervisar las alertas de esos equipos. (Pantalla **Alertas**)<br />-(Solo en My Server 2012 R2) Conéctese a esos equipos mediante el acceso Web remoto. (Pantalla **Dispositivo**, botón **Conexión remota**)|
 |Conectarse a equipos con Escritorio remoto|(Solo mi servidor 2012 R2) Abra una sesión de Escritorio remoto con el servidor de Windows Server Essentials o un equipo cliente. (Pantalla **Dispositivo**, botón **Conexión remota**)<br /><br /> **Nota:** Para habilitar esta característica, descargue e instale la [aplicación escritorio remoto](https://apps.microsoft.com/webpdp/app/051f560e-5e9b-4dad-8b2e-fa5e0b05a480) desde aplicaciones para Windows en el equipo. Las cuentas de usuario estándar pueden conectarse a dispositivos en los que tienen permiso de inicio de sesión. Si desea habilitar a un usuario para que inicie sesión en un equipo, agregue el equipo a la pestaña **Acceso al equipo** de la cuenta de usuario. Para obtener más información, consulte [Assign user accounts permission to log on to specific network computers](../manage/Manage-Devices-in-Windows-Server-Essentials.md#BKMK_2).|
 |Administrar usuarios|(Solo administradores) Cambiar la contraseña de una cuenta de usuario. Finalizar la sesión de un usuario en el servidor. (Configuración de **Usuarios**)|
 |Trabajar con archivos compartidos|<ul><li>Cargar y descargar archivos desde archivos compartidos (carpetas compartidas a las que tiene acceso en el servidor), su recurso compartido privado o, desde un Windows 8.1 dispositivo, SkyDrive o almacenamiento de red. Crear carpetas. Agregar (cargar), editar y eliminar archivos del servidor.</li><li>Ver el estado de la transferencia al cargar o descargar un archivo. Cancelar a una transferencia. Resolver conflictos de archivos.</li><li>Trabajar sin problemas con archivos y carpetas en el equipo local, el servidor, SkyDrive o el almacenamiento de red. Las listas de archivos muestran las carpetas que usó recientemente en el equipo, en SkyDrive o en el almacenamiento de red, junto con las carpetas compartidas del servidor, y le permiten examinar las carpetas de cualquiera de estas ubicaciones.</li><li>Buscar carpetas y archivos en el servidor; hacer clic en un archivo para descargarlo y abrirlo en la aplicación predeterminada. En el modo sin conexión, buscar solo archivos sin conexión.</li><li>Compartir imágenes, música y vídeos. Haga clic en un archivo para abrirlo en una imagen, música o reproductor de vídeo de Windows 8. Asimismo, usar **Abrir** o **Abrir con** para abrir el archivo en otra aplicación. Como es habitual, puede hacer que la aplicación que elija sea la aplicación predeterminada para dicho tipo de medio.<br /><br />     **Nota:** De forma predeterminada, la funcionalidad de transmisión por secuencias de multimedia no está disponible en Windows Server Essentials y Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado. Para obtener más información, vea [administrar medios digitales](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md).<br /><br /> <ul><li>**Imágenes**: en la vista **Imágenes**, puntee en una imagen para abrirla. Puntee en la imagen otra vez para volver a la vista en miniatura en My Server.</li><li>**Música** : en la vista **música** , ver álbumes o canciones compartidas en el servidor. Puntee en un elemento para abrirlo en el reproductor de música.</li><li>**Vídeos** : haga clic en una miniatura en la vista **vídeos** para abrir el reproductor de vídeo.</li></ul></li></ul>|

@@ -7,12 +7,12 @@ manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 5b45970b3402ecfd7976af9b30f22cfd8782cef9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5682eb98854441b35719fc0c2048f07db76cbead
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953477"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181841"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Búsqueda de recursos adicionales para el diseño de la topología de sitio de Active Directory para Windows Server 2008
 
@@ -36,7 +36,7 @@ Puede encontrar la siguiente documentación sobre Active Directory Domain Servic
 
 - Para obtener más información acerca de la implementación del dominio raíz del bosque, vea [implementar un dominio raíz del bosque de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10)).
 
-- Para obtener más información acerca de la protección de controladores de dominio, vea [Active Directory: consideraciones de diseño y prácticas recomendadas](https://social.technet.microsoft.com/wiki/contents/articles/52587.active-directory-design-considerations-and-best-practices.aspx).
+- Para obtener más información acerca de la protección de controladores de dominio, consulte [AD DS diseño y planeamiento](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/ad-ds-design-and-planning).
 
 - Para obtener más información acerca de la implementación de dominios regionales, consulte [implementación de dominios regionales de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10)).
 

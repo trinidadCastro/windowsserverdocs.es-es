@@ -1,5 +1,5 @@
 ---
-title: Adaptadores de red de optimización de rendimiento
+title: Ajustar el rendimiento de los adaptadores de red
 description: Este tema forma parte de la guía de optimización del rendimiento del subsistema de red para Windows Server 2016.
 audience: Admin - CI ID 111485 - CSSTroubleshoot
 ms.prod: windows-server
@@ -10,27 +10,27 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: dec88eb81227b62cd0a0ca90810b2598b8f9fd52
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: eb402c9cd7bb4f9ae472859fcd45fcc050d1df85
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854748"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182141"
 ---
-# <a name="performance-tuning-network-adapters"></a>Adaptadores de red de optimización de rendimiento
+# <a name="performance-tuning-network-adapters"></a>Ajustar el rendimiento de los adaptadores de red
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Utilice la información de este tema para optimizar los adaptadores de red de rendimiento para los equipos que ejecutan Windows Server 2016 y versiones posteriores. Si los adaptadores de red proporcionan opciones de optimización, puede usar estas opciones para optimizar el rendimiento de la red y el uso de recursos.
 
 La configuración de optimización correcta para los adaptadores de red depende de las siguientes variables:
 
-- El adaptador de red y su conjunto de características  
-- El tipo de carga de trabajo que realiza el servidor  
-- Los recursos de hardware y software del servidor  
-- Los objetivos de rendimiento para el servidor  
+- El adaptador de red y su conjunto de características
+- El tipo de carga de trabajo que realiza el servidor
+- Los recursos de hardware y software del servidor
+- Los objetivos de rendimiento para el servidor
 
-En las siguientes secciones se describen algunas de las opciones de ajuste del rendimiento.  
+En las siguientes secciones se describen algunas de las opciones de ajuste del rendimiento.
 
 ##  <a name="enabling-offload-features"></a><a name="bkmk_offload"></a>Habilitar las características de descarga
 
@@ -42,16 +42,16 @@ Activar las características de descarga del adaptador de red suele ser benefici
 Por ejemplo, considere un adaptador de red con recursos de hardware limitados.
 En ese caso, la habilitación de las características de descarga de segmentación podría reducir el rendimiento máximo sostenible del adaptador. Sin embargo, si el rendimiento reducido es aceptable, debe continuar con las características de descarga de segmentación.
 
-> [!NOTE]  
+> [!NOTE]
 > Algunos adaptadores de red requieren que se habiliten las características de descarga de forma independiente para las rutas de acceso de envío y recepción.
 
 ##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>Habilitar el ajuste de escala en lado de recepción (RSS) para servidores Web
 
 RSS puede mejorar la escalabilidad y el rendimiento web cuando hay menos adaptadores de red que procesadores lógicos en el servidor. Cuando todo el tráfico web atraviesa los adaptadores de red compatibles con RSS, el servidor puede procesar las solicitudes Web entrantes de distintas conexiones simultáneamente entre distintas CPU.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Evite el uso de adaptadores de red que no sean de RSS y adaptadores de red compatibles con RSS en el mismo servidor. Debido a la lógica de distribución de la carga en RSS y el protocolo de transferencia de hipertexto (HTTP), el rendimiento puede verse afectado gravemente si un adaptador de red que no es compatible con RSS acepta tráfico web en un servidor que tiene uno o varios adaptadores de red compatibles con RSS. En este caso, debes usar adaptadores de red compatibles con RSS o deshabilitar RSS en la pestaña **Propiedades avanzadas** de las propiedades del adaptador de red.
->  
+>
 > Para determinar si un adaptador de red es compatible con RSS, puedes ver la información de RSS en la pestaña **Propiedades avanzadas** de las propiedades del adaptador de red.
 
 ### <a name="rss-profiles-and-rss-queues"></a>Perfiles RSS y colas RSS
@@ -62,11 +62,11 @@ Por ejemplo, si abre el administrador de tareas y revisa los procesadores lógic
 
 ##  <a name="increasing-network-adapter-resources"></a><a name="bkmk_resources"></a>Aumentar los recursos del adaptador de red
 
-En el caso de los adaptadores de red que permiten configurar manualmente recursos como los búferes de envío y recepción, debe aumentar los recursos asignados.  
+En el caso de los adaptadores de red que permiten configurar manualmente recursos como los búferes de envío y recepción, debe aumentar los recursos asignados.
 
 Algunos adaptadores de red establecen un valor bajo para los búferes de recepción para conservar la memoria asignada del host. El valor bajo produce la pérdida de paquetes y un menor rendimiento. Por lo tanto, en escenarios con un alto volumen de recepción, te recomendamos que aumentes el valor del búfer de recepción al máximo.
 
-> [!NOTE]  
+> [!NOTE]
 > Si un adaptador de red no expone la configuración de recursos manual, configura dinámicamente los recursos o los recursos se establecen en un valor fijo que no se puede cambiar.
 
 ### <a name="enabling-interrupt-moderation"></a>Habilitar moderación de interrupciones
@@ -83,8 +83,8 @@ Las siguientes son algunas sugerencias de ajuste para redes con una sensibilidad
 
 - Establece el BIOS del equipo en **Alto rendimiento**, con C-states deshabilitado. Sin embargo, ten en cuenta que esto depende del BIOS y del sistema, y que algunos sistemas proporcionarán un rendimiento mayor si el sistema operativo controla la administración de la energía. Puede comprobar y ajustar la configuración de administración de energía desde la **configuración** o mediante el comando **powercfg** . Para obtener más información, vea [Opciones de la línea de comandos de powercfg](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options).
 
-- Establece el perfil de administración de energía del sistema operativo en **Sistema de alto rendimiento**.  
-   > [!NOTE]  
+- Establece el perfil de administración de energía del sistema operativo en **Sistema de alto rendimiento**.
+   > [!NOTE]
    > Esta configuración no funciona correctamente si se ha configurado el BIOS del sistema para deshabilitar el control del sistema operativo de la administración de energía.
 
 - Habilitar descargas estáticas. Por ejemplo, habilite las sumas de comprobación UDP, las sumas de comprobación TCP y la configuración de envío de gran carga (LSO).
@@ -97,7 +97,7 @@ Las siguientes son algunas sugerencias de ajuste para redes con una sensibilidad
 
 ##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>Interrupciones de administración del sistema
 
-Muchos sistemas de hardware usan interrupciones de administración del sistema (SMI) para diversas funciones de mantenimiento, como la notificación de errores de memoria de código de corrección de errores (ECC), el mantenimiento de la compatibilidad con USB heredada, el control del ventilador y la administración de energía controlada por BIOS Configuración.
+Muchos sistemas de hardware usan interrupciones de administración del sistema (SMI) para diversas funciones de mantenimiento, como la notificación de errores de memoria de código de corrección de errores (ECC), el mantenimiento de la compatibilidad con USB heredada, el control del ventilador y la administración de la configuración de energía controlada por BIOS.
 
 La SMI es la interrupción de la prioridad más alta en el sistema y coloca la CPU en modo de administración. Este modo se adelanta a todas las demás actividades mientras SMI ejecuta una rutina de servicio de interrupción, normalmente contenida en BIOS.
 
@@ -105,7 +105,7 @@ Desafortunadamente, este comportamiento puede producir picos de latencia de 100 
 
 Si necesitas lograr la menor latencia, debes solicitar a tu proveedor de hardware una versión del BIOS que reduzca los SMI al mínimo posible. Estas versiones del BIOS suelen denominarse "BIOS de baja latencia" o "BIOS gratis de SMI". En algunos casos, en una plataforma de hardware no se puede eliminar la actividad de SMI por completo porque se usa para controlar funciones esenciales (por ejemplo, los ventiladores de refrigeración).
 
-> [!NOTE]  
+> [!NOTE]
 > El sistema operativo no puede controlar SMIs porque el procesador lógico se está ejecutando en un modo de mantenimiento especial, lo que impide la intervención del sistema operativo.
 
 ##  <a name="performance-tuning-tcp"></a><a name="bkmk_tcp"></a>Ajuste del rendimiento de TCP
@@ -120,9 +120,9 @@ En versiones anteriores de Windows, la pila de red de Windows usaba una ventana 
 
 En el caso de una ventana de recepción TCP que tenga un tamaño determinado, puede utilizar la siguiente ecuación para calcular el rendimiento total de una única conexión.
 
-> *Rendimiento total factible en bytes* = *tamaño de la ventana de recepción TCP en bytes* \* (1/ *latencia de conexión en segundos*)
+> *Rendimiento total factible en bytes*  =  *Tamaño de la ventana de recepción TCP en bytes* \* (1/ *latencia de conexión en segundos*)
 
-Por ejemplo, para una conexión que tiene una latencia de 10 ms, el rendimiento total que se alcanza es solo de 51 Mbps. Este valor es razonable para una infraestructura de red corporativa de gran tamaño. Sin embargo, mediante el ajuste automático para ajustar la ventana de recepción, la conexión puede lograr la velocidad de línea completa de una conexión de 1 Gbps.  
+Por ejemplo, para una conexión que tiene una latencia de 10 ms, el rendimiento total que se alcanza es solo de 51 Mbps. Este valor es razonable para una infraestructura de red corporativa de gran tamaño. Sin embargo, mediante el ajuste automático para ajustar la ventana de recepción, la conexión puede lograr la velocidad de línea completa de una conexión de 1 Gbps.
 
 Algunas aplicaciones definen el tamaño de la ventana de recepción de TCP. Si la aplicación no define el tamaño de la ventana de recepción, la velocidad del vínculo determina el tamaño de la manera siguiente:
 
@@ -135,17 +135,17 @@ Por ejemplo, en un equipo que tiene instalado un adaptador de red de 1 Gbps, el 
 
 Esta característica también hace un uso completo de otras características para mejorar el rendimiento de la red. Estas características incluyen el resto de las opciones de TCP definidas en [RFC 1323](https://tools.ietf.org/html/rfc1323). Mediante el uso de estas características, los equipos basados en Windows pueden negociar tamaños de ventana de recepción de TCP más pequeños, pero que se escalan en un valor definido, dependiendo de la configuración. Este comportamiento facilita el control de los dispositivos de red.
 
-> [!NOTE]  
-> Puede experimentar un problema en el que el dispositivo de red no sea compatible con la opción de escala de la **ventana TCP**, tal y como se define en [RFC 1323](https://tools.ietf.org/html/rfc1323) y, por lo tanto, no admite el factor de escala. En tales casos, consulte este [KB 934430, se produce un error de conectividad de red al intentar usar Windows Vista detrás de un dispositivo de Firewall](https://support.microsoft.com/help/934430/network-connectivity-fails-when-you-try-to-use-windows-vista-behind-a) o ponerse en contacto con el equipo de soporte técnico del proveedor de dispositivos de red.  
+> [!NOTE]
+> Puede experimentar un problema en el que el dispositivo de red no sea compatible con la opción de escala de la **ventana TCP**, tal y como se define en [RFC 1323](https://tools.ietf.org/html/rfc1323) y, por lo tanto, no admite el factor de escala. En tales casos, consulte este [KB 934430, se produce un error de conectividad de red al intentar usar Windows Vista detrás de un dispositivo de Firewall](https://support.microsoft.com/help/934430/network-connectivity-fails-when-you-try-to-use-windows-vista-behind-a) o ponerse en contacto con el equipo de soporte técnico del proveedor de dispositivos de red.
 
 #### <a name="review-and-configure-tcp-receive-window-autotuning-level"></a>Revisar y configurar el nivel de ajuste automático de la ventana de recepción de TCP
 
 Puede usar comandos Netsh o cmdlets de Windows PowerShell para revisar o modificar el nivel de ajuste automático de la ventana de recepción de TCP.
 
-> [!NOTE]  
+> [!NOTE]
 > A diferencia de las versiones de Windows anteriores a Windows 10 o Windows Server 2019, ya no se puede usar el registro para configurar el tamaño de la ventana de recepción de TCP. Para obtener más información sobre la configuración en desuso, consulte [parámetros TCP desusados](#deprecated-tcp-parameters).
 
-> [!NOTE]  
+> [!NOTE]
 > Para obtener información detallada acerca de los niveles de optimización automático disponibles, consulte [autotuning Levels](#autotuning-levels).
 
 **Para usar Netsh para revisar o modificar el nivel de ajuste automático**
@@ -161,7 +161,7 @@ La salida de este comando debe ser similar a la siguiente:
 ```
 Querying active state...
 
-TCP Global Parameters  
+TCP Global Parameters
 -----
 Receive-Side Scaling State : enabled
 Chimney Offload State : disabled
@@ -184,10 +184,10 @@ Para modificar la configuración, ejecute el siguiente comando en el símbolo de
 netsh interface tcp set global autotuninglevel=<Value>
 ```
 
-> [!NOTE]  
-> En el comando anterior, \<*valor*> representa el nuevo valor para el nivel de ajuste automático.
+> [!NOTE]
+> En el comando anterior, \<*Value*> representa el nuevo valor para el nivel de ajuste automático.
 
-Para obtener más información acerca de este comando, vea [comandos Netsh para el protocolo de control de transmisión de interfaz](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731258(v=ws.10)).
+Para obtener más información acerca de este comando, vea [comandos Netsh para el protocolo de control de transmisión de interfaz](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731258(v=ws.10)).
 
 **Para usar PowerShell para revisar o modificar el nivel de ajuste automático**
 
@@ -216,8 +216,8 @@ Para modificar la configuración, ejecute el siguiente cmdlet en el símbolo del
 Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 ```
 
-> [!NOTE]  
-> En el comando anterior, \<*valor*> representa el nuevo valor para el nivel de ajuste automático.
+> [!NOTE]
+> En el comando anterior, \<*Value*> representa el nuevo valor para el nivel de ajuste automático.
 
 Para obtener más información sobre estos cmdlets, consulte los siguientes artículos:
 
@@ -228,13 +228,13 @@ Para obtener más información sobre estos cmdlets, consulte los siguientes art�
 
 Puede establecer el ajuste automático de la ventana de recepción en cinco niveles. El nivel predeterminado es **normal**. En la tabla siguiente se describen los niveles.
 
-|Level |Valor hexadecimal |Comentarios |
+|Nivel |Valor hexadecimal |Comentarios |
 | --- | --- | --- |
 |Normal (opción predeterminada) |0x8 (factor de escala de 8) |Establezca el tamaño de la ventana de recepción de TCP para que se adapte a casi todos los escenarios. |
-|Deshabilitado |No hay ningún factor de escala disponible |Establezca la ventana de recepción TCP en su valor predeterminado. |
-|Restricted (Restringida) |0x4 (factor de escala de 4) |Establezca la ventana de recepción TCP para que supere su valor predeterminado, pero limite dicho crecimiento en algunos escenarios. |
+|Deshabilitada |No hay ningún factor de escala disponible |Establezca la ventana de recepción TCP en su valor predeterminado. |
+|Restringido |0x4 (factor de escala de 4) |Establezca la ventana de recepción TCP para que supere su valor predeterminado, pero limite dicho crecimiento en algunos escenarios. |
 |Muy restringido |0X2 (factor de escala de 2) |Establezca la ventana de recepción TCP para que crezca más allá de su valor predeterminado, pero hágalo con mucha cautela. |
-|Ensayo |0xE (factor de escala de 14) |Establezca la ventana de recepción de TCP en crecimiento para adaptarse a escenarios extremos. |
+|Habilitación de características |0xE (factor de escala de 14) |Establezca la ventana de recepción de TCP en crecimiento para adaptarse a escenarios extremos. |
 
 Si utiliza una aplicación para capturar paquetes de red, la aplicación debe notificar datos similares a los siguientes para diferentes valores de nivel de ajuste automático de ventana.
 
@@ -366,18 +366,18 @@ Si utiliza una aplicación para capturar paquetes de red, la aplicación debe no
 La siguiente configuración del registro de Windows Server 2003 ya no se admite y se omiten en versiones posteriores.
 
 - **TcpWindowSize**
-- **NumTcbTablePartitions**  
-- **MaxHashTableSize**  
+- **NumTcbTablePartitions**
+- **MaxHashTableSize**
 
 Todas estas opciones se encontraban en la subclave del Registro siguiente:
 
-> **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**  
+> **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**
 
 ###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Plataforma de filtrado de Windows
 
 Windows Vista y Windows Server 2008 presentaron la plataforma de filtrado de Windows (WFP). WFP proporciona API a proveedores de software independientes (ISV) que no son de Microsoft para crear filtros de procesamiento de paquetes. Algunos ejemplos son firewall y software antivirus.
 
-> [!NOTE]  
+> [!NOTE]
 > Un filtro WFP mal escrito puede reducir significativamente el rendimiento de red de un servidor. Para obtener más información, vea [portar controladores de procesamiento de paquetes y aplicaciones a WFP](https://docs.microsoft.com/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) en el centro de desarrollo de Windows.
 
 Para obtener vínculos a todos los temas de esta guía, consulte [ajuste del rendimiento del subsistema de red](net-sub-performance-top.md).

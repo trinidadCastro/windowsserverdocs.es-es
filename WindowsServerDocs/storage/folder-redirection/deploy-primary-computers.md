@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 935d3ccf7de777a71d7c75179629b448dbb73a08
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7af3d5c64216f60cca41aa9fb0c3d2c38c74e6c4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966287"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182251"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>Implementación de equipos principales para Redirección de carpetas y Perfiles de usuario móvil
 
@@ -30,7 +30,7 @@ En este tema se describe cómo habilitar el soporte de equipo principal y cómo 
 
 El soporte de equipo principal tiene los siguientes requisitos:
 
-- El esquema de Active Directory Domain Services (AD DS) debe actualizarse para incluir las adiciones del esquema de Windows Server 2012 (la instalación de un controlador de dominio de Windows Server 2012 actualiza automáticamente el esquema). Para obtener información acerca de la actualización del esquema de AD DS, consulta [Integración de Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>) y [Ejecución de Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>).
+- El esquema de Active Directory Domain Services (AD DS) debe actualizarse para incluir las adiciones del esquema de Windows Server 2012 (la instalación de un controlador de dominio de Windows Server 2012 actualiza automáticamente el esquema). Para obtener información acerca de la actualización del esquema de AD DS, consulta [Integración de Adprep.exe](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>) y [Ejecución de Adprep.exe](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>).
 - Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.
 
 > [!TIP]

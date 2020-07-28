@@ -10,12 +10,12 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bcb669f64845aaa7a3b0498cd7f793891f6c274
-ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
+ms.openlocfilehash: a64896a1efcafec878ea8fd5dda8077a1fdc9c42
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551128"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118584"
 ---
 # <a name="iis-on-nano-server"></a>IIS en Nano Server
 
@@ -63,7 +63,7 @@ En esta versión de Nano Server, están disponibles las siguientes característi
 |**Herramientas de administración**||
 |Módulo IISAdministration para Windows PowerShell|x|
 
-Una serie de artículos sobre otras configuraciones de IIS (por ejemplo, con ASP.NET, PHP y Java) y otros relacionados con el contenido están publicados en [http://iis.net/learn](https://iis.net/learn).
+Una serie de artículos sobre otras configuraciones de IIS (por ejemplo, con ASP.NET, PHP y Java) y otros relacionados con el contenido están publicados en [https://iis.net/learn](https://iis.net/learn).
 
 ## <a name="installing-iis-on-nano-server"></a>Instalación de IIS en Nano Server
 Puede instalar este rol de servidor sin conexión (con Nano Server desactivado) o en línea (con Nano Server activado); la instalación sin conexión es la opción recomendada.
@@ -130,7 +130,7 @@ Aunque se recomienda la instalación sin conexión del rol de servidor, debe rea
 6. Inicie el servicio W3SVC con **net start w3svc** o reiniciando Nano Server.
 
 ## <a name="starting-iis"></a>Inicio de IIS
-Una vez que IIS está instalado y en ejecución, está listo para atender las solicitudes web. Compruebe que IIS está en ejecución; para ello, examine la página web de IIS predeterminada en http://\<dirección IP de Nano Server>. En un equipo físico, puede determinar la dirección IP mediante la Consola de recuperación. En una máquina virtual, puede obtener la dirección IP mediante un símbolo del sistema de Windows PowerShell y ejecutando:
+Una vez que IIS está instalado y en ejecución, está listo para atender las solicitudes web. Compruebe que IIS está en ejecución; para ello, examine la página web de IIS predeterminada en http://\<IP address of Nano Server>. En un equipo físico, puede determinar la dirección IP mediante la Consola de recuperación. En una máquina virtual, puede obtener la dirección IP mediante un símbolo del sistema de Windows PowerShell y ejecutando:
 
 ```PowerShell
 Get-VM -name <VM name> | Select -ExpandProperty networkadapters | select IPAddresses
@@ -291,7 +291,7 @@ Cada característica de IIS existe como un conjunto de elementos de configuraci�
 |`<handlers>`|`<add name=StaticFile path=* verb=* modules=DefaultDocumentModule resourceType=EiSecther requireAccess=Read />`|
 |`<defaultDocument>`|`<defaultDocument enabled=true><br /><files><br /> <add value=Default.htm /><br />        <add value=Default.asp /><br />        <add value=index.htm /><br />        <add value=index.html /><br />        <add value=iisstart.htm /><br />    </files><br /></defaultDocument>`|
 
-La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agrega DefaultDocumentModule al atributo \<modules>, separados por coma.
+La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agregue DefaultDocumentModule al atributo \<modules>, separados por coma.
 
 **Examen de directorios**
 
@@ -301,7 +301,7 @@ La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agrega
 |`<modules>`|`<add name=DirectoryListingModule lockItem=true />`|
 |`<handlers>`|`<add name=StaticFile path=* verb=* modules=DirectoryListingModule resourceType=Either requireAccess=Read />`|
 
-La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agrega DirectoryListingModule al atributo \<modules>, separados por coma.
+La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agregue DirectoryListingModule al atributo \<modules>, separados por coma.
 
 **Errores HTTP**
 
@@ -319,7 +319,7 @@ La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agrega
 |`<modules>`|`<add name=StaticFileModule lockItem=true />`|
 |`<handlers>`|`<add name=StaticFile path=* verb=* modules=StaticFileModule resourceType=Either requireAccess=Read />`|
 
-La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agrega StaticFileModule al atributo \<modules>, separados por coma.
+La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agregue StaticFileModule al atributo \<modules>, separados por coma.
 
 **Redirección HTTP**
 

@@ -9,12 +9,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: 6c9d732b6ec3d8ceb65c691ab143f09dd8f10f23
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 19a65f2a254fe14f7cddfbda2a84e9d00f47da56
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77552540"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181851"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Uso de las actualizaciones de seguridad extendidas (ESU) de Windows Server 2008 y 2008 R2
 
@@ -87,7 +87,7 @@ Para registrar la máquina virtual para las actualizaciones de seguridad extendi
 5. Si ves una página que dice "Register to get a Multiple Activation Key" (Registrarse para obtener una clave de activación múltiple), significa que debes solicitar acceso a la versión preliminar privada antes de poder usar las actualizaciones de seguridad extendidas. Si no ves esta página, ve al paso 6.
 
    Para solicitar acceso, selecciona **join the private preview** (unirse a la versión preliminar privada). Se abrirá una ventana de mensaje de correo electrónico. Este correo electrónico es la solicitud de acceso al equipo del producto.
-  
+
     Incluye la siguiente información en tu solicitud:
 
     * Nombre de cliente
@@ -101,7 +101,7 @@ Para registrar la máquina virtual para las actualizaciones de seguridad extendi
 
     Si el equipo no aprueba tu solicitud, verás el siguiente error:
 
-    [No se pudo encontrar el tipo de recurso en el espacio de nombres "Microsoft.WindowsESU"](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version).
+    [No se pudo encontrar el tipo de recurso en el espacio de nombres "Microsoft.WindowsESU"](https://docs.microsoft.com/windows-server/get-started/extended-security-updates).
 
 6. En **Detalles de Azure**, seleccione su suscripción de Azure, un grupo de recursos y una ubicación para la clave.
 

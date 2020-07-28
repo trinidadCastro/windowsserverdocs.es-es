@@ -9,16 +9,16 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ba556b5a00f3932e2049135b177a7ad8bbceec9c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6062dd987a136bc2be67c09efbe399bb8fae24f6
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828298"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178531"
 ---
 # <a name="failover-cluster-domain-migration"></a>Migración de dominios de clúster de conmutación por error
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se proporciona información general para mover los clústeres de conmutación por error de Windows Server de un dominio a otro.
 
@@ -39,7 +39,7 @@ Microsoft no proporciona soporte técnico a los administradores que intenten tra
 
 ## <a name="windows-server-2016-and-earlier"></a>Windows Server 2016 y versiones anteriores
 
-En Windows Server 2016 y versiones anteriores, los Servicio de clúster no tenían la capacidad de pasar de un dominio a otro.  Esto se debe a la mayor dependencia de Active Directory Domain Services y los nombres virtuales creados.   
+En Windows Server 2016 y versiones anteriores, los Servicio de clúster no tenían la capacidad de pasar de un dominio a otro.  Esto se debe a la mayor dependencia de Active Directory Domain Services y los nombres virtuales creados.
 
 ## <a name="options"></a>Opciones
 
@@ -62,14 +62,14 @@ La segunda opción es menos destructiva, pero requiere hardware adicional, ya qu
 Como se muestra en la animación, esta opción no es destructiva, pero requiere un hardware diferente o un nodo del clúster existente del que se ha quitado.
 
 1. Cree un nuevo clúster en el nuevo dominio sin dejar disponible el clúster anterior.
-2. Use el [Asistente para migración de clústeres](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10)) para migrar todos los recursos al nuevo clúster. Recuerde que no copia los datos, por lo que deberá realizarse por separado.
+2. Use el [Asistente para migración de clústeres](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10)) para migrar todos los recursos al nuevo clúster. Recuerde que no copia los datos, por lo que deberá realizarse por separado.
 3. Retirar o destruir el clúster anterior.
 
 En ambas opciones, el nuevo clúster necesitaría tener todas [las aplicaciones habilitadas para clústeres](https://technet.microsoft.com/aa369082(v=vs.90)) instaladas, controladores actualizadas y, posiblemente, pruebas para asegurarse de que todas se ejecutarán correctamente.  Se trata de un proceso lento si también es necesario moverse los datos.
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
-En Windows Server 2019, se introdujeron las capacidades de migración de dominios entre clústeres.  Por lo tanto, ahora se pueden realizar fácilmente los escenarios indicados anteriormente y ya no es necesario volver a generar.  
+En Windows Server 2019, se introdujeron las capacidades de migración de dominios entre clústeres.  Por lo tanto, ahora se pueden realizar fácilmente los escenarios indicados anteriormente y ya no es necesario volver a generar.
 
 Mover un clúster de un dominio es un proceso directo. Para ello, hay dos nuevos commandlets de PowerShell.
 

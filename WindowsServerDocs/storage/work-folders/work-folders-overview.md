@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: 'Información general de las carpetas de trabajo: un rol de servidor en Windows Server que proporciona una manera coherente de que los usuarios tengan acceso a los archivos de trabajo desde equipos y dispositivos.'
-ms.openlocfilehash: a6c1f8a30e3e83a0e7a6bac622982f4f43c44258
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: 4759584773698dded934d435e601da4e05ff9ee6
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118600"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181911"
 ---
 # <a name="work-folders-overview"></a>Introducción a carpetas de trabajo
 
@@ -109,7 +109,7 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
 
     -   Windows RT 8.1
 
-    -   Windows 7
+    -   Windows 7
 
     -   Android 4,4 KitKat y versiones posteriores
 
@@ -121,7 +121,7 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
 
     -   Windows 7 Ultimate
 
-    -   Windows 7 Enterprise
+    -   Windows 7 Enterprise
 
 -   Los equipos con Windows 7 deben estar Unidos al dominio de su organización (no pueden unirse a un grupo de trabajo).
 
@@ -164,13 +164,13 @@ Carpetas de trabajo forma parte del rol servicios de archivos y almacenamiento. 
 
 Para obtener información acerca de cómo empezar a trabajar con máquinas virtuales de Windows Azure, visite el [sitio web de Windows Azure](https://www.windowsazure.com/documentation/services/virtual-machines).
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Consulte también
 
 | Tipo de contenido | Referencias |
 | ------------------ | ---------------- |
 | **Evaluación del producto** | -   [Carpetas de trabajo para Android: publicado](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog)<br />-   [Carpetas de trabajo para iOS: versión de la aplicación de iPad](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog)<br />-   [Introducción a las carpetas de trabajo en Windows Server 2012 R2](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog)<br />-   [Introducción a las carpetas de trabajo](https://channel9.msdn.com/posts/Introduction-to-Work-Folders) (vídeo de Channel 9)<br />-   [Implementación del laboratorio de pruebas de carpetas de trabajo](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog)<br />-   [Carpetas de trabajo para Windows 7](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog) |
 | **Implementación** | -   [Diseñar una implementación de carpetas de trabajo](plan-work-folders.md)<br />-   [Implementar carpetas de trabajo](deploy-work-folders.md)<br />-   [Implementación de carpetas de trabajo con AD FS y proxy de aplicación web (WAP)](deploy-work-folders-adfs-overview.md)<br />-   [Implementación de carpetas de trabajo con Azure AD proxy de aplicación](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />- [Guía de migración de Archivos sin conexión (CSC) a carpetas de trabajo](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [Consideraciones de rendimiento para las implementaciones de carpetas de trabajo](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [Carpetas de trabajo para Windows 7 (descarga de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Carpetas de trabajo para Windows 7 (descarga de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559) |
 | **Operaciones** | -   [Carpetas de trabajo de la aplicación de iPad: preguntas más frecuentes](https://windows.microsoft.com/windows/work-folders-ipad-faq) (para usuarios)<br />-   [Administración de certificados de carpetas de trabajo](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog)<br />-   [Supervisión de las implementaciones de carpetas de trabajo de Windows Server 2012 R2](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog)<br />-   [Cmdlets de SyncShare (carpetas de trabajo) en Windows PowerShell](/powershell/module/syncshare/?view=win10-ps)<br />-   [Tarjeta de referencia rápida de cmdlets de PowerShell para servicios de archivos y almacenamiento para Windows Server 2012 R2 Preview Edition](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
-| **Solución de problemas** | -   [Windows Server 2012 R2: resolución de conflictos de puerto con sitios web y carpetas de trabajo de IIS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog)<br />-   [Errores comunes en carpetas de trabajo](https://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx) |
-| **Recursos de la comunidad** | -   [Foro de almacenamiento y servicios de archivos](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [El equipo de almacenamiento en el blog de Microsoft-File Cabinet](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [Pregunte al blog del equipo de servicios de directorio](/archive/blogs/askds/) |
+| **Solución de problemas** | -   [Windows Server 2012 R2: resolución de conflictos de puerto con sitios web y carpetas de trabajo de IIS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (entrada de blog)<br />-   [Errores comunes en carpetas de trabajo](https://techcommunity.microsoft.com/t5/storage-at-microsoft/troubleshooting-work-folders-on-windows-client/ba-p/425627) |
+| **Recursos de la comunidad** | -   [Foro de almacenamiento y servicios de archivos](https://docs.microsoft.com/answers/topics/windows-server-storage.html)<br />-   [El equipo de almacenamiento en el blog de Microsoft-File Cabinet](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [Pregunte al blog del equipo de servicios de directorio](/archive/blogs/askds/) |
 | **Tecnologías relacionadas** | -   [Almacenamiento en Windows Server 2016](../storage.yml)<br>-   [Servicios de archivos y almacenamiento](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))<br />-   [Administrador de recursos de servidor de archivos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))<br />-   [Redirección de carpetas, Archivos sin conexión y perfiles de usuario móviles](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848267(v=ws.11))<br />-   [BranchCache](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11))<br />-   [Espacios de nombres DFS y Replicación DFS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) |

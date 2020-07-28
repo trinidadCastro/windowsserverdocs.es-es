@@ -8,12 +8,12 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 514dd9be3f7f634cf021a8a154f4b64c9018743e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a1508db6878a48c5fad2a0909123beb836e1d1f0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961637"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182241"
 ---
 # <a name="deploying-roaming-user-profiles"></a>Implementación de perfiles de usuario móviles
 
@@ -78,7 +78,7 @@ Para realizar estos cambios, haz lo siguiente.
     - Windows 8.1 o Windows Server 2012 R2: instala la actualización de software que se describe en el artículo [2887595](https://support.microsoft.com/kb/2887595) de Microsoft Knowledge Base (cuando se publique).
     - Windows 8 o Windows Server 2012: instale la actualización de software que se describe en el artículo [2887239](https://support.microsoft.com/kb/2887239) de Microsoft Knowledge Base.
 
-2. En todos los equipos que ejecuten Windows 8.1, Windows 8, Windows Server 2012 R2 o Windows Server 2012 en los que vayas a usar perfiles de usuario móviles, usa el Editor del Registro o una directiva de grupo para crear el siguiente valor DWORD de clave del Registro y establécelo en `1`. Para obtener más información sobre cómo crear claves del Registro mediante Directiva de grupo, consulte [Configuración de un elemento del Registro](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>).
+2. En todos los equipos que ejecuten Windows 8.1, Windows 8, Windows Server 2012 R2 o Windows Server 2012 en los que vayas a usar perfiles de usuario móviles, usa el Editor del Registro o una directiva de grupo para crear el siguiente valor DWORD de clave del Registro y establécelo en `1`. Para obtener más información sobre cómo crear claves del Registro mediante Directiva de grupo, consulte [Configuración de un elemento del Registro](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>).
 
     ```
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ProfSvc\Parameters\UseProfilePathExtensionVersion
@@ -131,9 +131,9 @@ A continuación, se muestra cómo crear un recurso compartido de archivos en Win
 7. En la página **Permisos**, selecciona **Personalizar permisos...** . Se abrirá el cuadro de diálogo Configuración de seguridad avanzada.
 8. Selecciona **Deshabilitar herencia** y, después, **Convert inherited permissions into explicit permission on this object** (Convertir los permisos heredados en permisos explícitos en este objeto).
 9. Establece los permisos como se describe en [Permisos obligatorios para los perfiles de usuario móviles de hospedaje de recurso compartido de archivos](#required-permissions-for-the-file-share-hosting-roaming-user-profiles) y se muestra en la captura de pantalla siguiente, elimina los permisos de grupos y cuentas que no aparezcan en la lista y agrega permisos especiales al grupo Usuarios y equipos de los perfiles de usuario móviles que creaste en el paso 1.
-    
+
     ![Ventana Configuración de seguridad avanzada que muestra los permisos que se describen en la tabla 1](media/advanced-security-user-profiles.jpg)
-    
+
     **Ilustración 1** Establecer los permisos para el recurso compartido de perfiles de usuario móviles
 10. Si elige el perfil **Recurso compartido SMB - Avanzado** , en la página **Propiedades de administración** , seleccione el valor de uso de carpeta **Archivos de usuario** .
 11. Si elige el perfil **Recurso compartido SMB - Avanzado** , en la página **Cuota** , seleccione (de manera opcional) la cuota que quiera aplicar a los usuarios del recurso compartido.
@@ -164,7 +164,7 @@ A continuación se muestra cómo crear un GPO para perfiles de usuario móviles:
 7. En la sección **Filtrado de seguridad**, selecciona **Agregar**.
 8. En el cuadro de diálogo **Select User, Computer, or Group** (Seleccionar usuario, equipo o grupo), escribe el nombre del grupo de seguridad que creaste en el paso 1 (por ejemplo, **Usuarios y equipos de perfiles de usuario móviles**) y selecciona **Aceptar**.
 9. Selecciona la pestaña **Delegación**, elige **Agregar**, escribe **Usuarios autenticados**, selecciona **Aceptar** y, a continuación, **Aceptar** de nuevo para aceptar los permisos de lectura predeterminados.
-    
+
     Este paso es necesario debido a los cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016).
 
 >[!IMPORTANT]
@@ -182,16 +182,16 @@ A continuación, se muestra cómo configurar perfiles de usuario móviles en cue
 1. En el Centro de administración de Active Directory, navega hasta el contenedor **Usuarios** (o bien OU) en el dominio correspondiente.
 2. Selecciona todos los usuarios que quieras asignar a un perfil de usuario móvil, haz clic con el botón derecho en los usuarios seleccionados y, después, selecciona **Propiedades**.
 3. En la sección **Perfil**, selecciona la casilla **Ruta de acceso al perfil:** y, después, escribe la ruta de acceso al recurso compartido de archivos en la que quieras guardar el perfil de usuario móvil del usuario, seguido de `%username%` (que se sustituirá automáticamente por el nombre de usuario la primera vez que el usuario inicie sesión). Por ejemplo:
-    
+
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
-    
+
     Para especificar un perfil de usuario móvil obligatorio, especifica la ruta de acceso al archivo NTuser.man que creaste anteriormente como, por ejemplo, `fs1.corp.contoso.comUser Profiles$default`. Para obtener más información, consulta [Crear perfiles de usuario obligatorios](/windows/client-management/mandatory-user-profile).
 4. Selecciona **Aceptar**.
 
 > [!NOTE]
 > De manera predeterminada, se permite implementar todas las aplicaciones basadas en Windows® en tiempo de ejecución (Tienda Windows) al usar los perfiles de usuario móviles. Pero, al usar un perfil especial, las aplicaciones no se implementan de manera predeterminada. Los perfiles especiales son perfiles de usuario donde se descartan los cambios cuando el usuario cierra la sesión:
 > <br><br>Para eliminar las restricciones en la implementación de aplicaciones para perfiles especiales, habilite la configuración de directiva **Allow deployment operations in special profiles** (ubicada en Configuración del equipo\Directivas\Plantillas administrativas\Componentes de Windows\Implementación de paquetes de aplicaciones). Pero las aplicaciones implementadas en este escenario dejarán datos almacenados en el equipo, que podrían acumularse si, por ejemplo, hubiera cientos de usuarios en un mismo equipo. Para limpiar las aplicaciones, busca o desarrolla una herramienta que use la API [CleanupPackageForUserAsync](/uwp/api/Windows.Management.Deployment.PackageManager?view=winrt-19041#windows_management_deployment_packagemanager_cleanuppackageforuserasync_system_string_system_string_) a fin de limpiar los paquetes de aplicaciones de los usuarios que ya no tienen un perfil en el equipo.
-> <br><br>Para obtener información general sobre las aplicaciones de la Tienda Windows, consulte [Administrar el acceso de cliente a la Tienda Windows](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh832040(v=ws.11)>).
+> <br><br>Para obtener información general sobre las aplicaciones de la Tienda Windows, consulte [Administrar el acceso de cliente a la Tienda Windows](</previous-versions/windows/it-pro/windows-8.1-and-8/hh832040(v=ws.11)>).
 
 ## <a name="step-6-optionally-set-up-roaming-user-profiles-on-computers"></a>Paso 6: Configurar los perfiles de usuario móviles en equipos (opcional)
 
@@ -229,7 +229,7 @@ Para especificar un diseño del menú Inicio, haz lo siguiente:
 2. Crea un archivo XML de diseño del menú Inicio completo o parcial. Para ello, consulta [Personalizar y exportar el diseño de la pantalla Inicio](/windows/configuration/customize-and-export-start-layout).
     * Si especificas un diseño del menú Inicio *completo*, un usuario no podrá personalizar ninguna parte del menú Inicio. Si especificas un diseño del menú Inicio *parcial*, los usuarios pueden personalizarlo todo, excepto los grupos de iconos bloqueados que especifiques. Sin embargo, con un diseño del menú Inicio parcial, las personalizaciones de los usuarios del menú Inicio no se transferirán a otros equipos.
 3. Utiliza una directiva de grupo para aplicar el diseño del menú Inicio personalizado al GPO que creaste para los perfiles de usuario móviles. Para ello, consulta [Usar la directiva de grupo para aplicar un diseño de pantalla Inicio personalizado en un dominio](/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment).
-4. Usa una directiva de grupo para establecer el siguiente valor del Registro en los equipos Windows 10. Para ello, consulta [Configuración de un elemento del Registro](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>).
+4. Usa una directiva de grupo para establecer el siguiente valor del Registro en los equipos Windows 10. Para ello, consulta [Configuración de un elemento del Registro](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>).
 
 | **Acción**   | **Actualizar**                  |
 | ------------ | ------------                |
@@ -243,7 +243,7 @@ Para especificar un diseño del menú Inicio, haz lo siguiente:
 5. (Opcional) Habilita las optimizaciones de inicio de sesión por primera vez para que los usuarios puedan iniciar sesión más rápidamente. Para ello, consulta [Aplicar directivas para mejorar el tiempo de inicio de sesión](/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time).
 6. (Opcional) Reduce todavía más los tiempos de inicio de sesión quitando las aplicaciones innecesarias de la imagen base de Windows 10 que usas para implementar los equipos cliente. Windows Server 2019 y Windows Server 2016 no tienen ninguna aplicación aprovisionada previamente, por lo que puedes omitir este paso en las imágenes del servidor.
     - Para quitar aplicaciones, usa el cmdlet [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) en Windows PowerShell para desinstalar las siguientes aplicaciones. Si los equipos ya están implementados, puedes crear scripts para la eliminación de estas aplicaciones mediante [Remove-AppxPackage](/powershell/module/appx/remove-appxpackage?view=win10-ps).
-    
+
       - Microsoft.windowscommunicationsapps\_8wekyb3d8bbwe
       - Microsoft.BingWeather\_8wekyb3d8bbwe
       - Microsoft.DesktopAppInstaller\_8wekyb3d8bbwe
@@ -279,7 +279,7 @@ A continuación, se muestra cómo probar los perfiles de usuario móviles:
 
 1. Inicia sesión en un equipo principal (si has habilitado el soporte de equipo principal) con una cuenta de usuario en la que hayas habilitado los perfiles de usuario móviles. Si has habilitado perfiles de usuario móviles en equipos específicos, inicia sesión en uno de estos equipos.
 2. Si el usuario ha iniciado sesión en el equipo anteriormente, abre un símbolo del sistema con privilegios elevados y escribe el comando siguiente para asegurarte de que se aplique la última configuración de directiva de grupo en el equipo cliente:
-    
+
     ```PowerShell
     GpUpdate /Force
     ```
@@ -321,19 +321,19 @@ La tabla siguiente contiene las ubicaciones de los perfiles de usuario móviles 
 Estas son algunas formas de solucionar el restablecimiento de los diseños del menú Inicio después de una actualización local:
 
 - Si solo un usuario usa el dispositivo y el administrador de TI usa una estrategia de implementación de sistema operativo administrada como Configuration Manager, pueden hacer lo siguiente:
-    
-  1. Exportar el diseño del menú Inicio con Export-Startlayout antes de la actualización 
-  2. Importar el diseño del menú Inicio con Import-StartLayout después de ejecutar la característica Bienvenida de Windows, pero antes de que el usuario inicie sesión  
- 
-     > [!NOTE] 
+
+  1. Exportar el diseño del menú Inicio con Export-Startlayout antes de la actualización
+  2. Importar el diseño del menú Inicio con Import-StartLayout después de ejecutar la característica Bienvenida de Windows, pero antes de que el usuario inicie sesión
+
+     > [!NOTE]
      > Al importar un diseño del menú Inicio se modifica el perfil de usuario predeterminado. Todos los perfiles de usuario creados después de la importación obtendrán el diseño del menú Inicio importado.
- 
+
 - Los administradores de TI pueden optar por administrar el diseño del menú Inicio con una directiva de grupo. El uso de una directiva de grupo proporciona una solución de administración centralizada para aplicar un diseño del menú Inicio estandarizado a los usuarios. Existen dos modos de usar la directiva de grupo para la administración del menú Inicio. Bloqueo completo y bloqueo parcial. El escenario de bloqueo completo impide que el usuario realice cambios en el diseño del menú Inicio. El escenario de bloqueo parcial permite al usuario realizar cambios en un área específica del menú Inicio. Para obtener más información, consulta [Personalizar y exportar el diseño de la pantalla Inicio](/windows/configuration/customize-and-export-start-layout).
-        
+
    > [!NOTE]
    > Los cambios que realice el usuario en el escenario de bloqueo parcial se perderán durante la actualización.
 
-- Permite que se restablezca el diseño del menú Inicio y que los usuarios finales puedan volver a configurar el menú Inicio. Se puede enviar un correo electrónico de notificación u otra notificación a los usuarios finales informando del restablecimiento de los diseños del menú Inicio después de la actualización del sistema operativo a fin de minimizar el impacto. 
+- Permite que se restablezca el diseño del menú Inicio y que los usuarios finales puedan volver a configurar el menú Inicio. Se puede enviar un correo electrónico de notificación u otra notificación a los usuarios finales informando del restablecimiento de los diseños del menú Inicio después de la actualización del sistema operativo a fin de minimizar el impacto.
 
 ## <a name="change-history"></a>Historial de cambios
 
@@ -358,7 +358,7 @@ En la tabla siguiente se resumen los cambios más importantes realizados en este
 
 - [Implementación del redireccionamiento de carpetas, los archivos sin conexión y los perfiles de usuario móvil](deploy-folder-redirection.md)
 - [Implementación de equipos principales para el redireccionamiento de carpetas y los perfiles de usuario móviles](deploy-primary-computers.md)
-- [Implementación de la administración de estado de usuario](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784645(v=ws.10)>)
+- [Implementación de la administración de estado de usuario](</previous-versions/windows/it-pro/windows-server-2003/cc784645(v=ws.10)>)
 - [Declaración de Soporte técnico de Microsoft sobre los datos de perfil de usuario replicados](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
-- [Transferencia local de aplicaciones con DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
+- [Transferencia local de aplicaciones con DISM](</previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 - [Solución de problemas de empaquetado, implementación y consulta de aplicaciones basadas en Windows Runtime](/windows/win32/appxpkg/troubleshooting)

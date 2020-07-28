@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 24be2b39c8130b97d22ee182c0064986b3378549
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5988842ef2a88687bca95781b996babb4e4f3faa
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472982"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181711"
 ---
 # <a name="failover-clustering-system-log-events"></a>Eventos de registro del sistema de clústeres de conmutación por error
 
@@ -134,7 +134,7 @@ El servicio de clúster encontró un problema inesperado y se cerrará. El códi
 
 Servicio de clúster no se pudo iniciar porque este nodo detectó que no tiene la copia más reciente de los datos de configuración del clúster. Los cambios en el clúster se produjeron mientras este nodo no estaba en pertenencia y, como resultado, no podía recibir actualizaciones de datos de configuración.
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Intente iniciar el servicio de clúster en todos los nodos del clúster para que los nodos con la última copia de los datos de configuración del clúster puedan formar el clúster por primera vez. Este nodo podrá unirse al clúster y obtendrá automáticamente los datos de configuración del clúster actualizados. Si no hay ningún nodo disponible con la última copia de los datos de configuración del clúster, ejecute el cmdlet de Windows PowerShell "Start-ClusterNode-FQ". El uso del parámetro ForceQuorum (FQ) iniciará el servicio de clúster y marcará la copia de este nodo de los datos de configuración del clúster para que sean autoritativos. Forzar el cuórum en un nodo con una copia obsoleta de la base de datos del clúster puede dar lugar a cambios en la configuración del clúster que se produjeron mientras el nodo no estaba participando en el clúster para ser perdido.
 
@@ -498,7 +498,7 @@ El recurso de clúster ' %1 ' en el rol en clúster ' %2 ' ha recibido una notif
 
 Error de registro de recurso de nombre de red de clúster de uno o varios nombres DNS asociados porque la zona DNS correspondiente no acepta actualizaciones dinámicas.<br><br>Nombre de red en clúster: ' %1 '<br>Zona DNS: ' %2 '
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Asegúrese de que el DNS esté configurado como una zona DNS dinámica. Si el servidor DNS no acepta actualizaciones dinámicas, desactive la casilla "registrar las direcciones de esta conexión en DNS" en las propiedades del adaptador de red.
 
@@ -518,7 +518,7 @@ Error de registro de recurso de nombre de red de clúster de uno o varios nombre
 
 El recurso de nombre de red de clústeres no pudo modificar el registro de DNS.<br><br>Nombre de red en clúster: ' %1 '<br>Código de error: ' %2 '
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Asegúrese de que los adaptadores de red asociados a los recursos de direcciones IP dependientes estén configurados con acceso a al menos un servidor DNS.
 
@@ -526,7 +526,7 @@ Asegúrese de que los adaptadores de red asociados a los recursos de direcciones
 
 El recurso de nombre de red de clústeres no pudo modificar el registro de DNS.<br><br>Nombre de red en clúster: ' %1 '<br>Motivo: ' %2 '
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Asegúrese de que los adaptadores de red asociados a los recursos de direcciones IP dependientes estén configurados con acceso a al menos un servidor DNS.
 
@@ -534,7 +534,7 @@ Asegúrese de que los adaptadores de red asociados a los recursos de direcciones
 
 El recurso de nombre de red de clústeres no pudo publicar el registro PTR en la zona de búsqueda inversa de DNS.<br><br>Nombre de red en clúster: ' %1 '<br>Código de error: ' %2 '
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Asegúrese de que los adaptadores de red asociados a los recursos de direcciones IP dependientes están configurados con acceso a al menos un servidor DNS y que existe la zona de búsqueda inversa DNS.
 
@@ -542,7 +542,7 @@ Asegúrese de que los adaptadores de red asociados a los recursos de direcciones
 
 El recurso de nombre de red de clústeres no pudo publicar el registro PTR en la zona de búsqueda inversa de DNS.<br><br>Nombre de red en clúster: ' %1 '<br>Motivo: ' %2 '
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Asegúrese de que los adaptadores de red asociados a los recursos de direcciones IP dependientes están configurados con acceso a al menos un servidor DNS y que existe la zona de búsqueda inversa DNS.
 
@@ -610,7 +610,7 @@ Error en la comprobación de estado de la interfaz IP ' %1 ' (dirección ' %2 ')
 
 El recurso de testigo en la nube no pudo acceder a los servicios de almacenamiento Microsoft Azure.<br><br>Recurso de clúster: %1 <br>Nodo de clúster: %2
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Esto puede deberse a la comunicación de red entre el nodo de clúster y el servicio de Microsoft Azure que se está bloqueando. Compruebe la conectividad de Internet del nodo con Microsoft Azure. Conéctese al Microsoft Azure Portal y compruebe que la cuenta de almacenamiento existe.
 
@@ -622,7 +622,7 @@ La red ' %1 ' que se ha deshabilitado para el uso del clúster de conmutación p
 
 No se pudo autenticar el recurso de testigo en la nube con servicios de Microsoft Azure Storage. Se devolvió un error de acceso denegado al intentar ponerse en contacto con la cuenta de almacenamiento de Microsoft Azure. <br><br>Recurso de clúster: %1
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Es posible que la clave de acceso de la cuenta de almacenamiento ya no sea válida. Use el Asistente para configurar Cuórum de clúster en el Administrador de clústeres de conmutación por error o el cmdlet de Windows PowerShell Set-ClusterQuorum para configurar el recurso de testigo en la nube con la clave de acceso de la cuenta de almacenamiento actualizada.
 
@@ -727,7 +727,7 @@ Error de purga de nodo en el nodo de clúster %1. <br><br>Haga referencia a los 
 
 El servicio de Cluster Server no pudo conectar con ningún controlador de dominio disponible en el dominio. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Servidor DC: %1
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Compruebe que los controladores de dominio son accesibles en la red a los nodos del clúster.
 
@@ -735,14 +735,14 @@ Compruebe que los controladores de dominio son accesibles en la red a los nodos 
 
 El recurso de nombre de red de clústeres no pudo encontrar el objeto de equipo asociado en Active Directory. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Nombre de red: %1<br>Unidad organizativa: %2
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Restaure el objeto de equipo para el nombre de red de la papelera de reciclaje de Active Directory. Como alternativa, desconecte el recurso de nombre de red en clúster y ejecute la acción reparar para volver a crear el objeto de equipo en Active Directory.
 
 ### <a name="event-1685-res_netname_computer_object_cno_not_found"></a>Evento 1685: RES_NETNAME_COMPUTER_OBJECT_CNO_NOT_FOUND
 
 El recurso de nombre de red de clústeres no pudo encontrar el objeto de equipo asociado en Active Directory. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Nombre de red: %1<br>Unidad organizativa: %2
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Restaure el objeto de equipo para el nombre de red de la papelera de reciclaje de Active Directory.
 
@@ -750,7 +750,7 @@ Restaure el objeto de equipo para el nombre de red de la papelera de reciclaje d
 
 El recurso de nombre de red de clústeres encontró el objeto de equipo asociado en Active Directory que se va a deshabilitar. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Nombre de red: %1<br>Unidad organizativa: %2
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Habilite el objeto de equipo para el nombre de red en Active Directory.
 
@@ -758,7 +758,7 @@ Habilite el objeto de equipo para el nombre de red en Active Directory.
 
 El recurso de nombre de red de clústeres encontró el objeto de equipo asociado en Active Directory que se va a deshabilitar. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Nombre de red: %1<br>Unidad organizativa: %2
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Habilite el objeto de equipo para el nombre de red en Active Directory. Como alternativa, desconecte el recurso de nombre de red en clúster y ejecute la acción reparar para habilitar el objeto de equipo en Active Directory.
 
@@ -766,7 +766,7 @@ Habilite el objeto de equipo para el nombre de red en Active Directory. Como alt
 
 El recurso de nombre de red en clúster detectó que el objeto de equipo asociado en Active Directory estaba deshabilitado y no se pudo habilitar. Esto puede afectar a la funcionalidad que depende de la autenticación de nombres de red de clústeres.<br><br>Nombre de red: %1<br>Unidad organizativa: %2
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Habilite el objeto de equipo para el nombre de red en Active Directory.
 
@@ -927,7 +927,7 @@ El recurso de clúster ' %1 ' no pudo crear o modificar la cuenta de usuario loc
 
 No se pudo iniciar el clúster. La copia más reciente de los datos de configuración del clúster no estaba disponible en el conjunto de nodos que intentan iniciar el clúster. Los cambios en el clúster se produjeron mientras el conjunto de nodos no estaba en pertenencia y, como resultado, no podía recibir actualizaciones de datos de configuración. .<br><br>Votos necesarios para iniciar el clúster: %1<br>Votos disponibles: %2<br>Nodos con votos: %3
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Intente iniciar el servicio de clúster en todos los nodos del clúster para que los nodos con la última copia de los datos de configuración del clúster puedan formar el clúster por primera vez. El clúster se podrá iniciar y los nodos obtendrán automáticamente los datos de configuración del clúster actualizados. Si no hay ningún nodo disponible con la última copia de los datos de configuración del clúster, ejecute el cmdlet de Windows PowerShell "Start-ClusterNode-FQ". El uso del parámetro ForceQuorum (FQ) iniciará el servicio de clúster y marcará la copia de este nodo de los datos de configuración del clúster para que sean autoritativos. Forzar el cuórum en un nodo con una copia obsoleta de la base de datos del clúster puede dar lugar a cambios en la configuración del clúster que se produjeron mientras el nodo no estaba participando en el clúster para ser perdido.
 
@@ -1114,7 +1114,7 @@ Compruebe el registro de eventos de aplicación para obtener información adicio
 
 El recurso de disco físico de clúster no se puede poner en línea.<br><br>Nombre de recurso de disco físico: %1<br>Código de error: %2<br>Tiempo transcurrido (segundos): %3
 
-#### <a name="guidance"></a>Instrucciones
+#### <a name="guidance"></a>Guía
 
 Ejecute el Asistente para validar una configuración para comprobar la configuración del almacenamiento. Si el código de error se ERROR_CLUSTER_SHUTDOWN, el administrador ha cancelado el estado en línea pendiente. Si se trata de un volumen replicado, esto podría ser el resultado de un error al establecer los atributos del disco. Revise los eventos de replicación de almacenamiento para obtener información adicional.
 
@@ -1253,4 +1253,4 @@ Se espera que una aplicación de copia de seguridad elimine las instantáneas un
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Información detallada sobre los eventos de los componentes de clústeres de conmutación por error en Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))
+-   [Información detallada sobre los eventos de los componentes de clústeres de conmutación por error en Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))

@@ -2,18 +2,17 @@
 title: Conéctese en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 05/07/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3e8c50b94b441f75a5b80d3a46f42a87450496a1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c1dafb9fb89109a16f2f28662464494691a2f2f0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470070"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179951"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>Conéctese en Windows Server Essentials
 
@@ -192,7 +191,7 @@ ms.locfileid: "85470070"
 
 - Windows 10 Pro
 
-- Windows 10 Enterprise
+- Windows 10 Enterprise
 
 - Windows 10 Education
 
@@ -240,7 +239,7 @@ ms.locfileid: "85470070"
 
 - Windows 10 Pro
 
-- Windows 10 Enterprise
+- Windows 10 Enterprise
 
 - Windows 10 Education
 
@@ -395,7 +394,7 @@ ms.locfileid: "85470070"
     > [!NOTE]
     >  Si el equipo está en una ubicación remota fuera de la red de Windows Server Essentials, para ejecutar el Asistente para conectar un equipo al servidor, escriba **http://<nombreDeDominio \> /Connect** en la barra de direcciones del explorador web (donde <dominio \> es el nombre de dominio de su organización). El administrador de red puede proporcionarle la información del nombre de dominio.
 
-4.  Aparecerá la página **Conecte el equipo al servidor**. Realice una de las siguientes acciones:
+4.  Aparecerá la página **Conecte el equipo al servidor**. Lleve a cabo una de las siguientes acciones:
 
     -   En un equipo con el sistema operativo Windows, haga clic en **Descargar software para Windows**.
 
@@ -450,7 +449,7 @@ ms.locfileid: "85470070"
 
 -   Este método no puede usarse para conectar un equipo remoto al servidor.
 
-#### <a name="prerequisites"></a>Requisitos previos
+#### <a name="prerequisites"></a>Prerrequisitos
 
 -   El equipo debe tener una conexión física a la red local.
 

@@ -5,12 +5,12 @@ ms.author: jmesser
 author: jmesser81
 ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 4afde574802bd63db8ea8ca8db9f5daf1a53dc93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e4d665ba431331fbf1f41a0ac4774e58693a5e2
+ms.sourcegitcommit: 717222e9efceb5964872dbf97034cad60f3c48df
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859848"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87295037"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>API de servicio de Compute Network (HCN) para máquinas virtuales y contenedores
 
@@ -59,8 +59,6 @@ Como parte de la documentación de las API de HCN, tenemos previsto publicar el 
 ### <a name="example"></a>Ejemplo 
 
 A continuación se presenta un ejemplo de este flujo de trabajo para el objeto que representa una controladora SCSI en el documento de configuración de una máquina virtual. 
-
-En el código fuente de Windows, definimos los esquemas mediante archivos. Mars: onecore/VM/DV/net/SNP/Schema/Mars/Schema/HCN. Schema. Network. Mars
 
 ```
 enum IpamType
@@ -224,11 +222,11 @@ A partir de esta definición interna, se generan las especificaciones de OpenAPI
 } 
 ```
 
-Puede usar herramientas, como [Swagger](https://swagger.io/), para generar representaciones específicas del lenguaje del lenguaje de programación de esquemas que usa un cliente. Swagger admite una gran variedad de lenguajes C#, como Go, JavaScript y Python.
+Puede usar herramientas, como [Swagger](https://swagger.io/), para generar representaciones específicas del lenguaje del lenguaje de programación de esquemas que usa un cliente. Swagger admite una gran variedad de lenguajes, como C#, Go, JavaScript y Python.
 
-- [Ejemplo de código C# generado](example-c-sharp.md) para el objeto de subred & de IPAM de nivel superior.
+- [Ejemplo de código C# generado](example-c-sharp.md) para el objeto de subred & IPAM de nivel superior.
 
-- [Ejemplo de código de go generado](example-go.md) para el objeto de subred de &AMP; de IPAM de nivel superior. Docker usa Go y Kubernetes, que son dos de los consumidores de las API del servicio de red de proceso de host. Go tiene compatibilidad integrada para la serialización de tipos Go a y desde documentos JSON.
+- [Ejemplo de código de go generado](example-go.md) para el objeto de subred de & de IPAM de nivel superior. Docker usa Go y Kubernetes, que son dos de los consumidores de las API del servicio de red de proceso de host. Go tiene compatibilidad integrada para la serialización de tipos Go a y desde documentos JSON.
 
 Además de la generación y validación de código, puede usar herramientas para simplificar el trabajo con documentos JSON, es decir, [Visual Studio Code](https://code.visualstudio.com/Docs/languages/json).
 

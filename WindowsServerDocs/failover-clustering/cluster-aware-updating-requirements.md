@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 description: Requisitos para usar la actualización compatible con clústeres para instalar actualizaciones en clústeres que ejecutan Windows Server.
-ms.openlocfilehash: 066aca3adb2ceec19663653a7bc2f0f8cd42da16
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a3f00d6f0118b536745be0afdac8b4a7084a6721
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473312"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178362"
 ---
 # <a name="cluster-aware-updating-requirements-and-best-practices"></a>Requisitos y procedimientos recomendados para la actualización compatible con clústeres
 
@@ -36,7 +36,7 @@ En la tabla siguiente se resumen los requisitos de instalación de característi
 |-----------------------|-----------------------|-------------------------|
 |Característica Clústeres de conmutación por error|Obligatorio en todos los nodos del clúster|Obligatorio en todos los nodos del clúster|
 |Herramientas de clústeres de conmutación por error|Obligatorio en todos los nodos del clúster|-Requerido en el \- equipo de actualización remota<br />-Requerido en todos los nodos del clúster para ejecutar el cmdlet [Save-CauDebugTrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)|
-|Rol en clúster de CAU|Requerido|No se requiere|
+|Rol en clúster de CAU|Obligatorio|No se requiere|
 
 ## <a name="obtain-an-administrator-account"></a>Obtener una cuenta de administrador
 Los requisitos de administrador siguientes son necesarios para usar las características de CAU.
@@ -71,10 +71,10 @@ Estos requisitos se suman a los requisitos de instalación de [Instalar la carac
 
 |Requisito|Estado predeterminado|Modo de auto- \- actualización|\-Modo de actualización remota|
 |---------------|---|-----------------------|-------------------------|
-|[Habilitar una regla de firewall para permitir los reinicios automáticos](#BKMK_FW)|Disabled|Obligatorio en todos los nodos del clúster si se usa un firewall|Obligatorio en todos los nodos del clúster si se usa un firewall|
-|[Habilitar Instrumental de administración de Windows](#BKMK_WMI)|habilitado|Obligatorio en todos los nodos del clúster|Obligatorio en todos los nodos del clúster|
-|[Habilitar Windows PowerShell 3.0 o 4.0 y la comunicación remota de Windows PowerShell](#BKMK_PS)|habilitado|Obligatorio en todos los nodos del clúster|Obligatorio en todos los nodos del clúster para ejecutar lo siguiente:<p>-El cmdlet [Save-CauDebugTrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)<br />-Scripts anteriores y posteriores a la actualización de PowerShell \- \- durante una ejecución de actualización<br />-Pruebas de preparación para la actualización del clúster mediante la ventana de actualización compatible con clústeres o el cmdlet [Test \- CauSetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) de Windows PowerShell|
-|[Instalación de .NET Framework 4,6 o 4,5](#BKMK_NET)|habilitado|Obligatorio en todos los nodos del clúster|Obligatorio en todos los nodos del clúster para ejecutar lo siguiente:<p>-El cmdlet [Save-CauDebugTrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)<br />-Scripts anteriores y posteriores a la actualización de PowerShell \- \- durante una ejecución de actualización<br />-Pruebas de preparación para la actualización del clúster mediante la ventana de actualización compatible con clústeres o el cmdlet [Test \- CauSetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) de Windows PowerShell|
+|[Habilitar una regla de firewall para permitir los reinicios automáticos](#BKMK_FW)|Deshabilitada|Obligatorio en todos los nodos del clúster si se usa un firewall|Obligatorio en todos los nodos del clúster si se usa un firewall|
+|[Habilitar Instrumental de administración de Windows](#BKMK_WMI)|Habilitada|Obligatorio en todos los nodos del clúster|Obligatorio en todos los nodos del clúster|
+|[Habilitar Windows PowerShell 3.0 o 4.0 y la comunicación remota de Windows PowerShell](#BKMK_PS)|Habilitada|Obligatorio en todos los nodos del clúster|Obligatorio en todos los nodos del clúster para ejecutar lo siguiente:<p>-El cmdlet [Save-CauDebugTrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)<br />-Scripts anteriores y posteriores a la actualización de PowerShell \- \- durante una ejecución de actualización<br />-Pruebas de preparación para la actualización del clúster mediante la ventana de actualización compatible con clústeres o el cmdlet [Test \- CauSetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) de Windows PowerShell|
+|[Instalación de .NET Framework 4,6 o 4,5](#BKMK_NET)|Habilitada|Obligatorio en todos los nodos del clúster|Obligatorio en todos los nodos del clúster para ejecutar lo siguiente:<p>-El cmdlet [Save-CauDebugTrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)<br />-Scripts anteriores y posteriores a la actualización de PowerShell \- \- durante una ejecución de actualización<br />-Pruebas de preparación para la actualización del clúster mediante la ventana de actualización compatible con clústeres o el cmdlet [Test \- CauSetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) de Windows PowerShell|
 
 ### <a name="enable-a-firewall-rule-to-allow-automatic-restarts"></a><a name="BKMK_FW"></a>Habilitar una regla de firewall para permitir los reinicios automáticos
 Para permitir los reinicios automáticos después de aplicar las actualizaciones \( si la instalación de una actualización requiere un reinicio \) , si el Firewall de Windows o un firewall que no \- es de Microsoft están en uso en los nodos del clúster, se debe habilitar una regla de firewall en cada nodo que permita el tráfico siguiente:
@@ -194,13 +194,13 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 
     Para obtener más información, vea [restringir el acceso a la carpeta raíz de revisiones y el archivo de configuración de revisiones](cluster-aware-updating-plug-ins.md#BKMK_ACL).
 
-### <a name="additional-recommendations"></a>Recomendaciones adicionales
+### <a name="additional-recommendations"></a>Otras recomendaciones
 
 -   Para evitar interferir con una ejecución de actualización de CAU que pueda estar programada a la misma hora, no programes cambios de contraseña para los objetos de nombre de clúster y los objetos de equipo virtual durante los períodos de mantenimiento programados.
 
 -   Debe establecer los permisos adecuados en \- scripts anteriores y posteriores a la actualización \- que se guardan en carpetas compartidas de red para evitar posibles alteraciones de estos archivos por parte de usuarios no autorizados.
 
--   Para configurar CAU en modo de auto- \- actualización, se debe crear un VCO de objeto de equipo virtual \( \) para el rol en clúster de Cau en Active Directory. CAU puede crear este objeto automáticamente en el momento en que se agrega el rol en clúster de CAU si el clúster de conmutación por error tiene permisos suficientes. No obstante, debido a las directivas de seguridad de ciertas organizaciones, es posible que sea necesario preconfigurar el objeto en Active Directory. Para ver un procedimiento sobre cómo hacerlo, consulte los [Pasos para preconfigurar una cuenta para un rol en clúster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account).
+-   Para configurar CAU en modo de auto- \- actualización, se debe crear un VCO de objeto de equipo virtual \( \) para el rol en clúster de Cau en Active Directory. CAU puede crear este objeto automáticamente en el momento en que se agrega el rol en clúster de CAU si el clúster de conmutación por error tiene permisos suficientes. No obstante, debido a las directivas de seguridad de ciertas organizaciones, es posible que sea necesario preconfigurar el objeto en Active Directory. Para ver un procedimiento sobre cómo hacerlo, consulte los [Pasos para preconfigurar una cuenta para un rol en clúster](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account).
 
 -   Para guardar y reutilizar la configuración de la ejecución de actualización entre clústeres de conmutación por error con necesidades de actualización parecidas en la organización de TI, puedes crear perfiles de ejecución de actualización. Además, en función del modo de actualización, puedes guardar y administrar los perfiles de ejecución de actualización en un recurso compartido de archivos al que puedan tener acceso todos los equipos coordinadores de actualizaciones remotas o clústeres de conmutación por error. Para obtener más información, consulte [Opciones avanzadas y perfiles de ejecución de actualización para Cau](cluster-aware-updating-options.md).
 

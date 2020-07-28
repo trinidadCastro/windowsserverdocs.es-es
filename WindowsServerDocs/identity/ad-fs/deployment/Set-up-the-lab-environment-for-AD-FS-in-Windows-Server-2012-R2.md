@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 09adec98f4db1e5354d00cf6ebfd9e9ef17f8575
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b9ba6ca7900f33880fda6d77398ffa819cf1038c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963667"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177801"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2
 
@@ -87,7 +87,7 @@ Debes instalar un certificado de Capa de sockets seguros (SSL) de servidor en el
 
 -   Nombre alternativo del firmante (DNS): enterpriseregistration.contoso.com
 
-Para más información sobre cómo configurar los certificados SSL, consulte [Configurar SSL/TLS en un sitio web en el dominio con una CA empresarial](https://social.technet.microsoft.com/wiki/contents/articles/12485.configure-ssltls-on-a-web-site-in-the-domain-with-an-enterprise-ca.aspx).
+Para más información sobre cómo configurar los certificados SSL, consulte [Configurar SSL/TLS en un sitio web en el dominio con una CA empresarial](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11)).
 
 [Serie de vídeos prácticos sobre los Servicios de federación de Active Directory: actualizar certificados](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search).
 
@@ -256,7 +256,7 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
 
 2.  Copia los contenidos de C:\Program Files (x86)\Windows Identity Foundation SDK\v3.5\Samples\Quick Start\Web Application\PassiveRedirectBasedClaimsAwareWebApp en C:\Inetpub\Claimapp.
 
-3.  Edita el archivo **Default.aspx.cs** para que no se produzca el filtrado de notificaciones. Este paso se lleva a cabo para garantizar que la aplicación de ejemplo muestra todas las notificaciones que emite el servidor de federación. Siga estos pasos:
+3.  Edita el archivo **Default.aspx.cs** para que no se produzca el filtrado de notificaciones. Este paso se lleva a cabo para garantizar que la aplicación de ejemplo muestra todas las notificaciones que emite el servidor de federación. Haga lo siguiente:
 
     1.  Abre **Default.aspx.cs** en un editor de texto.
 
@@ -315,7 +315,7 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
 
     5.  Selecciona **Sin cifrado** y haz clic en **Siguiente**. En la página **Notificaciones ofrecidas**, haga clic en **Siguiente**.
 
-    6.  Selecciona la casilla situada junto a **Programar una tarea para realizar diariamente actualizaciones de metadatos de WS-Federation**. Haga clic en **Finalizar**
+    6.  Selecciona la casilla situada junto a **Programar una tarea para realizar diariamente actualizaciones de metadatos de WS-Federation**. Haga clic en **Finalizar**.
 
     7.  La aplicación de ejemplo ya está configurada. Si prueba la dirección URL de la aplicación **https://webserv1.contoso.com/claimapp** , debe redirigirle a su servidor de Federación. El servidor de federación debería mostrar una página de error, ya que todavía no has configurado la relación de confianza para usuario autenticado. En otras palabras, esta aplicación de prueba no se ha protegido mediante AD FS.
 

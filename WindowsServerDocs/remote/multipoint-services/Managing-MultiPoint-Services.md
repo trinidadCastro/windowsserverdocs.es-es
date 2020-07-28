@@ -9,12 +9,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 609e9dc94ce30d0fee0fb2a3ec0fdf9b89dcb773
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e7d959c69ed748ef5a6a9821c53691c9fa718c9
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475132"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181941"
 ---
 # <a name="managing-multipoint-services"></a>Administrar MultiPoint Services
 Multipoint &trade; Services permite que varios usuarios, cada uno con su propia experiencia independiente de Windows, compartan un equipo simultáneamente. Las estaciones de usuario, que constan de un monitor, un teclado y un mouse, están conectadas directamente con el equipo host a través de cables USB o de vídeo o de la red.
@@ -34,4 +34,4 @@ Use la siguiente información para obtener información sobre las tareas que pue
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Foro de MultiPoint Services](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)
+- [MultiPoint Services](https://docs.microsoft.com/windows-server/remote/multipoint-services/introducing-multipoint-services)

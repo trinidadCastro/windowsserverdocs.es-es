@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0de38560301d4d793214846036850a05a5d5a326
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323597"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182211"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>Configuración de los permisos y el control de acceso de usuarios
 
@@ -68,7 +68,7 @@ De forma predeterminada, todos los miembros del inquilino de Azure AD tienen ac
 
 Si quieres conceder a usuarios o grupos específicos de Azure AD acceso de administrador o usuario de puerta de enlace al servicio Windows Admin Center, antes debes seguir estos pasos:
 
-1.  Ve a la aplicación de Azure AD de Windows Admin Center desde el hipervínculo proporcionado en la configuración de acceso. Ten en cuenta que este hipervínculo solo está disponible cuando está habilitada la autenticación de Azure Active Directory. 
+1.  Ve a la aplicación de Azure AD de Windows Admin Center desde el hipervínculo proporcionado en la configuración de acceso. Ten en cuenta que este hipervínculo solo está disponible cuando está habilitada la autenticación de Azure Active Directory.
     -   También puedes buscar la aplicación en Azure Portal. Para ello, ve a **Azure Active Directory** > **Aplicaciones empresariales** > **Todas las aplicaciones** y busca **WindowsAdminCenter** (la aplicación de Azure AD se denominará WindowsAdminCenter-<gateway name>). Si no obtienes ningún resultado de búsqueda, asegúrate de que la opción **Mostrar** está establecida en **todas las aplicaciones**, **estado de la aplicación** en **cualquiera** y haz clic en Aplicar. A continuación, intenta realizar la búsqueda. Una vez que hayas encontrado la aplicación, ve a **Usuarios y grupos**
 2.  En la pestaña Propiedades, establece **Asignación de usuarios necesaria** en Sí.
     Una vez hecho esto, solo los miembros que se muestran en la pestaña **Usuarios y grupos** podrán acceder a la puerta de enlace de Windows Admin Center.
@@ -86,22 +86,22 @@ Los usuarios y los administradores pueden ver su cuenta con la sesión iniciada 
 
 Si quieres conceder a usuarios o grupos específicos de Azure AD acceso de administrador o usuario de puerta de enlace al servicio Windows Admin Center, antes debes seguir estos pasos:
 
-1.  Ve a la aplicación de Azure AD de SME en Azure Portal. 
+1.  Ve a la aplicación de Azure AD de SME en Azure Portal.
     -   Al hacer clic en **Cambiar control de acceso** y seleccionar **Azure Active Directory** en la configuración de acceso de Windows Admin Center, puedes usar el hipervínculo proporcionado en la interfaz de usuario para acceder a la aplicación de Azure AD en Azure Portal. Este hipervínculo también está disponible en la configuración del Acceso después de hacer clic en Guardar y seleccionar Azure AD como proveedor de identidades de control de acceso.
     -   También puedes buscar la aplicación en Azure Portal. Para ello, ve a **Azure Active Directory** > **Aplicaciones empresariales** > **Todas las aplicaciones** y busca **SME** (la aplicación de Azure AD se denominará SME-<gateway>). Si no obtienes ningún resultado de búsqueda, asegúrate de que la opción **Mostrar** está establecida en **todas las aplicaciones**, **estado de la aplicación** en **cualquiera** y haz clic en Aplicar. A continuación, intenta realizar la búsqueda. Una vez que hayas encontrado la aplicación, ve a **Usuarios y grupos**
 2.  En la pestaña Propiedades, establece **Asignación de usuarios necesaria** en Sí.
     Una vez hecho esto, solo los miembros que se muestran en la pestaña **Usuarios y grupos** podrán acceder a la puerta de enlace de Windows Admin Center.
 3.  En la pestaña Usuarios y grupos, selecciona **Agregar usuario**. Debes asignar un rol de administrador o usuario de puerta de enlace para cada usuario o grupo agregado.
 
-Una vez guardado el control de acceso de Azure AD en el panel **Cambiar control de acceso**, el servicio de puerta de enlace se reinicia y debes actualizar el explorador. Puedes actualizar el acceso de usuario para la aplicación de Azure AD de Windows Admin Center en Azure Portal en cualquier momento. 
+Una vez guardado el control de acceso de Azure AD en el panel **Cambiar control de acceso**, el servicio de puerta de enlace se reinicia y debes actualizar el explorador. Puedes actualizar el acceso de usuario para la aplicación de Azure AD de Windows Admin Center en Azure Portal en cualquier momento.
 
-Se solicitará a los usuarios que inicien sesión con su identidad de Azure Active Directory cuando intenten acceder a la dirección URL de la puerta de enlace de Windows Admin Center. Recuerda que los usuarios también deben ser miembros del grupo de usuarios locales del servidor de la puerta de enlace para acceder a Windows Admin Center. 
+Se solicitará a los usuarios que inicien sesión con su identidad de Azure Active Directory cuando intenten acceder a la dirección URL de la puerta de enlace de Windows Admin Center. Recuerda que los usuarios también deben ser miembros del grupo de usuarios locales del servidor de la puerta de enlace para acceder a Windows Admin Center.
 
 Desde la pestaña **Azure** de la configuración general de Windows Admin Center, los usuarios y los administradores pueden ver su cuenta con la sesión iniciada y cerrar la sesión de esta cuenta de Azure AD.
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>Acceso condicional y autenticación multifactor
 
-Una de las ventajas de usar Azure AD como un nivel adicional de seguridad para controlar el acceso a la puerta de enlace de Windows Admin Center es que puedes aprovechar las eficaces características de seguridad de Azure AD, como el acceso condicional y la autenticación multifactor. 
+Una de las ventajas de usar Azure AD como un nivel adicional de seguridad para controlar el acceso a la puerta de enlace de Windows Admin Center es que puedes aprovechar las eficaces características de seguridad de Azure AD, como el acceso condicional y la autenticación multifactor.
 
 [Más información sobre cómo configurar el acceso condicional con Azure Active Directory.](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
@@ -109,7 +109,7 @@ Una de las ventajas de usar Azure AD como un nivel adicional de seguridad para 
 
 **Inicio de sesión único cuando se implementa como servicio en Windows Server**
 
-Al instalar Windows Admin Center en Windows 10, ya está listo para usar el inicio de sesión único. Sin embargo, si vas a usar Windows Admin Center en Windows Server, debes configurar alguna forma de delegación de Kerberos en tu entorno para poder usar el inicio de sesión único. La delegación configura el equipo de puerta de enlace como de confianza para delegar en el nodo de destino. 
+Al instalar Windows Admin Center en Windows 10, ya está listo para usar el inicio de sesión único. Sin embargo, si vas a usar Windows Admin Center en Windows Server, debes configurar alguna forma de delegación de Kerberos en tu entorno para poder usar el inicio de sesión único. La delegación configura el equipo de puerta de enlace como de confianza para delegar en el nodo de destino.
 
 Para configurar la [delegación restringida basada en recursos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview) en el entorno, usa el siguiente ejemplo de PowerShell. En este ejemplo se muestra cómo configurar Windows Server [node01.contoso.com] para aceptar la delegación de la puerta de enlace de Windows Admin Center [wac.contoso.com] en el dominio contoso.com.
 
@@ -159,7 +159,7 @@ Una vez aplicada la configuración, puedes asignar usuarios a los roles:
 3.  En el panel *Detalles* de la parte inferior, haz clic en **Agregar usuario** y escribe el nombre de un usuario o grupo de seguridad que debe tener acceso de solo lectura al servidor mediante Windows Admin Center. Los usuarios y grupos pueden proceder de la máquina local o del dominio de Active Directory.
 4.  Repite los pasos 2-3 para los grupos de **Administradores de Hyper-V de Windows Admin Center** y **Administradores de Windows Admin Center**.
 
-También puedes rellenar estos grupos de forma coherente en todo el dominio configurando un objeto de directiva de grupo con la [Configuración de directiva de grupos restringidos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29).
+También puedes rellenar estos grupos de forma coherente en todo el dominio configurando un objeto de directiva de grupo con la [Configuración de directiva de grupos restringidos](/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29).
 
 ### <a name="apply-role-based-access-control-to-multiple-machines"></a>Aplicar el control de acceso basado en rol a varias máquinas
 

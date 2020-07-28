@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: fc3f1dce4bb88d8581e3d8a890e3c121badaba71
-ms.sourcegitcommit: 6d7a394edefba684f7b6983c65026679c1b7a485
+ms.openlocfilehash: bc8486369d076573d249b9d5cfb0ba669619461e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776727"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179231"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planeación de la capacidad para Active Directory Domain Services
 
@@ -34,7 +34,7 @@ Como analogía: la administración de la capacidad está a punto de prevenir un 
 Durante los últimos años, la guía de planeamiento de la capacidad de los sistemas de escalado vertical ha cambiado drásticamente. Los siguientes cambios en las arquitecturas del sistema han motivado las suposiciones fundamentales sobre el diseño y el escalado de un servicio:
 
 - plataformas de servidor de 64 bits
-- Virtualización
+- La virtualización
 - Mayor atención al consumo de energía
 - Almacenamiento SSD
 - Escenarios de nube
@@ -45,7 +45,7 @@ Además, el enfoque se desplaza de un ejercicio de planeamiento de la capacidad 
 
 En este artículo, se esperan los siguientes requisitos de línea base:
 
-- Los lectores han leído y están familiarizados con las [directrices para la optimización del rendimiento de Windows Server 2012 R2](https://docs.microsoft.com/previous-versions//dn529133(v=vs.85)).
+- Los lectores han leído y están familiarizados con las [directrices para la optimización del rendimiento de Windows Server 2012 R2](/previous-versions//dn529133(v=vs.85)).
 - La plataforma de Windows Server es una arquitectura basada en x64. Pero incluso si su entorno de Active Directory está instalado en Windows Server 2003 x86 (ahora más allá del ciclo de vida de soporte técnico) y tiene un árbol de información de directorio (DIT) con menos de 1,5 GB de tamaño y que se puede mantener fácilmente en la memoria, las instrucciones de este artículo siguen siendo aplicables.
 - El planeamiento de la capacidad es un proceso continuo y debe revisar con regularidad si el entorno cumple con las expectativas.
 - La optimización se realizará en varios ciclos de vida de hardware a medida que cambian los costos de hardware. Por ejemplo, la memoria es más barata, el costo por núcleo disminuye o el precio de las diferentes opciones de almacenamiento cambian.
@@ -110,7 +110,7 @@ En general:
 
 | Componente | Criterios de evaluación | Consideraciones de planeación |
 |-|-|-|
-|Almacenamiento/tamaño de la base de datos|La sección titulada "para activar el registro de espacio en disco que ha liberado la desfragmentación" en [límites de almacenamiento](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))| |
+|Almacenamiento/tamaño de la base de datos|La sección titulada "para activar el registro de espacio en disco que ha liberado la desfragmentación" en [límites de almacenamiento](/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))| |
 |Rendimiento de almacenamiento/base de datos|<ul><li>"LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Read", "LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Write", "LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Transfer"</li><li>"LogicalDisk ( *\<NTDS Database Drive\>* ) \ lecturas/s", "LogicalDisk ( *\<NTDS Database Drive\>* ) \ escrituras/seg", "LogicalDisk ( *\<NTDS Database Drive\>* ) \ Transfers/SEC"</li></ul>|<ul><li>El almacenamiento tiene dos preocupaciones<ul><li>El espacio disponible, que con el tamaño del almacenamiento basado en el eje actual y en la SSD, es irrelevante para la mayoría de los entornos de AD.</li> <li>Operaciones de entrada/salida (e/s) disponibles: en muchos entornos, a menudo se pasa por alto. Pero es importante evaluar solo los entornos en los que no hay suficiente RAM para cargar toda la base de datos NTDS en la memoria.</li></ul><li>El almacenamiento puede ser un tema complejo y debe implicar la experiencia del fabricante del hardware para que el tamaño sea adecuado. Especialmente con escenarios más complejos, como escenarios SAN, NAS e iSCSI. Sin embargo, en general, el costo por Gigabyte de almacenamiento suele ser la oposición directa del costo por e/s:<ul><li>RAID 5 tiene un costo menor por Gigabyte que RAID 1, pero RAID 1 tiene un costo menor por e/s</li><li>Las unidades de disco duro basadas en el eje tienen un costo menor por Gigabyte, pero las SSD tienen un costo menor por e/s</li></ul><li>Después de reiniciar el equipo o el servicio Active Directory Domain Services, la caché del motor de almacenamiento extensible (ESE) está vacía y el rendimiento se enlazará en disco mientras se calienta la memoria caché.</li><li>En la mayoría de los entornos, AD es una e/s de lectura intensiva en un patrón aleatorio a los discos, lo que evita muchas de las ventajas del almacenamiento en caché y las estrategias de optimización de lectura.  Además, AD tiene una caché más grande en la memoria que la mayoría de las memorias caché del sistema de almacenamiento.</li></ul>
 |RAM|<ul><li>Tamaño de base de datos</li><li>Recomendaciones del sistema operativo base</li><li>Aplicaciones de terceros</li></ul>|<ul><li>El almacenamiento es el componente más lento de un equipo. Cuanto más pueda residir en la RAM, menos será necesario ir a disco.</li><li>Asegúrese de que hay suficiente RAM asignada para almacenar el sistema operativo, los agentes (antivirus, copia de seguridad, supervisión), la base de datos NTDS y el crecimiento a lo largo del tiempo.</li><li>En el caso de los entornos en los que maximizar la cantidad de memoria RAM no es rentable (como una ubicación satélite) o no factible (DIT es demasiado grande), haga referencia a la sección Storage para asegurarse de que el almacenamiento tenga el tamaño adecuado.</li></ul>|
 |Red|<ul><li>"Interfaz de red ( \* ) \Bytes recibidos por segundo"</li><li>"Interfaz de red ( \* ) \Bytes enviados por segundo"|<ul><li>En general, el tráfico enviado desde un controlador de dominio supera mucho el tráfico enviado a un controlador de dominio.</li><li>Como conexión Ethernet conmutada, el tráfico de red de entrada y salida de dúplex completo debe ajustarse de forma independiente.</li><li>La consolidación del número de controladores de dominio aumentará la cantidad de ancho de banda que se usa para devolver las respuestas a las solicitudes de cliente para cada controlador de dominio, pero estará suficientemente cerca para lineal en todo el sitio.</li><li>Si quita los controladores de dominio de Ubicación satélite, no olvide agregar el ancho de banda para el controlador de dominio satélite en los controladores de dominio del concentrador y usarlo para evaluar la cantidad de tráfico WAN que habrá.</li></ul>|
@@ -173,7 +173,7 @@ Con el tiempo, se puede suponer que se agregarán más datos a la base de datos 
 
 ### <a name="evaluating"></a>Evaluando
 
-Esta sección no trata sobre la evaluación de las demandas en relación con el tráfico de replicación, que se centra en el tráfico que atraviesa la WAN y que se trata exhaustivamente en [Active Directory tráfico de replicación](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10)), que se refiere a la evaluación del ancho de banda total y la capacidad de red necesaria, incluidos las consultas de cliente, las aplicaciones de directiva de grupo, etc. En el caso de los entornos existentes, se puede recopilar mediante los contadores de rendimiento "interfaz de red ( \* ) \Bytes recibidos/seg." y "interfaz de red ( \* ) \Bytes enviados/seg." Intervalos de muestra para los contadores de la interfaz de red en 15, 30 o 60 minutos. Todo menos normalmente será demasiado volátil para las mediciones correctas; cualquier valor mayor suavizará las búsquedas diarias de forma excesiva.
+Esta sección no trata sobre la evaluación de las demandas en relación con el tráfico de replicación, que se centra en el tráfico que atraviesa la WAN y que se trata exhaustivamente en [Active Directory tráfico de replicación](/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10)), que se refiere a la evaluación del ancho de banda total y la capacidad de red necesaria, incluidos las consultas de cliente, las aplicaciones de directiva de grupo, etc. En el caso de los entornos existentes, se puede recopilar mediante los contadores de rendimiento "interfaz de red ( \* ) \Bytes recibidos/seg." y "interfaz de red ( \* ) \Bytes enviados/seg." Intervalos de muestra para los contadores de la interfaz de red en 15, 30 o 60 minutos. Todo menos normalmente será demasiado volátil para las mediciones correctas; cualquier valor mayor suavizará las búsquedas diarias de forma excesiva.
 
 > [!NOTE]
 > Por lo general, la mayoría del tráfico de red en un controlador de dominio es saliente, ya que el controlador de dominio responde a las consultas de cliente. Este es el motivo por el que se centra en el tráfico de salida, aunque se recomienda evaluar también cada entorno para el tráfico de entrada. Se pueden usar los mismos enfoques para abordar y revisar los requisitos de tráfico de red de entrada. Para obtener más información, vea el artículo 929851 de Knowledge base [: el intervalo de puertos dinámicos predeterminado para TCP/IP ha cambiado en Windows Vista y en Windows Server 2008](https://support.microsoft.com/kb/929851).
@@ -182,7 +182,7 @@ Esta sección no trata sobre la evaluación de las demandas en relación con el 
 
 La planificación de la escalabilidad de la red cubre dos categorías distintas: la cantidad de tráfico y la carga de la CPU del tráfico de red. Cada uno de estos escenarios es directo en comparación con algunos de los otros temas de este artículo.
 
-Al evaluar la cantidad de tráfico que se debe admitir, existen dos categorías únicas de planeamiento de la capacidad para AD DS en términos de tráfico de red. La primera es el tráfico de replicación que atraviesa los controladores de dominio y que se trata minuciosamente en la referencia [Active Directory el tráfico de replicación](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10)) y sigue siendo relevante para las versiones actuales de AD DS. El segundo es el tráfico de cliente a servidor entre sitios. Uno de los escenarios más sencillos para planear, el tráfico entre sitios recibe principalmente solicitudes pequeñas de los clientes en relación con las grandes cantidades de datos que se envían de vuelta a los clientes. 100 MB generalmente será adecuado en entornos de hasta 5.000 usuarios por servidor, en un sitio de. El uso de un adaptador de red de 1 GB y la compatibilidad con el ajuste de escala en lado de recepción (RSS) se recomienda para todos los usuarios anteriores a 5.000. Para validar este escenario, especialmente en el caso de los escenarios de consolidación de servidores, examine la interfaz de red ( \* ) \ bytes/seg. en todos los controladores de dominio de un sitio, agréguelos juntos y divida por el número objetivo de controladores de dominio para asegurarse de que hay capacidad adecuada. La manera más sencilla de hacerlo es usar la vista "área apilada" en el monitor de confiabilidad y rendimiento de Windows (anteriormente conocido como PerfMon), asegurándose de que todos los contadores se escalan de la misma forma.
+Al evaluar la cantidad de tráfico que se debe admitir, existen dos categorías únicas de planeamiento de la capacidad para AD DS en términos de tráfico de red. La primera es el tráfico de replicación que atraviesa los controladores de dominio y que se trata minuciosamente en la referencia [Active Directory el tráfico de replicación](/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10)) y sigue siendo relevante para las versiones actuales de AD DS. El segundo es el tráfico de cliente a servidor entre sitios. Uno de los escenarios más sencillos para planear, el tráfico entre sitios recibe principalmente solicitudes pequeñas de los clientes en relación con las grandes cantidades de datos que se envían de vuelta a los clientes. 100 MB generalmente será adecuado en entornos de hasta 5.000 usuarios por servidor, en un sitio de. El uso de un adaptador de red de 1 GB y la compatibilidad con el ajuste de escala en lado de recepción (RSS) se recomienda para todos los usuarios anteriores a 5.000. Para validar este escenario, especialmente en el caso de los escenarios de consolidación de servidores, examine la interfaz de red ( \* ) \ bytes/seg. en todos los controladores de dominio de un sitio, agréguelos juntos y divida por el número objetivo de controladores de dominio para asegurarse de que hay capacidad adecuada. La manera más sencilla de hacerlo es usar la vista "área apilada" en el monitor de confiabilidad y rendimiento de Windows (anteriormente conocido como PerfMon), asegurándose de que todos los contadores se escalan de la misma forma.
 
 Considere el siguiente ejemplo (también conocido como, una forma realmente realmente compleja de validar que la regla general es aplicable a un entorno específico). Se realizan las suposiciones siguientes:
 
@@ -259,10 +259,10 @@ En comparación con los 13 años en que se presentó Active Directory, una hora 
 
 La única recomendación a tener en cuenta es asegurarse de que el 110% del tamaño de NTDS. dit está disponible para habilitar Defrag. Además, se deben realizar las adaptaciones de crecimiento a lo largo de la vida del hardware.
 
-La primera consideración y la más importante es evaluar el tamaño de NTDS. DIT y SYSVOL. Estas medidas darán lugar a un ajuste de la asignación de disco fijo y RAM. Debido al bajo costo (relativamente) de estos componentes, no es necesario que el cálculo sea riguroso y preciso. El contenido sobre cómo evaluar esto para los entornos nuevos y existentes se puede encontrar en la serie de artículos de [almacenamiento de datos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961771(v=technet.10)) . En concreto, consulte los siguientes artículos:
+La primera consideración y la más importante es evaluar el tamaño de NTDS. DIT y SYSVOL. Estas medidas darán lugar a un ajuste de la asignación de disco fijo y RAM. Debido al bajo costo (relativamente) de estos componentes, no es necesario que el cálculo sea riguroso y preciso. El contenido sobre cómo evaluar esto para los entornos nuevos y existentes se puede encontrar en la serie de artículos de [almacenamiento de datos](/previous-versions/windows/it-pro/windows-2000-server/cc961771(v=technet.10)) . En concreto, consulte los siguientes artículos:
 
-- **Para entornos &ndash; existentes** La sección titulada "para activar el registro de espacio en disco que se libera mediante la desfragmentación" en el artículo [límites de almacenamiento](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10)).
-- **Para nuevos entornos &ndash; ** El artículo titulado [estimaciones de crecimiento para Active Directory usuarios y unidades organizativas](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961779(v=technet.10)).
+- **Para entornos &ndash; existentes** La sección titulada "para activar el registro de espacio en disco que se libera mediante la desfragmentación" en el artículo [límites de almacenamiento](/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10)).
+- **Para nuevos entornos &ndash; ** El artículo titulado [estimaciones de crecimiento para Active Directory usuarios y unidades organizativas](/previous-versions/windows/it-pro/windows-2000-server/cc961779(v=technet.10)).
 
   > [!NOTE]
   > Los artículos se basan en las estimaciones de tamaño de datos realizadas en el momento de la publicación de Active Directory en Windows 2000. Use tamaños de objeto que reflejen el tamaño real de los objetos de su entorno.
@@ -462,7 +462,7 @@ En la carga máxima, LSASS consume aproximadamente el 485% de una CPU o 4,85 CPU
 
 ### <a name="when-to-tune-ldap-weights"></a>Cuándo optimizar pesos LDAP
 
-Hay varios escenarios en los que se debe tener en cuenta la optimización de [LdapSrvWeight](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc957291(v=technet.10)) . En el contexto del planeamiento de la capacidad, esto se haría cuando las cargas de la aplicación o del usuario no se equilibran uniformemente, o los sistemas subyacentes no están equilibrados uniformemente en lo que respecta a la capacidad. Los motivos para hacerlo más allá del planeamiento de la capacidad están fuera del ámbito de este artículo.
+Hay varios escenarios en los que se debe tener en cuenta la optimización de [LdapSrvWeight](/previous-versions/windows/it-pro/windows-2000-server/cc957291(v=technet.10)) . En el contexto del planeamiento de la capacidad, esto se haría cuando las cargas de la aplicación o del usuario no se equilibran uniformemente, o los sistemas subyacentes no están equilibrados uniformemente en lo que respecta a la capacidad. Los motivos para hacerlo más allá del planeamiento de la capacidad están fuera del ámbito de este artículo.
 
 Hay dos razones comunes para optimizar pesos LDAP:
 
@@ -633,7 +633,7 @@ La teoría de colas es el estudio matemático de las líneas de espera (colas). 
 
 *U* k = *B* &divide; *T*
 
-Donde *U* k es el porcentaje de uso, *B* es la cantidad de tiempo ocupado y *T* es el tiempo total que se observó el sistema. Convertido en el contexto de Windows, es decir, el número de subprocesos de intervalo de 100-nanosegundos (NS) que están en estado de ejecución dividido por el número de intervalos de 100-NS que estaban disponibles en el intervalo de tiempo dado. Se trata exactamente de la fórmula para calcular la utilidad del procesador (referencia a [objetos de procesador](https://docs.microsoft.com/previous-versions/ms804036(v=msdn.10)) y [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))).
+Donde *U* k es el porcentaje de uso, *B* es la cantidad de tiempo ocupado y *T* es el tiempo total que se observó el sistema. Convertido en el contexto de Windows, es decir, el número de subprocesos de intervalo de 100-nanosegundos (NS) que están en estado de ejecución dividido por el número de intervalos de 100-NS que estaban disponibles en el intervalo de tiempo dado. Se trata exactamente de la fórmula para calcular la utilidad del procesador (referencia a [objetos de procesador](/previous-versions/ms804036(v=msdn.10)) y [PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))).
 
 La teoría de puesta en cola también proporciona la fórmula: *N*  =  *u* k &divide; (1 &ndash; *u* k) para calcular el número de elementos en espera en función del uso ( *N* es la longitud de la cola). En el gráfico de este procedimiento sobre todos los intervalos de uso se proporciona el siguiente cálculo de cuánto tiempo la cola se debe obtener en el procesador en cualquier carga de CPU determinada.
 
@@ -649,9 +649,9 @@ Volviendo a la analogía de conducción utilizada anteriormente en esta sección
 Esta es la razón por la que las medias de largo plazo de la capacidad estimada de manera conservadora en el 40% permiten la sala principal para picos anómalos de carga, ya sean transitorios irregulares (por ejemplo, consultas mal codificadas que se ejecutan durante unos minutos) o ráfagas anómalas en general (la mañana del primer día después de un fin de semana largo)
 
 La instrucción anterior en relación con el cálculo del porcentaje de tiempo de procesador es la misma que la ley de uso es un poco de una simplificación para la facilidad del lector general. Para aquellos más rigurosamente rigurosos:
-- Trasladar el [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))
-  - *B* = el número de subprocesos de 100-NS "inactivo" emplea en el procesador lógico. El cambio en la variable "*X*" en el cálculo de [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))
-  - *T* = el número total de intervalos 100-NS en un intervalo de tiempo determinado. Cambio de la variable "*Y*" en el cálculo de [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10)) .
+- Trasladar el [PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))
+  - *B* = el número de subprocesos de 100-NS "inactivo" emplea en el procesador lógico. El cambio en la variable "*X*" en el cálculo de [PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10))
+  - *T* = el número total de intervalos 100-NS en un intervalo de tiempo determinado. Cambio de la variable "*Y*" en el cálculo de [PERF_100NSEC_TIMER_INV](/previous-versions/windows/embedded/ms901169(v=msdn.10)) .
   - *U* k = el porcentaje de uso del procesador lógico en el "subproceso inactivo" o en el% de tiempo de inactividad.
 - Cómo trabajar con las matemáticas:
   - *U* k = 1:% de tiempo de procesador
@@ -795,7 +795,7 @@ Después del análisis de los componentes de este subsistema de almacenamiento, 
 
 Ahora, después de analizar una configuración simple, en la tabla siguiente se muestra dónde se produce el cuello de botella cuando se cambian o agregan componentes en el subsistema de almacenamiento.
 
-|Notas|Análisis de cuellos de botella|Disco|Autobús|Adapter (Adaptador)|Bus PCI|
+|Notas|Análisis de cuellos de botella|Disco|En bus|Adapter (Adaptador)|Bus PCI|
 |-|-|-|-|-|-|
 |Esta es la configuración del controlador de dominio después de agregar un segundo disco. La configuración de disco representa el cuello de botella en 800 KB/s.|Agregar 1 disco (total = 2)<p>La e/s es aleatoria<p>tamaño de bloque de 4 KB<p>10.000 RPM HD|200 de e/s en total<br />800 KB/s en total.| | | |
 |Después de agregar 7 discos, la configuración del disco sigue representando el cuello de botella en 3200 KB/s.|**Agregar 7 discos (total = 8)**  <p>La e/s es aleatoria<p>tamaño de bloque de 4 KB<p>10.000 RPM HD|800 e/s en total.<br />3200 KB/s en total| | | |

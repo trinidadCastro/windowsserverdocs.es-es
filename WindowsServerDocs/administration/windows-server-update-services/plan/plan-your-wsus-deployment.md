@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 0208e23b94b5e7c5012bc99eabf71aa0c7ad944c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: de4fe62b179286f058a9c4508e9f907eeb9ae806
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82037144"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178581"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planear la implementación de WSUS
 
@@ -48,8 +48,8 @@ Los requisitos de hardware y de software de base de datos varían en función de
 
     -   **Adaptador de red:** 100 megabits por segundo (Mbps) o superior (se recomienda 1 GB)
 
-> [!NOTE] 
-> En estas instrucciones se da por hecho que los clientes de WSUS se sincronizan con el servidor cada ocho horas para un paquete acumulativo de 30 000 clientes. Si la sincronización se realiza más a menudo, habrá un incremento correspondiente en la carga del servidor.  
+> [!NOTE]
+> En estas instrucciones se da por hecho que los clientes de WSUS se sincronizan con el servidor cada ocho horas para un paquete acumulativo de 30 000 clientes. Si la sincronización se realiza más a menudo, habrá un incremento correspondiente en la carga del servidor.
 
 -   Requisitos de software:
 
@@ -103,7 +103,7 @@ Tenga en cuenta que la configuración de los equipos cliente (incluidos los serv
    > [!NOTE]
    > WSUS no está relacionado con la configuración de un origen de instalación de características a petición. Para obtener información sobre cómo configurar las características, consulte [Configuración de características a petición en Windows Server](https://technet.microsoft.com/library/jj127275.aspx).
 
-3. Los dispositivos empresariales que ejecutan Windows 10, versión 1709 o 1803, no pueden instalar características a petición directamente desde WSUS. Para instalar características a petición, [crea un archivo de características (almacén en paralelo)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store) u obtén el paquete de características a petición de uno de los orígenes siguientes:
+3. Los dispositivos empresariales que ejecutan Windows 10, versión 1709 o 1803, no pueden instalar características a petición directamente desde WSUS. Para instalar características a petición, [crea un archivo de características (almacén en paralelo)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store) u obtén el paquete de características a petición de uno de los orígenes siguientes:
    - [Centro de servicio de licencias por volumen](https://www.microsoft.com/licensing/servicecenter) (VLSC): se necesita acceso a VL
    - Portal de OEM: se necesita acceso a OEM
    - Descarga de MSDN: se requiere una suscripción a MSDN
@@ -166,7 +166,7 @@ Es posible crear jerarquías complejas de servidores WSUS. Dado que los servidor
 
 -   Puede escalar WSUS para una organización grande, cuyos equipos cliente superan la cantidad que un servidor WSUS puede administrar con eficacia.
 
-> [!NOTE] 
+> [!NOTE]
 > Se recomienda no crear una jerarquía de servidores WSUS con una profundidad mayor que tres niveles. Cada nivel requiere tiempo para propagar actualizaciones a todos los servidores conectados. Si bien no hay un límite teórico de jerarquía, Microsoft solo ha probado implementaciones con una jerarquía de cinco niveles de profundidad.
 >
 > Además, los servidores que siguen en la cadena deben tener la misma versión o una versión anterior de WSUS como origen de la sincronización del servidor de nivel superior.

@@ -1,5 +1,5 @@
 ---
-title: Solucionar problemas en el servidor DHCP
+title: Solución de problemas en el servidor DHCP
 description: Este artilce presenta cómo solucionar problemas en el servidor DHCP y recopilar datos.
 ms.prod: windows-server
 ms.service: na
@@ -9,14 +9,14 @@ ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: ad70b03fcb6d703a0b99435ee8715319d09af941
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 5ec2ef358cfaf7841b093843848f2ea5ee42433e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150203"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181901"
 ---
-# <a name="troubleshoot-problems-on-the-dhcp-server"></a>Solucionar problemas en el servidor DHCP
+# <a name="troubleshoot-problems-on-the-dhcp-server"></a>Solución de problemas en el servidor DHCP
 
 En este artículo se describe cómo solucionar los problemas que se producen en el servidor DHCP.
 
@@ -46,38 +46,37 @@ Utilice la siguiente configuración:
 
 ## <a name="event-logs"></a>Registros de eventos
 
-Compruebe los registros de eventos del sistema y del servicio del servidor DHCP (**registros de aplicaciones y servicios** , \> **Microsoft** \> **Windows** \> **DHCP-Server**) en busca de problemas detectados relacionados con el problema observado.  
-En función del tipo de problema, se registra un evento en uno de los siguientes canales de eventos:  
-[Eventos operativos del servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[Eventos administrativos del servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[Eventos del sistema del servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[Eventos de notificación del filtro del servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[Eventos de auditoría de servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))
+Compruebe los registros de eventos del sistema y del servicio del servidor DHCP (**registros de aplicaciones y servicios** , \> **Microsoft** \> **Windows** \> **DHCP-Server**) en busca de problemas detectados relacionados con el problema observado.
+En función del tipo de problema, se registra un evento en uno de los siguientes canales de eventos: [eventos de funcionamiento del servidor](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))DHCP eventos administrativos del servidor DHCP eventos del sistema de servidor DHCP eventos de 
+ [DHCP Server Administrative Events](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [DHCP Server System Events](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [notificación](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [DHCP Server Audit Events](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) del servidor DHCP eventos de auditoría
 
 ## <a name="data-collection"></a>datos, recopilación
 
 ### <a name="dhcp-server-log"></a>Registro del servidor DHCP
 
-Los registros de depuración del servicio del servidor DHCP proporcionan más información acerca de la asignación de concesión de direcciones IP y las actualizaciones dinámicas de DNS que realiza el servidor DHCP. Estos registros se encuentran de forma predeterminada en% WINDIR% \\ system32 \\ DHCP.  
-Para obtener más información, consulte [analizar los archivos de registro del servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd183591\(v=ws.10\)).
+Los registros de depuración del servicio del servidor DHCP proporcionan más información acerca de la asignación de concesión de direcciones IP y las actualizaciones dinámicas de DNS que realiza el servidor DHCP. Estos registros se encuentran de forma predeterminada en% WINDIR% \\ system32 \\ DHCP.
+Para obtener más información, consulte [analizar los archivos de registro del servidor DHCP](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd183591\(v=ws.10\)).
 
 ### <a name="network-trace"></a>Seguimiento de la red
 
 Un seguimiento de red correlacionado puede indicar lo que el servidor DHCP estaba haciendo en el momento en que se registró el evento. Para crear este tipo de seguimiento, siga estos pasos:
 
-1.  Vaya a [GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)y descargue el archivo [TSS \_ Tools. zip](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip) .
+1.  Vaya a [GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)y descargue el archivo [de \_tools.zipde TSS](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip) .
 
-2.  Copie el \_ archivo TSS Tools. zip y expándalo en una ubicación del disco local, como la carpeta C: \\ Tools.
+2.  Copie el archivo detools.zip de TSS \_ y expándalo en una ubicación del disco local, por ejemplo, en la carpeta C: \\ Tools.
 
-3.  Ejecute el siguiente comando desde C: \\ Tools en una ventana de símbolo del sistema con privilegios elevados:  
+3.  Ejecute el siguiente comando desde C: \\ Tools en una ventana de símbolo del sistema con privilegios elevados:
     ```console
     TSS Ron Trace <Stop:Evt:>20321:<Other:>DhcpAdminEvents NoSDP NoPSR NoProcmon NoGPresult
     ```
-      
-    >[!Note]
-    >En este comando, reemplace \<*Stop:Evt:*\> y \<*Other:*\> por el identificador del evento y el canal del evento en el que se va a centrar en la sesión de seguimiento.  
-    >Los \_ archivos. docx de la ayuda del archivo Léame de TSS. cmd \_ que se incluyen en el \_ archivo TSS Tools. zip proporcionan más información acerca de toda la configuración disponible.
 
-4.  Una vez que se desencadena el evento, la herramienta crea una carpeta denominada C: \\ MS \_ Data. Esta carpeta contendrá algunos archivos de salida útiles que proporcionan información general acerca de la configuración de red y dominio del equipo.  
+    >[!Note]
+    >En este comando, reemplace \<*Stop:Evt:*\> y \<*Other:*\> por el identificador del evento y el canal del evento en el que se va a centrar en la sesión de seguimiento.
+    >El \_ archivo Léame de TSS. cmd \_Help.docx archivos contenidos en el archivo detools.zip de TSS \_ proporciona más información acerca de toda la configuración disponible.
+
+4.  Una vez que se desencadena el evento, la herramienta crea una carpeta denominada C: \\ MS \_ Data. Esta carpeta contendrá algunos archivos de salida útiles que proporcionan información general acerca de la configuración de red y dominio del equipo.
     El archivo más interesante en esta carpeta es% COMPUTERNAME% \_ Date \_ Time \_ packetcapture \_ InternetClient \_ dbg. ETL.
     Mediante el uso de la aplicación [monitor de red](https://www.microsoft.com/download/4865) , puede cargar el archivo y establecer el filtro de presentación en el protocolo "DHCP o DNS" para examinar lo que sucede en segundo plano.

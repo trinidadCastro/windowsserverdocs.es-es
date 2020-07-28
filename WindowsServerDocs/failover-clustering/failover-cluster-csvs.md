@@ -9,12 +9,12 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d275e0379b5374899437bcf1f0387b304350840
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 697fd832a6af66d9cbea2537c44183aaf1b8839d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827748"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177881"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar volúmenes compartidos de clúster en un clúster de conmutación por error
 
@@ -30,9 +30,9 @@ CSV proporciona un sistema de archivos en clúster de uso general, que se encuen
 > [!NOTE]
 > CSV no admite la carga de trabajo en clúster Microsoft SQL Server en SQL Server 2012 y versiones anteriores de SQL Server.
 
-En Windows Server 2012, la funcionalidad de CSV se mejoró considerablemente. Por ejemplo, se quitaron las dependencias en Servicios de dominio de Active Directory. Se agregó compatibilidad con las mejoras funcionales de **chkdsk**, con la interoperabilidad con aplicaciones antivirus y de copia de seguridad, y con la integración con características de almacenamiento generales como los volúmenes cifrados con BitLocker y Espacios de almacenamiento. Para obtener información general sobre la funcionalidad de CSV que se presentó en Windows Server 2012, consulte [novedades de los clústeres de conmutación por error en Windows server 2012 \[redirigido\]](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
+En Windows Server 2012, la funcionalidad de CSV se mejoró considerablemente. Por ejemplo, se quitaron las dependencias en Servicios de dominio de Active Directory. Se agregó compatibilidad con las mejoras funcionales de **chkdsk**, con la interoperabilidad con aplicaciones antivirus y de copia de seguridad y con la integración con características de almacenamiento generales como los volúmenes cifrados con BitLocker y Espacios de almacenamiento. Para obtener información general sobre la funcionalidad de CSV que se presentó en Windows Server 2012, vea el tema sobre las novedades [de los clústeres de conmutación por error en Windows server 2012 \[ Redirigido \] ](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
 
-Windows Server 2012 R2 incorpora funcionalidad adicional, como la propiedad de CSV distribuida, el aumento de la resistencia a través de la disponibilidad del servicio de servidor, mayor flexibilidad en la cantidad de memoria física que se puede asignar a la caché de CSV, una mejor capacidad y una interoperabilidad mejorada que incluye compatibilidad con ReFS y desduplicación. Para obtener más información, consulte [novedades de los clústeres de conmutación por error](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
+Windows Server 2012 R2 incorpora funcionalidad adicional, como la propiedad de CSV distribuida, el aumento de la resistencia a través de la disponibilidad del servicio de servidor, mayor flexibilidad en la cantidad de memoria física que se puede asignar a la caché de CSV, una mejor capacidad y una interoperabilidad mejorada que incluye compatibilidad con ReFS y desduplicación. Para obtener más información, consulte [novedades de los clústeres de conmutación por error](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
 
 > [!NOTE]
 > Para obtener información acerca del uso de desduplicación de datos en CSV para escenarios de infraestructura de Escritorio Virtual (VDI), consulte las publicaciones del blog [Implementar la desduplicación de datos para el almacenamiento VDI en Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) y [Ampliación de desduplicación de datos para nuevas cargas de trabajo en Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx).
@@ -46,7 +46,7 @@ Antes de usar CSV en un clúster de conmutación por error, revisa los requisito
 Ten en cuenta lo siguiente al configurar las redes compatibles con CSV.
 
 - **Varias redes y varios adaptadores de red**. Para habilitar la tolerancia a errores en caso de error de red, te recomendamos que varias redes en clúster transporten el tráfico de CSV o que configures adaptadores de red combinados.
-    
+
     Si los nodos del clúster están conectados a redes que no debería usar el clúster, debes deshabilitarlos. Por ejemplo, te recomendamos que deshabilites las redes iSCSI para el uso del clúster a fin de impedir el tráfico de CSV en esas redes. Para deshabilitar una red, en Administrador de clústeres de conmutación por error, seleccione **redes**, seleccione la red, seleccione la acción **propiedades** y, a continuación, seleccione no **permitir la comunicación de red de clústeres en esta red**. Como alternativa, puede configurar la propiedad **role** de la red mediante el cmdlet [Get-ClusterNetwork](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) de Windows PowerShell.
 - **Propiedades de los adaptadores de red**. En las propiedades de todos los adaptadores que transporten comunicaciones del clúster, asegúrate de habilitar las siguientes opciones de configuración:
 
@@ -59,10 +59,10 @@ Ten en cuenta lo siguiente al configurar las redes compatibles con CSV.
   - **Filtro de rendimiento del adaptador virtual de clúster de conmutación por error de Microsoft**. Esta opción de configuración mejora la capacidad de los nodos de realizar la redirección de E/S cuando es necesaria para comunicarse con CSV, por ejemplo, cuando un error de conectividad impide a un nodo conectarse directamente al disco CSV. Para obtener más información, vea acerca de la [sincronización de e/s y la redirección de e/s en la comunicación de CSV](#about-io-synchronization-and-io-redirection-in-csv-communication) más adelante en este tema.
 - **Prioridades de las redes en clúster**. Por lo general, recomendamos que no cambie las preferencias configuradas en el clúster para las redes.
 - **Configuración de subred IP**. No se necesita ninguna configuración de subred específica para los nodos de una red que usen CSV. CSV puede admitir clústeres de varias subredes.
-- **Calidad de servicio (QoS) basada en directivas**. Te recomendamos que configures una directiva de prioridad de QoS y una directiva de ancho de banda mínimo para el tráfico de red a cada nodo cuando uses CSV. Para obtener más información, consulte [calidad de servicio (QoS)](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831679(v%3dws.11)>).
+- **Calidad de servicio (QoS) basada en directivas**. Te recomendamos que configures una directiva de prioridad de QoS y una directiva de ancho de banda mínimo para el tráfico de red a cada nodo cuando uses CSV. Para obtener más información, consulte [calidad de servicio (QoS)](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831679(v%3dws.11)>).
 - **Red de almacenamiento**. Para obtener recomendaciones sobre la red de almacenamiento, repasa las instrucciones proporcionadas por el proveedor de almacenamiento. Para obtener consideraciones adicionales sobre el almacenamiento para CSV, consulte [requisitos de configuración de almacenamiento y disco](#storage-and-disk-configuration-requirements) más adelante en este tema.
 
-Para obtener información general de los requisitos de hardware, red y almacenamiento para los clústeres de conmutación por error, consulte [Failover Clustering Hardware Requirements and Storage Options](clustering-requirements.md).
+Para obtener información general sobre los requisitos de hardware, red y almacenamiento para los clústeres de conmutación por error, consulta [Requisitos de hardware de los clústeres de conmutación por error y opciones de almacenamiento](clustering-requirements.md).
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>Acerca de la sincronización de E/S y la redirección de E/S en la comunicación de CSV
 
@@ -94,7 +94,7 @@ Para usar CSV, el almacenamiento y los discos deben cumplir con los siguientes r
 - **Formato del sistema de archivos**. En Windows Server 2012 R2, un disco o espacio de almacenamiento para un volumen CSV debe ser un disco básico con particiones NTFS o ReFS. En Windows Server 2012, un disco o espacio de almacenamiento para un volumen CSV debe ser un disco básico con particiones NTFS.
 
   Un CSV tiene los siguientes requisitos adicionales:
-    
+
   - En Windows Server 2012 R2, no puede usar un disco para un CSV que tenga el formato FAT o FAT32.
   - En Windows Server 2012, no se puede usar un disco para un CSV que tenga el formato FAT, FAT32 o ReFS.
   - Si deseas un espacio de almacenamiento para un CSV, puedes configurar un espacio simple o un espacio reflejado. En Windows Server 2012 R2, también puede configurar un espacio de paridad. (En Windows Server 2012, CSV no admite los espacios de paridad).
@@ -102,7 +102,7 @@ Para usar CSV, el almacenamiento y los discos deben cumplir con los siguientes r
   - Después de agregar un disco como CSV, se designa en el formato CSVFS (Sistema de archivos CSV). Esto permite al clúster y a otros programas de software diferenciar el almacenamiento CSV de otro almacenamiento NTFS o ReFS. Por lo general, CSVFS es compatible con la misma funcionalidad que NTFS o ReFS. No obstante, hay ciertas características que no son compatibles. Por ejemplo, en Windows Server 2012 R2, no se puede habilitar la compresión en CSV. En Windows Server 2012, no se puede habilitar la desduplicación de datos o la compresión en CSV.
 - **Tipo de recursos del clúster**. Para un volumen CSV, debes usar el tipo de recursos de disco físico. De manera predeterminada, un disco o espacio de almacenamiento que se agregue al almacenamiento de clúster se configura automáticamente de este modo.
 - **Elección de discos CSV u otros discos en el almacenamiento de clúster**. Al elegir uno o más discos para una máquina virtual en clúster, ten en cuenta el uso que se dará a cada disco. Si un disco se va a usar para almacenar archivos creados por Hyper-V, como archivos VHD o archivos de configuración, puedes elegir entre los discos CSV o los otros discos disponibles en el almacenamiento de clúster. Si un disco va a ser el disco físico conectado directamente a la máquina virtual (también conocido como disco de acceso directo), no puedes elegir un disco CSV y debes elegir uno de los otros discos disponibles en el almacenamiento de clúster.
-- **Nombre de ruta de acceso para identificar discos**. Los discos en CSV se identifican con un nombre de ruta de acceso. Cada ruta de acceso aparece en la unidad del sistema del nodo como volumen numerado en la carpeta **\\ClusterStorage** Esta ruta de acceso es la misma cuando se ve desde cualquier nodo del clúster. Puedes cambiar de nombre los volúmenes si es necesario.
+- **Nombre de ruta de acceso para identificar discos**. Los discos en CSV se identifican con un nombre de ruta de acceso. Cada ruta de acceso aparece en la unidad del sistema del nodo como volumen numerado en la carpeta ** \\ ClusterStorage** Esta ruta de acceso es la misma cuando se ve desde cualquier nodo del clúster. Puedes cambiar de nombre los volúmenes si es necesario.
 
 Para obtener los requisitos de almacenamiento para CSV, repasa las instrucciones proporcionadas por el proveedor de almacenamiento. Para ver consideraciones adicionales de planificación del almacenamiento para CSV, consulta [Planear el uso de CSV en un clúster de conmutación por error](#plan-to-use-csv-in-a-failover-cluster) más adelante en este tema.
 
@@ -111,7 +111,7 @@ Para obtener los requisitos de almacenamiento para CSV, repasa las instrucciones
 Para usar CSV, los nodos deben cumplir con los siguientes requisitos:
 
 - **Letra de unidad del disco del sistema**. La letra de unidad del disco del sistema debe ser la misma en todos los nodos.
-- **Protocolo de autenticación**. El protocolo NTLM debe estar habilitado en todos los nodos. Este valor está habilitado de forma predeterminada.
+- **Protocolo de autenticación**. El protocolo NTLM debe estar habilitado en todos los nodos. Esta opción está habilitada de manera predeterminada.
 
 ## <a name="plan-to-use-csv-in-a-failover-cluster"></a>Planear el uso de CSV en un clúster de conmutación por error
 
@@ -141,7 +141,7 @@ Si agregas otra máquina virtual, siempre que sea posible, deberías organizar l
 Cuando planees la configuración del almacenamiento de un clúster de conmutación por error que use CSV, ten en cuenta las recomendaciones siguientes:
 
 - Para decidir cuántos LUN configurarás, consulta al proveedor de almacenamiento. Por ejemplo, el proveedor de almacenamiento te podría recomendar configurar cada LUN con una partición y colocar un volumen CSV en ella.
-- No hay limitaciones en cuanto a la cantidad de máquinas virtuales que se pueden admitir en un solo volumen CSV. No obstante, debes tener en cuenta la cantidad de máquinas virtuales que tienes previsto tener en el clúster y la carga de trabajo (operaciones de E/S por segundo) para cada máquina virtual. Revisa los siguientes ejemplos:
+- No hay limitaciones en cuanto a la cantidad de máquinas virtuales que se pueden admitir en un solo volumen CSV. No obstante, debes tener en cuenta la cantidad de máquinas virtuales que tienes previsto tener en el clúster y la carga de trabajo (operaciones de E/S por segundo) para cada máquina virtual. Considere los ejemplos siguientes:
 
   - Una organización implementa máquinas virtuales que admitirán una infraestructura de escritorio virtual (VDI), lo que supone una carga de trabajo relativamente ligera. El clúster usa almacenamiento de alto rendimiento. El administrador del clúster, después de consultar al proveedor de almacenamiento, decide colocar una cantidad relativamente alta de máquinas virtuales por volumen CSV.
   - Otra organización implementa una gran cantidad de máquinas virtuales que admitirán una aplicación de base de datos que registra un uso muy elevado, lo cual supone una carga de trabajo más pesada. El clúster usa almacenamiento de bajo rendimiento. El administrador del clúster, después de consultar al proveedor de almacenamiento, decide colocar una cantidad relativamente baja de máquinas virtuales por volumen CSV.
@@ -160,11 +160,11 @@ La característica CSV está habilitada de manera predeterminada en clústeres d
 2. Haga clic con el botón secundario en **discos**y seleccione **Agregar disco**. Aparece una lista en la que se muestran los discos que se pueden agregar para usarse en un clúster de conmutación por error.
 3. Seleccione el disco o los discos que desea agregar y, a continuación, seleccione **Aceptar**.
 
-    Ahora, los discos están asignados al grupo **Almacenamiento disponible** .
+    Ahora, los discos están asignados al grupo **Almacenamiento disponible**.
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-available-storage"></a>Comandos equivalentes de Windows PowerShell (agregar un disco al almacenamiento disponible)
 
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
 En el ejemplo siguiente se identifican los discos que están preparados para agregarse al clúster y, después, se agregan estos discos al grupo **Almacenamiento disponible**.
 
@@ -184,7 +184,7 @@ Get-ClusterAvailableDisk | Add-ClusterDisk
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-csv"></a>Comandos equivalentes de Windows PowerShell (agregar un disco a CSV)
 
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
 En el ejemplo siguiente se agrega *Cluster Disk 1* en **Almacenamiento disponible** a CSV en el clúster local.
 
@@ -203,7 +203,7 @@ De forma predeterminada en Windows Server 2012, la memoria caché de CSV está d
 
 En la tabla siguiente se describen las dos opciones de configuración que controlan la memoria caché de CSV.
 
-| Windows Server 2012 R2 y versiones posteriores |  Windows Server 2012                 | Descripción |
+| Windows Server 2012 R2 y versiones posteriores |  Windows Server 2012                 | Descripción |
 | -------------------------------- | ------------------------------------ | ----------- |
 | BlockCacheSize                   | SharedVolumeBlockCacheSizeInMB       | Se trata de una propiedad común del clúster que permite definir cuánta memoria (en megabytes) deseas reservar para la memoria caché de CSV en cada nodo del clúster. Por ejemplo, si se define un valor de 512, se reservan 512 MB de memoria del sistema en cada nodo. (En muchos clústeres, 512 MB es un valor recomendado). La configuración predeterminada es 0 (deshabilitada). |
 | EnableBlockCache                 | CsvEnableBlockCache                  | Se trata de una propiedad privada del recurso de disco físico del clúster. Permite habilitar la memoria caché de CSV en un disco individual que se agrega a CSV. En Windows Server 2012, la configuración predeterminada es 0 (deshabilitada). Para habilitar la memoria caché de CSV en un disco, configura un valor de 1. De forma predeterminada, en Windows Server 2012 R2, esta configuración está habilitada. |
@@ -218,13 +218,13 @@ Puedes supervisar la memoria caché de CSV en el monitor de rendimiento si agreg
     - En Windows Server 2012 R2 y versiones posteriores:
 
         ```PowerShell
-        (Get-Cluster).BlockCacheSize = 512  
+        (Get-Cluster).BlockCacheSize = 512
         ```
 
     - Para Windows Server 2012:
 
         ```PowerShell
-        (Get-Cluster).SharedVolumeBlockCacheSizeInMB = 512  
+        (Get-Cluster).SharedVolumeBlockCacheSizeInMB = 512
         ```
 3. En Windows Server 2012, para habilitar la memoria caché de CSV en un CSV denominado *cluster Disk 1*, escriba lo siguiente:
 
@@ -235,7 +235,7 @@ Puedes supervisar la memoria caché de CSV en el monitor de rendimiento si agreg
 >[!NOTE]
 > * En Windows Server 2012, solo puede asignar el 20% del total de RAM física a la caché de CSV. En Windows Server 2012 R2 y versiones posteriores, puede asignar hasta el 80%. Como los servidores de archivos de escalabilidad horizontal no suelen tener restricciones de memoria, puedes aumentar significativamente el rendimiento si usas la memoria adicional para la memoria caché de CSV.
 > * Para evitar la contención de recursos, debe reiniciar cada nodo del clúster después de modificar la memoria asignada a la memoria caché de CSV. En Windows Server 2012 R2 y versiones posteriores, ya no se requiere un reinicio.
-> * Después de habilitar o deshabilitar la caché de CSV en un disco individual, para que la configuración surta efecto, debes dejar el recurso de disco físico sin conexión y volver a conectarlo en línea. (De forma predeterminada, en Windows Server 2012 R2 y versiones posteriores, la memoria caché de CSV está habilitada). 
+> * Después de habilitar o deshabilitar la caché de CSV en un disco individual, para que la configuración surta efecto, debes dejar el recurso de disco físico sin conexión y volver a conectarlo en línea. (De forma predeterminada, en Windows Server 2012 R2 y versiones posteriores, la memoria caché de CSV está habilitada).
 > * Para obtener más información sobre la caché de CSV que incluye información sobre los contadores de rendimiento, consulte la entrada del blog [Cómo habilitar la memoria caché de CSV](https://blogs.msdn.microsoft.com/clustering/2013/07/19/how-to-enable-csv-cache/).
 
 ## <a name="backing-up-csvs"></a>Copia de seguridad de CSV
@@ -258,5 +258,5 @@ Debes tener en cuenta los siguientes factores al seleccionar una aplicación de 
 
 ## <a name="more-information"></a>Más información
 
-- [Clúster de conmutación por error](failover-clustering.md)
-- [Implementar espacios de almacenamiento en clúster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)
+- [Clústeres de conmutación por error](failover-clustering.md)
+- [Implementar espacios de almacenamiento en clúster](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

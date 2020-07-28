@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a6ee550a0652f5b357a966e4074afdf499fcea34
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d7c76413fbc64ce200ca4c442a30e6f804927f68
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953917"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182061"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -534,14 +534,26 @@ Para solucionar este problema, use una de las siguientes opciones:
 
 ## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>Error de inventario o transferencia al usar credenciales de un dominio diferente
 
-Al intentar ejecutar el inventario o la transferencia con el servicio de migración de almacenamiento y establecer como destino un servidor de Windows al utilizar las credenciales de migración de un dominio diferente al del servidor de destino, recibe los siguientes errores:
+Al intentar ejecutar el inventario o la transferencia con el servicio de migración de almacenamiento y establecer como destino un servidor de Windows al utilizar las credenciales de migración de un dominio diferente al del servidor de destino, recibirá uno o varios de los siguientes errores:
+
+    Exception from HRESULT:0x80131505
 
     The server was unable to process the request due to an internal error
 
-    04/28/2020-11:31:01.169 [Erro] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+    04/28/2020-11:31:01.169 [Error] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+
+El examen de los registros muestra además que la cuenta de migración y el servidor que se va a migrar desde o dos se encuentran en dominios diferentes:
+
+    ```
+    06/25/2020-10:11:16.543 [Info] Creating new job=NedJob user=**CONTOSO**\ned    
+    [d:\os\src\base\dms\service\StorageMigrationService.IInventory.cs::CreateJob::133]
+    ```
+    
+    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66]
+06/25/2020-10:20:45.368 [info] equipo ' fileserver75.corp.contoso.com ': versión del sistema operativo 
 
 Este problema se debe a un defecto de código en el servicio de migración de almacenamiento. Para solucionar este problema, use las credenciales de migración del mismo dominio al que pertenecen los equipos de origen y de destino. Por ejemplo, si el equipo de origen y el de destino pertenecen al dominio "corp.contoso.com" del bosque "contoso.com", use "corp\myaccount" para realizar la migración, no una credencial "contoso\myaccount".
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)

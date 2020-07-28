@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e421795fd3be9e11ddff4cf6b557ebb211e51c53
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 8f51a60e66a3e1452ed66c94c409c5e4e5cb191f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445719"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181971"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introducción al cliente de iOS
 
@@ -174,7 +174,7 @@ El cliente utiliza gestos táctiles estándar. También se pueden usar gestos t�
 
 ## <a name="supported-input-devices"></a>Dispositivos de entrada compatibles
 
-El cliente ofrece [compatibilidad con el mouse Bluetooth](https://support.apple.com/HT210546) en iOS 13 e iPadOS como característica de accesibilidad. Puede usar los dispositivos mouse Swiftpoint GT o ProPoint para integrar el mouse de una forma más completa. Además, el cliente admite los teclados externos que son compatibles con iOS e iPadOS. 
+El cliente ofrece [compatibilidad con el mouse Bluetooth](https://support.apple.com/HT210546) en iOS 13 e iPadOS como característica de accesibilidad. Puede usar los dispositivos mouse Swiftpoint GT o ProPoint para integrar el mouse de una forma más completa. Además, el cliente admite los teclados externos que son compatibles con iOS e iPadOS.
 
 Para obtener más información sobre la compatibilidad con dispositivos, consulta [Novedades del cliente de iOS](ios-whatsnew.md) e [iOS App Store](https://aka.ms/rdios).
 
@@ -192,4 +192,4 @@ Si el Bluetooth está habilitado en el dispositivo iOS, el cliente detecta autom
 Aunque es posible que algunas combinaciones de teclas no funcionen como se esperaba en una sesión remota, muchas de las combinaciones de teclas comunes de Windows, como CTRL+C, CTRL+V y ALT+TAB funcionarán.
 
 > [!TIP]
-> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, si publica solicitudes de soporte técnico o comentarios sobre el producto en la sección Comentarios de este artículo, no podremos responder a sus comentarios. Si necesita ayuda o quiere solucionar problemas con su cliente, le recomendamos que vaya al [foro de clientes de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winrdc) e inicie una nueva conversación. Si tiene alguna sugerencia de características, puede indicárnosla mediante el [foro de clientes de UserVoice](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, si publica solicitudes de soporte técnico o comentarios sobre el producto en la sección Comentarios de este artículo, no podremos responder a sus comentarios. Si necesita ayuda o quiere solucionar problemas con su cliente, le recomendamos que vaya al [foro de clientes de Escritorio remoto](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) e inicie una nueva conversación. Si tiene alguna sugerencia de características, puede indicárnosla mediante el [foro de clientes de UserVoice](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

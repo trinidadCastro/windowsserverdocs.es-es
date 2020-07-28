@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f18c880dd673b17f53815a57fa2fcc66558dad71
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: aff9fbdfa6dc97cb644e207efdae9c44533c320b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961328"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181751"
 ---
 # <a name="network-file-system-overview"></a>Introducción a Network File System
 
@@ -29,7 +29,7 @@ NFS en Windows Server incluye servidor para NFS y cliente para NFS. Un equipo qu
 
 ## <a name="windows-and-windows-server-versions"></a>Versiones de Windows y Windows Server
 
-Windows admite varias versiones del cliente y el servidor NFS, dependiendo de la versión del sistema operativo y de la familia. 
+Windows admite varias versiones del cliente y el servidor NFS, dependiendo de la versión del sistema operativo y de la familia.
 
 | Sistemas operativos | Versiones de servidor NFS |Versiones de cliente NFS|
 | ----------------- | ------------------- | ----------------- |
@@ -99,7 +99,7 @@ La implementación y administración de NFS se ha mejorado de las siguientes man
 
 ## <a name="server-manager-information"></a>Información sobre el Administrador del servidor
 
-En Administrador del servidor-o en el [centro de administración de Windows](../../manage/windows-admin-center/overview.md) más reciente: Use el Asistente para agregar roles y características para agregar el servicio de rol servidor para NFS (en el rol servicios de archivos e iSCSI). Para obtener información general sobre la instalación de características, vea el tema sobre la [instalación o desinstalación de roles, servicios de rol o características](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>). Las herramientas de servidor para NFS incluyen el complemento Servicios para Network File System MMC para administrar los componentes de servidor para NFS y cliente para NFS. Con el complemento, puede administrar los componentes de servidor para NFS instalados en el equipo. Servidor para NFS también contiene varias herramientas de administración de línea de comandos de Windows:
+En Administrador del servidor-o en el [centro de administración de Windows](../../manage/windows-admin-center/overview.md) más reciente: Use el Asistente para agregar roles y características para agregar el servicio de rol servidor para NFS (en el rol servicios de archivos e iSCSI). Para obtener información general sobre la instalación de características, vea el tema sobre la [instalación o desinstalación de roles, servicios de rol o características](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>). Las herramientas de servidor para NFS incluyen el complemento Servicios para Network File System MMC para administrar los componentes de servidor para NFS y cliente para NFS. Con el complemento, puede administrar los componentes de servidor para NFS instalados en el equipo. Servidor para NFS también contiene varias herramientas de administración de línea de comandos de Windows:
 
 - **Montar** monta un recurso compartido de NFS remoto (también conocido como exportación) localmente y lo asigna a una letra de unidad local en el equipo cliente de Windows.
 - **Nfsadmin** administra los valores de configuración de los componentes de servidor para NFS y cliente para NFS.

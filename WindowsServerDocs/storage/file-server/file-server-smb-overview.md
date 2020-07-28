@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e9aecc439235d9396d764420711109552d89f32
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 055538bc52e11b7fb24f15db51af52e5cf8376d1
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965167"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182091"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Información general sobre el uso compartido de archivos mediante el protocolo SMB 3 en Windows Server
 
@@ -47,7 +47,7 @@ En las secciones siguientes se describe la funcionalidad que se agregó en SMB 3
 
 | Característica/funcionalidad  | Nueva o actualizada  | Resumen  |
 | --------- | --------- | --------- |
-| El acceso de invitado a los recursos compartidos de archivos está deshabilitado | New | El cliente SMB ya no permite las siguientes acciones: Acceso de las cuentas de invitado a un servidor remoto; reservas a la cuenta de invitado después de proporcionar credenciales no válidas. Para obtener más información, consulta [Acceso de invitado en SMB2 se encuentra deshabilitado de forma predeterminada en Windows](https://support.microsoft.com/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser). | 
+| El acceso de invitado a los recursos compartidos de archivos está deshabilitado | New | El cliente SMB ya no permite las siguientes acciones: Acceso de las cuentas de invitado a un servidor remoto; reservas a la cuenta de invitado después de proporcionar credenciales no válidas. Para obtener más información, consulta [Acceso de invitado en SMB2 se encuentra deshabilitado de forma predeterminada en Windows](https://support.microsoft.com/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser). |
 | Asignación global de SMB | New | Asigna un recurso compartido de SMB remoto a una letra de unidad a la que pueden tener acceso todos los usuarios del host local, incluidos los contenedores. Esta acción es necesaria para habilitar la E/S de contenedor en el volumen de datos para recorrer el punto de montaje remoto. Ten en cuenta que al usar la asignación global de SMB para contenedores, todos los usuarios en el host del contenedor pueden acceder al recurso compartido remoto. Cualquier aplicación que se ejecuta en el host del contenedor también tiene acceso al recurso compartido remoto asignado. Para obtener más información detallada, consulta [Compatibilidad del almacenamiento de contenedor con volúmenes compartidos de clúster (CSV), Espacios de almacenamiento directo (S2D), Asignación global de SMB](https://techcommunity.microsoft.com/t5/failover-clustering/container-storage-support-with-cluster-shared-volumes-csv/ba-p/372140). |
 | Control de dialectos SMB | New | Ahora puedes establecer los valores del registro para controlar la versión mínima de SMB (dialecto) y la versión máxima de SMB utilizadas. Para obtener más detalles, consulta [Control de los dialectos SMB](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-smb-dialects/ba-p/860024). |
 
@@ -74,7 +74,7 @@ Para obtener detalles adicionales, consulta la entrada de blog [Novedades en SMB
 | SMB directo     |   Actualizado      | Mejora el rendimiento de pequeñas cargas de trabajo de E/S mediante el aumento de la eficiencia al hospedar cargas de trabajo con operaciones de E/S pequeñas (como una base de datos de procesamiento de transacciones en línea, u OLTP, en una máquina virtual). Estas mejoras resultan evidentes al usar interfaces de red de alta velocidad, como Ethernet a 40 Gbps e InfiniBand a 56 Gbps.  |
 | Límite de ancho de banda SMB | New | Ahora puedes usar [Set-SmbBandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit) para establecer límites de ancho de banda en tres categorías: VirtualMachine (tráfico de Hyper-V a través de SMB), LiveMigration (tráfico de migración en vivo de Hyper-V a través de SMB) o predeterminado (todos los demás tipos de tráfico de SMB).
 
-Para obtener más información sobre las funcionalidades SMB nuevas y modificadas en Windows Server 2012 R2, consulta [Novedades de SMB en Windows Server](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>).
+Para obtener más información sobre las funcionalidades SMB nuevas y modificadas en Windows Server 2012 R2, consulta [Novedades de SMB en Windows Server](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>).
 
 ## <a name="features-added-in-smb-30-with-windows-server-2012-and-windows-8"></a>Características agregadas en SMB 3.0 con Windows Server 2012 y Windows 8
 
@@ -122,7 +122,7 @@ La siguiente lista proporciona recursos adicionales en la web sobre SMB y las te
 * [Almacenamiento en Windows Server](../storage.yml)
 * [Servidor de archivos de escalabilidad horizontal para datos de aplicación](../../failover-clustering/sofs-overview.md)
 * [Mejora del rendimiento de un servidor de archivos con SMB directo](smb-direct.md)
-* [Implementación de Hyper-V en SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-* [Implementación de SMB multicanal](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
-* [Implementación de servidores de archivos rápidos y eficaces para aplicaciones de servidores](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB: guía de solución de problemas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)
+* [Implementación de Hyper-V en SMB](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+* [Implementación de SMB multicanal](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
+* [Implementación de servidores de archivos rápidos y eficaces para aplicaciones de servidores](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+* [SMB: guía de solución de problemas](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)

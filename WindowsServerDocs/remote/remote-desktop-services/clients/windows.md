@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 49c1d5a378d6e0be224e02fdd80346ee172ca45b
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 6ed87f2d03ef725c3efdfc2453b53201017e66e0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269248"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181951"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Introducción al cliente de Microsoft Store
 
@@ -95,14 +95,14 @@ Para configurar una puerta de enlace nueva:
 
 1. En el Centro de conexión, pulsa **Configuración**.
 2. Junto a Puerta de enlace, pulsa **+** para agregar una nueva puerta de enlace.
-      
+
       >[!NOTE]
       >También puede agregar una puerta de enlace cuando agregue una nueva conexión.
 
 3. Escribe la siguiente información:
    - **Nombre del servidor**: el nombre del equipo que quieres usar como puerta de enlace. El nombre del servidor puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes agregar información del puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
    - **Cuenta de usuario**: seleccione o agregue una cuenta de usuario para usar con la Puerta de enlace de Escritorio remoto a la que se va a conectar. También puede seleccionar **Use desktop user account** (Usar la cuenta de usuario de escritorio) para utilizar las mismas credenciales que usó para la Conexión a Escritorio remoto.
-4. Pulsa **Guardar**.  
+4. Pulsa **Guardar**.
 
 ## <a name="global-app-settings"></a>Configuración de aplicaciones global
 
@@ -203,4 +203,4 @@ Existen dos modos de ratón para interactuar con la sesión.
 | Puntero | Zoom                 | Con dos dedos, acérquelos para acercar el zoom y sepárelos para alejar. |
 
 > [!TIP]
-> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, si publica solicitudes de soporte técnico o comentarios sobre el producto en la sección Comentarios de este artículo, no podremos responder a sus comentarios. Si necesita ayuda o quiere solucionar problemas con su cliente, le recomendamos que vaya al [foro de clientes de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winrdc) e inicie una nueva conversación. Si tiene alguna sugerencia de características, puede indicárnosla mediante el [Centro de opiniones](feedback-hub://?tabid=2&contextid=605).
+> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, si publica solicitudes de soporte técnico o comentarios sobre el producto en la sección Comentarios de este artículo, no podremos responder a sus comentarios. Si necesita ayuda o quiere solucionar problemas con su cliente, le recomendamos que vaya al [foro de clientes de Escritorio remoto](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) e inicie una nueva conversación. Si tiene alguna sugerencia de características, puede indicárnosla mediante el [Centro de opiniones](feedback-hub://?tabid=2&contextid=605).

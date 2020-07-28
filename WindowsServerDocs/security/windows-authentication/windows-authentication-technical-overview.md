@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7a19230e0fc1fb96700785fd83e70d501d59b76a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bd4aa60c977b09958aebc0087c981efd02f36fed
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861698"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182301"
 ---
 # <a name="windows-authentication-technical-overview"></a>Información técnica sobre autenticación de Windows
 
@@ -61,7 +61,7 @@ Esta colección de temas no trata los procedimientos para diseñar, implementar 
 
 -   Para obtener información de diseño sobre las estrategias de autenticación de Windows, vea [diseñar una estrategia de autenticación](https://technet.microsoft.com/library/cc758124.aspx).
 
--   Para obtener información de diseño sobre las estrategias de implementación de infraestructura de clave pública de Windows, vea [diseñar una infraestructura de clave pública](https://technet.microsoft.com/library/cc773138.aspx).
+-   Para obtener información de diseño sobre las estrategias de implementación de infraestructura de clave pública de Windows, vea [diseñar una infraestructura de clave pública](/previous-versions/windows/it-pro/windows-server-2003/cc773138(v=ws.10)).
 
 -   Para configurar y supervisar la seguridad, incluida la autenticación, en el entorno de Windows, consulte:
 
@@ -71,7 +71,7 @@ Esta colección de temas no trata los procedimientos para diseñar, implementar 
 
     -   [Línea de base de seguridad de Windows Server 2003](https://technet.microsoft.com/library/cc163140.aspx) y la [Guía de amenazas y contramedidas](https://technet.microsoft.com/library/dd162275.aspx)
 
-    -   [Guía de seguridad de Windows Server 2008](https://www.microsoft.com/download/details.aspx?id=17606)
+    -   [Guía de seguridad de Windows Server 2008](https://www.microsoft.com/download/details.aspx?id=17606)
 
     -   [Línea base de seguridad de Windows Server 2008 R2](https://technet.microsoft.com/library/gg236605.aspx)
 
