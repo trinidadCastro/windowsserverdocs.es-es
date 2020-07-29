@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 359b4bed3090463bfb92431e06e325d981568248
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 56ffd044f8526626581455fb18b530fd71a2381e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961027"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182271"
 ---
 # <a name="troubleshooting-disk-management"></a>Solución de problemas de Administración de discos
 
@@ -35,7 +35,7 @@ Antes de pasar a cuestiones más complejas, indicamos una manera sencilla de acc
 
 ![Administración de discos en la que se muestra un disco desconocido que se debe inicializar.](media/uninitialized-disk.PNG)
 
-**Causa:** Si tienes un disco que no aparece en el Explorador de archivos y se muestra en la Administración de discos como *No inicializado*, puede deberse a que el disco no tiene una firma de disco válida. Básicamente, esto significa que nunca se ha inicializado ni formateado, o que el formato de la unidad se ha dañado algún modo. 
+**Causa:** Si tienes un disco que no aparece en el Explorador de archivos y se muestra en la Administración de discos como *No inicializado*, puede deberse a que el disco no tiene una firma de disco válida. Básicamente, esto significa que nunca se ha inicializado ni formateado, o que el formato de la unidad se ha dañado algún modo.
 
 También es posible que el disco tenga problemas de hardware o problemas al conectar, pero llegaremos a eso en algunos párrafos.
 
@@ -55,7 +55,7 @@ Hay una serie de motivos por los que puede que falte o no se haya podido inicial
 
     > [!NOTE]
     > Ignora las particiones que aparecen como **partición de sistema EFI** o **partición de recuperación**. Estas particiones están llenas de archivos muy importantes que el equipo necesita para funcionar correctamente. Es mejor dejarlos trabajar para que inicien el equipo y te ayuden en la recuperación de los problemas.
-3. Si tienes un disco externo que no se muestra, desconéctalo y vuelve a conectarlo; a continuación, selecciona **Acción** > **Volver a examinar los discos**. 
+3. Si tienes un disco externo que no se muestra, desconéctalo y vuelve a conectarlo; a continuación, selecciona **Acción** > **Volver a examinar los discos**.
 4. Apaga tu PC, desactiva el disco duro externo (si es un disco externo con un cable de alimentación) y, a continuación, vuelve a activar tu PC y el disco.
     Para desactivar tu PC de Windows 10, selecciona el botón Inicio, después, el botón de encendido y, a continuación, selecciona **Apagar**.
 5. Conecta el disco en otro puerto USB que se encuentre directamente en tu PC (no en un concentrador).
@@ -69,14 +69,14 @@ Hay una serie de motivos por los que puede que falte o no se haya podido inicial
 
     ![Administrador de dispositivos mostrando un dispositivo USB desconocido](media/device-manager.PNG)
 8. Conecta el disco en otro equipo.
-    
-    Si el disco no funciona en otro equipo, es una buena señal de que hay algo que no funciona en el disco, y no en el equipo. Aunque sabemos que no es divertido. Hay algunos pasos más que puedes probar en [External USB drive error "You must initialize the disk before Logical Disk Manager can access it"](https://social.technet.microsoft.com/Forums/windows/en-US/2b069948-82e9-49ef-bbb7-e44ec7bfebdb/forum-faq-external-usb-drive-error-you-must-initialize-the-disk-before-logical-disk-manager-can?forum=w7itprohardware) (Error de unidad USB externa "Debes inicializar el disco para que el Administrador de discos lógicos pueda acceder a él"), pero podría ser el momento de buscar y solicitar ayuda en el sitio de la [comunidad Microsoft](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639), o bien de ponerte en contacto con el fabricante del disco o el [soporte técnico de Microsoft](https://support.microsoft.com/contactus/).
+
+    Si el disco no funciona en otro equipo, es una buena señal de que hay algo que no funciona en el disco, y no en el equipo. Aunque sabemos que no es divertido. Busque ayuda en el sitio de la [comunidad de Microsoft](https://answers.microsoft.com/), o bien póngase en contacto con el fabricante del disco o con el [Soporte técnico de Microsoft](https://support.microsoft.com/contactus/).
 
     Si no consigues que funcione, también hay aplicaciones que pueden intentar recuperar datos desde un disco con errores o, si los archivos están muy importantes, puedes pagar a un laboratorio de recuperación de datos para intentar recuperarlos. Si alguna de estas soluciones funciona, indícalo en la siguiente sección de comentarios.
 
 > [!IMPORTANT]
 > Los discos fallan con bastante frecuencia, por lo que es importante realizar copias de seguridad con regularidad de todos los archivos que te interesan. Si tienes un disco que en ocasiones no aparece o genera errores, considera esto como un recordatorio para que volver a comprobar tus métodos de copia de seguridad. No pasa nada si te has quedado atrás; todos lo hemos hecho. La mejor solución de copia de seguridad es una que uses, por lo que te recomendamos que busques una que te funcione y que prosigas con ella.
-> 
+>
 > [!TIP]
 > Para obtener información sobre cómo usar aplicaciones integradas en Windows para archivos de copia de seguridad en una unidad externa como una unidad USB, consulta [Copias de seguridad y restauración en Windows 10](https://support.microsoft.com/help/17143/windows-10-back-up-your-files). También puedes guardar archivos en Microsoft OneDrive, que sincroniza los archivos de tu PC en la nube. Si se produce un error en el disco duro, podrás obtener los archivos que se almacenan en OneDrive desde OneDrive.com. Para obtener más información, consulta [OneDrive en tu PC](https://support.microsoft.com/help/17184/windows-10-onedrive).
 
@@ -94,7 +94,7 @@ Los discos también podrían mostrar el estado **Ilegible** mientras giran o cua
 
 En algunos casos, un disco que se ha conectado anteriormente al sistema puede mostrar el estado **Externo**. Los datos de configuración de los discos dinámicos se almacenan en todos los discos dinámicos, por lo que la información sobre los discos que pertenecen al sistema se pierde cuando se produce un error en todos los discos dinámicos.
 
-**Solución:**  agrega el disco a la configuración del sistema de tu equipo para que puedas tener acceso a los datos del disco. Para agregar un disco a la configuración del sistema de tu equipo, importa el disco externo (selecciona y mantén pulsado el disco, o bien haz clic con el botón derecho en este, y luego haz clic en **Importar discos externos**). Cualquier volumen existente en el disco externo queda visible y puedes tener acceso a él al importar el disco. 
+**Solución:**  agrega el disco a la configuración del sistema de tu equipo para que puedas tener acceso a los datos del disco. Para agregar un disco a la configuración del sistema de tu equipo, importa el disco externo (selecciona y mantén pulsado el disco, o bien haz clic con el botón derecho en este, y luego haz clic en **Importar discos externos**). Cualquier volumen existente en el disco externo queda visible y puedes tener acceso a él al importar el disco.
 
 ## <a name="a-dynamic-disks-status-is-online-errors"></a>El estado de un disco dinámico es En línea (errores)
 
@@ -110,8 +110,8 @@ Si el estado del disco es **Desconectado** y el nombre del disco cambia a **Falt
 
 **Solución:** para conectar un disco que tiene el estado Desconectado y Falta:
 
-1. Repara cualquier problema de cable, controlador o disco. 
-2. Asegúrate de que el disco físico está activado y conectado al equipo. 
+1. Repara cualquier problema de cable, controlador o disco.
+2. Asegúrate de que el disco físico está activado y conectado al equipo.
 3. Luego, usa el comando **Reactivar disco** para conectar el disco.
 4. Prueba también los pasos de solución de problemas descritos en [El estado de un disco aparece como No inicializado o falta el disco completamente](#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps).
 5. Si el estado del disco sigue siendo **Desconectado** y el nombre del disco sigue siendo **Falta**, y determinas que el disco tiene un problema que no se puede reparar, puedes seleccionar y mantener pulsado el disco (o hacer clic con el botón derecho en este) y luego hacer clic en **Quitar disco** para quitar el disco del sistema. Sin embargo, antes de quitar el disco, debes eliminar todos los volúmenes (o reflejos) en el disco. Puedes guardar los volúmenes reflejados en el disco quitando el reflejo en lugar de todo el volumen. Al eliminar un volumen, se destruyen los datos de este, por lo que debes quitar un disco solo si estás completamente seguro de que el disco está dañado y no puede usarse de forma permanente.
@@ -123,7 +123,7 @@ Si el estado del disco es **Desconectado** y el nombre del disco cambia a **Falt
 
 3. Intenta mover el disco a otro equipo. Si puedes hacer que el disco cambie al estado **Conectado** en otro equipo, es muy probable que el problema se deba a la configuración del equipo en la que el disco no cambia al estado **Conectado**.
 
-4. Intenta mover el disco a otro equipo que tenga discos dinámicos. Importa el disco en el equipo y luego mueve el disco al equipo en el que no cambiaría al estado **Conectado**. 
+4. Intenta mover el disco a otro equipo que tenga discos dinámicos. Importa el disco en el equipo y luego mueve el disco al equipo en el que no cambiaría al estado **Conectado**.
 
 ## <a name="a-basic-or-dynamic-volumes-status-is-failed"></a>El estado de un volumen básico o dinámico es Error
 
@@ -169,7 +169,7 @@ Si ya no necesitas el volumen de varios discos, puedes importar el disco y crear
 Si el estado del volumen es **Correcto (en riesgo)** , un estado del disco subyacente suele ser **Conectado (errores)** .
 
 **Solución:**  
-1. Devuelve el disco subyacente al estado **Conectado**. Una vez que el disco vuelve al estado **Conectado**, el volumen debe volver el estado **Correcto**. Si el estado **Correcto (en riesgo)** persiste, es posible que se produzca un error en el disco. 
+1. Devuelve el disco subyacente al estado **Conectado**. Una vez que el disco vuelve al estado **Conectado**, el volumen debe volver el estado **Correcto**. Si el estado **Correcto (en riesgo)** persiste, es posible que se produzca un error en el disco.
 
 2. Realiza una copia de seguridad de los datos y sustituye el disco lo antes posible.
 

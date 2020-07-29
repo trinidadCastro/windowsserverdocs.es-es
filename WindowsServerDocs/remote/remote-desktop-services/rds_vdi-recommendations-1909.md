@@ -9,12 +9,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 4598c0f60fac98cd14a6f7d920b9c6f31704bd06
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7568db50f09273b398955c314491b903f627d1a9
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963377"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182101"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1909, para un rol de Infraestructura de escritorio virtual (VDI)
 
@@ -39,7 +39,7 @@ Hay algunas configuraciones de seguridad que no son aplicables a los entornos de
 
 En lo que respecta a las actualizaciones, Windows 10 emplea un algoritmo de actualización mensual, por lo que no es necesario que los clientes intenten actualizarse. En la mayoría de los casos, los administradores de VDI controlan el proceso de actualización a través de un proceso de apagado de máquinas virtuales basado en una imagen "maestra" o "gold", quitan el sello de la imagen, que es de solo lectura, aplican revisiones a la imagen y, a continuación, la vuelven a sellar y la devuelven a producción. Por lo tanto, no es necesario que las máquinas virtuales de VDI comprueben Windows Update. En ciertos casos, por ejemplo, máquinas virtuales de VDI persistentes, se realizan procedimientos de revisión normales. También se puede usar Windows Update o Microsoft Intune. Puede usarse System Center Configuration Manager para administrar la actualización y otras entregas de paquetes. Depende de cada organización determinar el mejor enfoque para actualizar VDI.
 
-> [!TIP]  
+> [!TIP]
 > Un script que implementa las optimizaciones discutidas en este tema, así como un archivo de exportación GPO que puedes importar con **LGPO.exe**, está disponible en [TheVDIGuys](https://github.com/TheVDIGuys) en GitHub.
 
 Este script se diseñó para adaptarse a tu entorno y requisitos. El código principal es PowerShell y el trabajo se realiza mediante el uso de archivos de entrada (texto sin formato), con los archivos de exportación de la herramienta Objeto de directiva de grupo local (LGPO). Estos archivos contienen listas de aplicaciones que se deben quitar y servicios que se deben deshabilitar. Si no quieres quitar una aplicación determinada o deshabilitar un servicio en concreto, edita el archivo de texto correspondiente y quita el elemento. Por último, hay configuraciones de directiva local que se pueden importar al dispositivo. Es mejor tener alguna configuración dentro de la imagen base, que aplicar la configuración a través de la directiva de grupo, ya que algunas de las opciones de configuración son efectivas en el siguiente reinicio o cuando se usa por primera vez un componente.
@@ -166,9 +166,9 @@ Ejecuta el siguiente comando para enumerar las aplicaciones para UWP aprovisiona
     Get-AppxProvisionedPackage -Online
 
     DisplayName  : Microsoft.3DBuilder
-    Version      : 13.0.10349.0  
+    Version      : 13.0.10349.0
     Architecture : neutral
-    ResourceId   : \~ 
+    ResourceId   : \~
     PackageName  : Microsoft.3DBuilder_13.0.10349.0_neutral_\~_8wekyb3d8bbwe
     Regions      :
     ...
@@ -195,7 +195,7 @@ Cada aplicación para UWP debe evaluarse para determinar su aplicabilidad en cad
 
 ### <a name="manage-windows-optional-features-using-powershell"></a>Administración de características opcionales de Windows mediante PowerShell
 
-Puedes administrar las características opcionales de Windows mediante PowerShell. Para más información, consulta [Windows 10: Administración de características opcionales con PowerShell](https://social.technet.microsoft.com/wiki/contents/articles/39386.windows-10-managing-optional-features-with-powershell.aspx). Para enumerar las características de Windows instaladas actualmente, ejecuta el siguiente comando de PowerShell:
+Puedes administrar las características opcionales de Windows mediante PowerShell. Para más información, consulte el [foro de PowerShell de Windows Server](https://docs.microsoft.com/answers/topics/windows-server-powershell.html). Para enumerar las características de Windows instaladas actualmente, ejecuta el siguiente comando de PowerShell:
 
 ```powershell
 Get-WindowsOptionalFeature -Online
@@ -764,7 +764,7 @@ Igualmente, aquí tienes sugerencias para realizar varias tareas para liberar es
 1. Ejecutar (con privilegios elevados) el liberador de espacio en disco, después de aplicar todas las actualizaciones. Incluye las categorías "Optimización de distribución" y "Limpieza de actualizaciones de Windows". Este proceso se puede automatizar mediante la línea de comandos `Cleanmgr.exe` con la opción `/SAGESET:11`. La opción `/SAGESET` establece los valores del Registro que se pueden usar más adelante para automatizar la limpieza del disco, que usa todas las opciones disponibles en el liberador de espacio en disco.
 
     1. En una VM de prueba, desde una instalación limpia, la ejecución de `Cleanmgr.exe /SAGESET:11` revela que solo hay dos opciones para la limpieza del disco automática y que están habilitadas de forma predeterminada:
-    
+
         - Archivos de programa descargados
 
         - Archivos temporales de Internet
@@ -776,7 +776,7 @@ Igualmente, aquí tienes sugerencias para realizar varias tareas para liberar es
 2. Limpia el almacenamiento de instantáneas de volumen, si hay alguno en uso.
 
     - Abre un símbolo del sistema con permisos elevados y ejecuta el comando `vssadmin list shadows` y luego el comando `vssadmin list shadowstorage`.
-    
+
         Si el resultado de estos comandos es **La consulta no dio ningún resultado**, es que no se está usando ningún almacenamiento de VSS.
 
 3. Limpieza de los archivos temporales y los registros. En un símbolo del sistema con permisos elevados, ejecuta el comando `Del C:\*.tmp /s`, el comando `Del C:\Windows\Temp\.` y luego el comando `Del %temp%\.`.
@@ -790,7 +790,7 @@ Quitar OneDrive implica la eliminación del paquete, la desinstalación y la eli
 ```azurecli
 
 Taskkill.exe /F /IM "OneDrive.exe"
-Taskkill.exe /F /IM "Explorer.exe"` 
+Taskkill.exe /F /IM "Explorer.exe"`
     if (Test-Path "C:\\Windows\\System32\\OneDriveSetup.exe")`
      { Start-Process "C:\\Windows\\System32\\OneDriveSetup.exe"`
          -ArgumentList "/uninstall"`
