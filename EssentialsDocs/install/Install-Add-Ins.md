@@ -2,42 +2,38 @@
 title: Instalar complementos
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: e62e4f07-c2ba-4c5e-b30c-bdc287cd654e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f8428a0198459e1dc036647a3d47fa1a49c00c01
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 12bdaa86cf102ac85d2d2d8f2f2caf492f465dec
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820138"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181211"
 ---
 # <a name="install-add-ins"></a>Instalar complementos
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Para incluir complementos en todos los servidores o equipos cliente, instálelos antes de crear una imagen. Estos complementos se incluirán automáticamente en todos los equipos que se hayan replicado a partir de dicha imagen. Puede instalar un complemento ejecutando el archivo .wssx o puede instalar archivos de complementos individuales siguiendo las instrucciones de la [documentación del SDK](https://go.microsoft.com/fwlink/?LinkID=248648)para cada tipo de complemento. Si lo instala mediante un archivo .wssx, el complemento se puede desinstalar a través del Administrador de complementos. Si instala los archivos individuales, no podrá gestionar el complemento desde el Administrador de complementos.  
-  
+Para incluir complementos en todos los servidores o equipos cliente, instálelos antes de crear una imagen. Estos complementos se incluirán automáticamente en todos los equipos que se hayan replicado a partir de dicha imagen. Puede instalar un complemento ejecutando el archivo .wssx o puede instalar archivos de complementos individuales siguiendo las instrucciones de la [documentación del SDK](https://go.microsoft.com/fwlink/?LinkID=248648)para cada tipo de complemento. Si lo instala mediante un archivo .wssx, el complemento se puede desinstalar a través del Administrador de complementos. Si instala los archivos individuales, no podrá gestionar el complemento desde el Administrador de complementos.
+
 > [!NOTE]
->  Cualquier software que se instale o descargue en el servidor (incluidas las fichas del Panel y las notificaciones de estado) debe tener una interfaz localizada que coincida con el idioma del sistema operativo que está instalado en el servidor.  
-  
-#### <a name="to-install-an-add-in"></a>Para instalar un complemento  
-  
-1.  (Opcional) Si instala el complemento utilizando un archivo .wssx, siga los pasos que se indican a continuación:  
-  
-    1.  Guarde el archivo < AddinName\>. WSSX en el equipo de referencia.  
-  
-    2.  Haga doble clic en el archivo .wssx para abrir el Asistente de instalación de complementos.  
-  
-    3.  Siga las instrucciones del asistente para completar la instalación.  
-  
-2.  (Opcional) Instale los archivos individuales del complemento en las ubicaciones correspondientes como se indica en el SDK de cada tipo de complemento.  
-  
-## <a name="see-also"></a>Consulta también  
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
- [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
+>  Cualquier software que se instale o descargue en el servidor (incluidas las fichas del Panel y las notificaciones de estado) debe tener una interfaz localizada que coincida con el idioma del sistema operativo que está instalado en el servidor.
+
+#### <a name="to-install-an-add-in"></a>Para instalar un complemento
+
+1.  (Opcional) Si instala el complemento utilizando un archivo .wssx, siga los pasos que se indican a continuación:
+
+    1.  Guarde el archivo <AddinName \> . WSSX en el equipo de referencia.
+
+    2.  Haga doble clic en el archivo .wssx para abrir el Asistente de instalación de complementos.
+
+    3.  Siga las instrucciones del asistente para completar la instalación.
+
+2.  (Opcional) Instale los archivos individuales del complemento en las ubicaciones correspondientes como se indica en el SDK de cada tipo de complemento.
+
+## <a name="see-also"></a>Consulte también
+ [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md) [personalizaciones adicionales](Additional-Customizations.md) [preparar la imagen para probar la implementación de](Preparing-the-Image-for-Deployment.md) [la experiencia del cliente](Testing-the-Customer-Experience.md)
