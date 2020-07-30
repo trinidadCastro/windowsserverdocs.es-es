@@ -2,18 +2,17 @@
 title: Reproducción de medios digitales en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d57a2e7a2151160caa38feba3cc97e5869c258b2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c8f490f09f9623aa82b42f2103f2fd3e95537d7d
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470000"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409515"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Reproducción de medios digitales en Windows Server Essentials
 
@@ -66,11 +65,9 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 
  Puede usar cualquiera de los siguientes métodos para buscar y reproducir archivos multimedia digitales que se almacenan en el servidor:
 
-
 -   [Buscar y reproducir archivos multimedia en Windows Server Essentials desde un equipo o reproductor multimedia digital en la red](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1)
 
 -   [Enviar archivos multimedia en Windows Server Essentials a Windows Media Player, Xbox 360 o a un reproductor multimedia digital en red en la red](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)
-
 
 
 ###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a>Buscar y reproducir archivos multimedia en Windows Server Essentials desde un equipo o reproductor multimedia digital en la red
@@ -88,7 +85,6 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 -   [Buscar y reproducir archivos multimedia mediante la característica Carpetas compartidas de Launchpad](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)
 
 -   [Buscar y reproducir archivos multimedia compartidos mediante Acceso Web remoto](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)
-
 
 
 ####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a>Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows Media Center
@@ -261,19 +257,8 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 
 -   [Administrar medios digitales](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)
 
-
 -   [Conéctese](Get-Connected-in-Windows-Server-Essentials.md)
 
 -   [Usar carpetas compartidas](Use-Shared-Folders-in-Windows-Server-Essentials.md)
 
 -   [Trabajar de forma remota](Work-Remotely-in-Windows-Server-Essentials.md)
-
-<<<<<<< ENCABEZADO
--   [Conéctese](../use/Get-Connected-in-Windows-Server-Essentials.md)
-
--   [Usar carpetas compartidas](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)
-
--   [Trabajar de forma remota](../use/Work-Remotely-in-Windows-Server-Essentials.md)
-
-=======
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

@@ -7,12 +7,12 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 276e39cc3e17ce74f7fee43c512cc726ff631a5a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 341a7dd217045150e1f637d23378e49a86bb5fbf
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179571"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409485"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
@@ -23,7 +23,6 @@ ms.locfileid: "87179571"
   El Acceso web remoto le permite estar conectado a la red de Windows Server Essentials cuando lo utilice. Al iniciar sesión en acceso Web remoto, puede conectarse a los equipos de la red de Windows Server Essentials, abrir el panel para administrar la red de Windows Server Essentials y acceder a todas las carpetas compartidas y archivos multimedia del servidor.
 
  Este tema incluye las siguientes secciones:
-
 
 -   [Conectarse al Acceso web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)
 
@@ -128,7 +127,7 @@ ms.locfileid: "87179571"
 
 #### <a name="upload-files"></a>Carga de archivos
 
-###### <a name="to-upload-files"></a>Para cargar archivos
+##### <a name="to-upload-files"></a>Para cargar archivos
 
 1. En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, a continuación, haga clic en un vínculo de carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
 
@@ -149,7 +148,7 @@ ms.locfileid: "87179571"
 > [!NOTE]
 >  La carga de varios archivos de forma nativa es compatible con los exploradores web que son compatibles con HTML5. Esta herramienta solo es necesaria cuando el explorador web no admite HTML5.
 
-###### <a name="to-upload-files-using-the-easy-file-upload-tool"></a>Para cargar archivos con la herramienta de carga fácil
+##### <a name="to-upload-files-using-the-easy-file-upload-tool"></a>Para cargar archivos con la herramienta de carga fácil
 
 1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, a continuación, haga clic en un vínculo de carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
 
@@ -167,7 +166,7 @@ ms.locfileid: "87179571"
 
 #### <a name="download-files-or-folders"></a>Descargar los archivos o carpetas
 
-###### <a name="to-download-a-single-file"></a>Para descargar un solo archivo
+##### <a name="to-download-a-single-file"></a>Para descargar un solo archivo
 
 1. En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, a continuación, haga clic en un vínculo de carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
 
@@ -203,7 +202,7 @@ ms.locfileid: "87179571"
 
   Antes de que comience la descarga real, se crea el archivo .exe o .zip. En función del número de archivos y del tamaño total de los archivos que se van a descargar, esta acción puede tardar varios minutos. Después de crearse el archivo de descarga, la descarga del archivo tiene lugar en segundo plano. Esto le permite seguir trabajando mientras se completa el proceso de descarga.
 
-###### <a name="to-download-multiple-files-or-folders"></a>Para descargar varios archivos o carpetas
+##### <a name="to-download-multiple-files-or-folders"></a>Para descargar varios archivos o carpetas
 
 1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, a continuación, haga clic en un vínculo de carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
 
@@ -224,13 +223,13 @@ ms.locfileid: "87179571"
 
  Si selecciona varios archivos o carpetas para descargar, puede recibir un archivo ejecutable comprimido autoextraíble (.exe) o un archivo comprimido (.zip).
 
-###### <a name="to-retrieve-a-file-from-the-compressed-exe-file"></a>Para recuperar un archivo del archivo comprimido (.exe)
+##### <a name="to-retrieve-a-file-from-the-compressed-exe-file"></a>Para recuperar un archivo del archivo comprimido (.exe)
 
 1.  En el equipo, haga doble clic para abrir el archivo comprimido.
 
 2.  Siga las instrucciones para extraer los archivos en una carpeta en el equipo.
 
-###### <a name="to-retrieve-a-file-from-the-compressed-zip-file"></a>Para recuperar un archivo desde el archivo comprimido (.zip)
+##### <a name="to-retrieve-a-file-from-the-compressed-zip-file"></a>Para recuperar un archivo desde el archivo comprimido (.zip)
 
 1.  En el equipo, haga doble clic para abrir el archivo comprimido.
 
@@ -243,9 +242,9 @@ ms.locfileid: "87179571"
  Puede usar el Acceso web remoto para crear nuevas carpetas en una carpeta compartida existente, cambiar el nombre de archivos y carpetas, moverlos y copiarlos y eliminarlos del servidor.
 
 > [!NOTE]
-<<<<<<< encabezado para agregar nuevas carpetas compartidas en un servidor que ejecuta Windows Server Essentials, debe usar el panel. Para conectarse a la consola del servidor desde el Acceso web remoto, en la pestaña **Equipos**, haga clic en el nombre del servidor, en **Conectar** y, a continuación, siga las instrucciones para iniciar sesión en el servidor. Para obtener información sobre cómo crear carpetas compartidas, vea cómo [agregar o mover una carpeta del servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).
+> Para agregar nuevas carpetas compartidas en un servidor que ejecuta Windows Server Essentials, debe usar el panel. Para conectarse a la consola del servidor desde el Acceso web remoto, en la pestaña **Equipos**, haga clic en el nombre del servidor, en **Conectar** y, a continuación, siga las instrucciones para iniciar sesión en el servidor. Para obtener información sobre cómo crear carpetas compartidas, vea cómo [agregar o mover una carpeta del servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).
 
-##### <a name="to-create-a-new-folder"></a>Para crear una nueva carpeta
+#### <a name="to-create-a-new-folder"></a>Para crear una nueva carpeta
 
 1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, después, haga clic en un vínculo de la carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
 
@@ -261,7 +260,7 @@ ms.locfileid: "87179571"
 
 3.  Escriba un nombre nuevo en el cuadro de texto y, a continuación, haga clic en **Aceptar**.
 
-##### <a name="to-move-files-or-folders"></a>Para mover archivos o carpetas
+#### <a name="to-move-files-or-folders"></a>Para mover archivos o carpetas
 
 1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, después, haga clic en un vínculo de la carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
 
@@ -355,108 +354,3 @@ ms.locfileid: "87179571"
 
 -   [Usar Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
 
-=======
->  Para agregar nuevas carpetas compartidas en un servidor que ejecuta Windows Server Essentials, debe usar el panel. Para conectarse a la consola del servidor desde el Acceso web remoto, en la pestaña **Equipos**, haga clic en el nombre del servidor, en **Conectar** y, a continuación, siga las instrucciones para iniciar sesión en el servidor. Para obtener información sobre cómo crear carpetas compartidas, vea cómo [agregar o mover una carpeta del servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).
-
-##### <a name="to-create-a-new-folder"></a>Para crear una nueva carpeta
-
-1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, después, haga clic en un vínculo de la carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
-
-2.  En la barra de tareas, haga clic en **Nueva carpeta**.
-
-3.  Escriba un nombre para la carpeta y, a continuación, haga clic en **Aceptar**.
-
-##### <a name="to-rename-a-file-or-folder"></a>Para cambiar el nombre de un archivo o una carpeta
-
-1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, después, haga clic en un vínculo de la carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
-
-2.  Haga clic en el archivo o carpeta que quiera cambiar y, a continuación, haga clic en **Cambiar nombre**.
-
-3.  Escriba un nombre nuevo en el cuadro de texto y, a continuación, haga clic en **Aceptar**.
-
-##### <a name="to-move-files-or-folders"></a>Para mover archivos o carpetas
-
-1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, después, haga clic en un vínculo de la carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
-
-2.  Active la casilla junto a los archivos o carpetas que quiera mover. Haga clic en uno de los archivos o carpetas seleccionados y, a continuación, en **Cortar**.
-
-3.  Haga clic con el botón secundario en la carpeta a la que quiere mover los archivos o carpetas y, después, haga clic en **Pegar**.
-
-##### <a name="to-delete-a-file-or-folder"></a>Para eliminar un archivo o carpeta
-
-1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, después, haga clic en un vínculo de la carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
-
-2.  Active la casilla junto a los archivos o carpetas que desea eliminar, haga clic en uno de los archivos o carpetas seleccionados y, a continuación, haga clic en **Eliminar**.
-
-3.  Para confirmar que quiere eliminar los archivos y carpetas seleccionados, haga clic en **Sí**.
-
-##### <a name="to-copy-files-or-folders"></a>Para copiar archivos o carpetas
-
-1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, después, haga clic en un vínculo de la carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.
-
-2.  Active la casilla junto a los archivos o carpetas que quiera copiar. Haga clic en uno de los archivos o carpetas seleccionados y, a continuación, haga clic en **Copiar**.
-
-3.  Haga clic con el botón secundario en la carpeta a la que quiera copiar los archivos o carpetas y, a continuación, haga clic en **Pegar**.
-
-##  <a name="connect-from-a-mobile-device"></a><a name="BKMK_ConnectMobile"></a>Conectarse desde un dispositivo móvil
-
-
--   [Usar el Acceso web remoto desde un dispositivo móvil](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)
-
--   [Exploradores web compatibles para dispositivos móviles](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)
-
-
-###  <a name="use-remote-web-access-from-a-mobile-device"></a><a name="BKMK_8"></a>Usar el acceso Web remoto desde un dispositivo móvil
- Puede iniciar sesión en el Acceso web remoto desde el smartphone para ver los archivos y las carpetas de las carpetas compartidas en el servidor.
-
-> [!NOTE]
->  También puede descargar y usar la aplicación My Server para Windows Server Essentials desde el [Windows Phone Marketplace](http://www.windowsphone.com/apps/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a) para acceder a sus carpetas y archivos multimedia compartidos que se almacenan en el servidor.
-
-##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>Para iniciar sesión en el Acceso web remoto desde un dispositivo móvil
-
-1.  Abra un explorador Web y escriba **https://** _<sudominio \> _**/Remote** en la barra de direcciones.  Asegúrese de incluir s en https.
-
-2.  En la página inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión móvil del Acceso web remoto.
-
-##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>Para cambiar a la versión de escritorio del Acceso web remoto
-
-1.  Abra un explorador Web y escriba **https://** _<sudominio \> _**/Remote** en la barra de direcciones.  Asegúrese de incluir s en https.
-
-2.  En la página inicio de sesión de acceso Web remoto, escriba su nombre de usuario y contraseña en los cuadros de texto, haga clic en **Ver versión de escritorio**y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión de escritorio del acceso Web remoto.
-
-##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>Para volver a la versión móvil del Acceso web remoto
-
-1. Cierre la sesión.
-
-2. Abra un explorador Web y escriba **https://** _<sudominio \> _**/remoto/m** en la barra de direcciones. Asegúrese de incluir s en https.
-
-3. Se muestra la versión móvil del acceso Web remoto. En la página inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión móvil del acceso Web remoto.
-
-   Puede buscar archivos y carpetas en las carpetas compartidas en el servidor.
-
-###  <a name="supported-web-browsers-for-mobile-devices"></a><a name="BKMK_9"></a>Exploradores Web compatibles para dispositivos móviles
- Entre los exploradores web compatibles para dispositivos móviles se incluyen los siguientes:
-
--   Internet Explorer Mobile 6.0 o posterior
-
--   Safari
-
--   BlackBerry
-
--   Symbian 6.0 o posterior
-
--   Android
-
--   Google Chrome
-
--   Firefox
-
-## <a name="see-also"></a>Consulte también
-
--   [Administrar Acceso web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)
-
--   [Trabajar de forma remota](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [Usar Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

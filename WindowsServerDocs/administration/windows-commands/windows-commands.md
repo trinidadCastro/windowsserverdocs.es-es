@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: bd2d1f9baa17581cb43ae383c260c938f302a73c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 33b19ba9c6f7d8f12d72876a04dbf8bdfda7ff30
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958987"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409936"
 ---
 # <a name="windows-commands"></a>Comandos de Windows
 
@@ -711,8 +711,7 @@ Para obtener información acerca de un comando específico de Windows, en el sig
 - [regini](regini.md)
 - [regsvr32](regsvr32.md)
 - [relog](relog.md)
-- [rem batch file](rem.md)
-- [rem script](rem_1.md)
+- [rem](rem.md)
 - [remove](remove.md)
 - [ren](ren.md)
 - [rename](rename.md)

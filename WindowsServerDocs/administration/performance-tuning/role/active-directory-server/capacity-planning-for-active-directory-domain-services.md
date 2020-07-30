@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: bc8486369d076573d249b9d5cfb0ba669619461e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c0ff1c12a94abed86f6fa3cecd54894016dd3ad1
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179231"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409495"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planeación de la capacidad para Active Directory Domain Services
 
@@ -34,7 +34,7 @@ Como analogía: la administración de la capacidad está a punto de prevenir un 
 Durante los últimos años, la guía de planeamiento de la capacidad de los sistemas de escalado vertical ha cambiado drásticamente. Los siguientes cambios en las arquitecturas del sistema han motivado las suposiciones fundamentales sobre el diseño y el escalado de un servicio:
 
 - plataformas de servidor de 64 bits
-- La virtualización
+- Virtualización
 - Mayor atención al consumo de energía
 - Almacenamiento SSD
 - Escenarios de nube
@@ -100,22 +100,22 @@ En general:
 #### <a name="new-environment"></a>Nuevo entorno
 
 | Componente | Cálculos |
-|-|-|
-|Almacenamiento/tamaño de la base de datos|de 40 KB a 60 KB para cada usuario|
-|RAM|Tamaño de base de datos<br />Recomendaciones del sistema operativo base<br />Aplicaciones de terceros|
-|Red|1 GB|
-|CPU|1000 usuarios simultáneos para cada núcleo|
+|--|--|
+| Almacenamiento/tamaño de la base de datos | de 40 KB a 60 KB para cada usuario |
+| RAM | Tamaño de base de datos<br />Recomendaciones del sistema operativo base<br />Aplicaciones de terceros |
+| Red | 1 GB |
+| CPU | 1000 usuarios simultáneos para cada núcleo |
 
 #### <a name="high-level-evaluation-criteria"></a>Criterios de evaluación de alto nivel
 
 | Componente | Criterios de evaluación | Consideraciones de planeación |
-|-|-|-|
-|Almacenamiento/tamaño de la base de datos|La sección titulada "para activar el registro de espacio en disco que ha liberado la desfragmentación" en [límites de almacenamiento](/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))| |
-|Rendimiento de almacenamiento/base de datos|<ul><li>"LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Read", "LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Write", "LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Transfer"</li><li>"LogicalDisk ( *\<NTDS Database Drive\>* ) \ lecturas/s", "LogicalDisk ( *\<NTDS Database Drive\>* ) \ escrituras/seg", "LogicalDisk ( *\<NTDS Database Drive\>* ) \ Transfers/SEC"</li></ul>|<ul><li>El almacenamiento tiene dos preocupaciones<ul><li>El espacio disponible, que con el tamaño del almacenamiento basado en el eje actual y en la SSD, es irrelevante para la mayoría de los entornos de AD.</li> <li>Operaciones de entrada/salida (e/s) disponibles: en muchos entornos, a menudo se pasa por alto. Pero es importante evaluar solo los entornos en los que no hay suficiente RAM para cargar toda la base de datos NTDS en la memoria.</li></ul><li>El almacenamiento puede ser un tema complejo y debe implicar la experiencia del fabricante del hardware para que el tamaño sea adecuado. Especialmente con escenarios más complejos, como escenarios SAN, NAS e iSCSI. Sin embargo, en general, el costo por Gigabyte de almacenamiento suele ser la oposición directa del costo por e/s:<ul><li>RAID 5 tiene un costo menor por Gigabyte que RAID 1, pero RAID 1 tiene un costo menor por e/s</li><li>Las unidades de disco duro basadas en el eje tienen un costo menor por Gigabyte, pero las SSD tienen un costo menor por e/s</li></ul><li>Después de reiniciar el equipo o el servicio Active Directory Domain Services, la caché del motor de almacenamiento extensible (ESE) está vacía y el rendimiento se enlazará en disco mientras se calienta la memoria caché.</li><li>En la mayoría de los entornos, AD es una e/s de lectura intensiva en un patrón aleatorio a los discos, lo que evita muchas de las ventajas del almacenamiento en caché y las estrategias de optimización de lectura.  Además, AD tiene una caché más grande en la memoria que la mayoría de las memorias caché del sistema de almacenamiento.</li></ul>
-|RAM|<ul><li>Tamaño de base de datos</li><li>Recomendaciones del sistema operativo base</li><li>Aplicaciones de terceros</li></ul>|<ul><li>El almacenamiento es el componente más lento de un equipo. Cuanto más pueda residir en la RAM, menos será necesario ir a disco.</li><li>Asegúrese de que hay suficiente RAM asignada para almacenar el sistema operativo, los agentes (antivirus, copia de seguridad, supervisión), la base de datos NTDS y el crecimiento a lo largo del tiempo.</li><li>En el caso de los entornos en los que maximizar la cantidad de memoria RAM no es rentable (como una ubicación satélite) o no factible (DIT es demasiado grande), haga referencia a la sección Storage para asegurarse de que el almacenamiento tenga el tamaño adecuado.</li></ul>|
-|Red|<ul><li>"Interfaz de red ( \* ) \Bytes recibidos por segundo"</li><li>"Interfaz de red ( \* ) \Bytes enviados por segundo"|<ul><li>En general, el tráfico enviado desde un controlador de dominio supera mucho el tráfico enviado a un controlador de dominio.</li><li>Como conexión Ethernet conmutada, el tráfico de red de entrada y salida de dúplex completo debe ajustarse de forma independiente.</li><li>La consolidación del número de controladores de dominio aumentará la cantidad de ancho de banda que se usa para devolver las respuestas a las solicitudes de cliente para cada controlador de dominio, pero estará suficientemente cerca para lineal en todo el sitio.</li><li>Si quita los controladores de dominio de Ubicación satélite, no olvide agregar el ancho de banda para el controlador de dominio satélite en los controladores de dominio del concentrador y usarlo para evaluar la cantidad de tráfico WAN que habrá.</li></ul>|
-|CPU|<ul><li>"Disco lógico ( *\<NTDS Database Drive\>* ) \Avg en segundos/lectura"</li><li>"Proceso (LSASS) \\ % de tiempo de procesador"</li></ul>|<ul><li>Después de eliminar el almacenamiento como cuello de botella, solucione la cantidad de potencia de proceso necesaria.</li><li>Aunque no es absolutamente lineal, el número de núcleos de procesador consumido en todos los servidores dentro de un ámbito específico (por ejemplo, un sitio) se puede usar para medir el número de procesadores necesarios para admitir la carga total de clientes. Agregue el mínimo necesario para mantener el nivel actual de servicio en todos los sistemas dentro del ámbito.</li><li>Los cambios en la velocidad del procesador, incluidos los cambios relacionados con la administración de energía, los números de impacto derivados del entorno actual. Por lo general, es imposible evaluar con exactitud cómo pasar de un procesador de 2,5 GHz a un procesador de 3 GHz reducirá el número de CPU necesarias.</li></ul>|
-|NetLogon|<ul><li>"Netlogon ( \* ) \Semaphore adquiere"</li><li>"Netlogon ( \* ) tiempos de espera de \Semaphore"</li><li>"Netlogon ( \* ) \Average de tiempo de espera del semáforo"</li></ul>|<ul><li>Net Logon Secure Channel/MaxConcurrentAPI solo afecta a entornos con autenticaciones NTLM y/o la validación de PAC. La validación de PAC está activada de forma predeterminada en versiones de sistema operativo anteriores a Windows Server 2008. Se trata de una configuración de cliente, por lo que los controladores de sesión se verán afectados hasta que esté desactivada en todos los sistemas cliente.</li><li>Los entornos con una autenticación de confianza cruzada importante, que incluye confianzas dentro de bosques, tienen un mayor riesgo si no tienen un tamaño adecuado.</li><li>Las consolidaciones de servidor aumentarán la simultaneidad de la autenticación entre confianzas.</li><li>Es necesario acomodar los picos, como las conmutaciones por error de los clústeres, a medida que los usuarios vuelven a autenticarse en el nuevo nodo de clúster.</li><li>Es posible que los sistemas cliente individuales (por ejemplo, un clúster) también necesiten la optimización.</li></ul>|
+|--|--|--|
+| Almacenamiento/tamaño de la base de datos | La sección titulada "para activar el registro de espacio en disco que ha liberado la desfragmentación" en [límites de almacenamiento](/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10)) |  |
+| Rendimiento de almacenamiento/base de datos | <ul><li>"LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Read", "LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Write", "LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Transfer"</li><li>"LogicalDisk ( *\<NTDS Database Drive\>* ) \ lecturas/s", "LogicalDisk ( *\<NTDS Database Drive\>* ) \ escrituras/seg", "LogicalDisk ( *\<NTDS Database Drive\>* ) \ Transfers/SEC"</li></ul> | <ul><li>El almacenamiento tiene dos preocupaciones<ul><li>El espacio disponible, que con el tamaño del almacenamiento basado en el eje actual y en la SSD, es irrelevante para la mayoría de los entornos de AD.</li> <li>Operaciones de entrada/salida (e/s) disponibles: en muchos entornos, a menudo se pasa por alto. Pero es importante evaluar solo los entornos en los que no hay suficiente RAM para cargar toda la base de datos NTDS en la memoria.</li></ul><li>El almacenamiento puede ser un tema complejo y debe implicar la experiencia del fabricante del hardware para que el tamaño sea adecuado. Especialmente con escenarios más complejos, como escenarios SAN, NAS e iSCSI. Sin embargo, en general, el costo por Gigabyte de almacenamiento suele ser la oposición directa del costo por e/s:<ul><li>RAID 5 tiene un costo menor por Gigabyte que RAID 1, pero RAID 1 tiene un costo menor por e/s</li><li>Las unidades de disco duro basadas en el eje tienen un costo menor por Gigabyte, pero las SSD tienen un costo menor por e/s</li></ul><li>Después de reiniciar el equipo o el servicio Active Directory Domain Services, la caché del motor de almacenamiento extensible (ESE) está vacía y el rendimiento se enlazará en disco mientras se calienta la memoria caché.</li><li>En la mayoría de los entornos, AD es una e/s de lectura intensiva en un patrón aleatorio a los discos, lo que evita muchas de las ventajas del almacenamiento en caché y las estrategias de optimización de lectura.  Además, AD tiene una caché más grande en la memoria que la mayoría de las memorias caché del sistema de almacenamiento.</li></ul> |
+| RAM | <ul><li>Tamaño de base de datos</li><li>Recomendaciones del sistema operativo base</li><li>Aplicaciones de terceros</li></ul> | <ul><li>El almacenamiento es el componente más lento de un equipo. Cuanto más pueda residir en la RAM, menos será necesario ir a disco.</li><li>Asegúrese de que hay suficiente RAM asignada para almacenar el sistema operativo, los agentes (antivirus, copia de seguridad, supervisión), la base de datos NTDS y el crecimiento a lo largo del tiempo.</li><li>En el caso de los entornos en los que maximizar la cantidad de memoria RAM no es rentable (como una ubicación satélite) o no factible (DIT es demasiado grande), haga referencia a la sección Storage para asegurarse de que el almacenamiento tenga el tamaño adecuado.</li></ul> |
+| Red | <ul><li>"Interfaz de red ( \* ) \Bytes recibidos por segundo"</li><li>"Interfaz de red ( \* ) \Bytes enviados por segundo" | <ul><li>En general, el tráfico enviado desde un controlador de dominio supera mucho el tráfico enviado a un controlador de dominio.</li><li>Como conexión Ethernet conmutada, el tráfico de red de entrada y salida de dúplex completo debe ajustarse de forma independiente.</li><li>La consolidación del número de controladores de dominio aumentará la cantidad de ancho de banda que se usa para devolver las respuestas a las solicitudes de cliente para cada controlador de dominio, pero estará suficientemente cerca para lineal en todo el sitio.</li><li>Si quita los controladores de dominio de Ubicación satélite, no olvide agregar el ancho de banda para el controlador de dominio satélite en los controladores de dominio del concentrador y usarlo para evaluar la cantidad de tráfico WAN que habrá.</li></ul> |
+| CPU | <ul><li>"Disco lógico ( *\<NTDS Database Drive\>* ) \Avg en segundos/lectura"</li><li>"Proceso (LSASS) \\ % de tiempo de procesador"</li></ul> | <ul><li>Después de eliminar el almacenamiento como cuello de botella, solucione la cantidad de potencia de proceso necesaria.</li><li>Aunque no es absolutamente lineal, el número de núcleos de procesador consumido en todos los servidores dentro de un ámbito específico (por ejemplo, un sitio) se puede usar para medir el número de procesadores necesarios para admitir la carga total de clientes. Agregue el mínimo necesario para mantener el nivel actual de servicio en todos los sistemas dentro del ámbito.</li><li>Los cambios en la velocidad del procesador, incluidos los cambios relacionados con la administración de energía, los números de impacto derivados del entorno actual. Por lo general, es imposible evaluar con exactitud cómo pasar de un procesador de 2,5 GHz a un procesador de 3 GHz reducirá el número de CPU necesarias.</li></ul> |
+| NetLogon | <ul><li>"Netlogon (*) \Semaphore adquiere" </li> <li> "Netlogon (*) \Semaphore de tiempos de espera"</li><li>"Netlogon (*) \Average de tiempo de espera del semáforo"</li></ul> | <ul><li>Net Logon Secure Channel/MaxConcurrentAPI solo afecta a entornos con autenticaciones NTLM y/o la validación de PAC. La validación de PAC está activada de forma predeterminada en versiones de sistema operativo anteriores a Windows Server 2008. Se trata de una configuración de cliente, por lo que los controladores de sesión se verán afectados hasta que esté desactivada en todos los sistemas cliente.</li><li>Los entornos con una autenticación de confianza cruzada importante, que incluye confianzas dentro de bosques, tienen un mayor riesgo si no tienen un tamaño adecuado.</li><li>Las consolidaciones de servidor aumentarán la simultaneidad de la autenticación entre confianzas.</li><li>Es necesario acomodar los picos, como las conmutaciones por error de los clústeres, a medida que los usuarios vuelven a autenticarse en el nuevo nodo de clúster.</li><li>Es posible que los sistemas cliente individuales (por ejemplo, un clúster) también necesiten la optimización.</li></ul> |
 
 ## <a name="planning"></a>Planificación
 
@@ -155,15 +155,15 @@ Evite la confirmación de la memoria en el host. El objetivo fundamental de la o
 
 ### <a name="calculation-summary-example"></a>Ejemplo de Resumen de cálculo
 
-|Componente|Memoria estimada (ejemplo)|
-|-|-|
-|RAM recomendada del sistema operativo base (Windows Server 2008)|2 GB|
-|Tareas internas de LSASS|200 MB|
-|Agente de supervisión|100 MB|
-|Antivirus|100 MB|
-|Base de datos (catálogo global)|8,5 GB |
-|Cojín para que se ejecute la copia de seguridad, los administradores pueden iniciar sesión sin impacto|1 GB|
-|Total|12 GB|
+| Componente | Memoria estimada (ejemplo) |
+|--|--|
+| RAM recomendada del sistema operativo base (Windows Server 2008) | 2 GB |
+| Tareas internas de LSASS | 200 MB |
+| Agente de supervisión | 100 MB |
+| Antivirus | 100 MB |
+| Base de datos (catálogo global) | 8,5 GB |
+| Cojín para que se ejecute la copia de seguridad, los administradores pueden iniciar sesión sin impacto | 1 GB |
+| Total | 12 GB |
 
 **Recomendado: 16 GB**
 
@@ -224,14 +224,14 @@ Es fácil realizar recomendaciones para un servidor físico: 1 GB para servidore
 
 ### <a name="calculation-summary-example"></a>Ejemplo de Resumen de cálculo
 
-|Sistema|Ancho de banda máximo|
-|-|-|
-DC 1|6,5 MB/s|
-DC 2|6,25 MB/s|
-|DC 3|6,25 MB/s|
-|DC 4|5,75 MB/s|
-|DC 5|4,75 MB/s|
-|Total|28,5 MB/s|
+| Sistema | Ancho de banda máximo |
+|--|--|
+| DC 1 | 6,5 MB/s |
+| DC 2 | 6,25 MB/s |
+| DC 3 | 6,25 MB/s |
+| DC 4 | 5,75 MB/s |
+| DC 5 | 4,75 MB/s |
+| Total | 28,5 MB/s |
 
 **Recomendado: 72 MB/s** (28,5 MB/s dividido entre 40%)
 
@@ -272,7 +272,7 @@ Al revisar los entornos existentes con varios dominios, puede haber variaciones 
 El tamaño de la base de datos puede variar entre versiones del sistema operativo. Los controladores de dominio que ejecutan sistemas operativos anteriores, como Windows Server 2003, tienen un tamaño de base de datos menor que un controlador de dominio que ejecuta un sistema operativo posterior como Windows Server 2008 R2, especialmente cuando se habilitan características Active Directory como la papelera de reciclaje o la itinerancia de credenciales.
 
 > [!NOTE]
-  >
+>
 >- En el caso de los nuevos entornos, tenga en cuenta que las estimaciones de las estimaciones de crecimiento de Active Directory usuarios y unidades organizativas indican que 100.000 usuarios (en el mismo dominio) consumen aproximadamente 450 MB de espacio. Tenga en cuenta que los atributos rellenados pueden tener un gran impacto en la cantidad total. Los atributos se rellenarán en muchos objetos de productos de terceros y de Microsoft, incluidos Microsoft Exchange Server y Lync. Se prefiere una evaluación basada en la cartera de productos del entorno, pero el ejercicio de detallar los cálculos matemáticos y las pruebas para estimaciones precisas de todos los entornos, pero los más grandes, puede que realmente no merezca la pena tiempo y esfuerzo.
 >- Asegúrese de que el 110% del tamaño de NTDS. dit esté disponible como espacio disponible para habilitar la desfragmentación sin conexión y planee el crecimiento durante un período de vida de hardware de tres a cinco años. Dado que el almacenamiento económico es, la estimación del almacenamiento al 300% del tamaño del DIT como asignación de almacenamiento es segura para acomodar el crecimiento y la posible necesidad de desfragmentación sin conexión.
 
@@ -282,11 +282,11 @@ En un escenario en el que se asignan varios archivos de disco duro virtual (VHD)
 
 #### <a name="calculation-summary-example"></a>Ejemplo de Resumen de cálculo
 
-|Datos recopilados de la fase de evaluación| |
-|-|-|
-|Tamaño de NTDS. dit|35 GB|
-|Modificador para permitir la desfragmentación sin conexión|2.1|
-|Almacenamiento total necesario|73,5 GB|
+| Datos recopilados de la fase de evaluación | Size |
+|--|--|
+| Tamaño de NTDS. dit | 35 GB |
+| Modificador para permitir la desfragmentación sin conexión | 2,1 GB |
+| Almacenamiento total necesario | 73,5 GB |
 
 > [!NOTE]
 > Este almacenamiento necesario se suma al almacenamiento necesario para SYSVOL, sistema operativo, archivo de paginación, archivos temporales, datos almacenados en caché locales (como archivos de instalador) y aplicaciones.
@@ -332,8 +332,7 @@ Se deben muestrear en intervalos de 15/30/60 minutos para realizar pruebas compa
 >     > Existen recomendaciones que indican que el rendimiento del almacenamiento se degrada en 15ms a 20 ms (según el origen).  La diferencia entre los valores anteriores y la otra orientación es que los valores anteriores son el intervalo operativo normal.  Las otras recomendaciones son instrucciones para la solución de problemas con el fin de identificar cuándo la experiencia del cliente se degrada considerablemente y es apreciable.  Consulte el Apéndice C para obtener una explicación más detallada.
 > - LogicalDisk ( *\<NTDS\>* ) \ lecturas/seg es la cantidad de e/s que se está realizando.
 >   - Si LogicalDisk ( *\<NTDS\>* ) \Avg en segundos de disco/lectura se encuentra dentro del intervalo óptimo para el almacenamiento de back-end, *\<NTDS\>* se puede usar DiscoLógico () \ lecturas por segundo directamente para ajustar el almacenamiento.
->   - Si LogicalDisk ( *\<NTDS\>* ) \Avg en segundos de disco/lectura no está dentro del intervalo óptimo para el almacenamiento de back-end, se necesita e/s adicional de acuerdo con la siguiente fórmula:
->     > (LogicalDisk ( *\<NTDS\>* ) \Avg en segundos de disco/lectura) &divide; (Tiempo de acceso al disco del medio físico) &times; (LogicalDisk ( *\<NTDS\>* ) \Avg en segundos de disco/lectura)
+>   - Si LogicalDisk ( *\<NTDS\>* ) \Avg en segundos de disco/lectura no está dentro del intervalo óptimo para el almacenamiento de back-end, se necesita e/s adicional según la siguiente fórmula: (LogicalDisk ( *\<NTDS\>* ) \Avg de disco/lectura) ( &divide; tiempo de acceso del disco de medios físicos) &times; (LogicalDisk ( *\<NTDS\>* ) \Avg de disco/lectura).
 
 Consideraciones:
 
@@ -356,17 +355,17 @@ Determinar la cantidad de e/s necesaria para un sistema en buen estado en condic
 - Para determinar la cantidad de e/s necesaria para el almacenamiento donde se supera la capacidad del almacenamiento subyacente:
   >*IOPS necesarios* = (LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg en segundos de disco/lectura &divide; *\<Target Avg Disk sec/Read\>* ) &times; LogicalDisk ( *\<NTDS Database Drive\>* ) \ lectura/s
 
-|Contador|Value|
-|-|-|
-|Disco lógico ( *\<NTDS Database Drive\>* ) \Avg real en segundos/transferencia|.02 segundos (20 milisegundos)|
-|Target LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Transfer|.01 segundos|
-|Multiplicador para cambio en la e/s disponible|0,02 &divide; 0,01 = 2|
+| Contador | Value |
+|--|--|
+| Disco lógico ( *\<NTDS Database Drive\>* ) \Avg real en segundos/transferencia | .02 segundos (20 milisegundos) |
+| Target LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Transfer | .01 segundos |
+| Multiplicador para cambio en la e/s disponible | 0,02 &divide; 0,01 = 2 |
 
-|Nombre del valor|Value|
-|-|-|
-|LogicalDisk ( *\<NTDS Database Drive\>* ) \ transferencias/s|400|
-|Multiplicador para cambio en la e/s disponible|2|
-|IOPS totales necesarias durante el período de máxima actividad|800|
+| Nombre del valor | Value |
+|--|--|
+| LogicalDisk ( *\<NTDS Database Drive\>* ) \ transferencias/s | 400 |
+| Multiplicador para cambio en la e/s disponible | 2 |
+| IOPS totales necesarias durante el período de máxima actividad | 800 |
 
 Para determinar la velocidad a la que se desea que la memoria caché se caliente:
 
@@ -377,16 +376,16 @@ Para determinar la velocidad a la que se desea que la memoria caché se caliente
 
 Tenga en cuenta que la tasa calculada, aunque sea precisa, no será exacta porque las páginas cargadas previamente se expulsan si ESE no está configurado para tener un tamaño de caché fijo y AD DS utiliza de forma predeterminada el tamaño de la memoria caché variable.
 
-|Puntos de datos que se van a recopilar|Valores
-|-|-|
-|Tiempo máximo aceptable para calor|10 minutos (600 segundos)
-|Tamaño de base de datos|2 GB|
+| Puntos de datos que se van a recopilar | Valores |
+|--|--|
+| Tiempo máximo aceptable para calor | 10 minutos (600 segundos) |
+| Tamaño de base de datos | 2 GB |
 
-|Paso de cálculo|Fórmula|Resultado|
-|-|-|-|
-|Calcular el tamaño de la base de datos en páginas|(2 GB &times; 1024 &times; 1024) = *tamaño de la base de datos en KB*|2.097.152 KB|
-|Calcular el número de páginas de la base de datos|2.097.152 KB &divide; 8 KB = *número de páginas*|262.144 páginas|
-|Calcular IOPS necesarias para hacer que la memoria caché esté completamente caliente|262.144 páginas &divide; 600 segundos = *IOPS necesarias*|437 IOPS|
+| Paso de cálculo | Fórmula | Resultado |
+|--|--|--|
+| Calcular el tamaño de la base de datos en páginas | (2 GB &times; 1024 &times; 1024) = *tamaño de la base de datos en KB* | 2.097.152 KB |
+| Calcular el número de páginas de la base de datos | 2.097.152 KB &divide; 8 KB = *número de páginas* | 262.144 páginas |
+| Calcular IOPS necesarias para hacer que la memoria caché esté completamente caliente | 262.144 páginas &divide; 600 segundos = *IOPS necesarias* | 437 IOPS |
 
 ## <a name="processing"></a>Processing
 
@@ -475,11 +474,11 @@ Hay dos razones comunes para optimizar pesos LDAP:
 
 #### <a name="example-1---pdc"></a>Ejemplo 1: PDC
 
-| |Uso con valores predeterminados|Nuevo LdapSrvWeight|Nueva utilización estimada|
-|-|-|-|-|
-|DC 1 (emulador de PDC)|53%|57|40%|
-|DC 2|33 %|100|40%|
-|DC 3|33 %|100|40%|
+| Sistema | Uso con valores predeterminados | Nuevo LdapSrvWeight | Nueva utilización estimada |
+|--|--|--|--|
+| DC 1 (emulador de PDC)| 53% | 57 | 40% |
+| DC 2| 33 % | 100 | 40% |
+| DC 3| 33 % | 100 | 40% |
 
 La siguiente instrucción es que si el rol de emulador de PDC se transfiere o se Asumi, especialmente en otro controlador de dominio del sitio, habrá un aumento espectacular en el nuevo emulador de PDC.
 
@@ -487,19 +486,19 @@ Con el ejemplo de la sección [Perfil de comportamiento del sitio de destino](#t
 
 #### <a name="example-2---differing-cpu-counts"></a>Ejemplo 2: recuentos de CPU diferentes
 
-| |\\  % &nbsp; Utilidad procesador de información del procesador (_Total)<br />Uso con valores predeterminados|Nuevo LdapSrvWeight|Nueva utilización estimada|
-|-|-|-|-|
-|4-CPU DC 1|40|100|30 %|
-|4-CPU DC 2|40|100|30 %|
-|8-CPU DC 3|20|200|30 %|
+| Sistema | \\  % &nbsp; Utilidad procesador de información del procesador (_Total)<br />Uso con valores predeterminados | Nuevo LdapSrvWeight | Nueva utilización estimada |
+|--|--|--|--|
+| 4-CPU DC 1 | 40 | 100 | 30 % |
+| 4-CPU DC 2 | 40 | 100 | 30 % |
+| 8-CPU DC 3 | 20 | 200 | 30 % |
 
 No obstante, tenga cuidado con estos escenarios. Como se puede observar más arriba, la expresión matemática es realmente agradable y está bien en papel. Pero a lo largo de este artículo, la planeación de un escenario "*N* + 1" es de primordial importancia. Se debe calcular el impacto de un DC sin conexión para cada escenario. En el escenario inmediatamente anterior, en el que la distribución de la carga es uniforme, para garantizar una carga del 60% durante un escenario "*N*", con la carga equilibrada uniformemente entre todos los servidores, la distribución será suficiente para que las proporciones sean coherentes. Observando el escenario de optimización del emulador de PDC y, en general, cualquier escenario en el que la carga de usuarios o aplicaciones esté desequilibrada, el efecto es muy diferente:
 
-| |Uso optimizado|Nuevo LdapSrvWeight|Nueva utilización estimada|
-|-|-|-|-|
-|DC 1 (emulador de PDC)|40%|85|47 %|
-|DC 2|40%|100|53%|
-|DC 3|40%|100|53%|
+| Sistema | Uso optimizado | Nuevo LdapSrvWeight | Nueva utilización estimada |
+|--|--|--|--|
+| DC 1 (emulador de PDC) | 40% | 85 | 47 % |
+| DC 2 | 40% | 100 | 53% |
+| DC 3 | 40% | 100 | 53% |
 
 ### <a name="virtualization-considerations-for-processing"></a>Consideraciones sobre la virtualización para el procesamiento
 
@@ -511,16 +510,16 @@ A lo largo del análisis y el cálculo de las cantidades de CPU necesarias para 
 
 ### <a name="calculation-summary-example"></a>Ejemplo de Resumen de cálculo
 
-|Sistema|CPU máxima|
-|-|-|-|
-|DC 1|120%|
-|DC 2|147%|
-|DC 3|218%|
-|CPU total usada|485%|
+| Sistema | CPU máxima |
+|--|--|--|
+| DC 1 | 120% |
+| DC 2 | 147% |
+| DC 3 | 218% |
+| CPU total usada | 485% |
 
-|Recuento de sistemas de destino|Ancho de banda total (anterior)|
-|-|-|
-|CPU necesarias en el destino del 40%|4,85 &divide; . 4 = 12,25|
+| Recuento de sistemas de destino | Ancho de banda total (anterior) |
+|--|--|
+| CPU necesarias en el destino del 40% | 4,85 &divide; . 4 = 12,25 |
 
 Si se repite debido a la importancia de este punto, *Recuerde planear el crecimiento*. Suponiendo un crecimiento del 50% en los próximos tres años, este entorno necesitará 18,375 de CPU (12,25 &times; 1,5) en el marcado de tres años. Un plan alternativo sería revisar después del primer año y agregar capacidad adicional según sea necesario.
 
@@ -559,15 +558,15 @@ Ninguno, se trata de una configuración de optimización del sistema operativo.
 
 ### <a name="calculation-summary-example"></a>Ejemplo de Resumen de cálculo
 
-|Tipo de datos|Value|
-|-|-|
-|El semáforo adquiere (mínimo)|6.161|
-|El semáforo adquiere (máximo)|6.762|
-|Tiempos de espera de semáforos|0|
-|Tiempo medio de espera del semáforo|0,012|
-|Duración de la recopilación (segundos)|1:11 minutos (71 segundos)|
-|Fórmula (desde KB 2688798)|((6762 &ndash; 6161) + 0) &times; 0,012/|
-|Valor mínimo de **MaxConcurrentAPI**|((6762 &ndash; 6161) + 0) &times; 0,012 &divide; 71 =. 101|
+| Tipo de datos | Value |
+|--|--|
+| El semáforo adquiere (mínimo) | 6.161 |
+| El semáforo adquiere (máximo) | 6.762 |
+| Tiempos de espera de semáforos | 0 |
+| Tiempo medio de espera del semáforo | 0,012 |
+| Duración de la recopilación (segundos) | 1:11 minutos (71 segundos) |
+| Fórmula (desde KB 2688798) | ((6762 &ndash; 6161) + 0) &times; 0,012/ |
+| Valor mínimo de **MaxConcurrentAPI** | ((6762 &ndash; 6161) + 0) &times; 0,012 &divide; 71 =. 101 |
 
 Para este sistema durante este período de tiempo, los valores predeterminados son aceptables.
 
@@ -575,14 +574,14 @@ Para este sistema durante este período de tiempo, los valores predeterminados s
 
 En este artículo, se ha explicado que la planeación y el escalado van hacia los objetivos de uso. Este es un gráfico de Resumen de los umbrales recomendados que deben supervisarse para asegurarse de que los sistemas funcionan con los umbrales de capacidad adecuados. Tenga en cuenta que estos no son umbrales de rendimiento, sino umbrales de planeamiento de capacidad. Un servidor que opere en exceso de estos umbrales funcionará, pero es el momento de iniciar la validación de que todas las aplicaciones están bien compartidas. Si estas aplicaciones están bien compartidas, es el momento de empezar a evaluar las actualizaciones de hardware u otros cambios de configuración.
 
-|Category|Contador de rendimiento|Intervalo/muestreo|Destino|Advertencia|
-|-|-|-|-|-|
-|Procesador|Información del procesador (_Total) \\ % utilidad del procesador|60 min|40%|60 %|
-|RAM (Windows Server 2008 R2 o versiones anteriores)|Memoria\mbytes MB|< 100 MB|N/D|< 100 MB|
-|RAM (Windows Server 2012)|Duración media de la caché en espera Memory\Long-Term (s)|30 min|Se debe probar|Se debe probar|
-|Red|Interfaz de red ( \* ) \Bytes enviados/seg.<p>Interfaz de red ( \* ) \Bytes recibidos/seg.|30 min|40%|60 %|
-|Storage|LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg en segundos de disco/lectura<p>LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg en segundos/escritura de disco|60 min|10 ms|15 ms|
-|Servicios de AD|\Average de \* tiempo de espera del semáforo de Netlogon ()|60 min|0|1 segundo|
+| Category | Contador de rendimiento | Intervalo/muestreo | Destino | Advertencia |
+|--|--|--|--|--|
+| Procesador | Información del procesador (_Total) \\ % utilidad del procesador | 60 min | 40% | 60 % |
+| RAM (Windows Server 2008 R2 o versiones anteriores) | Memoria\mbytes MB | < 100 MB | N/D | < 100 MB |
+| RAM (Windows Server 2012) | Duración media de la caché en espera Memory\Long-Term (s) | 30 min | Se debe probar | Se debe probar |
+| Red | Interfaz de red ( \* ) \Bytes enviados/seg.<p>Interfaz de red ( \* ) \Bytes recibidos/seg. | 30 min | 40% | 60 % |
+| Storage | LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg en segundos de disco/lectura<p>LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg en segundos/escritura de disco | 60 min | 10 ms | 15 ms |
+| Servicios de AD | \Average de \* tiempo de espera del semáforo de Netlogon () | 60 min | 0 | 1 segundo |
 
 ## <a name="appendix-a-cpu-sizing-criteria"></a>Apéndice A: criterios de ajuste de tamaño de la CPU
 
@@ -753,27 +752,27 @@ Una vez identificados los componentes, una idea de la cantidad de datos que pued
 
   Hasta ahora, la velocidad de transferencia del disco duro ha sido irrelevante. Si el disco duro es de 20 MB/s Ultra Wide o un Ultra3 160 MB/s, la cantidad real de IOPS que puede controlar el HD de 10.000-RPM es ~ 100 Random o ~ 300 de e/s secuenciales. A medida que los tamaños de bloque cambian en función de la escritura de la aplicación en la unidad, la cantidad de datos que se extraen por e/s es diferente. Por ejemplo, si el tamaño de bloque es de 8 KB, 100 operaciones de e/s leerán o escribirán en la unidad de disco duro un total de 800 KB. Sin embargo, si el tamaño de bloque es de 32 KB, 100 e/s leerán y escribirán 3.200 KB (3,2 MB) en el disco duro. Siempre que la velocidad de transferencia SCSI supere la cantidad total de datos transferidos, obtener una unidad de velocidad de transferencia "más rápida" no tendrá nada. Consulte las tablas siguientes para obtener una comparación.
 
-  | |7200 RPM 9MS, acceso 4ms estándar|10.000 RPM 7ms, acceso 3ms|15.000 RPM 4ms estándar de búsqueda, 2 ms de acceso
-  |-|-|-|-|
-  |E/S aleatoria|80|100|150|
-  |E/s secuenciales|250|300|500|
+  | Descripción | 7200 RPM 9MS, acceso 4ms estándar | 10.000 RPM 7ms, acceso 3ms | 15.000 RPM 4ms estándar de búsqueda, 2 ms de acceso |
+  |--|--|--|--|
+  | E/S aleatoria | 80 | 100 | 150 |
+  | E/s secuenciales | 250 | 300 | 500 |
 
-  |unidad de 10.000 RPM|tamaño de bloque de 8 KB (Active Directory jet)|
-  |-|-|
-  |E/S aleatoria|800 KB/s|
-  |E/s secuenciales|2400 KB/s|
+  | unidad de 10.000 RPM | tamaño de bloque de 8 KB (Active Directory jet) |
+  |--|--|
+  | E/S aleatoria | 800 KB/s |
+  | E/s secuenciales | 2400 KB/s |
 
 - **Backplane SCSI (bus):** Entender cómo el "backplane SCSI (bus)", o en este escenario, el cable de la cinta de opciones afecta al rendimiento del subsistema de almacenamiento depende del conocimiento del tamaño de bloque. En esencia, la cuestión sería, ¿cuánta e/s puede controlar el bus si la e/s está en bloques de 8 KB? En este escenario, el bus SCSI es de 20 MB/s o 20480 KB/s. 20480 KB/s divididos por 8 bloques de KB produce un máximo de aproximadamente 2500 IOPS admitidas por el bus SCSI.
 
   > [!NOTE]
   > Las cifras de la tabla siguiente representan un ejemplo. Actualmente, la mayoría de los dispositivos de almacenamiento conectados usan PCI Express, lo que proporciona un rendimiento mucho mayor.
 
-  |E/s compatible con el bus SCSI por tamaño de bloque|tamaño de bloque de 2 KB|tamaño de bloque de 8 KB (AD jet) (SQL Server 7.0/SQL Server 2000)
-  |-|-|-|
-  |20 MB/s|10 000|2500|
-  |40 MB/s|20.000|5\.000|
-  |128 MB/s|65 536|16 384|
-  |320 MB/s|160 000|40.000|
+  | E/s compatible con el bus SCSI por tamaño de bloque | tamaño de bloque de 2 KB | tamaño de bloque de 8 KB (AD jet) (SQL Server 7.0/SQL Server 2000) |
+  |--|--|--|
+  | 20 MB/s | 10 000 | 2500 |
+  | 40 MB/s | 20.000 | 5\.000 |
+  | 128 MB/s | 65 536 | 16 384 |
+  | 320 MB/s | 160 000 | 40.000 |
 
   Como puede determinarse a partir de este gráfico, en el escenario que se presenta, independientemente de cuál sea el uso, el bus nunca será un cuello de botella, ya que el máximo del eje es 100 e/s, por debajo de los umbrales anteriores.
 
@@ -795,17 +794,17 @@ Después del análisis de los componentes de este subsistema de almacenamiento, 
 
 Ahora, después de analizar una configuración simple, en la tabla siguiente se muestra dónde se produce el cuello de botella cuando se cambian o agregan componentes en el subsistema de almacenamiento.
 
-|Notas|Análisis de cuellos de botella|Disco|En bus|Adapter (Adaptador)|Bus PCI|
-|-|-|-|-|-|-|
-|Esta es la configuración del controlador de dominio después de agregar un segundo disco. La configuración de disco representa el cuello de botella en 800 KB/s.|Agregar 1 disco (total = 2)<p>La e/s es aleatoria<p>tamaño de bloque de 4 KB<p>10.000 RPM HD|200 de e/s en total<br />800 KB/s en total.| | | |
-|Después de agregar 7 discos, la configuración del disco sigue representando el cuello de botella en 3200 KB/s.|**Agregar 7 discos (total = 8)**  <p>La e/s es aleatoria<p>tamaño de bloque de 4 KB<p>10.000 RPM HD|800 e/s en total.<br />3200 KB/s en total| | | |
-|Después de cambiar la e/s a secuencial, el adaptador de red se convierte en el cuello de botella porque está limitado a 1000 IOPS.|Agregar 7 discos (total = 8)<p>**La e/s es secuencial**<p>tamaño de bloque de 4 KB<p>10.000 RPM HD| | |2400 de e/s se puede leer y escribir en el disco, un controlador limitado a 1000 IOPS| |
-|Después de reemplazar el adaptador de red por un adaptador SCSI que admita 10.000 IOPS, el cuello de botella vuelve a la configuración del disco.|Agregar 7 discos (total = 8)<p>La e/s es aleatoria<p>tamaño de bloque de 4 KB<p>10.000 RPM HD<p>**Actualizar Adaptador SCSI (ahora es compatible con 10.000 e/s)**|800 e/s en total.<br />3.200 KB/s en total| | | |
-|Después de aumentar el tamaño de bloque a 32 KB, el bus se convierte en el cuello de botella porque solo admite 20 MB/s.|Agregar 7 discos (total = 8)<p>La e/s es aleatoria<p>**tamaño de bloque de 32 KB**<p>10.000 RPM HD| |800 e/s en total. 25.600 KB/s (25 MB/s) se pueden leer o escribir en el disco.<p>El bus solo admite 20 MB/s| | |
-|Después de actualizar el bus y agregar más discos, el disco permanece en el cuello de botella.|**Agregar 13 discos (total = 14)**<p>Agregar segundo Adaptador SCSI con 14 discos<p>La e/s es aleatoria<p>tamaño de bloque de 4 KB<p>10.000 RPM HD<p>**Actualizar a un bus SCSI de 320 MB/s**|e/s 2800<p>11.200 KB/s (10,9 MB/s)| | | |
-|Después de cambiar la e/s a secuencial, el disco sigue siendo el cuello de botella.|Agregar 13 discos (total = 14)<p>Agregar segundo Adaptador SCSI con 14 discos<p>**La e/s es secuencial**<p>tamaño de bloque de 4 KB<p>10.000 RPM HD<p>Actualizar a un bus SCSI de 320 MB/s|e/s 8.400<p>33.600 KB\s<p>(32,8 MB\s)| | | |
-|Después de agregar unidades de disco duro más rápidas, el disco permanece en el cuello de botella.|Agregar 13 discos (total = 14)<p>Agregar segundo Adaptador SCSI con 14 discos<p>La e/s es secuencial<p>tamaño de bloque de 4 KB<p>**15.000 RPM HD**<p>Actualizar a un bus SCSI de 320 MB/s|e/s 14.000<p>56.000 KB/s<p>(54,7 MB/s)| | | |
-|Después de aumentar el tamaño de bloque a 32 KB, el bus PCI se convierte en el cuello de botella.|Agregar 13 discos (total = 14)<p>Agregar segundo Adaptador SCSI con 14 discos<p>La e/s es secuencial<p>**tamaño de bloque de 32 KB**<p>15.000 RPM HD<p>Actualizar a un bus SCSI de 320 MB/s| | | |e/s 14.000<p>448.000 KB/s<p>(437 MB/s) es el límite de lectura y escritura para el eje.<p>El bus PCI admite un máximo teórico de 133 MB/s (75% de forma eficaz).|
+| Notas | Análisis de cuellos de botella | Disco | En bus | Adapter (Adaptador) | Bus PCI |
+|--|--|--|--|--|--|
+| Esta es la configuración del controlador de dominio después de agregar un segundo disco. La configuración de disco representa el cuello de botella en 800 KB/s. | Agregar 1 disco (total = 2)<p>La e/s es aleatoria<p>tamaño de bloque de 4 KB<p>10.000 RPM HD | 200 de e/s en total<br />800 KB/s en total. |  |  |  |
+| Después de agregar 7 discos, la configuración del disco sigue representando el cuello de botella en 3200 KB/s. | **Agregar 7 discos (total = 8)**  <p>La e/s es aleatoria<p>tamaño de bloque de 4 KB<p>10.000 RPM HD | 800 e/s en total.<br />3200 KB/s en total |  |  |  |
+| Después de cambiar la e/s a secuencial, el adaptador de red se convierte en el cuello de botella porque está limitado a 1000 IOPS. | Agregar 7 discos (total = 8)<p>**La e/s es secuencial**<p>tamaño de bloque de 4 KB<p>10.000 RPM HD |  |  | 2400 de e/s se puede leer y escribir en el disco, un controlador limitado a 1000 IOPS |  |
+| Después de reemplazar el adaptador de red por un adaptador SCSI que admita 10.000 IOPS, el cuello de botella vuelve a la configuración del disco. | Agregar 7 discos (total = 8)<p>La e/s es aleatoria<p>tamaño de bloque de 4 KB<p>10.000 RPM HD<p>**Actualizar Adaptador SCSI (ahora es compatible con 10.000 e/s)** | 800 e/s en total.<br />3.200 KB/s en total |  |  |  |
+| Después de aumentar el tamaño de bloque a 32 KB, el bus se convierte en el cuello de botella porque solo admite 20 MB/s. | Agregar 7 discos (total = 8)<p>La e/s es aleatoria<p>**tamaño de bloque de 32 KB**<p>10.000 RPM HD |  | 800 e/s en total. 25.600 KB/s (25 MB/s) se pueden leer o escribir en el disco.<p>El bus solo admite 20 MB/s |  |  |
+| Después de actualizar el bus y agregar más discos, el disco permanece en el cuello de botella. | **Agregar 13 discos (total = 14)**<p>Agregar segundo Adaptador SCSI con 14 discos<p>La e/s es aleatoria<p>tamaño de bloque de 4 KB<p>10.000 RPM HD<p>**Actualizar a un bus SCSI de 320 MB/s** | e/s 2800<p>11.200 KB/s (10,9 MB/s) |  |  |  |
+| Después de cambiar la e/s a secuencial, el disco sigue siendo el cuello de botella. | Agregar 13 discos (total = 14)<p>Agregar segundo Adaptador SCSI con 14 discos<p>**La e/s es secuencial**<p>tamaño de bloque de 4 KB<p>10.000 RPM HD<p>Actualizar a un bus SCSI de 320 MB/s | e/s 8.400<p>33.600 KB\s<p>(32,8 MB\s) |  |  |  |
+| Después de agregar unidades de disco duro más rápidas, el disco permanece en el cuello de botella. | Agregar 13 discos (total = 14)<p>Agregar segundo Adaptador SCSI con 14 discos<p>La e/s es secuencial<p>tamaño de bloque de 4 KB<p>**15.000 RPM HD**<p>Actualizar a un bus SCSI de 320 MB/s | e/s 14.000<p>56.000 KB/s<p>(54,7 MB/s) |  |  |  |
+| Después de aumentar el tamaño de bloque a 32 KB, el bus PCI se convierte en el cuello de botella. | Agregar 13 discos (total = 14)<p>Agregar segundo Adaptador SCSI con 14 discos<p>La e/s es secuencial<p>**tamaño de bloque de 32 KB**<p>15.000 RPM HD<p>Actualizar a un bus SCSI de 320 MB/s |  |  |  | e/s 14.000<p>448.000 KB/s<p>(437 MB/s) es el límite de lectura y escritura para el eje.<p>El bus PCI admite un máximo teórico de 133 MB/s (75% de forma eficaz). |
 
 ### <a name="introducing-raid"></a>Introducción a RAID
 

@@ -1,15 +1,17 @@
 ---
-title: Solución de problemas de clúster con el identificador de evento 1135
+title: Solución de problemas de clúster con el id. de evento 1135
 description: Describe cómo solucionar el problema de inicio del servicio de Cluster Server con el identificador de evento 1135.
 ms.date: 05/28/2020
-ms.openlocfilehash: d59f8b89e89ea7ff42aecd79670465aee8d63524
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+author: Deland-Han
+ms.author: delhan
+ms.openlocfilehash: 2836fc9385d57ff076828ab5cf6a1e341a7d88a8
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306534"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409836"
 ---
-# <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>Solución de problemas de clúster con el identificador de evento 1135
+# <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>Solución de problemas de clúster con el id. de evento 1135
 
 Este artículo le ayuda a diagnosticar y resolver el ID. de evento 1135, que se puede registrar durante el inicio del Servicio de clúster en el entorno de clústeres de conmutación por error.
 
@@ -38,11 +40,11 @@ Siga el siguiente comando según el sistema operativo Windows para validar que e
 
 #### <a name="for-windows-server-2008-r2-cluster"></a>Para el clúster de Windows Server 2008 R2
 
-desde el símbolo del sistema con privilegios elevados, ejecute: **cluster. exe node/STAT**  
+desde el símbolo del sistema con privilegios elevados, ejecute: **cluster.exe nodo/STAT**
 
 #### <a name="for-windows-server-2012-and-windows-server-2012-r2-cluster"></a>Para el clúster de Windows Server 2012 \ y Windows Server 2012 R2
 
-Ejecutar comando PS: **nodo de clúster/status**  
+Ejecutar comando PS: **nodo de clúster/status**
 
 ¿El servicio de clúster se ejecuta continuamente y está disponible en todos los nodos?
 
@@ -134,12 +136,12 @@ Configure el componente de detección en tiempo real en el software antivirus pa
 
 - Directorios de instantáneas
 
-- MMS. exe
+- mms.exe
 
     > [!NOTE]
     > Es posible que este archivo tenga que configurarse como una exclusión de procesos dentro del software antivirus).
 
-- VMWP. exe
+- Vmwp.exe
 
     > [!NOTE]
     > Es posible que este archivo tenga que configurarse como una exclusión de procesos en el software antivirus.
@@ -150,7 +152,7 @@ Además, cuando use Migración en vivo junto con volúmenes compartidos de clús
 
 El Servicio de clúster controla las operaciones de clúster de servidor y administra la base de datos de clúster. Un clúster es una colección de equipos independientes que actúan como un solo equipo. Los administradores, programadores y usuarios ven el clúster como un solo sistema. El software distribuye los datos entre los nodos del clúster. Si se produce un error en un nodo, otros nodos proporcionan los servicios y los datos que se proporcionaron anteriormente en el nodo que faltaba. Cuando se agrega o repara un nodo, el software del clúster migra algunos datos a ese nodo.
 
-Nombre del servicio de sistema: **ClusSvc**  
+Nombre del servicio de sistema: **ClusSvc**
 
 |Application|Protocolo|Puertos|
 |---|---|---|
@@ -200,13 +202,13 @@ En la pestaña adaptadores y enlaces se enumeran las conexiones en el orden en e
 
 Siga los pasos que se indican a continuación para cambiar el orden de enlace de los adaptadores de red:
 
-1. Haga clic en **Inicio**, haga clic en **Ejecutar**, escriba NCPA. cpl y, a continuación, haga clic en **Aceptar**. Puede ver las conexiones disponibles en la sección **LAN y Internet de alta velocidad** de la ventana **conexiones de red** .
+1. Haga clic en **Inicio**, haga clic en **ejecutar**, escriba ncpa.cpl y, a continuación, haga clic en **Aceptar**. Puede ver las conexiones disponibles en la sección **LAN y Internet de alta velocidad** de la ventana **conexiones de red** .
 
 2. En el menú **Opciones avanzadas** , haga clic en **Configuración avanzada**y, a continuación, haga clic en la pestaña **adaptadores y enlaces** .
 
 3. En el área **conexiones** , seleccione la conexión que desea que se mueva hacia arriba en la lista. Use los botones de flecha para trasladar la conexión. Como norma general, la tarjeta que se comunica con la red (conectividad de dominio, enrutamiento a otras redes, etc.) debe ser la primera tarjeta enlazada (parte superior de la lista).
 
-Los nodos de clúster son sistemas de host múltiple. La prioridad de red afecta a cliente DNS para la conectividad de red de salida. Los adaptadores de red que se usan para la comunicación de cliente deben estar en la parte superior del orden de enlace. Las redes no enrutadas se pueden poner en prioridad más baja. En Windows Server 2012 y Windows Server 2012 R2, el controlador de red de clústeres (NETFT. SYS) se coloca automáticamente en la parte inferior de la lista de orden de enlace.
+Los nodos de clúster son sistemas de host múltiple. La prioridad de red afecta a cliente DNS para la conectividad de red de salida. Los adaptadores de red que se usan para la comunicación de cliente deben estar en la parte superior del orden de enlace. Las redes no enrutadas se pueden poner en prioridad más baja. En Windows Server 2012 y Windows Server 2012 R2, el adaptador de controlador de red de clúster (NETFT.SYS) se coloca automáticamente en la parte inferior de la lista de orden de enlace.
 
 #### <a name="check-the-validate-network-communication"></a>Comprobar la comunicación de red de validación
 
@@ -246,7 +248,7 @@ Compruebe si encuentra alguno de los siguientes problemas.
 
 ##### <a name="cluster-installed-in-the-vmware-virtualization-platform"></a>Clúster instalado en la plataforma de virtualización de VmWare
 
-Compruebe los problemas del adaptador de VMware en caso de entorno de VMware. 
+Compruebe los problemas del adaptador de VMware en caso de entorno de VMware.
 
 Este problema puede producirse si los paquetes se quitan durante ráfagas elevadas de tráfico. Asegúrese de que no se produce ningún filtrado de tráfico (por ejemplo, con un filtro de correo). Después de eliminar esta posibilidad, aumente gradualmente el número de búferes en el sistema operativo invitado y compruébelo.
 
@@ -254,9 +256,9 @@ Para reducir las caídas del tráfico de ráfagas, siga estos pasos:
 
 1. Abra el cuadro ejecutar con la tecla Windows + R.
 2. Escriba devmgmt. msc y presione **entrar**.
-3. Expandir **adaptadores de red**  
-4. Haga clic con el botón secundario en **vmxnet3 y haga clic en propiedades.**  
-5. Haga clic en la ficha **Opciones avanzadas**.
+3. Expandir **adaptadores de red**
+4. Haga clic con el botón secundario en **vmxnet3 y haga clic en propiedades.**
+5. Haga clic en la pestaña **Opciones avanzadas**.
 6. Haga clic en **búferes de recepción pequeños** y aumente el valor. El valor predeterminado es 512 y el máximo es 8192.
 7. Haga clic en el **anillo Rx #1** tamaño y aumente el valor. El valor predeterminado es 1024 y el máximo es 4096.
 

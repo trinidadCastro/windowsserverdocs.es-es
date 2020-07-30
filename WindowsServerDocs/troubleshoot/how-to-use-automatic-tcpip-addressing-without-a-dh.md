@@ -1,29 +1,28 @@
 ---
-title: Cómo usar el direccionamiento automático de TCP/IP sin un servidor DHCP
+title: Uso del direccionamiento automático de TCP/IP sin un servidor DHCP
 description: Presente cómo usar el direccionamiento automático de TCP/IP sin un servidor DHCP.
-ms.date: 5/26/2020
 ms.prod: windows-server
-ms.service: na
 manager: dcscontentpm
 ms.technology: server-general
-ms.topic: article
+ms.date: 5/26/2020
+ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: robsmi
-ms.openlocfilehash: 8fbde77381141b76959f70e824eac22ee2121fa3
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: fcd85c29975709053009ec4a2684df88b4bafd69
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150193"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409806"
 ---
-# <a name="how-to-use-automatic-tcpip-addressing-without-a-dhcp-server"></a>Cómo usar el direccionamiento automático de TCP/IP sin un servidor DHCP
+# <a name="how-to-use-automatic-tcpip-addressing-without-a-dhcp-server"></a>Uso del direccionamiento automático de TCP/IP sin un servidor DHCP
 
 En este artículo se describe cómo usar el direccionamiento automático del Protocolo de control de transmisión/Protocolo de Internet (TCP/IP) sin un servidor de protocolo de configuración dinámica de host (DHCP) presente en la red. Las versiones de sistema operativo enumeradas en la sección "se aplica a" de este artículo tienen una característica denominada direcciones IP privadas automáticas (APIPA). Con esta característica, un equipo Windows puede asignarse a sí mismo una dirección de protocolo de Internet (IP) en caso de que un servidor DHCP no esté disponible o no exista en la red. Esta característica hace que la configuración y compatibilidad de una pequeña red de área local (LAN) que ejecuta TCP/IP sea menos difícil.
 
 ## <a name="more-information"></a>Más información
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modifica el Registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
 
 Un equipo basado en Windows que esté configurado para usar DHCP puede asignarse automáticamente a una dirección de protocolo de Internet (IP) si no hay ningún servidor DHCP disponible. Por ejemplo, esto puede ocurrir en una red que no tenga un servidor DHCP o en una red si un servidor DHCP está inactivo temporalmente para el mantenimiento.
@@ -38,8 +37,7 @@ Puede que desee deshabilitarlo en cualquiera de los siguientes casos:
 
 - La red está conectada a Internet sin un servidor proxy o NAT.
 
-A menos que haya deshabilitado los mensajes relacionados con DHCP, los mensajes DHCP le proporcionan una notificación al cambiar entre el direccionamiento DHCP y el direccionamiento IP privado automático. Si la mensajería de DHCP se deshabilita accidentalmente, puede volver a activar los mensajes DHCP cambiando el valor de PopupFlag en la siguiente clave del registro de 00 a 01:  
-`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP` 
+A menos que haya deshabilitado los mensajes relacionados con DHCP, los mensajes DHCP le proporcionan una notificación al cambiar entre el direccionamiento DHCP y el direccionamiento IP privado automático. Si la mensajería de DHCP se deshabilita accidentalmente, puede volver a activar los mensajes DHCP cambiando el valor de PopupFlag en la siguiente clave del registro de 00 a 01:`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP`
 
 Tenga en cuenta que debe reiniciar el equipo para que el cambio surta efecto. También puede determinar si el equipo usa APIPA mediante la herramienta winipcfg en Windows Millennium Edition, Windows 98 o Windows 98 Segunda edición:
 
@@ -51,8 +49,7 @@ Puede deshabilitar la dirección IP privada automática mediante cualquiera de l
 
 Puede configurar manualmente la información de TCP/IP, lo que deshabilita DHCP por completo. Puede deshabilitar el direccionamiento IP privado automático (pero no DHCP) editando el registro. Para ello, agregue la entrada del registro DWORD "IPAutoconfigurationEnabled" con un valor de 0X0 a la siguiente clave del registro para Windows Millennium Edition, Windows98 o Windows 98 Second Edition:`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP`
 
-En Windows 2000, Windows XP y Windows Server 2003, se puede deshabilitar APIPA agregando la entrada del registro DWORD "IPAutoconfigurationEnabled" con un valor de 0X0 a la siguiente clave del registro:  
-`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Adapter GUID>`  
+En Windows 2000, Windows XP y Windows Server 2003, se puede deshabilitar APIPA agregando la entrada del registro DWORD "IPAutoconfigurationEnabled" con un valor de 0X0 a la siguiente clave del registro:`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Adapter GUID>`
 > [!NOTE]
 > La subclave **GUID del adaptador** es un identificador único global (GUID) para el adaptador de LAN del equipo.
 

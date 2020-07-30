@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c61ab5405fb5b469b6f4513459e4096524f4b7fe
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cb133dc9f9f19a948eb88d24935fac27f2a5e4a3
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929261"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409736"
 ---
 # <a name="fsutil-dirty"></a>fsutil dirty
 
@@ -36,7 +36,7 @@ fsutil dirty {query | set} <volumepath>
 | set | Establece el bit de integridad del volumen especificado. |
 | `<volumepath>` | Especifica el nombre de la unidad seguido de dos puntos o un GUID con el siguiente formato: `volume{GUID}` . |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El bit de integridad de un volumen indica que el sistema de archivos puede estar en un estado incoherente. El bit de integridad se puede establecer porque:
 
@@ -56,13 +56,9 @@ Para consultar el bit de integridad de la unidad C, escriba:
 fsutil dirty query c:
 ```
 
-    If the volume is dirty, the following output displays:
+- Si el volumen está sucio, se muestra el siguiente resultado:`Volume C: is dirty`
 
-    `Volume C: is dirty`
-
-    If the volume isn't dirty, the following output displays:
-
-    `Volume C: is not dirty`
+- Si el volumen no está sucio, se muestra el siguiente resultado:`Volume C: is not dirty`
 
 Para establecer el bit de integridad en la unidad C, escriba:
 

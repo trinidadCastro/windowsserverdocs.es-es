@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/07/2019
 description: En este artículo se describen los niveles de afinidad y antiafinidad de clústeres de conmutación por error
-ms.openlocfilehash: 5a46279a2c8780466617e453ec5263c36a6e0128
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 5fdc40e31b61a74965bf60ac907a198c7ef92521
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178601"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409595"
 ---
 # <a name="cluster-affinity"></a>Afinidad de clústeres
 
@@ -29,28 +29,37 @@ La afinidad es una regla que se debe configurar y que establece una relación en
 
 Al examinar las propiedades de un grupo, existe el parámetro AntiAffinityClassNames y está en blanco como valor predeterminado.  En los ejemplos siguientes, Grupo1 y grupo2 deben estar separados de ejecutarse en el mismo nodo.  Para ver la propiedad, el comando de PowerShell y el resultado serían:
 
-    PS> Get-ClusterGroup Group1 | fl AntiAffinityClassNames
+```powershell
+Get-ClusterGroup Group1 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
 
-    PS> Get-ClusterGroup Group2 | fl AntiAffinityClassNames
+Get-ClusterGroup Group2 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
+```
 
 Dado que AntiAffinityClassNames no se define como valor predeterminado, estos roles se pueden ejecutar juntos o separar.  El objetivo es mantenerlos separados.  El valor de AntiAffinityClassNames puede ser el que desee que sea, solo tiene que ser el mismo.  Suponga que Grupo1 y grupo2 son controladores de dominio que se ejecutan en máquinas virtuales y que se ejecutarán mejor en nodos diferentes.  Puesto que son controladores de dominio, usaremos DC como nombre de clase.  Para establecer el valor, el comando de PowerShell y los resultados serían:
 
-    PS> $AntiAffinity = New-Object System.Collections.Specialized.StringCollection
-    PS> $AntiAffinity.Add("DC")
-    PS> (Get-ClusterGroup -Name "Group1").AntiAffinityClassNames = $AntiAffinity
-    PS> (Get-ClusterGroup -Name "Group2").AntiAffinityClassNames = $AntiAffinity
+```powershell
+$AntiAffinity = New-Object System.Collections.Specialized.StringCollection
+$AntiAffinity.Add("DC")
+(Get-ClusterGroup -Name "Group1").AntiAffinityClassNames = $AntiAffinity
+(Get-ClusterGroup -Name "Group2").AntiAffinityClassNames = $AntiAffinity
 
-    PS> Get-ClusterGroup "Group1" | fl AntiAffinityClassNames
+$AntiAffinity = New-Object System.Collections.Specialized.StringCollection
+$AntiAffinity.Add("DC")
+(Get-ClusterGroup -Name "Group1").AntiAffinityClassNames = $AntiAffinity
+(Get-ClusterGroup -Name "Group2").AntiAffinityClassNames = $AntiAffinity
+
+Get-ClusterGroup "Group1" | fl AntiAffinityClassNames
     AntiAffinityClassNames : {DC}
 
-    PS> Get-ClusterGroup "Group2" | fl AntiAffinityClassNames
+Get-ClusterGroup "Group2" | fl AntiAffinityClassNames
     AntiAffinityClassNames : {DC}
+```
 
 Ahora que están configurados, los clústeres de conmutación por error intentarán mantenerlos separados.
 
-El parámetro establecer antiaffinityclassname es un bloque "soft".  Es decir, tratará de mantenerlos separados, pero si no es posible, seguirá pudiendo ejecutarse en el mismo nodo.  Por ejemplo, los grupos se ejecutan en un clúster de conmutación por error de dos nodos.  Si un nodo necesita dejar de funcionar para el mantenimiento, significaría que ambos grupos estarán funcionando en el mismo nodo.  En este caso, sería correcto tener esto.  Puede que no sea la más idónea, pero ambas máquinas virtial seguirán ejecutándose dentro de intervalos de rendimiento aceptables.
+El parámetro establecer antiaffinityclassname es un bloque "soft".  Es decir, tratará de mantenerlos separados, pero si no es posible, seguirá pudiendo ejecutarse en el mismo nodo.  Por ejemplo, los grupos se ejecutan en un clúster de conmutación por error de dos nodos.  Si un nodo necesita dejar de funcionar para el mantenimiento, significaría que ambos grupos estarán funcionando en el mismo nodo.  En este caso, sería correcto tener esto.  Puede que no sea la más idónea, pero ambas máquinas virtuales seguirán ejecutándose dentro de intervalos de rendimiento aceptables.
 
 ## <a name="i-need-more"></a>Necesito más
 
@@ -60,13 +69,17 @@ En esos casos, hay una propiedad de clúster adicional de ClusterEnforcedAntiAff
 
 Para ver la propiedad y el valor, el comando de PowerShell (y el resultado) sería:
 
-    PS> Get-Cluster | fl ClusterEnforcedAntiAffinity
+```powershell
+Get-Cluster | fl ClusterEnforcedAntiAffinity
     ClusterEnforcedAntiAffinity : 0
+```
 
 El valor de "0" significa que está deshabilitado y no se aplicará.  El valor de "1" lo habilita y es el bloque duro.  Para habilitar este bloque duro, el comando (y el resultado) es:
 
-    PS> (Get-Cluster).ClusterEnforcedAntiAffinity = 1
+```powershell
+(Get-Cluster).ClusterEnforcedAntiAffinity = 1
     ClusterEnforcedAntiAffinity : 1
+```
 
 Cuando se establezcan ambos, se impedirá que el grupo se ponga en línea juntos.  Si están en el mismo nodo, esto es lo que se verá en Administrador de clústeres de conmutación por error.
 
@@ -74,12 +87,14 @@ Cuando se establezcan ambos, se impedirá que el grupo se ponga en línea juntos
 
 En una lista de PowerShell de los grupos, verá lo siguiente:
 
-    PS> Get-ClusterGroup
+```powershell
+Get-ClusterGroup
 
-    Name       State
-    ----       -----
-    Group1     Offline(Anti-Affinity Conflict)
-    Group2     Online
+Name       State
+----       -----
+Group1     Offline(Anti-Affinity Conflict)
+Group2     Online
+```
 
 ## <a name="additional-comments"></a>Comentarios adicionales
 

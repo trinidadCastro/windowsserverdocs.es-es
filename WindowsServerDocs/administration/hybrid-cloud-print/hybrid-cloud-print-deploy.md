@@ -9,12 +9,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: fe1f2b11921950ea725cb996ce58e75033aaae4a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9cee8a279be2030d4b911a0a7f456c2b855ca15e
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470210"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409095"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Implementar la impresión en la nube híbrida de Windows Server
 
@@ -346,7 +346,8 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
     - CloudPrintResourceId = URI de ID. de aplicación de la aplicación de impresión en la nube de la empresa. Puede encontrarlo en Azure Active Directory > Registros de aplicaciones > seleccione la aplicación de impresión en la nube de la nube de > información general. **Debe ser exactamente el mismo con el carácter/**.
     - DiscoveryMaxPrinterLimit = \<a positive integer\> .
 
-> Nota: Si usa Microsoft Intune servicio, puede encontrar esta configuración en la categoría impresora en la nube.
+> [!NOTE]
+> Si usa Microsoft Intune servicio, puede encontrar esta configuración en la categoría impresora en la nube.
 
 |Nombre para mostrar de Intune                     |Directiva                         |
 |----------------------------------------|-------------------------------|
@@ -357,21 +358,22 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 |Número máximo de impresoras para consultar (solo móvil)  |DiscoveryMaxPrinterLimit       |
 |URI de recurso del servicio de detección de impresoras  |MopriaDiscoveryResourceId      |
 
-> Nota: Si el grupo de directivas de impresión en la nube no está disponible, pero el proveedor de MDM admite la configuración de OMA-URI, puede establecer las mismas directivas.  Consulte [esto](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority) para obtener información adicional.
+> [!NOTE]
+> Si el grupo de directivas de impresión en la nube no está disponible, pero el proveedor de MDM admite la configuración de OMA-URI, puede establecer las mismas directivas.  Consulte [esto](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority) para obtener información adicional.
 
-    - Valores de OMA-URI
-        - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
-            - Valor =https://login.microsoftonline.com/<Azure AD Directory ID>
-        - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
-            - Valor = <ID. de aplicación de la aplicación nativa Azure AD>
-        - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
-            - Valor = dirección URL externa de la aplicación de servicio de detección Mopria (debe ser exactamente la misma pero sin el final/)
-        - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
-            - Valor = el URI del ID. de aplicación de la aplicación de servicio de detección Mopria
-        - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
-            - Valor = el URI del ID. de aplicación de la aplicación de impresión en la nube de la empresa
-        - DiscoveryMaxPrinterLimit =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
-            - Valor = un entero positivo
+- Valores de OMA-URI
+  - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
+    - Valor =`https://login.microsoftonline.com/<Azure AD Directory ID>`
+  - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
+    - Valor =`<Azure AD Native App's Application ID>`
+  - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
+    - Valor = dirección URL externa de la aplicación de servicio de detección Mopria (debe ser exactamente el mismo pero sin el final `/` )
+  - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
+    - Valor = el URI del ID. de aplicación de la aplicación de servicio de detección Mopria
+  - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
+    - Valor = el URI del ID. de aplicación de la aplicación de impresión en la nube de la empresa
+  - DiscoveryMaxPrinterLimit =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
+    - Valor = un entero positivo
 
 ### <a name="step-7---publish-the-shared-printer"></a>Paso 7: publicación de la impresora compartida
 
@@ -381,7 +383,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 4. Guarde los cambios y cierre la ventana Propiedades de la impresora.
 5. Preparar una actualización de Windows 10 Fall Creator o un equipo posterior. Una el equipo a Azure AD e inicie sesión como un usuario que esté sincronizado con Active Directory local y se le haya concedido el permiso adecuado para el archivo MopriaDeviceDb. dB.
 6. En el equipo con Windows 10, abra un símbolo del sistema de Windows PowerShell con privilegios elevados.
-    - Ejecute los comandos siguientes:
+    - Ejecute los comandos siguientes.
         - `find-module -Name PublishCloudPrinter`para confirmar que el equipo puede tener acceso al Galería de PowerShell (PSGallery)
         - `install-module -Name PublishCloudPrinter`
 
@@ -407,7 +409,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
         - AzureTenantGuid = ID. de directorio del inquilino de Azure AD.
         - DiscoveryResourceId = URI de ID. de aplicación de la aplicación de servicio de detección Mopria.
 
-    - También puede especificar todos los valores de parámetro necesarios en la línea de comandos. La sintaxis es la siguiente:
+    - También puede especificar todos los valores de parámetro necesarios en la línea de comandos. La sintaxis es:
 
         `Publish-CloudPrinter -Printer <string> -Manufacturer <string> -Model <string> -OrgLocation <string> -Sddl <string> -DiscoveryEndpoint <string> -PrintServerEndpoint <string> -AzureClientId <string> -AzureTenantGuid <string> -DiscoveryResourceId <string>`
 

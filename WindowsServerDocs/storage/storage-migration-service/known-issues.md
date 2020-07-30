@@ -4,16 +4,16 @@ description: Problemas conocidos y solución de problemas para el servicio de mi
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 06/02/2020
+ms.date: 07/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: d7c76413fbc64ce200ca4c442a30e6f804927f68
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9050d3316ed86538a278dbdc9f2bd51e3dfca377
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182061"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409886"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -549,10 +549,43 @@ El examen de los registros muestra además que la cuenta de migración y el serv
     [d:\os\src\base\dms\service\StorageMigrationService.IInventory.cs::CreateJob::133]
     ```
     
-    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66]
-06/25/2020-10:20:45.368 [info] equipo ' fileserver75.corp.contoso.com ': versión del sistema operativo 
+    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66] 06/25/2020-10:20:45.368 [Info] Computer 'fileserver75.corp.contoso.com': OS version 
 
 Este problema se debe a un defecto de código en el servicio de migración de almacenamiento. Para solucionar este problema, use las credenciales de migración del mismo dominio al que pertenecen los equipos de origen y de destino. Por ejemplo, si el equipo de origen y el de destino pertenecen al dominio "corp.contoso.com" del bosque "contoso.com", use "corp\myaccount" para realizar la migración, no una credencial "contoso\myaccount".
+
+## <a name="inventory-fails-with-element-not-found"></a>Se produce un error de inventario con "elemento no encontrado" 
+
+En el escenario siguiente:
+
+Tiene un servidor de origen con un nombre de host DNS y Active Directory nombre de más de 15 caracteres Unicode, como "iamaverylongcomputernamefromned". Por diseño, Windows no le permitió establecer el nombre NetBIOS heredado para que se establezca durante este tiempo y se advierte cuando el servidor tenía el nombre de que el nombre NetBIOS se truncaría en 15 caracteres anchos Unicode (por ejemplo: "iamaverylongcom"). Al intentar inventariar este equipo, recibirá en el centro de administración de Windows y en el registro de eventos: 
+
+```DOS
+    "Element not found"
+    
+    ========================
+
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          4/10/2020 10:49:19 AM
+    Event ID:      2509
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      WIN-6PJAG3DHPLF.corp.contoso.com
+    Description:
+    Couldn't inventory a computer.
+
+    Job: longnametest
+    Computer: iamaverylongcomputernamefromned.corp.contoso.com
+    State: Failed
+    Error: 1168
+    Error Message: 
+
+    Guidance: Check the detailed error and make sure the inventory requirements are met. The inventory couldn't determine any aspects of the specified source computer. This could be because of missing permissions or privileges on the source or a blocked firewall port.
+```
+
+Este problema se debe a un defecto de código en el servicio de migración de almacenamiento. Actualmente, la única solución es cambiar el nombre del equipo para que tenga el mismo nombre que el nombre NetBIOS y, a continuación, usar [netdom computername/Add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) para agregar un nombre de equipo alternativo que contenga el nombre más largo que estaba en uso antes de iniciar el inventario. El servicio de migración de almacenamiento admite la migración de nombres de equipo alternativos.   
 
 ## <a name="see-also"></a>Consulte también
 

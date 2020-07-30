@@ -7,29 +7,26 @@ ms.assetid: 51076946-ea9b-4ac7-9a6e-d6023816b97d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8d1235e523bf055d1d3ec6aa78780aa8e4f2f44e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7de65cdbed7fc1995f6729a49e9398ce948a63c6
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470400"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409535"
 ---
 # <a name="remote-desktop-options"></a>Opciones de escritorio remoto
-
 
 ## <a name="connection-speed"></a>Velocidad de conexión
  La velocidad de la conexión a un equipo de red mediante el Acceso web remoto determina las opciones de escritorio que están disponibles en el equipo host. La siguiente tabla indica qué opciones de escritorio están disponibles para la velocidad con la que se conecta al equipo remoto mediante el Acceso web remoto.
 
-||||||
-|-|-|-|-|-|
-||Módem lento (28,8 Kbps)|Módem rápido (56 Kbps) (valor predeterminado)|Banda ancha (128 Kbps - 1,5 Mbps)|Red de área local (1,5 Mbps o superior)|
-|Fondo de pantalla|No|No|No|Sí|
-|Suavizado de fuentes|No|No|No|Sí|
-|Composición del escritorio|No|No|Sí|Sí|
-|Mostrar contenido de ventana al arrastrar|No|No|Sí|Sí|
-|Animaciones de menús y ventanas|No|No|Sí|Sí|
-|Temas|No|Sí|Sí|Sí|
-|Almacenar mapas de bits en caché|Sí|Sí|Sí|Sí|
+| Opción de escritorio | Módem lento (28,8 Kbps) | Módem rápido (56 Kbps) (valor predeterminado) | Banda ancha (128 Kbps - 1,5 Mbps) | Red de área local (1,5 Mbps o superior) |
+|--|--|--|--|--|
+| Suavizado de fuentes | No | No | No | Sí |
+| Composición del escritorio | No | No | Sí | Sí |
+| Mostrar contenido de ventana al arrastrar | No | No | Sí | Sí |
+| Animaciones de menús y ventanas | No | No | Sí | Sí |
+| Temas | No | Sí | Sí | Sí |
+| Almacenar mapas de bits en caché | Sí | Sí | Sí | Sí |
 
 ## <a name="screen-size"></a>Tamaño de la pantalla
  Esta opción determina el tamaño de la ventana que se abre en el equipo local cuando se conecte a un equipo remoto a través del sitio web de acceso remoto. El tamaño de ventana se expresa en píxeles.

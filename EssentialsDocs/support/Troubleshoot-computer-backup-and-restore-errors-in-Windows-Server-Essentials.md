@@ -7,12 +7,12 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: de384437a1d135aa60cf8d65a8031faa22983bb0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cbc6fec843a55d99ba709953b56e01a55f317a62
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180271"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409525"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Solucionar errores de copias de seguridad del equipo y restauración en Windows Server Essentials
 
@@ -117,13 +117,13 @@ Cuando una copia de seguridad tiene el estado Incorrecto, la copia de seguridad 
 
     - Elimine el contenido del volumen para crear más espacio disponible.
 
-            > [!NOTE]
-            > If you need to free up space on the system reserved volume, you can move the System Recovery Image to a different volume. For instructions, see [Deploy a System Recovery Image](/previous-versions/windows/it-pro/windows-7/dd744280(v=ws.10)).
+        > [!NOTE]
+        > Si necesita liberar espacio en el volumen reservado para el sistema puede mover la imagen de recuperación del sistema a otro volumen. Para obtener instrucciones, consulte [Implementar una imagen de recuperación del sistema](/previous-versions/windows/it-pro/windows-7/dd744280(v=ws.10)).
 
     - Excluya el volumen de la copia de seguridad del cliente. Siga estos pasos únicamente si no le resulta imprescindible mantener una copia de seguridad de los datos en el volumen.
 
-            > [!WARNING]
-            > If you exclude the system reserved volume from a client backup, the client system will not be backed up, and you will not be able to perform a full system restore on the computer.
+        > [!WARNING]
+        > Si excluye el volumen reservado para el sistema desde una copia de seguridad de cliente, no se hará ninguna copia de seguridad del sistema cliente y no podrá realizar una restauración completa del sistema en el equipo.
 
 5. Compruebe otras alertas del servidor que puedan indicar que no hay suficiente espacio en disco en el servidor para que la copia de seguridad se complete correctamente. Siga las instrucciones de la alerta para corregir el problema.
 

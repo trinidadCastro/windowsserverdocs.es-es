@@ -1,17 +1,17 @@
 ---
-title: Ajuste del umbral de red de línea de base de conmutación por error
+title: Ajuste del umbral de red de la línea de base de conmutación por error
 description: En este artículo se presentan soluciones para ajustar el umbral de las redes de clústeres de conmutación por error.
 ms.prod: windows-server
 ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: c0e2f0309049f0271a223c2a23012eb2efa8d843
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 86a7023f6480e68f917cb8cdd9d0c69c417d3145
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150173"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409796"
 ---
 # <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>IaaS con SQL AlwaysOn: Ajuste de umbrales de red de clústeres de conmutación por error
 
@@ -21,7 +21,7 @@ En este artículo se presentan soluciones para ajustar el umbral de las redes de
 
 Cuando se ejecutan nodos de clúster de conmutación por error de Windows en IaaS con SQL Server AlwaysOn, se recomienda cambiar la configuración de clúster a un estado de supervisión más flexible. La configuración del clúster fuera de la caja es restrictiva y podría provocar interrupciones innecesarias. La configuración predeterminada está diseñada para redes locales muy optimizadas y no tiene en cuenta la posibilidad de una latencia inducida causada por un entorno de varios inquilinos como Windows Azure (IaaS).
 
-Los clústeres de conmutación por error de Windows Server están supervisando constantemente las conexiones de red y el estado de los nodos de un clúster de Windows.  Si un nodo no es accesible a través de la red, se toma la acción de recuperación para recuperar y poner las aplicaciones y servicios en línea en otro nodo del clúster. La latencia en la comunicación entre los nodos del clúster puede producir el siguiente error:  
+Los clústeres de conmutación por error de Windows Server están supervisando constantemente las conexiones de red y el estado de los nodos de un clúster de Windows.  Si un nodo no es accesible a través de la red, se toma la acción de recuperación para recuperar y poner las aplicaciones y servicios en línea en otro nodo del clúster. La latencia en la comunicación entre los nodos del clúster puede producir el siguiente error:
 
 > Error 1135 (registro de eventos del sistema)
 
@@ -77,7 +77,7 @@ Hay dos opciones de configuración que se usan para configurar el estado de Cone
 
 De forma predeterminada, Windows Server 2016 establece **SameSubnetThreshold** en 10 y **SameSubnetDelay** en 1000 ms. Por ejemplo, si se produce un error en la supervisión de la conectividad durante 10 segundos, se alcanza el umbral de conmutación por error, lo que da lugar a que el nodo se quite de la pertenencia al clúster. Esto hace que los recursos se muevan a otro nodo disponible en el clúster. Se informará de los errores del clúster, incluido el error 1135 del clúster (anterior).
 
-## <a name="resolution"></a>Solución
+## <a name="resolution"></a>Resolución
 
 En un entorno de IaaS, relajar las opciones de configuración de red de clústeres.
 
@@ -91,17 +91,16 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 Valores predeterminados, mínimo, máximo y recomendado para cada sistema operativo compatible
 
-|   |SO|Min|Max|Valor predeterminado|Recomendado|
-|---|---|---|---|---|---|
-|CrossSubnetThreshold|2008 R2|3|20|5|20|
-|Umbral de CrossSubnet|2012|3|120|5|20|
-|Umbral de CrossSubnet|2012 R2|3|120|5|20|
-|Umbral de CrossSubnet|2016|3|120|20|20|
-|Umbral de SameSubnet|2008 R2|3|10|5|10|
-|Umbral de SameSubnet|2012|3|120|5|10
-|Umbral de SameSubnet|2012 R2|3|120|5|10|
-|SameSubnetThreshold|2016|3|120|10|10|
-|||||||
+| Descripción | SO | Min | Max | Valor predeterminado | Recomendado |
+|--|--|--|--|--|--|
+| CrossSubnetThreshold | 2008 R2 | 3 | 20 | 5 | 20 |
+| Umbral de CrossSubnet | 2012 | 3 | 120 | 5 | 20 |
+| Umbral de CrossSubnet | 2012 R2 | 3 | 120 | 5 | 20 |
+| Umbral de CrossSubnet | 2016 | 3 | 120 | 20 | 20 |
+| Umbral de SameSubnet | 2008 R2 | 3 | 10 | 5 | 10 |
+| Umbral de SameSubnet | 2012 | 3 | 120 | 5 | 10 |
+| Umbral de SameSubnet | 2012 R2 | 3 | 120 | 5 | 10 |
+| SameSubnetThreshold | 2016 | 3 | 120 | 10 | 10 |
 
 Los valores del umbral reflejan las recomendaciones actuales sobre el ámbito de la implementación como se describe en el artículo siguiente:
 
@@ -141,4 +140,4 @@ El **umbral** define el número de latidos que se omiten antes de que el clúste
 
 Para obtener más información sobre la optimización de los valores de configuración de red de clúster de Windows, consulte [Tuning failover Cluster Network thresholds](https://techcommunity.microsoft.com/t5/failover-clustering/tuning-failover-cluster-network-thresholds/ba-p/371834).
 
-Para obtener información sobre cómo usar cluster. exe para ajustar la configuración de red de clústeres de Windows, consulte [How to Configure Cluster Networks for a failover Cluster](/previous-versions/office/exchange-server-2007/bb690953(v=exchg.80)?redirectedfrom=MSDN).
+Para obtener información sobre el uso de cluster.exe para optimizar la configuración de red de clústeres de Windows, consulte [How to Configure Cluster Networks for a failover Cluster](/previous-versions/office/exchange-server-2007/bb690953(v=exchg.80)?redirectedfrom=MSDN).

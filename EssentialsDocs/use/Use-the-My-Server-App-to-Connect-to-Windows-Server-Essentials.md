@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4e40b57f-6917-43ef-92e0-030baa9d2b99
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: 6b1e6d46013d98970e694176426be2ac1f57195d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a56211dc04a3f10623fd31f5bae174f03ae65022
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179361"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409475"
 ---
 # <a name="use-the-my-server-app-to-connect-to-windows-server-essentials"></a>Usar la aplicación My Server para conectarse a Windows Server Essentials
 
@@ -151,29 +151,7 @@ Las aplicaciones My Server para Windows Server Essentials le permiten conectarse
 7.  Siga las instrucciones para completar el asistente.
 
     > [!NOTE]
-<<<<<<< encabezado una vez completada la instalación del certificado, puede iniciar sesión en la aplicación My Server para Windows 8 o Windows 8.1 con el nombre del servidor y las credenciales de red.
-
-## <a name="additional-references"></a>Referencias adicionales
-
--   [Información general de la integración de servicios para Windows Server Essentials, parte 1](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)
-
--   [Información general de la integración de servicios para Windows Server Essentials, parte 2](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)
-
--   [Administrar Acceso desde cualquier lugar](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)
-
--   [Administrar Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)
-
-
--   [Trabajar de forma remota](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [Usar Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
--   [Trabajar de forma remota](../use/Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [Usar Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
-
-=======
-    >  After the installation of the certificate is complete, you can sign in to the My Server app for Windows 8 or Windows 8.1 by using your server name and your network credentials.
+    >  Una vez completada la instalación del certificado, puede iniciar sesión en la aplicación My Server para Windows 8 o Windows 8.1 usando el nombre del servidor y las credenciales de red.
 
 ## <a name="see-also"></a>Consulte también
 
@@ -188,5 +166,3 @@ Las aplicaciones My Server para Windows Server Essentials le permiten conectarse
 -   [Trabajar de forma remota](Work-Remotely-in-Windows-Server-Essentials.md)
 
 -   [Usar Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

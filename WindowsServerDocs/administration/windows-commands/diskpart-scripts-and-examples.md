@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64355bd452934909d0600fa791e7a4c2d2066b6f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ace5b081d9dd362bb1455f9992568f197c815fdf
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958297"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409746"
 ---
 # <a name="diskpart-scripts-and-examples"></a>ejemplos y scripts de Diskpart
 
@@ -24,28 +24,28 @@ Use `diskpart /s` para ejecutar scripts que automaticen tareas relacionadas con 
 
 Para crear un script de DiskPart, cree un archivo de texto que contenga los comandos de Diskpart que desea ejecutar, con un comando por línea y sin líneas vacías. Puede iniciar una línea con `rem` para convertir la línea en un comentario. Por ejemplo, a continuación se muestra un script que borra un disco y, a continuación, crea una partición de 300 MB para el entorno de recuperación de Windows:
 
-    ```
-    select disk 0
-    clean
-    convert gpt
-    create partition primary size=300
-    format quick fs=ntfs label=Windows RE tools
-    assign letter=T
-    ```
+```
+select disk 0
+clean
+convert gpt
+create partition primary size=300
+format quick fs=ntfs label=Windows RE tools
+assign letter=T
+```
 
 ## <a name="examples"></a>Ejemplos
 
 - Para ejecutar un script de DiskPart, en el símbolo del sistema, escriba el siguiente comando, donde *scriptName* es el nombre del archivo de texto que contiene el script:
 
-    ```
-    diskpart /s scriptname.txt
-    ```
+```
+diskpart /s scriptname.txt
+```
 
 - Para redirigir la salida de scripts de Diskpart a un archivo, escriba el siguiente comando, donde *logfile* es el nombre del archivo de texto donde DiskPart escribe su salida:
 
-    ```
-    diskpart /s scriptname.txt > logfile.txt
-    ```
+```
+diskpart /s scriptname.txt > logfile.txt
+```
 
 ### <a name="remarks"></a>Observaciones
 

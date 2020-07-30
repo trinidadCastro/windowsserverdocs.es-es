@@ -1,5 +1,5 @@
 ---
-title: Nuevo
+title: Usar el nuevo comando
 description: Artículo de referencia sobre New, que crea imágenes de captura y detección, transmisiones de multidifusión y espacios de nombres.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 93efc135e62dc1445a6002444bf3e14ac24adeb2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e766586b6fcd2a0155b6742b34557bcccf1ebbf1
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932138"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409636"
 ---
-# <a name="new"></a>Nuevo
+# <a name="using-the-new-command"></a>Usar el nuevo comando
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
