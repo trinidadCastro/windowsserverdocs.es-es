@@ -2,18 +2,17 @@
 title: Administrar el mantenimiento del sistema en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 145f97ed2b5ac928e8d1988f3dfd47a62f5c1bf0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 98a4b154a9b3cea9ebc92da1eb807bc73e98d5d2
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470520"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180891"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>Administrar el mantenimiento del sistema en Windows Server Essentials
 
@@ -34,7 +33,7 @@ ms.locfileid: "85470520"
 
 -   [Organizar alertas en el Visor de alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Organize)
 
--   [Responder a alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Respond)
+-   [Respuesta a las alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Respond)
 
 -   [Configurar notificaciones por correo electrónico para alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email)
 

@@ -2,17 +2,16 @@
 title: Administrar Office 365 en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: e21f8b38c126f699fda8245ab620ce5cd210fa11
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 249ff5f77d525792d5bf53719fcf1ee93bc955a4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470680"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180971"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>Administrar Office 365 en Windows Server Essentials
 

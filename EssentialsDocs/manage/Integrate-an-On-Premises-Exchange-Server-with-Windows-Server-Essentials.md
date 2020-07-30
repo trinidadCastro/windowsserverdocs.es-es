@@ -2,18 +2,17 @@
 title: Integrar un servidor local de Exchange Server con Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 13de76ba7e9452e6498479b060712d06c0571c1a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 343bfc1325a065f4c4903732eceba59c769f838f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470890"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181071"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar un servidor local de Exchange Server con Windows Server Essentials
 
@@ -52,7 +51,7 @@ Esta guía proporciona información e instrucciones básicas que le ayudarán a 
  Por ejemplo, si el nombre de dominio de Internet de su compañía es contoso.com y quiere usar el nombre completo (FQDN) de *mail.contoso.com* para hacer referencia al servidor local que ejecuta Exchange Server, trabaje con su proveedor de nombres de dominio para crear los registros de recursos DNS de la siguiente tabla.
 
 
-| Nombre de registro de recurso |     Tipo de registro     |                                                                         Configuración del registro                                                                          |                                                                                                                                                                                                                                                              Descripción                                                                                                                                                                                                                                                              |
+| Nombre de registro de recurso |     Tipo de registro     |                                                                         Configuración del registro                                                                          |                                                                                                                                                                                                                                                              Description                                                                                                                                                                                                                                                              |
 |----------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         mail         |      host (A)       |                                                        Address=*dirección IP pública asignada por su ISP*                                                         |                                                                                                                                                                                                   Exchange Server recibirá el correo dirigido a mail.contoso.com.<br /><br /> Puede usar un nombre diferente que elija.                                                                                                                                                                                                    |
 |          MX          | Agente de intercambio de correo (MX) |                                            Hostname=@<br /><br /> Address=mail.contoso.com<br /><br /> Preference=0                                             |                                                                                                                                                                                                      Proporciona el enrutamiento de los mensajes de correo electrónico para email@contoso.com que lleguen al servidor local que ejecuta Exchange Server.                                                                                                                                                                                                       |
@@ -284,7 +283,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  Como mínimo, debe configurar las siguientes opciones de puerto en el enrutador:
 
-|Puerto del enrutador|IP de destino|Puerto de destino|Nota:|
+|Puerto del enrutador|IP de destino|Puerto de destino|Nota|
 |-----------------|--------------------|----------------------|----------|
 |25 (SMTP)|Dirección IP interna del servidor local que ejecuta Exchange Server.|25||
 |80 (HTTP)|Dirección IP interna del servidor que ejecuta Windows Server Essentials|80||
@@ -336,7 +335,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
    > [!NOTE]
    >  Debe seleccionar el Módulo URL Rewrite durante la instalación de ARR.
    >
-   >  Quizás reciba un error al final de la instalación de ARR que indica que KB 2589179 para ARR 2.5 no se instaló correctamente. Puede omitir este error sin problemas.
+   >  Quizás reciba un error al final de la instalación de ARR que indica que KB 2589179 para ARR 2.5 no se instaló correctamente. Puede omitir este error de forma segura.
 
 4. Una vez completa la instalación de ARR, reinicie el servicio **Puerta de enlace de Escritorio remoto** si no se está ejecutando.
 

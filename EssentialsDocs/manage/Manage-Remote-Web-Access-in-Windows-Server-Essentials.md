@@ -2,18 +2,17 @@
 title: Administrar Acceso web remoto en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2144f66e9c5a5e9384e49a0f5d77796dec9d7429
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 56bfd8d9860ad571265980e859a09914fb4f1b9c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470630"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180941"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
@@ -150,9 +149,9 @@ ms.locfileid: "85470630"
  En este paso, Windows Server Essentials intenta configurar automáticamente el enrutador con comandos UPnP. Para ello, el enrutador debe admitir las normas UPnP y la opción de configuración UPnP debe estar habilitada en el enrutador.
 
 > [!NOTE]
->  La configuración de red debe cumplir los requisitos de red compatibles con Windows Server Essentials. Solo debe haber un enrutador en la red.
+> La configuración de red debe cumplir los requisitos de red compatibles con Windows Server Essentials. Solo debe haber un enrutador en la red.
 
- Si el enrutador no se configura con el Asistente para configurar el nombre de dominio, debe desviar manualmente el puerto 443. Para obtener más información sobre cómo configurar el enrutamiento de puerto en su enrutador, consulte [Configuración del enrutador](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx).
+ Si el enrutador no se configura con el Asistente para configurar el nombre de dominio, debe desviar manualmente el puerto 443. Para obtener información acerca de cómo configurar el reenvío de puertos en el enrutador, consulte el [Foro de Small Business Server](https://docs.microsoft.com/answers/topics/windows-small-business-server.html).
 
 ###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>Reemplazar un enrutador
  Reemplace el enrutador según las instrucciones del fabricante y, a continuación, ejecute el Asistente para configurar el enrutador para configurar el nuevo enrutador.
@@ -244,7 +243,7 @@ ms.locfileid: "85470630"
 >  Windows Live admite caracteres especiales en la contraseña de cuenta de Microsoft que el servidor no acepta. Si usa un dominio personalizado de Microsoft, asegúrese de que la contraseña de cuenta de Microsoft contiene solo caracteres compatibles con el servidor. El servidor no admite el uso de los caracteres $, /, ' y %.
 
 ###  <a name="use-a-new-or-existing-domain-name"></a><a name="BKMK_UseNewName"></a>Usar un nombre de dominio nuevo o existente
- Para configurar automáticamente el nombre de dominio en un servidor que ejecuta Windows Server Essentials, debe usar uno de los proveedores de servicios de nombres de dominio que aparecen en el Asistente para configurar el nombre de dominio. Puede obtener un nuevo nombre de dominio o usar uno existente. Realice una de las siguientes acciones:
+ Para configurar automáticamente el nombre de dominio en un servidor que ejecuta Windows Server Essentials, debe usar uno de los proveedores de servicios de nombres de dominio que aparecen en el Asistente para configurar el nombre de dominio. Puede obtener un nuevo nombre de dominio o usar uno existente. Lleve a cabo una de las siguientes acciones:
 
 -   Si desea obtener un nuevo nombre de dominio de uno de los proveedores de servicios de nombres de dominio que aparecen en el asistente, haga clic en **Deseo configurar un nombre de dominio nuevo**.
 
@@ -307,7 +306,7 @@ ms.locfileid: "85470630"
 
  **Algunos ejemplos de dominios genéricos de primer nivel:**
 
-|Extensión de dominio|Descripción|
+|Extensión de dominio|Description|
 |----------------------|-----------------|
 |.com|Normalmente la usan organizaciones comerciales, pero la puede utilizar cualquier usuario.|
 |.net|Diseñada para empresas que ofrecen servicios de infraestructura de red.|
@@ -319,7 +318,7 @@ ms.locfileid: "85470630"
 
  **Algunos ejemplos de dominios de primer nivel de código de país:**
 
-|Extensión de dominio|Descripción|
+|Extensión de dominio|Description|
 |----------------------|-----------------|
 |.ca|Para sitios web de Canadá.|
 |.cn|Para sitios web de China.|

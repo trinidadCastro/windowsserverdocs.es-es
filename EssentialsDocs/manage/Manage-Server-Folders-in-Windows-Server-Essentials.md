@@ -2,18 +2,17 @@
 title: Administrar carpetas de servidor en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8dba2bb0b282751fbbe584b64dbc92bbe3702979
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f748ca62062de616be7c6e2ee495a508d0e38646
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470570"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180921"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>Administrar carpetas de servidor en Windows Server Essentials
 
@@ -58,7 +57,7 @@ ms.locfileid: "85470570"
 
 ### <a name="server-folder-tasks-on-the-dashboard"></a>Tareas de carpeta del servidor en el panel
 
-|Nombre de la tarea|Descripción|
+|Nombre de la tarea|Description|
 |---------------|-----------------|
 |Abrir la carpeta|Muestra el contenido de la carpeta seleccionada en el Explorador de archivos (denominado Explorador de Windows en las versiones anteriores de Windows).|
 |Eliminar la carpeta|Permite eliminar una carpeta creada por el usuario. Esta tarea no está disponible para las carpetas predeterminadas que crea la instalación del servidor.|
@@ -81,7 +80,7 @@ ms.locfileid: "85470570"
 
   Puede administrar el acceso a cualquier carpeta del servidor desde el propio servidor, con las tareas de la pestaña **Carpetas del servidor** del panel. La tabla siguiente enumera las carpetas del servidor que se crean de forma predeterminada al instalar Windows Server Essentials o activar el streaming en el servidor.
 
-|Nombre de la carpeta del servidor|Descripción|
+|Nombre de la carpeta del servidor|Description|
 |------------------------|-----------------|
 |Copias de seguridad de equipos cliente|De forma predeterminada, Windows Server Essentials crea copias de seguridad de equipos cliente que se almacenan en esta carpeta. El administrador de red puede modificar la configuración de Copias de seguridad de equipos cliente.|
 |Compañía|Se usa para que los usuarios de red almacenen y accedan a documentos relacionados con la organización.|

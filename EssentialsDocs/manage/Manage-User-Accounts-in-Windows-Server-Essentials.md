@@ -2,18 +2,17 @@
 title: Administrar cuentas de usuario en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 350c9aa4cf4a2e71f3a3b7600ec2acd9016fe50e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 433e49f76ba941058a3cd63526f4c640fd0b5ece
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470510"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180881"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>Administrar cuentas de usuario en Windows Server Essentials
 
@@ -234,7 +233,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 ### <a name="user-account-tasks-in-the-dashboard"></a>Tareas de la cuenta de usuario en el panel
 
-|Nombre de la tarea|Descripción|
+|Nombre de la tarea|Description|
 |---------------|-----------------|
 |Ver las propiedades de la cuenta|Permite ver y cambiar las propiedades de la cuenta de usuario seleccionada y especificar los permisos de acceso a carpetas de la cuenta.|
 |Desactivar la cuenta de usuario|No se puede iniciar sesión con una cuenta de usuario desactivada en la red ni acceder a recursos de red como carpetas o impresoras compartidas.|

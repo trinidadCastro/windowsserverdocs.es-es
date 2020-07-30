@@ -2,18 +2,17 @@
 title: Configurar DirectAccess en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a9ebd7af7f748a1e2af4a47ca5b590137cd33b3d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a1f568d34fd0fbd94d09046b59a93d21feb60890
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470910"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181081"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>Configurar DirectAccess en Windows Server Essentials
 
@@ -121,7 +120,7 @@ En este tema se proporcionan instrucciones paso a paso para configurar DirectAcc
 
 9. En el cuadro **Servidor DNS alternativo**, escriba la dirección IP del servidor DNS alternativo, si lo hay.
 
-10. Haga clic en **Aceptar** y, a continuación, en **Cerrar**.
+10. Haga clic en **Aceptar**y, a continuación, en **Cerrar**.
 
 > [!IMPORTANT]
 >  Asegúrese de que configura el enrutador para que derive los puertos 80 y 443 a la nueva dirección IP estática del servidor.
@@ -416,7 +415,7 @@ Restart-Service winnat
 
 2.  Agregue un grupo de seguridad denominado **DirectAccessClients** a Active Directory y, a continuación, agregue los equipos cliente para los que desea proporcionar la funcionalidad de DirectAccess. Para obtener más información, vea [paso 4: crear un grupo de seguridad para equipos cliente de DirectAccess](#BKMK_AddSecurityGroup).
 
-### <a name="commands"></a>Comandos
+### <a name="commands"></a>Comandos:
 
 > [!IMPORTANT]
 >  En Windows Server Essentials, no es necesario quitar el GPO de prefijo IPv6 innecesario. Elimine la sección de código con la etiqueta siguiente: `# [WINDOWS SERVER 2012 ESSENTIALS ONLY] Remove the unnecessary IPv6 prefix GPO`.

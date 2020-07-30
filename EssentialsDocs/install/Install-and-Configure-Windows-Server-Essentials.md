@@ -2,18 +2,17 @@
 title: Instalación y configuración de Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 06/17/2013
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 504ce971691d85c6d3727bacd6419f548673c88a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce8f1dda49144a817f405d04f17046f701230446
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470900"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181181"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>Instalación y configuración de Windows Server Essentials
 
@@ -153,10 +152,10 @@ ms.locfileid: "85470900"
 
  En la siguiente tabla se definen los elementos que pueden aparecer en la lista de tareas de configuración.
 
-|Tarea|Descripción
+|Tarea|Description
 |----------|-----------------|
 |Obtener actualizaciones para otros productos de Microsoft|Haga clic en esta tarea para tener acceso a un vínculo que ejecuta una herramienta que le permite especificar si desea usar Microsoft Update para obtener automáticamente actualizaciones para Windows Server Essentials y otros productos de Microsoft como Office.
-|Agregar cuentas de usuario|Haga clic en esta tarea para ver información breve acerca de cómo agregar cuentas de usuario. Se proporciona un vínculo al **Asistente para agregar cuentas de usuario**. Para obtener más información, vea cómo [agregar una cuenta de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1).
+|Adición de cuentas de usuario|Haga clic en esta tarea para ver información breve acerca de cómo agregar cuentas de usuario. Se proporciona un vínculo al **Asistente para agregar cuentas de usuario**. Para obtener más información, vea cómo [agregar una cuenta de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1).
 |Agregar carpetas de servidor|Haga clic en esta tarea para ver información breve acerca de cómo agregar carpetas de servidor. Se proporciona un vínculo al **Asistente para agregar carpetas**. También se proporciona un vínculo a un tema de ayuda en pantalla acerca del uso de carpetas de servidor. Para obtener más información, vea cómo [agregar o mover una carpeta del servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).
 |Configurar copia de seguridad del servidor|Haga clic en esta tarea para ver información breve acerca del uso de Copia de seguridad del servidor para proteger sus datos. Se proporciona un vínculo al **Asistente para configuración de copia de seguridad del servidor**. Para obtener más información, vea cómo [configurar o personalizar una copia de seguridad del servidor](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1).
 |Configurar Acceso desde cualquier lugar|Haga clic en esta tarea para ver información breve acerca de la característica acceso desde cualquier lugar en Windows Server Essentials. Se proporciona un vínculo a la página **Configuración de Acceso desde cualquier lugar**. Para obtener más información, consulte [administrar el acceso desde cualquier lugar](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md).

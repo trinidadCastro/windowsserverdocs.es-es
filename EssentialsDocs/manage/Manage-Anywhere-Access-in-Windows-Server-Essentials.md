@@ -2,18 +2,17 @@
 title: Administrar Acceso desde cualquier lugar en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: c369c317-f94d-4179-a735-e74bf6f62692
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5abb2cf509c0b695f9019d249e819756f7092efa
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a52c604aa9d79fe95d4e34673a94ff91c5cc4b7a
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470880"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181061"
 ---
 # <a name="manage-anywhere-access-in-windows-server-essentials"></a>Administrar Acceso desde cualquier lugar en Windows Server Essentials
 

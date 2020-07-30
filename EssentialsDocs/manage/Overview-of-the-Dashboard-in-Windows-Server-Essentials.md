@@ -2,18 +2,17 @@
 title: Introducción al panel en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ca60df1066e0a40c4304d7af36133eda58bbd55f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0b9ec7bf24bd79b324a811446308129dd3c97b2b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470469"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180851"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Introducción al panel en Windows Server Essentials
 
@@ -86,9 +85,9 @@ ms.locfileid: "85470469"
 
  En la tabla siguiente se describen las secciones de administración del panel que están disponibles de manera predeterminada después de la instalación. La tabla también muestra las tareas que están disponibles dentro de cada sección.
 
-|Sección|Descripción|
+|Sección|Description|
 |-------------|-----------------|
-|Página principal|La página **Inicio** aparece de manera predeterminada cada vez que abre el panel. Incluye información y tareas en las siguientes categorías:<br /><br /> **Configuración** œ complete las tareas de esta categoría para configurar el servidor por primera vez. Para obtener información sobre estas tareas, vea [instalar y configurar Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md).<br /><br /> **Correo electrónico** œ elija una opción de esta categoría para integrar un servicio de correo electrónico con el servidor.<br /><br /> **Nota:** Esta categoría solo está disponible en Windows Server Essentials.<br /><br /> **Servicios** œ elija una tarea de esta categoría para integrar Microsoft servicios en línea con el servidor.<br /><br /> **Nota:** Esta categoría solo está disponible en Windows Server Essentials y Windows Server 2012 R2 Standard con el rol experiencia con Windows Server Essentials habilitado.<br /><br /> **Complementos** œ haga clic en esta categoría para instalar complementos valiosos para su empresa.<br /><br /> **Quick status** œ muestra el estado del servidor de alto nivel. Haga clic en un estado para ver la información y las opciones de configuración de dicha característica. Si completa todas las tareas de la categoría CONFIGURACIÓN, esta categoría aparecerá en la parte superior del panel Categoría.<br /><br /> **Ayuda** œ use el cuadro de búsqueda para buscar ayuda en la Web. Haga clic en un vínculo para visitar el sitio web de la opción de soporte seleccionada.|
+|Inicio|La página **Inicio** aparece de manera predeterminada cada vez que abre el panel. Incluye información y tareas en las siguientes categorías:<br /><br /> **Configuración** œ complete las tareas de esta categoría para configurar el servidor por primera vez. Para obtener información sobre estas tareas, vea [instalar y configurar Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md).<br /><br /> **Correo electrónico** œ elija una opción de esta categoría para integrar un servicio de correo electrónico con el servidor.<br /><br /> **Nota:** Esta categoría solo está disponible en Windows Server Essentials.<br /><br /> **Servicios** œ elija una tarea de esta categoría para integrar Microsoft servicios en línea con el servidor.<br /><br /> **Nota:** Esta categoría solo está disponible en Windows Server Essentials y Windows Server 2012 R2 Standard con el rol experiencia con Windows Server Essentials habilitado.<br /><br /> **Complementos** œ haga clic en esta categoría para instalar complementos valiosos para su empresa.<br /><br /> **Quick status** œ muestra el estado del servidor de alto nivel. Haga clic en un estado para ver la información y las opciones de configuración de dicha característica. Si completa todas las tareas de la categoría CONFIGURACIÓN, esta categoría aparecerá en la parte superior del panel Categoría.<br /><br /> **Ayuda** œ use el cuadro de búsqueda para buscar ayuda en la Web. Haga clic en un vínculo para visitar el sitio web de la opción de soporte seleccionada.|
 |Usuarios|Para que los usuarios puedan tener acceso a los recursos proporcionados por Windows Server Essentials deberá crear cuentas de usuario mediante el panel de Windows Server Essentials. Después de crear las cuentas de usuario puede administrarlas mediante las tareas disponibles en la página **Usuarios** del panel. Tareas que puede llevar a cabo en esta página:<br /><br /> : Ver una lista de cuentas de usuario.<br /><br /> -Ver y administrar las propiedades de la cuenta de usuario.<br /><br /> -Activar o desactivar cuentas de usuario.<br /><br /> -Agregar o quitar cuentas de usuario.<br /><br /> -Asigne cuentas de red local a cuentas de Microsoft servicios en línea si el servidor está integrado con Office 365.<br /><br /> -Cambiar contraseñas de cuentas de usuario y administrar la Directiva de contraseñas.<br /><br /> Para obtener información acerca de la administración de cuentas de usuario, consulte [administrar cuentas de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md).|
 |Grupos de usuarios|**Nota:** Esta característica solo está disponible en Windows Server Essentials y Windows Server 2012 R2 Standard con el rol experiencia con Windows Server Essentials habilitado.<br /><br /> Tareas que puede llevar a cabo en esta página:<br /><br /> -Ver una lista de grupos de usuarios.<br /><br /> -Ver y administrar grupos de usuarios.<br /><br /> -Agregar o quitar grupos de usuarios.|
 |Grupos de distribución|**Nota:** Esta característica solo está disponible en Windows Server Essentials y Windows Server 2012 R2 Standard con el rol experiencia con Windows Server Essentials habilitado. Esta pestaña solo se muestra cuando Windows Server Essentials está integrado con Office 365.<br /><br /> Tareas que puede llevar a cabo en esta página:<br /><br /> : Ver una lista de grupos de distribución.<br /><br /> -Agregar o quitar grupos de distribución.|

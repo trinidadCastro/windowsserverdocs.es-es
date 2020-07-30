@@ -2,18 +2,17 @@
 title: Administrar copias de seguridad en línea en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5c9f6dc91d5bc46d3be6e20e105530a9dca2b548
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b3a9ceca5de9971f77175052a604d3e22de07036
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470660"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180951"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>Administrar copias de seguridad en línea en Windows Server Essentials
 
@@ -334,7 +333,7 @@ ms.locfileid: "85470660"
 
 1. Abra el Panel.
 
-2. Realice una de las siguientes acciones:
+2. Lleve a cabo una de las siguientes acciones:
 
      Windows Server Essentials: en el panel de navegación, haga clic en el icono de alertas \( puede ser crítico, ADVERTENCIA o informativo \) . Se abrirá el Visor de alertas.
 
@@ -403,7 +402,7 @@ ms.locfileid: "85470660"
 
     Se abrirá la página **Instalación**. Aparecerá un indicador de progreso de instalación cuando esta se inicie. Una vez completada la instalación, recibirá un mensaje que indica que el complemento de Azure Backup se instaló correctamente.
 
-4. Haga clic en **Finalizar**
+4. Haga clic en **Finalizar**.
 
 5. Cierre el panel y vuelva a abrirlo.
 

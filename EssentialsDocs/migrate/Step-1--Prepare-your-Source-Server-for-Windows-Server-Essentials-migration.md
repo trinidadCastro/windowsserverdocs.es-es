@@ -2,18 +2,17 @@
 title: 'Paso 1: Preparación del servidor de origen para la migración a Windows Server Essentials'
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f5696c473a8fcb04a60b9a4b6c51ac206a6ef0de
-ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
+ms.openlocfilehash: 6666a0f68863913c0c0a5a1b1e903eaebf5470a4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404580"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180491"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>Paso 1: Preparación del servidor de origen para la migración a Windows Server Essentials
 
@@ -43,7 +42,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 2. Compruebe que la copia de seguridad se ejecute correctamente. Para probar la integridad de la copia de seguridad, seleccione archivos aleatorios de la copia de seguridad, restáurelos en una ubicación alternativa y confirme que los archivos restaurados son los mismos que los archivos originales.
 
-   |Producto|Resource|
+   |Product|Resource|
    |---|---|
    |Windows Small Business Server 2003|[Realizar una copia de seguridad y restaurar Windows Small Business Server 2003](https://msdn.microsoft.com/library/cc875809.aspx)
    |Windows Small Business Server 2008|[Realizar una copia de seguridad y restaurar los datos en Windows Small Business Server 2008](https://technet.microsoft.com/library/cc527505\(WS.10\).aspx)
@@ -70,7 +69,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 5.  Desactive la casilla **Definir esta configuración de directiva**.
 
-6.  Elimine \\ \localhost\SYSVOL \\<nombrededominio \> \scripts\ SBS_LOGIN_SCRIPT. bat.
+6.  Elimine \\ \localhost\SYSVOL \\<domainname \>\scripts\SBS_LOGIN_SCRIPT.bat.
 
 ###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a>Evaluar el estado del servidor de origen
  Es importante evaluar el estado de su servidor de origen antes de empezar la migración. Use los siguientes procedimientos para asegurarse de que las actualizaciones están actualizadas, para generar un informe de mantenimiento del sistema y para ejecutar el Analizador de procedimientos recomendados (BPA) de Soluciones de Windows Server.
@@ -129,7 +128,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
    Después de que la herramienta BPA recopile información sobre la configuración del servidor, comprueba que la información sea correcta y muestra a los administradores una lista con información y problemas ordenados por gravedad. En la lista se describe cada problema y se propone una recomendación o posible solución. Hay disponibles tres tipos de informes:
 
-|Tipo de informe|Descripción
+|Tipo de informe|Description
 |-----------------|-----------------
 |Informes de lista|Muestra los informes como una lista unidimensional.
 |Informes de árbol|Muestra los informes como una lista jerárquica.
