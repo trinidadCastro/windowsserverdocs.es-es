@@ -1,41 +1,40 @@
 ---
-title: Novedades de Windows Server 2019 Essentials
+title: Novedades de Windows Server 2019 Essentials
 description: Describe los cambios en Windows Server Essentials 2019
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
-ms.openlocfilehash: 321ada3c046b7c78f141d2697191f48e225b93be
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 97b5d3df88f10aa55a345e5640a896a8cc25ff76
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817738"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181631"
 ---
-# <a name="whats-new-in-windows-server-2019-essentials"></a>Novedades de Windows Server 2019 Essentials
+# <a name="whats-new-in-windows-server-2019-essentials"></a>Novedades de Windows Server 2019 Essentials
 
 > Se aplica a: Windows Server 2019 Essentials
 
 ## <a name="windows-server-essentials-experience-role-has-been-deprecated"></a>El rol de experiencia con Windows Server Essentials está en desuso
 
-El rol experiencia con Windows Server Essentials se ha quitado de todas las SKU de servidor, incluido Windows Server 2019 Essentials. Esto significa que ya no se puede tener acceso al [panel administrativo](../manage/overview-of-the-dashboard-in-windows-server-essentials.md) que solía ser la característica principal para el rol de experiencia de Essentials y que todas las operaciones de administración y configuración se deben completar manualmente. 
+El rol experiencia con Windows Server Essentials se ha quitado de todas las SKU de servidor, incluido Windows Server 2019 Essentials. Esto significa que ya no se puede tener acceso al [panel administrativo](../manage/overview-of-the-dashboard-in-windows-server-essentials.md) que solía ser la característica principal para el rol de experiencia de Essentials y que todas las operaciones de administración y configuración se deben completar manualmente.
 
 Con el desuso de los roles de experiencia con Server Essentials, las siguientes características ya no están disponibles:
 
--    Copia de seguridad de cliente 
--    Acceso Web remoto 
+-    Copia de seguridad de cliente
+-    Acceso Web remoto
 
-## <a name="microsoft-365-business-the-modern-small-business-solution"></a>Microsoft 365 Empresa: la solución moderna de pequeña empresa 
+## <a name="microsoft-365-business-the-modern-small-business-solution"></a>Microsoft 365 Empresa: la solución moderna de pequeña empresa
 
-A lo largo de los años desde que se lanzó Windows Server 2016 Essentials, nos hemos trabajado mucho en la siguiente solución para empresas grandes y pequeñas: Microsoft 365. Se recomienda encarecidamente Microsoft 365 para los clientes de pequeñas empresas como sustituto de todas las versiones de Windows Server Essentials. Microsoft 365 es una solución moderna para el uso compartido y la colaboración de archivos, e incluye Office 365, Windows 10 y Enterprise Mobility + Security. 
+A lo largo de los años desde que se lanzó Windows Server 2016 Essentials, nos hemos trabajado mucho en la siguiente solución para empresas grandes y pequeñas: Microsoft 365. Se recomienda encarecidamente Microsoft 365 para los clientes de pequeñas empresas como sustituto de todas las versiones de Windows Server Essentials. Microsoft 365 es una solución moderna para el uso compartido y la colaboración de archivos, e incluye Office 365, Windows 10 y Enterprise Mobility + Security.
 
 Desarrolle su negocio con [Microsoft 365 empresa](https://www.microsoft.com/microsoft-365/business), que incluye incluso más características de Office, como el correo electrónico y el calendario, el almacenamiento de archivos en la nube, la protección de datos, etc. Microsoft 365 Empresa ayudará a su pequeña empresa a alcanzar nuevos niveles de productividad.
 
 ## <a name="aad-connect-can-now-be-installed-on-windows-server-2019-essentials"></a>Ahora se puede instalar AAD Connect en Windows Server 2019 Essentials
 
-Windows Server 2019 Essentials incluye compatibilidad nueva con Azure Active Directory a través de [AAD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-prerequisites). 
+Windows Server 2019 Essentials incluye compatibilidad nueva con Azure Active Directory a través de [AAD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-prerequisites).
 
 ## <a name="ltsc-support-for-windows-server-2016-essentials"></a>Compatibilidad con LTSC para Windows Server 2016 Essentials
 
