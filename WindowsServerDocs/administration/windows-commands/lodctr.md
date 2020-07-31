@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8b1cae87818d3f77474e4193b03836bf1c84990
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7e6dba42610923e8b0cd9d7ea25a0e1ea6df507a
+ms.sourcegitcommit: 67d9c51e396c8f937f8704a25e66fea8c5fae81a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931652"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87441526"
 ---
 # <a name="lodctr"></a>lodctr
 
@@ -45,10 +45,10 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 ### <a name="examples"></a>Ejemplos
 
-Para guardar la configuración del registro de rendimiento actual y el texto explicativo en el *backup1.txt*de rendimiento de archivo, escriba:
+Para guardar la configuración del registro de rendimiento actual y el texto explicativo en el archivo *"perf backup1.txt"*, escriba:
 
 ```
-lodctr /s:perf backup1.txt
+lodctr /s:"perf backup1.txt"
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

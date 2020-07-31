@@ -229,7 +229,7 @@
 #### [Cómo funciona la directiva QoS](technologies/qos/qos-policy-works.md)
 #### [Arquitectura de la directiva QoS](technologies/qos/qos-policy-architecture.md)
 #### [Escenarios de la directiva QoS](technologies/qos/qos-policy-scenarios.md)
-###[Administrar la directiva QoS](technologies/qos/qos-policy-manage.md)
+### [Administrar la directiva QoS](technologies/qos/qos-policy-manage.md)
 #### [Errores y eventos de la directiva QoS](technologies/qos/qos-policy-errors.md)
 ### [Preguntas frecuentes sobre la directiva QoS](technologies/qos/qos-policy-faq.md)
 
