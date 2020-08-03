@@ -9,12 +9,12 @@ metadata:
   author: eross-msft
   ms.author: lizross
   ms.date: 06/10/2020
-  ms.openlocfilehash: c07ada45d2bb1c1d95901bd493754c93ae75d3d4
-  ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+  ms.openlocfilehash: b39e06af80b8e44ce0b115ff562c5456c131da59
+  ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 07/23/2020
-  ms.locfileid: "86955097"
+  ms.lasthandoff: 07/27/2020
+  ms.locfileid: "87182001"
 landingContent:
 - title: Acerca de VPN de Always On
   linkLists:
@@ -70,7 +70,7 @@ landingContent:
       url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)
     - text: Plantillas de certificado
       url: /previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11)
-    - text: Public Key Infrastructure Design Guidance (Guía de diseño de la infraestructura de clave pública)
-      url: https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx
-    - text: 'AD CS Step by Step Guide - Two Tier PKI Hierarchy Deployment (Guía paso a paso de AD CS: implementación de la jerarquía PKI de dos niveles)Guía paso a paso de AD CS: implementación de la jerarquía PKI de dos niveles'
-      url: https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx
+    - text: Diseño de una infraestructura de claves públicas
+      url: /previous-versions/windows/it-pro/windows-server-2003/cc773138(v=ws.10)
+    - text: Active Directory Certificate Services Overview
+      url: /previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)
