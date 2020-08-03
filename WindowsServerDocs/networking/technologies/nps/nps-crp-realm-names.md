@@ -8,25 +8,24 @@ ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: dba00395b32980d3139cf88e25571c8001cac24e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7a855087647b86486eaf5358e0e713d6fab6dd02
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316244"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517880"
 ---
 # <a name="realm-names"></a>Nombres de dominio kerberos
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-
 Puede usar este tema para obtener información general sobre el uso de nombres de dominio Kerberos en el procesamiento de solicitudes de conexión del servidor de directivas de redes.
 
-El atributo RADIUS de nombre de usuario es una cadena de caracteres que normalmente contiene una ubicación de cuenta de usuario y un nombre de cuenta de usuario. La ubicación de la cuenta de usuario también se denomina nombre de dominio Kerberos o dominio Kerberos y es sinónimo del concepto de dominio, incluidos los dominios DNS, los dominios de Active Directory® y los dominios de Windows NT 4,0. Por ejemplo, si una cuenta de usuario está ubicada en la base de datos de cuentas de usuarios para un dominio llamado ejemplo.com, ejemplo.com es el nombre de dominio kerberos.
+El atributo RADIUS de nombre de usuario es una cadena de caracteres que normalmente contiene una ubicación de cuenta de usuario y un nombre de cuenta de usuario. La ubicación de cuenta de usuario también se denomina dominio kerberos o nombre de dominio kerberos, y es sinónimo del concepto de dominio, incluidos los dominios DNS, los dominios de Active Directory® y los dominios de Windows NT 4.0. Por ejemplo, si una cuenta de usuario está ubicada en la base de datos de cuentas de usuarios para un dominio llamado ejemplo.com, ejemplo.com es el nombre de dominio kerberos.
 
-En otro ejemplo, si el atributo RADIUS de nombre de usuario contiene el nombre de usuario user1@example.com, user1 es el nombre de la cuenta de usuario y example.com es el nombre de dominio Kerberos. Los nombres de dominio kerberos se pueden presentar en el nombre de usuario como un prefijo o como un sufijo:
+En otro ejemplo, si el atributo RADIUS de nombre de usuario contiene el nombre de usuario user1@example.com , user1 es el nombre de la cuenta de usuario y example.com es el nombre de dominio Kerberos. Los nombres de dominio kerberos se pueden presentar en el nombre de usuario como un prefijo o como un sufijo:
 
-- **Example\user1**. En este ejemplo, el **ejemplo** de nombre de dominio Kerberos es un prefijo; Además, es el nombre de una Active Directory&reg; de servicios de dominio \(AD DS dominio\).
+- **Example\user1**. En este ejemplo, el **ejemplo** de nombre de dominio Kerberos es un prefijo; Además, es el nombre de un dominio de &reg; AD DS de Active Directory Domain Services \( \) .
 
 - <strong>user1@example.com</strong>. En este ejemplo, el nombre de dominio Kerberos **example.com** es un sufijo; y es un nombre de dominio DNS o el nombre de un dominio de AD DS.
 
@@ -58,11 +57,11 @@ Antes de que el mensaje RADIUS se procese localmente (cuando se usa NPS como ser
 
 Puede configurar reglas de manipulación de atributos para el atributo de nombre de usuario y cambiar lo siguiente:
 
-- Quite el nombre de dominio Kerberos del nombre de usuario \(también conocido como\)de eliminación de dominio Kerberos. Por ejemplo, el nombre de usuario user1@example.com se cambia a user1.
+- Quite el nombre de dominio Kerberos del nombre de usuario \( , también conocido como eliminación de dominio Kerberos \) . Por ejemplo, el nombre de usuario user1@example.com se cambia a user1.
 
-- Cambiar el nombre de dominio kerberos pero no la sintaxis. Por ejemplo, el nombre de usuario user1@example.com se cambia a user1@wcoast.example.com.
+- Cambiar el nombre de dominio kerberos pero no la sintaxis. Por ejemplo, el nombre de usuario user1@example.com se cambia a user1@wcoast.example.com .
 
-- Cambiar la sintaxis del nombre de dominio kerberos. Por ejemplo, el nombre de usuario example\user1 se cambia a user1@example.com.
+- Cambiar la sintaxis del nombre de dominio kerberos. Por ejemplo, el nombre de usuario example\user1 se cambia a user1@example.com .
 
 Una vez que el atributo de nombre de usuario se modifica según las reglas de manipulación de atributos que ha configurado, la configuración adicional de la primera directiva de solicitud de conexión coincidente se usa para determinar si:
 
@@ -74,11 +73,11 @@ Una vez que el atributo de nombre de usuario se modifica según las reglas de ma
 
 Cuando el nombre de usuario no contiene ningún nombre de dominio, NPS suministra uno. De forma predeterminada, el nombre de dominio proporcionado por NPS es el dominio del que el NPS es miembro. Puede especificar el nombre de dominio suministrado por NPS mediante la siguiente configuración del Registro:
 
-    
-    HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\RasMan\PPP\ControlProtocols\BuiltIn\DefaultDomain
-    
+```
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\RasMan\PPP\ControlProtocols\BuiltIn\DefaultDomain
+```
 
->[!CAUTION]
->Una modificación incorrecta del Registro puede provocar daños graves en el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
+> [!CAUTION]
+> Una modificación incorrecta del Registro puede provocar daños graves en el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
 
 Algunos servidores de acceso a la red que no son de Microsoft eliminan o modifican el nombre de dominio según especifica el usuario. Por eso, la solicitud de acceso a la red se autentica con el dominio predeterminado, que es posible que no sea el dominio para la cuenta de usuario. Para resolver este problema, configure los servidores RADIUS para cambiar el nombre de usuario al formato correcto con el nombre de dominio exacto.

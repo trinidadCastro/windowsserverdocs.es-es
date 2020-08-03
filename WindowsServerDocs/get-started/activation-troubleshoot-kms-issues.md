@@ -1,19 +1,19 @@
 ---
 title: Problemas conocidos de activación de KMS
 description: Describe los problemas comunes que pueden producirse durante el proceso de activación de KMS, y proporciona soluciones e instrucciones.
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 10/3/2019
 ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 3446ad0954510d8c96e9a2d361f24c90d325b782
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 14cdf24bc7a88acbfa226954e10274ee47a64b2a
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826258"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409986"
 ---
 # <a name="kms-activation-known-issues"></a>Activación de KMS: problemas conocidos
 
@@ -34,7 +34,7 @@ En el equipo cliente de KMS, abre el panel de control del **Sistema** y busca el
 
 ## <a name="the-kms-client-computer-does-not-activate"></a>El equipo cliente de KMS no se activa
 
-Verifica si se cumple el umbral de activación de KMS. En el equipo host de KMS, ejecuta Slmgr.vbs y usa la opción de línea de comandos **/dli** para conocer el recuento actual del host. Hasta que el host de KMS tenga un recuento de 25, no se pueden activar los equipos cliente de Windows 7. Los clientes de KMS de Windows Server 2008 R2 requieren un recuento de KMS de 5 para la activación. Para obtener más información sobre los requisitos de KMS, consulta la [Guía de planeación de la activación por volumen](https://go.microsoft.com/fwlink/?linkid=155926). 
+Verifica si se cumple el umbral de activación de KMS. En el equipo host de KMS, ejecuta Slmgr.vbs y usa la opción de línea de comandos **/dli** para conocer el recuento actual del host. Hasta que el host de KMS tenga un recuento de 25, no se pueden activar los equipos cliente de Windows 7. Los clientes de KMS de Windows Server 2008 R2 requieren un recuento de KMS de 5 para la activación. Para obtener más información sobre los requisitos de KMS, consulta la [Guía de planeación de la activación por volumen](https://go.microsoft.com/fwlink/?linkid=155926).
 
 En el equipo cliente de KMS, busca el Id. de evento 12289 en el registro de eventos de aplicación. Comprueba este evento para obtener la información siguiente:
 

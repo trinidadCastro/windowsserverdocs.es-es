@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 71e45622292f7393b19978ec3235492c5065a8a1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8344fcb01a5d527dfce46118121fbf7623636549
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474032"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519674"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Administrar la infraestructura hiperconvergida con el centro de administración de Windows
 
@@ -46,7 +46,7 @@ Los aspectos destacados del centro de administración de Windows para la infraes
 
 Microsoft está desarrollando activamente el centro de administración de Windows para la infraestructura hiperconvergida. Recibe actualizaciones frecuentes que mejoran las características existentes y agregan nuevas características.
 
-## <a name="before-you-start"></a>Antes de comenzar
+## <a name="before-you-start"></a>Antes de empezar
 
 Para administrar el clúster como una infraestructura hiperconvergida en el centro de administración de Windows, debe ejecutar Windows Server 2016 o Windows Server 2019 y tener habilitado Hyper-V y Espacios de almacenamiento directo. Opcionalmente, también puede tener habilitadas las redes definidas por software y administradas a través del centro de administración de Windows.
 
@@ -217,7 +217,7 @@ Si acaba de empezar, estos son algunos tutoriales rápidos que le ayudarán a sa
     </tr>
 </table>
 
-### <a name="create-a-new-virtual-machine"></a>Crear una máquina virtual nueva
+### <a name="create-a-new-virtual-machine"></a>Creación de una máquina virtual
 
 1. Haga clic en la herramienta **virtual machines** del panel de navegación del lado izquierdo.
 2. En la parte superior de la herramienta Virtual Machines, elija la pestaña **inventario** y, a continuación, haga clic en **nuevo** para crear una nueva máquina virtual.
@@ -245,13 +245,13 @@ Si acaba de empezar, estos son algunos tutoriales rápidos que le ayudarán a sa
 ### <a name="replace-a-failed-drive"></a>Reemplazar una unidad con errores
 
 1. Cuando se produce un error en una unidad, aparece una alerta en el área de **alertas** superior izquierda del **Panel**.
-2. También puede seleccionar **unidades** de navegación en el lado izquierdo o hacer clic en el vínculo **ver unidades >** en el icono de la esquina inferior derecha para examinar las unidades y ver su estado por sí mismo. En la pestaña **inventario** , la cuadrícula admite la ordenación, la agrupación y la búsqueda de palabras clave.
+2. También puede seleccionar **Drives** (Unidades) en el panel de navegación del lado izquierdo, o hacer clic en el vínculo **VIEW DRIVES >** (VER UNIDADES) en el icono de la esquina inferior derecha para examinar las unidades y ver su estado. En la pestaña **inventario** , la cuadrícula admite la ordenación, la agrupación y la búsqueda de palabras clave.
 3. En el **Panel**, haga clic en la alerta para ver los detalles, como la ubicación física de la unidad.
-4. Para obtener más información, haga clic en el acceso directo **ir a la unidad** a la página de detalles de la **unidad** .
-5. Si el hardware lo admite, puede hacer clic en **activar o desactivar luz** para controlar la luz del indicador de la unidad.
-6. Espacios de almacenamiento directo retira y evacua automáticamente las unidades con errores. Cuando esto sucede, el estado de la unidad es retirado y su barra de capacidad de almacenamiento está vacía.
-7. Quite la unidad con errores e inserte su reemplazo.
-8. En **unidades > inventario**, aparecerá la nueva unidad. En el tiempo, la alerta se borrará, los volúmenes se repararán al estado correcto y el almacenamiento se reequilibrará en la nueva unidad: no se requiere ninguna acción del usuario.
+4. Para más información, haga clic en el acceso directo **Go to drive** (vaya a la unidad) para ir a la página de detalles de la unidad **Drive**.
+5. Si el hardware lo admite, puede hacer clic en **Turn light on/off** (Activar o desactivar la luz) para controlar la luz del indicador de la unidad.
+6. Espacios de almacenamiento directo retira y evacua automáticamente las unidades con errores. Cuando esto sucede, el estado de la unidad es Retired (Retirada) y su barra de capacidad de almacenamiento está vacía.
+7. Quite la unidad con errores e inserte la unidad de reemplazo.
+8. En **Drives > Inventory** (Unidades > Inventario) aparecerá la nueva unidad. Con el tiempo, la alerta se borrará, los volúmenes volverán a un estado correcto y el almacenamiento se reequilibrará en la nueva unidad. No se requiere ninguna acción del usuario.
 
 ### <a name="manage-virtual-networks-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>Administrar redes virtuales (clústeres HCI habilitados para SDN mediante la versión preliminar del centro de administración de Windows)
 
@@ -278,7 +278,7 @@ También puede configurar la red virtual al crear una máquina virtual.
 
 ![Supervisión de la infraestructura de SDN](../media/manage-hyper-converged/sdn-monitoring.png)
 
-## <a name="feedback"></a>Comentarios
+## <a name="give-us-feedback"></a>Envíenos sus comentarios.
 
 ¡ Es todo lo que tiene que hacer! La ventaja más importante de las actualizaciones frecuentes es oír lo que está trabajando y lo que se debe mejorar. Estas son algunas formas de hacernos saber lo que está pensando:
 

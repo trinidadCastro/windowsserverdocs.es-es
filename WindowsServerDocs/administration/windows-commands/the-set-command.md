@@ -1,5 +1,5 @@
 ---
-title: set
+title: Usar el comando set
 description: Artículo de referencia para Set, que establece las propiedades y los atributos de los servidores de servicios de implementación de Windows, los equipos preconfigurados, las imágenes, los grupos de imágenes y los servidores de transporte.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b11c9b349fc1473d1d6ec167528c43ac314b51e9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4d292dfb7c069cbdb0fe80afe5cfd426735eaf7c
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934599"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519624"
 ---
-# <a name="set"></a>set
+# <a name="using-the-set-command"></a>Usar el comando set
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 

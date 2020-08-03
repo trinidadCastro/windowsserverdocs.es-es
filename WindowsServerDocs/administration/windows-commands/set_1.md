@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 002ac4624d9ed501fab7816a83c2a0c5fc6a2bce
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 34c8abf01e7dbde7a8f175ac8691e5731a04be45
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922823"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519664"
 ---
 # <a name="set"></a>set
 
 Muestra, establece o quita cmd.exe variables de entorno. Si se usa sin parámetros, **set** muestra la configuración actual de las variables de entorno.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -65,7 +63,7 @@ set /a <Variable>=<Expression>
 
   En la tabla siguiente se enumeran los operadores admitidos para **/a** en orden descendente de prioridad.
 
-  |        Operator         | Operación realizada  |
+  |        Operador         | Operación realizada  |
   |-------------------------|----------------------|
   |           ( )           |       Agrupar       |
   |          ! ~ -          |        Unario         |

@@ -8,18 +8,18 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: e95c11007548c0e1db77132b6e872b88569d3b47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3792a1e9b5c8978fdc8db5201ff4d439dbfb98d6
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963007"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519022"
 ---
-# <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperación de bosque de AD: copia de seguridad de un servidor completo  
+# <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperación de bosque de AD: copia de seguridad de un servidor completo
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 y 2012 R2, Windows Server 2008 y 2008 R2
 
-Se recomienda una copia de seguridad completa del servidor para preparar la recuperación de un bosque, ya que se puede restaurar en otro hardware o en una instancia de sistema operativo diferente.  Con Copias de seguridad de Windows Server puede realizar una copia de seguridad completa del servidor. 
+Se recomienda una copia de seguridad completa del servidor para preparar la recuperación de un bosque, ya que se puede restaurar en otro hardware o en una instancia de sistema operativo diferente.  Con Copias de seguridad de Windows Server puede realizar una copia de seguridad completa del servidor.
 
 ## <a name="windows-server-backup"></a>Copias de seguridad de Windows Server
 
@@ -28,7 +28,7 @@ Copias de seguridad de Windows Server no se instala de forma predeterminada. En 
 >[!NOTE]
 >Tenga en cuenta que los pasos pueden variar ligeramente entre Windows Server 2016 y Windows Server 2012 R2.
 
-Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2008 R2, consulte [instalación de copias de seguridad de Windows Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10)).  
+Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2008 R2, consulte [instalación de copias de seguridad de Windows Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10)).
 
 ### <a name="to-install-windows-server-backup"></a>Para instalar Copias de seguridad de Windows Server
 
@@ -47,7 +47,7 @@ Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2
 1. Abra **Administrador del servidor**, haga clic en **herramientas**y, a continuación, haga clic en **copias de seguridad de Windows Server**.
    - En Windows Server 2008 R2 y Windows Server 2008, haga clic en **Inicio**, seleccione **herramientas administrativas**y, a continuación, haga clic en **copias de seguridad de Windows Server**.
 
-   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png) 
+   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
 
 2. Si se le solicita, en el cuadro de diálogo **control de cuentas de usuario** , proporcione credenciales de operador de copia de seguridad y, a continuación, haga clic en **Aceptar**.
 3. Haga clic en **copia de seguridad local**.
@@ -75,8 +75,8 @@ Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2
 Wbadmin.exe es una utilidad de línea de comandos que permite realizar copias de seguridad y restaurar el sistema operativo, los volúmenes, los archivos, las carpetas y las aplicaciones desde el símbolo del sistema.
 
 ### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>Para realizar una copia de seguridad completa del servidor mediante Wbadmin.exe
-  
-- Abra un símbolo del sistema con privilegios elevados, escriba el siguiente comando y presione ENTRAR:  
+
+- Abra un símbolo del sistema con privilegios elevados, escriba el siguiente comando y presione ENTRAR:
 
    ```
    wbadmin start backup -backuptarget:<Drive_letter_to store_backup>: -include:<Drive_letter_to_include>:

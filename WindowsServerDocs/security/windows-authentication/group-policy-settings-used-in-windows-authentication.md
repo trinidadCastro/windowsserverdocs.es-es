@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: d5268a5d95dd99bade89015863ea3eadf1b7913a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9cbf10e9ebce5bbe0865f28001d0c505b42c9742
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475512"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518000"
 ---
 # <a name="group-policy-settings-used-in-windows-authentication"></a>Configuración de directiva de grupo utilizada en la autenticación de Windows
 
@@ -25,7 +25,7 @@ En este tema de referencia para profesionales de TI se describe el uso y el impa
 Puede administrar la autenticación en los sistemas operativos Windows agregando cuentas de usuario, equipo y servicio a grupos y, a continuación, aplicando directivas de autenticación a esos grupos. Estas directivas se definen como directivas de seguridad local y como plantillas administrativas, también conocidas como directiva de grupo configuración. Ambos conjuntos se pueden configurar y distribuir en toda la organización mediante el uso de directiva de grupo.
 
 > [!NOTE]
-> Las características introducidas en Windows Server 2012 R2 le permiten configurar directivas de autenticación para servicios o aplicaciones dirigidos, normalmente denominados silos de autenticación, mediante el uso de cuentas protegidas. Para obtener información sobre cómo hacer esto en Active Directory, consulte [How to Configure Protected accounts](how-to-configure-protected-accounts.md).
+> Las características introducidas en Windows Server 2012 R2 le permiten configurar directivas de autenticación para servicios o aplicaciones dirigidos, normalmente denominados silos de autenticación, mediante el uso de cuentas protegidas. Para obtener información sobre cómo hacer esto en Active Directory, consulte [How to Configure Protected accounts](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
 
 Por ejemplo, puede aplicar las directivas siguientes a los grupos, en función de su función en la organización:
 

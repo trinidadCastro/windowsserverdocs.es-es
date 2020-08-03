@@ -8,22 +8,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: a2e4b17a0f8f38812366dc2913e6c2ee25d4d137
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c814098aeb73ca186e0a0db668f477f9cc1f5cf9
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961157"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409575"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Novedades de Windows Server, versión 1709
 
->Se aplica a: Windows Server (Canal semianual)
+> Se aplica a: Windows Server (Canal semianual)
 
 <img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;Para obtener información sobre las características más recientes de Windows, consulta [Novedades de Windows Server](whats-new-in-windows-server.md). El contenido de esta sección describe las novedades y los cambios de Windows Server, versión 1709. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión. Consulta también [Windows Server, versión 1709](https://cloudblogs.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/).
 
 > [!IMPORTANT]
 > A partir del 9 de abril de 2019, Windows Server, versión 1709 ya no tiene soporte técnico.
-
 
 ## <a name="new-cadence-of-releases"></a>Nueva cadencia de versiones
 
@@ -33,21 +32,21 @@ A partir de esta versión, tienes dos opciones para recibir actualizaciones de c
 
 Los canales de lanzamiento se resumen en la tabla siguiente.
 
-|   | Canal semianual | Canal de mantenimiento a largo plazo |
-| ------------- | ------------- | ------------ |
-| Cadencia de lanzamientos  | Dos veces al año (primavera y otoño)  | Cada 2 a 3 años |
-| Programación de soporte  | Soporte de producción estándar durante 18 meses  | Soporte estándar durante 5 años + Soporte extendido durante 5 años |
-| Disponibilidad  | Software Assurance o Azure (hospedado en la nube)  | Todos los canales |
-| Convenciones de nomenclatura  | Windows Server, versión AAMM  | Windows Server AAAA |
+| Descripción | Canal semianual | Canal de mantenimiento a largo plazo |
+| ------------- |--| -- |
+| Cadencia de lanzamientos | Dos veces al año (primavera y otoño) | Cada 2 a 3 años |
+| Programación de soporte | Soporte de producción estándar durante 18 meses | Soporte estándar durante 5 años + Soporte extendido durante 5 años |
+| Disponibilidad | Software Assurance o Azure (hospedado en la nube) | Todos los canales |
+| Convenciones de nomenclatura | Windows Server, versión AAMM | Windows Server AAAA |
 
 Para más información, consulta la [comparación de canales de mantenimiento](../get-started-19/servicing-channels-19.md).
 
 ## <a name="application-containers-and-micro-services"></a>Microservicios y contenedores de aplicaciones
 
-- La imagen del contenedor de Server Core se ha optimizado aún más para escenarios de tipo "lift-and-shift", donde se pueden migrar bases de código existentes o aplicaciones en contenedores con cambios mínimos, y también es un 60 % más reducida. 
+- La imagen del contenedor de Server Core se ha optimizado aún más para escenarios de tipo "lift-and-shift", donde se pueden migrar bases de código existentes o aplicaciones en contenedores con cambios mínimos, y también es un 60 % más reducida.
 - La imagen de contenedor de Nano Server es casi un 80 % más reducida.
     - En el Canal semianual de Windows Server, Nano Server como imagen de sistema operativo base de contenedor disminuye de 390 MB a 80 MB.
-- Contenedores Linux con aislamiento de Hyper-V 
+- Contenedores Linux con aislamiento de Hyper-V
 
 Para más información, consulta [Cambios en Nano Server en el próximo lanzamiento de Windows Server](./nano-in-semi-annual-channel.md) y [Windows Server, versión 1709 para desarrolladores](https://cloudblogs.microsoft.com/windowsserver/2017/09/13/sneak-peek-3-windows-server-version-1709-for-developers/).
 
@@ -58,7 +57,7 @@ El Proyecto Honolulu incluye una experiencia de administración intuitiva y tota
 
 ## <a name="compute"></a>Cálculo
 
-**Contenedor Nano y contenedor Server Core**: En primer lugar, esta versión trata de cómo impulsar la innovación en las aplicaciones. Nano Server o Nano como host está en desuso y se ha sustituido por el contenedor Nano, que es Nano ejecutándose como una imagen de contenedor. 
+**Contenedor Nano y contenedor Server Core**: En primer lugar, esta versión trata de cómo impulsar la innovación en las aplicaciones. Nano Server o Nano como host está en desuso y se ha sustituido por el contenedor Nano, que es Nano ejecutándose como una imagen de contenedor.
 
 Para más información sobre los contenedores, consulta [Introducción a las redes contenedor](../networking/sdn/technologies/containers/container-networking-overview.md).
 
@@ -91,15 +90,15 @@ Para más información, consulta [Información general sobre máquinas virtuales
 ## <a name="storage"></a>Almacenamiento
 
 **Réplica de almacenamiento**: la protección de recuperación ante desastres agregada por Réplica de almacenamiento en Windows Server 2016 se ha expandido para incluir:
-- **Conmutación por error de prueba**: la opción para montar el almacenamiento de destino ya es posible mediante la característica Conmutación por error de prueba. Puedes montar una instantánea del almacenamiento replicado en los nodos de destino temporalmente para realizar pruebas o copias de seguridad.  Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq). 
+- **Conmutación por error de prueba**: la opción para montar el almacenamiento de destino ya es posible mediante la característica Conmutación por error de prueba. Puedes montar una instantánea del almacenamiento replicado en los nodos de destino temporalmente para realizar pruebas o copias de seguridad.  Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
 - **Soporte del proyecto Honolulu**: el soporte de la administración gráfica de la replicación servidor a servidor ya está disponible en el proyecto Honolulu. Esto elimina la necesidad de usar PowerShell para administrar una carga de trabajo de protección ante desastres comunes.
 
-**SMB**: 
-- **Eliminación de la autenticación de invitados y SMB1**: Windows Server, versión 1709 ya no instala el servidor y el cliente SMB1 de manera predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de manera predeterminada. Para más información, revisa [SMBv1 no está instalado de manera predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
+**SMB**:
+- **Eliminación de la autenticación de invitados y SMB1**: Windows Server, versión 1709 ya no instala el servidor y el cliente SMB1 de manera predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de manera predeterminada. Para más información, revisa [SMBv1 no está instalado de manera predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server).
 
 - **Compatibilidad y seguridad de SMB2/SMB3**: se agregaron opciones adicionales de compatibilidad de seguridad y aplicaciones, incluida la capacidad de desactivar bloqueos oportunistas en SMB2+ para aplicaciones heredadas, además de requerir inicio de sesión o cifrado en función de la base por conexión de un cliente. Para más información, revisa la Ayuda del módulo de SMBShare de PowerShell.
 
-**Desduplicación de datos**: 
+**Desduplicación de datos**:
 - **Ahora Desduplicación de datos admite ReFS**: ya no tienes que elegir entre las ventajas de un sistema de archivos moderno con ReFS y Desduplicación de datos, ya que ahora puedes habilitar Desduplicación de datos siempre que puedas habilitar ReFS. Aumenta la eficacia del almacenamiento hasta un 95 % con ReFS.
 - **DataPort API para la entrada o salida optimizadas de volúmenes desduplicados**: los desarrolladores ahora pueden aprovechar el conocimiento que tiene Desduplicación de datos sobre cómo almacenar datos para mover datos entre volúmenes, servidores y clústeres de manera eficaz.
 
@@ -150,7 +149,7 @@ Se admite la **malla de enrutamiento de Docker**. La malla de enrutamiento de en
 **Redes definidas por software**
 
 - **Cifrado de red virtual** es una nueva característica que proporciona la capacidad para cifrar el tráfico de red virtual entre máquinas virtuales que se comunican entre sí dentro de subredes que están marcadas con Cifrado habilitado. Esta característica utiliza la Seguridad de la capa de transporte de datagrama (DTLS) en la subred virtual para cifrar los paquetes.  DTLS proporciona protección contra interceptaciones, alteraciones y falsificaciones realizadas por cualquier persona con acceso a la red física.
- 
+
 **VPN de Windows 10**
 
 - **Túneles de infraestructura de inicio de sesión previo**. De manera predeterminada, la VPN de Windows 10 no crea automáticamente túneles infraestructura cuando los usuarios no han iniciado sesión en su equipo o dispositivo. Puedes configurar la VPN de Windows 10 para crear automáticamente túneles de infraestructura de inicio de sesión previo mediante la característica de túnel de dispositivo (inicio de sesión previo) en el perfil VPN.

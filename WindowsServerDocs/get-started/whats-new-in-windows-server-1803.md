@@ -8,16 +8,16 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 73d0d62aac3771c4150a133950085170f7f51cb5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 32410c9b2645d96ee1190afdda6a2ce75f09feef
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961147"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409565"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Novedades de Windows Server, versión 1803
 
->Se aplica a: Windows Server (Canal semianual)
+> Se aplica a: Windows Server (Canal semianual)
 
 <img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;Para obtener información sobre las características más recientes de Windows, consulta [Novedades de Windows Server](whats-new-in-windows-server.md). El contenido de esta sección describe las novedades y los cambios de Windows Server, versión 1803. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión. Consulta también [Actualización del Canal semianual de Windows Server](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/).
 
@@ -39,14 +39,14 @@ En función de la telemetría y los comentarios, estos canales han demostrado qu
 
 Los escenarios específicos para el Canal semianual y el Canal de mantenimiento a largo plazo son los siguientes:
 
-|   | Canal de mantenimiento a largo plazo |  Canal semianual |
-| ------------- | ------------- | ------------ |
-| Escenarios recomendados     | Servidores de archivos de uso general, cargas de trabajo propias y de terceros, aplicaciones tradicionales, roles de infraestructura, centro de datos definido mediante software e infraestructura hiperconvergida  | Aplicaciones en contenedor, hosts de contenedor y escenarios de aplicaciones que se benefician de una innovación más rápida |
-| Nuevas versiones  | Cada 2–3 años  | Cada 6 meses |
-| Soporte técnico  | 5 años de soporte estándar + 5 años de soporte ampliado  | 18 meses |
-| Ediciones  | Todas las ediciones de Windows Server disponibles  | Ediciones Standard y Datacenter |
-| ¿Quién puede usarlas?  | Todos los clientes a través de todos los canales | Solo clientes de Software Assurance y de la nube |
-| Opciones de instalación  | Server Core y Server con experiencia de escritorio  | Server Core para host contenedor, imagen de contenedor y imagen de contenedor de Nano Server |
+| Descripción | Canal de mantenimiento a largo plazo | Canal semianual |
+|--|--|--|
+| Escenarios recomendados | Servidores de archivos de uso general, cargas de trabajo propias y de terceros, aplicaciones tradicionales, roles de infraestructura, centro de datos definido mediante software e infraestructura hiperconvergida | Aplicaciones en contenedor, hosts de contenedor y escenarios de aplicaciones que se benefician de una innovación más rápida |
+| Nuevas versiones | Cada 2–3 años | Cada 6 meses |
+| Soporte técnico | 5 años de soporte estándar + 5 años de soporte ampliado | 18 meses |
+| Ediciones | Todas las ediciones de Windows Server disponibles | Ediciones Standard y Datacenter |
+| ¿Quién puede usarlas? | Todos los clientes a través de todos los canales | Solo clientes de Software Assurance y de la nube |
+| Opciones de instalación | Server Core y Server con experiencia de escritorio | Server Core para host contenedor, imagen de contenedor y imagen de contenedor de Nano Server |
 
 ## <a name="application-platform-and-containers"></a>Contenedores y plataforma de aplicaciones
 

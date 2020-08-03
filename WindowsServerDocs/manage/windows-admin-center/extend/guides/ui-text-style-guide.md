@@ -1,5 +1,5 @@
 ---
-title: Guía de estilo de texto y diseño de la interfaz de usuario de Windows Admin Center
+title: Guía de estilo de texto y diseño de la interfaz de usuario del centro de administración de Windows
 description: Guía de estilo de texto y diseño de la interfaz de usuario del centro de administración de Windows SDK
 ms.technology: manage
 ms.topic: article
@@ -8,44 +8,43 @@ ms.author: jgerend
 ms.date: 01/17/2020
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: ba3cdb8dbd81ee85b0679905444f35174b8138e0
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: d8215f3589e021ec5df6a3a150d09a2388a2f35d
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519467"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518553"
 ---
-# <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guía de estilo de texto y diseño de la interfaz de usuario de Windows Admin Center
+# <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guía de estilo de texto y diseño de la interfaz de usuario del centro de administración de Windows
 
->Se aplica a: Centro de administración de Windows
+>Se aplica a: Windows Admin Center
 
-En este tema se describe el método general para escribir el texto de la interfaz de usuario (IU) de Windows Admin Center, así como algunas convenciones específicas y soluciones que estamos aportando.
+En este tema se describe el enfoque general para escribir texto de la interfaz de usuario (UI) para el centro de administración de Windows, así como algunas convenciones y enfoques específicos que estamos llevando a cabo.
 
-Windows Admin Center y las extensiones deben seguir los [principios de voz de Microsoft](https://docs.microsoft.com/style-guide/brand-voice-above-all-simple-human) para que la experiencia sea descriptiva y fácil de usar. Esta guía de estilo se basa en estos principios de voz, así como en la [Guía de estilo de escritura de Microsoft](https://docs.microsoft.com/style-guide/welcome/), por tanto asegúrate de desproteger estos recursos para obtener información sobre elementos como [accesibilidad](https://docs.microsoft.com/style-guide/accessibility/accessibility-guidelines-requirements), [acrónimos](https://docs.microsoft.com/style-guide/acronyms) y la [elección de palabras](https://docs.microsoft.com/style-guide/word-choice/) como [por favor](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/p/please)y [lo sentimos](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/s/sorry).
+El centro de administración de Windows y todas las extensiones deben seguir los [principios de voz de Microsoft](https://docs.microsoft.com/style-guide/brand-voice-above-all-simple-human) para que la experiencia sea fácil de usar y de fácil uso. Esta guía de estilo se basa en estos principios de voz, así como en la [Guía de estilo de escritura de Microsoft](https://docs.microsoft.com/style-guide/welcome/), por lo que debe asegurarse de consultar ambos recursos para obtener información sobre aspectos como la [accesibilidad](https://docs.microsoft.com/style-guide/accessibility/accessibility-guidelines-requirements), los [acrónimos](https://docs.microsoft.com/style-guide/acronyms)y la [elección de palabras](https://docs.microsoft.com/style-guide/word-choice/) , como [por](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/p/please)ejemplo, y [lo sentimos](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/s/sorry).
 
 ## <a name="buttons"></a>Botones
 
-- Los botones deben ser una palabra siempre que sea posible, especialmente si tienes previsto localizar tu herramienta. Dos o tres son correctos, pero intentan evitar más tiempo. Si tiene cuatro palabras o más, sería mejor utilizar un control de vínculo.
-- Las etiquetas de los botones deben ser concisas, específicas y autoexplicativas. En lugar de un botón genérico "Enviar", usa un verbo que corresponda a la acción del usuario, como "Crear", "Eliminar", "Agregar", "Formatear", etc.
-- Si un botón sigue a una pregunta, su etiqueta debe corresponder con claridad a la pregunta (normalmente "Sí" o "No").
+- Los botones deben ser una palabra siempre que sea posible, especialmente si tiene previsto localizar la herramienta. Dos o tres son correctos, pero intentan evitar más tiempo. Si tiene cuatro palabras o más, sería mejor utilizar un control de vínculo.
+- Las etiquetas de los botones deben ser concisas, específicas y autoexplicativas. En lugar de un botón "enviar" genérico, use un verbo que se corresponda con la acción del usuario, como "crear", "eliminar", "agregar", "formato", etc.
+- Si un botón sigue a una pregunta, su etiqueta debe corresponderse claramente a la pregunta (normalmente "sí" o "no").
 
 ## <a name="capitalization"></a>Uso de mayúsculas
 
-Seguimos el estilo de Microsoft para el [uso de mayúsculas](https://docs.microsoft.com/style-guide/capitalization): uso de mayúsculas con estilo de oración para casi todo.
+Seguimos el estilo de Microsoft [para usar](https://docs.microsoft.com/style-guide/capitalization) las mayúsculas y minúsculas con el estilo de oraciones en casi todo.
 
-| Elemento de la interfaz de usuario              |Uso de mayúsculas|Observaciones|
+| Elemento de la interfaz de usuario              |Uso de mayúsculas|Comentarios|
 |-------------------------|--------------|--------|
-|Distintivos (como VISTA PREVIA) |Todo en mayúsculas      ||
-|Todo lo demás          |Estilo de frase|Sin embargo, hay algunas excepciones donde nos encontramos con propiedades de objetos de WMI o PowerShell que se encuentran fuera de nuestro control.|
+|Distintivos (como versión preliminar) |Todo mayúsculas      ||
+|Todo lo demás          |Estilo de oraciones|Sin embargo, hay algunas excepciones en las que se muestran las propiedades de objeto de WMI o PowerShell que se encuentran fuera de nuestro control.|
 
 ## <a name="colons"></a>Dos puntos
 
 Use dos puntos para introducir listas. Por ejemplo:
 
-    Choose one of the following:
-    Cats
-    Dogs
-    Quokkas
+Elija alguna de las acciones siguientes:
+
+Gatos de perros quokkas
 
 No use signos de dos puntos en el texto de la interfaz de usuario cuando una etiqueta esté en una línea diferente de lo que se etiqueta o cuando haya una distinción clara entre la etiqueta y el elemento que tiene el etiquetado.
 
@@ -53,9 +52,9 @@ Use los dos puntos en el texto de la interfaz de usuario cuando una etiqueta est
 
 ## <a name="confirmation-messages"></a>Mensajes de confirmación
 
-Los cuadros de diálogo de confirmación son útiles cuando la continuación puede tener resultados inesperados, como la pérdida de datos. Deben contener información útil digitalizable con un resultado claro, especialmente para los eventos que no se pueden revertir. 
+Los cuadros de diálogo de confirmación son útiles cuando la continuación puede tener resultados inesperados, como la pérdida de datos. Deben contener información útil digitalizable con un resultado claro, especialmente para los eventos que no se pueden revertir.
 
-- Asegúrese de que es necesario realizar una confirmación. Si no hay información nueva para ofrecer (por ejemplo, "¿está seguro?"), es posible que no sea necesario un mensaje de confirmación.  
+- Asegúrese de que es necesario realizar una confirmación. Si no hay información nueva para ofrecer (por ejemplo, "¿está seguro?"), es posible que no sea necesario un mensaje de confirmación.
 - Compruebe que el cliente desea continuar con la acción.
 - Asegúrese de que la instrucción principal (encabezado) y el texto explicativo (cuerpo) no son redundantes.
 - En el encabezado, defina los resultados posibles como una pregunta o una instrucción sobre lo que ocurrirá a continuación. Por ejemplo, "borrar todos los datos de esta unidad? o bien, "está a punto de borrar todos los datos".
@@ -65,47 +64,47 @@ Los cuadros de diálogo de confirmación son útiles cuando la continuación pue
 
 ## <a name="first-run-experiences"></a>Experiencias de primera ejecución
 
-Cuando un usuario visita por primera vez una página, tienes la oportunidad de ayudarle a empezar a trabajar con la herramienta. Esto podría ser:
+La primera vez que un usuario visita una página, tiene la oportunidad de ayudarle a empezar a trabajar con la herramienta. Esto podría ser:
 
-- Una cadena de texto en una página en blanco con instrucciones breves sobre cómo empezar a trabajar, por ejemplo, "Selecciona 'Agregar' para agregar una aplicación".
-- Un vínculo al control que permite al usuario comenzar, por ejemplo, "Agregar una aplicación para empezar".
-- Una animación o un vídeo pequeño o breve que muestre al usuario cómo empezar a trabajar
+- Una cadena de texto en una página vacía con instrucciones breves sobre cómo empezar, por ejemplo, "seleccione" agregar "para agregar una aplicación".
+- Un vínculo al control que obtiene el usuario iniciado, por ejemplo, "agregar una aplicación para empezar".
+- Animaciones o vídeos pequeños y cortos que muestran al usuario Cómo empezar
 
 Estas son algunas sugerencias de nuestra guía de estilo de Windows:
 
-### <a name="1-be-helpful"></a>1. Sé útil
+### <a name="1-be-helpful"></a>1. ser útil
 
-- Evita lenguaje y estilo de marketing.
+- Evite el estilo de marketing y el idioma.
 - Cuando Demo o sugiera algo, asegúrese de que el resultado final es claro; con solo mostrar al cliente cómo hacer algo no es efectivo si no saben por qué lo hacen.
 - No presente sugerencias si el cliente no las necesita.
 
-### <a name="2-show-dont-tell"></a>2. Muestra, no indiques
+### <a name="2-show-dont-tell"></a>2. Mostrar, no decir
 
-Mantén un texto lo más simple posible (piensa en animaciones o vídeos pequeños).
+Mantenga el texto lo más sencillo posible (cree animaciones o vídeos pequeños).
 
-### <a name="3-dont-overwhelm"></a>3. No abrumes
+### <a name="3-dont-overwhelm"></a>3. no sobrecargar
 
-- Limita los elementos emergentes y sugerencias a 4 por sesión de uso combinado, incluidas las notificaciones del sistema y las notificaciones del shell.
-- Asegúrate de que la sincronización de los elementos emergentes sea útil.
+- Limite los elementos emergentes y sugerencias a 4 por cada sesión de uso combinada, incluidas las notificaciones del sistema y las notificaciones de Shell.
+- Asegúrese de que el control de tiempo de los elementos emergentes sea útil.
 - No Evite que el cliente haga algo.
-- Asegúrate de que los elementos emergentes se cierren fácilmente.
+- Asegúrese de que los elementos emergentes se descartan fácilmente.
 
-### <a name="4-keep-it-contextual"></a>4. Consigue que sea contextual
+### <a name="4-keep-it-contextual"></a>4. mantener contextual
 
-- Los momentos didácticos son más eficaces cuando se presentan en el momento adecuado.
-- Si creas tutoriales o presentaciones, la información debe ser concreta.
-- Evita adornos de marketing, céntrate en consejos y sugerencias específicos.
+- Los momentos de enseñanza son más eficaces cuando se presentan en el momento adecuado.
+- Si crea tutoriales o presentaciones de diapositivas, mantenga la información concreta.
+- Sin Marketing "desenfadados", se centra en consejos y trucos específicos.
 - Proporcionar una manera para que los clientes vuelvan al tutorial más adelante, si es pertinente (a menudo, las personas no conservan la información por primera vez, pero las instrucciones de configuración pueden ser solo relevantes una vez).
-- La mensajería con estado vacío es un lugar natural para aprender y/o deleitar, haz que sean simples e informativos.
+- La mensajería en estado vacío es un lugar natural para el aprendizaje o la alegría, por lo que es muy sencillo e informativo.
 
-### <a name="5-minimize-painful-setup"></a>5. Minimiza las configuraciones difíciles
+### <a name="5-minimize-painful-setup"></a>5. minimice la configuración complicada
 
-Cuando necesites que el cliente realice otra acción para experimentar el valor completo (iniciar sesión en un servicio en línea, etc.), hazlo de la forma más sencilla posible.
+Cuando necesite que el cliente realice otra acción para experimentar el valor completo (inicio de sesión en un servicio en línea, etc.), haga que sea tan sencillo como sea posible.
 
 - La mensajería debe ser breve y directa.
-- Evita enviarlos a otra ubicación. Si es posible, proporciona un medio para conectarse desde donde estén.
-- Si es posible, posibilita la opción de hacerlo más adelante y, a continuación, recuérdales la posibilidad de hacerlo más adelante.
-- Si los sacas de su experiencia, proporciona una forma de volver de forma rápida y sencilla.
+- Evite enviarlos. Si es posible, proporcione un medio para conectarse desde donde estén.
+- Si es posible, permita la opción para hacerlo más adelante y, a continuación, recuérdeles que lo hagan más adelante.
+- Si saca provecho de su experiencia, proporcione una manera de volver rápida y fácilmente.
 
 ## <a name="help-links"></a>Vínculos a la Ayuda
 
@@ -115,13 +114,13 @@ Estas son algunas sugerencias de nuestra guía de estilo de Windows:
 
 Casi nunca. Proporcione un vínculo de ayuda solo cuando:
 
-- Hay una pregunta obvia y evidente que es probable que tengan los clientes mientras están en la interfaz de usuario, la respuesta a la que les ayudará en la tarea de interfaz de usuario. 
-- No hay espacio suficiente en la interfaz de usuario para proporcionar la cantidad de información necesaria para que los usuarios se ejecuten correctamente en la tarea de la interfaz de usuario. 
+- Hay una pregunta obvia y evidente que es probable que tengan los clientes mientras están en la interfaz de usuario, la respuesta a la que les ayudará en la tarea de interfaz de usuario.
+- No hay espacio suficiente en la interfaz de usuario para proporcionar la cantidad de información necesaria para que los usuarios se ejecuten correctamente en la tarea de la interfaz de usuario.
 
-### <a name="where-should-help-links-appear"></a>¿Dónde deberían aparecer los vínculos de ayuda? 
+### <a name="where-should-help-links-appear"></a>¿Dónde deberían aparecer los vínculos de ayuda?
 
-- Los vínculos de texto deben aparecer tan cerca del elemento de la interfaz de usuario a la que se dirige la ayuda en la medida de lo posible. 
-- Si debe proporcionar un vínculo de texto que se aplique a toda la pantalla de la interfaz de usuario, colóquelo en la parte inferior izquierda de la pantalla. 
+- Los vínculos de texto deben aparecer tan cerca del elemento de la interfaz de usuario a la que se dirige la ayuda en la medida de lo posible.
+- Si debe proporcionar un vínculo de texto que se aplique a toda la pantalla de la interfaz de usuario, colóquelo en la parte inferior izquierda de la pantalla.
 - Si proporciona un vínculo a través de un botón ayuda (?), la información sobre herramientas debe ser "ayuda".
 
 ### <a name="what-url-should-we-use"></a>¿Qué dirección URL debería usar?
@@ -130,26 +129,26 @@ No vincule nunca directamente a una dirección web; en su lugar, use un servicio
 
 Los desarrolladores de Microsoft deben usar un FWLink, excepto cuando se trata de un vínculo de ayuda que es posible que los usuarios tengan que escribir manualmente, en cuyo caso se usa un vínculo de aka.ms (siempre que el destino de la dirección URL sea un sitio web que reconozca automáticamente la configuración regional del explorador, como Docs.microsoft.com)
 
-### <a name="text-guidelines"></a>Instrucciones de texto 
+### <a name="text-guidelines"></a>Instrucciones de texto
 
 - Usar oraciones completas.
-- No incluya signos de puntuación finales salvo los signos de interrogación. 
-- No es necesario usar el mismo texto que el título de la tarea. Use texto que tenga sentido en el contexto de la interfaz de usuario, pero asegúrese de que hay una conexión lógica entre los dos. Por ejemplo: 
-- Vínculo de ayuda: ¿Cuál es el riesgo de permitir excepciones? 
+- No incluya signos de puntuación finales salvo los signos de interrogación.
+- No es necesario usar el mismo texto que el título de la tarea. Use texto que tenga sentido en el contexto de la interfaz de usuario, pero asegúrese de que hay una conexión lógica entre los dos. Por ejemplo:
+- Vínculo de ayuda: ¿Cuál es el riesgo de permitir excepciones?
 - Título del tema de ayuda: "permitir que un programa se comunique a través de Firewall de Windows"
-- Sea lo más específico posible sobre el contenido del tema de ayuda. 
+- Sea lo más específico posible sobre el contenido del tema de ayuda.
     - Nuestro estilo
         - ¿Cómo ayuda Firewall de Windows a proteger el equipo?
         - Por qué los resaltados pueden mejorar una imagen
     - No es nuestro estilo
         - Más información sobre Firewall de Windows
         - Más información sobre la administración del color
-        - Obtén más información
-- Use la oración completa para el texto del vínculo, no solo las palabras clave. 
-    - Nuestro estilo 
+        - Saber más
+- Use la oración completa para el texto del vínculo, no solo las palabras clave.
+    - Nuestro estilo
         - [¿Cuáles son los riesgos de permitir excepciones?]()
     - No es nuestro estilo
-        - ¿Cuáles son los [riesgos de permitir excepciones]()? 
+        - ¿Cuáles son los [riesgos de permitir excepciones]()?
 
 ## <a name="error-messages"></a>Mensajes de error
 
@@ -199,12 +198,12 @@ El estado NULL se produce cuando los datos o el contenido del cliente no están 
 
 ### <a name="guidelines"></a>Instrucciones
 
-- Si es posible, utilice situaciones de estado NULL como una oportunidad para enseñar a las personas cómo usar la característica (por ejemplo, cómo agregar música, dónde buscar imágenes, etc.).  
-  - Si tiene un título en la interfaz de usuario, explique la acción que se debe realizar para "corregir" el estado null (por ejemplo, "agregar música") 
-  - Diviértase con el texto. Este espacio puede ser una oportunidad para proporcionar alegría, ya que probablemente no se verá varias veces. 
-  - Evite "se no hay nada aquí". Es Sad y se ha sobreutilizado. 
-  - ¿Desea evitar preguntas como "¿no ha conectado la impresora?" Está bien para usarse una vez, pero este formato tiende a ser sobreutilizado y las preguntas ponen en exceso la carga y la presión sobre el cliente. También puede sentir un descenso. 
-  - La variedad en el texto de estado NULL es una buena cosa. 
+- Si es posible, utilice situaciones de estado NULL como una oportunidad para enseñar a las personas cómo usar la característica (por ejemplo, cómo agregar música, dónde buscar imágenes, etc.).
+  - Si tiene un título en la interfaz de usuario, explique la acción que se debe realizar para "corregir" el estado null (por ejemplo, "agregar música")
+  - Diviértase con el texto. Este espacio puede ser una oportunidad para proporcionar alegría, ya que probablemente no se verá varias veces.
+  - Evite "se no hay nada aquí". Es Sad y se ha sobreutilizado.
+  - ¿Desea evitar preguntas como "¿no ha conectado la impresora?" Está bien para usarse una vez, pero este formato tiende a ser sobreutilizado y las preguntas ponen en exceso la carga y la presión sobre el cliente. También puede sentir un descenso.
+  - La variedad en el texto de estado NULL es una buena cosa.
 
 ### <a name="examples"></a>Ejemplos
 
@@ -215,31 +214,31 @@ El estado NULL se produce cuando los datos o el contenido del cliente no están 
 - "Cuando haga cosas como desbloquear logros, grabar clips de juegos y agregar amigos, lo verá aquí".
 - "Sus amigos favoritos aparecerán aquí, por lo que puede ver cuándo están en línea y en qué se encuentran."
 
-## <a name="punctuation"></a>Puntuación
+## <a name="punctuation"></a>Signos de puntuación
 
-- Sin puntuación final (puntos, signos de interrogación) en encabezados u oraciones incompletas. Una excepción es un cuadro de diálogo de confirmación donde el encabezado formula la pregunta
-- Usa las instrucciones de la Guía de estilo de Microsoft sobre [puntos](https://docs.microsoft.com/style-guide/punctuation/periods) y [signos de interrogación](https://docs.microsoft.com/style-guide/punctuation/question-marks).
+- Sin puntuación final (puntos, signos de interrogación) para los encabezados o oraciones incompletas. Una excepción se encuentra en un cuadro de diálogo de confirmación donde el encabezado hace la pregunta
+- Use la guía de Microsoft Style Guide para [puntos](https://docs.microsoft.com/style-guide/punctuation/periods) y [signos de interrogación](https://docs.microsoft.com/style-guide/punctuation/question-marks).
 
 ## <a name="status-messages"></a>Mensajes de estado
 
-Los mensajes de estado constan de notificaciones y mensajes emergentes (notificación del sistema).
+Los mensajes de estado se componen de mensajes emergentes (notificación del sistema) y notificaciones.
 
 |Tipo de cadena         | Notas                               |
 |------------        |-------------------------------------|
-|Notificación del sistema               |Tipo oración con puntuación final: idealmente con una variable de objeto para que los usuarios puedan comprender a qué objeto se aplica el mensaje en caso de que hayan salido del objeto|
+|Notificación del sistema               |Caso de oración con puntuación final: idealmente con una variable de objeto para que los usuarios puedan comprender a qué objeto se aplica el mensaje en caso de que se haya desplazado fuera del objeto|
 |Encabezado de la notificación (título) |Caso de oración sin puntuación final (es un encabezado), idealmente con una variable de objeto|
-|Detalles de notificación|Oraciones completas, idealmente con un vínculo a la interfaz de usuario que muestre el objeto|
+|Detalles de la notificación|Oraciones completas, idealmente con un vínculo a la interfaz de usuario que muestra el objeto|
 
-A continuación presentamos algunas recomendaciones detalladas para mensajes de notificación:
+Estas son algunas recomendaciones detalladas para los mensajes de notificación:
 
 |Tipo de cadena         | Notas                               |
 |------------        |-------------------------------------|
-|Iniciado             |Omítelo siempre que sea posible: normalmente puedes saltar al mensaje en curso para minimizar el número de distracciones.|
-|En curso         |Empieza por el verbo de la acción que estés realizando y termina con puntos suspensivos para indicar una operación en curso. A continuación te mostramos un ejemplo:<br> *Creando el volumen ' datos del cliente '...* <br><br>Cuando haya varias variables, use este patrón: <br>*Eliminando la siguiente máquina virtual: {0}; Host: {1}* |
-|Correcto             |Empieza con lo que el software acaba de hacer y termina con "correctamente". A continuación te mostramos un ejemplo:<br> *El volumen ' datos del cliente ' se creó correctamente.*|
-|Error             |Empieza por "No se ha podido" y termina con lo que no ha podido hacer el software. A continuación te mostramos un ejemplo:<br> *No se pudo crear el volumen ' datos del cliente '.*|
+|Comenzado             |Omitir cuando sea posible: normalmente puede pasar al mensaje en curso para minimizar el número de distracciones.|
+|En curso         |Comience con el verbo de la acción que está llevando a cabo y termine con puntos suspensivos para indicar una operación en curso. Este es un ejemplo:<br> *Creando el volumen ' datos del cliente '...* <br><br>Cuando haya varias variables, use este patrón: <br>*Eliminando la siguiente máquina virtual: {0} ; Organizar{1}* |
+|Correcto             |Comience con "correctamente" y acabe con lo que acaba de hacer el software. Este es un ejemplo:<br> *El volumen ' datos del cliente ' se creó correctamente.*|
+|Error             |Comience con "no se pudo" y termine con lo que el software no pudo hacer. Este es un ejemplo:<br> *No se pudo crear el volumen ' datos del cliente '.*|
 
-## <a name="tooltips"></a>Información de herramientas
+## <a name="tooltips"></a>Información sobre herramientas
 
 Una buena información sobre herramientas describe brevemente los controles sin etiqueta o proporciona un poco de información adicional para los controles etiquetados, cuando esto resulta útil. También pueden ayudar a los clientes a navegar por la interfaz de usuario ofreciendo información adicional, no redundante, sobre etiquetas de control, iconos, vínculos, etc.
 

@@ -1,5 +1,5 @@
 ---
-title: 'Recuperación de bosque de AD: copia de seguridad de un servidor completo'
+title: 'Recuperación de bosque de AD: copia de seguridad de los datos de estado del sistema'
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -8,23 +8,23 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 9238cb27-0020-42f7-90d6-fcebf7e3c0bc
 ms.technology: identity-adds
-ms.openlocfilehash: 321f927a3efc4f2391daff92ac4c8b7acb47c055
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5083e6987edc353b373b1048ceeaeb28b5790d23
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824288"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519032"
 ---
-# <a name="ad-forest-recovery---backing-up-the-system-state-data"></a>Recuperación de bosque de AD: copia de seguridad de los datos de estado del sistema  
+# <a name="ad-forest-recovery---backing-up-the-system-state-data"></a>Recuperación de bosque de AD: copia de seguridad de los datos de estado del sistema
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 y 2012 R2, Windows Server 2008 y 2008 R2
 
-Use el procedimiento siguiente para realizar una copia de seguridad del estado del sistema en un controlador de dominio mediante Copias de seguridad de Windows Server o Wbadmin. exe.  
+Use el procedimiento siguiente para realizar una copia de seguridad del estado del sistema en un controlador de dominio mediante Copias de seguridad de Windows Server o wbadmin.exe.
 
 ## <a name="to-perform-a-system-state-backup-using-windows-server-backup"></a>Para realizar una copia de seguridad del estado del sistema mediante Copias de seguridad de Windows Server
 
 1. Abra **Administrador del servidor**, haga clic en **herramientas**y, a continuación, haga clic en **copias de seguridad de Windows Server**.
-   - En Windows Server 2008 R2 y Windows Server 2008, haga clic en **Inicio**, seleccione **herramientas administrativas**y, a continuación, haga clic en **copias de seguridad de Windows Server**. 
+   - En Windows Server 2008 R2 y Windows Server 2008, haga clic en **Inicio**, seleccione **herramientas administrativas**y, a continuación, haga clic en **copias de seguridad de Windows Server**.
 
    ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
 
@@ -37,13 +37,13 @@ Use el procedimiento siguiente para realizar una copia de seguridad del estado d
 
 6. En la página **seleccionar configuración de copia de seguridad** , haga clic en **personalizado)** y, a continuación, haga clic en **siguiente**.
 7. En la pantalla **seleccionar elementos para copia de seguridad** , haga clic en **Agregar elementos** , seleccione **Estado del sistema** y haga clic en **Aceptar**.
-   - En Windows Server 2008 R2 y Windows Server 2008, seleccione los volúmenes que se van a incluir en la copia de seguridad. Si activa la casilla **Habilitar la recuperación del sistema** , se seleccionan todos los volúmenes críticos. 
+   - En Windows Server 2008 R2 y Windows Server 2008, seleccione los volúmenes que se van a incluir en la copia de seguridad. Si activa la casilla **Habilitar la recuperación del sistema** , se seleccionan todos los volúmenes críticos.
 
-   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-System-State/systemstatebackup.png)  
+   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-System-State/systemstatebackup.png)
 
-8. En la página **especificar tipo de destino** , haga clic en **unidades locales** o en **carpeta compartida remota**y, a continuación, haga clic en **siguiente**.  Si va a realizar una copia de seguridad en una carpeta compartida remota, haga lo siguiente:  
+8. En la página **especificar tipo de destino** , haga clic en **unidades locales** o en **carpeta compartida remota**y, a continuación, haga clic en **siguiente**.  Si va a realizar una copia de seguridad en una carpeta compartida remota, haga lo siguiente:
    - Escriba la ruta de acceso a la carpeta compartida.
-   - En **Access Control**, seleccione no **heredar** o **heredar** para determinar el acceso a la copia de seguridad y, a continuación, haga clic en **siguiente**.  
+   - En **Access Control**, seleccione no **heredar** o **heredar** para determinar el acceso a la copia de seguridad y, a continuación, haga clic en **siguiente**.
    - En el cuadro de diálogo **proporcionar credenciales de usuario para copia de seguridad** , proporcione el nombre de usuario y la contraseña de un usuario que tenga acceso de escritura a la carpeta compartida y, a continuación, haga clic en **Aceptar**.
 
 9. En Windows Server 2008 R2 y Windows Server 2008, en la página **especificar opciones avanzadas** , seleccione **VSS copiar copia de seguridad** y, a continuación, haga clic en **siguiente**.
@@ -52,15 +52,15 @@ Use el procedimiento siguiente para realizar una copia de seguridad del estado d
 12. Una vez que se haya completado, haga clic en **cerrar**.
 13. Cierre Copias de seguridad de Windows Server.
 
-## <a name="to-perform-a-system-state-backup-using-wbadminexe"></a>Para realizar una copia de seguridad del estado del sistema con Wbadmin. exe
+## <a name="to-perform-a-system-state-backup-using-wbadminexe"></a>Para realizar una copia de seguridad del estado del sistema mediante Wbadmin.exe
 
-Abra un símbolo del sistema con privilegios elevados, escriba el siguiente comando y presione ENTRAR:  
-  
+Abra un símbolo del sistema con privilegios elevados, escriba el siguiente comando y presione ENTRAR:
+
    ```
    wbadmin start systemstatebackup -backuptarget:<targetDrive>:
    ```
 
-   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-System-State/systemstatebackup2.png)  
+   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-System-State/systemstatebackup2.png)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

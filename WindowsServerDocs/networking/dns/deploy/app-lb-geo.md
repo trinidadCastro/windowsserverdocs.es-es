@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d4e005e65a3ff645ed91f488820435aff5173390
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b66ae0ef1bf319b991efc01c062ec156bf277c31
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317891"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518400"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>Uso de la directiva de DNS para equilibrio de carga de aplicación con reconocimiento de ubicación geográfica
 
@@ -32,7 +32,7 @@ En este ejemplo, contoso Gift Services está expandiendo correctamente su presen
 
 De forma similar a Norteamérica, la compañía ahora tiene servidores web hospedados en centros de recursos europeos.
 
-Los administradores de DNS de los servicios de regalos de Contoso desean configurar el equilibrio de carga de la aplicación para los centros de centros de recursos de forma similar a la implementación de directivas DNS en el Estados Unidos, con el tráfico de la aplicación distribuido entre los servidores web que se encuentran en Dublín, Irlanda, Ámsterdam, Holanda y otros lugares.
+Los administradores de DNS de los servicios de regalos de Contoso desean configurar el equilibrio de carga de la aplicación para los centros de centros de recursos de forma similar a la implementación de directivas DNS en el Estados Unidos, con el tráfico de la aplicación distribuido entre los servidores web que se encuentran en Dublín, Irlanda, Ámsterdam, Holanda y otros.
 
 Los administradores de DNS también quieren que todas las consultas de otras ubicaciones del mundo se distribuyan equitativamente entre todos sus centros de recursos.
 
@@ -53,12 +53,13 @@ Puede obtener esta información de mapas de IP geográfica. En función de estas
 
 Una subred de cliente DNS es una agrupación lógica de subredes IPv4 o IPv6 desde la que se envían las consultas a un servidor DNS.
 
-Puede usar los siguientes comandos de Windows PowerShell para crear subredes de cliente DNS. 
+Puede usar los siguientes comandos de Windows PowerShell para crear subredes de cliente DNS.
 
-    
-    Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0.0/24
-    Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
-    
+```powershell
+Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0.0/24
+Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
+```
+
 Para obtener más información, consulte [Add-DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
 
 ### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>Crear los ámbitos de zona
@@ -72,16 +73,16 @@ Un ámbito de zona es una instancia única de la zona. Una zona DNS puede tener 
 
 En el escenario anterior del equilibrio de carga de la aplicación se muestra cómo configurar los ámbitos de tres zonas para los centros de recursos en Norteamérica.
 
-Con los siguientes comandos, puede crear dos ámbitos de zona más, uno para los centros de los centros de información de Dublín y Amsterdam. 
+Con los siguientes comandos, puede crear dos ámbitos de zona más, uno para los centros de los centros de información de Dublín y Amsterdam.
 
 Puede agregar estos ámbitos de zona sin realizar ningún cambio en los tres ámbitos de zona Norteamérica existentes en la misma zona. Además, después de crear estos ámbitos de zona, no es necesario reiniciar el servidor DNS.
 
 Puede usar los siguientes comandos de Windows PowerShell para crear ámbitos de zona.
 
-    
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
-    
+```powershell
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
+```
 
 Para obtener más información, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
@@ -90,11 +91,11 @@ Para obtener más información, consulte [Add-DnsServerZoneScope](https://docs.m
 Ahora debe agregar los registros que representan el host del servidor Web en los ámbitos de zona.
 
 Los registros de los centros de recursos de América se agregaron en el escenario anterior. Puede usar los siguientes comandos de Windows PowerShell para agregar registros a los ámbitos de zona para los centros de recursos europeos.
- 
-    
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "151.1.0.1" -ZoneScope "DublinZoneScope”
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
-    
+
+```powershell
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "151.1.0.1" -ZoneScope "DublinZoneScope”
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
+```
 
 Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
@@ -110,14 +111,11 @@ En este ejemplo, la distribución de consultas entre servidores de aplicaciones 
 
 Puede usar los siguientes comandos de Windows PowerShell para implementar estas directivas DNS.
 
-    
-    Add-DnsServerQueryResolutionPolicy -Name "AmericaLBPolicy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1; TexasZoneScope,1" -ZoneName "contosogiftservices.com" –ProcessingOrder 1
-    
-    Add-DnsServerQueryResolutionPolicy -Name "EuropeLBPolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 2
-    
-    Add-DnsServerQueryResolutionPolicy -Name "WorldWidePolicy" -Action ALLOW -FQDN "eq,*.contoso.com" -ZoneScope "SeattleZoneScope,1;ChicagoZoneScope,1; TexasZoneScope,1;DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 3
-    
-    
+```powershell
+Add-DnsServerQueryResolutionPolicy -Name "AmericaLBPolicy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1; TexasZoneScope,1" -ZoneName "contosogiftservices.com" –ProcessingOrder 1
+Add-DnsServerQueryResolutionPolicy -Name "EuropeLBPolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 2
+Add-DnsServerQueryResolutionPolicy -Name "WorldWidePolicy" -Action ALLOW -FQDN "eq,*.contoso.com" -ZoneScope "SeattleZoneScope,1;ChicagoZoneScope,1; TexasZoneScope,1;DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 3
+```
 
 Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 

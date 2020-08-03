@@ -8,12 +8,12 @@ ms.date: 03/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ee22c55a3c786be4df8f06b2e3c5d33ea620b1e0
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e3f215abaccbd1f95ee46eca93a573aa1db9e065
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409956"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519413"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>Solución de problemas de implementación de controladores de dominio
 
@@ -29,13 +29,13 @@ En este tema se describe la metodología para solucionar problemas de configurac
 
 Los registros integrados son la herramienta más importante para solucionar problemas de promoción y degradación de controladores de dominio. Todos estos registros están habilitados y configurados para ofrecer el máximo nivel de detalle de forma predeterminada.
 
-| Fase | Log |  |
-|--|--|--|
-| Operaciones de Administrador del servidor o de ADDSDeployment para Windows PowerShell | - %systemroot%\debug\dcpromoui.log<p>-%SystemRoot%\debug\dcpromoui *. log |  |
-| Instalación/Promoción del controlador de dominio | -%SystemRoot%\debug\dcpromo.log<p>-%SystemRoot%\debug\dcpromo *. log<p>-Event Eventos\registros logs\System<p>-Event Eventos\registros \ aplicación<p>-Servicio de visor eventos\registros de eventos y servicios de logs\Directory<p>-Event visor eventos\registros and Services logs\File Replication Service<p>-Visor eventos\registros de eventos y servicios de logs\DFS replicación |  |
-| Actualización de bosque o de dominio | -%SystemRoot%\debug\adprep \\ <datetime> \adprep.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \csv.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \dspecup.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \ldif.log * |  |
-| Motor de implementación de ADDSDeployment para Windows PowerShell de Administrador del servidor | -Event visor eventos\registros and Services logs\Microsoft\Windows\DirectoryServices-Deployment\Operational |  |
-| Servicio de actualización de Windows | - %systemroot%\Logs\CBS\\*<p>-% SystemRoot% \servicing\sessions\sessions.xml<p>- %systemroot%\winsxs\poqexec.log<p>-% SystemRoot% \winsxs\pending.xml |  |
+| Fase | Log |
+|--|--|
+| Operaciones de Administrador del servidor o de ADDSDeployment para Windows PowerShell | - %systemroot%\debug\dcpromoui.log<p>-%SystemRoot%\debug\dcpromoui *. log |
+| Instalación/Promoción del controlador de dominio | -%SystemRoot%\debug\dcpromo.log<p>-%SystemRoot%\debug\dcpromo *. log<p>-Event Eventos\registros logs\System<p>-Event Eventos\registros \ aplicación<p>-Servicio de visor eventos\registros de eventos y servicios de logs\Directory<p>-Event visor eventos\registros and Services logs\File Replication Service<p>-Visor eventos\registros de eventos y servicios de logs\DFS replicación |
+| Actualización de bosque o de dominio | -%SystemRoot%\debug\adprep \\ <datetime> \adprep.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \csv.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \dspecup.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \ldif.log * |
+| Motor de implementación de ADDSDeployment para Windows PowerShell de Administrador del servidor | -Event visor eventos\registros and Services logs\Microsoft\Windows\DirectoryServices-Deployment\Operational |
+| Servicio de actualización de Windows | - %systemroot%\Logs\CBS\\*<p>-% SystemRoot% \servicing\sessions\sessions.xml<p>- %systemroot%\winsxs\poqexec.log<p>-% SystemRoot% \winsxs\pending.xml |
 
 ### <a name="tools-and-commands-for-troubleshooting-domain-controller-configuration"></a>Herramientas y comandos para solucionar problemas de configuración de controladores de dominio
 
@@ -217,10 +217,10 @@ La promoción y la degradación devuelven los siguientes códigos de mensaje de 
 
 Los siguientes son problemas habituales que se observan durante el proceso de desarrollo de Windows Server 2012. Todos ellos son problemas debidos al diseño, y tienen una solución válida o una técnica más apropiada para evitar que se produzcan. Muchos de estos comportamientos son idénticos en Windows Server 2008 R2 y sistemas operativos anteriores; sin embargo, al reescribir la implementación de AD DS ha aumentado la frecuencia de los problemas.
 
-| Incidencia | Al degradar un controlador de dominio, el DNS se ejecuta sin zonas |  |
-|--|--|--|
-| Síntomas | El servidor sigue respondiendo a las consultas DNS, pero no posee información de zona |  |
-| Solución y notas | Al eliminar el rol de AD DS, también se elimina el rol de servidor DNS o se establece el servicio Servidor DNS como deshabilitado. No te olvides de apuntar el cliente DNS a un servidor distinto. Si usas Windows PowerShell, ejecuta lo siguiente antes de degradar el servidor:<p>Código: desinstalar-WindowsFeature DNS<p>or<p>DNS de Code-Set-Service-StartType deshabilitado<br />detención del servicio DNS |  |
+| Incidencia | Al degradar un controlador de dominio, el DNS se ejecuta sin zonas |
+|--|--|
+| Síntomas | El servidor sigue respondiendo a las consultas DNS, pero no posee información de zona |
+| Solución y notas | Al eliminar el rol de AD DS, también se elimina el rol de servidor DNS o se establece el servicio Servidor DNS como deshabilitado. No te olvides de apuntar el cliente DNS a un servidor distinto. Si usas Windows PowerShell, ejecuta lo siguiente antes de degradar el servidor:<p>Código: desinstalar-WindowsFeature DNS<p>o<p>DNS de Code-Set-Service-StartType deshabilitado<br />detención del servicio DNS |
 
 | Incidencia | Al promocionar un equipo con Windows Server 2012 en un dominio de etiqueta única existente, no se configura updatetopleveldomain=1 ni allowsinglelabeldnsdomain=1 |
 |--|--|
@@ -280,7 +280,7 @@ Los siguientes son problemas habituales que se observan durante el proceso de de
 | Incidencia | Error al promocionar un RODC en una cuenta de equipo existente |
 |--|--|
 | Síntomas | Al usar ADDSDeployment para Windows PowerShell para promocionar un nuevo RODC con una cuenta de equipo preconfigurada, se produce el siguiente error:<p>El conjunto de parámetros de código no se puede resolver mediante los parámetros con nombre especificados.    <br />InvalidArgument: ParameterBindingException<br />    + FullyQualifiedErrorId: AmbiguousParameterSet, Microsoft. DirectoryServices. Deployment. PowerShell. Commands. Install |
-| Solución y notas | No proporciones parámetros predefinidos en una cuenta RODC existente. Entre ellas se incluyen las siguientes:<p>Código: readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-siteName<br />-installdns |
+| Solución y notas | No proporciones parámetros predefinidos en una cuenta RODC existente. Se incluyen los siguientes:<p>Código: readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-siteName<br />-installdns |
 
 | Incidencia | No ocurre nada al seleccionar o anular la selección de la opción “Reiniciar automáticamente el servidor de destino en caso necesario” |
 |--|--|

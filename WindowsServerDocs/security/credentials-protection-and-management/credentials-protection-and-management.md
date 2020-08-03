@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9eb93e46adb0e8a7c956bd8db2795fe06bc04724
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 649c070fe477a51ca764bd1ad83ed013feb1b60b
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472952"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518021"
 ---
 # <a name="credentials-protection-and-management"></a>Protección y administración de credenciales
 
@@ -66,7 +66,7 @@ La nueva clase de objeto de Active Directory, la Directiva de autenticación, pe
 
 Para obtener más información, consulta [Directivas de autenticación y silos de directivas de autenticación](authentication-policies-and-authentication-policy-silos.md).
 
-Para obtener más información sobre cómo configurar cuentas protegidas, consulta [Cómo configurar cuentas protegidas](how-to-configure-protected-accounts.md).
+Para obtener más información sobre cómo configurar cuentas protegidas, consulta [Cómo configurar cuentas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
 
 ## <a name="additional-references"></a>Referencias adicionales
 Para obtener más información sobre LSA y LSASS, consulte [Información técnica de inicio de sesión y autenticación de Windows](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx).

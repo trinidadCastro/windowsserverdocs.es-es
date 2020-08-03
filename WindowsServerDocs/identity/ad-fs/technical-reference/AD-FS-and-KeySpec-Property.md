@@ -8,15 +8,15 @@ ms.prod: windows-server
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: e3ddc427d84a79d831c61cad8087dbfa1d3fb564
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 36555336b158fdf7cfaa400f66b9deecbff49c1b
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860248"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519694"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>Información de la propiedad de AD FS e especificación de certificados
-La especificación de clave ("especificación") es una propiedad asociada a un certificado y una clave. Especifica si se puede usar una clave privada asociada a un certificado para la firma, el cifrado o ambos.   
+La especificación de clave ("especificación") es una propiedad asociada a un certificado y una clave. Especifica si se puede usar una clave privada asociada a un certificado para la firma, el cifrado o ambos.
 
 Un valor de especificación de tipo incorrecto puede producir errores de AD FS y proxy de aplicación web como:
 
@@ -26,31 +26,33 @@ Un valor de especificación de tipo incorrecto puede producir errores de AD FS y
 
 Puede ver lo siguiente en el registro de eventos:
 
-    Log Name:      AD FS Tracing/Debug
-    Source:        AD FS Tracing
-    Date:          2/12/2015 9:03:08 AM
-    Event ID:      67
-    Task Category: None
-    Level:         Error
-    Keywords:      ADFSProtocol
-    User:          S-1-5-21-3723329422-3858836549-556620232-1580884
-    Computer:      ADFS1.contoso.com
-    Description:
-    Ignore corrupted SSO cookie.
+```
+Log Name:   AD FS Tracing/Debug
+Source: AD FS Tracing
+Date:   2/12/2015 9:03:08 AM
+Event ID:   67
+Task Category: None
+Level:  Error
+Keywords:   ADFSProtocol
+User:   S-1-5-21-3723329422-3858836549-556620232-1580884
+Computer:   ADFS1.contoso.com
+Description:
+Ignore corrupted SSO cookie.
+```
 
 ## <a name="what-causes-the-problem"></a>Lo que causa el problema
 La propiedad especificación de clave identifica el modo en que se puede usar una clave generada o recuperada por Microsoft CryptoAPI (CAPI) de un proveedor de almacenamiento criptográfico (CSP) heredado de Microsoft.
 
 Para la firma y el cifrado se puede utilizar un valor de especificación de especificación de **1**o **AT_KEYEXCHANGE**.  Un valor de **2**, o **AT_SIGNATURE**, solo se usa para firmar.
 
-La configuración de la especificación de tipos más común es el uso de un valor de 2 para un certificado que no sea el certificado de firma de tokens.  
+La configuración de la especificación de tipos más común es el uso de un valor de 2 para un certificado que no sea el certificado de firma de tokens.
 
 En el caso de los certificados cuyas claves se generaron mediante proveedores CNG (Cryptography Next Generation), no hay ningún concepto de especificación de claves y el valor de la especificación de clave siempre será cero.
 
-Vea cómo comprobar un valor válido de especificación de especificación a continuación. 
+Vea cómo comprobar un valor válido de especificación de especificación a continuación.
 
 ### <a name="example"></a>Ejemplo
-Un ejemplo de un CSP heredado es el proveedor de servicios criptográficos mejorados de Microsoft. 
+Un ejemplo de un CSP heredado es el proveedor de servicios criptográficos mejorados de Microsoft.
 
 El formato BLOB de clave de CSP de Microsoft RSA incluye un identificador de algoritmos, ya sea **CALG_RSA_KEYX** o **CALG_RSA_SIGN**, respectivamente, a las solicitudes de servicio de <strong>AT_KEYEXCHANGE * * o * * AT_SIGNATURE</strong> claves.
 
@@ -71,7 +73,7 @@ A continuación se indican los significados de los distintos valores de especifi
 |2|En el caso de un certificado CAPI (no CNG) heredado, la clave solo se puede usar para firmar.|no recomendado|
 
 ## <a name="how-to-check-the-keyspec-value-for-your-certificates--keys"></a>Comprobación del valor de la especificación de clave para los certificados o claves
-Para ver un valor de certificados, puede usar la herramienta de línea de comandos **certutil** .  
+Para ver un valor de certificados, puede usar la herramienta de línea de comandos **certutil** .
 
 El siguiente es un ejemplo: **certutil – v – Store My**.  Se volcará la información del certificado en la pantalla.
 
@@ -95,7 +97,7 @@ En CERT_KEY_PROV_INFO_PROP_ID buscar dos cosas:
    Proveedor de CNG (ProviderType = 0):
 
    |AD FS propósito del certificado|Valores válidos de especificación de especificación|
-   | --- | --- |   
+   | --- | --- |
    |SSL|0|
 
 ## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>Cómo cambiar la especificación de especificación del certificado por un valor admitido
@@ -107,7 +109,7 @@ El cambio del valor de la especificación de la configuración no requiere que l
 3. Realice los pasos siguientes para cada servidor AD FS y WAP
     1. Eliminar el certificado (del servidor AD FS/WAP)
     2. Abra un símbolo del sistema de PowerShell con privilegios elevados e importe el archivo PFX en cada AD FS y en el servidor WAP mediante la sintaxis de cmdlet siguiente, especificando el valor de AT_KEYEXCHANGE (que funciona para todos los AD FS los propósitos del certificado):
-        1. C:\>certutil – importpfx CERTFILE. pfx AT_KEYEXCHANGE
+        1. C: \> certutil – importpfx CERTFILE. pfx AT_KEYEXCHANGE
         2. Escriba la contraseña PFX
     3. Una vez completado el procedimiento anterior, haga lo siguiente:
         1. comprobar los permisos de clave privada

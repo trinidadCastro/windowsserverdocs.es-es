@@ -1,5 +1,5 @@
 ---
-title: progreso
+title: Usar el comando Progress
 description: Artículo de referencia para el progreso, que muestra el progreso mientras se ejecuta un comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9e9650a980d74f15bc0ec5c88d8df2dc93a3d8b0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b9284c7330adfbad0115b5b7f6bbab034b42fda4
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934592"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519634"
 ---
-# <a name="progress"></a>progreso
+# <a name="using-the-progress-command"></a>Usar el comando Progress
 
 Muestra el progreso mientras se ejecuta un comando. Puede usar **/Progress** con cualquier otro comando WDSUtil que ejecute. Tenga en cuenta que debe especificar **/verbose** y **/Progress** directamente después de **WDSUtil**.
 

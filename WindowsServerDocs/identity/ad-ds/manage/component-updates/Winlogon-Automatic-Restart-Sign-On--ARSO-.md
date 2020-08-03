@@ -10,12 +10,12 @@ ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3ad6658c504cc90eedef2c1cb6688c6f12233b3c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 68232d0b8ab6f4b7330b746657fc63e30a3c2e74
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959877"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518833"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Inicio de sesión con reinicio automático de Winlogon (ARSO)
 
@@ -31,10 +31,9 @@ Al iniciar sesión automáticamente y bloquear el usuario en la consola de, Wind
 
 ARSO trata los dispositivos administrados y no administrados de forma diferente. En el caso de los dispositivos no administrados, se usa el cifrado de dispositivos, pero no es necesario para que el usuario obtenga ARSO. En el caso de los dispositivos administrados, se necesitan TPM 2,0, SecureBoot y BitLocker para la configuración de ARSO. Los administradores de TI pueden invalidar este requisito a través de directiva de grupo. ARSO para dispositivos administrados solo está disponible actualmente para dispositivos Unidos a Azure Active Directory.
 
-|   | Windows Update| apagado-g-t 0  | Reinicios iniciados por el usuario | API con marcas de SHUTDOWN_ARSO/EWX_ARSO |
-| --- | :---: | :---: | :---: | :---: |
-| Dispositivos administrados | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
-| Dispositivos no administrados | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Windows Update | apagado-g-t 0 | Reinicios iniciados por el usuario | API con marcas de SHUTDOWN_ARSO/EWX_ARSO |
+|--|--|--|--|
+| Dispositivos administrados: sí<p>Dispositivos no administrados: sí | Dispositivos administrados: sí<p>Dispositivos no administrados: sí | Dispositivos administrados: no<p>Dispositivos no administrados: sí | Dispositivos administrados: sí<p>Dispositivos no administrados: sí |
 
 > [!NOTE]
 > Después de un reinicio inducido por Windows Update, el último usuario interactivo inicia sesión automáticamente y la sesión está bloqueada. Esto permite que las aplicaciones de la pantalla de bloqueo de un usuario sigan ejecutándose a pesar del reinicio de la Windows Update.
@@ -159,12 +158,12 @@ Las horas de inicio de sesión y los controles parentales pueden prohibir la cre
 
 ### <a name="credentials-stored"></a>Credenciales almacenadas
 
-|   | Hash de contraseña | Clave de credencial | Vale de concesión de vales | Token de actualización principal |
-| --- | :---: | :---: | :---: | :---: |
-| Cuenta local | :heavy_check_mark: | :heavy_check_mark: |   |   |
-| Cuenta de MSA | :heavy_check_mark: | :heavy_check_mark: |   |   |
-| Azure AD cuenta unida | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (si es híbrido) | :heavy_check_mark: |
-| Cuenta unida a un dominio | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (si es híbrido) |
+| Hash de contraseña | Clave de credencial | Vale de concesión de vales | Token de actualización principal |
+|--|--|--|--|
+| Cuenta local: sí | Cuenta local: sí | Cuenta local-no | Cuenta local-no |
+| Cuenta de MSA: sí | Cuenta de MSA: sí | Cuenta de MSA: no | Cuenta de MSA: no |
+| Azure AD cuenta unida: sí | Azure AD cuenta unida: sí | Cuenta combinada de Azure AD: sí (si es híbrido) | Azure AD cuenta unida: sí |
+| Cuenta unida a un dominio: sí | Cuenta unida a un dominio: sí | Cuenta unida a un dominio: sí | Cuenta unida a un dominio: sí (si es híbrido) |
 
 ### <a name="credential-guard-interaction"></a>Interacción de Credential Guard
 

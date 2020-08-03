@@ -8,29 +8,31 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f43b3052d64c7a5766e014aa47063c7e17a7d2ab
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 42131ef5e149c62dd5449d8ada196b1068fd30ac
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333946"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519724"
 ---
-# <a name="update-password-customization"></a>Actualización de la personalización de contraseñas 
+# <a name="update-password-customization"></a>Actualización de la personalización de contraseñas
 
+En algunos casos, es posible que los usuarios no puedan conectarse a la red corporativa para cambiar la contraseña de su cuenta. Este factor puede causar problemas, especialmente a los empleados remotos que vivan lejos de la oficina corporativa más cercana. En esos casos concretos, la página de actualización de la contraseña se puede usar con solo conectarse a Internet.
 
-En algunos casos, es posible que los usuarios no puedan conectarse a la red corporativa para cambiar la contraseña de su cuenta. Este factor puede causar problemas, especialmente a los empleados remotos que vivan lejos de la oficina corporativa más cercana. En esos casos concretos, la página de actualización de la contraseña se puede usar con solo conectarse a Internet.  
-  
-Puedes personalizar la página de actualización de la contraseña proporcionando tu propia descripción de la página.  
-  
-> Para habilitar la página de actualización de la contraseña, ve a Administración de AD FS, en Extremos. El extremo para la actualización de la contraseña se encuentra en la parte inferior, en Otros: /adfs/portal/updatepassword/. Después de habilitar el extremo, debes reiniciar el servicio AD FS. Hay que hacerlo de forma manual. Si espera usar la página web actualizar contraseña externamente y, al usar el proxy de aplicación Web, en la misma opción debe habilitarla en el proxy (habilitar en el proxy). Luego, puedes ir a https://<fqdn>/adfs/portal/updatepassword/ desde un dispositivo unido a un área de trabajo y deberá aparecer la página de actualización de la contraseña.  
-  
-![actualización](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom5.png)  
-  
-## <a name="customize-the-update-password-page-description"></a>Personalización de la descripción de la página de actualización de la contraseña  
-Para personalizar la descripción de la página de actualización de la contraseña, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.  
-  
+Puedes personalizar la página de actualización de la contraseña proporcionando tu propia descripción de la página.
 
-    Set-AdfsGlobalWebContent -UpdatePasswordPageDescriptionText "This is the Contoso Update Password page."  
+Para habilitar la página de actualización de la contraseña, ve a Administración de AD FS, en Extremos. El extremo para la actualización de la contraseña se encuentra en la parte inferior, en Otros: /adfs/portal/updatepassword/. Después de habilitar el extremo, debes reiniciar el servicio AD FS. Hay que hacerlo de forma manual. Si espera usar la página web actualizar contraseña externamente y, al usar el proxy de aplicación Web, en la misma opción debe habilitarla en el proxy (habilitar en el proxy). Después, puede ir a `https://<fqdn>/adfs/portal/updatepassword/` en un dispositivo unido al área de trabajo y debería ver la página actualizar contraseña.
 
-## <a name="additional-references"></a>Referencias adicionales 
-[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)  
+![update](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom5.png)
+
+## <a name="customize-the-update-password-page-description"></a>Personalización de la descripción de la página de actualización de la contraseña
+
+Para personalizar la descripción de la página de actualización de la contraseña, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.
+
+```powershell
+Set-AdfsGlobalWebContent -UpdatePasswordPageDescriptionText "This is the Contoso Update Password page."
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)

@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b76ded74b311265a22e32d836cb7a5dd5fe03f0d
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 215d69f40c09a11048c3e4c5a5c7cd610da3b9c4
+ms.sourcegitcommit: 25d3b2083405d3e1395355dcc34a032105e9c36d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445729"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87389642"
 ---
 # <a name="get-started-with-the-android-client"></a>Introducción al cliente de Android
 
@@ -35,7 +35,7 @@ Usa la siguiente información para comenzar. Asegúrate de consultar la sección
 
 A continuación, te mostramos cómo configurar el cliente de Escritorio remoto en tu dispositivo Android:
 
-1. Descarga el cliente de Escritorio remoto de Microsoft de [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android).
+1. Descarga el cliente de Escritorio remoto de Microsoft de [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx).
 2. Inicia **el cliente de Escritorio remoto** desde la lista de aplicaciones.
 3. Agrega una [conexión a Escritorio remoto](#add-a-remote-desktop-connection) o [recursos remotos](#add-remote-resources). La conexión se usa para que puedas conectarte directamente a un equipo Windows y a los recursos remotos a fin de acceder a las aplicaciones y los escritorios que publica un administrador para ti.
 
@@ -128,12 +128,12 @@ Para cambiar la configuración de pantalla, pulsa **Configuración** y, después
 Puedes configurar las siguientes opciones de configuración de la pantalla:
 
 - **Orientación**, que establece la orientación preferida (horizontal o vertical) de la sesión.
-  
+
   >[!NOTE]
   > Si te conectas a un equipo con Windows 8 o anterior, la sesión no se escalará correctamente cuando se cambie la orientación del dispositivo. Para facilitar el correcto escalado del cliente, desconéctate  y, después, vuelve a conectarte con la orientación que quieras usar. También puedes garantizar el escalado correcto mediante un equipo con Windows 10.
 
 - **Resolución**, que establece la resolución remota que se quiere usar para las conexiones de escritorio globalmente. Si ya estableciste una resolución personalizada para una conexión individual, este valor no la cambiará.
-  
+
   >[!NOTE]
   >Al cambiar la configuración de pantalla, los cambios solo se aplican a las nuevas conexiones que realices después de cambiar la configuración. Para aplicar los cambios a la sesión a la que estás conectado actualmente, desconéctate y vuelve a conectarte para actualizar la sesión.
 
