@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: cb91b884edfbd105bc9e88a9d11b3b96055247c9
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 2a3655c7efddbbe22f312bab4c9276e88e53481b
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833338"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410016"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -35,19 +35,18 @@ Puedes actualizar versiones no preliminares de Windows Admin Center mediante Mic
 
 Estas son algunas de las cosas que puedes hacer con Windows Admin Center:
 
-|     |     |
-| --- | --- |
-| ![](media/simple-icon.png)| **Simplificar la administración de servidores** <br/> Administra los servidores y clústeres con versiones actualizadas de herramientas conocidas como el Administrador del servidor. Instálalo en menos de 5 minutos y administra los servidores de tu entorno inmediatamente: no se requiere ninguna configuración adicional. Para obtener más detalles, consulta [¿Qué es Windows Admin Center?](understand/what-is.md) |
-| ![](media/future-icon.png)| **Trabajar con soluciones híbridas** <br/> La integración con Azure te ayuda a conectar de forma opcional tus servidores locales con los servicios en la nube pertinentes. Para obtener más información, consulta [Servicios híbridos de Azure](azure/index.md) |
-| ![](media/secure-icon.png)| **Simplificar la administración hiperconvergida** <br/> Simplifica la administración de los clústeres hiperconvergidos de Windows Server o Azure Stack HCI. Usa cargas de trabajo simplificadas para crear y administrar VM, volúmenes de Espacios de almacenamiento directo, redes definidas por software y mucho más. Para obtener más detalles, consulta [Administrar la infraestructura hiperconvergida con Windows Admin Center](use/manage-hyper-converged.md)|
+- **Simplificar la gestión de los servidores** Administre sus servidores y clústeres con versiones modernizadas de herramientas tan conocidas como el Administrador del servidor. Instálalo en menos de 5 minutos y administra los servidores de tu entorno inmediatamente: no se requiere ninguna configuración adicional. Para obtener más detalles, consulta [¿Qué es Windows Admin Center?](understand/what-is.md)
+
+- **Trabajar con soluciones híbridas** La integración con Azure le ayuda a conectar de forma opcional sus servidores locales con los servicios en la nube pertinentes. Para obtener más información, consulta [Servicios híbridos de Azure](azure/index.md)
+
+- **Simplificar la administración hiperconvergida** Simplifique la administración de los clústeres hiperconvergidos de Windows Server o Azure Stack HCI. Usa cargas de trabajo simplificadas para crear y administrar VM, volúmenes de Espacios de almacenamiento directo, redes definidas por software y mucho más. Para obtener más detalles, consulta [Administrar la infraestructura hiperconvergida con Windows Admin Center](use/manage-hyper-converged.md)
 
 A continuación se incluye un vídeo a modo de introducción, seguido de un póster con más detalles:
->[!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
+> [!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
 
 [![Póster de Windows Admin Center](media/WAC1910Poster_thumb_small.PNG)](media/WAC1910Poster_thumb.png)
 
 [Descargar el PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
-
 
 ## <a name="contents-at-a-glance"></a>Breve explicación del contenido
 
@@ -184,6 +183,6 @@ Windows Admin Center está diseñado para administrar un solo servidor o clúste
 
 ## <a name="stay-updated"></a>Mantente al día
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[Síguenos en Twitter](https://twitter.com/servermgmt)
+[Síguenos en Twitter](https://twitter.com/servermgmt)
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[Lee nuestros blogs](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)
+[Lea nuestros blogs](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)
