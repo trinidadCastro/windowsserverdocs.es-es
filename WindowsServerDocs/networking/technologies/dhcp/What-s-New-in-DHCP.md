@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 301541b42398ab517940af987e7ed6f3a7a54b0d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 204f6079b2d8a8c833afb8a32b4d0ac97ac0912f
+ms.sourcegitcommit: 3d56b626dc2d163d2c7847c01e872bfbfcde0e12
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475552"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87538517"
 ---
 # <a name="whats-new-in-dhcp"></a>Novedades del DHCP
 
@@ -24,6 +24,12 @@ En este tema se describen las funciones del Protocolo de configuración dinámic
 DHCP es un estándar de Internet Engineering Task Force (IETF) diseñado para reducir la carga administrativa y la complejidad de configurar hosts en una red basada en TCP/IP \- , como una intranet privada. Al usar el servicio del servidor DHCP, el proceso de configuración de TCP/IP en clientes DHCP es automático.
 
 En las secciones siguientes se proporciona información acerca de las nuevas características y los cambios en la funcionalidad de DHCP.
+
+## <a name="new-dhcp-client-side-features-in-the-windows-10-may-2020-update"></a>Nuevas características del cliente DHCP en la actualización 2020 de Windows 10 
+
+El cliente DHCP de Windows 10 se ha actualizado en la actualización del 10 de mayo de 2020 (también denominada Windows 10, versión 2004). Cuando se ejecuta un cliente de Windows y se conecta a Internet a través de un teléfono Android anclado, la conexión se debe marcar como "medida". Anteriormente, las conexiones se marcaban como desmedidos. Tenga en cuenta que no todos los teléfonos con tethering de Android se detectarán como medidos y otras redes también pueden aparecer como medida.
+
+Además, el nombre de proveedor de cliente tradicional se ha actualizado en algunos dispositivos basados en Windows. Este valor solía ser simplemente MSFT 5,0. Algunos dispositivos se mostrarán ahora como MSFT 5,0 XBOX.
 
 ## <a name="dhcp-subnet-selection-options"></a>Opciones de selección de subred DHCP
 
@@ -49,7 +55,7 @@ La compatibilidad con NAP se presentó al rol de servidor DHCP con Windows Serve
 |Sistema operativo|Compatibilidad con NAP|
 |--------------------|---------------|
 | Windows Server 2008 |Compatible|
-| Windows Server 2008 R2 |Compatible|
+| Windows Server 2008 R2 |Compatible|
 | Windows Server 2012 |Compatible|
 | Windows Server 2012 R2 |Compatible|
 | Windows Server 2016|No compatible|
