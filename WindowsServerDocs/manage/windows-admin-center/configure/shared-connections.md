@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 03/28/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 943830a2743f7cfd3192a474eb36d57f734d3d34
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e0e78ac8feb4e008e060ba318bd5693e841b91b2
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269312"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518602"
 ---
 # <a name="configure-shared-connections-for-all-users-of-the-windows-admin-center-gateway"></a>Configuración de conexiones compartidas para todos los usuarios de la puerta de enlace de Windows Admin Center
 
@@ -22,7 +22,9 @@ ms.locfileid: "81269312"
 Con la capacidad de configurar conexiones compartidas, los administradores de puertas de enlace pueden configurar la lista de conexiones una vez para todos los usuarios de una puerta de enlace determinada de Windows Admin Center. Esta característica solo está disponible en el modo de servicio de Windows Admin Center.
 
 En la pestaña **Conexiones compartidas** de la Configuración de la puerta de enlace de Windows Admin Center, los administradores de puertas de enlace pueden agregar servidores, clústeres y conexiones de PC del mismo modo que desde la página Todas las conexiones, incluida la posibilidad de etiquetar conexiones. Todas las conexiones y etiquetas que se agreguen en la lista Conexiones compartidas se mostrarán para todos los usuarios de esta puerta de enlace de Windows Admin Center desde su página Todas las conexiones.
-    ![](../media/shared-cnxns-1.png)
+
+![Windows Admin Center: página Conexiones compartidas](../media/shared-cnxns-1.png)
 
 Cuando cualquier usuario de Windows Admin Center acceda a la página "Todas las conexiones" una vez configuradas las Conexiones compartidas, verá sus conexiones agrupadas en dos secciones: personales y compartidas. El grupo Personales es la lista de conexiones de un usuario específico y se conserva entre sesiones del explorador del usuario. El grupo de conexiones Compartidas es el mismo para todos los usuarios y no se puede modificar desde la página Todas las conexiones.
-![](../media/shared-cnxns-2.png)
+
+![Windows Admin Center: página Todas las conexiones](../media/shared-cnxns-2.png)

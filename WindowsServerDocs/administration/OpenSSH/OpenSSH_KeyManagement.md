@@ -1,17 +1,17 @@
 ---
-title: Configuración del servidor de OpenSSH para Windows
-description: Configuración del servidor de OpenSSH para Windows con las herramientas de Windows o PowerShell.
+title: Administración de claves de OpenSSH para Windows
+description: Administración de claves del servidor de OpenSSH para Windows con las herramientas de Windows o PowerShell.
 ms.date: 09/27/2018
 ms.topic: conceptual
 contributor: maertendMSFT
 author: maertendmsft
 ms.product: windows-server
-ms.openlocfilehash: 4acb7893f41207de045af7eeaea15efba8221f4a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c400d1071b3905b06bd6b6104a810194186ba4cc
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469850"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408874"
 ---
 # <a name="openssh-key-management"></a>Administración de claves de OpenSSH
 

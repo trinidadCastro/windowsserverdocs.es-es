@@ -10,12 +10,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d710a8c701b52bda62c5cd0616a44f37fe2e7b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f9de652a25dde8f21c934d7093af977198ae0646
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962037"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409876"
 ---
 # <a name="deploy-nano-server"></a>Implementación de Nano Server
 
@@ -33,7 +33,6 @@ Nano Server Image Builder es una herramienta que ayuda a crear una imagen person
 Obtenga la herramienta en el [Centro de descarga](https://www.microsoft.com/download/details.aspx?id=54065).
 
 La herramienta también requiere [Windows Assessment and Deployment Kit (ADK)](https://developer.microsoft.comwindows/hardware/windows-assessment-deployment-kit).
-
 
 Nano Server Image Builder crea imágenes de Nano Server personalizadas en los formatos VHD, VHDX o ISO y puede crear medios USB de arranque para implementar Nano Server o detectar la configuración de hardware de un servidor. También puede hacer lo siguiente:
 
@@ -57,13 +56,13 @@ Si no está familiarizado con alguno de estos puntos, revise el resto de este te
 
 ## <a name="creating-a-custom-nano-server-image"></a><a name=BKMK_CreateImage></a>Creación de una imagen de Nano Server personalizada
 
-Para Windows Server 2016, Nano Server se distribuye en los medios físicos, donde encontrará una carpeta **NanoServer**; contiene una imagen .wim y una subcarpeta denominada **Packages**. Estos archivos de paquete son los que se utilizan para agregar roles de servidor y características a la imagen VHD, en la que luego arranca.
+Para Windows Server 2016, Nano Server se distribuye en los medios físicos, donde encontrará una carpeta **NanoServer**; contiene una imagen .wim y una subcarpeta denominada **Packages**. Estos archivos de paquete son los que se utilizan para agregar roles de servidor y características a la imagen VHD, en la que luego arranca.
 
 También puedes buscar e instalar estos paquetes con el proveedor NanoServerPackage del módulo de PowerShell PackageManagement (OneGet). Consulta la sección Instalación de roles y características en línea de este tema.
 
 Esta tabla muestra los roles y las características que están disponibles en esta versión de Nano Server, junto con las opciones de Windows PowerShell que instalarán los paquetes para ellos. Algunos de los paquetes se instalan directamente con sus propios modificadores de Windows PowerShell (por ejemplo, -Compute); otros se instalan pasando los nombres del paquete al parámetro -Package, que se pueden combinar en una lista separada por comas. Puedes enumerar dinámicamente los paquetes disponibles mediante el cmdlet Get-NanoServerPackage.
 
-|| Rol o característica | Opción |
+| Rol o característica | Opción |
 |--|--|
 | Rol de Hyper-V (incluido NetQoS) | -Compute |
 | Clústeres de conmutación por error y otros componentes detallados después de esta tabla. | -Clustering |
@@ -83,7 +82,7 @@ Esta tabla muestra los roles y las características que están disponibles en es
 | BitLocker, el Módulo de plataforma segura (TPM), el cifrado de volumen, identificación de la plataforma, los proveedores de criptografía y otras funciones relacionadas con el inicio seguro. | -Package Microsoft-NanoServer-SecureStartup-Package |
 | Compatibilidad de Hyper-V con VM blindadas | \- Paquete Microsoft-NanoServer-ShieldedVM-Package<p>**Nota:** Este paquete solo está disponible para la edición Datacenter de Nano Server. |
 | Agente del Protocolo simple de administración de redes (SNMP) | -Package Microsoft-NanoServer-SNMP-Agent-Package.cab<p>**Nota:** No se incluye con los medios de instalación de Windows Server 2016. Disponible solo en línea. Para más información, consulta [Instalación de roles y características en línea](#BKMK_online). |
-| Servicio de IPHelper que proporciona conectividad de túnel con tecnologías de transición IPv6 (6to4, ISATAP, Proxy de puerto y Teredo) e IP-HTTPS | -Package Microsoft-NanoServer-IPHelper-Service-Package.cab<p>**Nota:** No se incluye con los medios de instalación de Windows Server 2016. Disponible solo en línea. Para más información, consulta [Instalación de roles y características en línea](#BKMK_online). ||
+| Servicio de IPHelper que proporciona conectividad de túnel con tecnologías de transición IPv6 (6to4, ISATAP, Proxy de puerto y Teredo) e IP-HTTPS | -Package Microsoft-NanoServer-IPHelper-Service-Package.cab<p>**Nota:** No se incluye con los medios de instalación de Windows Server 2016. Disponible solo en línea. Para más información, consulta [Instalación de roles y características en línea](#BKMK_online). |
 
 > [!NOTE]
 > Al instalar paquetes con estas opciones, un paquete de idioma correspondiente también se instala en función de la configuración regional del medio de servidor seleccionada. Puede encontrar los paquetes de idioma disponibles y sus abreviaturas de configuración regional en el medio de instalación en subcarpetas con el nombre de la configuración regional de la imagen.
@@ -117,7 +116,9 @@ Esta tabla muestra los roles y las características que están disponibles en es
 
 Este ejemplo crea una imagen de VHDX basada en GPT con el nombre de un equipo determinado e incluidos los controladores invitados de Hyper-V, a partir de los medios de instalación de Nano Server en un recurso compartido de red. En un símbolo de Windows PowerShell con privilegios elevados, empiece con este cmdlet:
 
-`Import-Module <Server media location>\NanoServer\NanoServerImageGenerator; New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\server_en-us -BasePath .\Base -TargetPath .\FirstStepsNano.vhdx -ComputerName FirstStepsNano`
+```powershell
+Import-Module <Server media location>\NanoServer\NanoServerImageGenerator; New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\server_en-us -BasePath .\Base -TargetPath .\FirstStepsNano.vhdx -ComputerName FirstStepsNano
+```
 
 El cmdlet llevará a cabo todas estas tareas:
 
@@ -160,7 +161,9 @@ Si no especifica un nombre de equipo, se generará un nombre aleatorio.
 
 Para crear una imagen de Nano Server para actuar como un host de Hyper-V, ejecute lo siguiente:
 
-`New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.wim -ComputerName <computer name> -OEMDrivers -Compute -Clustering`
+```powershell
+New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.wim -ComputerName <computer name> -OEMDrivers -Compute -Clustering`
+```
 
 Donde
 - MediaPath es la raíz de los soportes de DVD o la imagen ISO que contienen Windows Server 2016.

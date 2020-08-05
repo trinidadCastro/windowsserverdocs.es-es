@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/14/2020
+ms.date: 07/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9449da93e52471d1f21c2b7079a8fed0415a03a
-ms.sourcegitcommit: e6becfd2266fd434b7994455c7782de36af4ff80
+ms.openlocfilehash: 41e4923d64ebacf606f01350a873f6dbce564b4c
+ms.sourcegitcommit: 42cd33c95645321d09d006ff2e7666d6370dfbc3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377009"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87330821"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -26,19 +26,20 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |Version  |
 |-----------|---------|
-|Público     |1.2.1104 |
-|Insider    |1.2.1185 |
+|Público     |1.2.1186 |
+|Insider    |1.2.1186 |
 
-## <a name="updates-for-version-121185"></a>Actualizaciones para la versión 1.2.1185
+## <a name="updates-for-version-121186"></a>Actualizaciones para la versión 1.2.1186
 
-*Fecha de publicación: 14/07/2020*
+*Fecha de publicación: 28/07/2020*
 
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hr), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hs), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hq)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qy), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ciex), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qx)
 
 - Ahora puede suscribirse a áreas de trabajo con varias cuentas de usuario, mediante la opción ( **...** ) del menú de desbordamiento en la barra de comandos de la parte superior del cliente. Para diferenciar las áreas de trabajo, los títulos del área de trabajo ahora incluyen el nombre de usuario, al igual que todos los títulos de acceso directo de las aplicaciones.
 - Se ha agregado información adicional a los mensajes de error de suscripción para mejorar la solución de problemas.
 - El estado contraído o expandido de las áreas de trabajo ahora se conserva durante una actualización.
 - Se ha agregado un botón **Send Diagnostics and Close** (Enviar diagnóstico y cerrar) al cuadro de diálogo **Información de conexión**.
+- Se ha corregido un problema con las teclas Ctrl+Mayús en las sesiones remotas.
 
 ## <a name="updates-for-version-121104"></a>Actualizaciones para la versión 1.2.1104
 

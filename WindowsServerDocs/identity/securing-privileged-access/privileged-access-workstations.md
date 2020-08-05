@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 9bf484ab53790c453b0849b1bf8ca91553f82898
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b51255a0ac0120847e3eb05a373535bc1b7f5d44
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953727"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520164"
 ---
 # <a name="privileged-access-workstations"></a>Estaciones de trabajo de acceso con privilegios
 
@@ -511,8 +511,10 @@ En esta sección, crearás un nuevo GPO de tipo "Configuración de PAW: usuario"
 En esta sección, configuraremos directivas de grupo para impedir que las cuentas administrativas con privilegios inicien sesión en los hosts de nivel inferior.
 
 1. Cree el nuevo GPO **Restringir inicio de sesión de estación de trabajo**: esta configuración restringirá a las cuentas de administrador de Nivel 0 y Nivel 1 el inicio de sesión en estaciones de trabajo estándar.  Este GPO debe estar vinculado a la unidad organizativa de nivel superior "Estaciones de trabajo" y tener la siguiente configuración:
+
    * En Configuración de equipo\Directivas\Configuración de Windows\Configuración de seguridad\Directivas locales\Asignación de derechos de usuario\Denegar el inicio de sesión como trabajo por lotes, selecciona **Definir esta configuración de directiva** y agrega los grupos Nivel 0 y Nivel 1:
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -530,48 +532,50 @@ En esta sección, configuraremos directivas de grupo para impedir que las cuenta
      > [!NOTE]
      > Para obtener más información sobre los grupos integrados de Nivel 0, consulta la equivalencia de Nivel 0.
 
-         Other Delegated Groups
+      Otros grupos delegados
 
      > [!NOTE]
      > Para obtener más información sobre cualquier grupo personalizado que se haya creado con acceso de Nivel 0 efectivo, consulta la equivalencia de Nivel 0.
 
-         Tier 1 Admins
+      Administradores de nivel 1
 
      > [!NOTE]
      > Este grupo se creó anteriormente en la Fase 1.
 
    * En Configuración de equipo\Directivas\Configuración de Windows\Configuración de seguridad\Directivas locales\Asignación de derechos de usuario\Denegar el inicio de sesión como servicio, selecciona **Definir esta configuración de directiva** y agrega los grupos Nivel 0 y Nivel 1:
-     ```
-     Enterprise Admins
-     Domain Admins
-     Schema Admins
-     BUILTIN\Administrators
-     Account Operators
-     Backup Operators
-     Print Operators
-     Server Operators
-     Domain Controllers
-     Read-Only Domain Controllers
-     Group Policy Creators Owners
-     Cryptographic Operators
-     ```
+      ```
+      Enterprise Admins
+      Domain Admins
+      Schema Admins
+      BUILTIN\Administrators
+      Account Operators
+      Backup Operators
+      Print Operators
+      Server Operators
+      Domain Controllers
+      Read-Only Domain Controllers
+      Group Policy Creators Owners
+      Cryptographic Operators
+      ```
 
      > [!NOTE]
      > Nota: Para obtener más información sobre los grupos integrados de Nivel 0, consulta la equivalencia de Nivel 0.
 
-         Other Delegated Groups
+      Otros grupos delegados
 
      > [!NOTE]
      > Nota: Para obtener más información sobre cualquier grupo personalizado que se haya creado con acceso de Nivel 0 efectivo, consulta la equivalencia de Nivel 0.
 
-         Tier 1 Admins
+      Administradores de nivel 1
 
      > [!NOTE]
      > Nota: Este grupo se creó anteriormente en la Fase 1.
 
 2. Crea el nuevo GPO **Restringir el inicio de sesión del servidor**: esta configuración restringirá las cuentas de administrador de Nivel 0 cuando vayan a iniciar sesión en servidores de Nivel 1.  Este GPO debe estar vinculado a la unidad organizativa de nivel superior "Servidores de Nivel 1" y tener la siguiente configuración:
+
    * En Configuración de equipo\Directivas\Configuración de Windows\Configuración de seguridad\Directivas locales\Asignación de derechos de usuario\Denegar el inicio de sesión como trabajo por lotes, selecciona **Definir esta configuración de directiva** y agrega los grupos de Nivel 0:
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -589,13 +593,14 @@ En esta sección, configuraremos directivas de grupo para impedir que las cuenta
      > [!NOTE]
      > Para obtener más información sobre los grupos integrados de Nivel 0, consulta la equivalencia de Nivel 0.
 
-         Other Delegated Groups
+      Otros grupos delegados
 
      > [!NOTE]
      > Para obtener más información sobre cualquier grupo personalizado que se haya creado con acceso de Nivel 0 efectivo, consulta la equivalencia de Nivel 0.
 
    * En Configuración de equipo\Directivas\Configuración de Windows\Configuración de seguridad\Directivas locales\Asignación de derechos de usuario\Denegar el inicio de sesión como servicio, selecciona **Definir esta configuración de directiva** y agrega los grupos de Nivel 0:
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -608,17 +613,18 @@ En esta sección, configuraremos directivas de grupo para impedir que las cuenta
      Read-Only Domain Controllers
      Group Policy Creators Owners
      Cryptographic Operators
-     ```
+      ```
 
      > [!NOTE]
      > Para obtener más información sobre los grupos integrados de Nivel 0, consulta la equivalencia de Nivel 0.
 
-         Other Delegated Groups
+      Otros grupos delegados
 
      > [!NOTE]
      > Para obtener más información sobre cualquier grupo personalizado que se haya creado con acceso de Nivel 0 efectivo, consulta la equivalencia de Nivel 0.
 
    * En Configuración de equipo\Directivas\Configuración de Windows\Configuración de seguridad\Directivas locales\Asignación de derechos de usuario\Denegar el inicio de sesión local, selecciona **Definir esta configuración de directiva** y agrega los grupos de Nivel 0:
+
      ```
      Enterprise Admins
      Domain Admins
@@ -637,7 +643,7 @@ En esta sección, configuraremos directivas de grupo para impedir que las cuenta
      > [!NOTE]
      > Nota: Para obtener más información sobre los grupos integrados de Nivel 0, consulta la equivalencia de Nivel 0.
 
-         Other Delegated Groups
+      Otros grupos delegados
 
      > [!NOTE]
      > Nota: Para obtener más información sobre cualquier grupo personalizado que se haya creado con acceso de Nivel 0 efectivo, consulta la equivalencia de Nivel 0.
@@ -777,7 +783,7 @@ Habilita esta característica en los servidores y las estaciones de trabajo exis
       2. Descargue el archivo *proxy.pac* de PAW de la [Galería de TechNet](https://aka.ms/pawmedia) y publíquelo en un sitio web interno.
 
          > [!NOTE]
-         > Después de descargar el archivo *proxy.pac* debe actualizarlo para asegurarse de que está actualizado y completo.  
+         > Después de descargar el archivo *proxy.pac* debe actualizarlo para asegurarse de que está actualizado y completo.
          > Microsoft publica todas las direcciones URL de Office 365 y Azure en el [Centro de soporte técnico](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US) de Office. En estas instrucciones se supone que se usa Internet Explorer (o Microsoft Edge) para la administración de Office 365, Azure y otros servicios en la nube. Microsoft recomienda configurar restricciones similares para cualquier explorador de terceros que sea necesario para la administración. Los exploradores web de las PAW solo se deben usar para la administración de servicios en la nube y nunca para la exploración web general.
          >
          > Puede que tenga que agregar otros destinos de Internet válidos a esta lista para otros proveedores de IaaS, pero que no sean sitios de productividad, entretenimiento, noticias o búsqueda.
@@ -818,36 +824,36 @@ Habilita esta característica en los servidores y las estaciones de trabajo exis
 
          **Directivas:**
 
-         |||
-         |-|-|
-         |CM Windows 10: Seguridad de dominio|N/D: No vincular ahora|
-         |SCM Windows 10 TH2: Equipo|Administrador\Nivel 0\Dispositivos|
-         ||Administrador\Nivel 1\Dispositivos|
-         ||Administrador\Nivel 2\Dispositivos|
-         |SCM Windows 10 TH2: BitLocker|Administrador\Nivel 0\Dispositivos|
-         ||Administrador\Nivel 1\Dispositivos|
-         ||Administrador\Nivel 2\Dispositivos|
-         |SCM Windows 10: Credential Guard|Administrador\Nivel 0\Dispositivos|
-         ||Administrador\Nivel 1\Dispositivos|
-         ||Administrador\Nivel 2\Dispositivos|
-         |SCM Internet Explorer: Equipo|Administrador\Nivel 0\Dispositivos|
-         ||Administrador\Nivel 1\Dispositivos|
-         ||Administrador\Nivel 2\Dispositivos|
-         |Configuración de PAW: Equipo|Administrador\Nivel 0\Dispositivos (existente)|
-         ||Administrador\Nivel 1\Dispositivos (nuevo vínculo)|
-         ||Administrador\Nivel 2\Dispositivos (nuevo vínculo)|
-         |Se requiere RestrictedAdmin: equipo|Administrador\Nivel 0\Dispositivos|
-         ||Administrador\Nivel 1\Dispositivos|
-         ||Administrador\Nivel 2\Dispositivos|
-         |SCM Windows 10: Usuario|Administrador\Nivel 0\Dispositivos|
-         ||Administrador\Nivel 1\Dispositivos|
-         ||Administrador\Nivel 2\Dispositivos|
-         |SCM Internet Explorer: Usuario|Administrador\Nivel 0\Dispositivos|
-         ||Administrador\Nivel 1\Dispositivos|
-         ||Administrador\Nivel 2\Dispositivos|
-         |Configuración de PAW: Usuario|Administrador\Nivel 0\Dispositivos (existente)|
-         ||Administrador\Nivel 1\Dispositivos (nuevo vínculo)|
-         ||Administrador\Nivel 2\Dispositivos (nuevo vínculo)|
+         | Nombre de directiva | Vínculo |
+         |--|--|
+         | CM Windows 10: Seguridad de dominio | N/D: No vincular ahora |
+         | SCM Windows 10 TH2: Equipo | Administrador\Nivel 0\Dispositivos |
+         |  | Administrador\Nivel 1\Dispositivos |
+         |  | Administrador\Nivel 2\Dispositivos |
+         | SCM Windows 10 TH2: BitLocker | Administrador\Nivel 0\Dispositivos |
+         |  | Administrador\Nivel 1\Dispositivos |
+         |  | Administrador\Nivel 2\Dispositivos |
+         | SCM Windows 10: Credential Guard | Administrador\Nivel 0\Dispositivos |
+         |  | Administrador\Nivel 1\Dispositivos |
+         |  | Administrador\Nivel 2\Dispositivos |
+         | SCM Internet Explorer: Equipo | Administrador\Nivel 0\Dispositivos |
+         |  | Administrador\Nivel 1\Dispositivos |
+         |  | Administrador\Nivel 2\Dispositivos |
+         | Configuración de PAW: Equipo | Administrador\Nivel 0\Dispositivos (existente) |
+         |  | Administrador\Nivel 1\Dispositivos (nuevo vínculo) |
+         |  | Administrador\Nivel 2\Dispositivos (nuevo vínculo) |
+         | Se requiere RestrictedAdmin: equipo | Administrador\Nivel 0\Dispositivos |
+         |  | Administrador\Nivel 1\Dispositivos |
+         |  | Administrador\Nivel 2\Dispositivos |
+         | SCM Windows 10: Usuario | Administrador\Nivel 0\Dispositivos |
+         |  | Administrador\Nivel 1\Dispositivos |
+         |  | Administrador\Nivel 2\Dispositivos |
+         | SCM Internet Explorer: Usuario | Administrador\Nivel 0\Dispositivos |
+         |  | Administrador\Nivel 1\Dispositivos |
+         |  | Administrador\Nivel 2\Dispositivos |
+         | Configuración de PAW: Usuario | Administrador\Nivel 0\Dispositivos (existente) |
+         |  | Administrador\Nivel 1\Dispositivos (nuevo vínculo) |
+         |  | Administrador\Nivel 2\Dispositivos (nuevo vínculo) |
 
          > [!NOTE]
          > El GPO "SCM Windows 10: Seguridad de dominio" se puede vincular al dominio con independencia de PAW, pero resultará afectado el dominio entero.
@@ -1096,4 +1102,4 @@ Una vez que el disco de plantilla y el archivo de datos de blindaje estén listo
 
 [Comprobación del mecanismo de autenticación de AD DS en la Guía paso a paso de Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378897(v=ws.10))
 
-[Módulo de plataforma segura](C:/sd/docs/p_ent_keep_secure/p_ent_keep_secure/trusted_platform_module_technology_overview.xml)
+[Información general sobre la tecnología del Módulo de plataforma segura](/windows/device-security/tpm/trusted-platform-module-overview)

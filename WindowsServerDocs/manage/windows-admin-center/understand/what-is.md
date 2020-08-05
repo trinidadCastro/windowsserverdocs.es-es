@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 92d8a47c4ac214faeac83ba8ff5a1a746bc8bdb3
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: da2970a8777ddcc95e2e8af0d979341965cb70ad
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891390"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518533"
 ---
 # <a name="what-is-windows-admin-center"></a>¿Qué es Windows Admin Center?
 
@@ -23,7 +23,7 @@ Windows Admin Center es un conjunto de herramientas de administración nuevo, im
 
 Windows Admin Center es la evolución moderna de herramientas de administración como el Administrador de servidores y MMC. Complementa a System Center, no es su sustituto.
 
-![](../media/wac-complements.png)
+![Diagrama de Windows Admin Center funcionando con otras soluciones](../media/wac-complements.png)
 
 ## <a name="how-does-windows-admin-center-work"></a>¿Cómo funciona Windows Admin Center?
 
@@ -31,7 +31,7 @@ Windows Admin Center se ejecuta en un explorador web y administra Windows Server
 
 La puerta de enlace de Windows Admin Center, cuando se publica en DNS y se le proporciona acceso a través de los firewalls corporativos correspondientes, no solo permite conectarse de forma segura a los servidores desde cualquier lugar con Microsoft Edge o Google Chrome, sino también administrarlos.
 
-![](../media/architecture.png)
+![Diagrama de la arquitectura de Windows Admin Center](../media/architecture.png)
 
 ## <a name="learn-how-windows-admin-center-improves-your-management-environment"></a>Obtén información acerca de la forma en que Windows Admin Center mejora tu entorno de administración
 
@@ -61,7 +61,7 @@ Windows Admin Center tiene muchos puntos de [integración con servicios de Azure
 
 ### <a name="deploy-hyper-converged-and-failover-clusters"></a>**Implementación de clústeres hiperconvergidos y de conmutación por error**
 
-Windows Admin Center permite una [implementación sin problemas de clústeres hiperconvergidos y de conmutación por error](../use/deploy-hyperconverged-infrastructure.md) a través de un asistente fácil de usar. 
+Windows Admin Center permite una [implementación sin problemas de clústeres hiperconvergidos y de conmutación por error](../use/deploy-hyperconverged-infrastructure.md) a través de un asistente fácil de usar.
 
 ### <a name="manage-hyper-converged-clusters"></a>**Administración de clústeres hiperconvergidos**
 

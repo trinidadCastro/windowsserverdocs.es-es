@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 25472e4ba4837bd68c9b6914e22c2219c91d3ac0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 71f15f9da1f477ec8632fd2eb900e650f83ef3de
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861658"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409605"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>Configuración de sistemas para alta precisión
 >Se aplica a: Windows Server 2016 y Windows 10, versión 1607 o superior
@@ -23,7 +23,7 @@ La sincronización de la hora en Windows 10 y Windows Server 2016 se ha mejora
 La siguiente guía te ayudará a configurar los sistemas para lograr una alta precisión.  En este artículo se tratan los siguientes requisitos:
 
 - Sistemas operativos compatibles
-- Configuración del sistema 
+- Configuración del sistema
 
 > [!WARNING]
 > **Objetivos de precisión de los sistemas operativos anteriores**<br>
@@ -61,8 +61,7 @@ En la ilustración que se muestra a continuación, las máquinas virtuales que r
 
 ![Topología de hora - 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/Topology2016.png)
 
-
->[!TIP] 
+>[!TIP]
 >**Comprobación de la versión de Windows**<br>
 > Puede ejecutar el comando `winver` en un símbolo del sistema para verificar si la versión del sistema operativo es 1607 (o posterior) y que la compilación del sistema operativo es 14393 (o superior), como se muestra a continuación:
 >
@@ -93,78 +92,70 @@ Por ejemplo: Considera la posibilidad de una jerarquía de sincronización de ho
 Esta medición puede obtenerse mediante la herramienta de bandeja de entrada w32tm.exe.  Para ello:
 
 1. Haz el cálculo desde el destino y servidor de hora B.
-    
+
     `w32tm /stripchart /computer:TimeServerB /rdtsc /samples:450 > c:\temp\Target_TsB.csv`
 
 2. Haz el cálculo desde el servidor de hora B frente a (apuntando a) el servidor de hora A.
-    
+
     `w32tm /stripchart /computer:TimeServerA /rdtsc /samples:450 > c:\temp\Target_TsA.csv`
 
 3. Haz el cálculo desde el servidor de hora A frente al origen.
- 
+
 4. Luego, agrega el promedio de RoundTripDelay medido en el paso anterior y divide entre 2 para obtener el retraso de red acumulativo entre el destino y el origen.
 
-#### <a name="registry-settings"></a>Configuración del Registro
+## <a name="registry-settings"></a>Configuración del Registro
 
-# <a name="minpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
+### <a name="minpollinterval"></a>MinPollInterval
+
 Configura el intervalo más pequeño en log2 segundos permitidos para el sondeo del sistema.
 
-|  |  | 
-|---------|---------|
-|Ubicación de la clave     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
-|Valor    | 6        |
-|Resultado | El intervalo de sondeo mínimo es ahora de 64 segundos. |
+| Descripción | Value |
+|--|--|
+| Ubicación de la clave | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| Valor | 6 |
+| Resultado | El intervalo de sondeo mínimo es ahora de 64 segundos. |
 
-El comando siguiente indica a la hora de Windows que recoja la configuración actualizada:
+El comando siguiente indica a la hora de Windows que recoja la configuración actualizada: `w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="maxpollinterval"></a>MaxPollInterval
 
-
-# <a name="maxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
 Configura el intervalo más grande en log2 segundos permitidos para el sondeo del sistema.
 
-|  |  |  
-|---------|---------|
-|Ubicación de la clave     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
-|Valor    | 6        |
-|Resultado | El intervalo de sondeo máximo es ahora de 64 segundos.  |
+| Descripción | Value |
+|--|--|
+| Ubicación de la clave | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| Valor | 6 |
+| Resultado | El intervalo de sondeo máximo es ahora de 64 segundos. |
 
-El comando siguiente indica a la hora de Windows que recoja la configuración actualizada:
+El comando siguiente indica a la hora de Windows que recoja la configuración actualizada: `w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="updateinterval"></a>UpdateInterval
 
-# <a name="updateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
 El número de tics del reloj entre los ajustes de corrección de fase.
 
-|  |  |  
-|---------|---------|
-|Ubicación de la clave     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config       |
-|Valor    | 100        |
-|Resultado | El número de tics del reloj entre los ajustes de corrección de fase es ahora de 100 tics. |
+| Descripción | Value |
+|--|--|
+| Ubicación de la clave | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| Valor | 100 |
+| Resultado | El número de tics del reloj entre los ajustes de corrección de fase es ahora de 100 tics. |
 
-El comando siguiente indica a la hora de Windows que recoja la configuración actualizada:
+El comando siguiente indica a la hora de Windows que recoja la configuración actualizada: `w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="specialpollinterval"></a>SpecialPollInterval
 
-# <a name="specialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
 Configura el intervalo de sondeo en segundos cuando la marca SpecialInterval 0x1 está habilitada.
 
-|  |  |  
-|---------|---------|
-|Ubicación de la clave     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient        |
-|Valor    | 64        |
-|Resultado | El intervalo de sondeo es ahora de 64 segundos. |
+| Descripción | Value |
+|--|--|
+| Ubicación de la clave | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient |
+| Valor | 64 |
+| Resultado | El intervalo de sondeo es ahora de 64 segundos. |
 
-El comando siguiente reinicia la hora de Windows para recoger la configuración actualizada:
+El comando siguiente reinicia la hora de Windows para recoger la configuración actualizada: `net stop w32time && net start w32time`
 
-`net stop w32time && net start w32time`
+### <a name="frequencycorrectrate"></a>FrequencyCorrectRate
 
-# <a name="frequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
-
-|  |  |  
-|---------|---------|
-|Ubicación de la clave     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config      |
-|Valor    | 2        |
-
-
----
+| Descripción | Value |
+|--|--|
+| Ubicación de la clave | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| Valor | 2 |

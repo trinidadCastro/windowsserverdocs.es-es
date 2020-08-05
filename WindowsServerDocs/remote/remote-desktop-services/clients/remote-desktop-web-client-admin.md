@@ -8,19 +8,19 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: a8521eae302ade84904e3ba09c001eac21fffd6a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 12ea9226a1656c6b3c800517818e5e950d142c64
+ms.sourcegitcommit: e86ea69254e2f63eaab10010ae3a43622156ab23
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77125156"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87470698"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configuración del cliente web de Escritorio remoto para los usuarios
 
 El cliente web de Escritorio remoto permite a los usuarios acceder a la infraestructura de Escritorio remoto de la organización mediante un explorador web compatible. Podrán interactuar con aplicaciones o escritorios remotos como lo harían con un equipo local sin importar dónde se encuentren. Una vez configurado el cliente web de Escritorio remoto, lo único que necesitan los usuarios para empezar es la dirección URL en la que pueden acceder al cliente, sus credenciales y un explorador web compatible.
 
 >[!IMPORTANT]
->El cliente web no admite actualmente el uso del proxy de aplicación de Azure y no admite en absoluto el Proxy de aplicación web. Consulta [Uso de Servicios de Escritorio remoto con los servicios de proxy de la aplicación](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services) para más información.
+>El cliente web admite el uso del proxy de aplicación de Azure AD pero no admite en absoluto el Proxy de aplicación web. Consulta [Uso de Servicios de Escritorio remoto con los servicios de proxy de la aplicación](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services) para más información.
 
 ## <a name="what-youll-need-to-set-up-the-web-client"></a>Lo que necesitas para configurar el cliente web
 
@@ -42,7 +42,7 @@ Los usuarios verán un mejor rendimiento al conectarse a Windows Server 2016 (
 >1. Abre un símbolo del sistema de PowerShell con privilegios elevados.
 >2. Ejecuta **Uninstall-Module RDWebClientManagement** para desinstalar el módulo nuevo.
 >3. Cierra y vuelve a abrir el símbolo del sistema de PowerShell con privilegios elevados.
->4. Ejecuta **Install-Module RDWebClientManagement -RequiredVersion \<versión anterior > para instalar el módulo anterior.**
+>4. Ejecute **Install-Module RDWebClientManagement -RequiredVersion \<old version> para instalar el módulo anterior.**
 >5. Ejecuta **Uninstall-RDWebClient** para desinstalar el cliente web anterior.
 >6. Ejecuta **Uninstall-Module RDWebClientManagement** para desinstalar el módulo anterior.
 >7. Cierra y vuelve a abrir el símbolo del sistema de PowerShell con privilegios elevados.
