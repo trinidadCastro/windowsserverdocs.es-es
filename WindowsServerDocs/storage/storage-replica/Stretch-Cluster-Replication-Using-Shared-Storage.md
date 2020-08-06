@@ -38,7 +38,7 @@ En este tutorial se utiliza como ejemplo el siguiente entorno:
 
 **ILUSTRACIÓN 1: replicación de almacenamiento en un clúster extendido**
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 -   Bosque de Active Directory Domain Services (no es necesario ejecutar Windows Server 2016).
 -   2-64 servidores que ejecutan Windows Server 2019 o Windows Server 2016, Datacenter Edition. Si está ejecutando Windows Server 2019, en su lugar, puede usar la edición Standard si es correcto replicando un solo volumen de hasta 2 TB de tamaño.
 -   Dos conjuntos de almacenamiento compartido, con JBOD de SAS (como con espacios de almacenamiento), Canal de fibra SAN, VHDX compartido o destino iSCSI. El almacenamiento debe contener una combinación de medios de HDD y SSD y debe ser compatible con la reserva persistente. Pondrá cada conjunto de almacenamiento a disposición de solo dos de los servidores (modo asimétrico).

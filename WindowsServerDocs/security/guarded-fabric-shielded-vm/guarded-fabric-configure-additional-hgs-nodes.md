@@ -28,7 +28,7 @@ Use uno de estos métodos para agregar nodos HGS, como mejor se adapte a su ento
 | Nuevo bosque de HGS | [Uso de archivos PFX](#dedicated-hgs-forest-with-pfx-certificates) | [Usar huellas digitales de certificado](#dedicated-hgs-forest-with-certificate-thumbprints) |
 | Bosque bastión existente | [Uso de archivos PFX](#existing-bastion-forest-with-pfx-certificates) | [Usar huellas digitales de certificado](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 Asegúrese de que cada nodo adicional:
 - Tiene la misma configuración de hardware y software que el nodo principal

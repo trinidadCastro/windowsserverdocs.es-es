@@ -106,8 +106,8 @@ En la tabla siguiente se resumen las diferencias entre las máquinas virtuales b
 |Cifrar el estado de la máquina virtual y tráfico de migración en vivo | Sí, necesario pero configurable |  Sí, necesario y exigido  |
 |Componentes de integración | Configurable por el administrador de tejido      | Algunos componentes de integración bloqueados (por ejemplo, intercambio de datos, PowerShell Direct) |
 |Conexión a máquina virtual (consola), dispositivos HID (por ejemplo, teclado, mouse) | Activado, no se puede deshabilitar | Habilitada en hosts a partir de la versión 1803 de Windows Server; Deshabilitado en hosts anteriores |
-|Puertos COM/serie   | Compatible                             | Deshabilitado (no se puede habilitar) |
-|Asociar un depurador (al proceso de la máquina virtual)<sup>1</sup>| Compatible          | Deshabilitado (no se puede habilitar) |
+|Puertos COM/serie   | Compatible.                             | Deshabilitado (no se puede habilitar) |
+|Asociar un depurador (al proceso de la máquina virtual)<sup>1</sup>| Compatible.          | Deshabilitado (no se puede habilitar) |
 
 <sup>1</sup> los depuradores tradicionales que se asocian directamente a un proceso, como WinDbg.exe, están bloqueados para las máquinas virtuales blindadas porque el proceso de trabajo de la máquina virtual (VMWP.exe) es una luz de proceso protegido (PPL).
 Las técnicas de depuración alternativas, como las utilizadas por LiveKd.exe, no se bloquean.

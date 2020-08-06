@@ -7,12 +7,12 @@ ms.assetid: f5861ae9-77cb-4d37-b4c5-8f0757213385
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1097520110f876a8c29e05547d4407a13f1c5057
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: bc672a3f2d9b74ff4ed283e826312f6661ba63f6
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180521"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838404"
 ---
 # <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>Preparar el servidor de origen para Windows Server Essentials migration1
 
@@ -39,7 +39,7 @@ Complete los siguientes pasos previos para asegurarse de que los datos y la conf
 
 ##### <a name="to-back-up-the-source-server"></a>Para realizar copias de seguridad del servidor de origen
 
-1.  Realice una copia de seguridad completa del servidor de origen. Para obtener más información acerca de las copias de seguridad de Windows Small Business Server 2011 Essentials, vea el tema [Learn more about setting up server backup (Más información acerca de cómo configurar copias de seguridad de servidor)](https://technet.microsoft.com/library/server-backup-support-1.aspx).
+1.  Realice una copia de seguridad completa del servidor de origen. Para obtener más información acerca de las copias de seguridad de Windows Small Business Server 2011 Essentials, vea el tema [Learn more about setting up server backup (Más información acerca de cómo configurar copias de seguridad de servidor)](/previous-versions/windows/it-pro/windows-server-essentials-sbs/ff402413(v=ws.11)).
 
 2.  Compruebe que la copia de seguridad se ejecute correctamente. Para probar la integridad de la copia de seguridad, seleccione archivos aleatorios de la copia de seguridad, restáurelos en una ubicación alternativa y confirme que los archivos restaurados son los mismos que los archivos originales.
 
@@ -192,4 +192,3 @@ Complete los siguientes pasos previos para asegurarse de que los datos y la conf
 
 > [!NOTE]
 >  Si ha usado el SDK de Windows Small Business Server 2011 Essentials para desarrollar un complemento personalizado de alerta o de mantenimiento del sistema y desea seguir usando el complemento con Windows Server Essentials, también debe actualizar el complemento e implementarlo en el servidor de destino.
-

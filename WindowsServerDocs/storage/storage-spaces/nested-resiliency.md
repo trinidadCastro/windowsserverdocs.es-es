@@ -20,7 +20,7 @@ ms.locfileid: "87769753"
 
 La resistencia anidada es una nueva capacidad de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server 2019 que permite que un clúster de dos servidores resista varios errores de hardware al mismo tiempo sin pérdida de disponibilidad de almacenamiento, por lo que los usuarios, las aplicaciones y las máquinas virtuales continúan ejecutándose sin interrupciones. En este tema se explica cómo funciona, se proporcionan instrucciones paso a paso para comenzar y se responde a las preguntas más frecuentes.
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 ### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![Icono de marca de verificación verde.](media/nested-resiliency/supported.png) Considere la resistencia anidada si:
 

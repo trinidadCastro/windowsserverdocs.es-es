@@ -175,8 +175,8 @@ En Resumen, cada servidor del clúster debe tener los mismos tipos de unidades y
 
 | Restricción | State |
 |--|--|
-| Los mismos tipos de unidades en cada servidor | **Obligatorio** |
-| El mismo número de cada tipo en cada servidor | **Obligatorio** |
+| Los mismos tipos de unidades en cada servidor | **Requerido** |
+| El mismo número de cada tipo en cada servidor | **Requerido** |
 | Los mismos modelos de unidad en cada servidor | Recomendado |
 | Los mismos tamaños de unidad en cada servidor | Recomendado |
 

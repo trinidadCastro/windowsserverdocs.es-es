@@ -642,6 +642,6 @@ Guidance: Check the detailed error and make sure the inventory requirements are 
 
 Este problema se debe a un defecto de código en el servicio de migración de almacenamiento. Actualmente, la única solución es cambiar el nombre del equipo para que tenga el mismo nombre que el nombre NetBIOS y, a continuación, usar [netdom computername/Add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) para agregar un nombre de equipo alternativo que contenga el nombre más largo que estaba en uso antes de iniciar el inventario. El servicio de migración de almacenamiento admite la migración de nombres de equipo alternativos.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)

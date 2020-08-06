@@ -7,12 +7,12 @@ ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6666a0f68863913c0c0a5a1b1e903eaebf5470a4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c2007160c294074287437bedb7e94b318432a9b4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180491"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838354"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>Paso 1: Preparación del servidor de origen para la migración a Windows Server Essentials
 
@@ -42,14 +42,14 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 2. Compruebe que la copia de seguridad se ejecute correctamente. Para probar la integridad de la copia de seguridad, seleccione archivos aleatorios de la copia de seguridad, restáurelos en una ubicación alternativa y confirme que los archivos restaurados son los mismos que los archivos originales.
 
-   |Product|Resource|
+   |Producto|Recurso|
    |---|---|
-   |Windows Small Business Server 2003|[Realizar una copia de seguridad y restaurar Windows Small Business Server 2003](https://msdn.microsoft.com/library/cc875809.aspx)
+   |Windows Small Business Server 2003|[Realizar una copia de seguridad y restaurar Windows Small Business Server 2003](/previous-versions/tn-archive/cc875809(v=technet.10))
    |Windows Small Business Server 2008|[Realizar una copia de seguridad y restaurar los datos en Windows Small Business Server 2008](https://technet.microsoft.com/library/cc527505\(WS.10\).aspx)
    |Windows Server 2008 Foundation|[Copia de seguridad y recuperación](https://technet.microsoft.com/library/cc754097\(WS.10\).aspx)
-   |Windows Small Business Server 2011 Essentials|[Más información acerca de cómo configurar la copia de seguridad del servidor](https://technet.microsoft.com/library/server-backup-support-1.aspx)
-   |Windows Small Business Server 2011 Standard|[Administrar copias de seguridad del servidor](https://technet.microsoft.com/library/cc527488.aspx)
-   |Windows Server Essentials|[Administrar copias de seguridad y restaurar en Windows Server Essentials](https://technet.microsoft.com/library/jj713536.aspx)
+   |Windows Small Business Server 2011 Essentials|[Más información acerca de cómo configurar la copia de seguridad del servidor](/previous-versions/windows/it-pro/windows-server-essentials-sbs/ff402413(v=ws.11))
+   |Windows Small Business Server 2011 Standard|[Administrar copias de seguridad del servidor](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc527488(v=ws.11))
+   |Windows Server Essentials|[Administrar copias de seguridad y restaurar en Windows Server Essentials](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))
 
 ###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>Instalar los Service Packs más recientes
  Debe instalar las actualizaciones y Service Packs más recientes en el servidor de origen antes de la migración.
@@ -128,7 +128,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
    Después de que la herramienta BPA recopile información sobre la configuración del servidor, comprueba que la información sea correcta y muestra a los administradores una lista con información y problemas ordenados por gravedad. En la lista se describe cada problema y se propone una recomendación o posible solución. Hay disponibles tres tipos de informes:
 
-|Tipo de informe|Description
+|Tipo de informe|Descripción
 |-----------------|-----------------
 |Informes de lista|Muestra los informes como una lista unidimensional.
 |Informes de árbol|Muestra los informes como una lista jerárquica.
@@ -172,17 +172,17 @@ Para ver la descripción y las soluciones para un problema, haga clic en el prob
  Si eligió usar Microsoft Office 365 como solución de correo electrónico para su dominio, siga las instrucciones de [Migrar todos los buzones de correo a la nube con una migración total de Exchange](https://help.outlook.com/140/ms.exch.ecp.emailmigrationwizardexchangelearnmore.aspx) para comenzar la migración del correo electrónico a Office 365. Se recomienda completar la migración de correo electrónico antes de instalar Windows Server Essentials.
 
 > [!NOTE]
->  El paso para quitar el servidor local de Exchange Server en el servidor de origen es obligatorio si tiene previsto integrar Windows Server Essentials con Office 365. Para obtener información acerca de cómo migrar carpetas públicas de Exchange Server a Office 365, consulte la entrada de blog sobre los [scripts de migración de carpetas públicas de Microsoft Exchange 2013 para Office 365](https://blogs.technet.com/b/fmustafa/archive/2013/04/11/microsoft-exchange-2013-public-folders-migration-scripts-for-office-365.aspx).
+>  El paso para quitar el servidor local de Exchange Server en el servidor de origen es obligatorio si tiene previsto integrar Windows Server Essentials con Office 365. Para obtener información acerca de cómo migrar carpetas públicas de Exchange Server a Office 365, consulte la entrada de blog sobre los [scripts de migración de carpetas públicas de Microsoft Exchange 2013 para Office 365](/archive/blogs/fmustafa/microsoft-exchange-2013-public-folders-migration-scripts-for-office-365).
 >
 >  Después de completar la instalación, debe activar la característica de integración de Office 365 en Windows Server Essentials mediante la ejecución de la tarea **integrar con Microsoft Office 365** .
 
 > [!IMPORTANT]
->  Para que la herramienta de migración de Office 365 pueda conectar con el servidor de Exchange Server que se ejecuta en el servidor de origen, debe habilitar RPC a través de HTTP en el servidor de origen. Para obtener más información sobre cómo habilitar RPC a través de HTTP, consulte [Cómo implementar RPC a través de HTTP por primera vez en Small Business Server 2003 (Standard o Premium)](https://technet.microsoft.com/library/bb123622%28EXCHG.65%29.aspx). Si no puede ejecutar correctamente la herramienta de migración de Office 365 después de habilitar RPC a través de HTTP, vea la opción **ValidPorts** del Registro en HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy y asegúrese de que aparezca el nombre completo (FQDN) del servidor de origen. Si no aparece el nombre completo, agréguelo como en el ejemplo siguiente:
+>  Para que la herramienta de migración de Office 365 pueda conectar con el servidor de Exchange Server que se ejecuta en el servidor de origen, debe habilitar RPC a través de HTTP en el servidor de origen. Para obtener más información sobre cómo habilitar RPC a través de HTTP, consulte [Cómo implementar RPC a través de HTTP por primera vez en Small Business Server 2003 (Standard o Premium)](/previous-versions/tn-archive/bb123622(v=exchg.65)). Si no puede ejecutar correctamente la herramienta de migración de Office 365 después de habilitar RPC a través de HTTP, vea la opción **ValidPorts** del Registro en HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy y asegúrese de que aparezca el nombre completo (FQDN) del servidor de origen. Si no aparece el nombre completo, agréguelo como en el ejemplo siguiente:
 >
 >  remote. *contoso*.com:6001-6002;remote. *contoso*.com:6004 (reemplace *contoso* por el nombre de su dominio).
 
 #### <a name="migrate-email-to-another-on-premises-exchange-server"></a>Migrar correo electrónico a otro servidor local de Exchange Server
- Para obtener información sobre cómo migrar el correo electrónico a otro servidor local de Exchange Server, consulte [integrar un servidor local de Exchange Server con Windows Server Essentials](https://technet.microsoft.com/library/jj200172.aspx). Se recomienda que configure el nuevo servidor local de Exchange después de instalar Windows Server Essentials y, a continuación, finalice la migración de correo electrónico antes de disminuir el nivel del servidor de origen.
+ Para obtener información sobre cómo migrar el correo electrónico a otro servidor local de Exchange Server, consulte [integrar un servidor local de Exchange Server con Windows Server Essentials](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200172(v=ws.11)). Se recomienda que configure el nuevo servidor local de Exchange después de instalar Windows Server Essentials y, a continuación, finalice la migración de correo electrónico antes de disminuir el nivel del servidor de origen.
 
 > [!NOTE]
 >  Exchange Server no incluye el conector POP3 de Windows Small Business Server. Después de migrar los datos de correo electrónico a otro servidor de Exchange Server, ya no podrá usar la característica Conector POP3.
@@ -194,4 +194,3 @@ Para ver la descripción y las soluciones para un problema, haga clic en el prob
  Ha preparado el servidor de origen para la migración a Windows Server Essentials.  Ahora, vaya al [paso 2: instalación de Windows Server Essentials como nuevo controlador de dominio de réplica](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md).
 
 Para ver todos los pasos, vea [migrar a Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).
-

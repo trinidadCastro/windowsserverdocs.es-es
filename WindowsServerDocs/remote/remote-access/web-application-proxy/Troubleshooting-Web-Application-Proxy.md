@@ -44,7 +44,7 @@ En esta sección se proporcionan procedimientos de solución de problemas para e
 
 ## <a name="powershell-messages"></a>Mensajes de PowerShell
 
-|Evento o síntoma|Causa posible|Solución|
+|Evento o síntoma|Causa posible|Resolución|
 |--------------------|------------------|--------------|
 |El certificado de confianza ("ADFS ProxyTrust- <WAP machine name> ") no es válido|La causa puede ser una de las siguientes:<p>-La máquina del proxy de aplicación estuvo inactiva durante demasiado tiempo.<br />-Desconexiones entre el proxy de aplicación web y AD FS<br />-Problemas de infraestructura de certificados<br />-Cambios en la máquina AD FS, o el proceso de renovación entre el proxy de aplicación web y el AD FS no se ejecutó como planeado cada 8 horas, por lo que necesita renovar la confianza<br />-El reloj de la máquina del proxy de aplicación web y el AD FS no están sincronizados.|Asegúrese de que los relojes estén sincronizados. Ejecute el cmdlet install-WebApplicationProxy.|
 |No se encontraron datos de configuración en AD FS|Esto puede deberse a que el proxy de aplicación web no se instaló por completo aún o debido a cambios en la base de datos AD FS o a daños en la base de datos.|Ejecutar el cmdlet install-WebApplicationProxy|
@@ -54,7 +54,7 @@ En esta sección se proporcionan procedimientos de solución de problemas para e
 ## <a name="administrator-console-events"></a>Eventos de Consola de administrador
 Los siguientes eventos de la consola de administrador suelen ser indicativos de errores de autenticación, Tokes no válidos o cookies expiradas.
 
-|Evento o síntoma|Causa posible|Solución|
+|Evento o síntoma|Causa posible|Resolución|
 |--------------------|------------------|--------------|
 |11005<p>El proxy de aplicación web no pudo crear la clave de cifrado de cookies mediante el secreto de la configuración.|El parámetro "AccessCookiesEncryptionKey" de la configuración global cambió por el comando de PowerShell: set-WebApplicationProxyConfiguration-RegenerateAccessCookiesEncryptionKey|No es necesario realizar ninguna acción. Se quitó la cookie problemática y el usuario se redirigió a STS para la autenticación.|
 |12000<p>El proxy de aplicación web no pudo comprobar los cambios de configuración durante al menos 60 minutos|El proxy de aplicación web no puede tener acceso a la configuración del proxy de aplicación Web mediante el comando Get-WebApplicationProxyConfiguration/Application. Esto suele deberse a la falta de conectividad con AD FS o a la necesidad de renovar la confianza con AD FS.|Compruebe la conectividad con AD FS. Para ello, use el vínculo https://<FQDN_AD_FS_Proxy>/FederationMetadata/2007-06/FederationMetadata.xmlAsegúrese de que hay confianza establecida entre el AD FS y el proxy de aplicación Web. Si estas soluciones no funcionan, ejecute el cmdlet install-WebApplicationProxy.|
@@ -82,7 +82,7 @@ Los siguientes eventos de la consola de administrador suelen ser indicativos de 
 
 Los siguientes eventos de la consola de administrador suelen ser indicativos de problemas relacionados con la configuración, como el aprovisionamiento, la solicitud que no se realizan correctamente, los servidores back-end que no son accesibles y los desbordamientos del búfer.
 
-|Evento o síntoma|Causa posible|Solución|
+|Evento o síntoma|Causa posible|Resolución|
 |--------------------|------------------|--------------|
 |12019<p>El proxy de aplicación web no pudo crear un agente de escucha para la siguiente dirección URL.|Una posible causa del evento es que otro servicio está escuchando en la misma dirección URL.|El administrador debe asegurarse de que nadie escucha o se enlaza con las mismas direcciones URL. Para comprobarlo, ejecute el comando: netsh http show urlacl. Si otro componente que se ejecuta en la máquina del proxy de aplicación Web usa esta dirección URL, quítela o use una dirección URL diferente para publicar las aplicaciones mediante el proxy de aplicación Web.|
 |12020<p>El proxy de aplicación web no pudo crear una reserva para la siguiente dirección URL.|Una posible causa del evento es que otro servicio tiene una reserva en la misma dirección URL.|El administrador debe asegurarse de que nadie se enlaza con las mismas direcciones URL. Para comprobarlo, ejecute el comando: netsh http show urlacl. Si otro componente que se ejecuta en la máquina del proxy de aplicación Web usa esta dirección URL, quítela o use una dirección URL diferente para publicar las aplicaciones mediante el proxy de aplicación Web.|

@@ -7,12 +7,12 @@ ms.assetid: 119a7fbc-2c76-4aa3-8a7f-c7073d461b5b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6cd58247ec0591b293f8e11b1cfb24524fcd8658
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4883f8daed21b89cac6906ddf68e06d71a95364e
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180711"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838394"
 ---
 # <a name="migrate-windows-small-business-server-2003-to-windows-server-essentials"></a>Migración de Windows Small Business Server 2003 a Windows Server Essentials
 
@@ -49,7 +49,7 @@ En esta guía se describe cómo migrar un dominio existente de Windows SBS 2003 
 
 3.  [Unir equipos a la nueva red de Windows Server Essentials](Join-computers-to-the-new-Windows-Server-Essentials-network.md).  En esta sección se describe cómo unir equipos cliente a la nueva red de Windows Server Essentials y cómo actualizar la configuración de directiva de grupo.
 
-4.  [Mueva los datos y la configuración de SBS 2003 al servidor de destino](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  Esta sección proporciona información sobre cómo migrar los datos y la configuración desde el servidor de origen.
+4.  [Mueva los datos y la configuración de SBS 2003 al servidor de destino](./move-windows-sbs-2003-to-the-destination-server-for-migration.md).  Esta sección proporciona información sobre cómo migrar los datos y la configuración desde el servidor de origen.
 
 5.  [Habilite la redirección de carpetas en el servidor de destino de Windows Server Essentials](Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md).  Si el redireccionamiento de carpetas está habilitado en el servidor de origen, puede habilitarlo en el servidor de destino y, a continuación, eliminar la antigua configuración de redireccionamiento de carpetas de la Directiva de grupo.
 

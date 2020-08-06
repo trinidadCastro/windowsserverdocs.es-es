@@ -39,7 +39,7 @@ La réplica de Hyper-V es una parte integral del rol de Hyper-V. Contribuye a su
     | ¿Dónde se inicia? | En la máquina virtual de réplica | Se inicia en la principal y se completa en la secundaria | En la máquina virtual de réplica |
     | ¿Con qué frecuencia se debe ejecutar? | Se recomienda una vez al mes para las pruebas | Una vez cada seis meses o de acuerdo con los requisitos de cumplimiento | Solo en caso de desastre cuando la máquina virtual principal no está disponible |
     | ¿La máquina virtual principal continúa replicándose? | Sí | Sí. Cuando se resuelve la interrupción, la replicación inversa replica los cambios de nuevo en el sitio primario para que las principales y secundarias se sincronicen. | No |
-    | ¿Hay alguna pérdida de datos? | None | Ninguno. Después de la conmutación por error, réplica de Hyper-V replica el último conjunto de cambios sometidos a seguimiento en el servidor principal para garantizar que no se pierdan datos. | Depende del evento y los puntos de recuperación |
+    | ¿Hay alguna pérdida de datos? | Ninguno | Ninguno. Después de la conmutación por error, réplica de Hyper-V replica el último conjunto de cambios sometidos a seguimiento en el servidor principal para garantizar que no se pierdan datos. | Depende del evento y los puntos de recuperación |
     | ¿Hay algún tiempo de inactividad? | Ninguno. No afecta al entorno de producción. Crea una máquina virtual de prueba duplicada durante la conmutación por error. Una vez finalizada la conmutación por error, seleccione **conmutación por error** en la máquina virtual de réplica y se limpia y elimina automáticamente. | La duración de la interrupción planeada | La duración de la interrupción no planeada |
 
 -   **Puntos de recuperación**: al configurar las opciones de replicación de una máquina virtual, se especifican los puntos de recuperación que se desean almacenar en ella. Los puntos de recuperación representan una instantánea en el tiempo desde la que puede recuperar una máquina virtual. Obviamente se pierden menos datos si se recupera desde un punto de recuperación muy reciente. Puede tener acceso a los puntos de recuperación hace hasta 24 horas.
@@ -95,7 +95,7 @@ Haga lo siguiente en cada máquina virtual que quiera replicar:
 
 2.  En la página **Antes de comenzar**, haga clic en **Siguiente**.
 
-3.  En la página **especificar servidor de réplicas** , en el cuadro servidor de réplicas, escriba el nombre NetBIOS o el FQDN del servidor réplica. Si el servidor réplica forma parte de un clúster de conmutación por error, escriba el nombre del agente de réplicas de Hyper-V. Haga clic en **Next**.
+3.  En la página **especificar servidor de réplicas** , en el cuadro servidor de réplicas, escriba el nombre NetBIOS o el FQDN del servidor réplica. Si el servidor réplica forma parte de un clúster de conmutación por error, escriba el nombre del agente de réplicas de Hyper-V. Haga clic en **Siguiente**.
 
 4.  En la página **especificar parámetros de conexión** , réplica de Hyper-V recupera automáticamente la configuración de autenticación y puerto que configuró para el servidor réplica. Si los valores no se recuperan, compruebe que el servidor está configurado como un servidor de réplicas y que está registrado en DNS. Si es necesario, escriba manualmente la configuración.
 
