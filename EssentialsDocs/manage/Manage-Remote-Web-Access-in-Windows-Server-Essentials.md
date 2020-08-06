@@ -7,12 +7,12 @@ ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 56bfd8d9860ad571265980e859a09914fb4f1b9c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 094e5914fee1c5d2a1b6f3c68621fa81b96f21c0
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180941"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837784"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
@@ -151,7 +151,7 @@ ms.locfileid: "87180941"
 > [!NOTE]
 > La configuración de red debe cumplir los requisitos de red compatibles con Windows Server Essentials. Solo debe haber un enrutador en la red.
 
- Si el enrutador no se configura con el Asistente para configurar el nombre de dominio, debe desviar manualmente el puerto 443. Para obtener información acerca de cómo configurar el reenvío de puertos en el enrutador, consulte el [Foro de Small Business Server](https://docs.microsoft.com/answers/topics/windows-small-business-server.html).
+ Si el enrutador no se configura con el Asistente para configurar el nombre de dominio, debe desviar manualmente el puerto 443. Para obtener información acerca de cómo configurar el reenvío de puertos en el enrutador, consulte el [Foro de Small Business Server](/answers/topics/windows-small-business-server.html).
 
 ###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>Reemplazar un enrutador
  Reemplace el enrutador según las instrucciones del fabricante y, a continuación, ejecute el Asistente para configurar el enrutador para configurar el nuevo enrutador.
@@ -306,7 +306,7 @@ ms.locfileid: "87180941"
 
  **Algunos ejemplos de dominios genéricos de primer nivel:**
 
-|Extensión de dominio|Description|
+|Extensión de dominio|Descripción|
 |----------------------|-----------------|
 |.com|Normalmente la usan organizaciones comerciales, pero la puede utilizar cualquier usuario.|
 |.net|Diseñada para empresas que ofrecen servicios de infraestructura de red.|
@@ -318,7 +318,7 @@ ms.locfileid: "87180941"
 
  **Algunos ejemplos de dominios de primer nivel de código de país:**
 
-|Extensión de dominio|Description|
+|Extensión de dominio|Descripción|
 |----------------------|-----------------|
 |.ca|Para sitios web de Canadá.|
 |.cn|Para sitios web de China.|
@@ -441,7 +441,7 @@ ms.locfileid: "87180941"
 
 3.  Haga clic en **Reparar**. Se iniciará el **Asistente para reparación del acceso Web remoto**.
 
-4.  Haga clic en **Next**. El asistente analiza el acceso Web remoto, identifica el problema e intenta repararlo.
+4.  Haga clic en **Siguiente**. El asistente analiza el acceso Web remoto, identifica el problema e intenta repararlo.
 
 5.  Si recibe una alerta cuando finalice el asistente, haga clic en **Reintentar** para volver a intentar la reparación. Si recibe otra alerta, compruébela para obtener información adicional sobre el problema y los pasos necesarios para solucionarlo.
 

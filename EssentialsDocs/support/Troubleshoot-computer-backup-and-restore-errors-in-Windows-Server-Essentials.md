@@ -7,12 +7,12 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cbc6fec843a55d99ba709953b56e01a55f317a62
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 933dab3e0471ef4b9d8e4f603a1c177ecc6fc70c
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409525"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838294"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Solucionar errores de copias de seguridad del equipo y restauración en Windows Server Essentials
 
@@ -21,7 +21,7 @@ ms.locfileid: "87409525"
 Use estos procedimientos para solucionar problemas de copias de seguridad del equipo en Windows Server Essentials, como por ejemplo los problemas de configuración de copia de seguridad, las copias de seguridad incompletas o erróneas, alertas de estado de copia de seguridad y problemas relacionados con la restauración de archivos, carpetas o la restauración completa del sistema.
 
 > [!NOTE]
-> Para obtener la información más reciente sobre la solución de problemas de la comunidad de Windows Server Essentials, visite el [Foro de Windows Server Essentials](https://docs.microsoft.com/answers/topics/windows-server-essentials.html).
+> Para obtener la información más reciente sobre la solución de problemas de la comunidad de Windows Server Essentials, visite el [Foro de Windows Server Essentials](/answers/topics/windows-server-essentials.html).
 
 ## <a name="troubleshoot-backup-configuration-issues-for-a-connected-computer"></a>Solucionar problemas de configuración de copia de seguridad de un equipo conectado
 

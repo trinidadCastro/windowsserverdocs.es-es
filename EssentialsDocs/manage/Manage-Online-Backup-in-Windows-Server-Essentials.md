@@ -7,12 +7,12 @@ ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b3a9ceca5de9971f77175052a604d3e22de07036
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e5c8a274a8e012ffd24ce6c6c819fa240c9f1095
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180951"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837894"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>Administrar copias de seguridad en línea en Windows Server Essentials
 
@@ -84,7 +84,7 @@ ms.locfileid: "87180951"
    >  También puede usar su propio certificado público. Para saber qué certificado es necesario, en la página **Inicio rápido**, haga clic en el vínculo **Adquirir certificado**.
 
    > [!NOTE]
-   >   Azure requiere un certificado x. 509 V2 con una clave pública. Para obtener más información, consulte [Administrar certificados de almacén](https://msdn.microsoft.com/library/azure/dn169036.aspx).
+   >   Azure requiere un certificado x. 509 V2 con una clave pública. Para obtener más información, consulte [Administrar certificados de almacén](/previous-versions/azure/dn169036(v=azure.100)).
 
 7. Después de seleccionar el certificado, haga clic en **Aceptar** (marca de comprobación).
 
@@ -402,7 +402,7 @@ ms.locfileid: "87180951"
 
     Se abrirá la página **Instalación**. Aparecerá un indicador de progreso de instalación cuando esta se inicie. Una vez completada la instalación, recibirá un mensaje que indica que el complemento de Azure Backup se instaló correctamente.
 
-4. Haga clic en **Finalizar**.
+4. Haga clic en **Finalizar**
 
 5. Cierre el panel y vuelva a abrirlo.
 

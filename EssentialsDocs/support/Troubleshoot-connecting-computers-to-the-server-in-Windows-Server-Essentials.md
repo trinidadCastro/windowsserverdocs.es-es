@@ -7,12 +7,12 @@ ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c05888f52f3fe60d0dde22a70ceb5a3eee94e0ef
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e832957a5d44851131cb622e4c3bf9d99d4e4a7f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180241"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838274"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Solucionar problemas de conexión de equipos al servidor en Windows Server Essentials
 
@@ -21,7 +21,7 @@ ms.locfileid: "87180241"
  Este tema contiene instrucciones para la solución de problemas que pueden surgir al conectar un equipo al servidor que ejecuta Windows Server Essentials o Windows Server Essentials.
 
 > [!NOTE]
->  Para obtener la información más reciente sobre la solución de problemas de la comunidad de Windows Server Essentials y Windows Server Essentials, se recomienda visitar el [Foro de Windows Server Essentials](https://docs.microsoft.com/answers/topics/windows-server-essentials.html). El foro de Windows Server Essentials es un buen lugar para buscar ayuda o realizar una pregunta.
+>  Para obtener la información más reciente sobre la solución de problemas de la comunidad de Windows Server Essentials y Windows Server Essentials, se recomienda visitar el [Foro de Windows Server Essentials](/answers/topics/windows-server-essentials.html). El foro de Windows Server Essentials es un buen lugar para buscar ayuda o realizar una pregunta.
 
  Este tema proporciona soluciones para los problemas siguientes:
 
@@ -282,4 +282,4 @@ ms.locfileid: "87180241"
 
 - [Administrar Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)
 
-- [Solución de problemas de Windows 2012 Server Essentials ConnectComputer](https://docs.microsoft.com/windows-server-essentials/support/troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials)
+- [Solución de problemas de Windows 2012 Server Essentials ConnectComputer]()

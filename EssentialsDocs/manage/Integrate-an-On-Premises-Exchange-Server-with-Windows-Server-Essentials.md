@@ -7,12 +7,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 343bfc1325a065f4c4903732eceba59c769f838f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cef547570c58c405ac563a1c2215feda120350f4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181071"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837884"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar un servidor local de Exchange Server con Windows Server Essentials
 
@@ -51,7 +51,7 @@ Esta guía proporciona información e instrucciones básicas que le ayudarán a 
  Por ejemplo, si el nombre de dominio de Internet de su compañía es contoso.com y quiere usar el nombre completo (FQDN) de *mail.contoso.com* para hacer referencia al servidor local que ejecuta Exchange Server, trabaje con su proveedor de nombres de dominio para crear los registros de recursos DNS de la siguiente tabla.
 
 
-| Nombre de registro de recurso |     Tipo de registro     |                                                                         Configuración del registro                                                                          |                                                                                                                                                                                                                                                              Description                                                                                                                                                                                                                                                              |
+| Nombre de registro de recurso |     Tipo de registro     |                                                                         Configuración del registro                                                                          |                                                                                                                                                                                                                                                              Descripción                                                                                                                                                                                                                                                              |
 |----------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         mail         |      host (A)       |                                                        Address=*dirección IP pública asignada por su ISP*                                                         |                                                                                                                                                                                                   Exchange Server recibirá el correo dirigido a mail.contoso.com.<br /><br /> Puede usar un nombre diferente que elija.                                                                                                                                                                                                    |
 |          MX          | Agente de intercambio de correo (MX) |                                            Hostname=@<br /><br /> Address=mail.contoso.com<br /><br /> Preference=0                                             |                                                                                                                                                                                                      Proporciona el enrutamiento de los mensajes de correo electrónico para email@contoso.com que lleguen al servidor local que ejecuta Exchange Server.                                                                                                                                                                                                       |
@@ -270,9 +270,9 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  Debe configurar un conector de envío SMTP y un conector de recepción SMTP para la transmisión de entrada y de salida de los mensajes de correo electrónico.
 
- Para crear un conector de envío SMTP, siga las instrucciones del artículo sobre Exchange Server [Crear un conector de envío SMTP](https://technet.microsoft.com/library/aa997285.aspx).
+ Para crear un conector de envío SMTP, siga las instrucciones del artículo sobre Exchange Server [Crear un conector de envío SMTP](/previous-versions/office/exchange-server-2010/aa997285(v=exchg.141)).
 
- Para crear un conector de recepción SMTP, siga las instrucciones del artículo sobre Exchange Server [Crear un conector de recepción SMTP](https://technet.microsoft.com/library/bb125159.aspx).
+ Para crear un conector de recepción SMTP, siga las instrucciones del artículo sobre Exchange Server [Crear un conector de recepción SMTP](/previous-versions/office/exchange-server-2010/bb125159(v=exchg.141)).
 
  Opcionalmente, puede hacer referencia al script descrito anteriormente en este documento para crear los conectores de envío y recepción por medio de cmdlets de Exchange PowerShell.
 
@@ -347,7 +347,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 6. Copie el archivo de certificado SSL para Exchange Server en el servidor que ejecuta Windows Server Essentials. El archivo de certificado debe contener la clave privada y debe tener el formato de archivo PFX.
 
    > [!NOTE]
-   >  Si está usando un certificado emitido automáticamente, siga las instrucciones del artículo sobre Exchange Server [Exportar un certificado de Exchange](https://technet.microsoft.com/library/dd351274.aspx) para exportar el certificado.
+   >  Si está usando un certificado emitido automáticamente, siga las instrucciones del artículo sobre Exchange Server [Exportar un certificado de Exchange](/previous-versions/office/exchange-server-2010/dd351274(v=exchg.141)) para exportar el certificado.
 
 7. En función de la versión de Windows Server Essentials que ejecute, realice una de las acciones siguientes:
 

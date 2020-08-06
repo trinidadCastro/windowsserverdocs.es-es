@@ -7,12 +7,12 @@ ms.assetid: 79a417fd-1b3e-47ab-ae33-bb1faf95c86d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 05694d772de033a82c6de6feca94621185cb2642
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 37b443a90ebdb2c6042596747f6c364fafe073a7
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181461"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838084"
 ---
 # <a name="change-the-order-and-grouping-of-tabs"></a>Cambiar el orden y la agrupación de las fichas
 
@@ -41,7 +41,7 @@ Puede cambiar el orden de las pestañas del Panel para que la suya sea la primer
 
 6.  Escriba el GUID que se haya definido para la pestaña de nivel superior y pulse **Entrar**.
 
-     Para obtener más información acerca de la creación e identificación de pestañas de nivel superior, consulte [Cómo crear una pestaña de nivel superior](https://msdn.microsoft.com/library/gg513957) en el SDK de Soluciones de Windows Server.
+     Para obtener más información acerca de la creación e identificación de pestañas de nivel superior, consulte [Cómo crear una pestaña de nivel superior](/previous-versions/windows/server-essentials/gg513957(v=msdn.10)) en el SDK de Soluciones de Windows Server.
 
 7.  Guarde los cambios realizados en el registro.
 

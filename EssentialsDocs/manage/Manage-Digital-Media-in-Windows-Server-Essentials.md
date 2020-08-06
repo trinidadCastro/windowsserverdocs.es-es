@@ -7,12 +7,12 @@ ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e4f3cf42cdf9343be106660b74041c059fdc7073
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c59fd121fdf628fc0943214b699599f2f20625b3
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181001"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837834"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>Administración de medios digitales en Windows Server Essentials
 
@@ -130,7 +130,7 @@ En los siguientes temas se abordan las características de transmisión por secu
  El administrador del servidor puede agregar medios digitales a las carpetas compartidas en la biblioteca multimedia accediendo directamente al servidor o usando el sitio de acceso Web remoto para iniciar sesión en el panel. Otros usuarios pueden agregar archivos multimedia al servidor mediante la conexión de **carpetas compartidas** del Launchpad, mediante el sitio de acceso Web remoto o mediante la aplicación my server para Windows Phone. Para obtener información acerca de la reproducción de medios, vea [reproducir medios digitales](../use/Play-Digital-Media-in-Windows-Server-Essentials.md).
 
 > [!NOTE]
->  También puede cargar archivos multimedia al servidor mediante la aplicación My Server para Windows Phone. Puede descargar la aplicación My Server desde la [Tienda de Windows Phone](https://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a). Para obtener más información acerca de la aplicación My Server para Windows Phone, consulte la entrada de blog sobre la [aplicación de teléfono My Server para Windows Server Essentials](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx).
+>  También puede cargar archivos multimedia al servidor mediante la aplicación My Server para Windows Phone. Puede descargar la aplicación My Server desde la [Tienda de Windows Phone](https://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a). Para obtener más información acerca de la aplicación My Server para Windows Phone, consulte la entrada de blog sobre la [aplicación de teléfono My Server para Windows Server Essentials](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials).
 
 #### <a name="to-add-digital-media-files-to-shared-folders-on-the-server"></a>Para agregar archivos multimedia a las carpetas compartidas en el servidor
 

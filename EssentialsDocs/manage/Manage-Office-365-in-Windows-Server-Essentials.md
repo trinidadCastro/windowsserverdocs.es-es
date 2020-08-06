@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: 249ff5f77d525792d5bf53719fcf1ee93bc955a4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8bae98123ee5c8365304243e9f2487218bb5230f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180971"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837814"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>Administrar Office 365 en Windows Server Essentials
 
@@ -146,7 +146,7 @@ Al integrar el servidor de Windows Server Essentials con Microsoft Office 365, p
 
 1. **Compre un nombre de dominio.** Es decir, regístrese en un registrador de dominios o un proveedor de hospedaje de DNS.
 
-   -   Elija un nombre de dominio que funcione con Office 365. Puede usar un nombre de dominio de segundo nivel, por ejemplo, buycontoso.com? pero no un nombre de dominio de tercer nivel, por ejemplo, marketing.contoso.com. Para obtener más información sobre cómo elegir un dominio para usarlo en Office 365, consulte [dominios](https://technet.microsoft.com/library/office-365-domains.aspx).
+   -   Elija un nombre de dominio que funcione con Office 365. Puede usar un nombre de dominio de segundo nivel, por ejemplo, buycontoso.com? pero no un nombre de dominio de tercer nivel, por ejemplo, marketing.contoso.com. Para obtener más información sobre cómo elegir un dominio para usarlo en Office 365, consulte [dominios](/office365/servicedescriptions/office-365-platform-service-description/domains).
 
    -   Cómprelo desde un registrador de dominios que permita los registros del servidor de nombres de dominio (DNS) necesarios para Office 365. Para averiguar qué registradores de dominios admiten los registros DNS necesarios, consulte [Cómo adquirir nombres de dominio](https://office.microsoft.com/office365-suite-help/how-to-buy-a-domain-name-HA102819883.aspx?CTT=5&origin=HA102818660). Si ya ha registrado su dominio con un registrador diferente, no se preocupe; puede transferir el dominio a un registrador diferente cuando vincule el dominio a Office 365.
 
@@ -284,9 +284,9 @@ Al integrar el servidor de Windows Server Essentials con Microsoft Office 365, p
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Información general de la integración de servicios para Windows Server Essentials, parte 1](https://blogs.technet.com/b/sbs/archive/2013/11/04/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)
+-   [Información general de la integración de servicios para Windows Server Essentials, parte 1](/archive/blogs/sbs/services-integration-overview-for-windows-server-2012-r2-essentials-part-1)
 
--   [Información general de la integración de servicios para Windows Server Essentials, parte 2](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)
+-   [Información general de la integración de servicios para Windows Server Essentials, parte 2](/archive/blogs/sbs/services-integration-overview-for-windows-server-2012-r2-essentials-part-2)
 
 -   [Guía de inicio rápido de Microsoft Office 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)
 

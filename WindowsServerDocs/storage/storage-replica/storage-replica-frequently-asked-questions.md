@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 170d023f0548ca9f01ce9575b18563d4a55d2c78
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 04477ac9d7aa7905a4d5fc4dd58c7891c91f5baf
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182381"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769703"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>Preguntas frecuentes acerca de Réplica de almacenamiento
 
@@ -22,6 +22,7 @@ ms.locfileid: "87182381"
 Este tema contiene respuestas a las preguntas frecuentes (P+F) acerca de Réplica de almacenamiento.
 
 ## <a name="is-storage-replica-supported-on-azure"></a><a name="FAQ1"></a>¿Se admite la réplica de almacenamiento en Azure?
+
 Sí. Puede usar los siguientes escenarios con Azure:
 
 1. Replicación de servidor a servidor dentro de Azure (de forma sincrónica o asincrónica entre máquinas virtuales de IaaS en uno o dos dominios de error del centro de recursos, o de forma asincrónica entre dos regiones independientes)
@@ -77,7 +78,9 @@ Update-SmbMultichannelConnection
 
 Para configurar restricciones de red en un clúster extendido:
 
-    Set-SRNetworkConstraint -SourceComputerName sr-cluster01 -SourceRGName group1 -SourceNWInterface "Cluster Network 1","Cluster Network 2" -DestinationComputerName sr-cluster02 -DestinationRGName group2 -DestinationNWInterface "Cluster Network 1","Cluster Network 2"
+```
+Set-SRNetworkConstraint -SourceComputerName sr-cluster01 -SourceRGName group1 -SourceNWInterface "Cluster Network 1","Cluster Network 2" -DestinationComputerName sr-cluster02 -DestinationRGName group2 -DestinationNWInterface "Cluster Network 1","Cluster Network 2"
+```
 
 ## <a name="can-i-configure-one-to-many-replication-or-transitive-a-to-b-to-c-replication"></a><a name="FAQ4"></a>¿Puedo configurar la replicación de uno a varios o la replicación transitiva (a a B)?
 No, réplica de almacenamiento solo admite una replicación de un nodo de clúster de servidor, clúster o extendido. Esto puede cambiar en una versión posterior. Puede configurar la replicación entre varios servidores de un par de volumen específico, en cualquier dirección. Por ejemplo, el servidor 1 puede replicar su volumen D en el servidor 2, y su volumen E desde el servidor 3.
@@ -127,6 +130,7 @@ Especifique `New-SRPartnership -ReplicationMode` y proporcione el argumento **As
 Para evitar la conmutación automática por error, puede usar PowerShell para configurar `Get-ClusterNode -Name "NodeName").NodeWeight=0`. Esto quita el voto de cada nodo en el sitio de recuperación ante desastres. Puede usar `Start-ClusterNode -PreventQuorum` en los nodos del sitio primario y `Start-ClusterNode -ForceQuorum` en los nodos del sitio para desastres a fin de forzar la conmutación por error. No hay ninguna opción gráfica para evitar la conmutación por error automática, y esta opción no es recomendable.
 
 ## <a name="how-do-i-disable-virtual-machine-resiliency"></a><a name="FAQ11"></a>¿Cómo se deshabilita la resistencia de la máquina virtual?
+
 Para evitar la ejecución de la nueva característica de resistencia de máquinas virtuales de Hyper-V y, por lo tanto, pausar máquinas virtuales en lugar de conmutarlas por error al sitio de recuperación ante desastres, ejecute`(Get-Cluster).ResiliencyDefaultPeriod=0`
 
 ## <a name="how-can-i-reduce-time-for-initial-synchronization"></a><a name="FAQ12"></a>¿Cómo se puede reducir el tiempo de sincronización inicial?
@@ -143,53 +147,74 @@ También puede usar volúmenes de datos inicializados para reducir el uso de anc
 
 Puede usar el `Grant-SRDelegation` cmdlet. Esto le permite configurar usuarios específicos en escenarios de replicación de servidor a servidor, de clúster a clúster y de clúster extendido con el permiso de crear, modificar o quitar la replicación, sin formar parte del grupo de administradores global. Por ejemplo:
 
-    Grant-SRDelegation -UserName contso\tonywang
+```
+Grant-SRDelegation -UserName contso\tonywang
+```
 
 El cmdlet le recordará que el usuario debe cerrar sesión y volver a abrirla en el servidor que tiene previsto administrar para que el cambio surta efecto. Puede utilizar `Get-SRDelegation` y `Revoke-SRDelegation` para tener un mayor control.
 
 ## <a name="what-are-my-backup-and-restore-options-for-replicated-volumes"></a><a name="FAQ13"></a>¿Cuáles son las opciones de copia de seguridad y restauración para volúmenes replicados?
+
 Réplica de almacenamiento admite la copia de seguridad y la restauración del volumen de origen. También admite la creación y la restauración de instantáneas del volumen de origen. No puede hacer copias de seguridad o restaurar el volumen de destino mientras esté protegido por Réplica de almacenamiento, ya que no está montado ni es accesible. Si se produce un desastre por el que el volumen de origen se pierde, el uso de `Set-SRPartnership` para promover el volumen de destino anterior al momento actual será un origen de lectura/escritura que le permitirá hacer una copia de seguridad o restauración de ese volumen. También puede quitar la replicación con `Remove-SRPartnership` y `Remove-SRGroup` para volver a montar dicho volumen como de lectura/escritura.
+
 Para crear instantáneas coherentes de aplicación periódicas, puede usar VSSADMIN. EXE en el servidor de origen para tomar la instantánea de los volúmenes de datos replicados. Por ejemplo, donde está replicando el volumen F: con Réplica de almacenamiento:
 
-    vssadmin create shadow /for=F:
+```
+vssadmin create shadow /for=F:
+```
+
 A continuación, después de cambiar la dirección de la replicación, quitar la replicación o simplemente tomar la instantánea en el mismo volumen de origen, puede restaurar la instantánea a su punto en el tiempo. Por ejemplo, tome la instantánea usando F:
 
-    vssadmin list shadows
-     vssadmin revert shadow /shadow={shadown copy ID GUID listed previously}
+```
+vssadmin list shadows
+vssadmin revert shadow /shadow={shadown copy ID GUID listed previously}
+```
+
 También puede programar esta herramienta para que se ejecute periódicamente mediante una tarea programada. Para más información sobre el uso de VSS, revise [Vssadmin](../../administration/windows-commands/vssadmin.md). No es necesario ni sirve de nada realizar una copia de seguridad de los volúmenes de registros. Si intenta hacerlo, VSS lo ignorará.
+
 El uso de Copias de seguridad de Windows Server, Microsoft Azure Backup, Microsoft DPM u otra instantánea, VSS, máquina virtual o tecnologías basadas en archivos es compatible con Réplica de almacenamiento siempre que trabajen en el nivel de volumen. Réplica de almacenamiento no admite la copia de seguridad y restauración basada en bloques.
 
 ## <a name="can-i-configure-replication-to-restrict-bandwidth-usage"></a><a name="FAQ14"></a>¿Se puede configurar la replicación para restringir el uso de ancho de banda?
+
 Sí, mediante el limitador de ancho de banda de SMB. Esto es una configuración global para todo el tráfico de Réplica de almacenamiento y, por tanto, afecta a toda la replicación desde este servidor. Normalmente, es necesaria solo con la configuración de sincronización inicial de Réplica de almacenamiento, donde se deben transferir todos los datos del volumen. Si se necesita después de la sincronización inicial, el ancho de banda de red es demasiado bajo para la carga de trabajo de E/S; reduzca el flujo de E/S o aumente el ancho de banda.
 
 Solo debe utilizarse con la replicación asincrónica (nota: la sincronización inicial siempre es asincrónica, incluso si ha especificado la opción sincrónica).
 También puede utilizar las directivas de calidad de servicio de red para ajustar el tráfico de Réplica de almacenamiento. El uso de la replicación de Réplica de almacenamiento inicializada con un alto nivel de coincidencia también reducirá considerablemente el uso global del ancho de banda en la sincronización inicial.
 
-
 Para establecer el límite de ancho de banda, use:
 
-    Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond x
+```
+Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond x
+```
 
 Para ver el límite de ancho de banda, use:
 
-    Get-SmbBandwidthLimit -Category StorageReplication
+```
+Get-SmbBandwidthLimit -Category StorageReplication
+```
 
 Para quitar el límite de ancho de banda, use:
 
-    Remove-SmbBandwidthLimit -Category StorageReplication
+```
+Remove-SmbBandwidthLimit -Category StorageReplication
+```
 
 ## <a name="what-network-ports-does-storage-replica-require"></a><a name="FAQ15"></a>¿Qué puertos de red requiere la réplica de almacenamiento?
+
 Réplica de almacenamiento se basa en SMB e WSMAN para su replicación y administración. Esto significa que se requieren los siguientes puertos:
 
- 445 (Protocolo de transporte de replicación SMB, protocolo de administración de RPC de clúster) 5445 (iWARP SMB-solo es necesario cuando se usa la red iWARP RDMA) 5985 (Protocolo de administración de WSManHTTP para WMI/CIM/PowerShell)
+- 445 (Protocolo de transporte de replicación SMB, protocolo de administración de RPC de clúster)
+- 5445 (iWARP SMB: solo es necesario cuando se usa la red iWARP RDMA)
+- 5985 (Protocolo de administración de WSManHTTP para WMI/CIM/PowerShell)
 
-Nota: el cmdlet test-SRTopology requiere ICMPv4/ICMPv6, pero no para la replicación o la administración.
+> ! Tenga en cuenta El cmdlet test-SRTopology requiere ICMPv4/ICMPv6, pero no para la replicación o la administración.
 
 ## <a name="what-are-the-log-volume-best-practices"></a><a name="FAQ15.5"></a>¿Cuáles son los procedimientos recomendados para el volumen de registro?
+
 El tamaño óptimo del registro varía considerablemente en función del entorno y de la carga de trabajo, y viene determinado por la cantidad de e/s de escritura que realiza la carga de trabajo.
 
-1.  Un registro mayor o menor no hace que sea más rápido o más lento
-2.  Un registro mayor o menor no tiene ningún espacio en el volumen de datos de 10 GB en lugar de un volumen de datos de 10 TB, por ejemplo
+1. Un registro mayor o menor no hace que sea más rápido o más lento
+2. Un registro mayor o menor no tiene ningún espacio en el volumen de datos de 10 GB en lugar de un volumen de datos de 10 TB, por ejemplo
 
 Un registro mayor simplemente recopila y conserva más e/s de escritura antes de que se ajusten. Esto permite una interrupción en el servicio entre el equipo de origen y el de destino (por ejemplo, una interrupción de la red o la desconexión del destino). Si el registro puede contener 10 horas de escritura y la red deja de funcionar durante 2 horas, cuando la red devuelve el origen, puede simplemente reproducir la diferencia de los cambios no sincronizados en el destino muy rápido y se vuelve a proteger muy rápidamente. Si el registro contiene 10 horas y la interrupción es de 2 días, ahora el origen tiene que reproducirse desde un registro diferente denominado mapa de bits, y probablemente será más lento volver a sincronizar. Una vez que se sincroniza, vuelve a usar el registro.
 
@@ -202,6 +227,7 @@ Puede obtener recomendaciones sobre el tamaño del registro mediante la ejecuci�
 SOLO se debe realizar una copia de seguridad del disco de datos del clúster de origen. NO se deben realizar copias de seguridad de los discos de registro de réplica de almacenamiento, ya que una copia de seguridad puede entrar en conflicto con las operaciones de réplica de almacenamiento.
 
 ## <a name="why-would-you-choose-a-stretch-cluster-versus-cluster-to-cluster-versus-server-to-server-topology"></a><a name="FAQ16"></a>¿Por qué elegiría un clúster extendido en lugar de clúster a clúster frente a la topología de servidor a servidor?
+
 La réplica de almacenamiento viene en tres configuraciones principales: clúster extendido, de clúster a clúster y de servidor a servidor. Cada una de ellas tiene diferentes ventajas.
 
 La topología de clúster extendido es ideal para cargas de trabajo que requieren conmutación por error automática con orquestación, como clústeres de nube privada de Hyper-V y FCI de SQL Server. También tiene una interfaz gráfica integrada que usa Administrador de clústeres de conmutación por error. Emplea la arquitectura de almacenamiento compartido del clúster asimétrico clásico de espacios de almacenamiento, SAN, iSCSI y RAID a través de la reserva persistente. Puede ejecutarlo con tan solo 2 nodos.
@@ -227,9 +253,11 @@ Desafortunadamente, no se admite la creación de una *nueva* asociación entre w
 Sin embargo, para obtener el mejor rendimiento de replicación de Windows Server 2019, todos los miembros de la Asociación deben ejecutar Windows Server 2019 y debe eliminar las asociaciones existentes y los grupos de replicación asociados y volver a crearlos con los datos inicializados (ya sea al crear la asociación en el centro de administración de Windows o con el cmdlet New-SRPartnership).
 
 ## <a name="how-do-i-report-an-issue-with-storage-replica-or-this-guide"></a><a name="FAQ17"></a>Cómo notificar un problema con la réplica de almacenamiento o esta guía?
+
 Para obtener asistencia técnica con réplica de almacenamiento, puede publicar en los [foros de Microsoft](https://docs.microsoft.com/answers/index.html). También puede enviar por correo electrónico srfeed@microsoft.com preguntas sobre réplica de almacenamiento o problemas con esta documentación. El [sitio de comentarios de Windows Server general](https://windowsserver.uservoice.com/forums/295047-general-feedback) es preferible para las solicitudes de cambio de diseño, ya que permite que sus colegas proporcionen soporte técnico y comentarios para sus ideas.
 
 ## <a name="can-storage-replica-be-configured-to-replicate-in-both-directions"></a><a name="FAQ18"></a>¿Se puede configurar la réplica de almacenamiento para que se replique en ambas direcciones?
+
 Réplica de almacenamiento es una tecnología de replicación unidireccional.  Solo se replicará desde el origen al destino en cada volumen.  Esta dirección se puede invertir en cualquier momento, pero sigue siendo solo en una dirección.  Sin embargo, eso no significa que no pueda tener un conjunto de volúmenes (origen y destino) replicarse en una dirección y un conjunto diferente de unidades (origen y destino) se replican en la dirección opuesta.  Por ejemplo, si desea tener configurada la replicación de servidor a servidor.  Server1 y server2 tienen cada una las letras de unidad L:, M:, N: y O: y desea replicar la unidad M: de server1 a server2, pero la unidad O: se replica de server2 a server1.  Esto puede hacerse siempre y cuando haya diferentes unidades de registro para cada uno de los grupos. es decir,.
 
 - Servidor1 unidad de origen M: con la unidad de registro de origen L: replicando en la unidad de destino de servidor2 M: con la unidad de registro de destino L:

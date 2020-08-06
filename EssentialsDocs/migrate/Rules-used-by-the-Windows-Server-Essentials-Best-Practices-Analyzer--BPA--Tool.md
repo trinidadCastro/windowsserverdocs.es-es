@@ -7,12 +7,12 @@ ms.assetid: 37e1dae7-586c-4dd7-bf83-7e14a9567c8f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b84372394204353d0410da63d74f785c0e8fd07e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: eea437a5867a602a84483a41fe129d64425bcb88
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180511"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838444"
 ---
 # <a name="rules-used-by-the-windows-server-essentials-best-practices-analyzer-bpa-tool"></a>Reglas que usa la herramienta Analizador de procedimientos recomendados (BPA) de Windows Server Essentials
 
@@ -525,7 +525,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el administrador crea una alerta y configura la alerta para que se ejecute cuando el administrador no ha iniciado sesión, la alerta producirá un error con el código de error 2147943785.
 
- **Solución:**  Para obtener información acerca de cómo conceder al grupo de administradores integrado permiso para iniciar sesión como un trabajo por lotes, consulte [conceder al grupo de administradores integrado el derecho a iniciar sesión como un trabajo por lotes](https://technet.microsoft.com/library/jj635076) ( https://technet.microsoft.com/library/jj635076) .
+ **Solución:**  Para obtener información acerca de cómo conceder al grupo de administradores integrado permiso para iniciar sesión como un trabajo por lotes, consulte [conceder al grupo de administradores integrado el derecho a iniciar sesión como un trabajo por lotes](/previous-versions/orphan-topics/ws.11/jj635076(v=ws.11)) ( https://technet.microsoft.com/library/jj635076) .
 
 ### <a name="the-windows-firewall-is-turned-off"></a>Firewall de Windows está desactivado
  **Problema:**  El Firewall de Windows está desactivado. El valor predeterminado es activado.

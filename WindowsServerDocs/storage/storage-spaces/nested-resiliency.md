@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 6c3e16f0965be5fc7de4bdc7bd751fb1dd193556
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 311edb38f4cdf1dac153d843811442d5eafbce05
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962207"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769753"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>Resistencia anidada para Espacios de almacenamiento directo
 
@@ -20,7 +20,7 @@ ms.locfileid: "86962207"
 
 La resistencia anidada es una nueva capacidad de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server 2019 que permite que un clúster de dos servidores resista varios errores de hardware al mismo tiempo sin pérdida de disponibilidad de almacenamiento, por lo que los usuarios, las aplicaciones y las máquinas virtuales continúan ejecutándose sin interrupciones. En este tema se explica cómo funciona, se proporcionan instrucciones paso a paso para comenzar y se responde a las preguntas más frecuentes.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 
 ### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![Icono de marca de verificación verde.](media/nested-resiliency/supported.png) Considere la resistencia anidada si:
 
@@ -58,9 +58,9 @@ Espacios de almacenamiento directo en Windows Server 2019 ofrece dos nuevas opci
 
 - **Paridad anidada con aceleración de reflejo.** Combina la creación de reflejo bidireccional anidada, anterior, con paridad anidada. Dentro de cada servidor, la resistencia local para la mayoría de los datos se proporciona mediante aritmética única de [paridad bit a bit](storage-spaces-fault-tolerance.md#parity), excepto las nuevas escrituras recientes que usan la creación de reflejo bidireccional. A continuación, la creación de reflejo bidireccional entre los servidores proporciona una mayor resistencia para todos los datos. Para obtener más información acerca de cómo funciona la paridad con aceleración de reflejo, consulte [paridad acelerada de reflejo](../refs/mirror-accelerated-parity.md).
 
-  ![Paridad anidada-con aceleración de reflejo](media/nested-resiliency/nested-mirror-accelerated-parity.png)
+  ![Paridad acelerada por reflejo anidada](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
-### <a name="capacity-efficiency"></a>Eficiencia de la capacidad
+### <a name="capacity-efficiency"></a>Eficacia de capacidad
 
 La eficacia de la capacidad es la proporción de espacio utilizable para la [superficie del volumen](plan-volumes.md#choosing-the-size-of-volumes). Describe la sobrecarga de capacidad atribuible a la resistencia y depende de la opción de resistencia que elija. Como ejemplo sencillo, el almacenamiento de datos sin resistencia es un 100% de capacidad eficaz (1 TB de datos ocupa 1 TB de capacidad de almacenamiento físico), mientras que la creación de reflejo bidireccional es un 50% eficaz (1 TB de datos ocupa 2 TB de capacidad de almacenamiento físico).
 
@@ -80,7 +80,7 @@ La eficacia de la capacidad es la proporción de espacio utilizable para la [sup
 
 Observe que la eficacia de la capacidad del reflejo bidireccional clásico (aproximadamente 50%) y paridad anidada de reflejo (hasta 40%) no son muy diferentes. En función de sus requisitos, la eficacia de la capacidad ligeramente inferior puede merecer la pena el aumento significativo en la disponibilidad del almacenamiento. Elige resistencia por volumen, por lo que puede mezclar volúmenes de resistencia anidados y volúmenes de reflejo bidireccional clásicos en el mismo clúster.
 
-![Equilibrio](media/nested-resiliency/tradeoff.png)
+![Compensación](media/nested-resiliency/tradeoff.png)
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
@@ -117,7 +117,7 @@ Para usar un reflejo bidireccional anidado, haga referencia a la `NestedMirror` 
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
 ```
 
-#### <a name="nested-mirror-accelerated-parity"></a>Paridad anidada-con aceleración de reflejo
+#### <a name="nested-mirror-accelerated-parity"></a>Paridad acelerada por reflejo anidada
 
 Para usar la paridad anidada con aceleración de reflejo, haga referencia tanto a las `NestedMirror` plantillas de nivel como a `NestedParity` y especifique dos tamaños, uno para cada parte del volumen (reflejo primero, paridad segundo). Por ejemplo, para crear un volumen de 1 500 GB que tenga un 20% de reflejo doble anidado y una paridad anidada del 80%, ejecute:
 
@@ -129,7 +129,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 Los volúmenes que usan resistencia anidada aparecen en el [centro de administración de Windows](../../manage/windows-admin-center/overview.md) con etiquetas claras, como se muestra en la captura de pantalla siguiente. Una vez creados, puede administrarlos y supervisarlos mediante el centro de administración de Windows como cualquier otro volumen en Espacios de almacenamiento directo.
 
-![](media/nested-resiliency/windows-admin-center.png)
+![Administración de volúmenes en el centro de administración de Windows](media/nested-resiliency/windows-admin-center.png)
 
 ### <a name="optional-extend-to-cache-drives"></a>Opcional: extender a unidades de caché
 
@@ -186,7 +186,7 @@ Para obtener más información, consulte el tema [quitar servidores](remove-serv
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Comprender la tolerancia a errores en Espacios de almacenamiento directo](storage-spaces-fault-tolerance.md)
 - [Planear volúmenes en Espacios de almacenamiento directo](plan-volumes.md)
 - [Crear volúmenes en Espacios de almacenamiento directo](create-volumes.md)

@@ -6,12 +6,12 @@ ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: coreyp
 manager: jasgro
-ms.openlocfilehash: adaf10a96a945fddce16592da3d491be2b32aa3b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: df3eb1b5a1704dcd5a1fc05fab4023c7faaeabe7
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181671"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838114"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>Introducción a Windows Server Essentials
 
@@ -46,16 +46,16 @@ ms.locfileid: "87181671"
 
 ## <a name="end-to-end-solution-guides"></a>Guías de soluciones completas
 
--    Para obtener información sobre cómo centralizar el almacenamiento de datos, restringir permisos de acceso a datos y realizar una copia de seguridad de los datos locales y en la nube, consulte [Proporcionar protección de datos en la pequeña y mediana empresa](https://technet.microsoft.com/library/dn582043.aspx).
+-    Para obtener información sobre cómo centralizar el almacenamiento de datos, restringir permisos de acceso a datos y realizar una copia de seguridad de los datos locales y en la nube, consulte [Proporcionar protección de datos en la pequeña y mediana empresa](/previous-versions/orphan-topics/ws.11/dn582043(v=ws.11)).
 
--    Para obtener información sobre cómo obtener acceso seguro a los datos empresariales en cualquier dispositivo conectado a Internet desde cualquier ubicación, consulte [Acceso remoto seguro en pequeñas y medianas empresas](https://technet.microsoft.com/library/dn629457.aspx).
+-    Para obtener información sobre cómo obtener acceso seguro a los datos empresariales en cualquier dispositivo conectado a Internet desde cualquier ubicación, consulte [Acceso remoto seguro en pequeñas y medianas empresas](/previous-versions/windows/it-pro/solutions-guidance/dn629457(v=ws.11)).
 
--    Para obtener información sobre cómo colaborar de forma segura con asociados y proveedores, consulte [Mejorar la colaboración en pequeñas y medianas empresas](https://technet.microsoft.com/library/dn747893.aspx).
+-    Para obtener información sobre cómo colaborar de forma segura con asociados y proveedores, consulte [Mejorar la colaboración en pequeñas y medianas empresas](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11)).
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Biblioteca de TechNet de Windows Server](https://technet.microsoft.com/library/bb625087.aspx)
+-   [Biblioteca de TechNet de Windows Server](/windows-server/windows-server-versions)
 
--   [Blog de Windows Server Essentials y Windows Small Business Server](https://blogs.technet.com/b/sbs/)
+-   [Blog de Windows Server Essentials y Windows Small Business Server](/archive/blogs/sbs/)
 
--   [Biblioteca de TechNet de Windows Server Essentials (Small Business Server)](https://technet.microsoft.com/library/cc514417.aspx)
+-   [Biblioteca de TechNet de Windows Server Essentials (Small Business Server)](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))

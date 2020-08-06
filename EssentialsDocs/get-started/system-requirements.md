@@ -7,12 +7,12 @@ ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 295022c45a82d18781df27604d47d58af14b4b2d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: b82435dc9d0018d3ac3fa5c6855b18bcddbd2797
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181641"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838104"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Requisitos del sistema para Windows Server Essentials
 
@@ -45,7 +45,7 @@ ms.locfileid: "87181641"
 
  Para obtener más información acerca de los requisitos de hardware, consulte el [Catálogo de Windows Server](https://www.windowsservercatalog.com/).
 
- Todo el hardware del servidor debe cumplir los requisitos establecidos para el programa del logotipo de Windows Server 2012 R2 para sistemas. Para obtener más información, consulte [Programa del logotipo de Windows](https://msdn.microsoft.com/windows/hardware/gg487403.aspx).
+ Todo el hardware del servidor debe cumplir los requisitos establecidos para el programa del logotipo de Windows Server 2012 R2 para sistemas. Para obtener más información, consulte [Programa del logotipo de Windows](/previous-versions/windows/hardware/hck/dn641155(v=vs.85)).
 
 > [!IMPORTANT]
 > Los discos dinámicos no se admiten en Windows Server Essentials.
@@ -55,5 +55,3 @@ ms.locfileid: "87181641"
 -   [Instalación de Windows Server 2012 Essentials](../install/Install-Windows-Server-Essentials.md)
 
 -   [Requisitos del sistema para Windows Server Essentials](system-requirements.md)
-
-

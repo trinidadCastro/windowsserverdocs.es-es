@@ -7,12 +7,12 @@ ms.assetid: fdf020cd-3184-4886-9f9d-7d729a89057e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5b102c6e018eed77fdd350d13a196c83fc7ac893
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d96f2fdb8ca69c1889c39bf8d868fc53f484304b
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181201"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837904"
 ---
 # <a name="install-windows-server-essentials"></a>Instalar Windows Server Essentials
 
@@ -36,18 +36,18 @@ En los siguientes documentos se proporcionan instrucciones paso a paso para inst
 
 -   [Agregar Windows Server Essentials como servidor miembro](Add-Windows-Server-Essentials-as-a-Member-Server.md)
 
--   [Hospedaje de la Experiencia con Windows Server Essentials en las máquinas virtuales de Azure](https://msdn.microsoft.com/library/dn520828.aspx) (MSDN)
+-   [Hospedaje de la Experiencia con Windows Server Essentials en las máquinas virtuales de Azure](/previous-versions/azure/dn520828(v=azure.100)) (MSDN)
 
 -   [Personalizar e implementar Windows Server Essentials](Customize-and-Deploy-Windows-Server-Essentials.md)
 
 
 ## <a name="end-to-end-solution-guides"></a>Guías de soluciones completas
 
--    Para obtener información sobre cómo centralizar el almacenamiento de datos, restringir permisos de acceso a datos y realizar una copia de seguridad de los datos locales y en la nube, consulte [Proporcionar protección de datos en la pequeña y mediana empresa](https://technet.microsoft.com/library/dn582043.aspx).
+-    Para obtener información sobre cómo centralizar el almacenamiento de datos, restringir permisos de acceso a datos y realizar una copia de seguridad de los datos locales y en la nube, consulte [Proporcionar protección de datos en la pequeña y mediana empresa](/previous-versions/orphan-topics/ws.11/dn582043(v=ws.11)).
 
--    Para obtener información sobre cómo obtener acceso seguro a los datos empresariales en cualquier dispositivo conectado a Internet desde cualquier ubicación, consulte [Acceso remoto seguro en pequeñas y medianas empresas](https://technet.microsoft.com/library/dn629457.aspx).
+-    Para obtener información sobre cómo obtener acceso seguro a los datos empresariales en cualquier dispositivo conectado a Internet desde cualquier ubicación, consulte [Acceso remoto seguro en pequeñas y medianas empresas](/previous-versions/windows/it-pro/solutions-guidance/dn629457(v=ws.11)).
 
--    Para obtener información sobre cómo colaborar de forma segura con asociados y proveedores, consulte [Mejorar la colaboración en pequeñas y medianas empresas](https://technet.microsoft.com/library/dn747893.aspx).
+-    Para obtener información sobre cómo colaborar de forma segura con asociados y proveedores, consulte [Mejorar la colaboración en pequeñas y medianas empresas](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11)).
 
 ## <a name="additional-references"></a>Referencias adicionales
 

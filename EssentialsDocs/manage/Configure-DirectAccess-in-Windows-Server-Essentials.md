@@ -7,12 +7,12 @@ ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a1f568d34fd0fbd94d09046b59a93d21feb60890
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e24d6ce2e123deb741bcd39dc77f9a893a27df89
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181081"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837914"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>Configurar DirectAccess en Windows Server Essentials
 
@@ -23,7 +23,7 @@ En este tema se proporcionan instrucciones paso a paso para configurar DirectAcc
  En Windows Server Essentials, si el dominio contiene más de un servidor de Windows Server Essentials, DirectAccess debe estar configurado en el controlador de dominio.
 
 > [!NOTE]
->  En este tema se proporcionan instrucciones para configurar DirectAccess cuando el servidor de Windows Server Essentials es el controlador de dominio. Si el servidor de Windows Server Essentials es un miembro del dominio, siga las instrucciones para configurar DirectAccess en un miembro del dominio en [Agregar DirectAccess a una implementación de acceso remoto (VPN) existente](https://technet.microsoft.com/library/jj574220.aspx) en su lugar.
+>  En este tema se proporcionan instrucciones para configurar DirectAccess cuando el servidor de Windows Server Essentials es el controlador de dominio. Si el servidor de Windows Server Essentials es un miembro del dominio, siga las instrucciones para configurar DirectAccess en un miembro del dominio en [Agregar DirectAccess a una implementación de acceso remoto (VPN) existente](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574220(v=ws.11)) en su lugar.
 
 ## <a name="process-overview"></a>Información general del proceso
  Para configurar DirectAccess en Windows Server Essentials, realice los pasos siguientes.
@@ -207,7 +207,7 @@ En este tema se proporcionan instrucciones paso a paso para configurar DirectAcc
 1. En el panel del administrador del servidor, haga clic en **Herramientas** y en **Equipos y usuarios de Active Directory**.
 
    > [!NOTE]
-   >  Si no ve **Equipos y usuarios de Active Directory** en el menú **Herramientas**, debe instalar la característica. Para instalar Grupos y usuarios de Active Directory, ejecute el siguiente cmdlet de Windows PowerShell como administrador: `Install-WindowsFeature RSAT-ADDS-Tools`. Para obtener más información, consulte [Instalación o eliminación del paquete de Herramientas de administración remota del servidor](https://technet.microsoft.com/library/cc730825.aspx).
+   >  Si no ve **Equipos y usuarios de Active Directory** en el menú **Herramientas**, debe instalar la característica. Para instalar Grupos y usuarios de Active Directory, ejecute el siguiente cmdlet de Windows PowerShell como administrador: `Install-WindowsFeature RSAT-ADDS-Tools`. Para obtener más información, consulte [Instalación o eliminación del paquete de Herramientas de administración remota del servidor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730825(v=ws.11)).
 
 2. En el árbol de consola, expanda el servidor, haga clic con el botón derecho en **Usuarios**, haga clic en **Nuevo** y, después, haga clic en **Grupo**.
 

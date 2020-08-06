@@ -7,12 +7,12 @@ ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 861404db4d6b5e0d4cfd4db95056f583f9068a0b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 0ee5669fc9ae6e1ee4e38065792d3da7611900a4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180911"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837734"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>Administrar el almacenamiento de servidor en Windows Server Essentials
 
@@ -55,7 +55,7 @@ ms.locfileid: "87180911"
 
 ### <a name="available-hard-drive-management-tasks"></a>Tareas administrativas de la unidad de disco duro disponibles
 
-|Nombre de tarea|Description|
+|Nombre de tarea|Descripción|
 |---------------|-----------------|
 |**Ver las propiedades de la unidad de disco duro**|Se abrirá la página _Propiedades_**NombreDeDiscoDuro** . Esta tarea se muestra cuando se selecciona la unidad de disco duro. La pestaña **General** de la página Propiedades de *NombreDeUnidadDeDiscoDuro* incluye las siguientes tareas adicionales:<br /><br /> -   **Limpieza de unidad**: permite limpiar los archivos no usados en el disco duro (esta tarea solo está disponible en Windows Server Essentials).<br />-   **Comprobar y reparar**: comprueba el disco duro en busca de errores del sistema de archivos e intenta reparar automáticamente los errores detectados.<br /><br /> La pestaña **Instantáneas** de la página Propiedades de _Propiedades_**NombreDeDiscoDuro** permite habilitar las instantáneas. Esta pestaña también muestra la hora en la que está programada la ejecución de la próxima instantánea.|
 |**Administrar los espacios de almacenamiento**|**Nota:** En Windows Server Essentials, esta tarea solo se muestra cuando hay un espacio de almacenamiento existente.<br /><br /> Abre el panel de control de los **Espacios de almacenamiento**, desde el que puede crear y administrar grupos de almacenamiento y espacios de almacenamiento.|
@@ -193,7 +193,7 @@ ms.locfileid: "87180911"
 > [!NOTE]
 >  Si configura los espacios de almacenamiento en un servidor que ejecuta Windows Server Essentials, no puede realizar un restablecimiento de fábrica con la opción **limpiar datos** . La solución de este problema consiste en quitar en primer lugar los espacios de almacenamiento y, a continuación, realizar un restablecimiento de fábrica con la opción **Limpiar datos**.
 
- Para obtener más información sobre los espacios de almacenamiento, consulte [Preguntas más frecuentes sobre los espacios de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq).
+ Para obtener más información sobre los espacios de almacenamiento, consulte [Preguntas más frecuentes sobre los espacios de almacenamiento](/windows-server/storage/storage-spaces/storage-spaces-direct-faq).
 
 ##  <a name="create-a-storage-space"></a><a name="BKMK_6"></a>Crear un espacio de almacenamiento
  Para empezar a trabajar con los espacios de almacenamiento en el servidor, deben cumplirse los siguientes requisitos mínimos:

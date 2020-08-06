@@ -7,18 +7,18 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e17d60b4931f4858f915bd177f05e85eb1fc5f6a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7c30d99bd1a0019130f7e39f70b289effd6935c4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181691"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838254"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Integración de los servicios de Azure Site Recovery
 
 >Se aplica a: Windows Server 2016 Essentials
 
-[Azure Site Recovery Services](https://docs.microsoft.com/azure/site-recovery/) es un servicio que ofrece Microsoft Azure la habilitación de la replicación en tiempo real de las máquinas virtuales (VM) en un almacén de copia de seguridad de Azure. En caso de que el servidor o el sitio estén inactivos debido a un error de hardware u otro, puede conmutar por error a Azure, donde la imagen de máquina virtual almacenada en el almacén de copia de seguridad se aprovisionará como una máquina virtual en ejecución en Azure. En combinación con una red virtual de Azure, en el caso de una conmutación por error a Azure, los equipos cliente que anteriormente estaban conectados al servidor local se conectarán de forma transparente al servidor que se ejecuta en Azure.
+[Azure Site Recovery Services](/azure/site-recovery/) es un servicio que ofrece Microsoft Azure la habilitación de la replicación en tiempo real de las máquinas virtuales (VM) en un almacén de copia de seguridad de Azure. En caso de que el servidor o el sitio estén inactivos debido a un error de hardware u otro, puede conmutar por error a Azure, donde la imagen de máquina virtual almacenada en el almacén de copia de seguridad se aprovisionará como una máquina virtual en ejecución en Azure. En combinación con una red virtual de Azure, en el caso de una conmutación por error a Azure, los equipos cliente que anteriormente estaban conectados al servidor local se conectarán de forma transparente al servidor que se ejecuta en Azure.
 
 La integración de Azure Site Recovery Services con Windows Server Essentials se inicia de la misma manera que la configuración de la [red virtual de Azure](azure-virtual-network-integration.md). En la página de **integración de Microsoft Cloud Services** en el panel, haga clic en **integrar con Azure Site Recovery Services** a la derecha del panel:
 
@@ -62,6 +62,6 @@ En cualquiera de los tres casos anteriores, cuando una máquina virtual conmute 
 
 ![Captura de pantalla que muestra la página recuperación de Azure del panel de Windows Server Essentials. La replicación en Azure se ha habilitado para un host denominado Essentials y una máquina virtual denominada Essentials-test que se ejecuta en Azure indica que el host se ha conmutado por error a Azure.](media/azure-site-recovery-8.PNG)
 
-<a name="see-also"></a>Consulte también
+<a name="see-also"></a>Vea también
 --------
 [Introducción a Windows Server Essentials](get-started.md)

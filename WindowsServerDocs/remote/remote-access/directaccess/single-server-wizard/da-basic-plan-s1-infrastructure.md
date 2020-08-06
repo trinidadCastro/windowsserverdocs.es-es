@@ -7,17 +7,17 @@ ms.technology: networking-da
 ms.topic: article
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6bb92a1a6f569cb5b43fa3cf3861220b8b570fb9
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4a7d784c38db692110559d9e2ce1f1f7c760313a
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518120"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769743"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>Paso 1 planear la infraestructura de DirectAccess básica
 El primer paso para una implementación básica de DirectAccess en un único servidor es planear la infraestructura necesaria para la implementación. En este tema se describen los pasos para la planificación de la infraestructura:
 
-|Tarea|Description|
+|Tarea|Descripción|
 |----|--------|
 |Planear la topología de red y la configuración|Decide dónde quieres colocar el servidor de DirectAccess (en el perímetro, o bien detrás de un firewall o un dispositivo de traducción de direcciones de red [NAT]), y planifica el direccionamiento IP y el enrutamiento.|
 |Planear requisitos de firewall|Planea la configuración de los firewalls perimetrales para permitir el acceso de DirectAccess.|
@@ -48,7 +48,7 @@ No es necesario completar las tareas de planificación en un orden específico.
 
 3.  Configura los adaptadores y el direccionamiento obligatorios según la tabla siguiente. Para las implementaciones detrás de un dispositivo NAT con un solo adaptador de red, configure las direcciones IP solo con la columna **adaptador de red interno** .
 
-    ||Adaptador de red externo|Adaptador de red interno<sup>1</sup>|Requisitos de enrutamiento|
+    |Descripción|Adaptador de red externo|Adaptador de red interno<sup>1</sup>|Requisitos de enrutamiento|
     |-|--------------|--------------------|------------|
     |Intranet IPv4 e Internet IPv4|Configura lo siguiente:<p>-Una dirección IPv4 pública estática con la máscara de subred adecuada.<br />-Una dirección IPv4 de puerta de enlace predeterminada del firewall de Internet o del enrutador del proveedor de servicios Internet (ISP) local.|Configura lo siguiente:<p>-Una dirección de intranet IPv4 con la máscara de subred adecuada.<br />-Un sufijo DNS específico de la conexión del espacio de nombres de la intranet. También debes configurar un servidor DNS en la interfaz interna.<br />-No configure una puerta de enlace predeterminada en ninguna interfaz de la intranet.|Para configurar el servidor de DirectAccess de manera que tenga acceso a todas las subredes de la red IPv4 interna, haz lo siguiente:<p>1. Enumere los espacios de direcciones IPv4 para todas las ubicaciones de la intranet.<br />2. Use los comandos **Route Add-p** o **netsh interface IPv4 Add Route** para agregar los espacios de direcciones IPv4 como rutas estáticas en la tabla de enrutamiento IPv4 del servidor de DirectAccess.|
     |Internet IPv6 e intranet IPv6|Configura lo siguiente:<p>-Use la configuración de la dirección configurada de forma automática proporcionada por su ISP.<br />-Use el comando **Route Print** para asegurarse de que existe una ruta IPv6 predeterminada que apunta al enrutador de ISP en la tabla de enrutamiento de IPv6.<br />: Determine si los enrutadores de ISP e Intranet están usando las preferencias de enrutador predeterminadas descritas en RFC 4191 y el uso de una preferencia predeterminada mayor que los enrutadores de la Intranet local. Si ambas condiciones se cumplen, no se necesita ninguna otra configuración para la ruta predeterminada. La preferencia mayor para el enrutador del ISP asegura que la ruta IPv6 predeterminada activa del servidor de DirectAccess señala a Internet por IPv6.<p>Como el servidor de DirectAccess es un enrutador IPv6, si tienes una infraestructura IPv6 nativa, la interfaz de Internet también puede tener acceso a los controladores de dominio de la intranet. En este caso, agrega filtros de paquetes al controlador de dominio de la red perimetral que impidan que el servidor de DirectAccess conecte con la dirección IPv6 de la interfaz accesible desde Internet.|Configura lo siguiente:<p>-Si no está usando los niveles de preferencia predeterminados, configure las interfaces de la intranet con el comando **netsh interface ipv6 set InterfaceIndex ignoredefaultroutes = Enabled** . Este comando garantiza que las rutas predeterminadas adicionales que señalen a enrutadores de la intranet no se agregarán a la tabla de enrutamiento IPv6. Para conocer el índice de las interfaces de la intranet, usa el comando “netsh interface show interface”.|Si la intranet es IPv6, haz lo siguiente para configurar el servidor de DirectAccess para que tenga acceso a todas las ubicaciones IPv6:<p>1. Enumere los espacios de direcciones IPv6 para todas las ubicaciones de la intranet.<br />2. Use el comando **netsh interface ipv6 add Route** para agregar los espacios de direcciones IPv6 como rutas estáticas en la tabla de enrutamiento IPv6 del servidor de DirectAccess.|
