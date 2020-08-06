@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: d5cdaf915de94e73374459c41b090f197b8f56ef
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7e76cb5b41e7800ce8b2725003dcb5ea90e84116
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475082"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769653"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-template-disk-optional"></a>Máquinas virtuales blindadas para inquilinos: creación de un disco de plantilla (opcional)
 
@@ -64,13 +64,17 @@ Realice los pasos siguientes en un equipo con Windows Server 2016 (no es necesar
 
 2. Instale la característica **herramientas de máquinas virtuales blindadas** desde **herramientas de administración remota del servidor** en el equipo.
 
-        Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
+    Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
 
 3. Obtenga o cree un certificado para firmar el VHDX que se convertirá en el disco de plantilla para nuevas máquinas virtuales blindadas. Los detalles sobre este certificado se incorporarán en un archivo de datos de blindaje, que autoriza el disco como un disco de confianza. Por lo tanto, es importante obtener este certificado de una entidad de certificación que usted y su proveedor de servicios de hosting confían. En escenarios empresariales en los que se encuentre el anfitrión y el inquilino, puede considerar la posibilidad de emitir este certificado desde su PKI.
 
     Si está configurando un entorno de prueba y solo quiere usar un certificado autofirmado para firmar el disco de plantilla, ejecute un comando similar al siguiente en el equipo:
 
-        New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
+    New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
 
 4. Inicie el **Asistente para crear un disco de plantilla** desde la carpeta **herramientas administrativas** del menú Inicio o escriba **TemplateDiskWizard.exe** en el símbolo del sistema.
 

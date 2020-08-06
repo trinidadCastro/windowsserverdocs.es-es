@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b2ed2a176167b79596ee398fc43c66d7196a54
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cda974bf264c7e497c8d472338cf7b5f7d13a534
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966437"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769054"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Administración de estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows
 
@@ -53,7 +53,7 @@ Al hacerlo, se obtiene este resultado de ejemplo:
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Correcto | Aceptar | |
+| 802c-01-1602-117cb5fc | Healthy | Aceptar | |
 | 802c-01-1602-117cb64f | Advertencia | Error predictivo | {Umbral superado,Error NVDIMM\_N} |
 
 > [!NOTE]
@@ -67,12 +67,12 @@ Esta situación se produce cuando comprueba el estado de un dispositivo de memor
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Correcto | Aceptar | |
+| 802c-01-1602-117cb5fc | Healthy | Aceptar | |
 | 802c-01-1602-117cb64f | Advertencia | Error predictivo | {Umbral superado,Error NVDIMM\_N} |
 
 La tabla siguiente muestra información acerca de esta condición.
 
-| | Descripción |
+| Dirección | Descripción |
 | --- | --- |
 | Condición probable | Infracción del umbral de advertencia de NVDIMM-N |
 | Causa principal | Los dispositivos NVDIMM-N supervisan varios umbrales, como la temperatura, la duración de NVM y la duración de la fuente de energía. Cuando se supera uno de estos umbrales, se envía una notificación al sistema operativo. |
@@ -87,12 +87,12 @@ Esta situación se da al comprobar el estado de un dispositivo de memoria de cla
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Correcto | Aceptar | |
-| 802c-01-1602-117cb64f | Incorrecto | {Metadatos obsoletas, Error de E/S, Error transitorio} | {Pérdida de persistencia de datos, Pérdida de datos, NV...} |
+| 802c-01-1602-117cb5fc | Healthy | Aceptar | |
+| 802c-01-1602-117cb64f | Unhealthy (Incorrecto) | {Metadatos obsoletas, Error de E/S, Error transitorio} | {Pérdida de persistencia de datos, Pérdida de datos, NV...} |
 
 La tabla siguiente muestra información acerca de esta condición.
 
-| | Descripción |
+| Dirección | Descripción |
 | --- | --- |
 | Condición probable | Pérdida de persistencia / alimentación de copia de seguridad |
 |Causa principal|Los dispositivos NVDIMM-N dependen de una fuente de alimentación de copia de seguridad para su persistencia (generalmente una batería o supercondensador). Si esta fuente de alimentación de copia de seguridad no está disponible o el dispositivo no puede realizar una copia de seguridad por algún motivo (error de controlador/flash), los datos están en peligro y Windows impedirá escrituras adicionales en los dispositivos afectados. Las lecturas siguen siendo posibles para evacuar datos.|
@@ -107,12 +107,12 @@ Esta condición se da cuando un dispositivo de memoria de clase de almacenamient
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|Correcto|Aceptar||
+|802c-01-1602-117cb5fc|Healthy|Aceptar||
 ||Advertencia|Pérdida de comunicación||
 
 La tabla siguiente muestra información acerca de esta condición.
 
-||Descripción|
+|Dirección|Descripción|
 |---|---|
 |Condición probable|BIOS no expuso NVDIMM-N al sistema operativo|
 |Causa principal|Los dispositivos NVDIMM-N se basan en DRAM. Cuando se hace referencia a una dirección DRAM dañada, la mayoría de CPU se iniciarán en una comprobación de la máquina y reiniciarán el servidor. Algunas plataformas de servidor entonces eliminan la asignación de NVDIMM, evitando que el sistema operativo tenga acceso a ella y causando potencialmente otra comprobación de máquina. Esto también puede ocurrir si el BIOS detecta que se ha producido un error en NVDIMM-N y necesita reemplazarse.|
@@ -127,12 +127,12 @@ Esta situación se da al comprobar el estado de un dispositivo de memoria de cla
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|Correcto|Aceptar|{Desconocido}|
-|802c-01-1602-117cb64f|Incorrecto|{Metadatos no reconocidos, metadatos obsoletos}|{Desconocido}|
+|802c-01-1602-117cb5fc|Healthy|Aceptar|{Desconocido}|
+|802c-01-1602-117cb64f|Unhealthy (Incorrecto)|{Metadatos no reconocidos, metadatos obsoletos}|{Desconocido}|
 
 La tabla siguiente muestra información acerca de esta condición.
 
-||Descripción|
+|Dirección|Descripción|
 |---|---|
 |Condición probable|Error de copia de seguridad y restauración|
 |Causa principal|Un error en el procedimiento de copia de seguridad o restauración probablemente tendrá como resultado que se pierdan todos los datos en NVDIMM-N. Cuando se carga el sistema operativo, aparecerá como un nuevo NVDIMM-N sin una partición o sistema de archivos y la superficie como sin formato, lo que significa que no tiene un sistema de archivos.|
