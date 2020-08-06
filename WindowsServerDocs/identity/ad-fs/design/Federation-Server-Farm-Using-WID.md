@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f542dfb228e5c32c2ff6c9d0b5e853c5aa66cf83
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4cfdfbda3a1c7df19ded887cc748e7f69f2fad08
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519924"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864067"
 ---
-# <a name="federation-server-farm-using-wid"></a>Granja de servidores de federación con WID
+# <a name="legacy-ad-fs-federation-server-farm-using-wid"></a>Granja de servidores de Federación de AD FS heredada con WID
 
 La topología predeterminada para Servicios de federación de Active Directory (AD FS) \( AD FS \) es una granja de servidores de Federación mediante el WID de Windows Internal Database \( \) . En esta topología, AD FS usa WID como almacén para la base de datos de configuración AD FS para todos los servidores de Federación que se unen a esa granja. La granja replica y mantiene los datos del Servicio de federación de la base de datos de configuración de todos los servidores de la granja. AD FS en Windows Server 2012 R2 permite a las organizaciones con 100 o menos relaciones de confianza para usuario autenticado configurar granjas de servidores de Federación con WID con hasta 30 servidores.
 
@@ -56,10 +56,10 @@ En esta sección se describen varias consideraciones sobre la audiencia, las ven
 
 En la tabla siguiente se proporciona un resumen del uso de una granja de servidores WID. Úselo para planear la implementación.
 
-| 1-100 confianzas de RP | Más de 100 confianzas RP |
+| 1-100 relaciones de confianza para usuario autenticado | Más de 100 relaciones de confianza para usuario autenticado |
 |--|--|
-| **1-30 nodos AD FS:** WID compatible | **1-30 nodos AD FS:** No se admite con WID: SQL requerido |
-| **Más de 30 nodos AD FS:** No se admite con WID: SQL requerido | **Más de 30 nodos AD FS:** No se admite con WID: SQL requerido |
+| **1-30 nodos de AD FS:** Compatible con WID | **1-30 nodos de AD FS:** No compatible con WID, se requiere SQL |
+| **Más de 30 nodos de AD FS:** No compatible con WID, se requiere SQL | **Más de 30 nodos de AD FS:** No compatible con WID, se requiere SQL |
 
 
 ## <a name="server-placement-and-network-layout-recommendations"></a>Recomendaciones de ubicación de servidor y diseño de red

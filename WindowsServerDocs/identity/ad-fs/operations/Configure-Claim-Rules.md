@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 62671800d923e95c6bc3f9c7efb0660974c438e2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a7304402b4be1710fbff9e29e2dd0094ba621095
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954287"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864300"
 ---
-# <a name="configure-claim-rules"></a>Configuración de regla de notificación
+# <a name="configure-claim-rules-in-ad-fs-for-windows-server"></a>Configuración de reglas de notificaciones en AD FS para Windows Server
 
 En un modelo de identidad basado en notificaciones \- , la función de Servicios de federación de Active Directory (AD FS) \( AD FS \) como servicios de Federación es emitir un token que contenga un conjunto de notificaciones. Las reglas de notificaciones rigen las decisiones con respecto a las notificaciones que AD FS problemas. Las reglas de notificaciones y todos los datos de configuración del servidor se almacenan en la base de datos de configuración de AD FS.  
   

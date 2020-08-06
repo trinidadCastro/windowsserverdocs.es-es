@@ -8,12 +8,12 @@ ms.date: 07/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: c51394b96abbe451b57ab1388cf2d21126959a78
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: ddfcf45fa897fbed4a2475332b9706fc8d9fb634
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769713"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864204"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -118,9 +118,9 @@ Warning: The destination proxy wasn't found.
 
 Si no ha instalado el servicio de proxy de migración de almacenamiento en el equipo de destino de Windows Server 2019 o si el equipo de destino es Windows Server 2016 o Windows Server 2012 R2, este comportamiento es así por diseño. Se recomienda migrar a un equipo con Windows Server 2019 con el proxy instalado para mejorar significativamente el rendimiento de la transferencia.
 
-## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>Determinados archivos no realizan el inventario o la transferencia, error 5 "acceso denegado"
+## <a name="certain-files-dont-inventory-or-transfer-error-5-access-is-denied"></a>Determinados archivos no inventario o transferencia, error 5 "acceso denegado"
 
-Al realizar un inventario o transferir archivos de los equipos de origen a destino, los archivos de los que un usuario ha quitado los permisos de grupo de administradores no se pueden migrar. Examinar el servicio de migración de almacenamiento: depuración del proxy:
+Al realizar un inventario o transferir archivos de los equipos de origen a destino, los archivos de los que un usuario ha quitado los permisos para el grupo de administradores no se pueden migrar. Examinar el servicio de migración de almacenamiento: depuración del proxy:
 
 ```
 Log Name: Microsoft-Windows-StorageMigrationService-Proxy/Debug
@@ -152,39 +152,39 @@ Para resolver este problema, instale [Windows Update el 2 de abril de 2019: KB44
 
 Al usar el servicio de migración de almacenamiento para transferir archivos a un nuevo destino, la configuración de Replicación DFS para replicar los datos con un servidor existente a través de la replicación preiniciada o la clonación de la base de datos Replicación DFS, todos los archivos experimentan un error de coincidencia de hash y se vuelven a replicar. Parece que todos los flujos de datos, flujos de seguridad, tamaños y atributos están perfectamente coincidentes después de usar el servicio de migración de almacenamiento para transferirlos. El examen de los archivos con ICACLS o el registro de depuración de la clonación de base de datos Replicación DFS revela:
 
+### <a name="source-file"></a>Archivo de origen
 ```
-Source file:
-
   icacls d:\test\Source:
 
-  icacls d:\test\thatcher.png /save out.txt /t
-  thatcher.png
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png
   D:AI(A;;FA;;;BA)(A;;0x1200a9;;;DD)(A;;0x1301bf;;;DU)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)
-
-Destination file:
-
-  icacls d:\test\thatcher.png /save out.txt /t
-  thatcher.png
-  D:AI(A;;FA;;;BA)(A;;0x1301bf;;;DU)(A;;0x1200a9;;;DD)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)**S:PAINO_ACCESS_CONTROL**
-
-DFSR Debug Log:
-
-    20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found.
-
-    Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6
-    LastWriteTime:20190308 18:09:44.876
-    FileSizeLow:1131654
-    FileSizeHigh:0
-    Attributes:32
-
-    Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B**
-    LastWriteTime:20190308 18:09:44.876
-    FileSizeLow:1131654
-    FileSizeHigh:0
-    Attributes:32
 ```
 
-Este problema se ha corregido con la actualización de [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)
+### <a name="destination-file"></a>Archivo de destino
+
+```
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png
+  D:AI(A;;FA;;;BA)(A;;0x1301bf;;;DU)(A;;0x1200a9;;;DD)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)**S:PAINO_ACCESS_CONTROL**
+```
+### <a name="dfsr-debug-log"></a>Registro de depuración de DFSR
+
+```
+   20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found.
+
+   Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6
+   LastWriteTime:20190308 18:09:44.876
+   FileSizeLow:1131654
+   FileSizeHigh:0
+   Attributes:32
+
+   Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B**
+   LastWriteTime:20190308 18:09:44.876
+   FileSizeLow:1131654
+   FileSizeHigh:0
+   Attributes:32
+```
+
+Este problema se ha corregido en la actualización de [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) .
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>Error "no se pudo transferir el almacenamiento en ninguno de los puntos de conexión" al transferir desde Windows Server 2008 R2
 
@@ -195,11 +195,11 @@ Couldn't transfer storage on any of the endpoints.
 0x9044
 ```
 
-Este error se espera si el equipo con Windows Server 2008 R2 no se ha revisado por completo con todas las actualizaciones críticas e importantes de Windows Update. Independientemente del servicio de migración de almacenamiento, siempre se recomienda aplicar una revisión a un equipo con Windows Server 2008 R2 por motivos de seguridad, ya que ese sistema operativo no contiene las mejoras de seguridad de las versiones más recientes de Windows Server.
+Este error se espera si el equipo con Windows Server 2008 R2 no se ha revisado por completo con todas las actualizaciones críticas e importantes de Windows Update. Es especialmente importante mantener un equipo con Windows Server 2008 R2 actualizado por motivos de seguridad, ya que el sistema operativo no contiene las mejoras de seguridad de las versiones más recientes de Windows Server.
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>Error "no se pudo transferir el almacenamiento en ninguno de los puntos de conexión" y "comprobar si el dispositivo de origen está en línea-no se pudo obtener acceso a él".
 
-Al intentar transferir datos de un equipo de origen, algunos o todos los recursos compartidos no se transfieren, con un error de Resumen:
+Al intentar transferir datos de un equipo de origen, algunos o todos los recursos compartidos no se transfieren, con el error:
 
 ```
 Couldn't transfer storage on any of the endpoints.
@@ -316,7 +316,7 @@ Como alternativa alternativa:
 2. Ejecute el siguiente comando de PowerShell del servicio de migración de almacenamiento en el equipo de Orchestrator:
 
    ```PowerShell
-   Register-SMSProxy -ComputerName *destination server* -Force
+   Register-SMSProxy -ComputerName <destination server> -Force
    ```
 ## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>Error "no se encontró el archivo dll" al ejecutar el inventario desde un nodo de clúster
 
@@ -345,7 +345,7 @@ La desinstalación de las actualizaciones acumulativas de Windows Server puede i
 
 1. Abra un símbolo del sistema con privilegios elevados, donde sea miembro de los administradores en el servidor de servicio de migración de almacenamiento y ejecute:
 
-     ```
+     ```DOS
      TAKEOWN /d y /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
 
      MD c:\ProgramData\Microsoft\StorageMigrationService\backup
@@ -426,16 +426,14 @@ Hay dos soluciones para este problema:
 
 Después de completar una transferencia y, a continuación, ejecutar una retransferencia posterior de los mismos datos, es posible que no vea muchas mejoras en el tiempo de transferencia aunque haya pocos datos que hayan cambiado mientras tanto en el servidor de origen.
 
-Este es el comportamiento esperado cuando se transfiere un número muy grande de archivos y carpetas anidadas. El tamaño de los datos no es relevante. Primero hemos realizado mejoras en este comportamiento en [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) y continúan optimizando el rendimiento de la transferencia. Para optimizar aún más el rendimiento, revise [optimización del inventario y rendimiento](./faq.md#optimizing-inventory-and-transfer-performance)de la transferencia.
+Este es el comportamiento esperado cuando se transfiere un número muy grande de archivos y carpetas anidadas. El tamaño de los datos no es relevante. Primero hemos realizado mejoras en este comportamiento en [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) y continúan optimizando el rendimiento de la transferencia. Para optimizar aún más el rendimiento, revise [optimización del inventario y rendimiento](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)de la transferencia.
 
 ## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>Los datos no se transfieren, el usuario cambia el nombre al migrar a o desde un controlador de dominio.
 
 Después de iniciar la transferencia desde o a un controlador de dominio:
 
  1. No se migra ningún dato y no se crean recursos compartidos en el destino.
-
  2. Aparece un símbolo de error rojo en el centro de administración de Windows sin ningún mensaje de error
-
  3. Uno o varios usuarios de AD y grupos locales de dominio tienen su nombre y/o el atributo de inicio de sesión anterior a Windows 2000 cambiado
 
  4. Verá el evento 3509 en el orquestador del servicio de migración de almacenamiento:
@@ -568,7 +566,7 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 Este problema se debe a directiva de grupo que establece el siguiente valor del registro en el equipo de origen: "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy = 0"
 
-Esta configuración no forma parte de la directiva de grupo estándar, sino que es un complemento configurado mediante el [Kit de herramientas de cumplimiento de seguridad de Microsoft](https://www.microsoft.com/download/details.aspx?id=55319):
+Esta configuración no forma parte del directiva de grupo estándar, sino que es un complemento configurado mediante el [Kit de herramientas de cumplimiento de seguridad de Microsoft](https://www.microsoft.com/download/details.aspx?id=55319):
 
 - Windows Server 2012 R2: "configuración del Equipo\plantillas Templates\SCM: pasar las restricciones de UAC Mitigations\Apply de hash a las cuentas locales en los inicios de sesión de red"
 
@@ -586,8 +584,7 @@ Para solucionar este problema, use una de las siguientes opciones:
 
 ## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>Error de inventario o transferencia al usar credenciales de un dominio diferente
 
-Al intentar ejecutar el inventario o la transferencia con el servicio de migración de almacenamiento y establecer como destino un servidor de Windows al utilizar las credenciales de migración de un dominio diferente al del servidor de destino, recibirá uno o varios de los siguientes errores:
-
+Al intentar ejecutar el inventario o la transferencia con el servicio de migración de almacenamiento y establecer como destino un servidor de Windows al utilizar las credenciales de migración de un dominio diferente al del servidor de destino, recibe los siguientes errores:
 ```
 Exception from HRESULT:0x80131505
 

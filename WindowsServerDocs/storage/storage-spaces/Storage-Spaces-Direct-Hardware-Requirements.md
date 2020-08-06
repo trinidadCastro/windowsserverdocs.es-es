@@ -7,22 +7,22 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 06/24/2020
+ms.date: 07/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 108e5a65b78370c40ba02da677e953eb2b122288
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 45ef438d58c9d36275f2e7a32ce93a383bd21a70
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964587"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864280"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
 > Se aplica a: Windows Server 2019, Windows Server 2016
 
-En este tema se describen los requisitos mínimos de hardware para Espacios de almacenamiento directo.
+En este tema se describen los requisitos mínimos de hardware para Espacios de almacenamiento directo en Windows Server. Para conocer los requisitos de hardware en Azure Stack HCl, nuestro sistema operativo diseñado para implementaciones hiperconvergidas con una conexión a la nube, consulte [antes de implementar Azure Stack HCI: determinar los requisitos de hardware](/azure-stack/hci/deploy/before-you-start#determine-hardware-requirements).
 
-En el caso de producción, Microsoft recomienda adquirir una solución de hardware/software validada de nuestros asociados, que incluyen herramientas y procedimientos de implementación. Estas soluciones se diseñan, ensamblan y validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda ponerse en marcha rápidamente. Para obtener soluciones de Windows Server 2019, visite el [sitio web de soluciones de hcl Azure Stack](https://azure.microsoft.com/overview/azure-stack/hci). En el caso de las soluciones de Windows Server 2016, obtenga más información en [Windows Server Software-Defined](https://microsoft.com/wssd).
+En el caso de producción, Microsoft recomienda adquirir una solución de hardware/software validada de nuestros asociados, que incluyen herramientas y procedimientos de implementación. Estas soluciones se diseñan, se ensamblan y se validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda empezar a utilizarlas rápidamente. Para obtener soluciones de Windows Server 2019, visite el [sitio web de soluciones de hcl Azure Stack](https://azure.microsoft.com/overview/azure-stack/hci). En el caso de las soluciones de Windows Server 2016, obtenga más información en [Windows Server Software-Defined](https://microsoft.com/wssd).
 
    > [!TIP]
    > ¿Desea evaluar Espacios de almacenamiento directo pero no tiene hardware? Use Hyper-V o máquinas virtuales de Azure como se describe en [uso de espacios de almacenamiento directo en clústeres de máquinas virtuales invitadas](storage-spaces-direct-in-vm.md).
@@ -47,7 +47,7 @@ Además, se aplican los siguientes requisitos:
 - Procesador compatible con Intel Nehalem o posterior; de
 - Procesador compatible con AMD EPYC o posterior
 
-## <a name="memory"></a>Memory
+## <a name="memory"></a>Memoria
 
 - Memoria para Windows Server, máquinas virtuales y otras aplicaciones o cargas de trabajo; signos
 - 4 GB de RAM por terabyte (TB) de capacidad de la unidad de caché en cada servidor, para metadatos de Espacios de almacenamiento directo
@@ -97,11 +97,11 @@ A continuación se muestra cómo se pueden conectar las unidades de Espacios de 
 - Unidades de NVMe conectadas directamente
 - Adaptador de bus host (HBA) SAS con unidades SAS
 - Adaptador de bus host (HBA) SAS con unidades SATA
-- **no compatible:** Tarjetas de controlador RAID o almacenamiento SAN (Canal de fibra, iSCSI, FCoE). Las tarjetas del adaptador de bus host (HBA) deben implementar el modo de paso a través simple.
+- **no compatible:** Tarjetas de controlador RAID o almacenamiento SAN (Canal de fibra, iSCSI, FCoE). Las tarjetas adaptadoras de bus host (HBA) deben implementar el modo de paso a través simple.
 
 ![diagrama de interconexiones de unidad compatibles](media/hardware-requirements/drive-interconnect-support-1.png)
 
-Las unidades pueden ser internas en el servidor o en un contenedor externo que esté conectado a un solo servidor. Se requiere SCSI Enclosure Services (SES) para la asignación e identificación de ranuras. Cada contenedor externo debe presentar un identificador único (ID. único).
+Las unidades pueden ser internas en el servidor o en un contenedor externo que esté conectado a un solo servidor. Se requiere SCSI Enclosure Services (SES) para la asignación e identificación de ranuras. Cada contenedor externo debe presentar un identificador único.
 
 - Unidades internas del servidor
 - Unidades en un contenedor externo ("JBOD") conectadas a un servidor

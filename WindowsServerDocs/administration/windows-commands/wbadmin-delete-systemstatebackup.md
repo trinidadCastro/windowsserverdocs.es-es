@@ -9,15 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a17ed3595f0e1dd369e762150c8f45fe6f983822
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ea6c2b2f367820db3f3611806d3aaecd9eca87e4
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933715"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863767"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>wbadmin delete systemstatebackup
-
 
 
 Elimina las copias de seguridad de estado del sistema que especifique. Si el volumen especificado contiene copias de seguridad distintas de las copias de seguridad de estado del sistema del servidor local, esas copias de seguridad no se eliminarán.
@@ -26,7 +25,6 @@ Elimina las copias de seguridad de estado del sistema que especifique. Si el vol
 > Copias de seguridad de Windows Server no realiza copias de seguridad ni recupera subárboles de usuario del registro (HKEY_CURRENT_USER) como parte de la copia de seguridad del estado del sistema o de la recuperación del estado del sistema.
 
 Para eliminar una copia de seguridad de estado del sistema con este subcomando, debe ser miembro del grupo **operadores de copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados. Además, debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**).
-
 
 
 ## <a name="syntax"></a>Sintaxis
@@ -63,12 +61,12 @@ Para eliminar todas las copias de seguridad de estado del sistema, excepto las t
 ```
 wbadmin delete systemstatebackup -keepVersions:3
 ```
-Para eliminar la copia de seguridad de estado del sistema más antigua almacenada en el disco f, escriba:
+Para eliminar la copia de seguridad de estado del sistema más antigua almacenada en el disco f:, escriba:
 ```
-wbadmin delete systemstatebackup -backupTarget:f -deleteOldest
+wbadmin delete systemstatebackup -backupTarget:f:\ -deleteOldest
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
--   [Wbadmin](wbadmin.md)
+- [Wbadmin](wbadmin.md)

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 460792e4-9f1d-4e7b-b6b2-53e057f839df
-title: Consideraciones sobre la topología de implementación de AD FS
+title: Usar notificaciones de AD DS con AD FS
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3086de9dc34f555d5f6056716ab9572b980f1962
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f3aa75a865c61d486d68463aceb6574f6381eb0
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858758"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864257"
 ---
 # <a name="using-ad-ds-claims-with-ad-fs"></a>Usar notificaciones de AD DS con AD FS
   
   
-Puede habilitar el control de acceso más completo para las aplicaciones federadas mediante Active Directory Domain Services \(AD DS\)\-las notificaciones de usuario y de dispositivo emitidas junto con Servicios de federación de Active Directory (AD FS) \(AD FS\).  
+Puede habilitar el control de acceso más completo para aplicaciones federadas mediante Active Directory Domain Services \( AD DS \) \- notificaciones de usuario y de dispositivo emitidas junto con servicios de Federación de Active Directory (AD FS) \( AD FS \) .  
   
 ## <a name="about-dynamic-access-control"></a>Acerca de Access Control dinámico  
-En Windows Server&reg; 2012, la característica de Access Control dinámica permite a las organizaciones conceder acceso a los archivos en función de las notificaciones de usuario \(que tienen como origen los atributos de la cuenta de usuario\) y las notificaciones de dispositivo \(das por los atributos de cuenta de equipo\) emitidos por Active Directory Domain Services \(AD DS\). AD DS las notificaciones emitidas se integran en la autenticación integrada de Windows a través del Protocolo de autenticación Kerberos.  
+En Windows Server &reg; 2012, la característica de Access Control dinámica permite a las organizaciones conceder acceso a los archivos en función de las notificaciones de usuario \( que provienen de los atributos de la cuenta de usuario \) y las notificaciones de dispositivo \( que tienen como origen los atributos de cuenta de equipo \) que emite Active Directory Domain Services \( AD DS \) . AD DS las notificaciones emitidas se integran en la autenticación integrada de Windows a través del Protocolo de autenticación Kerberos.  
   
 Para obtener más información sobre el Access Control dinámico, vea [mapa de ruta de contenido de Access control dinámico](../../solution-guides/Dynamic-Access-Control--Scenario-Overview.md#BKMK_APP).  
   
@@ -30,20 +30,20 @@ Como extensión del escenario de Access Control dinámico, AD FS en Windows Serv
   
 -   Obtener acceso a los atributos de la cuenta de equipo, además de a los atributos de cuenta de usuario, dentro de AD DS. En versiones anteriores de AD FS, el Servicio de federación no podía tener acceso a los atributos de la cuenta de equipo desde AD DS.  
   
--   Consume AD DS notificaciones de usuario o dispositivo emitidas que residen en un vale de autenticación Kerberos. En versiones anteriores de AD FS, el motor de notificaciones podía leer los ID. de seguridad de usuario y de grupo \(los SID\) de Kerberos pero no podía leer la información de notificaciones contenida en un vale de Kerberos.  
+-   Consume AD DS notificaciones de usuario o dispositivo emitidas que residen en un vale de autenticación Kerberos. En versiones anteriores de AD FS, el motor de notificaciones podía leer los SID de los identificadores de seguridad de usuarios y grupos \( \) de Kerberos, pero no podía leer la información de notificaciones contenida dentro de un vale de Kerberos.  
   
 -   Transforme AD DS notificaciones de usuario o dispositivo emitidas en tokens SAML que las aplicaciones de confianza pueden usar para realizar un control de acceso más completo.  
   
 ## <a name="benefits-of-using-ad-ds-claims-with-ad-fs"></a>Ventajas del uso de notificaciones de AD DS con AD FS  
 Estas AD DS notificaciones emitidas se pueden insertar en vales de autenticación Kerberos y usarse con AD FS para proporcionar las siguientes ventajas:  
   
--   Las organizaciones que requieren directivas de control de acceso más enriquecidas pueden habilitar las notificaciones\-el acceso basado en aplicaciones y recursos mediante AD DS notificaciones emitidas que se basan en los valores de atributo almacenados en AD DS para una cuenta de usuario o equipo determinada. Esto puede ayudar a los administradores a reducir la sobrecarga adicional asociada a la creación y administración de:  
+-   Las organizaciones que requieren directivas de control de acceso más enriquecidas pueden habilitar \- el acceso basado en notificaciones a aplicaciones y recursos mediante AD DS notificaciones emitidas que se basan en los valores de atributo almacenados en AD DS para una cuenta de usuario o de equipo determinada. Esto puede ayudar a los administradores a reducir la sobrecarga adicional asociada a la creación y administración de:  
   
     -   AD DS grupos de seguridad que, de otro modo, se utilizarían para controlar el acceso a las aplicaciones y recursos a los que se puede tener acceso a través de la autenticación integrada de Windows.  
   
-    -   Confianzas de bosque que, de lo contrario, se utilizarían para controlar el acceso a\-empresarial a\-empresariales \(B2B\) \/ aplicaciones y recursos accesibles desde Internet.  
+    -   Confianzas de bosque que, de lo contrario, se utilizarían para controlar el acceso a \- \- \( \) \/ recursos y aplicaciones accesibles a Internet empresariales de empresa a negocio.  
   
--   Ahora, las organizaciones pueden impedir el acceso no autorizado a los recursos de red de los equipos cliente en función de si un valor de atributo de cuenta de equipo específico almacenado en AD DS \(por ejemplo, el nombre de DNS de un equipo\) coincide con la Directiva de control de acceso del recurso \(por ejemplo, un servidor de archivos que se ha incluirse con notificaciones\) o la Directiva de usuario de confianza\(\-\) Esto puede ayudar a los administradores a establecer directivas de control de acceso más precisas para los recursos o las aplicaciones que:  
+-   Las organizaciones ahora pueden impedir el acceso no autorizado a los recursos de red de los equipos cliente en función de si un valor de atributo de cuenta de equipo específico almacenado en AD DS \( por ejemplo, el nombre DNS de un equipo \) coincide con la Directiva de control de acceso del recurso \( , por ejemplo, un servidor de archivos que se ha incluirse con notificaciones \) o la directiva \( de usuario de confianza, por ejemplo, una \- \) Esto puede ayudar a los administradores a establecer directivas de control de acceso más precisas para los recursos o las aplicaciones que:  
   
     -   Solo accesible a través de la autenticación integrada de Windows.  
   
@@ -57,17 +57,17 @@ Hay dos factores diferenciales que es importante comprender sobre las notificaci
 -   AD FS solo puede emitir notificaciones que se encapsulan en tokens SAML, no en vales Kerberos. Para obtener más información sobre cómo AD FS notificaciones de problemas, vea [el rol del motor de notificaciones](../../ad-fs/technical-reference/The-Role-of-the-Claims-Engine.md).  
   
 ## <a name="how-ad-ds-issued-claims-work-with-ad-fs"></a>Cómo funcionan las notificaciones emitidas por AD DS con AD FS  
-AD DS se pueden usar notificaciones emitidas con AD FS para tener acceso a las notificaciones de usuario y de dispositivo directamente desde el contexto de autenticación del usuario, en lugar de realizar una llamada LDAP independiente a Active Directory. La siguiente ilustración y los pasos correspondientes describen cómo funciona este proceso con más detalle para habilitar las notificaciones\-control de acceso basado en el escenario de Access Control dinámico.  
+AD DS se pueden usar notificaciones emitidas con AD FS para tener acceso a las notificaciones de usuario y de dispositivo directamente desde el contexto de autenticación del usuario, en lugar de realizar una llamada LDAP independiente a Active Directory. La siguiente ilustración y los pasos correspondientes describen cómo funciona este proceso con más detalle para habilitar \- el control de acceso basado en notificaciones para el escenario de Access control dinámico.  
   
 ![uso de notificaciones](media/UsingADDSClaimswithADFS.gif)  
   
 1.  Un administrador de AD DS usa la consola de Centro de administración de Active Directory o cmdlets de PowerShell para habilitar objetos de tipo de notificaciones específicos en el esquema de AD DS.  
   
-2.  Un administrador de AD FS usa la consola de administración de AD FS para crear y configurar el proveedor de notificaciones y las relaciones de confianza para usuario autenticado con pase\-a través de o transforme reglas de notificación.  
+2.  Un administrador de AD FS usa la consola de administración de AD FS para crear y configurar el proveedor de notificaciones y las relaciones de confianza para usuario autenticado con reglas de notificación de paso \- a través o de transformación.  
   
-3.  Un cliente de Windows intenta tener acceso a la red. Como parte del proceso de autenticación de Kerberos, el cliente presenta el vale de usuario y de equipo\-concesión de vales \(TGT\) que todavía no contiene ninguna notificación, al controlador de dominio. A continuación, el controlador de dominio busca los tipos de notificación habilitados en AD DS e incluye las notificaciones resultantes en el vale Kerberos devuelto.  
+3.  Un cliente de Windows intenta tener acceso a la red. Como parte del proceso de autenticación de Kerberos, el cliente presenta el TGT del vale de concesión de vales de usuario y equipo \- \( \) que todavía no contiene notificaciones al controlador de dominio. A continuación, el controlador de dominio busca los tipos de notificación habilitados en AD DS e incluye las notificaciones resultantes en el vale Kerberos devuelto.  
   
-4.  Cuando el usuario\/cliente intenta obtener acceso a un recurso de archivo que se incluirse para requerir las notificaciones, puede tener acceso al recurso porque el identificador compuesto que se expuso de Kerberos tiene estas notificaciones.  
+4.  Cuando el cliente de usuario \/ intenta obtener acceso a un recurso de archivo que se incluirse para requerir las notificaciones, puede tener acceso al recurso porque el identificador compuesto que se generó de Kerberos tiene estas notificaciones.  
   
 5.  Cuando el mismo cliente intenta obtener acceso a un sitio web o aplicación web que está configurado para la autenticación de AD FS, se redirige al usuario a un servidor de Federación de AD FS que está configurado para la autenticación integrada de Windows. El cliente envía una solicitud al controlador de dominio mediante Kerberos. El controlador de dominio emite un vale de Kerberos que contiene las notificaciones solicitadas que el cliente puede presentar en el servidor de Federación.  
   
@@ -77,5 +77,5 @@ AD DS se pueden usar notificaciones emitidas con AD FS para tener acceso a las n
   
 Para obtener más información sobre cómo crear las reglas de notificaciones necesarias para que AD DS las notificaciones emitidas funcionen con AD FS, consulte [creación de una regla para transformar una notificación entrante](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md).  
   
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Consulte también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

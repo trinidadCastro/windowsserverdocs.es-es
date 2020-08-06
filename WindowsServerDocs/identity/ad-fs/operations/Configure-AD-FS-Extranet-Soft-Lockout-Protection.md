@@ -1,6 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
-title: Configurar AD FS protección de bloqueo de extranet
+title: Configurar la protección de bloqueo parcial de la Extranet de AD FS
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 02/01/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f49e4a7e27d5b224a86655e48f07df741f03e7b0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc81ac2270a35268fb1547b39f83d1564be994fd
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962647"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863986"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>Configurar AD FS protección de bloqueo de extranet
 

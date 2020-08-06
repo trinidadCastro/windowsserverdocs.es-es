@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f3dedd53d75120a6a3e8087c345cd7dfa04ca35d
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4527b6787531b3a349534092e3597a91dbebf78f
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519944"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864139"
 ---
-# <a name="federation-server-farm-using-sql-server"></a>Granja de servidores de federación con SQL Server
+# <a name="legacy-ad-fs-federation-server-farm-using-sql-server"></a>Granja de servidores de Federación de AD FS heredada mediante SQL Server
 
 Esta topología para Servicios de federación de Active Directory (AD FS) \( AD FS \) difiere de la granja de servidores de Federación con la topología de implementación WID de Windows Internal Database \( \) en que no replica los datos en cada servidor de Federación de la granja. En su lugar, todos los servidores de Federación de la granja pueden leer y escribir datos en una base de datos común que se almacena en un servidor que ejecuta Microsoft SQL Server que se encuentra en la red corporativa.
 
@@ -85,13 +85,13 @@ En esta sección se describe cada una de estas opciones, qué problemas resuelve
 
 En la tabla siguiente se proporciona un resumen del uso de una granja de servidores WID:
 
-| 1-100 confianzas de RP | Más de 100 confianzas RP |
+| 1-100 relaciones de confianza para usuario autenticado | Más de 100 relaciones de confianza para usuario autenticado |
 |--|--|
-| **1-30 nodos AD FS:** WID compatible | **1-30 nodos AD FS:** No se admite con WID: SQL requerido |
-| **Más de 30 nodos AD FS:** No se admite con WID: SQL requerido | **Más de 30 nodos AD FS:** No se admite con WID: SQL requerido |
+| **1-30 nodos de AD FS:** Compatible con WID | **1-30 nodos de AD FS:** No compatible con WID, se requiere SQL |
+| **Más de 30 nodos de AD FS:** No compatible con WID, se requiere SQL | **Más de 30 nodos de AD FS:** No compatible con WID, se requiere SQL |
 
 ### <a name="alwayson-availability-groups"></a>Grupos de disponibilidad AlwaysOn
-**Introducción**
+**Información general**
 
 Los grupos de disponibilidad AlwaysOn se introdujeron en SQL Server 2012 y proporcionan una nueva forma de crear una instancia de SQL Server de alta disponibilidad.Los grupos de disponibilidad AlwaysOn combinan elementos de agrupación en clústeres y creación de reflejo de base de datos para redundancia y conmutación por error en el nivel de instancia SQL y en el nivel de base de datos.A diferencia de las opciones de alta disponibilidad anteriores, los grupos de disponibilidad AlwaysOn no requieren una red de área de almacenamiento o almacenamiento común \( \) en el nivel de base de datos.
 

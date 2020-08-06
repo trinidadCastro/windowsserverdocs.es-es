@@ -7,29 +7,29 @@ ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 06/07/2019
-description: Instrucciones paso a paso para implementar el almacenamiento definido por software con Espacios de almacenamiento directo en Windows Server como una infraestructura hiperconvergida o una infraestructura convergente (también conocida como desagregada).
+ms.date: 07/24/2020
+description: Instrucciones paso a paso para implementar el almacenamiento definido por software con Espacios de almacenamiento directo en Windows Server como infraestructura hiperconvergida o infraestructura convergente (también conocida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: c18d3edc57ab04c9f9487bc39b52325fa1eb0ba9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ba9287cebe1cf35c151335e59476f63ae3e01a56
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955117"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863942"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implementar espacios de almacenamiento directo
 
 > Se aplica a: Windows Server 2019, Windows Server 2016
 
-En este tema se proporcionan instrucciones paso a paso para implementar [espacios de almacenamiento directo](storage-spaces-direct-overview.md).
+En este tema se proporcionan instrucciones paso a paso para implementar [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server. Para implementar Espacios de almacenamiento directo como parte de Azure Stack HCl, consulte [¿Qué es el proceso de implementación de Azure Stack HCl?](/azure-stack/hci/deploy/deployment-overview)
 
 > [!Tip]
-> ¿Desea adquirir una infraestructura hiperconvergida? Microsoft recomienda adquirir una solución de hardware/software validada de nuestros asociados, que incluye procedimientos y herramientas de implementación. Estas soluciones se diseñan, ensamblan y validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda ponerse en marcha rápidamente. Para obtener soluciones de Windows Server 2019, visite el [sitio web de soluciones de hcl Azure Stack](https://azure.microsoft.com/overview/azure-stack/hci). En el caso de las soluciones de Windows Server 2016, obtenga más información en [Windows Server Software-Defined](https://microsoft.com/wssd).
+> ¿Desea adquirir una infraestructura hiperconvergida? Microsoft recomienda adquirir una solución de HCl Azure Stack software o hardware validada de nuestros asociados. Estas soluciones se diseñan, se ensamblan y se validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda empezar a utilizarlas rápidamente. Para ver un catálogo de las soluciones de hardware y software que funcionan con Azure Stack HCl, consulte el [Catálogo de hcl Azure Stack](https://azure.microsoft.com/products/azure-stack/hci/catalog/).
 
 > [!Tip]
 > Puede usar máquinas virtuales de Hyper-V, incluido en Microsoft Azure, para [evaluar espacios de almacenamiento directo sin hardware](storage-spaces-direct-in-vm.md). También puede revisar los útiles [scripts de implementación rápida de Windows Server](https://aka.ms/wslab), que se usan con fines de entrenamiento.
 
-## <a name="before-you-start"></a>Antes de empezar
+## <a name="before-you-start"></a>Antes de comenzar
 
 Revise los [requisitos de hardware de espacios de almacenamiento directo](Storage-Spaces-Direct-Hardware-Requirements.md) y consulte este documento para familiarizarse con el enfoque general y con las notas importantes asociadas a algunos pasos.
 
@@ -39,11 +39,11 @@ Recopile la información siguiente:
 
 - **Nombres de servidor.** Familiarícese con las directivas de nomenclatura de su organización para equipos, archivos, rutas de acceso y otros recursos. Deberá aprovisionar varios servidores, cada uno con nombres únicos.
 
-- **Nombre de dominio.** Familiarícese con las directivas de su organización para la combinación de nombres de dominio y dominios.  Unirá los servidores a su dominio y tendrá que especificar el nombre de dominio.
+- **Nombre de dominio.** Familiarícese con las directivas de su organización para la combinación de nombres de dominio y dominios.  Unirá los servidores al dominio y tendrá que especificar el nombre de dominio.
 
-- **Redes RDMA.** Hay dos tipos de protocolos RDMA: iWarp y RoCE. Observe cuál de los adaptadores de red usa y, si RoCE, tenga en cuenta también la versión (V1 o V2). En el caso de RoCE, tenga en cuenta también el modelo del conmutador para parte superior del rack.
+- **Redes RDMA.** Hay dos tipos de protocolos RDMA: iWarp y RoCE. Observe cuál usa su adaptador de red y, si es RoCE, tenga en cuenta también la versión (v1 o v2). En el caso de RoCE, tenga en cuenta también el modelo del conmutador de la parte superior del rack.
 
-- **IDENTIFICADOR DE VLAN.** Tenga en cuenta el identificador de VLAN que se usará para los adaptadores de red del sistema operativo de administración en los servidores, si hay alguno. Podrá obtenerlo del administrador de red.
+- **IDENTIFICADOR DE VLAN.** Tenga en cuenta el identificador de VLAN que se usará para los adaptadores de red del sistema operativo de administración en los servidores, si hay alguno. Debe poder obtenerlo desde el administrador de red.
 
 ## <a name="step-1-deploy-windows-server"></a>Paso 1: Implementar Windows Server
 
@@ -86,9 +86,9 @@ Especifique la sesión de PS y use el nombre del servidor o la dirección IP del
 >
 > Nota: la lista de hosts de confianza admite caracteres comodín, como `Server*` .
 >
-> Para ver la lista de hosts de confianza, escriba `Get-Item WSMAN:\Localhost\Client\TrustedHosts` .
+> Para ver la lista de hosts de confianza, escriba `Get-Item WSMAN:\Localhost\Client\TrustedHosts`.
 >
-> Para vaciar la lista, escriba `Clear-Item WSMAN:\Localhost\Client\TrustedHost` .
+> Para vaciar la lista, escriba `Clear-Item WSMAN:\Localhost\Client\TrustedHost`.
 
 ### <a name="step-13-join-the-domain-and-add-domain-accounts"></a>Paso 1,3: unir el dominio y agregar cuentas de dominio
 
@@ -244,7 +244,7 @@ Después de crear el clúster, use el `Enable-ClusterStorageSpacesDirect` cmdlet
 
 -   **Configurar las cachés de Espacios de almacenamiento directo:** si hay más de un tipo de soporte físico (unidad) disponible para usarlo en Espacios de almacenamiento directo, habilita el más rápido como dispositivo de memoria caché (lectura y escritura en la mayoría de los casos)
 
--   **Niveles:** Crea dos niveles como niveles predeterminados. Uno se denomina "Capacidad" y otro se denomina "Rendimiento". El cmdlet analiza los dispositivos y configura cada nivel con la mezcla de tipos de dispositivos y resistencia.
+-   **Niveles:** Crea dos niveles como niveles predeterminados. Uno se denomina "Capacity" y, el otro, "Performance". El cmdlet analiza los dispositivos y configura cada nivel con la combinación de tipos de dispositivo y resistencia.
 
 Desde el sistema de administración, en una ventana de comandos de PowerShell abierta con privilegios de administrador, inicie el siguiente comando. El nombre del clúster es el nombre del clúster que creó en los pasos anteriores. Si este comando se ejecuta localmente en uno de los nodos, no es necesario el parámetro -CimSession.
 
@@ -258,7 +258,7 @@ Cuando finalice este comando, que puede tardar varios minutos, el sistema estar�
 
 ### <a name="step-36-create-volumes"></a>Paso 3.6: Crear volúmenes
 
-Se recomienda usar el `New-Volume` cmdlet, ya que proporciona la experiencia más rápida y sencilla. Este cmdlet crea automáticamente el disco virtual, las particiones y los formatea, crea el volumen con el nombre coincidente y lo agrega a los volúmenes compartidos de clúster: todo en un solo paso.
+Se recomienda usar el `New-Volume` cmdlet, ya que proporciona la experiencia más rápida y sencilla. Este cmdlet crea automáticamente el disco virtual, las particiones y los formatea, crea el volumen con el nombre correspondiente y lo agrega a los volúmenes compartidos del clúster, todo en un solo paso.
 
 Para obtener más información, consulte [creación de volúmenes en espacios de almacenamiento directo](create-volumes.md).
 

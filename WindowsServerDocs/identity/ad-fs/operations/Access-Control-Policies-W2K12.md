@@ -1,6 +1,6 @@
 ---
 ms.assetid: 5728847d-dcef-4694-9080-d63bfb1fe24b
-title: Directivas de Control de acceso en AD FS
+title: Access Control directivas en AD FS en Windows Server 2012 R2
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2fd8b6680039d344e9a9b0c41a29cc4c4210bc0b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 649b5d8b05b4512a7c42419af043db9afe4a1fde
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519844"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863842"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Access Control directivas en Windows Server 2012 R2 y Windows Server 2012 AD FS
 

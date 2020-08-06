@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bb8ad6a7325e56d9cc548b23fb0876c76ba9c113
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a906876c25fea62e20abfebf2268af977e6b3ad3
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519934"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864046"
 ---
-# <a name="federation-server-farm-using-wid-and-proxies"></a>Granja de servidores de federación con WID y servidores proxy
+# <a name="legacy-ad-fs-federation-server-farm-using-wid-and-proxies"></a>Granja de servidores de Federación de AD FS heredada con WID y servidores proxy
 
 Esta topología de implementación de Servicios de federación de Active Directory (AD FS) (AD FS) es idéntica a la granja de servidores de Federación con la topología de Windows Internal Database (WID), pero agrega equipos proxy a la red perimetral para admitir usuarios externos. Estos servidores proxy redirigen las solicitudes de autenticación de cliente que proceden de fuera de la red corporativa a la granja de servidores de Federación. En versiones anteriores de AD FS, estos servidores proxy se denominaban servidores proxy de Federación.
 
@@ -48,10 +48,10 @@ En esta sección se describen varias consideraciones sobre la audiencia, las ven
 
 - Las mismas limitaciones que se muestran para la [granja de servidores de Federación con](Federation-Server-Farm-Using-WID.md) la topología WID
 
-    | 1-100 confianzas de RP | Más de 100 confianzas RP |
+    | 1-100 relaciones de confianza para usuario autenticado | Más de 100 relaciones de confianza para usuario autenticado |
     |--|--|
-    | **1-30 nodos AD FS:** WID compatible | **1-30 nodos AD FS:** No se admite con WID: SQL requerido |
-    | **Más de 30 nodos AD FS:** No se admite con WID: SQL requerido | **Más de 30 nodos AD FS:** No se admite con WID: SQL requerido |
+    | **1-30 nodos de AD FS:** Compatible con WID | **1-30 nodos de AD FS:** No compatible con WID, se requiere SQL |
+    | **Más de 30 nodos de AD FS:** No compatible con WID, se requiere SQL | **Más de 30 nodos de AD FS:** No compatible con WID, se requiere SQL |
 
 ## <a name="server-placement-and-network-layout-recommendations"></a>Recomendaciones de ubicación de servidor y diseño de red
 Para implementar esta topología, además de agregar dos servidores proxy de aplicación Web, debe asegurarse de que la red perimetral también puede proporcionar acceso a un servidor de sistema de nombres de dominio (DNS) y a un segundo host de equilibrio de carga de red (NLB). El segundo host de NLB debe configurarse con un clúster de NLB que use una dirección IP de clúster accesible desde Internet y debe usar la misma configuración de nombre DNS de clúster que el clúster NLB anterior configurado en la red corporativa (fs.fabrikam.com). Los proxies de aplicación web también deben configurarse con direcciones IP accesibles desde Internet.

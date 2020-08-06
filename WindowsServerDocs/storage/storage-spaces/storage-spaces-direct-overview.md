@@ -6,24 +6,24 @@ manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 06/26/2019
+ms.date: 07/24/2020
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
-description: Información general de Espacios de almacenamiento directo, una característica de Windows Server que permite agrupar los servidores de clúster con almacenamiento interno en una solución de almacenamiento definida por software.
+description: Información general de Espacios de almacenamiento directo, una característica de Windows Server y Azure Stack HCl que permite agrupar en clústeres servidores con almacenamiento interno en una solución de almacenamiento definida por software.
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb8700935306cbd007ab4afc61cf3eb54227130
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 3fd86a8465d2fef59ccce73fc473790682f0d180
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768950"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864326"
 ---
 # <a name="storage-spaces-direct-overview"></a>Información general de Espacios de almacenamiento directos
 
->Se aplica a: Windows Server 2019, Windows Server 2016
+>Se aplica a: Azure Stack HCl, Windows Server 2019, Windows Server 2016
 
 Espacios de almacenamiento directo usa servidores estándar del sector con unidades conectadas localmente para crear almacenamiento definido por software de alta disponibilidad y escalabilidad por un porcentaje mínimo del costo de las matrices de SAN o NAS tradicionales. Su arquitectura convergente o hiperconvergida simplifica radicalmente el aprovisionamiento y la implementación, mientras que las características como el almacenamiento en caché, las capas de almacenamiento y la codificación de borrado, junto con las últimas innovaciones de hardware como redes RDMA y unidades de NVMe, ofrecen eficiencia y rendimiento inigualable.
 
-Espacios de almacenamiento directo está incluido en las compilaciones de Windows Server 2019 Datacenter, Windows Server 2016 Datacenter y [Windows Server Insider Preview](https://insider.windows.com/for-business-getting-started-server/).
+Espacios de almacenamiento directo se incluye en [Azure Stack HCl](/azure-stack/hci/), windows Server 2019 Datacenter, windows Server 2016 Datacenter y las [compilaciones de Windows Server Insider Preview](https://insider.windows.com/for-business-getting-started-server/).
 
 Para otras aplicaciones de espacios de almacenamiento, como clústeres de SAS compartidos y servidores independientes, consulte [Introducción a los espacios de almacenamiento](overview.md). Si está buscando información sobre el uso de espacios de almacenamiento en un equipo con Windows 10, consulte [espacios de almacenamiento en Windows 10](https://support.microsoft.com/help/12438/windows-10-storage-spaces).
 

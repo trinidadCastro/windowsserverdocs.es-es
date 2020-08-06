@@ -1,6 +1,6 @@
 ---
 ms.assetid: 97999892-29c6-4076-be19-5e5259d8ada6
-title: Implementación de servidores de federación
+title: Interoperabilidad con AD FS 1.x
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 83d13386368ff1d6447231d465e01bcceae61d47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8fb379ae626078be1fad026d2c0e9a5e90bc6824
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963767"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864226"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>Interoperabilidad con AD FS 1.x
 
@@ -34,7 +34,7 @@ Aunque la mayoría de las AD FS 1. la configuración de la Servicio de federaci�
 |----------------------------------------|---------------------------------------------------------------------------------------------------------- 
 |Asociado de cuenta|Confianza de proveedor de notificaciones  
 |Asociado de recurso|Confianza para usuario autenticado 
-|Application|Confianza para usuario autenticado  
+|Aplicación|Confianza para usuario autenticado  
 |Application Properties|Propiedades de la relación de confianza para usuario autenticado  
 |Dirección URL de la aplicación|Identificador de usuario de confianza y \- dirección URL de extremo pasivo de WS Federation  
 |URI Servicio de federación|Identificador del Servicio de federación  
