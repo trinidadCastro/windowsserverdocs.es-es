@@ -7,12 +7,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: aa1e690c55cbbb4ff32657cfe24bd28f1067bfec
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e331732bd958e3e403727709994cf9e2d4aef8f1
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475382"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769313"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Información general sobre máquinas virtuales blindadas y tejido protegido
 
@@ -36,7 +36,7 @@ Cuando un inquilino crea máquinas virtuales blindadas que se ejecutan en un tej
 
 ## <a name="video-introduction-to-shielded-virtual-machines"></a>Vídeo: Introducción a las máquinas virtuales blindadas
 
-<iframe src="https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016/player" width="650" height="440" allowFullScreen frameBorder="0"></iframe>
+> [!VIDEO https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016]
 
 ## <a name="attestation-modes-in-the-guarded-fabric-solution"></a>Modos de atestación de la solución de tejido protegido
 
@@ -47,9 +47,9 @@ HGS admite diferentes modos de atestación para un tejido protegido:
 
 Se recomienda la atestación de confianza de TPM porque ofrece comprobaciones más fuertes, tal como se explica en la tabla siguiente, pero requiere que los hosts de Hyper-V tengan TPM 2.0. Si actualmente no tiene TPM 2,0 o cualquier TPM, puede usar la atestación de clave de host. Si decide cambiar a la atestación de confianza de TPM al adquirir nuevo hardware, puede cambiar el modo de atestación en el Servicio de protección de host con poca o ninguna interrupción del tejido.
 
-| **El modo de certificación que elige para hosts**                                            | **Comprobaciones de host** |
-|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|**Atestación de confianza de TPM:** ofrece los mecanismos de protección más eficaces posible, pero también requiere más pasos de configuración. El hardware y el firmware del host deben incluir TPM 2,0 y UEFI 2.3.1 con el arranque seguro habilitado. | Los hosts protegidos se aprueban en función de su identidad de TPM, la secuencia de arranque medida y las directivas de integridad de código para asegurarse de que solo ejecutan código aprobado.|
+| **El modo de certificación que elige para hosts** | **Comprobaciones de host** |
+|--|--|
+| **Atestación de confianza de TPM:** ofrece los mecanismos de protección más eficaces posible, pero también requiere más pasos de configuración. El hardware y el firmware del host deben incluir TPM 2,0 y UEFI 2.3.1 con el arranque seguro habilitado. | Los hosts protegidos se aprueban en función de su identidad de TPM, la secuencia de arranque medida y las directivas de integridad de código para asegurarse de que solo ejecutan código aprobado. |
 | **Atestación de clave de host:** Diseñado para admitir el hardware del host existente donde TPM 2,0 no está disponible. Requiere menos pasos de configuración y es compatible con el hardware de servidor más habitual. | Los hosts protegidos se aprueban en función de la posesión de la clave. |
 
 Otro modo denominado **atestación de confianza de administrador** está en desuso a partir de Windows Server 2019. Este modo se basó en la pertenencia a un host protegido en un grupo de seguridad de Active Directory Domain Services (AD DS) designado. La atestación de clave de host proporciona una identificación de host similar y es más fácil de configurar.
@@ -89,9 +89,9 @@ La siguiente ilustración muestra el archivo de datos de blindaje y los elemento
 
 Los tejidos protegidos son capaces de ejecutar máquinas virtuales en una de tres maneras posibles:
 
-1.    Una máquina virtual normal que no ofrece ninguna protección más allá de las versiones anteriores de Hyper-V
-2.    Una máquina virtual que admite el cifrado cuyas protecciones se pueden configurar un administrador de tejido
-3.    Una máquina virtual blindada cuyas protecciones se han cambiado y no puede deshabilitarse por un administrador de tejido
+1. Una máquina virtual normal que no ofrece ninguna protección más allá de las versiones anteriores de Hyper-V
+2. Una máquina virtual que admite el cifrado cuyas protecciones se pueden configurar un administrador de tejido
+3. Una máquina virtual blindada cuyas protecciones se han cambiado y no puede deshabilitarse por un administrador de tejido
 
 Las máquinas virtuales que admiten el cifrado están destinadas para usarse donde los administradores de tejido son de plena confianza.  Por ejemplo, una empresa puede implementar un tejido protegido para asegurar que los discos de máquinas virtuales están cifrados en reposo con fines de cumplimiento. Los administradores de tejido pueden seguir utilizando prácticas características de administración, como conexiones de consola de máquina virtual, PowerShell Direct y otras herramientas de solución de problemas y administración diaria.
 
@@ -119,50 +119,35 @@ Tanto las máquinas virtuales blindadas como las máquinas virtuales que admiten
 
 ![Archivo de datos de blindaje](../media/Guarded-Fabric-Shielded-VM/shielded-vms-how-a-shielded-vm-is-powered-on.png)
 
-1. VM01 está encendida.
+1. **VM01 está encendida.** Antes de que un host protegido pueda encender una máquina virtual blindada, primero debe atestarse afirmativamente de que es correcto. Para demostrar que su estado es correcto, debe presentar un certificado de mantenimiento para el servicio de protección de claves (KPS). El certificado de mantenimiento se obtiene a través del proceso de atestación.
 
-    Antes de que un host protegido pueda encender una máquina virtual blindada, primero debe atestarse afirmativamente de que es correcto. Para demostrar que su estado es correcto, debe presentar un certificado de mantenimiento para el servicio de protección de claves (KPS). El certificado de mantenimiento se obtiene a través del proceso de atestación.
+2. **El host solicita atestación.** El host protegido solicita atestación. El modo de atestación viene determinado por el Servicio de protección de host:
 
-2. El host solicita atestación.
+    - **Atestación de confianza de TPM**: el host de Hyper-V envía información que incluye:
+      - Información de identificación de TPM (su clave de aprobación)
+      - Información sobre los procesos que se iniciaron durante la secuencia de arranque más reciente (el registro TCG)
+      - Información sobre la Directiva de integridad de código (CI) que se aplicó en el host.
 
-    El host protegido solicita atestación. El modo de atestación viene determinado por el Servicio de protección de host:
+        La atestación ocurre cuando el host se inicia y cada 8 horas después. Si por algún motivo un host no tiene un certificado de atestación cuando una máquina virtual intenta iniciarse, también desencadena la atestación.
 
-    **Atestación de confianza de TPM**: el host de Hyper-V envía información que incluye:
+    - **Atestación de clave de host**: el host de Hyper-V envía la mitad pública del par de claves. HGS valida que la clave de host está registrada.
 
-       - Información de identificación de TPM (su clave de aprobación)
-       - Información sobre los procesos que se iniciaron durante la secuencia de arranque más reciente (el registro TCG)
-       - Información sobre la Directiva de integridad de código (CI) que se aplicó en el host.
+    - **Atestación de administrador de confianza**: el host de Hyper-V envía un vale de Kerberos, que identifica los grupos de seguridad en los que se encuentra el host. HGS valida que el host pertenezca a un grupo de seguridad que se configuró anteriormente en el administrador de HGS de confianza.
 
-       Attestation happens when the host starts and every 8 hours thereafter. If for some reason a host doesn't have an attestation certificate when a VM tries to start, this also triggers attestation.
+3. **La atestación se realiza correctamente (o se produce un error).** El modo de atestación determina qué comprobaciones son necesarias para atestiguar correctamente que el host es correcto. Con la atestación de confianza de TPM, se validan la identidad de TPM, las medidas de arranque y la Directiva de integridad de código del host. Con la atestación de clave de host, solo se valida el registro de la clave de host.
 
-    **Atestación de clave de host**: el host de Hyper-V envía la mitad pública del par de claves. HGS valida que la clave de host está registrada.
+4. **Certificado de atestación enviado al host.** Suponiendo que la atestación se realizó correctamente, se envía un certificado de mantenimiento al host y el host se considera "protegido" (autorizado para ejecutar máquinas virtuales blindadas). El host usa el certificado de mantenimiento para autorizar el servicio de protección de claves para liberar de forma segura las claves necesarias para trabajar con máquinas virtuales blindadas.
 
-    **Atestación de administrador de confianza**: el host de Hyper-V envía un vale de Kerberos, que identifica los grupos de seguridad en los que se encuentra el host. HGS valida que el host pertenezca a un grupo de seguridad que se configuró anteriormente en el administrador de HGS de confianza.
+5. **El host solicita la clave de máquina virtual.** El host protegido no tiene las claves necesarias para encender una máquina virtual blindada (VM01 en este caso). Para obtener las claves necesarias, el host protegido debe proporcionar lo siguiente a KPS:
 
-3. La atestación se realiza correctamente (o se produce un error).
+   - El certificado de mantenimiento actual
+   - Un secreto cifrado (un protector de clave o KP) que contiene las claves necesarias para encender VM01. El secreto se cifra utilizando otras claves que solo conoce KPS.
 
-    El modo de atestación determina qué comprobaciones son necesarias para atestiguar correctamente que el host es correcto. Con la atestación de confianza de TPM, se validan la identidad de TPM, las medidas de arranque y la Directiva de integridad de código del host. Con la atestación de clave de host, solo se valida el registro de la clave de host.
+6. **Liberación de la clave.** KPS examina el certificado de mantenimiento para determinar su validez. El certificado no debe haber caducado y KPS deben confiar en el servicio de atestación que lo emitió.
 
-4. Certificado de atestación enviado al host.
+7. **La clave se devuelve al host.** Si el certificado de mantenimiento es válido, KPS intenta descifrar el secreto y devolver de forma segura las claves necesarias para encender la máquina virtual. Tenga en cuenta que las claves se cifran en el VBS del host protegido.
 
-    Suponiendo que la atestación se realizó correctamente, se envía un certificado de mantenimiento al host y el host se considera "protegido" (autorizado para ejecutar máquinas virtuales blindadas). El host usa el certificado de mantenimiento para autorizar el servicio de protección de claves para liberar de forma segura las claves necesarias para trabajar con máquinas virtuales blindadas.
-
-5. El host solicita la clave de máquina virtual.
-
-    El host protegido no tiene las claves necesarias para encender una máquina virtual blindada (VM01 en este caso). Para obtener las claves necesarias, el host protegido debe proporcionar lo siguiente a KPS:
-
-    - El certificado de mantenimiento actual
-    - Un secreto cifrado (un protector de clave o KP) que contiene las claves necesarias para encender VM01. El secreto se cifra utilizando otras claves que solo conoce KPS.
-
-6. Liberación de la clave.
-
-    KPS examina el certificado de mantenimiento para determinar su validez. El certificado no debe haber caducado y KPS deben confiar en el servicio de atestación que lo emitió.
-
-7. La clave se devuelve al host.
-
-    Si el certificado de mantenimiento es válido, KPS intenta descifrar el secreto y devolver de forma segura las claves necesarias para encender la máquina virtual. Tenga en cuenta que las claves se cifran en el VBS del host protegido.
-
-8. El host enciende VM01.
+8. **El host enciende VM01.**
 
 ## <a name="guarded-fabric-and-shielded-vm-glossary"></a>Glosario de máquinas virtuales blindadas y tejido protegido
 

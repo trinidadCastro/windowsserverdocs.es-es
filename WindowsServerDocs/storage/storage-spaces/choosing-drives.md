@@ -1,6 +1,6 @@
 ---
 ms.assetid: 1368bc83-9121-477a-af09-4ae73ac16789
-title: Elección de unidades para Espacios de almacenamiento directo
+title: Selección de unidades para Espacios de almacenamiento directo
 ms.prod: windows-server
 ms.author: cosdar
 manager: eldenc
@@ -9,14 +9,14 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd5264394c94748b7720842cf8ff7e01e1375e7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: aae554c87b8a4ac6005ad359bc474026f5f1ed9e
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965427"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769413"
 ---
-# <a name="choosing-drives-for-storage-spaces-direct"></a>Elección de unidades para Espacios de almacenamiento directo
+# <a name="choosing-drives-for-storage-spaces-direct"></a>Selección de unidades para Espacios de almacenamiento directo
 
 >Se aplica a: Windows Server 2019, Windows Server 2016
 
@@ -29,7 +29,7 @@ Espacios de almacenamiento directo funciona actualmente con cuatro tipos de unid
 <table>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/pmem-100px.png">
+            <img src="media/understand-the-cache/pmem-100px.png" alt="Image of PMem (persistent memory)">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>PMem</b> hace referencia a la memoria persistente, un nuevo tipo de almacenamiento de baja latencia y alto rendimiento.
@@ -37,7 +37,7 @@ Espacios de almacenamiento directo funciona actualmente con cuatro tipos de unid
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/NVMe-100px.png">
+            <img src="media/understand-the-cache/NVMe-100px.png" alt="Image of NVMe (Non-Volatile Memory Express)">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>NVMe</b> (memoria no volátil rápida) hace referencia a las unidades de estado sólido que se colocan directamente en el bus PCIe. Los factores de forma comunes son 2,5" U.2, AIC (Add-In Card) PCIe y M.2. NVMe ofrece un mayor rendimiento de e/s e/s con una latencia menor que cualquier otro tipo de unidad que se admita hoy, excepto la memoria persistente.
@@ -45,7 +45,7 @@ Espacios de almacenamiento directo funciona actualmente con cuatro tipos de unid
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px" >
-            <img src="media/understand-the-cache/SSD-100px.png">
+            <img src="media/understand-the-cache/SSD-100px.png" alt="Image of SSD drive">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>SSD</b> hace referencia a las unidades de estado sólido que se conectan a través de una SAS o SAS convencional.
@@ -53,7 +53,7 @@ Espacios de almacenamiento directo funciona actualmente con cuatro tipos de unid
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/HDD-100px.png">
+            <img src="media/understand-the-cache/HDD-100px.png" alt="Image of HDD">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>HDD</b> hace referencia a unidades de disco duro magnéticas y de rotación que ofrecen una gran capacidad de almacenamiento.
@@ -126,8 +126,8 @@ Se recomienda limitar la capacidad total de almacenamiento por servidor a aproxi
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Conoce la memoria caché de Espacios de almacenamiento directo](understand-the-cache.md)
 - [Requisitos de hardware de Espacios de almacenamiento directo](storage-spaces-direct-hardware-requirements.md)
 - [Planeación de volúmenes en Espacios de almacenamiento directo](plan-volumes.md)
-- [Tolerancia a errores y eficiencia del almacenamiento](storage-spaces-fault-tolerance.md)
+- [Tolerancia a errores y eficacia del almacenamiento](storage-spaces-fault-tolerance.md)

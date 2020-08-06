@@ -9,12 +9,12 @@ ms.author: johnmar
 ms.date: 03/29/2018
 description: En este artículo se describen los escenarios disponibles hoy en día para la recuperación ante desastres de HCl de Microsoft (Espacios de almacenamiento directo)
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c9c36e90f9bfae053197b6a36201748cb7e88d7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8ebe54cf6823f65fae484960ff21cee2baac0131
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966457"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769093"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>Recuperación ante desastres con Espacios de almacenamiento directo
 
@@ -36,7 +36,7 @@ Las opciones de recuperación ante desastres con una hiperconvergida actualmente
 
 [Réplica de almacenamiento](../storage-replica/storage-replica-overview.md) permite la replicación de volúmenes y admite la replicación sincrónica y asincrónica. Al elegir entre usar la replicación sincrónica o asincrónica, debe tener en cuenta el objetivo de punto de recuperación (RPO). El objetivo de punto de recuperación es la cantidad de posible pérdida de datos que está dispuesto a incurrir antes de que se considere una pérdida importante. Si realiza la replicación sincrónica, se escribirá secuencialmente en ambos extremos al mismo tiempo. Si realiza operaciones asincrónicas, las escrituras se replicarán muy rápido, pero se podrían perder. Debe tener en cuenta el uso de la aplicación o el archivo para ver cuál es el mejor trabajo para usted.
 
-Réplica de almacenamiento es un mecanismo de copia de nivel de bloque frente al nivel de archivo; es decir, no importa qué tipos de datos se están replicando. Esto lo convierte en una opción popular para la infraestructura hiperconvergida. Réplica de almacenamiento también puede emplear distintos tipos de unidades entre los asociados de replicación, por lo que tener todo el almacenamiento de tipo en un HCI y otro almacenamiento de tipo en el otro es perfectamente adecuado. 
+Réplica de almacenamiento es un mecanismo de copia de nivel de bloque frente al nivel de archivo; es decir, no importa qué tipos de datos se están replicando. Esto lo convierte en una opción popular para la infraestructura hiperconvergida. Réplica de almacenamiento también puede emplear distintos tipos de unidades entre los asociados de replicación, por lo que tener todo el almacenamiento de tipo en un HCI y otro almacenamiento de tipo en el otro es perfectamente adecuado.
 
 Una funcionalidad importante de réplica de almacenamiento es que se puede ejecutar en Azure y en el entorno local. Puede configurar de forma local en el entorno local, Azure en Azure o, incluso, en el entorno local a Azure (o viceversa).
 
@@ -44,10 +44,10 @@ En este escenario, hay dos clústeres independientes independientes. Para config
 
 ![Diagrama de replicación de almacenamiento](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure1.png)
 
-Al implementar réplica de almacenamiento se aplican las consideraciones siguientes. 
+Al implementar réplica de almacenamiento se aplican las consideraciones siguientes.
 
-1.    La configuración de la replicación se realiza fuera de los clústeres de conmutación por error. 
-2.    La elección del método de replicación dependerá de los requisitos de RPO y latencia de red. Sincrónico replica los datos en redes de baja latencia con coherencia de bloqueo para garantizar que no se produzcan pérdidas de datos en el momento del error. Asincrónica replica los datos a través de redes con latencias mayores, pero es posible que cada sitio no tenga copias idénticas en un momento del error. 
+1.    La configuración de la replicación se realiza fuera de los clústeres de conmutación por error.
+2.    La elección del método de replicación dependerá de los requisitos de RPO y latencia de red. Sincrónico replica los datos en redes de baja latencia con coherencia de bloqueo para garantizar que no se produzcan pérdidas de datos en el momento del error. Asincrónica replica los datos a través de redes con latencias mayores, pero es posible que cada sitio no tenga copias idénticas en un momento del error.
 3.    En el caso de un desastre, las conmutaciones por error entre los clústeres no son automáticas y deben orquestarse manualmente a través de los cmdlets de PowerShell de réplica de almacenamiento. En el diagrama anterior, Clustera es el principal y ClusterB es el secundario. Si Clustera deja de funcionar, tendrá que establecer manualmente ClusterB como principal para poder poner los recursos en marcha. Una vez que se realiza una copia de seguridad de Clustera, deberá convertirlo en secundario. Una vez que todos los datos se han sincronizado, realice el cambio y intercambie los roles de nuevo a la manera en que se establecieron originalmente.
 4.    Puesto que réplica de almacenamiento solo replica los datos, es necesario crear una nueva máquina virtual o Escalabilidad horizontal servidor de archivos (SOFS) que usa estos datos dentro de Administrador de clústeres de conmutación por error en el asociado de réplica.
 
@@ -68,7 +68,7 @@ Con la réplica de Hyper-V, Hyper-V se encarga de la replicación. La primera ve
 La otra opción es para cuando desea que se produzca esta replicación inicial.
 
 1.    Iniciar la replicación inmediatamente
-2.    Programe una hora en la que tenga lugar la replicación inicial. 
+2.    Programe una hora en la que tenga lugar la replicación inicial.
 
 Otras consideraciones que necesitará son:
 
@@ -85,7 +85,7 @@ Cuando HCI participa en la réplica de Hyper-V, debe tener el recurso del [agent
 
 ## <a name="backup-and-restore"></a>Copia de seguridad y restauración
 
-Una opción de recuperación ante desastres tradicional que no se habla mucho pero es igual de importante es el error de todo el clúster o de un nodo del clúster. Cualquiera de las opciones de este escenario hace uso de copias de seguridad de Windows NT. 
+Una opción de recuperación ante desastres tradicional que no se habla mucho pero es igual de importante es el error de todo el clúster o de un nodo del clúster. Cualquiera de las opciones de este escenario hace uso de copias de seguridad de Windows NT.
 
 Siempre es una recomendación tener copias de seguridad periódicas de la infraestructura hiperconvergida. Mientras se ejecuta el servicio de clúster, si realiza una copia de seguridad del estado del sistema, la base de datos del registro del clúster formará parte de esa copia de seguridad. La restauración del clúster o de la base de datos tiene dos métodos diferentes (no autoritativos y autoritativos).
 
@@ -103,19 +103,19 @@ Cuando se inicia una restauración autoritativa en un nodo de clúster, el servi
 
 Para ejecutar una restauración autoritativa, se pueden realizar los siguientes pasos.
 
-1.    Ejecute WBADMIN.EXE desde un símbolo del sistema administrativo para obtener la versión más reciente de las copias de seguridad que desea instalar y asegúrese de que el estado del sistema es uno de los componentes que se pueden restaurar.
+1. Ejecute WBADMIN.EXE desde un símbolo del sistema administrativo para obtener la versión más reciente de las copias de seguridad que desea instalar y asegúrese de que el estado del sistema es uno de los componentes que se pueden restaurar.
 
     ```powershell
-    Wbadmin get versions
+    wbadmin get versions
     ```
 
-2.    Determine si la copia de seguridad de la versión que tiene contiene la información del registro del clúster como componente. Hay un par de elementos que necesitará de este comando, la versión y la aplicación o componente que se usará en el paso 3. Por ejemplo, para la versión, Imagine que la copia de seguridad se realizó el 3 de enero de 2018 a las 2:04am y esta es la que necesita restaurar.
+2. Determine si la copia de seguridad de la versión que tiene contiene la información del registro del clúster como componente. Hay un par de elementos que necesitará de este comando, la versión y la aplicación o componente que se usará en el paso 3. Por ejemplo, para la versión, Imagine que la copia de seguridad se realizó el 3 de enero de 2018 a las 2:04am y esta es la que necesita restaurar.
 
     ```powershell
     wbadmin get items -backuptarget:\\backupserver\location
     ```
 
-3.  Inicie la restauración autoritativa para recuperar solo la versión del registro del clúster que necesite. 
+3. Inicie la restauración autoritativa para recuperar solo la versión del registro del clúster que necesite.
 
     ```powershell
     wbadmin start recovery -version:01/03/2018-02:04 -itemtype:app -items:cluster
@@ -123,6 +123,6 @@ Para ejecutar una restauración autoritativa, se pueden realizar los siguientes 
 
 Una vez que se realiza la restauración, este nodo debe ser el primero en iniciar el servicio de clúster y formar el clúster. A continuación, todos los demás nodos deben iniciarse y unirse al clúster.
 
-## <a name="summary"></a>Resumen 
+## <a name="summary"></a>Resumen
 
 Para sumar todo esto, la recuperación ante desastres hiperconvergida es algo que debe planearse con cuidado. Hay varios escenarios que se adaptan mejor a sus necesidades y deben probarse exhaustivamente. Un elemento a tener en cuenta es que si está familiarizado con los clústeres de conmutación por error en el pasado, los clústeres extendidos han sido una opción muy popular a lo largo de los años. Hubo un poco de un cambio de diseño con la solución hiperconvergida y se basa en la resistencia. Si pierde dos nodos en un clúster hiperconvergido, todo el clúster dejará de funcionar. En este caso, en un entorno hiperconvergido, no se admite el escenario de Stretch.

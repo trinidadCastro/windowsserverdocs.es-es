@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 1e77535548cccd1c821163dabbad381f35d2948a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 128f9d734311f8eaf0f06204e114171fa8b0f750
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872063"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768433"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>Acerca de la selección del tipo de programador de hipervisor de Hyper-V
 
@@ -22,15 +22,15 @@ Se aplica a:
 
 * Windows Server 2016
 * Windows Server, versión 1709
-* Windows Server, versión 1803
+* Windows Server, versión 1803
 * Windows Server 2019
 
-En este documento se describen los cambios importantes en el uso predeterminado y recomendado de Hyper-V de los tipos de programador de hipervisor. Estos cambios afectan tanto al rendimiento de virtualización como a la seguridad del sistema. Los administradores del host de virtualización deben revisar y comprender los cambios y las implicaciones descritos en este documento, y evaluar cuidadosamente los impactos, la guía de implementación sugerida y los factores de riesgo implicados para comprender mejor cómo implementar y administrar Los hosts de Hyper-V se encuentran en el panorama de la seguridad que cambia rápidamente.
+En este documento se describen los cambios importantes en el uso predeterminado y recomendado de Hyper-V de los tipos de programador de hipervisor. Estos cambios afectan tanto al rendimiento de virtualización como a la seguridad del sistema. Los administradores del host de virtualización deben revisar y comprender los cambios y las implicaciones que se describen en este documento y evaluar cuidadosamente los impactos, la guía de implementación sugerida y los factores de riesgo implicados para comprender mejor cómo implementar y administrar los hosts de Hyper-V en el panorama de la seguridad que cambia rápidamente.
 
 >[!IMPORTANT]
->En la actualidad, las vulnerabilidades de seguridad de canal lateral conocidas en varias arquitecturas de procesador podrían ser aprovechadas por una máquina virtual invitada malintencionada a través del comportamiento de programación del tipo de programador clásico de hipervisor heredado cuando se ejecutan en hosts con Multithreading (SMT) habilitado.  Si se aprovecha correctamente, una carga de trabajo malintencionada podría observar los datos fuera del límite de la partición. Esta clase de ataques se puede mitigar configurando el hipervisor de Hyper-V para usar el tipo de programador Core del hipervisor y volver a configurar las máquinas virtuales invitadas. Con el programador principal, el hipervisor restringe la VPs de una máquina virtual invitada para que se ejecute en el mismo núcleo del procesador físico, con lo que se aísla fuertemente la capacidad de la máquina virtual para acceder a los datos a los límites del núcleo físico en el que se ejecuta.  Se trata de una mitigación muy eficaz contra estos ataques de canal secundario, lo que impide que la máquina virtual Observe los artefactos de otras particiones, ya sea la raíz u otra partición invitada.  Por lo tanto, Microsoft está cambiando la configuración predeterminada y recomendada para los hosts de virtualización y las máquinas virtuales invitadas.
+>En la actualidad, las vulnerabilidades de seguridad de canal lateral conocidas en varias arquitecturas de procesador podrían ser aprovechadas por una máquina virtual invitada malintencionada a través del comportamiento de programación del tipo de programador clásico de hipervisor heredado cuando se ejecutan en hosts con multithreading (SMT) simultáneo habilitado.  Si se aprovecha correctamente, una carga de trabajo malintencionada podría observar los datos fuera del límite de la partición. Esta clase de ataques se puede mitigar configurando el hipervisor de Hyper-V para usar el tipo de programador Core del hipervisor y volver a configurar las máquinas virtuales invitadas. Con el programador principal, el hipervisor restringe la VPs de una máquina virtual invitada para que se ejecute en el mismo núcleo del procesador físico, con lo que se aísla fuertemente la capacidad de la máquina virtual para acceder a los datos a los límites del núcleo físico en el que se ejecuta.  Se trata de una mitigación muy eficaz contra estos ataques de canal secundario, lo que impide que la máquina virtual Observe los artefactos de otras particiones, ya sea la raíz u otra partición invitada.  Por lo tanto, Microsoft está cambiando la configuración predeterminada y recomendada para los hosts de virtualización y las máquinas virtuales invitadas.
 
-## <a name="background"></a>Background
+## <a name="background"></a>Información previa
 
 A partir de Windows Server 2016, Hyper-V admite varios métodos de programación y administración de procesadores virtuales, denominados tipos de programador de hipervisor.  Puede encontrar una descripción detallada de todos los tipos de programador de hipervisor en [comprender y usar los tipos de programador de hipervisor de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types).
 
@@ -43,7 +43,7 @@ Este artículo se centra específicamente en el uso del nuevo tipo de programado
 
 ### <a name="the-classic-scheduler"></a>Programador clásico
 
-El programador clásico hace referencia al recurso compartido equitativo round robin método de programación del trabajo en los procesadores virtuales (VPs) en el sistema, incluidos los VPs raíz y VPs que pertenecen a las máquinas virtuales invitadas. El programador clásico ha sido el tipo de programador predeterminado que se usa en todas las versiones de Hyper-V (hasta Windows Server 2019, tal y como se describe en este documento).  Las características de rendimiento del programador clásico se entienden bien y se muestra el programador clásico para ably la compatibilidad con suscripciones de cargas de trabajo, es decir, en exceso de suscripción de la proporción VP: LP del host en un margen razonable (en función de la tipos de cargas de trabajo virtualizadas, uso general de recursos, etc.).
+El programador clásico hace referencia al recurso compartido equitativo round robin método de programación del trabajo en los procesadores virtuales (VPs) en el sistema, incluidos los VPs raíz y VPs que pertenecen a las máquinas virtuales invitadas. El programador clásico ha sido el tipo de programador predeterminado que se usa en todas las versiones de Hyper-V (hasta Windows Server 2019, tal y como se describe en este documento).  Las características de rendimiento del programador clásico se entienden bien y se muestra el programador clásico para ably compatibilidad con suscripciones de cargas de trabajo, es decir, por exceso de suscripción de la proporción VP: LP del host en un margen razonable (en función de los tipos de cargas de trabajo que se virtualizan, uso general de recursos, etc.).
 
 Cuando se ejecuta en un host de virtualización con SMT habilitado, el programador clásico programará VPs de invitado desde cualquier máquina virtual de cada subproceso de SMT que pertenezca a un núcleo de forma independiente. Por lo tanto, se pueden ejecutar máquinas virtuales diferentes en el mismo núcleo al mismo tiempo (una máquina virtual que se ejecuta en un subproceso de un núcleo mientras otra máquina virtual se está ejecutando en otro subproceso).
 
@@ -107,9 +107,9 @@ La implementación de hosts de Hyper-V con la postura de seguridad máxima requi
 
 La configuración de SMT de la máquina virtual invitada se establece en cada máquina virtual. El administrador del host puede inspeccionar y configurar la configuración de SMT de una máquina virtual para seleccionar entre las siguientes opciones:
 
-    1. Configurar las máquinas virtuales para que se ejecuten como habilitadas para SMT y, opcionalmente, heredar la topología de SMT de host automáticamente
+1. Configurar las máquinas virtuales para que se ejecuten como habilitadas para SMT y, opcionalmente, heredar la topología de SMT de host automáticamente
 
-    2. Configuración de máquinas virtuales para que se ejecuten como no SMT
+2. Configuración de máquinas virtuales para que se ejecuten como no SMT
 
 La configuración de SMT para una máquina virtual se muestra en los paneles de Resumen de la consola del administrador de Hyper-V.  La configuración de la SMT de una máquina virtual se puede realizar con la configuración de la máquina virtual o con PowerShell.
 
@@ -123,11 +123,11 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <0, 1, 2>
 
 Donde:
 
-    0 = Inherit SMT topology from the host (this setting of HwThreadCountPerCore=0 is not supported on Windows Server 2016)
+- 0 = heredar la topología de SMT del host (este valor de HwThreadCountPerCore = 0 no se admite en Windows Server 2016)
 
-    1 = Non-SMT
+- 1 = no SMT
 
-    Values > 1 = the desired number of SMT threads per core. May not exceed the number of physical SMT threads per core.
+- Valores > 1 = el número deseado de subprocesos de SMT por núcleo. No puede superar el número de subprocesos de SMT físicos por núcleo.
 
 Para leer la configuración de SMT para una máquina virtual invitada, abra una ventana de PowerShell con permisos suficientes y escriba:
 
@@ -139,7 +139,7 @@ Tenga en cuenta que las máquinas virtuales invitadas configuradas con HwThreadC
 
 ### <a name="guest-vms-may-observe-changes-to-cpu-topology-across-vm-mobility-scenarios"></a>Las máquinas virtuales invitadas pueden observar cambios en la topología de CPU entre escenarios de movilidad de máquinas virtuales
 
-El sistema operativo y las aplicaciones en una máquina virtual pueden ver los cambios en la configuración del host y de la máquina virtual antes y después de los eventos de ciclo de vida de la máquina virtual, como la migración en vivo o las operaciones de guardado Durante una operación en la que se guarda y restaura el estado de la máquina virtual, se migran la configuración HwThreadCountPerCore de la máquina virtual y el valor realizado (es decir, la combinación calculada de la configuración del host de origen y la configuración de la máquina virtual). La máquina virtual seguirá ejecutándose con esta configuración en el host de destino. En el punto en que se apaga y se vuelve a iniciar la máquina virtual, es posible que cambie el valor realizado observado por la máquina virtual. Esto debería ser benigno, ya que el software del nivel de aplicación y del sistema operativo debería buscar información de topología de CPU como parte de sus flujos de código de inicio y de inicialización normales. Sin embargo, dado que estas secuencias de inicialización de tiempo de arranque se omiten durante las operaciones de migración en vivo o de guardado y restauración, las máquinas virtuales que se someten a estas transiciones de estado podrían observar el valor realizado originalmente calculado hasta que se cierren y se vuelvan a iniciar.  
+El sistema operativo y las aplicaciones en una máquina virtual pueden ver los cambios en la configuración del host y de la máquina virtual antes y después de los eventos de ciclo de vida de la máquina virtual, como la migración en vivo o las operaciones de guardado Durante una operación en la que se guarda y restaura el estado de la máquina virtual, se migran la configuración HwThreadCountPerCore de la máquina virtual y el valor realizado (es decir, la combinación calculada de la configuración del host de origen y la configuración de la máquina virtual). La máquina virtual seguirá ejecutándose con esta configuración en el host de destino. En el punto en que se apaga y se vuelve a iniciar la máquina virtual, es posible que cambie el valor realizado observado por la máquina virtual. Esto debería ser benigno, ya que el software del nivel de aplicación y del sistema operativo debería buscar información de topología de CPU como parte de sus flujos de código de inicio y de inicialización normales. Sin embargo, dado que estas secuencias de inicialización de tiempo de arranque se omiten durante las operaciones de migración en vivo o de guardado y restauración, las máquinas virtuales que se someten a estas transiciones de estado podrían observar el valor realizado originalmente calculado hasta que se cierren y se vuelvan a iniciar.
 
 ### <a name="alerts-regarding-non-optimal-vm-configurations"></a>Alertas con respecto a configuraciones de máquinas virtuales no óptimas
 
@@ -159,7 +159,7 @@ Get-WinEvent -FilterHashTable @{ProviderName="Microsoft-Windows-Hyper-V-Worker";
 
 ### <a name="impacts-of-guest-smt-configuaration-on-the-use-of-hypervisor-enlightenments-for-guest-operating-systems"></a>Impactos de configuración de SMT de invitados sobre el uso de las habilitaciones de hipervisor para los sistemas operativos invitados
 
-El hipervisor de Microsoft ofrece varias habilitaciones, o sugerencias, que el sistema operativo que se ejecuta en una máquina virtual invitada puede consultar y usar para desencadenar optimizaciones, como las que pueden beneficiar el rendimiento o mejorar el control de varias condiciones al ejecutarse virtualizado. Una habilitación introducida recientemente se refiere al control de la programación del procesador virtual y al uso de mitigaciones del sistema operativo para los ataques de canal secundario que aprovechan SMT.
+El hipervisor de Microsoft ofrece varias habilitaciones, o sugerencias, que el sistema operativo que se ejecuta en una máquina virtual invitada puede consultar y usar para desencadenar optimizaciones, como las que pueden beneficiar el rendimiento o mejorar el control de diversas condiciones cuando se ejecutan virtualizadas. Una habilitación introducida recientemente se refiere al control de la programación del procesador virtual y al uso de mitigaciones del sistema operativo para los ataques de canal secundario que aprovechan SMT.
 
 >[!NOTE]
 >Microsoft recomienda que los administradores de host habiliten SMT para que las máquinas virtuales invitadas optimicen el rendimiento de la carga de trabajo.
@@ -170,13 +170,13 @@ A continuación se proporcionan los detalles de la habilitación de este invitad
 
 A partir de Windows Server 2016, el hipervisor define una nueva habilitación para describir su control de VP programación y colocación en el SO invitado. Esta habilitación se define en la [especificación funcional de nivel superior del hipervisor v 5.0 c](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/tlfs).
 
-Hipervisor sintético de la hoja CPUID. 0x40000004. EAX: 18 [NoNonArchitecturalCoreSharing = 1] indica que un procesador virtual nunca compartirá un núcleo físico con otro procesador virtual, salvo los procesadores virtuales que se indican como SMT del mismo nivel. ThreadPool. Por ejemplo, un Vicepresidente invitado nunca se ejecutará en un subproceso SMT junto con un Vicepresidente raíz que se ejecute simultáneamente en un subproceso de SMT relacionado en el mismo núcleo del procesador. Esta condición solo es posible cuando se ejecuta virtualizado y, por tanto, representa un comportamiento SMT no arquitectónico que también tiene implicaciones de seguridad graves. El SO invitado puede usar NoNonArchitecturalCoreSharing = 1 como indicación de que es seguro habilitar las optimizaciones, lo que puede ayudar a evitar la sobrecarga de rendimiento que supone la configuración de STIBP.
+El hipervisor sintético de la hoja CPUID. 0x40000004. EAX: 18 [NoNonArchitecturalCoreSharing = 1] indica que un procesador virtual nunca compartirá un núcleo físico con otro procesador virtual, excepto para los procesadores virtuales que se informan como subprocesos SMT relacionados. Por ejemplo, un Vicepresidente invitado nunca se ejecutará en un subproceso SMT junto con un Vicepresidente raíz que se ejecute simultáneamente en un subproceso de SMT relacionado en el mismo núcleo del procesador. Esta condición solo es posible cuando se ejecuta virtualizado y, por tanto, representa un comportamiento SMT no arquitectónico que también tiene implicaciones de seguridad graves. El SO invitado puede usar NoNonArchitecturalCoreSharing = 1 como indicación de que es seguro habilitar las optimizaciones, lo que puede ayudar a evitar la sobrecarga de rendimiento que supone la configuración de STIBP.
 
 En algunas configuraciones, el hipervisor no indicará que NoNonArchitecturalCoreSharing = 1. Por ejemplo, si un host tiene SMT habilitado y está configurado para usar el programador clásico de hipervisor, NoNonArchitecturalCoreSharing será 0. Esto puede impedir que los invitados habilitados habiliten ciertas optimizaciones. Por lo tanto, Microsoft recomienda que los administradores de host que usen SMT dependan del programador de núcleos del hipervisor y asegúrese de que las máquinas virtuales estén configuradas para heredar la configuración de SMT del host para garantizar un rendimiento óptimo de la carga de trabajo.
 
 ## <a name="summary"></a>Resumen
 
-El panorama de amenazas de seguridad continúa evolucionando. Para garantizar la seguridad de nuestros clientes de forma predeterminada, Microsoft cambia la configuración predeterminada del hipervisor y las máquinas virtuales a partir de Windows Server 2019 Hyper-V, y proporciona instrucciones y recomendaciones actualizadas para los clientes que ejecutan Windows Servidor 2016 Hyper-V. Los administradores del host de virtualización deben:
+El panorama de amenazas de seguridad continúa evolucionando. Para garantizar la seguridad de nuestros clientes de forma predeterminada, Microsoft cambia la configuración predeterminada del hipervisor y las máquinas virtuales a partir de Windows Server 2019 Hyper-V, y proporciona instrucciones y recomendaciones actualizadas para los clientes que ejecutan Windows Server 2016 Hyper-V. Los administradores del host de virtualización deben:
 
 * Lea y comprenda las instrucciones proporcionadas en este documento.
 

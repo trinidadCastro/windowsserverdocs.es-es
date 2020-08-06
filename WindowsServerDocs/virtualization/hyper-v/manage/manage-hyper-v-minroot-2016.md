@@ -5,22 +5,24 @@ author: allenma
 ms.date: 12/15/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: de621b3bfdc9792e61e6d21d9f3774da76c55df6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1e35595a0b5a0ab12187aae2cf714fc4d53901ee
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860788"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769633"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Administración de recursos de CPU del host de Hyper-V
 
-Los controles de recursos de CPU del host de Hyper-V introducidos en Windows Server 2016 o posterior permiten a los administradores de Hyper-V administrar y asignar mejor los recursos de CPU del servidor host entre la "raíz", la partición de administración y las máquinas virtuales invitadas. Con estos controles, los administradores pueden dedicar un subconjunto de los procesadores de un sistema host a la partición raíz. Esto puede separar el trabajo realizado en un host de Hyper-V de las cargas de trabajo que se ejecutan en máquinas virtuales invitadas mediante su ejecución en subconjuntos independientes de los procesadores del sistema.
+Los controles de recursos de CPU del host de Hyper-V introducidos en Windows Server 2016 o posterior permiten a los administradores de Hyper-V administrar y asignar mejor los recursos de CPU del servidor host entre la "raíz", la partición de administración y las máquinas virtuales invitadas.
+Con estos controles, los administradores pueden dedicar un subconjunto de los procesadores de un sistema host a la partición raíz.
+Esto puede separar el trabajo realizado en un host de Hyper-V de las cargas de trabajo que se ejecutan en máquinas virtuales invitadas mediante su ejecución en subconjuntos independientes de los procesadores del sistema.
 
 Para obtener más información sobre el hardware de los hosts de Hyper-V, consulte [requisitos del sistema de Hyper-v de Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements).
 
-## <a name="background"></a>Fondo
+## <a name="background"></a>Información previa
 
-Antes de establecer los controles para los recursos de CPU del host de Hyper-V, resulta útil revisar los conceptos básicos de la arquitectura de Hyper-V.  
+Antes de establecer los controles para los recursos de CPU del host de Hyper-V, resulta útil revisar los conceptos básicos de la arquitectura de Hyper-V.
 Puede encontrar un resumen general en la sección [arquitectura de Hyper-V](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture) .
 Estos son los conceptos importantes de este artículo:
 
@@ -28,7 +30,7 @@ Estos son los conceptos importantes de este artículo:
 
 * La partición raíz es en sí misma una partición de máquina virtual, aunque tiene propiedades únicas y privilegios mucho mayores que las máquinas virtuales invitadas.  La partición raíz proporciona los servicios de administración que controlan todas las máquinas virtuales invitadas, proporcionan compatibilidad con dispositivos virtuales para los invitados y administran todas las e/s de dispositivos para las máquinas virtuales invitadas.  Microsoft recomienda no ejecutar ninguna carga de trabajo de la aplicación en una partición del host.
 
-* Cada procesador virtual (VP) de la partición raíz se asigna 1:1 a un procesador lógico subyacente (LP).  Un Vicepresidente de host siempre se ejecutará en el mismo LP subyacente, ya que no se realiza ninguna migración del VPs de la partición raíz.  
+* Cada procesador virtual (VP) de la partición raíz se asigna 1:1 a un procesador lógico subyacente (LP).  Un Vicepresidente de host siempre se ejecutará en el mismo LP subyacente, ya que no se realiza ninguna migración del VPs de la partición raíz.
 
 * De forma predeterminada, el LPs en el que se ejecuta VPs de host también puede ejecutar el VPs invitado.
 
@@ -50,7 +52,7 @@ La configuración de minroot se controla a través de entradas BCD de hipervisor
 ```
      bcdedit /set hypervisorrootproc n
 ```
-Donde n es el número de VPs raíz. 
+Donde n es el número de VPs raíz.
 
 El sistema debe reiniciarse y el nuevo número de procesadores raíz se conservará durante la vigencia del arranque del sistema operativo.  La configuración de minroot no se puede cambiar dinámicamente en tiempo de ejecución.
 
@@ -62,7 +64,6 @@ Tenga en cuenta que con varios nodos NUMA, debe asegurarse de que la topología 
 
 Puede comprobar la configuración de minroot del host mediante el administrador de tareas, como se muestra a continuación.
 
-![](./media/minroot-taskman.png)
+![Configuración de minroot del host mostrada en el administrador de tareas](./media/minroot-taskman.png)
 
 Cuando Minroot está activo, el administrador de tareas mostrará el número de procesadores lógicos asignados actualmente al host, además del número total de procesadores lógicos del sistema.
- 

@@ -1,5 +1,5 @@
 ---
-title: Guía de planificación de máquinas virtuales blindadas y tejido protegido para proveedores de hospedaje
+title: Guía de planificación de máquinas virtuales blindadas y tejido protegido para inquilinos
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
@@ -7,12 +7,12 @@ manager: dongill
 author: nirb-ms
 ms.author: nirb
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 829d6a3efef082e35c6a4f98e0ba9e4b70c27a93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5d50721ddf51bc956d8afd256ff047c94c5d5a5e
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856478"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769453"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>Guía de planificación de máquinas virtuales blindadas y tejido protegido para inquilinos
 
@@ -24,22 +24,22 @@ Hay tres áreas que se deben tener en cuenta al usar máquinas virtuales blindad
 
 - El nivel de seguridad de las máquinas virtuales
 - Claves criptográficas utilizadas para protegerlas
-- Datos de blindaje: información confidencial que se usa para crear máquinas virtuales blindadas 
+- Datos de blindaje: información confidencial que se usa para crear máquinas virtuales blindadas
 
 ## <a name="security-level-for-the-vms"></a>Nivel de seguridad de las máquinas virtuales
 
 Al implementar máquinas virtuales blindadas, se debe seleccionar uno de los dos niveles de seguridad:
 
-- Blindadas 
+- Blindada
 - Cifrado admitido
 
-Tanto las máquinas virtuales blindadas como las que admiten cifrado tienen un TPM virtual conectado y las que ejecutan Windows están protegidas por BitLocker. La principal diferencia es que las máquinas virtuales blindadas bloquean el acceso por parte de los administradores del tejido mientras que las máquinas virtuales compatibles con el cifrado permiten a los administradores del tejido el mismo nivel de acceso que tenían para una máquina virtual normal. Para más información sobre estas diferencias, consulte [información general sobre el tejido protegido y las máquinas virtuales blindadas](guarded-fabric-and-shielded-vms.md). 
+Tanto las máquinas virtuales blindadas como las que admiten cifrado tienen un TPM virtual conectado y las que ejecutan Windows están protegidas por BitLocker. La principal diferencia es que las máquinas virtuales blindadas bloquean el acceso por parte de los administradores del tejido mientras que las máquinas virtuales compatibles con el cifrado permiten a los administradores del tejido el mismo nivel de acceso que tenían para una máquina virtual normal. Para más información sobre estas diferencias, consulte [información general sobre el tejido protegido y las máquinas virtuales blindadas](guarded-fabric-and-shielded-vms.md).
 
 Elija **máquinas virtuales blindadas** si desea proteger la máquina virtual de un tejido comprometido (incluidos los administradores en peligro). Deben usarse en entornos en los que los administradores del tejido y el propio tejido no son de confianza. Elija **cifrado máquinas virtuales compatibles** si desea cumplir una barra de cumplimiento que pueda requerir cifrado en reposo y cifrado de la máquina virtual en la conexión (por ejemplo, durante la migración en vivo).
 
 Las máquinas virtuales compatibles con el cifrado son ideales en entornos donde los administradores del tejido son de plena confianza, pero el cifrado sigue siendo un requisito.
 
-Puede ejecutar una mezcla de máquinas virtuales normales, máquinas virtuales blindadas y máquinas virtuales compatibles con el cifrado en un tejido protegido e incluso en el mismo host de Hyper-V. 
+Puede ejecutar una mezcla de máquinas virtuales normales, máquinas virtuales blindadas y máquinas virtuales compatibles con el cifrado en un tejido protegido e incluso en el mismo host de Hyper-V.
 
 Si una máquina virtual está blindada o se admite el cifrado, se determinan mediante los datos de blindaje seleccionados al crear la máquina virtual. Los propietarios de máquinas virtuales configuran el nivel de seguridad al crear los datos de blindaje (consulte la sección [datos de blindaje](#shielding-data) ).
 Tenga en cuenta que, una vez realizada esta opción, no se puede cambiar mientras la máquina virtual permanezca en el tejido de virtualización.
@@ -49,7 +49,7 @@ Tenga en cuenta que, una vez realizada esta opción, no se puede cambiar mientra
 Las máquinas virtuales blindadas están protegidas contra vectores de ataque de tejido de virtualización que usan discos cifrados y otros elementos cifrados que solo puede descifrar:
 
 - Una clave de propietario: se trata de una clave criptográfica mantenida por el propietario de la máquina virtual que se usa normalmente para la recuperación del último recurso o la solución de problemas. Los propietarios de máquinas virtuales son responsables del mantenimiento de las claves de propietario en una ubicación segura.
-- Una o más protecciones (claves de protección de host): cada guardián representa un tejido de virtualización en el que un propietario autoriza la ejecución de máquinas virtuales blindadas. Las empresas suelen tener un tejido de virtualización principal y de recuperación ante desastres (DR) y, por lo general, autorizar a sus máquinas virtuales blindadas a ejecutarse en ambos. En algunos casos, el tejido secundario (DR) podría estar hospedado por un proveedor de nube pública. Las claves privadas de cualquier tejido protegido solo se mantienen en el tejido de virtualización, mientras que sus claves públicas se pueden descargar y se encuentran dentro de su guardián. 
+- Una o más protecciones (claves de protección de host): cada guardián representa un tejido de virtualización en el que un propietario autoriza la ejecución de máquinas virtuales blindadas. Las empresas suelen tener un tejido de virtualización principal y de recuperación ante desastres (DR) y, por lo general, autorizar a sus máquinas virtuales blindadas a ejecutarse en ambos. En algunos casos, el tejido secundario (DR) podría estar hospedado por un proveedor de nube pública. Las claves privadas de cualquier tejido protegido solo se mantienen en el tejido de virtualización, mientras que sus claves públicas se pueden descargar y se encuentran dentro de su guardián.
 
 **¿Cómo crear una clave de propietario?** Una clave de propietario se representa mediante dos certificados. Un certificado para el cifrado y un certificado para firmar. Puede crear estos dos certificados con su propia infraestructura de PKI u obtener certificados SSL de una entidad de certificación (CA) pública. Con fines de prueba, también puede crear un certificado autofirmado en cualquier equipo que empiece con Windows 10 o Windows Server 2016.
 
@@ -67,8 +67,8 @@ Las máquinas virtuales blindadas ayudan a protegerse frente a ataques de un tej
 
 1. Nivel de seguridad: protegido o compatible con cifrado
 2. Propietario y lista de protecciones de host de confianza en las que se puede ejecutar la máquina virtual
-3. Datos de inicialización de máquina virtual (Unattend. XML, certificado RDP)
-4. Lista de discos de plantilla firmada de confianza para crear la máquina virtual en el entorno de virtualización 
+3. Datos de inicialización de máquina virtual (unattend.xml, certificado RDP)
+4. Lista de discos de plantilla firmada de confianza para crear la máquina virtual en el entorno de virtualización
 
 Al crear una máquina virtual blindada o compatible con el cifrado o al convertir una máquina virtual existente, se le pedirá que seleccione los datos de blindaje en lugar de que se le solicite la información confidencial.
 
@@ -89,6 +89,6 @@ La creación de nuevas máquinas virtuales a partir de una plantilla es una prá
 Al usar discos de plantilla firmados para crear máquinas virtuales blindadas, hay dos opciones disponibles:
 
 1. Use un disco de plantilla firmado existente proporcionado por el proveedor de virtualización. En este caso, el proveedor de virtualización mantiene los discos de plantilla firmados.
-2. Cargue un disco de plantilla firmado en el tejido de virtualización. El propietario de la máquina virtual es responsable de mantener los discos de plantilla firmados. 
+2. Cargue un disco de plantilla firmado en el tejido de virtualización. El propietario de la máquina virtual es responsable de mantener los discos de plantilla firmados.
 
 

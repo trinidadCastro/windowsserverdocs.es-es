@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 82725e654fb4c7296b092019db111f9d3debad6d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d33714c9939593b4c877e76f77d390139771e3ff
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475392"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769393"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Creación de un disco de plantilla de máquina virtual blindada con Windows
 
@@ -57,15 +57,19 @@ Siga los pasos que se describen a continuación en un equipo que ejecute Windows
 
 2. Para administrar el servidor de forma local, instale la característica **herramientas de máquinas virtuales blindadas** desde **herramientas de administración remota del servidor** en el servidor.
 
-        Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
+    Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
 
     También puede administrar el servidor desde un equipo cliente en el que haya instalado el [herramientas de administración remota del servidor de Windows 10](https://www.microsoft.com/download/details.aspx?id=45520).
 
-3. Obtenga o cree un certificado para firmar el VSC del VHDX que se convertirá en el disco de plantilla para nuevas máquinas virtuales blindadas. Los detalles sobre este certificado se mostrarán a los inquilinos cuando creen sus archivos de datos de blindaje y estén autorizando los discos en los que confían. Por lo tanto, es importante obtener este certificado de una entidad de certificación de confianza mutua para el usuario y los inquilinos. En escenarios empresariales en los que se encuentre el anfitrión y el inquilino, puede considerar la posibilidad de emitir este certificado desde su PKI.
+3. Obtenga o cree un certificado para firmar el VSC del VHDX que se convertirá en el disco de plantilla para nuevas máquinas virtuales blindadas. Los detalles sobre este certificado se mostrarán a los inquilinos cuando creen sus archivos de datos de blindaje y estén autorizando los discos en los que confían. Por lo tanto, es importante obtener este certificado de una entidad de certificación de confianza mutua para el usuario y los inquilinos. En escenarios empresariales en los que se encuentre el host y el inquilino, puede considerar la posibilidad de emitir este certificado desde su PKI.
 
     Si está configurando un entorno de prueba y simplemente desea utilizar un certificado autofirmado para preparar el disco de plantilla, ejecute un comando similar al siguiente:
 
-        New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
+    New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
 
 4. Inicie el **Asistente para crear un disco de plantilla** desde la carpeta **herramientas administrativas** del menú Inicio o escriba **TemplateDiskWizard.exe** en el símbolo del sistema.
 

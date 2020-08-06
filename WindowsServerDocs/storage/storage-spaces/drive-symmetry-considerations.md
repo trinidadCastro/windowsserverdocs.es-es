@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7a4469a3f72737801a5110e322533df9764e20
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2028d7b4ccb42d5da1426634541681f842c18972
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473592"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768733"
 ---
 # <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>Consideraciones sobre la simetría de unidades para Espacios de almacenamiento directo
 
@@ -173,14 +173,14 @@ No es una opción admitida. Debe agregar un mínimo de dos unidades de caché (N
 
 En Resumen, cada servidor del clúster debe tener los mismos tipos de unidades y el mismo número de cada tipo. Se admite para combinar modelos de unidad y tamaños de unidad según sea necesario, con las consideraciones anteriores.
 
-| Restricción                               |               |
-|------------------------------------------|---------------|
-| Los mismos tipos de unidades en cada servidor     | **Obligatoria**  |
-| El mismo número de cada tipo en cada servidor | **Obligatoria**  |
-| Los mismos modelos de unidad en cada servidor        | Recomendado   |
-| Los mismos tamaños de unidad en cada servidor         | Recomendado   |
+| Restricción | State |
+|--|--|
+| Los mismos tipos de unidades en cada servidor | **Obligatorio** |
+| El mismo número de cada tipo en cada servidor | **Obligatorio** |
+| Los mismos modelos de unidad en cada servidor | Recomendado |
+| Los mismos tamaños de unidad en cada servidor | Recomendado |
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Requisitos de hardware Espacios de almacenamiento directo](storage-spaces-direct-hardware-requirements.md)
-- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Requisitos de hardware de Espacios de almacenamiento directo](storage-spaces-direct-hardware-requirements.md)
+- [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)

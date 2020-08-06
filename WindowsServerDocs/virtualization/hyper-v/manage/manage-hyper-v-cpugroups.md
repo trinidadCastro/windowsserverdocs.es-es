@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: ebb5f9a0ca9c50a5e5357e3dd2c755095da98d11
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: bcae278caf088bc544fb6686450eacdfdf88237b
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203536"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769603"
 ---
 # <a name="virtual-machine-resource-controls"></a>Controles de recursos de máquina virtual
 
@@ -33,7 +33,7 @@ Los grupos de CPU se administran a través del servicio de proceso del host de H
 >[!NOTE]
 >Solo se puede usar HCS para crear y administrar grupos de CPU. el applet de administrador de Hyper-V, las interfaces de administración de WMI y de PowerShell no admiten grupos de CPU.
 
-Microsoft proporciona una utilidad de línea de comandos, cpugroups. exe, en el [centro de descarga de Microsoft](https://go.microsoft.com/fwlink/?linkid=865968) que usa la interfaz HCS para administrar grupos de CPU.  Esta utilidad también puede mostrar la topología de CPU de un host.
+Microsoft proporciona una utilidad de línea de comandos, cpugroups.exe, en el [centro de descarga de Microsoft](https://go.microsoft.com/fwlink/?linkid=865968) que usa la interfaz HCS para administrar grupos de CPU.  Esta utilidad también puede mostrar la topología de CPU de un host.
 
 ## <a name="how-cpu-groups-work"></a>Cómo funcionan los grupos de CPU
 
@@ -41,15 +41,15 @@ El hipervisor de Hyper-V aplica la asignación de recursos de proceso de host en
 
 El límite del grupo de CPU se calcula como G = *n* x *C*, donde:
 
-    *G* is the amount of host LP we'd like to assign to the group
-    *n* is the total number of logical processors (LPs) in the group
-    *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system's total compute capacity
+- *G* es la cantidad de host LP que nos gustaría asignar al grupo
+- *n* es el número total de procesadores lógicos (LPS) del grupo
+- *C* es la asignación de CPU máxima, es decir, la clase de servicio deseada para el grupo, expresada como un porcentaje de la capacidad total de proceso del sistema.
 
 Por ejemplo, Imagine un grupo de CPU configurado con 4 procesadores lógicos (LPs) y un límite del 50%.
 
-    G = n * C
-    G = 4 * 50%
-    G = 2 LP's worth of CPU time for the entire group
+- G = n * C
+- G = 4 * 50%
+- G = 2 el tiempo de CPU de LP para todo el grupo
 
 En este ejemplo, se asigna al grupo de CPU G el tiempo de CPU de LP.
 
@@ -70,9 +70,9 @@ Por motivos de simplicidad, supongamos que cada máquina virtual tiene 1 VP y qu
 
 Para crear el nivel "B", el host adminstartor establece el límite de grupo en 50%:
 
-    G = n * C
-    G = 8 * 50%
-    G = 4 LP's worth of CPU time for the entire group
+- G = n * C
+- G = 8 * 50%
+- G = 4 veces el tiempo de CPU de LP para todo el grupo
 
 El administrador del host agrega una única máquina virtual de nivel "B".
 En este punto, la máquina virtual de nivel "B" puede usar como máximo el 50% de la CPU del host o el equivalente de 4 LPs en nuestro sistema de ejemplo.

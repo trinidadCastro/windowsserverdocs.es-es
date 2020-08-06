@@ -8,12 +8,12 @@ ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: c8e0e8798da9cb4a2b3ca317d9632450ade82504
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 0177ce6346741998a0a9f97817e3811561bb02fb
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390102"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768825"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>Plan de aceleración de GPU en Windows Server
 
@@ -54,7 +54,7 @@ Para más información, consulte los temas siguientes:
 ## <a name="remotefx-vgpu"></a>RemoteFX vGPU
 
 > [!NOTE]
-> Debido a los problemas de seguridad, vGPU de RemoteFX está deshabilitado de forma predeterminada en todas las versiones de Windows a partir de la actualización de seguridad del 14 de julio de 2020. Para obtener más información, consulte [KB 4570006](https://support.microsoft.com/help/4570006).
+> Debido a los problemas de seguridad, vGPU de RemoteFX está deshabilitado de manera predeterminada en todas las versiones de Windows a partir de la actualización de seguridad del 14 de julio de 2020. Para obtener más información, consulte [KB 4570006](https://support.microsoft.com/help/4570006).
 
 VGPU de RemoteFX es una tecnología de virtualización de gráficos que permite compartir una sola GPU física entre varias máquinas virtuales. En una implementación de vGPU de RemoteFX, las cargas de trabajo virtualizadas se ejecutan en el adaptador 3D RemoteFX de Microsoft, que coordina las solicitudes de procesamiento de GPU entre el host y los invitados. La vGPU de RemoteFX es más adecuada para cargas de trabajo de nivel de conocimiento y de alta ráfaga, donde no se requieren recursos de GPU dedicados. VGPU de RemoteFX solo puede proporcionar aceleración de GPU a máquinas virtuales Windows.
 
@@ -67,17 +67,17 @@ Para más información, consulte los temas siguientes:
 
 Tenga en cuenta la siguiente funcionalidad y admita diferencias entre las tecnologías de virtualización de gráficos al planear la implementación:
 
-|                       | RemoteFX vGPU                                                                       | Asignación discreta de dispositivos                                                          |
-|-----------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| Modelo de recursos de GPU    | Dedicada o compartida                                                                 | Solo dedicado                                                                      |
-| Densidad de máquinas virtuales            | Alta (una o más GPU en muchas máquinas virtuales)                                                 | Bajo (una o más GPU en una VM)                                                    |
-| Compatibilidad de aplicaciones     | DX 11.1, OpenGL 4.4, OpenCL 1.1                                                     | Todas las funcionalidades de GPU proporcionadas por el proveedor (DX 12, OpenGL, CUDA)                       |
-| AVC444                | Habilitado de forma predeterminada                                                                  | Disponible a través de directiva de grupo                                                      |
-| VRAM de GPU              | Hasta 1 GB de VRAM dedicada                                                           | Hasta la VRAM que admita la GPU                                                     |
-| Velocidad de fotogramas            | Hasta 30 fps                                                                         | Hasta 60 fps                                                                         |
-| Controlador de GPU en invitado   | Controlador de pantalla de adaptador 3D de RemoteFX (Microsoft)                                      | Controlador del proveedor de GPU (NVIDIA, AMD, Intel)                                              |
-| Compatibilidad del sistema operativo host       | Windows Server 2016                                                                 | Windows Server 2016; Windows Server 2019                                            |
-| Compatibilidad con sistema operativo de invitado      | Windows Server 2012 R2; Windows Server 2016; Windows 7 SP1; Windows 8.1; Windows 10 | Windows Server 2012 R2; Windows Server 2016; Windows Server 2019; Windows 10; Linuxun |
-| Hipervisor            | Microsoft Hyper-V                                                                   | Microsoft Hyper-V                                                                   |
-| Hardware de GPU          | GPU de la empresa (como Nvidia Quadro/GRID o AMD FirePro)                         | GPU de la empresa (como Nvidia Quadro/GRID o AMD FirePro)                         |
-| Hardware del servidor       | No hay requisitos especiales                                                             | Servidor moderno, expone IOMMU al sistema operativo (normalmente hardware compatible con SR-IOV)              |
+| Descripción | RemoteFX vGPU | Asignación discreta de dispositivos |
+|--|--|--|
+| Modelo de recursos de GPU | Dedicada o compartida | Solo dedicado |
+| Densidad de máquinas virtuales | Alta (una o más GPU en muchas máquinas virtuales) | Bajo (una o más GPU en una VM) |
+| Compatibilidad de aplicaciones | DX 11.1, OpenGL 4.4, OpenCL 1.1 | Todas las funcionalidades de GPU proporcionadas por el proveedor (DX 12, OpenGL, CUDA) |
+| AVC444 | Habilitado de forma predeterminada | Disponible a través de directiva de grupo |
+| VRAM de GPU | Hasta 1 GB de VRAM dedicada | Hasta la VRAM que admita la GPU |
+| Velocidad de fotogramas | Hasta 30 fps | Hasta 60 fps |
+| Controlador de GPU en invitado | Controlador de pantalla de adaptador 3D de RemoteFX (Microsoft) | Controlador del proveedor de GPU (NVIDIA, AMD, Intel) |
+| Compatibilidad del sistema operativo host | Windows Server 2016 | Windows Server 2016; Windows Server 2019 |
+| Compatibilidad con sistema operativo de invitado | Windows Server 2012 R2; Windows Server 2016; Windows 7 SP1; Windows 8.1; Windows 10 | Windows Server 2012 R2; Windows Server 2016; Windows Server 2019; Windows 10; Linuxun |
+| Hipervisor | Microsoft Hyper-V | Microsoft Hyper-V |
+| Hardware de GPU | GPU de la empresa (como Nvidia Quadro/GRID o AMD FirePro) | GPU de la empresa (como Nvidia Quadro/GRID o AMD FirePro) |
+| Hardware del servidor | No hay requisitos especiales | Servidor moderno, expone IOMMU al sistema operativo (normalmente hardware compatible con SR-IOV) |

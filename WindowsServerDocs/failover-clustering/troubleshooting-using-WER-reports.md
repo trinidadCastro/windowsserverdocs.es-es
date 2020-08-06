@@ -1,19 +1,19 @@
 ---
-title: Solución de problemas de un clúster de conmutación por error mediante Informe de errores de Windows
+title: Solución de problemas de clúster de conmutación por error con el Informe de errores de Windows
 description: Solución de problemas de un clúster de conmutación por error mediante informes WER, con detalles específicos sobre cómo recopilar informes y diagnosticar problemas comunes.
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
-ms.author: vpetter
-author: dcuomo
+ms.author: johnmar
+author: JohnMarlin-MSFT
 ms.date: 03/27/2018
-ms.openlocfilehash: e8db88dc4fe3ad9176299c5b423a7aac6093f254
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f888b7f49c2bf97eb42070a6028b137aeb730406
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827358"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768542"
 ---
-# <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solución de problemas de un clúster de conmutación por error mediante Informe de errores de Windows 
+# <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solución de problemas de clúster de conmutación por error con el Informe de errores de Windows
 
 > Se aplica a: Windows Server 2019, Windows Server 2016 y Windows Server
 
@@ -36,7 +36,7 @@ Para evitar estos problemas, puede habilitar los canales de eventos en el inicio
 PS C:\Windows\system32> (get-cluster).EnabledEventLogs
 ```
 
-A continuación presentamos un ejemplo de la salida:
+Este es un ejemplo de la salida:
 ```
 Microsoft-Windows-Hyper-V-VmSwitch-Diagnostic,4,0xFFFFFFFD
 Microsoft-Windows-SMBDirect/Debug,4
@@ -106,7 +106,7 @@ Dentro de la carpeta **wer** , la carpeta **ReportsQueue** contiene informes que
 PS C:\Windows\system32> dir c:\ProgramData\Microsoft\Windows\WER\ReportQueue
 ```
 
-A continuación presentamos un ejemplo de la salida:
+Este es un ejemplo de la salida:
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -143,7 +143,7 @@ Dentro de la carpeta **wer** , la carpeta **ReportsArchive** contiene informes q
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive
 ```
 
-A continuación presentamos un ejemplo de la salida:
+Este es un ejemplo de la salida:
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -171,7 +171,7 @@ Para diagnosticar este problema, vaya a la carpeta de informes WER:
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_b46b8883d892cfa8a26263afca228b17df8133d_00000000_cab_08abc39c
 ```
 
-A continuación presentamos un ejemplo de la salida:
+Este es un ejemplo de la salida:
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -228,7 +228,7 @@ Volume Serial Number is 4031-E397
 A continuación, inicie la clasificación del archivo **Report. wer** ; esto le indicará el error.
 
 ```
-EventType=Failover_clustering_resource_error 
+EventType=Failover_clustering_resource_error
 <skip>
 Sig[0].Name=ResourceType
 Sig[0].Value=Physical Disk
@@ -258,7 +258,7 @@ Debido a que el recurso no pudo conectarse, no se recopiló ningún volcado, per
 PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQuery
 ```
 
-A continuación presentamos un ejemplo de la salida:
+Este es un ejemplo de la salida:
 ```
 <QueryList><Query Id="0"><Select Path="Microsoft-Windows-Kernel-PnP/Configuration">*[System[TimeCreated[timediff(@SystemTime) &lt;= 600000]]]</Select></Query></QueryList>
 <QueryList><Query Id="0"><Select Path="Microsoft-Windows-ReFS/Operational">*[System[TimeCreated[timediff(@SystemTime) &lt;= 600000]]]</Select></Query></QueryList>
@@ -299,20 +299,20 @@ También puede agrupar por proveedores para obtener la siguiente vista:
 
 ![Registros agrupados por proveedores](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-Para identificar por qué se produjo un error en el disco, navegue hasta los eventos en **FailoverClustering/Diagnostics** y **FailoverClustering/DiagnosticVerbose**. A continuación, ejecute la consulta siguiente: **EventLog. EventData ["LogString"] contiene "disco de clúster 10"** .  Esto le proporcionará la siguiente salida:
+Para identificar por qué se produjo un error en el disco, navegue hasta los eventos en **FailoverClustering/Diagnostics** y **FailoverClustering/DiagnosticVerbose**. A continuación, ejecute la consulta siguiente: **EventLog. EventData ["LogString"] contiene "disco de clúster 10"**.  Esto le proporcionará la siguiente salida:
 
 ![Salida de la consulta de registro en ejecución](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
 
 ### <a name="physical-disk-timed-out"></a>Tiempo de espera agotado del disco físico
 
-Para diagnosticar este problema, vaya a la carpeta de informes WER. La carpeta contiene archivos de registro y archivos de volcado de memoria para **RHS**, **ClusSvc. exe**y el proceso que hospeda el servicio "**smphost**", como se muestra a continuación:
+Para diagnosticar este problema, vaya a la carpeta de informes WER. La carpeta contiene archivos de registro y archivos de volcado de memoria para **RHS**, **clussvc.exe**y del proceso que hospeda el servicio "**smphost**", como se muestra a continuación:
 
 ```powershell
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_64acaf7e4590828ae8a3ac3c8b31da9a789586d4_00000000_cab_1d94712e
 ```
 
-A continuación presentamos un ejemplo de la salida:
+Este es un ejemplo de la salida:
 ```
 Volume in drive C is INSTALLTO
 Volume Serial Number is 4031-E397
@@ -395,7 +395,7 @@ DynamicSig[29].Name=HangThreadId
 DynamicSig[29].Value=10008
 ```
 
-La lista de servicios y procesos que se recopilan en un volcado de memoria se controla mediante la siguiente propiedad: **PS C:\Windows\system32 > (get-ClusterResourceType-name "Physical Disk"). DumpServicesSmphost**
+La lista de servicios y procesos que se recopilan en un volcado de memoria se controla mediante la siguiente propiedad: **PS C:\Windows\system32> (get-ClusterResourceType-name "Physical Disk"). DumpServicesSmphost**
 
 Para identificar por qué se ha producido el bloqueo, abra los archivos Dum. A continuación, ejecute la consulta siguiente: **EventLog. EventData ["LogString"] contiene "disco de clúster 10"** , que le proporcionará el siguiente resultado:
 
@@ -406,9 +406,9 @@ Podemos realizar un examen cruzado con el subproceso del archivo **Memory. HDMP*
 ```
 # 21  Id: 1d98.2718 Suspend: 0 Teb: 0000000b`f1f7b000 Unfrozen
 # Child-SP          RetAddr           Call Site
-00 0000000b`f3c7ec38 00007ff8`455d25ca ntdll!ZwDelayExecution+0x14 
-01 0000000b`f3c7ec40 00007ff8`2ef19710 KERNELBASE!SleepEx+0x9a 
-02 0000000b`f3c7ece0 00007ff8`3bdf7fbf clusres!ResHardDiskOnlineOrTurnOffMMThread+0x2b0 
-03 0000000b`f3c7f960 00007ff8`391eed34 resutils!ClusWorkerStart+0x5f 
+00 0000000b`f3c7ec38 00007ff8`455d25ca ntdll!ZwDelayExecution+0x14
+01 0000000b`f3c7ec40 00007ff8`2ef19710 KERNELBASE!SleepEx+0x9a
+02 0000000b`f3c7ece0 00007ff8`3bdf7fbf clusres!ResHardDiskOnlineOrTurnOffMMThread+0x2b0
+03 0000000b`f3c7f960 00007ff8`391eed34 resutils!ClusWorkerStart+0x5f
 04 0000000b`f3c7f9d0 00000000`00000000 vfbasics+0xed34
 ```

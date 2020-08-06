@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: efe16dd9bdc971b97bc401cf10e14439c46069de
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d5c0644c36d4476eb49797de2f828c4da0f53965
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181741"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769163"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)
 
@@ -52,28 +52,28 @@ El servicio de migración de almacenamiento no migra actualmente controladores d
 
 El servicio de migración de almacenamiento migra todas las marcas, la configuración y la seguridad de los recursos compartidos de SMB. La lista de marcas que migra el servicio de migración de almacenamiento incluye:
 
-    - Estado compartido
-    - Tipo de disponibilidad
-    - Tipo de recurso compartido
-    - Modo de enumeración *de carpetas (también conocido como enumeración basada en el acceso o Abe)*
-    - Modo de almacenamiento en caché
-    - Modo de concesión
-    - Instancia de SMB
-    - Tiempo de espera de CA
-    - Límite de usuarios simultáneos
-    - Disponible continuamente
-    - Descripción
-    - Cifrar datos
-    - Comunicación remota de identidad
-    - Infraestructura
-    - Nombre
-    - Path
-    - Con ámbito
-    - Nombre de ámbito
-    - Descriptor de seguridad
-    - Instantánea
-    - Especial
-    - Temporales
+- Estado compartido
+- Tipo de disponibilidad
+- Tipo de recurso compartido
+- Modo de enumeración *de carpetas (también conocido como enumeración basada en el acceso o Abe)*
+- Modo de almacenamiento en caché
+- Modo de concesión
+- Instancia de SMB
+- Tiempo de espera de CA
+- Límite de usuarios simultáneos
+- Disponible continuamente
+- Descripción
+- Cifrar datos
+- Comunicación remota de identidad
+- Infraestructura
+- Nombre
+- Path
+- Con ámbito
+- Nombre de ámbito
+- Descriptor de seguridad
+- Instantánea
+- Especial
+- Temporales
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>¿Puedo consolidar varios servidores en un solo servidor?
 
