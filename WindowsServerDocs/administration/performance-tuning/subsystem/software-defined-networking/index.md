@@ -1,18 +1,16 @@
 ---
 title: Optimización del rendimiento de redes definidas por software
 description: Directrices de optimización del rendimiento de redes definidas por software (SDN)
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: cfd166aab7a0ef0383fe4700fdf50cc6d35289b1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 9c097d9b777676da1caef062e8aee4267d2e4dac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851618"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895942"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>Optimización del rendimiento de redes definidas por software
 
@@ -34,7 +32,7 @@ Las indicaciones que se proporciona en la sección de rendimiento de E/S de una 
 
 ### <a name="physical-network-adapter-nic-teaming"></a>Formación de equipos NIC
 
-Para obtener el mejor rendimiento y las funcionalidades de conmutación por error, se recomienda configurarlos adaptadores de red físicos para que formen equipos.  Cuando use SDN, debe crear el equipo con Switch Embedded Teaming (SET).  
+Para obtener el mejor rendimiento y las funcionalidades de conmutación por error, se recomienda configurarlos adaptadores de red físicos para que formen equipos.  Cuando use SDN, debe crear el equipo con Switch Embedded Teaming (SET).
 
 El número óptimo de miembros del equipo es dos, porque el tráfico virtualizado se distribuirá entre ambos miembros del equipo tanto para las direcciones de entrada como de salida.  Puede haber más de dos miembros del equipo, pero el tráfico de entrada se distribuirá a lo sumo a dos de los adaptadores.  El tráfico de salida siempre se distribuirá entre todos los adaptadores si el valor predeterminado del equilibrio dinámico de carga sigue configurado en el conmutador virtual.
 
@@ -55,7 +53,7 @@ Para obtener el mejor rendimiento, si se devuelve VXLAN, debe asegurarse de que 
 
 La encapsulación genera que se agreguen bytes adicionales a cada paquete.  Con el fin de evitar la fragmentación de estos paquetes, la red física se debe configurar para el uso de tramas gigantes.  Un valor de MTU de 9234 es el tamaño recomendado para VXLAN o NVGRE y se debe configurar en el conmutador físico para las interfaces físicas de los puertos de host (L2) y las interfaces de enrutador (L3) de las VLAN en la que se enviarán los paquetes encapsulados.  Esto incluye las redes de tránsito, proveedor de HNV y administración.
 
-MTU en el host de Hyper-V se configura a través del adaptador de red y el agente de host de la controladora de red que se ejecuta en el host de Hyper-V se ajustará para la sobrecarga de encapsulación de manera automática si es compatible con el controlador de adaptador de red.  
+MTU en el host de Hyper-V se configura a través del adaptador de red y el agente de host de la controladora de red que se ejecuta en el host de Hyper-V se ajustará para la sobrecarga de encapsulación de manera automática si es compatible con el controlador de adaptador de red.
 
 Una vez que el tráfico sale de la red virtual a través de una puerta de enlace, la encapsulación se quita y se usa la MTU original tal como se envió desde la máquina virtual.
 

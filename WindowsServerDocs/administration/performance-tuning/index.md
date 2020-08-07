@@ -1,18 +1,16 @@
 ---
 title: Directrices de optimización del rendimiento de Windows Server 2016
 description: Directrices de optimización del rendimiento para Windows Server 2016
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f684a87b091ffd95bb65c0b5f3aa0dfc9f405825
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 69b65e9a7cb5e935a8c6b1a8ab500e33307a092d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71355037"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896691"
 ---
 # <a name="performance-tuning-guidelines-for-windows-server-2016"></a>Directrices de optimización del rendimiento para Windows Server 2016
 
@@ -68,4 +66,4 @@ En esta guía, las directrices de rendimiento y optimización para Windows Serve
 
 - *Se quitaron las secciones de almacenamiento dedicado*, a favor de la nueva sección [Espacios de almacenamiento directo](subsystem/storage-spaces-direct/index.md) y el contenido canónico de Technet
 
-- *Se quitó la sección de redes dedicada*, a favor de contenido canónico de Technet  
+- *Se quitó la sección de redes dedicada*, a favor de contenido canónico de Technet

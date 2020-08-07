@@ -1,20 +1,18 @@
 ---
 title: tscon
 description: Artículo de referencia de tscon, que se conecta a otra sesión en un servidor de host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 315a9793-cd10-4987-bb68-89a9d13f7fce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83f8778d73d022ed41fcab14795eb3cdf41dc6cf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 96f23a310d1cf9b1843194ee233b84f69c84bb0c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954947"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897084"
 ---
 # <a name="tscon"></a>tscon
 

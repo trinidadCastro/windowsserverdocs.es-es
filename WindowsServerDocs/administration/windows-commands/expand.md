@@ -1,20 +1,18 @@
 ---
 title: expand
 description: Artículo de referencia del comando Expand, que expande uno o más archivos comprimidos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 66de0488-a0c4-40c2-9b03-e40c107ba343
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 918d629ea0d3d87ea42184580c1be84740d4f79d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e1359c6db46095bd472a20e946b8748a64eb4d14
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958237"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890413"
 ---
 # <a name="expand"></a>expand
 

@@ -1,18 +1,16 @@
 ---
 title: Consideraciones de rendimiento del hardware de servidor
 description: Consideraciones de rendimiento del hardware de servidor para Windows Server 2016
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
-ms.openlocfilehash: 9c012711dff3746587b4a04b31d9c23ebb7de4cd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bac2aa367cc9a8d736fd83f7aeed3e467aeddb54
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71370552"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896746"
 ---
 # <a name="server-hardware-performance-considerations"></a>Consideraciones de rendimiento del hardware de servidor
 
@@ -40,8 +38,8 @@ Elija cachés de procesador L2 o L3 de gran tamaño. En arquitecturas más recie
 
 ## <a name="memory-ram-and-paging-storage-recommendations"></a>Recomendaciones de almacenamiento de paginación y memoria (RAM)
 
->[!Note] 
-> Algunos sistemas pueden presentar un rendimiento de almacenamiento reducido al ejecutar una nueva instalación de Windows Server 2016 frente a Windows Server 2012 R2. Durante el desarrollo de Windows Server 2016 se realizaron una serie de cambios para mejorar la seguridad y confiabilidad de la plataforma. Algunos de esos cambios, como la habilitación de Windows Defender de manera predeterminada, dan como resultado rutas de acceso de E/S más largas, que pueden reducir el rendimiento de E/S en cargas de trabajo y patrones específicos. Microsoft no recomienda deshabilitar Windows Defender, ya que es una importante capa de protección para tus sistemas. 
+>[!Note]
+> Algunos sistemas pueden presentar un rendimiento de almacenamiento reducido al ejecutar una nueva instalación de Windows Server 2016 frente a Windows Server 2012 R2. Durante el desarrollo de Windows Server 2016 se realizaron una serie de cambios para mejorar la seguridad y confiabilidad de la plataforma. Algunos de esos cambios, como la habilitación de Windows Defender de manera predeterminada, dan como resultado rutas de acceso de E/S más largas, que pueden reducir el rendimiento de E/S en cargas de trabajo y patrones específicos. Microsoft no recomienda deshabilitar Windows Defender, ya que es una importante capa de protección para tus sistemas.
 
 Aumente la cantidad de RAM para cumplir con sus necesidades de memoria.
 Cuando el equipo se queda sin memoria y necesita más de forma inmediata, Windows usa el espacio en disco duro para complementar la RAM del sistema a través de un procedimiento denominado paginación. Demasiada paginación degrada el rendimiento general del sistema.

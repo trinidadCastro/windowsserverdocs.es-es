@@ -1,19 +1,17 @@
 ---
 title: Optimización del rendimiento para Espacios de almacenamiento directo
 description: Espacios de almacenamiento directo optimiza automáticamente su rendimiento en función de la configuración de caché del hardware que usa, como se describe en este tema.
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
 ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: 42d05529aed6f1c5f9c5247a143e256fd52d056a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9430e9e71d9e39533d5bdacd72af4593fe34c59a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471200"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895921"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>Optimización del rendimiento para Espacios de almacenamiento directo
 

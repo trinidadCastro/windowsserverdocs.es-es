@@ -1,26 +1,24 @@
 ---
 title: tpmtool
 description: Artículo de referencia de tpmtool, que obtiene información sobre el Módulo de plataforma segura.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 author: ashleytqy
 ms.author: ashleytqy
 manager: ronaldai
 ms.date: 05/07/2019
-ms.openlocfilehash: 843361a9b3844ecb29e2f9ac723d22e3fc14730f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f34e577a87acd79f343f06bb81486d50339cdb54
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955027"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897137"
 ---
 # <a name="tpmtool"></a>tpmtool
 
 Esta utilidad se puede usar para obtener información sobre el [módulo de plataforma segura (TPM)](/windows/security/information-protection/tpm/trusted-platform-module-overview).
 
 >[!IMPORTANT]
->Parte de la información hace referencia a la versión preliminar del producto, el cual puede sufrir importantes modificaciones antes de que se publique la versión comercial. Microsoft no ofrece ninguna garantía, expresa o implícita, con respecto a la información aquí proporcionada.
+>Parte de la información hace referencia a la versión preliminar del producto, el cual puede sufrir importantes modificaciones antes de que se publique la versión comercial. Microsoft no otorga ninguna garantía, explícita o implícita, con respecto a la información proporcionada aquí.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#tpmtool_examples).
 

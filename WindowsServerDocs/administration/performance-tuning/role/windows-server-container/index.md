@@ -1,23 +1,21 @@
 ---
 title: Optimización del rendimiento de contenedores de Windows Server
 description: Recomendaciones para la optimización del rendimiento de los contenedores en Windows Server 16
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: a4508e28e54562748422b198f703e23326d15720
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 53201ee17829ec82eb8d661b5f76689e00d22df8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851638"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895984"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Optimización del rendimiento de contenedores de Windows Server
 
 ## <a name="introduction"></a>Introducción
-Windows Server 2016 es la primera versión de Windows para incluir la compatibilidad con la tecnología de contenedores integrada en el sistema operativo. En Server 2016 hay dos tipos de contenedores disponibles: Contenedores de Windows Server y contenedores de Hyper-V. Cada tipo de contenedor admite el SKU de Server Core o de Nano Server de Windows Server 2016. 
+Windows Server 2016 es la primera versión de Windows para incluir la compatibilidad con la tecnología de contenedores integrada en el sistema operativo. En Server 2016 hay dos tipos de contenedores disponibles: Contenedores de Windows Server y contenedores de Hyper-V. Cada tipo de contenedor admite el SKU de Server Core o de Nano Server de Windows Server 2016.
 
 Estas configuraciones tienen distintas implicaciones de rendimiento que se detallarán a continuación para que comprenda cuál es la adecuada para sus escenarios. Además, detallaremos las configuraciones que afectan el rendimiento y describiremos las ventajas y desventajas de cada una de esas opciones.
 
@@ -33,7 +31,7 @@ El aislamiento adicional que proporcionan los contenedores de Hyper-V se logra e
 
 ### <a name="nano-server-and-server-core"></a>Nano Server y Server Core
 
-Los contenedores de Windows Server y los de Hyper-V ofrecen compatibilidad con Server Core y con una opción de instalación nueva disponible en Windows Server 2016: [Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server). 
+Los contenedores de Windows Server y los de Hyper-V ofrecen compatibilidad con Server Core y con una opción de instalación nueva disponible en Windows Server 2016: [Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server).
 
 Nano Server es un sistema operativo de servidor administrado de forma remota y optimizado para centros de datos y nubes privadas. Es similar a Windows Server en modo Server Core, pero mucho más pequeño; no tiene ninguna capacidad de inicio de sesión local y solo es compatible con agentes, herramientas y aplicaciones de 64 bits. Ocupa mucho menos espacio en disco y se inicia más rápido.
 
@@ -71,7 +69,7 @@ Los contenedores de Windows Server y de Hyper-V ofrecen una variedad de modos d
 
 Cada contenedor recibirá una dirección IP de un prefijo IP interno y privado (por ejemplo, 172.16.0.0/12). Se admite la asignación o el reenvío de puertos desde el host del contenedor a los puntos de conexión del contenedor. De manera predeterminada, Docker crea una red NAT cuando el dockerd se ejecuta por primera vez.
 
-De estos tres modos, la configuración de NAT es la ruta de acceso de E/S de red más costosa, pero tiene la menor cantidad de configuración necesaria. 
+De estos tres modos, la configuración de NAT es la ruta de acceso de E/S de red más costosa, pero tiene la menor cantidad de configuración necesaria.
 
 Los contenedores de Windows Server usan una vNIC de host para conectarse al conmutador virtual. Los contenedores de Hyper-V usan una NIC de máquina virtual sintética (no expuesta a la máquina virtual de utilidad) para conectarse al conmutador virtual. Cuando los contenedores se comunican con la red externa, los paquetes se enrutan a través de WinNAT con las traducciones de direcciones aplicadas, lo que puede implicar una sobrecarga.
 

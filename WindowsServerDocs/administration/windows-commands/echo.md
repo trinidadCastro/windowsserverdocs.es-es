@@ -1,20 +1,18 @@
 ---
 title: echo
 description: Artículo de referencia para el comando echo, que muestra mensajes o activa o desactiva la característica de repetición de comandos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fb9fcd0f-5e73-4504-aa95-78204e1a79d3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc463efef38e07c1ce8b9ebee1ddd7bdfd7d3066
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ff1b196a26b43eb51d5da613e0ac596d26c65d05
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930523"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890729"
 ---
 # <a name="echo"></a>echo
 
@@ -35,7 +33,7 @@ echo [on | off]
 | `<message>` | Especifica el texto que se va a mostrar en la pantalla. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El `echo <message>` comando es especialmente útil cuando se desactiva el **eco** . Para mostrar un mensaje de varias líneas sin mostrar ningún comando, puede incluir varios `echo <message>` comandos después del comando **echo off** en el programa por lotes.
 

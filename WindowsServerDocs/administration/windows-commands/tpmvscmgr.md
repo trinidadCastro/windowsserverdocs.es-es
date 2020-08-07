@@ -1,20 +1,18 @@
 ---
 title: tpmvscmgr
 description: Artículo de referencia de tpmvscmgr, que es una herramienta de línea de comandos que permite a los usuarios con credenciales administrativas crear y eliminar tarjetas inteligentes virtuales de TPM en un equipo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8b2c8ff4-5c5d-446d-99e7-4daa1b36a163
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8741c947220ce2a3f6852c7374bf0817323bb632
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d124fb0bee576b2058a7ecae02afaf9521baab30
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935590"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897130"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
@@ -35,7 +33,7 @@ El comando CREATE configura nuevas tarjetas inteligentes virtuales en el sistema
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/Name|Obligatorio. Indica el nombre de la nueva tarjeta inteligente virtual.|
+|/Name|Necesario. Indica el nombre de la nueva tarjeta inteligente virtual.|
 |/AdminKey|Indica la clave de administrador deseada que se puede usar para restablecer el PIN de la tarjeta si el usuario olvida el PIN.</br>**Valor predeterminado** Especifica el valor predeterminado de 010203040506070801020304050607080102030405060708.</br>**Preguntar** Solicita al usuario que escriba un valor para la clave de administrador.</br>**Aleatoriedad** Da como resultado una configuración aleatoria para la clave de administrador de una tarjeta que no se devuelve al usuario. Esto crea una tarjeta que no se puede administrar mediante las herramientas de administración de tarjetas inteligentes. Cuando se genera con RANDOM, la clave de administrador debe escribirse como caracteres hexadecimales 48.|
 |/PIN|Indica el valor del PIN del usuario deseado.</br>**Valor predeterminado** Especifica el PIN predeterminado de 12345678.</br>**Preguntar** Solicita al usuario que escriba un PIN en la línea de comandos. El PIN debe tener un mínimo de ocho caracteres y puede contener números, caracteres y caracteres especiales.|
 |/PUK|Indica el valor de clave de desbloqueo de PIN deseado (PUK). El valor PUK debe tener un mínimo de ocho caracteres y puede contener números, caracteres y caracteres especiales. Si se omite el parámetro, la tarjeta se crea sin un PUK.</br>**Valor predeterminado** Especifica el PUK predeterminado de 12345678.</br>**Preguntar** Solicita al usuario que escriba una PUK en la línea de comandos.|
@@ -55,7 +53,7 @@ El comando Destroy elimina de forma segura una tarjeta inteligente virtual del e
 |/instance|Especifica el identificador de instancia de la tarjeta inteligente virtual que se va a quitar. El instanceID se generó como resultado Tpmvscmgr.exe cuando se creó la tarjeta. El parámetro/Instance es un campo obligatorio para el comando Destroy.|
 |/?|Muestra ayuda para este comando.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 La pertenencia al grupo **administradores** (o equivalente) en el equipo de destino es el requisito mínimo para ejecutar todos los parámetros de este comando.
 

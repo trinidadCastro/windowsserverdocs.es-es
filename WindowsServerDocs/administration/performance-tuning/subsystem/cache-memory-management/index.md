@@ -1,18 +1,16 @@
 ---
 title: Optimización del rendimiento para la memoria caché y los subsistemas de administración de memoria
 description: Optimización del rendimiento para la memoria caché y los subsistemas de administración de memoria
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d9b43b418f2f2ddee0e5b064c4a4e2b5d19a4520
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 404bc76e0bc3b08fc87b49b8263427cd4496bd43
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851678"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895996"
 ---
 # <a name="performance-tuning-cache-and-memory-manager"></a>Optimización del rendimiento de la memoria caché y el Administrador de memoria
 

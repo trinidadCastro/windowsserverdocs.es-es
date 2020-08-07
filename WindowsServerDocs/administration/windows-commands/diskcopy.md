@@ -1,20 +1,18 @@
 ---
 title: diskcopy
 description: Artículo de referencia del comando diskcopy, que copia el contenido del disquete en la unidad de origen en un disquete formateado o sin formatear en la unidad de destino.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5fd21efa-52cc-4e70-a7fe-35125a435106
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 7b29e81dc1befff8cd90b460b1117207146fa191
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b385d7fb371b0e33bcf16b240b051ce038a525a7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929348"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890944"
 ---
 # <a name="diskcopy"></a>diskcopy
 
@@ -34,7 +32,7 @@ diskcopy [<drive1>: [<drive2>:]] [/v]
 | /v | Comprueba que la información se ha copiado correctamente. Esta opción ralentiza el proceso de copia. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - **Diskcopy** solo funciona con discos extraíbles, como disquetes, que deben ser del mismo tipo. No se puede usar **diskcopy** con un disco duro. Si especifica una unidad de disco duro para *unidad1* o *unidad2*, **diskcopy** mostrará el siguiente mensaje de error:
 

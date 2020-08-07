@@ -1,20 +1,18 @@
 ---
 title: edición
 description: Artículo de referencia para el comando Editar, que inicia el editor de MS-DOS, para que pueda crear y cambiar archivos de texto ASCII.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4e0ff2e8-3518-47c1-8c69-5e93f895fa0e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a28af13c5f627010dce1321027b8a246560829f1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 58d2819e9a96d30e1c4fc286679fbd807ad0caa1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930491"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890720"
 ---
 # <a name="edit"></a>edición
 
@@ -38,7 +36,7 @@ edit [/b] [/h] [/r] [/s] [/<nnn>] [[<drive>:][<path>]<filename> [<filename2> [..
 | `<nnn>` | Carga los archivos binarios, ajustando las líneas a *nnn* caracteres de ancho. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Para obtener ayuda adicional, abra el editor de MS-DOS y presione la tecla F1.
 

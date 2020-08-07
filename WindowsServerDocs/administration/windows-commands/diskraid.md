@@ -1,20 +1,18 @@
 ---
 title: Diskraid
 description: Artículo de referencia de la herramienta de línea de comandos Diskraid, que permite configurar y administrar matrices redundantes de subsistemas de almacenamiento de discos independientes (o económicos) (RAID).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0745c708878fa9da6571666b5702b4408976164
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d13b8f6a8ffb4f78312a804dd277839021dbd9e1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924762"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890820"
 ---
 # <a name="diskraid"></a>Diskraid
 
@@ -319,7 +317,7 @@ Borra la memoria caché del controlador seleccionado actualmente.
 flushcache controller
 ```
 
-### <a name="help"></a>ayuda
+### <a name="help"></a>help
 
 Muestra una lista de todos los comandos de Diskraid.
 

@@ -1,20 +1,18 @@
 ---
 title: bitsadmin cache y setlimit
 description: Artículo de referencia de la memoria caché de bitsadmin y el comando setlimit, que establece el límite de tamaño de caché.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 46578835-d5ce-423b-be4d-62ddb9e1908d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de218990d9176336e779b551bfacc0897df5d114
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 41a1331a19f66e7d84dc3eb57b04d42596a40628
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923211"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894710"
 ---
 # <a name="bitsadmin-cache-and-setlimit"></a>bitsadmin cache y setlimit
 

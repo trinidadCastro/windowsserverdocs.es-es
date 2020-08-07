@@ -1,20 +1,18 @@
 ---
 title: dnscmd
 description: Artículo de referencia para el comando DNSCmd, que es una interfaz de línea de comandos para administrar servidores DNS.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e7f31cb5-a426-4e25-b714-88712b8defd5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c8d865643c12377a3f4b14250f9d3dbead1e2ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bc034b86cc095b8bd23a8c0fd71f9da515474068
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958247"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890781"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -337,7 +335,7 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 | /stub | Muestra todas las zonas de rutas internas. |
 | /cache | Muestra solo las zonas que se cargan en la memoria caché. |
 | /auto-created] | Muestra las zonas que se crearon automáticamente durante la instalación del servidor DNS. |
-| /zonas | Enumera las zonas de búsqueda directa. |
+| /forward | Enumera las zonas de búsqueda directa. |
 | /zonas | Muestra las zonas de búsqueda inversa. |
 | /ds | Enumera las zonas integradas de Active Directory. |
 | /file | Muestra las zonas respaldadas por archivos. |

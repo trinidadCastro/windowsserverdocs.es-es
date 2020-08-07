@@ -1,20 +1,18 @@
 ---
 title: tracert
 description: Artículo de referencia de tracert, que determina la ruta de acceso tomada a un destino, mediante el envío de solicitudes de eco del Protocolo de mensajes de control de Internet (ICMP) o mensajes ICMPv6 al destino con valores de campo de período de vida (TTL) que aumentan incrementalmente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9032a032-2e5e-49d4-9e86-f821600e4ba6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: adc73fdd646b3a9f7202f286912b5295f0c4e140
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f73c9df4a72b0c28976e25bc2970da372275ea8b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933729"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897102"
 ---
 # <a name="tracert"></a>tracert
 
@@ -44,7 +42,7 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 |\<TargetName>|Especifica el destino, identificado por la dirección IP o el nombre de host.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Esta herramienta de diagnóstico determina la ruta de acceso tomada a un destino mediante el envío de mensajes de solicitud de eco ICMP con valores de período de vida (TTL) variables al destino. Cada enrutador a lo largo de la ruta de acceso es necesario para reducir el TTL de un paquete IP por al menos 1 antes de reenviarlo. De hecho, el TTL es un contador de vínculos máximo. Cuando el TTL de un paquete llega a 0, se espera que el enrutador devuelva un mensaje ICMP Time exceeded al equipo de origen. tracert determina la ruta de acceso enviando el primer mensaje de solicitud de eco con un TTL de 1 e incrementando el TTL en 1 en cada transmisión posterior hasta que el destino responde o hasta que se alcanza el número máximo de saltos. De forma predeterminada, el número máximo de saltos es 30 y se puede especificar mediante el parámetro **/h** . La ruta de acceso se determina examinando los mensajes de tiempo de ICMP superados que devuelven los enrutadores intermedios y el mensaje de respuesta de eco devuelto por el destino. Sin embargo, algunos enrutadores no devuelven los mensajes de tiempo excedidos para los paquetes con valores de TTL caducados y son invisibles para el comando tracert. En este caso, se muestra una fila de asteriscos (*) para ese salto.
 - Para realizar un seguimiento de una ruta de acceso y proporcionar la latencia de red y la pérdida de paquetes para cada enrutador y vínculo en la ruta de acceso, use el comando [**pathping**](pathping.md) .

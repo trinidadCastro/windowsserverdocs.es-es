@@ -1,20 +1,18 @@
 ---
 title: Optimización del rendimiento de servidores de archivos
 description: Optimización del rendimiento de servidores de archivos que ejecutan Windows Server
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 1236b961f77fe46f19b70a2c48d32f05585bd29c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 951d59a1a0e1d58a064eb71bd073259c15fd46d4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851848"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896176"
 ---
 # <a name="performance-tuning-for-file-servers"></a>Optimización del rendimiento de servidores de archivos
 
@@ -95,24 +93,24 @@ La siguiente configuración del Registro REG\_DWORD puede afectar al rendimiento
 
     El valor predeterminado es 10 segundos. Tiempo de espera de caché de directorio.
 
-    > [!NOTE]  
+    > [!NOTE]
     > Este parámetro controla el almacenamiento en caché de los metadatos del directorio en ausencia de concesiones de directorio.
-     
-     > [!NOTE]  
+
+     > [!NOTE]
      > Un problema conocido de Windows 10, versión 1803, afecta a la capacidad de Windows 10 de almacenar en caché directorios grandes. Después de actualizar un equipo a la versión 1803 de Windows 10, tienes acceso a un recurso compartido de red que contiene miles de archivos y carpetas, y abres un documento que se encuentra en ese recurso compartido. Durante ambas operaciones, experimentas retrasos importantes.
-     >  
+     >
      > Para resolver este problema, instala Windows 10, versión 1809 o posterior.
-     >  
+     >
      > Para solucionar este problema, establece  **DirectoryCacheLifetime** en **0**.
-     >  
-     > Este problema afecta a las siguientes ediciones de Windows 10:  
+     >
+     > Este problema afecta a las siguientes ediciones de Windows 10:
      > - Windows 10 Enterprise, versión 1803
      > - Windows 10 Pro for Workstations, versión 1803
      > - Windows 10 Pro Education, versión 1803
      > - Windows 10 Professional, versión 1803
      > - Windows 10 Education, versión 1803
      > - Windows 10 Home, versión 1803
-   
+
 -   **DirectoryCacheEntrySizeMax**
 
     ```
@@ -171,8 +169,8 @@ La siguiente configuración del Registro REG\_DWORD puede afectar al rendimiento
 
     Se aplica a Windows 10, Windows 8.1, Windows 8, Windows 7, Windows Vista, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
-    El valor predeterminado es 0, lo que deshabilita la firma SMB. Cambiar este valor a 1 habilita la firma SMB para toda la comunicación de SMB, lo que impide la comunicación de SMB con equipos en los que la firma SMB está deshabilitada. La firma SMB puede aumentar el costo de CPU y los recorridos de ida y vuelta de la red, pero ayuda a bloquear ataques de tipo "Man in the middle". Si no se requiere la firma SMB, asegúrese de que este valor de Registro sea 0 en todos los clientes y servidores. 
-    
+    El valor predeterminado es 0, lo que deshabilita la firma SMB. Cambiar este valor a 1 habilita la firma SMB para toda la comunicación de SMB, lo que impide la comunicación de SMB con equipos en los que la firma SMB está deshabilitada. La firma SMB puede aumentar el costo de CPU y los recorridos de ida y vuelta de la red, pero ayuda a bloquear ataques de tipo "Man in the middle". Si no se requiere la firma SMB, asegúrese de que este valor de Registro sea 0 en todos los clientes y servidores.
+
     Para más información, consulte [los aspectos básicos de la firma SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
 
 -   **FileInfoCacheEntriesMax**
@@ -232,12 +230,12 @@ Los parámetros generales de optimización de equipos cliente pueden optimizar u
 | Parámetro                   | Value | Valor predeterminado |
 |-----------------------------|-------|---------|
 | DisableBandwidthThrottling  | 1     | 0       |
-| FileInfoCacheEntriesMax     | 32768 | 64      |
+| FileInfoCacheEntriesMax     | 32 768 | 64      |
 | DirectoryCacheEntriesMax    | 4096  | 16      |
-| FileNotFoundCacheEntriesMax | 32768 | 128     |
-| MaxCmds                     | 32768 | 15      |
+| FileNotFoundCacheEntriesMax | 32 768 | 128     |
+| MaxCmds                     | 32 768 | 15      |
 
- 
+
 
 A partir de Windows 8, puede configurar muchos de estos valores de SMB si usa los cmdlets **Set-SmbClientConfiguration** y **Set-SmbServerConfiguration** de Windows PowerShell. Los valores que solo son del Registro también se pueden configurar con Windows PowerShell.
 

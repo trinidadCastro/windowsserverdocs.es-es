@@ -1,20 +1,18 @@
 ---
 title: doskey
 description: Artículo de referencia para el comando Doskey y Doskey.exe, que recupera comandos de la línea de comandos previamente especificados, edita líneas de comandos y crea macros.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4874fd43-d5ea-45f3-ae24-388ae925ed76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a92c9e1d6ffe1f8d7ace5500179697b2a00df1b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f945c0b73509e0a936bf4de1cae9bb721b77e5c3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930551"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890765"
 ---
 # <a name="doskey"></a>doskey
 
@@ -43,7 +41,7 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 | `<macroname>`=[`<text>`] | Crea una macro que lleva a cabo los comandos especificados por el *texto*. *Nombremacro* especifica el nombre que desea asignar a la macro. *Texto* especifica los comandos que desea registrar. Si el *texto* se deja en blanco, *nombremacro* se borra de los comandos asignados. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Ciertos programas interactivos basados en caracteres, como depuradores de programas o programas de transferencia de archivos (FTP), utilizan automáticamente Doskey.exe. Para usar Doskey.exe, un programa debe ser un proceso de consola y usar una entrada almacenada en búfer. Las asignaciones de clave de programa invalidan las asignaciones de teclas de **doskey** . Por ejemplo, si el programa utiliza la tecla F7 para una función, no se puede obtener un historial de comandos de **doskey** en una ventana emergente.
 
