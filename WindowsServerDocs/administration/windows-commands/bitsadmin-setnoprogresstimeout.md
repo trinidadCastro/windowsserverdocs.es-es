@@ -1,20 +1,18 @@
 ---
 title: bitsadmin setnoprogresstimeout
 description: Artículo de referencia para el comando bitsadmin setnoprogresstimeout, que establece el período de tiempo, en segundos, que el servicio intenta transferir el archivo después de que se produzca un error transitorio.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7fac50d9-cc6b-46a4-a96f-fab751ee1756
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9bb7ac4cd03148c533aa27f62a1c9770465673a5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 521f841c3b60c95486fc6e92088a37ae2b7fde2f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927674"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893020"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
@@ -33,7 +31,7 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 | timeoutvalue | Período de tiempo durante el cual BITS espera para transferir un archivo después del primer error, en segundos. |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - El intervalo de tiempo de espera "no Progress" comienza cuando el trabajo encuentra su primer error transitorio.
 

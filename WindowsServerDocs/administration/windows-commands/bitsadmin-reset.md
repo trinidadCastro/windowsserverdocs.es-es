@@ -1,20 +1,18 @@
 ---
 title: bitsadmin reset
 description: Artículo de referencia del comando bitsadmin RESET, que cancela todos los trabajos de la cola de transferencia propiedad del usuario actual.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0e4f9d1d-072c-493f-8d7a-f6d713c3ef29
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc8faf10f991f06609d653c8cb7a1dc89de2fa8a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b28ad601a40a9646ad64268aaca0320ea5165efd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926398"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893340"
 ---
 # <a name="bitsadmin-reset"></a>bitsadmin reset
 

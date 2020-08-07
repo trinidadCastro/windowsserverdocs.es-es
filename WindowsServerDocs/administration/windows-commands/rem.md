@@ -1,20 +1,18 @@
 ---
 title: rem
 description: Artículo de referencia para el comando REM, que registra los comentarios en un script, un lote o un archivo de config.sys.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1a45b585-a83c-4ff6-badd-ff40f34cec23
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe0bfce3f9f72d0a32ef5b3bb540e5a297df24a1
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 6593e7700853af3658206b741817a86933fa66d1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409706"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883854"
 ---
 # <a name="rem"></a>rem
 

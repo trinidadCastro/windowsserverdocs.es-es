@@ -1,20 +1,18 @@
 ---
 title: replace
 description: Obtenga información acerca de cómo usar el comando Replace para reemplazar archivos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6143661e-d90f-4812-b265-6669b567dd1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4ac424154968b4f4c55664d0d20f524345b87986
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 34d1adfc6a92dce33a6a9bbac308d3338db3934e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722382"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883684"
 ---
 # <a name="replace"></a>replace
 
@@ -27,16 +25,16 @@ Reemplaza los archivos. Si se usa con la opción **/a** , **reemplazar** agrega 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/a] [/p] [/r] [/w] 
-replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] [/u] 
+replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/a] [/p] [/r] [/w]
+replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] [/u]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<> unidad1:] [\<Ruta1>] \<Nombre de archivo>|Especifica la ubicación y el nombre del archivo de código fuente o del conjunto de archivos. *Filename* es obligatorio y puede incluir caracteres comodín (**&#42;** y **?**).|
-|[\<Unidad2>:] [\<Ruta2>]|Especifica la ubicación del archivo de destino. No se puede especificar un nombre de archivo para los archivos que se reemplacen. Si no especifica una unidad o una ruta de acceso, **Replace** utiliza la unidad y el directorio actuales como destino.|
+|[\<Drive1>:][\<Path1>]\<FileName>|Especifica la ubicación y el nombre del archivo de código fuente o del conjunto de archivos. *Filename* es obligatorio y puede incluir caracteres comodín (**&#42;** y **?**).|
+|[\<Drive2>:][\<Path2>]|Especifica la ubicación del archivo de destino. No se puede especificar un nombre de archivo para los archivos que se reemplacen. Si no especifica una unidad o una ruta de acceso, **Replace** utiliza la unidad y el directorio actuales como destino.|
 |/a|Agrega nuevos archivos al directorio de destino en lugar de reemplazar los archivos existentes. No puede usar esta opción de línea de comandos con la opción de línea de comandos **/s** o **/u** .|
 |/p|Le pide confirmación antes de reemplazar un archivo de destino o de agregar un archivo de origen.|
 |/r|Reemplaza los archivos de solo lectura y los no protegidos. Si intenta reemplazar un archivo de solo lectura, pero no especifica **/r**, se genera un error y se detiene la operación de reemplazo.|
@@ -47,16 +45,16 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 
 ## <a name="remarks"></a>Observaciones
 
-- Cuando **Replace** agrega o reemplaza archivos, los nombres de archivo se muestran en la pantalla. Una vez finalizado el **reemplazo** , se muestra una línea de resumen en uno de los siguientes formatos:  
+- Cuando **Replace** agrega o reemplaza archivos, los nombres de archivo se muestran en la pantalla. Una vez finalizado el **reemplazo** , se muestra una línea de resumen en uno de los siguientes formatos:
   ```
   nnn files added
   nnn files replaced
   no file added
   no file replaced
-  ```  
+  ```
 - Si usa disquetes y necesita cambiar de disco durante la operación de **reemplazo** , puede especificar la opción de línea de comandos **/w** para que **Replace** espere a que cambie los discos.
 - No se puede usar **reemplazar** para actualizar archivos ocultos o archivos del sistema.
-- En la tabla siguiente se muestra cada código de salida y una breve descripción de su significado:  
+- En la tabla siguiente se muestra cada código de salida y una breve descripción de su significado:
   |Código de salida|Descripción|
   |---------|-----------|
   |0|El comando **Replace** ha reemplazado o agregado los archivos correctamente.|

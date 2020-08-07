@@ -1,20 +1,18 @@
 ---
 title: convert dynamic
 description: Artículo de referencia para el comando convertir dinámico, que convierte un disco básico en un disco dinámico.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7b8fa4b1-850f-4e48-b05f-871c883ea33c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c57986bf46dc7d22eeecfb6d7ad085f5e3f7e8c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6a0967cc53d0d5f01035be7edcefd8e9f70c1e59
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958547"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892583"
 ---
 # <a name="convert-dynamic"></a>convert dynamic
 

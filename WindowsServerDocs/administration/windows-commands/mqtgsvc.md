@@ -1,20 +1,18 @@
 ---
 title: mqtgsvc
 description: Artículo de referencia para el comando mqtgsvc, que supervisa una cola para los mensajes entrantes y realiza una acción, en forma de un archivo ejecutable o un componente COM, cuando las reglas de un desencadenador se evalúan como true.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a6f78ffa-ad38-475b-8ed5-f5404b1658ab
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4081a0e34911ef3b80d988fdb333c8b88e6fb982
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: dab28c48055609cecddfc8e3e91b933cc0aaec1e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956907"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886237"
 ---
 # <a name="mqtgsvc"></a>mqtgsvc
 

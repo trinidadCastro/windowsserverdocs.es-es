@@ -1,20 +1,18 @@
 ---
 title: reg restore
 description: Artículo de referencia para el comando reg restore, que escribe las subclaves y entradas guardadas en el registro.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a51f1c0c-969b-4b76-930a-c8bb14dea26e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1483fc6998d7b286a81dc3cb1df021afb7e66650
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9642c0973968b3092f6f988017e8c4ad1ef16b09
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931046"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884024"
 ---
 # <a name="reg-restore"></a>reg restore
 
@@ -34,7 +32,7 @@ reg restore <keyname> <filename>
 | `<filename>` | Especifica el nombre y la ruta de acceso del archivo con el contenido que se va a escribir en el registro. Este archivo debe crearse de antemano mediante el comando **reg Save** y debe tener la extensión. HIV. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Antes de editar las entradas del registro, debe guardar la subclave primaria con el comando **reg Save** . Si se produce un error en la edición, puede restaurar la subclave original mediante la operación **reg restore** .
 

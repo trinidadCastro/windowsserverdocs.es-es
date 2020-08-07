@@ -1,20 +1,18 @@
 ---
 title: relog
 description: Artículo de referencia para el comando relog, que extrae información sobre los contadores de rendimiento de los archivos de registro de contadores de rendimiento.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7480f6c0-9953-4d70-9b1c-b27e09d8db13
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: a404b896179aa43fff28556e995d369780ae544a
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: c3c60503cf725d05afd4b21ceef5f36c64c2b155
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409716"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883867"
 ---
 # <a name="relog"></a>relog
 

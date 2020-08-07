@@ -1,20 +1,18 @@
 ---
 title: cambiar
 description: Artículo de referencia para el comando cambiar, que cambia Escritorio remoto configuración del servidor host de sesión para los inicios de sesión, las asignaciones de puertos COM y el modo de instalación.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 90012116-0fb3-4f34-a819-cf4d4b4f8981
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c72829ac264e5d5553bcfe6e3442ad73e793c259
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 733ef9fba0a546cd844121899840f592bd2b3118
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955277"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892835"
 ---
 # <a name="change"></a>cambiar
 

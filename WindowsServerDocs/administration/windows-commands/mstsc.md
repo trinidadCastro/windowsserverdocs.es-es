@@ -1,20 +1,18 @@
 ---
 title: mstsc
 description: Artículo de referencia del comando mstsc, que crea conexiones a Escritorio remoto servidores host de sesión o a otros equipos remotos, edita un archivo de configuración existente de Conexión a Escritorio remoto (. RDP) y migra los archivos de conexión heredados que se crearon con el administrador de conexiones de cliente a los nuevos archivos de conexión. RDP.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cec9ef281c886964163c233022466d8478d65c79
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: abf4824c50b931944c96307f6c9df42e6924b638
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934844"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886151"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -46,7 +44,7 @@ mstsc.exe /migrate
 | /migrate | Migra los archivos de conexión heredados que se crearon con el administrador de conexiones de cliente a los nuevos archivos de conexión. RDP. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Default. RDP se almacena para cada usuario como un archivo oculto en la carpeta de **documentos** del usuario.
 

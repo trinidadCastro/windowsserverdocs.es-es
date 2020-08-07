@@ -1,20 +1,18 @@
 ---
 title: chcp
 description: Artículo de referencia del comando chcp, que cambia la página de códigos de la consola activa.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: dc7b1c71-7b80-443d-9cf1-9bcf305aa1fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a07d439a4738053ea9a76b4ca68fadec2a215ff0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 21dcdc1e663656439bece576287877653d0dcd8c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930024"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892816"
 ---
 # <a name="chcp"></a>chcp
 
@@ -50,7 +48,7 @@ En la tabla siguiente se enumeran todas las páginas de códigos admitidas y su 
 | 869 | Griego moderno |
 | 936 | Chino |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Solo la página de códigos del fabricante de equipos originales (OEM) que se instala con Windows aparece correctamente en una ventana del símbolo del sistema que usa fuentes de tramas. Otras páginas de códigos aparecen correctamente en el modo de pantalla completa o en las ventanas del símbolo del sistema que usan fuentes TrueType.
 

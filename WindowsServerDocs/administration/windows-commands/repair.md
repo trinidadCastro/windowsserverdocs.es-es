@@ -1,20 +1,18 @@
 ---
 title: reparación
 description: Artículo de referencia de * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9f84f661-f3cd-48c8-bf08-87819cf626fe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e9afb6c418558078496871b71bfaff706753b0a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d646318b41881783e12b07da1c72d2a9cc31f853
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936767"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883771"
 ---
 # <a name="repair"></a>reparación
 
@@ -38,7 +36,7 @@ repair disk=<n> [align=<n>] [noerr]
 | alinea\=<n> |          Alinea todas las extensiones de volumen o partición con el límite de alineación más cercano. *n* es el número de kilobytes \( KB \) desde el principio del disco hasta el límite de alineación más cercano.           |
 |   noerr    | solo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El disco dinámico especificado debe tener un espacio libre mayor o igual que el tamaño total de la región de disco con errores en el \- volumen RAID 5.
 

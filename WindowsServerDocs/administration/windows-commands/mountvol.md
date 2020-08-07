@@ -1,20 +1,18 @@
 ---
 title: mountvol
 description: Artículo de referencia del comando mountvol, que crea, elimina o enumera un punto de montaje de volumen.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fea8ad4d-f04a-4aaa-a3e5-75931e867b39
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1617149fac677069d97b5b7c1353e85b4e1fea14
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1289874f76bd9c3d5818a582a8fcefbfc8c4c130
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936327"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886368"
 ---
 # <a name="mountvol"></a>mountvol
 
@@ -47,7 +45,7 @@ mountvol <drive>: /s
 | /s | Monta la partición del sistema EFI en la unidad especificada. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Si desmonta el volumen mientras usa el parámetro **/p** , la lista de volúmenes mostrará el volumen como no montado hasta que se cree un punto de montaje de volumen.
 

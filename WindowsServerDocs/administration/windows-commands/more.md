@@ -1,20 +1,18 @@
 ---
 title: más
 description: Artículo de referencia para el comando More, que muestra una pantalla de salida cada vez.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: ec7f8c29f71389a6b583fda805c32ddf872321b4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 198f3f3f3b80282d876e4fdda9e7cde649a8c7da
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956957"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886377"
 ---
 # <a name="more"></a>más
 

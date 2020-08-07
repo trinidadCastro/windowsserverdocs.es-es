@@ -1,19 +1,17 @@
 ---
 title: Vssadmin
 description: Información general de los comandos vssadmin.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f3618841eb2f511323873d2ea962838f9ab777d0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 529a135164495ad5d0cb2db09373139ac7663e57
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954697"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892274"
 ---
 # <a name="vssadmin"></a>Vssadmin
 
@@ -21,7 +19,7 @@ ms.locfileid: "86954697"
 
 Muestra las copias de seguridad de instantáneas de volumen actuales y todos los escritores y proveedores de instantáneas instalados. Seleccione un nombre de comando en la tabla siguiente ver la sintaxis del comando.
 
-|Comando|Descripción|Disponibilidad
+|Get-Help|Descripción|Disponibilidad
 |---|---|---
 |[Vssadmin Add shadowstorage](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788051(v%3dws.11))|Agrega una asociación de almacenamiento de instantáneas de volumen.| Solo servidor
 |[Vssadmin crear sombra](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788055(v%3dws.11))|Crea una nueva instantánea de volumen.| Solo servidor

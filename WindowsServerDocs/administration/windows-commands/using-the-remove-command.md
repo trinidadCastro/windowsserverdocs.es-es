@@ -1,20 +1,18 @@
 ---
 title: Usar el comando Remove
 description: Artículo de referencia para Remove, que elimina la información relacionada con el controlador.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e3f1644d-6028-4c47-a9fd-227bcdcc6123
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc839eee2a5c1bcc21902b214632152b50175294
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: bf3dfa5481c000a6b81a1c4da07493099bbe81a8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409866"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892386"
 ---
 # <a name="using-the-remove-command"></a>Usar el comando Remove
 

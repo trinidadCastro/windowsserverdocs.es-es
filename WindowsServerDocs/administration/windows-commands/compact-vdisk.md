@@ -1,20 +1,18 @@
 ---
 title: compact vdisk
 description: Artículo de referencia para el comando Compact vDisk, que reduce el tamaño físico de un archivo de disco duro virtual (VHD) de expansión dinámica.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 40ca0820-67de-4160-b62a-e9bf63fe2790
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7379975981c2df386b7180c814799f7129eee7da
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0e8f29cf7188d2630f15bee9bde2910c64f325b5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929058"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892629"
 ---
 # <a name="compact-vdisk"></a>compact vdisk
 
@@ -28,7 +26,7 @@ Reduce el tamaño físico de un archivo de disco duro virtual (VHD) de expansió
 compact vdisk
 ```
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - Se debe seleccionar un VHD de expansión dinámica para que esta operación se realice correctamente. Use el [comando SELECT vDisk](select-vdisk.md) para seleccionar un disco duro virtual y desplazar el foco a él.
 

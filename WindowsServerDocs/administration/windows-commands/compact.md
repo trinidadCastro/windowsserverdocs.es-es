@@ -1,20 +1,18 @@
 ---
 title: compacto
 description: Artículo de referencia para el comando Compact, que muestra o modifica la compresión de archivos o directorios en particiones NTFS.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 429b3752-df0a-43a4-a210-df2f3ad03c3b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c17f7c934ecd4b6988b3ab606059a2acd31b852b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a211d6839229ac22af10dd4c8fcf69b1d222a4fb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929008"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892617"
 ---
 # <a name="compact"></a>compacto
 
@@ -40,7 +38,7 @@ compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
 | `<filename>` | Especifica el archivo o directorio. Puede usar varios nombres de archivo y el **&#42;** y **?** caracteres comodín. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Este comando es la versión de línea de comandos de la característica de compresión del sistema de archivos NTFS. El estado de compresión de un directorio indica si los archivos se comprimen automáticamente cuando se agregan al directorio. Establecer el estado de compresión de un directorio no cambia necesariamente el estado de compresión de los archivos que ya están en el directorio.
 

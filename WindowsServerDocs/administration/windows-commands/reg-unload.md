@@ -1,20 +1,18 @@
 ---
 title: reg unload
 description: Artículo de referencia para el comando reg Unload, que quita una sección del registro cargada mediante la operación reg Load.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1d07791d-ca27-454e-9797-27d7e84c5048
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6728f898bd8c2c65aff922943ccef58d4d9fd738
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7d2ea6f5981ea613ae5e0d9d4dcae155464b505a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925983"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883980"
 ---
 # <a name="reg-unload"></a>reg unload
 
@@ -33,7 +31,7 @@ reg unload <keyname>
 | `<keyname>` | Especifica la ruta de acceso completa de la subclave. Para especificar un equipo remoto, incluya el nombre del equipo (con el formato `\\<computername>\` ) como parte del nombre de *clave*. Si se omite `\\<computername>\` , la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: **HKLM**, **HKCU**, **HKCR**, **HKU**y **HKCC**. Si se especifica un equipo remoto, las claves raíz válidas son: **HKLM** y **HKU**. Si el nombre de la clave del registro contiene un espacio, incluya el nombre de la clave entre comillas. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Los valores devueltos para la operación de **descarga de reg** son:
 

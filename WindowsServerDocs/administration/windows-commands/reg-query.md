@@ -1,20 +1,18 @@
 ---
 title: reg query
 description: Artículo de referencia para el comando reg Query, que devuelve una lista del siguiente nivel de subclaves y entradas que se encuentran en una subclave especificada en el registro.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0e6a0d7c-ed9b-4318-833d-33f265a81f39
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 18b7c5223227e0cf19de22f8bc9886ae798f027f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c8d841b537137088d95ce2be375ed83e718fca20
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931065"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884052"
 ---
 # <a name="reg-query"></a>reg query
 
@@ -44,7 +42,7 @@ reg query <keyname> [{/v <Valuename> | /ve}] [/s] [/se <separator>] [/f <data>] 
 | /z | Especifica que se incluya el equivalente numérico para el tipo de registro en los resultados de la búsqueda. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Los valores devueltos para la operación **reg Query** son:
 
