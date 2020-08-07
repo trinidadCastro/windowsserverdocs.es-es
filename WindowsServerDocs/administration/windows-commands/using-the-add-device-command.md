@@ -1,20 +1,18 @@
 ---
 title: Agregar dispositivo
 description: Artículo de referencia para add-device, que preconfigura un equipo en servicios de dominio de Active Directory. Los equipos preconfigurados también se denominan equipos conocidos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1e599cc4-464a-421b-b6bb-c101af154131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 486cd3a567fe8742d680a77378d8f5a933b876ae
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d23e5a2bc69b782e635fa9a47158274796715edf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954808"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897014"
 ---
 # <a name="add-device"></a>Agregar dispositivo
 

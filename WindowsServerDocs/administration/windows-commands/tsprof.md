@@ -1,20 +1,18 @@
 ---
 title: tsprof
 description: Artículo de referencia para tsprof, que copia la información de configuración de usuario de Servicios de Escritorio remoto de un usuario a otro.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 27047868-b706-4208-b7e0-1437a2325dd3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3abaf2413348edd723962ad99a19be5aa435a495
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 43a9c986a58a28b8de8110789be99f157be9fb66
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954877"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896663"
 ---
 # <a name="tsprof"></a>tsprof
 

@@ -1,20 +1,18 @@
 ---
 title: winnt32
 description: Artículo de referencia para Winnt32, que realiza una instalación o actualización de un producto en Windows Server 2003.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5a0a6fb3-ba4e-4ace-8984-7f6d3875560e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e1b5844ee9cbdb11629e488e6506ef85b23b537b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d8055c25829b1084a9326d31f9ccad125b0dc75e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958947"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896838"
 ---
 # <a name="winnt32"></a>winnt32
 

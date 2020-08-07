@@ -1,20 +1,18 @@
 ---
 title: Scwcmd ANALYZE
 description: Artículo de referencia de * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0259271b-be5b-48d7-a51d-8b9b6786efb4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc8616112cc94ae88995e9fd9fe635622b767f17
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 635da8cd31140ea0b1d0cd786e7b16e2ce692bcd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932783"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883220"
 ---
 # <a name="scwcmd-analyze"></a>Scwcmd: analizar
 
@@ -45,7 +43,7 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 |/e|Registra un evento en el registro de eventos de la aplicación si se encuentra un error de coincidencia.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Scwcmd.exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 

@@ -1,20 +1,18 @@
 ---
 title: ftp glob
 description: Artículo de referencia para el comando FTP Glob, que alterna permitir la expansión de caracteres comodín para los nombres de archivo locales.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 111494f9-0083-4f48-9d35-46366debafae
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b603a187f7be91daea8a7d7dfd317a24380b01b1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 75cecb1b61ccbe140c058359aaac669ea6c082d1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957817"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889393"
 ---
 # <a name="ftp-glob"></a>ftp glob
 

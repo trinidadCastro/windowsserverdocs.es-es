@@ -1,20 +1,18 @@
 ---
 title: robocopy
 description: Obtenga información acerca de cómo usar el comando Robocopy en Windows y Windows Server para copiar archivos
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d4c6e8e9-fcb3-4a4a-9d04-2d8c367b6354
 author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: 3ce409d0995449a4f5da98b69df6f436d75e04b7
-ms.sourcegitcommit: a538474d2c0a9520567f4e6ad0933f8660273098
+ms.openlocfilehash: fdf7eda5a17dccba0f43cca91cae122872dd5235
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84505797"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883491"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -160,7 +158,7 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 ### <a name="exit-return-codes"></a>Códigos de salida (Return)
 
-Value | Descripción
+Valor | Descripción
 -- | --
 0 | No se copió ningún archivo. No se encontró ningún error.  No hubo coincidencia de archivos. Los archivos ya existen en el directorio de destino; por lo tanto, se omitió la operación de copia.
 1 | Todos los archivos se han copiado correctamente.
@@ -174,9 +172,9 @@ Value | Descripción
 > [!NOTE]
 > Cualquier valor mayor que 8 indica que se produjo al menos un error durante la operación de copia.
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
--   La opción **/Mir** es equivalente a las opciones **/e** Plus **/Purge** con una pequeña diferencia en el comportamiento:  
+-   La opción **/Mir** es equivalente a las opciones **/e** Plus **/Purge** con una pequeña diferencia en el comportamiento:
     -   Con las opciones **/e** Plus **/Purge** , si el directorio de destino existe, no se sobrescribe la configuración de seguridad del directorio de destino.
     -   Con la opción **/Mir** , si existe el directorio de destino, se sobrescribe la configuración de seguridad del directorio de destino.
 

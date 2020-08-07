@@ -1,25 +1,23 @@
 ---
 title: Recursos adicionales de optimización del rendimiento del servidor
 description: Recursos adicionales de optimización del rendimiento del servidor
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c011d3c6e75fb1d5212d9b1ec3c6e6c69fac5d6
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 2b789fb3c5290c5f268c1e64f66fb25fd4856136
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001870"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896755"
 ---
 # <a name="additional-performance-tuning-resources"></a>Recursos adicionales para ajustar el rendimiento
 
 Use los vínculos de este tema para obtener más información sobre los conceptos descritos en esta guía de optimización.
 
 ## <a name="microsoft-windows-server-websites"></a>Sitios web de Microsoft Windows Server
--   [Catálogo de Windows Server](https://www.windowsservercatalog.com/)
+-   [Catálogo de Windows Server](https://www.windowsservercatalog.com/)
 
 -   [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default.aspx)
 
@@ -33,7 +31,7 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [Usar PowerCfg para evaluar la eficacia energética del sistema](https://technet.microsoft.com/library/cc748940.aspx)
 
--   [Herramienta de directiva de afinidad de interrupción](https://support.microsoft.com/kb/252867)
+-   [Herramienta de directivas de Affinity de interrupción](https://support.microsoft.com/kb/252867)
 
 ## <a name="networking-subsystem-tuning-resources"></a>Recursos de ajuste del subsistema de red
 
@@ -51,7 +49,7 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [Directrices para la optimización del rendimiento de los servicios de Microsoft para Network File System](https://technet.microsoft.com/library/bb463205.aspx)
 
--   [\[MS-FSSO\]: información general del sistema de servicios de acceso a archivos](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
+-   [\[MS-FSSO \] : información general del sistema de servicios de acceso a archivos](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
 
 -   [Deshabilitación de la herramienta de diagnóstico de autoajuste de TCP](https://support.microsoft.com/kb/967475)
 
@@ -63,7 +61,7 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [Novedades de Hyper-V en Windows Server 2016](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/what-s-new-in-hyper-v-on-windows)
 
--   [Guía de configuración de Memoria dinámica de Hyper-V](https://technet.microsoft.com/library/ff817651.aspx)
+-   [Guía de configuración de memoria dinámica de Hyper-V](https://technet.microsoft.com/library/ff817651.aspx)
 
 -   [Equilibrio de nodo NUMA](https://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
 
@@ -71,7 +69,7 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [Clases WMI de Hyper-V](https://msdn.microsoft.com/library/cc136986(VS.85).aspx)
 
--   [Acerca de los sistemas operativos Virtual Machines e invitados](https://technet.microsoft.com/library/cc794868(v=ws.10))
+-   [Acerca de las máquinas virtuales y los sistemas operativos invitados](https://technet.microsoft.com/library/cc794868(v=ws.10))
 
 -   [Optimización y solución de problemas de almacenamiento de Hyper-V](https://blogs.msdn.com/b/microsoft_press/archive/2013/07/24/new-book-optimizing-and-troubleshooting-hyper-v-storage.aspx)
 
@@ -79,7 +77,7 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 ## <a name="print-server-tuning-resources"></a>Recursos de optimización del servidor de impresión
 
--   [Planeación de capacidad y escalabilidad del servidor de impresión](https://technet.microsoft.com/library/dn554243.aspx)
+-   [Print Server Scalability and Capacity Planning](https://technet.microsoft.com/library/dn554243.aspx)
 
 ## <a name="server-workload-tuning-resources"></a>Recursos de optimización de la carga de trabajo del servidor
 
@@ -97,9 +95,9 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [Optimización del rendimiento para el procesamiento de transacciones en línea (OLTP)](https://msdn.microsoft.com/library/windows/hardware/dn567642(v=vs.85).aspx)
 
--   [Cómo: configurar SQL Server para que use NUMA de software](https://go.microsoft.com/fwlink/?LinkId=98292)
+-   [Cómo: Configurar SQL Server para que use Soft-NUMA](https://go.microsoft.com/fwlink/?LinkId=98292)
 
--   [Cómo: asignar puertos TCP/IP a nodos NUMA](https://go.microsoft.com/fwlink/?LinkId=98293)
+-   [Cómo asignar puertos TCP/IP a nodos NUMA](https://go.microsoft.com/fwlink/?LinkId=98293)
 
 -   [ALTER SERVER CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/library/ee210585.aspx)
 

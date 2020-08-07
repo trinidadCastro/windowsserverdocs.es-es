@@ -1,20 +1,18 @@
 ---
 title: Get-namespace
 description: Artículo de referencia de Get-namespace, que muestra información sobre un espacio de nombres personalizado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ea641bab-e97b-4909-918e-447730027dc1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a029d56b2aea0a05bb12121cde89a1a731f3e4c5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e998334b8297b06bf5eb23b9106acd3770504ffb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932190"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896936"
 ---
 # <a name="get-namespace"></a>Get-namespace
 
@@ -23,11 +21,11 @@ ms.locfileid: "85932190"
 Muestra información sobre un espacio de nombres personalizado.
 
 ## <a name="syntax"></a>Sintaxis
-Windows Server 2008 R2
+Windows Server 2008 R2
 ```
 wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/Show:Clients]
 ```
-Windows Server 2008 R2
+Windows Server 2008 R2
 ```
 wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/details:Clients]
 ```

@@ -1,22 +1,20 @@
 ---
-title: Consulta SC. exe
-description: Obtenga información acerca de cómo obtener información acerca de los servicios, los controladores, el tipo de servicios o el tipo de controladores mediante la utilidad SC. exe
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+title: Sc.exe consulta
+description: Obtenga información acerca de cómo obtener información acerca de los servicios, los controladores, el tipo de servicios o el tipo de controladores mediante la utilidad sc.exe
 ms.topic: article
 ms.assetid: ac365f89-4b20-4de6-a582-b204c5e7d0eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86aabbbc42c965b72f317a3bfaa99acc99c46f3b
-ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
+ms.openlocfilehash: 3d07d472d2c8a037899c654963e1d0e0b7cb1bb3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82850046"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883253"
 ---
-# <a name="scexe-query"></a>Consulta SC. exe
+# <a name="scexe-query"></a>Sc.exe consulta
 
 Obtiene y muestra información sobre el servicio, el controlador, el tipo de servicio o el tipo de controlador especificados.
 
@@ -30,14 +28,14 @@ sc.exe [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [ty
 
 |       Parámetro        |                                                                                                                          Descripción                                                                                                                          |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     \<NombreDeServidor>      |                       Especifica el nombre del servidor remoto en el que se encuentra el servicio. El nombre debe usar el formato de Convención de nomenclatura universal (UNC) (por \\ \\ejemplo, mi Server). Para ejecutar SC. exe localmente, omita este parámetro.                        |
+|     \<ServerName>      |                       Especifica el nombre del servidor remoto en el que se encuentra el servicio. El nombre debe usar el formato de Convención de nomenclatura universal (UNC) (por ejemplo, mi \\ \\ Server). Para ejecutar SC.exe localmente, omita este parámetro.                        |
 |     \<ServiceName>     |                                      Especifica el nombre de servicio devuelto por la operación **getkeyname** . Este parámetro de **consulta** no se utiliza junto con otros parámetros de **consulta** (excepto *ServerName*).                                      |
 |     tipo = {controlador      |                                                                                                                            service                                                                                                                            |
 |       tipo = {propietario       |                                                                                                                             Compartir                                                                                                                             |
 |     estado = {activo     |                                                                                                                           inactivo                                                                                                                            |
-| bufsize = \<BufferSize> |                     Especifica el tamaño (en bytes) del búfer de enumeración. El tamaño de búfer predeterminado es de 1.024 bytes. Debe aumentar el tamaño del búfer de enumeración cuando la presentación resultante de una consulta supera los 1.024 bytes.                      |
-|   RI = \<ResumeIndex>   | Especifica el número de índice en el que se va a iniciar o reanudar la enumeración. El valor predeterminado es **0** (cero). Utilice este parámetro junto con el parámetro **bufsize =** cuando una consulta devuelva más información de la que puede mostrar el búfer predeterminado. |
-|  Grupo = \<Nombredegrupo>   |                                                                             Especifica el grupo de servicio que se va a enumerar. De forma predeterminada, se enumeran todos los grupos (* * grupo = * *).                                                                              |
+| bufsize =\<BufferSize> |                     Especifica el tamaño (en bytes) del búfer de enumeración. El tamaño de búfer predeterminado es de 1.024 bytes. Debe aumentar el tamaño del búfer de enumeración cuando la presentación resultante de una consulta supera los 1.024 bytes.                      |
+|   RI =\<ResumeIndex>   | Especifica el número de índice en el que se va a iniciar o reanudar la enumeración. El valor predeterminado es **0** (cero). Utilice este parámetro junto con el parámetro **bufsize =** cuando una consulta devuelva más información de la que puede mostrar el búfer predeterminado. |
+|  Grupo =\<GroupName>   |                                                                             Especifica el grupo de servicio que se va a enumerar. De forma predeterminada, se enumeran todos los grupos (* * grupo = * *).                                                                              |
 |           /?           |                                                                                                             Muestra la ayuda en el símbolo del sistema.                                                                                                              |
 
 ## <a name="remarks"></a>Observaciones
@@ -45,11 +43,11 @@ sc.exe [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [ty
 - Sin un espacio entre un parámetro y su valor (es decir, **Type = Own**, no **Type = Own**), se producirá un error en la operación.
 - La operación de **consulta** muestra la siguiente información sobre un servicio: SERVICE_NAME (nombre de la subclave del registro del servicio), tipo, estado (así como Estados que no están disponibles), WIN32_EXIT_B, SERVICE_EXIT_B, punto de control y WAIT_HINT.
 - El parámetro **Type =** puede usarse dos veces en algunos casos. La primera aparición del parámetro **Type =** especifica si se consultan los servicios, los controladores o ambos (**todos**). La segunda apariencia del parámetro **Type =** especifica un tipo de la operación de **creación** para restringir aún más el ámbito de una consulta.
-- Cuando la pantalla resultante de un comando de **consulta** supera el tamaño del búfer de enumeración, se muestra un mensaje similar al siguiente:  
+- Cuando la pantalla resultante de un comando de **consulta** supera el tamaño del búfer de enumeración, se muestra un mensaje similar al siguiente:
   ```
   Enum: more data, need 1822 bytes start resume at index 79
-  ```  
-  Para mostrar la información de **consulta** restante, vuelva a ejecutar la **consulta**, estableciendo **bufsize =** para que sea el número de bytes y establezca **RI =** en el índice especificado. Por ejemplo, la salida restante se mostraría escribiendo lo siguiente en el símbolo del sistema:  
+  ```
+  Para mostrar la información de **consulta** restante, vuelva a ejecutar la **consulta**, estableciendo **bufsize =** para que sea el número de bytes y establezca **RI =** en el índice especificado. Por ejemplo, la salida restante se mostraría escribiendo lo siguiente en el símbolo del sistema:
   ```
   sc.exe query bufsize= 1822 ri= 79
   ```

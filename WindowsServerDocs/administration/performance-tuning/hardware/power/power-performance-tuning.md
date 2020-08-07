@@ -1,18 +1,16 @@
 ---
 title: Información general sobre el ajuste de energía y rendimiento para Windows Server
 description: Información general sobre la optimización de la administración de energía del procesador (PPM) para Windows Server.
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 67e72967d29fc96fe3f57b714bd8aaf19f406565
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5e758e2335d8a5b536b0f0db9626dc88337de631
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471660"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896734"
 ---
 # <a name="power-and-performance-tuning"></a>Optimización energética y de rendimiento
 
@@ -73,7 +71,7 @@ Windows Server 2016 tiene tres planes de energía integrados diseñados para sat
 
 | **Plan** | **Descripción** | **Escenarios aplicables comunes** | **Aspectos destacados de la implementación** |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Equilibrado (recomendado) | valor predeterminado. Se dirige a una buena eficacia energética con un impacto mínimo en el rendimiento. | Informática general | Coincide con la capacidad de demanda. Las características de ahorro de energía equilibran la eficacia y el rendimiento. |
+| Equilibrado (recomendado) | Configuración predeterminada. Se dirige a una buena eficacia energética con un impacto mínimo en el rendimiento. | Informática general | Coincide con la capacidad de demanda. Las características de ahorro de energía equilibran la eficacia y el rendimiento. |
 | Alto rendimiento | Aumenta el rendimiento a costa de un consumo de energía elevado. Se aplican las limitaciones de energía y térmica, los gastos operativos y las consideraciones de confiabilidad. | Aplicaciones de baja latencia y código de la aplicación que es sensible a los cambios de rendimiento del procesador | Los procesadores siempre están bloqueados en el estado de rendimiento más alto (incluidas las frecuencias "Turbo"). Se desactivan todos los núcleos. La salida térmica puede ser significativa. |
 | Economizador de energía | Limita el rendimiento para ahorrar energía y reducir el costo operativo. No se recomienda sin realizar pruebas exhaustivas para asegurarse de que el rendimiento es adecuado. | Implementaciones con presupuestos de energía limitados y restricciones térmicas | La frecuencia del procesador es un porcentaje del máximo (si se admite) y habilita otras características de ahorro de energía. |
 

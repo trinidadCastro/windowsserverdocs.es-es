@@ -1,20 +1,18 @@
 ---
 title: Migración de la base de datos de WSUS desde WID de (Windows Internal Database) a SQL
 description: 'Tema de Windows Server Update Service (WSUS): Cómo migrar la base de datos de WSUS (SUSDB) de una instancia de Windows Internal Database a una instancia local o remota de SQL Server.'
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09g7dr
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: facd846dd0c20ee2e5001b0592651ce310e19097
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: edebd8ea11a844fbe6d00ca7ce7a6a375d8e9a51
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716890"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896870"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>Migración de la base de datos de WSUS de WID a SQL
 
@@ -22,7 +20,7 @@ ms.locfileid: "83716890"
 
 Siga estos pasos para migrar la base de datos de WSUS (SUSDB) de una instancia de Windows Internal Database a una instancia local o remota de SQL Server.
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 - Instancia de SQL. Puede ser el valor predeterminado **MSSQLSERVER** o una instancia personalizada.
 - SQL Server Management Studio
@@ -102,7 +100,7 @@ Después de adjuntar el SUSDB, compruebe que **NT Authority\Network Service** ti
 
 1. Entrar en SQL Server Management Studio
 2. Abrir la instancia
-3. Haga clic en **Seguridad**.
+3. Haga clic en **seguridad**
 4. Haga clic en **inicios de sesión**
 
 Se debe mostrar la cuenta **NT Authority\Network Service** . Si no es así, debe agregarlo agregando un nuevo nombre de inicio de sesión.
@@ -181,7 +179,7 @@ Desde PowerShell (elevado), ejecute:
 ## <a name="uninstalling-the-wid-role-not-recommended"></a>Desinstalación del rol WID (no recomendado)
 
 > [!WARNING]
-> Al quitar el rol WID también se quita una carpeta de base de datos (**%SystemDrive%\Archivos de Programa\update Services\Database**) que contiene los scripts requeridos por WSUSUtil. exe para las tareas posteriores a la instalación. Si decide desinstalar el rol WID, asegúrese de hacer una copia de seguridad de la carpeta **%SystemDrive%\Archivos de Programa\update Services\Database** con antelación.
+> Al quitar el rol WID también se quita una carpeta de base de datos (**%SystemDrive%\Archivos de Programa\update Services\Database**) que contiene los scripts requeridos por WSUSUtil.exe para las tareas posteriores a la instalación. Si decide desinstalar el rol WID, asegúrese de hacer una copia de seguridad de la carpeta **%SystemDrive%\Archivos de Programa\update Services\Database** con antelación.
 
 Con PowerShell:
 

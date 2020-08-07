@@ -1,20 +1,18 @@
 ---
 title: select disk
 description: Artículo de referencia de * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a0da614b-09d9-433b-b4eb-9127f84431cb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2bcfa45c111f088f1a129c47d0b0a148dfee106f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b1aa57e2ad077c1f109ecb68ecde3c0433664dae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936476"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882878"
 ---
 # <a name="select-disk"></a>select disk
 

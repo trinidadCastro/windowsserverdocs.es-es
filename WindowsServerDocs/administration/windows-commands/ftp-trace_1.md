@@ -1,20 +1,18 @@
 ---
 title: ftp trace
 description: Artículo de referencia para el comando seguimiento de FTP, que alterna el seguimiento de paquetes.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8740c1fb-a7bf-45c8-b2f9-61fae4f3506e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e00eba110951cb679f1e7acac3f011363fcce58c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bce3a48e2b0c79a3184e62167862324f41681f98
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957377"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888867"
 ---
 # <a name="ftp-trace"></a>ftp trace
 

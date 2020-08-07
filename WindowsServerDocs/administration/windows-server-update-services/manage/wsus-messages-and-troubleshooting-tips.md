@@ -1,24 +1,22 @@
 ---
 title: Sugerencias para solucionar problemas y mensajes WSUS
 description: 'Tema de Windows Server Update Service (WSUS): solución de problemas con mensajes de WSUS'
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e4fe14eeaba3fc82e125288f8c47fb445f6e00b0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7ce07e38a3a8a07f97959e782fd22c1d5472d338
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828318"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896772"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>Sugerencias para solucionar problemas y mensajes WSUS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tema contiene información acerca de los siguientes mensajes de WSUS:
 
@@ -45,18 +43,18 @@ Los motivos más comunes son:
 
 ## <a name="message-id-6703---wsus-synchronization-failed"></a>ID. de mensaje 6703-error de sincronización de WSUS
 > Mensaje: error en la solicitud con el Estado HTTP 503: servicio no disponible.
-> 
+>
 > Origen: Microsoft. UpdateServices. Administration. AdminProxy. createUpdateServer.
 
 Cuando intente abrir los servicios de actualización en el servidor WSUS, recibirá el siguiente error:
 
 > Error: error de conexión
-> 
+>
 > Error al intentar conectarse al servidor WSUS. Este error puede producirse por una serie de motivos. Si el problema persiste, póngase en contacto con el administrador de red. Haga clic en el nodo restablecer servidor para conectarse de nuevo al servidor.
 
-Además de lo anterior, se produce un error al intentar obtener acceso a la dirección URL del sitio web de administración de WSUS (es decir, `http://CM12CAS:8530`):
+Además de lo anterior, los intentos de acceso a la dirección URL para el sitio web de administración de WSUS (es decir, `http://CM12CAS:8530` ) producen el error:
 
-> Error 503 de HTTP. El servicio no está disponible
+> HTTP Error 503. The service is unavailable
 
 En esta situación, la causa más probable es que el grupo de aplicaciones WsusPool en IIS esté en un estado detenido.
 
@@ -73,20 +71,20 @@ Para resolver este problema, conceda permisos de administrador del sistema a una
 
 - **Selfupdate:** Consulte [actualizaciones automáticas se debe actualizar](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx) para obtener información acerca de la solución de problemas del servicio selfupdate.
 
-- **WSSUService. exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceda a WSUSService. exe. para ello, haga clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque **Windows Server Update Service** en la lista de servicios. haga lo siguiente:
-    
+- **WSSUService.exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceda a WSUSService.exe haciendo clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque **Windows Server Update Service** en la lista de servicios. Haga lo siguiente:
+
     -   Compruebe que este servicio se está ejecutando. Haga clic en **iniciar** si se detiene o en **reiniciar** para actualizar el servicio.
-    
+
     -   Utilice Visor de eventos para comprobar los registros de eventos de la **aplicación**, **securit**y **del sistema** para ver si hay algún evento que pueda indicar un problema.
-    
+
     -   También puede comprobar el archivo SoftwareDistribution. log para ver si hay eventos que puedan indicar un problema.
 
 - **Servicio Web servicesSQL:** Los servicios web se hospedan en IIS. Si no se están ejecutando, asegúrese de que IIS se ejecuta (o se inicia). También puede intentar restablecer el servicio web escribiendo **iisreset** en un símbolo del sistema.
 
 - **Servicio SQL:** Cada servicio, excepto el servicio selfupdate, requiere que el servicio SQL se esté ejecutando. Si alguno de los archivos de registro indica problemas de conexión de SQL, compruebe primero el servicio SQL. Para obtener acceso al servicio SQL, haga clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque una de las siguientes opciones:
-    
+
   - **MSSQLSERver** (si usa WMSDE o MSDE, o si usa SQL Server y usa el nombre de instancia predeterminado para el nombre de instancia)
-    
+
   - **MSSQL $ WSUS** (si utiliza una base de datos de SQL Server y ha llamado a la instancia de base de datos WSUS)
-    
+
     Haga clic con el botón secundario en el servicio y, a continuación, haga clic en **iniciar** si el servicio no se está ejecutando o en **reiniciar** para actualizar el servicio si se está ejecutando.

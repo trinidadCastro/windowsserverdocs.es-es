@@ -1,20 +1,18 @@
 ---
 title: Add-ImageDriverPackage
 description: Artículo de referencia de Add-ImageDriverPackage, que agrega un paquete de controladores que se encuentra en el almacén de controladores a una imagen de arranque existente en el servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6c2a4833-6427-47f8-9ffb-20b3786cb406
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 450b06c2c935f83a0851fb887f34d7403061fea8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 01fdcb2fda0bbfd793071009d09b813084fe8a68
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922065"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897005"
 ---
 # <a name="add-imagedriverpackage"></a>Add-ImageDriverPackage
 

@@ -1,20 +1,18 @@
 ---
 title: tzutil
 description: Artículo de referencia de tzutil, que muestra la utilidad de zona horaria de Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bcf6e007-c9b6-4df5-83c5-ed7b4b1b5913
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99d88057c88a55aaf529d238088f8422c33e9ba7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4727423ed6752b3a0c2b578f5838a1108d1d14d4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937297"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896638"
 ---
 # <a name="tzutil"></a>tzutil
 
@@ -34,7 +32,7 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |/s \<timeZoneID> [_dstoff]|Establece la zona horaria actual mediante el identificador de zona horaria especificado. El sufijo **_dstoff** deshabilita los ajustes del horario de verano de la zona horaria (si procede).|
 |/l|enumera todos los ID. de zona horaria y nombres para mostrar válidos. El resultado será:<p>-   \<display name><br />-   \<time zone ID>|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 Un código de salida de **0** indica que el comando se completó correctamente.
 
 ## <a name="examples"></a>Ejemplos

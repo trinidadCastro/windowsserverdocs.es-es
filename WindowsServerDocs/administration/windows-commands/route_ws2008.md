@@ -1,20 +1,18 @@
 ---
 title: route_ws2008
 description: Obtenga información acerca de cómo modificar y mostrar las entradas en la tabla de enrutamiento IP local.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: afcd666c-0cef-47c2-9bcc-02d202b983b3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 1f29a898ee6a18cf770c3b3d5e5e3dc2db326071
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: be68ece7b972da06a5638cc81a487518fe27bc68
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820105"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883477"
 ---
 # <a name="route_ws2008"></a>route_ws2008
 
@@ -33,12 +31,12 @@ route [/f] [/p] [<Command> [<Destination>] [mask <Netmask>] [<Gateway>] [metric 
 |-------|--------|
 |/f|Borra la tabla de enrutamiento de todas las entradas que no son rutas de host (rutas con una máscara de red 255.255.255.255), la ruta de red de bucle invertido (rutas con un destino de 127.0.0.0 y una máscara de red de 255.0.0.0) o una ruta de multidifusión (rutas con un destino de 224.0.0.0 y una máscara de red de 240.0.0.0). Si se usa junto con uno de los comandos (como agregar, cambiar o eliminar), la tabla se borra antes de ejecutar el comando.|
 |/p|Cuando se usa con el comando Add, la ruta especificada se agrega al registro y se usa para inicializar la tabla de enrutamiento IP cada vez que se inicia el protocolo TCP/IP. De forma predeterminada, las rutas agregadas no se conservan cuando se inicia el protocolo TCP/IP. Cuando se usa con el comando Print, se muestra la lista de rutas persistentes. Este parámetro se omite para todos los demás comandos. Las rutas persistentes se almacenan en la ubicación del registro **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\tcpip\parameters\persistentroutes**.|
-|\<> de comandos|Especifica el comando que se desea ejecutar. En la tabla siguiente se enumeran los comandos válidos:<p>-   **Agregar:** agrega una ruta.<br />-   **cambiar:** modifica una ruta existente.<br />-   **eliminar:** elimina una ruta o rutas.<br />-   **imprimir:** imprime una ruta o rutas.|
-|\<> de destino|Especifica el destino de red de la ruta. El destino puede ser una dirección de red IP (donde los bits de host de la dirección de red están establecidos en 0), una dirección IP para una ruta de host o 0.0.0.0 para la ruta predeterminada.|
-|enmascarar máscara de \< máscara>|Especifica el destino de red de la ruta. El destino puede ser una dirección de red IP (donde los bits de host de la dirección de red están establecidos en 0), una dirección IP para una ruta de host o 0.0.0.0 para la ruta predeterminada.|
-|\<> de puerta de enlace|Especifica la dirección IP de reenvío o del próximo salto a través de la cual se puede obtener acceso al conjunto de direcciones definido por el destino de red y la máscara de subred. En el caso de las rutas de subred conectadas localmente, la dirección de puerta de enlace es la dirección IP asignada a la interfaz que está conectada a la subred. En el caso de las rutas remotas, disponibles en uno o varios enrutadores, la dirección de puerta de enlace es una dirección IP accesible directamente que se asigna a un enrutador vecino.|
-|métrica métrica \<>|Especifica una métrica de costo de enteros (entre 1 a 9999) para la ruta, que se utiliza cuando se selecciona entre varias rutas de la tabla de enrutamiento de mayor coincidencia con la dirección de destino de un paquete que se está reenviando. Se elige la ruta con la métrica mas baja. La métrica puede reflejar el número de saltos, la velocidad, confiabilidad y rendimiento de la ruta de acceso, o las propiedades administrativas.|
-|Si la \< interfaz>|Especifica el índice de interfaz para la interfaz a través de la que se obtiene acceso al destino. Para obtener una lista de interfaces y los correspondientes índices de interfaz, utilice los resultados de la ejecución del comando route print. En el índice de interfaz puede usar valores decimales o hexadecimales. Para valores hexadecimales, el número hexadecimal debe estar precedido por 0x. Cuando se omite el parámetro if, la interfaz se determina mediante la dirección de la puerta de enlace.|
+|\<Command>|Especifica el comando que se desea ejecutar. En la tabla siguiente se enumeran los comandos válidos:<p>-   **Agregar:** agrega una ruta.<br />-   **cambiar:** modifica una ruta existente.<br />-   **eliminar:** elimina una ruta o rutas.<br />-   **imprimir:** imprime una ruta o rutas.|
+|\<Destination>|Especifica el destino de red de la ruta. El destino puede ser una dirección de red IP (donde los bits de host de la dirección de red están establecidos en 0), una dirección IP para una ruta de host o 0.0.0.0 para la ruta predeterminada.|
+|máscara\<Netmask>|Especifica el destino de red de la ruta. El destino puede ser una dirección de red IP (donde los bits de host de la dirección de red están establecidos en 0), una dirección IP para una ruta de host o 0.0.0.0 para la ruta predeterminada.|
+|\<Gateway>|Especifica la dirección IP de reenvío o del próximo salto a través de la cual se puede obtener acceso al conjunto de direcciones definido por el destino de red y la máscara de subred. En el caso de las rutas de subred conectadas localmente, la dirección de puerta de enlace es la dirección IP asignada a la interfaz que está conectada a la subred. En el caso de las rutas remotas, disponibles en uno o varios enrutadores, la dirección de puerta de enlace es una dirección IP accesible directamente que se asigna a un enrutador vecino.|
+|métrica\<Metric>|Especifica una métrica de costo de enteros (entre 1 a 9999) para la ruta, que se utiliza cuando se selecciona entre varias rutas de la tabla de enrutamiento de mayor coincidencia con la dirección de destino de un paquete que se está reenviando. Se elige la ruta con la métrica mas baja. La métrica puede reflejar el número de saltos, la velocidad, confiabilidad y rendimiento de la ruta de acceso, o las propiedades administrativas.|
+|Cuando\<Interface>|Especifica el índice de interfaz para la interfaz a través de la que se obtiene acceso al destino. Para obtener una lista de interfaces y los correspondientes índices de interfaz, utilice los resultados de la ejecución del comando route print. En el índice de interfaz puede usar valores decimales o hexadecimales. Para valores hexadecimales, el número hexadecimal debe estar precedido por 0x. Cuando se omite el parámetro if, la interfaz se determina mediante la dirección de la puerta de enlace.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Observaciones

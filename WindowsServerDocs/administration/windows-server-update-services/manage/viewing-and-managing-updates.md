@@ -1,24 +1,22 @@
 ---
 title: Visualización y administración de actualizaciones
 description: 'Tema de Windows Server Update Service (WSUS): visualización y administración de actualizaciones en la consola de WSUS'
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: ac70192b-0309-4385-b697-2e8eda51911c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a2a9f7e1f1f3f648a0cba22d599ccc64e7b424d8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8da092fc64b46a192dd9f40816721d639af795cb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828448"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896797"
 ---
 # <a name="viewing-and-managing-updates"></a>Visualización y administración de actualizaciones
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Puede usar la consola de WSUS para ver y administrar las actualizaciones.
 
@@ -49,7 +47,7 @@ En la página **actualizaciones** , puede hacer lo siguiente:
 
 1.  En la consola de administración de WSUS, expanda **actualizaciones**y, a continuación, haga clic en **todas las actualizaciones**.
 
-2.  En el panel central junto a **aprobación**, seleccione el estado de aprobación deseado y, junto a **Estado** , seleccione el estado de la instalación que desee. Haz clic en **Actualizar**.
+2.  En el panel central junto a **aprobación**, seleccione el estado de aprobación deseado y, junto a **Estado** , seleccione el estado de la instalación que desee. Haga clic en **Actualizar**.
 
 #### <a name="to-create-a-new-update-view-on-wsus"></a>Para crear una nueva vista de actualización en WSUS
 
@@ -73,7 +71,7 @@ En la página **actualizaciones** , puede hacer lo siguiente:
 
 5.  En **paso 3: especifique un nombre**, asigne un nombre a la nueva vista.
 
-6.  Haga clic en **Aceptar**.
+6.  Haga clic en **OK**.
 
 La nueva vista aparecerá en el panel vista de árbol en actualizaciones. Se mostrará, como las vistas estándar, en el panel central al seleccionarlo.
 
@@ -158,9 +156,9 @@ Las clasificaciones de actualizaciones representan el tipo de actualización. En
 | Clasificaciones de actualizaciones  | Descripción   |
 |--|--|
 |Actualizaciones críticas|Revisiones de amplia difusión para problemas específicos que solucionan errores críticos no relacionados con la seguridad.|
-|Actualizaciones de definiciones|Actualizaciones de virus u otros archivos de definición.|
+|Actualizaciones de definiciones|Actualizaciones de archivos de definiciones de virus o de otra índole.|
 |Controladores|Componentes de software diseñados para admitir el nuevo hardware.|
-|Paquetes de características|Nuevas versiones de características, que normalmente se han incorporado en productos en la próxima versión.|
+|Feature Packs|Nuevas versiones de características, que normalmente se han incorporado en productos en la próxima versión.|
 |Actualizaciones de seguridad|Revisiones ampliamente publicadas para productos específicos que abordan los problemas de seguridad.|
 |Service Packs|Conjuntos acumulativos de todas las revisiones, actualizaciones de seguridad, actualizaciones críticas y actualizaciones creadas desde el lanzamiento del producto. Los Service Pack también pueden contener un número limitado de características o cambios de diseño solicitados por el cliente.|
 |Herramientas|Utilidades o características que ayudan a realizar una tarea o un conjunto de tareas.|
@@ -168,33 +166,33 @@ Las clasificaciones de actualizaciones representan el tipo de actualización. En
 |Actualizaciones|Revisiones de amplia difusión para problemas específicos que solucionan errores no críticos no relacionados con la seguridad.|
 
 ## <a name="icons-used-for-updates-in-windows-server-update-services"></a>Iconos usados para las actualizaciones en Windows Server Update Services
- Las actualizaciones en WSUS se representan mediante uno de los siguientes iconos.  
- Para ver estos iconos, debe habilitar la columna sustitución en la consola de Update Services.
- 
+ Las actualizaciones en WSUS se representan mediante uno de los siguientes iconos.
+Para ver estos iconos, debe habilitar la columna sustitución en la consola de Update Services.
+
 ### <a name="no-icon"></a>Sin icono
  La actualización no tiene ninguna relación de sustitución con ninguna otra actualización.
 
- **Preocupaciones operativas:**  
+ **Preocupaciones operativas:**
 
- No hay ningún problema operativo.  
- 
+ No hay ningún preocupaciones operacionales.
+
 ### <a name="superseding-icon"></a>Icono de sustitución
- ![icono](../../media/wsus/wsus-superseding.png) Esta actualización sustituye a otras actualizaciones.
+ ![icon](../../media/wsus/wsus-superseding.png) Esta actualización sustituye a otras actualizaciones.
 
- **Preocupaciones operativas:**  
+ **Preocupaciones operativas:**
 
- No hay ningún problema operativo.  
+ No hay ningún preocupaciones operacionales.
 
 ### <a name="superseded--superseding-icon"></a>Icono de sustitución de & reemplazado
- ![icono](../../media/wsus/wsus-superseded.png) Esta actualización se sustituye por otra actualización y sustituye a otras actualizaciones.
+ ![icon](../../media/wsus/wsus-superseded.png) Esta actualización se sustituye por otra actualización y sustituye a otras actualizaciones.
 
- **Preocupaciones operativas:**  
+ **Preocupaciones operativas:**
 
  Reemplace estas actualizaciones por las actualizaciones de reemplazo cuando sea posible.
- 
-### <a name="superseded-icon"></a>Icono de reemplazo
- ![icono](../../media/wsus/wsus-superseded-leaf.png) Esta actualización se ha sustituido por otra actualización.
 
- **Preocupaciones operativas:**  
+### <a name="superseded-icon"></a>Icono de sustituido
+ ![icon](../../media/wsus/wsus-superseded-leaf.png) Esta actualización se ha sustituido por otra actualización.
+
+ **Preocupaciones operativas:**
 
  Reemplace estas actualizaciones por las actualizaciones de reemplazo cuando sea posible.

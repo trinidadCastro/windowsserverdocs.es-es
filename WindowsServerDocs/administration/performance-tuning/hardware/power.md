@@ -1,18 +1,16 @@
 ---
 title: Consideraciones sobre la energía de hardware de Windows Server
 description: Consideraciones acerca de la energía de hardware de Windows Server.
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e110fbb41f44a4c8ac6ab014eeae44e542ade41
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ee380937e54faa77ec17f8ae47445089ba1eece8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471690"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896725"
 ---
 # <a name="server-hardware-power-considerations"></a>Server Hardware Power Considerations (Consideraciones de alimentación del hardware de servidor)
 
@@ -64,7 +62,7 @@ La terminología del procesador que se usa en este tema refleja la jerarquía de
 
 - Socket de procesador
 - nodo NUMA
-- Principal
+- Core
 - Procesador lógico
 
 ![terminología del procesador](../media/perftune-guide-figure-1.png)

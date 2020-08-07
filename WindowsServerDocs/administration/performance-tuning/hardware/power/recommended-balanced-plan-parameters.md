@@ -1,18 +1,16 @@
 ---
 title: Parámetros de plan de energía equilibrado recomendados para tiempos de respuesta rápidos
 description: Parámetros de plan de energía equilibrado recomendados para tiempos de respuesta rápidos
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 62dc6168e76bf3951443df0f06c47a8684d2df26
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 559f274bcfafdd6c89cf7aea69b3df14f68130c1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471590"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896703"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>Parámetros de plan de energía equilibrado recomendados para cargas de trabajo que requieren tiempos de respuesta rápidos
 

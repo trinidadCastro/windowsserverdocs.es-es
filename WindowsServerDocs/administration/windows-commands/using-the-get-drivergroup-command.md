@@ -1,20 +1,18 @@
 ---
 title: Get-DriverGroup
 description: Artículo de referencia de Get-DriverGroup, que muestra información acerca de los grupos de controladores en un servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7cfe10c3-a63f-48e7-bef9-f6b474b4ddbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1969ec9e095e3a6d59e2e78e93cb3f83260ed68
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 95981c1821117f6a4a634df001b901ee76816b75
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932260"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896955"
 ---
 # <a name="get-drivergroup"></a>Get-DriverGroup
 

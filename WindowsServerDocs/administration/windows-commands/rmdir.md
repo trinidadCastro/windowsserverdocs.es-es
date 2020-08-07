@@ -1,20 +1,18 @@
 ---
 title: rmdir
 description: Artículo de referencia del comando rmdir, que elimina un directorio.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e4d7162b-7132-413c-a416-6eb3dc032a26
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8edd2bc1a46532dc7542cdf03ca7c076da1dbcc
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 2351014e07d79baa0e8e5ec07b31f04c9226613e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956197"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883501"
 ---
 # <a name="rmdir"></a>rmdir
 

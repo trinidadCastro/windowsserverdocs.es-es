@@ -1,24 +1,22 @@
 ---
 title: WSUS y el sitio del catálogo
 description: 'Tema de Windows Server Update Service (WSUS): Cómo importar revisiones en WSUS accediendo al sitio del catálogo de Microsoft Update'
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: f19a8659-5a96-4fdd-a052-29e4547fe51a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44c5ff9ffe793160b0d378a753c3f4c35e40f282
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25a9852935c47e0c005d78ae7ea24d14c7c1a546
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828328"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896790"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS y el sitio del catálogo
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 El sitio del catálogo es la ubicación de Microsoft desde la que puede importar revisiones y controladores de hardware.
 
@@ -37,7 +35,7 @@ Para importar revisiones en WSUS, debe tener acceso al sitio del catálogo de Mi
 
 Las actualizaciones aprobadas importadas desde el sitio del catálogo de Microsoft Update se descargan la próxima vez que se sincronice el servidor WSUS. No se descargan en el momento de la importación desde el sitio del catálogo de Microsoft Update.
 
-Tenga en cuenta que debe tener acceso al sitio del catálogo de Microsoft Update a través de la consola de WSUS para asegurarse de que las actualizaciones se importan en un formato compatible con WSUS. Si tiene acceso al sitio web del catálogo de Microsoft Update manualmente, las actualizaciones que descargue no se importan en el servidor WSUS, sino que se descargan como individuales *. Archivos MSU. WSUS no tiene actualmente un mecanismo compatible para importar archivos en el \*. Formato MSU.
+Tenga en cuenta que debe tener acceso al sitio del catálogo de Microsoft Update a través de la consola de WSUS para asegurarse de que las actualizaciones se importan en un formato compatible con WSUS. Si tiene acceso al sitio web del catálogo de Microsoft Update manualmente, las actualizaciones que descargue no se importan en el servidor WSUS, sino que se descargan como individuales *. Archivos MSU. WSUS no tiene actualmente un mecanismo compatible para la importación de archivos en \* . Formato MSU.
 
 Si ejecuta el Asistente para la limpieza del servidor, las actualizaciones importadas del catálogo de Microsoft Update que están establecidas como no aprobadas o rechazadas pueden quitarse del servidor WSUS. Si se quitan, se pueden volver a importar desde el catálogo de Microsoft Update.
 
@@ -51,7 +49,7 @@ Los administradores de WSUS pueden considerar la posibilidad de restringir el ac
 
 1.  Habilite la autenticación de Windows en la raíz de contenido de IIS.
 
-    -   Inicie el administrador de IIS.
+    -   Inicie el Administrador de IIS.
 
     -   Navegue hasta el nodo de contenido en el sitio web de administración de WSUS.
 
