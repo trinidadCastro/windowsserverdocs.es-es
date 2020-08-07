@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ae68cf05f9631df0f942cb65ccf29971f7bc17c8
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: f10fea4e6e94ecc6636fe13588fea2bb94ad4407
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624333"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947767"
 ---
 # <a name="creating-a-site-link-design"></a>Crear un diseño de vínculo de sitio
 
@@ -29,7 +27,7 @@ Al crear vínculos a sitios, asegúrese de que todos los sitios se incluyen en u
 
 Siempre que agregue sitios a un vínculo a sitios recién creado, determine si el sitio que se va a agregar es un miembro de otros vínculos a sitios y cambie la pertenencia a un vínculo a sitios del sitio si es necesario. Por ejemplo, si convierte un sitio en miembro del vínculo Default-First-Site-al crear el sitio inicialmente, asegúrese de quitar el sitio del vínculo Default-First-Site-después de agregar el sitio a un nuevo vínculo de sitio. Si no quita el sitio del vínculo predeterminado-primero-sitio, el comprobador de coherencia de la información (KCC) tomará decisiones de enrutamiento en función de la pertenencia de ambos vínculos a sitios, lo que puede dar lugar a un enrutamiento incorrecto.
 
-Para identificar los sitios miembro que desea conectar con un vínculo a sitios, use la lista de ubicaciones y ubicaciones vinculadas que registró en la hoja de cálculo "ubicaciones geográficas y vínculos de comunicación" (DSSTOPO_1. doc). Si varios sitios tienen la misma conectividad y disponibilidad entre sí, puede conectarlos con el mismo vínculo a sitios.
+Para identificar los sitios miembro que desea conectar con un vínculo a sitios, use la lista de ubicaciones y ubicaciones vinculadas que registró en la hoja de cálculo "ubicaciones geográficas y vínculos de comunicación" (DSSTOPO_1.doc). Si varios sitios tienen la misma conectividad y disponibilidad entre sí, puede conectarlos con el mismo vínculo a sitios.
 
 El contenedor de transportes entre sitios proporciona los medios para asignar vínculos de sitio al transporte que utiliza el vínculo. Cuando se crea un objeto de vínculo a sitios, se crea en el contenedor de IP, que asocia el vínculo a sitios con la llamada a procedimiento remoto (RPC) a través de un transporte IP o el contenedor de Protocolo simple de transferencia de correo (SMTP), que asocia el vínculo a sitios con el transporte SMTP.
 
@@ -40,7 +38,7 @@ Al crear un objeto de vínculo a sitios en el contenedor de transportes entre si
 
 Cuando no hay disponible una conexión IP directa, puede configurar la replicación entre sitios para usar SMTP. Sin embargo, la funcionalidad de replicación de SMTP está limitada y requiere una entidad de certificación (CA) empresarial. SMTP solo puede replicar la configuración, el esquema y las particiones de directorio de aplicaciones, y no admite la replicación de particiones de directorio de dominio.
 
-Para asignar nombres a los vínculos a sitios, use un esquema de nomenclatura coherente, como name_of_site1-name_of_site2. Grabe la lista de sitios, sitios vinculados y los nombres de los vínculos a sitios que conectan estos sitios en una hoja de cálculo. Para ver una hoja de cálculo que le ayude a registrar los nombres de sitio y los nombres de vínculos de sitio asociados, vea el tema [sobre ayudas de trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abrir "sitios y vínculos a sitios asociados" (DSSTOPO_5. doc).
+Para asignar nombres a los vínculos a sitios, use un esquema de nomenclatura coherente, como name_of_site1-name_of_site2. Grabe la lista de sitios, sitios vinculados y los nombres de los vínculos a sitios que conectan estos sitios en una hoja de cálculo. Para obtener una hoja de cálculo que le ayude a registrar nombres de sitio y nombres de vínculos de sitio asociados, vea el tema [sobre ayudas de trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip y abrir "sitios y vínculos a sitios asociados" (DSSTOPO_5.doc).
 
 ## <a name="in-this-guide"></a>En esta guía
 

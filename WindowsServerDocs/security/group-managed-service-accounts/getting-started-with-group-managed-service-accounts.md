@@ -1,20 +1,18 @@
 ---
 title: Getting Started with Group Managed Service Accounts
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-gmsa
 ms.topic: article
 ms.assetid: 7130ad73-9688-4f64-aca1-46a9187a46cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 70bdbc49bc1e173b488d5934bae0a5b4837c76f5
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: 728da4f2061156352045439a55cba7fa9e98ced9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775298"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971472"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -55,10 +53,10 @@ Los servicios tienen las siguientes entidades de seguridad entre las que pueden 
 |Principals|Ámbito|Servicios admitidos|Administración de contraseñas|
 |-------|-----|-----------|------------|
 |Cuenta de equipo del sistema de Windows|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
-|Cuenta de equipo sin sistema de Windows|Dominio|Cualquier servidor unido a un dominio|None|
+|Cuenta de equipo sin sistema de Windows|Dominio|Cualquier servidor unido a un dominio|Ninguno|
 |Cuenta virtual|Local|Limitado a un servidor|El equipo administra|
 |Cuenta de servicio administrada independiente de Windows 7|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
-|Cuenta de usuario|Dominio|Cualquier servidor unido a un dominio|None|
+|Cuenta de usuario|Dominio|Cualquier servidor unido a un dominio|Ninguno|
 |Cuenta de servicio administrada de grupo|Dominio|Cualquier servidor unido a un dominio de Windows Server 2012|El controlador de dominio administra y el host recupera|
 
 No se pueden compartir entre varios sistemas las cuentas de equipo de Windows, las cuentas de servicio administradas independientes (sMSA) de Windows 7 ni las cuentas virtuales. Si configuras una cuenta para que la compartan los servicios de las granjas de servidores, tendrás que elegir una cuenta de usuario o una cuenta de equipo aparte de un sistema de Windows. En cualquiera de estos dos casos, las cuentas no tienen la funcionalidad de administrar contraseñas con un solo punto de control. Esto genera un problema: cada organización se ve obligada a crear una solución costosa para actualizar las claves del servicio en Active Directory y, luego, distribuir las claves a todas las instancias de esos servicios.
@@ -95,7 +93,7 @@ Para ejecutar los comandos de Windows PowerShell que se usan para administrar cu
 
 -   El esquema de Active Directory del bosque del dominio gMSA debe actualizarse a Windows Server 2012 para crear un gMSA.
 
-    Puede actualizar el esquema instalando un controlador de dominio que ejecute Windows Server 2012 o ejecutando la versión de adprep. exe desde un equipo que ejecute Windows Server 2012. El valor del atributo object-version del objeto CN=Schema,CN=Configuration,DC=Contoso,DC=Com debe ser 52.
+    Puede actualizar el esquema mediante la instalación de un controlador de dominio que ejecute Windows Server 2012 o mediante la ejecución de la versión de adprep.exe desde un equipo que ejecute Windows Server 2012. El valor del atributo object-version del objeto CN=Schema,CN=Configuration,DC=Contoso,DC=Com debe ser 52.
 
 -   Nueva cuenta gMSA aprovisionada
 
@@ -144,7 +142,7 @@ Solo puede crear una gMSA si el esquema del bosque se ha actualizado a Windows S
 Para completar los siguientes procedimientos, el requisito mínimo es ser miembro de **Admins. del dominio** u **Opers. de cuentas** o poder crear objetos msDS-GroupManagedServiceAccount.
 
 > [!NOTE]
-> Siempre se requiere un valor para el parámetro-name (si se especifica-Name o not), con-DNSHostName,-RestrictToSingleComputer y-RestrictToOutboundAuthentication son requisitos secundarios para los tres escenarios de implementación.    
+> Siempre se requiere un valor para el parámetro-name (si se especifica-Name o not), con-DNSHostName,-RestrictToSingleComputer y-RestrictToOutboundAuthentication son requisitos secundarios para los tres escenarios de implementación.
 
 
 #### <a name="to-create-a-gmsa-using-the-new-adserviceaccount-cmdlet"></a><a name="BKMK_CreateGMSA"></a>Para crear una gMSA con el cmdlet New-ADServiceAccount
@@ -157,7 +155,7 @@ Para completar los siguientes procedimientos, el requisito mínimo es ser miembr
 
     |Parámetro|String|Ejemplo|
     |-------|-----|------|
-    |Name|Nombre de la cuenta|ITFarm1|
+    |Nombre|Nombre de la cuenta|ITFarm1|
     |DNSHostName|Nombre del host DNS del servicio|ITFarm1.contoso.com|
     |KerberosEncryptionType|Todos los tipos de cifrado admitidos por los servidores host|Ninguno, RC4, AES128, AES256|
     |ManagedPasswordIntervalInDays|Intervalo de cambio de la contraseña en días (si no se especifica, el valor predeterminado es 30 días)|90|
@@ -167,7 +165,7 @@ Para completar los siguientes procedimientos, el requisito mínimo es ser miembr
 
     > [!IMPORTANT]
     > El intervalo de cambio de la contraseña solo se puede definir durante la creación. Si necesitas cambiar este intervalo, tendrás que crear una nueva gMSA y definir el intervalo al crearla.
-   
+
     **Ejemplo**
 
     Escribe el comando en una sola línea, aunque aquí pueda aparecer con saltos de línea debido a las limitaciones del formato.
@@ -188,13 +186,13 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
     |Parámetro|String|Ejemplo|
     |-------|-----|------|
-    |Name|Nombre de la cuenta|ITFarm1|
+    |Nombre|Nombre de la cuenta|ITFarm1|
     |ManagedPasswordIntervalInDays|Intervalo de cambio de la contraseña en días (si no se especifica, el valor predeterminado es 30 días)|75|
     |PrincipalsAllowedToRetrieveManagedPassword|Las cuentas de equipo de los hosts miembros o el grupo de seguridad al que pertenecen los hosts miembros|ITFarmHosts|
 
     > [!IMPORTANT]
     > El intervalo de cambio de la contraseña solo se puede definir durante la creación. Si necesitas cambiar este intervalo, tendrás que crear una nueva gMSA y definir el intervalo al crearla.
-    
+
   **Ejemplo**
 
 ```PowerShell
@@ -208,7 +206,7 @@ Para configurar los servicios en Windows Server 2012, consulte la siguiente docu
 
     Para obtener más información, consulte [Especificar una identidad para un grupo de aplicaciones (IIS 7)](https://technet.microsoft.com/library/cc771170(WS.10).aspx).
 
--   Servicios de Windows
+-   servicios de Windows
 
     Para obtener más información, consulte [Servicios](https://technet.microsoft.com/library/cc772408.aspx).
 
@@ -253,7 +251,7 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 |Parámetro|String|Ejemplo|
 |-------|-----|------|
-|Name|Nombre de la cuenta|ITFarm1|
+|Nombre|Nombre de la cuenta|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|Las cuentas de equipo de los hosts miembros o el grupo de seguridad al que pertenecen los hosts miembros|Host1, Host2, Host3|
 
 **Ejemplo**
@@ -311,7 +309,7 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 |Parámetro|String|Ejemplo|
 |-------|-----|------|
-|Name|Nombre de la cuenta|ITFarm1|
+|Nombre|Nombre de la cuenta|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|Las cuentas de equipo de los hosts miembros o el grupo de seguridad al que pertenecen los hosts miembros|Host1, Host3|
 
 **Ejemplo**
@@ -353,4 +351,4 @@ Para obtener más información sobre el cmdlet Uninstall-ADServiceAccount, en el
 
 ## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
 
--   [Información general sobre las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
+-   [Introducción a las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)

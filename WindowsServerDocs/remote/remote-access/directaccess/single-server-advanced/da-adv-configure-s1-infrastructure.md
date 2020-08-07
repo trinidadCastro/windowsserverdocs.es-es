@@ -2,18 +2,16 @@
 title: Paso 1 configurar la infraestructura de DirectAccess avanzada
 description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 43abc30a-300d-4752-b845-10a6b9f32244
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3404908b590f27ea14a588e8c2652e61d0ed05fc
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 74a38d16bba173fc91790fbdb03026c679929d56
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518151"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955282"
 ---
 # <a name="step-1-configure-advanced-directaccess-infrastructure"></a>Paso 1 configurar la infraestructura de DirectAccess avanzada
 
@@ -21,7 +19,7 @@ ms.locfileid: "87518151"
 
 En este tema aprenderás a configurar la infraestructura necesaria para una implementación de acceso remoto avanzado que use un único servidor de DirectAccess en un entorno donde se combinan IPv4 e IPv6. Antes de comenzar con los pasos de implementación, asegúrese de que ha completado los pasos de planeación que se describen en [planear una implementación de DirectAccess avanzada](../../../remote-access/directaccess/single-server-advanced/Plan-an-Advanced-DirectAccess-Deployment.md).
 
-| Tarea | Description |
+| Tarea | Descripción |
 |--|--|
 | 1.1 Configurar las opciones de red del servidor | Configura las opciones de red del servidor en el servidor de DirectAccess. |
 | 1.2 Configurar el túnel forzado | Configura el túnel forzado. |

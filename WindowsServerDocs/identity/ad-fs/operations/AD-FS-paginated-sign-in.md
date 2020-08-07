@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 09/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ca13ebe29b0a9260302599110f333d166681abdb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 27b0232b65a3003dde9a5702ec45063781abd813
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358560"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947451"
 ---
 # <a name="ad-fs-paginated-sign-in"></a>AD FS inicio de sesión paginado
 
@@ -62,6 +60,6 @@ Si es un cliente nuevo para AD FS, recibirá el nuevo diseño de forma predeterm
 Las opciones de personalización seguirán siendo aplicables en AD FS 2019.
 A continuación se muestran algunos vínculos a otros documentos para su referencia.
 
-• Para aquellos que no tienen previsto actualizar sus servidores a AD FS 2019 pero desean el nuevo diseño: [Usar un tema Web de Azure AD UX en Servicios de federación de Active Directory (AD FS)](azure-ux-web-theme-in-ad-fs.md)
+• Para aquellos que no tienen previsto actualizar sus servidores a AD FS 2019 pero desean el nuevo diseño: [usar un tema Web de Azure ad UX en servicios de Federación de Active Directory (AD FS)](azure-ux-web-theme-in-ad-fs.md)
 
-• Una ubicación central para la personalización: [Personalización de inicio de sesión del usuario de AD FS](ad-fs-user-sign-in-customization.md)
+• Una ubicación central para la personalización: [AD FS la personalización del inicio de sesión del usuario](ad-fs-user-sign-in-customization.md)

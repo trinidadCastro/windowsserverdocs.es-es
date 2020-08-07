@@ -1,20 +1,18 @@
 ---
 title: Información general de la autenticación de Windows
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 485a0774-0785-457f-a964-0e9403c12bb1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4e3dbed9ebef441dab4a4583455e29df98a6ab24
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 10fb8e072e9dd810e64ace79c17f02290766ec6f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182311"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936498"
 ---
 # <a name="windows-authentication-overview"></a>Información general de la autenticación de Windows
 
@@ -56,7 +54,7 @@ Se usa Autenticación de Windows para comprobar que la información provenga de 
 |----|------|--------|
 |Autenticación dentro de un dominio de Active Directory|Kerberos|Los &nbsp; sistemas operativos Microsoft Windows Server implementan el protocolo de autenticación Kerberos versión 5 y las extensiones para la autenticación de clave pública. El cliente de autenticación Kerberos se implementa como SSP de proveedor de compatibilidad para seguridad \( \) y se puede obtener acceso a él a través de la interfaz SSPI del proveedor de compatibilidad para seguridad \( \) . La autenticación inicial de usuario se integra con la \- arquitectura de inicio de sesión único de Winlogon. El KDC de Kerberos Centro de distribución de claves \( \) está integrado con otros servicios de seguridad de Windows Server que se ejecutan en el controlador de dominio. El KDC usa la base de datos del servicio de directorio de Active Directory del dominio como base de datos de cuentas de seguridad. Se requiere Active Directory para implementaciones de Kerberos predeterminadas.<p>Para obtener recursos adicionales, consulte [Información general de la autenticación Kerberos](../kerberos/kerberos-authentication-overview.md).|
 |Autenticación segura en la red|TLS \/ SSL tal como se implementa en el proveedor de compatibilidad con seguridad de Schannel|El protocolo TLS de seguridad de la capa de transporte \( \) versiones 1,0, 1,1 y 1,2, capa de sockets seguros \( \) protocolo SSL, versiones 2,0 y 3,0, versión 1,0 del Protocolo de seguridad de la capa de transporte de datagramas y el protocolo PCT de transporte de comunicaciones privadas \( \) , versión 1,0, se basan en la criptografía de clave pública. El conjunto de protocolos de autenticación del proveedor de canal seguro \( Schannel \) proporciona estos protocolos. Todos los protocolos de Schannel usan un modelo de cliente y servidor.<p>Para obtener recursos adicionales, consulte [TLS-SSL &#40;Schannel SSP&#41; Overview](../tls/tls-ssl-schannel-ssp-overview.md).|
-|Autenticación para una aplicación o un servicio web|Autenticación integrada de Windows<p>Autenticación de texto implícita|Para obtener recursos adicionales, vea los temas acerca de la [autenticación integrada de Windows](https://technet.microsoft.com/library/cc758557(v=WS.10).aspx), la [autenticación implícita](https://technet.microsoft.com/library/cc738318(v=ws.10).aspx) y la [autenticación implícita avanzada](https://technet.microsoft.com/library/cc783131(v=ws.10).aspx).|
+|Autenticación para una aplicación o un servicio web|Autenticación integrada de Windows<p>Autenticación implícita|Para obtener recursos adicionales, vea los temas acerca de la [autenticación integrada de Windows](https://technet.microsoft.com/library/cc758557(v=WS.10).aspx), la [autenticación implícita](https://technet.microsoft.com/library/cc738318(v=ws.10).aspx) y la [autenticación implícita avanzada](https://technet.microsoft.com/library/cc783131(v=ws.10).aspx).|
 |Autenticación para aplicaciones heredadas|NTLM|NTLM es un protocolo de autenticación de estilo de respuesta a desafíos \- . Además de la autenticación, el protocolo NTLM proporciona opcionalmente la seguridad de la sesión, específicamente la integridad y confidencialidad de los mensajes a través de funciones de firma y sellado en NTLM.<p>Para obtener recursos adicionales, consulte [Información general de NTLM](../kerberos/ntlm-overview.md).|
 |Uso de la autenticación multifactor|Autorización mediante tarjeta inteligente<p>Compatibilidad biométrica|Las tarjetas inteligentes son una \- manera portátil y resistente a la alteración de proporcionar soluciones de seguridad para tareas como la autenticación de clientes, el inicio de sesión en dominios, la firma de código y la protección de \- correo electrónico.<p>La biométrica depende de la medición de una característica física inalterable de una persona para identificar únicamente a esa persona. Las huellas digitales son una de las características biométricas más utilizadas, ya que se cuenta con millones de dispositivos biométricos que captan huellas digitales integrados a equipos personales y periféricos.<p>Para obtener recursos adicionales, consulte la [referencia técnica de la tarjeta inteligente](https://technet.microsoft.com/itpro/windows/keep-secure/smart-card-windows-smart-card-technical-reference). |
 |Proporcionar administración, almacenamiento y reutilización locales de credenciales|Administración de credenciales<p>Autoridad de seguridad local<p>Contraseñas|La administración de credenciales en Windows se asegura de que las credenciales se almacenen de forma segura. Las credenciales se recopilan en el escritorio seguro \( para el acceso local o de dominio \) , a través de aplicaciones o sitios web, para que se presenten las credenciales correctas cada vez que se tenga acceso a un recurso.<p>
@@ -72,7 +70,7 @@ Muchas características de autenticación pueden configurarse con la Directiva d
 
 |Tecnologías de autenticación|Recursos|
 |----------------|-------|
-|Autenticación de Windows.|[Información técnica sobre autenticación de Windows](../windows-authentication/windows-authentication-technical-overview.md)<br />Incluye temas que tratan las diferencias entre versiones, conceptos generales de autenticación, escenarios de inicio de sesión, arquitecturas para versiones compatibles y opciones de configuración aplicables.|
+|Autenticación de Windows|[Información técnica sobre autenticación de Windows](../windows-authentication/windows-authentication-technical-overview.md)<br />Incluye temas que tratan las diferencias entre versiones, conceptos generales de autenticación, escenarios de inicio de sesión, arquitecturas para versiones compatibles y opciones de configuración aplicables.|
 |Kerberos|[Kerberos Authentication Overview](../kerberos/kerberos-authentication-overview.md)<p>[Información general sobre la delegación restringida de Kerberos](../kerberos/kerberos-constrained-delegation-overview.md)<p>Referencia técnica de [autenticación Kerberos](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx) \( 2003\)<p>[Foro de Kerberos](https://docs.microsoft.com/answers/topics/windows-server-security.html)|
 |\/Proveedor de compatibilidad con seguridad de TLS SSL y DTLS \( Schannel\)|[Información general sobre TLS-SSL &#40;Schannel SSP&#41;](../tls/tls-ssl-schannel-ssp-overview.md)<p>[Referencia técnica del proveedor de compatibilidad con seguridad de Schannel](../tls/schannel-security-support-provider-technical-reference.md)|
 |Autenticación implícita|Referencia técnica de [autenticación implícita](https://technet.microsoft.com/library/cc782794(v=ws.10).aspx) \( 2003\)|

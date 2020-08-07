@@ -5,14 +5,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 110bc74d6b77c63fc6a9554049b5adb940f2641d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3cf37c1fad67c652f67f4e862780c740ae5ebe60
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962677"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947299"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Directivas de Access Control de cliente en AD FS 2,0
 Las directivas de acceso de cliente en Servicios de federación de Active Directory (AD FS) 2,0 permiten restringir o conceder a los usuarios acceso a los recursos.  En este documento se describe cómo habilitar las directivas de acceso de cliente en AD FS 2,0 y cómo configurar los escenarios más comunes.
@@ -74,13 +72,13 @@ Este escenario de directiva de acceso de cliente permite el acceso desde todos l
 
 
 1. Haga clic en Inicio, seleccione programas, herramientas administrativas y, a continuación, haga clic en AD FS administración de 2,0.
-2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
+2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones.
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
 5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
-    => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
+    => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
 6. Haga clic en Finish. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
 7. Para guardar la regla, en el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar.
 
@@ -97,7 +95,7 @@ En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 
 
 
 1. Haga clic en Inicio, seleccione programas, herramientas administrativas y, a continuación, haga clic en AD FS administración de 2,0.
-2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
+2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones.
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
 5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
@@ -126,7 +124,7 @@ El conjunto de reglas se basa en la regla de autorización de emisión predeterm
 
 
 1. Haga clic en Inicio, seleccione programas, herramientas administrativas y, a continuación, haga clic en AD FS administración de 2,0.
-2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
+2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones.
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
 5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
@@ -146,7 +144,7 @@ En el ejemplo siguiente se habilita el acceso desde clientes internos basados en
 
 
 1. Haga clic en Inicio, seleccione programas, herramientas administrativas y, a continuación, haga clic en AD FS administración de 2,0.
-2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
+2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones.
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
 5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
@@ -175,12 +173,12 @@ En el ejemplo siguiente se habilita el acceso desde clientes internos basados en
 
 La solicitud x-MS-forwarded-Client-IP se rellena a partir de un encabezado HTTP que está establecido actualmente en Exchange Online, que rellena el encabezado al pasar la solicitud de autenticación a AD FS. El valor de la demanda puede ser uno de los siguientes:
 
->[!Note] 
+>[!Note]
 >Actualmente, Exchange Online solo admite direcciones IPV4 y no IPV6.
 
 Una única dirección IP: la dirección IP del cliente que está conectada directamente a Exchange Online
 
->[!Note] 
+>[!Note]
 >La dirección IP de un cliente de la red corporativa aparecerá como la dirección IP de la interfaz externa del proxy o la puerta de enlace de salida de la organización.
 
 Los clientes que están conectados a la red corporativa mediante una VPN o Microsoft DirectAccess (DA) pueden aparecer como clientes corporativos internos o como clientes externos, en función de la configuración de VPN o DA.
@@ -209,7 +207,7 @@ Por lo tanto, un ejemplo que coincida con solo dos direcciones (como 192.168.1.1
 
 Esto le ofrece la técnica por la que puede escribir cualquier número de direcciones. En los casos en los que es necesario permitir un intervalo de direcciones (por ejemplo, 192.168.1.1 – 192.168.1.25), la coincidencia se debe hacer carácter por carácter: \b192 \. 168 \. 1 \. ([1-9] | 1 [0-9] | 2 [0-5]) \b
 
->[!Note] 
+>[!Note]
 >La dirección IP se trata como una cadena y no como un número.
 
 
@@ -235,11 +233,11 @@ Además de colocarlas juntas, la siguiente expresión debe coincidir con todas l
 
 Las expresiones regex pueden resultar bastante complicadas, por lo que se recomienda encarecidamente usar una herramienta de comprobación de Regex. Si realiza una búsqueda en Internet de "generador de expresiones regex en línea", encontrará varias utilidades en línea adecuadas que le permitirán probar sus expresiones con datos de ejemplo.
 
-Al probar la expresión, es importante que comprenda qué se espera que coincida. El sistema de Exchange Online puede enviar muchas direcciones IP, separadas por comas. Las expresiones proporcionadas anteriormente funcionarán para este. Sin embargo, es importante pensar en esto al probar las expresiones Regex. Por ejemplo, puede usar la siguiente entrada de ejemplo para comprobar los ejemplos anteriores: 
+Al probar la expresión, es importante que comprenda qué se espera que coincida. El sistema de Exchange Online puede enviar muchas direcciones IP, separadas por comas. Las expresiones proporcionadas anteriormente funcionarán para este. Sin embargo, es importante pensar en esto al probar las expresiones Regex. Por ejemplo, puede usar la siguiente entrada de ejemplo para comprobar los ejemplos anteriores:
 
-192.168.1.1, 192.168.1.2, 192.169.1.1. 192.168.12.1, 192.168.1.10, 192.168.1.25, 192.168.1.26, 192.168.1.30, 1192.168.1.20 
+192.168.1.1, 192.168.1.2, 192.169.1.1. 192.168.12.1, 192.168.1.10, 192.168.1.25, 192.168.1.26, 192.168.1.30, 1192.168.1.20
 
-10.0.0.1, 10.0.0.5, 10.0.0.10, 10.0.1.0, 10.0.1.1, 110.0.0.1, 10.0.0.14, 10.0.0.15, 10.0.0.10, 10, 0.0.1 
+10.0.0.1, 10.0.0.5, 10.0.0.10, 10.0.1.0, 10.0.1.1, 110.0.0.1, 10.0.0.14, 10.0.0.15, 10.0.0.10, 10, 0.0.1
 
 
 
@@ -255,7 +253,7 @@ Al probar la expresión, es importante que comprenda qué se espera que coincida
 
 ### <a name="security-audit-logs"></a>Registros de auditoría de seguridad
 
-Para comprobar que las nuevas notificaciones de contexto de solicitud se envían y están disponibles para el AD FS canalización de procesamiento de notificaciones, habilite el registro de auditoría en el servidor de AD FS. A continuación, envíe algunas solicitudes de autenticación y compruebe los valores de notificaciones en las entradas del registro de auditoría de seguridad estándar. 
+Para comprobar que las nuevas notificaciones de contexto de solicitud se envían y están disponibles para el AD FS canalización de procesamiento de notificaciones, habilite el registro de auditoría en el servidor de AD FS. A continuación, envíe algunas solicitudes de autenticación y compruebe los valores de notificaciones en las entradas del registro de auditoría de seguridad estándar.
 
 Para habilitar el registro de eventos de auditoría en el registro de seguridad en un servidor de AD FS, siga los pasos descritos en configuración de la auditoría de AD FS 2,0.
 
@@ -267,7 +265,7 @@ De forma predeterminada, las solicitudes con error se registran en el registro d
 
 AD FS eventos de seguimiento se registran en el registro de depuración de AD FS 2,0. Para habilitar el seguimiento, vea [configurar el seguimiento de depuración para AD FS 2,0](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641696(v=ws.10)).
 
-Después de habilitar el seguimiento, use la siguiente sintaxis de línea de comandos para habilitar el nivel de registro detallado: wevtutil.exe SL "AD FS 2,0 Tracing/debug"/l: 5  
+Después de habilitar el seguimiento, use la siguiente sintaxis de línea de comandos para habilitar el nivel de registro detallado: wevtutil.exe SL "AD FS 2,0 Tracing/debug"/l: 5
 
 ## <a name="related"></a>Temas relacionados
 Para obtener más información sobre los nuevos tipos de notificación, consulte [AD FS tipos de notificaciones](AD-FS-Claims-Types.md).

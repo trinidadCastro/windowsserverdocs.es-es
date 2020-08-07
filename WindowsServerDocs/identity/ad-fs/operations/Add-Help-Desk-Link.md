@@ -6,30 +6,28 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 0aa57147ed2565db9cf8cde0addeb13432cb8856
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 53580f58636f7cb2af0d8b37944a717664ba0f19
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859408"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947277"
 ---
-# <a name="add-help-desk-link"></a>Adición del vínculo al Servicio de asistencia 
+# <a name="add-help-desk-link"></a>Adición del vínculo al Servicio de asistencia
 
 
-## <a name="to-add-a-help-desk-link"></a>Para agregar un vínculo al Departamento de soporte técnico  
-Para agregar el vínculo del Departamento de soporte técnico que se muestra en la página firmar\-de, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.  
+## <a name="to-add-a-help-desk-link"></a>Para agregar un vínculo al Departamento de soporte técnico
+Para agregar el vínculo del Departamento de soporte técnico que se muestra en la \- Página de inicio de sesión, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.
 
 ![Agregar Departamento de soporte técnico](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
-  
-
-`Set-AdfsGlobalWebContent -HelpDeskLink https://fs1.contoso.com/help/ -HelpDeskLinkText Help`  
- 
-  
-> [!IMPORTANT]  
-> El parámetro `linkText` de este cmdlet solo es obligatorio si usa un valor distinto del predeterminado, que es *Help*. La ventaja de usar el valor predeterminado es que las páginas están localizadas para todas las configuraciones regionales de los clientes. Después de personalizar la página, la personalización tendrá precedencia, así que deberás personalizarla para todos los idiomas que quieras admitir.  
 
 
-## <a name="additional-references"></a>Referencias adicionales 
-[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)  
+`Set-AdfsGlobalWebContent -HelpDeskLink https://fs1.contoso.com/help/ -HelpDeskLinkText Help`
+
+
+> [!IMPORTANT]
+> El parámetro `linkText` de este cmdlet solo es obligatorio si usa un valor distinto del predeterminado, que es *Help*. La ventaja de usar el valor predeterminado es que las páginas están localizadas para todas las configuraciones regionales de los clientes. Después de personalizar la página, la personalización tendrá precedencia, así que deberás personalizarla para todos los idiomas que quieras admitir.
+
+
+## <a name="additional-references"></a>Referencias adicionales
+[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)

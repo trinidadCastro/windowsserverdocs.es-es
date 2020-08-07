@@ -1,19 +1,18 @@
 ---
 title: Inicio de tu viaje por el Reglamento general de protección de datos (GDPR) para Windows Server 2016
 description: Use este artículo para entender qué es RGPD y sobre los productos que Microsoft proporciona para ayudarle a empezar a cumplir con el cumplimiento normativo.
-ms.technology: techgroup-security
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 6e105171a9d645eb93ce4739514752698cd45c02
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: 0a21adf3bafeb93f2f9fc18da785fae1a81260b3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118649"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971532"
 ---
-# <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Inicio del viaje de Reglamento general de protección de datos (RGPD) para Windows Server 
+# <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Inicio del viaje de Reglamento general de protección de datos (RGPD) para Windows Server
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -70,11 +69,11 @@ En esta lista se proporcionan ejemplos de varios tipos de información que se re
 ## <a name="getting-started-on-the-journey-towards-gdpr-compliance"></a>Introducción al cumplimiento de RGPD
 Dado que se trata de la cantidad necesaria para ser compatible con RGPD, se recomienda encarecidamente no esperar a prepararse hasta que comience la aplicación. Ahora debe revisar sus prácticas de privacidad y administración de datos. Se recomienda que comience el viaje al cumplimiento de RGPD centrándose en cuatro pasos clave:
 
--   **Cubierto.** Identifique qué datos personales tiene y dónde residen. 
+-   **Cubierto.** Identifique qué datos personales tiene y dónde residen.
 
 -   **No.** controlar cómo se utilizan los datos personales y cómo se accede a ellos.
 
--   **Proteger.** establecer controles de seguridad para prevenir, detectar y responder a vulnerabilidades e infracciones de datos.  
+-   **Proteger.** establecer controles de seguridad para prevenir, detectar y responder a vulnerabilidades e infracciones de datos.
 
 -   **Enviar.** Actúe con las solicitudes de datos, las infracciones de datos del informe y mantenga la documentación necesaria.
 
@@ -105,7 +104,7 @@ Dos principios clave han guiado y continúan guiando el desarrollo de Windows:
 
 - **Service.** Los usuarios deben tener control sobre cómo se usan sus datos. Las directivas para el uso de la información deben ser claras para el usuario. Los usuarios deben tener el control de Cuándo y si reciben información para hacer el mejor uso de su tiempo. Los usuarios deben ser sencillos para especificar el uso adecuado de su información, incluido el control del uso del correo electrónico que envían.
 
-Microsoft ha permanecido sólidas en relación con estos principios, tal y como lo mencionó recientemente el CEO de Microsoft, Satya Nadella 
+Microsoft ha permanecido sólidas en relación con estos principios, tal y como lo mencionó recientemente el CEO de Microsoft, Satya Nadella
 
 > "_A medida que el mundo sigue cambiando y los requisitos empresariales evolucionan, algunas cosas son coherentes: la demanda de un cliente de seguridad y privacidad"._
 
@@ -150,11 +149,11 @@ Las principales características de Windows Server pueden ayudarle a implementar
 
 El sistema operativo del servidor se encuentra en una capa estratégica de la infraestructura de la organización, lo que ofrece nuevas oportunidades para crear niveles de protección frente a ataques que podrían robar datos e interrumpir su negocio. Los aspectos clave del RGPD, como la privacidad por diseño, la protección de datos y Access Control deben abordarse dentro de la infraestructura de TI en el nivel de servidor.
 
-Al trabajar para proteger la identidad, el sistema operativo y los niveles de virtualización, Windows Server 2016 ayuda a bloquear los vectores de ataque comunes que se usan para obtener acceso ilícito a los sistemas: credenciales robadas, malware y un tejido de virtualización en peligro. Además de reducir el riesgo empresarial, los componentes de seguridad integrados en Windows Server 2016 ayudan a satisfacer los requisitos de cumplimiento de normas de seguridad del sector y del gobierno clave. 
+Al trabajar para proteger la identidad, el sistema operativo y los niveles de virtualización, Windows Server 2016 ayuda a bloquear los vectores de ataque comunes que se usan para obtener acceso ilícito a los sistemas: credenciales robadas, malware y un tejido de virtualización en peligro. Además de reducir el riesgo empresarial, los componentes de seguridad integrados en Windows Server 2016 ayudan a satisfacer los requisitos de cumplimiento de normas de seguridad del sector y del gobierno clave.
 
 Estas protecciones de identidad, sistema operativo y virtualización permiten proteger mejor su centro de recursos que ejecuta Windows Server como una máquina virtual en cualquier nube, y limitar la capacidad de los atacantes de poner en peligro las credenciales, iniciar malware y permanecer sin detectar en la red. Del mismo modo, cuando se implementa como un host de Hyper-V, Windows Server 2016 ofrece garantía de seguridad para los entornos de virtualización a través de las funciones blindadas Virtual Machines y el Firewall distribuido. Con Windows Server 2016, el sistema operativo del servidor se convierte en un participante activo en su centro de seguridad.
 
-### <a name="protect-your-credentials-and-limit-administrator-privileges"></a>Proteja sus credenciales y limite los privilegios de administrador 
+### <a name="protect-your-credentials-and-limit-administrator-privileges"></a>Proteja sus credenciales y limite los privilegios de administrador
 El control sobre el acceso a los datos personales y los sistemas que procesan los datos, es un área con el RGPD que tiene requisitos específicos, incluido el acceso por parte de los administradores. Las identidades con privilegios son aquellas que tienen privilegios elevados, como cuentas de usuario que son miembros de los grupos administradores de dominio, administradores de empresas, administradores locales o incluso usuarios avanzados. Estas identidades también pueden incluir cuentas a las que se les han concedido privilegios directamente, como la realización de copias de seguridad, el apagado del sistema u otros derechos que aparecen en el nodo asignación de derechos de usuario de la consola de la Directiva de seguridad local.
 
 Como principio de control de acceso general y en línea con el RGPD, debe proteger estas identidades privilegiadas frente a posibles atacantes. En primer lugar, es importante comprender cómo se ven comprometidas las identidades. a continuación, puede planear impedir que los atacantes obtengan acceso a estas identidades con privilegios.
@@ -166,7 +165,7 @@ Las identidades con privilegios pueden ponerse en peligro cuando las organizacio
 
 - **Sesión iniciada constantemente con privilegios elevados.** Otro problema común es que los usuarios con privilegios elevados pueden usarlo durante un tiempo ilimitado. Esto es muy común con los profesionales de ti que inician sesión en un equipo de escritorio mediante una cuenta con privilegios, mantienen la sesión iniciada y usan la cuenta con privilegios para explorar la web y usar el correo electrónico (funciones de trabajo de ti típicas). La duración ilimitada de las cuentas con privilegios hace que la cuenta sea más susceptible a ataques y aumenta la probabilidad de que la cuenta se vea comprometida.
 
-- **Investigación de ingeniería social.** La mayoría de amenazas de credenciales se inician investigando la organización y, a continuación, realizadas a través de la ingeniería social. Por ejemplo, un atacante puede realizar un ataque de suplantación de identidad por correo electrónico para poner en peligro cuentas legítimas (pero no necesariamente cuentas elevadas) que tengan acceso a la red de una organización. A continuación, el atacante utiliza estas cuentas válidas para realizar una investigación adicional en la red e identificar cuentas con privilegios que puedan realizar tareas administrativas. 
+- **Investigación de ingeniería social.** La mayoría de amenazas de credenciales se inician investigando la organización y, a continuación, realizadas a través de la ingeniería social. Por ejemplo, un atacante puede realizar un ataque de suplantación de identidad por correo electrónico para poner en peligro cuentas legítimas (pero no necesariamente cuentas elevadas) que tengan acceso a la red de una organización. A continuación, el atacante utiliza estas cuentas válidas para realizar una investigación adicional en la red e identificar cuentas con privilegios que puedan realizar tareas administrativas.
 
 - **Aproveche las cuentas con privilegios elevados.** Incluso con una cuenta de usuario normal sin privilegios elevados en la red, los atacantes pueden obtener acceso a las cuentas con permisos elevados. Uno de los métodos más comunes para hacerlo es mediante el uso de los ataques Pass-The-hash o Pass-The-token. Para obtener más información sobre Pass-The-hash y otras técnicas de robo de credenciales, vea los recursos en la [Página Pass-The-hash (PtH)](https://technet.microsoft.com/dn785092.aspx).
 
@@ -187,7 +186,7 @@ Imagínese este escenario si se robaron las credenciales del administrador de DN
 
 Además, muchas organizaciones usan la solución de [contraseña de administrador local gratuita (laps)](https://aka.ms/laps) como un mecanismo de administración JIT sencillo pero eficaz para sus sistemas de servidor y cliente. La capacidad de LAPS proporciona la administración de contraseñas de cuentas locales de equipos Unidos a un dominio. Las contraseñas se almacenan en Active Directory (AD) y se protegen mediante y Access Control lista (ACL), por lo que solo los usuarios válidos pueden leerla o solicitar su restablecimiento.
 
-Como se indica en la [Guía de mitigación de robo de credenciales de Windows](https://www.microsoft.com/download/confirmation.aspx?id=54095), 
+Como se indica en la [Guía de mitigación de robo de credenciales de Windows](https://www.microsoft.com/download/confirmation.aspx?id=54095),
 
 > "_las herramientas y las técnicas que los delincuentes usan para llevar a cabo el robo de credenciales y los ataques de reutilización mejoran, los atacantes malintencionados están encontrando más fácilmente alcanzar sus objetivos. El robo de credenciales suele basarse en prácticas operativas o en la exposición de credenciales de usuario, de modo que las mitigaciones eficaces requieren un enfoque holístico que aborda personas, procesos y tecnología. Además, estos ataques se basan en el ataque de robo de credenciales después de poner en peligro un sistema para expandir o conservar el acceso, por lo que las organizaciones deben contener infracciones rápidamente mediante la implementación de estrategias que impidan que los atacantes se muevan libremente y no se detecten en una red en peligro "._
 
@@ -223,7 +222,7 @@ Con Credential Guard remoto de Windows Defender, Windows Server 2016 implementa 
 
 - Debe usar la autenticación Kerberos.
 
-- Debe ejecutar al menos Windows 10 versión 1607 o Windows Server 2016.  
+- Debe ejecutar al menos Windows 10 versión 1607 o Windows Server 2016.
 
 - Se requiere la aplicación de Windows clásica Escritorio remoto. La aplicación de Plataforma universal de Windows de Escritorio remoto no es compatible con Credential Guard remoto de Windows Defender.
 
@@ -237,7 +236,7 @@ Windows Server 2016 incluye Windows Defender Device Guard para asegurarse de que
 
 Windows Defender Device Guard también se integra con PowerShell para que pueda autorizar qué scripts se pueden ejecutar en el sistema. En versiones anteriores de Windows Server, los administradores podían omitir el cumplimiento de la integridad de código simplemente eliminando la Directiva del archivo de código. Con Windows Server 2016, puede configurar una directiva que esté firmada por su organización para que solo una persona con acceso al certificado que firmó la directiva pueda cambiar la Directiva.
 
-#### <a name="control-flow-guard"></a>Protección de flujo de control 
+#### <a name="control-flow-guard"></a>Protección de flujo de control
 Windows Server 2016 también incluye protección integrada frente a algunas clases de ataques de daños en la memoria. La revisión de los servidores es importante, pero siempre hay una posibilidad de que se pueda desarrollar malware para una vulnerabilidad que todavía no se ha identificado. Algunos de los métodos más comunes para aprovechar estas vulnerabilidades son proporcionar datos inusuales o extremos a un programa en ejecución. Por ejemplo, un atacante puede aprovechar una vulnerabilidad de desbordamiento de búfer al proporcionar más entrada a un programa de lo esperado y saturar el área reservada por el programa para contener una respuesta. Esto puede dañar la memoria adyacente que podría contener un puntero de función.
 
 Cuando el programa llama a través de esta función, puede saltar a una ubicación no deseada especificada por el atacante. Estos ataques también se conocen como ataques de programación orientada a saltos (JOP). La protección de flujo de control evita ataques de JOP al colocar restricciones estrictas sobre qué código de aplicación se puede ejecutar, especialmente instrucciones de llamadas indirectas. Agrega comprobaciones de seguridad ligeras para identificar el conjunto de funciones de la aplicación que son destinos válidos para las llamadas indirectas. Cuando se ejecuta una aplicación, comprueba que estos destinos de llamadas indirectas son válidos.
@@ -255,7 +254,7 @@ AV de Windows Defender es una solución antimalware integrada que ofrece adminis
 
 - La **protección entregada en la nube** ayuda a detectar y bloquear el nuevo malware en cuestión de segundos, incluso si nunca se ha detectado el malware.
 
-- El **contexto local enriquecido** mejora el modo en que se identifica el malware. Windows Server informa a AV de Windows Defender no solo sobre contenido como archivos y procesos, sino también de dónde procede el contenido, dónde se ha almacenado, etc. 
+- El **contexto local enriquecido** mejora el modo en que se identifica el malware. Windows Server informa a AV de Windows Defender no solo sobre contenido como archivos y procesos, sino también de dónde procede el contenido, dónde se ha almacenado, etc.
 
 - Los **sensores globales extensivos** ayudan a mantener el AV de Windows Defender actualizado y a reconocer incluso el malware más reciente. Esto se logra de dos maneras: mediante la recopilación de los datos de contexto local enriquecido de extremos y analizando los datos de forma centralizada.
 
@@ -263,13 +262,13 @@ AV de Windows Defender es una solución antimalware integrada que ofrece adminis
 
 - **Las características de nivel empresarial** proporcionan a los profesionales de ti las herramientas y las opciones de configuración necesarias para que Windows Defender AV sea una solución antimalware de clase empresarial.
 
-#### <a name="enhanced-security-auditing"></a>Auditoría de seguridad mejorada 
+#### <a name="enhanced-security-auditing"></a>Auditoría de seguridad mejorada
 Windows Server 2016 alerta activamente a los administradores ante posibles intentos de infracción con una auditoría de seguridad mejorada que proporciona información más detallada, que se puede usar para una detección de ataques más rápida y análisis forense. Registra los eventos de la protección de flujo de control, la protección de dispositivos de Windows Defender y otras características de seguridad en una ubicación, lo que facilita a los administradores determinar qué sistemas pueden estar en riesgo.
 
 Las nuevas categorías de eventos incluyen:
 
-- **Auditar pertenencia a grupos.** Permite auditar la información de pertenencia a grupos en el token de inicio de sesión de un usuario. Los eventos se generan cuando se enumeran o se consultan las pertenencias a grupos en el equipo donde se creó la sesión de inicio de sesión. 
- 
+- **Auditar pertenencia a grupos.** Permite auditar la información de pertenencia a grupos en el token de inicio de sesión de un usuario. Los eventos se generan cuando se enumeran o se consultan las pertenencias a grupos en el equipo donde se creó la sesión de inicio de sesión.
+
 - **Auditar la actividad de PnP.** Permite auditar Cuándo plug and Play detecta un dispositivo externo, que podría contener malware. Los eventos PnP se pueden usar para realizar un seguimiento de los cambios en el hardware del sistema. En el evento se incluye una lista de identificadores de proveedor de hardware.
 
 Windows Server 2016 se integra fácilmente con sistemas de administración de eventos de incidentes de seguridad (SIEM), como Microsoft Operations Management Suite (OMS), que pueden incorporar la información en informes de inteligencia sobre posibles infracciones. La profundidad de la información proporcionada por la auditoría mejorada permite a los equipos de seguridad identificar y responder a posibles brechas de forma más rápida y eficaz.
@@ -328,7 +327,7 @@ Entre las principales ventajas de ATP de Windows Defender se encuentran las sigu
 
 - **Detección de la no detectable.** Sensores integrados en el kernel del sistema operativo, expertos de seguridad de Windows y dispositivos ópticos únicos de más de 1 mil millones equipos y señales en todos los servicios de Microsoft.
 
-- **Integrado, sin Bolt.** Sin agente, con alto rendimiento y un impacto mínimo, con tecnología de nube; Administración sencilla sin implementación. 
+- **Integrado, sin Bolt.** Sin agente, con alto rendimiento y un impacto mínimo, con tecnología de nube; Administración sencilla sin implementación.
 
 - **Un solo panel de cristal para la seguridad de Windows.** Explore 6 meses de riqueza, escala de tiempo de equipo, unificando eventos de seguridad de ATP de Windows Defender, antivirus de Windows Defender y protección de dispositivos de Windows Defender.
 
@@ -368,7 +367,7 @@ Como resultado, este artículo se proporciona solo con fines informativos y no s
 
 MICROSOFT NO OTORGA NINGUNA GARANTÍA, EXPRESA, IMPLÍCITA O ESTATUTARIA, EN LO QUE SE REFIERE A LA INFORMACIÓN DE ESTE ARTÍCULO. Este artículo se proporciona "tal cual". La información y las vistas expresadas en este artículo, incluidas las direcciones URL y otras referencias a sitios web de Internet, pueden cambiar sin previo aviso.
 
-En este artículo no se le proporciona ningún derecho legal sobre ninguna propiedad intelectual de ningún producto de Microsoft.  Puede copiar y usar este artículo solo con fines de referencia internos.  
+En este artículo no se le proporciona ningún derecho legal sobre ninguna propiedad intelectual de ningún producto de Microsoft.  Puede copiar y usar este artículo solo con fines de referencia internos.
 
 Publicado en septiembre 2017<br>
 Versión 1.0<br>
