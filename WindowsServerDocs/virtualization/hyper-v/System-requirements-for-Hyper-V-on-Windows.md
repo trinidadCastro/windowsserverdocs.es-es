@@ -1,24 +1,22 @@
 ---
 title: Requisitos del sistema para Hyper-V en Windows Server
 description: Enumera los requisitos de hardware y firmware para Hyper-V en Windows Server
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 9bb50448f1ee819b3b886536424ee1556775b78d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 56d9f862d4bd31ac8fba08837e59c94b865f7b1a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857988"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970032"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>Requisitos del sistema para Hyper-V en Windows Server
 
->Se aplica a: Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
+>Se aplica a: Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
 Hyper-V tiene requisitos de hardware específicos y algunas características de Hyper-V tienen requisitos adicionales. Use los detalles de este artículo para decidir qué requisitos debe cumplir el sistema para que pueda usar Hyper-V de la forma en que planea. A continuación, revise el [Catálogo de Windows Server](https://www.windowsservercatalog.com/). Tenga en cuenta que los requisitos de Hyper-V superan los requisitos mínimos generales para Windows Server 2016 porque un entorno de virtualización requiere más recursos informáticos.
 
@@ -40,7 +38,7 @@ Independientemente de las características de Hyper-V que quiera usar, necesitar
 
   - Virtualización asistida por hardware. Está disponible en procesadores que incluyen una opción de virtualización, en concreto, procesadores con tecnología Intel Virtualization Technology (Intel VT) o AMD Virtualization (AMD-V).
 
-  - La Prevención de ejecución de datos (DEP) implementada por hardware debe estar disponible y habilitada. En el caso de los sistemas Intel, es el bit XD (bit de deshabilitación de ejecución). En el caso de los sistemas AMD, es el bit de NX (no se ejecuta ningún bit).
+  - La prevención de ejecución de datos (DEP) mediante hardware tiene que estar disponible y habilitada. En los sistemas Intel, es el bit XD (bit para deshabilitar la ejecución). En los sistemas AMD, es el bit NX (bit de no ejecución).
 
 ## <a name="how-to-check-for-hyper-v-requirements"></a>Comprobación de los requisitos de Hyper-V
 
@@ -89,6 +87,6 @@ Los requisitos de **host** son:
 
 Los requisitos de las **máquinas virtuales** son:
 
-- Generación 2
+- Generación 2
 - Windows Server 2012 o posterior como sistema operativo invitado
 

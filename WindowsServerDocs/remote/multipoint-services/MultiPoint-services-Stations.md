@@ -2,19 +2,17 @@
 title: Estaciones de MultiPoint
 description: Más información sobre las estaciones en Multipoint Services, incluidas las diferentes opciones para los usuarios
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 6167919b31621aef51707bc5b7acf9c07ba795e3
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6f1c313f4d8eeb4e32ec27da1c37bc1d423240d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517680"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953821"
 ---
 # <a name="multipoint--stations"></a>Estaciones Multipoint
 En un entorno del sistema Multipoint Services, las *estaciones* son los puntos de conexión de usuario para conectarse al equipo que ejecuta Multipoint Services. Cada estación proporciona al usuario una experiencia independiente de Windows 10. Se admiten los siguientes tipos de estación:
@@ -111,13 +109,13 @@ Una vez que se divide una estación, un usuario puede iniciar sesión en la esta
 
 ## <a name="station-type-comparison"></a><a name="BKMK_StationTypeComparison"></a>Comparación de tipo de estación
 
-| Description | Vídeo directo conectado | Cliente USB sin conexión | RDP a través de LAN conectada |
+| Descripción | Vídeo directo conectado | Cliente USB sin conexión | RDP a través de LAN conectada |
 |--|--|--|--|
 | Rendimiento de vídeo | Recomendado para el mejor rendimiento de vídeo |  | Use clientes ligeros que admitan RemoteFX para mejorar la calidad del vídeo con un ancho de banda de red inferior. |
 | Limitaciones físicas | Limitado por la longitud del cable de vídeo y el concentrador USB y la longitud del cable (se recomienda una longitud máxima de 15 medidor) | Limitado por el concentrador USB y la longitud del cable (se recomienda una longitud máxima de 15 medidor) | Limitado por distribución de LAN |
 | Número de estaciones permitidas | Limitado por el número de ranuras PCIe disponibles en la placa base, los puertos de vídeo por tarjeta de vídeo | El número total puede estar limitado por el fabricante del cliente USB cero (para obtener más información, consulte la nota que sigue a esta tabla). | Limitado por los puertos disponibles en el conmutador de red |
-| Pantalla dividida | Yes | Sí | No |
-| Estado de periféricos de la estación de Multipoint Manager, configuración de inicio de sesión automático, cambio de nombre de estación | Yes | Sí | No |
+| Pantalla dividida | Sí | Sí | No |
+| Estado de periféricos de la estación de Multipoint Manager, configuración de inicio de sesión automático, cambio de nombre de estación | Sí | Sí | No |
 | Acceso a los menús de inicio del servidor | Sí | No | No |
 
 > [!NOTE]

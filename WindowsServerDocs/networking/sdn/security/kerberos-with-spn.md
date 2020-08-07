@@ -2,19 +2,17 @@
 title: Kerberos con nombre de entidad de seguridad de servicio (SPN)
 description: La controladora de red admite varios métodos de autenticación para la comunicación con clientes de administración. Puede usar la autenticación basada en Kerberos, la autenticación basada en certificados X509. También tiene la opción de no usar autenticación para implementaciones de prueba.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 12ad2b27d275c074e0d8baacccd864e8926f405f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3937f124ba91a597af83c00cd5497ea57c1b2fed
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854380"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962139"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>Kerberos con nombre de entidad de seguridad de servicio (SPN)
 
@@ -30,11 +28,11 @@ La controladora de red configura automáticamente el SPN. Lo único que debe hac
 
 1.  En el equipo del controlador de dominio, inicie **Active Directory usuarios y equipos**.
 
-2.  Seleccione **ver \> opciones avanzadas**.
+2.  Seleccione **Ver \> avanzado**.
 
 3.  En **equipos**, busque una de las cuentas de equipo de la controladora de red y, a continuación, haga clic con el botón derecho y seleccione **propiedades**.
 
-4.  Seleccione la pestaña **seguridad** y haga clic en **avanzadas**.
+4.  Seleccione la ficha **Seguridad** y haga clic en **Opciones avanzadas**.
 
 5.  En la lista, si no aparecen todas las cuentas de equipo de la controladora de red o un grupo de seguridad que tenga todas las cuentas de máquina de la controladora de red, haga clic en **Agregar** para agregarlas.
 
@@ -54,19 +52,19 @@ La controladora de red configura automáticamente el SPN. Lo único que debe hac
 
 7.  Repita el paso 3-6 para cada máquina de controladora de red.
 
-8.  aCierre **Usuarios y equipos de Active Directory**.
+8.  Cierre **Usuarios y equipos de Active Directory**.
 
 ## <a name="failure-to-provide-permissions-for-spn-registrationmodification"></a>Error al proporcionar permisos para la modificación o el registro de SPN
 
 En una **nueva** implementación de Windows Server 2019, si elige Kerberos para la autenticación del cliente REST y no concede permiso para que los nodos de la controladora de red registren o modifiquen el SPN, las operaciones Rest en el controlador de red producirán un error que le impedirá administrar el Sdn.
 
-Para una actualización de Windows Server 2016 a Windows Server 2019 y elige Kerberos para la autenticación de cliente de REST, las operaciones de REST no se bloquean, lo que garantiza la transparencia de las implementaciones de producción existentes. 
+Para una actualización de Windows Server 2016 a Windows Server 2019 y elige Kerberos para la autenticación de cliente de REST, las operaciones de REST no se bloquean, lo que garantiza la transparencia de las implementaciones de producción existentes.
 
 Si el SPN no está registrado, la autenticación del cliente de REST utiliza NTLM, que es menos seguro. También recibirá un evento crítico en el canal de administración del canal de eventos de **NetworkController-Framework** pidiéndole que proporcione permisos a los nodos de la controladora de red para registrar el SPN. Una vez que se proporciona el permiso, el controlador de red registra el SPN automáticamente y todas las operaciones de cliente utilizan Kerberos.
 
 
 >[!TIP]
->Normalmente, puede configurar el controlador de red para que use una dirección IP o un nombre DNS para las operaciones basadas en REST. Sin embargo, cuando se configura Kerberos, no se puede usar una dirección IP para las consultas REST a la controladora de red. Por ejemplo, puede usar \<https://networkcontroller.consotso.com\>, pero no puede usar \<https://192.34.21.3\>. Los nombres de entidad de seguridad de servicio no pueden funcionar si se usan direcciones IP.
+>Normalmente, puede configurar el controlador de red para que use una dirección IP o un nombre DNS para las operaciones basadas en REST. Sin embargo, cuando se configura Kerberos, no se puede usar una dirección IP para las consultas REST a la controladora de red. Por ejemplo, puede utilizar \<https://networkcontroller.consotso.com\> , pero no puede usar \<https://192.34.21.3\> . Los nombres de entidad de seguridad de servicio no pueden funcionar si se usan direcciones IP.
 >
 >Si usa la dirección IP para las operaciones REST junto con la autenticación Kerberos en Windows Server 2016, la comunicación real habría estado sobre la autenticación NTLM. En este tipo de implementación, una vez que actualice a Windows Server 2019, seguirá usando la autenticación basada en NTLM. Para pasar a la autenticación basada en Kerberos, debe usar el nombre DNS de la controladora de red para las operaciones REST y proporcionar permiso para que los nodos de la controladora de red registren el SPN.
 

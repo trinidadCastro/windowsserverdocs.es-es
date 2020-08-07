@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.technology: identity-adds
-ms.openlocfilehash: 66b0e772a1d656551811f4f9ded0a8d80627e485
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c91e32f76eb2a825cbce8419d9ce3bf689968e08
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519012"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969832"
 ---
 # <a name="resetting-a-trust-password-on-one-side-of-the-trust"></a>Restablecer una contraseña de confianza en un lado de la confianza
 
@@ -49,7 +47,7 @@ ms.locfileid: "87519012"
    > [!NOTE]
    > **passwordt** debe ser el mismo valor en ambos lados de la confianza. Ejecute este comando solo una vez (a diferencia del comando **netdom resetpwd** ) porque restablece automáticamente la contraseña dos veces.
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 
 - [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
 - [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)

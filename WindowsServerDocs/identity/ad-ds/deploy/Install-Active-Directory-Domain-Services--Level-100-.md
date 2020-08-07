@@ -6,126 +6,124 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 5b47d4952c340d8e1e6db1477adda9cd8c68321d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c80c781e9e4a6874bf1b754e37280795f9bc2c50
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965727"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969992"
 ---
 # <a name="install-active-directory-domain-services-level-100"></a>Instalar Active Directory Domain Services (Nivel 100)
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En este tema se explica cómo instalar AD DS en Windows Server 2012 mediante cualquiera de los métodos siguientes:  
+En este tema se explica cómo instalar AD DS en Windows Server 2012 mediante cualquiera de los métodos siguientes:
 
--   [Requisitos de credenciales para ejecutar Adprep.exe e instalar los Servicios de dominio de Active Directory](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)  
+-   [Requisitos de credenciales para ejecutar Adprep.exe e instalar los Servicios de dominio de Active Directory](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)
 
--   [Instalar AD DS mediante Windows PowerShell](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PS)  
+-   [Instalar AD DS mediante Windows PowerShell](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PS)
 
--   [Instalar AD DS mediante el Administrador del servidor](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_GUI)  
+-   [Instalar AD DS mediante el Administrador del servidor](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_GUI)
 
--   [Instalación por fases de un RODC mediante la interfaz gráfica de usuario](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_UIStaged)  
+-   [Instalación por fases de un RODC mediante la interfaz gráfica de usuario](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_UIStaged)
 
-## <a name="credential-requirements-to-run-adprepexe-and-install-active-directory-domain-services"></a><a name="BKMK_Creds"></a>Requisitos de credenciales para ejecutar Adprep.exe e instalar los Servicios de dominio de Active Directory  
-Se necesitan las siguientes credenciales para ejecutar Adprep.exe e instalar AD DS.  
+## <a name="credential-requirements-to-run-adprepexe-and-install-active-directory-domain-services"></a><a name="BKMK_Creds"></a>Requisitos de credenciales para ejecutar Adprep.exe e instalar los Servicios de dominio de Active Directory
+Se necesitan las siguientes credenciales para ejecutar Adprep.exe e instalar AD DS.
 
--   Para instalar un nuevo bosque, debe iniciar sesión como Administrador local del equipo.  
+-   Para instalar un nuevo bosque, debe iniciar sesión como Administrador local del equipo.
 
--   Para instalar un nuevo dominio secundario o un nuevo árbol de dominios, debe haber iniciado sesión como miembro del grupo Administradores de empresas.  
+-   Para instalar un nuevo dominio secundario o un nuevo árbol de dominios, debe haber iniciado sesión como miembro del grupo Administradores de empresas.
 
--   Para instalar un controlador de dominio adicional en un dominio existente, debe ser miembro del grupo Admins. del dominio.  
+-   Para instalar un controlador de dominio adicional en un dominio existente, debe ser miembro del grupo Admins. del dominio.
 
-    > [!NOTE]  
-    > Si no ejecuta adprep.exe comando por separado y está instalando el primer controlador de dominio que ejecuta Windows Server 2012 en un dominio o bosque existente, se le pedirá que proporcione las credenciales para ejecutar los comandos de adprep. Los requisitos de credenciales son los siguientes:  
-    >   
-    > -   Para introducir el primer controlador de dominio de Windows Server 2012 en el bosque, debe proporcionar credenciales para un miembro del grupo administradores de empresas, el grupo administradores de esquema y el grupo Admins. del dominio en el dominio que hospeda el maestro de esquema.  
-    > -   Para introducir el primer controlador de dominio de Windows Server 2012 en un dominio, debe proporcionar credenciales para un miembro del grupo Admins. del dominio.  
-    > -   Para introducir el primer controlador de dominio de solo lectura (RODC) en el bosque, debe proporcionar credenciales para un miembro del grupo Administradores de empresas.  
-    >   
-    >     > [!NOTE]  
-    >     > Si ya ha ejecutado Adprep/rodcprep en Windows Server 2008 o Windows Server 2008 R2, no es necesario volver a ejecutarlo para Windows Server 2012.  
+    > [!NOTE]
+    > Si no ejecuta adprep.exe comando por separado y está instalando el primer controlador de dominio que ejecuta Windows Server 2012 en un dominio o bosque existente, se le pedirá que proporcione las credenciales para ejecutar los comandos de adprep. Los requisitos de credenciales son los siguientes:
+    >
+    > -   Para introducir el primer controlador de dominio de Windows Server 2012 en el bosque, debe proporcionar credenciales para un miembro del grupo administradores de empresas, el grupo administradores de esquema y el grupo Admins. del dominio en el dominio que hospeda el maestro de esquema.
+    > -   Para introducir el primer controlador de dominio de Windows Server 2012 en un dominio, debe proporcionar credenciales para un miembro del grupo Admins. del dominio.
+    > -   Para introducir el primer controlador de dominio de solo lectura (RODC) en el bosque, debe proporcionar credenciales para un miembro del grupo Administradores de empresas.
+    >
+    >     > [!NOTE]
+    >     > Si ya ha ejecutado Adprep/rodcprep en Windows Server 2008 o Windows Server 2008 R2, no es necesario volver a ejecutarlo para Windows Server 2012.
 
-## <a name="installing-ad-ds-by-using-windows-powershell"></a><a name="BKMK_PS"></a>Instalar AD DS mediante Windows PowerShell  
-A partir de Windows Server 2012, puede instalar AD DS mediante Windows PowerShell. Dcpromo.exe está en desuso a partir de Windows Server 2012, pero todavía puede ejecutar dcpromo.exe mediante un archivo de respuesta (Dcpromo/Unattend: <answerfile> o Dcpromo/Answer: <answerfile> ). La capacidad de continuar ejecutando dcpromo.exe con un archivo de respuesta les proporciona a las organizaciones que cuentan con los recursos invertidos en automatización existente el tiempo para convertir la automatización de dcpromo.exe a Windows PowerShell. Para obtener más información acerca de cómo ejecutar dcpromo.exe con un archivo de respuesta, vea [https://support.microsoft.com/kb/947034](https://support.microsoft.com/kb/947034) .  
+## <a name="installing-ad-ds-by-using-windows-powershell"></a><a name="BKMK_PS"></a>Instalar AD DS mediante Windows PowerShell
+A partir de Windows Server 2012, puede instalar AD DS mediante Windows PowerShell. Dcpromo.exe está en desuso a partir de Windows Server 2012, pero todavía puede ejecutar dcpromo.exe mediante un archivo de respuesta (Dcpromo/Unattend: <answerfile> o Dcpromo/Answer: <answerfile> ). La capacidad de continuar ejecutando dcpromo.exe con un archivo de respuesta les proporciona a las organizaciones que cuentan con los recursos invertidos en automatización existente el tiempo para convertir la automatización de dcpromo.exe a Windows PowerShell. Para obtener más información acerca de cómo ejecutar dcpromo.exe con un archivo de respuesta, vea [https://support.microsoft.com/kb/947034](https://support.microsoft.com/kb/947034) .
 
-Para obtener más información acerca de cómo quitar AD DS mediante Windows PowerShell, consulte el tema sobre la [eliminación de AD DS mediante Windows PowerShell](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c#BKMK_RemovePS).  
+Para obtener más información acerca de cómo quitar AD DS mediante Windows PowerShell, consulte el tema sobre la [eliminación de AD DS mediante Windows PowerShell](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c#BKMK_RemovePS).
 
-Comience por agregar el rol mediante Windows PowerShell. Este comando instala el rol de servidor de AD DS y las herramientas de administración de AD DS y del servidor de AD LDS, incluidas las herramientas basadas en la GUI como Usuarios y equipos de Active Directory y herramientas de la línea de comandos como dcdia.exe. Las herramientas de administración del servidor no se instalan de forma predeterminada al usar Windows PowerShell. Debe especificar **"IncludeManagementTools** para administrar el servidor local o instalar [herramientas de administración remota del servidor](https://www.microsoft.com/download/details.aspx?id=28972) para administrar un servidor remoto.  
+Comience por agregar el rol mediante Windows PowerShell. Este comando instala el rol de servidor de AD DS y las herramientas de administración de AD DS y del servidor de AD LDS, incluidas las herramientas basadas en la GUI como Usuarios y equipos de Active Directory y herramientas de la línea de comandos como dcdia.exe. Las herramientas de administración del servidor no se instalan de forma predeterminada al usar Windows PowerShell. Debe especificar **"IncludeManagementTools** para administrar el servidor local o instalar [herramientas de administración remota del servidor](https://www.microsoft.com/download/details.aspx?id=28972) para administrar un servidor remoto.
 
-```  
-Install-windowsfeature -name AD-Domain-Services -IncludeManagementTools  
-<<Windows PowerShell cmdlet and arguments>>  
-```  
+```
+Install-windowsfeature -name AD-Domain-Services -IncludeManagementTools
+<<Windows PowerShell cmdlet and arguments>>
+```
 
-No es necesario reiniciar hasta después de que la instalación de AD DS esté completa.  
+No es necesario reiniciar hasta después de que la instalación de AD DS esté completa.
 
-Después podrá ejecutar este comando para ver los cmdlets disponibles en el módulo ADDSDeployment.  
+Después podrá ejecutar este comando para ver los cmdlets disponibles en el módulo ADDSDeployment.
 
-```  
+```
 Get-Command -Module ADDSDeployment
-```  
+```
 
-Para ver la lista de argumentos que se pueden especificar para cmdlets y la sintaxis:  
+Para ver la lista de argumentos que se pueden especificar para cmdlets y la sintaxis:
 
-```  
-Get-Help <cmdlet name>  
-```  
+```
+Get-Help <cmdlet name>
+```
 
-Por ejemplo, para ver los argumentos para crear una cuenta de controlador de dominio de solo lectura (RODC) no ocupado, escriba  
+Por ejemplo, para ver los argumentos para crear una cuenta de controlador de dominio de solo lectura (RODC) no ocupado, escriba
 
-```  
+```
 Get-Help Add-ADDSReadOnlyDomainControllerAccount
-```  
+```
 
-Los argumentos opcionales aparecen entre corchetes.  
+Los argumentos opcionales aparecen entre corchetes.
 
-También puede descargar los ejemplos de Ayuda más recientes y conceptos para cmdlets de Windows PowerShell. Para obtener más información, consulte [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_updatable_help?view=powershell-5.1).  
+También puede descargar los ejemplos de Ayuda más recientes y conceptos para cmdlets de Windows PowerShell. Para obtener más información, consulte [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_updatable_help?view=powershell-5.1).
 
-Puede ejecutar los cmdlets de Windows PowerShell contra servidores remotos:  
+Puede ejecutar los cmdlets de Windows PowerShell contra servidores remotos:
 
--   En Windows PowerShell, use Invoke-Command con el cmdlet ADDSDeployment. Por ejemplo, para instalar AD DS en un servidor remoto denominado ConDC3 en el dominio contoso.com, escriba:  
+-   En Windows PowerShell, use Invoke-Command con el cmdlet ADDSDeployment. Por ejemplo, para instalar AD DS en un servidor remoto denominado ConDC3 en el dominio contoso.com, escriba:
 
-    ```  
-    Invoke-Command { Install-ADDSDomainController -DomainName contoso.com -Credential (Get-Credential) } -ComputerName ConDC3  
-    ```  
+    ```
+    Invoke-Command { Install-ADDSDomainController -DomainName contoso.com -Credential (Get-Credential) } -ComputerName ConDC3
+    ```
 
-o bien  
+o bien
 
--   En el Administrador del servidor, cree un grupo de servidores que incluya el servidor remoto. Haga clic con el botón secundario en el nombre del servidor remoto y haga clic en **Windows PowerShell**.  
+-   En el Administrador del servidor, cree un grupo de servidores que incluya el servidor remoto. Haga clic con el botón secundario en el nombre del servidor remoto y haga clic en **Windows PowerShell**.
 
-En las secciones siguientes se explica cómo ejecutar los cmdlets del módulo ADDSDeployment para instalar AD DS.  
+En las secciones siguientes se explica cómo ejecutar los cmdlets del módulo ADDSDeployment para instalar AD DS.
 
--   [Argumentos del cmdlet ADDSDeployment](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)  
+-   [Argumentos del cmdlet ADDSDeployment](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)
 
--   [Especificación de las credenciales de Windows PowerShell](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSCreds)  
+-   [Especificación de las credenciales de Windows PowerShell](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSCreds)
 
--   [Uso de cmdlets de prueba](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_TestCmdlets)  
+-   [Uso de cmdlets de prueba](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_TestCmdlets)
 
--   [Instalación de un nuevo dominio raíz del bosque mediante Windows PowerShell](../../ad-ds/deploy/../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSForest)  
+-   [Instalación de un nuevo dominio raíz del bosque mediante Windows PowerShell](../../ad-ds/deploy/../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSForest)
 
--   [Instalación de un nuevo dominio de árbol o secundario mediante Windows PowerShell](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSDomain)  
+-   [Instalación de un nuevo dominio de árbol o secundario mediante Windows PowerShell](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSDomain)
 
--   [Instalación de un controlador de dominio adicional (réplica) mediante Windows PowerShell](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSReplica)  
+-   [Instalación de un controlador de dominio adicional (réplica) mediante Windows PowerShell](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSReplica)
 
-### <a name="addsdeployment-cmdlet-arguments"></a><a name="BKMK_Params"></a>Argumentos del cmdlet ADDSDeployment  
-En la tabla siguiente se muestran los argumentos para los cmdlets ADDSDeployment de Windows PowerShell. Los argumentos en negrita son obligatorios. Los argumentos equivalentes para dcpromo.exe se muestran entre paréntesis en la lista si se denominan de otra manera en Windows PowerShell.  
+### <a name="addsdeployment-cmdlet-arguments"></a><a name="BKMK_Params"></a>Argumentos del cmdlet ADDSDeployment
+En la tabla siguiente se muestran los argumentos para los cmdlets ADDSDeployment de Windows PowerShell. Los argumentos en negrita son obligatorios. Los argumentos equivalentes para dcpromo.exe se muestran entre paréntesis en la lista si se denominan de otra manera en Windows PowerShell.
 
-Los conmutadores de Windows PowerShell aceptan los argumentos $TRUE o $FALSE. No es necesario especificar los argumentos que se $TRUE de forma predeterminada.  
+Los conmutadores de Windows PowerShell aceptan los argumentos $TRUE o $FALSE. No es necesario especificar los argumentos que se $TRUE de forma predeterminada.
 
-Para reemplazar los valores predeterminados, se puede especificar el argumento con un valor $False. Por ejemplo, como **-installdns** se ejecuta automáticamente para la instalación de un bosque nuevo si no se especifica, la única forma para *impedir* la instalación de DNS cuando se instala un bosque nuevo consiste en usar :  
+Para reemplazar los valores predeterminados, se puede especificar el argumento con un valor $False. Por ejemplo, como **-installdns** se ejecuta automáticamente para la instalación de un bosque nuevo si no se especifica, la única forma para *impedir* la instalación de DNS cuando se instala un bosque nuevo consiste en usar :
 
-```  
--InstallDNS:$false  
-```  
+```
+-InstallDNS:$false
+```
 
-Del mismo modo, como **"installdns** tiene un valor predeterminado de $false si instala un controlador de dominio en un entorno que no hospeda el servidor DNS de Windows Server, debe especificar el siguiente argumento para instalar el servidor DNS:  
+Del mismo modo, como **"installdns** tiene un valor predeterminado de $false si instala un controlador de dominio en un entorno que no hospeda el servidor DNS de Windows Server, debe especificar el siguiente argumento para instalar el servidor DNS:
 
-```  
--InstallDNS:$true  
-```  
+```
+-InstallDNS:$true
+```
 
 
 |                                                                                                                 Argumento                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -169,371 +167,371 @@ Del mismo modo, como **"installdns** tiene un valor predeterminado de $false si 
 |                                                                                                              SkipPreChecks                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              No ejecuta las comprobaciones de requisitos previos antes de comenzar la instalación. No se recomienda usar esta configuración.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |                                                                                                                  WhatIf                                                                                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Muestra lo que sucedería si se ejecutara el cmdlet. El cmdlet no se ejecuta.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
-### <a name="specifying-windows-powershell-credentials"></a><a name="BKMK_PSCreds"></a>Especificación de las credenciales de Windows PowerShell  
-Puede especificar las credenciales sin revelarlas en texto sin formato en pantalla mediante [Get-credential](/previous-versions//dd315327(v=technet.10)).  
+### <a name="specifying-windows-powershell-credentials"></a><a name="BKMK_PSCreds"></a>Especificación de las credenciales de Windows PowerShell
+Puede especificar las credenciales sin revelarlas en texto sin formato en pantalla mediante [Get-credential](/previous-versions//dd315327(v=technet.10)).
 
-El funcionamiento para los argumentos -SafeModeAdministratorPassword y LocalAdministratorPassword es especial:  
+El funcionamiento para los argumentos -SafeModeAdministratorPassword y LocalAdministratorPassword es especial:
 
--   Si no se especifica como un argumento, el cmdlet le pide que escriba y confirme una contraseña enmascarada. Este es el uso preferido cuando se ejecuta el cmdlet en forma interactiva.  
+-   Si no se especifica como un argumento, el cmdlet le pide que escriba y confirme una contraseña enmascarada. Este es el uso preferido cuando se ejecuta el cmdlet en forma interactiva.
 
--   Si se especifica con un valor, este debe ser una cadena segura. Este no es el uso preferido cuando se ejecuta el cmdlet en forma interactiva.  
+-   Si se especifica con un valor, este debe ser una cadena segura. Este no es el uso preferido cuando se ejecuta el cmdlet en forma interactiva.
 
-Por ejemplo, puede solicitar una contraseña en forma manual mediante el cmdlet **Read-Host** para pedirle al usuario una cadena segura  
+Por ejemplo, puede solicitar una contraseña en forma manual mediante el cmdlet **Read-Host** para pedirle al usuario una cadena segura
 
-```  
+```
 -SafeModeAdministratorPassword (Read-Host -Prompt "DSRM Password:" -AsSecureString)
-```  
+```
 
-> [!WARNING]  
-> Como la opción anterior no confirma la contraseña, tenga mucho cuidado: la contraseña no es visible.  
+> [!WARNING]
+> Como la opción anterior no confirma la contraseña, tenga mucho cuidado: la contraseña no es visible.
 
-También puede proporcionar una cadena segura como una cadena segura como una variable no cifrada convertida, pero esto no se recomienda:  
+También puede proporcionar una cadena segura como una cadena segura como una variable no cifrada convertida, pero esto no se recomienda:
 
-```  
+```
 -SafeModeAdministratorPassword (ConvertTo-SecureString "Password1" -AsPlainText -Force)
-```  
+```
 
-> [!WARNING]  
-> No se recomienda proporcionar o almacenar una contraseña no cifrada. Cualquier persona que ejecute este comando en un script o que mire sobre su hombro sabrá la contraseña de DSRM de ese controlador de dominio. Si saben esto, podrán suplantar el controlador de dominio y elevar su privilegio al nivel máximo en un bosque de Active Directory.  
+> [!WARNING]
+> No se recomienda proporcionar o almacenar una contraseña no cifrada. Cualquier persona que ejecute este comando en un script o que mire sobre su hombro sabrá la contraseña de DSRM de ese controlador de dominio. Si saben esto, podrán suplantar el controlador de dominio y elevar su privilegio al nivel máximo en un bosque de Active Directory.
 
-### <a name="using-test-cmdlets"></a><a name="BKMK_TestCmdlets"></a>Uso de cmdlets de prueba  
-Cada cmdlet ADDSDeployment tiene un cmdlet de prueba correspondiente. Los cmdlets de prueba ejecutan solo las comprobaciones de requisitos previos para la operación de instalación; no se configura la instalación. Los argumentos para cada cmdlet de prueba son los mismos que para el cmdlet de instalación correspondiente, pero **"SkipPreChecks** no está disponible para los cmdlets de prueba.  
+### <a name="using-test-cmdlets"></a><a name="BKMK_TestCmdlets"></a>Uso de cmdlets de prueba
+Cada cmdlet ADDSDeployment tiene un cmdlet de prueba correspondiente. Los cmdlets de prueba ejecutan solo las comprobaciones de requisitos previos para la operación de instalación; no se configura la instalación. Los argumentos para cada cmdlet de prueba son los mismos que para el cmdlet de instalación correspondiente, pero **"SkipPreChecks** no está disponible para los cmdlets de prueba.
 
-|Cmdlet de prueba|Descripción|  
-|---------------|---------------|  
-|Test-ADDSForestInstallation|Ejecuta los requisitos previos para la instalación de un bosque nuevo de Active Directory.|  
-|Test-ADDSDomainInstallation|Ejecuta los requisitos previos para la instalación de un dominio nuevo de Active Directory.|  
-|Test-ADDSDomainControllerInstallation|Ejecuta los requisitos previos para la instalación de un controlador de dominio de Active Directory.|  
-|Test-ADDSReadOnlyDomainControllerAccountCreation|Ejecuta los requisitos previos para agregar una cuenta de controlador de dominio de solo lectura (RODC).|  
+|Cmdlet de prueba|Descripción|
+|---------------|---------------|
+|Test-ADDSForestInstallation|Ejecuta los requisitos previos para la instalación de un bosque nuevo de Active Directory.|
+|Test-ADDSDomainInstallation|Ejecuta los requisitos previos para la instalación de un dominio nuevo de Active Directory.|
+|Test-ADDSDomainControllerInstallation|Ejecuta los requisitos previos para la instalación de un controlador de dominio de Active Directory.|
+|Test-ADDSReadOnlyDomainControllerAccountCreation|Ejecuta los requisitos previos para agregar una cuenta de controlador de dominio de solo lectura (RODC).|
 
-### <a name="installing-a-new-forest-root-domain-using-windows-powershell"></a><a name="BKMK_PSForest"></a>Instalación de un nuevo dominio raíz del bosque mediante Windows PowerShell  
-La sintaxis de comando para la instalación de un busque nuevo es la siguiente. Los argumentos opcionales aparecen entre corchetes.  
+### <a name="installing-a-new-forest-root-domain-using-windows-powershell"></a><a name="BKMK_PSForest"></a>Instalación de un nuevo dominio raíz del bosque mediante Windows PowerShell
+La sintaxis de comando para la instalación de un busque nuevo es la siguiente. Los argumentos opcionales aparecen entre corchetes.
 
-```  
-Install-ADDSForest [-SkipPreChecks] -DomainName <string> -SafeModeAdministratorPassword <SecureString> [-CreateDNSDelegation] [-DatabasePath <string>] [-DNSDelegationCredential <PS Credential>] [-NoDNSOnNetwork] [-DomainMode <DomainMode> {Win2003 | Win2008 | Win2008R2 | Win2012}] [-DomainNetBIOSName <string>] [-ForestMode <ForestMode> {Win2003 | Win2008 | Win2008R2 | Win2012}] [-InstallDNS] [-LogPath <string>] [-NoRebootOnCompletion] [-SkipAutoConfigureDNS] [-SYSVOLPath] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]  
-```  
+```
+Install-ADDSForest [-SkipPreChecks] -DomainName <string> -SafeModeAdministratorPassword <SecureString> [-CreateDNSDelegation] [-DatabasePath <string>] [-DNSDelegationCredential <PS Credential>] [-NoDNSOnNetwork] [-DomainMode <DomainMode> {Win2003 | Win2008 | Win2008R2 | Win2012}] [-DomainNetBIOSName <string>] [-ForestMode <ForestMode> {Win2003 | Win2008 | Win2008R2 | Win2012}] [-InstallDNS] [-LogPath <string>] [-NoRebootOnCompletion] [-SkipAutoConfigureDNS] [-SYSVOLPath] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
 
-> [!NOTE]  
-> Se requiere el argumento -DomainNetBIOSName si se quiere cambiar el nombre de 15 caracteres que se genera automáticamente según el prefijo de nombre DNS o si el nombre excede los 15 caracteres.  
+> [!NOTE]
+> Se requiere el argumento -DomainNetBIOSName si se quiere cambiar el nombre de 15 caracteres que se genera automáticamente según el prefijo de nombre DNS o si el nombre excede los 15 caracteres.
 
-Por ejemplo, para instalar un nuevo bosque llamado corp.contoso.com y que se pida en forma segura que se proporcione la contraseña de DSRM, escriba:  
+Por ejemplo, para instalar un nuevo bosque llamado corp.contoso.com y que se pida en forma segura que se proporcione la contraseña de DSRM, escriba:
 
-```  
-Install-ADDSForest -DomainName "corp.contoso.com"   
-```  
+```
+Install-ADDSForest -DomainName "corp.contoso.com"
+```
 
-> [!NOTE]  
-> El servidor DNS se instala de forma predeterminada cuando se ejecuta Install-ADDSForest.  
+> [!NOTE]
+> El servidor DNS se instala de forma predeterminada cuando se ejecuta Install-ADDSForest.
 
-Para instalar un bosque nuevo llamado corp.contoso.com, cree una delegación DNS en el dominio contoso.com, configure el nivel funcional del dominio en Windows Server 2008 R2 y establezca el nivel funcional del bosque en Windows Server 2008, instale la base de datos de Active Directory y SYSVOL en la unidad D:\, instale los archivos de registro en la unidad E:\, y ese le pedirá que proporcione la contraseña de modo de restauración de servicios de directorio y escriba:  
+Para instalar un bosque nuevo llamado corp.contoso.com, cree una delegación DNS en el dominio contoso.com, configure el nivel funcional del dominio en Windows Server 2008 R2 y establezca el nivel funcional del bosque en Windows Server 2008, instale la base de datos de Active Directory y SYSVOL en la unidad D:\, instale los archivos de registro en la unidad E:\, y ese le pedirá que proporcione la contraseña de modo de restauración de servicios de directorio y escriba:
 
-```  
-Install-ADDSForest -DomainName corp.contoso.com -CreateDNSDelegation -DomainMode Win2008 -ForestMode Win2008R2 -DatabasePath "d:\NTDS" -SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs"   
-```  
+```
+Install-ADDSForest -DomainName corp.contoso.com -CreateDNSDelegation -DomainMode Win2008 -ForestMode Win2008R2 -DatabasePath "d:\NTDS" -SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs"
+```
 
-### <a name="installing-a-new-child-or-tree-domain-using-windows-powershell"></a><a name="BKMK_PSDomain"></a>Instalación de un nuevo dominio de árbol o secundario mediante Windows PowerShell  
-La sintaxis de comando para la instalación de un dominio nuevo es la siguiente. Los argumentos opcionales aparecen entre corchetes.  
+### <a name="installing-a-new-child-or-tree-domain-using-windows-powershell"></a><a name="BKMK_PSDomain"></a>Instalación de un nuevo dominio de árbol o secundario mediante Windows PowerShell
+La sintaxis de comando para la instalación de un dominio nuevo es la siguiente. Los argumentos opcionales aparecen entre corchetes.
 
-```  
-Install-ADDSDomain [-SkipPreChecks] -NewDomainName <string> -ParentDomainName <string> -SafeModeAdministratorPassword <SecureString> [-ADPrepCredential <PS Credential>] [-AllowDomainReinstall] [-CreateDNSDelegation] [-Credential <PS Credential>] [-DatabasePath <string>] [-DNSDelegationCredential <PS Credential>] [-NoDNSOnNetwork] [-DomainMode <DomainMode> {Win2003 | Win2008 | Win2008R2 | Win2012}] [DomainType <DomainType> {Child Domain | TreeDomain} [-InstallDNS] [-LogPath <string>] [-NoGlobalCatalog] [-NewDomainNetBIOSName <string>] [-NoRebootOnCompletion] [-ReplicationSourceDC <string>] [-SiteName <string>] [-SkipAutoConfigureDNS] [-Systemkey <SecureString>] [-SYSVOLPath] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]  
-```  
+```
+Install-ADDSDomain [-SkipPreChecks] -NewDomainName <string> -ParentDomainName <string> -SafeModeAdministratorPassword <SecureString> [-ADPrepCredential <PS Credential>] [-AllowDomainReinstall] [-CreateDNSDelegation] [-Credential <PS Credential>] [-DatabasePath <string>] [-DNSDelegationCredential <PS Credential>] [-NoDNSOnNetwork] [-DomainMode <DomainMode> {Win2003 | Win2008 | Win2008R2 | Win2012}] [DomainType <DomainType> {Child Domain | TreeDomain} [-InstallDNS] [-LogPath <string>] [-NoGlobalCatalog] [-NewDomainNetBIOSName <string>] [-NoRebootOnCompletion] [-ReplicationSourceDC <string>] [-SiteName <string>] [-SkipAutoConfigureDNS] [-Systemkey <SecureString>] [-SYSVOLPath] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
 
-> [!NOTE]  
-> El argumento **-credential** solamente es necesario cuando no se encuentra con una sesión iniciada actualmente como miembro del grupo Administradores de empresas.  
->   
-> Se requiere el argumento **-NewDomainNetBIOSName** si se quiere cambiar el nombre de 15 caracteres que se genera automáticamente según el prefijo de nombre DNS o si el nombre excede los 15 caracteres.  
+> [!NOTE]
+> El argumento **-credential** solamente es necesario cuando no se encuentra con una sesión iniciada actualmente como miembro del grupo Administradores de empresas.
+>
+> Se requiere el argumento **-NewDomainNetBIOSName** si se quiere cambiar el nombre de 15 caracteres que se genera automáticamente según el prefijo de nombre DNS o si el nombre excede los 15 caracteres.
 
-Por ejemplo, para usar las credenciales de corp\EnterpriseAdmin1 para crear un nuevo dominio secundario llamado child.corp.contoso.com, instale el servidor DNS, cree una delegación DNS en el dominio corp.contoso.com, establezca el nivel funcional de dominio en Windows Server 2003, convierta el control de dominio en un servidor de catálogo global en un sitio llamado Houston, use DC1.corp.contoso.com como el controlador de dominio de origen de replicación, instale la base de datos de Active Directory y SYSVOL en la unidad D:\, instale los archivos de registro en la unidad E:\, y se le pedirá que proporcione la contraseña de modo de restauración de servicios de directorio, pero no se le pedirá que confirme el comando, escriba:  
+Por ejemplo, para usar las credenciales de corp\EnterpriseAdmin1 para crear un nuevo dominio secundario llamado child.corp.contoso.com, instale el servidor DNS, cree una delegación DNS en el dominio corp.contoso.com, establezca el nivel funcional de dominio en Windows Server 2003, convierta el control de dominio en un servidor de catálogo global en un sitio llamado Houston, use DC1.corp.contoso.com como el controlador de dominio de origen de replicación, instale la base de datos de Active Directory y SYSVOL en la unidad D:\, instale los archivos de registro en la unidad E:\, y se le pedirá que proporcione la contraseña de modo de restauración de servicios de directorio, pero no se le pedirá que confirme el comando, escriba:
 
-```  
-Install-ADDSDomain -SafeModeAdministratorPassword -Credential (get-credential corp\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2003 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "d:\NTDS" "SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs" -Confirm:$False  
-```  
+```
+Install-ADDSDomain -SafeModeAdministratorPassword -Credential (get-credential corp\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2003 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "d:\NTDS" "SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs" -Confirm:$False
+```
 
-### <a name="installing-an-additional-replica-domain-controller-using-windows-powershell"></a><a name="BKMK_PSReplica"></a>Instalación de un controlador de dominio adicional (réplica) mediante Windows PowerShell  
-La sintaxis de comando para la instalación de un controlador de dominio adicional es la siguiente. Los argumentos opcionales aparecen entre corchetes.  
+### <a name="installing-an-additional-replica-domain-controller-using-windows-powershell"></a><a name="BKMK_PSReplica"></a>Instalación de un controlador de dominio adicional (réplica) mediante Windows PowerShell
+La sintaxis de comando para la instalación de un controlador de dominio adicional es la siguiente. Los argumentos opcionales aparecen entre corchetes.
 
-```  
-Install-ADDSDomainController -DomainName <string> [-SkipPreChecks] -SafeModeAdministratorPassword <SecureString> [-ADPrepCredential <PS Credential>] [-AllowDomainControllerReinstall] [-ApplicationPartitionsToReplicate <string[]>] [-CreateDNSDelegation] [-Credential <PS Credential>] [-CriticalReplicationOnly] [-DatabasePath <string>] [-DNSDelegationCredential <PS Credential>] [-NoDNSOnNetwork] [-NoGlobalCatalog] [-InstallationMediaPath <string>] [-InstallDNS] [-LogPath <string>] [-MoveInfrastructureOperationMasterRoleIfNecessary] [-NoRebootOnCompletion] [-ReplicationSourceDC <string>] [-SiteName <string>] [-SkipAutoConfigureDNS] [-SystemKey <SecureString>] [-SYSVOLPath <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]  
-```  
+```
+Install-ADDSDomainController -DomainName <string> [-SkipPreChecks] -SafeModeAdministratorPassword <SecureString> [-ADPrepCredential <PS Credential>] [-AllowDomainControllerReinstall] [-ApplicationPartitionsToReplicate <string[]>] [-CreateDNSDelegation] [-Credential <PS Credential>] [-CriticalReplicationOnly] [-DatabasePath <string>] [-DNSDelegationCredential <PS Credential>] [-NoDNSOnNetwork] [-NoGlobalCatalog] [-InstallationMediaPath <string>] [-InstallDNS] [-LogPath <string>] [-MoveInfrastructureOperationMasterRoleIfNecessary] [-NoRebootOnCompletion] [-ReplicationSourceDC <string>] [-SiteName <string>] [-SkipAutoConfigureDNS] [-SystemKey <SecureString>] [-SYSVOLPath <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
 
-Para instalar un controlador de dominio y servidor DNS en el dominio corp.contoso.com y se le pida que proporcione las credenciales de Administrador de dominio y la contraseña DSRM, escriba:  
+Para instalar un controlador de dominio y servidor DNS en el dominio corp.contoso.com y se le pida que proporcione las credenciales de Administrador de dominio y la contraseña DSRM, escriba:
 
-```  
+```
 Install-ADDSDomainController -Credential (Get-Credential CORP\Administrator) -DomainName "corp.contoso.com"
-```  
+```
 
-Si el equipo ya se ha unido a un dominio y usted es miembro del grupo Admins. del dominio, puede usar:  
+Si el equipo ya se ha unido a un dominio y usted es miembro del grupo Admins. del dominio, puede usar:
 
-```  
-Install-ADDSDomainController -DomainName "corp.contoso.com"  
-```  
+```
+Install-ADDSDomainController -DomainName "corp.contoso.com"
+```
 
-Para que se le pida el nombre del dominio, escriba:  
+Para que se le pida el nombre del dominio, escriba:
 
-```  
+```
 Install-ADDSDomainController -Credential (Get-Credential) -DomainName (Read-Host "Domain to promote into")
-```  
+```
 
-El siguiente comando usará las credenciales de Contoso\EnterpriseAdmin1 para instalar un controlador de dominio de escritura y un servidor de catálogo global en un sitio llamado Boston, instale el servidor DNS, cree una delegación DNS en el dominio contoso.com, instale desde los medios almacenados en la carpeta c:\ADDS IFM, instale la base de datos de Active Directory y SYSVOL en la unidad D:\, instale los archivos de registro en la unidad E:\, haga que el servidor se reinicie automáticamente después de que termine la instalación de AD DS, y se le pedirá que proporcione la contraseña de modo de restauración de servicios de directorio:  
+El siguiente comando usará las credenciales de Contoso\EnterpriseAdmin1 para instalar un controlador de dominio de escritura y un servidor de catálogo global en un sitio llamado Boston, instale el servidor DNS, cree una delegación DNS en el dominio contoso.com, instale desde los medios almacenados en la carpeta c:\ADDS IFM, instale la base de datos de Active Directory y SYSVOL en la unidad D:\, instale los archivos de registro en la unidad E:\, haga que el servidor se reinicie automáticamente después de que termine la instalación de AD DS, y se le pedirá que proporcione la contraseña de modo de restauración de servicios de directorio:
 
-```  
-Install-ADDSDomainController -Credential (Get-Credential CONTOSO\EnterpriseAdmin1) -CreateDNSDelegation -DomainName corp.contoso.com -SiteName Boston -InstallationMediaPath "c:\ADDS IFM" -DatabasePath "d:\NTDS" -SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs"   
-```  
+```
+Install-ADDSDomainController -Credential (Get-Credential CONTOSO\EnterpriseAdmin1) -CreateDNSDelegation -DomainName corp.contoso.com -SiteName Boston -InstallationMediaPath "c:\ADDS IFM" -DatabasePath "d:\NTDS" -SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs"
+```
 
-### <a name="performing-a-staged-rodc-installation-using-windows-powershell"></a>Instalación por fases de un RODC con Windows PowerShell  
-La sintaxis de comando para crear una cuenta RODC es la siguiente. Los argumentos opcionales aparecen entre corchetes.  
+### <a name="performing-a-staged-rodc-installation-using-windows-powershell"></a>Instalación por fases de un RODC con Windows PowerShell
+La sintaxis de comando para crear una cuenta RODC es la siguiente. Los argumentos opcionales aparecen entre corchetes.
 
-```  
-Add-ADDSReadOnlyDomainControllerAccount [-SkipPreChecks] -DomainControllerAccuntName <string> -DomainName <string> -SiteName <string> [-AllowPasswordReplicationAccountName <string []>] [-NoGlobalCatalog] [-Credential <PS Credential>] [-DelegatedAdministratorAccountName <string>] [-DenyPasswordReplicationAccountName <string []>] [-InstallDNS] [-ReplicationSourceDC <string>] [-Force] [-WhatIf] [-Confirm] [<Common Parameters>]  
-```  
+```
+Add-ADDSReadOnlyDomainControllerAccount [-SkipPreChecks] -DomainControllerAccuntName <string> -DomainName <string> -SiteName <string> [-AllowPasswordReplicationAccountName <string []>] [-NoGlobalCatalog] [-Credential <PS Credential>] [-DelegatedAdministratorAccountName <string>] [-DenyPasswordReplicationAccountName <string []>] [-InstallDNS] [-ReplicationSourceDC <string>] [-Force] [-WhatIf] [-Confirm] [<Common Parameters>]
+```
 
-La sintaxis de comando para adjuntar un servidor a una cuenta RODC es la siguiente. Los argumentos opcionales aparecen entre corchetes.  
+La sintaxis de comando para adjuntar un servidor a una cuenta RODC es la siguiente. Los argumentos opcionales aparecen entre corchetes.
 
-```  
-Install-ADDSDomainController -DomainName <string> [-SkipPreChecks] -SafeModeAdministratorPassword <SecureString> [-ADPrepCredential <PS Credential>] [-ApplicationPartitionsToReplicate <string[]>] [-Credential <PS Credential>] [-CriticalReplicationOnly] [-DatabasePath <string>] [-NoDNSOnNetwork] [-InstallationMediaPath <string>] [-InstallDNS] [-LogPath <string>] [-MoveInfrastructureOperationMasterRoleIfNecessary] [-NoRebootOnCompletion] [-ReplicationSourceDC <string>] [-SkipAutoConfigureDNS] [-SystemKey <SecureString>] [-SYSVOLPath <string>] [-UseExistingAccount] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]  
-```  
+```
+Install-ADDSDomainController -DomainName <string> [-SkipPreChecks] -SafeModeAdministratorPassword <SecureString> [-ADPrepCredential <PS Credential>] [-ApplicationPartitionsToReplicate <string[]>] [-Credential <PS Credential>] [-CriticalReplicationOnly] [-DatabasePath <string>] [-NoDNSOnNetwork] [-InstallationMediaPath <string>] [-InstallDNS] [-LogPath <string>] [-MoveInfrastructureOperationMasterRoleIfNecessary] [-NoRebootOnCompletion] [-ReplicationSourceDC <string>] [-SkipAutoConfigureDNS] [-SystemKey <SecureString>] [-SYSVOLPath <string>] [-UseExistingAccount] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
 
-Por ejemplo, para crear una cuenta RODC denominada RODC1:  
+Por ejemplo, para crear una cuenta RODC denominada RODC1:
 
-```  
-Add-ADDSReadOnlyDomainControllerAccount -DomainControllerAccountName RODC1 -DomainName corp.contoso.com -SiteName Boston DelegatedAdministratoraccountName PilarA  
-```  
+```
+Add-ADDSReadOnlyDomainControllerAccount -DomainControllerAccountName RODC1 -DomainName corp.contoso.com -SiteName Boston DelegatedAdministratoraccountName PilarA
+```
 
-A continuación, ejecute los siguientes comandos en el servidor que quiera adjuntar a la cuenta RODC1. El servidor no se puede unir al dominio. Instale primero el rol de servidor de AD DS y las herramientas de administración:  
+A continuación, ejecute los siguientes comandos en el servidor que quiera adjuntar a la cuenta RODC1. El servidor no se puede unir al dominio. Instale primero el rol de servidor de AD DS y las herramientas de administración:
 
-```  
+```
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
-```  
+```
 
-Para ejecutar el siguiente comando para crear el RODC:  
+Para ejecutar el siguiente comando para crear el RODC:
 
-```  
+```
 Install-ADDSDomainController -DomainName corp.contoso.com -SafeModeAdministratorPassword (Read-Host -Prompt "DSRM Password:" -AsSecureString) -Credential (Get-Credential Corp\PilarA) -UseExistingAccount
-```  
+```
 
-Presione **Y** para confirmar o incluir el argumento **"confirmar** para evitar el mensaje de confirmación.  
+Presione **Y** para confirmar o incluir el argumento **"confirmar** para evitar el mensaje de confirmación.
 
-## <a name="installing-ad-ds-by-using-server-manager"></a><a name="BKMK_GUI"></a>Instalar AD DS mediante el Administrador del servidor  
-AD DS se puede instalar en Windows Server 2012 mediante el Asistente para agregar roles en Administrador del servidor, seguido del Asistente para configuración de Active Directory Domain Services, que es nuevo a partir de Windows Server 2012. El Asistente para instalación de Active Directory Domain Services (dcpromo.exe) está en desuso a partir de Windows Server 2012.  
+## <a name="installing-ad-ds-by-using-server-manager"></a><a name="BKMK_GUI"></a>Instalar AD DS mediante el Administrador del servidor
+AD DS se puede instalar en Windows Server 2012 mediante el Asistente para agregar roles en Administrador del servidor, seguido del Asistente para configuración de Active Directory Domain Services, que es nuevo a partir de Windows Server 2012. El Asistente para instalación de Active Directory Domain Services (dcpromo.exe) está en desuso a partir de Windows Server 2012.
 
-En las siguientes secciones se explica cómo crear grupos de servidores para instalar y administrar AD DS en varios servidores, y cómo usar los asistentes para instalar AD DS.  
+En las siguientes secciones se explica cómo crear grupos de servidores para instalar y administrar AD DS en varios servidores, y cómo usar los asistentes para instalar AD DS.
 
-### <a name="creating-server-pools"></a><a name="BKMK_ServerPools"></a>Creación de grupos de servidores  
-El Administrador del servidor puede agrupar otros servidores de la red siempre y cuando estén accesibles desde el equipo que ejecuta el Administrador del servidor. Una vez agrupados, elige aquellos servidores para la instalación remota de AD DS o cualquier otra opción de configuración posible dentro del Administrador del servidor. El equipo que ejecuta el Administrador del servidor se agrupa automáticamente. Para obtener más información acerca de la creación de grupos de servidores, consulte [Adición de servidores al Administrador del servidor](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831453(v=ws.11)).  
+### <a name="creating-server-pools"></a><a name="BKMK_ServerPools"></a>Creación de grupos de servidores
+El Administrador del servidor puede agrupar otros servidores de la red siempre y cuando estén accesibles desde el equipo que ejecuta el Administrador del servidor. Una vez agrupados, elige aquellos servidores para la instalación remota de AD DS o cualquier otra opción de configuración posible dentro del Administrador del servidor. El equipo que ejecuta el Administrador del servidor se agrupa automáticamente. Para obtener más información acerca de la creación de grupos de servidores, consulte [Adición de servidores al Administrador del servidor](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831453(v=ws.11)).
 
-> [!NOTE]  
-> Para administrar un equipo unidos a dominios con el Administrador del servidor en un servidor del grupo de trabajo, o viceversa, se necesitan pasos de configuración adicionales. Para obtener más información, vea "agregar y administrar servidores en grupos de trabajo" en [agregar servidores a administrador del servidor](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831453(v=ws.11)).  
+> [!NOTE]
+> Para administrar un equipo unidos a dominios con el Administrador del servidor en un servidor del grupo de trabajo, o viceversa, se necesitan pasos de configuración adicionales. Para obtener más información, vea "agregar y administrar servidores en grupos de trabajo" en [agregar servidores a administrador del servidor](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831453(v=ws.11)).
 
-### <a name="installing-ad-ds"></a><a name="BKMK_installADDSGUI"></a>Instalación de AD DS  
-**Credenciales administrativas**  
+### <a name="installing-ad-ds"></a><a name="BKMK_installADDSGUI"></a>Instalación de AD DS
+**Credenciales administrativas**
 
-Los requisitos de credenciales para instalar AD DS varían según la configuración de implementación que se elija. Para obtener más información, consulte [Requisitos de credenciales para ejecutar Adprep.exe e instalar Active Directory Domain Services](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds).  
+Los requisitos de credenciales para instalar AD DS varían según la configuración de implementación que se elija. Para obtener más información, consulte [Requisitos de credenciales para ejecutar Adprep.exe e instalar Active Directory Domain Services](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds).
 
-Use los siguientes procedimientos para instalar AD DS con el método de la GUI. Los pasos se pueden realizar en forma remota o local. Para obtener una explicación más detallada de estos pasos, consulte los siguientes temas:  
+Use los siguientes procedimientos para instalar AD DS con el método de la GUI. Los pasos se pueden realizar en forma remota o local. Para obtener una explicación más detallada de estos pasos, consulte los siguientes temas:
 
--   [Implementación de un bosque con el Administrador del servidor](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SMForest)  
+-   [Implementación de un bosque con el Administrador del servidor](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SMForest)
 
--   [Instalar un controlador de dominio de Windows Server 2012 de réplica en un dominio existente &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)  
+-   [Instalar un controlador de dominio de Windows Server 2012 de réplica en un dominio existente &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)
 
--   [Instale un nuevo Windows Server 2012 Active Directory dominio secundario o de árbol &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)  
+-   [Instale un nuevo Windows Server 2012 Active Directory dominio secundario o de árbol &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)
 
--   [Instale Windows Server 2012 Active Directory controlador de dominio de solo lectura &#40;RODC&#41; &#40;nivel 200&#41;](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md)  
+-   [Instale Windows Server 2012 Active Directory controlador de dominio de solo lectura &#40;RODC&#41; &#40;nivel 200&#41;](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md)
 
-##### <a name="to-install-ad-ds-by-using-server-manager"></a>Para instalar AD DS mediante el Administrador del servidor  
+##### <a name="to-install-ad-ds-by-using-server-manager"></a>Para instalar AD DS mediante el Administrador del servidor
 
-1.  En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características** para iniciar el Asistente para agregar roles.  
+1.  En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características** para iniciar el Asistente para agregar roles.
 
-2.  En la página **Antes de comenzar** , haga clic en **Siguiente**.  
+2.  En la página **Antes de comenzar** , haga clic en **Siguiente**.
 
-3.  En la página **Seleccionar tipo de instalación**, haga clic en **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.  
+3.  En la página **Seleccionar tipo de instalación**, haga clic en **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.
 
-4.  En la página **Seleccionar servidor de destino**, haga clic en **Seleccionar un servidor del grupo de servidores**, en el nombre del servidor donde quiere instalar AD DS y, a continuación, en **Siguiente**.  
+4.  En la página **Seleccionar servidor de destino**, haga clic en **Seleccionar un servidor del grupo de servidores**, en el nombre del servidor donde quiere instalar AD DS y, a continuación, en **Siguiente**.
 
-    Para seleccionar servidores remotos, primero cree un grupo de servidores y agréguele los servidores remotos. Para obtener más información acerca de la creación de grupos de servidores, vea [Adición de servidores al Administrador del servidor](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831453(v=ws.11)).  
+    Para seleccionar servidores remotos, primero cree un grupo de servidores y agréguele los servidores remotos. Para obtener más información acerca de la creación de grupos de servidores, vea [Adición de servidores al Administrador del servidor](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831453(v=ws.11)).
 
-5.  En la página **Seleccionar roles de servidor**, haga clic en **Servicios de dominio de Active Directory**, después en el cuadro de diálogo **Asistente para agregar roles y características**, haga clic en **Agregar características** y, a continuación, en **Siguiente**.  
+5.  En la página **Seleccionar roles de servidor**, haga clic en **Servicios de dominio de Active Directory**, después en el cuadro de diálogo **Asistente para agregar roles y características**, haga clic en **Agregar características** y, a continuación, en **Siguiente**.
 
-6.  En la página **Seleccionar características**, seleccione las características adicionales que quiera instalar y haga clic en **Siguiente**.  
+6.  En la página **Seleccionar características**, seleccione las características adicionales que quiera instalar y haga clic en **Siguiente**.
 
-7.  En la página **Servicios de dominio de Active Directory**, revise la información y haga clic en **Siguiente**.  
+7.  En la página **Servicios de dominio de Active Directory**, revise la información y haga clic en **Siguiente**.
 
-8.  En la página **Confirmar selecciones de instalación**, haga clic en **Instalar**.  
+8.  En la página **Confirmar selecciones de instalación**, haga clic en **Instalar**.
 
-9. En la página **Resultados**, compruebe que la instalación se haya realizado correctamente y haga clic en **Promover este servidor a controlador de dominio** para iniciar el Asistente para configuración de Servicios de dominio de Active Directory.  
+9. En la página **Resultados**, compruebe que la instalación se haya realizado correctamente y haga clic en **Promover este servidor a controlador de dominio** para iniciar el Asistente para configuración de Servicios de dominio de Active Directory.
 
-    ![Instalar AD DS](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_SMPromotes.gif)  
+    ![Instalar AD DS](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_SMPromotes.gif)
 
-    > [!IMPORTANT]  
-    > Si cierra el Asistente para agregar roles en este momento sin iniciar el Asistente para configuración de Servicios de dominio de Active Directory, podrá hacer clic en Tareas en el Administrador del servidor para reiniciarlo.  
+    > [!IMPORTANT]
+    > Si cierra el Asistente para agregar roles en este momento sin iniciar el Asistente para configuración de Servicios de dominio de Active Directory, podrá hacer clic en Tareas en el Administrador del servidor para reiniciarlo.
 
-    ![Instalar AD DS](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_Tasks.gif)  
+    ![Instalar AD DS](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_Tasks.gif)
 
-10. En la página **Configuración de implementación**, elija una de las siguientes opciones:  
+10. En la página **Configuración de implementación**, elija una de las siguientes opciones:
 
-    -   Si va a instalar un controlador de dominio adicional en un dominio existente, haga clic en **Agregar un controlador de dominio a un dominio existente**y escriba el nombre del dominio (por ejemplo, EMEA.Corp.contoso.com) o haga clic en **seleccionar...** para elegir un dominio, y credenciales (por ejemplo, especifique una cuenta que sea miembro del grupo Admins. del dominio) y haga clic en **siguiente**.  
+    -   Si va a instalar un controlador de dominio adicional en un dominio existente, haga clic en **Agregar un controlador de dominio a un dominio existente**y escriba el nombre del dominio (por ejemplo, EMEA.Corp.contoso.com) o haga clic en **seleccionar...** para elegir un dominio, y credenciales (por ejemplo, especifique una cuenta que sea miembro del grupo Admins. del dominio) y haga clic en **siguiente**.
 
-        > [!NOTE]  
-        > El nombre del dominio y las credenciales de usuario actuales se proporcionan de forma predeterminada solo si la máquina está unida a un dominio y se está realizando una instalación local. Si está instalando AD DS en un servidor remoto, es necesario que especifique las credenciales, por diseño. Si las credenciales de usuario actuales no son suficientes para realizar la instalación, haga clic en **cambiar...** para especificar credenciales diferentes.  
+        > [!NOTE]
+        > El nombre del dominio y las credenciales de usuario actuales se proporcionan de forma predeterminada solo si la máquina está unida a un dominio y se está realizando una instalación local. Si está instalando AD DS en un servidor remoto, es necesario que especifique las credenciales, por diseño. Si las credenciales de usuario actuales no son suficientes para realizar la instalación, haga clic en **cambiar...** para especificar credenciales diferentes.
 
-        Para obtener más información, vea [instalar un controlador de dominio de Windows Server 2012 de réplica en un dominio existente &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md).  
+        Para obtener más información, vea [instalar un controlador de dominio de Windows Server 2012 de réplica en un dominio existente &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md).
 
-    -   Si está instalando un nuevo dominio secundario, haga clic en **Agregar un nuevo dominio a un bosque existente**, para **Seleccionar tipo de dominio**, seleccione **Dominio secundario**, escriba o busque el nombre del dominio DNS primario (por ejemplo, corp.contoso.com), escriba el nombre relativo del dominio secundario nuevo (por ejemplo, emea), escriba las credenciales que quiera usar para crear el dominio nuevo y, a continuación, haga clic en **Siguiente**.  
+    -   Si está instalando un nuevo dominio secundario, haga clic en **Agregar un nuevo dominio a un bosque existente**, para **Seleccionar tipo de dominio**, seleccione **Dominio secundario**, escriba o busque el nombre del dominio DNS primario (por ejemplo, corp.contoso.com), escriba el nombre relativo del dominio secundario nuevo (por ejemplo, emea), escriba las credenciales que quiera usar para crear el dominio nuevo y, a continuación, haga clic en **Siguiente**.
 
-        Para obtener más información, vea [instalar un nuevo servidor de Windows 2012 Active Directory elemento secundario o de árbol &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md).  
+        Para obtener más información, vea [instalar un nuevo servidor de Windows 2012 Active Directory elemento secundario o de árbol &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md).
 
-    -   Si va a instalar un nuevo árbol de dominios, haga clic en **Agregar un nuevo dominio a un bosque existente**, en **Seleccionar tipo de dominio** elija **Dominio de árbol**, escriba el nombre del dominio raíz (por ejemplo, corp.contoso.com), escriba el nombre de DNS del dominio nuevo (por ejemplo, fabrikam.com), escriba las credenciales que quiera usar para crear el dominio nuevo y, a continuación, haga clic en **Siguiente**.  
+    -   Si va a instalar un nuevo árbol de dominios, haga clic en **Agregar un nuevo dominio a un bosque existente**, en **Seleccionar tipo de dominio** elija **Dominio de árbol**, escriba el nombre del dominio raíz (por ejemplo, corp.contoso.com), escriba el nombre de DNS del dominio nuevo (por ejemplo, fabrikam.com), escriba las credenciales que quiera usar para crear el dominio nuevo y, a continuación, haga clic en **Siguiente**.
 
-        Para obtener más información, vea [instalar un nuevo servidor de Windows 2012 Active Directory elemento secundario o de árbol &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md).  
+        Para obtener más información, vea [instalar un nuevo servidor de Windows 2012 Active Directory elemento secundario o de árbol &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md).
 
-    -   Si está instalando un nuevo bosque, haga clic en **Agregar un nuevo bosque** y, a continuación, escriba el nombre del dominio raíz (por ejemplo, corp.contoso.com).  
+    -   Si está instalando un nuevo bosque, haga clic en **Agregar un nuevo bosque** y, a continuación, escriba el nombre del dominio raíz (por ejemplo, corp.contoso.com).
 
-        Para obtener más información, vea [instalar un nuevo Windows Server 2012 Active Directory bosque de &#40;de nivel 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md).  
+        Para obtener más información, vea [instalar un nuevo Windows Server 2012 Active Directory bosque de &#40;de nivel 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md).
 
-11. En la página **Opciones del controlador de dominio**, elija una de las siguientes opciones:  
+11. En la página **Opciones del controlador de dominio**, elija una de las siguientes opciones:
 
-    -   Si está creando un nuevo bosque o dominio, seleccione los niveles funcionales del dominio y del bosque, haga clic en **Servidor de Sistema de nombres de dominio (DNS)**, especifique la contraseña DSRM y, a continuación, haga clic en **Siguiente**.  
+    -   Si está creando un nuevo bosque o dominio, seleccione los niveles funcionales del dominio y del bosque, haga clic en **Servidor de Sistema de nombres de dominio (DNS)**, especifique la contraseña DSRM y, a continuación, haga clic en **Siguiente**.
 
-    -   Si está agregando un controlador de dominio a un dominio existente, haga clic en **Servidor de Sistema de nombres de dominio (DNS)**, **Catálogo global (GC)** o **Controlador de dominio de solo lectura (RODC)** según sea necesario, elija el nombre del sitio, escriba la contraseña DSRM y, a continuación, haga clic en **Siguiente**.  
+    -   Si está agregando un controlador de dominio a un dominio existente, haga clic en **Servidor de Sistema de nombres de dominio (DNS)**, **Catálogo global (GC)** o **Controlador de dominio de solo lectura (RODC)** según sea necesario, elija el nombre del sitio, escriba la contraseña DSRM y, a continuación, haga clic en **Siguiente**.
 
-    Para obtener más información acerca de qué opciones de esta página están o no están disponibles en distintas condiciones, vea [Opciones del controlador de dominio](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_DCOptionsPage).  
+    Para obtener más información acerca de qué opciones de esta página están o no están disponibles en distintas condiciones, vea [Opciones del controlador de dominio](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_DCOptionsPage).
 
-12. En la página **Opciones de DNS** (que solo aparece si instala un servidor DNS), haga clic en **Actualizar delegación DNS** según sea necesario. Si es necesario, proporcione las credenciales que tengan permiso para crear registros de delegación DNS en la zona DNS primaria.  
+12. En la página **Opciones de DNS** (que solo aparece si instala un servidor DNS), haga clic en **Actualizar delegación DNS** según sea necesario. Si es necesario, proporcione las credenciales que tengan permiso para crear registros de delegación DNS en la zona DNS primaria.
 
-    Si no se puede entrar en contacto con un servidor DNS que hospeda la zona primaria, la opción **Actualizar delegación DNS** no estará disponible.  
+    Si no se puede entrar en contacto con un servidor DNS que hospeda la zona primaria, la opción **Actualizar delegación DNS** no estará disponible.
 
-    Para obtener más información acerca de si es necesario actualizar la delegación DNS, consulte [Descripción de delegación de zona](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771640(v=ws.11)). Si intenta actualizar la delegación DNS y se produce un error, consulte [Opciones de DNS](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_DNSOptionsPage).  
+    Para obtener más información acerca de si es necesario actualizar la delegación DNS, consulte [Descripción de delegación de zona](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771640(v=ws.11)). Si intenta actualizar la delegación DNS y se produce un error, consulte [Opciones de DNS](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_DNSOptionsPage).
 
-13. En la página **Opciones de RODC** (que solo aparece si instala RODC), especifique el nombre de un grupo o usuario a cargo de la administración de RODC, agregue o quite cuentas a los grupos de replicación de contraseña permitida o denegada y, a continuación, haga clic en **Siguiente**.  
+13. En la página **Opciones de RODC** (que solo aparece si instala RODC), especifique el nombre de un grupo o usuario a cargo de la administración de RODC, agregue o quite cuentas a los grupos de replicación de contraseña permitida o denegada y, a continuación, haga clic en **Siguiente**.
 
-    Para obtener más información, vea [Directiva de replicación de contraseñas](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730883(v=ws.10)).  
+    Para obtener más información, vea [Directiva de replicación de contraseñas](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730883(v=ws.10)).
 
-14. En la página **Opciones adicionales**, elija una de las siguientes opciones:  
+14. En la página **Opciones adicionales**, elija una de las siguientes opciones:
 
-    -   Si va a crear un dominio nuevo, escriba un nuevo nombre NetBIOS o compruebe el nombre NetBIOS predeterminado y, a continuación, haga clic en **Siguiente**.  
+    -   Si va a crear un dominio nuevo, escriba un nuevo nombre NetBIOS o compruebe el nombre NetBIOS predeterminado y, a continuación, haga clic en **Siguiente**.
 
-    -   Si está agregando un controlador de dominio a un dominio existente, seleccione el controlador de dominio del que quiere replicar los datos de instalación de AD DS (o permitir que el asistente seleccione cualquier controlador de dominio). Si está efectuando la instalación desde medios, haga clic en **Instalar desde ruta de acceso a medios**, escriba y compruebe la ruta de acceso a los archivos de origen de la instalación y, a continuación, haga clic en **Siguiente**.  
+    -   Si está agregando un controlador de dominio a un dominio existente, seleccione el controlador de dominio del que quiere replicar los datos de instalación de AD DS (o permitir que el asistente seleccione cualquier controlador de dominio). Si está efectuando la instalación desde medios, haga clic en **Instalar desde ruta de acceso a medios**, escriba y compruebe la ruta de acceso a los archivos de origen de la instalación y, a continuación, haga clic en **Siguiente**.
 
-        No se puede usar Instalar desde medios (IFM) para instalar el primer controlador de dominio en un dominio. IFM no funciona en diferentes versiones de sistemas operativos. En otras palabras, para instalar un controlador de dominio adicional que ejecute Windows Server 2012 mediante IFM, debe crear el medio de copia de seguridad en un controlador de dominio de Windows Server 2012. Para obtener más información acerca de IFM, vea el tema sobre la [Installing an Additional Domain Controller by Using IFM (Instalación de un controlador de dominio adicional mediante IFM)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816722(v=ws.10)).  
+        No se puede usar Instalar desde medios (IFM) para instalar el primer controlador de dominio en un dominio. IFM no funciona en diferentes versiones de sistemas operativos. En otras palabras, para instalar un controlador de dominio adicional que ejecute Windows Server 2012 mediante IFM, debe crear el medio de copia de seguridad en un controlador de dominio de Windows Server 2012. Para obtener más información acerca de IFM, vea el tema sobre la [Installing an Additional Domain Controller by Using IFM (Instalación de un controlador de dominio adicional mediante IFM)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816722(v=ws.10)).
 
-15. En la página **Rutas de acceso**, escriba las ubicaciones para la carpeta SYSVOL, archivos de registro o la base de datos de Active Directory (o acepte las ubicaciones predeterminadas) y, a continuación, haga clic en **Siguiente**.  
+15. En la página **Rutas de acceso**, escriba las ubicaciones para la carpeta SYSVOL, archivos de registro o la base de datos de Active Directory (o acepte las ubicaciones predeterminadas) y, a continuación, haga clic en **Siguiente**.
 
-    > [!IMPORTANT]  
-    > No almacene SYSVOL, archivos de registro o la base de datos de Active Directory en un volumen de datos formateado con el Sistema de archivos resistente (ReFS).  
+    > [!IMPORTANT]
+    > No almacene SYSVOL, archivos de registro o la base de datos de Active Directory en un volumen de datos formateado con el Sistema de archivos resistente (ReFS).
 
-16. En la página **Opciones de preparación**, escriba las credenciales que sean suficientes para ejecutar adprep. Para obtener más información, consulte [Requisitos de credenciales para ejecutar Adprep.exe e instalar Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds).  
+16. En la página **Opciones de preparación**, escriba las credenciales que sean suficientes para ejecutar adprep. Para obtener más información, consulte [Requisitos de credenciales para ejecutar Adprep.exe e instalar Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds).
 
-17. En la página **Opciones de revisión**, confirme las selecciones, haga clic en **Ver script** si desea exportar la configuración a un script de Windows PowerShell y, a continuación, haga clic en **Siguiente**.  
+17. En la página **Opciones de revisión**, confirme las selecciones, haga clic en **Ver script** si desea exportar la configuración a un script de Windows PowerShell y, a continuación, haga clic en **Siguiente**.
 
-18. En la página **Comprobación de requisitos previos**, confirme que se haya completado la validación de los requisitos previos y, a continuación, haga clic en **Instalar**.  
+18. En la página **Comprobación de requisitos previos**, confirme que se haya completado la validación de los requisitos previos y, a continuación, haga clic en **Instalar**.
 
-19. En la página **Resultados**, verifique que el servidor se haya configurado correctamente como controlador de dominio. El servidor se reiniciará automáticamente para completar la instalación de AD DS.  
+19. En la página **Resultados**, verifique que el servidor se haya configurado correctamente como controlador de dominio. El servidor se reiniciará automáticamente para completar la instalación de AD DS.
 
-## <a name="performing-a-staged-rodc-installation-using-the-graphical-user-interface"></a><a name="BKMK_UIStaged"></a>Instalación por fases de un RODC mediante la interfaz gráfica de usuario  
-Una instalación por fases de un RODC permite la creación de un RODC en dos fases. En la primera fase, un miembro del grupo Admins. del dominio crea una cuenta RODC. En la segunda fase, se adjunta un servidor a la cuenta RODC. Un miembro del grupo Admins. del dominio, un grupo o un usuario del dominio delegado puede completar la segunda fase.  
+## <a name="performing-a-staged-rodc-installation-using-the-graphical-user-interface"></a><a name="BKMK_UIStaged"></a>Instalación por fases de un RODC mediante la interfaz gráfica de usuario
+Una instalación por fases de un RODC permite la creación de un RODC en dos fases. En la primera fase, un miembro del grupo Admins. del dominio crea una cuenta RODC. En la segunda fase, se adjunta un servidor a la cuenta RODC. Un miembro del grupo Admins. del dominio, un grupo o un usuario del dominio delegado puede completar la segunda fase.
 
-#### <a name="to-create-an-rodc-account-by-using-the-active-directory-management-tools"></a>Para crear una cuenta RODC mediante las herramientas de administración de Active Directory  
+#### <a name="to-create-an-rodc-account-by-using-the-active-directory-management-tools"></a>Para crear una cuenta RODC mediante las herramientas de administración de Active Directory
 
-1.  Puede crear la cuenta RODC mediante el Centro de administración de Active Directory o Usuarios y equipos de Active Directory.  
+1.  Puede crear la cuenta RODC mediante el Centro de administración de Active Directory o Usuarios y equipos de Active Directory.
 
-    1.  Haga clic en **Inicio**, después en **Herramientas administrativas** y, a continuación, en **Centro de administración de Active Directory**.  
+    1.  Haga clic en **Inicio**, después en **Herramientas administrativas** y, a continuación, en **Centro de administración de Active Directory**.
 
-    2.  En el panel de navegación (panel izquierdo), haga clic en el nombre del dominio.  
+    2.  En el panel de navegación (panel izquierdo), haga clic en el nombre del dominio.
 
-    3.  En la lista de administración (panel central), haga clic en la unidad organizativa **Domain Controllers**.  
+    3.  En la lista de administración (panel central), haga clic en la unidad organizativa **Domain Controllers**.
 
-    4.  En el panel de tareas (panel derecho), haga clic en **Crear previamente una cuenta de controlador de dominio de solo lectura**.  
+    4.  En el panel de tareas (panel derecho), haga clic en **Crear previamente una cuenta de controlador de dominio de solo lectura**.
 
-    -O bien-  
+    -O bien-
 
-    1.  Haga clic en **Inicio**, luego en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**.  
+    1.  Haga clic en **Inicio**, luego en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**.
 
-    2.  Haga clic con el botón secundario en la unidad organizativa (OU) **Domain Controllers** o haga clic en la OU **Domain Controllers** y, a continuación, en **Acción**.  
+    2.  Haga clic con el botón secundario en la unidad organizativa (OU) **Domain Controllers** o haga clic en la OU **Domain Controllers** y, a continuación, en **Acción**.
 
-    3.  Haga clic en **Crear previamente una cuenta de controlador de dominio de solo lectura**.  
+    3.  Haga clic en **Crear previamente una cuenta de controlador de dominio de solo lectura**.
 
-2.  En la página **Asistente para la instalación de los Servicios de dominio de Active Directory**, si desea modificar la Directiva de replicación de contraseñas (PRP) predeterminada, seleccione **Usar la instalación en modo avanzado** y, a continuación, haga clic en **Siguiente**.  
+2.  En la página **Asistente para la instalación de los Servicios de dominio de Active Directory**, si desea modificar la Directiva de replicación de contraseñas (PRP) predeterminada, seleccione **Usar la instalación en modo avanzado** y, a continuación, haga clic en **Siguiente**.
 
-3.  En la página **Credenciales de red**, en **Especifique las credenciales de cuenta que se usarán para la instalación**, haga clic en **Mis credenciales de inicio de sesión actuales** o en **Credenciales alternativas** y, a continuación, haga clic en **Establecer**. En el cuadro de diálogo **Seguridad de Windows**, escriba el nombre de usuario y la contraseña para una cuenta que pueda instalar el controlador de dominio adicional. Para instalar un controlador de dominio adicional, debe ser miembro del grupo Administradores de empresas o del grupo Administradores de dominio. Cuando termine de proporcionar las credenciales, haga clic en **Siguiente**.  
+3.  En la página **Credenciales de red**, en **Especifique las credenciales de cuenta que se usarán para la instalación**, haga clic en **Mis credenciales de inicio de sesión actuales** o en **Credenciales alternativas** y, a continuación, haga clic en **Establecer**. En el cuadro de diálogo **Seguridad de Windows**, escriba el nombre de usuario y la contraseña para una cuenta que pueda instalar el controlador de dominio adicional. Para instalar un controlador de dominio adicional, debe ser miembro del grupo Administradores de empresas o del grupo Administradores de dominio. Cuando termine de proporcionar las credenciales, haga clic en **Siguiente**.
 
-4.  En la página **Especifique el nombre del equipo**, escriba el nombre del equipo del servidor que será el RODC.  
+4.  En la página **Especifique el nombre del equipo**, escriba el nombre del equipo del servidor que será el RODC.
 
-5.  En la página **Seleccione un sitio**, seleccione un sitio de la lista o seleccione la opción para instalar el controlador de dominio en el sitio que corresponda a la dirección IP del equipo en el cual ejecuta el asistente; a continuación, haga clic en **Siguiente**.  
+5.  En la página **Seleccione un sitio**, seleccione un sitio de la lista o seleccione la opción para instalar el controlador de dominio en el sitio que corresponda a la dirección IP del equipo en el cual ejecuta el asistente; a continuación, haga clic en **Siguiente**.
 
-6.  En la página **Opciones adicionales del controlador de dominio**, realice las siguientes selecciones y, a continuación, haga clic en **Siguiente**:  
+6.  En la página **Opciones adicionales del controlador de dominio**, realice las siguientes selecciones y, a continuación, haga clic en **Siguiente**:
 
-    -   **Servidor DNS**: esta opción está activada de forma predeterminada para que el controlador de dominio pueda funcionar como un servidor de Sistema de nombres de dominio (DNS). Si no desea que el controlador de dominio sea un servidor DNS, desactive esta opción. Sin embargo, si no instala el rol del servidor DNS en el RODC y este es el único controlador de dominio de la sucursal, los usuarios de esta sucursal no podrán realizar la resolución de nombres cuando la red de área extensa (WAN) conectada al sitio del concentrador esté sin conexión.  
+    -   **Servidor DNS**: esta opción está activada de forma predeterminada para que el controlador de dominio pueda funcionar como un servidor de Sistema de nombres de dominio (DNS). Si no desea que el controlador de dominio sea un servidor DNS, desactive esta opción. Sin embargo, si no instala el rol del servidor DNS en el RODC y este es el único controlador de dominio de la sucursal, los usuarios de esta sucursal no podrán realizar la resolución de nombres cuando la red de área extensa (WAN) conectada al sitio del concentrador esté sin conexión.
 
-    -   **Catálogo global**: esta opción está seleccionada de forma predeterminada. Agregue el catálogo global y las particiones del directorio de solo lectura al controlador de dominio, y activa la funcionalidad de búsqueda del catálogo global. Si no desea que el nuevo controlador de dominio sea un servidor de catálogo global, desactive esta opción. Sin embargo, si no instala un servidor de catálogo global en la sucursal o si no habilita el almacenamiento en caché de la pertenencia al grupo universal para el sitio que incluye el RODC, los usuarios de la sucursal no podrán iniciar sesión en el dominio cuando la WAN conectada al sitio del controlador esté sin conexión.  
+    -   **Catálogo global**: esta opción está seleccionada de forma predeterminada. Agregue el catálogo global y las particiones del directorio de solo lectura al controlador de dominio, y activa la funcionalidad de búsqueda del catálogo global. Si no desea que el nuevo controlador de dominio sea un servidor de catálogo global, desactive esta opción. Sin embargo, si no instala un servidor de catálogo global en la sucursal o si no habilita el almacenamiento en caché de la pertenencia al grupo universal para el sitio que incluye el RODC, los usuarios de la sucursal no podrán iniciar sesión en el dominio cuando la WAN conectada al sitio del controlador esté sin conexión.
 
-    -   **Controlador de dominio de solo lectura**: al crear una cuenta RODC, esta opción se selecciona de forma predeterminada y no se puede desactivar.  
+    -   **Controlador de dominio de solo lectura**: al crear una cuenta RODC, esta opción se selecciona de forma predeterminada y no se puede desactivar.
 
-7.  Si seleccionó la casilla **Usar la instalación en modo avanzado** en la página de **Bienvenida**, aparece la página **Especificar la directiva de replicación de contraseñas**. No se replican contraseñas de cuentas en el RODC de manera predeterminada y se impide explícitamente la replicación de las contraseñas de las cuentas que son críticas para la seguridad (como las que son miembros del grupo Admins. del dominio) en el RODC.  
+7.  Si seleccionó la casilla **Usar la instalación en modo avanzado** en la página de **Bienvenida**, aparece la página **Especificar la directiva de replicación de contraseñas**. No se replican contraseñas de cuentas en el RODC de manera predeterminada y se impide explícitamente la replicación de las contraseñas de las cuentas que son críticas para la seguridad (como las que son miembros del grupo Admins. del dominio) en el RODC.
 
-    Para agregar cuentas a la directiva, haga clic en **Agregar**, después haga clic en **Permitir la replicación en este RODC de contraseñas de la cuenta** o en **Denegar la replicación en este RODC de contraseñas de la cuenta** y, a continuación, seleccione las cuentas.  
+    Para agregar cuentas a la directiva, haga clic en **Agregar**, después haga clic en **Permitir la replicación en este RODC de contraseñas de la cuenta** o en **Denegar la replicación en este RODC de contraseñas de la cuenta** y, a continuación, seleccione las cuentas.
 
-    Cuando haya terminado (o para aceptar la configuración predeterminada), haga clic en **Siguiente**.  
+    Cuando haya terminado (o para aceptar la configuración predeterminada), haga clic en **Siguiente**.
 
-8.  En la página **Delegación de instalación y administración de RODC**, escriba el nombre del usuario o del grupo que asociará el servidor a la cuenta RODC que cree. Puede escribir el nombre de solo una entidad de seguridad.  
+8.  En la página **Delegación de instalación y administración de RODC**, escriba el nombre del usuario o del grupo que asociará el servidor a la cuenta RODC que cree. Puede escribir el nombre de solo una entidad de seguridad.
 
-    Para buscar el directorio de un usuario o grupo específico, haga clic en **Establecer**. En **Seleccionar usuario o grupo**, escriba el nombre del usuario o grupo. Recomendamos que delegue la instalación y administración del RODC en un grupo.  
+    Para buscar el directorio de un usuario o grupo específico, haga clic en **Establecer**. En **Seleccionar usuario o grupo**, escriba el nombre del usuario o grupo. Recomendamos que delegue la instalación y administración del RODC en un grupo.
 
-    Este usuario o grupo también tendrá derechos administrativos locales en el RODC una vez completada la instalación. Si no se especifica un usuario o un grupo, únicamente podrán asociar el servidor a la cuenta los miembros del grupo Admins. del dominio o Administradores de empresas.  
+    Este usuario o grupo también tendrá derechos administrativos locales en el RODC una vez completada la instalación. Si no se especifica un usuario o un grupo, únicamente podrán asociar el servidor a la cuenta los miembros del grupo Admins. del dominio o Administradores de empresas.
 
-    Cuando haya terminado, haga clic en **Siguiente**.  
+    Cuando haya terminado, haga clic en **Siguiente**.
 
-9. En la página **Resumen**, revise las selecciones realizadas. Haga clic en **Atrás** para cambiar cualquier selección, si fuera necesario.  
+9. En la página **Resumen**, revise las selecciones realizadas. Haga clic en **Atrás** para cambiar cualquier selección, si fuera necesario.
 
-    Para guardar la configuración que seleccionó en un archivo de respuesta que puede usar para automatizar operaciones de AD DS subsiguientes, haga clic en **Exportar configuración**. Escriba un nombre para el archivo de respuesta y, a continuación, haga clic en **Guardar**.  
+    Para guardar la configuración que seleccionó en un archivo de respuesta que puede usar para automatizar operaciones de AD DS subsiguientes, haga clic en **Exportar configuración**. Escriba un nombre para el archivo de respuesta y, a continuación, haga clic en **Guardar**.
 
-    Cuando esté seguro de que sus selecciones son precisas, haga clic en **Siguiente** para crear la cuenta RODC.  
+    Cuando esté seguro de que sus selecciones son precisas, haga clic en **Siguiente** para crear la cuenta RODC.
 
-10. En la página **Finalización del Asistente para la instalación de los Servicios de dominio de Active Directory**, haga clic en **Finalizar**.  
+10. En la página **Finalización del Asistente para la instalación de los Servicios de dominio de Active Directory**, haga clic en **Finalizar**.
 
-Después de crear una cuenta RODC, se puede adjuntar un servidor a la cuenta para completar la instalación del RODC. Esta segunda fase se puede completar en la sucursal donde se ubicará el RODC. El servidor en el que se realiza este procedimiento no podrá estar unido al dominio. A partir de Windows Server 2012, se usa el Asistente para agregar funciones de Administrador del servidor para asociar un servidor a una cuenta de RODC.  
+Después de crear una cuenta RODC, se puede adjuntar un servidor a la cuenta para completar la instalación del RODC. Esta segunda fase se puede completar en la sucursal donde se ubicará el RODC. El servidor en el que se realiza este procedimiento no podrá estar unido al dominio. A partir de Windows Server 2012, se usa el Asistente para agregar funciones de Administrador del servidor para asociar un servidor a una cuenta de RODC.
 
-#### <a name="to-attach-a-server-to-an-rodc-account-using-server-manager"></a>Para asociar un servidor a una cuenta RODC mediante el Administrador del servidor  
+#### <a name="to-attach-a-server-to-an-rodc-account-using-server-manager"></a>Para asociar un servidor a una cuenta RODC mediante el Administrador del servidor
 
-1.  Inicie sesión como Administrador local.  
+1.  Inicie sesión como Administrador local.
 
-2.  En el Administrador del servidor, haga clic en **Agregar roles y características**.  
+2.  En el Administrador del servidor, haga clic en **Agregar roles y características**.
 
-3.  En la página **Antes de comenzar** , haga clic en **Siguiente**.  
+3.  En la página **Antes de comenzar** , haga clic en **Siguiente**.
 
-4.  En la página **Seleccionar tipo de instalación**, haga clic en **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.  
+4.  En la página **Seleccionar tipo de instalación**, haga clic en **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.
 
-5.  En la página **Seleccionar servidor de destino**, haga clic en **Seleccionar un servidor del grupo de servidores**, en el nombre del servidor donde quiere instalar AD DS y, a continuación, en **Siguiente**.  
+5.  En la página **Seleccionar servidor de destino**, haga clic en **Seleccionar un servidor del grupo de servidores**, en el nombre del servidor donde quiere instalar AD DS y, a continuación, en **Siguiente**.
 
-6.  En la página **Seleccionar roles de servidor**, haga clic en **Servicios de dominio de Active Directory**, después en **Agregar características** y, a continuación, en **Siguiente**.  
+6.  En la página **Seleccionar roles de servidor**, haga clic en **Servicios de dominio de Active Directory**, después en **Agregar características** y, a continuación, en **Siguiente**.
 
-7.  En la página **Seleccionar características**, seleccione las características adicionales que quiera instalar y haga clic en **Siguiente**.  
+7.  En la página **Seleccionar características**, seleccione las características adicionales que quiera instalar y haga clic en **Siguiente**.
 
-8.  En la página **Servicios de dominio de Active Directory**, revise la información y haga clic en **Siguiente**.  
+8.  En la página **Servicios de dominio de Active Directory**, revise la información y haga clic en **Siguiente**.
 
-9. En la página **Confirmar selecciones de instalación**, haga clic en **Instalar**.  
+9. En la página **Confirmar selecciones de instalación**, haga clic en **Instalar**.
 
-10. En la página **Resultados**, compruebe **Instalación correcta** y haga clic en **Promover este servidor a controlador de dominio** para iniciar el Asistente para configuración de Servicios de dominio de Active Directory.  
+10. En la página **Resultados**, compruebe **Instalación correcta** y haga clic en **Promover este servidor a controlador de dominio** para iniciar el Asistente para configuración de Servicios de dominio de Active Directory.
 
-    > [!IMPORTANT]  
-    > Si cierra el Asistente para agregar roles en este momento sin iniciar el Asistente para configuración de Servicios de dominio de Active Directory, podrá hacer clic en Tareas en el Administrador del servidor para reiniciarlo.  
+    > [!IMPORTANT]
+    > Si cierra el Asistente para agregar roles en este momento sin iniciar el Asistente para configuración de Servicios de dominio de Active Directory, podrá hacer clic en Tareas en el Administrador del servidor para reiniciarlo.
 
-    (media/install-Active-Directory-Domain-Services--LEVEL-100-/ADDS_SMI_Tasks.gif)  
+    (media/install-Active-Directory-Domain-Services--LEVEL-100-/ADDS_SMI_Tasks.gif)
 
-11. En la página **Configuración de implementación**, haga clic en **Agregar un controlador de dominio a un dominio existente**, escriba el nombre del dominio (por ejemplo, emea.contoso.com) y las credenciales (por ejemplo, especifique una cuenta que se delegue para administrar e instalar el RODC) y, a continuación, haga clic en **Siguiente**.  
+11. En la página **Configuración de implementación**, haga clic en **Agregar un controlador de dominio a un dominio existente**, escriba el nombre del dominio (por ejemplo, emea.contoso.com) y las credenciales (por ejemplo, especifique una cuenta que se delegue para administrar e instalar el RODC) y, a continuación, haga clic en **Siguiente**.
 
-12. En la página **Opciones del controlador de dominio**, haga clic en **Usar cuenta RODC existente**, escriba y confirme la contraseña del modo de restauración de servicios de directorio y, a continuación, haga clic en **Siguiente**.  
+12. En la página **Opciones del controlador de dominio**, haga clic en **Usar cuenta RODC existente**, escriba y confirme la contraseña del modo de restauración de servicios de directorio y, a continuación, haga clic en **Siguiente**.
 
-13. En la página **Opciones adicionales**, si está instalando desde medios, haga clic en **Instalar desde ruta de acceso a medios**, escriba y verifique la ruta de acceso a los archivos de origen de la instalación, seleccione el controlador de dominio desde el que quiera replicar los datos de instalación de AD DS (o permita que el asistente seleccione cualquier controlador de dominio) y, a continuación, haga clic en **Siguiente**.  
+13. En la página **Opciones adicionales**, si está instalando desde medios, haga clic en **Instalar desde ruta de acceso a medios**, escriba y verifique la ruta de acceso a los archivos de origen de la instalación, seleccione el controlador de dominio desde el que quiera replicar los datos de instalación de AD DS (o permita que el asistente seleccione cualquier controlador de dominio) y, a continuación, haga clic en **Siguiente**.
 
-14. En la página **Rutas de acceso**, escriba las ubicaciones para la carpeta SYSVOL, archivos de registro o la base de datos de Active Directory (o acepte las ubicaciones predeterminadas) y, a continuación, haga clic en **Siguiente**.  
+14. En la página **Rutas de acceso**, escriba las ubicaciones para la carpeta SYSVOL, archivos de registro o la base de datos de Active Directory (o acepte las ubicaciones predeterminadas) y, a continuación, haga clic en **Siguiente**.
 
-15. En la página **Opciones de revisión**, confirme las selecciones, haga clic en **Ver script** si desea exportar la configuración a un script de Windows PowerShell y, a continuación, haga clic en **Siguiente**.  
+15. En la página **Opciones de revisión**, confirme las selecciones, haga clic en **Ver script** si desea exportar la configuración a un script de Windows PowerShell y, a continuación, haga clic en **Siguiente**.
 
-16. En la página **Comprobación de requisitos previos**, confirme que se haya completado la validación de los requisitos previos y, a continuación, haga clic en **Instalar**.  
+16. En la página **Comprobación de requisitos previos**, confirme que se haya completado la validación de los requisitos previos y, a continuación, haga clic en **Instalar**.
 
-    Para completar la instalación de AD DS, el servidor se reiniciará automáticamente.  
+    Para completar la instalación de AD DS, el servidor se reiniciará automáticamente.
 
-## <a name="see-also"></a>Consulte también  
-[Solución de problemas de implementación de controladores de dominio](Troubleshooting-Domain-Controller-Deployment.md)  
-[Instalar un nuevo nivel de &#40;del bosque de Windows Server 2012 Active Directory 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md)  
-[Instale un nuevo Windows Server 2012 Active Directory dominio secundario o de árbol &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)  
-[Instalar un controlador de dominio de Windows Server 2012 de réplica en un dominio existente &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)  
+## <a name="see-also"></a>Consulte también
+[Solución de problemas de implementación](Troubleshooting-Domain-Controller-Deployment.md) 
+ del controlador de dominio [Instalar un nuevo nivel de &#40;del bosque de Windows Server 2012 Active Directory 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md) 
+ [Instale un nuevo Windows Server 2012 Active Directory dominio secundario o de árbol &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md) 
+ [Instalar un controlador de dominio de Windows Server 2012 de réplica en un dominio existente &#40;nivel 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)

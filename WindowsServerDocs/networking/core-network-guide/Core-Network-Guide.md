@@ -2,18 +2,16 @@
 title: Componentes de la red principal
 description: En esta guía se proporcionan instrucciones sobre cómo planear e implementar los componentes principales necesarios para una red totalmente operativa y un nuevo dominio de Active Directory en un nuevo bosque con Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0e44de005bd7b110e89b514071667c62a81d386b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2c41fde041183ff7e039bd2fed877aad8ff0f234
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518543"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962329"
 ---
 # <a name="core-network-components"></a>Componentes de la red principal
 
@@ -164,7 +162,7 @@ En la siguiente ilustración se muestra la topología de una red principal de Wi
 ### <a name="core-network-components"></a>Componentes de la red principal
 A continuación se detallan los componentes de una red principal.
 
-##### <a name="router"></a>Enrutador
+##### <a name="router"></a>Router
 En esta guía de implementación se proporcionan instrucciones para implementar una red principal con dos subredes separadas por un enrutador con reenvío de DHCP habilitado. Sin embargo, se puede implementar un conmutador de nivel 2 o nivel 3, o un concentrador, según los requisitos y recursos de los que se disponga. Si se implementa un conmutador, deberá tener la capacidad de reenviar DHCP; de lo contrario, se deberá colocar un servidor DHCP en cada subred. Si implementa un concentrador, estará implementando una sola subred, por lo que no será necesario habilitar el reenvío de DHCP o colocar otro ámbito en el servidor DHCP.
 
 ##### <a name="static-tcpip-configurations"></a>Configuración de TCP/IP estática
@@ -1232,7 +1230,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 ## <a name="appendix-b---configuring-static-ip-addresses"></a><a name="BKMK_B"></a>Apéndice B - Configurar direcciones IP estáticas
 En este tema se incluyen los procedimientos necesarios para configurar direcciones IP estáticas en equipos que ejecutan los siguientes sistemas operativos:
 
-- [Windows Server 2008 R2](#bkmk_R2Cng_WS08R2IP)
+- [Windows Server 2008 R2](#bkmk_R2Cng_WS08R2IP)
 
 - [Windows Server 2008](#bkmk_NetFndtn_Pln_CfgStatic08)
 
@@ -1510,7 +1508,7 @@ Elementos de configuración para el procedimiento de implementación de Windows 
 |Descripción del ámbito|Subred 2 de la oficina principal||
 |(intervalo de direcciones IP)<p>Dirección IP inicial|10.0.1.1||
 |(intervalo de direcciones IP)<p>Dirección IP final|10.0.1.254||
-|Length|8||
+|Longitud|8||
 |Máscara de subred|255.255.255.0||
 |(Intervalo de exclusión) Dirección IP inicial|10.0.1.1||
 |Dirección IP final del intervalo de exclusión|10.0.1.15||

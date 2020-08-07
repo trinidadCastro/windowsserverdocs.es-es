@@ -1,28 +1,26 @@
 ---
-title: Network Controller Security (Seguridad del controlador de red)
+title: Seguridad de la controladora de red
 description: Puede usar este tema para aprender a configurar la seguridad de todas las comunicaciones entre la controladora de red y otro software y dispositivos.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 64bcf94c2e439d7999e96de939962a3a14d1246d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 42bed85fed8da210d3a7583caf0170064fd2aff5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854368"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962079"
 ---
 # <a name="secure-the-network-controller"></a>Proteger la controladora de red
 
-En este tema, aprenderá a configurar la seguridad de todas las comunicaciones entre la [controladora de red](../technologies/network-controller/network-controller.md) y otro software y dispositivos. 
+En este tema, aprenderá a configurar la seguridad de todas las comunicaciones entre la [controladora de red](../technologies/network-controller/network-controller.md) y otro software y dispositivos.
 
-Las rutas de comunicación que puede proteger incluyen la comunicación de Northbound en el plano de administración, la comunicación de clústeres entre máquinas virtuales de controladora de red \(máquinas virtuales\) en un clúster y la comunicación de southbound en el plano de datos.
+Las rutas de comunicación que puede proteger incluyen la comunicación de Northbound en el plano de administración, la comunicación de clústeres entre las máquinas virtuales \( \) de la controladora de red de un clúster y la comunicación de southbound en el plano de datos.
 
-1. **Comunicación de Northbound**. La controladora de red se comunica en el plano de administración con el software de administración compatible con SDN\-, como Windows PowerShell y System Center Virtual Machine Manager \(SCVMM\). Estas herramientas de administración proporcionan la capacidad de definir la Directiva de red y de crear un estado de objetivo para la red, en la que puede comparar la configuración real de la red para hacer que la configuración real sea paridad con el estado del objetivo.
+1. **Comunicación de Northbound**. La controladora de red se comunica en el plano de administración con \- software de administración compatible con Sdn, como Windows PowerShell y System Center Virtual Machine Manager \( SCVMM \) . Estas herramientas de administración proporcionan la capacidad de definir la Directiva de red y de crear un estado de objetivo para la red, en la que puede comparar la configuración real de la red para hacer que la configuración real sea paridad con el estado del objetivo.
 
 2. **Comunicación del clúster de controladora de red**. Cuando se configuran tres o más máquinas virtuales como nodos de clúster de controladora de red, estos nodos se comunican entre sí. Esta comunicación puede estar relacionada con la sincronización y la replicación de datos entre nodos, o la comunicación específica entre los servicios de la controladora de red.
 
@@ -44,16 +42,16 @@ La controladora de red admite los tres modos de autenticación entre los cliente
 
 1. **Kerberos**. Use la autenticación Kerberos al unir el cliente de administración de y todos los nodos de clúster de controladora de red a un dominio de Active Directory. El dominio Active Directory debe tener cuentas de dominio usadas para la autenticación.
 
-2. **X509**. Use X509 para la autenticación basada en\-de certificados para los clientes de administración que no estén Unidos a un dominio Active Directory. Debe inscribir los certificados en todos los nodos de clúster de la controladora de red y los clientes de administración. Además, todos los nodos y clientes de administración deben confiar en los certificados de todos los demás.
+2. **X509**. Use X509 para la \- autenticación basada en certificados para los clientes de administración que no están Unidos a un dominio de Active Directory. Debe inscribir los certificados en todos los nodos de clúster de la controladora de red y los clientes de administración. Además, todos los nodos y clientes de administración deben confiar en los certificados de todos los demás.
 
-3. **Ninguna**. No use ninguno para realizar pruebas en un entorno de prueba y, por lo tanto, no se recomienda para su uso en un entorno de producción. Al elegir este modo, no se realiza ninguna autenticación entre los nodos y los clientes de administración.
+3. **No**. No use ninguno para realizar pruebas en un entorno de prueba y, por lo tanto, no se recomienda para su uso en un entorno de producción. Al elegir este modo, no se realiza ninguna autenticación entre los nodos y los clientes de administración.
 
-Puede configurar el modo de autenticación para la comunicación de Northbound mediante el comando de Windows PowerShell **[install-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** con el parámetro _ClientAuthentication_ . 
+Puede configurar el modo de autenticación para la comunicación de Northbound mediante el comando de Windows PowerShell **[install-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** con el parámetro _ClientAuthentication_ .
 
 
 ### <a name="authorization"></a>Autorización
 
-Al configurar la autorización para la comunicación de Northbound de controladora de red, permite a los nodos de clúster de la controladora de red y a los clientes de administración comprobar que el dispositivo con el que se están comunicando es de confianza y tiene permiso para participar en el comunicaci.
+Al configurar la autorización para la comunicación de Northbound de controladora de red, permite a los nodos de clúster de la controladora de red y a los clientes de administración comprobar que el dispositivo con el que se están comunicando es de confianza y que tiene permiso para participar en la comunicación.
 
 Use los siguientes métodos de autorización para cada uno de los modos de autenticación admitidos por la controladora de red.
 
@@ -61,18 +59,18 @@ Use los siguientes métodos de autorización para cada uno de los modos de auten
 
 2.  **X509**. Cuando se usa el método de autenticación X509, la controladora de red solo acepta solicitudes de clientes de administración cuyas huellas digitales de certificado son conocidas para la controladora de red. Puede configurar estas huellas digitales mediante el parámetro _ClientCertificateThumbprint_ del comando **[install-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** de Windows PowerShell. Puede agregar otras huellas digitales de cliente en cualquier momento mediante el comando **[set-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/Set-NetworkController)** .
 
-3.  **Ninguna**. Al elegir este modo, no se realiza ninguna autenticación entre los nodos y los clientes de administración. No use ninguno para realizar pruebas en un entorno de prueba y, por lo tanto, no se recomienda para su uso en un entorno de producción. 
+3.  **No**. Al elegir este modo, no se realiza ninguna autenticación entre los nodos y los clientes de administración. No use ninguno para realizar pruebas en un entorno de prueba y, por lo tanto, no se recomienda para su uso en un entorno de producción.
 
 
 ### <a name="encryption"></a>Cifrado
 
-La comunicación de Northbound usa Capa de sockets seguros \(\) SSL para crear un canal cifrado entre los clientes de administración y los nodos de controladora de red. El cifrado SSL para la comunicación de Northbound incluye los siguientes requisitos:
+La comunicación de Northbound usa Capa de sockets seguros \( SSL \) para crear un canal cifrado entre los clientes de administración y los nodos de controladora de red. El cifrado SSL para la comunicación de Northbound incluye los siguientes requisitos:
 
-- Todos los nodos de la controladora de red deben tener un certificado idéntico que incluya la autenticación del servidor y la autenticación del cliente en las extensiones de uso mejorado de clave \(EKU\). 
+- Todos los nodos de la controladora de red deben tener un certificado idéntico que incluya la autenticación del servidor y la autenticación del cliente en \( las extensiones EKU de uso mejorado de clave \) .
 
 - El URI que usan los clientes de administración para comunicarse con el controlador de red debe ser el nombre de sujeto del certificado. El nombre del firmante del certificado debe contener el nombre de dominio completo (FQDN) o la dirección IP del punto de conexión de REST de la controladora de red.
 
-- Si los nodos de controlador de red se encuentran en subredes diferentes, el nombre de sujeto de sus certificados debe ser el mismo que el valor usado para el parámetro _RestName_ en el comando **install-NetworkController** de Windows PowerShell. 
+- Si los nodos de controlador de red se encuentran en subredes diferentes, el nombre de sujeto de sus certificados debe ser el mismo que el valor usado para el parámetro _RestName_ en el comando **install-NetworkController** de Windows PowerShell.
 
 - Todos los clientes de administración deben confiar en el certificado SSL.
 
@@ -88,9 +86,9 @@ Una vez inscrito el certificado, puede configurar el controlador de red para usa
 
 ## <a name="network-controller-cluster-communication"></a>Comunicación del clúster de controladora de red
 
-La controladora de red admite la autenticación, autorización y cifrado para la comunicación entre los nodos de controladora de red. La comunicación se realiza a través de [Windows Communication Foundation](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) \(\) WCF y TCP.
+La controladora de red admite la autenticación, autorización y cifrado para la comunicación entre los nodos de controladora de red. La comunicación se realiza a través de [Windows Communication Foundation](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) \( WCF \) y TCP.
 
-Puede configurar este modo con el parámetro **ClusterAuthentication** del comando **install-NetworkControllerCluster** de Windows PowerShell. 
+Puede configurar este modo con el parámetro **ClusterAuthentication** del comando **install-NetworkControllerCluster** de Windows PowerShell.
 
 Para obtener más información, consulte [install-NetworkControllerCluster](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontrollercluster).
 
@@ -105,9 +103,9 @@ La controladora de red admite los siguientes tres modos de autenticación entre 
 
 1. **Kerberos**. Puede usar la autenticación Kerberos cuando todos los nodos de clúster de la controladora de red se unen a un dominio de Active Directory, con las cuentas de dominio que se usan para la autenticación.
 
-2. **X509**. X509 es la autenticación basada en certificados\-. Puede usar la autenticación X509 cuando los nodos del clúster de la controladora de red no están Unidos a un dominio de Active Directory. Para usar X509, debe inscribir certificados en todos los nodos de clúster de la controladora de red y todos los nodos deben confiar en los certificados. Además, el nombre de sujeto del certificado que está inscrito en cada nodo debe ser el mismo que el nombre DNS del nodo.
+2. **X509**. X509 es la \- autenticación basada en certificados. Puede usar la autenticación X509 cuando los nodos del clúster de la controladora de red no están Unidos a un dominio de Active Directory. Para usar X509, debe inscribir certificados en todos los nodos de clúster de la controladora de red y todos los nodos deben confiar en los certificados. Además, el nombre de sujeto del certificado que está inscrito en cada nodo debe ser el mismo que el nombre DNS del nodo.
 
-3. **Ninguna**. Al elegir este modo, no se realiza ninguna autenticación entre los nodos de la controladora de red. Este modo se proporciona solo para fines de prueba y no se recomienda para su uso en un entorno de producción.
+3. **No**. Al elegir este modo, no se realiza ninguna autenticación entre los nodos de la controladora de red. Este modo se proporciona solo para fines de prueba y no se recomienda para su uso en un entorno de producción.
 
 ### <a name="authorization"></a>Autorización
 
@@ -119,13 +117,13 @@ Para cada uno de los modos de autenticación admitidos por la controladora de re
 
 2. **X509**. Los nodos de controladora de red aceptan solicitudes de comunicación solo de otras cuentas de equipo de la controladora de red. Puede configurar estas cuentas al implementar la controladora de red mediante el parámetro **Name** del comando de Windows PowerShell [New-NetworkControllerNodeObject](https://docs.microsoft.com/powershell/module/networkcontroller/new-networkcontrollernodeobject) .
 
-3. **Ninguna**. Al elegir este modo, no se realiza ninguna autorización entre los nodos de la controladora de red. Este modo se proporciona solo para fines de prueba y no se recomienda para su uso en un entorno de producción.
+3. **No**. Al elegir este modo, no se realiza ninguna autorización entre los nodos de la controladora de red. Este modo se proporciona solo para fines de prueba y no se recomienda para su uso en un entorno de producción.
 
 ### <a name="encryption"></a>Cifrado
 
-La comunicación entre los nodos de la controladora de red se cifra mediante el cifrado de nivel de transporte WCF. Esta forma de cifrado se utiliza cuando los métodos de autenticación y autorización son certificados de Kerberos o X509. Para obtener más información, vea los temas siguientes:
+La comunicación entre los nodos de la controladora de red se cifra mediante el cifrado de nivel de transporte WCF. Esta forma de cifrado se utiliza cuando los métodos de autenticación y autorización son certificados de Kerberos o X509. Para obtener más información, vea los siguientes temas.
 
-- [Cómo: proteger un servicio con credenciales de Windows](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
+- [Procedimiento para proteger un servicio con credenciales de Windows](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
 - [Cómo: proteger un servicio con certificados X. 509](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate).
 
 ## <a name="southbound-communication"></a>Comunicación de southbound
@@ -148,11 +146,11 @@ Para cada uno de estos protocolos, el mecanismo de comunicación se describe en 
 
 Para la comunicación de southbound, se usan los siguientes protocolos y métodos de autenticación.
 
-1. **WCF/TCP/OVSDB**. Para estos protocolos, la autenticación se realiza mediante certificados X509. Tanto el controlador de red como el equilibrio de carga de software del mismo nivel \(el multiplexor de\) de SLB \(MUX\)los equipos/host presentan sus certificados entre sí para la autenticación mutua. Cada certificado debe ser de confianza para el equipo remoto del mismo nivel.
+1. **WCF/TCP/OVSDB**. Para estos protocolos, la autenticación se realiza mediante certificados X509. Tanto el controlador de red como el equipo del mismo nivel de software del mismo nivel \( \) MUX multiplexador SLB \( \) presentan sus certificados entre sí para la autenticación mutua. Cada certificado debe ser de confianza para el equipo remoto del mismo nivel.
 
     Para la autenticación southbound, puede usar el mismo certificado SSL que está configurado para cifrar la comunicación con los clientes de Northbound. También debe configurar un certificado en el MUX de SLB y en los dispositivos de host. El nombre del firmante del certificado debe ser el mismo que el nombre DNS del dispositivo.
 
-2. **WinRM**. Para este protocolo, la autenticación se realiza mediante \(de Kerberos para equipos Unidos a un dominio\) y mediante certificados \(para equipos que no están Unidos a un dominio\).
+2. **WinRM**. Para este protocolo, la autenticación se realiza mediante Kerberos \( para las máquinas Unidas a un dominio \) y mediante el uso \( de certificados para equipos que no están Unidos a un dominio \) .
 
 ### <a name="authorization"></a>Autorización
 
@@ -170,4 +168,4 @@ Para la comunicación de southbound, se usan los siguientes métodos de cifrado 
 
 1. **WCF/TCP/OVSDB**. Para estos protocolos, el cifrado se realiza mediante el certificado que está inscrito en el cliente o el servidor.
 
-2. **WinRM**. El tráfico WinRM se cifra de forma predeterminada mediante el proveedor de compatibilidad con seguridad de Kerberos \(SSP\). Puede configurar el cifrado adicional, en forma de SSL, en el servidor WinRM.
+2. **WinRM**. El tráfico WinRM se cifra de forma predeterminada mediante el proveedor de compatibilidad con seguridad Kerberos \( SSP \) . Puede configurar el cifrado adicional, en forma de SSL, en el servidor WinRM.

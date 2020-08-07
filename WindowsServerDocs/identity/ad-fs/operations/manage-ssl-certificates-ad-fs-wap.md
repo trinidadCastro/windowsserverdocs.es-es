@@ -7,14 +7,12 @@ ms.author: billmath
 manager: samueld
 ms.date: 10/02/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a982df8ce7d1f335a1c2242f277b1983573c9ee1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc48e3efc783665921519272443e86620dcd4d4a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954208"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962479"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>Administración de certificados SSL en AD FS y WAP en Windows Server 2016
 
@@ -46,7 +44,7 @@ En primer lugar, determine el modo de enlace de certificados que ejecutan los se
 De forma predeterminada, AD FS realiza la autenticación de certificados de dispositivo en el puerto 443 y la autenticación de certificado de usuario en el puerto 49443 (o un puerto configurable que no sea 443).
 En este modo, use el cmdlet de PowerShell Set-AdfsSslCertificate para administrar el certificado SSL.
 
-Siga estos pasos:
+Para hacerlo, siga estos pasos:
 
 1. En primer lugar, tendrá que obtener el nuevo certificado. Esto se suele hacer mediante el envío de una solicitud de firma de certificado (CSR) a un proveedor de certificados público de terceros. Hay varias maneras de generar el CSR, incluido desde un equipo con Windows 7 o una versión posterior. El proveedor debe tener documentación para esto.
 
@@ -77,7 +75,7 @@ dir Cert:\LocalMachine\My\
 Cuando se configura en el modo de enlace TLS de cliente alternativo, AD FS realiza la autenticación de certificados de dispositivo en el puerto 443 y la autenticación de certificado de usuario en el puerto 443 también en un nombre de host diferente. El nombre de host del certificado de usuario es el AD FS nombre de host precedido de "certauth", por ejemplo, "certauth.fs.contoso.com".
 En este modo, use el cmdlet de PowerShell Set-AdfsAlternateTlsClientBinding para administrar el certificado SSL. Esto no solo administrará el enlace TLS de cliente alternativo, sino también todos los demás enlaces en los que AD FS establece el certificado SSL.
 
-Siga estos pasos:
+Para hacerlo, siga estos pasos:
 
 1. En primer lugar, tendrá que obtener el nuevo certificado. Esto se suele hacer mediante el envío de una solicitud de firma de certificado (CSR) a un proveedor de certificados público de terceros. Hay varias maneras de generar el CSR, incluido desde un equipo con Windows 7 o una versión posterior. El proveedor debe tener documentación para esto.
 
@@ -124,6 +122,6 @@ Escriba las credenciales de un usuario de dominio que sea administrador local en
 Install-WebApplicationProxy -FederationServiceTrustCredential $cred -CertificateThumbprint '<thumbprint of new cert>' -FederationServiceName 'fs.contoso.com'
 ```
 
-## <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>Referencias adicionales
 * [Compatibilidad de AD FS con el enlace de nombre de host alternativo para la autenticación de certificado](../operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 * [Información de la propiedad de AD FS e especificación de certificados](../technical-reference/AD-FS-and-KeySpec-Property.md)

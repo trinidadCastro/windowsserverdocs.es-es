@@ -1,20 +1,18 @@
 ---
 ms.assetid: c91c7196-ee0d-4856-8cfb-4c38494ccf1f
 title: Introducción a carpetas de trabajo
-ms.prod: windows-server
-ms.technology: storage-work-folders
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: 'Información general de las carpetas de trabajo: un rol de servidor en Windows Server que proporciona una manera coherente de que los usuarios tengan acceso a los archivos de trabajo desde equipos y dispositivos.'
-ms.openlocfilehash: 4759584773698dded934d435e601da4e05ff9ee6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 5641ea38a75e79420a5e697c14c0e4e3422aa913
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181911"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970072"
 ---
 # <a name="work-folders-overview"></a>Introducción a carpetas de trabajo
 
@@ -109,7 +107,7 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
 
     -   Windows RT 8.1
 
-    -   Windows 7
+    -   Windows 7
 
     -   Android 4,4 KitKat y versiones posteriores
 
@@ -121,7 +119,7 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
 
     -   Windows 7 Ultimate
 
-    -   Windows 7 Enterprise
+    -   Windows 7 Enterprise
 
 -   Los equipos con Windows 7 deben estar Unidos al dominio de su organización (no pueden unirse a un grupo de trabajo).
 
@@ -142,7 +140,7 @@ En la tabla siguiente se describe cómo se colocan varias tecnologías de Micros
 | **Resumen de tecnología** | Sincroniza los archivos que se almacenan en un servidor de archivos con equipos y dispositivos | Sincroniza los archivos que se almacenan en un servidor de archivos con equipos que tienen acceso a la red corporativa (se pueden reemplazar por carpetas de trabajo) | Sincroniza los archivos que se almacenan en Office 365 o en SharePoint con equipos y dispositivos dentro o fuera de una red corporativa, y proporciona la funcionalidad de colaboración de documentos. | Sincroniza los archivos personales que se almacenan en OneDrive con equipos, equipos Mac y dispositivos. |
 | **Diseñado para proporcionar acceso de usuario a los archivos de trabajo** | Sí | Sí | Sí | No |
 | **servicio en la nube** | None | None | Office 365 | Microsoft OneDrive |
-| **Servidores de la red interna** | Servidores de archivos que ejecutan Windows Server 2012 R2, Windows Server 2016 y Windows Server 2019 | Servidores de archivos | SharePoint Server (opcional) | None |
+| **Servidores de la red interna** | Servidores de archivos que ejecutan Windows Server 2012 R2, Windows Server 2016 y Windows Server 2019 | Servidores de archivos | SharePoint Server (opcional) | Ninguno |
 | **Clientes compatibles** | Equipos, iOS y Android | Equipos en una red corporativa o conectados a través de DirectAccess, VPN u otras tecnologías de acceso remoto | PC, iOS, Android, Windows Phone | PC, equipos Mac, Windows Phone, iOS y Android |
 
 > [!NOTE]

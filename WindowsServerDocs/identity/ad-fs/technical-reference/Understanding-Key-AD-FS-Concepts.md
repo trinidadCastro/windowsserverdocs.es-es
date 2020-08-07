@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: e7b204043f685343a32abebb868b441cbdfe37b8
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 41ec95b44c6953e061390f181bc22c9788db50de
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181791"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937685"
 ---
 # <a name="understanding-key-ad-fs-concepts"></a>Understanding Key AD FS Concepts
 Se recomienda que conozca los conceptos importantes de Servicios de federación de Active Directory (AD FS) y familiarícese con el conjunto de características.

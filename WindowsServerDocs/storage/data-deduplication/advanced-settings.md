@@ -1,19 +1,17 @@
 ---
 ms.assetid: 01c8cece-66ce-4a83-a81e-aa6cc98e51fc
 title: Configuración avanzada de Desduplicación de datos
-ms.prod: windows-server
-ms.technology: storage-deduplication
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: b45e8723066f040268ee174b15af09569af2ff01
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 73f9ce6e88fa56a645f0ffedba4f38dec87e973b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965397"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936384"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configuración avanzada de Desduplicación de datos
 
@@ -33,7 +31,7 @@ Los trabajos de Desduplicación de datos se programan a través del programador 
 
 La razón más común para cambiar cuando se ejecutan los trabajos de Desduplicación de datos es asegurarse de que los trabajos se ejecutan fuera del horario laboral. En el siguiente ejemplo paso a paso muestra cómo modificar la programación de Desduplicación de datos para un escenario de *día soleado*: un host de Hyper-V hiperconvergido que está inactivo los fines de semana y después de las 19:00. Para cambiar la programación, ejecute los siguientes cmdlets de PowerShell en un contexto de administrador.
 
-1. Deshabilite los trabajos programados de [Optimización](understand.md#job-info-optimization) cada hora.  
+1. Deshabilite los trabajos programados de [Optimización](understand.md#job-info-optimization) cada hora.
     ```PowerShell
     Set-DedupSchedule -Name BackgroundOptimization -Enabled $false
     Set-DedupSchedule -Name PriorityOptimization -Enabled $false
@@ -50,7 +48,7 @@ La razón más común para cambiar cuando se ejecutan los trabajos de Desduplica
     New-DedupSchedule -Name "NightlyOptimization" -Type Optimization -DurationHours 11 -Memory 100 -Cores 100 -Priority High -Days @(1,2,3,4,5) -Start (Get-Date "2016-08-08 19:00:00")
     ```
 
-    >[!NOTE]  
+    >[!NOTE]
     > La parte de *fecha* de `System.Datetime` proporcionada para `-Start` es irrelevante (mientras esté en el pasado), pero la parte de *hora* especifica cuándo debe comenzar el trabajo.
 4. Cree un trabajo semanal de recolección de elementos no deseados que se ejecuta el sábado desde las 7:00 con prioridad elevada y todas las CPU y memoria disponibles en el sistema.
     ```PowerShell
@@ -126,7 +124,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Para evitar que un trabajo se ejecute en una carga de trabajo&#39;s horas de inactividad</td>
         </tr>
         <tr>
-            <td>habilitado</td>
+            <td>Habilitado</td>
             <td>Si el trabajo se ejecuta</td>
             <td>Verdadero o falso</td>
             <td>Para deshabilitar un trabajo sin quitarlo</td>
@@ -199,7 +197,7 @@ Las razones principales para modificar la configuración de volumen desde el tip
 <table>
     <thead>
         <tr>
-            <th style="min-width:125px">Nombre de valor</th>
+            <th style="min-width:125px">Nombre del valor</th>
             <th>Definición</th>
             <th>Valores aceptados</th>
             <th>¿Por qué se quiere modificar este valor?</th>
@@ -267,7 +265,7 @@ Las razones principales para modificar la configuración de volumen desde el tip
             <td>Habilite a esta opción si la carga de trabajo funciona con archivos grandes, a menudo archivos modificados en los que la mayor parte del contenido del archivo está sin tocar. Si esta opción no está habilitada, estos archivos no se optimizarán nunca porque conservan los cambios, aunque la mayor parte del contenido del archivo está listo para su optimización.</td>
         </tr>
         <tr>
-            <td>Comprobación</td>
+            <td>Verificación</td>
             <td>Cuando se habilita, si el hash de un fragmento coincide con un fragmento que ya se encuentra en nuestro almacén de fragmentos, los fragmentos se comparan byte a byte para asegurarse de que son idénticos.</td>
             <td>Verdadero o falso</td>
             <td>Se trata de una característica de integridad que garantiza que el algoritmo hash que compara los fragmentos no comete un error al comparar dos fragmentos de datos que son realmente diferentes pero tienen el mismo valor hash. En la práctica, es muy improbable que esto ocurra. Si habilita la característica de comprobación, se agrega una sobrecarga considerable al trabajo de optimización.</td>
@@ -295,7 +293,7 @@ Por ejemplo, puede querer deshabilitar la recolección de elementos no utilizado
 <table>
     <thead>
         <tr>
-            <th style="min-width:125px">Nombre de valor</th>
+            <th style="min-width:125px">Nombre del valor</th>
             <th>Definición</th>
             <th>Valores aceptados</th>
             <th>¿Por qué quiere cambiarlo?</th>
@@ -318,18 +316,18 @@ Por ejemplo, puede querer deshabilitar la recolección de elementos no utilizado
 </table>
 
 ## <a name="frequently-asked-questions"></a><a id="faq"></a>Preguntas más frecuentes
-<a id="faq-use-responsibly"></a>**He cambiado una configuración de desduplicación de datos y ahora los trabajos son lentos o no finalizan, o bien el rendimiento de la carga de trabajo ha disminuido. ¿Por qué?**  
+<a id="faq-use-responsibly"></a>**He cambiado una configuración de desduplicación de datos y ahora los trabajos son lentos o no finalizan, o bien el rendimiento de la carga de trabajo ha disminuido. ¿Por qué?**
 Esta configuración le permiten controlar cómo se ejecuta Desduplicación de datos. Úselos de forma responsable y [supervise el rendimiento](run.md#monitoring-dedup).
 
-<a id="faq-running-dedup-jobs-manually"></a>**Deseo ejecutar un trabajo de desduplicación de datos ahora mismo, pero no deseo crear una nueva programación. ¿puedo hacerlo?**  
+<a id="faq-running-dedup-jobs-manually"></a>**Deseo ejecutar un trabajo de desduplicación de datos ahora mismo, pero no deseo crear una nueva programación. ¿puedo hacerlo?**
 Sí, [todos los trabajos se pueden ejecutar manualmente](run.md#running-dedup-jobs-manually).
 
-<a id="faq-full-v-regular-gc"></a>**¿Cuál es la diferencia entre la recolección de elementos no utilizados completa y normal?**  
+<a id="faq-full-v-regular-gc"></a>**¿Cuál es la diferencia entre la recolección de elementos no utilizados completa y normal?**
 Hay dos tipos de [recolección de elementos no deseados](understand.md#job-info-gc):
 
 - *Recolección normal de elementos no utilizados*: utiliza un algoritmo estadístico para buscar grandes fragmentos sin referencia que cumplen unos criterios determinados (bajo en memoria e IOPs). La recolección normal de elementos no utilizados compacta un contenedor de almacenamiento de fragmentos solo si un porcentaje mínimo de los fragmentos están sin referencia. Este tipo de recolección de elementos no utilizados se ejecuta más rápido y consume menos recursos que la recolección completa de elementos no utilizados. La programación predeterminada del trabajo de recolección normal de elementos no utilizados es ejecutarlo una vez por semana.
 - La *recolección completa de elementos no utilizados* hace un trabajo mucho más profundo de búsqueda de fragmentos sin referencia y de liberación de más espacio en disco. La recolección completa de elementos no utilizados compacta cada contenedor, incluso si solo un único fragmento del contenedor no tiene referencia. La recolección de elementos no utilizados completa también liberará espacio que haya estado en uso si se produjo un error de alimentación o un bloqueo durante un trabajo de optimización. Los trabajos de recolección completa de elementos no utilizados recuperarán el 100 por ciento del espacio disponible que se puede recuperar en un volumen desduplicado a costa de requerir más tiempo y recursos del sistema en comparación con un trabajo de recolección normal de elementos no utilizados. El trabajo de recolección completa de elementos no utilizados normalmente encontrará y liberará hasta un 5 por ciento más de datos sin referencia que un trabajo de recolección normal de elementos no utilizados. La programación predeterminada del trabajo de recolección completa de elementos no utilizados consiste en ejecutarse cada cuarta vez que está programada la recolección de elementos no utilizados.
 
-<a id="faq-why-disable-full-gc"></a>**¿Por qué deseo deshabilitar la recolección de elementos no utilizados completa?**  
-- La recolección de elementos no utilizados podría afectar negativamente a las instantáneas de duración del volumen y al tamaño de la copia de seguridad incremental. Las cargas de trabajo con una E/S intensiva o con una elevada renovación de código pueden ver una degradación del rendimiento en los trabajos de recolección completa de elementos no utilizados.           
+<a id="faq-why-disable-full-gc"></a>**¿Por qué deseo deshabilitar la recolección de elementos no utilizados completa?**
+- La recolección de elementos no utilizados podría afectar negativamente a las instantáneas de duración del volumen y al tamaño de la copia de seguridad incremental. Las cargas de trabajo con una E/S intensiva o con una elevada renovación de código pueden ver una degradación del rendimiento en los trabajos de recolección completa de elementos no utilizados.
 - Puede ejecutar manualmente un trabajo de recolección completa de elementos no utilizados desde PowerShell para limpiar las fugas si sabe que se bloqueó el sistema.

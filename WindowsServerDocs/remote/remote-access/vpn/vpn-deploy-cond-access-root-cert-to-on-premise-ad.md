@@ -1,19 +1,17 @@
 ---
 title: Implementar certificados raíz de acceso condicional en AD local
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: cc3e96ff0ea98acbfafef5aba37f4e20a103f029
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7edae0ac84e6ea11720f786c8a5188ebc6e8a522
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959667"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970172"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>Paso 7.4. Implementar certificados raíz de acceso condicional en AD local
 
@@ -34,7 +32,7 @@ En este paso, implementará el certificado raíz de acceso condicional como cert
    >[!NOTE]
    >En los entornos en los que el servidor VPN no está unido al dominio de Active Directory, los certificados raíz de la nube deben agregarse manualmente al almacén de _entidades de certificación raíz de confianza_ .
 
-   | Comando | Descripción |
+   | Get-Help | Descripción |
    | --- | --- |
    | `certutil -dspublish -f VpnCert.cer RootCA` | Crea dos contenedores de la entidad de certificación **raíz de Microsoft VPN de generación 1** en los contenedores **CN = AIA** y **CN = entidades de certificación** , y publica cada certificado raíz como un valor en el atributo _el certificado_ de los contenedores de **Microsoft VPN root CA gen 1** . |
    | `certutil -dspublish -f VpnCert.cer NTAuthCA` | Crea un contenedor **CN = NTAuthCertificates** bajo los contenedores de entidades de certificación **CN = AIA** y **CN =** , y publica cada certificado raíz como un valor en el atributo _el certificado_ del contenedor **CN = NTAuthCertificates** . |

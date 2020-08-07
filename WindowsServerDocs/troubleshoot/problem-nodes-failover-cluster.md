@@ -1,17 +1,15 @@
 ---
-title: Problema al eliminar un nodo
+title: Problemas para eliminar un nodo
 description: En este artículo se describen los problemas que se producen al quitar nodos de la pertenencia al clúster de conmutación por error activa.
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 08f5e7ef2ddd0f11abee7d0f21b56c3d5a601d3d
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+ms.openlocfilehash: e69b110db8f631b74c89e046f724367b4d60dbad
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306524"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970042"
 ---
 # <a name="having-a-problem-with-nodes-being-removed-from-active-failover-cluster-membership"></a>Problema con los nodos que se quitan de la pertenencia al clúster de conmutación por error activa
 

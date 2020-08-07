@@ -2,18 +2,16 @@
 title: Rendimiento de túnel GRE de puerta de enlace de RAS
 description: En este tema, destinado a los profesionales de tecnologías de la información (TI), se proporciona información de rendimiento sobre los túneles de encapsulación de enrutamiento genérico (GRE) de puerta de enlace RAS.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: c051b2ec-de0f-49d1-82b9-5742b259cd7c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b20f26673cc5f56632717f9889bfd03b81173661
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3cf4b74a6aa6d8f64b917842cc0806cd463716e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961877"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953671"
 ---
 # <a name="ras-gateway-gre-tunnel-throughput-and-performance"></a>Rendimiento de túnel GRE de puerta de enlace de RAS
 
@@ -33,7 +31,7 @@ El modo de un solo inquilino permite a las organizaciones de cualquier tamaño i
 
 GRE es un protocolo de túnel ligero que puede encapsular una amplia variedad de protocolos de capa de red dentro de \- vínculos de punto a punto virtuales a \- través de una red de protocolo de Internet. La implementación de Microsoft GRE encapsula IPv4 e IPv6.
 
-Para obtener más información, consulte la sección **escenarios de implementación de puerta de enlace de Ras** en el tema puerta de enlace de [ras](./ras-gateway.md#bkmk_deploy). 
+Para obtener más información, consulte la sección **escenarios de implementación de puerta de enlace de Ras** en el tema puerta de enlace de [ras](./ras-gateway.md#bkmk_deploy).
 
 En este escenario de prueba, que se representa en la siguiente ilustración, el flujo de tráfico que se mide pasa de la intranet de la organización 2 a la intranet 1 de la organización. Las máquinas virtuales de carga de trabajo de inquilino envían tráfico de red de la intranet 2 a la intranet 1 mediante la puerta de enlace RAS.
 
@@ -47,14 +45,14 @@ En el entorno de prueba, las máquinas virtuales de puerta de enlace RAS se impl
 
 ### <a name="hyper-v-host-configuration"></a>Configuración del host de Hyper- \- V
 
-Dos \- hosts de Hyper-V están configurados para admitir el escenario de prueba de la siguiente manera. 
+Dos \- hosts de Hyper-V están configurados para admitir el escenario de prueba de la siguiente manera.
 
 - Dos \- equipos físicos de host dual están configurados con Windows Server, versión 1709
 - Los dos adaptadores de red físicos de cada uno de los dos servidores están conectados a subredes diferentes, y ambos representan subredes de una intranet de la organización. Ambas redes y el hardware compatible tienen una capacidad de 10 GBps.
 - El hyperthreading en los servidores físicos está deshabilitado. Esto proporciona el máximo rendimiento de las NIC físicas.
 - El rol de servidor de Hyper- \- v se instala en ambos servidores y se configura con dos \- conmutadores virtuales externos de Hyper v, uno para cada adaptador de red físico.
 - Dado que ambos servidores están conectados a la misma intranet, los servidores pueden comunicarse entre sí.
-- Los \- hosts de Hyper-V se configuran en un clúster de conmutación por error a través de la red de intranet. 
+- Los \- hosts de Hyper-V se configuran en un clúster de conmutación por error a través de la red de intranet.
 
 >[!NOTE]
 >Para obtener más información, consulte [conmutador virtual de Hyper-V](../../../virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch.md).

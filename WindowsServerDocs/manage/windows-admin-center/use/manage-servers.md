@@ -1,23 +1,21 @@
 ---
 title: Administrar servidores con el centro de administración de Windows
 description: Administrar servidores con el centro de administración de Windows (proyecto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: cbcb5c2357a60d6d12551a7d08055cacecd515b7
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 69f8f20aa9e1b222ff112f91df8d6b3d7767fc84
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269242"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962389"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Administrar servidores con el centro de administración de Windows
 
->Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
 > [!Tip]
 > ¿No estás familiarizado con Windows Admin Center?
@@ -49,31 +47,31 @@ Las siguientes herramientas están disponibles para las conexiones de servidor:
 
 | Herramienta | Descripción |
 | ---- | ----------- |
-| [Introducción](#overview) | Ver detalles del servidor y controlar el estado del servidor |
+| [Información general](#overview) | Ver detalles del servidor y controlar el estado del servidor |
 | [Active Directory](#active-directory-preview) | Administrar Active Directory |
-| [Copiar](#backup) | Ver y configurar Azure Backup |  
+| [Backup](#backup) | Ver y configurar Azure Backup |
 | [Certificados](#certificates) | Ver y modificar certificados |
-| [Containers](#containers) | Ver contenedores |
+| [Contenedores](#containers) | Ver contenedores |
 | [Dispositivos](#devices) | Ver y modificar dispositivos |
 | [DHCP](#dhcp) | Ver y administrar la configuración del servidor DHCP |
 | [DNS](#dns) | Ver y administrar la configuración del servidor DNS |
-| [Ceso](#events) | Ver eventos |
-| [Archivos](#files) | Examinar archivos y carpetas |
+| [Eventos](#events) | Ver eventos |
+| [Archivos](#files) | Examen de archivos y carpetas |
 | [Firewall](#firewall) | Ver y modificar las reglas de Firewall |
 | [Aplicaciones instaladas](#installed-apps) | Visualización y eliminación de las aplicaciones instaladas |
 | [Usuarios y grupos locales](#local-users-and-groups) | Ver y modificar usuarios y grupos locales |
-| [Storage](#network) | Ver y modificar dispositivos de red |
+| [Network](#network) | Ver y modificar dispositivos de red |
 | [Supervisión de paquetes](https://aka.ms/wac1908) | Supervisión de paquetes de red |
 | [Monitor de rendimiento](https://aka.ms/perfmon-blog) | Ver informes y contadores de rendimiento |
 | [PowerShell](#powershell) | Interacción con el servidor a través de PowerShell |
-| [Procese](#processes) | Ver y modificar procesos en ejecución |
-| [Del registro](#registry) | Ver y modificar las entradas del registro |
+| [Procesos](#processes) | Ver y modificar procesos en ejecución |
+| [Registro](#registry) | Ver y modificar las entradas del registro |
 | [Escritorio remoto](#remote-desktop) | Interacción con el servidor a través de Escritorio remoto |
 | [Roles y características](#roles-and-features) | Ver y modificar roles y características |
 | [Tareas programadas](#scheduled-tasks) | Ver y modificar las tareas programadas |
 | [Servicios](#services) | Ver y modificar servicios |
 | [Configuración](#settings) | Ver y modificar servicios |
-| [Almacenamiento](#storage) | Visualización y modificación de dispositivos de almacenamiento |
+| [Storage](#storage) | Visualización y modificación de dispositivos de almacenamiento |
 | [Servicio de migración de almacenamiento](#storage-migration-service) | Migración de servidores y recursos compartidos de archivos a Azure o Windows Server 2019 |
 | [Réplica de almacenamiento](#storage-replica) | Usar réplica de almacenamiento para administrar la replicación de almacenamiento de servidor a servidor |
 | [Conclusiones del sistema](#system-insights) | System Insights proporciona un mayor conocimiento del funcionamiento del servidor. |
@@ -81,7 +79,7 @@ Las siguientes herramientas están disponibles para las conexiones de servidor:
 | [Máquinas virtuales](manage-virtual-machines.md) | Ver y administrar máquinas virtuales |
 | [Conmutadores virtuales](#virtual-switches) | Visualización y administración de conmutadores virtuales |
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 
 **Información general** le permite ver el estado actual de la CPU, la memoria y el rendimiento de la red, así como realizar operaciones y modificar la configuración de un equipo o servidor de destino.
 
@@ -93,7 +91,7 @@ En Administrador del servidor información general, se admiten las siguientes ca
 - Ver la actividad de la CPU
 - Ver la actividad de memoria
 - Ver la actividad de la red
-- Reiniciar el servidor
+- Reinicio del servidor
 - Apagar servidor
 - Habilitar las métricas de disco en el servidor
 - Editar ID. de equipo en el servidor
@@ -114,14 +112,14 @@ Están disponibles las siguientes opciones de administración de Active Director
 - Buscar usuarios, equipos y grupos
 - Panel de detalles de usuarios, equipos y grupos cuando se selecciona en la cuadrícula
 - Acciones de cuadrícula global usuarios, equipos y grupos (deshabilitar/habilitar, quitar)
-- Restablecer contraseñas de usuario
+- Restablecer contraseña de usuario
 - Objetos de usuario: configurar propiedades básicas & pertenencias a grupos
 - Objetos de equipo: configuración de la delegación en un solo equipo
-- Objetos de Grupo: administrar la pertenencia (agregar o quitar un usuario a la vez)  
+- Objetos de Grupo: administrar la pertenencia (agregar o quitar un usuario a la vez)
 
 [**Ver comentarios y características propuestas para Active Directory**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D).
 
-## <a name="backup"></a>Backup
+## <a name="backup"></a>Copia de seguridad
 
 La **copia de seguridad** le permite proteger su servidor de Windows frente a daños, ataques o desastres mediante la copia de seguridad del servidor directamente en Microsoft Azure.
 [Más información sobre Azure Backup.](https://aka.ms/windows-admin-center-backup)
@@ -137,7 +135,7 @@ Las siguientes características se admiten en la copia de seguridad:
 - Iniciar o detener un trabajo de copia de seguridad
 - Ver el estado y el historial de trabajos de copia de seguridad
 - Ver puntos de recuperación y recuperar datos
-- Eliminar datos de copia de seguridad
+- Eliminación de datos de copia de seguridad
 
 ## <a name="certificates"></a>Certificados
 
@@ -149,14 +147,14 @@ En los certificados se admiten las siguientes características:
 
 - Examinar y buscar certificados existentes
 - Ver detalles del certificado
-- Exportar certificados
+- Exportación de certificados
 - Renovar certificados
 - Solicitar nuevos certificados
 - Eliminar certificados
 
 [**Ver comentarios y características propuestas para certificados**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BCertificates%5D).
 
-## <a name="containers"></a>Contenedores
+## <a name="containers"></a>Containers
 
 Los **contenedores** permiten ver los contenedores de un host de contenedor de Windows Server. En el caso de un contenedor de Windows Server Core en ejecución, puede ver los registros de eventos y acceder a la CLI del contenedor.
 
@@ -171,8 +169,8 @@ Los **dispositivos** permiten administrar dispositivos conectados en un equipo o
 Se admiten las siguientes características en los dispositivos:
 
 - Examinar y buscar dispositivos
-- Ver detalles del dispositivo
-- Deshabilitar un dispositivo
+- Ver los detalles de dispositivo
+- Deshabilitación de un dispositivo
 - Actualizar controlador en un dispositivo
 
 [**Ver comentarios y características propuestas para dispositivos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDevices%5D).
@@ -204,7 +202,7 @@ Se admiten las siguientes características en los dispositivos:
 
 [**Ver comentarios y características propuestas para DHCP**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D).
 
-## <a name="events"></a>Eventos
+## <a name="events"></a>Events
 
 **Los eventos** permiten administrar registros de eventos en un equipo o servidor.
 
@@ -219,7 +217,7 @@ Se admiten las siguientes características en eventos:
 
 [**Ver comentarios y características propuestas para eventos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BEvents%5D).
 
-## <a name="files"></a>Files
+## <a name="files"></a>Archivos
 
 **Archivos** permite administrar archivos y carpetas en un equipo o servidor.
 
@@ -227,12 +225,12 @@ Se admiten las siguientes características en eventos:
 
 Se admiten las siguientes características en los archivos:
 
-- Examinar archivos y carpetas
+- Examen de archivos y carpetas
 - Buscar un archivo o una carpeta
-- crear una nueva carpeta
+- Crear una carpeta
 - Eliminar un archivo o una carpeta
 - Descargar un archivo o una carpeta
-- Cargar un archivo o una carpeta
+- Carga de un archivo o una carpeta
 - cambiar el nombre de un archivo o una carpeta.
 - Extraer un archivo zip
 - Copiar y migrar archivos y carpetas
@@ -268,7 +266,7 @@ Se admiten las siguientes características en el Firewall:
 
 [**Ver comentarios y características propuestas para las aplicaciones instaladas**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BInstalled%20Apps%5D).
 
-## <a name="local-users-and-groups"></a>Grupos y usuarios locales
+## <a name="local-users-and-groups"></a>Usuarios y grupos locales
 
 **Usuarios y grupos locales** permite administrar grupos de seguridad y usuarios que existen de forma local en un equipo o servidor.
 
@@ -330,7 +328,7 @@ Se admiten las siguientes características en los procesos:
 
 [**Ver comentarios y características propuestas para los procesos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BProcesses%5D).
 
-## <a name="registry"></a>Registro
+## <a name="registry"></a>Registro del sistema
 
 El **registro** permite administrar valores y claves del registro en un equipo o servidor.
 
@@ -340,7 +338,7 @@ Las siguientes características se admiten en el registro:
 
 - Examinar claves y valores del registro
 - Agregar o modificar valores del registro
-- Eliminar valores del registro
+- Eliminar valores de Registro
 
 [**Ver comentarios y características propuestas para el registro**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BRegistry%5D).
 
@@ -373,7 +371,7 @@ Se admiten las siguientes características en roles y características:
 
 [**Ver comentarios y características propuestas para roles y características**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BRoles%20and%20Features%5D).
 
-## <a name="scheduled-tasks"></a>TAREAS PROGRAMADAS
+## <a name="scheduled-tasks"></a>Tareas programadas
 
 **Tareas programadas** permite administrar tareas programadas en un equipo o servidor.
 
@@ -419,7 +417,7 @@ La **configuración** es una ubicación central para administrar la configuraci�
 - Ver y modificar la configuración de control de acceso basado en roles
 - Ver y modificar la configuración del host de Hyper-V, si procede
 
-## <a name="storage"></a>Almacenamiento
+## <a name="storage"></a>Storage
 
 El **almacenamiento** le permite administrar dispositivos de almacenamiento en un equipo o servidor.
 
@@ -429,7 +427,7 @@ Se admiten las siguientes características en el almacenamiento:
 
 - Examinar y buscar discos existentes en un servidor
 - Ver detalles del disco
-- Crear un volumen
+- Creación de un volumen
 - Inicializar un disco
 - Crear, adjuntar y desasociar un disco duro virtual (VHD)
 - Desconectar un disco
@@ -438,7 +436,7 @@ Se admiten las siguientes características en el almacenamiento:
 - Editar propiedades de volumen
 - Eliminar un volumen
 - Instalar la administración de cuotas
-- Administrar [el almacenamiento de las cuotas del servidor de archivos Administrador de recursos > crear/actualizar cuota](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
+- Administrar [el almacenamiento de las cuotas del servidor de archivos Administrador de recursos >crear/actualizar cuota](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
 
 [**Ver comentarios y características propuestas para el almacenamiento**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 
@@ -453,7 +451,7 @@ El **servicio de migración de almacenamiento** permite migrar servidores y recu
 ## <a name="storage-replica"></a>Réplica de almacenamiento
 
 Use **réplica de almacenamiento** para administrar la replicación de almacenamiento de servidor a servidor.
-[Más información acerca de réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
+ [Más información sobre la réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
 
 ## <a name="system-insights"></a>Conclusiones del sistema
 
@@ -473,13 +471,13 @@ Las siguientes características se admiten en las actualizaciones de:
 
 - Ver las actualizaciones de Windows o de Microsoft disponibles
 - Ver una lista de historial de actualizaciones
-- Instalar actualizaciones
+- Instalación de actualizaciones
 - Buscar actualizaciones en línea desde Microsoft Update
 - Administración de la integración de [Azure Update Management](https://docs.microsoft.com/azure/automation/automation-update-management)
 
 [**Ver comentarios y características propuestas para actualizaciones**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BUpdates%5D)
 
-## <a name="virtual-machines"></a>Máquinas virtuales
+## <a name="virtual-machines"></a>Virtual Machines
 
 Vea [administrar virtual machines con el centro de administración de Windows](manage-virtual-machines.md)
 

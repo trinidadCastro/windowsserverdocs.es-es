@@ -1,28 +1,26 @@
 ---
 title: Implementar un testigo de recurso compartido de archivos en Windows Server 2019
 description: Los testigos de recurso compartido de archivos permiten usar un recurso compartido de archivos para votar en el cuórum del clúster. En este tema se describen testigos de recurso compartido de archivos y la nueva funcionalidad, incluido el uso de una unidad USB conectada a un enrutador como testigo de recurso compartido de archivos.
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 63e016b8e00482529e69aaa12727f854afd51e41
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea9dd3f79576048a57c85e879daf86567d325046
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827678"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945838"
 ---
-# <a name="deploy-a-file-share-witness"></a>Implementación de un testigo de recurso compartido de archivos
+# <a name="deploy-a-file-share-witness"></a>Implementar un testigo del recurso compartido de archivos
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Un testigo de recurso compartido de archivos es un recurso compartido de SMB que el clúster de conmutación por error usa como voto en el cuórum del clúster. En este tema se proporciona información general sobre la tecnología y la nueva funcionalidad de Windows Server 2019, incluido el uso de una unidad USB conectada a un enrutador como testigo de recurso compartido de archivos.
 
-Los testigos de recurso compartido de archivos son útiles en las siguientes circunstancias:  
+Los testigos de recurso compartido de archivos son útiles en las siguientes circunstancias:
 
 - No se puede usar un testigo en la nube porque no todos los servidores del clúster tienen una conexión a Internet confiable
 - No se puede usar un testigo de disco porque no hay ninguna unidad compartida para usar en un testigo de disco. Podría ser un clúster de Espacios de almacenamiento directo, SQL Server Always On de grupos de disponibilidad (AG), un grupo de disponibilidad de base de datos de Exchange (DAG), etc.  Ninguno de estos tipos de clústeres usa discos compartidos.

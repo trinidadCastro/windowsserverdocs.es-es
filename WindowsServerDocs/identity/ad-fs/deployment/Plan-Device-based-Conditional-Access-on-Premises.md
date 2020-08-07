@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 6d445cca81e2b583d0078e5fc34a219769748400
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 7f331aac7b58cc22f696130647a7f5e95ea808c9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519974"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945481"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>Planeación del acceso condicional basado en dispositivos a nivel local
 
@@ -29,9 +27,9 @@ AD FS proporciona el componente local de las directivas de acceso condicional e
 ### <a name="types-of-registered-devices"></a>Tipos de dispositivos registrados
 Hay tres tipos de dispositivos registrados, todos ellos se representan como objetos de dispositivo en Azure AD y se pueden usar para el acceso condicional con AD FS también local.
 
-| Description |Agregar una cuenta profesional o educativa  |Azure AD Join  |Unión a un dominio de Windows 10 |
+| Descripción |Agregar una cuenta profesional o educativa  |Azure AD Join  |Unión a un dominio de Windows 10 |
 | --- | --- |--- | --- |
-|Description    |  Los usuarios agregan su cuenta profesional o educativa a su dispositivo BYOD de forma interactiva.  **Nota:** Agregar una cuenta profesional o educativa es el reemplazo de Workplace Join en Windows 8/8.1 | Los usuarios unen su dispositivo de trabajo de Windows 10 a Azure AD.|Los dispositivos Unidos a un dominio de Windows 10 se registran automáticamente con Azure AD.|
+|Descripción    |  Los usuarios agregan su cuenta profesional o educativa a su dispositivo BYOD de forma interactiva.  **Nota:** Agregar una cuenta profesional o educativa es el reemplazo de Workplace Join en Windows 8/8.1 | Los usuarios unen su dispositivo de trabajo de Windows 10 a Azure AD.|Los dispositivos Unidos a un dominio de Windows 10 se registran automáticamente con Azure AD.|
 |Cómo los usuarios inician sesión en el dispositivo     |  No hay inicio de sesión en Windows como cuenta profesional o educativa.  Inicie sesión con un cuenta de Microsoft. |      | Inicie sesión en Windows como cuenta (profesional o educativa) que registró el dispositivo. | Inicie sesión con la cuenta de AD.|
 |Cómo se administran los dispositivos | Directivas MDM (con inscripción de Intune adicional) | Directivas MDM (con inscripción de Intune adicional) | Directiva de grupo, Configuration Manager |
 |Tipo de confianza Azure AD|Unido al área de trabajo|Unido a Azure AD|Pertenencia a un dominio |

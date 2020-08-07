@@ -1,19 +1,17 @@
 ---
 title: Información general sobre espacios de nombres DFS
-ms.prod: windows-server
 ms.author: jgerend
 manager: daveba
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: En este tema se describen los espacios de nombres DFS, que es un servicio de rol de Windows Server que permite agrupar las carpetas compartidas ubicadas en distintos servidores en uno o más espacios de nombres estructurados lógicamente.
-ms.openlocfilehash: 71c7f4e90a6a224586c90890a456fdf6f061ddf2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 54f26a605c15ab683dbe51f768e82bce2c00a290
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182281"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936195"
 ---
 # <a name="dfs-namespaces-overview"></a>Información general sobre espacios de nombres DFS
 

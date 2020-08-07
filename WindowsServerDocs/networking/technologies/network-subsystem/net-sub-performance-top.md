@@ -1,21 +1,19 @@
 ---
-title: Ajuste del rendimiento del subsistema de red
+title: Ajuste de rendimiento del subsistema de red
 description: Este tema forma parte de la guía de optimización del rendimiento del subsistema de red para Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 45217fce-bfb9-47e8-9814-88ffdb3c7b7d
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 66f4401235e8eccfe0ab6e10f86cddb15386621c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 40819f850788192f9057f8fd73c6c63f9d61dc0c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854758"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953911"
 ---
-# <a name="network-subsystem-performance-tuning"></a>Ajuste del rendimiento del subsistema de red
+# <a name="network-subsystem-performance-tuning"></a>Ajuste de rendimiento del subsistema de red
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -33,15 +31,15 @@ Ajustar el rendimiento del subsistema de red, especialmente en el caso de cargas
 
 1. **Interfaz de red**. Esta es la capa más baja de la pila de red y contiene el controlador de red que se comunica directamente con el adaptador de red.
 
-2. **Especificación de interfaz de controlador de red (NDIS)** . NDIS expone interfaces para el controlador que está por debajo y para las capas que hay por encima, como la pila de protocolos.
-  
+2. **Especificación de interfaz de controlador de red (NDIS)**. NDIS expone interfaces para el controlador que está por debajo y para las capas que hay por encima, como la pila de protocolos.
+
 3. **Pila de protocolos**. La pila de protocolos implementa protocolos como TCP/IP y UDP/IP. Estas capas exponen la interfaz de capa de transporte para las capas por encima de ellas.
-  
-4. **Controladores del sistema**. Suelen ser clientes que usan una interfaz de extensión de datos de transporte (TDX) o de Winsock kernel (WSK) para exponer interfaces a aplicaciones de modo usuario. La interfaz WSK se presentó en Windows Server 2008 y Windows&reg; vista, y se expone mediante AFD. sys. La interfaz mejora el rendimiento eliminando el cambio entre el modo de usuario y el modo kernel.
-  
+
+4. **Controladores del sistema**. Suelen ser clientes que usan una interfaz de extensión de datos de transporte (TDX) o de Winsock kernel (WSK) para exponer interfaces a aplicaciones de modo usuario. La interfaz WSK se presentó en Windows Server 2008 y Windows &reg; vista, y se expone mediante AFD.sys. La interfaz mejora el rendimiento eliminando el cambio entre el modo de usuario y el modo kernel.
+
 5. **Aplicaciones de modo usuario**. Normalmente se trata de soluciones de Microsoft o aplicaciones personalizadas.
 
-En la tabla siguiente se proporciona una ilustración vertical de las capas de la pila de red, incluidos ejemplos de elementos que se ejecutan en cada capa.  
+En la tabla siguiente se proporciona una ilustración vertical de las capas de la pila de red, incluidos ejemplos de elementos que se ejecutan en cada capa.
 
 ![Capas de la pila de red](../../media/Network-Subsystem/network-layers.jpg)
 

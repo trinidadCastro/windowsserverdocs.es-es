@@ -2,38 +2,36 @@
 title: Plantillas NPS
 description: En este tema se proporciona información general sobre las plantillas de servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: fdfc0df1-21c7-492c-9fad-38fe9c7d935a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 48d4daaaaced4aa180b444f0297ec25152c52d78
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 84ab593772dc7142b17dc9a6c971f52895df2d14
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315611"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953901"
 ---
 # <a name="nps-templates"></a>Plantillas NPS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Servidor de directivas de redes \(las plantillas de\) de NPS permiten crear elementos de configuración, como Servicio de autenticación remota telefónica de usuario \(RADIUS\) clientes o secretos compartidos, que puede reutilizar en el NPS local y exportar para su uso en otros NPSs.
+\(Las plantillas de NPS del servidor de directivas de redes \) le permiten crear elementos de configuración, como servicio de autenticación remota telefónica de usuario \( \) clientes RADIUS o secretos compartidos, que puede reutilizar en el NPS local y exportar para su uso en otros NPSs.
 
 Las plantillas de NPS están diseñadas para reducir la cantidad de tiempo y el costo que se tarda en configurar NPS en uno o varios servidores. Los siguientes tipos de plantilla de NPS están disponibles para la configuración en la administración de plantillas:
 
 - Secretos compartidos
-- RADIUS Clients
+- Clientes RADIUS
 - Servidores RADIUS remotos
 - Filtros IP
 - Grupos de servidores de actualizaciones
 
-La configuración de una plantilla es diferente de la configuración de NPS directamente. La creación de una plantilla no afecta a la funcionalidad del NPS. Solo cuando se selecciona la plantilla en la ubicación adecuada en la consola de NPS, la plantilla afecta a la funcionalidad de NPS. 
+La configuración de una plantilla es diferente de la configuración de NPS directamente. La creación de una plantilla no afecta a la funcionalidad del NPS. Solo cuando se selecciona la plantilla en la ubicación adecuada en la consola de NPS, la plantilla afecta a la funcionalidad de NPS.
 
-Por ejemplo, si configura un cliente RADIUS en la consola de NPS en clientes y servidores RADIUS, ha modificado la configuración de NPS y ha realizado un paso en la configuración de NPS para comunicarse con uno de los servidores de acceso a la red \(\)de NAS. \(el siguiente paso sería configurar el NAS para comunicarse con NPS. Sin embargo,\), si configura una nueva plantilla de clientes RADIUS en la consola de NPS en **Administración de plantillas** en lugar de crear un nuevo cliente RADIUS en **clientes y servidores RADIUS**, ha creado una plantilla, pero aún no ha modificado la funcionalidad de NPS. Para modificar la funcionalidad de NPS, debe seleccionar la plantilla en la ubicación correcta en la consola de NPS.
+Por ejemplo, si configura un cliente RADIUS en la consola de NPS en clientes y servidores RADIUS, ha modificado la configuración de NPS y ha realizado un paso en la configuración de NPS para comunicarse con uno de los servidores de acceso a la red de \( NAS \) . \(El siguiente paso sería configurar el NAS para comunicarse con NPS. \) Sin embargo, si configura una nueva plantilla de clientes RADIUS en la consola de NPS en **Administración de plantillas** en lugar de crear un nuevo cliente RADIUS en **clientes y servidores RADIUS**, ha creado una plantilla, pero aún no ha modificado la funcionalidad de NPS. Para modificar la funcionalidad de NPS, debe seleccionar la plantilla en la ubicación correcta en la consola de NPS.
 
-## <a name="creating-templates"></a>Crear plantillas
+## <a name="creating-templates"></a>Creación de plantillas
 
 Para crear una plantilla, abra la consola de NPS, haga clic con el botón secundario en un tipo de plantilla, como **filtros IP**y, a continuación, haga clic en **nuevo**. Se abre un cuadro de diálogo nuevas propiedades de plantilla que le permite configurar la plantilla.
 

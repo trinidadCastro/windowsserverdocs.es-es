@@ -1,20 +1,18 @@
 ---
 title: Escenarios de inicio de sesión de Windows
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 66b7c568-67b7-4ac9-a479-a5a3b8a66142
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9a953b22b39a20557103fa84a5d6d5e42e753444
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3e3876680031cdb31f2fa3e6ce200efdf6fb5185
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861708"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936455"
 ---
 # <a name="windows-logon-scenarios"></a>Escenarios de inicio de sesión de Windows
 
@@ -47,7 +45,7 @@ El siguiente diagrama muestra los elementos de inicio de sesión interactivos y 
 
 ![Diagrama que muestra los elementos de inicio de sesión interactivo y el proceso de inicio de sesión](../media/windows-logon-scenarios/AuthN_LSA_Architecture_Client.gif)
 
-**Arquitectura de autenticación de cliente de Windows**
+**Windows Client Authentication Architecture**
 
 ### <a name="local-and-domain-logon"></a><a name="BKMK_LocaDomainLogon"></a>Inicio de sesión local y de dominio
 Las credenciales que el usuario presenta para un inicio de sesión de dominio contienen todos los elementos necesarios para un inicio de sesión local, como el nombre de cuenta, la contraseña o el certificado, y Active Directory información del dominio. El proceso confirma la identificación del usuario en la base de datos de seguridad del equipo local del usuario o en un dominio de Active Directory. Este proceso de inicio de sesión obligatorio no se puede desactivar para los usuarios de un dominio.
@@ -86,7 +84,7 @@ Para proporcionar este tipo de autenticación, el sistema de seguridad incluye e
 
 -   Capa de sockets seguros/Seguridad de la capa de transporte (SSL/TLS)
 
--   Implícita
+-   Digest
 
 -   NTLM, para la compatibilidad con sistemas basados en Microsoft Windows NT 4,0
 
@@ -101,7 +99,7 @@ En el diagrama siguiente se muestran los elementos y procesos necesarios para el
 
 ![Diagrama que muestra los elementos y procesos necesarios para el inicio de sesión con tarjeta inteligente](../media/windows-logon-scenarios/SmartCardCredArchitecture.gif)
 
-**Arquitectura del proveedor de credenciales de tarjeta inteligente**
+**Arquitectura del proveedor de credenciales de tarjetas inteligentes**
 
 Cuando se usa una tarjeta inteligente en lugar de una contraseña, un par de claves privada y pública almacenado en la tarjeta inteligente del usuario se sustituye por la clave secreta compartida, que se deriva de la contraseña del usuario. La clave privada solo se almacena en la tarjeta inteligente. La clave pública puede ponerse a disposición de cualquier persona con la que el propietario quiera intercambiar información confidencial.
 
@@ -113,6 +111,6 @@ Un dispositivo se usa para capturar y compilar una característica digital de un
 ## <a name="additional-resources"></a>Recursos adicionales
 Para obtener información acerca de cómo Windows administra las credenciales enviadas durante el proceso de inicio de sesión, vea [Administración de credenciales en la autenticación de Windows](https://technet.microsoft.com/library/dn169014.aspx).
 
-[Información técnica de inicio de sesión y autenticación de Windows](https://technet.microsoft.com/library/dn169029.aspx)
+[Información técnica sobre inicio de sesión y autenticación en Windows](https://technet.microsoft.com/library/dn169029.aspx)
 
 

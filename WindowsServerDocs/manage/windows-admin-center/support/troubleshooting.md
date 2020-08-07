@@ -1,19 +1,17 @@
 ---
 title: Pasos comunes de solución de problemas del centro de administración de Windows
 description: Pasos comunes de solución de problemas del centro de administración de Windows (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 2ddcf101b6eae3be6f48c66de3c400c66ed53f2b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a7ef7eb2acf9a641babf5690119c61f452aaabbc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519654"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937624"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Solución de problemas de Windows Admin Center
 
@@ -196,7 +194,7 @@ netsh http delete urlacl url=https://+:443/
 
 Edge tiene [problemas conocidos](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge) relacionados con las zonas de seguridad que afectan al inicio de sesión de Azure en el centro de administración de Windows. Si tiene problemas con las características de Azure al usar Edge, intente agregar https://login.microsoftonline.com https://login.live.com y la dirección URL de la puerta de enlace como sitios de confianza y a sitios permitidos para la configuración del bloqueador de elementos emergentes perimetrales en el explorador del lado cliente.
 
-Para ello, siga estos pasos:
+Para ello:
 1. Buscar **Opciones de Internet** en el menú Inicio de Windows
 2. Vaya a la pestaña **seguridad** .
 3. En la opción **Sitios de confianza**, haga clic en el botón de **sitios** y agregue las direcciones URL en el cuadro de diálogo que se abrirá. Deberá agregar la dirección URL de la puerta de enlace, así como https://login.microsoftonline.com y https://login.live.com .

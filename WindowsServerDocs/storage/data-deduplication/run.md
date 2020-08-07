@@ -1,19 +1,17 @@
 ---
 ms.assetid: f15c02d7-1cbd-4eba-a571-0ea34ab93ef4
 title: Ejecución de desduplicación de datos
-ms.technology: storage-deduplication
-ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: f75a20a8b69a863209f6e782bd34e48d8c12fe91
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f382d229458f27795c09e0377e0f0b23ef7b395b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962167"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936236"
 ---
 # <a name="running-data-deduplication"></a>Ejecución de desduplicación de datos
 
@@ -42,7 +40,7 @@ Como la desduplicación de datos emplea un modelo de posprocesamiento, es import
 * Para el [trabajo de recolección de elementos no utilizados](understand.md#job-info-gc), examine `LastGarbageCollectionResult` (0 = correcto), `LastGarbageCollectionResultMessage`, y `LastGarbageCollectionTime` (debe ser reciente).
 * Para el [trabajo de limpieza de integridad](understand.md#job-info-scrubbing), mire `LastScrubbingResult` (0 = correcto), `LastScrubbingResultMessage`, y `LastScrubbingTime` (debe ser reciente).
 
-> [!Note]  
+> [!Note]
 > Encontrará información más detallada acerca de los aciertos y errores de los trabajos en el Visor de eventos de Windows en `\Applications and Services Logs\Windows\Deduplication\Operational`.
 
 ### <a name="optimization-rates"></a><a id="monitoring-dedup-optimization-rates"></a>Tasas de Optimización
@@ -61,9 +59,9 @@ Para desactivar la Desduplicación de datos, ejecute el [trabajo de Desoptimizac
 Start-DedupJob -Type Unoptimization -Volume <Desired-Volume>
 ```
 
-> [!Important]  
+> [!Important]
 > El trabajo de Desoptimización dará error si el volumen no tiene espacio suficiente para contener los datos desoptimizados.
 
 ## <a name="frequently-asked-questions"></a><a id="faq"></a>Preguntas más frecuentes
-**¿Existe un paquete de administración de System Center Operations Manager disponible para supervisar la desduplicación de datos?**  
+**¿Existe un paquete de administración de System Center Operations Manager disponible para supervisar la desduplicación de datos?**
 Sí. La Desduplicación de datos se puede supervisar mediante el paquete de administración de System Center para el servidor de archivos. Para obtener más información, consulte el documento [Guide for System Center Management Pack for File Server 2012 R2](https://download.microsoft.com/download/6/F/7/6F7A33B9-9383-48ED-9252-23C2C8AD1BDA/MPGuide_FileServer2012R2.doc) (Guía para el paquete de administración de System Center para el servidor de archivos 2012 R2).
