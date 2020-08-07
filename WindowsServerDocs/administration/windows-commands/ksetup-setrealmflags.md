@@ -34,7 +34,7 @@ ksetup /setrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 - Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos que no se basan en el sistema operativo Windows Server. Los equipos que ejecutan Windows Server pueden usar un servidor Kerberos para administrar la autenticación en el dominio Kerberos, en lugar de usar un dominio que ejecute un sistema operativo Windows Server. Esta entrada establece las características del dominio Kerberos y son las siguientes:
 
-| Valor | Marca de dominio Kerberos | Descripción |
+| Value | Marca de dominio Kerberos | Descripción |
 | ----- | ---------- | ----------- |
 | 0xF | Todas | Se establecen todas las marcas de dominio Kerberos. |
 | 0x00 | None | No se establecen marcas de dominio Kerberos y no se habilitan características adicionales. |
