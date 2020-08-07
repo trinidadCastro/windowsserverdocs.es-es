@@ -1,20 +1,18 @@
 ---
 title: cmd
 description: Artículo de referencia para el comando cmd, que inicia una nueva instancia del intérprete de comandos, Cmd.exe.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6ec588db-31a9-4a73-a970-65a2c6f4abbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69176c69434813745f6039b607f2992675df879c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0c4e651a4f88ffa1d85d5be225b3ae6e5d1676dd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929862"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880097"
 ---
 # <a name="cmd"></a>cmd
 
@@ -68,7 +66,7 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 | e | Amarillo claro |
 | f | Blanco brillante |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Para usar varios comandos para `<string>` , sepárelos mediante el separador **&&** de comandos y inclúyalo entre comillas. Por ejemplo:
 

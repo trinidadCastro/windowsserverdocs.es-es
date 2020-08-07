@@ -1,20 +1,18 @@
 ---
 title: nslookup set domain
 description: Artículo de referencia del comando Nslookup Set Domain, que cambia el nombre de dominio del sistema de nombres de dominio (DNS) predeterminado por el nombre especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9d4d28e8-6e88-42cc-801f-94e9d8e051f4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eaa12029beab301f955a4c9bed4595831f6ebf12
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: fbf2602f387af9a1f389bdcccc50b19a5b25c2ce
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934416"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885666"
 ---
 # <a name="nslookup-set-domain"></a>nslookup set domain
 
@@ -36,7 +34,7 @@ set domain=<domainname>
 | /? | Muestra la ayuda en el símbolo del sistema. |
 | /help | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El nombre de dominio DNS predeterminado se anexa a una solicitud de búsqueda según el estado de las opciones **defname** y **Search** .
 

@@ -1,30 +1,28 @@
 ---
 title: Configuración de sincronizaciones de actualización
 description: 'Tema de Windows Server Update Service (WSUS): Cómo configurar y configurar sincronizaciones de actualizaciones'
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: ddd5c395-451b-44a0-8e08-a05db26d2282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4da028b2100d824b55c00c185f8b90df7d787bf
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9f47b5b6086263e901b79b7ed9e2a19e76771b11
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828547"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891698"
 ---
 # <a name="setting-up-update-synchronizations"></a>Configuración de sincronizaciones de actualización
 
->Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Durante la sincronización, un servidor WSUS descarga actualizaciones (archivos y metadatos de actualización) desde un origen de actualización. También se descargan las clasificaciones y categorías de producto nuevas, si las hay. Cuando el servidor WSUS se sincroniza por primera vez, descargará todas las actualizaciones que especificó al configurar las opciones de sincronización. Después de la primera sincronización, el servidor WSUS descarga solo las actualizaciones del origen de la actualización, así como las revisiones en los metadatos de las actualizaciones existentes y la expiración de las actualizaciones.
 
 La primera vez que un servidor WSUS descarga actualizaciones puede tardar mucho tiempo. Si está configurando varios servidores WSUS, puede acelerar el proceso hasta cierto punto descargando todas las actualizaciones en un servidor WSUS y, a continuación, copiando las actualizaciones en los directorios de contenido de los demás servidores WSUS.
 
-Puede copiar el contenido de un directorio de contenido del servidor WSUS en otro. La ubicación del directorio de contenido se especifica cuando se ejecuta el procedimiento posterior a la instalación de WSUS. Puede usar la herramienta WSUSUTIL. exe para exportar metadatos de actualización de un servidor WSUS a un archivo. Después, puede importar ese archivo en otros servidores WSUS.
+Puede copiar el contenido de un directorio de contenido del servidor WSUS en otro. La ubicación del directorio de contenido se especifica cuando se ejecuta el procedimiento posterior a la instalación de WSUS. Puede usar la herramienta wsusutil.exe para exportar los metadatos de actualización de un servidor WSUS a un archivo. Después, puede importar ese archivo en otros servidores WSUS.
 
 ## <a name="setting-up-update-synchronizations"></a>Configuración de sincronizaciones de actualización
 La página **Opciones** es el punto de acceso central en la consola de administración de WSUS para personalizar el modo en que el servidor WSUS sincroniza las actualizaciones. Puede especificar las actualizaciones que se sincronizan automáticamente, el lugar en el que el servidor obtiene las actualizaciones, la configuración de la conexión y la programación de sincronización. También puede usar el Asistente para configuración de la página **Opciones** para configurar o volver a configurar el servidor WSUS en cualquier momento.
@@ -48,7 +46,7 @@ Si un servidor WSUS se ejecuta en modo de réplica, no podrá realizar esta tare
 
 > [!NOTE]
 > Puede quitar productos o clasificaciones de la misma manera. El servidor WSUS dejará de sincronizar las nuevas actualizaciones de los productos que ha desactivado. No obstante, las actualizaciones que se hayan sincronizado para esos productos antes de que se desactiven permanecerán en el servidor WSUS y se mostrarán como disponibles.
-> 
+>
 > Para quitar estos productos, rechace la actualización, como se documenta en [operaciones de actualización](updates-operations.md)y, a continuación, use el Asistente para [la limpieza del servidor](the-server-cleanup-wizard.md) para quitarlas.
 
 ### <a name="synchronizing-updates-by-language"></a>Sincronizar actualizaciones por idioma
@@ -73,7 +71,7 @@ Puede configurar el servidor WSUS para que use un servidor proxy durante la sinc
 
     -   Si desea habilitar la autenticación básica para el usuario que se conecta al servidor proxy, active la casilla **permitir autenticación básica (la contraseña se envía en texto no cifrado)** .
 
-3.  Haga clic en **Aceptar**.
+3.  Haga clic en **OK**.
 
     > [!NOTE]
     > Dado que WSUS inicia todo el tráfico de red, no es necesario configurar Firewall de Windows en un servidor WSUS conectado directamente a Microsoft Update.
@@ -106,7 +104,7 @@ Puede sincronizar el servidor WSUS manualmente o especificar una hora para que s
 
 4.  en el caso de las **sincronizaciones por día**, seleccione el número de sincronizaciones que desea realizar cada día. Por ejemplo, si desea cuatro sincronizaciones al día a partir de las 3:00 A.M., las sincronizaciones se producirán a las 3:00 A.M., 9:00 A.M., 3:00 P.M. y 9:00 P.M. cada día. (Tenga en cuenta que se agregará un ajuste de tiempo aleatorio a la hora de sincronización programada para reducir el espacio de las conexiones de servidor a Microsoft Update).
 
-5.  Haga clic en **Aceptar**.
+5.  Haga clic en **OK**.
 
 #### <a name="to-synchronize-your-wsus-server-immediately"></a>Para sincronizar el servidor WSUS inmediatamente
 

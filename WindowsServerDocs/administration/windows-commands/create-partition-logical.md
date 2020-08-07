@@ -1,20 +1,18 @@
 ---
 title: create partition logical
 description: Artículo de referencia del comando lógico Create Partition, que crea una partición lógica en una partición extendida existente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1f59b79a-d690-4d0e-ad38-40df5a0ce38e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4860f61d23c9ae51732c1fb0e127047c4944d2ed
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 26adcb50c43f859d312dadc16328bc65aed29cee
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929679"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879904"
 ---
 # <a name="create-partition-logical"></a>create partition logical
 
@@ -42,7 +40,7 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
 | align =`<n>` | Alinea todas las extensiones de volumen o partición con el límite de alineación más cercano. Normalmente se usa con matrices de número de unidad lógica (LUN) RAID de hardware para mejorar el rendimiento. `<n>`es el número de kilobytes (KB) desde el principio del disco hasta el límite de alineación más cercano. |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si no se especifican los parámetros de **tamaño** y **desplazamiento** , la partición lógica se crea en la extensión de disco más grande disponible en la partición extendida.
 

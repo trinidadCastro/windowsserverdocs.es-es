@@ -1,20 +1,18 @@
 ---
 title: clean
 description: Artículo de referencia del comando Clean de DiskPart, que quita todas las particiones o el formato de volumen del disco que tiene el foco.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9bbe6fd3-e07e-487b-9035-910957a1d326
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 39029c82dffe004d65b1279e5baafc14fbcc8257
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9a8ab6d0b245862fbb935945b76f380b7163d2a3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955677"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880210"
 ---
 # <a name="clean"></a>clean
 

@@ -1,20 +1,18 @@
 ---
 title: path
 description: Artículo de referencia para establecer la ruta de acceso de comandos en la variable de entorno PATH, que especifica el conjunto de directorios que se usa para buscar archivos ejecutables (. exe).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1bfa1349-e79a-472b-a9e6-d7a91149ae8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f324c2b0fc84d2df05f7df93d83799b3ac463d5d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4c81dfef09b4c9a411db9469ec851d4f92180f1d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932023"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885102"
 ---
 # <a name="path"></a>path
 
@@ -36,7 +34,7 @@ path ;
 | `%PATH%` | Anexa la ruta de acceso del comando al conjunto de directorios existente que aparece en la variable de entorno PATH. Si incluye este parámetro, Cmd.exe lo reemplaza por los valores de la ruta de acceso del comando que se encuentra en la variable de entorno PATH, lo que elimina la necesidad de escribir manualmente estos valores en el símbolo del sistema. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 
 - El sistema operativo Windows busca con las extensiones de nombre de archivo predeterminadas en el siguiente orden de prioridad:. exe,. com,. bat y. cmd. Lo que significa que si busca un archivo por lotes denominado acct.bat, pero tiene una aplicación denominada acct.exe en el mismo directorio, debe incluir la extensión. bat en el símbolo del sistema.

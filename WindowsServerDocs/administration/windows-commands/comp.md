@@ -1,20 +1,18 @@
 ---
 title: comp
 description: Artículo de referencia para el comando COMP, que compara el contenido de dos archivos o conjuntos de archivos byte a byte.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 40319d23-704d-4da1-be93-8259547275d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65008945e2994b9040fcac663185d0526910b8bc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 18bd39483957959c746913a4ee18014be40c9eaa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929712"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880031"
 ---
 # <a name="comp"></a>comp
 
@@ -40,7 +38,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 | /OFF [línea] | Procesa archivos con el conjunto de atributos sin conexión. |
 | /? | Muestra la Ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Durante la comparación, **COMP** muestra mensajes que identifican las ubicaciones de información diferente entre los archivos. Cada mensaje indica la dirección de la memoria de desplazamiento de los bytes desiguales y el contenido de los bytes (en notación hexadecimal, a menos que se especifique el parámetro de línea de comandos **/a** o **/d** ). Los mensajes aparecen en el formato siguiente:
 

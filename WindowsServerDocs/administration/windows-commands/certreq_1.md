@@ -1,20 +1,18 @@
 ---
 title: certreq
 description: Artículo de referencia para el comando CertReq, que solicita certificados de una entidad de certificación (CA), recupera una respuesta a una solicitud anterior de una CA, crea una nueva solicitud a partir de un archivo. inf, acepta e instala una respuesta a una solicitud, construye una solicitud de certificación cruzada o de subordinación completa desde un certificado o una solicitud de CA existente y firma una solicitud de certificación cruzada o de subordinación completa.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7a04e51f-f395-4bff-b57a-0e9efcadf973
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4610db6755f5177306dfcf4feec005eab6efabfd
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4e9276acbad0f9e9d403d3e172b4935f1de43475
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178681"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880350"
 ---
 # <a name="certreq"></a>certreq
 
@@ -111,7 +109,7 @@ Esta área del archivo INF es obligatoria para todas las plantillas de solicitud
 | KeyContainer | No se recomienda establecer este parámetro para las nuevas solicitudes donde se genera el nuevo material de clave. El sistema genera y mantiene automáticamente el contenedor de claves.<p>En el caso de las solicitudes en las que se debe usar el material de clave existente, este valor se puede establecer en el nombre del contenedor de claves de la clave existente. Use el `certutil –key` comando para mostrar la lista de contenedores de claves disponibles para el contexto del equipo. Use el `certutil –key –user` comando para el contexto del usuario actual.| Valor de cadena aleatoria<p>**Sugerencia:** Use comillas dobles alrededor de cualquier valor de clave INF que tenga espacios en blanco o caracteres especiales para evitar posibles problemas de análisis de INF. | `KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}` |
 | KeyLength | Define la longitud de la clave pública y privada. La longitud de la clave tiene un impacto en el nivel de seguridad del certificado. Una longitud de clave mayor suele proporcionar un nivel de seguridad superior. sin embargo, algunas aplicaciones pueden tener limitaciones respecto a la longitud de la clave. | Cualquier longitud de clave válida admitida por el proveedor de servicios de cifrado. | `KeyLength = 2048` |
 | Especificación | Determina si la clave se puede utilizar para firmas, para Exchange (cifrado) o para ambos. | `AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE` | `KeySpec = AT_KEYEXCHANGE` |
-| KeyUsage | Define para qué se debe usar la clave de certificado. | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**Sugerencia:** Varios valores usan una canalización (|). Asegúrese de usar comillas dobles al usar varios valores para evitar problemas de análisis de INF. Los valores que se muestran son valores hexadecimales (decimal) para cada definición de bits. También se puede usar la sintaxis anterior: un único valor hexadecimal con varios bits establecidos, en lugar de la representación simbólica. Por ejemplo, `KeyUsage = 0xa0`. |
+| KeyUsage | Define para qué se debe usar la clave de certificado. | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**Sugerencia:** Varios valores usan una canalización (|). Asegúrese de usar comillas dobles al usar varios valores para evitar problemas de análisis de INF. Los valores que se muestran son valores hexadecimales (decimal) para cada definición de bits. También se puede usar la sintaxis anterior: un único valor hexadecimal con varios bits establecidos, en lugar de la representación simbólica. Por ejemplo: `KeyUsage = 0xa0`. |
 | KeyUsageProperty | Recupera un valor que identifica el propósito específico para el que se puede usar una clave privada. | <ul><li>`NCRYPT_ALLOW_DECRYPT_FLAG -- 1`</li><li>`NCRYPT_ALLOW_SIGNING_FLAG -- 2`</li><li>`NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4`</li><li>`NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)`</li></ul> | `KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG | NCRYPT_ALLOW_SIGNING_FLAG` |
 | MachineKeySet | Esta clave es importante cuando es necesario crear certificados que son propiedad de la máquina y no de un usuario. El material de clave que se genera se mantiene en el contexto de seguridad de la entidad de seguridad (cuenta de usuario o de equipo) que ha creado la solicitud. Cuando un administrador crea una solicitud de certificado en nombre de un equipo, el material de clave se debe crear en el contexto de seguridad de la máquina y no en el contexto de seguridad del administrador. De lo contrario, el equipo no pudo obtener acceso a su clave privada, ya que se encontraba en el contexto de seguridad del administrador. | `true | false`. El valor predeterminado es false. | `MachineKeySet = true` |
 | NotBefore | Especifica una fecha o una fecha y hora antes de la cual no se puede emitir la solicitud. `NotBefore`se puede usar con `ValidityPeriod` y `ValidityPeriodUnits` . | Fecha o fecha y hora | `NotBefore = 7/24/2012 10:31 AM`<p>**Sugerencia:** `NotBefore` y `NotAfter` son solo para R `equestType=cert` . El análisis de fechas intenta ser sensible a la configuración regional. El uso de nombres de meses eliminará la ambigüedad y debería funcionar en todas las configuraciones regionales. |
@@ -132,7 +130,7 @@ Esta área del archivo INF es obligatoria para todas las plantillas de solicitud
 | KeyProtection | Especifica un valor que indica cómo se protege una clave privada antes de su uso. | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | Especifica un valor booleano que indica si las extensiones y atributos predeterminados se incluyen en la solicitud. Los valores predeterminados se representan mediante sus identificadores de objeto (OID). | `true | false` | `SuppressDefaults = true` |
 | FriendlyName | Un nombre descriptivo para el nuevo certificado. | Texto | `FriendlyName = Server1` |
-| ValidityPeriodUnits | Especifica el número de unidades que se va a utilizar con ValidityPeriod. Nota: solo se usa cuando el `request type=cert` . | Numérico | `ValidityPeriodUnits = 3` |
+| ValidityPeriodUnits | Especifica el número de unidades que se va a utilizar con ValidityPeriod. Nota: solo se usa cuando el `request type=cert` . | Numérica | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod debe ser un período de tiempo plural del Inglés de EE. UU. Nota: solo se usa cuando el tipo de solicitud = cert. | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup> A la izquierda del signo igual (=)
@@ -162,7 +160,7 @@ Esta sección es opcional.
 | *continue* | | `continue = 1.3.6.1.5.5.7` |
 | *continue* | | `continue = 1.3.6.1.5.5.7.3.1` |
 | 2.5.29.19 | | `{text}ca=0pathlength=3` |
-| Crítica | | `Critical=2.5.29.19` |
+| Crítico | | `Critical=2.5.29.19` |
 | Especificación | | <ul><li>`AT_NONE -- 0`</li><li>`AT_SIGNATURE -- 2`</li><li>`AT_KEYEXCHANGE -- 1`</ul></li> |
 | RequestType | | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul> |
 | KeyUsage | | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> |

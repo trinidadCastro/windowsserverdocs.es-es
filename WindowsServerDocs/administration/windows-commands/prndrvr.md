@@ -1,20 +1,18 @@
 ---
 title: prndrvr
 description: Artículo de referencia del comando prndrvr, que agrega, elimina y enumera los controladores de impresora.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 82b09e3e-bd38-4df1-9953-b0e9ee2565a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f256d003ac0884b100aedb24bbb55e663444911
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2be35ef44b7c54a5b8390120cef65054c06008d2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924204"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884754"
 ---
 # <a name="prndrvr"></a>prndrvr
 
@@ -38,16 +36,16 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}] [-e <enviro
 | -d | Elimina un controlador. |
 | -l | Enumera todos los controladores de impresora instalados en el servidor especificado por el parámetro **-s** . Si no especifica un servidor, Windows enumera los controladores de impresora instalados en el equipo local. |
 | -X | Elimina todos los controladores de impresora y controladores de impresora adicionales no utilizados por una impresora lógica en el servidor especificado por el parámetro **-s** . Si no especifica un servidor para quitar de la lista, Windows eliminará todos los controladores de impresora no usados en el equipo local. |
-| -m`<model_name>` | Especifica (por nombre) el controlador que desea instalar. Los controladores a menudo se denominan para el modelo de impresora que admiten. Consulte la documentación de la impresora para obtener más información. |
+| -m `<model_name>` | Especifica (por nombre) el controlador que desea instalar. Los controladores a menudo se denominan para el modelo de impresora que admiten. Consulte la documentación de la impresora para obtener más información. |
 | `-v {0|1|2|3}` | Especifica la versión del controlador que desea instalar. Vea la descripción del parámetro **-e**para obtener información sobre qué versiones están disponibles para cada entorno. Si no especifica una versión, se instala la versión del controlador adecuada para la versión de Windows que se ejecuta en el equipo en el que está instalando el controlador. |
 | -e `<environment>` | Especifica el entorno para el controlador que desea instalar. Si no especifica un entorno, se usa el entorno del equipo en el que va a instalar el controlador. Los parámetros de entorno admitidos son: **Windows NT x86**, **Windows x64** o **Windows ia64**. |
-| -s`<Servername>` | Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local. |
+| -s `<Servername>` | Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local. |
 | -u `<Username>` -w`<password>` | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
 | -h`<path>` | Especifica la ruta de acceso al archivo del controlador. Si no especifica una ruta de acceso, se usa la ruta de acceso a la ubicación en la que se instaló Windows. |
 | -i`<filename.inf>` | Especifica la ruta de acceso completa y el nombre de archivo del controlador que desea instalar. Si no especifica un nombre de archivo, el script usa uno de los archivos Printer. inf de la bandeja de entrada en el subdirectorio inf del directorio de Windows.<p>Si no se especifica la ruta de acceso del controlador, el script busca archivos de controlador en el archivo de driver.cab. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, "nombre del equipo").
 

@@ -1,20 +1,18 @@
 ---
 title: pentnt
 description: Artículo de referencia para el comando PENTNT. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4911e640-aa7f-4afb-abc2-5eefc7010204
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fb2ef97ea623174ad159021c2907f72314222f0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 21e38467057feedf3cadf1061664ef14acc49915
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956667"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885040"
 ---
 # <a name="pentnt"></a>pentnt
 

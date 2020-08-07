@@ -1,20 +1,18 @@
 ---
 title: Remove-MulticastTransmission
 description: Artículo de referencia de Remove-MulticastTransmission, que deshabilita la transmisión por multidifusión para una imagen.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9a7f5c31-bfbf-425d-9129-a6f9173fe83d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f695e4743b06eb8a2e1c59081a4661e616c8711
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8c3de852ab09b2cc17badf9b3aefcca9b7f4d069
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931234"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891912"
 ---
 # <a name="using-the-remove-multicasttransmission-command"></a>Usar el comando Remove-MulticastTransmission
 

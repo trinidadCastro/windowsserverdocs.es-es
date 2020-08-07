@@ -1,20 +1,18 @@
 ---
 title: create partition msr
 description: Artículo de referencia para Create Partition MSR, que crea una partición reservada de Microsoft (MSR) en un disco de tabla de particiones GUID (GPT).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 04fba033-23cb-4521-bd5d-db96131f2e73
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2714c47c467fda9c6ca3451331ab9bc7991d4591
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b697aa278849e2cd084ef7e9378b7997032a820c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929640"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879886"
 ---
 # <a name="create-partition-msr"></a>create partition msr
 
@@ -41,7 +39,7 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
 | desplazamiento =`<n>` | Especifica el desplazamiento en kilobytes (KB), en el que se crea la partición. El desplazamiento se redondea hacia arriba para llenar completamente el tamaño del sector que se utiliza. Si no se indica un desplazamiento, la partición se colocará en la primera zona del disco que sea lo suficientemente grande como para albergarla. |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - En los discos GPT que se utilizan para arrancar el sistema operativo Windows, la partición del sistema Extensible Firmware Interface (EFI) es la primera partición del disco, seguida de la partición reservada de Microsoft. los discos GPT que se usan únicamente para el almacenamiento de datos no tienen una partición del sistema EFI, en cuyo caso la partición reservada de Microsoft es la primera partición.
 

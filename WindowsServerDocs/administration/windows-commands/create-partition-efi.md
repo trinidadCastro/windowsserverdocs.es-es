@@ -1,20 +1,18 @@
 ---
 title: create partition efi
 description: Artículo de referencia para el comando CREATE Partition EFI, que crea una partición del sistema Extensible Firmware Interface (EFI) en un disco de tabla de particiones GUID (GPT) en equipos basados en Itanium.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3cfc1fca-6515-4a4d-bfae-615fa8045ea9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05c811e7be32ed9e73b352161ef1e6f043f27048
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e0307410648453a42c66e7327b5c671a702017e2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928883"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880003"
 ---
 # <a name="create-partition-efi"></a>create partition efi
 
@@ -39,7 +37,7 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
 | desplazamiento =`<n>` | Desplazamiento en kilobytes (KB), en el que se crea la partición. Si no se indica un desplazamiento, la partición se colocará en la primera zona del disco que sea lo suficientemente grande como para albergarla. |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Debe agregar al menos un volumen con el comando **Add Volume** para poder usar el comando **Create** .
 

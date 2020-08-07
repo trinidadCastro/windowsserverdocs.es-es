@@ -1,20 +1,18 @@
 ---
 title: nslookup set search
 description: Artículo de referencia del comando Nslookup Set Search, que anexa los nombres de dominio del sistema de nombres de dominio (DNS) en la lista de búsqueda de dominios DNS a la solicitud hasta que se recibe una respuesta.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 064ac660-8b04-4af9-8b2c-e4e0549771b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b1740dd9bb3eb35c4cd1ef4890fcb977b2dc1ff
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 91592daf702741fafcb88de792836f5183868101
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935499"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885539"
 ---
 # <a name="nslookup-set-search"></a>nslookup set search
 
@@ -31,7 +29,7 @@ set [no]search
 | Parámetro | Descripción |
 | --------- | ----------- |
 | nosearch | Deja de anexar los nombres de dominio del sistema de nombres de dominio (DNS) en la lista de búsqueda de dominios DNS para la solicitud. |
-| Búsqueda | Anexa los nombres de dominio del sistema de nombres de dominio (DNS) en la lista de búsqueda de dominios DNS para la solicitud hasta que se reciba una respuesta. Este es el valor predeterminado. |
+| paquetes Bower | Anexa los nombres de dominio del sistema de nombres de dominio (DNS) en la lista de búsqueda de dominios DNS para la solicitud hasta que se reciba una respuesta. Este es el valor predeterminado. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 | /help | Muestra la ayuda en el símbolo del sistema. |
 

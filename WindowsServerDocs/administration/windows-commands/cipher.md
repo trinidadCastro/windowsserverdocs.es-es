@@ -1,20 +1,18 @@
 ---
 title: cipher
 description: Artículo de referencia para el comando Cipher, que muestra o modifica el cifrado de directorios y archivos en volúmenes NTFS.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 78ef795e-0f87-4acd-8d15-192c972c0f41
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f23e2855c4542cc359d458f6825dd9420581657f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6b5d7c6708c714cd414e06e150b9b0344cc03f9c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929972"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880238"
 ---
 # <a name="cipher"></a>cipher
 
@@ -56,7 +54,7 @@ cipher /rekey [pathname [...]]
 | /removeuser /certhash:`<hash>` | Quita un usuario de los archivos especificados. El *hash* proporcionado para **/certhash** debe ser el hash SHA1 del certificado que se va a quitar. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - Si el directorio principal no está cifrado, se puede descifrar un archivo cifrado cuando se modifica. Por lo tanto, al cifrar un archivo, también debe cifrar el directorio principal.
 

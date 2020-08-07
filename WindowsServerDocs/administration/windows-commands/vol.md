@@ -1,20 +1,18 @@
 ---
 title: vol
 description: Artículo de referencia para Vol, que muestra la etiqueta de volumen de disco y el número de serie, si existen.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 398b3aa1-2442-42be-a4fb-78701080b0df
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: acc2f3ee16604d7b980fa0ddf6e2f42bd1e47435
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0d2580687bf2e074ad7cb2b11377f4ed23be876c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931327"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891812"
 ---
 # <a name="vol"></a>vol
 

@@ -1,20 +1,18 @@
 ---
 title: imprimir
 description: Artículo de referencia para el comando imprimir, que envía un archivo de texto a una impresora.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8e8cf07ca19af1cf0a0445b9feed06916be10c0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be955faa38af6a81ce5f61c255828470d906528c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926034"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884831"
 ---
 # <a name="print"></a>imprimir
 
@@ -36,7 +34,7 @@ print [/d:<printername>] [<drive>:][<path>]<filename>[ ...]
 | /d.`<printername>` | Especifica la impresora en la que desea imprimir el trabajo. Para imprimir en una impresora conectada localmente, especifique el puerto del equipo en el que está conectada la impresora. Los valores válidos para puertos paralelos son **LPT1**, **LPT2**y **LPT3**. Los valores válidos para los puertos serie son **COM1**, **COM2**, **COM3**y **COM4**. También puede especificar una impresora de red mediante su nombre de cola ( `\\server_name\printer_name` ). Si no especifica una impresora, el trabajo de impresión se envía a **LPT1** de forma predeterminada. |
 | `<drive>`: | Especifica la unidad física o lógica en la que se encuentra el archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir se encuentra en la unidad actual. |
 | `<path>` | Especifica la ubicación del archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir está ubicado en el directorio actual. |
-| `<filename>[ ...]` | Obligatorio. Especifica el archivo que desea imprimir. Puede incluir varios archivos en un solo comando. |
+| `<filename>[ ...]` | Necesario. Especifica el archivo que desea imprimir. Puede incluir varios archivos en un solo comando. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 ### <a name="examples"></a>Ejemplos

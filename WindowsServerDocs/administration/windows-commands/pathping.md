@@ -1,20 +1,18 @@
 ---
 title: pathping
 description: Artículo de referencia para el comando pathping, que obtiene información sobre la latencia de red y la pérdida de red en saltos intermedios entre un origen y un destino.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ec430125-b1dc-4aad-a7c9-b70f486d9e3c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 887a819c28d546f8c73d07fedbefbe27b65e7a5a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d5ce12d950356c5ebb5ad671de09aaebbc91b9fb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931388"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885091"
 ---
 # <a name="pathping"></a>pathping
 
@@ -49,7 +47,7 @@ pathping [/n] [/h <maximumhops>] [/g <hostlist>] [/p <Period>] [/q <numqueries> 
 | `<targetname>` | Especifica el destino, que se identifica mediante la dirección IP o el nombre de host. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Todos los parámetros distinguen mayúsculas de minúsculas.
 

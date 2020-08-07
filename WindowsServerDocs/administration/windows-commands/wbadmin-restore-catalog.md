@@ -1,20 +1,18 @@
 ---
 title: wbadmin restore catalog
 description: Artículo de referencia de Wbadmin restore Catalog, que recupera un catálogo de copia de seguridad del equipo local desde una ubicación de almacenamiento que especifique.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ce1e24a0-821d-4353-b09d-8f82c5c4ad56
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a31fb2a49e5a85f7fdb4b8b5a7becc8ea57e13d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7cf9304140825620ec1eae118e24a5a611a2a384
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954602"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891709"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 

@@ -1,20 +1,18 @@
 ---
 title: nslookup set querytype
 description: Artículo de referencia del comando Nslookup Set QueryType, que cambia el tipo de registro de recursos de la consulta.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5af54ac5-fc1a-4af6-977b-f8e97c8eba90
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8872bc326acdb17b29eb11294db8d937ed9944f8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9319b5e7de8b31d805114b9d70c9700ee2a033ac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935711"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885633"
 ---
 # <a name="nslookup-set-querytype"></a>nslookup set querytype
 

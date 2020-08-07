@@ -1,20 +1,18 @@
 ---
 title: prnjobs
 description: Artículo de referencia para el comando prnjobs, que pone en pausa, reanuda, cancela y enumera los trabajos de impresión.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5ad34199-7a5a-40c1-8053-bccd5929df43
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 79ad0631a2d1c871664ecebc11c26f2e005ca772
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d955f50761e1229e0a1acf21a9f2179525bd7ee4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924190"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884748"
 ---
 # <a name="prnjobs"></a>prnjobs
 
@@ -36,13 +34,13 @@ cscript prnjobs {-z | -m | -x | -l | -?} [-s <Servername>] [-p <Printername>] [-
 | -M | Reanuda el trabajo de impresión especificado por el parámetro **-j** . |
 | -X | Cancela el trabajo de impresión especificado por el parámetro **-j** . |
 | -l | Enumera todos los trabajos de impresión de una cola de impresión. |
-| -s`<Servername>` | Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local. |
-| -p`<Printername>` | Obligatorio. Especifica el nombre de la impresora que desea administrar. |
+| -s `<Servername>` | Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local. |
+| -p`<Printername>` | Necesario. Especifica el nombre de la impresora que desea administrar. |
 | -j`<JobID>` | Especifica (por número de identificador) el trabajo de impresión que desea cancelar. |
 | -u `<Username>` -w`<password>` | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, "nombre del equipo").
 

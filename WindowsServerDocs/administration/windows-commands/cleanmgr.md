@@ -1,19 +1,17 @@
 ---
 title: cleanmgr
-description: Configure la herramienta liberador de espacio en disco (cleanmgr. exe) para limpiar automáticamente determinados archivos.
-ms.prod: windows-server
+description: Configure la herramienta liberador de espacio en disco (Cleanmgr.exe) para limpiar automáticamente determinados archivos.
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
-ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 49d85fe0c8ec1bbba810a502724fd7aac0c2f55d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c0b1cb2ff31bbf3fa25d5ac5e4be0e4b35260019
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712850"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880199"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -31,7 +29,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| /d.`<driveletter>` | Especifica la unidad que desea que limpie el liberador de espacio en disco.<p>**Nota:** La opción **/d** no se emplea con `/sagerun:n`. |
+| /d.`<driveletter>` | Especifica la unidad que desea que limpie el liberador de espacio en disco.<p>**Nota:** La opción **/d** no se emplea con `/sagerun:n` . |
 | /sageset: n | Muestra el cuadro de diálogo **configuración de limpieza de disco** y también crea una clave del registro para almacenar la configuración seleccionada. El `n` valor, que se almacena en el registro, le permite especificar las tareas para que se ejecute el liberador de espacio en disco. El `n` valor puede ser cualquier valor entero comprendido entre 0 y 65535. |
 | /sagerun: n | Ejecuta las tareas especificadas que se asignan al valor n si se utiliza la opción **\sageset** . Se enumeran todas las unidades del equipo y se ejecuta el perfil seleccionado en cada unidad. |
 | /TuneUp: n | Ejecute **/sageset** y **/sagerun** para el mismo `n` . |
@@ -61,7 +59,7 @@ Las opciones de los archivos que puede especificar para el liberador de espacio 
 
 - **Comprimir archivos antiguos** : Windows puede comprimir archivos que no ha usado recientemente. La compresión de archivos ahorra espacio en disco, pero puede seguir usando los archivos. No se elimina ningún archivo. Dado que los archivos se comprimen con diferentes tasas, la cantidad de espacio en disco que se va a obtener es aproximada. Un botón opciones permite especificar el número de días de espera antes de que el liberador de espacio en disco comprima un archivo no utilizado.
 
-- **Archivos de catálogo del indexador de contenido** : el servicio de indización acelera y mejora las búsquedas de archivos manteniendo un índice de los archivos que se encuentran en el disco. Estos archivos de catálogo permanecen en una operación de indexación anterior y se pueden eliminar de forma segura.<p>**Nota:** El archivo de catálogo puede aparecer en más de una unidad, por ejemplo, no `%SystemRoot%`solo en.
+- **Archivos de catálogo del indexador de contenido** : el servicio de indización acelera y mejora las búsquedas de archivos manteniendo un índice de los archivos que se encuentran en el disco. Estos archivos de catálogo permanecen en una operación de indexación anterior y se pueden eliminar de forma segura.<p>**Nota:** El archivo de catálogo puede aparecer en más de una unidad, por ejemplo, no solo en `%SystemRoot%` .
 
 >[!NOTE]
 > Si especifica la limpieza de la unidad que contiene la instalación de Windows, todas estas opciones están disponibles en la ficha **liberador de espacio en disco** . Si especifica cualquier otra unidad, en la ficha **liberador de espacio en disco** solo estarán disponibles la papelera de reciclaje y los archivos de catálogo para las opciones del índice de contenido.
