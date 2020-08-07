@@ -1,20 +1,18 @@
 ---
 title: xcopy
 description: Artículo de referencia sobre xcopy, que copia archivos y directorios, incluidos los subdirectorios.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 76a310d7-9925-4571-a252-0e28960d5f89
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: e33450cd330ac962c111b145d71c2595f926da2c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9d2ac59abbeb8caffb3b5d94bf514a7c6daca4e9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936064"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896439"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -32,7 +30,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Source>|Obligatorio. Especifica la ubicación y los nombres de los archivos que desea copiar. Este parámetro debe incluir una unidad o una ruta de acceso.|
+|\<Source>|Necesario. Especifica la ubicación y los nombres de los archivos que desea copiar. Este parámetro debe incluir una unidad o una ruta de acceso.|
 |[\<Destination>]|Especifica el destino de los archivos que desea copiar. Este parámetro puede incluir una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
 |/w|Muestra el siguiente mensaje y espera la respuesta antes de empezar a copiar los archivos:</br>**Presione cualquier tecla para empezar a copiar los archivos.**|
 |/p|Le pide que confirme si desea crear cada archivo de destino.|
@@ -64,7 +62,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/j|Copia archivos sin almacenamiento en búfer. Recomendado para archivos de gran tamaño. Este parámetro se agregó en Windows Server 2008 R2.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Usar **/z**
 
@@ -213,5 +211,5 @@ En el ejemplo anterior, este valor de parámetro de origen concreto **. \\ TOC \
 - [Dir](dir.md)
 - [Atributo](attrib.md)
 - [Diskcopy](diskcopy.md)
-- [Cuando](if.md)
+- [If](if.md)
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -1,20 +1,18 @@
 ---
 title: ServerManagerCmd
 description: Artículo de referencia de * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 507c4b87-8e13-4872-8b34-0c7508eecbc1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d25210593cf9239d7cdb97172041e5d999257711
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9026bd527108f8d04e13bc75458a97d27f148d90
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937138"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882740"
 ---
 # <a name="servermanagercmd"></a>ServerManagerCmd
 
@@ -46,7 +44,7 @@ servermanagercmd -version
 |                     -help                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Muestra la ayuda en la ventana del símbolo del sistema. También puede usar la forma abreviada, **-?**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |                    -version                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Muestra el número de versión del Administrador del servidor. También puede usar la forma abreviada, **-v**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 **ServerManagerCmd** está en desuso y no se garantiza que se admita en versiones futuras de Windows. Se recomienda que, si ejecuta Administrador del servidor en equipos que ejecutan Windows Server 2008 R2, use los cmdlets de Windows PowerShell que están disponibles para Administrador del servidor. Para obtener más información, vea [cmdlets de administrador del servidor](https://go.microsoft.com/fwlink/?LinkID=137653).
 ServerManagerCmd se puede ejecutar desde cualquier directorio de las unidades locales del servidor. Debe ser miembro del grupo Administradores en el servidor donde desee instalar o quitar software.
 

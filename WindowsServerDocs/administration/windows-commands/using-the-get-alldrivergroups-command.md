@@ -1,20 +1,18 @@
 ---
 title: Get-AllDriverGroups
 description: Artículo de referencia de Get-AllDriverGroups, que muestra información acerca de todos los grupos de controladores de un servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f245ba53-f150-41b1-8418-38dcf0410a05
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c254ee19cb7f447d0fb071469c50107205de98b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3a8ab0e97247900c3f9503863a3d4256c1248a8b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935209"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896401"
 ---
 # <a name="get-alldrivergroups"></a>Get-AllDriverGroups
 

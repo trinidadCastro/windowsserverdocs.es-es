@@ -1,50 +1,49 @@
 ---
 title: Configurar archivos de volcado de memoria para la instalación Server Core
 description: Obtenga información acerca de cómo configurar archivos de volcado de memoria para una instalación Server Core de Windows Server
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: 4f1baa52fc9f0ebfe8afae35d86b7a7238d56223
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee5786684c4f3a6c75c3b123b9d3ef9d32143949
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383391"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895882"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar archivos de volcado de memoria para la instalación Server Core
 
 >Se aplica a: Windows Server 2019, Windows Server 2016 y Windows Server (canal semianual)
 
-Siga estos pasos para configurar un volcado de memoria para la instalación Server Core. 
+Siga estos pasos para configurar un volcado de memoria para la instalación Server Core.
 
 ## <a name="step-1-disable-the-automatic-system-page-file-management"></a>Paso 1: deshabilitar la administración automática de archivos de páginas del sistema
 
 El primer paso consiste en configurar manualmente las opciones de recuperación y los errores del sistema. Esto es necesario para completar los pasos restantes.
 
-Ejecuta el siguiente comando: 
+Ejecute el comando siguiente:
 
 ```
 wmic computersystem set AutomaticManagedPagefile=False
 ```
- 
+
 ## <a name="step-2-configure-the-destination-path-for-a-memory-dump"></a>Paso 2: configurar la ruta de acceso de destino para un volcado de memoria
 
-No es necesario tener el archivo de paginación en la partición en la que está instalado el sistema operativo. Para colocar el archivo de paginación en otra partición, debe crear una nueva entrada del registro denominada **DedicatedDumpFile**. Puede definir el tamaño del archivo de paginación mediante la entrada del registro **DumpFileSize** . Para crear las entradas del registro DedicatedDumpFile y DumpFileSize, siga estos pasos: 
+No es necesario tener el archivo de paginación en la partición en la que está instalado el sistema operativo. Para colocar el archivo de paginación en otra partición, debe crear una nueva entrada del registro denominada **DedicatedDumpFile**. Puede definir el tamaño del archivo de paginación mediante la entrada del registro **DumpFileSize** . Para crear las entradas del registro DedicatedDumpFile y DumpFileSize, siga estos pasos:
 
 1. En el símbolo del sistema, ejecute el comando **regedit** para abrir el editor del registro.
 2. Busque y haga clic en la siguiente subclave del registro: HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\CrashControl
 3. Haga clic en **editar > nuevo > valor de cadena**.
 4. Asigne al nuevo valor el nombre **DedicatedDumpFile**y, a continuación, presione Entrar.
 5. Haga clic con el botón secundario en **DedicatedDumpFile**y, a continuación, haga clic en **modificar**.
-6. En tipo de **datos del valor** **\<unidad\>:\\\<Dedicateddumpfile. sys\>** y, a continuación, haga clic en **Aceptar**.
+6. En tipo de **datos del valor** ** \<Drive\> \\ \<Dedicateddumpfile.sys\> :**, y, a continuación, haga clic en **Aceptar**.
 
-   >[!NOTE] 
-   > Reemplace \<unidad\> por una unidad que tenga suficiente espacio en disco para el archivo de paginación y reemplace \<\> Dedicateddumpfile. DMP por la ruta de acceso completa al archivo dedicado.
- 
-7. Haga clic en **editar > nuevo valor DWORD >** .
+   >[!NOTE]
+   > Reemplace \<Drive\> por una unidad que tenga suficiente espacio en disco para el archivo de paginación y reemplace \<Dedicateddumpfile.dmp\> por la ruta de acceso completa al archivo dedicado.
+
+7. Haga clic en **editar > nuevo valor DWORD >**.
 8. Escriba **DumpFileSize**y, a continuación, presione Entrar.
 9. Haga clic con el botón secundario en **DumpFileSize**y, a continuación, haga clic en **modificar**.
 10. En **Editar valor DWORD**, en **base**, haga clic en **decimal**.
@@ -65,12 +64,12 @@ El destino predeterminado para **DebugFilePath** es%SystemRoot%\Memory.DMP. Para
 wmic RECOVEROS set DebugFilePath = <FilePath>
 ```
 
-Establezca \<FilePath\> en la ruta de acceso de destino. Por ejemplo, el comando siguiente establece la ruta de acceso de destino de volcado de memoria en C:\WINDOWS\MEMORY. DMP 
+Establezca \<FilePath\> en la ruta de acceso de destino. Por ejemplo, el comando siguiente establece la ruta de acceso de destino de volcado de memoria en C:\WINDOWS\MEMORY. DMP
 
 ```
 wmic RECOVEROS set DebugFilePath = C:\WINDOWS\MEMORY.DMP
 ```
- 
+
 ## <a name="step-3-set-the-type-of-memory-dump"></a>Paso 3: establecer el tipo de volcado de memoria
 
 Determine el tipo de volcado de memoria que se va a configurar para el servidor. Para ver el tipo de volcado de memoria actual, ejecute el siguiente comando:
@@ -79,17 +78,17 @@ Determine el tipo de volcado de memoria que se va a configurar para el servidor.
 wmic RECOVEROS get DebugInfoType
 ```
 
-Para cambiar el tipo de volcado de memoria actual, ejecute el siguiente comando: 
+Para cambiar el tipo de volcado de memoria actual, ejecute el siguiente comando:
 
 ```
 wmic RECOVEROS set DebugInfoType = <Value>
 ```
 
-\<valor\> puede ser 0, 1, 2 o 3, tal y como se define a continuación.
+\<Value\>puede ser 0, 1, 2 o 3, tal y como se define a continuación.
 
 - 0: deshabilitar la eliminación de un volcado de memoria.
 - 1: volcado de memoria completo. Registra todo el contenido de la memoria del sistema cuando el equipo se detiene de forma inesperada. Un volcado de memoria completo puede contener datos de los procesos que se estaban ejecutando cuando se recopiló el volcado de memoria.
-- 2: volcado de memoria del kernel (predeterminado). Registra únicamente en la memoria de kernel. Esto acelera el proceso de grabar información en un archivo de registro cuando el equipo se detiene de forma inesperada.
+- 2: volcado de memoria del kernel (predeterminado). Registra solo la memoria del kernel. Esto acelera el proceso de grabar información en un archivo de registro cuando el equipo se detiene de forma inesperada.
 - 3: volcado de memoria pequeño. Registra el conjunto más pequeño de información útil que puede ayudar a identificar por qué el equipo se detuvo de forma inesperada.
 
 ## <a name="step-4-configure-the-server-to-restart-automatically-after-generating-a-memory-dump"></a>Paso 4: configurar el servidor para que se reinicie automáticamente después de generar un volcado de memoria
@@ -107,7 +106,7 @@ Si el valor de **AutoReboot** es false, el servidor no se reiniciará automátic
 ```
 wmic RECOVEROS set AutoReboot = true
 ```
- 
+
 ## <a name="step-5-configure-the-server-to-overwrite-the-existing-memory-dump-file"></a>Paso 5: configurar el servidor para sobrescribir el archivo de volcado de memoria existente
 
 De forma predeterminada, el servidor sobrescribe el archivo de volcado de memoria existente cuando se crea uno nuevo. Para determinar si los archivos de volcado de memoria existentes ya están configurados para sobrescribirse, ejecute el siguiente comando:
@@ -118,12 +117,12 @@ wmic RECOVEROS get OverwriteExistingDebugFile
 
 Si el valor es 1, el servidor sobrescribirá el archivo de volcado de memoria existente. No se necesita ninguna configuración y puede continuar con el paso siguiente.
 
-Si el valor es 0, el servidor no sobrescribirá el archivo de volcado de memoria existente. Ejecute el siguiente comando para cambiar el valor: 
+Si el valor es 0, el servidor no sobrescribirá el archivo de volcado de memoria existente. Ejecute el siguiente comando para cambiar el valor:
 
 ```
 wmic RECOVEROS set OverwriteExistingDebugFile = 1
 ```
- 
+
 ## <a name="step-6-set-an-administrative-alert"></a>Paso 6: establecer una alerta administrativa
 
 Determine si una alerta administrativa es adecuada y establezca **SendAdminAlert** en consecuencia. Para ver el valor actual de SendAdminAlert, ejecute el siguiente comando:
@@ -132,12 +131,12 @@ Determine si una alerta administrativa es adecuada y establezca **SendAdminAlert
 wmic RECOVEROS get SendAdminAlert
 ```
 
-Los valores posibles de SendAdminAlert son TRUE o FALSE. Para modificar el valor de SendAdminAlert existente como true, ejecute el siguiente comando: 
+Los valores posibles de SendAdminAlert son TRUE o FALSE. Para modificar el valor de SendAdminAlert existente como true, ejecute el siguiente comando:
 
 ```
 wmic RECOVEROS set SendAdminAlert = true
 ```
- 
+
 ## <a name="step-7-set-the-memory-dumps-page-file-size"></a>Paso 7: establecer el tamaño del archivo de paginación del volcado de memoria
 
 Para comprobar la configuración del archivo de paginación actual, ejecute uno de los siguientes comandos:
@@ -146,7 +145,7 @@ Para comprobar la configuración del archivo de paginación actual, ejecute uno 
    wmic.exe pagefile
    ```
 
-   o bien
+   or
 
    ```
    wmic.exe pagefile list /format:list
@@ -184,13 +183,13 @@ Puede generar volcados de memoria manuales con un teclado PS/2 conectado al serv
 
 ## <a name="step-9-verify-that-memory-dump-files-are-being-created-correctly"></a>Paso 9: comprobar que los archivos de volcado de memoria se están creando correctamente
 
-Puede usar el utlity de Dumpchk. exe para comprobar que los archivos de volcado de memoria se crean correctamente. La utilidad Dumpchk. exe no se instala con la opción de instalación Server Core, por lo que tendrá que ejecutarla desde un servidor con la experiencia de escritorio o desde Windows 10. Además, se deben instalar las herramientas de depuración para productos de Windows.  
+Puede usar el dumpchk.exe utlity para comprobar que los archivos de volcado de memoria se crean correctamente. La utilidad dumpchk.exe no se instala con la opción de instalación Server Core, por lo que tendrá que ejecutarla desde un servidor con la experiencia de escritorio o desde Windows 10. Además, se deben instalar las herramientas de depuración para productos de Windows.
 
-La utilidad Dumpchk. exe permite transferir el archivo de volcado de memoria de la instalación Server Core de Windows Server 2008 al otro equipo usando el medio de su elección.
+La utilidad dumpchk.exe le permite transferir el archivo de volcado de memoria de la instalación Server Core de Windows Server 2008 al otro equipo usando el medio que prefiera.
 
 > [!WARNING]
 > Los archivos de paginación pueden ser muy grandes, por lo que debe considerar detenidamente el método de transferencia y los recursos que requiere el método.
- 
+
 
 Referencias adicionales
 

@@ -1,18 +1,16 @@
 ---
 title: Rendimiento de e/s de red de Hyper-V
 description: Consideraciones de rendimiento de e/s de red en el ajuste del rendimiento de Hyper-V
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: dcf43bf41edada0a2e3df6fde825ff128a119a8f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b21ed45b97b1bc657b8a77ac7731dd32f5090c3d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471360"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896110"
 ---
 # <a name="hyper-v-network-io-performance"></a>Rendimiento de e/s de red de Hyper-V
 

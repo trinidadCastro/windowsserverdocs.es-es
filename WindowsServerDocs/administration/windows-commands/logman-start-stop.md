@@ -1,20 +1,18 @@
 ---
 title: logman start y logman stop
 description: Artículo de referencia de los comandos Logman Start y Logman STOP, que inicia un recopilador de datos y establece el tiempo de inicio en manual, o detiene un conjunto de recopiladores de datos y establece la hora de finalización en manual.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a40006a1-876e-474b-aaf1-f365c730deea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7b7da9aad31b977c2343e6f784b19dd420c21e6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7a3ce29afa974a65ac86e9e17dd4ec7eb65135fd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925424"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887263"
 ---
 # <a name="logman-start-and-logman-stop"></a>logman start y logman stop
 
@@ -33,7 +31,7 @@ logman stop <[-n] <name>> [options]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| -s`<computer name>` | Ejecute el comando en el equipo remoto especificado. |
+| -s `<computer name>` | Ejecute el comando en el equipo remoto especificado. |
 | -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
 | [-n]`<name>` | Especifica el nombre del objeto de destino. |
 | -ETS | Envía comandos a sesiones de seguimiento de eventos directamente, sin guardar ni programar. |

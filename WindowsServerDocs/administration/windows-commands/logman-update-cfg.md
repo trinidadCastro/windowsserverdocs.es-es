@@ -1,20 +1,18 @@
 ---
 title: logman update cfg
 description: Artículo de referencia del comando Logman Update cfg, que actualiza las propiedades de un recopilador de datos de configuración existente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9da4e8b4-3be5-42d3-b0b4-c429630c35c4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e2d50504d8d4b9a92d36e4279a10526ddbd7877
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: addd9b1dfc60acdd5fa093970f393d4ebe61b3fa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933888"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887190"
 ---
 # <a name="logman-update-cfg"></a>logman update cfg
 
@@ -33,11 +31,11 @@ logman update cfg <[-n] <name>> [options]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| -s`<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
+| -s `<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
 | -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
 | [-n]`<name>` | Nombre del objeto de destino. |
 | -[-] u`<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
-| -m`<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
+| -m `<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
 | -RF`<[[hh:]mm:]ss>` | Ejecuta el recopilador de datos durante el período de tiempo especificado. |
 | -b`<M/d/yyyy h:mm:ss[AM|PM]>` | Comienza a recopilar datos en el momento especificado. |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | Finaliza la recopilación de datos en el momento especificado. |
@@ -57,7 +55,7 @@ logman update cfg <[-n] <name>> [options]
 | -FTC`<path [path [...]]>` | Especifica la ruta de acceso completa a los archivos que se van a recopilar. |
 | /? | Muestra la ayuda contextual. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Donde [-] aparece en la lista, al agregar un guion adicional (-) se anula la opción.
 

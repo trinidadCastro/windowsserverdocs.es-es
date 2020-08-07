@@ -1,20 +1,18 @@
 ---
 title: wbadmin enable backup
 description: Artículo de referencia de Wbadmin habilitar copia de seguridad, que crea y habilita una programación de copia de seguridad diaria o modifica una programación de copia de seguridad existente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c0e57f8a-70fa-4c60-9754-e762e8ad8772
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 394316c0c3fdb419c2b4eeb5bbe290d56fdefb78
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ad192f90ca89eda75accb02aad1ad07e4c3e9ce2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936671"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896347"
 ---
 # <a name="wbadmin-enable-backup"></a>wbadmin enable backup
 
@@ -93,7 +91,7 @@ wbadmin enable backup
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 |-allowDeleteOldBackups|Sobrescribe las copias de seguridad realizadas antes de actualizar el equipo.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Para ver el valor del identificador de disco de los discos, escriba **Wbadmin get Disks**.
 

@@ -1,18 +1,16 @@
 ---
 title: La ubicación del controlador de dominio y la definición del sitio en agrega optimización del rendimiento
 description: Consideraciones sobre la ubicación del controlador de dominio y la definición del sitio en Active Directory optimización del rendimiento.
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 19574c859e038374a4cf3fe1e452adae0891e067
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7502233cfd71fe2f3e7d25ff6ba246531233d1ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471490"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896206"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Colocación adecuada de los controladores de dominio y consideraciones de sitio
 

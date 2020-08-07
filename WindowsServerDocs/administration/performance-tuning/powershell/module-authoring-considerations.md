@@ -1,18 +1,16 @@
 ---
 title: Consideraciones sobre la creación de módulos de PowerShell
 description: Consideraciones sobre la creación de módulos de PowerShell
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 25b202e56286b7c26c3150642a656eb31a120808
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb22009262cc1ae713846779c6b24402e3ed7928
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851938"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896265"
 ---
 # <a name="powershell-module-authoring-considerations"></a>Consideraciones sobre la creación de módulos de PowerShell
 
@@ -28,10 +26,10 @@ Durante el análisis de módulos, si los comandos exportados se pueden determina
 
 ### <a name="guidelines"></a>Instrucciones
 
-* En el manifiesto del módulo, no use caracteres comodín en las entradas `AliasesToExport`, `CmdletsToExport`y `FunctionsToExport`.
+* En el manifiesto del módulo, no use caracteres comodín en las `AliasesToExport` `CmdletsToExport` entradas, y `FunctionsToExport` .
 
-* Si el módulo no exporta comandos de un tipo determinado, especifíquelo explícitamente en el manifiesto especificando `@()`.
-Una entrada que falta o `$null` es equivalente a especificar el carácter comodín `*`.
+* Si el módulo no exporta comandos de un tipo determinado, especifíquelo explícitamente en el manifiesto especificando `@()` .
+Una entrada o que falta `$null` es equivalente a especificar el carácter comodín `*` .
 
 Siempre que sea posible, debe evitarse lo siguiente:
 
@@ -59,7 +57,7 @@ En su lugar, use:
 
 A la hora de decidir cómo implementar el módulo, hay tres opciones principales:
 
-* Binario ( C#normalmente)
+* Binario (normalmente C#)
 * Script (PowerShell)
 * CDXML (un contenedor de archivos XML)
 

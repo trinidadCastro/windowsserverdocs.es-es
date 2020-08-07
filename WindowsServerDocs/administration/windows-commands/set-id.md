@@ -1,20 +1,18 @@
 ---
 title: IDENTIFICADOR de conjunto
 description: Artículo de referencia para el ID. de conjunto de DiskPart, que cambia el campo tipo de partición para la partición que tiene el foco.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5793d7ad-827e-4285-b2c6-ae60eeb0e886
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad0a4c6ac29e4226bbbe6ea2bde140ae21b68374
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: afcaa134cd9af11d37130e17012a7cf8a147afd4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937099"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882622"
 ---
 # <a name="set-id"></a>IDENTIFICADOR de conjunto
 
@@ -42,7 +40,7 @@ set id={ <byte> | <GUID> } [override] [noerr]
 | override  |                                                                fuerza el desmontaje del sistema de archivos en el volumen antes de cambiar el tipo de partición. Al ejecutar el comando **set ID** , DiskPart intenta bloquear y desmontar el sistema de archivos en el volumen. Si no se especifica **override** y se produce un error en la llamada para bloquear el sistema de archivos, \( por ejemplo, porque hay un identificador abierto \) , se producirá un error en la operación. Cuando se especifica **override** , DiskPart fuerza el desmontaje incluso si se produce un error en la llamada para bloquear el sistema de archivos, y los identificadores abiertos del volumen dejarán de ser válidos.<p>Este comando solo está disponible para Windows 7 y Windows Server 2008 R2.                                                                 |
 |   noerr   |                                                                                                                                                                                                                                                                    Se usa solo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error.                                                                                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Aparte de las limitaciones mencionadas anteriormente, DiskPart no comprueba la validez del valor que especifique, \( salvo para asegurarse de que es un byte en formato hexadecimal o un GUID \) .
 

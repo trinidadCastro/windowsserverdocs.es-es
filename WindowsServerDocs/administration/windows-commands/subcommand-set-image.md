@@ -1,20 +1,18 @@
 ---
 title: 'Conjunto de subcomandos: imagen'
 description: Artículo de referencia de Subcommand Set-Image, que cambia los atributos de una imagen.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2ae03c86-7a13-4e38-9182-32e55fffd504
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fcf77f34a35a56c872948568071d36c1fcf5940f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 35fff7823b730c4b9cc98ed2daafd437f6eecc2e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937162"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882197"
 ---
 # <a name="subcommand-set-image"></a>Subcomando: set-Image
 

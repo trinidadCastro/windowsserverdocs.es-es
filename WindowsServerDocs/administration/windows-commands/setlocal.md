@@ -1,20 +1,18 @@
 ---
 title: setlocal
 description: Artículo de referencia para setlocal, que inicia la localización de variables de entorno en un archivo por lotes.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e990cf931e72bd8f6972db448d24db08c2e5208
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 30b84c9dcaf741c57393e680d3f9c9cb7b92f19b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934611"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882538"
 ---
 # <a name="setlocal"></a>setlocal
 
@@ -38,7 +36,7 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 |disabledelayedexpansion|Deshabilita la expansión de la variable de entorno diferida hasta que se encuentre el comando **endlocal** coincidente, independientemente de la configuración anterior a la ejecución del comando **setlocal** .|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Usar **setlocal**
 

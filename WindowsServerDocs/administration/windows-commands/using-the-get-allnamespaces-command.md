@@ -1,20 +1,18 @@
 ---
 title: Get-AllNamespaces
 description: Artículo de referencia de Get-AllNamespaces, que muestra información acerca de todos los espacios de nombres de un servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e8fe896d-a69a-4180-923b-9f18185f5941
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de44d659657a8d6df10c0f2ea7b7fb2a670b7f88
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 470aab904f9404b8dbe99409445b0533fa83fedd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935051"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896393"
 ---
 # <a name="get-allnamespaces"></a>Get-AllNamespaces
 
@@ -33,7 +31,7 @@ wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/d
 ```
 ### <a name="parameters"></a>Parámetros
 
-|         Parámetro         |                                                                               Windows Server 2008                                                                               | Windows Server 2008 R2 |
+|         Parámetro         |                                                                               Windows Server 2008                                                                               | Windows Server 2008 R2 |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
 |  [/Server:<Server name>]  | Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local. |                        |
 | [/ContentProvider: <name> ] |                                                        Muestra solo los espacios de nombres del proveedor de contenido especificado.                                                         |                        |
@@ -51,7 +49,7 @@ Para ver todos los espacios de nombres excepto los que están desactivados, escr
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /Show:Clients /ExcludedeletePending
   ```
-- Windows Server 2008 R2
+- Windows Server 2008 R2
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /details:Clients /ExcludedeletePending
   ```

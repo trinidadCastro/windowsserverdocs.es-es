@@ -1,18 +1,16 @@
 ---
 title: Rendimiento de la memoria de Hyper-V
 description: Consideraciones de memoria en el ajuste del rendimiento en Hyper-V
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b513dd3346d593ec4c823808f540bce68dd472ce
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 08ccc5c8a6b7300f1fa476c01838080b0b01f67a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471370"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896097"
 ---
 # <a name="hyper-v-memory-performance"></a>Rendimiento de la memoria de Hyper-V
 

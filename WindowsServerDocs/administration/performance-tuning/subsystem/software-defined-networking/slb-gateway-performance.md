@@ -1,18 +1,16 @@
 ---
 title: Ajuste del rendimiento de puerta de enlace de SLB en redes definidas por software
 description: Directrices para la optimización del rendimiento de puerta de enlace de SLB en redes SDN
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d1a497f24eba26b3b9b866772ae5171ea0fcbb24
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 64d045a270b8762d0d269055c8c65d1e40a71d63
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851588"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895938"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>Ajuste del rendimiento de puerta de enlace de SLB en redes definidas por software
 
@@ -22,7 +20,7 @@ No se requiere ninguna optimización del rendimiento adicional para configurar e
 
 ## <a name="slb-mux-vm-configuration"></a>Configuración de VM MUX de SLB
 
-Las máquinas virtuales SLB MUX se implementan en una configuración activa-activa.  Esto significa que todas las máquinas virtuales de MUX que se implementan y se agregan a la controladora de red pueden procesar las solicitudes entrantes.  Por lo tanto, el rendimiento agregado total de todas las conexiones solo está limitado por el número de máquinas virtuales de MUX que ha implementado.  
+Las máquinas virtuales SLB MUX se implementan en una configuración activa-activa.  Esto significa que todas las máquinas virtuales de MUX que se implementan y se agregan a la controladora de red pueden procesar las solicitudes entrantes.  Por lo tanto, el rendimiento agregado total de todas las conexiones solo está limitado por el número de máquinas virtuales de MUX que ha implementado.
 
 Una conexión individual a una IP virtual (VIP) siempre se enviará al mismo MUX, suponiendo que el número de MUX permanezca constante y, como resultado, su rendimiento se limitará al rendimiento de una sola máquina virtual de Mux.  MUX solo procesa el tráfico entrante destinado a una dirección VIP.  Los paquetes de respuesta van directamente desde la máquina virtual que está enviando la respuesta al conmutador físico que lo reenvía al cliente.
 

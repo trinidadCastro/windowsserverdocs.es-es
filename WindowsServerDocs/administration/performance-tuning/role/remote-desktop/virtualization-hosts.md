@@ -1,18 +1,16 @@
 ---
 title: Optimización del rendimiento Escritorio remoto hosts de virtualización
 description: Optimización del rendimiento para hosts de virtualización de Escritorio remoto
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 2a0db4d890a01df13c44a9bb7adfbd13bebbdde0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 071321249db62c927ee5677a48c52a7f2cd9c20d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851708"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896033"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de virtualización
 
@@ -22,7 +20,7 @@ Windows Server admite dos tipos de escritorios virtuales: escritorios virtuales 
 
 ## <a name="general-considerations"></a>Consideraciones generales
 
-### <a name="storage"></a>Almacenamiento
+### <a name="storage"></a>Storage
 
 El almacenamiento es el cuello de botella de rendimiento más probable y es importante ajustar el tamaño del almacenamiento para administrar correctamente la carga de e/s generada por los cambios de estado de la máquina virtual. Si una prueba piloto o simulación no es factible, una buena directriz es aprovisionar un eje de disco para cuatro máquinas virtuales activas. Use configuraciones de disco que tengan un buen rendimiento de escritura (por ejemplo, RAID 1 + 0).
 
@@ -32,7 +30,7 @@ Cuando sea necesario, use la desduplicación de disco y el almacenamiento en cac
 
 En Windows Server 2012 R2, la desduplicación de datos admite la optimización de archivos abiertos. Para poder usar máquinas virtuales que se ejecutan en un volumen desduplicado, los archivos de la máquina virtual deben almacenarse en un host independiente del host de Hyper-V. Si Hyper-V y la desduplicación se ejecutan en el mismo equipo, las dos características compiten por los recursos del sistema y afectan negativamente al rendimiento general.
 
-El volumen también debe estar configurado para usar el tipo de optimización de desduplicación de la infraestructura de escritorio virtual (VDI). Puede configurarlo mediante Administrador del servidor (**servicios de archivos y almacenamiento** -&gt; **volúmenes** -&gt; **configuración de desduplicación**) o mediante el siguiente comando de Windows PowerShell:
+El volumen también debe estar configurado para usar el tipo de optimización de desduplicación de la infraestructura de escritorio virtual (VDI). Puede configurarlo mediante administrador del servidor (configuración de desduplicación de volúmenes de**servicios de archivos y almacenamiento**  - &gt; **Volumes**  - &gt; **Dedup Settings**) o mediante el siguiente comando de Windows PowerShell:
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
@@ -93,7 +91,7 @@ Tiene sentido desactivar las características y servicios de Windows que depende
 
 Cada servicio específico debe evaluarse correctamente antes de cualquier implementación amplia. A continuación se indican algunos aspectos iniciales que se deben tener en cuenta:
 
-| Service                                      | ¿Por qué?                                                                                                                                                                                                      |
+| Servicio                                      | ¿Por qué?                                                                                                                                                                                                      |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Actualización automática                                  | Los escritorios virtuales agrupados se actualizan volviendo a crear la plantilla de escritorio virtual.                                                                                                                          |
 | Archivos sin conexión                                | Los escritorios virtuales siempre están en línea y se conectan desde un punto de vista de red.                                                                                                                         |

@@ -1,19 +1,17 @@
 ---
 title: wecutil
 description: Artículo de referencia de wecutil, que le permite crear y administrar suscripciones a eventos que se reenvían desde equipos remotos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimps
-ms.openlocfilehash: af9e987bb78e4ef326f01effec6f3d7b53145091
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be3c05bcb8122db0dddd1eea8823222786d58008
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924782"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896525"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -42,7 +40,7 @@ wecutil  [{es | enum-subscription}]
 |{es \| enum-subscription}|Muestra los nombres de todas las suscripciones de eventos remotos que existen.|
 |{GS \| Get-subscription} \<Subid> [/f: \<Format> ] [/UNI: \<Unicode> ]|Muestra información de configuración de la suscripción remota. \<Subid>es una cadena que identifica de forma única una suscripción. \<Subid>es igual que la cadena que se especificó en la \<SubscriptionId> etiqueta del archivo de configuración XML, que se usó para crear la suscripción.|
 |{GR \| Get-subscriptionruntimestatus} \<Subid> [ \<Eventsource> ...]|Muestra el estado de tiempo de ejecución de una suscripción. \<Subid>es una cadena que identifica de forma única una suscripción. \<Subid>es igual que la cadena que se especificó en la \<SubscriptionId> etiqueta del archivo de configuración XML, que se usó para crear la suscripción. \<Eventsource>es una cadena que identifica un equipo que actúa como origen de eventos. \<Eventsource>debe ser un nombre de dominio completo, un nombre NetBIOS o una dirección IP.|
-|{SS \| set-subscription} \<Subid> [/e: [ \<Subenabled> ]] [/esa: \<Address> ] [/ese: [ \<Srcenabled> ]] [/AES] [/RES] [/un: \<Username> ] [/up: \<Password> ] [/d: \<Desc> ] [/URI: \<Uri> ] [/cm: \<Configmode> ] [/ex: \<Expires> ] [/q: \<Query> ] [/dia: \<Dialect> ] [/TN: \<Transportname> ] [/TP: \<Transportport> ] [/DM: \<Deliverymode> ] [/DMI: \<Deliverymax> ] [/dmlt: \<Deliverytime> ] [/HI: \<Heartbeat> ] [/CF: \<Content> ] [/l: \<Locale> ] [/ree: [ \<Readexist> ]] [/LF: \<Logfile> ] [/PN: \<Publishername> ] [/ESSP: \<Enableport> ] [/HN: \<Hostname> ] [/CT: \<Type> ]</br>o</br>{SS \| set-subscription/c: \<Configfile> [/cun: \<Comusername> /Cup: \<Compassword> ]|Cambia la configuración de la suscripción. Puede especificar el identificador de suscripción y las opciones adecuadas para cambiar los parámetros de suscripción, o puede especificar un archivo de configuración XML para cambiar los parámetros de suscripción.|
+|{SS \| set-subscription} \<Subid> [/e: [ \<Subenabled> ]] [/esa: \<Address> ] [/ese: [ \<Srcenabled> ]] [/AES] [/RES] [/un: \<Username> ] [/up: \<Password> ] [/d: \<Desc> ] [/URI: \<Uri> ] [/cm: \<Configmode> ] [/ex: \<Expires> ] [/q: \<Query> ] [/dia: \<Dialect> ] [/TN: \<Transportname> ] [/TP: \<Transportport> ] [/DM: \<Deliverymode> ] [/DMI: \<Deliverymax> ] [/dmlt: \<Deliverytime> ] [/HI: \<Heartbeat> ] [/CF: \<Content> ] [/l: \<Locale> ] [/ree: [ \<Readexist> ]] [/LF: \<Logfile> ] [/PN: \<Publishername> ] [/ESSP: \<Enableport> ] [/HN: \<Hostname> ] [/CT: \<Type> ]</br>or</br>{SS \| set-subscription/c: \<Configfile> [/cun: \<Comusername> /Cup: \<Compassword> ]|Cambia la configuración de la suscripción. Puede especificar el identificador de suscripción y las opciones adecuadas para cambiar los parámetros de suscripción, o puede especificar un archivo de configuración XML para cambiar los parámetros de suscripción.|
 |{CS \| Create-subscription} \<Configfile> [/cun: \<Username> /Cup: \<Password> ]|Crea una suscripción remota. \<Configfile>Especifica la ruta de acceso al archivo XML que contiene la configuración de la suscripción. La ruta de acceso puede ser absoluta o relativa al directorio actual.|
 |{ \| eliminación de suscripción de DS}\<Subid>|Elimina una suscripción y cancela las suscripciones de todos los orígenes de eventos que entregan eventos en el registro de eventos de la suscripción. Los eventos que ya se hayan recibido y registrado no se eliminarán. \<Subid>es una cadena que identifica de forma única una suscripción. \<Subid>es igual que la cadena que se especificó en la \<SubscriptionId> etiqueta del archivo de configuración XML, que se usó para crear la suscripción.|
 |{ \| reintento de RS-subscription} \<Subid> [ \<Eventsource> ...]|Intenta establecer una conexión y enviar una solicitud de suscripción remota a una suscripción inactiva. Intenta reactivar todos los orígenes de eventos o los orígenes de eventos especificados. Los orígenes deshabilitados no se reintentan. \<Subid>es una cadena que identifica de forma única una suscripción. \<Subid>es igual que la cadena que se especificó en la \<SubscriptionId> etiqueta del archivo de configuración XML, que se usó para crear la suscripción. \<Eventsource>es una cadena que identifica un equipo que actúa como origen de eventos. \<Eventsource>debe ser un nombre de dominio completo, un nombre NetBIOS o una dirección IP.|
@@ -85,7 +83,7 @@ wecutil  [{es | enum-subscription}]
 |Cup\<Compassword>|Establece la contraseña de usuario para la credencial de usuario compartido. Cuando \<Compassword> se establece en * (asterisco), la contraseña se lee desde la consola. Esta opción solo es válida cuando se especifica la opción **/cun** .|
 |/q: [ \<Quiet> ]|Especifica si el procedimiento de configuración solicita confirmación. \<Quiet>puede ser true o false. Si <Quiet> es true, el procedimiento de configuración no solicita confirmación. El valor predeterminado de esta opción es false.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 > [!IMPORTANT]
 > Si recibe el mensaje "el servidor RPC no está disponible? al intentar ejecutar wecutil, debe iniciar el servicio Recopilador de eventos de Windows (wecsvc). Para iniciar wecsvc, en un símbolo del sistema con privilegios elevados, escriba net start wecsvc.

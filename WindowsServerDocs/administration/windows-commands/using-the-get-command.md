@@ -1,20 +1,18 @@
 ---
 title: Usar el comando get
 description: Artículo de referencia para get, que recupera propiedades o atributos sobre el objeto especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fbd44c67-0670-4dfe-a1c0-2ab8abe327b5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6a943592d0c2443deb3bec4b5709f742e78f4ff
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 25c7025c3d56148dd0698959e6284a70518a244e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408784"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896534"
 ---
 # <a name="using-the-get-command"></a>Usar el comando get
 

@@ -1,20 +1,18 @@
 ---
 title: shadow
 description: Artículo de referencia sobre Shadow, que permite controlar de forma remota una sesión activa de otro usuario en un servidor host de sesión Escritorio remoto.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f81d9717-6883-4e14-9508-4b2a87e48ea7 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4f7d6483e46708cab31d46b917f16b1eba29a58
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 225d85d777c7c6785d2d07916aef1b7d88b6ae53
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935887"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882461"
 ---
 # <a name="shadow"></a>shadow
 
@@ -38,7 +36,7 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 |/v|Muestra información acerca de las acciones que se llevan a cabo.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 -   Puede ver o controlar activamente la sesión. Si opta por controlar activamente una sesión de usuario, puede especificar acciones de teclado y mouse de entrada para la sesión.
 -   Siempre puede controlar de forma remota sus propias sesiones (excepto la sesión actual), pero debe tener el permiso control total o el permiso de acceso especial control remoto para controlar de forma remota otra sesión.
 -   También puede iniciar el control remoto mediante el administrador de Servicios de Escritorio remoto.

@@ -1,20 +1,18 @@
 ---
 title: Copy-DriverGroup
 description: Artículo de referencia de Copy-DriverGroup, que duplica un grupo de controladores existente en el servidor, incluidos los filtros, los paquetes de controladores y el estado habilitado o deshabilitado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0aaf6fa5-8b5b-4a1e-ae9b-8b5c6d89f571
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d9be90f065cc76e16b7b45135c60b5206c7bf581
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ff36f3761be0a4cd772e287a3e672fd07f2d4f02
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934083"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896553"
 ---
 # <a name="copy-drivergroup"></a>Copy-DriverGroup
 

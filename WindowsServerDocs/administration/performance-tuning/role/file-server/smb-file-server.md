@@ -1,18 +1,16 @@
 ---
 title: Optimización del rendimiento para servidores de archivos SMB
 description: Optimización del rendimiento para servidores de archivos SMB
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 89017686801501593c51245d44bf88a6ecf4baf6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9e20b05f911726837cf436798a3743fbb80af193
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851828"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896159"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>Optimización del rendimiento para servidores de archivos SMB
 
@@ -58,7 +56,7 @@ Para obtener más información sobre el escalado horizontal de SMB, consulte [se
 
 ### <a name="performance-counters-for-smb-30"></a>Contadores de rendimiento para SMB 3,0
 
-Los siguientes contadores de rendimiento de SMB se introdujeron en Windows Server 2012 y se consideran un conjunto básico de contadores al supervisar el uso de recursos de SMB 2 y versiones posteriores. Registre los contadores de rendimiento en un registro de contador de rendimiento local, sin formato (. BLG). Es más económico recopilar todas las instancias mediante el carácter comodín (\*) y, a continuación, extraer instancias concretas durante el procesamiento posterior mediante relog. exe.
+Los siguientes contadores de rendimiento de SMB se introdujeron en Windows Server 2012 y se consideran un conjunto básico de contadores al supervisar el uso de recursos de SMB 2 y versiones posteriores. Registre los contadores de rendimiento en un registro de contador de rendimiento local, sin formato (. BLG). Es más económico recopilar todas las instancias mediante el carácter comodín ( \* ) y, a continuación, extraer instancias concretas durante el procesamiento posterior mediante el uso de Relog.exe.
 
 -   **Recursos compartidos de cliente SMB**
 
@@ -91,7 +89,7 @@ Los siguientes contadores de rendimiento de SMB se introdujeron en Windows Serve
 ## <a name="tuning-parameters-for-smb-file-servers"></a>Parámetros de optimización para servidores de archivos SMB
 
 
-La siguiente configuración del registro de REG\_DWORD puede afectar al rendimiento de los servidores de archivos SMB:
+La siguiente \_ configuración del registro de REG DWORD puede afectar al rendimiento de los servidores de archivos SMB:
 
 - **Smb2CreditsMin** y **Smb2CreditsMax**
 
@@ -104,11 +102,11 @@ La siguiente configuración del registro de REG\_DWORD puede afectar al rendimie
   ```
 
   Los valores predeterminados son 512 y 8192, respectivamente. Estos parámetros permiten que el servidor limite la simultaneidad de operaciones de cliente dinámicamente dentro de los límites especificados. Algunos clientes pueden lograr un mayor rendimiento con límites de simultaneidad más altos, por ejemplo, la copia de archivos a través de vínculos de gran ancho de banda y alta latencia.
-    
+
   > [!TIP]
   > Antes de Windows 10 y Windows Server 2016, el número de créditos concedidos al cliente variaba dinámicamente entre Smb2CreditsMin y Smb2CreditsMax basándose en un algoritmo que intentaba determinar el número óptimo de créditos que se conceden en función de la latencia de red y el uso de crédito. En Windows 10 y Windows Server 2016, se cambió el servidor SMB para conceder de forma incondicional créditos al solicitar el número máximo de créditos configurado. Como parte de este cambio, el mecanismo de limitación de crédito, que reduce el tamaño de la ventana de crédito de cada conexión cuando el servidor está bajo presión de memoria, se quitó. El evento de memoria insuficiente del kernel que activó la limitación solo se señala cuando el servidor está tan bajo en la memoria (< unos pocos MB) para que no sea útil. Dado que el servidor ya no reduce las ventanas de crédito, el valor Smb2CreditsMin ya no es necesario y ahora se omite.
-  > 
-  > Puede supervisar recursos compartidos de cliente SMB\\paradas de crédito en/S para ver si hay algún problema con los créditos.
+  >
+  > Puede supervisar las paradas de crédito de los recursos compartidos de cliente SMB \\ en/s para ver si hay algún problema con los créditos.
 
 - **AdditionalCriticalWorkerThreads**
 
@@ -119,7 +117,7 @@ La siguiente configuración del registro de REG\_DWORD puede afectar al rendimie
     El valor predeterminado es 0, lo que significa que no se agrega ningún subproceso de trabajo de kernel crítico adicional. Este valor afecta al número de subprocesos que la memoria caché del sistema de archivos utiliza para las solicitudes de lectura y escritura previa. Aumentar este valor puede permitir más e/s en cola en el subsistema de almacenamiento, y puede mejorar el rendimiento de e/s, especialmente en sistemas con muchos procesadores lógicos y hardware de almacenamiento eficaz.
 
     >[!TIP]
-    > Es posible que sea necesario aumentar el valor si la cantidad de datos modificados del administrador de caché (caché del contador de rendimiento\\páginas desfasadas) está creciendo para consumir una gran parte (más de un 25%). de memoria o si el sistema está realizando una gran cantidad de operaciones de e/s de lectura sincrónicas.
+    > Es posible que sea necesario aumentar el valor si la cantidad de datos modificados del administrador de caché (páginas desfasadas de la memoria caché de contadores de rendimiento \\ ) está creciendo para consumir una gran parte (más de aproximadamente 25%) de memoria o si el sistema está realizando una gran cantidad de operaciones de e/s de lectura sincrónicas.
 
 - **MaxThreadsPerQueue**
 
@@ -130,15 +128,15 @@ La siguiente configuración del registro de REG\_DWORD puede afectar al rendimie
   El valor predeterminado es 20. Al aumentar este valor, se eleva el número de subprocesos que el servidor de archivos puede usar para atender las solicitudes simultáneas. Cuando es necesario atender un gran número de conexiones activas, y los recursos de hardware, como el ancho de banda de almacenamiento, son suficientes, el aumento del valor puede mejorar la escalabilidad, el rendimiento y los tiempos de respuesta del servidor.
 
   >[!TIP]
-  > Es una indicación de que es posible que sea necesario aumentar el valor si las colas de trabajo de SMB2 están creciendo muy grandes (el contador de rendimiento "colas de trabajo de servidor\\longitud de cola\\SMB2 de \*sin bloqueo" es constantemente superior a ~ 100).
+  > Una indicación de que es posible que sea necesario aumentar el valor si las colas de trabajo de SMB2 están creciendo muy grandes (el contador de rendimiento "cola de trabajo del servidor de \\ longitud de cola de \\ SMB2 no bloqueada \* " es constantemente superior a ~ 100).
 
   >[!Note]
   >En Windows 10 y Windows Server 2016, MaxThreadsPerQueue no está disponible. El número de subprocesos de un grupo de subprocesos será "20 * el número de procesadores en un nodo NUMA".
-     
+
 
 - **AsynchronousCredits**
 
-  ``` 
+  ```
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
   ```
 
@@ -148,7 +146,7 @@ La siguiente configuración del registro de REG\_DWORD puede afectar al rendimie
 
 La siguiente configuración puede optimizar un equipo para el rendimiento del servidor de archivos en muchos casos. Los valores no son óptimos ni adecuados para todos los equipos. Debe evaluar el impacto de cada uno de los valores antes de aplicarlos.
 
-| Parámetro                       | Valor | Default |
+| Parámetro                       | Value | Valor predeterminado |
 |---------------------------------|-------|---------|
 | AdditionalCriticalWorkerThreads | 64    | 0       |
 | MaxThreadsPerQueue              | 64    | 20      |

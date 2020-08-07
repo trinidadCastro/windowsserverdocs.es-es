@@ -1,22 +1,20 @@
 ---
-title: start
+title: start.
 description: Artículo de referencia de Start, que inicia una ventana de símbolo del sistema independiente para ejecutar un programa o un comando especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0173f9b3-5cd7-4edb-b01e-d02193b4fadc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8864edd1f108ac0408b6b9f899c72e70e22922f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 54ec76cf6162cd887b21f99b6579fc123f4f614c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937053"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882293"
 ---
-# <a name="start"></a>start
+# <a name="start"></a>start.
 
 Inicia una ventana de símbolo del sistema independiente para ejecutar un programa o un comando especificado.
 
@@ -46,7 +44,7 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
 |\<Parameter>...|Especifica los parámetros que se van a pasar al comando o al programa.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Puede ejecutar archivos no ejecutables a través de su asociación de archivo escribiendo el nombre del archivo como un comando.
 - Al ejecutar un comando que contiene la cadena CMD como el primer token sin un calificador de extensión o ruta de acceso, CMD se reemplaza por el valor de la variable comspec. Esto impide a los usuarios seleccionar **cmd** desde el directorio actual.

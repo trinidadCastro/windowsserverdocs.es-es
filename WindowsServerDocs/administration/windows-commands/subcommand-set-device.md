@@ -1,20 +1,18 @@
 ---
 title: 'Conjunto de subcomandos: dispositivo'
 description: Artículo de referencia para el subcomando set-device, que cambia los atributos de un equipo preconfigurado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 401567f8-eaeb-4a2d-b811-140bb007028d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e75e0a2a4011e171fa548954bce2bbe942379c0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9593769d77d10eaff80b9d369e1f681f02c5d1fe
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937201"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882276"
 ---
 # <a name="subcommand-set-device"></a>Subcomando: set-device
 

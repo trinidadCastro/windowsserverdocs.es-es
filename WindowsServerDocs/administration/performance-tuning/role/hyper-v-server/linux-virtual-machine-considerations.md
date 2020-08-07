@@ -1,18 +1,16 @@
 ---
 title: Consideraciones sobre máquinas virtuales Linux
 description: Máquina virtual Linux y BSD
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1109eb50bbe052b39fe7a91903fa0aea58b6e4f1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 916239535b92e1248918c76897e5222fa1dc6451
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471390"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896116"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Consideraciones sobre máquinas virtuales Linux
 

@@ -1,18 +1,16 @@
 ---
 title: Ajuste del rendimiento para HTTP 1.1/2
 description: Recomendaciones para la optimización del rendimiento de HTTP 1.1/2
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: ivanpash; gmonte
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a0a4464d7a13911ec9cc7d104b6fe9292a64586e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 362ceea398e13c5e537d1d828b86eec8b5d66a8f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471250"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896030"
 ---
 # <a name="performance-tuning-http-112"></a>Ajuste del rendimiento de HTTP 1.1/2
 

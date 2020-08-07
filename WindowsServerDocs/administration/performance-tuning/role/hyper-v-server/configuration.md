@@ -1,18 +1,16 @@
 ---
 title: Configuración de Hyper-V
 description: Consideraciones de configuración de Hyper-V para el ajuste del rendimiento
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 3fb1001c99e084ab69f37db9779e5d5ae7acf58e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 02f2849b7259379ebf6beed927601b13966a7704
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471440"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896150"
 ---
 # <a name="hyper-v-configuration"></a>Configuración de Hyper-V
 
@@ -24,7 +22,7 @@ Las consideraciones de hardware para los servidores que ejecutan Hyper-V suelen 
 
     Hyper-V en Windows Server 2016 presenta los procesadores lógicos como uno o más procesadores virtuales para cada máquina virtual activa. Hyper-V requiere ahora procesadores que admiten tecnologías de traducción de direcciones de segundo nivel (SLAT), como tablas de páginas extendidas (EPT) o tablas de páginas anidadas (NPT).
 
--   **Memoria caché**
+-   **Caché**
 
     Hyper-V puede beneficiarse de cachés de procesador más grandes, especialmente para cargas que tienen un gran espacio de trabajo en la memoria y en configuraciones de máquinas virtuales en las que la proporción de procesadores virtuales a procesadores lógicos es alta.
 
@@ -32,7 +30,7 @@ Las consideraciones de hardware para los servidores que ejecutan Hyper-V suelen 
 
     El servidor físico requiere suficiente memoria para las particiones raíz y secundaria. La partición raíz requiere memoria para realizar operaciones de e/s de forma eficaz en nombre de las máquinas virtuales y las operaciones como, por ejemplo, una instantánea de máquina virtual. Hyper-V garantiza que haya suficiente memoria disponible para la partición raíz y permite asignar la memoria restante a las particiones secundarias. Se debe ajustar el tamaño de las particiones secundarias en función de las necesidades de la carga esperada para cada máquina virtual.
 
--   **Almacenamiento**
+-   **Storage**
 
     El hardware de almacenamiento debe tener suficiente ancho de banda y capacidad de e/s para satisfacer las necesidades actuales y futuras de las máquinas virtuales que hospeda el servidor físico. Tenga en cuenta estos requisitos al seleccionar controladores de almacenamiento y discos y elegir la configuración de RAID. La colocación de las máquinas virtuales con cargas de trabajo con un gran consumo de disco en diferentes discos físicos probablemente mejorará el rendimiento general. Por ejemplo, si cuatro máquinas virtuales comparten un único disco y lo usan activamente, cada máquina virtual puede producir solo el 25 por ciento del ancho de banda de ese disco.
 

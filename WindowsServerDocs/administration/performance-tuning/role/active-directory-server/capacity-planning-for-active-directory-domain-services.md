@@ -1,18 +1,16 @@
 ---
 title: Planeación de la capacidad para Active Directory Domain Services
 description: Explicación detallada de los factores que se deben tener en cuenta durante el planeamiento de la capacidad de AD DS.
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: v-tea; kenbrunf
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: c0ff1c12a94abed86f6fa3cecd54894016dd3ad1
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 33ae34a953f71739fd909ff5548861c2aebfe170
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409495"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896310"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planeación de la capacidad para Active Directory Domain Services
 
@@ -355,13 +353,13 @@ Determinar la cantidad de e/s necesaria para un sistema en buen estado en condic
 - Para determinar la cantidad de e/s necesaria para el almacenamiento donde se supera la capacidad del almacenamiento subyacente:
   >*IOPS necesarios* = (LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg en segundos de disco/lectura &divide; *\<Target Avg Disk sec/Read\>* ) &times; LogicalDisk ( *\<NTDS Database Drive\>* ) \ lectura/s
 
-| Contador | Value |
+| Contador | Valor |
 |--|--|
 | Disco lógico ( *\<NTDS Database Drive\>* ) \Avg real en segundos/transferencia | .02 segundos (20 milisegundos) |
 | Target LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Transfer | .01 segundos |
 | Multiplicador para cambio en la e/s disponible | 0,02 &divide; 0,01 = 2 |
 
-| Nombre del valor | Value |
+| Nombre del valor | Valor |
 |--|--|
 | LogicalDisk ( *\<NTDS Database Drive\>* ) \ transferencias/s | 400 |
 | Multiplicador para cambio en la e/s disponible | 2 |

@@ -1,18 +1,16 @@
 ---
 title: Optimización del rendimiento Escritorio remoto hosts de sesión
 description: Directrices para la optimización del rendimiento para hosts de sesión de Escritorio remoto
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 3227bfe3bf21343ca9b7e85a07f550b4684a2fb7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9de802638a6f8225d4c8b942ac3cbea303f09a89
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851718"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896055"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de sesión
 
@@ -21,7 +19,7 @@ En este tema se describe cómo seleccionar Escritorio remoto host de sesión (ho
 
 **En este tema:**
 
--   [Seleccionar el hardware adecuado para el rendimiento](#selecting-the-proper-hardware-for-performance)
+-   [Selección del hardware adecuado para el rendimiento](#selecting-the-proper-hardware-for-performance)
 
 -   [Optimización de aplicaciones para Escritorio remoto host de sesión](#tuning-applications-for-remote-desktop-session-host)
 
@@ -38,7 +36,7 @@ La configuración de la CPU se determina conceptualmente multiplicando la CPU ne
 
 Por lo tanto, cuanto mayor sea el número de procesadores lógicos de un sistema, menor será el margen de cojín que se debe integrar en el cálculo de uso de CPU, lo que da como resultado un mayor porcentaje de carga activa por CPU. Un factor importante que recordar es que la duplicación del número de CPU no redoble la capacidad de la CPU.
 
-### <a name="memory-configuration"></a>Configuración de memoria
+### <a name="memory-configuration"></a>Configuración de la memoria
 
 La configuración de la memoria depende de las aplicaciones que emplean los usuarios; sin embargo, se puede calcular la cantidad de memoria necesaria mediante la siguiente fórmula: TotalMem = OSMem + SessionMem \* NS
 
@@ -46,7 +44,7 @@ OSMem es la cantidad de memoria que requiere la ejecución del sistema operativo
 
 Una observación interesante (suponiendo que el sistema de disco que realiza la copia de seguridad del archivo de paginación no cambie) es que el mayor número de sesiones activas simultáneas que el sistema tiene previsto admitir, cuanto mayor sea la asignación de memoria por sesión. Si no aumenta la cantidad de memoria asignada por sesión, el número de errores de página que generan las sesiones activas aumenta con el número de sesiones. Finalmente, estos errores sobrecargan el subsistema de e/s. Al aumentar la cantidad de memoria asignada por sesión, disminuye la probabilidad de que se produzcan errores de página incurridos, lo que ayuda a reducir la tasa general de errores de página.
 
-### <a name="disk-configuration"></a>Configuración del disco
+### <a name="disk-configuration"></a>Configuración de discos
 
 El almacenamiento es uno de los aspectos más desbuscados al configurar los servidores host de sesión de escritorio remoto y puede ser la limitación más común en los sistemas que se implementan en el campo.
 
@@ -60,7 +58,7 @@ La actividad de disco que se genera en un servidor host de sesión de escritorio
 
 Idealmente, se debe realizar una copia de seguridad de estas áreas mediante dispositivos de almacenamiento distintos. El uso de configuraciones RAID seccionadas u otros tipos de almacenamiento de alto rendimiento mejora el rendimiento. Le recomendamos encarecidamente que use adaptadores de almacenamiento con almacenamiento en caché de escritura con respaldo de batería. Los controladores con el almacenamiento en caché de escritura en disco ofrecen mayor compatibilidad con las operaciones de escritura sincrónicas. Dado que todos los usuarios tienen un subárbol independiente, las operaciones de escritura sincrónicas son mucho más comunes en un servidor host de sesión de escritorio remoto. Los subárboles del registro se guardan periódicamente en el disco mediante operaciones de escritura sincrónicas. Para habilitar estas optimizaciones, en la consola de administración de discos, abra el cuadro de diálogo **propiedades** del disco de destino y, en la ficha **directivas** , active las casillas **Habilitar almacenamiento en caché de escritura en el disco** y **desactivar el vaciado del búfer de caché de escritura de Windows** en el dispositivo.
 
-### <a name="network-configuration"></a>Configuración de red
+### <a name="network-configuration"></a>Network configuration (Configuración de red)
 
 El uso de red para un servidor host de sesión de escritorio remoto incluye dos categorías principales:
 
@@ -93,7 +91,7 @@ Tenga en cuenta las siguientes sugerencias al configurar las aplicaciones que se
 
 -   Deshabilite los procesos innecesarios que están registrados para iniciarse con el inicio de sesión de usuario o un inicio de sesión.
 
-    Estos procesos pueden contribuir significativamente al costo del uso de CPU al crear una nueva sesión de usuario, que generalmente es un proceso intensivo de la CPU, y puede resultar muy caro en escenarios de la mañana. Use MsConfig. exe o MsInfo32. exe para obtener una lista de los procesos que se inician en el inicio de sesión de usuario. Para obtener información más detallada, puede usar [Autoruns para Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx).
+    Estos procesos pueden contribuir significativamente al costo del uso de CPU al crear una nueva sesión de usuario, que generalmente es un proceso intensivo de la CPU, y puede resultar muy caro en escenarios de la mañana. Use MsConfig.exe o MsInfo32.exe para obtener una lista de los procesos que se inician en el inicio de sesión de usuario. Para obtener información más detallada, puede usar [Autoruns para Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx).
 
 En el consumo de memoria, debe tener en cuenta lo siguiente:
 
@@ -101,13 +99,13 @@ En el consumo de memoria, debe tener en cuenta lo siguiente:
 
     -   Los archivos dll reubicados se pueden comprobar seleccionando procesar DLL vista, como se muestra en la siguiente ilustración, mediante el [Explorador de procesos](https://technet.microsoft.com/sysinternals/bb896653.aspx).
 
-    -   Aquí podemos ver que se ha reubicado y. dll porque x. dll ha ocupado su dirección base predeterminada y no se ha habilitado ASLR
+    -   Aquí podemos ver que y.dll se reubicaba porque ya x.dll ocupado su dirección base predeterminada y ASLR no estaba habilitado
 
         ![DLL reubicadas](../../media/perftune-guide-relocated-dlls.png)
 
         Si se reubican los archivos dll, es imposible compartir el código entre las sesiones, lo que aumenta significativamente la superficie de una sesión. Se trata de uno de los problemas de rendimiento más comunes relacionados con la memoria en un servidor host de sesión de escritorio remoto.
 
--   En el caso de las aplicaciones Common Language Runtime (CLR), use el generador de imágenes nativas (Ngen. exe) para aumentar el uso compartido de páginas y reducir la sobrecarga de la CPU.
+-   En el caso de las aplicaciones Common Language Runtime (CLR), use el generador de imágenes nativas (Ngen.exe) para aumentar el uso compartido de páginas y reducir la sobrecarga de la CPU.
 
     Cuando sea posible, aplique técnicas similares a otros motores de ejecución similares.
 
@@ -132,7 +130,7 @@ Los iconos de notificación en el escritorio pueden tener mecanismos de actualiz
 
 ### <a name="remote-desktop-protocol-data-compression"></a>Protocolo de escritorio remoto compresión de datos
 
-Protocolo de escritorio remoto compresión se puede configurar mediante directiva de grupo en **configuración del equipo** &gt; **plantillas administrativas** &gt; componentes de Windows **&gt; servicios de escritorio remoto &gt;** **host de sesión** escritorio remoto **entorno de sesión remoto** &gt; **configurar la compresión de los datos de RemoteFX**. **Windows Components**&gt; Hay tres valores posibles:
+Protocolo de escritorio remoto compresión se puede configurar mediante Directiva de grupo en **configuración del equipo** &gt; **plantillas administrativas** &gt; **componentes de Windows** &gt; **servicios de escritorio remoto** &gt; **escritorio remoto** &gt; **entorno de sesión remota** &gt; **del host de sesión configurar la compresión para los datos de RemoteFX**. Hay tres valores posibles:
 
 -   **Optimizado para usar menos memoria** Consume la menor cantidad de memoria por sesión, pero tiene la menor relación de compresión y, por lo tanto, el mayor consumo de ancho de banda.
 
@@ -144,7 +142,7 @@ También puede optar por no usar un algoritmo de compresión de Protocolo de esc
 
 ### <a name="device-redirection"></a>Redireccionamiento de dispositivos
 
-El redireccionamiento de dispositivos se puede configurar mediante directiva de grupo en **configuración del equipo** &gt; **plantillas administrativas** &gt; **componentes de Windows** **&gt; servicios de escritorio remoto &gt;** **host de sesión** escritorio remoto &gt; de **dispositivos y redirección de recursos** , o mediante el cuadro de propiedades colección de **sesiones** en Administrador del servidor.
+La redirección de dispositivos se puede configurar mediante Directiva de grupo en **configuración del equipo** &gt; **plantillas administrativas** &gt; **componentes de Windows** &gt; **servicios de escritorio remoto** &gt; **escritorio remoto** &gt; **dispositivo host de sesión y redirección de recursos** , o mediante el cuadro de propiedades colección de **sesiones** en Administrador del servidor.
 
 Por lo general, la redirección de dispositivos aumenta la cantidad de ancho de banda de red que usan las conexiones del servidor host de sesión de escritorio remoto porque los datos se intercambian entre los dispositivos de los equipos cliente y los procesos que se ejecutan en la sesión de servidor. La extensión del aumento es una función de la frecuencia de las operaciones realizadas por las aplicaciones que se ejecutan en el servidor en los dispositivos redirigidos.
 

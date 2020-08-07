@@ -1,24 +1,22 @@
 ---
 title: Consideraciones sobre el rendimiento del scripting de PowerShell
 description: Scripting para rendimiento en PowerShell
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: f22a4f1ba5c0f048e2aa01c744feb3b2b83007a0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f5ab7fbb1c993192f4626935d2adb73fc9401250
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851928"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896254"
 ---
 # <a name="powershell-scripting-performance-considerations"></a>Consideraciones sobre el rendimiento del scripting de PowerShell
 
 Los scripts de PowerShell que aprovechan .NET directamente y evitan que la canalización tenga más rapidez que idiomático PowerShell. Idiomático PowerShell usa normalmente cmdlets y funciones de PowerShell en gran medida, a menudo aprovechando la canalización, y se coloca en .NET solo cuando sea necesario.
 
->[!Note] 
+>[!Note]
 > Muchas de las técnicas descritas aquí no son idiomático PowerShell y pueden reducir la legibilidad de un script de PowerShell. Se recomienda a los autores de scripts que usen idiomático PowerShell a menos que el rendimiento dicte lo contrario.
 
 ## <a name="suppressing-output"></a>Suprimir salida
@@ -54,7 +52,7 @@ $null = . {
 ```
 
 Al introducir un bloque de script y llamarlo (mediante el uso de un punto de partida o de otro modo), asignar el resultado a `$null` es una técnica adecuada para suprimir la salida de un bloque grande de script.
-Esta técnica realiza aproximadamente la canalización a `Out-Null` y se debe evitar en el script sensible al rendimiento.
+Esta técnica realiza aproximadamente la canalización `Out-Null` y se debe evitar en el script sensible al rendimiento.
 La sobrecarga adicional en este ejemplo procede de la creación y la invocación de un bloque de scripts que anteriormente se encontraban en línea.
 
 
@@ -84,8 +82,8 @@ $results.AddRange((Do-SomethingElse))
 $results
 ```
 
-Si requiere una matriz, puede usar su propio `ArrayList` y llamar simplemente a `ArrayList.ToArray` cuando desee la matriz.
-Como alternativa, puede permitir que PowerShell cree el `ArrayList` y `Array`:
+Si requiere una matriz, puede usar la suya propia `ArrayList` y simplemente llamar a `ArrayList.ToArray` cuando desee la matriz.
+Como alternativa, puede permitir que PowerShell cree el `ArrayList` y `Array` para usted:
 
 ```PowerShell
 $results = @(
@@ -95,7 +93,7 @@ $results = @(
 ```
 
 En este ejemplo, PowerShell crea un `ArrayList` para contener los resultados que se escriben en la canalización dentro de la expresión de matriz.
-Justo antes de asignar a `$results`, PowerShell convierte el `ArrayList` en un `object[]`.
+Justo antes de asignar a `$results` , PowerShell convierte `ArrayList` en `object[]` .
 
 ## <a name="processing-large-files"></a>Archivos grandes de procesamiento
 
@@ -127,9 +125,9 @@ finally
 
 ## <a name="avoid-write-host"></a>Evitar write-host
 
-Generalmente, se considera una práctica inadecuada escribir la salida directamente en la consola, pero cuando tiene sentido, muchos scripts usan `Write-Host`.
+Generalmente, se considera una práctica inadecuada escribir la salida directamente en la consola, pero cuando tiene sentido, se usan muchos scripts `Write-Host` .
 
-Si debe escribir muchos mensajes en la consola, `Write-Host` puede ser un orden de magnitud más lento que `[Console]::WriteLine()`. Sin embargo, tenga en cuenta que `[Console]::WriteLine()` es solo una alternativa adecuada para hosts específicos, como PowerShell. exe o powershell_ise. exe, no se garantiza que funcione en todos los hosts.
+Si debe escribir muchos mensajes en la consola, `Write-Host` puede ser un orden de magnitud más lento que `[Console]::WriteLine()` . Sin embargo, tenga en cuenta que `[Console]::WriteLine()` solo es una alternativa adecuada para hosts específicos, como powershell.exe o powershell_ise.exe, no se garantiza que funcione en todos los hosts.
 
-En lugar de usar `Write-Host`, considere la posibilidad de usar [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1).
+En lugar de usar `Write-Host` , considere la posibilidad de usar [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1).
 

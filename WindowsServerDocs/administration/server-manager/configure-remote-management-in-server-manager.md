@@ -1,24 +1,22 @@
 ---
 title: Configurar la administración remota en Administrador del servidor
 description: Administrador de servidores
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: 509182ed-c37d-4b81-84bc-aee43d006873
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01bc2d2d262882c08d1213bae6149896a8b284ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0d2369bd42fc884b1a401fc1450dbe9d1e47663
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851568"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895808"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>Configurar la administración remota en Administrador del servidor
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En Windows Server, puede usar Administrador del servidor para realizar tareas de administración en servidores remotos. la administración remota está habilitada de forma predeterminada en los servidores que ejecutan Windows Server 2016. Para administrar un servidor de forma remota mediante Administrador del servidor, agregue el servidor al grupo de servidores Administrador del servidor.
 
@@ -26,11 +24,11 @@ Puede usar Administrador del servidor para administrar servidores remotos que ej
 
 Para administrar servidores que ejecutan versiones de Windows Server anteriores a Windows Server 2016, instale el software y las actualizaciones siguientes para que las versiones anteriores de Windows Server se pueda administrar mediante Administrador del servidor en Windows Server 2016.
 
-|Sistema operativo|Software necesario|Manageability|
+|Sistema operativo|Requisitos de software|Facilidad de uso|
 |----------|-----------|---------|
 | Windows Server 2012 R2 o Windows Server 2012 |-   [.NET Framework 4,6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5,0](https://go.microsoft.com/fwlink/?LinkID=395058). La descarga de Windows Management Framework 5,0 proveedores de actualizaciones de paquetes Instrumental de administración de Windows (WMI) en Windows Server 2012 R2, Windows Server 2012 y Windows Server 2008 R2. Los proveedores de WMI actualizados permiten a Administrador del servidor recopilar información acerca de los roles y las características que están instalados en los servidores administrados. Hasta que se aplique la actualización, los servidores que ejecutan Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 tienen un estado de capacidad de administración de **no accesible**.<br />-La actualización de rendimiento asociada con el [artículo 2682011 de Knowledge Base](https://go.microsoft.com/fwlink/p/?LinkID=245487) ya no es necesaria en servidores que ejecutan windows Server 2012 R2 o windows Server 2012.||
-| Windows Server 2008 R2 |-   [.NET Framework 4,5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4,0](https://go.microsoft.com/fwlink/?LinkId=293881). La descarga de Windows Management Framework 4,0 proveedores de actualizaciones de paquetes Instrumental de administración de Windows (WMI) en Windows Server 2008 R2. Los proveedores de WMI actualizados permiten a Administrador del servidor recopilar información acerca de los roles y las características que están instalados en los servidores administrados. Hasta que se aplique la actualización, los servidores que ejecutan Windows Server 2008 R2 tienen un estado de capacidad de administración de **no accesible**.<br />-La actualización de rendimiento asociada con el [artículo 2682011 de Knowledge Base](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite a administrador del servidor recopilar datos de rendimiento de Windows Server 2008 R2.||
-| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management framework 3,0](https://go.microsoft.com/fwlink/p/?LinkID=229019) los proveedores de descargas de paquetes instrumental de administración de Windows (WMI) de Windows management Framework 3,0 en windows Server 2008. Los proveedores de WMI actualizados permiten a Administrador del servidor recopilar información acerca de los roles y las características que están instalados en los servidores administrados. Hasta que se aplique la actualización, los servidores que ejecutan Windows Server 2008 tienen un estado de capacidad de administración de **no accesible: Compruebe que las versiones anteriores ejecutan Windows Management Framework 3,0**.<br />-La actualización de rendimiento asociada con el [artículo 2682011 de Knowledge Base](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite a administrador del servidor recopilar datos de rendimiento de Windows Server 2008.||
+| Windows Server 2008 R2 |-   [.NET Framework 4,5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4,0](https://go.microsoft.com/fwlink/?LinkId=293881). La descarga de Windows Management Framework 4,0 proveedores de actualizaciones de paquetes Instrumental de administración de Windows (WMI) en Windows Server 2008 R2. Los proveedores de WMI actualizados permiten a Administrador del servidor recopilar información acerca de los roles y las características que están instalados en los servidores administrados. Hasta que se aplique la actualización, los servidores que ejecutan Windows Server 2008 R2 tienen un estado de capacidad de administración de **no accesible**.<br />-La actualización de rendimiento asociada con el [artículo 2682011 de Knowledge Base](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite a administrador del servidor recopilar datos de rendimiento de Windows Server 2008 R2.||
+| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management Framework 3,0](https://go.microsoft.com/fwlink/p/?LinkID=229019) La descarga de Windows Management Framework 3,0 proveedores de actualizaciones de paquetes Instrumental de administración de Windows (WMI) en Windows Server 2008. Los proveedores de WMI actualizados permiten a Administrador del servidor recopilar información acerca de los roles y las características que están instalados en los servidores administrados. Hasta que se aplique la actualización, los servidores que ejecutan Windows Server 2008 tienen un estado de capacidad de administración de **no accesible: Compruebe que las versiones anteriores ejecutan Windows Management Framework 3,0**.<br />-La actualización de rendimiento asociada con el [artículo 2682011 de Knowledge Base](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite a administrador del servidor recopilar datos de rendimiento de Windows Server 2008.||
 
 para obtener información detallada sobre cómo agregar servidores que están en grupos de trabajo para administrar o administrar servidores remotos desde un equipo de grupo de trabajo que ejecuta Administrador del servidor, consulte [agregar servidores a administrador del servidor](add-servers-to-server-manager.md).
 
@@ -46,19 +44,19 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
 -   Para habilitar la administración remota de WinRM, selecciona uno de los siguientes procedimientos
 
-    -   [Para habilitar la administración remota de Administrador del servidor mediante la interfaz de Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface)
+    -   [Para configurar la administración remota del Administrador del servidor con la interfaz de Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface)
 
-    -   [Para habilitar la administración remota de Administrador del servidor con Windows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell)
+    -   [Para habilitar la administración remota del Administrador del servidor con Windows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell)
 
-    -   [Para habilitar la administración remota de Administrador del servidor mediante la línea de comandos](#to-enable-server-manager-remote-management-by-using-the-command-line)
+    -   [Para habilitar la administración remota del Administrador del servidor con la línea de comandos](#to-enable-server-manager-remote-management-by-using-the-command-line)
 
-    -   [Para habilitar Administrador del servidor y la administración remota de Windows PowerShell en versiones anteriores de Windows Server](#to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server)
+    -   [Para habilitar la administración remota de Windows PowerShell y el Administrador del servidor en versiones anteriores de Windows Server](#to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server)
 
 -   Para deshabilitar WinRM y Administrador del servidor la administración remota, seleccione uno de los procedimientos siguientes.
 
-    -   [Para deshabilitar la administración remota mediante directiva de grupo](#to-disable-remote-management-by-using-group-policy)
+    -   [Para deshabilitar la administración remota con la directiva de grupo](#to-disable-remote-management-by-using-group-policy)
 
-    -   [Para deshabilitar la administración remota con un archivo de respuesta durante la instalación desatendida](#to-disable-remote-management-by-using-an-answer-file-during-unattended-installation)
+    -   [Para deshabilitar la administración remota con un archivo de respuesta durante una instalación desatendida](#to-disable-remote-management-by-using-an-answer-file-during-unattended-installation)
 
 -   Para configurar la administración remota con DCOM, vea [Para configurar MMC u otra herramienta de administración remota con DCOM](#to-configure-mmc-or-other-tool-remote-management-over-dcom).
 
@@ -87,7 +85,7 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
 2.  Escriba lo siguiente y, a continuación, presione **entrar** para habilitar todas las excepciones de reglas de Firewall necesarias.
 
-    **Configure-smremoting. exe-enable**
+    **Configure-SMremoting.exe: habilitar**
 
 ### <a name="to-enable-server-manager-remote-management-by-using-the-command-line"></a>Para habilitar la administración remota del Administrador del servidor con la línea de comandos
 
@@ -95,19 +93,19 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
 2.  Ejecutar el siguiente archivo ejecutable.
 
-    **%windir%\system32\Configure-SMremoting.exe**
+    **% WINDIR% \system32\Configure-SMremoting.exe**
 
-3.  Realice una de las siguientes acciones:
+3.  Lleve a cabo una de las siguientes acciones:
 
-    -   Para deshabilitar la administración remota, escriba **Configure-smremoting. exe-Disable**y, a continuación, presione **entrar**.
+    -   Para deshabilitar la administración remota, escriba **Configure-SMremoting.exe-Disable**y, a continuación, presione **entrar**.
 
-    -   Para habilitar la administración remota, escriba **Configure-smremoting. exe-enable**y, a continuación, presione **entrar**.
+    -   Para habilitar la administración remota, escriba **Configure-SMremoting.exe-enable**y, a continuación, presione **entrar**.
 
-    -   Para ver la configuración de administración remota actual, escriba **Configure-smremoting. exe-Get**y, a continuación, presione Entrar.
+    -   Para ver la configuración de administración remota actual, escriba **Configure-SMremoting.exe-Get**y, a continuación, presione Entrar.
 
 ### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>Para habilitar la administración remota de Windows PowerShell y el Administrador del servidor en versiones anteriores de Windows Server
 
--   Realice una de las siguientes acciones:
+-   Lleve a cabo una de las siguientes acciones:
 
     -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2012, consulte [para habilitar la administración remota de administrador del servidor mediante la interfaz de Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface) en este tema.
 
@@ -151,7 +149,7 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
 3.  En el panel de contenido, haga doble clic en **Permitir la administración remota de servidores a través de WinRM**.
 
-4.  En el cuadro de diálogo de la configuración de directiva **Permitir la administración remota de servidores a través de WinRM** , seleccione **Deshabilitado** para deshabilitar la administración remota. Haga clic en **Aceptar** para guardar los cambios y cerrar el cuadro de diálogo de la configuración de directiva.
+4.  En el cuadro de diálogo de la configuración de directiva **Permitir la administración remota de servidores a través de WinRM**, seleccione **Deshabilitado** para deshabilitar la administración remota. Haga clic en **Aceptar** para guardar los cambios y cerrar el cuadro de diálogo de la configuración de directiva.
 
 ### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>Para deshabilitar la administración remota con un archivo de respuesta durante una instalación desatendida
 
@@ -163,7 +161,7 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
     > [!NOTE]
     > Esta configuración deshabilita la administración remota como parte del proceso de instalación del sistema operativo. La configuración de esta opción no impide que un administrador habilite Administrador del servidor la administración remota en un servidor una vez finalizada la instalación del sistema operativo. Los administradores pueden volver a habilitar Administrador del servidor la administración remota mediante los pasos de [para configurar la administración remota de administrador del servidor mediante la interfaz de Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface) o [para habilitar la administración remota de administrador del servidor con Windows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell) en este tema.
-    > 
+    >
     > Si deshabilita la administración remota de forma predeterminada como parte de una instalación desatendida y no vuelve a habilitar la administración remota en el servidor después de la instalación, los servidores a los que se aplica este archivo de respuesta no se pueden administrar completamente mediante Administrador del servidor. Los servidores que ejecutan Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 (y que tienen la administración remota deshabilitada de forma predeterminada) generan errores de estado de capacidad de administración en la consola de Administrador del servidor una vez agregados al grupo de servidores Administrador del servidor.
 
 ## <a name="windows-remote-management-winrm-listener-settings"></a>Configuración del agente de escucha de administración remota de Windows (WinRM)
@@ -183,10 +181,10 @@ El número de puerto predeterminado es 5985 para WinRM para comunicarse con un e
 
 para obtener más información sobre cómo configurar las opciones del agente de escucha de WinRM, escriba **WinRM Help config**en un símbolo del sistema y, a continuación, presione Entrar.
 
-## <a name="see-also"></a>Consulta también
-[Agregar servidores a Administrador del servidor](add-servers-to-server-manager.md)
-[windows PowerShell: About_remote_Troubleshooting en windows Server TechCenter](https://technet.microsoft.com/library/dd347642.aspx)
-[Descripción del control de cuentas de usuario](https://support.microsoft.com/kb/951016)
+## <a name="see-also"></a>Consulte también
+[Agregar servidores a administrador del servidor](add-servers-to-server-manager.md) 
+ [Windows PowerShell: about_remote_Troubleshooting en Windows Server TechCenter](https://technet.microsoft.com/library/dd347642.aspx) 
+ [Descripción del control de cuentas de usuario](https://support.microsoft.com/kb/951016)
 
 
 

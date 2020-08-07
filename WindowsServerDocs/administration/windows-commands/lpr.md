@@ -1,20 +1,18 @@
 ---
 title: lpr
 description: Artículo de referencia para el comando lpr, que envía un archivo a un equipo o un dispositivo de uso compartido de impresoras que ejecuta el servicio line Printer daemon (LPD) como preparación para la impresión.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: afc8790b-8b52-45c4-acdf-be0ffa9da534
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ea40ef71da7804f01c963049f07e1f6b5395354
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7a35c71dfed14e48464292f43d74928f437f4be8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927112"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887058"
 ---
 # <a name="lpr"></a>lpr
 

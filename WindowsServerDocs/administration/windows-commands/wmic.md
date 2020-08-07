@@ -1,20 +1,18 @@
 ---
 title: wmic
 description: Artículo de referencia de WMIC, que muestra información de WMI en un shell de comandos interactivo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 76397c72-d06f-4cea-88cf-c7603315a983
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c14f877c226bdd376da39cfa6e8f11116d59fe56
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1b585cb968aa3165397b61acb1f974b2fafbd2b7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936109"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896463"
 ---
 # <a name="wmic"></a>wmic
 

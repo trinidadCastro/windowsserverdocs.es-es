@@ -1,20 +1,18 @@
 ---
 title: shrink
 description: Artículo de referencia para la reducción de DiskPart, lo que reduce el tamaño del volumen seleccionado en la cantidad especificada.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ec87cc7c-9846-465e-a10d-4ee10db4f4e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68848976b80dc2fe18ac57011c47a935db2d44e2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ccae64b5f54c197f8eb1cd684a74c44945b3d069
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956167"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882388"
 ---
 # <a name="shrink"></a>shrink
 

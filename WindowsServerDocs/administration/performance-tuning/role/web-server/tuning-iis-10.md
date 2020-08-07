@@ -1,18 +1,16 @@
 ---
 title: Optimización de IIS 10.0
 description: Optimización del rendimiento recommmendations para servidores Web de IIS 10,0 en Windows Server 16
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8617c285ae55521e4e301b5c6b74f389df6b32d2
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 74badc4bd2c001a524a290b74054fffb1a08cd36
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409455"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896011"
 ---
 # <a name="tuning-iis-100"></a>Optimización de IIS 10.0
 

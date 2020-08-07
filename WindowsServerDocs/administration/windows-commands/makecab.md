@@ -1,20 +1,18 @@
 ---
 title: makecab
 description: Artículo de referencia del comando MAKECAB, que empaqueta los archivos existentes en un archivo. cab.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4da95297-c593-427b-9f76-2f389c46cbf4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2364ebc2de3a0be1051a4450ebf60214986bd6e9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 2a1052541b8455b082b001901e8374b4d7f5acaf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957087"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887023"
 ---
 # <a name="makecab"></a>makecab
 

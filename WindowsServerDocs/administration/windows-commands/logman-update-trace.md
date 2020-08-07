@@ -1,20 +1,18 @@
 ---
 title: logman update trace
 description: Artículo de referencia del comando Logman Update Trace, que actualiza las propiedades de un recopilador de datos de seguimiento de eventos existente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b7111f7f-4162-4d1a-8e53-d766db0ede1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7eb8b034958e14009101848d0aca381cb915a579
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7c95d9cf4a0c6f2665057c9056bcbef04dc70b37
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933123"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887173"
 ---
 # <a name="logman-update-trace"></a>logman update trace
 
@@ -32,13 +30,13 @@ logman update trace <[-n] <name>> [options]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| -s`<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
+| -s `<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
 | -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
 | -ETS | Envía comandos a sesiones de seguimiento de eventos directamente sin guardar o programar. |
 | [-n]`<name>` | Nombre del objeto de destino. |
 | -f`<bin|bincirc>` | Especifica el formato del registro del recopilador de datos. |
 | -[-] u`<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un `*` para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
-| -m`<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
+| -m `<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
 | -RF`<[[hh:]mm:]ss>` | Ejecuta el recopilador de datos durante el período de tiempo especificado. |
 | -b`<M/d/yyyy h:mm:ss[AM|PM]>` | Comienza a recopilar datos en el momento especificado. |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | Finaliza la recopilación de datos en el momento especificado. |
@@ -63,7 +61,7 @@ logman update trace <[-n] <name>> [options]
 | -modo`<globalsequence|localsequence|pagedmemory>` | Especifica el modo de registrador de sesión de seguimiento de eventos, incluidos:<ul><li>**Globalsequence** : especifica que el seguimiento de eventos agrega un número de secuencia a cada evento que recibe con independencia de qué sesión de seguimiento ha recibido el evento.</li><li>**Localsequence** : especifica que el seguimiento de eventos agrega los números de secuencia de los eventos recibidos en una sesión de seguimiento específica. Cuando se utiliza esta opción, los números de secuencia duplicados pueden existir en todas las sesiones, pero serán únicos en cada sesión de seguimiento.</li><li>**Pagedmemory** : especifica que el seguimiento de eventos utiliza la memoria paginada en lugar del bloque de memoria no paginado predeterminado para sus asignaciones de búfer internas.</li></ul> |
 | /? | Muestra la ayuda contextual. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Donde [-] aparece en la lista, al agregar un guion adicional (-) se anula la opción.
 

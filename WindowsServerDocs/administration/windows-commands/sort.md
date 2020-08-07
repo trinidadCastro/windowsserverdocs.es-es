@@ -1,20 +1,18 @@
 ---
 title: sort
 description: Artículo de referencia para la ordenación, que lee la entrada, ordena los datos y escribe los resultados en la pantalla, en un archivo o en otro dispositivo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 77116469-4790-4442-8a21-9fa73b65ef9f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3246745a2dceddec6cb1a66a4316ea7a8acb522
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ec95133af8e9c2c617fedc3bf6a3085a6663b104
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937059"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882351"
 ---
 # <a name="sort"></a>sort
 
@@ -42,7 +40,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 |/o [ \<Drive3> :] [ \<Path3> ]\<FileName3>|Especifica el archivo en el que se almacenará la entrada ordenada. Si no se especifica, los datos se escriben en la salida estándar. Especificar el archivo de salida es más rápido que la redirección de la salida estándar al mismo archivo.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Usar la **/+** opción de línea de comandos
 
@@ -67,7 +65,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 -   Secuencia de intercalación
 
     El programa de ordenación utiliza la tabla de secuencia de intercalación que corresponde al código de país o región y a la configuración de la página de códigos. Los caracteres mayores que el código ASCII 127 se ordenan en función de la información del archivo de Country.sys o en un archivo alternativo especificado por el comando **Country** en el archivo config. NT.
--   Uso de memoria
+-   Uso de la memoria
 
     Si la ordenación se ajusta al tamaño máximo de memoria (como se establece de forma predeterminada o como se especifica en el parámetro **/m** ), la ordenación se realiza en un solo paso. De lo contrario, la ordenación se realiza en dos fases independientes de ordenación y combinación, y la cantidad de memoria utilizada para ambos pasos es igual. Cuando se realizan dos pasos, los datos ordenados parcialmente se almacenan en un archivo temporal en el disco. Si no hay memoria suficiente para realizar la ordenación en dos fases, se emite un error en tiempo de ejecución. Si se usa la opción de línea de comandos **/m** para especificar más memoria de la que está realmente disponible, se puede producir una degradación del rendimiento o un error en tiempo de ejecución.
 

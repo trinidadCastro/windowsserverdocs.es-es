@@ -1,20 +1,18 @@
 ---
 title: macfile
 description: Artículo de referencia del comando MacFile, que administra el servidor de archivos para servidores, volúmenes, directorios y archivos de Macintosh.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e2ce586c-b316-41d3-90f8-4be0d074cc0e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6937e8bbf40ec9ce908be095e5de0e04f793f40e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d3b450241ee3f8a765f9ac93ec09b0450d8c28e5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933653"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887039"
 ---
 # <a name="macfile"></a>macfile
 
@@ -50,7 +48,7 @@ La posición del dígito de permisos determina qué permiso se establece, inclui
 | Posición | Establece el permiso |
 | -------- | --------------- |
 | First | OwnerSeeFiles |
-| Second | OwnerSeeFolders |
+| Segundo | OwnerSeeFolders |
 | Tercero | OwnerMakechanges |
 | Cuarto | GroupSeeFiles |
 | Quinto | GroupSeeFolders |
@@ -61,7 +59,7 @@ La posición del dígito de permisos determina qué permiso se establece, inclui
 | Décima | No se puede cambiar el nombre del directorio, moverlo o eliminarlo. |
 | 11 | Los cambios se aplican al directorio actual y a todos los subdirectorios. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Si la información proporcionada contiene espacios o caracteres especiales, use comillas alrededor del texto (por ejemplo, " `<computer name>` ").
 
@@ -101,7 +99,7 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 | /targetfile`<filepath>` | Especifica la ubicación del archivo que se crea al unirse a una bifurcación de datos y una bifurcación de recursos, o especifica la ubicación del archivo cuyo tipo o creador se está cambiando. El archivo debe estar en el servidor especificado. Este parámetro es obligatorio. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Si la información proporcionada contiene espacios o caracteres especiales, use comillas alrededor del texto (por ejemplo, " `<computer name>` ").
 
@@ -138,7 +136,7 @@ macfile server [/server:\\<computername>] [/maxsessions:{number | unlimited}] [/
 | /loginmessage`<message>` | Cambia el mensaje que los usuarios de Macintosh ven al iniciar sesión en el servidor de archivos para Macintosh. El número máximo de caracteres para el mensaje de inicio de sesión es 199. Si se omite, el mensaje **loginmessage** para el servidor permanece inalterado. Para quitar un mensaje de inicio de sesión existente, incluya el parámetro **/loginmessage** , pero deje la variable de *mensaje* en blanco. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Si la información proporcionada contiene espacios o caracteres especiales, use comillas alrededor del texto (por ejemplo, " `<computer name>` ").
 
@@ -167,7 +165,7 @@ macfile volume /remove[/server:\\<computername>] /name:<volumename>
 | --------- | ----------- |
 | `{/add | /set}` | Obligatorio al agregar o cambiar un volumen accesible desde Macintosh. Agrega o cambia el volumen especificado. |
 | /server:`\\<computername>` | Especifica el servidor en el que se va a agregar, cambiar o quitar un volumen. Si se omite, la operación se realiza en el equipo local. |
-| /Name`<volumename>` | Obligatorio. Especifica el nombre del volumen que se va a agregar, cambiar o quitar. |
+| /Name`<volumename>` | Necesario. Especifica el nombre del volumen que se va a agregar, cambiar o quitar. |
 | /path`<directory>` | Obligatorio y válido solo cuando se agrega un volumen. Especifica la ruta de acceso al directorio raíz del volumen que se va a agregar. |
 | /ReadOnly`{true | false}` | Especifica si los usuarios pueden cambiar los archivos del volumen. Use **true** para especificar que los usuarios no pueden cambiar los archivos del volumen. Use **false** para especificar que los usuarios pueden cambiar los archivos del volumen. Si se omite al agregar un volumen, se permiten los cambios en los archivos. Si se omite al cambiar un volumen, el valor **ReadOnly** del volumen permanece inalterado. |
 | /guestsallowed`{true | false}` | Especifica si los usuarios que inician sesión como invitados pueden usar el volumen. Use **true** para especificar que los invitados pueden usar el volumen. Use **false** para especificar que los invitados no pueden usar el volumen. Si se omite al agregar un volumen, los invitados pueden usar el volumen. Si se omite al cambiar un volumen, el valor de **guestsallowed** para el volumen permanece inalterado. |
@@ -176,7 +174,7 @@ macfile volume /remove[/server:\\<computername>] /name:<volumename>
 | /remove | Obligatorio cuando se quita un volumen accesible a Macintosh. quita el volumen especificado. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 
 - Si la información proporcionada contiene espacios o caracteres especiales, use comillas alrededor del texto (por ejemplo, " `<computer name>` ").
 

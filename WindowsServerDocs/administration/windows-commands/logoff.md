@@ -1,20 +1,18 @@
 ---
 title: cerrar sesión
 description: Artículo de referencia para el comando logoff, que cierra la sesión de un usuario en un servidor host de sesión Escritorio remoto y elimina la sesión.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 939f09cc-de8c-436c-a05d-aca5f2a06371
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d154b767302f5c536e0a7efb30d99ac0a8e087d5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b8eb1b13d7eeddc03ead24bcda10062aea5e1cfe
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927169"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887074"
 ---
 # <a name="logoff"></a>cerrar sesión
 
@@ -37,7 +35,7 @@ logoff [<sessionname> | <sessionID>] [/server:<servername>] [/v]
 | /v | Muestra información acerca de las acciones que se llevan a cabo. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Siempre puede cerrar sesión en la sesión en la que ha iniciado sesión actualmente. Sin embargo, debe tener el permiso **control total** para cerrar la sesión de los usuarios de otras sesiones.
 

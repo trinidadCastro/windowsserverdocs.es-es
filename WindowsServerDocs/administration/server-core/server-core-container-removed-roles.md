@@ -1,27 +1,26 @@
 ---
 title: 'Roles, servicios de rol y características no en los contenedores Server Core: Windows Server, versión 1803'
 description: Obtenga información sobre los roles y las características que se han quitado de la imagen de contenedor Server Core para Windows Server.
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 05/07/2018
-ms.openlocfilehash: 41b5a9ac32066f1b2a41de84f66b9be79252c336
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f577ebd805e5373a10dd43a3d5054f92d4881c7d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383409"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895914"
 ---
 # <a name="roles-role-services-and-features-not-in-server-core-containers---windows-server-version-1803"></a>Roles, servicios de rol y características no en los contenedores Server Core: Windows Server, versión 1803
 
-> Se aplica a: Windows Server, versión 1803
+> Se aplica a: Windows Server, versión 1803
 
-En Windows Server, versión 1803, hemos [reducido el tamaño total de la imagen de contenedor Server Core a **1,58 GB**](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/). La manera de hacerlo es optimizar la arquitectura y quitar las cosas que no necesita en un [contenedor Server Core](https://docs.microsoft.com/virtualization/windowscontainers/about/). Algunos eran cosas que no funcionaban en los contenedores, algunos eran roles y características que no se usaban. 
+En Windows Server, versión 1803, hemos [reducido el tamaño total de la imagen de contenedor Server Core a **1,58 GB**](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/). La manera de hacerlo es optimizar la arquitectura y quitar las cosas que no necesita en un [contenedor Server Core](https://docs.microsoft.com/virtualization/windowscontainers/about/). Algunos eran cosas que no funcionaban en los contenedores, algunos eran roles y características que no se usaban.
 
 > [!IMPORTANT]
-> Se han quitado de la imagen de **contenedor** Server Core, no de [Server Core](server-core-roles-and-services.md). 
+> Se han quitado de la imagen de **contenedor** Server Core, no de [Server Core](server-core-roles-and-services.md).
 
 Esta es la lista completa de las características y los roles que se han quitado de la imagen de contenedor Server Core:
 
@@ -38,7 +37,7 @@ Esta es la lista completa de las características y los roles que se han quitado
 <br>CertificateEnrollmentServer
 <br>CertificateServices
 <br>Infraestructura de ClientForNFS
-<br>Contenedores
+<br>Containers
 <br>CoreFileServer
 <br>DataCenterBridging-LLDP-herramientas
 <br>DataCenterBridging
@@ -70,7 +69,7 @@ Esta es la lista completa de las características y los roles que se han quitado
 <br>iSCSITargetServer
 <br>iSCSITargetStorageProviders
 <br>iSNS_Service
-<br>Concesión de licencias
+<br>Licencias
 <br>LightweightServer
 <br>Microsoft-Hyper-V-Management-clients
 <br>Microsoft-Hyper-V-sin conexión

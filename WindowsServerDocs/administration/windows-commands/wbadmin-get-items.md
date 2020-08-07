@@ -1,20 +1,18 @@
 ---
 title: wbadmin get items
 description: Artículo de referencia de Wbadmin get items, que enumera los elementos incluidos en una copia de seguridad específica.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 27d08ce3-6e06-4260-b264-fc1bde132d09
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 122fa2033ca553f50a7ddf380faa4a31dbb150cd
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 36f3ca0d114cd31b8211e63d9d9dc9c415c5b216
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954647"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896321"
 ---
 # <a name="wbadmin-get-items"></a>wbadmin get items
 
