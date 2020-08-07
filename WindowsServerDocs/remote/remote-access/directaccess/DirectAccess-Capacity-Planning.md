@@ -2,18 +2,16 @@
 title: Planear la capacidad de DirectAccess
 description: Puede usar este tema para obtener un informe sobre el rendimiento del servidor de DirectAccess de Windows Server 2012 para ayudarle con el planeamiento de capacidad para DirectAccess en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 85ac9d40ec0de0a896e99d56679b325cdfc387ff
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6df4005112601aefb1e508087ec66e7af44e52fd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517690"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87951410"
 ---
 # <a name="directaccess-capacity-planning"></a>Planear la capacidad de DirectAccess
 
@@ -25,7 +23,7 @@ Los datos se recabaron de un servidor de bajo perfil (4 núcleos, 4 GB) y de har
 
 Estos resultados de prueba arrojan que el rendimiento de Teredo es mejor que el de IPHTTPS en Windows 8 pero, también, que el uso de ancho de banda tanto de Teredo como de IPHTTPS ha mejorado en comparación con Windows 7.
 
-![Resultados de pruebas](../../media/DirectAccess-Capacity-Planning/DACapacityPlanning1.gif)
+![Resultados de prueba](../../media/DirectAccess-Capacity-Planning/DACapacityPlanning1.gif)
 
 ## <a name="high-end-hardware-test-environment"></a>Entorno de prueba de hardware de tecnología avanzada
 En el siguiente gráfico se muestran los resultados del entorno de prueba de rendimiento de hardware de tecnología avanzada. Todos los análisis y resultados de las pruebas se detallan en este documento.

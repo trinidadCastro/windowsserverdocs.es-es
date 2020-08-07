@@ -2,19 +2,17 @@
 title: Selección del hardware de su sistema de MultiPoint Services
 description: Consideraciones de hardware para Multipoint Services
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: bfe02570dcc1dd5d0b8e2b6a4f85254080617202
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 37fd4d30183d626caf0891fea2a41f79046030e9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517650"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970472"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>Selección del hardware de su sistema de MultiPoint Services
 
@@ -147,7 +145,7 @@ Una consideración adicional es el uso de un concentrador *alimentado externamen
 
 Al seleccionar un concentrador USB para el sistema Multipoint Services, considere su uso. El concentrador se puede usar como *concentrador de estaciones*, un *concentrador intermedio*o un *concentrador de nivel inferior*. Consulte la tabla siguiente para obtener descripciones de cada tipo de concentrador. Se recomienda que todos los dispositivos USB sean USB 2,0 o posterior.
 
-| Description | Motor |
+| Descripción | Motor |
 |--|--|
 | Concentrador de estaciones | Puede tratarse de buses a menos que se conecten \- dispositivos con alta \- potencia o que se \- Conecte a él un centro de bajada. |
 | Concentrador intermedio | Se debe alimentar externamente |
@@ -185,9 +183,9 @@ Multipoint Services es compatible con dispositivos periféricos que están conec
 > [!NOTE]
 > La columna "conectado a equipo host" de la tabla hace referencia al comportamiento cuando el equipo que ejecuta Multipoint Services se está ejecutando en modo de estación con estaciones. Si está ejecutando en el modo de consola, los periféricos que están conectados en cualquier parte se comportan de la misma manera que un servidor estándar en una sesión de consola.
 
-| Description | Conectado al equipo host | Conectado al concentrador de estaciones o al centro de bajada |
+| Descripción | Conectado al equipo host | Conectado al concentrador de estaciones o al centro de bajada |
 |--|--|--|
-| Teclado | No funcional, a menos que forme parte de una estación PS/2. | Disponible para una estación individual<p>No se puede conectar a un concentrador de nivel inferior |
+| Keyboard | No funcional, a menos que forme parte de una estación PS/2. | Disponible para una estación individual<p>No se puede conectar a un concentrador de nivel inferior |
 | Mouse | No funcional, a menos que forme parte de una estación PS/2. | Disponible para una estación individual |
 | Altavoces/auriculares | No funcional, a menos que forme parte de una estación PS/2. | Disponible para una estación individual |
 | Dispositivo de almacenamiento USB | Disponible para todas las estaciones | Disponible para una estación individual |

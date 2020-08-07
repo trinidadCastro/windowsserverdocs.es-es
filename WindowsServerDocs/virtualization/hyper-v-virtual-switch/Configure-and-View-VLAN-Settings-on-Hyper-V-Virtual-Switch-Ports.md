@@ -1,27 +1,25 @@
 ---
-title: Configuración y visualización de la configuración de VLAN en puertos de conmutador virtual de Hyper-V
+title: Configuración y visualización de las opciones de VLAN en puertos de conmutador virtual de Hyper-V
 description: Puede usar este tema para obtener información sobre las prácticas recomendadas para configurar y ver la configuración de la red de área local virtual (VLAN) en un puerto de conmutador virtual de Hyper-V en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 69e0e28a-98ae-4ade-bd27-ce2ad7eb310f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 083558762051283115211d10d32ebb6fd3ad3953
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1f4812e05ff003d40b34b7bf757894f7e66aaa6e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308032"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950299"
 ---
-# <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>Configuración y visualización de la configuración de VLAN en puertos de conmutador virtual de Hyper-V
+# <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>Configuración y visualización de las opciones de VLAN en puertos de conmutador virtual de Hyper-V
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 Puede usar este tema para obtener información sobre las prácticas recomendadas para configurar y ver la configuración de la red de área local virtual (VLAN) en un puerto de conmutador virtual de Hyper-V.
 
-Si desea configurar las opciones de VLAN en los puertos del conmutador virtual de Hyper-V, puede usar el administrador de Hyper-V de Windows&reg; Server 2016 o System Center Virtual Machine Manager (VMM).
+Si desea configurar las opciones de VLAN en los puertos del conmutador virtual de Hyper-V, puede usar el &reg; Administrador de Hyper-v de Windows Server 2016 o System Center Virtual Machine Manager (VMM).
 
 Si usa VMM, VMM usa el siguiente comando de Windows PowerShell para configurar el puerto del conmutador.
 
@@ -41,7 +39,7 @@ Para asegurarse de que no encuentra estos problemas, debe usar el mismo método 
 
 Para configurar y ver la configuración del puerto de conmutador de VLAN, debe hacer lo siguiente:
 
-- Si usa VMM o una controladora de red para configurar y administrar la red, y ha implementado redes definidas por software (SDN), debe usar los cmdlets de **VMNetworkAdapterIsolation** . 
+- Si usa VMM o una controladora de red para configurar y administrar la red, y ha implementado redes definidas por software (SDN), debe usar los cmdlets de **VMNetworkAdapterIsolation** .
 - Si usa el administrador de Hyper-V de Windows Server 2016 o cmdlets de Windows PowerShell y no ha implementado redes definidas por software (SDN), debe usar los cmdlets de **VMNetworkAdapterVlan** .
 
 ### <a name="possible-issues"></a>Posibles problemas

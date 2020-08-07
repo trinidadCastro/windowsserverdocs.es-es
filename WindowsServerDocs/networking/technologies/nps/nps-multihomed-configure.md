@@ -1,21 +1,19 @@
 ---
-title: Configurar NPS en un equipo de host múltiple
+title: Configuración de NPS en un equipo de host múltiple
 description: En este tema se proporcionan instrucciones sobre la configuración de un servidor con varios adaptadores de red que ejecuta el servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d9d9e9ac-4859-4522-89ed-a23092c9e12a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a937e151954629f7e8775ec68ba8ab5f2b63ee1a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1292accf4d19afa7f6a050281b7af373b3c867c3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315811"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952090"
 ---
-# <a name="configure-nps-on-a-multihomed-computer"></a>Configurar NPS en un equipo de host múltiple
+# <a name="configure-nps-on-a-multihomed-computer"></a>Configuración de NPS en un equipo de host múltiple
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -23,9 +21,9 @@ Puede usar este tema para configurar un NPS con varios adaptadores de red.
 
 Si usa varios adaptadores de red en un servidor que ejecuta NPS (Servidor de directivas de redes), puede configurar lo siguiente:
 
-- Los adaptadores de red que realizan y no envían ni reciben Servicio de autenticación remota telefónica de usuario \(RADIUS\) el tráfico.
-- En cada adaptador de red, si NPS supervisa el tráfico RADIUS en el protocolo de Internet versión 4 \(IPv4\), IPv6, o ambos, IPv4 e IPv6.
-- Los números de puerto UDP a través del cual se envía y recibe tráfico RADIUS por protocolo \(IPv4 o IPv6\)por cada adaptador de red.
+- Los adaptadores de red que realizan y no envían ni reciben Servicio de autenticación remota telefónica de usuario \( tráfico RADIUS \) .
+- En cada adaptador de red, si NPS supervisa el tráfico RADIUS en el protocolo de Internet versión \( 4 \) , IPv4, IPv6 o ambos, tanto IPv4 como IPv6.
+- Los números de puerto UDP a través del cual se envía y recibe tráfico RADIUS en función de cada protocolo \( IPv4 o IPv6 \) , por adaptador de red.
 
 De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 para ambos protocolos IPv6 e IPv4, y para todos los adaptadores de red instalados. Dado que NPS usa automáticamente todos los adaptadores de red para el tráfico RADIUS, solo tiene que especificar los adaptadores de red que desea que NPS use para el tráfico RADIUS si desea impedir que NPS use un adaptador de red específico.
 
@@ -42,8 +40,8 @@ En otro ejemplo, si el NPS tiene tres adaptadores de red instalados, pero solo q
 
 Para configurar NPS para que escuche y envíe tráfico RADIUS en un adaptador de red, use la siguiente sintaxis en el cuadro de diálogo Propiedades del servidor de directivas de redes en la consola NPS:
 
-- Sintaxis del tráfico IPv4: IPAddress: Puertoudp, donde IPAddress es la dirección IPv4 que está configurada en el adaptador de red sobre el que desea enviar tráfico RADIUS y Puertoudp es el número de Puerto RADIUS que desea usar para la autenticación o cuentas RADIUS. entrante.
-- Sintaxis de tráfico de IPv6: [Direcciónipv6]: Puertoudp, donde se requieren los corchetes para Direcciónipv6, Direcciónipv6 es la dirección IPv6 configurada en el adaptador de red sobre el que desea enviar tráfico RADIUS y Puertoudp es el número de Puerto RADIUS que desea para usar para el tráfico de autenticación o cuentas RADIUS.
+- Sintaxis del tráfico IPv4: IPAddress: Puertoudp, donde IPAddress es la dirección IPv4 que está configurada en el adaptador de red sobre el que desea enviar tráfico RADIUS y Puertoudp es el número de Puerto RADIUS que desea usar para el tráfico de autenticación o cuentas RADIUS.
+- Sintaxis de tráfico de IPv6: [Direcciónipv6]: Puertoudp, donde se requieren corchetes en Direcciónipv6, Direcciónipv6 es la dirección IPv6 configurada en el adaptador de red sobre el que desea enviar tráfico RADIUS y Puertoudp es el número de Puerto RADIUS que desea usar para el tráfico de autenticación o cuentas RADIUS.
 
 Los siguientes caracteres pueden usarse como delimitadores para configurar la información de direcciones IP y puertos UDP:
 

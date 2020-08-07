@@ -1,19 +1,18 @@
 ---
 title: Agregar o quitar equipos
 description: Obtenga información sobre cómo agregar y quitar equipos de Multipoint Services.
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 1c37739d-7ab0-4b80-8d05-0330e79fd631
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 07/13/2017
-ms.openlocfilehash: 40905afb2bff790425586c3f54e9ee43bdd4fc52
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 5b72655966cc1c16c2da3625c70cd31facf70056
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409846"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970712"
 ---
 # <a name="add-or-remove-computers"></a>Agregar o quitar equipos
 Puede agregar otros equipos o quitar equipos del sistema Multipoint Services mediante Multipoint Manager. Si agrega otros equipos a MultiPoint Manager, MultiPoint Dashboard puede organizar la sesión de cualquier usuario cuando inicie sesión en el equipo como si se tratara de estaciones MultiPoint.

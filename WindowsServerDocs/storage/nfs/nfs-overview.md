@@ -1,19 +1,17 @@
 ---
 title: Introducción a Network File System
 description: Explica qué es Network File System.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aff9fbdfa6dc97cb644e207efdae9c44533c320b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 0a8ba971fb7224333fb495971cb06d4b97d83a62
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181751"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950459"
 ---
 # <a name="network-file-system-overview"></a>Introducción a Network File System
 

@@ -1,19 +1,17 @@
 ---
 title: Replicación de clúster extendido con almacenamiento compartido
-ms.prod: windows-server
 manager: eldenc
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: dcccbd1efa7fa6f287349deb910dbbbc4b6fd706
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: fa5246aad79b9441b973cf864233ca8cfe0da7fa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769613"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950549"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>Replicación de clúster extendido con almacenamiento compartido
 

@@ -2,26 +2,24 @@
 title: Permiso de acceso
 description: En este tema se proporciona información general sobre el permiso de acceso a la Directiva de red para el servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d6d1ca5e-bde0-4509-9e14-dc3fa9ff447e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d0521b44eb2b2733ecd8a259c5f9ca25d8bfdef1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7def3b69ca638525f53a8286c5cfdf235b2531e3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315801"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952080"
 ---
 # <a name="access-permission"></a>Permiso de acceso
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-El permiso de acceso se configura en la pestaña **información general** de cada directiva de red en el servidor de directivas de redes (NPS). 
+El permiso de acceso se configura en la pestaña **información general** de cada directiva de red en el servidor de directivas de redes (NPS).
 
-Esta configuración permite configurar la Directiva para conceder o denegar el acceso a los usuarios si las condiciones y restricciones de la Directiva de red coinciden con la solicitud de conexión. 
+Esta configuración permite configurar la Directiva para conceder o denegar el acceso a los usuarios si las condiciones y restricciones de la Directiva de red coinciden con la solicitud de conexión.
 
 La configuración del permiso de acceso tiene el efecto siguiente:
 
@@ -31,7 +29,7 @@ La configuración del permiso de acceso tiene el efecto siguiente:
 También se concede o se deniega el permiso de acceso en función de la configuración de las propiedades de acceso telefónico de cada cuenta de usuario.
 
 >[!NOTE]
->Las cuentas de usuario y sus propiedades, como las propiedades de acceso telefónico, se configuran en el Active Directory usuarios y equipos o en el complemento usuarios y grupos locales de Microsoft Management Console \(MMC\), en función de si tiene instalado Active Directory&reg; servicios de dominio (AD DS).
+>Las cuentas de usuario y sus propiedades, como las propiedades de acceso telefónico, se configuran en el Active Directory usuarios y equipos o en el complemento MMC de Microsoft Management Console usuarios y grupos locales \( \) , en función de si tiene &reg; instalado Active Directory servicios de dominio (AD DS).
 
 El **permiso de acceso a la red**configuración de la cuenta de usuario, que se configura en las propiedades de acceso telefónico de las cuentas de usuario, invalida la configuración de permisos de acceso a la Directiva de red. Cuando el permiso de acceso a la red en una cuenta de usuario se establece en la opción **Controlar acceso a través de la Directiva de red NPS** , el valor de permiso de acceso a la Directiva de red determina si se concede o se deniega el acceso al usuario.
 
@@ -47,7 +45,7 @@ Cuando NPS evalúa las solicitudes de conexión con las directivas de red config
 
 ## <a name="ignore-user-account-dial-in-properties"></a>Omitir las propiedades de acceso telefónico de las cuentas de usuario
 
-Puede configurar la Directiva de red NPS para que omita las propiedades de acceso telefónico de las cuentas de usuario; para ello, Active o desactive la casilla **omitir las propiedades de acceso telefónico** de la cuenta de usuario en la pestaña **información general** de una directiva de red. 
+Puede configurar la Directiva de red NPS para que omita las propiedades de acceso telefónico de las cuentas de usuario; para ello, Active o desactive la casilla **omitir las propiedades de acceso telefónico** de la cuenta de usuario en la pestaña **información general** de una directiva de red.
 
 Normalmente, cuando NPS autoriza una solicitud de conexión, comprueba las propiedades de acceso telefónico de la cuenta de usuario, donde el valor de la opción de permiso de acceso a redes puede determinar si el usuario está autorizado para conectarse a la red. Cuando configure NPS para que omita las propiedades de acceso telefónico de cuentas de usuario durante la autorización, la configuración de la directiva de red determinará si se concede al usuario acceso a la red.
 
@@ -61,11 +59,11 @@ Las propiedades de acceso telefónico de las cuentas de usuario incluyen lo sigu
 
 Para permitir que NPS autentique y autorice varios tipos de conexiones, puede ser necesario deshabilitar el procesamiento de propiedades de acceso telefónico de las cuentas de usuario. Esto se puede hacer en aquellos casos en los que no se requieran propiedades específicas de acceso telefónico.
 
-Por ejemplo, las propiedades ID. de llamador, devolución de llamada, dirección IP estática y rutas estáticas están diseñadas para un cliente que marca a un servidor de acceso a la red \(\)NAS, no para los clientes que se conectan a puntos de acceso inalámbricos. Es posible que un punto de acceso inalámbrico que recibe esta configuración en un mensaje RADIUS de NPS no pueda procesarlos, lo que puede hacer que el cliente inalámbrico se desconecte.
+Por ejemplo, las propiedades ID. de llamador, devolución de llamada, dirección IP estática y rutas estáticas están diseñadas para un cliente que marca a un servidor NAS de acceso a la red \( \) , no a los clientes que se conectan a puntos de acceso inalámbricos. Es posible que un punto de acceso inalámbrico que recibe esta configuración en un mensaje RADIUS de NPS no pueda procesarlos, lo que puede hacer que el cliente inalámbrico se desconecte.
 
-Cuando NPS proporciona autenticación y autorización para los usuarios que se conectan a la red de la organización y acceden a ella a través de puntos de acceso inalámbricos, debe configurar las propiedades de acceso telefónico para admitir conexiones de acceso telefónico \(estableciendo las propiedades de acceso telefónico\) o las conexiones inalámbricas \(sin establecer las propiedades de acceso telefónico\).
+Cuando NPS proporciona autenticación y autorización para los usuarios que se conectan a la red de la organización y acceden a ella a través de puntos de acceso inalámbricos, debe configurar las propiedades de acceso telefónico para admitir conexiones de acceso telefónico mediante el establecimiento de las propiedades de \( acceso telefónico \) o las conexiones inalámbricas \( sin establecer las propiedades de acceso telefónico \) .
 
-Puede usar NPS para habilitar el procesamiento de propiedades de acceso telefónico para la cuenta de usuario en algunos escenarios \(como el\) de acceso telefónico y para deshabilitar el procesamiento de las propiedades de acceso telefónico en otros escenarios \(como el conmutador de autenticación e inalámbricos 802.1 X\).
+Puede usar NPS para habilitar el procesamiento de propiedades de acceso telefónico para la cuenta de usuario en algunos escenarios, como el \( acceso telefónico \) y para deshabilitar el procesamiento de propiedades de acceso telefónico en otros escenarios, como el \( conmutador de autenticación y la red de 802.1 x \) .
 
 También puede usar **omitir las propiedades de acceso telefónico de las cuentas de usuario** para administrar el control de acceso a la red a través de grupos y la configuración de permisos de acceso en la Directiva de red. Al activar la casilla **omitir las propiedades de acceso telefónico de la cuenta de usuario** , se omite el permiso de acceso a la red en la cuenta de usuario.
 

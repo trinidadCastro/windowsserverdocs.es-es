@@ -1,20 +1,18 @@
 ---
 title: Crear un clúster de conmutación por error
 description: Cómo crear un clúster de conmutación por error para Windows Server 2012 R2, Windows Server 2012, Windows Server 2016 y Windows Server 2019.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 322eba03bb46a32191c46461c49eace4fcfda9e0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e96056eb26e200f360f92c4c6e2b94c2d77bf9ec
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177841"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950119"
 ---
 # <a name="create-a-failover-cluster"></a>Crear un clúster de conmutación por error
 
@@ -30,7 +28,7 @@ También puede implementar un clúster desasociado Active Directory. Este métod
 | ---    | ---  | ---       |
 | ☐    | Comprobar los requisitos previos | [Comprobar los requisitos previos](#verify-the-prerequisites) |
 | ☐    | Instalar la característica de clúster de conmutación por error en todos los servidores que desees incluir como nodo de clúster | [Instalar la característica de clúster de conmutación por error](#install-the-failover-clustering-feature) |
-| ☐    | Ejecutar el Asistente para validación de clústeres a fin de validar la configuración | [Validación de la configuración](#validate-the-configuration) |
+| ☐    | Ejecutar el Asistente para validación de clústeres a fin de validar la configuración | [Validar la configuración](#validate-the-configuration) |
 | ☐ | Ejecutar el Asistente para crear clúster a fin de crear el clúster de conmutación por error | [Creación del clúster de conmutación por error](#create-the-failover-cluster) |
 | ☐ | Crear roles en clúster para hospedar las cargas de trabajo de clúster | [Crear roles en clúster](#create-clustered-roles) |
 
@@ -161,7 +159,7 @@ Aquí se muestra cómo crear un rol en clúster:
    | ---------       | ---------                    |
    | Servidor de espacio de nombres     |   Espacios de nombres (parte del rol de servidor de archivos)       |
    | Servidor de espacios de nombres DFS     |  Rol de Servidor DHCP       |
-   | Coordinador de transacciones distribuidas (DTC)     | None        |
+   | Coordinador de transacciones distribuidas (DTC)     | Ninguno        |
    | Servidor de archivos     |  Rol de Servidor de archivos       |
    | Aplicación genérica     |  No aplicable       |
    | Script genérico     |   No aplicable      |
@@ -170,7 +168,7 @@ Aquí se muestra cómo crear un rol en clúster:
    | iSCSI Target Server     |    Servidor de destino iSCSI (parte del rol de Servidor de archivos)     |
    | Servidor iSNS     |  Característica Servicio de servidor iSNS       |
    | Message Queue Server     |  Característica Servicios de Message Queue Server       |
-   | Otro servidor     |  None       |
+   | Otro servidor     |  Ninguno       |
    | Máquina virtual     |  Rol de Hyper-V       |
    | Servidor WINS     |   Característica Servidor WINS      |
 

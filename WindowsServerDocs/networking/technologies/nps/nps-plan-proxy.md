@@ -2,24 +2,22 @@
 title: Planear NPS como proxy RADIUS
 description: En este tema se proporciona información acerca del planeamiento de la implementación del proxy RADIUS del servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: ca77d64a-065b-4bf2-8252-3e75f71b7734
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d64fceaf7242b7fe44912f105229c132ef9ee3b3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9cdc28eae61acb0d8548627e48a882435cd7da81
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315753"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952030"
 ---
 # <a name="plan-nps-as-a-radius-proxy"></a>Planear NPS como proxy RADIUS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Cuando se implementa el servidor de directivas de redes (NPS) como Servicio de autenticación remota telefónica de usuario \(RADIUS\) proxy, NPS recibe solicitudes de conexión de clientes RADIUS, como servidores de acceso a la red u otros proxies RADIUS y, a continuación, reenvía estas solicitudes de conexión a servidores que ejecutan NPS u otros servidores RADIUS. Puede utilizar estas directrices de planeación para simplificar la implementación de RADIUS.
+Cuando se implementa el servidor de directivas de redes (NPS) como un \( proxy RADIUS servicio de autenticación remota telefónica de usuario \) , NPS recibe solicitudes de conexión de clientes RADIUS, como servidores de acceso a la red u otros proxies RADIUS y, a continuación, reenvía estas solicitudes de conexión a servidores que ejecutan NPS u otros servidores RADIUS. Puede utilizar estas directrices de planeación para simplificar la implementación de RADIUS.
 
 Estas directrices de planeación no incluyen las circunstancias en las que desea implementar NPS como un servidor RADIUS. Cuando se implementa NPS como un servidor RADIUS, NPS realiza la autenticación, la autorización y la administración de cuentas para las solicitudes de conexión para el dominio local y para los dominios que confían en el dominio local.
 
@@ -39,7 +37,7 @@ Antes de implementar NPS como un proxy RADIUS en la red, use las siguientes dire
 
 ## <a name="plan-nps-configuration"></a>Planear la configuración de NPS
 
-Cuando se usa NPS como un proxy RADIUS, NPS reenvía las solicitudes de conexión a un NPS u otros servidores RADIUS para su procesamiento. Por este motivo, la pertenencia al dominio del proxy NPS es irrelevante. No es necesario registrar el proxy en Active Directory Domain Services \(AD DS\) porque no necesita acceso a las propiedades de acceso telefónico de las cuentas de usuario. Además, no es necesario configurar directivas de red en un proxy NPS porque el proxy no realiza la autorización para las solicitudes de conexión. El proxy NPS puede ser un miembro de dominio o puede ser un servidor independiente sin pertenencia a dominio.
+Cuando se usa NPS como un proxy RADIUS, NPS reenvía las solicitudes de conexión a un NPS u otros servidores RADIUS para su procesamiento. Por este motivo, la pertenencia al dominio del proxy NPS es irrelevante. No es necesario registrar el proxy en Active Directory Domain Services \( AD DS porque no \) necesita tener acceso a las propiedades de acceso telefónico de las cuentas de usuario. Además, no es necesario configurar directivas de red en un proxy NPS porque el proxy no realiza la autorización para las solicitudes de conexión. El proxy NPS puede ser un miembro de dominio o puede ser un servidor independiente sin pertenencia a dominio.
 
 NPS debe estar configurado para comunicarse con clientes RADIUS, también denominados servidores de acceso a la red, mediante el protocolo RADIUS. Además, puede configurar los tipos de eventos que NPS registra en el registro de eventos y puede escribir una descripción para el servidor.
 
@@ -59,7 +57,7 @@ Durante la planeación de la configuración del proxy NPS, puede seguir estos pa
 
 ## <a name="plan-radius-clients"></a>Planeación de clientes RADIUS
 
-Los clientes RADIUS son servidores de acceso a la red, como puntos de acceso inalámbricos, redes privadas virtuales \(servidores VPN\), conmutadores compatibles con 802.1 X y servidores de acceso telefónico. Los proxies RADIUS, que reenvían los mensajes de solicitud de conexión a los servidores RADIUS, también son clientes RADIUS. NPS es compatible con todos los servidores de acceso a la red y los proxies RADIUS que cumplen con el protocolo RADIUS, como se describe en RFC 2865, "servicio de usuario de acceso telefónico de autenticación remota \(RADIUS\)," y RFC 2866, "cuentas RADIUS".
+Los clientes RADIUS son servidores de acceso a la red, como puntos de acceso inalámbricos, \( servidores VPN de red privada virtual \) , conmutadores compatibles con 802.1 x y servidores de acceso telefónico. Los proxies RADIUS, que reenvían los mensajes de solicitud de conexión a los servidores RADIUS, también son clientes RADIUS. NPS es compatible con todos los servidores de acceso a la red y los proxies RADIUS que cumplen con el protocolo RADIUS, como se describe en RFC 2865, "RADIUS del servicio de autenticación remota telefónica de usuario \( \) " y RFC 2866, "cuentas RADIUS".
 
 Además, los puntos de acceso inalámbrico y los conmutadores deben ser capaces de la autenticación de 802.1 X. Si desea implementar el protocolo de autenticación extensible (EAP) o el protocolo de autenticación extensible protegido (PEAP), los puntos de acceso y los conmutadores deben admitir el uso de EAP.
 
@@ -103,7 +101,7 @@ Las reglas de manipulación de atributos, que están configuradas en directivas 
 
 Puede configurar NPS para que reenvíe todas las solicitudes de conexión a un grupo de servidores remotos RADIUS sin usar reglas de manipulación de atributos.
 
-Sin embargo, si tiene más de una ubicación a la que desea reenviar las solicitudes de conexión, debe crear una directiva de solicitud de conexión para cada ubicación y, a continuación, configurar la Directiva con el grupo de servidores remotos RADIUS al que desea reenviar los mensajes, así como con las reglas de manipulación de atributos que indican a NPS qué mensajes se deben reenviar.
+Sin embargo, si tiene más de una ubicación a la que desea reenviar las solicitudes de conexión, debe crear una directiva de solicitud de conexión para cada ubicación y, a continuación, configurar la Directiva con el grupo de servidores remotos RADIUS al que desea reenviar los mensajes, así como las reglas de manipulación de atributos que indican a NPS qué mensajes se deben reenviar.
 
 Puede crear reglas para los siguientes atributos.
 

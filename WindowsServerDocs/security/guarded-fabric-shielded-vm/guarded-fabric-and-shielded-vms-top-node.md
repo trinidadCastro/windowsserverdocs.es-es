@@ -1,25 +1,23 @@
 ---
 title: Máquinas virtuales blindadas y tejido protegido
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 5c7ada81-2d97-41d4-87cf-1a7ccf06cd20
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9e76b3081438ae38c6b83b7cdd179d47b1e21a70
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7a73bf1b677d09cc31783b58148c8ca7c581fbca
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856918"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971382"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>Máquinas virtuales blindadas y tejido protegido
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
-Uno de los objetivos más importantes de proporcionar un entorno hospedado es garantizar la seguridad de las máquinas virtuales que se ejecutan en el entorno. Como administrador de empresa de nube privada y proveedor de servicio en la nube, puedes usar un tejido protegido para proporcionar un entorno más seguro para las máquinas virtuales. Un tejido protegido consta de un Servicio de protección de host (HGS), por lo general, un clúster de tres nodos, además de uno o varios hosts protegidos y un conjunto de máquinas virtuales blindadas (VM).
+Uno de los objetivos más importantes de proporcionar un entorno hospedado es garantizar la seguridad de las máquinas virtuales que se ejecutan en el entorno. Como administrador de empresa de nube privada y proveedor de servicio en la nube, puedes usar un tejido protegido para proporcionar un entorno más seguro para las máquinas virtuales. Un tejido protegido consta de un servicio de protección de host (HGS), por lo general, un clúster de tres nodos, además de uno o varios hosts protegidos y un conjunto de máquinas virtuales blindadas (VM).
 
 > [!IMPORTANT]
 > Asegúrese de que ha instalado la actualización acumulativa más reciente antes de implementar máquinas virtuales blindadas en producción.
@@ -43,8 +41,8 @@ Uno de los objetivos más importantes de proporcionar un entorno hospedado es ga
 - [Guía de implementación](guarded-fabric-deploying-hgs-overview.md)
     - [Inicio rápido](guarded-fabric-deployment-overview.md)
     - [Implementar HGS](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)
-    - [Implementar hosts protegidos](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
-        - [Configuración del DNS de tejido para hosts que se convertirán en hosts protegidos](guarded-fabric-configuring-fabric-dns.md)
+    - [Implementación de hosts protegidos](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
+        - [Configuración del tejido DNS para hosts que se convertirán en hosts protegidos](guarded-fabric-configuring-fabric-dns.md)
         - [Implementar un host protegido mediante el modo AD](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
         - [Implementar un host protegido mediante el modo TPM](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
         - [Confirmar que los hosts protegidos pueden atestiguar](guarded-fabric-confirm-hosts-can-attest-successfully.md)

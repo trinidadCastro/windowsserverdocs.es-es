@@ -2,19 +2,17 @@
 title: Conexión de puntos de conexión de contenedor a una red virtual de inquilino
 description: En este tema, le mostraremos cómo conectar los puntos de conexión de contenedor a una red virtual de inquilino existente creada mediante SDN. Use el controlador de red l2bridge (y, opcionalmente l2tunnel) disponible con el complemento libnetwork de Windows para Docker para crear una red de contenedor en la máquina virtual del inquilino.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 2b8927ec260b4f5a42aa59a25db1b18896ce91ef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fd05441ecc64c05778234dc00fa315bb406dfb40
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854538"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970812"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>Conexión de puntos de conexión de contenedor a una red virtual de inquilino
 
@@ -22,11 +20,11 @@ ms.locfileid: "80854538"
 
 En este tema, le mostraremos cómo conectar los puntos de conexión de contenedor a una red virtual de inquilino existente creada mediante SDN. Use el controlador de red *l2bridge* (y, opcionalmente *l2tunnel*) disponible con el complemento Libnetwork de Windows para Docker para crear una red de contenedor en la máquina virtual del inquilino.
 
-En el tema [controladores de red de contenedor](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies) , hemos explicado que hay varios controladores de red disponibles a través de Docker en Windows. En el caso de SDN, use los controladores *l2bridge* y *l2tunnel* . Para ambos controladores, cada punto de conexión de contenedor está en la misma subred virtual que la máquina virtual del host de contenedor (inquilino). 
+En el tema [controladores de red de contenedor](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies) , hemos explicado que hay varios controladores de red disponibles a través de Docker en Windows. En el caso de SDN, use los controladores *l2bridge* y *l2tunnel* . Para ambos controladores, cada punto de conexión de contenedor está en la misma subred virtual que la máquina virtual del host de contenedor (inquilino).
 
-El servicio de red de host (SNP), a través del complemento de nube privada, asigna dinámicamente las direcciones IP de los puntos de conexión del contenedor. Los puntos de conexión del contenedor tienen direcciones IP únicas pero comparten la misma dirección MAC de la máquina virtual del host de contenedor (inquilino) debido a la traducción de direcciones de nivel 2. 
+El servicio de red de host (SNP), a través del complemento de nube privada, asigna dinámicamente las direcciones IP de los puntos de conexión del contenedor. Los puntos de conexión del contenedor tienen direcciones IP únicas pero comparten la misma dirección MAC de la máquina virtual del host de contenedor (inquilino) debido a la traducción de direcciones de nivel 2.
 
-La Directiva de red (ACL, encapsulación y QoS) para estos puntos de conexión de contenedor se aplican en el host de Hyper-V físico tal como lo recibe el controlador de red y se definen en los sistemas de administración de nivel superior. 
+La Directiva de red (ACL, encapsulación y QoS) para estos puntos de conexión de contenedor se aplican en el host de Hyper-V físico tal como lo recibe el controlador de red y se definen en los sistemas de administración de nivel superior.
 
 La diferencia entre los controladores *l2bridge* y *l2tunnel* son:
 
@@ -48,19 +46,19 @@ La diferencia entre los controladores *l2bridge* y *l2tunnel* son:
 
    ```powershell
    # To install HyperV feature without checks for nested virtualization
-   dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All 
+   dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All
    ```
 
 >[!Note]
->La [Virtualización anidada](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting) y la exposición de las extensiones de virtualización no son necesarias a menos que se usen contenedores de Hyper-V. 
+>La [Virtualización anidada](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting) y la exposición de las extensiones de virtualización no son necesarias a menos que se usen contenedores de Hyper-V.
 
 
 ## <a name="workflow"></a>Flujo de trabajo
 
-[1. agregar varias configuraciones de IP a un recurso de NIC de máquina virtual existente a través de la controladora de red (host de Hyper-V)](#1-add-multiple-ip-configurations)
-[2. Habilite el proxy de red en el host para asignar las direcciones IP de CA para los puntos de conexión de contenedor (host de Hyper-V)](#2-enable-the-network-proxy)
-[3. Instale el complemento de nube privada para asignar direcciones IP de CA a puntos de conexión de contenedor (VM de host de contenedor)](#3-install-the-private-cloud-plug-in)
-[4. Creación de una red de *l2bridge* o *l2tunnel* mediante Docker (máquina virtual de host de contenedor)](#4-create-an-l2bridge-container-network)
+[1. agregar varias configuraciones de IP a un recurso de NIC de máquina virtual existente a través de la controladora de red (host de Hyper-V)](#1-add-multiple-ip-configurations) 
+ [2. Habilite el proxy de red en el host para asignar las direcciones IP de CA para los puntos de conexión de contenedor (host de Hyper-V)](#2-enable-the-network-proxy) 
+ [3. Instale el complemento de nube privada para asignar direcciones IP de CA a puntos de conexión de contenedor (VM de host de contenedor)](#3-install-the-private-cloud-plug-in) 
+ [4. Creación de una red de *l2bridge* o *l2tunnel* mediante Docker (máquina virtual de host de contenedor)](#4-create-an-l2bridge-container-network)
 
 >[!NOTE]
 >No se admiten varias configuraciones de IP en los recursos de NIC de máquina virtual creados mediante System Center Virtual Machine Manager. Se recomienda para estos tipos de implementaciones que crea el recurso de NIC de VM fuera de banda mediante el controlador de red PowerShell.
@@ -89,7 +87,7 @@ foreach ($i in 1..10)
     $props = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfigurationProperties
 
     $resourceid = "IP_192_168_1_1"
-    if ($i -eq 10) 
+    if ($i -eq 10)
     {
         $resourceid += "10"
         $ipstr = "192.168.1.110"
@@ -101,7 +99,7 @@ foreach ($i in 1..10)
     }
 
     $newipconfig.ResourceId = $resourceid
-    $props.PrivateIPAddress = $ipstr    
+    $props.PrivateIPAddress = $ipstr
 
     $props.PrivateIPAllocationMethod = "Static"
     $props.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
@@ -117,9 +115,9 @@ New-NetworkControllerNetworkInterface -ResourceId $vmnic.ResourceId -Properties 
 ```
 
 ### <a name="2-enable-the-network-proxy"></a>2. habilitar el proxy de red
-En este paso, habilitará el proxy de red para asignar varias direcciones IP para la máquina virtual del host de contenedor. 
+En este paso, habilitará el proxy de red para asignar varias direcciones IP para la máquina virtual del host de contenedor.
 
-Para habilitar el proxy de red, ejecute el script [ConfigureMCNP. PS1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1) en el **host de Hyper-V** que hospeda la máquina virtual del host de contenedor (inquilino).
+Para habilitar el proxy de red, ejecute el script de [ConfigureMCNP.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1) en el **host de Hyper-V** que hospeda la máquina virtual del host de contenedor (inquilino).
 
 ```powershell
 PS C:\> ConfigureMCNP.ps1
@@ -128,7 +126,7 @@ PS C:\> ConfigureMCNP.ps1
 ### <a name="3-install-the-private-cloud-plug-in"></a>3. instalar el complemento de nube privada
 En este paso, instalará un complemento para permitir que el SNP se comunique con el proxy de red en el host de Hyper-V.
 
-Para instalar el complemento, ejecute el script [InstallPrivateCloudPlugin. PS1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1) dentro de la **máquina virtual del host de contenedor (inquilino)** .
+Para instalar el complemento, ejecute el script [InstallPrivateCloudPlugin.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1) dentro de la **máquina virtual del host de contenedor (inquilino)**.
 
 
 ```powershell
@@ -136,13 +134,13 @@ PS C:\> InstallPrivateCloudPlugin.ps1
 ```
 
 ### <a name="4-create-an-l2bridge-container-network"></a>4. creación de una red de contenedores de *l2bridge*
-En este paso, usará el comando `docker network create` en la **máquina virtual del host de contenedor (inquilino)** para crear una red l2bridge. 
+En este paso, usará el `docker network create` comando en la **máquina virtual de host de contenedor (inquilino)** para crear una red de l2bridge.
 
 ```powershell
 # Create the container network
 C:\> docker network create -d l2bridge --subnet="192.168.1.0/24" --gateway="192.168.1.1" MyContainerOverlayNetwork
 
-# Attach a container to the MyContainerOverlayNetwork 
+# Attach a container to the MyContainerOverlayNetwork
 C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 ```
 

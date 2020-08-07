@@ -2,18 +2,16 @@
 title: Configure Notification Limits
 description: En este artículo se describe cómo agregar límites de tiempo a varios tipos de notificación.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5b9bda5ffb225cc05df7d45e8b611e0154f9e582
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 969c950d3a925afac400d128ac21ed0923f07ffa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961537"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950659"
 ---
 # <a name="configure-notification-limits"></a>Configure Notification Limits
 
@@ -23,7 +21,7 @@ Para reducir la cantidad de notificaciones que se acumulan cuando se supera un u
 
 -   Correo electrónico
 -   Registro de eventos
--   Comando
+-   Get-Help
 -   Informe
 
 Cada límite especifica un período de tiempo antes de que se genere otra notificación configurada del mismo tipo para un caso idéntico.

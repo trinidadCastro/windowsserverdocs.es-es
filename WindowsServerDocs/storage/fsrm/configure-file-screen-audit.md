@@ -2,18 +2,16 @@
 title: Configure File Screen Audit
 description: En este artículo se describe cómo configurar la auditoría de filtro de archivos para generar el Auditoría de filtrado de archivos informe.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: cf1824e514c34ee89870daa6d15190bffd822a8b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 822c483fc7f5f4518ca976b1f7d719b95730008f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475322"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950694"
 ---
 # <a name="configure-file-screen-audit"></a>Configure File Screen Audit
 
@@ -30,7 +28,7 @@ Con el Administrador de recursos del servidor de archivos, puede registrar la ac
 
 2.  En la pestaña **Auditoría de filtro de archivos** , active la casilla registrar la **actividad de filtrado de archivos en la base de datos de auditoría** .
 
-3.  Haga clic en **OK**. En lo sucesivo, toda la actividad de filtrado de archivos se almacenará en la base de datos de auditoría y se podrá ver ejecutando un informe de auditoría de filtrado de archivos.
+3.  Haga clic en **Aceptar**. En lo sucesivo, toda la actividad de filtrado de archivos se almacenará en la base de datos de auditoría y se podrá ver ejecutando un informe de auditoría de filtrado de archivos.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

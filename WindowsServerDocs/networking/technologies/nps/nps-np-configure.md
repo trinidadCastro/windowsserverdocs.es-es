@@ -2,18 +2,16 @@
 title: Configurar las directivas de red
 description: En este tema se proporciona información general sobre la configuración de directivas de redes para el servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: fe77655a-e2be-4949-92e1-aaaa215d86ea
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 683a2919a88a1ce399c996a6798b3f8d03c298a1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 88c35f983ae998312ad3353245927c943869d7f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315773"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952060"
 ---
 # <a name="configure-network-policies"></a>Configurar las directivas de red
 
@@ -23,7 +21,7 @@ Puede usar este tema para configurar directivas de red en NPS.
 
 ## <a name="add-a-network-policy"></a>Add a Network Policy
 
-Servidor de directivas de redes \(NPS\) usa directivas de red y las propiedades de acceso telefónico de las cuentas de usuario para determinar si una solicitud de conexión está autorizada para conectarse a la red.
+El servidor de \( directivas \) de redes NPS usa directivas de red y las propiedades de acceso telefónico de las cuentas de usuario para determinar si una solicitud de conexión está autorizada para conectarse a la red.
 
 Puede usar este procedimiento para configurar una nueva Directiva de red en la consola de NPS o en la consola de acceso remoto.
 
@@ -37,18 +35,18 @@ Si las propiedades de acceso telefónico de la cuenta de usuario se configuran p
 
 ### <a name="key-settings"></a>Configuración importante
 
-Cuando se usa el Asistente para nueva Directiva de red para crear una directiva de red, el valor que se especifica en el **método de conexión de red** se usa para configurar automáticamente la condición de tipo de **Directiva** : 
+Cuando se usa el Asistente para nueva Directiva de red para crear una directiva de red, el valor que se especifica en el **método de conexión de red** se usa para configurar automáticamente la condición de tipo de **Directiva** :
 
 - Si mantiene el valor predeterminado de sin especificar, NPS evalúa la Directiva de red que cree para todos los tipos de conexión de red que usan cualquier tipo de servidor de acceso a la red (NAS).
 - Si especifica un método de conexión a red, NPS sólo evalúa la directiva de red si la solicitud de conexión se origina en el tipo de servidor de acceso a red que haya especificado.
 
-En la página **permiso de acceso** , debe seleccionar **acceso concedido** si desea que la Directiva permita a los usuarios conectarse a la red. Si desea que la Directiva impida que los usuarios se conecten a la red, seleccione **acceso denegado**. 
+En la página **permiso de acceso** , debe seleccionar **acceso concedido** si desea que la Directiva permita a los usuarios conectarse a la red. Si desea que la Directiva impida que los usuarios se conecten a la red, seleccione **acceso denegado**.
 
-Si desea que el permiso de acceso esté determinado por las propiedades de acceso telefónico de la cuenta de usuario en Active Directory&reg; servicios de dominio \(AD DS\), puede seleccionar la casilla el **acceso se determina mediante las propiedades de marcado del usuario** .
+Si desea que el permiso de acceso esté determinado por las propiedades de acceso telefónico de la cuenta de usuario en Active Directory &reg; AD DS de servicios de dominio \( \) , puede seleccionar la casilla el **acceso está determinado por las propiedades de marcado del usuario** .
 
 La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
-### <a name="to-add-a-network-policy"></a>Para agregar una directiva de red 
+### <a name="to-add-a-network-policy"></a>Para agregar una directiva de red
 
 1. Abra la consola de NPS y, a continuación, haga doble clic en **directivas**.
 
@@ -58,10 +56,10 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 ## <a name="create-network-policies-for-dial-up-or-vpn-with-a-wizard"></a>Crear directivas de red para acceso telefónico o VPN con un asistente
 
-Puede usar este procedimiento para crear las directivas de solicitud de conexión y las directivas de red necesarias para implementar servidores de acceso telefónico o red privada virtual \(servidores VPN\) como Servicio de autenticación remota telefónica de usuario clientes \(RADIUS\) en el servidor RADIUS NPS.
+Puede usar este procedimiento para crear las directivas de solicitud de conexión y las directivas de red necesarias para implementar servidores de acceso telefónico o servidores VPN de red privada virtual \( \) como servicio de autenticación remota telefónica de usuario \( \) clientes RADIUS en el servidor RADIUS NPS.
 
 >[!NOTE]
->Los equipos cliente, como los equipos portátiles y otros equipos que ejecutan sistemas operativos cliente, no son clientes RADIUS. Los clientes RADIUS son servidores de acceso a la red, como los puntos de acceso inalámbrico, los conmutadores de autenticación de 802.1 X, la red privada virtual \(servidores VPN\) y los servidores de acceso telefónico, ya que estos dispositivos usan el protocolo RADIUS para comunicarse con servidores RADIUS como NPSs.
+>Los equipos cliente, como los equipos portátiles y otros equipos que ejecutan sistemas operativos cliente, no son clientes RADIUS. Los clientes RADIUS son servidores de acceso a la red, como los puntos de acceso inalámbrico, los conmutadores de autenticación de 802.1 X, los servidores VPN de red privada virtual \( \) y los servidores de acceso telefónico, ya que estos dispositivos usan el protocolo RADIUS para comunicarse con servidores RADIUS como NPSs.
 
 En este procedimiento se explica cómo abrir el Asistente para nuevas conexiones de acceso telefónico o de red privada virtual en NPS.
 
@@ -78,7 +76,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 ### <a name="to-create-policies-for-dial-up-or-vpn-with-a-wizard"></a>Para crear directivas para acceso telefónico o VPN con un asistente
 
-1. Abra la consola de NPS. Si aún no está seleccionada, haga clic en **NPS \(\)local** . Si desea crear directivas en un NPS remoto, seleccione el servidor.
+1. Abra la consola de NPS. Si aún no está seleccionada, haga clic **en \( NPS \) local**. Si desea crear directivas en un NPS remoto, seleccione el servidor.
 
 2. En **Introducción** y **Configuración estándar**, seleccione **servidor RADIUS para conexiones VPN o de acceso telefónico**. El texto y los vínculos del texto cambian para reflejar la selección.
 
@@ -88,7 +86,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 ## <a name="create-network-policies-for-8021x-wired-or-wireless-with-a-wizard"></a>Creación de directivas de red para 802.1 X cableadas o inalámbricas con un asistente
 
-Puede usar este procedimiento para crear la Directiva de solicitud de conexión y la Directiva de red necesarias para implementar conmutadores de autenticación de 802.1 X o puntos de acceso inalámbricos de 802.1 X como clientes de Servicio de autenticación remota telefónica de usuario (RADIUS) en el NPS. Servidor RADIUS.
+Puede usar este procedimiento para crear la Directiva de solicitud de conexión y la Directiva de red necesarias para implementar conmutadores de autenticación 802.1 X o puntos de acceso inalámbricos 802.1 X como clientes de Servicio de autenticación remota telefónica de usuario (RADIUS) en el servidor RADIUS NPS.
 
 En este procedimiento se explica cómo iniciar el nuevo Asistente para conexiones inalámbricas y cableadas seguras IEEE 802.1 X en NPS.
 
@@ -105,9 +103,9 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 ### <a name="to-create-policies-for-8021x-wired-or-wireless-with-a-wizard"></a>Para crear directivas para conexiones cableadas o inalámbricas 802.1X con un asistente
 
-1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS. 
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
 
-2. Si aún no está seleccionada, haga clic en **NPS \(\)local** . Si desea crear directivas en un NPS remoto, seleccione el servidor.
+2. Si aún no está seleccionada, haga clic **en \( NPS \) local**. Si desea crear directivas en un NPS remoto, seleccione el servidor.
 
 3. En **Introducción** y **Configuración estándar**, seleccione **servidor RADIUS para conexiones cableadas o inalámbricas 802.1 x**. El texto y los vínculos del texto cambian para reflejar la selección.
 
@@ -117,7 +115,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 ## <a name="configure-nps-to-ignore-user-account-dial-in-properties"></a>Configuración de NPS para omitir las propiedades de acceso telefónico de cuentas de usuario
 
-Utilice este procedimiento para configurar una directiva de red de NPS para omitir las propiedades de acceso telefónico de las cuentas de usuario en Active Directory durante el proceso de autorización. Las cuentas de usuario de Active Directory usuarios y equipos tienen propiedades de marcado que NPS evalúa durante el proceso de autorización, a menos que la propiedad **permiso de acceso a la red** de la cuenta de usuario esté configurada para **controlar el acceso a través de la Directiva de red NPS**. 
+Utilice este procedimiento para configurar una directiva de red de NPS para omitir las propiedades de acceso telefónico de las cuentas de usuario en Active Directory durante el proceso de autorización. Las cuentas de usuario de Active Directory usuarios y equipos tienen propiedades de marcado que NPS evalúa durante el proceso de autorización, a menos que la propiedad **permiso de acceso a la red** de la cuenta de usuario esté configurada para **controlar el acceso a través de la Directiva de red NPS**.
 
 Hay dos circunstancias en las que puede que desee configurar NPS para que omita las propiedades de acceso telefónico de las cuentas de usuario en Active Directory:
 
@@ -141,9 +139,9 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 ## <a name="configure-nps-for-vlans"></a>Configuración de NPS para VLAN
 
-Mediante el uso de servidores de acceso a la red compatibles con VLAN y NPS en Windows Server 2016, puede proporcionar a los grupos de usuarios acceso solo a los recursos de red adecuados para sus permisos de seguridad. Por ejemplo, puede proporcionar a los visitantes acceso inalámbrico a Internet sin permitirles el acceso a la red de su organización. 
+Mediante el uso de servidores de acceso a la red compatibles con VLAN y NPS en Windows Server 2016, puede proporcionar a los grupos de usuarios acceso solo a los recursos de red adecuados para sus permisos de seguridad. Por ejemplo, puede proporcionar a los visitantes acceso inalámbrico a Internet sin permitirles el acceso a la red de su organización.
 
-Además, las VLAN permiten agrupar lógicamente los recursos de red que existen en diferentes ubicaciones físicas o en distintas subredes físicas. Por ejemplo, los miembros del Departamento de ventas y sus recursos de red, como equipos cliente, servidores e impresoras, pueden encontrarse en distintos edificios de la organización, pero puede colocar todos estos recursos en una VLAN que use la misma dirección IP. intervalo de direcciones. A continuación, la VLAN funciona, desde la perspectiva del usuario final, como una sola subred.
+Además, las VLAN permiten agrupar lógicamente los recursos de red que existen en diferentes ubicaciones físicas o en distintas subredes físicas. Por ejemplo, los miembros del Departamento de ventas y sus recursos de red, como equipos cliente, servidores e impresoras, pueden encontrarse en varios edificios de la organización, pero puede colocar todos estos recursos en una VLAN que use el mismo intervalo de direcciones IP. A continuación, la VLAN funciona, desde la perspectiva del usuario final, como una sola subred.
 
 También puede usar VLAN cuando desee separar una red entre diferentes grupos de usuarios. Después de determinar cómo desea definir los grupos, puede crear grupos de seguridad en el complemento usuarios y equipos de Active Directory y, a continuación, agregar miembros a los grupos.
 
@@ -151,7 +149,7 @@ También puede usar VLAN cuando desee separar una red entre diferentes grupos de
 
 Puede usar este procedimiento para configurar una directiva de red que asigne usuarios a una VLAN. Al usar hardware de red compatible con VLAN, como enrutadores, conmutadores y controladores de acceso, puede configurar la Directiva de red para indicar a los servidores de acceso que coloquen miembros de grupos de Active Directory específicos en VLAN específicas. Esta capacidad de agrupar los recursos de red de forma lógica con VLAN proporciona flexibilidad a la hora de diseñar e implementar soluciones de red.
 
-Al configurar las opciones de una directiva de red de NPS para su uso con VLAN, debe configurar los atributos **Tunnel-Medium-Type**, **Tunnel-Pvt-Group-ID**, **Tunnel-Type**y **Tunnel-Tag**. 
+Al configurar las opciones de una directiva de red de NPS para su uso con VLAN, debe configurar los atributos **Tunnel-Medium-Type**, **Tunnel-Pvt-Group-ID**, **Tunnel-Type**y **Tunnel-Tag**.
 
 Este procedimiento se proporciona como una directriz; la configuración de red puede requerir una configuración diferente a la que se describe a continuación.
 
@@ -171,22 +169,22 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 6. En **Agregar atributo RADIUS estándar**, en atributos, desplácese hacia abajo hasta y agregue los siguientes atributos:
 
-    - **Tunnel: tipo medio**. Seleccione un valor adecuado para las selecciones anteriores que ha realizado para la Directiva. Por ejemplo, si la Directiva de red que está configurando es una directiva de redes inalámbricas, seleccione **valor: 802 (incluye 802 todo el formato canónico de Ethernet Plus)** .
+    - **Tunnel: tipo medio**. Seleccione un valor adecuado para las selecciones anteriores que ha realizado para la Directiva. Por ejemplo, si la Directiva de red que está configurando es una directiva de redes inalámbricas, seleccione **valor: 802 (incluye 802 todo el formato canónico de Ethernet Plus)**.
 
-    - **Tunnel-Pvt-Group-ID**. Escriba el entero que representa el número de VLAN al que se asignarán los miembros del grupo. 
+    - **Tunnel-Pvt-Group-ID**. Escriba el entero que representa el número de VLAN al que se asignarán los miembros del grupo.
 
-    - **Tipo de túnel**. Seleccione **redes virtuales (VLAN)** .
+    - **Tipo de túnel**. Seleccione **redes virtuales (VLAN)**.
 
 
-7. En **Agregar atributo RADIUS estándar**, haga clic en **cerrar**. 
+7. En **Agregar atributo RADIUS estándar**, haga clic en **cerrar**.
 
 8. Si el servidor de acceso a la red (NAS) requiere el uso del atributo de la **etiqueta de túnel** , siga estos pasos para agregar el atributo de **etiqueta de túnel** a la Directiva de red. Si la documentación de NAS no menciona este atributo, no lo agregue a la Directiva. Si es necesario, agregue los atributos de la siguiente manera:
 
-    - En **propiedades**de la Directiva, en **configuración**, en **atributos RADIUS**, haga clic en **específico del proveedor**. 
+    - En **propiedades**de la Directiva, en **configuración**, en **atributos RADIUS**, haga clic en **específico del proveedor**.
 
     - En el panel de detalles, haga clic en **Agregar**. Se abre el cuadro de diálogo **Agregar atributo específico del proveedor** .
 
-    - En **atributos**, desplácese hacia abajo hasta y seleccione **tuneliza-etiqueta**y, a continuación, haga clic en **Agregar**. Se abre el cuadro de diálogo **información de atributos** . 
+    - En **atributos**, desplácese hacia abajo hasta y seleccione **tuneliza-etiqueta**y, a continuación, haga clic en **Agregar**. Se abre el cuadro de diálogo **información de atributos** .
 
     - En **valor de atributo**, escriba el valor que obtuvo de la documentación del hardware.
 
@@ -194,7 +192,7 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 En algunos casos, los enrutadores o los firewalls quitan paquetes porque están configurados para descartar paquetes que requieren fragmentación.
 
-Cuando se implementa NPS con directivas de red que usan el protocolo de autenticación extensible \(EAP\) con seguridad de la capa de transporte \(TLS\), o EAP-TLS, como método de autenticación, la unidad de transmisión máxima predeterminada \(MTU\) que usa NPS para las cargas de EAP es 1500 bytes. 
+Cuando se implementa NPS con directivas de red que usan el protocolo de autenticación extensible \( EAP \) con TLS de seguridad de la capa de transporte \( \) , o EAP-TLS, como método de autenticación, la \( MTU de unidad de transmisión máxima predeterminada \) que NPS usa para las cargas de EAP es de 1500 bytes.
 
 Este tamaño máximo de la carga de EAP puede crear mensajes RADIUS que requieran la fragmentación de un enrutador o firewall entre el NPS y un cliente RADIUS. En este caso, un enrutador o firewall colocado entre el cliente RADIUS y el NPS podría descartar de forma silenciosa algunos fragmentos, lo que provoca un error de autenticación y la incapacidad del cliente de acceso para conectarse a la red.
 
@@ -205,7 +203,7 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 ### <a name="to-configure-the-framed-mtu-attribute"></a>Para configurar el atributo Framed-MTU
 
 1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
- 
+
 2. Haga doble clic en **directivas**, haga clic en **directivas de red**y, a continuación, en el panel de detalles, haga doble clic en la Directiva que desea configurar.
 
 3. En el cuadro de diálogo **propiedades** de la Directiva, haga clic en la pestaña **configuración** .

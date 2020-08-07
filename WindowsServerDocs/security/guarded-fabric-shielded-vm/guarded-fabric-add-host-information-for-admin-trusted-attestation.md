@@ -1,19 +1,17 @@
 ---
 title: Agregar información de host para la atestación de confianza de administrador
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 87089ebc-b953-4aa3-96b5-966cf91acb02
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 0c05b4ecc3e245a6127584fbab1bac727a9306c7
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: abc01dbb691843d199169bd654afaa5cf06bbb87
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203426"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971442"
 ---
 # <a name="authorize-hyper-v-hosts-using-admin-trusted-attestation"></a>Autorizar a los hosts de Hyper-V mediante la atestación de confianza de administrador
 

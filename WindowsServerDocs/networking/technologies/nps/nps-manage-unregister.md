@@ -1,25 +1,23 @@
 ---
-title: Anular el registro de NPS de un dominio de Active Directory
+title: Anular el registro de NPS de un dominio de Active Directory
 description: Puede usar este tema para registrar un servidor que ejecuta servidor de directivas de redes en Windows Server 2016 en el dominio predeterminado de NPS o en otro dominio.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 68a94616-3c29-45bd-bd33-e4c578f119e1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 366e3e7eef6ac1e8682dd3064e0d133f21d1a8da
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 71bb0328e7265ad6981cdb3089e80572315b0fdd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315893"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952111"
 ---
-# <a name="unregister-an-nps-from-an-active-directory-domain"></a>Anular el registro de NPS de un dominio de Active Directory
+# <a name="unregister-an-nps-from-an-active-directory-domain"></a>Anular el registro de NPS de un dominio de Active Directory
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En el proceso de administración de la implementación de NPS, puede que le resulte útil trasladar un NPS a otro dominio, reemplazar un NPS o retirar un NPS. 
+En el proceso de administración de la implementación de NPS, puede que le resulte útil trasladar un NPS a otro dominio, reemplazar un NPS o retirar un NPS.
 
 Al trasladar o retirar un NPS, puede anular el registro del NPS en los dominios de Active Directory en los que el NPS tiene permiso para leer las propiedades de las cuentas de usuario en Active Directory.
 

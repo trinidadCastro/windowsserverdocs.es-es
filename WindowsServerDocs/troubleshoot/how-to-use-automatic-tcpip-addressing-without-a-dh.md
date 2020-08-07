@@ -1,20 +1,18 @@
 ---
 title: Uso del direccionamiento automático de TCP/IP sin un servidor DHCP
 description: Presente cómo usar el direccionamiento automático de TCP/IP sin un servidor DHCP.
-ms.prod: windows-server
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: robsmi
-ms.openlocfilehash: fcd85c29975709053009ec4a2684df88b4bafd69
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 46e7ae4a011c9a8d738dccd4fe103b49fee44c5b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409806"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935563"
 ---
 # <a name="how-to-use-automatic-tcpip-addressing-without-a-dhcp-server"></a>Uso del direccionamiento automático de TCP/IP sin un servidor DHCP
 

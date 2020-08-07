@@ -1,17 +1,15 @@
 ---
-title: Quitar nodo de la pertenencia al clúster de conmutación por error activa
+title: Quitar el nodo de la pertenencia al clúster de conmutación por error activa
 description: En este artículo se aborda el problema de buscar nodos quitados de la pertenencia al clúster de conmutación por error activa.
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 6613bf09c3588637cfe03cb7647e4fed358b760c
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: da46b39f853476676a06bcaaa20338dd1a178586
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150333"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935575"
 ---
 # <a name="nodes-being-removed-from-failover-cluster-membership-on-vmware-esx"></a>Nodos que se quitan de la pertenencia al clúster de conmutación por error en VMWare ESX
 
@@ -23,7 +21,7 @@ Cuando se produce el problema, verá en el registro de eventos del sistema del V
 
 ![Evento 1135](media/nodes-failover-cluster-vmware/1135.png)
 
-## <a name="resolution"></a>Solución
+## <a name="resolution"></a>Resolución
 
 Un problema específico se debe a que los adaptadores de VMXNET3 quitan los paquetes de red entrantes porque el búfer de entrada es demasiado bajo para administrar grandes cantidades de tráfico. Podemos averiguar fácilmente si se trata de un problema mediante el monitor de rendimiento para ver el contador "red Interface\Packets recibida descartada".
 

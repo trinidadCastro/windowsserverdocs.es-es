@@ -6,14 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: bb31a7e87b35ec52f176d50d2c92e717a3e4bca0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: afe68493303ace2a9dd415964c41f8a635e3618b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519864"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949999"
 ---
 # <a name="scenario-native-app-calling-web-api"></a>Escenario: aplicación nativa que llama a la API Web
 >Se aplica a: AD FS 2019 y versiones posteriores
@@ -141,5 +139,5 @@ En esta sección se muestra cómo probar el ejemplo configurado anteriormente.
 
        ![Prueba de la aplicación](media/adfs-msal-native-app-web-api/native19.png)
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 [Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)

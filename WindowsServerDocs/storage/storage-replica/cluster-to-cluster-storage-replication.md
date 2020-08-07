@@ -1,20 +1,18 @@
 ---
 title: Replicación de almacenamiento de clúster a clúster
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: Cómo usar réplica de almacenamiento para replicar volúmenes en un clúster en otro clúster que ejecuta Windows Server.
-ms.openlocfilehash: d99a7ebf933427e8e065f72261816610e62a433d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5de25151f0b49ac9cbf9d6be793c2ba0c6efb165
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961247"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950479"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>Replicación de almacenamiento de clúster a clúster
 
@@ -247,7 +245,7 @@ Ahora va a configurar la replicación de clúster a clúster mediante Windows Po
        ```PowerShell
        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20
        ```
-   2.  En el servidor de destino, ejecute el siguiente comando para ver los eventos de Réplica de almacenamiento que muestran la creación de la asociación. Este evento indica el número de bytes copiados y el tiempo necesario. Ejemplo:
+   2.  En el servidor de destino, ejecute el siguiente comando para ver los eventos de Réplica de almacenamiento que muestran la creación de la asociación. Este evento indica el número de bytes copiados y el tiempo insumido. Ejemplo:
 
        ```powershell
        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | Format-List
@@ -287,7 +285,7 @@ Ahora va a configurar la replicación de clúster a clúster mediante Windows Po
        }
        ```
 
-6. En el servidor de destino del clúster de destino, ejecute el siguiente comando y examine los eventos 5009, 1237, 5001, 5015, 5005 y 2200 para entender el progreso del procesamiento. No debería haber ninguna advertencia de errores en esta secuencia. Habrá muchos eventos 1237; estos indican el progreso.
+6. En el servidor de destino del clúster de destino, ejecute el siguiente comando y examine los eventos 5009, 1237, 5001, 5015, 5005 y 2200 para entender el progreso del procesamiento. No debería haber ninguna advertencia de error en esta secuencia. Habrá muchos eventos 1237; estos indican el progreso.
 
    ```PowerShell
    Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL

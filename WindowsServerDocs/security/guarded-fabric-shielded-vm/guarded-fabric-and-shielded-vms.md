@@ -1,18 +1,16 @@
 ---
 title: Información general sobre máquinas virtuales blindadas y tejido protegido
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: e331732bd958e3e403727709994cf9e2d4aef8f1
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: c508df5b23481a53ccc112d6c81b11fc9dcea790
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769313"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971392"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Información general sobre máquinas virtuales blindadas y tejido protegido
 
@@ -106,8 +104,8 @@ En la tabla siguiente se resumen las diferencias entre las máquinas virtuales b
 |Cifrar el estado de la máquina virtual y tráfico de migración en vivo | Sí, necesario pero configurable |  Sí, necesario y exigido  |
 |Componentes de integración | Configurable por el administrador de tejido      | Algunos componentes de integración bloqueados (por ejemplo, intercambio de datos, PowerShell Direct) |
 |Conexión a máquina virtual (consola), dispositivos HID (por ejemplo, teclado, mouse) | Activado, no se puede deshabilitar | Habilitada en hosts a partir de la versión 1803 de Windows Server; Deshabilitado en hosts anteriores |
-|Puertos COM/serie   | Compatible.                             | Deshabilitado (no se puede habilitar) |
-|Asociar un depurador (al proceso de la máquina virtual)<sup>1</sup>| Compatible.          | Deshabilitado (no se puede habilitar) |
+|Puertos COM/serie   | Compatible                             | Deshabilitado (no se puede habilitar) |
+|Asociar un depurador (al proceso de la máquina virtual)<sup>1</sup>| Compatible          | Deshabilitado (no se puede habilitar) |
 
 <sup>1</sup> los depuradores tradicionales que se asocian directamente a un proceso, como WinDbg.exe, están bloqueados para las máquinas virtuales blindadas porque el proceso de trabajo de la máquina virtual (VMWP.exe) es una luz de proceso protegido (PPL).
 Las técnicas de depuración alternativas, como las utilizadas por LiveKd.exe, no se bloquean.

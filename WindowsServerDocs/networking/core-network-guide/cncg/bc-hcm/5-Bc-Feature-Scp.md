@@ -2,24 +2,22 @@
 title: Instalar la característica BranchCache y configurar el servidor de caché hospedada mediante el punto de conexión de servicio
 description: En esta guía se proporcionan instrucciones sobre cómo implementar BranchCache en modo caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 9adf420b-5a58-4e59-9906-71bd58f757fd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 987b46b1748d5a889aa69823d3492a707948a100
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7aca1cc28086761b18e559210aeaf21e87612ed3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318472"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937470"
 ---
 # <a name="install-the-branchcache-feature-and-configure-the-hosted-cache-server-by-service-connection-point"></a>Instalar la característica BranchCache y configurar el servidor de caché hospedada mediante el punto de conexión de servicio
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Puede usar este procedimiento para instalar la característica BranchCache en el servidor de caché hospedada, HCS1, y configurar el servidor para que registre un punto de conexión de servicio \(SCP\) en Active Directory Domain Services \(AD DS\).
+Puede usar este procedimiento para instalar la característica BranchCache en el servidor de caché hospedada, HCS1, y configurar el servidor para que registre un punto \( de conexión de servicio SCP \) en Active Directory Domain Services \( AD DS \) .
 
 Al registrar servidores de caché hospedada con un SCP en AD DS, el SCP permite que los equipos cliente que están configurados correctamente detecten automáticamente los servidores de caché hospedada mediante la consulta de AD DS para el SCP. Más adelante en esta guía se proporcionan instrucciones sobre cómo configurar los equipos cliente para realizar esta acción.
 
@@ -28,28 +26,28 @@ Al registrar servidores de caché hospedada con un SCP en AD DS, el SCP permite 
 
 Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradores.
 
-## <a name="to-install-the-branchcache-feature-and-configure-the-hosted-cache-server"></a>Para instalar la característica BranchCache y configurar el servidor de caché hospedada  
+## <a name="to-install-the-branchcache-feature-and-configure-the-hosted-cache-server"></a>Para instalar la característica BranchCache y configurar el servidor de caché hospedada
 
 1. En el equipo servidor, ejecute Windows PowerShell como administrador. Escriba el siguiente comando y presione ENTRAR.
 
-    ``` 
+    ```
     Install-WindowsFeature BranchCache
     ```
 
 2.  Para configurar el equipo como un servidor de caché hospedada después de instalar la característica BranchCache y para registrar un punto de conexión de servicio en AD DS, escriba el siguiente comando en Windows PowerShell y, a continuación, presione Entrar.
 
-    ```  
+    ```
     Enable-BCHostedServer -RegisterSCP
-    ```  
+    ```
 
 3. Para comprobar la configuración del servidor de caché hospedada, escriba el siguiente comando y presione Entrar.
 
-    ```  
-    Get-BCStatus  
-    ```  
-  
-    Los resultados del comando muestran el estado de todos los aspectos de la instalación de BranchCache. A continuación se muestran algunos de los valores de BranchCache y el valor correcto para cada elemento:  
-  
+    ```
+    Get-BCStatus
+    ```
+
+    Los resultados del comando muestran el estado de todos los aspectos de la instalación de BranchCache. A continuación se muestran algunos de los valores de BranchCache y el valor correcto para cada elemento:
+
     -   BranchCacheIsEnabled: true
 
     -   HostedCacheServerIsEnabled: true
@@ -57,7 +55,7 @@ Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradore
     -   HostedCacheScpRegistrationEnabled: true
 
 4. Para preparar el paso de copia de los paquetes de datos de los servidores de contenido en los servidores de caché hospedada, identifique un recurso compartido existente en el servidor de caché hospedada o cree una nueva carpeta y comparta la carpeta para que sea accesible desde los servidores de contenido. Después de crear los paquetes de datos en los servidores de contenido, copiará los paquetes de datos a esta carpeta compartida en el servidor de caché hospedada.
-  
+
 5. Si va a implementar más de un servidor de caché hospedada, repita este procedimiento en cada servidor.
 
-Para continuar con esta guía, vea el apartado sobre cómo cambiar [el tamaño &#40;de&#41;la caché hospedada opcional](6-Bc-Move-Resize-Cache.md).
+Para continuar con esta guía, vea [movimiento y cambio de tamaño de la caché hospedada &#40;&#41;opcional ](6-Bc-Move-Resize-Cache.md).

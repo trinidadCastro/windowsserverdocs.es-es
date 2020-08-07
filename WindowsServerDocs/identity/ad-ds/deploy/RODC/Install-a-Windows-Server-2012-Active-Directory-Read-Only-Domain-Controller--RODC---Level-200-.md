@@ -7,14 +7,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 5b3dbe22e5db03d76916218317d5e9ffe0640042
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a46d18a0d2f589cb0ae7ee5915af0c84b0c8982f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519522"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950409"
 ---
 # <a name="install-a-windows-server-2012-active-directory-read-only-domain-controller-rodc-level-200"></a>Instalar un controlador de dominio sólo servidor 2012 Active Directory lectura (RODC) (nivel 200) de Windows
 
@@ -405,7 +403,7 @@ Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos *
 > [!WARNING]
 > No se recomienda invalidar el reinicio. El controlador de dominio debe reiniciarse para funcionar correctamente.
 
-### <a name="results"></a>Results
+### <a name="results"></a>Resultados
 ![Instalar RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_ForestSignOff.png)
 
 La página **Resultados** indica si la promoción se realizó correctamente o si se produjo algún error, junto con toda la información administrativa importante que corresponda. El controlador de dominio se reiniciará automáticamente 10 segundos después.
@@ -685,7 +683,7 @@ Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos *
 > [!WARNING]
 > Se recomienda no invalidar el reinicio. El controlador de dominio debe reiniciarse para funcionar correctamente. Si cierras sesión en el controlador de dominio, no puedes volver a iniciar sesión interactivamente hasta que lo reinicies.
 
-### <a name="results"></a>Results
+### <a name="results"></a>Resultados
 ![Instalar RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_RODCSignoff.png)
 
 La página **Resultados** indica si la promoción se realizó correctamente o si se produjo algún error, junto con toda la información administrativa importante que corresponda. El controlador de dominio se reiniciará automáticamente 10 segundos después.

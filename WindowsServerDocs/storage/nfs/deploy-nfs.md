@@ -1,23 +1,21 @@
 ---
 title: Implementar el sistema de archivos de red
 description: Describe cómo implementar Network File System.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 22c8725c227719ee143baa8f4abd3a5cc5dcf883
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 98213b594ee3ae41196bbbbef4da34dbf280e6ad
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393968"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935774"
 ---
 # <a name="deploy-network-file-system"></a>Implementar el sistema de archivos de red
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Network File System (NFS) proporciona una solución de uso compartido de archivos que permite transferir archivos entre equipos que ejecutan sistemas operativos Windows Server y UNIX mediante el protocolo NFS. En este tema se describen los pasos que debe seguir para implementar NFS.
 
@@ -27,7 +25,7 @@ A continuación se explican los cambios de NFS en Windows Server 2012:
 
 - **Compatibilidad con la versión 4,1 de NFS**. Esta versión del protocolo incluye las siguientes mejoras.
   - Desplazarse por los firewalls es más fácil, mejorando la accesibilidad.
-  - Admite el protocolo\_GSS de RPCSEC, lo que proporciona una mayor seguridad y permite que los clientes y servidores negocien la seguridad.
+  - Admite el \_ Protocolo GSS de RPCSEC, lo que proporciona una mayor seguridad y permite que los clientes y servidores negocien la seguridad.
   - Admite la semántica de archivos de UNIX y Windows.
   - Aprovecha las implementaciones de servidor de archivos en clúster.
   - Admite procedimientos compuestos compuestas para WAN.
@@ -49,7 +47,7 @@ Este escenario se aplica a organizaciones con entornos heterogéneos que constan
 Para este escenario, debe tener una configuración de origen de asignación de identidad válida. Windows Server 2012 admite los siguientes almacenes de asignación de identidades:
 
 - Archivo de asignación
-- Servicios de dominio de Active Directory (AD DS)
+- Active Directory Domain Services (AD DS)
 - Almacenes LDAP compatibles con RFC 2307, como Active Directory Lightweight Directory Services (AD LDS)
 - Servidor Asignación de nombres de usuario (UNM)
 
@@ -69,7 +67,7 @@ Servidor para NFS se puede instalar en cualquier versión de Windows Server 2012
 
 Debe implementar los siguientes equipos y conectarlos en una red de área local (LAN):
 
-- Uno o más equipos que ejecutan Windows Server 2012 en los que va a instalar los dos servicios principales de los componentes de NFS: Servidor para NFS y cliente para NFS. Puede instalar estos componentes en el mismo equipo o en equipos diferentes.
+- Uno o más equipos que ejecutan Windows Server 2012 en los que va a instalar los dos servicios principales de los componentes de NFS: servidor para NFS y cliente para NFS. Puede instalar estos componentes en el mismo equipo o en equipos diferentes.
 - Uno o varios equipos basados en UNIX que ejecutan el software de cliente NFS y de servidor NFS. El equipo basado en UNIX que ejecuta el servidor NFS hospeda un recurso compartido de archivos NFS, al que se tiene acceso desde un equipo que ejecuta Windows Server 2012 como cliente con cliente para NFS. Puede instalar el software de cliente y servidor NFS en el mismo equipo basado en UNIX o en diferentes equipos basados en UNIX, según desee.
 - Un controlador de dominio que se ejecuta en el nivel funcional de Windows Server 2008 R2. El controlador de dominio proporciona la información de autenticación del usuario y la asignación para el entorno de Windows.
 - Cuando un controlador de dominio no está implementado, puede utilizar un servidor NIS (NIS) para proporcionar información de autenticación del usuario para el entorno de UNIX. O bien, si lo prefiere, puede usar archivos de grupos y contraseñas que estén almacenados en el equipo que ejecuta el servicio de Asignación de nombres de usuario.
@@ -95,13 +93,13 @@ Import-Module NFS
 
 Al usar los protocolos NFS versión 4,1 y versión 3,0 de NFS, tiene las siguientes opciones de autenticación y seguridad.
 
-- RPCSEC\_GSS
+- RPCSEC \_ GSS
   - **Krb5**. Usa el protocolo Kerberos versión 5 para autenticar a los usuarios antes de conceder acceso al recurso compartido de archivos.
   - **Krb5i**. Usa el protocolo Kerberos versión 5 para autenticarse con comprobación de integridad (sumas de comprobación), que comprueba que los datos no se han modificado.
-  - **Krb5p** Usa el protocolo Kerberos versión 5, que autentica el tráfico NFS con cifrado de privacidad.
-- AUTENTICACIÓN\_SYS
+  - **Krb5p** Usa el protocolo Kerberos versión 5, que autentica el tráfico NFS con cifrado para privacidad.
+- AUTENTICACIÓN \_ Sys
 
-También puede elegir no usar la autorización del servidor (autenticación\_sys), lo que le ofrece la opción de habilitar el acceso de usuario sin asignar. Al usar el acceso de usuario sin asignar, puede especificar para permitir el acceso de usuario sin asignar por UID/GID, que es el valor predeterminado, o permitir el acceso anónimo.
+También puede elegir no usar la autorización del servidor (autenticación \_ sys), lo que le ofrece la opción de habilitar el acceso de usuario sin asignar. Al usar el acceso de usuario sin asignar, puede especificar para permitir el acceso de usuario sin asignar por UID/GID, que es el valor predeterminado, o permitir el acceso anónimo.
 
 Las instrucciones para configurar la autenticación de NFS en se describen en la sección siguiente.
 
@@ -112,7 +110,7 @@ Puede crear un recurso compartido de archivos NFS mediante Administrador del ser
 ### <a name="create-an-nfs-file-share-with-server-manager"></a>Cree un recurso compartido de archivos NFS con Administrador del servidor
 
 1. Inicie sesión en el servidor como miembro del grupo Administradores local.
-2. El Administrador del servidor se iniciará de manera automática. Si no se inicia automáticamente, seleccione **iniciar**, escriba **ServerManager. exe**y, a continuación, seleccione **Administrador del servidor**.
+2. El Administrador del servidor se iniciará de manera automática. Si no se inicia automáticamente, seleccione **Inicio**, escriba **servermanager.exe**y, a continuación, seleccione **Administrador del servidor**.
 3. A la izquierda, seleccione **servicios de archivos y almacenamiento**y, a continuación, seleccione **recursos compartidos**.
 4. Seleccione **esta acción para crear un recurso compartido de archivos, inicie el Asistente para nuevo recurso compartido**.
 5. En la página **Seleccionar perfil** , seleccione **recurso compartido de NFS – rápido** o **recurso compartido de NFS-avanzado**y, a continuación, seleccione **siguiente**.
@@ -125,7 +123,7 @@ Puede crear un recurso compartido de archivos NFS mediante Administrador del ser
 
 ### <a name="windows-powershell-equivalent-commands"></a>Comandos equivalentes de Windows PowerShell
 
-El siguiente cmdlet de Windows PowerShell también puede crear un recurso compartido de archivos `nfs1` NFS (donde es el nombre del `C:\\shares\\nfsfolder` recurso compartido y es la ruta de acceso del archivo):
+El siguiente cmdlet de Windows PowerShell también puede crear un recurso compartido de archivos NFS (donde `nfs1` es el nombre del recurso compartido y `C:\\shares\\nfsfolder` es la ruta de acceso del archivo):
 
 ```PowerShell
 New-NfsShare -name nfs1 -Path C:\shares\nfsfolder

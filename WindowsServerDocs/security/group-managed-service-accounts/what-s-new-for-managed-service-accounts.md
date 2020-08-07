@@ -1,20 +1,18 @@
 ---
 title: What's New for Managed Service Accounts
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-gmsa
 ms.topic: article
 ms.assetid: 2f2a8b6b-c152-4c40-b712-bfabff0e408b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 0932493c157bc9de39d3b3c819fa03b9a760a059
-ms.sourcegitcommit: 102a929be3523dbd6523079f0a5738844cef81b4
+ms.openlocfilehash: 32cc7a79f8b6efeaf7451444273b7e4285eeb544
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86384655"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971432"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>Novedades de las cuentas de servicio administradas de&#39;s
 
@@ -49,7 +47,7 @@ En Windows Server 2012, los cmdlets de Windows PowerShell predeterminados para a
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Información general sobre las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
+-   [Introducción a las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
 
 -   [Introducción a Active Directory Domain Services](active-directory-domain-services-overview.md)
 
