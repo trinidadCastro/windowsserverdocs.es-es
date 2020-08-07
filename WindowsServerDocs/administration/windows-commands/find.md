@@ -1,20 +1,18 @@
 ---
 title: find
 description: Artículo de referencia para el comando Buscar, que busca una cadena de texto en archivos y muestra la cadena de texto especificada en el archivo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2ca66b22-3b7c-4166-8503-eb75fc53ab46
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ebebcd29faad50aec84dd464ff0f745d2ddf52c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d77995213b05b4bc3c60336569bdf06f4ade04a7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925253"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890312"
 ---
 # <a name="find"></a>find
 
@@ -35,11 +33,11 @@ find [/v] [/c] [/n] [/i] [/off[line]] <string> [[<drive>:][<path>]<filename>[...
 | /n | Precede a cada línea con el número de línea del archivo. |
 | /i | Especifica que la búsqueda no distingue entre mayúsculas y minúsculas. |
 | [/OFF [línea]] | No omite los archivos que tienen el conjunto de atributos sin conexión. |
-| `<string>` | Obligatorio. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
+| `<string>` | Necesario. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
 | `[<drive>:][<path>]<filename>` | Especifica la ubicación y el nombre del archivo en el que se va a buscar la cadena especificada. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si no usa **/i**, este comando busca exactamente lo que especifica para la *cadena*. Por ejemplo, este comando trata los caracteres `a` y de `A` forma diferente. Sin embargo, si usa **/i**, la búsqueda no distingue entre mayúsculas y minúsculas y trata `a` y `A` como el mismo carácter.
 

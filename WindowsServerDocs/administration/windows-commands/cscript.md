@@ -1,20 +1,18 @@
 ---
 title: cscript
 description: Artículo de referencia para el comando cscript, que inicia un script para que se ejecute en un entorno de línea de comandos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fba3cbca-594e-4663-bb22-4ee0f63a1ac6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7f6731c264fc5a22bee2d94b41a555431e48b42
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3f6e27cae1531e0c10e8721d7f7fe11487406e35
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928831"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891537"
 ---
 # <a name="cscript"></a>cscript
 
@@ -52,7 +50,7 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /? | Muestra los parámetros de comando disponibles y proporciona ayuda para usarlos. Esto es lo mismo que escribir **cscript.exe** sin ningún parámetro y sin ningún script. |
 | scriptarguments | Especifica los argumentos que se pasan al script. Cada argumento de script debe ir precedido de una barra diagonal ( **/** ). |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Cada parámetro es opcional; sin embargo, no se pueden especificar argumentos de script sin especificar un script. Si no especifica ningún argumento de script o script, cscript.exe muestra la sintaxis de cscript.exe y las opciones de host válidas.
 

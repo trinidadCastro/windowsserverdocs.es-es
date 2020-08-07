@@ -1,20 +1,18 @@
 ---
 title: fsutil file
 description: Artículo de referencia para el comando fsutil File, que busca un archivo por nombre de usuario, consulta los intervalos asignados de un archivo, establece el nombre corto de un archivo, establece la longitud de los datos válidos de un archivo, establece cero datos para un archivo o crea un archivo nuevo.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 9f3dc104-dd69-4b03-b824-a29896780164
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 6909d381ef5dfebb343e70ad117a1a5b400481fa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 92b048d0ad3a7cb1f0c21dabf3cc14dc9850a251
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932291"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890000"
 ---
 # <a name="fsutil-file"></a>fsutil file
 
@@ -72,7 +70,7 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 | `<datalength>` | Especifica la longitud del archivo en bytes. |
 | setzerodata | Establece un intervalo (especificado por el *desplazamiento* y la *longitud*) del archivo en ceros, que vacía el archivo. Si el archivo es un archivo disperso, las unidades de asignación subyacentes se desasignan. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - En NTFS, hay dos conceptos importantes de longitud de archivo: el marcador de fin de archivo (EOF) y la longitud de datos válida (VDL). EOF indica la longitud real del archivo. VDL identifica la longitud de los datos válidos en el disco. Las lecturas entre VDL y EOF devuelven automáticamente 0 para conservar el requisito de reutilización del objeto C2.
 

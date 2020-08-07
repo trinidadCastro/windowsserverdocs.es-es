@@ -1,20 +1,18 @@
 ---
 title: fsutil transaction
 description: Artículo de referencia para el comando fsutil Transaction, que administra las transacciones NTFS.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 776903b820c7d7381aff61bb754446b5682f88db
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f70281af6ecf652cc1dba95ec09b07529f71752e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958177"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889797"
 ---
 # <a name="fsutil-transaction"></a>fsutil transaction
 

@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getfilestransferred
 description: Artículo de referencia para el comando bitsadmin getfilestransferred, que recupera el número de archivos transferidos para el trabajo especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e282815c-938b-4ac0-a09d-9baafb656dcb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43257dcb8350974bfb258a9970c1a6fec787a226
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c089dc8a122f558a396fdffb77b173b7586ee900
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928254"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894299"
 ---
 # <a name="bitsadmin-getfilestransferred"></a>bitsadmin getfilestransferred
 

@@ -1,20 +1,18 @@
 ---
 title: fc
 description: Artículo de referencia para el comando FC, que compara dos archivos o conjuntos de archivos y muestra las diferencias entre ellos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 485fc3d8-b7c5-496d-87be-0011112f27d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d9e12853d2634f7e7bcbd976b6c301f8e02c0dc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 72c71a76b168b96164ea6739adff974ba37a2308
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930479"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890368"
 ---
 # <a name="fc"></a>fc
 
@@ -46,7 +44,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 | `[<drive2>:][<path2>]<filename2>` | Especifica la ubicación y el nombre del segundo archivo o conjunto de archivos que se van a comparar. se requiere *Nombredearchivo2* . |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Este comando se implemeted por c:\WINDOWS\fc.exe. Puede usar este comando en PowerShell, pero asegúrese de deletrear el ejecutable completo (fc.exe), ya que ' FC ' también es un alias para Format-Custom.
 

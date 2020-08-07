@@ -1,20 +1,18 @@
 ---
 title: dfsrmig
 description: Artículo de referencia del comando dfsrmig, que migra la replicación de SYSvol de FRS a Replicación DFS, proporciona información sobre el progreso de la migración y modifica los objetos de AD DS para admitir la migración.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e1b6a464-6a93-4e66-9969-04f175226d8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87882ebe0beb687f704c5573091f56c067c278ee
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 83e4d039b0c7c36960ab8dadfa4740d0c01daa33
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928643"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891045"
 ---
 # <a name="dfsrmig"></a>dfsrmig
 
@@ -41,7 +39,7 @@ dfsrmig [/setglobalstate <state> | /getglobalstate | /getmigrationstate | /creat
 | `/deleterodfsrmember [<read_only_domain_controller_name>]` | Elimina la configuración global de AD DS para Replicación DFS que se corresponde con el controlador de dominio de solo lectura especificado, o elimina la configuración global de AD DS para Replicación DFS para todos los controladores de dominio de solo lectura si no se especifica ningún valor para `<read_only_domain_controller_name>` .<p>Use esta opción para eliminar manualmente la configuración de AD DS solo cuando se produce un error en la eliminación automática en un controlador de dominio de solo lectura y detiene el controlador de dominio de solo lectura durante un período de tiempo prolongado al revertir la migración del estado preparado al estado Inicio. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Use el `/setglobalstate <state>` comando para establecer el estado de migración global en AD DS en el emulador de PDC para iniciar y controlar el proceso de migración. Si el emulador de PDC no está disponible, se produce un error en este comando.
 
@@ -158,4 +156,4 @@ dfsrmig /?
 
 - [Serie de migración de SYSvol: parte 2 dfsrmig.exe: la herramienta de migración de SYSvol](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-2-8211-dfsrmig-exe-the-sysvol/ba-p/423470)
 
-- [Active Directory Domain Services](../../identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview.md)
+- [Active Directory Domain Services](../../identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview.md)

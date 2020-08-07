@@ -1,20 +1,18 @@
 ---
 title: bitsadmin peers
 description: Artículo de referencia del comando bitsadmin Peers, que enumera los modificadores de/Peers.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5effbd52-993a-4657-b331-596c64deb8fb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e01a02c2615d353cbdaaa6980e86a965edce018
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 756368bfb9c1e718fcd494cb0aebc9337701ad9c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927990"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893442"
 ---
 # <a name="bitsadmin-peers"></a>bitsadmin peers
 

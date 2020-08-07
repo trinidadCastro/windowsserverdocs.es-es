@@ -1,20 +1,18 @@
 ---
 title: del
 description: Artículo de referencia para el comando del, que elimina uno o varios archivos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 346eede2-2085-44f5-9936-6877b5d5a833
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe1ae558da0a4cb19159c68c67e1e72970e3b502
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f909a212284f29fff15de0d02995b08b713cd889
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958417"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891496"
 ---
 # <a name="del"></a>del
 

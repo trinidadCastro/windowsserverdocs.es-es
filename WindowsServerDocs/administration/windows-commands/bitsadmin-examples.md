@@ -1,20 +1,18 @@
 ---
 title: Ejemplos de bitsadmin
 description: Ejemplos que muestran cómo usar la herramienta bitsadmin para realizar las tareas más comunes.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cb8f8374-ba6e-4a68-85a1-9a95b8215354
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 1db9dd387d7b9cc39c582ce79e5163c83579b613
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5cf827ebc96c2caf114a9605482a33636689dc25
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819635"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894581"
 ---
 # <a name="bitsadmin-examples"></a>Ejemplos de bitsadmin
 

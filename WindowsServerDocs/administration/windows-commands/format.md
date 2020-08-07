@@ -1,20 +1,18 @@
 ---
 title: format
 description: Artículo de referencia del comando format, que da formato a un disco para aceptar archivos de Windows.
-ms.prod: windows-server
 manager: dongill
 ms.author: jgerend
-ms.technology: storage
 ms.topic: article
 ms.assetid: 51ec7423-9a01-4219-868a-25d69cdcc832
 author: jasongerend
 ms.date: 10/16/2017
-ms.openlocfilehash: 73f83a07cb1537af66d59977099b251b6dd12f47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a923706252e6094cf12dcdf2632366ee7b2401f8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958227"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890122"
 ---
 # <a name="format"></a>Formato
 

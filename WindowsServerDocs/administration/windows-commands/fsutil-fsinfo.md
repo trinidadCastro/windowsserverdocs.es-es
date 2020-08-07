@@ -1,20 +1,18 @@
 ---
 title: Fsutil fsinfo
 description: Artículo de referencia del comando fsutil fsinfo, en el que se enumeran todas las unidades, se consulta el tipo de unidad, se consulta información de volumen, se consulta información de volumen específica de NTFS o se consultan las estadísticas del sistema de archivos.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 7787a72e-a26b-415f-b700-a32806803478
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 0cb4e5b747e07c9409c7dbb80ac9950e765617bc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5642355769225fada014a98cce8d4533e72f7410
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924738"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889981"
 ---
 # <a name="fsutil-fsinfo"></a>fsutil fsinfo
 

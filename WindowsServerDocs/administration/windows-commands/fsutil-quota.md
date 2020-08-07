@@ -1,20 +1,18 @@
 ---
 title: fsutil quota
 description: Artículo de referencia del comando fsutil quota, que administra las cuotas de disco en volúmenes NTFS para proporcionar un control más preciso del almacenamiento basado en red.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 21225c11-7c72-4ea2-96bd-e63d4beb3be5
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: f757f822a903f6b5c6d221e17f87cf1e73d1555f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7edf7ac908df419611fb42dd819323b15c8ded4e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925225"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889930"
 ---
 # <a name="fsutil-quota"></a>fsutil quota
 
@@ -43,12 +41,12 @@ fsutil quota [violations]
 | Query | Muestra las cuotas de disco existentes. |
 | track | Realiza el seguimiento del uso del disco en el volumen especificado. |
 | dujeron | Busca en los registros del sistema y de la aplicación, y muestra un mensaje para indicar que se han detectado infracciones de cuota o que un usuario ha alcanzado un umbral de cuota o un límite de cuota. |
-| `<volumepath>` | Obligatorio. Especifica el nombre de la unidad seguido de dos puntos o del GUID en el formato `volume{GUID}` . |
+| `<volumepath>` | Necesario. Especifica el nombre de la unidad seguido de dos puntos o del GUID en el formato `volume{GUID}` . |
 | `<threshold>`  | Establece el límite (en bytes) en el que se emiten las advertencias. Este parámetro es necesario para el `fsutil quota modify` comando. |
 | `<limit>` | Establece el uso máximo permitido del disco (en bytes). Este parámetro es necesario para el `fsutil quota modify` comando. |
 | `<username>` | Especifica el nombre de dominio o de usuario. Este parámetro es necesario para el `fsutil quota modify` comando. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Las cuotas de disco se implementan por volumen y permiten que se implementen límites de almacenamiento tanto de forma rígida como por usuario.
 

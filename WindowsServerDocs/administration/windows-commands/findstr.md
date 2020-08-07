@@ -1,20 +1,18 @@
 ---
 title: findstr
 description: Artículo de referencia del comando findstr, que busca patrones de texto en archivos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c2d803fb-4cd2-46a1-a1b7-6f5e0249c418
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0cf30f19ef23c1b3275b6b7632b03f0dd8e433a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1b1ef8139208397361a8c787686d2bc4c3b5ab43
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931436"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890232"
 ---
 # <a name="findstr"></a>findstr
 
@@ -48,11 +46,11 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 | /g`<file>` | Obtiene las cadenas de búsqueda del archivo especificado. |
 | /d.`<dirlist>` | Busca la lista de directorios especificada. Cada directorio debe estar separado por un punto y coma (;), por ejemplo `dir1;dir2;dir3` . |
 | /a`<colorattribute>` | Especifica los atributos de color con dos dígitos hexadecimales. Escriba `color /?` para obtener información adicional. |
-| `<strings>` | Especifica el texto que se va a buscar en el *nombre de archivo*. Obligatorio. |
+| `<strings>` | Especifica el texto que se va a buscar en el *nombre de archivo*. Necesario. |
 | `[\<drive>:][<path>]<filename>[ ...]` | Especifica la ubicación y el archivo o los archivos que se van a buscar. Se requiere al menos un nombre de archivo. |
 | /? | Muestra la Ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Todas las opciones de línea de comandos de **Findstr** deben preceder a las *cadenas* y el *nombre de archivo* en la cadena de comandos.
 

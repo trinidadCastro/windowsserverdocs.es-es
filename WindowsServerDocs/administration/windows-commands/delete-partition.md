@@ -1,20 +1,18 @@
 ---
 title: delete partition
 description: Artículo de referencia del comando DELETE Partition, que elimina la partición que tiene el foco.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 65752312-cb16-46f6-870f-1b95c507b101
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b45cb060a5d82e254fe371269dbdbcb9d46fee92
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5a783a7d94b48f088eeb868ac64ca355d8829c25
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928728"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891440"
 ---
 # <a name="delete-partition"></a>delete partition
 
@@ -38,7 +36,7 @@ delete partition [noerr] [override]
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 | override | Permite que DiskPart elimine una partición con independencia de su tipo. Normalmente, DiskPart solo permite eliminar particiones de datos conocidas. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Para eliminar un volumen dinámico, use siempre el comando [Eliminar volumen](delete-volume.md) en su lugar.
 

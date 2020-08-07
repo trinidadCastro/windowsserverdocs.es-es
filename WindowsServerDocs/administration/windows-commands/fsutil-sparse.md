@@ -1,20 +1,18 @@
 ---
 title: fsutil sparse
 description: Artículo de referencia para el comando fsutil Sparse, que administra archivos dispersos.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 77545920-2d13-4f35-a4d1-14dbec8340dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c765b096f1b41b211d3a779d8f838aa56f31aeb8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d79144d3894e9e181ebd889ce7bf281b827dea26
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925212"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889833"
 ---
 # <a name="fsutil-sparse"></a>fsutil sparse
 
@@ -45,7 +43,7 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 | `<beginningoffset>` | Especifica el desplazamiento en el archivo que se va a marcar como disperso. |
 | `<length>` | Especifica la longitud de la región en el archivo que se va a marcar como dispersa (en bytes). |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Se asignan todos los datos significativos o distintos de cero, mientras que no se asignan todos los datos no significativos (cadenas grandes de datos que se componen de ceros).
 

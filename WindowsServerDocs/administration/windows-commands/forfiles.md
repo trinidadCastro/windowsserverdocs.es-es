@@ -1,20 +1,18 @@
 ---
 title: forfiles
 description: Artículo de referencia para el comando forfiles, que selecciona y ejecuta un comando en un archivo o conjunto de archivos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 26c443aa05d081fc257dc49d2f2c7f6a9adae865
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 004c27b841629e18eac4d94f7fe0816b42762107
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922395"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890141"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -37,7 +35,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 | /D.`[{+\|-}][{<date> | <days>}]` | Selecciona los archivos con una fecha de última modificación dentro del período de tiempo especificado:<ul><li>Selecciona los archivos con una fecha de última modificación posterior o igual a ( **+** ) o anterior o igual a ( **-** ) la fecha especificada, donde la *fecha* tiene el formato mm/dd/aaaa.</li><li>Selecciona los archivos con una fecha de última modificación posterior o igual a ( **+** ) la fecha actual más el número de días especificado, o anterior o igual a ( **-** ) la fecha actual menos el número de días especificado.</li><li>Los valores válidos para los *días* incluyen cualquier número en el intervalo comprendido entre 0 y 32768. Si no se especifica ningún signo, **+** se usa de forma predeterminada.</li></ul> |
 | /? | Muestra el texto de ayuda en la ventana cmd. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El `forfiles /S` comando es similar a `dir /S` .
 

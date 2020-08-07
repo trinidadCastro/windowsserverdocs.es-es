@@ -1,20 +1,18 @@
 ---
 title: dfsdiag testreferral
 description: Artículo de referencia para el comando dfsdiag testreferral, que comprueba las referencias Sistema de archivos distribuido (DFS).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 877c60dc-e993-4bd5-87dd-e892e3f98a1a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ee88e6f9d75dc32bd7fd5dac4c14c72f3bbac02
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 21ed7a6dd56fda0a6185f3f5aaa2a15d9d6fb565
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928692"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891122"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag testreferral
 

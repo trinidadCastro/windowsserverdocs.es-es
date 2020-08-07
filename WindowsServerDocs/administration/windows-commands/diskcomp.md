@@ -1,20 +1,18 @@
 ---
 title: diskcomp
 description: Artículo de referencia para el comando diskcomp, que compara el contenido de dos disquetes.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4f56f534-a356-4daa-8b4f-38e089341e42
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efd935d4630d9397d97863d6d373db3801a97b17
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 71401942f25d3f503639b2931f2f0ee49229e15b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929351"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890978"
 ---
 # <a name="diskcomp"></a>diskcomp
 
@@ -33,7 +31,7 @@ diskcomp [<drive1>: [<drive2>:]]
 | `<drive1>` | Especifica la unidad que contiene uno de los disquetes. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El comando **Diskcomp** solo funciona con discos de disquete. No se puede usar **Diskcomp** con un disco duro. Si especifica una unidad de disco duro para *unidad1* o *unidad2*, **Diskcomp** muestra el siguiente mensaje de error:
 

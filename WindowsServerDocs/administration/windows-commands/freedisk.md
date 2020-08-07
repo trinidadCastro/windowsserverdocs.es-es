@@ -1,20 +1,18 @@
 ---
 title: freedisk
 description: Artículo de referencia para el comando FREEDISK, que comprueba si la cantidad especificada de espacio en disco está disponible antes de continuar con un proceso de instalación.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 91c15166-5baa-4b80-9e0c-4cd815d00530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0cfce52c2eaf0917f8169d959b61832bd1779e0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a6c5c09e35f852be9229180ae894356e127f8a03
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924740"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890096"
 ---
 # <a name="freedisk"></a>freedisk
 
@@ -38,7 +36,7 @@ freedisk [/s <computer> [/u [<domain>\]<user> [/p [<password>]]]] [/d <drive>] [
 | /d.`<drive>` | Especifica la unidad para la que desea averiguar la disponibilidad de espacio disponible. Debe especificar `<drive>` para un equipo remoto. |
 | `<value>` | Comprueba una cantidad específica de espacio libre en disco. Puede especificar `<value>` en bytes, KB, MB, GB, TB, PB, EB, ZB o YB. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El uso de las opciones de línea de comandos **/s**, **/u**y **/p** solo está disponible cuando se utiliza **/s**. Debe usar **/p** con **/u**para proporcionar la contraseña del usuario.
 

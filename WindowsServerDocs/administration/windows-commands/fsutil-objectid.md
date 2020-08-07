@@ -1,20 +1,18 @@
 ---
 title: fsutil objectid
 description: Artículo de referencia para el comando fsutil objectId, que administra los identificadores de objeto para realizar el seguimiento de otros objetos, como archivos, directorios y vínculos.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 693ab895-9d0c-47c1-9f52-df5cd287842a
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ab0b95bdcde8bce51e1d5a2c14888229621fcaa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f24a434a3b48186baa1743cc6159cac39443231e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925241"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889970"
 ---
 # <a name="fsutil-objectid"></a>fsutil objectid
 
@@ -48,7 +46,7 @@ fsutil objectid [set] <objectID> <birthvolumeID> <birthobjectID> <domainID> <fil
 | `<domainID>` | identificador de dominio hexadecimal de 16 bytes. Este valor no se utiliza actualmente y debe establecerse en ceros. |
 | `<filename>` | Especifica la ruta de acceso completa al archivo, incluido el nombre de archivo y la extensión, por ejemplo *C:\documents\filename.txt*. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Cualquier archivo que tenga un identificador de objeto también tiene un identificador de volumen de nacimiento, un identificador de objeto de nacimiento y un identificador de dominio. Cuando se mueve un archivo, el identificador del objeto puede cambiar, pero los identificadores del volumen de nacimiento y del objeto de nacimiento siguen siendo los mismos. Este comportamiento permite que el sistema operativo Windows encuentre siempre un archivo, independientemente de dónde se haya pasado.
 

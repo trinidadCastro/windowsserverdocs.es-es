@@ -1,20 +1,18 @@
 ---
 title: fsutil repair
 description: Artículo de referencia para el comando fsutil repair, que administra y supervisa las operaciones de reparación de recuperación automática de NTFS.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 62d77150-1d9e-4069-ab4a-299f33024912
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 664415f7952add6ae4a52f6550d78c11fa2a2978
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 17deb2d592ba9b5532d33a71dd8687708c8bd0bf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958197"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889920"
 ---
 # <a name="fsutil-repair"></a>fsutil repair
 

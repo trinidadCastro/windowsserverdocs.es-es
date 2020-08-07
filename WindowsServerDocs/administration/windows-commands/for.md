@@ -1,20 +1,18 @@
 ---
 title: para
 description: Artículo de referencia del comando for, que ejecuta un comando especificado para cada archivo, dentro de un conjunto de archivos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e275726c-035f-4a74-8062-013c37f5ded1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44b6497af626079b05768fd245c1b86693bdfe61
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7e964c502d012648f6633b099688781a8d4f22cf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922413"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890175"
 ---
 # <a name="for"></a>para
 
@@ -30,13 +28,13 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| `{%% | %}<variable>` | Obligatorio. Representa un parámetro reemplazable. Use un solo signo de porcentaje ( `%` ) para llevar a cabo el comando **for** en el símbolo del sistema. Use signos de porcentaje doble ( `%%` ) para llevar a cabo el comando **for** en un archivo por lotes. Las variables distinguen mayúsculas de minúsculas y deben representarse con un valor alfabético como **% a**, **% b**o **% c**. |
-| (`<set>`) | Obligatorio. Especifica uno o más archivos, directorios o cadenas de texto, o un intervalo de valores en el que se ejecuta el comando. Es obligatorio utilizar paréntesis. |
-| `<command>` | Obligatorio. Especifica el comando que se desea llevar a cabo en cada archivo, directorio o cadena de texto, o en el intervalo de valores incluidos en el *conjunto*. |
+| `{%% | %}<variable>` | Necesario. Representa un parámetro reemplazable. Use un solo signo de porcentaje ( `%` ) para llevar a cabo el comando **for** en el símbolo del sistema. Use signos de porcentaje doble ( `%%` ) para llevar a cabo el comando **for** en un archivo por lotes. Las variables distinguen mayúsculas de minúsculas y deben representarse con un valor alfabético como **% a**, **% b**o **% c**. |
+| (`<set>`) | Necesario. Especifica uno o más archivos, directorios o cadenas de texto, o un intervalo de valores en el que se ejecuta el comando. Es obligatorio utilizar paréntesis. |
+| `<command>` | Necesario. Especifica el comando que se desea llevar a cabo en cada archivo, directorio o cadena de texto, o en el intervalo de valores incluidos en el *conjunto*. |
 | `<commandlineoptions>` | Especifica las opciones de línea de comandos que desea utilizar con el comando especificado. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Puede usar este comando en un archivo por lotes o directamente desde el símbolo del sistema.
 
@@ -65,19 +63,19 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
 - Si las extensiones de comandos están habilitadas (que es el valor predeterminado), se admiten las siguientes formas adicionales de **para para** :
 
-  - **Solo directorios:** Si *set* contiene caracteres comodín (**&#42;** o **?**), el *comando* especificado se ejecuta para cada directorio (en lugar de un conjunto de archivos en un directorio especificado) que coincida con *set*. La sintaxis es la siguiente:
+  - **Solo directorios:** Si *set* contiene caracteres comodín (**&#42;** o **?**), el *comando* especificado se ejecuta para cada directorio (en lugar de un conjunto de archivos en un directorio especificado) que coincida con *set*. La sintaxis es:
 
     ```
     for /d {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
     ```
 
-  - **Recursivo:** Recorre el árbol de directorios cuya raíz se encuentra en *unidad*:*ruta de acceso* y ejecuta la instrucción **for** en cada directorio del árbol. Si no se especifica ningún directorio después de **/r**, se usa el directorio actual como directorio raíz. Si *set* es un solo punto (.), solo enumera el árbol de directorios. La sintaxis es la siguiente:
+  - **Recursivo:** Recorre el árbol de directorios cuya raíz se encuentra en *unidad*:*ruta de acceso* y ejecuta la instrucción **for** en cada directorio del árbol. Si no se especifica ningún directorio después de **/r**, se usa el directorio actual como directorio raíz. Si *set* es un solo punto (.), solo enumera el árbol de directorios. La sintaxis es:
 
     ```
     for /r [[<drive>:]<path>] {%%|%}<variable> in (<set>) do <command> [<commandlinepptions>]
     ```
 
-  - **Recorrer en iteración un intervalo de valores:** Use una variable iterativa para establecer el valor inicial (#*Start*#) y, a continuación, recorra un intervalo de valores establecido hasta que el valor supere el valor de finalización de conjunto (*End*#). **/l** ejecutará la iteración mediante la comparación de *Start*# con *End*#. Si *Start*# es menor que *End*#, se ejecutará el comando. Cuando la variable iterativa supera *End*#, el shell de comandos sale del bucle. También puede usar un *paso*negativo para recorrer un intervalo en valores decrecientes. Por ejemplo, (1, 1, 5) genera la secuencia 1 2 3 4 5 y (5,-1, 1) genera la secuencia 5 4 3 2 1. La sintaxis es la siguiente:
+  - **Recorrer en iteración un intervalo de valores:** Use una variable iterativa para establecer el valor inicial (#*Start*#) y, a continuación, recorra un intervalo de valores establecido hasta que el valor supere el valor de finalización de conjunto (*End*#). **/l** ejecutará la iteración mediante la comparación de *Start*# con *End*#. Si *Start*# es menor que *End*#, se ejecutará el comando. Cuando la variable iterativa supera *End*#, el shell de comandos sale del bucle. También puede usar un *paso*negativo para recorrer un intervalo en valores decrecientes. Por ejemplo, (1, 1, 5) genera la secuencia 1 2 3 4 5 y (5,-1, 1) genera la secuencia 5 4 3 2 1. La sintaxis es:
 
     ```
     for /l {%%|%}<variable> in (<start#>,<step#>,<end#>) do <command> [<commandlinepptions>]

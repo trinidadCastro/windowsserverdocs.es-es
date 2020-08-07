@@ -1,20 +1,18 @@
 ---
 title: fsutil reparsepoint
 description: Artículo de referencia para el comando fsutil reparsepoint, que consulta o elimina puntos de reanálisis.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: fb95c8ee-a418-4520-a12a-7754ae947c3c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: edbbc578b6a84ebd4e342493e29cbe2bd5c5a2cd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b7742b7bb970394f0ef8602ae5c862c2ff9a1a41
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931213"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889882"
 ---
 # <a name="fsutil-reparsepoint"></a>fsutil reparsepoint
 
@@ -45,7 +43,7 @@ fsutil reparsepoint [delete] <filename>
 | delete | Elimina un punto de reanálisis del archivo o directorio identificado por el identificador especificado, pero no elimina el archivo o directorio. |
 | `<filename>` | Especifica la ruta de acceso completa al archivo, incluido el nombre de archivo y la extensión, por ejemplo *C:\documents\filename.txt*. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Cuando un programa establece un punto de reanálisis, almacena estos datos, además de una etiqueta de reanálisis, que identifica de forma única los datos almacenados. Cuando el sistema de archivos abre un archivo con un punto de reanálisis, intenta encontrar el filtro del sistema de archivos asociado. Si se encuentra el filtro del sistema de archivos, el filtro procesa el archivo según lo indicado por los datos de reanálisis. Si no se encuentra ningún filtro del sistema de archivos, se producirá un error en la operación de **apertura de archivo** .
 

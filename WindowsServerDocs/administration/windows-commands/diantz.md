@@ -1,20 +1,18 @@
 ---
 title: diantz
 description: Artículo de referencia para el comando diantz, que empaqueta los archivos existentes en un archivo. cab.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 218ed5d7-1203-4d68-ad9b-65cdd022d54f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 339ffaa56b65b2b061923ab38ee172c5e933d675
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 108ab8df27faf6794e5ba77b725daf2944ecc240
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958347"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891019"
 ---
 # <a name="diantz"></a>diantz
 
