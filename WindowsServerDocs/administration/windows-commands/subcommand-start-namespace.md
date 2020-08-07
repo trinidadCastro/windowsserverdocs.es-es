@@ -1,20 +1,18 @@
 ---
 title: Subcomando Start-namespace
 description: Artículo de referencia para el subcomando Start-namespace, que inicia un espacio de nombres de difusión programada.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2dd1c11e-6ab7-4129-9e3a-3f80e0ba59c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2d9bcd58a0a99d98d8679b84c223cfa42a67778
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7a80664fb4a4f90f58823b87f278b344561422ef
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931525"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882079"
 ---
 # <a name="subcommand-start-namespace"></a>Subcomando: Start-namespace
 

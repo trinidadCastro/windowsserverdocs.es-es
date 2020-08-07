@@ -1,20 +1,18 @@
 ---
 title: bootcfg query
 description: Artículo de referencia para el comando de consulta Bootcfg, que consulta y muestra las entradas de la sección del cargador de arranque y del sistema operativo de Boot.ini.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a4cacfd1-10a6-4a11-b0c5-f8abde72bfc8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c99ba9bfbe910c65b3686c6070a7a76f27407f5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bb4ff06e8c0e5f31c0132f7fbc4fad49be53dd62
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925019"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880563"
 ---
 # <a name="bootcfg-query"></a>bootcfg query
 

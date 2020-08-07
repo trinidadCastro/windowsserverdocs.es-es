@@ -1,22 +1,20 @@
 ---
-title: prompt
+title: símbolo del sistema
 description: Artículo de referencia para el comando prompt, que personaliza el símbolo del sistema de Cmd.exe.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3d98e965-02eb-46ad-9d0a-5dc44830373e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 72ed82c316faddba9486649497c8c48f88e6da81
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: df849e70da973276360da6e81390466f0484f4b5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931146"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884619"
 ---
-# <a name="prompt"></a>prompt
+# <a name="prompt"></a>símbolo del sistema
 
 Cambia la Cmd.exe símbolo del sistema, incluida la visualización del texto que desee, como el nombre del directorio actual, la fecha y la hora, o el número de versión de Microsoft Windows. Si se usa sin parámetros, este comando restablece el símbolo del sistema a la configuración predeterminada, que es la letra de unidad y el directorio actuales seguidos del símbolo mayor que ( **>** ).
 
@@ -33,7 +31,7 @@ prompt [<text>]
 | `<text>` | Especifica el texto y la información que desea incluir en el símbolo del sistema. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Las combinaciones de caracteres que puede incluir en lugar de, o además de, una o más cadenas de caracteres en el parámetro de *texto* :
 

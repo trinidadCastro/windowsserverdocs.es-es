@@ -1,20 +1,18 @@
 ---
 title: pushd
 description: Artículo de referencia para el comando Inserted, que almacena el directorio actual para que lo use el comando popd y, a continuación, cambia al directorio especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 396bc545-0f41-473e-b0ac-76fbbb74d390
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 871834ae1ac29eb53be982831e7ede93d9d309cf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e885cab58e23af9da050822c49a655ca897ce819
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933756"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884583"
 ---
 # <a name="pushd"></a>pushd
 
@@ -37,7 +35,7 @@ pushd [<path>]
 | `<path>` | Especifica el directorio en el que se va a crear el directorio actual. Este comando admite rutas de acceso relativas. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si se habilitan las extensiones de comando, el comando **Inserted** acepta una ruta de acceso de red o una letra de unidad local y la ruta de acceso.
 

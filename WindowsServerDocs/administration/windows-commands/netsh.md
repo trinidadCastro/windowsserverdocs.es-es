@@ -1,20 +1,18 @@
 ---
 title: netsh
 description: Artículo de referencia para el comando netsh, que es una utilidad de scripting de línea de comandos que le permite, ya sea de forma local o remota, mostrar o modificar la configuración de red de un equipo actualmente en ejecución.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 96fc069d-53c0-4d0a-9f7f-f9f3d49a02bd carmonmills
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d39b891b9a8b6e313121756aa8266c79b5bfaca
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 366c7a21f44dc6545de7ba81cba8fe152c245b6b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934785"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886033"
 ---
 # <a name="netsh"></a>netsh
 
@@ -32,7 +30,7 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| -a`<Aliasfile>` | Especifica que se devuelva al símbolo del sistema de Netsh después de ejecutar Aliasfile y el nombre del archivo de texto que contiene uno o más comandos Netsh. |
+| -a `<Aliasfile>` | Especifica que se devuelva al símbolo del sistema de Netsh después de ejecutar Aliasfile y el nombre del archivo de texto que contiene uno o más comandos Netsh. |
 | -c `<Context>` | Especifica que netsh entra en el contexto de Netsh especificado y en el contexto de Netsh que se va a escribir. |
 | -r`<Remotecomputer>` | Especifica el equipo remoto que se va a configurar.<p>**Importante:** Si usa este parámetro, debe asegurarse de que el servicio de registro remoto se está ejecutando en el equipo remoto. Si no se está ejecutando, Windows muestra un mensaje de error "ruta de acceso de red no encontrada". |
 | -u`<domainname>\<username>` | Especifica el dominio y el nombre de la cuenta de usuario que se utilizará al ejecutar el comando netsh en una cuenta de usuario. Si omite el dominio, se utiliza el dominio local de forma predeterminada. |
@@ -41,11 +39,11 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 | -f`<scriptfile>` | Sale del comando netsh después de ejecutar el archivo de script especificado. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si especifica **-r** seguido de otro comando, netsh ejecuta el comando en el equipo remoto y, a continuación, vuelve al símbolo del sistema de Cmd.exe. Si especifica **-r** sin otro comando, netsh se abre en modo remoto. El proceso es similar al uso de **set machine** en el símbolo del sistema de netsh. Cuando se usa **-r**, solo se establece el equipo de destino para la instancia actual de Netsh. Después de salir de netsh y volver a entrar, el equipo de destino se restablece como equipo local. Puedes ejecutar comandos netsh en un equipo remoto si especificas un nombre de equipo almacenado en WINS, un nombre de UNC, un nombre de Internet que deba resolver el servidor DNS, o una dirección IP.
 
-- Si el valor de cadena contiene espacios entre caracteres, debe escribir el valor de cadena entre comillas. Por ejemplo, `-r "contoso remote device"`.
+- Si el valor de cadena contiene espacios entre caracteres, debe escribir el valor de cadena entre comillas. Por ejemplo: `-r "contoso remote device"`
 
 ## <a name="additional-references"></a>Referencias adicionales
 

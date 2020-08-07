@@ -1,20 +1,18 @@
 ---
 title: pubprn
 description: Artículo de referencia del comando Pubprn, que publica una impresora en el Active Directory Domain Services.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0bc7f7e3-84e1-4359-b477-7b1a1a0bd639
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c73c79450d4feb4d2567f29bfed56364dea9b5a8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 33905fbfe06887ee8b8721ed9c91eed5701ed3f5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932009"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884607"
 ---
 # <a name="pubprn"></a>pubprn
 
@@ -37,7 +35,7 @@ cscript pubprn {<servername> | <UNCprinterpath>} LDAP://CN=<container>,DC=<conta
 | `LDAP://CN=<Container>,DC=<Container>` | Especifica la ruta de acceso al contenedor en Active Directory Domain Services donde desea publicar la impresora. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, "nombre del equipo").
 

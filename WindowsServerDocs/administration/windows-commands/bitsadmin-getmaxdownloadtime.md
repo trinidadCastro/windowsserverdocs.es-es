@@ -2,19 +2,18 @@
 title: bitsadmin getmaxdownloadtime
 description: Artículo de referencia para el comando bitsadmin getmaxdownloadtime, que recupera el tiempo de espera de descarga en segundos.
 ms.prod: windows-servemr
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cdce64f6-7125-489d-be3c-4af1dfc8c46a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9737e25e05b372cb6bb1057cc3a60fd5e2cf0ca8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8cf17898880975aaf214110b99b7cbc068c309ba
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928179"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894219"
 ---
 # <a name="bitsadmin-getmaxdownloadtime"></a>bitsadmin getmaxdownloadtime
 

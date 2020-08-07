@@ -1,20 +1,18 @@
 ---
 title: bitsadmin monitor
 description: Artículo de referencia para el comando bitsadmin monitor, que supervisa los trabajos de la cola de transferencia que son propiedad del usuario actual.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2c424d27-e011-49c2-b579-a2c235467c39
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ce08eccf46fc17086d216bc6797bec451ace7eb
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3ba2cb315fb0696b8363506669aa41f1693bb758
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926494"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893670"
 ---
 # <a name="bitsadmin-monitor"></a>bitsadmin monitor
 

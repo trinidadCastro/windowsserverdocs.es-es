@@ -1,20 +1,18 @@
 ---
 title: reg compare
 description: Artículo de referencia para el comando reg compare, que compara las entradas o subclaves del registro especificadas.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 177dc6a3-034e-4846-a394-330d03c14e0b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b508a52d0f110455b09002a1044fefcf1be048a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cac4b4f0e2e00cfc6d121ca27155b122291d0829
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930737"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884192"
 ---
 # <a name="reg-compare"></a>reg compare
 
@@ -41,7 +39,7 @@ reg compare <keyname1> <keyname2> [{/v Valuename | /ve}] [{/oa | /od | /os | on}
 | /s | Compara todas las subclaves y entradas de forma recursiva. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Los valores devueltos para la operación de **comparación de reg** son:
 

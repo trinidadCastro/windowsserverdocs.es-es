@@ -1,20 +1,18 @@
 ---
 title: nfsshare
 description: Artículo de referencia para el comando nfsshare, que controla los recursos compartidos de Network File System (NFS).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 437a2615-335a-442f-9713-d50d5f3983a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9db04752ad7982f78dc72c02108fe706cdf2fa04
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 492b405468987f91f72019c710b8ae4eae4ff6fa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956767"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885986"
 ---
 # <a name="nfsshare"></a>nfsshare
 

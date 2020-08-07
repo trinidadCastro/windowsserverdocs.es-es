@@ -1,20 +1,18 @@
 ---
 title: nslookup ls
 description: Artículo de referencia del comando Nslookup LS, que muestra información del dominio DNS.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f15f06fe-67e7-41a9-93b5-192ab14ab380
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c0c0aeb01cdffb1f2b779178f0298e1f120348e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d7046a9bcbb91c223299535f6b3b93ed2639a511
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936572"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885867"
 ---
 # <a name="nslookup-ls"></a>nslookup ls
 
@@ -38,7 +36,7 @@ ls [<option>] <DNSdomain> [{[>] <filename>|[>>] <filename>}]
 | /? | Muestra la ayuda en el símbolo del sistema. |
 | /help | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - La salida predeterminada de este comando incluye nombres de equipo y sus direcciones IP asociadas.
 

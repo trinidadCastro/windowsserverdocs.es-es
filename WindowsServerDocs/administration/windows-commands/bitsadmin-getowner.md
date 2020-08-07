@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getowner
 description: Artículo de referencia para el comando bitsadmin GetOwner, que recupera el propietario del trabajo especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5203f84c-a879-4f31-ae3e-7ea74bd63ca5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f530952e510fdff1a30dfd7c6081e112d841f401
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 91dd63dcba8b41fee01c17e87c817e32a9dbba39
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926891"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894043"
 ---
 # <a name="bitsadmin-getowner"></a>bitsadmin getowner
 

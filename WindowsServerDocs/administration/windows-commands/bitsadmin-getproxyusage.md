@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getproxyusage
 description: Artículo de referencia para el comando bitsadmin getproxyusage, que recupera la configuración de uso del proxy para el trabajo especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f940a70e-3b02-497e-a47f-b37b905c299e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad1ffe5786202d6fecc0d65a719c9d6be0f5609e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ff2320ba66cdc11781ac56900e5a4aaa9fb1dc0f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926782"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893934"
 ---
 # <a name="bitsadmin-getproxyusage"></a>bitsadmin getproxyusage
 

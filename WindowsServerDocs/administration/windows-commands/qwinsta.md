@@ -1,20 +1,18 @@
 ---
 title: qwinsta
 description: Artículo de referencia para el comando qwinsta, que muestra información acerca de las sesiones en un servidor host de sesión Escritorio remoto.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a793212a-7ecd-44cb-a77b-c5c2edb34979
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45590cf9b6fdb5de40e4ab25bd444f847d203670
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 496088708d980ec2ad3253dc29aeec99b29a6d41
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956377"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884377"
 ---
 # <a name="qwinsta"></a>qwinsta
 

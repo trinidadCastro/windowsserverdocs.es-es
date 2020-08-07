@@ -1,20 +1,18 @@
 ---
 title: bitsadmin gettype
 description: Artículo de referencia del comando bitsadmin GetType, que recupera el tipo de trabajo del trabajo especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bec16f04-3e95-4587-889e-3de6ad03c9c8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7224add1b503d9ec50e84879a47442c12447e5d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3f0fe66256e59526b874aaf2ec8ae0193846a1da
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926644"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893829"
 ---
 # <a name="bitsadmin-gettype"></a>bitsadmin gettype
 

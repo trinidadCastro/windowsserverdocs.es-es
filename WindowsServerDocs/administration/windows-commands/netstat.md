@@ -1,20 +1,18 @@
 ---
 title: netstat
 description: Artículo de referencia del comando netstat, que muestra las conexiones TCP activas, los puertos en los que el equipo está escuchando, las estadísticas de Ethernet, la tabla de enrutamiento IP, las estadísticas de IPv4 y las estadísticas de IPv6.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 60e2718f-93cc-4ceb-bf0e-58a6a6e4fc8b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c53ac83c1037d5f4998bb6efa43d66b418119df8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9fe7fc15e86df884fb9610ba5d6e72ab52e2d129
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934806"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886011"
 ---
 # <a name="netstat"></a>netstat
 
@@ -46,7 +44,7 @@ netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 | `<interval>` | Vuelve a mostrar la información seleccionada cada *intervalo* de segundos. Presione CTRL + C para detener la representación. Si se omite este parámetro, este comando imprime la información seleccionada una sola vez. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El comando **netstat** proporciona estadísticas para lo siguiente:
 
@@ -55,7 +53,7 @@ netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
     | Protocolo | Nombre del Protocolo (TCP o UDP). |
     | Dirección local | La dirección IP del equipo local y el número de puerto que se está usando. Se muestra el nombre del equipo local que corresponde a la dirección IP y el nombre del puerto, a menos que se especifique el parámetro **-n** . Si aún no se ha establecido el puerto, el número de puerto se muestra como un asterisco (*). |
     | Dirección externa | La dirección IP y el número de puerto del equipo remoto al que está conectado el socket. Los nombres que corresponden a la dirección IP y el puerto se muestran a menos que se especifique el parámetro **-n** . Si aún no se ha establecido el puerto, el número de puerto se muestra como un asterisco (*). |
-    | Estado | Indica el estado de una conexión TCP, incluidos:<ul><li>CLOSE_WAIT</li><li>CLOSED</li><li>RESTABLECE</li><li>FIN_WAIT_1</li><li>FIN_WAIT_2</li><li>LAST_ACK</li><li>ESCUCHAR</li><li>SYN_RECEIVED</li><li>SYN_SEND</li><li>TIMED_WAIT</li></ul> |
+    | State | Indica el estado de una conexión TCP, incluidos:<ul><li>CLOSE_WAIT</li><li>CLOSED</li><li>RESTABLECE</li><li>FIN_WAIT_1</li><li>FIN_WAIT_2</li><li>LAST_ACK</li><li>ESCUCHAR</li><li>SYN_RECEIVED</li><li>SYN_SEND</li><li>TIMED_WAIT</li></ul> |
 
 ### <a name="examples"></a>Ejemplos
 

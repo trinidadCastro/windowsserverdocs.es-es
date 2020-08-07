@@ -1,20 +1,18 @@
 ---
 title: nslookup server
 description: Artículo de referencia del comando Nslookup Server, que cambia el servidor predeterminado al dominio del sistema de nombres de dominio (DNS) especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 608267f8-f7b4-412a-8dcd-e08b5ffc2085
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec66534d475502ee68f9fabb58b214d25e6e0aaf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: eacb1807810627956fcf75455e861d3ac381cf13
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931260"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885787"
 ---
 # <a name="nslookup-server"></a>nslookup server
 

@@ -1,20 +1,18 @@
 ---
 title: sxstrace
 description: Obtenga información sobre cómo diagnosticar problemas en paralelo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fcd26eeb-fbd9-4a86-b6a9-dfa5e9c6e4fc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 88ea6ba9d7a8f9744997eb78be2309693a6267b5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d1ed136e72569c2dfbe59cd2132e13c23f94da02
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821155"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881938"
 ---
 # <a name="sxstrace"></a>sxstrace
 
@@ -32,11 +30,11 @@ sxstrace [{[trace -logfile:<FileName> [-nostop]|[parse -logfile:<FileName> -outf
 |-------|--------|
 |seguimiento|Habilita el seguimiento para SxS (en paralelo)|
 |-logfile|Especifica el archivo de registro sin procesar.|
-|\<Nombre de archivo>|Guarda el registro de seguimiento en el *nombre de archivo*.|
+|\<FileName>|Guarda el registro de seguimiento en el *nombre de archivo*.|
 |-NoStop|No especifica ningún aviso para detener el seguimiento.|
 |parse|Traduce el archivo de seguimiento sin procesar.|
 |-OUTFILE|Especifica el nombre de archivo de salida.|
-|\<> ParsedFile|Especifica el nombre de archivo del archivo analizado.|
+|\<ParsedFile>|Especifica el nombre de archivo del archivo analizado.|
 |-filter|Permite filtrar la salida.|
 |\<AppName>|Especifica el nombre de la aplicación.|
 |stoptrace|Detenga el seguimiento si no se ha detenido antes de.|
@@ -47,7 +45,7 @@ Habilite el seguimiento y guarde el archivo de seguimiento en **sxstrace. ETL**:
 ```
 sxstrace trace -logfile:sxstrace.etl
 ```
-Traduzca el archivo de seguimiento sin procesar en un formato legible para el usuario y guarde el resultado en **sxstrace. txt**:
+Traduzca el archivo de seguimiento sin procesar en un formato legible y guarde el resultado en **sxstrace.txt**:
 ```
 sxstrace parse -logfile:sxstrace.etl -outfile:sxstrace.txt
 ```

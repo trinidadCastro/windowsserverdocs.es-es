@@ -1,20 +1,18 @@
 ---
 title: cacls
 description: Artículo de referencia para el comando cacls. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b5bdbaaa-4557-48b8-80df-e75ee0d2f27d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7719728f2c1cb7ce629e199a51ee211ea5781401
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0a6033d6631fd3269f00f52df14fd5e94994b278
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924841"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880424"
 ---
 # <a name="cacls"></a>cacls
 
@@ -33,7 +31,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| `<filename>` | Obligatorio. Muestra las ACL de los archivos especificados. |
+| `<filename>` | Necesario. Muestra las ACL de los archivos especificados. |
 | /t | Cambia las ACL de los archivos especificados en el directorio actual y en todos los subdirectorios. |
 | /m | Cambia las ACL de los volúmenes montados en un directorio. |
 | /l | Funciona en el propio vínculo simbólico en lugar de en el destino. |
@@ -59,7 +57,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 | IA IO | Solo subcarpetas. |
 | OI IO | Solo archivos. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Puede usar caracteres comodín (**?** y **&#42;**) para especificar varios archivos.
 

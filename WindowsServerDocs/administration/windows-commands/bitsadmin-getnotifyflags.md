@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getnotifyflags
 description: Artículo de referencia para el comando bitsadmin getnotifyflags, que recupera las marcas de notificación para el trabajo especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d4657e6c-8959-4db7-a4af-e73d3f80ecf8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ea97c039f372a2211b1e2a6c640c4499a38dfe4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5368069b66b94436c9641527868267676fd6acb9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926924"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894088"
 ---
 # <a name="bitsadmin-getnotifyflags"></a>bitsadmin getnotifyflags
 
@@ -32,11 +30,11 @@ bitsadmin /getnotifyflags <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 El trabajo puede contener una o varias de las siguientes marcas de notificación:
 
-| Marcar | Descripción |
+| Marca | Descripción |
 | ----- | ----- |
 | 0x001 | Genera un evento cuando se han transferido todos los archivos del trabajo. |
 | 0x002 | Genera un evento cuando se produce un error. |

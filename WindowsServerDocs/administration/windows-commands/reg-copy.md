@@ -1,20 +1,18 @@
 ---
 title: reg copy
 description: Artículo de referencia para el comando reg Copy, que copia una entrada del registro en una ubicación especificada en el equipo local o remoto.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3fe74213-39ec-4b2d-ba3d-086243eac997
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e98faa37f1d123c584a3e12ae013c35688c37680
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cc1141ddd8082ee6302886a5ce49b9805a19cede
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937035"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884182"
 ---
 # <a name="reg-copy"></a>reg copy
 
@@ -36,7 +34,7 @@ reg copy <keyname1> <keyname2> [/s] [/f]
 | /f | Copia la subclave sin pedir confirmación. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Este comando no pide confirmación al copiar una subclave.
 
