@@ -1,21 +1,19 @@
 ---
 title: Introducción a la configuración y la recopilación de eventos de arranque
 description: Configuración de recopiladores y destinos de la recopilación de eventos de instalación y arranque
-ms.prod: windows-server
 manager: DonGill
-ms.technology: server-sbec
 ms.localizationpriority: medium
 ms.date: 10/16/2017
 ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: bb70f25ca4564f1bdf76940c9d2fcb840db5afa2
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e5e18ed5f5cc4cba319042f1a5da84acae8e5fd5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408894"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879539"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>Introducción a la configuración y la recopilación de eventos de arranque
 
@@ -45,7 +43,7 @@ El equipo del recopilador debe ejecutar Windows Server 2016 (puede estar en cual
 |Windows 8.1|sí|sí|
 |Windows 10|sí|sí|
 |Windows Server 2016|sí|sí|
-|Windows Server 2012 R2|sí|no|
+|Windows Server 2012 R2|sí|No|
 
 ## <a name="installing-the-collector-service"></a>Instalación del servicio Recopilador
 A partir de Windows Server 2016, el servicio Recopilador de eventos está disponible como una característica opcional. En esta versión, puede instalarlo mediante DISM.exe con este comando en un símbolo del sistema de Windows PowerShell con privilegios elevados:
@@ -79,7 +77,7 @@ Puede habilitar el transporte de eventos de forma remota (con Windows PowerShell
 
     winrm quickconfig
 
-2.  Responda a los mensajes y, a continuación, reinicie el equipo de destino. Si los equipos de destino no están en el mismo dominio que el equipo del recopilador, es posible que tenga que definirlos como hosts de confianza. Para ello, siga estos pasos:
+2.  Responda a los mensajes y, a continuación, reinicie el equipo de destino. Si los equipos de destino no están en el mismo dominio que el equipo del recopilador, es posible que tenga que definirlos como hosts de confianza. Para ello:
 
 3.  En el equipo del recopilador, ejecute cualquiera de estos comandos:
 
@@ -158,7 +156,7 @@ Si el equipo de destino tiene más de un adaptador de red, el controlador KDNET 
 ### <a name="validate-target-computer-configuration"></a>Validar la configuración del equipo de destino
 Para comprobar la configuración en el equipo de destino, abra un símbolo del sistema con privilegios elevados y ejecute **bcdedit/enum**. Cuando haya terminado, ejecute **bcdedit/eventsettings**. Puede hacer doble comprobación de los siguientes valores:
 
--   Clave
+-   Key
 
 -   Debugtype = NET
 

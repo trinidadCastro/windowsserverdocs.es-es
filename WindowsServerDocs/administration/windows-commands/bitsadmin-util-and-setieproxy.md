@@ -1,20 +1,18 @@
 ---
 title: bitsadmin util y setieproxy
 description: Artículo de referencia del comando bitsadmin util y SETIEPROXY, que establece la configuración del proxy que se va a usar al transferir archivos mediante una cuenta de servicio.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0e9f31ba-3070-4ffd-a94c-388c8d78f688
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 018e9400dd2463b61f053d37338740090670f51a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 32eb4c8703f7b56af11efccfe9f53ca41d8c4c88
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927314"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880836"
 ---
 # <a name="bitsadmin-util-and-setieproxy"></a>bitsadmin util y setieproxy
 
@@ -37,7 +35,7 @@ bitsadmin /util /setieproxy <account> <usage> [/conn <connectionname>]
 | usage | Especifica la forma de detección del proxy que se va a usar. Los valores posibles son:<ul><li>**NO_PROXY.** No utilice un servidor proxy.</li><li>**Detección automática.** Detectar automáticamente la configuración de proxy.</li><li>**MANUAL_PROXY.** Usar una lista de proxy especificada y una lista de omisión. Debe especificar las listas inmediatamente después de la etiqueta Usage. Por ejemplo: `MANUAL_PROXY proxy1,proxy2 NULL`.<ul><li>**Lista de proxy.** Una lista delimitada por comas de servidores proxy que se usarán.</li><li>**Omitir lista.** Una lista delimitada por espacios de nombres de host o direcciones IP, o ambos, para las que las transferencias no se enrutarán a través de un proxy. Esto puede ser \<local> hacer referencia a todos los servidores de la misma LAN. Los valores NULL o se pueden usar para una lista de omisión de proxy vacía.</li></ul><li>**Autoscript.** Igual que la **detección automática**, excepto en que también se ejecuta un script. Debe especificar la dirección URL del script inmediatamente después de la etiqueta Usage. Por ejemplo: `AUTOSCRIPT http://server/proxy.js`.</li><li>**Determinado.** Igual que **NO_PROXY**, excepto que quita las direcciones URL de proxy manuales (si se especifican) y las direcciones URL detectadas mediante la detección automática.</li></ul> |
 | connectionName | Opcional. Se usa con el parámetro **/Conn** para especificar la conexión del módem que se va a usar. Si no se especifica el parámetro **/Conn** , bits usa la conexión LAN. |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 Cada llamada sucesiva con este modificador reemplaza el uso previamente especificado, pero no los parámetros del uso definido previamente. Por ejemplo, si especifica **NO_PROXY**, **detección automática**y **MANUAL_PROXY** en llamadas independientes, bits usa el último uso proporcionado, pero conserva los parámetros del uso definido previamente.
 

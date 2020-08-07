@@ -1,20 +1,18 @@
 ---
 title: list
 description: Artículo de referencia del comando lista, que muestra una lista de discos, de particiones en un disco, de volúmenes de un disco o de discos duros virtuales (VHD).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 69b105a1-9710-4a06-8102-38cc9e475ca5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fda60b0520da00659d0ac8fc9cab483c62e2a6a7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be7a4e3fee5a572b87b11caf3f57d1842c454b9f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931711"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887526"
 ---
 # <a name="list"></a>list
 
@@ -35,7 +33,7 @@ list { disk | partition | volume | vdisk }
 | volumen | Muestra una lista de volúmenes básicos y dinámicos en todos los discos. |
 | vDisk | Muestra una lista de los discos duros virtuales que están conectados o seleccionados. Este comando muestra los VHD desasociados si están seleccionados actualmente; sin embargo, el tipo de disco se establece en desconocido hasta que se adjunta el disco duro virtual. El VHD marcado con un asterisco (*) tiene el foco. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Al enumerar las particiones en un disco dinámico, es posible que las particiones no correspondan a los volúmenes dinámicos del disco. Esta discrepancia se produce porque los discos dinámicos contienen entradas en la tabla de particiones para el volumen de sistema o el volumen de arranque (si existen en el disco). También contienen una partición que ocupa el resto del disco con el fin de reservar espacio para que lo usen los volúmenes dinámicos.
 

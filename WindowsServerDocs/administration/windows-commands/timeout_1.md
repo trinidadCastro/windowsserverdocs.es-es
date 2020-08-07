@@ -1,20 +1,18 @@
 ---
 title: timeout
 description: Artículo de referencia para el tiempo de espera, que detiene el procesador de comandos durante el número de segundos especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e26b4a84-0e30-46e1-aa10-0667b7d3cb4c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62ead9473a9034c02fab18f2318ecb5162511922
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 90ba2da52f97ee603ce7992e4df135c1284c4070
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930096"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881401"
 ---
 # <a name="timeout"></a>timeout
 
@@ -36,7 +34,7 @@ timeout /t <TimeoutInSeconds> [/nobreak]
 |/nobreak|Especifica que se omitirán los trazos de clave de usuario.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El comando **timeout** se usa normalmente en archivos por lotes.
 -   La pulsación de teclas de un usuario reanuda la ejecución del procesador de comandos inmediatamente, incluso si no ha expirado el período de tiempo de espera.

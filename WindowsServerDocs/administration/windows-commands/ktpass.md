@@ -1,20 +1,18 @@
 ---
 title: ktpass
 description: Artículo de referencia para el comando ktpass, que configura el nombre de la entidad de seguridad del servidor para el host o el servicio en AD DS y genera un archivo. de claves de claves que contiene la clave secreta compartida del servicio.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 47087676-311e-41f1-8414-199740d01444
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fbf7b47f4f21a2c964d14dd1200b15ad635d7471
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3bb523d35a1bbf2d15895201855a58e96ebb7772
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931819"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887647"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -67,7 +65,7 @@ ktpass
 | `{-|+}setpass <password>` | Establece la contraseña del usuario cuando se proporciona. Si se usa rndpass, en su lugar se genera una contraseña aleatoria. |
 | /? | Muestra ayuda para este comando. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Los servicios que se ejecutan en sistemas que no ejecutan el sistema operativo Windows se pueden configurar con cuentas de instancia de servicio en AD DS. Esto permite a cualquier cliente Kerberos autenticarse en servicios que no ejecutan el sistema operativo Windows mediante el uso de los KDC de Windows.
 

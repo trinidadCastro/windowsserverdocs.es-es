@@ -1,20 +1,18 @@
 ---
 title: logman create cfg
 description: Artículo de referencia para el comando Logman Create cfg, que crea un recopilador de datos de configuración.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bfc87093-3ff5-4e19-aa93-d185fb8e2239
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4ae073561ddfc26f4a6a1af834113cff0cc9e29
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d0932d4014109cbf10300940a391d4ce564d4163
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932083"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887416"
 ---
 # <a name="logman-create-cfg"></a>logman create cfg
 
@@ -32,11 +30,11 @@ logman create cfg <[-n] <name>> [options]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| -s`<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
+| -s `<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
 | -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
 | [-n]`<name>` | Nombre del objeto de destino. |
 | -[-] u`<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
-| -m`<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
+| -m `<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
 | -RF`<[[hh:]mm:]ss>` | Ejecuta el recopilador de datos durante el período de tiempo especificado. |
 | -b`<M/d/yyyy h:mm:ss[AM|PM]>` | Comienza a recopilar datos en el momento especificado. |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | Finaliza la recopilación de datos en el momento especificado. |
@@ -56,7 +54,7 @@ logman create cfg <[-n] <name>> [options]
 | -FTC`<path [path [...]]>` | Especifica la ruta de acceso completa a los archivos que se van a recopilar. |
 | /? | Muestra la ayuda contextual. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Donde [-] aparece en la lista, al agregar un guion adicional (-) se anula la opción.
 

@@ -1,20 +1,18 @@
 ---
 title: logman create counter
 description: Artículo de referencia para el comando Logman Create Counter, que crea un recopilador de datos de contador.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1e214c32-b704-43c1-b548-e1cf43b583c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80ea79eb8c286a8dbe7c020b4c23ae1483d2cb9b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5a3c876962f1b92112dffc43f5fedf87589b0cae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927208"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887426"
 ---
 # <a name="logman-create-counter"></a>logman create counter
 
@@ -32,12 +30,12 @@ logman create counter <[-n] <name>> [options]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| -s`<computer name>` | Ejecute el comando en el equipo remoto especificado. |
+| -s `<computer name>` | Ejecute el comando en el equipo remoto especificado. |
 | -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
 | [-n]`<name>` | Nombre del objeto de destino. |
 | -f`<bin|bincirc>` | Especifica el formato del registro del recopilador de datos. |
 | -[-] u`<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un `*` para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
-| -m`<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
+| -m `<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
 | -RF`<[[hh:]mm:]ss>` | Ejecuta el recopilador de datos durante el período de tiempo especificado. |
 | -b`<M/d/yyyy h:mm:ss[AM|PM]>` | Comienza a recopilar datos en el momento especificado. |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | Finaliza la recopilación de datos en el momento especificado. |
@@ -56,7 +54,7 @@ logman create counter <[-n] <name>> [options]
 | -SC`<value>` | Especifica el número máximo de muestras que se van a recopilar con un recopilador de datos del contador de rendimiento. |
 | /? | Muestra la ayuda contextual. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Donde [-] aparece en la lista, al agregar un guion adicional (-) se anula la opción.
 

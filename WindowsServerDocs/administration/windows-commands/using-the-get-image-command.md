@@ -1,20 +1,18 @@
 ---
 title: Get-Image
 description: Artículo de referencia de Get-Image, que recupera información acerca de una imagen.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0ecaa999-72ad-4191-adb5-a418de42a001
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d37989fa681e5694b0c15b77aa1baddcfebbeecf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5b97e13441d883a683515222774194c1fb75ecbc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932231"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879367"
 ---
 # <a name="get-image"></a>Get-Image
 

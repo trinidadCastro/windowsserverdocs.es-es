@@ -1,20 +1,18 @@
 ---
 title: bitsadmin addfilewithranges
 description: Artículo de referencia para el comando bitsadmin addfilewithranges, que agrega un archivo al trabajo especificado. BITS descarga los intervalos especificados del archivo remoto.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: df0ce0bf-dff1-4a48-a16f-fd2f4d5f7189
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5439cfb8330cda7c51150c720fe45faccca8e1ec
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c19c6dfec23cf012f42ab7d10b1d3df90ca957ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927075"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894877"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 
@@ -35,7 +33,7 @@ bitsadmin /addfilewithranges <job> <remoteURL> <localname> <rangelist>
 | localname | Nombre del archivo en el equipo local. Debe contener una ruta de acceso absoluta al archivo. |
 | rangelist | Lista delimitada por comas de pares de desplazamiento: longitud. Use un signo de dos puntos para separar el valor de desplazamiento del valor de longitud. Por ejemplo, un valor de `0:100,2000:100,5000:eof` indica a bits que transfiera 100 bytes desde el desplazamiento 0, 100 bytes desde el desplazamiento 2000 y los bytes restantes desde el desplazamiento 5000 hasta el final del archivo. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - El **EOF** del token es un valor de longitud válido dentro de los pares de longitud y desplazamiento en `<rangelist>` . Indica al servicio que lea hasta el final del archivo especificado.
 

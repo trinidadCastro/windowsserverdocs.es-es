@@ -1,20 +1,18 @@
 ---
 title: telnet set
 description: Artículo de referencia para telnet Set, que establece opciones.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 67316b5f-9c6f-43e3-86d5-dcff9ae2ac3e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7415f084e73d87eb767ed0b487f42e103b998c23
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2cfc3daaa882effbea0c8dba6471ceeee1216681
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937367"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881659"
 ---
 # <a name="telnet-set"></a>Telnet: establecer
 
@@ -42,7 +40,7 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 | término {ANSI &#124; VT100 &#124; vt52 &#124; VTNT} |                                                                                                                                        Establece el tipo de terminal.                                                                                                                                        |
 |                        ?                         |                                                                                                                                    Muestra ayuda para este comando.                                                                                                                                    |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 1. Puede usar el comando **unset** para desactivar una opción que se estableció previamente.
 2. En las versiones de telnet que no estén en inglés, el tipo de **códigos** <option> está disponible. **Codeset** <option> establece el código actual establecido en una opción, que puede ser cualquiera de los siguientes: **Shift JIS**, **japonés EUC**, **JIS kanji**, **JIS kanji (78)**, **Dec kanji**, **NEC kanji**. Debe establecer el mismo conjunto de código en el equipo remoto.
    ## <a name="examples"></a>Ejemplos

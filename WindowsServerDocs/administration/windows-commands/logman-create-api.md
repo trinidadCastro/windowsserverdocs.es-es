@@ -1,20 +1,18 @@
 ---
 title: logman create api
 description: Artículo de referencia para el comando Logman Create API, que crea un recopilador de datos de seguimiento de API.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2ecc0a75-2613-464a-8616-c5dc404bb736
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2294cb7ba7ab962dbba33b0e2612b8dee2d72004
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a2e3e9291bcd113ced9c27eb7cc3449f715f9893
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925431"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887453"
 ---
 # <a name="logman-create-api"></a>logman create api
 
@@ -32,12 +30,12 @@ logman create api <[-n] <name>> [options]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| -s`<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
+| -s `<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
 | -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
 | [-n]`<name>` | Nombre del objeto de destino. |
 | -f`<bin|bincirc>` | Especifica el formato del registro del recopilador de datos. |
 | -[-] u`<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un `*` para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
-| -m`<[start] [stop] [[start] [stop] [...]]>` | Se ha cambiado a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada. |
+| -m `<[start] [stop] [[start] [stop] [...]]>` | Se ha cambiado a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada. |
 | -RF`<[[hh:]mm:]ss>` | Ejecute el recopilador de datos durante el período de tiempo especificado. |
 | -b`<M/d/yyyy h:mm:ss[AM|PM]>` | Comienza a recopilar datos en el momento especificado. |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | Finaliza la recopilación de datos en el momento especificado. |
@@ -59,7 +57,7 @@ logman create api <[-n] <name>> [options]
 | -exe`<value>` | Especifica la ruta de acceso completa a un archivo ejecutable para el seguimiento de la API. |
 | /? | Muestra la ayuda contextual. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Donde [-] aparece en la lista, al agregar un guion adicional (-) se anula la opción.
 

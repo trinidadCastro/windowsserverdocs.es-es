@@ -1,20 +1,18 @@
 ---
 title: logman delete
 description: Artículo de referencia para el comando Logman Delete, que elimina un recopilador de datos existente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8f3b2422-3dce-4fb4-adbb-8536b1d7da2b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 505cd8a09bcbb1e46f16242818825f3c504955b9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5f83e903d6e9c3b9679f736bdba309498473ce52
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930423"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887316"
 ---
 # <a name="logman-delete"></a>logman delete
 
@@ -32,7 +30,7 @@ logman delete <[-n] <name>> [options]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| -s`<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
+| -s `<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
 | -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
 | [-n]`<name>` | Nombre del objeto de destino. |
 | -ETS | Envía comandos a sesiones de seguimiento de eventos directamente sin guardar o programar. |

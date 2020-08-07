@@ -1,18 +1,16 @@
 ---
 title: Información general de impresión en la nube híbrida de Windows Server
 description: La impresión en la nube híbrida permite a los profesionales de ti admitir los requisitos de impresión de BYOD o dispositivos Unidos a un dominio.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: conceptual
 author: trudyha
 ms.author: trudyha
 ms.date: 10/16/2017
-ms.openlocfilehash: df720b69e2124aa487958ccd28e365fdcf72def7
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: fc76aef0f7fbc9f3c1dd73b94c6510c0ad37034c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409505"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879414"
 ---
 # <a name="windows-server-hybrid-cloud-print-overview"></a>Información general de impresión en la nube híbrida de Windows Server
 
@@ -50,7 +48,7 @@ Esta tabla contiene más información sobre los elementos del diagrama.
 | Elemento | Descripción |
 | ------- | ----------- |
 | Azure Active Directory  | Proporciona y controla la funcionalidad de identidad y autorización del usuario |
-| Active Directory        | Proporciona y controla la funcionalidad de identidad y autorización del usuario |
+| Grafo de        | Proporciona y controla la funcionalidad de identidad y autorización del usuario |
 | Azure AD Connect  | Sincroniza las credenciales de usuario entre Azure AD y AD local. |
 | Servicio MDM (Intune) | Proporciona la funcionalidad de aprovisionamiento de directivas de dispositivo para garantizar que el dispositivo cliente (dispositivo BYOD) cumple las directivas corporativas. |
 | Proxy de Azure AD | Proporciona una conexión de larga duración que se establece desde detrás del Firewall a Azure para permitir que el tráfico de aplicaciones configurado específico fluya desde Internet a la red corporativa. |

@@ -1,28 +1,26 @@
 ---
 title: wdsutil
 description: Artículo de referencia para WDSUtil, que es una utilidad de línea de comandos que se usa para administrar el servidor de servicios de implementación de Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3a1965a0-8677-40cc-9495-30ae806808d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14fa0d962d1104279211696c7ff8b80d0f1b6fbf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1ff4ca30ff0e762cc1a51538088bd0bba376f0d6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930830"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881201"
 ---
 # <a name="wdsutil"></a>wdsutil
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 WDSUtil es una utilidad de línea de comandos que se usa para administrar el servidor de servicios de implementación de Windows. Para ejecutar estos comandos, haga clic en **Inicio**, haga clic con el botón secundario en **símbolo del sistema**y haga clic en **Ejecutar como administrador**.
-## <a name="commands"></a>Comandos
-|Comando|Descripción|
+## <a name="commands"></a>Comandos:
+|Get-Help|Descripción|
 |------|--------|
 |[Usar el comando Add](using-the-add-command.md)|agrega objetos o preconfigura equipos.|
 |[Uso del comando APPROVE-AutoaddDevices](using-the-approve-autoadddevices-command.md)|Aprueba los equipos que están pendientes de aprobación del administrador.|

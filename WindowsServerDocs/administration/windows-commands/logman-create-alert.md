@@ -1,20 +1,18 @@
 ---
 title: logman create alert
 description: Artículo de referencia para el comando Logman Create Alert, que crea un recopilador de datos de alertas.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 93e6fc2b-5bf5-413b-84b4-be8b9dd3a57d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb2c1372caefd18e9625eedfe71538a78bfc84e4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a0e2dd1be058d4428c255d174826eb046acc3482
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931638"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887461"
 ---
 # <a name="logman-create-alert"></a>logman create alert
 
@@ -32,11 +30,11 @@ logman create alert <[-n] <name>> [options]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| -s`<computer name>` | Ejecute el comando en el equipo remoto especificado. |
+| -s `<computer name>` | Ejecute el comando en el equipo remoto especificado. |
 | -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
 | [-n]`<name>` | Nombre del objeto de destino. |
 | -[-] u`<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un `*` para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
-| -m`<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
+| -m `<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
 | -RF`<[[hh:]mm:]ss>` | Ejecuta el recopilador de datos durante el período de tiempo especificado. |
 | -b`<M/d/yyyy h:mm:ss[AM|PM]>` | Comienza a recopilar datos en el momento especificado. |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | Finaliza la recopilación de datos en el momento especificado. |
@@ -58,7 +56,7 @@ logman create alert <[-n] <name>> [options]
 | -[-] ex`<argument>` | Especifica los argumentos de tarea que se van a usar con la tarea especificada mediante-TN. |
 | /? | Muestra la ayuda contextual. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Donde [-] aparece en la lista, al agregar un guion adicional (-) se anula la opción.
 
