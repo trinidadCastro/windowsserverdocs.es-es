@@ -1,20 +1,18 @@
 ---
 title: Administrar MultiPoint Services
 description: Información general sobre los artículos sobre la administración de Multipoint Services
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 81135740-e9ce-4b4c-a770-760d741f20b1
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 4e7d959c69ed748ef5a6a9821c53691c9fa718c9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 2376ff176d9031cae69629e1181febe25a5ebd3a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181941"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955492"
 ---
 # <a name="managing-multipoint-services"></a>Administrar MultiPoint Services
 Multipoint &trade; Services permite que varios usuarios, cada uno con su propia experiencia independiente de Windows, compartan un equipo simultáneamente. Las estaciones de usuario, que constan de un monitor, un teclado y un mouse, están conectadas directamente con el equipo host a través de cables USB o de vídeo o de la red.

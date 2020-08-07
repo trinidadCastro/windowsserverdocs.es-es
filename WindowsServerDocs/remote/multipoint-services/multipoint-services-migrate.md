@@ -2,26 +2,24 @@
 title: Migrar a multipoint Services en Windows Server 2016
 description: Obtenga información sobre cómo migrar desde una versión anterior de Multipoint Services
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 16c217ad-700a-48a3-8398-4a7f7e9edb52
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 1609ff02c8e1b1480d004104bdc7e37f1240729a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ce5fb28f92808d736f66f1f900228aac09d98bf5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959277"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955342"
 ---
 # <a name="multipoint-services-migration-in-windows-server-2016"></a>Migración de Multipoint Services en Windows Server 2016
 >Se aplica a: Windows Server 2016
 
 Puede migrar desde una versión anterior de Windows Server 2016 Multipoint Services a la versión RTM de Multipoint Services. La siguiente información proporciona información de preparación y pasos de migración y comprobación.
 
-La documentación y las herramientas de migración facilitan la migración de la configuración del rol de servidor y los datos de un servidor existente a un servidor de destino que ejecuta Windows Server 2016. Mediante el proceso que se describe en esta guía puede simplificar el proceso de migración, reducir el tiempo de migración, aumentar la precisión del proceso de migración y contribuir a eliminar los posibles conflictos que, de otro modo, podrían producirse durante dicho proceso. 
+La documentación y las herramientas de migración facilitan la migración de la configuración del rol de servidor y los datos de un servidor existente a un servidor de destino que ejecuta Windows Server 2016. Mediante el proceso que se describe en esta guía puede simplificar el proceso de migración, reducir el tiempo de migración, aumentar la precisión del proceso de migración y contribuir a eliminar los posibles conflictos que, de otro modo, podrían producirse durante dicho proceso.
 
 ## <a name="what-to-know-before-you-begin"></a>Qué debe saber antes de empezar
 Antes de comenzar el proceso de migración, tenga en cuenta lo siguiente:

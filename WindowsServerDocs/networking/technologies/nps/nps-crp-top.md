@@ -2,18 +2,16 @@
 title: Procesamiento de solicitudes de conexión
 description: En este tema se proporciona información general sobre el procesamiento de solicitudes de conexión del servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 849d661a-42c1-4f93-b669-6009d52aad39
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 311003201f96c5f566077867b09fee0a325ed011
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9b50fe9a3adce7967a555237446e77e4d4080221
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316196"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955602"
 ---
 # <a name="connection-request-processing"></a>Procesamiento de solicitudes de conexión
 
@@ -27,7 +25,7 @@ Puede usar este tema para obtener información sobre el procesamiento de solicit
 > - [Nombres de dominio Kerberos](nps-crp-realm-names.md)
 > - [Grupos de servidores RADIUS remotos](nps-crp-rrsg.md)
 
-Puede usar el procesamiento de solicitudes de conexión para especificar dónde se realiza la autenticación de las solicitudes de conexión: en el equipo local o en un servidor RADIUS remoto que sea miembro de un grupo de servidores RADIUS remotos. 
+Puede usar el procesamiento de solicitudes de conexión para especificar dónde se realiza la autenticación de las solicitudes de conexión: en el equipo local o en un servidor RADIUS remoto que sea miembro de un grupo de servidores RADIUS remotos.
 
 Si desea que el servidor local que ejecuta el servidor de directivas de redes (NPS) realice la autenticación para las solicitudes de conexión, puede usar la Directiva de solicitud de conexión predeterminada sin configuración adicional. Basándose en la directiva predeterminada, NPS autentica a los usuarios y equipos que tienen una cuenta en el dominio local y en dominios de confianza.
 
@@ -40,7 +38,7 @@ La ilustración siguiente muestra la ruta de un mensaje de solicitud de acceso d
 
 
 >[!NOTE]
->Los servidores de acceso a la red que se usan con NPS pueden ser dispositivos de puerta de enlace compatibles con el protocolo RADIUS, como puntos de acceso inalámbricos de 802.1 X y conmutadores de autenticación, servidores que ejecutan acceso remoto configurados como servidores VPN o de acceso telefónico, o otros dispositivos compatibles con RADIUS.
+>Los servidores de acceso a la red que se usan con NPS pueden ser dispositivos de puerta de enlace compatibles con el protocolo RADIUS, como puntos de acceso inalámbricos de 802.1 X y conmutadores de autenticación, servidores que ejecutan acceso remoto y que están configurados como servidores VPN o de acceso telefónico, u otros dispositivos compatibles con RADIUS.
 
 Si desea que NPS procese algunas solicitudes de autenticación localmente y reenvíe otras solicitudes a un grupo del servidor RADIUS remoto, configure más de una directiva de solicitud de conexión.
 
@@ -52,23 +50,23 @@ Para especificar NPS u otros servidores RADIUS a los que se reenvían las solici
 
 Cuando se usa NPS como un servidor RADIUS, los mensajes RADIUS proporcionan autenticación, autorización y cuentas para las conexiones de acceso a la red de la siguiente manera:
 
-1. Los servidores de acceso, como los servidores de acceso telefónico a la red, los servidores VPN y los puntos de acceso inalámbrico reciben solicitudes de conexión de clientes de acceso. 
+1. Los servidores de acceso, como los servidores de acceso telefónico a la red, los servidores VPN y los puntos de acceso inalámbrico reciben solicitudes de conexión de clientes de acceso.
 
-2. El servidor de acceso, configurado para usar RADIUS como protocolo de autenticación, autorización y cuentas, crea un mensaje de solicitud de acceso y lo envía al NPS. 
+2. El servidor de acceso, configurado para usar RADIUS como protocolo de autenticación, autorización y cuentas, crea un mensaje de solicitud de acceso y lo envía al NPS.
 
-3. NPS evalúa el mensaje de solicitud de acceso. 
+3. NPS evalúa el mensaje de solicitud de acceso.
 
-4. Si es necesario, el NPS envía un mensaje de desafío de acceso al servidor de acceso. El servidor de acceso procesa el desafío y envía una solicitud de acceso actualizada al NPS. 
+4. Si es necesario, el NPS envía un mensaje de desafío de acceso al servidor de acceso. El servidor de acceso procesa el desafío y envía una solicitud de acceso actualizada al NPS.
 
-5. Las credenciales de usuario se comprueban y las propiedades de acceso telefónico de la cuenta de usuario se obtienen por medio de una conexión segura con un controlador de dominio. 
+5. Las credenciales de usuario se comprueban y las propiedades de acceso telefónico de la cuenta de usuario se obtienen por medio de una conexión segura con un controlador de dominio.
 
-6. El intento de conexión se autoriza con las propiedades de acceso telefónico de la cuenta de usuario y las directivas de red. 
+6. El intento de conexión se autoriza con las propiedades de acceso telefónico de la cuenta de usuario y las directivas de red.
 
-7. Si el intento de conexión se autentica y autoriza, el NPS envía un mensaje de aceptación de acceso al servidor de acceso. Si el intento de conexión no se autentica o no está autorizado, el NPS envía un mensaje de rechazo de acceso al servidor de acceso. 
+7. Si el intento de conexión se autentica y autoriza, el NPS envía un mensaje de aceptación de acceso al servidor de acceso. Si el intento de conexión no se autentica o no está autorizado, el NPS envía un mensaje de rechazo de acceso al servidor de acceso.
 
-8. El servidor de acceso completa el proceso de conexión con el cliente de acceso y envía un mensaje de solicitud de contabilidad al NPS, donde se registra el mensaje. 
+8. El servidor de acceso completa el proceso de conexión con el cliente de acceso y envía un mensaje de solicitud de contabilidad al NPS, donde se registra el mensaje.
 
-9. El NPS envía una respuesta de cuenta al servidor de acceso. 
+9. El NPS envía una respuesta de cuenta al servidor de acceso.
 
 >[!NOTE]
 >Asimismo, el servidor de acceso envía mensajes de solicitud de registro de actividad cuando la conexión se establece, cuando la conexión del cliente de acceso se cierra y cuando el servidor de acceso se inicia y detiene.

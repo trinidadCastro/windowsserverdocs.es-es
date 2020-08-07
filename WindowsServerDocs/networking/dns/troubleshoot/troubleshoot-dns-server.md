@@ -2,17 +2,16 @@
 title: Solución de problemas de servidores DNS
 description: En este artículo se explica cómo solucionar problemas de DNS desde el lado servidor.
 manager: dcscontentpm
-ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 4413c60072c43b623f386d5037e3da7ed5dc128d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ce4a3f4a183478cd250159f1953a0fd2193f6de6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861328"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964081"
 ---
 # <a name="troubleshooting-dns-servers"></a>Solución de problemas de servidores DNS
 
@@ -24,12 +23,12 @@ En este artículo se describe cómo solucionar problemas en los servidores DNS.
 
 2. Compruebe si el servidor DNS es autoritativo para el nombre que se está buscando. Si es así, consulte [comprobación de problemas con datos autoritativos](#checking-for-problems-with-authoritative-data).
 
-3. Ejecuta el siguiente comando:
+3. Ejecute el siguiente comando:
 
    ```cmd
    nslookup <name> <IP address of the DNS server>
    ```
-   Por ejemplo: 
+   Por ejemplo:
    ```cmd
    nslookup app1 10.0.0.1
    ```
@@ -45,7 +44,7 @@ En este artículo se describe cómo solucionar problemas en los servidores DNS.
    Clear-DnsServerCache
    ```
 
-5. Repita el paso 3. 
+5. Repita el paso 3.
 
 ## <a name="check-dns-server-problems"></a>Comprobar problemas del servidor DNS
 
@@ -53,11 +52,11 @@ En este artículo se describe cómo solucionar problemas en los servidores DNS.
 
 Compruebe los registros siguientes para ver si hay errores registrados:
 
-- Aplicación
+- Application
 
-- System
+- Sistema
 
-- DNS Server
+- Servidor DNS
 
 ### <a name="test-by-using-nslookup-query"></a>Prueba mediante la consulta nslookup
 
@@ -83,7 +82,7 @@ En raras ocasiones, es posible que el servidor DNS tenga una configuración avan
 
 ## <a name="checking-for-problems-with-authoritative-data"></a>Comprobación de problemas con datos autoritativos
 
-Compruebe si el servidor que devuelve la respuesta incorrecta es un servidor principal de la zona (el servidor principal estándar de la zona o un servidor que usa la integración de Active Directory para cargar la zona) o un servidor que hospeda una copia secundaria de la zona. 
+Compruebe si el servidor que devuelve la respuesta incorrecta es un servidor principal de la zona (el servidor principal estándar de la zona o un servidor que usa la integración de Active Directory para cargar la zona) o un servidor que hospeda una copia secundaria de la zona.
 
 ### <a name="if-the-server-is-a-primary-server"></a>Si el servidor es un servidor principal
 
@@ -98,16 +97,16 @@ El problema puede deberse a un error del usuario cuando los usuarios escriben da
 
    Si el nombre no es correcto en el servidor maestro, vaya al paso 4.
 
-2. Si el nombre es correcto en el servidor maestro, compruebe si el número de serie del servidor maestro es menor o igual que el número de serie en el servidor secundario. Si es así, modifique el servidor maestro o el servidor secundario para que el número de serie del servidor maestro sea mayor que el número de serie en el servidor secundario. 
-  
+2. Si el nombre es correcto en el servidor maestro, compruebe si el número de serie del servidor maestro es menor o igual que el número de serie en el servidor secundario. Si es así, modifique el servidor maestro o el servidor secundario para que el número de serie del servidor maestro sea mayor que el número de serie en el servidor secundario.
+
 3. En el servidor secundario, fuerce una transferencia de zona desde la consola DNS o mediante la ejecución del siguiente comando:
-  
+
    ```cmd
    dnscmd /zonerefresh <zone name>
    ```
-  
-   Por ejemplo, si la zona es corp.contoso.com, escriba: `dnscmd /zonerefresh corp.contoso.com`.
-  
+
+   Por ejemplo, si la zona es corp.contoso.com, escriba: `dnscmd /zonerefresh corp.contoso.com` .
+
 4. Vuelva a examinar el servidor secundario para ver si la zona se transfirió correctamente. Si no es así, es probable que tenga un problema de transferencia de zona. Para obtener más información, consulte [problemas de transferencia de zona](#zone-transfer-problems).
 
 5. Si la zona se transfirió correctamente, compruebe si los datos son correctos. Si no es así, los datos son incorrectos en la zona principal. El problema puede deberse a un error del usuario cuando los usuarios escriben datos en la zona. O bien, puede deberse a un problema que afecte a la replicación de Active Directory o a la actualización dinámica.
@@ -128,7 +127,7 @@ Si este servidor reenvía consultas a otro servidor, compruebe si hay problemas 
 
 Si el servidor está en buen estado y puede reenviar consultas, repita este paso y examine el servidor al que este servidor reenvía las consultas.
 
-Si este servidor no reenvía consultas a otro servidor, compruebe si este servidor puede consultar un servidor raíz. Para ello, ejecute el comando siguiente:
+Si este servidor no reenvía consultas a otro servidor, compruebe si este servidor puede consultar un servidor raíz. Para ello, ejecute el siguiente comando:
 
 ```cmd
 nslookup
@@ -155,11 +154,11 @@ Comience las pruebas en el procedimiento siguiente consultando un servidor raíz
    ```
    > [!NOTE]
    >Tipo de registro de recursos es el tipo de registro de recursos que se estaba consultando en la consulta original y FQDN es el FQDN para el que se estaba consultando (finalizado en un punto).
- 
+
 2. Si la respuesta incluye una lista de registros de recursos "NS" y "A" para los servidores delegados, repita el paso 1 para cada servidor y use la dirección IP de los registros de recursos "A" como dirección IP del servidor.
 
    - Si la respuesta no contiene un registro de recursos "NS", tiene una delegación rota.
-   
+
    - Si la respuesta contiene registros de recursos "NS", pero no registros de recursos "A", escriba **recursividad de conjunto**y consulte individualmente los registros de recursos de "a" de los servidores que se enumeran en los registros "NS". Si no encuentra al menos una dirección IP válida de un registro de recursos "A" para cada registro de recursos NS de una zona, tiene una delegación rota.
 
 3. Si determina que tiene una delegación rota, corríjalo agregando o actualizando un registro de recursos "A" en la zona principal mediante una dirección IP válida para un servidor DNS correcto para la zona delegada.
@@ -186,7 +185,7 @@ Ejecute las siguientes comprobaciones:
 
 - Compruebe Visor de eventos para el servidor DNS principal y secundario.
 
-- Compruebe el servidor maestro para ver si se rechaza el envío de la transferencia por seguridad. 
+- Compruebe el servidor maestro para ver si se rechaza el envío de la transferencia por seguridad.
 
 - Compruebe la ficha **transferencias de zona** de las propiedades de la zona en la consola DNS. Si el servidor restringe las transferencias de zona a una lista de servidores, como los que aparecen en la pestaña **servidores de nombres** de las propiedades de la zona, asegúrese de que el servidor secundario se encuentra en esa lista. Asegúrese de que el servidor está configurado para enviar transferencias de zona.
 
@@ -199,6 +198,6 @@ Ejecute las siguientes comprobaciones:
   - Si una zona de búsqueda directa en el servidor de Windows contiene un tipo de registro (por ejemplo, un registro SRV) que no admite el servidor secundario, es posible que el servidor secundario tenga problemas al extraer la zona.
 
 Compruebe si el servidor maestro está ejecutando otra implementación de servidor DNS, como BIND. Si es así, es posible que la zona del servidor maestro incluya registros de recursos incompatibles que Windows no reconoce.
- 
+
 Si el servidor principal o secundario está ejecutando otra implementación de servidor DNS, compruebe ambos servidores para asegurarse de que admiten las mismas características. Puede comprobar el servidor de Windows en la consola DNS de la ficha **Opciones avanzadas** de la página de propiedades del servidor. Además del cuadro habilitar secundarios de enlace, esta página incluye la lista desplegable **comprobación de nombres** . Esto le permite seleccionar la aplicación de la compatibilidad estricta con RFC para los caracteres en nombres DNS.
 

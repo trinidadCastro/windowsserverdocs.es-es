@@ -1,33 +1,31 @@
 ---
 title: Implementar una puerta de enlace del centro de administración de Windows en Azure
 description: Cómo implementar una puerta de enlace del centro de administración de Windows en Azure
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 1da4df284febbf18b5796322868451c45ab247ab
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: b4ae232d47398800ecae8500cff6726128f22b83
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903937"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971992"
 ---
-# <a name="deploy-windows-admin-center-in-azure"></a>Implementación del centro de administración de Windows en Azure
+# <a name="deploy-windows-admin-center-in-azure"></a>Implementación de Windows Admin Center en Azure
 
 ## <a name="deploy-using-script"></a>Implementación mediante el script
 
-Puede descargar [deploy-WACAzVM. PS1](https://aka.ms/deploy-wacazvm) , que se ejecutará desde [Azure Cloud Shell](https://shell.azure.com) para configurar una puerta de enlace del centro de administración de Windows en Azure. Este script puede crear todo el entorno, incluido el grupo de recursos.
+Puede descargar [Deploy-WACAzVM.ps1](https://aka.ms/deploy-wacazvm) que se ejecutarán desde [Azure Cloud Shell](https://shell.azure.com) para configurar una puerta de enlace del centro de administración de Windows en Azure. Este script puede crear todo el entorno, incluido el grupo de recursos.
 
 [Saltar a los pasos de implementación manual](#deploy-manually-on-an-existing-azure-virtual-machine)
 
 ### <a name="prerequisites"></a>Requisitos previos
 
 * Configure su cuenta en [Azure Cloud Shell](https://shell.azure.com). Si esta es la primera vez que usa Cloud Shell, se le pedirá que asocie o cree una cuenta de almacenamiento de Azure con Cloud Shell.
-* En un Cloud Shell de **PowerShell** , vaya a su directorio principal: ```PS Azure:\> cd ~```
-* Para cargar el archivo de ```Deploy-WACAzVM.ps1```, arrástrelo y colóquelo desde el equipo local en cualquier parte de la ventana de Cloud Shell.
+* En un Cloud Shell de **PowerShell** , vaya a su directorio principal:```PS Azure:\> cd ~```
+* Para cargar el ```Deploy-WACAzVM.ps1``` archivo, arrástrelo y colóquelo desde el equipo local en cualquier parte de la ventana de Cloud Shell.
 
 Si especifica su propio certificado:
 
@@ -76,7 +74,7 @@ Hay dos opciones diferentes para la implementación de MSI y el certificado usad
 En primer lugar, defina las variables comunes necesarias para los parámetros del script.
 
 ```PowerShell
-$ResourceGroupName = "wac-rg1" 
+$ResourceGroupName = "wac-rg1"
 $VirtualNetworkName = "wac-vnet"
 $SecurityGroupName = "wac-nsg"
 $SubnetName = "wac-subnet"
@@ -147,7 +145,7 @@ Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 ### <a name="requirements-for-managed-azure-vms"></a>Requisitos para máquinas virtuales de Azure administradas
 
 El puerto 5985 (WinRM sobre HTTP) debe estar abierto y tener un agente de escucha activo.
-Puede usar el código siguiente en Azure Cloud Shell para actualizar los nodos administrados. ```$ResourceGroupName``` y ```$Name``` usan las mismas variables que el script de implementación, pero tendrá que usar el ```$Credential``` específico de la máquina virtual que está administrando.
+Puede usar el código siguiente en Azure Cloud Shell para actualizar los nodos administrados. ```$ResourceGroupName```y ```$Name``` usan las mismas variables que el script de implementación, pero tendrá que usar el ```$Credential``` específico para la máquina virtual que administra.
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -157,10 +155,10 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 ## <a name="deploy-manually-on-an-existing-azure-virtual-machine"></a>Implementar manualmente en una máquina virtual de Azure existente
 
-Antes de instalar el centro de administración de Windows en la máquina virtual de puerta de enlace deseada, instale un certificado SSL que se usará para la comunicación HTTPS, o bien puede usar un certificado autofirmado generado por el centro de administración de Windows. Sin embargo, recibirá una advertencia al intentar conectarse desde un explorador si elige la última opción. Para omitir esta advertencia en Edge, haga clic en **detalles > vaya a la página web** o, en Chrome, seleccione **avanzadas > continúe con [Página Web]** . Se recomienda usar solo certificados autofirmados para entornos de prueba.
+Antes de instalar el centro de administración de Windows en la máquina virtual de puerta de enlace deseada, instale un certificado SSL que se usará para la comunicación HTTPS, o bien puede usar un certificado autofirmado generado por el centro de administración de Windows. Sin embargo, recibirá una advertencia al intentar conectarse desde un explorador si elige la última opción. Para omitir esta advertencia en Edge, haga clic en **detalles > vaya a la página web** o, en Chrome, seleccione **avanzadas > continúe con [Página Web]**. Se recomienda usar solo certificados autofirmados para entornos de prueba.
 
 > [!NOTE]
-> Estas instrucciones son para instalar en Windows Server con experiencia de escritorio, no en una instalación Server Core. 
+> Estas instrucciones son para instalar en Windows Server con experiencia de escritorio, no en una instalación Server Core.
 
 1. [Descargue el centro de administración de Windows](https://aka.ms/windowsadmincenter) en el equipo local.
 
@@ -168,32 +166,32 @@ Antes de instalar el centro de administración de Windows en la máquina virtual
 
 3. Haga doble clic en el archivo MSI para iniciar la instalación y siga las instrucciones del asistente. Tenga en cuenta lo siguiente:
 
-   - De forma predeterminada, el instalador usa el puerto recomendado 443 (HTTPS). Si desea seleccionar un puerto diferente, tenga en cuenta que también debe abrir ese puerto en el firewall. 
+   - De forma predeterminada, el instalador usa el puerto recomendado 443 (HTTPS). Si desea seleccionar un puerto diferente, tenga en cuenta que también debe abrir ese puerto en el firewall.
 
    - Si ya ha instalado un certificado SSL en la máquina virtual, asegúrese de seleccionar esa opción y escriba la huella digital.
 
-4. Iniciar el servicio del centro de administración de Windows (ejecutar C:/archivos de programa/Centro de administración de Windows/SME. exe)
+4. Iniciar el servicio del centro de administración de Windows (ejecutar C:/archivos de programa/Centro de administración de Windows/sme.exe)
 
 [Obtenga más información sobre la implementación del centro de administración de Windows.](../deploy/install.md)
 
-### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>Configuración de la máquina virtual de puerta de enlace para habilitar el acceso de Puerto HTTPS: 
+### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>Configuración de la máquina virtual de puerta de enlace para habilitar el acceso de Puerto HTTPS:
 
-1. Vaya a la máquina virtual en el Azure Portal y seleccione **redes**. 
+1. Vaya a la máquina virtual en el Azure Portal y seleccione **redes**.
 
-2. Seleccione **Agregar regla de puerto de entrada** y seleccione **https** en **servicio**. 
+2. Seleccione **Agregar regla de puerto de entrada** y seleccione **https** en **servicio**.
 
 > [!NOTE]
-> Si elige un puerto distinto del valor predeterminado 443, elija **personalizado** en servicio y escriba el puerto que eligió en el paso 3 en **intervalos de puertos**. 
+> Si elige un puerto distinto del valor predeterminado 443, elija **personalizado** en servicio y escriba el puerto que eligió en el paso 3 en **intervalos de puertos**.
 
 ### <a name="accessing-a-windows-admin-center-gateway-installed-on-an-azure-vm"></a>Acceso a una puerta de enlace del centro de administración de Windows instalada en una máquina virtual de Azure
 
-Llegados a este punto, debería poder acceder al centro de administración de Windows desde un explorador moderno (Edge o Chrome) en el equipo local. para ello, vaya al nombre DNS de la máquina virtual de la puerta de enlace. 
+Llegados a este punto, debería poder acceder al centro de administración de Windows desde un explorador moderno (Edge o Chrome) en el equipo local. para ello, vaya al nombre DNS de la máquina virtual de la puerta de enlace.
 
 > [!NOTE]
-> Si ha seleccionado un puerto distinto de 443, puede tener acceso al centro de administración de Windows; para ello, vaya a https://\<nombre DNS de la máquina virtual\>:\<puerto personalizado\>
+> Si ha seleccionado un puerto distinto de 443, puede tener acceso al centro de administración de Windows; para ello, vaya a https:// \<DNS name of your VM\> :\<custom port\>
 
-Al intentar obtener acceso al centro de administración de Windows, el explorador solicitará las credenciales para tener acceso a la máquina virtual en la que está instalado el centro de administración de Windows. Aquí tendrá que especificar las credenciales que se encuentran en el grupo local usuarios o administradores locales de la máquina virtual. 
+Al intentar obtener acceso al centro de administración de Windows, el explorador solicitará las credenciales para tener acceso a la máquina virtual en la que está instalado el centro de administración de Windows. Aquí tendrá que especificar las credenciales que se encuentran en el grupo local usuarios o administradores locales de la máquina virtual.
 
-Para agregar otras máquinas virtuales a la red virtual, asegúrese de que WinRM se ejecuta en las máquinas virtuales de destino mediante la ejecución de lo siguiente en PowerShell o el símbolo del sistema en la máquina virtual de destino: `winrm quickconfig`
+Para agregar otras máquinas virtuales a la red virtual, asegúrese de que WinRM se ejecuta en las máquinas virtuales de destino mediante la ejecución de lo siguiente en PowerShell o el símbolo del sistema en la máquina virtual de destino:`winrm quickconfig`
 
 Si no se ha unido a un dominio de la máquina virtual de Azure, la máquina virtual se comporta como un servidor en grupo de trabajo, por lo que debe asegurarse de que tiene en cuenta el [uso del centro de administración de Windows en un grupo de trabajo](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup).

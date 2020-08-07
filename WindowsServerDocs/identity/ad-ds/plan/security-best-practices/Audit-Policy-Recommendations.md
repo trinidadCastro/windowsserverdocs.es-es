@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: d9fb0503bfdf51ebaf3ff22d487777fd55f408c8
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 5b5ce5e7b53c7b82732613022c8309efe044143f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520144"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972232"
 ---
 # <a name="audit-policy-recommendations"></a>Recomendaciones de la directiva de auditoría
 
@@ -118,7 +116,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 | Auditar cambio de directiva de autenticación | Sí no | Sí no | Sí sí |
 | Auditar cambio de directiva de autorización |  |  |  |
 | Auditar cambio de directiva de Plataforma de filtrado |  |  |  |
-| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Yes |
+| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Sí |
 | Auditar otros eventos de cambio de directiva |  |  |  |
 | **Uso de privilegios** |  |  |  |
 | Auditar uso de privilegios no confidenciales |  |  |  |
@@ -196,7 +194,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 | Auditar cambio de directiva de autenticación | Sí no | Sí no | Sí sí |
 | Auditar cambio de directiva de autorización |  |  |  |
 | Auditar cambio de directiva de Plataforma de filtrado |  |  |  |
-| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Yes |
+| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Sí |
 | Auditar otros eventos de cambio de directiva |  |  |  |
 | **Uso de privilegios** |  |  |  |
 | Auditar uso de privilegios no confidenciales |  |  |  |

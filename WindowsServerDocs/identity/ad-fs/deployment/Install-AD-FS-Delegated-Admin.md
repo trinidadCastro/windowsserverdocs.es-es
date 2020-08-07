@@ -7,20 +7,18 @@ ms.author: billmath
 manager: daveba
 ms.date: 04/01/2020
 ms.topic: article
-ms.prod: windows-server-threshold
-ms.technology: identity-adfs
-ms.openlocfilehash: 1716c1e3684ed09d051970a2ab3b43938b5eeb5e
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 7dff0b19b4d8783dcd43344c6152be9d2c36441d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269446"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972192"
 ---
 # <a name="creating-an-ad-fs-farm-without-domain-admin-privileges"></a>Creación de una granja de AD FS sin privilegios de administrador de dominio
 
 >Se aplica a: Windows Server 2019 y 2016
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 A partir de AD FS en Windows Server 2016, puede ejecutar el cmdlet install-AdfsFarm como administrador local en el servidor de Federación, siempre que el administrador del dominio haya preparado Active Directory.  El siguiente script de este artículo se puede usar para preparar AD.  Los pasos son los siguientes:
 
 1) Como administrador de dominio, ejecute el script (o cree el Active Directory objetos y permisos manualmente).
@@ -40,7 +38,7 @@ Ejecute lo siguiente como administrador de dominio.
 ```
 PS:\>$adminConfig=(.\New-AdfsDkmContainer.ps1 -ServiceAccount contoso\fssvcacct -AdfsAdministratorAccount contoso\localadmin)
 ```
-### <a name="sample-output"></a>Salida de muestra
+### <a name="sample-output"></a>Salida de ejemplo
 ```
 $adminconfig.DkmContainerDN
 CN=9530440c-bc84-4fe6-a3f9-8d60162a7bcf,CN=ADFS,CN=Microsoft,CN=Program Data,DC=contoso,DC=com
@@ -65,7 +63,7 @@ PS:\>Install-AdfsFarm -CertificateThumbprint 270D041785C579D75C1C981DA0F9C36ECFD
 PS:\>$adminConfig=(.\New-AdfsDkmContainer.ps1 -ServiceAccount contoso\FsGmsaAcct$ -AdfsAdministratorAccount contoso\localadmin)
 ```
 
-### <a name="sample-output"></a>Salida de muestra
+### <a name="sample-output"></a>Salida de ejemplo
 ```
 $adminconfig.DkmContainerDN
 CN=8065f653-af9d-42ff-aec8-56e02be4d5f3,CN=ADFS,CN=Microsoft,CN=Program Data,DC=contoso,DC=com
@@ -165,7 +163,7 @@ if ($pscmdlet.ShouldProcess("$ou", "Creating DKM container and assinging access"
     }
     else
     {
-        write-verbose "ADFS administrator account is a standard AD user"    
+        write-verbose "ADFS administrator account is a standard AD user"
         $objUser = New-Object System.Security.Principal.NTAccount($AdfsAdministratorAccount)
         $strSID = $objUser.Translate([System.Security.Principal.SecurityIdentifier])
     }

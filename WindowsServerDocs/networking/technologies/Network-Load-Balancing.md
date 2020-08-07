@@ -2,19 +2,17 @@
 title: Equilibrio de carga de red
 description: En este tema se proporciona información general sobre la característica NLB de equilibrio de carga de red \( \) en Windows Server 2016. Puede usar NLB para administrar dos o más servidores como un solo clúster virtual. NLB mejora la disponibilidad y escalabilidad de las aplicaciones de servidor de Internet, como las que se usan en Web, FTP, firewall, proxy, VPN de red privada virtual \( \) y otros servidores de misión \- crítica.
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking-nlb
 ms.topic: article
 ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: f6631920fd4df056447d702df78145d4b375e0f5
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: ecea87a3716ef68c599594851037e774ad589998
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409615"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955812"
 ---
 # <a name="network-load-balancing"></a>Equilibrio de carga de red
 

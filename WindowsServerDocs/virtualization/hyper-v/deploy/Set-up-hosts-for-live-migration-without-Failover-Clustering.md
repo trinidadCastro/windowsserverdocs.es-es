@@ -1,24 +1,22 @@
 ---
 title: Configurar hosts para la migración en vivo sin clústeres de conmutación por error
 description: Proporciona instrucciones para configurar la migración en vivo en un entorno no en clúster.
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 2c2f671bf59e95de2604c91944fab3d65f82410e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7bcd4e625f340ba7358a8ce9bdd860581c390e96
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860888"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948024"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>Configurar hosts para la migración en vivo sin clústeres de conmutación por error
 
->Se aplica a: Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
+>Se aplica a: Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
 En este artículo se muestra cómo configurar hosts que no están agrupados para que pueda realizar migraciones en vivo entre ellos. Siga estas instrucciones si no configuró la migración en vivo al instalar Hyper-V, o si desea cambiar la configuración. Para configurar los hosts en clúster, use herramientas para los clústeres de conmutación por error.
 
@@ -55,7 +53,7 @@ Si ha decidido usar Kerberos para autenticar el tráfico de migración en vivo, 
 
 ### <a name="use-the-users-and-computers-snap-in-to-configure-constrained-delegation"></a>Usar el complemento usuarios y equipos para configurar la delegación restringida
 
-1.  Abra el complemento Usuarios y equipos de Active Directory. (En Administrador del servidor, seleccione el servidor si no está seleccionado, haga clic en **herramientas** >> **Active Directory usuarios y equipos**).
+1.  Abra el complemento Usuarios y equipos de Active Directory. (En Administrador del servidor, seleccione el servidor si no está seleccionado, haga clic en **herramientas**  >>  **Active Directory usuarios y equipos**).
 
 2.  En el panel de navegación de **Active Directory usuarios y equipos**, seleccione el dominio y haga doble clic en la carpeta **equipos** .
 
@@ -91,11 +89,11 @@ En este paso se incluye la elección de opciones de autenticación y redes. Como
 
 ### <a name="use-hyper-v-manager-to-set-up-the-source-and-destination-computers-for-live-migration"></a>Usar el administrador de Hyper-V para configurar los equipos de origen y de destino para la migración en vivo
 
-1.  Abre el Administrador Hyper-V. (En Administrador del servidor, haga clic en **herramientas** >>**Administrador de Hyper-V**).
+1.  Abra el administrador de Hyper-V. (En Administrador del servidor, haga clic en **herramientas**  >> **Administrador de Hyper-V**).
 
 2.  En el panel de navegación, seleccione uno de los servidores. (Si no aparece, haga clic con el botón secundario en **Administrador de Hyper-V**, haga clic en **conectar al servidor**, escriba el nombre del servidor y haga clic en **Aceptar**. Repita este procedimiento para agregar más servidores).
 
-3.  En el panel **acción** , haga clic en **configuración de Hyper-V** >>**migraciones en vivo**.
+3.  En el panel **acción** , haga clic en **configuración de Hyper-V**  >> **migraciones en vivo**.
 
 4.  En el panel **Migraciones en vivo**, active **Habilitar migraciones en vivo entrantes y salientes**.
 

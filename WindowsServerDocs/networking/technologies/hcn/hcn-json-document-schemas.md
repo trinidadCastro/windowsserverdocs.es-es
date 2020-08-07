@@ -2,16 +2,15 @@
 title: Esquemas de documentos JSON de host de proceso de red (HCN)
 ms.author: jmesser
 author: jmesser81
-ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 0cb29dd1b8b602080f0e0036904b91b0768b8996
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a5eabc04cfd00103eafdbc6c35a190b616d192d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859858"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955692"
 ---
-# <a name="hcn-json-document-schemas"></a>Esquemas de documentos HCN JSON
+# <a name="hcn-json-document-schemas"></a>Esquemas de documentos HCN JSON
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2019
 
@@ -26,27 +25,27 @@ ms.locfileid: "80859858"
         "Major" : <uint32>,
         "Minor" : <uint32>
     },
-    "Flags" : <enum bit mask>, 
-         // AsString; Values: 
+    "Flags" : <enum bit mask>,
+         // AsString; Values:
          // "None" (0),
          // "EnableDnsProxy" (1),
          // "EnableDhcpServer" (2),
          // "IsolateVSwitch" (8)
-    "Type"  : <enum>, 
-         // AsString; Values: 
-         // "NAT" (0), 
-         // "ICS" (1), 
+    "Type"  : <enum>,
+         // AsString; Values:
+         // "NAT" (0),
+         // "ICS" (1),
          // "Transparent" (2)
     "Ipams" : [ {
-         "Type" : <enum>, 
-             // AsString; Values: 
-             // "Static" (0), 
+         "Type" : <enum>,
+             // AsString; Values:
+             // "Static" (0),
              // "Dhcp" (1)
          "Subnets" : [ {
                 "IpAddressPrefix" : <ip prefix in CIDR>,
                 "Policies" : [ {
-                        "Type" : <enum>, 
-                            // AsString; Values: 
+                        "Type" : <enum>,
+                            // AsString; Values:
                             // "VLAN" (0)
                         "Data" : <any>
                  } ],
@@ -58,9 +57,9 @@ ms.locfileid: "80859858"
           } ],
      } ],
     "Policies" : [{
-         "Type" : <enum>, 
-              // AsString; Values: 
-              // "NetAdapterName" (1), 
+         "Type" : <enum>,
+              // AsString; Values:
+              // "NetAdapterName" (1),
               // "InterfaceConstraint" (2)
          "Data" : <any>
     }],
@@ -82,7 +81,7 @@ ms.locfileid: "80859858"
 ## <a name="hcn-endpoint-schema"></a>Esquema del punto de conexión HCN
 
 ```json
-// Endpoint 
+// Endpoint
 {
     "Id" : <string>,
     "Owner" : <string>,
@@ -90,16 +89,16 @@ ms.locfileid: "80859858"
         "Major" : <uint32>,
         "Minor" : <uint32>
     },
-    "Flags" : <enum bit mask>, 
-         // AsString; Values: 
+    "Flags" : <enum bit mask>,
+         // AsString; Values:
          // "None" (0),
          // "DisableInterComputeCommunication" (2)
     "HostComputeNetwork" : <string>,
     "MacAddress" : <string>,
     "Policies" : [ {
-         "Type" : <enum>, 
-              // AsString; Values: 
-              // "PortMapping" (0), 
+         "Type" : <enum>,
+              // AsString; Values:
+              // "PortMapping" (0),
               // "ACL" (1)
          "Data" : <any>
     } ],
@@ -135,7 +134,7 @@ ms.locfileid: "80859858"
 {
     "Type" : "PortMapping",
     "Protocol" : <enum>,
-         // AsString; Values: 
+         // AsString; Values:
          // "Unknown" (0),
          // "ICMPv4" (1),
          // "IGMP" (2),
@@ -158,8 +157,8 @@ ms.locfileid: "80859858"
         "Major" : <uint32>,
         "Minor" : <uint32>
     },
-    "Flags" : <enum bit mask>, 
-         // AsString; Values: 
+    "Flags" : <enum bit mask>,
+         // AsString; Values:
          // "None" (0),
          // "EnableDirectServerReturn" (1)
          // "EnableInternalLoadBalancer" (2)
@@ -168,7 +167,7 @@ ms.locfileid: "80859858"
     "PortMappings" : [ {
         "Type" : "PortMapping",
         "Protocol" : <enum>,
-             // AsString; Values: 
+             // AsString; Values:
              // "Unknown" (0),
              // "ICMPv4" (1),
              // "IGMP" (2),
@@ -179,9 +178,9 @@ ms.locfileid: "80859858"
         "ExternalPort" : <uint16>,
     } ],
     "Policies" : [ {
-         "Type" : <enum>, 
-              // AsString; Values: 
-              // "SourceVirtualIp" (0), 
+         "Type" : <enum>,
+              // AsString; Values:
+              // "SourceVirtualIp" (0),
          "Data" : <any>
     } ],
 }
@@ -201,15 +200,15 @@ ms.locfileid: "80859858"
     "NamespaceId" : <uint32>,
     "NamespaceGuid" : <guid>,
     "Type"  : <enum>,
-              // AsString; Values: 
-              // "Host" (0), 
-              // "HostDefault" (1), 
-              // "Guest" (2), 
+              // AsString; Values:
+              // "Host" (0),
+              // "HostDefault" (1),
+              // "Guest" (2),
               // "GuestDefault" (3)
     "Resources" : [ {
           "Type"  : <enum>,
-              // AsString; Values: 
-              // "Container" (0), 
+              // AsString; Values:
+              // "Container" (0),
               // "Endpoint" (1)
           "Data"  : <any>
     } ],

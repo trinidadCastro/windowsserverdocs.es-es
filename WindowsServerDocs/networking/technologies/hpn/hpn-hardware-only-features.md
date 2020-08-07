@@ -1,20 +1,18 @@
 ---
 title: Redes de alto rendimiento
 description: En este tema se proporciona información general sobre las tecnologías de descarga y optimización en Windows Server 2016, e incluye vínculos a instrucciones adicionales sobre estas tecnologías.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: 7b2030535e65a94e285a3db00779dddb85411c95
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b2cbb47262033d5149e47704e3f232b7662f69e6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316995"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955672"
 ---
 # <a name="hardware-only-ho-features-and-technologies"></a>Tecnologías y características de solo hardware
 
@@ -31,7 +29,7 @@ En la ruta de acceso de recepción, la descarga de la suma de comprobación calc
 
 En la ruta de acceso de envío, la descarga de la suma de comprobación calcula e inserta las sumas de comprobación en el encabezado IP, TCP o UDP según corresponda.
 
-Deshabilitar descarga de suma de comprobación en la ruta de acceso de envío no deshabilita el cálculo y la inserción de suma de comprobación para los paquetes enviados al controlador de minipuerto mediante la característica de descarga de envío grande (LSO).  Para deshabilitar todos los cálculos de descarga de suma de comprobación, el usuario también debe deshabilitar la LSO.
+Deshabilitar descarga de suma de comprobación en la ruta de acceso de envío no deshabilita el cálculo y la inserción de suma de comprobación para los paquetes enviados al controlador de minipuerto mediante la característica de descarga de envío grande (LSO).Para deshabilitar todos los cálculos de descarga de suma de comprobación, el usuario también debe deshabilitar la LSO.
 
 _**Administrar descargas de suma de comprobación de direcciones**_
 
@@ -61,7 +59,7 @@ La descarga de la suma de comprobación de direcciones siempre debe estar habili
 
 ## <a name="interrupt-moderation-im"></a>Moderación de interrupciones (IM)
 
-IM almacena en búfer varios paquetes recibidos antes de interrumpir el sistema operativo. Cuando una NIC recibe un paquete, inicia un temporizador. Cuando el búfer está lleno o el temporizador expira, lo que suceda primero, la NIC interrumpe el sistema operativo. 
+IM almacena en búfer varios paquetes recibidos antes de interrumpir el sistema operativo. Cuando una NIC recibe un paquete, inicia un temporizador. Cuando el búfer está lleno o el temporizador expira, lo que suceda primero, la NIC interrumpe el sistema operativo.
 
 Muchas NIC admiten algo más que ON/OFF para la moderación de interrupciones. La mayoría de las NIC admiten los conceptos de una tasa baja, media y alta para la mensajería instantánea. Las distintas tasas representan temporizadores más cortos o largos y ajustes de tamaño de búfer adecuados para reducir la latencia (moderación baja de interrupción) o reducir interrupciones (moderación de interrupción alta).
 

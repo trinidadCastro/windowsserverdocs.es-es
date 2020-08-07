@@ -1,21 +1,19 @@
 ---
-title: Configurar el emparejamiento de la red virtual
+title: Configuración del emparejamiento de red virtual
 description: La configuración del emparejamiento de redes virtuales implica la creación de dos redes virtuales que se van a emparejar.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: ede13fd47c32b2d75ec71ad7c7bf7eb50c269c82
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b78ec1b73625a6064f6330ec6453d75ffea048c8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853568"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955852"
 ---
-# <a name="configure-virtual-network-peering"></a>Configurar el emparejamiento de la red virtual
+# <a name="configure-virtual-network-peering"></a>Configuración del emparejamiento de red virtual
 
 >Se aplica a: Windows Server
 
@@ -33,63 +31,63 @@ En este procedimiento, usará Windows PowerShell para crear dos redes virtuales,
 >[!IMPORTANT]
 >Recuerde actualizar las propiedades de su entorno.
 
-## <a name="step-1-create-the-first-virtual-network"></a>Paso 1. Crear la primera red virtual
+## <a name="step-1-create-the-first-virtual-network"></a>Paso 1. Crear la primera red virtual.
 
 En este paso, usará Windows PowerShell para buscar la red lógica del proveedor de HNV para crear la primera red virtual con una subred. El siguiente script de ejemplo crea una red virtual de Contoso con una subred.
 
 ``` PowerShell
-#Find the HNV Provider Logical Network  
+#Find the HNV Provider Logical Network
 
-$logicalnetworks = Get-NetworkControllerLogicalNetwork -ConnectionUri $uri  
-foreach ($ln in $logicalnetworks) {  
-   if ($ln.Properties.NetworkVirtualizationEnabled -eq "True") {  
-      $HNVProviderLogicalNetwork = $ln  
-   }  
-}   
+$logicalnetworks = Get-NetworkControllerLogicalNetwork -ConnectionUri $uri
+foreach ($ln in $logicalnetworks) {
+   if ($ln.Properties.NetworkVirtualizationEnabled -eq "True") {
+      $HNVProviderLogicalNetwork = $ln
+   }
+}
 
-#Create the Virtual Subnet  
+#Create the Virtual Subnet
 
-$vsubnet = new-object Microsoft.Windows.NetworkController.VirtualSubnet  
-$vsubnet.ResourceId = "Contoso"  
-$vsubnet.Properties = new-object Microsoft.Windows.NetworkController.VirtualSubnetProperties  
+$vsubnet = new-object Microsoft.Windows.NetworkController.VirtualSubnet
+$vsubnet.ResourceId = "Contoso"
+$vsubnet.Properties = new-object Microsoft.Windows.NetworkController.VirtualSubnetProperties
 $vsubnet.Properties.AddressPrefix = "24.30.1.0/24"
-$uri=”https://restserver”  
+$uri=”https://restserver”
 
-#Create the Virtual Network  
+#Create the Virtual Network
 
-$vnetproperties = new-object Microsoft.Windows.NetworkController.VirtualNetworkProperties  
-$vnetproperties.AddressSpace = new-object Microsoft.Windows.NetworkController.AddressSpace  
-$vnetproperties.AddressSpace.AddressPrefixes = @("24.30.1.0/24")  
-$vnetproperties.LogicalNetwork = $HNVProviderLogicalNetwork  
-$vnetproperties.Subnets = @($vsubnet)  
+$vnetproperties = new-object Microsoft.Windows.NetworkController.VirtualNetworkProperties
+$vnetproperties.AddressSpace = new-object Microsoft.Windows.NetworkController.AddressSpace
+$vnetproperties.AddressSpace.AddressPrefixes = @("24.30.1.0/24")
+$vnetproperties.LogicalNetwork = $HNVProviderLogicalNetwork
+$vnetproperties.Subnets = @($vsubnet)
 New-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $uri -Properties $vnetproperties
 ```
 
-## <a name="step-2-create-the-second-virtual-network"></a>Paso 2. Creación de la segunda red virtual
+## <a name="step-2-create-the-second-virtual-network"></a>Paso 2. Crear la segunda red virtual.
 
 En este paso, creará una segunda red virtual con una subred. El siguiente script de ejemplo crea una red virtual de Woodgrove con una subred.
 
 ``` PowerShell
 
-#Create the Virtual Subnet  
+#Create the Virtual Subnet
 
-$vsubnet = new-object Microsoft.Windows.NetworkController.VirtualSubnet  
-$vsubnet.ResourceId = "Woodgrove"  
-$vsubnet.Properties = new-object Microsoft.Windows.NetworkController.VirtualSubnetProperties  
-$vsubnet.Properties.AddressPrefix = "24.30.2.0/24"  
+$vsubnet = new-object Microsoft.Windows.NetworkController.VirtualSubnet
+$vsubnet.ResourceId = "Woodgrove"
+$vsubnet.Properties = new-object Microsoft.Windows.NetworkController.VirtualSubnetProperties
+$vsubnet.Properties.AddressPrefix = "24.30.2.0/24"
 $uri=”https://restserver”
 
-#Create the Virtual Network  
+#Create the Virtual Network
 
-$vnetproperties = new-object Microsoft.Windows.NetworkController.VirtualNetworkProperties  
-$vnetproperties.AddressSpace = new-object Microsoft.Windows.NetworkController.AddressSpace  
-$vnetproperties.AddressSpace.AddressPrefixes = @("24.30.2.0/24")  
-$vnetproperties.LogicalNetwork = $HNVProviderLogicalNetwork  
-$vnetproperties.Subnets = @($vsubnet)  
+$vnetproperties = new-object Microsoft.Windows.NetworkController.VirtualNetworkProperties
+$vnetproperties.AddressSpace = new-object Microsoft.Windows.NetworkController.AddressSpace
+$vnetproperties.AddressSpace.AddressPrefixes = @("24.30.2.0/24")
+$vnetproperties.LogicalNetwork = $HNVProviderLogicalNetwork
+$vnetproperties.Subnets = @($vsubnet)
 New-NetworkControllerVirtualNetwork -ResourceId "Woodgrove_VNet1" -ConnectionUri $uri -Properties $vnetproperties
 ```
 
-## <a name="step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network"></a>Paso 3. Configuración del emparejamiento desde la primera red virtual a la segunda red virtual
+## <a name="step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network"></a>Paso 3. Configuración del emparejamiento desde la primera red virtual a la segunda red virtual
 
 En este paso, configurará el emparejamiento entre la primera red virtual y la segunda red virtual que creó en los dos pasos anteriores. En el siguiente script de ejemplo se establece el emparejamiento de redes virtuales desde **Contoso_vnet1** a **Woodgrove_vnet1**.
 
@@ -122,23 +120,23 @@ New-NetworkControllerVirtualNetworkPeering -ConnectionUri $uri -VirtualNetworkId
 En este paso, configurará el emparejamiento entre la segunda red virtual y la primera red virtual que creó en los pasos 1 y 2 anteriores. En el siguiente script de ejemplo se establece el emparejamiento de redes virtuales desde **Woodgrove_vnet1** a **Contoso_vnet1**.
 
 ```PowerShell
-$peeringProperties = New-Object Microsoft.Windows.NetworkController.VirtualNetworkPeeringProperties 
+$peeringProperties = New-Object Microsoft.Windows.NetworkController.VirtualNetworkPeeringProperties
 $vnet2=Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "Contoso_VNet1"
-$peeringProperties.remoteVirtualNetwork = $vnet2 
+$peeringProperties.remoteVirtualNetwork = $vnet2
 
-# Indicates whether communication between the two virtual networks is allowed 
-$peeringProperties.allowVirtualnetworkAccess = $true 
+# Indicates whether communication between the two virtual networks is allowed
+$peeringProperties.allowVirtualnetworkAccess = $true
 
 # Indicates whether forwarded traffic will be allowed across the vnets
-$peeringProperties.allowForwardedTraffic = $true 
+$peeringProperties.allowForwardedTraffic = $true
 
 # Indicates whether the peer virtual network can access this virtual network's gateway
-$peeringProperties.allowGatewayTransit = $false 
+$peeringProperties.allowGatewayTransit = $false
 
 # Indicates whether this virtual network will use peer virtual network's gateway
-$peeringProperties.useRemoteGateways =$false 
+$peeringProperties.useRemoteGateways =$false
 
-New-NetworkControllerVirtualNetworkPeering -ConnectionUri $uri -VirtualNetworkId “Woodgrove_vnet1” -ResourceId “WoodgrovetoContoso” -Properties $peeringProperties 
+New-NetworkControllerVirtualNetworkPeering -ConnectionUri $uri -VirtualNetworkId “Woodgrove_vnet1” -ResourceId “WoodgrovetoContoso” -Properties $peeringProperties
 
 ```
 

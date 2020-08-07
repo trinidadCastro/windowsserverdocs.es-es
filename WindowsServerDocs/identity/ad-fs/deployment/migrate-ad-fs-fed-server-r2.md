@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 568fdb25bedda48327c7fd147a980b21cda3d5c8
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 3b26687e4c20d4295682ffe81e27317c38efce53
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87863962"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938248"
 ---
 # <a name="migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Migrar el servidor de Federación AD FS 2,0 a AD FS en Windows Server 2012 R2
 
@@ -270,5 +268,5 @@ Deben cambiarse a:
 
    Tras importar los datos de configuración originales, puede personalizar las páginas de inicio de sesión de AD FS como resulte necesario. Para más información, consulte el artículo sobre la [personalización de las páginas de inicio de sesión de AD FS](../operations/ad-fs-customization-in-windows-server.md).
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
  [Migrar los servicios de rol de servicios de Federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md) [preparar la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md) [migrar el servidor proxy de Federación de AD FS](migrate-fed-server-proxy-r2.md) [comprobando la migración de AD FS a Windows Server 2012 R2](verify-ad-fs-migration.md)

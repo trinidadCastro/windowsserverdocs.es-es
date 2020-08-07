@@ -1,19 +1,17 @@
 ---
 title: Guía de estilo de texto y diseño de la interfaz de usuario del centro de administración de Windows
 description: Guía de estilo de texto y diseño de la interfaz de usuario del centro de administración de Windows SDK
-ms.technology: manage
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.date: 01/17/2020
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: d8215f3589e021ec5df6a3a150d09a2388a2f35d
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d77498b9d4c8573dfac82b7291b6d0676d0d8c1e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518553"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971982"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guía de estilo de texto y diseño de la interfaz de usuario del centro de administración de Windows
 
@@ -143,7 +141,7 @@ Los desarrolladores de Microsoft deben usar un FWLink, excepto cuando se trata d
     - No es nuestro estilo
         - Más información sobre Firewall de Windows
         - Más información sobre la administración del color
-        - Saber más
+        - Más información
 - Use la oración completa para el texto del vínculo, no solo las palabras clave.
     - Nuestro estilo
         - [¿Cuáles son los riesgos de permitir excepciones?]()
@@ -168,7 +166,7 @@ Use un mensaje por caso de error.
 - Evite el uso de "se produjo un problema" en los encabezados, a menos que no tenga ninguna otra opción. Sea más específico sobre el problema.
 - Evite el uso de variables (como nombres de archivo, carpeta y aplicación) en los encabezados. Colóquelos en el cuerpo.
 
-#### <a name="body"></a>Cuerpo
+#### <a name="body"></a>Body
 
 - Si el encabezado explica de manera suficiente el problema o la solución, no necesita texto de cuerpo.
 - No repita el título en el mensaje con un texto ligeramente diferente.
@@ -233,7 +231,7 @@ Estas son algunas recomendaciones detalladas para los mensajes de notificación:
 
 |Tipo de cadena         | Notas                               |
 |------------        |-------------------------------------|
-|Comenzado             |Omitir cuando sea posible: normalmente puede pasar al mensaje en curso para minimizar el número de distracciones.|
+|Iniciado             |Omitir cuando sea posible: normalmente puede pasar al mensaje en curso para minimizar el número de distracciones.|
 |En curso         |Comience con el verbo de la acción que está llevando a cabo y termine con puntos suspensivos para indicar una operación en curso. Este es un ejemplo:<br> *Creando el volumen ' datos del cliente '...* <br><br>Cuando haya varias variables, use este patrón: <br>*Eliminando la siguiente máquina virtual: {0} ; Organizar{1}* |
 |Correcto             |Comience con "correctamente" y acabe con lo que acaba de hacer el software. Este es un ejemplo:<br> *El volumen ' datos del cliente ' se creó correctamente.*|
 |Error             |Comience con "no se pudo" y termine con lo que el software no pudo hacer. Este es un ejemplo:<br> *No se pudo crear el volumen ' datos del cliente '.*|
@@ -244,7 +242,7 @@ Una buena información sobre herramientas describe brevemente los controles sin 
 
 La información sobre herramientas debe usarse con moderación o no. Pueden ser una interrupción para el cliente, por lo que no incluya una información sobre herramientas que simplemente repite una etiqueta o indica el obvio. Siempre debe agregar información valiosa.
 
-|    Contexto                                 |    Cómo escribir la información sobre herramientas    |
+|    Context                                 |    Cómo escribir la información sobre herramientas    |
 |    -----------------------                 |    -------------------------    |
 |Cuando un control o un elemento de la interfaz de usuario no tiene etiqueta...|Use una frase de nombre simple y descriptiva. Por ejemplo:<br> Lápiz de resaltado |
 |Cuando se etiqueta un elemento de la interfaz de usuario, pero su propósito necesita aclaración...|<ul><li>Describa brevemente lo que puede hacer con este elemento de la interfaz de usuario. </li><li>Use el formulario de verbo imperativo. Por ejemplo, "buscar texto en este archivo" (no "busca texto en este archivo").</li><li>No incluya signos de puntuación finales a menos que haya varias oraciones completas.</li> </ul>|

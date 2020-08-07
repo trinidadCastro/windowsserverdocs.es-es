@@ -2,19 +2,17 @@
 title: Configurar el cifrado para un Virtual Network
 description: El cifrado de red virtual permite el cifrado del tráfico de red virtual entre máquinas virtuales que se comunican entre sí dentro de subredes marcadas como "cifrado habilitado".
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 11ec399ab9c63b27711b19987c6e070b47545fdd
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 24b716283eeab929f09db3c4e9cf3ec577211d32
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520234"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955862"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>Configurar el cifrado para una subred virtual
 
@@ -193,7 +191,7 @@ Cada host debe tener instalado un certificado de cifrado. Puede usar el mismo ce
 
 7. Tome nota de la huella digital.<p>Debe tomar nota de la huella digital porque la necesita para crear el objeto de credencial de certificado en la controladora de red.
 
-## <a name="step-2-create-the-certificate-credential"></a>Paso 2. Crear la credencial de certificado
+## <a name="step-2-create-the-certificate-credential"></a>Paso 2. Crear la credencial de certificado
 
 Después de instalar el certificado en cada uno de los hosts de Hyper-V conectados a la controladora de red, ahora debe configurar la controladora de red para usarlo.  Para ello, debe crear un objeto de credencial que contenga la huella digital del certificado de la máquina con los módulos de PowerShell de la controladora de red instalados.
 
@@ -215,7 +213,7 @@ New-networkcontrollercredential -connectionuri $uri -resourceid "EncryptedNetwor
 > [!TIP]
 > Puede volver a usar esta credencial para cada red virtual cifrada, o bien puede implementar y usar un certificado único para cada inquilino.
 
-## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>Paso 3. Configuración de un Virtual Network para el cifrado
+## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>Paso 3. Configuración de un Virtual Network para el cifrado
 
 En este paso se supone que ya ha creado un nombre de red virtual "My Network" y que contiene al menos una subred virtual.  Para obtener información sobre la creación de redes virtuales, consulte [creación, eliminación o actualización de redes virtuales de inquilinos](../Manage/Create,-Delete,-or-Update-Tenant-Virtual-Networks.md).
 

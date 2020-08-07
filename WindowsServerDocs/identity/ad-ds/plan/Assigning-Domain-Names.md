@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ec66353802b31432d182c1538c0d2f5322f457af
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 2b25f714913df4c8453194dbc2b691c5cca0db80
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624403"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947919"
 ---
 # <a name="assigning-domain-names"></a>Asignar nombres de dominio
 
@@ -36,4 +34,4 @@ Si el nombre NetBIOS actual del dominio no es apropiado para representar la regi
 
 Para cada nuevo dominio que implemente, seleccione un prefijo adecuado para la región y que cumpla las reglas de nomenclatura de prefijos. Se recomienda que el nombre NetBIOS del dominio sea el mismo que el prefijo DNS.
 
-Documente el prefijo DNS y los nombres NetBIOS que seleccione para cada dominio del bosque. Puede Agregar la información de nombres DNS y NetBIOS a la hoja de cálculo "planeamiento de dominios" que creó para documentar el plan de dominios nuevos y actualizados. Para abrirlo, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "planeamiento de dominios" (DSSLOGI_5. doc).
+Documente el prefijo DNS y los nombres NetBIOS que seleccione para cada dominio del bosque. Puede Agregar la información de nombres DNS y NetBIOS a la hoja de cálculo "planeamiento de dominios" que creó para documentar el plan de dominios nuevos y actualizados. Para abrirlo, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "planeamiento de dominios" (DSSLOGI_5.doc).

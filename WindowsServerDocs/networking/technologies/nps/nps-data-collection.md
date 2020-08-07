@@ -6,16 +6,14 @@ manager: mtillman
 ms.author: joflore
 ms.reviewer: richagi
 ms.custom: it-pro
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.date: 05/01/2018
-ms.openlocfilehash: def65c174ff608301f8d4f35ef1ce19818103e61
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a5cce413e2e95387edf73c628f38a4d225c80adb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859378"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955582"
 ---
 # <a name="network-policy-server-user-data-collection"></a>Recopilación de datos de usuario del servidor de directivas de redes
 
@@ -26,11 +24,11 @@ En este documento se explica cómo buscar información de usuario recopilada por
 
 ## <a name="information-collected-by-nps"></a>Información recopilada por NPS
 
-- Marca de tiempo
+- Timestamp
 - Marca de tiempo del evento
 - Nombre de usuario
 - Nombre de usuario completo
-- Dirección IP del cliente
+- Dirección IP de cliente
 - Proveedor del cliente
 - Nombre descriptivo del cliente
 - Tipo de autenticación
@@ -38,12 +36,12 @@ En este documento se explica cómo buscar información de usuario recopilada por
 
 ## <a name="gather-data-from-nps"></a>Recopilación de datos de NPS
 
-Si los datos de cuentas están habilitados y configurados, los registros de los intentos de autenticación de NPS de un usuario se pueden obtener de SQL Server o de los archivos de registro en función de la configuración. 
+Si los datos de cuentas están habilitados y configurados, los registros de los intentos de autenticación de NPS de un usuario se pueden obtener de SQL Server o de los archivos de registro en función de la configuración.
 
-Si se configuran los datos de cuentas para SQL Server, consulte todos los registros donde User_Name = `'<username>'`.
+Si los datos de cuentas están configurados para SQL Server, consulte todos los registros donde User_Name = `'<username>'` .
 
-Si se configuran los datos de cuentas para un archivo de registro, busque el `<username>` para buscar todas las entradas de registro en el archivo de registro.
+Si se configuran los datos de cuentas para un archivo de registro, busque en el archivo de registro para `<username>` Buscar todas las entradas de registro.
 
 Las entradas del registro de eventos de servicios de acceso y directivas de redes se consideran duplicadas en los datos de cuentas y no es necesario recopilarlas.
 
-Si los datos de cuentas no están habilitados, los registros de los intentos de autenticación de NPS de un usuario se pueden obtener del registro de eventos de servicios de acceso y directivas de redes buscando el `<username>`.
+Si los datos de cuentas no están habilitados, los registros de los intentos de autenticación de NPS de un usuario se pueden obtener del registro de eventos de servicios de acceso y directivas de redes mediante la búsqueda de `<username>` .

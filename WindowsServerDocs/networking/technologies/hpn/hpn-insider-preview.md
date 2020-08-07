@@ -6,14 +6,12 @@ author: eross-msft
 ms.author: lizross
 ms.date: 09/12/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: f6403cd9787ccdd4f50eb08ebd7723d2de789ebb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2eb6ec82d9127e89f1d7871d0143ae3716b4355e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819648"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955652"
 ---
 # <a name="new-hpn-features-in-windows-server-2019"></a>Nuevas características de HPN en Windows Server 2019
 
@@ -22,11 +20,11 @@ ms.locfileid: "80819648"
 
 >Se aplica a: Windows Server 2019
 
-En el pasado, las colas de máquinas virtuales y las múltiples colas de máquinas virtuales permitían un rendimiento mucho mayor en máquinas virtuales individuales a medida que los rendimientos de red alcanzaban por primera vez la marca 10GbE y más allá. Desafortunadamente, el planeamiento, la línea de la línea, el ajuste y la supervisión necesarios para el éxito se convirtió en una gran empresa; a menudo, más que el administrador de ti ha previsto gastar. 
+En el pasado, las colas de máquinas virtuales y las múltiples colas de máquinas virtuales permitían un rendimiento mucho mayor en máquinas virtuales individuales a medida que los rendimientos de red alcanzaban por primera vez la marca 10GbE y más allá. Desafortunadamente, el planeamiento, la línea de la línea, el ajuste y la supervisión necesarios para el éxito se convirtió en una gran empresa; a menudo, más que el administrador de ti ha previsto gastar.
 
 Windows Server 2019 mejora estas optimizaciones al extender y ajustar dinámicamente el procesamiento de cargas de trabajo de red según sea necesario. Windows Server 2019 garantiza la eficacia máxima y elimina la carga de configuración para los administradores de ti.
 
-Para más información, consulta lo siguiente:
+Para obtener más información, consulte:
 
 -   [Blog de anuncios](https://blogs.technet.microsoft.com/networking/2018/08/22/netperf4vw/)
 
@@ -42,7 +40,7 @@ Anteriormente, esta era una descarga implementada por la NIC. Desgraciadamente, 
 
 De forma predeterminada, RSC está habilitado en los conmutadores virtuales externos.
 
-Para más información, consulta lo siguiente:
+Para obtener más información, consulte:
 
 -  [Blog de anuncios](https://blogs.technet.microsoft.com/networking/2018/08/22/netperf4vw/)
 

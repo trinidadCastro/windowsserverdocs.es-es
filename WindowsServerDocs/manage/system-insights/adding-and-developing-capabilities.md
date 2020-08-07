@@ -1,19 +1,17 @@
 ---
 title: Funcionalidades de adición y desarrollo
 description: System Insights le permite agregar nuevas capacidades de predicción a información del sistema, sin necesidad de ninguna actualización del sistema operativo. Esto permite a los desarrolladores, incluidos Microsoft y terceros, crear y ofrecer nuevas capacidades de versión mediados para abordar los escenarios que le interesan. Las nuevas funcionalidades pueden especificar datos personalizados para recopilar y analizar, y también se integran con los planes de administración de System Insights existentes.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 891edb108bc2c298c70b29c596fb8d0ca0e06b7e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b28621b24b321cdc22f07c03e9c04f0dde22759b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475192"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972022"
 ---
 # <a name="adding-and-developing-new-capabilities"></a>Adición y desarrollo de nuevas capacidades
 

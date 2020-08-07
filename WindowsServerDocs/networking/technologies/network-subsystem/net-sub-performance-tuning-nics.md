@@ -2,20 +2,18 @@
 title: Ajustar el rendimiento de los adaptadores de red
 description: Este tema forma parte de la guía de optimización del rendimiento del subsistema de red para Windows Server 2016.
 audience: Admin - CI ID 111485 - CSSTroubleshoot
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: eb402c9cd7bb4f9ae472859fcd45fcc050d1df85
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a29830fe5f6f23138b5872b95926ae7dc8834ae4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182141"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955592"
 ---
 # <a name="performance-tuning-network-adapters"></a>Ajustar el rendimiento de los adaptadores de red
 
@@ -231,7 +229,7 @@ Puede establecer el ajuste automático de la ventana de recepción en cinco nive
 |Nivel |Valor hexadecimal |Comentarios |
 | --- | --- | --- |
 |Normal (opción predeterminada) |0x8 (factor de escala de 8) |Establezca el tamaño de la ventana de recepción de TCP para que se adapte a casi todos los escenarios. |
-|Deshabilitada |No hay ningún factor de escala disponible |Establezca la ventana de recepción TCP en su valor predeterminado. |
+|Disabled |No hay ningún factor de escala disponible |Establezca la ventana de recepción TCP en su valor predeterminado. |
 |Restringido |0x4 (factor de escala de 4) |Establezca la ventana de recepción TCP para que supere su valor predeterminado, pero limite dicho crecimiento en algunos escenarios. |
 |Muy restringido |0X2 (factor de escala de 2) |Establezca la ventana de recepción TCP para que crezca más allá de su valor predeterminado, pero hágalo con mucha cautela. |
 |Habilitación de características |0xE (factor de escala de 14) |Establezca la ventana de recepción de TCP en crecimiento para adaptarse a escenarios extremos. |

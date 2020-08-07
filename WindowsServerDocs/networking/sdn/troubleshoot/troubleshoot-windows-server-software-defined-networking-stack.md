@@ -2,19 +2,17 @@
 title: Solución de problemas de la pila de redes definidas por software de Windows Server
 description: Esta guía de Windows Server examina los errores comunes de redes definidas por software (SDN) y los escenarios de error, y describe un flujo de trabajo de solución de problemas que aprovecha las herramientas de diagnóstico disponibles.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 3c6ac190b721492a03c7dcb9ab367df4174e55ff
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 87972f9a0d83a4b7f192e2fe0f751ee66c599044
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520244"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955922"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Solución de problemas de la pila de redes definidas por software de Windows Server
 
@@ -632,7 +630,7 @@ La controladora de red puede recopilar automáticamente registros del depurador 
 Estos registros incluyen registros de depuración para el clúster de controladora de red, la aplicación de controladora de red, los registros de puerta de enlace, SLB, la red virtual y el Firewall distribuido. Cada vez que se agrega un nuevo host/SLB/Gateway a la controladora de red, se inicia el registro en esos equipos.
 Del mismo modo, cuando se quita un host/SLB/Gateway de la controladora de red, el registro se detiene en esos equipos.
 
-#### <a name="enable-logging"></a>Habilite el registro
+#### <a name="enable-logging"></a>Habilitar registro
 
 El registro se habilita automáticamente al instalar el clúster de la controladora de red mediante el cmdlet **install-NetworkControllerCluster** . De forma predeterminada, los registros se recopilan localmente en los nodos de la controladora de red en *%SystemDrive%\SDNDiagnostics*. Se **recomienda encarecidamente** cambiar esta ubicación para que sea un recurso compartido de archivos remoto (no local).
 

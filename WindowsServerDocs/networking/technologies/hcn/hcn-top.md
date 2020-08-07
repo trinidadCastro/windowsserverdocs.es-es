@@ -3,39 +3,38 @@ title: API de servicio de Compute Network (HCN) para máquinas virtuales y conte
 description: La API de servicio de proceso de host (HCN) es una API de Win32 orientada al público que proporciona acceso de nivel de plataforma para administrar las redes virtuales, los puntos de conexión de la red virtual y las directivas asociadas. Juntos, proporciona conectividad y seguridad para máquinas virtuales (VM) y contenedores que se ejecutan en un host de Windows.
 ms.author: jmesser
 author: jmesser81
-ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 6e4d665ba431331fbf1f41a0ac4774e58693a5e2
-ms.sourcegitcommit: 717222e9efceb5964872dbf97034cad60f3c48df
+ms.openlocfilehash: 8e83af4ea54d2fcc75ff8ff054f4ad253a5422ea
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87295037"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955671"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>API de servicio de Compute Network (HCN) para máquinas virtuales y contenedores
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2019
 
-La API de servicio de proceso de host (HCN) es una API de Win32 orientada al público que proporciona acceso de nivel de plataforma para administrar las redes virtuales, los puntos de conexión de la red virtual y las directivas asociadas. Juntos, proporciona conectividad y seguridad para máquinas virtuales (VM) y contenedores que se ejecutan en un host de Windows. 
+La API de servicio de proceso de host (HCN) es una API de Win32 orientada al público que proporciona acceso de nivel de plataforma para administrar las redes virtuales, los puntos de conexión de la red virtual y las directivas asociadas. Juntos, proporciona conectividad y seguridad para máquinas virtuales (VM) y contenedores que se ejecutan en un host de Windows.
 
-Los desarrolladores usan la API del servicio HCN para administrar las redes de las máquinas virtuales y los contenedores en sus flujos de trabajo de la aplicación. La API de HCN se ha diseñado para proporcionar la mejor experiencia para los desarrolladores. Los usuarios finales no interactúan directamente con estas API.  
+Los desarrolladores usan la API del servicio HCN para administrar las redes de las máquinas virtuales y los contenedores en sus flujos de trabajo de la aplicación. La API de HCN se ha diseñado para proporcionar la mejor experiencia para los desarrolladores. Los usuarios finales no interactúan directamente con estas API.
 
 ## <a name="features-of-the-hcn-service-api"></a>Características de la API del servicio HCN
 -    Se implementa como una API de C hospedada por el servicio de red de host (SNP) en la máquina virtual o en el núcleo.
 
 -    Proporciona la capacidad de crear, modificar, eliminar y enumerar objetos HCN como redes, extremos, espacios de nombres y directivas. Las operaciones se realizan en los identificadores de los objetos (por ejemplo, un identificador de red) y, internamente, estos identificadores se implementan mediante identificadores de contexto de RPC.
 
--    Basado en esquema. La mayoría de las funciones de la API definen parámetros de entrada y salida como cadenas que contienen los argumentos de la llamada de función como documentos JSON. Los documentos JSON se basan en esquemas fuertemente tipados y con control de versiones; estos esquemas forman parte de la documentación pública. 
+-    Basado en esquema. La mayoría de las funciones de la API definen parámetros de entrada y salida como cadenas que contienen los argumentos de la llamada de función como documentos JSON. Los documentos JSON se basan en esquemas fuertemente tipados y con control de versiones; estos esquemas forman parte de la documentación pública.
 
 -    Se proporciona una API de suscripción/devolución de llamada para permitir que los clientes se registren para notificaciones de eventos de todo el servicio, como creaciones y eliminaciones de red.
 
 -    La API de HCN funciona en Bridge Desktop (también conocido como Centennial) que se ejecutan en servicios del sistema. La API comprueba la ACL recuperando el token de usuario del autor de la llamada.
 
 >[!TIP]
->La API del servicio HCN se admite en las tareas en segundo plano y en las ventanas que no son de primer plano. 
+>La API del servicio HCN se admite en las tareas en segundo plano y en las ventanas que no son de primer plano.
 
 ## <a name="terminology-host-vs-compute"></a>Terminología: host frente a proceso
-El servicio de proceso de host permite a los autores de llamadas crear y administrar máquinas virtuales y contenedores en un solo equipo físico. Se denomina para seguir la terminología del sector. 
+El servicio de proceso de host permite a los autores de llamadas crear y administrar máquinas virtuales y contenedores en un solo equipo físico. Se denomina para seguir la terminología del sector.
 
 - El **host** se utiliza ampliamente en el sector de virtualización para hacer referencia al sistema operativo que proporciona recursos virtualizados.
 
@@ -47,18 +46,18 @@ Los documentos de configuración basados en esquemas bien definidos son un está
 El idioma que se usa para crear documentos de configuración es [JSON](https://tools.ietf.org/html/rfc8259), que se usa en combinación con:
 -    Definiciones de esquema que definen un modelo de objetos para el documento
 -    Validación de si un documento JSON se ajusta a un esquema
--    Conversión automatizada de documentos JSON a y desde representaciones nativas de estos esquemas en los lenguajes de programación usados por los autores de llamadas de las API 
+-    Conversión automatizada de documentos JSON a y desde representaciones nativas de estos esquemas en los lenguajes de programación usados por los autores de llamadas de las API
 
 Las definiciones de esquema usadas con frecuencia son [OpenAPI](https://www.openapis.org/) y el [esquema JSON](http://json-schema.org/), que le permite especificar las definiciones detalladas de las propiedades de un documento, por ejemplo:
 -    Conjunto válido de valores para una propiedad, como 0-100 para una propiedad que representa un porcentaje.
 -    La definición de las enumeraciones, que se representan como un conjunto de cadenas válidas para una propiedad.
--    Expresión regular para el formato esperado de una cadena. 
+-    Expresión regular para el formato esperado de una cadena.
 
-Como parte de la documentación de las API de HCN, tenemos previsto publicar el esquema de nuestros documentos JSON como una especificación de OpenAPI. En función de esta especificación, las representaciones específicas del lenguaje del esquema pueden permitir el uso con seguridad de tipos de los objetos de esquema en el lenguaje de programación utilizado por el cliente. 
+Como parte de la documentación de las API de HCN, tenemos previsto publicar el esquema de nuestros documentos JSON como una especificación de OpenAPI. En función de esta especificación, las representaciones específicas del lenguaje del esquema pueden permitir el uso con seguridad de tipos de los objetos de esquema en el lenguaje de programación utilizado por el cliente.
 
-### <a name="example"></a>Ejemplo 
+### <a name="example"></a>Ejemplo
 
-A continuación se presenta un ejemplo de este flujo de trabajo para el objeto que representa una controladora SCSI en el documento de configuración de una máquina virtual. 
+A continuación se presenta un ejemplo de este flujo de trabajo para el objeto que representa una controladora SCSI en el documento de configuración de una máquina virtual.
 
 ```
 enum IpamType
@@ -98,12 +97,12 @@ class PolicySettings
     [NewIn("2.0"),OmitEmpty]  string      Name;
 };
 
-class VlanPolicy : HCN.Schema.Common.PolicySettings 
+class VlanPolicy : HCN.Schema.Common.PolicySettings
 {
     [NewIn("2.0")] uint32 IsolationId;
 };
 
-class Route 
+class Route
 {
     [NewIn("2.0"),OmitEmpty] string NextHop;
     [NewIn("2.0"),OmitEmpty] string DestinationPrefix;
@@ -118,13 +117,13 @@ class Route
 A partir de esta definición interna, se generan las especificaciones de OpenAPI para el esquema:
 
 ```
-{ 
-    "swagger" : "2.0", 
-    "info" : { 
-       "version" : "2.1", 
-       "title" : "HCN API" 
+{
+    "swagger" : "2.0",
+    "info" : {
+       "version" : "2.1",
+       "title" : "HCN API"
     },
-    "definitions": {        
+    "definitions": {
         "Ipam": {
             "type": "object",
             "properties": {
@@ -150,7 +149,7 @@ A partir de esta definición interna, se generan las especificaciones de OpenAPI
                 "ID": {
                     "type": "string",
                     "pattern": "^[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}$"
-                },                
+                },
                 "IpAddressPrefix": {
                     "type": "string"
                 },
@@ -190,7 +189,7 @@ A partir de esta definición interna, se generan las especificaciones de OpenAPI
                     "type": "string"
                 }
             }
-        },                      
+        },
         "VlanPolicy": {
             "type": "object",
             "properties": {
@@ -217,9 +216,9 @@ A partir de esta definición interna, se generan las especificaciones de OpenAPI
                     "format": "uint16"
                 }
             }
-        }        
+        }
     }
-} 
+}
 ```
 
 Puede usar herramientas, como [Swagger](https://swagger.io/), para generar representaciones específicas del lenguaje del lenguaje de programación de esquemas que usa un cliente. Swagger admite una gran variedad de lenguajes, como C#, Go, JavaScript y Python.
@@ -269,9 +268,9 @@ class HostComputeNamespace : HCN.Schema.Common.Base
 
 class HostComputeLoadBalancer : HCN.Schema.Common.Base
 {
-    [NewIn("2.0"), OmitEmpty] string                                               HostComputeEndpoints[]; 
-    [NewIn("2.0"), OmitEmpty] string                                               VirtualIPs[]; 
-    [NewIn("2.0"), OmitEmpty] HCN.Schema.Network.Endpoint.Policy.PortMappingPolicy PortMappings[]; 
+    [NewIn("2.0"), OmitEmpty] string                                               HostComputeEndpoints[];
+    [NewIn("2.0"), OmitEmpty] string                                               VirtualIPs[];
+    [NewIn("2.0"), OmitEmpty] HCN.Schema.Network.Endpoint.Policy.PortMappingPolicy PortMappings[];
     [NewIn("2.0"), OmitEmpty] HCN.Schema.LoadBalancer.LoadBalancerPolicy           Policies[];
 };
 ```

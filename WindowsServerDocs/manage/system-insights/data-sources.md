@@ -1,19 +1,17 @@
 ---
 title: Orígenes de datos de System Insights
 description: Al escribir una nueva funcionalidad en System Insights, puede especificar orígenes de datos nuevos o existentes para recopilar localmente y analizar. En este tema se describen los orígenes de datos que puede elegir al registrar una nueva funcionalidad.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 5dc44d9309c25ca1475e512a11d9868d7fa49e97
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 23150a741c9ec218077f63ca65e6948b1c48f8bf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473672"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972012"
 ---
 # <a name="system-insights-data-sources"></a>Orígenes de datos de System Insights
 
@@ -71,8 +69,8 @@ Dado que cada serie registra solo un punto de datos para cada intervalo de recop
 | Eventos del sistema | Count |
 | Serie de discos conocidos | Last (último valor en el intervalo de recopilación) |
 | Serie de volúmenes conocidos | Last (último valor en el intervalo de recopilación) |
-| Serie de CPU conocidas | Average |
-| Serie de redes conocidas | Average |
+| Serie de CPU conocidas | Promedio |
+| Serie de redes conocidas | Promedio |
 
 ## <a name="data-footprint"></a>Superficie de datos
 
