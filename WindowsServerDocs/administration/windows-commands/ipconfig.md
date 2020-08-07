@@ -1,20 +1,18 @@
 ---
 title: ipconfig
 description: Artículo de referencia para el comando ipconfig, que muestra todos los valores de configuración de red TCP/IP actuales y actualiza la configuración del Protocolo de configuración dinámica de host (DHCP) y el sistema de nombres de dominio (DNS).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 15071c2c-4815-4893-93b2-ab30232e312e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3567f855a6066ed318f10daa22f1ca8de0d565c4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a0cff8ef691eb9b7adf04b9928a962cda760fdf9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924354"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888259"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -42,7 +40,7 @@ ipconfig [/allcompartments] [/all] [/renew [<adapter>]] [/release [<adapter>]] [
 | /showclassid`<adapter>` | Muestra el identificador de clase DHCP de un adaptador especificado. Para ver el identificador de clase de DHCP para todos los adaptadores, use el carácter comodín de asterisco (**&#42;**) en lugar del *adaptador*. Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IP automáticamente. |
 | /? | Muestra la Ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Este comando es muy útil en los equipos que están configurados para obtener una dirección IP automáticamente. Esto permite a los usuarios determinar qué valores de configuración de TCP/IP han sido configurados por DHCP, el direccionamiento IP privado automático (APIPA) o una configuración alternativa.
 

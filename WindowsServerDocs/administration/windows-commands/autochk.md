@@ -1,20 +1,18 @@
 ---
 title: autochk
 description: Artículo de referencia del comando Autochk, que se ejecuta cuando se inicia el equipo y antes de Windows Server a partir de la comprobación de la integridad lógica de un sistema de archivos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8787e6a3-f023-4ea5-b2d1-61c6876d8aff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9cfb034f37f85b1e54e0cee2a8a4d128518c775a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 91472aa7447c590aefcb4af58d1951e8e39225fe
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923620"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895281"
 ---
 # <a name="autochk"></a>autochk
 
@@ -28,7 +26,7 @@ Se ejecuta cuando se inicia el equipo y antes de que Windows Server empiece a co
 
 - Si el volumen se marca como sucio.
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 > [!WARNING]
 > La herramienta de línea de comandos **Autochk** no se puede ejecutar directamente desde la línea de comandos. En su lugar, use la herramienta de línea de comandos **chkntfs** para configurar la forma en que se desea que **Autochk** se ejecute en el inicio.

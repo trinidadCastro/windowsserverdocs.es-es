@@ -1,20 +1,18 @@
 ---
 title: ksetup delrealmflags
 description: Artículo de referencia para el comando ksetup delrealmflags, que quita las marcas de dominio Kerberos del dominio Kerberos especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 22053041-1eb4-47f5-bed9-3d5681bcde7d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d3c81d1b034f6c53c33271c1c9e61a0fc5d4893
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 07d177f58f950b5e8e552e69c9f79054a379cc10
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929179"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887932"
 ---
 # <a name="ksetup-delrealmflags"></a>ksetup delrealmflags
 
@@ -32,7 +30,7 @@ ksetup /delrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 | --------- | ----------- |
 | `<realmname>` | Especifica el nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos o el **dominio Kerberos** predeterminados = cuando se ejecuta **ksetup** . |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos que no se basan en el sistema operativo Windows Server. Los equipos que ejecutan Windows Server pueden usar un servidor Kerberos para administrar la autenticación en el dominio Kerberos, en lugar de usar un dominio que ejecute un sistema operativo Windows Server. Esta entrada establece las características del dominio Kerberos y son las siguientes:
 

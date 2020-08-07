@@ -1,20 +1,18 @@
 ---
 title: ksetup listrealmflags
 description: Artículo de referencia del comando ksetup listrealmflags, en el que se enumeran las marcas de dominio Kerberos disponibles que puede informar de ksetup.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: aa96e4da-6b98-4c05-bccf-73cbf33258c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d094b7d627885d25313b73bb51a1bbeeec2832d6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5e69b91c8fe5ca7bddecb12a72a1e8ef31bec3dd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933681"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887854"
 ---
 # <a name="ksetup-listrealmflags"></a>ksetup listrealmflags
 
@@ -26,7 +24,7 @@ Muestra las marcas de dominio Kerberos disponibles a las que puede informar **ks
 ksetup /listrealmflags
 ```
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos que no se basan en el sistema operativo Windows Server. Los equipos que ejecutan Windows Server pueden usar un servidor Kerberos para administrar la autenticación en el dominio Kerberos, en lugar de usar un dominio que ejecute un sistema operativo Windows Server. Esta entrada establece las características del dominio Kerberos y son las siguientes:
 

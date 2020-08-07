@@ -1,20 +1,18 @@
 ---
 title: ftp
 description: Artículo de referencia del comando FTP, que transfiere archivos hacia y desde un equipo que ejecuta un servicio de servidor File Transfer Protocol (FTP).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 758335e1-fd8d-448c-a654-993126239dd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01d597bf4520fc41fa31f90c643c852ec9f77b2f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 369a41cf6ad803a4fce939da58228997410cf177
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957297"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888788"
 ---
 # <a name="ftp"></a>ftp
 

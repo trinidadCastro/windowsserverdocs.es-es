@@ -1,20 +1,18 @@
 ---
 title: Introducción al registro de acceso de usuarios
 desctription: Describes the User Access Logging feature and how to start using it.
-ms.prod: windows-server
-ms.technology: manage-user-access-logging
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44bcdd3d89946558934b8309634061f6b8e7ffda
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6b5e8ae365fbf8130d134ab2f9fa555e952d012a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471170"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895634"
 ---
 # <a name="get-started-with-user-access-logging"></a>Introducción al registro de acceso de usuarios
 
@@ -91,7 +89,7 @@ UAL admite los siguientes roles de servidor y servicios:
 ## <a name="important-functionality"></a><a name="BKMK_NEW"></a>Funcionalidad importante
 En la tabla siguiente se describen las funciones clave de UAL y sus valores posibles.
 
-|Funcionalidad|Value|
+|Funcionalidad|Valor|
 |-----------------|---------|
 |Recopilar y agregar los datos de eventos de solicitud de cliente prácticamente en tiempo real.|Se pueden guardar hasta tres años de datos. **Importante:** Los administradores necesitan exigir el cumplimiento de los datos recopilados y los períodos de retención de datos con la Directiva de privacidad de la organización y la normativa local.|
 |Consulte UAL mediante interfaces WMI o Windows PowerShell para recuperar datos de solicitud de cliente en un servidor local o remoto.|UAL permite una sola vista de datos de uso continuo. Los administradores de servidor y de organización pueden recuperar estos datos y coordinarse con los administradores empresariales para optimizar el uso de sus licencias por volumen de software.|
@@ -102,7 +100,7 @@ Los siguientes datos relacionados con el usuario se registran con UAL.
 
 |data|Descripción|
 |--------|---------------|
-|**Nombre**|Nombre de usuario en el cliente que acompaña las entradas de UAL desde los roles y productos instalados, si procede.|
+|**UserName**|Nombre de usuario en el cliente que acompaña las entradas de UAL desde los roles y productos instalados, si procede.|
 |**ActivityCount**|Número de veces que un usuario determinado ha tenido acceso a un rol o servicio.|
 |**FirstSeen**|Fecha y hora de la primera vez que un usuario tuvo acceso a un rol o servicio.|
 |**LastSeen**|Fecha y hora de la última vez que un usuario tuvo acceso a un rol o servicio.|

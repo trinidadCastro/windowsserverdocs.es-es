@@ -1,20 +1,18 @@
 ---
 title: attributes volume
 description: Artículo de referencia para el comando de volumen Attributes, que muestra, establece o borra los atributos de un volumen.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e40e8284-3d57-4de8-a46c-e4ade34a0d53
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aae7cc7fe26fac5ef03e40610eb46389eb274c94
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a4e0e7110bd23d1a8127e867dd991d1dc620c164
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923878"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895481"
 ---
 # <a name="attributes-volume"></a>attributes volume
 
@@ -40,7 +38,7 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
 | shadowcopy | Especifica que el volumen es un volumen de instantánea. |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - En los discos básicos de registro de arranque maestro (MBR), los parámetros **Hidden**, **ReadOnly**y **nodefaultdriveletter** se aplican a todos los volúmenes del disco.
 

@@ -1,20 +1,18 @@
 ---
 title: Ejecutar análisis y administrar Analizador de procedimientos recomendados Results_1
 description: Administrador de servidores
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: 232f1c80-88ef-4a39-8014-14be788c2766
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ff854bcb25e4f5891e56f1e094fd4f387cf023f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8c0440da49e6e78afece1af3ee8357ddf846e7e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851488"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895738"
 ---
 # <a name="run-best-practices-analyzer-scans-and-manage-scan-results"></a>Ejecución de análisis del Analizador de procedimientos recomendados y administración de los resultados de los análisis
 
@@ -26,13 +24,13 @@ Analizador de procedimientos recomendados (BPA) es una herramienta de administra
 
 Puede ejecutar análisis de Analizador de procedimientos recomendados (BPA) desde Administrador del servidor, mediante la GUI del BPA o mediante cmdlets de Windows PowerShell. a partir de Windows Server 2012, puede examinar un rol o varios roles al mismo tiempo, en varios servidores, independientemente de que use el icono de Analizador de procedimientos recomendados en la consola de Administrador del servidor o los cmdlets de Windows PowerShell para ejecutar los análisis. También puede indicar al BPA que excluya u omita resultados de exámenes que no desee ver.
 
-Este tema contiene las siguientes secciones.
+En este tema se incluyen las siguientes secciones.
 
 -   [buscar BPA](#BKMK_find)
 
 -   [Funcionamiento de BPA](#BKMK_how)
 
--   [Realización de análisis de Analizador de procedimientos recomendados en roles](#BKMK_BPAscan)
+-   [Exámenes del Analizador de procedimientos recomendados en los roles](#BKMK_BPAscan)
 
 -   [Administrar resultados de exámenes](#BKMK_manage)
 
@@ -46,12 +44,12 @@ BPA realiza una medición del cumplimiento de un rol con las reglas de procedimi
 |---------|--------|
 |Error|Se devuelven resultados de error cuando un rol no cumple con las reglas de procedimientos recomendados y pueden preverse problemas de funcionalidad.|
 |Información|Se devuelven resultados de información cuando un rol cumple con las reglas de procedimientos recomendados.|
-|advertencia|Se devuelven resultados de advertencia cuando los resultados de incumplimiento pueden causar problemas si no se realizan cambios. La aplicación puede ser compatible tal y como funciona en ese momento, pero es posible que no cumpla las condiciones de una regla si no se realizan cambios en su configuración o las opciones de directiva. Por ejemplo, es posible que un examen de Servicios de Escritorio remoto muestre un resultado de advertencia si un servidor de licencias no está disponible para el rol porque, aunque no haya conexiones remotas activas en el momento del examen, no disponer de un servidor de licencias impide que las nuevas conexiones remotas obtengan licencias de acceso de cliente válidas.|
+|Advertencia|Se devuelven resultados de advertencia cuando los resultados de incumplimiento pueden causar problemas si no se realizan cambios. La aplicación puede ser compatible tal y como funciona en ese momento, pero es posible que no cumpla las condiciones de una regla si no se realizan cambios en su configuración o las opciones de directiva. Por ejemplo, es posible que un examen de Servicios de Escritorio remoto muestre un resultado de advertencia si un servidor de licencias no está disponible para el rol porque, aunque no haya conexiones remotas activas en el momento del examen, no disponer de un servidor de licencias impide que las nuevas conexiones remotas obtengan licencias de acceso de cliente válidas.|
 
 ### <a name="rule-categories"></a>Categorías de las reglas
 En la tabla siguiente se describen las categorías de reglas de procedimientos recomendados en las que se miden los roles durante un examen Analizador de procedimientos recomendados.
 
-|Nombre de categoría|Descripción|
+|Nombre de la categoría|Descripción|
 |---------|--------|
 |Seguridad|Se aplican reglas de seguridad para medir el riesgo relativo de la exposición de un rol a amenazas como usuarios no autorizados o malintencionados, o la pérdida o el robo de datos confidenciales o de propiedad.|
 |Rendimiento|Se aplican reglas de rendimiento para medir la capacidad de un rol para procesar solicitudes y realizar sus tareas prescritas en la empresa en los períodos de tiempo esperados según la carga de trabajo del rol.|
@@ -62,7 +60,7 @@ En la tabla siguiente se describen las categorías de reglas de procedimientos r
 |Después de la implementación|Las reglas posteriores a la implementación se aplican una vez que se hayan iniciado todos los servicios necesarios para un rol y antes de que se esté ejecutando en la empresa.|
 |Requisitos previos|Las reglas de requisitos previos explican las opciones de configuración, las configuraciones de directiva y las características necesarias para un rol de modo que BPA pueda aplicar reglas específicas de otras categorías. Si aparece un requisito previo en los resultados del examen, indica una configuración incorrecta, un programa que falta, una directiva deshabilitada o habilitada incorrectamente, una configuración de clave del Registro u otro tipo de configuración que impidió que BPA aplicara una o varias reglas durante un examen. Un resultado de requisito previo no indica la compatibilidad o incompatibilidad. Significa que no se pudo aplicar una regla y, por tanto, no forma parte de los resultados del examen.|
 
-## <a name="performing-best-practices-analyzer-scans-on-roles"></a><a name=BKMK_BPAscan></a>Realización de análisis de Analizador de procedimientos recomendados en roles
+## <a name="performing-best-practices-analyzer-scans-on-roles"></a><a name=BKMK_BPAscan></a>Exámenes del Analizador de procedimientos recomendados en los roles
 Puede realizar análisis BPA en los roles mediante la GUI del BPA en Administrador del servidor o mediante cmdlets de Windows PowerShell.
 
 En Windows Server 2012 R2 y Windows Server 2012, algunos roles solicitan que se especifiquen parámetros adicionales, como los nombres de servidores o recursos compartidos específicos que ejecutan partes del rol, o los identificadores de submodelos, antes de iniciar un análisis BPA. Para los exámenes del BPA en modelos que requieren que se especifiquen parámetros adicionales, use cmdlets del BPA; la GUI del BPA no puede aceptar parámetros adicionales como los identificadores del submodelo. Por ejemplo, el identificador de submodelo **FSRM** representa el submodelo de BPA Servicios de archivo del Administrador de recursos del servidor de archivos, un servicio de rol de Servicios de archivo y almacenamiento. Para ejecutar un examen solo en el servicio de rol servidor de archivos Administrador de recursos, ejecute un análisis BPA mediante cmdlets de Windows PowerShell y agregue el parámetro `SubmodelId` al cmdlet.
@@ -131,13 +129,13 @@ Use los procedimientos siguientes para examinar uno o más roles mediante cmdlet
     **Ejemplo:** `Invoke-BPAmodel -modelId Microsoft/Windows/DNSServer,Microsoft/Windows/FileServices`
 
     > [!NOTE]
-    > El identificador de modelo incluye la ruta de acceso completa que se muestra en la columna **Id.** , por ejemplo, **Microsoft/Windows/Hyper-V**.
+    > El identificador de modelo incluye la ruta de acceso completa que se muestra en la columna **Id.**, por ejemplo, **Microsoft/Windows/Hyper-V**.
 
     También puede iniciar un análisis en un rol específico de los resultados del paso 3 mediante la canalización de los resultados del cmdlet `Get-BPAmodel` al cmdlet `Invoke-BPAmodel` , como se muestra en el siguiente ejemplo.
 
     `Get-BPAmodel <model_ID> | Invoke-BPAmodel`
 
-    Al ejecutar este cmdlet sin especificar un identificador de modelo, se canalizan todos los modelos devueltos por el cmdlet `Get-BPAmodel` al cmdlet `Invoke-BPAmodel`, iniciando exámenes en todos los modelos que están disponibles en los servidores que se han agregado al grupo de servidores de Administrador del servidor.
+    Al ejecutar este cmdlet sin especificar un identificador de modelo, se canalizan todos los modelos devueltos por el `Get-BPAmodel` cmdlet al `Invoke-BPAmodel` cmdlet, iniciando exámenes en todos los modelos que están disponibles en los servidores que se han agregado al grupo de servidores de administrador del servidor.
 
 #### <a name="to-scan-all-roles-by-using-windows-powershell-cmdlets"></a><a name=BKMK_allroles></a>Para examinar todos los roles mediante cmdlets de Windows PowerShell
 
@@ -187,7 +185,7 @@ Puede excluir resultados de análisis mediante el cmdlet `Set-BPAResult` con el 
 
     El resultado ya no se muestra en la lista de resultados.
 
-3.  Para ver los resultados excluidos en la GUI, ejecute la consulta **Resultados excluidos** integrada. Haga clic en **Consultas de búsqueda guardadas**y, a continuación, en **Resultados excluidos**.
+3.  Para ver los resultados excluidos en la GUI, ejecute la consulta **Resultados excluidos** integrada. Haga clic en **Consultas de búsqueda guardadas** y, a continuación, en **Resultados excluidos**.
 
     Una vez ejecutada la consulta **Resultados excluidos**, observe que el texto del subtítulo del icono, una descripción de los resultados mostrados en la lista, cambia a **Resultados excluidos**. En la lista, solo se muestran los resultados excluidos.
 
@@ -237,7 +235,7 @@ Si desea ver resultados de exámenes que se han excluido, puede incluirlos. El v
 ### <a name="view-and-export-bpa-scan-results-in-windows-powershell"></a>Visualizar y exportar los resultados del análisis BPA en Windows PowerShell
 Para ver y administrar los resultados de exámenes mediante cmdlets de Windows PowerShell, consulte los procedimientos siguientes. Antes de que pueda usar cualquiera de los siguientes procedimientos, ejecute un análisis BPA en un modelo o submodelo, como mínimo.
 
-#### <a name="to-view-results-of-the-most-recent-scan-of-a-role-by-using-windows-powershell"></a><a name=BKMK_recentPS></a>Para ver los resultados del examen más reciente de un rol mediante Windows PowerShell
+#### <a name="to-view-results-of-the-most-recent-scan-of-a-role-by-using-windows-powershell"></a><a name=BKMK_recentPS></a>Para visualizar los resultados del examen más reciente de un rol con Windows PowerShell
 
 1.  Abra una sesión de Windows PowerShell con derechos de usuario elevados.
 
@@ -276,7 +274,7 @@ Para ver y administrar los resultados de exámenes mediante cmdlets de Windows P
 
     ```
 
-    Lleve a cabo cualquiera de las siguientes opciones.
+    Realice una de las acciones siguientes.
 
     -   Para dar formato a los resultados de BPA, ejecute el siguiente cmdlet, agregando las propiedades de los resultados que desea ver desde el ejemplo anterior.
 
@@ -300,7 +298,7 @@ Para ver y administrar los resultados de exámenes mediante cmdlets de Windows P
 
         **Ejemplo:** `Get-BPAResult Microsoft/Windows/FileServices | Export-CSV C:\BPAResults\FileServices.txt`
 
-## <a name="see-also"></a>Consulta también
-[Analizador de procedimientos recomendados el contenido de la resolución en el TechCenter de Windows Server](https://go.microsoft.com/fwlink/p/?LinkId=241597)
-[filtrar, ordenar y consultar datos en Administrador del servidor mosaicos](filter-sort-and-query-data-in-server-manager-tiles.md)
-[administrar varios servidores remotos con administrador del servidor](manage-multiple-remote-servers-with-server-manager.md)
+## <a name="see-also"></a>Consulte también
+[Analizador de procedimientos recomendados el contenido de la resolución en Windows Server TechCenter](https://go.microsoft.com/fwlink/p/?LinkId=241597) 
+ [Filtrar, ordenar y consultar datos en Administrador del servidor mosaicos](filter-sort-and-query-data-in-server-manager-tiles.md) 
+ [Administrar varios servidores remotos con administrador del servidor](manage-multiple-remote-servers-with-server-manager.md)

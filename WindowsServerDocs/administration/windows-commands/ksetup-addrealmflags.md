@@ -1,20 +1,18 @@
 ---
 title: ksetup addrealmflags
 description: Artículo de referencia para el comando ksetup addrealmflags, que agrega marcas de dominio Kerberos adicionales al dominio Kerberos especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 80ca1e16-8871-494b-b9be-6bc9d63de860
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0206d56563544e48fec5e714febdd3c3be52ab40
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a834d6ce69fede20ed544d858c4f4c46abdf0d68
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925523"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888074"
 ---
 # <a name="ksetup-addrealmflags"></a>ksetup addrealmflags
 
@@ -32,7 +30,7 @@ ksetup /addrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 | --------- | ----------- |
 | `<realmname>` | Especifica el nombre DNS en mayúsculas, como CORP. CONTOSO.COM. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos que no se basan en el sistema operativo Windows Server. Los equipos que ejecutan Windows Server pueden usar un servidor Kerberos para administrar la autenticación en el dominio Kerberos, en lugar de usar un dominio que ejecute un sistema operativo Windows Server. Esta entrada establece las características del dominio Kerberos y son las siguientes:
 

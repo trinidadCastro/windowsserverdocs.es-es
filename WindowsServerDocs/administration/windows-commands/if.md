@@ -1,20 +1,18 @@
 ---
 title: if
 description: Artículo de referencia del comando if, que realiza el procesamiento condicional en los programas por lotes.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 698b3fb9-532b-4c2b-af7f-179f8dc57131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd55ebb6ae3562906efdc710f7a067a7e7514e59
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3644c64d4159d9232ec58e747efc542dd903791e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924476"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888371"
 ---
 # <a name="if"></a>if
 
@@ -52,7 +50,7 @@ if defined <variable> <command> [else <expression>]
 | `<expression>` | Especifica un comando de línea de comandos y los parámetros que se van a pasar al comando en una cláusula **else** . |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si la condición especificada en una cláusula **If** es true, se lleva a cabo el comando que sigue a la condición. Si la condición es falsa, se omite el comando de la cláusula **If** y el comando ejecuta cualquier comando que se especifique en la cláusula **else** .
 

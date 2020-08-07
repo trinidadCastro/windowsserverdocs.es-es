@@ -1,20 +1,18 @@
 ---
 title: ksetup delhosttorealmmap
 description: Artículo de referencia para el comando ksetup delhosttorealmmap, que quita una asignación de nombre de entidad de seguridad de servicio (SPN) entre el host indicado y el dominio Kerberos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3faee482-a96c-4614-86fd-aaa446643ec4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c55fe25a147c23026ddf97900d6da856f04314a3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 953a8d33a65bb9c5aafd4d549f762772bc059ba4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925499"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888001"
 ---
 # <a name="ksetup-delhosttorealmmap"></a>ksetup delhosttorealmmap
 

@@ -1,20 +1,18 @@
 ---
 title: Get-DriverPackage
 description: Artículo de referencia de Get-DriverPackage, que muestra información acerca de un paquete de controladores en el servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 94d231e4-ff01-48e7-9bc8-7b0d97a4339e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0ca307b9f42d0921c896df2fe622c5b0f8a853d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 95dbc43df5feb7bd07e2dfe3d9e74e81d94dd612
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932250"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879790"
 ---
 # <a name="get-driverpackage"></a>Get-DriverPackage
 

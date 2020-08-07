@@ -1,20 +1,18 @@
 ---
 title: ksetup changepassword
 description: Artículo de referencia para el comando ksetup ChangePassword, que usa el valor de Centro de distribución de claves (KDC) Password (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 283078e7-a88f-4875-90e6-f8605e6b7ea7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e49a9c0a796357c89efd3c86373c77468670176c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 69f92dc7b3f37e08e035d635a46c9fc5fc57e1a7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925508"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888052"
 ---
 # <a name="ksetup-changepassword"></a>ksetup changepassword
 
@@ -36,7 +34,7 @@ ksetup /changepassword <oldpassword> <newpassword>
 | `<oldpassword>` | Especifica la contraseña existente del usuario que ha iniciado sesión. |
 | `<newpassword>` | Especifica la nueva contraseña del usuario que ha iniciado sesión. Esta contraseña debe cumplir todos los requisitos de contraseña establecidos en este equipo. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si la cuenta de usuario no se encuentra en el dominio actual, el sistema le pedirá que proporcione el nombre de dominio en el que reside la cuenta de usuario.
 

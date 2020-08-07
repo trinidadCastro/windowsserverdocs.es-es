@@ -1,20 +1,18 @@
 ---
 title: ftype
 description: Artículo de referencia del comando ftype, que muestra o modifica el tipo de archivo utilizado en las asociaciones de extensión de nombre de archivo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6fb53cee-9bed-44dd-af5d-bc7cec1dd114
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ab401c4dd4707cf05c69c1746368927c0bfaa83
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ed4a8a698328737259f830118fa9c6a482247884
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930462"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888713"
 ---
 # <a name="ftype"></a>ftype
 
@@ -38,7 +36,7 @@ ftype [<filetype>[=[<opencommandstring>]]]
 | `<opencommandstring>` | Especifica la cadena de comandos abierta que se va a usar al abrir archivos del tipo de archivo especificado.|
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En la tabla siguiente se describe cómo **ftype** sustituye las variables dentro de una cadena de comandos abierta:
 

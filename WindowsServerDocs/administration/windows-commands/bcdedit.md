@@ -1,20 +1,18 @@
 ---
 title: bcdedit
 description: Artículo de referencia para el comando bcdedit, que crea nuevos almacenes, modifica almacenes existentes y agrega parámetros de menú de arranque.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ab2da47d-3aac-44a0-b7fd-bd9561d61553
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: 59d6a4eafe2eb3383cfeed9e1cbcb9d3e10fe376
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0a24ce7f2503d06ce6c57270027328600d93e217
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955817"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895169"
 ---
 # <a name="bcdedit"></a>bcdedit
 

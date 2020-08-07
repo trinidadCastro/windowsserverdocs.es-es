@@ -1,20 +1,18 @@
 ---
 title: gpt
 description: Artículo de referencia para el comando GPT, que asigna los atributos GPT a la partición que tiene el foco.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1d6f9029-807f-4420-a336-36669b5361bc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2357f9916aba2eaba6a226fc8addbb13bf5f2f37
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 561bc4a11580a45452ac71cffddee1c58e48cf86
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957147"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888557"
 ---
 # <a name="gpt"></a>gpt
 

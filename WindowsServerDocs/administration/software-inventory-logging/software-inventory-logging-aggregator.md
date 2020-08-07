@@ -1,20 +1,18 @@
 ---
 title: Agregador de Registro de inventario de software
-description: Describe cómo instalar y administrar el agregador de registro de inventario de software
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
+description: Describe cómo instalar y administrar el agregador de registro de inventario de software-software-Inventory-Logging
 ms.topic: article
 ms.assetid: e4230a75-6bcd-47d9-ba92-a052a90a6abc
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 350187c0ad7490a0698e4a3b99ef710b632f6c6c
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 697ca5e27db6a937c31b4dad072eef19a6f3df06
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408844"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895679"
 ---
 # <a name="software-inventory-logging-aggregator"></a>Agregador de Registro de inventario de software
 
@@ -160,7 +158,7 @@ Antes de instalar el agregador de SIL en Windows Server debe asegurarse de cumpl
 
 -   **Inicie sesión en el servidor con una cuenta que tiene privilegios sysadmin en el servidor de SQL Server**, si desea la autenticación de Windows.
 
-    O BIEN
+    O
 
     Si lo que desea es la autenticación de SQL, **tiene la contraseña de una cuenta que tenga privilegios administrativos de SQL**.
 

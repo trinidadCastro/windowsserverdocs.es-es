@@ -1,24 +1,22 @@
 ---
 title: Introducción al registro de inventario de software
 description: Describe cómo instalar y empezar a usar el registro de inventario de software
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
 ms.topic: article
 ms.assetid: ed51c13c-7cbf-4144-a675-011fd29379d4
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e54e8f96863280263f7afee2e32bfd41ec712110
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 940c5d7795ff4dcf84bad0727d1f92d155b3ea1b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851448"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895653"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>Introducción al registro de inventario de software
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
  El registro de inventario de software recopila datos de inventario de software de Microsoft por servidor. Antes de usar el registro de inventario de software con Windows Server 2012 R2, asegúrese de que Windows Update [kb 3000850](https://support.microsoft.com/kb/3000850) y [KB 3060681](https://support.microsoft.com/kb/3060681) están instalados en cada sistema en el que se va a realizar el inventario. No se requiere ningún Windows Update para Windows Server 2016. Además, si desea usar la capacidad de SIL para reenviar datos a un servidor de agregación, asegúrese de que tiene certificados SSL válidos para la red.
 
@@ -40,10 +38,10 @@ El registro de inventario de software puede ayudar a los administradores del ser
 
 -   Agregar información de inventario de software y servidor para una amplia variedad de escenarios de administración de activos de software mediante la habilitación de la característica registro de inventario de software de cada servidor y la elección de un URI de destino de servidor Web y la huella digital de certificado para la autenticación.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Consulte también
 [Agregador de Registro de inventario de software](https://technet.microsoft.com/library/mt572043.aspx)<br>
 [Administrar el Registro de inventario de software](manage-software-inventory-logging.md)<br>
-[Cmdlets de registro de inventario de software en Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[Microsoft Assessment and Planning Toolkit](https://www.microsoft.com/download/en/details.aspx?id=7826)
-[herramienta de administración de activación por volumen](https://blogs.technet.com/b/volume-licensing/)
+[Cmdlets de Registro de inventario de software en Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)<br>
+[Kit de herramientas de planeación y evaluación de Microsoft](https://www.microsoft.com/download/en/details.aspx?id=7826) 
+ [Herramienta de administración de activación por volumen](https://blogs.technet.com/b/volume-licensing/)
 

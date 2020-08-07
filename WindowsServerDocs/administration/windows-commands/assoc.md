@@ -1,20 +1,18 @@
 ---
 title: assoc
 description: Artículo de referencia para el comando Assoc, que muestra o modifica las asociaciones de la extensión de nombre de archivo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 237bedda-b24c-4fec-a39c-9b7eacf96417
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e6d72dce2a3e820b52a33bf11dbf38890278fb8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e802756bc1d70e077126170a94a8b8ac6f72dc96
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924049"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895535"
 ---
 # <a name="assoc"></a>assoc
 
@@ -37,7 +35,7 @@ assoc [<.ext>[=[<filetype>]]]
 | `<filetype>` | Especifica el tipo de archivo que se va a asociar a la extensión de nombre de archivo especificada. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - Para quitar la Asociación de tipo de archivo para una extensión de nombre de archivo, agregue un espacio en blanco después del signo igual presionando la barra ESPACIAdora.
 

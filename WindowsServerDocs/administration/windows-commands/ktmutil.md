@@ -1,20 +1,18 @@
 ---
 title: ktmutil
 description: Artículo de referencia para el comando ktmutil, que inicia la utilidad Administrador de transacciones de kernel.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 53bc56df-f0e5-443b-ab20-bbf8b11d4a9a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa4cbd503894cd99910f401ec026022a9ba1453c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ff65e7e228f4876e51e3132d3a430ceec3837053
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933887"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887668"
 ---
 # <a name="ktmutil"></a>ktmutil
 

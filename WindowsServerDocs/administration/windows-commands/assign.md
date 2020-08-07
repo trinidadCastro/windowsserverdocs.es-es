@@ -1,20 +1,18 @@
 ---
 title: assign
 description: Artículo de referencia del comando Assign, que asigna una letra de unidad o un punto de montaje al volumen que tiene el foco.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 57912b73-622e-489b-b053-a369021ba8e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 41c6194b68414be65fcf6b93b662e25ae80e0309
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bd0e03c0705a65ad03c3627222ae5b6003c1cdfa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955507"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895554"
 ---
 # <a name="assign"></a>assign
 

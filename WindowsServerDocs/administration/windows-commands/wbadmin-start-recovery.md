@@ -1,20 +1,18 @@
 ---
 title: wbadmin start recovery
 description: Artículo de referencia de Wbadmin Start recovery, que ejecuta una operación de recuperación basada en los parámetros especificados.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 52381316-a0fa-459f-b6a6-01e31fb21612
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7eb408ae8b57279d2620e8971a6e5833e3a044d
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d7d04e32eeae71593daf995e790b6dcbae05464b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519604"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879698"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
@@ -60,7 +58,7 @@ wbadmin start recovery
 | -noRollForward | Solo es válido cuando se recuperan aplicaciones. Permite la recuperación en un momento dado anterior de una aplicación si se selecciona la versión más reciente de las copias de seguridad. En el caso de otras versiones de la aplicación que no son la última recuperación a un momento dado anterior, se realiza como valor predeterminado. |
 | -quiet | Ejecuta el subcomando sin preguntar al usuario. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Para ver una lista de los elementos que están disponibles para la recuperación a partir de una versión de copia de seguridad específica, use **Wbadmin get items**. Si un volumen no tenía un punto de montaje o una letra de unidad en el momento de la copia de seguridad, este subcomando devolvería un nombre de volumen basado en GUID que se debe usar para recuperar el volumen.
 -   Cuando **-itemType** es una **aplicación**, puede usar un valor de **ADIFM** para que realice una instalación desde el **medio de la** operación para recuperar todos los datos relacionados necesarios para Active Directory Domain Services. **ADIFM** crea una copia de la base de datos Active Directory, el registro y el estado de SYSVOL y, a continuación, guarda esta información en la ubicación especificada por **-recoveryTarget**. Use este parámetro solo cuando se especifica **-recoveryTarget** .

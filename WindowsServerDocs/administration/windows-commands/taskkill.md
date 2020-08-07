@@ -1,20 +1,18 @@
 ---
 title: taskkill
 description: Artículo de referencia de Taskkill, que finaliza una o más tareas o procesos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2b71e792-08b6-46d4-95a5-cb6336a79524
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 061fd33e44f207b835987d35a812426899e6dd35
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a89aa5a3014168aa9d2bd69b9197c899e02a186d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936683"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881832"
 ---
 # <a name="taskkill"></a>taskkill
 
@@ -54,11 +52,11 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 |   CPUtime   | eq, ne, gt, lt, ge, le | Tiempo de CPU con el formato <em>HH</em>**:**<em>mm</em>**:**<em>SS</em>, donde *mm* y *SS* están entre 0 y 59 y *HH* es cualquier número sin signo. |
 |  MEMUSAGE   | eq, ne, gt, lt, ge, le |                                                              Uso de memoria en KB                                                              |
 |  USERNAME   |         eq, ne         |                                               Cualquier nombre de usuario válido *(usuario o* usuario de *dominio* \\ *User*)                                               |
-|  Server   |         eq, ne         |                                                                 Nombre del servicio                                                                 |
+|  Server   |         eq, ne         |                                                                 Nombre de servicio                                                                 |
 | WINDOWTITLE |         eq, ne         |                                                                 Título de la ventana                                                                 |
 |   ADICIONALES   |         eq, ne         |                                                                   Nombre de DLL                                                                   |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 * Los filtros WINDOWTITLE y STATUs no se admiten cuando se especifica un sistema remoto.
 * El carácter comodín ( **\\** <em>) se acepta para la opción **/im</em> * solo cuando se aplica un filtro.
 * La terminación de los procesos remotos siempre se lleva a cabo forzosamente, independientemente de si se especifica la opción **/f** .

@@ -1,20 +1,18 @@
 ---
 title: icacls
 description: Artículo de referencia del comando icacls, que muestra o modifica las listas de control de acceso discrecional (DACL) en los archivos especificados y aplica las DACL almacenadas a los archivos de los directorios especificados.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 386e008ef7095cbef8d84b33682b494d8d6c9c52
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5bb8842cdc91823a83d1b8ccfa305c6393433901
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924529"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888408"
 ---
 # <a name="icacls"></a>icacls
 
@@ -53,7 +51,7 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 | /restore `<ACLfile>` [/c] [/l] [/q] | Aplica las listas DACL almacenadas de `<ACLfile>` a los archivos del directorio especificado. Requiere el uso de con el `<directory>` parámetro. |
 | /inheritancelevel:`[e | d | r]` | Establece el nivel de herencia, que puede ser:<ul><li>**e** : habilita la herencia</li><li>**d** : deshabilita la herencia y copia las ACE</li><li>**r** -quita todas las ACE heredadas</li></ul> |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Los SID pueden estar en formato de nombre numérico o descriptivo. Si usa un formato numérico, coloque el carácter comodín **&#42;** al principio del SID.
 

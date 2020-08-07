@@ -1,20 +1,18 @@
 ---
 title: Ver y configurar los datos de servicio y de eventos de rendimiento
 description: Administrador de servidores
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: ccd59c35-4dbf-48e7-88a4-c519c00184d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 176fdb7f7227a739c1e3a0d508e769a11d1224ac
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4819f07f974848ed775c07be51601d870edeaa0b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179131"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895704"
 ---
 # <a name="view-and-configure-performance-event-and-service-data"></a>View and Configure Performance, Event, and Service Data
 

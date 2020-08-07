@@ -7,18 +7,16 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: manage
-ms.openlocfilehash: 49f6132cfe99d9d4b719aeeecf149ecb1d7b76f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4ec0190c97c5afc761c27c7c3156380441951544
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382995"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895685"
 ---
 # <a name="microsoft-server-performance-advisor"></a>Microsoft Server Performance Advisor
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Descargue Microsoft Server Performance Advisor (SPA) para ayudar a diagnosticar problemas de rendimiento en una implementación de Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008. SPA genera informes y gráficos de diagnóstico completos y proporciona recomendaciones que le ayudarán a analizar rápidamente los problemas y a desarrollar acciones correctivas.
 
@@ -30,7 +28,7 @@ Descargue Microsoft Server Performance Advisor (SPA) para ayudar a diagnosticar 
 
 -   [Guía de desarrollo de Server Performance Advisor Pack](server-performance-advisor-pack-development-guide.md)
 
-## <a href="" id="bkmk-aboutspa"></a>Información general de Server Performance Advisor
+## <a name="overview-of-server-performance-advisor"></a><a href="" id="bkmk-aboutspa"></a>Información general de Server Performance Advisor
 
 Server Performance Advisor se compone de dos partes: el marco de SPA y los paquetes de asesores de SPA.
 
@@ -50,7 +48,7 @@ Los paquetes de asesores de SPA son el centro de todas las reglas de optimizaci�
 
     **Nota:** El paquete de asesor de Hyper-V no analiza los sistemas operativos invitados.
 
-     
+
 
 -   El módulo de asesor de Active Directory analiza el rendimiento general del rol de Active Directory.
 
@@ -58,9 +56,9 @@ SPA también ofrece un modelo extensible para que los desarrolladores que no son
 
 **Nota:** SPA no puede comprender todos los contextos de hardware y de escenario de usuario. Debe usar las recomendaciones proporcionadas por la herramienta para ayudarle a tomar decisiones y entender las consecuencias de los posibles cambios que se realicen en los servidores.
 
- 
 
-## <a href="" id="bkmk-downloadspa"></a>Descargar Server Performance Advisor
+
+## <a name="download-server-performance-advisor"></a><a href="" id="bkmk-downloadspa"></a>Descargar Server Performance Advisor
 
 
 Use los vínculos siguientes para descargar Server Performance Advisor para Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008:
@@ -71,9 +69,9 @@ Use los vínculos siguientes para descargar Server Performance Advisor para Wind
 
 Puede extraer los archivos del archivo. CAB mediante los siguientes comandos:
 
--   para la versión x86: `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_x86.cab`
+-   para la versión x86:`extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_x86.cab`
 
--   para la versión x64: `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_amd64.cab`
+-   para la versión x64:`extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_amd64.cab`
 
 **PRECAUCIÓN** Al extraer el archivo. cab, SPA debe conservar la estructura de directorios jerárquica para que funcione correctamente. En función de las herramientas de archivo. CAB instaladas en el servidor, la extracción puede dar lugar a una estructura de directorios no operativa. Para conservar la estructura de directorios jerárquica, puede utilizar una herramienta de utilidad de extracción de archivos. CAB que extrae una estructura de directorio de archivos.
 

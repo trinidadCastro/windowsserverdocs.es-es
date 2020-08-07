@@ -1,20 +1,18 @@
 ---
 title: goto
 description: Artículo de referencia para el comando Goto, que dirige cmd.exe a una línea etiquetada en un programa por lotes.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e0de1458-1f78-48ff-a746-c285a945a510
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afc77f7837ddaeb0552052538537285f0d652682
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cc5059f90d471496deb0ccfc668054f1ed7cbde6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924682"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888591"
 ---
 # <a name="goto"></a>goto
 
@@ -33,7 +31,7 @@ goto <label>
 | `<label>` | Especifica una cadena de texto que se utiliza como etiqueta en el programa por lotes. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 -  Si las extensiones de comando están habilitadas (el valor predeterminado) y se usa el comando **goto** con una etiqueta de destino de **: EOF**, se transfiere el control al final del archivo de script por lotes actual y se sale del archivo de script por lotes sin definir una etiqueta. Cuando use este comando con la etiqueta **: EOF** , debe insertar un signo de dos puntos delante de la etiqueta. Por ejemplo: `goto:EOF`.
 

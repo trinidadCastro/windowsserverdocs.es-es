@@ -1,20 +1,18 @@
 ---
 title: gpresult
 description: Artículo de referencia del comando Gpresult, que muestra la información del conjunto resultante de directivas (RSoP) para un usuario y un equipo remotos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b55db74c0c8f9c527ade8412f50ef83ea675a5c6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5c65dd4799441dca44db24f532be66349b1249a5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924634"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888579"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -47,7 +45,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 | /z | Muestra toda la información disponible sobre directiva de grupo. Esto incluye la configuración detallada que se aplicó con una prioridad de 1 y superior. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Directiva de grupo es la herramienta administrativa principal para definir y controlar el funcionamiento de los programas, los recursos de red y el sistema operativo para los usuarios y equipos de una organización. En un entorno de Active Directory, directiva de grupo se aplica a usuarios o equipos en función de su pertenencia a sitios, dominios o unidades organizativas.
 

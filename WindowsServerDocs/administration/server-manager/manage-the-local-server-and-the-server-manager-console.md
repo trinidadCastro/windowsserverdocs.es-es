@@ -1,44 +1,42 @@
 ---
 title: Manage the Local Server and the Server Manager Console
 description: Administrador de servidores
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: eeb32f65-d588-4ed5-82ba-1ca37f517139
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d64d45fec0c48f66da72dfee7ab9f1f9965205ad
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7892ec8f4102c8baadd8cded8982b6b92702afa8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851498"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895744"
 ---
 # <a name="manage-the-local-server-and-the-server-manager-console"></a>Manage the Local Server and the Server Manager Console
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En Windows Server, Administrador del servidor le permite administrar el servidor local (si ejecuta Administrador del servidor en Windows Server y no en un sistema operativo de cliente basado en Windows) y los servidores remotos que ejecutan Windows Server 2008 y versiones más recientes del sistema operativo Windows Server.
 
-En la página **servidor local** de administrador del servidor se muestran las propiedades del servidor, los eventos, los datos del contador de rendimiento y de servicio, y los resultados del analizador de procedimientos recomendados (BPA) para el servidor local. Los iconos de eventos, servicios, BPA y rendimiento funcionan igual que en las páginas de grupos de servidores y roles. Para obtener más información sobre cómo configurar los datos que se muestran en estos iconos, consulta [View y Configure Performance, Event, y Service Data](view-and-configure-performance-event-and-service-data.md) y [Run Best Practices Analyzer Scans y Manage Scan Results](run-best-practices-analyzer-scans-and-manage-scan-results.md).
+En la página **servidor local** de administrador del servidor se muestran las propiedades del servidor, los eventos, los datos del contador de rendimiento y de servicio, y los resultados del analizador de procedimientos recomendados (BPA) para el servidor local. Los iconos de eventos, servicios, BPA y rendimiento funcionan igual que en las páginas de grupos de servidores y roles. Para obtener más información sobre cómo configurar los datos que se muestran en estos iconos, vea [Visualización y configuración de datos de servicios, eventos y rendimiento](view-and-configure-performance-event-and-service-data.md) y [Ejecución de análisis del Analizador de procedimientos recomendados y administración de los resultados de los análisis](run-best-practices-analyzer-scans-and-manage-scan-results.md).
 
 Los comandos de menú y la configuración de las barras de título de la consola de Administrador del servidor se aplican globalmente a todos los servidores del grupo de servidores y permiten usar Administrador del servidor para administrar todo el grupo de servidores.
 
-Este tema contiene las siguientes secciones.
+En este tema se incluyen las siguientes secciones.
 
--   [Apagar el servidor local](#BKMK_shutdown)
+-   [Cerrar el servidor local](#BKMK_shutdown)
 
--   [Configurar propiedades de Administrador del servidor](#BKMK_props)
+-   [Configurar las propiedades del Administrador del servidor](#BKMK_props)
 
--   [Administrar la consola de Administrador del servidor](#BKMK_managesm)
+-   [Administrar la consola del Administrador del servidor](#BKMK_managesm)
 
--   [Personalizar las herramientas que se muestran en el menú herramientas](#BKMK_tools)
+-   [Personalizar las herramientas mostradas en el menú Herramientas](#BKMK_tools)
 
 -   [Administrar roles en páginas principales de rol](#BKMK_roles)
 
-## <a name="shut-down-the-local-server"></a><a name=BKMK_shutdown></a>Apagar el servidor local
+## <a name="shut-down-the-local-server"></a><a name=BKMK_shutdown></a>Cerrar el servidor local
 El menú **tareas** del icono **propiedades** del servidor local permite iniciar una sesión de Windows PowerShell en el servidor local, abrir el complemento MMC **Administración de equipos** o abrir complementos MMC para roles o características instalados en el servidor local. También puede cerrar el servidor local mediante el comando **Cerrar servidor local** de este menú **Tareas**. El comando **Cerrar servidor local** también está disponible para el servidor local en el icono **Servidores** de la página **Todos los servidores** o en cualquier página de rol o grupo en la que esté representado el servidor local.
 
 Cerrar el servidor local mediante este método, a diferencia de cerrar Windows Server 2016 desde la pantalla **Inicio** , abre el cuadro de diálogo **cerrar Windows** , que permite especificar los motivos para el apagado en el área **rastreador de eventos de apagado** .
@@ -46,17 +44,17 @@ Cerrar el servidor local mediante este método, a diferencia de cerrar Windows S
 > [!NOTE]
 > Solo los miembros del grupo Administradores pueden cerrar o reiniciar un servidor. Los usuarios estándar no pueden cerrar ni reiniciar un servidor. Al hacer clic en el comando **Cerrar servidor local**, se cierran las sesiones de los usuarios estándar en el servidor. Esto es igual que si un usuario estándar ejecuta el comando de cierre **Alt+F4** desde el escritorio del servidor.
 
-## <a name="configure-server-manager-properties"></a><a name=BKMK_props></a>Configurar propiedades de Administrador del servidor
+## <a name="configure-server-manager-properties"></a><a name=BKMK_props></a>Configurar las propiedades del Administrador del servidor
 Puede ver o cambiar las siguientes opciones de configuración en el icono **Propiedades** de la página **Servidor local**. Para cambiar el valor de una configuración, haga clic en el valor de hipertexto de la configuración.
 
 > [!NOTE]
 > Por lo general, las propiedades mostradas en el icono **Propiedades** del servidor local solo se pueden cambiar en el servidor local. No se pueden cambiar las propiedades del servidor local desde un equipo remoto mediante Administrador del servidor porque el icono **propiedades** solo puede obtener información acerca del equipo local, no de los equipos remotos.
-> 
+>
 > Dado que muchas de las propiedades mostradas en el icono **propiedades** se controlan mediante herramientas que no forman parte de administrador del servidor (el panel de control, por ejemplo), los cambios en la configuración de **las propiedades** no siempre se muestran en el icono **propiedades** inmediatamente. De forma predeterminada, los datos del icono **Propiedades** se actualizan cada dos minutos. Para actualizar los datos del icono **propiedades** inmediatamente, haga clic en **Actualizar** en la barra de direcciones administrador del servidor.
 
-|Valor|Descripción|
+|Configuración|Descripción|
 |------|--------|
-|nombre del equipo|Muestra el nombre descriptivo del equipo y abre el cuadro de diálogo **propiedades del sistema** , que permite cambiar el nombre del servidor, la pertenencia a dominio y otras opciones del sistema, como los perfiles de usuario.|
+|nombre de equipo|Muestra el nombre descriptivo del equipo y abre el cuadro de diálogo **propiedades del sistema** , que permite cambiar el nombre del servidor, la pertenencia a dominio y otras opciones del sistema, como los perfiles de usuario.|
 |Dominio (o Grupo de trabajo, si el servidor no está unido a un dominio)|Muestra el dominio o grupo de trabajo al que pertenece el servidor. Abre el cuadro de diálogo **propiedades del sistema** , que permite cambiar el nombre del servidor, la pertenencia a dominio y otras configuraciones del sistema, como los perfiles de usuario.|
 |Firewall de Windows|Muestra el estado de Firewall de Windows del servidor local. Abre **Panel de control\Sistema y seguridad\Firewall de Windows**. Para obtener más información sobre la configuración de Firewall de Windows, consulta [Firewall de Windows con seguridad avanzada e IPsec](https://go.microsoft.com/fwlink/?LinkId=253465).|
 |administración remota|Muestra Administrador del servidor y el estado de administración remota de Windows PowerShell. Abre el cuadro de diálogo **Configurar administración remota** . Para obtener más información sobre la administración remota, vea [configuración de la administración remota en Administrador del servidor](configure-remote-management-in-server-manager.md).|
@@ -70,14 +68,14 @@ Puede ver o cambiar las siguientes opciones de configuración en el icono **Prop
 |Últimas actualizaciones buscadas|Muestra el día y la hora en que el servidor comprobó por última vez si había actualizaciones de Windows disponibles. Abre **Panel de control\Sistema y seguridad\Windows Update**.|
 |Informe de errores de Windows|Muestra el estado de participación en el Informe de errores de Windows. Abre el cuadro de diálogo **Configuración de Informe de errores de Windows**. Para obtener más información sobre el Informe de errores de Windows, sus ventajas, declaraciones de privacidad y configuración de participación, consulta [Informe de errores de Windows](https://go.microsoft.com/fwlink/?LinkID=245991).|
 |Programa para la mejora de la experiencia del usuario|Muestra el estado de participación en el Programa para la mejora de la experiencia del usuario de Windows. Abre el cuadro de diálogo **Configuración del Programa para la mejora de la experiencia del usuario**. Para obtener más información sobre el Programa para la mejora de la experiencia del usuario de Windows, sus ventajas y configuración de participación, consulta [Programa para la mejora de la experiencia del usuario de Windows](https://go.microsoft.com/fwlink/?LinkID=245992).|
-|Configuración de seguridad mejorada de Internet Explorer|Muestra si la Configuración de seguridad mejorada de Internet Explorer (también conocida como IE Hardening o IE ESC) está activada o desactivada. Abre el cuadro de diálogo **Configuración de seguridad mejorada de Internet Explorer**. La Configuración de seguridad mejorada de Internet Explorer es una medida de seguridad para servidores que impide la apertura de páginas web en Internet Explorer. Para obtener más información sobre la configuración de seguridad mejorada de Internet Explorer, sus ventajas y configuración, consulte [configuración de seguridad mejorada](https://go.microsoft.com/fwlink/?LinkId=253461)de IE.|
+|Configuración de seguridad mejorada de Internet Explorer|Muestra si la Configuración de seguridad mejorada de Internet Explorer (también conocida como IE Hardening o IE ESC) está activada o desactivada. Abre el cuadro de diálogo **Configuración de seguridad mejorada de Internet Explorer**. La Configuración de seguridad mejorada de Internet Explorer es una medida de seguridad para servidores que impide la apertura de páginas web en Internet Explorer. Para obtener más información acerca de la Configuración de seguridad mejorada de Internet Explorer, sus ventajas y configuración, vea [Configuración de seguridad mejorada de Internet Explorer](https://go.microsoft.com/fwlink/?LinkId=253461).|
 |zona horaria|Muestra la zona horaria del servidor local. Abre el cuadro de diálogo **fecha y hora** .|
 |Product ID|Muestra el estado de activación de Windows y el número de ID. de producto (si se ha activado Windows) del sistema operativo Windows Server 2016. No es el mismo número que la clave del producto de Windows. Abre el cuadro de diálogo **Activar Windows**.|
 |Procesadores|Este campo de solo lectura muestra la información de fabricante, nombre de modelo y velocidad de los procesadores del servidor local.|
 |Memoria instalada (RAM)|Este campo de solo lectura muestra la cantidad de RAM disponible, en gigabytes.|
 |Espacio total en disco|Este campo de solo lectura muestra la cantidad de espacio en disco disponible, en gigabytes.|
 
-## <a name="manage-the-server-manager-console"></a><a name=BKMK_managesm></a>Administrar la consola de Administrador del servidor
+## <a name="manage-the-server-manager-console"></a><a name=BKMK_managesm></a>Administrar la consola del Administrador del servidor
 La configuración global que se aplica a toda la consola de Administrador del servidor y a todos los servidores remotos que se han agregado al grupo de servidores de Administrador del servidor se encuentra en las barras de título de la parte superior de la ventana de la consola de Administrador del servidor.
 
 ### <a name="add-servers-to-server-manager"></a>agregar servidores a Administrador del servidor
@@ -90,7 +88,7 @@ Puede configurar el intervalo de actualización para los datos que se muestran e
 
 1.  En el menú **administrar** de la consola de administrador del servidor, haga clic en **Administrador del servidor propiedades**.
 
-2.  En el cuadro de diálogo **propiedades de administrador del servidor** , especifique un período de tiempo, en minutos, para la cantidad de tiempo que desea que transcurra entre las actualizaciones de los datos que se muestran en Administrador del servidor. El valor predeterminado es 10 minutos. Haga clic en Aceptar al terminar.
+2.  En el cuadro de diálogo **propiedades de administrador del servidor** , especifique un período de tiempo, en minutos, para la cantidad de tiempo que desea que transcurra entre las actualizaciones de los datos que se muestran en Administrador del servidor. El valor predeterminado es 10 minutos. Haga clic en Aceptar cuando haya acabado.
 
 #### <a name="refresh-limitations"></a>Limitaciones de la actualización
 La actualización se aplica globalmente a los datos de todos los servidores que ha agregado al grupo de servidores de Administrador del servidor. No puede actualizar los datos ni configurar intervalos de actualización distintos para servidores, roles o grupos individuales.
@@ -113,7 +111,7 @@ La casilla no **iniciar administrador del servidor automáticamente al iniciar s
 ### <a name="zoom-in-or-out"></a>Acercar o alejar
 Para acercar o alejar la vista de la consola de Administrador del servidor, puede usar los comandos de **zoom** del menú **Ver** o presionar **Ctrl + más (+)** para acercar y **Ctrl + menos (-)** para alejar.
 
-## <a name="customize-tools-that-are-displayed-in-the-tools-menu"></a><a name=BKMK_tools></a>Personalizar las herramientas que se muestran en el menú herramientas
+## <a name="customize-tools-that-are-displayed-in-the-tools-menu"></a><a name=BKMK_tools></a>Personalizar las herramientas mostradas en el menú Herramientas
 El menú **herramientas** de administrador del servidor incluye vínculos a los accesos directos de la carpeta **herramientas administrativas** del **Panel de control/sistema y seguridad**. La carpeta **herramientas administrativas** contiene una lista de accesos directos o archivos lnk para las herramientas de administración disponibles, como los complementos mmc. administrador del servidor rellena el menú **herramientas** con vínculos a dichos accesos directos y copia la estructura de carpetas de la carpeta **herramientas administrativas** en el menú **herramientas** . De forma predeterminada, las herramientas de la carpeta Herramientas administrativas están organizadas en una lista plana, ordenadas por tipo y nombre. En el menú**herramientas** de administrador del servidor, los elementos se ordenan solo por nombre, no por tipo.
 
 Para personalizar el menú **Herramientas**, copie los accesos directos a herramientas o scripts que desee usar en la carpeta **Herramientas administrativas**. También puede organizar los accesos directos en carpetas, con lo que se crean menús en cascada en el menú **Herramientas**. Además, si desea restringir el acceso a las herramientas personalizadas del menú **herramientas** , puede establecer derechos de acceso de usuario en las carpetas de herramientas personalizadas de herramientas administrativas o directamente en los archivos de herramientas o scripts originales.
@@ -143,9 +141,9 @@ En el procedimiento siguiente se describe cómo crear una carpeta de ejemplo den
 
     > [!NOTE]
     > Si restringe el acceso a una carpeta completa que ha copiado en herramientas administrativas, los usuarios restringidos no podrán ver ni la carpeta ni su contenido en el menú**herramientas** de administrador del servidor.
-    > 
+    >
     > Edite los permisos de la carpeta en la carpeta **herramientas administrativas** . Dado que los archivos y carpetas ocultos de las herramientas administrativas siempre se muestran en el menú**herramientas** de administrador del servidor, no use el valor **oculto** en el cuadro de diálogo **propiedades** de un archivo o carpeta para restringir el acceso de los usuarios a los accesos directos a herramientas personalizadas.
-    > 
+    >
     > Los permisos **Denegar** siempre sobrescriben los permisos **Permitir**.
 
 6.  Haga clic con el botón secundario en la herramienta, el script o el archivo ejecutable original para el que desea agregar entradas en el menú **herramientas** y, a continuación, haga clic en **crear acceso directo**.
@@ -171,14 +169,14 @@ En Windows Server 2016, los siguientes roles y características tienen herramien
 
     para obtener más información sobre la implementación y administración de IPAM, consulte [Administración de direcciones IP (IPAM)](https://go.microsoft.com/fwlink/p/?LinkId=241533).
 
-## <a name="see-also"></a>Consulta también
-[Administrador del servidor](server-manager.md)
-[agregar servidores a administrador del servidor](add-servers-to-server-manager.md)
-[crear y administrar grupos de servidores](create-and-manage-server-groups.md)
-[ver y configurar los datos de rendimiento, eventos y servicios](view-and-configure-performance-event-and-service-data.md)
-los [servicios de archivos y almacenamiento](https://go.microsoft.com/fwlink/p/?LinkId=241530)
-servicios de escritorio remoto [(rdS)](https://go.microsoft.com/fwlink/p/?LinkId=241532)
-la [Administración de direcciones IP (IPAM)](https://go.microsoft.com/fwlink/p/?LinkId=241533)
+## <a name="see-also"></a>Consulte también
+[Administrador del servidor](server-manager.md) 
+ [agregar servidores a administrador del servidor](add-servers-to-server-manager.md) 
+ [crear y administrar grupos](create-and-manage-server-groups.md) 
+ de servidores [Ver y configurar los datos de rendimiento, evento y servicio](view-and-configure-performance-event-and-service-data.md) 
+ Servicios de archivos [y almacenamiento](https://go.microsoft.com/fwlink/p/?LinkId=241530) 
+ [Servicios de escritorio remoto (rdS)](https://go.microsoft.com/fwlink/p/?LinkId=241532) 
+ [Administración de direcciones IP (IPAM)](https://go.microsoft.com/fwlink/p/?LinkId=241533)
 
 
 

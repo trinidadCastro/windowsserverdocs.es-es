@@ -1,20 +1,18 @@
 ---
 title: bcdboot
 description: Artículo de referencia para el comando de BCDboot, que configura rápidamente una partición del sistema o repara el entorno de arranque ubicado en la partición del sistema.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e62a250e-08e9-47f6-89d1-e6002560ab57
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84041836c90987e358a6b5624d4f9b4124994263
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ccdacd1254b290160c81123dd419d1816ffccaf5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955827"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895190"
 ---
 # <a name="bcdboot"></a>bcdboot
 

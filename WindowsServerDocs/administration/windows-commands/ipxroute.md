@@ -1,20 +1,18 @@
 ---
 title: ipxroute
 description: Artículo de referencia del comando ipxroute, que muestra y modifica información acerca de las tablas de enrutamiento utilizadas por el protocolo IPX.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3a30304f-655e-43d2-a4ac-7568abf8975c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a737ede8b56502cfbbf347d9f54fec848922badb
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 879ecb7c80f06982e779241ee874e294f583b5d7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924384"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888257"
 ---
 # <a name="ipxroute"></a>ipxroute
 

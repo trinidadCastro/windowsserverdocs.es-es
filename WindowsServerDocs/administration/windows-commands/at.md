@@ -1,20 +1,18 @@
 ---
 title: en
 description: Artículo de referencia del comando AT, que programa comandos y programas para que se ejecuten en un equipo a una hora y fecha especificadas.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ff18fd16-9437-4c53-8794-bfc67f5256b3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ead4132b70cc98d9bdd7f478a8e3f18ab6da1aa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e8bd4ba389d072ca1f8054d9f691f434063a8df4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923939"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895549"
 ---
 # <a name="at"></a>en
 
@@ -45,7 +43,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 | `<command>` | Especifica el comando de Windows, el programa (es decir, el archivo. exe o. com) o el programa de Batch (es decir, el archivo. bat o. cmd) que desea ejecutar. Cuando el comando requiere una ruta de acceso como argumento, utilice la ruta de acceso absoluta (es decir, toda la ruta de acceso que comienza con la letra de unidad). Si el comando se encuentra en un equipo remoto, especifique la notación de Convención de nomenclatura universal (UNC) para el servidor y el nombre del recurso compartido, en lugar de una letra de unidad remota. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - Este comando no carga automáticamente cmd.exe antes de ejecutar los comandos. Si no está ejecutando un archivo ejecutable (. exe), debe cargar explícitamente cmd.exe al principio del comando de la siguiente manera:
 

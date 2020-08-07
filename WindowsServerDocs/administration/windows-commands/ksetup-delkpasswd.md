@@ -1,20 +1,18 @@
 ---
 title: ksetup delkpasswd
 description: Artículo de referencia para el comando ksetup delkpasswd, que quita un servidor de contraseña de Kerberos (Kpasswd) para un dominio Kerberos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2db0bfcd-bc08-48e3-9f30-65b6411839c6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05002c860575bce84748adc2fc353f0994d559ab
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f507b259b77e8be15ade8d01f3666221e94f9192
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926131"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887968"
 ---
 # <a name="ksetup-delkpasswd"></a>ksetup delkpasswd
 
