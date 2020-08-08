@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: f83e828dd8ce90da4265eb03f94b498933d9c2a6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 406674f26039f80cbca5ed3ba96e041bc8624729
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518613"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952796"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>Implementar una directiva de acceso central (pasos de demostración)
 
@@ -115,7 +113,7 @@ El paso siguiente es crear propiedades de recursos. En el procedimiento siguient
 
 6.  En la lista **Propiedades de recursos**, en el panel de navegación del Centro de administración de Active Directory, ahora verás que hay dos propiedades de recursos habilitadas:
 
-    -   País
+    -   Country
 
     -   department
 
@@ -417,5 +415,5 @@ En el procedimiento siguiente verificarás los resultados de la directiva de alm
 
 5. Abre el **Visor de eventos** mediante el acceso directo en el escritorio. Expande **Registros de Windows** y selecciona **Seguridad**. Abra las entradas con el **ID. de evento 4818**en la categoría de tareas **almacenamiento provisional de directivas de acceso central** . Verás que EValle tiene acceso permitido; pero, según la directiva de almacenamiento provisional, el usuario no debería tener acceso.
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 Si tienes un sistema de administración del servidor central como System Center Operations Manager, también puedes configurar la supervisión de eventos. Esto permite a los administradores supervisar los efectos de directivas de acceso central antes de aplicarlas.

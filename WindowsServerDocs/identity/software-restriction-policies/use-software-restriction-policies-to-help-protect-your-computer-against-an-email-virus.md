@@ -1,20 +1,18 @@
 ---
 title: Uso de directivas de restricción de software para ayudar a proteger equipos frente a virus de correo electrónico
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 02f23979-f832-4e46-bdea-21fd77db35b2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3b9f727107ac9d392b52ab683aca510849fc534a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: de636bf4e1783d1d6aaf1b78a45442c80e0a6d27
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964697"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953002"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>Uso de directivas de restricción de software para ayudar a proteger equipos frente a virus de correo electrónico
 
@@ -25,7 +23,7 @@ En este tema se proporciona información sobre cómo establecer directivas de co
 ## <a name="introduction"></a>Introducción
 Las directivas de restricción de software (SRP) son una característica basada en directivas de grupo que identifica los programas de software que se ejecutan en los equipos de un dominio y controla la capacidad de ejecución de dichos programas. Puede usar las directivas de restricción de software para crear una configuración muy restringida para los equipos, en los que solamente pueden ejecutarse aquellas aplicaciones específicamente identificadas. Se integran con Microsoft Active Directory Domain Services y directiva de grupo, pero también se pueden configurar en equipos independientes. Para obtener un punto de partida de SRP, consulte las [directivas de restricción de software](software-restriction-policies.md).
 
-A partir de Windows Server 2008 R2 y Windows 7, se puede usar Windows AppLocker en lugar de o junto con SRP para una parte de la estrategia de control de la aplicación. 
+A partir de Windows Server 2008 R2 y Windows 7, se puede usar Windows AppLocker en lugar de o junto con SRP para una parte de la estrategia de control de la aplicación.
 
 #### <a name="configure-srp-to-help-protect-against-an-e-mail-virus"></a>Configuración de SRP para ayudar a protegerse frente a un virus de correo electrónico
 

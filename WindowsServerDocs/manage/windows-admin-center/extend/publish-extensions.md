@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c817a28494104a1bfed1d7e19eaebaa04fd5138e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 910ed2733d01fe502a93d43f46530d781ba8c7e5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971972"
+ms.locfileid: "87992702"
 ---
 # <a name="publishing-extensions"></a>Extensiones de publicación
 
@@ -32,7 +32,7 @@ De forma predeterminada, el centro de administración de Windows está conectado
 
 ### <a name="publishing-to-a-different-nuget-feed"></a>Publicación en una fuente de NuGet diferente
 
-También puede crear su propia fuente de NuGet para publicar sus extensiones en usando una de las muchas [opciones diferentes para configurar una fuente privada o mediante un servicio de hospedaje de NuGet](https://docs.microsoft.com/nuget/hosting-packages/overview). La fuente de NuGet debe admitir la API de NuGet V2. Puesto que el centro de administración de Windows no admite actualmente la autenticación de fuentes, la fuente debe estar configurada para permitir el acceso de lectura a todos los usuarios.
+También puede crear su propia fuente de NuGet para publicar sus extensiones en usando una de las muchas [opciones diferentes para configurar una fuente privada o mediante un servicio de hospedaje de NuGet](/nuget/hosting-packages/overview). La fuente de NuGet debe admitir la API de NuGet V2. Puesto que el centro de administración de Windows no admite actualmente la autenticación de fuentes, la fuente debe estar configurada para permitir el acceso de lectura a todos los usuarios.
 
 ### <a name="publishing-to-a-file-share"></a>Publicar en un recurso compartido de archivos
 
@@ -72,7 +72,7 @@ Con la infraestructura de compilación (esto podría ser tan sencillo como abrir
 
 Para crear el paquete NuGet, primero debe crear un archivo. nuspec. Un archivo. nuspec es un manifiesto XML que contiene metadatos del paquete NuGet. Este manifiesto se usa para crear el paquete y para proporcionar información a los consumidores.  Coloque este archivo en la raíz de la carpeta "paquete NuGet".
 
-A continuación se muestra un archivo. nuspec de ejemplo y la lista de propiedades necesarias o recomendadas. Para obtener el esquema completo, consulte la [referencia de. nuspec](https://docs.microsoft.com/nuget/reference/nuspec). Guarde el archivo. nuspec en la carpeta raíz del proyecto con un nombre de archivo de su elección.
+A continuación se muestra un archivo. nuspec de ejemplo y la lista de propiedades necesarias o recomendadas. Para obtener el esquema completo, consulte la [referencia de. nuspec](/nuget/reference/nuspec). Guarde el archivo. nuspec en la carpeta raíz del proyecto con un nombre de archivo de su elección.
 
 > [!IMPORTANT]
 > El ```<id>``` valor del archivo. nuspec debe coincidir con el ```"name"``` valor del archivo del proyecto ```manifest.json``` o, de lo contrario, la extensión publicada no se cargará correctamente en el centro de administración de Windows.
@@ -106,7 +106,7 @@ A continuación se muestra un archivo. nuspec de ejemplo y la lista de propiedad
 | Nombre de propiedad | Requerido/recomendado | Descripción |
 | ---- | ---- | ---- |
 | packageType | Obligatorio | Use "WindowsAdminCenterExtension", que es el tipo de paquete de NuGet definido para las extensiones del centro de administración de Windows. |
-| id | Obligatorio | Identificador de paquete único dentro de la fuente. Este valor debe coincidir con el valor "Name" del manifest.jsdel proyecto en el archivo.  Vea [Choosing a unique package identifier](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) (Elegir un identificador de paquete único) para obtener instrucciones. |
+| id | Obligatorio | Identificador de paquete único dentro de la fuente. Este valor debe coincidir con el valor "Name" del manifest.jsdel proyecto en el archivo.  Vea [Choosing a unique package identifier](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) (Elegir un identificador de paquete único) para obtener instrucciones. |
 | title | Se requiere para la publicación en la fuente del centro de administración de Windows | Nombre descriptivo para el paquete que se muestra en el administrador de extensiones del centro de administración de Windows. |
 | version | Obligatorio | Versión de la extensión. Se recomienda usar el [control de versiones semántico (Convención SemVer)](http://semver.org/spec/v1.0.0.html) , pero no es necesario. |
 | authors | Obligatorio | Si publica en nombre de su empresa, use el nombre de su empresa. |
@@ -120,7 +120,7 @@ A continuación se muestra un archivo. nuspec de ejemplo y la lista de propiedad
 
 Con el archivo. nuspec que creó anteriormente, ahora creará el archivo. nupkg de paquete NuGet que puede cargar y publicar en la fuente de NuGet.
 
-1. Descargue la herramienta de la CLI de nuget.exe desde el [sitio web de herramientas de cliente de NuGet](https://docs.microsoft.com/nuget/install-nuget-client-tools).
+1. Descargue la herramienta de la CLI de nuget.exe desde el [sitio web de herramientas de cliente de NuGet](/nuget/install-nuget-client-tools).
 2. Ejecute "nuget.exe Pack [. nuspec File name]" para crear el archivo. nupkg.
 
 ### <a name="4-signing-your-extension-nuget-package"></a>4. firmar el paquete NuGet de la extensión

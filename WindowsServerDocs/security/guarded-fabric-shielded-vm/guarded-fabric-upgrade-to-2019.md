@@ -1,20 +1,18 @@
 ---
-title: Actualizar un tejido protegido a Windows Server 2019
-ms.prod: windows-server
+title: Actualizar un tejido protegido a Windows Server 2019
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 11/21/2018
-ms.openlocfilehash: 50e35939031a74173fb031cf963af97bf8bb6dba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: aefff380a1320898ff342f813498b8f45dfa6122
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856358"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944005"
 ---
-# <a name="upgrade-a-guarded-fabric-to-windows-server-2019"></a>Actualizar un tejido protegido a Windows Server 2019
+# <a name="upgrade-a-guarded-fabric-to-windows-server-2019"></a>Actualizar un tejido protegido a Windows Server 2019
 
 > Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
@@ -40,8 +38,8 @@ Antes de actualizar el tejido protegido a Windows Server 2019, revise la siguien
 
 |  | HGS DE WS2016 | HGS DE WS2019|
 |---|---|---|
-|**Host de Hyper-V WS2016** | Se admite | Compatible<sup>1</sup>|
-|**Host de Hyper-V WS2019** | No compatible<sup>2</sup> | Se admite|
+|**Host de Hyper-V WS2016** | Compatible | Compatible<sup>1</sup>|
+|**Host de Hyper-V WS2019** | No compatible<sup>2</sup> | Compatible|
 
 <sup>1</sup> los hosts de windows Server 2016 solo pueden atestiguar en servidores de HGS de windows Server 2019 mediante el protocolo de atestación v1. Las nuevas características que están disponibles exclusivamente en el protocolo de atestación V2, incluida la atestación de clave de host, no se admiten para los hosts de Windows Server 2016.
 
@@ -55,7 +53,7 @@ Para actualizar el clúster de HGS, es necesario quitar temporalmente un nodo de
 
 Para actualizar el clúster de HGS, realice los pasos siguientes en cada nodo del clúster, un nodo a la vez:
 
-1.  Quite el servidor HGS del clúster mediante la ejecución de `Clear-HgsServer` en un símbolo del sistema de PowerShell con privilegios elevados. Este cmdlet quitará el almacén replicado de HGS, los sitios web de HGS y el nodo del clúster de conmutación por error.
+1.  Quite el servidor HGS del clúster mediante la ejecución `Clear-HgsServer` de en un símbolo del sistema de PowerShell con privilegios elevados. Este cmdlet quitará el almacén replicado de HGS, los sitios web de HGS y el nodo del clúster de conmutación por error.
 2.  Si el servidor HGS es un controlador de dominio (configuración predeterminada), tendrá que ejecutar `adprep /forestprep` y `adprep /domainprep` en el primer nodo que se va a actualizar para preparar el dominio para una actualización del sistema operativo. Consulte la [documentación de actualización de Active Directory Domain Services](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers#supported-in-place-upgrade-paths) para obtener más información.
 3.  Realice una [actualización en contexto](../../get-started-19/install-upgrade-migrate-19.md) a Windows Server 2019.
 4.  Ejecute [Initialize-HgsServer](guarded-fabric-configure-additional-hgs-nodes.md) para volver a unir el nodo al clúster.

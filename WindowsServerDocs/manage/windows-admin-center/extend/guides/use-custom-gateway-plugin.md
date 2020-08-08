@@ -1,33 +1,31 @@
 ---
 title: Usar un complemento de puerta de enlace personalizado en la extensión de herramienta
 description: 'Desarrollar una extensión de herramienta SDK del centro de administración de Windows (proyecto Honolulu): usar un complemento de puerta de enlace personalizado en la extensión de la herramienta'
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 5bcaaa452a2b42a54cbc3b1d8f9a296504054e34
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 739b9e6769d1f2314e73a66d932586863063c7be
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269232"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952690"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>Usar un complemento de puerta de enlace personalizado en la extensión de herramienta
 
->Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
 En este artículo, usaremos un complemento de puerta de enlace personalizado en una nueva extensión de herramienta vacía que hemos creado con la CLI del centro de administración de Windows.
 
-## <a name="prepare-your-environment"></a>Preparar el entorno ##
+## <a name="prepare-your-environment"></a>Preparación del entorno ##
 
 Si todavía no lo ha hecho, siga las instrucciones de [desarrollo de una extensión de herramienta](../develop-tool.md) para preparar el entorno y crear una nueva extensión de herramienta vacía.
 
 ## <a name="add-a-module-to-your-project"></a>Agregar un módulo al proyecto ##
 
-Si aún no lo ha hecho, agregue un nuevo [módulo vacío](add-module.md) al proyecto, que se usará en el paso siguiente.  
+Si aún no lo ha hecho, agregue un nuevo [módulo vacío](add-module.md) al proyecto, que se usará en el paso siguiente.
 
 ## <a name="add-integration-to-custom-gateway-plugin"></a>Incorporación de integración al complemento de puerta de enlace personalizada ##
 
@@ -35,7 +33,7 @@ Ahora vamos a usar un complemento de puerta de enlace personalizado en el nuevo 
 
 ### <a name="create-pluginservicets"></a>Crear plugin. Service. ts
 
-Cambie al directorio del nuevo módulo de herramientas creado anteriormente (```\src\app\{!Module-Name}```) y cree un nuevo archivo ```plugin.service.ts```.
+Cambie al directorio del nuevo módulo de herramientas creado anteriormente ( ```\src\app\{!Module-Name}``` ) y cree un archivo nuevo ```plugin.service.ts``` .
 
 Agregue el código siguiente al archivo que acaba de crear:
 ``` ts
@@ -48,7 +46,7 @@ import { AjaxResponse, Observable } from 'rxjs';
 export class PluginService {
     constructor(private appContextService: AppContextService, private http: Http) {
     }
-    
+
     public getGatewayRestResponse(): Observable<any> {
         let callUrl = this.appContextService.activeConnection.nodeName;
 
@@ -64,13 +62,13 @@ export class PluginService {
 Cambie las referencias a ```Sample Uno``` y ```Sample%20Uno``` al nombre de la característica según corresponda.
 
 > [!WARNING]
-> Se recomienda que el ```this.appContextService.node``` integrado se use para llamar a cualquier API que esté definida en el complemento de puerta de enlace personalizada. Esto garantizará que, si se requieren credenciales en el complemento de puerta de enlace, se controlarán correctamente.
+> Se recomienda que el integrado ```this.appContextService.node``` se use para llamar a cualquier API que se defina en el complemento de puerta de enlace personalizada. Esto garantizará que, si se requieren credenciales en el complemento de puerta de enlace, se controlarán correctamente.
 
 ### <a name="modify-modulets"></a>Modificar módulo. ts
 
-Abra el archivo ```module.ts``` del nuevo módulo creado anteriormente (es decir, ```{!Module-Name}.module.ts```):
+Abra el ```module.ts``` archivo del nuevo módulo creado anteriormente (es decir, ```{!Module-Name}.module.ts``` ):
 
-Agregue las siguientes instrucciones de importación:
+Agregue las siguientes instrucciones import:
 
 ``` ts
 import { HttpService } from '@microsoft/windows-admin-center-sdk/angular';
@@ -91,9 +89,9 @@ Agregue los siguientes proveedores (después de las declaraciones):
 
 ### <a name="modify-componentts"></a>Modificar componente. ts
 
-Abra el archivo ```component.ts``` del nuevo módulo creado anteriormente (es decir, ```{!Module-Name}.component.ts```):
+Abra el ```component.ts``` archivo del nuevo módulo creado anteriormente (es decir, ```{!Module-Name}.component.ts``` ):
 
-Agregue las siguientes instrucciones de importación:
+Agregue las siguientes instrucciones import:
 
 ``` ts
 import { ActivatedRouteSnapshot } from '@angular/router';
@@ -133,9 +131,9 @@ Modifique el constructor y modifique o agregue las siguientes funciones:
   }
 ```
 
-### <a name="modify-componenthtml"></a>Modificar Component. html ###
+### <a name="modify-componenthtml"></a>Modificar component.html ###
 
-Abra el archivo ```component.html``` del nuevo módulo creado anteriormente (es decir, ```{!Module-Name}.component.html```):
+Abra el ```component.html``` archivo del nuevo módulo creado anteriormente (es decir, ```{!Module-Name}.component.html``` ):
 
 Agregue el siguiente contenido al archivo HTML:
 ``` html

@@ -1,20 +1,18 @@
 ---
 title: Usar volúmenes compartidos de clúster en un clúster de conmutación por error
 description: Cómo usar volúmenes compartidos de clúster en un clúster de conmutación por error.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 697fd832a6af66d9cbea2537c44183aaf1b8839d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 1293abac44cc648442939784ed5bb2b8049e702f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177881"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992865"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar volúmenes compartidos de clúster en un clúster de conmutación por error
 
@@ -47,7 +45,7 @@ Ten en cuenta lo siguiente al configurar las redes compatibles con CSV.
 
 - **Varias redes y varios adaptadores de red**. Para habilitar la tolerancia a errores en caso de error de red, te recomendamos que varias redes en clúster transporten el tráfico de CSV o que configures adaptadores de red combinados.
 
-    Si los nodos del clúster están conectados a redes que no debería usar el clúster, debes deshabilitarlos. Por ejemplo, te recomendamos que deshabilites las redes iSCSI para el uso del clúster a fin de impedir el tráfico de CSV en esas redes. Para deshabilitar una red, en Administrador de clústeres de conmutación por error, seleccione **redes**, seleccione la red, seleccione la acción **propiedades** y, a continuación, seleccione no **permitir la comunicación de red de clústeres en esta red**. Como alternativa, puede configurar la propiedad **role** de la red mediante el cmdlet [Get-ClusterNetwork](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) de Windows PowerShell.
+    Si los nodos del clúster están conectados a redes que no debería usar el clúster, debes deshabilitarlos. Por ejemplo, te recomendamos que deshabilites las redes iSCSI para el uso del clúster a fin de impedir el tráfico de CSV en esas redes. Para deshabilitar una red, en Administrador de clústeres de conmutación por error, seleccione **redes**, seleccione la red, seleccione la acción **propiedades** y, a continuación, seleccione no **permitir la comunicación de red de clústeres en esta red**. Como alternativa, puede configurar la propiedad **role** de la red mediante el cmdlet [Get-ClusterNetwork](/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) de Windows PowerShell.
 - **Propiedades de los adaptadores de red**. En las propiedades de todos los adaptadores que transporten comunicaciones del clúster, asegúrate de habilitar las siguientes opciones de configuración:
 
   - **Cliente para redes Microsoft** y **Compartir impresoras y archivos para redes Microsoft**. Estas opciones de configuración son compatibles con la versión 3.0 del Bloque de mensajes del servidor (SMB), que se usa de manera predeterminada para transportar el tráfico de CSV entre nodos. Para habilitar SMB, asegúrate también de que los servicios Servidor y Estación de trabajo se estén ejecutando y que estén configurados para iniciarse automáticamente en cada nodo del clúster.
@@ -66,7 +64,7 @@ Para obtener información general sobre los requisitos de hardware, red y almace
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>Acerca de la sincronización de E/S y la redirección de E/S en la comunicación de CSV
 
-- **Sincronización de e/s**: CSV permite que varios nodos tengan acceso de lectura y escritura simultáneo al mismo almacenamiento compartido. Cuando un nodo realiza tareas de entrada/salida (E/S) de disco en un volumen CSV, el nodo se comunica directamente con el almacenamiento, por ejemplo, por medio de una red de área de almacenamiento (SAN). Sin embargo, en cualquier momento, un solo nodo (denominado el nodo Coordinador) "posee" el recurso de disco físico que está asociado con el LUN. El nodo coordinador de un volumen CSV se muestra en el Administrador de clústeres de conmutación por error como **Nodo propietario** en **Discos**. También aparece en la salida del cmdlet [Get-ClusterSharedVolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) de Windows PowerShell.
+- **Sincronización de e/s**: CSV permite que varios nodos tengan acceso de lectura y escritura simultáneo al mismo almacenamiento compartido. Cuando un nodo realiza tareas de entrada/salida (E/S) de disco en un volumen CSV, el nodo se comunica directamente con el almacenamiento, por ejemplo, por medio de una red de área de almacenamiento (SAN). Sin embargo, en cualquier momento, un solo nodo (denominado el nodo Coordinador) "posee" el recurso de disco físico que está asociado con el LUN. El nodo coordinador de un volumen CSV se muestra en el Administrador de clústeres de conmutación por error como **Nodo propietario** en **Discos**. También aparece en la salida del cmdlet [Get-ClusterSharedVolume](/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) de Windows PowerShell.
 
   >[!NOTE]
   >En Windows Server 2012 R2, la propiedad de CSV se distribuye uniformemente entre los nodos de clúster de conmutación por error en función del número de volúmenes CSV que posee cada nodo. Además, la propiedad se reequilibra automáticamente cuando hay condiciones como la conmutación por error de CSV, un nodo que se vuelve a unir al clúster, la adición de un nodo nuevo al clúster, el reinicio de un nodo del clúster o el inicio del clúster de conmutación por error después de que se haya apagado.
@@ -258,5 +256,5 @@ Debes tener en cuenta los siguientes factores al seleccionar una aplicación de 
 
 ## <a name="more-information"></a>Más información
 
-- [Clústeres de conmutación por error](failover-clustering.md)
+- [Clústeres de conmutación por error](./failover-clustering-overview.md)
 - [Implementar espacios de almacenamiento en clúster](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

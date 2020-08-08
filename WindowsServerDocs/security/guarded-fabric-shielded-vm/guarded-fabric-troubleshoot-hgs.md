@@ -1,19 +1,17 @@
 ---
 title: Solución de problemas del servicio de protección de host
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 4cbbb41b965a44b6c81b58adc94990bb4d6af046
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 21c29c8432d9f578a50130719c61a255fdb5c649
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856408"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944085"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>Solución de problemas del servicio de protección de host
 
@@ -108,7 +106,7 @@ Propiedad CSR | Valor obligatorio
 -------------|---------------
 Algoritmo    | RSA
 Tamaño de clave     | Al menos 2048 bits
-Key Usage    | Signature/Sign/DigitalSignature
+Uso de claves    | Signature/Sign/DigitalSignature
 
 **Certificados de cifrado**
 
@@ -116,7 +114,7 @@ Propiedad CSR | Valor obligatorio
 -------------|---------------
 Algoritmo    | RSA
 Tamaño de clave     | Al menos 2048 bits
-Key Usage    | Cifrado/cifrado/DataEncipherment
+Uso de claves    | Cifrado/cifrado/DataEncipherment
 
 **Active Directory plantillas de servicios de certificados**
 
@@ -139,7 +137,7 @@ El certificado de firma de atestación se crea y se renueva en segundo plano en 
 Para actualizar el certificado de firma de atestación, ejecute el siguiente comando en un símbolo del sistema de PowerShell con privilegios elevados.
 
 ```powershell
-Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName 
+Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName
 AttestationSignerCertRenewalTask
 ```
 
@@ -154,14 +152,14 @@ Se recomienda no quitar las directivas que permitan a los hosts del modo de ates
 **Problema conocido al cambiar de TPM a modo de AD**
 
 Si ha inicializado el clúster de HGS en modo TPM y después cambia al modo Active Directory, hay un problema conocido que impedirá que otros nodos del clúster de HGS cambien al nuevo modo de atestación.
-Para asegurarse de que todos los servidores de HGS están aplicando el modo de atestación correcto, ejecute `Set-HgsServer -TrustActiveDirectory` **en cada nodo** del clúster de HGS.
+Para asegurarse de que todos los servidores HGS están aplicando el modo de atestación correcto, ejecute `Set-HgsServer -TrustActiveDirectory` **en cada nodo** del clúster de HGS.
 Este problema no se aplica si va a cambiar del modo TPM al modo AD *y* el clúster se configuró originalmente en el modo ad.
 
 Puede comprobar el modo de atestación del servidor HGS mediante la ejecución de [Get-HgsServer](https://technet.microsoft.com/library/mt652162.aspx).
 
 ## <a name="memory-dump-encryption-policies"></a>Directivas de cifrado de volcado de memoria
 
-Si está intentando configurar las directivas de cifrado de volcado de memoria y no ve las directivas de volcado de HGS predeterminadas (HGS\_nodumps, HGS\_DumpEncryption y HGS\_DumpEncryptionKey) o el cmdlet dump Policy (Add-HgsAttestationDumpPolicy), es probable que no tenga instalada la actualización acumulativa más reciente.
+Si está intentando configurar las directivas de cifrado de volcado de memoria y no ve las directivas de volcado de HGS predeterminadas (HGS \_ Nodumps, HGS \_ DumpEncryption y HGS \_ DumpEncryptionKey) o el cmdlet de la Directiva de volcado (Add-HgsAttestationDumpPolicy), es probable que no tenga instalada la actualización acumulativa más reciente.
 Para corregir esto, [actualice el servidor HGS](guarded-fabric-manage-hgs.md#patching-hgs) a la actualización acumulativa más reciente de Windows y [Active las nuevas directivas de atestación](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation).
 Asegúrese de actualizar los hosts de Hyper-V a la misma actualización acumulativa antes de activar las nuevas directivas de atestación, ya que es probable que los hosts que no tengan instaladas las nuevas funcionalidades de cifrado de volcado de memoria no se realicen correctamente cuando se active la Directiva HGS.
 
@@ -176,8 +174,8 @@ Recibirá un error al registrar un host de TPM si se cumple alguna de las dos co
 2. El archivo de identificador de plataforma contiene un certificado de clave de aprobación, pero ese certificado no es de **confianza** en el sistema
 
 Algunos fabricantes de TPM no incluyen EKcerts en sus TPM.
-Si sospecha que este es el caso del TPM, confirme con el OEM que los TPM no deben tener un EKcert y use la marca de `-Force` para registrar manualmente el host con HGS.
+Si sospecha que este es el caso del TPM, confirme con el OEM que los TPM no deben tener un EKcert y use la `-Force` marca para registrar manualmente el host con HGS.
 Si el TPM debe tener un EKcert pero no se encontró ninguno en el archivo de identificador de plataforma, asegúrese de que está usando una consola de PowerShell de administrador (elevado) al ejecutar [Get-PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier) en el host.
 
-Si ha recibido el error de que el EKcert no es de confianza, asegúrese de que ha [instalado el paquete de certificados raíz de TPM de confianza](guarded-fabric-install-trusted-tpm-root-certificates.md) en cada servidor de HGS y que el certificado raíz para el proveedor de TPM se encuentra en el almacén de **TrustedTPM\_RootCA** de la máquina local. Cualquier certificado intermedio aplicable también debe instalarse en el almacén de **TrustedTPM\_IntermediateCA** en el equipo local.
-Después de instalar los certificados raíz e intermedios, debería poder ejecutar `Add-HgsAttestationTpmHost` correctamente.
+Si ha recibido el error de que el EKcert no es de confianza, asegúrese de que ha [instalado el paquete de certificados raíz de TPM de confianza](guarded-fabric-install-trusted-tpm-root-certificates.md) en cada servidor de HGS y que el certificado raíz para el proveedor de TPM está presente en el almacén de ** \_ RootCA de TrustedTPM** de la máquina local. Cualquier certificado intermedio aplicable también debe instalarse en el almacén **de \_ IntermediateCA de TrustedTPM** en el equipo local.
+Después de instalar los certificados raíz e intermedios, debe ser capaz de ejecutarse `Add-HgsAttestationTpmHost` correctamente.

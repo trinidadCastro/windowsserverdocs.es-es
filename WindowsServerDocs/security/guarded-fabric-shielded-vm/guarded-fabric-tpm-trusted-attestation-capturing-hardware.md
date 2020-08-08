@@ -1,25 +1,23 @@
 ---
 title: Capturar la información en modo TPM requerida por HGS
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 915b1338-5085-481b-8904-75d29e609e93
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 04/01/2019
-ms.openlocfilehash: 480901321b53adb03cc44f7e8b7c597c77404c90
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a0bc065f9654091ece18445488e4b46cfb197ad3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856428"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944155"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>Autorizar hosts protegidos mediante la atestación basada en TPM
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
-El modo TPM usa un identificador de TPM (también denominado identificador de plataforma o clave de aprobación \[EKpub\]) para empezar a determinar si un host determinado está autorizado como "protegido". Este modo de atestación utiliza medidas de arranque seguro y de integridad de código para garantizar que un host de Hyper-V determinado se encuentre en un estado correcto y ejecute solo código de confianza. Para que la atestación entienda qué es y no es correcto, debe capturar los siguientes artefactos:
+El modo TPM usa un identificador de TPM (también denominado identificador de plataforma o clave de aprobación \[ EKpub \] ) para empezar a determinar si un host determinado está autorizado como "protegido". Este modo de atestación utiliza medidas de arranque seguro y de integridad de código para garantizar que un host de Hyper-V determinado se encuentre en un estado correcto y ejecute solo código de confianza. Para que la atestación entienda qué es y no es correcto, debe capturar los siguientes artefactos:
 
 1.  Identificador de TPM (EKpub)
 
@@ -33,19 +31,19 @@ El modo TPM usa un identificador de TPM (también denominado identificador de pl
 
     -  Esto es aplicable a todos los hosts de Hyper-V que comparten hardware y software común.
 
-Se recomienda capturar la Directiva de línea de base y de CI desde un "host de referencia" que sea representativo de cada clase única de configuración de hardware de Hyper-V en el centro de recursos. A partir de la versión 1709 de Windows Server, las directivas de CI de ejemplo se incluyen en C:\Windows\schemas\CodeIntegrity\ExamplePolicies. 
+Se recomienda capturar la Directiva de línea de base y de CI desde un "host de referencia" que sea representativo de cada clase única de configuración de hardware de Hyper-V en el centro de recursos. A partir de la versión 1709 de Windows Server, las directivas de CI de ejemplo se incluyen en C:\Windows\schemas\CodeIntegrity\ExamplePolicies.
 
 ## <a name="versioned-attestation-policies"></a>Directivas de atestación de versiones
 
-Windows Server 2019 presenta un nuevo método para la atestación, denominado *atestación V2*, donde debe existir un certificado TPM para agregar EKPUB a HGS. El método de atestación v1 usado en Windows Server 2016 le permitía invalidar esta comprobación de seguridad mediante la especificación de la marca-Force al ejecutar Add-HgsAttestationTpmHost u otros cmdlets de atestación de TPM para capturar los artefactos. A partir de Windows Server 2019, se usa la atestación V2 de forma predeterminada y debe especificar la marca-PolicyVersion v1 al ejecutar Add-HgsAttestationTpmHost si necesita registrar un TPM sin un certificado. La marca-Force no funciona con la atestación V2. 
+Windows Server 2019 presenta un nuevo método para la atestación, denominado *atestación V2*, donde debe existir un certificado TPM para agregar EKPUB a HGS. El método de atestación v1 usado en Windows Server 2016 le permitía invalidar esta comprobación de seguridad mediante la especificación de la marca-Force al ejecutar Add-HgsAttestationTpmHost u otros cmdlets de atestación de TPM para capturar los artefactos. A partir de Windows Server 2019, se usa la atestación V2 de forma predeterminada y debe especificar la marca-PolicyVersion v1 al ejecutar Add-HgsAttestationTpmHost si necesita registrar un TPM sin un certificado. La marca-Force no funciona con la atestación V2.
 
-Un host solo puede atestiguar si todos los artefactos (EKPub + Directiva de línea base de TPM + Directiva de CI) usan la misma versión de atestación. La atestación V2 se prueba primero y, si se produce un error, se usa la atestación v1. Esto significa que si necesita registrar un identificador de TPM mediante la atestación v1, también debe especificar la marca-PolicyVersion V1 para usar la atestación v1 al capturar la línea base de TPM y crear la Directiva de CI. Si la base de referencia de TPM y la Directiva de CI se crearon con la atestación V2 y posteriormente necesita agregar un host protegido sin un certificado de TPM, debe volver a crear cada artefacto con la marca-PolicyVersion v1. 
+Un host solo puede atestiguar si todos los artefactos (EKPub + Directiva de línea base de TPM + Directiva de CI) usan la misma versión de atestación. La atestación V2 se prueba primero y, si se produce un error, se usa la atestación v1. Esto significa que si necesita registrar un identificador de TPM mediante la atestación v1, también debe especificar la marca-PolicyVersion V1 para usar la atestación v1 al capturar la línea base de TPM y crear la Directiva de CI. Si la base de referencia de TPM y la Directiva de CI se crearon con la atestación V2 y posteriormente necesita agregar un host protegido sin un certificado de TPM, debe volver a crear cada artefacto con la marca-PolicyVersion v1.
 
 ## <a name="capture-the-tpm-identifier-platform-identifier-or-ekpub-for-each-host"></a>Capturar el identificador de TPM (identificador de plataforma o EKpub) de cada host
 
 1.  En el dominio del tejido, asegúrese de que el TPM de cada host está listo para su uso; es decir, el TPM se inicializa y se obtiene la propiedad. Puede comprobar el estado del TPM si abre la consola de administración de TPM (TPM. msc) o si ejecuta **Get-TPM** en una ventana de Windows PowerShell con privilegios elevados. Si el TPM no está en el estado **listo** , tendrá que inicializarlo y establecer su propiedad. Esto puede hacerse en la consola de administración de TPM o mediante la ejecución de **Initialize-TPM**.
 
-2.  En cada host protegido, ejecute el siguiente comando en una consola de Windows PowerShell con privilegios elevados para obtener su EKpub. Por `<HostName>`, sustituya el nombre de host único por un elemento que sea adecuado para identificar este host: puede ser su nombre de host o el nombre usado por un servicio de inventario de tejido (si está disponible). Para mayor comodidad, asigne un nombre al archivo de salida con el nombre del host.
+2.  En cada host protegido, ejecute el siguiente comando en una consola de Windows PowerShell con privilegios elevados para obtener su EKpub. En `<HostName>` , sustituya el nombre de host único por un elemento que sea adecuado para identificar este host (puede ser su nombre de host o el nombre usado por un servicio de inventario de tejido (si está disponible). Para mayor comodidad, asigne un nombre al archivo de salida con el nombre del host.
 
     ```powershell
     (Get-PlatformIdentifier -Name '<HostName>').InnerXml | Out-file <Path><HostName>.xml -Encoding UTF8
@@ -64,22 +62,26 @@ Un host solo puede atestiguar si todos los artefactos (EKPub + Directiva de lín
     > Si se produce un error al agregar un identificador de TPM con respecto a un certificado de clave de aprobación que no es de confianza (EKCert), asegúrese de que los [certificados raíz del TPM de confianza se han agregado](guarded-fabric-install-trusted-tpm-root-certificates.md) al nodo HGS.
     > Además, algunos proveedores de TPM no usan EKCerts.
     > Puede comprobar si falta un EKCert abriendo el archivo XML en un editor como el Bloc de notas y comprobando si hay un mensaje de error que indica que no se encontró EKCert.
-    > Si este es el caso y confía en que el TPM del equipo es auténtico, puede usar el parámetro `-Force` para agregar el identificador de host a HGS. En Windows Server 2019, también debe usar el parámetro `-PolicyVersion v1` al usar `-Force`. Esto crea una directiva coherente con el comportamiento de Windows Server 2016 y requerirá que use `-PolicyVersion v1` al registrar también la Directiva de CI y la línea de base de TPM.
+    > Si este es el caso y confía en que el TPM del equipo es auténtico, puede usar el `-Force` parámetro para agregar el identificador de host a HGS. En Windows Server 2019, también debe usar el `-PolicyVersion v1` parámetro al utilizar `-Force` . Esto crea una directiva coherente con el comportamiento de Windows Server 2016 y requerirá que use `-PolicyVersion v1` al registrar también la Directiva de CI y la línea de base de TPM.
 
 ## <a name="create-and-apply-a-code-integrity-policy"></a>Crear y aplicar una directiva de integridad de código
 
-Una directiva de integridad de código ayuda a garantizar que solo se permita la ejecución de los archivos ejecutables en los que confíe en un host. Se impide la ejecución de malware y otros ejecutables fuera de los archivos ejecutables de confianza.
+Una directiva de integridad de código ayuda a garantizar que solo se permita la ejecución de los archivos ejecutables en los que confíe en un host.
+Se impide la ejecución de malware y otros ejecutables fuera de los archivos ejecutables de confianza.
 
-Cada host protegido debe tener una directiva de integridad de código aplicada para ejecutar máquinas virtuales blindadas en modo TPM. Las directivas de integridad de código exactas se especifican agregándolas a HGS. Las directivas de integridad de código se pueden configurar para aplicar la Directiva, bloqueando cualquier software que no cumpla la Directiva o simplemente auditar (registrar un evento cuando se ejecute software no definido en la Directiva). 
+Cada host protegido debe tener una directiva de integridad de código aplicada para ejecutar máquinas virtuales blindadas en modo TPM.
+Las directivas de integridad de código exactas se especifican agregándolas a HGS.
+Las directivas de integridad de código se pueden configurar para aplicar la Directiva, bloqueando cualquier software que no cumpla la Directiva o simplemente auditar (registrar un evento cuando se ejecute software no definido en la Directiva).
 
 A partir de la versión 1709 de Windows Server, las directivas de integridad de código de ejemplo se incluyen con Windows en C:\Windows\schemas\CodeIntegrity\ExamplePolicies. Se recomiendan dos directivas para Windows Server:
 
 - **AllowMicrosoft**: permite todos los archivos firmados por Microsoft. Esta Directiva se recomienda para las aplicaciones de servidor como SQL o Exchange, o si el servidor es supervisado por agentes publicados por Microsoft.
-- **DefaultWindows_Enforced**: solo permite archivos distribuidos en Windows y no permite otras aplicaciones publicadas por Microsoft, como Office. Esta Directiva se recomienda para los servidores que ejecutan solo roles de servidor integrados y características como Hyper-V. 
+- **DefaultWindows_Enforced**: solo permite archivos distribuidos en Windows y no permite otras aplicaciones publicadas por Microsoft, como Office. Esta Directiva se recomienda para los servidores que ejecutan solo roles de servidor integrados y características como Hyper-V.
 
-Se recomienda crear primero la Directiva de CI en modo auditoría (registro) para ver si falta algo y, a continuación, aplicar la Directiva para las cargas de trabajo de producción del host. 
+Se recomienda crear primero la Directiva de CI en modo auditoría (registro) para ver si falta algo y, a continuación, aplicar la Directiva para las cargas de trabajo de producción del host.
 
-Si usa el cmdlet [New-CIPolicy](https://docs.microsoft.com/powershell/module/configci/new-cipolicy?view=win10-ps) para generar su propia Directiva de integridad de código, deberá decidir los niveles de regla que se usarán. Se recomienda un nivel principal de **publicador** con la reserva para el **hash**, lo que permite que la mayoría del software firmado digital se actualice sin cambiar la Directiva de CI.
+Si usa el cmdlet [New-CIPolicy](https://docs.microsoft.com/powershell/module/configci/new-cipolicy?view=win10-ps) para generar su propia Directiva de integridad de código, deberá decidir los niveles de regla que se usarán.
+Se recomienda un nivel principal de **publicador** con la reserva para el **hash**, lo que permite que la mayoría del software firmado digital se actualice sin cambiar la Directiva de CI.
 El nuevo software escrito por el mismo publicador también se puede instalar en el servidor sin cambiar la Directiva de CI.
 Se aplicará un algoritmo hash a los archivos ejecutables que no estén firmados digitalmente: las actualizaciones de estos archivos requerirán la creación de una nueva Directiva de CI.
 Para obtener más información sobre los niveles de regla de directiva de CI disponibles, vea [implementar directivas de integridad de código: reglas de directivas y reglas de archivos](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules) y ayuda de cmdlet.
@@ -121,18 +123,18 @@ Para obtener más información sobre los niveles de regla de directiva de CI dis
 
     ```powershell
     Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }
-    
+
     Restart-Computer
     ```
 
     >[!NOTE]
-    >Tenga cuidado al aplicar directivas de CI a los hosts y al actualizar cualquier software en estos equipos. Cualquier controlador de modo kernel que no sea compatible con la Directiva de CI puede impedir que se inicie la máquina. 
+    >Tenga cuidado al aplicar directivas de CI a los hosts y al actualizar cualquier software en estos equipos. Cualquier controlador de modo kernel que no sea compatible con la Directiva de CI puede impedir que se inicie la máquina.
 
-6.  Proporcione el archivo binario (en este ejemplo, HW1CodeIntegrity\_forzada. p7b) al administrador de HGS.
+6.  Proporcione el archivo binario (en este ejemplo, HW1CodeIntegrity \_ obligatorio. p7b) al administrador de HGS.
 
 7.  En el dominio HGS, copie la Directiva de integridad de código en un servidor HGS y ejecute el siguiente comando.
 
-    Por `<PolicyName>`, especifique un nombre para la Directiva de CI que describa el tipo de host al que se aplica. Un procedimiento recomendado consiste en asignarle un nombre después de la marca y el modelo de su equipo y cualquier configuración de software especial que se ejecute en él.<br>En `<Path>`, especifique la ruta de acceso y el nombre de archivo de la Directiva de integridad de código.
+    En `<PolicyName>` , especifique un nombre para la Directiva de CI que describe el tipo de host al que se aplica. Un procedimiento recomendado consiste en asignarle un nombre después de la marca y el modelo de su equipo y cualquier configuración de software especial que se ejecute en él.<br>Para `<Path>` , especifique la ruta de acceso y el nombre de archivo de la Directiva de integridad de código.
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'
@@ -140,7 +142,7 @@ Para obtener más información sobre los niveles de regla de directiva de CI dis
 
 ## <a name="capture-the-tpm-baseline-for-each-unique-class-of-hardware"></a>Capturar la línea de base de TPM para cada clase de hardware única
 
-Se requiere una línea base de TPM para cada clase de hardware única en el tejido del centro de recursos. Vuelva a usar un "host de referencia". 
+Se requiere una línea base de TPM para cada clase de hardware única en el tejido del centro de recursos. Vuelva a usar un "host de referencia".
 
 1. En el host de referencia, asegúrese de que está instalado el rol de Hyper-V y la característica de compatibilidad de Hyper-V de protección de host.
 
@@ -150,9 +152,9 @@ Se requiere una línea base de TPM para cada clase de hardware única en el teji
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
     ```
-        
+
 2. Para capturar la Directiva de línea de base, ejecute el siguiente comando en una consola de Windows PowerShell con privilegios elevados.
-        
+
     ```powershell
     Get-HgsAttestationBaselinePolicy -Path 'HWConfig1.tcglog'
     ```

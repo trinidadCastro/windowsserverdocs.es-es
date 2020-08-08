@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 03/20/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e3f215abaccbd1f95ee46eca93a573aa1db9e065
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3615d7a0a536a0bb54efee2e8982f9b4e3686c8d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519413"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953334"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>Solución de problemas de implementación de controladores de dominio
 
@@ -280,7 +278,7 @@ Los siguientes son problemas habituales que se observan durante el proceso de de
 | Incidencia | Error al promocionar un RODC en una cuenta de equipo existente |
 |--|--|
 | Síntomas | Al usar ADDSDeployment para Windows PowerShell para promocionar un nuevo RODC con una cuenta de equipo preconfigurada, se produce el siguiente error:<p>El conjunto de parámetros de código no se puede resolver mediante los parámetros con nombre especificados.    <br />InvalidArgument: ParameterBindingException<br />    + FullyQualifiedErrorId: AmbiguousParameterSet, Microsoft. DirectoryServices. Deployment. PowerShell. Commands. Install |
-| Solución y notas | No proporciones parámetros predefinidos en una cuenta RODC existente. Se incluyen los siguientes:<p>Código: readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-siteName<br />-installdns |
+| Solución y notas | No proporciones parámetros predefinidos en una cuenta RODC existente. Estas incluyen:<p>Código: readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-siteName<br />-installdns |
 
 | Incidencia | No ocurre nada al seleccionar o anular la selección de la opción “Reiniciar automáticamente el servidor de destino en caso necesario” |
 |--|--|

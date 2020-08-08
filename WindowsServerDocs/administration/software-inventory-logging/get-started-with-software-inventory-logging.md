@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 940c5d7795ff4dcf84bad0727d1f92d155b3ea1b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a8584b5e2cf1048e0bba5c217aa3e6031600839a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895653"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993047"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>Introducción al registro de inventario de software
 
@@ -39,9 +39,8 @@ El registro de inventario de software puede ayudar a los administradores del ser
 -   Agregar información de inventario de software y servidor para una amplia variedad de escenarios de administración de activos de software mediante la habilitación de la característica registro de inventario de software de cada servidor y la elección de un URI de destino de servidor Web y la huella digital de certificado para la autenticación.
 
 ## <a name="see-also"></a>Consulte también
-[Agregador de Registro de inventario de software](https://technet.microsoft.com/library/mt572043.aspx)<br>
+[Agregador de Registro de inventario de software](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/mt572043(v=ws.11))<br>
 [Administrar el Registro de inventario de software](manage-software-inventory-logging.md)<br>
-[Cmdlets de Registro de inventario de software en Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)<br>
+[Cmdlets de Registro de inventario de software en Windows PowerShell](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)<br>
 [Kit de herramientas de planeación y evaluación de Microsoft](https://www.microsoft.com/download/en/details.aspx?id=7826) 
  [Herramienta de administración de activación por volumen](https://blogs.technet.com/b/volume-licensing/)
-

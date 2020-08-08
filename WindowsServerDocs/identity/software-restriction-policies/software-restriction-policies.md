@@ -1,20 +1,18 @@
 ---
 title: Directivas de restricción de software
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 5c0befad-07c3-4262-b418-372d01850305
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 28a4773899d0ccd53f6c7facd36898225ca7e007
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 44f917beaa7b1e13171d2c8ade6f0172b450350d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966157"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953022"
 ---
 # <a name="software-restriction-policies"></a>Directivas de restricción de software
 

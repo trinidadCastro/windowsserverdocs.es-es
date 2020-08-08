@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e9276acbad0f9e9d403d3e172b4935f1de43475
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e3beb043272de304edfcac294bc9b831a60b1003
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880350"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992996"
 ---
 # <a name="certreq"></a>certreq
 
@@ -63,7 +63,7 @@ Para enviar una solicitud de certificado simple:
 certreq –submit certrequest.req certnew.cer certnew.pfx
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Este es el parámetro predeterminado certreq.exe. Si no se especifica ninguna opción en el símbolo de la línea de comandos, certreq.exe intenta enviar una solicitud de certificado a una entidad de certificación. Debe especificar un archivo de solicitud de certificado al utilizar la opción **– submit** . Si se omite este parámetro, aparece una ventana **Abrir archivo** común, que permite seleccionar el archivo de solicitud de certificado adecuado.
 
@@ -77,7 +77,7 @@ Para recuperar el identificador de certificado 20 y crear un archivo de certific
 certreq -retrieve 20 MyCertificate.cer
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Use CertReq: Retrieve *RequestId* para recuperar el certificado después de que la entidad de certificación lo haya emitido. *RequestId* PKC puede ser un prefijo 0x o hexadecimal con 0x y puede ser un número de serie de certificado sin prefijo 0x. También puede utilizarlo para recuperar cualquier certificado emitido por la entidad de certificación, incluidos los certificados revocados o expirados, sin tener en cuenta si la solicitud del certificado estaba en el estado pendiente.
 
@@ -258,7 +258,7 @@ certreq -sign myrequest.req myrequest.req
 certreq -submit myrequest_sign.req myrequest_cert.cer
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si usa `certreq -sign` sin ningún parámetro adicional, se abrirá una ventana de diálogo para que pueda seleccionar el archivo solicitado (req, CMC, txt, der, cer o CRT).
 
@@ -339,7 +339,7 @@ Los artículos siguientes contienen ejemplos de uso de CertReq:
 
 - [Creación manual de un certificado SSL de servidor Web](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [Inscripción de certificados para el agente de System Center Operations Manager](https://docs.microsoft.com/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
+- [Inscripción de certificados para el agente de System Center Operations Manager](/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
 
 - [Introducción a los Servicios de certificados de Active Directory](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 

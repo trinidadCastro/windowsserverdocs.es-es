@@ -1,20 +1,18 @@
 ---
 title: Determinación de la lista de permisos y denegaciones y del inventario de aplicaciones para directivas de restricción de software
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c0fdb5c1d7c4b03610a173c6cd0575d39646a7d0
-ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
+ms.openlocfilehash: 831508de2aae56aab53cbd1ff7820ea1af0da565
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81524910"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953042"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>Determinación de la lista de permisos y denegaciones y del inventario de aplicaciones para directivas de restricción de software
 
@@ -68,5 +66,5 @@ Para usar de forma eficaz la regla predeterminada permitir, debe determinar exac
 
     Un ejemplo de la salida escrita en un archivo de registro:
 
-**Explorer. exe (PID = 4728) identifiedC: \ Windows\system32\onenote.exe as Unrestricted usingpath Rule, GUID = {320bd852-aa7c-4674-82c5-9a80321670a3}**    Todas las aplicaciones y el código asociado que comprueba y establece en Block se anotarán en el archivo de registro, que puede usar para determinar qué ejecutables se deben tener en cuenta para la lista de permitidos.
+**explorer.exe (PID = 4728) identifiedC:\Windows\system32\onenote.exe como regla de usingpath sin restricciones, GUID = {320bd852-aa7c-4674-82c5-9a80321670a3}**    Todas las aplicaciones y el código asociado que comprueba y establece en Block se anotarán en el archivo de registro, que puede usar para determinar qué ejecutables se deben tener en cuenta para la lista de permitidos.
 

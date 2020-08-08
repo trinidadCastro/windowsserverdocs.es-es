@@ -1,19 +1,17 @@
 ---
 title: Desarrollar una extensión para el centro de administración de Windows
 description: Desarrollar una extensión para el SDK del centro de administración de Windows (proyecto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/19/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 4b3d5b371a9ebec27dafa74610f8c6a87c404d82
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37f74354720c4f326fd7186b314e342432fd8a8d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357121"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952671"
 ---
 # <a name="develop-an-extension-for-windows-admin-center"></a>Desarrollar una extensión para el centro de administración de Windows
 
@@ -29,8 +27,8 @@ El centro de administración de Windows admite tres tipos de extensiones: extens
 - [Preparación](prepare-development-environment.md) del entorno de desarrollo
 - Crear una extensión de [herramienta](develop-tool.md)
 - Crear una extensión de [solución](develop-solution.md)
-- Crear un [complemento de puerta de enlace](develop-gateway-plugin.md)
-- Obtén más información con nuestras [guías](guides.md)
+- Creación de un [complemento de puerta de enlace](develop-gateway-plugin.md)
+- Más información con nuestras [guías](guides.md)
 
 ## <a name="sdk-design-toolkit"></a>Kit de herramientas de diseño de SDK
 

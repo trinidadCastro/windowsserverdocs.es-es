@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 10/29/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: fbdfc76f9ef9869da855e315387c29d6daccf636
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 5f5320129710749b271eee3097d80a6a246265f3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519432"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953364"
 ---
 # <a name="forest-wide-updates"></a>Actualizaciones para todo el bosque
 
@@ -29,7 +27,7 @@ Para obtener más información sobre cómo interpretar las cadenas de entrada de
 
 Una vez completadas las operaciones realizadas por el comando **ForestPrep** en Windows Server 2016 (operations 136-142), el atributo **revision** del objeto CN = ActiveDirectoryUpdate, CN = ForestUpdates, CN = Configuration, DC = dominioraízbosque se establece en **16**.
 
-| Número de operación y GUID | Description | Atributos | Permisos |
+| Número de operación y GUID | Descripción | Atributos | Permisos |
 |--|--|--|--|
 | **Operación 136**: {328092FB-16E7-4453-9AB8-7592DB56E9C4} | Conceder "CN = Send-as, CN = Extended-Rights" a las cuentas de gMSA. | N/D | N/D |
 | **Operación 137**: {3A1C887F-DF0A-489F-B3F2-2D0409095F6E} | Conceder "CN = Receive-as, CN = Extended-Rights" a las cuentas de gMSA. | N/D | N/D |
@@ -43,7 +41,7 @@ Una vez completadas las operaciones realizadas por el comando **ForestPrep** en 
 
 Una vez completadas las operaciones realizadas por el comando **ForestPrep** en Windows Server 2012 R2 (operaciones 131-135), el atributo **revision** del objeto CN = ActiveDirectoryUpdate, CN = ForestUpdates, CN = Configuration, DC = dominioraízbosque se establece en **15**.
 
-| Número de operación y GUID | Description | Atributos | Permisos |
+| Número de operación y GUID | Descripción | Atributos | Permisos |
 |--|--|--|--|
 | **Operación 131**: {b83818c1-01a6-4f39-91b7-a3bb581c3ae3} | Se creó un nuevo objeto contenedor de configuración de directiva de autenticación CN = authn Policy Configuration, CN = Services en la partición de configuración. | -objectClass: contenedor<br />-displayName: configuración de la Directiva de autenticación<br />-Description: contiene la configuración de la Directiva de autenticación.<br />-Del showinadvancedviewonly: true | (A;; RPLCLORC;;; ESTÉ<br />(A;; RPWPCRLCLOCCRCWDWOSW;;; EA<br />(A;; RPWPCRLCLOCCDCRCWDWOSDDTSW;;; SY |
 | **Operación 132**: {bbbb9db0-4009-4368-8c40-6674e980d3c3} | Se creó un nuevo objeto de directivas de autenticación CN = authn Policies, CN = authn Policy Configuration, CN = Services en la partición de configuración. | -objectClass: msDS-AuthNPolicies<br />-displayName: directivas de autenticación<br />-Description: contiene objetos de directiva de autenticación.<br />-Del showinadvancedviewonly: true | (A;; RPWPCRCCDCLCLOLORCWOWDSDDTDTSW;;; EA<br />(A;; RPWPCRCCDCLCLORCWOWDSDDTSW;;; SY<br />(A;; RPLCLORC;;; ESTÉ |
@@ -55,7 +53,7 @@ Una vez completadas las operaciones realizadas por el comando **ForestPrep** en 
 
 Una vez completadas las operaciones realizadas por el comando **ForestPrep** en Windows Server 2012 (operations 84-130), el atributo **revision** del objeto CN = ActiveDirectoryUpdate, CN = ForestUpdates, CN = Configuration, DC = dominioraízbosque se establece en **11**.
 
-|Número de operación y GUID|Description|Atributos|Permisos|
+|Número de operación y GUID|Descripción|Atributos|Permisos|
 |-----------------------------|---------------|--------------|---------------|
 |**Operación 84**: {4664e973-CB20-4def-b3d5-559d6fe123e0}|Se creó un nuevo contenedor CN = Claims Configuration, CN = Services en la partición de configuración.|-objectClass: contenedor|(A;; RPLCLORC;;; ESTÉ<br />(A;; RPWPCRLCLOCCRCWDWOSW;;; EA<br />(A;; RPWPCRLCLOCCDCRCWDWOSDDTSW;;; SY|
 |**Operación 85**: {2972d92d-A07A-44ac-9cb0-bf243356f345}|Se creó un nuevo objeto CN = tipos de notificaciones, CN = Configuración de notificaciones, CN = servicios en la partición de configuración.|-objectClass: msDS-argumentos ClaimType<br />-Del showinadvancedviewonly: true|(A;; RPLCLORC;;; ESTÉ<br />(A;; RPWPCRLCLOCCDCRCWDWOSW;;; EA<br />(A;; RPWPCRLCLOCCDCRCWDWOSDDTSW;;; SY|

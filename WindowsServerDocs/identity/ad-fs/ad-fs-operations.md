@@ -6,20 +6,18 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 3442ada27e8e01b72561850f724d7e28d740f43b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3fb672d9557e7f10245e8c29ea1585cf9f4aadf9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964967"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953192"
 ---
 # <a name="ad-fs-operations"></a>Operaciones de AD FS
 
 
 
-Este documento contiene una lista de todas las operaciones de documentación para AD FS. 
+Este documento contiene una lista de todas las operaciones de documentación para AD FS.
 
 ## <a name="service-configuration"></a>Configuración de servicio
 - [Actualización de certificados SSL en AD FS y WAP 2016](./operations/manage-ssl-certificates-ad-fs-wap.md)
@@ -29,7 +27,7 @@ Este documento contiene una lista de todas las operaciones de documentación par
 - [Personalización de encabezados de respuesta de seguridad HTTP con AD FS 2019](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [Delegar el acceso de Commandlet de Powershell de AD FS a los usuarios que no son administradores](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
 - [Ajustar SQL y la latencia de direcciones](../ad-fs/operations/adfs-sql-latency.md)
-- [Grupos de disponibilidad AlwaysOn](../ad-fs/operations/ad-fs-always-on.md) 
+- [Grupos de disponibilidad AlwaysOn](../ad-fs/operations/ad-fs-always-on.md)
 
 
 ## <a name="authentication-configuration"></a>Configuración de autenticación
@@ -55,7 +53,7 @@ Este documento contiene una lista de todas las operaciones de documentación par
 
 
 ### <a name="device"></a>Dispositivo
-- [Controles de autenticación de dispositivos en AD FS](../ad-fs/operations/device-authentication-controls-in-AD-FS.md) 
+- [Controles de autenticación de dispositivos en AD FS](../ad-fs/operations/device-authentication-controls-in-AD-FS.md)
 
 
 ## <a name="authorization-configuration"></a>Configuración de autorización
@@ -64,8 +62,8 @@ Este documento contiene una lista de todas las operaciones de documentación par
 
 ## <a name="rpt--cpt-configuration"></a>RPT & configuración de CPT
 - [Configuración de AD FS para autenticar a los usuarios almacenados en directorios LDAP](../ad-fs/operations/Configure-AD-FS-to-authenticate-users-stored-in-LDAP-directories.md)
-- [Configuración de regla de notificación](../ad-fs/operations/Configure-Claim-Rules.md) 
-- [Creación de una confianza de proveedor de notificaciones](../ad-fs/operations/Create-a-Claims-Provider-Trust.md) 
+- [Configuración de regla de notificación](../ad-fs/operations/Configure-Claim-Rules.md)
+- [Creación de una confianza de proveedor de notificaciones](../ad-fs/operations/Create-a-Claims-Provider-Trust.md)
 - [Crear una relación de confianza para usuario autenticado que no sea para notificaciones](../ad-fs/operations/Create-a-Non-Claims-Aware-Relying-Party-Trust.md)
 - [Creación de una relación de confianza para usuario autenticado](../ad-fs/operations/Create-a-Relying-Party-Trust.md)
 - [Configurar AD FS para trabajar con un proveedor de Federación agregado (por ejemplo, infrecuente)](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
@@ -87,4 +85,4 @@ Este documento contiene una lista de todas las operaciones de documentación par
 - [Tutorial: Workplace Join con un dispositivo Windows](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 - [Tutorial: Workplace Join con un dispositivo iOS](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-  
+

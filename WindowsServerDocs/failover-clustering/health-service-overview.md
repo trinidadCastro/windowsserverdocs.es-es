@@ -1,19 +1,17 @@
 ---
 title: Servicio de mantenimiento en Windows Server
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: 1b607869245ff46bd01824ebe4392e283be50b0d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 69bf8d66fdd3e7fac4066791d0521173484a894f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473082"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953421"
 ---
 # <a name="health-service-in-windows-server"></a>Servicio de mantenimiento en Windows Server
 
@@ -37,7 +35,7 @@ Vea [errores de servicio de mantenimiento](health-service-faults.md).
 
 Consulte [servicio de mantenimiento acciones](health-service-actions.md).
 
-## <a name="automation"></a>Automatización
+## <a name="automation"></a>automatización
 
 En esta sección se describen los flujos de trabajo que se automatizan mediante el servicio de mantenimiento en el ciclo de vida del disco.
 

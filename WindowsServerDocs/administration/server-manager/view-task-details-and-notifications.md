@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b347f5cf3a3d752c500e602b84889afa9c580ab0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 479105e7f1e605142ec54103825b1ba4934fb127
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895695"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993104"
 ---
 # <a name="view-task-details-and-notifications"></a>Visualización de tareas de detalles y notificaciones
 
@@ -37,7 +37,7 @@ Los elementos del menú **Notificaciones** muestran una barra de progreso, una b
 
 Las notificaciones son especialmente útiles para instalar o desinstalar roles, servicios de función y características. Por ejemplo, si inicia una instalación de características en un servidor remoto, puede cerrar el Asistente para agregar roles y características mientras la instalación todavía está en curso, pero la tarea activa permanece en la lista de **notificaciones** . El elemento **notificaciones** muestra una barra de progreso para la instalación y le permite volver a abrir el Asistente para agregar roles y características, si es necesario, haciendo clic en **Asistente para agregar roles y características**. Los elementos de esta lista le notifican si se ha producido un error en la instalación o si es necesario seguir pasos de configuración adicionales para finalizar la implementación de la característica.
 
-Las notificaciones también desempeñan un papel importante en la solución de problemas con tareas o procesos en Administrador del servidor. Para obtener más información sobre cómo usar los mensajes en el área **notificaciones** y en el cuadro de diálogo **detalles de tarea** para solucionar problemas de tareas o procesos incorrectos, consulte el [Foro de administrador del servidor](https://docs.microsoft.com/answers/topics/windows-server-manager.html).
+Las notificaciones también desempeñan un papel importante en la solución de problemas con tareas o procesos en Administrador del servidor. Para obtener más información sobre cómo usar los mensajes en el área **notificaciones** y en el cuadro de diálogo **detalles de tarea** para solucionar problemas de tareas o procesos incorrectos, consulte el [Foro de administrador del servidor](/answers/topics/windows-server-manager.html).
 
 Para eliminar una notificación que ya no desee ver en la lista de **notificaciones** , mantenga el cursor del mouse sobre la notificación y, a continuación, haga clic en **quitar tarea** (**X**).
 
@@ -48,4 +48,4 @@ El panel inferior es especialmente útil para solucionar los errores de las tare
 
 ## <a name="see-also"></a>Consulte también
 [Filtrar, ordenar y consultar datos en Administrador del servidor mosaicos](filter-sort-and-query-data-in-server-manager-tiles.md) 
- [Foro de administrador del servidor](https://docs.microsoft.com/answers/topics/windows-server-manager.html).
+ [Foro de administrador del servidor](/answers/topics/windows-server-manager.html).

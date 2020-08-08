@@ -1,20 +1,18 @@
 ---
 title: Trabajo con reglas de directivas de restricción de software
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 4a8047d5-9bb9-4bed-bc8f-583a237731e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 249426f7b0ef1b427d903e8d0cac9ca2e0747b68
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 619564d618ba542e915f19ba69884a48652c8bbc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820988"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952981"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>Trabajo con reglas de directivas de restricción de software
 
@@ -29,7 +27,7 @@ Con las directivas de restricción de software, puede proteger su entorno inform
 
     Para obtener información sobre los procedimientos, consulte [Trabajar con reglas de certificado](#BKMK_Cert_Rules).
 
--   **Reglas Hash**
+-   **Reglas de hash**
 
     Para obtener información sobre los procedimientos, consulte [Trabajar con reglas de hash](#BKMK_Hash_Rules).
 
@@ -104,7 +102,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 
 5.  En **Buscar un objeto de directiva de grupo**, seleccione un objeto de directiva de grupo (GPO) en el dominio, sitio o unidad organizativa correspondiente, o cree uno nuevo y, a continuación, haga clic en **Finalizar**.
 
-6.  Haga clic en **Cerrar**y después, en **Aceptar**.
+6.  Haga clic en **Cerrar** y después, en **Aceptar**.
 
 7.  En el árbol de consola, haga clic en **Opciones de seguridad** , que se encuentra en *GroupPolicyObject* [*NombreDeEquipo*] directiva/configuración del equipo/Configuración de Windows/configuración de seguridad/Directivas locales/.
 
@@ -160,7 +158,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 > Debe llevar a cabo este procedimiento antes de que el certificado pueda surtir efecto.
 
 ### <a name="set-trusted-publisher-options"></a>Establecer opciones de editores de confianza
-La firma de software se usa cada vez más entre los editores de software y los programadores para comprobar si las aplicaciones proceden de un origen de confianza. No obstante, muchos usuarios no entienden o prestan poca atención a los certificados de firma asociados a las aplicaciones que instalan.
+La firma de software se usa cada vez más entre los publicadores de software y los programadores para comprobar si las aplicaciones proceden de un origen de confianza. No obstante, muchos usuarios no entienden o prestan poca atención a los certificados de firma asociados a las aplicaciones que instalan.
 
 La configuración de directiva de la pestaña **Editores de confianza** de la directiva de validación de rutas de certificados permite a los administradores controlar qué certificados se pueden aceptar como procedentes de un editor de confianza.
 
@@ -188,7 +186,7 @@ La configuración de directiva de la pestaña **Editores de confianza** de la di
 
 6.  Active la casilla **Definir esta configuración de directiva**, seleccione la configuración de directiva que desea aplicar y, a continuación, haga clic en **Aceptar** para aplicar la nueva configuración.
 
-##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-local-computer"></a>Para que sólo los administradores puedan administrar los certificados usados para la firma de código en un equipo local
+##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-local-computer"></a>Para que solo los administradores puedan administrar los certificados usados para la firma de código en un equipo local
 
 1.  En la pantalla **Inicio** , escriba, **gpedit. msc** en **Buscar programas y archivos** o en Windows 8, en el escritorio y, a continuación, presione Entrar.
 
@@ -200,7 +198,7 @@ La configuración de directiva de la pestaña **Editores de confianza** de la di
 
 5.  En **Administración de editores de confianza**, haga clic en **Permitir que solo los administradores administren editores de confianza** y, a continuación, haga clic en **Aceptar** para aplicar la nueva configuración.
 
-##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-domain"></a>Para que sólo los administradores puedan administrar los certificados usados para la firma de código en un dominio
+##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-domain"></a>Para que solo los administradores puedan administrar los certificados usados para la firma de código en un dominio
 
 1.  Abre **Administración de directivas de grupo**.
 

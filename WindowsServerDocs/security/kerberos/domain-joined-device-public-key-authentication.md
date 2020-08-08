@@ -1,33 +1,31 @@
 ---
 title: Autenticación de clave pública de dispositivo unido al dominio
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
 manager: alanth
 author: michikos
-ms.technology: security-authentication
 ms.date: 08/18/2017
-ms.openlocfilehash: 450d3e64ff753a718c2e72e69cb60d51c8c18f78
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 37710710bc301173503450a46fc1ccc2b0614cf4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856338"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943955"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>Autenticación de clave pública de dispositivo unido al dominio
 
 >Se aplica a: Windows Server 2016, Windows 10
 
-Kerberos agregó compatibilidad para que los dispositivos Unidos a un dominio inicien sesión con un certificado a partir de Windows Server 2012 y Windows 8. Este cambio permite a los proveedores de terceros crear soluciones para aprovisionar e inicializar los certificados de los dispositivos Unidos a un dominio que se usarán para la autenticación de dominio. 
+Kerberos agregó compatibilidad para que los dispositivos Unidos a un dominio inicien sesión con un certificado a partir de Windows Server 2012 y Windows 8. Este cambio permite a los proveedores de terceros crear soluciones para aprovisionar e inicializar los certificados de los dispositivos Unidos a un dominio que se usarán para la autenticación de dominio.
 
 ## <a name="automatic-public-key-provisioning"></a>Aprovisionamiento automático de claves públicas
 
 A partir de Windows 10, versión 1507 y Windows Server 2016, los dispositivos Unidos a un dominio aprovisionan automáticamente una clave pública enlazada a un controlador de dominio (DC) de Windows Server 2016. Una vez que se aprovisiona una clave, Windows puede usar la autenticación de clave pública en el dominio.
 
 ### <a name="key-generation"></a>Generación de claves
-Si el dispositivo está ejecutando Credential Guard, se crea un par de claves pública y privada protegido por Credential Guard. 
+Si el dispositivo está ejecutando Credential Guard, se crea un par de claves pública y privada protegido por Credential Guard.
 
-Si Credential Guard no está disponible y un TPM es, se crea un par de claves pública y privada protegido por el TPM. 
+Si Credential Guard no está disponible y un TPM es, se crea un par de claves pública y privada protegido por el TPM.
 
 Si ninguno está disponible, no se genera un par de claves y el dispositivo solo puede autenticarse mediante la contraseña.
 

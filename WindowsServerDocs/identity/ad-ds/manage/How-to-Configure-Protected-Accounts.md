@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e16e08517285bc80c6913d96781fdbb84c3bce14
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 08065e153a7f0c09e305e87fc2d745b3daa0b3f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518992"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943874"
 ---
 # <a name="guidance-about-how-to-configure-protected-accounts"></a>Instrucciones sobre cómo configurar cuentas protegidas
 
@@ -154,7 +152,7 @@ El intercambio AP se produce con la misma frecuencia que los datos dentro del pr
 
 Para obtener información más detallada, consulte [Cómo funciona el protocolo de autenticación Kerberos versión 5](/previous-versions/windows/it-pro/windows-server-2003/cc772815(v=ws.10)).
 
-### <a name="overview"></a>Información general
+### <a name="overview"></a>Introducción
 Las directivas de autenticación complementan el grupo de usuarios protegidos porque proporcionan una manera de aplicar restricciones configurables a las cuentas, además de restricciones a las cuentas de servicios y equipos. Las directivas de autenticación se aplican durante el intercambio AS o el intercambio TGS.
 
 Puedes configura lo siguiente para limitar la autenticación inicial o el intercambio AS:

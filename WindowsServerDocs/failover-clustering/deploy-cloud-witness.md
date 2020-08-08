@@ -7,12 +7,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 'Cómo usar Microsoft Azure para hospedar el testigo para un clúster de conmutación por error de Windows Server en la nube: también se ha aprendido a implementar un testigo en la nube.'
-ms.openlocfilehash: 937fb6c2d4aaabfd6399a6bebdce50e351b78fc6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fa0fee044b0a5e702cb56816bf9a878f209d6117
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950199"
+ms.locfileid: "87993014"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implementación de un testigo en la nube para un clúster de conmutación por error
 
@@ -111,7 +111,7 @@ En Azure portal, vaya a la cuenta de almacenamiento, haga clic en **toda la conf
 ![Instantánea de los vínculos de punto de conexión de testigo de nube ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_5.png)
  **figura 5: vínculos URL de punto de conexión de testigo de nube**
 
-Para obtener más información acerca de la creación y administración de cuentas de Azure Storage, consulte [acerca de las cuentas de Azure Storage](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)
+Para obtener más información acerca de la creación y administración de cuentas de Azure Storage, consulte [acerca de las cuentas de Azure Storage](/azure/storage/common/storage-account-create)
 
 ## <a name="configure-cloud-witness-as-a-quorum-witness-for-your-cluster"></a>Configuración de un testigo de nube como testigo de quórum para el clúster
 La configuración del testigo en la nube está bien integrada en el Asistente para configuración de Cuórum existente integrado en el Administrador de clústeres de conmutación por error.
@@ -146,7 +146,7 @@ La configuración del testigo en la nube está bien integrada en el Asistente pa
 ### <a name="configuring-cloud-witness-using-powershell"></a>Configuración de un testigo en la nube con PowerShell
 El comando de PowerShell Set-ClusterQuorum existente tiene nuevos parámetros adicionales correspondientes al testigo en la nube.
 
-Puede configurar el testigo en la nube con el [`Set-ClusterQuorum`](https://technet.microsoft.com/library/ee461013.aspx) siguiente comando de PowerShell:
+Puede configurar el testigo en la nube con el [`Set-ClusterQuorum`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee461013(v=technet.10)) siguiente comando de PowerShell:
 
 ```PowerShell
 Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey>
