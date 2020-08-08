@@ -1,18 +1,16 @@
 ---
 title: Guía de planificación de máquinas virtuales blindadas y tejido protegido para inquilinos
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
 ms.author: nirb
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: 5d50721ddf51bc956d8afd256ff047c94c5d5a5e
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: cee219282b3aec1e0ef23b81a1fb4beb6e164ca8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769453"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971272"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>Guía de planificación de máquinas virtuales blindadas y tejido protegido para inquilinos
 

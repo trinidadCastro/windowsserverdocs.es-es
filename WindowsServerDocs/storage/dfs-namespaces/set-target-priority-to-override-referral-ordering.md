@@ -2,18 +2,16 @@
 title: Establecer la prioridad de destino para anular el orden de referencias
 description: En este artículo se describe cómo establecer la prioridad de destino para invalidar el orden de referencia
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 77fe5b82b73a0f37ba81dda210f15d6017788822
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 04a295b8f6249521c809770af2c85fdce5dd54b4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966827"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971222"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>Set target priority to override referral ordering
 

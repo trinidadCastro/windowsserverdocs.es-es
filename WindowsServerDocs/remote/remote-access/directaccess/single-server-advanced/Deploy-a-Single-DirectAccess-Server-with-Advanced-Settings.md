@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 87a9ca03591116c891c5dec41477688ded96b193
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4f2b2939bff08cc5c8f1fbd1eac6b421a35f589f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970422"
+ms.locfileid: "87996777"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Deploy a Single DirectAccess Server with Advanced Settings
 
@@ -144,6 +144,5 @@ En la siguiente tabla, se proporcionan los vínculos a recursos adicionales:
 |--------|-------|
 |**Implementación**|[Rutas de acceso de implementación de DirectAccess en Windows Server](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[Implementar un único servidor de DirectAccess con el Asistente para Introducción](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|
 |**Herramientas y configuración**|[Cmdlets de acceso remoto en PowerShelll](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))|
-|**Recursos de la comunidad**|[Guía de supervivencia de DirectAccess](https://docs.microsoft.com/answers/topics/windows-server-infrastructure.html)<p>[Entradas wiki de DirectAccess](https://go.microsoft.com/fwlink/?LinkId=236871)|
+|**Recursos de la comunidad**|[Guía de supervivencia de DirectAccess](/answers/topics/windows-server-infrastructure.html)<p>[Entradas wiki de DirectAccess](https://go.microsoft.com/fwlink/?LinkId=236871)|
 |**Tecnologías relacionadas**|[Funcionamiento de IPv6](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|
-

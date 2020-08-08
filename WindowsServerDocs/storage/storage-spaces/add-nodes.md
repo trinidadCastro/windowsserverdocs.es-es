@@ -1,21 +1,19 @@
 ---
 ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: Agregar servidores o unidades a espacios de almacenamiento directo
-ms.prod: windows-server
 ms.author: cosdar
 manager: dongill
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
 description: Cómo agregar servidores o unidades a un clúster de Espacios de almacenamiento directo
 ms.localizationpriority: medium
-ms.openlocfilehash: 773bb3a55de27d049d26fa76659d3a4d8057f0fe
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b9a26d3ac982cccf4471f3a3e03bfdae55b55eed
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966397"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961069"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>Agregar servidores o unidades a espacios de almacenamiento directo
 
@@ -45,7 +43,7 @@ Las implementaciones típicas son fáciles de escalar horizontalmente mediante l
 2. Ejecuta el cmdlet siguiente en el clúster para acabar de agregar el servidor:
 
 ```
-Add-ClusterNode -Name NewNode 
+Add-ClusterNode -Name NewNode
 ```
 
    >[!NOTE]
@@ -59,7 +57,7 @@ Con dos servidores, solo puedes crear volúmenes reflejados bidireccionales (com
 
 Los volúmenes de reflejos dobles no pueden actualizarse en contexto a los reflejos triples. En su lugar, puedes crear un nuevo volumen y migrar (copiar, como mediante el uso de la [réplica de almacenamiento](../storage-replica/server-to-server-storage-replication.md)) los datos a la base de datos y, a continuación, eliminar el volumen antiguo.
 
-Para empezar a crear volúmenes de reflejo triple, existen buenas opciones: Puedes usar lo que prefieras. 
+Para empezar a crear volúmenes de reflejo triple, existen buenas opciones: Puedes usar lo que prefieras.
 
 #### <a name="option-1"></a>Opción 1
 
@@ -84,7 +82,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 Establece **PhysicalDiskRedundancy = 2** en la plantilla **StorageTier** denominada *Capacity* y, después, crear volúmenes mediante referencias a la capa.
 
 ```PowerShell
-Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2 
+Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2
 
 New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Capacity -StorageTierSizes <Size>
 ```
@@ -135,7 +133,7 @@ Eso es todo. Ahora está listo para crear volúmenes de paridad acelerada para r
 #### <a name="example"></a>Ejemplo
 
 ```PowerShell
-New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size> 
+New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size>
 ```
 
 ### <a name="beyond-4-servers-greater-parity-efficiency"></a>Más allá de cuatro servidores: mayor eficiencia de paridad
@@ -153,13 +151,13 @@ Si la implementación usa la tolerancia a errores de chasis o bastidor, debes es
 1. Cree un dominio de error temporal para el nodo. para ello, abra una sesión de PowerShell con privilegios elevados y, después, use el siguiente comando, donde *\<NewNode>* es el nombre del nuevo nodo de clúster:
 
    ```PowerShell
-   New-ClusterFaultDomain -Type Node -Name <NewNode> 
+   New-ClusterFaultDomain -Type Node -Name <NewNode>
    ```
 
 2. Mueva este dominio de error temporal al chasis o bastidor en el que se encuentra el nuevo servidor en el mundo real, tal como se especifica en *\<ParentName>* :
 
    ```PowerShell
-   Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
+   Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName>
    ```
 
    Para obtener más información, consulte [Fault domain awareness in Windows Server 2016](../../failover-clustering/fault-domains.md) (Conocimiento de dominio de error en Windows Server 2016).

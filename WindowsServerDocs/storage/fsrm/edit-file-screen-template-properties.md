@@ -2,18 +2,16 @@
 title: Edit File Screen Template Properties
 description: En este artículo se describe cómo editar las propiedades de la plantilla de filtro de archivos.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: cb0ab9105aeded58b2ef3de9e5eb86fe823d6b5b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 86a6a6233c1a2092a5a54b807215c12b1f0a1bae
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473532"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942083"
 ---
 # <a name="edit-file-screen-template-properties"></a>Edit File Screen Template Properties
 
@@ -42,7 +40,7 @@ Al realizar cambios en una plantilla de filtro de archivos, tiene la opción de 
     -   Si desea modificar todos los filtros de archivos existentes que se crearon con la plantilla original, haga clic en **aplicar plantilla a todos los filtros de archivos derivados**.
     -   Si desea mantener los filtros de archivos existentes sin cambios, haga clic en no **aplicar plantilla a los filtros de archivos derivados**.
 
-7.  Haga clic en **OK**.
+7.  Haga clic en **Aceptar**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

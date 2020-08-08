@@ -1,20 +1,18 @@
 ---
 title: Procesos de las credenciales en la autenticación de Windows
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 48c60816-fb8b-447c-9c8e-800c2e05b14f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 2de8383ce6a946dfdd80cfc027478c495037169b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c4c9554c7c5d34513ddf848989681d81e100f108
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857588"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989427"
 ---
 # <a name="credentials-processes-in-windows-authentication"></a>Procesos de las credenciales en la autenticación de Windows
 
@@ -38,14 +36,14 @@ En la tabla siguiente se describen los componentes que administran las credencia
 
 |Componente|Descripción|
 |-------|--------|
-|Inicio de sesión del usuario|Winlogon. exe es el archivo ejecutable responsable de la administración de interacciones de usuario seguras. El servicio Winlogon inicia el proceso de inicio de sesión para los sistemas operativos Windows pasando las credenciales recopiladas por la acción del usuario en el escritorio seguro (IU de inicio de sesión) a la autoridad de seguridad local (LSA) a través de SECUR32. dll.|
-|Inicio de sesión de aplicación|Inicios de sesión de aplicaciones o servicios que no requieren inicio de sesión interactivo. La mayoría de los procesos iniciados por el usuario ejecutan el modo de usuario mediante SECUR32. dll, mientras que los procesos iniciados en el inicio, como los servicios, se ejecutan en modo kernel mediante Ksecdd. sys.<p>Para obtener más información sobre el modo de usuario y el modo kernel, consulte aplicaciones y modo de usuario o servicios y modo kernel en este tema.|
+|Inicio de sesión del usuario|Winlogon.exe es el archivo ejecutable responsable de la administración de interacciones de usuario seguras. El servicio Winlogon inicia el proceso de inicio de sesión para los sistemas operativos Windows pasando las credenciales recopiladas por la acción del usuario en el escritorio seguro (IU de inicio de sesión) a la autoridad de seguridad local (LSA) a través de Secur32.dll.|
+|Inicio de sesión de aplicación|Inicios de sesión de aplicaciones o servicios que no requieren inicio de sesión interactivo. La mayoría de los procesos iniciados por el usuario se ejecutan en modo de usuario mediante el uso de Secur32.dll mientras que los procesos iniciados en el inicio, como los servicios, se ejecutan en modo kernel mediante Ksecdd.sys.<p>Para obtener más información sobre el modo de usuario y el modo kernel, consulte aplicaciones y modo de usuario o servicios y modo kernel en este tema.|
 |Secur32.dll|Los proveedores de autenticación múltiple que forman la base del proceso de autenticación.|
 |Lsasrv.dll|El servicio LSA Server, que aplica las directivas de seguridad y actúa como el administrador de paquetes de seguridad de la LSA. La LSA contiene la función Negotiate, que selecciona el protocolo NTLM o Kerberos después de determinar qué protocolo debe ser correcto.|
 |Proveedores de compatibilidad para seguridad|Un conjunto de proveedores que pueden invocar individualmente uno o más protocolos de autenticación. El conjunto predeterminado de proveedores puede cambiar con cada versión del sistema operativo Windows y se pueden escribir proveedores personalizados.|
 |Netlogon.dll|Los servicios que realiza el servicio Inicio de sesión de red son los siguientes:<p>-Mantiene el canal seguro del equipo (no debe confundirse con Schannel) con un controlador de dominio.<br />: Pasa las credenciales del usuario a través de un canal seguro al controlador de dominio y devuelve los identificadores de seguridad (SID) del dominio y los derechos de usuario para el usuario.<br />-Publica registros de recursos de servicio en el sistema de nombres de dominio (DNS) y usa DNS para resolver nombres en las direcciones de protocolo de Internet (IP) de los controladores de dominio.<br />-Implementa el protocolo de replicación basado en llamada a procedimiento remoto (RPC) para sincronizar los controladores de dominio principal (PDC) y los controladores de dominio de reserva (BDC).|
-|Samsrv. dll|El administrador de cuentas de seguridad (SAM), que almacena las cuentas de seguridad locales, aplica las directivas almacenadas localmente y admite las API.|
-|Registro|El registro contiene una copia de la base de datos SAM, la configuración de la Directiva de seguridad local, los valores de seguridad predeterminados y la información de la cuenta a la que solo puede tener acceso el sistema.|
+|Samsrv.dll|El administrador de cuentas de seguridad (SAM), que almacena las cuentas de seguridad locales, aplica las directivas almacenadas localmente y admite las API.|
+|Registro del sistema|El registro contiene una copia de la base de datos SAM, la configuración de la Directiva de seguridad local, los valores de seguridad predeterminados y la información de la cuenta a la que solo puede tener acceso el sistema.|
 
 Este tema contiene las siguientes secciones:
 
@@ -59,7 +57,7 @@ Este tema contiene las siguientes secciones:
 
 -   [Almacenamiento y validación de credenciales](#BKMK_CredentialStorageAndValidation)
 
--   [Base de datos del administrador de cuentas de seguridad](#BKMK_SAM)
+-   [Base de datos Administrador de cuentas de seguridad](#BKMK_SAM)
 
 -   [Dominios locales y dominios de confianza](#BKMK_LocalDomainsAndTrustedDomains)
 
@@ -141,11 +139,11 @@ Los servicios del sistema y las aplicaciones de nivel de transporte tienen acces
 
 Cuando se autentica una conexión cliente/servidor:
 
--   La aplicación en el lado cliente de la conexión envía las credenciales al servidor mediante la función SSPI `InitializeSecurityContext (General)`.
+-   La aplicación en el lado cliente de la conexión envía las credenciales al servidor mediante la función SSPI `InitializeSecurityContext (General)` .
 
--   La aplicación en el lado servidor de la conexión responde con la función SSPI `AcceptSecurityContext (General)`.
+-   La aplicación en el lado servidor de la conexión responde con la función SSPI `AcceptSecurityContext (General)` .
 
--   Las funciones SSPI `InitializeSecurityContext (General)` y `AcceptSecurityContext (General)` se repiten hasta que todos los mensajes de autenticación necesarios se han intercambiado a correcto o error de autenticación.
+-   Las funciones SSPI `InitializeSecurityContext (General)` y `AcceptSecurityContext (General)` se repiten hasta que todos los mensajes de autenticación necesarios se han intercambiado para que se realice correctamente o no se supere la autenticación.
 
 -   Una vez que se ha autenticado la conexión, la LSA del servidor usa la información del cliente para compilar el contexto de seguridad, que contiene un token de acceso.
 
@@ -159,9 +157,9 @@ El sistema entero administra funciones operativas de system'specific en nombre d
 
 Las aplicaciones se pueden ejecutar en modo de usuario, donde la aplicación se puede ejecutar como cualquier entidad de seguridad, incluso en el contexto de seguridad del sistema local (sistema). Las aplicaciones también se pueden ejecutar en modo kernel, donde la aplicación se puede ejecutar en el contexto de seguridad del sistema local (sistema).
 
-SSPI está disponible a través del módulo SECUR32. dll, que es una API que se usa para obtener servicios de seguridad integrados para la autenticación, la integridad del mensaje y la privacidad de los mensajes. Proporciona una capa de abstracción entre los protocolos de nivel de aplicación y los protocolos de seguridad. Dado que las aplicaciones diferentes requieren diferentes maneras de identificar o autenticar a los usuarios y diferentes maneras de cifrar los datos mientras viajan por la red, SSPI proporciona una manera de tener acceso a las bibliotecas de vínculos dinámicos (dll) que contienen diferentes funciones de autenticación y de cifrado. Estos archivos DLL se denominan proveedores de compatibilidad para seguridad (SSP).
+SSPI está disponible a través del módulo de Secur32.dll, que es una API que se usa para obtener servicios de seguridad integrados para la autenticación, la integridad de los mensajes y la privacidad de los mensajes. Proporciona una capa de abstracción entre los protocolos de nivel de aplicación y los protocolos de seguridad. Dado que las aplicaciones diferentes requieren diferentes maneras de identificar o autenticar a los usuarios y diferentes maneras de cifrar los datos mientras viajan por la red, SSPI proporciona una manera de tener acceso a las bibliotecas de vínculos dinámicos (dll) que contienen diferentes funciones de autenticación y de cifrado. Estos archivos DLL se denominan proveedores de compatibilidad para seguridad (SSP).
 
-Las cuentas de servicio administradas y las cuentas virtuales se introdujeron en Windows Server 2008 R2 y Windows 7 para proporcionar aplicaciones cruciales, como Microsoft SQL Server y Internet Information Services (IIS), con el aislamiento de sus propias cuentas de dominio, a la vez que eliminan la necesidad de que un administrador administre manualmente el nombre de entidad de seguridad de servicio (SPN) y las credenciales de estas cuentas. Para obtener más información sobre estas características y su rol en la autenticación, vea la [documentación sobre las cuentas de servicio administradas para Windows 7 y Windows Server 2008 R2](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx) y la [información general sobre las cuentas de servicio administradas de grupo](../group-managed-service-accounts/group-managed-service-accounts-overview.md).
+Las cuentas de servicio administradas y las cuentas virtuales se introdujeron en Windows Server 2008 R2 y Windows 7 para proporcionar aplicaciones cruciales, como Microsoft SQL Server y Internet Information Services (IIS), con el aislamiento de sus propias cuentas de dominio, a la vez que eliminan la necesidad de que un administrador administre manualmente el nombre de entidad de seguridad de servicio (SPN) y las credenciales de estas cuentas. Para obtener más información sobre estas características y su rol en la autenticación, vea la [documentación sobre las cuentas de servicio administradas para Windows 7 y Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641731(v=ws.10)) y la [información general sobre las cuentas de servicio administradas de grupo](../group-managed-service-accounts/group-managed-service-accounts-overview.md).
 
 **Servicios y modo kernel**
 
@@ -172,7 +170,7 @@ Aunque la mayoría de las aplicaciones de Windows se ejecutan en el contexto de 
 
 Antes de iniciar un servicio, el controlador de servicio inicia sesión con la cuenta designada para el servicio y, a continuación, presenta las credenciales del servicio para la autenticación de la LSA. El servicio de Windows implementa una interfaz de programación que el administrador de controladores de servicio puede utilizar para controlar el servicio. Un servicio de Windows puede iniciarse automáticamente cuando se inicia el sistema o manualmente con un programa de control de servicios. Por ejemplo, cuando un equipo cliente de Windows se une a un dominio, el servicio mensajero del equipo se conecta a un controlador de dominio y abre un canal seguro para él. Para obtener una conexión autenticada, el servicio debe tener credenciales de confianza para la autoridad de seguridad local (LSA) del equipo remoto. Al comunicarse con otros equipos de la red, LSA usa las credenciales para la cuenta de dominio del equipo local, al igual que todos los demás servicios que se ejecutan en el contexto de seguridad del sistema local y del servicio de red. Los servicios del equipo local se ejecutan como sistema, por lo que no es necesario presentar las credenciales a la LSA.
 
-El archivo Ksecdd. sys administra y cifra estas credenciales y usa una llamada a procedimiento local en la LSA. El tipo de archivo es DRV (controlador) y se conoce como proveedor de compatibilidad para seguridad (SSP) de modo kernel y, en las versiones designadas en la lista **se aplica a** al principio de este tema, es compatible con el nivel 1 de FIPS 140-2.
+El archivo Ksecdd.sys administra y cifra estas credenciales y usa una llamada a procedimiento local en la LSA. El tipo de archivo es DRV (controlador) y se conoce como proveedor de compatibilidad para seguridad (SSP) de modo kernel y, en las versiones designadas en la lista **se aplica a** al principio de este tema, es compatible con el nivel 1 de FIPS 140-2.
 
 El modo kernel tiene acceso total a los recursos de hardware y del sistema del equipo. El modo kernel impide que los servicios de modo de usuario y las aplicaciones tengan acceso a las áreas críticas del sistema operativo a las que no deberían tener acceso.
 
@@ -248,18 +246,18 @@ El Protocolo de escritorio remoto (RDP) administra las credenciales del usuario 
 Introducido en Windows Server 2012 R2 y Windows 8.1, el modo de administración restringida proporciona seguridad adicional a los escenarios de inicio de sesión remoto. Este modo de Escritorio remoto hace que la aplicación cliente realice un desafío-respuesta de inicio de sesión de red con la función unidireccional de NT (NTOWF) o use un vale de servicio de Kerberos al autenticarse en el host remoto. Una vez autenticado el administrador, el administrador no tiene las credenciales de cuenta respectivas en LSASS porque no se proporcionaron al host remoto. En su lugar, el administrador tiene las credenciales de la cuenta de equipo para la sesión. Las credenciales de administrador no se proporcionan al host remoto, por lo que las acciones se realizan como la cuenta de equipo. Los recursos también se limitan a la cuenta de equipo y el administrador no puede acceder a los recursos con su propia cuenta.
 
 ### <a name="automatic-restart-sign-on-credential-process"></a>Proceso de credenciales de inicio de sesión de reinicio automático
-Cuando un usuario inicia sesión en un dispositivo Windows 8.1, LSA guarda las credenciales de usuario en memoria cifrada a las que solo puede tener acceso LSASS. exe. Cuando Windows Update inicia un reinicio automático sin presencia de usuario, estas credenciales se usan para configurar el inicio de sesión automático para el usuario.
+Cuando un usuario inicia sesión en un dispositivo Windows 8.1, LSA guarda las credenciales de usuario en la memoria cifrada a las que solo tienen acceso LSASS.exe. Cuando Windows Update inicia un reinicio automático sin presencia de usuario, estas credenciales se usan para configurar el inicio de sesión automático para el usuario.
 
 Al reiniciar, el usuario inicia sesión automáticamente mediante el mecanismo de inicio de sesión automático y, a continuación, el equipo se bloquea además para proteger la sesión del usuario. El bloqueo se inicia a través de Winlogon, mientras que la administración de credenciales se realiza mediante LSA. Al iniciar sesión automáticamente y bloquear la sesión del usuario en la consola, las aplicaciones de la pantalla de bloqueo del usuario se reinician y están disponibles.
 
-Para obtener más información sobre ARSO, consulte [Inicio de sesión de reinicio&#41;automático de Winlogon &#40;Arso](winlogon-automatic-restart-sign-on-arso.md).
+Para obtener más información acerca de ARSO, consulte [Inicio de sesión con reinicio automático de Winlogon &#40;ARSO&#41;](winlogon-automatic-restart-sign-on-arso.md).
 
 ### <a name="stored-user-names-and-passwords-in-windows-vista-and-windows-xp"></a>Nombres de usuario y contraseñas almacenados en Windows Vista y Windows XP
 En Windows Server 2008, Windows Server 2003, Windows Vista y Windows XP, **los nombres de usuario y contraseñas almacenados** en el panel de control simplifican la administración y el uso de varios conjuntos de credenciales de inicio de sesión, incluidos los certificados X. 509 usados con tarjetas inteligentes y las credenciales de Windows Live (ahora denominados cuenta de Microsoft). Las credenciales: parte del perfil del usuario, se almacenan hasta que sea necesario. Esta acción puede aumentar la seguridad en función de cada recurso asegurándose de que si una contraseña está en peligro, no ponga en peligro toda la seguridad.
 
 Una vez que un usuario inicia sesión e intenta tener acceso a recursos adicionales protegidos mediante contraseña, como un recurso compartido en un servidor, y si las credenciales de inicio de sesión predeterminadas del usuario no son suficientes para obtener acceso, se consultan **los nombres de usuario y contraseñas almacenados** . Si se han guardado credenciales alternativas con la información de inicio de sesión correcta en **nombres de usuario y contraseñas almacenados**, estas credenciales se usan para obtener acceso. De lo contrario, se solicita al usuario que proporcione nuevas credenciales, que se pueden guardar para su reutilización, ya sea después en la sesión de inicio de sesión o durante una sesión posterior.
 
-Se aplican las restricciones siguientes:
+Se aplican las restricciones que se indican a continuación:
 
 -   Si los **nombres de usuario y contraseñas almacenados** contienen credenciales no válidas o incorrectas para un recurso específico, se deniega el acceso al recurso y no aparece el cuadro de diálogo **nombres de usuario y contraseñas almacenados** .
 
@@ -276,7 +274,7 @@ Cuando un sitio web, una aplicación u otro equipo solicita la autenticación a 
 
 La próxima vez que se use el servicio, el administrador de credenciales proporcionará automáticamente las credenciales que se almacenan en el almacén de Windows. Si no se acepta, se solicitará al usuario la información de acceso correcta. Si se concede el acceso con las nuevas credenciales, el administrador de credenciales sobrescribe la credencial anterior con la nueva y, a continuación, almacena la nueva credencial en el almacén de Windows.
 
-## <a name="security-accounts-manager-database"></a><a name="BKMK_SAM"></a>Base de datos del administrador de cuentas de seguridad
+## <a name="security-accounts-manager-database"></a><a name="BKMK_SAM"></a>Base de datos Administrador de cuentas de seguridad
 El administrador de cuentas de seguridad (SAM) es una base de datos que almacena grupos y cuentas de usuario locales. Está presente en todos los sistemas operativos de Windows; sin embargo, cuando un equipo se une a un dominio, Active Directory administra cuentas de dominio en Active Directory dominios.
 
 Por ejemplo, los equipos cliente que ejecutan un sistema operativo Windows participan en un dominio de red mediante la comunicación con un controlador de dominio, incluso cuando ningún usuario humano inicia sesión. Para iniciar las comunicaciones, el equipo debe tener una cuenta activa en el dominio. Antes de aceptar las comunicaciones del equipo, la LSA del controlador de dominio autentica la identidad del equipo y, a continuación, construye el contexto de seguridad del equipo tal y como lo hace para una entidad de seguridad humana. Este contexto de seguridad define la identidad y las capacidades de un usuario o servicio en un equipo determinado o un usuario, un servicio o un equipo de una red. Por ejemplo, el token de acceso contenido dentro del contexto de seguridad define los recursos (por ejemplo, un recurso compartido de archivos o una impresora) a los que se puede tener acceso y las acciones (como lectura, escritura o modificación) que puede realizar esa entidad de seguridad (un usuario, un equipo o un servicio en ese recurso).
@@ -288,7 +286,7 @@ Cuando existe una confianza entre dos dominios, los mecanismos de autenticación
 
 La forma en que una confianza específica pasa solicitudes de autenticación depende de cómo esté configurada. Las relaciones de confianza pueden ser unidireccionales, ya que proporcionan acceso desde el dominio de confianza a los recursos del dominio que confía, o bien de forma bidireccional, al proporcionar acceso desde cada dominio a los recursos del otro dominio. Las confianzas también son no transitivas, en cuyo caso solo existe una confianza entre los dos dominios de asociados de confianza, o transitiva, en cuyo caso una confianza se extiende automáticamente a cualquier otro dominio en el que uno de los asociados confíe.
 
-Para obtener información sobre las relaciones de dominio y de confianza de bosque con respecto a la autenticación, vea [autenticación delegada y relaciones de confianza](https://technet.microsoft.com/library/dn169022.aspx).
+Para obtener información sobre las relaciones de dominio y de confianza de bosque con respecto a la autenticación, vea [autenticación delegada y relaciones de confianza](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169022(v=ws.10)).
 
 ## <a name="certificates-in-windows-authentication"></a><a name="BKMK_CertificatesInWindowsAuthentication"></a>Certificados en la autenticación de Windows
 Una infraestructura de clave pública (PKI) es la combinación de software, tecnologías de cifrado, procesos y servicios que permiten a una organización proteger sus comunicaciones y transacciones empresariales. La capacidad de una PKI para proteger las comunicaciones y las transacciones empresariales se basa en el intercambio de certificados digitales entre usuarios autenticados y recursos de confianza.
@@ -306,11 +304,11 @@ Para generar un certificado, los datos de autenticación pasan a través de algo
 > [!NOTE]
 > SHA1 es el valor predeterminado en Windows 7 y Windows Vista, pero se cambió a SHA2 en Windows 8.
 
-**Autenticación mediante tarjeta inteligente**
+**Autenticación con tarjeta inteligente**
 
 La tecnología de tarjeta inteligente es un ejemplo de autenticación basada en certificados. El inicio de sesión en una red con una tarjeta inteligente proporciona una forma segura de autenticación, ya que usa la identificación basada en criptografía y la prueba de posesión al autenticar a un usuario en un dominio. Active Directory servicios de Certificate Server (AD CS) proporciona la identificación basada en cifrado a través de la emisión de un certificado de inicio de sesión para cada tarjeta inteligente.
 
-Para obtener información acerca de la autenticación mediante tarjeta inteligente, consulte la [referencia técnica de la tarjeta inteligente de Windows](https://technet.microsoft.com/library/ff404297.aspx).
+Para obtener información acerca de la autenticación mediante tarjeta inteligente, consulte la [referencia técnica de la tarjeta inteligente de Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff404297(v=ws.10)).
 
 La tecnología de tarjeta inteligente virtual se presentó en Windows 8. Almacena el certificado de la tarjeta inteligente en el equipo y, a continuación, lo protege mediante el chip de seguridad del Módulo de plataforma segura de la prueba de alteración del dispositivo (TPM). De esta manera, el equipo se convierte realmente en la tarjeta inteligente, que debe recibir el PIN del usuario para autenticarse.
 
@@ -318,9 +316,7 @@ La tecnología de tarjeta inteligente virtual se presentó en Windows 8. Almacen
 
 La autenticación de red remota e inalámbrica es otra tecnología que usa certificados para la autenticación. El servicio de autenticación de Internet (IAS) y los servidores de red privada virtual usan el protocolo de autenticación extensible (EAP-TLS), el protocolo de autenticación extensible protegido (PEAP) o el protocolo de seguridad de Internet (IPsec) para realizar la autenticación basada en certificados para muchos tipos de acceso de red, incluidas las conexiones de red privada virtual (VPN) y inalámbricas.
 
-Para obtener información acerca de la autenticación basada en certificados en redes, consulte [autenticación de acceso a la red y certificados](https://technet.microsoft.com/library/cc759575(WS.10).aspx).
+Para obtener información acerca de la autenticación basada en certificados en redes, consulte [autenticación de acceso a la red y certificados](/previous-versions/windows/it-pro/windows-server-2003/cc759575(v=ws.10)).
 
 ## <a name="see-also"></a><a name="BKMK_SeeAlso"></a>Vea también
-[Conceptos de autenticación de Windows](https://docs.microsoft.com/windows-server/security/windows-authentication/windows-authentication-concepts)
-
-
+[Conceptos de autenticación de Windows](./windows-authentication-concepts.md)

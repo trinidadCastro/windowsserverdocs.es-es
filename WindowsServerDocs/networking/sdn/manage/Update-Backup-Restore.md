@@ -2,37 +2,35 @@
 title: Actualización, copia de seguridad y restauración de la infraestructura de SDN
 description: En este tema, aprenderá a actualizar, realizar una copia de seguridad y restaurar una infraestructura de SDN.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/27/2018
-ms.openlocfilehash: 7d3e504f0fed5bc6d17333504548fe78d1345f2a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: daca883456a32c707fc2c7b9bfd6193b0d917b58
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854468"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942585"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>Actualización, copia de seguridad y restauración de la infraestructura de SDN
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema, aprenderá a actualizar, realizar una copia de seguridad y restaurar una infraestructura de SDN. 
+En este tema, aprenderá a actualizar, realizar una copia de seguridad y restaurar una infraestructura de SDN.
 
 ## <a name="upgrade-the-sdn-infrastructure"></a>Actualización de la infraestructura de SDN
 La infraestructura de SDN se puede actualizar de Windows Server 2016 a Windows Server 2019. Para la ordenación de la actualización, siga la misma secuencia de pasos que se menciona en la sección "actualización de la infraestructura de SDN". Antes de la actualización, se recomienda realizar una copia de seguridad de la base de datos de la controladora de red.
 
-En el caso de los equipos de la controladora de red, use el cmdlet Get-NetworkControllerNode para comprobar el estado del nodo una vez completada la actualización. Asegúrese de que el nodo vuelve al estado "activo" antes de actualizar los demás nodos. Una vez que haya actualizado todos los nodos de la controladora de red, la controladora de red actualizará los microservicios que se ejecutan en el clúster de la controladora de red en un plazo de una hora. Puede desencadenar una actualización inmediata mediante el cmdlet Update-networkcontroller. 
+En el caso de los equipos de la controladora de red, use el cmdlet Get-NetworkControllerNode para comprobar el estado del nodo una vez completada la actualización. Asegúrese de que el nodo vuelve al estado "activo" antes de actualizar los demás nodos. Una vez que haya actualizado todos los nodos de la controladora de red, la controladora de red actualizará los microservicios que se ejecutan en el clúster de la controladora de red en un plazo de una hora. Puede desencadenar una actualización inmediata mediante el cmdlet Update-networkcontroller.
 
 Instale las mismas actualizaciones de Windows en todos los componentes del sistema operativo del sistema de redes definidas por software (SDN), que incluye:
 
 - Hosts de Hyper-V habilitados para SDN
 - Máquinas virtuales de controladora de red
 - Máquinas virtuales de software Load Balancer MUX
-- Máquinas virtuales de puerta de enlace RAS 
+- Máquinas virtuales de puerta de enlace RAS
 
 >[!IMPORTANT]
 >Si usa System Center Virtual Manager, debe actualizarlo con los paquetes acumulativos de actualizaciones más recientes.
@@ -43,9 +41,9 @@ Al actualizar cada componente, puede usar cualquiera de los métodos estándar p
 
 2. En la primera máquina virtual de controladora de red, instale todas las actualizaciones y reinicie.
 
-3. Antes de continuar con la siguiente máquina virtual de controladora de red, use el cmdlet `get-networkcontrollernode` para comprobar el estado del nodo que ha actualizado y reiniciado.
+3. Antes de continuar con la siguiente máquina virtual de controladora de red, use el `get-networkcontrollernode` cmdlet para comprobar el estado del nodo que ha actualizado y reiniciado.
 
-4. Durante el ciclo de reinicio, espere a que el nodo de la controladora de red se apague y vuelva a aparecer.<p>Después de reiniciar la máquina virtual, pueden transcurrir varios minutos antes de volver al estado **_activo_** . Para obtener un ejemplo de la salida, vea. 
+4. Durante el ciclo de reinicio, espere a que el nodo de la controladora de red se apague y vuelva a aparecer.<p>Después de reiniciar la máquina virtual, pueden transcurrir varios minutos antes de volver al estado **_activo_** . Para obtener un ejemplo de la salida, vea.
 
 5. Instale actualizaciones en cada máquina virtual MUX de SLB de una en una para garantizar la disponibilidad continua de la infraestructura del equilibrador de carga.
 
@@ -55,7 +53,7 @@ Al actualizar cada componente, puede usar cualquiera de los métodos estándar p
 
     b. Instale actualizaciones en cada máquina virtual de puerta de enlace en este host.
 
-    c. Si la actualización requiere que se reinicie la máquina virtual de puerta de enlace, reinicie la máquina virtual.  
+    c. Si la actualización requiere que se reinicie la máquina virtual de puerta de enlace, reinicie la máquina virtual.
 
     d. Instale actualizaciones en el host que contenga la máquina virtual de puerta de enlace que se acaba de actualizar.
 
@@ -64,9 +62,9 @@ Al actualizar cada componente, puede usar cualquiera de los métodos estándar p
     f. Repita el procedimiento para cada host adicional que contenga una puerta de enlace en espera.<p>Si no hay ninguna puerta de enlace en espera, siga estos mismos pasos para todos los hosts restantes.
 
 
-### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>Ejemplo: uso del cmdlet Get-networkcontrollernode 
+### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>Ejemplo: uso del cmdlet Get-networkcontrollernode
 
-En este ejemplo, verá la salida del cmdlet `get-networkcontrollernode` que se ejecuta en una de las máquinas virtuales de la controladora de red.  
+En este ejemplo, verá que la salida del `get-networkcontrollernode` cmdlet se ejecuta en una de las máquinas virtuales de la controladora de red.
 
 El estado de los nodos que se ven en el resultado del ejemplo es:
 
@@ -77,10 +75,10 @@ El estado de los nodos que se ven en el resultado del ejemplo es:
 >[!IMPORTANT]
 >Debe esperar varios minutos hasta que el estado del nodo cambie a _**activo**_ antes de actualizar los nodos adicionales, de uno en uno.
 
-Una vez que haya actualizado todos los nodos de la controladora de red, la controladora de red actualizará los microservicios que se ejecutan en el clúster de la controladora de red en un plazo de una hora. 
+Una vez que haya actualizado todos los nodos de la controladora de red, la controladora de red actualizará los microservicios que se ejecutan en el clúster de la controladora de red en un plazo de una hora.
 
 >[!TIP]
->Puede desencadenar una actualización inmediata mediante el cmdlet `update-networkcontroller`.
+>Puede desencadenar una actualización inmediata mediante el `update-networkcontroller` cmdlet.
 
 
 ```Powershell
@@ -108,7 +106,7 @@ Status          : Up
 ```
 
 ### <a name="example-use-the-update-networkcontroller-cmdlet"></a>Ejemplo: uso del cmdlet Update-networkcontroller
-En este ejemplo, verá la salida del cmdlet `update-networkcontroller` para forzar la actualización de la controladora de red. 
+En este ejemplo, verá la salida del `update-networkcontroller` cmdlet para forzar la actualización de la controladora de red.
 
 >[!IMPORTANT]
 >Ejecute este cmdlet cuando no tenga más actualizaciones para instalar.
@@ -131,16 +129,16 @@ Copias de seguridad periódicas de la base de datos de la controladora de red ga
 
 **Pasos**
 
-1. Use el método de copia de seguridad de máquina virtual que prefiera o use Hyper-V para exportar una copia de cada máquina virtual de la controladora de red.<p>La copia de seguridad de la máquina virtual de la controladora de red garantiza que estén presentes los certificados necesarios para descifrar la base de datos.  
+1. Use el método de copia de seguridad de máquina virtual que prefiera o use Hyper-V para exportar una copia de cada máquina virtual de la controladora de red.<p>La copia de seguridad de la máquina virtual de la controladora de red garantiza que estén presentes los certificados necesarios para descifrar la base de datos.
 
-2. Si usa System Center Virtual Machine Manager (SCVMM), detenga el servicio SCVMM y haga una copia de seguridad de él mediante SQL Server.<p>El objetivo es asegurarse de que no se realicen actualizaciones en SCVMM durante este tiempo, lo que podría crear una incoherencia entre la copia de seguridad de la controladora de red y SCVMM.  
+2. Si usa System Center Virtual Machine Manager (SCVMM), detenga el servicio SCVMM y haga una copia de seguridad de él mediante SQL Server.<p>El objetivo es asegurarse de que no se realicen actualizaciones en SCVMM durante este tiempo, lo que podría crear una incoherencia entre la copia de seguridad de la controladora de red y SCVMM.
 
    >[!IMPORTANT]
    >No vuelva a iniciar el servicio SCVMM hasta que se complete la copia de seguridad de la controladora de red.
 
-3. Realice una copia de seguridad de la base de datos del controlador de red con el cmdlet `new-networkcontrollerbackup`.
+3. Realice una copia de seguridad de la base de datos del controlador de red con el `new-networkcontrollerbackup` cmdlet.
 
-4. Compruebe la finalización y el éxito de la copia de seguridad con el cmdlet `get-networkcontrollerbackup`.
+4. Compruebe la finalización y el éxito de la copia de seguridad con el `get-networkcontrollerbackup` cmdlet.
 
 5. Si usa SCVMM, inicie el servicio SCVMM.
 
@@ -264,7 +262,7 @@ PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential
 
 ## <a name="restore-the-sdn-infrastructure-from-a-backup"></a>Restaurar la infraestructura de SDN a partir de una copia de seguridad
 
-Cuando se restauran todos los componentes necesarios de la copia de seguridad, el entorno de SDN vuelve a un estado operativo.  
+Cuando se restauran todos los componentes necesarios de la copia de seguridad, el entorno de SDN vuelve a un estado operativo.
 
 >[!IMPORTANT]
 >Los pasos varían en función del número de componentes restaurados.
@@ -272,7 +270,7 @@ Cuando se restauran todos los componentes necesarios de la copia de seguridad, e
 
 1. Si es necesario, vuelva a implementar los hosts de Hyper-V y el almacenamiento necesario.
 
-2. Si es necesario, restaure las máquinas virtuales de la controladora de red, las máquinas virtuales de puerta de enlace RAS y las máquinas virtuales de Mux. 
+2. Si es necesario, restaure las máquinas virtuales de la controladora de red, las máquinas virtuales de puerta de enlace RAS y las máquinas virtuales de Mux.
 
 3. Detenga el agente de host de NC y el agente de host de SLB en todos los hosts de Hyper-V:
 
@@ -286,7 +284,7 @@ Cuando se restauran todos los componentes necesarios de la copia de seguridad, e
 
 5. Detenga las máquinas virtuales de SLB Mux.
 
-6. Restaure la controladora de red con el cmdlet `new-networkcontrollerrestore`.
+6. Restaure la controladora de red con el `new-networkcontrollerrestore` cmdlet.
 
 7. Compruebe la **ProvisioningState** de restauración para saber cuándo se completó correctamente la restauración.
 
@@ -310,7 +308,7 @@ Fetching ResourceType:     Gateways
 ```
 
 ### <a name="example-restoring-a-network-controller-database"></a>Ejemplo: restaurar una base de datos de controladora de red
- 
+
 ```Powershell
 $URI = "https://NC.contoso.com"
 $Credential = Get-Credential

@@ -2,16 +2,15 @@
 title: Delimite la asignación de volúmenes en Espacios de almacenamiento directo
 ms.author: cosmosdarwin
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: ccce763b437b461d33dd72cb3d656b825746e6da
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6dac775d3e92a0f7a076800d5c07af2776720c1d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953848"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960958"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimite la asignación de volúmenes en Espacios de almacenamiento directo
 > Se aplica a: Windows Server 2019
@@ -62,7 +61,7 @@ Con la asignación de ejemplo, es probable que el volumen sobreviva a tres error
 
 La probabilidad de supervivencia depende del número de servidores y otros factores; consulte [análisis](#analysis) para obtener más información.
 
-#### <a name="disadvantages"></a>Inconvenientes
+#### <a name="disadvantages"></a>Desventajas
 
 La asignación delimitada impone algunas consideraciones y complejidad de administración agregadas:
 
@@ -202,7 +201,7 @@ No, es lo mismo que con la asignación normal.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Tolerancia a errores en Espacios de almacenamiento directo](storage-spaces-fault-tolerance.md)
 
 ## <a name="appendix"></a>Apéndice

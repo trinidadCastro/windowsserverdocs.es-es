@@ -1,20 +1,18 @@
 ---
 title: Crear una máquina virtual en Hyper-V
 description: Proporciona instrucciones para crear una máquina virtual mediante el administrador de Hyper-V o Windows PowerShell.
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: get-started-article
 ms.assetid: 59297022-a898-456c-b299-d79cd5860238
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 703c3f739200fafa4934681c300a61d8039d660c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5f4e07919503f283add8da1c8dd522f3d2b7f222
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475662"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942021"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>Crear una máquina virtual en Hyper-V
 

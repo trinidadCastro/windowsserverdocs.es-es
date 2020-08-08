@@ -1,37 +1,35 @@
 ---
-title: Orientación de red principal para Windows Server
+title: Orientación de red principal para Windows Server
 description: En este tema se proporciona información general sobre la guía de red principal, que permite planear e implementar los componentes principales necesarios para una red totalmente operativa y un nuevo dominio de Active Directory en un nuevo bosque con Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 9b3ef3eb-4246-4e0e-8bf1-53224ca5f2f9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: aad5fee62e564c91c6ecbf09bc241bf90a8d04e0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bfe5b64d2c14d769bc654ba1d7e820eaab4edd28
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860418"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942596"
 ---
-# <a name="core-network-guidance-for-windows-server"></a>Orientación de red principal para Windows Server
+# <a name="core-network-guidance-for-windows-server"></a>Orientación de red principal para Windows Server
 
 >Se aplica a: Windows Server, Windows Server 2016
 
-En este tema se proporciona información general sobre la guía de red principal para Windows Server&reg; 2016 y se incluyen las siguientes secciones.  
-  
--   [Introducción a la red principal de Windows Server](#bkmk_intro)  
-  
--   [Guía de red principal para Windows Server](#bkmk_core)  
-  
+En este tema se proporciona información general sobre la guía de red principal para Windows Server &reg; 2016 y se incluyen las siguientes secciones.
+
+-   [Introducción a la red principal de Windows Server](#bkmk_intro)
+
+-   [Guía de red principal para Windows Server](#bkmk_core)
+
 ## <a name="introduction-to-the-windows-server-core-network"></a><a name="bkmk_intro"></a>Introducción a la red principal de Windows Server
 
 Una red principal es una colección de hardware, dispositivos y software de red que proporciona los servicios fundamentales para satisfacer las necesidades de las tecnologías de la información (TI) de la organización.
 
 Una red principal de Windows Server le ofrece muchas ventajas, entre las que se incluyen las siguientes.
 
-- Protocolos principales para la conexión de red entre equipos y otros dispositivos compatibles con Protocolo de control de transmisión/Protocolo de Internet (TCP/IP). TCP/IP es un conjunto de protocolos estándar pensado para conectar equipos y crear redes. TCP/IP es el software de protocolo de red que se proporciona con los sistemas operativos Microsoft&reg; Windows&reg; que implementa y admite el conjunto de protocolos TCP/IP.
+- Protocolos principales para la conexión de red entre equipos y otros dispositivos compatibles con Protocolo de control de transmisión/Protocolo de Internet (TCP/IP). TCP/IP es un conjunto de protocolos estándar pensado para conectar equipos y crear redes. TCP/IP es software de protocolo de red incluido &reg; en &reg; los sistemas operativos de Microsoft Windows que implementa y admite el conjunto de protocolos TCP/IP.
 
 - Direccionamiento IP automático de servidor de Protocolo de configuración dinámica de host (DHCP). La configuración manual de direcciones IP en todos los equipos de la red es una tarea que consume mucho tiempo y es menos flexible que la opción de proporcionar dinámicamente a equipos y otros dispositivos concesiones de direcciones IP desde un servidor DHCP.
 
@@ -47,9 +45,9 @@ Una red principal también le permite escalar la red a medida que crece la organ
 
 ## <a name="core-network-guide-for-windows-server"></a><a name="bkmk_core"></a>Guía de red principal para Windows Server
 
-La guía de red principal de Windows Server 2016 proporciona instrucciones sobre cómo planear e implementar los componentes principales necesarios para una red totalmente operativa y un nuevo Active Directory&reg; dominio en un bosque nuevo. Por medio de esta guía, podrá implementar equipos configurados con los siguientes componentes de servidor de Windows:
+La guía de red principal de Windows Server 2016 proporciona instrucciones sobre cómo planear e implementar los componentes principales necesarios para una red totalmente operativa y un nuevo &reg; dominio de Active Directory en un bosque nuevo. Por medio de esta guía, podrá implementar equipos configurados con los siguientes componentes de servidor de Windows:
 
-- El rol de servidor Active Directory Domain Services (AD DS)
+- El rol de servidor Servicios de dominio de Active Directory (AD DS)
 
 - El rol de servidor Sistema de nombres de dominio (DNS)
 
@@ -64,6 +62,6 @@ La guía de red principal de Windows Server 2016 proporciona instrucciones sobre
 Esta guía está disponible en la siguiente ubicación.
 
 - La [Guía de red principal](../core-network-guide/Core-Network-Guide.md) de la biblioteca técnica de Windows Server 2016.
-  
+
 
 

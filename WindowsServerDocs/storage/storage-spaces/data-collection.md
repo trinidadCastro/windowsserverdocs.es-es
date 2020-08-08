@@ -1,22 +1,20 @@
 ---
 title: Recopilación de datos de diagnóstico con Espacios de almacenamiento directo
 description: Descripción de Espacios de almacenamiento directo herramientas de recopilación de datos, con ejemplos específicos de cómo ejecutarlas y usarlas.
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 10/24/2018
-ms.openlocfilehash: 75a74017f48b357dd029b062a7ce06775836bd0a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fa71408dbb6a4757150ee896a760f37914aacc38
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858968"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960978"
 ---
 # <a name="collect-diagnostic-data-with-storage-spaces-direct"></a>Recopilación de datos de diagnóstico con Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Hay varias herramientas de diagnóstico que se pueden usar para recopilar los datos necesarios para solucionar problemas de Espacios de almacenamiento directo y el clúster de conmutación por error. En este artículo, nos centraremos en **Get-SDDCDiagnosticInfo** : una herramienta táctil que recopilará toda la información relevante para ayudarle a diagnosticar el clúster.
 
@@ -24,7 +22,7 @@ Dado que los registros y otra información que **Get-SDDCDiagnosticInfo** son de
 
 ## <a name="installing-get-sddcdiagnosticinfo"></a>Instalación de Get-SDDCDiagnosticInfo
 
-El cmdlet **Get-SDDCDiagnosticInfo** de PowerShell (también conocido como **Get-PCStorageDiagnosticInfo**, conocido anteriormente como **Test-StorageHealth**) se puede usar para recopilar registros y realizar comprobaciones de estado de los clústeres de conmutación por error (clúster, recursos, redes, nodos), espacios de almacenamiento (discos físicos, contenedores, discos virtuales), volúmenes compartidos de clúster, recursos compartidos de archivos SMB y desduplicación. 
+El cmdlet **Get-SDDCDiagnosticInfo** de PowerShell (también conocido como **Get-PCStorageDiagnosticInfo**, conocido anteriormente como **Test-StorageHealth**) se puede usar para recopilar registros y realizar comprobaciones de estado de los clústeres de conmutación por error (clúster, recursos, redes, nodos), espacios de almacenamiento (discos físicos, contenedores, discos virtuales), volúmenes compartidos de clúster, recursos compartidos de archivos SMB y desduplicación.
 
 Hay dos métodos para instalar el script, los cuales se describen a continuación.
 
@@ -51,7 +49,7 @@ Update-Module PrivateCloud.DiagnosticInfo
 
 ### <a name="github"></a>GitHub
 
-El [repositorio de github](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/) es la versión más actualizada del módulo, ya que continuamente se realiza una iteración. Para instalar el módulo desde GitHub, descargue el módulo más reciente del [archivo](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip) y extraiga el directorio PrivateCloud. DiagnosticInfo a la ruta correcta de los módulos de PowerShell a la que apunta ```$env:PSModulePath```
+El [repositorio de github](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/) es la versión más actualizada del módulo, ya que continuamente se realiza una iteración. Para instalar el módulo desde GitHub, descargue el módulo más reciente del [archivo](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip) y extraiga el directorio PrivateCloud. DiagnosticInfo en la ruta de acceso correcta de los módulos de PowerShell indicada por.```$env:PSModulePath```
 
 ``` PowerShell
 # Allowing Tls12 and Tls11 -- e.g. github now requires Tls12
@@ -65,7 +63,7 @@ if (Test-Path $env:SystemRoot\System32\WindowsPowerShell\v1.0\Modules\$module) {
     Remove-Module $module -ErrorAction SilentlyContinue
 } else {
     Import-Module $module -ErrorAction SilentlyContinue
-} 
+}
 if (-not ($m = Get-Module $module -ErrorAction SilentlyContinue)) {
     $md = "$env:ProgramFiles\WindowsPowerShell\Modules"
 } else {
@@ -77,7 +75,7 @@ cp -Recurse $env:TEMP\$module-master\$module $md -Force -ErrorAction Stop
 rm -Recurse $env:TEMP\$module-master,$env:TEMP\master.zip
 Import-Module $module -Force
 
-``` 
+```
 
 Si necesita obtener este módulo en un clúster sin conexión, descargue el archivo zip, muévalo al nodo del servidor de destino e instale el módulo.
 
@@ -106,7 +104,7 @@ Get-SDDCDiagnosticInfo
 Para guardar los resultados en una carpeta especificada:
 
 ``` PowerShell
-Get-SDDCDiagnosticInfo -WriteToPath D:\Folder 
+Get-SDDCDiagnosticInfo -WriteToPath D:\Folder
 ```
 
 Este es un ejemplo de cómo se ve en un clúster real:
@@ -140,16 +138,16 @@ Vamos a generar un informe en un archivo de texto
 #generate report and save to text file
     $report=Show-SddcDiagnosticReport -Path D:\SDDCDiagTemp
     $report | out-file d:\SDDCReport.txt
-    
+
 ```
 
 Como referencia, este es un vínculo al [Informe de ejemplo](https://github.com/Microsoft/WSLab/blob/dev/Scenarios/S2D%20Tools/Get-SDDCDiagnosticInfo/SDDCReport.txt) y el [código postal de ejemplo](https://github.com/Microsoft/WSLab/blob/dev/Scenarios/S2D%20Tools/Get-SDDCDiagnosticInfo/HealthTest-S2D-Cluster-20180522-1546.ZIP).
 
-Para verlo en el centro de administración de Windows (versión 1812 en adelante), vaya a la pestaña *diagnósticos* . Tal como se muestra en la siguiente captura de pantalla, puede 
+Para verlo en el centro de administración de Windows (versión 1812 en adelante), vaya a la pestaña *diagnósticos* . Tal como se muestra en la siguiente captura de pantalla, puede
 
 - Instalar herramientas de diagnóstico
-- Actualizarlos (si no están actualizados), 
-- Programar ejecuciones de diagnóstico diarias (esto tiene un impacto bajo en el sistema, normalmente tardan < 5 minutos en segundo plano y no ocuparán más de 500 MB en el clúster)
+- Actualizarlos (si no están actualizados),
+- Programar ejecuciones de diagnóstico diarias (esto tiene un impacto bajo en el sistema, normalmente tardan <5 minutos en segundo plano y no ocuparán más de 500 MB en el clúster)
 - Vea la información de diagnóstico recopilada previamente si necesita proporcionarla para admitirla o analizarla usted mismo.
 
 ![captura de pantalla de diagnósticos de WAC](media/data-collection/Wac.png)
@@ -179,13 +177,13 @@ Este informe se está actualizando continuamente para incluir información más 
 El script ejecuta varios scripts de recopilación de registros y guarda el resultado como archivos XML. Recopilamos registros de clústeres y de mantenimiento, información del sistema (MSInfo32), registros de eventos sin filtrar (clústeres de conmutación por error, diagnósticos dis, Hyper-v, espacios de almacenamiento, etc.) y información de diagnóstico de almacenamiento (registros operativos). Para obtener la información más reciente sobre la información que se recopila, consulte el [archivo Léame de github (qué recopilamos)](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/blob/master/README.md#what-does-the-cmdlet-output-include).
 
 ## <a name="how-to-consume-the-xml-files-from-get-pcstoragediagnosticinfo"></a>Cómo usar los archivos XML de Get-PCStorageDiagnosticInfo
-Puede usar los datos de los archivos XML proporcionados en los datos recopilados por el cmdlet **Get-PCStorageDiagnosticInfo** . Estos archivos tienen información acerca de los discos virtuales, los discos físicos, la información básica del clúster y otras salidas relacionadas con PowerShell. 
+Puede usar los datos de los archivos XML proporcionados en los datos recopilados por el cmdlet **Get-PCStorageDiagnosticInfo** . Estos archivos tienen información acerca de los discos virtuales, los discos físicos, la información básica del clúster y otras salidas relacionadas con PowerShell.
 
-Para ver los resultados de estas salidas, abra una ventana de PowerShell y ejecute los pasos siguientes. 
+Para ver los resultados de estas salidas, abra una ventana de PowerShell y ejecute los pasos siguientes.
 
 ```PowerShell
 ipmo storage
-$d = import-clixml <filename> 
+$d = import-clixml <filename>
 $d
 ```
 

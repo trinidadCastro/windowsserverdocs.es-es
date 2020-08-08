@@ -1,21 +1,19 @@
 ---
-title: Paridad acelerada por reflejos
-ms.prod: windows-server
+title: Paridad acelerada por reflejo
 ms.author: gawatu
 manager: masriniv
-ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: 3efbc6ae29ddaa4f3a4a4f2a2409bbeb87fec2ed
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f54eb8db2a71fe8576913d7d2123e822661b0732
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475172"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942174"
 ---
-# <a name="mirror-accelerated-parity"></a>Paridad acelerada por reflejos
+# <a name="mirror-accelerated-parity"></a>Paridad acelerada por reflejo
 
 >Se aplica a: Windows Server 2019, Windows Server 2016
 
@@ -23,7 +21,7 @@ Los espacios de almacenamiento pueden proporcionar tolerancia a errores para los
 
 ![Mirror-Accelerated-Parity-Volume](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume.png)
 
-## <a name="background"></a>Fondo
+## <a name="background"></a>Información previa
 
 Los esquemas de resistencia de reflejo y paridad tienen características de almacenamiento y rendimiento fundamentalmente diferentes:
 - La resistencia reflejada permite a los usuarios lograr un rendimiento de escritura rápido, pero la replicación de los datos de cada copia no es eficaz.
@@ -158,4 +156,4 @@ New-Volume – FriendlyName “TestVolume” -FileSystem CSVFS_ReFS -StoragePool
 -   [Información general de ReFS](refs-overview.md)
 -   [Clonación de bloques de ReFS](block-cloning.md)
 -   [Flujos de integridad de ReFS](integrity-streams.md)
--   [Información general de Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)
+-   [Introducción a Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)

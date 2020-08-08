@@ -1,19 +1,17 @@
 ---
 title: Desarrollar una extensión de la solución
 description: Desarrollar una extensión de solución SDK del centro de administración de Windows (proyecto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6ac9c6296fdf9159c9f50a1304dd345932052ac9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 27ded378a40537455423f79869dfd07dcd2ba625
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357145"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949600"
 ---
 # <a name="develop-a-solution-extension"></a>Desarrollar una extensión de la solución
 
@@ -33,7 +31,7 @@ Si desea crear una GUI de administración para los servicios no definidos por lo
 > [!NOTE]
 > ¿No está familiarizado con los distintos tipos de extensión? Obtenga más información sobre la [arquitectura de extensibilidad y los tipos de extensión](understand-extensions.md).
 
-## <a name="prepare-your-environment"></a>Preparar el entorno
+## <a name="prepare-your-environment"></a>Preparación del entorno
 
 Si todavía no lo ha hecho, [Prepare el entorno mediante la](prepare-development-environment.md) instalación de las dependencias y los requisitos previos globales necesarios para todos los proyectos.
 
@@ -45,7 +43,7 @@ Una vez que tenga todas las dependencias instaladas, está listo para crear la n
 wac create --company "{!Company Name}" --solution "{!Solution Name}" --tool "{!Tool Name}"
 ```
 
-| Valor | Explicación | Ejemplo |
+| Value | Explicación | Ejemplo |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | El nombre de su empresa (con espacios) | ```Contoso Inc``` |
 | ```{!Solution Name}``` | El nombre de la solución (con espacios) | ```Contoso Foo Works Suite``` |
@@ -57,7 +55,7 @@ Observa el siguiente ejemplo de uso:
 wac create --company "Contoso Inc" --solution "Contoso Foo Works Suite" --tool "Manage Foo Works"
 ```
 
-De esta forma, se crea una nueva carpeta dentro del directorio de trabajo actual con el nombre especificado para la solución, se copian todos los archivos de plantilla necesarios en el proyecto y se configuran los archivos con el nombre de la compañía, la solución y la herramienta.  
+De esta forma, se crea una nueva carpeta dentro del directorio de trabajo actual con el nombre especificado para la solución, se copian todos los archivos de plantilla necesarios en el proyecto y se configuran los archivos con el nombre de la compañía, la solución y la herramienta.
 
 A continuación, cambie el directorio a la carpeta que acaba de crear y, a continuación, instale las dependencias locales necesarias mediante la ejecución del siguiente comando:
 
@@ -65,7 +63,7 @@ A continuación, cambie el directorio a la carpeta que acaba de crear y, a conti
 npm install
 ```
 
-Una vez completado, habrá configurado todo lo que necesita para cargar la nueva extensión en el centro de administración de Windows. 
+Una vez completado, habrá configurado todo lo que necesita para cargar la nueva extensión en el centro de administración de Windows.
 
 ## <a name="add-content-to-your-extension"></a>Agregar contenido a la extensión
 
@@ -75,7 +73,7 @@ Ahora que ha creado una extensión con la CLI del centro de administración de W
 - Agregar un [iframe](guides/add-iframe.md)
 - Crear un [proveedor de conexiones personalizado](guides/create-connection-provider.md)
 - Modificar el [comportamiento de navegación raíz](guides/modify-root-navigation.md)
- 
+
 También se pueden encontrar más ejemplos en nuestro [sitio de GITHUB SDK](https://aka.ms/wacsdk):
 -  [Herramientas de desarrollo](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools) es una extensión totalmente operativa que puede estar cargada en el centro de administración de Windows y contiene una amplia colección de ejemplos de herramientas y funcionalidad de ejemplo que puede examinar y usar en su propia extensión.
 
@@ -83,28 +81,28 @@ También se pueden encontrar más ejemplos en nuestro [sitio de GITHUB SDK](http
 
 A continuación, compile y cargue la extensión en el centro de administración de Windows.  Abra una ventana de comandos, cambie el directorio al directorio de origen y, a continuación, estará listo para compilar.
 
-* Compila y sirve con Gulp:
+* Compilar y servir con Gulp:
 
     ```
     gulp build
     gulp serve -p 4201
     ```
 
-Ten en cuenta que debes elegir un puerto que esté actualmente disponible. Asegúrate de que no intentas utilizar el puerto en el que se ejecuta Windows Admin Center.
+Tenga en cuenta que debe elegir un puerto que esté disponible actualmente. Asegúrese de que no intenta usar el puerto en el que se ejecuta el centro de administración de Windows.
 
-Tu proyecto se puede cargar en una instancia local de Windows Admin Center para pruebas conectando el proyecto servido localmente en Windows Admin Center.
+El proyecto se puede cargar en una instancia local del centro de administración de Windows para realizar pruebas adjuntando el proyecto servido localmente en el centro de administración de Windows.
 
-* Iniciar Windows Admin Center en un navegador web
-* Abre al depurador (F12)
-* Abre la consola y escribe el siguiente comando:
+* Iniciar el centro de administración de Windows en un explorador Web
+* Abrir el depurador (F12)
+* Abra la consola de y escriba el siguiente comando:
 
     ```
     MsftSme.sideLoad("http://localhost:4201")
     ```
 
-*   Actualizar el navegador web
+*   Actualizar el explorador Web
 
-Tu proyecto estará visible a partir de ahora en la lista Herramientas con (transferido localmente) junto al nombre.
+El proyecto ahora estará visible en la lista de herramientas con (lado cargado) junto al nombre.
 
 ## <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>Usar como destino una versión diferente del SDK del centro de administración de Windows
 

@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 09/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b56960a531c8d7d8cf42cb0462d2fe4d422dfba7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c0a19e9bf00667e142c3aa6585c26b69c63e2aa7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970902"
+ms.locfileid: "87997352"
 ---
 # <a name="configuring-azure-integration"></a>Configuración de la integración de Azure
 
 >Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-El centro de administración de Windows admite varias características opcionales que se integran con los servicios de Azure. [Obtenga información sobre las opciones de integración de Azure disponibles con el centro de administración de Windows.](../plan/azure-integration-options.md)
+El centro de administración de Windows admite varias características opcionales que se integran con los servicios de Azure. [Obtenga información sobre las opciones de integración de Azure disponibles con el centro de administración de Windows.](./index.md)
 
 Para permitir que la puerta de enlace del centro de administración de Windows se comunique con Azure para aprovechar la autenticación Azure Active Directory para el acceso a la puerta de enlace o para crear recursos de Azure en su nombre (por ejemplo, para proteger las máquinas virtuales administradas en el centro de administración de Windows con Azure Site Recovery), deberá registrar primero la puerta de enlace del centro de administración de Windows con Azure. Solo tiene que hacerlo una vez para la puerta de enlace del centro de administración de Windows: la configuración se conserva al actualizar la puerta de enlace a una versión más reciente.
 

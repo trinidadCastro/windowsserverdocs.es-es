@@ -5,15 +5,13 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 12/06/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: d7bbef54d0ec554c6a3cf184dcb0414f7456547c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 81480c413c2d9775ee81374534fc54af4fdcfced
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182161"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997488"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>Solución de problemas de espacios de almacenamiento y Estados operativos y estado de Espacios de almacenamiento directo
 
@@ -73,7 +71,7 @@ Cuando un grupo de almacenamiento se encuentra en un estado de mantenimiento **d
 ||Directiva|Un administrador establece el grupo de almacenamiento en solo lectura.<br><br>**Acción:** Para establecer un grupo de almacenamiento en clúster en acceso de lectura y escritura en Administrador de clústeres de conmutación por error, vaya a **grupos**, haga clic con el botón secundario en el grupo y seleccione **poner en línea**.<br><br>Para otros servidores y equipos, abra una sesión de PowerShell con permisos administrativos y, a continuación, escriba:<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
 ||Iniciando|Espacios de almacenamiento está iniciando o esperando que las unidades estén conectadas en el grupo. Debe ser un estado temporal. Una vez iniciado por completo, el grupo debe realizar la transición a un estado operativo diferente.<br><br>**Acción:** Si el grupo permanece en el estado *iniciando* , asegúrese de que todas las unidades del grupo estén conectadas correctamente.|
 
-Vea también el [Foro de almacenamiento de Windows Server](https://docs.microsoft.com/answers/topics/windows-server-storage.html).
+Vea también el [Foro de almacenamiento de Windows Server](/answers/topics/windows-server-storage.html).
 
 ## <a name="virtual-disk-states"></a>Estados de disco virtual
 
@@ -203,7 +201,7 @@ En la tabla siguiente se ofrece un poco más de información sobre cada uno de l
 |Sin conexión|La unidad está sin conexión. <br><br>Para poner en línea todas las unidades sin conexión y establecer en lectura/escritura, abra una sesión de PowerShell como administrador y use los siguientes scripts:<br><br><code>Get-Disk \| Where-Object -Property OperationalStatus -EQ "Offline" \| Set-Disk -IsOffline $false</code><br><br><code>Get-Disk \| Where-Object -Property IsReadOnly -EQ $true \| Set-Disk -IsReadOnly $false</code>|
 |Capacidad insuficiente|Esto suele ocurrir cuando hay particiones que ocupan el espacio libre en la unidad. <br><br>**Acción**: Elimine todos los volúmenes de la unidad y borre todos los datos de la unidad. Una manera de hacerlo es usar el cmdlet [de PowerShell Clear-Disk](/powershell/module/storage/clear-disk?view=win10-ps) .|
 |Verificación en curso|En el [servicio de mantenimiento](../../failover-clustering/health-service-overview.md#supported-components-document) se comprueba si la unidad o el firmware de la unidad están aprobados para su uso por parte del administrador del servidor.|
-|Error de verificación|El [servicio de mantenimiento](../../failover-clustering/health-service-overview.md#supported-components-document) no pudo comprobar si la unidad o el firmware de la unidad están aprobados para su uso por parte del administrador del servidor.|
+|No se pudo verificar|El [servicio de mantenimiento](../../failover-clustering/health-service-overview.md#supported-components-document) no pudo comprobar si la unidad o el firmware de la unidad están aprobados para su uso por parte del administrador del servidor.|
 |Firmware no compatible|El firmware de la unidad física no está en la lista de revisiones de firmware aprobadas especificadas por el administrador del servidor mediante el [servicio de mantenimiento](../../failover-clustering/health-service-overview.md#supported-components-document). |
 |Hardware no compatible|La unidad no está en la lista de modelos de almacenamiento aprobados especificados por el administrador del servidor mediante el [servicio de mantenimiento](../../failover-clustering/health-service-overview.md#supported-components-document).|
 

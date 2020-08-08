@@ -1,20 +1,18 @@
 ---
 title: Conjuntos de clústeres
-ms.prod: windows-server
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/30/2019
 description: En este artículo se describe el escenario de conjuntos de clústeres
 ms.localizationpriority: medium
-ms.openlocfilehash: 06cf798a5adfeee1279f564df63c431a77affd18
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b5b3f36cbc6627b13d2bba678cc1aeec02e57d81
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955037"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961169"
 ---
 # <a name="cluster-sets"></a>Conjuntos de clústeres
 

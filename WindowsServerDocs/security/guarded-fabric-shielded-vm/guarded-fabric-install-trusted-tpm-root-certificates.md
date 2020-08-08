@@ -1,18 +1,16 @@
 ---
 title: Instalar certificados raíz de TPM de confianza
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 06/27/2019
-ms.openlocfilehash: 096a40f422f308a036b8062e4515ebe698c31f08
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 04beb3f517df090393690a871a12015cf0bed163
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856578"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971322"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>Instalar certificados raíz de TPM de confianza
 
@@ -20,7 +18,7 @@ ms.locfileid: "80856578"
 
 Al configurar HGS para usar la atestación de TPM, también debe configurar HGS para confiar en los proveedores de los TPM de los servidores.
 Este proceso de comprobación adicional garantiza que solo los TPM auténticos y confiables pueden atestiguarse con su HGS.
-Si intenta registrar un TPM que no es de confianza con `Add-HgsAttestationTpmHost`, recibirá un error que indica que el proveedor de TPM no es de confianza.
+Si intenta registrar un TPM que no es de confianza con `Add-HgsAttestationTpmHost` , recibirá un error que indica que el proveedor de TPM no es de confianza.
 
 Para confiar en los TPM, los certificados de firma intermedios y raíz utilizados para firmar la clave de aprobación en los TPM de los servidores deben instalarse en HGS.
 Si usa más de un modelo de TPM en su centro de información, puede que necesite instalar certificados diferentes para cada modelo.
@@ -35,19 +33,19 @@ Si los certificados de TPM no se incluyen en el paquete siguiente, póngase en c
 
 Repita los pasos siguientes en **cada servidor HGS**:
 
-1.  Descargue el paquete más reciente de [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925).
+1.  Descargue el paquete más reciente de [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925) .
 
 2.  Compruebe la firma del archivo. cab para garantizar su autenticidad. No continúe si la firma no es válida.
 
     ```powershell
     Get-AuthenticodeSignature .\TrustedTpm.cab
     ```
-    
-    Este es un ejemplo de los resultados:
-    
+
+    A continuación se muestra una salida de ejemplo:
+
     ```
     Directory: C:\Users\Administrator\Downloads
-        
+
     SignerCertificate                         Status                                 Path
     -----------------                         ------                                 ----
     0DD6D4D4F46C0C7C2671962C4D361D607E370940  Valid                                  TrustedTpm.cab

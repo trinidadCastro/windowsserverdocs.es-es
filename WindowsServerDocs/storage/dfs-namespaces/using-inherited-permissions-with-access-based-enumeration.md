@@ -2,18 +2,16 @@
 title: Usar permisos heredados con la enumeración basada en el acceso
 description: En este artículo se describe cómo usar permisos heredados con enumeración basada en el acceso
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 112ec4363177ac6dd560493843c8937bdfbac4de
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 96b6280b8f69325a9f5c819430dd7a5249247302
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475152"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971212"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>Usar permisos heredados con enumeración basada en el acceso
 
@@ -52,7 +50,7 @@ Para limitar los usuarios que pueden ver una carpeta DFS, debe realizar una de l
 
 1.  En el árbol de la consola, en el nodo **espacios de nombres** , busque la carpeta con destinos cuya visibilidad desee controlar, haga clic con el botón secundario en la carpeta y, a continuación, haga clic en **propiedades**.
 
-2.  Haga clic en la ficha **Opciones avanzadas**.
+2.  Haga clic en la pestaña **Opciones avanzadas**.
 
 3.  Haga clic en **usar permisos heredados del sistema de archivos local** y, a continuación, haga clic en **Aceptar** en el cuadro de diálogo **confirmar uso de permisos heredados** . Al hacerlo, se quitan todos los permisos establecidos explícitamente en esta carpeta y se restauran los permisos NTFS heredados del sistema de archivos local del servidor de espacio de nombres.
 

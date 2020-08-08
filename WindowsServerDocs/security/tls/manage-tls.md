@@ -1,21 +1,19 @@
 ---
-title: Administrar la seguridad de la capa de transporte (TLS)
+title: Administración de Seguridad de la capa de transporte (TLS)
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: a11c41ad386618f85421ec46c6111791f468fa92
-ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
+ms.openlocfilehash: 30ab0547fd538eec3f50120a5d536eb9a48de54b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82850126"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971292"
 ---
-# <a name="manage-transport-layer-security-tls"></a>Administrar la seguridad de la capa de transporte (TLS)
+# <a name="manage-transport-layer-security-tls"></a>Administración de Seguridad de la capa de transporte (TLS)
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10
 
@@ -35,14 +33,14 @@ Los cambios en el orden de los conjuntos de cifrado TLS surtirán efecto en el s
 
 Puede usar el orden de los conjuntos de cifrado SSL directiva de grupo configuración para configurar el orden predeterminado del conjunto de cifrado TLS.
 
-1. En el consola de administración de directivas de grupo, vaya a **configuración** > del equipo**plantillas administrativas** > **Network** > **Opciones de configuración de SSL**de red.
+1. En el consola de administración de directivas de grupo, vaya a **configuración del equipo**  >  **plantillas administrativas**  >  **Network**  >  **Opciones de configuración de SSL**de red.
 2. Haga doble clic en **orden de conjunto de cifrado SSL**y, a continuación, haga clic en la opción **habilitado** .
 3. Haga clic con el botón secundario en el cuadro **conjuntos de cifrado SSL** y seleccione **seleccionar todo** en el menú emergente.
 
    ![Configuración de directiva de grupo](../media/Transport-Layer-Security-protocol/ssl-cipher-suite-order-gp-setting.png)
 
 4. Haga clic con el botón secundario en el texto seleccionado y seleccione **copiar** en el menú emergente.
-5. Pegue el texto en un editor de texto, como Notepad. exe, y actualice con la nueva lista de orden de conjuntos de cifrado.
+5. Pegue el texto en un editor de texto como notepad.exe y actualice con la nueva lista de orden de conjuntos de cifrado.
 
    > [!NOTE]
    > La lista de orden de conjuntos de cifrado TLS debe estar en formato delimitado por comas estricto. Cada cadena de conjunto de cifrado terminará con una coma (,) en el lado derecho de ella.
@@ -69,13 +67,13 @@ A partir de Windows 10 & Windows Server 2016, el orden de las curvas ECC puede c
 
 ### <a name="managing-windows-ecc-curves-using-certutil"></a>Administrar curvas ECC de Windows mediante CertUtil
 
-A partir de Windows 10 y Windows Server 2016, Windows proporciona administración de parámetros de curva elíptica a través de la utilidad de línea de comandos certutil. exe.
-Los parámetros de curva elíptica se almacenan en bcryptprimitives. dll. Con certutil. exe, los administradores pueden agregar y quitar parámetros de curva de Windows, respectivamente. Certutil. exe almacena los parámetros de curva de forma segura en el registro.
+A partir de Windows 10 y Windows Server 2016, Windows proporciona administración de parámetros de curva elíptica a través de la utilidad de línea de comandos certutil.exe.
+Los parámetros de curva elíptica se almacenan en el bcryptprimitives.dll. Con certutil.exe, los administradores pueden agregar y quitar parámetros de curva de Windows, respectivamente. Certutil.exe almacena los parámetros de curva de forma segura en el registro.
 Windows puede empezar a usar los parámetros de curva por el nombre asociado a la curva.
 
 #### <a name="displaying-registered-curves"></a>Mostrar curvas registradas
 
-Use el siguiente comando certutil. exe para mostrar una lista de las curvas registradas para el equipo actual.
+Use el siguiente comando de certutil.exe para mostrar una lista de las curvas registradas para el equipo actual.
 
 ```powershell
 certutil.exe –displayEccCurve
@@ -83,13 +81,13 @@ certutil.exe –displayEccCurve
 
 ![Certutil Mostrar curvas](../media/Transport-Layer-Security-protocol/certutil-display-curves.png)
 
-*Figura 1 resultado de certutil. exe para mostrar la lista de curvas registradas.*
+*Figura 1 Certutil.exe salida para mostrar la lista de curvas registradas.*
 
 #### <a name="adding-a-new-curve"></a>Agregar una nueva curva
 
 Las organizaciones pueden crear y usar parámetros de curva investigados por otras entidades de confianza.
 Los administradores que deseen usar estas nuevas curvas en Windows deben agregar la curva.
-Use el siguiente comando certutil. exe para agregar una curva al equipo actual:
+Use el siguiente comando de certutil.exe para agregar una curva al equipo actual:
 
 ```powershell
 Certutil —addEccCurue curveName curveParameters [curveOID] [curveType]
@@ -102,11 +100,11 @@ Certutil —addEccCurue curveName curveParameters [curveOID] [curveType]
 
 ![Certutil-agregar curvas](../media/Transport-Layer-Security-protocol/certutil-add-curves.png)
 
-*Figura 2 agregar una curva mediante certutil. exe.*
+*Figura 2 adición de una curva mediante certutil.exe.*
 
 #### <a name="removing-a-previously-added-curve"></a>Quitar una curva agregada previamente
 
-Los administradores pueden quitar una curva agregada anteriormente mediante el siguiente comando certutil. exe:
+Los administradores pueden quitar una curva agregada anteriormente mediante el siguiente comando de certutil.exe:
 
 ```powershell
 Certutil.exe –deleteEccCurve curveName
@@ -119,10 +117,10 @@ Windows no puede usar una curva con nombre después de que un administrador Quit
 Las organizaciones pueden distribuir parámetros de curva a un equipo de empresa, unido a dominio, mediante directiva de grupo y la extensión del registro directiva de grupo Preferences.
 El proceso de distribución de una curva es el siguiente:
 
-1. En Windows 10 y Windows Server 2016, use **certutil. exe** para agregar una nueva curva con nombre registrada a Windows.
+1. En Windows 10 y Windows Server 2016, use **certutil.exe** para agregar una nueva curva con nombre registrada a Windows.
 2. En el mismo equipo, abra el Consola de administración de directivas de grupo (GPMC), cree un nuevo objeto directiva de grupo y edítelo.
 3. Vaya a **configuración del equipo | Preferencias | Configuración de Windows | Registro**.  Haga clic con el botón secundario en **registro**. Mantenga el mouse sobre **nuevo** y seleccione **elemento de recopilación**. Cambie el nombre del elemento de recopilación para que coincida con el nombre de la curva. Creará un elemento de colección de registro para cada clave del registro en *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters*.
-4. Configure la colección del registro de preferencias directiva de grupo recién creada agregando un nuevo **elemento del registro** para cada valor del registro que aparece en *\[HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters curveName]*.
+4. Configure la colección del registro de preferencias directiva de grupo recién creada agregando un nuevo **elemento del registro** para cada valor del registro que aparece en *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters \[ curveName]*.
 5. Implemente el directiva de grupo objeto que contiene directiva de grupo elemento de colección del registro en equipos con Windows 10 y Windows Server 2016 que deben recibir las nuevas curvas con nombre.
 
     ![GPP distribuir curvas](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)

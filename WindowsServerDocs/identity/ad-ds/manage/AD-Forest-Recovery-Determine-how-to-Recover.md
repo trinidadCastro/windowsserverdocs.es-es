@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.technology: identity-adds
-ms.openlocfilehash: fbb1f0f0f1b21c626f344bb01b793211586c7cf3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: fcc344010f25a11051bed5afc6bc6632729f7f4e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953977"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949939"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>Determinar cómo recuperar el bosque
 
@@ -63,7 +61,7 @@ También puede usar el comando de **instantánea de Ntdsutil** para crear instan
 La facilidad del proceso de restauración es un factor importante a la hora de decidir qué controlador de dominio desea restaurar. Se recomienda tener un DC dedicado para cada dominio que sea el controlador de dominio preferido para una restauración. Un controlador de dominio de restauración dedicado facilita el planeamiento y la ejecución de la recuperación del bosque, ya que se usa la misma configuración de origen que se utilizó para realizar pruebas de restauración. Puede crear un script para la recuperación y no lidiar con distintas configuraciones, como si el DC contiene roles de maestro de operaciones o no, o si es un servidor de GC o DNS o no.
 
 > [!NOTE]
-> Aunque no se recomienda restaurar el titular de la función de maestro de operaciones en aras de la simplicidad, algunas organizaciones pueden optar por restaurar una para otras ventajas. Por ejemplo, restaurar el maestro RID puede ayudar a evitar problemas con la administración de RID durante la recuperación.  
+> Aunque no se recomienda restaurar el titular de la función de maestro de operaciones en aras de la simplicidad, algunas organizaciones pueden optar por restaurar una para otras ventajas. Por ejemplo, restaurar el maestro RID puede ayudar a evitar problemas con la administración de RID durante la recuperación.
 
 Elija un controlador de dominio que se adapte mejor a los siguientes criterios:
 
@@ -89,59 +87,59 @@ Determinar la estructura del bosque actual identificando todos los dominios del 
 
 Prepare una tabla que muestre las funciones de cada DC del dominio, tal como se muestra en el ejemplo siguiente. Esto le ayudará a volver a la configuración de error previa del bosque después de la recuperación.
 
-|Nombre del controlador de dominio|Sistema operativo|FSMO|GC|RODC|Backup|DNS|Server Core|máquina virtual|VM: genio|  
-|-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
-|DC_1|Windows Server 2012|Maestro de esquema, maestro de nomenclatura de dominios|Sí|No|Sí|No|No|Sí|Sí|  
-|DC_2|Windows Server 2012|None|Sí|No|Sí|Sí|No|Sí|Sí|  
-|DC_3|Windows Server 2012|Maestro de infraestructura|No|No|No|Sí|Sí|Sí|Sí|  
-|DC_4|Windows Server 2012|Emulador de PDC, maestro RID|Sí|No|No|No|No|Sí|No|  
-|DC_5|Windows Server 2012|None|No|No|Sí|Sí|No|Sí|Sí|  
-|RODC_1|Windows Server 2008 R2|None|Sí|Sí|Sí|Sí|Sí|Sí|No|  
-|RODC_2|Windows Server 2008|None|Sí|Sí|No|Sí|Sí|Sí|No|  
+|Nombre del controlador de dominio|Sistema operativo|FSMO|GC|RODC|Copia de seguridad|DNS|Server Core|máquina virtual|VM: genio|
+|-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|
+|DC_1|Windows Server 2012|Maestro de esquema, maestro de nomenclatura de dominios|Sí|No|Sí|No|No|Sí|Sí|
+|DC_2|Windows Server 2012|Ninguno|Sí|No|Sí|Sí|No|Sí|Sí|
+|DC_3|Windows Server 2012|Maestro de infraestructura|No|No|No|Sí|Sí|Sí|Sí|
+|DC_4|Windows Server 2012|Emulador de PDC, maestro RID|Sí|No|No|No|No|Sí|No|
+|DC_5|Windows Server 2012|Ninguno|No|No|Sí|Sí|No|Sí|Sí|
+|RODC_1|Windows Server 2008 R2|Ninguno|Sí|Sí|Sí|Sí|Sí|Sí|No|
+|RODC_2|Windows Server 2008|Ninguno|Sí|Sí|No|Sí|Sí|Sí|No|
 
 Para cada dominio del bosque, identifique un solo DC grabable que tenga una copia de seguridad de confianza de la base de datos de Active Directory para ese dominio. Tenga cuidado al elegir una copia de seguridad para restaurar un controlador de dominio. Si el día y la causa del error son aproximadamente conocidos, la recomendación general es usar una copia de seguridad que se haya realizado unos días antes de esa fecha.
-  
-En este ejemplo, hay cuatro candidatos de copia de seguridad: DC_1, DC_2, DC_4 y DC_5. De estos candidatos de copia de seguridad, solo se restaura uno. El controlador de dominio recomendado es DC_5 por los siguientes motivos:  
 
-- Cumple los requisitos para usarlo como origen de la clonación de controladores de dominio virtualizados, es decir, ejecuta Windows Server 2012 como un controlador de dominio virtual en un hipervisor que admite VM-GenerationID, ejecuta el software que se permite clonar (o que se puede quitar si no es capaz de clonarse). Después de la restauración, el rol de emulador de PDC se asumirá para ese servidor y se puede Agregar al grupo controladores de dominio clonables del dominio.  
-- Ejecuta una instalación completa de Windows Server 2012. Un controlador de dominio que ejecute una instalación Server Core puede ser menos práctico como destino de la recuperación.  
-- Es un servidor DNS. Por lo tanto, no es necesario volver a instalar DNS.  
+En este ejemplo, hay cuatro candidatos de copia de seguridad: DC_1, DC_2, DC_4 y DC_5. De estos candidatos de copia de seguridad, solo se restaura uno. El controlador de dominio recomendado es DC_5 por los siguientes motivos:
+
+- Cumple los requisitos para usarlo como origen de la clonación de controladores de dominio virtualizados, es decir, ejecuta Windows Server 2012 como un controlador de dominio virtual en un hipervisor que admite VM-GenerationID, ejecuta el software que se permite clonar (o que se puede quitar si no es capaz de clonarse). Después de la restauración, el rol de emulador de PDC se asumirá para ese servidor y se puede Agregar al grupo controladores de dominio clonables del dominio.
+- Ejecuta una instalación completa de Windows Server 2012. Un controlador de dominio que ejecute una instalación Server Core puede ser menos práctico como destino de la recuperación.
+- Es un servidor DNS. Por lo tanto, no es necesario volver a instalar DNS.
 
 > [!NOTE]
-> Dado que DC_5 no es un servidor de catálogo global, también tiene la ventaja de que no es necesario quitar el catálogo global después de la restauración. Pero si el controlador de dominio también es un servidor de catálogo global no es un factor decisivo, ya que a partir de Windows Server 2012, todos los controladores de dominio son servidores de catálogo global de forma predeterminada, y quitar y agregar el catálogo global una vez que se recomienda la restauración como parte del proceso de recuperación del bosque en cualquier caso.  
+> Dado que DC_5 no es un servidor de catálogo global, también tiene la ventaja de que no es necesario quitar el catálogo global después de la restauración. Pero si el controlador de dominio también es un servidor de catálogo global no es un factor decisivo, ya que a partir de Windows Server 2012, todos los controladores de dominio son servidores de catálogo global de forma predeterminada, y quitar y agregar el catálogo global una vez que se recomienda la restauración como parte del proceso de recuperación del bosque en cualquier caso.
 
 ## <a name="recover-the-forest-in-isolation"></a>Recuperación del bosque en aislamiento
 
-El escenario preferido es apagar todos los controladores de dominio grabables antes de que el primer controlador de dominio restaurado vuelva a producción. Esto garantiza que los datos peligrosos no se vuelvan a replicar en el bosque recuperado. Es especialmente importante apagar todos los titulares de la función de maestro de operaciones.  
+El escenario preferido es apagar todos los controladores de dominio grabables antes de que el primer controlador de dominio restaurado vuelva a producción. Esto garantiza que los datos peligrosos no se vuelvan a replicar en el bosque recuperado. Es especialmente importante apagar todos los titulares de la función de maestro de operaciones.
 
 > [!NOTE]
 > Puede haber casos en los que mueva el primer DC que planea recuperar para cada dominio a una red aislada, a la vez que permite que otros controladores de dominio permanezcan en línea para minimizar el tiempo de inactividad del sistema. Por ejemplo, si va a realizar la recuperación a partir de una actualización de esquema con errores, puede optar por mantener los controladores de dominio que se ejecutan en la red de producción mientras realiza los pasos de recuperación de aislamiento.
 
-Si está ejecutando controladores de red virtualizados, puede moverlos a una red virtual que esté aislada de la red de producción en la que realizará la recuperación. Mover los controladores de red virtualizados a una red independiente ofrece dos ventajas:  
+Si está ejecutando controladores de red virtualizados, puede moverlos a una red virtual que esté aislada de la red de producción en la que realizará la recuperación. Mover los controladores de red virtualizados a una red independiente ofrece dos ventajas:
 
-- Los controladores de DC recuperados no se pueden reproducir el problema que provocó la recuperación del bosque porque están aislados.  
+- Los controladores de DC recuperados no se pueden reproducir el problema que provocó la recuperación del bosque porque están aislados.
 - La clonación de controladores de dominio virtualizados se puede realizar en la red independiente para que se pueda ejecutar y probar un número crítico de controladores de dominio antes de que vuelvan a la red de producción.
 
-Si está ejecutando controladores de dominio en hardware físico, desconecte el cable de red del primer controlador de dominio que vaya a restaurar en el dominio raíz del bosque. Si es posible, desconecte también los cables de red de los demás controladores de red. Esto impide que los controladores de la replicación se repliquen si se inician accidentalmente durante el proceso de recuperación del bosque.  
+Si está ejecutando controladores de dominio en hardware físico, desconecte el cable de red del primer controlador de dominio que vaya a restaurar en el dominio raíz del bosque. Si es posible, desconecte también los cables de red de los demás controladores de red. Esto impide que los controladores de la replicación se repliquen si se inician accidentalmente durante el proceso de recuperación del bosque.
 
-En un bosque grande que está distribuido en varias ubicaciones, puede ser difícil garantizar que todos los controladores de DC que se pueden escribir están apagados. Por esta razón, los pasos de recuperación, como el restablecimiento de la cuenta de equipo y la cuenta de krbtgt, además de la limpieza de metadatos, están diseñados para garantizar que los controladores de seguridad de escritura recuperados no se replican con controladores de seguridad de escritura peligrosos (en el caso de que algunos estén aún en línea en el bosque).  
-  
-Sin embargo, solo si los DC que se pueden escribir están sin conexión, puede garantizar que no se produzca la replicación. Por lo tanto, siempre que sea posible, debe implementar tecnología de administración remota que pueda ayudarle a apagar y aislar físicamente los controladores de DC grabables durante la recuperación del bosque.  
-  
-Los RODC pueden seguir funcionando mientras los DC grabables están sin conexión. Ningún otro controlador de dominio replicará directamente ningún cambio de ningún RODC, especialmente, no cambia el esquema ni el contenedor de configuración, por lo que no suponen el mismo riesgo que los controladores de dominio grabables durante la recuperación. Después de que todos los controladores de seguridad que se pueden escribir se recuperen y estén en línea, debe volver a generar todos los RODC.  
-  
-Los RODC seguirán permitiendo el acceso a los recursos locales que se almacenan en caché en sus sitios respectivos mientras las operaciones de recuperación se están realizando en paralelo. Los recursos locales que no estén almacenados en caché en el RODC tendrán solicitudes de autenticación reenviadas a un controlador de dominio grabable. Estas solicitudes producirán un error porque los DC que se pueden escribir están sin conexión. Algunas operaciones, como los cambios de contraseña, no funcionarán hasta que recupere los controladores de DC que se pueden escribir.  
-  
-Si usa una arquitectura de red de concentrador y radio, puede concentrarse primero en la recuperación de los controladores de red que se pueden escribir en los sitios del concentrador. Posteriormente, puede volver a generar los RODC en sitios remotos.  
-  
-## <a name="next-steps"></a>Pasos siguientes
+En un bosque grande que está distribuido en varias ubicaciones, puede ser difícil garantizar que todos los controladores de DC que se pueden escribir están apagados. Por esta razón, los pasos de recuperación, como el restablecimiento de la cuenta de equipo y la cuenta de krbtgt, además de la limpieza de metadatos, están diseñados para garantizar que los controladores de seguridad de escritura recuperados no se replican con controladores de seguridad de escritura peligrosos (en el caso de que algunos estén aún en línea en el bosque).
 
-- [Recuperación del bosque de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)  
-- [Recuperación de bosque de AD: diseño de un plan de recuperación de bosque personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  
+Sin embargo, solo si los DC que se pueden escribir están sin conexión, puede garantizar que no se produzca la replicación. Por lo tanto, siempre que sea posible, debe implementar tecnología de administración remota que pueda ayudarle a apagar y aislar físicamente los controladores de DC grabables durante la recuperación del bosque.
+
+Los RODC pueden seguir funcionando mientras los DC grabables están sin conexión. Ningún otro controlador de dominio replicará directamente ningún cambio de ningún RODC, especialmente, no cambia el esquema ni el contenedor de configuración, por lo que no suponen el mismo riesgo que los controladores de dominio grabables durante la recuperación. Después de que todos los controladores de seguridad que se pueden escribir se recuperen y estén en línea, debe volver a generar todos los RODC.
+
+Los RODC seguirán permitiendo el acceso a los recursos locales que se almacenan en caché en sus sitios respectivos mientras las operaciones de recuperación se están realizando en paralelo. Los recursos locales que no estén almacenados en caché en el RODC tendrán solicitudes de autenticación reenviadas a un controlador de dominio grabable. Estas solicitudes producirán un error porque los DC que se pueden escribir están sin conexión. Algunas operaciones, como los cambios de contraseña, no funcionarán hasta que recupere los controladores de DC que se pueden escribir.
+
+Si usa una arquitectura de red de concentrador y radio, puede concentrarse primero en la recuperación de los controladores de red que se pueden escribir en los sitios del concentrador. Posteriormente, puede volver a generar los RODC en sitios remotos.
+
+## <a name="next-steps"></a>Pasos a seguir
+
+- [Recuperación del bosque de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)
+- [Recuperación de bosque de AD: diseño de un plan de recuperación de bosque personalizado](AD-Forest-Recovery-Devising-a-Plan.md)
 - [Recuperación del bosque de AD: identificación del problema](AD-Forest-Recovery-Identify-the-Problem.md)
 - [Recuperación del bosque de AD: determinar cómo recuperar](AD-Forest-Recovery-Determine-how-to-Recover.md)
-- [Recuperación de bosque de AD: realizar la recuperación inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)  
-- [Recuperación de bosque de AD: preguntas más frecuentes](AD-Forest-Recovery-FAQ.md)  
-- [Recuperación de bosque de AD: recuperación de un solo dominio en un bosque de varios dominios](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
-- [Recuperación de bosque de AD: recuperación de bosque con controladores de dominio de Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md)  
+- [Recuperación de bosque de AD: realizar la recuperación inicial](AD-Forest-Recovery-Perform-initial-recovery.md)
+- [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)
+- [Recuperación de bosque de AD: preguntas más frecuentes](AD-Forest-Recovery-FAQ.md)
+- [Recuperación de bosque de AD: recuperación de un solo dominio en un bosque de varios dominios](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)
+- [Recuperación de bosque de AD: recuperación de bosque con controladores de dominio de Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md)

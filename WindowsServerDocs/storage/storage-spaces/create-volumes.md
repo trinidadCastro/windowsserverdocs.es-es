@@ -1,19 +1,17 @@
 ---
 title: Crear volúmenes en Espacios de almacenamiento directo
 description: Cómo crear volúmenes en Espacios de almacenamiento directo mediante el centro de administración de Windows y PowerShell.
-ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.date: 02/25/2020
-ms.openlocfilehash: 40750acb260335e858a7763c950dfc4ad2cd7979
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 417deaf61b111b6ba54939505c65e8e0f854e604
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473832"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960948"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>Crear volúmenes en Espacios de almacenamiento directo
 
@@ -24,69 +22,69 @@ En este tema se describe cómo crear volúmenes en un clúster de Espacios de al
 > [!TIP]
 > Si todavía no lo ha hecho, consulte en primer lugar la [planeación de los volúmenes en espacios de almacenamiento directo](plan-volumes.md) .
 
-## <a name="create-a-three-way-mirror-volume"></a>Crear un volumen de reflejo triple
+## <a name="create-a-three-way-mirror-volume"></a>Creación de un volumen de reflejo tridireccional
 
 Para crear un volumen de reflejo triple en el centro de administración de Windows:
 
-1. En el centro de administración de Windows, conéctese a un clúster de Espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** en el panel **herramientas** .
-2. En la página volúmenes, seleccione la pestaña **inventario** y, a continuación, seleccione **crear volumen**.
-3. En el panel **crear volumen** , escriba un nombre para el volumen y deje **resistencia** como **reflejo triple**.
-4. En **tamaño en HDD**, especifique el tamaño del volumen. Por ejemplo, 5 TB (terabytes).
+1. En Windows Admin Center, conéctese a un clúster de Espacios de almacenamiento directo y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
+2. En la página Volumes (Volúmenes), seleccione la pestaña **Inventory** (Inventario) y, a continuación, seleccione **Create volume** (Crear volumen).
+3. En el panel **Create volume** (Crear volumen), escriba un nombre para el volumen y deje **Resiliency** (Resistencia) como **Three-way mirror** (Reflejo triple).
+4. En **Size on HDD**, especifique el tamaño del volumen. Por ejemplo, 5 TB (terabytes).
 5. Seleccione **Crear**.
 
-En función del tamaño, la creación del volumen puede tardar unos minutos. Las notificaciones en la parte superior derecha le indicarán Cuándo se crea el volumen. El nuevo volumen aparece en la lista de inventario.
+En función del tamaño, la creación del volumen puede tardar unos minutos. Las notificaciones de la parte superior derecha le indicarán cuándo está creado el volumen. El nuevo volumen aparece en la lista de inventario.
 
-Vea un vídeo rápido sobre cómo crear un volumen de reflejo triple.
+Vea un breve vídeo sobre cómo crear un volumen de reflejo triple.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/o66etKq70N8]
 
-## <a name="create-a-mirror-accelerated-parity-volume"></a>Crear un volumen de paridad acelerado para reflejo
+## <a name="create-a-mirror-accelerated-parity-volume"></a>Creación de un volumen con paridad acelerada por reflejo
 
-La paridad acelerada para reflejo reduce la superficie del volumen en el HDD. Por ejemplo, un volumen de reflejo triple significa que, para cada 10 terabytes de tamaño, necesitará 30 terabytes como superficie. Para reducir la sobrecarga en la superficie, cree un volumen con paridad acelerada para el reflejo. Esto reduce la superficie de 30 terabytes hasta solo 22 terabytes, incluso con 4 servidores, mediante la creación de reflejo del 20% de los datos más activos y el uso de la paridad, que es más eficaz para almacenar el resto. Puede ajustar esta relación de paridad y reflejo para lograr el equilibrio entre el rendimiento y la capacidad adecuado para su carga de trabajo. Por ejemplo, la paridad del 90 por ciento y el reflejo del 10 por ciento producen menos rendimiento, pero optimiza aún más la superficie.
+La paridad acelerada por reflejo reduce la superficie de memoria del volumen en el HDD. Por ejemplo, un volumen de reflejo triple significa que, por cada 10 terabytes de tamaño, necesitará 30 terabytes como superficie de memoria. Para reducir la sobrecarga en la superficie de memoria, cree un volumen con paridad acelerada por reflejo. Esto reduce la superficie de memoria de 30 terabytes a tan solo 22 terabytes, incluso con 4 servidores solo. Para ello, se crea un reflejo del 20 % de los datos más activos y se usa la paridad, que es más eficaz, para almacenar el resto. Puede ajustar esta proporción entre paridad y reflejo para lograr el equilibrio entre el rendimiento y capacidad adecuado para su carga de trabajo. Por ejemplo, una paridad del 90 % y un reflejo del 10 % producen menos rendimiento, pero optimiza aún más la superficie de memoria.
 
-Para crear un volumen con paridad acelerada para reflejo en el centro de administración de Windows:
+Para crear un volumen con paridad acelerada por reflejo en Windows Admin Center:
 
-1. En el centro de administración de Windows, conéctese a un clúster de Espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** en el panel **herramientas** .
-2. En la página volúmenes, seleccione la pestaña **inventario** y, a continuación, seleccione **crear volumen**.
-3. En el panel **crear volumen** , escriba un nombre para el volumen.
-4. En **resistencia**, seleccione **paridad con aceleración de reflejo**.
-5. En **porcentaje de paridad**, seleccione el porcentaje de paridad.
+1. En Windows Admin Center, conéctese a un clúster de Espacios de almacenamiento directo y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
+2. En la página Volumes (Volúmenes), seleccione la pestaña **Inventory** (Inventario) y, a continuación, seleccione **Create volume** (Crear volumen).
+3. En el panel **Create volume** (Crear volumen), escriba un nombre para el volumen.
+4. En **Resiliency** (Resistencia), seleccione **Mirror-accelerated parity** (Paridad acelerada por reflejo).
+5. En **Parity percentage** (Porcentaje de paridad), seleccione el porcentaje de paridad.
 6. Seleccione **Crear**.
 
-Vea un vídeo rápido sobre cómo crear un volumen de paridad acelerado para reflejo.
+Vea un vídeo rápido sobre cómo crear un volumen de paridad acelerada por reflejo.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/R72QHudqWpE]
 
-## <a name="open-volume-and-add-files"></a>Abrir volumen y agregar archivos
+## <a name="open-volume-and-add-files"></a>Apertura del volumen y adición de archivos
 
-Para abrir un volumen y agregar archivos al volumen en el centro de administración de Windows:
+Para abrir un volumen y agregarle archivos en Windows Admin Center:
 
-1. En el centro de administración de Windows, conéctese a un clúster de Espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** en el panel **herramientas** .
-2. En la página volúmenes, seleccione la pestaña **inventario** .
-2. En la lista de volúmenes, seleccione el nombre del volumen que desea abrir.
+1. En Windows Admin Center, conéctese a un clúster de Espacios de almacenamiento directo y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
+2. En la página Volumes (Volúmenes), seleccione la pestaña **Inventory** (Inventario).
+2. En la lista de volúmenes, seleccione el nombre del volumen que quiere abrir.
 
-    En la página Detalles del volumen, puede ver la ruta de acceso al volumen.
+    En la página de detalles del volumen, verá la ruta de acceso al volumen.
 
-4. En la parte superior de la página, seleccione **abrir**. Esto inicia la herramienta archivos en el centro de administración de Windows.
-5. Navegue hasta la ruta de acceso del volumen. Aquí puede examinar los archivos del volumen.
-6. Seleccione **cargar**y, a continuación, seleccione un archivo para cargar.
-7. Use el botón **atrás** del explorador para volver al panel herramientas del centro de administración de Windows.
+4. En la parte superior de la página, seleccione **Open** (Abrir). Se inicia la herramienta Files (Archivos) en Windows Admin Center.
+5. Vaya a la ruta de acceso del volumen. Aquí puede examinar los archivos del volumen.
+6. Seleccione **Upload** (Cargar) y, a continuación, seleccione un archivo para cargarlo.
+7. Use el botón**Back** (Atrás) del explorador para volver al panel Tools (Herramientas) de Windows Admin Center.
 
 Vea un vídeo rápido sobre cómo abrir un volumen y agregar archivos.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/j59z7ulohs4]
 
-## <a name="turn-on-deduplication-and-compression"></a>Activar la desduplicación y la compresión
+## <a name="turn-on-deduplication-and-compression"></a>Activación de la desduplicación y la compresión
 
-La desduplicación y la compresión se administran por volumen. La desduplicación y la compresión utilizan un modelo de procesamiento posterior, lo que significa que no verá ahorros hasta que se ejecute. Cuando lo hace, funcionará en todos los archivos, incluso en los que estaban allí.
+La desduplicación y la compresión se administran en cada volumen. La desduplicación y la compresión utilizan un modelo de procesamiento posterior, lo que significa que no verá cuánto ahorra hasta que se ejecute. Cuando lo hace, funcionará en todos los archivos, incluso en los que ya estaban allí.
 
-1. En el centro de administración de Windows, conéctese a un clúster de Espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** en el panel **herramientas** .
-2. En la página volúmenes, seleccione la pestaña **inventario** .
+1. En Windows Admin Center, conéctese a un clúster de Espacios de almacenamiento directo y seleccione **Volumes** (Volúmenes) en el panel **Tools** (Herramientas).
+2. En la página Volumes (Volúmenes), seleccione la pestaña **Inventory** (Inventario).
 3. En la lista de volúmenes, seleccione el nombre del volumen que desea administrar.
-4. En la página Detalles del volumen, haga clic en el conmutador con la etiqueta **desduplicación y compresión**.
-5. En el panel habilitar desduplicación, seleccione el modo de desduplicación.
+4. En la página de detalles del volumen, haga clic en el conmutador **Deduplication and compression** (Desduplicación y compresión).
+5. En el panel Enable deduplication (Habilitar desduplicación), seleccione el modo de desduplicación.
 
-    En lugar de configuraciones complicadas, el centro de administración de Windows permite elegir entre perfiles preparados para diferentes cargas de trabajo. Si no está seguro, use la configuración predeterminada.
+    En lugar de configuraciones complicadas, Windows Admin Center permite elegir perfiles ya preparados para diferentes cargas de trabajo. Si no está seguro, use la configuración predeterminada.
 
 6. Seleccione **Habilitar**.
 
@@ -153,7 +151,7 @@ New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Planeación de volúmenes en Espacios de almacenamiento directo](plan-volumes.md)
 - [Extensión de volúmenes en Espacios de almacenamiento directo](resize-volumes.md)
 - [Eliminar volúmenes en Espacios de almacenamiento directo](delete-volumes.md)

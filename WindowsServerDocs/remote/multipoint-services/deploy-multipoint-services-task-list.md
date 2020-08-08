@@ -7,12 +7,12 @@ ms.assetid: e08c5784-5b3e-4028-86c1-96deaee41f09
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 84fb650174d8eecc96a20520c313f20001d61314
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 21156d0364c6f6260ffa7b221db350930aa29fb1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970532"
+ms.locfileid: "87997302"
 ---
 # <a name="task-lists-multipoint-services"></a>Listas de tareas: Multipoint Services
 Use las listas de tareas de este tema para ayudarle a implementar el sistema Multipoint Services y realizar un seguimiento de las tareas completadas. No todas las tareas se aplican a todos los entornos. Por ejemplo, algunas tareas solo se realizan si implementa un servidor Multipoint en un dominio de Active Directory. Otros, como la creación de estaciones de pantalla dividida o la implementación de escritorios virtuales para estaciones, son opcionales. Para ver los procedimientos que explican cómo realizar estas tareas, vea [Deploying Multipoint Services](deploying-multipoint-services.md).
@@ -22,16 +22,16 @@ Use las listas de tareas de este tema para ayudarle a implementar el sistema Mul
 |Tarea|Descripción|
 |--------|---------------|
 |**1**|[Planeación de la implementación de Multipoint Services](planning-a-multipoint-services-deployment.md)|
-|**2**|[Recopilar controladores de hardware y de dispositivo necesarios para la instalación](Collect-hardware-and-device-drivers-needed-for-the-installation.md)|
+|**2**|[Recopilar controladores de hardware y de dispositivo necesarios para la instalación](./multipoint-hardware-device-drivers.md)|
 |**3**|[Configurar el equipo físico y la estación principal](Set-up-the-physical-computer-and-primary-station.md)|
 |**4**|[Instalar MultiPoint Services](Install-MultiPoint-services.md)|
 |**5**|[Actualizar e instalar a controladores de dispositivo si es necesario](Update-and-install-device-drivers-if-needed.md)|
-|**6**|[Establecer la fecha, la hora y la zona horaria](Set-the-date--time--and-time-zone.md)|
-|**7**|[Unir el equipo de Multipoint Services a un dominio: opcional](Join-the-MultiPoint-services-computer-to-a-domain--optional-.md)|
+|**6**|[Establecer la fecha, la hora y la zona horaria](./set-the-date-time.md)|
+|**7**|[Unir el equipo de Multipoint Services a un dominio: opcional](./join-multipoint-services-to-a-domain.md)|
 |**8**|[Instalar actualizaciones.](Install-updates.md)|
-|**9**|[Conexión de estaciones adicionales al equipo de Multipoint Services](Attach-additional-stations-to-your-MultiPoint-services-computer.md)|
-|**10**|[Activación de Multipoint Services y adición de cal](manage-client-access-licenses-with-multipoint-services.md)|
-|**11**|[Instalación del software en el sistema Multipoint Services](Install-software-on-your-MultiPoint-services-system.md)|
+|**9**|[Conexión de estaciones adicionales al equipo de Multipoint Services](./multipoint-attach-additional-stations.md)|
+|**10**|[Activación de Multipoint Services y adición de cal](./manage-client-access-licenses.md)|
+|**11**|[Instalación del software en el sistema Multipoint Services](./install-software-on-multipoint.md)|
 
 ## <a name="task-list-optional-configurations"></a>Lista de tareas: configuraciones opcionales
 
@@ -47,7 +47,7 @@ Use las listas de tareas de este tema para ayudarle a implementar el sistema Mul
 |--------|
 |[Planeación de cuentas de usuario](Plan-user-accounts-for-your-MultiPoint-services-environment.md)|
 |[Crear cuentas de usuario locales](Create-local-user-accounts.md)|
-|[Limitar el acceso de los usuarios al servidor](Limit-users--access-to-the-server-in-MultiPoint-services.md)|
+|[Limitar el acceso de los usuarios al servidor](./limit-user-access-to-multipoint.md)|
 |[Configurar estaciones de inicio de sesión automático](Configure-stations-for-automatic-logon.md)|
 |[Permitir que una cuenta tenga varias sesiones](Allow-one-account-to-have-multiple-sessions.md)|
 |[Habilitar el uso compartido de archivos](Enable-file-sharing-in-MultiPoint-services.md)|
@@ -57,4 +57,4 @@ Use las listas de tareas de este tema para ayudarle a implementar el sistema Mul
 |Tarea|
 |--------|
 |[Configurar la protección de disco](Configure-Disk-Protection-in-MultiPoint-services.md)|
-|[Instalar copia de seguridad del servidor](Install-Server-Backup-on-your-MultiPoint-services-computer.md)|
+|[Instalar copia de seguridad del servidor](./install-server-backup-on-multipoint.md)|

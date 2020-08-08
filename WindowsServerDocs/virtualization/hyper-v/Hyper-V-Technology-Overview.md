@@ -7,12 +7,12 @@ ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
 author: kbdazure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: 5fd4c0199cea04d6697b593ad70b4f31b55afad0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2d69a16dc49c34872d3787338a1fd130aaf7241d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960768"
+ms.locfileid: "87997036"
 ---
 # <a name="hyper-v-technology-overview"></a>Información general sobre la tecnología Hyper-V
 
@@ -58,11 +58,11 @@ Hyper-V ofrece muchas características. Se trata de una introducción, agrupada 
 
 Las máquinas virtuales blindadas y de arranque seguro de **seguridad** ayudan a protegerse contra malware y otro acceso no autorizado a una máquina virtual y sus datos.
 
-Para obtener un resumen de las características introducidas en esta versión, consulte [novedades de Hyper-V en Windows Server](What-s-new-in-Hyper-V-on-Windows.md). Algunas características o partes tienen un límite de número de elementos que se pueden configurar. Para obtener más información, vea [planear la escalabilidad de Hyper-V en Windows Server 2016](plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md).
+Para obtener un resumen de las características introducidas en esta versión, consulte [novedades de Hyper-V en Windows Server](What-s-new-in-Hyper-V-on-Windows.md). Algunas características o partes tienen un límite de número de elementos que se pueden configurar. Para obtener más información, vea [planear la escalabilidad de Hyper-V en Windows Server 2016](./plan/plan-hyper-v-scalability-in-windows-server.md).
 
 ## <a name="how-to-get-hyper-v"></a>Cómo obtener Hyper-V
 
-Hyper-V está disponible en Windows Server y Windows, como un rol de servidor disponible para las versiones x64 de Windows Server. Para obtener instrucciones sobre el servidor, consulte [instalar el rol Hyper-V en Windows Server](get-started/Install-the-Hyper-V-role-on-Windows-Server.md). En Windows, está disponible como [característica](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) en algunas versiones de 64 bits de Windows. También está disponible como un producto de servidor independiente descargable, [Microsoft Hyper-V Server](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019).
+Hyper-V está disponible en Windows Server y Windows, como un rol de servidor disponible para las versiones x64 de Windows Server. Para obtener instrucciones sobre el servidor, consulte [instalar el rol Hyper-V en Windows Server](get-started/Install-the-Hyper-V-role-on-Windows-Server.md). En Windows, está disponible como [característica](/virtualization/hyper-v-on-windows/index) en algunas versiones de 64 bits de Windows. También está disponible como un producto de servidor independiente descargable, [Microsoft Hyper-V Server](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019).
 
 ## <a name="supported-operating-systems"></a>Sistemas operativos admitidos
 
@@ -85,8 +85,8 @@ Hyper-V ha requerido partes que funcionan conjuntamente para que pueda crear y e
 Hyper-V también tiene herramientas para la administración y la conectividad. Puede instalarlos en el mismo equipo en el que está instalado el rol de Hyper-V y en los equipos sin el rol de Hyper-V instalado. Estas herramientas son:
 
 - Administrador de Hyper-V
-- [Módulo de Hyper-V para Windows PowerShell](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- Conexión de máquina [virtual](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \( a veces denominado VMConnect\)
+- [Módulo de Hyper-V para Windows PowerShell](/powershell/module/hyper-v/index)
+- Conexión de máquina [virtual](./learn-more/hyper-v-virtual-machine-connect.md) \( a veces denominado VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>Tecnologías relacionadas
@@ -94,9 +94,9 @@ Hyper-V también tiene herramientas para la administración y la conectividad. P
 Estas son algunas tecnologías de Microsoft que se suelen usar con Hyper-V:
 
 - [Clústeres de conmutación por error](../../failover-clustering/whats-new-in-failover-clustering.md)
-- [Servicios de Escritorio remoto](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
-- [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
+- [Servicios de Escritorio remoto](../../remote/remote-desktop-services/welcome-to-rds.md)
+- [System Center Virtual Machine Manager](/system-center/vmm/overview)
 
 Varias tecnologías de almacenamiento: volúmenes compartidos de clúster, SMB 3,0, espacios de almacenamiento directo
 
-Los contenedores de Windows ofrecen otro enfoque para la virtualización. Vea la biblioteca de [contenedores de Windows](https://docs.microsoft.com/virtualization/windowscontainers/index) en MSDN.
+Los contenedores de Windows ofrecen otro enfoque para la virtualización. Vea la biblioteca de [contenedores de Windows](/virtualization/windowscontainers/index) en MSDN.

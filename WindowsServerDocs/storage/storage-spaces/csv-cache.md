@@ -1,19 +1,17 @@
 ---
 title: Espacios de almacenamiento directo caché de lectura en memoria
-ms.prod: windows-server
 ms.author: eldenc
 manager: siroy
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fff78ddc831ae9f6cba103d7630da3afec2c87d7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce4546a3c3933700b7aec812027e2abc91f718f9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474242"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960918"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>Uso de Espacios de almacenamiento directo con la memoria caché de lectura en memoria de CSV
 > Se aplica a: Windows Server 2016 y Windows Server 2019
@@ -71,4 +69,4 @@ Get-ClusterSharedVolume | ForEach {
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)

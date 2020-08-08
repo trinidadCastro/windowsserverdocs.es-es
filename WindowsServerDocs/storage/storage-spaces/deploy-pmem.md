@@ -1,27 +1,25 @@
 ---
-title: Descripción e implementación de una memoria persistente
+title: Descripción e implementación de memoria persistente
 description: Información detallada sobre qué es la memoria persistente y cómo configurarla con espacios de almacenamiento directo en Windows Server 2019.
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5f88ac2ec728e176735ad58d9d67112583c527
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 512b53be7af89fe9e0fd017af14425264062ed29
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469650"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960908"
 ---
-# <a name="understand-and-deploy-persistent-memory"></a>Descripción e implementación de una memoria persistente
+# <a name="understand-and-deploy-persistent-memory"></a>Descripción e implementación de memoria persistente
 
 > Se aplica a: Windows Server 2019
 
 La memoria persistente (o PMem) es un nuevo tipo de tecnología de memoria que proporciona una combinación única de capacidad y persistencia asequibles. En este artículo se proporciona información general sobre PMem y los pasos para implementarlo en Windows Server 2019 mediante Espacios de almacenamiento directo.
 
-## <a name="background"></a>Fondo
+## <a name="background"></a>Información previa
 
 PMem es un tipo de RAM no volátil (NVDIMM) que conserva su contenido a través de ciclos de energía. El contenido de la memoria permanece incluso cuando se interrumpe la alimentación del sistema en caso de que se produzca una pérdida de energía inesperada, el cierre Iniciado por el usuario, el bloqueo del sistema, etc. Esta característica única significa que también puede usar PMem como almacenamiento. Este es el motivo por el que puede oír que los usuarios hacen referencia a PMem como "memoria de clase de almacenamiento".
 
@@ -57,9 +55,9 @@ En la tabla siguiente se muestra el hardware de memoria persistente compatible p
 
 | Tecnología de memoria persistente                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
-| **NVDIMM-N** en modo persistente                                  | Compatible                | Compatible.                |
+| **NVDIMM-N** en modo persistente                                  | Compatible                | Compatible                |
 | **Intel Optane &trade; Memoria persistente de DC** en modo de aplicación directa             | No compatible            | Compatible                |
-| **Intel Optane &trade; Memoria persistente de DC** en modo de memoria | Compatible            | Compatible.                |
+| **Intel Optane &trade; Memoria persistente de DC** en modo de memoria | Compatible            | Compatible                |
 
 > [!NOTE]
 > Intel Optane admite los modos de *memoria* (volátil) y *aplicación directa* (persistente).
@@ -311,6 +309,6 @@ Initializing the physical persistent memory device. This may take a few moments.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Administración de estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows](storage-class-memory-health.md)
 - [Descripción de la memoria caché](understand-the-cache.md)

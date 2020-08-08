@@ -1,20 +1,18 @@
 ---
 title: Información general de TLS/SSL (Schannel SSP)
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: 0d963116fc9f22482398b38482f0c3c49f4be505
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 512dd20e658f610ac9de7247380eed5d2aed54f6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475522"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989473"
 ---
 # <a name="tlsssl-overview-schannel-ssp"></a>Información general de TLS/SSL (Schannel SSP)
 
@@ -40,7 +38,7 @@ Por ejemplo, puede usar TLS/SSL para:
 -   Acceso SQL
 -   Correo electrónico
 
-## <a name="requirements"></a><a name="BKMK_SOFT"></a>Satisfacer
+## <a name="requirements"></a><a name="BKMK_SOFT"></a>Requisitos
 Los protocolos TLS y SSL usan un modelo cliente/servidor y se basan en la autenticación de certificados, que requiere una infraestructura de clave pública.
 
 ## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>Información sobre el Administrador del servidor
@@ -48,6 +46,6 @@ No hay pasos de configuración necesarios para implementar TLS, SSL o Schannel.
 
 ## <a name="additional-references"></a>Referencias adicionales ##
 
--   [Paquete de seguridad Schannel](https://docs.microsoft.com/windows/desktop/com/schannel)
--   [Canal seguro](https://docs.microsoft.com/windows/desktop/SecAuthN/secure-channel)
--   [Protocolo de seguridad de la capa de transporte](https://docs.microsoft.com/windows/desktop/SecAuthN/transport-layer-security-protocol)
+-   [Paquete de seguridad Schannel](/windows/desktop/com/schannel)
+-   [Canal seguro](/windows/desktop/SecAuthN/secure-channel)
+-   [Protocolo de seguridad de la capa de transporte](/windows/desktop/SecAuthN/transport-layer-security-protocol)

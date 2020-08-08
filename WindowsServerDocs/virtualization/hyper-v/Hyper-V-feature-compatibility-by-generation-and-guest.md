@@ -7,12 +7,12 @@ ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 1ea9e0d86e61f574af45b85701bae941bb9f6ad5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5de7f55d9fead7b720991749dd1c83aa727636c4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960758"
+ms.locfileid: "87997027"
 ---
 # <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>Compatibilidad de las características de Hyper-V por generación e invitado
 
@@ -32,13 +32,13 @@ Característica  | Generation | Sistema operativo invitado
 Puntos de control | 1 y 2 | Cualquier invitado compatible
 Agrupación en clústeres invitados | 1 y 2 | Invitados que ejecutan aplicaciones compatibles con clústeres y tienen instalado el software de destino iSCSI
 Replicación | 1 y 2 | Cualquier invitado compatible
-Controlador de dominio | 1 y 2 | Cualquier invitado de Windows Server compatible con solo puntos de control de producción. Consulte [sistemas operativos invitados compatibles con Windows Server](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows#supported-windows-server-guest-operating-systems)
+Controlador de dominio | 1 y 2 | Cualquier invitado de Windows Server compatible con solo puntos de control de producción. Consulte [sistemas operativos invitados compatibles con Windows Server](./supported-windows-guest-operating-systems-for-hyper-v-on-windows.md#supported-windows-server-guest-operating-systems)
 
 ## <a name="compute"></a>Proceso
 
 Característica  | Generation | Sistema operativo invitado
 ------------- | ------------- | -----------
-Memoria dinámica | 1 y 2 | Versiones específicas de invitados admitidos. Vea [información general de memoria dinámica de Hyper-V](https://technet.microsoft.com/library/hh831766.aspx) para versiones anteriores a windows Server 2016 y Windows 10.
+Memoria dinámica | 1 y 2 | Versiones específicas de invitados admitidos. Vea [información general de memoria dinámica de Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11)) para versiones anteriores a windows Server 2016 y Windows 10.
 Adición o eliminación de memoria en caliente | 1 y 2 | Windows Server 2016, Windows 10
 NUMA virtual | 1 y 2 | Cualquier invitado compatible
 
@@ -87,10 +87,3 @@ SMB3 | 1 y 2 | Todo eso es compatible con SMB3
 Espacios de almacenamiento directo | 2 | Windows Server 2016
 Canal de fibra virtual | 1 y 2 | Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 Formato VHDX | 1 y 2 | Cualquier invitado compatible
-
-
-
-
-
-
-

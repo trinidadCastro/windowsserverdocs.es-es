@@ -1,20 +1,18 @@
 ---
 title: Requisitos de hardware de Espacios de almacenamiento directo
-ms.prod: windows-server
 description: Requisitos de hardware mínimos para las pruebas de Espacios de almacenamiento directo.
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 07/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ef438d58c9d36275f2e7a32ce93a383bd21a70
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 8c53179f32f0e6837297859413fa0cb88d66a0d2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864280"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961129"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
@@ -47,7 +45,7 @@ Además, se aplican los siguientes requisitos:
 - Procesador compatible con Intel Nehalem o posterior; de
 - Procesador compatible con AMD EPYC o posterior
 
-## <a name="memory"></a>Memoria
+## <a name="memory"></a>Memory
 
 - Memoria para Windows Server, máquinas virtuales y otras aplicaciones o cargas de trabajo; signos
 - 4 GB de RAM por terabyte (TB) de capacidad de la unidad de caché en cada servidor, para metadatos de Espacios de almacenamiento directo
@@ -60,19 +58,19 @@ Además, se aplican los siguientes requisitos:
 
 ## <a name="networking"></a>Redes
 
-Espacios de almacenamiento directo requiere una conexión de red de baja latencia y ancho de banda alto confiable entre cada nodo.  
+Espacios de almacenamiento directo requiere una conexión de red de baja latencia y ancho de banda alto confiable entre cada nodo.
 
 Interconexión mínima para el nodo 2-3 de pequeña escala
 - tarjeta de interfaz de red (NIC) de 10 Gbps o más rápido
 - Se recomiendan dos o más conexiones de red de cada nodo para redundancia y rendimiento
 
-Interconexión recomendada para un alto rendimiento, a escala o a implementaciones de 4 + 
+Interconexión recomendada para un alto rendimiento, a escala o a implementaciones de 4 +
 - NIC que son compatibles con el acceso directo a memoria remota (RDMA), iWARP (recomendado) o RoCE
 - Se recomiendan dos o más conexiones de red de cada nodo para redundancia y rendimiento
 - NIC de 25 Gbps o más rápido
 
 Interconexiones de nodo conmutado o sin conmutador
-- Cambiado: los conmutadores de red deben estar configurados correctamente para administrar el ancho de banda y el tipo de red.  Si usa RDMA que implementa el protocolo RoCE, la configuración del dispositivo y del conmutador de red es aún más importante. 
+- Cambiado: los conmutadores de red deben estar configurados correctamente para administrar el ancho de banda y el tipo de red.  Si usa RDMA que implementa el protocolo RoCE, la configuración del dispositivo y del conmutador de red es aún más importante.
 - Sin conmutador: los nodos se pueden interconectar mediante conexiones directas, evitando el uso de un modificador.  Es necesario que todos los nodos tengan una conexión directa con todos los demás nodos del clúster.
 
 

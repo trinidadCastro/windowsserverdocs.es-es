@@ -1,8 +1,6 @@
 ---
 title: Redes
 description: En este tema se proporciona una visión general de las tecnologías de redes definidas por software y la plataforma de redes que están disponibles en Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.date: 05/08/2018
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
@@ -10,19 +8,19 @@ manager: dougkim
 ms.author: anpaul
 author: AnirbanPaul
 ms.localizationpriority: medium
-ms.openlocfilehash: 39bda1ac3a8b3cbac61435b65baf538f2d71e20e
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 30939a702f0856461e7b8a08af2dfd40b4a4456d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408914"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997362"
 ---
 # <a name="networking"></a>Redes
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 > [!TIP]
-> ¿Busca información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puede [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Busca información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puede [buscar en este sitio](/search/index?dataSource=previousVersions&search=Windows+Server) para obtener información específica.
 
 <img src="../media/landing-icons/network.png" style='float:left; padding:.5em;' alt="Icon depicting two networked computers"> Las funciones de red son una parte fundamental de la plataforma de servidor de bases de Datacenter de Datacenter \( \) y Windows Server 2016 proporciona tecnologías de red de redes definidas por software nuevas y mejoradas \( \) que le ayudarán a pasar a una solución de SDDC completa para su organización.
 
@@ -95,7 +93,7 @@ Aprenda a implementar una red de Windows Server con la guía de red principal, a
 
 DirectAccess permite la conectividad de los usuarios remotos con los recursos de la red de la organización.
 
-La documentación de DirectAccess se encuentra ahora en la sección [Administración de acceso remoto y administración de servidores](https://docs.microsoft.com/windows-server/remote/) de la tabla de contenido de Windows Server 2016, en [acceso remoto](https://docs.microsoft.com/windows-server/remote/remote-access/remote-access). Para obtener más información, consulte [DirectAccess](../remote/remote-access/directaccess/DirectAccess.md).
+La documentación de DirectAccess se encuentra ahora en la sección [Administración de acceso remoto y administración de servidores](../remote/index.yml) de la tabla de contenido de Windows Server 2016, en [acceso remoto](../remote/remote-access/remote-access.md). Para obtener más información, consulte [DirectAccess](../remote/remote-access/directaccess/DirectAccess.md).
 
 ### <a name="domain-name-system-40dns41"></a>[Sistema de nombres de dominio &#40;DNS&#41;](dns/dns-top.md)
 
@@ -158,9 +156,9 @@ Puede usar la Directiva de QoS como punto central de administración de ancho de
 
 Puede usar tecnologías de acceso remoto, como DirectAccess y VPN de red privada \( virtual \) para proporcionar a los trabajadores remotos conectividad a los recursos de la red interna. Además, puede usar el acceso remoto para el enrutamiento de LAN de red de área local \( \) y para el proxy de aplicación Web. que proporciona funcionalidad de proxy inverso para aplicaciones web dentro de la red corporativa para permitir a los usuarios de cualquier dispositivo tener acceso a ellas desde fuera de la red corporativa.
 
-La documentación de acceso remoto se encuentra ahora en la sección [Administración de acceso remoto y administración de servidores](https://docs.microsoft.com/windows-server/remote/) de la tabla de contenido de Windows Server 2016. Para obtener más información, consulte [acceso remoto](../remote/remote-access/remote-access.md).
+La documentación de acceso remoto se encuentra ahora en la sección [Administración de acceso remoto y administración de servidores](../remote/index.yml) de la tabla de contenido de Windows Server 2016. Para obtener más información, consulte [acceso remoto](../remote/remote-access/remote-access.md).
 
-Para obtener más información sobre el proxy de aplicación Web, que es un servicio de rol del rol de servidor de acceso remoto, vea [proxy de aplicación web en Windows server 2016](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server).
+Para obtener más información sobre el proxy de aplicación Web, que es un servicio de rol del rol de servidor de acceso remoto, vea [proxy de aplicación web en Windows server 2016](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md).
 
 ### <a name="virtual-private-networking-vpn"></a>[Redes privadas virtuales (VPN)](../remote/remote-access/vpn/vpn-top.md)
 
@@ -170,14 +168,14 @@ Al instalar el acceso remoto como un servidor VPN, puede usar la VPN de red priv
 
 Con Windows Server 2016 VPN de acceso remoto y equipos cliente de Windows 10, ahora puede implementar Always On VPN. Always On VPN le ofrece la capacidad de administrar clientes VPN remotos que siempre están conectados, a la vez que proporciona comodidad para los trabajadores remotos, que ya no necesitan conectarse y desconectarse manualmente de la VPN a la red de su organización.
 
-Para obtener más información, consulte el [acceso remoto Always on guía de implementación de VPN para Windows Server 2016 y Windows 10](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy).
+Para obtener más información, consulte el [acceso remoto Always on guía de implementación de VPN para Windows Server 2016 y Windows 10](../remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy.md).
 
 >[!NOTE]
->La documentación de VPN se encuentra ahora en la sección [Administración de acceso remoto y administración de servidores](https://docs.microsoft.com/windows-server/remote/) de la tabla de contenido de Windows Server 2016, en [acceso remoto](https://docs.microsoft.com/windows-server/remote/remote-access/remote-access).
+>La documentación de VPN se encuentra ahora en la sección [Administración de acceso remoto y administración de servidores](../remote/index.yml) de la tabla de contenido de Windows Server 2016, en [acceso remoto](../remote/remote-access/remote-access.md).
 
-Para obtener más información acerca de VPN, consulte [red privada virtual (VPN)](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/vpn-top).
+Para obtener más información acerca de VPN, consulte [red privada virtual (VPN)](../remote/remote-access/vpn/vpn-top.md).
 
-### <a name="windows-container-networking"></a>[Red de contenedores de Windows](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)
+### <a name="windows-container-networking"></a>[Red de contenedores de Windows](/virtualization/windowscontainers/manage-containers/container-networking)
 
 Las redes de contenedor de Windows permiten crear y administrar redes para conectar puntos de conexión de contenedor en hosts de Windows 10 y Windows Server mediante el uso de las herramientas y los flujos de trabajo estándar del sector. Las redes de contenedor de Windows admiten varias topologías, como Private, Flat-L2 y enrutado-L3.
 
@@ -191,6 +189,6 @@ El servicio de nombres Internet de Windows (WINS) es un servicio de resolución 
 
 Los recursos de red para los sistemas operativos anteriores a Windows Server 2016 están disponibles en las siguientes ubicaciones.
 
-- [Introducción a las redes](https://technet.microsoft.com/library/hh831357.aspx) de Windows Server 2012 y Windows Server 2012 R2
-- [Redes](https://technet.microsoft.com/library/cc753940) de Windows Server 2008 y Windows Server 2008 R2
+- [Introducción a las redes](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831357(v=ws.11)) de Windows Server 2012 y Windows Server 2012 R2
+- [Redes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753940(v=ws.10)) de Windows Server 2008 y Windows Server 2008 R2
 - Contenido retirado de Windows Server 2003 [Windows server 2003/2003 R2](https://www.microsoft.com/download/details.aspx?id=53314)

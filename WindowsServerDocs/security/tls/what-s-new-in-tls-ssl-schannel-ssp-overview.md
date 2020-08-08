@@ -1,20 +1,18 @@
 ---
 title: Información general de TLS-SSL (Schannel SSP)
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 ms.assetid: c8836345-16bb-4dcc-8d2b-2b9b687456a3
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: b70a8fefc05723b78dbf5e652bf35f7b8b5cff4d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a60ed0b1228780ebb6e8d1e75541dc3089f7665c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182321"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989451"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>Información general sobre TLS-SSL (Schannel SSP)
 
@@ -24,7 +22,7 @@ En este tema para profesionales de TI se describen los cambios en la funcionalid
 
 Schannel es un proveedor de compatibilidad para seguridad (SSP) que implementa los protocolos de autenticación estándar de Internet de SSL y TLS y DTLS. La interfaz del proveedor de compatibilidad para seguridad (SSPI) es una API que usan los sistemas Windows para realizar funciones basadas en la seguridad, incluida la autenticación. SSPI funciona como una interfaz común a varios proveedores de compatibilidad para seguridad (SSP), incluido el Schannel SSP.
 
-Para obtener más información sobre la implementación de TLS y SSL de Microsoft en Schannel SSP, consulte la [referencia técnica de TLS/SSL (2003)](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx).
+Para obtener más información sobre la implementación de TLS y SSL de Microsoft en Schannel SSP, consulte la [referencia técnica de TLS/SSL (2003)](/previous-versions/windows/it-pro/windows-server-2003/cc784149(v=ws.10)).
 
 
 ## <a name="tlsssl-schannel-ssp-features"></a>Características de TLS/SSL (Schannel SSP)
@@ -94,17 +92,17 @@ Si el almacén de **entidades certificación raíz de confianza** que se usó co
 
 La arquitectura de Schannel SSP en Windows Server 2012 usará de forma predeterminada los almacenes como se describió anteriormente para administrar la lista de emisores de confianza. Todavía puede usar los cmdlets de administración certificados existente del proveedor de PowerShell, además de herramientas de línea de comandos como Certutil para administrar certificados.
 
-Para obtener información acerca de cómo administrar certificados mediante el proveedor de PowerShell, consulte [Cmdlets de administración de AD CS en Windows](https://technet.microsoft.com/library/hh848365(v=wps.620).aspx).
+Para obtener información acerca de cómo administrar certificados mediante el proveedor de PowerShell, consulte [Cmdlets de administración de AD CS en Windows](/powershell/module/adcsadministration/?view=winserver2012-ps).
 
-Para obtener información acerca de cómo administrar certificados mediante la utilidad de certificados, consulte [certutil.exe](https://technet.microsoft.com/library/cc732443.aspx).
+Para obtener información acerca de cómo administrar certificados mediante la utilidad de certificados, consulte [certutil.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732443(v=ws.11)).
 
-Para obtener información acerca de los datos, incluido el almacén definido por la aplicación, están definidos para una credencial de Schannel, consulte [Estructura SCHANNEL_CRED (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx).
+Para obtener información acerca de los datos, incluido el almacén definido por la aplicación, están definidos para una credencial de Schannel, consulte [Estructura SCHANNEL_CRED (Windows)](/windows/win32/api/schannel/ns-schannel-schannel_cred).
 
 **Valores predeterminados para los modos de confianza**
 
 Hay tres modos de confianza de autenticación de cliente admitidos por el proveedor de Schannel. El modo de confianza controla cómo se realiza la validación de la cadena de certificados del cliente y es una configuración de todo el sistema controlada por el REG_DWORD "ClientAuthTrustMode" en HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel.
 
-|Value|Modo de confianza|Descripción|
+|Valor|Modo de confianza|Descripción|
 |-----|-------|--------|
 |0|Confianza de la máquina (valor predeterminado)|Requiere la emisión del certificado de cliente por parte de un certificado de la lista de emisores de confianza.|
 |1|Confianza de raíz exclusiva|Requiere que un certificado de cliente se encadene con un certificado raíz contenido en el almacén del emisor de confianza especificado por el emisor. El certificado también debe ser emitido por un emisor de la lista de emisores de confianza|
@@ -148,4 +146,4 @@ Las aplicaciones que usan DTLS a través de UDP pueden usar el modelo SSPI en Wi
 En Schannel SSP para Windows Server 2012 y Windows 8, no hay características ni funcionalidades desusadas.
 
 ## <a name="additional-references"></a>Referencias adicionales
--   [Modelo de seguridad de nube privada: funcionalidad contenedora](https://docs.microsoft.com/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)
+-   [Modelo de seguridad de nube privada: funcionalidad contenedora](/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)

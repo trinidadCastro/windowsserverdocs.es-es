@@ -1,24 +1,23 @@
 ---
 title: Creación de una máquina virtual blindada mediante PowerShell
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: abc1a2af7353bd85e0ae7ac55debc36d63d1782f
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: 3272f1dd75f3e8df506341d49c1c32346bb5dbce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942294"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971332"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>Creación de una máquina virtual blindada mediante PowerShell
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
-En producción, normalmente usaría un administrador de tejido (por ejemplo, VMM) para implementar máquinas virtuales blindadas. Sin embargo, los pasos que se muestran a continuación permiten implementar y validar todo el escenario sin un administrador de tejido.
+En producción, normalmente usaría un administrador de tejido (por ejemplo, VMM) para implementar máquinas virtuales blindadas.
+Sin embargo, los pasos que se muestran a continuación permiten implementar y validar todo el escenario sin un administrador de tejido.
 
 En pocas palabras, creará un disco de plantilla, un archivo de datos de blindaje, un archivo de respuesta de instalación desatendida y otros artefactos de seguridad en cualquier equipo y, después, copiará estos archivos en un host protegido y aprovisionará la máquina virtual blindada.
 
@@ -56,21 +55,21 @@ Además, necesitará un archivo de respuesta de instalación desatendida (unatte
 Ejecute los siguientes cmdlets en un equipo con la Herramientas de administración remota del servidor para las máquinas virtuales blindadas instaladas.
 Si va a crear un PDK para una máquina virtual Linux, debe hacerlo en un servidor que ejecute Windows Server, versión 1709 o posterior.
 
- 
+
 ```powershell
 # Create owner certificate, don't lose this!
 # The certificate is stored at Cert:\LocalMachine\Shielded VM Local Certificates
 $Owner = New-HgsGuardian –Name 'Owner' –GenerateCertificates
- 
+
 # Import the HGS guardian for each fabric you want to run your shielded VM
 $Guardian = Import-HgsGuardian -Path C:\HGSGuardian.xml -Name 'TestFabric'
- 
+
 # Create the PDK file
 # The "Policy" parameter describes whether the admin can see the VM's console or not
 # Use "EncryptionSupported" if you are testing out shielded VMs and want to debug any issues during the specialization process
 New-ShieldingDataFile -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Owner $Owner –Guardian $guardian –VolumeIDQualifier (New-VolumeIDQualifier -VolumeSignatureCatalogFilePath 'C:\temp\MyTemplateDiskCatalog.vsc' -VersionRule Equals) -WindowsUnattendFile 'C:\unattend.xml' -Policy Shielded
 ```
-    
+
 ## <a name="provision-shielded-vm-on-a-guarded-host"></a>Aprovisionar una máquina virtual blindada en un host protegido
 En un host que ejecuta Windows Server 2016, puede supervisar que la máquina virtual se cierre para indicar la finalización de la tarea de aprovisionamiento y consultar los registros de eventos de Hyper-V para obtener información de error si el aprovisionamiento no se realiza correctamente.
 

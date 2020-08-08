@@ -1,25 +1,23 @@
 ---
 title: Caso práctico del SDK del centro de administración de Windows-Lenovo
 description: Caso práctico del SDK del centro de administración de Windows-Lenovo
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: a51b4bb5f6dc7dcd002b8e7a8998ce731fa374ed
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: 74afb81918512b45b39e3ba85649cd3edac1d3d7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942342"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949719"
 ---
 # <a name="lenovo-xclarity-integrator-extension"></a>Extensión de integrador de Lenovo XClarity
 
 ## <a name="integrated-hardware-management-everywhere"></a>Administración de hardware integrada en todo el mundo.
 
-La extensión de [integrador de Lenovo XClarity](https://www.lenovo.com/us/en/data-center/software/systems-management/XClarity-Integrator/p/WMD00000370) para el centro de administración de Windows proporciona a los administradores una experiencia sin problemas para administrar la infraestructura de Lenovo directamente desde el centro de administración de Windows. La extensión de integrador de XClarity incluye una extensión de solución independiente y también amplía las soluciones existentes del administrador de clústeres de Administrador del servidor, Administrador de clústeres de conmutación por error y hiperconvergidas en una única interfaz de usuario unificada para habilitar la administración de servidores simple. 
+La extensión de [integrador de Lenovo XClarity](https://www.lenovo.com/us/en/data-center/software/systems-management/XClarity-Integrator/p/WMD00000370) para el centro de administración de Windows proporciona a los administradores una experiencia sin problemas para administrar la infraestructura de Lenovo directamente desde el centro de administración de Windows. La extensión de integrador de XClarity incluye una extensión de solución independiente y también amplía las soluciones existentes del administrador de clústeres de Administrador del servidor, Administrador de clústeres de conmutación por error y hiperconvergidas en una única interfaz de usuario unificada para habilitar la administración de servidores simple.
 
 La extensión de la solución incluida en la extensión de integrador de XClarity permite conectarse a un administrador de Lenovo XClarity, a un bastidor de Lenovo o a los servidores de torre o a todos los servidores de un chasis entero a la vez. Una vez que se agregan los servidores, puede ver el estado general de todos los nodos agregados.
 
