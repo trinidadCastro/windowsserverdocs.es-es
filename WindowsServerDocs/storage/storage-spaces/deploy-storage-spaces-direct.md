@@ -8,12 +8,12 @@ author: stevenek
 ms.date: 07/24/2020
 description: Instrucciones paso a paso para implementar el almacenamiento definido por software con Espacios de almacenamiento directo en Windows Server como infraestructura hiperconvergida o infraestructura convergente (también conocida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: a15f9df55fd5650443f4d0220dee6b4ada9253d2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f0115e76ca297fa0af5fc57e197d75e428cb3e72
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971112"
+ms.locfileid: "87997569"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implementar espacios de almacenamiento directo
 
@@ -49,7 +49,7 @@ Recopile la información siguiente:
 
 El primer paso es instalar Windows Server en todos los servidores que estarán en el clúster. Espacios de almacenamiento directo requiere Windows Server 2016 Datacenter Edition. Puede usar la opción de instalación Server Core o servidor con experiencia de escritorio.
 
-Al instalar Windows Server mediante el Asistente para la instalación, puede elegir entre *Windows Server* (que hace referencia a Server Core) y *Windows Server (servidor con experiencia de escritorio)*, que es el equivalente de la opción de instalación *completa* disponible en Windows Server 2012 R2. Si no elige, obtendrá la opción de instalación Server Core. Para obtener más información, consulte [Opciones de instalación para Windows Server 2016](../../get-started/Windows-Server-2016.md).
+Al instalar Windows Server mediante el Asistente para la instalación, puede elegir entre *Windows Server* (que hace referencia a Server Core) y *Windows Server (servidor con experiencia de escritorio)*, que es el equivalente de la opción de instalación *completa* disponible en Windows Server 2012 R2. Si no elige, obtendrá la opción de instalación Server Core. Para obtener más información, consulte [Opciones de instalación para Windows Server 2016](../../index.yml).
 
 ### <a name="step-12-connect-to-the-servers"></a>Paso 1,2: conexión a los servidores
 

@@ -2,18 +2,16 @@
 title: Edit Quota Template Properties
 description: En este artículo se describe cómo editar las propiedades de la plantilla de cuota para extender los cambios a las cuotas creadas a partir de la plantilla de cuota original.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f4793616caf9ba4a8f9db09cd1902432323c081b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e8a112f26f2b0ffdf8047063411dbb5539f4eb1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474042"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961419"
 ---
 # <a name="edit-quota-template-properties"></a>Edit Quota Template Properties
 
@@ -40,7 +38,7 @@ Al realizar cambios en una plantilla de cuota, tiene la opción de extender dich
     -   Si desea modificar todas las cuotas existentes que se crearon a partir de la plantilla original, seleccione **aplicar plantilla a todas las cuotas derivadas**.
     -   Si desea mantener las cuotas existentes sin cambios, seleccione no **aplicar plantilla a las cuotas derivadas**.
 
-6.  Haga clic en **OK**.
+6.  Haga clic en **Aceptar**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

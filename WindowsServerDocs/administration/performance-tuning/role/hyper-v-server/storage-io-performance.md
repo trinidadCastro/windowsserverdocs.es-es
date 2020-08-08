@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 6322d7f32c78109623a06a7674c08f76a2d5d542
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d19790a6a86c7538ee3a062b3f08bbbdbc8b9d92
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896088"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992087"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Rendimiento de e/s de almacenamiento de Hyper-V
 
@@ -230,7 +230,7 @@ Algunas de las limitaciones son las siguientes:
 
 -   No se admite VHDX compartido
 
-Para obtener más información sobre la calidad de servicio del almacenamiento, consulte [calidad de servicio de almacenamiento para Hyper-V](https://technet.microsoft.com/library/dn282281.aspx).
+Para obtener más información sobre la calidad de servicio del almacenamiento, consulte [calidad de servicio de almacenamiento para Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282281(v=ws.11)).
 
 ### <a name="numa-io"></a>E/S DE NUMA
 

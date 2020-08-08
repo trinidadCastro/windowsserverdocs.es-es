@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 5a0f8d372c8e84e6e9140ef40f89c1fa7b116355
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0059e04b79754a3fb183a51cbd75bc03e9a89ae5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940006"
+ms.locfileid: "87997552"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Escenarios de redes que admite Windows Server
 
@@ -170,7 +170,7 @@ Para obtener más información, consulte [formación de equipos NIC](technologie
 
 SET es una solución alternativa para la formación de equipos NIC que puede usar en entornos que incluyen Hyper-V y la pila de redes definidas por software (SDN) en Windows Server 2016. El conjunto integra la funcionalidad de formación de equipos NIC en el conmutador virtual de Hyper-V.
 
-Para obtener más información, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming) .
+Para obtener más información, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md) .
 
 
 
@@ -180,6 +180,3 @@ Los siguientes escenarios de red no se admiten en Windows Server 2016.
 -   Redes virtuales de inquilino basadas en VLAN.
 
 -   IPv6 no se admite en proporcionaban ni en la superposición.
-
-
-

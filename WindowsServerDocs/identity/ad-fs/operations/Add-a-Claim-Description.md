@@ -6,21 +6,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a022ec618c7255021cd424120330671e007a658a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 31c04f557900cee661c2283957f590caf370bbe5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962707"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942739"
 ---
 # <a name="add-a-claim-description"></a>Agregar una descripción de notificación
 
 
 En una organización de asociado de cuenta, los administradores crean notificaciones para representar la pertenencia de un usuario a un grupo o rol, o para representar algunos datos sobre un usuario, por ejemplo, el número de identificación de empleado de un usuario.
 
-En una organización del asociado de recurso, los administradores crean las notificaciones correspondientes para representar grupos y usuarios que se pueden reconocer como usuarios de recursos. Dado que las notificaciones salientes de la organización del asociado de cuenta se asignan a las notificaciones entrantes en la organización del asociado de recurso, el asociado de recurso puede aceptar las credenciales proporcionadas por el asociado de cuenta. 
+En una organización del asociado de recurso, los administradores crean las notificaciones correspondientes para representar grupos y usuarios que se pueden reconocer como usuarios de recursos. Dado que las notificaciones salientes de la organización del asociado de cuenta se asignan a las notificaciones entrantes en la organización del asociado de recurso, el asociado de recurso puede aceptar las credenciales proporcionadas por el asociado de cuenta.
 
 Puede usar el siguiente procedimiento para agregar una demanda.
 
@@ -28,7 +26,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 ## <a name="to-add-a-claim-description"></a>Para agregar una descripción de la demanda
 
-1. En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**. 
+1. En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2. Expanda **servicio** y, a la derecha, haga clic en **Agregar Descripción de notificaciones**.
    ![Agregar Descripción de notificaciones](media/Add-a-Claim-Description/claimdesc1.png)
@@ -54,5 +52,5 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 ![Agregar Descripción de notificaciones](media/Add-a-Claim-Description/claimdesc2.png)
 
 
-## <a name="see-also"></a>Consulte también  
-[Operaciones de AD FS](../ad-fs-operations.md) 
+## <a name="see-also"></a>Consulte también
+[Operaciones de AD FS](../ad-fs-operations.md)

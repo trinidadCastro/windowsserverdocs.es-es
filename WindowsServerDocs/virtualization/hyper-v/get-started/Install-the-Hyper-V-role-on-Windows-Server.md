@@ -1,27 +1,25 @@
 ---
 title: Instalación del rol de Hyper-V en Windows Server
 description: Proporciona instrucciones para la instalación de Hyper-V con Administrador del servidor o Windows PowerShell.
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: get-started-article
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/02/2016
-ms.openlocfilehash: 5bd77284fd73d75075cec307e989274c86552209
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 32632e7af3db0c3b390606bc784b929e76b2892f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475652"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997598"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>Instalación del rol de Hyper-V en Windows Server
 
 >Se aplica a: Windows Server 2016 y Windows Server 2019
 
 Para crear y ejecutar máquinas virtuales, instale el rol de Hyper-V en Windows Server mediante Administrador del servidor o el cmdlet **install-WindowsFeature** en Windows PowerShell.
-Para Windows 10, consulte [instalación de Hyper-V en Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
+Para Windows 10, consulte [instalación de Hyper-V en Windows 10](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
 
 Para obtener más información acerca de Hyper-V, consulte la [información general sobre la tecnología de Hyper-v](../Hyper-V-Technology-Overview.md). Para probar Windows Server 2019, puede descargar e instalar una copia de evaluación. Consulte el [centro de evaluación](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019).
 
@@ -78,4 +76,4 @@ Si desea instalar solo las herramientas de administración, como el administrado
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/Microsoft.Windows.ServerManager.Migration/Install-WindowsFeature)
+- [Install-WindowsFeature](/powershell/module/Microsoft.Windows.ServerManager.Migration/Install-WindowsFeature)

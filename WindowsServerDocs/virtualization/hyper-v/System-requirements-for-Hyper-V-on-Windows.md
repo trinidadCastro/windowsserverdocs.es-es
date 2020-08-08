@@ -7,12 +7,12 @@ ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 56d9f862d4bd31ac8fba08837e59c94b865f7b1a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d0cbbc79fe1dc942dfe79ca9dbe81769dd112730
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970032"
+ms.locfileid: "87997616"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>Requisitos del sistema para Hyper-V en Windows Server
 
@@ -22,7 +22,7 @@ Hyper-V tiene requisitos de hardware específicos y algunas características de 
 
 Si ya está usando Hyper-V, es probable que pueda usar el hardware existente. Los requisitos generales de hardware no han cambiado significativamente respecto a Windows Server 2012 R2.  Sin embargo, necesitará hardware más reciente para usar máquinas virtuales blindadas o la asignación discreta de dispositivos. Estas características se basan en la compatibilidad de hardware específica, tal y como se describe a continuación. Aparte de eso, la principal diferencia en el hardware es que ahora se requiere la traducción de direcciones de segundo nivel (SLAT) en lugar de la recomendada.
 
-Para obtener más información acerca de las configuraciones máximas admitidas para Hyper-V, como el número de máquinas virtuales en ejecución, consulte [planear la escalabilidad de Hyper-v en Windows Server 2016](plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md). La lista de sistemas operativos que se pueden ejecutar en las máquinas virtuales se trata en [sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md).
+Para obtener más información acerca de las configuraciones máximas admitidas para Hyper-V, como el número de máquinas virtuales en ejecución, consulte [planear la escalabilidad de Hyper-v en Windows Server 2016](./plan/plan-hyper-v-scalability-in-windows-server.md). La lista de sistemas operativos que se pueden ejecutar en las máquinas virtuales se trata en [sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md).
 
 ## <a name="general-requirements"></a>Requisitos generales
 
@@ -89,4 +89,3 @@ Los requisitos de las **máquinas virtuales** son:
 
 - Generación 2
 - Windows Server 2012 o posterior como sistema operativo invitado
-

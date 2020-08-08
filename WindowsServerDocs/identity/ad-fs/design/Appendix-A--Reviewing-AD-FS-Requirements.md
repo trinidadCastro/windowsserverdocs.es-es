@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ab3c72e2e418450509e4ffce57a41e88cd60f47d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: ad4275bf7b6231692171209b19c4c60190e30126
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182371"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942981"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>Apéndice A: Revisión de los requisitos de AD FS
 
@@ -69,7 +67,7 @@ Aunque todos los exploradores web actuales con funcionalidad JavaScript pueden f
 
 El equipo de AD FS producto de Microsoft probó correctamente las configuraciones del explorador y del sistema operativo en la tabla siguiente.
 
-|Browser|Windows 7|Windows Vista|
+|Browser|Windows 7|Windows Vista|
 |-----------|-------------|-----------------|
 |Internet Explorer 7.0|X|X|
 |Internet Explorer 8.0|X|X|
@@ -134,7 +132,7 @@ Si estás creando una granja de servidores de federación, primero debes crear u
 ### <a name="ldap"></a>LDAP
 Cuando trabajes con otros almacenes de atributos basados en el Protocolo ligero de acceso a directorios (LDAP), debes conectarte a un servidor LDAP que sea compatible con la autenticación integrada de Windows. Además, la cadena de conexión de LDAP debe estar escrita con el formato de una dirección URL de LDAP, tal y como se describe en RFC 2255.
 
-### <a name="sql-server"></a>SQL Server
+### <a name="sql-server"></a>SQL Server
 Para que AD FS funcione correctamente, los equipos que hospedan el almacén de atributos de Lenguaje de consulta estructurado (SQL) Server deben ejecutar Microsoft SQL Server 2005 o SQL Server 2008. Si trabajas con almacenes de atributos basados en SQL, también debes configurar una cadena de conexión.
 
 ### <a name="custom-attribute-stores"></a>Almacenes de atributos personalizados

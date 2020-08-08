@@ -1,33 +1,31 @@
 ---
 title: 'Caso práctico del SDK del centro de administración de Windows: almacenamiento puro'
 description: 'Caso práctico del SDK del centro de administración de Windows: almacenamiento puro'
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: c6ab75a2375368d7c87d9dffd6175eb611508dd5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a79b575397c5dc139200f69a0110ab3c909d5fd5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406950"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942707"
 ---
 # <a name="pure-storage-extension"></a>Extensión de almacenamiento puro
 
-## <a name="providing-end-to-end-array-management-for-windows-admin-center"></a>Proporcionar administración de matrices de un extremo a otro para el centro de administración de Windows 
+## <a name="providing-end-to-end-array-management-for-windows-admin-center"></a>Proporcionar administración de matrices de un extremo a otro para el centro de administración de Windows
 
 El [almacenamiento puro](https://www.purestorage.com/) proporciona soluciones de almacenamiento de datos empresariales, todo el flash que proporcionan arquitectura centrada en los datos para acelerar su negocio con el fin de obtener una ventaja competitiva.  Pura es un asociado de Microsoft Gold, certificado para Microsoft Windows Server, y desarrolla integraciones técnicas para soluciones clave de Microsoft como Azure, Hyper-V, SQL Server, System Center, Windows PowerShell y Windows SMB. Puro anunció recientemente una versión preliminar técnica de una extensión que admite la versión más reciente del centro de administración de Windows, que proporciona una vista de un solo panel en productos FlashArray puros.  A partir de esta extensión, se permite a los usuarios realizar tareas de supervisión, ver las métricas de rendimiento en tiempo real y administrar los volúmenes de almacenamiento y los iniciadores.
 
 En un primer momento, cuando el centro de administración de Windows se conocía como "proyecto Honolulu", vio puro el valor de poder ofrecer a los clientes y asociados la capacidad de administrar varios FlashArrays de almacenamiento puros desde el único panel de vidrio que proporciona el centro de administración de Windows.
 
-Cuando se empezó a investigar el caso de uso con "Project Honolulu", se dio cuenta de inmediato el potencial para proporcionar una experiencia de administración unificada entre el centro de administración de Windows y FlashArray. En estrecha colaboración con el equipo de ingeniería del centro de administración de Windows, que ayudó a definir los detalles de implementación de las características. Pure también puede proporcionar comentarios en las primeras fases del centro de administración de Windows y realizar contribuciones al equipo de Microsoft. 
+Cuando se empezó a investigar el caso de uso con "Project Honolulu", se dio cuenta de inmediato el potencial para proporcionar una experiencia de administración unificada entre el centro de administración de Windows y FlashArray. En estrecha colaboración con el equipo de ingeniería del centro de administración de Windows, que ayudó a definir los detalles de implementación de las características. Pure también puede proporcionar comentarios en las primeras fases del centro de administración de Windows y realizar contribuciones al equipo de Microsoft.
 
 ![Extensión de almacenamiento puro](../../media/extend-case-study-purestorage/purestorage-1.png)
 
-> <cite> "hemos integrado un conjunto de características que imita nuestra interfaz Web de FlashArray para habilitar la administración directa desde el centro de administración de Windows. Nuestros clientes y asociados se beneficiarán de un solo panel de vidrio, en lugar de tener que trabajar con dos herramientas de administración diferentes. Además de las ventajas de la administración, los clientes podrán administrar contextualmente los servidores de Windows que están conectados a FlashArray. </cite>
+> <cite>"Hemos integrado un conjunto de características que imita nuestra interfaz Web de FlashArray para habilitar la administración directa desde el centro de administración de Windows. Nuestros clientes y asociados se beneficiarán de un solo panel de vidrio, en lugar de tener que trabajar con dos herramientas de administración diferentes. Además de las ventajas de la administración, los clientes podrán administrar contextualmente los servidores de Windows que están conectados a FlashArray.</cite>
 >
 > --Barkz, director técnico de soluciones de Microsoft & integración, almacenamiento puro
 
@@ -39,7 +37,7 @@ Las características que se incluyen en la extensión de la solución de almacen
 - Administrar volúmenes: Esto incluye la capacidad de crear y destruir volúmenes. Una vez que se destruye un volumen, se colocará en el cubo de elementos destruidos y tendrá que erradicarlo de la GUI de administración de FlashArray principal.
 - Administrar iniciadores: se trata de una de las características más interesantes que proporcionan contexto a los servidores individuales administrados por la implementación del centro de administración de Windows. Puede ver los discos conectados (volúmenes) en servidores de Windows individuales, comprobar si se ha instalado o configurado múltiples rutas de e/s (MPIO) y crear o montar nuevos volúmenes.
 
-Se ha creado un [vídeo de demostración](https://youtu.be/IFAeCAd6V2g) en el que se muestran todas las características que proporciona la extensión de solución de almacenamiento pura. 
+Se ha creado un [vídeo de demostración](https://youtu.be/IFAeCAd6V2g) en el que se muestran todas las características que proporciona la extensión de solución de almacenamiento pura.
 
 En la captura de pantalla siguiente se muestra cómo ver qué discos (volúmenes) están conectados a un host de Windows Server específico. Además de ver los detalles de conectividad, se comprueba si se ha configurado la e/s de múltiples rutas.
 
@@ -49,7 +47,7 @@ Además de ver los discos, se pueden crear volúmenes nuevos e montarlos inmedia
 
 ![Extensión de almacenamiento puro](../../media/extend-case-study-purestorage/purestorage-3.png)
 
-Desde la publicación de la versión Technical Preview, los comentarios de los clientes recopilados hasta ahora han sido muy positivos y también nos ha proporcionado información sobre las diferentes características que se pueden agregar en futuras versiones. 
+Desde la publicación de la versión Technical Preview, los comentarios de los clientes recopilados hasta ahora han sido muy positivos y también nos ha proporcionado información sobre las diferentes características que se pueden agregar en futuras versiones.
 
 Recursos adicionales:
 - [Entrada de blog del anuncio de extensión de almacenamiento puro](https://blog.purestorage.com/tech-preview-of-the-pure-storage-extension-for-windows-admin-center/)

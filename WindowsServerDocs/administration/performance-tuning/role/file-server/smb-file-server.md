@@ -5,12 +5,12 @@ ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 9e20b05f911726837cf436798a3743fbb80af193
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4a1fd4036e20e4cbb5b137832297daca99e9f5cc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896159"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992164"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>Optimización del rendimiento para servidores de archivos SMB
 
@@ -52,7 +52,7 @@ Para obtener más información sobre SMB multicanal, consulte [implementar SMB m
 
 El escalado horizontal de SMB permite a SMB 3,0 en una configuración de clúster mostrar un recurso compartido en todos los nodos de un clúster. Esta configuración activa/activa permite escalar los clústeres de servidores de archivos aún más, sin una configuración compleja con varios volúmenes, recursos compartidos y recursos de clúster. El ancho de banda máximo del recurso compartido es el ancho de banda total de todos los nodos del clúster de servidores de archivos. El ancho de banda total ya no está limitado por el ancho de banda de un solo nodo de clúster, sino que depende de la capacidad del sistema de almacenamiento de respaldo. Puede aumentar el ancho de banda total al agregar nodos.
 
-Para obtener más información sobre el escalado horizontal de SMB, consulte [servidor de archivos de escalabilidad horizontal para información general sobre los datos de aplicación](https://technet.microsoft.com/library/hh831349.aspx) y la entrada de blog [para escalar horizontalmente o no escalar horizontalmente, esa es la cuestión](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx).
+Para obtener más información sobre el escalado horizontal de SMB, consulte [servidor de archivos de escalabilidad horizontal para información general sobre los datos de aplicación](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831349(v=ws.11)) y la entrada de blog [para escalar horizontalmente o no escalar horizontalmente, esa es la cuestión](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx).
 
 ### <a name="performance-counters-for-smb-30"></a>Contadores de rendimiento para SMB 3,0
 
@@ -62,7 +62,7 @@ Los siguientes contadores de rendimiento de SMB se introdujeron en Windows Serve
 
     Estos contadores muestran información sobre los recursos compartidos de archivos del servidor a los que tiene acceso un cliente que usa SMB 2,0 o versiones posteriores.
 
-    Si está familiarizado con los contadores de disco normales en Windows, es posible que observe una determinada similitud. Eso no es accidental. Los contadores de rendimiento de recursos compartidos de cliente SMB se diseñaron para coincidir exactamente con los contadores de disco. De esta manera, puede volver a usar fácilmente cualquier orientación sobre el ajuste del rendimiento del disco de aplicación que tiene actualmente. Para obtener más información sobre la asignación de contadores, consulte [blog de contadores de rendimiento por recurso compartido](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).
+    Si está familiarizado con los contadores de disco normales en Windows, es posible que observe una determinada similitud. Eso no es accidental. Los contadores de rendimiento de recursos compartidos de cliente SMB se diseñaron para coincidir exactamente con los contadores de disco. De esta manera, puede volver a usar fácilmente cualquier orientación sobre el ajuste del rendimiento del disco de aplicación que tiene actualmente. Para obtener más información sobre la asignación de contadores, consulte [blog de contadores de rendimiento por recurso compartido](/archive/blogs/josebda/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight).
 
 -   **Recursos compartidos de servidor SMB**
 
@@ -154,4 +154,4 @@ La siguiente configuración puede optimizar un equipo para el rendimiento del se
 
 ### <a name="smb-client-performance-monitor-counters"></a>Contadores del monitor de rendimiento del cliente SMB
 
-Para obtener más información acerca de los contadores del cliente SMB, vea [información del servidor de archivos de Windows Server 2012: los nuevos contadores de rendimiento de cliente SMB por recurso compartido proporcionan una visión excelente](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).
+Para obtener más información acerca de los contadores del cliente SMB, vea [información del servidor de archivos de Windows Server 2012: los nuevos contadores de rendimiento de cliente SMB por recurso compartido proporcionan una visión excelente](/archive/blogs/josebda/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight).

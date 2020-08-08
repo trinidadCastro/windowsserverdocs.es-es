@@ -1,25 +1,23 @@
 ---
-title: Deploy DHCP Using Windows PowerShell (Implementar DHCP mediante Windows PowerShell)
+title: Implementación de DHCP mediante Windows PowerShell
 description: Puede usar este tema para implementar un servidor DHCP de protocolo de Internet (IP) versión 4 de Windows Server 2016 que proporcione direcciones IP automáticas y opciones de DHCP a los clientes DHCP IPv4 conectados a una o más subredes de la red.
-ms.prod: windows-server
-ms.technology: networking-dhcp
 ms.topic: article
 ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1e962948feaf6bb37beeb3c241d3ae3369be77dc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bd7d80ca79175f41944292d7a11dbc03a1e30c3d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860708"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997588"
 ---
-# <a name="deploy-dhcp-using-windows-powershell"></a>Deploy DHCP Using Windows PowerShell (Implementar DHCP mediante Windows PowerShell)
+# <a name="deploy-dhcp-using-windows-powershell"></a>Implementación de DHCP mediante Windows PowerShell
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En esta guía se proporcionan instrucciones sobre cómo usar Windows PowerShell para implementar un protocolo de configuración dinámica de host de protocolo de Internet (IP) versión 4 \(DHCP\) Server que asigna automáticamente direcciones IP y opciones de DHCP a los clientes DHCP IPv4 que están conectados a una o varias subredes de la red.
+En esta guía se proporcionan instrucciones sobre cómo usar Windows PowerShell para implementar un servidor DHCP del Protocolo de configuración dinámica de host de protocolo de Internet (IP) versión 4 \( \) que asigna automáticamente direcciones IP y opciones de DHCP a los clientes DHCP IPv4 que están conectados a una o más subredes de la red.
 
 > [!NOTE]
 > Para descargar este documento en formato de Word desde la galería de TechNet, consulte [implementar DHCP mediante Windows PowerShell en Windows Server 2016](https://gallery.technet.microsoft.com/Deploy-DHCP-Using-Windows-246dd293).
@@ -51,7 +49,7 @@ En las secciones siguientes se proporciona información general acerca de DHCP y
 
 ### <a name="dhcp-overview"></a>Información general de DHCP
 
-DHCP es un estándar IP que sirve para simplificar la administración de la configuración IP del host. El estándar DHCP proporciona el uso de servidores DHCP como un método para administrar la asignación dinámica de direcciones IP y otros detalles de configuración relacionados para los clientes de la red habilitados para DHCP.
+DHCP es un estándar IP que sirve para simplificar la administración de la configuración IP del host. El estándar DHCP ofrece el uso de servidores DHCP como una forma de administrar la asignación dinámica de direcciones IP y demás detalles de configuración relacionados para los clientes habilitados para DHCP de la red.
 
 DHCP le permite usar un servidor DHCP para asignar dinámicamente una dirección IP a un equipo o a otro dispositivo, como una impresora, en la red local, en lugar de configurar manualmente todos los dispositivos con una dirección IP estática.
 
@@ -61,9 +59,9 @@ En el caso de las redes basadas en TCP/IP, DHCP reduce la complejidad y la canti
 
 ### <a name="tcpip-overview"></a>Introducción a TCP/IP
 
-De forma predeterminada, todas las versiones de los sistemas operativos de cliente de Windows y Windows Server tienen la configuración de TCP/IP para las conexiones de red de IP versión 4 configuradas para obtener automáticamente una dirección IP y otra información, denominada opciones de DHCP, desde un servidor DHCP. Por este motivo, no es necesario configurar los valores de TCP/IP manualmente a menos que el equipo sea un equipo servidor u otro dispositivo que requiera una dirección IP estática configurada manualmente. 
+De forma predeterminada, todas las versiones de los sistemas operativos de cliente de Windows y Windows Server tienen la configuración de TCP/IP para las conexiones de red de IP versión 4 configuradas para obtener automáticamente una dirección IP y otra información, denominada opciones de DHCP, desde un servidor DHCP. Por este motivo, no es necesario configurar los valores de TCP/IP manualmente a menos que el equipo sea un equipo servidor u otro dispositivo que requiera una dirección IP estática configurada manualmente.
 
-Por ejemplo, se recomienda configurar manualmente la dirección IP del servidor DHCP y las direcciones IP de los servidores DNS y controladores de dominio que ejecutan Active Directory Domain Services \(AD DS\).
+Por ejemplo, se recomienda configurar manualmente la dirección IP del servidor DHCP y las direcciones IP de los servidores DNS y controladores de dominio que ejecutan Active Directory Domain Services \( AD DS \) .
 
 TCP/IP en Windows Server 2016 es el siguiente:
 
@@ -83,7 +81,7 @@ TCP/IP proporciona utilidades de TCP/IP básicas que permiten a los equipos basa
 
 - Windows 10
 
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 
 - Windows 8.1
 
@@ -91,9 +89,9 @@ TCP/IP proporciona utilidades de TCP/IP básicas que permiten a los equipos basa
 
 - Windows 8
 
-- Windows Server 2008 R2
+- Windows Server 2008 R2
 
-- Windows 7
+- Windows 7
 
 - Windows Server 2008
 
@@ -131,17 +129,17 @@ En la mayoría de los casos, configurar los enrutadores para reenviar mensajes d
 
 Cada subred debe tener su propio intervalo de direcciones IP únicas. En un servidor DHCP, dichos intervalos se representan con ámbitos.
 
-U ámbito es una agrupación administrativa de direcciones IP para equipos de una subred que usa el servicio DHCP. En primer lugar, el administrador crea un ámbito para cada subred física y, a continuación, usa el ámbito para definir los parámetros usados por los clientes.
+Un ámbito es una agrupación administrativa de direcciones IP para equipos de una subred que usa el servicio DHCP. El administrador crea primero un ámbito para cada subred física y, a continuación, lo usa para definir los parámetros usados por los clientes.
 
-Un ámbito tiene las propiedades siguientes:
+Un ámbito tiene las siguientes propiedades:
 
 - Un intervalo de direcciones IP desde el que incluir o excluir las direcciones usadas para las ofertas de concesión de servicio DHCP.
 
 - Una máscara de subred, que determina el prefijo de subred para una dirección IP determinada.
 
-- Un nombre de ámbito asignado cuando se creó.
+- Un nombre de ámbito asignado al crearlo.
 
-- Los valores de duración de la concesión asignados a los clientes DHCP que reciben direcciones IP asignadas de forma dinámica.
+- Valores de duración de la concesión, asignados a los clientes DHCP que reciben las direcciones IP asignadas dinámicamente.
 
 - Todas las opciones de ámbito DHCP configuradas para la asignación a clientes DHCP (por ejemplo, dirección IP del servidor DNS y dirección IP de la puerta de enlace predeterminada o enrutador).
 
@@ -159,7 +157,7 @@ Por ejemplo, la máscara de subred que se usa normalmente con la dirección IP 1
 11111111 11111111 00000000 00000000
 ```
 
-Este número de máscara de subred tiene 16 1 bits seguidos de 16 bits de cero, lo que indica que las secciones de identificador de red y de identificador de host de esta dirección IP tienen 16 bits de longitud. Normalmente, esta máscara de subred se muestra en notación decimal con puntos como 255.255.0.0.
+Este número de máscara de subred está compuesto de 16 bits de unos seguidos de 16 bits de ceros, lo que indica que las secciones del identificador de red y del identificador de host de esta dirección IP tienen ambas 16 bits de longitud. Normalmente, esta máscara de subred se muestra en notación decimal con puntos como 255.255.0.0.
 
 La siguiente tabla muestra máscaras de subred para las clases de direcciones de Internet.
 
@@ -185,7 +183,7 @@ Para solucionar este problema, puede crear un intervalo de exclusión para el á
 
 El servidor DHCP puede excluir direcciones IP de la distribución creando un intervalo de exclusión para cada ámbito. Las exclusiones se deberían usar para todos los dispositivos que están configurados con una dirección IP estática. Las direcciones excluidas deberían incluir todas las direcciones IP asignadas manualmente a otros servidores, clientes no DHCP, estaciones de trabajo sin disco o clientes PPP y de Enrutamiento y acceso remoto.
 
-Se recomienda configurar el intervalo de exclusión con direcciones adicionales en previsión de una futura ampliación de la red. En la tabla siguiente se proporciona un intervalo de exclusión de ejemplo para un ámbito con un intervalo de direcciones IP de 10.0.0.1-10.0.0.254 y una máscara de subred de 255.255.255.0.
+Se recomienda configurar el intervalo de exclusión con direcciones adicionales en previsión de una futura ampliación de la red. La siguiente tabla proporciona un ejemplo de intervalo de exclusión para un ámbito con un intervalo de direcciones IP de 10.0.0.1-10.0.0.254 y una máscara de subred de 255.255.255.0.
 
 |Elementos de configuración|Valores de ejemplo|
 |-----------------------|------------------|
@@ -200,7 +198,7 @@ Por ejemplo, si el intervalo de direcciones IP para una subred va de 192.168.0.1
 
 En este ejemplo, se usan diez de las direcciones IP excluidas para configurar servidores y otros dispositivos con direcciones IP estáticas, y quedan cinco direcciones IP más disponibles para la configuración estática de nuevos dispositivos que puede que quiera agregar en el futuro. Con este intervalo de exclusión, se ha dejado al servidor DHCP con un grupo de direcciones que oscila entre 192.168.0.16 y 192.168.0.254.
 
-En la tabla siguiente se proporcionan elementos de configuración de ejemplo adicionales para AD DS y DNS.
+En la siguiente tabla se proporcionan más elementos de configuración de ejemplo para AD DS y DNS.
 
 |Elementos de configuración|Valores de ejemplo|
 |-----------------------|------------------|
@@ -208,16 +206,16 @@ En la tabla siguiente se proporcionan elementos de configuración de ejemplo adi
 |Configuración del servidor DNS|DC1.corp.contoso.com|
 |Dirección IP del servidor DNS preferido|10.0.0.2|
 |Valores de ámbito<p>1. nombre del ámbito<br />2. dirección IP inicial<br />3. dirección IP final<br />4. máscara de subred<br />5. puerta de enlace predeterminada (opcional)<br />6. duración de la concesión|1. subred principal<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 días|
-|Modo de funcionamiento del servidor DHCP IPv6|No habilitado|
+|Modo de funcionamiento del servidor DHCP IPv6|no habilitado.|
 
 ## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>Usar esta guía en un laboratorio de pruebas
 
-Puede usar esta guía para implementar DHCP en un laboratorio de pruebas antes de implementarlo en un entorno de producción. 
+Puede usar esta guía para implementar DHCP en un laboratorio de pruebas antes de implementarlo en un entorno de producción.
 
 > [!NOTE]
 > Si no desea implementar DHCP en un laboratorio de pruebas, puede ir a la sección [implementar DHCP](#bkmk_deploy).
 
-Los requisitos del laboratorio difieren en función de si se usan servidores físicos o máquinas virtuales \(máquinas virtuales\)y si se usa un dominio de Active Directory o se implementa un servidor DHCP independiente.
+Los requisitos del laboratorio difieren en función de si se usan servidores físicos o máquinas virtuales de virtual machines \( \) , y si se usa un dominio de Active Directory o se implementa un servidor DHCP independiente.
 
 Puede usar la siguiente información para determinar los recursos mínimos necesarios para probar la implementación de DHCP mediante esta guía.
 
@@ -225,7 +223,7 @@ Puede usar la siguiente información para determinar los recursos mínimos neces
 
 Para implementar DHCP en un laboratorio de pruebas con máquinas virtuales, necesita los siguientes recursos.
 
-Para una implementación de dominio o una implementación independiente, necesita un servidor configurado como un host de Hyper\-V.
+Para una implementación de dominio o una implementación independiente, necesita un servidor que esté configurado como un host de Hyper- \- V.
 
 **Implementación de dominio**
 
@@ -233,9 +231,9 @@ Esta implementación requiere un servidor físico, un conmutador virtual, dos se
 
 En el servidor físico, en el administrador de Hyper-V, cree los siguientes elementos.
 
-1. Un conmutador virtual **interno** . No cree un conmutador virtual **externo** , porque si el host de Hyper\-V está en una subred que incluye un servidor DHCP, las máquinas virtuales de prueba recibirán una dirección IP del servidor DHCP. Además, el servidor DHCP de prueba que se implementa podría asignar direcciones IP a otros equipos de la subred en la que está instalado el host de Hyper\-V.
-1. Una máquina virtual que ejecuta Windows Server 2016 configurada como controlador de dominio con Active Directory Domain Services que está conectada al conmutador virtual interno que creó. Para que coincida con esta guía, este servidor debe tener una dirección IP configurada estáticamente de 10.0.0.2. Para obtener información sobre la implementación de AD DS, vea la sección **DEPLOYING DC1** en la guía de [red principal](https://docs.microsoft.com/windows-server/networking/core-network-guide/core-network-guide#BKMK_deployADDNS01)de Windows Server 2016.
-1. Una máquina virtual que ejecute Windows Server 2016 y que se configurará como un servidor DHCP mediante esta guía y que esté conectada al conmutador virtual interno que creó. 
+1. Un conmutador virtual **interno** . No cree un conmutador virtual **externo** , porque si el \- host de Hyper-V se encuentra en una subred que incluye un servidor DHCP, las máquinas virtuales de prueba recibirán una dirección IP del servidor DHCP. Además, el servidor DHCP de prueba que se implementa podría asignar direcciones IP a otros equipos de la subred en la que \- está instalado el host de Hyper-V.
+1. Una máquina virtual que ejecuta Windows Server 2016 configurada como controlador de dominio con Active Directory Domain Services que está conectada al conmutador virtual interno que creó. Para que coincida con esta guía, este servidor debe tener una dirección IP configurada estáticamente de 10.0.0.2. Para obtener información sobre la implementación de AD DS, vea la sección **DEPLOYING DC1** en la guía de [red principal](../../core-network-guide/core-network-guide.md#BKMK_deployADDNS01)de Windows Server 2016.
+1. Una máquina virtual que ejecute Windows Server 2016 y que se configurará como un servidor DHCP mediante esta guía y que esté conectada al conmutador virtual interno que creó.
 1. Una máquina virtual que ejecute un sistema operativo de cliente de Windows que esté conectada al conmutador virtual interno que creó y que usará para comprobar que el servidor DHCP asigna dinámicamente direcciones IP y opciones de DHCP a los clientes DHCP.
 
 **Implementación de servidor DHCP independiente**
@@ -244,7 +242,7 @@ Esta implementación requiere un servidor físico, un conmutador virtual, un ser
 
 En el servidor físico, en el administrador de Hyper-V, cree los siguientes elementos.
 
-1. Un conmutador virtual **interno** . No cree un conmutador virtual **externo** , porque si el host de Hyper\-V está en una subred que incluye un servidor DHCP, las máquinas virtuales de prueba recibirán una dirección IP del servidor DHCP. Además, el servidor DHCP de prueba que se implementa podría asignar direcciones IP a otros equipos de la subred en la que está instalado el host de Hyper\-V.
+1. Un conmutador virtual **interno** . No cree un conmutador virtual **externo** , porque si el \- host de Hyper-V se encuentra en una subred que incluye un servidor DHCP, las máquinas virtuales de prueba recibirán una dirección IP del servidor DHCP. Además, el servidor DHCP de prueba que se implementa podría asignar direcciones IP a otros equipos de la subred en la que \- está instalado el host de Hyper-V.
 2. Una máquina virtual que ejecute Windows Server 2016 y que se configurará como un servidor DHCP mediante esta guía y que esté conectada al conmutador virtual interno que creó.
 3. Una máquina virtual que ejecute un sistema operativo de cliente de Windows que esté conectada al conmutador virtual interno que creó y que usará para comprobar que el servidor DHCP asigna dinámicamente direcciones IP y opciones de DHCP a los clientes DHCP.
 
@@ -257,7 +255,7 @@ Para implementar DHCP en un laboratorio de pruebas con servidores físicos, nece
 Esta implementación requiere un concentrador o un conmutador, dos servidores físicos y un cliente físico:
 
 1. Un concentrador o conmutador Ethernet al que puede conectar los equipos físicos con cables Ethernet
-2. Un equipo físico que ejecuta Windows Server 2016 configurado como controlador de dominio con Active Directory Domain Services. Para que coincida con esta guía, este servidor debe tener una dirección IP configurada estáticamente de 10.0.0.2. Para obtener información sobre la implementación de AD DS, vea la sección **DEPLOYING DC1** en la guía de [red principal](https://docs.microsoft.com/windows-server/networking/core-network-guide/core-network-guide#BKMK_deployADDNS01)de Windows Server 2016.
+2. Un equipo físico que ejecuta Windows Server 2016 configurado como controlador de dominio con Active Directory Domain Services. Para que coincida con esta guía, este servidor debe tener una dirección IP configurada estáticamente de 10.0.0.2. Para obtener información sobre la implementación de AD DS, vea la sección **DEPLOYING DC1** en la guía de [red principal](../../core-network-guide/core-network-guide.md#BKMK_deployADDNS01)de Windows Server 2016.
 3. Un equipo físico que ejecuta Windows Server 2016 y que se configurará como un servidor DHCP mediante esta guía.
 4. Un equipo físico que ejecute un sistema operativo de cliente de Windows que utilizará para comprobar que el servidor DHCP asigna dinámicamente direcciones IP y opciones de DHCP a los clientes DHCP.
 
@@ -275,7 +273,7 @@ Esta implementación requiere un concentrador o un conmutador, un servidor físi
 
 ## <a name="deploy-dhcp"></a><a name="bkmk_deploy"></a>Implementar DHCP
 
-En esta sección se proporcionan ejemplos de comandos de Windows PowerShell que puede usar para implementar DHCP en un servidor. Antes de ejecutar estos comandos de ejemplo en el servidor, debe modificar los comandos para que coincidan con la red y el entorno. 
+En esta sección se proporcionan ejemplos de comandos de Windows PowerShell que puede usar para implementar DHCP en un servidor. Antes de ejecutar estos comandos de ejemplo en el servidor, debe modificar los comandos para que coincidan con la red y el entorno.
 
 Por ejemplo, antes de ejecutar los comandos, debe reemplazar los valores de ejemplo en los comandos para los siguientes elementos:
 
@@ -292,9 +290,9 @@ Por ejemplo, antes de ejecutar los comandos, debe reemplazar los valores de ejem
 
 ### <a name="where-to-install-dhcp---on-a-physical-computer-or-a-vm"></a>¿Dónde instalar DHCP: en un equipo físico o en una máquina virtual?
 
-Puede instalar el rol de servidor DHCP en un equipo físico o en una máquina virtual \(\) de máquinas virtuales que está instalado en un host de Hyper\-V. Si está instalando DHCP en una máquina virtual y desea que el servidor DHCP proporcione las asignaciones de direcciones IP a los equipos de la red física a la que está conectado el host de Hyper-V, debe conectar el adaptador de red virtual de VM a un conmutador virtual de Hyper-V que sea **externo**.
+Puede instalar el rol de servidor DHCP en un equipo físico o en una máquina virtual de máquina virtual \( \) instalada en un host de Hyper- \- V. Si está instalando DHCP en una máquina virtual y desea que el servidor DHCP proporcione las asignaciones de direcciones IP a los equipos de la red física a la que está conectado el host de Hyper-V, debe conectar el adaptador de red virtual de VM a un conmutador virtual de Hyper-V que sea **externo**.
 
-Para obtener más información, consulte la sección **creación de un conmutador virtual con el administrador de Hyper-V** en el tema [creación de una red virtual](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network).
+Para obtener más información, consulte la sección **creación de un conmutador virtual con el administrador de Hyper-V** en el tema [creación de una red virtual](/virtualization/hyper-v-on-windows/quick-start/connect-to-network).
 
 ### <a name="run-windows-powershell-as-an-administrator"></a>Ejecutar Windows PowerShell como administrador
 
@@ -321,8 +319,8 @@ Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 10.0.0.2
 
 Para obtener más información acerca de estos comandos, vea los temas siguientes.
 
-- [New-NetIPAddress](https://docs.microsoft.com/powershell/module/nettcpip/New-NetIPAddress)
-- [Set-DnsClientServerAddress](https://docs.microsoft.com/powershell/module/dnsclient/Set-DnsClientServerAddress)
+- [New-NetIPAddress](/powershell/module/nettcpip/New-NetIPAddress)
+- [Set-DnsClientServerAddress](/powershell/module/dnsclient/Set-DnsClientServerAddress)
 
 **Cambiar el nombre del equipo**
 
@@ -335,10 +333,10 @@ Restart-Computer
 
 Para obtener más información acerca de estos comandos, vea los temas siguientes.
 
-- [Cambiar nombre de equipo](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer)
-- [Restart-Computer](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer)
+- [Rename-Computer](/powershell/module/microsoft.powershell.management/rename-computer)
+- [Restart-Computer](/powershell/module/microsoft.powershell.management/restart-computer)
 
-### <a name="join-the-computer-to-the-domain-optional"></a>Unir el equipo al dominio \(\) opcional
+### <a name="join-the-computer-to-the-domain-optional"></a>Unir el equipo al dominio \( opcional\)
 
 Si va a instalar el servidor DHCP en un entorno de dominio de Active Directory, debe unir el equipo al dominio. Abra Windows PowerShell con privilegios de administrador y, después, ejecute el siguiente comando después de reemplazar el nombre NetBios del dominio **Corp** por un valor que sea adecuado para su entorno.
 
@@ -346,7 +344,7 @@ Si va a instalar el servidor DHCP en un entorno de dominio de Active Directory, 
 Add-Computer CORP
 ```
 
-Cuando se le solicite, escriba las credenciales de una cuenta de usuario de dominio que tenga permiso para unir un equipo al dominio. 
+Cuando se le solicite, escriba las credenciales de una cuenta de usuario de dominio que tenga permiso para unir un equipo al dominio.
 
 ```
 Restart-Computer
@@ -354,7 +352,7 @@ Restart-Computer
 
 Para obtener más información sobre el comando Add-Computer, vea el siguiente tema.
 
-- [Agregar equipo](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1)
+- [Add-Computer](/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1)
 
 ### <a name="install-dhcp"></a>Instalar DHCP
 
@@ -366,11 +364,11 @@ Install-WindowsFeature DHCP -IncludeManagementTools
 
 Para obtener más información acerca de este comando, vea el siguiente tema.
 
-- [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature)
+- [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature)
 
 ### <a name="create-dhcp-security-groups"></a>Crear grupos de seguridad de DHCP
 
-Para crear grupos de seguridad, debe ejecutar un shell de red \(comando netsh\) en Windows PowerShell y, a continuación, reiniciar el servicio DHCP para que los nuevos grupos se activen.
+Para crear grupos de seguridad, debe ejecutar un \( \) comando netsh de Shell de red en Windows PowerShell y, a continuación, reiniciar el servicio DHCP para que los nuevos grupos se activen.
 
 Al ejecutar el siguiente comando netsh en el servidor DHCP, los grupos de seguridad **administradores de DHCP** y **usuarios de DHCP** se crean en **usuarios y grupos locales** en el servidor DHCP.
 
@@ -387,16 +385,16 @@ Restart-Service dhcpserver
 Para obtener más información acerca de estos comandos, vea los temas siguientes.
 
 - [Shell de red (Netsh)](../netsh/netsh.md)
-- [Restart-Service](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-service)
+- [Restart-Service](/powershell/module/microsoft.powershell.management/restart-service)
 
-### <a name="authorize-the-dhcp-server-in-active-directory-optional"></a>Autorizar al servidor DHCP en Active Directory \(\) opcional
+### <a name="authorize-the-dhcp-server-in-active-directory-optional"></a>Autorizar al servidor DHCP en Active Directory \( opcional\)
 
 Si está instalando DHCP en un entorno de dominio, debe realizar los pasos siguientes para autorizar al servidor DHCP a operar en el dominio.
 
 > [!NOTE]
 > Los servidores DHCP no autorizados que se instalan en Active Directory dominios no funcionan correctamente y no conceden direcciones IP a los clientes DHCP. La deshabilitación automática de servidores DHCP no autorizados es una característica de seguridad que impide que los servidores DHCP no autorizados asignen direcciones IP incorrectas a los clientes de la red.
 
-Puede usar el siguiente comando para agregar el servidor DHCP a la lista de servidores DHCP autorizados en Active Directory. 
+Puede usar el siguiente comando para agregar el servidor DHCP a la lista de servidores DHCP autorizados en Active Directory.
 
 > [!NOTE]
 > Si no tiene un entorno de dominio, no ejecute este comando.
@@ -421,14 +419,14 @@ IPAddress   DnsName
 
 Para obtener más información acerca de estos comandos, vea los temas siguientes.
 
-- [Add-DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/add-dhcpserverindc)
-- [Get-DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/get-dhcpserverindc)
+- [Add-DhcpServerInDC](/powershell/module/dhcpserver/add-dhcpserverindc)
+- [Get-DhcpServerInDC](/powershell/module/dhcpserver/get-dhcpserverindc)
 
-### <a name="notify-server-manager-that-post-install-dhcp-configuration-is-complete-optional"></a>Notificar a Administrador del servidor de que\-instalar la configuración de DHCP completa \(opcional\)
+### <a name="notify-server-manager-that-post-install-dhcp-configuration-is-complete-optional"></a>Notificar Administrador del servidor de que la \- Configuración posterior a la instalación de DHCP esté completa \( opcional\)
 
-Una vez que haya completado las tareas posteriores a la instalación de\-, como la creación de grupos de seguridad y la autorización del servidor DHCP en Active Directory, Administrador del servidor podría mostrar una alerta en la interfaz de usuario que indica que se deben completar los pasos posteriores\-instalación mediante el Asistente para configuración posterior a la instalación de DHCP.
+Una vez que haya completado \- las tareas posteriores a la instalación, como crear grupos de seguridad y autorizar el servidor DHCP en Active Directory, administrador del servidor podría mostrar una alerta en la interfaz de usuario que indica que \- se deben completar los pasos posteriores a la instalación mediante el Asistente para configuración posterior a la instalación de DHCP.
 
-Puede evitar esto ahora\-que el mensaje innecesario y inexacto aparezca en Administrador del servidor mediante la configuración de la siguiente clave del registro con este comando de Windows PowerShell.
+Puede evitar que este \- mensaje innecesario y inexacto aparezca en Administrador del servidor mediante la configuración de la siguiente clave del registro con este comando de Windows PowerShell.
 
 ```
 Set-ItemProperty –Path registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager\Roles\12 –Name ConfigurationState –Value 2
@@ -436,9 +434,9 @@ Set-ItemProperty –Path registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerM
 
 Para obtener más información acerca de este comando, vea el siguiente tema.
 
-- [Set-ItemProperty](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty)
+- [Set-ItemProperty](/powershell/module/microsoft.powershell.management/set-itemproperty)
 
-### <a name="set-server-level-dns-dynamic-update-configuration-settings-optional"></a>Establecer opciones de configuración de actualización dinámica de DNS de nivel de servidor \(opcional\)
+### <a name="set-server-level-dns-dynamic-update-configuration-settings-optional"></a>Establecer opciones de configuración de actualización dinámica de DNS de nivel de servidor \( opcionales\)
 
 Si desea que el servidor DHCP realice actualizaciones dinámicas de DNS para equipos cliente DHCP, puede ejecutar el siguiente comando para configurar esta opción. Se trata de una configuración de nivel de servidor, no de un nivel de ámbito, por lo que afectará a todos los ámbitos que configure en el servidor. Este comando de ejemplo también configura el servidor DHCP para eliminar los registros de recursos DNS para los clientes cuando el cliente menos expira.
 
@@ -447,23 +445,23 @@ Set-DhcpServerv4DnsSetting -ComputerName "DHCP1.corp.contoso.com" -DynamicUpdate
 ```
 
 Puede usar el siguiente comando para configurar las credenciales que el servidor DHCP utiliza para registrar o anular el registro de registros de cliente en un servidor DNS. En este ejemplo se guarda una credencial en un servidor DHCP. El primer comando usa **Get-Credential** para crear un objeto **PSCredential** y, a continuación, almacena el objeto en la variable **$Credential** . El comando le pide el nombre de usuario y la contraseña, por lo que debe asegurarse de proporcionar las credenciales para una cuenta que tenga permiso para actualizar registros de recursos en el servidor DNS.
- 
+
 ```
 $Credential = Get-Credential
 Set-DhcpServerDnsCredential -Credential $Credential -ComputerName "DHCP1.corp.contoso.com"
-``` 
+```
 
 Para obtener más información acerca de estos comandos, vea los temas siguientes.
 
-- [Set-DhcpServerv4DnsSetting](https://docs.microsoft.com/powershell/module/dhcpserver/set-dhcpserverv4dnssetting)
-- [Set-DhcpServerDnsCredential](https://docs.microsoft.com/powershell/module/dhcpserver/set-dhcpserverdnscredential)
+- [Set-DhcpServerv4DnsSetting](/powershell/module/dhcpserver/set-dhcpserverv4dnssetting)
+- [Set-DhcpServerDnsCredential](/powershell/module/dhcpserver/set-dhcpserverdnscredential)
 
 ### <a name="configure-the-corpnet-scope"></a>Configuración del ámbito de la red corporativa
 
 Una vez completada la instalación de DHCP, puede usar los siguientes comandos para configurar y activar el ámbito de la red corporativa, crear un intervalo de exclusión para el ámbito y configurar la puerta de enlace predeterminada de opciones de DHCP, la dirección IP del servidor DNS y el nombre de dominio DNS.
 
 ```
-Add-DhcpServerv4Scope -name "Corpnet" -StartRange 10.0.0.1 -EndRange 10.0.0.254 -SubnetMask 255.255.255.0 -State Active    
+Add-DhcpServerv4Scope -name "Corpnet" -StartRange 10.0.0.1 -EndRange 10.0.0.254 -SubnetMask 255.255.255.0 -State Active
 Add-DhcpServerv4ExclusionRange -ScopeID 10.0.0.0 -StartRange 10.0.0.1 -EndRange 10.0.0.15
 Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.0.1 -ScopeID 10.0.0.0 -ComputerName DHCP1.corp.contoso.com
 Set-DhcpServerv4OptionValue -DnsDomain corp.contoso.com -DnsServer 10.0.0.2
@@ -471,13 +469,13 @@ Set-DhcpServerv4OptionValue -DnsDomain corp.contoso.com -DnsServer 10.0.0.2
 
 Para obtener más información acerca de estos comandos, vea los temas siguientes.
 
-- [Add-DhcpServerv4Scope](https://docs.microsoft.com/powershell/module/dhcpserver/Add-DhcpServerv4Scope)
-- [Add-DhcpServerv4ExclusionRange](https://docs.microsoft.com/powershell/module/dhcpserver/Add-DhcpServerv4ExclusionRange)
-- [Set-DhcpServerv4OptionValue](https://docs.microsoft.com/powershell/module/dhcpserver/Set-DhcpServerv4OptionValue)
+- [Add-DhcpServerv4Scope](/powershell/module/dhcpserver/Add-DhcpServerv4Scope)
+- [Add-DhcpServerv4ExclusionRange](/powershell/module/dhcpserver/Add-DhcpServerv4ExclusionRange)
+- [Set-DhcpServerv4OptionValue](/powershell/module/dhcpserver/Set-DhcpServerv4OptionValue)
 
-### <a name="configure-the-corpnet2-scope-optional"></a>Configuración del ámbito Corpnet2 \(\) opcional
+### <a name="configure-the-corpnet2-scope-optional"></a>Configuración del ámbito Corpnet2 \( opcional\)
 
-Si tiene una segunda subred que está conectada a la primera subred con un enrutador en el que está habilitado el reenvío de DHCP, puede usar los siguientes comandos para agregar un segundo ámbito denominado Corpnet2 para este ejemplo. En este ejemplo también se configura un intervalo de exclusión y la dirección IP de la puerta de enlace predeterminada \(la dirección IP del enrutador en el\) de subred de la subred Corpnet2.
+Si tiene una segunda subred que está conectada a la primera subred con un enrutador en el que está habilitado el reenvío de DHCP, puede usar los siguientes comandos para agregar un segundo ámbito denominado Corpnet2 para este ejemplo. En este ejemplo también se configura un intervalo de exclusión y la dirección IP para la puerta de enlace predeterminada, \( la dirección IP del enrutador en la subred \) de la subred Corpnet2.
 
 ```
 Add-DhcpServerv4Scope -name "Corpnet2" -StartRange 10.0.1.1 -EndRange 10.0.1.254 -SubnetMask 255.255.255.0 -State Active
@@ -498,8 +496,8 @@ Si el cliente no recibe una dirección IP del servidor DHCP, lleve a cabo los si
 
 1. Asegúrese de que el cable Ethernet está enchufado en el equipo y en el conmutador Ethernet, el concentrador o el enrutador.
 2. Si conectó el equipo cliente a un segmento de red que está separado del servidor DHCP por un enrutador, asegúrese de que el enrutador está configurado para reenviar mensajes DHCP.
-3. Para asegurarse de que el servidor DHCP está autorizado en Active Directory, ejecute el siguiente comando para recuperar la lista de servidores DHCP autorizados de Active Directory. [Get-DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/Get-DhcpServerInDC).
-4. Para asegurarse de que los ámbitos están activados, abra la consola de DHCP \(Administrador del servidor, **herramientas**, **DHCP**\), expanda el árbol de servidores para revisar los ámbitos y, a continuación, haga\-clic con el botón derecho en cada ámbito. Si el menú resultante incluye la selección **Activar**, haga clic en **Activar**. \(si el ámbito ya está activado, la selección de menú Lee **desactivar**.\)
+3. Para asegurarse de que el servidor DHCP está autorizado en Active Directory, ejecute el siguiente comando para recuperar la lista de servidores DHCP autorizados de Active Directory. [Get-DhcpServerInDC](/powershell/module/dhcpserver/get-dhcpserverindc).
+4. Para asegurarse de que los ámbitos están activados, abra la consola DHCP \( Administrador del servidor, **herramientas**, **DHCP** \) , expanda el árbol de servidores para revisar los ámbitos y, a continuación, haga clic con el botón secundario \- en cada ámbito. Si el menú resultante incluye la selección **Activar**, haga clic en **Activar**. \(Si el ámbito ya está activado, la selección de menú Lee **desactivar**.\)
 
 ## <a name="windows-powershell-commands-for-dhcp"></a><a name="bkmk_dhcpwps"></a>Comandos de Windows PowerShell para DHCP
 
@@ -508,14 +506,14 @@ La siguiente referencia proporciona descripciones de comandos y sintaxis para to
 > [!NOTE]
 > No puede usar los comandos de Windows Server 2016 en Windows Server 2012 R2.
 
-- [Módulo DhcpServer](https://docs.microsoft.com/powershell/module/dhcpserver/)
+- [Módulo DhcpServer](/powershell/module/dhcpserver/)
 
 La siguiente referencia proporciona descripciones de comandos y sintaxis para todos los comandos de Windows PowerShell del servidor DHCP para Windows Server 2012 R2. En el tema se enumeran los comandos en orden alfabético según el verbo que aparece al principio de los comandos, como **Get** o **set**.
 
 > [!NOTE]
 > Puede usar los comandos de Windows Server 2012 R2 en Windows Server 2016.
 
-- [Cmdlets del servidor DHCP en Windows PowerShell](https://docs.microsoft.com/windows-server/networking/technologies/dhcp/dhcp-deploy-wps)
+- [Cmdlets de servidor DHCP en Windows PowerShell]()
 
 ## <a name="list-of-windows-powershell-commands-in-this-guide"></a><a name="bkmk_list"></a>Lista de comandos de Windows PowerShell en esta guía
 

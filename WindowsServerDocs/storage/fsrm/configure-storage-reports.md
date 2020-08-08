@@ -2,18 +2,16 @@
 title: Configure Storage Reports
 description: En este artículo se describe cómo configurar los parámetros predeterminados para los informes de almacenamiento.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 94d1b75bba4edac5ad8df80adb13d95a7b8dec39
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8b9d6a53b5f34c0c053de860895f5c4e48b07c83
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474162"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961499"
 ---
 # <a name="configure-storage-reports"></a>Configure Storage Reports
 
@@ -38,7 +36,7 @@ Puede configurar los parámetros predeterminados para los informes de almacenami
 
 6. Para ver una lista de los parámetros predeterminados para todos los informes, haga clic en **revisar informes**. A continuación, haga clic en **Cerrar**.
 
-7.  Haga clic en **OK**.
+7.  Haga clic en **Aceptar**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

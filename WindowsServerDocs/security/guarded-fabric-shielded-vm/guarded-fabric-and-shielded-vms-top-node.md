@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 7a73bf1b677d09cc31783b58148c8ca7c581fbca
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c3f17320432d44a84be05040e23e7af30995c969
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971382"
+ms.locfileid: "87997557"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>Máquinas virtuales blindadas y tejido protegido
 
@@ -28,7 +28,7 @@ Uno de los objetivos más importantes de proporcionar un entorno hospedado es ga
 - Vídeo: [Introducción a la virtual machines blindada en Windows Server 2016](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
 - Vídeo: [profundizar en máquinas virtuales blindadas con Windows Server 2016 Hyper-V](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
 - Vídeo: [implementación de máquinas virtuales blindadas y un tejido protegido con Windows Server 2016](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)
-- Blog: [blog de seguridad de centro de seguridad y nube privada](https://blogs.technet.microsoft.com/datacentersecurity/)
+- Blog: [blog de seguridad de centro de seguridad y nube privada](/archive/blogs/datacentersecurity/)
 - Información general: [información general sobre el tejido protegido y las máquinas virtuales blindadas](Guarded-Fabric-and-Shielded-VMs.md)
 
 ## <a name="planning-topics"></a>Temas de planeación
@@ -46,7 +46,7 @@ Uno de los objetivos más importantes de proporcionar un entorno hospedado es ga
         - [Implementar un host protegido mediante el modo AD](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
         - [Implementar un host protegido mediante el modo TPM](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
         - [Confirmar que los hosts protegidos pueden atestiguar](guarded-fabric-confirm-hosts-can-attest-successfully.md)
-        - [Máquinas virtuales blindadas: el proveedor de servicios de hosting implementa hosts protegidos en VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts)
+        - [Máquinas virtuales blindadas: el proveedor de servicios de hosting implementa hosts protegidos en VMM](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019)
     - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
         - [Creación de una plantilla de máquina virtual blindada](guarded-fabric-create-a-shielded-vm-template.md)
         - [Preparación de una aplicación auxiliar de blindaje de VM VHD](guarded-fabric-vm-shielding-helper-vhd.md)

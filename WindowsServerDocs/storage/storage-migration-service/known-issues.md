@@ -6,14 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
-ms.openlocfilehash: ddfcf45fa897fbed4a2475332b9706fc8d9fb634
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 818fca0ed62c140b3b0c4bbb1394380d42201f79
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864204"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961319"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -639,6 +637,6 @@ Guidance: Check the detailed error and make sure the inventory requirements are 
 
 Este problema se debe a un defecto de código en el servicio de migración de almacenamiento. Actualmente, la única solución es cambiar el nombre del equipo para que tenga el mismo nombre que el nombre NetBIOS y, a continuación, usar [netdom computername/Add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) para agregar un nombre de equipo alternativo que contenga el nombre más largo que estaba en uso antes de iniciar el inventario. El servicio de migración de almacenamiento admite la migración de nombres de equipo alternativos.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)

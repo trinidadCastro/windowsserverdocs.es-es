@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e36ad09b86469e50f385775290f55ff82bb26964
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ba6c04ca8ac1941221809af958a9d6c53701b101
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895964"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992015"
 ---
 # <a name="troubleshoot-cache-and-memory-manager-performance-issues"></a>Solucionar problemas de rendimiento del administrador de memoria y caché
 
@@ -25,7 +25,7 @@ Antes de Windows Server 2012, dos problemas principales potenciales provocaban q
 
 -   \\Bytes residentes de caché del sistema de memoria
 
-Si \\ las Mbytes disponibles de memoria son bajas y, al mismo tiempo \\ , los bytes residentes de caché del sistema de memoria consumen una parte significativa de la memoria física, puede usar [RAMMAP](https://technet.microsoft.com/sysinternals/ff700229.aspx) para averiguar para qué se usa la memoria caché.
+Si \\ las Mbytes disponibles de memoria son bajas y, al mismo tiempo \\ , los bytes residentes de caché del sistema de memoria consumen una parte significativa de la memoria física, puede usar [RAMMAP](/sysinternals/downloads/rammap) para averiguar para qué se usa la memoria caché.
 
 ## <a name="system-file-cache-contains-ntfs-metafile-data-structures"></a>La caché de archivos del sistema contiene estructuras de datos de metarchivo NTFS
 
@@ -39,10 +39,10 @@ El problema que ha usado la herramienta *DynCache* para mitigarlo. En Windows Se
 ## <a name="system-file-cache-contains-memory-mapped-files"></a>La memoria caché de archivos del sistema contiene archivos asignados a memoria
 
 
-Este problema se indica mediante un número muy alto de páginas de archivos asignados activas en la salida de RAMMAP. Esto normalmente indica que alguna aplicación en el servidor está abriendo muchos archivos grandes mediante la interfaz [CreateFile](https://msdn.microsoft.com/library/windows/desktop/aa363858.aspx) con la \_ marca de acceso aleatorio del marcador de archivo \_ \_ establecida.
+Este problema se indica mediante un número muy alto de páginas de archivos asignados activas en la salida de RAMMAP. Esto normalmente indica que alguna aplicación en el servidor está abriendo muchos archivos grandes mediante la interfaz [CreateFile](/windows/win32/api/fileapi/nf-fileapi-createfilea) con la \_ marca de acceso aleatorio del marcador de archivo \_ \_ establecida.
 
 Este problema se describe en detalle en el artículo [2549369](https://support.microsoft.com/default.aspx?scid=kb;en-US;2549369)de Knowledge base. Marca de archivo marcador de \_ \_ \_ acceso aleatorio es una sugerencia para que el administrador de caché Mantenga las vistas asignadas del archivo en memoria lo máximo posible (hasta que el administrador de memoria no señale una condición de memoria insuficiente). Al mismo tiempo, esta marca indica al administrador de caché que deshabilite la captura previa de datos de archivo.
 
-Esta situación se ha mitigado en cierta medida mediante mejoras en el recorte del conjunto de trabajo en Windows Server 2012 +, pero el propio problema debe ser direccionado principalmente por el proveedor de la aplicación, sin usar el \_ acceso aleatorio del marcador de archivo \_ \_ . Una solución alternativa para el proveedor de la aplicación podría ser usar una prioridad de memoria baja al acceder a los archivos. Esto puede lograrse mediante la API de [SetThreadInformation](https://msdn.microsoft.com/library/windows/desktop/hh448390.aspx) . Las páginas a las que se tiene acceso con una prioridad de memoria baja se quitan del espacio de trabajo de forma más agresiva.
+Esta situación se ha mitigado en cierta medida mediante mejoras en el recorte del conjunto de trabajo en Windows Server 2012 +, pero el propio problema debe ser direccionado principalmente por el proveedor de la aplicación, sin usar el \_ acceso aleatorio del marcador de archivo \_ \_ . Una solución alternativa para el proveedor de la aplicación podría ser usar una prioridad de memoria baja al acceder a los archivos. Esto puede lograrse mediante la API de [SetThreadInformation](/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadinformation) . Las páginas a las que se tiene acceso con una prioridad de memoria baja se quitan del espacio de trabajo de forma más agresiva.
 
 En el administrador de caché, a partir de Windows Server 2016, se reduce aún más el FILE_FLAG_RANDOM_ACCESS al tomar decisiones de recorte, por lo que se trata igual que cualquier otro archivo abierto sin la marca de FILE_FLAG_RANDOM_ACCESS (el administrador de caché sigue respetando esta marca para deshabilitar la captura previa de datos de archivos).Todavía puede hacer que la memoria caché del sistema se llene si tiene un gran número de archivos abiertos con esta marca y tiene acceso de forma realmente aleatoria. Se recomienda encarecidamente que las aplicaciones no puedan usar FILE_FLAG_RANDOM_ACCESS.

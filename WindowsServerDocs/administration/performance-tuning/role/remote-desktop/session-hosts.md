@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 9de802638a6f8225d4c8b942ac3cbea303f09a89
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9a82f0db1f586e1f762292c61eabdd7f6556c8bc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896055"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992108"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de sesión
 
@@ -91,13 +91,13 @@ Tenga en cuenta las siguientes sugerencias al configurar las aplicaciones que se
 
 -   Deshabilite los procesos innecesarios que están registrados para iniciarse con el inicio de sesión de usuario o un inicio de sesión.
 
-    Estos procesos pueden contribuir significativamente al costo del uso de CPU al crear una nueva sesión de usuario, que generalmente es un proceso intensivo de la CPU, y puede resultar muy caro en escenarios de la mañana. Use MsConfig.exe o MsInfo32.exe para obtener una lista de los procesos que se inician en el inicio de sesión de usuario. Para obtener información más detallada, puede usar [Autoruns para Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx).
+    Estos procesos pueden contribuir significativamente al costo del uso de CPU al crear una nueva sesión de usuario, que generalmente es un proceso intensivo de la CPU, y puede resultar muy caro en escenarios de la mañana. Use MsConfig.exe o MsInfo32.exe para obtener una lista de los procesos que se inician en el inicio de sesión de usuario. Para obtener información más detallada, puede usar [Autoruns para Windows](/sysinternals/downloads/autoruns).
 
 En el consumo de memoria, debe tener en cuenta lo siguiente:
 
 -   Compruebe que los archivos dll cargados por una aplicación no se reubican.
 
-    -   Los archivos dll reubicados se pueden comprobar seleccionando procesar DLL vista, como se muestra en la siguiente ilustración, mediante el [Explorador de procesos](https://technet.microsoft.com/sysinternals/bb896653.aspx).
+    -   Los archivos dll reubicados se pueden comprobar seleccionando procesar DLL vista, como se muestra en la siguiente ilustración, mediante el [Explorador de procesos](/sysinternals/downloads/process-explorer).
 
     -   Aquí podemos ver que y.dll se reubicaba porque ya x.dll ocupado su dirección base predeterminada y ASLR no estaba habilitado
 

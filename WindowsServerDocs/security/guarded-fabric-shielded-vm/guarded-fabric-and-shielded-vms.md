@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: c508df5b23481a53ccc112d6c81b11fc9dcea790
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f81e77b0de231a03bcaa0cfe6877b1e67dd081db
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971392"
+ms.locfileid: "87989570"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Información general sobre máquinas virtuales blindadas y tejido protegido
 
@@ -58,7 +58,7 @@ HGS, junto con los métodos para crear las máquinas virtuales blindadas, ayudan
 
 | **Tipo de comprobación para máquinas virtuales**                         | **Comprobaciones de máquinas virtuales blindadas, del Servicio de protección de claves y de los métodos de creación para máquinas virtuales blindadas** |
 |----------------------------|--------------------------------------------------|
-| **Discos cifrados de BitLocker (discos del sistema operativo y discos de datos)**   | Las máquinas virtuales blindadas usan BitLocker para proteger sus discos. Las claves de BitLocker necesarias para arrancar la máquina virtual y descifrar los discos están protegidas por el TPM virtual de la máquina virtual blindada mediante tecnologías probadas en el sector, como el arranque medido seguro. Aunque solo las máquinas virtuales blindadas cifran y protegen automáticamente el disco de sistema operativo, también puede [cifrar unidades de datos](https://technet.microsoft.com/itpro/windows/keep-secure/bitlocker-overview) conectadas a la máquina virtual blindada. |
+| **Discos cifrados de BitLocker (discos del sistema operativo y discos de datos)**   | Las máquinas virtuales blindadas usan BitLocker para proteger sus discos. Las claves de BitLocker necesarias para arrancar la máquina virtual y descifrar los discos están protegidas por el TPM virtual de la máquina virtual blindada mediante tecnologías probadas en el sector, como el arranque medido seguro. Aunque solo las máquinas virtuales blindadas cifran y protegen automáticamente el disco de sistema operativo, también puede [cifrar unidades de datos](/windows/security/information-protection/bitlocker/bitlocker-overview) conectadas a la máquina virtual blindada. |
 | **Implementación de nuevas máquinas virtuales blindadas desde discos o imágenes de la plantilla "de confianza"** | Al implementar nuevas máquinas virtuales blindadas, los inquilinos pueden especificar en qué discos de plantilla confían. Los discos de plantilla blindados tienen firmas que se calculan en un momento dado cuando su contenido se considera de confianza. Las firmas de disco se almacenan después en un catálogo de firmas, que proporcionan con seguridad los inquilinos al tejido al crear máquinas virtuales blindadas. Durante el aprovisionamiento de las máquinas virtuales blindadas, la firma del disco se vuelve a calcular y se compara con las firmas de confianza en el catálogo. Si las firmas coinciden, se implementa la máquina virtual blindada. Si las firmas no coinciden, se considera que el disco de la plantilla blindada no es de confianza y se produce un error en la implementación. |
 | **Protección de contraseñas y otros secretos cuando se crea una máquina virtual blindada** | Al crear máquinas virtuales, es necesario asegurarse de que los secretos de la máquina virtual, como las firmas de disco de confianza, los certificados RDP y la contraseña de la cuenta de administrador local de la máquina virtual, no se revelan al tejido. Estos secretos se almacenan en un archivo cifrado que se denomina archivo de datos de blindaje (un archivo.PDK), que está protegido por las claves de inquilino y cargado al tejido por el inquilino. Cuando se crea una máquina virtual blindada, el inquilino selecciona los datos de blindaje que quiere utilizar que proporcionan con seguridad estos secretos solo a los componentes de confianza en el tejido protegido. |
 | **Control del inquilino de dónde se inicia la máquina virtual** | Los datos de blindaje también contienen una lista de los tejidos protegidos en los que se permite ejecutar una máquina virtual blindada determinada. Esto es útil, por ejemplo, en los casos en que una máquina virtual blindada normalmente reside en una nube privada local pero que puede migrarse a otra nube (pública o privada) con fines de recuperación ante desastres. La nube o el tejido de destino debe admitir máquinas virtuales blindadas y la máquina virtual blindada debe permitir que ese tejido la ejecute. |
@@ -164,6 +164,6 @@ Tanto las máquinas virtuales blindadas como las máquinas virtuales que admiten
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)
-- Blog: [blog de seguridad de centro de seguridad y nube privada](https://blogs.technet.microsoft.com/datacentersecurity/)
+- Blog: [blog de seguridad de centro de seguridad y nube privada](/archive/blogs/datacentersecurity/)
 - Vídeo: [Introducción a los virtual machines blindados](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
 - Vídeo: [profundizar en máquinas virtuales blindadas con Windows Server 2016 Hyper-V](https://channel9.msdn.com/events/Ignite/2016/BRK3124)

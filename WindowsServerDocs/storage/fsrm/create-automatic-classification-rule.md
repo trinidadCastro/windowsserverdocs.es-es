@@ -2,18 +2,16 @@
 title: Crear una regla de clasificación automática
 description: En este artículo se describe cómo crear una regla de clasificación para una propiedad.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9fc2034905408975f82f9348f151d99df17f9d3a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3793e8cd7f72e9e8d365df855c8c3450d9107f9b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475402"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961479"
 ---
 # <a name="create-an-automatic-classification-rule"></a>Crear una regla de clasificación automática
 
@@ -50,7 +48,7 @@ El siguiente procedimiento le guía por el proceso de creación de una regla de 
 
 6.  Haga clic en **Aceptar** o en **Cancelar** para cerrar el cuadro de diálogo **Opciones avanzadas** .
 
-7.  Haga clic en **OK**.
+7.  Haga clic en **Aceptar**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ae232d47398800ecae8500cff6726128f22b83
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 381073ad383913684b1b861883b981a19583767f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971992"
+ms.locfileid: "87997531"
 ---
 # <a name="deploy-windows-admin-center-in-azure"></a>Implementación de Windows Admin Center en Azure
 
@@ -29,7 +29,7 @@ Puede descargar [Deploy-WACAzVM.ps1](https://aka.ms/deploy-wacazvm) que se ejecu
 
 Si especifica su propio certificado:
 
-* Cargue el certificado en [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis). En primer lugar, cree un almacén de claves en Azure portal y, a continuación, cargue el certificado en el almacén de claves. Como alternativa, puede usar Azure portal para generar un certificado.
+* Cargue el certificado en [Azure Key Vault](/azure/key-vault/key-vault-whatis). En primer lugar, cree un almacén de claves en Azure portal y, a continuación, cargue el certificado en el almacén de claves. Como alternativa, puede usar Azure portal para generar un certificado.
 
 ### <a name="script-parameters"></a>Parámetros de script
 

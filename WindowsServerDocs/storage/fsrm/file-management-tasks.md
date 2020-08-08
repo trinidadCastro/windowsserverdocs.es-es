@@ -2,18 +2,16 @@
 title: Tareas de administración de archivos
 description: En este artículo se describe el proceso de automatización de las tareas de administración de archivos
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 402af4bd7c00bedfc3d01d43071af4fcd374d428
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e10aeec47498d6af72e767f519b11ebb4e72932
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474002"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961389"
 ---
 # <a name="file-management-tasks"></a>Tareas de administración de archivos
 
@@ -21,7 +19,7 @@ ms.locfileid: "85474002"
 
 Las tareas de administración de archivos automatizan el proceso de búsqueda de subconjuntos de archivos en un servidor y la aplicación de comandos sencillos. Estas tareas se pueden programar para que se realicen periódicamente a fin de reducir los costos repetitivos. Los archivos que se van a procesar mediante una tarea de administración de archivos se pueden definir con cualquiera de las siguientes propiedades:
 
--   Location
+-   Ubicación
 -   Propiedades de clasificación
 -   Hora de creación
 -   Hora de modificación
