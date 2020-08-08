@@ -8,12 +8,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/04/2018
-ms.openlocfilehash: 9457a1763f92e7f2571040c1c6e8e323d96ee598
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ccfaa9fa02dd7324f1682592867b027cad4006a8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951944"
+ms.locfileid: "87993558"
 ---
 # <a name="plan-the-use-of-vrss"></a>Planear el uso de vRSS
 
@@ -40,7 +40,7 @@ A continuación se indica información adicional que necesita para completar est
 
 3. **Ausencia de Sr \- IOV**. Compruebe que un controlador de FV de función virtual de virtualización de salida de entrada de raíz única \- \( \- \) \( \) no está conectado a la interfaz de red de VM. Puede comprobarlo mediante el comando **Get-NetAdapterSriov** . Si se carga un controlador de VF, RSS usa la configuración de escalado de este controlador en lugar de los configurados por vRSS. Si el controlador de VF no admite RSS, vRSS está deshabilitado.
 
-4. **Configuración de formación de equipos NIC**. Si usa la formación de equipos NIC, es importante que configure VMQ correctamente para que funcione con la configuración de formación de equipos NIC. Para obtener información detallada sobre la implementación y administración de formación de equipos NIC, consulte [formación de equipos NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming).
+4. **Configuración de formación de equipos NIC**. Si usa la formación de equipos NIC, es importante que configure VMQ correctamente para que funcione con la configuración de formación de equipos NIC. Para obtener información detallada sobre la implementación y administración de formación de equipos NIC, consulte [formación de equipos NIC](../nic-teaming/nic-teaming.md).
 
 5. **Número de LPS**. Compruebe que la máquina virtual tiene más de un procesador lógico \( LP \) . vRSS se basa en RSS en la VM o en el host de Hyper-V para equilibrar la carga del tráfico recibido en varios LPs para el procesamiento en paralelo. Puede observar cuántos LPs tiene la máquina virtual mediante la ejecución del comando de Windows PowerShell **Get-VMProcessor** en el host. Después de ejecutar el comando, puede observar la entrada de la columna recuento para el número de LPs.
 

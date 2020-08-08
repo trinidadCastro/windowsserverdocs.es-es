@@ -5,12 +5,12 @@ ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 78741ae45a5f175d6be0e608adba5c6c6fcbf771
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 69e1fee1a8ae0ff1c878c64790650290b4804351
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964401"
+ms.locfileid: "87993822"
 ---
 # <a name="whats-new-in-networking"></a>Novedades de redes
 
@@ -35,7 +35,7 @@ Las secciones siguientes contienen información acerca de estas nuevas caracter�
 
 A continuación se indican las tecnologías de infraestructura de SDN nuevas o mejoradas.
 
--   **Controladora de red**. Como novedad en Windows Server 2016, la controladora de red proporciona un punto de automatización programable y centralizado para administrar, configurar, supervisar y solucionar problemas de la infraestructura de red virtual y física en el centro de recursos. Con Controladora de red puede automatizar la configuración de la infraestructura de red, en vez de tener que configurar de forma manual los dispositivos y servicios. Para obtener más información, consulte [controladora de red](sdn/technologies/network-controller/Network-Controller.md) e [Implementar redes definidas por software mediante scripts](https://technet.microsoft.com/library/mt427380.aspx).
+-   **Controladora de red**. Como novedad en Windows Server 2016, la controladora de red proporciona un punto de automatización programable y centralizado para administrar, configurar, supervisar y solucionar problemas de la infraestructura de red virtual y física en el centro de recursos. Con Controladora de red puede automatizar la configuración de la infraestructura de red, en vez de tener que configurar de forma manual los dispositivos y servicios. Para obtener más información, consulte [controladora de red](sdn/technologies/network-controller/Network-Controller.md) e [Implementar redes definidas por software mediante scripts](/previous-versions/windows/server/mt427380(v=ws.12)).
 
 -   **Conmutador virtual de Hyper-V**. El conmutador virtual de Hyper-V se ejecuta en hosts de Hyper-V y permite crear conmutación y enrutamiento distribuido, y una capa de cumplimiento de directivas que se alinea y es compatible con Microsoft Azure. Para obtener más información, consulte [conmutador virtual de Hyper-V](../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).
 
@@ -50,7 +50,7 @@ A continuación se indican las tecnologías de infraestructura de SDN nuevas o m
         Para obtener más información, consulte [novedades de puerta de enlace ras](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) y [puerta de enlace ras para Sdn](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md).
 
     - **Load balancer de software (SLB) y traducción de direcciones de red (NAT)**. El equilibrador de carga de nivel 4 norte-sur y este-oeste de Europa mejora el rendimiento al admitir Direct Server Return, con el que el tráfico de red devuelto puede omitir el multiplexor de equilibrio de carga.
-       Para obtener más información, consulte [equilibrio de carga de Software &#40;SLB&#41; para Sdn](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).
+       Para obtener más información, consulte [equilibrio de carga de Software &#40;SLB&#41; para Sdn](./sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md).
 
     Para obtener más información, consulte [virtualización de función de red](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md).
 
@@ -145,5 +145,3 @@ IPAM proporciona capacidades de supervisión y administración muy personalizabl
      Puede usar Windows PowerShell para establecer ámbitos de acceso en objetos IPAM.
 
 Para obtener más información, vea [novedades de IPAM](technologies/ipam/What-s-New-in-IPAM.md) y [Administración de IPAM](technologies/ipam/Manage-IPAM.md).
-
-

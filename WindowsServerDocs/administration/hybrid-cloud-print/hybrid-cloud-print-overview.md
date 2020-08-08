@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: trudyha
 ms.author: trudyha
 ms.date: 10/16/2017
-ms.openlocfilehash: fc76aef0f7fbc9f3c1dd73b94c6510c0ad37034c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 49c5ee234a6983902e7eb2f68e64a058167a3182
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879414"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993415"
 ---
 # <a name="windows-server-hybrid-cloud-print-overview"></a>Información general de impresión en la nube híbrida de Windows Server
 
@@ -48,7 +48,7 @@ Esta tabla contiene más información sobre los elementos del diagrama.
 | Elemento | Descripción |
 | ------- | ----------- |
 | Azure Active Directory  | Proporciona y controla la funcionalidad de identidad y autorización del usuario |
-| Grafo de        | Proporciona y controla la funcionalidad de identidad y autorización del usuario |
+| Active Directory        | Proporciona y controla la funcionalidad de identidad y autorización del usuario |
 | Azure AD Connect  | Sincroniza las credenciales de usuario entre Azure AD y AD local. |
 | Servicio MDM (Intune) | Proporciona la funcionalidad de aprovisionamiento de directivas de dispositivo para garantizar que el dispositivo cliente (dispositivo BYOD) cumple las directivas corporativas. |
 | Proxy de Azure AD | Proporciona una conexión de larga duración que se establece desde detrás del Firewall a Azure para permitir que el tráfico de aplicaciones configurado específico fluya desde Internet a la red corporativa. |
@@ -56,7 +56,7 @@ Esta tabla contiene más información sobre los elementos del diagrama.
 | Dispositivo BYOD/cola de impresión/Impresora del servidor de impresión de Windows | Son tal cual. No hay ningún cambio en la funcionalidad de la implementación. |
 
 Hay dos maneras de instalar **la impresión híbrida en la nube**:
-- * * Características a petición, que ven [configurar características a petición en Windows Server](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server) para obtener más información sobre cómo agregar y quitar archivos de roles y características.
+- * * Características a petición, que ven [configurar características a petición en Windows Server](../server-manager/configure-features-on-demand-in-windows-server.md) para obtener más información sobre cómo agregar y quitar archivos de roles y características.
 - * * Configuración de Windows Server 2016, que los administradores pueden ir a **configuración**  ->  **aplicaciones**  ->  **administrar características opcionales**  ->  **Agregar una característica** y buscar el paquete de características a petición
 - Comandos de PowerShell: en una ventana de administrador de PowerShell, ejecute estos comandos:
 

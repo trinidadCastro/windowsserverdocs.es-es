@@ -5,18 +5,18 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 916239535b92e1248918c76897e5222fa1dc6451
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b1616af3cfc1f14c534392c7f083b333b4744ef3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896116"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993351"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Consideraciones sobre máquinas virtuales Linux
 
 Las máquinas virtuales Linux y BSD tienen consideraciones adicionales en comparación con las máquinas virtuales de Windows en Hyper-V.
 
-La primera consideración es si Integration Services están presentes o si la máquina virtual se está ejecutando simplemente en hardware emulado sin ninguna habilitación. Hay disponible una tabla de las versiones de Linux y BSD que tienen Integration Services integradas o descargables en [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows). Estas páginas tienen cuadrículas de las características de Hyper-V disponibles para las versiones de distribución de Linux y notas sobre esas características, si procede.
+La primera consideración es si Integration Services están presentes o si la máquina virtual se está ejecutando simplemente en hardware emulado sin ninguna habilitación. Hay disponible una tabla de las versiones de Linux y BSD que tienen Integration Services integradas o descargables en [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](../../../../virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md). Estas páginas tienen cuadrículas de las características de Hyper-V disponibles para las versiones de distribución de Linux y notas sobre esas características, si procede.
 
 Incluso cuando el invitado se ejecuta Integration Services, se puede configurar con hardware heredado que no presenta el mejor rendimiento. Por ejemplo, configure y use un adaptador Ethernet virtual para el invitado en lugar de usar un adaptador de red heredado. Con Windows Server 2016, también están disponibles redes avanzadas como SR-IOV.
 
@@ -51,7 +51,7 @@ Una herramienta útil para microbenchmarks de red es ntttcp, que está disponibl
 
 ## <a name="linux-storage-performance"></a>Rendimiento de almacenamiento de Linux
 
-Algunos procedimientos recomendados, como los siguientes, se enumeran en [procedimientos recomendados para ejecutar Linux en Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v). El kernel de Linux tiene diferentes programadores de e/s para reordenar las solicitudes con diferentes algoritmos. NOOP es una cola primero en salir que pasa la decisión de programación que va a realizar el hipervisor. Se recomienda usar NOOP como programador al ejecutar la máquina virtual Linux en Hyper-V. Para cambiar el programador de un dispositivo específico, en la configuración del cargador de arranque (por ejemplo,/etc/grub.conf), agregue `elevator=noop` los parámetros de kernel y, a continuación, reinicie.
+Algunos procedimientos recomendados, como los siguientes, se enumeran en [procedimientos recomendados para ejecutar Linux en Hyper-V](../../../../virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v.md). El kernel de Linux tiene diferentes programadores de e/s para reordenar las solicitudes con diferentes algoritmos. NOOP es una cola primero en salir que pasa la decisión de programación que va a realizar el hipervisor. Se recomienda usar NOOP como programador al ejecutar la máquina virtual Linux en Hyper-V. Para cambiar el programador de un dispositivo específico, en la configuración del cargador de arranque (por ejemplo,/etc/grub.conf), agregue `elevator=noop` los parámetros de kernel y, a continuación, reinicie.
 
 De forma similar a las redes, el rendimiento de invitados de Linux con almacenamiento aprovecha al máximo varias colas con suficiente profundidad para mantener el host ocupado. La herramienta de pruebas comparativas de FIO con el motor de libaio es probablemente la mejor opción de rendimiento del almacenamiento.
 

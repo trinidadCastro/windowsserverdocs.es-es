@@ -7,12 +7,12 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: e671421225e9fa2d5e7461c795a9f7c9789efd88
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7fcf8b095479ec21c045a60244917b09883a6162
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970822"
+ms.locfileid: "87993763"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implementación de una infraestructura de red definida por software con scripts
 
@@ -20,7 +20,7 @@ ms.locfileid: "87970822"
 
 Si desea que las cargas de trabajo de inquilinos se comuniquen fuera de sus redes virtuales, puede configurar las reglas NAT de SLB, los túneles de puerta de enlace de sitio a sitio o el reenvío de capa 3 para enrutar entre cargas de trabajo virtuales y físicas.
 
-También puede implementar una infraestructura de SDN mediante Virtual Machine Manager (VMM). Para obtener más información, consulte [configuración de una infraestructura de red definida por software (SDN) en el tejido de VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview).
+También puede implementar una infraestructura de SDN mediante Virtual Machine Manager (VMM). Para obtener más información, consulte [configuración de una infraestructura de red definida por software (SDN) en el tejido de VMM](/system-center/vmm/deploy-sdn?view=sc-vmm-2019).
 
 ## <a name="pre-deployment"></a>Anterior a la implementación
 
@@ -35,7 +35,7 @@ Para empezar, configure el conmutador virtual de Hyper-v (servidores físicos) y
 ### <a name="install-host-networking"></a>Instalar redes de host
 
 1. Instale los controladores de red más recientes disponibles para el hardware de la NIC.
-2. Instale el rol de Hyper-V en todos los hosts (para obtener más información, consulte [Introducción a Hyper-v en Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/Get-started-with-Hyper-V-on-Windows).
+2. Instale el rol de Hyper-V en todos los hosts (para obtener más información, consulte [Introducción a Hyper-v en Windows Server 2016](../../../virtualization/hyper-v/get-started/get-started-with-hyper-v-on-windows.md).
 
    ```PowerShell
    Install-WindowsFeature -Name Hyper-V -ComputerName <computer_name> -IncludeManagementTools -Restart
@@ -62,7 +62,7 @@ Para empezar, configure el conmutador virtual de Hyper-v (servidores físicos) y
    New-NetIPAddress -InterfaceAlias "vEthernet (<switch name>)" -IPAddress <IP> -DefaultGateway <Gateway IP> -AddressFamily IPv4 -PrefixLength <Length of Subnet Mask - for example: 24>
    ```
 
-5. Opta Implementar una máquina virtual para hospedar Active Directory Domain Services ([instalar Active Directory Domain Services (nivel 100)](https://technet.microsoft.com/library/hh472162.aspx) y un servidor DNS.
+5. Opta Implementar una máquina virtual para hospedar Active Directory Domain Services ([instalar Active Directory Domain Services (nivel 100)](../../../identity/ad-ds/deploy/install-active-directory-domain-services--level-100-.md) y un servidor DNS.
 
     a. Conecte la máquina virtual del servidor de Active Directory/DNS a la VLAN de administración:
 
@@ -171,7 +171,7 @@ Si usa nano como hosts de Hyper-V (servidores físicos) para la implementación,
 
 Suponiendo que el script de SDN Express se ejecutó hasta completarse sin informar de ningún error, puede realizar el siguiente paso para asegurarse de que los recursos del tejido se han implementado correctamente y están disponibles para la implementación de inquilinos.
 
-Use [herramientas de diagnóstico](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack) para asegurarse de que no hay ningún error en los recursos de tejido de la controladora de red.
+Use [herramientas de diagnóstico](../troubleshoot/troubleshoot-windows-server-software-defined-networking-stack.md) para asegurarse de que no hay ningún error en los recursos de tejido de la controladora de red.
 
    ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller Rest Name>``
 

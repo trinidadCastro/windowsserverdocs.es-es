@@ -4,13 +4,12 @@ description: Configuración de controles de recursos de CPU del host
 author: allenma
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 1e35595a0b5a0ab12187aae2cf714fc4d53901ee
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: fc65159474f9b1cd8bf282acf00ff06f4727673b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769633"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994055"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Administración de recursos de CPU del host de Hyper-V
 
@@ -18,12 +17,12 @@ Los controles de recursos de CPU del host de Hyper-V introducidos en Windows Ser
 Con estos controles, los administradores pueden dedicar un subconjunto de los procesadores de un sistema host a la partición raíz.
 Esto puede separar el trabajo realizado en un host de Hyper-V de las cargas de trabajo que se ejecutan en máquinas virtuales invitadas mediante su ejecución en subconjuntos independientes de los procesadores del sistema.
 
-Para obtener más información sobre el hardware de los hosts de Hyper-V, consulte [requisitos del sistema de Hyper-v de Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements).
+Para obtener más información sobre el hardware de los hosts de Hyper-V, consulte [requisitos del sistema de Hyper-v de Windows 10](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements).
 
 ## <a name="background"></a>Información previa
 
 Antes de establecer los controles para los recursos de CPU del host de Hyper-V, resulta útil revisar los conceptos básicos de la arquitectura de Hyper-V.
-Puede encontrar un resumen general en la sección [arquitectura de Hyper-V](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture) .
+Puede encontrar un resumen general en la sección [arquitectura de Hyper-V](../../../administration/performance-tuning/role/hyper-v-server/architecture.md) .
 Estos son los conceptos importantes de este artículo:
 
 * Hyper-V crea y administra particiones de máquinas virtuales, en las que los recursos de proceso están asignados y compartidos, bajo el control del hipervisor.  Las particiones proporcionan límites de aislamiento fuertes entre todas las máquinas virtuales invitadas y entre las máquinas virtuales invitadas y la partición raíz.

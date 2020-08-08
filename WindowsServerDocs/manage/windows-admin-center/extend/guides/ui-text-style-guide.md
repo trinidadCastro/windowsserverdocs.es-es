@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 01/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d77498b9d4c8573dfac82b7291b6d0676d0d8c1e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a784bdfdfbfbbc4f91579d40cedb22230a70b13a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971982"
+ms.locfileid: "87993585"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guía de estilo de texto y diseño de la interfaz de usuario del centro de administración de Windows
 
@@ -19,7 +19,7 @@ ms.locfileid: "87971982"
 
 En este tema se describe el enfoque general para escribir texto de la interfaz de usuario (UI) para el centro de administración de Windows, así como algunas convenciones y enfoques específicos que estamos llevando a cabo.
 
-El centro de administración de Windows y todas las extensiones deben seguir los [principios de voz de Microsoft](https://docs.microsoft.com/style-guide/brand-voice-above-all-simple-human) para que la experiencia sea fácil de usar y de fácil uso. Esta guía de estilo se basa en estos principios de voz, así como en la [Guía de estilo de escritura de Microsoft](https://docs.microsoft.com/style-guide/welcome/), por lo que debe asegurarse de consultar ambos recursos para obtener información sobre aspectos como la [accesibilidad](https://docs.microsoft.com/style-guide/accessibility/accessibility-guidelines-requirements), los [acrónimos](https://docs.microsoft.com/style-guide/acronyms)y la [elección de palabras](https://docs.microsoft.com/style-guide/word-choice/) , como [por](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/p/please)ejemplo, y [lo sentimos](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/s/sorry).
+El centro de administración de Windows y todas las extensiones deben seguir los [principios de voz de Microsoft](/style-guide/brand-voice-above-all-simple-human) para que la experiencia sea fácil de usar y de fácil uso. Esta guía de estilo se basa en estos principios de voz, así como en la [Guía de estilo de escritura de Microsoft](/style-guide/welcome/), por lo que debe asegurarse de consultar ambos recursos para obtener información sobre aspectos como la [accesibilidad](/style-guide/accessibility/accessibility-guidelines-requirements), los [acrónimos](/style-guide/acronyms)y la [elección de palabras](/style-guide/word-choice/) , como [por](/style-guide/a-z-word-list-term-collections/p/please)ejemplo, y [lo sentimos](/style-guide/a-z-word-list-term-collections/s/sorry).
 
 ## <a name="buttons"></a>Botones
 
@@ -29,7 +29,7 @@ El centro de administración de Windows y todas las extensiones deben seguir los
 
 ## <a name="capitalization"></a>Uso de mayúsculas
 
-Seguimos el estilo de Microsoft [para usar](https://docs.microsoft.com/style-guide/capitalization) las mayúsculas y minúsculas con el estilo de oraciones en casi todo.
+Seguimos el estilo de Microsoft [para usar](/style-guide/capitalization) las mayúsculas y minúsculas con el estilo de oraciones en casi todo.
 
 | Elemento de la interfaz de usuario              |Uso de mayúsculas|Comentarios|
 |-------------------------|--------------|--------|
@@ -215,7 +215,7 @@ El estado NULL se produce cuando los datos o el contenido del cliente no están 
 ## <a name="punctuation"></a>Signos de puntuación
 
 - Sin puntuación final (puntos, signos de interrogación) para los encabezados o oraciones incompletas. Una excepción se encuentra en un cuadro de diálogo de confirmación donde el encabezado hace la pregunta
-- Use la guía de Microsoft Style Guide para [puntos](https://docs.microsoft.com/style-guide/punctuation/periods) y [signos de interrogación](https://docs.microsoft.com/style-guide/punctuation/question-marks).
+- Use la guía de Microsoft Style Guide para [puntos](/style-guide/punctuation/periods) y [signos de interrogación](/style-guide/punctuation/question-marks).
 
 ## <a name="status-messages"></a>Mensajes de estado
 

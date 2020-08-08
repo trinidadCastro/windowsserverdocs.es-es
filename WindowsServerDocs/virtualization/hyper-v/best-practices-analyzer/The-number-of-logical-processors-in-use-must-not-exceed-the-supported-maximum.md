@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 66df8b02-91d1-424b-8934-a39c214d530e
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d74fa49a3ce0015cb8ee819b537153519c498627
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4a78f81fa90bc25d9ca1888d2c74d90a417f1071
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960468"
+ms.locfileid: "87993430"
 ---
 # <a name="the-number-of-logical-processors-in-use-must-not-exceed-the-supported-maximum"></a>El número de procesadores lógicos en uso no debe superar el máximo admitido
 
@@ -41,7 +41,7 @@ En las secciones siguientes, cursiva indica el texto que aparece en la herramien
 
 *Quite algunos procesadores de este equipo o use msconfig para limitar el número de procesadores disponibles.*
 
-Vea las instrucciones siguientes para usar msconfig. Para obtener más información acerca de cómo quitar procesadores, consulte las instrucciones suministradas con el equipo o póngase en contacto con el fabricante del hardware. Para obtener más información acerca de las configuraciones máximas admitidas para Hyper-V, consulte [planear la escalabilidad de Hyper-v en Windows Server 2016](../plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md).
+Vea las instrucciones siguientes para usar msconfig. Para obtener más información acerca de cómo quitar procesadores, consulte las instrucciones suministradas con el equipo o póngase en contacto con el fabricante del hardware. Para obtener más información acerca de las configuraciones máximas admitidas para Hyper-V, consulte [planear la escalabilidad de Hyper-v en Windows Server 2016](../plan/plan-hyper-v-scalability-in-windows-server.md).
 
 ### <a name="to-limit-the-number-of-available-processors"></a>Para limitar el número de procesadores disponibles
 
@@ -52,6 +52,3 @@ Vea las instrucciones siguientes para usar msconfig. Para obtener más informaci
 3.  Seleccione **número de procesadores** y, a continuación, seleccione un número en la lista. Haga clic en **Aceptar**.
 
 4.  Reinicie el equipo para ejecutarlo con el nuevo número de procesadores.
-
-
-

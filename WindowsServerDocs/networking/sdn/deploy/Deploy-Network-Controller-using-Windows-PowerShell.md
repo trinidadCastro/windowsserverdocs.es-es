@@ -1,20 +1,18 @@
 ---
 title: Implementación de controladora de red con Windows PowerShell
 description: En este tema se proporcionan instrucciones sobre el uso de Windows PowerShell para implementar la controladora de red en uno o varios equipos o máquinas virtuales (VM) que ejecutan Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
 ms.author: anpaul
 author: AnirbanPaul
 manager: grcusanz
 ms.date: 08/23/2018
-ms.openlocfilehash: 429d79ec9ed2f22bd7c7e1a4c1bd8f6cb6ff7fb1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e26caa963bfde32be2770577c0745ea3cf3b454a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860738"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993791"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Implementación de controladora de red con Windows PowerShell
 
@@ -23,9 +21,9 @@ ms.locfileid: "80860738"
 En este tema se proporcionan instrucciones sobre el uso de Windows PowerShell para implementar la controladora de red en una o varias máquinas virtuales (VM) que ejecutan Windows Server 2016.
 
 >[!IMPORTANT]
->No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(máquina virtual\) instalada en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper\-V diferentes, debe habilitar los hosts de Hyper\-V para redes definidas por software \(SDN\) agregando los hosts a la controladora de red mediante el comando de Windows PowerShell **New-NetworkControllerServer**. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
+>No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \( \) que esté instalada en un host de Hyper-v. Una vez que haya instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper- \- v diferentes, debe habilitar los \- hosts de Hyper v para las redes definidas por software de \( Sdn \) agregando los hosts a la controladora de red mediante el comando de Windows PowerShell **New-NetworkControllerServer**. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
 
-Este tema contiene las siguientes secciones.
+En este tema se incluyen las siguientes secciones.
 
 - [Instalar el rol de servidor de controlador de red](#install-the-network-controller-server-role)
 
@@ -43,15 +41,15 @@ Este tema contiene las siguientes secciones.
 
 ## <a name="install-the-network-controller-server-role"></a>Instalar el rol de servidor de controlador de red
 
-Puede usar este procedimiento para instalar el rol de servidor de la controladora de red en una máquina virtual \(\)de máquinas virtuales.
+Puede usar este procedimiento para instalar el rol de servidor de la controladora de red en una máquina virtual de máquinas virtuales \( \) .
 
 >[!IMPORTANT]
->No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(máquina virtual\) instalada en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper\-V diferentes, debe habilitar los hosts de Hyper\-V para redes definidas por software \(SDN\) agregando los hosts a la controladora de red. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione.
+>No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \( \) que esté instalada en un host de Hyper-v. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper- \- v diferentes, debe habilitar los \- hosts de Hyper v para las redes definidas por software \( \) mediante la adición de los hosts a la controladora de red. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione.
 
-El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.  
+El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.
 
 >[!NOTE]
->Si desea usar Administrador del servidor en lugar de Windows PowerShell para instalar el controlador de red, consulte [instalación del rol de servidor de la controladora de red mediante administrador del servidor](https://technet.microsoft.com/library/mt403348.aspx)
+>Si desea usar Administrador del servidor en lugar de Windows PowerShell para instalar el controlador de red, consulte [instalación del rol de servidor de la controladora de red mediante administrador del servidor](../technologies/network-controller/install-the-network-controller-server-role-using-server-manager.md)
 
 Para instalar la controladora de red mediante Windows PowerShell, escriba los siguientes comandos en un símbolo del sistema de Windows PowerShell y, a continuación, presione Entrar.
 
@@ -66,7 +64,7 @@ La instalación de la controladora de red requiere que reinicie el equipo. Para 
 El clúster de controladora de red proporciona alta disponibilidad y escalabilidad a la aplicación de controladora de red, que puede configurar después de crear el clúster y que se hospeda en la parte superior del clúster.
 
 >[!NOTE]
->Puede realizar los procedimientos de las siguientes secciones directamente en la máquina virtual en la que instaló el controlador de red, o puede usar el Herramientas de administración remota del servidor para Windows Server 2016 para realizar los procedimientos desde un equipo remoto que ejecuta Windows Server 2016 o Windows 10. Además, la pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesario para realizar este procedimiento. Si el equipo o la máquina virtual en la que instaló el controlador de red está unido a un dominio, la cuenta de usuario debe ser miembro de **los usuarios del dominio**.
+>Puede realizar los procedimientos de las siguientes secciones directamente en la máquina virtual en la que instaló el controlador de red, o puede usar el Herramientas de administración remota del servidor para Windows Server 2016 para realizar los procedimientos desde un equipo remoto que ejecute Windows Server 2016 o Windows 10. Además, la pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesario para realizar este procedimiento. Si el equipo o la máquina virtual en la que instaló el controlador de red está unido a un dominio, la cuenta de usuario debe ser miembro de **los usuarios del dominio**.
 
 Puede crear un clúster de controladora de red mediante la creación de un objeto de nodo y, a continuación, la configuración del clúster.
 
@@ -74,7 +72,7 @@ Puede crear un clúster de controladora de red mediante la creación de un objet
 
 Debe crear un objeto de nodo para cada máquina virtual que sea miembro del clúster de la controladora de red.
 
-Para crear un objeto de nodo, escriba el siguiente comando en el símbolo del sistema de Windows PowerShell y, a continuación, presione Entrar. Asegúrese de agregar valores para cada parámetro que sean adecuados para su implementación.  
+Para crear un objeto de nodo, escriba el siguiente comando en el símbolo del sistema de Windows PowerShell y, a continuación, presione Entrar. Asegúrese de agregar valores para cada parámetro que sean adecuados para su implementación.
 
 ```
 New-NetworkControllerNodeObject -Name <string> -Server <String> -FaultDomain <string>-RestInterface <string> [-NodeCertificate <X509Certificate2>]
@@ -84,9 +82,9 @@ En la tabla siguiente se proporcionan descripciones para cada parámetro del com
 
 |Parámetro|Descripción|
 |-------------|---------------|
-|Name|El parámetro **Name** especifica el nombre descriptivo del servidor que desea agregar al clúster.|
-|Server|El parámetro **Server** especifica el nombre de host, el nombre de dominio completo (FQDN) o la dirección IP del servidor que desea agregar al clúster. En el caso de los equipos Unidos a un dominio, se requiere FQDN.|
-|FaultDomain|El parámetro **FaultDomain** especifica el dominio de error del servidor que se va a agregar al clúster. Este parámetro define los servidores que pueden experimentar errores al mismo tiempo que el servidor que se va a agregar al clúster. Este error puede deberse a las dependencias físicas compartidas, como fuentes de alimentación y redes. Normalmente, los dominios de error representan jerarquías que están relacionadas con estas dependencias compartidas, con más servidores que es probable que produzcan errores juntos desde un punto superior en el árbol de dominios de error. Durante el tiempo de ejecución, la controladora de red considera los dominios de error del clúster e intenta distribuir los servicios de la controladora de red para que estén en dominios de error independientes. Este proceso ayuda a garantizar, en caso de error de un dominio de error, que la disponibilidad de ese servicio y su estado no se vean comprometidas. Los dominios de error se especifican en un formato jerárquico. Por ejemplo: "FD:/DC1/Bastidor1/Host1", donde DC1 es el nombre del centro de recursos, Bastidor1 es el nombre del bastidor y Host1 es el nombre del host en el que se coloca el nodo.|
+|Nombre|El parámetro **Name** especifica el nombre descriptivo del servidor que desea agregar al clúster.|
+|Servidor|El parámetro **Server** especifica el nombre de host, el nombre de dominio completo (FQDN) o la dirección IP del servidor que desea agregar al clúster. En el caso de los equipos Unidos a un dominio, se requiere FQDN.|
+|FaultDomain|El parámetro **FaultDomain** especifica el dominio de error del servidor que se va a agregar al clúster. Este parámetro define los servidores que pueden experimentar errores al mismo tiempo que el servidor que se va a agregar al clúster. Este error puede deberse a las dependencias físicas compartidas, como fuentes de alimentación y redes. Normalmente, los dominios de error representan jerarquías que están relacionadas con estas dependencias compartidas, con más servidores que es probable que produzcan errores juntos desde un punto superior en el árbol de dominios de error. Durante el tiempo de ejecución, la controladora de red considera los dominios de error del clúster e intenta distribuir los servicios de la controladora de red para que estén en dominios de error independientes. Este proceso ayuda a garantizar, en caso de error de cualquier dominio de error, que no se ponga en peligro la disponibilidad del servicio y su estado. Los dominios de error se especifican en un formato jerárquico. Por ejemplo: "FD:/DC1/Bastidor1/Host1", donde DC1 es el nombre del centro de recursos, Bastidor1 es el nombre del bastidor y Host1 es el nombre del host en el que se coloca el nodo.|
 |RestInterface|El parámetro **RestInterface** especifica el nombre de la interfaz en el nodo donde se termina la comunicación de transferencia de estado REPRESENTACIONAL (REST). Esta interfaz de controladora de red recibe solicitudes de API de Northbound desde el nivel de administración de la red.|
 |NodeCertificate|El parámetro **NodeCertificate** especifica el certificado que usa la controladora de red para la autenticación del equipo. El certificado es necesario si usa la autenticación basada en certificados para la comunicación dentro del clúster. el certificado también se utiliza para el cifrado del tráfico entre los servicios de la controladora de red. El nombre del firmante del certificado debe ser el mismo que el nombre DNS del nodo.|
 
@@ -99,7 +97,7 @@ Install-NetworkControllerCluster -Node <NetworkControllerNode[]> -ClusterAuthent
 ```
 
 En la tabla siguiente se proporcionan descripciones para cada parámetro del comando **install-NetworkControllerCluster** .
-  
+
 |Parámetro|Descripción|
 |-------------|---------------|
 |ClusterAuthentication|El parámetro **ClusterAuthentication** especifica el tipo de autenticación que se usa para proteger la comunicación entre los nodos y también se usa para el cifrado del tráfico entre los servicios de la controladora de red. Los valores admitidos son **Kerberos**, **X509** y **None**. La autenticación Kerberos usa cuentas de dominio y solo se puede usar si los nodos de la controladora de red están Unidos a un dominio. Si especifica la autenticación basada en X509, debe proporcionar un certificado en el objeto NetworkControllerNode. Además, debe aprovisionar el certificado manualmente antes de ejecutar este comando.|
@@ -108,10 +106,10 @@ En la tabla siguiente se proporcionan descripciones para cada parámetro del com
 |DiagnosticLogLocation|El parámetro **DiagnosticLogLocation** especifica la ubicación del recurso compartido donde se cargan periódicamente los registros de diagnóstico. Si no especifica un valor para este parámetro, los registros se almacenan localmente en cada nodo. Los registros se almacenan localmente en la carpeta%systemdrive%\Windows\tracing\SDNDiagnostics. Los registros del clúster se almacenan localmente en la carpeta%systemdrive%\ProgramData\Microsoft\Service Fabric\log\Traces.|
 |LogLocationCredential|El parámetro **LogLocationCredential** especifica las credenciales necesarias para tener acceso a la ubicación del recurso compartido donde se almacenan los registros.|
 |CredentialEncryptionCertificate|El parámetro **CredentialEncryptionCertificate** especifica el certificado que la controladora de red usa para cifrar las credenciales que se usan para tener acceso a los archivos binarios de la controladora de red y **LogLocationCredential**, si se especifica. El certificado debe aprovisionarse en todos los nodos de la controladora de red antes de ejecutar este comando y el mismo certificado debe inscribirse en todos los nodos del clúster. Se recomienda usar este parámetro para proteger los registros y los archivos binarios de la controladora de red en entornos de producción. Sin este parámetro, las credenciales se almacenan en texto no cifrado y se pueden usar de forma inusada por cualquier usuario no autorizado.|
-|Credenciales|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **Credential** especifica una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
+|Credential:|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **Credential** especifica una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
 |CertificateThumbprint|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **CertificateThumbprint** especifica el certificado de clave pública digital (X509) de una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
 |UseSSL|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **UseSSL** especifica el protocolo capa de sockets seguros (SSL) que se usa para establecer una conexión con el equipo remoto. De forma predeterminada, no se usa SSL.|
-|nombreDeEquipo|El parámetro **ComputerName** especifica el nodo de la controladora de red en el que se ejecuta este comando. Si no especifica un valor para este parámetro, se utiliza el equipo local de forma predeterminada.|
+|ComputerName|El parámetro **ComputerName** especifica el nodo de la controladora de red en el que se ejecuta este comando. Si no especifica un valor para este parámetro, se utiliza el equipo local de forma predeterminada.|
 |LogSizeLimitInMBs|Este parámetro especifica el tamaño máximo del registro, en MB, que puede almacenar la controladora de red. Los registros se almacenan de manera circular. Si se proporciona DiagnosticLogLocation, el valor predeterminado de este parámetro es 40 GB. Si no se proporciona DiagnosticLogLocation, los registros se almacenan en los nodos de la controladora de red y el valor predeterminado de este parámetro es 15 GB.|
 |LogTimeLimitInDays|Este parámetro especifica el límite de duración, en días, durante el que se almacenan los registros. Los registros se almacenan de manera circular. El valor predeterminado de este parámetro es 3 días.|
 
@@ -133,7 +131,7 @@ En la tabla siguiente se proporcionan descripciones para cada parámetro del com
 |RESTIPAddress|No es necesario especificar un valor para **RESTIPAddress** con una implementación de un solo nodo de la controladora de red. En el caso de implementaciones de varios nodos, el parámetro **RESTIPAddress** especifica la dirección IP del punto de conexión Rest en la notación CIDR. Por ejemplo, 192.168.1.10/24. El valor de nombre de sujeto de **ServerCertificate** debe resolverse en el valor del parámetro **RESTIPAddress** . Este parámetro debe especificarse para todas las implementaciones de controlador de red de varios nodos cuando todos los nodos están en la misma subred. Si los nodos están en subredes diferentes, debe usar el parámetro **RestName** en lugar de usar **RESTIPAddress**.|
 |RestName|No es necesario especificar un valor para **RestName** con una implementación de un solo nodo de la controladora de red. La única vez que debe especificar un valor para **RestName** es cuando las implementaciones de varios nodos tienen nodos que se encuentran en subredes diferentes. En el caso de implementaciones de varios nodos, el parámetro **RestName** especifica el FQDN del clúster de controladora de red.|
 |ClientSecurityGroup|El parámetro **ClientSecurityGroup** especifica el nombre del grupo de seguridad de Active Directory cuyos miembros son clientes de la controladora de red. Este parámetro solo es necesario si se usa la autenticación Kerberos para **ClientAuthentication**. El grupo de seguridad debe contener las cuentas desde las que se tiene acceso a las API de REST y debe crear el grupo de seguridad y agregar miembros antes de ejecutar este comando.|
-|Credenciales|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **Credential** especifica una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
+|Credential:|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **Credential** especifica una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
 |CertificateThumbprint|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **CertificateThumbprint** especifica el certificado de clave pública digital (X509) de una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
 |UseSSL|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **UseSSL** especifica el protocolo capa de sockets seguros (SSL) que se usa para establecer una conexión con el equipo remoto. De forma predeterminada, no se usa SSL.|
 
@@ -163,7 +161,7 @@ Si usa Kerberos como mecanismo de ClientAuthentication, la pertenencia al **Clie
 3. Para recuperar la credencial que ha agregado a la controladora de red, escriba el siguiente comando y, a continuación, presione Entrar. Asegúrese de agregar valores para cada parámetro que sean adecuados para su implementación.
 
     ```
-    Get-NetworkControllerCredential -ConnectionUri https://networkcontroller -ResourceId cred1  
+    Get-NetworkControllerCredential -ConnectionUri https://networkcontroller -ResourceId cred1
     ```
 
 4. Revise la salida del comando, que debe ser similar a la siguiente salida de ejemplo.
@@ -194,7 +192,7 @@ Después de implementar la controladora de red, puede usar comandos de Windows P
 
 En la tabla siguiente se proporciona la sintaxis de los comandos de Windows PowerShell que puede usar para realizar estas tareas.
 
-|Tarea|Comando|Sintaxis|
+|Tarea|Get-Help|Sintaxis|
 |--------|-------|----------|
 |Modificar la configuración del clúster de controladora de red|Set-NetworkControllerCluster|`Set-NetworkControllerCluster [-ManagementSecurityGroup <string>][-Credential <PSCredential>] [-computerName <string>][-CertificateThumbprint <String> ] [-UseSSL]`
 |Modificar la configuración de la aplicación de controladora de red|Set-NetworkController|`Set-NetworkController [-ClientAuthentication <ClientAuthentication>] [-Credential <PSCredential>] [-ClientCertificateThumbprint <string[]>] [-ClientSecurityGroup <string>] [-ServerCertificate <X509Certificate2>] [-RestIPAddress <String>] [-ComputerName <String>][-CertificateThumbprint <String> ] [-UseSSL]`
@@ -221,7 +219,7 @@ $c = New-NetworkControllerNodeObject -Name Node3 -Server NCNode3.contoso.com -Fa
 
 $cert= get-item Cert:\LocalMachine\My | get-ChildItem | where {$_.Subject -imatch "networkController.contoso.com" }
 
-Install-NetworkControllerCluster -Node @($a,$b,$c)  -ClusterAuthentication Kerberos -DiagnosticLogLocation \\share\Diagnostics - ManagementSecurityGroup Contoso\NCManagementAdmins -CredentialEncryptionCertificate $cert  
+Install-NetworkControllerCluster -Node @($a,$b,$c)  -ClusterAuthentication Kerberos -DiagnosticLogLocation \\share\Diagnostics - ManagementSecurityGroup Contoso\NCManagementAdmins -CredentialEncryptionCertificate $cert
 Install-NetworkController -Node @($a,$b,$c) -ClientAuthentication Kerberos -ClientSecurityGroup Contoso\NCRESTClients -ServerCertificate $cert -RestIpAddress 10.0.0.1/24
 ```
 
@@ -230,5 +228,3 @@ Install-NetworkController -Node @($a,$b,$c) -ClientAuthentication Kerberos -Clie
 Si no usa Kerberos con la implementación de la controladora de red, debe implementar certificados.
 
 Para obtener más información, consulte [pasos posteriores a la implementación de la controladora de red](../technologies/network-controller/post-deploy-steps-nc.md).
-
-

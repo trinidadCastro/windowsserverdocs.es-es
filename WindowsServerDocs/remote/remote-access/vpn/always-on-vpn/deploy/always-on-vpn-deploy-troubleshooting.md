@@ -7,12 +7,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: f1e4713e6d658e6a51955e321e39cb7f90e261a9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3a1b85504fcae1aabc155d9cf415bc49d4722494
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963811"
+ms.locfileid: "87993642"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>Solucionar problemas de VPN de Always On
 
@@ -112,7 +112,7 @@ Por lo general, el equipo cliente de VPN se une al dominio basado en Active Dire
 
 Los registros de aplicaciones de los equipos cliente registran la mayor parte de los detalles de los eventos de conexión VPN.
 
-Busque eventos de RasClient de código fuente. Todos los mensajes de error devuelven el código de error al final del mensaje. A continuación se detallan algunos de los códigos de error más comunes, pero una lista completa está disponible en los [códigos de error de enrutamiento y acceso remoto](/previous-versions//mt728163(v=technet.10)).
+Busque eventos de RasClient de código fuente. Todos los mensajes de error devuelven el código de error al final del mensaje. A continuación se detallan algunos de los códigos de error más comunes, pero una lista completa está disponible en los [códigos de error de enrutamiento y acceso remoto](/previous-versions/mt728163(v=technet.10)).
 
 ## <a name="nps-logs"></a>Registros de NPS
 

@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 manager: dougkim
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 135008db9f8a5f6b1238c18df64e89ed8c71180c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 86403af3cea6843905ca58437a3858b77351bc81
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955532"
+ms.locfileid: "87993721"
 ---
 # <a name="virtual-receive-side-scaling-vrss"></a>VRSS de ajuste de escala en lado de recepción virtual \(\)
 
@@ -45,7 +45,7 @@ Las máquinas virtuales multiprocesador o de varios núcleos que ejecutan los si
 - Windows Server 2012 con los componentes de integración de Windows Server 2012 R2 instalados.
 - Windows 8 con los componentes de integración de Windows Server 2012 R2 instalados.
 
-Para obtener información sobre la compatibilidad de vRSS con máquinas virtuales que ejecutan FreeBSD o Linux como sistema operativo invitado en Hyper-V, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-v en Windows](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows).
+Para obtener información sobre la compatibilidad de vRSS con máquinas virtuales que ejecutan FreeBSD o Linux como sistema operativo invitado en Hyper-V, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-v en Windows](../../../virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md).
 
 ## <a name="hardware-requirements"></a>Requisitos de hardware
 

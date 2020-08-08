@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8f60a960d76e7c24ff3dc9afaf931792713f06af
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9d00622ce5712a2f725f1c6f1b533387651bc903
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970412"
+ms.locfileid: "87993602"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>Paso 1 planear la infraestructura de DirectAccess avanzada
 
@@ -52,9 +52,9 @@ En esta sección se explica cómo planear tu red, incluido:
 
     DirectAccess usa IPv6 con IPsec para crear una conexión segura entre los equipos cliente de DirectAccess y la red corporativa interna. Sin embargo, DirectAccess no requiere necesariamente conectividad con Internet IPv6 ni compatibilidad nativa con IPv6 en las redes internas. En su lugar, configura y usa automáticamente tecnologías de transición IPv6 para tunelizar el tráfico IPv6 a través de Internet IPv4 (mediante 6to4, Teredo o IP-HTTPS) y a través de la intranet solo IPv4 (mediante NAT64 o ISATAP). Para obtener información general acerca de estas tecnologías de transición, consulta los siguientes recursos:
 
-    - [Tecnologías de transición IPv6](/previous-versions//bb726951(v=technet.10))
+    - [Tecnologías de transición IPv6](/previous-versions/bb726951(v=technet.10))
 
-    - [Especificación del protocolo de túnel IP-HTTPS](/previous-versions//bb726951(v=technet.10))
+    - [Especificación del protocolo de túnel IP-HTTPS](/previous-versions/bb726951(v=technet.10))
 
 3. Configura los adaptadores y las direcciones necesarios conforme a la tabla siguiente. Para implementaciones que usan un único adaptador de red y se configuran detrás de un dispositivo NAT, configura tus direcciones IP usando solo la columna **Adaptador de red interno**.
 

@@ -5,16 +5,14 @@ author: allenma
 ms.author: allenma
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows-server-hyper-v
-ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 128f9d734311f8eaf0f06204e114171fa8b0f750
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 332ec3a31d8a442fada7f01d30c5cb7d44965238
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768433"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994105"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>Acerca de la selección del tipo de programador de hipervisor de Hyper-V
 
@@ -32,7 +30,7 @@ En este documento se describen los cambios importantes en el uso predeterminado 
 
 ## <a name="background"></a>Información previa
 
-A partir de Windows Server 2016, Hyper-V admite varios métodos de programación y administración de procesadores virtuales, denominados tipos de programador de hipervisor.  Puede encontrar una descripción detallada de todos los tipos de programador de hipervisor en [comprender y usar los tipos de programador de hipervisor de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types).
+A partir de Windows Server 2016, Hyper-V admite varios métodos de programación y administración de procesadores virtuales, denominados tipos de programador de hipervisor.  Puede encontrar una descripción detallada de todos los tipos de programador de hipervisor en [comprender y usar los tipos de programador de hipervisor de Hyper-V](./manage-hyper-v-scheduler-types.md).
 
 >[!NOTE]
 >Los nuevos tipos de programador de hipervisor se introdujeron por primera vez con Windows Server 2016 y no están disponibles en versiones anteriores. Todas las versiones de Hyper-V anteriores a Windows Server 2016 solo admiten el programador clásico. La compatibilidad con el programador básico solo se publicó recientemente.
@@ -78,7 +76,7 @@ Estos impactos de rendimiento se pueden minimizar siguiendo las instrucciones de
 La implementación de hosts de Hyper-V con la postura de seguridad máxima requiere el uso del tipo de programador Core de hipervisor. Para asegurarse de que nuestros clientes son seguros de forma predeterminada, Microsoft está cambiando la siguiente configuración predeterminada y recomendada.
 
 >[!NOTE]
->Aunque la compatibilidad interna del hipervisor con los tipos de programador se incluyó en la versión inicial de Windows Server 2016, Windows Server 1709 y Windows Server 1803, se necesitan actualizaciones para tener acceso al control de configuración, lo que permite seleccionar el tipo de programador de hipervisor.  Consulte [y uso de los tipos de programador de hipervisor de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types) para obtener más información sobre estas actualizaciones.
+>Aunque la compatibilidad interna del hipervisor con los tipos de programador se incluyó en la versión inicial de Windows Server 2016, Windows Server 1709 y Windows Server 1803, se necesitan actualizaciones para tener acceso al control de configuración, lo que permite seleccionar el tipo de programador de hipervisor.  Consulte [y uso de los tipos de programador de hipervisor de Hyper-V](./manage-hyper-v-scheduler-types.md) para obtener más información sobre estas actualizaciones.
 
 ### <a name="virtualization-host-changes"></a>Cambios en el host de virtualización
 
@@ -168,7 +166,7 @@ A continuación se proporcionan los detalles de la habilitación de este invitad
 
 ### <a name="nononarchitecturalcoresharing-enlightenment-details"></a>Detalles de la habilitación de NoNonArchitecturalCoreSharing
 
-A partir de Windows Server 2016, el hipervisor define una nueva habilitación para describir su control de VP programación y colocación en el SO invitado. Esta habilitación se define en la [especificación funcional de nivel superior del hipervisor v 5.0 c](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/tlfs).
+A partir de Windows Server 2016, el hipervisor define una nueva habilitación para describir su control de VP programación y colocación en el SO invitado. Esta habilitación se define en la [especificación funcional de nivel superior del hipervisor v 5.0 c](/virtualization/hyper-v-on-windows/reference/tlfs).
 
 El hipervisor sintético de la hoja CPUID. 0x40000004. EAX: 18 [NoNonArchitecturalCoreSharing = 1] indica que un procesador virtual nunca compartirá un núcleo físico con otro procesador virtual, excepto para los procesadores virtuales que se informan como subprocesos SMT relacionados. Por ejemplo, un Vicepresidente invitado nunca se ejecutará en un subproceso SMT junto con un Vicepresidente raíz que se ejecute simultáneamente en un subproceso de SMT relacionado en el mismo núcleo del procesador. Esta condición solo es posible cuando se ejecuta virtualizado y, por tanto, representa un comportamiento SMT no arquitectónico que también tiene implicaciones de seguridad graves. El SO invitado puede usar NoNonArchitecturalCoreSharing = 1 como indicación de que es seguro habilitar las optimizaciones, lo que puede ayudar a evitar la sobrecarga de rendimiento que supone la configuración de STIBP.
 
