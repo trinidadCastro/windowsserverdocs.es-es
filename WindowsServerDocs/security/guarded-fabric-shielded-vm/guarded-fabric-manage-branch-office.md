@@ -1,21 +1,19 @@
 ---
 title: Consideraciones sobre sucursales
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: a9893ecd76e142dd243a1d99e83a48d2edfd5872
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b56b2d4f74f18e68a3849b01e84b0aca5ca7412e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856568"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957913"
 ---
 # <a name="branch-office-considerations"></a>Consideraciones sobre la sucursal
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), 
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual),
 
 En este artículo se describen los procedimientos recomendados para ejecutar máquinas virtuales blindadas en sucursales y otros escenarios remotos en los que los hosts de Hyper-V pueden tener períodos de tiempo con conectividad limitada a HGS.
 
@@ -61,4 +59,4 @@ Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
 ```
 
 Dado que los protectores de clave que se pueden almacenar en caché son únicos para cada máquina virtual blindada, tendrá que apagar completamente (no reiniciar) e iniciar las máquinas virtuales blindadas para obtener un protector de clave en caché después de habilitar esta opción en HGS.
-Si la máquina virtual blindada se migra a un host de Hyper-V que ejecuta una versión anterior de Windows Server, u obtiene un nuevo protector de clave de una versión anterior de HGS, no podrá iniciarse en el modo sin conexión, pero puede seguir ejecutándose en el modo en línea cuando el acceso a HGS sea disponible.
+Si la máquina virtual blindada se migra a un host de Hyper-V que ejecuta una versión anterior de Windows Server, u obtiene un nuevo protector de clave de una versión anterior de HGS, no podrá iniciarse en el modo sin conexión, pero puede seguir ejecutándose en el modo en línea cuando esté disponible el acceso a HGS.

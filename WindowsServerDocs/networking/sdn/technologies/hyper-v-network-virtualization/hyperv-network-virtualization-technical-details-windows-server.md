@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 5341dfe03a85e192ce18baec44f5213a52a43fd7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 94d45dd04708d58d880f3dcbc7a65e9586e02a29
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952512"
+ms.locfileid: "87994405"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Detalles técnicos de la virtualización de red de Hyper-V en Windows Server 2016
 
@@ -292,5 +292,4 @@ Para obtener más información sobre HNVv2, consulte los siguientes vínculos:
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Recursos de la comunidad**  |                                                                -   [Blog de arquitectura de nube privada](https://blogs.technet.com/b/privatecloud)<br />-Formule preguntas:[cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)                                                                |
 |         **RFC**          |                                                                   -   [RFC borrador de NVGRE](https://www.ietf.org/id/draft-sridharan-virtualization-nvgre-07.txt)<br />-   [VXLAN-RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                    |
-| **Tecnologías relacionadas** | -Para obtener detalles técnicos de virtualización de red de Hyper-V en Windows Server 2012 R2, consulte [detalles técnicos de la virtualización de red de Hyper-v](https://technet.microsoft.com/library/jj134174.aspx)<br />-   [Controladora de red](../../../sdn/technologies/network-controller/Network-Controller.md) |
-
+| **Tecnologías relacionadas** | -Para obtener detalles técnicos de virtualización de red de Hyper-V en Windows Server 2012 R2, consulte [detalles técnicos de la virtualización de red de Hyper-v](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134174(v=ws.11))<br />-   [Controladora de red](../../../sdn/technologies/network-controller/Network-Controller.md) |

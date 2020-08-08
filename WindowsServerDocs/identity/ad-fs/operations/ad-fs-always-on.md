@@ -5,14 +5,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 01/20/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 4f6822747902d02313b6aea5c5ca21d9d7ed8a04
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c306f901aba2991a238fb994117789d4a9a81a67
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961887"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967132"
 ---
 # <a name="setting-up-an-ad-fs-deployment-with-alwayson-availability-groups"></a>Configuración de una implementación de AD FS con Grupos de disponibilidad AlwaysOn
 Una topología de distribución geográfica de alta disponibilidad proporciona:
@@ -37,12 +35,12 @@ Un agente de escucha del grupo de disponibilidad en el nodo de la réplica princ
 En el caso de una conmutación por error, en lugar de transferir la propiedad de los recursos físicos compartidos a otro nodo, WSFC se aprovecha para volver a configurar una réplica secundaria en otra instancia de SQL Server para que se convierta en la réplica principal del grupo de disponibilidad. El recurso de nombre de red virtual del grupo de disponibilidad se transfiere después a esa instancia.
 En un momento dado, solo una única instancia de SQL Server puede hospedar la réplica principal de las bases de datos de un grupo de disponibilidad, todas las réplicas secundarias asociadas deben residir en una instancia independiente, y cada instancia debe residir en nodos físicos independientes.
 
-> [!NOTE] 
+> [!NOTE]
 > Si las máquinas se ejecutan en Azure, configure las máquinas virtuales de Azure para permitir que la configuración del agente de escucha se comunique con los grupos de disponibilidad AlwaysOn. Para obtener más información, [Virtual Machines: agente de escucha de SQL Always on](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener).
 
 Para obtener información general adicional sobre Grupos de disponibilidad AlwaysOn, consulte [información general de los grupos de disponibilidad de Always On (SQL Server)](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15).
 
-> [!NOTE] 
+> [!NOTE]
 > Si la organización requiere conmutación por error en varios centros de datos, se recomienda crear una base de datos de artefactos en cada centro de datos, así como habilitar una caché en segundo plano, lo que reduce la latencia durante el procesamiento de la solicitud. Siga las instrucciones para hacerlo en [ajustar SQL y reducir la latencia](./adfs-sql-latency.md).
 
 ## <a name="deployment-guidance"></a>Guía de implementación
@@ -51,7 +49,7 @@ Para obtener información general adicional sobre Grupos de disponibilidad Alway
 En la tabla siguiente se describen las diferencias en las características admitidas entre WID y SQL Database.
 
 
-| Category      | Característica       | Compatible con WID  | Compatible con SQL |
+| Categoría      | Característica       | Compatible con WID  | Compatible con SQL |
 | ------------------ |:-------------:| :---:|:---: |
 | AD FS características     | Implementación de una granja de servidores de federación | Sí  | Sí |
 | AD FS características     | Resolución de artefactos SAML. Nota: esto no es común para las aplicaciones SAML     |   No | Sí  |
@@ -83,7 +81,7 @@ Esta guía le guiará a través de lo siguiente
 
 ## <a name="deploy-ad-fs"></a>Implementar AD FS
 
-> [!NOTE] 
+> [!NOTE]
 > Si las máquinas se ejecutan en Azure, el Virtual Machines se debe configurar de una manera específica para permitir que el agente de escucha se comunique con el grupo de disponibilidad Always On. Para más información sobre la configuración, consulte Configuración de [un equilibrador de carga para un grupo de disponibilidad en máquinas virtuales de Azure SQL Server](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener)
 
 
@@ -113,7 +111,7 @@ La configuración de una granja de AD FS con grupos de disponibilidad AlwaysOn r
 
 5.  Complete la instalación y configuración de la granja de AD FS.
 
-> [!NOTE] 
+> [!NOTE]
 > SQL Server debe ejecutarse en una cuenta de dominio para la instalación de Always On grupos de disponibilidad. De forma predeterminada, se ejecuta como sistema local.
 
 ## <a name="install-the-failover-clustering-role"></a>Instalar el rol de clúster de conmutación por error
@@ -258,7 +256,7 @@ En el campo Especificar una ubicación de red compartida accesible por todas las
 
 10. En la página Resumen, revise las opciones para el nuevo grupo de disponibilidad. Para realizar un cambio, haga clic en Anterior para volver a la página correspondiente. Después de realizar el cambio, haga clic en Siguiente para volver a la página Resumen.
 
-> [!NOTE] 
+> [!NOTE]
 > Cuando la cuenta de servicio de SQL Server de una instancia de servidor que hospedará una nueva réplica de disponibilidad no existe ya como inicio de sesión, el Asistente para nuevo grupo de disponibilidad debe crear el inicio de sesión. En la página Resumen, el asistente muestra la información del inicio de sesión que se va a crear. Si hace clic en Finalizar, el asistente creará este inicio de sesión para la cuenta de servicio de SQL Server y le concederá el permiso CONNECT.
 > Si está satisfecho con las selecciones, puede hacer si lo desea en Script para crear un script de los pasos que ejecutará el asistente. A continuación, para crear y configurar el nuevo grupo de disponibilidad, haga clic en Finalizar.
 

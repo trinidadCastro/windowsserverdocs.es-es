@@ -2,28 +2,26 @@
 title: Procedimientos recomendados del servidor de directivas de redes
 description: En este tema se proporcionan los procedimientos recomendados para implementar y administrar el servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 90e544bd-e826-4093-8c3b-6a6fc2dfd1d6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4e6e6d2612af80bdaaa3900414bb08c3f0c18ea3
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 2fc8c1e4bd51a632e790ae0fca7f50113c23ccc0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639909"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994162"
 ---
 # <a name="network-policy-server-best-practices"></a>Procedimientos recomendados del servidor de directivas de redes
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información sobre los procedimientos recomendados para implementar y administrar el servidor de directivas de redes \(\)NPS.
+Puede usar este tema para obtener información acerca de los procedimientos recomendados para implementar y administrar el NPS del servidor de directivas de redes \( \) .
 
 En las secciones siguientes se proporcionan procedimientos recomendados para los distintos aspectos de la implementación de NPS.
 
-## <a name="accounting"></a>Cuentas
+## <a name="accounting"></a>Control
 
 A continuación se muestran los procedimientos recomendados para el registro de NPS.
 
@@ -35,7 +33,7 @@ Existen dos tipos de cuentas, o modos de registro, en NPS:
 
 Para hacer un uso más efectivo del registro de NPS:
 
-- Active el registro \(inicialmente\) para los registros de autenticación y de cuentas. Modifique estas selecciones después de determinar qué es más apropiado para su entorno.
+- Active el registro \( inicialmente \) para los registros de autenticación y de cuentas. Modifique estas selecciones después de determinar qué es más apropiado para su entorno.
 
 - Asegúrese de configurar el registro de eventos con una capacidad suficiente para mantener sus registros.
 
@@ -49,14 +47,14 @@ Para hacer un uso más efectivo del registro de NPS:
 
 Para obtener más información, vea [configurar las cuentas del servidor de directivas de redes](nps-accounting-configure.md).
 
-- Para ofrecer capacidad de conmutación por error y redundancia con el registro de SQL Server, coloque dos equipos que ejecuten SQL Server en subredes diferentes. Use el **Asistente para crear publicaciones** de SQL Server para configurar la replicación de base de datos entre los dos servidores. Para obtener más información, vea [SQL Server documentación técnica](https://msdn.microsoft.com/library/ms130214.aspx) y [replicación de SQL Server](https://msdn.microsoft.com/library/ms151198.aspx).
+- Para ofrecer capacidad de conmutación por error y redundancia con el registro de SQL Server, coloque dos equipos que ejecuten SQL Server en subredes diferentes. Use el **Asistente para crear publicaciones** de SQL Server para configurar la replicación de base de datos entre los dos servidores. Para obtener más información, vea [SQL Server documentación técnica](/sql/sql-server/?view=sql-server-ver15) y [replicación de SQL Server](/sql/relational-databases/replication/sql-server-replication?view=sql-server-ver15).
 
 ## <a name="authentication"></a>Autenticación
 
 A continuación, se incluyen recomendaciones para la autenticación.
 
-- Use métodos de autenticación basados en certificados, como el protocolo de autenticación extensible protegido \(PEAP\) y el protocolo de autenticación extensible \(EAP\) para una autenticación segura. No use métodos de autenticación de solo contraseña porque son vulnerables a diversos ataques y no son seguros. En el caso de la autenticación inalámbrica segura, se recomienda usar PEAP\-MS\-CHAP V2, ya que el NPS demuestra su identidad a los clientes inalámbricos mediante el uso de un certificado de servidor, mientras que los usuarios demuestran su identidad con su nombre de usuario y contraseña.  Para obtener más información sobre el uso de NPS en la implementación inalámbrica, consulte [implementación de acceso inalámbrico autenticado mediante 802.1 x basado en contraseña](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access).
-- Implemente su propia entidad de certificación \(\) de CA con Active Directory&reg; servicios de Certificate Server \(AD CS\) cuando use métodos seguros de autenticación basados en certificados, como PEAP y EAP, que requieran el uso de un certificado de servidor en NPSs. También puede usar su entidad de certificación para realizar inscripciones de certificados de equipo y de usuario. Para obtener más información sobre la implementación de certificados de servidor en NPS y servidores de acceso remoto, consulte [implementación de certificados de servidor para implementaciones cableadas e inalámbricas de 802.1 x](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments).
+- Use métodos de autenticación basados en certificados, como el protocolo de autenticación extensible protegido \( PEAP \) y el protocolo de autenticación extensible \( EAP para la \) autenticación segura. No use métodos de autenticación de solo contraseña porque son vulnerables a diversos ataques y no son seguros. Para la autenticación inalámbrica segura, \- se recomienda usar PEAP MS \- CHAP V2, ya que el NPS demuestra su identidad a los clientes inalámbricos mediante el uso de un certificado de servidor, mientras que los usuarios demuestran su identidad con su nombre de usuario y contraseña.  Para obtener más información sobre el uso de NPS en la implementación inalámbrica, consulte [implementación de acceso inalámbrico autenticado mediante 802.1 x basado en contraseña](../../core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access.md).
+- Implemente su propia CA de entidad \( \) de certificación con Active Directory &reg; servicios de Certificate Server \( ad CS \) cuando use métodos seguros de autenticación basados en certificados, como PEAP y EAP, que requieran el uso de un certificado de servidor en NPSs. También puede usar su entidad de certificación para realizar inscripciones de certificados de equipo y de usuario. Para obtener más información sobre la implementación de certificados de servidor en NPS y servidores de acceso remoto, consulte [implementación de certificados de servidor para implementaciones cableadas e inalámbricas de 802.1 x](../../core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments.md).
 
 > [!IMPORTANT]
 > El servidor de directivas de redes (NPS) no admite el uso de los caracteres ASCII extendidos en las contraseñas.
@@ -65,7 +63,7 @@ A continuación, se incluyen recomendaciones para la autenticación.
 
 A continuación, se incluyen recomendaciones para configurar el equipo cliente.
 
-- Configure automáticamente todos los equipos cliente de 802.1 X del miembro de dominio mediante directiva de grupo. Para obtener más información, consulte la sección "configuración de directivas de red inalámbrica (IEEE 802,11)" en el tema [implementación de acceso inalámbrico](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/e-wireless-access-deployment#bkmk_policies).
+- Configure automáticamente todos los equipos cliente de 802.1 X del miembro de dominio mediante directiva de grupo. Para obtener más información, consulte la sección "configuración de directivas de red inalámbrica (IEEE 802,11)" en el tema [implementación de acceso inalámbrico](../../core-network-guide/cncg/wireless/e-wireless-access-deployment.md#bkmk_policies).
 
 ## <a name="installation-suggestions"></a>Sugerencias de instalación
 
@@ -73,7 +71,7 @@ A continuación se muestran los procedimientos recomendados para la instalación
 
 - Antes de instalar NPS, instale y pruebe cada uno de los servidores de acceso a la red mediante métodos de autenticación locales antes de configurarlos como clientes RADIUS en NPS.
 
-- Después de instalar y configurar NPS, guarde la configuración mediante el comando de Windows PowerShell [Export-NpsConfiguration](https://technet.microsoft.com/library/jj872749.aspx). Guarde la configuración de NPS con este comando cada vez que vuelva a configurar el NPS.
+- Después de instalar y configurar NPS, guarde la configuración mediante el comando de Windows PowerShell [Export-NpsConfiguration](/powershell/module/nps/export-npsconfiguration?view=win10-ps). Guarde la configuración de NPS con este comando cada vez que vuelva a configurar el NPS.
 
 >[!CAUTION]
 >- El archivo de configuración de NPS exportado contiene secretos compartidos sin cifrar para clientes RADIUS y miembros de grupos de servidores RADIUS remotos. Por este motivo, asegúrese de guardar el archivo en una ubicación segura.
@@ -85,9 +83,9 @@ A continuación se muestran los procedimientos recomendados para optimizar el re
 
 - Para optimizar los tiempos de respuesta de autenticación y autorización de NPS y reducir el tráfico de red, instale NPS en un controlador de dominio.
 
-- Cuando se utilizan nombres de entidad de seguridad universal \(UPN\) o de Windows Server 2008 y Windows Server 2003, NPS usa el catálogo global para autenticar a los usuarios. Para minimizar el tiempo necesario para ello, instale NPS en un servidor de catálogo global o en un servidor que se encuentra en la misma subred que el servidor de catálogo global.
+- Cuando se utilizan nombres de entidad de seguridad universal \( UPN \) o dominios de windows Server 2008 y windows Server 2003, NPS usa el catálogo global para autenticar a los usuarios. Para minimizar el tiempo necesario para ello, instale NPS en un servidor de catálogo global o en un servidor que se encuentra en la misma subred que el servidor de catálogo global.
 
-- Una vez configurados los grupos de servidores RADIUS remotos y, en las directivas de solicitud de conexión NPS, se desactiva la casilla **registrar información de cuentas en los servidores en el siguiente grupo de servidores RADIUS remotos** , estos grupos siguen enviando servidor de acceso a la red \(NAS\) mensajes de notificación de inicio y detención. Esto genera un tráfico de red innecesario. Para eliminar este tráfico, deshabilite el reenvío de notificaciones de NAS para servidores individuales en cada grupo de servidores RADIUS remotos. para ello, desactive la casilla **reenviar notificaciones de inicio y detención de red a este servidor** .
+- Cuando tiene grupos de servidores RADIUS remotos configurados y, en las directivas de solicitud de conexión NPS, desactiva la casilla **registrar información de cuentas en los servidores en el siguiente grupo de servidores RADIUS remotos** , estos grupos siguen enviando \( mensajes de notificación de inicio y detención de NAS en el servidor de acceso a la red \) . Esto genera un tráfico de red innecesario. Para eliminar este tráfico, deshabilite el reenvío de notificaciones de NAS para servidores individuales en cada grupo de servidores RADIUS remotos. para ello, desactive la casilla **reenviar notificaciones de inicio y detención de red a este servidor** .
 
 ## <a name="using-nps-in-large-organizations"></a>Uso de NPS en organizaciones grandes
 
@@ -97,15 +95,15 @@ A continuación se muestran los procedimientos recomendados para el uso de NPS e
 
 - Siempre que sea posible, use nombres principales de usuario para hacer referencia a los usuarios. Un usuario puede tener el mismo nombre principal de usuario al margen del dominio al que pertenezca. Esta práctica proporciona la escalabilidad necesaria a las organizaciones que tienen un elevado número de dominios.
 
-- Si instaló el servidor de directivas de redes \(\) NPS en un equipo que no sea un controlador de dominio y NPS recibe un gran número de solicitudes de autenticación por segundo, puede mejorar el rendimiento de NPS aumentando el número de autenticaciones simultáneas permitidas entre el NPS y el controlador de dominio. Para obtener más información, consulte [aumentar las autenticaciones simultáneas procesadas por NPS](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-concurrent-auth).
+- Si instaló NPS del servidor \( de directivas \) de redes en un equipo que no sea un controlador de dominio y el NPS recibe un gran número de solicitudes de autenticación por segundo, puede mejorar el rendimiento de NPS aumentando el número de autenticaciones simultáneas permitidas entre el NPS y el controlador de dominio. Para obtener más información, consulte [aumentar las autenticaciones simultáneas procesadas por NPS](./nps-concurrent-auth.md).
 
-## <a name="security-issues"></a>Aspectos de seguridad
+## <a name="security-issues"></a>Problemas de seguridad
 
 A continuación se muestran los procedimientos recomendados para reducir los problemas de seguridad.
 
 Cuando administre un NPS de forma remota, no envíe datos confidenciales (por ejemplo, secretos o contraseñas compartidos) a través de la red en texto sin formato. Hay dos métodos recomendados para la administración remota de NPSs:
 
-- Use Servicios de Escritorio remoto para tener acceso al NPS. Cuando se usa Servicios de Escritorio remoto, no se envían datos entre el cliente y el servidor. Solo la interfaz de usuario del servidor (por ejemplo, el escritorio del sistema operativo y la imagen de la consola de NPS) se envía al cliente de Servicios de Escritorio remoto, que se denomina Conexión a Escritorio remoto en Windows&reg; 10. El cliente envía la entrada del teclado y del mouse, que es procesada localmente por el servidor que tiene Servicios de Escritorio remoto habilitado. Cuando Servicios de Escritorio remoto usuarios inician sesión, solo pueden ver las sesiones de cliente individuales, que son administradas por el servidor y son independientes entre sí. Además, la Conexión a Escritorio remoto permite el cifrado de 128 bits entre cliente y servidor.
+- Use Servicios de Escritorio remoto para tener acceso al NPS. Cuando se usa Servicios de Escritorio remoto, no se envían datos entre el cliente y el servidor. Solo la interfaz de usuario del servidor (por ejemplo, el escritorio del sistema operativo y la imagen de la consola de NPS) se envía al cliente de Servicios de Escritorio remoto, que se denomina Conexión a Escritorio remoto en Windows &reg; 10. El cliente envía la entrada del teclado y del mouse, que es procesada localmente por el servidor que tiene Servicios de Escritorio remoto habilitado. Cuando Servicios de Escritorio remoto usuarios inician sesión, solo pueden ver las sesiones de cliente individuales, que son administradas por el servidor y son independientes entre sí. Además, la Conexión a Escritorio remoto permite el cifrado de 128 bits entre cliente y servidor.
 
 - Usar el protocolo de seguridad de Internet (IPsec) para cifrar datos confidenciales. Puede usar IPsec para cifrar la comunicación entre el NPS y el equipo cliente remoto que está usando para administrar NPS. Para administrar el servidor de forma remota, puede instalar el [herramientas de administración remota del servidor para Windows 10](https://www.microsoft.com/download/details.aspx?id=45520) en el equipo cliente. Después de la instalación, use Microsoft Management Console (MMC) para agregar el complemento NPS a la consola de.
 
@@ -113,4 +111,3 @@ Cuando administre un NPS de forma remota, no envíe datos confidenciales (por ej
 >Solo puede instalar Herramientas de administración remota del servidor para Windows 10 en la versión completa de Windows 10 Professional o Windows 10 Enterprise.
 
 Para obtener más información acerca de NPS, consulte [servidor de directivas de redes (NPS)](nps-top.md).
-

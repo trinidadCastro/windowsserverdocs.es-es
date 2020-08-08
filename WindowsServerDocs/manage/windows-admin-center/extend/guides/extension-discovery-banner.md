@@ -1,23 +1,21 @@
 ---
 title: Habilitación del banner de detección de extensión
 description: Habilitación del banner de detección de extensión
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: f51070abfeed3a790055b12f733fc61be383472c
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: ef08eec08b43f83121bc94abc46a5f657556db65
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269262"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945027"
 ---
 # <a name="enabling-the-extension-discovery-banner"></a>Habilitación del banner de detección de extensión
 
->Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
 La característica de banner de detección de extensión se presentó en la versión Preview 1903 del centro de administración de Windows. Esta característica permite a una extensión declarar el fabricante del hardware de servidor y los modelos que admite, y cuando un usuario se conecta a un servidor o clúster para el que hay una extensión disponible, se muestra un banner de notificación para instalar la extensión fácilmente. Los desarrolladores de extensiones podrán obtener más visibilidad de sus extensiones y los usuarios podrán detectar fácilmente más capacidades de administración para sus servidores.
 
@@ -29,13 +27,13 @@ Cuando se inicia el centro de administración de Windows, se conectará a las fu
 
 ## <a name="how-to-implement-the-extension-discovery-banner"></a>Cómo implementar el banner de detección de extensión
 
-Los metadatos de "Tags" del archivo. nuspec se usan para declarar qué fabricante de hardware o modelos admite su extensión. Las etiquetas están delimitadas por espacios y puede Agregar un fabricante o una etiqueta de modelo, o ambos, para declarar el fabricante o los modelos admitidos. El formato de etiqueta es ``"[value type]_[value condition]"`` donde [tipo de valor] es "manufacturer" o "Model" (distingue mayúsculas de minúsculas) y [valor Condition] es una [expresión regular de JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions) que define el fabricante o la cadena de modelo, y [tipo de valor] y [condición de valor] están separadas por un carácter de subrayado. A continuación, esta cadena se codifica mediante la codificación de URI y se agrega a la cadena de metadatos "Tags" de. nuspec.
+Los metadatos de "Tags" del archivo. nuspec se usan para declarar qué fabricante de hardware o modelos admite su extensión. Las etiquetas están delimitadas por espacios y puede Agregar un fabricante o una etiqueta de modelo, o ambos, para declarar el fabricante o los modelos admitidos. El formato de etiqueta es ``"[value type]_[value condition]"`` donde [tipo de valor] es "manufacturer" o "Model" (distingue mayúsculas de minúsculas) y [valor Condition] es una [expresión regular de JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions) que define el fabricante o la cadena de modelo, y [tipo de valor] y [condición de valor] están separados por un carácter de subrayado. A continuación, esta cadena se codifica mediante la codificación de URI y se agrega a la cadena de metadatos "Tags" de. nuspec.
 
 ### <a name="example"></a>Ejemplo
 
 Supongamos que he desarrollado una extensión que admite servidores de una empresa denominada contoso Inc., con el nombre de modelo R3xx y R4xx.
 
-1. La etiqueta del fabricante sería ``"Manufacturer_/Contoso Inc./"``. La etiqueta de los modelos se puede ``"Model_/^R[34][0-9]{2}$/"``. Dependiendo de cómo desee definir la condición de coincidencia, habrá diferentes maneras de definir la expresión regular. También puede separar las etiquetas de fabricante o modelo en varias etiquetas; por ejemplo, la etiqueta del modelo también se puede ``"Model_/R3../ Model_/R4../"``.
+1. La etiqueta del fabricante sería ``"Manufacturer_/Contoso Inc./"`` . La etiqueta de los modelos podría ser ``"Model_/^R[34][0-9]{2}$/"`` . Dependiendo de cómo desee definir la condición de coincidencia, habrá diferentes maneras de definir la expresión regular. También puede separar las etiquetas de fabricante o modelo en varias etiquetas; por ejemplo, la etiqueta del modelo también podría ser ``"Model_/R3../ Model_/R4../"`` .
 2. Puede probar la expresión regular con la consola de DevTools del explorador Web. En Edge o Chrome, presione F12 para abrir la ventana de DevTools y, en la pestaña consola, escriba lo siguiente y presione ENTRAR:
 
    ```javascript

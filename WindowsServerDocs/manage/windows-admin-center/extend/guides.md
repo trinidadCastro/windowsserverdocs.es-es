@@ -1,19 +1,17 @@
 ---
 title: Guías
 description: Guías SDK del centro de administración de Windows (proyecto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: b7e091e4b9bef11b37a8247b52390404e258ae3b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bd4b8c35cc5a46500292e08ee1967ef00b74c0e1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357111"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945122"
 ---
 # <a name="guides"></a>Guías
 
@@ -40,4 +38,4 @@ Estas son algunas guías para desarrollar con el SDK del centro de administraci�
 
 - Se puede encontrar código de ejemplo para los tipos de extensión de [Complementos](develop-gateway-plugin.md) de [herramientas](develop-tool.md), [soluciones](develop-solution.md)y puertas de enlace en nuestra documentación del SDK. Allí se aprovecha la CLI del centro de administración de Windows para crear un nuevo proyecto de extensión y, a continuación, seguir las guías individuales para personalizar el proyecto de acuerdo con sus necesidades.
 
-- [Herramientas de desarrollo](https://aka.ms/wacsdk), hospedada en nuestro sitio SDK de Github, es una extensión de la solución que contiene una colección enriquecida de controles que puede examinar y usar en su propia extensión.  Herramientas de desarrollo es una extensión totalmente funcional que puede cargarse en Windows Admin Center en modo de desarrollador.
+- [Herramientas de desarrollo](https://aka.ms/wacsdk), hospedada en nuestro sitio SDK de Github, es una extensión de la solución que contiene una colección enriquecida de controles que puede examinar y usar en su propia extensión.  Herramientas de desarrollo es una extensión totalmente funcional que puede estar cargada en el centro de administración de Windows en modo de programador.

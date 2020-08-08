@@ -7,12 +7,12 @@ ms.assetid: 0254275a-0a77-40a9-b68a-1029284c03fe
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 03/19/2018
-ms.openlocfilehash: aa53b13526172e37a46fbb3108278ad7aa859b64
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9daab9358cbfd337b755605e7233b1bcea555f22
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952490"
+ms.locfileid: "87994267"
 ---
 # <a name="whats-new-in-hyper-v-network-virtualization-in-windows-server-2016"></a>Novedades de virtualización de red de Hyper-V en Windows Server 2016
 
@@ -59,4 +59,4 @@ HNV implementa encabezados Ethernet L2 correctos para garantizar la interoperabi
 
 -   [Detalles técnicos de la Virtualización de red de Hyper-V](hyperv-network-virtualization-technical-details-windows-server.md)
 
--   [Redes definidas por software](../../Software-Defined-Networking--SDN-.md)
+-   [Redes definidas por software](../../software-defined-networking.md)

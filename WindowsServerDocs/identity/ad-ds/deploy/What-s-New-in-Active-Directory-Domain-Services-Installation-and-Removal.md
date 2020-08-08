@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 7444fcc6807e43192e68c006dcd49464a503976b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 09863123a69eec72b3d8bfaaf138bb2d2562f687
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953302"
+ms.locfileid: "87994507"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Novedades sobre la instalación y eliminación de Active Directory Domain Services (AD DS)
 
@@ -173,7 +173,7 @@ En esta sección se enumeran algunos de los problemas conocidos que afectan a la
 
    En este caso, debe ejecutar el cmdlet de ADDSDeployment independientemente del cmdlet que no admite procesos nativos de 64 bits.
 
-- Hay un nuevo sistema de archivos en Windows Server 2012 llamado sistema de archivos resistente. No almacene SYSVOL, archivos de registro o la base de datos de Active Directory en un volumen de datos formateado con el Sistema de archivos resistente (ReFS). Para obtener más información sobre ReFS, consulte el tema sobre cómo [crear el sistema de archivos de la próxima generación para Windows: ReFS](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)(en inglés).
+- Hay un nuevo sistema de archivos en Windows Server 2012 llamado sistema de archivos resistente. No almacene SYSVOL, archivos de registro o la base de datos de Active Directory en un volumen de datos formateado con el Sistema de archivos resistente (ReFS). Para obtener más información sobre ReFS, consulte el tema sobre cómo [crear el sistema de archivos de la próxima generación para Windows: ReFS](/archive/blogs/b8/building-the-next-generation-file-system-for-windows-refs)(en inglés).
 - En Administrador del servidor, los servidores que ejecutan AD DS u otros roles de servidor en una instalación Server Core y se han actualizado a Windows Server 2012, el rol de servidor puede aparecer con estado rojo, aunque los eventos y el estado se recopilen según lo previsto. Los servidores que ejecutan una instalación Server Core de una versión preliminar de Windows Server 2012 también pueden verse afectados.
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>Si un error impide la replicación crítica, la instalación de Servicios de dominio de Active Directory no responde

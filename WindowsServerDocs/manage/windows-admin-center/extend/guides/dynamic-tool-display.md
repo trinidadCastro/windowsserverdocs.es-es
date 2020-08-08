@@ -1,33 +1,31 @@
 ---
 title: Controlar la visibilidad de la herramienta en una solución
 description: Controlar la visibilidad de la herramienta en una solución SDK del centro de administración de Windows (proyecto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 440ba3d11da671beedc2c2fb90caa3e176f83877
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: df939bb1a87c9ded77431661dcabd7faf607bb6e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385321"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945028"
 ---
 # <a name="control-your-tools-visibility-in-a-solution"></a>Controlar la visibilidad de la herramienta en una solución #
 
 >Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-Puede haber ocasiones en las que desee excluir (u ocultar) la extensión o herramienta de la lista de herramientas disponibles. Por ejemplo, si la herramienta solo tiene como destino Windows Server 2016 (no versiones anteriores), es posible que no quiera que un usuario se conecte a un servidor de Windows Server 2012 R2 para ver la herramienta. (Imagínese la experiencia del usuario: haga clic en ella y espere a que se cargue la herramienta, solo para obtener un mensaje que indica que sus características no están disponibles para su conexión). Puede definir cuándo Mostrar (u ocultar) la característica en el archivo manifest. JSON de la herramienta.
+Puede haber ocasiones en las que desee excluir (u ocultar) la extensión o herramienta de la lista de herramientas disponibles. Por ejemplo, si la herramienta solo tiene como destino Windows Server 2016 (no versiones anteriores), es posible que no quiera que un usuario se conecte a un servidor de Windows Server 2012 R2 para ver la herramienta. (Imagínese la experiencia del usuario: haga clic en ella y espere a que se cargue la herramienta, solo para obtener un mensaje que indica que sus características no están disponibles para su conexión). Puede definir cuándo Mostrar (u ocultar) la característica en el manifest.jsde la herramienta en el archivo.
 
 ## <a name="options-for-deciding-when-to-show-a-tool"></a>Opciones para decidir cuándo mostrar una herramienta ##
 
 Hay tres opciones diferentes que puede usar para determinar si la herramienta debe mostrarse y estar disponible para una conexión de clúster o servidor específica.
 
-* host
+* localhost
 * inventario (una matriz de propiedades)
-* secuencia de comandos
+* script
 
 ### <a name="localhost"></a>Host ###
 
@@ -83,17 +81,17 @@ Este es el aspecto de las opciones de configuración para mostrar solo una herra
 
 El SDK incluye un conjunto seleccionada de propiedades de inventario que puede usar para generar condiciones para determinar cuándo debe estar disponible la herramienta. Hay nueve propiedades diferentes en la matriz ' Inventory ':
 
-| Nombre de la propiedad | Se esperaba un tipo de valor |
+| Nombre de propiedad | Se esperaba un tipo de valor |
 | ------------- | ------------------- |
 | computerManufacturer | string |
-| operatingSystemSKU | número |
-| operatingSystemVersion | version_string (por ejemplo: "10,1") |
-| productType | número |
+| operatingSystemSKU | number |
+| operatingSystemVersion | version_string (por ejemplo: "10,1. *") |
+| productType | number |
 | clusterFqdn | string |
-| isHyperVRoleInstalled | booleano |
-| isHyperVPowershellInstalled | booleano |
-| isManagementToolsAvailable | booleano |
-| isWmfInstalled | booleano |
+| isHyperVRoleInstalled | boolean |
+| isHyperVPowershellInstalled | boolean |
+| isManagementToolsAvailable | boolean |
+| isWmfInstalled | boolean |
 
 Cada objeto de la matriz de inventario debe ajustarse a la siguiente estructura JSON:
 
@@ -109,15 +107,15 @@ Cada objeto de la matriz de inventario debe ajustarse a la siguiente estructura 
 
 | Operador | Descripción |
 | -------- | ----------- |
-| bruto | Mayor que |
-| GE | Mayor o igual que |
-| plazo | Menor que |
-| cuarto | Menor o igual que |
-| ajustes | Igual a |
-| & | No es igual a |
-| estará | comprobar si un valor es true |
+| gt | mayor que |
+| ge | Mayor o igual que |
+| lt | menor que |
+| le | Menor o igual que |
+| eq | igual a |
+| ne | not equal to |
+| is | comprobar si un valor es true |
 | not | comprobar si un valor es false |
-| tuviera | el elemento existe en una cadena |
+| contains | el elemento existe en una cadena |
 | notContains | el elemento no existe en una cadena |
 
 #### <a name="data-types"></a>Tipos de datos ####
@@ -127,17 +125,17 @@ Opciones disponibles para la propiedad ' tipo ':
 | Tipo | Descripción |
 | ---- | ----------- |
 | version | un número de versión (por ejemplo: 10,1. *) |
-| número | Un valor numérico |
+| number | un valor numérico |
 | string | un valor de cadena |
-| booleano | true o false |
+| boolean | true o false |
 
 #### <a name="value-types"></a>Tipos de valor ####
 
 La propiedad ' value ' acepta estos tipos:
 
-* string
+* cadena
 * número
-* booleano
+* boolean
 
 Un conjunto de condiciones de inventario con el formato correcto tiene el siguiente aspecto:
 
@@ -199,7 +197,7 @@ La propiedad State es el valor importante que controlará la decisión de mostra
 | ---- | ----------- |
 | Disponible | La extensión se debe mostrar en la lista de herramientas. |
 | NotSupported | La extensión no se debe mostrar en la lista de herramientas. |
-| NotConfigured | Se trata de un valor de marcador de posición para el trabajo futuro que solicitará al usuario una configuración adicional antes de que la herramienta esté disponible.  Actualmente, este valor hará que se muestre la herramienta y que sea funcional equivalente a "disponible". |
+| NoConfigurado | Se trata de un valor de marcador de posición para el trabajo futuro que solicitará al usuario una configuración adicional antes de que la herramienta esté disponible.  Actualmente, este valor hará que se muestre la herramienta y que sea funcional equivalente a "disponible". |
 
 Por ejemplo, si queremos que una herramienta se cargue solo si el servidor remoto tiene instalado BitLocker, el script tiene el siguiente aspecto:
 
@@ -212,7 +210,7 @@ $response = @{
 }
 
 if (Get-Module -ListAvailable -Name servermanager) {
-    Import-module servermanager; 
+    Import-module servermanager;
     $isInstalled = (Get-WindowsFeature -name bitlocker).Installed;
     $isGood = $isInstalled;
 }

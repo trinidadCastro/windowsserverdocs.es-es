@@ -1,20 +1,18 @@
 ---
-title: Planear la implementación de VPN de Always On
+title: Planear la Always On la implementación de VPN
 description: En este tema se proporcionan instrucciones de planeación para implementar Always On VPN en Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 3c9de3ec-4bbd-4db0-b47a-03507a315383
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 11/05/2018
-ms.openlocfilehash: c1e85f2ee44d241bdc04e63d20de36e5cdeafb1a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f1d89b21c62826ff593117edeb6dc82eb74610e7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814498"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958143"
 ---
 # <a name="step-1-plan-the-always-on-vpn-deployment"></a>Paso 1. Planear la implementación de VPN de Always On
 
@@ -45,11 +43,11 @@ Debe hacer lo siguiente en el equipo que se usa como servidor VPN:
 IKEv2 es un protocolo de túnel VPN que se describe en [solicitud de fuerza de la tarea de ingeniería de Internet para los comentarios 7296](https://datatracker.ietf.org/doc/rfc7296/). La principal ventaja de IKEv2 es que tolera las interrupciones en la conexión de red subyacente. Por ejemplo, si se produce una pérdida temporal de conexión o si un usuario mueve un equipo cliente de una red a otra, al volver a establecer la conexión de red IKEv2 restaura la conexión VPN automáticamente, sin la intervención del usuario.
 
 >[!TIP]
->Puede configurar el servidor VPN de acceso remoto para que admita conexiones IKEv2 y, al mismo tiempo, deshabilitar los protocolos no utilizados, lo que reduce la superficie de seguridad del servidor. 
+>Puede configurar el servidor VPN de acceso remoto para que admita conexiones IKEv2 y, al mismo tiempo, deshabilitar los protocolos no utilizados, lo que reduce la superficie de seguridad del servidor.
 
 ## <a name="plan-ip-addresses-for-remote-clients"></a>Planear direcciones IP para clientes remotos
 
-Puede configurar el servidor VPN para asignar direcciones a clientes VPN desde un grupo de direcciones estáticas que configure o direcciones IP desde un servidor DHCP. 
+Puede configurar el servidor VPN para asignar direcciones a clientes VPN desde un grupo de direcciones estáticas que configure o direcciones IP desde un servidor DHCP.
 
 ## <a name="prepare-the-environment"></a>Preparar el entorno
 
@@ -57,11 +55,11 @@ Puede configurar el servidor VPN para asignar direcciones a clientes VPN desde u
 
 - **Elija un intervalo de direcciones IP estáticas para los clientes VPN**. Determine el número máximo de clientes VPN simultáneos que desea admitir. Además, planee un intervalo de direcciones IP estáticas en la red perimetral interna para satisfacer ese requisito, es decir, el *grupo de direcciones estáticas*. Si usa DHCP para proporcionar direcciones IP en la red perimetral interna, es posible que también tenga que crear una exclusión para estas direcciones IP estáticas en DHCP.
 
-- **Asegúrese de que puede editar la zona DNS pública**. Agregue registros DNS a su dominio DNS público para admitir la infraestructura de VPN. 
+- **Asegúrese de que puede editar la zona DNS pública**. Agregue registros DNS a su dominio DNS público para admitir la infraestructura de VPN.
 
-- Asegúrese **de que todos los usuarios de VPN tengan cuentas de usuario en Active Directory usuario (AD DS)** . Para que los usuarios puedan conectarse a la red con conexiones VPN, deben tener cuentas de usuario en AD DS.
+- Asegúrese **de que todos los usuarios de VPN tengan cuentas de usuario en Active Directory usuario (AD DS)**. Para que los usuarios puedan conectarse a la red con conexiones VPN, deben tener cuentas de usuario en AD DS.
 
-## <a name="prepare-routing-and-firewall"></a>Preparar el enrutamiento y el Firewall 
+## <a name="prepare-routing-and-firewall"></a>Preparar el enrutamiento y el Firewall
 
 Instale el servidor VPN dentro de la red perimetral, que crea particiones de la red perimetral en redes perimetrales internas y externas. Dependiendo de su entorno de red, es posible que deba realizar varias modificaciones de enrutamiento.
 

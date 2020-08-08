@@ -1,19 +1,17 @@
 ---
 title: Información general sobre la tecnología VPN Always On
 description: 'En esta página se proporciona una breve introducción a las tecnologías de VPN Always On con vínculos a documentos detallados. '
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 12c80e7e266ac3a8c788781a4d98f0a856164084
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 155d06657811878464d905a51f249cbc8ad3cfe2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182021"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958293"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Información general sobre la tecnología VPN Always On
 
@@ -169,7 +167,7 @@ Tabla 1. Características y configuraciones de VPN descritas en esta implementac
 |     Enrutamiento     |                Tunelización dividida                |
 | Resolución de nombres |  Lista de información de nombres de dominio y sufijo DNS  |
 |   Desencadenar    |    Always On y detección de redes de confianza    |
-| Authentication  | PEAP-TLS con TPM: certificados de usuario protegidos |
+| Autenticación  | PEAP-TLS con TPM: certificados de usuario protegidos |
 
 >[!NOTE]
 >PEAP-TLS y TPM son "Protocolo de autenticación extensible protegido con seguridad de la capa de transporte" y "Módulo de plataforma segura", respectivamente.

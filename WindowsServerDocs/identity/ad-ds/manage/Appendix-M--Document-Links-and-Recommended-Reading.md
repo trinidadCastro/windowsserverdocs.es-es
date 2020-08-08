@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7e32047c3c2b255b81e959539d3ed3b5bbd2f0d6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 977ea36fefaa05b49034367594e1d952d712adb2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943632"
+ms.locfileid: "87994482"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>Anexo M: vínculos a documentos y lecturas recomendadas
 
@@ -24,7 +24,7 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 
 | Vínculos | Direcciones URL |
 |--|--|
-| [10 leyes inmutables de administración de seguridad](/previous-versions//cc722488(v=technet.10)) | [https://technet.microsoft.com/library/cc722488.aspx](/previous-versions//cc722488(v=technet.10)) |
+| [10 leyes inmutables de administración de seguridad](/previous-versions/cc722488(v=technet.10)) | [https://technet.microsoft.com/library/cc722488.aspx](/previous-versions/cc722488(v=technet.10)) |
 | [Administrador de cumplimiento de seguridad de Microsoft](/previous-versions/tn-archive/cc677002(v=technet.10)) | [https://technet.microsoft.com/library/cc677002.aspx](/previous-versions/tn-archive/cc677002(v=technet.10)) |
 | [Gartner Symposium ITXPO](http://www.gartner.com/technology/symposium/orlando/) | [http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/) |
 | [2012 informe de investigaciones de infracciones de datos (DBIR)](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) | [http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) |
@@ -135,7 +135,7 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 | [Soporte técnico de Microsoft artículo 251343](https://support.microsoft.com/kb/251343) | [https://support.microsoft.com/kb/251343](https://support.microsoft.com/kb/251343) |
 | [Operaciones de modificación de rootDSE](/openspecs/windows_protocols/ms-adts/fc74972f-b267-4c1a-8716-0f5b48cf52b9) | [https://msdn.microsoft.com/library/cc223297.aspx](/openspecs/windows_protocols/ms-adts/fc74972f-b267-4c1a-8716-0f5b48cf52b9) |
 | [Guía paso a paso de AD DS copias de seguridad y recuperación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771290(v=ws.10)) | [https://technet.microsoft.com/library/cc771290(v=ws.10).aspx](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771290(v=ws.10)) |
-| [Configuraciones de Windows para el tipo de cifrado compatible con Kerberos](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx) | [https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx) |
+| [Configuraciones de Windows para el tipo de cifrado compatible con Kerberos](/archive/blogs/openspecification/windows-configurations-for-kerberos-supported-encryption-type) | [/archive/blogs/openspecification/windows-configurations-for-kerberos-supported-encryption-type](/archive/blogs/openspecification/windows-configurations-for-kerberos-supported-encryption-type) |
 | [Procesos e interacciones de UAC](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd835561(v=ws.10)) | [https://technet.microsoft.com/library/dd835561(v=WS.10).aspx#1](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd835561(v=ws.10)) |
 | [EmpowerID](http://www.empowerid.com/products/authorizationservices) | [http://www.empowerid.com/products/authorizationservices](http://www.empowerid.com/products/authorizationservices) |
 | [Control de acceso basado en rol (RBAC)](http://pic.dhe.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.security%2Fdoc%2Fsecurity%2Fdomain_rbac.htm) | [http://pic.dhe.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.security%2Fdoc%2Fsecurity%2Fdomain_rbac.htm](http://pic.dhe.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.security%2Fdoc%2Fsecurity%2Fdomain_rbac.htm) |

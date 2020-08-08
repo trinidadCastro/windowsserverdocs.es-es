@@ -1,19 +1,17 @@
 ---
 title: Mejoras de VPN de Always On
 description: Always On VPN tiene muchas ventajas en comparación con las soluciones de VPN de Windows del pasado. Mejoras clave en la integración, la seguridad, la conectividad, el control de redes y la compatibilidad align Always On VPN con la primera visión móvil y en la nube de Microsoft.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e20d59311d8bc21052855acae9fc2eb356fdff23
-ms.sourcegitcommit: 717222e9efceb5964872dbf97034cad60f3c48df
+ms.openlocfilehash: db2d33f2452d7fddffef5458d0e80954b3603a48
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87295045"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958243"
 ---
 # <a name="always-on-vpn-enhancements"></a>Mejoras de VPN de Always On
 
@@ -28,7 +26,7 @@ Always On VPN tiene muchas ventajas en comparación con las soluciones de VPN de
 
 - **Seguridad:** Always On VPN tiene nuevas capacidades de seguridad avanzadas para restringir el tipo de tráfico, las aplicaciones que pueden usar la conexión VPN y los métodos de autenticación que puede usar para iniciar la conexión. Cuando la conexión está activa la mayor parte del tiempo, es especialmente importante proteger la conexión. Para obtener más información, consulte [Opciones de autenticación de VPN](/windows/security/identity-protection/vpn/vpn-authentication).
 
-- **Conectividad VPN:** Always On VPN, con o sin túnel de dispositivo, proporciona funcionalidad de desencadenador automático. Antes de Always On VPN, no era posible desencadenar una conexión automática a través de la autenticación de usuario o de dispositivo.  
+- **Conectividad VPN:** Always On VPN, con o sin túnel de dispositivo, proporciona funcionalidad de desencadenador automático. Antes de Always On VPN, no era posible desencadenar una conexión automática a través de la autenticación de usuario o de dispositivo.
 
 - **Control de red:** Always On VPN permite a los administradores especificar directivas de enrutamiento a un nivel más granular, incluso a la aplicación individual, que es perfecta para las aplicaciones de línea de negocio (LOB) que requieren acceso remoto especial.  Always On VPN también es totalmente compatible con el protocolo de Internet versión 4 (IPv4) y la versión 6 (IPv6). A diferencia de DirectAccess, no hay ninguna dependencia específica en IPv6.
 
@@ -82,7 +80,7 @@ A continuación se muestran algunas de las mejoras de red en Always On VPN:
 | **Directivas de enrutamiento específicas de la aplicación** |                            Además de definir directivas de enrutamiento de conexiones VPN globales para la separación del tráfico de Internet y de la intranet, es posible agregar directivas de enrutamiento para controlar el uso de las configuraciones de túnel dividido o de forzar túnel en cada aplicación. Esta opción proporciona un control más granular sobre qué aplicaciones pueden interactuar con qué recursos a través del túnel VPN.                             |
 |           **Rutas de exclusión**            |                 Always On VPN admite la posibilidad de especificar rutas de exclusión que controlen de forma específica el comportamiento de enrutamiento para definir qué tráfico debe atravesar la VPN únicamente y no pasar a través de la interfaz de red física.<p><p>***Notas:***<br>-Las rutas de exclusión actualmente funcionan para el tráfico dentro de la misma subred que el cliente, por ejemplo, LinkLocal.<br>-Las rutas de exclusión solo funcionan en una configuración de túnel dividido.                  |
 
-## <a name="configuration-and-compatibility"></a>Configuración y compatibilidad 
+## <a name="configuration-and-compatibility"></a>Configuración y compatibilidad
 
 A continuación se muestran algunas de las mejoras de configuración y compatibilidad en Always On VPN:
 

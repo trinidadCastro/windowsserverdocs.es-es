@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
 author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: c0e056d2e2b26180399d3fab3321c5e75bff8780
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aa89f3735151b2dee795c1a325e22446e3770fa0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948122"
+ms.locfileid: "87994536"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>El hipervisor de Windows debe estar en ejecución
 
@@ -86,6 +86,4 @@ A continuación, compruebe el registro de eventos del hipervisor de Hyper-V. Si 
     2. Busque los eventos que notifican problemas. Por ejemplo, el ID. de evento 41 indica un problema con la configuración del BIOS: "error de inicio de Hyper-V. VMX no está presente o no está habilitado en el BIOS ".
 
 ### <a name="see-also"></a>Consulte también
-Para obtener más información sobre el uso de Hyper-V en Windows 10, incluido cómo comprobar que el equipo puede ejecutar Hyper-V, consulte [requisitos del sistema de Hyper-v de Windows 10](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility).
-
-
+Para obtener más información sobre el uso de Hyper-V en Windows 10, incluido cómo comprobar que el equipo puede ejecutar Hyper-V, consulte [requisitos del sistema de Hyper-v de Windows 10](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements).

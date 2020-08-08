@@ -6,20 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: b4031ce1d9a5bce4f0dd8fe98dea304b2373c2ae
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8b28d412411336062187a842912b6f4a41957eba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181831"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994352"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Supervisión de Active Directory en busca de indicios de riesgo
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-*Ley número 5: la vigilancia del infinitas es el precio de la seguridad.* - [10 leyes inmutables de administración de seguridad](/previous-versions//cc722488(v=technet.10))
+*Ley número 5: la vigilancia del infinitas es el precio de la seguridad.* - [10 leyes inmutables de administración de seguridad](/previous-versions/cc722488(v=technet.10))
 
 Un sistema de supervisión de registro de eventos sólido es una parte fundamental de cualquier diseño de Active Directory seguro. Muchos peligros de seguridad del equipo podrían detectarse en el primer momento en el caso de que las víctimas hayan actuado en la supervisión y las alertas adecuadas del registro de eventos. Los informes independientes tienen una larga compatibilidad con esta conclusión. Por ejemplo, el [Informe de infracciones de datos 2009 de Verizon](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf) indica:
 
@@ -197,7 +195,7 @@ Esta subcategoría informa de información detallada acerca de la información r
 
 #### <a name="logonlogoff"></a>Inicio/cierre de sesión
 
-##### <a name="logon"></a>Inicio de sesión
+##### <a name="logon"></a>Iniciar sesión
 Esta subcategoría informa cuando un usuario intenta iniciar sesión en el sistema. Estos eventos se producen en el equipo al que se accede. En el caso de los inicios de sesión interactivos, la generación de estos eventos se produce en el equipo en el que se ha iniciado sesión. Si se produce un inicio de sesión de red para tener acceso a un recurso compartido, estos eventos se generan en el equipo que hospeda el recurso al que se accede. Si esta opción se configura como **sin auditoría**, es difícil o imposible determinar qué usuario ha tenido acceso o ha intentado tener acceso a los equipos de la organización.
 
 ##### <a name="network-policy-server"></a>Servidor de directivas de redes

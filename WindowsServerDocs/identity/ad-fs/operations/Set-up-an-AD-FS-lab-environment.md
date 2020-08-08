@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: be6a1918a209f14ec8cc911aa4294825d0aa8b47
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d9625992d7098a1f5cd510901be07187702b3771
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182361"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967092"
 ---
 # <a name="set-up-an-ad-fs-lab-environment"></a>Configuración de un entorno de laboratorio de AD FS
 
@@ -313,7 +311,7 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
 
     5.  Selecciona **Sin cifrado** y haz clic en **Siguiente**. En la página **Notificaciones ofrecidas**, haga clic en **Siguiente**.
 
-    6.  Selecciona la casilla situada junto a **Programar una tarea para realizar diariamente actualizaciones de metadatos de WS-Federation**. Haga clic en **Finalizar**.
+    6.  Selecciona la casilla situada junto a **Programar una tarea para realizar diariamente actualizaciones de metadatos de WS-Federation**. Haga clic en **Finalizar**
 
     7.  La aplicación de ejemplo ya está configurada. Si prueba la dirección URL de la aplicación **https://webserv1.contoso.com/claimapp** , debe redirigirle a su servidor de Federación. El servidor de federación debería mostrar una página de error, ya que todavía no has configurado la relación de confianza para usuario autenticado. En otras palabras, esta aplicación de prueba no se ha protegido mediante AD FS.
 

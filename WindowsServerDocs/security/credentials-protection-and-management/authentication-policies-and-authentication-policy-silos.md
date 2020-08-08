@@ -1,20 +1,18 @@
 ---
 title: Directivas de autenticación y silos de directivas de autenticación
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 7eb0e640-033d-49b5-ab44-3959395ad567
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 705cba94299572f02c12896e2dac0ec8c2d070c0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0bca5a7e78a663c535e1d727339c6dd9eb50704b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520184"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957923"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>Directivas de autenticación y silos de directivas de autenticación
 
@@ -228,7 +226,7 @@ Los eventos se registran en los registros de aplicaciones y servicios en **Micro
 
 Para ver los pasos que usan estos eventos para solucionar problemas, consulta [Solución de problemas de directivas de autenticación](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts#troubleshoot-authentication-policies) y [Solución de problemas de eventos relativos a Usuarios protegidos](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts#troubleshoot-events-related-to-protected-users).
 
-|Identificador de evento y registro|Description|
+|Identificador de evento y registro|Descripción|
 |----------|--------|
 |101<p>**AuthenticationPolicyFailures-DomainController**|Motivo: Se produce un error de inicio de sesión de NTLM porque la directiva de autenticación está configurada.<p>Se registra un evento en el controlador de dominio para indicar que se produjo un error de autenticación NTLM porque se necesitan restricciones de control de acceso, y esas restricciones no se pueden aplicar a NTLM.<p>Muestra los nombres de cuenta, dispositivo, directiva y silo.|
 |105<p>**AuthenticationPolicyFailures-DomainController**|Motivo: Se produce un error de restricción Kerberos porque no se permite la autenticación desde un dispositivo determinado.<p>Se registra un evento en el controlador de dominio para indicar que se denegó un TGT de Kerberos porque el dispositivo no cumple las restricciones de control de acceso aplicadas.<p>Muestra los nombres de cuenta, dispositivo, directiva y silo, y la vigencia del TGT.|

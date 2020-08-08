@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: adf57e05cd759d2524782507d6f3ce5f90e0d702
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2390fc9c688f60d6e4887ff9ee75183ae4333aa2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954802"
+ms.locfileid: "87994583"
 ---
 # <a name="datagram-transport-layer-security-protocol"></a>Protocolo de seguridad de capa de transporte de datagrama
 
@@ -21,7 +21,7 @@ Windows Server (canal semianual), Windows Server 2016 y Windows 10
 En este tema de referencia para profesionales de TI se describe el protocolo de seguridad de la capa de transporte de datagrama (DTLS), que forma parte del proveedor de compatibilidad para seguridad de Schannel (SSP).
 
 ## <a name="BKMK_DTLS"></a>
-Introducido en el SSP de Schannel en Windows Server 2012 y Windows 8, el protocolo DTLS proporciona privacidad de comunicación para los protocolos de datagramas. Para obtener información sobre la versión de DTLS que se admite en las versiones de Windows, consulte [protocolos en TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/mt808159(v=vs.85).aspx). El protocolo permite que las aplicaciones de cliente y servidor se comuniquen de acuerdo con el modo en que fueron diseñadas para evitar interceptaciones, alteraciones o falsificación de mensajes. El protocolo DTLS se basa en el protocolo de Seguridad de la capa de transporte (TLS) y proporciona garantías de seguridad equivalentes, lo que reduce la necesidad de usar IPsec o diseñar un protocolo personalizado de seguridad de la capa de la aplicación.
+Introducido en el SSP de Schannel en Windows Server 2012 y Windows 8, el protocolo DTLS proporciona privacidad de comunicación para los protocolos de datagramas. Para obtener información sobre la versión de DTLS que se admite en las versiones de Windows, consulte [protocolos en TLS/SSL (Schannel SSP)](/windows/win32/secauthn/protocols-in-tls-ssl--schannel-ssp-). El protocolo permite que las aplicaciones de cliente y servidor se comuniquen de acuerdo con el modo en que fueron diseñadas para evitar interceptaciones, alteraciones o falsificación de mensajes. El protocolo DTLS se basa en el protocolo de Seguridad de la capa de transporte (TLS) y proporciona garantías de seguridad equivalentes, lo que reduce la necesidad de usar IPsec o diseñar un protocolo personalizado de seguridad de la capa de la aplicación.
 
 Los datagramas son comunes en el streaming multimedia, como juegos o videoconferencias seguras. Los desarrolladores pueden desarrollar aplicaciones para usar el protocolo DTLS en el contexto del modelo de la interfaz del proveedor de compatibilidad con seguridad (SSPI) de autenticación de Windows para proteger la comunicación entre clientes y servidores. El protocolo DTLS se basa en el protocolo de datagramas de usuario (UDP). DTLS está diseñado para ser tan similar a TLS como sea posible para minimizar la nueva invención de seguridad y para maximizar la cantidad de código y la reutilización de la infraestructura.
 
@@ -30,5 +30,3 @@ Los conjuntos de cifrado que están disponibles para la configuración se incluy
 ## <a name="additional-references"></a>Referencias adicionales
 
 [Seguridad de la capa de transporte de datagrama RFC 4347 de IETF](http://tools.ietf.org/html/rfc4347)
-
-

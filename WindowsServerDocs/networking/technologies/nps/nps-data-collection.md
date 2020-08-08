@@ -8,19 +8,19 @@ ms.reviewer: richagi
 ms.custom: it-pro
 ms.topic: article
 ms.date: 05/01/2018
-ms.openlocfilehash: a5cce413e2e95387edf73c628f38a4d225c80adb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a47cb5791b6e157b434d80535d10b107159db48f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955582"
+ms.locfileid: "87994596"
 ---
 # <a name="network-policy-server-user-data-collection"></a>Recopilación de datos de usuario del servidor de directivas de redes
 
 En este documento se explica cómo buscar información de usuario recopilada por el servidor de directivas de redes (NPS) en el evento que desea quitar.
 
 >[!Note]
->Si le interesa ver o eliminar datos personales, consulte la guía de Microsoft en las solicitudes de los [asuntos de datos de Windows para el sitio de RGPD](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-windows) . Si está buscando información general sobre RGPD, consulte la [sección RGPD del portal de confianza de servicios](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+>Si le interesa ver o eliminar datos personales, consulte la guía de Microsoft en las solicitudes de los [asuntos de datos de Windows para el sitio de RGPD](/microsoft-365/compliance/gdpr-dsr-windows) . Si está buscando información general sobre RGPD, consulte la [sección RGPD del portal de confianza de servicios](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 ## <a name="information-collected-by-nps"></a>Información recopilada por NPS
 
