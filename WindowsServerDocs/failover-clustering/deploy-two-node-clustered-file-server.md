@@ -1,19 +1,17 @@
 ---
 title: Implementación de un servidor de archivos en clúster de dos nodos
 description: En este artículo se describe cómo crear un clúster de servidores de archivos de dos nodos
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 02/01/2019
-ms.openlocfilehash: 96f4d344aba989136c5010762d385c543c39dac2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: b91aeadcce645797f42a029f7a8c82371b42d618
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177961"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968012"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>Implementación de un servidor de archivos en clúster de dos nodos
 
@@ -126,7 +124,7 @@ Paso 2: instalar la característica de clúster de conmutación por error
 
 Paso 3: validar la configuración del clúster
 
-Paso 4: crear el clúster
+Paso 4: Creación del clúster
 
 Si ya ha instalado los nodos de clúster y desea configurar un clúster de conmutación por error de servidor de archivos, vea Pasos para configurar un clúster de servidores de archivos de dos nodos, más adelante en esta guía.
 
@@ -276,7 +274,7 @@ Lo siguiente creará un clúster fuera de los equipos y la configuración que ti
    > [!NOTE]
    > Si utiliza direcciones IP estáticas, debe seleccionar la red que se va a usar y especificar la dirección IP que utilizará para el nombre del clúster.  Si usa DHCP para las direcciones IP, la dirección IP se configurará automáticamente.
 
-6. Elija **Siguiente**.
+6. Seleccione **Siguiente**.
 
 7. En la página **confirmación** , compruebe lo que ha configurado y seleccione **siguiente** para crear el clúster.
 
@@ -323,7 +321,7 @@ Para configurar un clúster de conmutación por error de servidor de archivos, s
    > [!NOTE]
    > Si utiliza direcciones IP estáticas, debe seleccionar la red que se va a usar y especificar la dirección IP que utilizará para el nombre del clúster.  Si usa DHCP para las direcciones IP, la dirección IP se configurará automáticamente.
 
-6. Elija **Siguiente**.
+6. Seleccione **Siguiente**.
 
 7. En la ventana **seleccionar almacenamiento** , seleccione la unidad adicional (no el testigo) que contendrá los recursos compartidos y el **siguiente**.
 

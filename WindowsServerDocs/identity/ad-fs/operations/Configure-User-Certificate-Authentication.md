@@ -6,14 +6,12 @@ ms.author: billmath
 manager: samueld
 ms.date: 01/18/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 6fa77276aa41dc59c3dd5a131b5d8fb8a3dd2e58
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6321b3e68b71f004a030dfba8a8f1ca7b56d4f78
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965457"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967522"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configuración de AD FS para la autenticación de certificados de usuario
 
@@ -29,17 +27,17 @@ La autenticación de certificados de usuario se usa principalmente en dos casos 
 4) Si usa AD FS en el modo de autenticación de certificados alternativo, asegúrese de que los servidores AD FS y WAP tengan certificados SSL que contengan el nombre de host AD FS con el prefijo "certauth", por ejemplo "certauth.fs.contoso.com", y que se permita el tráfico a este nombre de host a través del firewall.
 5) Si usa la autenticación de certificado de la extranet, asegúrese de que se puede acceder desde Internet al menos a un AIA y al menos a una ubicación de CDP o OCSP de la lista especificada en los certificados.
 6) Además, para la autenticación de certificados de Azure AD, para los clientes de Exchange ActiveSync, el certificado de cliente debe tener la dirección de correo electrónico enrutable de los usuarios en Exchange online en el nombre de la entidad de seguridad o el valor de nombre de RFC822 del campo Nombre alternativo del sujeto. (Azure Active Directory asigna el valor de RFC822 al atributo de dirección del proxy en el directorio).
-7) AD FS no admite sugerencias de nombre de usuario con autenticación basada en tarjetas inteligentes o certificados. 
+7) AD FS no admite sugerencias de nombre de usuario con autenticación basada en tarjetas inteligentes o certificados.
 
 
-## <a name="configure-ad-fs-for-user-certificate-authentication"></a>Configurar AD FS para la autenticación de certificado de usuario  
+## <a name="configure-ad-fs-for-user-certificate-authentication"></a>Configurar AD FS para la autenticación de certificado de usuario
 
 Habilite la autenticación de certificados de usuario como método de autenticación de intranet o extranet en AD FS, mediante la consola de administración de AD FS o el cmdlet de PowerShell `Set-AdfsGlobalAuthenticationPolicy` .
 
 Si está configurando AD FS para la autenticación de certificados de Azure AD, asegúrese de que ha configurado la [Azure ad](/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities) y las [reglas de notificaciones de AD FS necesarias](/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements) para el emisor y el número de serie del certificado.
 
 Además, hay algunos aspectos opcionales.
-- Si desea usar notificaciones basadas en campos y extensiones de certificado además de EKU (tipo de notificación https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) , configure las reglas de paso de notificación adicionales en la Active Directory confianza del proveedor de notificaciones.  A continuación encontrará una lista completa de las notificaciones de certificado disponibles.  
+- Si desea usar notificaciones basadas en campos y extensiones de certificado además de EKU (tipo de notificación https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) , configure las reglas de paso de notificación adicionales en la Active Directory confianza del proveedor de notificaciones.  A continuación encontrará una lista completa de las notificaciones de certificado disponibles.
 - Si necesita restringir el acceso en función del tipo de certificado, puede usar las propiedades adicionales en el certificado en AD FS reglas de autorización de emisión para la aplicación. Los escenarios comunes son "permitir solo certificados aprovisionados por un proveedor de MDM" o "permitir solo certificados de tarjeta inteligente"
 >[!IMPORTANT]
 > Los clientes que usan el flujo de código de dispositivo para la autenticación y la autenticación de dispositivos con un IDP distinto de Azure AD (por ejemplo, AD FS) no podrán aplicar el acceso basado en dispositivos (por ejemplo, permitir solo los dispositivos administrados que usan un servicio MDM de terceros) para Azure AD recursos. Para proteger el acceso a los recursos corporativos en Azure AD y evitar la fuga de datos, los clientes deben configurar Azure AD el acceso condicional basado en el dispositivo (es decir, "requerir que el dispositivo se marque como queja" en Azure AD acceso condicional).
@@ -47,43 +45,45 @@ Además, hay algunos aspectos opcionales.
 - Puede que desee considerar la posibilidad de modificar las páginas de inicio de sesión para que se adapten a las necesidades de los usuarios finales al realizar la autenticación de certificados. Los casos comunes son para (a) cambiar el "Inicio de sesión con el certificado X509" por algo más descriptivo para el usuario final
 
 ## <a name="configure-seamless-certificate-authentication-for-chrome-browser-on-windows-desktops"></a>Configurar la autenticación de certificados sin problemas para el explorador Chrome en escritorios de Windows
-Cuando hay varios certificados de usuario (como certificados de Wi-Fi) en el equipo que cumplen los objetivos de la autenticación del cliente, el explorador Chrome del escritorio de Windows le pedirá al usuario que seleccione el certificado adecuado. Esto puede resultar confuso para el usuario final. Para optimizar esta experiencia, puede establecer una directiva para que Chrome seleccione automáticamente el certificado adecuado para mejorar la experiencia del usuario. Esta Directiva se puede establecer manualmente si se realiza un cambio en el registro o se configura automáticamente a través de GPO (para establecer las claves del registro). Esto requiere que los certificados de cliente de usuario para la autenticación en AD FS tengan emisores distintos de otros casos de uso. 
+Cuando hay varios certificados de usuario (como certificados de Wi-Fi) en el equipo que cumplen los objetivos de la autenticación del cliente, el explorador Chrome del escritorio de Windows le pedirá al usuario que seleccione el certificado adecuado. Esto puede resultar confuso para el usuario final. Para optimizar esta experiencia, puede establecer una directiva para que Chrome seleccione automáticamente el certificado adecuado para mejorar la experiencia del usuario. Esta Directiva se puede establecer manualmente si se realiza un cambio en el registro o se configura automáticamente a través de GPO (para establecer las claves del registro). Esto requiere que los certificados de cliente de usuario para la autenticación en AD FS tengan emisores distintos de otros casos de uso.
 
-Para obtener más información sobre cómo configurar esto para Chrome, consulte este [vínculo](http://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls).  
+Para obtener más información sobre cómo configurar esto para Chrome, consulte este [vínculo](http://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls).
 
 
 ## <a name="troubleshoot-certificate-authentication"></a>Solucionar problemas de autenticación de certificados
-Este documento se centra en problemas comunes de solución de problemas cuando AD FS está configurado para la autenticación de certificados para los usuarios. 
+Este documento se centra en problemas comunes de solución de problemas cuando AD FS está configurado para la autenticación de certificados para los usuarios.
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>Comprobar si los emisores de confianza de certificados están configurados correctamente en todos los servidores AD FS/WAP
 *Síntoma común: HTTP 204 "sin contenido de HTTPS \: //certauth.ADFS.contoso.com"*
 
-AD FS utiliza el sistema operativo Windows subyacente para demostrar la posesión del certificado de usuario y asegurarse de que coincide con un emisor de confianza mediante la validación de la cadena de confianza de certificados. Para que coincida con el emisor de confianza, debe asegurarse de que todas las autoridades raíz e intermedias estén configuradas como emisores de confianza en el almacén de entidades de certificación del equipo local. Para validar esto automáticamente, use la [herramienta analizador de diagnóstico de AD FS](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze). La herramienta consulta todos los servidores y garantiza que los certificados correctos se hayan aprovisionado correctamente. 
+AD FS utiliza el sistema operativo Windows subyacente para demostrar la posesión del certificado de usuario y asegurarse de que coincide con un emisor de confianza mediante la validación de la cadena de confianza de certificados. Para que coincida con el emisor de confianza, debe asegurarse de que todas las autoridades raíz e intermedias estén configuradas como emisores de confianza en el almacén de entidades de certificación del equipo local.
+Para validar esto automáticamente, use la [herramienta analizador de diagnóstico de AD FS](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze). La herramienta consulta todos los servidores y garantiza que los certificados correctos se hayan aprovisionado correctamente.
 1)  Descargue y ejecute la herramienta según las instrucciones proporcionadas en el vínculo anterior.
 2)  Cargar los resultados y revisar los errores
 
 ### <a name="check-if-certificate-authentication-is-enabled-in-the-ad-fs-authentication-policy"></a>Compruebe si la autenticación de certificados está habilitada en la Directiva de autenticación de AD FS
-AD FS no habilita la autenticación de certificados de forma predeterminada. Consulte el principio de este documento sobre cómo habilitar la autenticación de certificados. 
+AD FS no habilita la autenticación de certificados de forma predeterminada. Consulte el principio de este documento sobre cómo habilitar la autenticación de certificados.
 
 ### <a name="check-if-certificate-authentication-is-enabled-in-the-ad-fs-authentication-policy"></a>Compruebe si la autenticación de certificados está habilitada en la Directiva de autenticación de AD FS
-AD FS realiza la autenticación de certificados de usuario de forma predeterminada en el puerto 49443 con el mismo nombre de host que AD FS (por ejemplo, `adfs.contoso.com` ). También puede configurar AD FS para usar el puerto 443 (Puerto HTTPS predeterminado) mediante el enlace SSL alternativo. Sin embargo, la dirección URL usada en esta configuración es `certauth.<adfs-farm-name>` (por ejemplo, `certauth.contoso.com` ). Consulte [este vínculo](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md) para obtener más información. El caso más común de conectividad de red es que un firewall se ha configurado incorrectamente y bloquea o interfiere el tráfico de autenticación de certificados de usuario. Normalmente, verá una pantalla en blanco o un error de servidor 500 cuando se produzca este problema. 
+AD FS realiza la autenticación de certificados de usuario de forma predeterminada en el puerto 49443 con el mismo nombre de host que AD FS (por ejemplo, `adfs.contoso.com` ). También puede configurar AD FS para usar el puerto 443 (Puerto HTTPS predeterminado) mediante el enlace SSL alternativo. Sin embargo, la dirección URL usada en esta configuración es `certauth.<adfs-farm-name>` (por ejemplo, `certauth.contoso.com` ). Consulte [este vínculo](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md) para obtener más información.
+El caso más común de conectividad de red es que un firewall se ha configurado incorrectamente y bloquea o interfiere el tráfico de autenticación de certificados de usuario. Normalmente, verá una pantalla en blanco o un error de servidor 500 cuando se produzca este problema.
 1)  Anote el nombre de host y el puerto que ha configurado en AD FS
-2)  Asegúrese de que los firewalls delante de AD FS o el proxy de aplicación web (WAP) estén configurados para permitir la `hostname:port` combinación de la granja de AD FS. Tendrá que consultar al ingeniero de red para realizar este paso. 
+2)  Asegúrese de que los firewalls delante de AD FS o el proxy de aplicación web (WAP) estén configurados para permitir la `hostname:port` combinación de la granja de AD FS. Tendrá que consultar al ingeniero de red para realizar este paso.
 
 ### <a name="check-certificate-revocation-list-connectivity"></a>Comprobar la conectividad de la lista de revocación de certificados
 Las listas de revocación de certificados (CRL) son extremos que se codifican en el certificado de usuario para realizar comprobaciones de revocación en tiempo de ejecución. Por ejemplo, si se roba un dispositivo que contenía un certificado, un administrador puede Agregar el certificado a la lista de certificados revocados. Los puntos de conexión que aceptaron este certificado anteriormente no funcionarán correctamente.
 
-Cada AD FS y el servidor WAP deberán alcanzar el punto de conexión de CRL para validar si el certificado que se presentó todavía es válido y no se ha revocado. La validación de CRL puede producirse a través de HTTPS, HTTP, LDAP o mediante OCSP (Protocolo de estado de certificados en línea). Si los servidores AD FS/WAP no pueden alcanzar el punto de conexión, se producirá un error en la autenticación. Siga los pasos que se indican a continuación para solucionar el problema. 
-1) Póngase en contacto con su ingeniero de PKI para determinar los puntos de conexión de CRL usados para revocar los certificados de usuario del sistema PKI. 
+Cada AD FS y el servidor WAP deberán alcanzar el punto de conexión de CRL para validar si el certificado que se presentó todavía es válido y no se ha revocado. La validación de CRL puede producirse a través de HTTPS, HTTP, LDAP o mediante OCSP (Protocolo de estado de certificados en línea). Si los servidores AD FS/WAP no pueden alcanzar el punto de conexión, se producirá un error en la autenticación. Siga los pasos que se indican a continuación para solucionar el problema.
+1) Póngase en contacto con su ingeniero de PKI para determinar los puntos de conexión de CRL usados para revocar los certificados de usuario del sistema PKI.
 2)  En cada servidor AD FS/WAP, asegúrese de que los extremos de CRL son accesibles a través del protocolo usado (normalmente HTTPS o HTTP).
 3)  Para la validación avanzada, [habilite el registro de eventos CAPI2](/archive/blogs/benjaminperkins/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues) en cada servidor AD FS/WAP.
 4) Busque el ID. de evento 41 (comprobar la revocación) en los registros operativos de CAPI2
 5) Comprobar`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
-***Sugerencia***: puede tener como destino un solo servidor AD FS o WAP para facilitar la solución de problemas mediante la configuración de la resolución de DNS (archivo de host en Windows) para que apunte a un servidor específico. Esto le permite habilitar el seguimiento dirigido a un servidor. 
+***Sugerencia***: puede tener como destino un solo servidor AD FS o WAP para facilitar la solución de problemas mediante la configuración de la resolución de DNS (archivo de host en Windows) para que apunte a un servidor específico. Esto le permite habilitar el seguimiento dirigido a un servidor.
 
 ### <a name="check-if-this-is-a-server-name-indication-sni-issue"></a>Compruebe si se trata de un problema de Indicación de nombre de servidor (SNI)
-AD FS requiere que el dispositivo cliente (o los exploradores) y los equilibradores de carga admitan SNI. Es posible que algunos dispositivos cliente (normalmente versiones anteriores de Android) no admitan SNI. Además, es posible que los equilibradores de carga no admitan SNI o no estén configurados para SNI. En estos casos, es probable que vea errores de certificación de usuario. 
+AD FS requiere que el dispositivo cliente (o los exploradores) y los equilibradores de carga admitan SNI. Es posible que algunos dispositivos cliente (normalmente versiones anteriores de Android) no admitan SNI. Además, es posible que los equilibradores de carga no admitan SNI o no estén configurados para SNI. En estos casos, es probable que vea errores de certificación de usuario.
 1)  Trabaje con su ingeniero de red para asegurarse de que la Load Balancer para AD FS/WAP admita SNI
 2)  En caso de que no se admita SNI AD FS tiene una solución alternativa mediante los pasos siguientes:
     *   Abra una ventana de símbolo del sistema con privilegios elevados en el servidor de AD FS principal
@@ -92,21 +92,23 @@ AD FS requiere que el dispositivo cliente (o los exploradores) y los equilibrado
     *   Tipo en `netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
 
 ### <a name="check-if-the-client-device-has-been-provisioned-with-the-certificate-correctly"></a>Compruebe si el dispositivo cliente se ha aprovisionado correctamente con el certificado.
-Es posible que observe que algunos dispositivos funcionan correctamente, pero otros no. En este caso, normalmente se debe a que el certificado de usuario no se ha aprovisionado correctamente en el dispositivo cliente. Siga los pasos siguientes. 
-1)  Si el problema es específico de un dispositivo Android, el problema más común es que la cadena de certificados no es de plena confianza en el dispositivo Android.  Consulte al proveedor de MDM para asegurarse de que el certificado se ha aprovisionado correctamente y de que toda la cadena es de plena confianza en el dispositivo Android. 
+Es posible que observe que algunos dispositivos funcionan correctamente, pero otros no. En este caso, normalmente se debe a que el certificado de usuario no se ha aprovisionado correctamente en el dispositivo cliente. Siga los pasos siguientes.
+1)  Si el problema es específico de un dispositivo Android, el problema más común es que la cadena de certificados no es de plena confianza en el dispositivo Android.  Consulte al proveedor de MDM para asegurarse de que el certificado se ha aprovisionado correctamente y de que toda la cadena es de plena confianza en el dispositivo Android.
 2)  Si el problema es específico de un dispositivo Windows, compruebe si el certificado se ha aprovisionado correctamente comprobando el almacén de certificados de Windows para el usuario que ha iniciado sesión (no sistema/equipo).
 3)  Exporte el certificado de usuario cliente al archivo. cer y ejecute el comando "certutil-f-urlfetch-Verify certificatefilename. cer".
 
 
 ### <a name="check-if-the-tls-version-is-compatible-between-ad-fswap-servers-and-the-client-device"></a>Compruebe si la versión de TLS es compatible entre los servidores AD FS/WAP y el dispositivo cliente.
-En raras ocasiones, un dispositivo cliente (normalmente dispositivos móviles) se actualiza para admitir solo una versión superior de TLS (por ejemplo, 1,3) o puede tener el problema inverso en el que AD FS/servidores WAP se actualizaron para usar solo una versión de TLS superior y el dispositivo cliente no lo admite. Puede usar las herramientas de SSL en línea para comprobar los servidores de AD FS/WAP y ver si es compatible con el dispositivo. Para obtener más información sobre cómo controlar las versiones de TLS, consulte [este vínculo](manage-ssl-protocols-in-ad-fs.md).
+En raras ocasiones, un dispositivo cliente (normalmente dispositivos móviles) se actualiza para admitir solo una versión superior de TLS (por ejemplo, 1,3) o puede tener el problema inverso en el que AD FS/servidores WAP se actualizaron para usar solo una versión de TLS superior y el dispositivo cliente no lo admite.
+Puede usar las herramientas de SSL en línea para comprobar los servidores de AD FS/WAP y ver si es compatible con el dispositivo.
+Para obtener más información sobre cómo controlar las versiones de TLS, consulte [este vínculo](manage-ssl-protocols-in-ad-fs.md).
 
 ### <a name="check-if-azure-ad-promptloginbehavior-is-configured-correctly-on-your-federated-domain-settings"></a>Compruebe si Azure AD PromptLoginBehavior está configurado correctamente en la configuración del dominio federado.
-Muchas aplicaciones de Office 365 envían prompt = login a Azure AD. De forma predeterminada Azure AD, lo convierte en un inicio de sesión de contraseña nueva en AD FS. Como resultado, incluso si ha configurado la autenticación de certificados en AD FS, los usuarios finales solo verán un inicio de sesión de contraseña. 
+Muchas aplicaciones de Office 365 envían prompt = login a Azure AD. De forma predeterminada Azure AD, lo convierte en un inicio de sesión de contraseña nueva en AD FS. Como resultado, incluso si ha configurado la autenticación de certificados en AD FS, los usuarios finales solo verán un inicio de sesión de contraseña.
 1)  Obtener la configuración de dominio federado mediante el comando "Get-MsolDomainFederationSettings"
 2)  Asegúrese de que el parámetro PromptLoginBehavior está establecido en uno de los parámetros ' Disabled ' o ' NativeSupport '
 
-Para obtener más información, consulte [este vínculo](ad-fs-prompt-login.md). 
+Para obtener más información, consulte [este vínculo](ad-fs-prompt-login.md).
 
 ### <a name="additional-troubleshooting"></a>Más soluciones de problemas
 Se trata de casos poco frecuentes

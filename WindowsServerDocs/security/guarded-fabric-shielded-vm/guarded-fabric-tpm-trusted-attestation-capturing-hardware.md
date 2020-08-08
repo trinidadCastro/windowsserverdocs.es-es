@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 04/01/2019
-ms.openlocfilehash: a0bc065f9654091ece18445488e4b46cfb197ad3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dedd7a3629b4381fd5f78f70a39f6906cab0573d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944155"
+ms.locfileid: "87995392"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>Autorizar hosts protegidos mediante la atestación basada en TPM
 
@@ -80,11 +80,11 @@ A partir de la versión 1709 de Windows Server, las directivas de integridad de 
 
 Se recomienda crear primero la Directiva de CI en modo auditoría (registro) para ver si falta algo y, a continuación, aplicar la Directiva para las cargas de trabajo de producción del host.
 
-Si usa el cmdlet [New-CIPolicy](https://docs.microsoft.com/powershell/module/configci/new-cipolicy?view=win10-ps) para generar su propia Directiva de integridad de código, deberá decidir los niveles de regla que se usarán.
+Si usa el cmdlet [New-CIPolicy](/powershell/module/configci/new-cipolicy?view=win10-ps) para generar su propia Directiva de integridad de código, deberá decidir los niveles de regla que se usarán.
 Se recomienda un nivel principal de **publicador** con la reserva para el **hash**, lo que permite que la mayoría del software firmado digital se actualice sin cambiar la Directiva de CI.
 El nuevo software escrito por el mismo publicador también se puede instalar en el servidor sin cambiar la Directiva de CI.
 Se aplicará un algoritmo hash a los archivos ejecutables que no estén firmados digitalmente: las actualizaciones de estos archivos requerirán la creación de una nueva Directiva de CI.
-Para obtener más información sobre los niveles de regla de directiva de CI disponibles, vea [implementar directivas de integridad de código: reglas de directivas y reglas de archivos](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules) y ayuda de cmdlet.
+Para obtener más información sobre los niveles de regla de directiva de CI disponibles, vea [implementar directivas de integridad de código: reglas de directivas y reglas de archivos](/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules) y ayuda de cmdlet.
 
 1.  En el host de referencia, genere una nueva Directiva de integridad de código. Los siguientes comandos crean una directiva en el nivel de **publicador** con la reserva para el **hash**. A continuación, convierte el archivo XML en el formato de archivo binario Windows y HGS deben aplicar y medir la Directiva de CI, respectivamente.
 
@@ -101,7 +101,7 @@ Para obtener más información sobre los niveles de regla de directiva de CI dis
 
 3.  Aplique la Directiva de CI al host de referencia:
 
-    1.  Ejecute el siguiente comando para configurar el equipo para usar la Directiva de CI. También puede implementar la Directiva de CI con [Directiva de grupo](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) o [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm).
+    1.  Ejecute el siguiente comando para configurar el equipo para usar la Directiva de CI. También puede implementar la Directiva de CI con [Directiva de grupo](/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) o [System Center Virtual Machine Manager](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm).
 
         ```powershell
         Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }

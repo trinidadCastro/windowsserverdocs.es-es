@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: 92ddf9c5d90a963115e4009afea996b8aecf052d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3c1b414acaf7487b0a435cfea2891903646c869f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966552"
+ms.locfileid: "87995265"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>Funciones y tecnologías integradas de software y hardware (SH)
 
@@ -37,7 +37,7 @@ Para usar la funcionalidad de NIC convergente:
 
 3.  Asegúrese de habilitar RDMA en el VNIC designado para RDMA en el host.
 
-Para obtener más detalles sobre RDMA y SET, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
+Para obtener más detalles sobre RDMA y SET, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md).
 
 ## <a name="data-center-bridging-dcb"></a>Data Center Bridging (DCB)
 
@@ -45,14 +45,14 @@ DCB es un conjunto de estándares del Instituto de ingenieros de electricidad y 
 
 En DCB, Windows Server usa el control de flujo basado en prioridades (PFC), normalizado en IEEE 802.1 QBB. PFC crea un tejido de red (casi) sin pérdida evitando el desbordamiento dentro de las clases de tráfico. Windows Server también usa la selección de transmisión mejorada (ETS), normalizada en IEEE 802.1 QAZ. ETS permite dividir el ancho de banda en partes reservadas para hasta ocho clases de tráfico. Cada clase de tráfico tiene su propia cola de transmisión y, mediante el uso de PFC, puede iniciar y detener la transmisión dentro de una clase.
 
-Para obtener más información, vea protocolo de [puente del centro de datos (DCB)](https://docs.microsoft.com/windows-server/networking/technologies/dcb/dcb-top).
+Para obtener más información, vea protocolo de [puente del centro de datos (DCB)](../dcb/dcb-top.md).
 
 ## <a name="hyper-v-network-virtualization"></a>Virtualización de red de Hyper-V
 
 |                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **V1 (HNVv1)**       |                     La virtualización de red de Hyper-V (HNV), que se presentó en Windows Server 2012, permite la virtualización de redes de clientes sobre una infraestructura de red física compartida. Con los cambios mínimos necesarios en el tejido de red físico, HNV ofrece a los proveedores de servicios la agilidad para implementar y migrar cargas de trabajo de inquilino en cualquier parte de las tres nubes: la nube del proveedor de servicios, la nube privada o la Microsoft Azure nube pública.                     |
-| **V2 NVGRE (HNVv2 NVGRE)** | En Windows Server 2016 y System Center Virtual Machine Manager, Microsoft proporciona una solución de virtualización de red de un extremo a otro que incluye la puerta de enlace RAS, el equilibrio de carga de software, la controladora de red y mucho más. Para obtener más información, consulte [Introducción a virtualización de red de Hyper-V en Windows Server 2016](https://technet.microsoft.com/windows-server-docs/networking/sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server). |
+| **V2 NVGRE (HNVv2 NVGRE)** | En Windows Server 2016 y System Center Virtual Machine Manager, Microsoft proporciona una solución de virtualización de red de un extremo a otro que incluye la puerta de enlace RAS, el equilibrio de carga de software, la controladora de red y mucho más. Para obtener más información, consulte [Introducción a virtualización de red de Hyper-V en Windows Server 2016](../../sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server.md). |
 | **V2 VxLAN (HNVv2 VxLAN)** |                                                                                                                                                                                        En Windows Server 2016, forma parte de la extensión SDN, que se administra a través de la controladora de red.                                                                                                                                                                                        |
 
 ---
@@ -74,13 +74,13 @@ Para obtener más información acerca del aislamiento de PVLAN, consulte [System
 
 RDMA es una tecnología de red que proporciona comunicación de alto rendimiento y baja latencia que minimiza el uso de la CPU. RDMA admite redes de cero copias al permitir que el adaptador de red transfiera datos directamente a o desde la memoria de la aplicación. Compatible con RDMA significa que la NIC (física o virtual) es capaz de exponer RDMA a un cliente RDMA. Por otro lado, habilitado para RDMA significa que una NIC compatible con RDMA expone la interfaz RDMA hacia arriba en la pila.
 
-Para obtener más detalles sobre RDMA, consulte [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
+Para obtener más detalles sobre RDMA, consulte [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md).
 
 ## <a name="receive-side-scaling-rss"></a>Receive Side Scaling (RSS)
 
 RSS es una característica de NIC que separa diferentes conjuntos de secuencias y los entrega a diferentes procesadores para su procesamiento. RSS paralelizan el procesamiento de redes, lo que permite que un host escale a tarifas de datos muy altas.
 
-Para obtener más información, vea [ajuste de escala en lado de recepción (RSS)](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-receive-side-scaling).
+Para obtener más información, vea [ajuste de escala en lado de recepción (RSS)](/windows-hardware/drivers/network/introduction-to-receive-side-scaling).
 
 ## <a name="single-root-input-output-virtualization-sr-iov"></a>Virtualización de entrada y salida de raíz única (SR-IOV)
 
@@ -90,7 +90,7 @@ El tráfico que usa SR-IOV omite el conmutador de Hyper-V, lo que significa que 
 
 En el futuro, dos tecnologías permitirían SR-IOV: tablas de flujo genérico (GFT) y descarga de QoS de hardware (administración de ancho de banda en la NIC): una vez que las NIC del ecosistema las admitan. La combinación de estas dos tecnologías haría que SR-IOV fuera útil para todas las máquinas virtuales, permitiría aplicar directivas, virtualización y reglas de administración de ancho de banda, y podría dar lugar a grandes saltos hacia delante en la aplicación general de SR-IOV.
 
-Para obtener más información, vea [información general de la virtualización de e/s de raíz única (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-).
+Para obtener más información, vea [información general de la virtualización de e/s de raíz única (SR-IOV)](/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-).
 
 ## <a name="tcp-chimney-offload"></a>Descarga de TCP Chimney
 
@@ -101,11 +101,11 @@ La descarga TCP Chimney, también conocida como descarga de motor TCP (TOE), es 
 
 ## <a name="virtual-local-area-network-vlan"></a>Red de área local virtual (VLAN)
 
-VLAN es una extensión del encabezado de fotogramas Ethernet para habilitar la creación de particiones de una LAN en varias VLAN, cada una con su propio espacio de direcciones. En Windows Server 2016, las VLAN se establecen en los puertos del conmutador de Hyper-V o mediante la configuración de las interfaces de equipo en los equipos de formación de equipos NIC. Para obtener más información, consulte [formación de equipos NIC y redes de área local virtual (VLAN)](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nict-and-vlans).
+VLAN es una extensión del encabezado de fotogramas Ethernet para habilitar la creación de particiones de una LAN en varias VLAN, cada una con su propio espacio de direcciones. En Windows Server 2016, las VLAN se establecen en los puertos del conmutador de Hyper-V o mediante la configuración de las interfaces de equipo en los equipos de formación de equipos NIC. Para obtener más información, consulte [formación de equipos NIC y redes de área local virtual (VLAN)](../nic-teaming/nic-teaming.md).
 
 ## <a name="virtual-machine-queue-vmq"></a>Virtual Machine Queue (VMQ)
 
-VMQ es una característica de NIC que asigna una cola para cada máquina virtual. Siempre que haya habilitado Hyper-V; también debe habilitar VMQ. En Windows Server 2016, VMQ usar el conmutador NIC vPorts con una sola cola asignada a vPort para proporcionar la misma funcionalidad. Para obtener más información, vea [ajuste de escala en lado de recepción virtual (vRSS)](https://docs.microsoft.com/windows-server/networking/technologies/vrss/vrss-top) y formación de [equipos NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming).
+VMQ es una característica de NIC que asigna una cola para cada máquina virtual. Siempre que haya habilitado Hyper-V; también debe habilitar VMQ. En Windows Server 2016, VMQ usar el conmutador NIC vPorts con una sola cola asignada a vPort para proporcionar la misma funcionalidad. Para obtener más información, vea [ajuste de escala en lado de recepción virtual (vRSS)](../vrss/vrss-top.md) y formación de [equipos NIC](../nic-teaming/nic-teaming.md).
 
 ## <a name="virtual-machine-multi-queue-vmmq"></a>Varias colas de máquinas virtuales (VMMQ)
 

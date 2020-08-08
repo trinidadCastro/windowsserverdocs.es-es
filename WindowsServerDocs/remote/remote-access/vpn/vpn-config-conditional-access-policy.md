@@ -1,20 +1,18 @@
 ---
 title: Configurar la directiva de acceso condicional
 description: Una vez creado un certificado raíz, la ' conectividad VPN ' desencadena la creación de la aplicación de nube ' servidor VPN ' en el inquilino del cliente.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 05/25/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 754182cc3f60e1e30625c11d8778cf24b6d098ac
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7535de9f11a8daf38ad1aab2fe95a620f9682025
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819018"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946708"
 ---
 # <a name="step-73-configure-the-conditional-access-policy"></a>Paso 7.3. Configurar la directiva de acceso condicional
 
@@ -29,9 +27,9 @@ Cree una directiva de acceso condicional que esté asignada al grupo de usuarios
 
 - **Usuarios**: usuarios de VPN
 - **Aplicación en la nube**: servidor VPN
-- **Grant (control de acceso)** : "requerir multi-factor Authentication". Si lo desea, se pueden usar otros controles.
+- **Grant (control de acceso)**: "requerir multi-factor Authentication". Si lo desea, se pueden usar otros controles.
 
-**Procedimiento:** En este paso se describe la creación de la Directiva de acceso condicional más básica.  Si lo desea, se pueden usar condiciones y controles adicionales.
+**Procedimiento:** En este paso se describe la creación de la Directiva de acceso condicional más básica.Si lo desea, se pueden usar condiciones y controles adicionales.
 
 
 1. En la página **acceso condicional** , en la barra de herramientas de la parte superior, seleccione **Agregar**.
@@ -40,25 +38,25 @@ Cree una directiva de acceso condicional que esté asignada al grupo de usuarios
 
 2. En la página **nuevo** , en el cuadro **nombre** , escriba un nombre para la Directiva. Por ejemplo, escriba **Directiva de VPN**.
 
-    ![Agregar el nombre de la Directiva en la página de acceso condicional](../../media/Always-On-Vpn/08.png)
+    ![Agregar el nombre de la directiva en la página de acceso condicional](../../media/Always-On-Vpn/08.png)
 
 3. En la sección **asignación** , seleccione **usuarios y grupos**.
 
-    ![Seleccionar usuarios y grupos](../../media/Always-On-Vpn/09.png)
+    ![Seleccionar Usuarios y grupos](../../media/Always-On-Vpn/09.png)
 
-4. En la página **usuarios y grupos** , realice los pasos siguientes:
+4. En la página **Usuarios y grupos**, siga estos pasos:
 
-    ![Seleccionar usuario de prueba](../../media/Always-On-Vpn/10.png)
+    ![Seleccionar un usuario de prueba](../../media/Always-On-Vpn/10.png)
 
     a. Seleccione **Seleccionar usuarios y grupos**.
 
-    b. Seleccione **seleccionar**.
+    b. Elija **Seleccionar**.
 
     c. En la página **seleccionar** , seleccione el grupo **usuarios de VPN** y, a continuación, seleccione **seleccionar**.
 
     d. En la página **usuarios y grupos** , seleccione **listo**.
 
-5. En la página **nuevo** , realice los pasos siguientes:
+5. En la página **Nuevo**, realice los pasos siguientes:
 
     ![Seleccionar aplicaciones en la nube](../../media/Always-On-Vpn/11.png)
 
@@ -66,23 +64,23 @@ Cree una directiva de acceso condicional que esté asignada al grupo de usuarios
 
     b. En la página aplicaciones en la **nube** , seleccione **seleccionar aplicaciones**.
 
-    d. Seleccione **servidor VPN**.
+    d. Seleccione **Servidor VPN**.
 
 6.  En la página **nuevo** , para abrir la página **conceder** , en la sección **controles** , seleccione **conceder**.
 
-    ![Seleccionar concesión](../../media/Always-On-Vpn/13.png)
+    ![Seleccionar Conceder](../../media/Always-On-Vpn/13.png)
 
-7.  En la página **conceder** , realice los pasos siguientes:
+7.  En la página **Conceder**, siga estos pasos:
 
-    ![Seleccione requerir autenticación multifactor](../../media/Always-On-Vpn/14.png)
+    ![Seleccionar Requerir autenticación multifactor](../../media/Always-On-Vpn/14.png)
 
-    a. Seleccione **requerir autenticación multifactor**.
+    a. Seleccione **Requerir autenticación multifactor**.
 
-    b. Seleccione **seleccionar**.
+    b. Elija **Seleccionar**.
 
 8.  En la página **nuevo** , en **Habilitar Directiva**, seleccione **activado**.
 
-    ![Habilitar una directiva](../../media/Always-On-Vpn/15.png)
+    ![Habilitar directiva](../../media/Always-On-Vpn/15.png)
 
 9.  En la página **nuevo** , seleccione **crear**.
 

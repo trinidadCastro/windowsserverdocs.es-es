@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: a0537c938b86141f83857f1763fbb18260a23e42
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 40381a08c22c8b559fbf2b7da8e8151e91c77718
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944201"
+ms.locfileid: "87995372"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>Solución de problemas con la herramienta de diagnóstico de tejido protegido
 
@@ -19,7 +19,7 @@ ms.locfileid: "87944201"
 
 En este tema se describe el uso de la herramienta de diagnóstico de tejido protegido para identificar y corregir errores comunes en la implementación, la configuración y el funcionamiento continuo de la infraestructura de tejido protegido. Esto incluye el servicio de protección de host (HGS), todos los hosts protegidos y servicios de soporte técnico como DNS y Active Directory. La herramienta de diagnóstico se puede usar para realizar un primer paso en la clasificación de un tejido protegido con errores, lo que proporciona a los administradores un punto de partida para resolver las interrupciones e identificar los activos mal configurados. La herramienta no sustituye al funcionamiento de un tejido protegido y solo sirve para comprobar rápidamente los problemas más comunes que se producen durante las operaciones cotidianas.
 
-La documentación completa de los cmdlets que se usan en este artículo se puede encontrar en la [Referencia del módulo HgsDiagnostics](https://docs.microsoft.com/powershell/module/hgsdiagnostics/?view=win10-ps).
+La documentación completa de los cmdlets que se usan en este artículo se puede encontrar en la [Referencia del módulo HgsDiagnostics](/powershell/module/hgsdiagnostics/?view=win10-ps).
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)]
 
@@ -105,10 +105,10 @@ Get-HgsTrace -RunDiagnostics -Target $server
 ```
 En este ejemplo se generará un símbolo del sistema para recopilar las credenciales del usuario remoto y, a continuación, los diagnósticos se ejecutarán con el host remoto en `hgs-01.secure.contoso.com` para completar la recopilación de seguimiento.  Los seguimientos resultantes se descargan en el host local y después se diagnostican.  Los resultados del diagnóstico se presentan de la misma forma que cuando se realiza el [diagnóstico local](#local-diagnosis).  Del mismo modo, no es necesario especificar un rol, ya que se puede inferir en función de los módulos de Windows PowerShell instalados en el sistema remoto.
 
-El diagnóstico remoto emplea la comunicación remota de Windows PowerShell para todos los accesos al host remoto.  Por lo tanto, es un requisito previo que el destino de seguimiento tenga habilitada la comunicación remota de Windows PowerShell (consulte [Habilitar PSRemoting](https://technet.microsoft.com/library/hh849694.aspx)) y que el host local esté configurado correctamente para iniciar conexiones con el destino.
+El diagnóstico remoto emplea la comunicación remota de Windows PowerShell para todos los accesos al host remoto.  Por lo tanto, es un requisito previo que el destino de seguimiento tenga habilitada la comunicación remota de Windows PowerShell (consulte [Habilitar PSRemoting](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7)) y que el host local esté configurado correctamente para iniciar conexiones con el destino.
 
 > [!NOTE]
-> En la mayoría de los casos, solo es necesario que el localhost forme parte del mismo bosque Active Directory y que se use un nombre de host DNS válido.  Si su entorno usa un modelo de Federación más complicado o desea usar direcciones IP directas para la conectividad, es posible que deba realizar una configuración adicional, como la configuración de los [hosts de confianza](https://technet.microsoft.com/library/ff700227.aspx)de WinRM.
+> En la mayoría de los casos, solo es necesario que el localhost forme parte del mismo bosque Active Directory y que se use un nombre de host DNS válido.  Si su entorno usa un modelo de Federación más complicado o desea usar direcciones IP directas para la conectividad, es posible que deba realizar una configuración adicional, como la configuración de los [hosts de confianza](/previous-versions/technet-magazine/ff700227(v=msdn.10))de WinRM.
 
 Puede comprobar que se ha creado una instancia correcta de un destino de seguimiento y que se ha configurado para aceptar conexiones mediante el `Test-HgsTraceTarget` cmdlet:
 ```PowerShell
@@ -122,7 +122,7 @@ Este comando devolverá `$True` si, y solo si, `Get-HgsTrace` puede establecer u
 Cuando se realiza el diagnóstico remoto desde un usuario con privilegios suficientes para conectarse de forma remota al destino de seguimiento, no es necesario proporcionar credenciales a `New-HgsTraceTarget` .  El `Get-HgsTrace` cmdlet volverá a usar automáticamente las credenciales del usuario que invocó el cmdlet al abrir una conexión.
 
 > [!WARNING]
-> Algunas restricciones se aplican a la reutilización de credenciales, especialmente al realizar lo que se conoce como "segundo salto".  Esto sucede cuando se intenta reutilizar las credenciales de una sesión remota en otra máquina.  Es necesario [configurar CredSSP](https://technet.microsoft.com/library/hh849872.aspx) para que admita este escenario, pero esto está fuera del ámbito de administración y solución de problemas de los tejidos protegidos.
+> Algunas restricciones se aplican a la reutilización de credenciales, especialmente al realizar lo que se conoce como "segundo salto".  Esto sucede cuando se intenta reutilizar las credenciales de una sesión remota en otra máquina.  Es necesario [configurar CredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7) para que admita este escenario, pero esto está fuera del ámbito de administración y solución de problemas de los tejidos protegidos.
 
 #### <a name="using-windows-powershell-just-enough-administration-jea-and-diagnostics"></a>Uso de la administración suficiente de Windows PowerShell (JEA) y diagnósticos
 

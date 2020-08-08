@@ -7,12 +7,12 @@ ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: fd05441ecc64c05778234dc00fa315bb406dfb40
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af8232de75005ae295079eb2207bce303629acaa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970812"
+ms.locfileid: "87995201"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>Conexión de puntos de conexión de contenedor a una red virtual de inquilino
 
@@ -20,7 +20,7 @@ ms.locfileid: "87970812"
 
 En este tema, le mostraremos cómo conectar los puntos de conexión de contenedor a una red virtual de inquilino existente creada mediante SDN. Use el controlador de red *l2bridge* (y, opcionalmente *l2tunnel*) disponible con el complemento Libnetwork de Windows para Docker para crear una red de contenedor en la máquina virtual del inquilino.
 
-En el tema [controladores de red de contenedor](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies) , hemos explicado que hay varios controladores de red disponibles a través de Docker en Windows. En el caso de SDN, use los controladores *l2bridge* y *l2tunnel* . Para ambos controladores, cada punto de conexión de contenedor está en la misma subred virtual que la máquina virtual del host de contenedor (inquilino).
+En el tema [controladores de red de contenedor](/virtualization/windowscontainers/container-networking/network-drivers-topologies) , hemos explicado que hay varios controladores de red disponibles a través de Docker en Windows. En el caso de SDN, use los controladores *l2bridge* y *l2tunnel* . Para ambos controladores, cada punto de conexión de contenedor está en la misma subred virtual que la máquina virtual del host de contenedor (inquilino).
 
 El servicio de red de host (SNP), a través del complemento de nube privada, asigna dinámicamente las direcciones IP de los puntos de conexión del contenedor. Los puntos de conexión del contenedor tienen direcciones IP únicas pero comparten la misma dirección MAC de la máquina virtual del host de contenedor (inquilino) debido a la traducción de direcciones de nivel 2.
 
@@ -50,7 +50,7 @@ La diferencia entre los controladores *l2bridge* y *l2tunnel* son:
    ```
 
 >[!Note]
->La [Virtualización anidada](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting) y la exposición de las extensiones de virtualización no son necesarias a menos que se usen contenedores de Hyper-V.
+>La [Virtualización anidada](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization) y la exposición de las extensiones de virtualización no son necesarias a menos que se usen contenedores de Hyper-V.
 
 
 ## <a name="workflow"></a>Flujo de trabajo
@@ -148,5 +148,4 @@ C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 >No se admite la asignación de direcciones IP estáticas con las redes de contenedor de *l2bridge* o *l2tunnel* cuando se usa con la pila de SDN de Microsoft.
 
 ## <a name="more-information"></a>Más información
-Para obtener más información sobre la implementación de una infraestructura de SDN, consulte [implementación de una infraestructura de red definida por software](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure).
-
+Para obtener más información sobre la implementación de una infraestructura de SDN, consulte [implementación de una infraestructura de red definida por software](../deploy/deploy-a-software-defined-network-infrastructure.md).

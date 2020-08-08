@@ -7,12 +7,12 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 954efafe3185cadb347384c3c93a2eb8ef895143
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a1f53dba659af7d5ac0efff2e72bd168523bde0c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963561"
+ms.locfileid: "87995626"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Administrar tipos de programador de hipervisor de Hyper-V
 
@@ -40,7 +40,7 @@ Para los fines de este artículo, las descripciones de SMT y cómo las utiliza H
 
 ## <a name="understanding-how-hyper-v-virtualizes-processors"></a>Descripción de cómo Hyper-V Virtualiza los procesadores
 
-Antes de considerar los tipos de programador de hipervisor, también resulta útil comprender la arquitectura de Hyper-V. Puede encontrar un resumen general en [información general sobre la tecnología de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview). Estos son los conceptos importantes de este artículo:
+Antes de considerar los tipos de programador de hipervisor, también resulta útil comprender la arquitectura de Hyper-V. Puede encontrar un resumen general en [información general sobre la tecnología de Hyper-V](../hyper-v-technology-overview.md). Estos son los conceptos importantes de este artículo:
 
 * Hyper-V crea y administra particiones de máquinas virtuales, en las que los recursos de proceso están asignados y compartidos, bajo el control del hipervisor. Las particiones proporcionan límites de aislamiento fuertes entre todas las máquinas virtuales invitadas y entre las máquinas virtuales invitadas y la partición raíz.
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: bfae23f0-ae12-486b-94fe-50a137e141a5
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8832fc00f0ab9c07961332514e19ae01e3d50168
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9a966ab2883e22173ecf3e64e87d2a4b7a9c57d2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949549"
+ms.locfileid: "87995585"
 ---
 # <a name="create-an-alias-cname-record-in-dns-for-web1"></a>Crear un \( registro CNAME \) de alias en DNS para web1
 
@@ -28,7 +28,7 @@ Para llevar a cabo este procedimiento, debe ser miembro del **grupo Admins**. de
 ## <a name="to-add-an-alias-cname-resource-record-to-a-zone"></a>Para agregar un \( \) registro de recurso CNAME de alias a una zona
 
 >[!NOTE]
->Para realizar este procedimiento con Windows PowerShell, consulte [Add-DnsServerResourceRecordCName](https://technet.microsoft.com/library/jj649894(v=wps.630).aspx).
+>Para realizar este procedimiento con Windows PowerShell, consulte [Add-DnsServerResourceRecordCName](/powershell/module/dnsserver/add-dnsserverresourcerecordcname?view=winserver2012r2-ps).
 
 1.  En DC1, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **DNS**. Se abre Microsoft Management Console (MMC) del administrador de DNS.
 
@@ -41,5 +41,3 @@ Para llevar a cabo este procedimiento, debe ser miembro del **grupo Admins**. de
 5.  En **FQDN de nombre de dominio completo \( para el host de \) destino**, escriba el FQDN del servidor Web. Por ejemplo, si el servidor Web se denomina WEB1 y el dominio es corp.contoso.com, escriba **web1.Corp.contoso.com**.
 
 6.  Haga clic en **Aceptar** para agregar el nuevo registro a la zona.
-
-

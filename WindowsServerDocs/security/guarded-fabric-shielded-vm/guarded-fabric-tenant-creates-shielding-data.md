@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 296de5fbb7387e469d7e1ce39a477366dd274bbb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c9d1237caeb5838d1e95d00ec9afab9eeb436fd4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936756"
+ms.locfileid: "87995476"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>Máquinas virtuales blindadas para inquilinos: creación de datos de blindaje para definir una máquina virtual blindada
 
@@ -39,7 +39,7 @@ Después, puede crear el archivo de datos de blindaje:
 
 Dado que los inquilinos solo pueden conectarse a sus máquinas virtuales blindadas mediante Conexión a Escritorio remoto u otras herramientas de administración remota, es importante asegurarse de que los inquilinos puedan comprobar que se están conectando al extremo derecho (es decir, no hay un "hombre en el medio" que intercepta la conexión).
 
-Una manera de comprobar que se está conectando al servidor previsto es instalar y configurar un certificado para que Servicios de Escritorio remoto presente al iniciar una conexión. El equipo cliente que se conecta al servidor comprobará si confía en el certificado y mostrará una advertencia si no lo es. Por lo general, para asegurarse de que el cliente que se conecta confía en el certificado, los certificados RDP se emiten desde la PKI del inquilino. Puede encontrar más información sobre el [uso de certificados en servicios de escritorio remoto](https://technet.microsoft.com/library/dn781533.aspx) en TechNet.
+Una manera de comprobar que se está conectando al servidor previsto es instalar y configurar un certificado para que Servicios de Escritorio remoto presente al iniciar una conexión. El equipo cliente que se conecta al servidor comprobará si confía en el certificado y mostrará una advertencia si no lo es. Por lo general, para asegurarse de que el cliente que se conecta confía en el certificado, los certificados RDP se emiten desde la PKI del inquilino. Puede encontrar más información sobre el [uso de certificados en servicios de escritorio remoto](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn781533(v=ws.11)) en TechNet.
 
  Como ayuda para decidir si necesita obtener un certificado RDP personalizado, tenga en cuenta lo siguiente:
 
@@ -103,7 +103,7 @@ Al usar cadenas de sustitución, es importante asegurarse de que las cadenas se 
 Además, tenga en cuenta que las cadenas de sustitución relacionadas con redes hacia el final de la tabla solo se usan si está aprovechando grupos de direcciones IP estáticas de VMM. El proveedor de servicios de hosting debe ser capaz de indicarle si se requieren estas cadenas de sustitución. Para obtener más información acerca de las direcciones IP estáticas en las plantillas de VMM, consulte lo siguiente en la documentación de VMM:
 
 - [Directrices para grupos de direcciones IP](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools)
-- [Configurar grupos de direcciones IP estáticas en el tejido de VMM](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-network-static-address-pools)
+- [Configurar grupos de direcciones IP estáticas en el tejido de VMM](/system-center/vmm/network-pool?view=sc-vmm-2019)
 
 Por último, es importante tener en cuenta que el proceso de implementación de la máquina virtual blindada solo cifrará la unidad del sistema operativo. Si implementa una máquina virtual blindada con una o varias unidades de datos, se recomienda encarecidamente que agregue un comando de instalación desatendida o una configuración de directiva de grupo en el dominio del inquilino para cifrar automáticamente las unidades de datos.
 
@@ -206,10 +206,10 @@ Ejecute el Asistente para archivos de datos de blindaje para crear un archivo de
 
 ## <a name="create-a-shielding-data-file-and-add-guardians-using-powershell"></a>Creación de un archivo de datos de blindaje y adición de guardianes mediante PowerShell
 
-Como alternativa al Asistente para archivos de datos de blindaje, puede ejecutar [New-ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps) para crear un archivo de datos de blindaje.
+Como alternativa al Asistente para archivos de datos de blindaje, puede ejecutar [New-ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps) para crear un archivo de datos de blindaje.
 
 Todos los archivos de datos de blindaje deben configurarse con los certificados de propietario y guardián correctos para autorizar que las máquinas virtuales blindadas se ejecuten en un tejido protegido.
-Puede comprobar si tiene algún tutor instalado localmente mediante la ejecución [de Get-HgsGuardian](https://docs.microsoft.com/powershell/module/hgsclient/get-hgsguardian?view=win10-ps). Los guardianes de propietario tienen claves privadas, mientras que los guardianes de su centro de recursos normalmente no lo hacen.
+Puede comprobar si tiene algún tutor instalado localmente mediante la ejecución [de Get-HgsGuardian](/powershell/module/hgsclient/get-hgsguardian?view=win10-ps). Los guardianes de propietario tienen claves privadas, mientras que los guardianes de su centro de recursos normalmente no lo hacen.
 
 Si necesita crear un guardián de propietario, ejecute el siguiente comando:
 
@@ -251,7 +251,7 @@ El nombre del disco y el certificado de firma deben coincidir exactamente para q
 Puede confiar en más de un disco de plantilla proporcionando una lista separada por comas de calificadores de ID. de volumen para el `-VolumeIDQualifier` parámetro.
 Por último, si tiene otros archivos que deben acompañar el archivo de respuesta con la máquina virtual, use el `-OtherFile` parámetro y proporcione una lista separada por comas de rutas de acceso de archivo.
 
-Consulte la documentación del cmdlet para [New-ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps) y [New-VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para obtener información sobre otras formas de configurar el archivo de datos de blindaje.
+Consulte la documentación del cmdlet para [New-ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps) y [New-VolumeIDQualifier](/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para obtener información sobre otras formas de configurar el archivo de datos de blindaje.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

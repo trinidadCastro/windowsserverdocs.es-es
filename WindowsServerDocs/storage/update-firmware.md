@@ -1,19 +1,17 @@
 ---
 ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
 title: Actualización del firmware de la unidad
-ms.prod: windows-server
 ms.author: toklima
 manager: dmoss
-ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 0e117b486fd628397bfe36aa897ff64cdd26f98b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 15e0d6dedc6bb81c0b511479ee342dbd463654e2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965837"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946218"
 ---
 # <a name="updating-drive-firmware"></a>Actualización del firmware de la unidad
 >Se aplica a: Windows Server 2019, Windows Server 2016 y Windows 10
@@ -25,13 +23,13 @@ La actualización del firmware de las unidades ha sido históricamente una tarea
 
 ## <a name="drive-compatibility"></a>Compatibilidad con las unidades
 
-Para usar Windows Server para actualizar el firmware de la unidad, debe tener unidades compatibles. Para garantizar un comportamiento de dispositivo común, comenzamos definiendo nuevos y-para Windows 10 y Windows Server 2016: requisitos del kit de laboratorio de hardware (HLK) opcionales para dispositivos SAS, SATA y NVMe. Estos requisitos resumen los comandos que un dispositivo SATA, SAS o NVMe debe admitir para que se pueda actualizar su firmware mediante estos nuevos cmdlets de PowerShell nativos de Windows. Para admitir estos requisitos, hay una nueva prueba de HLK para comprobar si los productos del proveedor admiten los comandos adecuados y si estos se implementan en revisiones futuras. 
+Para usar Windows Server para actualizar el firmware de la unidad, debe tener unidades compatibles. Para garantizar un comportamiento de dispositivo común, comenzamos definiendo nuevos y-para Windows 10 y Windows Server 2016: requisitos del kit de laboratorio de hardware (HLK) opcionales para dispositivos SAS, SATA y NVMe. Estos requisitos resumen los comandos que un dispositivo SATA, SAS o NVMe debe admitir para que se pueda actualizar su firmware mediante estos nuevos cmdlets de PowerShell nativos de Windows. Para admitir estos requisitos, hay una nueva prueba de HLK para comprobar si los productos del proveedor admiten los comandos adecuados y si estos se implementan en revisiones futuras.
 
 Para obtener información sobre si su hardware admite que Windows actualice el firmware de la unidad, póngase en contacto con su proveedor de soluciones.
 A continuación se enumeran vínculos a los distintos requisitos:
 
 -   SATA: [Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) (en la sección **Descarga y activación del firmware \][si está implementado]**).
-    
+
 -   SAS: [Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) (en la sección **Descarga y activación del firmware \][si está implementado]**).
 
 -   NVMe: [Device.Storage.ControllerDrive.NVMe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragecontrollerdrivenvme) (en las secciones **5.7** y **5.8)**.
@@ -65,7 +63,7 @@ El segundo cmdlet, Update-StorageFirmware, permite a los administradores actuali
 
 La unidad cargará en primer lugar la nueva imagen de firmware en un área de ensayo interna. Mientras esto sucede, E/S continúa normalmente. La imagen se activa después de la descarga. Durante este tiempo, la unidad no podrá responder a comandos de E/S, ya que, de lo contrario, se producirá una reinicialización interna. Esto significa que esta unidad no proporciona datos durante la activación. Una aplicación que tuviera acceso a los datos de esta unidad tendría que esperar una respuesta hasta que la activación de firmware se completase. Este es un ejemplo del cmdlet en acción:
 
-   ```powershell 
+   ```powershell
    $pd | Update-StorageFirmware -ImagePath C:\Firmware\J3E160@3.enc -SlotNumber 0
    $pd | Get-StorageFirmwareInformation
 
@@ -81,7 +79,7 @@ Normalmente, las unidades no completan las solicitudes de E/S cuando activan una
 
 Esta unidad realizó la actualización de firmware en aproximadamente 5,8 segundos, tal como se muestra a continuación:
 
-```powershell 
+```powershell
 Measure-Command {$pd | Update-StorageFirmware -ImagePath C:\\Firmware\\J3E16101.enc -SlotNumber 0}
 
  Days : 0

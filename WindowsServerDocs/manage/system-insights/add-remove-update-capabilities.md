@@ -1,19 +1,17 @@
 ---
 title: Funcionalidades de adición, eliminación y actualización
 description: System Insights le permite crear nuevas capacidades que aprovechan la funcionalidad de administración y recopilación de datos existente. Es importante que también tenga compatibilidad con la plataforma para administrar la adición, eliminación y actualización de estas funcionalidades. En este tema se describe la funcionalidad de alto nivel para agregar, quitar y actualizar funcionalidades en System Insights.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 217cb528896e3b09ce81821bb0201388fab28701
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 17d31b480e013cf0276041a88a86530448071ca5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475282"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958693"
 ---
 # <a name="adding-removing-and-updating-capabilities"></a>Funcionalidades de adición, eliminación y actualización
 

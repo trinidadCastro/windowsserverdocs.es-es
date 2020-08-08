@@ -4,16 +4,14 @@ description: Este tema forma parte de la guía de implementación de certificado
 manager: brianlic
 ms.topic: article
 ms.assetid: 0a39ecae-39cc-4f26-bd6f-b71ed02fc4ad
-ms.prod: windows-server
-ms.technology: networking
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c2de22bc7edd51c3469939920a2027ad4cbc2ee9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: fd5c9ea9954053fd21f6ab46ff0b6d2f8da5245f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181781"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87995569"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>Implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1X
 
@@ -91,4 +89,4 @@ Para obtener más información, vea [información general de servicios de certif
 
 El rol de servidor Web (IIS) en Windows Server 2016 proporciona una plataforma segura, fácil de administrar, modular y extensible para hospedar sitios web, servicios y aplicaciones de forma confiable. Con IIS, puede compartir información con usuarios en Internet, en una intranet o en una extranet. IIS es una plataforma web unificada que integra IIS, ASP.NET, servicios FTP, PHP y Windows Communication Foundation (WCF).
 
-Para obtener más información, vea [Introducción al servidor Web (IIS)](https://technet.microsoft.com/library/hh831725.aspx).
+Para obtener más información, vea [Introducción al servidor Web (IIS)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831725(v=ws.11)).

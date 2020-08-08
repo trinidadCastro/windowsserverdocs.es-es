@@ -1,22 +1,20 @@
 ---
 title: Configurar la infraestructura de servidor
 description: En este paso, instalará y configurará los componentes del lado servidor necesarios para admitir la VPN. Los componentes del lado servidor incluyen la configuración de la PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 0a9d9c139c721608e9104c4943dda2664432c94d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 31a11fa1a2991b9ee0ea70434e485cb6cdc7460f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955107"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946588"
 ---
-# <a name="step-2-configure-the-server-infrastructure"></a>Paso 2. Configurar la infraestructura de servidor
+# <a name="step-2-configure-the-server-infrastructure"></a>Paso 2. Configurar la infraestructura de servidor
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
@@ -26,7 +24,7 @@ ms.locfileid: "86955107"
 En este paso, instalará y configurará los componentes del lado servidor necesarios para admitir la VPN. Los componentes del lado servidor incluyen la configuración de la PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS.  También configura RRAS para admitir conexiones IKEv2 y el servidor NPS para realizar la autorización para las conexiones VPN.
 
 ## <a name="configure-certificate-autoenrollment-in-group-policy"></a>Configuración de la inscripción automática de certificados en directiva de grupo
-En este procedimiento, configurará directiva de grupo en el controlador de dominio para que los miembros del dominio soliciten automáticamente certificados de usuario y de equipo. Esto permite a los usuarios de VPN solicitar y recuperar certificados de usuario que autentican conexiones VPN automáticamente. Del mismo modo, esta directiva permite que los servidores NPS soliciten automáticamente los certificados de autenticación del servidor. 
+En este procedimiento, configurará directiva de grupo en el controlador de dominio para que los miembros del dominio soliciten automáticamente certificados de usuario y de equipo. Esto permite a los usuarios de VPN solicitar y recuperar certificados de usuario que autentican conexiones VPN automáticamente. Del mismo modo, esta directiva permite que los servidores NPS soliciten automáticamente los certificados de autenticación del servidor.
 
 Los certificados se inscriben manualmente en los servidores VPN.
 
@@ -99,7 +97,7 @@ Puesto que el servidor RRAS no está unido a un dominio, no se puede usar la ins
 
 7. Si se le solicita la ventana Lista de entidades de certificación, seleccione la CA de empresa adecuada para dar servicio a la solicitud de certificado.
 
-8. Copie el archivo de salida **VPNGateway. cer** recién creado en el servidor RRAS. 
+8. Copie el archivo de salida **VPNGateway. cer** recién creado en el servidor RRAS.
 
 9. Guarde o copie el archivo **VPNGateway. cer** en una ubicación seleccionada en el servidor RRAS.
 
@@ -113,7 +111,7 @@ Puesto que el servidor RRAS no está unido a un dominio, no se puede usar la ins
 
 12. Asegúrese de que existe un certificado válido para el servidor RRAS con las siguientes propiedades:
 
-    - **Propósitos planteados:** Autenticación de servidor, seguridad IP IKE intermedia 
+    - **Propósitos planteados:** Autenticación de servidor, seguridad IP IKE intermedia
 
     - **Plantilla de certificado:** [_cliente_] servidor VPN
 
@@ -125,19 +123,19 @@ Aquí puede ver un script de ejemplo de una directiva de solicitud de certificad
 >Puede encontrar una copia del script VPNGateway. inf en el kit de direcciones IP de la oferta de VPN, en la carpeta de directivas de solicitud de certificado. Actualice ' asunto ' y ' \_ continuar \_ ' con valores específicos del cliente.
 
 ```
-[Version] 
+[Version]
 
 Signature="$Windows NT$"
 
 [NewRequest]
 Subject = "CN=vpn.contoso.com"
-Exportable = FALSE   
-KeyLength = 2048     
-KeySpec = 1          
-KeyUsage = 0xA0      
+Exportable = FALSE
+KeyLength = 2048
+KeySpec = 1
+KeyUsage = 0xA0
 MachineKeySet = True
 ProviderName = "Microsoft RSA SChannel Cryptographic Provider"
-RequestType = PKCS10 
+RequestType = PKCS10
 
 [Extensions]
 2.5.29.17 = "{text}"
@@ -203,7 +201,7 @@ También agregará un grupo que contenga los servidores VPN y otro grupo que con
 
 En este procedimiento, configurará una plantilla de autenticación cliente-servidor personalizada. Esta plantilla es necesaria porque desea mejorar la seguridad global del certificado seleccionando niveles de compatibilidad actualizados y seleccionando el proveedor de criptografía de la plataforma Microsoft. Este último cambio le permite usar el TPM en los equipos cliente para proteger el certificado. Para obtener información general sobre el TPM, consulte [información general sobre la tecnología de módulo de plataforma segura](/windows/device-security/tpm/trusted-platform-module-overview).
 
->[!IMPORTANT] 
+>[!IMPORTANT]
 >El proveedor de servicios criptográficos de la plataforma de Microsoft "requiere un chip TPM, en el caso de que se esté ejecutando una máquina virtual y se reciba el siguiente error:" no se puede encontrar un CSP válido en el equipo local "al intentar inscribir manualmente el certificado, se debe comprobar" proveedor de almacenamiento de claves de software de Microsoft "y hacer que se ejecute en segundo lugar después de"
 
 **Pasos**
@@ -215,7 +213,7 @@ En este procedimiento, configurará una plantilla de autenticación cliente-serv
 3. En la consola de plantillas de certificado, haga clic con el botón secundario en **usuario** y seleccione **duplicar plantilla**.
 
    >[!WARNING]
-   >No seleccione **aplicar** o **Aceptar** en ningún momento anterior al paso 10.  Si selecciona estos botones antes de especificar todos los parámetros, muchas opciones se corrigen y ya no se pueden editar. Por ejemplo, en la pestaña **Criptografía** , si el _proveedor de almacenamiento criptográfico heredado_ se muestra en el campo categoría del proveedor, se deshabilitará, evitando cualquier cambio adicional. La única alternativa es eliminar la plantilla y volver a crearla.  
+   >No seleccione **aplicar** o **Aceptar** en ningún momento anterior al paso 10.  Si selecciona estos botones antes de especificar todos los parámetros, muchas opciones se corrigen y ya no se pueden editar. Por ejemplo, en la pestaña **Criptografía** , si el _proveedor de almacenamiento criptográfico heredado_ se muestra en el campo categoría del proveedor, se deshabilitará, evitando cualquier cambio adicional. La única alternativa es eliminar la plantilla y volver a crearla.
 
 4. En el cuadro de diálogo Propiedades de plantilla nueva, en la pestaña **General** , complete los pasos siguientes:
 
@@ -234,7 +232,7 @@ En este procedimiento, configurará una plantilla de autenticación cliente-serv
    4. En **permisos para usuarios de VPN**, active las casillas **inscribir** e **inscripción automática** en la columna **permitir** .
 
       >[!TIP]
-      >Asegúrese de mantener activada la casilla de verificación leer. En otras palabras, necesita los permisos de lectura para la inscripción. 
+      >Asegúrese de mantener activada la casilla de verificación leer. En otras palabras, necesita los permisos de lectura para la inscripción.
 
    5. En **nombres de grupos o usuarios**, seleccione **usuarios del dominio**y, a continuación, seleccione **quitar**.
 
@@ -298,7 +296,7 @@ Servidores VPN Unidos a un dominio
     2. En el cuadro de diálogo **Editar extensión de directivas de aplicación** , seleccione **Agregar**.
 
     3. En el cuadro de diálogo **Agregar Directiva de aplicación** , seleccione **seguridad IP IKE intermedio**y, después, haga clic en **Aceptar**.
-   
+
         La adición de seguridad IP IKE intermedia al EKU ayuda en escenarios en los que existe más de un certificado de autenticación de servidor en el servidor VPN. Cuando la seguridad IP IKE intermedia está presente, IPSec solo usa el certificado con ambas opciones de EKU. Sin esto, la autenticación de IKEv2 podría producir el error 13801: las credenciales de autenticación IKE no son aceptables.
 
     4. Seleccione **Aceptar** para volver al cuadro **de diálogo Propiedades de plantilla nueva** .
@@ -440,7 +438,7 @@ A diferencia del certificado de usuario, debe inscribir manualmente el certifica
 8. Seleccione **Finalizar**.
 
 9. En el complemento certificados, en **personal**, seleccione **certificados**.
-    
+
     Los certificados que aparecen en la lista aparecen en el panel de detalles.
 
 10. Haga clic con el botón secundario en el certificado que tenga el nombre del servidor VPN y seleccione **abrir**.

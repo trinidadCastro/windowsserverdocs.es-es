@@ -1,19 +1,17 @@
 ---
 title: Instalar y configurar el servidor NPS
 description: El procesamiento del servidor NPS de las solicitudes de conexión enviadas por el servidor VPN comprueba que el usuario tiene permiso para conectarse, la identidad del usuario y registra los aspectos de la solicitud de conexión que eligió al configurar cuentas RADIUS en NPS.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 08/30/2018
-ms.openlocfilehash: d286f44e198aa13204b884da3fdf729f18b7553b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1f32178b7062260cd49aa80af5474903b5f8a59f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860458"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946628"
 ---
 # <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>Paso 4. Instalación y configuración del servidor de directivas de redes (NPS)
 
@@ -40,12 +38,12 @@ Los pasos de esta sección le permiten completar los siguientes elementos:
 
 2. En el servidor NPS corporativo o de la organización, puede configurar NPS para que se ejecute como un servidor RADIUS que procesa las solicitudes de conexión recibidas desde el servidor VPN.
 
-## <a name="install-network-policy-server"></a>Instalar el Servidor de directivas de redes
+## <a name="install-network-policy-server"></a>Instalación del servidor de directivas de redes
 
 En este procedimiento, instalará NPS mediante Windows PowerShell o Administrador del servidor el Asistente para agregar roles y características. NPS es un servicio de rol del rol de servidor Servicios de acceso y directivas de redes.
 
 >[!TIP]
->De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 en todos los adaptadores de red instalados. Al instalar NPS y habilitar Firewall de Windows con seguridad avanzada, se crean automáticamente las excepciones de Firewall para estos puertos para el tráfico IPv4 e IPv6. Si los servidores de acceso a la red están configurados para enviar tráfico RADIUS a través de puertos distintos de los predeterminados, quite las excepciones creadas en firewall de Windows con seguridad avanzada durante la instalación de NPS y cree excepciones para los puertos que se usan para Tráfico RADIUS.
+>De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 en todos los adaptadores de red instalados. Al instalar NPS y habilitar Firewall de Windows con seguridad avanzada, se crean automáticamente las excepciones de Firewall para estos puertos para el tráfico IPv4 e IPv6. Si los servidores de acceso a la red están configurados para enviar tráfico RADIUS a través de puertos distintos de los predeterminados, quite las excepciones creadas en firewall de Windows con seguridad avanzada durante la instalación de NPS y cree excepciones para los puertos que se usan para el tráfico RADIUS.
 
 **Procedimiento para Windows PowerShell:**
 
@@ -62,7 +60,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 2.  En antes de empezar, seleccione **siguiente**.
 
-    >[!NOTE] 
+    >[!NOTE]
     >La página **antes de comenzar** del Asistente para agregar roles y características no se muestra si ya había seleccionado **omitir esta página de forma predeterminada** cuando se ejecutó el Asistente para agregar roles y características.
 
 3.  En seleccionar tipo de instalación, asegúrese de que esté seleccionada la opción instalación basada en **características o en roles** y seleccione **siguiente**.
@@ -84,10 +82,10 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 11. En confirmar selecciones de instalación, seleccione **reiniciar automáticamente el servidor de destino si es necesario**.
 
 12. Seleccione **sí** para confirmar el seleccionado y, a continuación, seleccione **instalar**.
-    
+
     En la página progreso de la instalación se muestra el estado durante el proceso de instalación. Una vez completado el proceso, se muestra el mensaje "instalación correcta en *NombreDeEquipo*", donde *NombreDeEquipo* es el nombre del equipo en el que instaló el servidor de directivas de redes.
 
-13. Selecciona **Cerrar**.
+13. Seleccione **Cerrar**.
 
 ## <a name="configure-nps"></a>Configuración de NPS
 
@@ -99,10 +97,10 @@ En este procedimiento, registrará el servidor en Active Directory para que teng
 
 **Pasos**
 
-1.  En Administrador del servidor, seleccione **herramientas**y, a continuación, seleccione **servidor de directivas de redes**. Se abre la consola NPS.
+1.  En el Administrador del servidor, seleccione **Herramientas** y después **Servidor de directivas de redes**. Se abre la consola NPS.
 
 2.  En la consola de NPS, haga clic con el botón derecho en **NPS (local)** y, a continuación, seleccione **registrar servidor en Active Directory**.
-   
+
      Se abrirá el cuadro de diálogo Servidor de directivas de redes.
 
 3.  En el cuadro de diálogo servidor de directivas de redes, seleccione **Aceptar** dos veces.
@@ -127,7 +125,7 @@ En la sección [configurar el servidor de acceso remoto para VPN Always on](vpn-
 
 En este procedimiento, usará la misma cadena de texto secreto compartido para configurar el servidor VPN como un cliente RADIUS en NPS. Use la misma cadena de texto que usó en el servidor VPN, o se producirá un error de comunicación entre el servidor NPS y el servidor VPN.
 
->[!IMPORTANT] 
+>[!IMPORTANT]
 >Al agregar un nuevo servidor de acceso a la red (servidor VPN, punto de acceso inalámbrico, conmutador de autenticación o servidor de acceso telefónico) a la red, debe agregar el servidor como cliente RADIUS en NPS para que NPS tenga en cuenta y pueda comunicarse con el servidor de acceso a la red.
 
 **Pasos**
@@ -140,8 +138,8 @@ En este procedimiento, usará la misma cadena de texto secreto compartido para c
 
 4. En **nombre descriptivo**, escriba un nombre para mostrar para el servidor VPN.
 
-5. En **dirección (IP o DNS)** , escriba la dirección IP o el FQDN de NAS.
-     
+5. En **dirección (IP o DNS)**, escriba la dirección IP o el FQDN de NAS.
+
      Si escribe el FQDN, seleccione **comprobar** si desea comprobar que el nombre es correcto y se asigna a una dirección IP válida.
 
 6. En **secreto compartido**, haga lo siguiente:
@@ -163,14 +161,14 @@ En este procedimiento, configurará NPS como un servidor RADIUS en la red de la 
 1. En la consola de NPS, en configuración estándar, asegúrese de que está seleccionado **servidor RADIUS para conexiones de acceso telefónico o VPN** .
 
 2. Seleccione **Configurar VPN o acceso telefónico**.
-        
+
     Se abre el Asistente para configurar VPN o acceso telefónico.
 
 3. Seleccione **conexiones de red privada virtual (VPN)** y seleccione **siguiente**.
 
 4. En especificar el servidor de acceso telefónico o VPN, en clientes RADIUS, seleccione el nombre del servidor VPN que agregó en el paso anterior. Por ejemplo, si el nombre NetBIOS del servidor VPN es RAS1, seleccione **RAS1**.
 
-5. Seleccione **Siguiente**.
+5. Seleccione **Next** (Siguiente).
 
 6. En configurar métodos de autenticación, realice los pasos siguientes:
 
@@ -179,7 +177,7 @@ En este procedimiento, configurará NPS como un servidor RADIUS en la red de la 
     2. Active la casilla **Protocolo de autenticación extensible** para seleccionarla.
 
     3. En tipo (según el método de acceso y configuración de red), seleccione **Microsoft: EAP protegido (PEAP)** y, a continuación, seleccione **configurar**.
-      
+
         Se abre el cuadro de diálogo Editar propiedades de EAP protegido.
 
     4. Seleccione **quitar** para quitar el tipo de EAP contraseña segura (EAP-MSCHAP V2).
@@ -190,7 +188,7 @@ En este procedimiento, configurará NPS como un servidor RADIUS en la red de la 
 
     7. Seleccione **Aceptar** para cerrar editar propiedades de EAP protegido.
 
-7. Seleccione **Siguiente**.
+7. Seleccione **Next** (Siguiente).
 
 8. En especificar grupos de usuarios, siga estos pasos:
 
@@ -198,7 +196,7 @@ En este procedimiento, configurará NPS como un servidor RADIUS en la red de la 
 
     2. Escriba **usuarios de VPN**y, luego, haga clic en **Aceptar**.
 
-    3. Seleccione **Siguiente**.
+    3. Seleccione **Next** (Siguiente).
 
 9. En especificar filtros IP, seleccione **siguiente**.
 
@@ -214,7 +212,7 @@ En este procedimiento, configurará NPS como un servidor RADIUS en la red de la 
 
 En este procedimiento, actualizará directiva de grupo manualmente en el servidor NPS local. Cuando directiva de grupo se actualiza, si la inscripción automática de certificados está configurada y funciona correctamente, el equipo local se inscribe automáticamente en un certificado de la entidad de certificación (CA).
 
->[!NOTE]  
+>[!NOTE]
 >Directiva de grupo actualiza automáticamente al reiniciar el equipo miembro del dominio o cuando un usuario inicia sesión en un equipo miembro del dominio. Además, directiva de grupo se actualiza periódicamente. De forma predeterminada, esta actualización periódica se produce cada 90 minutos con un desplazamiento aleatorio de hasta 30 minutos.
 
 La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesario para completar este procedimiento.

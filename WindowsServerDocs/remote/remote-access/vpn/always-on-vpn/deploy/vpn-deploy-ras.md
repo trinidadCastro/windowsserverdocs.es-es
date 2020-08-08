@@ -1,22 +1,20 @@
 ---
-title: Configurar el servidor de acceso remoto para VPN de Always On
+title: Configurar el servidor de acceso remoto para VPN de Always On
 description: RRAS está diseñado para funcionar bien como un enrutador y un servidor de acceso remoto; por lo tanto, admite una amplia gama de características.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 4cb5d5fc65eee997068ea3192081bf753fdd9083
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6861ff0925c21c1723346ab75fc1be2f268b0551
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818988"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946598"
 ---
-# <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>Paso 3. Configurar el servidor de acceso remoto para VPN de Always On
+# <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>Paso 3. Configurar el servidor de acceso remoto para VPN de Always On
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
@@ -40,7 +38,7 @@ Configure el servidor RRAS para que admita conexiones IKEv2 al deshabilitar los 
 
 ## <a name="install-remote-access-as-a-ras-gateway-vpn-server"></a>Instalar el acceso remoto como un servidor VPN de puerta de enlace RAS
 
-En este procedimiento, instalará el rol de acceso remoto como un servidor VPN de puerta de enlace RAS de un solo inquilino. Para obtener más información, consulta [Acceso remoto](../../../Remote-Access.md).
+En este procedimiento, instalará el rol de acceso remoto como un servidor VPN de puerta de enlace RAS de un solo inquilino. Para obtener más información, consulte [acceso remoto](../../../Remote-Access.md).
 
 ### <a name="install-the-remote-access-role-by-using-windows-powershell"></a>Instalar el rol de acceso remoto mediante Windows PowerShell
 
@@ -65,7 +63,7 @@ En este procedimiento, instalará el rol de acceso remoto como un servidor VPN d
 Puede usar el siguiente procedimiento para instalar el rol de acceso remoto mediante Administrador del servidor.
 
 1. En el servidor VPN, en Administrador del servidor, seleccione **administrar** y, a continuación, **Agregar roles y características**.
-   
+
    Se abre el Asistente para agregar roles y características.
 
 2. En la página antes de comenzar, seleccione **siguiente**.
@@ -82,7 +80,7 @@ Puede usar el siguiente procedimiento para instalar el rol de acceso remoto medi
 
 8. En la página acceso remoto, seleccione **siguiente**.
 
-9.  En la página seleccionar servicio de rol, en **servicios de rol**, seleccione **DirectAccess y VPN (RAS)** .
+9.  En la página seleccionar servicio de rol, en **servicios de rol**, seleccione **DirectAccess y VPN (RAS)**.
 
    Se abre el cuadro de diálogo **Asistente para agregar roles y características** .
 
@@ -94,7 +92,7 @@ Puede usar el siguiente procedimiento para instalar el rol de acceso remoto medi
 
 14. En la página confirmar selecciones de instalación, revise las opciones seleccionadas y seleccione **instalar**.
 
-15. Una vez completada la instalación, seleccione **cerrar**.
+15. Cuando se haya completado la instalación, seleccione **Cerrar**.
 
 ## <a name="configure-remote-access-as-a-vpn-server"></a>Configurar el acceso remoto como un servidor VPN
 
@@ -135,7 +133,7 @@ En esta sección, puede configurar VPN de acceso remoto para permitir conexiones
 
     a. Seleccione **proveedor de autenticación** y seleccione **autenticación RADIUS**.
 
-    b. Seleccione **configurar**.
+    b. Seleccione **Configurar**.
 
        Se abre el cuadro de diálogo autenticación RADIUS.
 
@@ -144,7 +142,7 @@ En esta sección, puede configurar VPN de acceso remoto para permitir conexiones
        Se abre el cuadro de diálogo Agregar servidor RADIUS.
 
     d. En **nombre del servidor**, escriba el nombre de dominio completo (FQDN) del servidor NPS de la organización o red corporativa.
-    
+
        Por ejemplo, si el nombre NetBIOS del servidor NPS es NPS1 y el nombre de dominio es corp.contoso.com, escriba **NPS1.Corp.contoso.com**.
 
     e. En **secreto compartido**, seleccione **cambiar**.
@@ -162,9 +160,9 @@ En esta sección, puede configurar VPN de acceso remoto para permitir conexiones
 
     - **Tiempo de espera**
 
-    - **Puntuación inicial**
+    - **Resultado inicial**
 
-    - **Casilla**
+    - **Puerto**
 
 13. Si es necesario, cambie los valores para que coincidan con los requisitos de su entorno y seleccione **Aceptar**.
 
@@ -193,7 +191,7 @@ En esta sección, puede configurar VPN de acceso remoto para permitir conexiones
 
 16. Opta *Si está configurando el acceso condicional para la conectividad VPN*, en la lista desplegable **certificado** , en **enlace de certificado SSL**, seleccione la autenticación del servidor VPN.
 
-17. Opta *Si está configurando el acceso condicional para la conectividad VPN*, en el MMC de NPS, expanda **directivas\\directivas de red** y haga lo siguiente: 
+17. Opta *Si está configurando el acceso condicional para la conectividad VPN*, en el MMC de NPS, expanda **directivas \\ directivas de red** y haga lo siguiente:
 
     a. Derecho: conexiones a la Directiva de red del **servidor de enrutamiento y acceso remoto de Microsoft** y seleccione **propiedades**.
 
@@ -201,8 +199,8 @@ En esta sección, puede configurar VPN de acceso remoto para permitir conexiones
 
     c. En tipo de servidor de acceso a la red, seleccione **servidor de acceso remoto (VPN, acceso telefónico)** en la lista desplegable.
 
-18. En MMC de enrutamiento y acceso remoto, haga clic con el botón secundario en **puertos** y seleccione **propiedades**. 
-    
+18. En MMC de enrutamiento y acceso remoto, haga clic con el botón secundario en **puertos** y seleccione **propiedades**.
+
     Se abre el cuadro de diálogo Propiedades de puertos.
 
 19. Seleccione **minipuerto WAN (SSTP)** y haga clic en **configurar**. Se abre el cuadro de diálogo Configurar dispositivo-WAN Miniport (SSTP).

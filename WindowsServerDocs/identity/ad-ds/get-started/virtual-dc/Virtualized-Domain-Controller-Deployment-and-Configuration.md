@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 653df4bc517dccad5ecee6eb243d8a236648c7fd
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6804df686635e441c667ab395ca486d3791a2aa5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519062"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959413"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>Implementación y configuración de controladores de dominio virtualizados
 
@@ -60,9 +58,9 @@ Revisa la siguiente tabla sobre los productos de virtualización para comprobar 
 
 |**Producto de virtualización**|**Compatible con controladores de dominio virtualizados y VMGID**|
 |--|--|
-|**Servidor Microsoft Windows Server 2012 con característica Hyper-V**|Yes|
-|**Microsoft Windows Server 2012 Hyper-V Server**|Yes|
-|**Microsoft Windows 8 con característica cliente Hyper-V**|Yes|
+|**Servidor Microsoft Windows Server 2012 con característica Hyper-V**|Sí|
+|**Microsoft Windows Server 2012 Hyper-V Server**|Sí|
+|**Microsoft Windows 8 con característica cliente Hyper-V**|Sí|
 |**Windows Server 2008 R2 y Windows Server 2008**|No|
 |**Soluciones de virtualización que no son de Microsoft**|Ponte en contacto con el proveedor|
 

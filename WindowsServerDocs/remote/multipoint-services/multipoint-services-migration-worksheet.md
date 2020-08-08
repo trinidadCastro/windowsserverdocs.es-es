@@ -2,19 +2,17 @@
 title: Hoja de cálculo de planeación para la migración de Multipoint Services
 description: Proporciona hojas de cálculo de planeación para ayudarle a migrar a multipoint Services en Windows Server 2016
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 864405bb-47ed-4c83-97a2-8df4c6e6f96b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: c0d5976e70bcf8009cd98e54e973dd6f585d7208
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 653725776d21a0df0550fb754d207a2de7791491
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858908"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946768"
 ---
 # <a name="planning-worksheet-for-multipoint-services-migration"></a>Hoja de cálculo de planeación para la migración de Multipoint Services
 
@@ -40,7 +38,7 @@ Puede encontrar la configuración del servidor en la pestaña **Inicio** de Mult
 
 Registre los nombres de los equipos y servidores administrados. Puede encontrar esta información en la pestaña **Inicio** de Multipoint Manager.
 
-| Equipo | Nombre del equipo |
+| Computer | Nombre del equipo |
 |----------|---------------|
 | 1        |               |
 | 2        |               |
@@ -96,7 +94,7 @@ Usuarios del panel:
 
 Grabe la información de la plantilla de VDI y los nombres de los escritorios virtuales en la implementación de Multipoint Services. Puede encontrar esta información en la pestaña **escritorios virtuales** de Multipoint Manager.
 
-**Ubicación de la plantilla VDI**: 
+**Ubicación de la plantilla VDI**:
 
 | # | Nombre del escritorio virtual      |
 |---|---------------------------|
