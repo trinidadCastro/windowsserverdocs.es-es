@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 273651b8be1352218feb76c50cfd39cf9580a8a3
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0b83588268e6a6c8dd685082b3862520fcbd80d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519552"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968262"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>Instalar un nuevo bosque de Active Directory de Windows Server 2012 (nivel 200)
 
@@ -190,7 +188,7 @@ El diálogo **Confirmación** es el último punto de control antes de que se ini
 
 Al hacer clic en **Instalar**, confirmas que está todo listo para empezar la instalación del rol. Una vez que haya comenzado la instalación del rol, no se podrá cancelar.
 
-#### <a name="results"></a>Results
+#### <a name="results"></a>Resultados
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Results.png)
 
 El diálogo **Resultados** muestra el progreso actual de la instalación y el estado de instalación actual. La instalación del rol continuará sin importar si está cerrado el Administrador del servidor.
@@ -335,7 +333,7 @@ Cuando se muestra la página **Instalación**, la configuración del controlador
 > [!NOTE]
 > Puedes ejecutar simultáneamente varios Asistentes para configuración de AD DS y de instalación de roles desde la misma consola del Administrador del servidor.
 
-#### <a name="results"></a>Results
+#### <a name="results"></a>Resultados
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestSignOff.png)
 
 La página **Resultados** indica si la promoción se realizó correctamente o si se produjo algún error, junto con toda la información administrativa importante que corresponda. El controlador de dominio se reiniciará automáticamente 10 segundos después.

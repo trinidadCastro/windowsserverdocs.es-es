@@ -1,20 +1,18 @@
 ---
 title: Información general sobre contraseñas
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-kerberos
 ms.topic: article
 ms.assetid: f608960e-2039-4c91-9c8c-9b81053c675e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 19003d5dcfdaa0f9d6dafcc31bab31a5cb50efa0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 762aa3307395f60d15a547c7b4b2b433c20d4411
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858838"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968802"
 ---
 # <a name="passwords-overview"></a>Información general sobre contraseñas
 
@@ -31,11 +29,11 @@ Para obtener más información acerca de las contraseñas de Windows, consulte [
 En Windows y muchos otros sistemas operativos, el método más común para autenticar la identidad de un usuario es usar una contraseña o frase de contraseña secreta. Para proteger el entorno de red, todos los usuarios deben usar contraseñas seguras. Esto ayuda a evitar la amenaza de que un usuario malintencionado adivine una contraseña no segura, ya sea a través de métodos manuales o mediante herramientas, para adquirir las credenciales de una cuenta de usuario en peligro. Esto es especialmente cierto para las cuentas administrativas. Cuando se cambia una contraseña compleja con regularidad, se reduce la probabilidad de que un ataque de contraseña ponga en peligro esa cuenta.
 
 ## <a name="new-and-changed-functionality"></a><a name="BKMK_NEW"></a>Funcionalidad nueva y modificada
-En Windows Server 2012 y Windows 8, las contraseñas de imagen son nuevas. Las contraseñas de imagen son una combinación de una imagen seleccionada por el usuario junto con una serie de gestos. La funcionalidad de contraseña de imagen está deshabilitada en los equipos Unidos a\-de dominio. Los vínculos a más información acerca de las contraseñas de imagen se [muestran en la lista que aparece a](#BKMK_LINKS) continuación.
+En Windows Server 2012 y Windows 8, las contraseñas de imagen son nuevas. Las contraseñas de imagen son una combinación de una imagen seleccionada por el usuario junto con una serie de gestos. La funcionalidad de contraseña de imagen está deshabilitada en equipos Unidos a un dominio \- . Los vínculos a más información acerca de las contraseñas de imagen se [muestran en la lista que aparece a](#BKMK_LINKS) continuación.
 
-No se ha producido ningún cambio en la funcionalidad de contraseña en Windows Server 2012 y Windows 8. No se ha agregado ninguna nueva configuración de directiva de grupo. Sin embargo, las mejoras y mejoras se han realizado en la \(de credenciales y la administración de contraseñas\), como las contraseñas de imagen, el bloqueador de credenciales e iniciar sesión en Windows 8 con un cuenta de Microsoft, anteriormente conocido como Windows Live ID.
+No se ha producido ningún cambio en la funcionalidad de contraseña en Windows Server 2012 y Windows 8. No se ha agregado ninguna nueva configuración de directiva de grupo. Sin embargo, se han realizado mejoras y mejoras en la administración de credenciales \( y contraseñas \) , como con contraseñas de imagen, caja de control de credenciales e iniciar sesión en Windows 8 con un cuenta de Microsoft, anteriormente conocido como Windows Live ID.
 
-## <a name="deprecated-functionality"></a><a name="BKMK_DEP"></a>Funcionalidad desusada
+## <a name="deprecated-functionality"></a><a name="BKMK_DEP"></a>Funciones obsoletas
 No se ha dejado de usar ninguna funcionalidad de contraseña en Windows Server 2012 y Windows 8.
 
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software
@@ -46,11 +44,11 @@ En esta tabla se enumeran recursos adicionales para las características de cont
 
 |Tipo de contenido|Referencias|
 |--------|-------|
-|**Documentación del escenario**|[Protección de su identidad digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
-|**Operaciones**|[Active Directory usuarios y equipos](https://technet.microsoft.com/library/cc754217.aspx)|
+|**Documentación del escenario**|[Proteger la identidad digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
+|**Operaciones**|[Usuarios y equipos de Active Directory](https://technet.microsoft.com/library/cc754217.aspx)|
 |**Solución de problemas**|[Averigüe cuándo expira la contraseña \- Active Directory blog de PowerShell](https://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
 |**Seguridad**| [Guía de amenazas y contramedidas de](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx) windows Server 2008 R2 y Windows 7: directivas de cuenta<p>Instrucciones para [cambiar y crear contraseñas seguras](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)|
 |**Herramientas y configuración**|[Referencia de la configuración de directiva de grupo para Windows y Windows Server en el centro de descarga de Microsoft](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
-|**Recursos de la comunidad**|[Protección de su identidad digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<p>[Iniciar sesión en Windows 8 con un Windows Live ID](https://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<p>[Iniciar sesión con una contraseña de imagen](https://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<p>[Optimización de la seguridad de la contraseña de imagen](https://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
+|**Recursos de la comunidad**|[Proteger la identidad digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<p>[Iniciar sesión en Windows 8 con un Windows Live ID](https://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<p>[Iniciar sesión con una contraseña de imagen](https://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<p>[Optimización de la seguridad de la contraseña de imagen](https://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
 
 

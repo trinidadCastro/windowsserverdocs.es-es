@@ -2,17 +2,16 @@
 title: Historial de rendimiento de Espacios de almacenamiento directo
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ce984d3a88f46b77773c524e5b75135930e1bb03
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f3c0babfad0ebecdac40262a783ecf683d6dc1e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961797"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968792"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>Historial de rendimiento de Espacios de almacenamiento directo
 
@@ -23,7 +22,7 @@ El historial de rendimiento es una nueva característica que proporciona a los a
    > [!IMPORTANT]
    > Esta característica es nueva en Windows Server 2019. No está disponible en Windows Server 2016.
 
-## <a name="get-started"></a>Introducción
+## <a name="get-started"></a>Primeros pasos
 
 El historial de rendimiento se recopila de forma predeterminada con Espacios de almacenamiento directo en Windows Server 2019. No es necesario instalar, configurar ni iniciar nada. No se requiere una conexión a Internet, System Center no es necesario y no se necesita una base de datos externa.
 
@@ -228,4 +227,4 @@ Si un gráfico muestra "*no hay datos disponibles*" como se ha explicado, aquí 
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)

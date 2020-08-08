@@ -1,20 +1,18 @@
 ---
 title: Prácticas recomendadas para ejecutar FreeBSD en Hyper-V
 description: Proporciona recomendaciones para ejecutar FreeBSD en máquinas virtuales
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 0c66f1c8-2606-43a3-b4cc-166acaaf2d2a
 author: shirgall
 ms.author: kathydav
 ms.date: 01/09/2017
-ms.openlocfilehash: 18f59020ed4878e9a54150dcda18bca3da1dd614
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f0903fa53e5a9384e3940c53fb880090108aa492
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853288"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968612"
 ---
 # <a name="best-practices-for-running-freebsd-on-hyper-v"></a>Prácticas recomendadas para ejecutar FreeBSD en Hyper-V
 
@@ -26,13 +24,13 @@ Este tema contiene una lista de recomendaciones para ejecutar FreeBSD como siste
 
 El protocolo de redundancia de direcciones comunes (CARP) permite que varios hosts compartan la misma dirección IP y el identificador de host virtual (VHID) para ayudar a proporcionar alta disponibilidad para uno o más servicios. Si se produce un error en uno o más hosts, los demás hosts se toman de forma transparente para que los usuarios no perciban un error del servicio. Para usar CARP en FreeBSD 10,2, siga las instrucciones del [manual de FreeBSD](https://www.freebsd.org/doc/en/books/handbook/carp.html) y haga lo siguiente en el administrador de Hyper-V.
 
-* Compruebe que la máquina virtual tiene un adaptador de red y que tiene asignado un conmutador virtual. Seleccione la máquina virtual y seleccione **acciones** > **configuración**.
+* Compruebe que la máquina virtual tiene un adaptador de red y que tiene asignado un conmutador virtual. Seleccione la máquina virtual y seleccione **Actions**  >  **configuración**de acciones.
 
 ![Captura de pantalla de la configuración de la máquina virtual con el adaptador de red seleccionado](media/Hyper-V_Settings_NetworkAdapter.png)
 
-* Habilite la suplantación de direcciones MAC. Para ello,
+* Habilite la suplantación de direcciones MAC. Para ello:
 
-   1. Seleccione la máquina virtual y seleccione **acciones** > **configuración**.
+   1. Seleccione la máquina virtual y seleccione **Actions**  >  **configuración**de acciones.
 
    2. Expanda **adaptador de red** y seleccione **características avanzadas**.
 
@@ -40,7 +38,7 @@ El protocolo de redundancia de direcciones comunes (CARP) permite que varios hos
 
 ## <a name="create-labels-for-disk-devices"></a>Crear etiquetas para dispositivos de disco
 
-Durante el inicio, los nodos de dispositivo se crean a medida que se detectan nuevos dispositivos. Esto puede significar que los nombres de los dispositivos pueden cambiar cuando se agregan nuevos dispositivos. Si obtiene un ERROR de montaje raíz durante el inicio, debe crear etiquetas para cada partición IDE para evitar conflictos y cambios. Para obtener información sobre cómo hacerlo, consulte [etiquetado de dispositivos de disco](https://www.freebsd.org/doc/handbook/geom-glabel.html). A continuación se muestran ejemplos. 
+Durante el inicio, los nodos de dispositivo se crean a medida que se detectan nuevos dispositivos. Esto puede significar que los nombres de los dispositivos pueden cambiar cuando se agregan nuevos dispositivos. Si obtiene un ERROR de montaje raíz durante el inicio, debe crear etiquetas para cada partición IDE para evitar conflictos y cambios. Para obtener información sobre cómo hacerlo, consulte [etiquetado de dispositivos de disco](https://www.freebsd.org/doc/handbook/geom-glabel.html). A continuación se muestran ejemplos.
 
 > [!IMPORTANT]
 > Realice una copia de seguridad de su fstab antes de realizar cualquier cambio.
@@ -88,6 +86,6 @@ Si el conmutador virtual del host se basa en el adaptador de red inalámbrica, r
 ```
 
 
-Vea también
+Consulte también
 
 * [Máquinas virtuales de FreeBSD compatibles en Hyper-V](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
