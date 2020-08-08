@@ -1,46 +1,44 @@
 ---
 title: No se recomienda usar discos duros virtuales dinámicos con formato VHD para las máquinas virtuales que ejecutan cargas de trabajo de servidor en un entorno de producción.
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 324a60a0-1d15-4ef2-9f17-23cbd2eb42ce
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 195bc4c85d380c8f0b15b27d042b30491f635d5d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4865fcbc75ac135a6fe04622692aaf1ce2893a3a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854178"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960258"
 ---
 # <a name="vhd-format-dynamic-virtual-hard-disks-are-not-recommended-for-virtual-machines-that-run-server-workloads-in-a-production-environment"></a>No se recomienda usar discos duros virtuales dinámicos con formato VHD para las máquinas virtuales que ejecutan cargas de trabajo de servidor en un entorno de producción.
 
 >Se aplica a: Windows Server 2016
 
-Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
-  
-|Propiedad|Detalles|  
-|-|-|  
-|**Sistema operativo**|Windows Server 2016|  
-|**Producto o característica**|Hyper-V|  
-|**Gravedad**|advertencia|  
-|**Categoría**|Configuración|  
-  
+Para más información sobre los análisis y los procedimientos recomendados, vea [Ejecución de análisis del Analizador de procedimientos recomendados y administración de los resultados de los análisis](https://go.microsoft.com/fwlink/p/?LinkID=223177).
+
+|Propiedad|Detalles|
+|-|-|
+|**Sistema operativo**|Windows Server 2016|
+|**Producto/Característica**|Hyper-V|
+|**Gravedad**|Advertencia|
+|**Categoría**|Configuración|
+
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
-  
-## <a name="issue"></a>**Problema**  
-*Una o varias máquinas virtuales usan discos duros virtuales de expansión dinámica de formato VHD.*  
-  
-## <a name="impact"></a>**Impacto**  
-*Los discos duros virtuales dinámicos con formato VHD podrían experimentar problemas de coherencia si se produce un error de alimentación. Pueden producirse problemas de coherencia si el disco físico realiza una actualización incompleta o incorrecta en un sector de un archivo. vhd que se está modificando cuando se produce un error de alimentación. Esto afecta a las siguientes máquinas virtuales:*  
-  
-\<lista de máquinas virtuales >  
-  
-## <a name="resolution"></a>**Resolución**  
-*Apague la máquina virtual y convierta el disco duro virtual dinámico con formato VHD en un disco duro virtual con formato VHDX o en un disco duro virtual fijo. (El formato VHDX tiene mecanismos de confiabilidad que ayudan a proteger el disco de daños causados por errores de alimentación del sistema). Sin embargo, no convierta el disco duro virtual si es probable que se adjunte a una versión anterior de Windows en algún momento. Las versiones de Windows anteriores a Windows Server 2012 no admiten el formato VHDX.*  
-  
+
+## <a name="issue"></a>**Problema**
+*Una o varias máquinas virtuales usan discos duros virtuales de expansión dinámica de formato VHD.*
+
+## <a name="impact"></a>**Impacto**
+*Los discos duros virtuales dinámicos con formato VHD podrían experimentar problemas de coherencia si se produce un error de alimentación. Pueden producirse problemas de coherencia si el disco físico realiza una actualización incompleta o incorrecta en un sector de un archivo. vhd que se está modificando cuando se produce un error de alimentación. Esto afecta a las siguientes máquinas virtuales:*
+
+\<list of virtual machines>
+
+## <a name="resolution"></a>**Resolución**
+*Apague la máquina virtual y convierta el disco duro virtual dinámico con formato VHD en un disco duro virtual con formato VHDX o en un disco duro virtual fijo. (El formato VHDX tiene mecanismos de confiabilidad que ayudan a proteger el disco de daños causados por errores de alimentación del sistema). Sin embargo, no convierta el disco duro virtual si es probable que se adjunte a una versión anterior de Windows en algún momento. Las versiones de Windows anteriores a Windows Server 2012 no admiten el formato VHDX.*
+
 
 

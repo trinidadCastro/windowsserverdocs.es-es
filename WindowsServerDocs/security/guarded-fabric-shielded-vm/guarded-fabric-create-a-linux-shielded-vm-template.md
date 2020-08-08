@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 0535a15d0b21b62bb9f8b91729f773d1f4db0db0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fca3faca236a2fc5162d7a50ef02acad9b508226
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966072"
+ms.locfileid: "87996310"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>Creación de un disco de plantilla de máquina virtual blindada Linux
 
@@ -67,7 +67,7 @@ Estos pasos le guiarán a través de los requisitos mínimos para preparar una m
 4.  Abra el **Administrador de Hyper-V** en el equipo de administración y conéctese al servidor de virtualización.
     Para ello, haga clic en "conectar con el servidor..." en el panel acciones o haciendo clic con el botón derecho en el administrador de Hyper-V y eligiendo "conectar con el servidor..." Proporcione el nombre DNS del servidor de Hyper-V y, si es necesario, las credenciales necesarias para conectarse a él.
 
-5.  Mediante el administrador de Hyper-V, [Configure un conmutador externo](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) en el servidor de virtualización para que la máquina virtual Linux pueda acceder a Internet para obtener actualizaciones.
+5.  Mediante el administrador de Hyper-V, [Configure un conmutador externo](../../virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines.md) en el servidor de virtualización para que la máquina virtual Linux pueda acceder a Internet para obtener actualizaciones.
 
 6.  A continuación, cree una nueva máquina virtual para instalar el sistema operativo Linux en.
     En el panel acciones, haga clic en **nueva**  >  **máquina virtual** para abrir el asistente.
@@ -119,7 +119,7 @@ Estos pasos le guiarán a través de los requisitos mínimos para preparar una m
 
 13. Si tiene previsto usar System Center Virtual Machine Manager para implementar las máquinas virtuales, instale el agente invitado de VMM para permitir que VMM especializa su sistema operativo durante el aprovisionamiento de la máquina virtual.
     La especialización permite que cada máquina virtual se configure de forma segura con distintos usuarios y claves SSH, configuraciones de red y pasos de configuración personalizados.
-    Obtenga información acerca de cómo [obtener e instalar el agente invitado de VMM](https://docs.microsoft.com/system-center/vmm/vm-linux#install-the-vmm-guest-agent) en la documentación de VMM.
+    Obtenga información acerca de cómo [obtener e instalar el agente invitado de VMM](/system-center/vmm/vm-linux#install-the-vmm-guest-agent) en la documentación de VMM.
 
 14. A continuación, [agregue el repositorio de software de Linux de Microsoft al administrador de paquetes](../../administration/linux-package-repository-for-microsoft-software.md).
 
@@ -189,7 +189,7 @@ El VHDX que proporcione al `-Path` parámetro se sobrescribirá con el disco de 
 
 > [!IMPORTANT]
 > Los Herramientas de administración remota del servidor disponibles en Windows Server 2016 o Windows 10 no se pueden usar para preparar un disco de plantilla de máquina virtual blindada Linux.
-> Use el cmdlet [Protect-TemplateDisk](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps) disponible en Windows Server, versión 1709 o el herramientas de administración remota del servidor disponible en windows Server 2019 para preparar un disco de plantilla de máquina virtual blindada Linux.
+> Use el cmdlet [Protect-TemplateDisk](/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps) disponible en Windows Server, versión 1709 o el herramientas de administración remota del servidor disponible en windows Server 2019 para preparar un disco de plantilla de máquina virtual blindada Linux.
 
 ```powershell
 # Replace "THUMBPRINT" with the thumbprint of your template disk signing certificate in the line below

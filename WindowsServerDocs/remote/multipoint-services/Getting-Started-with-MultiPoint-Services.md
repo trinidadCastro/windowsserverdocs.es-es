@@ -7,12 +7,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 342a374027abc3019b4fc01dbc91b676d63e922b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2469bbb35ce0e68801b28e221c05c285b4f1c464
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970682"
+ms.locfileid: "87996336"
 ---
 # <a name="getting-started-with-multipoint-services"></a>Introducción con Multipoint Services
 El sistema Multipoint Services permite a muchos usuarios usar varias estaciones que están conectadas físicamente mediante concentradores de estaciones a un solo equipo. Cada estación consta normalmente de un concentrador de estaciones, un mouse, un teclado y un monitor de vídeo. Cada usuario de una estación de Multipoint Services experimenta una sesión de computación de Windows única que puede administrar mediante Multipoint Manager.
@@ -91,7 +91,7 @@ Para obtener más información sobre cómo guardar y administrar contenido públ
 
 ## <a name="see-also"></a>Consulte también
 [Administración del sistema](managing-your-multipoint-services-system.md) 
- MultiPoint Server [Información importante sobre el cumplimiento](Important-Information-about-Software-License-Compliance.md) 
+ MultiPoint Server [Información importante sobre el cumplimiento](./multipoint-software-license-compliance.md) 
  de la licencia de software [Administrar tareas del sistema mediante Multipoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md) 
  [Administrar archivos](Manage-User-Files.md) 
  de usuario [Administrar escritorios](manage-user-desktops-using-multipoint-dashboard.md) 
@@ -104,4 +104,3 @@ Para obtener más información sobre cómo guardar y administrar contenido públ
  de usuario [Administrar escritorios de usuario mediante Multipoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md) 
  [Administración de sistemas Multipoint mediante Multipoint Dashboard](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md) 
  [Solución de problemas](Troubleshooting.md)
-

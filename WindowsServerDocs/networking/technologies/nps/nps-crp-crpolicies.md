@@ -2,18 +2,16 @@
 title: Directivas de solicitud de conexión
 description: En este tema se proporciona información general sobre las directivas de solicitud de conexión del servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 4ec45e0c-6b37-4dfb-8158-5f40677b0157
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 021cef4a220b183f6580bca75bc6db68aba893cf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f3f6aa743f592ae9336a5b8a20a13ff9e1048621
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316237"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969412"
 ---
 # <a name="connection-request-policies"></a>Directivas de solicitud de conexión
 
@@ -26,18 +24,18 @@ Puede usar este tema para aprender a usar las directivas de solicitud de conexi�
 > - [Configurar directivas de solicitud de conexión](nps-crp-configure.md)
 > - [Configurar grupos de servidores RADIUS remotos](nps-crp-rrsg-configure.md)
 
-Las directivas de solicitud de conexión son conjuntos de condiciones y configuraciones que permiten a los administradores de red designar qué servidores Servicio de autenticación remota telefónica de usuario (RADIUS) realizan la autenticación y autorización de solicitudes de conexión que el el servidor que ejecuta el servidor de directivas de redes (NPS) recibe de los clientes RADIUS. Las directivas de solicitud de conexión se pueden configurar para designar los servidores RADIUS que se usan para las cuentas RADIUS.
+Las directivas de solicitud de conexión son conjuntos de condiciones y configuraciones que permiten a los administradores de red designar qué servidores Servicio de autenticación remota telefónica de usuario (RADIUS) realizan la autenticación y autorización de las solicitudes de conexión que el servidor que ejecuta el servidor de directivas de redes (NPS) recibe de los clientes RADIUS. Las directivas de solicitud de conexión se pueden configurar para designar los servidores RADIUS que se usan para las cuentas RADIUS.
 
 Puede crear directivas de solicitud de conexión para que algunos mensajes de solicitud RADIUS enviados desde clientes RADIUS se procesen localmente (NPS se usa como un servidor RADIUS) y otros tipos de mensajes se reenvíen a otro servidor RADIUS (NPS se usa como proxy RADIUS).
 
-Con las directivas de solicitud de conexión, puede usar NPS como un servidor RADIUS o como proxy RADIUS, en función de factores como los siguientes: 
+Con las directivas de solicitud de conexión, puede usar NPS como un servidor RADIUS o como proxy RADIUS, en función de factores como los siguientes:
 
 - La hora del día y el día de la semana
 - El nombre de dominio kerberos en la solicitud de conexión
 - El tipo de conexión que se solicita
 - La dirección IP del cliente RADIUS
 
-NPS procesa o reenvía los mensajes de solicitud de acceso RADIUS solo si la configuración del mensaje entrante coincide con al menos una de las directivas de solicitud de conexión configuradas en el NPS. 
+NPS procesa o reenvía los mensajes de solicitud de acceso RADIUS solo si la configuración del mensaje entrante coincide con al menos una de las directivas de solicitud de conexión configuradas en el NPS.
 
 Si la configuración de la Directiva coincide y la Directiva requiere que el NPS procese el mensaje, NPS actúa como un servidor RADIUS, autenticando y autorizando la solicitud de conexión. Si la configuración de la Directiva coincide y la Directiva requiere que NPS reenvíe el mensaje, NPS actúa como proxy RADIUS y reenvía la solicitud de conexión a un servidor RADIUS remoto para su procesamiento.
 
@@ -85,7 +83,7 @@ El grupo de atributos Propiedades de la conexión contiene los siguientes atribu
 - **Tipo de servicio**. Se usa para designar el tipo de servicio que se solicita. Entre los ejemplos se incluyen entramados (por ejemplo, conexiones PPP) y de inicio de sesión (por ejemplo, conexiones Telnet). Para obtener más información acerca de los tipos de servicio RADIUS, consulte la RFC 2865, que se refiere al Servicio de autenticación remota telefónica de usuario (RADIUS).
 - **Tipo de túnel**. Se usa para designar el tipo de túnel que está creando el cliente que realiza la solicitud. Entre los tipos de túnel se incluyen el protocolo de túnel punto a punto (PPTP) y el protocolo de túnel de capa dos (L2TP).
 
-### <a name="day-and-time-restrictions-attribute-group"></a>Grupo de atributos de restricciones de día y hora 
+### <a name="day-and-time-restrictions-attribute-group"></a>Grupo de atributos de restricciones de día y hora
 
 El grupo de atributos Restricciones de día y hora contiene un atributo de Restricciones de día y hora. Con este atributo, puede designar el día de la semana y la hora del día del intento de conexión. El día y la hora son relativos al día y la hora del NPS.
 
@@ -107,7 +105,7 @@ El grupo de atributos ///Identidad del equipo contiene el atributo ///Identidad 
 
 El grupo de atributos Propiedades del cliente RADIUS contiene los siguientes atributos.
 
-- **Identificador de estación que llama**. Se usa para designar el número de teléfono usado por quien llama (el cliente de acceso). Este atributo es una cadena de caracteres. Puede usar una sintaxis de coincidencia de patrón para especificar códigos de área.  En las autenticaciones de 802.1 x, la dirección MAC se rellena normalmente y se puede hacer coincidir desde el cliente.  Este campo se usa normalmente para escenarios de omisión de direcciones MAC cuando la Directiva de solicitud de conexión está configurada para "aceptar usuarios sin validar credenciales".  
+- **Identificador de estación que llama**. Se usa para designar el número de teléfono usado por quien llama (el cliente de acceso). Este atributo es una cadena de caracteres. Puede usar una sintaxis de coincidencia de patrón para especificar códigos de área.  En las autenticaciones de 802.1 x, la dirección MAC se rellena normalmente y se puede hacer coincidir desde el cliente.  Este campo se usa normalmente para escenarios de omisión de direcciones MAC cuando la Directiva de solicitud de conexión está configurada para "aceptar usuarios sin validar credenciales".
 - **Nombre descriptivo del cliente**. Se usa para designar el nombre del equipo cliente RADIUS que solicita autenticación. Este atributo es una cadena de caracteres. Puede usar una sintaxis de coincidencia de patrón para especificar nombres de cliente.
 - **Dirección IPv4 del cliente**. Se usa para designar la dirección IPv4 del servidor de acceso a la red (el cliente RADIUS). Este atributo es una cadena de caracteres. Puede usar una sintaxis de coincidencia de patrón para especificar redes IP.
 - **Dirección IPv6 del cliente**. Se usa para designar la dirección IPv6 del servidor de acceso a la red (el cliente RADIUS). Este atributo es una cadena de caracteres. Puede usar una sintaxis de coincidencia de patrón para especificar redes IP.
@@ -122,7 +120,7 @@ El grupo de atributos Nombre de usuario contiene el atributo Nombre de usuario. 
 La configuración de la directiva de solicitud de conexión es un conjunto de propiedades que se aplican a un mensaje RADIUS entrante. La configuración consta de los siguientes grupos de propiedades.
 
 - Autenticación
-- Cuentas
+- Control
 - Manipulación de atributos
 - Reenviando solicitud
 - Avanzadas
@@ -134,16 +132,16 @@ En las secciones siguientes se proporcionan detalles adicionales acerca de esta 
 Al usar esta opción, puede invalidar la configuración de autenticación que se configura en todas las directivas de red y puede designar los métodos y tipos de autenticación que se necesitan para conectarse a la red.
 
 >[!IMPORTANT]
->Si configura un método de autenticación en una directiva de solicitud de conexión que sea menos segura que el método de autenticación que configure en la Directiva de red, se invalidará el método de autenticación más seguro que configure en la Directiva de red. Por ejemplo, si tiene una directiva de red que requiere el uso del Protocolo de autenticación extensible protegido-protocolo de autenticación por desafío mutuo de Microsoft versión 2 \(PEAP-MS-CHAP V2\), que es un método de autenticación basado en contraseña para una red inalámbrica segura y también se configura una directiva de solicitud de conexión para permitir el acceso no autenticado, el resultado es que no es necesario que los clientes se autentiquen mediante PEAP-MS-CHAP v2. En este ejemplo, se concede a todos los clientes que se conectan a la red un acceso no autenticado.
+>Si configura un método de autenticación en una directiva de solicitud de conexión que sea menos segura que el método de autenticación que configure en la Directiva de red, se invalidará el método de autenticación más seguro que configure en la Directiva de red. Por ejemplo, si tiene una directiva de red que requiere el uso del Protocolo de autenticación extensible protegido-protocolo de autenticación por desafío mutuo de Microsoft versión 2 \( PEAP-MS-CHAP V2 \) , que es un método de autenticación basado en contraseña para una red inalámbrica segura y también se configura una directiva de solicitud de conexión para permitir el acceso no autenticado, el resultado es que no es necesario que los clientes se autentiquen mediante PEAP-MS-CHAP v2. En este ejemplo, se concede a todos los clientes que se conectan a la red un acceso no autenticado.
 
-### <a name="accounting"></a>Cuentas
+### <a name="accounting"></a>Control
 
 Mediante esta opción, puede configurar la Directiva de solicitud de conexión para reenviar información de cuentas a un NPS u otro servidor RADIUS en un grupo de servidores RADIUS remotos para que el grupo de servidores remotos RADIUS realice cuentas.
 
 >[!NOTE]
 >Si tiene varios servidores RADIUS y desea que la información de cuentas para todos los servidores se almacene en una base de datos de cuentas RADIUS central, puede usar la configuración de cuentas de la directiva de solicitud de conexión en una directiva en cada servidor RADIUS para reenviar datos de cuentas de todos los servidores a un servidor NPS o u otro servidor RADIUS que se designa como servidor de cuentas.
 
-La configuración de cuentas de la Directiva de solicitud de conexión funciona independientemente de la configuración de cuentas del NPS local. En otras palabras, si configura el NPS local para registrar información de cuentas de RADIUS en un archivo local o en una base de datos de Microsoft SQL Server, lo hará independientemente de si configura una directiva de solicitud de conexión para reenviar mensajes de cuentas a un RADIUS remoto. Grupo de servidores.
+La configuración de cuentas de la Directiva de solicitud de conexión funciona independientemente de la configuración de cuentas del NPS local. En otras palabras, si configura el NPS local para registrar información de cuentas de RADIUS en un archivo local o en una base de datos de Microsoft SQL Server, lo hará independientemente de si configura una directiva de solicitud de conexión para reenviar mensajes de cuentas a un grupo de servidores RADIUS remotos.
 
 Si desea que la información de cuentas se registre de forma remota pero no local, debe configurar el NPS local para que no realice cuentas, a la vez que configura también cuentas en una directiva de solicitud de conexión para reenviar datos de cuentas a un grupo de servidores RADIUS remotos.
 
@@ -158,7 +156,7 @@ Puede configurar un conjunto de reglas de búsqueda y reemplazo que manipulen la
 El procesamiento de la regla de buscar y reemplazar se produce para uno de los atributos precedentes antes de que el mensaje RADIUS se someta a la configuración de autenticación y administración de cuentas. Las reglas de manipulación de atributos se aplican a un solo atributo. No puede configurar reglas de manipulación de atributos para cada atributo. Además, la lista de atributos que se pueden manipular es una lista estática: no se pueden agregar atributos a la lista de atributos disponibles para su manipulación.
 
 >[!NOTE]
->Si usa el protocolo de autenticación MS-CHAP V2, no podrá manipular el atributo de nombre de usuario si se utiliza la Directiva de solicitud de conexión para reenviar el mensaje RADIUS. La única excepción se produce cuando se usa una barra diagonal inversa (\) carácter y la manipulación solo afecta a la información que se encuentra a su izquierda. El carácter de barra diagonal inversa se usa normalmente para indicar un nombre de dominio (la información a la izquierda del carácter de barra diagonal inversa) y el nombre de una cuenta de usuario dentro del dominio (la información a la derecha del carácter de barra diagonal inversa). En este caso, sólo se permiten las reglas de manipulación de atributos que modifican o reemplazan el nombre de dominio.
+>Si usa el protocolo de autenticación MS-CHAP v2, no puede manipular el atributo de Nombre de usuario si la directiva de solicitud de conexión se usa para reenviar el mensaje RADIUS. La única excepción se produce cuando se usa una barra diagonal inversa ( \) carácter y la manipulación solo afecta a la información que se encuentra a su izquierda). El carácter de barra diagonal inversa se usa normalmente para indicar un nombre de dominio (la información a la izquierda del carácter de barra diagonal inversa) y el nombre de una cuenta de usuario dentro del dominio (la información a la derecha del carácter de barra diagonal inversa). En este caso, sólo se permiten las reglas de manipulación de atributos que modifican o reemplazan el nombre de dominio.
 
 Para ver ejemplos de cómo manipular el nombre de dominio Kerberos en el atributo de nombre de usuario, consulte la sección "ejemplos de manipulación del nombre de dominio Kerberos en el atributo de nombre de usuario" en el tema [uso de expresiones regulares en NPS](nps-crp-reg-expressions.md).
 
@@ -182,7 +180,7 @@ Para obtener ejemplos de cómo usar expresiones regulares para crear reglas de e
 Puede configurar propiedades avanzadas para especificar la serie de atributos RADIUS que son:
 
 - Se agrega al mensaje de respuesta de RADIUS cuando el NPS se usa como servidor de autenticación o cuentas RADIUS. Cuando hay atributos especificados en una directiva de red y la directiva de solicitud de conexión, los atributos que se envían al mensaje de respuesta RADIUS son la combinación de ambos conjuntos de atributos.
-- Se agrega al mensaje RADIUS cuando el NPS se usa como proxy de autenticación o de cuentas RADIUS. Si el atributo ya existe en el mensaje que se reenvía, se reemplaza por el valor del atributo especificado en la directiva de solicitud de conexión. 
+- Se agrega al mensaje RADIUS cuando el NPS se usa como proxy de autenticación o de cuentas RADIUS. Si el atributo ya existe en el mensaje que se reenvía, se reemplaza por el valor del atributo especificado en la directiva de solicitud de conexión.
 
 Además, algunos atributos que están disponibles para la configuración en la pestaña **configuración** de la Directiva de solicitud de conexión en la categoría **avanzadas** proporcionan funcionalidad especializada. Por ejemplo, puede configurar el atributo **asignación de RADIUS remota a usuario de Windows** cuando desee dividir la autenticación y autorización de una solicitud de conexión entre dos bases de datos de cuentas de usuario.
 
@@ -209,4 +207,4 @@ Al instalar NPS se crea una directiva de solicitud de conexión predeterminada. 
 La directiva de solicitud de conexión predeterminada usa NPS como servidor RADIUS. Para configurar un servidor que ejecuta NPS para funcionar como proxy RADIUS, también debe configurar un grupo de servidores remotos RADIUS. Puede crear un nuevo grupo de servidores RADIUS remotos mientras crea una nueva Directiva de solicitud de conexión mediante el Asistente para nueva Directiva de solicitud de conexión. Puede eliminar la Directiva de solicitud de conexión predeterminada o comprobar que la Directiva de solicitud de conexión predeterminada sea la última Directiva procesada por NPS colocándola en último lugar en la lista ordenada de directivas.
 
 >[!NOTE]
->Si NPS y el servicio de acceso remoto están instalados en el mismo equipo y el servicio de acceso remoto está configurado para la autenticación y contabilidad de Windows, es posible que las solicitudes de cuentas y autenticación de acceso remoto se reenvíen a un servidor RADIUS. . Esto puede ocurrir cuando las solicitudes de cuentas y autenticación de acceso remoto coinciden con una directiva de solicitud de conexión configurada para reenviarlos a un grupo de servidores RADIUS remotos.
+>Si NPS y el servicio de acceso remoto están instalados en el mismo equipo y el servicio de acceso remoto está configurado para la autenticación y contabilidad de Windows, es posible que las solicitudes de cuentas y autenticación de acceso remoto se reenvíen a un servidor RADIUS. Esto puede ocurrir cuando las solicitudes de cuentas y autenticación de acceso remoto coinciden con una directiva de solicitud de conexión configurada para reenviarlos a un grupo de servidores RADIUS remotos.

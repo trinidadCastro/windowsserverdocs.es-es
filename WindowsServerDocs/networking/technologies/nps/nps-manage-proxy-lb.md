@@ -6,12 +6,12 @@ ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8710723c397744f3ba937ac863cf5ab45dc8a4f1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ee552c0202bff26cdcc58411b64cb342a4c7409e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952162"
+ms.locfileid: "87996454"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>Equilibrio de carga del servidor proxy NPS
 
@@ -53,12 +53,10 @@ Para configurar NPS para que actúe como servidor proxy y Reenvíe solicitudes d
 
 1. Implemente los servidores VPN de los clientes RADIUS \( , los servidores de acceso telefónico, los servidores de Terminal Services Gateway, los conmutadores de autenticación de 802.1 x y los puntos de acceso inalámbricos 802.1 x \) y configúrelos para enviar solicitudes de conexión a los servidores proxy NPS.
 
-2. En el proxy NPS, configure los servidores de acceso a la red como clientes RADIUS. Para obtener más información, consulte [Configure RADIUS clients](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure).
+2. En el proxy NPS, configure los servidores de acceso a la red como clientes RADIUS. Para obtener más información, consulte [Configure RADIUS clients](./nps-radius-clients-configure.md).
 
-3. En el proxy NPS, cree uno o varios grupos de servidores RADIUS remotos. Durante este proceso, agregue servidores RADIUS a los grupos de servidores RADIUS remotos. Para obtener más información, vea [configurar grupos de servidores RADIUS remotos](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-rrsg-configure).
+3. En el proxy NPS, cree uno o varios grupos de servidores RADIUS remotos. Durante este proceso, agregue servidores RADIUS a los grupos de servidores RADIUS remotos. Para obtener más información, vea [configurar grupos de servidores RADIUS remotos](./nps-crp-rrsg-configure.md).
 
 4. En el proxy NPS, para cada servidor RADIUS que agregue a un grupo de servidores RADIUS remotos, haga clic en la pestaña **equilibrio de carga** del servidor RADIUS y, a continuación, configure la **prioridad**, el **peso**y la **Configuración avanzada**.
 
-5. En el proxy NPS, configure las directivas de solicitud de conexión para reenviar las solicitudes de autenticación y cuentas a los grupos de servidores RADIUS remotos. Debe crear una directiva de solicitud de conexión por cada grupo de servidores RADIUS remotos. Para obtener más información, consulte [configurar directivas de solicitud de conexión](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-configure).
-
-
+5. En el proxy NPS, configure las directivas de solicitud de conexión para reenviar las solicitudes de autenticación y cuentas a los grupos de servidores RADIUS remotos. Debe crear una directiva de solicitud de conexión por cada grupo de servidores RADIUS remotos. Para obtener más información, consulte [configurar directivas de solicitud de conexión](./nps-crp-configure.md).

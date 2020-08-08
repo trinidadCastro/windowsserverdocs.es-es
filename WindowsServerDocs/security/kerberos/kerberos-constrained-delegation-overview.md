@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bd34723d1f5223c2576237c768d9da55172eebc6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb0c35d51c0aa2a0f63f61c0be48099bb6aa5269
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943895"
+ms.locfileid: "87996180"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -28,7 +28,7 @@ En versiones anteriores del sistema operativo en los que el administrador de dom
 
 En Windows Server 2012 R2 y Windows Server 2012, la capacidad de configurar la delegación restringida para el servicio se transfirió desde el administrador de dominio al administrador de servicios. De esta manera, el administrador del servicio de back-end puede permitir o denegar servicios de front-end.
 
-Para obtener información detallada sobre la delegación limitada según se presentó en Windows Server 2003, consulte el tema sobre la [delegación limitada y la transición de protocolo de Kerberos](https://technet.microsoft.com/library/cc739587(v=ws.10)).
+Para obtener información detallada sobre la delegación limitada según se presentó en Windows Server 2003, consulte el tema sobre la [delegación limitada y la transición de protocolo de Kerberos](/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10)).
 
 La implementación de Windows Server 2012 R2 y Windows Server 2012 del protocolo Kerberos incluye extensiones específicamente para la delegación restringida.  S4U2Proxy (del inglés Service for User to Proxy) permite que un servicio use su vale de servicio de Kerberos para que un usuario obtenga un vale de servicio del Centro de distribución de claves (KDC) para el servicio back-end. Estas extensiones permiten configurar la delegación restringida en la cuenta del servicio back-end, que puede estar en otro dominio. Para obtener más información acerca de estas extensiones, consulte [ \[ MS-SFU \] : extensiones del protocolo Kerberos: especificación del Protocolo de delegación limitada y servicio para el usuario](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx) en MSDN Library.
 
@@ -54,7 +54,7 @@ Un cambio en el protocolo subyacente permite la delegación limitada entre domin
 
 Para obtener información de implementación acerca de estas extensiones, consulte [ \[ MS-SFU \] : extensiones del protocolo Kerberos: especificación del Protocolo de delegación limitada y servicio para el usuario](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx) en MSDN.
 
-Para obtener más información acerca de la secuencia de mensajes básica para la delegación de Kerberos con un vale de concesión de vales (TGT) remitido según se compara con las extensiones de servicio para el usuario (S4U) consulte la sección [1.3.3 de introducción al protocolo](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) en el tema [MS-SFU]: Extensiones del protocolo Kerberos: especificación del protocolo de delegación limitada y de servicio para el usuario.
+Para obtener más información acerca de la secuencia de mensajes básica para la delegación de Kerberos con un vale de concesión de vales (TGT) remitido según se compara con las extensiones de servicio para el usuario (S4U) consulte la sección [1.3.3 de introducción al protocolo](/openspecs/windows_protocols/ms-sfu/1fb9caca-449f-4183-8f7a-1a5fc7e7290a) en el tema [MS-SFU]: Extensiones del protocolo Kerberos: especificación del protocolo de delegación limitada y de servicio para el usuario.
 
 **Implicaciones de seguridad de la delegación restringida basada en recursos**
 

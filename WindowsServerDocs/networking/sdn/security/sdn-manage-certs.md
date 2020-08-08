@@ -2,19 +2,17 @@
 title: Administrar certificados para redes definidas por software
 description: Puede usar este tema para aprender a administrar certificados de Northbound de controladora de red y comunicaciones de southbound al implementar redes definidas por software (SDN) en Windows Server 2016 Datacenter.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 0eee5110eb875d95b187242f6f0ec51b487268c6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3156b2ed40415226e094485fba224e7d95a12ca2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520264"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947111"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>Administrar certificados para redes definidas por software
 

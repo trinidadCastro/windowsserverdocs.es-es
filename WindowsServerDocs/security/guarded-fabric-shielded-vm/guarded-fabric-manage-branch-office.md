@@ -4,12 +4,12 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: b56b2d4f74f18e68a3849b01e84b0aca5ca7412e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 140888bdaa27d5040ff723b94df2e28f3bbab167
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957913"
+ms.locfileid: "87996153"
 ---
 # <a name="branch-office-considerations"></a>Consideraciones sobre la sucursal
 
@@ -39,7 +39,7 @@ Para que el host de Hyper-V pase la atestación con los servidores principal y d
 Además, los certificados que se usan para descifrar el TPM de la máquina virtual deben estar disponibles en ambos clústeres de HGS.
 Puede configurar cada HGS con distintos certificados y configurar la máquina virtual para que confíe en ambos, o bien agregar un conjunto compartido de certificados a ambos clústeres de HGS.
 
-Para obtener más información sobre la configuración de HGS en una sucursal con direcciones URL de reserva, consulte la entrada de blog sobre la [compatibilidad con sucursales mejorada para máquinas virtuales blindadas en Windows Server, versión 1709](https://blogs.technet.microsoft.com/datacentersecurity/2017/11/15/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709/).
+Para obtener más información sobre la configuración de HGS en una sucursal con direcciones URL de reserva, consulte la entrada de blog sobre la [compatibilidad con sucursales mejorada para máquinas virtuales blindadas en Windows Server, versión 1709](/archive/blogs/datacentersecurity/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709).
 
 
 ## <a name="offline-mode"></a>Modo sin conexión

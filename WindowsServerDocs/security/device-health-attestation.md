@@ -5,12 +5,12 @@ ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.author: brianlic
 ms.date: 10/12/2016
-ms.openlocfilehash: 8ed6e2aafeeca0486bdb45019ba879e391af9934
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fc5b0a3e3b3da3b329baec37888fd04c9f3adc0e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936737"
+ms.locfileid: "87995726"
 ---
 # <a name="device-health-attestation"></a>Atestación de estado de dispositivo
 
@@ -142,7 +142,7 @@ Después de instalar Windows Server 2016, el dispositivo se reinicia y se abre e
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>Instalación de los certificados de firma y cifrado
 
-Utilice el script de Windows PowerShell siguiente para instalar los certificados de firma y cifrado. Para obtener más información acerca de la huella digital, consulte [Cómo: recuperar la huella digital de un certificado](https://msdn.microsoft.com/library/ms734695.aspx).
+Utilice el script de Windows PowerShell siguiente para instalar los certificados de firma y cifrado. Para obtener más información acerca de la huella digital, consulte [Cómo: recuperar la huella digital de un certificado](/dotnet/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate).
 
 ```
 $key = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -like "<thumbprint>"}

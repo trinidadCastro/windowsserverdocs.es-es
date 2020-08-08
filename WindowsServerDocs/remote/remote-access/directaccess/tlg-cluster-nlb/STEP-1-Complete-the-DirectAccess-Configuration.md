@@ -2,18 +2,16 @@
 title: Paso 1 completar DirectAccess en un clúster con la configuración de NLB de Windows
 description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB para Windows Server 2016'
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: e1e15544-b575-4f39-af0b-771bfae8b0b7
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3e858fe06c44ccdc2524ef4293cf3d3c1b6008da
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: aa503413098ba2a0c206fb7a6446f3e539e848f5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518090"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970302"
 ---
 # <a name="step-1-complete-the-directaccess-in-a-cluster-with-windows-nlb-configuration"></a>Paso 1 completar DirectAccess en un clúster con la configuración de NLB de Windows
 

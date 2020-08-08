@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 762aa3307395f60d15a547c7b4b2b433c20d4411
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4f38ee2062b2c154cc99a22a398e02e823a47ca2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968802"
+ms.locfileid: "87996077"
 ---
 # <a name="passwords-overview"></a>Información general sobre contraseñas
 
@@ -23,7 +23,7 @@ En este tema para profesionales de TI se describen las contraseñas que se usan 
 ## <a name="feature-description"></a><a name="BKMK_OVER"></a>Descripción de la característica
 Los sistemas operativos y las aplicaciones de hoy en día se diseñan en torno a las contraseñas y, incluso si usa tarjetas inteligentes o sistemas biométricos, todas las cuentas todavía tienen contraseñas y todavía se pueden usar en algunas circunstancias. Algunas cuentas, especialmente las que se usan para ejecutar servicios, no pueden usar tarjetas inteligentes ni tokens biométricos y, por tanto, deben usar una contraseña para autenticarse. Windows protege las contraseñas mediante hashes criptográficos.
 
-Para obtener más información acerca de las contraseñas de Windows, consulte [Introducción técnica a las contraseñas](https://technet.microsoft.com/library/hh994558(WS.10).aspx).
+Para obtener más información acerca de las contraseñas de Windows, consulte [Introducción técnica a las contraseñas](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh994558(v=ws.10)).
 
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicaciones prácticas
 En Windows y muchos otros sistemas operativos, el método más común para autenticar la identidad de un usuario es usar una contraseña o frase de contraseña secreta. Para proteger el entorno de red, todos los usuarios deben usar contraseñas seguras. Esto ayuda a evitar la amenaza de que un usuario malintencionado adivine una contraseña no segura, ya sea a través de métodos manuales o mediante herramientas, para adquirir las credenciales de una cuenta de usuario en peligro. Esto es especialmente cierto para las cuentas administrativas. Cuando se cambia una contraseña compleja con regularidad, se reduce la probabilidad de que un ataque de contraseña ponga en peligro esa cuenta.
@@ -45,10 +45,8 @@ En esta tabla se enumeran recursos adicionales para las características de cont
 |Tipo de contenido|Referencias|
 |--------|-------|
 |**Documentación del escenario**|[Proteger la identidad digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
-|**Operaciones**|[Usuarios y equipos de Active Directory](https://technet.microsoft.com/library/cc754217.aspx)|
+|**Operaciones**|[Usuarios y equipos de Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754217(v=ws.11))|
 |**Solución de problemas**|[Averigüe cuándo expira la contraseña \- Active Directory blog de PowerShell](https://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
-|**Seguridad**| [Guía de amenazas y contramedidas de](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx) windows Server 2008 R2 y Windows 7: directivas de cuenta<p>Instrucciones para [cambiar y crear contraseñas seguras](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)|
+|**Seguridad**| [Guía de amenazas y contramedidas de](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125920(v=ws.10)) windows Server 2008 R2 y Windows 7: directivas de cuenta<p>Instrucciones para [cambiar y crear contraseñas seguras](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)|
 |**Herramientas y configuración**|[Referencia de la configuración de directiva de grupo para Windows y Windows Server en el centro de descarga de Microsoft](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
-|**Recursos de la comunidad**|[Proteger la identidad digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<p>[Iniciar sesión en Windows 8 con un Windows Live ID](https://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<p>[Iniciar sesión con una contraseña de imagen](https://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<p>[Optimización de la seguridad de la contraseña de imagen](https://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
-
-
+|**Recursos de la comunidad**|[Proteger la identidad digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<p>[Iniciar sesión en Windows 8 con un Windows Live ID](https://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<p>[Iniciar sesión con una contraseña de imagen](/archive/blogs/b8/signing-in-with-a-picture-password)<p>[Optimización de la seguridad de la contraseña de imagen](/archive/blogs/b8/optimizing-picture-password-security)|

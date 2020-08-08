@@ -7,12 +7,12 @@ ms.assetid: 318659e5-e4a5-4e46-99d6-211dfc46f6b8
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 09/04/2018
-ms.openlocfilehash: 7d45987b863eaabd3ed57630ff1ee425e35fd939
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1cfd326cd2ab5054829b1f4b9df6b072b3856eb7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966602"
+ms.locfileid: "87996488"
 ---
 # <a name="container-networking-overview"></a>Introducción a las redes de contenedor
 
@@ -33,6 +33,6 @@ Para aplicar el aislamiento entre contenedores en el mismo host, cree un compart
 
 ## <a name="related-topics"></a>Temas relacionados
 
-- [Redes de contenedores de Windows](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture): Aprenda a crear y administrar redes de contenedor para implementaciones que no son de superposición o de Sdn.
+- [Redes de contenedores de Windows](/virtualization/windowscontainers/container-networking/architecture): Aprenda a crear y administrar redes de contenedor para implementaciones que no son de superposición o de Sdn.
 
 - [Conexión de puntos de conexión de contenedor a una red virtual de inquilino](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md): Aprenda a crear y administrar redes de contenedor para redes virtuales de superposición con Sdn.

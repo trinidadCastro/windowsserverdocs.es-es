@@ -7,14 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: da54deaa2d1a583fd8ebb2328027e74da2cac5bc
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 10aa277a990dd91016c4dada6f8de3730b1a60fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520124"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969802"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Prácticas recomendadas para proteger Servicios de federación de Active Directory (AD FS)
 

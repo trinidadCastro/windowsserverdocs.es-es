@@ -7,18 +7,18 @@ ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: e37fc548db0a1043b2b78d95f97e8b4ef01214c8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 256c1e503dcaaf0e482ab3f69ca1c5a1b977a10b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962059"
+ms.locfileid: "87996532"
 ---
 # <a name="sdn-firewall-auditing"></a>Auditoría de firewall SDN
 
 >Se aplica a: Windows Server 2019
 
-La auditoría de Firewall es una nueva funcionalidad para el Firewall de SDN en Windows Server 2019. Al habilitar el Firewall de SDN, se registra cualquier flujo procesado por las reglas de Firewall de SDN (ACL) que tienen habilitado el registro. Los archivos de registro deben estar en una sintaxis que sea coherente con los [registros de flujo de Network Watcher de Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). Estos registros se pueden usar para diagnósticos o archivados para su posterior análisis. 
+La auditoría de Firewall es una nueva funcionalidad para el Firewall de SDN en Windows Server 2019. Al habilitar el Firewall de SDN, se registra cualquier flujo procesado por las reglas de Firewall de SDN (ACL) que tienen habilitado el registro. Los archivos de registro deben estar en una sintaxis que sea coherente con los [registros de flujo de Network Watcher de Azure](/azure/network-watcher/network-watcher-nsg-flow-logging-overview). Estos registros se pueden usar para diagnósticos o archivados para su posterior análisis. 
 
 Pronto se proporcionarán algunos ejemplos de cómo procesar estos archivos mediante herramientas como Power BI.
 
@@ -169,4 +169,3 @@ Tenga en cuenta que el registro solo tiene lugar para las reglas que tienen el *
                    }
 }
 ```
-

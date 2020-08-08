@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 7e62b5dab69676e15494ff531ffe0fce0e550c1a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3d6af6e6dea584485e2517d8e54c107c5cc2af90
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970092"
+ms.locfileid: "87996267"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>Máquinas virtuales blindadas: el proveedor de servicios de hosting configura Microsoft Azure Pack
 
@@ -25,7 +25,7 @@ Realizará las tareas siguientes para configurar Windows Azure Pack en su entorn
 
 1. Complete la configuración de System Center 2016-Virtual Machine Manager (VMM) para el tejido de hospedaje. Esto incluye la configuración de plantillas de máquina virtual y una nube de máquinas virtuales, que se expondrán a través de Windows Azure Pack:
 
-    [Escenario: Implementación de hosts protegidos y máquinas virtuales blindadas en VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
+    [Escenario: Implementación de hosts protegidos y máquinas virtuales blindadas en VMM](/system-center/vmm/deploy-guarded-host-fabric?view=sc-vmm-2019)
 
 2. Instale y configure System Center 2016-Service Provider Foundation (SPF). Este software permite a Windows Azure Pack comunicarse con los servidores VMM:
 
@@ -44,7 +44,7 @@ Realizará las tareas siguientes para configurar Windows Azure Pack en su entorn
 
 Instale y configure Windows Azure Pack (WAP) en el equipo en el que desea hospedar el portal web para los inquilinos. Este equipo tendrá que ser capaz de acceder al servidor SPF y ser accesible para los inquilinos.
 
-1.  Revisar [los requisitos del sistema WAP](https://technet.microsoft.com/library/dn296442.aspx) e instalar el [software necesario](https://technet.microsoft.com/library/dn469335.aspx).
+1.  Revisar [los requisitos del sistema WAP](/previous-versions/azure/windows-server-azure-pack/dn296442(v=technet.10)) e instalar el [software necesario](/previous-versions/azure/windows-server-azure-pack/dn469335(v=technet.10)).
 
 2.  Descargue e instale el [instalador de plataforma web](https://www.microsoft.com/web/downloads/platform.aspx). Si el equipo no está conectado a Internet, siga las [instrucciones de instalación sin conexión](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
 
@@ -52,7 +52,7 @@ Instale y configure Windows Azure Pack (WAP) en el equipo en el que desea hosped
 
 4.  Lleve a cabo la instalación. Una vez finalizada la instalación, se abre el sitio de configuración (*https:// &lt; wapserver &gt; : 30101/*) en el explorador Web. En este sitio web, proporcione información sobre su SQL Server y termine de configurar WAP.
 
-Para obtener ayuda para la configuración de Windows Azure Pack, consulte [instalar una implementación rápida de Windows Azure Pack](https://technet.microsoft.com/dn296439.aspx).
+Para obtener ayuda para la configuración de Windows Azure Pack, consulte [instalar una implementación rápida de Windows Azure Pack](/previous-versions/azure/windows-server-azure-pack/dn296439(v=technet.10)).
 
 > [!NOTE]
 > Si ya ha ejecutado Windows Azure Pack en su entorno, puede usar la instalación existente. Sin embargo, para trabajar con las características más recientes de la máquina virtual blindada, deberá actualizar la instalación al menos con el paquete acumulativo de actualizaciones 10.

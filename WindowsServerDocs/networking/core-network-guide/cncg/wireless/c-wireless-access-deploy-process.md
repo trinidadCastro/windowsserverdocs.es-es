@@ -2,18 +2,16 @@
 title: Proceso de implementación de acceso inalámbrico
 description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado mediante 802.1 X basado en contraseña".
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 2555f238-926e-4b20-9bfb-9774831062da
 author: eross-msft
 ms.author: lizross
-ms.openlocfilehash: 30e3da7e1365585bf9dc5ff34a72a367e1ed28f7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9c2326df824288b6adf4453d6ef272ba632eb6c2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318079"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969602"
 ---
 # <a name="wireless-access-deployment-process"></a>Proceso de implementación de acceso inalámbrico
 
@@ -23,7 +21,7 @@ El proceso que se usa para implementar el acceso inalámbrico se produce en esta
 
 ## <a name="stage-1--ap-deployment"></a>Fase 1: implementación de AP
 
-Planee, implemente y configure los AP para la conectividad de clientes inalámbricos y para su uso con NPS. En función de las dependencias de red y preferencias, puede\-configurar los parámetros en los puntos de conexión inalámbricos antes de instalarlos en la red, o bien puede configurarlos de forma remota después de la instalación.
+Planee, implemente y configure los AP para la conectividad de clientes inalámbricos y para su uso con NPS. En función de sus preferencias y de las dependencias de red, puede \- configurar previamente los valores de los puntos de conexión inalámbricos antes de instalarlos en la red, o bien puede configurarlos de forma remota después de la instalación.
 
 ## <a name="stage-2--adds-group-configuration"></a>Fase 2: configuración de grupo de AD DS
 
@@ -38,11 +36,11 @@ Por último, agregue los usuarios a los grupos de seguridad de usuarios inalámb
 
 ## <a name="stage-3--group-policy-configuration"></a>Fase 3: configuración de directiva de grupo
 
-Configure la extensión de directivas de \(IEEE 802,11\) de la red inalámbrica de directiva de grupo con el Editor de administración de directivas de grupo Microsoft Management Console \(MMC\).
+Configure la \( \) extensión de directivas IEEE 802,11 de red inalámbrica de directiva de grupo mediante el editor de administración de directivas de grupo MMC de Microsoft Management Console \( \) .
 
-Para configurar los equipos miembro de\-de dominio mediante la configuración de las directivas de red inalámbrica, debe aplicar directiva de grupo. Cuando un equipo se une por primera vez al dominio, directiva de grupo se aplica automáticamente. Si se realizan cambios en directiva de grupo, se aplica automáticamente la nueva configuración:
+Para configurar \- los equipos miembros del dominio mediante la configuración de las directivas de red inalámbrica, debe aplicar Directiva de grupo. Cuando un equipo se une por primera vez al dominio, directiva de grupo se aplica automáticamente. Si se realizan cambios en directiva de grupo, se aplica automáticamente la nueva configuración:
 
-- Por directiva de grupo a\-determinados intervalos
+- Por directiva de grupo a \- intervalos predeterminados
 
 - Si un usuario de dominio cierra la sesión y vuelve a iniciarla en la red
 
@@ -62,7 +60,7 @@ Usar equipos cliente para conectarse a la red.
 
 En el caso de los equipos miembros del dominio que pueden iniciar sesión en la LAN cableada, se aplicarán automáticamente las opciones de configuración inalámbrica necesarias cuando se actualice directiva de grupo.
 
-Si ha habilitado la opción de configuración de redes inalámbricas \(IEEE 802,11\) directivas para conectarse automáticamente cuando el equipo esté dentro del alcance de difusión de la red inalámbrica, los equipos inalámbricos Unidos a un dominio\-intentarán conectarse automáticamente a la LAN inalámbrica.
+Si ha habilitado la opción en las directivas de red inalámbrica \( IEEE 802,11 \) para conectarse automáticamente cuando el equipo está dentro del alcance de difusión de la red inalámbrica, los equipos inalámbricos Unidos a un dominio \- intentarán conectarse automáticamente a la LAN inalámbrica.
 
 Para conectarse a la red inalámbrica, los usuarios solo necesitan proporcionar sus credenciales de nombre de usuario y contraseña de dominio cuando Windows las solicite.
 

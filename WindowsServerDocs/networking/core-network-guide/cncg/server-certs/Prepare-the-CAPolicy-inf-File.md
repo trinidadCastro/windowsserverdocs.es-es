@@ -4,16 +4,14 @@ description: El archivo CAPolicy. inf contiene varias opciones que se usan al in
 manager: alanth
 ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
-ms.prod: windows-server
-ms.technology: networking
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4df23cd64bcf3bf9c27190908fb5f2a48b30b833
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 83e2acbc9edfd9ca236f01b1fef3474ffe1bbb51
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318292"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949459"
 ---
 # <a name="capolicyinf-syntax"></a>Sintaxis de CAPolicy. inf
 >   Se aplica a: Windows Server (canal semianual), Windows Server 2016
@@ -42,7 +40,7 @@ Los siguientes términos se usan para describir la estructura del archivo. inf:
 
 -   _Valor_ : es el parámetro y aparece a la derecha del signo igual.
 
-En el ejemplo siguiente, **[Version]** es la sección, **Signature** es la clave y **"\$Windows NT\$"** es el valor.
+En el ejemplo siguiente, **[Version]** es la sección, **Signature** es la clave y **" \$ Windows NT \$ "** es el valor.
 
 Ejemplo:
 
@@ -97,7 +95,7 @@ Notice=”Legal policy statement text”
 
 ### <a name="crldistributionpoint"></a>CRLDistributionPoint
 
-Puede especificar puntos de distribución de CRL (CDP) para un certificado de CA raíz en el archivo CAPolicy. inf.  Después de instalar la CA, puede configurar las direcciones URL de CDP que la CA incluye en cada certificado emitido. El certificado de CA raíz muestra las direcciones URL especificadas en esta sección del archivo CAPolicy. inf. 
+Puede especificar puntos de distribución de CRL (CDP) para un certificado de CA raíz en el archivo CAPolicy. inf.  Después de instalar la CA, puede configurar las direcciones URL de CDP que la CA incluye en cada certificado emitido. El certificado de CA raíz muestra las direcciones URL especificadas en esta sección del archivo CAPolicy. inf.
 
 ```
 [CRLDistributionPoint]
@@ -105,12 +103,12 @@ URL=http://pki.wingtiptoys.com/cdp/WingtipToysRootCA.crl
 ```
 
 Información adicional sobre esta sección:
--   Admite
-    - HTTP 
+-   Es compatible con:
+    - HTTP
     - Direcciones URL de archivo
-    - Direcciones URL LDAP 
+    - Direcciones URL LDAP
     - Varias direcciones URL
-   
+
     >[!IMPORTANT]
     >No admite direcciones URL HTTPS.
 
@@ -121,7 +119,7 @@ Información adicional sobre esta sección:
 -    La CA puede publicar en un archivo UNC, por ejemplo, en un recurso compartido que representa la carpeta de un sitio web en el que un cliente recupera a través de HTTP.
 
 -   Use esta sección solo si está configurando una CA raíz o renovando el certificado de CA raíz. La CA determina las extensiones CDP de la entidad de certificación subordinada.
-   
+
 
 ### <a name="authorityinformationaccess"></a>AuthorityInformationAccess
 
@@ -193,7 +191,7 @@ En una instalación predeterminada de la CA, se agrega un subconjunto de las pla
 
 Es posible que no quiera emitir ningún certificado inmediatamente después de instalar una CA, por lo que puede usar la opción LoadDefaultTemplates para evitar que las plantillas predeterminadas se agreguen a la CA empresarial. Si no hay ninguna plantilla configurada en la CA, puede no emitir ningún certificado.
 
-**AlternateSignatureAlgorithm** configura la CA para admitir el formato de firma PKCS\#1 v 2.1 tanto para el certificado de CA como para las solicitudes de certificado. Cuando se establece en 1 en una entidad de certificación raíz, el certificado de CA incluirá el formato de firma PKCS\#1 V 2.1. Cuando se establece en una CA subordinada, la CA subordinada creará una solicitud de certificado que incluye el formato de firma PKCS\#1 V 2.1.
+**AlternateSignatureAlgorithm** configura la CA para admitir el \# formato de firma PKCS 1 v 2.1 tanto para el certificado de CA como para las solicitudes de certificado. Cuando se establece en 1 en una entidad de certificación raíz, el certificado de CA incluirá el \# formato de firma PKCS 1 v 2.1. Cuando se establece en una CA subordinada, la CA subordinada creará una solicitud de certificado que incluye el \# formato de firma PKCS 1 v 2.1.
 
 **ForceUTF8** cambia la codificación predeterminada de los nombres distintivos relativos (RDN) en el asunto y los nombres distintivos del emisor a UTF-8. Solo se ven afectados los RDN que admiten UTF-8, como los que se definen como tipos de cadena de directorio. Por ejemplo, el RDN del componente de dominio (DC) admite la codificación como IA5 o UTF-8, mientras que el RDN del país (C) solo admite la codificación como una cadena que se puede imprimir. Por lo tanto, la Directiva ForceUTF8 afectará a un RDN de DC, pero no afectará a un RDN de C.
 
@@ -211,30 +209,30 @@ Antes de instalar AD CS, configure el archivo CAPolicy. inf con la configuració
 
 3. Como contenido del archivo, escriba lo siguiente:
    ```
-   [Version]  
-   Signature="$Windows NT$"  
-   [PolicyStatementExtension]  
-   Policies=InternalPolicy  
-   [InternalPolicy]  
-   OID=1.2.3.4.1455.67.89.5  
-   Notice="Legal Policy Statement"  
-   URL=https://pki.corp.contoso.com/pki/cps.txt  
-   [Certsrv_Server]  
-   RenewalKeyLength=2048  
-   RenewalValidityPeriod=Years  
-   RenewalValidityPeriodUnits=5  
-   CRLPeriod=weeks  
-   CRLPeriodUnits=1  
-   LoadDefaultTemplates=0  
-   AlternateSignatureAlgorithm=1  
-   [CRLDistributionPoint]  
+   [Version]
+   Signature="$Windows NT$"
+   [PolicyStatementExtension]
+   Policies=InternalPolicy
+   [InternalPolicy]
+   OID=1.2.3.4.1455.67.89.5
+   Notice="Legal Policy Statement"
+   URL=https://pki.corp.contoso.com/pki/cps.txt
+   [Certsrv_Server]
+   RenewalKeyLength=2048
+   RenewalValidityPeriod=Years
+   RenewalValidityPeriodUnits=5
+   CRLPeriod=weeks
+   CRLPeriodUnits=1
+   LoadDefaultTemplates=0
+   AlternateSignatureAlgorithm=1
+   [CRLDistributionPoint]
    [AuthorityInformationAccess]
    ```
 4. Haga clic en **archivo**y, a continuación, en **Guardar como**.
 
 5. Navegue hasta la carpeta% SystemRoot%.
 
-6. Compruebe que:
+6. Asegúrese de lo siguiente:
 
    -   El **Nombre de archivo** está establecido en **CAPolicy.inf**
 
@@ -254,4 +252,4 @@ Antes de instalar AD CS, configure el archivo CAPolicy. inf con la configuració
 9. Cierre el Bloc de notas.
 
 > [!IMPORTANT]
->   En el archivo CAPolicy. inf, puede ver que hay una línea que especifica la dirección URL https://pki.corp.contoso.com/pki/cps.txt. La sección Internal Policy del archivo CAPolicy.inf se muestra como ejemplo de cómo se especificaría la ubicación de una orden de prácticas de certificación (CPS). En esta guía, no se le indicará que cree la declaración de prácticas de certificación (CPS).
+>   En el archivo CAPolicy. inf, puede ver que hay una línea que especifica la dirección URL https://pki.corp.contoso.com/pki/cps.txt . La sección Internal Policy del archivo CAPolicy.inf se muestra como ejemplo de cómo se especificaría la ubicación de una orden de prácticas de certificación (CPS). En esta guía, no se le indicará que cree la declaración de prácticas de certificación (CPS).

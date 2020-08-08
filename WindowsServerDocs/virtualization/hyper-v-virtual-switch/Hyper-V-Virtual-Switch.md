@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 398440ac-5988-41ce-b91e-eab343a255d3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e8722e5ff925bca1d99c39d7eb6bf360dc12c065
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1e2db53f28ff5262778b36b8a5cb91e6062ca9c0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968702"
+ms.locfileid: "87995708"
 ---
 # <a name="hyper-v-virtual-switch"></a>Conmutador virtual de Hyper-V
 
@@ -26,13 +26,13 @@ También puede conectarse a redes virtuales en el servidor que ejecuta Hyper \- 
 >
 > - [Administración de conmutador virtual de Hyper-V](Manage-Hyper-V-Virtual-Switch.md)
 > - [Acceso directo a memoria remota (RDMA) y Switch Embedded Teaming (SET)](RDMA-and-Switch-Embedded-Teaming.md)
-> - [Cmdlets del equipo del conmutador de red en Windows PowerShell](https://docs.microsoft.com/powershell/module/netswitchteam/new-netswitchteam?view=win10-ps)
-> - [Novedades de VMM 2016](https://docs.microsoft.com/system-center/vmm/whats-new#networking)
-> - [Configurar el tejido de red de VMM](https://docs.microsoft.com/system-center/vmm/manage-networks)
-> - [Foro de Hyper-V](https://docs.microsoft.com/answers/topics/windows-server-hyper-v.html)
-> - [Hyper-V: la extensión de conmutador virtual de WFP debe habilitarse si así lo requieren las extensiones de terceros](https://docs.microsoft.com/answers/topics/windows-server-hyper-v.html)
+> - [Cmdlets del equipo del conmutador de red en Windows PowerShell](/powershell/module/netswitchteam/new-netswitchteam?view=win10-ps)
+> - [Novedades de VMM 2016](/system-center/vmm/whats-new#networking)
+> - [Configurar el tejido de red de VMM](/system-center/vmm/manage-networks)
+> - [Foro de Hyper-V](/answers/topics/windows-server-hyper-v.html)
+> - [Hyper-V: la extensión de conmutador virtual de WFP debe habilitarse si así lo requieren las extensiones de terceros](/answers/topics/windows-server-hyper-v.html)
 >
-> Para obtener más información acerca de otras tecnologías de red, consulte [funciones de red en Windows Server 2016](https://docs.microsoft.com/windows-server/networking/networking).
+> Para obtener más información acerca de otras tecnologías de red, consulte [funciones de red en Windows Server 2016](../../networking/index.yml).
 
 \-El conmutador virtual de Hyper-v es un conmutador de red Ethernet de nivel 2 basado en software que está disponible en \- el administrador de Hyper v al instalar el rol de servidor Hyper- \- v.
 

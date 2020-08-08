@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac661631eef9053e202c7e21ffff9982d26d1d38
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7f98ec982601281d5b16a5ec369ca275de189c85
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960828"
+ms.locfileid: "87996482"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implementar espacios de almacenamiento en un servidor independiente
 
@@ -21,7 +21,7 @@ En este tema se describe cómo implementar espacios de almacenamiento en un serv
 
 Para crear un espacio de almacenamiento, debes crear primero uno o varios grupos de almacenamiento. Un grupo de almacenamiento es una colección de discos físicos. Un grupo de almacenamiento permite agregar almacenamiento, expandir la capacidad flexible y delegar la administración.
 
-Desde un grupo de almacenamiento, puedes crear uno o varios discos virtuales. Los discos virtuales también se denominan *espacios de almacenamiento*. Un espacio de almacenamiento aparece en el sistema operativo Windows como un disco normal desde el que puedes crear volúmenes formateados. Cuando creas un disco virtual a través de la interfaz de usuario de Servicios de archivos y almacenamiento, puedes configurar el tipo de resistencia (simple, reflejo o paridad), el tipo de aprovisionamiento (fino o fijo) y el tamaño. Mediante Windows PowerShell, puedes configurar otros parámetros, como el número de columnas, el valor de intercalación y qué discos físicos del grupo deben usarse. Para obtener información sobre estos parámetros adicionales, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) y el [Foro de almacenamiento de Windows Server](https://docs.microsoft.com/answers/topics/windows-server-storage.html).
+Desde un grupo de almacenamiento, puedes crear uno o varios discos virtuales. Los discos virtuales también se denominan *espacios de almacenamiento*. Un espacio de almacenamiento aparece en el sistema operativo Windows como un disco normal desde el que puedes crear volúmenes formateados. Cuando creas un disco virtual a través de la interfaz de usuario de Servicios de archivos y almacenamiento, puedes configurar el tipo de resistencia (simple, reflejo o paridad), el tipo de aprovisionamiento (fino o fijo) y el tamaño. Mediante Windows PowerShell, puedes configurar otros parámetros, como el número de columnas, el valor de intercalación y qué discos físicos del grupo deben usarse. Para obtener información sobre estos parámetros adicionales, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) y el [Foro de almacenamiento de Windows Server](/answers/topics/windows-server-storage.html).
 
 >[!NOTE]
 >No se puede usar un espacio de almacenamiento para hospedar el sistema operativo Windows.
@@ -266,4 +266,4 @@ Get-VirtualDisk –FriendlyName VirtualDisk1 | Get-Disk | Initialize-Disk –Pas
 - [Espacios de almacenamiento](overview.md)
 - [Cmdlets de almacenamiento en Windows PowerShell](/powershell/module/storage/index?view=win10-ps)
 - [Implementar espacios de almacenamiento en clúster](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))
-- [Foro de almacenamiento de Windows Server](https://docs.microsoft.com/answers/topics/windows-server-storage.html)
+- [Foro de almacenamiento de Windows Server](/answers/topics/windows-server-storage.html)

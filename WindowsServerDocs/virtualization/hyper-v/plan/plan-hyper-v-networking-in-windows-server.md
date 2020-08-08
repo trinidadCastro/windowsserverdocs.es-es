@@ -6,12 +6,12 @@ ms.topic: article
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 638b4879d7980d817863ad0cd45397ac4a095569
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b31d942e8d7890a8f699f743bcd24953d2a3e760
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948012"
+ms.locfileid: "87996063"
 ---
 # <a name="plan-for-hyper-v-networking-in-windows-server"></a>Planear la red de Hyper-V en Windows Server
 
@@ -52,7 +52,7 @@ Las últimas versiones de Windows Server introdujeron mejoras que proporcionan m
 
 Algunas características se basan en configuraciones de red específicas o en determinadas configuraciones. Tenga esto en cuenta al planear o actualizar la infraestructura de red.
 
-**Clústeres de conmutación por error** : se recomienda aislar el tráfico del clúster y usar la calidad de servicio (QoS) de Hyper-V en el conmutador virtual. Para obtener más información, consulte [recomendaciones de red para un clúster de Hyper-V](https://technet.microsoft.com/library/dn550728.aspx)
+**Clústeres de conmutación por error** : se recomienda aislar el tráfico del clúster y usar la calidad de servicio (QoS) de Hyper-V en el conmutador virtual. Para obtener más información, consulte [recomendaciones de red para un clúster de Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11))
 
 **Migración en vivo** : Use las opciones de rendimiento para reducir el uso de la red y la CPU y el tiempo necesario para completar una migración en vivo. Para obtener instrucciones, consulte [configuración de hosts para la migración en vivo sin clústeres de conmutación por error](../deploy/set-up-hosts-for-live-migration-without-failover-clustering.md).
 

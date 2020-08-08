@@ -7,12 +7,12 @@ ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 3937f124ba91a597af83c00cd5497ea57c1b2fed
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ce85e93f229c62d836a00e7665e2a76bd08b44dd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962139"
+ms.locfileid: "87996549"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>Kerberos con nombre de entidad de seguridad de servicio (SPN)
 
@@ -20,7 +20,7 @@ ms.locfileid: "87962139"
 
 La controladora de red admite varios métodos de autenticación para la comunicación con clientes de administración. Puede usar la autenticación basada en Kerberos, la autenticación basada en certificados X509. También tiene la opción de no usar autenticación para implementaciones de prueba.
 
-System Center Virtual Machine Manager usa la autenticación basada en Kerberos. Si usa la autenticación basada en Kerberos, debe configurar un nombre de entidad de seguridad de servicio (SPN) para la controladora de red en Active Directory. El SPN es un identificador único para la instancia de servicio de la controladora de red, que usa la autenticación Kerberos para asociar una instancia de servicio a una cuenta de inicio de sesión del servicio. Para obtener más información, consulte [nombres de entidad](https://docs.microsoft.com/windows/desktop/ad/service-principal-names)de seguridad de servicio.
+System Center Virtual Machine Manager usa la autenticación basada en Kerberos. Si usa la autenticación basada en Kerberos, debe configurar un nombre de entidad de seguridad de servicio (SPN) para la controladora de red en Active Directory. El SPN es un identificador único para la instancia de servicio de la controladora de red, que usa la autenticación Kerberos para asociar una instancia de servicio a una cuenta de inicio de sesión del servicio. Para obtener más información, consulte [nombres de entidad](/windows/desktop/ad/service-principal-names)de seguridad de servicio.
 
 ## <a name="configure-service-principal-names-spn"></a>Configurar nombres de entidad de seguridad de servicio (SPN)
 

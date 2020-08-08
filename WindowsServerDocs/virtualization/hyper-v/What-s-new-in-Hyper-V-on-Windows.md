@@ -7,12 +7,12 @@ ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
 author: kbdazure
 ms.author: kathydav
 ms.date: 09/21/2017
-ms.openlocfilehash: d70dacd2f6ea407350641b33111d40c6059a4110
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aa61fd14418efe2cb5ee68c1b86e300db24c4fe4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954572"
+ms.locfileid: "87996617"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>Novedades de Hyper-V en Windows Server
 
@@ -38,13 +38,13 @@ Para más información, consulta [Característica App Compatibility de Server Co
 
 - **Mejoras de sucursal**
 
-    Ahora puedes ejecutar máquinas virtuales blindadas en máquinas con conectividad intermitente para el Servicio de protección de host al aprovechar las nuevas características [HGS reserva](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) y [modo sin conexión](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode). HGS de reserva te permite configurar un segundo conjunto de direcciones URL para Hyper-V para probar si no puede conectar con el servidor HGS principal.
+    Ahora puedes ejecutar máquinas virtuales blindadas en máquinas con conectividad intermitente para el Servicio de protección de host al aprovechar las nuevas características [HGS reserva](../../security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md#fallback-configuration) y [modo sin conexión](../../security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md#offline-mode). HGS de reserva te permite configurar un segundo conjunto de direcciones URL para Hyper-V para probar si no puede conectar con el servidor HGS principal.
 
     El modo sin conexión te permite continuar iniciando las máquinas virtuales blindadas, incluso si no se puede conectar a HGS, siempre y cuando la máquina virtual se haya iniciado correctamente una vez y no haya cambiado la configuración de seguridad del host.
 
 - **Solución de problemas de las mejoras**
 
-    También hemos facilitado la [solución de problemas de las máquinas virtuales blindadas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms) habilitando el soporte con el modo de sesión mejorada de VMConnect y PowerShell Direct. Estas herramientas son especialmente útiles si perdiste la conectividad de red con la VM y necesitas actualizar su configuración para restaurar el acceso.
+    También hemos facilitado la [solución de problemas de las máquinas virtuales blindadas](../../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md) habilitando el soporte con el modo de sesión mejorada de VMConnect y PowerShell Direct. Estas herramientas son especialmente útiles si perdiste la conectividad de red con la VM y necesitas actualizar su configuración para restaurar el acceso.
 
     No es necesario configurar estas características y están disponibles automáticamente cuando se coloca una VM blindada en un host de Hyper-V con Windows Server, versión 1803 o posterior.
 
@@ -74,7 +74,7 @@ Esta característica ayuda a impedir que una máquina virtual use más de su rec
 Set-VMProcessor TestVM -EnableHostResourceProtection $true
 ```
 
-Para obtener más información sobre este cmdlet, consulte [set-VMProcessor](https://docs.microsoft.com/powershell/module/hyper-v/set-vmprocessor).
+Para obtener más información sobre este cmdlet, consulte [set-VMProcessor](/powershell/module/hyper-v/set-vmprocessor).
 
 ### <a name="hot-add-and-remove-for-network-adapters-and-memory-new"></a>Adición y eliminación en caliente para adaptadores de red y memoria \( nueva\)
 
@@ -105,7 +105,7 @@ Los sistemas operativos Linux que se ejecutan en máquinas virtuales de generaci
 Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ```
 
-Para obtener más información sobre las máquinas virtuales Linux en Hyper-V, consulte el [Virtual Machines de Linux y FreeBSD en Hyper-v](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md). Para obtener más información sobre el cmdlet, consulte [set-VMFirmware](https://docs.microsoft.com/powershell/module/hyper-v/set-vmfirmware).
+Para obtener más información sobre las máquinas virtuales Linux en Hyper-V, consulte el [Virtual Machines de Linux y FreeBSD en Hyper-v](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md). Para obtener más información sobre el cmdlet, consulte [set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware).
 
 ### <a name="more-memory-and-processors-for-generation-2-virtual-machines-and-hyper-v-hosts-updated"></a>Más memoria y procesadores para máquinas virtuales de generación 2 y hosts de Hyper-V \( actualizados\)
 
@@ -119,13 +119,13 @@ Esta característica permite usar una máquina virtual como un host de Hyper-V y
 
 -   Un procesador con Intel VT-x (virtualización anidada solo está disponible para los procesadores Intel en este momento).
 
-Para obtener más información e instrucciones, consulte [ejecución de Hyper-V en una máquina virtual con virtualización anidada](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization).
+Para obtener más información e instrucciones, consulte [ejecución de Hyper-V en una máquina virtual con virtualización anidada](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization).
 
 ### <a name="networking-features-new"></a>Características de red \( nuevas\)
 
 Las nuevas características de red incluyen:
 
--   **Acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)**. Puede configurar RDMA en los adaptadores de red enlazados a un conmutador virtual de Hyper-V, independientemente de si se usa también el conjunto. SET proporciona un conmutador virtual con algunas de las mismas funciones que la formación de equipos NIC. Para obtener más información, consulte [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
+-   **Acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)**. Puede configurar RDMA en los adaptadores de red enlazados a un conmutador virtual de Hyper-V, independientemente de si se usa también el conjunto. SET proporciona un conmutador virtual con algunas de las mismas funciones que la formación de equipos NIC. Para obtener más información, consulte [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md).
 
 -   **Varias colas de máquinas virtuales (VMMQ)**. Mejora el rendimiento de VMQ mediante la asignación de varias colas de hardware por máquina virtual.  La cola predeterminada se convierte en un conjunto de colas para una máquina virtual y el tráfico se propaga entre las colas.
 
@@ -142,7 +142,7 @@ Los puntos de control de producción son imágenes en un momento dado de una má
 
 ### <a name="rolling-hyper-v-cluster-upgrade-new"></a>Actualización de clústeres de Hyper-V \( nueva\)
 
-Ahora puede Agregar un nodo que ejecute Windows Server 2019 o Windows Server 2016 a un clúster de Hyper-V con nodos que ejecutan Windows Server 2012 R2. Esto le permite actualizar el clúster sin tiempo de inactividad. El clúster se ejecuta en un nivel de característica de Windows Server 2012 R2 hasta que actualice todos los nodos del clúster y actualice el nivel funcional del clúster con el cmdlet de Windows PowerShell, [Update-ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel).
+Ahora puede Agregar un nodo que ejecute Windows Server 2019 o Windows Server 2016 a un clúster de Hyper-V con nodos que ejecutan Windows Server 2012 R2. Esto le permite actualizar el clúster sin tiempo de inactividad. El clúster se ejecuta en un nivel de característica de Windows Server 2012 R2 hasta que actualice todos los nodos del clúster y actualice el nivel funcional del clúster con el cmdlet de Windows PowerShell, [Update-ClusterFunctionalLevel](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel).
 
 > [!IMPORTANT]
 > Después de actualizar el nivel funcional del clúster, no puede volver a Windows Server 2012 R2.
@@ -174,15 +174,15 @@ Para obtener más información e instrucciones, consulte la [actualización grad
 ### <a name="shared-virtual-hard-disks-updated"></a>Discos duros virtuales compartidos \( actualizados\)
 Ahora puede cambiar el tamaño de los discos duros virtuales compartidos (archivos. vhdx) que se usan para la agrupación en clústeres invitados, sin tiempo de inactividad. Los discos duros virtuales compartidos se pueden incrementar o reducir mientras la máquina virtual está en línea. Los clústeres invitados ahora también pueden proteger los discos duros virtuales compartidos mediante la réplica de Hyper-V para la recuperación ante desastres.
 
-Habilite la replicación en la colección. La habilitación de la replicación en una colección **solo se expone a través de la interfaz WMI**. Consulte la documentación de [Msvm_CollectionReplicationService clase](https://msdn.microsoft.com/library/mt167787%28v=vs.85%29.aspx) para obtener más información. **No se puede administrar la replicación de una colección mediante el cmdlet de PowerShell o la interfaz de usuario.** Las máquinas virtuales deben estar en hosts que forman parte de un clúster de Hyper-V para tener acceso a las características específicas de una recopilación. Esto incluye los VHD compartidos de VHD compartidos en hosts independientes que no son compatibles con la réplica de Hyper-V.
+Habilite la replicación en la colección. La habilitación de la replicación en una colección **solo se expone a través de la interfaz WMI**. Consulte la documentación de [Msvm_CollectionReplicationService clase](/previous-versions/windows/desktop/clushyperv/msvm-collectionreplicationservice) para obtener más información. **No se puede administrar la replicación de una colección mediante el cmdlet de PowerShell o la interfaz de usuario.** Las máquinas virtuales deben estar en hosts que forman parte de un clúster de Hyper-V para tener acceso a las características específicas de una recopilación. Esto incluye los VHD compartidos de VHD compartidos en hosts independientes que no son compatibles con la réplica de Hyper-V.
 
-Siga las instrucciones para VHD compartidos en [información general sobre el uso compartido de discos duros virtuales](https://technet.microsoft.com/library/dn281956.aspx)y asegúrese de que los VHD compartidos forman parte de un clúster invitado.
+Siga las instrucciones para VHD compartidos en [información general sobre el uso compartido de discos duros virtuales](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281956(v=ws.11))y asegúrese de que los VHD compartidos forman parte de un clúster invitado.
 
 Una colección con un VHD compartido, pero ningún clúster invitado asociado no puede crear puntos de referencia para la colección (independientemente de si el VHD compartido está incluido en la creación del punto de referencia o no).
 
 ### <a name="virtual-machine-backupnew"></a>Copia de seguridad de máquina virtual \( nueva\)
 
-Si va a realizar una copia de seguridad de una sola máquina virtual (independientemente de si el host está agrupado o no), no debe usar un grupo de máquinas virtuales.  No debe utilizar una colección de instantáneas. Los grupos de máquinas virtuales y la recopilación de instantáneas están diseñados para usarse únicamente para realizar copias de seguridad de clústeres invitados que usan vhdx compartido. En su lugar, debe tomar una instantánea mediante el [proveedor WMI V2 de Hyper-V](https://msdn.microsoft.com/library/windows/desktop/hh850319(v=vs.85).aspx). Del mismo modo, no use el [proveedor WMI de clúster de conmutación por error](https://msdn.microsoft.com/library/windows/desktop/mt167750(v=vs.85).aspx).
+Si va a realizar una copia de seguridad de una sola máquina virtual (independientemente de si el host está agrupado o no), no debe usar un grupo de máquinas virtuales.  No debe utilizar una colección de instantáneas. Los grupos de máquinas virtuales y la recopilación de instantáneas están diseñados para usarse únicamente para realizar copias de seguridad de clústeres invitados que usan vhdx compartido. En su lugar, debe tomar una instantánea mediante el [proveedor WMI V2 de Hyper-V](/windows/win32/hyperv_v2/windows-virtualization-portal). Del mismo modo, no use el [proveedor WMI de clúster de conmutación por error](/previous-versions/windows/desktop/clushyperv/failover-clustering-hyper-v-wmi-provider-portal).
 
 ### <a name="shielded-virtual-machines-new"></a>Nuevas máquinas virtuales blindadas \(\)
 
@@ -193,7 +193,7 @@ Las máquinas virtuales blindadas usan varias características para que sea más
 
 ### <a name="start-order-priority-for-clustered-virtual-machines-new"></a>Prioridad de orden de inicio para las máquinas virtuales en clúster \( nuevas\)
 
-Esta característica le ofrece más control sobre las máquinas virtuales en clúster que se inician o se reinician en primer lugar. Esto facilita el inicio de máquinas virtuales que proporcionan servicios antes que las máquinas virtuales que usan esos servicios. Defina conjuntos, coloque las máquinas virtuales en conjuntos y especifique las dependencias. Use los cmdlets de Windows PowerShell para administrar los conjuntos, como [New-ClusterGroupSet](https://docs.microsoft.com/powershell/module/failoverclusters/new-clustergroupset), [Get-ClusterGroupSet](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustergroupset)y [Add-ClusterGroupSetDependency](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergroupsetdependency).
+Esta característica le ofrece más control sobre las máquinas virtuales en clúster que se inician o se reinician en primer lugar. Esto facilita el inicio de máquinas virtuales que proporcionan servicios antes que las máquinas virtuales que usan esos servicios. Defina conjuntos, coloque las máquinas virtuales en conjuntos y especifique las dependencias. Use los cmdlets de Windows PowerShell para administrar los conjuntos, como [New-ClusterGroupSet](/powershell/module/failoverclusters/new-clustergroupset), [Get-ClusterGroupSet](/powershell/module/failoverclusters/get-clustergroupset)y [Add-ClusterGroupSetDependency](/powershell/module/failoverclusters/add-clustergroupsetdependency).
 .
 ### <a name="storage-quality-of-service-qos-updated"></a>Calidad de servicio (QoS) de almacenamiento \( actualizada\)
 
@@ -217,7 +217,7 @@ Para obtener instrucciones sobre cómo comprobar y actualizar la versión, consu
 > [!IMPORTANT]
 > -   Después de actualizar la versión, no se puede migrar la máquina virtual a un servidor que ejecute Windows Server 2012 R2.
 > -   No se puede cambiar la configuración a una versión anterior.
-> -   El cmdlet [Update-VMVersion](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion) está bloqueado en un clúster de Hyper-V cuando el nivel funcional del clúster es Windows Server 2012 R2.
+> -   El cmdlet [Update-VMVersion](/powershell/module/hyper-v/update-vmversion) está bloqueado en un clúster de Hyper-V cuando el nivel funcional del clúster es Windows Server 2012 R2.
 
 ### <a name="virtualization-based-security-for-generation-2-virtual-machines-new"></a>Seguridad basada en la virtualización para máquinas virtuales de generación 2 \( nueva)
 
@@ -237,7 +237,7 @@ Características clave:
 
 -   Capacidad de restringir los recursos de contenedor
 
-Para obtener más información, incluidas las guías de inicio rápido, consulte la [documentación sobre contenedores de Windows](https://docs.microsoft.com/virtualization/windowscontainers/index).
+Para obtener más información, incluidas las guías de inicio rápido, consulte la [documentación sobre contenedores de Windows](/virtualization/windowscontainers/index).
 
 ### <a name="windows-powershell-direct-new"></a>Nuevo Windows PowerShell Direct \(\)
 

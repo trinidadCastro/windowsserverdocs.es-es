@@ -2,24 +2,22 @@
 title: Grupos de servidores RADIUS remotos
 description: En este tema se proporciona información general de los grupos de servidores RADIUS remotos del servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d81678a7-be21-48f2-9b3f-5a75d6aef013
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8275c3e8902ed78d77d01a2ff5d769d3e99abf97
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 36c1f50b840404c16c67a6252826f76ef5e2b5ec
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316176"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969372"
 ---
 # <a name="remote-radius-server-groups"></a>Grupos de servidores RADIUS remotos
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Cuando se configura el servidor de directivas de redes (NPS) como un proxy de Servicio de autenticación remota telefónica de usuario (RADIUS), se usa NPS para reenviar las solicitudes de conexión a los servidores RADIUS que son capaces de procesar las solicitudes de conexión porque pueden realizar autenticación y autorización en el dominio donde se encuentra la cuenta de usuario o de equipo. Por ejemplo, si desea reenviar solicitudes de conexión a uno o varios servidores RADIUS en dominios que no son de confianza, puede configurar NPS como un proxy RADIUS para reenviar las solicitudes a los servidores RADIUS remotos en el dominio que no es de confianza.
+Al configurar el servidor de directivas de redes (NPS) como un proxy de Servicio de autenticación remota telefónica de usuario (RADIUS), se usa NPS para reenviar las solicitudes de conexión a los servidores RADIUS que son capaces de procesar las solicitudes de conexión porque pueden realizar la autenticación y autorización en el dominio donde se encuentra la cuenta de usuario o equipo. Por ejemplo, si desea reenviar solicitudes de conexión a uno o varios servidores RADIUS en dominios que no son de confianza, puede configurar NPS como un proxy RADIUS para reenviar las solicitudes a los servidores RADIUS remotos en el dominio que no es de confianza.
 
 >[!NOTE]
 >Los grupos de servidores RADIUS remotos no están relacionados con grupos de Windows ni se separan de ellos.

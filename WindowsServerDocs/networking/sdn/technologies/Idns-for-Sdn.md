@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 2980e073c34d6177846175563e4d374b439ced44
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c7eb9b82938d6506493ff7cf0856a8c25d3af0ed
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952605"
+ms.locfileid: "87996503"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>Servicio DNS interno (iDNS) para SDN
 
@@ -65,7 +65,7 @@ Al implementar SDN en Windows Server 2016 mediante el uso de scripts, IDN se inc
 
 Para obtener más información, vea los siguientes temas.
 
-- [Implementación de una infraestructura de red definida por software con scripts](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)
+- [Implementación de una infraestructura de red definida por software con scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)
 
 
 ## <a name="understanding-idns-deployment-steps"></a>Descripción de los pasos de implementación de IDN
@@ -108,7 +108,7 @@ Method: PUT
 ```
 
 >[!NOTE]
->Este es un extracto de la sección **Configuration ConfigureIDns** en SDNExpress.ps1. Para más información, consulte [Deploy a Software Defined Network infrastructure using scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts) (implementación de una infraestructura de red definida por software mediante scripts).
+>Este es un extracto de la sección **Configuration ConfigureIDns** en SDNExpress.ps1. Para más información, consulte [Deploy a Software Defined Network infrastructure using scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md) (implementación de una infraestructura de red definida por software mediante scripts).
 
 ### <a name="step-3-configure-the-idns-proxy-service"></a>Paso 3: configurar el servicio de proxy de IDN
 El servicio de proxy IDN se ejecuta en cada uno de los hosts de Hyper-V y proporciona el puente entre las redes virtuales de los inquilinos y la red física donde se encuentran los servidores de IDN. Las siguientes claves del registro deben crearse en cada host de Hyper-V.
@@ -149,7 +149,7 @@ El servicio de proxy IDN se ejecuta en cada uno de los hosts de Hyper-V y propor
 - ValueType = "cadena"
 
 >[!NOTE]
->Este es un extracto de la sección **Configuration ConfigureIDnsProxy** en SDNExpress.ps1. Para más información, consulte [Deploy a Software Defined Network infrastructure using scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts) (implementación de una infraestructura de red definida por software mediante scripts).
+>Este es un extracto de la sección **Configuration ConfigureIDnsProxy** en SDNExpress.ps1. Para más información, consulte [Deploy a Software Defined Network infrastructure using scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md) (implementación de una infraestructura de red definida por software mediante scripts).
 
 ### <a name="step-4-restart-the-network-controller-host-agent-service"></a>Paso 4: reiniciar el servicio del agente de host de la controladora de red
 Puede usar el siguiente comando de Windows PowerShell para reiniciar el servicio del agente de host de la controladora de red.
@@ -158,7 +158,7 @@ Puede usar el siguiente comando de Windows PowerShell para reiniciar el servicio
 Restart-Service nchostagent -Force
 ```
 
-Para obtener más información, vea [restart-Service](https://technet.microsoft.com/library/hh849823.aspx).
+Para obtener más información, vea [restart-Service](/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7).
 
 ### <a name="enable-firewall-rules-for-the-dns-proxy-service"></a>Habilitar reglas de Firewall para el servicio de proxy DNS
 Puede usar el siguiente comando de Windows PowerShell para crear una regla de firewall que permita que las excepciones del proxy se comuniquen con la máquina virtual y el servidor IDN.
@@ -167,12 +167,12 @@ Puede usar el siguiente comando de Windows PowerShell para crear una regla de fi
 Enable-NetFirewallRule -DisplayGroup 'DNS Proxy Firewall'
 ```
 
-Para obtener más información, vea [enable-NetFirewallRule](https://technet.microsoft.com/library/jj554869.aspx).
+Para obtener más información, vea [enable-NetFirewallRule](/powershell/module/netsecurity/enable-netfirewallrule?view=winserver2012r2-ps).
 
 ### <a name="validate-the-idns-service"></a>Validar el servicio IDN
 Para validar el servicio IDN, debe implementar una carga de trabajo de inquilino de ejemplo.
 
-Para obtener más información, consulte [creación de una máquina virtual y conexión a un inquilino Virtual Network o VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm).
+Para obtener más información, consulte [creación de una máquina virtual y conexión a un inquilino Virtual Network o VLAN](../manage/create-a-tenant-vm.md).
 
 Si desea que la máquina virtual del inquilino use el servicio IDN, debe dejar en blanco la configuración del servidor DNS de las interfaces de red de la máquina virtual y permitir que las interfaces usen DHCP.
 
@@ -187,5 +187,4 @@ Cuando la máquina virtual inicia una consulta DNS, el proxy actúa como reenvia
 El proxy DNS también garantiza que las consultas de VM de inquilino estén aisladas. Si el servidor IDN es autoritativo para la consulta, el servidor de IDN responde con una respuesta autoritativa. Si el servidor IDN no es autoritativo para la consulta, realiza una recursividad DNS para resolver los nombres de Internet.
 
 >[!NOTE]
->Esta información se incluye en la sección **Configuration AttachToVirtualNetwork** en SDNExpressTenant.ps1. Para más información, consulte [Deploy a Software Defined Network infrastructure using scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts) (implementación de una infraestructura de red definida por software mediante scripts).
-
+>Esta información se incluye en la sección **Configuration AttachToVirtualNetwork** en SDNExpressTenant.ps1. Para más información, consulte [Deploy a Software Defined Network infrastructure using scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md) (implementación de una infraestructura de red definida por software mediante scripts).

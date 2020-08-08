@@ -7,18 +7,18 @@ ms.assetid: 623b7c21-dcbb-402e-8b5a-8e434cd225bd
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 2956bd47bb2c4ac538b3b9828a6e5cdcef739eff
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8e1f1249ac3670a550e70cc09a9862306fd85658
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970502"
+ms.locfileid: "87995952"
 ---
 # <a name="join-the-multipoint-services-computer-to-a-domain-optional"></a>Unir el equipo de Multipoint Services a un dominio (opcional)
 Si va a tener acceso al equipo de Multipoint Services a través de un dominio de Active Directory, el paso siguiente consiste en agregar el equipo al dominio.
 
 > [!IMPORTANT]
-> Debe comprobar la zona horaria antes de unir el equipo a un dominio. Para obtener instrucciones, vea [establecer la fecha, la hora y la zona horaria](Set-the-date--time--and-time-zone.md).
+> Debe comprobar la zona horaria antes de unir el equipo a un dominio. Para obtener instrucciones, vea [establecer la fecha, la hora y la zona horaria](./set-the-date-time.md).
 
 1.  En la pantalla **Inicio**, abra el **Panel de control**. Haga clic en **sistema y seguridad**y, a continuación, en **sistema**.
 

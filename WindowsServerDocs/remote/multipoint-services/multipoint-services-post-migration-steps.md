@@ -2,18 +2,16 @@
 title: 'Multipoint Services: tareas posteriores a la migración'
 description: Obtenga información sobre cómo validar y cerrar la migración a multipoint Services
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 1497cae0-071e-467d-89b8-a7050815d7de
 author: lizap
 manager: dongill
-ms.openlocfilehash: a1d304e95037ad67a8d4f02e1dc17ec3e0485ed8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ed3937cd6830de642c21616071e86eca3ad6cd5b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858898"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969252"
 ---
 # <a name="multipoint-services---post-migration-tasks"></a>Multipoint Services: tareas posteriores a la migración
 
@@ -25,7 +23,7 @@ Después de migrar a multipoint Services en Windows Server 2016, use la siguient
 
 Puede validar la migración de Multipoint Services mediante la creación de un proyecto piloto en el entorno de producción. Ejecute el proyecto piloto en los servidores antes de poner los servicios de rol migrados en producción para comprobar que la implementación funciona como se espera. Considere la posibilidad de limitar el número de conexiones al principio, lo que aumenta lentamente el número de usuarios que acceden a multipoint Services.
 
-> [!NOTE] 
+> [!NOTE]
 > Use siempre las cuentas de prueba para probar la migración. Use una cuenta con privilegios de administrador y una cuenta para un usuario válido.
 
 ## <a name="retire-the-source-server"></a>Retirar el servidor de origen

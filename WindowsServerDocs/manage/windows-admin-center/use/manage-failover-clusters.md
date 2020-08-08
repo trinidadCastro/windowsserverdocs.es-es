@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a0b9c0e43d1573a52f69454ce05dd7a1c281510e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e181e52c2e461d6f1ef00f72684b8228cf9889d1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964421"
+ms.locfileid: "87995982"
 ---
 # <a name="manage-failover-clusters-with-windows-admin-center"></a>Administrar clústeres de conmutación por error con el centro de administración de Windows
 
@@ -22,7 +22,7 @@ ms.locfileid: "87964421"
 > [Descargue u obtenga más información sobre el centro de administración de Windows](../overview.md).
 
 ## <a name="managing-failover-clusters"></a>Administración de clústeres de conmutación por error
-Los [clústeres de conmutación por error](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview) son una característica de Windows Server que permite agrupar varios servidores en un clúster tolerante a errores para aumentar la disponibilidad y la escalabilidad de aplicaciones y servicios, como servidor de archivos de escalabilidad horizontal, Hyper-V y Microsoft SQL Server.
+Los [clústeres de conmutación por error](../../../failover-clustering/failover-clustering-overview.md) son una característica de Windows Server que permite agrupar varios servidores en un clúster tolerante a errores para aumentar la disponibilidad y la escalabilidad de aplicaciones y servicios, como servidor de archivos de escalabilidad horizontal, Hyper-V y Microsoft SQL Server.
 
 Aunque puede administrar los nodos del clúster de conmutación por error como servidores individuales agregándolos como [conexiones del servidor](manage-servers.md) en el centro de administración de Windows, también puede agregarlos como clústeres de conmutación por error para ver y administrar los recursos del clúster, el almacenamiento, la red, los nodos, los roles, las máquinas virtuales y los conmutadores virtuales.
 

@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: e8077655717db3f6700b0e0a3d12792465b41299
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8fb0bb3596635a7879b7fff784ced977043f1d5c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939776"
+ms.locfileid: "87996431"
 ---
 # <a name="deploying-the-host-guardian-service"></a>Implementación del servicio de protección de host
 
@@ -37,13 +37,13 @@ En la tabla siguiente se desglosan las tareas para implementar un tejido protegi
 | 6- [crear clave de host (clave)](guarded-fabric-create-host-key.md) y[recopilar información de host (TPM)](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md) | ![Paso 6, creación de la clave de host y recopilación de información de host](../media/Guarded-Fabric-Shielded-VM/guarded-host-collect-info-from-hosts.png) |
 | 7- [configuración de HGS con información de host](guarded-fabric-add-host-information-to-hgs.md) | ![Paso 7, agregar información de host a HGS](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-hgs-with-host-info.png) |
 | 8- [confirmar que los hosts pueden atestiguar](guarded-fabric-confirm-hosts-can-attest-successfully.md) | ![Paso 8, confirmar que el host puede atestiguar](../media/Guarded-Fabric-Shielded-VM/guarded-host-confirm-hosts-attest.png) |
-| 9- [configuración de VMM (opcional)](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview) | ![Paso 9, configuración de VMM (opcional)](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-vmm.png) |
+| 9- [configuración de VMM (opcional)](/system-center/vmm/deploy-guarded-host-fabric?view=sc-vmm-2019) | ![Paso 9, configuración de VMM (opcional)](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-vmm.png) |
 | 10- [creación de discos de plantilla](guarded-fabric-create-a-shielded-vm-template.md) | ![Paso 10, creación de discos de plantilla](../media/Guarded-Fabric-Shielded-VM/guarded-host-create-template-disk.png) |
 | 11- [creación de un disco auxiliar de blindaje de máquina virtual para VMM (opcional)](guarded-fabric-vm-shielding-helper-vhd.md) | ![Paso 11, creación de un disco de ayuda de blindaje de máquina virtual para VMM](../media/Guarded-Fabric-Shielded-VM/guarded-host-create-helper-disk.png) |
 | 12- [configurar Windows Azure Pack (opcional)](guarded-fabric-shielded-vm-windows-azure-pack.md) | ![Paso 12, configuración de Windows Azure Pack (opcional)](../media/Guarded-Fabric-Shielded-VM/guarded-host-windows-azure-pack.png) |
 | 13- [creación](guarded-fabric-tenant-creates-shielding-data.md) de un archivo de datos de blindaje | ![Paso 13, creación de un archivo de datos de blindaje](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielding-data-file.png) |
 | 14- [creación de máquinas virtuales blindadas mediante Windows Azure Pack](guarded-fabric-shielded-vm-windows-azure-pack.md) | ![Paso 14, creación de máquinas virtuales blindadas mediante Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
-| 15- [creación de máquinas virtuales blindadas con VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-vms) | ![Paso 15, creación de máquinas virtuales blindadas con VMM](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
+| 15- [creación de máquinas virtuales blindadas con VMM](/system-center/vmm/guarded-deploy-vm?view=sc-vmm-2019) | ![Paso 15, creación de máquinas virtuales blindadas con VMM](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
 
 ## <a name="additional-references"></a>Referencias adicionales
 

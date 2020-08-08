@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4a86b2571ab586bf2289ba263346a791ea28b02e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b81d59a350f5549cdb83af7299b8636fb917cc24
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943885"
+ms.locfileid: "87996091"
 ---
 # <a name="ntlm-overview"></a>NTLM Overview
 
@@ -30,7 +30,7 @@ La autenticación NTLM es una familia de protocolos de autenticación que se inc
 ## <a name="current-applications"></a><a name="BKMK_APP"></a>Aplicaciones actuales
 La autenticación NTLM aún se admite y se debe usar para la autenticación de Windows con sistemas configurados como miembros de un grupo de trabajo. La autenticación NTLM también se usa para la autenticación de inicio de sesión local en controladores que no son de \- dominio. La autenticación Kerberos versión 5 es el método de autenticación preferido para entornos Active Directory, pero una aplicación que no es de \- Microsoft o Microsoft podría seguir usando NTLM.
 
-Reducir el uso del protocolo NTLM en un entorno de TI requiere el conocimiento de los requisitos de la aplicación implementada en NTLM y las estrategias y los pasos necesarios para configurar entornos informáticos para usar otros protocolos. Se han agregado nuevas herramientas y opciones para ayudarle a descubrir cómo se usa NTLM para restringir de forma selectiva el tráfico NTLM. Para obtener información sobre cómo analizar y restringir el uso de NTLM en sus entornos, vea [Introducción a la restricción de la autenticación NTLM](https://technet.microsoft.com/library/dd560653(v=ws.10).aspx) para tener acceso a la Guía de auditoría y restricción del uso de NTLM.
+Reducir el uso del protocolo NTLM en un entorno de TI requiere el conocimiento de los requisitos de la aplicación implementada en NTLM y las estrategias y los pasos necesarios para configurar entornos informáticos para usar otros protocolos. Se han agregado nuevas herramientas y opciones para ayudarle a descubrir cómo se usa NTLM para restringir de forma selectiva el tráfico NTLM. Para obtener información sobre cómo analizar y restringir el uso de NTLM en sus entornos, vea [Introducción a la restricción de la autenticación NTLM](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10)) para tener acceso a la Guía de auditoría y restricción del uso de NTLM.
 
 ## <a name="new-and-changed-functionality"></a><a name="BKMK_NEW"></a>Funcionalidad nueva y modificada
 No hay ningún cambio en la funcionalidad de NTLM para Windows Server 2012.
@@ -46,12 +46,9 @@ En la tabla siguiente, se enumeran los recursos relevantes para NTLM y otras tec
 
 |Tipo de contenido|Referencias|
 |--------|-------|
-|**Evaluación del producto**|[Introducción a la restricción de la autenticación NTLM](https://technet.microsoft.com/library/dd560653.aspx)<p>[Cambios en la autenticación NTLM](https://technet.microsoft.com/library/dd566199.aspx)|
-|**Planeamiento**|[Guía de modelado de amenazas de infraestructura de TI](https://technet.microsoft.com/library/dd941826.aspx)<p>[Amenazas y contramedidas: configuración de seguridad en Windows Server 2003 y Windows Vista](https://technet.microsoft.com/library/dd162275.aspx)<p>[Guía de amenazas y contramedidas: Configuración de seguridad en Windows Server 2008 y Windows Vista](https://technet.microsoft.com/library/dd349791.aspx)<p>[Guía de amenazas y contramedidas: Configuración de seguridad en Windows Server 2008 R2 y Windows 7](https://technet.microsoft.com/library/hh125921.aspx)|
-|**Implementación**|[Protección ampliada para la autenticación](https://support.microsoft.com/kb/968389)<p>[Guía de auditoría y restricción del uso de NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)<p>[Pregunte al Equipo de Servicios de directorio Bloqueo de NTLM y usted: metodologías de análisis y auditoría de la aplicación en Windows 7](https://blogs.technet.com/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx)<p>[Blog de autenticación de Windows](https://blogs.technet.com/authentication/)<p>[Configuración de MaxConcurrentAPI para la autenticación de paso a través de NTLM](https://support.microsoft.com/help/2688798/how-to-do-performance-tuning-for-ntlm-authentication-by-using-the-maxc)|
-|**Desarrollo**|[Microsoft NTLM \( Windows\)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)<p>[\[MS \- NLMP \] : \( especificación del Protocolo de autenticación NTLM de NT LAN Manager \)](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<p>[\[MS \- NNTP \] : NT LAN Manager \( NTLM \) autenticación: \( extensión NNTP de protocolo de transferencia de noticias de red \)](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<p>[\[\-Especificación del protocolo MS NTHT \] : NTLM sobre http](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
+|**Evaluación del producto**|[Introducción a la restricción de la autenticación NTLM](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10))<p>[Cambios en la autenticación NTLM](/previous-versions/windows/it-pro/windows-7/dd566199(v=ws.10))|
+|**Planeamiento**|[Guía de modelado de amenazas de infraestructura de TI](/previous-versions/tn-archive/dd941826(v=technet.10))<p>[Amenazas y contramedidas: configuración de seguridad en Windows Server 2003 y Windows Vista](/previous-versions/tn-archive/dd162275(v=technet.10))<p>[Guía de amenazas y contramedidas: Configuración de seguridad en Windows Server 2008 y Windows Vista](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349791(v=ws.10))<p>[Guía de amenazas y contramedidas: Configuración de seguridad en Windows Server 2008 R2 y Windows 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125921(v=ws.10))|
+|**Implementación**|[Protección ampliada para la autenticación](https://support.microsoft.com/kb/968389)<p>[Guía de auditoría y restricción del uso de NTLM](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/jj865674(v=ws.10))<p>[Pregunte al Equipo de Servicios de directorio Bloqueo de NTLM y usted: metodologías de análisis y auditoría de la aplicación en Windows 7](https://blogs.technet.com/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx)<p>[Blog de autenticación de Windows](https://blogs.technet.com/authentication/)<p>[Configuración de MaxConcurrentAPI para la autenticación de paso a través de NTLM](https://support.microsoft.com/help/2688798/how-to-do-performance-tuning-for-ntlm-authentication-by-using-the-maxc)|
+|**Desarrollo**|[Microsoft NTLM \( Windows\)](/windows/win32/secauthn/microsoft-ntlm)<p>[\[MS \- NLMP \] : \( especificación del Protocolo de autenticación NTLM de NT LAN Manager \)](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<p>[\[MS \- NNTP \] : NT LAN Manager \( NTLM \) autenticación: \( extensión NNTP de protocolo de transferencia de noticias de red \)](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<p>[\[\-Especificación del protocolo MS NTHT \] : NTLM sobre http](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
 |**Solución de problemas**|No disponible todavía|
 |**Recursos de la comunidad**|[Entrada de blog sobre cuellos de botella de NTLM y el tiempo de ejecución de RPC](https://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|
-
-
-

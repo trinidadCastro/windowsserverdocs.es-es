@@ -7,12 +7,12 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 060194959f80c9d2a6d174910b0264c58214373b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 051518873bd028e8b1253b9bf7cb17dcff344d0d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964091"
+ms.locfileid: "87996593"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>Requisitos para implementar la controladora de red
 
@@ -102,7 +102,7 @@ Por último, lo siguiente que desea hacer es implementar nodos de clúster de co
 
 ### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>Paso 4. Configurar el nombre de entidad de seguridad de servicio si se usa la autenticación basada en Kerberos
 
-Si la controladora de red usa la autenticación basada en Kerberos para la comunicación con los clientes de administración, debe configurar un nombre de entidad de seguridad de servicio (SPN) para la controladora de red en Active Directory. La controladora de red configura automáticamente el SPN. Lo único que debe hacer es proporcionar permisos para que los equipos de la controladora de red registren y modifiquen el SPN. Para obtener más información, consulte [configurar nombres principales de servicio (SPN)](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn).
+Si la controladora de red usa la autenticación basada en Kerberos para la comunicación con los clientes de administración, debe configurar un nombre de entidad de seguridad de servicio (SPN) para la controladora de red en Active Directory. La controladora de red configura automáticamente el SPN. Lo único que debe hacer es proporcionar permisos para que los equipos de la controladora de red registren y modifiquen el SPN. Para obtener más información, consulte [configurar nombres principales de servicio (SPN)](../security/kerberos-with-spn.md#configure-service-principal-names-spn).
 
 ## <a name="deployment-options"></a>Opciones de implementación
 
@@ -129,7 +129,7 @@ Hay tres máquinas virtuales de puerta de enlace; dos están activos y uno es re
 
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Planear una infraestructura de red definida por software](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure).
+[Planear una infraestructura de red definida por software](./plan-a-software-defined-network-infrastructure.md).
 
 ## <a name="related-topics"></a>Temas relacionados
 - [Controladora de red](../technologies/network-controller/Network-Controller.md)

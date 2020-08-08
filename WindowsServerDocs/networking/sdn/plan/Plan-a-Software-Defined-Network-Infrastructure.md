@@ -7,12 +7,12 @@ ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 60ba3ea51bf958f2cc5fa598e4f1323bd5631a80
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1930ee8d74a1aa99b5c94df19e572d382144e604
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962179"
+ms.locfileid: "87996555"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>Planeación de una infraestructura de red definida por software
 
@@ -243,7 +243,7 @@ Role|requisitos de vCPU|Requisitos de memoria|Requisitos de disco|
 |Enrutador BGP de puerta de enlace RAS para emparejamiento de SLB/MUX<p>(también puede usar el modificador ToR como enrutador BGP)|2 vCPU|2 GB|75 GB para la unidad del sistema operativo|
 
 
-Si usa VMM para la implementación, se necesitan recursos de máquina virtual de infraestructura adicionales para VMM y otras infraestructuras que no son de SDN. Para obtener más información, consulte [recomendaciones mínimas de hardware para System Center Technical Preview.](https://technet.microsoft.com/library/dn997303.aspx)
+Si usa VMM para la implementación, se necesitan recursos de máquina virtual de infraestructura adicionales para VMM y otras infraestructuras que no son de SDN. Para obtener más información, consulte [recomendaciones mínimas de hardware para System Center Technical Preview.](/system-center/)
 
 ## <a name="extending-your-infrastructure"></a>Ampliación de la infraestructura
 Los requisitos de tamaño y recursos de la infraestructura dependen de las máquinas virtuales de carga de trabajo de inquilinos que planea hospedar. Los requisitos de CPU, memoria y disco para las máquinas virtuales de infraestructura (por ejemplo: controladora de red, SLB, puerta de enlace, etc.) se enumeran en la tabla anterior. Puede agregar más de estas máquinas virtuales de infraestructura para escalar horizontalmente según sea necesario. Sin embargo, las máquinas virtuales de inquilino que se ejecutan en los hosts de Hyper-V tienen sus propios requisitos de CPU, memoria y disco que se deben tener en cuenta.
@@ -253,7 +253,4 @@ Cuando las máquinas virtuales de carga de trabajo de inquilinos empiecen a cons
 
 ## <a name="see-also"></a>Consulte también
 [Requisitos de instalación y preparación para la implementación de la controladora](Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md) 
- de red [Redes definidas por Software &#40;SDN&#41;](../Software-Defined-Networking--SDN-.md)
-
-
-
+ de red [Redes definidas por Software &#40;SDN&#41;](../software-defined-networking.md)

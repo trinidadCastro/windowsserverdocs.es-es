@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 0aeb1f4b-2e75-430b-9557-fe64738c4992
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: be830780023ca07563d967f7d46f6c2db7749a68
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3ad031c548d4c8b945e47b06bf66e710d4c3c22e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948443"
+ms.locfileid: "87995763"
 ---
 # <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>Los servidores de réplica deben configurarse para identificar servidores principales específicos autorizados para enviar el tráfico de replicación.
 
@@ -81,7 +81,4 @@ New-VMReplicationAuthorizationEntry server01.domain01.contoso.com D:\ReplicaVMSt
 ```
 
 ## <a name="see-also"></a>Consulte también
-[New-VMReplicationAuthorizationEntry](https://technet.microsoft.com/library/hh848606.aspx)
-
-
-
+[New-VMReplicationAuthorizationEntry](/powershell/module/hyper-v/new-vmreplicationauthorizationentry?view=win10-ps)

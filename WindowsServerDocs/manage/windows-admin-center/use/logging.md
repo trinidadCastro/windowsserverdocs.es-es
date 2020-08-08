@@ -6,12 +6,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 615ecb6c34da980b1223b4ffc5da20c8e84cb9ea
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: addd9d4cf4516725ac8c59d84204cfeb2501e4b3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964431"
+ms.locfileid: "87996567"
 ---
 # <a name="use-event-logging-in-windows-admin-center-to-gain-insight-into-management-activities-and-track-gateway-usage"></a>Usar el registro de eventos en el centro de administración de Windows para obtener información sobre las actividades de administración y realizar un seguimiento del uso de la puerta
 
@@ -34,11 +34,11 @@ Los eventos registrados incluyen la siguiente información:
 | UserOnGateway | Nombre de usuario usado para tener acceso a la puerta de enlace del centro de administración de Windows y ejecutar la acción                    |
 | UserOnTarget  | Nombre de usuario que se usa para tener acceso al servidor administrado de destino, si es diferente del userOnGateway (es decir, el usuario al que se mediante el servidor con las credenciales de "administrar como") |
 | Delegación    | Booleano: Si el servidor administrado de destino confía en la puerta de enlace y las credenciales se delegan desde el equipo cliente del usuario             |
-| EXTINGUI          | Booleano: Si el usuario tuvo acceso al servidor mediante credenciales de [laps](https://technet.microsoft.com/mt227395.aspx)                          |
+| EXTINGUI          | Booleano: Si el usuario tuvo acceso al servidor mediante credenciales de [laps](/previous-versions/mt227395(v=msdn.10))                          |
 | Archivo          | nombre del archivo cargado, si la acción era una carga de archivos                                |
 
 ## <a name="learn-about-windows-admin-center-activity-with-event-logging"></a>Obtener información acerca de la actividad del centro de administración de Windows con registro de eventos
 
 El centro de administración de Windows registra la actividad de puerta de enlace en el canal de eventos del equipo de puerta de enlace para ayudarle a solucionar problemas y ver las métricas de uso. Estos eventos se registran en el canal **de eventos Microsoft-ServerManagementExperience** .
 
-[Más información sobre la solución de problemas del centro de administración de Windows.](troubleshooting.md)
+[Más información sobre la solución de problemas del centro de administración de Windows.](../support/troubleshooting.md)

@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 0bca5a7e78a663c535e1d727339c6dd9eb50704b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ad453c5581f966a2e21a5cd8b4ed1c9cb28fe9a8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957923"
+ms.locfileid: "87995895"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>Directivas de autenticación y silos de directivas de autenticación
 
@@ -28,7 +28,7 @@ Las capacidades introducidas en Windows Server 2012 R2 permiten crear silos de d
 
 Con estas funcionalidades, puedes limitar el uso de las cuentas valiosas a los hosts valiosos. Por ejemplo, podrías crear un nuevo silo Administradores del bosque que contiene los administradores de organización, de esquema y dominio. Después, podrías configurar el silo con una directiva de autenticación para que se produzca un error en la autenticación basada en contraseña y en tarjetas inteligentes de sistemas que no sean controladores de dominio o administradores de dominio.
 
-Para obtener información sobre cómo configurar los silos de directivas de autenticación, consulta [Configurar cuentas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
+Para obtener información sobre cómo configurar los silos de directivas de autenticación, consulta [Configurar cuentas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md).
 
 ### <a name="about-authentication-policy-silos"></a>Acerca de los silos de directivas de autenticación
 Un silo de directivas de autenticación controla qué cuentas puede restringir el silo y define las directivas de autenticación que se aplicarán a los miembros. Puedes crear el silo según los requisitos de tu organización. Los silos son objetos de Active Directory para usuarios, equipos y servicios tal y como se definen en el esquema de la siguiente tabla.
@@ -44,7 +44,7 @@ Un silo de directivas de autenticación controla qué cuentas puede restringir e
 |Authentication Policy Silo Members|Especifica qué entidades de seguridad se asignan al AuthNPolicySilo.|
 |Authentication Policy Silo Members Backlink|Este atributo es el vínculo de retroceso de msDS-AuthNPolicySiloMembers.|
 
-Los silos de directivas de autenticación se pueden configurar mediante la Consola de administración de Active Directory o Windows PowerShell. Para obtener más información, consulta [Configurar cuentas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
+Los silos de directivas de autenticación se pueden configurar mediante la Consola de administración de Active Directory o Windows PowerShell. Para obtener más información, consulta [Configurar cuentas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md).
 
 ### <a name="about-authentication-policies"></a>Acerca de las directivas de autenticación
 Una directiva de autenticación define las propiedades de vigencia del vale de concesión de vales (TGT) del protocolo Kerberos y las condiciones de control de acceso de autenticación para un tipo de cuenta. La directiva se crea sobre el contenedor de AD DS conocido como silo de directivas de autenticación y lo controla.
@@ -104,7 +104,7 @@ En el esquema de la siguiente tabla se definen las directivas para objetos de Ac
 |Servicio|ms-DS-Service-Allowed-To-Authenticate-From|Este atributo se usa para determinar el conjunto de dispositivos en los que una cuenta de servicio tiene permiso para iniciar sesión.|
 |Servicio|Service TGT Lifetime|Especifica el tiempo máximo de un TGT de Kerberos emitido a un servicio (expresado en segundos).|
 
-Las directivas de autenticación se pueden configurar para cada silo mediante la Consola de administración de Active Directory o Windows PowerShell. Para obtener más información, consulta [Configurar cuentas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
+Las directivas de autenticación se pueden configurar para cada silo mediante la Consola de administración de Active Directory o Windows PowerShell. Para obtener más información, consulta [Configurar cuentas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md).
 
 ## <a name="how-it-works"></a>Funcionamiento
 En esta sección se describe cómo funcionan los silos de directivas de autenticación y las directivas de autenticación junto con el grupo de seguridad Usuarios protegidos y la implementación del protocolo Kerberos en Windows.
@@ -133,9 +133,9 @@ Para obtener más información sobre este grupo de seguridad, consulta [Cómo fu
 
 Los silos de directivas de autenticación y las directivas de autenticación aprovechan la infraestructura de autenticación de Windows existente. Se rechaza el uso del protocolo NTLM y se usa el protocolo Kerberos con nuevos tipos de cifrado. Las directivas de autenticación complementan el grupo de seguridad Usuarios protegidos porque proporcionan una manera de aplicar restricciones configurables a las cuentas, además de restricciones a las cuentas de servicios y equipos. Las directivas de autenticación se aplican durante el intercambio del servicio de autenticación (AS) o del servicio de concesión de vales (TGS) del protocolo Kerberos. Para obtener más información sobre cómo usa Windows el protocolo Kerberos y qué cambios se han realizado para admitir silos de directivas de autenticación y directivas de autenticación, consulta:
 
--   [Funcionamiento del protocolo de autenticación Kerberos, versión 5](https://technet.microsoft.com/library/cc772815(v=ws.10).aspx)
+-   [Funcionamiento del protocolo de autenticación Kerberos, versión 5](/previous-versions/windows/it-pro/windows-server-2003/cc772815(v=ws.10))
 
--   [Cambios en la autenticación Kerberos](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) (Windows Server 2008 R2 y Windows 7)
+-   [Cambios en la autenticación Kerberos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560670(v=ws.10)) (Windows Server 2008 R2 y Windows 7)
 
 ### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>Cómo se usa el protocolo Kerberos con los silos de directivas de autenticación y las directivas de autenticación
 Cuando una cuenta de dominio se vincula a un silo de directivas de autenticación y el usuario inicia sesión, el Administrador de cuentas de seguridad agrega el tipo de notificación Silo de directivas de autenticación que incluye el silo como valor. Esta notificación en la cuenta proporciona acceso al silo de destino.
@@ -162,7 +162,7 @@ Cuando una directiva de autenticación está en modo auditoría y el controlador
 
 Puedes usar una única directiva de autenticación para todos los miembros de un silo, o puedes usar directivas diferentes para usuarios, equipos y cuentas de servicio administradas.
 
-Las directivas de autenticación se pueden configurar para cada silo mediante la Consola de administración de Active Directory o Windows PowerShell. Para obtener más información, consulta [Configurar cuentas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
+Las directivas de autenticación se pueden configurar para cada silo mediante la Consola de administración de Active Directory o Windows PowerShell. Para obtener más información, consulta [Configurar cuentas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md).
 
 ### <a name="how-restricting-a-user-sign-in-works"></a><a name="BKMK_HowRestrictingSignOn"></a>Cómo funciona la restricción del inicio de sesión de un usuario
 Como estas directivas de autenticación se aplican a una cuenta, también se aplican a las cuentas que usan los servicios. Si quieres limitar el uso de una contraseña para un servicio a hosts específicos, esta configuración resulta útil. Por ejemplo, se configuran cuentas de servicio administradas de grupo para que los hosts tengan permiso para recuperar la contraseña de Active Directory Domain Services. Sin embargo, esa contraseña se puede usar desde cualquier host para la autenticación inicial. Se puede lograr un nivel adicional de protección aplicando una condición de control de acceso que limite la contraseña a tan solo el conjunto de hosts que pueden recuperar la contraseña.
@@ -224,7 +224,7 @@ En la tabla siguiente se describen los eventos asociados con el grupo de segurid
 
 Los eventos se registran en los registros de aplicaciones y servicios en **Microsoft\Windows\Authentication**.
 
-Para ver los pasos que usan estos eventos para solucionar problemas, consulta [Solución de problemas de directivas de autenticación](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts#troubleshoot-authentication-policies) y [Solución de problemas de eventos relativos a Usuarios protegidos](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts#troubleshoot-events-related-to-protected-users).
+Para ver los pasos que usan estos eventos para solucionar problemas, consulta [Solución de problemas de directivas de autenticación](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md#BKMK_CreateAuthNPolicies) y [Solución de problemas de eventos relativos a Usuarios protegidos](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md#BKMK_TrubleshootingEvents).
 
 |Identificador de evento y registro|Descripción|
 |----------|--------|
@@ -235,10 +235,8 @@ Para ver los pasos que usan estos eventos para solucionar problemas, consulta [S
 |306<p>**AuthenticationPolicyFailures-DomainController**|Motivo: Se podría producir un error de restricción Kerberos porque el usuario o dispositivo no están autorizados a autenticarse en el servidor.<p>En el modo de auditoría, se registra un evento informativo en el controlador de dominio para indicar que se denegará un vale de servicio de Kerberos porque el usuario, el dispositivo o ambos no cumplen las restricciones de control de acceso.<p>Muestra los nombres de dispositivo, directiva y silo.|
 
 ## <a name="additional-references"></a>Referencias adicionales
-[Cómo configurar cuentas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)
+[Cómo configurar cuentas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)
 
 [Protección y administración de credenciales](credentials-protection-and-management.md)
 
 [Grupo de seguridad Usuarios protegidos](protected-users-security-group.md)
-
-

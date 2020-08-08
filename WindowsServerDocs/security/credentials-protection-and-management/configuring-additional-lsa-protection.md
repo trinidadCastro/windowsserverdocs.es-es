@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 78533908de1a1f43cbfac9054dcfe6ec83edce9d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bfb40249dffa08e1c05aa1dc7cbc26fad6f7885d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948758"
+ms.locfileid: "87995887"
 ---
 # <a name="configuring-additional-lsa-protection"></a>Configuración de protección LSA adicional
 
@@ -29,13 +29,13 @@ Para que un complemento o un controlador de LSA se cargue correctamente como pro
 
     El modo protegido requiere que todos los complementos que se carguen en LSA estén firmados digitalmente mediante una firma de Microsoft. Por consiguiente, todos los complementos no firmados o que no tengan una firma de Microsoft no se cargarán en LSA. Algunos ejemplos de estos complementos son los controladores de tarjetas inteligentes, los complementos de cifrado y los filtros de contraseña.
 
-    Los complementos de LSA que sean controladores, como los controladores de tarjetas inteligentes, tienen que estar firmados con la certificación de WHQL. Para obtener más información, vea [firma de versión de WHQL](https://msdn.microsoft.com/library/windows/hardware/ff553976%28v=vs.85%29.aspx).
+    Los complementos de LSA que sean controladores, como los controladores de tarjetas inteligentes, tienen que estar firmados con la certificación de WHQL. Para obtener más información, vea [firma de versión de WHQL](/windows-hardware/drivers/install/whql-release-signature).
 
     Los complementos de LSA que no tengan un proceso de certificación de WHQL deben estar firmados con el [servicio de firma de archivos para LSA](https://go.microsoft.com/fwlink/?LinkId=392590).
 
 2.  Adhesión a la orientación del proceso de ciclo de vida de desarrollo de seguridad (SDL) de Microsoft
 
-    Todos los complementos deben estar en conformidad con la orientación del proceso SDL aplicable. Para obtener más información, consulte el [apéndice del ciclo de vida de desarrollo de seguridad (SDL) de Microsoft](https://msdn.microsoft.com/library/windows/desktop/cc307891.aspx).
+    Todos los complementos deben estar en conformidad con la orientación del proceso SDL aplicable. Para obtener más información, consulte el [apéndice del ciclo de vida de desarrollo de seguridad (SDL) de Microsoft](/previous-versions/windows/desktop/cc307891(v=msdn.10)).
 
     Incluso aunque los complementos estén debidamente firmados con una firma de Microsoft, la no conformidad con el proceso SDL puede generar errores al cargar un complemento.
 
@@ -180,7 +180,7 @@ Puedes utilizar los procedimientos siguientes para habilitar o deshabilitar la p
 
     Para obtener más información acerca de la herramienta de cancelación, consulte la información acerca de la [descarga de la herramienta de cancelación de procesos protegidos de autoridad de seguridad local (LSA) desde el Centro de descarga de Microsoft oficial](https://www.microsoft.com/download/details.aspx?id=40897).
 
-    Para obtener más información acerca de la administración del arranque de seguridad, consulte [Firmware UEFI](https://technet.microsoft.com/library/hh824898.aspx).
+    Para obtener más información acerca de la administración del arranque de seguridad, consulte [Firmware UEFI](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824898(v=win.10)).
 
     > [!WARNING]
     > Cuando el arranque seguro está desactivado, todas las configuraciones relacionadas con el arranque seguro y UEFI se restablecen. Debes desactivar el arranque seguro únicamente cuando hayan fallado todos los demás medios de deshabilitación de la protección LSA.
@@ -194,5 +194,3 @@ Para averiguar si LSA se ha iniciado en modo protegido cuando se ha iniciado Win
 [Protección y administración de credenciales](credentials-protection-and-management.md)
 
 [Servicio de firma de archivos para LSA](https://go.microsoft.com/fwlink/?LinkId=392590)
-
-
