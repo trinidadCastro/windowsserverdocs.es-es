@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4358f48b2373ee0c521c3970c4cb235a0d19dfca
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 61961acf9fc1c858fddb4da70b4899e229ec6a3d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519042"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956982"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administración simplificada de AD DS
 
@@ -113,7 +111,7 @@ Para obtener más información sobre la replicación y la topología de sitio de
 
 Active Directory de Windows 2000 introdujo el maestro RID, que emite grupos de identificadores relativos para controladores de dominio, con el fin de crear identificadores de seguridad (SID) de elementos de confianza de seguridad, como usuarios, grupos y equipos.  De manera predeterminada, este espacio global de RID se limita a 2<sup>30</sup> (o 1.073.741.823) SID totales creados en un dominio. Los SID no pueden regresar al grupo o volver a emitirse. Con el paso del tiempo, los RID podrían empezar a escasear en un dominio grande, o podrían producirse accidentes que conllevaran la disminución innecesaria de los RID y su agotamiento final.
 
-Windows Server 2012 aborda una serie de problemas de emisión y administración de RID que descubrieron los clientes y el Servicio de soporte al cliente de Microsoft a medida que AD DS se iban desarrollando desde la creación de los primeros dominios de Active Directory en 1999. Se incluyen los siguientes:
+Windows Server 2012 aborda una serie de problemas de emisión y administración de RID que descubrieron los clientes y el Servicio de soporte al cliente de Microsoft a medida que AD DS se iban desarrollando desde la creación de los primeros dominios de Active Directory en 1999. Estas incluyen:
 
 - Las advertencias de consumo de RID periódico se escriben en el registro de eventos
 - Los eventos se registran cuando un administrador invalida un grupo de RID

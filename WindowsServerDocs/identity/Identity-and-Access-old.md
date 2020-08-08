@@ -6,15 +6,13 @@ ms.author: billmath
 manager: femila
 ms.date: 03/16/2018
 ms.topic: article
-ms.prod: windows-server
 ms.localizationpriority: medium
-ms.technology: identity-adds
-ms.openlocfilehash: 971622f0680d1a1b864a1f98332bc836dbdc3b00
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 92584ba048791df5de3e525ee7d5456e1a44f3e7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965667"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965182"
 ---
 # <a name="identity-and-access-in-windows-server-2016"></a>Identidad y acceso en Windows Server 2016
 
@@ -27,10 +25,10 @@ ms.locfileid: "86965667"
 
 
 ## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>[Novedades en Servicios de federación de Active Directory (AD FS) para Windows Server 2016](ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)
-Información general de todas las nuevas características disponibles para AD FS en Windows Server 2016.  
+Información general de todas las nuevas características disponibles para AD FS en Windows Server 2016.
 
 ## <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>[Novedades de Active Directory Domain Services para Windows Server 2016](whats-new-active-directory-domain-services.md)
-Muestra todas las nuevas características disponibles para AD DS en Windows Server 2016.  
+Muestra todas las nuevas características disponibles para AD DS en Windows Server 2016.
 
 ## <a name="privileged-access-management-for-active-directory-domain-services-40ad-ds41"></a>[Privileged Access Management para Active Directory Domain Services &#40;AD DS&#41;](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 Privileged Access Management (PAM) para Active Directory Domain Services (AD DS) es una solución basada en Microsoft Identity Manager (MIM) y Windows Server 2012 R2 y Windows Server 2016.
@@ -42,10 +40,10 @@ Windows 10 te posibilita sacar provecho de Azure Active Directory. Los dispositi
 Documentación detallada sobre todas las características disponibles para AD DS en Windows Server 2016.
 
 ## <a name="active-directory-federation-services"></a>[Servicios de federación de Active Directory](Active-Directory-Federation-Services.md)
-Documentación detallada sobre todas las características disponibles para AD FS en Windows Server 2016.  
+Documentación detallada sobre todas las características disponibles para AD FS en Windows Server 2016.
 
-## <a name="solutions-and-scenario-guides"></a>Guías de soluciones y situaciones  
-* [Acceso seguro a los recursos de la compañía desde cualquier ubicación y dispositivo](/previous-versions/windows/it-pro/solutions-guidance/dn550982(v=ws.11))  
-*  [Unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía](./ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)  
-* [Administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales](./ad-fs/operations/manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications.md)  
+## <a name="solutions-and-scenario-guides"></a>Guías de soluciones y situaciones
+* [Acceso seguro a los recursos de la compañía desde cualquier ubicación y dispositivo](/previous-versions/windows/it-pro/solutions-guidance/dn550982(v=ws.11))
+*  [Unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía](./ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)
+* [Administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales](./ad-fs/operations/manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications.md)
 * [Administración de riesgos con control de acceso condicional](./ad-fs/operations/manage-risk-with-conditional-access-control.md)

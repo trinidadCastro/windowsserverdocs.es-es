@@ -1,20 +1,18 @@
 ---
 title: Trabajar con dispositivos USB
 description: Obtenga información sobre cómo funcionan los dispositivos USB con Multipoint Services
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: a33f2b83-bbc2-4fc1-8a94-aaa985dfe1f9
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 9c434bd415b19d4072a327c6a38bec32f00a5d88
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4ba0828d986098c551a59439fe2ca496b43485e3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517640"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948988"
 ---
 # <a name="work-with-usb-devices"></a>Trabajar con dispositivos USB
 
@@ -30,7 +28,7 @@ En la tabla de abajo se muestra una lista de dispositivos y su comportamiento, e
 
 | **Dispositivo** | **Comportamiento cuando se conecta directamente al equipo** | **Comportamiento cuando se conecta a una estación** | **Notas** |
 |--|--|--|--|
-| Teclado | No se recomienda conectar un teclado directamente al equipo. | Accesible únicamente al usuario de la estación. | Si el teclado cuenta con un puerto USB, el concentrador USB del interior del teclado puede ser el concentrador de estaciones. Otros dispositivos USB conectados a ese puerto solo están disponibles para el usuario que usa el teclado.<p>Algunos concentradores de estaciones están equipados con un puerto de mouse PS\/2 que se convierte en una conexión USB dentro del concentrador. |
+| Keyboard | No se recomienda conectar un teclado directamente al equipo. | Accesible únicamente al usuario de la estación. | Si el teclado cuenta con un puerto USB, el concentrador USB del interior del teclado puede ser el concentrador de estaciones. Otros dispositivos USB conectados a ese puerto solo están disponibles para el usuario que usa el teclado.<p>Algunos concentradores de estaciones están equipados con un puerto de mouse PS\/2 que se convierte en una conexión USB dentro del concentrador. |
 | Mouse | No se recomienda conectar un mouse directamente al equipo. | Accesible únicamente al usuario de la estación. | Algunos concentradores de estaciones están equipados con un puerto de mouse PS\/2 que se convierte en una conexión USB dentro del concentrador. |
 | Concentrador USB | Consulte [trabajar con concentradores de estaciones](#working-with-station-hubs). | Consulte [trabajar con concentradores de estaciones](#working-with-station-hubs). |  |
 | Monitor de vídeo | Consulte [dispositivos de vídeo de Multipoint Services](work-with-video-devices.md). | Consulte [dispositivos de vídeo de Multipoint Services](work-with-video-devices.md). |  |

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ce9bddbc9b03a9019860e9b831bb928326098b76
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a7cb3a037d074fc4a61e6c805bca181316643bb3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965957"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956682"
 ---
 # <a name="using-an-azure-ad-ux-web-theme-in-active-directory-federation-services"></a>Usar un tema Web de Azure AD UX en Servicios de federación de Active Directory (AD FS)
 En la actualidad, el inicio de sesión de formularios AD FS no refleja la experiencia de inicio de sesión de Azure/O365.  Para proporcionar una experiencia más uniforme y sin problemas a los usuarios finales, hemos publicado el siguiente tema Web de hoja de estilos en cascada que se puede aplicar a los servidores de AD FS.  Actualmente, el inicio de sesión de formularios para AD FS en Windows Server 2016 tiene el siguiente aspecto:
@@ -48,13 +46,13 @@ Descripción | Restricciones | Recomendaciones
 ------- | ------- | ----------
 El logotipo se muestra en la parte superior del panel de inicio de sesión. | JPG o PNG transparente<br>Alto máximo: 36 px<br>Ancho máximo: 245 px | Use aquí el logotipo de su organización.<br>Use una imagen transparente. No suponga que el fondo será blanco.<br>No agregue relleno alrededor del logotipo en la imagen o el logotipo se verá desproporcionadamente pequeño.
 
-### <a name="background"></a>Fondo
+### <a name="background"></a>Información previa
 
 Descripción | Restricciones | Recomendaciones
 ------- | ------- | ----------
 Esta opción aparece en el fondo de la página de inicio de sesión, está anclada en el centro del espacio visible y se escala y recorta para rellenar la ventana del explorador.    <br>En las pantallas estrechas, como las de teléfonos móviles, no se muestra esta imagen.<br>Se aplica una máscara gruesa con una opacidad de 0,55 sobre esta imagen al cargarse la página. | JPG o PNG<br>Dimensiones de la imagen: 1920 x 1080 px<br>Tamaño de archivo: &lt; 300 KB | <br>Use imágenes allí donde no haya un enfoque del asunto sólido. El formulario de inicio de sesión opaco aparece sobre el centro de esta imagen y puede cubrir cualquier parte de la imagen según el tamaño de la ventana del explorador.<br>Mantenga el tamaño de archivo pequeño para garantizar tiempos de carga rápidos.
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 - [Personalización de AD FS en Windows Server 2016](./ad-fs-customization-in-windows-server.md)
 - [Personalización avanzada](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)
 - [Temas web personalizados](Custom-Web-Themes-in-AD-FS.md)

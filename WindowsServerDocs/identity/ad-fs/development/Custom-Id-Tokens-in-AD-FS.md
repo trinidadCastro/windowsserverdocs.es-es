@@ -6,19 +6,17 @@ ms.author: billmath
 manager: mtillman
 ms.date: 04/29/2020
 ms.topic: article
-ms.prod: windows-server
 ms.reviewer: anandy
-ms.technology: identity-adfs
-ms.openlocfilehash: 9ffc8351c2c5033346f04e3cd4dc6f8ba4914149
-ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
+ms.openlocfilehash: 9ab9a22e471a576a2632e3dbb054d21dd4534e46
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85372212"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940553"
 ---
 # <a name="customize-claims-to-be-emitted-in-id_token-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>Personalización de notificaciones para que se emitan en id_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior.
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 
 En este [artículo se](native-client-with-ad-fs.md) muestra cómo compilar una aplicación que usa AD FS para el inicio de sesión de OpenID Connect. Sin embargo, de forma predeterminada solo hay un conjunto fijo de notificaciones disponibles en el id_token. AD FS 2016 y versiones posteriores tienen la capacidad de personalizar el id_token en escenarios de OpenID Connect.
 
@@ -58,16 +56,16 @@ Siga los pasos que se indican a continuación para crear y configurar la aplicac
 ### <a name="create-and-configure-an-application-group-in-ad-fs-2016-or-later"></a>Crear y configurar un grupo de aplicaciones en AD FS 2016 o posterior
 
 1. En administración de AD FS, haga clic con el botón derecho en grupos de aplicaciones y seleccione **Agregar grupo de aplicaciones**.
-2. En el Asistente para grupos de aplicaciones, en nombre, escriba **ADFSSSO** y en aplicaciones cliente-servidor seleccione la plantilla **aplicación nativa que tiene acceso a una aplicación web** . Haga clic en **Siguiente**.
+2. En el Asistente para grupos de aplicaciones, en nombre, escriba **ADFSSSO** y en aplicaciones cliente-servidor seleccione la plantilla **aplicación nativa que tiene acceso a una aplicación web** . Haga clic en **Next**.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
 3. Copie el valor del **identificador de cliente** .  Se usará más adelante como valor de ida: ClientId en el archivo de web.config de aplicaciones.
-4. Escriba lo siguiente para el **URI de redirección:**  -  **https://localhost:44320/** .  Haga clic en **Agregar**. Haga clic en **Siguiente**.
+4. Escriba lo siguiente para el **URI de redirección:**  -  **https://localhost:44320/** .  Haga clic en **Agregar**. Haga clic en **Next**.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-5. En la pantalla **configurar API Web** , escriba lo siguiente para **Identifier**  -  **https://contoso.com/WebApp** .  Haga clic en **Agregar**. Haga clic en **Siguiente**.  Este valor se usará más adelante para **ida: ResourceID** en el archivo de web.config de aplicaciones.
+5. En la pantalla **configurar API Web** , escriba lo siguiente para **Identifier**  -  **https://contoso.com/WebApp** .  Haga clic en **Agregar**. Haga clic en **Next**.  Este valor se usará más adelante para **ida: ResourceID** en el archivo de web.config de aplicaciones.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
@@ -219,6 +217,6 @@ Haga clic en el enlace Acerca de . Verá "Hello [username]", que se recupera de 
 
 ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_9.png)
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)

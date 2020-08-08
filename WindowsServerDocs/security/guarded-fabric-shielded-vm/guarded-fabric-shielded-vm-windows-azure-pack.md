@@ -1,19 +1,17 @@
 ---
 title: 'Máquinas virtuales blindadas para inquilinos: implementación de una máquina virtual blindada mediante Windows Azure Pack'
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 095315e4-c4a7-4b80-91d8-528119b62c4c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: f1b377c32728de483c42df8910f1445e7a92f80a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 613082bcc5cfefa0c7abb0011762c3d283ea98aa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474892"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989990"
 ---
 # <a name="shielded-vms--for-tenants---deploying-a-shielded-vm-by-using-windows-azure-pack"></a>Máquinas virtuales blindadas para inquilinos: implementación de una máquina virtual blindada mediante Windows Azure Pack
 
@@ -27,19 +25,19 @@ Complete los pasos siguientes:
 
 2. Cree una máquina virtual blindada mediante Windows Azure Pack.
 
-    [Use máquinas virtuales blindadas](https://technet.microsoft.com/library/mt720674.aspx), que se describe en los temas siguientes:
+    [Use máquinas virtuales blindadas](/previous-versions/azure/windows-server-azure-pack/mt720674(v=technet.10)), que se describe en los temas siguientes:
 
-   - [Cree datos de blindaje](https://technet.microsoft.com/library/mt720672.aspx) (y cargue el archivo de datos de blindaje, tal como se describe en el segundo procedimiento del tema).
+   - [Cree datos de blindaje](/previous-versions/azure/windows-server-azure-pack/mt720672(v=technet.10)) (y cargue el archivo de datos de blindaje, tal como se describe en el segundo procedimiento del tema).
 
      > [!NOTE]
      > Como parte de la creación de datos de blindaje, descargará el archivo de clave de protección, que será un archivo XML en formato UTF-8. No cambie el archivo a UTF-16.
 
-   - [Cree una máquina virtual blindada](https://technet.microsoft.com/library/mt720673.aspx) : con **creación rápida**, a través de una plantilla blindada o a través de una plantilla normal.
+   - [Cree una máquina virtual blindada](/previous-versions/azure/windows-server-azure-pack/mt720673(v=technet.10)) : con **creación rápida**, a través de una plantilla blindada o a través de una plantilla normal.
 
        > [!WARNING]
-       > Si [crea una máquina virtual blindada mediante una plantilla normal](https://technet.microsoft.com/library/mt720673.aspx#Anchor_2), es importante tener en cuenta que la máquina virtual se aprovisiona sin *protección*. Esto significa que el disco de plantilla no se comprueba con la lista de discos de confianza del archivo de datos de blindaje ni con los secretos del archivo de datos de blindaje que se usa para aprovisionar la máquina virtual. Si hay disponible una plantilla blindada, es preferible implementar una máquina virtual blindada con una plantilla blindada para proporcionar una protección de un extremo a otro de los secretos.
+       > Si [crea una máquina virtual blindada mediante una plantilla normal](/previous-versions/azure/windows-server-azure-pack/mt720673(v=technet.10)#Anchor_2), es importante tener en cuenta que la máquina virtual se aprovisiona sin *protección*. Esto significa que el disco de plantilla no se comprueba con la lista de discos de confianza del archivo de datos de blindaje ni con los secretos del archivo de datos de blindaje que se usa para aprovisionar la máquina virtual. Si hay disponible una plantilla blindada, es preferible implementar una máquina virtual blindada con una plantilla blindada para proporcionar una protección de un extremo a otro de los secretos.
 
-   - [Conversión de una máquina virtual de generación 2 en una máquina virtual blindada](https://technet.microsoft.com/library/mt720670.aspx)
+   - [Conversión de una máquina virtual de generación 2 en una máquina virtual blindada](/previous-versions/azure/windows-server-azure-pack/mt720670(v=technet.10))
 
        > [!NOTE]
        > Si convierte una máquina virtual en una máquina virtual blindada, los puntos de control y las copias de seguridad existentes no se cifran. Debe eliminar los puntos de control anteriores cuando sea posible para impedir el acceso a los datos antiguos descifrados.

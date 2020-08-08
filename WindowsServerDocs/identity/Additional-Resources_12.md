@@ -1,24 +1,22 @@
 ---
 ms.assetid: 20dff664-2370-469b-96a8-df1acf7c7f12
 title: Recursos adicionales
-ms.prod: windows-server
-ms.technology: identity-adds
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
-ms.openlocfilehash: 6f1d9a19e62a505b2f9e15c074cb32240983e889
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fc42d406f150c96fe40e00888bc3f42a13bb2774
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825738"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965222"
 ---
 # <a name="additional-resources"></a>Recursos adicionales
 
 >Se aplica a: Windows Server
 
-Para obtener información detallada acerca del uso de repadmin. exe para administrar Active Directory replicación, vea el siguiente recurso: 
+Para obtener información detallada sobre el uso de Repadmin.exe para administrar Active Directory replicación, vea el recurso siguiente:
 
 - [Supervisión y solución de problemas de replicación Active Directory mediante repadmin](https://go.microsoft.com/fwlink/?LinkId=122830)
 
@@ -32,7 +30,7 @@ Para obtener información acerca de Active Directory problemas conocidos y prác
 - [Prácticas recomendadas para administrar confianzas de dominio y bosque](https://go.microsoft.com/fwlink/?LinkId=128785)
 - [Problemas conocidos de la copia de seguridad de Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=128793)
 - [Problemas conocidos de la restauración autoritativa](https://go.microsoft.com/fwlink/?LinkId=128788)
-- [Prácticas recomendadas para la restauración autoritativa](https://go.microsoft.com/fwlink/?LinkId=128791) 
+- [Prácticas recomendadas para la restauración autoritativa](https://go.microsoft.com/fwlink/?LinkId=128791)
 - [Problemas conocidos de la adición de controladores de dominio en sitios remotos](https://go.microsoft.com/fwlink/?LinkId=128794)
 - [Prácticas recomendadas para agregar controladores de dominio en sitios remotos](https://go.microsoft.com/fwlink/?LinkId=128796)
 

@@ -5,13 +5,12 @@ author: MicrosoftGuyJFlo
 ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 99d470af623be7ccc7ad2a5fe0d63576a406ff57
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: ad40b5e5049c8b4f29dab4ffac8246a73e5b2fcd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519052"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956992"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>Virtualización de controladores de dominio con Hyper-V
 
@@ -45,7 +44,7 @@ Cuando planee la implementación del controlador de dominio virtual, debe intent
 3. Si es posible, deberían ejecutarse controladores de dominio en el hardware ubicado en distintas regiones de todo el mundo. Esto ayuda a reducir la repercusión de un desastre o error que afecta a un sitio donde se hospedan controladores de dominio.
 4. Mantenga controladores de dominio físicos en cada uno de los dominios. De esta forma, se evita el riesgo de que un funcionamiento incorrecto de la plataforma de virtualización afecte a todos los sistemas host que usan dicha plataforma.
 
-## <a name="security-considerations"></a>Consideraciones sobre la seguridad
+## <a name="security-considerations"></a>Consideraciones de seguridad
 
 El equipo host en el cual se ejecutan los controladores de dominio virtuales debe administrarse con el mismo cuidado que un controlador de dominio grabable, aunque este equipo sea solo un equipo unido a dominio o a un grupo de trabajo. Ésta es una consideración de seguridad importante. Un host administrado incorrectamente es vulnerable a un ataque de elevación de privilegios, que se produce cuando un usuario malintencionado obtiene acceso y privilegios de sistema no autorizados ni asignados de forma legítima. Un usuario malintencionado puede usar este tipo de ataque para poner en riesgo todas las máquinas virtuales, dominios y bosques que aloja el equipo.
 
@@ -66,7 +65,7 @@ El uso de máquinas virtuales permite tener varias configuraciones diferentes de
 
 |Máquina|Configuración 1|Configuration 2|
 |-------|---------------|---------------|
-|Host|Equipo miembro o grupo de trabajo|Equipo miembro o grupo de trabajo|
+|administrador de flujos de trabajo|Equipo miembro o grupo de trabajo|Equipo miembro o grupo de trabajo|
 |Invitado|Controlador de dominio|Equipo miembro o grupo de trabajo|
 
 ![Diagrama de límites de seguridad](media/virtualized-domain-controller-architecture/Dd363553.f44706fd-317e-4f0b-9578-4243f4db225f(WS.10).gif)

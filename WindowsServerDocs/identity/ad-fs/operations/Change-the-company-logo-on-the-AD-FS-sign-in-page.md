@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 03/08/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: b61f7321dc75613a3450998284536673bd790f2b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: bc5bf9dcd0277980144d367e0bc539b555c05c83
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519824"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956652"
 ---
 # <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>Cambiar el logotipo de la empresa en la página de inicio de sesión de AD FS
 

@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3e3876680031cdb31f2fa3e6ce200efdf6fb5185
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b1a7783e02746f53d818066eb20ceb3094bd2707
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936455"
+ms.locfileid: "87990030"
 ---
 # <a name="windows-logon-scenarios"></a>Escenarios de inicio de sesión de Windows
 
@@ -103,14 +103,12 @@ En el diagrama siguiente se muestran los elementos y procesos necesarios para el
 
 Cuando se usa una tarjeta inteligente en lugar de una contraseña, un par de claves privada y pública almacenado en la tarjeta inteligente del usuario se sustituye por la clave secreta compartida, que se deriva de la contraseña del usuario. La clave privada solo se almacena en la tarjeta inteligente. La clave pública puede ponerse a disposición de cualquier persona con la que el propietario quiera intercambiar información confidencial.
 
-Para obtener más información acerca del proceso de inicio de sesión con tarjeta inteligente en Windows, consulte Cómo funciona el inicio de [sesión con tarjeta inteligente en Windows](https://technet.microsoft.com/library/ff404285.aspx).
+Para obtener más información acerca del proceso de inicio de sesión con tarjeta inteligente en Windows, consulte Cómo funciona el inicio de [sesión con tarjeta inteligente en Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff404285(v=ws.10)).
 
 ## <a name="biometric-logon"></a><a name="BKMK_BioLogon"></a>Inicio de sesión biométrico
 Un dispositivo se usa para capturar y compilar una característica digital de un artefacto, como una huella digital. Esta representación digital se compara a continuación con una muestra del mismo artefacto y, cuando las dos se comparan correctamente, se puede producir la autenticación. Los equipos que ejecutan cualquiera de los sistemas operativos designados en la lista **se aplica a** al principio de este tema se pueden configurar para aceptar esta forma de inicio de sesión. Sin embargo, si el inicio de sesión biométrico solo está configurado para el inicio de sesión local, el usuario debe presentar credenciales de dominio al obtener acceso a un dominio de Active Directory.
 
 ## <a name="additional-resources"></a>Recursos adicionales
-Para obtener información acerca de cómo Windows administra las credenciales enviadas durante el proceso de inicio de sesión, vea [Administración de credenciales en la autenticación de Windows](https://technet.microsoft.com/library/dn169014.aspx).
+Para obtener información acerca de cómo Windows administra las credenciales enviadas durante el proceso de inicio de sesión, vea [Administración de credenciales en la autenticación de Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169014(v=ws.10)).
 
-[Información técnica sobre inicio de sesión y autenticación en Windows](https://technet.microsoft.com/library/dn169029.aspx)
-
-
+[Información técnica sobre inicio de sesión y autenticación en Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169029(v=ws.10))

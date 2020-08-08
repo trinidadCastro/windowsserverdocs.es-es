@@ -2,18 +2,16 @@
 title: Exportar una configuración de NPS para importar en otro servidor
 description: Puede usar este tema para obtener información sobre cómo exportar una configuración del servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bbc4982057c306e6f4b94c3c4bf8e8a2761db12a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 20b3f933565e8170e99f1eed2bfda24bd7705e1b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517810"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949118"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>Exportar una configuración de NPS para importar en otro servidor
 

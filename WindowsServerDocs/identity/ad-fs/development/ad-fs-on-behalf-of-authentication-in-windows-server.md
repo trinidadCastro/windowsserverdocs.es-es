@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: d13cd27efc2387911f8c66bf083509e60e7e5b31
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c313754b315b48982342fe2797d1ed766ce354a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519884"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965172"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Compilar una aplicación de varios niveles mediante "en nombre de" (OBO) mediante OAuth con AD FS 2016 o posterior.
 
@@ -22,7 +20,7 @@ En este tutorial se proporcionan instrucciones para implementar una autenticaci�
 > [!WARNING]
 > El ejemplo que se puede compilar aquí es solo con fines educativos. Estas instrucciones son para la implementación más sencilla y mínima posible para exponer los elementos necesarios del modelo. Es posible que el ejemplo no incluya todos los aspectos del control de errores y otras funciones de relación y se Centre solo en obtener una autenticación OBO correcta.
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 
 En este ejemplo, vamos a crear un flujo de autenticación donde un cliente tendrá acceso a un servicio Web de nivel intermedio y el servicio Web actuará en nombre del cliente autenticado para obtener un token de acceso.
 
@@ -42,7 +40,7 @@ A continuación se muestra el flujo de autenticación que obtendrá el ejemplo
 
 El ejemplo consta de tres módulos
 
-Módulo | Description
+Módulo | Descripción
 -------|------------
 ToDoClient | Cliente nativo con el que interactúa el usuario
 ToDoService | API Web de nivel intermedio que actúa como cliente de la WebAPI de back-end
@@ -515,5 +513,5 @@ En la primera interacción, presentamos el código de acceso al punto de conexi�
 En la segunda interacción con el punto de conexión del token, puede ver que hemos **requested_token_use** establecido como **on_behalf_of** y estamos usando el token de acceso obtenido para el servicio Web de nivel intermedio, es decir, https://localhost:44321/ como la aserción para obtener el token en nombre de.
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)

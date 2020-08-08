@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: ee204320696ac10eaf341df06d7c458198b3ec28
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7ef3b9fde0ca9b9364a1fdcc99690b58f4f14f68
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936539"
+ms.locfileid: "87990002"
 ---
 # <a name="windows-authentication-concepts"></a>Conceptos de autenticación de Windows
 
@@ -55,7 +55,7 @@ Una cuenta de Passport y, posiblemente, visas asociadas son las credenciales ace
 Una forma de autenticación multifactor para el viajero podría ser el requisito de transportar y presentar varios documentos para autenticar su identidad, como una cuenta de Passport e información de registro de conferencias. Windows implementa este formulario o autenticación a través de tarjetas inteligentes, tarjetas inteligentes virtuales y tecnologías biométricas.
 
 ## <a name="security-principals-and-accounts"></a>Entidades de seguridad y cuentas
-En Windows, cualquier usuario, servicio, grupo o equipo que puede iniciar una acción es una entidad de seguridad. Las entidades de seguridad tienen cuentas, que pueden ser locales en un equipo o estar basadas en dominio. Por ejemplo, los equipos Unidos a un dominio de cliente de Windows pueden participar en un dominio de red mediante la comunicación con un controlador de dominio, incluso cuando ningún usuario humano haya iniciado sesión. Para iniciar las comunicaciones, el equipo debe tener una cuenta activa en el dominio. Antes de aceptar las comunicaciones del equipo, la autoridad de seguridad local del controlador de dominio autentica la identidad del equipo y, a continuación, define el contexto de seguridad del equipo tal como lo haría para una entidad de seguridad humana. Este contexto de seguridad define la identidad y las capacidades de un usuario o servicio en un equipo determinado o un usuario, un servicio, un grupo o un equipo de una red. Por ejemplo, define los recursos, como un recurso compartido de archivos o una impresora, a los que se puede tener acceso y las acciones, como lectura, escritura o modificación, que puede realizar un usuario, un servicio o un equipo de ese recurso. Para obtener más información, consulte [entidades de seguridad](https://technet.microsoft.com/itpro/windows/keep-secure/security-principals).
+En Windows, cualquier usuario, servicio, grupo o equipo que puede iniciar una acción es una entidad de seguridad. Las entidades de seguridad tienen cuentas, que pueden ser locales en un equipo o estar basadas en dominio. Por ejemplo, los equipos Unidos a un dominio de cliente de Windows pueden participar en un dominio de red mediante la comunicación con un controlador de dominio, incluso cuando ningún usuario humano haya iniciado sesión. Para iniciar las comunicaciones, el equipo debe tener una cuenta activa en el dominio. Antes de aceptar las comunicaciones del equipo, la autoridad de seguridad local del controlador de dominio autentica la identidad del equipo y, a continuación, define el contexto de seguridad del equipo tal como lo haría para una entidad de seguridad humana. Este contexto de seguridad define la identidad y las capacidades de un usuario o servicio en un equipo determinado o un usuario, un servicio, un grupo o un equipo de una red. Por ejemplo, define los recursos, como un recurso compartido de archivos o una impresora, a los que se puede tener acceso y las acciones, como lectura, escritura o modificación, que puede realizar un usuario, un servicio o un equipo de ese recurso. Para obtener más información, consulte [entidades de seguridad](/windows/security/identity-protection/access-control/security-principals).
 
 Una cuenta es un medio para identificar a un solicitante (el usuario o servicio humano) que solicita acceso o recursos. El viaje que incluye el pasaporte de la autenticidad posee una cuenta con el país del host. Los usuarios, grupos de usuarios, objetos y servicios pueden tener cuentas individuales o compartir cuentas. Las cuentas pueden ser miembros de grupos y se les puede asignar derechos y permisos específicos. Las cuentas se pueden restringir al equipo local, al grupo de trabajo, a la red o se les debe asignar la pertenencia a un dominio.
 
@@ -65,17 +65,17 @@ Las cuentas de servicio administradas independientes y las cuentas virtuales se 
 
 Para obtener más información acerca de las cuentas, consulte:
 
--   [Cuentas de Active Directory](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-accounts)
+-   [Cuentas de Active Directory](/windows/security/identity-protection/access-control/active-directory-accounts)
 
--   [Grupos de seguridad de Active Directory](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-security-groups)
+-   [Grupos de seguridad de Active Directory](/windows/security/identity-protection/access-control/active-directory-security-groups)
 
 -   [Cuentas locales](https://technet.microsoft.com/itpro/windows/keep-bastion.local-accounts)
 
--   [Cuentas de Microsoft](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-accounts)
+-   [Cuentas de Microsoft](/windows/security/identity-protection/access-control/microsoft-accounts)
 
--   [Cuentas de servicio](https://technet.microsoft.com/itpro/windows/keep-secure/service-accounts)
+-   [Cuentas de servicio](/windows/security/identity-protection/access-control/service-accounts)
 
--   [Identidades especiales](https://technet.microsoft.com/itpro/windows/keep-secure/special-identities)
+-   [Identidades especiales](/windows/security/identity-protection/access-control/special-identities)
 
 ## <a name="delegated-authentication"></a>Autenticación delegada
 Para usar la analogía de viajes, los países pueden emitir el mismo acceso a todos los miembros de una delegación gubernamental oficial, siempre y cuando los delegados sean conocidos. Esta delegación permite que un miembro actúe en la autoridad de otro miembro. En Windows, la autenticación delegada se produce cuando un servicio de red acepta una solicitud de autenticación de un usuario y asume la identidad de ese usuario para iniciar una nueva conexión a un segundo servicio de red. Para admitir la autenticación delegada, debe establecer servidores front-end o de primer nivel, como servidores Web, responsables de administrar las solicitudes de autenticación de cliente y los servidores back-end o de n niveles, como las bases de datos de gran tamaño, que son responsables de almacenar información. Puede delegar el derecho de configuración de la autenticación delegada a los usuarios de su organización para reducir la carga administrativa de los administradores.
@@ -89,12 +89,12 @@ Cuando existe una confianza entre dos dominios, los mecanismos de autenticación
 
 La forma en que una confianza específica pasa solicitudes de autenticación depende de cómo esté configurada. Las relaciones de confianza pueden ser unidireccionales, ya que proporcionan acceso desde el dominio de confianza a los recursos del dominio que confía, o bien de forma bidireccional, al proporcionar acceso desde cada dominio a los recursos del otro dominio. Las confianzas también son no transitivas, en cuyo caso solo existe una confianza entre los dos dominios de asociados de confianza, o transitiva, en cuyo caso la confianza se extiende automáticamente a cualquier otro dominio en el que cualquiera de los asociados confíe.
 
-Para obtener información sobre cómo funciona una confianza, vea [Cómo funcionan las confianzas de dominio y de bosque](https://technet.microsoft.com/library/cc773178(v=ws.10).aspx).
+Para obtener información sobre cómo funciona una confianza, vea [Cómo funcionan las confianzas de dominio y de bosque](/previous-versions/windows/it-pro/windows-server-2003/cc773178(v=ws.10)).
 
 ### <a name="protocol-transition"></a>Transición de protocolo
 La transición de protocolos ayuda a los diseñadores de aplicaciones al permitir que las aplicaciones admitan distintos mecanismos de autenticación en el nivel de autenticación del usuario y al cambiar al protocolo Kerberos para las características de seguridad, como la autenticación mutua y la delegación restringida, en los niveles de aplicación posteriores.
 
-Para obtener más información sobre la transición de protocolos, consulte [transición del protocolo Kerberos y delegación restringida](https://technet.microsoft.com/library/cc758097(v=ws.10).aspx).
+Para obtener más información sobre la transición de protocolos, consulte [transición del protocolo Kerberos y delegación restringida](/previous-versions/windows/it-pro/windows-server-2003/cc758097(v=ws.10)).
 
 ### <a name="constrained-delegation"></a>Delegación restringida
 La delegación restringida proporciona a los administradores la capacidad de especificar y exigir límites de confianza de aplicaciones limitando el ámbito en el que los servicios de aplicación pueden actuar en nombre de un usuario. Puede especificar los servicios concretos desde los que un equipo en el que se confía para la delegación puede solicitar recursos. La flexibilidad de restringir los derechos de autorización para los servicios ayuda a mejorar el diseño de la seguridad de las aplicaciones, ya que reduce las oportunidades de poner en peligro los servicios que no son de confianza.
@@ -103,5 +103,3 @@ Para obtener más información acerca de la delegación restringida, consulte [i
 
 ## <a name="additional-references"></a>Referencias adicionales
 [Información técnica sobre inicio de sesión y autenticación en Windows](https://technet.microsoft.com/library/dn269029.aspx)
-
-

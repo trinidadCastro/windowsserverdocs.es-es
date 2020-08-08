@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 04/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: b6fc6c662630af5658e5f186c958f4ddaffccc42
-ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
+ms.openlocfilehash: cf8a12957621ce86492cc4216c56d9a159f1ee5c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866034"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940571"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Actualización a AD FS en Windows Server 2016 mediante una base de datos WID
 
@@ -156,8 +154,9 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 Esto completará la actualización de los servidores WAP.
 
 
-> [!NOTE] 
-> Existe un problema de PRT conocido en AD FS 2019 si se realiza Windows Hello para empresas con una confianza de certificado híbrido. Puedes encontrar este error en los registros de eventos del administrador de ADFS: Se ha recibido una solicitud de OAuth no válida. El cliente "NOMBRE" no tiene permiso para acceder al recurso con el ámbito "ugs". Para corregir este error: 
+> [!NOTE]
+> Existe un problema de PRT conocido en AD FS 2019 si se realiza Windows Hello para empresas con una confianza de certificado híbrido. Puedes encontrar este error en los registros de eventos del administrador de ADFS: Se ha recibido una solicitud de OAuth no válida. El cliente "NOMBRE" no tiene permiso para acceder al recurso con el ámbito "ugs".
+> Para corregir este error:
 > 1. Inicia la consola de administración de AD FS. Ve a "Servicios > Descripciones de ámbito"
 > 2. Haz clic con el botón derecho en "Descripciones de ámbito" y selecciona "Agregar descripción de ámbito"
 > 3. Para el nombre, escribe "ugs" y haz clic en Aplicar > Aceptar

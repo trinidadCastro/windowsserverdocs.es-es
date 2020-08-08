@@ -1,18 +1,16 @@
 ---
 title: Información general del Sistema de archivos resistente (ReFS)
-ms.prod: windows-server
 ms.author: gawatu
 manager: mchad
-ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/29/2019
-ms.openlocfilehash: 5bcdbc76259d1dfecaaa5266bb952a21bcbc7825
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 668ee7a0c9e948c12140d3e25309a68ad3b2148b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548900"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957272"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Información general del Sistema de archivos resistente (ReFS)
 
@@ -104,7 +102,7 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 
 ## <a name="feature-comparison"></a>Comparación de características
 
-### <a name="limits"></a>Límites
+### <a name="limits"></a>límites
 
 | Característica       | ReFS                                        | NTFS |
 |----------------|------------------------------------------------|-----------------------|
@@ -147,7 +145,7 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 |---------------------------|------------------|-----------------------|
 | Clonación de bloques | Sí | No |
 | VDL disperso | Sí | No |
-| Paridad acelerada por reflejos| Sí (en los Espacios de almacenamiento directo) | No |
+| Paridad acelerada por reflejo| Sí (en los Espacios de almacenamiento directo) | No |
 
 #### <a name="the-following-features-are-unavailable-on-refs-at-this-time"></a>Las siguientes características no están disponibles en ReFS en este momento:
 
@@ -169,7 +167,7 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Recomendaciones de tamaño de clúster para ReFS y NTFS](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
-- [Información general de Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)
+- [Introducción a Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)
 - [Clonación de bloques de ReFS](block-cloning.md)
 - [Flujos de integridad de ReFS](integrity-streams.md)
 - [Solución de problemas de ReFS con ReFSUtil](../../administration/windows-commands/refsutil.md)
