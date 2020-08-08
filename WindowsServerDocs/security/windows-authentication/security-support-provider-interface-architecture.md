@@ -1,20 +1,18 @@
 ---
 title: Security Support Provider Interface Architecture
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: de09e099-5711-48f8-adbd-e7b8093a0336
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 2faf67f71d5bb04e23f034e738b64c62a7df4f05
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 636723dafc6ddc8e346a7272978a1abf9338baad
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475252"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991455"
 ---
 # <a name="security-support-provider-interface-architecture"></a>Security Support Provider Interface Architecture
 
@@ -83,19 +81,19 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 **Recursos adicionales para el protocolo Kerberos y el SSP de Kerberos**
 
--   [Microsoft Kerberos (Windows)](https://msdn.microsoft.com/library/aa378747(VS.85).aspx)
+-   [Microsoft Kerberos (Windows)](/windows/win32/secauthn/microsoft-kerberos)
 
 -   [\[MS-KILE \] : extensiones de protocolo Kerberos](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
 
 -   [\[MS-SFU \] : extensiones de protocolo Kerberos: especificación del Protocolo de delegación limitada y de servicio para el usuario](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
 
--   [SSP/SSP de Kerberos (Windows)](https://msdn.microsoft.com/library/aa377942(VS.85).aspx)
+-   [SSP/SSP de Kerberos (Windows)](/windows/win32/secauthn/kerberos-ssp-ap)
 
--   [Mejoras de Kerberos](https://technet.microsoft.com/library/cc749438(v=ws.10).aspx) para Windows Vista
+-   [Mejoras de Kerberos](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10)) para Windows Vista
 
--   [Cambios en la autenticación Kerberos](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) para Windows 7
+-   [Cambios en la autenticación Kerberos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560670(v=ws.10)) para Windows 7
 
--   [Referencia técnica de autenticación Kerberos](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx)
+-   [Referencia técnica de autenticación Kerberos](/previous-versions/windows/it-pro/windows-server-2003/cc739058(v=ws.10))
 
 ### <a name="ntlm-security-support-provider"></a><a name="BKMK_NTLMSSP"></a>Proveedor de compatibilidad con seguridad NTLM
 El proveedor de compatibilidad para seguridad NTLM (SSP de NTLM) es un protocolo de mensajería binaria que usa la interfaz del proveedor de compatibilidad para seguridad (SSPI) para permitir la autenticación NTLM Challenge-Response y negociar opciones de integridad y confidencialidad. NTLM se usa siempre que se use la autenticación SSPI, incluido el bloque de mensajes del servidor o la autenticación de CIFS, la autenticación HTTP Negotiate (por ejemplo, la autenticación Web de Internet) y el servicio llamada a procedimiento remoto. El SSP de NTLM incluye los protocolos de autenticación NTLM y NTLM versión 2 (NTLMv2).
@@ -116,13 +114,13 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 **Recursos adicionales para el protocolo NTLM y el SSP de NTLM**
 
--   [Paquete de autenticación de MSV1_0 (Windows)](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
+-   [Paquete de autenticación de MSV1_0 (Windows)](/windows/win32/secauthn/msv1-0-authentication-package)
 
--   [Cambios en la autenticación NTLM](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx) en Windows 7
+-   [Cambios en la autenticación NTLM](/previous-versions/windows/it-pro/windows-7/dd566199(v=ws.10)) en Windows 7
 
--   [Microsoft NTLM (Windows)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)
+-   [Microsoft NTLM (Windows)](/windows/win32/secauthn/microsoft-ntlm)
 
--   [Guía de auditoría y restricción del uso de NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
+-   [Guía de auditoría y restricción del uso de NTLM](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/jj865674(v=ws.10))
 
 ### <a name="digest-security-support-provider"></a><a name="BKMK_DigestSSP"></a>Proveedor de compatibilidad con seguridad implícita
 La autenticación implícita es un estándar del sector que se usa para el Protocolo ligero de acceso a directorios (LDAP) y la autenticación Web. La autenticación de texto implícita transmite las credenciales a través de la red como un hash MD5 o una síntesis del mensaje.
@@ -139,7 +137,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 **Recursos adicionales para el protocolo Digest y el SSP Digest**
 
--   [Autenticación Microsoft Digest (Windows)](https://msdn.microsoft.com/library/aa378745(VS.85).aspx)
+-   [Autenticación Microsoft Digest (Windows)](/windows/win32/secauthn/microsoft-digest-ssp)
 
 -   [\[MS-DPSP \] : extensiones del protocolo Digest](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
@@ -175,9 +173,9 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 **Recursos adicionales para los protocolos TLS y SSL y el SSP de Schannel**
 
--   [Canal seguro (Windows)](https://msdn.microsoft.com/library/aa380123(VS.85).aspx)
+-   [Canal seguro (Windows)](/windows/win32/secauthn/secure-channel)
 
--   [Referencia técnica de TLS/SSL](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)
+-   [Referencia técnica de TLS/SSL](/previous-versions/windows/it-pro/windows-server-2003/cc784149(v=ws.10))
 
 -   [\[MS-TLSP \] : Perfil de seguridad de la capa de transporte (TLS)](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
@@ -194,7 +192,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 **Recursos adicionales para el SSP Negotiate**
 
--   [Microsoft Negotiate (Windows)](https://msdn.microsoft.com/library/aa378748(VS.85).aspx)
+-   [Microsoft Negotiate (Windows)](/windows/win32/secauthn/microsoft-negotiate)
 
 -   [\[MS-SPNG \] : extensiones simples y protegidas del mecanismo de negociación de API (SPNEGO)](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
 
@@ -211,7 +209,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [\[MS-CSSP \] : especificación del Protocolo de proveedor de compatibilidad para seguridad de credenciales (CredSSP)](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
 
--   [Proveedor de servicios de seguridad de credenciales e inicio de sesión único para Terminal Services](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
+-   [Proveedor de servicios de seguridad de credenciales e inicio de sesión único para Terminal Services](/previous-versions/windows/it-pro/windows-vista/cc749211(v=ws.10))
 
 ### <a name="negotiate-extensions-security-support-provider"></a><a name="BKMK_NegoExtsSSP"></a>Negociar el proveedor de compatibilidad de seguridad de extensiones
 Negotiate Extensions (NegoExts) es un paquete de autenticación que negocia el uso de SSP, que no sea NTLM o el protocolo Kerberos, para aplicaciones y escenarios implementados por Microsoft y otras compañías de software.
@@ -243,7 +241,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 **Recursos adicionales para el protocolo PKU2U y el SSP de PKU2U**
 
--   [Introducción a la integración de identidades en línea](https://technet.microsoft.com/library/dd560662(v=ws.10).aspx)
+-   [Introducción a la integración de identidades en línea](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560662(v=ws.10))
 
 ## <a name="security-support-provider-selection"></a><a name="BKMK_SecuritySupportProviderSelection"></a>Selección del proveedor de compatibilidad con seguridad
 Windows SSPI puede usar cualquiera de los protocolos que se admiten a través de los proveedores de compatibilidad de seguridad instalados. Sin embargo, dado que no todos los sistemas operativos son compatibles con los mismos paquetes de SSP que cualquier equipo dado que ejecute Windows Server, los clientes y servidores deben negociar para usar un protocolo que ambos admitan. Windows Server prefiere que los equipos cliente y las aplicaciones usen el protocolo Kerberos, un protocolo seguro basado en estándares, siempre que sea posible, pero el sistema operativo sigue permitiendo que los equipos cliente y las aplicaciones cliente que no son compatibles con el protocolo Kerberos se autentiquen.
@@ -281,6 +279,4 @@ La opción Negotiate se puede usar para permitir que el cliente y el servidor in
     -   Si el equipo cliente no es compatible con ninguno de los protocolos enumerados, se produce un error en el intercambio de autenticación.
 
 ## <a name="additional-references"></a>Referencias adicionales
-[Arquitectura de autenticación de Windows](https://technet.microsoft.com/library/dn169024(v=ws.10).aspx)
-
-
+[Arquitectura de autenticación de Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169024(v=ws.10))

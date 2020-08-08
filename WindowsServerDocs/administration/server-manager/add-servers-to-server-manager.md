@@ -8,12 +8,12 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: 2280dd901756c033a16e5203ad60bc0b6cad5ce4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b1c3e2f1c521615ff365642566745411db8aa612
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895826"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991937"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
@@ -157,7 +157,7 @@ Se pueden producir estos errores o unos similares en las condiciones siguientes.
 
 5.  Cierre la sesión del equipo en el que está ejecutando Administrador del servidor y, a continuación, vuelva a iniciar sesión con la cuenta predefinida Administrador. Repita el paso anterior para comprobar que Administrador del servidor puede conectarse a los datos del servidor remoto y recopilarlos.
 
-Si ha seguido los procedimientos de esta sección y sigue teniendo problemas al administrar equipos de grupo de trabajo o a administrar otros equipos desde equipos del grupo de trabajo, consulte [about_remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx) en el sitio web de Microsoft.
+Si ha seguido los procedimientos de esta sección y sigue teniendo problemas al administrar equipos de grupo de trabajo o a administrar otros equipos desde equipos del grupo de trabajo, consulte [about_remote_Troubleshooting](/previous-versions/dd347642(v=technet.10)) en el sitio web de Microsoft.
 
 ### <a name="add-and-manage-servers-in-clusters"></a>Agregar y administrar servidores en clústeres
 Puede usar Administrador del servidor para administrar servidores que están en clústeres de conmutación por error (también denominados clústeres de servidores o MSCS). Los servidores que están en clústeres de conmutación por error (si los nodos del clúster son físicos o virtuales) tienen algunos comportamientos únicos y limitaciones de administración en Administrador del servidor.

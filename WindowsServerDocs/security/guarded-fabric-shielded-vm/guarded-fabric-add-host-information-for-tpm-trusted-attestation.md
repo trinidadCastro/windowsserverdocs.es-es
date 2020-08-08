@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 06/21/2019
-ms.openlocfilehash: 7ec49467b3875ba552f5b92fb3776892a2d54c13
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fc879fda0f6a708a8a1d4ebd60834f4e6543f3ba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971412"
+ms.locfileid: "87997172"
 ---
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>Agregar información de host para la atestación de confianza de TPM
 
@@ -55,7 +55,7 @@ Una vez que el administrador del tejido Capture la información, agréguela a la
     Add-HgsAttestationTpmPolicy -Path <Filename>.tcglog -Name '<PolicyName>'
     ```
 
-Esto completa el proceso de configuración de un clúster de HGS para el modo TPM. Es posible que el administrador del tejido tenga que proporcionar dos direcciones URL desde HGS antes de que se pueda completar la configuración de los hosts. Para obtener estas direcciones URL, en un servidor HGS, ejecute [Get-HgsServer](https://docs.microsoft.com/powershell/module/hgsserver/get-hgsserver?view=win10-ps).
+Esto completa el proceso de configuración de un clúster de HGS para el modo TPM. Es posible que el administrador del tejido tenga que proporcionar dos direcciones URL desde HGS antes de que se pueda completar la configuración de los hosts. Para obtener estas direcciones URL, en un servidor HGS, ejecute [Get-HgsServer](/powershell/module/hgsserver/get-hgsserver?view=win10-ps).
 
 ## <a name="next-step"></a>Paso siguiente
 

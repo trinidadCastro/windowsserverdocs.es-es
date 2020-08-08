@@ -1,19 +1,17 @@
 ---
 ms.assetid: 134840f3-c416-4a10-ad73-ef7855b206f7
 title: Información general de arranque de destino iSCSI
-ms.prod: windows-server
-ms.technology: storage-iscsi
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 68f5af7f8fc4cd0214b872d96602cabe1aa32628
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f3f2ce63afa3e75b6d2f55789866c1872504c8eb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961377"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957422"
 ---
 # <a name="iscsi-target-boot-overview"></a>Información general de arranque de destino iSCSI
 

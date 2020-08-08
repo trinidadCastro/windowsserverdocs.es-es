@@ -1,19 +1,17 @@
 ---
 ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Novedades de Espacios de almacenamiento en Windows Server
-ms.prod: windows-server
 ms.author: jgerend
 manager: dongill
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 447c8fe33a0454179d8c9aacc9c324ac7bcf1f49
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3b1a3fa120e27439c1ec55f68521b813588d330b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965827"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965952"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Novedades de almacenamiento en Windows Server
 
@@ -128,7 +126,7 @@ Para obtener el mayor rendimiento, todos los miembros del grupo de replicación 
 
 #### <a name="test-failover"></a>Conmutación por error de prueba
 
-Ahora puede montar temporalmente una instantánea del almacenamiento replicado en un servidor de destino con fines de prueba o de copia de seguridad. Para obtener más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
+Ahora puede montar temporalmente una instantánea del almacenamiento replicado en un servidor de destino con fines de prueba o de copia de seguridad. Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
 
 #### <a name="windows-admin-center-support"></a>Soporte técnico de Windows Admin Center
 

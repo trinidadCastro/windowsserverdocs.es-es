@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fad4586b4d510fd22ecd90855b3afa1c8870c1bf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 75f0395afbcbefcdc4ac3a9fc4dc4de3bf962428
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895622"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991745"
 ---
 # <a name="manage-user-access-logging"></a>Administrar el Registro de acceso de usuarios
 
@@ -233,11 +233,11 @@ El número máximo de accesos que se puede registrar con UAL es de 65.535 al dí
 ## <a name="recovering-from-a-corrupt-state"></a>Recuperarse de un estado dañado
 En esta sección se describe el uso de UAL del motor de almacenamiento extensible (ESE) a un alto nivel y lo que un administrador puede hacer si los datos de UAL están dañados o no se pueden recuperar.
 
-UAL usa ESE para optimizar el uso de los recursos del sistema y para mostrar resistencia a posibles daños.  Para obtener más información sobre las ventajas de ESE, consulte el tema sobre el [motor de almacenamiento extensible](https://msdn.microsoft.com/library/windows/desktop/gg269259(v=exchg.10).aspx) en MSDN.
+UAL usa ESE para optimizar el uso de los recursos del sistema y para mostrar resistencia a posibles daños.  Para obtener más información sobre las ventajas de ESE, consulte el tema sobre el [motor de almacenamiento extensible](/windows/win32/extensible-storage-engine/extensible-storage-engine) en MSDN.
 
-Cada vez que el servicio UAL se inicia, ESE realiza una recuperación de software. Para obtener más información, consulte el tema sobre los [archivos del motor de almacenamiento extensible](https://msdn.microsoft.com/library/windows/desktop/gg294069(v=exchg.10).aspx) en MSDN.
+Cada vez que el servicio UAL se inicia, ESE realiza una recuperación de software. Para obtener más información, consulte el tema sobre los [archivos del motor de almacenamiento extensible](/windows/win32/extensible-storage-engine/extensible-storage-engine-files) en MSDN.
 
-Si existe un problema con la recuperación de software, ESE llevará a cabo una recuperación tras bloqueo. Para obtener más información, consulte el tema sobre la [función JetInit](https://msdn.microsoft.com/library/windows/desktop/gg294068(v=exchg.10).aspx) en MSDN.
+Si existe un problema con la recuperación de software, ESE llevará a cabo una recuperación tras bloqueo. Para obtener más información, consulte el tema sobre la [función JetInit](/windows/win32/extensible-storage-engine/jetinit-function) en MSDN.
 
 Si UAL sigue sin poder iniciarse con el conjunto de archivos de ESE existentes, se eliminarán todos los archivos del directorio \Windows\System32\LogFiles\SUM\. Tras ello, el servicio de registro de acceso de usuarios se reiniciará y se crearán archivos nuevos. Así, el servicio UAL se reanudará como si lo hiciera en un equipo recién instalado.
 
@@ -258,5 +258,3 @@ Una vez habilitado el registro, se registran dos eventos informativos en el cana
 ## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
 
 - [Introducción al registro de acceso de usuarios](get-started-with-user-access-logging.md)
-
-

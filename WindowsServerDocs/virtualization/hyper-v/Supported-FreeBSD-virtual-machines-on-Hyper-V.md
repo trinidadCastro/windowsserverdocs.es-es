@@ -1,20 +1,18 @@
 ---
 title: Máquinas virtuales de FreeBSD compatibles en Hyper-V
 description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 04/07/2020
-ms.openlocfilehash: 9394ff04b32ab34cbdad6a46573fd3674051db36
-ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
+ms.openlocfilehash: 3767c56640dd4e4e07e2cdd4a578ec0c3db2f470
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80994528"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965642"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas virtuales de FreeBSD compatibles en Hyper-V
 
@@ -26,31 +24,31 @@ El siguiente mapa de distribución de características indica las característic
 
 * **Integrado en** -bis (servicio de integración de FreeBSD) se incluye como parte de esta versión de FreeBSD.
 
-* &#10004;-Característica disponible
+* &#10004;: característica disponible
 
 * (*en blanco*): característica no disponible
 
-|**Ofrecen**|**Versión del sistema operativo Windows Server**|**12-12,1**|**11.1 a 11.3**|**11,0**|**10,3**|**10,2**|**10,0-10,1**|**9,1-9,3, 8,4**|
+|**Característica**|**Versión del sistema operativo Windows Server**|**12-12,1**|**11.1 a 11.3**|**11,0**|**10,3**|**10,2**|**10,0-10,1**|**9,1-9,3, 8,4**|
 |-|-|-|-|-|-|-|-|-|
-|**Disponibilidad**||Integrado|Integrado|Integrado|Integrado|Integrado|Integrado|[Puerto](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**Disponibilidad**||Integrado|Integrado|Integrado|Integrado|Integrado|Integrado|[Puertos](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
+|**[Principal](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 hora precisa|2019, 2016|&#10004;|&#10004;||||||
-|**[Soluciona](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
-|Tramas gigantes|2019, 2016, 2012 R2|&#10004;Nota 3|&#10004;Nota 3|&#10004;Nota 3|&#10004;Nota 3|&#10004;Nota 3|&#10004;Nota 3|&#10004;Nota 3|
+|**[Redes](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
+|Tramas gigantes|2019, 2016, 2012 R2|&#10004; Nota 3|&#10004; Nota 3|&#10004; Nota 3|&#10004; Nota 3|&#10004; Nota 3|&#10004; Nota 3|&#10004; Nota 3|
 |Etiquetado y Troncalización de VLAN|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Migración en vivo|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Inyección de IP estática|2019, 2016, 2012 R2|&#10004;Nota 4|&#10004;Nota 4|&#10004;Nota 4|&#10004;Nota 4|&#10004;Nota 4|&#10004;Nota 4|&#10004;|
+|Inyección de IP estática|2019, 2016, 2012 R2|&#10004; Nota 4|&#10004; Nota 4|&#10004; Nota 4|&#10004; Nota 4|&#10004; Nota 4|&#10004; Nota 4|&#10004;|
 |vRSS|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|||||
 |Segmentación y descarga de sumas de comprobación TCP|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
 |Descarga de recepción de gran tamaño (LRO)|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
 |SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;|||||
-|**[Discos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Note1|Nota 1:|Nota 1:|Nota 1:|Nota 1:|Nota 1, 2|Nota 1, 2|
-|Cambiar el tamaño de VHDX|2019, 2016, 2012 R2|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|||||
+|**[Storage](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Note1|Nota 1|Nota 1|Nota 1|Nota 1|Nota 1, 2|Nota 1, 2|
+|Cambiar el tamaño de VHDX|2019, 2016, 2012 R2|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|||||
 |Canal de fibra virtual|2019, 2016, 2012 R2||||||||
 |Copia de seguridad de máquinas virtuales en vivo|2019, 2016, 2012 R2|&#10004;|&#10004;||||||
 |Compatibilidad con TRIM|2019, 2016, 2012 R2|&#10004;|&#10004;||||||
 |WWN SCSI|2019, 2016, 2012 R2||||||||
-|**[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
+|**[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
 |Compatibilidad con el kernel PAE|2019, 2016, 2012 R2||||||||
 |Configuración de la brecha de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Memoria dinámica: agregar en caliente|2019, 2016, 2012 R2||||||||
@@ -59,7 +57,7 @@ El siguiente mapa de distribución de características indica las característic
 |**[Cámara](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
 |Dispositivo de vídeo específico de Hyper-V|2019, 2016, 2012 R2||||||||
 |**[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
-|Par clave-valor|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;Nota 5|&#10004;|
+|Par clave-valor|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|Nota &#10004; 5|&#10004;|
 |Interrupción no enmascarable|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Copia de archivos de host a invitado|2019, 2016, 2012 R2||||||||
 |comando lsvmbus|2019, 2016, 2012 R2||||||||
@@ -69,7 +67,7 @@ El siguiente mapa de distribución de características indica las característic
 |Arranque mediante UEFI|2019, 2016, 2012 R2|&#10004;|&#10004;||||||
 |Arranque seguro|2019, 2016||||||||
 
-## <a name="notes"></a><a name="BKMK_notes"></a>Apunte
+## <a name="notes"></a><a name="BKMK_notes"></a>Notas
 
 1. Sugerimos que [etiquete los dispositivos de disco]( https://www.freebsd.org/doc/handbook/geom-glabel.html) para evitar un error de montaje raíz durante el inicio.
 
@@ -90,10 +88,10 @@ El siguiente mapa de distribución de características indica las característic
     # dd if=/dev/da1 of=/dev/da1 count=0
     # gpart recover da1
     ```
-   
+
 **Notas adicionales**: la matriz de características de 10 Stable y 11 stable es la misma que la versión de FreeBSD 11,1. Además, FreeBSD 10,2 y las versiones anteriores (10,1, 10,0, 9. x, 8. x) están al final del ciclo de vida. Consulte [aquí](https://security.freebsd.org/) para obtener una lista actualizada de las versiones admitidas y los avisos de seguridad más recientes.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 * [Descripciones de características de máquinas virtuales Linux y FreeBSD en Hyper-V](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
 * [Prácticas recomendadas para ejecutar FreeBSD en Hyper-V](Best-practices-for-running-FreeBSD-on-Hyper-V.md)

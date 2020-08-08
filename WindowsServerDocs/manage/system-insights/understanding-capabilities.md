@@ -1,19 +1,17 @@
 ---
 title: Descripción de funcionalidades
 description: En este tema se define el concepto de capacidades de System Insights y se presentan las capacidades predeterminadas disponibles en Windows Server 2019.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: c6738e6e914d97c70aa31af2fe3b6987b0b9ea33
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 195ab01ded24742a26e1d7558529044c9883b8fc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471750"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991705"
 ---
 # <a name="understanding-capabilities"></a>Descripción de funcionalidades
 
@@ -40,7 +38,7 @@ Cuando se invoca una funcionalidad, proporciona una salida para ayudar a explica
 - **Error** : un problema desconocido hizo que se produjera un error en la funcionalidad.
 - **Ninguno** : no se ha realizado ninguna predicción. Esto puede deberse a la falta de datos o a cualquier otro motivo específico de la funcionalidad para no realizar una predicción.
 
-Además, los datos específicos de la funcionalidad contenidos en el resultado se colocarán en un archivo JSON accesible para el usuario y la ruta de acceso del archivo se [puede encontrar con PowerShell](https://docs.microsoft.com/windows-server/manage/system-insights/managing-capabilities#retrieving-capability-results).
+Además, los datos específicos de la funcionalidad contenidos en el resultado se colocarán en un archivo JSON accesible para el usuario y la ruta de acceso del archivo se [puede encontrar con PowerShell](./managing-capabilities.md#retrieving-capability-results).
 
 ## <a name="default-capabilities"></a>Capacidades predeterminadas
 En Windows Server 2019, System Insights presenta cuatro funciones predeterminadas centradas en la previsión de la capacidad:

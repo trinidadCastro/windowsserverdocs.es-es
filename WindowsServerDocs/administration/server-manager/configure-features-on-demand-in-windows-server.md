@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7819bdfe1c5a65adc126ab902e6138d372982f20
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ffe38a896e7913d03cc8f4ad62d1e520cec6a0c2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895820"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991926"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -71,7 +71,7 @@ Dispone de dos métodos para quitar archivos de características de Windows Serv
 
 -   El `remove` parámetro del `Uninstall-WindowsFeature` cmdlet permite eliminar archivos de características de un servidor o un disco duro virtual (VHD) sin conexión que ejecute windows Server 2012 R2 o windows Server 2012. Los valores válidos para el `remove` parámetro son los nombres de los roles, servicios de rol y características.
 
--   Los comandos de Administración y mantenimiento de imágenes de implementación (DISM) permiten crear archivos WIM personalizados que conservan espacio en disco mediante la omisión de archivos de características que no son necesarios o que se pueden obtener de otros orígenes remotos. Para obtener más información acerca del uso de DISM para preparar imágenes personalizadas, vea [Cómo habilitar o deshabilitar características de Windows](https://technet.microsoft.com/library/hh824822.aspx).
+-   Los comandos de Administración y mantenimiento de imágenes de implementación (DISM) permiten crear archivos WIM personalizados que conservan espacio en disco mediante la omisión de archivos de características que no son necesarios o que se pueden obtener de otros orígenes remotos. Para obtener más información acerca del uso de DISM para preparar imágenes personalizadas, vea [Cómo habilitar o deshabilitar características de Windows](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824822(v=win.10)).
 
 ## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>Quitar archivos de características mediante Uninstall-WindowsFeature
 Puede usar el cmdlet Uninstall-WindowsFeature para desinstalar roles, servicios de rol y características de los servidores y los VHD sin conexión que ejecutan Windows Server 2012 R2 o Windows Server 2012, y para eliminar los archivos de características. Puede desinstalar y eliminar los mismos roles, servicios de rol y características en el mismo comando si lo desea.
@@ -117,8 +117,6 @@ Puede usar el cmdlet Uninstall-WindowsFeature para desinstalar roles, servicios 
 
 ## <a name="see-also"></a>Consulte también
 [Instalar o desinstalar roles, servicios de rol o características](install-or-uninstall-roles-role-services-or-features.md) 
- Opciones de instalación de [Windows Server](https://technet.microsoft.com/library/hh831786.aspx) 
- [Cómo habilitar o deshabilitar características](https://technet.microsoft.com/library/hh824822.aspx) 
- de Windows [Información general de administración y mantenimiento de imágenes de implementación (DISM)](https://technet.microsoft.com/library/hh825236.aspx)
-
-
+ Opciones de instalación de [Windows Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831786(v=ws.11)) 
+ [Cómo habilitar o deshabilitar características](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824822(v=win.10)) 
+ de Windows [Información general de administración y mantenimiento de imágenes de implementación (DISM)](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825236(v=win.10))

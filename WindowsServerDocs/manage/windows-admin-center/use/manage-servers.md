@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 69f8f20aa9e1b222ff112f91df8d6b3d7767fc84
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 25edd2851638fec99b6afda0415fdf8e8c8f1699
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962389"
+ms.locfileid: "87997188"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Administrar servidores con el centro de administración de Windows
 
@@ -411,7 +411,7 @@ La **configuración** es una ubicación central para administrar la configuraci�
 ### <a name="features"></a>Características
 
 - Ver y modificar las variables de entorno del sistema y del usuario
-- Permite ver la configuración de las alertas de supervisión desde [Azure monitor](azure-monitor.md)
+- Permite ver la configuración de las alertas de supervisión desde [Azure monitor](../azure/azure-monitor.md)
 - Ver y modificar la configuración de energía
 - Ver y modificar la configuración de Escritorio remoto
 - Ver y modificar la configuración de control de acceso basado en roles
@@ -436,7 +436,7 @@ Se admiten las siguientes características en el almacenamiento:
 - Editar propiedades de volumen
 - Eliminar un volumen
 - Instalar la administración de cuotas
-- Administrar [el almacenamiento de las cuotas del servidor de archivos Administrador de recursos >crear/actualizar cuota](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
+- Administrar [el almacenamiento de las cuotas del servidor de archivos Administrador de recursos >crear/actualizar cuota](../../../storage/fsrm/quota-management.md)
 
 [**Ver comentarios y características propuestas para el almacenamiento**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 
@@ -451,7 +451,7 @@ El **servicio de migración de almacenamiento** permite migrar servidores y recu
 ## <a name="storage-replica"></a>Réplica de almacenamiento
 
 Use **réplica de almacenamiento** para administrar la replicación de almacenamiento de servidor a servidor.
- [Más información sobre la réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
+ [Más información sobre la réplica de almacenamiento](../../../storage/storage-replica/server-to-server-storage-replication.md)
 
 ## <a name="system-insights"></a>Conclusiones del sistema
 
@@ -473,7 +473,7 @@ Las siguientes características se admiten en las actualizaciones de:
 - Ver una lista de historial de actualizaciones
 - Instalación de actualizaciones
 - Buscar actualizaciones en línea desde Microsoft Update
-- Administración de la integración de [Azure Update Management](https://docs.microsoft.com/azure/automation/automation-update-management)
+- Administración de la integración de [Azure Update Management](/azure/automation/automation-update-management)
 
 [**Ver comentarios y características propuestas para actualizaciones**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BUpdates%5D)
 

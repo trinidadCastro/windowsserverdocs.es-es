@@ -6,12 +6,12 @@ ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 0ba4f52df35c3b78f948bdfdf40500965a9be278
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c1095f3f5ea44b22c4cec4a871f6fc6210e92ab1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953961"
+ms.locfileid: "87991642"
 ---
 # <a name="choosing-a-network-adapter"></a>Elección de un adaptador de red
 
@@ -22,7 +22,7 @@ Puede usar este tema para obtener información sobre algunas de las característ
 Las aplicaciones que consumen muchos recursos de red requieren adaptadores de red de alto rendimiento. En esta sección se analizan algunas consideraciones para elegir los adaptadores de red, así como cómo configurar diferentes opciones del adaptador de red para lograr el mejor rendimiento de la red.
 
 > [!TIP]
->  Puede establecer la configuración del adaptador de red mediante Windows PowerShell. Para obtener más información, consulte [cmdlets de adaptador de red en Windows PowerShell](https://docs.microsoft.com/powershell/module/netadapter).
+>  Puede establecer la configuración del adaptador de red mediante Windows PowerShell. Para obtener más información, consulte [cmdlets de adaptador de red en Windows PowerShell](/powershell/module/netadapter).
 
 ##  <a name="offload-capabilities"></a><a name="bkmk_offload"></a>Funcionalidades de descarga
 
@@ -63,13 +63,13 @@ Los siguientes cmdlets le permiten ver y modificar los parámetros de RSS por ad
 >[!NOTE]
 >Para obtener una referencia de comando detallada para cada cmdlet, incluida la sintaxis y los parámetros, puede hacer clic en los vínculos siguientes. Además, puede pasar el nombre del cmdlet a **Get-Help** en el símbolo del sistema de Windows PowerShell para obtener más información sobre cada comando.
 
-- [Disable-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/Disable-NetAdapterRss). Este comando deshabilita RSS en el adaptador de red que especifique.
+- [Disable-NetAdapterRss](/powershell/module/netadapter/Disable-NetAdapterRss). Este comando deshabilita RSS en el adaptador de red que especifique.
 
-- [Enable-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRss). Este comando habilita RSS en el adaptador de red que especifique.
+- [Enable-NetAdapterRss](/powershell/module/netadapter/Enable-NetAdapterRss). Este comando habilita RSS en el adaptador de red que especifique.
 
-- [Get-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterRss). Este comando recupera las propiedades RSS del adaptador de red que especifique.
+- [Get-NetAdapterRss](/powershell/module/netadapter/Get-NetAdapterRss). Este comando recupera las propiedades RSS del adaptador de red que especifique.
 
-- [Set-NetAdapterRss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss). Este comando establece las propiedades de RSS en el adaptador de red que especifique.
+- [Set-NetAdapterRss](/powershell/module/netadapter/Set-NetAdapterRss). Este comando establece las propiedades de RSS en el adaptador de red que especifique.
 
 #### <a name="rss-profiles"></a>Perfiles de RSS
 
@@ -210,28 +210,28 @@ Algunos adaptadores de red administran activamente sus recursos para lograr un r
 
 La configuración de los recursos del adaptador de red se simplifica mediante el uso de los siguientes cmdlets de Windows PowerShell.
 
-- [Get-NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterAdvancedProperty)
+- [Get-NetAdapterAdvancedProperty](/powershell/module/netadapter/Get-NetAdapterAdvancedProperty)
 
-- [Set-NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterAdvancedProperty)
+- [Set-NetAdapterAdvancedProperty](/powershell/module/netadapter/Set-NetAdapterAdvancedProperty)
 
-- [Enable-NetAdapter](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapte)
+- [Enable-NetAdapter](/powershell/module/netadapter/Enable-NetAdapte)
 
-- [Enable-NetAdapterBinding](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterBinding)
+- [Enable-NetAdapterBinding](/powershell/module/netadapter/Enable-NetAdapterBinding)
 
-- [Enable-NetAdapterChecksumOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
+- [Enable-NetAdapterChecksumOffload](/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [Enable-NetAdapterIPSecOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
+- [Enable-NetAdapterIPSecOffload](/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [Enable-NetAdapterLso](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterLso)
+- [Enable-NetAdapterLso](/powershell/module/netadapter/Enable-NetAdapterLso)
 
-- [Enable-NetAdapterPowerManagement](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterPowerManagement)
+- [Enable-NetAdapterPowerManagement](/powershell/module/netadapter/Enable-NetAdapterPowerManagement)
 
-- [Enable-NetAdapterQos](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterQos)
+- [Enable-NetAdapterQos](/powershell/module/netadapter/Enable-NetAdapterQos)
 
-- [Enable-NetAdapterRDMA](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRDMA)
+- [Enable-NetAdapterRDMA](/powershell/module/netadapter/Enable-NetAdapterRDMA)
 
-- [Enable-NetAdapterSriov](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterSriov)
+- [Enable-NetAdapterSriov](/powershell/module/netadapter/Enable-NetAdapterSriov)
 
-Para obtener más información, consulte [cmdlets de adaptador de red en Windows PowerShell](https://docs.microsoft.com/powershell/module/netadapter).
+Para obtener más información, consulte [cmdlets de adaptador de red en Windows PowerShell](/powershell/module/netadapter).
 
 Para obtener vínculos a todos los temas de esta guía, consulte [ajuste del rendimiento del subsistema de red](net-sub-performance-top.md).

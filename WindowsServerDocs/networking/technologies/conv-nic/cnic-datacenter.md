@@ -1,20 +1,18 @@
 ---
 title: NIC convergente en una configuración de NIC en equipo (centro de trabajo)
 description: En este tema, se proporcionan instrucciones para implementar la NIC convergente en una configuración de NIC en equipo con switch Embedded Teaming (SET).
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: f01546f8-c495-4055-8492-8806eee99862
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/17/2018
-ms.openlocfilehash: d81e4013d7cc38a15dd8b0bcd48529a2d72d0b69
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 918b3d10c39c6f06330f9c0986bc08b5bc04a229
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520204"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949379"
 ---
 # <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>NIC convergente en una configuración de NIC en equipo (centro de trabajo)
 
@@ -97,7 +95,7 @@ Asegúrese de que la NIC física pueda conectarse al host de destino.  Esta prue
 5. Compruebe que el equipo de la NIC o el miembro del conjunto pNICs tiene una dirección IP válida.<p>Use una subred independiente, \( xxx.xxx.** 2**. xxx frente a xxx.xxx. **1**. xxx \) , para facilitar el envío desde este adaptador al destino. De lo contrario, si encuentra pNICs en la misma subred, los equilibrios de carga de la pila TCP/IP de Windows entre las interfaces y la validación simple se vuelven más complicados.
 
 
-## <a name="step-2-ensure-that-source-and-destination-can-communicate"></a>Paso 2. Asegurarse de que el origen y el destino pueden comunicarse
+## <a name="step-2-ensure-that-source-and-destination-can-communicate"></a>Paso 2. Asegurarse de que el origen y el destino pueden comunicarse
 
 En este paso, usamos el comando **Test-NetConnection de** Windows PowerShell, pero si lo prefiere, puede usar el comando **ping** .
 
@@ -116,7 +114,7 @@ En este paso, usamos el comando **Test-NetConnection de** Windows PowerShell, pe
    |      RemoteAddress       | 192.168.1.5 |
    |      InterfaceAlias      | Test-40G-1  |
    |      SourceAddress       | 192.168.1.3 |
-   |      PingSucceeded       |    Falso    |
+   |      PingSucceeded       |    False    |
    | \(RTT PingReplyDetails\) |    0 ms     |
 
    En algunos casos, es posible que tenga que deshabilitar Firewall de Windows con seguridad avanzada para realizar correctamente esta prueba. Si deshabilita el firewall, tenga en cuenta la seguridad y asegúrese de que la configuración cumple los requisitos de seguridad de su organización.
@@ -142,7 +140,7 @@ En este paso, usamos el comando **Test-NetConnection de** Windows PowerShell, pe
    |      RemoteAddress       | 192.168.1.5 |
    |      InterfaceAlias      | Test-40G-1  |
    |      SourceAddress       | 192.168.1.3 |
-   |      PingSucceeded       |    Falso    |
+   |      PingSucceeded       |    False    |
    | \(RTT PingReplyDetails\) |    0 ms     |
 
 
@@ -161,10 +159,10 @@ En este paso, usamos el comando **Test-NetConnection de** Windows PowerShell, pe
    |      RemoteAddress       | 192.168.2.5 |
    |      InterfaceAlias      | Test-40G-2  |
    |      SourceAddress       | 192.168.2.3 |
-   |      PingSucceeded       |    Falso    |
+   |      PingSucceeded       |    False    |
    | \(RTT PingReplyDetails\) |    0 ms     |
 
-## <a name="step-3-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>Paso 3. Configurar los identificadores de VLAN para las NIC instaladas en los hosts de Hyper-V
+## <a name="step-3-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>Paso 3. Configurar los identificadores de VLAN para las NIC instaladas en los hosts de Hyper-V
 
 Muchas configuraciones de red hacen uso de redes VLAN y, si tiene previsto usar VLAN en la red, debe repetir la prueba anterior con VLAN configuradas.
 
@@ -373,16 +371,16 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Resultados**_
 
 
-   | Prioridad | habilitado | PolicySet | IfIndex | IfAlias |
+   | Prioridad | Habilitado | PolicySet | IfIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
-   |    0     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
+   |    0     |  False  |  Global   | &nbsp;  | &nbsp;  |
    |    1     |  False  |  Global   | &nbsp;  | &nbsp;  |
-   |    2     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
+   |    2     |  False  |  Global   | &nbsp;  | &nbsp;  |
    |    3     |  True   |  Global   | &nbsp;  | &nbsp;  |
-   |    4     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
-   |    5     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
-   |    6     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
-   |    7     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
+   |    4     |  False  |  Global   | &nbsp;  | &nbsp;  |
+   |    5     |  False  |  Global   | &nbsp;  | &nbsp;  |
+   |    6     |  False  |  Global   | &nbsp;  | &nbsp;  |
+   |    7     |  False  |  Global   | &nbsp;  | &nbsp;  |
 
    >**Importante** Si los resultados no coinciden con estos resultados porque los elementos que no son 3 tienen un valor habilitado de true, debe deshabilitar **FlowControl** para estas clases.
    >
@@ -573,7 +571,7 @@ En la imagen siguiente se muestra el estado actual de los hosts de Hyper-V.
    _**Resultados**_
 
 
-   |    Nombre    |        InterfaceDescription        | habilitado |
+   |    Nombre    |        InterfaceDescription        | Habilitado |
    |------------|------------------------------------|---------|
    | TEST-40G-1 | Adaptador VPI ConnectX-4 de Mellanox #2 |  True   |
    | TEST-40G-2 |  Adaptador VPI ConnectX-4 de Mellanox   |  True   |

@@ -6,28 +6,26 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: c6b11edd181875d241f5f78928e3c9c427809747
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3a1a66f3b3098aa042d16e6f869eb0234945d26d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855818"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940849"
 ---
 # <a name="windows-server-ad-fs-deployment-guide"></a>Guía de implementación de Windows Server AD FS
 
 
-Puede usar Servicios de federación de Active Directory (AD FS) \(AD FS\) con el sistema operativo Windows Server 2016 y 2012 R2 para crear una solución de administración de identidades federadas que amplíe los servicios de identificación, autenticación y autorización distribuidos a aplicaciones basadas en Web\-a través de los límites de la organización y la plataforma. Mediante la implementación de AD FS, puede ampliar las capacidades existentes de administración de identidades de su organización a Internet.  
-  
--   [Implementar una granja de servidores de federación](Deploying-a-Federation-Server-Farm.md)  
-  
--   [Implementación de servidores proxy de federación](Deploying-Federation-Server-Proxies.md)  
-  
--   [Azure Active Directory Connect](Azure-Active-Directory-Connect.md)  
-  
-## <a name="see-also"></a>Consulta también  
-[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
+Puede usar Servicios de federación de Active Directory (AD FS) \( AD FS \) con el sistema operativo Windows Server 2016 y 2012 R2 para crear una solución de administración de identidades federadas que amplíe los servicios de identificación, autenticación y autorización distribuidos a aplicaciones basadas en Web a través de los límites de la \- organización y la plataforma. Mediante la implementación de AD FS, puede ampliar las capacidades existentes de administración de identidades de su organización a Internet.
 
-  
+-   [Implementar una granja de servidores de federación](Deploying-a-Federation-Server-Farm.md)
+
+-   [Implementación de servidores proxy de federación](Deploying-Federation-Server-Proxies.md)
+
+-   [Azure Active Directory Connect](Azure-Active-Directory-Connect.md)
+
+## <a name="see-also"></a>Consulte también
+[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)
+
+
 

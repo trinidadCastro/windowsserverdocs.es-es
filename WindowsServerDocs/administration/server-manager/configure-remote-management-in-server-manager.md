@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0d2369bd42fc884b1a401fc1450dbe9d1e47663
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0a39eaaff5497ee85cb823907cd8b57f1888dd08
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895808"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991874"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>Configurar la administración remota en Administrador del servidor
 
@@ -153,7 +153,7 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
 ### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>Para deshabilitar la administración remota con un archivo de respuesta durante una instalación desatendida
 
-1.  Cree un archivo de respuesta de instalación desatendida para las instalaciones de Windows Server 2016 mediante el administrador de imágenes de sistema (Windows SIM). Para obtener más información sobre cómo crear un archivo de respuesta y usar Windows SIM, consulte [¿Qué es el Administrador de imágenes de sistema?](https://technet.microsoft.com/library/cc766347.aspx) y [Paso a paso: implementación básica de Windows para profesionales de TI](https://technet.microsoft.com/library/dd349348.aspx).
+1.  Cree un archivo de respuesta de instalación desatendida para las instalaciones de Windows Server 2016 mediante el administrador de imágenes de sistema (Windows SIM). Para obtener más información sobre cómo crear un archivo de respuesta y usar Windows SIM, consulte [¿Qué es el Administrador de imágenes de sistema?](/previous-versions/windows/it-pro/windows-vista/cc766347(v=ws.10)) y [Paso a paso: implementación básica de Windows para profesionales de TI](/previous-versions/windows/it-pro/windows-7/dd349348(v=ws.10)).
 
 2.  En el archivo de respuesta, busque la configuración **Microsoft-Windows-Web-Services-for-Management-Core\EnableServerremoteManagement**.
 
@@ -183,8 +183,5 @@ para obtener más información sobre cómo configurar las opciones del agente de
 
 ## <a name="see-also"></a>Consulte también
 [Agregar servidores a administrador del servidor](add-servers-to-server-manager.md) 
- [Windows PowerShell: about_remote_Troubleshooting en Windows Server TechCenter](https://technet.microsoft.com/library/dd347642.aspx) 
+ [Windows PowerShell: about_remote_Troubleshooting en Windows Server TechCenter](/previous-versions/dd347642(v=technet.10)) 
  [Descripción del control de cuentas de usuario](https://support.microsoft.com/kb/951016)
-
-
-

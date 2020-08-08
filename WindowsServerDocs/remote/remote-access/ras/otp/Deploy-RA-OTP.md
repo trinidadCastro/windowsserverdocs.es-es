@@ -2,18 +2,16 @@
 title: Implementar el acceso remoto con autenticación OTP
 description: Este tema forma parte de la guía deploy Remote Access with OTP Authentication in Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d1b38f753e2e4d8333299c369042a72e0dc3a6e6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8cc47a3a94425b4f77e5ed430cffe86429bf9b23
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182011"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991291"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>Implementar el acceso remoto con autenticación OTP
 
@@ -24,7 +22,7 @@ ms.locfileid: "87182011"
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>Descripción del escenario
 En este escenario, se configura un servidor de acceso remoto con DirectAccess habilitado para autenticar a los usuarios del cliente de DirectAccess con \- una autenticación de OTP de contraseña de dos factores \( \) , además de las credenciales de Active Directory estándar.
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 Antes de empezar a implementar este escenario, revise esta lista de requisitos importantes:
 
 -   [Implementar un único servidor de DirectAccess con configuración avanzada](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md) debe implementarse antes de implementar OTP.
@@ -35,7 +33,7 @@ Antes de empezar a implementar este escenario, revise esta lista de requisitos i
 
 -   Hay que implementar una infraestructura de clave pública.
 
-    Para obtener más información, vea: [Minimódulo de la guía de laboratorio de pruebas: PKI básica para Windows Server 2012.](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+    Para obtener más información, vea: [Minimódulo de la guía de laboratorio de pruebas: PKI básica para Windows Server 2012.](/answers/topics/windows-server-2012.html)
 
 -   No se admite el cambio de directivas fuera de la consola de administración de DirectAccess o de los cmdlets de Windows PowerShell.
 
@@ -129,4 +127,3 @@ Los problemas que se mencionan a continuación son problemas conocidos de la con
         -   HKEY \_ local \_ Machine \\ software \\ Microsoft \\ DirectAccess \\ OTP \\ RadiusProbePass
 
 -   Si cambias el certificado raíz de IPsec en una implementación de DirectAccess configurada y en ejecución, OTP dejará de funcionar. Para resolver este problema, en cada servidor de DirectAccess, en un símbolo del sistema de Windows PowerShell, ejecute el comando:`iisreset`
-

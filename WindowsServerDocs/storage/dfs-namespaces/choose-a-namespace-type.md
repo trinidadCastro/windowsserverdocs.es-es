@@ -2,18 +2,16 @@
 title: Choose a Namespace Type
 description: En este artículo se describe cómo elegir un tipo de espacio de nombres.
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ce991a628b63732f645e859a4855a18eacbacd77
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c78e97148dffba920be5e65b19d97594c1b302d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953737"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957683"
 ---
 # <a name="choose-a-namespace-type"></a>Choose a namespace type
 

@@ -1,20 +1,18 @@
 ---
 title: Máquinas virtuales de Ubuntu admitidas en Hyper-V
 description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 04/08/2020
-ms.openlocfilehash: 541f34e11146715fc54017dc3fb0d831cb4e078e
-ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
+ms.openlocfilehash: 88d5659bb4732c82cc7ecc5e4a5e806f4b984739
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80994496"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989318"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Máquinas virtuales de Ubuntu admitidas en Hyper-V
 
@@ -26,46 +24,46 @@ El siguiente mapa de distribución de características indica las característic
 
 * La **compilación en** LIS se incluye como parte de esta distribución de Linux. El paquete de descarga de LIS proporcionado por Microsoft no funciona para esta distribución, por lo que no se debe instalar. Los números de versión del módulo de kernel para el LIS integrado (como se muestra en **lsmod**, por ejemplo) son diferentes del número de versión del paquete de descarga de lis proporcionado por Microsoft. Una desigualdad no indica que el LIS integrado no está actualizado.
 
-* &#10004;-Característica disponible
+* &#10004;: característica disponible
 
 * (*en blanco*): característica no disponible
 
-|**Ofrecen**|**Versión del sistema operativo Windows Server**|**19,10**|**18,04 LTS**|**16,04 LTS**|**14,04 LTS**|
+|**Característica**|**Versión del sistema operativo Windows Server**|**19,10**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
 |-|-|-|-|-|-|
-|**Disponibilidad**||Integrados|Integrados|Integrados|Integrados|
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
+|**Disponibilidad**||Integrada|Integrada|Integrada|Integrada|
+|**[Principal](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 hora precisa|2019, 2016|&#10004;|&#10004;|&#10004;||
-|**[Soluciona](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
+|**[Redes](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
 |Tramas gigantes|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Etiquetado y Troncalización de VLAN|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Migración en vivo|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|Inyección de IP estática|2019, 2016, 2012 R2|&#10004;Nota 1|&#10004;Nota 1|&#10004;Nota 1|&#10004;Nota 1|
+|Inyección de IP estática|2019, 2016, 2012 R2|&#10004; Nota 1|&#10004; Nota 1|&#10004; Nota 1|&#10004; Nota 1|
 |vRSS|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Segmentación y descarga de sumas de comprobación TCP|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;||
-|**[Discos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||
+|**[Storage](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||
 |Cambiar el tamaño de VHDX|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|Canal de fibra virtual|2019, 2016, 2012 R2|&#10004;Nota 2|&#10004;Nota 2|&#10004;Nota 2|&#10004;Nota 2|
-|Copia de seguridad de máquinas virtuales en vivo|2019, 2016, 2012 R2|&#10004;Nota 3, 4, 6|&#10004;Nota 3, 4, 5|&#10004;Nota 3, 4, 5|&#10004;Nota 3, 4, 5|
+|Canal de fibra virtual|2019, 2016, 2012 R2|&#10004; Nota 2|&#10004; Nota 2|&#10004; Nota 2|&#10004; Nota 2|
+|Copia de seguridad de máquinas virtuales en vivo|2019, 2016, 2012 R2|&#10004; Nota 3, 4, 6|&#10004; Nota 3, 4, 5|&#10004; Nota 3, 4, 5|&#10004; Nota 3, 4, 5|
 |Compatibilidad con TRIM|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |WWN SCSI|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
+|**[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
 |Compatibilidad con el kernel PAE|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Configuración de la brecha de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|Memoria dinámica: agregar en caliente|2019, 2016, 2012 R2|&#10004;Nota 7, 8, 9|&#10004;Nota 7, 8, 9|&#10004;Nota 7, 8, 9|&#10004;Nota 7, 8, 9|
-|Memoria dinámica: globos|2019, 2016, 2012 R2|&#10004;Nota 7, 8, 9|&#10004;Nota 7, 8, 9|&#10004;Nota 7, 8, 9|&#10004;Nota 7, 8, 9|
+|Memoria dinámica: agregar en caliente|2019, 2016, 2012 R2|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|
+|Memoria dinámica: globos|2019, 2016, 2012 R2|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|
 |Tamaño de memoria en tiempo de ejecución|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[Cámara](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
 |Dispositivo de vídeo específico de Hyper-V|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
-|Par clave-valor|2019, 2016, 2012 R2|&#10004;Nota 6, 10|&#10004;Nota 5, 10|&#10004;Nota 5, 10|&#10004;Nota 5, 10|
+|Par clave-valor|2019, 2016, 2012 R2|&#10004; Nota 6, 10|Nota &#10004; 5, 10|Nota &#10004; 5, 10|Nota &#10004; 5, 10|
 |Interrupción no enmascarable|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Copia de archivos de host a invitado|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |comando lsvmbus|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Sockets de Hyper-V|2019, 2016|||||
 |Acceso directo/DDA de PCI|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[Máquinas virtuales de generación 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||
-|Arranque mediante UEFI|2019, 2016, 2012 R2|&#10004;Nota 11, 12|&#10004;Nota 11, 12|&#10004;Nota 11, 12|&#10004;Nota 11, 12|
+|Arranque mediante UEFI|2019, 2016, 2012 R2|&#10004; Nota 11, 12|&#10004; Nota 11, 12|&#10004; Nota 11, 12|&#10004; Nota 11, 12|
 |Arranque seguro|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
 
 ## <a name="notes"></a>Notas
@@ -74,7 +72,7 @@ El siguiente mapa de distribución de características indica las característic
 
 2. Al usar dispositivos de canal de fibra virtual, asegúrese de que se ha rellenado el número de unidad lógica 0 (LUN 0). Si LUN 0 no se ha rellenado, es posible que una máquina virtual de Linux no pueda montar los dispositivos de canal de fibra de forma nativa.
 
-3. Si hay identificadores de archivo abiertos durante una operación de copia de seguridad de una máquina virtual activa, en algunos casos, los VHD de copia de seguridad podrían tener que someterse a una comprobación de coherencia del sistema de archivos (`fsck`) en la restauración.
+3. Si hay identificadores de archivos abiertos durante una operación de copia de seguridad de una máquina virtual activa, en algunos casos, es posible que los VHD de copia de seguridad deban someterse a una comprobación de coherencia del sistema de archivos ( `fsck` ) en la restauración.
 
 4. Las operaciones de copia de seguridad en directo pueden producir errores silenciosamente si la máquina virtual tiene un dispositivo iSCSI conectado o un almacenamiento conectado directamente (también conocido como disco de acceso directo).
 
@@ -144,7 +142,7 @@ El siguiente mapa de distribución de características indica las característic
        # sudo mv shimx64.efi bootx64.efi
        ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
@@ -158,6 +156,6 @@ El siguiente mapa de distribución de características indica las característic
 
 * [Prácticas recomendadas para ejecutar Linux en Hyper-V](Best-Practices-for-running-Linux-on-Hyper-V.md)
 
-* [Set-VMFirmware](https://technet.microsoft.com/library/dn464287.aspx)
+* [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
 
-* [Ubuntu 14,04 en una máquina virtual de generación 2: blog de virtualización de Ben Armstrong](https://blogs.msdn.com/b/virtual_pc_guy/archive/2014/06/09/ubuntu-14-04-in-a-generation-2-vm.aspx)
+* [Ubuntu 14,04 en una máquina virtual de generación 2: blog de virtualización de Ben Armstrong](/archive/blogs/virtual_pc_guy/ubuntu-14-04-in-a-generation-2-vm)

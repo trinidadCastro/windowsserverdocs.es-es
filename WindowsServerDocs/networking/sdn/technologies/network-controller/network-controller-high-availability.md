@@ -2,33 +2,31 @@
 title: Alta disponibilidad de la controladora de red
 description: Puede usar este tema para obtener información sobre la alta disponibilidad de la controladora de red para redes definidas por software (SDN) en Windows Server 2016.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 334b090d-bec4-4e67-8307-13831dbdd1d8
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 3c6d18dcf1071eabaabe9acc29713a7b9a226a84
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 838ce8dfc11cb08b20349f121405991fcbe00270
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859658"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991337"
 ---
 # <a name="network-controller-high-availability"></a>Alta disponibilidad de la controladora de red
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información sobre la configuración de escalabilidad y alta disponibilidad de la controladora de red para redes definidas por software \(SDN\).
+Puede usar este tema para obtener información sobre la configuración de escalabilidad y alta disponibilidad de la controladora de red para redes definidas por software \( Sdn \) .
 
-Al implementar SDN en el centro de información, puede usar la controladora de red para implementar, supervisar y administrar de forma centralizada muchos elementos de red, como puertas de enlace RAS, equilibradores de carga de software, directivas de redes virtuales para la comunicación de inquilinos, directivas de Firewall de centro de seguridad, calidad de servicio \(QoS\) para directivas de SDN, directivas de red híbrida, etc
+Al implementar SDN en el centro de información, puede usar la controladora de red para implementar, supervisar y administrar de forma centralizada muchos elementos de red, como puertas de enlace RAS, equilibradores de carga de software, directivas de redes virtuales para la comunicación de inquilinos, directivas de Firewall de centro de seguridad, QoS de calidad de servicio \( \) para directivas de Sdn, directivas de red híbrida, etc
 
 Dado que la controladora de red es la piedra angular de la administración de SDN, es fundamental que las implementaciones de la controladora de red proporcionen alta disponibilidad y la posibilidad de escalar vertical u horizontalmente los nodos de la controladora de red con las necesidades del centro de seguridad.
 
 Aunque puede implementar la controladora de red como un clúster de máquina única, para la alta disponibilidad y la conmutación por error, debe implementar la controladora de red en un clúster de varias máquinas con un mínimo de tres equipos.
 
 >[!NOTE]
->Puede implementar la controladora de red en equipos servidor o en máquinas virtuales \(máquinas virtuales\) que ejecuten Windows Server 2016 Datacenter Edition. Si implementa el controlador de red en las máquinas virtuales, las máquinas virtuales deben ejecutarse en hosts de Hyper-V que también ejecuten Datacenter Edition. La controladora de red no está disponible en Windows Server 2016 Standard Edition.
+>Puede implementar la controladora de red en equipos servidor o en máquinas virtuales de máquinas virtuales \( \) que ejecutan Windows Server 2016 Datacenter Edition. Si implementa el controlador de red en las máquinas virtuales, las máquinas virtuales deben ejecutarse en hosts de Hyper-V que también ejecuten Datacenter Edition. La controladora de red no está disponible en Windows Server 2016 Standard Edition.
 
 ## <a name="network-controller-as-a-service-fabric-application"></a>Controladora de red como una aplicación Service Fabric
 
@@ -37,15 +35,15 @@ Para lograr una alta disponibilidad y escalabilidad, la controladora de red se b
 Como plataforma, Service Fabric proporciona la funcionalidad necesaria para crear un sistema distribuido escalable. Proporciona hospedaje de servicio en varias instancias de sistema operativo, sincronización de información de estado entre instancias, elección de una directriz, detección de errores, equilibrio de carga, etc.
 
 >[!NOTE]
->Para obtener información sobre Service Fabric en Azure, consulte [información general de azure Service fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview).
+>Para obtener información sobre Service Fabric en Azure, consulte [información general de azure Service fabric](/azure/service-fabric/service-fabric-overview).
 
 Al implementar la controladora de red en varios equipos, la controladora de red se ejecuta como una sola aplicación de Service Fabric en un clúster de Service Fabric. Puede crear un clúster de Service Fabric conectando un conjunto de instancias del sistema operativo.
 
-La aplicación de controladora de red se compone de varios servicios Service Fabric con estado. Cada servicio es responsable de una función de red, como la administración de redes físicas, la administración de redes virtuales, la administración de firewall o la administración de puertas de enlace. 
+La aplicación de controladora de red se compone de varios servicios Service Fabric con estado. Cada servicio es responsable de una función de red, como la administración de redes físicas, la administración de redes virtuales, la administración de firewall o la administración de puertas de enlace.
 
 Cada servicio de Service Fabric tiene una réplica principal y dos réplicas secundarias. La réplica de servicio principal procesa las solicitudes, mientras que las dos réplicas de servicio secundarias proporcionan alta disponibilidad en las circunstancias en las que la réplica principal está deshabilitada o no está disponible por algún motivo.
 
-En la ilustración siguiente se muestra una controladora de red Service Fabric clúster con cinco equipos. Se distribuyen cuatro servicios entre las cinco máquinas: servicio de firewall, servicio de puerta de enlace, equilibrio de carga de software \(el servicio SLB\) y Virtual Network \(Vnet\) Service.  Cada uno de los cuatro servicios incluye una réplica de servicio principal y dos réplicas de servicio secundarias.
+En la ilustración siguiente se muestra una controladora de red Service Fabric clúster con cinco equipos. Se distribuyen cuatro servicios entre las cinco máquinas: servicio de firewall, servicio de puerta de enlace, servicio SLB de equilibrio de carga de software \( \) y servicio de red virtual de red virtual \( \) .  Cada uno de los cuatro servicios incluye una réplica de servicio principal y dos réplicas de servicio secundarias.
 
 ![Clúster de Service Fabric de controladora de red](../../../media/Network-Controller-HA/Network-Controller-HA.jpg)
 
@@ -55,18 +53,18 @@ A continuación se enumeran las ventajas principales del uso de Service Fabric p
 
 ### <a name="high-availability-and-scalability"></a>Alta disponibilidad y escalabilidad
 
-Dado que el controlador de red es el núcleo de una red de centro de recursos, debe ser resistente a los errores y ser lo suficientemente escalable como para permitir cambios ágiles en las redes del centro de recursos a lo largo del tiempo. Las siguientes características proporcionan estas capacidades: 
+Dado que el controlador de red es el núcleo de una red de centro de recursos, debe ser resistente a los errores y ser lo suficientemente escalable como para permitir cambios ágiles en las redes del centro de recursos a lo largo del tiempo. Las siguientes características proporcionan estas capacidades:
 
-- **Conmutación por error rápida**. Service Fabric proporciona una conmutación por error extremadamente rápida. Siempre están disponibles varias réplicas de servicio secundarias activas. Si una instancia de sistema operativo deja de estar disponible debido a un error de hardware, una de las réplicas secundarias se promueve inmediatamente a la réplica principal. 
-- **Agilidad de la escala**. Puede escalar con facilidad y rapidez los servicios de confianza desde varias instancias hasta miles de instancias y, a continuación, volver a realizar una copia de seguridad en algunas instancias, en función de sus necesidades de recursos. 
+- **Conmutación por error rápida**. Service Fabric proporciona una conmutación por error extremadamente rápida. Siempre están disponibles varias réplicas de servicio secundarias activas. Si una instancia de sistema operativo deja de estar disponible debido a un error de hardware, una de las réplicas secundarias se promueve inmediatamente a la réplica principal.
+- **Agilidad de la escala**. Puede escalar con facilidad y rapidez los servicios de confianza desde varias instancias hasta miles de instancias y, a continuación, volver a realizar una copia de seguridad en algunas instancias, en función de sus necesidades de recursos.
 
 ### <a name="persistent-storage"></a>Almacenamiento persistente
 
-La aplicación de controladora de red tiene grandes requisitos de almacenamiento para su configuración y estado. La aplicación también debe ser utilizable en las interrupciones planeadas y no planeadas. Con este propósito, Service Fabric proporciona un almacén de valores de clave \(KVS\) que es un almacén transaccional, replicado y replicado.
+La aplicación de controladora de red tiene grandes requisitos de almacenamiento para su configuración y estado. La aplicación también debe ser utilizable en las interrupciones planeadas y no planeadas. Para ello, Service Fabric proporciona un almacén de clave-valor de \( KVS \) que es un almacén transaccional y replicado.
 
 ### <a name="modularity"></a>Modularidad
 
-La controladora de red está diseñada con una arquitectura modular, y cada uno de los servicios de red, como el servicio de redes virtuales y el servicio de firewall, se ha creado\-en servicios individuales. 
+El controlador de red está diseñado con una arquitectura modular, donde cada uno de los servicios de red, como el servicio de redes virtuales y el servicio de firewall, están integrados \- como servicios individuales.
 
 Esta arquitectura de aplicación proporciona las siguientes ventajas.
 
@@ -80,7 +78,7 @@ Service Fabric modularidad utiliza esquemas de modelo de servicio para maximizar
 
 ## <a name="network-controller-deployment-options"></a>Opciones de implementación de la controladora de red
 
-Para implementar la controladora de red mediante System Center Virtual Machine Manager \(\)de VMM, consulte [configuración de una controladora de red de Sdn en el tejido de VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
+Para implementar la controladora de red mediante System Center Virtual Machine Manager \( VMM \) , consulte [configuración de una controladora de red de Sdn en el tejido de VMM](/system-center/vmm/sdn-controller?view=sc-vmm-2019).
 
 Para implementar la controladora de red mediante scripts, consulte [implementación de una infraestructura de red definida por software mediante scripts](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).
 

@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b5e8ae365fbf8130d134ab2f9fa555e952d012a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: da8bb60ea455578eff96aed6173e4662fffd6ade
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895634"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991758"
 ---
 # <a name="get-started-with-user-access-logging"></a>Introducción al registro de acceso de usuarios
 
@@ -126,7 +126,5 @@ Los siguientes datos relacionados con el dispositivo se registran con UAL.
 UAL se puede usar en cualquier equipo que ejecute versiones de Windows Server después de Windows Server 2012.
 
 ## <a name="additional-references"></a>Referencias adicionales
-[Registro de acceso de usuarios](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx) en MSDN.
+[Registro de acceso de usuarios](/previous-versions/windows/desktop/ual/user-access-logging) en MSDN.
 [Administrar el Registro de acceso de usuarios](Manage-User-Access-Logging.md)
-
-

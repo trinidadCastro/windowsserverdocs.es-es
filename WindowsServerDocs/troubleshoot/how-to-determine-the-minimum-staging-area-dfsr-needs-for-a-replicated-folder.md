@@ -1,21 +1,19 @@
 ---
 title: Cómo determinar el área de ensayo mínima que necesita DFSR para una carpeta replicada
 description: Este artículo es una guía de referencia rápida sobre cómo calcular el área de ensayo mínima necesaria para que DFSR funcione correctamente.
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 06/10/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 5e5bfdbb90d2b3e631aaa020a173eca779f0d6b3
-ms.sourcegitcommit: fa9a8badf4eb366aeeca7d2905e2cad711ee8dae
+ms.openlocfilehash: 581b485f219e960ecd467baa1f7dff7742c3acf8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715009"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965792"
 ---
 # <a name="how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder"></a>Cómo determinar el área de ensayo mínima que necesita DFSR para una carpeta replicada
 
-Este artículo es una guía de referencia rápida sobre cómo calcular el área de ensayo mínima necesaria para que DFSR funcione correctamente. Los valores inferiores a estos pueden hacer que la replicación se realice lentamente o se detenga por completo. 
+Este artículo es una guía de referencia rápida sobre cómo calcular el área de ensayo mínima necesaria para que DFSR funcione correctamente. Los valores inferiores a estos pueden hacer que la replicación se realice lentamente o se detenga por completo.
 
 Tenga en cuenta que *solo son mínimos*. Al considerar el tamaño del área de ensayo, cuanto mayor sea el área de almacenamiento provisional, mayor será el tamaño de la carpeta replicada. Consulte la sección "cómo determinar si tiene un problema de área de ensayo" y las entradas de blog vinculadas al final de este artículo para obtener más información sobre por qué es importante tener un área de ensayo con el tamaño correcto.
 
@@ -38,23 +36,23 @@ PowerShell se incluye en Windows 2008 y versiones posteriores. Debe instalar Pow
 
 Use un script de PowerShell para buscar los archivos de mayor tamaño 32 o 9 y determinar cuántos gigabytes agrega hasta (gracias a tendrá Pyle para los comandos de PowerShell). En realidad, voy a presentar tres scripts de PowerShell. Cada es útil por sí solo; sin embargo, el número 3 es el más útil.
 
-1. Ejecute el siguiente comando:  
+1. Ejecute el comando siguiente:
    ```Powershell
    Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | ft name,length -wrap –auto
    ```
-   
+
    Este comando devolverá los nombres de archivo y el tamaño de los archivos en bytes. Resulta útil si desea saber qué archivos de 32 son los más grandes en la carpeta replicada para que pueda "visitar" sus propietarios.
 
-2. Ejecute el siguiente comando:  
+2. Ejecute el comando siguiente:
    ```Poswershell
    Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length –sum
    ```
    Este comando devolverá el número total de bytes de los archivos 32 de mayor tamaño de la carpeta sin enumerar los nombres de archivo.
 
-3. Ejecute el siguiente comando:  
+3. Ejecute el comando siguiente:
    ```Poswershell
    $big32 = Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length –sum
-   
+
    $big32.sum /1gb
    ```
    Este comando obtendrá el número total de bytes de 32 archivos de mayor tamaño en la carpeta y realizará las operaciones matemáticas para convertir los bytes en gigabytes. Este comando es dos líneas independientes. Puede pegarlas en el shell de comandos de PowerShell a la vez o volver a ejecutarlas de nuevo.
@@ -71,7 +69,7 @@ Al ejecutar el comando 1 se devolverán resultados similares a la salida siguien
 <tbody>
 <tr class="odd">
 <td>Nombre</td>
-<td>Length</td>
+<td>Longitud</td>
 </tr>
 <tr class="even">
 <td><strong>File5.zip</strong></td>
@@ -160,7 +158,7 @@ En función de estos datos, establecería mi área de ensayo en 71 GB si redonde
 
 Aunque un tutorial manual es interesante, es probable que no sea el mejor uso de su tiempo para realizar las operaciones matemáticas. Para automatizar el proceso, use el comando 3 de los ejemplos anteriores. Los resultados tendrán el siguiente aspecto
 
-> [![imagen](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/58/02/metablogapi/8204.image_thumb_02CB3914.png "imagen")](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/58/02/metablogapi/0876.image_03A39EFE.png)
+> [![impresión](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/58/02/metablogapi/8204.image_thumb_02CB3914.png "imagen")](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/58/02/metablogapi/0876.image_03A39EFE.png)
 
 Con el comando de ejemplo 3 sin ningún esfuerzo adicional, excepto para el redondeo al número entero más próximo, puedo determinar que necesito una cuota de área de ensayo de 6 GB para d: \\ docs.
 
@@ -174,29 +172,24 @@ Los problemas del área de ensayo se detectan supervisando los identificadores d
 
 ### <a name="staging-area-events"></a>Eventos del área de ensayo
 
-> ID. de evento: **4202**  
-> Gravedad: **ADVERTENCIA**
-> 
+> ID. de evento: **4202** gravedad: **ADVERTENCIA**
+>
 > El servicio de Replicación DFS ha detectado que el espacio de almacenamiento provisional que se usa para la carpeta replicada en la ruta de acceso local (PATH) está por encima del límite máximo. El servicio intentará eliminar los archivos provisionales más antiguos. El rendimiento puede verse afectado.
-> 
-> ID. de evento: **4204**  
-> Gravedad: **informativo**
-> 
+>
+> ID. de evento: **4204** gravedad: **informativo**
+>
 > El servicio de Replicación DFS ha eliminado correctamente los archivos de almacenamiento provisional antiguos de la carpeta replicada en la ruta de acceso local (ruta de acceso). El espacio de almacenamiento provisional ahora está por debajo del límite máximo.
-> 
-> ID. de evento: **4206**  
-> Gravedad: **ADVERTENCIA**
-> 
+>
+> ID. de evento: **4206** gravedad: **ADVERTENCIA**
+>
 > El servicio Replicación DFS no pudo limpiar los archivos provisionales antiguos de la carpeta replicada en la ruta de acceso local (ruta de acceso). Es posible que el servicio no pueda replicar algunos archivos grandes y que la carpeta replicada no esté sincronizada. El servicio volverá a intentar automáticamente la limpieza del espacio de ensayo en (x) minutos. El servicio puede iniciar la limpieza antes si detecta que se han desbloqueado algunos archivos de almacenamiento provisional.
-> 
-> ID. de evento: **4208**  
-> Gravedad: **ADVERTENCIA**
-> 
+>
+> ID. de evento: **4208** gravedad: **ADVERTENCIA**
+>
 > El servicio Replicación DFS detectó que el uso del espacio de almacenamiento provisional está por encima de la cuota de almacenamiento provisional de la carpeta replicada en la ruta de acceso local (ruta de acceso). Es posible que el servicio no pueda replicar algunos archivos grandes y que la carpeta replicada no esté sincronizada. El servicio intentará limpiar automáticamente el espacio de almacenamiento provisional.
-> 
-> ID. de evento: **4212**  
-> Gravedad: **error**
-> 
+>
+> ID. de evento: **4212** gravedad: **error**
+>
 > El servicio Replicación DFS no pudo replicar la carpeta replicada en la ruta de acceso local (ruta de acceso) porque la ruta de acceso de almacenamiento provisional no es válida o no es accesible.
 
 ## <a name="what-is-the-difference-between-4202-and-4208"></a>¿Cuál es la diferencia entre 4202 y 4208?

@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 697ca5e27db6a937c31b4dad072eef19a6f3df06
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4f8e7743e51a5316df474ad97768cf01292db668
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895679"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991915"
 ---
 # <a name="software-inventory-logging-aggregator"></a>Agregador de Registro de inventario de software
 
@@ -123,7 +123,7 @@ En un host de Windows Server que quiera configurar para el sondeo por el agregad
 
 9. Agregue el grupo **Usuarios de administración remota** con el formato **machinename\nombre de grupo**
 
-10. Haga clic en **OK**.
+10. Haga clic en **Aceptar**.
 
 11. De nuevo en la ventana de seguridad para **root\cimv2**, seleccione **Usuarios de administración remota**.
 
@@ -178,7 +178,7 @@ Antes de instalar el agregador de SIL en Windows Server debe asegurarse de cumpl
 
 6.  En **Elegir un tipo de cuenta**, seleccione **usuario local** o **gMSA**, en función de su preferencia.
 
-    Al elegir la opción de la cuenta de usuario local se creará un usuario local con una contraseña segura generada automáticamente. Esta cuenta se utilizará en todos los servicios y las operaciones de tareas del agregador de SIL en el servidor local.  Se recomienda utilizar cuentas de servicio administradas de grupo (gMSA) si el agregador forma parte de un dominio de Active Directory (Windows Server 2012 y versiones posteriores). Para más información sobre gMSA, consulte: [Group Managed Service Accounts Overview](https://technet.microsoft.com/library/hh831782.aspx).
+    Al elegir la opción de la cuenta de usuario local se creará un usuario local con una contraseña segura generada automáticamente. Esta cuenta se utilizará en todos los servicios y las operaciones de tareas del agregador de SIL en el servidor local.  Se recomienda utilizar cuentas de servicio administradas de grupo (gMSA) si el agregador forma parte de un dominio de Active Directory (Windows Server 2012 y versiones posteriores). Para más información sobre gMSA, consulte: [Group Managed Service Accounts Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11)).
 
     -   Si tiene previsto ejecutar la base de datos de SQL Server en un servidor distinto al del agregador de SIL, se debe utilizar la opción de la cuenta gMSA.
 
@@ -233,11 +233,11 @@ Una vez que tenga instalado el agregador de Registro de inventario de software e
 
 -   En el agregador de SIL:
 
-    -   Ejecute `Start-SilAggregator`:
+    -   Mediante la ejecución de `Start-SilAggregator`.
 
         Esto es necesario para que el agregador reciba activamente los datos que se le reenvían por HTTPS desde los servidores que tiene (o que tendrá) configurados para realizar su inventario. Tenga en cuenta que aunque primero haya habilitado los servidores para reenviar datos a este agregador, no pasa nada, dado que almacenarán en caché sus cargas de datos de forma local durante 30 días. Una vez que el agregador, su "TargetUri" esté en funcionamiento, todos los datos almacenados en caché se reenviarán a la vez al agregador y se procesarán todos los datos.
 
-    -   Ejecute `Add-SilVMHost`:
+    -   Mediante la ejecución de `Add-SilVMHost`.
 
         Ejemplo: `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
@@ -253,7 +253,7 @@ Una vez que tenga instalado el agregador de Registro de inventario de software e
 
 -   En los servidores de Windows de los que se va a realizar un inventario, abra PowerShell como administrador y ejecute estos comandos:
 
-    -   Ejecute `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`:
+    -   Mediante la ejecución de `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`.
 
         -   Esto indicará a SIL en Windows Server adónde enviar los datos de inventario y qué certificado utilizar para la autenticación.
 
@@ -265,11 +265,11 @@ Una vez que tenga instalado el agregador de Registro de inventario de software e
             > [!IMPORTANT]
             > Si estos valores no son correctos, o si el certificado no está instalado en el almacén correcto (o no es válido), los reenvíos al destino darán error cuando se inicie el registro de SIL. Los datos se almacenarán en caché de manera local durante 30 días.
 
-    -   Ejecute `Start-SilLogging`:
+    -   Mediante la ejecución de `Start-SilLogging`.
 
         Esto inicia el registro de SIL. Cada hora, a intervalos aleatorios de una hora, SIL reenvía sus datos de inventario al agregador especificado con el parámetro `–targeturi` . El primer reenvío será un conjunto completo de datos. Cada reenvío posterior será más de un "latido" con solo identificar los datos que no ha cambiado nada. Si hay algún cambio en el conjunto de datos, se reenviará otro conjunto completo de datos.
 
-    -   Ejecute `Publish-SilData`:
+    -   Mediante la ejecución de `Publish-SilData`.
 
         -   La primera vez que SIL se habilita para el registro, este paso es opcional.
 
@@ -397,7 +397,7 @@ A continuación se describe cada una de las columnas de la pestaña **Detalle de
 |Fecha y hora del último host visto|Fecha y hora en que el agregador recibió por última vez el inventario de datos de este host físico de Windows Server a través de HTTPS.<p>Se admite tener hosts físicos, que ejecutan Windows Server y Hyper-V, para habilitar SIL y reenviar datos de inventario a un agregador de SIL a través de HTTPS.|
 
 ## <a name="sil-aggregator-cmdlets-detail"></a>Detalles de los cmdlets del agregador de SIL
-A continuación se muestran los detalles de los cmdlets del agregador de SIL. Para ver la documentación completa de los cmdlets, consulte: [Cmdlets de PowerShell del agregador de SIL](https://technet.microsoft.com/library/mt548455.aspx)
+A continuación se muestran los detalles de los cmdlets del agregador de SIL. Para ver la documentación completa de los cmdlets, consulte: [Cmdlets de PowerShell del agregador de SIL](/previous-versions/windows/powershell-scripting/mt548455(v=wps.640))
 
 ### <a name="publish-silreport"></a>Publish-SilReport
 
@@ -591,8 +591,7 @@ Si desea empezar a realizar un inventario de los servidores de su entorno con un
 
 ## <a name="see-also"></a>Consulte también
 [Software Inventory Logging Aggregator 1.0 for Windows Server](https://www.microsoft.com/download/details.aspx?id=49046)<br>
-[Cmdlets de PowerShell del agregador de SIL](https://technet.microsoft.com/library/mt548455.aspx)<br>
-[Cmdlets de PowerShell de SIL](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[Información general de SIL](https://technet.microsoft.com/library/dn268301.aspx)<br>
-[Administración de NPS](https://technet.microsoft.com/library/dn383584.aspx)
-
+[Cmdlets de PowerShell del agregador de SIL](/previous-versions/windows/powershell-scripting/mt548455(v=wps.640))<br>
+[Cmdlets de PowerShell de SIL](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)<br>
+[Información general de SIL](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268301(v=ws.11))<br>
+[Administración de NPS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383584(v=ws.11))

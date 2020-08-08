@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 731d73c8aa7ea5ad7f7b2777b2694da232fae12a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 480b03f49b806ca0096c64d824679473b02695c5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895755"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991848"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>Administrar varios servidores remotos con Administrador del servidor
 
@@ -68,7 +68,7 @@ La consola de Administrador del servidor se incluye con [herramientas de adminis
 
 |Administrador del servidor sistema operativo de origen|Destinado a Windows Server 2012 R2 |Destinado a Windows Server 2012 |Destinado a Windows Server 2008 R2 o Windows Server 2008 |Dirigido a Windows Server 2003|
 |-------------------------------|---------------------------------------|------------------------------------|-----------------------------------------------------------------------|------------------|
-|Windows 8 o Windows Server 2012 |No compatible|Compatibilidad completa|Tras cumplir los [requisitos de software y configuración](#BKMK_softconfig), puede realizar la mayoría de las tareas de administración, pero no puede instalar ni desinstalar roles o características.|Compatibilidad limitada; solo estados con y sin conexión|
+|Windows 8 o Windows Server 2012 |No compatibles|Compatibilidad completa|Tras cumplir los [requisitos de software y configuración](#BKMK_softconfig), puede realizar la mayoría de las tareas de administración, pero no puede instalar ni desinstalar roles o características.|Compatibilidad limitada; solo estados con y sin conexión|
 |Windows 8.1 o Windows Server 2012 R2 |Compatibilidad completa|Compatibilidad completa|Tras cumplir los [requisitos de software y configuración](#BKMK_softconfig), puede realizar la mayoría de las tareas de administración, pero no puede instalar ni desinstalar roles o características.|Compatibilidad limitada; solo estados con y sin conexión|
 
 ###### <a name="to-start-server-manager-on-a-client-computer"></a>Para iniciar el Administrador del servidor en un equipo cliente
@@ -132,7 +132,7 @@ Para realizar tareas de administración en servidores remotos mediante Administr
 
     -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2008, vea [habilitar y usar comandos remotos en Windows PowerShell](https://go.microsoft.com/fwlink/p/?LinkId=242565).
 
-    -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2003, habilite las excepciones DCOM de WMI en Firewall de Windows. Para obtener más información sobre cómo hacer esto en servidores que ejecutan Windows Server 2003, consulta [Conexión a través de Firewall de Windows](https://msdn.microsoft.com/library/aa389286.aspx) en MSDN.
+    -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2003, habilite las excepciones DCOM de WMI en Firewall de Windows. Para obtener más información sobre cómo hacer esto en servidores que ejecutan Windows Server 2003, consulta [Conexión a través de Firewall de Windows](/windows/win32/wmisdk/connecting-to-wmi-remotely-with-vbscript) en MSDN.
 
 ## <a name="tasks-that-you-can-perform-in-server-manager"></a><a name=BKMK_tasks></a>Tareas que puede realizar con el Administrador del servidor
 Administrador del servidor hace que la administración del servidor sea más eficaz, ya que permite a los administradores realizar tareas en la tabla siguiente mediante una sola herramienta. En Windows Server 2012 R2 y Windows Server 2012, tanto los usuarios estándar de un servidor como los miembros del grupo administradores pueden realizar tareas de administración en Administrador del servidor, pero, de forma predeterminada, los usuarios estándar no pueden realizar algunas tareas, como se muestra en la tabla siguiente.
@@ -175,7 +175,7 @@ Administrador del servidor se inicia automáticamente de forma predeterminada en
 
 1.  En la consola de Administrador del servidor, en el menú **administrar** , haga clic en **propiedades de administrador del servidor**.
 
-2.  En el cuadro de diálogo **Propiedades del Administrador del servidor**, active la casilla de **No iniciar el Administrador del servidor automáticamente al iniciar sesión**. Haga clic en **OK**.
+2.  En el cuadro de diálogo **Propiedades del Administrador del servidor**, active la casilla de **No iniciar el Administrador del servidor automáticamente al iniciar sesión**. Haga clic en **Aceptar**.
 
 3.  Como alternativa, puede impedir que Administrador del servidor se inicie automáticamente si habilita la configuración de directiva de grupo, **no inicia administrador del servidor automáticamente al iniciar sesión**. La ruta de acceso a esta configuración de Directiva, en la consola del editor de directiva de grupo local, es configuración del Equipo\plantillas Administrativas\sistema\administrador del servidor Manager.
 
@@ -237,5 +237,3 @@ Puede exportar la configuración de Administrador del servidor, hacer que Admini
     -   %*AppData*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
     -   %*LocalAppData*% \Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
-
-

@@ -1,17 +1,15 @@
 ---
 title: Ajuste del umbral de red de la línea de base de conmutación por error
 description: En este artículo se presentan soluciones para ajustar el umbral de las redes de clústeres de conmutación por error.
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 86a7023f6480e68f917cb8cdd9d0c69c417d3145
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 9f28aa9c10fe64e0b86a405c1feb480396bcb76b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409796"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965812"
 ---
 # <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>IaaS con SQL AlwaysOn: Ajuste de umbrales de red de clústeres de conmutación por error
 

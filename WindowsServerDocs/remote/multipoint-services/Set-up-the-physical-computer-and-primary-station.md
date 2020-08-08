@@ -7,12 +7,12 @@ ms.assetid: 4e83b126-ce9a-4cd7-a0bd-6627c9e0f81b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: b18800e2c8c7feae30f3dbcfb8904f00ef40a396
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 97141a300156c74ef5a2a3b1c4d738b4e33834f1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955472"
+ms.locfileid: "87991474"
 ---
 # <a name="set-up-the-physical-computer-and-primary-station"></a>Configurar el equipo físico y la estación principal
 Antes de instalar Multipoint Services, debe configurar la estación principal del sistema Multipoint Services. Si va a utilizar una red de área local (LAN), conecte el equipo a la LAN.
@@ -21,7 +21,7 @@ Una *estación* es un punto de conexión por el que se tiene acceso a multipoint
 
 La estación principal debe ser una estación conectada directamente a vídeo. En el procedimiento siguiente se describe cómo conectar el hardware necesario al equipo de Multipoint Services.
 
-Para obtener más información acerca de las estaciones, consulte [estaciones Multipoint](multipoint-services-stations.md). Para obtener ayuda con la selección de hardware, consulte [selección de hardware para el sistema Multipoint Services](Selecting-Hardware-for-Your-MultiPoint-services-System.md). Para obtener información sobre cómo conectar otros tipos de estaciones a multipoint Services, consulte [conexión de estaciones adicionales al equipo de Multipoint Services](Attach-additional-stations-to-your-MultiPoint-services-computer.md).
+Para obtener más información acerca de las estaciones, consulte [estaciones Multipoint](multipoint-services-stations.md). Para obtener ayuda con la selección de hardware, consulte [selección de hardware para el sistema Multipoint Services](./select-hardware-mps.md). Para obtener información sobre cómo conectar otros tipos de estaciones a multipoint Services, consulte [conexión de estaciones adicionales al equipo de Multipoint Services](./multipoint-attach-additional-stations.md).
 
 > [!NOTE]
 > Para crear una estación conectada a vídeo, debe usar un teclado latino (por ejemplo, un teclado en inglés o español).

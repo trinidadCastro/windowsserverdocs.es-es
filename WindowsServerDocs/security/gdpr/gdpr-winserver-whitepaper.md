@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 0a21adf3bafeb93f2f9fc18da785fae1a81260b3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1ddfbbda9ab0bdf4d04213069e192e471e4d1b98
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971532"
+ms.locfileid: "87991689"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Inicio del viaje de Reglamento general de protección de datos (RGPD) para Windows Server
 
@@ -167,7 +167,7 @@ Las identidades con privilegios pueden ponerse en peligro cuando las organizacio
 
 - **Investigación de ingeniería social.** La mayoría de amenazas de credenciales se inician investigando la organización y, a continuación, realizadas a través de la ingeniería social. Por ejemplo, un atacante puede realizar un ataque de suplantación de identidad por correo electrónico para poner en peligro cuentas legítimas (pero no necesariamente cuentas elevadas) que tengan acceso a la red de una organización. A continuación, el atacante utiliza estas cuentas válidas para realizar una investigación adicional en la red e identificar cuentas con privilegios que puedan realizar tareas administrativas.
 
-- **Aproveche las cuentas con privilegios elevados.** Incluso con una cuenta de usuario normal sin privilegios elevados en la red, los atacantes pueden obtener acceso a las cuentas con permisos elevados. Uno de los métodos más comunes para hacerlo es mediante el uso de los ataques Pass-The-hash o Pass-The-token. Para obtener más información sobre Pass-The-hash y otras técnicas de robo de credenciales, vea los recursos en la [Página Pass-The-hash (PtH)](https://technet.microsoft.com/dn785092.aspx).
+- **Aproveche las cuentas con privilegios elevados.** Incluso con una cuenta de usuario normal sin privilegios elevados en la red, los atacantes pueden obtener acceso a las cuentas con permisos elevados. Uno de los métodos más comunes para hacerlo es mediante el uso de los ataques Pass-The-hash o Pass-The-token. Para obtener más información sobre Pass-The-hash y otras técnicas de robo de credenciales, vea los recursos en la [Página Pass-The-hash (PtH)](/previous-versions/dn785092(v=msdn.10)).
 
 Hay otros métodos que los atacantes pueden usar para identificar y poner en peligro las identidades con privilegios (con nuevos métodos que se crean cada día). Por lo tanto, es importante que establezca prácticas para que los usuarios inicien sesión con cuentas con privilegios mínimos para reducir la capacidad de los atacantes de obtener acceso a las identidades con privilegios. En las secciones siguientes se describe la funcionalidad donde Windows Server puede mitigar estos riesgos.
 
@@ -211,7 +211,7 @@ Credential Guard de Windows Defender usa:
 
 - TPM 2,0 ya sea discreto o de firmware (preferido: proporciona enlace al hardware)
 
-Puede usar Credential Guard de Windows Defender para ayudar a proteger las identidades con privilegios mediante la protección de las credenciales y los derivados de las credenciales en Windows Server 2016. Para obtener más información sobre los requisitos de Credential Guard de Windows Defender, consulte [protección de las credenciales de dominio derivadas con protección de credenciales de Windows Defender](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard).
+Puede usar Credential Guard de Windows Defender para ayudar a proteger las identidades con privilegios mediante la protección de las credenciales y los derivados de las credenciales en Windows Server 2016. Para obtener más información sobre los requisitos de Credential Guard de Windows Defender, consulte [protección de las credenciales de dominio derivadas con protección de credenciales de Windows Defender](/windows/access-protection/credential-guard/credential-guard).
 
 #### <a name="windows-defender-remote-credential-guard"></a>Protección de credenciales remota de Windows Defender
 La protección de credenciales remota de Windows Defender en Windows Server 2016 y la actualización de aniversario de Windows 10 también ayuda a proteger las credenciales para los usuarios con conexiones a escritorio remoto. Anteriormente, cualquier persona que usara Servicios de Escritorio remoto tendría que iniciar sesión en su equipo local y, a continuación, volver a iniciar sesión cuando realizara una conexión remota a su equipo de destino. Este segundo inicio de sesión pasaría las credenciales a la máquina de destino y las exponería a ataques Pass-The-hash o Pass-The-ticket.
@@ -226,7 +226,7 @@ Con Credential Guard remoto de Windows Defender, Windows Server 2016 implementa 
 
 - Se requiere la aplicación de Windows clásica Escritorio remoto. La aplicación de Plataforma universal de Windows de Escritorio remoto no es compatible con Credential Guard remoto de Windows Defender.
 
-Puede habilitar Credential Guard remoto de Windows Defender mediante una configuración del registro en el servidor de Escritorio remoto y directiva de grupo o un parámetro Conexión a Escritorio remoto en el cliente de Escritorio remoto. Para obtener más información sobre cómo habilitar la protección de credenciales remotas de Windows Defender, consulte [protección de credenciales de escritorio remoto con protección de credenciales remotas de Windows Defender](https://docs.microsoft.com/windows/access-protection/remote-credential-guard). Al igual que con la protección de credenciales de Windows Defender, puede usar Credential Guard remoto de Windows Defender para ayudar a proteger las identidades con privilegios en Windows Server 2016.
+Puede habilitar Credential Guard remoto de Windows Defender mediante una configuración del registro en el servidor de Escritorio remoto y directiva de grupo o un parámetro Conexión a Escritorio remoto en el cliente de Escritorio remoto. Para obtener más información sobre cómo habilitar la protección de credenciales remotas de Windows Defender, consulte [protección de credenciales de escritorio remoto con protección de credenciales remotas de Windows Defender](/windows/access-protection/remote-credential-guard). Al igual que con la protección de credenciales de Windows Defender, puede usar Credential Guard remoto de Windows Defender para ayudar a proteger las identidades con privilegios en Windows Server 2016.
 
 ### <a name="secure-the-operating-system-to-run-your-apps-and-infrastructure"></a>Protección del sistema operativo para ejecutar las aplicaciones y la infraestructura
 La prevención de amenazas de Cyber también requiere la búsqueda y el bloqueo de malware y ataques que buscan obtener control mediante la reversión de las prácticas operativas estándar de la infraestructura. Si los atacantes pueden obtener un sistema operativo o una aplicación para que se ejecuten de manera no predeterminada y no viable, es probable que utilicen ese sistema para realizar acciones malintencionadas. Windows Server 2016 proporciona capas de protección que bloquean a los atacantes externos que ejecutan software malintencionado o vulnerabilidades de seguridad. El sistema operativo toma un rol activo en la protección de la infraestructura y las aplicaciones al avisar a los administradores de la actividad que indica que se ha infringido el sistema.
@@ -340,11 +340,11 @@ ATA es un producto local que ayuda a detectar el riesgo de identidad en una orga
 
 |Tipo de ataque |Descripción |
 |---------|---------|
-|Ataques malintencionados |Estos ataques se detectan mediante la búsqueda de ataques a partir de una lista conocida de tipos de ataque, incluidos:<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>PAC falsificado (MS14-068)</li><li>Golden ticket</li><li>Replicaciones malintencionadas</li><li>Reconocimiento</li><li>Fuerza bruta</li><li>Ejecución remota</li></ul>Para obtener una lista completa de los ataques malintencionados que se pueden detectar y su descripción, vea [¿qué actividades sospechosas puede detectar ATA?](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats).|
+|Ataques malintencionados |Estos ataques se detectan mediante la búsqueda de ataques a partir de una lista conocida de tipos de ataque, incluidos:<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>PAC falsificado (MS14-068)</li><li>Golden ticket</li><li>Replicaciones malintencionadas</li><li>Reconocimiento</li><li>Fuerza bruta</li><li>Ejecución remota</li></ul>Para obtener una lista completa de los ataques malintencionados que se pueden detectar y su descripción, vea [¿qué actividades sospechosas puede detectar ATA?](/advanced-threat-analytics/understand-explore/ata-threats).|
 |Comportamiento anómalo |Estos ataques se detectan mediante el análisis de comportamiento y usan el aprendizaje automático para identificar actividades cuestionables, entre las que se incluyen:<ul><li>Inicios de sesión anómalos</li><li>Amenazas desconocidas</li><li>Uso compartido de contraseña</li><li>Desplazamiento lateral</li></ul>|
 |Problemas y riesgos de seguridad |Estos ataques se detectan examinando la configuración actual de la red y del sistema, incluidos:<ul><li>Confianza rota</li><li>Protocolos débiles</li><li>Vulnerabilidades conocidas de protocolos</li></ul>|
 
-Puede usar ATA para ayudar a detectar atacantes que intenten poner en peligro las identidades con privilegios. Para obtener más información sobre la implementación de ATA, consulte los temas planeación, diseño e implementación de la [documentación de Advanced Threat Analytics](https://docs.microsoft.com/advanced-threat-analytics/).
+Puede usar ATA para ayudar a detectar atacantes que intenten poner en peligro las identidades con privilegios. Para obtener más información sobre la implementación de ATA, consulte los temas planeación, diseño e implementación de la [documentación de Advanced Threat Analytics](/advanced-threat-analytics/).
 
 ## <a name="related-content-for-associated-windows-server-2016-solutions"></a>Contenido relacionado para las soluciones de Windows Server 2016 asociadas
 
@@ -372,5 +372,3 @@ En este artículo no se le proporciona ningún derecho legal sobre ninguna propi
 Publicado en septiembre 2017<br>
 Versión 1.0<br>
 © 2017 Microsoft. Todos los derechos reservados.
-
-

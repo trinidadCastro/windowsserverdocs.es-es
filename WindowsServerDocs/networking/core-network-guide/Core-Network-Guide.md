@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2c41fde041183ff7e039bd2fed877aad8ff0f234
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6db855343ef037fb1e55925620f1842c7fdff98a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962329"
+ms.locfileid: "87997142"
 ---
 # <a name="core-network-components"></a>Componentes de la red principal
 
@@ -548,8 +548,8 @@ Puede usar los siguientes comandos para instalar y configurar AD DS y DNS. Debe 
 
 >[!NOTE]
 >Para obtener más información sobre estos comandos de Windows PowerShell, vea los temas de referencia siguientes.
->- [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature?view=win10-ps)
->- [Install-ADDSForest](https://docs.microsoft.com/powershell/module/addsdeployment/install-addsforest?view=win10-ps)
+>- [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature?view=win10-ps)
+>- [Install-ADDSForest](/powershell/module/addsdeployment/install-addsforest?view=win10-ps)
 
 Para poder realizar este procedimiento debe pertenecer, como mínimo, al grupo **Administradores**.
 
@@ -1157,19 +1157,19 @@ Para obtener más información sobre las tecnologías de esta guía, vea los sig
 
  Recursos de la biblioteca técnica de Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-- [Novedades de Active Directory Domain Services (AD DS) en Windows Server 2016](https://technet.microsoft.com/library/mt163897.aspx)
+- [Novedades de Active Directory Domain Services (AD DS) en Windows Server 2016](../../identity/whats-new-active-directory-domain-services.md)
 
-- [Active Directory Domain Services información general](https://technet.microsoft.com/library/hh831484.aspx) en https://technet.microsoft.com/library/hh831484.aspx .
+- [Active Directory Domain Services información general](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831484(v=ws.11)) en https://technet.microsoft.com/library/hh831484.aspx .
 
-- [Introducción al sistema de nombres de dominio (DNS)](https://technet.microsoft.com/library/hh831667.aspx) en https://technet.microsoft.com/library/hh831667.aspx .
+- [Introducción al sistema de nombres de dominio (DNS)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831667(v=ws.11)) en https://technet.microsoft.com/library/hh831667.aspx .
 
-- [Implementación del rol administradores de DNS](https://technet.microsoft.com/library/cc756152(WS.10).aspx)
+- [Implementación del rol administradores de DNS](/previous-versions/windows/it-pro/windows-server-2003/cc756152(v=ws.10))
 
-- [Introducción al Protocolo de configuración dinámica de host (DHCP)](https://technet.microsoft.com/library/hh831825.aspx) en https://technet.microsoft.com/library/hh831825.aspx .
+- [Introducción al Protocolo de configuración dinámica de host (DHCP)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831825(v=ws.11)) en https://technet.microsoft.com/library/hh831825.aspx .
 
-- [Información general de servicios de acceso y directivas de redes](https://technet.microsoft.com/library/hh831683.aspx) en https://technet.microsoft.com/library/hh831683.aspx .
+- [Información general de servicios de acceso y directivas de redes](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831683(v=ws.11)) en https://technet.microsoft.com/library/hh831683.aspx .
 
-- [Información general del servidor Web (IIS)](https://technet.microsoft.com/library/hh831725.aspx) en https://technet.microsoft.com/library/hh831725.aspx .
+- [Información general del servidor Web (IIS)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831725(v=ws.11)) en https://technet.microsoft.com/library/hh831725.aspx .
 
 ## <a name="appendices-a-through-e"></a><a name="BKMK_appendix"></a>Apéndices A a E
 Las secciones siguientes contienen información de configuración adicional para equipos que ejecutan sistemas operativos que no son Windows Server 2016, Windows 10, Windows Server 2012 y Windows 8. Además, se proporciona una hoja de cálculo de preparación de red para ayudarle con la implementación.
@@ -1543,4 +1543,3 @@ Las tres tablas siguientes muestran elementos de configuración de la preinstala
 Elementos de configuración para los procedimientos de implementación de NPS de red principal de Windows Server [instalar el servidor de directivas de redes (NPS)](#BKMK_installNPS) y [registrar el NPS en el dominio predeterminado](#BKMK_registerNPS).
 
 - No se requieren más elementos de configuración para instalar y registrar NPS.
-

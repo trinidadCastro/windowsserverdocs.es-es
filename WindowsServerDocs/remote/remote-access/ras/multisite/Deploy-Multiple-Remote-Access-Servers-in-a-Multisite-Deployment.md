@@ -2,18 +2,16 @@
 title: Implementación de varios servidores de acceso remoto en una implementación multisitio
 description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d8f12839deb1279b9f6c095068a85f528dad4a72
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8f0d8b4416c8480921d43fd4e705b837082152fb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181761"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991348"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>Implementación de varios servidores de acceso remoto en una implementación multisitio
 
@@ -34,7 +32,7 @@ Una implementación multisitio es compatible con equipos cliente que ejecutan Wi
 
 La compatibilidad con los clientes que ejecutan Windows 7 debe estar habilitada manualmente en cada punto de entrada y no se admite la selección de un punto de entrada por parte de estos clientes.
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 Antes de empezar a implementar este escenario, revise esta lista de requisitos importantes:
 
 -   [Implementar un único servidor de DirectAccess con configuración avanzada](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md) debe implementarse antes de una implementación multisitio.
@@ -45,7 +43,7 @@ Antes de empezar a implementar este escenario, revise esta lista de requisitos i
 
 -   Hay que implementar una infraestructura de clave pública.
 
-    Para obtener más información, vea: [Minimódulo de la guía de laboratorio de pruebas: PKI básica para Windows Server 2012.](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+    Para obtener más información, vea: [Minimódulo de la guía de laboratorio de pruebas: PKI básica para Windows Server 2012.](/answers/topics/windows-server-2012.html)
 
 -   La red corporativa debe estar habilitada para IPv6. Si utilizas ISATAP, debes eliminarlo y usar IPv6 nativo.
 
@@ -156,6 +154,3 @@ A continuación se indican problemas conocidos al configurar un escenario de mul
 -   Si DirectAccess se implementó cuando una infraestructura ISATAP existente estaba presente, al quitar un punto de entrada que era un host ISATAP, la dirección IPv6 del servicio DNS64 se quitará de las direcciones de servidor DNS de todos los sufijos DNS de la NRPT.
 
     Para resolver este problema, en el Asistente para la **instalación del servidor de infraestructura** , en la página **DNS** , quite los sufijos DNS que se modificaron y agréguelos de nuevo con las direcciones de servidor DNS correctas; para ello, haga clic en **detectar** en el cuadro de diálogo **direcciones de servidor DNS** .
-
-
-

@@ -2,18 +2,16 @@
 title: Define File Groups for Screening
 description: En este artículo se describe cómo definir grupos de archivos para crear un espacio de nombres para el filtro de archivos, la excepción al filtro de archivos o los informes de almacenamiento de grupos de archivos
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e38dee0381b33bb9d11b038de715a4420906e131
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cbcf96a4ab5c6516b87ebde57f6adaf1cf4df17f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474332"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957482"
 ---
 # <a name="define-file-groups-for-screening"></a>Define File Groups for Screening
 
@@ -43,7 +41,7 @@ Un *grupo de archivos* se usa para definir un espacio de nombres para un filtro 
     -   Para cada conjunto de archivos que desee excluir del grupo de archivos, en el cuadro **archivos que se van a excluir** , escriba un patrón de nombre de archivo y, a continuación, haga clic en **Agregar**.
         Tenga en cuenta que se aplican las reglas de caracteres comodín estándar, por ejemplo, ** \* . exe** selecciona todos los archivos ejecutables.
 
-5.  Haga clic en **OK**.
+5.  Haga clic en **Aceptar**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

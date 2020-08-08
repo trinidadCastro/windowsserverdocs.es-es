@@ -2,18 +2,16 @@
 title: Edit Auto Apply Quota Properties
 description: En este artículo se describe cómo editar las propiedades de la cuota automática
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2d520d80dc06969f21211d461fc33e2e9336df12
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 558f6b094e97a6196177e728c238f5bb7a38e7a1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474942"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957452"
 ---
 # <a name="edit-auto-apply-quota-properties"></a>Edit Auto Apply Quota Properties
 
@@ -32,7 +30,7 @@ Al realizar cambios en una cuota automática, tiene la opción de extender dicho
 
 3.  En **derivar propiedades de esta plantilla de cuota**, seleccione la plantilla de cuota que desea aplicar. Puede revisar las propiedades de cada plantilla de cuota en el cuadro de lista de resumen.
 
-4.  Haga clic en **OK**. Se abrirá el cuadro **de diálogo Actualizar cuotas derivadas de la cuota automática** .
+4.  Haga clic en **Aceptar**. Se abrirá el cuadro **de diálogo Actualizar cuotas derivadas de la cuota automática** .
 
 5.  Seleccione el tipo de actualización que desea aplicar:
 
@@ -40,7 +38,7 @@ Al realizar cambios en una cuota automática, tiene la opción de extender dicho
     -   Si desea modificar todas las cuotas existentes en la ruta de acceso de la cuota automática, seleccione **aplicar la cuota automática a todas las cuotas derivadas**.
     -   Si desea mantener las cuotas existentes sin cambios, pero hacer que la cuota automática modificada sea efectiva para las nuevas subcarpetas de la ruta de acceso de la cuota automática, seleccione no **aplicar la cuota automática a las cuotas derivadas**.
 
-6.  Haga clic en **OK**.
+6.  Haga clic en **Aceptar**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

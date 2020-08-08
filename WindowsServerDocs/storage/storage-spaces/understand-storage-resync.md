@@ -1,19 +1,17 @@
 ---
 title: Comprender y ver la resincronización de almacenamiento
 description: Información detallada sobre cuándo se produce la resincronización de almacenamiento y cómo verla en Windows Server 2019.
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 79e5e1e9daba005a086c16dd1d8e3e3f9a28a8a2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2a8eb653de2d72177f3ce39f0b63fe53b50c0ae8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473422"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957332"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>Comprender y controlar la resincronización de almacenamiento
 
@@ -114,4 +112,4 @@ Esta vista es mucho más granular, ya que los trabajos de almacenamiento enumera
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Desconectar un servidor para realizar labores de mantenimiento](maintain-servers.md)
-- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)

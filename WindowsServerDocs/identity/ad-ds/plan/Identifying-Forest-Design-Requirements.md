@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 2040bdb6d0dde9805c9bf6e6d59af025d23061a0
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 79bd34c8a2beb38d60b972aec0f8a17f17e5a590
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624213"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941027"
 ---
 # <a name="identifying-forest-design-requirements"></a>Identificar los requisitos de diseño de bosque
 
@@ -41,7 +39,7 @@ Parte de la identificación de los requisitos de diseño de bosque implica la id
 
 El equipo de diseño debe documentar los requisitos de aislamiento y autonomía del servicio y la administración de los datos para cada grupo de la organización que pretenda usar AD DS. El equipo también debe tener en cuenta las áreas de conectividad limitada que puedan afectar a la implementación de AD DS.
 
-El equipo de diseño debe documentar los requisitos de aislamiento y autonomía del servicio y la administración de los datos para cada grupo de la organización que pretenda usar AD DS. El equipo también debe tener en cuenta las áreas de conectividad limitada que puedan afectar a la implementación de AD DS. Para obtener una hoja de cálculo que le ayude a documentar las regiones que identificó, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "requisitos de diseño de bosque" (DSSLOGI_2. doc).
+El equipo de diseño debe documentar los requisitos de aislamiento y autonomía del servicio y la administración de los datos para cada grupo de la organización que pretenda usar AD DS. El equipo también debe tener en cuenta las áreas de conectividad limitada que puedan afectar a la implementación de AD DS. Para obtener una hoja de cálculo que le ayude a documentar las regiones que identificó, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "requisitos de diseño de bosque" (DSSLOGI_2.doc).
 
 ## <a name="in-this-section"></a>En esta sección
 

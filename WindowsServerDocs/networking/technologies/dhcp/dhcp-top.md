@@ -2,18 +2,16 @@
 title: Protocolo de configuración dinámica de host (DHCP)
 description: En este tema se proporciona una breve introducción al Protocolo de configuración dinámica de host (DHCP) en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dhcp
 ms.topic: article
 ms.assetid: 0ff29ef3-c458-4432-9065-e50a7de5b4b9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5fc44d0f58ed73ff48f530bad3206baa675d9ac9
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ba932599b7d23a8504c146118489598e45cc9fd7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312525"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949228"
 ---
 # <a name="dynamic-host-configuration-protocol-dhcp"></a>Protocolo de configuración dinámica de host (DHCP)
 
@@ -49,8 +47,8 @@ El administrador de red establece los servidores DHCP que mantienen la informaci
 
 Un cliente habilitado para DHCP, al aceptar una oferta de concesión, recibe:
 
-- Una dirección IP válida para la subred a la que se está conectando.  
-  
+- Una dirección IP válida para la subred a la que se está conectando.
+
 - Opciones DHCP solicitadas, que son parámetros adicionales que un servidor DHCP configura para asignar a los clientes. Algunos ejemplos de opciones de DHCP son enrutador (puerta de enlace predeterminada), servidores DNS y nombre de dominio DNS.
 
 ## <a name="benefits-of-dhcp"></a>Ventajas de DHCP

@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1df4ffbb0cdc79527bef0fd2e3400d78995d5474
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 548158fd1df4ee4fbd8d6f1bcee28693961c8d79
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895670"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991858"
 ---
 # <a name="manage-software-inventory-logging"></a>Administrar el Registro de inventario de software
 
@@ -91,7 +91,7 @@ Las opciones de configuración que se abordan en este documento son:
 Registro de inventario de software la recopilación diaria y el reenvío a través de la red deben estar habilitados en un equipo que ejecute Windows Server 2012 R2 para registrar el inventario de software.
 
 > [!NOTE]
-> Puede usar el cmdlet de PowerShell **[Get-SilLogging](https://technet.microsoft.com/library/dn283396.aspx)** para recuperar información sobre el servicio del Registro de inventario de software, incluido si está en ejecución o detenido.
+> Puede usar el cmdlet de PowerShell **[Get-SilLogging](/previous-versions/windows/powershell-scripting/dn283396(v=wps.630))** para recuperar información sobre el servicio del Registro de inventario de software, incluido si está en ejecución o detenido.
 
 #### <a name="to-start-software-inventory-logging"></a>Para iniciar el Registro de inventario de software
 
@@ -99,7 +99,7 @@ Registro de inventario de software la recopilación diaria y el reenvío a trav�
 
 2.  Abra PowerShell como administrador.
 
-3.  En el símbolo del sistema de PowerShell, escriba **[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)**
+3.  En el símbolo del sistema de PowerShell, escriba **[Start-SilLogging](/previous-versions/windows/powershell-scripting/dn283391(v=wps.630))**
 
 > [!NOTE]
 > Es posible establecer el destino sin tener que configurar una huella digital del certificado, pero si lo hace, se producirá un error en los reenvíos y los datos se almacenarán localmente durante un valor predeterminado de hasta 30 días (después del cual se eliminará). Una vez que se establezca un hash de certificado válido para el destino (y se instale el correspondiente certificado válido en el almacén LocalMachine o Personal), los datos almacenados localmente se reenviarán al destino siempre y cuando el destino esté configurado para aceptar estos datos con este certificado (consulte [Software Inventory Logging Aggregator](Software-Inventory-Logging-Aggregator.md) para obtener más información).
@@ -110,7 +110,7 @@ Registro de inventario de software la recopilación diaria y el reenvío a trav�
 
 2.  Abra PowerShell como administrador.
 
-3.  En el símbolo del sistema de PowerShell, escriba **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)**
+3.  En el símbolo del sistema de PowerShell, escriba **[Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))**
 
 ## <a name="configuring-software-inventory-logging"></a>Configuración del Registro de inventario de software
 Hay tres pasos para configurar el Registro de inventario de software con el fin de reenviar datos de un servidor de agregación con el transcurso del tiempo:
@@ -126,7 +126,7 @@ Es conveniente realizar estos pasos antes de usar **Start-SilLogging**.  Si quie
 Si quiere obtener una guía completa para configurar el marco SIL en su conjunto, vea [Software Inventory Logging Aggregator](software-inventory-logging-aggregator.md).  En particular, si **Publish-SilData** produce un error, o si de algún modo el registro SIL produce un error, vea la sección de solución de problemas.
 
 ## <a name="software-inventory-logging-over-time"></a><a name="BKMK_Step2"></a>Registro de inventario de software en el tiempo
-Si un administrador inició el Registro de inventario de software, comenzará la recopilación y el reenvío cada hora de los datos al servidor de agregación (URI de destino). El primer reenvío será un conjunto de datos completo de los mismos datos que [Get-SilData](https://technet.microsoft.com/library/dn283388.aspx) recupera y muestra en la consola en un momento dado. A partir de ese momento, en cada intervalo, SIL realizará una comprobación de los datos y reenviará solo una pequeña confirmación de identificación al servidor de agregación de destino si no hay ningún cambio en los datos desde la última recopilación. Si algún valor ha cambiado, SIL enviará de nuevo un conjunto de datos completo.
+Si un administrador inició el Registro de inventario de software, comenzará la recopilación y el reenvío cada hora de los datos al servidor de agregación (URI de destino). El primer reenvío será un conjunto de datos completo de los mismos datos que [Get-SilData](/previous-versions/windows/powershell-scripting/dn283388(v=wps.630)) recupera y muestra en la consola en un momento dado. A partir de ese momento, en cada intervalo, SIL realizará una comprobación de los datos y reenviará solo una pequeña confirmación de identificación al servidor de agregación de destino si no hay ningún cambio en los datos desde la última recopilación. Si algún valor ha cambiado, SIL enviará de nuevo un conjunto de datos completo.
 
 > [!IMPORTANT]
 > Si en cualquier intervalo el URI de destino no es accesible o la transferencia de datos a través de la red no se realiza por algún motivo, los datos recopilados se almacenarán localmente durante un valor predeterminado de hasta 30 días (después de cual se eliminará). En el siguiente reenvío correcto de datos al servidor de agregación de destino, todos los datos almacenados localmente se reenviarán y se eliminarán los datos almacenados en la memoria caché local.
@@ -134,19 +134,19 @@ Si un administrador inició el Registro de inventario de software, comenzará la
 ## <a name="displaying-software-inventory-logging-data"></a><a name="BKMK_Step3"></a>Visualización de los datos del Registro de inventario de software
 Además de los cmdlets de PowerShell que se describen en la sección anterior, es posible usar seis cmdlets adicionales para recopilar datos del Registro de inventario de software:
 
--   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)**: muestra los valores en momentos concretos de datos relacionados con el sistema operativo y un servidor concreto, así como el FQDN o el nombre de host del host físico, si está disponible.
+-   **[Get-SilComputer](/previous-versions/windows/powershell-scripting/dn283392(v=wps.630))**: muestra los valores en momentos concretos de datos relacionados con el sistema operativo y un servidor concreto, así como el FQDN o el nombre de host del host físico, si está disponible.
 
--   **[Get-SilComputerIdentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)**: muestra los identificadores que usa SIL para servidores individuales.
+-   **[Get-SilComputerIdentity (KB 3000850)](/previous-versions/windows/powershell-scripting/dn858074(v=wps.630))**: muestra los identificadores que usa SIL para servidores individuales.
 
--   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)**: muestra una recopilación en momentos concretos de todos los datos del Registro de inventario de software.
+-   **[Get-SilData](/previous-versions/windows/powershell-scripting/dn283388(v=wps.630))**: muestra una recopilación en momentos concretos de todos los datos del Registro de inventario de software.
 
--   **[Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)**: muestra la identidad en momentos concretos de todo el software instalado en el equipo.
+-   **[Get-SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))**: muestra la identidad en momentos concretos de todo el software instalado en el equipo.
 
--   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)**: muestra el número total de solicitudes de dispositivos cliente únicos y las solicitudes del servidor de los dos días anteriores.
+-   **[Get-SilUalAccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630))**: muestra el número total de solicitudes de dispositivos cliente únicos y las solicitudes del servidor de los dos días anteriores.
 
--   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)**: muestra la lista en momentos concretos de todas las actualizaciones de Windows instaladas en el equipo.
+-   **[Get-SilWindowsUpdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630))**: muestra la lista en momentos concretos de todas las actualizaciones de Windows instaladas en el equipo.
 
-Un escenario de caso de uso típico de los cmdlets del Registro de inventario de software sería un administrador que consulta el Registro de inventario de software en busca de la recopilación de un momento concreto de todos los datos del Registro de inventario de software mediante [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx).
+Un escenario de caso de uso típico de los cmdlets del Registro de inventario de software sería un administrador que consulta el Registro de inventario de software en busca de la recopilación de un momento concreto de todos los datos del Registro de inventario de software mediante [Get-SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630)).
 
 **Ejemplo de salida**
 
@@ -200,7 +200,7 @@ El Registro de inventario de software no pretende ser un componente crítico. Es
 
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>Para eliminar los datos que el Registro de inventario de software ha registrado
 
-1. En PowerShell, detenga el Registro de inventario de software con el comando **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)**.
+1. En PowerShell, detenga el Registro de inventario de software con el comando **[Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))**.
 
 2. Abra el Explorador de Windows.
 
@@ -223,17 +223,17 @@ Los datos registrados por SIL, pero almacenados localmente (si se produce un err
 ## <a name="software-inventory-logging-security"></a><a name="BKMK_Step7"></a>Seguridad del Registro de inventario de software
 Se requieren privilegios administrativos en el servidor local para recuperar correctamente datos de WMI del Registro de inventario de software y las API de PowerShell.
 
-Para aprovechar correctamente la capacidad completa de la característica del Registro de inventario de software para reenviar datos a un punto de agregación de forma continua en el tiempo (en intervalos de una hora), un administrador necesita usar certificados de cliente a fin de garantizar las sesiones SSL seguras para la transferencia de datos a través de HTTPS. Aquí encontrará una introducción básica a la autenticación HTTPS: [Autenticación HTTPS](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx).
+Para aprovechar correctamente la capacidad completa de la característica del Registro de inventario de software para reenviar datos a un punto de agregación de forma continua en el tiempo (en intervalos de una hora), un administrador necesita usar certificados de cliente a fin de garantizar las sesiones SSL seguras para la transferencia de datos a través de HTTPS. Aquí encontrará una introducción básica a la autenticación HTTPS: [Autenticación HTTPS](/previous-versions/windows/it-pro/windows-server-2003/cc736680(v=ws.10)).
 
 Los datos almacenados localmente en un equipo Windows Server (solo se produce si la característica se inicia, pero no se tiene acceso al destino por algún motivo) solamente estarán disponibles con privilegios administrativos en el servidor local.
 
 ## <a name="working-with-date-and-time-settings-in-windows-server-2012-r2-software-inventory-logging"></a><a name="BKMK_Step8"></a>Trabajar con valores de fecha y hora en el Registro de inventario de software de Windows Server 2012 R2
 
--   Al usar [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay para configurar la hora a la que se ejecuta el registro de SIL, se debe especificar una fecha y hora.Se establecerá la fecha del calendario y no se producirá el registro hasta que se llegue a esa fecha, en la hora del sistema local.
+-   Al usar [Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay para configurar la hora a la que se ejecuta el registro de SIL, se debe especificar una fecha y hora.Se establecerá la fecha del calendario y no se producirá el registro hasta que se llegue a esa fecha, en la hora del sistema local.
 
--   Cuando se usa [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)o [Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx), "InstallDate" mostrará siempre 12:00: a.m., un valor sin sentido.
+-   Cuando se usa [Get-SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))o [Get-SilWindowsUpdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630)), "InstallDate" mostrará siempre 12:00: a.m., un valor sin sentido.
 
--   Cuando se usa [Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx), "SampleDate" mostrará siempre 11:59: p.m., un valor sin sentido.La fecha se corresponde con los datos pertinentes para estas consultas de cmdlet.
+-   Cuando se usa [Get-SilUalAccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630)), "SampleDate" mostrará siempre 11:59: p.m., un valor sin sentido.La fecha se corresponde con los datos pertinentes para estas consultas de cmdlet.
 
 ## <a name="enabling-and-configuring-software-inventory-logging-in-a-mounted-virtual-hard-disk"></a><a name="BKMK_Step10"></a>Habilitación y configuración del Registro de inventario de software en un disco duro virtual montado
 El Registro de inventario de software también admite la configuración y habilitación de máquinas virtuales sin conexión. Los usos prácticos de esto están diseñados para cubrir la configuración de "imagen dorada" para la implementación amplia en centros de datos, así como para configurar imágenes de usuario final que van desde una implementación local a una nube.
@@ -242,20 +242,20 @@ Para admitir estos usos, el Registro de inventario de software tiene entradas de
 
 | Función | Nombre del valor | data | Cmdlet correspondiente (solo disponible en el sistema operativo que se ejecuta) |
 | --- | --- | --- | --- |
-|Iniciar o detener la característica|CollectionState|1 o 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx), [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|
-|Especifica el punto de agregación de destino en la red|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|
-|Especifica la huella digital del certificado o el hash del certificado usado para la autenticación SSL del servidor web de destino|CertificateThumbprint|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|
-|Especifica la fecha y hora en que debe iniciarse la característica (si el valor establecido es futuro, según la hora del sistema local)|CollectionTime|Valor predeterminado: 2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|
+|Iniciar o detener la característica|CollectionState|1 o 0|[Start-SilLogging](/previous-versions/windows/powershell-scripting/dn283391(v=wps.630)), [Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))|
+|Especifica el punto de agregación de destino en la red|TargetUri|string|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TargetURI|
+|Especifica la huella digital del certificado o el hash del certificado usado para la autenticación SSL del servidor web de destino|CertificateThumbprint|string|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -CertificateThumbprint|
+|Especifica la fecha y hora en que debe iniciarse la característica (si el valor establecido es futuro, según la hora del sistema local)|CollectionTime|Valor predeterminado: 2000-01-01T03:00:00|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay|
 
 Para modificar estos valores en un VHD sin conexión (sin que el sistema operativo de la máquina virtual se ejecute), primero se debe montar un VHD y, después, podrán usarse los comandos siguientes para realizar cambios:
 
--   [Reg load](https://technet.microsoft.com/library/cc742053.aspx)
+-   [Reg load](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742053(v=ws.11))
 
--   [Reg delete](https://technet.microsoft.com/library/cc742145.aspx)
+-   [Reg delete](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742145(v=ws.11))
 
--   [Reg add](https://technet.microsoft.com/library/cc742162.aspx)
+-   [Reg add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742162(v=ws.11))
 
--   [Reg unload](https://technet.microsoft.com/library/cc742043.aspx)
+-   [Reg unload](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742043(v=ws.11))
 
 El Registro de inventario de software comprobará estos valores cuando se inicie el sistema operativo y se ejecutará en consecuencia.
 
@@ -291,6 +291,6 @@ A continuación se muestran dos ejemplos del aspecto de la salida en la consola 
 ## <a name="see-also"></a>Consulte también
 [Introducción al registro](get-started-with-software-inventory-logging.md) 
  de inventario de software Agregador de registro de [inventario de software](software-inventory-logging-aggregator.md) 
- [Cmdlets de registro de inventario de software en Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx) 
+ [Cmdlets de registro de inventario de software en Windows PowerShell](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps) 
  [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) 
  [Export-BinaryMiLog](https://technet.microsoft.com/library/dn262591.aspx)

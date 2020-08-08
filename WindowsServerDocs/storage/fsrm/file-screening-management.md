@@ -2,18 +2,16 @@
 title: Administración del filtrado de archivos
 description: En este artículo se describe cómo crear filtros de archivos, generar notificaciones, definir plantillas de filtrado de archivos y crear excepciones de filtrado de archivos.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 43aed09aead02883f91c168e1cfaf6388aedfa85
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c189386ac340e9362c8774340732f8689f17effe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473982"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957442"
 ---
 # <a name="file-screening-management"></a>Administración del filtrado de archivos
 
@@ -25,7 +23,7 @@ En el nodo **Administración del filtrado de archivos** del complemento MMC Admi
 -   Definir plantillas de filtrado de archivos que puedan aplicarse a nuevos volúmenes o carpetas y que pueden utilizarse en toda una organización.
 -   Crear excepciones de filtrado de archivos que amplíen la flexibilidad de las reglas de filtrado de archivos.
 
-Por ejemplo, puede:
+Por ejemplo, se puede:
 
 -   Asegúrese de que no haya archivos de música almacenados en las carpetas personales de un servidor, pero podría permitir el almacenamiento de tipos específicos de archivos multimedia que admitan la administración de derechos legales o que cumplan las directivas de la empresa. En el mismo escenario, puede que desee conceder a un vicepresidente de la compañía privilegios especiales para almacenar cualquier tipo de archivos en su carpeta personal.
 -   Implemente un proceso de filtrado que le envíe una notificación por correo electrónico cuando se almacene un archivo ejecutable en una carpeta compartida, incluida información sobre el usuario que almacenó el archivo y la ubicación exacta del archivo, para que pueda realizar los pasos de precaución necesarios.

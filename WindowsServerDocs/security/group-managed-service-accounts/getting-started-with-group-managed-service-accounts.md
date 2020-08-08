@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 728da4f2061156352045439a55cba7fa9e98ced9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 979a6cf1e0b5e2d68c05f6285a9d745eabe41fa4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971472"
+ms.locfileid: "87991517"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -174,7 +174,7 @@ Para completar los siguientes procedimientos, el requisito mínimo es ser miembr
     New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$ -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
     ```
 
-Para completar este procedimiento, el requisito mínimo es ser miembro de **Admins. del dominio** u **Opers. de cuentas** o poder crear objetos msDS-GroupManagedServiceAccount. Para obtener información detallada sobre el uso de las cuentas adecuadas y las pertenencias a grupos, vea [Grupos predeterminados locales y de dominio](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
+Para completar este procedimiento, el requisito mínimo es ser miembro de **Admins. del dominio** u **Opers. de cuentas** o poder crear objetos msDS-GroupManagedServiceAccount. Para obtener información detallada sobre el uso de las cuentas adecuadas y las pertenencias a grupos, vea [Grupos predeterminados locales y de dominio](/previous-versions/orphan-topics/ws.10/dd728026(v=ws.10)).
 
 ##### <a name="to-create-a-gmsa-for-outbound-authentication-only-using-the-new-adserviceaccount-cmdlet"></a>Para crear una gMSA de autenticación de salida solamente con el cmdlet New-ADServiceAccount
 
@@ -204,15 +204,15 @@ Para configurar los servicios en Windows Server 2012, consulte la siguiente docu
 
 -   Grupo de aplicaciones de IIS
 
-    Para obtener más información, consulte [Especificar una identidad para un grupo de aplicaciones (IIS 7)](https://technet.microsoft.com/library/cc771170(WS.10).aspx).
+    Para obtener más información, consulte [Especificar una identidad para un grupo de aplicaciones (IIS 7)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771170(v=ws.10)).
 
 -   servicios de Windows
 
-    Para obtener más información, consulte [Servicios](https://technet.microsoft.com/library/cc772408.aspx).
+    Para obtener más información, consulte [Servicios](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772408(v=ws.11)).
 
 -   Tareas
 
-    Para obtener más información, consulte la [Introducción al Programador de tareas](https://technet.microsoft.com/library/cc721871.aspx).
+    Para obtener más información, consulte la [Introducción al Programador de tareas](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc721871(v=ws.11)).
 
 Puede haber otros servicios que admitan gMSA. Para ver información detallada sobre cómo configurar esos servicios, consulta la documentación del producto correspondiente.
 
@@ -223,15 +223,15 @@ Para completar estos procedimientos, el requisito mínimo es ser miembro de **Ad
 
 -   Método 1: Usuarios y equipos de Active Directory
 
-    Para ver los procedimientos de este método, consulte [Agregarcuentas de equipo a grupos](https://technet.microsoft.com/library/cc733097.aspx) con la interfaz de Windows y [Administrar dominios diferentes en el Centro de administración de Active Directory](manage-different-domains-in-active-directory-administrative-center.md).
+    Para ver los procedimientos de este método, consulte [Agregarcuentas de equipo a grupos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733097(v=ws.11)) con la interfaz de Windows y [Administrar dominios diferentes en el Centro de administración de Active Directory](manage-different-domains-in-active-directory-administrative-center.md).
 
 -   Método 2: dsmod
 
-    Para ver los procedimientos de este método, consulte [Agregar cuentas de equipo a grupos](https://technet.microsoft.com/library/cc733097.aspx) con la línea de comandos.
+    Para ver los procedimientos de este método, consulte [Agregar cuentas de equipo a grupos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733097(v=ws.11)) con la línea de comandos.
 
 -   Método 3: cmdlet de Active Directory de Windows PowerShell Add-ADPrincipalGroupMembership
 
-    Para ver los procedimientos de este método, consulte [Add-ADPrincipalGroupMembership](https://technet.microsoft.com/library/ee617203.aspx).
+    Para ver los procedimientos de este método, consulte [Add-ADPrincipalGroupMembership](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617203(v=technet.10)).
 
 Si usas cuentas de equipo, busca las cuentas existentes y agrega la nueva cuenta de equipo.
 
@@ -271,7 +271,7 @@ Para completar estos procedimientos, el requisito mínimo es ser miembro de **Ad
 
 Abre el módulo de Active Directory para Windows PowerShell y define las propiedades con el cmdlet Set-ADServiceAccount.
 
-Para ver información detallada sobre cómo definir estas propiedades, consulte [Set-ADServiceAccount](https://technet.microsoft.com/library/ee617252.aspx) en la biblioteca de TechNet o escriba **Get-Help Set-ADServiceAccount** en el símbolo del sistema del módulo de Active Directory para Windows PowerShell y presione ENTRAR para consultarlo.
+Para ver información detallada sobre cómo definir estas propiedades, consulte [Set-ADServiceAccount](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617252(v=technet.10)) en la biblioteca de TechNet o escriba **Get-Help Set-ADServiceAccount** en el símbolo del sistema del módulo de Active Directory para Windows PowerShell y presione ENTRAR para consultarlo.
 
 ## <a name="decommissioning-member-hosts-from-an-existing-server-farm"></a><a name="BKMK_DecommMemberHosts"></a>Retirada de hosts miembros de una granja de servidores existente
 Para completar estos procedimientos, el requisito mínimo es ser miembro de **Admins. del dominio** o poder quitar miembros del objeto del grupo de seguridad.
@@ -281,15 +281,15 @@ Si usa grupos de seguridad para administrar los hosts miembros, quite la cuenta 
 
 -   Método 1: Usuarios y equipos de Active Directory
 
-    Para ver los procedimientos de este método, consulte [Eliminar cuentas de equipo](https://technet.microsoft.com/library/cc754624.aspx) con la interfaz de Windows y [Administrar dominios diferentes en el Centro de administración de Active Directory](manage-different-domains-in-active-directory-administrative-center.md).
+    Para ver los procedimientos de este método, consulte [Eliminar cuentas de equipo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754624(v=ws.11)) con la interfaz de Windows y [Administrar dominios diferentes en el Centro de administración de Active Directory](manage-different-domains-in-active-directory-administrative-center.md).
 
 -   Método 2: drsm
 
-    Para ver los procedimientos de este método, consulte [Eliminar cuentas de equipo](https://technet.microsoft.com/library/cc754624.aspx) con la línea de comandos.
+    Para ver los procedimientos de este método, consulte [Eliminar cuentas de equipo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754624(v=ws.11)) con la línea de comandos.
 
 -   Método 3: cmdlet de Active Directory de Windows PowerShell Remove-ADPrincipalGroupMembership
 
-    Para ver información detallada sobre cómo hacer esto, consulte  [Remove-ADPrincipalGroupMembership](https://technet.microsoft.com/library/ee617243.aspx) en la biblioteca de TechNet o escriba **Get-Help Remove-ADPrincipalGroupMembership** en el símbolo del sistema del módulo de Active Directory para Windows PowerShell y presione ENTRAR para consultarlo.
+    Para ver información detallada sobre cómo hacer esto, consulte  [Remove-ADPrincipalGroupMembership](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617243(v=technet.10)) en la biblioteca de TechNet o escriba **Get-Help Remove-ADPrincipalGroupMembership** en el símbolo del sistema del módulo de Active Directory para Windows PowerShell y presione ENTRAR para consultarlo.
 
 Si usas listas de cuentas de equipo, recupera las cuentas existentes y, luego, agrega todas menos la cuenta del equipo quitado.
 
@@ -345,7 +345,7 @@ El requisito mínimo para completar estos procedimientos es pertenecer al grupo 
     Uninstall-ADServiceAccount ITFarm1
     ```
 
-Para obtener más información sobre el cmdlet Uninstall-ADServiceAccount, en el símbolo del sistema del módulo de Active Directory para Windows PowerShell, escriba **Get-Help Uninstall-ADServiceAccount**y presione ENTRAR o consulte la información de la web de TechNet en [Uninstall-ADServiceAccount](https://technet.microsoft.com/library/ee617202.aspx).
+Para obtener más información sobre el cmdlet Uninstall-ADServiceAccount, en el símbolo del sistema del módulo de Active Directory para Windows PowerShell, escriba **Get-Help Uninstall-ADServiceAccount**y presione ENTRAR o consulte la información de la web de TechNet en [Uninstall-ADServiceAccount](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617202(v=technet.10)).
 
 
 

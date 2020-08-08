@@ -1,19 +1,17 @@
 ---
 title: Configuración de nodos de HGS adicionales
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: fb744d2be9cc0002158deb0d9665a354ef23851a
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 16a8ada942f4fcae80085058c92a14bd33ed6e79
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769363"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997201"
 ---
 # <a name="configure-additional-hgs-nodes"></a>Configuración de nodos de HGS adicionales
 
@@ -117,7 +115,7 @@ Si desea proteger los puntos de conexión de HGS con un certificado SSL, debe co
 HGS *no* replica los certificados SSL y no es necesario usar las mismas claves para cada nodo (es decir, puede tener distintos certificados SSL para cada nodo).
 
 Al solicitar un certificado SSL, asegúrese de que el nombre de dominio completo del clúster (como se muestra en la salida de `Get-HgsServer` ) sea el nombre común del sujeto del certificado o que se incluya como nombre DNS alternativo del sujeto.
-Cuando haya obtenido un certificado de la entidad de certificación, puede configurar HGS para usarlo con [set-HgsServer](https://technet.microsoft.com/itpro/powershell/windows/hgsserver/set-hgsserver).
+Cuando haya obtenido un certificado de la entidad de certificación, puede configurar HGS para usarlo con [set-HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps).
 
 ```powershell
 $sslPassword = Read-Host -AsSecureString -Prompt "SSL Certificate Password"

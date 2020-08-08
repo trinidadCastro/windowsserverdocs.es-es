@@ -2,18 +2,16 @@
 title: Administración de informes de almacenamiento
 description: En este artículo se describe cómo generar, programar y supervisar informes de almacenamiento
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5bdcada1b445298c8743bdb39491726b594d0a66
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a43dbeac08c1cb851df48cb8412343928e07b1d0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475482"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957352"
 ---
 # <a name="storage-reports-management"></a>Administración de informes de almacenamiento
 
@@ -25,7 +23,7 @@ En el nodo **Administración de informes de almacenamiento** del complemento ser
 -   Realizar un seguimiento de los intentos de guardar archivos no autorizados para todos los usuarios o para un grupo de usuarios seleccionado.
 -   Generar informes de almacenamiento inmediatamente.
 
-Por ejemplo, puede:
+Por ejemplo, se puede:
 
 -   Programar un informe para que se ejecute todos los domingos a medianoche y hacer que se genere una lista que incluya los archivos a los que se ha obtenido acceso más recientemente en los dos últimos días. Con esta información, puede supervisar la actividad de almacenamiento del fin de semana y planear el tiempo de inactividad del servidor que tendrá menos impacto en los usuarios que se conectan desde casa durante el fin de semana.
 -   Ejecutar un informe en cualquier momento para identificar todos los archivos duplicados en un volumen de un servidor de modo que el espacio en disco pueda recuperarse rápidamente sin perder ningún dato.
