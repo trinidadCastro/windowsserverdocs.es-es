@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: 3830b356-36d3-44f9-a1d7-990ff3e57403
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6fea97938343039f0e2e76aaf0a653672b11faea
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2868bfcca87f44ee9c29aa4c36de3486c660ee62
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971952"
+ms.locfileid: "87989170"
 ---
 # <a name="branchcache-deployment-guide"></a>Guía de implementación de BranchCache
 
@@ -56,7 +56,7 @@ Esta guía también proporciona instrucciones sobre cómo implementar tres tipos
 
 -   **Servidores de contenido basados en servidor de archivos**. Estos servidores de contenido deben ejecutar Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o las versiones de Windows Server 2008 R2 que admiten BranchCache y en los que está instalado el rol de servidor servicios de archivo. Además, debe estar instalado y configurado el servicio de rol **BranchCache para archivos de red** del rol de servidor Servicios de archivo. Estos servidores de contenido envían contenido a los equipos cliente de BranchCache utilizando el protocolo SMB (Bloque de mensajes del servidor).
 
-Para obtener más información, consulte [versiones de sistema operativo para BranchCache](https://technet.microsoft.com/windows-server-docs/networking/branchcache/branchcache#a-namebkmkosaoperating-system-versions-for-branchcache).
+Para obtener más información, consulte [versiones de sistema operativo para BranchCache](../branchcache.md#bkmk_os).
 
 ### <a name="branchcache-deployment-requirements"></a>Requisitos de implementación de BranchCache
 
@@ -66,7 +66,7 @@ A continuación se indican los requisitos para implementar BranchCache mediante 
 
 -   **Los equipos cliente** deben ejecutar Windows 10, Windows 8.1 o Windows 8 para usar el modelo de implementación más reciente y las mejoras de fragmentación y hash que se introdujeron en Windows Server 2012.
 
--   **Los servidores de caché hospedada** deben ejecutar windows Server 2016, windows Server 2012 R2 o windows Server 2012 para usar las mejoras de implementación y las características de escalado que se describen en este documento.  Un equipo que ejecuta uno de estos sistemas operativos que está configurado como un servidor de caché hospedada puede seguir atendiendo a los equipos cliente que ejecutan Windows 7, pero para ello debe estar equipado con un certificado adecuado para la seguridad de la capa de transporte (TLS), tal y como se describe en la [Guía de implementación](https://technet.microsoft.com/library/ee649232.aspx)de windows Server 2008 R2 y Windows 7 BranchCache.
+-   **Los servidores de caché hospedada** deben ejecutar windows Server 2016, windows Server 2012 R2 o windows Server 2012 para usar las mejoras de implementación y las características de escalado que se describen en este documento.  Un equipo que ejecuta uno de estos sistemas operativos que está configurado como un servidor de caché hospedada puede seguir atendiendo a los equipos cliente que ejecutan Windows 7, pero para ello debe estar equipado con un certificado adecuado para la seguridad de la capa de transporte (TLS), tal y como se describe en la [Guía de implementación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee649232(v=ws.10))de windows Server 2008 R2 y Windows 7 BranchCache.
 
 -   Se requiere **un dominio de Active Directory** para aprovechar las ventajas de la detección automática de directiva de grupo y de caché hospedada, pero no es necesario que un dominio use BranchCache.  Puede configurar equipos individuales mediante Windows PowerShell. Además, no es necesario que los controladores de dominio ejecuten Windows Server 2012 o posterior para utilizar la nueva configuración de directiva de grupo de BranchCache. puede importar las plantillas administrativas de BranchCache en los controladores de dominio que ejecutan sistemas operativos anteriores, o puede crear los objetos de directiva de grupo de forma remota en otros equipos que ejecuten Windows 10, Windows Server 2016, Windows 8.1, Windows Server 2012 R2, Windows 8 o Windows Server 2012.
 
@@ -79,8 +79,5 @@ BranchCache se presentó por primera vez en Windows 7 &reg; y Windows server &re
 > [!NOTE]
 > Si está implementando BranchCache en sistemas operativos distintos de Windows Server 2016, están disponibles los siguientes recursos de la documentación.
 >
-> - Para obtener información sobre BranchCache en Windows 8, Windows 8.1, Windows Server 2012 y Windows Server 2012 R2, consulte [información general sobre BranchCache](https://technet.microsoft.com/library/hh831696.aspx).
-> - Para obtener información sobre BranchCache en Windows 7 y Windows Server 2008 R2, vea [BranchCache para Windows server 2008 R2](https://technet.microsoft.com/library/dd996634.aspx).
-
-
-
+> - Para obtener información sobre BranchCache en Windows 8, Windows 8.1, Windows Server 2012 y Windows Server 2012 R2, consulte [información general sobre BranchCache](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11)).
+> - Para obtener información sobre BranchCache en Windows 7 y Windows Server 2008 R2, vea [BranchCache para Windows server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd996634(v=ws.10)).

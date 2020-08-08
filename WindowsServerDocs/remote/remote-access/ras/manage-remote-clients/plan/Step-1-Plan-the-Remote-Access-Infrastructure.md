@@ -2,18 +2,16 @@
 title: Paso 1 planeación de la infraestructura de acceso remoto
 description: Este tema forma parte de la guía administrar los clientes de DirectAccess de forma remota en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 567097d69db8f0de3f93e315af06c18525ad3735
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 88bc666b516d00b4c132b5b67ed702f071847fb0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769593"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989758"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>Paso 1 planeación de la infraestructura de acceso remoto
 
@@ -52,9 +50,9 @@ Al planear la red, debe tener en cuenta la topología del adaptador de red, la c
 
     DirectAccess usa IPv6 con IPsec para crear una conexión segura entre los equipos cliente de DirectAccess y la red corporativa interna. Sin embargo, DirectAccess no requiere necesariamente conectividad con Internet IPv6 ni compatibilidad nativa con IPv6 en las redes internas. En su lugar, configura y usa automáticamente tecnologías de transición IPv6 para Tunelizar el tráfico IPv6 a través de Internet IPv4 (6to4, Teredo o IP-HTTPS) y a través de la intranet solo IPv4 (NAT64 o ISATAP). Para obtener información general acerca de estas tecnologías de transición, consulta los siguientes recursos:
 
-    -   [Tecnologías de transición IPv6](/previous-versions//bb726951(v=technet.10))
+    -   [Tecnologías de transición IPv6](/previous-versions/bb726951(v=technet.10))
 
-    -   [Especificación del protocolo de túnel IP-HTTPS](/previous-versions//bb726951(v=technet.10))
+    -   [Especificación del protocolo de túnel IP-HTTPS](/previous-versions/bb726951(v=technet.10))
 
 3.  Configura los adaptadores y el direccionamiento obligatorios según la tabla siguiente. En el caso de las implementaciones que están detrás de un dispositivo NAT con un solo adaptador de red, configure las direcciones IP utilizando únicamente la columna **adaptador de red interno** .
 

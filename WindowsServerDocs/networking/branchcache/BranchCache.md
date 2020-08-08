@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 64ec120f552c5a95b69e9ac635e861507805b281
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d03169b3af61dd4925b0ca2f972faff496955b9d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971962"
+ms.locfileid: "87989238"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -143,7 +143,7 @@ Dado que BranchCache no requiere hardware nuevo ni cambios en la topología de r
 > [!NOTE]
 > Dado que algunos proxies web no pueden procesar encabezados de codificación de contenido no estándar, se recomienda usar BranchCache con el protocolo de transferencia de hipertexto seguro (HTTPS) y no HTTP.
 
-= = = = = = = Para obtener más información sobre las tecnologías en la nube en Windows Server 2016, vea [redes definidas por Software &#40;SDN&#41;](../sdn/Software-Defined-Networking--SDN-.md).
+= = = = = = = Para obtener más información sobre las tecnologías en la nube en Windows Server 2016, vea [redes definidas por Software &#40;SDN&#41;](../sdn/software-defined-networking.md).
 
 ## <a name="content-information-versions"></a><a name="bkmk_version"></a>Versiones de la información de contenido
 

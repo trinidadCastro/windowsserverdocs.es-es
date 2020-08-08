@@ -1,20 +1,18 @@
 ---
 title: Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
 description: Información general de la característica Servidor de archivos de escalabilidad horizontal para Windows Server 201 R2 y Windows Server 2012.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bcfb53b04a03a259c712dd4b3003f8c4a66d8ff
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: dfd39210b6db8516fafbe8b437c7d38cd7839bad
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181721"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972392"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
 

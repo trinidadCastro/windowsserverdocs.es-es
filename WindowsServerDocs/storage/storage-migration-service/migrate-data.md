@@ -6,14 +6,12 @@ ms.author: jgerend
 manager: elizapo
 ms.date: 03/25/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
-ms.openlocfilehash: cd8c41e67baf0ffa0399e62ad2a697e4efa1433f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6a6fa412ec4a4472c0651332187515f7f4988641
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965187"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939353"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar el servicio de migración de almacenamiento para migrar un servidor
 
@@ -109,7 +107,7 @@ En este paso, se recortan de los servidores de origen a los servidores de destin
 3. En la página **configurar traslado** , especifique qué adaptador de red del destino debe tomar la configuración de cada adaptador del origen. De esta forma, se mueve la dirección IP del origen al destino como parte de la transferencia, y se asigna al servidor de origen una nueva dirección IP DHCP o estática. Tiene la opción de omitir todas las migraciones de red o ciertas interfaces.
 4. Especifique la dirección IP que se usará para el servidor de origen después de que el traslado traslade su dirección al destino. Puede usar DHCP o una dirección estática. Si usa una dirección estática, la nueva subred debe ser la misma que la antigua o bien se producirá un error en la misma.
     ![Captura de pantalla que muestra un servidor de origen y sus direcciones IP y nombres de equipo y de qué se reemplazarán después de la ](media/migrate/cutover.png) **figura 4 de destino: un servidor de origen y cómo se moverá su configuración de red al destino**
-5. Especifique cómo cambiar el nombre del servidor de origen después de que el servidor de destino adopte el nombre. Puede usar un nombre generado de forma aleatoria o escribir uno personalmente. A continuación, seleccione **Siguiente**.
+5. Especifique cómo cambiar el nombre del servidor de origen después de que el servidor de destino adopte el nombre. Puede usar un nombre generado de forma aleatoria o escribir uno personalmente. Luego, seleccione **Siguiente**.
 6. Seleccione **siguiente** en la página **ajustar la configuración de transferencia** .
 7. Seleccione **validar** en la página **validar el dispositivo de origen y de destino** y, a continuación, seleccione **siguiente**.
 8. Cuando esté listo para realizar el traslado, seleccione **iniciar el traslado**. <br>Es posible que los usuarios y las aplicaciones experimenten una interrupción mientras se mueven la dirección y los nombres y los servidores se reinician varias veces, pero no se verán afectados por la migración. El tiempo que tarda la transferencia depende de la rapidez con que se reinicien los servidores, así como de los tiempos de replicación de DNS y Active Directory.

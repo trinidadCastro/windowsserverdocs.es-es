@@ -1,18 +1,16 @@
 ---
 title: Inicializar HGS
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 42f76dabbe150f229027909f8b58b843f31ae4e1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e36451c90fd543ea49989e51832ab3104d4137c0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856598"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939596"
 ---
 # <a name="initialize-the-host-guardian-service-hgs"></a>Inicializar el servicio de protección de host (HGS)
 

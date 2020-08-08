@@ -6,14 +6,12 @@ ms.author: jgerend
 manager: elizapo
 ms.date: 03/26/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
-ms.openlocfilehash: 1403e0ecd12c4c15924781d75bd9127874018451
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 18c9bb2bf22f107b988942706850907c67b5ec9a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953897"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939333"
 ---
 # <a name="storage-migration-service-overview"></a>Información general del servicio de migración de almacenamiento
 
@@ -84,7 +82,7 @@ Se recomienda encarecidamente que el orquestador y los equipos de destino tengan
 El servidor de origen debe ejecutar uno de los siguientes sistemas operativos:
 
 - Windows Server, Canal semianual
-- Windows Server 2019
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
@@ -123,7 +121,7 @@ Puede migrar los siguientes tipos de origen adicionales si el orquestador ejecut
 El servidor de destino debe ejecutar uno de los siguientes sistemas operativos:
 
 - Windows Server, Canal semianual
-- Windows Server 2019
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 
@@ -136,7 +134,7 @@ La versión 1910 del centro de administración de Windows permite implementar m�
 
    Este es un vídeo que muestra cómo usar el servicio de migración de almacenamiento para migrar a máquinas virtuales de Azure.
    > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ]
-   
+
 Si desea levantar y desplazar las máquinas virtuales a Azure sin migrar a un sistema operativo posterior, considere la posibilidad de usar Azure Migrate. Para obtener más información, vea [información general sobre Azure Migrate](https://go.microsoft.com/fwlink/?linkid=2056064).
 
 ## <a name="whats-new-in-storage-migration-service"></a>Novedades de Storage Migration Service

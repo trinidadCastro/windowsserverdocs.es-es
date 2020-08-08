@@ -1,20 +1,18 @@
 ---
 title: Solución de problemas en el servidor DHCP
 description: Este artilce presenta cómo solucionar problemas en el servidor DHCP y recopilar datos.
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 5ec2ef358cfaf7841b093843848f2ea5ee42433e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d6fc69c15c3465769232d89f70a65ca915d0584e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181901"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989038"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-server"></a>Solución de problemas en el servidor DHCP
 
@@ -26,7 +24,7 @@ Utilice la siguiente configuración:
 
   - El servicio del servidor DHCP se ha iniciado y está en ejecución. Para comprobar esta configuración, ejecute el comando **net start** y busque **servidor DHCP**.
 
-  - El servidor DHCP está autorizado. Consulte [autorización de servidor DHCP de Windows en escenario Unido](https://docs.microsoft.com/openspecs/windows_protocols/ms-dhcpe/56f8870b-a7c1-4db1-8a86-f69079fe5077)a un dominio.
+  - El servidor DHCP está autorizado. Consulte [autorización de servidor DHCP de Windows en escenario Unido](/openspecs/windows_protocols/ms-dhcpe/56f8870b-a7c1-4db1-8a86-f69079fe5077)a un dominio.
 
   - Compruebe que las concesiones de direcciones IP están disponibles en el ámbito del servidor DHCP para la subred en la que se encuentra el cliente DHCP. Para ello, consulte la estadística del ámbito adecuado en la consola de administración del servidor DHCP.
 
@@ -53,7 +51,7 @@ En función del tipo de problema, se registra un evento en uno de los siguientes
  [notificación](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
  [DHCP Server Audit Events](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) del servidor DHCP eventos de auditoría
 
-## <a name="data-collection"></a>datos, recopilación
+## <a name="data-collection"></a>Recopilación de datos
 
 ### <a name="dhcp-server-log"></a>Registro del servidor DHCP
 

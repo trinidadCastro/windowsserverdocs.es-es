@@ -1,18 +1,16 @@
 ---
 title: Administración del servicio de protección de host
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: 19bf253a4cd669020442ca80f77c141f19ab94fe
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 851ea4a57068c1544f290c48f370e04b96857cf6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769463"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989161"
 ---
 # <a name="managing-the-host-guardian-service"></a>Administración del servicio de protección de host
 
@@ -120,7 +118,7 @@ Los eventos de HGS se mostrarán en el registro de eventos de Windows en 2 oríg
 Puede ver estos eventos abriendo Visor de eventos y navegando a Microsoft-Windows-HostGuardianService-Atestation y Microsoft-Windows-HostGuardianService-KeyProtection.
 
 En un entorno de gran tamaño, a menudo es preferible reenviar eventos a un recopilador de eventos central de Windows para facilitar la análisis de los eventos.
-Para obtener más información, consulte la [documentación sobre el reenvío de eventos de Windows](https://msdn.microsoft.com/library/windows/desktop/bb427443.aspx).
+Para obtener más información, consulte la [documentación sobre el reenvío de eventos de Windows](/windows/win32/wec/windows-event-collector).
 
 ### <a name="using-system-center-operations-manager"></a>Usar System Center Operations Manager
 También puede usar System Center 2016-Operations Manager para supervisar HGS y los hosts protegidos.
@@ -486,7 +484,7 @@ Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey02' -PublicKeyHash '<paste 
 Asegúrese de agregar cada clave de cifrado de volcado única a HGS si decide usar diferentes claves en el tejido protegido.
 Los hosts que cifran volcados de memoria con una clave no conocida para HGS no pasarán la atestación.
 
-Consulte la documentación de Hyper-V para obtener más información acerca de cómo [configurar el cifrado de volcado en hosts](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption).
+Consulte la documentación de Hyper-V para obtener más información acerca de cómo [configurar el cifrado de volcado en hosts](../../virtualization/hyper-v/manage/about-dump-encryption.md).
 
 #### <a name="check-if-the-system-passed-attestation"></a>Comprobar si el sistema ha pasado la atestación
 Después de registrar la información necesaria con HGS, debe comprobar si el host supera la atestación.

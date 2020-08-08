@@ -1,25 +1,23 @@
 ---
-title: Ajustar espacios de nombres DFS
-description: En este artículo se describe cómo ajustar u optimizar espacios de nombres DFS
+title: Tuning DFS Namespaces
+description: En este artículo se describe cómo optimizar u optimizar los espacios de nombres DFS
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 011512deaeb99ded7d0bfc32a48f19ab3b622475
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 348a34e24cf7d22dc376df37607f21f1dceea74a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386154"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939401"
 ---
-# <a name="tuning-dfs-namespaces"></a>Ajustar espacios de nombres DFS
+# <a name="tuning-dfs-namespaces"></a>Tuning DFS Namespaces
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
-Después de crear un espacio de nombres y de agregar carpetas y destinos, consulte las secciones siguientes para optimizar u optimizar el modo en que el espacio de nombres DFS administra las referencias y los sondeos Active Directory Domain Services (AD DS) en busca de datos de espacio de nombres actualizados:
+Una vez que se ha creado un espacio de nombres y se han agregado las carpetas y los destinos, consulte las siguientes secciones para ajustar u optimizar el modo en que el espacio de nombres DFS administra las referencias y sondea Active Directory Domain Services (AD DS) en busca de datos de espacios de nombres actualizados:
 
 -   [Habilitar la enumeración basada en el acceso en un espacio de nombres](enable-access-based-enumeration-on-a-namespace.md)
 -   [Habilitar o deshabilitar las referencias y la conmutación por recuperación de clientes](enable-or-disable-referrals-and-client-failback.md)
@@ -30,4 +28,4 @@ Después de crear un espacio de nombres y de agregar carpetas y destinos, consul
 -   [Usar permisos heredados con enumeración basada en el acceso](using-inherited-permissions-with-access-based-enumeration.md)
 
 > [!NOTE]
-> Para buscar carpetas o destinos de carpeta, selecciona un espacio de nombres, haz clic en la pestaña **Buscar**, escribe la cadena de búsqueda en el cuadro de texto y luego haz clic en **Buscar**.
+> Para buscar carpetas o destinos de carpeta, seleccione un espacio de nombres, haga clic en la ficha **Buscar**, escriba la cadena de búsqueda en el cuadro de texto y, a continuación, haga clic en **Buscar**.

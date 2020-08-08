@@ -5,15 +5,13 @@ author: arduppal
 ms.author: arduppal
 ms.date: 12/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 8a1d98fd6c36876aebaf2f9abe4bed29f5485e8a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cb1b712e62b3b77def304526c7b65fd5187b56d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955547"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939364"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Intercambio entre regiones de la Réplica de almacenamiento de clúster a clúster en Azure
 
@@ -65,11 +63,11 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
    Conecte todos los nodos al dominio y proporcione privilegios de administrador al usuario creado anteriormente.
 
    Cambie el servidor DNS de la red virtual a la dirección IP privada del controlador de dominio.
-   - En el ejemplo, el controlador de dominio **az2azDC** tiene una dirección IP privada (10.3.0.8). En el Virtual Network (**az2az-Vnet** y **azcross-Vnet**), cambie 10.3.0.8 de servidor DNS. 
+   - En el ejemplo, el controlador de dominio **az2azDC** tiene una dirección IP privada (10.3.0.8). En el Virtual Network (**az2az-Vnet** y **azcross-Vnet**), cambie 10.3.0.8 de servidor DNS.
 
      En el ejemplo, conecte todos los nodos a "contoso.com" y proporcione privilegios de administrador a "contosoadmin".
-   - Inicie sesión como contosoadmin desde todos los nodos. 
- 
+   - Inicie sesión como contosoadmin desde todos los nodos.
+
 6. Cree los clústeres (**SRAZC1**, **SRAZCross**).
 
    A continuación se muestran los comandos de PowerShell para el ejemplo
@@ -97,11 +95,11 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
       - Crear sondeo de estado: Puerto 59999
       - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada.
 
-   Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga. 
+   Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
       - azlbazcross => front-end IP: 10.0.0.10 (seleccione una dirección IP no usada de la subred de red virtual (**azcross-VNET**))
       - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
       - Crear sondeo de estado: Puerto 59999
-      - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada. 
+      - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada.
 
 9. Cree una [puerta de enlace de red virtual](https://ms.portal.azure.com/#create/Microsoft.VirtualNetworkGateway-ARM) para la conectividad de Vnet a Vnet.
 
@@ -113,20 +111,20 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
 
    - Cree una conexión de red virtual a red virtual desde la primera puerta de enlace de red virtual a la segunda. Proporcionar una clave compartida
 
-   - Cree una conexión de red virtual a red virtual desde la segunda puerta de enlace de red virtual a la primera puerta de enlace de red virtual. Proporcione la misma clave compartida que se proporciona en el paso anterior. 
+   - Cree una conexión de red virtual a red virtual desde la segunda puerta de enlace de red virtual a la primera puerta de enlace de red virtual. Proporcione la misma clave compartida que se proporciona en el paso anterior.
 
 10. En cada nodo del clúster, abra el puerto 59999 (sondeo de estado).
 
     Ejecute el siguiente comando en cada nodo:
 
     ```powershell
-      netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
+      netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any
     ```
 
 11. Indique al clúster que escuche los mensajes de sondeo de estado en el puerto 59999 y que responda desde el nodo que actualmente posee este recurso.
 
-    Ejecútelo una vez desde cualquier nodo del clúster, para cada clúster. 
-    
+    Ejecútelo una vez desde cualquier nodo del clúster, para cada clúster.
+
     En nuestro ejemplo, asegúrese de cambiar "ILBIP" según los valores de configuración. Ejecute el siguiente comando desde un nodo **az2az1** / **az2az2**
 
     ```PowerShell
@@ -134,7 +132,7 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.3.0.100" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
 12. Ejecute el siguiente comando desde un nodo **azcross1** / **azcross2**
@@ -143,7 +141,7 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.0.0.10" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
     Asegúrese de que ambos clústeres pueden conectarse o comunicarse entre sí.
@@ -155,18 +153,18 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
       Get-Cluster -Name SRAZC1 (ran from azcross1)
     ```
     ```powershell
-      Get-Cluster -Name SRAZCross (ran from az2az1) 
+      Get-Cluster -Name SRAZCross (ran from az2az1)
     ```
 
 13. Cree un testigo en la nube para ambos clústeres. Cree dos [cuentas de almacenamiento](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM) (**az2azcw**,**azcrosssa**) en Azure, una para cada clúster en cada grupo de recursos (**Sr-AZ2AZ**, **Sr-AZCROSS**).
-   
+
     - Copie el nombre y la clave de la cuenta de almacenamiento de "claves de acceso"
-    - Cree el testigo en la nube desde el "Administrador de clústeres de conmutación por error" y use el nombre de cuenta y la clave anteriores para crearlo. 
+    - Cree el testigo en la nube desde el "Administrador de clústeres de conmutación por error" y use el nombre de cuenta y la clave anteriores para crearlo.
 
 14. Ejecutar [pruebas de validación de clústeres](../../failover-clustering/create-failover-cluster.md#validate-the-configuration) antes de continuar con el paso siguiente
 
 15. Inicie Windows PowerShell y use el cmdlet [Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar si satisface todos los requisitos de la Réplica de almacenamiento. Puede usar el cmdlet en modo de solo requisitos para una prueba rápida, o en modo de evaluación de rendimiento de ejecución más larga.
- 
+
 16. Configure la réplica de almacenamiento de clúster a clúster.
     Conceder acceso de un clúster a otro en ambas direcciones:
 

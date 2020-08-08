@@ -1,19 +1,17 @@
 ---
 title: Obtener certificados para HGS
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: da1ae4bacd5a6b2e38b22930aacf06f65b16bb29
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 995a115b9e611500732e4674880ee4ca4b204e14
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856538"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989114"
 ---
 # <a name="obtain-certificates-for-hgs"></a>Obtener certificados para HGS
 
@@ -33,14 +31,14 @@ Los proveedores de servicios de hosting y de servicio deben considerar el uso de
 
 Se deben emitir los certificados de firma y cifrado con las siguientes propiedades de certificiate (a menos que se marquen como "recomendadas"):
 
-Propiedad de plantilla de certificado | Valor obligatorio 
+Propiedad de plantilla de certificado | Valor requerido
 ------------------------------|----------------
 Proveedor de cifrado               | Cualquier proveedor de almacenamiento de claves (KSP). **No** se admiten proveedores de servicios de cifrado (CSP) heredados.
 Algoritmo de clave                 | RSA
 Tamaño mínimo de clave              | 2048 bits
 Algoritmo de firma           | Recomendado: SHA256
-Uso de claves                     | Firma digital *y* cifrado de datos
-Uso mejorado de clave            | Autenticación del servidor
+Uso de las claves                     | Firma digital *y* cifrado de datos
+Uso mejorado de clave            | Autenticación de servidor
 Directiva de renovación de claves            | Renovar con la misma clave. La renovación de certificados HGS con claves diferentes impedirá que se inicien las máquinas virtuales blindadas.
 Nombre de sujeto                  | Recomendado: el nombre o la dirección Web de su empresa. Esta información se mostrará a los propietarios de máquinas virtuales en el Asistente para archivos de datos de blindaje.
 
@@ -79,13 +77,13 @@ Sin embargo, si tiene reqiurements de cumplimiento o simplemente prefiere cifrar
 
 Tanto los hosts de Hyper-V como los nodos HGS deben confiar en el certificado SSL que proporcione, por lo que se recomienda que solicite el certificado SSL de la entidad de certificación de la empresa. Al solicitar el certificado, asegúrese de especificar lo siguiente:
 
-Propiedad de certificado SSL | Valor obligatorio
+Propiedad de certificado SSL | Valor requerido
 -------------------------|---------------
 Nombre de sujeto             | Nombre del clúster de HGS (conocido como nombre de red distribuida o FQDN de objeto de equipo virtual). Esta será la concatenación del nombre del servicio HGS proporcionada a `Initialize-HgsServer` y el nombre de dominio de HGS.
 Nombre alternativo del firmante | Si va a usar un nombre DNS diferente para llegar al clúster de HGS (por ejemplo, si se encuentra detrás de un equilibrador de carga), asegúrese de incluir esos nombres DNS en el campo SAN de la solicitud de certificado.
 
 Las opciones para especificar este certificado al inicializar el servidor HGS se describen en [configuración del primer nodo HGS](guarded-fabric-initialize-hgs.md).
-También puede Agregar o cambiar el certificado SSL en otro momento con el cmdlet [set-HgsServer](https://docs.microsoft.com/powershell/module/hgsserver/set-hgsserver?view=win10-ps) .
+También puede Agregar o cambiar el certificado SSL en otro momento con el cmdlet [set-HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps) .
 
 ## <a name="next-step"></a>Paso siguiente
 

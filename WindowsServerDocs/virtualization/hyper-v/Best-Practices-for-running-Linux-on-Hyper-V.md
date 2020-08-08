@@ -1,20 +1,18 @@
 ---
 title: Prácticas recomendadas para ejecutar Linux en Hyper-V
 description: Proporciona recomendaciones para ejecutar Linux en una máquina virtual
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 04/15/2020
-ms.openlocfilehash: 75b471d4083ef1597d5edcc775ea6fc847992483
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b9a03ec24adf0b77ff4a6e477f550c63760c9d85
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474472"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989099"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>Prácticas recomendadas para ejecutar Linux en Hyper-V
 
@@ -100,8 +98,8 @@ Después de cambiar el tamaño de un VHD o VHDX, los administradores deben usar 
 
 * [Prácticas recomendadas para ejecutar FreeBSD en Hyper-V](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
 
-* [Implementar un clúster de Hyper-V](https://technet.microsoft.com/library/jj863389.aspx)
+* [Implementar un clúster de Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))
 
-* [Creación de imágenes de Linux para Azure](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
+* [Creación de imágenes de Linux para Azure](/azure/virtual-machines/linux/create-upload-generic)
 
-* [Optimización de la máquina virtual Linux en Azure](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)
+* [Optimización de la máquina virtual Linux en Azure](/azure/virtual-machines/linux/optimization)

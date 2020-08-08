@@ -2,17 +2,15 @@
 title: Paso 1 planear la infraestructura de DirectAccess básica
 description: Este tema forma parte de la guía de implementación de un único servidor de DirectAccess con el Asistente para Introducción para Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4a7d784c38db692110559d9e2ce1f1f7c760313a
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: f1878944b0f72e22a94b9153b735571ef5b5f5f0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769743"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990011"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>Paso 1 planear la infraestructura de DirectAccess básica
 El primer paso para una implementación básica de DirectAccess en un único servidor es planear la infraestructura necesaria para la implementación. En este tema se describen los pasos para la planificación de la infraestructura:
@@ -42,9 +40,9 @@ No es necesario completar las tareas de planificación en un orden específico.
 
     DirectAccess usa IPv6 con IPsec para crear una conexión segura entre los equipos cliente de DirectAccess y la red corporativa interna. Sin embargo, DirectAccess no requiere necesariamente conectividad con Internet IPv6 ni compatibilidad nativa con IPv6 en las redes internas. En su lugar, configura y usa automáticamente tecnologías de transición IPv6 para tunelizar el tráfico IPv6 a través de Internet IPv4 (6to4, Teredo, IP-HTTPS) y a través de la intranet solo IPv4 (mediante NAT64 o ISATAP). Para obtener información general acerca de estas tecnologías de transición, consulta los siguientes recursos:
 
-    -   [Tecnologías de transición IPv6](/previous-versions//bb726951(v=technet.10))
+    -   [Tecnologías de transición IPv6](/previous-versions/bb726951(v=technet.10))
 
-    -   [Especificación del protocolo de túnel IP-HTTPS](/previous-versions//bb726951(v=technet.10))
+    -   [Especificación del protocolo de túnel IP-HTTPS](/previous-versions/bb726951(v=technet.10))
 
 3.  Configura los adaptadores y el direccionamiento obligatorios según la tabla siguiente. Para las implementaciones detrás de un dispositivo NAT con un solo adaptador de red, configure las direcciones IP solo con la columna **adaptador de red interno** .
 

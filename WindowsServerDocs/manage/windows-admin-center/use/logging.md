@@ -1,19 +1,17 @@
 ---
-title: Registro de eventos
+title: Registros de eventos
 description: Registro de eventos del centro de administración de Windows (proyecto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 012c2229fb29aa711d9887f28859e09bcf71c14a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 615ecb6c34da980b1223b4ffc5da20c8e84cb9ea
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356870"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964431"
 ---
 # <a name="use-event-logging-in-windows-admin-center-to-gain-insight-into-management-activities-and-track-gateway-usage"></a>Usar el registro de eventos en el centro de administración de Windows para obtener información sobre las actividades de administración y realizar un seguimiento del uso de la puerta
 
@@ -27,7 +25,7 @@ El centro de administración de Windows proporciona una visión general de las a
 
 Los eventos registrados incluyen la siguiente información:
 
-| Key           | Valor                                                                                              |
+| Clave           | Valor                                                                                              |
 |---------------|----------------------------------------------------------------------------------------------------|
 | PowerShell    | Nombre del script de PowerShell que se ejecutó en el servidor, si la acción ejecutó un script de PowerShell |
 | ESTUDIO           | Llamada CIM que se ejecutó en el servidor, si la acción ejecutó una llamada CIM                        |
