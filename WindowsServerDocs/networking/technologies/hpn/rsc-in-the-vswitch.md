@@ -2,18 +2,16 @@
 title: Fusión de segmentos de recepción (RSC) en el vSwitch
 description: La fusión de segmentos de recepción (RSC) en el vSwitch es una característica de Windows Server 2019 y la actualización de Windows 10 de octubre de 2018 que ayuda a reducir el uso de la CPU del host y aumenta el rendimiento de las cargas de trabajo virtuales mediante la combinación de varios segmentos TCP en menos segmentos, pero más grandes. El procesamiento de menos segmentos de gran tamaño (fusionados) es más eficaz que el procesamiento de numerosos segmentos pequeños.
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.author: dacuo
 author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: e7db6656bd9331e5cc6c2deaee143b3602ef1239
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 26f4a5fc028ebe134e6eff8ff22c348d52ba3f90
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181821"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962049"
 ---
 # <a name="rsc-in-the-vswitch"></a>RSC en vSwitch
 >Se aplica a: Windows Server 2019
@@ -34,7 +32,7 @@ Por ejemplo:
 
     -   Host de Hyper-V
 
-    -   Espacios de almacenamiento directo
+    -   Espacios de almacenamiento directos
 
 -   NIC virtuales de invitado de Hyper-V
 

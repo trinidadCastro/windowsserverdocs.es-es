@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 33ae34a953f71739fd909ff5548861c2aebfe170
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2067f3dd8c07190c7f52eb75229f08e080ae0208
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896310"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992305"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planeación de la capacidad para Active Directory Domain Services
 
@@ -43,7 +43,7 @@ Además, el enfoque se desplaza de un ejercicio de planeamiento de la capacidad 
 
 En este artículo, se esperan los siguientes requisitos de línea base:
 
-- Los lectores han leído y están familiarizados con las [directrices para la optimización del rendimiento de Windows Server 2012 R2](/previous-versions//dn529133(v=vs.85)).
+- Los lectores han leído y están familiarizados con las [directrices para la optimización del rendimiento de Windows Server 2012 R2](/previous-versions/dn529133(v=vs.85)).
 - La plataforma de Windows Server es una arquitectura basada en x64. Pero incluso si su entorno de Active Directory está instalado en Windows Server 2003 x86 (ahora más allá del ciclo de vida de soporte técnico) y tiene un árbol de información de directorio (DIT) con menos de 1,5 GB de tamaño y que se puede mantener fácilmente en la memoria, las instrucciones de este artículo siguen siendo aplicables.
 - El planeamiento de la capacidad es un proceso continuo y debe revisar con regularidad si el entorno cumple con las expectativas.
 - La optimización se realizará en varios ciclos de vida de hardware a medida que cambian los costos de hardware. Por ejemplo, la memoria es más barata, el costo por núcleo disminuye o el precio de las diferentes opciones de almacenamiento cambian.
@@ -410,7 +410,7 @@ Desafortunadamente, debido a la enorme variabilidad de las aplicaciones cliente 
 
 Como se mencionó anteriormente, al planear la capacidad de un sitio completo, el objetivo es destinar un diseño con un diseño de capacidad *N* + 1, de modo que el error de un sistema durante el período máximo permitirá la continuación del servicio con un nivel de calidad razonable. Esto significa que en un escenario "*N*", la carga en todos los cuadros debe ser inferior al 100% (mejor aún, menor que 80%). durante los períodos de máxima actividad.
 
-Además, si las aplicaciones y los clientes del sitio usan los procedimientos recomendados para buscar controladores de dominio (es decir, con la [función DsGetDcName](https://docs.microsoft.com/windows/win32/api/dsgetdc/nf-dsgetdc-dsgetdcnamea)), los clientes deben distribuirse relativamente uniformemente con picos transitorios menores debido a cualquier número de factores.
+Además, si las aplicaciones y los clientes del sitio usan los procedimientos recomendados para buscar controladores de dominio (es decir, con la [función DsGetDcName](/windows/win32/api/dsgetdc/nf-dsgetdc-dsgetdcnamea)), los clientes deben distribuirse relativamente uniformemente con picos transitorios menores debido a cualquier número de factores.
 
 En el ejemplo siguiente se realizan las suposiciones siguientes:
 
@@ -572,7 +572,7 @@ Para este sistema durante este período de tiempo, los valores predeterminados s
 
 En este artículo, se ha explicado que la planeación y el escalado van hacia los objetivos de uso. Este es un gráfico de Resumen de los umbrales recomendados que deben supervisarse para asegurarse de que los sistemas funcionan con los umbrales de capacidad adecuados. Tenga en cuenta que estos no son umbrales de rendimiento, sino umbrales de planeamiento de capacidad. Un servidor que opere en exceso de estos umbrales funcionará, pero es el momento de iniciar la validación de que todas las aplicaciones están bien compartidas. Si estas aplicaciones están bien compartidas, es el momento de empezar a evaluar las actualizaciones de hardware u otros cambios de configuración.
 
-| Category | Contador de rendimiento | Intervalo/muestreo | Destino | Advertencia |
+| Categoría | Contador de rendimiento | Intervalo/muestreo | Destino | Advertencia |
 |--|--|--|--|--|
 | Procesador | Información del procesador (_Total) \\ % utilidad del procesador | 60 min | 40% | 60 % |
 | RAM (Windows Server 2008 R2 o versiones anteriores) | Memoria\mbytes MB | < 100 MB | N/D | < 100 MB |

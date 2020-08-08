@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e758e2335d8a5b536b0f0db9626dc88337de631
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 535c1e2ccff14f01f015b67fd0fc2c6be4a04729
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896734"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992403"
 ---
 # <a name="power-and-performance-tuning"></a>Optimización energética y de rendimiento
 
@@ -63,7 +63,7 @@ Necesita comprender exhaustivamente los requisitos de carga de trabajo para eleg
 
 Las tasas de TICs de temporizador reducidas, los controladores que carecen de compatibilidad con la administración de energía y un uso excesivo de la CPU son algunos de los problemas de comportamiento detectados por el comando **powercfg/Energy** . Esta herramienta proporciona una manera sencilla de identificar y corregir problemas de administración de energía, lo que puede dar lugar a importantes ahorros en los costos de un centro de recursos de gran tamaño.
 
-Para obtener más información sobre PowerCfg.exe, consulte [uso de PowerCfg para evaluar la eficacia energética del sistema](https://msdn.microsoft.com/windows/hardware/gg463250.aspx).
+Para obtener más información sobre PowerCfg.exe, consulte [uso de PowerCfg para evaluar la eficacia energética del sistema](/previous-versions/windows/hardware/download/dn550976(v=vs.85)).
 
 ## <a name="using-power-plans-in-windows-server"></a>Uso de planes de energía en Windows Server
 
@@ -78,7 +78,7 @@ Windows Server 2016 tiene tres planes de energía integrados diseñados para sat
 
 Estos planes de energía existen en Windows para los sistemas de corriente alterna (AC) y corriente directa (DC), pero se supone que los servidores siempre usan una fuente de alimentación de CA.
 
-Para obtener más información sobre los planes de energía y las configuraciones de directivas de energía, vea [configuración e implementación de directivas de energía en Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx).
+Para obtener más información sobre los planes de energía y las configuraciones de directivas de energía, vea [configuración e implementación de directivas de energía en Windows](/previous-versions/windows/hardware/design/dn642106(v=vs.85)).
 
 > [!Note]
 > Algunos fabricantes de servidores tienen sus propias opciones de administración de energía disponibles a través de la configuración del BIOS. Si el sistema operativo no tiene control sobre la administración de energía, el cambio de los planes de energía en Windows no afectará a la eficacia y el rendimiento del sistema.
@@ -87,7 +87,7 @@ Para obtener más información sobre los planes de energía y las configuracione
 
 Cada plan de energía representa una combinación de numerosos parámetros de administración de energía subyacentes. Los planes integrados son tres colecciones de configuraciones recomendadas que abarcan una amplia variedad de cargas de trabajo y escenarios. Sin embargo, reconocemos que estos planes no responderán a las necesidades de cada cliente.
 
-En las secciones siguientes se describen las formas de ajustar algunos parámetros de administración de energía específicos del procesador para satisfacer los objetivos no abordados por los tres planes integrados. Si necesita comprender una matriz más amplia de parámetros de energía, consulte [configuración e implementación de directivas de energía en Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx).
+En las secciones siguientes se describen las formas de ajustar algunos parámetros de administración de energía específicos del procesador para satisfacer los objetivos no abordados por los tres planes integrados. Si necesita comprender una matriz más amplia de parámetros de energía, consulte [configuración e implementación de directivas de energía en Windows](/previous-versions/windows/hardware/design/dn642106(v=vs.85)).
 
 ## <a name="processor-performance-boost-mode"></a>Modo de mejora del rendimiento del procesador
 
@@ -111,8 +111,8 @@ En Windows Server 2016, el valor predeterminado para el modo Boost es 3.
 | **Nombre** | **Comportamiento basado en el estado P** | **Comportamiento de CPPC** |
 |--------------------------|------------------------|-------------------|
 | 0 (deshabilitado) | Disabled | Disabled |
-| 1 (habilitado) | habilitado | Eficaz habilitado |
-| 2 (agresivo) | habilitado | Aggressive |
+| 1 (habilitado) | Habilitado | Eficaz habilitado |
+| 2 (agresivo) | Habilitado | Aggressive |
 | 3 (eficaz habilitado) | Eficaz | Eficaz habilitado |
 | 4 (agresiva eficaz) | Eficaz | Aggressive |
 

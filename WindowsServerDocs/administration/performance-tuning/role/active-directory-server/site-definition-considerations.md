@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7502233cfd71fe2f3e7d25ff6ba246531233d1ff
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bb0850923dca2f0749c1f2cb5e787d998e8f03ca
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896206"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992245"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Colocación adecuada de los controladores de dominio y consideraciones de sitio
 
@@ -23,8 +23,8 @@ Un área de consideración adicional es la ubicación de los DC de lectura/escri
 -   Dónde puede ser necesario un controlador de dominio grabable.  Coloque controladores de dominio de lectura y escritura en ubicaciones centrales para reducir la latencia.
 
 Para obtener más información, consulte:
--   [Compatibilidad de aplicaciones con RODC](https://technet.microsoft.com/library/cc772597.aspx)
--   [Interfaz de servicio de Active Directory (ADSI) y controlador de dominio de solo lectura (RODC): evitar problemas de rendimiento](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
+-   [Compatibilidad de aplicaciones con RODC](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772597(v=ws.10))
+-   [Interfaz de servicio de Active Directory (ADSI) y controlador de dominio de solo lectura (RODC): evitar problemas de rendimiento](/archive/blogs/fieldcoding/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues)
 
 ## <a name="optimize-for-referrals"></a>Optimizar para referencias
 
@@ -54,9 +54,9 @@ Los escenarios de confianza entre dominios son un área que ha sido sistemática
 
 -   Los controladores de dominio del dominio que confía intentarán localizar los controladores de dominio en el dominio de confianza que se encuentran en el mismo sitio y, a continuación, realizar la conmutación por recuperación a los localizadores genéricos.
 
-    -   Para obtener más información sobre cómo funciona ubicador, consulte [Buscar un controlador de dominio en el sitio más cercano](https://technet.microsoft.com/library/cc978016.aspx).
+    -   Para obtener más información sobre cómo funciona ubicador, consulte [Buscar un controlador de dominio en el sitio más cercano](/previous-versions/windows/it-pro/windows-2000-server/cc978016(v=technet.10)).
 
-    -   Converge los nombres de sitio entre los dominios de confianza y de confianza para reflejar el controlador de dominio en la misma ubicación. Asegúrese de que las asignaciones de subred y dirección IP estén vinculadas correctamente a sitios de ambos bosques. Para obtener más información, consulte [localizador de dominios a través de una confianza de bosque](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx).
+    -   Converge los nombres de sitio entre los dominios de confianza y de confianza para reflejar el controlador de dominio en la misma ubicación. Asegúrese de que las asignaciones de subred y dirección IP estén vinculadas correctamente a sitios de ambos bosques. Para obtener más información, consulte [localizador de dominios a través de una confianza de bosque](/archive/blogs/askds/domain-locator-across-a-forest-trust).
 
     -   Asegúrese de que los puertos están abiertos, según las necesidades de ubicador, para la ubicación del controlador de dominio. Si existen firewalls entre los dominios, asegúrese de que los firewalls estén configurados correctamente para todas las confianzas. Si los firewalls no están abiertos, el controlador de dominio que confía seguirá intentando tener acceso al dominio de confianza. Si se produce un error en la comunicación por cualquier motivo, el controlador de dominio que confía finalmente agotará el tiempo de espera de la solicitud al controlador de dominio de confianza. Sin embargo, estos tiempos de espera pueden tardar varios segundos por solicitud y pueden agotar los puertos de red en el controlador de dominio que confía si el volumen de solicitudes entrantes es elevado. El cliente puede experimentar el tiempo de espera para el controlador de dominio como subprocesos bloqueados, que podrían traducirse en aplicaciones bloqueadas (si la aplicación ejecuta la solicitud en el subproceso en primer plano). Para obtener más información, consulte [configuración de un firewall para dominios y confianzas](https://support.microsoft.com/kb/179442).
 

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: d16165894b455c4e3ff33b77e84ccce9e30f3be0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 033663720750ee2990cbc6eb4dd0c6d9abe1a002
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519834"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962639"
 ---
 # <a name="add-sign-in-page-description"></a>Agregar \- Descripción de la página de inicio de sesión
 

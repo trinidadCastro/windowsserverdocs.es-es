@@ -1,21 +1,19 @@
 ---
-title: Administrar NPSs
+title: Administrar NPS
 description: En este tema se proporcionan vínculos a procedimientos para administrar NPSs en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 6005dc27-f49e-427f-92f7-b0e558ffe3ff
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 89b0ff250d118b47b16996018ffb0e973072f6e7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fd03e794e4ba6efb5c68b0ddce50732b490a4c2d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315945"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952234"
 ---
-# <a name="manage-npss"></a>Administrar NPSs
+# <a name="manage-npss"></a>Administrar NPS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -23,8 +21,8 @@ Puede usar los temas de esta sección para administrar NPSs.
 
 >[!NOTE]
 >Para obtener documentación adicional sobre el servidor de directivas de redes, puede usar las siguientes secciones de la biblioteca.
->- [Introducción con el servidor de directivas de redes](nps-getstart-top.md)
->- [Implementar servidor de directivas de redes](nps-deploy.md) 
+>- [Tareas iniciales con el servidor de directivas de redes](nps-getstart-top.md)
+>- [Implementar el servidor de directivas de redes](nps-deploy.md)
 
 Esta sección contiene los temas siguientes.
 

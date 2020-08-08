@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 559f274bcfafdd6c89cf7aea69b3df14f68130c1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4f733eea9ffae00421a58881b7ffc8deeaf7c785
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896703"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992277"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>Parámetros de plan de energía equilibrado recomendados para cargas de trabajo que requieren tiempos de respuesta rápidos
 
@@ -67,4 +67,4 @@ Configuramos un [clúster de conmutación por error] y usabamos Diskspd para gen
 - [Server Hardware Power Considerations](../power.md) (Consideraciones de alimentación del hardware de servidor)
 - [Power and Performance Tuning](power-performance-tuning.md) (Optimización de potencia y rendimiento)
 - [Processor Power Management Tuning](processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)
-- [Clúster de conmutación por error](https://technet.microsoft.com/library/cc725923.aspx)
+- [Clúster de conmutación por error](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725923(v=ws.10))

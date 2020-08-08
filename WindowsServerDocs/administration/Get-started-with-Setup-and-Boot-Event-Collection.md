@@ -8,18 +8,18 @@ ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: e5e18ed5f5cc4cba319042f1a5da84acae8e5fd5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e5275937e12542e16c40273d69d9684d72a4ee82
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879539"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992447"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>Introducción a la configuración y la recopilación de eventos de arranque
 
 > Se aplica a: Windows Server
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 La configuración y la recopilación de eventos de arranque es una característica nueva de Windows Server 2016 que le permite designar un equipo recopilador que puede recopilar diversos eventos importantes que se producen en otros equipos cuando arrancan o pasan por el proceso de instalación. Puedes analizar, más adelante, los eventos recopilados con Visor de eventos, Analizador de mensajes, Wevtutil o cmdlets de Windows PowerShell.
 
 Anteriormente, estos eventos han sido imposibles de supervisar porque la infraestructura necesaria para recopilarlos no existe hasta que un equipo ya está configurado. Entre los tipos de eventos de instalación y de arranque que puede supervisar se incluyen los siguientes:
@@ -130,9 +130,9 @@ Si no puede configurar la comunicación remota de Windows PowerShell, siempre pu
 
 1.  En el equipo de destino, inicie Regedit.exe y busque esta clave del registro:
 
-    **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\wmi\autologger**. Las distintas sesiones de registro se enumeran como subclaves en esta clave. La **plataforma de instalación**, el **registrador de kernel de NT**y **Microsoft-Windows-Setup** son opciones posibles para su uso con la configuración y la recopilación de eventos de arranque, pero la opción recomendada es **EventLog-System**. Estas claves se detallan en [configurar e iniciar una sesión de registrador automático](https://msdn.microsoft.com/library/windows/desktop/aa363687(v=vs.85).aspx).
+    **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\wmi\autologger**. Las distintas sesiones de registro se enumeran como subclaves en esta clave. La **plataforma de instalación**, el **registrador de kernel de NT**y **Microsoft-Windows-Setup** son opciones posibles para su uso con la configuración y la recopilación de eventos de arranque, pero la opción recomendada es **EventLog-System**. Estas claves se detallan en [configurar e iniciar una sesión de registrador automático](/windows/win32/etw/configuring-and-starting-an-autologger-session).
 
-2.  En la clave EventLog-System, cambie el valor de **LogFileMode** de **0x10000180** a **0x10080180**. Para obtener más información sobre los detalles de esta configuración, vea [constantes del modo de registro](https://msdn.microsoft.com/library/windows/desktop/aa364080(v=vs.85).aspx).
+2.  En la clave EventLog-System, cambie el valor de **LogFileMode** de **0x10000180** a **0x10080180**. Para obtener más información sobre los detalles de esta configuración, vea [constantes del modo de registro](/windows/win32/etw/logging-mode-constants).
 
 3.  Opcionalmente, también puede habilitar el reenvío de los datos de comprobación de errores al equipo del recopilador. Para ello, busque la clave del registro HKEY_LOCAL_MACHINE administrador de \SYSTEM\CurrentControlSet\Control\Session y cree el **filtro de impresión de depuración** de clave con un valor de **0x1**.
 
@@ -156,7 +156,7 @@ Si el equipo de destino tiene más de un adaptador de red, el controlador KDNET 
 ### <a name="validate-target-computer-configuration"></a>Validar la configuración del equipo de destino
 Para comprobar la configuración en el equipo de destino, abra un símbolo del sistema con privilegios elevados y ejecute **bcdedit/enum**. Cuando haya terminado, ejecute **bcdedit/eventsettings**. Puede hacer doble comprobación de los siguientes valores:
 
--   Key
+-   Clave
 
 -   Debugtype = NET
 
@@ -276,7 +276,7 @@ A veces, la interfaz mínima que ofrece nano Server puede dificultar el diagnós
 
 ### <a name="to-configure-nano-server-as-a-target-computer"></a>Para configurar nano Server como un equipo de destino
 
-1. Cree la imagen básica de nano Server. Consulte [Introducción con nano Server](https://technet.microsoft.com/library/mt126167.aspx) para obtener más información.
+1. Cree la imagen básica de nano Server. Consulte [Introducción con nano Server](../get-started/getting-started-with-nano-server.md) para obtener más información.
 
 2. Configure un equipo del recopilador como en la sección configuración del equipo del recopilador de este tema.
 
@@ -286,7 +286,7 @@ A veces, la interfaz mínima que ofrece nano Server puede dificultar el diagnós
 
     2. Inicie una consola de Windows PowerShell con permisos elevados y ejecute `Import-Module BootEventCollector` .
 
-    3. Actualice el registro de VHD de nano Server para habilitar los registradores automáticos. Para ello, ejecute `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd` . Esto agrega una lista básica de los eventos de instalación e inicio más habituales. puede investigar otros usuarios en el [control de sesiones de seguimiento de eventos](https://msdn.microsoft.com/library/windows/desktop/aa363694(v=vs.85).aspx).
+    3. Actualice el registro de VHD de nano Server para habilitar los registradores automáticos. Para ello, ejecute `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd` . Esto agrega una lista básica de los eventos de instalación e inicio más habituales. puede investigar otros usuarios en el [control de sesiones de seguimiento de eventos](/windows/win32/etw/controlling-event-tracing-sessions).
 
 4. Actualice la configuración de BCD en la imagen de nano Server para habilitar la marca de eventos y establecer el equipo del recopilador para asegurarse de que los eventos de diagnóstico se envían al servidor correcto. Tenga en cuenta la dirección IPv4 del equipo del recopilador, el puerto TCP y la clave de cifrado que configuró en el archivo de Active.XML del recopilador (descrito en otro lugar de este tema). Use este comando en una consola de Windows PowerShell con permisos elevados:`Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`
 

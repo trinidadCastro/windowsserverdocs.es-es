@@ -5,74 +5,72 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 7e6bb370-f840-4416-b5e2-86b0ba715f4f
-ms.technology: identity-adds
-ms.openlocfilehash: b229215eb7dde23bd1c17e6023b1c5eace0a56bf
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dc9c435d45e15af627a259c73dcdd81a7689cbe6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823538"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943728"
 ---
-# <a name="ad-forest-recovery---seizing-an-operations-master-role"></a>Recuperación de bosque de AD: Asunción de un rol de maestro de operaciones  
+# <a name="ad-forest-recovery---seizing-an-operations-master-role"></a>Recuperación de bosque de AD: Asunción de un rol de maestro de operaciones
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 y 2012 R2, Windows Server 2008 y 2008 R2
 
-Utilice el procedimiento siguiente para asumir un rol de maestro de operaciones (también conocido como rol de operaciones de maestro único flexible (FSMO)). Puede usar Ntdsutil. exe, una herramienta de línea de comandos que se instala automáticamente en todos los controladores de sesión.  
-  
-## <a name="to-seize-an-operations-master-role"></a>Para asumir una función de maestro de operaciones  
-  
-1. En el símbolo del sistema, escriba el siguiente comando y presione ENTRAR:  
+Utilice el procedimiento siguiente para asumir un rol de maestro de operaciones (también conocido como rol de operaciones de maestro único flexible (FSMO)). Puede usar Ntdsutil.exe, una herramienta de línea de comandos que se instala automáticamente en todos los controladores de sesión.
 
-   ```  
-   ntdsutil  
-   ```  
+## <a name="to-seize-an-operations-master-role"></a>Para asumir una función de maestro de operaciones
 
-2. En el símbolo del sistema **Ntdsutil:** , escriba el siguiente comando y, a continuación, presione ENTRAR:  
+1. En el símbolo del sistema, escriba el siguiente comando y presione ENTRAR:
 
-   ```  
-   roles  
-   ```  
+   ```
+   ntdsutil
+   ```
 
-3. En el símbolo del sistema **FSMO Maintenance:** , escriba el siguiente comando y, a continuación, presione ENTRAR:  
+2. En el símbolo del sistema **Ntdsutil:** , escriba el siguiente comando y, a continuación, presione ENTRAR:
 
-   ```  
-   connections  
-   ```  
+   ```
+   roles
+   ```
 
-4. En el cuadro de texto **conexiones del servidor:** , escriba el siguiente comando y, a continuación, presione ENTRAR:  
+3. En el símbolo del sistema **FSMO Maintenance:** , escriba el siguiente comando y, a continuación, presione ENTRAR:
 
-   ```  
-   Connect to server ServerFQDN  
-   ```  
+   ```
+   connections
+   ```
 
-   Donde *ServerFQDN* es el nombre de dominio completo (FQDN) de este DC, por ejemplo: **connect to Server nycdc01.example.com**.  
+4. En el cuadro de texto **conexiones del servidor:** , escriba el siguiente comando y, a continuación, presione ENTRAR:
 
-   Si *ServerFQDN* no se ejecuta correctamente, utilice el nombre NetBIOS del controlador de dominio.  
+   ```
+   Connect to server ServerFQDN
+   ```
 
-5. En el cuadro de texto **conexiones del servidor:** , escriba el siguiente comando y, a continuación, presione ENTRAR:  
+   Donde *ServerFQDN* es el nombre de dominio completo (FQDN) de este DC, por ejemplo: **connect to Server nycdc01.example.com**.
 
-   ```  
-   quit  
-   ```  
+   Si *ServerFQDN* no se ejecuta correctamente, utilice el nombre NetBIOS del controlador de dominio.
 
-6. En función del rol que desee asumir, en el símbolo del sistema **FSMO Maintenance:** , escriba el comando adecuado como se describe en la tabla siguiente y, a continuación, presione Entrar.  
-  
-|Role|Credenciales|Comando|  
-|----------|-----------------|-------------|  
-|Maestro de nomenclatura de dominios|Administradores de organización|**Asunción del maestro de nomenclatura**|  
-|Maestro de esquema|Administradores de esquema|**Asumir el maestro de esquema**|  
-|Nota maestra de infraestructura **:** después de asumir el rol de maestro de infraestructura, es posible que reciba un error más adelante si necesita ejecutar Adprep/rodcprep. Para obtener más información, consulte el artículo [949257](https://support.microsoft.com/kb/949257)de Knowledge base.|Administradores del dominio|**Asumir el maestro de infraestructura**|  
-|Maestro de emulador de PDC|Administradores del dominio|**Asunción de PDC**|  
-|Maestro de RID|Administradores del dominio|**Asumir el maestro RID**|  
+5. En el cuadro de texto **conexiones del servidor:** , escriba el siguiente comando y, a continuación, presione ENTRAR:
 
-Después de confirmar la solicitud, Active Directory o AD DS intenta transferir el rol. Cuando se produce un error en la transferencia, aparece cierta información de error y Active Directory o AD DS continúa con el embargo. Una vez completada la Asunción, se muestra una lista de los roles y el nombre del Protocolo ligero de acceso a directorios (LDAP) del servidor que tiene actualmente cada rol. También puede ejecutar **netdom query fsmo** en un símbolo del sistema con privilegios elevados para comprobar los titulares de la función actual.  
-  
+   ```
+   quit
+   ```
+
+6. En función del rol que desee asumir, en el símbolo del sistema **FSMO Maintenance:** , escriba el comando adecuado como se describe en la tabla siguiente y, a continuación, presione Entrar.
+
+|Role|Credenciales|Get-Help|
+|----------|-----------------|-------------|
+|Maestro de nomenclatura de dominios|Administradores de empresas|**Asunción del maestro de nomenclatura**|
+|Maestro de esquema|Administradores de esquema|**Asumir el maestro de esquema**|
+|Nota maestra de infraestructura **:** después de asumir el rol de maestro de infraestructura, es posible que reciba un error más adelante si necesita ejecutar Adprep/rodcprep. Para obtener más información, consulte el artículo [949257](https://support.microsoft.com/kb/949257)de Knowledge base.|Administradores de dominio|**Asumir el maestro de infraestructura**|
+|Maestro de emulador de PDC|Administradores de dominio|**Asunción de PDC**|
+|Maestro de RID de |Administradores de dominio|**Asumir el maestro RID**|
+
+Después de confirmar la solicitud, Active Directory o AD DS intenta transferir el rol. Cuando se produce un error en la transferencia, aparece cierta información de error y Active Directory o AD DS continúa con el embargo. Una vez completada la Asunción, se muestra una lista de los roles y el nombre del Protocolo ligero de acceso a directorios (LDAP) del servidor que tiene actualmente cada rol. También puede ejecutar **netdom query fsmo** en un símbolo del sistema con privilegios elevados para comprobar los titulares de la función actual.
+
 > [!NOTE]
-> Si este equipo no era un maestro de RID antes del error e intenta asumir el rol de maestro de RID, el equipo intentará sincronizar con un asociado de replicación antes de aceptar este rol. Sin embargo, dado que este paso se realiza cuando el equipo está aislado, no se realizará correctamente la sincronización con un socio. Por lo tanto, aparece un cuadro de diálogo que le pregunta si desea continuar con la operación a pesar de que este equipo no se puede sincronizar con un socio comercial. Haga clic en **Sí**.  
-  
-## <a name="next-steps"></a>Pasos siguientes
+> Si este equipo no era un maestro de RID antes del error e intenta asumir el rol de maestro de RID, el equipo intentará sincronizar con un asociado de replicación antes de aceptar este rol. Sin embargo, dado que este paso se realiza cuando el equipo está aislado, no se realizará correctamente la sincronización con un socio. Por lo tanto, aparece un cuadro de diálogo que le pregunta si desea continuar con la operación a pesar de que este equipo no se puede sincronizar con un socio comercial. Haga clic en **Sí**.
+
+## <a name="next-steps"></a>Pasos a seguir
 
 - [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
 - [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)

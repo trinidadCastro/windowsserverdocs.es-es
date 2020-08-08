@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 04/11/2019
-ms.technology: identity-adds
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: a429ae3fed8694b5d9f05722b9f9d580b6b27ae6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7272ddc3693816974df528e6c5e10671bbe4ffb7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962987"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943780"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>Install a new Active Directory forest using Azure CLI (Instalación de un nuevo bosque de Active Directory en la CLI de Azure)
 
@@ -53,7 +51,7 @@ El siguiente script se puede ejecutar directamente desde el Azure Portal. Si dec
 | AdminUsername | Nombre de usuario que se configurará en cada máquina virtual como administrador local. |
 | AdminPassword | Contraseña de texto no cifrado que se configurará en cada máquina virtual como la contraseña de administrador local. |
 | ResourceGroupName | Nombre que se va a usar para el grupo de recursos. No debe duplicar un nombre existente. |
-| Location | Nombre de ubicación de Azure en el que desea realizar la implementación. Muestra las regiones admitidas para la suscripción actual mediante `az account list-locations` . |
+| Ubicación | Nombre de ubicación de Azure en el que desea realizar la implementación. Muestra las regiones admitidas para la suscripción actual mediante `az account list-locations` . |
 | VNetName | Nombre para asignar la red virtual de Azure no debe duplicar un nombre existente. |
 | VNetAddress | Ámbito de IP que se usará para las redes de Azure. No debe duplicar un intervalo existente. |
 | SubnetName | Nombre para asignar la subred IP. No debe duplicar un nombre existente. |
