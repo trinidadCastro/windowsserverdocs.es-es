@@ -5,18 +5,18 @@ ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
 author: heidilohr
-ms.openlocfilehash: 5cadad3dd8fafe28ba127610afd3dfa219f92b73
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fb3e0b60787cb12c3401a14a54aebf4809c61b45
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895849"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993231"
 ---
 # <a name="what-is-server-core-2008"></a>¿Qué es Server Core 2008?
 >Se aplica a: Windows Server 2008
 
 >[!NOTE]
->Esta información se aplica a Windows Server 2008. Para obtener información acerca de Server Core en Windows Server, consulte [¿Qué es la instalación Server Core en Windows Server](https://docs.microsoft.com/windows-server/administration/server-core/what-is-server-core)?.
+>Esta información se aplica a Windows Server 2008. Para obtener información acerca de Server Core en Windows Server, consulte [¿Qué es la instalación Server Core en Windows Server](./what-is-server-core.md)?.
 
 La opción Server Core es una nueva opción de instalación mínima que está disponible cuando se implementa la edición Standard, Enterprise o Datacenter de Windows Server 2008. Server Core proporciona una instalación mínima de Windows Server 2008 que admite la instalación de solo determinados roles de servidor, como se describe más adelante en este capítulo. Compare esto con la opción de instalación completa de Windows Server 2008, que admite la instalación de todos los roles de servidor disponibles y otras aplicaciones de servidor de Microsoft o de terceros, como Microsoft Exchange Server o SAP.
 
@@ -234,7 +234,7 @@ En la tabla 1-5 se enumeran los servicios que se instalan de forma predeterminad
 | iphlpsvc  | Asistente de IP  | Auto | LocalSystem (Sistema local) |
 | KeyIso | Aislamiento de claves CNG  | Manual | LocalSystem (Sistema local) |
 | KtmRm  | KTMRM para DTC (Coordinador de transacciones distribuidas)  | Auto | Servicio de red |
-| LanmanServer  | Server  | Auto | LocalSystem (Sistema local) |
+| LanmanServer  | Servidor  | Auto | LocalSystem (Sistema local) |
 | LanmanWorkstation  | Estación de trabajo  | Auto | LocalService (Servicio local) |
 | lltdsvc  | Asignador de detección de topologías de nivel de vínculo  | Manual | LocalService (Servicio local) |
 | lmhosts  | Asistente NetBIOS sobre TCP/IP  | Auto | LocalService (Servicio local) |

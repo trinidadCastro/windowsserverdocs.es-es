@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4819f07f974848ed775c07be51601d870edeaa0b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e7fbf4c96213d7db042143c1da8065f87e642f47
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895704"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993171"
 ---
 # <a name="view-and-configure-performance-event-and-service-data"></a>View and Configure Performance, Event, and Service Data
 
@@ -47,8 +47,8 @@ La miniatura muestra una vista rápida del estado y la capacidad de administraci
 
 |Fila de la miniatura|Descripción|
 |---------|--------|
-|Facilidad de uso|La capacidad de administración de un servidor de incluye varias medidas: Si el servidor está en línea o sin conexión, si es accesible e informa de los datos de Administrador del servidor, si el usuario que ha iniciado sesión en el equipo local tiene derechos de usuario adecuados para obtener acceso al servidor remoto o administrarlo, si el servidor remoto está ejecutando todo el software necesario para administrarlo de forma remota. o si el servidor está configurado de forma que permita consultarlo y administrarlo mediante Administrador del servidor. Los únicos datos de capacidad de administración que Administrador del servidor puede recopilar de un servidor que ejecuta Windows Server 2003 es si el servidor está en línea o sin conexión. Para obtener información detallada sobre los errores de estado de capacidad de administración y cómo resolverlos, consulte el [Foro de administrador del servidor](https://docs.microsoft.com/answers/topics/windows-server-manager.html).|
-|Eventos|Puede configurar la fila **Eventos** de una miniatura para mostrar las alertas cuando se registren eventos que coincidan con los niveles de gravedad, las fuentes, los períodos de tiempo o los identificadores de eventos especificados. Para ver detalles acerca de los eventos y cambiar las alertas que desea ver, haga clic en la fila **eventos** y abra el cuadro de diálogo **vista de detalles de eventos** del rol o grupo de servidores.|
+|Facilidad de uso|La capacidad de administración de un servidor de incluye varias medidas: Si el servidor está en línea o sin conexión, si es accesible e informa de los datos de Administrador del servidor, si el usuario que ha iniciado sesión en el equipo local tiene derechos de usuario adecuados para obtener acceso al servidor remoto o administrarlo, si el servidor remoto está ejecutando todo el software necesario para administrarlo de forma remota. o si el servidor está configurado de forma que permita consultarlo y administrarlo mediante Administrador del servidor. Los únicos datos de capacidad de administración que Administrador del servidor puede recopilar de un servidor que ejecuta Windows Server 2003 es si el servidor está en línea o sin conexión. Para obtener información detallada sobre los errores de estado de capacidad de administración y cómo resolverlos, consulte el [Foro de administrador del servidor](/answers/topics/windows-server-manager.html).|
+|Events|Puede configurar la fila **Eventos** de una miniatura para mostrar las alertas cuando se registren eventos que coincidan con los niveles de gravedad, las fuentes, los períodos de tiempo o los identificadores de eventos especificados. Para ver detalles acerca de los eventos y cambiar las alertas que desea ver, haga clic en la fila **eventos** y abra el cuadro de diálogo **vista de detalles de eventos** del rol o grupo de servidores.|
 |Servicios|Puede configurar la fila **servicios** para mostrar alertas cuando se encuentren servicios en un rol o grupo de servidores que coincidan con los tipos de inicio, el estado del servicio, los nombres de servicio y los servidores que especifique en el cuadro de diálogo **vista de detalles de servicios** .<p>Después de agregar un servidor al grupo de servidores de Administrador del servidor, se pueden mostrar alertas de servicio sobre el servicio detección de hardware Shell si no hay usuarios con sesión iniciada en el servidor administrado. Esto sucede porque el servicio Detección de hardware shell se ejecuta solo cuando los usuarios han iniciado sesión en el servidor administrado o cuando están conectados a una sesión de Escritorio remoto en el servidor administrado. Para no ver las alertas del servicio Detección de hardware shell en este caso, haga clic en **Servicios** en las miniaturas para grupos de servidores, incluido el grupo **Todos los servidores**. En el cuadro de diálogo **vista de detalles de servicios** , en la lista desplegable **servicios** , desactive la casilla de **detección de hardware Shell**y, a continuación, haga clic en **Aceptar**.|
 |Rendimiento|Puede configurar la fila **rendimiento** para mostrar las alertas de un rol o grupo de servidores cuando se produzcan alertas de rendimiento que coincidan con los tipos de recursos, los servidores o los períodos de tiempo que especifique en el cuadro de diálogo **vista de detalles de rendimiento** .<p>De manera predeterminada, los contadores de rendimiento están desactivados. Los servidores administrados que ejecutan sistemas operativos posteriores a Windows Server 2003 y cuyos contadores de rendimiento no se han iniciado, normalmente muestran errores de estado de capacidad de administración de **contadores de rendimiento en línea no iniciados** en el icono **servidores** de páginas de roles o grupos. Para activar los contadores de rendimiento en los servidores administrados, en la página **todos los servidores** , haga clic con el botón secundario en entradas en el icono **rendimiento** que muestran un valor de **Estado de contador** de **desactivado**y, a continuación, haga clic en **iniciar contadores de rendimiento**. También puede iniciar los contadores de rendimiento haciendo clic con el botón secundario en entradas para servidores en el icono **servidores** de las páginas de roles o grupos y, a continuación, haciendo clic en **iniciar contadores de rendimiento**.|
 |Resultados BPA|Puede configurar la fila de **resultados de BPA** para mostrar las alertas de un rol o grupo de servidores cuando se encuentren resultados de análisis BPA que coincidan con los niveles de gravedad, los servidores o las categorías de BPA que especifique en el cuadro de diálogo vista de detalles de resultados de **BPA** .|
@@ -126,7 +126,7 @@ De manera predeterminada, los contadores de rendimiento están desactivados. Los
     Tenga en cuenta que el número de alertas de rendimiento en el icono **Rendimiento** y la asignación de las alertas con el transcurso del tiempo que muestra el gráfico pueden cambiar al hacer clic en **Guardar**.
 
     > [!NOTE]
-    > en el caso de las máquinas virtuales que tienen [memoria dinámica](https://technet.microsoft.com/library/ff817651.aspx) activado, el aumento del umbral de alertas de rendimiento puede generar alertas de falsos positivos.
+    > en el caso de las máquinas virtuales que tienen [memoria dinámica](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff817651(v=ws.10)) activado, el aumento del umbral de alertas de rendimiento puede generar alertas de falsos positivos.
 
 7.  Para actualizar la lista de alertas de rendimiento que se recopilan de los servidores, en el menú **Tareas**, haga clic en **Actualizar**.
 
@@ -167,7 +167,7 @@ para obtener más información acerca de cómo analizar los datos del contador d
 
 -   [Solución de problemas de rendimiento](https://go.microsoft.com/fwlink/?LinkId=239831)
 
-para obtener más información acerca de las herramientas avanzadas de supervisión y análisis de rendimiento disponibles para Windows Server 2012 y versiones posteriores de Windows Server, incluido Server Performance Advisor 3,0, vea [rendimiento](https://msdn.microsoft.com/windows/hardware/gg463374.aspx) en MSDN.
+para obtener más información acerca de las herramientas avanzadas de supervisión y análisis de rendimiento disponibles para Windows Server 2012 y versiones posteriores de Windows Server, incluido Server Performance Advisor 3,0, vea [rendimiento](/previous-versions/windows/hardware/design/dn614608(v=vs.85)) en MSDN.
 
 ## <a name="manage-services-and-configure-service-alerts"></a><a name=BKMK_services></a>Administrar servicios y configurar alertas de servicios
 En esta sección, aprenderá a iniciar, detener, reiniciar, pausar o reanudar los servicios que se muestran en el icono **servicios** en las páginas de roles y grupos de servidores en Administrador del servidor. También puede configurar los servicios sobre los que recibirá alertas en miniaturas en el panel de Administrador del servidor.

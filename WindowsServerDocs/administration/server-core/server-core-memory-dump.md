@@ -6,12 +6,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: ee5786684c4f3a6c75c3b123b9d3ef9d32143949
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d01757fcf1539e41db866b46cdf9eba60a59fc04
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895882"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993203"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar archivos de volcado de memoria para la instalación Server Core
 
@@ -145,7 +145,7 @@ Para comprobar la configuración del archivo de paginación actual, ejecute uno 
    wmic.exe pagefile
    ```
 
-   or
+   o
 
    ```
    wmic.exe pagefile list /format:list
@@ -195,7 +195,4 @@ Referencias adicionales
 
 Para obtener información general sobre el uso de archivos de volcado de memoria, consulte [información general sobre las opciones de archivo de volcado de memoria para Windows](https://support.microsoft.com/help/254649/overview-of-memory-dump-file-options-for-windows).
 
-Para obtener más información acerca de los archivos de volcado dedicados, consulte [Cómo usar el valor del registro DedicatedDeumpFile para superar las limitaciones de espacio en la unidad del sistema al capturar un volcado de memoria del sistema](https://blogs.msdn.microsoft.com/ntdebugging/2010/04/02/how-to-use-the-dedicateddumpfile-registry-value-to-overcome-space-limitations-on-the-system-drive-when-capturing-a-system-memory-dump/).
-
-
-
+Para obtener más información acerca de los archivos de volcado dedicados, consulte [Cómo usar el valor del registro DedicatedDeumpFile para superar las limitaciones de espacio en la unidad del sistema al capturar un volcado de memoria del sistema](/archive/blogs/ntdebugging/how-to-use-the-dedicateddumpfile-registry-value-to-overcome-space-limitations-on-the-system-drive-when-capturing-a-system-memory-dump).
