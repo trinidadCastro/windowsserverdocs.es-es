@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 90fa1203f09bc04b27885034895e52db5fa1c5f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b90ea772874c2a5731e03f4bcbc44de6efc34a20
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971492"
+ms.locfileid: "87995041"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>Crear la clave raíz del Servicio de distribución de claves (KDS)
 
@@ -25,7 +25,7 @@ Los controladores de dominio (DC) requieren una clave raíz para comenzar a gene
 > [!NOTE]
 > Eliminar y volver a crear la clave raíz puede dar lugar a problemas en los que la clave antigua siga utilizándose después de la eliminación debido al almacenamiento en caché de la clave. El servicio de distribución de claves (KDC) debe reiniciarse en todos los controladores de dominio si se vuelve a crear la clave raíz.
 
-Para poder realizar este procedimiento, es necesario, como mínimo, pertenecer a **Admins. del dominio**, **Administradores de empresas** o a otro grupo equivalente. Para obtener información detallada sobre el uso de las cuentas adecuadas y las pertenencias a grupos, vea [Grupos predeterminados locales y de dominio](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
+Para poder realizar este procedimiento, es necesario, como mínimo, pertenecer a **Admins. del dominio**, **Administradores de empresas** o a otro grupo equivalente. Para obtener información detallada sobre el uso de las cuentas adecuadas y las pertenencias a grupos, vea [Grupos predeterminados locales y de dominio](/previous-versions/orphan-topics/ws.10/dd728026(v=ws.10)).
 
 > [!NOTE]
 > Se necesita una arquitectura de 64 bits para ejecutar los comandos de Windows PowerShell que se usan para administrar cuentas de servicio administradas de grupo.
@@ -61,5 +61,3 @@ Para los entornos de prueba con solo un controlador de dominio, puedes usar el p
 
 ## <a name="see-also"></a>Consulte también
 [Introducción con cuentas de servicio administradas de grupo](getting-started-with-group-managed-service-accounts.md)
-
-

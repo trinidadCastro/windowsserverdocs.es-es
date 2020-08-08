@@ -7,12 +7,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: fb36cb13f9a78ae028f1217dd667a106a81e5c94
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9f41b203ff14923c991f56b7166b37200bee6910
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937318"
+ms.locfileid: "87994975"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>Crear escritorios virtuales de Windows 10 Enterprise para las estaciones
 Esta configuración opcional en Multipoint Services está destinada principalmente a situaciones en las que una aplicación esencial requiere su propia instancia de un sistema operativo cliente para cada usuario. Algunos ejemplos son las aplicaciones que no se pueden instalar en Windows Server y las aplicaciones que no ejecutarán varias instancias en el mismo equipo host.
@@ -31,7 +31,7 @@ Para preparar la creación de escritorios virtuales de estación, asegúrese de 
 | Gráficos | DX11 |
 | BIOS | Configuración de CPU de BIOS configurada para habilitar la virtualización: traducción de direcciones de segundo nivel (SLAT) |
 
--   **Estaciones** : Configure las estaciones del sistema Multipoint Services. Para más información, consulte [Asociación de estaciones adicionales a multipoint Services](Attach-additional-stations-to-your-MultiPoint-services-computer.md).
+-   **Estaciones** : Configure las estaciones del sistema Multipoint Services. Para más información, consulte [Asociación de estaciones adicionales a multipoint Services](./multipoint-attach-additional-stations.md).
 
 -   **Dominio** : en un entorno de dominio, el equipo con Windows MultiPoint Server se ha agregado al dominio y se ha agregado un usuario de dominio al grupo de administradores locales en el sistema operativo host de Multipoint Services.
 

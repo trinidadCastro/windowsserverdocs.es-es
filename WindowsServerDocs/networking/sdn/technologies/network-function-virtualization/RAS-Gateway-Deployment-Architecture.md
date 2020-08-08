@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 0de90508ec3a7db2624047d23de47e79d9ea2a39
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e15131291f14f8e7affc45d49f1b81e7c8b29ba7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952296"
+ms.locfileid: "87994758"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>Arquitectura de implementación de puerta de enlace de RAS
 
@@ -91,7 +91,7 @@ Al firmar un cliente nuevo y agregar el cliente como un nuevo inquilino en su ce
     > -   Una vez que la controladora de red ha configurado una puerta de enlace de RAS y un reflector de enrutamiento para el inquilino, siempre que el mismo inquilino requiera una nueva conexión VPN de sitio a sitio, la controladora de red comprueba la capacidad disponible en esta máquina virtual de puerta de enlace de RAS. Si la puerta de enlace original puede atender la capacidad necesaria, la nueva conexión de red también se configura en la misma máquina virtual de puerta de enlace de RAS. Si la máquina virtual de puerta de enlace de RAS no puede controlar la capacidad adicional, el controlador de red selecciona una nueva máquina virtual de puerta de enlace RAS y configura la nueva conexión en ella. Esta nueva máquina virtual de puerta de enlace RAS asociada al inquilino se convierte en el cliente de reflector de rutas del reflector de enrutamiento de puerta de enlace RAS de inquilino original.
     > -   Dado que los grupos de puerta de enlace RAS están detrás de equilibradores de carga de software (SLBs), las direcciones VPN de sitio a sitio de los inquilinos usan una única dirección IP pública, denominada dirección IP virtual (VIP), que se traduce mediante el SLBs en una dirección IP interna del centro de bits, denominada dirección IP dinámica Esta asignación de dirección IP pública a privada por SLB garantiza que los túneles VPN de sitio a sitio se establezcan correctamente entre los sitios de la empresa y las puertas de enlace RAS de CSP y los Reflejadores de ruta.
     >
-    >     Para más información sobre SLB, VIP y DIP, consulte [equilibrio de carga de Software &#40;slb&#41; para Sdn](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).
+    >     Para más información sobre SLB, VIP y DIP, consulte [equilibrio de carga de Software &#40;slb&#41; para Sdn](./software-load-balancing-for-sdn.md).
 
 5.  Después de establecer el túnel VPN de sitio a sitio entre el sitio de la empresa y la puerta de enlace RAS del centro de recursos de CSP para el nuevo inquilino, las rutas estáticas que están asociadas a los túneles se aprovisionan automáticamente en los lados de la empresa y del CSP del túnel.
 
@@ -154,8 +154,3 @@ Cuando el inquilino tiene varios sitios empresariales, el inquilino puede config
 **Corrección rápida de errores de puerta de enlace**
 
 Para garantizar una respuesta de conmutación por error rápida, puede configurar el tiempo del parámetro keepalive de BGP entre las rutas perimetrales y el enrutador de control en un intervalo de tiempo corto, como menor o igual que diez segundos. Con este breve intervalo de mantenimiento de conexión, si se produce un error en un enrutador BGP Edge de puerta de enlace RAS, el error se detecta rápidamente y la controladora de red sigue los pasos proporcionados en las secciones anteriores. Esta ventaja podría reducir la necesidad de un protocolo de detección de errores independiente, como el protocolo de detección de reenvío bidireccional (BFD).
-
-
-
-
-

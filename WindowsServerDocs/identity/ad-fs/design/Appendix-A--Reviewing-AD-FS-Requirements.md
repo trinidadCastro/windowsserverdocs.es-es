@@ -6,19 +6,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ad4275bf7b6231692171209b19c4c60190e30126
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ad3184dbe43cfa108aa1b178421102880b3ef4d7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942981"
+ms.locfileid: "87994992"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>Apéndice A: Revisión de los requisitos de AD FS
 
 Para que los asociados organizativos de su implementación de Servicios de federación de Active Directory (AD FS) (AD FS) puedan colaborar correctamente, primero debe asegurarse de que la infraestructura de la red corporativa está configurada para admitir los requisitos de AD FS para las cuentas, la resolución de nombres y los certificados. AD FS tiene los tipos siguientes de requisitos:
 
 > [!TIP]
-> Puede encontrar vínculos de recursos de AD FS adicionales en la descripción de los [conceptos clave de AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/understanding-key-ad-fs-concepts).
+> Puede encontrar vínculos de recursos de AD FS adicionales en la descripción de los [conceptos clave de AD FS](../technical-reference/understanding-key-ad-fs-concepts.md).
 
 ## <a name="hardware-requirements"></a>Requisitos de hardware
 Los siguientes requisitos de hardware mínimos y recomendados se aplican a los equipos del servidor de Federación y del servidor proxy de Federación.

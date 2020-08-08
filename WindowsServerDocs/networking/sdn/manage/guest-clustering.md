@@ -2,19 +2,17 @@
 title: Clústeres invitados en una red virtual
 description: Las máquinas virtuales conectadas a una red virtual solo pueden usar las direcciones IP asignadas por la controladora de red para comunicarse en la red.  Las tecnologías de agrupación en clústeres que requieren una dirección IP flotante, como los clústeres de conmutación por error de Microsoft, requieren algunos pasos adicionales para que funcionen correctamente.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
 author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 6889b58f5d49a4932ef8277b11e1002e85606f3f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6d597d4ced923c751e54ed4678ffb2d956a7b471
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854458"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994770"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>Clústeres invitados en una red virtual
 
@@ -22,12 +20,12 @@ ms.locfileid: "80854458"
 
 Las máquinas virtuales conectadas a una red virtual solo pueden usar las direcciones IP asignadas por la controladora de red para comunicarse en la red.  Las tecnologías de agrupación en clústeres que requieren una dirección IP flotante, como los clústeres de conmutación por error de Microsoft, requieren algunos pasos adicionales para que funcionen correctamente.
 
-El método para hacer que la IP flotante sea accesible es usar una Load Balancer de software \(SLB\) IP virtual \(VIP\).  El equilibrador de carga de software debe configurarse con un sondeo de estado en un puerto en esa dirección IP para que SLB dirija el tráfico a la máquina que actualmente tiene esa IP.
+El método para hacer que la IP flotante sea accesible es usar un software Load Balancer \( \) VIP de IP virtual de SLB \( \) .  El equilibrador de carga de software debe configurarse con un sondeo de estado en un puerto en esa dirección IP para que SLB dirija el tráfico a la máquina que actualmente tiene esa IP.
 
 
 ## <a name="example-load-balancer-configuration"></a>Ejemplo: configuración del equilibrador de carga
 
-En este ejemplo se da por supuesto que ya ha creado las máquinas virtuales que se convertirán en nodos de clúster y las asociará a un Virtual Network.  Para obtener instrucciones, consulte [creación de una máquina virtual y conexión a un inquilino Virtual Network o VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm).  
+En este ejemplo se da por supuesto que ya ha creado las máquinas virtuales que se convertirán en nodos de clúster y las asociará a un Virtual Network.  Para obtener instrucciones, consulte [creación de una máquina virtual y conexión a un inquilino Virtual Network o VLAN](./create-a-tenant-vm.md).
 
 En este ejemplo se creará una dirección IP virtual (192.168.2.100) para representar la dirección IP flotante del clúster y se configurará un sondeo de estado para supervisar el puerto TCP 59999 para determinar qué nodo es el activo.
 
@@ -46,7 +44,7 @@ En este ejemplo se creará una dirección IP virtual (192.168.2.100) para repres
    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
    ```
 
-3. Cree una dirección IP de Front\-end.
+3. Cree una dirección IP de Front- \- End.
 
    ```PowerShell
    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
@@ -59,7 +57,7 @@ En este ejemplo se creará una dirección IP virtual (192.168.2.100) para repres
    $FrontEnd.properties.privateIPAllocationMethod = "Static"
    ```
 
-4. Cree un grupo de back\-end para que contenga los nodos de clúster.
+4. Cree un grupo de back \- -end para que contenga los nodos de clúster.
 
    ```PowerShell
    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
@@ -69,10 +67,10 @@ En este ejemplo se creará una dirección IP virtual (192.168.2.100) para repres
    $LoadBalancerProperties.backendAddressPools += $BackEnd
    ```
 
-5. Agregue un sondeo para detectar en qué nodo del clúster está actualmente activa la dirección flotante. 
+5. Agregue un sondeo para detectar en qué nodo del clúster está actualmente activa la dirección flotante.
 
    >[!NOTE]
-   >La consulta de sondeo en la dirección permanente de la máquina virtual en el puerto que se define a continuación.  El puerto solo debe responder en el nodo activo. 
+   >La consulta de sondeo en la dirección permanente de la máquina virtual en el puerto que se define a continuación.  El puerto solo debe responder en el nodo activo.
 
    ```PowerShell
    $LoadBalancerProperties.probes += $lbprobe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
@@ -94,9 +92,9 @@ En este ejemplo se creará una dirección IP virtual (192.168.2.100) para repres
    $lbrule.ResourceId = "Rules1"
 
    $lbrule.properties.frontendipconfigurations += $FrontEnd
-   $lbrule.properties.backendaddresspool = $BackEnd 
+   $lbrule.properties.backendaddresspool = $BackEnd
    $lbrule.properties.protocol = "TCP"
-   $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433 
+   $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433
    $lbrule.properties.IdleTimeoutInMinutes = 4
    $lbrule.properties.EnableFloatingIP = $true
    $lbrule.properties.Probe = $lbprobe
@@ -124,9 +122,9 @@ En este ejemplo se creará una dirección IP virtual (192.168.2.100) para repres
    $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
    ```
 
-   Una vez que haya creado el equilibrador de carga y agregado las interfaces de red al grupo de back-end, estará listo para configurar el clúster.  
+   Una vez que haya creado el equilibrador de carga y agregado las interfaces de red al grupo de back-end, estará listo para configurar el clúster.
 
-9. Opta Si usa un clúster de conmutación por error de Microsoft, continúe con el ejemplo siguiente. 
+9. Opta Si usa un clúster de conmutación por error de Microsoft, continúe con el ejemplo siguiente.
 
 ## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>Ejemplo 2: configurar un clúster de conmutación por error de Microsoft
 
@@ -139,10 +137,10 @@ Puede usar los pasos siguientes para configurar un clúster de conmutación por 
    Import-module failoverclusters
 
    $ClusterName = "MyCluster"
-   
+
    $ClusterNetworkName = "Cluster Network 1"
-   $IPResourceName =  
-   $ILBIP = "192.168.2.100" 
+   $IPResourceName =
+   $ILBIP = "192.168.2.100"
 
    $nodes = @("DB1", "DB2")
    ```

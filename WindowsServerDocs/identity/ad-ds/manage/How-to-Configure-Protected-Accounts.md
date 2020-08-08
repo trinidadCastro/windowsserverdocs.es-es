@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 08065e153a7f0c09e305e87fc2d745b3daa0b3f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7e69a808a48c3dedcc29d8876dc460559157f191
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943874"
+ms.locfileid: "87994832"
 ---
 # <a name="guidance-about-how-to-configure-protected-accounts"></a>Instrucciones sobre cómo configurar cuentas protegidas
 
@@ -114,7 +114,7 @@ Las cuentas de servicios y equipos no pueden ser miembros de **Usuarios protegid
 -   Rechazar RC4 en la autenticación previa de Kerberos: no configurable.
 
     > [!NOTE]
-    > Aunque se puede [cambiar la configuración de los tipos de cifrado admitidos](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx), no se recomienda cambiar esta configuración para las cuentas de equipo sin probarla en el entorno de destino.
+    > Aunque se puede [cambiar la configuración de los tipos de cifrado admitidos](/archive/blogs/openspecification/windows-configurations-for-kerberos-supported-encryption-type), no se recomienda cambiar esta configuración para las cuentas de equipo sin probarla en el entorno de destino.
 
 -   Restringir los vales de usuario (TGT) a las 4 horas de vigencia inicial: usa directivas de autenticación.
 

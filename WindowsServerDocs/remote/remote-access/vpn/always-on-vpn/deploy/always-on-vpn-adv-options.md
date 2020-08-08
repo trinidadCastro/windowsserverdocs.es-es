@@ -8,12 +8,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 8af6294ab604c0535040ba4aaa149d674854484c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 60f79b7bb624f6e64c0c32033335ddcd2eea262e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958203"
+ms.locfileid: "87995073"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Características avanzadas de VPN de Always On
 
@@ -39,7 +39,7 @@ A continuación se muestran opciones adicionales para la autenticación.
 
 |Opción  |Descripción  |
 |---------|---------|
-|Windows Hello para empresas     |En Windows 10, Windows Hello para empresas reemplaza las contraseñas al proporcionar una sólida autenticación en dos fases en equipos y dispositivos móviles. Esta autenticación consta de un nuevo tipo de credencial de usuario que está asociada a un dispositivo y utiliza un número de identificación personal (PIN) o biométrico.<p>El cliente VPN de Windows 10 es compatible con Windows Hello para empresas. Una vez que el usuario inicia sesión con un gesto, la conexión VPN usa el certificado de Windows Hello para empresas para la autenticación basada en certificados.<p>Documentos relacionados:<ul><li>[Windows Hello para empresas](/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>Caso práctico técnico: [Habilitar el acceso remoto con Windows Hello para empresas en Windows 10](/previous-versions//mt728163(v=technet.10))</li></ul>         |
+|Windows Hello para empresas     |En Windows 10, Windows Hello para empresas reemplaza las contraseñas al proporcionar una sólida autenticación en dos fases en equipos y dispositivos móviles. Esta autenticación consta de un nuevo tipo de credencial de usuario que está asociada a un dispositivo y utiliza un número de identificación personal (PIN) o biométrico.<p>El cliente VPN de Windows 10 es compatible con Windows Hello para empresas. Una vez que el usuario inicia sesión con un gesto, la conexión VPN usa el certificado de Windows Hello para empresas para la autenticación basada en certificados.<p>Documentos relacionados:<ul><li>[Windows Hello para empresas](/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>Caso práctico técnico: [Habilitar el acceso remoto con Windows Hello para empresas en Windows 10](/previous-versions/mt728163(v=technet.10))</li></ul>         |
 |Autenticación multifactor (MFA) de Azure     |Azure MFA tiene versiones locales y en la nube que se pueden integrar con el mecanismo de autenticación de VPN de Windows.<p>Para obtener más información sobre cómo funciona este mecanismo, consulte [integración de la autenticación RADIUS con Azure servidor multi-factor Authentication](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius).         |
 
 ## <a name="advanced-vpn-features"></a>Características avanzadas de VPN
@@ -151,7 +151,7 @@ Para obtener más información sobre la atestación de clave de TPM en Windows 1
 
 - [Windows Hello para empresas](/windows/access-protection/hello-for-business/hello-identity-verification): en este tema se proporcionan los requisitos previos, como implementaciones solo en la nube e implementaciones híbridas.  En este tema también se enumeran las preguntas más frecuentes sobre Windows Hello para empresas.
 
-- [Caso práctico técnico: habilitación del acceso remoto con Windows Hello para empresas en Windows 10](/previous-versions//mt728163(v=technet.10)): en este caso práctico, aprenderá cómo Microsoft implementa el acceso remoto con Windows Hello para empresas.  Windows Hello para empresas es un enfoque de autenticación basado en certificado o clave pública/privada dirigido a organizaciones y consumidores que no se limita a las contraseñas. Esta forma de autenticación se basa en credenciales de par de claves que pueden reemplazar a las contraseñas y que resisten las infracciones, los robos y las suplantaciones de identidad.
+- [Caso práctico técnico: habilitación del acceso remoto con Windows Hello para empresas en Windows 10](/previous-versions/mt728163(v=technet.10)): en este caso práctico, aprenderá cómo Microsoft implementa el acceso remoto con Windows Hello para empresas.  Windows Hello para empresas es un enfoque de autenticación basado en certificado o clave pública/privada dirigido a organizaciones y consumidores que no se limita a las contraseñas. Esta forma de autenticación se basa en credenciales de par de claves que pueden reemplazar a las contraseñas y que resisten las infracciones, los robos y las suplantaciones de identidad.
 
 - [Integración de la autenticación RADIUS con azure servidor multi-factor Authentication](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius): en este tema se explica cómo agregar y configurar una autenticación de cliente RADIUS con Azure servidor multi-factor Authentication. RADIUS es un protocolo estándar para aceptar las solicitudes de autenticación y procesar estas solicitudes. Servidor Azure Multi-Factor Authentication puede actuar como servidor RADIUS.
 

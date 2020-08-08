@@ -6,12 +6,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 30ab0547fd538eec3f50120a5d536eb9a48de54b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8f5f18452c158b2e1c8d14173d80193465ead17f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971292"
+ms.locfileid: "87994794"
 ---
 # <a name="manage-transport-layer-security-tls"></a>Administración de Seguridad de la capa de transporte (TLS)
 
@@ -19,10 +19,10 @@ ms.locfileid: "87971292"
 
 ## <a name="configuring-tls-cipher-suite-order"></a>Configuración del orden del conjunto de cifrado TLS
 
-Las distintas versiones de Windows admiten diferentes conjuntos de cifrado TLS y orden de prioridad. Vea [conjuntos de cifrado en TLS/SSL (Schannel SSP)](https://docs.microsoft.com/windows/win32/secauthn/cipher-suites-in-schannel) para el orden predeterminado admitido por el proveedor de Microsoft Schannel en diferentes versiones de Windows.
+Las distintas versiones de Windows admiten diferentes conjuntos de cifrado TLS y orden de prioridad. Vea [conjuntos de cifrado en TLS/SSL (Schannel SSP)](/windows/win32/secauthn/cipher-suites-in-schannel) para el orden predeterminado admitido por el proveedor de Microsoft Schannel en diferentes versiones de Windows.
 
 > [!NOTE]
-> También puede modificar la lista de conjuntos de cifrado mediante el uso de las funciones de CNG, consulte [priorización de conjuntos de cifrado de Schannel](https://docs.microsoft.com/windows/win32/secauthn/prioritizing-schannel-cipher-suites) para obtener más información.
+> También puede modificar la lista de conjuntos de cifrado mediante el uso de las funciones de CNG, consulte [priorización de conjuntos de cifrado de Schannel](/windows/win32/secauthn/prioritizing-schannel-cipher-suites) para obtener más información.
 
 Los cambios en el orden de los conjuntos de cifrado TLS surtirán efecto en el siguiente arranque. Hasta el reinicio o el apagado, se aplicará el orden existente.
 
@@ -52,11 +52,11 @@ Puede usar el orden de los conjuntos de cifrado SSL directiva de grupo configura
 
 ### <a name="configuring-tls-cipher-suite-order-by-using-mdm"></a>Configuración del orden del conjunto de cifrado TLS mediante MDM
 
-El CSP de directivas de Windows 10 admite la configuración de los conjuntos de cifrado TLS. Consulte [Cryptography/TLSCipherSuites](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-cryptography#cryptography-tlsciphersuites) para obtener más información.
+El CSP de directivas de Windows 10 admite la configuración de los conjuntos de cifrado TLS. Consulte [Cryptography/TLSCipherSuites](/windows/client-management/mdm/policy-csp-cryptography#cryptography-tlsciphersuites) para obtener más información.
 
 ### <a name="configuring-tls-cipher-suite-order-by-using-tls-powershell-cmdlets"></a>Configuración del orden del conjunto de cifrado TLS mediante cmdlets de PowerShell de TLS
 
-El módulo TLS PowerShell permite obtener la lista ordenada de conjuntos de cifrado TLS, deshabilitar un conjunto de cifrado y habilitar un conjunto de cifrado. Consulte [módulo TLS](https://docs.microsoft.com/powershell/module/tls/?view=win10-ps) para obtener más información.
+El módulo TLS PowerShell permite obtener la lista ordenada de conjuntos de cifrado TLS, deshabilitar un conjunto de cifrado y habilitar un conjunto de cifrado. Consulte [módulo TLS](/powershell/module/tls/?view=win10-ps) para obtener más información.
 
 ## <a name="configuring-tls-ecc-curve-order"></a>Configuración del orden de las curvas ECC de TLS
 
@@ -136,4 +136,3 @@ Las nuevas listas de prioridades de curva se activan en el siguiente reinicio de
 ![GPP distribuir curvas](../media/Transport-Layer-Security-protocol/gp-managing-tls-curve-priority-order.png)
 
 *Figura 4 administración de la prioridad de curva TLS mediante directiva de grupo*
-

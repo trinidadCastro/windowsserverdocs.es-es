@@ -1,18 +1,16 @@
 ---
 title: Implementación de dispositivos de almacenamiento de NVMe mediante la asignación discreta de dispositivos
 description: Obtenga información sobre cómo usar DDA para implementar dispositivos de almacenamiento
-ms.prod: windows-server
-ms.technology: hyper-v
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 1c36107e-78c9-4ec0-a313-6ed557ac0ffc
-ms.openlocfilehash: 2b92b175a6e914b62b069f76f92255cb99d55d74
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fdf6372d642a2e1413a2ed5029d9e9f25af4ce3f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860908"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945948"
 ---
 # <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>Implementación de dispositivos de almacenamiento de NVMe mediante la asignación discreta de dispositivos
 
@@ -37,10 +35,10 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 ## <a name="dismount-the-device-from-the-host-partition"></a>Desmontar el dispositivo de la partición de host
 
 ### <a name="locating-the-devices-location-path"></a>Buscar la ruta de acceso de la ubicación del dispositivo
-La ruta de acceso de la ubicación de PCI es necesaria para desmontar y montar el dispositivo del host.  Una ruta de acceso de ubicación de ejemplo tiene un aspecto similar al siguiente: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`.   Aquí encontrará más detalles sobre cómo encontrar la ruta de acceso de Ubicación: [planear la implementación de dispositivos mediante la asignación discreta de dispositivos](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
+La ruta de acceso de la ubicación de PCI es necesaria para desmontar y montar el dispositivo del host.  Una ruta de acceso de ubicación de ejemplo tiene el siguiente aspecto: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` .   Aquí encontrará más detalles sobre cómo encontrar la ruta de acceso de Ubicación: [planear la implementación de dispositivos mediante la asignación discreta de dispositivos](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
 
 ### <a name="disable-the-device"></a>Deshabilitar el dispositivo
-Con Device Manager o PowerShell, asegúrese de que el dispositivo está "deshabilitado".  
+Con Device Manager o PowerShell, asegúrese de que el dispositivo está "deshabilitado".
 
 ### <a name="dismount-the-device"></a>Desmontar el dispositivo
 ```
@@ -54,7 +52,7 @@ El paso final consiste en indicar a Hyper-V que una máquina virtual debe tener 
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
-## <a name="whats-next"></a>¿Qué debe hacer a continuación?
+## <a name="whats-next"></a>Pasos siguientes
 Una vez que un dispositivo se monta correctamente en una máquina virtual, ahora puede iniciar la máquina virtual e interactuar con el dispositivo como lo haría normalmente si estuviera ejecutando en un sistema sin sistema operativo.  Para comprobarlo, abra el administrador de dispositivos en la máquina virtual invitada y vea que el hardware se muestra ahora.
 
 ## <a name="removing-a-device-and-returning-it-to-the-host"></a>Quitar un dispositivo y devolverlo al host

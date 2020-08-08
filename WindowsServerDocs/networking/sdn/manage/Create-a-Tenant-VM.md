@@ -7,12 +7,12 @@ ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 0b82128c703f5f3d1fe357beae90a15481232d5c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2ca1c308ee38726d02ef19ebdfa4c83086fef0a7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970782"
+ms.locfileid: "87995145"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>Creación de una máquina virtual y conexión a una red VLAN o red virtual de inquilino
 
@@ -31,9 +31,9 @@ Las secciones de este tema incluyen comandos de Windows PowerShell de ejemplo qu
 
 2. Si la máquina virtual requiere acceso a la red en el inicio, no inicie la máquina virtual hasta después de establecer el identificador de interfaz en el puerto del adaptador de red de la máquina virtual. Si inicia la máquina virtual antes de establecer el identificador de interfaz y la interfaz de red no existe, la máquina virtual no puede comunicarse en la red de la controladora de red y se aplican todas las directivas.
 
-3. Si necesita ACL personalizadas para esta interfaz de red, cree la ACL ahora con las instrucciones del tema uso de [listas de Access Control (ACL) para administrar el flujo de tráfico de red del centro de](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md) información.
+3. Si necesita ACL personalizadas para esta interfaz de red, cree la ACL ahora con las instrucciones del tema uso de [listas de Access Control (ACL) para administrar el flujo de tráfico de red del centro de](./use-acls-for-traffic-flow.md) información.
 
-Asegúrese de que ya ha creado un Virtual Network antes de usar este comando de ejemplo. Para obtener más información, consulte [creación, eliminación o actualización de redes virtuales de inquilino](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks).
+Asegúrese de que ya ha creado un Virtual Network antes de usar este comando de ejemplo. Para obtener más información, consulte [creación, eliminación o actualización de redes virtuales de inquilino](./create,-delete,-or-update-tenant-virtual-networks.md).
 
 ## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>Creación de una máquina virtual y conexión a un Virtual Network mediante los cmdlets de la controladora de red de Windows PowerShell
 
@@ -221,6 +221,3 @@ Ha creado correctamente una máquina virtual, ha conectado la máquina virtual a
    ```
 
 Ha creado correctamente una máquina virtual, ha conectado la máquina virtual a una VLAN y ha iniciado la máquina virtual para que pueda procesar las cargas de trabajo de inquilinos.
-
-
-
