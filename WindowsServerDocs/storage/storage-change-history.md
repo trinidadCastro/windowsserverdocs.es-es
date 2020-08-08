@@ -1,20 +1,18 @@
 ---
 ms.assetid: 87174225-a60f-4718-b4cc-9b172f205b72
 title: Historial de cambios de los temas de Storage
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.date: 1/16/2019
 description: Temas nuevos y actualizados de la documentación de almacenamiento local para Windows Server para profesionales de ti.
-ms.openlocfilehash: 3d43166d8f5e931d2677ff394c1c4ad69b0f302f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c4ba7edcbd2a0cf4949c986dec2e2aef385326c8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966267"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954632"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Historial de cambios de los temas de almacenamiento en Windows Server
 
@@ -57,7 +55,7 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
 |[Eliminar volúmenes](storage-spaces/delete-volumes.md)| Nuevo        |
-|[Crear volúmenes](storage-spaces/create-volumes.md)| Se han agregado pasos y vídeos para crear un volumen en el centro de administración de Windows.|
+|[Creación de volúmenes](storage-spaces/create-volumes.md)| Se han agregado pasos y vídeos para crear un volumen en el centro de administración de Windows.|
 |[Ampliar volúmenes](storage-spaces/resize-volumes.md)| Se han agregado pasos y vídeo para cambiar el tamaño de un volumen en el centro de administración de Windows.|
 
 ## <a name="march-2019"></a>Marzo de 2019
@@ -183,14 +181,14 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 |[Inicializar nuevos discos](disk-management/initialize-new-disks.md)|Se ha vuelto a escribir para intentar que sea más fácil comprender y abordar las preguntas de los clientes.|
 |[Planeación de volúmenes en Espacios de almacenamiento directo](storage-spaces/plan-volumes.md)|Se ha agregado una tabla que resume los tipos de resistencia disponibles en clústeres de cuatro nodos y más grandes.|
 |[Información general de ReFS](refs/refs-overview.md)|Se aclararon las cargas de trabajo recomendadas para la paridad acelerada para reflejo y se corrigieron los tamaños de archivo y volumen admitidos para ReFS y NTFS.|
-|[Paridad acelerada por reflejos](refs/mirror-accelerated-parity.md)|Recomendación aclarada para colocar archivos con mucha escritura en directorios independientes.|
+|[Paridad acelerada por reflejo](refs/mirror-accelerated-parity.md)|Recomendación aclarada para colocar archivos con mucha escritura en directorios independientes.|
 |[Problemas conocidos de réplica de almacenamiento](storage-replica/storage-replica-known-issues.md)|Se ha agregado información nueva.|
 
 ## <a name="november-2017"></a>Noviembre de 2017
 
 |Tema nuevo o modificado|Descripción|
 |---|---|
-|[Novedades de Storage](whats-new-in-storage.md)|Se ha agregado información acerca de las novedades de Windows Server, versión 1709.|
+|[What's new in storage (Novedades de almacenamiento)](whats-new-in-storage.md)|Se ha agregado información acerca de las novedades de Windows Server, versión 1709.|
 |[Agregar servidores o unidades](storage-spaces/add-nodes.md)|Se ha agregado información acerca de cómo Espacios de almacenamiento directo optimiza automáticamente el uso de la unidad después de agregar unidades.|
 
 ## <a name="october-2017"></a>Octubre de 2017
@@ -272,5 +270,5 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 |[Administrar Espacios de almacenamiento directo](./storage-spaces/storage-spaces-direct-overview.md)|Nuevo tema.|
 |[Preguntas más frecuentes sobre réplica de almacenamiento](storage-replica/storage-replica-frequently-asked-questions.md)|Se han actualizado los requisitos de los puertos y se ha aclarado cómo funciona la ampliación de volúmenes replicados.|
 |[Problemas conocidos de réplica de almacenamiento](storage-replica/storage-replica-known-issues.md)|Se ha agregado información acerca de una corrección en la actualización acumulativa del 9 de diciembre de 2016 y se ha agregado información sobre cómo resolver un error al extender un volumen replicado.|
-|[Información general de Espacios de almacenamiento directo](storage-spaces/storage-spaces-direct-overview.md)|Se ha agregado la sección de conocimiento, planeamiento, implementación y administración orientada visualmente para servir como mapa de aprendizaje para nuestros temas.|
+|[Introducción a Espacios de almacenamiento directo](storage-spaces/storage-spaces-direct-overview.md)|Se ha agregado la sección de conocimiento, planeamiento, implementación y administración orientada visualmente para servir como mapa de aprendizaje para nuestros temas.|
 |[Implementación de Espacios de almacenamiento directo](storage-spaces/deploy-storage-spaces-direct.md)|Se quitó parte del contenido obsoleto y se agregaron nuevos vínculos.|

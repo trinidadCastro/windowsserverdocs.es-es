@@ -1,62 +1,60 @@
 ---
-title: Crear un rol de usuario para el control de acceso
+title: Crear un rol de usuario para Access Control
 description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ipam
 ms.topic: article
 ms.assetid: ae6a42db-a104-401b-a8e6-b85c47d30b46
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 90ba50189b0f42f1f581032b7dc8b52b8c3fca4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 92f0c1860858f2f888c6d78e890d4d75dbc6e696
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814768"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966482"
 ---
-# <a name="create-a-user-role-for-access-control"></a>Crear un rol de usuario para el control de acceso
+# <a name="create-a-user-role-for-access-control"></a>Crear un rol de usuario para Access Control
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para crear una nueva función de usuario Access Control en la consola de cliente de IPAM.  
-  
-El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.  
-  
-> [!NOTE]  
-> Después de crear un rol, puede crear una directiva de acceso para asignar el rol a un usuario o grupo de Active Directory específico. Para obtener más información, consulte [crear una directiva de acceso](../../technologies/ipam/Create-an-Access-Policy.md).  
-  
-### <a name="to-create-a-role"></a>Para crear un rol  
-  
-1.  En Administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente de IPAM.  
-  
-2.  En el panel de navegación, haga clic en **control de acceso**y, en el panel de navegación inferior, haga clic en **roles**.  
-  
-    ![Roles de control de acceso](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_01.jpg)  
-  
-3.  Haga clic con el botón secundario en **roles**y, a continuación, haga clic en **Agregar rol de usuario**.  
-  
-    ![Agregar rol de usuario](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_02.jpg)  
-  
-4.  Se abre el cuadro de diálogo **Agregar o Editar rol** . En **nombre**, escriba un nombre para el rol que hace que la función de rol esté desactivada. Por ejemplo, si desea crear un rol que permita a los administradores administrar los registros de recursos SRV de DNS, puede asignar el nombre **IPAMSrv**al rol. Si es necesario, desplácese hacia abajo en **operaciones** para buscar el tipo de operaciones que desea definir para el rol. En este ejemplo, desplácese hacia abajo hasta **las operaciones de administración de registros de recursos DNS**.  
-  
-    ![Operaciones de administración de registros de recursos DNS](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_03.jpg)  
-  
-5.  Expanda **operaciones de administración de registros de recursos DNS**y, a continuación, busque **operaciones de registro SRV**.  
-  
-    ![Operaciones de registro SRV](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_04.jpg)  
-  
-6.  Expanda y seleccione **operaciones de registro SRV**y, a continuación, haga clic en **Aceptar**.  
-  
-    ![Seleccionar operaciones de registro SRV](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_05.jpg)  
-  
-7.  En la consola de cliente de IPAM, haga clic en el rol que acaba de crear. En la **vista detalles,** se muestran las operaciones permitidas para el rol.  
-  
-    ![Detalles de nuevo rol](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_06.jpg)  
-  
-## <a name="see-also"></a>Consulta también  
-[Access Control basado en roles](Role-based-Access-Control.md)  
-[Administrar IPAM](Manage-IPAM.md)  
-  
+Puede usar este tema para crear una nueva función de usuario Access Control en la consola de cliente de IPAM.
+
+El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.
+
+> [!NOTE]
+> Después de crear un rol, puede crear una directiva de acceso para asignar el rol a un usuario o grupo de Active Directory específico. Para obtener más información, consulte [crear una directiva de acceso](../../technologies/ipam/Create-an-Access-Policy.md).
+
+### <a name="to-create-a-role"></a>Para crear un rol
+
+1.  En Administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente de IPAM.
+
+2.  En el panel de navegación, haga clic en **control de acceso**y, en el panel de navegación inferior, haga clic en **roles**.
+
+    ![Roles de control de acceso](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_01.jpg)
+
+3.  Haga clic con el botón secundario en **roles**y, a continuación, haga clic en **Agregar rol de usuario**.
+
+    ![Agregar rol de usuario](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_02.jpg)
+
+4.  Se abre el cuadro de diálogo **Agregar o Editar rol** . En **nombre**, escriba un nombre para el rol que hace que la función de rol esté desactivada. Por ejemplo, si desea crear un rol que permita a los administradores administrar los registros de recursos SRV de DNS, puede asignar el nombre **IPAMSrv**al rol. Si es necesario, desplácese hacia abajo en **operaciones** para buscar el tipo de operaciones que desea definir para el rol. En este ejemplo, desplácese hacia abajo hasta **las operaciones de administración de registros de recursos DNS**.
+
+    ![Operaciones de administración de registros de recursos DNS](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_03.jpg)
+
+5.  Expanda **operaciones de administración de registros de recursos DNS**y, a continuación, busque **operaciones de registro SRV**.
+
+    ![Operaciones de registro SRV](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_04.jpg)
+
+6.  Expanda y seleccione **operaciones de registro SRV**y, a continuación, haga clic en **Aceptar**.
+
+    ![Seleccionar operaciones de registro SRV](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_05.jpg)
+
+7.  En la consola de cliente de IPAM, haga clic en el rol que acaba de crear. En la **vista detalles,** se muestran las operaciones permitidas para el rol.
+
+    ![Detalles de nuevo rol](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_06.jpg)
+
+## <a name="see-also"></a>Consulte también
+Access Control basado en [roles](Role-based-Access-Control.md) 
+ [Administrar IPAM](Manage-IPAM.md)
+
 
 

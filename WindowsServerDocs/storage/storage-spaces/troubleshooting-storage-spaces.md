@@ -1,19 +1,17 @@
 ---
 title: Solución de problemas de Espacios de almacenamiento directo
 description: Obtenga información acerca de cómo solucionar problemas de la implementación de Espacios de almacenamiento directo.
-ms.prod: windows-server
 ms.author: ''
-ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3a1ec8462f96c1f6a018d1148b7824cdf8cc20
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 719a44a6c442f64b83a804c9ca20eb6ceaa791e9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769473"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954612"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solucionar problemas Espacios de almacenamiento directo
 

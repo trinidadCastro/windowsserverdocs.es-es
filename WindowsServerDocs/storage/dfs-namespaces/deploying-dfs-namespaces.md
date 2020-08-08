@@ -1,25 +1,23 @@
 ---
-title: Implementar espacios de nombres DFS
+title: Deploying DFS Namespaces
 description: En este artículo se describe cómo implementar espacios de nombres DFS
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5ce0b24c723d2bdb311a83af63714ca0a4344252
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f31e1f58acd5273986f0d1e1c1d9c7db5e93ec3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402235"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954782"
 ---
-# <a name="deploying-dfs-namespaces"></a>Implementar espacios de nombres DFS
+# <a name="deploying-dfs-namespaces"></a>Deploying DFS Namespaces
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
-Para implementar espacios de nombres DFS, consulta los siguientes temas:
+Para implementar espacios de nombres DFS, consulte los siguientes temas:
 
 -   [Elegir un tipo de espacio de nombres](choose-a-namespace-type.md)
 -   [Crear un espacio de nombres DFS](create-a-dfs-namespace.md)

@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 10252626e3732197e681e12851d5ef66bad1cc80
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a751e8d6f170a83027f417855da1bdaa471de01b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519082"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954421"
 ---
 # <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>Compatibilidad de la réplica de Hyper-V con controladores de dominio virtualizados
 
@@ -70,5 +68,5 @@ En la siguiente tabla se refleja la compatibilidad de los controladores de domin
 
 | Conmutación por error planeada | Conmutación por error no planeada |
 |--|--|
-| Compatible, pero no recomendable, ya que los controladores de dominio que ejecutan estas versiones de Windows Server no admiten VMGenID y carecen de medidas de seguridad de virtualización asociadas. Esto supone un riesgo de reversión de USN. Para obtener más información, vea [USN y reversión de USN](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10)). | No compatible<p>**Nota:** La conmutación por error no planeada se admitirá cuando la reversión de USN no sea un riesgo, como un único controlador de dominio en el bosque (una configuración que no se recomienda). |
+| Compatible, pero no recomendable, ya que los controladores de dominio que ejecutan estas versiones de Windows Server no admiten VMGenID y carecen de medidas de seguridad de virtualización asociadas. Esto supone un riesgo de reversión de USN. Para obtener más información, vea [USN y reversión de USN](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10)). | No compatibles<p>**Nota:** La conmutación por error no planeada se admitirá cuando la reversión de USN no sea un riesgo, como un único controlador de dominio en el bosque (una configuración que no se recomienda). |
 | Caso de prueba:<p>-DC1 y DC2 ejecutan Windows Server 2008 R2.<p>-DC2 se apaga y se realiza una conmutación por error planeada en DC2-Rec. Todos los datos en DC2 se replican en DC2-REC antes de que se complete el apagado.<p>-Después de que DC2-REC se inicia, reanuda la replicación con DC1 usando el mismo invocación que DC2. | N/D |

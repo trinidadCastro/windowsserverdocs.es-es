@@ -1,22 +1,20 @@
 ---
-title: Solucionar problemas en el cliente DHCP
+title: Solución de problemas en el cliente DHCP
 description: Este artilce presenta cómo solucionar problemas en el cliente DHCP y recopilar datos.
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: a6064b9e497fcd54671292ade77a08c06ba42920
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 650b3f83ebd0467df2a747d865db2d0a346bcddc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150303"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954582"
 ---
-# <a name="troubleshoot-problems-on-the-dhcp-client"></a>Solucionar problemas en el cliente DHCP
+# <a name="troubleshoot-problems-on-the-dhcp-client"></a>Solución de problemas en el cliente DHCP
 
 En este artículo se describe cómo solucionar problemas que se producen en clientes DHCP.
 
@@ -38,12 +36,12 @@ Compruebe los siguientes dispositivos y configuraciones:
 
 ## <a name="event-logs"></a>Registros de eventos
 
-Examine los registros de eventos de eventos de administrador, eventos de cliente de Microsoft-Windows-DHCP/operativos y Microsoft-Windows-DHCP. Todos los eventos relacionados con el servicio de cliente DHCP se envían a estos registros de eventos.  
+Examine los registros de eventos de eventos de administrador, eventos de cliente de Microsoft-Windows-DHCP/operativos y Microsoft-Windows-DHCP. Todos los eventos relacionados con el servicio de cliente DHCP se envían a estos registros de eventos.
 Los eventos de cliente de Microsoft-Windows-DHCP se encuentran en el Visor de eventos en **registros de aplicaciones y servicios**.
 
 El comando de PowerShell "Get-NetAdapter-IncludeHidden" proporciona la información necesaria para interpretar los eventos que se enumeran en los registros. Por ejemplo, identificador de interfaz, dirección MAC, etc.
 
-## <a name="data-collection"></a>datos, recopilación
+## <a name="data-collection"></a>Recopilación de datos
 
 Se recomienda que recopile datos simultáneamente en el lado cliente y en el servidor DHCP cuando se produzca el problema. Sin embargo, en función del problema real, también puede iniciar la investigación mediante el uso de un solo conjunto de datos en el cliente DHCP o en el servidor DHCP.
 
@@ -52,7 +50,7 @@ Para recopilar datos del servidor y del cliente afectado, use [Wireshark](https:
 Ejecute los siguientes comandos en el cliente que está experimentando el problema:
 
 ```console
-ipconfig /release  
+ipconfig /release
 ipconfig /renew
 ```
 

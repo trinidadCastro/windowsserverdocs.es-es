@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: b72f324d7037df30a9a8b1f0b9a966a633d30950
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 97466c5f7d0a6c89980195d7b71e6697748db334
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966497"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954221"
 ---
 # <a name="manage-risk-with-conditional-access-control"></a>Administración de riesgos con control de acceso condicional
 

@@ -1,20 +1,18 @@
 ---
 title: Guía de solución de problemas del Protocolo de configuración dinámica de host (DHCP)
 description: En este artilce se presenta la guía de solución de problemas de DHCP.
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 4bded9f879061903b1e925632a3cb4c83dfaac08
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 88b02dc70ff60c13fd84366883e4f741fa4694a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150323"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954662"
 ---
 # <a name="troubleshooting-guide-for-dynamic-host-configuration-protocol-dhcp"></a>Guía de solución de problemas del Protocolo de configuración dinámica de host (DHCP)
 
@@ -35,21 +33,19 @@ El procedimiento para la asignación de direcciones IPv4 normalmente implica tre
 Una comunicación de cliente a servidor de DHCP consta de tres tipos de interacción entre los dos pares:
 
 - **Dora basado en difusión** (detectar, oferta, solicitud, confirmación). Este proceso consta de los pasos siguientes:
-  
+
     - El cliente DHCP envía una solicitud de difusión de detección DHCP a todos los servidores DHCP disponibles dentro del alcance.
-  
+
     - Se recibe una respuesta de difusión de la oferta DHCP del servidor DHCP, que ofrece una concesión de dirección IP disponible.
-  
+
     - La solicitud de difusión del cliente DHCP solicita la concesión de la dirección IP ofrecida y la confirmación de difusión DHCP al final.
-  
+
     - Si el cliente y el servidor DHCP se encuentran en distintos segmentos de red lógica, un agente de retransmisión DHCP actúa como reenviador y envía los paquetes de difusión de DHCP entre ambos equipos del mismo nivel.
 
 - **Solicitudes de renovación de DHCP de unidifusión**: se envían directamente al servidor DHCP desde el cliente DHCP para renovar la asignación de direcciones IP después del 50 por ciento del tiempo de concesión de la dirección IP.
 
 - **Reenlazar solicitudes de difusión DHCP**: se realizan en cualquier servidor DHCP dentro del intervalo del cliente. Estos se envían después del 87,5 por ciento de la duración de la concesión de la dirección IP, ya que esto indica que la solicitud de unidifusión dirigida no funcionó. En lo que se refiere al proceso DORA, este proceso implica una comunicación del agente de retransmisión DHCP.
 
-Si un cliente DHCP de Microsoft no recibe una dirección IPv4 de DHCP válida, es probable que el cliente esté configurado para usar una dirección APIPA. Para obtener más información, vea el siguiente artículo de Knowledge Base:  
-[220874](https://support.microsoft.com/help/220874) uso del direccionamiento automático de TCP/IP sin un servidor DHCP
+Si un cliente DHCP de Microsoft no recibe una dirección IPv4 de DHCP válida, es probable que el cliente esté configurado para usar una dirección APIPA. Para obtener más información, vea el siguiente artículo de Knowledge Base: [220874](https://support.microsoft.com/help/220874) How to use Automatic TCP/IP Addressing Without a DHCP Server
 
-Toda la comunicación se realiza en los puertos UDP 67 y 68. Para obtener más información, vea el siguiente artículo de Knowledge Base:  
-[169289](https://support.microsoft.com/help/169289) aspectos básicos de DHCP (Protocolo de configuración dinámica de host).
+Toda la comunicación se realiza en los puertos UDP 67 y 68. Para obtener más información, vea el siguiente artículo de Knowledge Base: [169289](https://support.microsoft.com/help/169289) DHCP (Protocolo de configuración dinámica de host) conceptos básicos.

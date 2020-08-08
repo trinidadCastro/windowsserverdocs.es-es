@@ -6,16 +6,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/03/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a9be4a72cd60cfdd5807c67132dba837093be4db
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b0134478ce0a4e91d6e33d5a0845a2be5df53d3f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959027"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954181"
 ---
-# <a name="ad-fs-troubleshooting---dns"></a>Solución de problemas de AD FS: DNS 
+# <a name="ad-fs-troubleshooting---dns"></a>Solución de problemas de AD FS: DNS
 Una de las primeras cosas que se deben comprobar, si AD FS no funciona o responde, es la resolución de nombres DNS.  Se trata de pruebas básicas para determinar si los servidores de AD FS o los servidores WAP se encuentran en la red.  En el caso de los usuarios internos, estas pruebas deben resolverse en los servidores de AD FS (STS).    En el caso de los usuarios externos, estas pruebas deben resolverse en los servidores WAP.
 
 En el resto de este documento se muestra cómo realizar algunas comprobaciones rápidas de la resolución de nombres mediante herramientas de línea de comandos.
@@ -51,6 +49,6 @@ Determina la ruta de acceso tomada a un destino mediante el envío de solicitude
 2. Escriba tracert <name of adfs server> a. Ejemplo: tracert sts.contoso.com
 3. Debería ver la ruta de acceso de destino que se usa para alcanzar el servidor de ![ seguimiento](media/ad-fs-tshoot-dns/dns3.png)
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

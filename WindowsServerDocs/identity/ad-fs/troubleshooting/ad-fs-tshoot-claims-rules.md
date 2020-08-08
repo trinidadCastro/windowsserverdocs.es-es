@@ -6,20 +6,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 94e841282963e2b2b6ada552b54c7732d965b6b6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 349b673b7c062fd8f14d9a9fd857e1d7c859d3de
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955977"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954201"
 ---
 # <a name="ad-fs-troubleshooting---claims-rules-syntax"></a>Solución de problemas de AD FS: sintaxis de reglas de notificaciones
 Una demanda es una instrucción que hace un sujeto sobre sí misma u otro asunto.  Las notificaciones las emite un usuario de confianza, y se les asigna uno o varios valores y, a continuación, se empaquetan en los tokens de seguridad que emite el servidor de AD FS.  En este artículo se trata la sintaxis y la creación de notificaciones.  Para obtener información sobre la emisión de notificaciones [, consulte AD FS solución de problemas: emisión de notificaciones](ad-fs-tshoot-claims-issuance.md).
 
->[!NOTE]  
->Puede usar [ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) en el sitio de [ayuda de ADFS](https://adfshelp.microsoft.com) para ayudar en la solución de problemas de notificaciones.   
+>[!NOTE]
+>Puede usar [ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) en el sitio de [ayuda de ADFS](https://adfshelp.microsoft.com) para ayudar en la solución de problemas de notificaciones.
 
 ## <a name="how-claim-rules-are-processed"></a>Cómo se procesan las reglas de notificación
 Las reglas de notificación se procesan a través de la [canalización de notificaciones](../../ad-fs/technical-reference/The-Role-of-the-Claims-Pipeline.md) mediante el [motor de notificaciones](../../ad-fs/technical-reference/The-Role-of-the-Claims-Engine.md). El motor de notificaciones es un componente lógico del Servicio de federación que examina el conjunto de notificaciones entrantes que presenta un usuario y, después, según la lógica de cada regla, generará un conjunto de resultados de notificaciones.
@@ -36,7 +34,7 @@ El lenguaje de reglas de notificaciones consta de los siguientes componentes, se
 
 Ejemplo:
 
-```c:[type == "Name", value == "domain user"] => issue(type = "Role", value = "employee");``` 
+```c:[type == "Name", value == "domain user"] => issue(type = "Role", value = "employee");```
 
 La siguiente demanda tiene lo siguiente:
 - condición: `c:[type == "Name", value == "domain user"] ` evalúa la petición de entrada de si el nombre de cuenta de Windows es un usuario de dominio.
@@ -68,6 +66,6 @@ Aquí encontrará una buena aplicación Web de ejemplo.  Esta aplicación es una
 
 El siguiente [artículo del blog](/archive/blogs/tangent_thoughts/install-and-configure-a-simple-net-4-5-sample-federated-application-samapp) contiene instrucciones detalladas excelentes para configurar esta opción.
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

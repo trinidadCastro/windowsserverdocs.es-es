@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/03/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 807b5c5de14bf6a43419d0b9d2d3a4e6953d0075
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7739093e483e8f797e87259c176ff3c92514903d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366225"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954171"
 ---
 # <a name="ad-fs-troubleshooting---ad-fs-metadata-endpoints"></a>AD FS solución de problemas: puntos de conexión de metadatos AD FS
 Los extremos proporcionan acceso a la funcionalidad de servidor de Federación de AD FS, como la publicación de metadatos de Federación.  Para comprobar que el servidor de AD FS responde a las solicitudes Web, podemos comprobar los distintos puntos de conexión.
@@ -24,16 +22,16 @@ La Federación pasiva hace referencia a escenarios en los que el explorador se r
 
 1.  Mediante un explorador Web, vaya a la AD FS extremo de metadatos de Federación.  Por ejemplo: https://sts.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
 2. El archivo XML debe descargarse localmente en el equipo.
-3. Ábralo y compruebe que contiene información similar a la información siguiente: ![pasiva](media/ad-fs-tshoot-endpoints/meta2.png)
+3. Ábralo y compruebe que contiene información similar a la información siguiente: ![ passive](media/ad-fs-tshoot-endpoints/meta2.png)
 
 ## <a name="ws-mex-test-active-test"></a>Prueba WS-MEX (prueba activa)
 WS-MetaDataExchange es un protocolo de servicios web y forma parte del mapa de ruta de WS-Federation.  Usa un mensaje SOAP para solicitar los metadatos.  Al probar el punto de conexión, podemos determinar si el servidor de AD FS responde a las solicitudes Web de WS-MetaDataExchange.  Utilice el siguiente procedimiento para probar el punto de conexión.
 1.  Mediante un explorador Web, vaya a la AD FS extremo de metadatos de Federación.  Por ejemplo: https://sts.contoso.com/adfs/services/trust/mex
-2. El archivo XML se debe mostrar automáticamente en el explorador.  Debe ser similar a la imagen siguiente:
+2. El archivo XML se debe mostrar automáticamente en el explorador.  Debería parecerse a la imagen siguiente:
 
-![Activo](media/ad-fs-tshoot-endpoints/meta3.png)
+![Active](media/ad-fs-tshoot-endpoints/meta3.png)
 
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

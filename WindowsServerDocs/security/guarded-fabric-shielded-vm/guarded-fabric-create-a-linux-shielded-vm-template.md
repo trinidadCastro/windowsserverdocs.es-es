@@ -1,23 +1,21 @@
 ---
 title: Creación de un disco de plantilla de máquina virtual blindada Linux
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1a6325a5d8e931f1e62c83ba4013d94760e39f86
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0535a15d0b21b62bb9f8b91729f773d1f4db0db0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856798"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966072"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>Creación de un disco de plantilla de máquina virtual blindada Linux
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), 
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual),
 
 En este tema se explica cómo preparar un disco de plantilla para máquinas virtuales blindadas de Linux que se pueden usar para crear instancias de una o varias máquinas virtuales de inquilino.
 
@@ -72,7 +70,7 @@ Estos pasos le guiarán a través de los requisitos mínimos para preparar una m
 5.  Mediante el administrador de Hyper-V, [Configure un conmutador externo](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) en el servidor de virtualización para que la máquina virtual Linux pueda acceder a Internet para obtener actualizaciones.
 
 6.  A continuación, cree una nueva máquina virtual para instalar el sistema operativo Linux en.
-    En el panel acciones, haga clic en **nuevo** > **máquina virtual** para abrir el asistente.
+    En el panel acciones, haga clic en **nueva**  >  **máquina virtual** para abrir el asistente.
     Proporcione un nombre descriptivo para la máquina virtual, como "hace plantilla Linux", y haga clic en **siguiente**.
 
 7.  En la segunda página del asistente, seleccione **generación 2** para asegurarse de que la máquina virtual se aprovisiona con un perfil de firmware basado en UEFI.
@@ -139,7 +137,7 @@ Estos pasos le guiarán a través de los requisitos mínimos para preparar una m
     ```
 
 14. Cuando haya terminado de personalizar el sistema operativo Linux, busque el programa de instalación de lsvmprep en el sistema y ejecútelo.
-    
+
     ```bash
     # The path below may change based on the version of lsvmprep installed
     # Run "find /opt -name lsvmprep" to locate the lsvmprep executable
@@ -150,7 +148,7 @@ Estos pasos le guiarán a través de los requisitos mínimos para preparar una m
 
 16. Si tomó puntos de control de la máquina virtual (incluidos los puntos de comprobación automáticos creados por Hyper-V con Windows 10 Fall Creators Update), asegúrese de eliminarlos antes de continuar.
     Los puntos de control crean discos de diferenciación (. avhdx) que no son compatibles con el Asistente de disco de plantilla.
-    
+
     Para eliminar puntos de control, abra el **Administrador de Hyper-V**, seleccione la máquina virtual, haga clic con el botón derecho en el punto de control superior del panel puntos de control y luego haga clic en **eliminar subárbol de punto de control**.
 
     ![Eliminar todos los puntos de control de la máquina virtual de plantilla en el administrador de Hyper-V](../media/Guarded-Fabric-Shielded-VM/delete-checkpoints-lsvm-template.png)
@@ -166,12 +164,12 @@ El hash y la firma digital se comprueban cuando se aprovisiona una máquina virt
 Para firmar digitalmente las medidas de disco, necesitará obtener un certificado en el equipo en el que ejecutará el Asistente para crear un disco de plantilla.
 El certificado debe cumplir los siguientes requisitos:
 
-Propiedad de certificado | Valor obligatorio
+Propiedad de certificado | Valor requerido
 ---------------------|---------------
 Algoritmo de clave | RSA
 Tamaño mínimo de clave | 2048 bits
 Algoritmo de firma | SHA256 (recomendado)
-Key Usage | Firma digital
+Uso de claves | Firma digital
 
 Los detalles sobre este certificado se mostrarán a los inquilinos cuando creen sus archivos de datos de blindaje y estén autorizando los discos en los que confían.
 Por lo tanto, es importante obtener este certificado de una entidad de certificación de confianza mutua para el usuario y los inquilinos.
@@ -187,7 +185,7 @@ New-SelfSignedCertificate -Subject "CN=Linux Shielded VM Template Disk Signing C
 ### <a name="process-the-disk-with-the-template-disk-wizard-cmdlet"></a>Procesar el disco con el cmdlet del Asistente para crear un disco de plantilla
 
 Copie el disco de plantilla y el certificado en un equipo que ejecute Windows Server, versión 1709 y, a continuación, ejecute los siguientes comandos para iniciar el proceso de firma.
-El VHDX que proporcione al parámetro `-Path` se sobrescribirá con el disco de plantilla actualizado, por lo que debe asegurarse de realizar una copia antes de ejecutar el comando.
+El VHDX que proporcione al `-Path` parámetro se sobrescribirá con el disco de plantilla actualizado, por lo que debe asegurarse de realizar una copia antes de ejecutar el comando.
 
 > [!IMPORTANT]
 > Los Herramientas de administración remota del servidor disponibles en Windows Server 2016 o Windows 10 no se pueden usar para preparar un disco de plantilla de máquina virtual blindada Linux.

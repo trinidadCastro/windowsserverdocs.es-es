@@ -6,89 +6,83 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: f4e72b1164e46c0db7ca473f17ba1e7d9c1f2f90
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 248c24f0751f354ab50a53862d0811b0c1aff0e5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964453"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966952"
 ---
 # <a name="ad-fs-customization-in-windows-server-2016"></a>Personalización de AD FS en Windows Server 2016
 
 
-En respuesta a los comentarios de las organizaciones que usan AD FS, hemos agregado herramientas adicionales para personalizar la experiencia de inicio de sesión de los usuarios para las aplicaciones individuales protegidas por AD FS.  
-Además de especificar el contenido web por aplicación, como el texto de la descripción y los vínculos, ahora puede especificar temas Web completos por aplicación.  Esto incluye el logotipo, la ilustración, las hojas de estilos o un archivo onload.js completo.  
-  
-## <a name="global-settings"></a>Configuración global    
-Para la configuración global general, puede hacer referencia a [la personalización de las páginas de inicio de sesión de AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)) incluidas con AD FS en Windows Server 2012 R2.  
-  
-## <a name="pre-requisites"></a>Requisitos previos  
-Los siguientes requisitos previos son necesarios antes de intentar los procedimientos descritos en este documento.  
-  
--   AD FS en Windows Server 2016 TP4 o posterior  
-  
-## <a name="configure-ad-fs-relying-parties"></a>Configuración de AD FS usuarios de confianza  
-Los temas y elementos Web de inicio de sesión de cada usuario de confianza se pueden configurar mediante los ejemplos de PowerShell siguientes:  
-  
-### <a name="customize-messages"></a>Personalización de mensajes  
-  
-```  
-PS C:\>Set-AdfsRelyingPartyWebContent  
-    -TargetRelyingPartyName "<RP trust Name>"  
-    -CompanyName "This text appears in place of the federation service display name"  
-    -OrganizationalNameDescriptionText "This text appears right below the company name"  
-    -SignInPageDescription "This text appears below the credential prompt"  
-```  
-  
-### <a name="customize-company-name-logo-and-image"></a>Personalizar el nombre de la empresa, el logotipo y la imagen  
-  
-```  
-PS C:\>Set-AdfsRelyingPartyWebTheme  
-    -TargetRelyingPartyName "<RP trust Name>"  
-    -Logo @{path="C:\Images\applogo.png"}  
-    -Illustration @{path="C:\Images\appillustration.jpg"}  
-```  
-  
-### <a name="customize-entire-page"></a>Personalizar toda la página  
-  
-```  
-PS C:\>Set-AdfsRelyingPartyWebTheme  
-    -TargetRelyingPartyName "<RP trust Name>"  
-    -OnLoadScriptPath @{path="c:\scripts\adfstheme\onload.js"}  
-```  
-  
-## <a name="custom-themes-and-advanced-custom-themes"></a>Temas personalizados y temas personalizados avanzados  
-  
-En el caso de los temas personalizados, consulte [Personalización](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)) de las páginas de inicio de sesión de AD FS y [Personalización avanzada de las páginas de inicio de sesión de AD FS.](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn636121(v=ws.11))  
-  
-## <a name="assigning-custom-web-themes-per-rp"></a>Asignar temas web personalizados por RP  
-  
-Para asignar un tema personalizado por RP, use el procedimiento siguiente:  
-  
-1. Cree un nuevo tema como una copia para el tema global predeterminado en AD FS  
-`New-AdfsWebTheme -Name AppSpecificTheme -SourceName default`  
-2. Exportar el tema para la personalización  
-`Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme`  
-3. Personalizar archivos de tema (imágenes, CSS, onload.js): en su editor favorito o reemplazar el archivo  
-4. Importar archivos personalizados del sistema de archivos a AD FS (con el objetivo del nuevo tema)  
-`Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}`  
-5. Aplicar el nuevo tema personalizado al RP específico (o RP)  
-`Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme`  
-  
-## <a name="home-realm-discovery"></a>Detección del dominio de inicio  
-Para la personalización de la detección del dominio de inicio [, consulte Personalización de las páginas de inicio de sesión AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)).  
-  
-## <a name="updated-password-page"></a>Página contraseña actualizada  
-Para obtener información sobre cómo personalizar la página de actualización de contraseña [, consulte Personalización de las páginas de inicio de sesión AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)).  
-  
-## <a name="customizing-and-alternate-ids"></a>Personalizar e identificadores alternativos  
-Los usuarios pueden iniciar sesión en aplicaciones habilitadas para Servicios de federación de Active Directory (AD FS) (AD FS) con cualquier forma de identificador de usuario aceptada por Active Directory Domain Services (AD DS). Entre ellos se incluyen los nombres principales de usuario (UPN) ( johndoe@contoso.com ) o los nombres de cuenta SAM (contoso\johndoe o contoso. com\johndoe).  Para obtener más información, consulte [configuración del identificador de inicio de sesión alternativo.](Configuring-Alternate-Login-ID.md)  
-  
-Además, puede que desee personalizar la página de inicio de sesión de AD FS para proporcionar a los usuarios finales alguna sugerencia sobre el ID. de inicio de sesión alternativo. Para ello, agregue la descripción de la página de inicio de sesión personalizada para obtener más información, consulte [Personalización de las páginas de inicio de sesión de AD FS.](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11))   
-  
-También puede hacerlo personalizando la cadena "iniciar sesión con la cuenta de la organización" sobre el campo de nombre de usuario.  Para obtener más información, consulte [Personalización avanzada de páginas de inicio de sesión de AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn636121(v=ws.11)).  
+En respuesta a los comentarios de las organizaciones que usan AD FS, hemos agregado herramientas adicionales para personalizar la experiencia de inicio de sesión de los usuarios para las aplicaciones individuales protegidas por AD FS.
+Además de especificar el contenido web por aplicación, como el texto de la descripción y los vínculos, ahora puede especificar temas Web completos por aplicación.  Esto incluye el logotipo, la ilustración, las hojas de estilos o un archivo onload.js completo.
 
-## <a name="additional-references"></a>Referencias adicionales 
-[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)  
+## <a name="global-settings"></a>Configuración global
+Para la configuración global general, puede hacer referencia a [la personalización de las páginas de inicio de sesión de AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)) incluidas con AD FS en Windows Server 2012 R2.
+
+## <a name="pre-requisites"></a>Requisitos previos
+Los siguientes requisitos previos son necesarios antes de intentar los procedimientos descritos en este documento.
+
+-   AD FS en Windows Server 2016 TP4 o posterior
+
+## <a name="configure-ad-fs-relying-parties"></a>Configuración de AD FS usuarios de confianza
+Los temas y elementos Web de inicio de sesión de cada usuario de confianza se pueden configurar mediante los ejemplos de PowerShell siguientes:
+
+### <a name="customize-messages"></a>Personalización de mensajes
+
+```
+PS C:\>Set-AdfsRelyingPartyWebContent
+    -TargetRelyingPartyName "<RP trust Name>"
+    -CompanyName "This text appears in place of the federation service display name"
+    -OrganizationalNameDescriptionText "This text appears right below the company name"
+    -SignInPageDescription "This text appears below the credential prompt"
+```
+
+### <a name="customize-company-name-logo-and-image"></a>Personalizar el nombre de la empresa, el logotipo y la imagen
+
+```
+PS C:\>Set-AdfsRelyingPartyWebTheme
+    -TargetRelyingPartyName "<RP trust Name>"
+    -Logo @{path="C:\Images\applogo.png"}
+    -Illustration @{path="C:\Images\appillustration.jpg"}
+```
+
+### <a name="customize-entire-page"></a>Personalizar toda la página
+
+```
+PS C:\>Set-AdfsRelyingPartyWebTheme
+    -TargetRelyingPartyName "<RP trust Name>"
+    -OnLoadScriptPath @{path="c:\scripts\adfstheme\onload.js"}
+```
+
+## <a name="custom-themes-and-advanced-custom-themes"></a>Temas personalizados y temas personalizados avanzados
+
+En el caso de los temas personalizados, consulte [Personalización](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)) de las páginas de inicio de sesión de AD FS y [Personalización avanzada de las páginas de inicio de sesión de AD FS.](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn636121(v=ws.11))
+
+## <a name="assigning-custom-web-themes-per-rp"></a>Asignar temas web personalizados por RP
+
+Para asignar un tema personalizado por RP, use el procedimiento siguiente:
+
+1. Cree un nuevo tema como una copia para el tema global predeterminado en AD FS`New-AdfsWebTheme -Name AppSpecificTheme -SourceName default`
+2. Exportar el tema para la personalización`Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme`
+3. Personalizar archivos de tema (imágenes, CSS, onload.js): en su editor favorito o reemplazar el archivo
+4. Importar archivos personalizados del sistema de archivos a AD FS (con el objetivo del nuevo tema)`Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}`
+5. Aplicar el nuevo tema personalizado al RP específico (o RP)`Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme`
+
+## <a name="home-realm-discovery"></a>Detección del dominio de inicio
+Para la personalización de la detección del dominio de inicio [, consulte Personalización de las páginas de inicio de sesión AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)).
+
+## <a name="updated-password-page"></a>Página contraseña actualizada
+Para obtener información sobre cómo personalizar la página de actualización de contraseña [, consulte Personalización de las páginas de inicio de sesión AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)).
+
+## <a name="customizing-and-alternate-ids"></a>Personalizar e identificadores alternativos
+Los usuarios pueden iniciar sesión en aplicaciones habilitadas para Servicios de federación de Active Directory (AD FS) (AD FS) con cualquier forma de identificador de usuario aceptada por Active Directory Domain Services (AD DS). Entre ellos se incluyen los nombres principales de usuario (UPN) ( johndoe@contoso.com ) o los nombres de cuenta SAM (contoso\johndoe o contoso. com\johndoe).  Para obtener más información, consulte [configuración del identificador de inicio de sesión alternativo.](Configuring-Alternate-Login-ID.md)
+
+Además, puede que desee personalizar la página de inicio de sesión de AD FS para proporcionar a los usuarios finales alguna sugerencia sobre el ID. de inicio de sesión alternativo. Para ello, agregue la descripción de la página de inicio de sesión personalizada para obtener más información, consulte [Personalización de las páginas de inicio de sesión de AD FS.](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11))
+
+También puede hacerlo personalizando la cadena "iniciar sesión con la cuenta de la organización" sobre el campo de nombre de usuario.  Para obtener más información, consulte [Personalización avanzada de páginas de inicio de sesión de AD FS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn636121(v=ws.11)).
+
+## <a name="additional-references"></a>Referencias adicionales
+[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)

@@ -6,20 +6,18 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a6c2cbed1be7e1667caee2f0be116ecd0122a992
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3ca76889f0abe3979aad49374bece4c4241bbc1e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965077"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954401"
 ---
 # <a name="ad-fs-deployment"></a>Implementación de AD FS
 
 
 Este documento contiene una lista de toda la documentación de la implementación de AD FS para Windows Server 2016. Incluye lo siguiente:
-  
+
 * [Procedimientos recomendados para proteger AD FS](deployment/Best-Practices-Securing-AD-FS.md)
 
 * [Implementar Azure AD Connect Health para supervisar la infraestructura de identidad local en la nube](/azure/active-directory/hybrid/whatis-hybrid-identity)
@@ -31,15 +29,15 @@ Este documento contiene una lista de toda la documentación de la implementació
 * [Configuración de redundancia geográfica con replicación de SQL Server](deployment/Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md)
 
 * [Configuración del entorno de laboratorio para AD FS en Windows Server 2012 R2](deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-  
 
-* [Actualización a AD FS en Windows Server 2016 mediante una base de datos WID](./deployment/upgrading-to-ad-fs-in-windows-server.md)  
 
-* [Actualizar a AD FS en Windows Server 2016 mediante una base de datos SQL](./deployment/upgrading-to-ad-fs-in-windows-server-sql.md)  
+* [Actualización a AD FS en Windows Server 2016 mediante una base de datos WID](./deployment/upgrading-to-ad-fs-in-windows-server.md)
+
+* [Actualizar a AD FS en Windows Server 2016 mediante una base de datos SQL](./deployment/upgrading-to-ad-fs-in-windows-server-sql.md)
 
 * [Implementar AD FS en Azure](deployment/how-to-connect-fed-azure-adfs.md)
 
-* [AD FS en Azure con Azure Traffic Manager](deployment/active-directory-adfs-in-azure-with-azure-traffic-manager.md)  
+* [AD FS en Azure con Azure Traffic Manager](deployment/active-directory-adfs-in-azure-with-azure-traffic-manager.md)
 
 * [Guía de implementación de Windows Server 2016 y 2012 R2](deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
 

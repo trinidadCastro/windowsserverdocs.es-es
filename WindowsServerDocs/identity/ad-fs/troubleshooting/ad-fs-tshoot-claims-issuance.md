@@ -6,20 +6,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/03/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ea0e6112f00f9cace6a0c580661a5319b5adaea5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9eb5ce1ee92e828cc1fd6ceb40ddddec453afe87
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366243"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954191"
 ---
 # <a name="ad-fs-troubleshooting---claims-issuance"></a>Solución de problemas de AD FS: emisión de notificaciones
 Una demanda es una instrucción que hace un sujeto sobre sí misma u otro asunto.  Las notificaciones las emite un usuario de confianza, y se les asigna uno o varios valores y, a continuación, se empaquetan en los tokens de seguridad que emite el servidor de AD FS.  Dado que hay varias partes móviles en este proceso, la emisión de notificaciones se puede desglosar en estas partes clave.
 
->[!NOTE]  
->Puede usar [ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) en el sitio de [ayuda de ADFS](https://adfshelp.microsoft.com) para ayudar en la solución de problemas de notificaciones.   
+>[!NOTE]
+>Puede usar [ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) en el sitio de [ayuda de ADFS](https://adfshelp.microsoft.com) para ayudar en la solución de problemas de notificaciones.
 
 ## <a name="token-request"></a>Solicitud de token
 Cuando vaya a un usuario de confianza, se le redirigirá a AD FS con una solicitud de token.  Pueden surgir problemas con la solicitud.  Principalmente:

@@ -1,18 +1,16 @@
 ---
 title: Configuración de HGS para comunicaciones HTTPS
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: de57a4026a33561760ad36fd78d732352b3aa340
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4e708b61bd629b5b784926338b1aee122e2ecbee
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856848"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966162"
 ---
 # <a name="configure-hgs-for-https-communications"></a>Configuración de HGS para comunicaciones HTTPS
 
@@ -21,5 +19,5 @@ ms.locfileid: "80856848"
 De forma predeterminada, cuando se inicializa el servidor HGS, se configuran los sitios web de IIS para las comunicaciones solo HTTP.
 Todo el material confidencial que se transmite hacia y desde HGS se cifra siempre mediante el cifrado de nivel de mensaje, pero si desea un mayor nivel de seguridad, también puede habilitar HTTPS mediante la configuración de HGS con un certificado SSL.
 
-[!INCLUDE [Configure HTTPS](../../../includes/configure-hgs-for-https.md)] 
+[!INCLUDE [Configure HTTPS](../../../includes/configure-hgs-for-https.md)]
 

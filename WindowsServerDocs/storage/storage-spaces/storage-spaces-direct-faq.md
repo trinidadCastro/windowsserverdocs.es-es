@@ -1,19 +1,17 @@
 ---
 title: Preguntas más frecuentes sobre Espacios de almacenamiento directo
 description: Más información sobre Espacios de almacenamiento directo
-ms.prod: windows-server
 ms.author: kaushik
-ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c033a5a810d1cdedeb4c733ba4bf0ac99e669f0
-ms.sourcegitcommit: 3483f886f331b9d954a0e5dba8e910dbe5ee5765
+ms.openlocfilehash: 9371403fedce0383be117728da48eec70745c3a7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82977253"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954622"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>Espacios de almacenamiento directo preguntas más frecuentes (p + f)
 
@@ -57,7 +55,7 @@ Use la utilidad integrada PerfMon para inspeccionar los errores de caché. Revis
 
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>¿Hay una calculadora que muestre el tamaño exacto de los discos que se reservan para la caché, la capacidad y la resistencia que me permitan planear mejor?
 
-Puede usar la calculadora de espacios de almacenamiento para ayudarle con la planeación. Está disponible en https://aka.ms/s2dcalc.
+Puede usar la calculadora de espacios de almacenamiento para ayudarle con la planeación. Está disponible en https://aka.ms/s2dcalc .
 
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>¿Cuál es la mejor configuración que se recomienda al configurar 6 servidores y 3 bastidores?
 

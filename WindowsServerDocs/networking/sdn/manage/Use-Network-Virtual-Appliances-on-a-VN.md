@@ -1,22 +1,20 @@
 ---
-title: Usar dispositivos de red virtual en una red virtual
+title: Uso de dispositivos virtuales de red en una red virtual
 description: En este tema, aprenderá a implementar aplicaciones virtuales de red en redes virtuales de inquilinos. Puede agregar aplicaciones virtuales de red a redes que realizan funciones de enrutamiento definido por el usuario y de creación de reflejo del puerto.
 manager: grcusanz
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 5d8ac7256e9c7e59c7df260bea5d5a8f0fb6b42b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fa6fcd735a2cad6a062d7b2daaa7cf206589c20
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854478"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954061"
 ---
-# <a name="use-network-virtual-appliances-on-a-virtual-network"></a>Usar dispositivos de red virtual en una red virtual
+# <a name="use-network-virtual-appliances-on-a-virtual-network"></a>Uso de dispositivos virtuales de red en una red virtual
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -28,7 +26,7 @@ Puede usar uno de los dos tipos de aplicaciones virtuales:
 
 1. **Enrutamiento definido por el usuario** : reemplaza los enrutadores distribuidos en la red virtual con las capacidades de enrutamiento del dispositivo virtual.  Con el enrutamiento definido por el usuario, el dispositivo virtual se usa como un enrutador entre las subredes virtuales de la red virtual.
 
-2. **Creación de reflejo del puerto** : todo el tráfico de red que entra o sale del puerto supervisado se duplica y se envía a una aplicación virtual para su análisis. 
+2. **Creación de reflejo del puerto** : todo el tráfico de red que entra o sale del puerto supervisado se duplica y se envía a una aplicación virtual para su análisis.
 
 
 ## <a name="deploying-a-network-virtual-appliance"></a>Implementación de una aplicación virtual de red
@@ -37,7 +35,7 @@ Para implementar una aplicación virtual de red, primero debe crear una máquina
 
 Algunos dispositivos requieren varios adaptadores de red virtual. Normalmente, un adaptador de red dedicado a la administración del dispositivo mientras los adaptadores adicionales procesan el tráfico.  Si el dispositivo requiere varios adaptadores de red, debe crear cada interfaz de red en la controladora de red. También debe asignar un identificador de interfaz en cada host para cada uno de los adaptadores adicionales que se encuentran en subredes virtuales diferentes.
 
-Una vez que haya implementado la aplicación virtual de red, puede usar el dispositivo para el enrutamiento definido, la migración de reflejo o ambos. 
+Una vez que haya implementado la aplicación virtual de red, puede usar el dispositivo para el enrutamiento definido, la migración de reflejo o ambos.
 
 
 ## <a name="example-user-defined-routing"></a>Ejemplo: enrutamiento definido por el usuario
@@ -50,7 +48,7 @@ Para la mayoría de los entornos, solo necesita las rutas del sistema ya definid
 En estos casos, debe crear una tabla de enrutamiento y agregar rutas definidas por el usuario a la tabla. Puede tener varias tablas de enrutamiento y puede asociar la misma tabla de enrutamiento a una o varias subredes. Solo puede asociar cada subred a una sola tabla de enrutamiento. Todas las máquinas virtuales de una subred usan la tabla de enrutamiento asociada a la subred.
 
 Las subredes dependen de las rutas del sistema hasta que se asocia una tabla de enrutamiento a la subred. Una vez que existe una asociación, el enrutamiento se realiza según la coincidencia de prefijo más larga (LPM) entre las rutas definidas por el usuario y las rutas del sistema. Si hay más de una ruta con la misma coincidencia de LPM, se selecciona primero la ruta definida por el usuario antes de la ruta del sistema.
- 
+
 **Pasos**
 
 1. Cree las propiedades de la tabla de rutas, que contiene todas las rutas definidas por el usuario.<p>Las rutas del sistema se siguen aplicando según las reglas definidas anteriormente.
@@ -91,7 +89,7 @@ En cuanto se aplica la tabla de enrutamiento a la red virtual, el tráfico se re
 
 ## <a name="example-port-mirroring"></a>Ejemplo: creación de reflejo del puerto
 
-En este ejemplo, configurará el tráfico de MyVM_Ethernet1 para reflejar Appliance_Ethernet1.  Damos por hecho que ha implementado dos máquinas virtuales, una como el dispositivo y la otra como la máquina virtual que se va a supervisar con la creación de reflejo. 
+En este ejemplo, configurará el tráfico de MyVM_Ethernet1 para reflejar Appliance_Ethernet1.  Damos por hecho que ha implementado dos máquinas virtuales, una como el dispositivo y la otra como la máquina virtual que se va a supervisar con la creación de reflejo.
 
 El dispositivo debe tener una segunda interfaz de red para la administración. Después de habilitar la creación de reflejo como destino en Appliciance_Ethernet1, ya no recibe el tráfico destinado a la interfaz IP configurada ahí.
 
@@ -165,5 +163,5 @@ El dispositivo debe tener una segunda interfaz de red para la administración. D
    ```
 
 Después de completar estos pasos, la interfaz de Appliance_Ethernet1 refleja el tráfico de la interfaz de MyVM_Ethernet1.
- 
+
 ---

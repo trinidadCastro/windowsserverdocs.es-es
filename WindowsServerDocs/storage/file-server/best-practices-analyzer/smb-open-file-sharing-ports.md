@@ -1,17 +1,15 @@
 ---
 title: 'SMB: los puertos de uso compartido de impresoras y archivos deben estar abiertos'
 ms.date: 07/02/2012
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d9d24f1ce66ca691bfa31479a00b9ecf719abe1e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: dc2e1d7f5408ad123297b8df2dc06f59053fe870
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961307"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954772"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: Los puertos de compartir archivos e impresoras deben estar abiertos
 

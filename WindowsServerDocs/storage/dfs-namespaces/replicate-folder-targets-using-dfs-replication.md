@@ -2,18 +2,16 @@
 title: Replicar destinos de carpeta mediante la replicación de DFS
 description: En este artículo se describe cómo replicar destinos de carpeta mediante Replicación DFS
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 399d9915cccc5d66c2b25b1e9f51c30e37d8dff6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8345d12c77af92999d64f63809752180a3ea91bc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966447"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954752"
 ---
 # <a name="replicate-folder-targets-using-dfs-replication"></a>Replicate folder targets using DFS Replication
 

@@ -2,18 +2,16 @@
 title: Create a Quota Template
 description: En este artículo se describe cómo crear una plantilla de cuota para definir un límite de espacio de almacenamiento.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ad05d72098851e39bc245711b73e5ad721c5a784
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 785540c9b8e436ba994af5408b769ea37528c8ba
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473562"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954642"
 ---
 # <a name="create-a-quota-template"></a>Create a Quota Template
 

@@ -1,38 +1,36 @@
 ---
-title: Configuración de la información del puerto UDP de NPS
+title: Configurar la información del puerto UDP de NPS
 description: Puede usar este tema para configurar los puertos que usa el servidor de directivas de redes (NPS) para el tráfico de autenticación y cuentas de Servicio de autenticación remota telefónica de usuario (RADIUS) en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 70569958-d7a7-474e-a817-6b7b5134784a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f874469666ab9b68d9eb970cf7fcb6a89ef27f0c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c522206fe701d47f8f0c07e7c7a64d7e6fc7074c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315569"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944515"
 ---
-# <a name="configure-nps-udp-port-information"></a>Configuración de la información del puerto UDP de NPS
+# <a name="configure-nps-udp-port-information"></a>Configurar la información del puerto UDP de NPS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar el siguiente procedimiento para configurar los puertos que usa el servidor de directivas de redes (NPS) para Servicio de autenticación remota telefónica de usuario \(RADIUS\) el tráfico de autenticación y cuentas.
+Puede usar el siguiente procedimiento para configurar los puertos que usa el servidor de directivas de redes (NPS) para Servicio de autenticación remota telefónica de usuario el \( \) tráfico de autenticación y cuentas de RADIUS.
 
-De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 para el protocolo de Internet versión 6 \(IPv6\) y IPv4 para todos los adaptadores de red instalados.
+De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 para el protocolo de Internet versión 6 \( IPv6 \) e IPv4 para todos los adaptadores de red instalados.
 
 >[!NOTE]
 >Si desinstala IPv4 o IPv6 en un adaptador de red, NPS no supervisará el tráfico RADIUS para el protocolo desinstalado.
 
-Los valores de puerto de 1812 para la autenticación y 1813 para cuentas son puertos RADIUS estándar definidos por Internet Engineering Task Force \(IETF\) en RFC 2865 y 2866. Sin embargo, de forma predeterminada, muchos servidores de acceso usan los puertos 1645 para las solicitudes de autenticación y 1646 para las solicitudes de cuentas. Con independencia de los números de puerto que decida usar, asegúrese de que NPS y el servidor de acceso estén configurados para usarlos.
+Los valores de puerto de 1812 para la autenticación y 1813 para cuentas son puertos RADIUS estándar definidos por el equipo de ingeniería de Internet ( \( IETF) \) en RFC 2865 y 2866. Sin embargo, de forma predeterminada, muchos servidores de acceso usan los puertos 1645 para las solicitudes de autenticación y 1646 para las solicitudes de cuentas. Con independencia de los números de puerto que decida usar, asegúrese de que NPS y el servidor de acceso estén configurados para usarlos.
 
 >AÚN Si no usa los números de puerto predeterminados de RADIUS, debe configurar excepciones en el firewall para que el equipo local permita el tráfico RADIUS en los nuevos puertos. Para obtener más información, consulte [configurar firewalls para el tráfico RADIUS](nps-firewalls-configure.md).
 
 La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
-## <a name="to-configure-nps-udp-port-information"></a>Para configurar la información del puerto UDP de NPS 
+## <a name="to-configure-nps-udp-port-information"></a>Para configurar la información del puerto UDP de NPS
 
 1. Abra la consola de NPS.
 2. Haga clic con el botón secundario en **servidor de directivas de redes**y, a continuación, haga clic en **propiedades**.

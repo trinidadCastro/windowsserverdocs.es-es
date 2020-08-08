@@ -1,19 +1,17 @@
 ---
 title: 'Caso práctico de SDK de centro de administración de Windows: datos'
 description: 'Caso práctico de SDK de centro de administración de Windows: datos'
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 01/11/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 0e4def5cd8a88cd5cb5d4df71d2f3a192ae23701
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bd7a7d66d0f842fc0f9592f21309e2eec9723a1d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406968"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966762"
 ---
 # <a name="dataon-must-extension"></a>DataOn debe ser una extensión
 
@@ -21,7 +19,7 @@ ms.locfileid: "71406968"
 
 [DataOn](http://www.dataonstorage.com/) es el proveedor líder del sector de infraestructura hiperconvergida y sistemas de almacenamiento optimizados para entornos de Microsoft Windows Server. Centrado exclusivamente en la entrega de aplicaciones de Microsoft, virtualización, protección de datos y servicios en la nube híbrida, tiene más de 650 implementaciones de empresa y a través de 120PB de implementaciones de Espacios de almacenamiento directo.
 
-La extensión de [DataOn debe](http://www.dataonstorage.com/must) ser la extensión para el centro de administración de Windows es un buen ejemplo del valor que la integración de dos productos complementarios puede ofrecer a los clientes, lo que aporta supervisión y administración, así como información completa sobre el hardware y el software junto con un clúster completo en una experiencia unificada.
+La extensión de [DataOn debe](http://www.dataonstorage.com/must) ser la extensión para el centro de administración de Windows es un buen ejemplo del valor que la integración de dos productos complementarios puede ofrecer a los clientes, lo que aporta supervisión y administración y una visión completa del hardware y el software juntos en todo un clúster en una experiencia unificada.
 
 > <cite>"Hemos tomado nuestra herramienta independiente para la visibilidad, supervisión y administración y la hemos habilitado para que funcione en el centro de administración de Windows. Los clientes se beneficiarán de las capacidades ampliadas que se deben proporcionar y la combinación de debe y el centro de administración de Windows desde una sola consola proporcionará la experiencia de administración más avanzada para la infraestructura basada en Windows Server.</cite>
 >
@@ -33,8 +31,8 @@ La extensión debe ampliar la funcionalidad del centro de administración de Win
 - **Alertas del sistema** : aprovecha los errores de Windows servicio de mantenimiento para identificar errores de hardware, problemas de configuración y saturación de recursos. También proporciona una evaluación de varios niveles de ubicaciones específicas, descripciones de errores y acciones de recuperación. También puede aprovechar las capturas de supervisión SNMP de terceros para avisarle cuando necesite reemplazos de hardware o de disco.
 - **Servicio de inicio de llamada de San** : se le solicitan alertas del sistema, los administradores pueden enviar alertas de correo electrónico automatizadas a los contactos clave.
 
-![Asignación de disco](../../media/extend-case-study-dataon/dataon-1.png)
-de extensión de datos*en la información debe ser la extensión del centro de administración de Windows*
+![Asignación de disco de extensión de datos ](../../media/extend-case-study-dataon/dataon-1.png)
+ *en la información debe ser la extensión del centro de administración de Windows*
 
 > <cite>"Es excelente que el centro de administración de Windows permita extensiones como DataOn, por lo que puedo usar ambas herramientas en la misma consola y me gustaría que la integración sea fluida. El centro de administración de Windows y DataOn deben ser realmente más eficientes y ahorran tiempo a nuestro equipo. Nos permite obtener nuestras tareas de administrador mucho más rápido de lo que teníamos antes ".</cite>
 >

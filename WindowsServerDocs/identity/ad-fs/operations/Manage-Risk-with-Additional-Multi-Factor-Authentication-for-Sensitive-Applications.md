@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: dc6608713ddd60d20b0b717d4133d93d23fc7b25
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b9f764b64a50b0c69116cf19e253097da464cdbb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816258"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954301"
 ---
 # <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales
 
@@ -111,7 +109,7 @@ Las opciones siguientes están disponibles para la configuración de MFA (condic
 
 -   Puede requerir MFA para dispositivos registrados (unidos al área de trabajo) o no registrados (no unidos al área de trabajo).
 
-    Windows Server 2012 R2 adopta un enfoque centrado en el usuario respecto a los dispositivos modernos, donde los objetos de dispositivo representan una relación entre user@device y una empresa. Los objetos de dispositivo son una nueva clase de AD en Windows Server 2012 R2 que se puede usar para ofrecer identidad compuesta al proporcionar acceso a aplicaciones y servicios. Un nuevo componente de AD FS, el servicio de registro de dispositivos (DRS), aprovisiona una identidad de dispositivo en Active Directory y establece un certificado en el dispositivo de consumo que se utilizará para representar la identidad del dispositivo. A continuación, puede usar esta identidad de dispositivo para unir su dispositivo al área de trabajo, es decir, para conectar su dispositivo personal a Active Directory en su área de trabajo. Cuando una su dispositivo personal al área de trabajo, se convertirá en un dispositivo conocido y proporcionará autenticación de segundo factor sin problemas para las aplicaciones y los recursos protegidos. En otras palabras, una vez que un dispositivo está unido al área de trabajo, la identidad del usuario está asociada a este dispositivo y se puede usar para una verificación de identidad compuesta sin problemas antes de tener acceso a un recurso protegido.
+    Windows Server 2012 R2 adopta un enfoque centrado en el usuario a los dispositivos modernos, donde los objetos de dispositivo representan una relación entre user@device y una compañía. Los objetos de dispositivo son una nueva clase de AD en Windows Server 2012 R2 que se puede usar para ofrecer identidad compuesta al proporcionar acceso a aplicaciones y servicios. Un nuevo componente de AD FS, el servicio de registro de dispositivos (DRS), aprovisiona una identidad de dispositivo en Active Directory y establece un certificado en el dispositivo de consumo que se utilizará para representar la identidad del dispositivo. A continuación, puede usar esta identidad de dispositivo para unir su dispositivo al área de trabajo, es decir, para conectar su dispositivo personal a Active Directory en su área de trabajo. Cuando una su dispositivo personal al área de trabajo, se convertirá en un dispositivo conocido y proporcionará autenticación de segundo factor sin problemas para las aplicaciones y los recursos protegidos. En otras palabras, una vez que un dispositivo está unido al área de trabajo, la identidad del usuario está asociada a este dispositivo y se puede usar para una verificación de identidad compuesta sin problemas antes de tener acceso a un recurso protegido.
 
     Para obtener más información acerca de la Unión al área de trabajo y el abandono, consulte [unirse al área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en las aplicaciones de la empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
@@ -146,9 +144,9 @@ Otros escenarios para habilitar MFA en AD FS incluyen los siguientes:
 
     ```
 
-## <a name="see-also"></a>Consulta también
-[Guía de tutorial: administración de riesgos con multi-factor Authentication adicionales para las aplicaciones confidenciales](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-[configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+## <a name="see-also"></a>Consulte también
+[Guía de tutorial: administración de riesgos con multi-factor Authentication adicionales para aplicaciones](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) 
+ confidenciales [Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

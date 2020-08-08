@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 07/26/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 5a7279416746269a3886fe929d066a6397be838a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 66ef77b46065b87e6df08c63b0fb40ca4453c45b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962527"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954261"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configurar métodos de autenticación adicionales para AD FS
 
@@ -30,7 +28,7 @@ También puede configurar y habilitar métodos de autenticación de Microsoft y 
 A continuación hay una lista alfabética de Microsoft y proveedores de terceros con las ofertas de MFA disponibles actualmente para AD FS en Windows Server 2012 R2.
 
 |Proveedor|Oferta|Vínculo para obtener más información|
-|-|-|-| 
+|-|-|-|
 |aPersona|aPersona Adaptive Multi-Factor Authentication para Microsoft ADFS SSO|[Adaptador ADFS de aPersona ASM](https://www.apersona.com/adfs)|
 |Cyphercor Inc.|Multi-Factor Authentication LoginTC para AD FS|[Conector de AD FS de LoginTC](https://www.logintc.com/docs/connectors/adfs.html)|
 |Duo Security|Duo adaptador MFA para AD FS|[Duo autenticación para AD FS](https://duo.com/docs/adfs)|
