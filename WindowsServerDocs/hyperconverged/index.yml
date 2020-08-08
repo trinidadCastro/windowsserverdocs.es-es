@@ -10,48 +10,48 @@ metadata:
   author: coreyp-at-msft
   ms.author: coreyp
   ms.date: 06/10/2020
-  ms.openlocfilehash: 1d2ec270e90423f2405b664f22de7ca85c540498
-  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.openlocfilehash: da06358fad02f7ca2f7088bae1a82a2b21786bda
+  ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "85070164"
+  ms.lasthandoff: 08/07/2020
+  ms.locfileid: "87993874"
 productDirectory:
   items:
   - title: Hyper-V
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-virtualize.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/
+    - url: /windows-server/virtualization/hyper-v/
       text: Virtualiza el hardware de servidor, lo que le permite ejecutar máquinas virtuales entre servidores en un clúster hiperconvergido.
   - title: Espacios de almacenamiento directos
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-store.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview
+    - url: ../storage/storage-spaces/storage-spaces-direct-overview.md
       text: Virtualiza el hardware de almacenamiento, lo que le permite crear volúmenes encima de un grupo virtualizado de unidades repartidas entre servidores en un clúster hiperconvergido.
   - title: Clúster de conmutación por error
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-cluster.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview
+    - url: ../failover-clustering/failover-clustering-overview.md
       text: Agrupa varios servidores para que las cargas de trabajo, como máquinas virtuales, puedan ejecutarse en cualquier servidor en el clúster, para el equilibrio de carga y la conmutación por error correcta entre servidores.
   - title: Redes definidas por software
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-network.svg
     links:
-    - url: https://docs.microsoft.com/windows-server/networking/sdn/
+    - url: ../networking/sdn/index.yml
       text: Virtualiza el hardware de red, lo que le permite crear y administrar dinámicamente las redes y las directivas que abstraen las cargas de trabajo de redes físicas subyacentes.
   - title: Windows Admin Center
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-admin-center.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview
+    - url: ../manage/windows-admin-center/overview.md
       text: Virtualiza el hardware de servidor, lo que le permite ejecutar máquinas virtuales entre servidores en un clúster hiperconvergido.
   - title: Conexión a los servicios híbridos de Azure
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-microsoft-azure.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/azure-hybrid-services
+    - url: /windows-server/azure-hybrid-services
       text: Conecta el clúster a los servicios híbridos de Azure con fines de recuperación de sitios, supervisión, etc.
   - title: Azure Stack HCI
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-azure-stack.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/azure-stack-hci
+    - url: /windows-server/azure-stack-hci
       text: Empareja las tecnologías de virtualización y agrupación en clústeres de Windows Server 2019 con las soluciones de hardware validadas por el asociado de su elección, lo que ayuda a eliminar las suposiciones al querer optimizar un centro de datos definido por software.
   - title: Windows Server definido por software (WSSD)
     imageSrc: https://docs.microsoft.com/media/common/i_data-collection.svg

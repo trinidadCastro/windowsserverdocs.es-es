@@ -5,12 +5,12 @@ ms.topic: landing-page
 ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 404bc76e0bc3b08fc87b49b8263427cd4496bd43
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 07a8b12b9d4be5f9105baefaae0ef4030e02f69f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895996"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993326"
 ---
 # <a name="performance-tuning-cache-and-memory-manager"></a>Optimización del rendimiento de la memoria caché y el Administrador de memoria
 
@@ -30,4 +30,4 @@ Como muestran las flechas sólidas de la figura anterior, una región de 256 KB
 
 -   [Memoria caché y problemas de rendimiento potenciales del Administrador de memoria](troubleshoot.md)
 
--   [Mejoras en la memoria caché y el Administrador de memoria en Windows Server 2016](improvements-in-2016.md)
+-   [Mejoras en la memoria caché y el Administrador de memoria en Windows Server 2016](./improvements-in-windows-server.md)

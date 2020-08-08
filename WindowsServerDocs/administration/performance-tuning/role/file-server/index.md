@@ -7,12 +7,12 @@ ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 951d59a1a0e1d58a064eb71bd073259c15fd46d4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ecbd1bc751f133b80cf1d9cb264cf70a4ac4f47c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896176"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992202"
 ---
 # <a name="performance-tuning-for-file-servers"></a>Optimización del rendimiento de servidores de archivos
 
@@ -171,7 +171,7 @@ La siguiente configuración del Registro REG\_DWORD puede afectar al rendimiento
 
     El valor predeterminado es 0, lo que deshabilita la firma SMB. Cambiar este valor a 1 habilita la firma SMB para toda la comunicación de SMB, lo que impide la comunicación de SMB con equipos en los que la firma SMB está deshabilitada. La firma SMB puede aumentar el costo de CPU y los recorridos de ida y vuelta de la red, pero ayuda a bloquear ataques de tipo "Man in the middle". Si no se requiere la firma SMB, asegúrese de que este valor de Registro sea 0 en todos los clientes y servidores.
 
-    Para más información, consulte [los aspectos básicos de la firma SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
+    Para más información, consulte [los aspectos básicos de la firma SMB](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2).
 
 -   **FileInfoCacheEntriesMax**
 
