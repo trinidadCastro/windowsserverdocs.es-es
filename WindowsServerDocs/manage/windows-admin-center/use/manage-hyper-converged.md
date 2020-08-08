@@ -1,19 +1,17 @@
 ---
 title: Administrar la infraestructura hiperconvergida con el centro de administración de Windows
 description: Administrar la infraestructura hiperconvergida con el centro de administración de Windows (proyecto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 8344fcb01a5d527dfce46118121fbf7623636549
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a2fd0e688d33265119c8dcb915d485e953507c80
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519674"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990487"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Administrar la infraestructura hiperconvergida con el centro de administración de Windows
 
@@ -21,7 +19,7 @@ ms.locfileid: "87519674"
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>Qué es la infraestructura hiperconvergida
 
-La infraestructura hiperconvergida consolida el proceso, el almacenamiento y la red definidos por software en un clúster para proporcionar una virtualización de alto rendimiento, rentable y fácilmente escalable. Esta funcionalidad se presentó en Windows Server 2016 con [espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview), las [redes definidas por software](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking) y [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server).
+La infraestructura hiperconvergida consolida el proceso, el almacenamiento y la red definidos por software en un clúster para proporcionar una virtualización de alto rendimiento, rentable y fácilmente escalable. Esta funcionalidad se presentó en Windows Server 2016 con [espacios de almacenamiento directo](../../../storage/storage-spaces/storage-spaces-direct-overview.md), las [redes definidas por software](../../../networking/sdn/software-defined-networking.md) y [Hyper-V](../../../virtualization/hyper-v/hyper-v-on-windows-server.md).
 
 > [!Tip]
 > ¿Desea adquirir una infraestructura hiperconvergida? Microsoft recomienda estas soluciones [definidas por software de Windows Server](https://microsoft.com/wssd) de nuestros asociados. Se diseñan, ensamblan y validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda ponerse en marcha rápidamente.
@@ -35,7 +33,7 @@ El [centro de administración de Windows](../overview.md) es la herramienta de a
 
 ![Panel de clúster hiperconvergido](../media/manage-hyper-converged/hci-dashboard-v1809.png)
 
-## <a name="key-features"></a>Principales características
+## <a name="key-features"></a>Características principales
 
 Los aspectos destacados del centro de administración de Windows para la infraestructura hiperconvergida incluyen:
 
@@ -46,7 +44,7 @@ Los aspectos destacados del centro de administración de Windows para la infraes
 
 Microsoft está desarrollando activamente el centro de administración de Windows para la infraestructura hiperconvergida. Recibe actualizaciones frecuentes que mejoran las características existentes y agregan nuevas características.
 
-## <a name="before-you-start"></a>Antes de empezar
+## <a name="before-you-start"></a>Antes de comenzar
 
 Para administrar el clúster como una infraestructura hiperconvergida en el centro de administración de Windows, debe ejecutar Windows Server 2016 o Windows Server 2019 y tener habilitado Hyper-V y Espacios de almacenamiento directo. Opcionalmente, también puede tener habilitadas las redes definidas por software y administradas a través del centro de administración de Windows.
 
@@ -92,7 +90,7 @@ Puede configurar la infraestructura hiperconvergida que ejecuta Windows Server 2
 
 La implementación tardará aproximadamente entre 30 y 45 minutos.
 
-## <a name="get-started"></a>Introducción
+## <a name="get-started"></a>Primeros pasos
 
 Una vez implementada la infraestructura hiperconvergida, puede administrarla mediante el centro de administración de Windows.
 
@@ -289,6 +287,6 @@ También puede configurar la red virtual al crear una máquina virtual.
 ### <a name="additional-references"></a>Referencias adicionales
 
 - [Windows Admin Center](../overview.md)
-- [Espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
-- [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
-- [Red definida por software](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)
+- [Espacios de almacenamiento directo](../../../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Hyper-V](../../../virtualization/hyper-v/hyper-v-on-windows-server.md)
+- [Redes definidas por software](../../../networking/sdn/software-defined-networking.md)

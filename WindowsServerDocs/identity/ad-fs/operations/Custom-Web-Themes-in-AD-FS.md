@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: bdc39d3ceabce093940d325be93a9e2c50e670c8
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 99ea2ef8d2a4fca6733b5d314ab138adb55277aa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519764"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956412"
 ---
 # <a name="custom-web-themes-in-ad-fs"></a>Temas web personalizados en AD FS
 

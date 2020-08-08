@@ -1,18 +1,16 @@
 ---
 title: Servicio de mantenimiento informes
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: a1aedd4dc48abb38c33679f219a6825c6a9141bb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1e6b11bc73ef34e5247ca43140d3e2122e77ab61
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473032"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990778"
 ---
 # <a name="health-service-reports"></a>Servicio de mantenimiento informes
 
@@ -109,7 +107,7 @@ public void DiscoverObjects(CimSession Session)
 
 Estos son los mismos objetos que se obtienen en PowerShell mediante cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**y **Get-Volume**.
 
-Puede tener acceso a todas las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx).
+Puede tener acceso a todas las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes).
 
 ```
 using System.Diagnostics;
@@ -129,7 +127,7 @@ La lista completa de las métricas disponibles en cada ámbito en Windows Server
 
 ### <a name="iobserveronnext"></a>IObserver. alnext ()
 
-Este código de ejemplo usa el [modelo de diseño de observador](https://msdn.microsoft.com/library/ee850490(v=vs.110).aspx) para implementar un observador cuyo método **Next ()** se invocará cuando llegue cada nuevo ejemplo de métricas. Se llamará a su método **Alcompleted ()** si/cuando finalice el streaming. Por ejemplo, puede utilizarlo para reiniciar el streaming, por lo que continúa indefinidamente.
+Este código de ejemplo usa el [modelo de diseño de observador](/dotnet/standard/events/observer-design-pattern) para implementar un observador cuyo método **Next ()** se invocará cuando llegue cada nuevo ejemplo de métricas. Se llamará a su método **Alcompleted ()** si/cuando finalice el streaming. Por ejemplo, puede utilizarlo para reiniciar el streaming, por lo que continúa indefinidamente.
 
 ```
 class MetricsObserver<T> : IObserver<T>
@@ -211,10 +209,10 @@ En el esquema completo, inspeccione las clases **msft \_ StorageHealthReport** y
 
 Cada métrica tiene solo tres propiedades, por esta tabla.
 
-| **Propiedad** | **Ejemplo**       |
+| **Property** | **Ejemplo**       |
 | -------------|-------------------|
 | Nombre         | IOLatencyAverage  |
-| Value        | 0,00021           |
+| Valor        | 0,00021           |
 | Unidades        | 3                 |
 
 Unidades = {0, 1, 2, 3, 4}, donde 0 = "bytes", 1 = "BytesPerSecond", 2 = "CountPerSecond", 3 = "segundos" o 4 = "porcentaje".

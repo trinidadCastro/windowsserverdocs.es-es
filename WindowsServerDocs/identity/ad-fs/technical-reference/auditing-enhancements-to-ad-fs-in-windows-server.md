@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: f6d2b48fe652848009fe54d990f5443b17ad4266
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4aacc4d3f3ea132a85da1108064ec1f44e2a6eac
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517670"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956172"
 ---
 # <a name="auditing-enhancements-to-ad-fs-in-windows-server-2016"></a>Mejoras de auditorías para AD FS en Windows Server 2016
 
@@ -43,7 +41,7 @@ AD FS los eventos de auditoría pueden ser de tipos diferentes, en función de l
 
 En la tabla siguiente se describen los tipos básicos de eventos de auditoría.
 
-| Tipo de evento de auditoría | Id. de evento | Description |
+| Tipo de evento de auditoría | Id. de evento | Descripción |
 |--|--|--|
 | Validación de nueva credencial correcta | 1202 | Una solicitud en la que el Servicio de federación valida correctamente las credenciales nuevas. Esto incluye los puntos de conexión de WS-Trust, WS-Federation, SAML-P (primer segmento para generar SSO) y OAuth Authorize. |
 | Error de validación de credenciales nuevas | 1203 | Una solicitud en la que se produjo un error en la validación de credenciales nuevas en el Servicio de federación. Esto incluye los puntos de conexión de WS-Trust, WS-FED, SAML-P (primer segmento para generar SSO) y OAuth Authorize. |

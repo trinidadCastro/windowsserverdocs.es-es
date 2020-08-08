@@ -1,26 +1,24 @@
 ---
 title: Novedades de la protección de credenciales
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f297
 author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: 35097cee243239735995a00cec7a6fd3936c62a8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9522988946fbf5aa060ff81ab7a54077f5ca28f4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857048"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948718"
 ---
 # <a name="whats-new-in-credential-protection"></a>Novedades de la protección de credenciales
 
 ## <a name="credential-guard-for-signed-in-user"></a>Credential Guard para el usuario con sesión iniciada
 
-A partir de Windows 10, versión 1507, Kerberos y NTLM usan la seguridad basada en la virtualización para proteger los secretos de Kerberos & NTLM de la sesión de inicio de sesión de usuario con sesión iniciada. 
+A partir de Windows 10, versión 1507, Kerberos y NTLM usan la seguridad basada en la virtualización para proteger los secretos de Kerberos & NTLM de la sesión de inicio de sesión de usuario con sesión iniciada.
 
 A partir de Windows 10, versión 1511, el administrador de credenciales usa la seguridad basada en la virtualización para proteger las credenciales guardadas del tipo de credencial de dominio. Las credenciales de sesión iniciadas y las credenciales de dominio guardadas no se pasarán a un host remoto mediante escritorio remoto. Credential Guard se puede habilitar sin el bloqueo UEFI.
 
@@ -45,15 +43,15 @@ Las protecciones de dominio requieren un dominio de Active Directory.
 
 A partir de la versión 1507 de Windows 10 y Windows Server 2016, si un dispositivo unido a un dominio puede registrar su clave pública enlazada con un controlador de dominio (DC) de Windows Server 2016, el dispositivo puede autenticarse con la clave pública mediante la autenticación de Kerberos PKINIT en un DC de Windows Server 2016.
 
-A partir de Windows Server 2016, los KDC admiten la autenticación mediante la confianza de clave Kerberos.  
+A partir de Windows Server 2016, los KDC admiten la autenticación mediante la confianza de clave Kerberos.
 
 [Obtenga más información sobre la compatibilidad con claves públicas para dispositivos Unidos a un dominio & la confianza de clave Kerberos](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication).
 
 ### <a name="pkinit-freshness-extension-support"></a>Compatibilidad con la extensión de actualización PKINIT
 
-A partir de Windows 10, versión 1507 y Windows Server 2016, los clientes Kerberos intentarán la extensión de actualización PKInit para inicios de sesión basados en claves públicas. 
+A partir de Windows 10, versión 1507 y Windows Server 2016, los clientes Kerberos intentarán la extensión de actualización PKInit para inicios de sesión basados en claves públicas.
 
-A partir de Windows Server 2016, los KDC pueden admitir la extensión de actualización PKInit.  De forma predeterminada, los KDC no proporcionarán la extensión de actualización PKInit. 
+A partir de Windows Server 2016, los KDC pueden admitir la extensión de actualización PKInit.  De forma predeterminada, los KDC no proporcionarán la extensión de actualización PKInit.
 
 [Más información sobre la compatibilidad con la extensión de actualización de PKINIT](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication).
 
@@ -61,10 +59,10 @@ A partir de Windows Server 2016, los KDC pueden admitir la extensión de actuali
 
 A partir del nivel funcional del dominio de Windows Server 2016 (nivel funcional), los controladores de dominio pueden admitir el reinicio de los secretos de NTLM de los usuarios de una clave pública. Esta característica no está disponible en DFLs inferiores.
 
-> [!WARNING] 
-> La adición de un controlador de dominio a un dominio con los secretos de NTLM sucesivos habilitados antes de que el controlador de dominio se haya actualizado con al menos el 8 de noviembre de 2016, se corre el riesgo de que se produzca un bloqueo del DC. 
+> [!WARNING]
+> La adición de un controlador de dominio a un dominio con los secretos de NTLM sucesivos habilitados antes de que el controlador de dominio se haya actualizado con al menos el 8 de noviembre de 2016, se corre el riesgo de que se produzca un bloqueo del DC.
 
-Configuración: para los nuevos dominios, esta característica está habilitada de forma predeterminada. En el caso de los dominios existentes, debe configurarse en el Active Directory centro de administración: 
+Configuración: para los nuevos dominios, esta característica está habilitada de forma predeterminada. En el caso de los dominios existentes, debe configurarse en el Active Directory centro de administración:
 
 1. En el centro de administración de Active Directory, haga clic con el botón secundario en el dominio en el panel izquierdo y seleccione **propiedades**.
 
@@ -74,12 +72,12 @@ Configuración: para los nuevos dominios, esta característica está habilitada 
 
     ![El relanzamiento de los secretos de NTLM expira](../media/Credentials-Protection-And-Management/autoroll-ntlm.png)
 
-3. Haga clic en **Aceptar**. 
+3. Haga clic en **Aceptar**.
 
 ### <a name="allowing-network-ntlm-when-user-is-restricted-to-specific-domain-joined-devices"></a>Permitir la red NTLM cuando el usuario está restringido a determinados dispositivos Unidos a un dominio
 
 A partir del nivel funcional de dominio de Windows Server 2016 (nivel funcional), los controladores de dominio pueden permitir la red NTLM cuando un usuario está restringido a determinados dispositivos Unidos a un dominio. Esta característica no está disponible en DFLs inferiores.
 
-Configuración: en la Directiva de autenticación, haga clic en **permitir la autenticación de red NTLM cuando el usuario está restringido a los dispositivos seleccionados**. 
+Configuración: en la Directiva de autenticación, haga clic en **permitir la autenticación de red NTLM cuando el usuario está restringido a los dispositivos seleccionados**.
 
 [Más información sobre las directivas de autenticación](https://technet.microsoft.com/windows-server-docs/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos).

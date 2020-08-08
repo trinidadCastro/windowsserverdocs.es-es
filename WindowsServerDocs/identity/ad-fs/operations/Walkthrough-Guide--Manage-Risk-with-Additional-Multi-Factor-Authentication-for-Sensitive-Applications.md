@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: be9eaa7b742f554539fa5bbd08f46d47a347c1ad
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: f651f60b5ba9e871a88a2df15d87b6819e851642
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118568"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956292"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>Guía de tutorial: administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales
 
@@ -168,7 +166,7 @@ Ahora ya puede iniciar el Servidor de autenticación multifactor de Windows Azur
 
 2.  Para activar el Servidor de autenticación multifactor, vuelva a la página del portal de administración de autenticación multifactor desde donde lo descargó y haga clic en el botón **Generar credenciales de activación**. En la interfaz de usuario del Servidor de autenticación multifactor, indique las credenciales que se generaron y haga clic en **Activar**.
 
-3.  A continuación, la interfaz de usuario del **Servidor de autenticación multifactor** le solicitará que ejecute el **Asistente de configuración multiservidor**.  Seleccione **No**.
+3.  A continuación, la interfaz de usuario del **Servidor de autenticación multifactor** le solicitará que ejecute el **Asistente de configuración multiservidor**.  así que seleccione **No**.
 
     > [!IMPORTANT]
     > Puede omitir el **Asistente de configuración multiservidor**, dado el entorno de laboratorio con tan solo un servidor de federación que se usa para completar este tutorial. No obstante, si su entorno contiene varios servidores de federación, debe instalar el Servidor de autenticación multifactor y completar el **Asistente de configuración multiservidor** en cada servidor para habilitar la replicación entre los servidores multifactor que se ejecuten en sus servidores de federación.
@@ -183,9 +181,9 @@ Ahora ya puede iniciar el Servidor de autenticación multifactor de Windows Azur
 
     > [!NOTE]
     > El asistente de instalación del **Adaptador de AD FS para autenticación multifactor** crea un grupo de seguridad denominado **PhoneFactor Admins** en Active Directory y, a continuación, agrega la cuenta del servicio AD FS del servicio de federación a este grupo.
-    > 
+    >
     > Se recomienda comprobar en el controlador de dominio que el grupo **PhoneFactor Admins** se haya creado y que la cuenta del servicio AD FS forme parte de este grupo.
-    > 
+    >
     > Si es necesario, agregue la cuenta del servicio AD FS al grupo **PhoneFactor Admins** del controlador de dominio manualmente.
 
     Para obtener más detalles acerca de la instalación del adaptador de AD FS, haga clic en el vínculo de ayuda ubicado en la esquina superior derecha del Servidor de autenticación multifactor.

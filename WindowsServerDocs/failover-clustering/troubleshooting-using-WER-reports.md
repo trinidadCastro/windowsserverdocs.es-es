@@ -1,23 +1,21 @@
 ---
 title: Solución de problemas de clúster de conmutación por error con el Informe de errores de Windows
 description: Solución de problemas de un clúster de conmutación por error mediante informes WER, con detalles específicos sobre cómo recopilar informes y diagnosticar problemas comunes.
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.author: johnmar
 author: JohnMarlin-MSFT
 ms.date: 03/27/2018
-ms.openlocfilehash: f888b7f49c2bf97eb42070a6028b137aeb730406
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 9b4569f4f4d28ad1380cf057cdf96e4b81fbdb2a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768542"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990744"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solución de problemas de clúster de conmutación por error con el Informe de errores de Windows
 
 > Se aplica a: Windows Server 2019, Windows Server 2016 y Windows Server
 
-Informe de errores de Windows (WER) es una infraestructura de comentarios basada en eventos flexible diseñada para ayudar a los administradores avanzados o al soporte técnico de nivel 3 a recopilar información sobre los problemas de hardware y software que Windows puede detectar, notificar la información a Microsoft y proporcionar a los usuarios las soluciones disponibles. Esta [referencia](https://docs.microsoft.com/powershell/module/windowserrorreporting/) proporciona descripciones y sintaxis para todos los cmdlets de WindowsErrorReporting.
+Informe de errores de Windows (WER) es una infraestructura de comentarios basada en eventos flexible diseñada para ayudar a los administradores avanzados o al soporte técnico de nivel 3 a recopilar información sobre los problemas de hardware y software que Windows puede detectar, notificar la información a Microsoft y proporcionar a los usuarios las soluciones disponibles. Esta [referencia](/powershell/module/windowserrorreporting/) proporciona descripciones y sintaxis para todos los cmdlets de WindowsErrorReporting.
 
 La información sobre la solución de problemas que se presenta a continuación será útil para solucionar problemas avanzados que se han escalado y que pueden requerir que los datos se envíen a Microsoft para la clasificación.
 
@@ -75,11 +73,11 @@ Estos canales de eventos se habilitarán en todos los nodos del clúster cuando 
 
 ## <a name="gathering-logs"></a>Recopilación de registros
 
-Una vez que haya habilitado los canales de eventos, puede usar **DumpLogQuery** para recopilar los registros. La propiedad de tipo de recurso público **DumpLogQuery** es un valor de mutistring. Cada cadena es una [consulta XPath tal y como se describe aquí](https://msdn.microsoft.com/library/windows/desktop/dd996910(v=vs.85).aspx).
+Una vez que haya habilitado los canales de eventos, puede usar **DumpLogQuery** para recopilar los registros. La propiedad de tipo de recurso público **DumpLogQuery** es un valor de mutistring. Cada cadena es una [consulta XPath tal y como se describe aquí](/windows/win32/wes/consuming-events).
 
 A la hora de solucionar problemas, si necesita recopilar canales de eventos adicionales, puede modificar la propiedad **DumpLogQuery** agregando consultas adicionales o modificando la lista.
 
-Para ello, primero pruebe la consulta XPATH con el cmdlet de PowerShell [Get-WinEvent](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1) :
+Para ello, primero pruebe la consulta XPATH con el cmdlet de PowerShell [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1) :
 
 ```powershell
 get-WinEvent -FilterXML "<QueryList><Query><Select Path='Microsoft-Windows-GroupPolicy/Operational'>*[System[TimeCreated[timediff(@SystemTime) &gt;= 600000]]]</Select></Query></QueryList>"
@@ -158,7 +156,7 @@ Directory of c:\ProgramData\Microsoft\Windows\WER\ReportArchive
 
 ```
 
-Informe de errores de Windows proporciona muchas opciones para personalizar la experiencia de informes de problemas. Para obtener más información, consulte la [documentación](https://msdn.microsoft.com/library/windows/desktop/bb513638(v=vs.85).aspx)de informe de errores de Windows.
+Informe de errores de Windows proporciona muchas opciones para personalizar la experiencia de informes de problemas. Para obtener más información, consulte la [documentación](/windows/win32/wer/wer-settings)de informe de errores de Windows.
 
 
 ## <a name="troubleshooting-using-windows-error-reporting-reports"></a>Solución de problemas con informes de Informe de errores de Windows

@@ -1,20 +1,18 @@
 ---
 title: Requisitos de hardware y opciones de almacenamiento de clústeres de conmutación por error
 description: Requisitos de hardware y opciones de almacenamiento para crear un clúster de conmutación por error.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed3337e0543953182ed73337ff7aa0a2f093376c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 65d2d21138efbae3c5ada56bfa8628f06c4dcbe7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177932"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990801"
 ---
 # <a name="failover-clustering-hardware-requirements-and-storage-options"></a>Requisitos de hardware y opciones de almacenamiento de clústeres de conmutación por error
 
@@ -53,7 +51,7 @@ Necesita el siguiente hardware para crear un clúster de conmutación por error:
 Si estás creando un clúster de conmutación por error que incluye máquinas virtuales en clúster, los servidores de clúster deben admitir los requisitos de hardware del rol Hyper-V. Hyper-V requiere un procesador de 64 bits que incluya lo siguiente:
 
 - Virtualización asistida por hardware. Está disponible en procesadores que incluyen una opción de virtualización, concretamente, procesadores con tecnología Intel Virtualization Technology (Intel VT) o AMD Virtualization (AMD-V).
-- La Prevención de ejecución de datos (DEP) implementada por hardware debe estar disponible y habilitada. Concretamente, debes habilitar el bit XD de Intel (bit ejecutar deshabilitado) o el bit NX de AMD (bit no ejecutar).
+- La prevención de ejecución de datos (DEP) mediante hardware tiene que estar disponible y habilitada. Concretamente, debes habilitar el bit XD de Intel (bit ejecutar deshabilitado) o el bit NX de AMD (bit no ejecutar).
 
 Para obtener más información acerca de la función de Hyper-V, vea [Introducción a Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831531(v%3dws.11)>).
 
@@ -65,7 +63,7 @@ Al implementar una red de área de almacenamiento (SAN) con un clúster de conmu
 - **Aislar dispositivos de almacenamiento, un clúster por dispositivo**: los servidores de distintos clústeres no podrán tener acceso a los mismos dispositivos de almacenamiento. En la mayoría de los casos, el LUN usado para un conjunto de servidores de clúster debe aislarse de los demás servidores mediante la creación de máscaras o zonas LUN.
 - **Considerar el uso de software de E/S de múltiples rutas o adaptadores de red en equipo**: en tejidos de almacenamiento de alta disponibilidad, puede implementar clústeres de conmutación por error con varios adaptadores de bus host mediante el uso de software de E/S de múltiples rutas o la formación de equipos de adaptadores de red (también denominada equilibrio de carga y conmutación por error, o LBFO). Esto proporciona el mayor nivel de redundancia y disponibilidad. En Windows Server 2012 R2 o Windows Server 2012, la solución de múltiples rutas debe estar basada en e/s de múltiples rutas (MPIO) de Microsoft. El fabricante de hardware normalmente proporcionará un módulo específico del dispositivo (DSM) MPIO para el hardware, aunque Windows Server incluye uno o más DSM como parte del sistema operativo.
 
-    Para obtener más información sobre LBFO, consulte [Introducción a la formación de equipos NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming) en la biblioteca técnica de Windows Server.
+    Para obtener más información sobre LBFO, consulte [Introducción a la formación de equipos NIC](../networking/technologies/nic-teaming/nic-teaming.md) en la biblioteca técnica de Windows Server.
 
     >[!IMPORTANT]
     >Los adaptadores de bus host y el software de E/S de múltiples rutas pueden ser muy sensibles a la versión. Si estás implementando una solución de múltiples rutas para el clúster, colabora estrechamente con el proveedor de hardware para elegir los adaptadores, firmware y software correctos para la versión de Windows Server que estás utilizando.
@@ -74,6 +72,6 @@ Al implementar una red de área de almacenamiento (SAN) con un clúster de conmu
 
 ## <a name="more-information"></a>Más información
 
-- [Clústeres de conmutación por error](failover-clustering.md)
+- [Clústeres de conmutación por error](./failover-clustering-overview.md)
 - [Espacios de almacenamiento](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831739(v%3dws.11)>)
 - [Usar clústeres invitados para alta disponibilidad](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)

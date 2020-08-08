@@ -1,19 +1,17 @@
 ---
 title: Supervisar servidores y configurar alertas con Azure Monitor desde el centro de administración de Windows
 description: El centro de administración de Windows (Project Honolulu) se integra con Azure Monitor
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 03/24/2019
-ms.openlocfilehash: d6c18e3c4ef052b2e2d274f491762d8e31de4758
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 81501cb5f4255b7a65ebc5f9f6cb9413938864f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833318"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940126"
 ---
 # <a name="monitor-servers-and-configure-alerts-with-azure-monitor-from-windows-admin-center"></a>Supervisar servidores y configurar alertas con Azure Monitor desde el centro de administración de Windows
 
@@ -22,11 +20,11 @@ ms.locfileid: "85833318"
 [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview) es una solución que recopila, analiza y actúa en la telemetría de una variedad de recursos, incluidos servidores y máquinas virtuales de Windows, tanto en el entorno local como en la nube. Aunque Azure Monitor extrae datos de máquinas virtuales de Azure y otros recursos de Azure, este artículo se centra en cómo funciona Azure Monitor con servidores locales y máquinas virtuales, específicamente con el centro de administración de Windows. Si está interesado en obtener información sobre cómo puede usar Azure Monitor para recibir alertas de correo electrónico sobre el clúster hiperconvergido, Lea sobre el [uso de Azure monitor para enviar correos electrónicos para errores de servicio de mantenimiento](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor).
 
 ## <a name="how-does-azure-monitor-work"></a>¿Cómo funciona Azure Monitor?
-![](../media/azure-monitor-diagram.png)los datos de IMG generados desde servidores locales de Windows se recopilan en un área de trabajo de log Analytics en Azure monitor. En un área de trabajo puede habilitar varias soluciones de supervisión: conjuntos de lógica que proporcionan información para un escenario determinado. Por ejemplo, Azure Update Management, Azure Security Center y Azure Monitor para VM son soluciones de supervisión que se pueden habilitar dentro de un área de trabajo. 
+![](../media/azure-monitor-diagram.png)los datos de IMG generados desde servidores locales de Windows se recopilan en un área de trabajo de log Analytics en Azure monitor. En un área de trabajo puede habilitar varias soluciones de supervisión: conjuntos de lógica que proporcionan información para un escenario determinado. Por ejemplo, Azure Update Management, Azure Security Center y Azure Monitor para VM son soluciones de supervisión que se pueden habilitar dentro de un área de trabajo.
 
-Cuando se habilita una solución de supervisión en un área de trabajo de Log Analytics, todos los servidores que envían notificaciones a esa área de trabajo empiezan a recopilar datos pertinentes para esa solución, de modo que la esta pueda generar información para todos los servidores del área de trabajo. 
+Cuando se habilita una solución de supervisión en un área de trabajo de Log Analytics, todos los servidores que envían notificaciones a esa área de trabajo empiezan a recopilar datos pertinentes para esa solución, de modo que la esta pueda generar información para todos los servidores del área de trabajo.
 
-Para recopilar datos de telemetría en un servidor local e insertarlos en el área de trabajo de Log Analytics, Azure Monitor requiere la instalación del Microsoft Monitoring Agent o MMA. Ciertas soluciones de supervisión también requieren un agente secundario. Por ejemplo, Azure Monitor para VM también depende de un agente ServiceMap para la funcionalidad adicional que proporciona esta solución. 
+Para recopilar datos de telemetría en un servidor local e insertarlos en el área de trabajo de Log Analytics, Azure Monitor requiere la instalación del Microsoft Monitoring Agent o MMA. Ciertas soluciones de supervisión también requieren un agente secundario. Por ejemplo, Azure Monitor para VM también depende de un agente ServiceMap para la funcionalidad adicional que proporciona esta solución.
 
 Algunas soluciones, como Azure Update Management, dependen también de Azure Automation, lo que le permite administrar recursos de forma centralizada en entornos que pueden ser de Azure o no. Por ejemplo, Azure Update Management usa Azure Automation para programar y coordinar la instalación de actualizaciones en las máquinas de su entorno, de forma centralizada, desde Azure Portal.
 
@@ -38,7 +36,7 @@ Desde WAC, puede habilitar dos soluciones de supervisión:
 - [Azure Update Management](azure-update-management.md) (en la herramienta Actualizaciones)
 - Azure Monitor para VM (en la configuración del servidor), a. k. a Virtual Machines Insights
 
-Puede empezar a usar Azure Monitor de cualquiera de estas herramientas. Si nunca ha usado Azure Monitor antes, WAC aprovisionará automáticamente un área de trabajo Log Analytics (y Azure Automation cuenta, si es necesario), e instalará y configurará el Microsoft Monitoring Agent (MMA) en el servidor de destino. A continuación, se instalará la solución correspondiente en el área de trabajo. 
+Puede empezar a usar Azure Monitor de cualquiera de estas herramientas. Si nunca ha usado Azure Monitor antes, WAC aprovisionará automáticamente un área de trabajo Log Analytics (y Azure Automation cuenta, si es necesario), e instalará y configurará el Microsoft Monitoring Agent (MMA) en el servidor de destino. A continuación, se instalará la solución correspondiente en el área de trabajo.
 
 Por ejemplo, si primero va a la herramienta de actualizaciones para configurar Azure Update Management, WAC:
 
@@ -81,6 +79,6 @@ Cuando el centro de administración incorpora un servidor en la solución de VM 
 
 ## <a name="disabling-monitoring"></a>Deshabilitar la supervisión
 
-Para desconectar completamente el servidor del área de trabajo Log Analytics, desinstale el agente MMA. Esto significa que este servidor ya no enviará datos al área de trabajo y que todas las soluciones instaladas en esa área de trabajo dejarán de recopilar y procesar los datos de ese servidor. Sin embargo, esto no afecta al propio área de trabajo: todos los recursos que informan a esa área de trabajo seguirán haciendo esto. Para desinstalar el agente de MMA en el centro de administración de Windows, conéctese al servidor de, vaya a **aplicaciones instaladas**, busque el Microsoft Monitoring Agent y, a continuación, seleccione **quitar**.
+Para desconectar completamente el servidor del área de trabajo Log Analytics, desinstale el agente MMA. Esto significa que este servidor ya no enviará datos al área de trabajo y que todas las soluciones instaladas en esa área de trabajo dejarán de recopilar y procesar los datos de ese servidor. Sin embargo, esto no afecta al propio área de trabajo: todos los recursos que informan a esa área de trabajo seguirán haciendo esto. Para desinstalar el agente de MMA en Windows Admin Center, conéctese al servidor y, a continuación, vaya a **aplicaciones instaladas**, busque Microsoft Monitoring Agent y, a continuación, seleccione **Quitar**.
 
 Si desea desactivar una solución específica dentro de un área de trabajo, tendrá que [quitar la solución de supervisión de Azure Portal](https://docs.microsoft.com/azure/azure-monitor/insights/solutions#remove-a-management-solution). La eliminación de una solución de supervisión significa que la información creada por esa solución ya no se generará para _todos_ los servidores que envían notificaciones a esa área de trabajo. Por ejemplo, si desinstalo la Azure Monitor para VM solución, ya no veremos información sobre el rendimiento de la máquina virtual o del servidor desde cualquiera de las máquinas conectadas a mi área de trabajo.

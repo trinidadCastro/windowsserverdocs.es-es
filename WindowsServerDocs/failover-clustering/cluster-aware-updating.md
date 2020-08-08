@@ -2,19 +2,17 @@
 title: Información general de la Actualización compatible con clústeres
 description: La actualización compatible con clústeres (CAU) automatiza la instalación de actualizaciones de software en clústeres que ejecutan Windows Server.
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: a889e19947d014bc2008417f64f6be5cc53112e6
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: defec4b34dfd0e2efa5724e499330c79b993bb60
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409896"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990810"
 ---
 # <a name="cluster-aware-updating-overview"></a>Información general de la Actualización compatible con clústeres
 
@@ -80,7 +78,7 @@ Para usar la CAU, instale la característica de clústeres de conmutación por e
 
 Para instalar una característica Clúster de conmutación por error, puede usar las siguientes herramientas:
 - Asistente para agregar roles y características en el Administrador del servidor
-- [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)   Cmdlet de Windows PowerShell
+- [Install-WindowsFeature](/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)   Cmdlet de Windows PowerShell
 - Herramienta de línea de comandos Administración y mantenimiento de imágenes de implementación (DISM)
 
 Para obtener más información, vea [instalar la característica de clústeres de conmutación por error](create-failover-cluster.md#install-the-failover-clustering-feature).
@@ -101,9 +99,9 @@ Debe instalar las Herramientas de clústeres de conmutación por error como se i
 ### <a name="enabling-self-updating-mode"></a>Habilitación del modo de auto-actualización
 Para habilitar el modo de auto-actualización, debe agregar el rol en clúster de actualización compatible con clústeres al clúster de conmutación por error. Para ello, use uno de los métodos siguientes:
 - En Administrador del servidor, seleccione **herramientas**  >  **actualización compatible con clústeres**y, a continuación, en la ventana actualización compatible con clústeres, seleccione **configurar opciones de auto-actualización de clústeres**.
-- En una sesión de PowerShell, ejecute el cmdlet [Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps) .
+- En una sesión de PowerShell, ejecute el cmdlet [Add-CauClusterRole](/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps) .
 
-Para desinstalar la CAU, desinstale la característica de clúster de conmutación por error o las herramientas de clúster de conmutación por error mediante Administrador del servidor, el cmdlet [Uninstall-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) o las herramientas de línea de comandos de DISM \- .
+Para desinstalar la CAU, desinstale la característica de clúster de conmutación por error o las herramientas de clúster de conmutación por error mediante Administrador del servidor, el cmdlet [Uninstall-WindowsFeature](/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) o las herramientas de línea de comandos de DISM \- .
 
 ### <a name="additional-requirements-and-best-practices"></a>Otros requisitos y procedimientos recomendados
 
@@ -134,8 +132,6 @@ Los vínculos siguientes proporcionan más información acerca del uso de la act
 
 -   [Cómo funcionan los complementos de CAU \-](cluster-aware-updating-plug-ins.md)
 
--   [\-Cmdlets de actualización compatible con clústeres en Windows PowerShell](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
+-   [\-Cmdlets de actualización compatible con clústeres en Windows PowerShell](/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
 
 -   [\-Referencia del complemento de actualización compatible con clústeres \-](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
-
-

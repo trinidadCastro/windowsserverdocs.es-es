@@ -6,20 +6,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 10/18/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 8c478e31c3a86203f6c5f249185659caf9881723
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 1090c5c79ad0f4b4cf2fa27bf735604ad334b90e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963477"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956382"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>Tutorial: unirse al área de trabajo con un dispositivo iOS
 
 
-> [!IMPORTANT] 
-> Este método solo es relevante para los clientes locales completos. Los clientes híbridos o solo en la nube no deben usar este método para registrar sus dispositivos iOS. Y este método no es compatible cuando los clientes locales deciden pasar a la nube. Se debe anular el registro del dispositivo y registrarlo en la nube. 
+> [!IMPORTANT]
+> Este método solo es relevante para los clientes locales completos. Los clientes híbridos o solo en la nube no deben usar este método para registrar sus dispositivos iOS. Y este método no es compatible cuando los clientes locales deciden pasar a la nube. Se debe anular el registro del dispositivo y registrarlo en la nube.
 
 En este tema se muestra cómo unirse a un área de trabajo en un dispositivo iOS. Debe completar los pasos de la sección [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md) para poder probar este tutorial. Puede usar el dispositivo para tener acceso a la misma aplicación Web de la compañía a la que tuvo acceso en [Walkthrough: Workplace join con un dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md).
 
@@ -28,7 +26,7 @@ En este tema se muestra cómo unirse a un área de trabajo en un dispositivo iOS
 
 > [!IMPORTANT]
 > Cuando se configura el DRS local, el dispositivo iOS tiene que confiar en el certificado de Capa de sockets seguros (SSL) que se usó para configurar los Servicios de federación de Active Directory (AD FS) en [Step 2: Configure the federation server (ADFS1) with Device Registration Service](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)para que la unión al área de trabajo se realice correctamente.
-> 
+>
 > -   Si el certificado SSL de AD FS lo emitió una entidad de certificación (CA) de prueba, debes instalar el certificado de la entidad de certificación en tu dispositivo iOS.
 > -   Si el certificado de la entidad de certificación está publicado en un sitio web, puedes ir al sitio web desde el dispositivo iOS e instalar el certificado.
 

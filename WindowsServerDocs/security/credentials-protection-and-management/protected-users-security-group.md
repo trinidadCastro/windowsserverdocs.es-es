@@ -1,20 +1,18 @@
 ---
 title: Grupo de seguridad de usuarios protegidos
 description: Seguridad de Windows Server
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f296
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: cd849486e441c8315daa95db351bcd214b929759
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 450279f5af907e4643f8ee8c1ea0ff36edd9aea5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518011"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948698"
 ---
 # <a name="protected-users-security-group"></a>Grupo de seguridad de usuarios protegidos
 
@@ -63,10 +61,10 @@ En la siguiente tabla se especifican las propiedades del grupo de usuarios prote
 |SID/RID conocido|S-1-5-21-<domain>-525|
 |Tipo|Global de dominio|
 |Contenedor predeterminado|CN=Usuarios, DC=<domain>, DC=|
-|Miembros predeterminados|None|
-|Miembro predeterminado de|None|
+|Miembros predeterminados|Ninguno|
+|Miembro predeterminado de|Ninguno|
 |¿Protegido por ADMINSDHOLDER?|No|
-|¿Es seguro sacarlo del contenedor predeterminado?|Yes|
+|¿Es seguro sacarlo del contenedor predeterminado?|Sí|
 |¿Es seguro delegar la administración de este grupo en administradores que no son de servicio?|No|
 |Derechos de usuario predeterminados|No hay derechos de usuario predeterminados|
 
@@ -113,7 +111,7 @@ Para obtener más información, consulta [Configurar cuentas protegidas](https:/
 ## <a name="troubleshooting"></a>Solución de problemas
 Existen dos registros administrativos funcionales que son de ayuda a la hora de resolver problemas de eventos relacionados con el grupo de usuarios protegidos. Estos nuevos registros se encuentran en Visor de eventos y están deshabilitados de forma predeterminada y se encuentran en **aplicaciones y servicios Logs\Microsoft\Windows\Authentication**.
 
-|Identificador de evento y registro|Description|
+|Identificador de evento y registro|Descripción|
 |----------|--------|
 |104<p>**ProtectedUser-Client**|Motivo: el paquete de seguridad del cliente no contiene las credenciales.<p>El error se registra en el equipo cliente cuando la cuenta es miembro del grupo de seguridad de usuarios protegidos. Este evento pone de manifiesto que el paquete de seguridad no almacena en caché las credenciales necesarias para autenticarse en el servidor.<p>Incluye el nombre del paquete, el nombre de usuario, el nombre del dominio y el nombre del servidor.|
 |304<p>**ProtectedUser-Client**|Motivo: el paquete de seguridad no almacena las credenciales del usuario protegido.<p>Se registra un evento informativo en el cliente para indicar que el paquete de seguridad no almacena en caché las credenciales de inicio de sesión del usuario. Se espera que la autenticación implícita (WDigest), la delegación de credenciales (CredSSP) y NTLM no puedan tener credenciales para los usuarios protegidos. Las aplicaciones se pueden autenticar correctamente si solicitan credenciales.<p>Incluye el nombre del paquete, el nombre de usuario y el nombre del dominio.|

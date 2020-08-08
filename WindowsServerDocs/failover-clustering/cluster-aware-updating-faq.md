@@ -2,18 +2,17 @@
 ms.assetid: 6416d125-bcaf-433d-971a-2f0283bca2c2
 title: 'Actualización compatible con clústeres: preguntas más frecuentes'
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: Respuestas a las preguntas más frecuentes sobre la actualización compatible con clústeres en Windows Server.
-ms.openlocfilehash: aa2f99378713d93bafed710b96542559ac44ead7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0283f7f29ccc647508530d6cfdbf54b41086b90c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473342"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990905"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>Actualización compatible con clústeres: Preguntas más frecuentes
 
@@ -101,7 +100,7 @@ Sí. La CAU ofrece las siguientes dimensiones de flexibilidad para ajustarse a l
 
 **Opciones de ejecución de actualización avanzadas** Además, el administrador puede especificar desde un gran conjunto de opciones de ejecución de actualización avanzadas como el número máximo de veces que se vuelve a intentar el proceso de actualización en cada nodo. Estas opciones pueden especificarse mediante la interfaz de usuario de CAU o los cmdlets de PowerShell de CAU. Esta configuración personalizada se puede guardar en un perfil de ejecución de actualización y se puede volver a usar más adelante para las Ejecuciones de actualización.
 
-La ** \- arquitectura de complementos públicos** Cau incluye características para registrar, anular el registro y seleccionar complementos \- . la Cau se distribuye con dos complementos predeterminados \- : uno coordina las \( \) API de Windows Update de WUA de agente en cada nodo de clúster; el segundo aplica revisiones que se copian manualmente en un recurso compartido de archivos al que pueden acceder los nodos del clúster. Si una empresa tiene necesidades únicas que no se pueden cumplir con estos dos complementos \- , la empresa puede crear un nuevo complemento \- de Cau de acuerdo con la especificación de la API pública. Para obtener más información, [vea \- Referencia del complemento \- de actualización compatible con clústeres](https://msdn.microsoft.com/library/hh418084(VS.85).aspx).
+La ** \- arquitectura de complementos públicos** Cau incluye características para registrar, anular el registro y seleccionar complementos \- . la Cau se distribuye con dos complementos predeterminados \- : uno coordina las \( \) API de Windows Update de WUA de agente en cada nodo de clúster; el segundo aplica revisiones que se copian manualmente en un recurso compartido de archivos al que pueden acceder los nodos del clúster. Si una empresa tiene necesidades únicas que no se pueden cumplir con estos dos complementos \- , la empresa puede crear un nuevo complemento \- de Cau de acuerdo con la especificación de la API pública. Para obtener más información, [vea \- Referencia del complemento \- de actualización compatible con clústeres](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes).
 
 Para obtener información sobre la configuración y personalización de los complementos \- de Cau para admitir diferentes escenarios de actualización, vea [cómo \- funcionan](assetId:///847b571b-12b3-473c-953f-75a5a1f51333)los complementos.
 
@@ -154,11 +153,10 @@ Sí. La CAU admite una cantidad de opciones de ejecución de actualización que 
 
 ## <a name="where-is-the-cau-plug-in-specification"></a>¿Dónde está la \- especificación de complemento de Cau?
 
--   [\-Referencia del complemento de actualización compatible con clústeres \-](https://msdn.microsoft.com/library/hh418084(VS.85).aspx)
+-   [\-Referencia del complemento de actualización compatible con clústeres \-](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
 
 -   [Ejemplo de complemento de actualización compatible con clústeres \-](https://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 -   [\-Información general sobre la actualización compatible con clústeres](cluster-aware-updating.md)
-

@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: a7ef7eb2acf9a641babf5690119c61f452aaabbc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 76b171b81ff01a7a16b700d720bf289fefddf0f7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937624"
+ms.locfileid: "87990206"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Solución de problemas de Windows Admin Center
 
@@ -69,7 +69,7 @@ Esto puede ocurrir si se ha modificado o quitado la ruta de acceso predeterminad
 
 * [Comprobar la versión de Windows](#check-the-windows-version)
 * ¿Ha agregado una regla de puerto de entrada para HTTPS?
-* [Más información sobre la instalación del centro de administración de Windows en una máquina virtual de Azure](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
+* [Más información sobre la instalación del centro de administración de Windows en una máquina virtual de Azure](../azure/azure-integration.md)
 
 ### <a name="check-the-windows-version"></a>Comprobar la versión de Windows
 
@@ -237,4 +237,3 @@ Incluya los errores o advertencias que encuentre en el registro de eventos, así
 * [Versión](#check-the-windows-version) de Windows de la máquina que está **intentando administrar**:
 * ¿Qué explorador utiliza?
     * Si usa Google Chrome, ¿cuál es la versión? (Ayuda > sobre Google Chrome)
-

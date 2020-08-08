@@ -5,13 +5,12 @@ ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: c4c74fc5fef01c21d5c1818c212c004786caca66
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 5e8618853e28c6deef4a15e84361e339c70bf052
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182221"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940339"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>Configuración del Servicio web de inscripción de certificados para la renovación basada en claves de certificados en un puerto personalizado
 
@@ -47,7 +46,7 @@ En este ejemplo, las instrucciones se basan en un entorno que utiliza la configu
 
 ## <a name="configuration-instructions"></a>Instrucciones de configuración
 
-### <a name="overview"></a>Información general
+### <a name="overview"></a>Introducción
 
 1. Configure la plantilla para la renovación basada en claves.
 
@@ -280,13 +279,13 @@ Abra el almacén de certificados personal del equipo y agregue la vista "certifi
 
 ### <a name="method-1"></a>Método 1
 
-Ejecute el siguiente comando:
+Ejecute el comando siguiente:
 
 ```PowerShell
 certreq -machine -q -enroll -cert <thumbprint> renew
 ```
 
-![.](media/certificate-enrollment-certificate-key-based-renewal-14.png)
+![command](media/certificate-enrollment-certificate-key-based-renewal-14.png)
 
 ### <a name="method-2"></a>Método 2
 
@@ -296,7 +295,7 @@ Por ejemplo, la plantilla de certificado tiene una configuración de validez de 
 
 Por lo tanto, si avanza el tiempo hasta 8:10 P.M. el 19 desde que nuestra ventana de renovación se estableció en 8 horas en la plantilla, la ejecución de certutil-Pulse (para desencadenar el motor de AE) inscribe el certificado automáticamente.
 
-![.](media/certificate-enrollment-certificate-key-based-renewal-15.png)
+![command](media/certificate-enrollment-certificate-key-based-renewal-15.png)
 
 Una vez finalizada la prueba, revierta la configuración de tiempo al valor original y, a continuación, reinicie el equipo cliente.
 

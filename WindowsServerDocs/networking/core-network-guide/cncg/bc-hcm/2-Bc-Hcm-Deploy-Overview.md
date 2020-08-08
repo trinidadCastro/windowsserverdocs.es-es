@@ -2,18 +2,16 @@
 title: Información general de implementación de modo de caché hospedada de BranchCache
 description: En esta guía se proporcionan instrucciones sobre cómo implementar BranchCache en modo caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 55686a9c-60dd-47f4-9f1f-fe72c2873a44
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2ac8dc289cf321266d39016f841c243899fe6cf4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 011c0e2f30dad914cc9fde4b2f81fdea2899bf11
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319059"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956042"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>Información general de implementación de modo de caché hospedada de BranchCache
 
@@ -25,7 +23,7 @@ En esta información general se incluye la infraestructura de BranchCache que ne
 
 ## <a name="hosted-cache-server-deployment-infrastructure"></a><a name="bkmk_components"></a>Infraestructura de implementación de servidor de caché hospedada
 
-En esta implementación, el servidor de caché hospedada se implementa mediante puntos de conexión de servicio en Active Directory Domain Services \(AD DS\)y tiene la opción con BranchCache en Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012, para prehacer previamente el contenido compartido en servidores web y de contenido basado en archivos y, a continuación, cargar previamente el contenido en servidores de caché hospedada.
+En esta implementación, el servidor de caché hospedada se implementa mediante puntos de conexión de servicio en Active Directory Domain Services \( AD DS \) y tiene la opción con BranchCache en windows Server 2016, windows Server 2012 R2 y windows Server 2012, para aplicar previamente el algoritmo hash al contenido compartido en servidores web y de contenido basado en archivos y, a continuación, cargar previamente el contenido en servidores de caché hospedada.
 
 En la ilustración siguiente se muestra la infraestructura necesaria para implementar un servidor de caché hospedada de BranchCache.
 
@@ -40,12 +38,12 @@ Debe configurar este equipo como un servidor de caché hospedada. Si opta por pr
 
 ### <a name="web1-in-the-cloud-data-center"></a>WEB1 en el centro de datos en la nube
 
-WEB1 es un servidor de contenido habilitado para BranchCache\-. Si opta por prehacer hash de los datos del servidor de contenido para que pueda cargar previamente el contenido en los servidores de caché hospedada, puede aplicar un algoritmo hash al contenido compartido en WEB1 y luego crear un paquete de datos que copie en HCS1.
+WEB1 es un \- servidor de contenido habilitado para BranchCache. Si opta por prehacer hash de los datos del servidor de contenido para que pueda cargar previamente el contenido en los servidores de caché hospedada, puede aplicar un algoritmo hash al contenido compartido en WEB1 y luego crear un paquete de datos que copie en HCS1.
 
 ### <a name="file1-in-the-cloud-data-center"></a>ARCHIVO1 en el centro de datos en la nube
 
-ARCHIVO1 es un servidor de contenido habilitado para BranchCache\-. Si opta por prehacer hash de los datos del servidor de contenido para que pueda cargar previamente el contenido en los servidores de caché hospedada, puede aplicar un algoritmo hash al contenido compartido en ARCHIVO1 y, a continuación, crear un paquete de datos que copie en HCS1.
-  
+ARCHIVO1 es un \- servidor de contenido habilitado para BranchCache. Si opta por prehacer hash de los datos del servidor de contenido para que pueda cargar previamente el contenido en los servidores de caché hospedada, puede aplicar un algoritmo hash al contenido compartido en ARCHIVO1 y, a continuación, crear un paquete de datos que copie en HCS1.
+
 ### <a name="dc1-in-the-main-office"></a>DC1 en la oficina central
 
 DC1 es un controlador de dominio y debe configurar la Directiva de dominio predeterminada, u otra directiva más adecuada para su implementación, con la configuración de BranchCache directiva de grupo para habilitar la detección automática de caché hospedada por punto de conexión de servicio.
@@ -68,12 +66,12 @@ El proceso de implementación de un servidor de caché hospedada de BranchCache 
 
 1. En HCS1, use los comandos de Windows PowerShell para configurar el equipo como un servidor de caché hospedada y para registrar un punto de conexión de servicio en Active Directory.
 
-2. \(\) opcional en HCS1, si los valores predeterminados de BranchCache no coinciden con los objetivos de implementación para el servidor y la caché hospedada, configure la cantidad de espacio en disco que desea asignar a la caché hospedada. Configure también la ubicación del disco que prefiera para la caché hospedada.
+2. \(Opcional \) en HCS1, si los valores predeterminados de BranchCache no coinciden con los objetivos de implementación para el servidor y la caché hospedada, configure la cantidad de espacio en disco que desea asignar a la caché hospedada. Configure también la ubicación del disco que prefiera para la caché hospedada.
 
-3. \(contenido de hash de\) opcional en los servidores de contenido, cree paquetes de datos y cargue previamente el contenido en el servidor de caché hospedada.
+3. \(\)Contenido hash opcional en los servidores de contenido, cree paquetes de datos y cargue previamente el contenido en el servidor de caché hospedada.
 
     > [!NOTE]
-    > El hash y la carga previa del contenido en el servidor de caché hospedada es opcional; sin embargo, si elige el prehash y la precarga, debe realizar todos los pasos siguientes que se aplican a la implementación. \(por ejemplo, si no tiene servidores Web, no es necesario realizar ninguno de los pasos relacionados con el hash y la carga previa del contenido del servidor Web.\)
+    > El hash y la carga previa del contenido en el servidor de caché hospedada es opcional; sin embargo, si elige el prehash y la precarga, debe realizar todos los pasos siguientes que se aplican a la implementación. \(Por ejemplo, si no tiene servidores Web, no es necesario realizar ninguno de los pasos relacionados con el hash y la carga previa del contenido del servidor Web.\)
 
     1. En WEB1, aplica un algoritmo hash al contenido del servidor Web y crea un paquete de datos.
 

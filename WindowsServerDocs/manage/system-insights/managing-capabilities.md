@@ -1,19 +1,17 @@
 ---
 title: Administración de funcionalidades
 description: System Insights expone una variedad de opciones de configuración que se pueden configurar para cada capacidad, y estas opciones se pueden optimizar para satisfacer las necesidades específicas de la implementación. En este tema se describe cómo administrar las distintas opciones de configuración de cada funcionalidad a través del centro de administración de Windows o PowerShell, y se proporcionan ejemplos básicos de PowerShell y capturas de pantallas del centro de administración de Windows para mostrar cómo ajustar esta configuración.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 66745440094ccf55b774727320d59074139a7f33
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e82b27d2d746592b29b86a66ee34b21f8605a0d8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471787"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940166"
 ---
 # <a name="managing-capabilities"></a>Administración de funcionalidades
 
@@ -85,7 +83,7 @@ System Insights registra un evento cada vez que una funcionalidad finaliza una p
 | Advertencia | 148 |
 | Crítico | 150 |
 | Error | 149 |
-| None | 132 |
+| Ninguno | 132 |
 
 >[!TIP]
 >Use [Azure monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807) para agregar estos eventos y ver los resultados de predicción en un grupo de máquinas.

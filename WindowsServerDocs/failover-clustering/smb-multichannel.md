@@ -1,18 +1,16 @@
 ---
 ms.assetid: a6343f1c-e9dd-4a02-91ad-39bd519d66cd
 title: SMB multicanal simplificada y redes de clústeres de varias NIC
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.topic: article
 author: RobHindman
 ms.author: robhind
 ms.date: 09/15/2016
-ms.openlocfilehash: f345cd877f1c611683c2ffdef56b9b58cc070e49
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7fad43cb5f3de5c10ed815fa802b6168c15850d1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473062"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990746"
 ---
 # <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a>SMB multicanal simplificada y redes de clústeres de varias NIC
 
@@ -58,7 +56,7 @@ Cuando se usa más de una red privada (solo en clúster), Compruebe la configura
  **figura 4: configuración de recursos de dirección locales de vínculo IPv6 (fe80)**
 
 ## <a name="throughput-and-fault-tolerance"></a>Rendimiento y tolerancia a errores
-Windows Server 2019 y Windows Server 2016 detectan automáticamente las funciones de NIC e intentarán usar cada NIC en la configuración más rápida posible. Se pueden usar todas las NIC que se han agrupado, las NIC con RSS y las NIC con capacidad RDMA. En la tabla siguiente se resumen las ventajas e inconvenientes al usar estas tecnologías. El rendimiento máximo se consigue al usar varias NIC compatibles con RDMA. Para obtener más información, consulte [los conceptos básicos de SMB Mutlichannel](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/).
+Windows Server 2019 y Windows Server 2016 detectan automáticamente las funciones de NIC e intentarán usar cada NIC en la configuración más rápida posible. Se pueden usar todas las NIC que se han agrupado, las NIC con RSS y las NIC con capacidad RDMA. En la tabla siguiente se resumen las ventajas e inconvenientes al usar estas tecnologías. El rendimiento máximo se consigue al usar varias NIC compatibles con RDMA. Para obtener más información, consulte [los conceptos básicos de SMB Mutlichannel](/archive/blogs/josebda/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0).
 
 ![Una ilustración del rendimiento y la tolerancia a errores para varias configuraciones de NIC ](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig5.png)
  **figura 5: rendimiento y tolerancia a errores para varias CONIFIGURATIONS de NIC**

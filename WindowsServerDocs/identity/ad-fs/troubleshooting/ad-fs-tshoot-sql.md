@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/12/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 052a804a61701855fbdf6b6e373314d35b474cf9
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2fb32d5b553b4d248c718fac766a83daa5dfedb2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517600"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964822"
 ---
 # <a name="ad-fs-troubleshooting---sql-connectivity"></a>Solución de problemas de AD FS-conectividad de SQL
 AD FS proporciona la capacidad de usar SQL Server remotos para los datos de la granja de AD FS.  Verá problemas si los servidores de AD FS de la granja no pueden comunicarse con los servidores SQL Server de back-end.  En el siguiente documento se proporcionarán algunos pasos básicos para probar la comunicación con los servidores back-end.
@@ -54,6 +52,6 @@ También puede [Descargar](https://go.microsoft.com/fwlink/?linkid=864329) e ins
 1. Debería ver el lado izquierdo rellenado.  Expanda bases de datos y compruebe que ve las bases de datos de AD FS.
 ![Bases de datos de AD FS](media/ad-fs-tshoot-sql/sql7.png)
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

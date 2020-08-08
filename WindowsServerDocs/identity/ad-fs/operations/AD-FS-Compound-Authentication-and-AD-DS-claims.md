@@ -6,29 +6,27 @@ ms.author: billmath
 manager: femila
 ms.date: 09/07/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: e02ce6400bc9905814e6ad7dcf02614c0dff5e46
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c0e2681498fdc86782bf418bfc90446bab0e0170
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965177"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940390"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>Autenticación compuesta y notificaciones de AD DS en AD FS
-Windows Server 2012 mejora la autenticación Kerberos mediante la introducción de la autenticación compuesta.  La autenticación compuesta permite a una solicitud del servicio de concesión de vales (TGS) de Kerberos incluir dos identidades: 
+Windows Server 2012 mejora la autenticación Kerberos mediante la introducción de la autenticación compuesta.  La autenticación compuesta permite a una solicitud del servicio de concesión de vales (TGS) de Kerberos incluir dos identidades:
 
 - la identidad del usuario
-- identidad del dispositivo del usuario.  
+- identidad del dispositivo del usuario.
 
-Windows consigue la autenticación compuesta mediante la extensión de la protección de Kerberos de [Autenticación flexible (Fast) o la protección de Kerberos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11)). 
+Windows consigue la autenticación compuesta mediante la extensión de la protección de Kerberos de [Autenticación flexible (Fast) o la protección de Kerberos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11)).
 
 AD FS 2012 y las versiones posteriores permiten el consumo de AD DS notificaciones de usuario o de dispositivo emitidas que residen en un vale de autenticación Kerberos. En versiones anteriores de AD FS, el motor de notificaciones solo podía leer los identificadores de seguridad (SID) de usuarios y grupos de Kerberos, pero no podía leer ninguna información de notificaciones contenida dentro de un vale de Kerberos.
 
 Puede habilitar el control de acceso más completo para aplicaciones federadas mediante el uso conjunto de Active Directory Domain Services (AD DS) y notificaciones de dispositivo, con Servicios de federación de Active Directory (AD FS) (AD FS).
 
 ## <a name="requirements"></a>Requisitos
-1.  Los equipos que tienen acceso a las aplicaciones federadas deben autenticarse en AD FS mediante la **autenticación integrada de Windows**. 
+1.  Los equipos que tienen acceso a las aplicaciones federadas deben autenticarse en AD FS mediante la **autenticación integrada de Windows**.
     - La autenticación integrada de Windows solo está disponible cuando se conecta a los servidores back-end AD FS.
     - Los equipos deben poder tener acceso a los servidores de AD FS de back-end para Servicio de federación nombre
     - Los servidores AD FS deben ofrecer la autenticación integrada de Windows como método de autenticación principal en la configuración de la intranet.
@@ -38,7 +36,7 @@ Puede habilitar el control de acceso más completo para aplicaciones federadas m
 3.  El dominio que aloja los servidores de AD FS debe tener la configuración **de Directiva compatibilidad con KDC para autenticación compuesta de notificaciones y protección de Kerberos** aplicada a los controladores de dominio.
 
 ## <a name="steps-for-configuring-ad-fs-in-windows-server-2012-r2"></a>Pasos para configurar AD FS en Windows Server 2012 R2
-Siga estos pasos para configurar la autenticación compuesta y las notificaciones 
+Siga estos pasos para configurar la autenticación compuesta y las notificaciones
 
 ### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>Paso 1: habilitar la compatibilidad con KDC para notificaciones, autenticación compuesta y protección de Kerberos en la directiva predeterminada de controladores de dominio
 1.  En Administrador del servidor, seleccione Herramientas, **Administración de directiva de grupo**.
@@ -62,7 +60,7 @@ Siga estos pasos para configurar la autenticación compuesta y las notificacione
 ### <a name="step-3-ensure-the-ad-fs-servers-have-been-updated"></a>Paso 3: Asegúrese de que se han actualizado los servidores de AD FS.
 Debe asegurarse de que las siguientes actualizaciones estén instaladas en los servidores de AD FS.
 
-|Actualización|Descripción|
+|Actualizar|Descripción|
 |----- | ----- |
 |[KB2919355](https://www.microsoft.com/download/details.aspx?id=42335)|Actualización de seguridad acumulativa (incluye KB2919355, KB2932046, KB2934018, KB2937592, KB2938439)|
 |[KB2959977](https://www.microsoft.com/download/details.aspx?id=42530)|Actualización para Server 2012 R2|
@@ -90,17 +88,17 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 1. Agregue la siguiente descripción de la declaración a la granja. Esta descripción de notificaciones no está presente de forma predeterminada en ADFS 2012 R2 y debe agregarse manualmente.
 2. En administración de AD FS, en **servicio**, haga clic con el botón derecho en Descripción de la **reclamación** y seleccione **Agregar Descripción** de la reclamación.
 3. Escriba la siguiente información en la descripción de la demanda.
-   - Nombre para mostrar: ' grupo de dispositivos de Windows ' 
+   - Nombre para mostrar: ' grupo de dispositivos de Windows '
    - Descripción de la demanda: ' <https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup> ' '
 4. Active ambas casillas.
-5. Haga clic en **OK**.
+5. Haga clic en **Aceptar**.
 
 ![Descripción de la demanda](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc6.png)
 
 6. Con PowerShell puede usar el cmdlet **Add-AdfsClaimDescription** .
    ``` powershell
    Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
-   -ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
+   -ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device'
    ```
 
 
@@ -110,20 +108,21 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 
 ### <a name="step-6--enable-the-compound-authentication-bit-on-the-msds-supportedencryptiontypes-attribute"></a>Paso 6: habilitación del bit de autenticación compuesta en el atributo msDS-SupportedEncryptionTypes
 
-1.  Habilite el bit de autenticación compuesta en el atributo msDS-SupportedEncryptionTypes de la cuenta que designó para ejecutar el servicio de AD FS mediante el cmdlet **de PowerShell Set-ADServiceAccount** .  
+1.  Habilite el bit de autenticación compuesta en el atributo msDS-SupportedEncryptionTypes de la cuenta que designó para ejecutar el servicio de AD FS mediante el cmdlet **de PowerShell Set-ADServiceAccount** .
 
 >[!NOTE]
 >Si cambia la cuenta de servicio, debe habilitar manualmente la autenticación compuesta mediante la ejecución de los cmdlets de Windows PowerShell **set-ADUser-compoundIdentitySupported: $true** .
 
 ``` powershell
-Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
+Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true
 ```
 2. Reinicie el servicio ADFS.
 
 >[!NOTE]
 >Una vez que ' CompoundIdentitySupported ' está establecido en true, se produce el siguiente error en la instalación del mismo gMSA en los servidores nuevos (2012R2/2016) con el siguiente error: **install-ADServiceAccount: no se puede instalar la cuenta de servicio. Mensaje de error: "el contexto proporcionado no coincidía con el destino."**.
 >
->**Solución**: establezca temporalmente CompoundIdentitySupported en $false. Este paso hace que ADFS detenga la emisión de notificaciones de WindowsDeviceGroup. Set-ADServiceAccount-Identity ' cuenta del servicio ADFS '-CompoundIdentitySupported: $false Instale el gMSA en el nuevo servidor y, a continuación, habilite CompoundIdentitySupported en $True.
+>**Solución**: establezca temporalmente CompoundIdentitySupported en $false. Este paso hace que ADFS detenga la emisión de notificaciones de WindowsDeviceGroup.
+Set-ADServiceAccount-Identity ' cuenta del servicio ADFS '-CompoundIdentitySupported: $false Instale el gMSA en el nuevo servidor y, a continuación, habilite CompoundIdentitySupported en $True.
 Deshabilitar CompoundIdentitySupported y, a continuación, volver a habilitar no necesita reiniciar el servicio AD FS.
 
 ### <a name="step-7-update-the-ad-fs-claims-provider-trust-for-active-directory"></a>Paso 7: actualizar la AD FS confianza del proveedor de notificaciones para Active Directory
@@ -133,7 +132,7 @@ Deshabilitar CompoundIdentitySupported y, a continuación, volver a habilitar no
 3.  En **editar reglas de notificaciones para el director activo** , haga clic en **Agregar regla**.
 4.  En el **Asistente para agregar regla de notificaciones de transformación** , seleccione **pasar a través o filtrar una notificaciones entrantes** y haga clic en **siguiente**.
 5.  Agregue un nombre para mostrar y seleccione **grupo de dispositivos de Windows** en la lista desplegable tipo de **notificaciones entrantes** .
-6.  Haga clic en **Finalizar**  Haga clic en **aplicar** y en **Aceptar**. 
+6.  Haga clic en **Finalizar**  Haga clic en **aplicar** y en **Aceptar**.
 ![Descripción de la demanda](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
 
 ### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>Paso 8: en el usuario de confianza en el que se esperan las notificaciones ' WindowsDeviceGroup ', agregue una regla de notificación similar de ' paso a través ' o ' transformación '.
@@ -181,20 +180,21 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 
 ### <a name="step-4--enable-the-compound-authentication-bit-on-the-msds-supportedencryptiontypes-attribute"></a>Paso 4: habilitación del bit de autenticación compuesta en el atributo msDS-SupportedEncryptionTypes
 
-1.  Habilite el bit de autenticación compuesta en el atributo msDS-SupportedEncryptionTypes de la cuenta que designó para ejecutar el servicio de AD FS mediante el cmdlet **de PowerShell Set-ADServiceAccount** .  
+1.  Habilite el bit de autenticación compuesta en el atributo msDS-SupportedEncryptionTypes de la cuenta que designó para ejecutar el servicio de AD FS mediante el cmdlet **de PowerShell Set-ADServiceAccount** .
 
 >[!NOTE]
 >Si cambia la cuenta de servicio, debe habilitar manualmente la autenticación compuesta mediante la ejecución de los cmdlets de Windows PowerShell **set-ADUser-compoundIdentitySupported: $true** .
 
 ``` powershell
-Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
+Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true
 ```
 2. Reinicie el servicio ADFS.
 
 >[!NOTE]
 >Una vez que ' CompoundIdentitySupported ' está establecido en true, se produce el siguiente error en la instalación del mismo gMSA en los servidores nuevos (2012R2/2016) con el siguiente error: **install-ADServiceAccount: no se puede instalar la cuenta de servicio. Mensaje de error: "el contexto proporcionado no coincidía con el destino."**.
 >
->**Solución**: establezca temporalmente CompoundIdentitySupported en $false. Este paso hace que ADFS detenga la emisión de notificaciones de WindowsDeviceGroup. Set-ADServiceAccount-Identity ' cuenta del servicio ADFS '-CompoundIdentitySupported: $false Instale el gMSA en el nuevo servidor y, a continuación, habilite CompoundIdentitySupported en $True.
+>**Solución**: establezca temporalmente CompoundIdentitySupported en $false. Este paso hace que ADFS detenga la emisión de notificaciones de WindowsDeviceGroup.
+Set-ADServiceAccount-Identity ' cuenta del servicio ADFS '-CompoundIdentitySupported: $false Instale el gMSA en el nuevo servidor y, a continuación, habilite CompoundIdentitySupported en $True.
 Deshabilitar CompoundIdentitySupported y, a continuación, volver a habilitar no necesita reiniciar el servicio AD FS.
 
 ### <a name="step-5-update-the-ad-fs-claims-provider-trust-for-active-directory"></a>Paso 5: actualización de la confianza del proveedor de notificaciones de AD FS para Active Directory
@@ -204,7 +204,7 @@ Deshabilitar CompoundIdentitySupported y, a continuación, volver a habilitar no
 3.  En **editar reglas de notificaciones para el director activo** , haga clic en **Agregar regla**.
 4.  En el **Asistente para agregar regla de notificaciones de transformación** , seleccione **pasar a través o filtrar una notificaciones entrantes** y haga clic en **siguiente**.
 5.  Agregue un nombre para mostrar y seleccione **grupo de dispositivos de Windows** en la lista desplegable tipo de **notificaciones entrantes** .
-6.  Haga clic en **Finalizar**  Haga clic en **aplicar** y en **Aceptar**. 
+6.  Haga clic en **Finalizar**  Haga clic en **aplicar** y en **Aceptar**.
 
 
 ### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>Paso 6: en el usuario de confianza en el que se esperan las notificaciones ' WindowsDeviceGroup ', agregue una regla de notificación similar de ' paso a través ' o ' transformación '.

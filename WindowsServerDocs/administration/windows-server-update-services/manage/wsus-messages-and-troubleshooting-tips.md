@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ce07e38a3a8a07f97959e782fd22c1d5472d338
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cf3d0337dfa7360bdf8304c587c4ea31b7607e27
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896772"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990959"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>Sugerencias para solucionar problemas y mensajes WSUS
 
@@ -69,7 +69,7 @@ Para resolver este problema, conceda permisos de administrador del sistema a una
 
 ## <a name="some-services-are-not-running-check-the-following-services"></a>Algunos servicios no se están ejecutando. Compruebe los servicios siguientes:
 
-- **Selfupdate:** Consulte [actualizaciones automáticas se debe actualizar](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx) para obtener información acerca de la solución de problemas del servicio selfupdate.
+- **Selfupdate:** Consulte [actualizaciones automáticas se debe actualizar](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708554(v=ws.10)) para obtener información acerca de la solución de problemas del servicio selfupdate.
 
 - **WSSUService.exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceda a WSUSService.exe haciendo clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque **Windows Server Update Service** en la lista de servicios. Haga lo siguiente:
 

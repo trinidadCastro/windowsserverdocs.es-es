@@ -5,12 +5,12 @@ ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 21008268f14435852c7de78ce826bc380f9017a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d0d9f149a95c00fdac02cbdd383fb950e56b845a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955822"
+ms.locfileid: "87990047"
 ---
 # <a name="virtual-network-peering"></a>Emparejamiento de redes virtuales de Azure
 
@@ -57,7 +57,7 @@ Después de emparejar las redes virtuales, los recursos de cualquiera de las red
 
 -   Las máquinas virtuales de una red virtual pueden acceder al equilibrador de carga interno de la red virtual emparejada.
 
-Si lo desea, puede aplicar listas de control de acceso (ACL) en cualquier red virtual para bloquear el acceso a otras redes virtuales o subredes. Si abre la conectividad completa entre las redes virtuales emparejadas (que es la opción predeterminada), puede aplicar ACL a subredes o máquinas virtuales concretas para bloquear o denegar el acceso específico. Para obtener más información acerca de las ACL, consulte [uso de listas de Access Control (ACL) para administrar el flujo de tráfico de red del centro de](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)información.
+Si lo desea, puede aplicar listas de control de acceso (ACL) en cualquier red virtual para bloquear el acceso a otras redes virtuales o subredes. Si abre la conectividad completa entre las redes virtuales emparejadas (que es la opción predeterminada), puede aplicar ACL a subredes o máquinas virtuales concretas para bloquear o denegar el acceso específico. Para obtener más información acerca de las ACL, consulte [uso de listas de Access Control (ACL) para administrar el flujo de tráfico de red del centro de](../manage/use-acls-for-traffic-flow.md)información.
 
 ## <a name="service-chaining"></a>Encadenamiento de servicios
 
@@ -65,7 +65,7 @@ Puede configurar rutas definidas por el usuario que apunten a máquinas virtuale
 
 Puede implementar redes de concentrador y radio, donde la red virtual de concentrador puede hospedar componentes de infraestructura, como una aplicación virtual de red. Todas las redes virtuales de radios del mismo nivel que la red virtual del concentrador. El tráfico puede fluir a través de aplicaciones virtuales de red en la red virtual del concentrador.
 
-El emparejamiento de redes virtuales permite que el próximo salto en una ruta definida por el usuario sea la dirección IP de una máquina virtual en la red virtual emparejada. Para obtener más información sobre las rutas definidas por el usuario, consulte [uso de aplicaciones virtuales de red en un Virtual Network](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-network-virtual-appliances-on-a-vn).
+El emparejamiento de redes virtuales permite que el próximo salto en una ruta definida por el usuario sea la dirección IP de una máquina virtual en la red virtual emparejada. Para obtener más información sobre las rutas definidas por el usuario, consulte [uso de aplicaciones virtuales de red en un Virtual Network](../manage/use-network-virtual-appliances-on-a-vn.md).
 
 ## <a name="gateways-and-on-premises-connectivity"></a>Puertas de enlace y conectividad local
 
@@ -87,4 +87,3 @@ Puede supervisar el estado de la conexión de emparejamiento, que puede estar en
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Configurar el emparejamiento de redes virtuales](sdn-configure-vnet-peering.md): en este procedimiento, se usa Windows PowerShell para buscar la red lógica del proveedor de HNV para crear dos redes virtuales, cada una con una subred. También se configura el emparejamiento entre las dos redes virtuales.
-

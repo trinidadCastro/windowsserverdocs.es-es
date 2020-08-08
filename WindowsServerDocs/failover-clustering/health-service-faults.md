@@ -1,18 +1,16 @@
 ---
 title: Errores de Servicio de mantenimiento
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: de2e9939302c0b9937fb54b4082feeecf6de5295
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5f35c52e6b4aaf382c80507ca562b52ce27da953
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473112"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990794"
 ---
 # <a name="health-service-faults"></a>Errores de Servicio de mantenimiento
 
@@ -135,7 +133,7 @@ public void DiscoverObjects(CimSession Session)
 
 Estos son los mismos objetos que se obtienen en PowerShell mediante cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**y **Get-Volume**.
 
-Puede tener acceso a todas las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx).
+Puede tener acceso a todas las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes).
 
 ```
 using System.Diagnostics;
@@ -285,7 +283,7 @@ Sin embargo, en algunos casos, el Servicio de mantenimiento puede volver a detec
 
 Esta tabla presenta varias propiedades clave del objeto de error. En el esquema completo, inspeccione la clase **msft \_ StorageDiagnoseResult** en *storagewmi. mof*.
 
-| **Propiedad**              | **Ejemplo**                                                     |
+| **Property**              | **Ejemplo**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. Health. FaultType. VOLUME. Capacity                      |
@@ -311,7 +309,7 @@ Esta tabla presenta varias propiedades clave del evento de error. En el esquema 
 
 Tenga en cuenta el **ChangeType**, que indica si se está creando, quitando o actualizando un error, y **FaultId**. Un evento también contiene todas las propiedades del error afectado.
 
-| **Propiedad**              | **Ejemplo**                                                     |
+| **Property**              | **Ejemplo**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
@@ -378,7 +376,7 @@ En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente co
 * RecommendedAction: *"restaurando la resistencia de los datos".*
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksdetached"></a>FaultType: Microsoft. Health. FaultType. VirtualDisks. Detached
-* Gravedad: crítico
+* Gravedad: Crítico
 * Motivo: *"no se puede obtener acceso al volumen. Es posible que se pierdan algunos datos ".*
 * RecommendedAction: *"Compruebe la conectividad física o de red de todos los dispositivos de almacenamiento. Es posible que necesite restaurar desde la copia de seguridad ".*
 
@@ -397,31 +395,31 @@ En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente co
 * RecommendedAction: *"expanda el volumen o migre las cargas de trabajo a otros volúmenes".*
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft. Health. FaultType. VOLUME. Capacity
-* Gravedad: crítico
+* Gravedad: Crítico
 * Motivo: *"el volumen se está quedando sin espacio disponible".*
 * RecommendedAction: *"expanda el volumen o migre las cargas de trabajo a otros volúmenes".*
 
 ### <a name="server-3"></a>**Servidor (3)**
 
 #### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultType: Microsoft. Health. FaultType. Server. Down
-* Gravedad: crítico
+* Gravedad: Crítico
 * Motivo: *"no se puede tener acceso al servidor".*
 * RecommendedAction: *"iniciar o reemplazar servidor".*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultType: Microsoft. Health. FaultType. Server. Isolated
-* Gravedad: crítico
+* Gravedad: Crítico
 * Motivo: *"el servidor está aislado del clúster debido a problemas de conectividad".*
 * RecommendedAction: *"si el aislamiento persiste, compruebe las redes o migre las cargas de trabajo a otros nodos".*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultType: Microsoft. Health. FaultType. Server. Quarantine
-* Gravedad: crítico
+* Gravedad: Crítico
 * Motivo: *"el servidor está en cuarentena por el clúster debido a errores recurrentes".*
 * RecommendedAction: *"reemplazar el servidor o corregir la red".*
 
 ### <a name="cluster-1"></a>**Clúster (1)**
 
 #### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultType: Microsoft. Health. FaultType. ClusterQuorumWitness. error
-* Gravedad: crítico
+* Gravedad: Crítico
 * Motivo: *"el clúster es un error del servidor."*
 * RecommendedAction: *"Compruebe el recurso de testigo y reinícielo según sea necesario. Iniciar o reemplazar servidores con errores ".*
 

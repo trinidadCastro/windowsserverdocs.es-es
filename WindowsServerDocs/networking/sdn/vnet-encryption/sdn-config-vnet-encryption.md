@@ -7,12 +7,12 @@ ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 24b716283eeab929f09db3c4e9cf3ec577211d32
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 41bf68a18a05f97de4cff14651bf98bfa28bc33c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955862"
+ms.locfileid: "87990133"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>Configurar el cifrado para una subred virtual
 
@@ -31,7 +31,7 @@ Una vez habilitado el cifrado en una subred, todo el tráfico de red dentro de e
 >Cuando se comunica con otra máquina virtual en la misma subred, ya sea actualmente conectada o conectada en un momento posterior, el tráfico se cifra automáticamente.
 
 >[!TIP]
->Si debe restringir las aplicaciones para que solo se comuniquen en la subred cifrada, puede usar listas de Access Control (ACL) solo para permitir la comunicación dentro de la subred actual. Para obtener más información, consulte [uso de listas de Access Control (ACL) para administrar el flujo de tráfico de red del centro](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)de datos.
+>Si debe restringir las aplicaciones para que solo se comuniquen en la subred cifrada, puede usar listas de Access Control (ACL) solo para permitir la comunicación dentro de la subred actual. Para obtener más información, consulte [uso de listas de Access Control (ACL) para administrar el flujo de tráfico de red del centro](../manage/use-acls-for-traffic-flow.md)de datos.
 
 
 ## <a name="step-1-create-the-encryption-certificate"></a>Paso 1. Crear el certificado de cifrado

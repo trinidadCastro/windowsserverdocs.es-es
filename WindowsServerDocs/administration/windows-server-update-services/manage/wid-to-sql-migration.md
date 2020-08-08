@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: edebd8ea11a844fbe6d00ca7ce7a6a375d8e9a51
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7a5102ab622d051e87ca735e5a03f131d583838a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896870"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991132"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>Migración de la base de datos de WSUS de WID a SQL
 
@@ -78,7 +78,7 @@ Desde PowerShell (elevado), ejecute:
     ![archivo image4 ](images/image4.png) ![ image5](images/image5.png)
 
 > [!TIP]
-> Esto también se puede hacer mediante Transact-SQL.  Consulte la [documentación de SQL para adjuntar una base de datos](https://docs.microsoft.com/sql/relational-databases/databases/attach-a-database) para obtener instrucciones.
+> Esto también se puede hacer mediante Transact-SQL.  Consulte la [documentación de SQL para adjuntar una base de datos](/sql/relational-databases/databases/attach-a-database) para obtener instrucciones.
 >
 > Ejemplo (uso de rutas de acceso del ejemplo anterior):
 > ```sql

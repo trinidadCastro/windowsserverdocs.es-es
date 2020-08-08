@@ -7,12 +7,12 @@ ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 87972f9a0d83a4b7f192e2fe0f751ee66c599044
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2bf186d2f8761ca51c77b4d02489b0d85c53e046
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955922"
+ms.locfileid: "87990157"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Solución de problemas de la pila de redes definidas por software de Windows Server
 
@@ -20,7 +20,7 @@ ms.locfileid: "87955922"
 
 En esta guía se examinan los errores comunes de redes definidas por software (SDN) y los escenarios de error, y se describe un flujo de trabajo de solución de problemas que aprovecha las herramientas de diagnóstico disponibles.
 
-Para obtener más información acerca de las redes definidas por software de Microsoft, consulte [redes definidas por software](../../sdn/Software-Defined-Networking--SDN-.md).
+Para obtener más información acerca de las redes definidas por software de Microsoft, consulte [redes definidas por software](../software-defined-networking.md).
 
 ## <a name="error-types"></a>Tipos de errores
 En la lista siguiente se representa la clase de problemas que se suele observar con la virtualización de red de Hyper-V (HNVv1) en Windows Server 2012 R2 de las implementaciones de producción en el mercado y coincide de muchas maneras con los mismos tipos de problemas que se han detectado en Windows Server 2016 HNVv2 con la nueva pila de redes definidas por software (SDN).
@@ -54,12 +54,12 @@ Import-Module hnvdiagnostics
 ```
 
 ### <a name="network-controller-diagnostics"></a>Diagnóstico de controladora de red
-Estos cmdlets están documentados en TechNet en el [tema cmdlet de diagnóstico de la controladora de red](https://docs.microsoft.com/powershell/module/networkcontrollerdiagnostics/). Ayudan a identificar problemas con la coherencia de la Directiva de red en la ruta de acceso de control entre los nodos de controladora de red y entre el controlador de red y los agentes de host de NC que se ejecutan en los hosts de Hyper-V.
+Estos cmdlets están documentados en TechNet en el [tema cmdlet de diagnóstico de la controladora de red](/powershell/module/networkcontrollerdiagnostics/). Ayudan a identificar problemas con la coherencia de la Directiva de red en la ruta de acceso de control entre los nodos de controladora de red y entre el controlador de red y los agentes de host de NC que se ejecutan en los hosts de Hyper-V.
 
  Los cmdlets _Debug-ServiceFabricNodeStatus_ y _Get-NetworkControllerReplica_ deben ejecutarse desde una de las máquinas virtuales del nodo de la controladora de red. Todos los demás cmdlets de diagnóstico de NC se pueden ejecutar desde cualquier host que tenga conectividad con el controlador de red y se encuentra en el grupo de seguridad de administración de la controladora de red (Kerberos) o tiene acceso al certificado X. 509 para administrar la controladora de red.
 
 ### <a name="hyper-v-host-diagnostics"></a>Diagnóstico de host de Hyper-V
-Estos cmdlets están documentados en TechNet en el [tema del cmdlet de diagnóstico de virtualización de red de Hyper-V (HNV)](https://docs.microsoft.com/powershell/module/hnvdiagnostics/). Ayudan a identificar problemas en la ruta de acceso de datos entre las máquinas virtuales de los inquilinos (este y oeste) y el tráfico de entrada a través de una VIP de SLB (norte/sur).
+Estos cmdlets están documentados en TechNet en el [tema del cmdlet de diagnóstico de virtualización de red de Hyper-V (HNV)](/powershell/module/hnvdiagnostics/). Ayudan a identificar problemas en la ruta de acceso de datos entre las máquinas virtuales de los inquilinos (este y oeste) y el tráfico de entrada a través de una VIP de SLB (norte/sur).
 
 _Debug-VirtualMachineQueueOperation_, _Get-CustomerRoute_, _Get-PACAMapping_, _Get-ProviderAddress_, _Get-VMNetworkAdapterPortId_, _Get-VMSwitchExternalPortId_y _Test-EncapOverheadSettings_ son todas las pruebas locales que se pueden ejecutar desde cualquier host de Hyper-V. Los otros cmdlets invocan las pruebas de ruta de acceso a datos a través de la controladora de red y, por tanto, necesitan tener acceso al controlador de red como descried anterior.
 

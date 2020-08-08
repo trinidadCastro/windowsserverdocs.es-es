@@ -7,12 +7,12 @@ ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: ecea87a3716ef68c599594851037e774ad589998
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4417748504a0458396cd02e965547c2573f2c44f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955812"
+ms.locfileid: "87990085"
 ---
 # <a name="network-load-balancing"></a>Equilibrio de carga de red
 
@@ -21,7 +21,7 @@ ms.locfileid: "87955812"
 En este tema se proporciona información general sobre la característica NLB de equilibrio de carga de red \( \) en Windows Server 2016. Puede usar NLB para administrar dos o más servidores como un solo clúster virtual. NLB mejora la disponibilidad y escalabilidad de las aplicaciones de servidor de Internet, como las que se usan en Web, FTP, firewall, proxy, VPN de red privada virtual \( \) y otros servidores de misión \- crítica.
 
 > [!NOTE]
-> Windows Server 2016 incluye un nuevo software inspirado en Azure Load Balancer \( SLB \) como componente de la infraestructura de redes de redes definidas por software \( \) . Use SLB en lugar de NLB si utiliza SDN, si usa cargas de trabajo que no son de Windows, necesita NAT de traducción de direcciones de red salientes \( \) o \( necesita \) equilibrio de carga de nivel 3 L3 o no basado en TCP. Puede seguir usando NLB con Windows Server 2016 para las implementaciones que no son de SDN. Para obtener más información sobre SLB, consulte [equilibrio de carga de software (SLB) para Sdn](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).
+> Windows Server 2016 incluye un nuevo software inspirado en Azure Load Balancer \( SLB \) como componente de la infraestructura de redes de redes definidas por software \( \) . Use SLB en lugar de NLB si utiliza SDN, si usa cargas de trabajo que no son de Windows, necesita NAT de traducción de direcciones de red salientes \( \) o \( necesita \) equilibrio de carga de nivel 3 L3 o no basado en TCP. Puede seguir usando NLB con Windows Server 2016 para las implementaciones que no son de SDN. Para obtener más información sobre SLB, consulte [equilibrio de carga de software (SLB) para Sdn](../sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md).
 
 La característica NLB de equilibrio de carga de red \( \) distribuye el tráfico entre varios servidores mediante el \/ Protocolo de red TCP IP. Mediante la combinación de dos o más equipos que ejecutan aplicaciones en un solo clúster virtual, NLB proporciona confiabilidad y rendimiento para los servidores web y otros servidores de misión \- crítica.
 
@@ -59,7 +59,7 @@ La escalabilidad cuantifica en qué grado puede un equipo, servicio o aplicació
 ### <a name="manageability"></a>Facilidad de uso
 Para admitir la capacidad de administración, se puede hacer lo siguiente con NLB:
 
--   Administrar y configurar varios clústeres NLB y los hosts del clúster desde un solo equipo mediante el uso del administrador de NLB o los [cmdlets de equilibrio de carga de red (NLB) en Windows PowerShell](https://technet.microsoft.com/library/hh801274.aspx).
+-   Administrar y configurar varios clústeres NLB y los hosts del clúster desde un solo equipo mediante el uso del administrador de NLB o los [cmdlets de equilibrio de carga de red (NLB) en Windows PowerShell](/previous-versions/windows/powershell-scripting/hh801274(v=wps.630)).
 
 -   Especificar el comportamiento del equilibrio de carga para un solo puerto IP o un grupo de puertos mediante el uso de reglas de administración de puertos.
 
@@ -141,7 +141,7 @@ Install-WindowsFeature NLB -IncludeManagementTools
 
 Una vez completada la instalación, no es necesario reiniciar el equipo.
 
-Para obtener más información, consulta [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature?view=win10-ps).
+Para obtener más información, consulta [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature?view=win10-ps).
 
 ### <a name="network-load-balancing-manager"></a>Administrador de equilibrio de carga de red
 Para abrir el Administrador de equilibrio de carga de red en el Administrador del servidor, haga clic en **Herramientas** y, luego, en **Administrador de equilibrio de carga de red**.
@@ -151,8 +151,8 @@ En la tabla siguiente se proporcionan vínculos a información adicional acerca 
 
 |Tipo de contenido|Referencias|
 |----------------|--------------|
-|Implementación|[Guía de implementación de equilibrio de carga de red](https://technet.microsoft.com/library/cc754833(WS.10).aspx) &#124; configurar el [equilibrio de carga de red con Terminal Services](https://technet.microsoft.com/library/cc771300(v=WS.10).aspx)|
-|Operaciones|[Administración de clústeres de equilibrio de carga de red](https://technet.microsoft.com/library/cc753954(WS.10).aspx) &#124; [establecer parámetros de equilibrio de carga de red](https://technet.microsoft.com/library/cc731619(WS.10).aspx) &#124; [controlar hosts en clústeres de equilibrio de carga de red](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|
-|Solución de problemas|[Solución de problemas de clústeres de equilibrio de carga de red](https://technet.microsoft.com/library/cc732592(WS.10).aspx) &#124; [eventos y errores de clúster NLB](https://technet.microsoft.com/library/cc731678(WS.10).aspx)|
+|Implementación|[Guía de implementación de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754833(v=ws.10)) &#124; configurar el [equilibrio de carga de red con Terminal Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771300(v=ws.10))|
+|Operaciones|[Administración de clústeres de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753954(v=ws.10)) &#124; [establecer parámetros de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731619(v=ws.10)) &#124; [controlar hosts en clústeres de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770870(v=ws.10))|
+|Solución de problemas|[Solución de problemas de clústeres de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732592(v=ws.10)) &#124; [eventos y errores de clúster NLB](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731678(v=ws.10))|
 |Herramientas y configuración|[Cmdlets de NLB de Windows PowerShell](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
 |Recursos de la comunidad|[Foro de \( clústeres de alta disponibilidad \)](https://go.microsoft.com/fwlink/p/?LinkId=230641)

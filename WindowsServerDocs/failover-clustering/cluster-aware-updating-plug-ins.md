@@ -3,18 +3,16 @@ ms.assetid: d44d4430-41e2-483a-9685-92610cdef32a
 title: Cómo funcionan los complementos de actualización compatible con clústeres
 description: Cómo usar complementos para coordinar las actualizaciones cuando se usa la actualización compatible con clústeres en Windows Server para instalar actualizaciones en un clúster.
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
-ms.technology: storage-failover-clustering
-ms.openlocfilehash: ac09163eb40045289a68287aa3eace20ff714d09
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 42ba496ce0d62a6a911f762f6ea7330001fb9031
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409585"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990889"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>Cómo funcionan los complementos de actualización compatible con clústeres
 
@@ -48,10 +46,10 @@ Mediante el uso de los cmdlets de PowerShell de CAU que se enumeran en la tabla 
 
 |Cmdlet|Descripción|
 |----------|---------------|
-|[Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/add-cauclusterrole)|Agrega el rol en clúster de CAU que proporciona la funcionalidad de auto- \- actualización al clúster especificado.|
-|[Invoke-CauRun](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-caurun)|Realiza un examen de los nodos del clúster para buscar actualizaciones aplicables y las instala por medio de una ejecución de actualización en el clúster especificado.|
-|[Invoke-CauScan](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-causcan)|Realiza un examen de los nodos del clúster para buscar actualizaciones aplicables y devuelve una lista del conjunto inicial de actualizaciones que se aplicarían a cada nodo en el clúster especificado.|
-|[Set-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/set-cauclusterrole)|Establece las propiedades de configuración del rol en clúster de CAU en el clúster especificado.|
+|[Add-CauClusterRole](/powershell/module/clusterawareupdating/add-cauclusterrole)|Agrega el rol en clúster de CAU que proporciona la funcionalidad de auto- \- actualización al clúster especificado.|
+|[Invoke-CauRun](/powershell/module/clusterawareupdating/invoke-caurun)|Realiza un examen de los nodos del clúster para buscar actualizaciones aplicables y las instala por medio de una ejecución de actualización en el clúster especificado.|
+|[Invoke-CauScan](/powershell/module/clusterawareupdating/invoke-causcan)|Realiza un examen de los nodos del clúster para buscar actualizaciones aplicables y devuelve una lista del conjunto inicial de actualizaciones que se aplicarían a cada nodo en el clúster especificado.|
+|[Set-CauClusterRole](/powershell/module/clusterawareupdating/set-cauclusterrole)|Establece las propiedades de configuración del rol en clúster de CAU en el clúster especificado.|
 
 Si no especifica un \- parámetro de complemento de Cau con estos cmdlets, el valor predeterminado es el complemento \- **Microsoft. WindowsUpdatePlugin**.
 
@@ -83,9 +81,9 @@ Los complementos \- que instala la Cau \( **Microsoft. WindowsUpdatePlugin** y *
 
 |Cmdlet|Descripción|
 |----------|---------------|
-|[Get-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/get-cauplugin)|Recupera información sobre uno o más complementos de actualización \- de software que están registrados en el equipo local.|
-|[Register-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin)|Registra un complemento de actualización de software de CAU en \- el equipo local.|
-|[Unregister-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|Quita un complemento de actualización de software de \- la lista de complementos \- que puede usar la Cau. **Nota:** No se \- puede anular el registro de los complementos que se instalan con \( **Microsoft. WindowsUpdatePlugin** y **Microsoft. HotfixPlugin** \) .|
+|[Get-CauPlugin](/powershell/module/clusterawareupdating/get-cauplugin)|Recupera información sobre uno o más complementos de actualización \- de software que están registrados en el equipo local.|
+|[Register-CauPlugin](/powershell/module/clusterawareupdating/register-cauplugin)|Registra un complemento de actualización de software de CAU en \- el equipo local.|
+|[Unregister-CauPlugin](/powershell/module/clusterawareupdating/unregister-cauplugin)|Quita un complemento de actualización de software de \- la lista de complementos \- que puede usar la Cau. **Nota:** No se \- puede anular el registro de los complementos que se instalan con \( **Microsoft. WindowsUpdatePlugin** y **Microsoft. HotfixPlugin** \) .|
 
 ## <a name="using-the-microsoftwindowsupdateplugin"></a><a name="BKMK_WUP"></a>Usar Microsoft. WindowsUpdatePlugin
 
@@ -334,7 +332,7 @@ La cuenta que se usa en CAU para comprobar la configuración de seguridad mientr
 
 -   **Modo de auto- \- actualización** nombre del objeto de equipo virtual configurado en Active Directory para el rol en clúster de Cau. Es el nombre de un objeto de equipo virtual preconfigurado en Active Directory para el rol en clúster de CAU o el nombre que CAU genera para el rol en clúster. Para obtener el nombre si lo genera CAU, ejecute el cmdlet de PowerShell **Get \- CauClusterRole** Cau. En la salida, **ResourceGroupName** es el nombre de la cuenta de objeto de equipo virtual generada.
 
-#### <a name="step-2-configure-this-user-account-in-the-necessary-groups-on-an-smb-file-server"></a>Paso 2. Configurar esta cuenta de usuario en los grupos necesarios en el servidor de archivos SMB
+#### <a name="step-2-configure-this-user-account-in-the-necessary-groups-on-an-smb-file-server"></a>Paso 2. Configurar esta cuenta de usuario en los grupos necesarios en el servidor de archivos SMB
 
 > [!IMPORTANT]
 > Debes agregar la cuenta que se usa para ejecuciones de actualización como cuenta de administrador local en el servidor SMB. Si las directivas de seguridad de tu organización no lo permiten, configura esta cuenta con los permisos necesarios en el servidor SMB mediante el procedimiento siguiente.
@@ -359,7 +357,7 @@ La cuenta que se usa en CAU para comprobar la configuración de seguridad mientr
 
 7.  Concede los permisos **Ejecutar métodos** y **Llamada remota habilitada** a la cuenta que se usa para las ejecuciones de actualización.
 
-#### <a name="step-3-configure-permissions-to-access-the-hotfix-root-folder"></a>Paso 3. Configurar permisos para tener acceso a la carpeta raíz de revisiones
+#### <a name="step-3-configure-permissions-to-access-the-hotfix-root-folder"></a>Paso 3. Configurar permisos para tener acceso a la carpeta raíz de revisiones
 
 De forma predeterminada, cuando intenta aplicar actualizaciones, el complemento de revisiones de \- comprueba la configuración de los permisos del sistema de archivos NTFS para el acceso a la carpeta raíz de revisiones. Si los permisos de acceso a la carpeta no están configurados correctamente, es posible que se produzca un error en una ejecución de actualización con el complemento \- de revisiones.
 
@@ -406,7 +404,6 @@ Debe habilitar **SMB de administración remota del servidor \( \- de archivos \)
 
 -   [Información general sobre la actualización compatible con clústeres](cluster-aware-updating.md)
 
--   [Cmdlets de PowerShell de Windows para la actualización compatible con clústeres](https://docs.microsoft.com/powershell/module/clusterawareupdating)
+-   [Cmdlets de PowerShell de Windows para la actualización compatible con clústeres](/powershell/module/clusterawareupdating)
 
--   [Referencia del complemento de actualización compatible con clústeres](https://msdn.microsoft.com/library/hh418084.aspx)
-
+-   [Referencia del complemento de actualización compatible con clústeres](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)

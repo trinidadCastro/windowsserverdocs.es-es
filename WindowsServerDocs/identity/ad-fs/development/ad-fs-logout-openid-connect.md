@@ -5,18 +5,16 @@ ms.author: billmath
 manager: femila
 ms.date: 11/17/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 7821910caa3c0cfa5c5402df57bd758ce8d0c245
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 1ab6735e09d912bac5b1a319a3793ee6e0c70fa2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519874"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964942"
 ---
 #  <a name="single-log-out-for-openid-connect-with-ad-fs"></a>Cierre de sesión único de OpenID Connect con AD FS
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 Basándose en la compatibilidad inicial de OAuth en AD FS en Windows Server 2012 R2, AD FS 2016 presentó la compatibilidad con el inicio de sesión de OpenId Connect. Con [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801), AD FS 2016 ahora admite el cierre de sesión único para escenarios de OpenID Connect. En este artículo se proporciona información general sobre el cierre de sesión único para el escenario de OpenId Connect y se proporcionan instrucciones sobre cómo usarlo para las aplicaciones de OpenId Connect en AD FS.
 
 
@@ -109,5 +107,5 @@ Set-AdfsClient -LogoutUri <url>
 **R:** Sí. Es responsabilidad de la aplicación cliente quitar todos los artefactos autenticados después de que se haya recibido una solicitud de cierre de sesión en el registro `LogoutUri` .
 
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)

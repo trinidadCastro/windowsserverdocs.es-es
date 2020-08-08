@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: b66d688052398ba76b6721e8bab0d0878be4959a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d7941733ff2191e94c6c1e380d4349585a5c98d3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517710"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956182"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>Solución de problemas de AD FS-Azure AD
 Con el crecimiento de la nube, una gran cantidad de empresas se han trasladado a usar Azure AD para sus diversas aplicaciones y servicios.  La Federación con Azure AD se ha convertido en una práctica estándar con muchas organizaciones.  En este documento se tratan algunos de los aspectos de la solución de problemas que surgen con esta Federación.  Algunos de los temas del documento general de solución de problemas siguen perteneciendo a la Federación con Azure, por lo que este documento se centrará solo en detalles con Azure AD y AD FS interacción.
@@ -146,6 +144,6 @@ A continuación se muestra una lista rápida de aspectos que se deben comprobar 
 - credenciales obsoletas o almacenadas en caché en el administrador de credenciales de Windows
 - El algoritmo hash seguro que está configurado en la relación de confianza para usuario autenticado para Office 365 está establecido en SHA1
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

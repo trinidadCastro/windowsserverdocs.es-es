@@ -1,18 +1,16 @@
 ---
 title: What's New in Kerberos Authentication
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
 manager: alanth
 author: justinha
-ms.technology: security-authentication
 ms.date: 11/09/2016
-ms.openlocfilehash: 35eff73e97c8fdbb6df2c1412779b033a9ca3fa5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 514b19689c73c1c5c61184a1ff8c13636b57864e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858818"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948668"
 ---
 # <a name="whats-new-in-kerberos-authentication"></a>What's New in Kerberos Authentication
 
@@ -20,15 +18,19 @@ ms.locfileid: "80858818"
 
 ## <a name="kdc-support-for-public-key-trust-based-client-authentication"></a>Compatibilidad de KDC con la autenticación de cliente basada en confianza pública
 
-A partir de Windows Server 2016, los KDC admiten una forma de asignación de claves públicas. Si la clave pública se aprovisiona para una cuenta, el KDC admite Kerberos PKInit explícitamente con esa clave. Dado que no hay ninguna validación de certificados, se admiten los certificados autofirmados y no se admite el mecanismo de autenticación.
+A partir de Windows Server 2016, los KDC admiten una forma de asignación de claves públicas.
+Si la clave pública se aprovisiona para una cuenta, el KDC admite Kerberos PKInit explícitamente con esa clave.
+Dado que no hay ninguna validación de certificados, se admiten los certificados autofirmados y no se admite el mecanismo de autenticación.
 
 La confianza de clave es preferible cuando se configura para una cuenta, independientemente del valor de UseSubjectAltName.
 
 ## <a name="kerberos-client-and-kdc-support-for-rfc-8070-pkinit-freshness-extension"></a>Compatibilidad del cliente Kerberos con el KDC para la extensión de actualización de PKInit de RFC 8070
 
-A partir de Windows 10, versión 1607 y Windows Server 2016, los clientes de Kerberos intentan la [extensión de actualización de PKInit de RFC 8070](https://datatracker.ietf.org/doc/draft-ietf-kitten-pkinit-freshness/) para inicios de sesión basados en claves públicas. 
+A partir de Windows 10, versión 1607 y Windows Server 2016, los clientes de Kerberos intentan la [extensión de actualización de PKInit de RFC 8070](https://datatracker.ietf.org/doc/draft-ietf-kitten-pkinit-freshness/) para inicios de sesión basados en claves públicas.
 
-A partir de Windows Server 2016, los KDC pueden admitir la extensión de actualización PKInit. De forma predeterminada, los KDC no ofrecen la extensión de actualización PKInit. Para habilitarla, use la nueva configuración de la Directiva de plantillas administrativas KDC compatibilidad de KDC para la extensión de actualización de PKInit en todos los controladores de dominio del dominio. Cuando se configura, se admiten las siguientes opciones cuando el dominio es el nivel funcional del dominio de Windows Server 2016 (nivel funcional):
+A partir de Windows Server 2016, los KDC pueden admitir la extensión de actualización PKInit.
+De forma predeterminada, los KDC no ofrecen la extensión de actualización PKInit. Para habilitarla, use la nueva configuración de la Directiva de plantillas administrativas KDC compatibilidad de KDC para la extensión de actualización de PKInit en todos los controladores de dominio del dominio.
+Cuando se configura, se admiten las siguientes opciones cuando el dominio es el nivel funcional del dominio de Windows Server 2016 (nivel funcional):
 
 - **Deshabilitado**: el KDC nunca ofrece la extensión de actualización PKInit y acepta solicitudes de autenticación válidas sin comprobar si hay actualizaciones. Los usuarios nunca recibirán el SID de identidad de clave pública nueva.
 - **Compatible**: la extensión de actualización PKInit se admite a petición. Los clientes Kerberos que se autentican correctamente con la extensión de actualización PKInit reciben el SID de identidad de clave pública nuevo.
@@ -40,15 +42,18 @@ A partir de la versión 1507 de Windows 10 y Windows Server 2016, si un disposit
 
 ## <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Los clientes Kerberos permiten nombres de host de direcciones IPv4 e IPv6 en nombres de entidad de seguridad de servicio (SPN)
 
-A partir de Windows 10 versión 1507 y Windows Server 2016, los clientes Kerberos se pueden configurar para admitir nombres de host IPv4 e IPv6 en SPN. 
+A partir de Windows 10 versión 1507 y Windows Server 2016, los clientes Kerberos se pueden configurar para admitir nombres de host IPv4 e IPv6 en SPN.
 
-Ruta del Registro:
+Ruta de acceso del registro:
 
 HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters
 
-Para configurar la compatibilidad con los nombres de host de direcciones IP en los SPN, cree una entrada TryIPSPN. Esta entrada no existe en el registro de forma predeterminada. Después de haber creado la entrada, cambie el valor DWORD a 1. Si no está configurado, los nombres de host de la dirección IP no se intentan.
+Para configurar la compatibilidad con los nombres de host de direcciones IP en los SPN, cree una entrada TryIPSPN.
+Esta entrada no existe en el registro de forma predeterminada.
+Después de haber creado la entrada, cambie el valor DWORD a 1.
+Si no está configurado, los nombres de host de la dirección IP no se intentan.
 
-Si el SPN está registrado en Active Directory, la autenticación se realizará correctamente con Kerberos. 
+Si el SPN está registrado en Active Directory, la autenticación se realizará correctamente con Kerberos.
 
 Para obtener más información, consulte el documento [configuración de Kerberos para direcciones IP](configuring-kerberos-over-ip.md).
 
@@ -64,6 +69,6 @@ A partir de Windows Server 2016, los controladores de dominio tienen compatibili
     2. Si no hay ningún UPN en la SAN, se intenta realizar la asignación de AltSecID.
     3. Si hay un UPN en la SAN, se intenta la asignación del UPN.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Consulte también
 
-- [Información general sobre la autenticación Kerberos](kerberos-authentication-overview.md)
+- [Kerberos Authentication Overview](kerberos-authentication-overview.md)

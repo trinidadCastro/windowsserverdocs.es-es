@@ -1,42 +1,40 @@
 ---
 title: Funciones y tecnologías de solo software
 description: Estas características se implementan como parte del sistema operativo y son independientes de las NIC subyacentes. A veces, estas características requieren cierta optimización de la NIC para una operación óptima. Algunos ejemplos son las características de Hyper-v, como la calidad de servicio de las máquinas virtuales (vmQoS), las listas de Access Control (ACL) y las características que no son de Hyper-V, como la formación de equipos NIC.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: a83a36ce7a47f0ebde35bf93bdca20796dd37a28
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 94b7a4b87a74c24acc97289516f6835be9b90ef7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316881"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990317"
 ---
 # <a name="software-only-so-features-and-technologies"></a>Funciones y tecnologías de solo software
 Las características de solo software se implementan como parte del sistema operativo y son independientes de las NIC subyacentes. A veces, estas características requieren cierta optimización de la NIC para una operación óptima. Algunos ejemplos son las características de Hyper-v, como la calidad de servicio de las máquinas virtuales (vmQoS), las listas de Access Control (ACL) y las características que no son de Hyper-V, como la formación de equipos NIC.
 
-## <a name="access-control-lists-acls"></a>Listas de Access Control (ACL)
+## <a name="access-control-lists-acls"></a>Listas de control de acceso (ACL)
 
-Una característica de Hyper-V y SDNv1 para administrar la seguridad de una máquina virtual. Esta característica se aplica a la pila de Hyper-V no virtualizada y a la pila HVNv1. Puede administrar las ACL del conmutador de Hyper-V a través de los cmdlets de PowerShell [Add-VMNetworkAdapterAcl](https://docs.microsoft.com/powershell/module/hyper-v/add-vmnetworkadapteracl?view=win10-ps) y [Remove-VMNetworkAdapterAcl](https://docs.microsoft.com/powershell/module/hyper-v/remove-vmnetworkadapteracl?view=win10-ps) .
+Una característica de Hyper-V y SDNv1 para administrar la seguridad de una máquina virtual. Esta característica se aplica a la pila de Hyper-V no virtualizada y a la pila HVNv1. Puede administrar las ACL del conmutador de Hyper-V a través de los cmdlets de PowerShell [Add-VMNetworkAdapterAcl](/powershell/module/hyper-v/add-vmnetworkadapteracl?view=win10-ps) y [Remove-VMNetworkAdapterAcl](/powershell/module/hyper-v/remove-vmnetworkadapteracl?view=win10-ps) .
 
 ## <a name="extended-acls"></a>ACL extendidas
 
 Las ACL extendidas del conmutador virtual de Hyper-V permiten configurar las ACL de Puerto extendido del conmutador virtual de Hyper-V para proporcionar protección de firewall y aplicar directivas de seguridad para las máquinas virtuales de inquilino en los centros de recursos. Dado que las ACL de puerto se configuran en el conmutador virtual de Hyper-V en lugar de en las máquinas virtuales, el administrador puede administrar las directivas de seguridad para todos los inquilinos en un entorno de varios inquilinos.
 
-Puede administrar las ACL extendidas del conmutador de Hyper-V a través de los cmdlets de PowerShell [Add-VMNetworkAdapterExtendedAcl](https://docs.microsoft.com/powershell/module/hyper-v/add-vmnetworkadapterextendedacl?view=win10-ps) y [Remove-VMNetworkAdapterExtendedAcl](https://docs.microsoft.com/powershell/module/hyper-v/remove-vmnetworkadapteracl?view=win10-ps) .
+Puede administrar las ACL extendidas del conmutador de Hyper-V a través de los cmdlets de PowerShell [Add-VMNetworkAdapterExtendedAcl](/powershell/module/hyper-v/add-vmnetworkadapterextendedacl?view=win10-ps) y [Remove-VMNetworkAdapterExtendedAcl](/powershell/module/hyper-v/remove-vmnetworkadapteracl?view=win10-ps) .
 
->[!TIP] 
+>[!TIP]
 >Esta característica se aplica a la pila HNVv1. En el caso de las ACL de la pila de SDN, consulte las ACL de redes definidas por software (SDN) a continuación.
 
-Para obtener más información acerca de las listas de Access Control de puertos extendidos en esta biblioteca, vea [crear directivas de seguridad con listas de Access Control de puertos extendidos](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/Create-Security-Policies-with-Extended-Port-Access-Control-Lists).
+Para obtener más información acerca de las listas de Access Control de puertos extendidos en esta biblioteca, vea [crear directivas de seguridad con listas de Access Control de puertos extendidos](../../../virtualization/hyper-v-virtual-switch/create-security-policies-with-extended-port-access-control-lists.md).
 
 ## <a name="nic-teaming"></a>Formación de equipos NIC
 
-La formación de equipos NIC, también denominada "enlace NIC", es la agregación de varios puertos NIC a una entidad que el host percibe como un solo puerto NIC. La formación de equipos NIC protege frente al error de un único puerto NIC (o el cable conectado a él). También agrega tráfico de red para un rendimiento más rápido. Para obtener más información, consulte [formación de equipos NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming).
+La formación de equipos NIC, también denominada "enlace NIC", es la agregación de varios puertos NIC a una entidad que el host percibe como un solo puerto NIC. La formación de equipos NIC protege frente al error de un único puerto NIC (o el cable conectado a él). También agrega tráfico de red para un rendimiento más rápido. Para obtener más información, consulte [formación de equipos NIC](../nic-teaming/nic-teaming.md).
 
 Con Windows Server 2016 tiene dos maneras de realizar la formación de equipos:
 
@@ -47,11 +45,11 @@ Con Windows Server 2016 tiene dos maneras de realizar la formación de equipos:
 
 ## <a name="rsc-in-the-vswitch"></a>RSC en vSwitch
 
-La fusión de segmentos de recepción (RSC) en el vSwitch es una característica que toma paquetes que forman parte del mismo flujo y llegan entre interrupciones de red y los combina en un solo paquete antes de entregarlos al sistema operativo. El conmutador virtual de Windows Server 2019 tiene esta característica. Para obtener más información acerca de esta característica, vea el apartado sobre [la fusión de segmentos de recepción en el vSwitch](https://docs.microsoft.com/windows-server/networking/technologies/hpn/rsc-in-the-vswitch).
+La fusión de segmentos de recepción (RSC) en el vSwitch es una característica que toma paquetes que forman parte del mismo flujo y llegan entre interrupciones de red y los combina en un solo paquete antes de entregarlos al sistema operativo. El conmutador virtual de Windows Server 2019 tiene esta característica. Para obtener más información acerca de esta característica, vea el apartado sobre [la fusión de segmentos de recepción en el vSwitch](./rsc-in-the-vswitch.md).
 
 ## <a name="software-defined-networking-sdn-acls"></a>ACL de redes definidas por software (SDN)
 
-La extensión de SDN en Windows Server 2016 mejoró la compatibilidad con las ACL. En la pila de Windows Server 2016 SDN V2, se usan las ACL de SDN en lugar de las ACL y las ACL extendidas. Puede usar la controladora de red para administrar las ACL de SDN. 
+La extensión de SDN en Windows Server 2016 mejoró la compatibilidad con las ACL. En la pila de Windows Server 2016 SDN V2, se usan las ACL de SDN en lugar de las ACL y las ACL extendidas. Puede usar la controladora de red para administrar las ACL de SDN.
 
 ## <a name="sdn-quality-of-service-qos"></a>Calidad de servicio (QoS) de SDN
 
@@ -59,11 +57,11 @@ La extensión de SDN en Windows Server 2016 mejoró las maneras de proporcionar 
 
 ## <a name="switch-embedded-teaming-set"></a>Cambiar la formación de equipos incrustada (SET)
 
-SET es una solución alternativa para la formación de equipos NIC que puede usar en entornos que incluyen Hyper-V y la pila de redes definidas por software (SDN) en Windows Server 2016. El conjunto integra la funcionalidad de formación de equipos NIC en el conmutador virtual de Hyper-V. Para obtener información sobre cómo cambiar la formación de equipos incrustados en esta biblioteca, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
+SET es una solución alternativa para la formación de equipos NIC que puede usar en entornos que incluyen Hyper-V y la pila de redes definidas por software (SDN) en Windows Server 2016. El conjunto integra la funcionalidad de formación de equipos NIC en el conmutador virtual de Hyper-V. Para obtener información sobre cómo cambiar la formación de equipos incrustados en esta biblioteca, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md).
 
 ## <a name="virtual-receive-side-scaling-vrss"></a>Ajuste de escala en lado de recepción virtual (vRSS)
 
-El software vRSS se usa para distribuir el tráfico entrante destinado a una máquina virtual en varios procesadores lógicos (LPs) de la máquina virtual. El software vRSS proporciona a la máquina virtual la capacidad de controlar más tráfico de red que un solo LP podría controlar. Para obtener más información, vea [ajuste de escala en lado de recepción virtual (vRSS)](https://docs.microsoft.com/windows-server/networking/technologies/vrss/vrss-top).
+El software vRSS se usa para distribuir el tráfico entrante destinado a una máquina virtual en varios procesadores lógicos (LPs) de la máquina virtual. El software vRSS proporciona a la máquina virtual la capacidad de controlar más tráfico de red que un solo LP podría controlar. Para obtener más información, vea [ajuste de escala en lado de recepción virtual (vRSS)](../vrss/vrss-top.md).
 
 ## <a name="virtual-machine-quality-of-service-vmqos"></a>Calidad de servicio de la máquina virtual (vmQoS)
 

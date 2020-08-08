@@ -7,18 +7,16 @@ ms.reviewer: anandy
 manager: mtillman
 ms.date: 07/17/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: active-directory-federation-services
-ms.openlocfilehash: cecffe6ae789c4a7c8c9ff382e83d84ade8ef018
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0cfb91269e0a55524346d7189d728848d9c6e670
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519854"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940472"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>Compilar una aplicación cliente nativa con clientes de OAuth público con AD FS 2016 o posterior
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 
 En este artículo se muestra cómo crear una aplicación nativa que interactúe con una API Web protegida por AD FS 2016 o posterior.
 
@@ -167,5 +165,5 @@ En este paso, la aplicación nativa se redirigió a AD FS y tenía un token de i
 
 ![Inicio de sesión](media/native-client-with-ad-fs-2016/clienttodoadd.png)
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)
