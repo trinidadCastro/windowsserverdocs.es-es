@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c52c26d44e50075f9c28dfdec7c2ab4fc420e163
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a93302ee89bf8c4b9a78fc6651e77fb566d1e9c6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948958"
+ms.locfileid: "87996998"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>Paso 1 configurar la infraestructura de DirectAccess
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema se describe cómo configurar la infraestructura necesaria para habilitar DirectAccess en una implementación de VPN existente. Antes de comenzar con los pasos de implementación, asegúrese de haber completado los pasos de planeación descritos en [paso 1: planear la infraestructura de DirectAccess](Step-1-Plan-DirectAccess-Infrastructure.md).
+En este tema se describe cómo configurar la infraestructura necesaria para habilitar DirectAccess en una implementación de VPN existente. Antes de comenzar con los pasos de implementación, asegúrese de haber completado los pasos de planeación descritos en [paso 1: planear la infraestructura de DirectAccess](./step-1-plan-da-inf-davpn.md).
 
 |Tarea|Descripción|
 |----|--------|
@@ -328,6 +328,3 @@ El servidor de ubicación de red debe encontrarse en un servidor con alta dispon
 13. Haga clic en **Aceptar**, haga clic en **Inscribir** y, a continuación, haga clic en **Finalizar**.
 
 14. En el panel de detalles del complemento Certificados, comprueba que se inscribió un nuevo certificado con el valor Propósitos planteados de autenticación del servidor.
-
-
-

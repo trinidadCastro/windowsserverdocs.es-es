@@ -2,19 +2,17 @@
 title: Uso de ETW para solucionar problemas con conexiones LDAP
 description: Cómo activar y usar ETW para realizar un seguimiento de las conexiones LDAP entre AD DS controladores de dominio.
 author: Teresa-Motiv
-manager: dcscontentpm
-ms.prod: windows-server-dev
-ms.technology: active-directory-lightweight-directory-services
+manager: dcscontentpm-dev
 audience: Admin
 ms.author: v-tea
 ms.topic: article
 ms.date: 11/22/2019
-ms.openlocfilehash: 516304498206523a1ce618da6aa21640e38c9654
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 37f588be3b181aea66555389c120f147a74e6314
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965657"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941559"
 ---
 # <a name="using-etw-to-troubleshoot-ldap-connections"></a>Uso de ETW para solucionar problemas con conexiones LDAP
 
@@ -30,7 +28,7 @@ ms.locfileid: "86965657"
 
    En esta subclave, *processName* es el nombre completo del proceso del que se desea realizar un seguimiento, incluida su extensión (por ejemplo, "Svchost.exe").
 
-1. (**Opcional**) En esta subclave, cree una nueva entrada denominada **PID**. Para usar esta entrada, asigne un identificador de proceso como un valor DWORD.  
+1. (**Opcional**) En esta subclave, cree una nueva entrada denominada **PID**. Para usar esta entrada, asigne un identificador de proceso como un valor DWORD.
 
    Si especifica un identificador de proceso, ETW realiza un seguimiento solo de la instancia de la aplicación que tiene este identificador de proceso.
 
@@ -44,8 +42,8 @@ ms.locfileid: "86965657"
 
    Los marcadores de posición de este comando representan los valores siguientes.
 
-  - \<*SessionName*>es un identificador arbitrario que se utiliza para etiquetar la sesión de seguimiento.  
-  > [!NOTE]  
+  - \<*SessionName*>es un identificador arbitrario que se utiliza para etiquetar la sesión de seguimiento.
+  > [!NOTE]
   > Tendrá que hacer referencia a este nombre de sesión más adelante al detener la sesión de seguimiento.
   - \<*FileName*>especifica el archivo de registro en el que se escribirán los eventos.
   - \<*TraceFlags*>debe ser uno o varios de los valores enumerados en la [tabla marcas de seguimiento](#values-for-trace-flags).
@@ -70,7 +68,7 @@ ms.locfileid: "86965657"
 
 Para usar una marca, sustituya el valor de marca del marcador de posición <*TraceFlags*> en los argumentos del comando **tracelog.exe-Start** .
 
-> [!NOTE]  
+> [!NOTE]
 > Puede especificar varias marcas mediante la suma de los valores de marca adecuados. Por ejemplo, para especificar las marcas **Debug \_ Search** (0X00000001) y **Debug \_ Cache** (0x00000010), el valor adecuado \<*TraceFlags*> es **0x00000011**.
 
 |Nombre del marcador |Valor de marca |Descripción de la marca |
@@ -138,5 +136,5 @@ Considere una aplicación, App1.exe, que establece contraseñas para las cuentas
     tracerpt.exe .\ldap.etl -o -report
     ```
 
-   > [!NOTE]  
+   > [!NOTE]
    > En este comando, **tracerpt.exe** es una herramienta de [consumidor de seguimiento](https://go.microsoft.com/fwlink/p/?linkid=83876) .

@@ -2,18 +2,16 @@
 title: Create a File Screen
 description: En este artículo se describe cómo crear un filtro de archivos.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e7827f1e80b1cfe2288bee968cc3c4e3cd428e15
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4efa2add790e4284865a54eaedf3cbb7d9c0589c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474382"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971103"
 ---
 # <a name="create-a-file-screen"></a>Create a File Screen
 
@@ -52,7 +50,7 @@ Al crear un nuevo filtro de archivos, tiene la opción de guardar una plantilla 
     -   Para guardar una plantilla basada en estas propiedades personalizadas (recomendado), haga clic en **guardar las propiedades personalizadas como plantilla** y escriba un nombre para la plantilla. Esta opción aplicará la plantilla al nuevo filtro de archivo; además podrá usar la plantilla para crear otros filtros de archivos en el futuro. Esto le permitirá después actualizar los filtros de archivos automáticamente mediante la actualización la plantilla.
     -   Si no desea guardar una plantilla al guardar el filtro de archivos, haga clic en **guardar el filtro de archivos personalizado sin crear una plantilla**.
 
-12. Haga clic en **OK**.
+12. Haga clic en **Aceptar**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

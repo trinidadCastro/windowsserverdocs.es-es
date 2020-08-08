@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6ba9221707ffdea76236cd8f94c80a1220a750d5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 32e54b5129bf2215758adf35bd23c4d99ab2d8e9
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971832"
+ms.locfileid: "87996972"
 ---
 # <a name="wireless-access-deployment"></a>Implementación de acceso inalámbrico
 
@@ -489,7 +489,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
     >[!TIP]
     >Si recibe un mensaje de error que indica que no se puede encontrar un certificado para su uso con el método de autenticación, y ha configurado Active Directory servicios de Certificate Server para emitir automáticamente certificados para los servidores RAS e IAS de la red. en primer lugar, asegúrese de que ha seguido los pasos para registrar NPS en Active Directory Domain Services. a continuación, siga estos pasos para actualizar directiva de grupo: haga clic en **Inicio**, en **sistema de Windows**, en **Ejecutar**y, en **abrir**, escriba **gpupdate**y presione Entrar. Cuando el comando devuelva resultados que indiquen que el usuario y el equipo directiva de grupo han actualizado correctamente, seleccione **Microsoft: protected EAP \( \) PEAP** de nuevo y, a continuación, haga clic en **configurar**.
     >
-    >Si después de actualizar directiva de grupo sigue recibiendo el mensaje de error que indica que no se puede encontrar un certificado para su uso con el método de autenticación, el certificado no se muestra porque no cumple los requisitos mínimos de certificados de servidor, como se documenta en la guía complementaria de red principal: [implementación de certificados de servidor para implementaciones cableadas e inalámbricas de 802.1 x](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments). Si esto ocurre, debe interrumpir la configuración de NPS, revocar el certificado emitido para los NPS \( \) y, a continuación, seguir las instrucciones para configurar un certificado nuevo mediante la guía de implementación de certificados de servidor.
+    >Si después de actualizar directiva de grupo sigue recibiendo el mensaje de error que indica que no se puede encontrar un certificado para su uso con el método de autenticación, el certificado no se muestra porque no cumple los requisitos mínimos de certificados de servidor, como se documenta en la guía complementaria de red principal: [implementación de certificados de servidor para implementaciones cableadas e inalámbricas de 802.1 x](../server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments.md). Si esto ocurre, debe interrumpir la configuración de NPS, revocar el certificado emitido para los NPS \( \) y, a continuación, seguir las instrucciones para configurar un certificado nuevo mediante la guía de implementación de certificados de servidor.
 
 7.  En la página del asistente **Editar propiedades de EAP protegido** , en **certificado emitido**, asegúrese de que está seleccionado el certificado NPS correcto y, a continuación, haga lo siguiente:
 
@@ -554,7 +554,7 @@ Después de unir el equipo al dominio, use este procedimiento para configurar un
 3. Una el nuevo equipo inalámbrico al dominio \( , por ejemplo, a través de una conexión Ethernet que no requiere la autenticación IEEE 802.1 x \) y agrega el perfil inalámbrico de bootstrap al equipo mediante el comando **netsh wlan Add Profile** .
 
     >[!NOTE]
-    >Para obtener más información, consulte comandos Netsh para red de área local inalámbrica \( WLAN \) en [http: \/ \/ technet.Microsoft.com \/ Library \/ dd744890. aspx](https://technet.microsoft.com/library/dd744890).
+    >Para obtener más información, consulte comandos Netsh para red de área local inalámbrica \( WLAN \) en [http: \/ \/ technet.Microsoft.com \/ Library \/ dd744890. aspx](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd744890(v=ws.10)).
 
 4. Distribuya el nuevo equipo inalámbrico al usuario con el procedimiento "iniciar sesión en el dominio con equipos que ejecutan Windows 10".
 
@@ -586,7 +586,7 @@ Con este método, complete los pasos de la sección de pasos generales y, a cont
     >Para unir un equipo a un dominio, el usuario debe haber iniciado sesión en el equipo con la cuenta de administrador local. Como alternativa, el usuario debe proporcionar las credenciales para la cuenta de administrador local durante el proceso de unión del equipo al dominio. Además, el usuario debe tener una cuenta de usuario en el dominio en el que el usuario desea unir el equipo. Durante el proceso de unión del equipo al dominio, se le pedirá al usuario el nombre de usuario y la contraseña de las credenciales de la cuenta de dominio \( \) .
 
 2. Proporcione a los usuarios del dominio las instrucciones para configurar un perfil inalámbrico de bootstrap, como se documenta en el procedimiento siguiente **para configurar un perfil inalámbrico de bootstrap**.
-3. Además, proporcione a los usuarios el nombre de usuario y la contraseña de las credenciales del equipo local \( \) , y \( el nombre y la contraseña de la cuenta de usuario de dominio de credenciales de dominio con \) el formato *nombreDeDominio \\ nombreDeUsuario*, así como los procedimientos para "unir el equipo al dominio" y "iniciar sesión en el dominio", como se documenta en la [Guía de red principal](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide)de Windows Server 2016
+3. Además, proporcione a los usuarios el nombre de usuario y la contraseña de las credenciales del equipo local \( \) , y \( el nombre y la contraseña de la cuenta de usuario de dominio de credenciales de dominio con \) el formato *nombreDeDominio \\ nombreDeUsuario*, así como los procedimientos para "unir el equipo al dominio" y "iniciar sesión en el dominio", como se documenta en la [Guía de red principal](../../core-network-guide.md)de Windows Server 2016
 
 #### <a name="to-configure-a-bootstrap-wireless-profile"></a>Para configurar un perfil inalámbrico de bootstrap
 

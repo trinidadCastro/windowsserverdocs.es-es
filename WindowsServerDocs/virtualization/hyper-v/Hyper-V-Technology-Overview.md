@@ -1,24 +1,22 @@
 ---
 title: Información general sobre la tecnología Hyper-V
 description: Describe qué es Hyper-V, cómo obtenerlo, las características clave y los usos comunes.
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
 author: kbdazure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: d21bec24a22607213771bdad0b48df18fd88eb4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fd4c0199cea04d6697b593ad70b4f31b55afad0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853248"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960768"
 ---
 # <a name="hyper-v-technology-overview"></a>Información general sobre la tecnología Hyper-V
 
->Se aplica a: Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
+>Se aplica a: Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
 Hyper-V es el producto de virtualización de hardware de Microsoft. Permite crear y ejecutar una versión de software de un equipo, denominada *máquina virtual*. Cada máquina virtual actúa como un equipo completo en el que se ejecuta un sistema operativo y programas. Cuando necesite recursos informáticos, las máquinas virtuales le ofrecen mayor flexibilidad, le ayudan a ahorrar tiempo y dinero, y son una manera más eficaz de usar hardware que simplemente ejecutar un sistema operativo en hardware físico.
 
@@ -28,13 +26,13 @@ Hyper-V ejecuta cada máquina virtual en su propio espacio aislado, lo que signi
 
 Hyper-V puede ayudarle a:
 
-- **Establecer o expandir un entorno de nube privada.** Proporcione servicios de TI más flexibles y a petición al migrar o ampliar el uso de recursos compartidos y ajustar el uso a medida que cambia la demanda.
+- **Establecer o ampliar un entorno de nube privado.** Proporcione servicios de TI más flexibles y a petición al migrar o ampliar el uso de recursos compartidos y ajustar el uso a medida que cambia la demanda.
 
 - **Use el hardware de forma más eficaz.** Consolide servidores y cargas de trabajo en menos equipos físicos más eficaces para usar menos energía y espacio físico.
 
 - **Mejorar la continuidad empresarial.** Minimice el impacto de los tiempos de inactividad programados y no programados de las cargas de trabajo.
 
-- **Establecer o expandir una infraestructura de escritorio virtual (VDI).** Usar una estrategia de escritorio centralizada con VDI puede ayudarle a aumentar la agilidad empresarial y la seguridad de los datos, así como a simplificar el cumplimiento normativo y administrar sistemas operativos y aplicaciones de escritorio. Implemente Hyper-V y Host de virtualización de Escritorio remoto (host de virtualización de escritorio remoto) en el mismo servidor para que los escritorios virtuales personales o los grupos de escritorios virtuales estén disponibles para los usuarios.
+- **Establecer o ampliar una infraestructura de escritorio virtual (VDI).** Usar una estrategia de escritorio centralizada con VDI puede ayudarle a aumentar la agilidad empresarial y la seguridad de los datos, así como a simplificar el cumplimiento normativo y administrar sistemas operativos y aplicaciones de escritorio. Implemente Hyper-V y Host de virtualización de Escritorio remoto (host de virtualización de escritorio remoto) en el mismo servidor para que los escritorios virtuales personales o los grupos de escritorios virtuales estén disponibles para los usuarios.
 
 - **Haga que el desarrollo y las pruebas sean más eficaces.** Reproduzca diferentes entornos informáticos sin tener que comprar o mantener todo el hardware que necesita si solo usa sistemas físicos.
 
@@ -66,7 +64,7 @@ Para obtener un resumen de las características introducidas en esta versión, c
 
 Hyper-V está disponible en Windows Server y Windows, como un rol de servidor disponible para las versiones x64 de Windows Server. Para obtener instrucciones sobre el servidor, consulte [instalar el rol Hyper-V en Windows Server](get-started/Install-the-Hyper-V-role-on-Windows-Server.md). En Windows, está disponible como [característica](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) en algunas versiones de 64 bits de Windows. También está disponible como un producto de servidor independiente descargable, [Microsoft Hyper-V Server](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019).
 
-## <a name="supported-operating-systems"></a>Sistemas operativos compatibles
+## <a name="supported-operating-systems"></a>Sistemas operativos admitidos
 
 Muchos sistemas operativos se ejecutarán en máquinas virtuales. En general, un sistema operativo que usa una arquitectura x86 se ejecutará en una máquina virtual de Hyper-V. No obstante, Microsoft no admite todos los sistemas operativos que se pueden ejecutar. Para obtener listas de lo que se admite, consulte:
 
@@ -88,14 +86,14 @@ Hyper-V también tiene herramientas para la administración y la conectividad. P
 
 - Administrador de Hyper-V
 - [Módulo de Hyper-V para Windows PowerShell](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [Conexión a máquina Virtual](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(a veces denominada VMConnect\)
+- Conexión de máquina [virtual](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \( a veces denominado VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>Tecnologías relacionadas
 
 Estas son algunas tecnologías de Microsoft que se suelen usar con Hyper-V:
 
-- [Clúster de conmutación por error](../../failover-clustering/whats-new-in-failover-clustering.md)
+- [Clústeres de conmutación por error](../../failover-clustering/whats-new-in-failover-clustering.md)
 - [Servicios de Escritorio remoto](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
 - [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
 

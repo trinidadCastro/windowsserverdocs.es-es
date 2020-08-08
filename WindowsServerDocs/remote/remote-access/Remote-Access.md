@@ -2,19 +2,17 @@
 title: Acceso remoto
 description: En este tema se proporciona información general sobre el rol de servidor de acceso remoto en Windows Server 2016.
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
 ms.author: lizross
 author: eross-msft
 ms.date: 05/18/2018
-ms.openlocfilehash: 9fc6fef0bc868e2f2db1fa8deb102eb46e959264
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3efbc9d05beacdcc1d8ceb466f25dfc59f2bae0c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959507"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970452"
 ---
 # <a name="remote-access"></a>Acceso remoto
 
@@ -24,11 +22,11 @@ La guía de acceso remoto le proporciona información general sobre el rol de se
 
 - [Guía de implementación de Always On VPN](vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)
 - [Protocolo de puerta de enlace de borde &#40;&#41;BGP](bgp/Border-Gateway-Protocol-BGP.md)
-- [Puerta de enlace RAS](ras-gateway/RAS-Gateway.md) 
+- [Puerta de enlace RAS](ras-gateway/RAS-Gateway.md)
 - [Documentación de rol de servidor de acceso remoto](ras/Remote-Access-Server-Role-Documentation.md)
 - [Puerta de enlace RAS para SDN](../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)
 - [Redes privadas virtuales (VPN)](vpn/vpn-top.md)
- 
+
 Para obtener más información acerca de otras tecnologías de red, consulte [funciones de red en Windows Server 2016](../../networking/index.yml).
 
 El rol de servidor de acceso remoto es una agrupación lógica de estas tecnologías de acceso a la red relacionadas: [servicio de acceso remoto (RAS)](#bkmk_da), [enrutamiento](#bkmk_rras)y [proxy de aplicación web](#bkmk_proxy). Estas tecnologías son los *Servicios de rol* del rol de servidor de acceso remoto. Al instalar el rol de servidor de acceso remoto con el **Asistente para agregar roles y características** o Windows PowerShell, puede instalar uno o varios de estos tres servicios de rol.
@@ -47,29 +45,29 @@ Al instalar el servicio de rol **DirectAccess y VPN (RAS)** , está implementand
 >[!IMPORTANT]
 > La puerta de enlace RAS con capacidades multiinquilino también está disponible en Windows Server 2012 R2.
 
-- **VPN Always on**. Always On VPN permite a los usuarios remotos acceder de forma segura a los recursos compartidos, sitios web de la intranet y aplicaciones de una red interna sin necesidad de conectarse a una VPN. 
+- **VPN Always on**. Always On VPN permite a los usuarios remotos acceder de forma segura a los recursos compartidos, sitios web de la intranet y aplicaciones de una red interna sin necesidad de conectarse a una VPN.
 
 Para obtener más información, consulte [puerta de enlace de Ras](ras-gateway/RAS-Gateway.md) y [Protocolo de puerta de enlace de borde (BGP)](bgp/Border-Gateway-Protocol-BGP.md).
 
-## <a name="routing"></a><a name="bkmk_rras"></a>Automático
+## <a name="routing"></a><a name="bkmk_rras"></a>Enrutamiento
 
 Puede usar el acceso remoto para enrutar el tráfico de red entre subredes de la red de área local. El enrutamiento proporciona compatibilidad con los enrutadores de traducción de direcciones de red (NAT), los enrutadores de LAN que ejecutan BGP, el protocolo de información de enrutamiento (RIP) y los enrutadores compatibles con multidifusión mediante el protocolo de administración de grupos de Internet (IGMP). Como enrutador completo, puede implementar RAS en un equipo servidor o como una máquina virtual (VM) en un equipo que ejecuta Hyper-V.
 
 Para instalar el acceso remoto como un enrutador LAN, use el Asistente para agregar roles y características en Administrador del servidor y seleccione el rol de servidor de **acceso remoto** y el servicio de rol de **enrutamiento** . o bien, escriba el siguiente comando en un símbolo del sistema de Windows PowerShell y, a continuación, presione Entrar.
 
-```  
+```
 Install-RemoteAccess -VpnType RoutingOnly
-```  
+```
 
 ## <a name="web-application-proxy"></a><a name="bkmk_proxy"></a>Proxy de aplicación web
 
 Proxy de aplicación web es un servicio de rol de acceso remoto en Windows Server 2016. Web Application Proxy proporciona funcionalidad de proxy inverso para aplicaciones web dentro de la red corporativa para permitir a los usuarios de cualquier dispositivo tener acceso a ellas desde fuera de la red corporativa. Proxy de aplicación web autentica previamente el acceso a las aplicaciones web mediante Servicios de federación de Active Directory (AD FS) (AD FS) y también funciona como un proxy AD FS.
 
-Para instalar el acceso remoto como un proxy de aplicación Web, use el Asistente para agregar roles y características en Administrador del servidor y seleccione el rol de servidor de **acceso remoto** y el servicio de rol **proxy de aplicación web** . o bien, escriba el siguiente comando en un símbolo del sistema de Windows PowerShell y, a continuación, presione Entrar.  
+Para instalar el acceso remoto como un proxy de aplicación Web, use el Asistente para agregar roles y características en Administrador del servidor y seleccione el rol de servidor de **acceso remoto** y el servicio de rol **proxy de aplicación web** . o bien, escriba el siguiente comando en un símbolo del sistema de Windows PowerShell y, a continuación, presione Entrar.
 
-```  
-Install-RemoteAccess -VpnType SstpProxy  
-```  
+```
+Install-RemoteAccess -VpnType SstpProxy
+```
 
 Para obtener más información, vea [proxy de aplicación web](./web-application-proxy/web-application-proxy-windows-server.md).
 

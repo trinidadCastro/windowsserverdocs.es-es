@@ -1,20 +1,18 @@
 ---
 title: Configuración de la réplica de Hyper-V
-ms.technology: compute-hyper-v
 description: Proporciona instrucciones para configurar la réplica, probar la conmutación por error y realizar una primera replicación.
-ms.prod: windows-server
 manager: dongill
 ms.topic: article
 ms.assetid: eea9e996-bfec-4065-b70b-d8f66e7134ac
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/10/2016
-ms.openlocfilehash: c24b26617f7174632bc39842afc9e83843e7673b
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 24fce3e0ebbfc51167a7e6e390de092433cceaff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769693"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941853"
 ---
 # <a name="set-up-hyper-v-replica"></a>Configuración de la réplica de Hyper-V
 
@@ -95,7 +93,7 @@ Haga lo siguiente en cada máquina virtual que quiera replicar:
 
 2.  En la página **Antes de comenzar**, haga clic en **Siguiente**.
 
-3.  En la página **especificar servidor de réplicas** , en el cuadro servidor de réplicas, escriba el nombre NetBIOS o el FQDN del servidor réplica. Si el servidor réplica forma parte de un clúster de conmutación por error, escriba el nombre del agente de réplicas de Hyper-V. Haga clic en **Siguiente**.
+3.  En la página **especificar servidor de réplicas** , en el cuadro servidor de réplicas, escriba el nombre NetBIOS o el FQDN del servidor réplica. Si el servidor réplica forma parte de un clúster de conmutación por error, escriba el nombre del agente de réplicas de Hyper-V. Haga clic en **Next**.
 
 4.  En la página **especificar parámetros de conexión** , réplica de Hyper-V recupera automáticamente la configuración de autenticación y puerto que configuró para el servidor réplica. Si los valores no se recuperan, compruebe que el servidor está configurado como un servidor de réplicas y que está registrado en DNS. Si es necesario, escriba manualmente la configuración.
 

@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 2ed2a6b601ee2cabd45fd5170764c812307b6ac1
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 6ff1d69afc95aa87d81c8737313d425e84cbc531
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624273"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941333"
 ---
 # <a name="determining-the-number-of-domains-required"></a>Determinar el número de dominios necesarios
 
@@ -128,4 +126,4 @@ Aunque el número total de usuarios que puede colocar en un dominio en un bosque
 
 Después de dividir la organización en dominios regionales, documente las regiones que desee representar y el número de usuarios que existirán en cada región. Además, tenga en cuenta la velocidad de los vínculos más lentos en cada región que utilizará para la replicación de Active Directory. Esta información se usa para determinar si se requieren dominios o bosques adicionales.
 
-Para obtener una hoja de cálculo que le ayude a documentar las regiones que identificó, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "identificar regiones" (DSSLOGI_4. doc).
+Para obtener una hoja de cálculo que le ayude a documentar las regiones que identificó, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "identificar regiones" (DSSLOGI_4.doc).

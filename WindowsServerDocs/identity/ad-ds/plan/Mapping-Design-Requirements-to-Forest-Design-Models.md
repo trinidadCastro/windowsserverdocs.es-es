@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 2a389b00fbf983a24b745431fee98a760f0fc756
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f10c3c5bc1b974e27aa14341c5367885333172fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963567"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971012"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>Asignar los requisitos de diseño a los modelos de diseño de bosque
 
@@ -30,13 +28,13 @@ Si no todos los grupos de su organización pueden compartir un solo bosque de la
 
 |Escenario|Conectividad limitada|Aislamiento de datos|Autonomía de los datos|Aislamiento del servicio|Autonomía del servicio|
 |------------|------------------------|------------------|-----------------|---------------------|--------------------|
-|[Escenario 1: unir un bosque existente para la autonomía de los datos](#BKMK_1)|No|Sin|Sí|No|Sin|
+|[Escenario 1: unir un bosque existente para la autonomía de los datos](#BKMK_1)|No|No|Sí|No|No|
 |[Escenario 2: usar un bosque o dominio de la organización para la autonomía del servicio](#BKMK_2)|No|No|N/D|No|Sí|
-|[Escenario 3: usar un bosque de la organización o un bosque de recursos para el aislamiento del servicio](#BKMK_3)|No|No|N/D|Sí|No aplicable|
-|[Escenario 4: usar un bosque de la organización o un bosque de acceso restringido para el aislamiento de datos](#BKMK_4)|N/D|Sí|No aplicable|N/A|N/A|
-|[Escenario 5: usar un bosque de la organización o volver a configurar el firewall para una conectividad limitada](#BKMK_5)|Sí|No|N/D|No|Sin|
+|[Escenario 3: usar un bosque de la organización o un bosque de recursos para el aislamiento del servicio](#BKMK_3)|No|No|N/D|Sí|N/D|
+|[Escenario 4: usar un bosque de la organización o un bosque de acceso restringido para el aislamiento de datos](#BKMK_4)|N/D|Sí|N/D|N/D|N/D|
+|[Escenario 5: usar un bosque de la organización o volver a configurar el firewall para una conectividad limitada](#BKMK_5)|Sí|No|N/D|No|No|
 |[Escenario 6: usar un bosque o dominio de la organización y volver a configurar el firewall para la autonomía del servicio con conectividad limitada](#BKMK_6)|Sí|No|N/D|No|Sí|
-|[Escenario 7: usar un bosque de recursos y volver a configurar el firewall para el aislamiento de servicio con conectividad limitada](#BKMK_7)|Sí|No|N/D|Sí|No aplicable|
+|[Escenario 7: usar un bosque de recursos y volver a configurar el firewall para el aislamiento de servicio con conectividad limitada](#BKMK_7)|Sí|No|N/D|Sí|N/D|
 
 ## <a name="scenario-1-join-an-existing-forest-for-data-autonomy"></a><a name="BKMK_1"></a>Escenario 1: unir un bosque existente para la autonomía de los datos
 

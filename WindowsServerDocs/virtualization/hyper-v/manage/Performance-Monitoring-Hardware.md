@@ -1,19 +1,18 @@
 ---
 title: Habilitación del hardware de supervisión del rendimiento de Intel en una máquina virtual de Hyper-V
 description: Cómo habilitar el hardware de supervisión de rendimiento de Intel en una máquina de Hyper-V. También toca cómo habilitar la supervisión de rendimiento de los efectos de hardware en la migración en vivo.
-ms.prod: windows-server
 ms.reviewer: ifufondu
 author: ifeomaufondu-ms
 ms.author: ifufondu
 manager: chhuybre
 ms.topic: article
 ms.date: 09/20/2019
-ms.openlocfilehash: 1165ce58cf781d6ef5f905cb8b01c00fa4552edb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 73ab88d6ee5d50ae8b433a064a7cea7c249094a2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860268"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996751"
 ---
 # <a name="enable-intel-performance-monitoring-hardware-in-a-hyper-v-virtual-machine"></a>Habilitación del hardware de supervisión del rendimiento de Intel en una máquina virtual de Hyper-V
 
@@ -25,17 +24,17 @@ Para habilitar el hardware de supervisión de rendimiento en una máquina virtua
 
 - Un procesador Intel con hardware de supervisión de rendimiento (es decir, PMU, PEBS, LBR).  Consulte [este documento]( https://software.intel.com/en-us/vtune-amplifier-cookbook-configuring-a-hyper-v-virtual-machine-for-hardware-based-hotspots-analysis) de Intel para determinar qué hardware de supervisión de rendimiento es compatible con el sistema.
 - Windows Server 2019 o Windows 10 versión 1809 (actualización de octubre de 2018) o posterior
-- Una máquina virtual de Hyper-V _sin_ [Virtualización anidada](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization) que también esté en estado detenido
+- Una máquina virtual de Hyper-V _sin_ [Virtualización anidada](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization) que también esté en estado detenido
 
 Para habilitar el siguiente hardware de supervisión de rendimiento de seguimiento del procesador Intel (IPT) en una máquina virtual, necesitará:
 
 - Procesador Intel compatible con IPT y la característica PT2GPA.  Consulte [este documento]( https://software.intel.com/en-us/vtune-amplifier-cookbook-configuring-a-hyper-v-virtual-machine-for-hardware-based-hotspots-analysis) de Intel para determinar qué hardware de supervisión de rendimiento es compatible con el sistema.
 - Windows Server versión 1903 (SAC) o Windows 10 versión 1903 (actualización de mayo de 2019) o posterior
-- Una máquina virtual de Hyper-V _sin_ [Virtualización anidada](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization) que también esté en estado detenido
+- Una máquina virtual de Hyper-V _sin_ [Virtualización anidada](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization) que también esté en estado detenido
 
 ## <a name="enabling-performance-monitoring-components-in-a-virtual-machine"></a>Habilitación de los componentes de supervisión de rendimiento en una máquina virtual
 
-Para habilitar distintos componentes de supervisión de rendimiento para una máquina virtual invitada específica, use el cmdlet de `Set-VMProcessor` PowerShell mientras se ejecuta como administrador:
+Para habilitar distintos componentes de supervisión de rendimiento para una máquina virtual invitada específica, use el `Set-VMProcessor` cmdlet de PowerShell mientras se ejecuta como administrador:
 
 ``` Powershell
 # Enable all components except IPT
@@ -48,7 +47,7 @@ Set-VMProcessor MyVMName -Perfmon @("pmu")
 ```
 
 ``` Powershell
-# Enable IPT 
+# Enable IPT
 Set-VMProcessor MyVMName -Perfmon @("ipt")
 ```
 
@@ -57,9 +56,10 @@ Set-VMProcessor MyVMName -Perfmon @("ipt")
 Set-VMProcessor MyVMName -Perfmon @()
 ```
 > [!NOTE]
-> Al habilitar los componentes de supervisión de rendimiento, si se especifica `"pebs"`, se debe especificar también `"pmu"`. PEBS solo se admite en hardware con una versión de PMU > = 4. La habilitación de un componente que no sea compatible con los procesadores físicos del host producirá un error de inicio de la máquina virtual.
+> Al habilitar los componentes de supervisión de rendimiento, si `"pebs"` se especifica, `"pmu"` también se debe especificar.
+> PEBS solo se admite en hardware con una versión de PMU >= 4.
+> La habilitación de un componente que no sea compatible con los procesadores físicos del host producirá un error de inicio de la máquina virtual.
 
 ## <a name="effects-of-enabling-performance-monitoring-hardware-on-saverestore-export-and-live-migration"></a>Efectos de habilitar el hardware de supervisión de rendimiento en guardar/restaurar, exportar y migración en vivo
 
 Microsoft no recomienda la migración en vivo o el almacenamiento o la restauración de máquinas virtuales con hardware de supervisión de rendimiento entre sistemas con hardware de Intel diferente. El comportamiento específico del hardware de supervisión de rendimiento suele ser no arquitectónico y cambios entre los sistemas de hardware de Intel.  Mover una máquina virtual en ejecución entre diferentes sistemas puede producir un comportamiento impredecible de los contadores no arquitectónicos.
-

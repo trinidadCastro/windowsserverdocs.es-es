@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 04e4d33f6c5894a59547e84a6066d3af04f80a9b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d7df84e26ef86f553d57b2019d4d46581d7c17fa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964111"
+ms.locfileid: "87996901"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Respuestas DNS basadas en la hora del día con un servidor de aplicaciones en la nube de Azure
 
@@ -22,7 +22,7 @@ Puede usar este tema para aprender a distribuir el tráfico de aplicaciones entr
 Este escenario es útil en situaciones en las que desea dirigir el tráfico de una zona horaria a servidores de aplicaciones alternativos, como los servidores web que se hospedan en Microsoft Azure, que se encuentran en otra zona horaria. Esto le permite equilibrar la carga del tráfico entre las instancias de la aplicación durante períodos de tiempo máximos cuando los servidores principales están sobrecargados con el tráfico.
 
 > [!NOTE]
-> Para obtener información sobre cómo usar la Directiva de DNS para las respuestas de DNS inteligentes sin usar Azure, consulte [uso de la Directiva de DNS para respuestas de DNS inteligentes en función de la hora del día](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md).
+> Para obtener información sobre cómo usar la Directiva de DNS para las respuestas de DNS inteligentes sin usar Azure, consulte [uso de la Directiva de DNS para respuestas de DNS inteligentes en función de la hora del día](./dns-tod-intelligent.md).
 
 ## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>Ejemplo de respuestas DNS inteligentes basadas en la hora del día con el servidor de aplicaciones en la nube de Azure
 
@@ -91,7 +91,7 @@ Puede usar el siguiente comando de ejemplo para crear un ámbito de zona para ho
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope"
 ```
 
-Para obtener más información, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a>Agregar registros a los ámbitos de zona
 El siguiente paso consiste en agregar los registros que representan el host del servidor Web en los ámbitos de zona.
@@ -110,7 +110,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.68.30.2"
 ```
 
-Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
 ### <a name="create-the-dns-policies"></a>Crear las directivas de DNS
 Una vez creados los ámbitos de zona, puede crear directivas DNS que distribuyan las consultas entrantes en estos ámbitos para que se produzca lo siguiente.
@@ -126,7 +126,7 @@ Puede usar el siguiente comando de ejemplo para crear la Directiva DNS.
 Add-DnsServerQueryResolutionPolicy -Name "Contoso6To9Policy" -Action ALLOW -ZoneScope "contosogiftservices.com,7;AzureZoneScope,3" –TimeOfDay “EQ,18:00-21:00” -ZoneName "contosogiftservices.com" –ProcessingOrder 1
 ```
 
-Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 Ahora el servidor DNS está configurado con las directivas DNS necesarias para redirigir el tráfico al servidor Web de Azure en función de la hora del día.
 

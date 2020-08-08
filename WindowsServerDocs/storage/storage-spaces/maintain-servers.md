@@ -1,20 +1,18 @@
 ---
 title: Desconectar un servidor de Espacios de almacenamiento directo para su mantenimiento
-ms.prod: windows-server
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dba155f8b8d7312a823dedc72d23268d7d13fbf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d3fd3e1c6ca9a7493ac0bcdc809f68fe22f8fa67
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955917"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971092"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Desconectar un servidor de Espacios de almacenamiento directo para su mantenimiento
 
@@ -120,7 +118,7 @@ Para hacer esto en Administrador de clústeres de conmutación por error, vaya a
 
 ## <a name="waiting-for-storage-to-resync"></a>Esperando a que se resincronice el almacenamiento
 
-Cuando el servidor se reanuda, las nuevas escrituras que se hayan producido mientras no estaba disponible deben volver a sincronizarse. Esto sucede automáticamente. Con el seguimiento de cambios inteligente, no es necesario que *todos los* datos se analicen ni sincronicen. solo los cambios. Este proceso se limita para mitigar el impacto en las cargas de trabajo de producción. En función de cuánto tiempo se haya pausado el servidor y de la cantidad de datos nuevos que se escriban, puede tardar varios minutos en completarse.
+Cuando el servidor se reanuda, las nuevas escrituras que se hayan producido mientras no estaba disponible deben volver a sincronizarse. Esto ocurre automáticamente. Con el seguimiento de cambios inteligente, no es necesario que *todos los* datos se analicen ni sincronicen. solo los cambios. Este proceso se limita para mitigar el impacto en las cargas de trabajo de producción. En función de cuánto tiempo se haya pausado el servidor y de la cantidad de datos nuevos que se escriban, puede tardar varios minutos en completarse.
 
 Debe esperar a que la resincronización se complete antes de dejar sin conexión los demás servidores del clúster.
 
@@ -185,5 +183,5 @@ Siga estos pasos para realizar una ruta de acceso al sistema de Espacios de alma
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Actualización compatible con clústeres (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11))

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 06/13/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: active-directory-federation-services
-ms.openlocfilehash: 934ef170f6cbd5a2bd4031d336907d6b925cff06
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c615bd6426098e00854e873d3e1eb2cfbfaa0734
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519904"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970942"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Compilar una aplicación Web de una sola página mediante OAuth y ADAL.JS con AD FS 2016 o posterior
 
@@ -27,7 +25,7 @@ En este escenario, cuando el usuario inicia sesión, el front-end de JavaScript 
 >[!NOTE]
 >Este tutorial **solo** es aplicable a AD FS Server 2016 y versiones posteriores.
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 En este ejemplo, vamos a crear un flujo de autenticación en el que un cliente de aplicación de una sola página se autenticará en AD FS para proteger el acceso a los recursos de WebAPI en el back-end. A continuación se muestra el flujo de autenticación general
 
 ![Autorización de AD FS](media/Single-Page-Application-with-AD-FS/authenticationflow.PNG)
@@ -148,7 +146,7 @@ and add:
     );
 ```
 
-|Parámetro|Description|
+|Parámetro|Descripción|
 |--------|--------|
 |ValidAudience|Esto configura el valor de ' Audience ' que se comprobará en el token|
 |ValidIssuer|Esto configura el valor de ' issuer que se comprobará en el token|
@@ -184,5 +182,5 @@ Ahora podrá llamar a la API de back-end para agregar elementos de la lista de t
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)

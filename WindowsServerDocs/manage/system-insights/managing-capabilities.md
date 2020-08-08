@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: e82b27d2d746592b29b86a66ee34b21f8605a0d8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e78afb47877bb908df81876afe01d2f60b853c70
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940166"
+ms.locfileid: "87996712"
 ---
 # <a name="managing-capabilities"></a>Administración de funcionalidades
 
@@ -86,7 +86,7 @@ System Insights registra un evento cada vez que una funcionalidad finaliza una p
 | Ninguno | 132 |
 
 >[!TIP]
->Use [Azure monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807) para agregar estos eventos y ver los resultados de predicción en un grupo de máquinas.
+>Use [Azure monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) para agregar estos eventos y ver los resultados de predicción en un grupo de máquinas.
 
 
 ## <a name="setting-a-capability-schedule"></a>Establecer una programación de capacidad

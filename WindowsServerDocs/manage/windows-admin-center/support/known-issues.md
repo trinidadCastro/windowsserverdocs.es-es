@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: bb416a45e18ea34628994b589e452f25d2d7744e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 91e14b5ac023f6726ffc508f945567b83311d7a4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937674"
+ms.locfileid: "87997017"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conocidos del centro de administración de Windows
 
@@ -195,7 +195,7 @@ La solución Administración de equipos contiene un subconjunto de las herramien
 
   - Para habilitar la administración del cliente de Windows 10, debe emitir el comando ```Enable-PSRemoting``` desde un símbolo del sistema de PowerShell con privilegios elevados.
 
-  - También es posible que tenga que actualizar el firewall para permitir conexiones desde fuera de la subred local con ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` . Para escenarios de redes más restrictivas, consulte [esta documentación](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1).
+  - También es posible que tenga que actualizar el firewall para permitir conexiones desde fuera de la subred local con ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` . Para escenarios de redes más restrictivas, consulte [esta documentación](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1).
 
 ## <a name="cluster-deployment"></a>Implementación de clúster
 
@@ -222,7 +222,7 @@ Si desea reiniciar el servidor manualmente, salga de la sesión del asistente ac
 Se recomienda usar servidores Unidos al dominio al crear un clúster extendido. Hay un problema de segmentación de la red al intentar usar equipos de grupo de trabajo para la implementación de clústeres extendidos debido a las limitaciones de WinRM.
 
 ### <a name="undo-and-start-over"></a>Deshacer y empezar de nuevo
-Cuando se usan las mismas máquinas repetidamente para la implementación de clústeres, la limpieza de entidades de clúster anteriores es importante para obtener una implementación correcta del clúster en el mismo conjunto de máquinas. Consulte la página sobre la implementación de la [infraestructura hiperconvergida](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over) para obtener instrucciones sobre cómo limpiar el clúster.
+Cuando se usan las mismas máquinas repetidamente para la implementación de clústeres, la limpieza de entidades de clúster anteriores es importante para obtener una implementación correcta del clúster en el mismo conjunto de máquinas. Consulte la página sobre la implementación de la [infraestructura hiperconvergida](../use/deploy-hyperconverged-infrastructure.md#undo-and-start-over) para obtener instrucciones sobre cómo limpiar el clúster.
 
 ### <a name="credssp"></a>CredSSP
 El Asistente para la implementación de clúster del centro de administración de Windows usa CredSSP en varios lugares. Este mensaje de error se ejecuta durante el asistente (esto ocurre con más frecuencia en el paso de validación del clúster):
@@ -291,7 +291,7 @@ El Asistente para la implementación de clústeres de la versión 2007 del centr
 
 ### <a name="azure-file-sync-permissions"></a>Azure File Sync permisos
 
-Azure File Sync requiere permisos en Azure que el centro de administración de Windows no proporcionó antes de la versión 1910. Si ha registrado la puerta de enlace del centro de administración de Windows con Azure con una versión anterior a la versión 1910 del centro de administración de Windows, tendrá que actualizar la aplicación Azure Active Directory para obtener los permisos correctos para usar Azure File Sync en la versión más reciente del centro de administración de Windows. El permiso adicional permite a Azure File Sync realizar la configuración automática del acceso a la cuenta de almacenamiento como se describe en este artículo: Asegúrese de que [Azure File Sync tenga acceso a la cuenta de almacenamiento](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal).
+Azure File Sync requiere permisos en Azure que el centro de administración de Windows no proporcionó antes de la versión 1910. Si ha registrado la puerta de enlace del centro de administración de Windows con Azure con una versión anterior a la versión 1910 del centro de administración de Windows, tendrá que actualizar la aplicación Azure Active Directory para obtener los permisos correctos para usar Azure File Sync en la versión más reciente del centro de administración de Windows. El permiso adicional permite a Azure File Sync realizar la configuración automática del acceso a la cuenta de almacenamiento como se describe en este artículo: Asegúrese de que [Azure File Sync tenga acceso a la cuenta de almacenamiento](/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal).
 
 Para actualizar la aplicación Azure Active Directory, puede realizar una de estas dos acciones
 1. Vaya a **configuración**  >  **Azure**  >  **anular registro**y, a continuación, vuelva a registrar el centro de administración de Windows con Azure, asegurándose de que elige crear una nueva aplicación Azure Active Directory.
@@ -301,5 +301,5 @@ Para actualizar la aplicación Azure Active Directory, puede realizar una de est
 
 Los servicios de administración de Azure, incluidos Azure Monitor, Update Management de Azure y Azure Security Center, usan el mismo agente para un servidor local: el Microsoft Monitoring Agent. Azure Update Management tiene un conjunto más limitado de regiones admitidas y requiere que el área de trabajo Log Analytics esté vinculada a una cuenta de Azure Automation. Debido a esta limitación, si desea configurar varios servicios en el centro de administración de Windows, debe configurar primero Azure Update Management y, a continuación, Azure Security Center o Azure Monitor. Si ha configurado los servicios de administración de Azure que usan el Microsoft Monitoring Agent y, a continuación, intenta configurar Azure Update Management mediante el centro de administración de Windows, el centro de administración de Windows solo le permitirá configurar Azure Update Management si los recursos existentes vinculados a la Microsoft Monitoring Agent admiten Azure Update Management. Si no es así, tiene dos opciones:
 
-1. Vaya al panel de control > Microsoft Monitoring Agent para [desconectar el servidor de las soluciones de administración de Azure existentes](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics) (como Azure Monitor o Azure Security Center). Después, configure Azure Update Management en el centro de administración de Windows. Después, puede volver a configurar las otras soluciones de administración de Azure a través del centro de administración de Windows sin problemas.
-2. Puede [configurar manualmente los recursos de Azure necesarios para azure Update Management](https://docs.microsoft.com/azure/automation/automation-update-management) y, a continuación, [actualizar manualmente el Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) (fuera del centro de administración de Windows) para agregar el nuevo área de trabajo correspondiente a la solución de Update Management que quiere usar.
+1. Vaya al panel de control > Microsoft Monitoring Agent para [desconectar el servidor de las soluciones de administración de Azure existentes](/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics) (como Azure Monitor o Azure Security Center). Después, configure Azure Update Management en el centro de administración de Windows. Después, puede volver a configurar las otras soluciones de administración de Azure a través del centro de administración de Windows sin problemas.
+2. Puede [configurar manualmente los recursos de Azure necesarios para azure Update Management](/azure/automation/automation-update-management) y, a continuación, [actualizar manualmente el Microsoft Monitoring Agent](/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) (fuera del centro de administración de Windows) para agregar el nuevo área de trabajo correspondiente a la solución de Update Management que quiere usar.

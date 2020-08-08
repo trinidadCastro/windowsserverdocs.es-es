@@ -6,23 +6,21 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 6c2ed88f90c1bbd824428578f1cda9e8e14e4901
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ba2d0becb7d455983e28a8b491bc5171fadd9ee8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822518"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941174"
 ---
 # <a name="enabling-advanced-features-for-ad-ds"></a>Habilitación de características avanzadas para AD DS
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Active Directory Domain Services (AD DS) permite introducir características avanzadas en su entorno mediante la elevación de los niveles funcionales de dominio o bosque. Para usar las características avanzadas de AD DS, debe identificar los sistemas operativos que se ejecutan en los controladores de dominio de su entorno.   
-  
-También debe determinar el mejor nivel funcional para su organización en función de la infraestructura existente y, a continuación, elevar el nivel funcional del bosque o del dominio según corresponda. Puede elevar el nivel funcional cuando todos los controladores de dominio del dominio o bosque ejecutan una versión adecuada de Windows. Aunque aumentar el nivel funcional permite habilitar nuevas características, también limita las versiones de los sistemas operativos Windows que se pueden ejecutar en los controladores de dominio de su entorno.  
-        
-  
+Active Directory Domain Services (AD DS) permite introducir características avanzadas en su entorno mediante la elevación de los niveles funcionales de dominio o bosque. Para usar las características avanzadas de AD DS, debe identificar los sistemas operativos que se ejecutan en los controladores de dominio de su entorno.
+
+También debe determinar el mejor nivel funcional para su organización en función de la infraestructura existente y, a continuación, elevar el nivel funcional del bosque o del dominio según corresponda. Puede elevar el nivel funcional cuando todos los controladores de dominio del dominio o bosque ejecutan una versión adecuada de Windows. Aunque aumentar el nivel funcional permite habilitar nuevas características, también limita las versiones de los sistemas operativos Windows que se pueden ejecutar en los controladores de dominio de su entorno.
+
+
 
 

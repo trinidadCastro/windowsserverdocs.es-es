@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: b2cbb47262033d5149e47704e3f232b7662f69e6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 30055b7954674b1cea99e7ef60d45cfa33543c3d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955672"
+ms.locfileid: "87996739"
 ---
 # <a name="hardware-only-ho-features-and-technologies"></a>Tecnologías y características de solo hardware
 
@@ -79,4 +79,4 @@ LSO permite a una aplicación pasar un gran bloque de datos a la NIC y la NIC di
 
 ## <a name="receive-segment-coalescing-rsc"></a>Receive Segment Coalescing (RSC)
 
-La fusión de segmentos de recepción, también conocida como descarga de recepción de gran tamaño, es una característica de NIC que toma paquetes que forman parte de la misma secuencia que llegan entre interrupciones de red y los fusiona en un solo paquete antes de entregarlos al sistema operativo. RSC no está disponible en las NIC que están enlazadas al conmutador virtual de Hyper-V. Para obtener más información, vea [combinación de segmentos de recepción (RSC)](https://docs.microsoft.com/windows-server/networking/technologies/hpn/rsc-in-the-vswitch).
+La fusión de segmentos de recepción, también conocida como descarga de recepción de gran tamaño, es una característica de NIC que toma paquetes que forman parte de la misma secuencia que llegan entre interrupciones de red y los fusiona en un solo paquete antes de entregarlos al sistema operativo. RSC no está disponible en las NIC que están enlazadas al conmutador virtual de Hyper-V. Para obtener más información, vea [combinación de segmentos de recepción (RSC)](./rsc-in-the-vswitch.md).

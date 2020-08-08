@@ -1,19 +1,17 @@
 ---
 title: Introducción a información del sistema
 description: System Insights es una nueva característica de análisis predictivo en Windows Server 2019. Las funcionalidades de predicción de System Insights, cada una de las cuales está respaldada por un modelo de aprendizaje automático, analizan de forma local los datos del sistema de Windows Server, como los contadores de rendimiento y los eventos, lo que proporciona una visión general del funcionamiento de los servidores y ayuda a reducir los gastos operativos asociados a la administración de problemas de forma reactiva.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: b1f0fc5343c5228a02369a64bff2de50ab3f863e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9bedd593cdd26b67e6e16ddea73955bb926a87a5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471770"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996674"
 ---
 # <a name="system-insights-overview"></a>Introducción a información del sistema
 
@@ -23,7 +21,7 @@ System Insights es una nueva característica de análisis predictivo en Windows 
 
 En Windows Server 2019, System Insights se incluye con cuatro funcionalidades predeterminadas centradas en la previsión de la capacidad, lo que predice recursos futuros de proceso, redes y almacenamiento en función de los patrones de uso anteriores. System Insights también se suministra con una [infraestructura extensible](adding-and-developing-capabilities.md), por lo que Microsoft y terceros pueden agregar nuevas capacidades de predicción a la información del sistema sin necesidad de actualizar el sistema operativo.
 
-Puede administrar información del sistema a través de una extensión intuitiva del [centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview) o [directamente a través de PowerShell](https://aka.ms/SystemInsightsPowerShell), y System Insights le permite configurar cada una de las funcionalidades predictivas de forma independiente según las necesidades de su implementación. Todos los resultados de predicción se publican en el registro de eventos, lo que permite usar [Azure monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807) para agregar fácilmente y ver las predicciones en un grupo de máquinas.
+Puede administrar información del sistema a través de una extensión intuitiva del [centro de administración de Windows](../windows-admin-center/overview.md) o [directamente a través de PowerShell](https://aka.ms/SystemInsightsPowerShell), y System Insights le permite configurar cada una de las funcionalidades predictivas de forma independiente según las necesidades de su implementación. Todos los resultados de predicción se publican en el registro de eventos, lo que permite usar [Azure monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) para agregar fácilmente y ver las predicciones en un grupo de máquinas.
 
 ![Extensión de System Insights en el centro de administración de Windows, donde se muestra la capacidad de previsión de la capacidad de CPU con un gráfico que traza la previsión](media/cpu-forecast-2.png)
 
@@ -32,7 +30,7 @@ System Insights se ejecuta completamente localmente en Windows Server. Con la nu
 
 Los datos del sistema se almacenan en el equipo y los datos se analizan mediante funcionalidades predictivas que no requieren reciclaje en la nube. Con System Insights, puede conservar los datos en la máquina y seguir beneficiándose de las capacidades de análisis predictivo.
 
-## <a name="get-started"></a>Introducción
+## <a name="get-started"></a>Primeros pasos
 
 <iframe src=https://www.youtube-nocookie.com/embed/AJxQkx5WSaA width=560 height=315 allowfullscreen></iframe>
 

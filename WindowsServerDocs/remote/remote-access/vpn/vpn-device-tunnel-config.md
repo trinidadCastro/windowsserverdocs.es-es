@@ -1,20 +1,18 @@
 ---
 title: Configurar el túnel de dispositivo VPN en Windows 10
 description: Obtenga información sobre cómo crear un túnel de dispositivo VPN en Windows 10.
-ms.prod: windows-server
 ms.date: 11/05/2018
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 636c0c56c52f501a54679a569213bcd4e4646b72
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 04500e2a9d5623aa9ce9796088bda2e4a6a5eccd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181991"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996786"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Configuración de túneles de dispositivo VPN en Windows 10
 
@@ -89,7 +87,7 @@ A continuación se muestra el profileXML de VPN de ejemplo.
 </VPNProfile>
 ```
 
-En función de las necesidades de cada escenario de implementación concreto, otra característica de VPN que se puede configurar con el túnel de dispositivo es la [detección de redes de confianza](https://docs.microsoft.com/answers/topics/windows-server-infrastructure.html).
+En función de las necesidades de cada escenario de implementación concreto, otra característica de VPN que se puede configurar con el túnel de dispositivo es la [detección de redes de confianza](/answers/topics/windows-server-infrastructure.html).
 
 ```
  <!-- inside/outside detection -->

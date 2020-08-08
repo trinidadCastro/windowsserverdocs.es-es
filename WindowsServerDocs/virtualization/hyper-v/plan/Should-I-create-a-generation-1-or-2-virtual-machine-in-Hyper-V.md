@@ -7,23 +7,23 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 35023f1b6c217da45dc0c0f5a27d0ce26a298567
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b41cefc34bce2a9d1e2e29e9d31353d4f9b8a669
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938894"
+ms.locfileid: "87996974"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>¿Debo crear una máquina virtual de generación 1 o 2 en Hyper-V?
 
 >Se aplica a: Windows 10, Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
 > [!NOTE]
-> Si tiene previsto cargar máquinas virtuales (VM) de Windows desde una ubicación local a Microsoft Azure, se admiten las máquinas virtuales de generación 1 y generación 2 en el formato de archivo VHD y tienen un disco de tamaño fijo. Consulte [máquinas virtuales de segunda generación en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) para más información sobre las capacidades de generación 2 que se admiten en Azure. Para obtener más información sobre cómo cargar un VHD de Windows o VHDX, consulte [preparación de un VHD de Windows o vhdx para cargarlos en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
+> Si tiene previsto cargar máquinas virtuales (VM) de Windows desde una ubicación local a Microsoft Azure, se admiten las máquinas virtuales de generación 1 y generación 2 en el formato de archivo VHD y tienen un disco de tamaño fijo. Consulte [máquinas virtuales de segunda generación en Azure](/azure/virtual-machines/windows/generation-2) para más información sobre las capacidades de generación 2 que se admiten en Azure. Para obtener más información sobre cómo cargar un VHD de Windows o VHDX, consulte [preparación de un VHD de Windows o vhdx para cargarlos en Azure](/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
 
 La opción de crear una máquina virtual de generación 1 o de generación 2 depende del sistema operativo invitado que desea instalar y el método de arranque que desea usar para implementar la máquina virtual. Se recomienda crear una máquina virtual de generación 2 para aprovechar las ventajas de las características como el arranque seguro, a menos que se cumpla una de las siguientes instrucciones:
 
-- El disco duro virtual desde el que desea arrancar no es [compatible con UEFI](https://technet.microsoft.com/library/hh824898.aspx).
+- El disco duro virtual desde el que desea arrancar no es [compatible con UEFI](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824898(v=win.10)).
 - La generación 2 no es compatible con el sistema operativo que desea ejecutar en la máquina virtual.
 - La generación 2 no es compatible con el método de arranque que desea usar.
 
@@ -167,11 +167,11 @@ En la tabla siguiente se muestran los métodos de arranque que son compatibles c
 ## <a name="what-are-the-advantages-of-using-generation-2-virtual-machines"></a>¿Cuáles son las ventajas de usar las máquinas virtuales de generación 2?
 
 Estas son algunas de las ventajas que obtendrá al usar una máquina virtual de generación 2:
-- **Arranque seguro** Se trata de una característica que comprueba que el cargador de arranque está firmado por una autoridad de confianza en la base de datos UEFI para evitar que el firmware no autorizado, los sistemas operativos o los controladores UEFI se ejecuten durante el arranque. Arranque seguro está habilitado de manera predeterminada para máquinas virtuales de generación 2. Si necesita ejecutar un sistema operativo invitado que no sea compatible con el arranque seguro, puede deshabilitarlo una vez creada la máquina virtual.  Para obtener más información, consulta [Arranque seguro](https://technet.microsoft.com/library/dn486875.aspx).
+- **Arranque seguro** Se trata de una característica que comprueba que el cargador de arranque está firmado por una autoridad de confianza en la base de datos UEFI para evitar que el firmware no autorizado, los sistemas operativos o los controladores UEFI se ejecuten durante el arranque. Arranque seguro está habilitado de manera predeterminada para máquinas virtuales de generación 2. Si necesita ejecutar un sistema operativo invitado que no sea compatible con el arranque seguro, puede deshabilitarlo una vez creada la máquina virtual.  Para obtener más información, consulta [Arranque seguro](/previous-versions/windows/it-pro/windows-8.1-and-8/dn486875(v=ws.11)).
 
     Para proteger las máquinas virtuales Linux de generación de arranque 2, debe elegir la plantilla de arranque seguro de CA de UEFI al crear la máquina virtual.
 
-- **Volumen de arranque más grande** El volumen de arranque máximo para las máquinas virtuales de generación 2 es de 64 TB. Es el tamaño máximo de disco admitido por. VHDX. En el caso de las máquinas virtuales de generación 1, el volumen de arranque máximo es de 2 TB para un. VHDX y 2040GB para. VHD. Para obtener más información, vea [información general sobre el formato de disco duro virtual de Hyper-V](https://technet.microsoft.com/library/hh831446.aspx).
+- **Volumen de arranque más grande** El volumen de arranque máximo para las máquinas virtuales de generación 2 es de 64 TB. Es el tamaño máximo de disco admitido por. VHDX. En el caso de las máquinas virtuales de generación 1, el volumen de arranque máximo es de 2 TB para un. VHDX y 2040GB para. VHD. Para obtener más información, vea [información general sobre el formato de disco duro virtual de Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831446(v=ws.11)).
 
   También puede ver una ligera mejora en el arranque de la máquina virtual y los tiempos de instalación con máquinas virtuales de generación 2.
 
@@ -202,7 +202,7 @@ Estas son algunas sugerencias adicionales sobre el uso de máquinas virtuales de
 
 ### <a name="attach-or-add-a-dvd-drive"></a>Conectar o agregar una unidad de DVD
 
-- No se puede conectar una unidad física de CD o DVD a una máquina virtual de generación 2. La unidad de DVD virtual de las máquinas virtuales de generación 2 solo admiten archivos de imagen ISO. Para crear un archivo de imagen ISO de un entorno de Windows, puede utilizar la herramienta de línea de comandos Oscdimg. Para más información, vea [Opciones de la línea de comandos de Oscdimg](https://msdn.microsoft.com/library/hh824847.aspx).
+- No se puede conectar una unidad física de CD o DVD a una máquina virtual de generación 2. La unidad de DVD virtual de las máquinas virtuales de generación 2 solo admiten archivos de imagen ISO. Para crear un archivo de imagen ISO de un entorno de Windows, puede utilizar la herramienta de línea de comandos Oscdimg. Para más información, vea [Opciones de la línea de comandos de Oscdimg](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824847(v=win.10)).
 - Cuando se crea una nueva máquina virtual con el cmdlet New-VM de Windows PowerShell, la máquina virtual de generación 2 no tiene una unidad de DVD. Puede Agregar una unidad de DVD mientras se ejecuta la máquina virtual.
 
 ### <a name="use-uefi-firmware"></a>Usar el firmware UEFI
@@ -220,7 +220,7 @@ Estas son algunas sugerencias adicionales sobre el uso de máquinas virtuales de
 
 ### <a name="use-ipv6-instead-of-ipv4"></a>Usar IPv6 en lugar de IPv4
 
-De manera predeterminada, las máquinas virtuales de generación 2 usan IPv4. Para usar IPv6 en su lugar, ejecute el cmdlet [set-VMFirmware de](https://technet.microsoft.com/library/dn464287.aspx) Windows PowerShell. Por ejemplo, el comando siguiente establece el protocolo preferido en IPv6 para una máquina virtual denominada TestVM:
+De manera predeterminada, las máquinas virtuales de generación 2 usan IPv4. Para usar IPv6 en su lugar, ejecute el cmdlet [set-VMFirmware de](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) Windows PowerShell. Por ejemplo, el comando siguiente establece el protocolo preferido en IPv6 para una máquina virtual denominada TestVM:
 
 ```powershell
 Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
@@ -232,13 +232,13 @@ Los puertos COM no están disponibles en las máquinas virtuales de generación 
 
 Para agregar un puerto COM:
 
-1. Deshabilita arranque seguro. La depuración del kernel no es compatible con arranque seguro. Asegúrese de que la máquina virtual se encuentra en un estado desactivado y, a continuación, use el cmdlet [set-VMFirmware](https://technet.microsoft.com/library/dn464287.aspx) . Por ejemplo, el siguiente comando deshabilita el arranque seguro en la máquina virtual TestVM:
+1. Deshabilita arranque seguro. La depuración del kernel no es compatible con arranque seguro. Asegúrese de que la máquina virtual se encuentra en un estado desactivado y, a continuación, use el cmdlet [set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) . Por ejemplo, el siguiente comando deshabilita el arranque seguro en la máquina virtual TestVM:
 
     ```powershell
     Set-VMFirmware -Vmname TestVM -EnableSecureBoot Off
     ```
 
-2. Agregue un puerto COM. Use el cmdlet [set-VMComPort](https://technet.microsoft.com/library/hh848616.aspx) para hacerlo. Por ejemplo, el comando siguiente configura el primer puerto COM de la máquina virtual, TestVM, para conectarse a la canalización con nombre, llamada testpipe, en el equipo local:
+2. Agregue un puerto COM. Use el cmdlet [set-VMComPort](/powershell/module/hyper-v/set-vmcomport?view=win10-ps) para hacerlo. Por ejemplo, el comando siguiente configura el primer puerto COM de la máquina virtual, TestVM, para conectarse a la canalización con nombre, llamada testpipe, en el equipo local:
 
     ```powershell
     Set-VMComPort -VMName TestVM 1 \\.\pipe\TestPipe
@@ -251,4 +251,4 @@ Para agregar un puerto COM:
 
 - [Máquinas virtuales Linux y FreeBSD en Hyper-V](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 - [Usos de recursos locales en la máquina virtual de Hyper-V con VMConnect](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
-- [Planear la escalabilidad de Hyper-V en Windows Server 2016](Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)
+- [Planear la escalabilidad de Hyper-V en Windows Server 2016](./plan-hyper-v-scalability-in-windows-server.md)

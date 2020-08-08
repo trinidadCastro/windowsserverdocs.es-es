@@ -1,18 +1,16 @@
 ---
 title: Cmdlets para configurar dispositivos de memoria persistentes para máquinas virtuales de Hyper-V
 description: Configuración de dispositivos de memoria persistentes para máquinas virtuales de Hyper-V
-ms.prod: windows-server
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc08039ba1d
 author: coreyp-at-msft
 ms.author: coreyp
-ms.openlocfilehash: 4e981185f5ba3ff8e6ad7dc22acc51591d5d32dc
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 471dd9a7c3feb148b9ce27ec7ac4d714be0e86af
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769043"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996697"
 ---
 # <a name="cmdlets-for-configuring-persistent-memory-devices-for-hyper-v-vms"></a>Cmdlets para configurar dispositivos de memoria persistentes para máquinas virtuales de Hyper-V
 
@@ -22,7 +20,7 @@ En este artículo se proporcionan a los administradores de sistemas y profesiona
 
 ## <a name="create-a-persistent-memory-device-for-a-vm"></a>Creación de un dispositivo de memoria persistente para una máquina virtual
 
-Use el cmdlet **[New-VHD](https://docs.microsoft.com/powershell/module/hyper-v/new-vhd?view=win10-ps)** para crear un dispositivo de memoria persistente para una máquina virtual. El dispositivo debe crearse en un volumen NTFS DAX existente.  La nueva extensión de nombre de archivo (. vhdpmem) se usa para especificar que el dispositivo es un dispositivo de memoria persistente. Solo se admite el formato de archivo VHD fijo.
+Use el cmdlet **[New-VHD](/powershell/module/hyper-v/new-vhd?view=win10-ps)** para crear un dispositivo de memoria persistente para una máquina virtual. El dispositivo debe crearse en un volumen NTFS DAX existente.  La nueva extensión de nombre de archivo (. vhdpmem) se usa para especificar que el dispositivo es un dispositivo de memoria persistente. Solo se admite el formato de archivo VHD fijo.
 
 **Ejemplo:** `New-VHD d:\VMPMEMDevice1.vhdpmem -Fixed -SizeBytes 4GB`
 
@@ -40,7 +38,7 @@ Add-VMPmemController ProductionVM1x
 
 ## <a name="attach-a-persistent-memory-device-to-a-vm"></a>Conexión de un dispositivo de memoria persistente a una máquina virtual
 
-Uso de **[Add-VMHardDiskDrive](https://docs.microsoft.com/powershell/module/hyper-v/add-vmharddiskdrive?view=win10-ps)** para adjuntar un dispositivo de memoria persistente a una máquina virtual
+Uso de **[Add-VMHardDiskDrive](/powershell/module/hyper-v/add-vmharddiskdrive?view=win10-ps)** para adjuntar un dispositivo de memoria persistente a una máquina virtual
 
 **Ejemplo:** `Add-VMHardDiskDrive ProductionVM1 PMEM -ControllerLocation 1 -Path D:\VPMEMDevice1.vhdpmem`
 

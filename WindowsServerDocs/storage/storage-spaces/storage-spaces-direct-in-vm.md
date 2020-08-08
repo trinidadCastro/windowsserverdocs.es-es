@@ -1,20 +1,18 @@
 ---
 title: Usar Espacios de almacenamiento directo en una máquina virtual
 description: Cómo implementar Espacios de almacenamiento directo en un clúster invitado de máquina virtual, por ejemplo, en Microsoft Azure.
-ms.prod: windows-server
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b930df382adfc9641175eb4ee3ce531d7eaf8bbc
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: d124e26f0605b8e1a4678abebb9039b597f1c18a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769064"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971062"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>Uso de Espacios de almacenamiento directo en clústeres de máquinas virtuales invitadas
 
@@ -75,7 +73,7 @@ Las consideraciones siguientes se aplican al implementar Espacios de almacenamie
 
     El equivalente decimal del hexadecimal 7530 es 30000, que es de 30 segundos. Tenga en cuenta que el valor predeterminado es 1770 hexadecimal o 6000 decimal, que es de 6 segundos.
 
-## <a name="not-supported"></a>No compatible
+## <a name="not-supported"></a>No compatibles
 
 - Instantánea o restauración de disco virtual de nivel de host
 

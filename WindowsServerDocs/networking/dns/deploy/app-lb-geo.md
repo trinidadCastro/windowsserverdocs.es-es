@@ -2,18 +2,16 @@
 title: Uso de la directiva de DNS para equilibrio de carga de aplicación con reconocimiento de ubicación geográfica
 description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b66ae0ef1bf319b991efc01c062ec156bf277c31
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 00195c4993f3e5bef9688adbfd09f62f908b6276
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518400"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996942"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>Uso de la directiva de DNS para equilibrio de carga de aplicación con reconocimiento de ubicación geográfica
 
@@ -21,10 +19,10 @@ ms.locfileid: "87518400"
 
 Puede usar este tema para obtener información sobre cómo configurar la Directiva de DNS para equilibrar la carga de una aplicación con reconocimiento de ubicación geográfica.
 
-En el tema anterior de esta guía, uso de la [Directiva de DNS para el equilibrio de carga de aplicaciones](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb), se usa un ejemplo de una empresa ficticia-servicios de regalo de Contoso que proporciona servicios de regalos en línea y que tiene un sitio Web denominado contosogiftservices.com. La carga de servicios de regalos de Contoso equilibra su aplicación web en línea entre servidores de centros de seguridad de Norteamérica ubicados en Seattle, WA, Chicago, IL y Dallas, TX.
+En el tema anterior de esta guía, uso de la [Directiva de DNS para el equilibrio de carga de aplicaciones](./app-lb.md), se usa un ejemplo de una empresa ficticia-servicios de regalo de Contoso que proporciona servicios de regalos en línea y que tiene un sitio Web denominado contosogiftservices.com. La carga de servicios de regalos de Contoso equilibra su aplicación web en línea entre servidores de centros de seguridad de Norteamérica ubicados en Seattle, WA, Chicago, IL y Dallas, TX.
 
 >[!NOTE]
->Se recomienda que se familiarice con el tema [uso de la Directiva de DNS para el equilibrio de carga de la aplicación](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb) antes de realizar las instrucciones de este escenario.
+>Se recomienda que se familiarice con el tema [uso de la Directiva de DNS para el equilibrio de carga de la aplicación](./app-lb.md) antes de realizar las instrucciones de este escenario.
 
 En este tema se utiliza la misma infraestructura ficticia de la empresa y la red como base para una nueva implementación de ejemplo que incluye el reconocimiento de la ubicación geográfica.
 
@@ -60,7 +58,7 @@ Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
 ```
 
-Para obtener más información, consulte [Add-DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
 
 ### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>Crear los ámbitos de zona
 
@@ -84,7 +82,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
 ```
 
-Para obtener más información, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records2"></a>Agregar registros a los ámbitos de zona
 
@@ -97,7 +95,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
 ```
 
-Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
 ### <a name="create-the-dns-policies"></a><a name="bkmk_policies2"></a>Crear las directivas de DNS
 
@@ -117,7 +115,7 @@ Add-DnsServerQueryResolutionPolicy -Name "EuropeLBPolicy" -Action ALLOW -ClientS
 Add-DnsServerQueryResolutionPolicy -Name "WorldWidePolicy" -Action ALLOW -FQDN "eq,*.contoso.com" -ZoneScope "SeattleZoneScope,1;ChicagoZoneScope,1; TexasZoneScope,1;DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 3
 ```
 
-Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 Ahora ha creado correctamente una directiva DNS que proporciona equilibrio de carga de aplicaciones entre servidores web que se encuentran en cinco centros de recursos diferentes en varios continentes.
 

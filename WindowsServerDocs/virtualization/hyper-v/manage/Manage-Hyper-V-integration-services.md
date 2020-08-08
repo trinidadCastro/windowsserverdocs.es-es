@@ -1,20 +1,18 @@
 ---
 title: Administrar Integration Services de Hyper-V
 description: Describe cómo activar y desactivar los servicios de integración e instalarlos si es necesario.
-ms.technology: compute-hyper-v
 author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.date: 12/20/2016
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 4237da8ee393953a8eb2a2b577c2df201f96a7be
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 5d5f69e1c71df9746421329d8fdf11a9786a948b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235059"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996757"
 ---
 # <a name="manage-hyper-v-integration-services"></a>Administrar Integration Services de Hyper-V
 
@@ -22,7 +20,7 @@ ms.locfileid: "83235059"
 
 Hyper-V Integration Services mejorar el rendimiento de las máquinas virtuales y proporcionar características útiles al aprovechar la comunicación bidireccional con el host de Hyper-V. Muchos de estos servicios son cómodos, como la copia de archivos de invitado, mientras que otros son importantes para la funcionalidad de la máquina virtual, como los controladores de dispositivos sintéticos. Este conjunto de servicios y controladores a veces se denominan "componentes de integración". Puede controlar si los servicios de comodidad individuales funcionan o no para una máquina virtual determinada. Los componentes del controlador no están pensados para que se puedan atender manualmente.
 
-Para obtener más información sobre cada servicio de integración, consulte [Integration Services de Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services).
+Para obtener más información sobre cada servicio de integración, consulte [Integration Services de Hyper-V](/virtualization/hyper-v-on-windows/reference/integration-services).
 
 > [!IMPORTANT]
 > Cada servicio que desee usar debe estar habilitado en el host y en el invitado para poder funcionar. Todos los servicios de integración excepto "Interfaz de servicio de invitado de Hyper-V" están activados de forma predeterminada en los sistemas operativos invitados de Windows. Los servicios se pueden activar y desactivar individualmente. En las secciones siguientes se muestra cómo hacerlo.
@@ -37,7 +35,7 @@ En el panel Integration Services se enumeran todos los servicios de integración
 
 ### <a name="turn-an-integration-service-on-or-off-using-powershell"></a>Activar o desactivar un servicio de integración mediante PowerShell
 
-Para hacer esto en PowerShell, use [enable-VMIntegrationService](https://technet.microsoft.com/library/hh848500.aspx) y [Disable-VMIntegrationService](https://technet.microsoft.com/library/hh848488.aspx).
+Para hacer esto en PowerShell, use [enable-VMIntegrationService](/powershell/module/hyper-v/enable-vmintegrationservice?view=win10-ps) y [Disable-VMIntegrationService](/powershell/module/hyper-v/disable-vmintegrationservice?view=win10-ps).
 
 En los siguientes ejemplos se muestra cómo activar y desactivar el servicio de integración de copia de archivos invitados para una máquina virtual denominada "demovm".
 
@@ -47,7 +45,7 @@ En los siguientes ejemplos se muestra cómo activar y desactivar el servicio de 
     Get-VMIntegrationService -VMName "DemoVM"
     ```
 
-1. El resultado debe ser similar al siguiente:
+1. La salida debe ser similar a esta:
 
     ``` PowerShell
    VMName      Name                    Enabled PrimaryStatusDescription SecondaryStatusDescription
@@ -113,7 +111,7 @@ Para que un servicio de integración sea totalmente funcional, el servicio corre
     Get-Service -Name vm*
     ```
 
-1.  La salida debe tener un aspecto similar a este:
+1.  La salida debería tener un aspecto similar al siguiente:
 
     ```PowerShell
     Status   Name               DisplayName
@@ -128,7 +126,7 @@ Para que un servicio de integración sea totalmente funcional, el servicio corre
     Running  vmicvss            Hyper-V Volume Shadow Copy Requestor
     ```
 
-1. Ejecute [Start-Service](https://technet.microsoft.com/library/hh849825.aspx) o [Stop-Service](https://technet.microsoft.com/library/hh849790.aspx). Por ejemplo, para desactivar Windows PowerShell Direct, ejecute:
+1. Ejecute [Start-Service](/powershell/module/microsoft.powershell.management/start-service?view=powershell-7) o [Stop-Service](/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7). Por ejemplo, para desactivar Windows PowerShell Direct, ejecute:
 
     ```
     Stop-Service -Name vmicvmsession
@@ -144,7 +142,7 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
    lsmod | grep hv_utils
    ```
 
-2. La salida debe tener un aspecto similar a este:
+2. La salida debería tener un aspecto similar al siguiente:
 
     ``` BASH
     Module                  Size   Used by
@@ -158,7 +156,7 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
     ps -ef | grep hv
     ```
 
-4. La salida debe tener un aspecto similar a este:
+4. La salida debería tener un aspecto similar al siguiente:
 
     ```BASH
     root       236     2  0 Jul11 ?        00:00:00 [hv_vmbus_con]
@@ -177,7 +175,7 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
     compgen -c hv_
     ```
 
-6. La salida debe tener un aspecto similar a este:
+6. La salida debería tener un aspecto similar al siguiente:
 
     ``` BASH
     hv_vss_daemon
@@ -188,7 +186,7 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
     hv_fcopy_daemon
     ```
 
-   Entre los demonios de servicio de integración que se pueden mostrar se incluyen los siguientes. Si falta alguno, es posible que no se admita en el sistema o que no esté instalado. Para obtener más información, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](https://technet.microsoft.com/library/dn531030.aspx).
+   Entre los demonios de servicio de integración que se pueden mostrar se incluyen los siguientes. Si falta alguno, es posible que no se admita en el sistema o que no esté instalado. Para obtener más información, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md).
    - **hv_vss_daemon**: este demonio es necesario para crear copias de seguridad de máquinas virtuales de Linux en vivo.
    - **hv_kvp_daemon**: este demonio permite establecer y consultar los pares de valores de clave intrínsecos y extrínsecos.
    - **hv_fcopy_daemon**: este demonio implementa un servicio de copia de archivos entre el host y el invitado.
@@ -297,7 +295,7 @@ Se recomienda mantener actualizados los servicios de integración para obtener e
 | - | | |
 | Invitados Linux | administrador de paquetes | Integration Services para Linux está integrado en el distribución, pero puede que haya actualizaciones opcionales disponibles. ** |
 
-Para obtener más información sobre los invitados de Linux, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows).
+Para obtener más información sobre los invitados de Linux, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md).
 
 ## <a name="install-or-update-integration-services"></a>Instalar o actualizar los servicios de integración
 
@@ -316,5 +314,5 @@ Procedimiento para instalar o actualizar manualmente Integration Services:
 
 > [!NOTE]
 > Estos pasos **no se pueden automatizar** ni realizar en una sesión de Windows PowerShell para las máquinas virtuales **en línea** .
-> Puede aplicarlos a imágenes VHDX **sin conexión** ; vea [Cómo instalar Integration Services cuando la máquina virtual no se está ejecutando](https://docs.microsoft.com/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running).
-> También puede automatizar la implementación de los servicios de integración a través de **Configuration Manager** con las máquinas virtuales **en línea**, pero debe reiniciar las máquinas virtuales al final de la instalación. consulte [implementación de Integration Services de Hyper-V en máquinas virtuales con el administrador de configuración y DISM](https://docs.microsoft.com/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)
+> Puede aplicarlos a imágenes VHDX **sin conexión** ; vea [Cómo instalar Integration Services cuando la máquina virtual no se está ejecutando](/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running).
+> También puede automatizar la implementación de los servicios de integración a través de **Configuration Manager** con las máquinas virtuales **en línea**, pero debe reiniciar las máquinas virtuales al final de la instalación. consulte [implementación de Integration Services de Hyper-V en máquinas virtuales con el administrador de configuración y DISM](/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)

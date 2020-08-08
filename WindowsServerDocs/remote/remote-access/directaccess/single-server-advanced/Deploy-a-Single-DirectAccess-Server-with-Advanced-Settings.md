@@ -2,18 +2,16 @@
 title: Deploy a Single DirectAccess Server with Advanced Settings
 description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2df1dfb99f31b0ac0ac8aeb62c8b01381a589e06
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 87a9ca03591116c891c5dec41477688ded96b193
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181861"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970422"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Deploy a Single DirectAccess Server with Advanced Settings
 
@@ -37,7 +35,7 @@ En este escenario, un solo equipo que ejecute Windows Server 2016, Windows Serve
 ## <a name="in-this-scenario"></a>En este escenario
 Para configurar un único servidor de DirectAccess con configuración avanzada, debes realizar varios pasos de planificación e implementación.
 
-### <a name="prerequisites"></a>Prerrequisitos
+### <a name="prerequisites"></a>Requisitos previos
 Revisa los siguientes requisitos antes de empezar.
 
 -   Firewall de Windows debe estar habilitado en todos los perfiles.

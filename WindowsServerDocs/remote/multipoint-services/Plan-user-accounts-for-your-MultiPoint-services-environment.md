@@ -7,12 +7,12 @@ ms.assetid: d47be540-e891-47bd-85da-6df4bbf93b2f
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 63acb44d5b5015d1fb1d560f52ffde8cd37f8cbf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 096d09a78abb8902225432a358692d00f460e91c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951770"
+ms.locfileid: "87996822"
 ---
 # <a name="plan-user-accounts-for-your-multipoint-services-environment"></a>Planear cuentas de usuario para el entorno de MultiPoint Services
 La mejor manera de implementar cuentas de usuario en Multipoint Services depende del tamaño y la complejidad de la implementación:
@@ -22,7 +22,7 @@ La mejor manera de implementar cuentas de usuario en Multipoint Services depende
 -   **Cuentas de dominio** : Si su entorno tiene muchos equipos que ejecutan Multipoint Services y muchos usuarios, es probable que le resulte más útil configurar una Active Directory Domain Services \( AD DS \) dominio y usar *cuentas de usuario de dominio*, lo que permite a los usuarios tener acceso a su propio perfil de usuario y configuración desde cualquier estación del dominio. Un administrador de dominio debe crear las cuentas de usuario de dominio en el controlador de dominio.
 
 > [!NOTE]
-> En las secciones siguientes se describen los escenarios que se pueden implementar para las cuentas de usuario locales en Multipoint Services. Si usa cuentas de usuario de dominio, consulte el escenario "uno o varios servidores Multipoint en un entorno de red de dominio" en [escenarios de ejemplo: cuentas de usuario de Multipoint Services](Example-scenarios--MultiPoint-Services-user-accounts.md).
+> En las secciones siguientes se describen los escenarios que se pueden implementar para las cuentas de usuario locales en Multipoint Services. Si usa cuentas de usuario de dominio, consulte el escenario "uno o varios servidores Multipoint en un entorno de red de dominio" en [escenarios de ejemplo: cuentas de usuario de Multipoint Services](./multipoint-users-scenario.md).
 
 ## <a name="planning-local-user-accounts"></a>Planeación de cuentas de usuario locales
 En las secciones siguientes se tienen en cuenta las ventajas, las desventajas y los requisitos de varias formas de implementar cuentas de usuario locales compartidas o individuales en el entorno de Windows MultiPoint Services.

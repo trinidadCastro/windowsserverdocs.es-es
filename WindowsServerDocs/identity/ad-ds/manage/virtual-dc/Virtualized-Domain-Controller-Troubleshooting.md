@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: bcdfd575b0f8cf2be739e70317560542afa2fed1
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: b3e384eaa85e0becfa501743fc4d7efa45eac02a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518662"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941569"
 ---
 # <a name="virtualized-domain-controller-troubleshooting"></a>Solucionar problemas de controladores de dominio virtualizados
 
@@ -61,7 +59,7 @@ La estrategia para solucionar problemas de clonación de controladores de domini
 
 Los registros integrados son la herramienta más importante para solucionar problemas de clonación de controladores de dominio. Todos estos registros están habilitados y configurados para ofrecer el máximo nivel de detalle de forma predeterminada.
 
-| **Operación** | **Log** |
+| **operación** | **Log** |
 |--|--|
 | **Clonación** | -Event Eventos\registros logs\System<br />-Servicio de visor eventos\registros de eventos y servicios de logs\Directory<br />-%SystemRoot%\debug\dcpromo.log |
 | **Promoción** | -%SystemRoot%\debug\dcpromo.log<br />-Servicio de visor eventos\registros de eventos y servicios de logs\Directory<br />-Event Eventos\registros logs\System<br />-Event visor eventos\registros and Services logs\File Replication Service<br />-Visor eventos\registros de eventos y servicios de logs\DFS replicación |
@@ -173,7 +171,7 @@ Para revisar los registros de eventos en un servidor que ejecuta una instalació
 
 ### <a name="troubleshooting-specific-problems"></a><a name="BKMK_SpecificProblems"></a>Solucionar problemas específicos
 
-#### <a name="events"></a>Eventos
+#### <a name="events"></a>Events
 Todos los eventos de clonación de controladores de dominio virtualizados se escriben en el registro de eventos de Servicios de directorio de la máquina virtual del controlador de dominio clonado. Los registros de eventos de Aplicación, Servicio de replicación de archivos y Replicación DFS pueden contener también información útil para solucionar problemas de clonación. Los errores durante la llamada de RPC al emulador de PDC pueden estar disponibles en el registro de eventos del emulador de PDC.
 
 A continuación se indican los eventos específicos de clonación de Windows Server 2012 en el registro de eventos de Servicios de directorio, con notas y soluciones recomendadas.
@@ -447,272 +445,272 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | Eventos | Descripción |
 |--|--|
 | Id. de evento | 2210 |
-| Source | Microsoft-Windows-ActiveDirectory_DomainService |
-| Gravedad | Error |
+| Origen | Microsoft-Windows-ActiveDirectory_DomainService |
+| severity | Error |
 | Message | Error de <COMPUTERNAME> al crear objetos para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %6<p>Nombre del controlador de dominio clonado: %1<p>Bucle de reintentos: %2<p>Valor de excepción: %3<p>Valor del error: %4<p>DSID: %5 |
 | Notas y resolución | Revisa los registros de eventos de Sistema y Servicios de directorio, así como dcpromo.log, para obtener más información sobre el motivo del error de la clonación. |
 
 | Eventos | Descripción |
 |--|--|
 | Id. de evento | 2211 |
-| Source | Microsoft-Windows-ActiveDirectory_DomainService |
-| Gravedad | Informativo |
+| Origen | Microsoft-Windows-ActiveDirectory_DomainService |
+| severity | Informativo |
 | Mensaje | <COMPUTERNAME> ha creado objetos para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %3<p>Nombre del controlador de dominio clonado: %1<p>Bucle de reintentos: %2 |
 | Notas y resolución | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
 | Eventos | Descripción |
 |--|--|
 | Id. de evento | 2212 |
-| Source | Microsoft-Windows-ActiveDirectory_DomainService |
-| Gravedad | Informativo |
+| Origen | Microsoft-Windows-ActiveDirectory_DomainService |
+| severity | Informativo |
 | Mensaje | <COMPUTERNAME> comenzó a crear objetos para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Nombre del clon: %2<p>Sitio del clon: %3<p>RODC del clon: %4 |
 | Notas y resolución | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
 | Eventos | Descripción |
 |--|--|
 | Id. de evento | 2213 |
-| Source | Microsoft-Windows-ActiveDirectory_DomainService |
-| Gravedad | Informativo |
+| Origen | Microsoft-Windows-ActiveDirectory_DomainService |
+| severity | Informativo |
 | Mensaje | <COMPUTERNAME> creó un nuevo objeto KrbTgt para la clonación del controlador de dominio de solo lectura.<p>Datos adicionales:<p>Id. de clon: %1<p>GUID del nuevo objeto KrbTgt: %2 |
 | Notas y resolución | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2214|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Informativo|
 |Mensaje|<COMPUTERNAME> creará un objeto de equipo para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Controlador de dominio original: %2<p>Controlador de dominio clonado: %3|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2215|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Informativo|
 |Mensaje|<COMPUTERNAME> agregará el controlador de dominio clonado al sitio siguiente.<p>Datos adicionales:<p>Id. de clon: %1<p>Sitio: %2|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2216|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Informativo|
 |Mensaje|<COMPUTERNAME> creará un contenedor de servidores para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Contenedor de servidores: %2|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2217|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Informativo|
 |Mensaje|<COMPUTERNAME> creará un objeto de servidor para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Objeto de servidor: %2|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2218|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Informativo|
 |Mensaje|<COMPUTERNAME> creará un objeto de configuración NTDS para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Objeto: %2|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2219|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Informativo|
 |Mensaje|<COMPUTERNAME> creará objetos de conexión para el controlador de dominio de solo lectura clonado.<p>Datos adicionales:<p>Id. de clon: %1|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2220|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Informativo|
 |Mensaje|<COMPUTERNAME> creará objetos SYSVOL para el controlador de dominio de solo lectura clonado.<p>Datos adicionales:<p>Id. de clon: %1|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2221|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Error|
 |Message|Error de <COMPUTERNAME> al generar una contraseña aleatoria para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Nombre del controlador de dominio clonado: %2<p>Error: %3 %4|
 |Notas y resolución|Examina el registro de eventos de Sistema para obtener más información sobre el motivo por el que no se pudo crear la contraseña de la cuenta de la máquina.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2222|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Error|
 |Message|Error de <COMPUTERNAME> al establecer la contraseña para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Nombre del controlador de dominio clonado: %2<p>Error: %3 %4|
 |Notas y resolución|Examina el registro de eventos de Sistema para obtener más información sobre el motivo por el que no se pudo establecer la contraseña de la cuenta de la máquina.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2223|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Informativo|
 |Mensaje|<COMPUTERNAME> establece correctamente la contraseña de la cuenta de equipo para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Nombre del controlador de dominio clonado: %2<p>Número total de reintentos: %3|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2224|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Error|
 |Message|Error de clonación del controlador de dominio virtual. En el equipo clonado existen las siguientes %1 cuentas de servicio administradas:<p>%2<p>Para que la clonación se realice correctamente, deben quitarse todas las cuentas de servicio administradas. Para ello, usa el cmdlet de PowerShell Remove-ADComputerServiceAccount.|
 |Notas y resolución|Es previsible cuando se usan MSA independientes (no MSA de grupo). *No* sigas el consejo del evento de quitar la cuenta; está escrito incorrectamente. Use Uninstall-AdServiceAccount- [https://technet.microsoft.com/library/hh852310](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176927(v=technet.10)) .<p>MSA independientes: se lanzaron por primera vez en Windows Server 2008 R2 y se reemplazaron en Windows Server 2012 con MSA de grupo (gMSA). Las GMSA admiten la clonación.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2225|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Informativo|
 |Mensaje|Los secretos en caché de la siguiente entidad de seguridad se han quitado correctamente del controlador de dominio local:<p>%1<p>Después de clonar un controlador de dominio de solo lectura, los secretos previamente guardados en caché en el controlador de dominio de solo lectura origen de la clonación se quitarán del controlador de dominio clonado.|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2226|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Error|
 |Message|Error al quitar los secretos en caché de la siguiente entidad de seguridad del controlador de dominio local:<p>%1<p>Error: %2 (%3)<p>Después de clonar un controlador de dominio de solo lectura, los secretos previamente guardados en caché del controlador de dominio de solo lectura origen de la clonación deben eliminarse del clon para reducir el riesgo de que un atacante pueda obtener esas credenciales del clon robado o comprometido. Si la entidad de seguridad es una cuenta con muchos privilegios y debería estar protegida frente a estas amenazas, use la operación de rootDSE rODCPurgeAccount para borrar manualmente sus secretos en el controlador de dominio local.|
 |Notas y resolución|Examina los registros de eventos de Sistema y Servicios de directorio para obtener más información.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2227|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Error|
 |Message|Se produjo una excepción al intentar quitar los secretos en caché del controlador de dominio local.<p>Datos adicionales:<p>Valor de excepción: %1<p>Valor del error: %2<p>DSID: %3<p>Después de clonar un controlador de dominio de solo lectura, los secretos previamente guardados en caché del controlador de dominio de solo lectura origen de la clonación deben eliminarse del clon para reducir el riesgo de que un atacante pueda obtener esas credenciales del clon robado o comprometido. Si alguna de las entidades de seguridad es una cuenta con muchos privilegios y debería estar protegida frente a estas amenazas, usa la operación de rootDSE rODCPurgeAccount para borrar manualmente sus secretos en el controlador de dominio local.|
 |Notas y resolución|Examina los registros de eventos de Sistema y Servicios de directorio para obtener más información.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|2228|
-|Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-ActiveDirectory_DomainService|
+|severity|Error|
 |Message|El id. de generación de la máquina virtual en la base de datos de Active Directory de este controlador de dominio difiere del valor actual de esta máquina virtual. Sin embargo, no se pudo encontrar un archivo de configuración del clon del controlador de dominio virtual (DCCloneConfig.xml), por lo que no se intentó la clonación del controlador de dominio. Si tu intención era realizar una operación de este tipo, asegúrate de que se proporcione un DCCloneConfig.xml en cualquiera de las ubicaciones admitidas. Asimismo, la dirección IP de este controlador de dominio está en conflicto con la dirección IP de otro controlador de dominio. Para evitar que haya interrupciones en el servicio, el controlador de dominio se ha configurado para arrancar en DSRM.<p>Datos adicionales:<p>Dirección IP duplicada: %1|
 |Notas y resolución|Este mecanismo de protección detiene los controladores de dominio duplicados cuando es posible (no lo hará cuando se usa DHCP, por ejemplo). Agrega un archivo DcCloneConfig.xml válido, quita el indicador DSRM y vuelve a intentar la clonación.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29218|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Error|
 |Message|Error de clonación del controlador de dominio virtual. La operación de clonación no se pudo completar y el controlador de dominio clonado se reinició en modo de restauración de servicios de directorio (DSRM).<p>Comprueba los eventos anteriormente registrados y %systemroot%\debug\dcpromo.log para obtener más información sobre los errores correspondientes al intento de clonación del controlador de dominio virtual y si esta imagen clonada puede volver a usarse o no.<p>Si una o más entradas de registro indican que el proceso de clonación no se puede recuperar, la imagen debe destruirse de forma segura. Si los registros indican que el proceso de clonación puede volver a intentarse, soluciona los errores, borra la bandera de inicio de DSRM y reinicia de forma normal. Tras el reinicio, volverá a intentarse la operación de clonación.|
 |Notas y resolución|Revisa los registros de eventos de Sistema y Servicios de directorio, así como dcpromo.log, para obtener más información sobre el motivo del error de la clonación.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29219|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Informativo|
 |Mensaje|La clonación del controlador de dominio virtual se realizó correctamente.|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29248|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Error|
 |Message|La clonación del controlador de dominio virtual no pudo obtener la notificación de Winlogon. El código de error devuelto es %1 (%2).<p>Para obtener más información acerca del error, busca en %systemroot%\debug\dcpromo.log errores correspondientes al intento de clonación del controlador de dominio virtual.|
 |Notas y resolución|Ponte en contacto con el soporte técnico de Microsoft.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29249|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Error|
 |Message|La clonación de controlador de dominio virtual no pudo analizar el archivo de configuración de controlador de dominio virtual.<p>El código HRESULT devuelto es %1.<p>El archivo de configuración es:%2<p>Soluciona los errores en el archivo de configuración y vuelve a intentar la operación de clonación.<p>Para obtener más información sobre este error, consulta %systemroot%\debug\dcpromo.log.|
 |Notas y resolución|Comprueba si el archivo dclconeconfig.xml contiene errores de sintaxis usando un editor XML y el archivo de esquema DCCloneConfigSchema.xsd.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29250|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Error|
 |Message|Error de clonación del controlador de dominio virtual. Hay software o tareas actualmente habilitados en el controlador de dominio virtual clonado que no están presentes en la lista de aplicaciones permitidas para la clonación del controlador de dominio virtual.<p>A continuación se indican las entradas que faltan:<p>%2<p>%1 (si hay) se usó como la lista de inclusión definida.<p>No se puede completar la operación de clonación si hay aplicaciones instaladas que no pueden clonarse.<p>Ejecuta el cmdlet Get-ADDCCloningExcludedApplicationList de Active Directory PowerShell para comprobar cuáles son las aplicaciones que están instaladas en el equipo clonado, pero que no se incluyen en la lista de aplicaciones permitidas, y agrégalas a dicha lista si son compatibles con la clonación del controlador de dominio virtual. Si alguna de estas aplicaciones no es compatible con la clonación del controlador de dominio virtual, desinstálala antes de volver a intentar la operación de clonación.<p>El proceso de clonación del controlador de dominio virtual busca el archivo con la lista de aplicaciones permitidas, CustomDCCloneAllowList.xml, en el siguiente orden; se utiliza el primer archivo que se encuentra y se omiten los demás:<p>1. el nombre del valor del registro: HKey_Local_Machine \System\CurrentControlSet\Services\NTDS\Parameters\AllowListFolder<p>2. el mismo directorio donde reside la carpeta del directorio de trabajo de DSA<p>3. %windir%\NTDS<p>4. medios extraíbles de lectura/escritura en orden de letra de unidad en la raíz de la unidad|
 |Notas y resolución|Sigue las instrucciones del mensaje.|
 
 | Eventos | Descripción |
 |--|--|
 | Id. de evento | 29251 |
-| Source | Microsoft-Windows-DirectoryServices-DSROLE-Server |
-| Gravedad | Error |
+| Origen | Microsoft-Windows-DirectoryServices-DSROLE-Server |
+| severity | Error |
 | Message | La clonación del controlador de dominio virtual no pudo restablecer las direcciones IP de la máquina clonada.<p>El código de error devuelto es %1 (%2).<p>Puede que este error se deba a un error de configuración en las secciones de configuración de red en el archivo de configuración del controlador de dominio virtual.<p>Consulta %systemroot%\debug\dcpromo.log para obtener más información acerca de los errores correspondientes al restablecimiento de direcciones IP durante los intentos de clonación de controladores de dominio virtual.<p>Puede encontrar información sobre cómo restablecer las direcciones IP del equipo en la máquina clonada enhttps://go.microsoft.com/fwlink/?LinkId=208030 |
 | Notas y resolución | Comprueba que información de las direcciones IP establecida en dccloneconfig.xml sea válida y no duplique la máquina de origen original. |
 
 | Eventos | Descripción |
 |--|--|
 | Id. de evento | 29253 |
-| Source | Microsoft-Windows-DirectoryServices-DSROLE-Server |
-| Gravedad | Error |
+| Origen | Microsoft-Windows-DirectoryServices-DSROLE-Server |
+| severity | Error |
 | Message | Error de clonación del controlador de dominio virtual. El controlador de dominio clonado no pudo encontrar el maestro de operaciones del controlador de dominio principal (PDC) en el dominio principal del equipo clonado de la máquina clonada.<p>El código de error devuelto es %1 (%2).<p>Comprueba que el controlador de dominio principal en el dominio principal de la máquina clonada esté asignado a un controlador de dominio activo, esté en línea y sea operativo. Comprueba que la máquina clonada tenga conectividad LDAP/RPC al controlador de dominio principal en los puertos y protocolos necesarios. |
 | Notas y resolución | Comprueba que se haya establecido la información sobre DNS e IP del controlador de dominio clonado. Use Dcdiag.exe/test: locatorcheck para validar si el PDCE está en línea, use Nltest.exe/Server: *<PDCE>* /dclist: *<domain>* para RPC válido, obtenga una captura de red del PDCE mientras se produce un error en la clonación y analice el tráfico. |
 
 | Eventos | Descripción |
 |--|--|
 | Id. de evento | 29254 |
-| Source | Microsoft-Windows-DirectoryServices-DSROLE-Server |
-| Gravedad | Error |
+| Origen | Microsoft-Windows-DirectoryServices-DSROLE-Server |
+| severity | Error |
 | Message | La clonación del controlador de dominio virtual no pudo enlazar con el controlador de dominio principal %1.<p>El código de error devuelto es %2 (%3).<p>Comprueba que el controlador de dominio principal %1 esté en línea y sea operativo. Comprueba que la máquina clonada tenga conectividad LDAP/RPC al controlador de dominio principal en los puertos y protocolos necesarios. |
 | Notas y resolución | Comprueba que se haya establecido la información sobre DNS e IP del controlador de dominio clonado. Use Dcdiag.exe/test: locatorcheck para validar si el PDCE está en línea, use Nltest.exe/Server: *<PDCE>* /dclist: *<domain>* para RPC válido, obtenga una captura de red del PDCE mientras se produce un error en la clonación y analice el tráfico. |
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29255|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Error|
 |Message|Error de clonación del controlador de dominio virtual.<p>Un intento de crear objetos en el controlador de dominio principal %1 necesario para clonar la imagen devolvió el error %2 (%3).<p>Comprueba que el controlador de dominio clonado tiene privilegios para clonarse a sí mismo. Comprueba los eventos relacionados en el registro de eventos de Servicios de directorio en el controlador de dominio principal %1.|
 |Notas y resolución|Busca el error específico en MS TechNet, MS Knowledgebase y en los blogs de MS para determinar su significado habitual y, después, soluciona los problemas en función de esos resultados.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29256|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Error|
 |Message|Error al intentar establecer la marca de arranque en el Modo de restauración de servicios de directorio %1.<p>Consulta %systemroot%\debug\dcpromo.log para obtener más información sobre los errores.|
 |Notas y resolución|Examina el registro de Servicios de directorio y dcpromo.log para obtener más información. Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando el uso de privilegios.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29257|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Error|
 |Message|Se ha realizado la clonación del controlador de dominio virtual. Error al intentar reiniciar el equipo. Código de error %1.<p>Reinicia el equipo para finalizar la operación de clonación.|
 |Notas y resolución|Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando el uso de privilegios.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29264|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Error|
 |Message|Error al intentar borrar la marca de arranque en el Modo de restauración de servicios de directorio. Código de error: %1.<p>Consulta %systemroot%\debug\dcpromo.log para obtener más información sobre los errores.|
 |Notas y resolución|Examina el registro de Servicios de directorio y dcpromo.log para obtener más información. Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando el uso de privilegios.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29265|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Informativo|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Informativo|
 |Mensaje|La clonación del controlador de dominio virtual se realizó correctamente. Se ha cambiado el nombre del archivo de configuración de clonación del controlador de dominio virtual %1 a %2.|
 |Notas y resolución|N/D. Este es un evento de procedimiento correcto.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29266|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Error|
 |Message|La clonación del controlador de dominio virtual se realizó correctamente. Error al intentar cambiar el nombre del archivo de configuración de clonación del controlador de dominio virtual %1. Código de error: %2 (%3).|
 |Notas y resolución|Cambia manualmente el nombre del archivo dccloneconfig.xml.|
 
 | Eventos | Descripción |
 | -- |--|
 |Id. de evento|29267|
-|Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|Gravedad|Error|
+|Origen|Microsoft-Windows-DirectoryServices-DSROLE-Server|
+|severity|Error|
 |Message|Error del controlador de dominio virtual al comprobar la lista de aplicaciones con permiso para clonar el controlador de dominio virtual.<p>El código de error devuelto es %1 (%2).<p>La causa podría ser un error de sintaxis en el archivo de lista de permitidos para clonar (el archivo que se está comprobando actualmente es: %3). Para obtener más información sobre este error, consulta %systemroot%\debug\dcpromo.log.|
 |Notas y resolución|Sigue las instrucciones del evento.|
 
@@ -1408,7 +1406,7 @@ Los servicios DFSR realizan una sincronización no autoritativa de un asociado d
 #### <a name="logging-options"></a>Opciones de registro
 Los registros integrados son la herramienta más importante para solucionar problemas de restauración segura de instantáneas. Todos estos registros están habilitados y configurados para ofrecer el máximo nivel de detalle de forma predeterminada.
 
-|**Operación**|**Log**|
+|**operación**|**Log**|
 |--|--|
 |**Creación de instantáneas**|-Event visor eventos\registros and Services logs\Microsoft\Windows\Hyper-V-Worker|
 |**Restauración de instantáneas**|-Servicio de visor eventos\registros de eventos y servicios de logs\Directory<br />-Event Eventos\registros logs\System<br />-Event Eventos\registros \ aplicación<br />-Event visor eventos\registros and Services logs\File Replication Service<br />-Visor eventos\registros de eventos y servicios de logs\DFS replicación<br />-Event visor eventos\registros and Services logs\DNS<br />-Event visor eventos\registros and Services logs\Microsoft\Windows\Hyper-V-Worker|
@@ -1452,7 +1450,7 @@ Para solucionar problemas que no se explican con los registros, usa las herramie
 
 ### <a name="troubleshooting-specific-problems"></a><a name="BKMK_TshootSpecificSafeRestore"></a>Solucionar problemas específicos
 
-#### <a name="events"></a>Eventos
+#### <a name="events"></a>Events
 Todos los eventos de restauración segura de instantáneas de controladores de dominio virtualizados se escriben en el registro de eventos de Servicios de directorio de la máquina virtual del controlador de dominio restaurado. Los registros de eventos de Aplicación, Sistema, Servicio de replicación de archivos y Replicación DFS pueden contener también información útil para solucionar problemas de clonación.
 
 Los siguientes son eventos específicos de la restauración segura de Windows Server 2012 en el registro de eventos de Servicios de directorio.

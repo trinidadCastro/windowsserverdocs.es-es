@@ -1,19 +1,17 @@
 ---
 title: Implementar espacios de almacenamiento en un servidor independiente
 description: Describe cómo implementar espacios de almacenamiento en un servidor independiente basado en Windows Server 2012.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-spaces
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f1ccab7e4c0ca2bbd478509a76a4a37559c345
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: ac661631eef9053e202c7e21ffff9982d26d1d38
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181871"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960828"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implementar espacios de almacenamiento en un servidor independiente
 
@@ -39,7 +37,7 @@ La siguiente figura ilustra el flujo de trabajo de los Espacios de almacenamient
 >[!NOTE]
 >Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, vea [PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6).
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 
 Para usar espacios de almacenamiento en un servidor independiente basado en Windows Server 2012 −, asegúrese de que los discos físicos que desea utilizar cumplan los siguientes requisitos previos.
 
@@ -154,7 +152,7 @@ A continuación, debes crear uno o más discos virtuales desde el grupo de almac
 
      Con el aprovisionamiento fino, el espacio se asigna según haga falta. De este modo, se optimiza el uso del almacenamiento disponible. Sin embargo, como esto te permite sobreasignar almacenamiento, debes supervisar cuidadosamente de cuánto espacio en disco dispones.
 
-   - **Fijo**
+   - **Resuelto**
 
      Con el aprovisionamiento fijo, la capacidad de almacenamiento se asigna inmediatamente, cuando se crea un disco virtual. Por lo tanto, el aprovisionamiento fijo utiliza un espacio del grupo de almacenamiento que es igual al tamaño del disco virtual.
 
