@@ -6,16 +6,16 @@ ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 771b87776e6530f330e68f1f06b39fef191cb7c7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e999406a64e77e769ba9a6ffdc27cce109f2ef5a
+ms.sourcegitcommit: be6583ea86b47fa5ac3363b44ab0de75b571c90e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996892"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88039658"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>Uso de la directiva de DNS para las respuestas DNS inteligentes basadas en la hora del día
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 Puede usar este tema para aprender a distribuir el tráfico de aplicaciones entre diferentes instancias distribuidas geográficamente de una aplicación mediante el uso de directivas DNS basadas en la hora del día.
 
@@ -59,13 +59,13 @@ Para configurar la Directiva de DNS para las respuestas de consulta basadas en e
 - [Agregar registros a los ámbitos de zona](#bkmk_records)
 - [Crear las directivas de DNS](#bkmk_policies)
 
->[!NOTE]
->Debe realizar estos pasos en el servidor DNS que sea autoritativo para la zona que desea configurar. La pertenencia a **DnsAdmins**, o equivalente, es necesaria para realizar los siguientes procedimientos.
+> [!NOTE]
+> Debe realizar estos pasos en el servidor DNS que sea autoritativo para la zona que desea configurar. La pertenencia a **DnsAdmins**, o equivalente, es necesaria para realizar los siguientes procedimientos.
 
 En las secciones siguientes se proporcionan instrucciones de configuración detalladas.
 
->[!IMPORTANT]
->En las secciones siguientes se incluyen comandos de Windows PowerShell de ejemplo que contienen valores de ejemplo para muchos parámetros. Asegúrese de reemplazar los valores de ejemplo de estos comandos por los valores adecuados para su implementación antes de ejecutar estos comandos.
+> [!IMPORTANT]
+> En las secciones siguientes se incluyen comandos de Windows PowerShell de ejemplo que contienen valores de ejemplo para muchos parámetros. Asegúrese de reemplazar los valores de ejemplo de estos comandos por los valores adecuados para su implementación antes de ejecutar estos comandos.
 
 #### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>Crear las subredes de cliente DNS
 El primer paso consiste en identificar las subredes o el espacio de direcciones IP de las regiones para las que desea redirigir el tráfico. Por ejemplo, si desea redirigir el tráfico para los Estados Unidos y Europa, debe identificar las subredes o los espacios de direcciones IP de estas regiones.
@@ -74,12 +74,12 @@ Puede obtener esta información de mapas de IP geográfica. En función de estas
 
 Puede usar los siguientes comandos de Windows PowerShell para crear subredes de cliente DNS.
 
-```
-Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet "192.0.0.0/24, 182.0.0.0/24"
+```PowerShell
+Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet "192.0.0.0/24", "182.0.0.0/24"
 
-Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.0.0/24"
-
+Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24", "151.1.0.0/24"
 ```
+
 Para obtener más información, consulte [Add-DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
 
 #### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>Crear los ámbitos de zona
@@ -89,17 +89,17 @@ Por ejemplo, si desea redirigir el tráfico para el nombre DNS www.contosogiftse
 
 Un ámbito de zona es una instancia única de la zona. Una zona DNS puede tener varios ámbitos de zona, con cada ámbito de zona que contenga su propio conjunto de registros DNS. El mismo registro puede estar presente en varios ámbitos, con direcciones IP diferentes o con las mismas direcciones IP.
 
->[!NOTE]
->De forma predeterminada, existe un ámbito de zona en las zonas DNS. Este ámbito de zona tiene el mismo nombre que la zona y las operaciones DNS heredadas funcionan en este ámbito.
+> [!NOTE]
+> De forma predeterminada, existe un ámbito de zona en las zonas DNS. Este ámbito de zona tiene el mismo nombre que la zona y las operaciones DNS heredadas funcionan en este ámbito.
 
 Puede usar los siguientes comandos de Windows PowerShell para crear ámbitos de zona.
 
-```
+```PowerShell
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneScope"
 
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
-
 ```
+
 Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
 
 #### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
@@ -109,12 +109,12 @@ Por ejemplo, en **SeattleZoneScope**, el registro <strong>www.contosogiftservice
 
 Puede usar los siguientes comandos de Windows PowerShell para agregar registros a los ámbitos de zona.
 
-```
+```PowerShell
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.0.0.1" -ZoneScope "SeattleZoneScope
 
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.3" -ZoneScope "DublinZoneScope"
-
 ```
+
 El parámetro ZoneScope no se incluye al agregar un registro en el ámbito predeterminado. Esto es lo mismo que agregar registros a una zona DNS estándar.
 
 Para obtener más información, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
@@ -133,10 +133,10 @@ Después de configurar estas directivas DNS, el comportamiento del servidor DNS 
 
 Puede usar los siguientes comandos de Windows PowerShell para crear una directiva DNS que vincule las subredes de cliente DNS y los ámbitos de zona.
 
->[!NOTE]
->En este ejemplo, el servidor DNS se encuentra en la zona horaria GMT, por lo que los períodos de tiempo máximo se deben expresar en la hora GMT equivalente.
+> [!NOTE]
+> En este ejemplo, el servidor DNS se encuentra en la zona horaria GMT, por lo que los períodos de tiempo máximo se deben expresar en la hora GMT equivalente.
 
-```
+```PowerShell
 Add-DnsServerQueryResolutionPolicy -Name "America6To9Policy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,4;DublinZoneScope,1" -TimeOfDay "EQ,01:00-04:00" -ZoneName "contosogiftservices.com" -ProcessingOrder 1
 
 Add-DnsServerQueryResolutionPolicy -Name "Europe6To9Policy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "SeattleZoneScope,1;DublinZoneScope,4" -TimeOfDay "EQ,17:00-20:00" -ZoneName "contosogiftservices.com" -ProcessingOrder 2
@@ -146,8 +146,8 @@ Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ClientSu
 Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "DublinZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 4
 
 Add-DnsServerQueryResolutionPolicy -Name "RestOfWorldPolicy" -Action ALLOW --ZoneScope "DublinZoneScope,1;SeattleZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 5
-
 ```
+
 Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 Ahora el servidor DNS está configurado con las directivas DNS necesarias para redirigir el tráfico en función de la ubicación geográfica y la hora del día.
