@@ -72,6 +72,7 @@
 ## [Sistema de nombres de dominio (DNS)](dns/dns-top.md)
 ### [Novedades del cliente DNS en Windows Server 2016](dns/What-s-New-in-DNS-Client.md)
 ### [Novedades del servidor DNS en Windows Server 2012](dns/What-s-New-in-DNS-Server.md)
+### [DNS de difusión por proximidad](dns/deploy/anycast.md)
 ### [Guía de escenarios de la directiva DNS](dns/deploy/DNS-Policy-Scenario-Guide.md)
 #### [Información general de las directivas DNS](dns/deploy/DNS-Policies-Overview.md)
 #### [Usar la directiva DNS para la administración del tráfico de la ubicación geográfica con servidores principales](dns/deploy/primary-geo-location.md)
