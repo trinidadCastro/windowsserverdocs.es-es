@@ -1,19 +1,17 @@
 ---
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
-title: Servicio de hora de Windows
+title: Servicio de hora de Windows (W32time)
 author: dcuomo
 ms.author: dacuo
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: 5dbb0db20f7100ed7dbe99587f201f38abf632ad
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2bd28bc9e774ebdd30c81397bfe3a3bb6320a679
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815908"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997383"
 ---
 # <a name="windows-time-service-w32time"></a>Servicio de hora de Windows (W32time)
 
@@ -32,9 +30,9 @@ En el tema del servicio de hora de Windows (W32Time), está disponible el siguie
 
 
 ## <a name="related-topics"></a>Temas relacionados
-Para más información sobre la jerarquía de dominios y el sistema de puntuación, consulta la entrada de blog ["¿Qué es el servicio de hora de Windows?"](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) .
+Para más información sobre la jerarquía de dominios y el sistema de puntuación, consulta la entrada de blog ["¿Qué es el servicio de hora de Windows?"](/archive/blogs/w32time/what-is-windows-time-service) .
 
-El modelo de complementos del proveedor de hora de Windows está [documentado en TechNet](https://msdn.microsoft.com/library/windows/desktop/ms725475%28v=vs.85%29.aspx).
+El modelo de complementos del proveedor de hora de Windows está [documentado en TechNet](/windows/win32/sysinfo/time-provider).
 
 [Aquí](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf) se puede descargar un anexo al que se hace referencia en el artículo Hora exacta para Windows 2016.
 

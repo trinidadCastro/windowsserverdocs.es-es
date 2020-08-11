@@ -1,20 +1,18 @@
 ---
 title: Planear la implementación de WSUS
 description: 'Tema de Windows Server Update Service (WSUS): información general sobre el proceso de planeamiento de la implementación con vínculos a los temas relacionados'
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: de4fe62b179286f058a9c4508e9f907eeb9ae806
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8e6aaaef666577db134d5d5bb42feffb38cb5a36
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178581"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990944"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planear la implementación de WSUS
 
@@ -101,14 +99,14 @@ Tenga en cuenta que la configuración de los equipos cliente (incluidos los serv
 2. Las ediciones cliente de Windows no podrán instalar .NET 3.5 a petición desde la web. Las mismas consideraciones de los roles de servidor se aplican a .NET 3.5.
 
    > [!NOTE]
-   > WSUS no está relacionado con la configuración de un origen de instalación de características a petición. Para obtener información sobre cómo configurar las características, consulte [Configuración de características a petición en Windows Server](https://technet.microsoft.com/library/jj127275.aspx).
+   > WSUS no está relacionado con la configuración de un origen de instalación de características a petición. Para obtener información sobre cómo configurar las características, consulte [Configuración de características a petición en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275(v=ws.11)).
 
 3. Los dispositivos empresariales que ejecutan Windows 10, versión 1709 o 1803, no pueden instalar características a petición directamente desde WSUS. Para instalar características a petición, [crea un archivo de características (almacén en paralelo)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store) u obtén el paquete de características a petición de uno de los orígenes siguientes:
    - [Centro de servicio de licencias por volumen](https://www.microsoft.com/licensing/servicecenter) (VLSC): se necesita acceso a VL
    - Portal de OEM: se necesita acceso a OEM
    - Descarga de MSDN: se requiere una suscripción a MSDN
 
-     Los paquetes de Función a petición obtenidos de forma individual se pueden instalar mediante [opciones de línea de comandos de DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options).
+     Los paquetes de Función a petición obtenidos de forma individual se pueden instalar mediante [opciones de línea de comandos de DISM](/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options).
 
 ### <a name="wsus-database-requirements"></a>Requisitos de base de datos de WSUS
 WSUS requiere una de las siguientes bases de datos:
@@ -244,9 +242,9 @@ Se recomienda que use Windows Internal Database en los siguientes casos:
 
 Windows Internal Database no proporciona una interfaz de usuario ni herramientas de administración de bases de datos. Si selecciona esta base de datos para WSUS, debe usar herramientas externas para administrarla. Para obtener más información, consulte:
 
--   [Copias de seguridad y restauraciones de datos de WSUS y copias de seguridad de tu servidor](https://technet.microsoft.com/library/dd939904(WS.10).aspx)
+-   [Copias de seguridad y restauraciones de datos de WSUS y copias de seguridad de tu servidor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939904(v=ws.10))
 
--   [Reindización de la base de datos de WSUS](https://technet.microsoft.com/library/dd939795(WS.10).aspx)
+-   [Reindización de la base de datos de WSUS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939795(v=ws.10))
 
 #### <a name="wsus-with-sql-server"></a>WSUS con SQL Server
 Se recomienda que use SQL Server con WSUS en los siguientes casos:
@@ -324,7 +322,7 @@ La elección de idiomas de un servidor que precede en la cadena no es lo mismo q
 WSUS le permite dirigir actualizaciones a grupos de equipos cliente para asegurarse de que determinados equipos reciban siempre las actualizaciones correspondientes en los momentos más oportunos. Por ejemplo, si todos los equipos de un departamento (como el equipo de Contabilidad) tienen una configuración específica, puede configurar un grupo para ese equipo, decidir las actualizaciones que se instalarán y después usar informes de WSUS para evaluar las actualizaciones correspondientes al equipo.
 
 > [!NOTE]
-> Si un servidor WSUS se ejecuta en el modo de réplica, no se pueden crear grupos en ese servidor. Todos los grupos de equipos necesarios para equipos cliente del servidor de réplicas deben crearse en el servidor WSUS que se encuentra en la raíz de la jerarquía de servidores WSUS. Para obtener más información acerca del modo de réplica, consulta Administrar servidores de réplica WSUS [Administrar servidores de réplica WSUS](https://technet.microsoft.com/library/dd939893(WS.10).aspx) en el manual de operaciones de WSUS 3.0 SP2.
+> Si un servidor WSUS se ejecuta en el modo de réplica, no se pueden crear grupos en ese servidor. Todos los grupos de equipos necesarios para equipos cliente del servidor de réplicas deben crearse en el servidor WSUS que se encuentra en la raíz de la jerarquía de servidores WSUS. Para obtener más información acerca del modo de réplica, consulta Administrar servidores de réplica WSUS [Administrar servidores de réplica WSUS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939893(v=ws.10)) en el manual de operaciones de WSUS 3.0 SP2.
 
 Los equipos siempre se asignan al grupo **Todos los equipos** y permanecen en el grupo **Equipos sin asignar** hasta que los asignes a otro grupo. Los equipos pueden pertenecer a más de un grupo.
 
@@ -436,14 +434,14 @@ No todas las actualizaciones son óptimas para su distribución con archivos de 
 ### <a name="large-update-deployment"></a>Implementaciones de actualizaciones grandes
 Cuando implementa actualizaciones grandes (como Service Packs), puede evitar que se sature la red de la siguiente manera:
 
-1.  Use el límite del Servicio de transferencia inteligente en segundo plano (BITS). Las limitaciones de ancho de banda de BITS se pueden controlar por hora del día, pero se aplican a todas las aplicaciones que usan BITS. Para obtener información sobre cómo controlar la limitación de BITS, consulta [Directivas de grupo](https://msdn.microsoft.com/library/windows/desktop/aa362844(v=vs.85).aspx).
+1.  Use el límite del Servicio de transferencia inteligente en segundo plano (BITS). Las limitaciones de ancho de banda de BITS se pueden controlar por hora del día, pero se aplican a todas las aplicaciones que usan BITS. Para obtener información sobre cómo controlar la limitación de BITS, consulta [Directivas de grupo](/windows/win32/bits/group-policies).
 
 2.  Use el límite de Internet Information Services (IIS) para limitar uno o más servicios web.
 
 3.  Use grupos de equipos para controlar el lanzamiento. Un equipo cliente se identifica a sí mismo como miembro de un determinado grupo de equipos, cuando envía información al servidor WSUS. El servidor WSUS usa esta información para determinar las actualizaciones que deben implementarse en ese equipo. Puede configurar varios grupos de equipos y aprobar secuencialmente grandes descargas de Service Packs para un subconjunto de estos grupos.
 
 ### <a name="background-intelligent-transfer-service"></a>Servicio de transferencia inteligente en segundo plano
-WSUS usa el protocolo Servicio de transferencia inteligente en segundo plano (BITS) para todas sus tareas de transferencia de archivos. Esto incluye descargas a equipos cliente y sincronizaciones de servidores. BITS habilita programas para que descarguen archivos usando ancho de banda de reserva. BITS mantiene las transferencias de archivos cuando se producen desconexiones de red y se reinicia el equipo. Para obtener más información, consulte: [Servicio de transferencia inteligente en segundo plano](https://msdn.microsoft.com/library/bb968799.aspx).
+WSUS usa el protocolo Servicio de transferencia inteligente en segundo plano (BITS) para todas sus tareas de transferencia de archivos. Esto incluye descargas a equipos cliente y sincronizaciones de servidores. BITS habilita programas para que descarguen archivos usando ancho de banda de reserva. BITS mantiene las transferencias de archivos cuando se producen desconexiones de red y se reinicia el equipo. Para obtener más información, consulte: [Servicio de transferencia inteligente en segundo plano](/windows/win32/bits/background-intelligent-transfer-service-portal).
 
 ## <a name="17-plan-automatic-updates-settings"></a>1.7. Planear la configuración de actualizaciones automáticas
 Puede especificar una fecha límite para aprobar actualizaciones en el servidor WSUS. La fecha límite hace que los equipos cliente instalen la actualización en un momento específico, pero hay situaciones que varían según si la fecha límite expiró, si hay otras actualizaciones en la cola para instalarse en el equipo y si la actualización (u otra actualización en la cola) requiere el reinicio.
@@ -463,4 +461,3 @@ En el día y hora programados, Actualizaciones automáticas instala la actualiza
 Si el equipo debe reiniciarse y cualquier usuario inició sesión, se muestra un cuadro de diálogo de cuenta regresiva similar que advierte al usuario sobre el reinicio inminente. Puede manipular el reinicio del equipo con la directiva de grupo.
 
 Una vez descargadas las actualizaciones nuevas, Actualizaciones automáticas sondea la lista de paquetes aprobados en el servidor WSUS para confirmar que los paquetes que descargó aún son válidos y están aprobados. Esto significa que si un administrador de WSUS elimina actualizaciones de la lista de actualizaciones aprobadas mientras Actualizaciones automáticas está realizando una descarga, solo se instalarán las actualizaciones que aún estén aprobadas.
-

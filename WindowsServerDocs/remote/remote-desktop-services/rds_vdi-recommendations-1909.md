@@ -1,20 +1,18 @@
 ---
 title: Optimización de Windows 10, versión 1909, para un rol de Infraestructura de escritorio virtual (VDI)
 description: Configuración y ajustes recomendados para minimizar la sobrecarga de los escritorios Windows 10, versión 1909, que se usan como imágenes VDI.
-ms.prod: windows-server
 ms.reviewer: robsmi
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 7568db50f09273b398955c314491b903f627d1a9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7b9500c11ca5dba7ed2f51d1d6b32b7cf689f070
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182101"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997131"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1909, para un rol de Infraestructura de escritorio virtual (VDI)
 
@@ -195,7 +193,7 @@ Cada aplicación para UWP debe evaluarse para determinar su aplicabilidad en cad
 
 ### <a name="manage-windows-optional-features-using-powershell"></a>Administración de características opcionales de Windows mediante PowerShell
 
-Puedes administrar las características opcionales de Windows mediante PowerShell. Para más información, consulte el [foro de PowerShell de Windows Server](https://docs.microsoft.com/answers/topics/windows-server-powershell.html). Para enumerar las características de Windows instaladas actualmente, ejecuta el siguiente comando de PowerShell:
+Puedes administrar las características opcionales de Windows mediante PowerShell. Para más información, consulte el [foro de PowerShell de Windows Server](/answers/topics/windows-server-powershell.html). Para enumerar las características de Windows instaladas actualmente, ejecuta el siguiente comando de PowerShell:
 
 ```powershell
 Get-WindowsOptionalFeature -Online
@@ -715,7 +713,7 @@ Hay algunas configuraciones del registro que pueden aumentar el rendimiento de l
 >[!NOTE]
 > Algunas configuraciones de esta sección se basan únicamente en el registro y deben incorporarse en la imagen base antes de implementarla para su uso en la producción.
 
-La siguiente configuración se documenta en la información que proporciona las [Directrices de optimización del rendimiento para Windows Server 2016](/windows-server/administration/performance-tuning/), que publicó en Microsoft.com el grupo de productos de Windows.
+La siguiente configuración se documenta en la información que proporciona las [Directrices de optimización del rendimiento para Windows Server 2016](../../administration/performance-tuning/index.md), que publicó en Microsoft.com el grupo de productos de Windows.
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 

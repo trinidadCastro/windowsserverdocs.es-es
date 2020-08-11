@@ -1,20 +1,18 @@
 ---
 title: 'Paso 4: configurar la directiva de grupo para Actualizaciones automáticas'
 description: 'Tema de Windows Server Update Service (WSUS): configurar la directiva de grupo para Actualizaciones automáticas es el cuarto paso en un proceso de cuatro pasos para implementar WSUS'
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 62177d05-d832-4ea8-bca4-47a8cd34a19c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d678c139ae2327eeecdff2731f1edb57d358a28a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ca59369cda4c38af111b9ccd3141219b1516cbd7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828848"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991095"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Paso 4: Configurar la directiva de grupo para las actualizaciones automáticas
 
@@ -639,7 +637,7 @@ En el procedimiento siguiente se describe cómo abrir GPMC en el controlador de 
 
     -   **Abre la extensión Configuración del equipo > Programador de mantenimiento de la directiva de grupo**. En GPOE, navega a *PolicyName* > **Configuración del equipo** > **Directivas** > **Plantillas administrativas** > **Componentes de Windows** > **Programador de mantenimiento**.
 
-Si deseas obtener más información sobre la directiva de grupo, consulta [Información general sobre directivas de grupo](https://technet.microsoft.com/library/hh831791.aspx(v=ws.12)).
+Si deseas obtener más información sobre la directiva de grupo, consulta [Información general sobre directivas de grupo](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11)).
 
 > [!TIP]
 > Después de abrir la extensión de directiva de grupo que deseas, puedes usar los pasos siguientes para habilitar, deshabilitar o desplazarte por las opciones de configuración:

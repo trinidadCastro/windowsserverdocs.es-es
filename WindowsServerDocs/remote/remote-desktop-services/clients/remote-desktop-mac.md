@@ -1,8 +1,6 @@
 ---
 title: Introducción al cliente de macOS
 description: Aprenda a configurar el cliente de Escritorio remoto para Mac.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
@@ -10,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 57072fe5a92bcc59a1ccd46b1c0db7a6828a165d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 2a0c93ddc6bf891a3f8157d36b67f60241d4d41b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181961"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991602"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introducción al cliente de macOS
 
@@ -164,4 +162,4 @@ Windows Server 2012 R2 introdujo la compatibilidad con un nuevo método de aut
 Para más información sobre esta característica, revisa [https://aka.ms/paa-sample](https://aka.ms/paa-sample).
 
 > [!TIP]
-> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, ve al [foro del cliente de Escritorio remoto](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, ve al [foro del cliente de Escritorio remoto](/answers/topics/windows-remote-desktop-client.html) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

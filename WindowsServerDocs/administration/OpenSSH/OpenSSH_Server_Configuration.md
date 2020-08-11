@@ -4,14 +4,13 @@ description: Información de configuración acerca del servidor de OpenSSH para 
 ms.date: 09/27/2018
 ms.topic: conceptual
 contributor: maertendMSFT
-ms.product: windows-server
 author: maertendmsft
-ms.openlocfilehash: abd156936bbd26479b0fe6bb7ffb98c1dd122f8e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e2052ef9bf67eea241b6668a734f2f3e166bb61
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469760"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992387"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Configuración del servidor de OpenSSH para Windows 10, 1809 y Windows Server 2019
 
@@ -64,7 +63,7 @@ Por ese motivo, se agrega * para cubrir los nombres de dominio completos.
 Además, este enfoque usa "?" en lugar de "\@" para evitar conflictos con el formato username@host.
 
 Los usuarios y grupos del grupo de trabajo y las cuentas conectadas a Internet siempre se resuelven en el nombre de cuenta local (sin la parte del dominio, de forma similar a los nombres estándar de UNIX).
-Los usuarios y grupos de dominio se resuelven estrictamente en el formato [NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format): nombre_corto_dominio\nombre_usuario.
+Los usuarios y grupos de dominio se resuelven estrictamente en el formato [NameSamCompatible](/windows/desktop/api/secext/ne-secext-extended_name_format): nombre_corto_dominio\nombre_usuario.
 Todas las reglas de configuración basadas en usuarios o grupos deben usar este formato.
 
 Ejemplos de usuarios y grupos de dominio
@@ -149,4 +148,3 @@ Las siguientes opciones de configuración no están disponibles en la versión d
 * X11Forwarding
 * X11UseLocalhost
 * XAuthLocation
-

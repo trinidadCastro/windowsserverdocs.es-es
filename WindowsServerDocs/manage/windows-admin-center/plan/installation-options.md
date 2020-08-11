@@ -1,19 +1,17 @@
 ---
 title: ¿Qué tipo de instalación es adecuada para ti?
 description: En este tema se describen las diferentes opciones de instalación para Windows Admin Center, incluida la instalación en un equipo con Windows 10 o en Windows Server para que lo usen varios administradores.
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: bd7ec8a5a072cbda99b036718d24ec1908fb8b53
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4114869b3f138eea2e6ed45a4317699706471c5b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269252"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997011"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>¿Qué tipo de instalación es la adecuada para ti?
 
@@ -44,7 +42,7 @@ Para utilizar Windows Admin Center:
 - **En otros escenarios:** conéctate a la puerta de enlace de Windows Admin Center desde un explorador del cliente en un equipo diferente, por ejemplo, `https://servername.contoso.com`
 
 > [!WARNING]
-> No se admite la instalación de Windows Admin Center en un controlador de dominio. [Obtén más información sobre los procedimientos recomendados de seguridad del controlador de dominio](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack).
+> No se admite la instalación de Windows Admin Center en un controlador de dominio. [Obtén más información sobre los procedimientos recomendados de seguridad del controlador de dominio](../../../identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack.md).
 
 ## <a name="installation-supported-web-browsers"></a>Instalación: Exploradores web compatibles
 
@@ -67,9 +65,9 @@ Puedes **administrar** los siguientes sistemas operativos de Windows mediante Wi
 
 > [!NOTE]
 > Windows Admin Center requiere características de PowerShell que no se incluyen en Windows Server 2012 y 2012 R2. Si los vas a administrar con Windows Admin Center, deberás instalar Windows Management Framework (WMF), versión 5.1 o posterior, en esos servidores.
-> 
-> Escribe `$PSVersiontable` en PowerShell para verificar que esté instalado WMF y que la versión sea 5.1 o posterior. 
-> 
+>
+> Escribe `$PSVersiontable` en PowerShell para verificar que esté instalado WMF y que la versión sea 5.1 o posterior.
+>
 > Si WMF no está instalado, puedes [descargar WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616).
 
 ## <a name="high-availability"></a>Alta disponibilidad

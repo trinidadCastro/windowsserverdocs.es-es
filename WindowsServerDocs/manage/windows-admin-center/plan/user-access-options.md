@@ -1,19 +1,17 @@
 ---
 title: Opciones de acceso de usuario con Windows Admin Center
 description: Opciones de acceso de usuario y proveedores de identidades con Windows Admin Center (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 084cdae0bf8ca0eb3aff1f4679d30978b860efef
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3c96968f55a06c7ccffd9f7919001f21bff6a75c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71356917"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996989"
 ---
 # <a name="user-access-options-with-windows-admin-center"></a>Opciones de acceso de usuario con Windows Admin Center
 
@@ -33,7 +31,7 @@ Los **usuarios de puerta de enlace** pueden conectarse al servicio de puerta de 
 Los **administradores de puerta de enlace** pueden configurar quién obtiene acceso y cómo se autentican los usuarios en la puerta de enlace.
 
 >[!NOTE]
-> Si no hay ningún grupo de acceso definido en Windows Admin Center, los roles reflejarán el acceso de la cuenta de Windows al servidor de puerta de enlace. 
+> Si no hay ningún grupo de acceso definido en Windows Admin Center, los roles reflejarán el acceso de la cuenta de Windows al servidor de puerta de enlace.
 
 [Configura el acceso de usuario y de administrador de la puerta de enlace en Windows Admin Center.](../configure/user-access-control.md)
 
@@ -51,7 +49,7 @@ Si usas Active Directory o grupos de máquinas locales como proveedor de identid
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>Acceso condicional y autenticación multifactor
 
-Al requerir la autenticación de Azure AD para la puerta de enlace, puedes utilizar las características de seguridad adicionales, como el acceso condicional y la autenticación multifactor que proporciona Azure AD. [Más información sobre cómo configurar el acceso condicional con Azure Active Directory.](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+Al requerir la autenticación de Azure AD para la puerta de enlace, puedes utilizar las características de seguridad adicionales, como el acceso condicional y la autenticación multifactor que proporciona Azure AD. [Más información sobre cómo configurar el acceso condicional con Azure Active Directory.](/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
 ## <a name="role-based-access-control"></a>Control de acceso basado en roles
 

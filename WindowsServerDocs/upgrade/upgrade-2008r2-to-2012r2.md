@@ -1,18 +1,16 @@
 ---
 title: Actualización de Windows Server 2008 R2 a Windows Server 2012 R2 | Microsoft Docs
 description: Obtén información acerca de cómo realizar una actualización local para pasar de Windows Server 2008 R2 a Windows Server 2012 R2.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 7598826bee4abd869dff82c3891fdbe126db35fb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: fad4caf75be75bae5361a99f1e6e6520767680cd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182181"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996094"
 ---
 # <a name="upgrade-windows-server-2008-r2-to-windows-server-2012-r2"></a>Actualización de Windows Server 2008 R2 a Windows Server 2012 R2
 
@@ -66,7 +64,7 @@ Después de recopilar toda la información relacionada con Windows Server, se r
 
     ![Pantalla para elegir el tipo de instalación](media/upgrade-2008r2-2012r2/choose-install-upgrade.png)
 
-9. El programa de instalación te recuerda que compruebes que las aplicaciones son compatibles con Windows Server 2012 R2. Para ello, usa la información de [Instalación y actualización de Windows Server](https://docs.microsoft.com/windows-server/get-started/installation-and-upgrade) y, a continuación, selecciona **Siguiente**.
+9. El programa de instalación te recuerda que compruebes que las aplicaciones son compatibles con Windows Server 2012 R2. Para ello, usa la información de [Instalación y actualización de Windows Server](../get-started/installation-and-upgrade.md) y, a continuación, selecciona **Siguiente**.
 
     ![Pantalla que recuerda que se debe comprobar la compatibilidad de las aplicaciones](media/upgrade-2008r2-2012r2/compatibility-report.png)
 

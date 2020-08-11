@@ -1,7 +1,6 @@
 ---
 title: Por qué las estaciones de trabajo con privilegios de acceso pueden ayudarte a proteger tu organización
 description: Cómo puedes aumentar el grado de seguridad de la organización gracias a las estaciones de trabajo con privilegios (PAW)
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 93589778-3907-4410-8ed5-e7b6db406513
 ms.date: 03/13/2019
@@ -9,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: b51255a0ac0120847e3eb05a373535bc1b7f5d44
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6a7e916c78ad7b2711268f02bcf028dfb2621303
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520164"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991871"
 ---
 # <a name="privileged-access-workstations"></a>Estaciones de trabajo de acceso con privilegios
 
@@ -138,7 +137,7 @@ Esta metodología es apropiada para las cuentas con acceso a recursos de alto va
 * **Trabajadores que administran información de alta confidencialidad:** el enfoque usado en una PAW puede proporcionar también protección para las tareas y el personal que trabaja con información confidencial, como aquellos relacionados con la actividad de fusiones y adquisiciones con anuncio previo, informes financieros previos al lanzamiento, presencia de medios sociales organizativos, comunicaciones ejecutivas, secretos comerciales sin patentar, investigaciones confidenciales u otros datos propietarios o confidenciales. En esta guía no se analiza en profundidad la configuración de estos escenarios de trabajadores de la información ni se incluye este escenario de instrucciones técnicas.
 
     > [!NOTE]
-    > Microsoft IT emplea PAW (lo que se conoce internamente como "estaciones de trabajo de administración seguras", o SAW) para administrar el acceso seguro a sistemas de gran valor dentro de Microsoft. Esta guía contiene detalles adicionales sobre el uso de PAW en Microsoft en la sección "Uso de Microsoft de las estaciones de trabajo de administración" que se verá más adelante. Para más información sobre este enfoque del entorno de recursos de alto valor, consulte el artículo [Protecting high-value assets with secure admin workstations](/previous-versions//mt186538(v=technet.10)) (Protección de recursos de alto valor con estaciones de administración seguras).
+    > Microsoft IT emplea PAW (lo que se conoce internamente como "estaciones de trabajo de administración seguras", o SAW) para administrar el acceso seguro a sistemas de gran valor dentro de Microsoft. Esta guía contiene detalles adicionales sobre el uso de PAW en Microsoft en la sección "Uso de Microsoft de las estaciones de trabajo de administración" que se verá más adelante. Para más información sobre este enfoque del entorno de recursos de alto valor, consulte el artículo [Protecting high-value assets with secure admin workstations](/previous-versions/mt186538(v=technet.10)) (Protección de recursos de alto valor con estaciones de administración seguras).
 
 En este documento se describe por qué se recomienda este procedimiento para proteger las cuentas con privilegios de gran impacto, qué tal son estas soluciones PAW para proteger los privilegios administrativos y cómo implementar rápidamente una solución PAW para la administración de dominios y servicios en la nube.
 
@@ -1086,7 +1085,7 @@ Una vez que el disco de plantilla y el archivo de datos de blindaje estén listo
 
 [Introducción a Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
 
-[Protección de recursos de alto valor con estaciones de trabajo de administración seguras](/previous-versions//mt186538(v=technet.10))
+[Protección de recursos de alto valor con estaciones de trabajo de administración seguras](/previous-versions/mt186538(v=technet.10))
 
 [Modo de usuario aislado de Windows 10 con David Probert (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 

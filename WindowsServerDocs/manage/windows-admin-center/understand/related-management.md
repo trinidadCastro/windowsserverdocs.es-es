@@ -1,28 +1,26 @@
 ---
 title: Soluciones de administración relacionadas con Windows Admin Center
 description: En este tema se explica cómo Windows Admin Center se compara con otras soluciones o productos de administración y supervisión de Microsoft (Proyecto Honolulu) y se complementa con ellos.
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: d681e5007cd3ae3c14de774df0bc85abc23b51d7
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2f3a8de38cc643184468fccb4fcdd24f9ba75dd7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323537"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997522"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center y soluciones de administración relacionadas de Microsoft
 
 >Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-[Windows Admin Center](windows-admin-center.md) es la evolución de las herramientas de administración tradicionales de servidores incluidas para situaciones en las que puede haber utilizado Escritorio remoto (RDP) para conectarse a un servidor para la solución de problemas o la configuración. No pretende sustituir a otras soluciones de administración de Microsoft existentes, sino que complementa a estas soluciones, tal y como se describe a continuación.
+[Windows Admin Center](../overview.md) es la evolución de las herramientas de administración tradicionales de servidores incluidas para situaciones en las que puede haber utilizado Escritorio remoto (RDP) para conectarse a un servidor para la solución de problemas o la configuración. No pretende sustituir a otras soluciones de administración de Microsoft existentes, sino que complementa a estas soluciones, tal y como se describe a continuación.
 
 ## <a name="remote-server-administration-tools-rsat"></a>Herramientas de administración remota del servidor (RSAT)
 
-[Herramientas de administración remota del servidor (RSAT)](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools) es una colección de herramientas de GUI y de PowerShell para administrar roles y características opcionales en Windows Server. RSAT cuenta con muchas funcionalidades que no tiene Windows Admin Center. En el futuro, agregaremos algunas de las herramientas más usadas de RSAT para Windows Admin Center. Cualquier rol o característica nueva de Windows Server que requiera una interfaz gráfica de usuario para la administración estará en Windows Admin Center.
+[Herramientas de administración remota del servidor (RSAT)](../../../remote/remote-server-administration-tools.md) es una colección de herramientas de GUI y de PowerShell para administrar roles y características opcionales en Windows Server. RSAT cuenta con muchas funcionalidades que no tiene Windows Admin Center. En el futuro, agregaremos algunas de las herramientas más usadas de RSAT para Windows Admin Center. Cualquier rol o característica nueva de Windows Server que requiera una interfaz gráfica de usuario para la administración estará en Windows Admin Center.
 
 ## <a name="intune"></a>Intune
 

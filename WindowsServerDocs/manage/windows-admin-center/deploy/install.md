@@ -1,19 +1,17 @@
 ---
 title: Instalación de Windows Admin Center
 description: Cómo instalar Windows Admin Center en un PC Windows o en un servidor para que varios usuarios puedan acceder a este desde un explorador web.
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: cab128a3da9fa58c598cebcdf188058631c33977
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: df5e7e2c23b9120a890b34448868ec4d5b1c99b3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75950008"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997408"
 ---
 # <a name="install-windows-admin-center"></a>Instalación de Windows Admin Center
 
@@ -27,7 +25,7 @@ En este tema se describe cómo instalar Windows Admin Center en un PC Windows o 
 
 ## <a name="determine-your-installation-type"></a>Determinación del tipo de instalación
 
-Revisa las [opciones de instalación ](../plan/installation-options.md), que incluyen los [sistemas operativos compatibles](https://docs.microsoft.com/windows-server/manage/windows-admin-center/plan/installation-options#installation-supported-operating-systems). Para instalar Windows Admin Center en una VM en Azure, consulta [Implementación de Windows Admin Center en Azure](../azure/deploy-wac-in-azure.md).
+Revisa las [opciones de instalación ](../plan/installation-options.md), que incluyen los [sistemas operativos compatibles](../plan/installation-options.md#installation-supported-operating-systems). Para instalar Windows Admin Center en una VM en Azure, consulta [Implementación de Windows Admin Center en Azure](../azure/deploy-wac-in-azure.md).
 
 ## <a name="install-on-windows-10"></a>Instalar en Windows 10
 
@@ -61,7 +59,7 @@ Si tienes una instalación de Server Core de Windows Server, puedes instalar Wi
 
 Ejecuta el siguiente comando para instalar Windows Admin Center y generar automáticamente un certificado autofirmado:
 
-```   
+```
 msiexec /i <WindowsAdminCenterInstallerName>.msi /qn /L*v log.txt SME_PORT=<port> SSL_CERTIFICATE_OPTION=generate
 ```
 

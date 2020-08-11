@@ -1,18 +1,16 @@
 ---
 title: Actualización de Windows Server 2016 a Windows Server 2019 | Microsoft Docs
 description: Obtén información acerca de cómo realizar una actualización en contexto para pasar de Windows Server 2016 a Windows Server 2019.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 91b10602a0cd5a3250fe01991fca42d01727784c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2ed2ed1859ca69f2251543a78dec0b856ce3f7e2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861348"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997217"
 ---
 # <a name="upgrade-windows-server-2016-to-windows-server-2019"></a>Actualización de Windows Server 2016 a Windows Server 2019
 
@@ -88,4 +86,4 @@ Si crees que algo podría haber ido mal durante la actualización, copia y compr
 
 ## <a name="related-articles"></a>Artículos relacionados
 
-- Para obtener más detalles e información sobre Windows Server 2019, consulta [Introducción a Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/get-started-19).
+- Para obtener más detalles e información sobre Windows Server 2019, consulta [Introducción a Windows Server 2019](../get-started-19/get-started-19.md).

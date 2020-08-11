@@ -1,27 +1,25 @@
 ---
 title: Compatibilidad de ISV de actualización Delta mensual sin WSUS
 description: 'Tema de Windows Server Update Services (WSUS): cómo los fabricantes de software independientes (ISV) pueden usar temporalmente la actualización mensual Delta en lugar de la entrega de actualizaciones Express de WSUS para reducir el tamaño de los paquetes'
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ccddd3bfd55ae340dc5273905bb475e7d2cb98a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 103e52d140ee70ff2ee6ac7817371c9b80d037ca
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828748"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991003"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>Compatibilidad de ISV de actualización Delta mensual sin WSUS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016 y Windows 10
 
-Las descargas de actualizaciones de Windows 10 pueden ser grandes, porque cada paquete contiene todas las revisiones publicadas anteriormente para garantizar la coherencia y simplicidad.  
+Las descargas de actualizaciones de Windows 10 pueden ser grandes, porque cada paquete contiene todas las revisiones publicadas anteriormente para garantizar la coherencia y simplicidad.
 
-Desde la versión 7, Windows ha podido reducir el tamaño de las descargas de Windows Update con una característica llamada [Express](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2) y, aunque los dispositivos de consumo la admiten de forma predeterminada, los dispositivos Windows 10 Enterprise requieren Windows Server Update Services (WSUS) para poder usarla. Si tienes WSUS disponible, consulta [Compatibilidad con ISV de entrega de actualizaciones Express](express-update-delivery-ISV-support.md). Se recomienda usarlo para habilitar la entrega de actualizaciones Express. 
+Desde la versión 7, Windows ha podido reducir el tamaño de las descargas de Windows Update con una característica llamada [Express](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10)#Anchor_2) y, aunque los dispositivos de consumo la admiten de forma predeterminada, los dispositivos Windows 10 Enterprise requieren Windows Server Update Services (WSUS) para poder usarla. Si tienes WSUS disponible, consulta [Compatibilidad con ISV de entrega de actualizaciones Express](express-update-delivery-ISV-support.md). Se recomienda usarlo para habilitar la entrega de actualizaciones Express.
 
 Si actualmente no tienes WSUS instalado, pero necesitas tamaños de paquete de actualización más pequeños mientras tanto, puedes usar la actualización mensual Delta. La actualización Delta reduce considerablemente los tamaños de los paquetes, pero no tanto como la entrega de actualizaciones Express de WSUS. Se recomienda implementar la actualización Express de WSUS siempre que sea posible para reducir al máximo los tamaños de los paquetes. A continuación se presenta un gráfico en el que se comparan los tamaños de descarga Express, Delta y Acumulativa para Windows 10, versión 1607:
 
@@ -47,7 +45,7 @@ Al usar la actualización mensual Delta, los paquetes solo contendrán actualiza
 Las actualizaciones Delta y Acumulativa tienen el mismo número de KB, con la misma clasificación y versión al mismo tiempo. Las actualizaciones pueden distinguirse por el título de la actualización en el catálogo o por el nombre de la MSU:
 
 - 02-2017 *\***Actualización Delta**\**   para Windows 10 Version 1607 para sistemas basados en x64 (KB1234567)
-- 02-2017 *\***Actualización Acumulativa**\**   para Windows 10 Version 1607 para sistemas basados en x86 (KB1234567)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+- 02-2017 *\***Actualización Acumulativa**\**   para Windows 10 Version 1607 para sistemas basados en x86 (KB1234567)
 
 ### <a name="when-to-use-monthly-delta-update"></a>Cuándo usar la actualización mensual Delta
 
@@ -67,15 +65,15 @@ Si se instalan las dos actualizaciones, Delta y Acumulativa, involuntariamente y
 2. Muestra los paquetes con estado pendiente:
 
     `x:\windows\system32\dism.exe /image:<drive letter for windows directory> /Get-Packages >> <path to text file>`
- 
+
     > **Ejemplo**: ` x:\windows\system32\dism.exe /image:c:\ /Get-Packages >> c:\temp\packages.txt`
- 
+
 3. Abre el archivo de texto donde canalizaste **get-packages**. Si ves alguna instalación con revisiones pendientes, ejecuta **remove-package** para cada nombre de paquete:
- 
+
    `dism.exe /image:<drive letter for windows directory> /remove-package /packagename:<package name>`
- 
+
     > **Ejemplo**: `x:\windows\system32\dism.exe /image:c:\ /remove-package /packagename:Package_for_KB4014329~31bf3856ad364e35~amd64~~10.0.1.0`
- 
+
     >[!NOTE]
     >No quites las revisiones pendientes de desinstalación.
 

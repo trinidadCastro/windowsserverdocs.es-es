@@ -1,19 +1,17 @@
 ---
 title: Settings
 description: Obtén información sobre la configuración en Windows Admin Center (Proyecto Honolulu). La configuración de usuario permite a los usuarios cambiar su idioma o región y otras preferencias. La configuración de la puerta de enlace permite a los administradores configurar la puerta de enlace.
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 04/12/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: e0fd6618f275058d4e22fe9abb9e484d4752ac9a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ff06a19d85858b8332412a51c029c9aeeba2af50
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71407059"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997437"
 ---
 # <a name="windows-admin-center-settings"></a>Configuración de Windows Admin Center
 
@@ -56,6 +54,6 @@ En la pestaña **Extensiones**, los administradores pueden instalar, desinstalar
 
 La pestaña **Acceso** permite a los administradores configurar quién puede acceder a la puerta de enlace de Windows Admin Center, así como el proveedor de identidades que se usa para autenticar a los usuarios. [Obtén más información sobre el control del acceso a la puerta de enlace.](user-access-control.md)
 
-En la pestaña **Azure**, los administradores pueden registrar la puerta de enlace con Azure para habilitar las [características de integración de Azure](azure-integration.md) en Windows Admin Center.
+En la pestaña **Azure**, los administradores pueden registrar la puerta de enlace con Azure para habilitar las [características de integración de Azure](../azure/azure-integration.md) en Windows Admin Center.
 
 Con la pestaña **Conexiones compartidas**, los administradores pueden configurar una lista única de conexiones que se compartirán entre todos los usuarios de la puerta de enlace de Windows Admin Center. [Obtén más información sobre la configuración de conexiones una vez para todos los usuarios de una puerta de enlace.](shared-connections.md)
