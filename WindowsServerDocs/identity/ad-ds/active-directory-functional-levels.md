@@ -6,16 +6,14 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 10/29/2018
 ms.topic: article
-ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.technology: identity-adds
-ms.openlocfilehash: b6a9a5c08e24f5c7bb7ac50ac1c72386ef8a6d0f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 75ba30502c7de1b0a88886f42c3a8ef9a84a7e18
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963057"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938634"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de bosque y dominio
 
@@ -133,7 +131,7 @@ Sistema operativo de controlador de dominio admitido:
 
 ### <a name="windows-server-2008-forest-functional-level-features"></a>Características del nivel funcional de bosque de Windows Server 2008
 
-* Están disponibles todas las características disponibles en el nivel funcional del bosque de Windows Server 2003, pero no características adicionales. 
+* Están disponibles todas las características disponibles en el nivel funcional del bosque de Windows Server 2003, pero no características adicionales.
 
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Características del nivel funcional de dominio de Windows Server 2008
 
@@ -145,7 +143,7 @@ Sistema operativo de controlador de dominio admitido:
       > A partir de Windows Server 2012 R2, el servicio de replicación de archivos (FRS) está en desuso. Un dominio nuevo que se crea en un controlador de dominio que ejecuta como mínimo Windows Server 2012 R2 debe establecerse en el nivel funcional del dominio de Windows Server 2008 o superior.
 
   * Los espacios de nombres de DFS basados en dominio que se ejecutan en modo Windows Server 2008, que incluyen compatibilidad con la enumeración basada en el acceso y mayor escalabilidad. Los espacios de nombres basados en dominio en modo Windows Server 2008 también requieren que el bosque use el nivel funcional del bosque de Windows Server 2003. Para obtener más información, consulta [Elegir un tipo de espacio de nombres](https://go.microsoft.com/fwlink/?LinkId=180400).
-  * Compatibilidad del Estándar de cifrado avanzado (AES 128 y 256) con el protocolo Kerberos. Para que se puedan emitir TGT mediante AES, el nivel funcional del dominio debe ser Windows Server 2008 o superior y es necesario cambiar la contraseña del dominio. 
+  * Compatibilidad del Estándar de cifrado avanzado (AES 128 y 256) con el protocolo Kerberos. Para que se puedan emitir TGT mediante AES, el nivel funcional del dominio debe ser Windows Server 2008 o superior y es necesario cambiar la contraseña del dominio.
     * Para obtener más información, consulta [Mejoras de Kerberos](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10)).
 
       > [!NOTE]
@@ -182,7 +180,7 @@ Sistema operativo de controlador de dominio admitido:
       - El generador de topología entre sitios (ISTG) usa algoritmos mejorados que se escalan para admitir bosques con un número mayor de sitios del que AD DS puede admitir en el nivel funcional del bosque de Windows 2000. El algoritmo mejorado de elección del ISTG es un mecanismo menos intrusivo para elegir el ISTG en el nivel funcional del bosque de Windows 2000.
    * La capacidad de crear instancias de la clase auxiliar dinámica denominada **dynamicObject** en una partición de directorio de dominio.
    * La capacidad de convertir una instancia de un objeto **inetOrgPerson** en una instancia de un objeto **User**, y para completar la conversión en la dirección opuesta.
-   * La capacidad de crear instancias de nuevos tipos de grupos para admitir la autorización basada en roles. 
+   * La capacidad de crear instancias de nuevos tipos de grupos para admitir la autorización basada en roles.
       - Estos tipos se denominan grupos básicos de aplicación y grupos de consulta LDAP.
    * Desactivación y nueva definición de atributos y clases en el esquema. Se pueden reutilizar los siguientes atributos: ldapDisplayName, schemaIdGuid, OID y mapiID.
    * Los espacios de nombres de DFS basados en dominio que se ejecutan en modo Windows Server 2008, que incluyen compatibilidad con la enumeración basada en el acceso y mayor escalabilidad. Para obtener más información, consulta [Elegir un tipo de espacio de nombres](https://go.microsoft.com/fwlink/?LinkId=180400).
@@ -226,5 +224,5 @@ Sistema operativo de controlador de dominio admitido:
 
 ## <a name="next-steps"></a>Pasos a seguir
 
-* [Elevar el nivel funcional del dominio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))  
+* [Elevar el nivel funcional del dominio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))
 * [Elevar el nivel funcional del bosque](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985(v=ws.11))

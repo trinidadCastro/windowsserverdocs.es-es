@@ -1,18 +1,16 @@
 ---
 title: 'Servicios de Escritorio remoto: integración con servicios de Azure'
 description: Aprende a integrar Servicios de Escritorio remoto en tu implementación de Azure, y a Azure en tu implementación de RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 08/18/2017
 ms.topic: article
 author: lizap
-ms.openlocfilehash: 2c792a22608fe0e7ae826b27d6917202037559e4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 410a08d5b222fe0888c77ca6eac061a302730619
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855078"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948888"
 ---
 # <a name="remote-desktop-services---integrating-with-azure-services"></a>Servicios de Escritorio remoto: integración con servicios de Azure
 

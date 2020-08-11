@@ -1,20 +1,18 @@
 ---
 title: Uso de contadores de rendimiento para diagnosticar problemas de capacidad de respuesta de las aplicaciones en los hosts de sesión de Escritorio remoto
 description: ¿Funcionan muy lentamente las aplicaciones en la sesión de Escritorio remoto? Obtén información acerca de los contadores de rendimiento que puede utilizar para diagnosticar problemas de rendimiento de aplicaciones en RDSH
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 07/11/2019
 ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e08e4aa0cd1298502c59a1a8275293910345d6a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 1db80d7ad93eea13decf90f1195a022c27c83e5e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966197"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954992"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Uso de contadores de rendimiento para diagnosticar problemas de rendimiento de las aplicaciones en los hosts de sesión de Escritorio remoto
 

@@ -1,26 +1,24 @@
 ---
 title: Licencia para la implementación de RDS con licencias de acceso de cliente (CAL)
 description: Información general sobre licencias de cliente en Servicios de Escritorio remoto.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 5be6546b-df16-4475-bcba-aa75aabef3e3
 author: lizap
 ms.author: elizapo
 ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: a11820b9c75bbcb928da562f3f74e4130e9c8096
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: d257893e19286ab2a4c8293a2cf2b2e6697898ce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775312"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936994"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>Licencia para la implementación de RDS con licencias de acceso de cliente (CAL)
 
 >Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
-Cada usuario y dispositivo que se conecta a un host de sesión de Escritorio remoto necesita una licencia de acceso de cliente (CAL). Las licencias de Escritorio remoto se usan para instalar, emitir y realizar un seguimiento de las CAL de RDS.  
+Cada usuario y dispositivo que se conecta a un host de sesión de Escritorio remoto necesita una licencia de acceso de cliente (CAL). Las licencias de Escritorio remoto se usan para instalar, emitir y realizar un seguimiento de las CAL de RDS.
 
 Cuando un usuario o un dispositivo se conecta a un servidor host de sesión de Escritorio remoto, el servidor host de sesión de Escritorio remoto determina si es necesaria una CAL de RDS. Luego, el servidor host de sesión de Escritorio remoto solicita una CAL de RDS al servidor de licencias de Escritorio remoto. Si hay disponible una CAL de RDS adecuada en un servidor de licencias, se emite esta CAL de RDS para el cliente, y el cliente puede conectarse al servidor host de sesión de Escritorio remoto y, desde allí, al escritorio o las aplicaciones que intenta usar.
 

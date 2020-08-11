@@ -1,52 +1,50 @@
 ---
 title: Creación de máquinas virtuales para Escritorio remoto
 description: Cree máquinas virtuales que hospeden componentes de Escritorio remoto en la nube.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 08/01/2016
 ms.topic: article
 ms.assetid: b0f62d6f-0915-44ca-afef-be44a922e20e
 author: lizap
 manager: dongill
-ms.openlocfilehash: 9eba68e3dfce817208763ed11c4a7af68bb60be3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 864b1a0fda39570a94007108e816c7a9b2cddd51
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966527"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939696"
 ---
 # <a name="create-virtual-machines-for-remote-desktop"></a>Creación de máquinas virtuales para Escritorio remoto
 
 >Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
-Siga estos pasos para crear los equipos virtuales en el entorno del inquilino que se usará para ejecutar los roles, servicios y características de Windows Server 2016 necesarias para una implementación que hospede un escritorio.   
-  
-Para este ejemplo de una implementación básica, se creará el mínimo de tres máquinas virtuales. Una de ellas hospedará los servicios de rol Servidor de licencias y Agente de conexión a Escritorio remoto (RD), y un recurso compartido de archivos para la implementación. Una segunda hospedará los servicios de rol Puerta de enlace y Acceso web de Escritorio remoto.  La tercera máquina virtual hospedará el servicio de rol Host de sesión de Escritorio remoto. En las implementaciones muy pequeñas se puede reducir los costos de máquinas virtuales mediante el uso de un proxy de aplicación de AAD para eliminar todos los puntos de conexión públicos de la implementación y combinar todos los servicios de rol en una sola máquina virtual. En el caso de implementaciones mayores, puede instalar los distintos servicios de rol en máquinas virtuales individuales para permitir un mejor escalado.  
-  
-En esta sección se describen los pasos necesarios para implementar máquinas virtuales para cada rol basadas en imágenes de Windows Server de [Microsoft Azure Marketplace](https://azure.microsoft.com/marketplace/). Si necesitas crear máquinas virtuales a partir de una imagen personalizada, que requiere PowerShell, consulta [Creación de una máquina virtual Windows con Resource Manager y PowerShell](/azure/virtual-machines/windows/quick-create-powershell). Luego, regresa aquí para conectar los discos de datos de Azure para el recurso compartido de archivos y especifica una dirección URL externa para la implementación.  
-  
-1. [Cree máquinas virtuales Windows](/azure/virtual-machines/windows/quick-create-portal) para hospedar el Agente de conexión a Escritorio remoto, el servidor de licencias de Escritorio remoto y el servidor de archivos.  
-  
-   Para lograr nuestro fin, hemos usado las convenciones de nomenclatura siguientes:  
-   - Agente de conexión a Escritorio remoto, servidor de licencias y servidor de archivos:   
-       - Máquina virtual: Contoso-Cb1  
-       - Conjunto de disponibilidad: CbAvSet    
-   - Acceso web a Escritorio remoto y servidor de puerta de enlace de Escritorio remoto:   
-       - Máquina virtual: Contoso-WebGw1  
-       - Conjunto de disponibilidad: WebGwAvSet  
-          
-   - Host de sesión de Escritorio remoto:   
-       - Máquina virtual: Contoso-Sh1  
-       - Conjunto de disponibilidad: ShAvSet  
-          
-   Todas las máquinas virtuales usan el mismo grupo de recursos.  
-2. Crea y adjunta un disco de datos de Azure para el recurso compartido del disco de perfil de usuario (UPD):  
-   1.  En Azure Portal, haz clic en **Examinar > Grupos de recursos**, haz clic en el grupo de recursos de la implementación y, después, en la máquina virtual creada para el Agente de conexión a Escritorio remoto (por ejemplo, Contoso-Cb1).  
-   2.  Haz clic en **Configuración > Discos > Conectar nuevo** .  
-   3.  Acepta los valores predeterminados de nombre y tipo.  
-   4.  Escribe un tamaño (en GB) suficiente para contener los recursos compartidos de red del entorno del inquilino, incluidos los certificados y los discos de perfil de usuario. Puedes tener aproximadamente 5 GB por usuario que planees tener  
-   5.  Acepta los valores predeterminados de ubicación y almacenamiento en caché del host y, después, haz clic en **Aceptar**.  
+Siga estos pasos para crear los equipos virtuales en el entorno del inquilino que se usará para ejecutar los roles, servicios y características de Windows Server 2016 necesarias para una implementación que hospede un escritorio.
+
+Para este ejemplo de una implementación básica, se creará el mínimo de tres máquinas virtuales. Una de ellas hospedará los servicios de rol Servidor de licencias y Agente de conexión a Escritorio remoto (RD), y un recurso compartido de archivos para la implementación. Una segunda hospedará los servicios de rol Puerta de enlace y Acceso web de Escritorio remoto.  La tercera máquina virtual hospedará el servicio de rol Host de sesión de Escritorio remoto. En las implementaciones muy pequeñas se puede reducir los costos de máquinas virtuales mediante el uso de un proxy de aplicación de AAD para eliminar todos los puntos de conexión públicos de la implementación y combinar todos los servicios de rol en una sola máquina virtual. En el caso de implementaciones mayores, puede instalar los distintos servicios de rol en máquinas virtuales individuales para permitir un mejor escalado.
+
+En esta sección se describen los pasos necesarios para implementar máquinas virtuales para cada rol basadas en imágenes de Windows Server de [Microsoft Azure Marketplace](https://azure.microsoft.com/marketplace/). Si necesitas crear máquinas virtuales a partir de una imagen personalizada, que requiere PowerShell, consulta [Creación de una máquina virtual Windows con Resource Manager y PowerShell](/azure/virtual-machines/windows/quick-create-powershell). Luego, regresa aquí para conectar los discos de datos de Azure para el recurso compartido de archivos y especifica una dirección URL externa para la implementación.
+
+1. [Cree máquinas virtuales Windows](/azure/virtual-machines/windows/quick-create-portal) para hospedar el Agente de conexión a Escritorio remoto, el servidor de licencias de Escritorio remoto y el servidor de archivos.
+
+   Para lograr nuestro fin, hemos usado las convenciones de nomenclatura siguientes:
+   - Agente de conexión a Escritorio remoto, servidor de licencias y servidor de archivos:
+       - Máquina virtual: Contoso-Cb1
+       - Conjunto de disponibilidad: CbAvSet
+   - Acceso web a Escritorio remoto y servidor de puerta de enlace de Escritorio remoto:
+       - Máquina virtual: Contoso-WebGw1
+       - Conjunto de disponibilidad: WebGwAvSet
+
+   - Host de sesión de Escritorio remoto:
+       - Máquina virtual: Contoso-Sh1
+       - Conjunto de disponibilidad: ShAvSet
+
+   Todas las máquinas virtuales usan el mismo grupo de recursos.
+2. Crea y adjunta un disco de datos de Azure para el recurso compartido del disco de perfil de usuario (UPD):
+   1.  En Azure Portal, haz clic en **Examinar > Grupos de recursos**, haz clic en el grupo de recursos de la implementación y, después, en la máquina virtual creada para el Agente de conexión a Escritorio remoto (por ejemplo, Contoso-Cb1).
+   2.  Haz clic en **Configuración > Discos > Conectar nuevo** .
+   3.  Acepta los valores predeterminados de nombre y tipo.
+   4.  Escribe un tamaño (en GB) suficiente para contener los recursos compartidos de red del entorno del inquilino, incluidos los certificados y los discos de perfil de usuario. Puedes tener aproximadamente 5 GB por usuario que planees tener
+   5.  Acepta los valores predeterminados de ubicación y almacenamiento en caché del host y, después, haz clic en **Aceptar**.
 3. Crea un equilibrador de carga externo para acceder a la implementación de forma externa:
    1. En Azure Portal, haz clic en **Examinar > Equilibradores de carga** y, después,haz clic en **Agregar**.
    2. Escribe un **nombre**, selecciona **Público** como **tipo** de equilibrador de carga y selecciona la **suscripción**, el **grupo de recursos** y la **ubicación** apropiados.
@@ -76,6 +74,6 @@ En esta sección se describen los pasos necesarios para implementar máquinas vi
        2. Escribe un **nombre** (como RDP-Contoso-WebGw1), selecciona **Personalizado** en servicio, **TCP** en protocolo y escribe 14000 en **Puerto**.
        3. Selecciona **Elegir una máquina virtual**  y Contoso-WebGw1.
        4. Selecciona **Personalizado** en asignación de puertos, escribe 3389 en **Puerto de destino**y selecciona **Aceptar**.
-5. Escriba un nombre DNS o una dirección URL externos para la implementación, con el fin de acceder a ellos externamente:  
-   1.  En Azure Portal, haz clic en **Examinar > Grupos de recursos**, haz clic en el grupo de recursos de la implementación y, luego, en la dirección IP pública que creaste para Acceso web de Escritorio remoto y Puerta de enlace de Escritorio remoto.  
-   2.  Haz clic en **Configuración**, escribe una etiqueta de nombre DNS (por ejemplo, contoso) y haz clic en **Guardar**. Esta etiqueta de nombre DNS (contoso.westus.cloudapp.azure.com) es el nombre DNS que usará para conectarse al servidor de Acceso web de Escritorio remoto y Puerta de enlace de Escritorio remoto.  
+5. Escriba un nombre DNS o una dirección URL externos para la implementación, con el fin de acceder a ellos externamente:
+   1.  En Azure Portal, haz clic en **Examinar > Grupos de recursos**, haz clic en el grupo de recursos de la implementación y, luego, en la dirección IP pública que creaste para Acceso web de Escritorio remoto y Puerta de enlace de Escritorio remoto.
+   2.  Haz clic en **Configuración**, escribe una etiqueta de nombre DNS (por ejemplo, contoso) y haz clic en **Guardar**. Esta etiqueta de nombre DNS (contoso.westus.cloudapp.azure.com) es el nombre DNS que usará para conectarse al servidor de Acceso web de Escritorio remoto y Puerta de enlace de Escritorio remoto.

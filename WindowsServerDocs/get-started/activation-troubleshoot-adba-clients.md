@@ -3,17 +3,16 @@ title: Solución de problemas de clientes de ADBA
 description: Te guía por un proceso de solución de problemas para un problema de activación de Windows
 ms.topic: troubleshooting
 ms.date: 09/24/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: d56b2d002b0403971dc50fab639f77bddf1f8809
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cb3e6e76b7f8086f23b5b107c5a45bfd50aacd19
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959887"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941969"
 ---
 # <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>Ejemplo: Solución de problemas de clientes de activación basada en Active Directory (ADBA) que no se activan
 

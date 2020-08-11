@@ -1,19 +1,17 @@
 ---
 title: Herramientas de administración remota del servidor
 description: Tema de nivel superior para Herramientas de administración remota del servidor
-ms.prod: windows-server
-ms.technology: manage-rsat
 ms.topic: get-started-article
 ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 75ebb12962e213887f1827992aff3fdf3c1df305
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 49a86a24b3637a701d6857af246eaa2852f1c73f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963137"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948778"
 ---
 # <a name="remote-server-administration-tools"></a>Herramientas de administración remota del servidor
 
@@ -47,20 +45,20 @@ Herramientas de administración remota del servidor para Windows 10 se ejecuta 
 > Herramientas de administración remota del servidor para Windows 10 no debe instalarse en un equipo que ejecute paquetes de herramientas de administración para Windows 8.1, Windows 8, Windows Server 2008 R2, Windows Server 2008, Windows Server 2003 o Windows 2000 Server. Quita todas las versiones anteriores del Paquete de herramientas de administración o de Herramientas de administración remota del servidor (incluidas las versiones preliminares anteriores y las de las herramientas para diferentes idiomas o configuraciones regionales) del equipo antes de instalar Herramientas de administración remota del servidor para Windows 10.
 
 Para usar esta versión del Administrador del servidor para tener acceso a los servidores remotos que ejecutan Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2, así como administrarlos, debes instalar varias actualizaciones para hacer que los sistemas operativos anteriores de Windows Server sean fáciles de administrar mediante el Administrador del servidor. Para obtener información detallada sobre cómo preparar Windows Server 2012 R2, Windows Server 2012 y Windows Server 2008 R2 para la administración con el Administrador del servidor en Herramientas de administración remota del servidor para Windows 10, consulta [Administración de varios servidores remotos con el Administrador del servidor](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831456(v=ws.11)).
-        
+
 La administración remota de Windows PowerShell y el Administrador del servidor debe habilitarse en los servidores remotos a fin de administrarlos mediante las herramientas que forman parte de Herramientas de administración remota del servidor para Windows 10. La administración remota está habilitada de forma predeterminada en los servidores que ejecutan Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012. Para obtener más información sobre cómo deshabilitar la administración remota, vea [Administración de varios servidores remotos con el Administrador del servidor](https://go.microsoft.com/fwlink/p/?LinkId=241358).
-        
-## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>Instalación, desinstalación y desactivación o activación de las herramientas de RSAT        
+
+## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>Instalación, desinstalación y desactivación o activación de las herramientas de RSAT
 
 ### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>Usa características a petición (FoD) para instalar herramientas de RSAT específicas en la Actualización de octubre de 2018 de Windows 10 o posterior.
 
 A partir de la Actualización de octubre de 2018 de Windows 10, RSAT se incluye como un conjunto de **características a petición** directamente en Windows 10. Ahora, en lugar de descargar un paquete de RSAT, solo tienes que ir a **Administrar características opcionales** en **Configuración** y hacer clic en **Agregar una característica** para ver la lista de herramientas de RSAT disponibles. Selecciona e instala las herramientas de RSAT específicas que necesites. Para ver el progreso de la instalación, haz clic en el botón **Atrás** para ver el estado en la página **Administrar características opcionales**.
-        
+
 Consulta la [lista de herramientas de RSAT disponibles a través de **características a petición**](/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat). Además de la instalación a través de la aplicación gráfica **Configuración**, también puedes instalar herramientas de RSAT específicas mediante la línea de comandos o la automatización con [**DISM /Add-Capability**](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods).
 
-Una ventaja de las características a petición es que las características instaladas se mantienen entre las actualizaciones de la versión de Windows 10.        
-        
-#### <a name="to-uninstall-specific-rsat-tools-on-windows-10-october-2018-update-or-later-after-installing-with-fod"></a>Para desinstalar herramientas de RSAT específicas en la Actualización de octubre de 2018 de Windows 10 o posterior (después de instalarlas con FoD)        
+Una ventaja de las características a petición es que las características instaladas se mantienen entre las actualizaciones de la versión de Windows 10.
+
+#### <a name="to-uninstall-specific-rsat-tools-on-windows-10-october-2018-update-or-later-after-installing-with-fod"></a>Para desinstalar herramientas de RSAT específicas en la Actualización de octubre de 2018 de Windows 10 o posterior (después de instalarlas con FoD)
 
 En Windows 10, abre la aplicación **Configuración**, ve a **Administrar características opcionales**, y selecciona y desinstala las herramientas de RSAT específicas que quieras quitar. Ten en cuenta que, en algunos casos, tendrás que desinstalar las dependencias manualmente. En concreto, si la herramienta de RSAT A es necesaria para la herramienta de RSAT B, al elegir la opción para desinstalar la herramienta de RSAT A, se producirá un error si la herramienta de RSAT B todavía está instalada. En este caso, desinstala primero la herramienta de RSAT B y, a continuación, desinstala la herramienta de RSAT A. Ten en cuenta también que, en algunos casos, puede parecer que la desinstalación de una herramienta de RSAT se realiza correctamente aunque la herramienta todavía esté instalada. En este caso, al reiniciar el equipo se completará la eliminación de la herramienta.
 
@@ -89,10 +87,10 @@ Si tienes una versión de Windows 10 anterior a la Actualización de octubre de
 
 4.  Lea los términos de licencia y acéptelos. Haga clic en **Acepto**.
 
-5.  La instalación tardará unos minutos en completarse.    
-        
+5.  La instalación tardará unos minutos en completarse.
+
 ##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>Para desinstalar Herramientas de administración remota del servidor para Windows 10 (después de instalar el paquete de RSAT)
-        
+
 1. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows**y **Panel de control**.
 
 2. En **Programas**, haga clic en **Desinstalar un programa**.
@@ -104,7 +102,7 @@ Si tienes una versión de Windows 10 anterior a la Actualización de octubre de
 5. Cuando se le pregunte si está seguro de que desea desinstalar la actualización, haga clic en **Sí**.
    S
    ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>Para desactivar herramientas específicas (después de instalar el paquete de RSAT)
-        
+
 6. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows**y **Panel de control**.
 
 7. Haga clic en **Programas**y, a continuación, en **Programas y características** ; haga clic en **Activar o desactivar las características de Windows**.
@@ -115,7 +113,7 @@ Si tienes una versión de Windows 10 anterior a la Actualización de octubre de
 
    > [!NOTE]
    > Si desactivas el Administrador del servidor, el equipo deberá reiniciarse, y las herramientas a las que se obtenía acceso desde el menú **Herramientas** del Administrador del servidor deberán abrirse desde la carpeta **Herramientas administrativas**.
-        
+
 10. Cuando termine de desactivar las herramientas que no desea usar, haga clic en **Aceptar**.
 
 ### <a name="run-remote-server-administration-tools"></a>Ejecutar Herramientas de administración remota del servidor
@@ -147,14 +145,14 @@ Aunque no aparezcan enumerados en el menú **Herramientas** de la consola del Ad
 
 > [!NOTE]
 > También puedes iniciar una sesión de Windows PowerShell destinada a un servidor específico. Para ello, haz clic con el botón derecho en un servidor administrado en una página de grupo o rol del Administrador del servidor y, a continuación, haz clic en **Windows PowerShell**.
-        
+
 
 ## <a name="known-issues"></a>Problemas conocidos
 
 ### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**Problema**: error de instalación de una característica a petición de RSAT con el código de error 0x800f0954
 
 > **Impacto**: la característica a petición de RSAT en Windows 10 1809 (Actualización de octubre de 2018) en entornos de WSUS/Configuration Manager
-> 
+>
 > **Solución**: para instalar características a petición en un equipo unido a un dominio que recibe actualizaciones a través de WSUS o Configuration Manager, deberás cambiar una configuración de directiva de grupo a fin de habilitar la descarga de las características a petición de RSAT directamente desde Windows Update o un recurso compartido local. Para obtener más información e instrucciones sobre cómo cambiar esta configuración, consulta [Cómo hacer que las características a petición y los paquetes de idioma estén disponibles cuando usas WSUS/SCCM](/windows/deployment/update/fod-and-lang-packs).
 
 ---
@@ -162,7 +160,7 @@ Aunque no aparezcan enumerados en el menú **Herramientas** de la consola del Ad
 ### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**Problema**: la instalación de una característica a petición de RSAT a través de la aplicación Configuración no muestra el estado o el progreso.
 
 > **Impacto**: la característica a petición de RSAT en Windows 10 1809 (Actualización de octubre de 2018)
-> 
+>
 > **Solución**: para ver el progreso de la instalación, haz clic en el botón **Atrás** a fin de ver el estado en la página **Administrar características opcionales**.
 
 ---
@@ -170,7 +168,7 @@ Aunque no aparezcan enumerados en el menú **Herramientas** de la consola del Ad
 ### <a name="issue-rsat-fod-uninstallation-via-settings-app-may-fail"></a>**Problema**: a veces no se puede realizar la desinstalación de la característica a petición de RSAT a través de la aplicación Configuración.
 
 > **Impacto**: la característica a petición de RSAT en Windows 10 1809 (Actualización de octubre de 2018)
-> 
+>
 > **Solución**: en algunos casos, los errores en la desinstalación se deben a la necesidad de desinstalar manualmente las dependencias. En concreto, si la herramienta de RSAT B requiere la herramienta de RSAT A, al elegir la opción para desinstalar la herramienta de RSAT A, se producirá un error si la herramienta de RSAT B todavía está instalada. En este caso, desinstala primero la herramienta de RSAT B y, a continuación, desinstala la herramienta de RSAT A. Consulta la lista de características a petición de RSAT, incluidas las dependencias.
 
 ---
@@ -178,7 +176,7 @@ Aunque no aparezcan enumerados en el menú **Herramientas** de la consola del Ad
 ### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**Problema**: la desinstalación de la característica a petición de RSAT parece haberse realizado correctamente, pero la herramienta todavía está instalada.
 
 > **Impacto**: la característica a petición de RSAT en Windows 10 1809 (Actualización de octubre de 2018)
-> 
+>
 > **Solución**: al reiniciar el equipo se completará la eliminación de la herramienta.
 
 ---
@@ -186,9 +184,9 @@ Aunque no aparezcan enumerados en el menú **Herramientas** de la consola del Ad
 ### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**Problema**: falta RSAT después de la actualización de Windows 10.
 
 > **Impacto**: cualquier instalación de un paquete .MSU de RSAT (anterior a las características a petición de RSAT) no se vuelve a instalar automáticamente.
-> 
+>
 > **Solución**: una instalación de RSAT no puede persistir entre las actualizaciones del sistema operativo debido a que el paquete .MSU de RSAT se entrega como un paquete de Windows Update. Vuelve a instalar RSAT después de actualizar Windows 10. Ten en cuenta que esta limitación es uno de los motivos por los que hemos pasado a usar las características a petición a partir de Windows 10 1809. Las características a petición de RSAT instaladas se conservarán en futuras actualizaciones de versión de Windows 10.
 
 ## <a name="see-also"></a>Consulte también
 >- [Herramientas de administración remota del servidor para Windows 10](https://go.microsoft.com/fwlink/?LinkID=404281)
->- [Herramientas de administración remota del servidor (RSAT) para Windows Vista, Windows 7, Windows 8, Windows Server 2008, Windows Server 2008 R2 y Windows Server 2012 y Windows Server 2012 R2](https://go.microsoft.com/fwlink/p/?LinkID=221055) '                                                                                                                                                                                                                                                                                                                                                                                    
+>- [Herramientas de administración remota del servidor (RSAT) para Windows Vista, Windows 7, Windows 8, Windows Server 2008, Windows Server 2008 R2 y Windows Server 2012 y Windows Server 2012 R2](https://go.microsoft.com/fwlink/p/?LinkID=221055) '

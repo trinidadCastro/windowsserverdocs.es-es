@@ -1,20 +1,18 @@
 ---
 title: Novedades del cliente de macOS
 description: Obtén información sobre los cambios recientes en el cliente de Escritorio remoto para Mac
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 04/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c378d8c4a87b6aa0cf4f6b4f30f3bd5524dbb7a9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e8769dd5784bcbac5c5384316564150801c1eb0e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80980857"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946518"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 

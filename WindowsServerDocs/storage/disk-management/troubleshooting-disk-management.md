@@ -2,18 +2,16 @@
 title: Solución de problemas de Administración de discos
 description: En este artículo se describe cómo solucionar problemas de Administración de discos
 ms.date: 12/20/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 56ffd044f8526626581455fb18b530fd71a2381e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 0c8fec6f6bf200bf3514e26ea86dc809991a97dd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182271"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954922"
 ---
 # <a name="troubleshooting-disk-management"></a>Solución de problemas de Administración de discos
 

@@ -1,19 +1,17 @@
 ---
 title: Casos prácticos de Windows Admin Center
 description: Casos prácticos de Windows Admin Center (proyecto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: b0707f8aa7a09fdd18c2107e375ad06d3909955e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a2a027840c092696b03813de35cb3085f494266a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71356900"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937564"
 ---
 # <a name="windows-admin-center-case-studies"></a>Casos prácticos de Windows Admin Center
 
@@ -34,7 +32,7 @@ ms.locfileid: "71356900"
 
 [Ava6](http://www.avassys.com/) es una empresa de consultoría de TI especializada en el diseño, la evaluación y la integración de la infraestructura de TI, específicamente la virtualización, redes, almacenamiento, copia de seguridad e informática en la nube.
 
-Ava6 usa Windows Server 2016 Core, Hyper-V, conmutación de clústeres por error y S2D. 
+Ava6 usa Windows Server 2016 Core, Hyper-V, conmutación de clústeres por error y S2D.
 
 ### <a name="the-challenge"></a>**El desafío**
 
@@ -82,7 +80,7 @@ Convergent Computing tiene tres entornos distintos: operaciones hospedadas, prot
 
 Convergent Computing usa Windows Admin Center para administrar tres entornos con más de 40 hosts que ejecutan más de 200 cargas de trabajo.
 
-Antes de Windows Admin Center, Convergent Computing usaba una serie de herramientas y tecnologías para realizar tareas de administración, incluido System Center y scripts personalizados.  Con el objetivo de minimizar la sobrecarga y el esfuerzo de administrar sus granjas de servidores, Convergent Computing descubrió cuanto más "delgado" fuera un nivel de administración, más complejo se hacía, por lo que normalmente terminaban con una mayor sobrecarga por motivos de simplicidad.  Con Windows Admin Center, se ahorran más de 20 horas al mes empleadas en la "administración del sistema", una reducción del 75 % del tiempo y esfuerzo, lo que permite a sus equipos de operaciones centrarse en tareas más valiosas que incluyen seguridad, cumplimiento, planificación de capacidad y optimización general de sistemas. 
+Antes de Windows Admin Center, Convergent Computing usaba una serie de herramientas y tecnologías para realizar tareas de administración, incluido System Center y scripts personalizados.  Con el objetivo de minimizar la sobrecarga y el esfuerzo de administrar sus granjas de servidores, Convergent Computing descubrió cuanto más "delgado" fuera un nivel de administración, más complejo se hacía, por lo que normalmente terminaban con una mayor sobrecarga por motivos de simplicidad.  Con Windows Admin Center, se ahorran más de 20 horas al mes empleadas en la "administración del sistema", una reducción del 75 % del tiempo y esfuerzo, lo que permite a sus equipos de operaciones centrarse en tareas más valiosas que incluyen seguridad, cumplimiento, planificación de capacidad y optimización general de sistemas.
 
 ## <a name="fzi-research-center-for-information-technology"></a>FZI Research Center for Information Technology
 
@@ -141,7 +139,7 @@ Inside Technologies usa Windows Admin Center para administrar sus clientes de fo
 ## <a name="secureguard--copa-data"></a><a id="secureguard-copa-data"></a>SecureGUARD / COPA-DATA
 
 [SecureGUARD GmbH](http://www.secureguard.at/) ayuda a las empresas a resolver problemas complejos de TI en seguridad e infraestructura en la nube con una serie de productos y servicios de ingeniería personalizados. SecureGUARD construye dispositivos de seguridad de TI y dispositivos basados en Microsoft Windows Server y, más recientemente, ha creado dispositivos convergidos de nivel de rack para infraestructuras de nube. SecureGUARD es un Partner Gold de Microsoft en desarrollo de aplicaciones y centro de datos.
- 
+
 [COPA-DATA](https://www.copadata.com) desarrolla la solución de software "zenon" que permite soluciones de IoT industriales integrales, desde el nivel de campo, pasando por dispositivos móviles, hasta la nube. COPA-DATA ha implementado sistemas en todo el mundo a empresas en los sectores de alimentos y bebidas, energía e infraestructura, automoción y farmacéutica.
 
 ### <a name="the-challenge"></a>**El desafío**

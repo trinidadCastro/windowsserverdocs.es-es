@@ -3,17 +3,16 @@ title: Volver a generar el archivo Tokens.dat
 description: Cómo volver a generar el archivo Tokens.dat al solucionar problemas de activación de Windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a5835cd601b2eb327c8605d70bf075e6c8e8414
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bc44dae97422e4d9d9e55b32004f806bbb7860f7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963001"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941787"
 ---
 # <a name="rebuild-the-tokensdat-file"></a>Volver a generar el archivo Tokens.dat
 
@@ -23,11 +22,10 @@ Al solucionar problemas de activación de Windows, es posible que tengas que vol
 
 Para volver a generar el archivo Tokens.dat, sigue estos pasos:
 
-1. Abre una ventana del símbolo del sistema con permisos elevados:  
-   **Para Windows 10**
+1. Abre una ventana del símbolo del sistema con permisos elevados: **Para Windows 10**
 
    1. Abre el menú **Inicio** y escribe **cmd**.
-   1. En los resultados de la búsqueda, haz clic con el botón derecho en **Símbolo del sistema** y, después, selecciona **Ejecutar como administrador**.  
+   1. En los resultados de la búsqueda, haz clic con el botón derecho en **Símbolo del sistema** y, después, selecciona **Ejecutar como administrador**.
 
    **Para Windows 8.1**
    1. Desliza el dedo desde el borde derecho de la pantalla y, luego, pulsa **Buscar**. O bien, si estás usando un mouse, señala a la esquina inferior derecha de la pantalla y, luego, selecciona **Buscar**.
@@ -39,7 +37,7 @@ Para volver a generar el archivo Tokens.dat, sigue estos pasos:
    1. Abre el menú **Inicio** y escribe **cmd**.
    1. En los resultados de la búsqueda, haz clic con el botón derecho en **cmd.exe** y selecciona **Ejecutar como administrador**.
 
-1. Escribe la lista de comandos que sea adecuada para tu sistema operativo.  
+1. Escribe la lista de comandos que sea adecuada para tu sistema operativo.
 
    En Windows 10, Windows Server 2016 y versiones posteriores de Windows, escribe los siguientes comandos en secuencia:
    ```cmd

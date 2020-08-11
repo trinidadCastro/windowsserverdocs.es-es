@@ -1,20 +1,18 @@
 ---
 title: Crear una colección de Servicios de Escritorio remoto
 description: Obtén información sobre cómo agregar programas RDSH y RemoteApp a tu implementación de RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/22/2019
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 6a842c7984dc63fe40c05300f6cfbb6718846525
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7827d83fdd071cb57b51ee8c04776680e5e29e64
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852958"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936954"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>Creación de una colección de servicios de Escritorio remoto para que se ejecuten escritorios y aplicaciones
 
@@ -22,11 +20,11 @@ ms.locfileid: "80852958"
 
 Sigue los pasos a continuación para crear una colección de sesiones de Servicios de Escritorio remoto. Una colección de sesiones contiene las aplicaciones y escritorios que quieres que estén disponibles para los usuarios. Después de crear la colección, publícala para que los usuarios puedan acceder a ella.
 
-Antes de crear una colección, debes decidir qué tipo de colección necesitas: sesiones de escritorio agrupadas o sesiones de escritorio personales. 
+Antes de crear una colección, debes decidir qué tipo de colección necesitas: sesiones de escritorio agrupadas o sesiones de escritorio personales.
 
 - **Usa sesiones de escritorio agrupadas para virtualización basada en sesiones**: Aprovecha la eficacia de proceso de Windows Server para proporcionar un entorno multisesión rentable que impulse las cargas de trabajo diarias de los usuarios.
 - **Usa sesiones de escritorio personales para crear una infraestructura de escritorio virtual (VDI)** : Aprovecha el cliente de Windows para proporcionar el alto rendimiento, la compatibilidad de aplicaciones y la familiaridad que los usuarios esperan de su experiencia de escritorio de Windows.
- 
+
 Con una sesión agrupada, varios usuarios acceden a un grupo compartido de recursos, mientras que con una sesión de escritorio personal, se asigna a cada usuario su propio escritorio dentro del grupo. La sesión agrupada proporciona un menor costo general, mientras que las sesiones personales permiten a los usuarios personalizar su experiencia de escritorio.
 
 Si necesitas compartir aplicaciones hospedadas con gran cantidad de gráficos, puedes combinar escritorios de sesión personal con la nueva funcionalidad Discrete Device Assignment (DDA, asignación discreta de dispositivos) para proporcionar también compatibilidad con aplicaciones hospedadas que requieran gráficos acelerados. Para más información, consulta [¿La tecnología de virtualización de gráficos es adecuada para usted?](rds-graphics-virtualization.md)
@@ -36,12 +34,12 @@ Independientemente del tipo de colección que elijas, deberás rellenar esas col
 
 ## <a name="create-a-pooled-desktop-session-collection"></a>Crear una colección de sesiones de escritorio agrupadas
 
-1.  En el Administrador de servidores, haz clic en **Servicios de Escritorio remoto > Colecciones > Tareas > Crear colecciones de sesiones**.  
-2.  Escribe un nombre de colección, por ejemplo, **ContosoAps**.  
-3.  Selecciona el servidor host de sesión de Escritorio remoto que has creado (por ejemplo, Contoso-Shr1).  
-4.  Acepta los **Grupos de usuarios** predeterminados.  
-5.  Escribe la ubicación del recurso compartido de archivos que creaste para los discos de perfil de usuario para esta colección (por ejemplo, **\Contoso-Cb1\UserDisksr**).   
-6.  Haga clic en **Crear**. Cuando se haya creado la colección, haz clic en **Cerrar**.  
+1.  En el Administrador de servidores, haz clic en **Servicios de Escritorio remoto > Colecciones > Tareas > Crear colecciones de sesiones**.
+2.  Escribe un nombre de colección, por ejemplo, **ContosoAps**.
+3.  Selecciona el servidor host de sesión de Escritorio remoto que has creado (por ejemplo, Contoso-Shr1).
+4.  Acepta los **Grupos de usuarios** predeterminados.
+5.  Escribe la ubicación del recurso compartido de archivos que creaste para los discos de perfil de usuario para esta colección (por ejemplo, **\Contoso-Cb1\UserDisksr**).
+6.  Haga clic en **Crear**. Cuando se haya creado la colección, haz clic en **Cerrar**.
 
 
 ## <a name="create-a-personal-desktop-session-collection"></a>Crear una colección de sesiones de escritorio personales
@@ -57,6 +55,6 @@ Puedes usar los cmdlets de PowerShell para administrar las colecciones de sesion
 ## <a name="publish-remoteapp-programs"></a>Publicar programas RemoteApp
 Sigue estos pasos para publicar las aplicaciones y los recursos en la colección:
 
-1.  En el Administrador de servidores, selecciona la nueva colección (**ContosoApps**).  
-2.  En Programas de RemoteApp, haz clic en **Publicar programas RemoteApp**.  
-3. Selecciona los programas que quieres publicar y, luego, haz clic en **Publicar**.  
+1.  En el Administrador de servidores, selecciona la nueva colección (**ContosoApps**).
+2.  En Programas de RemoteApp, haz clic en **Publicar programas RemoteApp**.
+3. Selecciona los programas que quieres publicar y, luego, haz clic en **Publicar**.

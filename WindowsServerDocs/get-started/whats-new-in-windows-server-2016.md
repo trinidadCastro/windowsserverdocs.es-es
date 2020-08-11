@@ -1,21 +1,19 @@
 ---
 title: What's New in Windows Server 2016 (Novedades en Windows Server 2016)
 description: ¿Cuáles son las nuevas características de proceso, identidad, administración, automatización, redes, seguridad y almacenamiento?
-ms.prod: windows-server
 ms.date: 05/21/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 2827f332-44d4-4785-8b13-98429087dcc7
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: a0a6cefcfb69050721a8b82b5f0f770fa518a551
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d0ba6860edd40202da3078ee0ad05eb91901e1f2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961767"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945718"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>What's New in Windows Server 2016 (Novedades en Windows Server 2016)
 
@@ -25,56 +23,56 @@ ms.locfileid: "86961767"
 
 ## <a name="compute"></a>[Compute](../virtualization/virtualization.yml)
 
-El área Virtualización incluye características y productos de virtualización destinados a los profesionales de TI para diseñar, implementar y mantener Windows Server.  
+El área Virtualización incluye características y productos de virtualización destinados a los profesionales de TI para diseñar, implementar y mantener Windows Server.
 
-### <a name="general"></a>General  
-Las máquinas físicas y virtuales se benefician de una mayor precisión temporal gracias a las mejoras en los servicios de sincronización de hora de Hyper-V y Win32. Windows Server ahora puede hospedar servicios que cumplen con las próximas normas que requieren una precisión de 1 ms con respecto a UTC.  
+### <a name="general"></a>General
+Las máquinas físicas y virtuales se benefician de una mayor precisión temporal gracias a las mejoras en los servicios de sincronización de hora de Hyper-V y Win32. Windows Server ahora puede hospedar servicios que cumplen con las próximas normas que requieren una precisión de 1 ms con respecto a UTC.
 
-### <a name="hyper-v"></a>Hyper-V  
--   [Novedades de Hyper-V en Windows Server 2016](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md). En este tema se explica la funcionalidad nueva y modificada del rol de Hyper-V en Windows Server 2016, el cliente Hyper-V que se ejecuta en Windows 10 y Microsoft Hyper-V Server 2016.  
+### <a name="hyper-v"></a>Hyper-V
+-   [Novedades de Hyper-V en Windows Server 2016](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md). En este tema se explica la funcionalidad nueva y modificada del rol de Hyper-V en Windows Server 2016, el cliente Hyper-V que se ejecuta en Windows 10 y Microsoft Hyper-V Server 2016.
 
--   [Contenedores Windows](/virtualization/windowscontainers/):  los contenedores Windows Server 2016 aportan mejoras de rendimiento, una administración de red simplificada y compatibilidad para contenedores de Windows en Windows 10. Para más información sobre los contenedores, consulta [Containers: Docker, Windows and Trends](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/) (Contenedores: Docker, Windows y tendencias).  
+-   [Contenedores Windows](/virtualization/windowscontainers/):  los contenedores Windows Server 2016 aportan mejoras de rendimiento, una administración de red simplificada y compatibilidad para contenedores de Windows en Windows 10. Para más información sobre los contenedores, consulta [Containers: Docker, Windows and Trends](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/) (Contenedores: Docker, Windows y tendencias).
 
-### <a name="nano-server"></a>Nano Server  
-Novedades de [Nano Server](getting-started-with-nano-server.md). Nano Server cuenta con un módulo actualizado para compilar imágenes de Nano Server, que incluye una mayor separación de la funcionalidad del host físico y la máquina virtual de invitado y compatibilidad con las diferentes ediciones de Windows Server.   
+### <a name="nano-server"></a>Nano Server
+Novedades de [Nano Server](getting-started-with-nano-server.md). Nano Server cuenta con un módulo actualizado para compilar imágenes de Nano Server, que incluye una mayor separación de la funcionalidad del host físico y la máquina virtual de invitado y compatibilidad con las diferentes ediciones de Windows Server.
 
-También hay mejoras en la Consola de recuperación, como la separación de reglas de firewall de entrada y salida, y la posibilidad de reparar la configuración de WinRM.  
+También hay mejoras en la Consola de recuperación, como la separación de reglas de firewall de entrada y salida, y la posibilidad de reparar la configuración de WinRM.
 
-### <a name="shielded-virtual-machines"></a>Máquinas virtuales blindadas  
-Windows Server 2016 proporciona una nueva máquina virtual blindada basada en Hyper-V para proteger cualquier máquina virtual de generación 2 de un tejido comprometido. Entre las características introducidas en Windows Server 2016 destacan las siguientes:  
+### <a name="shielded-virtual-machines"></a>Máquinas virtuales blindadas
+Windows Server 2016 proporciona una nueva máquina virtual blindada basada en Hyper-V para proteger cualquier máquina virtual de generación 2 de un tejido comprometido. Entre las características introducidas en Windows Server 2016 destacan las siguientes:
 
-- El nuevo modo "Cifrado admitido" que ofrece un nivel de protección mayor que el de una máquina virtual común, pero menor que el modo "Blindado", mientras se continúa admitiendo vTPM; el cifrado de disco; el cifrado de tráfico y Migración en vivo; y otras características, incluidas las facilidades en la administración directa del tejido, como las conexiones de consola de máquina virtual y Powershell Direct.  
+- El nuevo modo "Cifrado admitido" que ofrece un nivel de protección mayor que el de una máquina virtual común, pero menor que el modo "Blindado", mientras se continúa admitiendo vTPM; el cifrado de disco; el cifrado de tráfico y Migración en vivo; y otras características, incluidas las facilidades en la administración directa del tejido, como las conexiones de consola de máquina virtual y Powershell Direct.
 
 - Soporte completo para la conversión de las máquinas virtuales no blindadas de segunda generación a máquinas virtuales blindadas, incluido el cifrado de disco automatizado.
 
-- Hyper-V Virtual Machine Manager ahora puede ver los tejidos sobre los que puede ejecutarse una máquina virtual blindada, lo que permite al administrador de tejidos abrir un protector de clave de la máquina virtual blindada y ver los tejidos sobre los que puede ejecutar.  
+- Hyper-V Virtual Machine Manager ahora puede ver los tejidos sobre los que puede ejecutarse una máquina virtual blindada, lo que permite al administrador de tejidos abrir un protector de clave de la máquina virtual blindada y ver los tejidos sobre los que puede ejecutar.
 
-- Puede cambiar los modos de atestación en un Servicio de protección de host. Ahora puede cambiar sobre la marcha entre la atestación basada en Active Directory, menos segura pero más sencilla, y la atestación basada en TPM.  
+- Puede cambiar los modos de atestación en un Servicio de protección de host. Ahora puede cambiar sobre la marcha entre la atestación basada en Active Directory, menos segura pero más sencilla, y la atestación basada en TPM.
 
-- Las herramientas de diagnóstico integrales basadas en Windows PowerShell que pueden detectar configuraciones incorrectas o errores en ambos hosts protegidos de Hyper-V y el Servicio de protección de host.  
+- Las herramientas de diagnóstico integrales basadas en Windows PowerShell que pueden detectar configuraciones incorrectas o errores en ambos hosts protegidos de Hyper-V y el Servicio de protección de host.
 
 - Un entorno de recuperación que ofrece un medio para solucionar problemas y reparar máquinas virtuales blindadas dentro del tejido en el que se ejecutan normalmente ofreciendo al mismo tiempo un nivel de protección idéntico al de la propia máquina virtual blindada.
 
 - Compatibilidad con el Servicio de protección de host para proteger el entorno existente de Active Directory: puede dirigir el Servicio de protección de host para usar un bosque existente de Active Directory como su Active Directory en lugar de crear su propia instancia de Active Directory
 
-Para obtener más detalles e instrucciones para trabajar con máquinas virtuales blindadas, consulte [Shielded VMs and Guarded Fabric Validation Guide for Windows Server 2016 (TPM)](https://aka.ms/shieldedvms) (Máquinas virtuales blindadas y guía de validación de tejido protegido para Windows Server 2016 [TPM]).  
+Para obtener más detalles e instrucciones para trabajar con máquinas virtuales blindadas, consulte [Shielded VMs and Guarded Fabric Validation Guide for Windows Server 2016 (TPM)](https://aka.ms/shieldedvms) (Máquinas virtuales blindadas y guía de validación de tejido protegido para Windows Server 2016 [TPM]).
 
-## <a name="identity-and-access"></a>[Identidad y acceso](../identity/Identity-and-Access.yml)  
-Las nuevas características de Identidad aumentan la capacidad de las organizaciones de proteger los entornos de Active Directory y les ayudan a migrar a implementaciones de solo en la nube e implementaciones híbridas, donde algunas aplicaciones y servicios se hospedan en la nube y otros se hospedan de forma local.  
+## <a name="identity-and-access"></a>[Identidad y acceso](../identity/Identity-and-Access.yml)
+Las nuevas características de Identidad aumentan la capacidad de las organizaciones de proteger los entornos de Active Directory y les ayudan a migrar a implementaciones de solo en la nube e implementaciones híbridas, donde algunas aplicaciones y servicios se hospedan en la nube y otros se hospedan de forma local.
 
-### <a name="active-directory-certificate-services"></a>Servicios de certificados de Active Directory  
-Servicios de certificados de Active Directory (AD CS) en Windows Server 2016 aumenta la compatibilidad para la atestación de claves de TPM: ahora puedes usar el KSP de tarjeta inteligente para atestación de la clave, y los dispositivos que no están unidos al dominio ahora pueden utilizar la inscripción NDES para obtener los certificados que pueden recibir atestación para las claves que están en TPM.  
+### <a name="active-directory-certificate-services"></a>Servicios de certificados de Active Directory
+Servicios de certificados de Active Directory (AD CS) en Windows Server 2016 aumenta la compatibilidad para la atestación de claves de TPM: ahora puedes usar el KSP de tarjeta inteligente para atestación de la clave, y los dispositivos que no están unidos al dominio ahora pueden utilizar la inscripción NDES para obtener los certificados que pueden recibir atestación para las claves que están en TPM.
 
-### <a name="active-directory-domain-services"></a>Servicios de dominio de Active Directory  
-Los Servicios de dominio de Active Directory incluyen mejoras que ayudan a las organizaciones a proteger los entornos de Active Directory y mejoran la administración de identidades tanto para dispositivos personales como corporativos. Para más información, vea [What's new in Active Directory Domain Services (AD DS) in Windows Server 2016](../identity/whats-new-active-directory-domain-services.md) (Novedades de Active Directory Domain Services para Windows Server 2016).   
+### <a name="active-directory-domain-services"></a>Servicios de dominio de Active Directory
+Los Servicios de dominio de Active Directory incluyen mejoras que ayudan a las organizaciones a proteger los entornos de Active Directory y mejoran la administración de identidades tanto para dispositivos personales como corporativos. Para más información, vea [What's new in Active Directory Domain Services (AD DS) in Windows Server 2016](../identity/whats-new-active-directory-domain-services.md) (Novedades de Active Directory Domain Services para Windows Server 2016).
 
-### <a name="active-directory-federation-services"></a>Servicios de federación de Active Directory (AD FS)  
-Novedades de Servicios de federación de Active Directory Los Servicios de federación de Active Directory (ADFS) en Windows Server 2016 incluyen nuevas características que le permiten configurar AD FS para la autenticación de usuarios almacenados en directorios de protocolo ligero de acceso a directorios (LDAP). Para más información, consulta [What's new in Active Directory Federation Services for Windows Server 2016 Technical Preview](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md) (Novedades en AD FS para Windows Server 2016).  
+### <a name="active-directory-federation-services"></a>Servicios de federación de Active Directory (AD FS)
+Novedades de Servicios de federación de Active Directory Los Servicios de federación de Active Directory (ADFS) en Windows Server 2016 incluyen nuevas características que le permiten configurar AD FS para la autenticación de usuarios almacenados en directorios de protocolo ligero de acceso a directorios (LDAP). Para más información, consulta [What's new in Active Directory Federation Services for Windows Server 2016 Technical Preview](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md) (Novedades en AD FS para Windows Server 2016).
 
-### <a name="web-application-proxy"></a>Proxy de aplicación web  
-La versión más reciente del Proxy de aplicación web se centra en las nuevas características que permiten la publicación y la autenticación previa de más aplicaciones y una experiencia de usuario mejorada. Consulte la lista completa de las nuevas características que incluye autenticación previa para aplicaciones de cliente enriquecidas Exchange ActiveSync y dominios con comodín para una publicación más sencilla de aplicaciones de SharePoint. Para más información, consulta [Proxy de aplicación web en Windows Server 2016](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md).  
+### <a name="web-application-proxy"></a>Proxy de aplicación web
+La versión más reciente del Proxy de aplicación web se centra en las nuevas características que permiten la publicación y la autenticación previa de más aplicaciones y una experiencia de usuario mejorada. Consulte la lista completa de las nuevas características que incluye autenticación previa para aplicaciones de cliente enriquecidas Exchange ActiveSync y dominios con comodín para una publicación más sencilla de aplicaciones de SharePoint. Para más información, consulta [Proxy de aplicación web en Windows Server 2016](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md).
 
-##  <a name="administration"></a>[Administración](../administration/manage-windows-server.yml)  
+##  <a name="administration"></a>[Administración](../administration/manage-windows-server.yml)
 El área Administración y automatización se centra en la información de referencia y las herramientas para profesionales de TI que desean ejecutar y administrar Windows Server 2016, incluido Windows PowerShell.
 
 Windows PowerShell 5.1 incluye nuevas e importantes características, entre las que se incluyen el soporte para el desarrollo con clases y las nuevas características de seguridad, que amplían y mejoran su uso, y le permiten controlar y administrar entornos basados en Windows de manera más sencilla y completa. Consulta [Nuevos escenarios y características de WMF 5.1](/powershell/wmf/5.1/scenarios-features) para obtener más información.
@@ -89,7 +87,7 @@ Windows Management Framework 5 incluye actualizaciones a la configuración de es
 Para obtener más información sobre cómo probar las características de DSC de Windows Management Framework 5, consulta la serie de entradas de blog que se encuentran en [Validación de características de la configuración de estado deseado de PowerShell DSC](https://devblogs.microsoft.com/powershell/validate-features-of-powershell-dsc/). Para realizar la descarga, consulta [Windows Management Framework 5.1 ](/powershell/scripting/wmf/setup/install-configure).
 
 ### <a name="packagemanagement-unified-package-management-for-software-discovery-installation-and-inventory"></a>PackageManagement ha unificado la administración de paquetes para inventario, instalación y detección de software
-Windows Server 2016 y Windows 10 incluyen la nueva característica PackageManagement (anteriormente denominada OneGet) que permite a profesionales de TI o de DevOps automatizar la detección de software, la instalación y el inventario, de manera local o remota, con independencia de la tecnología de instalador y de dónde se encuentra el software. 
+Windows Server 2016 y Windows 10 incluyen la nueva característica PackageManagement (anteriormente denominada OneGet) que permite a profesionales de TI o de DevOps automatizar la detección de software, la instalación y el inventario, de manera local o remota, con independencia de la tecnología de instalador y de dónde se encuentra el software.
 
 Para más información, consulta [https://github.com/OneGet/oneget/wiki](https://github.com/OneGet/oneget/wiki).
 
@@ -98,8 +96,8 @@ Para ayudar al equipo responsable a investigar sistemas comprometidos, a veces c
 
 Para obtener información, consulta [PowerShell ♥ the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/).
 
-## <a name="networking"></a>[Redes](../networking/index.yml)  
-Esta área abarca los productos y las características de redes dirigidos al profesional de TI para diseñar, implementar y mantener Windows Server 2016.  
+## <a name="networking"></a>[Redes](../networking/index.yml)
+Esta área abarca los productos y las características de redes dirigidos al profesional de TI para diseñar, implementar y mantener Windows Server 2016.
 
 ### <a name="software-defined-networking"></a>Redes definidas por software
 Ahora puede reflejar y enrutar tráfico a dispositivos virtuales nuevos o existentes. Junto con un firewall distribuido y los grupos de seguridad de red, esto le permite segmentar dinámicamente y proteger las cargas de trabajo de una manera similar a Azure. En segundo lugar, puede implementar y administrar por completo las redes definidas por software (SDN) con System Center Virtual Machine Manager. Por último, puede usar Docker para administrar las redes de contenedor de Windows Server y asociar directivas de SDN no solo con las máquinas virtuales, sino también con contenedores. Para más información, consulta [Planeación de una infraestructura de red definida por software](../networking/sdn/plan/plan-a-software-defined-network-infrastructure.md).
@@ -109,23 +107,23 @@ El valor predeterminado del intervalo de congestión inicial (ICW) se ha aumenta
 
 Para mejorar el comportamiento de TCP al realizar la recuperación de pérdida de paquetes, se han implementado Tail Loss Probe (TLP) y Recent Acknowledgement (RACK) en TCP. TLP ayuda a convertir los tiempos de espera de retransmisión (RTO) para recuperaciones rápidas y RACK reduce el tiempo necesario para que la recuperación rápida retransmita un paquete perdido. 
 
-## <a name="security-and-assurance"></a>[Seguridad y control](../security/Security-and-Assurance.yml)  
-Incluye soluciones y características de seguridad para que los profesionales de TI implementen en su entorno de nube y centro de datos. Para obtener información sobre la seguridad en Windows Server 2016 en general, vea [Seguridad y control](../security/Security-and-Assurance.yml).  
+## <a name="security-and-assurance"></a>[Seguridad y control](../security/Security-and-Assurance.yml)
+Incluye soluciones y características de seguridad para que los profesionales de TI implementen en su entorno de nube y centro de datos. Para obtener información sobre la seguridad en Windows Server 2016 en general, vea [Seguridad y control](../security/Security-and-Assurance.yml).
 
-### <a name="just-enough-administration"></a>Just Enough Administration (JEA)  
+### <a name="just-enough-administration"></a>Just Enough Administration (JEA)
 Just Enough Administration (JEA) en Windows Server 2016 es la tecnología de seguridad que habilita la administración delegada para todo lo que se puede administrar con Windows PowerShell. Entre las funcionalidades se incluyen compatibilidad para la ejecución bajo una identidad de red, conexión a través de PowerShell Direct, copia segura hacia y desde puntos de conexión de JEA, y configuración de la consola de PowerShell para iniciar en un contexto de JEA de manera predeterminada. Para más información, consulte [JEA en GitHub](https://aka.ms/JEA).
 
 ### <a name="credential-guard"></a>Credential Guard
 Credential Guard usa la seguridad basada en virtualización para aislar los secretos de forma que solo el software de sistema con privilegios pueda acceder a ellos. Vea [Protección de credenciales de dominio derivadas con Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard).
 
 ###  <a name="remote-credential-guard"></a>Credential Guard remoto
-Credential Guard incluye compatibilidad con sesiones RDP para que las credenciales de usuario permanezcan en el lado cliente y no se expongan en el lado servidor. También proporciona inicio de sesión único para las conexiones a Escritorio remoto. Consulta [Proteger las credenciales de dominio derivadas con Credential Guard de Windows Defender](/windows/access-protection/credential-guard/credential-guard).   
+Credential Guard incluye compatibilidad con sesiones RDP para que las credenciales de usuario permanezcan en el lado cliente y no se expongan en el lado servidor. También proporciona inicio de sesión único para las conexiones a Escritorio remoto. Consulta [Proteger las credenciales de dominio derivadas con Credential Guard de Windows Defender](/windows/access-protection/credential-guard/credential-guard).
 
 ### <a name="device-guard-code-integrity"></a>Device Guard (integridad de código)
 Device Guard proporciona integridad de código del modo kernel (KMCI) e integridad de código del modo de usuario (UMCI) mediante la creación de directivas que especifican qué código se puede ejecutar en el servidor. Consulta [Introducción a Device Guard de Windows Defender: directivas de integridad de código y seguridad basada en virtualización](/windows/device-security/device-guard/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies).
 
 
-### <a name="windows-defender"></a>Windows Defender  
+### <a name="windows-defender"></a>Windows Defender
 [Información general acerca de Windows Defender para Windows Server 2016](../security/windows-defender/windows-defender-overview-windows-server.md). Windows Server Antimalware está instalado y habilitado de forma predeterminada en Windows Server 2016, aunque no así su interfaz de usuario. A pesar de ello, Windows Server Antimalware actualizará las definiciones de antimalware y protegerá el equipo sin la interfaz de usuario. Si necesita la interfaz de usuario de Windows Server Antimalware, puede instalarla después de haber instalado el sistema operativo mediante el Asistente para agregar roles y características.
 
 ### <a name="control-flow-guard"></a>Protección de flujo de control
@@ -181,10 +179,10 @@ Para más información, vea [Servicio de mantenimiento](../failover-clustering/h
 ### <a name="internet-information-services-iis-100"></a>Internet Information Services (IIS) 10.0
 Entre las nuevas características proporcionadas por el servidor web IIS 10.0 en Windows Server 2016 se incluyen:
 
-- Compatibilidad con el protocolo HTTP/2 en la pila de red e integrada con IIS 10.0, lo que permite a los sitios web de IIS 10.0 atender a automáticamente las solicitudes HTTP/2 para las configuraciones admitidas. Esto permite numerosas mejoras frente a HTTP/1.1, como una reutilización más eficaz de las conexiones y una menor latencia, lo que mejora los tiempos de carga de páginas web. 
+- Compatibilidad con el protocolo HTTP/2 en la pila de red e integrada con IIS 10.0, lo que permite a los sitios web de IIS 10.0 atender a automáticamente las solicitudes HTTP/2 para las configuraciones admitidas. Esto permite numerosas mejoras frente a HTTP/1.1, como una reutilización más eficaz de las conexiones y una menor latencia, lo que mejora los tiempos de carga de páginas web.
 - Capacidad para ejecutar y administrar IIS 10.0 en Nano Server. Consulta [IIS en Nano Server](iis-on-nano-server.md).
 - Compatibilidad con encabezados de host comodín, lo que permite a los administradores configurar un servidor web para un dominio y luego hacer que el servidor web atienda las solicitudes de un subdominio cualquiera.
-- Un nuevo módulo de PowerShell (IISAdministration) para administrar IIS. 
+- Un nuevo módulo de PowerShell (IISAdministration) para administrar IIS.
 
 Para obtener más detalles, consulta [IIS](https://iis.net/learn).
 
@@ -199,5 +197,5 @@ En Microsoft Windows 10 y Windows Server 2016, se agregaron tres característica
 
 
 
-## <a name="see-also"></a>Consulte también  
--   [Notas de la versión: Problemas importantes en Windows Server 2016](Windows-Server-2016-GA-Release-Notes.md)  
+## <a name="see-also"></a>Consulte también
+-   [Notas de la versión: Problemas importantes en Windows Server 2016](Windows-Server-2016-GA-Release-Notes.md)

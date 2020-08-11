@@ -1,7 +1,6 @@
 ---
 title: Protección del acceso con privilegios
 description: Enfoque por fases para proteger el acceso con privilegios
-ms.prod: windows-server
 ms.topic: conceptual
 ms.assetid: f5dec0c2-06fe-4c91-9bdc-67cc6a3ede60
 ms.date: 02/25/2019
@@ -9,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 4165561524dcb8572dbafc3904638fcb4513d06d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5db041be6aa9a61bc248296ade4296afeaa4fb3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964728"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953064"
 ---
 # <a name="securing-privileged-access"></a>Protección del acceso con privilegios
 
@@ -69,7 +68,7 @@ El mapa de ruta de recomendaciones de Microsoft se divide en 3 fases:
 * [Fase 3: En curso](#phase-3-security-improvement-and-sustainment)
    * Mejora de la seguridad y sostenimiento.
 
-El mapa de ruta está clasificado en orden de prioridad para programar las implementaciones más rápidas y efectivas primero en función de nuestras experiencias con estos ataques y la implementación de soluciones. 
+El mapa de ruta está clasificado en orden de prioridad para programar las implementaciones más rápidas y efectivas primero en función de nuestras experiencias con estos ataques y la implementación de soluciones.
 
 Microsoft recomienda seguir este plan de ruta para proteger el acceso con privilegios frente a determinados adversarios. Este plan se puede ajustar para adaptarlo a las funcionalidades existentes y los requisitos específicos de su organización.
 

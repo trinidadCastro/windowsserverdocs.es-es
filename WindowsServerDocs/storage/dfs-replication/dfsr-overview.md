@@ -1,17 +1,15 @@
 ---
 title: Introducción a la replicación DFS
 ms.date: 03/08/2019
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 380c8ba0e91db47c3313542b2d294a516f7a9466
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6a68d27ec7c1d06e070d18362de68e12ecbf9578
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961187"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950759"
 ---
 # <a name="dfs-replication-overview"></a>Introducción a la replicación DFS
 

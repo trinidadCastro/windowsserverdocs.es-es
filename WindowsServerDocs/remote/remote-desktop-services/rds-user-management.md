@@ -1,20 +1,18 @@
 ---
 title: Administración de usuarios de la colección de RDS
 description: Aprende a administrar usuarios en Servicios de Escritorio remoto.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 2727e1ab-69b8-46f3-9f6d-2540324fe596
 author: christianmontoya
 ms.author: chrimo
 ms.date: 03/27/2018
 manager: scottman
-ms.openlocfilehash: 430c38f98dd9aec3034e023d737952e3015622eb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a0ddb8ddc26df58e130315a3e1e0b70953c61dc4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858688"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954812"
 ---
 # <a name="manage-users-in-your-rds-collection"></a>Administración de usuarios de la colección de RDS
 
@@ -82,7 +80,7 @@ Ahora que has creado los usuarios y grupos en Active Directory, puedes agregar a
    1. En el Administrador del servidor, haz clic en **Servicios de Escritorio remoto > Información general** y, después, haz clic en una colección específica.
    2. En **Propiedades**, haz clic en **Tareas > Editar propiedades**.
    3. Haz clic en **Grupos de usuarios**.
-   4. Haz clic en **Agregar** y especifica el usuario o grupo que quieres que acceda a la colección. También puedes quitar usuarios y grupos desde esta ventana. Para ello, selecciona el usuario o grupo que deseas quitar y, a continuación, haz clic en **Quitar**. 
-   
-   >[!NOTE] 
+   4. Haz clic en **Agregar** y especifica el usuario o grupo que quieres que acceda a la colección. También puedes quitar usuarios y grupos desde esta ventana. Para ello, selecciona el usuario o grupo que deseas quitar y, a continuación, haz clic en **Quitar**.
+
+   >[!NOTE]
    > La ventana Grupos de usuarios nunca puede estar vacía. Para restringir el ámbito de los usuarios que tienen acceso a la colección, primero debes agregar usuarios o grupos específicos antes de quitar los grupos más amplios.

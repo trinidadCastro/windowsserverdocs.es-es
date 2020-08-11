@@ -1,20 +1,18 @@
 ---
 title: Configuraciones de seguridad admitidas de Windows 10 para VDI de Servicios de Escritorio remoto
 description: Proporciona información sobre las configuraciones admitidas para VDI de Windows 10 con RDS en Windows Server 2016.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/27/2016
 ms.topic: article
 ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
-ms.openlocfilehash: 4ecd290a910ddbb1aba85b26764fb86e30731172
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7fd8de56d02dfe83add67b740405265a232747d9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963357"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946348"
 ---
 # <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>Configuraciones de seguridad admitidas de Windows 10 para VDI de Servicios de Escritorio remoto
 
@@ -40,10 +38,10 @@ Credential Guard remoto solo se admite para las conexiones directas a las máqui
 > [!NOTE]
 > Si tienes un Agente de conexión en un entorno de instancia única, y el nombre DNS coincide con el nombre del equipo, puedes usar Credential Guard remoto, aunque no se admite.
 
-## <a name="shielded-vms-and-encryption-supported-vms"></a>VM blindadas y VM compatibles con cifrado: 
+## <a name="shielded-vms-and-encryption-supported-vms"></a>VM blindadas y VM compatibles con cifrado:
 
-- No se admiten VM blindadas en VDI de Servicios de Escritorio remoto. 
+- No se admiten VM blindadas en VDI de Servicios de Escritorio remoto.
 
 Para aprovechar VM compatibles con cifrado:
-- Usa una colección no administrada y una tecnología de aprovisionamiento fuera del proceso de creación de colecciones de Servicios de Escritorio remoto para aprovisionar las máquinas virtuales. 
-- No se admiten discos de perfil de usuario, ya que se basan en discos diferenciales. 
+- Usa una colección no administrada y una tecnología de aprovisionamiento fuera del proceso de creación de colecciones de Servicios de Escritorio remoto para aprovisionar las máquinas virtuales.
+- No se admiten discos de perfil de usuario, ya que se basan en discos diferenciales.

@@ -1,19 +1,17 @@
 ---
 title: Habilitar el modo Siempre sin conexión para obtener acceso más rápido a los archivos
 description: Cómo usar el modo Siempre sin conexión de Archivos sin conexión para proporcionar un acceso más rápido a los archivos almacenados en caché y a las carpetas redirigidas.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 389fdd26a7e1d9824f1eaf0136a544547f08eb05
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2a4526a70379ad414cdf866419a3b893e42256d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71401954"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942226"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>Habilitar el modo Siempre sin conexión para obtener acceso más rápido a los archivos
 

@@ -1,8 +1,6 @@
 ---
 title: Preguntas más frecuentes sobre los clientes de Escritorio remoto
 description: Preguntas más frecuentes sobre los clientes de Escritorio remoto
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 785a18cf-a5d0-4bc2-95e4-9ef53ee8f65a
 author: lizap
@@ -10,18 +8,18 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a91980477b34bb529e3e6f3c6ff66da9ea7f3c84
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 672a9d1b33137d9559d88b8773d3c7ccd2493ddc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80856058"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955062"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Preguntas más frecuentes sobre los clientes de Escritorio remoto
 
 >Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
-Ahora que configuraste el cliente de Escritorio remoto en tu dispositivo (Android, Mac, iOS o Windows), puede que tengas algunas preguntas. Aquí encontrarás las respuestas a las preguntas más frecuentes sobre los clientes de Escritorio remoto. 
+Ahora que configuraste el cliente de Escritorio remoto en tu dispositivo (Android, Mac, iOS o Windows), puede que tengas algunas preguntas. Aquí encontrarás las respuestas a las preguntas más frecuentes sobre los clientes de Escritorio remoto.
 
 - [Configuración](#setting-up)
 - [Conexiones, puertas de enlace y redes](#connection-gateway-and-networks)
@@ -44,7 +42,7 @@ Revisa el artículo sobre la [configuración admitida](remote-desktop-supported-
 
 Mi dispositivo está configurado, pero no creo que el equipo esté listo. ¿Necesitas ayuda?
 
-En primer lugar, ¿has visto el Asistente para la instalación de Escritorio remoto? Te guía por el proceso de preparar tu equipo para el acceso remoto. Descarga y ejecuta esa herramienta en tu equipo para instalar y configurar todo. 
+En primer lugar, ¿has visto el Asistente para la instalación de Escritorio remoto? Te guía por el proceso de preparar tu equipo para el acceso remoto. Descarga y ejecuta esa herramienta en tu equipo para instalar y configurar todo.
 
 En caso contrario, si prefieres seguir los procesos manualmente, sigue leyendo.
 
@@ -74,17 +72,17 @@ En Windows 8.1, sigue las instrucciones para permitir conexiones remotas que ap
 Estas son algunas de las soluciones posibles a los problemas comunes que podrías encontrar al intentar conectarte a un equipo remoto. Si estas soluciones no funcionan, puedes encontrar más ayuda en el [sitio web de la Comunidad Windows](https://go.microsoft.com/fwlink/p/?LinkId=242079).
 
 - **No se encuentra el equipo remoto.** Asegúrate de tener el nombre del equipo correcto y revisa si lo escribiste correctamente. Si sigues sin poder conectarte, trata de usar la dirección IP del equipo remoto en lugar el nombre del equipo.
-- **Hay un problema con la red.** Asegúrate de tener conexión a Internet. 
+- **Hay un problema con la red.** Asegúrate de tener conexión a Internet.
 - **El puerto de Escritorio remoto puede estar bloqueado por un firewall.** Sigue estos pasos si usas el Firewall de Windows:
 
-  1. Abra Firewall de Windows. 
-  2. Haz clic en **Permitir una aplicación o una característica a través del Firewall de Windows**. 
+  1. Abra Firewall de Windows.
+  2. Haz clic en **Permitir una aplicación o una característica a través del Firewall de Windows**.
   3. Haz clic en **Cambiar configuración**. Es posible que se te pida una contraseña de administrador o que confirmes la selección.
   4. En **Allowed apps and features** (Aplicaciones y características permitidas), selecciona **Escritorio remoto** y pulsa o haz clic en **Aceptar**.
 
      Si usas otro firewall, asegúrate de que el puerto de Escritorio remoto (por lo general, 3389) está abierto.
 - **Es posible que las conexiones remotas no estén configuradas en el equipo remoto.** Para solucionar este problema, desplázate hacia atrás hasta la pregunta [¿Cómo configuro un equipo para Escritorio remoto?](#how-do-i-set-up-a-pc-for-remote-desktop) en este tema.
-- **Es posible que el equipo remoto solo permita que se conecten equipos que tienen configurada la Autenticación a nivel de red.** 
+- **Es posible que el equipo remoto solo permita que se conecten equipos que tienen configurada la Autenticación a nivel de red.**
 - **Puede que el equipo remoto esté apagado.** No puedes conectarte a un equipo apagado, en suspensión o en hibernación, así que asegúrate de que la configuración de la suspensión o la hibernación en el equipo remoto esté establecida en **Nunca** (la hibernación no está disponible en todos los equipos).
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>¿Por qué no puedo encontrar mi equipo ni conectarme a él?
@@ -97,7 +95,7 @@ Compruebe lo siguiente:
    > [!IMPORTANT]
    > Para usar el nombre del equipo, tu red debe resolver correctamente el nombre a través de DNS. En muchas redes domésticas, tienes que usar la dirección IP en lugar del nombre de host para conectarte.
 - ¿El equipo está en otra red? ¿Configuraste el equipo para permitir las conexiones externas?  Si necesitas ayuda, revisa [Permitir el acceso a tu PC desde fuera de la red](remote-desktop-allow-outside-access.md).
-- ¿Estás conectado a una versión compatible de Windows? 
+- ¿Estás conectado a una versión compatible de Windows?
 
    > [!NOTE]
    > Windows XP Home, Windows Media Center Edition, Windows Vista Home ni Windows 7 Home o Starter son compatibles sin software de terceros.
@@ -192,7 +190,7 @@ Esto puede ocurrir en los escenarios siguientes:
 Para corregir este problema, establece de manera manual el idioma del teclado de la sesión remota. Consulta los pasos en la sección siguiente.
 
 ### <a name="how-do-language-settings-affect-keyboards-in-a-remote-session"></a>¿Cómo afecta la configuración del idioma a los teclados durante una sesión remota?
-Hay muchos tipos de distribuciones del teclado de Mac. Algunas son distribuciones específicas de Mac o distribuciones personalizadas para las que es posible que no haya disponible una coincidencia exacta en la versión de Windows con la que te comunicas de manera remota. La sesión remota asigna el teclado a la mejor coincidencia de idioma de teclado disponible en el equipo remoto. 
+Hay muchos tipos de distribuciones del teclado de Mac. Algunas son distribuciones específicas de Mac o distribuciones personalizadas para las que es posible que no haya disponible una coincidencia exacta en la versión de Windows con la que te comunicas de manera remota. La sesión remota asigna el teclado a la mejor coincidencia de idioma de teclado disponible en el equipo remoto.
 
 Si la distribución del teclado Mac está establecida en la versión de PC del teclado de idioma (por ejemplo, Francés - PC), todas las teclas deberían estar correctamente asignadas y el teclado debería funcionar.
 

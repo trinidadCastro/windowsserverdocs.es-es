@@ -1,23 +1,21 @@
 ---
 title: Comandos Netsh para el Protocolo de transferencia de hipertexto (HTTP)
 description: Usa netsh http para consultar y configurar los parámetros y las opciones de HTTP.sys.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 manager: dougkim
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 81053e71040d2a0cd125af9fb7f3802dfd535781
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a2bf580dff85463306767b6a129819b82f4fc85c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853758"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946989"
 ---
 # <a name="netsh-http-commands"></a>Comandos netsh http
 
 
-Usa **netsh http** para consultar y configurar los parámetros y las opciones de HTTP.sys.  
+Usa **netsh http** para consultar y configurar los parámetros y las opciones de HTTP.sys.
 
 >[!TIP]
 >Si usas Windows PowerShell en un equipo que ejecuta Windows Server 2016 o Windows 10, escribe **netsh** y presiona Entrar. En el símbolo del sistema de netsh, escribe **http** y presiona Entrar para obtener el símbolo del sistema de netsh http.
@@ -115,7 +113,7 @@ add sslcert ipport=1.1.1.1:443 certhash=0102030405060708090A0B0C0D0E0F1011121314
 
 Agrega un tiempo de espera global al servicio.
 
-**Sintaxis** 
+**Sintaxis**
 
 ```powershell
 add timeout [ timeouttype= ] IdleConnectionTimeout | HeaderWaitTimeout [ value=] U-Short

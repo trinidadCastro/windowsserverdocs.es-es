@@ -1,27 +1,25 @@
 ---
 title: Configuración de la recuperación ante desastres para RDS mediante la recuperación ante desastres de Azure
 description: Aprende a usar la recuperación ante desastres de Azure en una implementación de RDS
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 06/12/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 68fa7026a3198b7800c4855f8472f4a0bec62009
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6c0e9b97a436f51babf679d6ce0aa67c09bcfe26
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858998"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936910"
 ---
 # <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>Configuración de la recuperación ante desastres para RDS mediante Azure Site Recovery
 
 >Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016
 
-Puedes usar Azure Site Recovery para crear una solución de recuperación ante desastres para la implementación de Servicios de Escritorio remoto. 
+Puedes usar Azure Site Recovery para crear una solución de recuperación ante desastres para la implementación de Servicios de Escritorio remoto.
 
-[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) es un servicio basado en Azure que ofrece funcionalidades de recuperación ante desastres mediante la coordinación de la replicación, conmutación por error y recuperación de máquinas virtuales. Azure Site Recovery admite varias tecnologías de replicación para replicar, proteger y conmutar por error de forma coherente y sin problemas máquinas virtuales y aplicaciones en nubes públicas o privadas o en las del proveedor de hospedaje. 
+[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) es un servicio basado en Azure que ofrece funcionalidades de recuperación ante desastres mediante la coordinación de la replicación, conmutación por error y recuperación de máquinas virtuales. Azure Site Recovery admite varias tecnologías de replicación para replicar, proteger y conmutar por error de forma coherente y sin problemas máquinas virtuales y aplicaciones en nubes públicas o privadas o en las del proveedor de hospedaje.
 
 Utiliza la siguiente información para crear y validar la solución de recuperación ante desastres.
 
@@ -42,7 +40,7 @@ Para configurar Azure Site Recovery para la implementación, asegúrate de cumpl
 - Crear una [implementación de RDS local](rds-deploy-infrastructure.md).
 - Agregar el [almacén de servicios de Azure Site Recovery](/azure/site-recovery/site-recovery-vmm-to-azure#create-a-recovery-services-vault) a tu suscripción a Microsoft Azure.
 - Si vas a usar Azure como sitio de recuperación, ejecuta la [herramienta de evaluación de preparación de máquinas virtuales de Azure](https://azure.microsoft.com/downloads/vm-readiness-assessment/) en las máquinas virtuales para garantizar que son compatibles con las máquinas virtuales de Azure y con los servicios de Azure Site Recovery.
- 
+
 ## <a name="implementation-checklist"></a>Lista de comprobación de la implementación
 
 Trataremos los distintos pasos para habilitar los servicios de Azure Site Recovery para la implementación de RDS con más detalle, pero aquí están los pasos de la implementación de alto nivel.

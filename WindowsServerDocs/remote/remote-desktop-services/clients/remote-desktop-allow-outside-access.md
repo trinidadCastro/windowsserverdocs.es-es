@@ -1,20 +1,18 @@
 ---
 title: 'Escritorio remoto: permitir el acceso a tu PC desde fuera de la red'
 description: Obtén información acerca de las opciones de acceso remoto a tu PC desde fuera de la red del equipo
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: haley-rowland
 manager: dongill
 ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc1b7568006ef9e32132d772702212c5fd78ec4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 109f60ec099606dfc031fc07a8f457287f8fb50d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857428"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946438"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>Escritorio remoto: permitir el acceso a tu PC desde fuera de la red del equipo
 
@@ -24,7 +22,7 @@ Cuando te conectas a tu PC mediante un cliente de Escritorio remoto, estás crea
 
 ## <a name="enable-port-forwarding-on-your-router"></a>Habilitar el enrutamiento de puerto en el enrutador
 
-El enrutamiento de puerto simplemente asigna el puerto en la dirección IP del enrutador (tu IP pública) al puerto y la dirección IP de el equipo al que quiere obtener acceso. 
+El enrutamiento de puerto simplemente asigna el puerto en la dirección IP del enrutador (tu IP pública) al puerto y la dirección IP de el equipo al que quiere obtener acceso.
 
 Los pasos específicos para habilitar el enrutamiento de puerto dependen del enrutador que estés usando, por lo que deberás buscar en línea las instrucciones del enrutador. Para obtener una explicación general de los pasos, echa un vistazo a [wikiHow to Set Up Port Forwarding on a Router](https://www.wikihow.com/Set-Up-Port-Forwarding-on-a-Router) (wikiHow para configurar el enrutamiento de puerto en un enrutador).
 
@@ -36,7 +34,7 @@ Antes de asignar el puerto necesitarás lo siguiente:
 
 - Tu dirección IP pública (la IP del enrutador). Tienes varias maneras de encontrarla: puedes buscar (en Bing o Google) "mi IP" o consultar las [propiedades de la red Wi-Fi](https://binged.it/2Gwob34) (para Windows 10).
 - Número de puerto que se va a asignar. En la mayoría de los casos es 3389, ya que es el puerto predeterminado que usan las conexiones del Escritorio remoto.
-- Acceso de administrador a tu enrutador.  
+- Acceso de administrador a tu enrutador.
 
    >[!WARNING]
    > Vas a abrir el equipo a Internet: asegúrate de que tienes una contraseña segura establecida en el equipo.

@@ -2,18 +2,16 @@
 title: Inicialización de discos nuevos
 description: Cómo inicializar discos nuevos con Administración de discos y prepararlos para su uso. También incluye vínculos para la solución de problemas.
 ms.date: 12/20/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 68e51cff5b70ed0b11488e44cebba057e7432d99
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: adfc298c460bfa55516898df1781217dfe55d129
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965277"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942300"
 ---
 # <a name="initialize-new-disks"></a>Inicialización de discos nuevos
 
@@ -29,7 +27,7 @@ Si agregas un disco nuevo a un equipo y no se ve en el Explorador de archivos, e
 Aquí se muestra cómo inicializar un disco nuevo mediante Administración de discos. Si prefiere usar PowerShell, utilice el cmdlet [initialize-disk](/powershell/module/storage/initialize-disk) en su lugar.
 
 1. Abre Administración de discos con permisos de administrador.
- 
+
     Para ello, en el cuadro de búsqueda de la barra de tareas, escribe **Administración de discos**, selecciona y mantén pulsado (o haz clic con el botón derecho) **Administración de discos** y, después, selecciona **Ejecutar como administrador** > **Sí**. Si no puedes abrirlo como administrador, escribe **en Administración de equipos** en su lugar y, a continuación, vete a **Almacenamiento** > **Administración de discos**.
 1. En Administración de discos, haz clic con el botón derecho en el disco que quieres inicializar y luego haz clic en **Inicializar disco** (se muestra aquí). Si el disco aparece como *Sin conexión*, primero haz clic en él con el botón derecho y selecciona **En línea**.
 

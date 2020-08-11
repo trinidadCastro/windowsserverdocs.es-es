@@ -1,18 +1,16 @@
 ---
 title: Introducción a las actualizaciones de Windows Server | Microsoft Docs
 description: Información general sobre la actualización de Windows Server y qué aspectos hay que tener en cuenta antes de realizar la actualización real.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/10/2019
-ms.openlocfilehash: 2cf1916974b252669b64f10837d647a5cd60650a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1aa923287c26aa75916a418b6550e2dec6bbb6cd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725929"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939255"
 ---
 # <a name="overview-of-windows-server-upgrades"></a>Introducción a las actualizaciones de Windows Server
 

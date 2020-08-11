@@ -1,17 +1,15 @@
 ---
 title: Comandos netsh para red de banda ancha móvil (MBN)
 description: Usa netsh mbn para consultar y configurar los parámetros y las opciones de banda ancha móvil.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 author: apdutta
 ms.date: 02/20/2020
-ms.openlocfilehash: 478f87db4d520a133b3d70c0ed2dbb4e91db60d9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 50c0bbf441e3109189117cbfd8df9ee597712bcd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853738"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953991"
 ---
 # <a name="netsh-mbn-commands"></a>Comandos netsh mbn
 
@@ -19,7 +17,7 @@ ms.locfileid: "80853738"
 Usa **netsh mbn** para consultar y configurar los parámetros y las opciones de banda ancha móvil.
 
 > [!TIP]
-> Puedes obtener ayuda sobre el comando de netsh mbn con 
+> Puedes obtener ayuda sobre el comando de netsh mbn con
 >
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;netsh mbn /?
 
@@ -227,7 +225,7 @@ disconnect interface="Cellular"
 
 ## <a name="dump"></a>dump
 
-Muestra un script de configuración. 
+Muestra un script de configuración.
 
 Crea un script que contiene la configuración actual.  Si se guarda en un archivo, este script se puede usar para restaurar la configuración modificada.
 
@@ -529,7 +527,7 @@ Los comandos netsh mbn set disponibles son:
 - [tracing](#tracing)
 - [visibleproviders](#visibleproviders)
 
-### <a name="acstate"></a>acstate  
+### <a name="acstate"></a>acstate
 
 Muestra el estado de conexión automática de datos de banda ancha móvil para la interfaz especificada.
 
@@ -667,7 +665,7 @@ show dmprofiles [[name=]<string>] [[interface=]<string>]
 | **interface** | Nombre de la interfaz. Es uno de los nombres de interfaz que se muestran en el comando "netsh mbn show interfaces". | Opcional |
 
 **Observaciones**
-    
+
 Muestra los datos de perfil o enumera los perfiles del sistema.
 
 Si se proporciona el nombre del perfil, se mostrará el contenido del perfil. De lo contrario, se enumerarán los perfiles para la interfaz.
@@ -789,7 +787,7 @@ show netlteattachinfo [interface=]<string>
 show netlteattachinfo interface="Cellular"
 ```
 
-### <a name="pin"></a>pin      
+### <a name="pin"></a>pin
 
 Muestra la información de PIN para la interfaz especificada.
 
@@ -813,7 +811,7 @@ show pin interface="Cellular"
 ```
 
 
-### <a name="pinlist"></a>pinlist  
+### <a name="pinlist"></a>pinlist
 
 Muestra la información de la lista de PIN para la interfaz especificada.
 
@@ -861,7 +859,7 @@ show preferredproviders interface="Cellular"
 ```
 
 
-### <a name="profiles"></a>profiles 
+### <a name="profiles"></a>profiles
 
 Muestra una lista de perfiles configurados en el sistema.
 
@@ -886,7 +884,7 @@ Si se proporciona el nombre del perfil, se mostrará el contenido del perfil. De
 Si se proporciona el nombre de la interfaz, solo se mostrará el perfil especificado en la interfaz dada. De lo contrario, se mostrará el primer perfil coincidente.
 
 Si se proporciona el propósito, solo se mostrarán los perfiles con el GUID de propósito coincidente.  De lo contrario, los perfiles no se filtrarán por propósito.  La cadena puede ser un GUID entre llaves o una de las siguientes cadenas: internet, supl, mms, ims o allhost.
-    
+
 **Ejemplo**
 
 ```powershell
@@ -943,7 +941,7 @@ show provisionedcontexts interface="Cellular"
 ```
 
 
-### <a name="purpose"></a>purpose  
+### <a name="purpose"></a>purpose
 
 Muestra los GUID del grupo de propósitos que se pueden usar para filtrar los perfiles en el dispositivo. No hay parámetros para este comando.
 
@@ -954,7 +952,7 @@ show purpose
 ```
 
 
-### <a name="radio"></a>radio    
+### <a name="radio"></a>radio
 
 Muestra la información de estado de la radio para la interfaz especificada.
 
@@ -1002,7 +1000,7 @@ show readyinfo interface="Cellular"
 ```
 
 
-### <a name="signal"></a>signal   
+### <a name="signal"></a>signal
 
 Muestra la información de la señal para la interfaz especificada.
 
@@ -1098,14 +1096,14 @@ show smsconfig interface="Cellular"
 ```
 
 
-### <a name="tracing"></a>tracing  
+### <a name="tracing"></a>tracing
 
 Muestra si el seguimiento de banda ancha móvil está habilitado o deshabilitado.
 
 **Sintaxis**
 
 ```powershell
-show tracing 
+show tracing
 ```
 
 

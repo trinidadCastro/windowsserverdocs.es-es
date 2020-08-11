@@ -1,17 +1,16 @@
 ---
 title: Tecnología de Windows Server 2016
 description: Proporciona información general sobre la tecnología.
-ms.prod: windows-server
 ms.author: daveba
 ms.date: 10/17/2017
 ms.topic: article
 author: daveba
-ms.openlocfilehash: 742fedcbd3d82104cb93f56198dd669f9fbd01df
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 6acdac2438f83de7a884994805f13c238bbeecb5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409916"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950039"
 ---
 # <a name="technology-in-windows-server-2016"></a>Tecnología de Windows Server 2016
 

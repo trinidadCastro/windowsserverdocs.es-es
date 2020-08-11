@@ -6,14 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 01/22/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 424c0ad75e33adbbb243f07da4f1d0f3deec16dc
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a0407639f6c3efcbdc8f0353b0313101272351ac
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961317"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938147"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Novedades de Servicios de federación de Active Directory (AD FS)
 

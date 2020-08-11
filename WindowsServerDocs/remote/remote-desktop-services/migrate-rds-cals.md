@@ -1,26 +1,24 @@
 ---
 title: Migración de las licencias de acceso de cliente para Servicios de Escritorio remoto (CAL de RDS)
 description: En este artículo se describe cómo migrar las licencias de acceso de cliente de Servicios de Escritorio remoto a los nuevos servidores de Windows Server 2016.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 11/01/2016
 ms.topic: article
 ms.assetid: 91bdedce-6145-469f-b72e-7e113c4391e9
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 5d95c2bc3a92a8cdcba4b308c88d94cb9af6d2a5
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b3f1fb102f08e8947feba0c522cd43c462154c36
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855998"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937004"
 ---
 # <a name="migrate-your-remote-desktop-services-client-access-licenses-rds-cals"></a>Migración de las licencias de acceso de cliente para Servicios de Escritorio remoto (CAL de RDS)
 
 Tienes tres opciones para migrar las CAL de RDS:
-1. Método de conexión automática: Este método recomendado se comunica a través de Internet directamente a la salida del Centro de activación de Microsoft (Clearinghouse) por el puerto TCP 443.  
-2. Mediante un explorador web: Este método permite la migración cuando el servidor que ejecuta la herramienta Administrador de licencias de Escritorio remoto no tiene conexión a Internet, pero el administrador tiene conectividad a Internet en un dispositivo independiente. La dirección URL para el método de migración de Web se muestra en el Asistente para administrar las CAL de RDS. 
+1. Método de conexión automática: Este método recomendado se comunica a través de Internet directamente a la salida del Centro de activación de Microsoft (Clearinghouse) por el puerto TCP 443.
+2. Mediante un explorador web: Este método permite la migración cuando el servidor que ejecuta la herramienta Administrador de licencias de Escritorio remoto no tiene conexión a Internet, pero el administrador tiene conectividad a Internet en un dispositivo independiente. La dirección URL para el método de migración de Web se muestra en el Asistente para administrar las CAL de RDS.
 3. Mediante un teléfono: Este método permite al administrador completar el proceso de migración por teléfono con un representante de Microsoft. El número de teléfono apropiado viene determinado por el país o región que hayas elegido en el Asistente de activación del servidor y se muestra en el Asistente para administrar CAL de RDS.
 
 En este artículo, la sección [Establecimiento del método de migración de las CAL de RDS](#establish-rds-cal-migration-method) resalta los pasos generales comunes en cualquier método de migración de CAL de RDS, mientras que [Migración de las CAL de RDS](#migrate-rds-cals) resalta los pasos específicos para cada método de migración.
@@ -38,7 +36,7 @@ Con independencia del método de migración, debes, como mínimo, ser miembro de
     - El servidor de licencias de origen ha dejado de funcionar.
 7. La página siguiente del Asistente depende del motivo de migración que hayas elegido.
     - Si selecciona **El servidor de licencias de origen se va a reemplazar por este servidor de licencias** como motivo para migrar las CAL de RDS, se mostrará la página **Información del servidor de licencias de origen**.
-    
+
        En la página Información del servidor de licencias de origen, introduzca el nombre o la dirección IP del servidor de licencias de origen.
 
        Si el servidor de licencias de origen está disponible en la red, haz clic en **Siguiente**. El asistente se pone en contacto con el servidor de licencias de origen. Si el servidor de licencias de origen ejecuta un sistema operativo anterior a Windows Server 2008 R2 o el servidor de licencias de origen está desactivado, se te recuerda que debes quitar las CAL de RDS manualmente del servidor de licencias de origen después de que el asistente haya finalizado. Después de confirmar que entiende este requisito, aparece la página **Obtener el paquete de claves de licencia de cliente**.
@@ -66,7 +64,7 @@ Existen tres mecanismos para migrar licencias al servidor de licencias de destin
 
 ### <a name="using-a-web-browser"></a>Uso de un explorador web
 1. En la página **Obtener un paquete de claves de licencia de cliente**, haz clic en el hipervínculo para conectarse al sitio web de Administración de licencias de Servicios de Escritorio remoto.
-   Si estás ejecutando el administrador de licencias de Escritorio remoto en un equipo que no tiene conexión a Internet, anota la dirección del sitio web de administración de licencias de Servicios de Escritorio remoto y, a continuación, conéctate al sitio web desde un equipo que tenga conexión a Internet. 
+   Si estás ejecutando el administrador de licencias de Escritorio remoto en un equipo que no tiene conexión a Internet, anota la dirección del sitio web de administración de licencias de Servicios de Escritorio remoto y, a continuación, conéctate al sitio web desde un equipo que tenga conexión a Internet.
 2. En la página web de Administración de licencias de Servicios de Escritorio remoto, en **Select Option** (Seleccionar opciones), selecciona **Manage CALs** (Administrar CAL) y, después, haz clic en **Siguiente**.
 3. Proporciona la siguiente información necesaria y, después, haz clic en **Siguiente**:
     - **Identificación del servidor de licencias de destino**: Un número de 35 dígitos, en grupos de cinco números, que se muestra en la página **Obtener un paquete de claves de licencia de cliente** en el Asistente para administrar CAL de RDS.
@@ -84,7 +82,7 @@ Existen tres mecanismos para migrar licencias al servidor de licencias de destin
 6. Después de haber proporcionado la información necesaria, haga clic en **Siguiente**.
 7. Comprueba que toda la información que has indicado es correcta y, después, haz clic en **Siguiente** para enviar tu solicitud al Centro de activación de Microsoft (Clearinghouse). La página web muestra una identificación del paquete de claves de licencia generado por el Centro de activación de Microsoft (Clearinghouse).
 
-   > [!IMPORTANT] 
+   > [!IMPORTANT]
    > Conserva una copia de la identificación del paquete de claves de licencia. Si necesitas ayuda para recuperar las CAL de RDS, esta información te permitirá agilizar la comunicación con el Centro de activación de Microsoft (Clearinghouse).
 
 8. En la misma página **Obtener un paquete de claves de licencia de cliente**, introduce la identificación del paquete de claves de licencia y, después, haz clic en **Siguiente** para migrar las CAL de RDS a tu servidor de licencias.

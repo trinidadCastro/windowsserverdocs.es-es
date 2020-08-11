@@ -2,18 +2,16 @@
 title: Conversión de un disco dinámico en un disco básico
 description: Describe cómo convertir un disco dinámico en un disco básico.
 ms.date: 12/18/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f866127bc43df307ac1a6a1fa44daac91ada5dcd
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3ffaf5db818377a3c75fda98255e7881fe6731aa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966087"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936014"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>Conversión de un disco dinámico en un disco básico
 
