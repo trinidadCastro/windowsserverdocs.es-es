@@ -1,19 +1,17 @@
 ---
 title: Sintaxis, contextos y formatos de comandos netsh
 description: Puedes usar este tema para aprender cómo especificar contextos y subcontextos de netsh, comprender la sintaxis de netsh y el formato de los comandos, y cómo ejecutar comandos de netsh en equipos locales y remotos que ejecutan Windows Server 2016 o Windows 10.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 8cb9b59f-0255-4261-b49a-562c5ea50ee0
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 061d7252d5a7bbe09d3dca245d9b77ed20a4dedf
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f72d3dfc3cd6f54b123cb00baf9ba75e4faeb906
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854768"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969472"
 ---
 # <a name="netsh-command-syntax-contexts-and-formatting"></a>Sintaxis, contextos y formatos de comandos netsh
 
@@ -27,7 +25,7 @@ Netsh también proporciona una característica de scripting que permite ejecutar
 
 ## <a name="netsh-contexts"></a>Contextos de Netsh
 
-Netsh interactúa con otros componentes del sistema operativo mediante archivos de biblioteca de vínculos dinámicos \(DLL\). 
+Netsh interactúa con otros componentes del sistema operativo mediante archivos de biblioteca de vínculos dinámicos \(DLL\).
 
 Cada archivo DLL de la aplicación auxiliar netsh proporciona un amplio conjunto de características denominado *contexto*, que es un grupo de comandos específicos de un rol o característica del servidor de red. Estos contextos amplían la funcionalidad de netsh al proporcionar compatibilidad con la configuración y la supervisión de uno o varios servicios, utilidades o protocolos. Por ejemplo, Dhcpmon.dll da a netsh el contexto y el conjunto de comandos necesarios para configurar y administrar los servidores DHCP.
 
@@ -40,9 +38,9 @@ A continuación tienes una salida de ejemplo para estos comandos en un equipo qu
 >    ```
 >   PS C:\Windows\system32> netsh
 >   netsh>/?
->    
+>
 >    The following commands are available:
->    
+>
 >    Commands in this context:
 >    ..            - Goes up one context level.
 >    ?             - Displays a list of commands.
@@ -83,10 +81,10 @@ A continuación tienes una salida de ejemplo para estos comandos en un equipo qu
 >    wfp           - Changes to the `netsh wfp' context.
 >    winhttp       - Changes to the `netsh winhttp' context.
 >    winsock       - Changes to the `netsh winsock' context.
->    
+>
 >    The following sub-contexts are available:
 >     advfirewall branchcache bridge dhcpclient dnsclient firewall http interface ipsec ipsecdosprotection lan namespace netio ras rpc trace wfp winhttp winsock
->    
+>
 >    To view help for a command, type the command, followed by a space, and then type ?.
 >    ```
 
@@ -149,7 +147,7 @@ Opcional. Especifica que netsh entra en el contexto de **netsh** especificado.
 
 **`Context`**
 
-Opcional. Especifica el contexto de **netsh** que quieres especificar. 
+Opcional. Especifica el contexto de **netsh** que quieres especificar.
 
 **`-r`**
 

@@ -1,19 +1,17 @@
 ---
 title: Comandos de proxy de puerto de la interfaz de netsh
 description: Usa los comandos de proxy de puerto de la interfaz de netsh para que funcionen como servidores proxy entre las redes y aplicaciones IPv4 e IPv6.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: e9c4cff4d1424c244857cf75be41d445b299f1f2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2b05db55ef914130a337b38ea92b41e0cef81dc9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853748"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964031"
 ---
 # <a name="netsh-interface-portproxy-commands"></a>Comandos de proxy de puerto de la interfaz de netsh
 
@@ -175,7 +173,7 @@ El servidor proxy de puerto elimina un puerto y una dirección IPv4 de la lista 
 
 ### <a name="syntax"></a>Sintaxis
 
-```PowerShell 
+```PowerShell
 delete v4tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
@@ -297,7 +295,7 @@ Modifica los valores de parámetro de una entrada existente en el servidor proxy
 
 ### <a name="syntax"></a>Sintaxis
 
-```PowerShell 
+```PowerShell
 set v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 

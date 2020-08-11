@@ -1,19 +1,17 @@
 ---
 title: Configuración del cliente web de Escritorio remoto para los usuarios
 description: Describe cómo un administrador puede configurar el cliente web de Escritorio remoto.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 12ea9226a1656c6b3c800517818e5e950d142c64
-ms.sourcegitcommit: e86ea69254e2f63eaab10010ae3a43622156ab23
+ms.openlocfilehash: 33d3bf9c27f9e504594823c7868140147164593d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87470698"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971632"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configuración del cliente web de Escritorio remoto para los usuarios
 

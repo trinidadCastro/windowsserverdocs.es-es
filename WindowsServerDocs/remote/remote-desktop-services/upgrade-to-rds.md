@@ -1,20 +1,18 @@
 ---
 title: Actualización de las implementaciones de Servicios de Escritorio remoto en Windows Server 2016
 description: En este artículo se describe cómo actualizar las implementaciones existentes de Servicios de Escritorio remoto a Windows Server 2016.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 03/20/2018
 ms.topic: article
 ms.assetid: f7b1f1f6-57c8-40ab-a235-e36240dcc1f8
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 8980f7941a997e24ea5c5a9c1f39b4588b234b75
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a56511873c020172af0bb0813c2ee31f82ee5a2b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857138"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971512"
 ---
 # <a name="upgrading-your-remote-desktop-services-deployments-to-windows-server-2016"></a>Actualización de las implementaciones de Servicios de Escritorio remoto en Windows Server 2016
 
@@ -28,11 +26,11 @@ Con el fin de minimizar el tiempo de inactividad, es mejor seguir los pasos desc
 
 1. Se deberían actualizar en primer lugar los **servidores de Agente de conexión a Escritorio remoto**. Si hay una configuración activa/activa en la implementación, quita todos los servidores excepto uno de la implementación y realiza una actualización local. Realiza actualizaciones de los demás servidores de Agente de conexión a Escritorio remoto sin conexión y, después, vuelve a agregarlos a la implementación. La implementación no estará disponible durante la actualización de los servidores de Agente de conexión a Escritorio remoto.
 
-   > [!NOTE] 
+   > [!NOTE]
    > Es obligatorio actualizar los servidores de Agente de conexión a Escritorio remoto. No se admiten servidores de Agente de conexión a Escritorio remoto de Windows Server 2012 R2 en una implementación mixta con servidores de Windows Server 2016. Una vez que los servidores de Agente de conexión a Escritorio remoto ejecuten Windows Server 2016 la implementación será funcional, incluso aunque el resto de los servidores de la implementación aún estén ejecutando Windows Server 2012 R2.
 
 2. Se deben actualizar los **servidores de licencias de Escritorio remoto** antes de actualizar los servidores host de sesión de Escritorio remoto.
-   > [!NOTE] 
+   > [!NOTE]
    > Los servidores de licencias de Escritorio remoto de Windows Server 2012 y 2012 R2 funcionan con las implementaciones de Windows Server 2016, pero solo pueden procesar las licencias de acceso cliente de Windows Server 2012 R2 y versiones anteriores. No pueden usar licencias de acceso cliente de Windows Server 2016. Consulta [Licencia para la implementación de RDS con licencias de acceso de cliente (CAL)](rds-client-access-license.md) para más información sobre los servidores de licencias de Escritorio remoto.
 
 3. A continuación, se pueden actualizar los **servidores host de sesión de Escritorio remoto**. Para evitar el tiempo de inactividad durante la actualización, el administrador puede dividir los servidores que se van a actualizar en 2 pasos como se indica a continuación. Todos volverán a funcionar después de la actualización. Para actualizar, usa los pasos descritos en [Actualización de los servidores host de sesión de Escritorio remoto a Windows Server 2016](upgrade-to-rdsh.md).
@@ -43,26 +41,26 @@ Con el fin de minimizar el tiempo de inactividad, es mejor seguir los pasos desc
    > [!NOTE]
    > La actualización del acceso web de Escritorio remoto puede restablecer las propiedades de IIS (por ejemplo, los archivos de configuración). Para no perder los cambios, toma notas o copias de las personalizaciones realizadas en el sitio web de Escritorio remoto en IIS.
 
-   > [!NOTE] 
+   > [!NOTE]
    > Los servidores de acceso web de Escritorio remoto de Windows Server 2012 y 2012 R2 funcionarán con las implementaciones de Windows Server 2016.
 
 6. Los **servidores de puerta de enlace de Escritorio remoto** se pueden actualizar en cualquier momento.
    > [!NOTE]
-   > Windows Server 2016 no incluye directivas de protección de acceso a redes (NAP), por lo que estas se tendrán que eliminar. La manera más fácil de eliminar las directivas correctas es mediante la ejecución del asistente para actualización. Si hay directivas NAP que debes eliminar, la actualización bloqueará y creará un archivo de texto en el escritorio que incluye las directivas específicas. Para administrar las directivas NAP, abre la herramienta del servidor de directivas de red. Después de eliminarlas, haz clic en **Actualizar** en la herramienta de configuración para continuar con el proceso de actualización. 
+   > Windows Server 2016 no incluye directivas de protección de acceso a redes (NAP), por lo que estas se tendrán que eliminar. La manera más fácil de eliminar las directivas correctas es mediante la ejecución del asistente para actualización. Si hay directivas NAP que debes eliminar, la actualización bloqueará y creará un archivo de texto en el escritorio que incluye las directivas específicas. Para administrar las directivas NAP, abre la herramienta del servidor de directivas de red. Después de eliminarlas, haz clic en **Actualizar** en la herramienta de configuración para continuar con el proceso de actualización.
 
-   > [!NOTE] 
+   > [!NOTE]
    > Los servidores de puerta de enlace de Escritorio remoto de Windows Server 2012 y 2012 R2 funcionarán con las implementaciones de Windows Server 2016.
 
 ## <a name="vdi-deployment--supported-guest-os-upgrade"></a>Implementación de VDI: Actualización de los sistemas operativos invitados compatibles
 Los administradores tendrán las siguientes opciones para la actualización de las colecciones de máquinas virtuales:
 
-### <a name="upgrade-managed-shared-vm-collections"></a>Actualización de colecciones de máquinas virtuales administradas y compartidas 
-Los administradores deberán crear plantillas de máquinas virtuales con la versión de sistema operativo deseada y usarlas para revisar todas las máquinas virtuales del grupo. 
+### <a name="upgrade-managed-shared-vm-collections"></a>Actualización de colecciones de máquinas virtuales administradas y compartidas
+Los administradores deberán crear plantillas de máquinas virtuales con la versión de sistema operativo deseada y usarlas para revisar todas las máquinas virtuales del grupo.
 
 Se admiten los siguientes escenarios de aplicación de revisiones:
 - Windows 7 SP1 se puede revisar a Windows 8 o Windows 8.1
 - Windows 8 se puede revisar a Windows 8.1
 - Windows 8.1 se puede revisar a Windows 10
 
-### <a name="upgrade-unmanaged-shared-vm-collections"></a>Actualización de colecciones de máquinas virtuales compartidas y no administradas 
+### <a name="upgrade-unmanaged-shared-vm-collections"></a>Actualización de colecciones de máquinas virtuales compartidas y no administradas
 Los usuarios finales no pueden actualizar sus escritorios personales. Los administradores deben realizar la actualización. Los pasos exactos aún se deben determinar.

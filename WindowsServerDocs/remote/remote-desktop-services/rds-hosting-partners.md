@@ -1,20 +1,18 @@
 ---
 title: 'RDS: Partners para hospedar escritorios y aplicaciones'
 description: Lista de partners que pueden hospedar escritorios y aplicaciones con RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/27/2017
 ms.topic: article
 ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
-ms.openlocfilehash: 503a9917e271c69a78e5f26db6556d788254c823
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: fb004a0dd833a3b90f7d9be6fe946bf6238e8b1f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861368"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971592"
 ---
 # <a name="remote-desktop-services-hosting-partners-and-assessment"></a>Partners de hospedaje de Servicios de Escritorio remoto y evaluación
 
@@ -27,10 +25,10 @@ Si eres partner de Microsoft y quieres que se te incluya en la lista de partners
 3. Completa la [evaluación técnica](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=1660&rowId=2220&trackPathId=9871).
 4. Asegúrate de cumplir los [requisitos para la competencia de plataformas en la nube](https://partner.microsoft.com/membership/cloud-platform-competency).
 
-¿Ya eres partner de Microsoft y tienes alguna pregunta? Ponte en contacto con el equipo de Escritorio remoto en <rdhostingpartners@microsoft.com>.  
+¿Ya eres partner de Microsoft y tienes alguna pregunta? Ponte en contacto con el equipo de Escritorio remoto en <rdhostingpartners@microsoft.com>.
 
 
-## <a name="partners-who-have-passed-the-learning-path-assessment"></a>Partners que han superado la evaluación de la ruta de aprendizaje 
+## <a name="partners-who-have-passed-the-learning-path-assessment"></a>Partners que han superado la evaluación de la ruta de aprendizaje
 
 Si eres cliente y buscas un partner que te ayude a hospedar aplicaciones y escritorios de Windows en Azure para los usuarios, hemos recopilado una lista de partners que han superado la evaluación. Esta es una [lista de esos partners](rds-hosting-partners.md), al 28/03/2017, que puedes descargar.
 

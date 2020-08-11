@@ -1,26 +1,24 @@
 ---
 title: Características eliminadas o que está previsto su reemplazo a partir de Windows Server (versión 1709)
 description: Características y funcionalidades se han quitado o planeado para su eliminación en las versiones.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 ms.date: 08/22/2019
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 98632ee7147c3041b0f13d0a0e90bf8115268d36
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ad9c64083ec07bd8fc5d1db56978f2b469da9953
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959477"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959443"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Características eliminadas o que está previsto su reemplazo a partir de Windows Server, versión 1709
 
 >Se aplica a: Windows Server, versión 1709
 
-A continuación se enumeran las características y funcionalidades de Windows Server, versión 1709 que se quitaron del producto en dicha versión o se está empezando a considerar su posible reemplazo en versiones posteriores. Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial. **Esta lista está sujeta a cambios en versiones posteriores y es posible que no incluya todas las características o funcionalidades afectadas.** 
+A continuación se enumeran las características y funcionalidades de Windows Server, versión 1709 que se quitaron del producto en dicha versión o se está empezando a considerar su posible reemplazo en versiones posteriores. Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial. **Esta lista está sujeta a cambios en versiones posteriores y es posible que no incluya todas las características o funcionalidades afectadas.**
 
 > [!TIP]
 > - Para obtener acceso rápido a las versiones de Windows Server, puedes unirte al [Programa Windows Insider](https://insider.windows.com). Esta es una excelente manera de probar los cambios de características.
@@ -60,7 +58,7 @@ Este método de autenticación está previsto para su reemplazo. En su lugar, de
 ### <a name="internet-storage-name-service-isns"></a>Servicio de nombres de almacenamiento de Internet (iSNS)
 Se está considerando el reemplazo de iSNS. La característica Bloque de mensajes delº servidor (SMB) ofrece básicamente la misma funcionalidad con características adicionales. Consulta [Server Message Block Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) (Introducción a Bloque de mensajes del servidor) para obtener información detallada sobre esta característica.
 
-### <a name="rsaaes-encryption-for-iis"></a>Cifrado de RSA/AES para IIS 
+### <a name="rsaaes-encryption-for-iis"></a>Cifrado de RSA/AES para IIS
 Se está considerando el reemplazo de este método de cifrado porque el método superior de API de criptografía: Next Generation (CNG) ya está disponible. Si quieres obtener más información sobre el cifrado de CNG, consulta [Acerca de CNG](/windows/win32/seccng/about-cng).
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0

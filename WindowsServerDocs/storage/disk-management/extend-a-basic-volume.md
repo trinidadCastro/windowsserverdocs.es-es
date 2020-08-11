@@ -2,18 +2,16 @@
 title: Extensión de un volumen básico
 description: Puedes agregar espacio a un volumen existente en Windows y extenderlo al espacio vacío de la unidad, pero solo si el espacio vacío no tiene un volumen (está sin asignar) y va inmediatamente después del volumen que quieres extender, sin otros volúmenes en medio. En este artículo se describe cómo hacerlo.
 ms.date: 12/19/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 19b48bd74dad4e20780b41852afbee15f5ec1ade
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d0cd4c0c2bd6909c82ee39c97b58909e85aeef9f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966107"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961619"
 ---
 # <a name="extend-a-basic-volume"></a>Extensión de un volumen básico
 

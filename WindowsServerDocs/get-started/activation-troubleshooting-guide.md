@@ -3,17 +3,16 @@ title: Solución de problemas de activación del volumen de Windows
 description: Enumera los recursos que proporcionan información acerca de los procedimientos recomendados para la activación de un volumen e información sobre la solución de problemas de activación.
 ms.topic: troubleshooting
 ms.date: 09/24/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: cdd597e77d35b154385cf9de35f3d51a3d9c4e8b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ce6c2e830e7c30e24112854b54e12909c43fa6f7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961347"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972332"
 ---
 # <a name="troubleshooting-windows-volume-activation"></a>Solución de problemas de activación del volumen de Windows
 

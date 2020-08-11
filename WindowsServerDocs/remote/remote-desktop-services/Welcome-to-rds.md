@@ -1,8 +1,6 @@
 ---
 title: Introducción a Servicios de Escritorio remoto en Windows Server 2016
 description: Proporciona información general acerca de Servicios de Escritorio remoto
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 02/22/2017
 ms.topic: article
@@ -10,14 +8,14 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 70979eae2ad9f54ab895572f97d9b5968cff31d9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6d856c6f751b9c8aa6c0f6547dd56d6ee36afb35
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854688"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961959"
 ---
-# <a name="welcome-to-remote-desktop-services"></a>Bienvenida a Servicios de Escritorio remoto 
+# <a name="welcome-to-remote-desktop-services"></a>Bienvenida a Servicios de Escritorio remoto
 
 Servicios de Escritorio remoto (RDS) es la plataforma elegida para la creación de soluciones de virtualización que cubran todas las necesidades del cliente final, lo que incluye la entrega de aplicaciones virtualizadas individuales, proporcionar acceso seguro al escritorio remoto y a dispositivos móviles, y proporcionar a los usuarios finales el capacidad para ejecutar sus aplicaciones y escritorios desde la nube.
 
@@ -35,7 +33,7 @@ En estos entornos de virtualización tienes mayor flexibilidad con respecto a lo
 - **Escritorios**: Ofrece a los usuarios una experiencia de escritorio completa con varias aplicaciones que se instala y administran. Es ideal para aquellos usuarios que usan estos equipos como sus estaciones de trabajo principales o que proceden de clientes ligeros, como con MultiPoint Services.
 - **RemoteApps**: Especifica aplicaciones individuales que se hospedan o ejecutan en la máquina virtualizada, pero aparecen como si se ejecutaran en el escritorio del usuario como aplicaciones locales. Las aplicaciones tiene su propia entrada de la barra de tareas y se pueden cambiar de tamaño y moverse de un monitor a otro. Es ideal para implementar y administrar aplicaciones clave en un entorno remoto seguro, al tiempo que permite a los usuarios no solo trabajar desde sus escritorios, sino también personalizarlos.
 
-En aquellos entornos en los que la contención de costos es crucial y en los que quieres aumentar las ventajas de implementar de escritorios completos en un entorno de virtualización basado en sesión, puedes usar [MultiPoint Services](../multipoint-services/multipoint-services.md) para ofrecer el máximo valor. 
+En aquellos entornos en los que la contención de costos es crucial y en los que quieres aumentar las ventajas de implementar de escritorios completos en un entorno de virtualización basado en sesión, puedes usar [MultiPoint Services](../multipoint-services/multipoint-services.md) para ofrecer el máximo valor.
 
 Con estas opciones y configuraciones, tienes la flexibilidad de implementar los escritorios y aplicaciones que necesitan los usuarios de forma remota, segura y rentable.
 

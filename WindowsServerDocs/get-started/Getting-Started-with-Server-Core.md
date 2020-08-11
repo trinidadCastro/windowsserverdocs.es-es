@@ -1,26 +1,24 @@
 ---
 title: Instalación de Server Core
 description: Cómo obtener una instalación Server Core e instalarla en Windows Server 2019, Windows Server 2016 o Windows Server (canal semianual).
-ms.prod: windows-server
 ms.date: 05/21/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 13d36c233094511216483f0fb37dc6a004212a50
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 93b4cb477ce31543e67dd9f973637e830e0fd478
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826978"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959793"
 ---
 # <a name="install-server-core"></a>Instalación de Server Core
 
 > Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
-  
+
 Cuando instalas Windows Server por primera vez, tienes las siguientes opciones de instalación:
 
 >[!NOTE]
@@ -33,10 +31,10 @@ Cuando instalas Windows Server por primera vez, tienes las siguientes opciones d
 
 Cuando instalas Windows Server (canal semianual), tienes las siguientes opciones de instalación:
 
--    Windows Server Standard 
+-    Windows Server Standard
 -    Windows Server Datacenter
 
-La opción de instalación básica reduce el espacio requerido en el disco y la posible superficie expuesta a ataques, de modo que recomendamos elegir la instalación básica, a menos que necesites particularmente los elementos adicionales de la interfaz de usuario y las herramientas de administración de gráficos que se incluyen en la opción de Server con Experiencia de escritorio. Si consideras que necesitas los elementos adicionales de la interfaz de usuario, consulta [Instalación de servidor con Experiencia de escritorio](Getting-Started-with-Server-with-Desktop-Experience.md). 
+La opción de instalación básica reduce el espacio requerido en el disco y la posible superficie expuesta a ataques, de modo que recomendamos elegir la instalación básica, a menos que necesites particularmente los elementos adicionales de la interfaz de usuario y las herramientas de administración de gráficos que se incluyen en la opción de Server con Experiencia de escritorio. Si consideras que necesitas los elementos adicionales de la interfaz de usuario, consulta [Instalación de servidor con Experiencia de escritorio](Getting-Started-with-Server-with-Desktop-Experience.md).
 
 Con esta opción de instalación básica, no se instala la interfaz de usuario estándar (la Experiencia de escritorio). El servidor se administra mediante la línea de comandos, Windows PowerShell o métodos remotos.
 

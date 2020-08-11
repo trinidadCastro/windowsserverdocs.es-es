@@ -1,19 +1,17 @@
 ---
 title: Introducción al redireccionamiento de carpetas, archivos sin conexión y perfiles de usuario móvil
 description: Introducción a las tecnologías de redirección de carpetas, archivos sin conexión y perfiles de usuario móvil.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e2ea3f0a7f0d3624dc7b16329fbe5c2374ec450f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 2f08d10a4fea9ff86c22fedb8f9738a7177d0217
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182231"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989958"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Introducción al redireccionamiento de carpetas, archivos sin conexión y perfiles de usuario móvil
 
@@ -134,5 +132,5 @@ Para obtener más información relacionada, vea los siguientes recursos.
 | Evaluación del producto | [Ayudar a los trabajadores de la información con almacenamiento y servicios de archivos confiables](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[Novedades de Archivos sin conexión](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>) (Windows 7 y Windows Server 2008 R2)<br>[Novedades de Archivos sin conexión para Windows Vista](</previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Cambios en Archivos sin conexión en Windows Vista](<https://technet.microsoft.com/library/2007.11.offline.aspx>) (TechNet Magazine) |
 | Implementación | [Implementación de la redirección de carpetas, archivos sin conexión y perfiles de usuario móvil](deploy-folder-redirection.md)<br>[Implementación de una solución de centralización de datos del usuario final: validación e implementación de la tecnología de redirección de carpetas y Archivos sin conexión](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Guía de implementación de administración de datos de usuarios móviles](</previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guía paso a paso para configurar nuevas características de Archivos sin conexión para equipos con Windows 7](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Uso de la redirección de carpetas](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Implementación de la redirección de carpetas](</previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
 | Herramientas y configuración | [Archivos sin conexión en MSDN](/previous-versions/windows/desktop/offlinefiles/offline-files-portal)<br>[Referencia de directiva de grupo de archivos sin conexión](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
-| Recursos de la comunidad | [Foro de almacenamiento y servicios de archivos](https://docs.microsoft.com/answers/topics/windows-server-storage.html)<br>[Hey Scripting Guy! ¿Cómo puedo trabajar con la característica Archivos sin conexión de Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Hey Scripting Guy! ¿Cómo puedo habilitar y deshabilitar los archivos sin conexión?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
+| Recursos de la comunidad | [Foro de almacenamiento y servicios de archivos](/answers/topics/windows-server-storage.html)<br>[Hey Scripting Guy! ¿Cómo puedo trabajar con la característica Archivos sin conexión de Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Hey Scripting Guy! ¿Cómo puedo habilitar y deshabilitar los archivos sin conexión?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
 | Tecnologías relacionadas|[Identidad y acceso en Windows Server](../../identity/identity-and-access.yml)<br>[Almacenamiento en Windows Server](../storage.yml)<br>[Administración de servidor y acceso remoto](../../remote/index.yml) |

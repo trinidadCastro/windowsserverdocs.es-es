@@ -1,25 +1,23 @@
 ---
 title: Actualización de Nano Server
 description: ''
-ms.prod: windows-server
 manager: DonGill
-ms.technology: server-nano
 ms.date: 09/06/2017
 ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8a674d61379c0a645cc379ab9f9eafa3cc19b1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 33bf8f3125ede8f3ac777e002e7d31dc174ba238
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960697"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959203"
 ---
 # <a name="updating-nano-server"></a>Actualización de Nano Server
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Consulte [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Consulte [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información.
 
 Nano Server ofrece distintos métodos para estar al día. En comparación con otras opciones de instalación de Windows Server, Nano Server sigue un modelo de mantenimiento más activo, parecido al de Windows 10. Estas versiones periódicas se conocen como **Rama actual para empresas (CBB)** . Este enfoque es compatible con los clientes que quieren innovar más rápidamente y pasar a una "cadencia en la nube" de ciclos de vida de desarrollo rápido. Puedes obtener más información acerca de la CBB en el [Blog de Windows Server](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/).
 
@@ -112,7 +110,7 @@ Enter-PSSession $s
    ```powershell
    # Apply the servicing stack update first and then restart
    dism.exe /Online /Add-Package /PackagePath:C:\ServicingPackages_cabs\Windows10.0-KB3176936-x64.cab
-   
+
    # After the operation completes successfully and you are prompted to restart, it's safe to
    # press Ctrl+C to cancel the pipeline and return to the prompt
    Restart-Computer; exit
@@ -133,7 +131,7 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
 
 - Buscar actualizaciones disponibles
    ```powershell
-   $ci = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
+   $ci = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession
    $result = $ci | Invoke-CimMethod -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=0";OnlineScan=$true}
    $result.Updates
    ```
@@ -151,7 +149,7 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
    $result = $ci | Invoke-CimMethod -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=1";OnlineScan=$true}
    $result.Updates
    ```
-   
+
 ## <a name="additional-options"></a>Additional Options
 Es posible que otros métodos para actualizar Nano Server se superpongan o complementen las opciones anteriores. Estas opciones incluyen el uso de Windows Server Update Services (WSUS), System Center Virtual Machine Manager (VMM), el programador de tareas o una solución de terceros.
 - [Configurar Windows Update para WSUS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939844(v=ws.10)) mediante las siguientes claves del Registro:

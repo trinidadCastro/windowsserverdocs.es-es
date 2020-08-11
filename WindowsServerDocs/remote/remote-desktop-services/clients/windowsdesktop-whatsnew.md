@@ -1,20 +1,18 @@
 ---
 title: Novedades del cliente de escritorio de Windows
 description: Obtén información sobre los cambios recientes en el cliente de Escritorio remoto para el escritorio de Windows
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 07/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 41e4923d64ebacf606f01350a873f6dbce564b4c
-ms.sourcegitcommit: 42cd33c95645321d09d006ff2e7666d6370dfbc3
+ms.openlocfilehash: 0077837fc03fbff37ed2a152ee68bfa4f1e24fa8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87330821"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961829"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 

@@ -1,20 +1,18 @@
 ---
 title: Migración de la implementación de Servicios de Escritorio remoto en Windows Server 2016
 description: En este artículo se describe cómo migrar la implementación de Servicios de Escritorio remoto a los nuevos servidores de Windows Server 2016.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 11/01/2016
 ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 2e4628e9ec7b5d75b88bb07282e2183a2f16fff2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 62c2cc99277b3cf74f6bde5be59b69569c27a31b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959157"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961819"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>Migración de la implementación de Servicios de Escritorio remoto en Windows Server 2016
 
@@ -53,8 +51,9 @@ Este es el primer y más importante paso para la migración: migrar los agentes 
 
 3. Agrega servidores de Agente de conexión a Escritorio remoto de Windows Server 2016 en la implementación de alta disponibilidad.
 
-> [!NOTE] 
-> No se admiten configuraciones mixtas de alta disponibilidad con Windows Server 2016 y Windows Server 2012 R2 para los servidores de Agente de conexión a Escritorio remoto. Un Agente de conexión a Escritorio remoto que ejecuta Windows Server 2016 puede servir colecciones de sesiones con servidores de host de sesión de Escritorio remoto que ejecutan Windows Server 2012 R2 y puede servir colecciones de escritorios virtuales con servidores de host de virtualización de Escritorio remoto que ejecutan Windows Server 2012 R2.
+> [!NOTE]
+> No se admiten configuraciones mixtas de alta disponibilidad con Windows Server 2016 y Windows Server 2012 R2 para los servidores de Agente de conexión a Escritorio remoto.
+> Un Agente de conexión a Escritorio remoto que ejecuta Windows Server 2016 puede servir colecciones de sesiones con servidores de host de sesión de Escritorio remoto que ejecutan Windows Server 2012 R2 y puede servir colecciones de escritorios virtuales con servidores de host de virtualización de Escritorio remoto que ejecutan Windows Server 2012 R2.
 
 ## <a name="migrate-session-collections"></a>Migrar las colecciones de sesiones
 

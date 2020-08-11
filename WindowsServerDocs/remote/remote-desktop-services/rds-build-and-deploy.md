@@ -1,24 +1,22 @@
 ---
 title: 'RDS: Creación e implementación'
 description: Pasos para crear una implementación de Escritorio remoto
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/18/2017
 ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: c0a2676cc5e7043cd1f96d6c1d393d7b0e443fe8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: be58880108f84aa6141157dbe730e18fcff4c6c2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961217"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961809"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>Crea e implementa la implementación de Servicios de Escritorio remoto.
 
-Una implementación de Servicios de Escritorio remoto es la infraestructura utilizada para compartir aplicaciones y recursos con los usuarios. Dependiendo de la experiencia que quieras proporcionar, puedes hacerla tan pequeña o compleja como necesites. Las implementaciones de Escritorio remoto se escalan fácilmente. Puedes aumentar y disminuir a voluntad los servidores de Acceso web a Escritorio remoto, de Puerta de enlace, de Agente de conexión y de Host de sesión. Puedes utilizar el Agente de conexión a Escritorio remoto para distribuir las cargas de trabajo. La autenticación basada en Active Directory proporciona un entorno altamente seguro. 
+Una implementación de Servicios de Escritorio remoto es la infraestructura utilizada para compartir aplicaciones y recursos con los usuarios. Dependiendo de la experiencia que quieras proporcionar, puedes hacerla tan pequeña o compleja como necesites. Las implementaciones de Escritorio remoto se escalan fácilmente. Puedes aumentar y disminuir a voluntad los servidores de Acceso web a Escritorio remoto, de Puerta de enlace, de Agente de conexión y de Host de sesión. Puedes utilizar el Agente de conexión a Escritorio remoto para distribuir las cargas de trabajo. La autenticación basada en Active Directory proporciona un entorno altamente seguro.
 
 Los [clientes de Escritorio remoto](clients/remote-desktop-clients.md) habilitan el acceso desde cualquier tableta, teléfono o equipo Windows, Apple o Android.
 
@@ -34,7 +32,7 @@ Consulta [Arquitectura de Servicios de Escritorio remoto](desktop-hosting-logica
 - [Implementación de una infraestructura de Servicios de Escritorio remoto](rds-deploy-infrastructure.md)
 - [Creación de una colección de sesiones para guardar las aplicaciones y los recursos que quieres compartir](rds-create-collection.md)
 - [Licencia de tu implementación de RDS](rds-client-access-license.md)
-- Pide a tus usuarios que instalen un [cliente de Escritorio remoto](clients/remote-desktop-clients.md) para que puedan acceder a las aplicaciones y los recursos. 
+- Pide a tus usuarios que instalen un [cliente de Escritorio remoto](clients/remote-desktop-clients.md) para que puedan acceder a las aplicaciones y los recursos.
 - Habilita la alta disponibilidad mediante la adición de Hosts de sesión y Agentes de conexión adicionales:
    - [Escalar horizontalmente una colección de RDS existente con una granja de servidores de host de sesión de Escritorio remoto](rds-scale-rdsh-farm.md)
    - [Agregar alta disponibilidad a la infraestructura del agente de conexión a Escritorio remoto](rds-connection-broker-cluster.md)

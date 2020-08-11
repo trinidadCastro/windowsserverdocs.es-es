@@ -1,19 +1,17 @@
 ---
 title: Uso de Robocopy para preinicializar archivos para Replicación DFS
 description: Cómo usar Robocopy.exe para preinicializar archivos para Replicación DFS.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 54c95a86514e006735bbfe784f3df46eb95e1f94
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 005df7b7cdf14c730d556585141891aa78ba714d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182261"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971202"
 ---
 # <a name="use-robocopy-to-pre-seed-files-for-dfs-replication"></a>Uso de Robocopy para preinicializar archivos para Replicación DFS
 

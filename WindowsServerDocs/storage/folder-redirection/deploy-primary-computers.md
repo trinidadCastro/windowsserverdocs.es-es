@@ -1,19 +1,17 @@
 ---
 title: Implementación de equipos principales para Redirección de carpetas y Perfiles de usuario móvil
 description: Cómo habilitar el soporte de equipo principal y designar equipos principales para usuarios con Redirección de carpetas y Perfiles de usuario móvil.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7af3d5c64216f60cca41aa9fb0c3d2c38c74e6c4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8645373f4f8e933e0eaad8e62672ecc16518ed4d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182251"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957613"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>Implementación de equipos principales para Redirección de carpetas y Perfiles de usuario móvil
 

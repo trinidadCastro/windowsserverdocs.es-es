@@ -2,18 +2,16 @@
 title: Mover discos a otro equipo
 description: En este artículo se describe cómo mover discos a otro equipo
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6db73f963766e480f8ec478657354a51bcb1f456
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1527dbd567eb72e407023ecdcfade04856a3127a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385822"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971192"
 ---
 # <a name="move-disks-to-another-computer"></a>Mover discos a otro equipo
 
@@ -58,14 +56,14 @@ Desinstala los discos que quieras mover con el Administrador de dispositivos.
 
 ## <a name="detect-new-disks"></a>Detección de nuevos discos
 
-1. En el nuevo equipo, abre Administración de discos. 
+1. En el nuevo equipo, abre Administración de discos.
 2. Haz clic en **Acción** y luego haz clic en **Volver a examinar los discos**.
-3. Haz clic con el botón derecho en cualquier disco marcado como **Externo**. 
+3. Haz clic con el botón derecho en cualquier disco marcado como **Externo**.
 4. Haz clic en **Importar discos externos** y sigue las instrucciones en pantalla.
 
 ## <a name="additional-considerations"></a>Consideraciones adicionales
 
--   Cuando se mueven a otro equipo, los volúmenes básicos reciben la siguiente letra de unidad disponible en ese equipo. 
+-   Cuando se mueven a otro equipo, los volúmenes básicos reciben la siguiente letra de unidad disponible en ese equipo.
 -   Los volúmenes dinámicos conservan la letra de unidad que tenían en el equipo anterior. Si un volumen dinámico no tenía una letra de unidad en el equipo anterior, no recibirá ninguna cuando se mueva a otro equipo. Si la letra de unidad ya se usa en el equipo al que se mueve un volumen, el volumen recibirá la siguiente letra de unidad disponible.
 
 -   Si un administrador ha usado el comando **mountvol /n** o **diskpart automount** para evitar que se agreguen nuevos volúmenes al sistema, se evita montar y asignar una letra de unidad a los volúmenes movidos desde otro equipo. Para usar el volumen, debes montarlo manualmente y asignarle una letra de unidad con Administración de discos o los comandos **DiskPart** y **mountvol**.

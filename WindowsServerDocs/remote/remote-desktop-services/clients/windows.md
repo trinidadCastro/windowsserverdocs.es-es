@@ -1,8 +1,6 @@
 ---
 title: Introducción al cliente de Microsoft Store
 description: Los pasos básicos para la configuración del cliente de Escritorio remoto para Microsoft Store.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
@@ -10,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ed87f2d03ef725c3efdfc2453b53201017e66e0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 05e32c05aaafb941958e025253e67c856d81257d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181951"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990371"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Introducción al cliente de Microsoft Store
 
@@ -203,4 +201,4 @@ Existen dos modos de ratón para interactuar con la sesión.
 | Puntero | Zoom                 | Con dos dedos, acérquelos para acercar el zoom y sepárelos para alejar. |
 
 > [!TIP]
-> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, si publica solicitudes de soporte técnico o comentarios sobre el producto en la sección Comentarios de este artículo, no podremos responder a sus comentarios. Si necesita ayuda o quiere solucionar problemas con su cliente, le recomendamos que vaya al [foro de clientes de Escritorio remoto](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) e inicie una nueva conversación. Si tiene alguna sugerencia de características, puede indicárnosla mediante el [Centro de opiniones](feedback-hub://?tabid=2&contextid=605).
+> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, si publica solicitudes de soporte técnico o comentarios sobre el producto en la sección Comentarios de este artículo, no podremos responder a sus comentarios. Si necesita ayuda o quiere solucionar problemas con su cliente, le recomendamos que vaya al [foro de clientes de Escritorio remoto](/answers/topics/windows-remote-desktop-client.html) e inicie una nueva conversación. Si tiene alguna sugerencia de características, puede indicárnosla mediante el [Centro de opiniones](feedback-hub://?tabid=2&contextid=605).

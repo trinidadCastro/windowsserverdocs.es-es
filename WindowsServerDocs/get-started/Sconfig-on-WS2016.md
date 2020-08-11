@@ -1,21 +1,19 @@
 ---
 title: Configuración de una instalación básica de Windows Server con Sconfig.cmd
 description: Explica cómo usar Sconfig.cmd
-ms.prod: windows-server
 ms.date: 10/17/2017
-ms.technology: server-general
 ms.topic: article
 ms.assetid: e6cac074-c6fc-46dd-9664-fa0342c0a5e8
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: db1a4fe48460a957369c2ca3ced24e0ccb54fef7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 727525d426a8417e642485be51db7206f3efa64a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959127"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959473"
 ---
 # <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>Configuración de una instalación básica de Windows Server 2016 o Windows Server, versión 1709, con Sconfig.cmd
 
@@ -100,12 +98,12 @@ Puede habilitar varios escenarios de administración remota desde la opción **C
 
 - Windows PowerShell
 
-- Administrador de servidores  
+- Administrador de servidores
 
 ## <a name="to-log-off-restart-or-shut-down-the-server"></a>Para cerrar sesión, reiniciar o apagar el servidor
 
-Para cerrar sesión, reiniciar o apagar el servidor, obtenga acceso al elemento del menú correspondiente en el menú principal. Estas opciones también están disponibles en el menú **Seguridad de Windows**, al que se puede obtener acceso desde cualquier aplicación en cualquier momento si presionas Ctrl + Alt + Supr.  
+Para cerrar sesión, reiniciar o apagar el servidor, obtenga acceso al elemento del menú correspondiente en el menú principal. Estas opciones también están disponibles en el menú **Seguridad de Windows**, al que se puede obtener acceso desde cualquier aplicación en cualquier momento si presionas Ctrl + Alt + Supr.
 
 ## <a name="to-exit-to-the-command-line"></a>Para salir a la línea de comandos
-  
+
 Seleccione la opción **Salir a la línea de comandos** y presione ENTRAR para salir a la línea de comandos. Para volver a la herramienta Configuración del servidor, escribe **Sconfig.cmd** y, a continuación, presiona ENTRAR.

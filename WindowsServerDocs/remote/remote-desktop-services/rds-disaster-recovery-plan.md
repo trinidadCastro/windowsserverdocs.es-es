@@ -1,19 +1,17 @@
 ---
 title: Crear un plan de recuperación ante desastres
 description: Obtén información sobre cómo crear un plan de recuperación ante desastres para su implementación de RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 18342bb7fd3ad26427ae1e1a051e20444fdff7c2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e7bf323d1a0506e9f9718d2afb8da392f0118929
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80859028"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961739"
 ---
 # <a name="create-your-disaster-recovery-plan-for-rds"></a>Crear un plan de recuperación ante desastres para RDS
 
@@ -38,7 +36,7 @@ Para una implementación de RDS basada en sesiones, agrupa las VM para que apare
 2. Grupo 2 de conmutación por error: VM del Agente de conexión
 3. Grupo 3 de conmutación por error: VM de acceso web
 
-Tu plan tendrá un aspecto similar a este: 
+Tu plan tendrá un aspecto similar a este:
 
 ![Un plan de recuperación ante desastres para una implementación de RDS basada en sesiones](media/rds-asr-session-drplan.png)
 
@@ -62,20 +60,20 @@ Para una implementación de RDS con escritorios agrupados, agrupa las VM de modo
    Broker - broker.contoso.com
    Virtualization host - VH1.contoso.com
 
-   ipmo RemoteDesktop; 
-   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
+   ipmo RemoteDesktop;
+   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com
    ```
 4. Grupo 2 de conmutación por error: VM de plantillas
 5. Script 1 del grupo 2: desactiva la VM de plantillas
-   
+
    La VM de plantillas, cuando se recupere en el sitio secundario, se iniciará, pero es una VM de preparada con Sysprep y no se puede iniciar por completo. Además, RDS requiere apagar la VM para crear una configuración de VM agrupadas a partir de ella. Por lo tanto, debemos desactivarla. Si tienes un único servidor VMM, el nombre de la VM de plantillas es el mismo en el principal y el secundario. Por este motivo, usamos el id. de VM según lo especificado por la variable *Context* en el siguiente script. Si tienes varias plantillas, desactívalas todas.
 
    ```powershell
-   ipmo virtualmachinemanager; 
+   ipmo virtualmachinemanager;
    Foreach($vm in $VMsAsTemplate)
    {
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
-   } 
+   }
    ```
 6. Script 2 del grupo 2: quita las VM agrupadas existentes
 
@@ -83,7 +81,7 @@ Para una implementación de RDS con escritorios agrupados, agrupa las VM de modo
 
    ```powershell
    ipmo RemoteDesktop
-   $desktops = Get-RDVirtualDesktop -CollectionName Win8Desktops; 
+   $desktops = Get-RDVirtualDesktop -CollectionName Win8Desktops;
    Foreach($vm in $desktops){
       Remove-RDVirtualDesktopFromCollection -CollectionName Win8Desktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
@@ -98,8 +96,8 @@ Para una implementación de RDS con escritorios agrupados, agrupa las VM de modo
    El nombre de la VM agrupada debe ser único, con el prefijo y sufijo. Si ya existe el nombre de la VM, se producirá un error en el script. Además, si las VM del lado principal se numeran del 1 al 5, la numeración del sitio de recuperación continuará desde el 6.
 
    ```powershell
-   ipmo RemoteDesktop; 
-   Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1} 
+   ipmo RemoteDesktop;
+   Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1}
    ```
 9. Grupo 3 de conmutación por error: VM de acceso web y servidor de puerta de enlace
 
@@ -120,27 +118,27 @@ Para una implementación de RDS con escritorios personales, agrupa las VM de mod
    ipconfig /registerdns
    ```
 3. Script del grupo 1: agregue hosts de virtualización
-      
+
    Modifica el script siguiente para ejecutarlo para cada host de virtualización en la nube. Normalmente, después de agregar un host de virtualización a un Agente de conexión, deberás reiniciar el host. Asegúrate de que el host no tenga un reinicio pendiente antes de ejecutar el script o, de lo contrario, se producirá un error.
 
    ```powershell
    Broker - broker.contoso.com
    Virtualization host - VH1.contoso.com
 
-   ipmo RemoteDesktop; 
-   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
+   ipmo RemoteDesktop;
+   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com
    ```
 4. Grupo 2 de conmutación por error: VM de plantillas
 5. Script 1 del grupo 2: desactiva la VM de plantillas
-   
+
    La VM de plantillas, cuando se recupere en el sitio secundario, se iniciará, pero es una VM de preparada con Sysprep y no se puede iniciar por completo. Además, RDS requiere apagar la VM para crear una configuración de VM agrupadas a partir de ella. Por lo tanto, debemos desactivarla. Si tienes un único servidor VMM, el nombre de la VM de plantillas es el mismo en el principal y el secundario. Por este motivo, usamos el id. de VM según lo especificado por la variable *Context* en el siguiente script. Si tienes varias plantillas, desactívalas todas.
 
    ```powershell
-   ipmo virtualmachinemanager; 
+   ipmo virtualmachinemanager;
    Foreach($vm in $VMsAsTemplate)
    {
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
-   } 
+   }
    ```
 6. Grupo 3 de conmutación por error: VM personales
 7. Script 1 del grupo 3: quita las VM personales existentes y agréguelas
@@ -149,17 +147,17 @@ Para una implementación de RDS con escritorios personales, agrupa las VM de mod
 
    ```powershell
    ipmo RemoteDesktop
-   $desktops = Get-RDVirtualDesktop -CollectionName CEODesktops; 
-   Export-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
+   $desktops = Get-RDVirtualDesktop -CollectionName CEODesktops;
+   Export-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com
 
    Foreach($vm in $desktops){
      Remove-RDVirtualDesktopFromCollection -CollectionName CEODesktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
-   
-   Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
+
+   Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com
    ```
 8. Grupo 3 de conmutación por error: VM de acceso web y servidor de puerta de enlace
 
-Tu plan tendrá un aspecto similar a este: 
+Tu plan tendrá un aspecto similar a este:
 
 ![Un plan de recuperación ante desastres para una implementación de RDS con escritorios personales](media/rds-asr-personal-desktops-drplan.png)

@@ -2,24 +2,22 @@
 title: Reducir un volumen básico
 description: En este artículo se describe cómo reducir un volumen básico.
 ms.date: 06/07/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2baf24ed656ef06d44dff93180701d25e6852500
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 652e5c85e0e094dd463302bffa8922ef5548dd6b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385862"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971182"
 ---
 # <a name="shrink-a-basic-volume"></a>Reducir un volumen básico
 
 > **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Es posible disminuir el espacio que usan las particiones principales y las unidades lógicas reduciéndolas en espacios adyacentes y contiguos del mismo disco. Por ejemplo, si necesitas una partición más pero no dispones de discos adicionales, puedes reducir la partición existente de la parte final del volumen para crear un nuevo espacio sin asignar que puede usarse para una nueva partición. La operación de reducción puede bloquearse por la presencia de determinados tipos de archivos. Para obtener más información, consulta [Consideraciones adicionales](#additional-considerations). 
+Es posible disminuir el espacio que usan las particiones principales y las unidades lógicas reduciéndolas en espacios adyacentes y contiguos del mismo disco. Por ejemplo, si necesitas una partición más pero no dispones de discos adicionales, puedes reducir la partición existente de la parte final del volumen para crear un nuevo espacio sin asignar que puede usarse para una nueva partición. La operación de reducción puede bloquearse por la presencia de determinados tipos de archivos. Para obtener más información, consulta [Consideraciones adicionales](#additional-considerations).
 
 Al reducir una partición, todos los archivos normales se reubican automáticamente en el disco para crear el nuevo espacio sin asignar. No es necesario volver a formatear el disco para reducir la partición.
 
@@ -63,7 +61,8 @@ Al reducir una partición, todos los archivos normales se reubican automáticame
 
 ## <a name="additional-considerations"></a>Consideraciones adicionales
 
--   Al reducir una partición, no pueden reubicarse automáticamente determinados archivos (por ejemplo, el archivo de paginación o el área de almacenamiento de instantáneas) ni se puede reducir el espacio asignado más allá del punto donde se encuentran los archivos que no pueden moverse. Si se produce un error en la operación de reducción, comprueba el registro de aplicaciones para el evento 259, que identificará el archivo que no puede moverse. Si sabes que los clústeres asociados con el archivo impiden la operación de reducción, también puedes usar el comando **fsutil** en un símbolo del sistema (escribe **fsutil volume querycluster /?** para el uso). Cuando se proporciona el parámetro **querycluster**, el resultado del comando identificará el archivo que no se puede mover que impide que la operación de reducción se realice correctamente.
+-   Al reducir una partición, no pueden reubicarse automáticamente determinados archivos (por ejemplo, el archivo de paginación o el área de almacenamiento de instantáneas) ni se puede reducir el espacio asignado más allá del punto donde se encuentran los archivos que no pueden moverse.
+Si se produce un error en la operación de reducción, comprueba el registro de aplicaciones para el evento 259, que identificará el archivo que no puede moverse. Si sabes que los clústeres asociados con el archivo impiden la operación de reducción, también puedes usar el comando **fsutil** en un símbolo del sistema (escribe **fsutil volume querycluster /?** para el uso). Cuando se proporciona el parámetro **querycluster**, el resultado del comando identificará el archivo que no se puede mover que impide que la operación de reducción se realice correctamente.
 En algunos casos, se puede cambiar la ubicación del archivo temporalmente. Por ejemplo, si necesitas reducir aún más la partición, puedes usar el Panel de control para mover el archivo de paginación o instantáneas almacenadas en otro disco, eliminar las instantáneas almacenadas, reducir el volumen y mover el archivo de paginación en el disco. Si el número de clústeres defectuosos detectados por la reasignación dinámica de clústeres defectuosos es demasiado alto, no se puede reducir la partición. Si esto ocurre, debes considerar trasladar los datos y reemplazar el disco.
 
 -  No uses una copia de nivel de bloque para transferir los datos. También se copiará la tabla de sectores defectuosos y el nuevo disco tratará los mismos sectores como defectuosos aunque sean normales.

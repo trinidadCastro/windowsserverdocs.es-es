@@ -1,18 +1,16 @@
 ---
 title: Instalar y administrar extensiones
 description: Instalar y administrar extensiones en Windows Admin Center (proyecto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 4ba2e760d57f1c3f59e40b78b449a8831b8093d2
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: c2feaaff614d00afeaf5d132c446eebe5fdf0989
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942314"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966782"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar y administrar extensiones
 
@@ -24,7 +22,7 @@ Windows Admin Center se ha creado como una plataforma extensible en que cada her
 
 Windows Admin Center mostrará las extensiones disponibles de la fuente de NuGet especificada. De forma predeterminada, Windows Admin Center apunta a la fuente de NuGet oficial de Microsoft, que incluye las extensiones publicadas por Microsoft y otros desarrolladores.
 
-1. Haz clic en el botón **Configuración** de la parte superior derecha. A continuación, en el panel izquierdo, haz clic en **Extensiones**. 
+1. Haz clic en el botón **Configuración** de la parte superior derecha. A continuación, en el panel izquierdo, haz clic en **Extensiones**.
 2. En la pestaña **Extensiones disponibles** se enumeran las extensiones de la fuente disponibles para la instalación.
 3. Haz clic en una extensión para ver la descripción de la extensión, la versión, el editor y otra información en el panel **Detalles**.
 4. Haz clic en **Instalar** para instalar una extensión. Si la puerta de enlace debe ejecutarse en modo con privilegios elevados para realizar este cambio, se te presentará una petición de elevación de UAC. Una vez completada la instalación, el explorador se actualizará automáticamente y Windows Admin Center se volverá a cargar con la nueva extensión instalada. Si la extensión que estás intentando instalar es una actualización de una extensión instalada previamente, puedes hacer clic en el botón **Update to latest** (Actualizar a la versión más reciente) para instalar la actualización. También puedes ir a la pestaña **Extensiones instaladas** para ver las extensiones instaladas y ver si hay alguna actualización disponible en la columna **Estado**.
@@ -44,7 +42,7 @@ La lista **Extensiones disponibles** mostrará las extensiones de todas las fuen
 
 Puedes desinstalar cualquier extensión que hayas instalado anteriormente o, incluso, desinstalar las herramientas que se instalaron previamente como parte de la instalación de Windows Admin Center.
 
-1. Haz clic en el botón **Configuración** de la parte superior derecha. A continuación, en el panel izquierdo, haz clic en **Extensiones**. 
+1. Haz clic en el botón **Configuración** de la parte superior derecha. A continuación, en el panel izquierdo, haz clic en **Extensiones**.
 2. Haz clic en la pestaña **Extensiones instaladas** para ver todas las extensiones instaladas.
 3. Elige una extensión para desinstalarla y, a continuación, haz clic en **Desinstalar**.
 
@@ -56,7 +54,7 @@ Si Windows Admin Center está instalado en un equipo que no está conectado a In
 
 ### <a name="manually-downloading-extension-packages"></a>Descarga manual de paquetes de extensión
 
-1. En otro equipo que tenga conectividad a Internet, abre un explorador web y navega a la dirección URL siguiente: [https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC) 
+1. En otro equipo que tenga conectividad a Internet, abre un explorador web y navega a la dirección URL siguiente: [https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC)
 
    * Es posible que tenga que crear una cuenta de Microsoft e iniciar sesión para ver los paquetes de extensión.
 

@@ -2,24 +2,22 @@
 title: Administración de discos duros virtuales (VHD)
 description: En este artículo se describe cómo administrar discos duros virtuales
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6ffa7e9dc769b8d8c892d0af1ceae5246df62d3e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c00fcec3e27f3c91b429419fe25b5dc84125a720
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385810"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957673"
 ---
 # <a name="manage-virtual-hard-disks-vhd"></a>Administración de discos duros virtuales (VHD)
 
 > **Se aplica a:** Windows 10, Windows 8.1, Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En este tema se describe cómo crear, exponer y ocultar discos duros virtuales con Administración de discos. Los discos duros virtuales (VHD) son archivos de disco duro virtualizados que, una vez montados, aparecen y funcionan de forma prácticamente idéntica a una unidad de disco duro física. Se usan con mayor frecuencia con máquinas virtuales de Hyper-V. 
+En este tema se describe cómo crear, exponer y ocultar discos duros virtuales con Administración de discos. Los discos duros virtuales (VHD) son archivos de disco duro virtualizados que, una vez montados, aparecen y funcionan de forma prácticamente idéntica a una unidad de disco duro física. Se usan con mayor frecuencia con máquinas virtuales de Hyper-V.
 
 ## <a name="viewing-vhds-in-disk-management"></a>Visualización de discos duros virtuales (VHD) en Administración de discos
 
@@ -40,7 +38,7 @@ Los VHD aparecen igual que los discos físicos en Administración de discos. Cua
 
 ## <a name="attaching-and-detaching-a-vhd"></a>Exponer y ocultar un VHD
 
-Para tener un disco duro virtual disponible para su uso (uno que acabas de crear u otro VHD existente): 
+Para tener un disco duro virtual disponible para su uso (uno que acabas de crear u otro VHD existente):
 
 1. En el menú **Acción**, selecciona **Exponer VHD**.
 

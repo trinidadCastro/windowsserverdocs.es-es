@@ -1,19 +1,17 @@
 ---
 title: Novedades de Windows Server 2019
 description: Una descripción general de las nuevas funciones de Windows Server 2019, incluida la Experiencia de escritorio, el servicio de migración de almacenamiento, la información del sistema, el adaptador de red de Azure, mejoras en Espacios de almacenamiento directo y otros cambios.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: fd094347679d147a04faefdf3741a06addda2026
-ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
+ms.openlocfilehash: 6337a3812cb6e1ca838c463bc811f8959d1f0714
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86946583"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972372"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novedades de Windows Server 2019
 
@@ -45,9 +43,9 @@ Información del sistema es una nueva característica disponible en Windows Serv
 
 ### <a name="server-core-app-compatibility-feature-on-demand"></a>Función de compatibilidad de aplicaciones de Server Core a petición
 
-La [característica de compatibilidad de aplicaciones de Server Core a petición (FOD)](./install-fod-19.md) mejora significativamente la compatibilidad de las aplicaciones de la opción de instalación de Windows Server Core, al incluir un subconjunto de archivos binarios y componentes de Windows Server con la experiencia de escritorio sin agregar el propio entorno gráfico de la experiencia de escritorio de Windows Server.  Esto se hace para aumentar la funcionalidad y la compatibilidad de Server Core a la vez que se mantiene lo más simple posible.  
+La [característica de compatibilidad de aplicaciones de Server Core a petición (FOD)](./install-fod-19.md) mejora significativamente la compatibilidad de las aplicaciones de la opción de instalación de Windows Server Core, al incluir un subconjunto de archivos binarios y componentes de Windows Server con la experiencia de escritorio sin agregar el propio entorno gráfico de la experiencia de escritorio de Windows Server.  Esto se hace para aumentar la funcionalidad y la compatibilidad de Server Core a la vez que se mantiene lo más simple posible.
 
-Esta característica opcional a petición está disponible en una ISO independiente y se puede agregar solo a imágenes e instalaciones de Windows Server Core mediante DISM. 
+Esta característica opcional a petición está disponible en una ISO independiente y se puede agregar solo a imágenes e instalaciones de Windows Server Core mediante DISM.
 
 ## <a name="security"></a>Seguridad
 
@@ -75,7 +73,7 @@ Para solucionar esta problemática, se crearon directivas de CI predeterminadas 
 
 ### <a name="security-with-software-defined-networking-sdn"></a>Seguridad con Redes definidas por software (SDN)
 
-[Seguridad con SDN](../networking/sdn/security/sdn-security-top.md) ofrece muchas características para aumentar la confianza del cliente en la ejecución de cargas de trabajo, de forma local, o como proveedor de servicios en la nube. 
+[Seguridad con SDN](../networking/sdn/security/sdn-security-top.md) ofrece muchas características para aumentar la confianza del cliente en la ejecución de cargas de trabajo, de forma local, o como proveedor de servicios en la nube.
 
 Estas mejoras de seguridad están integradas en la plataforma completa de SDN que se introdujo en Windows Server 2016.
 
@@ -91,7 +89,7 @@ Para obtener una lista completa de las novedades de SDN, consulta [Novedades de 
 
 - **Solución de problemas de las mejoras**
 
-    También hemos facilitado la [solución de problemas de las máquinas virtuales blindadas](../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md) habilitando el soporte con el modo de sesión mejorada de VMConnect y PowerShell Direct. Estas herramientas son especialmente útiles si perdiste la conectividad de red con la VM y necesitas actualizar su configuración para restaurar el acceso. 
+    También hemos facilitado la [solución de problemas de las máquinas virtuales blindadas](../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md) habilitando el soporte con el modo de sesión mejorada de VMConnect y PowerShell Direct. Estas herramientas son especialmente útiles si perdiste la conectividad de red con la VM y necesitas actualizar su configuración para restaurar el acceso.
 
     No es necesario configurar estas características y están disponibles automáticamente cuando se coloca una VM blindada en un host de Hyper-V con Windows Server, versión 1803 o posterior.
 
@@ -168,7 +166,7 @@ Windows Server 2019 continúa con las mejoras de cálculo, redes y almacenamient
 - Las cargas de trabajo implementadas en Kubernetes pueden usar la seguridad de red para proteger los servicios de Windows y Linux con herramientas incrustadas.
 
 ### <a name="container-improvements"></a>Mejoras de contenedor
-    
+
 - **Mejora de la identidad integrada**
 
     Hemos facilitado la autenticación integrada de Windows en contenedores y la hemos vuelto más confiable, abordando varias limitaciones de versiones anteriores de Windows Server.
@@ -187,7 +185,8 @@ Windows Server 2019 continúa con las mejoras de cálculo, redes y almacenamient
 
 ### <a name="encrypted-networks"></a>Redes cifradas
 
-[Redes cifradas](../networking/sdn/sdn-whats-new.md): el cifrado de red virtual permite el cifrado del tráfico de red virtual entre máquinas virtuales que se comunican entre sí dentro de subredes marcadas como **Cifrado habilitado**. También utiliza la Seguridad de la capa de transporte de datagrama (DTLS) en la subred virtual para cifrar los paquetes. DTLS protege frente a las interceptaciones, alteraciones y falsificaciones realizadas por cualquier persona con acceso a la red física.
+[Redes cifradas](../networking/sdn/sdn-whats-new.md): el cifrado de red virtual permite el cifrado del tráfico de red virtual entre máquinas virtuales que se comunican entre sí dentro de subredes marcadas como **Cifrado habilitado**.
+También utiliza la Seguridad de la capa de transporte de datagrama (DTLS) en la subred virtual para cifrar los paquetes. DTLS protege frente a las interceptaciones, alteraciones y falsificaciones realizadas por cualquier persona con acceso a la red física.
 
 ### <a name="network-performance-improvements-for-virtual-workloads"></a>Mejoras de rendimiento de red para las cargas de trabajo virtuales
 
@@ -199,7 +198,7 @@ Las [mejoras de rendimiento de red para las cargas de trabajo virtuales](../netw
 
 ### <a name="low-extra-delay-background-transport"></a>Transporte en segundo plano de retraso adicional bajo
 
-El transporte en segundo plano de retraso adicional bajo (LEDBAT) es un proveedor de controles de congestión de red de optimización de latencia diseñado para producir automáticamente ancho de banda a usuarios y aplicaciones, a la vez que consume todo el ancho de banda disponible cuando no se está usando la red.   
+El transporte en segundo plano de retraso adicional bajo (LEDBAT) es un proveedor de controles de congestión de red de optimización de latencia diseñado para producir automáticamente ancho de banda a usuarios y aplicaciones, a la vez que consume todo el ancho de banda disponible cuando no se está usando la red.
 Esta tecnología está pensada para usarla en la implementación de actualizaciones críticas de gran tamaño en un entorno de TI sin afectar a los servicios orientados a los clientes y al ancho de banda asociado.
 
 ### <a name="windows-time-service"></a>Servicio de hora de Windows
@@ -214,7 +213,7 @@ El [Servicio de hora de Windows](../networking/windows-time-service/insider-prev
 
 ### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>Nueva extensión de Windows Admin Center e interfaz de usuario de implementación para SDN
 
-Ahora, con Windows Server 2019, la implementación y administración son fáciles a través de una nueva interfaz de usuario de implementación y una extensión de Windows Admin Center que permiten que cualquier persona pueda aprovechar la capacidad de SDN. 
+Ahora, con Windows Server 2019, la implementación y administración son fáciles a través de una nueva interfaz de usuario de implementación y una extensión de Windows Admin Center que permiten que cualquier persona pueda aprovechar la capacidad de SDN.
 
 ### <a name="persistent-memory-support-for-hyper-v-vms"></a>Soporte de memoria persistente para máquinas virtuales de Hyper-V
 
