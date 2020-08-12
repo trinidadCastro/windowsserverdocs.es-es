@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f98ec982601281d5b16a5ec369ca275de189c85
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5eddc639fd07516b95b23684ec4137f328b7c105
+ms.sourcegitcommit: 08da40966c5d633f8748c8ae348f12656a54d3b2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996482"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140302"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implementar espacios de almacenamiento en un servidor independiente
 
@@ -100,19 +100,19 @@ Los siguientes cmdlets de Windows PowerShell realizan la misma función que el p
 El siguiente ejemplo muestra qué discos físicos están disponibles en el grupo primordial.
 
 ```PowerShell
-Get-StoragePool -IsPrimordial $true | Get-PhysicalDisk | Where-Object CanPool -eq $True
+Get-StoragePool -IsPrimordial $true | Get-PhysicalDisk -CanPool $True
 ```
 
 En el ejemplo siguiente se crea un nuevo grupo de almacenamiento denominado *StoragePool1* que usa todos los discos disponibles.
 
 ```PowerShell
-New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName “Storage Spaces*” –PhysicalDisks (Get-PhysicalDisk –CanPool $True)
+New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName "Windows Storage*" –PhysicalDisks (Get-PhysicalDisk –CanPool $True)
 ```
 
 En el ejemplo siguiente se crea un nuevo grupo de almacenamiento, *StoragePool1*, que usa cuatro de los discos disponibles.
 
 ```PowerShell
-New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName “Storage Spaces*” –PhysicalDisks (Get-PhysicalDisk PhysicalDisk1, PhysicalDisk2, PhysicalDisk3, PhysicalDisk4)
+New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName "Windows Storage*" –PhysicalDisks (Get-PhysicalDisk PhysicalDisk1, PhysicalDisk2, PhysicalDisk3, PhysicalDisk4)
 ```
 
 La siguiente secuencia de cmdlets de ejemplo muestra cómo agregar un disco físico disponible llamado *PhysicalDisk5* como reserva activa al grupo de almacenamiento *StoragePool1*.
