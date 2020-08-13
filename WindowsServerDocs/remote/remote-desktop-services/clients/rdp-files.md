@@ -1,20 +1,18 @@
 ---
 title: Configuración admitida del archivo RDP de Escritorio remoto
 description: Obtén información sobre la configuración del archivo RDP para Escritorio remoto
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 06/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8132c6d996a3e814b15eb34b713832fb6a98d6a0
-ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
+ms.openlocfilehash: 5303bb696131d4e122da11c2d72152bf304716b4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85586702"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961939"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configuración admitida del archivo RDP de Escritorio remoto
 
@@ -59,17 +57,18 @@ En la tabla también se resalta qué configuración se admite como propiedades p
 | redirected video capture encoding quality:i:value | Controla la calidad del vídeo codificado. | - 0: vídeo de compresión alta. La calidad puede verse afectada cuando hay mucho movimiento. </br>- 1: compresión media.</br>- 2: vídeo de compresión baja con alta calidad de imagen. | 0 | Sí |
 | audiomode:i:value | Ubicación de salida.</br>Determina si el equipo local o remoto reproduce audio. | - 0: reproducir sonidos en el equipo local (Reproducir en este equipo).</br>- 1: reproducir sonidos en el equipo remoto (Reproducir en equipo remoto).</br>- 2: No reproducir sonidos (No reproducir) | 0 | Sí |
 | camerastoredirect:s:value | Redireccionamiento de la cámara.</br>Configura las cámaras que se redirigirán. Esta configuración usa una lista delimitada por signos de punto y coma de las interfaces KSCATEGORY_VIDEO_CAMERA de las cámaras habilitadas para el redireccionamiento. | - * : redirige todas las cámaras.</br> - Lista de las cámaras, como camerastoredirect:s:\\?\usb#vid_0bda&pid_58b0&mi</br>- Para excluir una cámara específica, se puede anteponer "-" a la cadena de vínculo simbólico. | No redirigir ninguna cámara. | Sí |
-| devicestoredirect:s:value | Redireccionamiento de dispositivos USB.</br>Determina qué dispositivos del equipo local se redirigirán a la sesión remota y estarán disponibles en ella. | - *: redirigir todos los dispositivos compatibles, incluidos los que se conectan posteriormente</br> - Identificador de hardware válido de uno o varios dispositivos | No redirigir ningún dispositivo. | Sí |
+| devicestoredirect:s:value | Redirección del dispositivo Plug and Play:</br>Determina qué dispositivos del equipo local se redirigirán a la sesión remota y estarán disponibles en ella. | - *: redirigir todos los dispositivos compatibles, incluidos los que se conectan posteriormente</br> - Identificador de hardware válido de uno o varios dispositivos</br> - DynamicDevices: redirige todos los dispositivos compatibles que se conectan posteriormente. | No redirigir ningún dispositivo. | Sí |
 | drivestoredirect:s:value | Redireccionamiento de unidades y almacenamiento.</br>Determina qué unidades de disco del equipo local se redirigirán a la sesión remota y estarán disponibles en ella. | - Ningún valor especificado: no redirigir ninguna unidad</br>- * : Redirigir todas las unidades de disco, incluidas las unidades que se conecten más adelante</br>- DynamicDrives: redirigir las unidades que se conecten más adelante</br>- La unidad y las etiquetas para una o más unidades, como "drivestoredirect:s:C:;E:;": redirigir las unidades especificadas | No redirigir ninguna unidad. | Sí |
 | redirectclipboard:i:value | Redireccionamiento del Portapapeles.</br>Determina si el redireccionamiento del Portapapeles está habilitado. | - 0: El Portapapeles del equipo local no está disponible en la sesión remota</br>- 1: El Portapapeles del equipo local está disponible en la sesión remota | 1 | Sí |
 | redirectprinters:i:value | Redirección de impresoras.</br>Determina si las impresoras configuradas en el equipo local se redirigirán a la sesión remota y estarán disponibles en ella. | - 0: Las impresoras en el equipo local no están disponibles en la sesión remota</br>- 1: Las impresoras en el equipo local están disponibles en la sesión remota | 1 | Sí |
 | redirectsmartcards:i:value | Redireccionamiento de tarjetas inteligentes.</br>Determina qué dispositivos de tarjeta inteligente del equipo local se redirigirán a la sesión remota y estarán disponibles en ella. |- 0: El dispositivo de tarjeta inteligente en el equipo local no está disponible en la sesión remota</br>- 1: El dispositivo de tarjeta inteligente en el equipo local está disponible en la sesión remota | 1 | Sí |
+| usbdevicestoredirect:s:value | Redireccionamiento de USB | - *: redirige todos los dispositivos USB que aún no haya redirigido otro redireccionamiento de alto nivel.</br> - {Device Setup Class GUID}: redirige todos los dispositivos que son miembros de la [clase de configuración de dispositivo](/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors/) especificada.</br> - USBInstanceID: redirige un dispositivo USB específico que identifica el id. de la instancia.| No redirigir ningún dispositivo USB | Sí |
 
 ## <a name="display-settings"></a>Configuración de pantalla
 
 | Configuración de RDP                        | Descripción            | Valores                 | Valor predeterminado          | Soporte técnico de Windows Virtual Desktop |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|
-| use multimon:i:value | Determina si la sesión remota usará una o varias pantallas del equipo local. | - 0: no habilitar la compatibilidad con varias pantallas.</br>- 1: habilitar la compatibilidad con varias pantallas. | 0 | Sí |
+| use multimon:i:value | Determina si la sesión remota usará una o varias pantallas del equipo local. | - 0: no habilitar la compatibilidad con varias pantallas.</br>- 1: habilitar la compatibilidad con varias pantallas. | 1 | Sí |
 | selectedmonitors:s:value | Especifica qué pantallas locales se van a utilizar desde la sesión remota. Las pantallas seleccionadas deben ser contiguas. Requiere que use multimon se establezca en 1.</br></br>Solo está disponible en los clientes de Bandeja de entrada de Windows (MSTSC) y Escritorio de Windows (MSRDC). | Lista separada por comas de identificadores de pantalla específicos del equipo. Los identificadores se pueden recuperar llamando a mstsc.exe/l. El primer identificador que se muestra se establecerá como la pantalla principal en la sesión. | Todas las pantallas | Sí |
 | maximizetocurrentdisplays:i:value | Determina el modo en que la sesión remota pasa a pantalla completa al maximizar. Requiere que use multimon se establezca en 1.</br></br>Solo está disponible en el cliente de Escritorio de Windows (MSRDC). | - 0: la sesión pasa a pantalla completa en las pantallas seleccionadas inicialmente al maximizar.</br>- 1: la sesión pasa de forma dinámica a pantalla completa en las pantallas tocadas por la ventana de sesión al maximizar. | 0 | Sí |
 | singlemoninwindowedmode:i:value | Determina si una sesión remota con varias pantallas cambia automáticamente a una sola pantalla al salir del modo de pantalla completa. Requiere que use multimon se establezca en 1.</br></br>Solo está disponible en el cliente de Escritorio de Windows (MSRDC). | - 0: la sesión conserva todas las pantallas al salir del modo de pantalla completa.</br>- 1: la sesión cambia a una sola pantalla al salir del modo de pantalla completa. | 0 | Sí |

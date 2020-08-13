@@ -1,24 +1,22 @@
 ---
 title: Implementación de Windows Admin Center con alta disponibilidad
 description: Implementación de Windows Admin Center con alta disponibilidad (Proyecto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6ae7bd9ed7aee5835ac1f53b9e10879ad8824f52
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 132f566e8467179c1a58e3555d26ab834dae7129
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71406948"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970862"
 ---
 # <a name="deploy-windows-admin-center-with-high-availability"></a>Implementación de Windows Admin Center con alta disponibilidad
 
 >Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-Puedes implementar Windows Admin Center en un clúster de conmutación por error para proporcionar alta disponibilidad para el servicio de puerta de enlace de Windows Admin Center. La solución proporcionada es una solución activa-pasiva, donde solo hay activa una instancia de Windows Admin Center. Si se produce un error en uno de los nodos del clúster, Windows Admin Center conmuta por error correctamente a otro nodo, lo que te permite seguir administrando los servidores de tu entorno sin problemas. 
+Puedes implementar Windows Admin Center en un clúster de conmutación por error para proporcionar alta disponibilidad para el servicio de puerta de enlace de Windows Admin Center. La solución proporcionada es una solución activa-pasiva, donde solo hay activa una instancia de Windows Admin Center. Si se produce un error en uno de los nodos del clúster, Windows Admin Center conmuta por error correctamente a otro nodo, lo que te permite seguir administrando los servidores de tu entorno sin problemas.
 
 [Obtén información sobre otras opciones de implementación de Windows Admin Center.](../plan/installation-options.md)
 
@@ -35,12 +33,12 @@ Puedes implementar Windows Admin Center en un clúster de conmutación por error
 2. Conéctate al nodo a través de RDP y ejecuta el script ```Install-WindowsAdminCenterHA.ps1``` desde ese nodo con los parámetros siguientes:
     - `-clusterStorage`: Ruta de acceso local del Volumen compartido de clúster para almacenar los datos de Windows Admin Center.
     - `-clientAccessPoint`: Elige un nombre que usarás para acceder a Windows Admin Center. Por ejemplo, si ejecutas el script con el parámetro `-clientAccessPoint contosoWindowsAdminCenter`, accederás al servicio de Windows Admin Center visitando `https://contosoWindowsAdminCenter.<domain>.com`.
-    - `-staticAddress`: Opcional. Una o varias direcciones estáticas para el servicio genérico de clústeres. 
+    - `-staticAddress`: Opcional. Una o varias direcciones estáticas para el servicio genérico de clústeres.
     - `-msiPath`: Ruta de acceso del archivo .msi de Windows Admin Center.
     - `-certPath`: Opcional. Ruta de acceso de un archivo .pfx de certificados.
     - `-certPassword`: Opcional. Contraseña SecureString para el archivo .pfx de certificados que se proporciona en `-certPath`.
     - `-generateSslCert`: Opcional. Si no quieres proporcionar un certificado firmado, incluye esta marca de parámetro para generar un certificado autofirmado. Ten en cuenta que el certificado autofirmado expirará a los 60 días.
-    - `-portNumber`: Opcional. Si no especificas un puerto, el servicio de puerta de enlace se implementa en el puerto 443 (HTTPS). Para usar otro puerto, especifica este parámetro. Ten en cuenta que si usas un puerto personalizado (otro que no sea el 443), accederás a Windows Admin Center desde https://\<clientAccessPoint\>:\<puerto\>.
+    - `-portNumber`: Opcional. Si no especificas un puerto, el servicio de puerta de enlace se implementa en el puerto 443 (HTTPS). Para usar otro puerto, especifica este parámetro. Tenga en cuenta que, si usa un puerto personalizado (uno que no sea el 443), accederá a Windows Admin Center desde https://\<clientAccessPoint\>:\<port\>.
 
 > [!NOTE]
 > El script ```Install-WindowsAdminCenterHA.ps1``` admite los parámetros ```-WhatIf ``` y ```-Verbose```.
@@ -86,7 +84,7 @@ También puedes actualizar el certificado al mismo tiempo que actualizas la plat
 ```powershell
 $certPassword = Read-Host -AsSecureString
 .\Install-WindowsAdminCenterHA.ps1 -msiPath ".\WindowsAdminCenter.msi" -certPath "cert.pfx" -certPassword $certPassword -Verbose
-``` 
+```
 
 ## <a name="uninstall"></a>Desinstalar
 

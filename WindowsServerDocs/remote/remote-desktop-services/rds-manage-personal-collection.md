@@ -1,19 +1,17 @@
 ---
 title: Administrar una colección de sesiones de escritorios personales en RDS
 description: Obtén información sobre cómo agregar programas RDSH y RemoteApp a tu implementación de RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 11/08/2016
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7088d164ecdd7211894b004ed580eecb33d1ba60
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bd6c91b7f022e60e488c90776e0981523da7bccb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861068"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961659"
 ---
 # <a name="manage-your-personal-desktop-session-collections"></a>Administrar tus colecciones de sesiones de escritorios personales
 
@@ -22,13 +20,13 @@ Usa la siguiente información para administrar una colección de sesiones de esc
 ## <a name="manually-assign-a-user-to-a-personal-session-host"></a>Asignar manualmente un usuario a un host de sesión personal
 Usa el cmdlet **Set-RDPersonalSessionDesktopAssignment** para asignar manualmente un usuario a un servidor host de sesión personal en la colección. El cmdlet admite los parámetros siguientes:
 
--CollectionName \<cadena\>
+-CollectionName \<string\>
 
--ConnectionBroker \<cadena\> 
+-ConnectionBroker \<string\>
 
--User \<cadena\>
+-User \<string\>
 
--Name \<cadena\>
+-Name \<string\>
 
 - **–CollectionName**: Especifica el nombre de la colección de escritorios de sesión personal. Este parámetro es obligatorio.
 - **–ConnectionBroker**: Especifica el servidor del Agente de conexión a Escritorio remoto para la implementación de Escritorio remoto. Si no proporcionas un valor, el cmdlet usa el nombre de dominio completo (FQDN) del equipo local.
@@ -37,50 +35,50 @@ Usa el cmdlet **Set-RDPersonalSessionDesktopAssignment** para asignar manualment
 
 El cmdlet **Import-RDPersonalSessionDesktopAssignment** importa las asociaciones entre las cuentas de usuario y los escritorios de sesión personal desde un archivo de texto. El cmdlet admite los parámetros siguientes:
 
--CollectionName \<cadena\>
+-CollectionName \<string\>
 
--ConnectionBroker \<cadena\>
+-ConnectionBroker \<string\>
 
--Path \<cadena>
+-Path \<string>
 
 **–Path**: Especifica la ruta de acceso y el nombre del archivo que se va a importar.
- 
+
 ## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>Quitar una asignación de usuario de un host de sesión personal
 Usa el cmdlet **Remove-RDPersonalSessionDesktopAssignment** para quitar la asociación entre un escritorio de sesión personal y un usuario. El cmdlet admite los parámetros siguientes:
 
--CollectionName \<cadena\>
+-CollectionName \<string\>
 
--ConnectionBroker \<cadena\>
+-ConnectionBroker \<string\>
 
 -Force
 
--Name \<cadena\>
+-Name \<string\>
 
--User \<cadena\>
+-User \<string\>
 
 **–Force**: Obliga al comando a ejecutarse sin solicitar la confirmación del usuario.
 
 ## <a name="query-user-assignments"></a>Consultar las asignaciones de usuario
 Usa el cmdlet **Get-RDPersonalSessionDesktopAssignment** para obtener una lista de los escritorios de sesión personal y las cuentas de usuario asociadas. El cmdlet admite los parámetros siguientes:
 
--CollectionName \<cadena\>
+-CollectionName \<string\>
 
--ConnectionBroker \<cadena\>
+-ConnectionBroker \<string\>
 
--User \<cadena\>
+-User \<string\>
 
--Name \<cadena\>
+-Name \<string\>
 
-Puedes ejecutar el cmdlet para consultar por nombre de colección, nombre de usuario, o nombre de escritorio de sesión. Si especificas solo el parámetro **–CollectionName**, el cmdlet devuelve una lista de hosts de sesión y usuarios asociados. Si especificas también el parámetro **–User**, se devuelve el host de sesión asociado a ese usuario. Si proporcionas el parámetro **–Name**, se devuelve el usuario asociado con ese host de sesión. 
+Puedes ejecutar el cmdlet para consultar por nombre de colección, nombre de usuario, o nombre de escritorio de sesión. Si especificas solo el parámetro **–CollectionName**, el cmdlet devuelve una lista de hosts de sesión y usuarios asociados. Si especificas también el parámetro **–User**, se devuelve el host de sesión asociado a ese usuario. Si proporcionas el parámetro **–Name**, se devuelve el usuario asociado con ese host de sesión.
 
 
 El cmdlet **Export-RDPersonalPersonalDesktopAssignment** exporta las asociaciones actuales entre los usuarios y los escritorios virtuales personales a un archivo de texto. El cmdlet admite los parámetros siguientes:
 
--CollectionName \<cadena\>
+-CollectionName \<string\>
 
--ConnectionBroker \<cadena\>
+-ConnectionBroker \<string\>
 
--Path \<cadena\>
+-Path \<string\>
 
 
 Todos los nuevos cmdlets admiten los parámetros comunes: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer y -OutVariable. Para obtener más información, consulta [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).

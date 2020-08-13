@@ -1,17 +1,15 @@
 ---
 title: Servicio de instantáneas de volumen
 ms.date: 01/30/2019
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 9948fab77ab4869c27fd63e623315bd1b3e9ff47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 44f0db935e50bf7976612edc4317b4212818f84d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966697"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950749"
 ---
 # <a name="volume-shadow-copy-service"></a>Servicio de instantáneas de volumen
 
@@ -22,7 +20,6 @@ La copia de seguridad y la restauración de datos empresariales críticos puede 
   - Normalmente es necesario realizar una copia de seguridad de los datos mientras las aplicaciones que los generan siguen en ejecución. Esto significa que algunos de los archivos de datos pueden estar abiertos o que podrían estar en un estado incoherente.
 
   - Si el conjunto de datos es de gran tamaño, puede resultar difícil realizar una copia de seguridad de todo el contenido al mismo tiempo.
-
 
 La realización correcta de las operaciones de copia de seguridad y restauración requiere una estrecha coordinación entre las aplicaciones de copia de seguridad, las aplicaciones de línea de negocio de las que se realiza la copia de seguridad, y el hardware y software de administración del almacenamiento. El Servicio de instantáneas de volumen (VSS), que se presentó en Windows Server® 2003, facilita la conversación entre estos componentes para permitirles funcionar mejor juntos. Cuando todos los componentes son compatibles con VSS, puedes usarlos para realizar una copia de seguridad de los datos de la aplicación sin desconectar las aplicaciones.
 
@@ -62,7 +59,7 @@ Una solución completa de VSS requiere todos los elementos básicos a continuaci
 
 En el diagrama siguiente se ilustra cómo el servicio VSS se coordina con solicitantes, escritores y proveedores para crear la instantánea de un volumen.
 
-![](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
+![Diagrama arquitectónico del Servicio de instantáneas de volumen](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
 
 **Figura 1**   diagrama arquitectónico del Servicio de instantáneas de volumen
 
@@ -70,7 +67,7 @@ En el diagrama siguiente se ilustra cómo el servicio VSS se coordina con solici
 
 En esta sección se contextualizan los distintos roles del solicitante, el escritor y el proveedor mediante la descripción de los pasos que hay que realizar para crear una instantánea. En el diagrama siguiente se muestra cómo el Servicio de instantáneas de volumen controla la coordinación general entre el solicitante, el escritor y el proveedor.
 
-![](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
+![Diagrama del funcionamiento del Servicio de instantáneas de volumen](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
 
 **Figura 2** Proceso de creación de instantáneas
 
@@ -309,7 +306,7 @@ Con el Servicio de instantáneas de volumen y una matriz de almacenamiento con u
 
 3.  Los datos ya están listos para usarse.
 
-![](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
+![Diagrama de cómo transportar una instantánea entre dos servidores](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
 
 **Figura 3**   Creación y transporte de instantáneas entre dos servidores
 
@@ -577,7 +574,7 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas co
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="media/volume-shadow-copy-service/Dd560667.note(WS.10).gif" />Nota</th>
+<th>Nota</th>
 </tr>
 </thead>
 <tbody>

@@ -1,39 +1,37 @@
 ---
 title: Compatibilidad con ISV de entrega de actualizaciones Express
 description: 'Tema de Windows Server Update Services (WSUS): cómo los fabricantes de software independientes (ISV) pueden configurar la entrega de actualizaciones Express con WSUS'
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 60d01ef425ed96160cd76afdd7c27c081c778add
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3c56c9ac0f2899f03ce1b32b699b577c2dc3de0c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828778"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991083"
 ---
 # <a name="express-update-delivery-isv-support"></a>Compatibilidad con ISV de entrega de actualizaciones Express
 
 >Se aplica a: Windows 10, Windows Server 2016
 
-Las descargas de actualizaciones de Windows 10 pueden ser grandes, porque cada paquete contiene todas las revisiones publicadas anteriormente para garantizar la coherencia y simplicidad.  
+Las descargas de actualizaciones de Windows 10 pueden ser grandes, porque cada paquete contiene todas las revisiones publicadas anteriormente para garantizar la coherencia y simplicidad.
 
-Desde la versión 7, Windows ha podido reducir el tamaño de las descargas de Windows Update con una característica llamada [Express](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2) y, aunque los dispositivos de consumo la admiten de forma predeterminada, los dispositivos Windows 10 Enterprise requieren Windows Server Update Services (WSUS) para poder usar Express.
+Desde la versión 7, Windows ha podido reducir el tamaño de las descargas de Windows Update con una característica llamada [Express](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10)#Anchor_2) y, aunque los dispositivos de consumo la admiten de forma predeterminada, los dispositivos Windows 10 Enterprise requieren Windows Server Update Services (WSUS) para poder usar Express.
 
 ## <a name="how-microsoft-supports-express"></a>Cómo Microsoft admite Express
 
 - **Express en WSUS independiente**
 
-    La entrega de actualizaciones Express ya está [disponible en todas las versiones admitidas de WSUS](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx).
+    La entrega de actualizaciones Express ya está [disponible en todas las versiones admitidas de WSUS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10)).
 
-- **Express en dispositivos conectados directamente a Windows Update** 
+- **Express en dispositivos conectados directamente a Windows Update**
 
     Los dispositivos de consumo admiten la descarga Express: usan el cliente de Windows Update (WU) para examinar, descargar e instalar actualizaciones. Durante la fase de descarga, el cliente de WU solicita los paquetes Express y descarga los intervalos de bytes correspondientes.
 
--  Los **dispositivos empresariales administrados mediante [Windows Update para empresas](https://technet.microsoft.com/itpro/windows/manage/waas-manage-updates-wufb)** también aprovechan las ventajas de la compatibilidad con la entrega de actualizaciones Express sin necesidad de aplicar ningún cambio de configuración.
+-  Los **dispositivos empresariales administrados mediante [Windows Update para empresas](/windows/deployment/update/waas-manage-updates-wufb)** también aprovechan las ventajas de la compatibilidad con la entrega de actualizaciones Express sin necesidad de aplicar ningún cambio de configuración.
 
 ## <a name="how-isvs-can-take-advantage-of-express"></a>Cómo los ISV pueden aprovechar las ventajas de Express
 
@@ -41,7 +39,7 @@ Los ISV pueden usar WSUS y el cliente de WU para admitir la entrega de actualiza
 
 1.  [**Configurar WSUS**](#BKMK_1)
 
-    El servidor de WSUS es necesario para examinar y actualizar las sincronizaciones (se puede encontrar información adicional [aquí](https://technet.microsoft.com/library/dn800972(v=ws.11).aspx))
+    El servidor de WSUS es necesario para examinar y actualizar las sincronizaciones (se puede encontrar información adicional [aquí](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn800972(v=ws.11)))
 
 2.  [**Especificar y rellenar una memoria caché de archivos de ISV**](#BKMK_2)
 
@@ -51,19 +49,19 @@ Los ISV pueden usar WSUS y el cliente de WU para admitir la entrega de actualiza
 
 >[!NOTE]
 >Requiere la instalación de la actualización Acumulativa para la versión 1607 de Windows 10 de enero de 2017 o posterior ([KB3213986 (OS Build 14393.693)](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693).
-    
+
    - El agente cliente de ISV determina qué actualizaciones se deben aprobar y cuándo se descargan e instalan las actualizaciones
    - El cliente de WU determina los intervalos de bytes que se van a descargar e inicia la solicitud de descarga
 
 ### <a name="step-1-configure-wsus"></a><a name=BKMK_1></a>Paso 1: Configurar WSUS
 
-WSUS actúa como interfaz para Windows Update y administra todos los metadatos que describen los paquetes Express que deben descargarse. Si necesitas implementar, consulta [**Información general de Windows Server Update Services 3.0 SP2**](https://technet.microsoft.com/library/dd939931(v=ws.10).aspx). Una vez implementado WSUS, la consideración principal es si se debe almacenar o no el contenido de la actualización localmente en el servidor de WSUS. Al configurar WSUS, se recomienda no almacenar las actualizaciones de forma local. Se supone que ya tienes software que dirige la implementación de estos paquetes en tu entorno. Para obtener más información acerca de cómo configurar el almacenamiento local de WSUS, consulta [**Determinar dónde almacenar las actualizaciones**](https://technet.microsoft.com/library/cc720494(v=ws.10).aspx).
+WSUS actúa como interfaz para Windows Update y administra todos los metadatos que describen los paquetes Express que deben descargarse. Si necesitas implementar, consulta [**Información general de Windows Server Update Services 3.0 SP2**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939931(v=ws.10)). Una vez implementado WSUS, la consideración principal es si se debe almacenar o no el contenido de la actualización localmente en el servidor de WSUS. Al configurar WSUS, se recomienda no almacenar las actualizaciones de forma local. Se supone que ya tienes software que dirige la implementación de estos paquetes en tu entorno. Para obtener más información acerca de cómo configurar el almacenamiento local de WSUS, consulta [**Determinar dónde almacenar las actualizaciones**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720494(v=ws.10)).
 
-### <a name="step-2-specify-and-populate-the-isv-file-cache"></a><a name=BKMK_2></a>Paso 2: Especificar y rellenar la memoria caché de archivos de ISV 
+### <a name="step-2-specify-and-populate-the-isv-file-cache"></a><a name=BKMK_2></a>Paso 2: Especificar y rellenar la memoria caché de archivos de ISV
 
 #### <a name="specify-the-isv-file-cache"></a>Especificar la memoria caché de archivos de ISV
 
-Las nuevas opciones de directiva de grupo y administración de dispositivos móviles (MDM) del lado cliente que se detallan en la [**Referencia del proveedor de servicios de configuración**](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference) definen la ubicación de la memoria caché de archivos de ISV.
+Las nuevas opciones de directiva de grupo y administración de dispositivos móviles (MDM) del lado cliente que se detallan en la [**Referencia del proveedor de servicios de configuración**](/windows/client-management/mdm/configuration-service-provider-reference) definen la ubicación de la memoria caché de archivos de ISV.
 
 | **Nombre**                                              | **Descripción**                                                                                                                                                      |
 |-------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -72,29 +70,28 @@ Las nuevas opciones de directiva de grupo y administración de dispositivos móv
 Hay dos opciones al configurar la ubicación de descarga alternativa para la memoria caché de archivos de ISV:
 
 1. **Especificar un nombre de host de servidor HTTP de ISV**, que es la memoria caché de archivos de ISV
-    
+
     Este enfoque configura el cliente de WU para que realice solicitudes de descarga en el servidor HTTP especificado en la directiva.
 
 2. **Especifica un localhost**
- 
+
     Este enfoque configura el cliente de WU para que realice solicitudes de descarga en el localhost. Esto permite al agente cliente de ISV controlar estas solicitudes y enrutarlas según corresponda para completar la solicitud de descarga.
 
 > [!IMPORTANT]
-> La memoria caché de archivos de ISV requiere lo siguiente:                                                          
-> - El servidor debe ser compatible con HTTP 1.1 según la RFC: <http://www.w3.org/Protocols/rfc2616/rfc2616.html>                                                                                                                                                                
-> En concreto, el servidor web debe admitir solicitudes                                                                                                                                                                                                                                       [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) y [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm).<br>                                                                                                                                                                                                                                                                                                  - Solicitudes de intervalo parcial<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - Persistentes<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - No usar Transfer-Encoding:chunked                                                                                                 
+> La memoria caché de archivos de ISV requiere lo siguiente:
+> - El servidor debe ser compatible con HTTP 1.1 según el protocolo RFC <http://www.w3.org/Protocols/rfc2616/rfc2616.html>. En concreto, el servidor web debe admitir las solicitudes                                                                                                                                                                                                                                       [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) y [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm).<br>                                                                                                                                                                                                                                                                                                  - Solicitudes de intervalo parcial<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - Persistentes<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - No usar Transfer-Encoding:chunked
 
 #### <a name="populate-the-isv-file-cache"></a>Rellenar la memoria caché de archivos de ISV
 
-La memoria caché de archivos de ISV se debe rellenar con los archivos asociados con las actualizaciones que se instalarán en los clientes administrados. 
+La memoria caché de archivos de ISV se debe rellenar con los archivos asociados con las actualizaciones que se instalarán en los clientes administrados.
 
 **Para rellenar la memoria caché de archivos de ISV:**
 
-1. Usa la [API de WSUS](https://msdn.microsoft.com/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx) para tener acceso a la ruta de acceso y al nombre de archivo de la actualización para el servicio MU.
+1. Usa la [API de WSUS](/previous-versions/windows/desktop/aa354524(v=vs.85)) para tener acceso a la ruta de acceso y al nombre de archivo de la actualización para el servicio MU.
 
     Los metadatos de cada actualización en el servidor de WSUS contienen la ruta de acceso y el nombre de archivo de la actualización en Microsoft Update de la siguiente forma (nombre de host de Microsoft Update en negrita, seguido de la ruta de acceso y el nombre de archivo): **<http://download.windowsupdate.com>** /c/msdownload/update/software/updt/2016/09/windows10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74.msu
 
-2. Descarga archivos de Microsoft Update y almacénalos en la memoria caché de archivos de ISV mediante uno de estos dos métodos: 
+2. Descarga archivos de Microsoft Update y almacénalos en la memoria caché de archivos de ISV mediante uno de estos dos métodos:
 
    - Almacenar archivos con la **misma ruta de acceso de carpeta que el servicio de MU**
 
@@ -116,7 +113,7 @@ El agente cliente de ISV organiza la descarga y la instalación de las actualiza
 
 5.  Una vez descargadas las actualizaciones, el agente cliente de ISV llama al cliente de WU para instalar las actualizaciones aprobadas.
 
-Consulta [Búsqueda, descarga e instalación de actualizaciones](https://msdn.microsoft.com/library/windows/desktop/aa387102(v=vs.85).aspx) para obtener información adicional sobre cómo usar el cliente de WU para examinar, descargar e instalar actualizaciones.
+Consulta [Búsqueda, descarga e instalación de actualizaciones](/windows/win32/wua_sdk/searching--downloading--and-installing-updates) para obtener información adicional sobre cómo usar el cliente de WU para examinar, descargar e instalar actualizaciones.
 
 ### <a name="download-workflow-options"></a>Descargar opciones de flujo de trabajo
 
@@ -131,9 +128,9 @@ A continuación se muestran dos ilustraciones de opciones de flujo de trabajo de
 
   - **Versión de archivo completo**: básicamente, reemplaza las versiones locales de los archivos binarios de la actualización.
 
-  - **Versión Express**: contiene las diferencias necesarias para la revisión de los archivos binarios existentes en el dispositivo. 
+  - **Versión Express**: contiene las diferencias necesarias para la revisión de los archivos binarios existentes en el dispositivo.
 
-    Los metadatos de la actualización, que se han descargado en el cliente como parte de la fase de examen, hacen referencia tanto a la versión de archivo completo como a la versión Express. 
+    Los metadatos de la actualización, que se han descargado en el cliente como parte de la fase de examen, hacen referencia tanto a la versión de archivo completo como a la versión Express.
 
     **La descarga Express funciona del siguiente modo**:
 
@@ -155,4 +152,4 @@ La Optimización de distribución (DO) es una solución de caché distribuida au
 
 De manera predeterminada en Windows 10 Enterprise y Education, DO solo permite el uso compartido punto a punto en la red de la organización, pero puedes configurarla de forma diferente desde la configuración de la directiva de grupo y la administración de dispositivos móviles (MDM).
 
-Consulta [Configuración de la Optimización de distribución para actualizaciones de Windows 10](https://technet.microsoft.com/itpro/windows/manage/waas-delivery-optimization) para obtener más información acerca de DO.
+Consulta [Configuración de la Optimización de distribución para actualizaciones de Windows 10](/windows/deployment/update/waas-delivery-optimization) para obtener más información acerca de DO.

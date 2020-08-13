@@ -1,19 +1,17 @@
 ---
 title: Directrices de red
 description: Recomendaciones de ancho de banda para implementaciones de Escritorio remoto.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/12/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: ba084c58e725627e838c07b5b5b9849d131b2038
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 3817178ef303573490cc98af8a35844715286e8e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203549"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948899"
 ---
 # <a name="network-guidelines"></a>Directrices de red
 
@@ -54,6 +52,10 @@ Diferentes resoluciones de pantalla requieren diferentes anchos de banda disponi
 | Aproximadamente 1920 × 1080 px                     | 5 Mbps                |
 | Aproximadamente 3840 × 2160 px (4K)                | 15 Mbps               |
 
-## <a name="additional-resources"></a>Recursos adicionales
+## <a name="windows-virtual-desktop-experience-estimator"></a>Estimador de experiencia de Windows Virtual Desktop
 
 La región de Azure en la que te encuentres puede afectar a la experiencia de usuario tanto como las condiciones de la red. Para obtener más información, consulta [Estimador de experiencia de Windows Virtual Desktop](https://azure.microsoft.com/services/virtual-desktop/assessment/).
+
+## <a name="assistive-technologies"></a>Tecnologías de asistencia
+
+Las cargas de trabajo de tecnología de asistencia, como el uso del Narrador en la sesión remota, requieren conexiones con un tiempo de ida y vuelta (RTT) de conexión de 20 milisegundos (ms) o superior a fin de obtener la mejor experiencia de usuario.
