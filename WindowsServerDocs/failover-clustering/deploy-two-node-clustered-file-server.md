@@ -6,12 +6,12 @@ ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 02/01/2019
-ms.openlocfilehash: b91aeadcce645797f42a029f7a8c82371b42d618
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 56130833ca2c3de8752fb79f5acdf30a1fafae2f
+ms.sourcegitcommit: 67a486b4fb3937a457eb00d21a2e33b753489fd8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968012"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88149559"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>Implementación de un servidor de archivos en clúster de dos nodos
 
@@ -321,17 +321,20 @@ Para configurar un clúster de conmutación por error de servidor de archivos, s
    > [!NOTE]
    > Si utiliza direcciones IP estáticas, debe seleccionar la red que se va a usar y especificar la dirección IP que utilizará para el nombre del clúster.  Si usa DHCP para las direcciones IP, la dirección IP se configurará automáticamente.
 
-6. Seleccione **Siguiente**.
+9. Seleccione **Siguiente**.
 
-7. En la ventana **seleccionar almacenamiento** , seleccione la unidad adicional (no el testigo) que contendrá los recursos compartidos y el **siguiente**.
+10. En la ventana **seleccionar almacenamiento** , seleccione la unidad adicional (no el testigo) que contendrá los recursos compartidos y haga clic en **siguiente**.
 
-8. En la página **confirmación** , Compruebe la configuración y seleccione **siguiente**.
+11. En la página **confirmación** , Compruebe la configuración y seleccione **siguiente**.
 
-9. En la página **Resumen** , le proporcionará la configuración que ha creado.  Puede seleccionar ver informe para ver el informe de la creación del rol de servidor de archivos.
+12. En la página **Resumen** , le proporcionará la configuración que ha creado.  Puede seleccionar ver informe para ver el informe de la creación del rol de servidor de archivos.
 
-10. En **roles** en el árbol de consola, verá el nuevo rol que creó como el nombre que creó.  Con esta opción resaltada, en el panel **acciones** de la derecha, elija **Agregar un recurso compartido**.
+   > [!NOTE]
+   > Si el rol no se agrega o se inicia correctamente, puede que el CNO (objeto de nombre de clúster) no tenga permiso para crear objetos en Active Directory. El rol servidor de archivos requiere un objeto de equipo con el mismo nombre que el "punto de acceso de cliente" proporcionado en el paso 8.
 
-11. Ejecute el Asistente para compartir que incluye lo siguiente:
+13. En **roles** en el árbol de consola, verá el nuevo rol que creó como el nombre que creó.  Con esta opción resaltada, en el panel **acciones** de la derecha, elija **Agregar un recurso compartido**.
+
+14. Ejecute el Asistente para compartir que incluye lo siguiente:
 
     - Tipo de recurso compartido que será
     - La ubicación o ruta de acceso de la carpeta compartida será
@@ -339,10 +342,10 @@ Para configurar un clúster de conmutación por error de servidor de archivos, s
     - Opciones de configuración adicionales, como la enumeración basada en el acceso, el almacenamiento en caché, el cifrado, etc.
     - Permisos de nivel de archivo si son distintos de los predeterminados
 
-12. En la página **confirmación** , compruebe lo que ha configurado y seleccione **crear** para crear el recurso compartido de servidor de archivos.
+15. En la página **confirmación** , compruebe lo que ha configurado y seleccione **crear** para crear el recurso compartido de servidor de archivos.
 
-13. En la página **resultados** , seleccione cerrar Si creó el recurso compartido.  Si no pudo crear el recurso compartido, le proporcionará los errores que se han producido.
+16. En la página **resultados** , seleccione cerrar Si creó el recurso compartido.  Si no pudo crear el recurso compartido, le proporcionará los errores que se han producido.
 
-14. Elija **Cerrar**.
+17. Elija **Cerrar**.
 
-15. Repita este proceso para todos los recursos compartidos adicionales.
+18. Repita este proceso para todos los recursos compartidos adicionales.
