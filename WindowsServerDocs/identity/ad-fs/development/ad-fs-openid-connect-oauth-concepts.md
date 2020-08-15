@@ -6,12 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.openlocfilehash: 46e78e74781f4a85f279299745d841fd0bcaf7c3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 18e480200bf2d22c5f46dd67d1ee6a704f566d55
+ms.sourcegitcommit: b18effcba95c85d6e08e7d29808b576491a5352e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964862"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243207"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>Conceptos de AD FS OpenID Connect/OAuth
 Se aplica a AD FS 2016 y versiones posteriores
@@ -21,7 +21,7 @@ Se aplica a AD FS 2016 y versiones posteriores
 |Actor| Descripción|
 |-----|-----|
 |Usuario final|Esta es la entidad de seguridad (usuarios, aplicaciones, servicios y grupos) que necesita tener acceso al recurso.|
-|Cliente|Se trata de la aplicación Web, identificada por su identificador de cliente. El cliente es normalmente la entidad con la que el usuario final interactúa y solicita tokens del servidor de autorización.
+|Remoto|Se trata de la aplicación Web, identificada por su identificador de cliente. El cliente es normalmente la entidad con la que el usuario final interactúa y solicita tokens del servidor de autorización.
 |Servidor de autorización/proveedor de identidades (IdP)| Este es el servidor de AD FS. Es responsable de comprobar la identidad de las entidades de seguridad que existen en el directorio de una organización. Emite tokens de seguridad (token de acceso de portador, token de identificador y token de actualización) tras la autenticación correcta de esas entidades de seguridad.
 |Servidor de recursos/proveedor de recursos/usuario de confianza| Aquí es donde residen el recurso o los datos. Confía en el servidor de autorización para autenticar y autorizar de forma segura al cliente y usa tokens de acceso de portador para asegurarse de que se puede conceder el acceso a un recurso.
 
@@ -36,7 +36,7 @@ En el siguiente diagrama se proporciona la relación más básica entre los acto
 |-----|-----|-----|
 |Aplicación nativa|A veces denominado **cliente público**, se ha diseñado para ser una aplicación cliente que se ejecuta en un equipo o dispositivo y con el que interactúa el usuario.|Solicita tokens del servidor de autorización (AD FS) para el acceso de los usuarios a los recursos. Envía solicitudes HTTP a recursos protegidos, utilizando los tokens como encabezados HTTP.|
 |Aplicación de servidor (aplicación web)|Una aplicación web que se ejecuta en un servidor y a la que los usuarios suelen tener acceso a través de un explorador. Dado que es capaz de mantener su propia credencial o "secreto" de cliente, a veces se denomina **cliente confidencial**. |Solicita tokens del servidor de autorización (AD FS) para el acceso de los usuarios a los recursos. Antes de solicitar el token, el cliente (aplicación web) debe autenticarse con su secreto. |
-|Web API|El recurso final al que tiene acceso el usuario. Considérelos como la nueva representación de "usuarios de confianza".|Consume tokens de acceso de portador obtenidos por los clientes|
+|API Web|El recurso final al que tiene acceso el usuario. Considérelos como la nueva representación de "usuarios de confianza".|Consume tokens de acceso de portador obtenidos por los clientes|
 
 ## <a name="application-group"></a>Grupo de aplicaciones
 
@@ -79,7 +79,7 @@ Los tokens de seguridad (acceso y tokens de identificador) emitidos por AD FS co
 
  2. AD FS valida el identificador de cliente en la solicitud de autenticación con el identificador de cliente obtenido durante el registro del cliente y del recurso en AD FS. Si usa un cliente confidencial, AD FS también valida el secreto de cliente proporcionado en la solicitud de autenticación. AD FS validar también el URI de redirección del cliente.
 
- 3. AD FS identifica el recurso al que el cliente desea obtener acceso a través del parámetro de recurso pasado en la solicitud de autenticación. Si se usa la biblioteca de cliente de MSAL, no se envía el parámetro de recurso. En su lugar, la dirección URL del recurso se envía como parte del parámetro de ámbito: *Scope = [URL del recurso]//[valores de ámbito, por ejemplo, OpenID]*.
+ 3. AD FS identifica el recurso al que el cliente desea obtener acceso a través del parámetro de recurso pasado en la solicitud de autenticación. Si se usa la biblioteca de cliente de MSAL, no se envía el parámetro de recurso. En su lugar, la dirección URL del recurso se envía como parte del parámetro de ámbito: *Scope = [URL del recurso]/[valores de ámbito, por ejemplo, OpenID]*.
 
     Si el recurso no se pasa mediante el parámetro de recurso o de ámbito, ADFS usará un recurso predeterminado urn: Microsoft: UserInfo cuyas directivas (por ejemplo, MFA, emisión o Directiva de autorización) no se pueden configurar.
 

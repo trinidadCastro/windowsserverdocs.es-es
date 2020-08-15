@@ -6,12 +6,12 @@ ms.assetid: da58f312-bd3b-4bb6-98ca-6177869dd6ad
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 646660c1371b592670737b7d7d208b62208bfec9
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 81c35d1a5673793220ec860266d129a4ecdb4046
+ms.sourcegitcommit: b18effcba95c85d6e08e7d29808b576491a5352e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993937"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243197"
 ---
 # <a name="data-center-bridging-dcb"></a>Protocolo de puente del centro de datos \(DCB\)
 
@@ -38,7 +38,7 @@ DCB proporciona \- asignación de ancho de banda basada en hardware a un tipo es
 DCB consta del siguiente conjunto de protocolos.
 
 - ETS de servicio de transmisión mejorada \( \) : IEEE 802.1 QAZ, que se basa en los estándares 802.1 p y 802.1 q
-- \(PFS \) de control de flujo de prioridad, IEEE 802.1 QBB
+- \(PFC \) de control de flujo de prioridad, IEEE 802.1 QBB
 - \(El protocolo de intercambio de DCB DCBX \) , IEEE 802.1 AB, ampliado en el estándar 802.1 QAZ.
 
 El protocolo DCBX le permite configurar DCB en un conmutador, que a continuación puede configurar automáticamente un dispositivo final, como un equipo que ejecuta Windows Server 2016.
