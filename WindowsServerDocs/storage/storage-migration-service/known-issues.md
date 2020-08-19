@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: 818fca0ed62c140b3b0c4bbb1394380d42201f79
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0dc49603099427fb00507db021c391500a7c42f2
+ms.sourcegitcommit: 3d59c2aaebcd190b20d24bc8a449eee0681b6a3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961319"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88583320"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -21,7 +21,7 @@ El servicio de migración de almacenamiento se publica en dos partes: el servici
 
 Por ejemplo, Windows Server, versión 1903 incluye nuevas características y correcciones para el servicio de migración de almacenamiento, que también están disponibles para Windows Server 2019 y Windows Server, versión 1809 mediante la instalación de [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534).
 
-## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a>Cómo recopilar archivos de registro al trabajar con Soporte técnico de Microsoft
+## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a> Cómo recopilar archivos de registro al trabajar con Soporte técnico de Microsoft
 
 El servicio de migración de almacenamiento contiene registros de eventos para el servicio Orchestrator y el servicio Proxy. El servidor de Orchestrator siempre contiene los registros de eventos y los servidores de destino con el servicio de proxy instalado contienen los registros del proxy. Estos registros se encuentran en:
 
@@ -76,7 +76,7 @@ Para evitar este problema:
     <bindings>
       <netTcpBinding>
         <binding name="NetTcpBindingSms"
-                 sendTimeout="00:01:00"
+                 sendTimeout="00:10:00"
     ```
 
 2. Reinicie el servicio "Storage Migration Service" en el equipo de Orchestrator.

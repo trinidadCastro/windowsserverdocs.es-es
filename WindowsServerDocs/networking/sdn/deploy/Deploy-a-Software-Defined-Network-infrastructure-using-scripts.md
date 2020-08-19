@@ -7,12 +7,12 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 7fcf8b095479ec21c045a60244917b09883a6162
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 84b96e724706db49945c2e4936d0b4d8691d8daa
+ms.sourcegitcommit: 3d59c2aaebcd190b20d24bc8a449eee0681b6a3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993763"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88583330"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implementación de una infraestructura de red definida por software con scripts
 
@@ -83,7 +83,7 @@ Para empezar, configure el conmutador virtual de Hyper-v (servidores físicos) y
 
    a. Haga clic con el botón secundario en **Inicio**, seleccione **sistema**y, a continuación, haga clic en **Cambiar configuración**.
    b. Haga clic en **Cambiar**.
-   c. Haga clic en **dominio** y especifique el nombre de dominio.  "" "" d. Haga clic en **Aceptar**.
+   c. Haga clic en **dominio** y especifique el nombre de dominio.  "" "" d. Haga clic en **OK**.
    e. Escriba las credenciales de nombre de usuario y contraseña cuando se le solicite.
    f. Reinicie el servidor.
 
@@ -113,21 +113,6 @@ Siga los pasos siguientes para validar que la red de host está configurada corr
 4. Ejecute el siguiente comando en el host de implementación y especifique el FQDN de cada host de Hyper-V para asegurarse de que las credenciales de Kerberos usadas proporcionan acceso a todos los servidores.
 
    ``winrm id -r:<Hyper-V Host FQDN>``
-
-### <a name="nano-installation-requirements-and-notes"></a>Notas y requisitos de instalación de nano
-
-Si usa nano como hosts de Hyper-V (servidores físicos) para la implementación, los siguientes son requisitos adicionales:
-
-1. Todos los nodos de nano deben tener el paquete de DSC instalado con el paquete de idioma:
-
-   - Microsoft-NanoServer-DSC-Package.cab
-   - Microsoft-NanoServer-DSC-Package_en-us.cab
-
-     ``dism /online /add-package /packagepath:<Path> /loglevel:4``
-
-2. Los scripts de SDN Express se deben ejecutar desde un host que no sea de nano (Windows Server Core o Windows Server con GUI). Los flujos de trabajo de PowerShell no se admiten en nano.
-
-3. La invocación de la API NorthBound de la controladora de red mediante contenedores REST de PowerShell o de NC (que dependen de Invoke-WebRequest e Invoke-RestMethod) debe realizarse desde un host que no sea de nano.
 
 ### <a name="run-sdn-express-scripts"></a>Ejecutar scripts de SDN Express
 
