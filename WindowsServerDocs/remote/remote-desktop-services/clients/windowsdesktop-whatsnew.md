@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/28/2020
+ms.date: 08/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0077837fc03fbff37ed2a152ee68bfa4f1e24fa8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5f3a2ff6268cbccc2d354227b577441a270faf9f
+ms.sourcegitcommit: f3a72c06e739d9ee9d8cd7e8259ccee8db7c7523
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961829"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88089974"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -25,7 +25,19 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 |Grupo de usuarios |Version  |
 |-----------|---------|
 |Público     |1.2.1186 |
-|Insider    |1.2.1186 |
+|Insider    |1.2.1272 |
+
+## <a name="updates-for-version-121272-insider"></a>Actualizaciones de la versión 1.2.1272 [INSIDER]
+
+*Fecha de publicación: 11/08/2020*
+
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D7LK), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D5aF), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Dan3)
+
+- Se agregó la funcionalidad para detectar automáticamente las nubes soberanas a partir de la identidad del usuario.
+- Se agregó la funcionalidad para habilitar las suscripciones de URL personalizadas para todos los usuarios.
+- Se corrigió un problema de anclaje de aplicaciones en la barra de tareas de la fuente.
+- Se corrigió un bloqueo al suscribirse con una dirección URL.
+- Se mejoró la experiencia al arrastrar ventanas de aplicaciones remotas con la función táctil o el lápiz.
 
 ## <a name="updates-for-version-121186"></a>Actualizaciones para la versión 1.2.1186
 

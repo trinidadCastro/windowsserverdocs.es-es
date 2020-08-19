@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/06/2020
+ms.date: 08/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 16e142a299b43ac6167fa4bf34d5782899f28846
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0afb5a64a86d3b33ea5d78756abe09bf87564928
+ms.sourcegitcommit: 3ed5dd72451b494e17d508fed82fdc5559ba4ef0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970162"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270147"
 ---
 # <a name="whats-new-in-the-ios-client"></a>Novedades del cliente de iOS
 
@@ -21,6 +21,15 @@ El [cliente de Escritorio remoto para iOS](remote-desktop-ios.md) se actualiza p
 ## <a name="how-to-report-issues"></a>Notificación de problemas
 
 Nos comprometemos a hacer que esta aplicación sea el mejor cliente posible de Escritorio remoto para iOS y, por ello, apreciamos tus comentarios. Puedes notificar cualquier problema en **Ayuda** > **Notificar un problema**.
+
+## <a name="updates-for-version-1012"></a>Actualizaciones para la versión 10.1.2
+
+*Fecha de publicación: 17/08/2020*
+
+En esta actualización, se han solucionado problemas informados en la actualización de la versión 10.1.1.
+
+- Se corrigió un bloqueo que se producía para algunos usuarios al suscribirse a una fuente de Windows Virtual Desktop mediante la autenticación no asíncrona.
+- Se corrigió el diseño de los iconos del área de trabajo en iPhone X, iPhone XS y iPhone 11 Pro.
 
 ## <a name="updates-for-version-1007"></a>Actualizaciones de la versión 10.0.7
 
