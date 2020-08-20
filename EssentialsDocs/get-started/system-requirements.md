@@ -7,12 +7,12 @@ ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b82435dc9d0018d3ac3fa5c6855b18bcddbd2797
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.openlocfilehash: 9e730ea3fe0deeca84759c546e3f4afa76e5c7d8
+ms.sourcegitcommit: 1eaad076ea74e72b36e8893aaa15f3e5f4237bd6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838104"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88659380"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Requisitos del sistema para Windows Server Essentials
 
@@ -26,7 +26,7 @@ ms.locfileid: "87838104"
 |Componente|Mínima|Recomendado*|Máxima|
 |---------------|-------------|-------------------|-------------|
 |Socket de la CPU|1,4 GHz (procesador de 64 bits) o superior en el caso de un núcleo único<br /><br /> 1,3 GHz (procesador de 64 bits) o superior en el caso de varios núcleos|3,1 GHz (procesador de 64 bits) o superior en el caso de varios núcleos|2 zócalos|
-|Memoria (RAM)|2 GB<br /><br /> 4 GB si implementa Windows Server Essentials como máquina virtual|16 GB|64 GB|
+|Memoria (RAM)|2 GB<br /><br /> 4 GB si implementa Windows Server Essentials como máquina virtual|16 GB|64 GB|
 |Unidades de disco duro y espacio de almacenamiento disponible|Disco duro de 160 GB con una partición del sistema de 60 GB||Sin límite|
 
  * Los requisitos de hardware recomendados admiten un límite máximo de usuarios y dispositivos.
@@ -37,8 +37,8 @@ ms.locfileid: "87838104"
 |---------------|-----------------|
 |Adaptador de red|Adaptador Ethernet Gigabit (10/100/1000baseT PHY/MAC)|
 |Internet|Para algunas funciones puede ser necesario tener acceso a Internet (es posible que se apliquen costes adicionales) o una cuenta de Microsoft.|
-|Sistemas operativos de cliente compatibles|Windows 8.1, Windows 8, Windows 7, las versiones de Macintosh OS X 10.5 a la 10.8.<br /><br /> **Nota:** Algunas características requieren ediciones Professional o superior.<br /><br /> 1 GB de espacio disponible en disco (se liberará una parte del disco después de la instalación)|
-|Enrutador|Un enrutador o firewall compatible con IPv4 NAT o IPv6|
+|Sistemas operativos de cliente compatibles| Windows 10, Windows 8.1, Windows 8, Windows 7, Macintosh OS X versiones 10,5 a 10,8.<br /><br /> **Nota:** Algunas características requieren ediciones Professional o superior.<br /><br /> 1 GB de espacio disponible en disco (se liberará una parte del disco después de la instalación)|
+|Router|Un enrutador o firewall compatible con IPv4 NAT o IPv6|
 |Requisitos adicionales|Unidad de DVD-ROM|
 
  Los requisitos necesarios variarán según la configuración del sistema y las aplicaciones y características que instale. El rendimiento del procesador depende no solo de la frecuencia del reloj de este, sino también del número de núcleos y del tamaño de la memoria caché del procesador. Los requisitos de espacio en disco para la partición del sistema son aproximados. Es posible que sea necesario disponer de espacio adicional si se realiza la instalación a través de la red.

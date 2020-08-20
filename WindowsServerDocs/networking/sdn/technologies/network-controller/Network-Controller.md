@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 2bf49dbd17e1724782b27f8b306c04346f194242
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9623ce4e5e31b905c1c18e9359811389d8d75f23
+ms.sourcegitcommit: 1eaad076ea74e72b36e8893aaa15f3e5f4237bd6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991359"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88659390"
 ---
 # <a name="network-controller"></a>Controladora de red
 
@@ -28,7 +28,7 @@ Con Controladora de red puede automatizar la configuración de la infraestructur
 > - [Implementación de controladora de red con Windows PowerShell](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
 > - [Instalación del rol de servidor de Controladora de red mediante el Administrador del servidor](Install-the-Network-Controller-server-role-using-Server-Manager.md)
 > - [Pasos posteriores a la implementación de la controladora de red](post-deploy-steps-nc.md)
-> - [Cmdlets de controladora de red](https://technet.microsoft.com/library/mt576401.aspx)
+> - [Cmdlets de controladora de red](https://docs.microsoft.com/powershell/module/networkcontroller/?view=win10-ps)
 
 ## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>Resumen de Controladora de red
 
