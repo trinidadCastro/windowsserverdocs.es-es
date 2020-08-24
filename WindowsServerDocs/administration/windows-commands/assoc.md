@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e802756bc1d70e077126170a94a8b8ac6f72dc96
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 682375733bdd269150cb6d557db730283ee3267e
+ms.sourcegitcommit: a868f7d8bb9c5becffc688fd9b75c80802af71ba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895535"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88778606"
 ---
 # <a name="assoc"></a>assoc
 
@@ -20,6 +20,7 @@ Muestra o modifica las asociaciones de extensión de nombre de archivo. Si se us
 
 > [!NOTE]
 > Este comando solo se admite dentro de cmd.exe y no está disponible en PowerShell.
+> Aunque puede usar `cmd /c assoc` como solución alternativa.
 
 ## <a name="syntax"></a>Sintaxis
 

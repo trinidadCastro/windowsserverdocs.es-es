@@ -2,16 +2,16 @@
 ms.assetid: ''
 title: Configuración de sistemas para alta precisión
 description: La sincronización de la hora en Windows 10 y Windows Server 2016 se ha mejorado considerablemente.  En condiciones de funcionamiento razonables, los sistemas se pueden configurar para mantener una precisión de 1 ms (milisegundos) o mejor (con respecto a la hora UTC).
-author: dcuomo
-ms.author: dacuo
+author: dahavey
+ms.author: dahavey
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: b6d37a656994fa12e0a84c1330f4f40d79249af9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cee1616c4ca5cecb40901f4a0be79f549e838347
+ms.sourcegitcommit: b5b040a47cf48c94852de9aad8b91475f891d2f7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970742"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88563395"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>Configuración de sistemas para alta precisión
 >Se aplica a: Windows Server 2016 y Windows 10, versión 1607 o superior

@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/26/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fa1c713b06e63c919bc2e42e8d4ba3c14eecf8f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5bd3e1d5f06e5c415b4f300d9a2c8a9b390e5051
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971612"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702834"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introducción al cliente de escritorio de Windows
 
@@ -70,8 +70,8 @@ Hay dos maneras de suscribirse a un área de trabajo. El cliente puede intentar 
 1. En la página principal del cliente, pulsa **Subscribe with URL** (Subscribirse con dirección URL).
 2. Escribe la dirección URL del área de trabajo o tu dirección de correo electrónico:
    - Si usas la **URL del espacio de trabajo**, usa la que te proporcionó el administrador. Si accedes a los recursos de Windows Virtual Desktop, puedes usar una de las siguientes direcciones URL:
-     - Windows Virtual Desktop de otoño de 2019: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
-     - Windows Virtual Desktop de primavera de 2020: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+     - Windows Virtual Desktop (clásico): `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
+     - Windows Virtual Desktop: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
    - Para usar un **correo electrónico**, escribe tu dirección de correo. Esto indica al cliente que busque una dirección URL asociada a tu dirección de correo electrónico si el administrador ha configurado la [detección de correo electrónico](../rds-email-discovery.md).
 3. Pulsa **Siguiente**.
 4. Inicia sesión con tu cuenta de usuario cuando se te solicite.
