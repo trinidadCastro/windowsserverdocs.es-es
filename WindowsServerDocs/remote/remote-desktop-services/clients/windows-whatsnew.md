@@ -5,18 +5,34 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/20/2020
+ms.date: 08/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 985d7b015c2ff3fe1d117e8277b445744f6a51e6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dbaaafe2c01d41a9786d6718bad850dc08deaa81
+ms.sourcegitcommit: 6d991b16a6d9129e1f5d1ca7d688bd621b72d586
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961859"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88638882"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Novedades del cliente de Microsoft Store
 
 El [cliente de Microsoft Store](windows.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
+
+## <a name="updates-for-version-1021519-insider"></a>Actualizaciones de la versión 10.2.1519 (Insider)
+
+*Fecha de publicación: 19/08/2020*
+
+- Se reescribió el cliente para usar el mismo motor principal de RDP subyacente que los clientes de iOS, macOS y Android.
+- Se agregó compatibilidad con la versión integrada en Azure Resource Manager de Windows Virtual Desktop.
+- Se agregó compatibilidad para x64 y ARM64.
+- Se actualizó el diseño del panel lateral a pantalla completa.
+- Se agregó compatibilidad para los modos claro y oscuro.
+- Se agregó una funcionalidad para suscribirse y conectarse a implementaciones de la nube soberana.
+- Se agregó una funcionalidad para habilitar la copia de seguridad y la restauración de áreas de trabajo (marcadores) en el lanzamiento a producción (RTM).
+- Se actualizó la funcionalidad para usar los tokens de Azure Active Directory (Azure AD) existentes durante el proceso de suscripción a fin de reducir el número de veces que los usuarios deben iniciar sesión.
+- La suscripción actualizada ahora puede detectar si usa Windows Virtual Desktop o la versión clásica de Windows Virtual Desktop.
+- Se corrigió un problema de copia de archivos a equipos remotos.
+- Se corrigieron problemas de accesibilidad comunes de los botones.
 
 ## <a name="updates-for-version-1011215"></a>Actualizaciones para la versión 10.1.1215
 
@@ -60,7 +76,7 @@ El [cliente de Microsoft Store](windows.md) se actualiza periódicamente, con lo
 - Se ha corregido un bloqueo al cerrar la ventana del cliente mientras había aún una conexión activa.
 - Se ha corregido un bloqueo al volver a conectarse después de minimizar el cliente.
 - Se permite arrastrar los escritorios a cualquier parte de un grupo.
-- Iniciar una conexión desde la lista de accesos directos abre una ventana independiente cuando sea necesario.
+- Compruebe que al iniciar una conexión desde la lista de accesos directos se abre una ventana independiente cuando es necesario.
 - Corrección de errores adicionales.
 
 ## <a name="updates-for-version-1011060"></a>Actualizaciones de la versión 10.1.1060

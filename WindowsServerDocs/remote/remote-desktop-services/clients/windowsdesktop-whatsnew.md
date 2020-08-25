@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/11/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3a2ff6268cbccc2d354227b577441a270faf9f
-ms.sourcegitcommit: f3a72c06e739d9ee9d8cd7e8259ccee8db7c7523
+ms.openlocfilehash: b23c19304aa7773dbb3c4e1406e065fb68947c5d
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88089974"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702844"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -57,7 +57,7 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 
 Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
 
-- Se actualizó la lógica de detección automática para la opción **Subscribir** para admitir la actualización de primavera de 2020 de Windows Virtual Desktop. Los clientes que solo tienen recursos de la actualización de primavera ya no tienen que dar su consentimiento para la versión de otoño de 2019.
+- Se actualizó la lógica de detección automática para la opción **Subscribir** para admitir la versión integrada en Azure Resource Manager de Windows Virtual Desktop. Los clientes con solo recursos de Windows Virtual Desktop ya no tienen que proporcionar consentimiento para Windows Virtual Desktop (clásico).
 - Se mejoró la compatibilidad para dispositivos con valores altos de PPP con un factor de escala de hasta un 400 %.
 - Se corrigió un problema en el que el cuadro de diálogo de desconexión no aparecía.
 - Se corrigió un problema en que la información sobre herramientas de la barra de comandos permanecía visible más tiempo del esperado.
@@ -71,7 +71,7 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
 - Al suscribirte, ahora puedes elegir tu cuenta en lugar de escribir tu dirección de correo electrónico.
-- Se agregó una nueva opción **Subscribe with URL** (Suscribirse con dirección URL) que te permite especificar la dirección URL del área de trabajo a la que te vas a suscribir, o aprovechar la [detección de correo electrónico](../rds-email-discovery.md) cuando esté disponible en los casos en los que tus recursos no se encuentren automáticamente. Esto es similar al proceso de suscripción en el resto de los clientes de Escritorio remoto. Se puede usar para suscribirse directamente a las áreas de trabajo de la actualización de primavera de 2020 de WVD.
+- Se agregó una nueva opción **Subscribe with URL** (Suscribirse con dirección URL) que te permite especificar la dirección URL del área de trabajo a la que te vas a suscribir, o aprovechar la [detección de correo electrónico](../rds-email-discovery.md) cuando esté disponible en los casos en los que tus recursos no se encuentren automáticamente. Esto es similar al proceso de suscripción en el resto de los clientes de Escritorio remoto. Se puede usar para suscribirse directamente a las áreas de trabajo de Windows Virtual Desktop.
 - Se agregó compatibilidad para suscribirse a un área de trabajo mediante un nuevo [esquema de URI](remote-desktop-uri.md) que se puede enviar en un correo electrónico a los usuarios o agregarse a un sitio web de soporte técnico.
 - Se ha agregado un nuevo cuadro de diálogo **Connection information** (Información de conexión), que proporciona detalles del cliente, la red y el servidor de las sesiones de escritorio y aplicación. Puedes acceder al cuadro de diálogo desde la barra de conexión en el modo de pantalla completa, o desde el menú del sistema cuando estés dentro de la ventana.
 - Las sesiones de escritorio iniciadas en modo de ventana ahora se maximizan siempre en lugar de pasar al modo de pantalla completa al maximizar la ventana. Usa la opción **Pantalla completa** del menú sistema para entrar en el modo de pantalla completa.

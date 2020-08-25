@@ -6,14 +6,14 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a0c93ddc6bf891a3f8157d36b67f60241d4d41b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e0ce10cbdc1dfe70156d36a96978222395afaa94
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991602"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702824"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introducción al cliente de macOS
 
@@ -49,8 +49,8 @@ Para suscribirte a una fuente:
 1. Selecciona **Add feed** (Agregar fuente) en la página principal para conectarte al servicio y recuperar los recursos.
 2. Escribe la dirección URL de la fuente. Puede ser una dirección URL o una dirección de correo electrónico:
    - Esta dirección URL suele ser una URL de Windows Virtual Desktop. La que use dependerá de la versión de Windows Virtual Desktop que esté usando.
-      - En el caso de la versión de otoño de 2019, use `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
-      - En el caso de la versión de primavera de 2020, use `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
+      - Para Windows Virtual Desktop (clásico), use `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+      - Para Windows Virtual Desktop, use `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Para usar un correo electrónico, escribe tu dirección de correo: Esto indica al cliente que busque una dirección URL asociada a tu dirección de correo electrónico si el administrador lo ha configurado así.
 3. Selecciona **Subscribe** (Suscribirse).
 4. Inicia sesión con tu cuenta de usuario cuando se te solicite.

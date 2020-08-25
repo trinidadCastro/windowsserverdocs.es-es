@@ -5,20 +5,64 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/08/2020
+ms.date: 08/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e8769dd5784bcbac5c5384316564150801c1eb0e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 72d828099d8dfe29639789f526533a7bb1ba159d
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946518"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702864"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 
 El [cliente de Escritorio remoto para macOS](remote-desktop-mac.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 
 Si tienes algún problema, puedes ponerte en contacto con nosotros a través **Ayuda** > **Notificar un problema**.
+
+## <a name="updates-for-version-1040"></a>Actualizaciones para la versión 10.4.0
+
+*Fecha de publicación: 20/8/20*
+
+En esta versión, hemos realizado actualizaciones sustanciales en el código subyacente que impulsa la experiencia del Escritorio remoto en todos nuestros clientes. También hemos agregado algunas nuevas características y abordado errores y bloqueos que se mostraban en los informes de errores. Estos son algunos cambios que puede observar:
+
+- Conexión rápida de PC (Cmd + K) le permite conectarse a un equipo sin crear un marcador.
+- La reconexión automática ahora se recupera de los problemas de red transitorios para las conexiones del equipo.
+- Al reanudar un MacBook suspendido, puede usar la reconexión automática para volver a establecer las conexiones de equipos desconectados.
+- Se agregó compatibilidad para los servidores proxy HTTP al suscribirse y conectarse a recursos de Windows Virtual Desktop.
+- Se implementó la compatibilidad de la configuración automática del proxy HTTP con archivos PAC.
+- Se integró la compatibilidad con la resolución de nombres de NETBIOS para que pueda conectarse más fácilmente a los equipos de la red local.
+- Se corrigió un problema que hacía que la barra de menús del sistema no respondiera mientras la aplicación estaba en el foco.
+- Se corrigió una condición de carrera en el lado cliente que podía provocar errores de descifrado en el servidor.
+- Se realizaron mejoras para supervisar la heurística del diseño y la geometría de escenarios multimonitor que implican monitores de clase de retina.
+- Las configuraciones de diseño multimonitor ahora se mantienen a través de escenarios de redireccionamiento de sesión.
+- Se solucionó un problema que impedía que la barra de menús se colocase en escenarios multimonitor.
+- La interfaz de usuario de la cuenta de usuario que interactúa con la cadena de claves de macOS ahora mostrará los errores de acceso a la cadena de claves.
+- Al pulsar Cancelar durante la suscripción al área de trabajo, ahora no se agregará nada al Centro de conexión.
+- Se agregaron asignaciones de claves para Cmd + Z y Cmd + F para asignar a Ctrl + Z y Ctrl + F respectivamente.
+- Se corrigió un error que hacía que las aplicaciones remotas se abrieran detrás del Centro de conexión cuando se iniciaban.
+- Se solucionó un problema en que la reproducción de audio AAC en macOS 10.15 provocaba la detención del cliente.
+- Mayús + clic con el botón izquierdo ahora funciona en modo Unicode.
+- Se corrigió un error en que el uso de la tecla Mayús desencadenaba la alerta de teclas especiales en modo Unicode.
+- Se agregó una comprobación de disponibilidad de red antes del inicio de la conexión.
+- Se corrigieron los pulsos de miniaturas de PC que a veces se producían durante la secuencia de conexión.
+- Se corrigió un error en que el campo de contraseña de la hoja Agregar/Editar cuenta de usuario se convertía en multilínea.
+- La opción "Contraer todo" ahora está atenuada si todas las áreas de trabajo están contraídas.
+- La opción "Expandir todo" ahora está atenuada si todas las áreas de trabajo están expandidas.
+- La interfaz de usuario de permisos de primera ejecución ya no se muestra en High Sierra.
+- Se corrigió un problema en que los usuarios no podían conectarse a los puntos de conexión de Windows Virtual Desktop con las credenciales guardadas en el formato DOMINIO\NOMBRE DE USUARIO.
+- El campo de nombre de usuario de la solicitud de credenciales ahora siempre aparece prerellenada para las conexiones de Windows Virtual Desktop.
+- Se corrigió un error en que se recortaban los botones Editar, Eliminar y Actualizar de las áreas de trabajo si el Centro de conexión no era lo suficientemente ancho.
+- El campo de "URL del espacio de trabajo o correo electrónico" de la hoja Agregar área de trabajo ya no distingue entre mayúsculas y minúsculas.
+- Se corrigieron varios problemas de accesibilidad que afectaban a los escenarios de navegación del teclado y VoiceOver.
+- Gran cantidad de actualizaciones para mejorar la interoperabilidad con las características actuales y futuras en el servicio Windows Virtual Desktop.
+- Ahora puede configurar el nivel de compatibilidad de AVC anunciado por el cliente desde un símbolo del sistema de terminal. Estos son los niveles de soporte técnico que puede configurar:
+  
+   - No anunciar la compatibilidad con AVC al servidor: `defaults write com.microsoft.rdc.macos AvcSupportLevel disabled`
+   - Anunciar la compatibilidad con AVC420 al servidor: `defaults write com.microsoft.rdc.macos AvcSupportLevel avc420`
+   - Anunciar la compatibilidad con AVC444 al servidor: `defaults write com.microsoft.rdc.macos AvcSupportLevel avc444`
+
+Gracias de nuevo a todos los usuarios que han comunicado errores y han dedicado tiempo a ayudarnos a diagnosticar problemas.
 
 ## <a name="updates-for-version-1039"></a>Actualizaciones para la versión 10.3.9
 
@@ -332,8 +376,8 @@ Han pasado algunas semanas desde la última actualización, pero estamos trabaja
 - Se abordaron problemas donde las ventanas de RemoteApp aparecían detrás del centro de conexiones.
 - Se corrigió un problema que se producía al editar recursos locales después de importar desde Escritorio remoto 8.
 - Ahora puedes iniciar una conexión presionando ENTRAR en un icono del escritorio.
-- Cuando estés en la vista de pantalla completa, CMD+M ahora se asigna correctamente a WIN+M.
-- Las ventanas Connection Center (Centro de conexiones), Preferences (Preferencias) y About (Acerca de) ahora responden a CMD+M.
+- Cuando está en la vista de pantalla completa, Cmd + M ahora se asigna correctamente a WIN + M.
+- Las ventanas Centro de conexiones, Preferencias y Acerca de ahora responden a Cmd + M.
 - Ahora puedes comenzar a detectar fuentes al presionar ENTRAR en la página **Adición de recursos remotos*.
 - Se corrigió un problema donde una nueva fuente de los recursos remotos aparecía vacía en el centro de conexiones hasta después de actualizar.
 

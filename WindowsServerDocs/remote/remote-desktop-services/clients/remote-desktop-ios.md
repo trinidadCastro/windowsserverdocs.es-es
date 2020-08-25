@@ -6,14 +6,14 @@ ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 723fa40e1c2d446381b333eee1289a25adefd5d8
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: fd8e1da0edd1e49ad0f43420e662a79871ee28f0
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997369"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702854"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introducción al cliente de iOS
 
@@ -72,8 +72,8 @@ Para agregar un área de trabajo:
 2. En el campo Dirección URL de la fuente, escribe la dirección URL de la fuente que quieres agregar. Puede ser una URL o una dirección de correo electrónico.
    - Si eliges una dirección URL, usa la que te proporcionó el administrador.
       - Esta dirección URL suele ser una URL de Windows Virtual Desktop. La que use dependerá de la versión de Windows Virtual Desktop que esté usando.
-        - En el caso de la versión de otoño de 2019, use `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
-        - En el caso de la versión de primavera de 2020, use `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
+        - Para Windows Virtual Desktop (clásico), use `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+        - Para Windows Virtual Desktop, use `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Si usas una dirección de correo electrónico, escribe tu dirección de correo electrónico. Al escribirla, indicará al cliente que busque una dirección URL asociada a su dirección de correo electrónico si el administrador ha configurado así el servidor.
 3. Pulsa **Siguiente**.
 4. Proporciona las credenciales cuando se te pidan.

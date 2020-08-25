@@ -6,14 +6,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 70d334aa13b96a210a2b168129119d09b0297f20
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 90a0796818a2beb7e592eae1556999729b2d9ab2
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970152"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702874"
 ---
 # <a name="get-started-with-the-android-client"></a>Introducción al cliente de Android
 
@@ -75,8 +75,8 @@ Los recursos remotos son programas RemoteApp, escritorios basados en sesión y e
 1. En Connection Center (Centro de conexión), pulsa **+** y, después, **Remote Resources Feed** (Fuente de recursos remotos).
 2. Escribe la **Dirección URL de fuente**. Puede ser una dirección URL o una dirección de correo electrónico:
    - La **dirección URL** es el servidor de acceso web de Escritorio remoto que te proporciona el administrador. Si accede a los recursos de Windows Virtual Desktop, puede usar una de las siguientes direcciones URL, según la versión que esté usando:
-     - Si usa la versión de otoño de 2019, use: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
-     - Si usa la versión de primavera de 2020, use: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
+     - Si usa Windows Virtual Desktop (clásico), utilice: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+     - Si usa Windows Virtual Desktop, utilice: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Si tienes previsto usar **Correo electrónico**, escribe tu dirección de correo electrónico en este campo. Esto indica al cliente que busque un servidor de acceso web de Escritorio remoto asociado a tu dirección de correo electrónico si el administrador lo ha configurado.
 3. Pulsa **Siguiente**.
 4. Escribe la información de inicio de sesión cuando se te pida. Esto puede variar en función de la implementación y puede incluir:
