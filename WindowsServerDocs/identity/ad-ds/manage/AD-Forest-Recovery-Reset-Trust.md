@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación de bosque de AD: restablecimiento de una contraseña de confianza'
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.openlocfilehash: c91e32f76eb2a825cbce8419d9ce3bf689968e08
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d3a0c694e2108ca623f1ba224d2a265314d7800e
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969832"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941485"
 ---
 # <a name="resetting-a-trust-password-on-one-side-of-the-trust"></a>Restablecer una contraseña de confianza en un lado de la confianza
 
@@ -47,7 +47,7 @@ ms.locfileid: "87969832"
    > [!NOTE]
    > **passwordt** debe ser el mismo valor en ambos lados de la confianza. Ejecute este comando solo una vez (a diferencia del comando **netdom resetpwd** ) porque restablece automáticamente la contraseña dos veces.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
 - [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 074e63e9-976c-49da-8cba-9ae0b3325e34
 title: Introduction to Active Directory Administrative Center Enhancements (Level 100)
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: f494fc09027b17d2110731d73d3d8de6d0496342
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a7639fccf472d3b23b06a64dc0e621cfa4f8bb37
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957032"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940115"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -123,7 +123,7 @@ En los siguientes procedimientos, creará dos usuarios de prueba. Después crear
    - Nombre completo: test1
    - Inicio de sesión SamAccountName de usuario: test1
    - Contraseña: p@ssword1
-   - Confirmar contraseña:p@ssword1
+   - Confirmar contraseña: p@ssword1
 
 5. Repita los pasos anteriores para crear un segundo usuario, test2.
 
@@ -355,7 +355,7 @@ En el siguiente procedimiento, editará la directiva de contraseña específica 
 
 5. En **Exigir historial de contraseñas**, cambie el valor de **Número de contraseñas recordadas** a **30**.
 
-6. Haga clic en **Aceptar**.
+6. Haga clic en **OK**.
 
 ![Introducción a los](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em> del centro de administración de ad***
 

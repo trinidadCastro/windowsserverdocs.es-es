@@ -2,17 +2,17 @@
 ms.assetid: 2a5d5271-6ac6-4c1b-b4ef-9b568932a55a
 title: Active Directory actualizaciones de esquema en todo el dominio
 description: Actualizaciones de esquema en todo el dominio realizadas por Adprep/DomainPrep al promover un controlador de dominio
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 10/29/2018
 ms.topic: article
-ms.openlocfilehash: 606e48502587675b9a98e279f1b9047db8789021
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cc22ebec3546c852dff811b00a0e430c7f740abc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959103"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940785"
 ---
 # <a name="domain-wide-schema-updates"></a>Actualizaciones de esquema en todo el dominio
 

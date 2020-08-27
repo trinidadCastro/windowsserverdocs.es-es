@@ -1,17 +1,17 @@
 ---
 ms.assetid: ac727bd1-a892-47ed-a7ba-439b34187d4e
 title: Descripciones de la página del Asistente para la instalación y eliminación de AD DS
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 39d41b605db94931731f29aa25990672332c8056
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0eab71426d282bbd1c0411b13286a9cc93dc38ab
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959433"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941025"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>Descripciones de la página del Asistente para la instalación y eliminación de AD DS
 
@@ -195,7 +195,7 @@ Las siguientes opciones aparecen en la página **Opciones adicionales** si se in
 
 Para obtener más información sobre cómo crear un dominio, vea [instalar un nuevo servidor de Windows Server 2012 Active Directory dominio secundario o de árbol &#40;nivel 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md). Para obtener más información acerca de cómo agregar un controlador de dominio a un dominio existente, vea [instalar un controlador de dominio de Windows Server 2012 de réplica en un dominio existente &#40;nivel 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md).
 
-## <a name="paths"></a><a name="BKMK_Paths"></a>Rutas de acceso
+## <a name="paths"></a><a name="BKMK_Paths"></a>Rutas
 Las siguientes opciones aparecen en la página **Rutas de acceso**.
 
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_Paths.gif)
@@ -237,7 +237,7 @@ Algunas de las advertencias que aparecen en esta página incluyen:
 
 Para obtener más información acerca de comprobaciones de requisitos previos específicas que se realizan para la instalación de AD DS, consulte el tema sobre las [pruebas de requisitos previos](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_ADDSInstallPrerequisiteTests).
 
-## <a name="results"></a><a name="BKMK_Results"></a>Resultados
+## <a name="results"></a><a name="BKMK_Results"></a>Results
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_SMResultsBeta.gif)
 
 En esta página, se pueden revisar los resultados de la instalación.

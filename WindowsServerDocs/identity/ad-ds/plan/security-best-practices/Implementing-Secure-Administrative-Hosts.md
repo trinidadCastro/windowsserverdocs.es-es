@@ -1,17 +1,17 @@
 ---
 ms.assetid: eafdddc3-40d7-4a75-8f4f-a45294aabfc8
 title: Implementación de hosts administrativos seguros
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e4a969049c28b29fff61d4ede7995153ed3c5818
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 63f4f805ca5326f480ce3496deecf04a40d5ffa4
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958943"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941435"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>Implementación de hosts administrativos seguros
 

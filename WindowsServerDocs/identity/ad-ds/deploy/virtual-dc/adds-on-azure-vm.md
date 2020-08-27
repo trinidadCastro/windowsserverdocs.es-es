@@ -1,17 +1,17 @@
 ---
 title: Instalación de Active Directory Domain Services en una máquina virtual de Azure
 description: Cómo crear un nuevo bosque de Active Directory en una máquina virtual (VM) en una máquina virtual de Azure.
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 04/11/2019
 ms.topic: article
-ms.openlocfilehash: 7272ddc3693816974df528e6c5e10671bbe4ffb7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 98725e194226f048de5bc8332c02ec54c7525ee1
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943780"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940125"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>Install a new Active Directory forest using Azure CLI (Instalación de un nuevo bosque de Active Directory en la CLI de Azure)
 
@@ -46,12 +46,12 @@ El siguiente script automatiza el proceso de creación de dos máquinas virtuale
 
 El siguiente script se puede ejecutar directamente desde el Azure Portal. Si decide instalar y usar la CLI localmente, para esta guía de inicio rápido es preciso que ejecute la CLI de Azure versión 2.0.4 o posterior. Ejecute `az --version` para encontrar la versión. Si necesita instalarla o actualizarla, consulte [Instalación de la CLI de Azure 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-| Nombre de la variable | Propósito |
+| Nombre de variable | Propósito |
 | :---: | :--- |
 | AdminUsername | Nombre de usuario que se configurará en cada máquina virtual como administrador local. |
 | AdminPassword | Contraseña de texto no cifrado que se configurará en cada máquina virtual como la contraseña de administrador local. |
 | ResourceGroupName | Nombre que se va a usar para el grupo de recursos. No debe duplicar un nombre existente. |
-| Ubicación | Nombre de ubicación de Azure en el que desea realizar la implementación. Muestra las regiones admitidas para la suscripción actual mediante `az account list-locations` . |
+| Location | Nombre de ubicación de Azure en el que desea realizar la implementación. Muestra las regiones admitidas para la suscripción actual mediante `az account list-locations` . |
 | VNetName | Nombre para asignar la red virtual de Azure no debe duplicar un nombre existente. |
 | VNetAddress | Ámbito de IP que se usará para las redes de Azure. No debe duplicar un intervalo existente. |
 | SubnetName | Nombre para asignar la subred IP. No debe duplicar un nombre existente. |

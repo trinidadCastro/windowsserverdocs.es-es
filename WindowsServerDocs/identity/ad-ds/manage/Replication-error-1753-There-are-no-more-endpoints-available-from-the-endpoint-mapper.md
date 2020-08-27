@@ -1,17 +1,17 @@
 ---
 ms.assetid: 0f21951c-b1bf-43bb-a329-bbb40c58c876
 title: 'Error de replicación 1753: no hay más puntos de conexión disponibles desde el asignador de puntos de conexión'
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 23bab1ff39cf5097f7b6face4886c6be59a7e5d5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9752425c0732c2290642d62239151f20acb99ad0
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943525"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940485"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Error de replicación 1753: no hay más puntos de conexión disponibles desde el asignador de puntos de conexión
 
@@ -147,7 +147,7 @@ Comprobar que se ha iniciado el servicio que registra su servicio con el asignad
 
 Compruebe que el cliente RPC (DC de destino) está conectado al servidor RPC deseado (DC de origen).
 
-Todos los controladores de dominio de un bosque de Active Directory común registran un registro CNAME del controlador de dominio en el _msdcs. \<forest root domain>Zona DNS independientemente del dominio en el que residen en el bosque. El registro CNAME de DC se deriva del atributo objectGUID del objeto de configuración NTDS para cada controlador de dominio.
+Todos los controladores de dominio de un bosque de Active Directory común registran un registro CNAME del controlador de dominio en el _msdcs. \<forest root domain> Zona DNS independientemente del dominio en el que residen en el bosque. El registro CNAME de DC se deriva del atributo objectGUID del objeto de configuración NTDS para cada controlador de dominio.
 
 Al realizar operaciones basadas en la replicación, un controlador de dominio de destino consulta DNS para el registro CNAME de DC de origen. El registro CNAME contiene el nombre de equipo completo del DC de origen que se usa para derivar la dirección IP de los DC de origen a través de la búsqueda de caché del cliente DNS, la búsqueda de archivos host/LMHost, el host A/AAAA en DNS o WINS.
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: a7ef2fba-b05c-4be2-93b2-b9456244c3ad
 title: Supervisión de Active Directory en busca de indicios de riesgo
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8b28d412411336062187a842912b6f4a41957eba
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9b7aafb92b354181957c6c304ad9b366b4413e65
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994352"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941425"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Supervisión de Active Directory en busca de indicios de riesgo
 
@@ -260,7 +260,7 @@ Esta subcategoría informa de Cuándo se tiene acceso a los objetos del sistema 
 
 Si el valor auditar el acceso a objetos se configura como **correcto**, se genera una entrada de auditoría cada vez que un usuario obtiene acceso correctamente a un objeto con una SACL especificada. Si esta configuración de Directiva se configura como **error**, se genera una entrada de auditoría cada vez que un usuario produce un error al intentar obtener acceso a un objeto con una SACL especificada.
 
-##### <a name="registry"></a>Registro del sistema
+##### <a name="registry"></a>Registro
 Esta subcategoría informa cuando se tiene acceso a los objetos del registro. Solo los objetos del registro con SACL provocan que se generen eventos de auditoría y solo cuando se tiene acceso a ellos de forma que coincidan con sus entradas SACL. Por sí solo, esta configuración de Directiva no provocará la auditoría de ningún evento.
 
 ##### <a name="kernel-object"></a>Objeto de kernel
@@ -358,19 +358,19 @@ Microsoft proporciona un [script de ejemplo](https://support.microsoft.com/kb/92
 
 Auditpol.exe se puede usar para guardar y restaurar una directiva de auditoría local y para ver otros comandos relacionados con la auditoría. Estos son los otros comandos **Auditpol** .
 
-`auditpol /clear`-Se usa para borrar y restablecer las directivas de auditoría local
+`auditpol /clear` -Se usa para borrar y restablecer las directivas de auditoría local
 
-`auditpol /backup /file:<filename>`: Se usa para hacer una copia de seguridad de una directiva de auditoría local actual en un archivo binario.
+`auditpol /backup /file:<filename>` : Se usa para hacer una copia de seguridad de una directiva de auditoría local actual en un archivo binario.
 
-`auditpol /restore /file:<filename>`: Se usa para importar un archivo de directiva de auditoría guardado previamente en una directiva de auditoría local.
+`auditpol /restore /file:<filename>` : Se usa para importar un archivo de directiva de auditoría guardado previamente en una directiva de auditoría local.
 
-`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-Si esta configuración de directiva de auditoría está habilitada, hace que el sistema se detenga inmediatamente (con STOP: C0000244 {Audit FAIL} Message) si no se puede registrar una auditoría de seguridad por alguna razón. Normalmente, un evento no se registra cuando el registro de auditoría de seguridad está lleno y el método de retención especificado para el registro de seguridad **no sobrescribe eventos** o **sobrescribe eventos por días**. Normalmente solo lo habilitan los entornos que necesitan una mayor garantía de que el registro de seguridad está registrando. Si está habilitada, los administradores deben observar atentamente el tamaño del registro de seguridad y girar los registros según sea necesario. También se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: apagar el sistema inmediatamente si no se pueden registrar las auditorías de seguridad** (valor predeterminado = deshabilitado).
+`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>` -Si esta configuración de directiva de auditoría está habilitada, hace que el sistema se detenga inmediatamente (con STOP: C0000244 {Audit FAIL} Message) si no se puede registrar una auditoría de seguridad por alguna razón. Normalmente, un evento no se registra cuando el registro de auditoría de seguridad está lleno y el método de retención especificado para el registro de seguridad **no sobrescribe eventos** o **sobrescribe eventos por días**. Normalmente solo lo habilitan los entornos que necesitan una mayor garantía de que el registro de seguridad está registrando. Si está habilitada, los administradores deben observar atentamente el tamaño del registro de seguridad y girar los registros según sea necesario. También se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: apagar el sistema inmediatamente si no se pueden registrar las auditorías de seguridad** (valor predeterminado = deshabilitado).
 
-`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`: Esta configuración de directiva de auditoría determina si se debe auditar el acceso de los objetos globales del sistema. Si esta directiva está habilitada, hace que los objetos del sistema, como exclusiones mutuas, eventos, semáforos y dispositivos DOS, se creen con una lista de control de acceso de sistema (SACL) predeterminada. La mayoría de los administradores consideran que las auditorías de objetos globales del sistema son demasiado "ruidosos" y solo lo habilitan si se sospecha de ataques malintencionados. Solo se proporciona una SACL a los objetos con nombre. Si la Directiva auditar el acceso a objetos (o la subcategoría de auditoría de objetos de kernel) también está habilitada, se audita el acceso a estos objetos del sistema. Al configurar esta configuración de seguridad, los cambios no surtirán efecto hasta que reinicie Windows. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad auditar el acceso de objetos globales del sistema (valor predeterminado = deshabilitado).
+`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>` : Esta configuración de directiva de auditoría determina si se debe auditar el acceso de los objetos globales del sistema. Si esta directiva está habilitada, hace que los objetos del sistema, como exclusiones mutuas, eventos, semáforos y dispositivos DOS, se creen con una lista de control de acceso de sistema (SACL) predeterminada. La mayoría de los administradores consideran que las auditorías de objetos globales del sistema son demasiado "ruidosos" y solo lo habilitan si se sospecha de ataques malintencionados. Solo se proporciona una SACL a los objetos con nombre. Si la Directiva auditar el acceso a objetos (o la subcategoría de auditoría de objetos de kernel) también está habilitada, se audita el acceso a estos objetos del sistema. Al configurar esta configuración de seguridad, los cambios no surtirán efecto hasta que reinicie Windows. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad auditar el acceso de objetos globales del sistema (valor predeterminado = deshabilitado).
 
-`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`: Esta configuración de directiva de auditoría especifica que los objetos de kernel con nombre (como exclusiones mutuas y semáforos) deben recibir las SACL cuando se crean. AuditBaseDirectories afecta a los objetos de contenedor, mientras que AuditBaseObjects afecta a objetos que no pueden contener otros objetos.
+`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>` : Esta configuración de directiva de auditoría especifica que los objetos de kernel con nombre (como exclusiones mutuas y semáforos) deben recibir las SACL cuando se crean. AuditBaseDirectories afecta a los objetos de contenedor, mientras que AuditBaseObjects afecta a objetos que no pueden contener otros objetos.
 
-`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`: Esta configuración de directiva de auditoría especifica si el cliente genera un evento cuando uno o varios de estos privilegios se asignan a un token de seguridad de usuario: AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege, TakeOwnershipPrivilege y TcbPrivilege. Si esta opción no está habilitada (valor predeterminado = deshabilitado), los privilegios BackupPrivilege y RestorePrivilege no se registran. La habilitación de esta opción puede hacer que el registro de seguridad sea extremadamente ruidoso (a veces cientos de eventos por segundo) durante una operación de copia de seguridad. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: auditar el uso de los privilegios de copia de seguridad y restauración**.
+`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>` : Esta configuración de directiva de auditoría especifica si el cliente genera un evento cuando uno o varios de estos privilegios se asignan a un token de seguridad de usuario: AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege, TakeOwnershipPrivilege y TcbPrivilege. Si esta opción no está habilitada (valor predeterminado = deshabilitado), los privilegios BackupPrivilege y RestorePrivilege no se registran. La habilitación de esta opción puede hacer que el registro de seguridad sea extremadamente ruidoso (a veces cientos de eventos por segundo) durante una operación de copia de seguridad. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: auditar el uso de los privilegios de copia de seguridad y restauración**.
 
 > [!NOTE]
 > La información que se proporciona aquí se tomó del [tipo de opción de auditoría](/openspecs/windows_protocols/ms-gpac/262a2bed-93d4-4c04-abec-cf06e9ec72fd) de Microsoft y de la herramienta SCM de Microsoft.

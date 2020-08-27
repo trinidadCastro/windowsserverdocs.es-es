@@ -1,17 +1,17 @@
 ---
 ms.assetid: 73897497-b189-4305-b234-e057ffda163a
 title: Asignar nombres de dominio
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2b25f714913df4c8453194dbc2b691c5cca0db80
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8d6f85cc59b7f031f6985936ce8725de6d477815
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947919"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941225"
 ---
 # <a name="assigning-domain-names"></a>Asignar nombres de dominio
 

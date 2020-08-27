@@ -1,17 +1,17 @@
 ---
 ms.assetid: e4c31187-f15f-410b-bb79-8d63e2f2b421
 title: Actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: ae0aa44dba50c467dd1bd2423e9eb67104387cd3
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4034ea96fbe1f758d6948b2bc52ba9786158b0ba
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994487"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940565"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>Actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012
 
@@ -91,7 +91,7 @@ En la siguiente tabla se recogen las nuevas características de AD DS en Windows
 |Característica|Descripción|
 |-----------|---------------|
 |Activación basada en Active Directory (AD BA). Ver [Introducción a la activación por volumen](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612(v=ws.11))|Simplifica la tarea de configurar la distribución y administración de licencias de software por volumen.|
-|[Servicios de federación de Active Directory (AD FS)](../../active-directory-federation-services.md)|Agrega, entre otras cosas, la instalación de roles por medio del Administrador del servidor, una configuración de confianzas simplificada, una administración de confianzas automática y compatibilidad con el protocolo SAML.|
+|[Active Directory Federation Services (AD FS)](../../active-directory-federation-services.md)|Agrega, entre otras cosas, la instalación de roles por medio del Administrador del servidor, una configuración de confianzas simplificada, una administración de confianzas automática y compatibilidad con el protocolo SAML.|
 |Eventos de vaciado de página perdida de Active Directory|El evento 530 NTDS ISAM con error de Jet -1119 se registra para detectar eventos de vaciado de página perdida en las bases de datos de Active Directory.|
 |[Interfaz de usuario de la papelera de reciclaje de Active Directory](../get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-.md#ad_recycle_bin_mgmt)|El Centro de administración de Active Directory (ADAC) incorpora una característica de administración de GUI de la papelera de reciclaje que apareció inicialmente en Windows Server 2008 R2.|
 |[Cmdlets de Windows PowerShell para la administración de la replicación y la topología de Active Directory](../manage/powershell/introduction-to-active-directory-replication-and-topology-management-using-windows-powershell--level-100-.md)|Permite crear y administrar sitios, vínculos de sitios y objetos de conexión de Active Directory (entre otras muchas cosas) mediante Windows PowerShell.|
@@ -155,18 +155,18 @@ A partir de Windows Server 2008, los controladores de dominio también tienen la
 | Directiva o tipo de cifrado | Windows Server 2008 predeterminado | Windows Server 2012 y Windows Server 2008 R2 predeterminado | Comentario |
 |--|--|--|--|
 | AllowNT4Crypto | Disabled | Disabled | Los clientes de Bloque de mensajes del servidor (SMB) de terceros pueden no ser compatibles con la configuración predeterminada de seguridad en los controladores de dominio. En todos los casos, esta configuración se puede relajar para permitir la interoperabilidad, pero solamente a costa de la seguridad. Para obtener más información, vea el [artículo 942564](https://go.microsoft.com/fwlink/?LinkId=164558) de Microsoft Knowledge base ( https://go.microsoft.com/fwlink/?LinkId=164558) . |
-| DES | habilitado | Disabled | [Artículo 977321](https://go.microsoft.com/fwlink/?LinkId=177717) de Microsoft Knowledge base (https://go.microsoft.com/fwlink/?LinkId=177717) |
+| DES | habilitado | Deshabilitada | [Artículo 977321](https://go.microsoft.com/fwlink/?LinkId=177717) de Microsoft Knowledge base (https://go.microsoft.com/fwlink/?LinkId=177717) |
 | Protección extendida/CBT para autenticación integrada | N/D | Habilitado | Vea el [aviso de seguridad de Microsoft (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) y el [artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) de Microsoft Knowledge base () https://go.microsoft.com/fwlink/?LinkId=178251) .<p>Revise e instale la revisión del [artículo 977073](https://go.microsoft.com/fwlink/?LinkId=186394) ( https://go.microsoft.com/fwlink/?LinkId=186394) en Microsoft Knowledge base según sea necesario). |
-| LMv2 | habilitado | Disabled | [Artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) de Microsoft Knowledge base (https://go.microsoft.com/fwlink/?LinkId=178251) |
+| LMv2 | habilitado | Deshabilitada | [Artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) de Microsoft Knowledge base (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
-## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>Requisitos del sistema operativo
+## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>Requisitos de sistema operativo
 
 En la tabla siguiente se enumeran los requisitos mínimos del sistema para Windows Server 2012. Para obtener más información sobre los requisitos de sistema, así como información de instalación previa, consulte [Instalar Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11)). No hay requisitos de sistema adicionales para instalar un nuevo bosque de Active Directory, si bien deberá agregar memoria suficiente para almacenar en caché el contenido de la base de datos de Active Directory, ya que de este modo obtendrá un mejor rendimiento de los controladores de dominio, las solicitudes de cliente LDAP y las aplicaciones habilitadas para Active Directory. Si estás actualizando un controlador de dominio existente o agregando un nuevo controlador de dominio a otro bosque, revisa la sección siguiente para asegurarte de que el servidor cumpla con los requisitos de espacio en disco.
 
-| Requisito | Valor |
+| Requisito | Value |
 |--|--|
 | Procesador | Procesador de 64 bits a 1,4 GHz |
-| RAM | 512 MB |
+| MEMORIA RAM | 512 MB |
 | Requisitos de espacio libre en disco | 32 GB |
 | Resolución de pantalla | 800x600 o superior |
 | Varios | Unidad de DVD, teclado y acceso a Internet |
@@ -200,10 +200,10 @@ Los controladores de dominio que ejecutan versiones de 64 bits de Windows Server
 
 | Si ejecuta estas ediciones | Puede actualizar a estas ediciones |
 |--|--|
-| Windows Server 2008 Standard con SP2<p>O<p>Windows Server 2008 Enterprise con SP2 | Windows Server 2012 Standard<p>O<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 Standard con SP2<p>O BIEN<p>Windows Server 2008 Enterprise con SP2 | Windows Server 2012 Standard<p>O BIEN<p>Windows Server 2012 Datacenter |
 | Windows Server 2008 Datacenter con SP2 | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 | Windows Server 2012 Standard |
-| Windows Server 2008 R2 Standard con SP1<p>O<p>Windows Server 2008 R2 Enterprise con SP1 | Windows Server 2012 Standard<p>O<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 R2 Standard con SP1<p>O BIEN<p>Windows Server 2008 R2 Enterprise con SP1 | Windows Server 2012 Standard<p>O BIEN<p>Windows Server 2012 Datacenter |
 | Windows Server 2008 R2 Datacenter con SP1 | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 R2 | Windows Server 2012 Standard |
 

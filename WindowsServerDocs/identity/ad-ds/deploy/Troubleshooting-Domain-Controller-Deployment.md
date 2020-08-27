@@ -1,17 +1,17 @@
 ---
 ms.assetid: 5ab76733-804d-4f30-bee6-cb672ad5075a
 title: Solución de problemas de implementación de controladores de dominio
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 03/20/2019
 ms.topic: article
-ms.openlocfilehash: 3615d7a0a536a0bb54efee2e8982f9b4e3686c8d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8c850a9a09af97d9aa377b79aaa87d06aa0d916c
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953334"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940615"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>Solución de problemas de implementación de controladores de dominio
 
@@ -27,7 +27,7 @@ En este tema se describe la metodología para solucionar problemas de configurac
 
 Los registros integrados son la herramienta más importante para solucionar problemas de promoción y degradación de controladores de dominio. Todos estos registros están habilitados y configurados para ofrecer el máximo nivel de detalle de forma predeterminada.
 
-| Fase | Log |
+| Fase | Registro |
 |--|--|
 | Operaciones de Administrador del servidor o de ADDSDeployment para Windows PowerShell | - %systemroot%\debug\dcpromoui.log<p>-%SystemRoot%\debug\dcpromoui *. log |
 | Instalación/Promoción del controlador de dominio | -%SystemRoot%\debug\dcpromo.log<p>-%SystemRoot%\debug\dcpromo *. log<p>-Event Eventos\registros logs\System<p>-Event Eventos\registros \ aplicación<p>-Servicio de visor eventos\registros de eventos y servicios de logs\Directory<p>-Event visor eventos\registros and Services logs\File Replication Service<p>-Visor eventos\registros de eventos y servicios de logs\DFS replicación |
@@ -278,7 +278,7 @@ Los siguientes son problemas habituales que se observan durante el proceso de de
 | Incidencia | Error al promocionar un RODC en una cuenta de equipo existente |
 |--|--|
 | Síntomas | Al usar ADDSDeployment para Windows PowerShell para promocionar un nuevo RODC con una cuenta de equipo preconfigurada, se produce el siguiente error:<p>El conjunto de parámetros de código no se puede resolver mediante los parámetros con nombre especificados.    <br />InvalidArgument: ParameterBindingException<br />    + FullyQualifiedErrorId: AmbiguousParameterSet, Microsoft. DirectoryServices. Deployment. PowerShell. Commands. Install |
-| Solución y notas | No proporciones parámetros predefinidos en una cuenta RODC existente. Estas incluyen:<p>Código: readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-siteName<br />-installdns |
+| Solución y notas | No proporciones parámetros predefinidos en una cuenta RODC existente. Entre ellas se incluyen las siguientes:<p>Código: readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-siteName<br />-installdns |
 
 | Incidencia | No ocurre nada al seleccionar o anular la selección de la opción “Reiniciar automáticamente el servidor de destino en caso necesario” |
 |--|--|
@@ -292,7 +292,7 @@ Los siguientes son problemas habituales que se observan durante el proceso de de
 
 | Incidencia | La comprobación de requisitos previos de adprep produce el error “No se puede realizar la comprobación de conflicto de esquema de Exchange” |
 |--|--|
-| Síntomas | Al intentar promocionar un controlador de dominio de Windows Server 2012 en un bosque existente de Windows Server 2003, Windows Server 2008 o Windows Server 2008 R2, la comprobación de requisitos previos produce el siguiente error:<p>Error al comprobar el código de los requisitos previos de AD Prep. No se puede realizar la comprobación de conflictos de esquema de Exchange para *<domain name>* el dominio (excepción: el servidor RPC no está disponible)<p>En el archivo adprep.log aparece el error:<p>Código: Adprep no pudo recuperar datos del servidor*<domain controller>*<p>a través de Instrumental de administración de Windows (WMI). |
+| Síntomas | Al intentar promocionar un controlador de dominio de Windows Server 2012 en un bosque existente de Windows Server 2003, Windows Server 2008 o Windows Server 2008 R2, la comprobación de requisitos previos produce el siguiente error:<p>Error al comprobar el código de los requisitos previos de AD Prep. No se puede realizar la comprobación de conflictos de esquema de Exchange para  *<domain name>* el dominio (excepción: el servidor RPC no está disponible)<p>En el archivo adprep.log aparece el error:<p>Código: Adprep no pudo recuperar datos del servidor *<domain controller>*<p>a través de Instrumental de administración de Windows (WMI). |
 | Solución y notas | El nuevo controlador de dominio no puede acceder a WMI con los protocolos DCOM o RPC contra los controladores de dominio existentes. Se conocen tres causas del error:<p>-Una regla de Firewall bloquea el acceso a los controladores de dominio existentes<p>-Falta la cuenta de servicio de red en el privilegio "iniciar sesión como servicio" (SeServiceLogonRight) en los controladores de dominio existentes.<p>-NTLM está deshabilitado en los controladores de dominio mediante las directivas de seguridad descritas en [Introducción a la restricción de la autenticación NTLM](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10)) |
 
 | Incidencia | Al crear un nuevo bosque de AD DS, siempre se muestra una advertencia sobre DNS |

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 3647b7e3-54a4-46c6-ab68-82fcf3bfacda
 title: Active Directory actualizaciones para todo el bosque
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 10/29/2018
 ms.topic: article
-ms.openlocfilehash: 5f5320129710749b271eee3097d80a6a246265f3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3e1c732bdb941c184c14952a31d902c72933ca88
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953364"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940665"
 ---
 # <a name="forest-wide-updates"></a>Actualizaciones para todo el bosque
 

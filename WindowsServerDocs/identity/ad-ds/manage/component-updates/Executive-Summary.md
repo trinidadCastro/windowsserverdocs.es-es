@@ -1,17 +1,17 @@
 ---
 ms.assetid: 85ca191c-0cc7-4453-a72c-42060ddf2ea2
 title: Resumen ejecutivo
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: 23959e4f373afbd745e5f1c8c4b760d766ab53e3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b67dbb8c22545b55b7b07565c4c92bc363070bc1
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943270"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941335"
 ---
 # <a name="executive-summary"></a>Resumen ejecutivo
 

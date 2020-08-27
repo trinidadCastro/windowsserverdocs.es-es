@@ -1,17 +1,17 @@
 ---
 title: Limpiar metadatos de AD DS Server
 description: Usar herramientas integradas para limpiar metadatos de controladores de dominio eliminados
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: 9601ead1621aef187aaf6dfed83e31184e61e0d4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9708f30e94f739b003e511af9a30196b9a94549b
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953290"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940535"
 ---
 # <a name="clean-up-active-directory-domain-controller-server-metadata"></a>Limpiar metadatos de servidor del controlador de Dominio de Active Directory
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 13fe87d9-75cf-45bc-a954-ef75d4423839
 title: 'Apéndice I: crear cuentas de administración para cuentas y grupos protegidos en Active Directory'
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 944e71b546f6e5a7484f533b5c6dc86840484e46
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c77abee124f67f28ae94ab4969d145fac64e8154
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994913"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939995"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Anexo I: creación de cuentas de administración para cuentas protegidas y grupos en Active Directory
 
@@ -183,7 +183,7 @@ Para crear las cuentas de administración, realice los pasos siguientes:
 
 19. Escriba **denegado grupo de replicación de contraseña RODC** en el cuadro de diálogo **Seleccionar usuarios, contactos, equipos** y haga clic en **Comprobar nombres**. Cuando el nombre del grupo esté subrayado en el selector de objetos, haga clic en **Aceptar** y compruebe que la cuenta es ahora miembro de los dos grupos mostrados en la captura de pantalla siguiente. No agregue la cuenta a ninguno de los grupos protegidos.
 
-20. Haga clic en **Aceptar**.
+20. Haga clic en **OK**.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)
 
@@ -275,7 +275,7 @@ En este caso, va a conceder las cuentas de administración que acaba de crear pa
 
    - /G indica que se está configurando una ACE Grant
 
-   - PIM001@tailspintoys.msftes el nombre principal de usuario (UPN) de la entidad de seguridad a la que se concederán las ACE
+   - PIM001@tailspintoys.msft es el nombre principal de usuario (UPN) de la entidad de seguridad a la que se concederán las ACE
 
    - RPWP concede permisos de propiedad de lectura y de escritura
 

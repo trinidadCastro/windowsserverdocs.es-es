@@ -1,17 +1,17 @@
 ---
 ms.assetid: b3d6fb87-c4d4-451c-b3de-a53d2402d295
 title: Instalar un nuevo bosque de Active Directory de Windows Server 2012 (nivel 200)
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 0b83588268e6a6c8dd685082b3862520fcbd80d5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 50fd78a480a369030e8874054f583dc163a3a0b3
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968262"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941035"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>Instalar un nuevo bosque de Active Directory de Windows Server 2012 (nivel 200)
 
@@ -88,11 +88,11 @@ Estas nuevas características no son compatibles con las versiones anteriores de
 > [!IMPORTANT]
 > Dcpromo.exe ya no contiene un asistente gráfico y ya no instala los archivos binarios de los roles ni las características. Si tratas de ejecutar Dcpromo.exe desde el shell del Explorador, devolverá:
 >
-> "El Asistente para instalación de Active Directory Domain Services se reubica en Administrador del servidor. Para obtener más información, vea <https://go.microsoft.com/fwlink/?LinkId=220921> ".
+> "El Asistente para instalación de Active Directory Domain Services se reubica en Administrador del servidor. Para más información, consulte: <https://go.microsoft.com/fwlink/?LinkId=220921>.
 >
 > Si tratas de ejecutar Dcpromo.exe /unattend, se instalarán los archivos binarios, como en los sistemas operativos anteriores, pero aparecerá la siguiente advertencia:
 >
-> "La operación desatendida de DCPROMO se reemplaza por el módulo ADDSDeployment para Windows PowerShell. Para obtener más información, vea <https://go.microsoft.com/fwlink/?LinkId=220924> ".
+> "La operación desatendida de DCPROMO se reemplaza por el módulo ADDSDeployment para Windows PowerShell. Para más información, consulte: <https://go.microsoft.com/fwlink/?LinkId=220924>.
 >
 > En Windows Server 2012 se deja de usar dcpromo.exe, que no se incluirá en las futuras versiones de Windows ni recibirá más mejoras en este sistema operativo. Los administradores deben dejar de utilizarlo y, si quieren crear controladores de dominio desde la línea de comandos, deberán usar en su lugar los módulos de Windows PowerShell admitidos.
 
@@ -188,7 +188,7 @@ El diálogo **Confirmación** es el último punto de control antes de que se ini
 
 Al hacer clic en **Instalar**, confirmas que está todo listo para empezar la instalación del rol. Una vez que haya comenzado la instalación del rol, no se podrá cancelar.
 
-#### <a name="results"></a>Resultados
+#### <a name="results"></a>Results
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Results.png)
 
 El diálogo **Resultados** muestra el progreso actual de la instalación y el estado de instalación actual. La instalación del rol continuará sin importar si está cerrado el Administrador del servidor.
@@ -333,7 +333,7 @@ Cuando se muestra la página **Instalación**, la configuración del controlador
 > [!NOTE]
 > Puedes ejecutar simultáneamente varios Asistentes para configuración de AD DS y de instalación de roles desde la misma consola del Administrador del servidor.
 
-#### <a name="results"></a>Resultados
+#### <a name="results"></a>Results
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestSignOff.png)
 
 La página **Resultados** indica si la promoción se realizó correctamente o si se produjo algún error, junto con toda la información administrativa importante que corresponda. El controlador de dominio se reiniciará automáticamente 10 segundos después.

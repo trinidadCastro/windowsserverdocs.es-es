@@ -1,17 +1,17 @@
 ---
 title: Actualizar controladores de dominio a Windows Server 2016
 description: En este documento se describe cómo actualizar de Windows Server 2012 R2 a Windows Server 2016
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 78e245767857111f71a6252094ef0e74fda7f714
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 747c71d3c0b3dd7afb0fb1dda1b922ac58330e02
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965272"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940245"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>Actualizar controladores de dominio a Windows Server 2016
 
@@ -165,7 +165,7 @@ A continuación se facilita un ejemplo sencillo de la actualización del bosque 
 1. Disminuir de nivel y quitar el controlador de dominio de Windows Server 2012 R2. Para obtener información acerca de cómo disminuir de nivel un controlador de dominio, consulte [degradar controladores de dominio y dominios](../../ad-ds/deploy/Demoting-Domain-Controllers-and-Domains--Level-200-.md)
 1. Una vez que el servidor se degrada y se quita, puede elevar el nivel funcional del bosque y los niveles funcionales de dominio a Windows Server 2016.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Novedades sobre la instalación y eliminación de Active Directory Domain Services (AD DS)](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md)
 - [Instale Active Directory Domain Services &#40;nivel 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)

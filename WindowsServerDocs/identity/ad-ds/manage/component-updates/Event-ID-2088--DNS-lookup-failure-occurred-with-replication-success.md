@@ -1,17 +1,17 @@
 ---
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
 title: ID. de evento 2088-error de búsqueda de DNS con replicación correcta
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 9dbb7debbca8d1625ebe975a051ed8b607d1ddd0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a6e78c458f92e477ddeaf156370f5e254caf4679
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943290"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941345"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>Id. de evento 2088: se produjo un error de búsqueda de DNS con replicación correcta
 
@@ -51,7 +51,7 @@ Acción del usuario:
 
 2) Confirme que el controlador de dominio de origen se está ejecutando Active Directory y que es accesible en la red. para ello, escriba "net view \\ <source DC name> " o "ping <source DC name> ".
 
-3) Compruebe que el controlador de dominio de origen usa un servidor DNS válido para los servicios DNS y que el registro del host del controlador de dominio de origen y el registro CNAME están registrados correctamente, mediante la versión mejorada de DNS de DCDIAG.EXE disponible en<https://www.microsoft.com/dns>
+3) Compruebe que el controlador de dominio de origen usa un servidor DNS válido para los servicios DNS y que el registro del host del controlador de dominio de origen y el registro CNAME están registrados correctamente, mediante la versión mejorada de DNS de DCDIAG.EXE disponible en <https://www.microsoft.com/dns>
 
 dcdiag/test: DNS
 
@@ -59,9 +59,9 @@ dcdiag/test: DNS
 
 dcdiag/test: DNS
 
-5) Para más información sobre el análisis de errores de DNS, consulte KB 824449:<https://support.microsoft.com/?kbid=824449>
+5) Para más información sobre el análisis de errores de DNS, consulte KB 824449: <https://support.microsoft.com/?kbid=824449>
 
-Valor de error de datos adicionales: 11004 el nombre solicitado es válido, pero no se encontró </code> ningún dato del tipo solicitado</introduction>
+Valor de error de datos adicionales: 11004 el nombre solicitado es válido, pero no se encontró </code> ningún dato del tipo solicitado </introduction>
   <section>
     <title>Diagnóstico</title>
     <content>
@@ -69,7 +69,7 @@ Valor de error de datos adicionales: 11004 el nombre solicitado es válido, pero
     </content>
   </section>
   <section>
-    <title>Resolución</title>
+    <title>Solución</title>
     <content>
       <para>Continúe con las pruebas de DNS tal y como se describe en ID. de &quot; <link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">evento 2087: error de búsqueda DNS que provocó un error en la replicación</link>.&quot;</para>
     </content>

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 3acaa977-ed63-4e38-ac81-229908c47208
 title: Cómo se controlan las cookies de servidor LDAP
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 077c40d6ed61da1d36bdfd792af41ea5067421fc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7e01afeeef7bb9751b4c23839569a9395fbd9c51
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943599"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941355"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>Cómo se controlan las cookies de servidor LDAP
 
@@ -125,7 +125,7 @@ Si ve el evento 2898 en el servidor DC/LDAP, se recomienda establecer MaxResultS
 
 Si todavía está viendo eventos 2899 con un grupo de 250 MB o más, probablemente tenga muchos clientes con un gran número de objetos devueltos, consultados con mucha frecuencia. Los datos que puede recopilar con el [Conjunto de recopiladores de datos de Active Directory](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond) pueden ayudarle a encontrar consultas paginadas repetitivas que mantienen los servidores LDAP ocupados. Todas estas consultas se mostrarán con un número de "entradas devueltas" que coincida con el tamaño de la página usada.
 
-Si es posible, debe revisar el diseño de la aplicación e implementar un enfoque diferente con una frecuencia inferior, un volumen de datos y/o menos instancias de cliente que consultan estos datos. En el caso de las aplicaciones para las que tiene acceso al código fuente, esta guía para [crear aplicaciones eficaces habilitadas para ad](/previous-versions/ms808539(v=msdn.10)) puede ayudarle a entender la forma óptima para que las aplicaciones tengan acceso a ad.
+Si es posible, debe revisar el diseño de la aplicación e implementar un enfoque diferente con una frecuencia inferior, un volumen de datos y/o menos instancias de cliente que consultan estos datos. En el caso de las aplicaciones para las que tiene acceso al código fuente, esta guía para  [crear aplicaciones eficaces habilitadas para ad](/previous-versions/ms808539(v=msdn.10)) puede ayudarle a entender la forma óptima para que las aplicaciones tengan acceso a ad.
 
 Si no se puede cambiar el comportamiento de la consulta, un enfoque también agrega más instancias replicadas de los contextos de nomenclatura necesarios y redistribuye los clientes y, finalmente, reduce la carga en los servidores LDAP individuales.
 

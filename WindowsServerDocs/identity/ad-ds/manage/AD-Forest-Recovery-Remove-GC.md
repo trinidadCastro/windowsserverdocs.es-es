@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación del bosque de AD: quitar el catálogo global'
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 60087a62-11e6-4750-a70e-510f35315688
-ms.openlocfilehash: b05415e73faef73831cccbbd9785dd1cf2d1cf9e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e24449f2debdeeaf1e0ccdaf51a44d041c7dcc61
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969852"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941585"
 ---
 # <a name="ad-forest-recovery---removing-the-global-catalog"></a>Recuperación del bosque de AD: quitar el catálogo global
 
@@ -39,7 +39,7 @@ Abra un símbolo del sistema con privilegios elevados, escriba el siguiente coma
    repadmin.exe /options DC_NAME –IS_GC
    ```
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
 - [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)

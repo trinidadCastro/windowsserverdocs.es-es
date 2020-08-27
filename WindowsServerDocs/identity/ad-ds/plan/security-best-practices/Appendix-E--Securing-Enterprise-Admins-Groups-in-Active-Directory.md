@@ -1,17 +1,17 @@
 ---
 ms.assetid: f643099e-f9c6-476f-9378-5a9228c39b33
 title: 'Apéndice E: protección de grupos de administradores de empresa en Active Directory'
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a443f00e9d2fbbf7c9376f14f436b4b1e40fd61f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c75dae209d2155458c6ff2a755460b9e7c8ccef5
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963379"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941625"
 ---
 # <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>Anexo E: protección de grupos de administradores de empresa en Active Directory
 
@@ -235,7 +235,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7.  En **programa/script**, haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección **crear un archivo por lotes** y haga clic en **abrir**.
 
-8.  Haga clic en **Aceptar**.
+8.  Haga clic en **OK**.
 
 9. Haga clic en la pestaña **General**.
 
@@ -245,7 +245,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y seleccione no **almacenar contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.
 
-13. Haga clic en **Aceptar**.
+13. Haga clic en **OK**.
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.
 

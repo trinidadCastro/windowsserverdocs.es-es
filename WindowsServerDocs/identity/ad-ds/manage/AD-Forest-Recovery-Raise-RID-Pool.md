@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación de bosque de AD: generación de grupos de RID'
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: c37bc129-a5e0-4219-9ba7-b4cf3a9fc9a4
-ms.openlocfilehash: 624aac31ac92ea16dffcd84a323cc0b13037efde
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 96e27aac4f63008c2ae694c2fe365d6391d3c949
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969922"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941565"
 ---
 # <a name="ad-forest-recovery---raising-the-value-of-available-rid-pools"></a>Recuperación del bosque de AD: aumentar el valor de los grupos de RID disponibles
 
@@ -69,7 +69,7 @@ Al aumentar el valor del entero grande, se aumenta el valor de la parte baja. Po
 11. Para validar el cambio, haga clic en **Ver**, en **árbol**y escriba la siguiente ruta de acceso de nombre distintivo: CN = RID Manager $, CN = System, DC =*Domain Name*.   Compruebe el atributo **rIDAvailablePool** .
    ![LPD](media/AD-Forest-Recovery-Raise-RID-Pool/ldp5.png)
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
 - [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)

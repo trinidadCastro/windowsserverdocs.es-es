@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4cc9c16c-1928-4dce-a3a8-6229be28eb65
 title: Conceptos de replicación de Active Directory
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c1392d813497980d6060cc22fe35afa17c4043e0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 403a8be3d6b7fc6330395bf6e4d20141e01b76ba
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969952"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940325"
 ---
 # <a name="active-directory-replication-concepts"></a>Conceptos de replicación de Active Directory
 
@@ -75,7 +75,7 @@ Para obtener más información acerca de cómo funcionan estas mejoras de KCC, c
 ## <a name="failover-functionality"></a><a name="BKMK_3"></a>Funcionalidad de conmutación por error
 Los sitios aseguran que la replicación se enrute en torno a errores de red y controladores de dominio sin conexión. El KCC se ejecuta a intervalos especificados para ajustar la topología de replicación de los cambios que se producen en AD DS, como cuando se agregan nuevos controladores de dominio y se crean nuevos sitios. El KCC revisa el estado de replicación de las conexiones existentes para determinar si las conexiones no funcionan. Si una conexión no funciona debido a un error en un controlador de dominio, el KCC crea automáticamente conexiones temporales a otros asociados de replicación (si están disponibles) para asegurarse de que se produce la replicación. Si todos los controladores de dominio de un sitio no están disponibles, el KCC crea automáticamente las conexiones de replicación entre los controladores de dominio de otro sitio.
 
-## <a name="subnet"></a><a name="BKMK_4"></a>Subnet
+## <a name="subnet"></a><a name="BKMK_4"></a>ID
 Una subred es un segmento de una red TCP/IP a la que se asigna un conjunto de direcciones IP lógicas. Las subredes agrupan los equipos de forma que identifiquen su proximidad física en la red. Los objetos de subred de AD DS identifican las direcciones de red que se usan para asignar equipos a sitios.
 
 ## <a name="site"></a><a name="BKMK_5"></a>Sitio

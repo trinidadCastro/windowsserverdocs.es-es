@@ -1,17 +1,17 @@
 ---
 ms.assetid: 65ed5956-6140-4e06-8d99-8771553637d1
 title: Degradación de controladores de dominio y dominios (Nivel 200)
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: d9be9555c3e72b13fb86509289ee7459f4d1b687
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5a450d37c3dcd5f92e6685c1a7f0393d764b8e55
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959393"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940965"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>Degradar controladores de dominio y dominios
 
@@ -232,7 +232,7 @@ Si intenta quitar el rol de AD DS antes de disminuir de nivel el servidor, Windo
 > [!IMPORTANT]
 > Para poder eliminar los archivos binarios del rol AD-Domain-Services, debes reiniciar el equipo después de disminuir el servidor de nivel.
 
-### <a name="results"></a>Resultados
+### <a name="results"></a>Results
 
 ![Está a punto de cerrarse la advertencia tras quitar AD DS](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_DemoteSignoff.png)
 
