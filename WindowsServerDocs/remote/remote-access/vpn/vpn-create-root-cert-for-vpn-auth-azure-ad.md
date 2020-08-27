@@ -7,16 +7,16 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 098d2f2c17555c3e4375e4b54b676ef67a40dc4d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dfcdea3b719cee685222fdf5919ce5e674ca1e64
+ms.sourcegitcommit: 52a8d5d7e969eaa07fd3a45ed6d3cb5a5173b6d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946578"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970642"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>Paso 7.2. Crear certificados raíz de acceso condicional para la autenticación de VPN con Azure AD
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
+> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
 - [**Anterior:** Paso 7,1. Configurar EAP-TLS para omitir la comprobación de la lista de revocación de certificados (CRL)](vpn-config-eap-tls-to-ignore-crl-checking.md)
 - [**Siguiente:** Paso 7,3. Configuración de la Directiva de acceso condicional](vpn-config-conditional-access-policy.md)
@@ -32,7 +32,7 @@ En este paso, configurará los certificados raíz de acceso condicional para la 
 
 Cuando un usuario intenta una conexión VPN, el cliente VPN realiza una llamada al administrador de cuentas web (WAM) en el cliente de Windows 10. WAM realiza una llamada a la aplicación de nube de servidor VPN. Cuando se cumplen las condiciones y los controles de la Directiva de acceso condicional, Azure AD emite un token en forma de un certificado de corta duración (1 hora) al WAM. El WAM coloca el certificado en el almacén de certificados del usuario y pasa el control al cliente VPN. 
 
-A continuación, el cliente VPN envía los problemas de certificado Azure AD a la VPN para la validación de credenciales. 
+Después, el cliente de VPN envía el certificado emitido por Azure AD a la VPN para la validación de credenciales. 
 
 > [!NOTE]
 > Azure AD usa el certificado creado más recientemente en la hoja de conectividad VPN como emisor.
@@ -46,7 +46,7 @@ A continuación, el cliente VPN envía los problemas de certificado Azure AD a l
 5. En el **acceso condicional | Directivas** , en la sección **administrar** , haga clic en **Conectividad VPN**.
 5. En la página **Conectividad VPN**, haga clic en **Nuevo certificado**.
 6. En la página **nuevo** , realice los pasos siguientes: a. En **seleccionar duración**, seleccione 1, 2 o 3 años.
-   b. Seleccione **Crear**.
+    b. Seleccione **Crear**.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
