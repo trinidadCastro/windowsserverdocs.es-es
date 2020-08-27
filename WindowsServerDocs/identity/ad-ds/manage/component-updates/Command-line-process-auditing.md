@@ -1,17 +1,17 @@
 ---
 ms.assetid: c8597cc8-bdcb-4e59-a09e-128ef5ebeaf8
 title: Auditoría de proceso de línea de comandos
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1499927a0ecc01255e5da5f9c0fff2ea064d4b5e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 12bf07aa5fb60f18cdd5b04b7d7f91c00388ed42
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943460"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939575"
 ---
 # <a name="command-line-process-auditing"></a>Auditoría de proceso de línea de comandos
 
@@ -22,7 +22,7 @@ ms.locfileid: "87943460"
 > [!NOTE]
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 
 -   El ID. de evento de auditoría de creación de procesos preexistente 4688 ahora incluirá información de auditoría para los procesos de línea de comandos.
 

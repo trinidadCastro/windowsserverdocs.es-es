@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación de bosque de AD: recuperación de Windows Server 2003'
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 07/07/2017
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 6693f2af67e0de32e54eec309b62f5333505f559
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 01557790072d4606cc98c32c7a437078940c258d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943653"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939615"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>Recuperación de bosque de AD: recuperación de Windows Server 2003
 
@@ -114,7 +114,7 @@ Si el controlador de dominio restaurado a partir de una copia de seguridad ejecu
     > [!NOTE]
     > Net Logon registrará los registros de recursos del Ubicador de DC en DNS para este DC. Si va a instalar el servicio servidor DNS en un servidor del dominio secundario, este DC no podrá registrar sus registros inmediatamente. Esto se debe a que actualmente está aislado como parte del proceso de recuperación y su servidor DNS principal es el servidor DNS raíz del bosque. Configure este equipo con la misma dirección IP que tenía antes del desastre para evitar errores de búsqueda de servicio de DC.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Recuperación del bosque de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)
 - [Recuperación de bosque de AD: diseño de un plan de recuperación de bosque personalizado](AD-Forest-Recovery-Devising-a-Plan.md)

@@ -1,17 +1,17 @@
 ---
 ms.assetid: b146f47e-3081-4c8e-bf68-d0f993564db2
 title: Implementación y configuración de controladores de dominio virtualizados
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6804df686635e441c667ab395ca486d3791a2aa5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7c2ae279a39566a30670111198d0e4840f57f6fc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959413"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939075"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>Implementación y configuración de controladores de dominio virtualizados
 
@@ -262,7 +262,7 @@ New-ADDCCloneConfigFile
 
 Ejecuta el cmdlet en el controlador de dominio de origen propuesto que pretendes clonar. El cmdlet es compatible con varios argumentos y, cuando se utiliza, prueba siempre el equipo y el entorno en el que se ejecuta, a menos que especifiques el argumento -offline.
 
-|**ActiveDirectory**<p>**Cmdlet**|**Argumentos**|**Explicación**|
+|**Active Directory**<p>**Cmdlet**|**Argumentos**|**Explicación**|
 |--|--|--|
 |**New-ADDCCloneConfigFile**|*<no argument specified>*|Cree un archivo DcCloneConfig.xml vacío en el Directorio de trabajo de DSA (valor predeterminado: %systemroot%\ntds)|
 ||-CloneComputerName|Especifica el nombre del equipo del DC que se clona. Tipo de datos String.|

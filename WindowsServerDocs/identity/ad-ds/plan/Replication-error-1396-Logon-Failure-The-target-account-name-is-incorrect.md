@@ -1,17 +1,17 @@
 ---
 ms.assetid: 399a8bbe-3375-4bb0-b55b-5f46e7050028
 title: 'Error de replicación 1396: error de inicio de sesión; el nombre de la cuenta de destino es incorrecto'
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: acd42fc1290639dddf9dbc283a873c8b7fca49c2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2a4c135f7f4e74c5c5e96e8e9366635db84030df
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972282"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938595"
 ---
 # <a name="replication-error-1396-logon-failure-the-target-account-name-is-incorrect"></a>Error de replicación 1396: error de inicio de sesión; el nombre de la cuenta de destino es incorrecto
 
@@ -113,7 +113,7 @@ Dcdiag también informa de un error que indica que no puede actualizar la cuenta
         <listItem>
           <para>Busque el SPN detectado en el paso 1 en el catálogo global detectado en el paso 2.</para>
           <code>C:&gt;repadmin /showattr Server_Name DC=corp,DC=contoso,dc=com &lt;GC used by KDC&gt; &lt;DN path of forest root domain&gt; /filter:&quot;(serviceprincipalname=&lt;SPN cited in the NTDS Replication event 1645&gt;)&quot; /gc /subtree /atts:cn,serviceprincipalname</code>
-          <para>O</para>
+          <para>O BIEN</para>
           <code>C:&gt;dsquery * forestroot -scope subtree -filter &quot;(serviceprincipalname=E3514235-4B06-11D1-AB04-00C04FC2DCD2/65cead9f-4949-46a3-a49a-f1fbfe13d2b3*)&quot; -attr * -s Server_Name.europe.corp.contoso.com</code>
           <para>Compruebe que el objeto host del SPN existe.</para>
           <para>Compruebe la ruta de acceso de DN para el objeto host, incluido si el objeto es CNF/conflicto alterado o reside en el contenedor perdido y encontrado.</para>

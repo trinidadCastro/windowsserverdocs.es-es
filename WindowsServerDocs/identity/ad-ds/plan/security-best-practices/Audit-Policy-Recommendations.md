@@ -1,17 +1,17 @@
 ---
 ms.assetid: 0abe0976-4b49-45d6-a7b3-81d28bdb8210
 title: Recomendaciones de la directiva de auditoría
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5b5ce5e7b53c7b82732613022c8309efe044143f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 33ce3713f95b995fdab63b9e3bd27650fae58347
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972232"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938235"
 ---
 # <a name="audit-policy-recommendations"></a>Recomendaciones de la directiva de auditoría
 

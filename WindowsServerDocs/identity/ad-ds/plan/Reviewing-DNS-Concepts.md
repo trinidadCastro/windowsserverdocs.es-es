@@ -1,17 +1,17 @@
 ---
 ms.assetid: 133474ee-316d-4b1c-acc6-ad5434a064d5
 title: Revisar los conceptos de DNS
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 4036e4671bab9d45ffb000eba441160c794b7f68
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 20192d56aded75f5a178a600067b26c8c23286fb
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972292"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938585"
 ---
 # <a name="reviewing-dns-concepts"></a>Revisar los conceptos de DNS
 

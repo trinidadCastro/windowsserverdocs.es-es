@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4baefbd3-038f-44c0-85ba-f24e9722b757
 title: 'Apéndice G: protección de grupos de administradores en Active Directory'
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 67c9b78abc60e0b507d2c58614847e2f16622fa5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 914603fdbaf5305a3b6abecc304fb0421c9b1bde
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963389"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938455"
 ---
 # <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Anexo G: protección de grupos de administradores en Active Directory
 
@@ -268,7 +268,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7.  En el campo **programa/script** , haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección **crear un archivo por lotes** y haga clic en **abrir**.
 
-8.  Haga clic en **Aceptar**.
+8.  Haga clic en **OK**.
 
 9. Haga clic en la pestaña **General**.
 
@@ -278,7 +278,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 12. Seleccione **ejecutar si el usuario ha registrado Onor** y no **almacenar la contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.
 
-13. Haga clic en **Aceptar**.
+13. Haga clic en **OK**.
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 96a6749c-6c9f-4f2f-ad0a-51272d282ace
 title: Determinar el intervalo
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a5d19c66372ef577708bb759cfaefab845d882c5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8230dc9e53184792e91874b1a8b7a44643564999
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943068"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939395"
 ---
 # <a name="determining-the-interval"></a>Determinar el intervalo
 
@@ -54,9 +54,9 @@ Con una estrategia de replicación de almacenamiento y reenvío, es difícil det
     |Sitios|Seattle|Boston|Los Angeles|Nueva York|Washington, D.C.|
     |---------|-----------|----------|---------------|------------|--------------------|
     |Seattle|0,25|4 + 3|24,00|3.00|4 + 3|
-    |Boston||0,25|4 + 3 + 24|4.00|4.00|
+    |Boston||0,25|4 + 3 + 24|4,00|4,00|
     |Los Angeles|||0,25|24 + 3|24 + 3 + 4|
-    |Nueva York||||0,25|4.00|
+    |Nueva York||||0,25|4,00|
     |Washington, D.C.|||||0,25|
 
 

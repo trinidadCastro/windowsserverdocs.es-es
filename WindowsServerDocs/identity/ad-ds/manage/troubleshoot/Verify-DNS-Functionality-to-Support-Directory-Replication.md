@@ -1,15 +1,15 @@
 ---
 ms.assetid: 709353b0-b913-4367-8580-44745183e2bc
 title: Comprobación de la funcionalidad de DNS para admitir la replicación de directorios
-ms.author: joflore
+ms.author: iainfou
 ms.date: 05/31/2017
 author: Femila
-ms.openlocfilehash: 90950ea59dc831f294f6ca96125ec4c9abe68bf9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c59160cb3242a91ef8a86d9e8247e0f2d376395b
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941579"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938065"
 ---
 # <a name="verify-dns-functionality-to-support-directory-replication"></a>Comprobación de la funcionalidad de DNS para admitir la replicación de directorios
 
@@ -43,7 +43,7 @@ Puede usar el procedimiento siguiente para comprobar la funcionalidad básica de
 1. En el controlador de dominio que desea probar o en un equipo miembro del dominio que tenga instaladas las herramientas de Active Directory Domain Services (AD DS), abra un símbolo del sistema como administrador. Para abrir un símbolo del sistema como administrador, haga clic en **Inicio**.
 2. En Iniciar búsqueda, escriba símbolo del sistema.
 3. En la parte superior del menú Inicio, haga clic con el botón derecho en Símbolo del sistema y luego haga clic en Ejecutar como administrador. Si aparece el cuadro de diálogo Control de cuentas de usuario, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en Continuar.
-4. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR:`dcdiag /test:dns /v /s:<DCName> /DnsBasic /f:dcdiagreport.txt`
+4. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: `dcdiag /test:dns /v /s:<DCName> /DnsBasic /f:dcdiagreport.txt`
 </br></br>Sustituya el nombre distintivo real, el nombre NetBIOS o el nombre DNS del controlador de dominio para &lt; nombrededc &gt; . Como alternativa, puede probar todos los controladores de dominio en el bosque escribiendo/e: en lugar de/s:.
 El modificador/f especifica un nombre de archivo, que en el comando anterior se dcdiagreport.txt. Si desea colocar el archivo en una ubicación distinta del directorio de trabajo actual, puede especificar una ruta de acceso de archivo, como/f:c:reportsdcdiagreport.txt.
 
@@ -71,7 +71,7 @@ Este comando comprueba el registro de los siguientes registros de recursos en DN
 
 
 - **alias (CNAME):** registro de recursos basado en el identificador único global (GUID) que ubica un asociado de replicación
-- **host (A):** el registro de recursos de host que contiene la dirección IP del controlador de dominio.
+- **host (A):**  el registro de recursos de host que contiene la dirección IP del controlador de dominio.
 - **LDAP SRV:** los registros de recursos de servicio (SRV) que buscan servidores LDAP
 - **GC SRV**: los registros de recursos de servicio (SRV) que buscan servidores de catálogo global
 - **PDC SRV**: los registros de recursos de servicio (SRV) que buscan los maestros de operaciones del emulador de controlador de dominio principal (PDC)
@@ -95,7 +95,7 @@ Si la prueba de DNS básica muestra que los registros de recursos no existen en 
 
 
 1. Abra un símbolo del sistema como administrador. Para abrir un símbolo del sistema como administrador, haga clic en Inicio. En Iniciar búsqueda, escriba símbolo del sistema. En la parte superior del menú Inicio, haga clic con el botón derecho en Símbolo del sistema y luego haga clic en Ejecutar como administrador. Si aparece el cuadro de diálogo Control de cuentas de usuario, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en Continuar.
-2. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR:`dcdiag /test:dns /v /s:<DCName> /DnsDynamicUpdate`
+2. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: `dcdiag /test:dns /v /s:<DCName> /DnsDynamicUpdate`
    </br></br>Sustituya el nombre distintivo, el nombre NetBIOS o el nombre DNS del controlador de dominio para &lt; nombrededc &gt; . Como alternativa, puede probar todos los controladores de dominio en el bosque escribiendo/e: en lugar de/s:. Si no tiene IPv6 habilitado en el controlador de dominio, debe esperar que se produzca un error en la parte del registro de recursos del host (AAAA) de la prueba, que es una condición normal cuando IPv6 no está habilitado.
 
 Si no se configuran las actualizaciones dinámicas seguras, puede usar el procedimiento siguiente para configurarlas.
@@ -119,6 +119,6 @@ Si los registros de recursos DNS no aparecen en DNS para el controlador de domin
 1. Abra un símbolo del sistema como administrador. Para abrir un símbolo del sistema como administrador, haga clic en Inicio.
 2. En Iniciar búsqueda, escriba símbolo del sistema.
 3. En la parte superior del inicio, haga clic con el botón secundario en símbolo del sistema y, a continuación, haga clic en ejecutar como administrador. Si aparece el cuadro de diálogo Control de cuentas de usuario, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en Continuar.
-4. Para iniciar el registro de los registros de recursos del localizador del controlador de dominio manualmente en el controlador de dominio de origen, en el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR:`net stop netlogon && net start netlogon`
-5. Para iniciar manualmente el registro del registro de recursos de host (A), escriba el siguiente comando en el símbolo del sistema y presione ENTRAR:`ipconfig /flushdns && ipconfig /registerdns`
-6. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR:`dcdiag /test:dns /v /s:<DCName>` </br></br>Sustituya el nombre distintivo, el nombre NetBIOS o el nombre DNS del controlador de dominio para &lt; nombrededc &gt; . Revise la salida de la prueba para asegurarse de que se han superado las pruebas de DNS. Si no tiene IPv6 habilitado en el controlador de dominio, debe esperar que se produzca un error en la parte del registro de recursos del host (AAAA) de la prueba, que es una condición normal cuando IPv6 no está habilitado.
+4. Para iniciar el registro de los registros de recursos del localizador del controlador de dominio manualmente en el controlador de dominio de origen, en el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: `net stop netlogon && net start netlogon`
+5. Para iniciar manualmente el registro del registro de recursos de host (A), escriba el siguiente comando en el símbolo del sistema y presione ENTRAR: `ipconfig /flushdns && ipconfig /registerdns`
+6. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: `dcdiag /test:dns /v /s:<DCName>` </br></br>Sustituya el nombre distintivo, el nombre NetBIOS o el nombre DNS del controlador de dominio para &lt; nombrededc &gt; . Revise la salida de la prueba para asegurarse de que se han superado las pruebas de DNS. Si no tiene IPv6 habilitado en el controlador de dominio, debe esperar que se produzca un error en la parte del registro de recursos del host (AAAA) de la prueba, que es una condición normal cuando IPv6 no está habilitado.

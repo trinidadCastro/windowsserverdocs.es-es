@@ -1,17 +1,17 @@
 ---
 ms.assetid: ce3be131-06ad-41dc-a26b-1168fa68c8ed
 title: Asignación de requisitos a una estrategia de implementación de AD DS
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d4ddc2d88e4849ac35eaf21f092f5cc0ed85ec33
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fc8dec94aad6c742fa62560d73b74e4c8f22b466
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971002"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939005"
 ---
 # <a name="mapping-your-requirements-to-an-ad-ds-deployment-strategy"></a>Asignación de requisitos a una estrategia de implementación de AD DS
 

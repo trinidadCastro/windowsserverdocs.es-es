@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7e195f5b-b194-40f3-a26d-5cf4ade5fc4d
 title: Cmdlets de Windows PowerShell para copia de seguridad y restauración de CA
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 817a4c117bfd39799a5147d657262eb208c9a79b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b008ec74adfc3a4b6c63ec29f719c45483412b1d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943450"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939565"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>Cmdlets de Windows PowerShell para copia de seguridad y restauración de CA
 
@@ -22,7 +22,7 @@ ms.locfileid: "87943450"
 > [!NOTE]
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 El módulo ADCSAdministration de Windows PowerShell se presentó en Windows Server 2012.  Se han agregado dos nuevos cmdlets a este módulo en Windows Server 2012 R2 para admitir la copia de seguridad y restauración de una CA.
 
 -   Backup-CARoleService
@@ -72,7 +72,7 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
 |-DatabaseOnly|-Restaurar la base de datos sin el certificado de CA<p>Restore-CARoleService c:\adcsbackup6-DatabaseOnly|
 |-Force|: Permite sobrescribir las claves existentes<br />-Es un parámetro opcional, pero al restaurar en contexto, es probable que sea necesario.<p>Restore-CARoleService c:\adcsbackup1-Force|
 
-### <a name="issues"></a>Issues
+### <a name="issues"></a>Incidencias
 Se realiza una copia de seguridad sin protección por contraseña si se produce un error en la función ConvertTo-SecureString mientras se usa el parámetro backup-CARoleService con el parámetro-password.
 
 ![Copia de seguridad y restauración de CA](media/CA-Backup-and-Restore-Windows-PowerShell-cmdlets/GTR_ADDS_BackupCARole.gif)

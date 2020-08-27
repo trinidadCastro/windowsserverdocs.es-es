@@ -1,17 +1,17 @@
 ---
 ms.assetid: 8a3cf2ae-2511-4eea-afd5-a43179a78613
 title: Actualizaciones de componentes de Servicios de directorio
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b3614679780395defcd182394f4a6cdd7f4ad832
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 39f13d18210a6527c5da2ccb6655150be9608a46
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943413"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939595"
 ---
 # <a name="directory-services-component-updates"></a>Actualizaciones de componentes de Servicios de directorio
 
@@ -41,7 +41,7 @@ Explique las siguientes nuevas actualizaciones de componentes de servicios de di
 
 ## <a name="domain-and-forest-functional-levels"></a><a name="BKMK_FL"></a>Niveles funcionales de dominios y bosques
 
-### <a name="overview"></a>Introducción
+### <a name="overview"></a>Información general
 En esta sección se proporciona una breve introducción a los cambios de nivel funcional del bosque y del dominio.
 
 ### <a name="new-dfl-and-ffl"></a>New nivel funcional y FFL
@@ -144,7 +144,7 @@ Estos archivos. ldf contienen cambios de esquema para el **servicio de registro 
 
 ## <a name="deprecation-of-ntfrs"></a><a name="BKMK_NTFRS"></a>Degradación de NTFRS
 
-### <a name="overview"></a>Introducción
+### <a name="overview"></a>Información general
 FRS está en desuso en Windows Server 2012 R2.  La degradación de FRS se logra aplicando un nivel funcional de dominio mínimo (nivel funcional) de Windows Server 2008.  Esta aplicación solo está presente si el nuevo dominio se crea con Administrador del servidor o Windows PowerShell.
 
 Use el parámetro-DomainMode con los cmdlets install-ADDSForest o install-ADDSDomain para especificar el nivel funcional del dominio.  Los valores admitidos para este parámetro pueden ser un entero válido o un valor de cadena enumerado correspondiente. Por ejemplo, para establecer el nivel de modo de dominio en Windows Server 2008 R2, puede especificar un valor de 4 o "Win2008R2".  Al ejecutar estos cmdlets desde el servidor 2012 R2, los valores válidos son los de Windows Server 2008 (3, Win2008) Windows Server 2008 R2 (4, Win2008R2) Windows Server 2012 (5, Win2012) y Windows Server 2012 R2 (6, Win2012R2). El nivel funcional del dominio no puede ser inferior que el del bosque, pero puede ser superior.  Dado que FRS está en desuso en esta versión, Windows Server 2003 (2, Win2003) no es un parámetro reconocido con estos cmdlets cuando se ejecuta desde Windows Server 2012 R2.
@@ -155,7 +155,7 @@ Use el parámetro-DomainMode con los cmdlets install-ADDSForest o install-ADDSDo
 
 ## <a name="ldap-query-optimizer-changes"></a><a name="BKMK_LDAPQuery"></a>Cambios del optimizador de consultas LDAP
 
-### <a name="overview"></a>Introducción
+### <a name="overview"></a>Información general
 El algoritmo del optimizador de consultas LDAP se ha reevaluado y optimizado aún más.  El resultado es la mejora del rendimiento en la eficiencia de búsqueda LDAP y el tiempo de búsqueda LDAP de consultas complejas.
 
 > [!NOTE]
@@ -307,7 +307,7 @@ Realice lo siguiente en un controlador de dominio o en un cliente o servidor uni
 
 ## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>Mejoras en el evento 1644
 
-### <a name="overview"></a>Introducción
+### <a name="overview"></a>Información general
 Esta actualización agrega estadísticas de resultados de búsqueda LDAP adicionales al ID. de evento 1644 para ayudar a solucionar problemas.  Además, hay un nuevo valor del registro que se puede usar para habilitar el registro en un umbral basado en el tiempo.  Estas mejoras están disponibles en Windows Server 2012 y Windows Server 2008 R2 SP1 a través de KB [2800945](https://support.microsoft.com/kb/2800945) y estarán disponibles para windows Server 2008 SP2.
 
 > [!NOTE]
@@ -385,7 +385,7 @@ NEW
 
 ## <a name="active-directory-replication-throughput-improvement"></a><a name="BKMK_ADRepl"></a>Mejora del rendimiento de la replicación de Active Directory
 
-### <a name="overview"></a>Introducción
+### <a name="overview"></a>Información general
 La replicación de AD usa RPC para el transporte de replicación. De forma predeterminada, RPC usa un búfer de transmisión de 8K y un tamaño de paquete de 5 k. Esto tiene el efecto neto, en el que la instancia de envío transmitirá tres paquetes (aproximadamente 15 k de datos) y tendrá que esperar un viaje de ida y vuelta de red antes de enviar más. Suponiendo un tiempo de ida y vuelta de 3ms, el mayor rendimiento sería en torno a 40 Mbps, incluso en redes 1 Gbps o 10 Gbps.
 
 > [!NOTE]

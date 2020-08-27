@@ -2,18 +2,18 @@
 ms.assetid: cb834273-828a-4141-9387-37dd8270e932
 title: Inicio de sesión con reinicio automático de Winlogon (ARSO)
 description: Cómo el inicio de sesión con reinicio automático de Windows puede ayudar a los usuarios a ser más productivos.
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.reviewer: cahick
 ms.date: 08/20/2019
 ms.topic: article
-ms.openlocfilehash: 711a3fc22977d7aa9751c8e200524f4cd295110b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3f2957d2290934505f67edbcb8a49733452939e2
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943312"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939875"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Inicio de sesión con reinicio automático de Winlogon (ARSO)
 

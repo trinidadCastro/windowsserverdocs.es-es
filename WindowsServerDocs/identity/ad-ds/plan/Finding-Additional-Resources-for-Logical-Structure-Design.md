@@ -1,17 +1,17 @@
 ---
 ms.assetid: 8b900c2b-35b1-4c95-a73d-e5f2e9cf0adb
 title: Búsqueda de recursos adicionales para el diseño de la estructura lógica
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8a314f99fe94b964eb4d3609e407fd0c985b2e8d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 25fdb357ae4be103a6c543a6969f72f1a5df91e1
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941111"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939145"
 ---
 # <a name="finding-additional-resources-for-logical-structure-design"></a>Búsqueda de recursos adicionales para el diseño de la estructura lógica
 

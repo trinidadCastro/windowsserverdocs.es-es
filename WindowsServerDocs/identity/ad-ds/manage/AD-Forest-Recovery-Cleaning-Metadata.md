@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación de bosques de AD: limpieza de metadatos de controladores de DC quitados'
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: e7543381-4081-407f-adad-a9de792c6616
-ms.openlocfilehash: 7128df3559011f882378338c10844b062652bbb2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ae95364ffa09a385e2fa03d630536165f50697b5
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956822"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938965"
 ---
 # <a name="ad-forest-recovery---cleaning-metadata-of-removed-writable-domain-controllers"></a>Recuperación de bosques de AD: limpiar metadatos de controladores de dominio de escritura quitados
 
@@ -42,7 +42,7 @@ El siguiente procedimiento es el mismo para los controladores de DC que ejecutan
 4. Haga clic en **Sí** para confirmar la eliminación. Seleccione **este controlador de dominio está permanentemente sin conexión y ya no se puede disminuir de nivel con la casilla Asistente para instalación de Active Directory Domain Services (Dcpromo)** y haga clic en **eliminar**.
 5. Si el controlador de dominio era un servidor de catálogo global, haga clic en **sí** confirmar la eliminación.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
 - [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)

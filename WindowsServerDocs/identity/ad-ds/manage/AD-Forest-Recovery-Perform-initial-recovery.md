@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación de bosque de AD: realizar la recuperación inicial'
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 62b90acb6d6ccdf266926ec32ca797a257f0798b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1b63d2dc379ae4e218bca9f39aab92eb74d6f5e5
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969882"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939505"
 ---
 # <a name="perform-initial-recovery"></a>Realizar la recuperación inicial
 
@@ -146,7 +146,7 @@ Para obtener más información, vea [Agregar el catálogo global](AD-Forest-Reco
 
 En esta fase debe tener un bosque estable, con un DC para cada dominio y un catálogo global en el bosque. Debe crear una nueva copia de seguridad de cada uno de los controladores de DC que acaba de restaurar. Ahora puede empezar a implementar otros controladores de usuario en el bosque mediante la instalación de AD DS.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Recuperación del bosque de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)
 - [Recuperación de bosque de AD: diseño de un plan de recuperación de bosque personalizado](AD-Forest-Recovery-Devising-a-Plan.md)

@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación del bosque de AD: procedimientos'
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 47a471fb-3b0b-4aa8-8525-1c92d0d51e93
-ms.openlocfilehash: c59990486da26847884aec3052818bce1ebe450d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2bd333d2ae6d27facf5e3c5b31a113b13a1cd11c
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969862"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939485"
 ---
 # <a name="ad-forest-recovery---procedures"></a>Recuperación del bosque de AD: procedimientos
 
@@ -44,7 +44,7 @@ En estos pasos se explica cómo realizar una restauración autoritativa de SYSVO
 - [Agregar el catálogo global](AD-Forest-Recovery-Add-GC.md)
 - [Recursos para comprobar que la replicación funciona](AD-Forest-Recovery-Verify-Replication.md)
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Recuperación del bosque de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)
 - [Recuperación de bosque de AD: diseño de un plan de recuperación de bosque personalizado](AD-Forest-Recovery-Devising-a-Plan.md)

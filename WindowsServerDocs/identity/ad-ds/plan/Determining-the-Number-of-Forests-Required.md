@@ -1,17 +1,17 @@
 ---
 ms.assetid: 173b72c1-ac83-4f42-abab-cf58f43769f0
 title: Determinar el número de bosques necesarios
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 66c63d36a05b525d60a58a7127ff0ffb62c635d8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ef9460c728a727bf4b5ec56d94d4651ba950cb81
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941302"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939345"
 ---
 # <a name="determining-the-number-of-forests-required"></a>Determinar el número de bosques necesarios
 

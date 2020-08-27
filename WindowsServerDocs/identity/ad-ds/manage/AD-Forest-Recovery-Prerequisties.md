@@ -1,17 +1,17 @@
 ---
 title: Requisitos previos para la planeación de la recuperación de Active Directory bosque
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
-ms.openlocfilehash: 827a983e49d9e20aafe2e7361f87e9f00ec117b0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bb640474ca990d7853a35ad684889b389affb69d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969872"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938105"
 ---
 # <a name="active-directory-forest-recovery-prerequisites"></a>Requisitos previos de la recuperación de Active Directory bosque
 
@@ -48,7 +48,7 @@ Antes de empezar a planear la recuperación de un bosque Active Directory, debe 
 
 Además, debe hacer una copia de seguridad y restaurar AD DS y SYSVOL en un entorno de laboratorio de forma periódica. Para obtener más información, vea [realizar copias de seguridad de los datos de estado del sistema](AD-Forest-Recovery-Procedures.md) y [realizar una restauración no autoritativa de Active Directory Domain Services](AD-Forest-Recovery-Procedures.md).
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 > [!div class="nextstepaction"]
 > [Recuperación del bosque de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)

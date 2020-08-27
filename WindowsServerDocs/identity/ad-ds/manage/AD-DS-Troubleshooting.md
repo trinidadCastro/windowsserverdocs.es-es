@@ -2,17 +2,17 @@
 ms.assetid: fd3bc84a-48eb-4f00-9dc2-846bf2c2668b
 title: Solución de problemas de AD DS
 description: Información general de la sección de solución de problemas de AD DS
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: iainfou
+author: iainfoulds
 manager: dcscontentpm
 ms.date: 11/22/2019
 ms.topic: article
-ms.openlocfilehash: e7ba33d7471dff72c102658262a2e41983c0a2e5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 485b78bcefbdf7d399f5bae041c653f300bc817a
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956925"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939965"
 ---
 # <a name="ad-ds-troubleshooting"></a>Solución de problemas de AD DS
 

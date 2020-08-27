@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación de bosque de AD: limpieza'
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 74f4518ead647aa4a3c8e4f7a8388c8735d466e1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 831f83d75ef7c5f866a499943a94940027cda67d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956712"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938925"
 ---
 # <a name="ad-forest-recovery---cleanup"></a>Recuperación de bosque de AD: limpieza
 
@@ -25,7 +25,7 @@ ms.locfileid: "87956712"
 - Dado que todo el bosque se restaura a un estado anterior, se pierden todos los objetos (como usuarios y equipos) que se agregaron y todas las actualizaciones (por ejemplo, cambios de contraseña) que se realizaron en los objetos existentes a partir de este punto. Por lo tanto, debe volver a crear estos objetos que faltan y volver a aplicar las actualizaciones que faltan según corresponda.
 - También es posible que necesite restaurar confianzas de salida con bosques y dominios externos, ya que estas relaciones de confianza externas no se restauran automáticamente a partir de las copias de seguridad.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
 - [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)

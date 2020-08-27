@@ -1,17 +1,17 @@
 ---
 ms.assetid: 16a344a9-f9a6-4ae2-9bea-c79a0075fd04
 title: Atestación de clave de TPM
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e2f0df3ab3310bcf62e98e61aee4ea447d37c456
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aa23d8df4391514d08ff1ef065af14275274dfa9
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943363"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939905"
 ---
 # <a name="tpm-key-attestation"></a>Atestación de clave de TPM
 
@@ -22,7 +22,7 @@ ms.locfileid: "87943363"
 > [!NOTE]
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 Aunque la compatibilidad con las claves protegidas con TPM ha existido desde Windows 8, no había ningún mecanismo para que las CA atestiguaran criptográficamente que la clave privada del solicitante de certificados está protegida realmente por un Módulo de plataforma segura (TPM). Esta actualización permite a una CA realizar esa atestación y reflejar la atestación en el certificado emitido.
 
 > [!NOTE]
@@ -64,7 +64,7 @@ En general, la atestación de clave de TPM se basa en los pilares siguientes:
 
 4.  La CA emite un certificado con un OID de directiva de emisión especial para indicar que ahora se ha atestado a la clave para que la proteja un TPM.
 
-## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>Introducción a la implementación
+## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>Información general sobre la implementación
 En esta implementación, se supone que se ha configurado una CA de Windows Server 2012 R2 Enterprise. Además, los clientes (Windows 8.1) se configuran para inscribirse en esa CA de empresa mediante plantillas de certificado.
 
 Hay tres pasos para implementar la atestación de clave de TPM:
@@ -141,7 +141,7 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
 
     -   **Credenciales de usuario:** Permita que un usuario que realiza la autenticación conceda un TPM válido mediante la especificación de sus credenciales de dominio.
 
-    -   **Certificado de aprobación:** El EKCert del dispositivo debe validarse mediante certificados de entidad de certificación intermedias del TPM administrados por el administrador para un certificado de CA raíz administrado por el administrador. Si elige esta opción, debe configurar los almacenes de certificados EKCA y EKRoot en la CA emisora como se describe en la sección configuración de la [entidad](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig) de certificación de este tema.
+    -   **Certificado de aprobación:** El EKCert del dispositivo debe validarse mediante certificados de entidad de certificación intermedias del TPM administrados por el administrador para un certificado de CA raíz administrado por el administrador. Si elige esta opción, debe configurar los almacenes de certificados EKCA y EKRoot en la CA emisora como se describe en la sección configuración de la  [entidad](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig) de certificación de este tema.
 
     -   **Clave de aprobación:** El EKPub del dispositivo debe aparecer en la lista administrada por el administrador de PKI. Esta opción ofrece el nivel de seguridad más alto, pero requiere más trabajo administrativo. Si elige esta opción, debe configurar una lista de EKPub en la CA emisora como se describe en la sección [configuración](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig) de la entidad de certificación de este tema.
 

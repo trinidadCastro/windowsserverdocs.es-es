@@ -1,17 +1,17 @@
 ---
 ms.assetid: 87bca912-b912-4bbe-9533-2c34a7abc52d
 title: Determinar el número de dominios necesarios
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 6ff1d69afc95aa87d81c8737313d425e84cbc531
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8fe9e6d50bef530d50ba8e7a33432fe2613b871b
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941333"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939355"
 ---
 # <a name="determining-the-number-of-domains-required"></a>Determinar el número de dominios necesarios
 
