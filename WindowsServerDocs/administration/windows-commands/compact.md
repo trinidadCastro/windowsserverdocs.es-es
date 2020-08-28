@@ -1,18 +1,18 @@
 ---
 title: compacto
 description: Artículo de referencia para el comando Compact, que muestra o modifica la compresión de archivos o directorios en particiones NTFS.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 429b3752-df0a-43a4-a210-df2f3ad03c3b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a211d6839229ac22af10dd4c8fcf69b1d222a4fb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 210aaf8c20741659bb29d4855ae39099c964a400
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892617"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025949"
 ---
 # <a name="compact"></a>compacto
 

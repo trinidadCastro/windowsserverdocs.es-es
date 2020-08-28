@@ -1,18 +1,18 @@
 ---
 title: ftp close
 description: Artículo de referencia del comando FTP Close, que finaliza la sesión FTP con el servidor remoto y permanece en el símbolo del sistema FTP.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1dc344a9-64f7-45bc-9d44-a48afc844e36
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bcd287c9c5a1dcdf630a6a38d146108118907112
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 37acc186b571a460720c903f6efc19aba120aaf3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889555"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025799"
 ---
 # <a name="ftp-close"></a>ftp close
 

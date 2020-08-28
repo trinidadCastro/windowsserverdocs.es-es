@@ -4,13 +4,13 @@ description: Artículo de referencia de la herramienta ReFSUtil, que intenta dia
 author: laknight5
 ms.author: laknight
 ms.date: 6/29/2020
-ms.topic: article
-ms.openlocfilehash: d40faa165666a5836dc6e87589d27f8eb643479e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.topic: reference
+ms.openlocfilehash: 8d72c025fcca7c7cb294b8a5053f8d77cc97d140
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884212"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037123"
 ---
 # <a name="refsutil"></a>ReFSUtil
 
@@ -29,7 +29,7 @@ ReFS salvage es la función principal de ReFSUtil y es útil para recuperar dato
 | `<target directory>` | Especifica la ubicación en la que se copian los archivos identificados. **No** debe estar ubicado en `<source volume>` . |
 | \- m | Recupera todos los archivos posibles, incluidos los eliminados.<p>**ADVERTENCIA:** Este parámetro no solo hace que el proceso tarde más en ejecutarse, pero también puede provocar resultados inesperados. |
 | \-v | Especifica que se debe usar el modo detallado. |
-| \-x1 | Fuerza el desmontaje del volumen en primer lugar, si es necesario. Todos los identificadores abiertos del volumen no son válidos. Por ejemplo: `refsutil salvage -QA R: N:\WORKING N:\DATA -x`. |
+| \-x1 | Fuerza el desmontaje del volumen en primer lugar, si es necesario. Todos los identificadores abiertos del volumen no son válidos. Por ejemplo, `refsutil salvage -QA R: N:\WORKING N:\DATA -x`. |
 
 ## <a name="usage-and-available-options"></a>Opciones de uso y disponibles
 

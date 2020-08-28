@@ -1,18 +1,18 @@
 ---
 title: anular la inicialización del servidor
 description: Artículo de referencia para la anulación de la inicialización del servidor, que revierte los cambios realizados en el servidor durante la configuración inicial del servidor.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 015efb04-fe84-469f-bd81-49d0046296b2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 954c56d8a9c901431859e7a424c5df436ab6858a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4ce98df7fa7c094970474432dd8fdedc56e302c6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881458"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029983"
 ---
 # <a name="uninitialize-server"></a>anular la inicialización del servidor
 

@@ -1,20 +1,20 @@
 ---
-title: start.
+title: start
 description: Artículo de referencia de Start, que inicia una ventana de símbolo del sistema independiente para ejecutar un programa o un comando especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0173f9b3-5cd7-4edb-b01e-d02193b4fadc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54ec76cf6162cd887b21f99b6579fc123f4f614c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5f17b4093bbe82d869ad561dce45437389dc347e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882293"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036933"
 ---
-# <a name="start"></a>start.
+# <a name="start"></a>start
 
 Inicia una ventana de símbolo del sistema independiente para ejecutar un programa o un comando especificado.
 
@@ -31,12 +31,12 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
 |Parámetro|Descripción|
 |---------|-----------|
 |\<Title>|Especifica el título que se va a mostrar en la barra de título de la ventana del símbolo del sistema.|
-|/d.\<Path>|Especifica el directorio de inicio.|
+|/d. \<Path>|Especifica el directorio de inicio.|
 |/i|Pasa el Cmd.exe entorno de inicio a la nueva ventana del símbolo del sistema. Si no se especifica **/i** , se utiliza el entorno actual.|
 |/min \| /Max|Especifica la minimización (**/min**) o la maximización (**/Max**) de la nueva ventana del símbolo del sistema.|
 |/Separate \| /Shared|Inicia programas de 16 bits en un espacio de memoria independiente (**/separate**) o en un espacio de memoria compartido (**/Shared**). Estas opciones no se admiten en las plataformas de 64 bits.|
 |/Low \| /normal \| /High \| /Realtime \| /abovenormal \| /BelowNormal|Inicia una aplicación en la clase de prioridad especificada. Los valores válidos de la clase Priority son **/Low**, **/normal**, **/High**, **/Realtime**, **/abovenormal**y **/BelowNormal**.|
-|/affinity\<HexAffinity>|Aplica la máscara de afinidad de procesador especificada (expresada como un número hexadecimal) a la nueva aplicación.|
+|/affinity \<HexAffinity>|Aplica la máscara de afinidad de procesador especificada (expresada como un número hexadecimal) a la nueva aplicación.|
 |/Wait|Inicia una aplicación y espera a que finalice.|
 |/elevate|Ejecuta la aplicación como administrador.|
 |/b|Inicia una aplicación sin abrir una nueva ventana del símbolo del sistema. El control de CTRL + C se omite a menos que la aplicación habilite el procesamiento de CTRL + C. Use CTRL + INTER para interrumpir la aplicación.|

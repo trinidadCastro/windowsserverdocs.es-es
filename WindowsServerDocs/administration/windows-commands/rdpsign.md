@@ -1,18 +1,18 @@
 ---
 title: rdpsign
 description: Artículo de referencia para el comando rdpsign, que permite firmar digitalmente un archivo Protocolo de escritorio remoto (. RDP).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4a6fa8ce-3d32-49a5-b056-bcc1a23391f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: f937cd0bebd2c57c4eef44c9dbf803176f285c2f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ecd80969f42a440bfd583223779fe67c27c5c310
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884328"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037153"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -33,8 +33,8 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 
 | Parámetro | Descripción |
 |--|--|
-| /sha1`<hash>` | Especifica la huella digital, que es el hash Algoritmo hash seguro 1 (SHA1) del certificado de firma que se incluye en el almacén de certificados. Se usa en Windows Server 2012 R2 y versiones anteriores. |
-| /sha256`<hash>` | Especifica la huella digital, que es el hash del algoritmo hash seguro 256 (SHA256) del certificado de firma que se incluye en el almacén de certificados. Reemplaza/SHA1 en Windows Server 2016 y versiones más recientes. |
+| /sha1 `<hash>` | Especifica la huella digital, que es el hash Algoritmo hash seguro 1 (SHA1) del certificado de firma que se incluye en el almacén de certificados. Se usa en Windows Server 2012 R2 y versiones anteriores. |
+| /sha256 `<hash>` | Especifica la huella digital, que es el hash del algoritmo hash seguro 256 (SHA256) del certificado de firma que se incluye en el almacén de certificados. Reemplaza/SHA1 en Windows Server 2016 y versiones más recientes. |
 | /q | Modo silencioso. No hay ninguna salida cuando el comando se ejecuta correctamente y la salida mínima si se produce un error en el comando. |
 | /v | modo detallado. Muestra todas las advertencias, mensajes y estado. |
 | /l | Comprueba los resultados de la firma y la salida sin reemplazar realmente ninguno de los archivos de entrada. |

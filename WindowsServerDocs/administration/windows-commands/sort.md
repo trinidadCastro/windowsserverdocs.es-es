@@ -1,18 +1,18 @@
 ---
 title: sort
 description: Artículo de referencia para la ordenación, que lee la entrada, ordena los datos y escribe los resultados en la pantalla, en un archivo o en otro dispositivo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 77116469-4790-4442-8a21-9fa73b65ef9f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec95133af8e9c2c617fedc3bf6a3085a6663b104
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 092fe9d7ce96b172237bb44c2ce4a460bfc1a8e4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882351"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036953"
 ---
 # <a name="sort"></a>sort
 
@@ -32,9 +32,9 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 |---------|-----------|
 |/r|Invierte el criterio de ordenación (es decir, ordena de Z a A y de 9 a 0).|
 |/+\<N>|Especifica el número de posición del carácter donde el **orden** comenzará cada comparación. *N* puede ser cualquier entero válido.|
-|/m\<Kilobytes>|Especifica la cantidad de memoria principal que se va a usar para la ordenación en kilobytes (KB).|
-|l\<Locale>|Invalida el criterio de ordenación de los caracteres definidos por la configuración regional predeterminada del sistema (es decir, el idioma y el país o región seleccionados durante la instalación).|
-|/rec\<Characters>|Especifica el número máximo de caracteres de un registro o una línea del archivo de entrada (el valor predeterminado es 4.096 y el máximo es 65.535).|
+|/m \<Kilobytes>|Especifica la cantidad de memoria principal que se va a usar para la ordenación en kilobytes (KB).|
+|l \<Locale>|Invalida el criterio de ordenación de los caracteres definidos por la configuración regional predeterminada del sistema (es decir, el idioma y el país o región seleccionados durante la instalación).|
+|/rec \<Characters>|Especifica el número máximo de caracteres de un registro o una línea del archivo de entrada (el valor predeterminado es 4.096 y el máximo es 65.535).|
 |[\<Drive1>:][\<Path1>]\<FileName1>|Especifica el archivo que se va a ordenar. Si no se especifica ningún nombre de archivo, se ordena la entrada estándar. La especificación del archivo de entrada es más rápida que la redirección del mismo archivo como entrada estándar.|
 |/t [ \<Drive2> :] [ \<Path2> ]|Especifica la ruta de acceso del directorio que contiene el almacenamiento de trabajo del comando de **ordenación** si los datos no caben en la memoria principal. De forma predeterminada, se usa el directorio temporal del sistema.|
 |/o [ \<Drive3> :] [ \<Path3> ]\<FileName3>|Especifica el archivo en el que se almacenará la entrada ordenada. Si no se especifica, los datos se escriben en la salida estándar. Especificar el archivo de salida es más rápido que la redirección de la salida estándar al mismo archivo.|

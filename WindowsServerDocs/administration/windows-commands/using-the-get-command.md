@@ -1,18 +1,18 @@
 ---
 title: Usar el comando get
 description: Artículo de referencia para get, que recupera propiedades o atributos sobre el objeto especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: fbd44c67-0670-4dfe-a1c0-2ab8abe327b5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25c7025c3d56148dd0698959e6284a70518a244e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 43633a8fe0bc91892b584277dd5d59feaee00c50
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896534"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029713"
 ---
 # <a name="using-the-get-command"></a>Usar el comando get
 

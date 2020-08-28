@@ -1,18 +1,18 @@
 ---
 title: rename
 description: Artículo de referencia para el comando Rename, que cambia el nombre de un archivo o un directorio.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7f2ea658-0fa9-4015-8031-22c2b0089231
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a2ab634be010f470314658b25daac92c00d4706c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 51f509576abe7f035fa04318f77b802e3fdf1d93
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883797"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030063"
 ---
 # <a name="rename"></a>rename
 

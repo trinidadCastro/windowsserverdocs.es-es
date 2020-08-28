@@ -1,18 +1,18 @@
 ---
 title: Get-DriverPackageFile
 description: Artículo de referencia de Get-DriverPackageFile, que muestra información acerca de un paquete de controladores, incluidos los controladores y los archivos que contiene.
-ms.topic: article
+ms.topic: reference
 ms.assetid: f01a2c67-7e9c-4aad-b625-383f5a1fca25
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c80267f90608dca36ef9460eb23b66689022517
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5d1990cd307aaf5a378eaf55ac95247fe5b92405
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879754"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029663"
 ---
 # <a name="get-driverpackagefile"></a>Get-DriverPackageFile
 

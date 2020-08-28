@@ -1,18 +1,18 @@
 ---
 title: choice
 description: Artículo de referencia para el comando Choice, que pide al usuario que seleccione un elemento de una lista de opciones de un solo carácter en un programa por lotes y, a continuación, devuelve el índice de la opción seleccionada.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c65a9119-410b-4dcf-9fa7-4e07d2a7238b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6aec3af1966d0b7952f0bbb5880e373356117e42
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 367f52ee41e72fe1c4c94c37a07e3a4227dec8a7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880258"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026049"
 ---
 # <a name="choice"></a>choice
 
@@ -28,12 +28,12 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| /c`<choice1><choice2><…>` | Especifica la lista de opciones que se van a crear. Entre las opciones válidas se incluyen los caracteres a-z, A-Z, 0-9 y ASCII extendido (128-254). La lista predeterminada es YN, que se muestra como `[Y,N]?` . |
+| /c `<choice1><choice2><…>` | Especifica la lista de opciones que se van a crear. Entre las opciones válidas se incluyen los caracteres a-z, A-Z, 0-9 y ASCII extendido (128-254). La lista predeterminada es YN, que se muestra como `[Y,N]?` . |
 | /n | Oculta la lista de opciones, aunque las opciones siguen estando habilitadas y se sigue mostrando el texto del mensaje (si se especifica en **/m**). |
 | /CS | Especifica que las opciones distinguen mayúsculas de minúsculas. De forma predeterminada, las opciones no distinguen mayúsculas de minúsculas. |
-| /t`<timeout>` | Especifica el número de segundos que se van a pausar antes de usar la opción predeterminada especificada por **/d**. Los valores aceptables son de **0** a **9999**. Si **/t** se establece en **0**, **Choice** no se pausa antes de devolver la opción predeterminada. |
-| /d.`<choice>` | Especifica la opción predeterminada que se debe usar después de esperar el número de segundos especificado por **/t**. La opción predeterminada debe estar en la lista de opciones especificada por **/c**. |
-| /m`<text>` | Especifica el mensaje que se va a mostrar antes de la lista de opciones. Si no se especifica **/m** , solo se muestra el mensaje de elección. |
+| /t `<timeout>` | Especifica el número de segundos que se van a pausar antes de usar la opción predeterminada especificada por **/d**. Los valores aceptables son de **0** a **9999**. Si **/t** se establece en **0**, **Choice** no se pausa antes de devolver la opción predeterminada. |
+| /d. `<choice>` | Especifica la opción predeterminada que se debe usar después de esperar el número de segundos especificado por **/t**. La opción predeterminada debe estar en la lista de opciones especificada por **/c**. |
+| /m `<text>` | Especifica el mensaje que se va a mostrar antes de la lista de opciones. Si no se especifica **/m** , solo se muestra el mensaje de elección. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="remarks"></a>Observaciones

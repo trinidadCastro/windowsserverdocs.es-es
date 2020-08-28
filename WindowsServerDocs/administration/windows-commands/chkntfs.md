@@ -1,18 +1,18 @@
 ---
 title: chkntfs
 description: Artículo de referencia del comando chkntfs, que muestra o modifica la comprobación automática del disco cuando se inicia el equipo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 93eca810-8699-4716-8e9d-aecd54f704be
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0f0c0a956cb2b286d4f5b1f34332dc01d984462
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d60707f01fb72e9ceede68df7a33e488b6196f4c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892735"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026059"
 ---
 # <a name="chkntfs"></a>chkntfs
 

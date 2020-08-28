@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: 'Información general de las carpetas de trabajo: un rol de servidor en Windows Server que proporciona una manera coherente de que los usuarios tengan acceso a los archivos de trabajo desde equipos y dispositivos.'
-ms.openlocfilehash: adc03d9bcb4289896b996984ebb53b185008f3fb
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: d8dcd07cd9a511cd0283030d048dff93ed02d6f1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994108"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036733"
 ---
 # <a name="work-folders-overview"></a>Introducción a carpetas de trabajo
 
@@ -137,10 +137,10 @@ En la tabla siguiente se describe cómo se colocan varias tecnologías de Micros
 
 | | Carpetas de trabajo | Archivos sin conexión | OneDrive para la Empresa | OneDrive |
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
-| **Resumen de tecnología** | Sincroniza los archivos que se almacenan en un servidor de archivos con equipos y dispositivos | Sincroniza los archivos que se almacenan en un servidor de archivos con equipos que tienen acceso a la red corporativa (se pueden reemplazar por carpetas de trabajo) | Sincroniza los archivos que se almacenan en Office 365 o en SharePoint con equipos y dispositivos dentro o fuera de una red corporativa, y proporciona la funcionalidad de colaboración de documentos. | Sincroniza los archivos personales que se almacenan en OneDrive con equipos, equipos Mac y dispositivos. |
+| **Resumen de tecnología** | Sincroniza los archivos que se almacenan en un servidor de archivos con equipos y dispositivos | Sincroniza los archivos que se almacenan en un servidor de archivos con equipos que tienen acceso a la red corporativa (se pueden reemplazar por carpetas de trabajo) | Sincroniza los archivos que se almacenan en Microsoft 365 o en SharePoint con equipos y dispositivos dentro o fuera de una red corporativa y proporciona la funcionalidad de colaboración de documentos. | Sincroniza los archivos personales que se almacenan en OneDrive con equipos, equipos Mac y dispositivos. |
 | **Diseñado para proporcionar acceso de usuario a los archivos de trabajo** | Sí | Sí | Sí | No |
-| **servicio en la nube** | None | None | Office 365 | Microsoft OneDrive |
-| **Servidores de la red interna** | Servidores de archivos que ejecutan Windows Server 2012 R2, Windows Server 2016 y Windows Server 2019 | Servidores de archivos | SharePoint Server (opcional) | Ninguno |
+| **servicio en la nube** | None | None | Microsoft 365 | Microsoft OneDrive |
+| **Servidores de la red interna** | Servidores de archivos que ejecutan Windows Server 2012 R2, Windows Server 2016 y Windows Server 2019 | Servidores de archivos | SharePoint Server (opcional) | None |
 | **Clientes compatibles** | Equipos, iOS y Android | Equipos en una red corporativa o conectados a través de DirectAccess, VPN u otras tecnologías de acceso remoto | PC, iOS, Android, Windows Phone | PC, equipos Mac, Windows Phone, iOS y Android |
 
 > [!NOTE]

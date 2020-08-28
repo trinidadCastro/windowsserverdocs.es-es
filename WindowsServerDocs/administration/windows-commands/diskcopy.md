@@ -1,18 +1,18 @@
 ---
 title: diskcopy
 description: Artículo de referencia del comando diskcopy, que copia el contenido del disquete en la unidad de origen en un disquete formateado o sin formatear en la unidad de destino.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5fd21efa-52cc-4e70-a7fe-35125a435106
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: b385d7fb371b0e33bcf16b240b051ce038a525a7
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dd60148c798cd69e1f1e4aa2ce79d7acc0f16a84
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890944"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025849"
 ---
 # <a name="diskcopy"></a>diskcopy
 

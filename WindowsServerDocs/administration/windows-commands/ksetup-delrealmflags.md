@@ -1,18 +1,18 @@
 ---
 title: ksetup delrealmflags
 description: Artículo de referencia para el comando ksetup delrealmflags, que quita las marcas de dominio Kerberos del dominio Kerberos especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 22053041-1eb4-47f5-bed9-3d5681bcde7d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 07d177f58f950b5e8e552e69c9f79054a379cc10
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9c82007f841c61cfeae90c1ebaceac5eca6dc7eb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887932"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025549"
 ---
 # <a name="ksetup-delrealmflags"></a>ksetup delrealmflags
 
@@ -36,7 +36,7 @@ ksetup /delrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 | Valor | Marca de dominio Kerberos | Descripción |
 | ----- | ---------- | ----------- |
-| 0xF | Todas | Se establecen todas las marcas de dominio Kerberos. |
+| 0xF | All | Se establecen todas las marcas de dominio Kerberos. |
 | 0x00 | None | No se establecen marcas de dominio Kerberos y no se habilitan características adicionales. |
 | 0x01 | sendaddress | La dirección IP se incluirá en los vales de concesión de vales. |
 | 0x02 | tcpsupported | El protocolo de control de transmisión (TCP) y el protocolo de datagramas de usuario (UDP) se admiten en este dominio Kerberos. |

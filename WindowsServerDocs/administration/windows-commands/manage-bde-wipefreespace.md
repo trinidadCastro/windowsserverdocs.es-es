@@ -1,18 +1,18 @@
 ---
 title: Manage-BDE wipefreespace
 description: Artículo de referencia para el comando Manage-BDE wipefreespace, que borra el espacio disponible en el volumen quitando los fragmentos de datos que puedan haber existido en el espacio.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b8d83a2a-c5c8-4019-9041-23d1d6abf282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca4737eae6c152ac01e674efb3e674c88f5d1538
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a2499ef3d4aa290cbcd6a6e3626555032506eb4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886581"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036523"
 ---
 # <a name="manage-bde-wipefreespace"></a>Manage-BDE wipefreespace
 

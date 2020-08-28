@@ -1,18 +1,18 @@
 ---
 title: Add-DriverGroupPackage
 description: Artículo de referencia de Add-DriverGroupPackage, que agrega un paquete de controladores a un grupo de controladores.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7cd323ae-9049-448e-a460-6c7d6462d4c8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aedf8ee37feb6a0ee9c26f917aad5f93b9dd91e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8a6507e4367b64439dbef57327e71b9bd6c14fde
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879358"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029883"
 ---
 # <a name="add-drivergrouppackage"></a>Add-DriverGroupPackage
 

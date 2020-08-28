@@ -1,18 +1,18 @@
 ---
 title: reg compare
 description: Artículo de referencia para el comando reg compare, que compara las entradas o subclaves del registro especificadas.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 177dc6a3-034e-4846-a394-330d03c14e0b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cac4b4f0e2e00cfc6d121ca27155b122291d0829
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3541ac56a59725d966e726301796f4467044cf6b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884192"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037063"
 ---
 # <a name="reg-compare"></a>reg compare
 
@@ -30,7 +30,7 @@ reg compare <keyname1> <keyname2> [{/v Valuename | /ve}] [{/oa | /od | /os | on}
 |--|--|
 | `<keyname1>` | Especifica la ruta de acceso completa de la subclave o entrada que se va a agregar. Para especificar un equipo remoto, incluya el nombre del equipo (con el formato `\\<computername>\` ) como parte del nombre de *clave*. Si se omite `\\<computername>\` , la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: **HKLM**, **HKCU**, **HKCR**, **HKU**y **HKCC**. Si se especifica un equipo remoto, las claves raíz válidas son: **HKLM** y **HKU**. Si el nombre de la clave del registro contiene un espacio, incluya el nombre de la clave entre comillas. |
 | `<keyname2>` | Especifica la ruta de acceso completa de la segunda subclave que se va a comparar. Para especificar un equipo remoto, incluya el nombre del equipo (con el formato `\\<computername>\` ) como parte del nombre de *clave*. Si se omite `\\<computername>\` , la operación se realiza de forma predeterminada en el equipo local. Si solo se especifica el nombre de equipo en *keyname2* , la operación utilizará la ruta de acceso a la subclave especificada en *keyname1*. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: **HKLM**, **HKCU**, **HKCR**, **HKU**y **HKCC**. Si se especifica un equipo remoto, las claves raíz válidas son: **HKLM** y **HKU**. Si el nombre de la clave del registro contiene un espacio, incluya el nombre de la clave entre comillas. |
-| /v`<Valuename>` | Especifica el nombre del valor que se va a comparar en la subclave. |
+| /v `<Valuename>` | Especifica el nombre del valor que se va a comparar en la subclave. |
 | /ve | Especifica que solo se deben comparar las entradas que tengan un nombre de valor null. |
 | /OA | Especifica que se muestran todas las diferencias y coincidencias. De forma predeterminada, solo se muestran las diferencias. |
 | /OD | Especifica que solo se muestran las diferencias. Este es el comportamiento predeterminado. |

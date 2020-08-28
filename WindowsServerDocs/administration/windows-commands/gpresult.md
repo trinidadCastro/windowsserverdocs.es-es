@@ -1,18 +1,18 @@
 ---
 title: gpresult
 description: Artículo de referencia del comando Gpresult, que muestra la información del conjunto resultante de directivas (RSoP) para un usuario y un equipo remotos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c65dd4799441dca44db24f532be66349b1249a5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5ef5de0c8e4e4c4f75d8ccd680e20b8cf00385f5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888579"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025679"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -33,11 +33,11 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| modificado`<system>` | Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. La opción predeterminada es el equipo local. |
-| /u`<username>` | Usa las credenciales del usuario especificado para ejecutar el comando. El usuario predeterminado es el usuario que ha iniciado sesión en el equipo que emite el comando. |
-| /p`[<password>]` | Especifica la contraseña de la cuenta de usuario que se proporciona en el parámetro **/u** . Si se omite **/p** , **Gpresult** solicita la contraseña. El parámetro **/p** no se puede usar con **/x** o **/h**. |
-| /User`[<targetdomain>\]<targetuser>]` | Especifica el usuario remoto cuyos datos de RSoP se van a mostrar. |
-| /Scope`{user | computer}` | Muestra datos RSoP para el usuario o el equipo. Si se omite **/Scope** , **Gpresult** muestra los datos de RSoP para el usuario y el equipo. |
+| modificado `<system>` | Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. La opción predeterminada es el equipo local. |
+| /u `<username>` | Usa las credenciales del usuario especificado para ejecutar el comando. El usuario predeterminado es el usuario que ha iniciado sesión en el equipo que emite el comando. |
+| /p `[<password>]` | Especifica la contraseña de la cuenta de usuario que se proporciona en el parámetro **/u** . Si se omite **/p** , **Gpresult** solicita la contraseña. El parámetro **/p** no se puede usar con **/x** o **/h**. |
+| /User `[<targetdomain>\]<targetuser>]` | Especifica el usuario remoto cuyos datos de RSoP se van a mostrar. |
+| /Scope `{user | computer}` | Muestra datos RSoP para el usuario o el equipo. Si se omite **/Scope** , **Gpresult** muestra los datos de RSoP para el usuario y el equipo. |
 | `[/x | /h] <filename>` | Guarda el informe en formato XML (**/x**) o HTML (**/h**) en la ubicación y con el nombre de archivo que se especifica mediante el parámetro *filename* . No se puede usar con **/u**, **/p**, **/r**, **/v**o **/z**. |
 | /f | Fuerza a **Gpresult** a sobrescribir el nombre de archivo que se especifica en la opción **/x** o **/h** . |
 | /r | Muestra datos de Resumen de RSoP. |

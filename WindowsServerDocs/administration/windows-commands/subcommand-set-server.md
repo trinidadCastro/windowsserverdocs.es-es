@@ -1,18 +1,18 @@
 ---
 title: Subcomando set-Server
 description: Artículo de referencia para el subcomando set-Server, que configuró los valores para un servidor de servicios de implementación de Windows.
-ms.topic: article
+ms.topic: reference
 ms.assetid: da55c29d-a94a-4d73-877b-af480f906ca0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa9a40be9b2af534ddf80b03e2c56ac06b533a75
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9199fc06733724ba14415efd938488e7558ceb1c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882134"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036743"
 ---
 # <a name="subcommand-set-server"></a>Subcomando: set-Server
 
@@ -134,7 +134,7 @@ wdsutil [Options] /Set-Server [/Server:<Server name>]
 |[/PreferredDC: <DC Name> ]|Especifica el nombre del controlador de dominio que deben usar los servicios de implementación de Windows. Éste puede ser el nombre NetBIOS o el FQDN.|
 |[/PreferredGC: <GC Name> ]|Especifica el nombre del servidor de catálogo global que deben usar los servicios de implementación de Windows. Éste puede ser el nombre NetBIOS o el FQDN.|
 |[/PrestageUsingMAC: {Yes &#124; no}]|Especifica si servicios de implementación de Windows, al crear cuentas de equipo en AD DS, debe usar la dirección MAC en lugar del GUID/UUID para identificar el equipo.|
-|[/NewMachineNamingPolicy: <Policy> ]|Especifica el formato que se va a usar al generar nombres de equipo para clientes. Para obtener información sobre el formato que se va a utilizar para <policy> , haga clic con el botón secundario en el servidor en el complemento MMC, haga clic en **propiedades**y vea la pestaña **servicios de directorio** . Por ejemplo, **/NewMachineNamingPolicy:% 61Username% #**.|
+|[/NewMachineNamingPolicy: <Policy> ]|Especifica el formato que se va a usar al generar nombres de equipo para clientes. Para obtener información sobre el formato que se va a utilizar para <policy> , haga clic con el botón secundario en el servidor en el complemento MMC, haga clic en  **propiedades**y vea la pestaña **servicios de directorio** . Por ejemplo, **/NewMachineNamingPolicy:% 61Username% #**.|
 |[/NewMachineOU]|Se usa para especificar la ubicación en AD DS donde se crearán las cuentas de equipo cliente. Especifique la ubicación con las siguientes opciones.<p>-[/type: Serverdomain &#124; Userdomain &#124; UserOU &#124; Custom] especifica el tipo de ubicación. **Serverdomain** crea cuentas en el mismo dominio que el servidor de servicios de implementación de Windows. **Userdomain** crea cuentas en el mismo dominio que el usuario que realiza la instalación. **UserOU** crea cuentas en la unidad organizativa del usuario que realiza la instalación. **Personalizado** le permite especificar una ubicación personalizada (también debe especificar un valor para **/ou** con esta opción).<br />-[/OU: <Domain name of OU> ]-Si especifica **Custom** para la opción **/Type** , esta opción especifica la unidad organizativa en la que se deben crear las cuentas de equipo.|
 |[/DomainSearchOrder: {GCOnly &#124; DCFirst}]|Especifica la Directiva para buscar cuentas de equipo en AD DS (catálogo global o controlador de dominio).|
 |[/NewMachineDomainJoin: {Yes &#124; no}]|Especifica si un equipo que aún no está preconfigurado en AD DS debe unirse al dominio durante la instalación. El valor predeterminado es **Sí**.|

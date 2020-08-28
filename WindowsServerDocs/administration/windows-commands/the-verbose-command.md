@@ -1,18 +1,18 @@
 ---
 title: Usar el comando verbose
 description: Artículo de referencia para detallado, que muestra la salida detallada de un comando especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: fcf30ae7-818f-4e7e-a083-a1812682032b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a96e3dde7291f839a0a53a5e8a851ff1ca88c1e3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a1432656a89188755d63df974fa2732702a1a1ae
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881443"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029993"
 ---
 # <a name="using-the-verbose-command"></a>Usar el comando verbose
 

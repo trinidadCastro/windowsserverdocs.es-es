@@ -1,18 +1,18 @@
 ---
 title: gpfixup
 description: Artículo de referencia para el comando gpfixup, que corrige las dependencias de nombre de dominio en directiva de grupo objetos y vínculos de directiva de grupo después de una operación de cambio de nombre de dominio.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2b145410-fc75-4526-932d-f16b7ee3aaef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9379efe545544028980cf570de30bc6d3d816c81
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6b11ae09bcc345c9fb656a8945e0febe5f4098ac
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888568"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025699"
 ---
 # <a name="gpfixup"></a>gpfixup
 
@@ -37,7 +37,7 @@ gpfixup [/v]
 | /newdns:`<newdnsname>` | Especifica el nuevo nombre DNS del dominio cuyo nombre ha cambiado como `<newdnsname>` cuando la operación de cambio de nombre de dominio cambia el nombre DNS de un dominio. Solo puede utilizar este parámetro si también usa el parámetro **/olddns** para especificar el nombre DNS del dominio anterior. |
 | /oldnb:`<oldflatname>` | Especifica el nombre NetBIOS anterior del dominio cuyo nombre ha cambiado como `<oldflatname>` cuando la operación de cambio de nombre de dominio cambia el nombre NetBIOS de un dominio. Puede usar este parámetro solo si usa el parámetro **/newnb** para especificar un nuevo nombre de NetBIOS de dominio. |
 | /newnb:`<newflatname>` | Especifica el nuevo nombre NetBIOS del dominio cuyo nombre ha cambiado como `<newflatname>` cuando la operación de cambio de nombre de dominio cambia el nombre NetBIOS de un dominio. Puede usar este parámetro solo si usa el parámetro **/oldnb** para especificar el nombre NetBIOS del dominio anterior. |
-| /DC`<dcname>` | Conéctese al controlador de dominio denominado `<dcname>` (nombre DNS o nombre NetBIOS). `<dcname>`debe hospedar una réplica de escritura de la partición de directorio de dominio como se indica en una de las siguientes opciones:<ul><li>El nombre DNS mediante `<newdnsname>` **/newdns**</li><li>El nombre de NetBIOS mediante `<newflatname>` **/newnb**</br>Si no se usa este parámetro, puede conectarse a cualquier controlador de dominio en el dominio al que se ha cambiado el nombre indicado por `<newdnsname>` o `<newflatname>` .</li></ul> |
+| /DC`<dcname>` | Conéctese al controlador de dominio denominado `<dcname>` (nombre DNS o nombre NetBIOS). `<dcname>` debe hospedar una réplica de escritura de la partición de directorio de dominio como se indica en una de las siguientes opciones:<ul><li>El nombre DNS mediante `<newdnsname>` **/newdns**</li><li>El nombre de NetBIOS mediante `<newflatname>` **/newnb**</br>Si no se usa este parámetro, puede conectarse a cualquier controlador de dominio en el dominio al que se ha cambiado el nombre indicado por `<newdnsname>` o `<newflatname>` .</li></ul> |
 | /sionly | Realiza solo la directiva de grupo corrección relacionada con la instalación de software administrado (la extensión de instalación de software para directiva de grupo). Omitir las acciones que corrigen directiva de grupo vínculos y las rutas de acceso de SYSVOL en los GPO. |
 | /User`<username>` |Ejecuta este comando en el contexto de seguridad del usuario `<username>` , donde `<username>` tiene el formato dominio\usuario. Si no se usa este parámetro, este comando se ejecuta como el usuario que ha iniciado sesión. |
 | /pwd`{<password> | *}` | Especifica la contraseña del usuario. |

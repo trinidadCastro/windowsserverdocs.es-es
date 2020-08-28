@@ -1,18 +1,18 @@
 ---
 title: Get-Device
 description: Artículo de referencia de Get-Device, que recupera información de servicios de implementación de Windows sobre un equipo preconfigurado (es decir, un equipo físico que se ha alineado con una cuenta de equipo en servicios de dominio de Active Directory).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1da79286-7e1d-45f2-aea2-d446e16a6911
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e50648a0a3e50542a7bb2ace4f887c08939ff7b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 118e14f738920527c61c8da25d19ab98126fc004
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896966"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029703"
 ---
 # <a name="get-device"></a>Get-Device
 

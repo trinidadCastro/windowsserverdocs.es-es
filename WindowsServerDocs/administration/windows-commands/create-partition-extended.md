@@ -1,18 +1,18 @@
 ---
 title: create partition extended
 description: Artículo de referencia para el comando CREATE Partition Extended, que crea una partición extendida en el disco que tiene el foco.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4ad7cb66-9c66-4153-b94e-1030a7225070
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7475eca6395c2f0cdc29fcadefe3bb8905761c99
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0d60438d634309d93a2d8446e4d86ff909db27e4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879996"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030223"
 ---
 # <a name="create-partition-extended"></a>create partition extended
 
@@ -37,7 +37,7 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
 | --------- | ----------- |
 | tamaño =`<n>` | Especifica el tamaño de la partición en megabytes (MB). Si no se proporciona ningún tamaño, la partición continuará hasta que no haya más espacio libre en la partición extendida. |
 | desplazamiento =`<n>` | Especifica el desplazamiento en kilobytes (KB), en el que se crea la partición. Si no se proporciona ningún desplazamiento, la partición se iniciará al principio del espacio libre en el disco que sea lo suficientemente grande como para contener la nueva partición. |
-| align =`<n>` | Alinea todas las extensiones de partición con el límite de alineación más cercano. Normalmente se usa con matrices de número de unidad lógica (LUN) RAID de hardware para mejorar el rendimiento. `<n>`es el número de kilobytes (KB) desde el principio del disco hasta el límite de alineación más cercano. |
+| align =`<n>` | Alinea todas las extensiones de partición con el límite de alineación más cercano. Normalmente se usa con matrices de número de unidad lógica (LUN) RAID de hardware para mejorar el rendimiento. `<n>` es el número de kilobytes (KB) desde el principio del disco hasta el límite de alineación más cercano. |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
 ## <a name="examples"></a>Ejemplos

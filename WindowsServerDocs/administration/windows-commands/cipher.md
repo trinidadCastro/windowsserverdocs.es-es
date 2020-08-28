@@ -1,18 +1,18 @@
 ---
 title: cipher
 description: Artículo de referencia para el comando Cipher, que muestra o modifica el cifrado de directorios y archivos en volúmenes NTFS.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 78ef795e-0f87-4acd-8d15-192c972c0f41
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b5d7c6708c714cd414e06e150b9b0344cc03f9c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 28d4342a43b3b66c2dd40f9041dbb72e97ec234b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880238"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026009"
 ---
 # <a name="cipher"></a>cipher
 

@@ -1,17 +1,17 @@
 ---
 title: bitsadmin sethttpmethod
 description: Artículo de referencia para el comando bitsadmin sethttpmethod, que establece el verbo HTTP que se va a usar.
-ms.topic: article
+ms.topic: reference
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 9b782ea4f07113541ce62eaef63ac8047141e766
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8374a8e306f88cbdbad079d99233171712cc00bc
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881043"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026273"
 ---
 # <a name="bitsadmin-sethttpmethod"></a>bitsadmin sethttpmethod
 

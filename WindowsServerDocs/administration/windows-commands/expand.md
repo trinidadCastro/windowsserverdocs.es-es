@@ -1,18 +1,18 @@
 ---
 title: expand
 description: Artículo de referencia del comando Expand, que expande uno o más archivos comprimidos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 66de0488-a0c4-40c2-9b03-e40c107ba343
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e1359c6db46095bd472a20e946b8748a64eb4d14
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 53443eb5aa593c43345dee4014efac0bd2e7be4b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890413"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036713"
 ---
 # <a name="expand"></a>expand
 
