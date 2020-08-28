@@ -1,18 +1,18 @@
 ---
 title: ftp get
 description: Artículo de referencia para el comando FTP get, que copia un archivo remoto en el equipo local mediante el tipo de transferencia de archivos actual.
-ms.topic: article
+ms.topic: reference
 ms.assetid: d70355c4-58ef-43e0-916b-c7ecf77e6ee4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: beff912251646bb3c9672921955515247c0b13f3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 55e57167b7918aee7db9fc8f6f9304273dfcc4e0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889439"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037743"
 ---
 # <a name="ftp-get"></a>ftp get
 

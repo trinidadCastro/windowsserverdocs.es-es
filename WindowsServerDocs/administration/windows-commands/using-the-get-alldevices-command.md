@@ -1,18 +1,18 @@
 ---
 title: Get-AllDevices
 description: Artículo de referencia de Get-AllDevices, que muestra las propiedades de los servicios de implementación de Windows de todos los equipos preconfigurados.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5824b3d2-2df1-4ed6-a289-e6c47c13fea2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e527be333570838ecb675d78742bbf55918eff3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8b0f1d17bf79628ca330302de1c8a53c9605f956
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896971"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026773"
 ---
 # <a name="get-alldevices"></a>Get-AllDevices
 

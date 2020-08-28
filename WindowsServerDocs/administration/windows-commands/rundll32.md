@@ -1,18 +1,18 @@
 ---
 title: rundll32
 description: Artículo de referencia de * * * *-
-ms.topic: article
+ms.topic: reference
 ms.assetid: 46d9cd64-8186-4cd4-a500-44700340fe81
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51c6c6ade98eccdb72015191a6040b991b43fd3f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f938edce72d29f7e316ae50733e8fe1062ec7365
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883418"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037583"
 ---
 # <a name="rundll32"></a>rundll32
 

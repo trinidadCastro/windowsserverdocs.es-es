@@ -1,18 +1,18 @@
 ---
 title: cmd
 description: Artículo de referencia para el comando cmd, que inicia una nueva instancia del intérprete de comandos, Cmd.exe.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6ec588db-31a9-4a73-a970-65a2c6f4abbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c4e651a4f88ffa1d85d5be225b3ae6e5d1676dd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b782a93d4c61f43bbe45497871fe66f29ef972a4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880097"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030983"
 ---
 # <a name="cmd"></a>cmd
 
@@ -53,7 +53,7 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 | 1 | Azul |
 | 2 | Verde |
 | 3 | Aqua |
-| 4 | Rojo |
+| 4 | Red |
 | 5 | Púrpura |
 | 6 | Amarillo |
 | 7 | Blanco |

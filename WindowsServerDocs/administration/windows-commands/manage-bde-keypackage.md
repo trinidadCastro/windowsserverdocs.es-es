@@ -1,18 +1,18 @@
 ---
 title: Manage-BDE keypackage
 description: Artículo de referencia para el comando Manage-BDE keypackage, que genera un paquete de claves para una unidad.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c631ef10-2a2f-4541-8578-292f2d4e9e80
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 969b9fc85959d137ec8b6bfc6b377f48e02e5157
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c0a5e812b47990fce1544d36815ca47b89db7c48
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886878"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037683"
 ---
 # <a name="manage-bde-keypackage"></a>Manage-BDE keypackage
 

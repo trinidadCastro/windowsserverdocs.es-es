@@ -1,18 +1,18 @@
 ---
 title: Sc.exe consulta
 description: Obtenga información acerca de cómo obtener información acerca de los servicios, los controladores, el tipo de servicios o el tipo de controladores mediante la utilidad sc.exe
-ms.topic: article
+ms.topic: reference
 ms.assetid: ac365f89-4b20-4de6-a582-b204c5e7d0eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d07d472d2c8a037899c654963e1d0e0b7cb1bb3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9b3d7967597724dfae4ab5a12ecee9698a43236f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883253"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037533"
 ---
 # <a name="scexe-query"></a>Sc.exe consulta
 
@@ -33,9 +33,9 @@ sc.exe [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [ty
 |     tipo = {controlador      |                                                                                                                            service                                                                                                                            |
 |       tipo = {propietario       |                                                                                                                             Compartir                                                                                                                             |
 |     estado = {activo     |                                                                                                                           inactivo                                                                                                                            |
-| bufsize =\<BufferSize> |                     Especifica el tamaño (en bytes) del búfer de enumeración. El tamaño de búfer predeterminado es de 1.024 bytes. Debe aumentar el tamaño del búfer de enumeración cuando la presentación resultante de una consulta supera los 1.024 bytes.                      |
-|   RI =\<ResumeIndex>   | Especifica el número de índice en el que se va a iniciar o reanudar la enumeración. El valor predeterminado es **0** (cero). Utilice este parámetro junto con el parámetro **bufsize =** cuando una consulta devuelva más información de la que puede mostrar el búfer predeterminado. |
-|  Grupo =\<GroupName>   |                                                                             Especifica el grupo de servicio que se va a enumerar. De forma predeterminada, se enumeran todos los grupos (* * grupo = * *).                                                                              |
+| bufsize = \<BufferSize> |                     Especifica el tamaño (en bytes) del búfer de enumeración. El tamaño de búfer predeterminado es de 1.024 bytes. Debe aumentar el tamaño del búfer de enumeración cuando la presentación resultante de una consulta supera los 1.024 bytes.                      |
+|   RI = \<ResumeIndex>   | Especifica el número de índice en el que se va a iniciar o reanudar la enumeración. El valor predeterminado es **0** (cero). Utilice este parámetro junto con el parámetro **bufsize =** cuando una consulta devuelva más información de la que puede mostrar el búfer predeterminado. |
+|  Grupo = \<GroupName>   |                                                                             Especifica el grupo de servicio que se va a enumerar. De forma predeterminada, se enumeran todos los grupos (* * grupo = * *).                                                                              |
 |           /?           |                                                                                                             Muestra la ayuda en el símbolo del sistema.                                                                                                              |
 
 ## <a name="remarks"></a>Observaciones

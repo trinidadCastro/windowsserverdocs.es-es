@@ -1,18 +1,18 @@
 ---
 title: bitsadmin peers y clear
 description: Artículo de referencia de los elementos del mismo nivel de bitsadmin y el comando borrar, que borra la lista del mismo nivel.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 71833862-be86-4829-8ce3-11e7869adf29
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf177f6a1d1907ff4ffc4488865a058928e4db3f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b3a3fa4ede5c1fd39ac74af6434e357934b702b8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893522"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026533"
 ---
 # <a name="bitsadmin-peers-and-clear"></a>bitsadmin peers y clear
 

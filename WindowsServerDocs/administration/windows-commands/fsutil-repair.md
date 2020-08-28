@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 62d77150-1d9e-4069-ab4a-299f33024912
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 17deb2d592ba9b5532d33a71dd8687708c8bd0bf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9c26f2be8e586205271ba1d150bb2378cc8b2045
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889920"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037333"
 ---
 # <a name="fsutil-repair"></a>fsutil repair
 

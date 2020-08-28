@@ -1,18 +1,18 @@
 ---
 title: Referencia de la herramienta de línea de comandos Print
 description: Artículo de referencia para utilizar las herramientas de la línea de comandos de Print.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 88d8fa87-6fa8-4774-9294-080b0157ea8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f5d093393908cfcd81909d0a522f2ee423bcbad
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c0bad2d62add29da39cc7e2b5569f96fd0cfbd08
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884852"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037613"
 ---
 # <a name="print-command-line-tool-reference"></a>Referencia de la herramienta de línea de comandos Print
 
@@ -20,7 +20,7 @@ ms.locfileid: "87884852"
 
 Información y vínculos a cada una de las herramientas de línea de comandos de impresión asociadas.
 
-| Get-Help | Descripción |
+| Comando | Descripción |
 |--|--|
 | [lpq](lpq.md) | Muestra el estado de una cola de impresión en un equipo que ejecuta line Printer daemon (LPD). |
 | [lpr](lpr.md) | Envía un archivo a un equipo o a un dispositivo de uso compartido de impresoras que ejecuta el servicio line Printer daemon (LPD) como preparación para la impresión. |

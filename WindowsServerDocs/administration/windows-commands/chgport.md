@@ -1,18 +1,18 @@
 ---
 title: chgport
 description: Artículo de referencia para el comando chgport, que enumera o cambia las asignaciones de puertos COM para que sean compatibles con las aplicaciones de MS-DOS.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8adb145f-6c53-4549-9253-9a966794a4f3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d3baa17633b126b5c61ba090b5b3bf4a0fb8cd38
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5b332b8c831832a9bef1f3d8a365f2cde814b6fe
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892771"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031053"
 ---
 # <a name="chgport"></a>chgport
 

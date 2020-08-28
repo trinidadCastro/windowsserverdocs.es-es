@@ -1,18 +1,18 @@
 ---
 title: 'secedit: Export'
 description: Artículo de referencia de * * * *-
-ms.topic: article
+ms.topic: reference
 ms.assetid: 49a8b241-aa8c-45b7-844d-67a29fab708e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5079ecc2874c1d834fb351ebb51bf140309e4248
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 04a03dd392fb333bb95bbd73a2694ce6bf548d9c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882979"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037453"
 ---
 # <a name="seceditexport"></a>secedit: Export
 

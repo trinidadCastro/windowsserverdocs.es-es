@@ -1,18 +1,18 @@
 ---
 title: ksetup
 description: Artículo de referencia para el comando ksetup, que realiza tareas relacionadas con la configuración y el mantenimiento del protocolo Kerberos y el Centro de distribución de claves (KDC) para admitir dominios Kerberos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4e046f8a-811b-48dc-9a69-18d8e097f353
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc51f90f553ea2478c0c8f78cf77f7373eb47d7f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8745b095b097935661bd5d45190c4060d75261ce
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887678"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037703"
 ---
 # <a name="ksetup"></a>ksetup
 

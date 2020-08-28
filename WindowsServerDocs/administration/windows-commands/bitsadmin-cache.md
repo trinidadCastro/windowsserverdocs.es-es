@@ -1,18 +1,18 @@
 ---
 title: bitsadmin cache
 description: Artículo de referencia del comando bitsadmin cache, que contiene una lista de los modificadores de caché de bitsadmin.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9ae4a283-a187-4fe3-b05c-4b53732c27cb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45d2fb96a8e405f93b1bb63a4eec00d817c6b420
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7dd6b5e7d23c0f2284699530cde659f3dbbefc9f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894658"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030503"
 ---
 # <a name="bitsadmin-cache"></a>bitsadmin cache
 

@@ -1,18 +1,18 @@
 ---
 title: msg
 description: Artículo de referencia para el comando MSG, que envía un mensaje a un usuario en un servidor host de sesión Escritorio remoto
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9501cf3e-568e-4982-9987-8daecc6c17ff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 044d6c7e6dbf7c92cb0c947fcb60eb79ab1db05b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c2f26e12b10d0eb10197018d10d21f34f0da9cb5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886190"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037653"
 ---
 # <a name="msg"></a>msg
 

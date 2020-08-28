@@ -1,18 +1,18 @@
 ---
 title: Diskshadow
 description: Artículo de referencia para el comando DiskShadow, que es una herramienta que expone la funcionalidad que ofrece el servicio de instantáneas de volumen (VSS).
-ms.topic: article
+ms.topic: reference
 ms.assetid: e962537d-b759-4368-b6f1-e8391cf7b221
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3170cde50208eb54d1657ceee0c409d76ed3b806
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bf36485319a74694b08a094950d52d70f7cd213a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890803"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030863"
 ---
 # <a name="diskshadow"></a>Diskshadow
 
@@ -41,7 +41,7 @@ diskshadow -s script.txt
 
 Puede ejecutar los siguientes comandos en el intérprete de comandos de DiskShadow o a través de un archivo de script. Como mínimo, solo se necesitan **Agregar** y **crear** para crear una instantánea. Sin embargo, esto perderá la configuración de contexto y de opciones, será una copia de seguridad de copia y creará una instantánea sin ningún script de ejecución de copia de seguridad.
 
-| Get-Help | Descripción |
+| Comando | Descripción |
 | --------- | ----------- |
 | [Set (comando)](set_2.md) | Establece el contexto, las opciones, el modo detallado y el archivo de metadatos para crear instantáneas. |
 | [comando cargar metadatos](load-metadata.md) | Carga un archivo Metadata. cab antes de importar una instantánea transportable o carga los metadatos del escritor en el caso de una restauración. |

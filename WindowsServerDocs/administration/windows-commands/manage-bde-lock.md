@@ -1,18 +1,18 @@
 ---
 title: Manage-BDE (bloqueo)
 description: Artículo de referencia del comando Manage-BDE Lock, que bloquea una unidad protegida con BitLocker para impedir el acceso a ella, a menos que se proporcione la clave de desbloqueo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b8858e61-3a7e-4d03-8c98-5c09853f35e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a1c7fd743832caaacec46ff2fdc7008983b8472
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: db92258ed4aa96402c59f5073784bf01cc82b911
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886851"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037673"
 ---
 # <a name="manage-bde-lock"></a>Manage-BDE (bloqueo)
 

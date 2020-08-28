@@ -1,18 +1,18 @@
 ---
 title: rundll32 printui.dll, PrintUIEntry
 description: Artículo de referencia del comando Rundll32 printui.dll, PrintUIEntry, que automatiza muchas tareas de configuración de la impresora.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 12fb48b6-5dd8-4cc0-8808-e6a681aceb84
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/25/2018
-ms.openlocfilehash: b6c5510a2b1e556f57b70774a9b38fb58609e1a1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: da714616783a66201a9b877d46e678d9c9d1f51e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883424"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037593"
 ---
 # <a name="rundll32-printuidllprintuientry"></a>rundll32 printui.dll, PrintUIEntry
 

@@ -1,18 +1,18 @@
 ---
 title: ntfrsutl
 description: Artículo de referencia del comando NTFRSUTL, que vuelca las tablas internas, el subproceso y la información de memoria para el servicio de replicación de archivos de NT (NTFRS).
-ms.topic: article
+ms.topic: reference
 ms.assetid: d7721a19-5a87-4ab6-b816-65d2da2c811f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2676e4cc4d920d766f9cc122f127d3d5e8c9548a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6fdbb82322e2aaa130d396b4917f01e7b4391a31
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885290"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037263"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 
@@ -46,7 +46,7 @@ ntfrsutl poll[/quickly[=[<n>]]][/slowly[=[<n>]]][/now][<computer>]
 | ds | Muestra la vista del servicio NTFRS del DS. |
 | conjuntos | Especifica los conjuntos de réplicas activos. |
 | version | Especifica las versiones del servicio API y NTFRS. |
-| poll | Especifica los intervalos de sondeo actuales.<ul><li>`/quickly`: Sondea rápidamente hasta que recupera una configuración estable.</li><li>`/quickly=`: Sondea rápidamente cada número predeterminado de minutos.</li><li>`/quickly=<n>`: Sondea rápidamente cada *n* minutos.</li><li>`/slowly`: Sondea lentamente hasta que recupera una configuración estable.</li><li>`/slowly=`: Sondea lentamente cada número predeterminado de minutos.</li><li>`/slowly=<n>`: Sondea lentamente cada *n* minutos.</li><li>`/now`: Sondea ahora.</li></ul>|
+| poll | Especifica los intervalos de sondeo actuales.<ul><li>`/quickly` : Sondea rápidamente hasta que recupera una configuración estable.</li><li>`/quickly=` : Sondea rápidamente cada número predeterminado de minutos.</li><li>`/quickly=<n>` : Sondea rápidamente cada *n* minutos.</li><li>`/slowly` : Sondea lentamente hasta que recupera una configuración estable.</li><li>`/slowly=` : Sondea lentamente cada número predeterminado de minutos.</li><li>`/slowly=<n>` : Sondea lentamente cada *n* minutos.</li><li>`/now` : Sondea ahora.</li></ul>|
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 ### <a name="examples"></a>Ejemplos

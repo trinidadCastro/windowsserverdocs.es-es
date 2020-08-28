@@ -1,18 +1,18 @@
 ---
 title: memoria caché de bitsadmin y deleteURL
 description: Artículo de referencia de la caché de bitsadmin y el comando deleteURL, que elimina todas las entradas de la memoria caché de la dirección URL especificada.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e108b76b-fae9-4c16-bf4c-d74c9f025953
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1a21a1994711e2548e9e08094f88f46edafe481
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ed804580c4435b612b91875ef59cf6eb8ca4275b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894839"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026713"
 ---
 # <a name="bitsadmin-cache-and-deleteurl"></a>memoria caché de bitsadmin y deleteURL
 
@@ -28,7 +28,7 @@ bitsadmin /deleteURL URL
 
 | Parámetro | Descripción |
 | -------------- | -------------- |
-| Dirección URL | Localizador uniforme de recursos que identifica un archivo remoto. |
+| URL | Localizador uniforme de recursos que identifica un archivo remoto. |
 
 ## <a name="examples"></a>Ejemplos
 

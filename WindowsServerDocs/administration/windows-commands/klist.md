@@ -1,18 +1,18 @@
 ---
 title: klist
 description: Artículo de referencia para el comando klist, que muestra una lista de vales de Kerberos en caché actualmente.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4689b4a9-1740-47dd-9240-02105efca428
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e37946106d7c47f058fd42b9926e388ab830e47
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d5284feae5da9c8c7fcdab90dd34ce7855128d5f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888181"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037723"
 ---
 # <a name="klist"></a>klist
 

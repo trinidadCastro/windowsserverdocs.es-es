@@ -1,18 +1,18 @@
 ---
 title: copy
 description: Artículo de referencia para el comando copy, que copia uno o varios archivos de una ubicación a otra.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb48cbc4ccc9a0d68bfc6f5cdda8ac5e7f1a6c87
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 993fedf3b088ee5d06967c767c00aa9e11165cc3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892507"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030283"
 ---
 # <a name="copy"></a>copy
 

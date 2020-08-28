@@ -1,18 +1,18 @@
 ---
 title: bitsadmin resume
 description: Artículo de referencia del comando bitsadmin resume, que activa un trabajo nuevo o suspendido en la cola de transferencia.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7c7540a9-a11a-4910-923a-2a2a61cbf11d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a18bd6c0a69ff4b366f66d34ec472be9aaeecba2
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dbbd4f322f416dd76e9c2fca6e3539f199ac1ed6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893302"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026313"
 ---
 # <a name="bitsadmin-resume"></a>bitsadmin resume
 

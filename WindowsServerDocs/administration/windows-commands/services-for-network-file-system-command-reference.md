@@ -1,18 +1,18 @@
 ---
 title: Servicios de referencia de comandos de sistema de archivos de red
 description: Artículo de referencia de * * * *-
-ms.topic: article
+ms.topic: reference
 ms.assetid: 06c81f88-a672-4405-9b73-085f8933114c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f471557214f51464c2f1285b64a76084ea1a487
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cbeea54c69cf5fe2a25409b9e45dffda1da4bdb2
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882718"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037393"
 ---
 # <a name="services-for-network-file-system-command-reference"></a>Servicios de referencia de comandos de sistema de archivos de red
 
@@ -20,7 +20,7 @@ Servicios para Network File System (NFS) proporciona una solución de uso compar
 A continuación se muestra una lista de las herramientas de línea de comandos de NFS:
 
 
-| Get-Help | Descripción |
+| Comando | Descripción |
 | ------- | ----------- |
 | [mapadmin](mapadmin.md) | Administrar Asignación de nombres de usuario para los servicios de Microsoft para Network File System. |
 | [Montaje](mount.md) | Montar recursos compartidos de red de Network File System (NFS). |
