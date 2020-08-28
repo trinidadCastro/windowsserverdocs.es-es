@@ -1,18 +1,18 @@
 ---
 title: telnet unset
 description: Artículo de referencia para telnet unset, que desactiva las opciones establecidas anteriormente.
-ms.topic: article
+ms.topic: reference
 ms.assetid: da9a0d99-1930-4858-93c7-0e9c3797ee09
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e90c6696ec4dd2883d4627862c4ad2db638b1c6e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8e6e15e3f4b5a74c77f4a184c6641d0c14a18662
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881636"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038303"
 ---
 # <a name="telnet-unset"></a>Telnet: no establecido
 
@@ -32,7 +32,7 @@ u[nset] {bsasdel | crlf | delasbs | escape | localecho | logging | ntlm} [?]
 |delasbs|Envía **Delete** como **Delete**.|
 |escape|quita el valor de carácter de escape.|
 |localecho|Desactiva localecho.|
-|logging|Desactiva el registro.|
+|el registro|Desactiva el registro.|
 |ntlm|Desactiva la autenticación NTLM.|
 |?|Muestra ayuda para este comando.|
 ## <a name="examples"></a>Ejemplos

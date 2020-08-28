@@ -1,18 +1,18 @@
 ---
 title: netstat
 description: Artículo de referencia del comando netstat, que muestra las conexiones TCP activas, los puertos en los que el equipo está escuchando, las estadísticas de Ethernet, la tabla de enrutamiento IP, las estadísticas de IPv4 y las estadísticas de IPv6.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 60e2718f-93cc-4ceb-bf0e-58a6a6e4fc8b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9fe7fc15e86df884fb9610ba5d6e72ab52e2d129
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4d68ec2e21c4248769973b3409896ba9d5bd15e5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886011"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038806"
 ---
 # <a name="netstat"></a>netstat
 
@@ -38,7 +38,7 @@ netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 | -E | Muestra las estadísticas de Ethernet, como el número de bytes y paquetes enviados y recibidos. Este parámetro se puede combinar con **-s**. |
 | -n | Muestra las conexiones TCP activas, sin embargo, las direcciones y los números de puerto se expresan numéricamente y no se realiza ningún intento para determinar los nombres. |
 | -o | Muestra las conexiones TCP activas e incluye el identificador de proceso (PID) de cada conexión. Puede encontrar la aplicación basada en el PID en la pestaña procesos del administrador de tareas de Windows. Este parámetro se puede combinar con **-a**, **-n**y **-p**. |
-| -p`<Protocol>` | Muestra las conexiones para el protocolo especificado por *Protocolo*. En este caso, el *Protocolo* puede ser TCP, UDP, TCPv6 o UDPv6. Si este parámetro se usa con **-s** para mostrar las estadísticas por protocolo, el *Protocolo* puede ser TCP, UDP, ICMP, IP, TCPv6, UDPv6, ICMPv6 o IPv6. |
+| -p `<Protocol>` | Muestra las conexiones para el protocolo especificado por *Protocolo*. En este caso, el *Protocolo* puede ser TCP, UDP, TCPv6 o UDPv6. Si este parámetro se usa con **-s** para mostrar las estadísticas por protocolo, el *Protocolo* puede ser TCP, UDP, ICMP, IP, TCPv6, UDPv6, ICMPv6 o IPv6. |
 | -S | Muestra las estadísticas por protocolo. De forma predeterminada, las estadísticas se muestran para los protocolos TCP, UDP, ICMP y IP. Si el protocolo IPv6 está instalado, se muestran estadísticas para los protocolos TCP a través de IPv6, UDP a través de IPv6, ICMPv6 e IPv6. El parámetro **-p** se puede usar para especificar un conjunto de protocolos. |
 | -r | Muestra el contenido de la tabla de enrutamiento IP. Es equivalente al comando Route Print. |
 | `<interval>` | Vuelve a mostrar la información seleccionada cada *intervalo* de segundos. Presione CTRL + C para detener la representación. Si se omite este parámetro, este comando imprime la información seleccionada una sola vez. |

@@ -1,20 +1,20 @@
 ---
-title: símbolo del sistema
+title: prompt
 description: Artículo de referencia para el comando prompt, que personaliza el símbolo del sistema de Cmd.exe.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3d98e965-02eb-46ad-9d0a-5dc44830373e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: df849e70da973276360da6e81390466f0484f4b5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b674f219147471c872f5fa8db0d266e3f664c302
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884619"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032415"
 ---
-# <a name="prompt"></a>símbolo del sistema
+# <a name="prompt"></a>prompt
 
 Cambia la Cmd.exe símbolo del sistema, incluida la visualización del texto que desee, como el nombre del directorio actual, la fecha y la hora, o el número de versión de Microsoft Windows. Si se usa sin parámetros, este comando restablece el símbolo del sistema a la configuración predeterminada, que es la letra de unidad y el directorio actuales seguidos del símbolo mayor que ( **>** ).
 
@@ -46,7 +46,7 @@ prompt [<text>]
     | $n | Unidad actual |
     | $g | > (mayor que signo) |
     | $l | < (menor que signo) |
-    | $b | `|`(Símbolo de barra vertical) |
+    | $b | `|` (Símbolo de barra vertical) |
     | $_ | ENTRAR-AVANCE DE LA |
     | $e | Código de escape ANSI (código 27) |
     | $h | Retroceso (para eliminar un carácter que se ha escrito en la línea de comandos) |

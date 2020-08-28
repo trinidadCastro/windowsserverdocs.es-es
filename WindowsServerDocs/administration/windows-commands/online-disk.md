@@ -1,18 +1,18 @@
 ---
 title: online disk
 description: Artículo de referencia para el comando de disco en línea, que desconecta el disco sin conexión al estado en línea.
-ms.topic: article
+ms.topic: reference
 ms.assetid: bc44a783-eaa4-40ca-be01-5703b5bf4eb3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81bfd2dfc8e32656602066d702e8c1af5f4d1c82
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 934e6bb1d7d5b52b00ac7eadea35e6f022906e5b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885248"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032703"
 ---
 # <a name="online-disk"></a>online disk
 

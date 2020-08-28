@@ -1,18 +1,18 @@
 ---
 title: create
 description: Artículo de referencia para el comando CREATE, que crea una partición o una partición de instantáneas en un disco, un volumen en uno o varios discos o un disco duro virtual (VHD).
-ms.topic: article
+ms.topic: reference
 ms.assetid: b45acde1-8f4f-4ec3-b905-d8188f884af8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cdf23152e6ddeced126d163fce7721f9978263ed
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b0aefdccf2a9d2a560ce95cd7224a940beec51f7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891570"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033073"
 ---
 # <a name="create"></a>create
 

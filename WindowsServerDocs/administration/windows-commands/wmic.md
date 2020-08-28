@@ -1,18 +1,18 @@
 ---
 title: wmic
 description: Artículo de referencia de WMIC, que muestra información de WMI en un shell de comandos interactivo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 76397c72-d06f-4cea-88cf-c7603315a983
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b585cb968aa3165397b61acb1f974b2fafbd2b7
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6396f3e6ebc39722c3f1a79d32d629b206cceba2
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896463"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038093"
 ---
 # <a name="wmic"></a>wmic
 
@@ -34,7 +34,7 @@ Los siguientes subcomandos están disponibles en todo momento:
 
 |Subcomando|Descripción|
 |-----------|-----------|
-|class|Escapa del modo de alias predeterminado de WMIC para tener acceso directamente a las clases del esquema WMI.|
+|clase|Escapa del modo de alias predeterminado de WMIC para tener acceso directamente a las clases del esquema WMI.|
 |path|Escapa del modo de alias predeterminado de WMIC para tener acceso directamente a las instancias del esquema WMI.|
 |context|Muestra los valores actuales de todos los conmutadores globales.|
 |[salir \| salir]|Sale del shell de comandos de WMIC.|

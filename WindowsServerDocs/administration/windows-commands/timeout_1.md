@@ -1,18 +1,18 @@
 ---
 title: timeout
 description: Artículo de referencia para el tiempo de espera, que detiene el procesador de comandos durante el número de segundos especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e26b4a84-0e30-46e1-aa10-0667b7d3cb4c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90ba2da52f97ee603ce7992e4df135c1284c4070
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4905eaadc745fc5499cb393b1808794e2f803361
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881401"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038263"
 ---
 # <a name="timeout"></a>timeout
 
@@ -30,7 +30,7 @@ timeout /t <TimeoutInSeconds> [/nobreak]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/t\<TimeoutInSeconds>|Especifica el número decimal de segundos (entre-1 y 99999) que hay que esperar antes de que el procesador de comandos continúe el procesamiento. El valor-1 hace que el equipo espere indefinidamente a una pulsación de tecla.|
+|/t \<TimeoutInSeconds>|Especifica el número decimal de segundos (entre-1 y 99999) que hay que esperar antes de que el procesador de comandos continúe el procesamiento. El valor-1 hace que el equipo espere indefinidamente a una pulsación de tecla.|
 |/nobreak|Especifica que se omitirán los trazos de clave de usuario.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 

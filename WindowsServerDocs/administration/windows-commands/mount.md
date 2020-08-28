@@ -1,18 +1,18 @@
 ---
 title: montar
 description: Artículo de referencia del comando mount, que monta recursos compartidos de red de Network File System (NFS).
-ms.topic: article
+ms.topic: reference
 ms.assetid: dd9d7ecb-ef00-4aaa-bcd0-423fa636e34a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e6f501668faa47286145f1fdbf43c0c7d86fd09
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a5ef3a621f34cf2abc0350c8ccc61accdd58557
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886354"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038837"
 ---
 # <a name="mount"></a>montar
 

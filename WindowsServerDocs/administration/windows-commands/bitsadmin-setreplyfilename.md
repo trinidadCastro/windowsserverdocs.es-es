@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setreplyfilename
 description: Artículo de referencia del comando bitsadmin setreplyfilename, que especifica la ruta de acceso del archivo que contiene la respuesta de carga del servidor.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c26d3342-0533-40b1-a13e-e09678232b25
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd6254d0d3d642796930cbaaa95aa668e3886f3c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2991503ad558b318f52d07447af18d4f9e6178aa
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892946"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033423"
 ---
 # <a name="bitsadmin-setreplyfilename"></a>bitsadmin setreplyfilename
 

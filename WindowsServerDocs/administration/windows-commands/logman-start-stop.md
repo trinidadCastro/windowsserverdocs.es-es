@@ -1,18 +1,18 @@
 ---
 title: logman start y logman stop
 description: Artículo de referencia de los comandos Logman Start y Logman STOP, que inicia un recopilador de datos y establece el tiempo de inicio en manual, o detiene un conjunto de recopiladores de datos y establece la hora de finalización en manual.
-ms.topic: article
+ms.topic: reference
 ms.assetid: a40006a1-876e-474b-aaf1-f365c730deea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a3ce29afa974a65ac86e9e17dd4ec7eb65135fd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5b573ecd78ad9f062162d2c1ad16d59aebe740ee
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887263"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038866"
 ---
 # <a name="logman-start-and-logman-stop"></a>logman start y logman stop
 
@@ -32,8 +32,8 @@ logman stop <[-n] <name>> [options]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | -s `<computer name>` | Ejecute el comando en el equipo remoto especificado. |
-| -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
-| [-n]`<name>` | Especifica el nombre del objeto de destino. |
+| -config `<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
+| [-n] `<name>` | Especifica el nombre del objeto de destino. |
 | -ETS | Envía comandos a sesiones de seguimiento de eventos directamente, sin guardar ni programar. |
 | -as | Realiza la operación solicitada de forma asincrónica. |
 | -? | Muestra la ayuda contextual. |

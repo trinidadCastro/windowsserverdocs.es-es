@@ -1,18 +1,18 @@
 ---
 title: bitsadmin getfilestotal
 description: Artículo de referencia para el comando bitsadmin getfilestotal, que recupera el número de archivos del trabajo especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c5de113e-f29c-4cd3-9392-0e300018d516
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09867e5ed8b060f7a9cbfe573c6e98bfbac831df
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 74e5dad863b12b7f90ed74bca0e6b0b352fb1360
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894336"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033613"
 ---
 # <a name="bitsadmin-getfilestotal"></a>bitsadmin getfilestotal
 

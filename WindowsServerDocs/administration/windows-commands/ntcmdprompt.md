@@ -1,18 +1,18 @@
 ---
 title: ntcmdprompt
 description: Artículo de referencia para el comando ntcmdprompt, que ejecuta el intérprete de comandos **Cmd.exe**, en lugar de **Command.com**, después de ejecutar un comando finalizar y permanecer residente (TSR) o después de iniciar el símbolo del sistema desde una aplicación de ms-dos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0063bdbb-dc2b-41c4-99ee-b011603aaa86
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 53ed39f0fd455314dc5ccd90f0286f6dfd35ea72
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 557db55ea99b209f2bca152f1e45622aa0df4887
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885308"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032763"
 ---
 # <a name="ntcmdprompt"></a>ntcmdprompt
 

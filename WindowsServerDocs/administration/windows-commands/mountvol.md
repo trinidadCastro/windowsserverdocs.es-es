@@ -1,18 +1,18 @@
 ---
 title: mountvol
 description: Artículo de referencia del comando mountvol, que crea, elimina o enumera un punto de montaje de volumen.
-ms.topic: article
+ms.topic: reference
 ms.assetid: fea8ad4d-f04a-4aaa-a3e5-75931e867b39
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1289874f76bd9c3d5818a582a8fcefbfc8c4c130
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e10ae1cdbeb3684f98611a67d451086d5bce34cd
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886368"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038826"
 ---
 # <a name="mountvol"></a>mountvol
 

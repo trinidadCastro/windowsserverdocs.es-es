@@ -1,18 +1,18 @@
 ---
 title: query termserver
 description: Artículo de referencia del comando QUERY termserver, que muestra una lista de todos los servidores host de sesión de Escritorio remoto en la red.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3b89d3b4-236f-4376-90b6-939a0ec4b288
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 755220fc5c105b97ae7d210857b662095fd306da
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 103e1c888f20e368e014eba762b739e099d9e491
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884417"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038403"
 ---
 # <a name="query-termserver"></a>query termserver
 

@@ -1,18 +1,18 @@
 ---
 title: relog
 description: Artículo de referencia para el comando relog, que extrae información sobre los contadores de rendimiento de los archivos de registro de contadores de rendimiento.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7480f6c0-9953-4d70-9b1c-b27e09d8db13
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c3c60503cf725d05afd4b21ceef5f36c64c2b155
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 563bd7a460ee8809ca4020f9a83f28df435127b8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883867"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027433"
 ---
 # <a name="relog"></a>relog
 
@@ -37,12 +37,12 @@ relog [<filename> [<filename> ...]] [/a] [/c <path> [<path> ...]] [/cf <filename
 | -a | Anexa el archivo de salida en lugar de sobrescribirlo. Esta opción no se aplica al formato SQL, donde el valor predeterminado siempre es anexar. |
 | -c `path [path ...]` | Especifica la ruta de acceso del contador de rendimiento que se va a registrar. Para especificar varias rutas de acceso de contador, sepárelas con un espacio y encierre las rutas de acceso de contador entre comillas (por ejemplo, `"path1 path2"` ). |
 | -CF nombre de archivo | Especifica la ruta de acceso del archivo de texto que enumera los contadores de rendimiento que se van a incluir en un archivo de relog. Use esta opción para mostrar las rutas de acceso de contador en un archivo de entrada, una por línea. La configuración predeterminada es que se reinicien todos los contadores del archivo de registro original. |
-| -f`{bin | csv | tsv | SQL}` | Especifica la ruta de acceso del formato del archivo de salida. El formato predeterminado es **bin**. En el caso de una base de datos SQL, el archivo de salida especifica `DSN!CounterLog` . Puede especificar la ubicación de la base de datos mediante el administrador de ODBC para configurar el DSN (nombre del sistema de la base de datos). |
+| -f `{bin | csv | tsv | SQL}` | Especifica la ruta de acceso del formato del archivo de salida. El formato predeterminado es **bin**. En el caso de una base de datos SQL, el archivo de salida especifica `DSN!CounterLog` . Puede especificar la ubicación de la base de datos mediante el administrador de ODBC para configurar el DSN (nombre del sistema de la base de datos). |
 | valor-t | Especifica los intervalos de muestra en *n* registros. Incluye cada n punto de datos en el archivo relog. El valor predeterminado es cada punto de datos. |
-| -o`{Outputfile | SQL:DSN!Counter_Log}` | Especifica la ruta de acceso del archivo de salida o la base de datos SQL donde se escribirán los contadores. <P>**Nota:** En el caso de las versiones de 64 y 32 bits de relog.exe, debe definir un DSN en el origen de datos ODBC (64 bits y 32 bits respectivamente) en el sistema. Use el controlador ODBC "SQL Server" para definir un DSN. |
-| -b`<M/D/YYYY> [[<HH>:]<MM>:]<SS>]` | Especifica la hora de inicio para copiar el primer registro del archivo de entrada. La fecha y la hora deben tener el formato exacto M/D/YYYYHH: MM: SS. |
+| -o `{Outputfile | SQL:DSN!Counter_Log}` | Especifica la ruta de acceso del archivo de salida o la base de datos SQL donde se escribirán los contadores. <P>**Nota:** En el caso de las versiones de 64 y 32 bits de relog.exe, debe definir un DSN en el origen de datos ODBC (64 bits y 32 bits respectivamente) en el sistema. Use el controlador ODBC "SQL Server" para definir un DSN. |
+| -b `<M/D/YYYY> [[<HH>:]<MM>:]<SS>]` | Especifica la hora de inicio para copiar el primer registro del archivo de entrada. La fecha y la hora deben tener el formato exacto M/D/YYYYHH: MM: SS. |
 | -e `<M/D/YYYY> [[<HH>:]<MM>:]<SS>]` | Especifica la hora de finalización para copiar el último registro del archivo de entrada. La fecha y la hora deben tener el formato exacto M/D/YYYYHH: MM: SS. |
-| -config`{filename | i}` | Especifica la ruta de acceso del archivo de configuración que contiene los parámetros de la línea de comandos. Si utiliza un archivo de configuración, puede usar **-i** como un marcador de posición para una lista de archivos de entrada que se pueden colocar en la línea de comandos. Si usa la línea de comandos, no use **-i**. También puede usar caracteres comodín, como `*.blg` para especificar varios nombres de archivo de entrada a la vez. |
+| -config `{filename | i}` | Especifica la ruta de acceso del archivo de configuración que contiene los parámetros de la línea de comandos. Si utiliza un archivo de configuración, puede usar **-i** como un marcador de posición para una lista de archivos de entrada que se pueden colocar en la línea de comandos. Si usa la línea de comandos, no use **-i**. También puede usar caracteres comodín, como `*.blg` para especificar varios nombres de archivo de entrada a la vez. |
 | -q | Muestra los contadores de rendimiento y los intervalos de tiempo de los archivos de registro especificados en el archivo de entrada. |
 | -y | Omite preguntar al responder "sí" a todas las preguntas. |
 | /? | Muestra la ayuda en el símbolo del sistema. |

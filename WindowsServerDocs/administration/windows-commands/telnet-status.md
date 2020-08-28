@@ -1,18 +1,18 @@
 ---
 title: telnet status
 description: Artículo de referencia sobre el estado de Telnet, que muestra información de estado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4e819f11-3dc4-44d1-957b-1bcecf9fc1fc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c0ee144078e25cd35b3a7dbadc7549881ff8f2ac
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 721ca2d8cded7b1a092de6eabdf868a4978e7776
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881648"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038323"
 ---
 # <a name="telnet-status"></a>Telnet: estado
 
@@ -25,7 +25,7 @@ Muestra información de estado.
 st[atus]
 ```
 #### <a name="parameters"></a>Parámetros
-ninguno
+None
 ## <a name="examples"></a>Ejemplos
 Mostrar información de estado.
 ```

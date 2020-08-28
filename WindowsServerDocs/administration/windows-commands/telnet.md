@@ -1,18 +1,18 @@
 ---
 title: telnet
 description: Artículo de referencia para telnet, que se comunica con un equipo que ejecuta el servicio del servidor Telnet.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b70a6156-9413-4300-84ce-a34c467e2b4e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd270011dfa3a0cfcef3cbdc41eb8140f409ff2d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fdf379a8d827ced295f1c36ac6c44ab5e167e66f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881600"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038302"
 ---
 # <a name="telnet"></a>telnet
 
@@ -28,9 +28,9 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |Parámetro|Descripción|
 |-------|--------|
 |/a|intente iniciar sesión automáticamente. Igual que la opción/l, excepto que usa el nombre del usuario que ha iniciado sesión actualmente.|
-|/e\<EscapeChar>|Carácter de escape que se usa para especificar el símbolo del sistema del cliente Telnet.|
+|/e \<EscapeChar>|Carácter de escape que se usa para especificar el símbolo del sistema del cliente Telnet.|
 |/f \<FileName>|Nombre de archivo utilizado para el registro del lado cliente.|
-|l\<UserName>|Especifica el nombre de usuario con el que iniciar sesión en el equipo remoto.|
+|l \<UserName>|Especifica el nombre de usuario con el que iniciar sesión en el equipo remoto.|
 |/t {VT100 &#124; vt52 &#124; ANSI &#124; VTNT}|Especifica el tipo de terminal. Los tipos de terminal admitidos son VT100, vt52, ANSI y VTNT.|
 |\<Host> [\<Port>]|Especifica el nombre de host o la dirección IP del equipo remoto al que se va a conectar y, opcionalmente, el puerto TCP que se va a usar (el valor predeterminado es el puerto TCP 23).|
 |/?|Muestra la ayuda en el símbolo del sistema. Como alternativa, puede escribir/h.|

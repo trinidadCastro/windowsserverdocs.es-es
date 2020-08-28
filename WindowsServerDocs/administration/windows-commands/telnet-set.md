@@ -1,18 +1,18 @@
 ---
 title: telnet set
 description: Artículo de referencia para telnet Set, que establece opciones.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 67316b5f-9c6f-43e3-86d5-dcff9ae2ac3e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2cfc3daaa882effbea0c8dba6471ceeee1216681
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 90b25b24da8af743d6e027bd26c2de7f155544b6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881659"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038362"
 ---
 # <a name="telnet-set"></a>Telnet: establecer
 
@@ -31,10 +31,10 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 |                     bsasdel                      |                                                                                                                                 Envía el **retroceso** como una **eliminación**.                                                                                                                                  |
 |                       CRLF                       |                                                                                                        Envía CR & LF (0x0D, 0x 0A) cuando se presiona la tecla **entrar** . Se conoce como nuevo modo de línea.                                                                                                        |
 |                     delasbs                      |                                                                                                                                 Envía **Delete** como **retroceso**.                                                                                                                                  |
-|                salida<Character>                | Establece el carácter de escape que se usa para especificar el símbolo del sistema del cliente Telnet. El carácter de escape puede ser un carácter único, o puede ser una combinación de la tecla **Ctrl** más un carácter. Para establecer una combinación de teclas de control, mantenga presionada la tecla **Ctrl** mientras escribe el carácter que desea asignar. |
+|                salida <Character>                | Establece el carácter de escape que se usa para especificar el símbolo del sistema del cliente Telnet. El carácter de escape puede ser un carácter único, o puede ser una combinación de la tecla **Ctrl** más un carácter. Para establecer una combinación de teclas de control, mantenga presionada la tecla **Ctrl** mientras escribe el carácter que desea asignar. |
 |                    localecho                     |                                                                                                                                         Activa el eco local.                                                                                                                                          |
-|                MSDTC<FileName>                |                                                                                               Registra la sesión de Telnet actual en el archivo local. El registro se iniciará automáticamente al establecer esta opción.                                                                                               |
-|                     logging                      |                                                                                                                  Activa el registro. Si no se establece ningún archivo de registro, aparece un mensaje de error.                                                                                                                   |
+|                MSDTC <FileName>                |                                                                                               Registra la sesión de Telnet actual en el archivo local. El registro se iniciará automáticamente al establecer esta opción.                                                                                               |
+|                     el registro                      |                                                                                                                  Activa el registro. Si no se establece ningún archivo de registro, aparece un mensaje de error.                                                                                                                   |
 |           modo {pantalla de &#124; de consola}           |                                                                                                                                       Establece el modo de operación.                                                                                                                                        |
 |                       ntlm                       |                                                                                                                                     Activa la autenticación NTLM.                                                                                                                                     |
 | término {ANSI &#124; VT100 &#124; vt52 &#124; VTNT} |                                                                                                                                        Establece el tipo de terminal.                                                                                                                                        |

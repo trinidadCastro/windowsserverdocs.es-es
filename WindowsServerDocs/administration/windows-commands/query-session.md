@@ -1,18 +1,18 @@
 ---
 title: query session
 description: Artículo de referencia del comando QUERY Session, que muestra información acerca de las sesiones de un servidor host de sesión Escritorio remoto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: abc0ace8-0b74-4b6e-a937-a78bb4b61a1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ef51631c497b72de4a8fbf5073c5a2c376a668e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 55f0269c57b70944befa4483cdeab96ec89b2bd9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884419"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038413"
 ---
 # <a name="query-session"></a>query session
 

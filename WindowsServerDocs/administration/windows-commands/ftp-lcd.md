@@ -1,18 +1,18 @@
 ---
 title: ftp lcd
 description: Artículo de referencia del comando LCD de FTP, que cambia el directorio de trabajo en el equipo local.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 60a25808-6abb-408b-8373-0bbdcd0994b4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b2d555e0edb69ab11ef7ff9e7a233fb1c6fc0f2
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 344d0ba14c552315504fc16b109500141c341f97
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889366"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038926"
 ---
 # <a name="ftp-lcd"></a>ftp lcd
 

@@ -1,18 +1,18 @@
 ---
 title: nslookup set
 description: Artículo de referencia del comando Nslookup Set, que cambia las opciones de configuración que afectan a cómo se comportan las búsquedas.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1fe5b36d-e93e-468b-abca-43b0204b32d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e6c9fc242470395e5c4c5b3de7b235531ccf091
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b156ef987c1aec67cc979fe08b6f2b75f86d5e6a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885445"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038736"
 ---
 # <a name="nslookup-set"></a>nslookup set
 

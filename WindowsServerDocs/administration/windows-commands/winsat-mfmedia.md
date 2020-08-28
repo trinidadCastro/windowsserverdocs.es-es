@@ -1,18 +1,18 @@
 ---
 title: winsat mfmedia
 description: Referencia de Mfmedia de WinSAT, que mide el rendimiento de la descodificación de vídeo (reproducción) mediante el marco de Media Foundation.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 09a3b3dd-f746-4e6e-b684-76a9bde0c78d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5523868f08c1dd2170670b8ba4640c331467fc5e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 889ef018e5803f9905100b5ae0b65f1bc0c4093e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896473"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038103"
 ---
 # <a name="winsat-mfmedia"></a>winsat mfmedia
 
@@ -32,14 +32,14 @@ winsat mfmedia <parameters>
 
 |Parámetros|Descripción|
 |----------|-----------|
-|-Input\<file name>|Requerido: especifique el archivo que contiene el clip de vídeo que se va a reproducir o codificar. El archivo puede estar en cualquier formato que se pueda representar mediante Media Foundation.|
+|-Input \<file name>|Requerido: especifique el archivo que contiene el clip de vídeo que se va a reproducir o codificar. El archivo puede estar en cualquier formato que se pueda representar mediante Media Foundation.|
 |-dumpgraph|Especifique que el gráfico de filtro debe guardarse en un archivo compatible con GraphEdit antes de que se inicie la evaluación.|
 |-NS|Especifica que el gráfico de filtros debe ejecutarse en la velocidad de reproducción normal del archivo de entrada. De forma predeterminada, el gráfico de filtros se ejecuta lo más rápido posible, omitiendo los tiempos de presentación.|
 |-reproducir|Ejecutar la evaluación en modo de descodificación y reproducir cualquier contenido de audio proporcionado en el archivo especificado en la **entrada** mediante el dispositivo DirectSound predeterminado. De forma predeterminada, la reproducción de audio está deshabilitada.|
 |-nopmp|No use el proceso Media Foundation canalización de medios protegidos (MFPMP) durante la evaluación.|
 |-PMP|Haga siempre el uso del proceso MFPMP durante la evaluación.</br>Nota: Si no se especifica **-PMP** o **-nopmp** , se usará MFPMP solo cuando sea necesario.|
 |-v|Envíe una salida detallada a STDOUT, incluida la información de estado y de progreso. Los errores también se escribirán en la ventana de comandos.|
-|-XML\<file name>|Guarde el resultado de la evaluación como el archivo XML especificado. Si el archivo especificado existe, se sobrescribirá.|
+|-XML \<file name>|Guarde el resultado de la evaluación como el archivo XML especificado. Si el archivo especificado existe, se sobrescribirá.|
 |-idiskinfo|Guarde la información sobre los volúmenes físicos y los discos lógicos como parte de la **\<SystemConfig>** sección de la salida XML.|
 |-iguid|Cree un identificador único global (GUID) en el archivo de salida XML.|
 |-Nota texto de nota|Agregue el texto de la nota a la **\<note>** sección del archivo de salida XML.|

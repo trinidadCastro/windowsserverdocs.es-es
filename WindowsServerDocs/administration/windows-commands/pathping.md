@@ -1,18 +1,18 @@
 ---
 title: pathping
 description: Artículo de referencia para el comando pathping, que obtiene información sobre la latencia de red y la pérdida de red en saltos intermedios entre un origen y un destino.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ec430125-b1dc-4aad-a7c9-b70f486d9e3c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d5ce12d950356c5ebb5ad671de09aaebbc91b9fb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3ae867d0b4ea53aaa807fb461f7a32726efefc2e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885091"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032492"
 ---
 # <a name="pathping"></a>pathping
 
@@ -36,14 +36,14 @@ pathping [/n] [/h <maximumhops>] [/g <hostlist>] [/p <Period>] [/q <numqueries> 
 | Parámetro | Descripción |
 |--|--|
 | /n | Impide que **pathping** intente resolver las direcciones IP de los enrutadores intermedios en sus nombres. Esto puede acelerar la presentación de los resultados de **pathping** . |
-| /h`<maximumhops>` | Especifica el número máximo de saltos en la ruta de acceso para buscar el destino (destino). El valor predeterminado es 30 saltos. |
-| /g`<hostlist>` | Especifica que los mensajes de solicitud de eco usan la opción de **ruta de origen flexible** del encabezado IP con el conjunto de destinos intermedios especificados en *hostlist*. Con el enrutamiento de origen suelto, los destinos intermedios sucesivos pueden estar separados por uno o varios enrutadores. El número máximo de direcciones o nombres en la lista de hosts es **9**. *Hostlist* es una serie de direcciones IP (en notación decimal con puntos) separadas por espacios. |
-| /p`<period>` | Especifica el número de milisegundos que se va a esperar entre pings consecutivos. El valor predeterminado es 250 milisegundos (1/4 segundos). Este parámetro envía pings individuales a cada salto intermedio. Por este motivo, el intervalo entre dos pings enviados al mismo salto es el *período* multiplicado por el número de saltos. |
-| /q`<numqueries>` | Especifica el número de mensajes de solicitud de eco enviados a cada enrutador de la ruta de acceso. El valor predeterminado es 100 consultas. |
-| /w`<timeout>` | Especifica el número de milisegundos que se debe esperar para cada respuesta. El valor predeterminado es 3000 milisegundos (3 segundos). Este parámetro envía varios ping en paralelo. Por este motivo, la cantidad de tiempo especificada en el parámetro *timeout* no está limitada por la cantidad de tiempo especificada en el parámetro *period* para esperar entre pings. |
-| /i`<IPaddress>` | Especifica la dirección de origen. |
-| /4`<IPv4>` | Especifica que PathPing solo usa IPv4. |
-| /6`<IPv6>` | Especifica que PathPing solo usa IPv6. |
+| /h `<maximumhops>` | Especifica el número máximo de saltos en la ruta de acceso para buscar el destino (destino). El valor predeterminado es 30 saltos. |
+| /g `<hostlist>` | Especifica que los mensajes de solicitud de eco usan la opción de **ruta de origen flexible** del encabezado IP con el conjunto de destinos intermedios especificados en *hostlist*. Con el enrutamiento de origen suelto, los destinos intermedios sucesivos pueden estar separados por uno o varios enrutadores. El número máximo de direcciones o nombres en la lista de hosts es **9**. *Hostlist* es una serie de direcciones IP (en notación decimal con puntos) separadas por espacios. |
+| /p `<period>` | Especifica el número de milisegundos que se va a esperar entre pings consecutivos. El valor predeterminado es 250 milisegundos (1/4 segundos). Este parámetro envía pings individuales a cada salto intermedio. Por este motivo, el intervalo entre dos pings enviados al mismo salto es el *período* multiplicado por el número de saltos. |
+| /q `<numqueries>` | Especifica el número de mensajes de solicitud de eco enviados a cada enrutador de la ruta de acceso. El valor predeterminado es 100 consultas. |
+| /w `<timeout>` | Especifica el número de milisegundos que se debe esperar para cada respuesta. El valor predeterminado es 3000 milisegundos (3 segundos). Este parámetro envía varios ping en paralelo. Por este motivo, la cantidad de tiempo especificada en el parámetro *timeout* no está limitada por la cantidad de tiempo especificada en el parámetro *period* para esperar entre pings. |
+| /i `<IPaddress>` | Especifica la dirección de origen. |
+| /4 `<IPv4>` | Especifica que PathPing solo usa IPv4. |
+| /6 `<IPv6>` | Especifica que PathPing solo usa IPv6. |
 | `<targetname>` | Especifica el destino, que se identifica mediante la dirección IP o el nombre de host. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 

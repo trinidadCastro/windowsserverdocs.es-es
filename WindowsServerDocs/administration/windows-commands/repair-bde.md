@@ -1,73 +1,81 @@
 ---
 title: repair-bde
-description: Artículo de referencia de * * * *-
-ms.topic: article
+description: Artículo de referencia para el comando repair-BDE, que puede intentar reconstruir partes críticas de una unidad gravemente dañada y salvar los datos recuperables si la unidad se cifró mediante BitLocker.
+ms.topic: reference
 ms.assetid: 534dca1a-05f7-4ea8-ac24-4fe5f14f988a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1ba55b5a1689ecfc6ebe8fb6ab3d02b717e7d38
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a5154a88778dbc3877e3075c813dae06937c1322
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883761"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038363"
 ---
 # <a name="repair-bde"></a>repair-bde
 
+Intenta reconstruir partes críticas de una unidad gravemente dañada y salvar los datos recuperables si la unidad se cifró mediante BitLocker y si tiene una contraseña de recuperación o una clave de recuperación válidas para el descifrado.
 
-
-Obtiene acceso a los datos cifrados en un disco duro gravemente dañado si la unidad se cifró mediante BitLocker. Repair-bde puede reconstruir partes críticas de la unidad y rescatar los datos recuperables, siempre que para descifrar los datos se use una clave de recuperación o una contraseña de recuperación válida. Si los metadatos de BitLocker en la unidad se han dañado, debe poder proporcionar un paquete de claves de copia de seguridad además de la contraseña de recuperación o la clave de recuperación. De este paquete de claves se realiza una copia de seguridad en los servicios de dominio de Active Directory (AD DS) si usas la configuración predeterminada para la copia de seguridad de AD DS. Con este paquete de claves y la contraseña de recuperación o la clave de recuperación puede descifrar partes de una unidad protegida con BitLocker si el disco se daña. Cada paquete de claves funcionará solo para una unidad que tenga el identificador de unidad correspondiente. Puede usar el [visor de contraseñas de recuperación de BitLocker para Active Directory](/previous-versions/windows/it-pro/windows-7/dd875531(v=ws.10)) para obtener este paquete de claves de AD DS.
-
-> [!NOTE]
-> El visor de contraseñas de recuperación de BitLocker se incluye como una de las características de administración opcionales instalables mediante el administrador de servidores en Windows Server 2012.
-
-Existen las siguientes limitaciones para la herramienta de línea de comandos repair-BDE:
--   Repair-BDE no puede reparar una unidad en la que se produjo un error durante el proceso de cifrado o descifrado.
--   Repair-BDE supone que si la unidad tiene algún cifrado, la unidad se ha cifrado completamente.
-
-
+> [!IMPORTANT]
+> Si los datos de los metadatos de BitLocker en la unidad están dañados, debe ser capaz de proporcionar un paquete de claves de copia de seguridad además de la contraseña de recuperación o la clave de recuperación. Si usó la configuración de copia de seguridad de clave predeterminada para Active Directory Domain Services, se realizará una copia de seguridad del paquete de claves. Puede usar [BitLocker: usar el visor de contraseñas de recuperación de BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-recovery-password-viewer) para obtener el paquete de claves de AD DS.
+>
+> Con el paquete de claves y la contraseña de recuperación o la clave de recuperación, puede descifrar partes de una unidad protegida con BitLocker, incluso si el disco está dañado. Cada paquete de claves solo funciona para una unidad con el identificador de unidad correspondiente.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–lf] [-f] [{-?|/?}]
+repair-bde <inputvolume> <outputvolumeorimage> [-rk] [–rp] [-pw] [–kp] [–lf] [-f] [{-?|/?}]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<InputVolume>|Identifica la letra de unidad de la unidad cifrada con BitLocker que desea reparar. La letra de unidad debe incluir un signo de dos puntos. por ejemplo: **C:**.|
-|\<OutputVolumeorImage>|Identifica la unidad en la que se va a almacenar el contenido de la unidad reparada. Se sobrescribirá toda la información de la unidad de salida.|
-|-RK|Identifica la ubicación de la clave de recuperación que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-RecoveryKey**.|
-|-RP|Identifica la contraseña de recuperación numérica que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-RecoveryPassword**.|
-|-PW|Identifica la contraseña que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-password** .|
-|-KP|Identifica el paquete de claves de recuperación que se puede usar para desbloquear el volumen. Este comando también se puede especificar como **-keypackage**.|
-|-lf|Especifica la ruta de acceso al archivo que almacenará los mensajes de error, de advertencia y de información de repair-Bde. Este comando también se puede especificar como **-logfile**.|
-|-f|Fuerza el desmontaje de un volumen incluso si no se puede bloquear. Este comando también se puede especificar como **Force**.|
-|-? o/?|Muestra la Ayuda en el símbolo del sistema.|
+| Parámetro | Descripción |
+|--|--|
+| `<inputvolume>` | Identifica la letra de unidad de la unidad cifrada con BitLocker que desea reparar. La letra de unidad debe incluir un signo de dos puntos. por ejemplo: **C:**. Si no se especifica la ruta de acceso a un paquete de claves, este comando busca un paquete de claves en la unidad. En caso de que la unidad de disco duro esté dañada, es posible que este comando no pueda encontrar el paquete y le pedirá que proporcione la ruta de acceso. |
+| `<outputvolumeorimage>` | Identifica la unidad en la que se va a almacenar el contenido de la unidad reparada. Se sobrescribirá toda la información de la unidad de salida. |
+| -RK | Identifica la ubicación de la clave de recuperación que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-RecoveryKey**. |
+| -RP | Identifica la contraseña de recuperación numérica que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-RecoveryPassword**. |
+| -PW | Identifica la contraseña que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-password** . |
+| -KP | Identifica el paquete de claves de recuperación que se puede usar para desbloquear el volumen. Este comando también se puede especificar como **-keypackage**. |
+| -lf | Especifica la ruta de acceso al archivo que almacenará los mensajes de error, de advertencia y de información de repair-Bde. Este comando también se puede especificar como **-logfile**. |
+| -f | Fuerza el desmontaje de un volumen incluso si no se puede bloquear. Este comando también se puede especificar como **Force**. |
+| -? o/? | Muestra la Ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+### <a name="limitations"></a>Limitaciones
 
-Si no se especifica la ruta de acceso a un paquete de claves, **repair-BDE** buscará en la unidad un paquete de claves. Sin embargo, si el disco duro está dañado, **repair-BDE** no podrá encontrar el paquete y le pedirá que proporcione la ruta de acceso.
+Existen las siguientes limitaciones para este comando:
+
+- Este comando no puede reparar una unidad en la que se produjo un error durante el proceso de cifrado o descifrado.
+
+- Este comando presupone que, si la unidad tiene cifrado, la unidad se ha cifrado completamente.
 
 ## <a name="examples"></a>Ejemplos
 
-Para intentar reparar la unidad C y escribir el contenido de la unidad C en la unidad D con el archivo de clave de recuperación (RecoveryKey. Bek) almacenado en la unidad F y escribe los resultados de este intento en el archivo de registro (log.txt) de la unidad Z.
+Para intentar reparar la unidad C:, escriba el contenido de la unidad C: en la unidad D: mediante el archivo de clave de recuperación (RecoveryKey. Bek) almacenado en la unidad F:, y para escribir los resultados de este intento en el archivo de registro (log.txt) en la unidad Z:, escriba:
+
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```
-Para intentar reparar la unidad C y escribir el contenido en la unidad C en la unidad D con la contraseña de recuperación de 48 dígitos especificada. La contraseña de recuperación debe escribirse en ocho bloques de seis dígitos con un guion separando cada bloque.
+
+Para intentar reparar la unidad C: y escribir el contenido de la unidad C: en la unidad D: con la contraseña de recuperación 48-digit especificada, escriba:
+
 ```
 repair-bde C: D: -rp 111111-222222-333333-444444-555555-666666-777777-888888
 ```
-Para forzar la desmontaje de la unidad C y, a continuación, intenta reparar la unidad C y escribe el contenido de la unidad C en la unidad D con el paquete de claves de recuperación y el archivo de clave de recuperación (RecoveryKey. Bek) almacenados en la unidad F.
+
+>[!NOTE]
+> La contraseña de recuperación debe escribirse en ocho bloques de seis dígitos con un guion separando cada bloque.
+
+Para forzar la unidad C: a desmontar, intente reparar la unidad C: y, a continuación, escriba el contenido de la unidad C: en la unidad D: con el paquete de claves de recuperación y el archivo de clave de recuperación (RecoveryKey. Bek) almacenados en la unidad F:, escriba:
+
 ```
 repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 ```
-Para intentar reparar la unidad C y escribir el contenido de la unidad C en la unidad D, y debe escribir una contraseña para desbloquear la unidad C: cuando se le solicite:
+
+Para intentar reparar la unidad C: y escribir el contenido de la unidad C: en la unidad D:, donde debe escribir una contraseña para desbloquear la unidad C: (cuando se le solicite), escriba:
+
 ```
 repair-bde C: D: -pw
 ```

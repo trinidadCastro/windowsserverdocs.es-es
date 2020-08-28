@@ -1,18 +1,18 @@
 ---
 title: Convert-RiprepImage
 description: Artículo de referencia sobre Convert-RiprepImage, que convierte una imagen existente de preparación de la instalación remota (RIPrep) en el formato de imagen de Windows (. wim).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 88c2b96f-5947-4b64-9dcf-1946b3c013cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e4a10c4013594c4b6ea19463cf41836f251127a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e9d9ec388a2f4cdd59bcf8c9b59abf8b6c5e3383
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896580"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038243"
 ---
 # <a name="convert-riprepimage"></a>Convert-RiprepImage
 

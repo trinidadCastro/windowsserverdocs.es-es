@@ -1,18 +1,18 @@
 ---
 title: mode
 description: Artículo de referencia del comando modo, que muestra el estado del sistema, cambia la configuración del sistema o vuelve a configurar puertos o dispositivos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b59b04f2-b41d-42df-b5be-19c3721445b1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ae436d5ed1328799f7c20d98274a574d40ef796d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e0a75606a32c86002090a436756656922dd01f1b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886398"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038856"
 ---
 # <a name="mode"></a>mode
 

@@ -1,18 +1,18 @@
 ---
 title: Rechazar-AutoaddDevices
 description: Artículo de referencia de Reject-AutoaddDevices, que rechaza los equipos que están pendientes de aprobación administrativa.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ea25a4b2-5fad-4360-9c47-c2c9df7ea31f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b6b134b89040982325d55822583475fe91044cd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 636e7db0338e77b4cbe041ea3b69fdfe6dfb5af7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896360"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038133"
 ---
 # <a name="reject-autoadddevices"></a>Rechazar-AutoaddDevices
 

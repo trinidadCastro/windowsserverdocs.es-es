@@ -1,17 +1,17 @@
 ---
 title: bitsadmin gethelpertokenflags
 description: Artículo de referencia para el comando bitsadmin gethelpertokenflags, que devuelve las marcas de uso de un token auxiliar que está asociado a un trabajo de transferencia de BITS.
-ms.topic: article
+ms.topic: reference
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: d49a2aef829b3e443ad5e1fd3e70d8c260f59ec8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 59c6f2913c3c0f9bde3bbd591cf4a887e50af801
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894242"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033563"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 

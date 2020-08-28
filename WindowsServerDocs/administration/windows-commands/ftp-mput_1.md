@@ -1,18 +1,18 @@
 ---
 title: ftp mput
 description: Artículo de referencia para el comando FTP mput, que copia archivos locales en el equipo remoto mediante el tipo de transferencia de archivos actual.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 980f15e7-7cf1-4813-9946-a8cc4edfb198
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2caf7e91341f470fc265d0d1dbf6a51b6fe99bb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f9b90cc6454e64e74684a44f3d69149886c6778a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889229"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032853"
 ---
 # <a name="ftp-mput"></a>ftp mput
 

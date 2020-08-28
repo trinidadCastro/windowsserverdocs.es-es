@@ -1,18 +1,18 @@
 ---
 title: PowerShell
 description: Artículo de referencia para el comando de PowerShell, que abre la consola de PowerShell desde un símbolo del sistema.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 694fc970-0b6c-4046-b1b5-7eb1a0d26609
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 29751bdb6f17c167ffa17170be24c302fda557fd
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5c34e00ec2899d615c25808313db821f29c069f5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991146"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032462"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -52,7 +52,7 @@ La herramienta de línea de comandos **PowerShell.exe** inicia una sesión de Wi
 
 - Para finalizar una sesión de Windows PowerShell en una ventana del símbolo del sistema, escriba `exit` . Se devuelve el símbolo del sistema típico.
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - Para obtener una lista completa de los parámetros de línea de comandos de **PowerShell.exe** , vea [about_PowerShell.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe).
 

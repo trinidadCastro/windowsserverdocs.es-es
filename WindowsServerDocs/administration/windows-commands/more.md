@@ -1,18 +1,18 @@
 ---
 title: más
 description: Artículo de referencia para el comando More, que muestra una pantalla de salida cada vez.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: 198f3f3f3b80282d876e4fdda9e7cde649a8c7da
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2c8d7a21220701bf46685d4c87ca02a4810aff1b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886377"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038846"
 ---
 # <a name="more"></a>más
 
@@ -54,8 +54,8 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
     | f | Presione **F** para mostrar el siguiente archivo que aparece en la línea de comandos. |
     | q | Presione **Q** para salir del comando **más** . |
     | = | Muestra el número de línea. |
-    | m`<n>` | Presione **P** para mostrar las siguientes *n* líneas. |
-    | seg`<n>` | Presione **S** para omitir las siguientes *n* líneas. |
+    | m `<n>` | Presione **P** para mostrar las siguientes *n* líneas. |
+    | seg `<n>` | Presione **S** para omitir las siguientes *n* líneas. |
     | ? | **¿Presiona?** para mostrar los comandos que están disponibles en el símbolo del sistema **más** .|
 
 - Si usa el carácter de redirección ( `<` ), también debe especificar un nombre de archivo como origen.
@@ -86,7 +86,7 @@ Para mostrar el número de línea actual en el símbolo del sistema **más** , e
 more =
 ```
 
-El número de línea actual se agrega al símbolo **más** , como`-- More [Line: 24] --`
+El número de línea actual se agrega al símbolo **más** , como `-- More [Line: 24] --`
 
 Para mostrar un número específico de líneas en el símbolo **más** , escriba:
 

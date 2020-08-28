@@ -1,18 +1,18 @@
 ---
 title: ftp open
 description: Artículo de referencia para el comando FTP Open, que se conecta al servidor FTP especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4b61926a-dc60-4b4c-96d3-64e5c91c18ba
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd80ef5a8a3e4efa36a5fce0d228fd01f3a26bdc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a7599eb4728a46655b4c3274a9d7708061c3a9ee
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889140"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032823"
 ---
 # <a name="ftp-open"></a>ftp open
 

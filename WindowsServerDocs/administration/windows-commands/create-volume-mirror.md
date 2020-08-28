@@ -1,18 +1,18 @@
 ---
 title: create volume mirror
 description: Artículo de referencia para el comando crear reflejo de volumen, que crea un reflejo de volumen mediante los dos discos dinámicos especificados.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 48776917-783a-47ff-8da4-1cab77cea34b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f25c78a49393a0c48330a7b705c14b906f827c33
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ae8e05eea873ebb8c3ff12df43b60f14cc5804e6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879857"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033183"
 ---
 # <a name="create-volume-mirror"></a>create volume mirror
 
@@ -32,7 +32,7 @@ create volume mirror [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]
 | --------- | ----------- |
 | tamaño =`<n>` | Especifica la cantidad de espacio en disco, en megabytes (MB), que ocupará el volumen en cada disco. Si no se especifica tamaño, el nuevo volumen ocupará todo el espacio que quede libre en el disco más pequeño y cantidades equivalentes de espacio en los discos sucesivos. |
 | disco = `<n>` , `<n>` [ `,<n>,...` ] | Especifica los discos dinámicos en los que se crea el volumen reflejado. Necesita dos discos dinámicos para crear un volumen reflejado. En cada disco se asigna una cantidad de espacio igual al tamaño especificado con el parámetro de **tamaño** . |
-| align =`<n>` | Alinea todas las extensiones de volumen con el límite de alineación más cercano. Este parámetro se utiliza normalmente con matrices de número de unidad lógica (LUN) RAID de hardware para mejorar el rendimiento. `<n>`es el número de kilobytes (KB) desde el principio del disco hasta el límite de alineación más cercano. |
+| align =`<n>` | Alinea todas las extensiones de volumen con el límite de alineación más cercano. Este parámetro se utiliza normalmente con matrices de número de unidad lógica (LUN) RAID de hardware para mejorar el rendimiento. `<n>` es el número de kilobytes (KB) desde el principio del disco hasta el límite de alineación más cercano. |
 | noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart se cierre con un error. |
 
 ## <a name="examples"></a>Ejemplos

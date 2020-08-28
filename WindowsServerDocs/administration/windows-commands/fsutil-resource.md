@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 85b52c1ad124ac47617948f1683038108214e2e3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a39bb99e570f09b57962d8b3d64ec783611ac04b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889875"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033023"
 ---
 # <a name="fsutil-resource"></a>fsutil resource
 
@@ -53,15 +53,15 @@ fsutil resource [stop] <rmrootpathname>
 | setavailable | Especifica que un Administrador de recursos transaccional preferirá la disponibilidad a través de la coherencia. |
 | setconsistent | Especifica que un Administrador de recursos transaccional preferirá la coherencia con respecto a la disponibilidad. |
 | Setlog | Cambia las características de un Administrador de recursos transaccional que ya se está ejecutando. |
-| growth | Especifica la cantidad por la que puede aumentar el registro de Administrador de recursos transaccional.<p>El parámetro Growth se puede especificar de la manera siguiente:<ul><li>Número de contenedores, con el formato:`<containers> containers`</li><li>Porcentaje, con el formato:`<percent> percent`</li></ul> |
+| growth | Especifica la cantidad por la que puede aumentar el registro de Administrador de recursos transaccional.<p>El parámetro Growth se puede especificar de la manera siguiente:<ul><li>Número de contenedores, con el formato: `<containers> containers`</li><li>Porcentaje, con el formato: `<percent> percent`</li></ul> |
 | `<containers>` | Especifica los objetos de datos utilizados por el Administrador de recursos transaccional. |
 | maxextent | Especifica el número máximo de contenedores para el Administrador de recursos transaccional especificado. |
 | minextent | Especifica el número mínimo de contenedores para el Administrador de recursos transaccional especificado. |
-| modo`{full|undo}` | Especifica si todas las transacciones están registradas ( **completo**) o solo se registran los eventos revertidos (**Deshacer**). |
+| modo `{full|undo}` | Especifica si todas las transacciones están registradas ( **completo**) o solo se registran los eventos revertidos (**Deshacer**). |
 | rename | Cambia el GUID del Administrador de recursos transaccional. |
 | shrink | Especifica el porcentaje por el que se puede reducir automáticamente el registro de Administrador de recursos transaccionales. |
 | tamaño | Especifica el tamaño de la Administrador de recursos transaccional como un número especificado de *contenedores*. |
-| start. | Inicia el Administrador de recursos transaccional especificado. |
+| start | Inicia el Administrador de recursos transaccional especificado. |
 | stop | Detiene el Administrador de recursos transaccional especificado. |
 
 ### <a name="examples"></a>Ejemplos
