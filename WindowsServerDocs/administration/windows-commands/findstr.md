@@ -1,18 +1,18 @@
 ---
 title: findstr
 description: Artículo de referencia del comando findstr, que busca patrones de texto en archivos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c2d803fb-4cd2-46a1-a1b7-6f5e0249c418
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b1ef8139208397361a8c787686d2bc4c3b5ab43
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bdd268c3b2ddde1b42527968252770e6903bacc4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890232"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035133"
 ---
 # <a name="findstr"></a>findstr
 
@@ -75,9 +75,9 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
     | `<string` | **Posición de la palabra inicial** : Inicio de la palabra. |
     | `string>` | **Posición de palabra final** de la palabra. |
 
-    Los caracteres especiales de la sintaxis de expresiones regulares tienen la máxima eficacia cuando se usan juntos. Por ejemplo, use la combinación del carácter comodín ( `.` ) y el carácter REPEAT ( `*` ) para que coincida con cualquier cadena de caracteres:`.*`
+    Los caracteres especiales de la sintaxis de expresiones regulares tienen la máxima eficacia cuando se usan juntos. Por ejemplo, use la combinación del carácter comodín ( `.` ) y el carácter REPEAT ( `*` ) para que coincida con cualquier cadena de caracteres: `.*`
 
-    Use la expresión siguiente como parte de una expresión mayor para que coincida con cualquier cadena que empiece con *b* y termine con *Ing*:`b.*ing`
+    Use la expresión siguiente como parte de una expresión mayor para que coincida con cualquier cadena que empiece con *b* y termine con *Ing*: `b.*ing`
 
 - Para buscar varias cadenas en un conjunto de archivos, debe crear un archivo de texto que contenga cada criterio de búsqueda en una línea independiente.
 

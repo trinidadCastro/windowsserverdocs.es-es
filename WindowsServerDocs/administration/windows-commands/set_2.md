@@ -1,18 +1,18 @@
 ---
 title: set_2
 description: Artículo de referencia para obtener set_2, que establece el contexto, las opciones, el modo detallado y el archivo de metadatos para la creación de instantáneas.
-ms.topic: article
+ms.topic: reference
 ms.assetid: acf24663-1a50-4321-b48d-1717655e9476
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9eb5b2032028dbe54680e1c197dc2f6fc09f3886
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5b2751b7fd5d550f9499f12acde6f5f7e993d095
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882558"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023419"
 ---
 # <a name="set_2"></a>set_2
 

@@ -1,18 +1,18 @@
 ---
 title: Quitar imagen
 description: Artículo de referencia para Remove-image, que elimina una imagen de un servidor.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ce5e2384-2264-4b22-92af-74eec8c10ae0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd660c2eae9af48313e751a0dbaf9a336ca9b9fb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d720a924424840224afd1ecd88c48c4f9a9a1163
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891963"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023189"
 ---
 # <a name="remove-image"></a>Quitar imagen
 

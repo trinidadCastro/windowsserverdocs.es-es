@@ -1,18 +1,18 @@
 ---
 title: dir
 description: Artículo de referencia para el comando dir, que muestra una lista de los archivos y subdirectorios de un directorio.
-ms.topic: article
+ms.topic: reference
 ms.assetid: edcbf69b-eaa4-466e-b210-3dd8892f4d93
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51d36f0f5498c5c853df2d6663f52411037c13d4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b3a37675d0ac93274c62792478267cfa25db375a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890981"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028353"
 ---
 # <a name="dir"></a>dir
 
@@ -57,11 +57,11 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 
 - Puede usar el carácter comodín, **&#42;**, para sustituir cualquier cadena de caracteres, por ejemplo:
 
-  - `dir *.txt`enumera todos los archivos del directorio actual con extensiones que comienzan por. txt, como. txt,. txt1,. txt_old.
+  - `dir *.txt` enumera todos los archivos del directorio actual con extensiones que comienzan por. txt, como. txt,. txt1,. txt_old.
 
-  - `dir read *.txt`enumera todos los archivos del directorio actual que comienzan por Read y con extensiones que comienzan por. txt, como. txt,. txt1 o. txt_old.
+  - `dir read *.txt` enumera todos los archivos del directorio actual que comienzan por Read y con extensiones que comienzan por. txt, como. txt,. txt1 o. txt_old.
 
-  - `dir read *.*`enumera todos los archivos del directorio actual que comienzan por Read con cualquier extensión.
+  - `dir read *.*` enumera todos los archivos del directorio actual que comienzan por Read con cualquier extensión.
 
   El carácter comodín de asterisco siempre usa la asignación de nombres de archivo cortos, por lo que podría obtener resultados inesperados. Por ejemplo, el directorio siguiente contiene dos archivos (t.txt2 y t97.txt):
 

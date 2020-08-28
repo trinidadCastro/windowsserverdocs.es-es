@@ -1,18 +1,18 @@
 ---
 title: fondue
 description: Artículo de referencia para el comando fondue, que habilita las características opcionales de Windows mediante la descarga de los archivos necesarios de Windows Update u otro origen especificado por directiva de grupo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: fc4467f6-ddbb-4d6d-b51e-5a50a957b8c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 16660ed745c28f84d7911f9784fbeb19a5c03ae3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 132441d48ce1f65b38955130fe19535775d02377
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890185"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035073"
 ---
 # <a name="fondue"></a>fondue
 

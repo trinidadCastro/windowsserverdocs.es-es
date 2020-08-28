@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setvalidationstate
 description: Artículo de referencia para el comando bitsadmin setvalidationstate, que establece el estado de validación del contenido del archivo especificado en el trabajo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e8fc8e8c-171c-4681-8057-6986b018e576
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1dcdbd017f225704fc20d0472346d98fd84bb2c0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5885f0f43e7c33e55dc05182819a339d69519d84
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881019"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034733"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>bitsadmin setvalidationstate
 

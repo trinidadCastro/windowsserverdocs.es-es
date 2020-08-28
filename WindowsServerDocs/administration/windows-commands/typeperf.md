@@ -1,18 +1,18 @@
 ---
 title: typeperf
 description: Artículo de referencia de Typeperf, que escribe datos de rendimiento en la ventana comandos o en un archivo de registro.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0c7ca89a-03b3-4626-afcf-ef8565e90043
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38a459fb1c52c627d05f3d19fb8f2e8055a89338
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 856279c96a8c1904dcf182dbf613447e02291330
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896648"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023389"
 ---
 # <a name="typeperf"></a>typeperf
 
@@ -41,14 +41,14 @@ typeperf -qx [object] [options]
 |                   Opción                   |                                                         Descripción                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               Muestra la ayuda contextual.                                               |
-| -f\<CSV&verbar;TSV&verbar;BIN&verbar;SQL> |                                    Especifica el formato del archivo de salida. El valor predeterminado es CSV.                                     |
-|              -CF\<filename>               |              Especifica un archivo que contiene una lista de contadores de rendimiento que se van a supervisar, con un contador por línea.               |
+| -f \<CSV&verbar;TSV&verbar;BIN&verbar;SQL> |                                    Especifica el formato del archivo de salida. El valor predeterminado es CSV.                                     |
+|              -CF \<filename>               |              Especifica un archivo que contiene una lista de contadores de rendimiento que se van a supervisar, con un contador por línea.               |
 |             -Si < [[HH:] mm:] SS>             |                                  Especifica el intervalo de ejemplo. El valor predeterminado es un segundo.                                   |
-|               -o\<filename>               |     Especifica la ruta de acceso del archivo de salida o la base de datos SQL. El valor predeterminado es STDOUT (se escribe en la ventana de comandos).      |
+|               -o \<filename>               |     Especifica la ruta de acceso del archivo de salida o la base de datos SQL. El valor predeterminado es STDOUT (se escribe en la ventana de comandos).      |
 |                -q [objeto]                 | Mostrar una lista de contadores instalados (sin instancias). Para enumerar los contadores de un objeto, incluya el nombre del objeto. \*\*\*EJEMPLO |
 |                -QX [objeto]                |        Mostrar una lista de contadores instalados con instancias. Para enumerar los contadores de un objeto, incluya el nombre del objeto.        |
-|               -SC\<samples>               |             Especifica el número de muestras que se van a recopilar. El valor predeterminado es recopilar datos hasta que se presiona CTRL + C.              |
-|            -config\<filename>             |                                    Especifica un archivo de configuración que contiene opciones de comando.                                     |
+|               -SC \<samples>               |             Especifica el número de muestras que se van a recopilar. El valor predeterminado es recopilar datos hasta que se presiona CTRL + C.              |
+|            -config \<filename>             |                                    Especifica un archivo de configuración que contiene opciones de comando.                                     |
 |            -s \<computer_name>             |                   Especifica un equipo remoto que se va a supervisar si no se especifica ningún equipo en la ruta de acceso del contador.                    |
 |                     -y                     |                                        Responda sí a todas las preguntas sin preguntar.                                        |
 

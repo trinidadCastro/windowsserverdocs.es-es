@@ -1,18 +1,18 @@
 ---
 title: nlbmgr
 description: Artículo de referencia del comando nlbmgr, que le ayuda a configurar y administrar los clústeres de equilibrio de carga de red y todos los hosts del clúster desde un solo equipo, mediante el administrador de equilibrio de carga de red.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 89cb8590-b7cf-4a27-89fa-0fa62ea1a1ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac0eeb423c5cd590befcce8d7f986fc6b6ebf7d1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5e9036a5fc4a0941445be4c9e9cf11c8064caa08
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885948"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023589"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 
@@ -33,8 +33,8 @@ nlbmgr [/noping][/hostlist <filename>][/autorefresh <interval>][/help | /?]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | /noping | Impide que el administrador de equilibrio de carga de red haga ping a los hosts antes de intentar ponerse en contacto con ellos a través de Instrumental de administración de Windows (WMI). Utilice esta opción si ha deshabilitado el protocolo de mensajes de control de Internet (ICMP) en todos los adaptadores de red disponibles. Si el administrador de equilibrio de carga de red intenta ponerse en contacto con un host que no está disponible, experimentará un retraso al usar esta opción. |
-| /hostlist`<filename>` | Carga los hosts especificados en el nombre de archivo en el administrador de equilibrio de carga de red. |
-| /autorefresh`<interval>` | Hace que el administrador de equilibrio de carga de red actualice su host y la información del clúster cada `<interval>` segundos. Si no se especifica ningún intervalo, la información se actualiza cada 60 segundos. |
+| /hostlist `<filename>` | Carga los hosts especificados en el nombre de archivo en el administrador de equilibrio de carga de red. |
+| /autorefresh `<interval>` | Hace que el administrador de equilibrio de carga de red actualice su host y la información del clúster cada `<interval>` segundos. Si no se especifica ningún intervalo, la información se actualiza cada 60 segundos. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 | /help | Muestra la ayuda en el símbolo del sistema. |
 

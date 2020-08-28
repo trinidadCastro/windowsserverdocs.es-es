@@ -1,18 +1,18 @@
 ---
 title: Enable-TransportServer
 description: Artículo de referencia de enable-TransportServer, que habilita todos los servicios para el servidor de transporte.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9d79dba1-4b57-4a00-8cba-877e6b8618e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d49e8d39ea1e0de1a6f756ffa55e03f210100b4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e7b9fb6f7a646e448c4c4db6aba870f175d5661b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896420"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023289"
 ---
 # <a name="enable-transportserver"></a>Enable-TransportServer
 

@@ -1,18 +1,18 @@
 ---
 title: bitsadmin util y repairservice
 description: Artículo de referencia del comando bitsadmin util y repairservice, que corrige problemas conocidos de varias versiones de servicio BITS.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2ac7baeb-4340-4186-bfcb-66478195378d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d90e6328376f52e60b598d8c2324b59877415db
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1f0a33030e6036eacdf39c29f7cd2e5e88775905
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880858"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034703"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util y repairservice
 

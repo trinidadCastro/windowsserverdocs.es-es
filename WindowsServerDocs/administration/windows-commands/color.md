@@ -1,18 +1,18 @@
 ---
 title: color
 description: Artículo de referencia del comando color, que cambia los colores de primer plano y de fondo de la ventana del símbolo del sistema para la sesión actual.
-ms.topic: article
+ms.topic: reference
 ms.assetid: f5b67131-d196-45ec-a3f9-b5d9f091fd86
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2534273eebe7f8596b0e8f2ab3c90cfdcf824d00
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3ce7aa8e927e3796917d2720495f394636d9c240
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892679"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028463"
 ---
 # <a name="color"></a>color
 
@@ -42,7 +42,7 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 | 1 | Azul |
 | 2 | Verde |
 | 3 | Aqua |
-| 4 | Rojo |
+| 4 | Red |
 | 5 | Púrpura |
 | 6 | Amarillo |
 | 7 | Blanco |

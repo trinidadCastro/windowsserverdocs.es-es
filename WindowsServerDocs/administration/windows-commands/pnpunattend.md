@@ -1,18 +1,18 @@
 ---
 title: pnpunattend
 description: Artículo de referencia para el comando pnpunattend, que audita los controladores de dispositivos en un equipo, así como la instalación silenciosa de controladores.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4fa88932-cff0-4dfc-936c-98c0e3dfbeb8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 72cb158804bcec3c57ef9bae8d21f8e15a7978d9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 27f59cc85dcd872f1f4c0bebdd042fb1b264d65c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884935"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035263"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 

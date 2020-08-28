@@ -1,18 +1,18 @@
 ---
 title: logman create cfg
 description: Artículo de referencia para el comando Logman Create cfg, que crea un recopilador de datos de configuración.
-ms.topic: article
+ms.topic: reference
 ms.assetid: bfc87093-3ff5-4e19-aa93-d185fb8e2239
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0932d4014109cbf10300940a391d4ce564d4163
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fcdd724896b48c40d88c79b5f2081cadf05acf80
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887416"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034993"
 ---
 # <a name="logman-create-cfg"></a>logman create cfg
 
@@ -31,27 +31,27 @@ logman create cfg <[-n] <name>> [options]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | -s `<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
-| -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
-| [-n]`<name>` | Nombre del objeto de destino. |
-| -[-] u`<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
+| -config `<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
+| [-n] `<name>` | Nombre del objeto de destino. |
+| -[-] u `<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
 | -m `<[start] [stop] [[start] [stop] [...]]>` | Cambios en el inicio o detención manual en lugar de una hora de inicio o de finalización programada. |
-| -RF`<[[hh:]mm:]ss>` | Ejecuta el recopilador de datos durante el período de tiempo especificado. |
-| -b`<M/d/yyyy h:mm:ss[AM|PM]>` | Comienza a recopilar datos en el momento especificado. |
+| -RF `<[[hh:]mm:]ss>` | Ejecuta el recopilador de datos durante el período de tiempo especificado. |
+| -b `<M/d/yyyy h:mm:ss[AM|PM]>` | Comienza a recopilar datos en el momento especificado. |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | Finaliza la recopilación de datos en el momento especificado. |
-| -Si`<[[hh:]mm:]ss>` | Especifica el intervalo de ejemplo para los recopiladores de datos del contador de rendimiento. |
-| -o`<path|dsn!log>` | Especifica el archivo de registro de salida o el DSN y el nombre del conjunto de registros en una base de datos SQL. |
+| -Si `<[[hh:]mm:]ss>` | Especifica el intervalo de ejemplo para los recopiladores de datos del contador de rendimiento. |
+| -o `<path|dsn!log>` | Especifica el archivo de registro de salida o el DSN y el nombre del conjunto de registros en una base de datos SQL. |
 | -[-] r | Repite el recopilador de datos diariamente a las horas de inicio y finalización especificadas. |
 | -[-] a | Anexa un archivo de registro existente. |
 | -[-] permitir | Sobrescribe un archivo de registro existente. |
-| -[-] v`<nnnnnn|mmddhhmm>` | Adjunta información de versión del archivo al final del nombre del archivo de registro. |
-| -[-] RC`<task>` | Ejecuta el comando especificado cada vez que se cierra el registro. |
-| -[-] máx.`<value>` | Tamaño máximo del archivo de registro en MB o número máximo de registros para los registros de SQL. |
-| -[-] CNF`<[[hh:]mm:]ss>` | Cuando se especifica Time, crea un nuevo archivo cuando ha transcurrido el tiempo especificado. Cuando no se especifica Time, crea un archivo nuevo cuando se supera el tamaño máximo. |
+| -[-] v `<nnnnnn|mmddhhmm>` | Adjunta información de versión del archivo al final del nombre del archivo de registro. |
+| -[-] RC `<task>` | Ejecuta el comando especificado cada vez que se cierra el registro. |
+| -[-] máx. `<value>` | Tamaño máximo del archivo de registro en MB o número máximo de registros para los registros de SQL. |
+| -[-] CNF `<[[hh:]mm:]ss>` | Cuando se especifica Time, crea un nuevo archivo cuando ha transcurrido el tiempo especificado. Cuando no se especifica Time, crea un archivo nuevo cuando se supera el tamaño máximo. |
 | -y | Responde afirmativamente a todas las preguntas sin preguntar. |
 | -[-] ni | Habilita (-o) o deshabilita la consulta de interfaz de red (-ni). |
-| -REG`<path [path [...]]>` | Especifica los valores del registro que se van a recopilar. |
-| -gestión`<query [query [...]]>` | Especifica los objetos WMI que se van a recopilar mediante el lenguaje de consulta SQL. |
-| -FTC`<path [path [...]]>` | Especifica la ruta de acceso completa a los archivos que se van a recopilar. |
+| -REG `<path [path [...]]>` | Especifica los valores del registro que se van a recopilar. |
+| -gestión `<query [query [...]]>` | Especifica los objetos WMI que se van a recopilar mediante el lenguaje de consulta SQL. |
+| -FTC `<path [path [...]]>` | Especifica la ruta de acceso completa a los archivos que se van a recopilar. |
 | /? | Muestra la ayuda contextual. |
 
 #### <a name="remarks"></a>Observaciones

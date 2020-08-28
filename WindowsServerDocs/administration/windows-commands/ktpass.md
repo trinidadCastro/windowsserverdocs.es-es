@@ -1,18 +1,18 @@
 ---
 title: ktpass
 description: Artículo de referencia para el comando ktpass, que configura el nombre de la entidad de seguridad del servidor para el host o el servicio en AD DS y genera un archivo. de claves de claves que contiene la clave secreta compartida del servicio.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 47087676-311e-41f1-8414-199740d01444
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bb523d35a1bbf2d15895201855a58e96ebb7772
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3ef7e2ba1aa84faa44cf4bf77e842e8d3bcdc235
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887647"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028243"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -44,20 +44,20 @@ ktpass
 
 | Parámetro | Descripción |
 | --------- | ------------|
-| /out`<filename>` | Especifica el nombre del archivo de claves de claves de Kerberos versión 5 que se va a generar. **Nota:** Este es el archivo. la forma de claves que se transfiere a un equipo que no está ejecutando el sistema operativo Windows y, a continuación, se reemplaza o se combina con el archivo. *ad/etc/Krb5.keytab*existente. |
+| /out `<filename>` | Especifica el nombre del archivo de claves de claves de Kerberos versión 5 que se va a generar. **Nota:** Este es el archivo. la forma de claves que se transfiere a un equipo que no está ejecutando el sistema operativo Windows y, a continuación, se reemplaza o se combina con el archivo. *ad/etc/Krb5.keytab*existente. |
 | /princ `<principalname>` | Especifica el nombre de la entidad de seguridad en el formulario host/computer.contoso.com@CONTOSO.COM . **ADVERTENCIA:** Este parámetro distingue entre mayúsculas y minúsculas. |
 | /mapuser `<useraccount>` | Asigna el nombre de la entidad de seguridad de Kerberos, que se especifica mediante el parámetro **princ** , a la cuenta de dominio especificada. |
-| /mapop`{add|set}` | Especifica cómo se establece el atributo de asignación.<ul><li>**Agregar** : agrega el valor del nombre de usuario local especificado. Este es el valor predeterminado.</li><li>**Set** : establece el valor para el cifrado solo del estándar de cifrado de datos (des) para el nombre de usuario local especificado.</li></ul> |
+| /mapop `{add|set}` | Especifica cómo se establece el atributo de asignación.<ul><li>**Agregar** : agrega el valor del nombre de usuario local especificado. Este es el valor predeterminado.</li><li>**Set** : establece el valor para el cifrado solo del estándar de cifrado de datos (des) para el nombre de usuario local especificado.</li></ul> |
 | `{-|+}`solo para | De forma predeterminada, se establece el cifrado de solo DES.<ul><li>**+** Establece una cuenta para el cifrado de solo DES.</li><li>**-** Libera la restricción en una cuenta para el cifrado solo DES. **Importante:** Windows no es compatible con DES de forma predeterminada.</li></ul> |
-| /in`<filename>` | Especifica el archivo. de la operación de escritura que se va a leer de un equipo host que no está ejecutando el sistema operativo Windows. |
-| /Pass`{password|*|{-|+}rndpass}` | Especifica una contraseña para el nombre de usuario de la entidad de seguridad que se especifica mediante el parámetro **princ** . Use `*` para solicitar una contraseña. |
+| /in `<filename>` | Especifica el archivo. de la operación de escritura que se va a leer de un equipo host que no está ejecutando el sistema operativo Windows. |
+| /Pass `{password|*|{-|+}rndpass}` | Especifica una contraseña para el nombre de usuario de la entidad de seguridad que se especifica mediante el parámetro **princ** . Use `*` para solicitar una contraseña. |
 | /minpass | Establece la longitud mínima de la contraseña aleatoria en 15 caracteres. |
 | /maxpass | Establece la longitud máxima de la contraseña aleatoria en 256 caracteres. |
-| /crypto`{DES-CBC-CRC|DES-CBC-MD5|RC4-HMAC-NT|AES256-SHA1|AES128-SHA1|All}` | Especifica las claves que se generan en el archivo de la clave de claves:<ul><li>**Des-CBC-CRC** : se usa por compatibilidad.</li><li>**Des-CBC-MD5** : se ajusta más estrechamente a la implementación de MIT y se usa por compatibilidad.</li><li>**RC4-HMAC-NT** : emplea el cifrado de 128 bits.</li><li>**AES256-SHA1** : emplea el cifrado AES256-CTS-HMAC-SHA1-96.</li><li>   **AES128-SHA1** : emplea el cifrado AES128-CTS-HMAC-SHA1-96.</li><li>**All** : indica que se pueden usar todos los tipos de cifrado admitidos.</li></ul><p>**Nota:** Dado que la configuración predeterminada se basa en versiones MIT anteriores, siempre debe usar el `/crypto` parámetro. |
+| /crypto `{DES-CBC-CRC|DES-CBC-MD5|RC4-HMAC-NT|AES256-SHA1|AES128-SHA1|All}` | Especifica las claves que se generan en el archivo de la clave de claves:<ul><li>**Des-CBC-CRC** : se usa por compatibilidad.</li><li>**Des-CBC-MD5** : se ajusta más estrechamente a la implementación de MIT y se usa por compatibilidad.</li><li>**RC4-HMAC-NT** : emplea el cifrado de 128 bits.</li><li>**AES256-SHA1** : emplea el cifrado AES256-CTS-HMAC-SHA1-96.</li><li>   **AES128-SHA1** : emplea el cifrado AES128-CTS-HMAC-SHA1-96.</li><li>**All** : indica que se pueden usar todos los tipos de cifrado admitidos.</li></ul><p>**Nota:** Dado que la configuración predeterminada se basa en versiones MIT anteriores, siempre debe usar el `/crypto` parámetro. |
 | /itercount | Especifica el recuento de iteraciones que se usa para el cifrado AES. El valor predeterminado omite **itercount** para el cifrado no AES y establece el cifrado aes en 4.096. |
-| /ptype`{KRB5_NT_PRINCIPAL|KRB5_NT_SRV_INST|KRB5_NT_SRV_HST}` | Especifica el tipo de entidad de seguridad.<ul><li>**KRB5_NT_PRINCIPAL** : el tipo de entidad de seguridad general (recomendado).</li><li>**KRB5_NT_SRV_INST** : la instancia de servicio de usuario</li><li>  **KRB5_NT_SRV_HST** : la instancia de servicio de host</li></ul> |
-| /kvno`<keyversionnum>` | Especifica el número de versión de la clave. El valor predeterminado es 1. |
-| /Answer`{-|+}` | Establece el modo de respuesta en segundo plano:<ul><li>**-** Las respuestas restablecer contraseñas se solicitan automáticamente **sin**.</li><li>**+** Respuestas restablecer contraseñas se solicita automáticamente con **sí**.</li></ul> |
+| /ptype `{KRB5_NT_PRINCIPAL|KRB5_NT_SRV_INST|KRB5_NT_SRV_HST}` | Especifica el tipo de entidad de seguridad.<ul><li>**KRB5_NT_PRINCIPAL** : el tipo de entidad de seguridad general (recomendado).</li><li>**KRB5_NT_SRV_INST** : la instancia de servicio de usuario</li><li>  **KRB5_NT_SRV_HST** : la instancia de servicio de host</li></ul> |
+| /kvno `<keyversionnum>` | Especifica el número de versión de la clave. El valor predeterminado es 1. |
+| /Answer `{-|+}` | Establece el modo de respuesta en segundo plano:<ul><li>**-** Las respuestas restablecer contraseñas se solicitan automáticamente **sin**.</li><li>**+** Respuestas restablecer contraseñas se solicita automáticamente con **sí**.</li></ul> |
 | /target | Establece el controlador de dominio que se va a usar. El valor predeterminado es para que se detecte el controlador de dominio, en función del nombre de la entidad de seguridad. Si el nombre del controlador de dominio no se resuelve, un cuadro de diálogo solicitará un controlador de dominio válido. |
 | /rawsalt | obliga a ktpass a usar el algoritmo rawsalt al generar la clave. Este parámetro es opcional. |
 | `{-|+}dumpsalt` | La salida de este parámetro muestra el algoritmo de sal de MIT que se usa para generar la clave. |

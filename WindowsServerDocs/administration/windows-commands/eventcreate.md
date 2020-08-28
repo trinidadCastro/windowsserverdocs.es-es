@@ -1,18 +1,18 @@
 ---
 title: eventcreate
 description: Artículo de referencia para el comando eventcreate, que permite a un administrador crear un evento personalizado en un registro de eventos especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: f2b1b26d-a70e-49a6-832b-91eb5a1a159a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf5cc7e1c36dc0af7325172325a55edb314664ab
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 374dd015cdccbac308fa099854e46765a672ef9f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890588"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035203"
 ---
 # <a name="eventcreate"></a>eventcreate
 
@@ -31,14 +31,14 @@ eventcreate [/s <computer> [/u <domain\user> [/p <password>]] {[/l {APPLICATION|
 
 | Parámetro | Descripción |
 | --------- |------------ |
-| modificado`<computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. |
-| /u`<domain\user>` | Ejecuta el comando con los permisos de cuenta del usuario especificado por `<user>` o `<domain\user>` . El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
-| /p`<password>` | Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . |
-| l`{APPLICATION | SYSTEM}` | Especifica el nombre del registro de eventos donde se creará el evento. Los nombres de registro válidos son **aplicación** o **sistema**. |
-| /so`<srcname>` | Especifica el origen que se va a usar para el evento. Un origen válido puede ser cualquier cadena y debe representar la aplicación o el componente que está generando el evento. |
-| /t`{ERROR | WARNING | INFORMATION | SUCCESSAUDIT | FAILUREAUDIT}` | Especifica el tipo de evento que se va a crear. Los tipos válidos son **error**, **Warning**, **Information**, **SUCCESSAUDIT**y **FAILUREAUDIT**. |
-| /ID`<eventID>` | Especifica el identificador del evento. Un identificador válido es cualquier número comprendido entre 1 y 1000. |
-| /d.`<description>` | Especifica la descripción que se va a usar para el evento que se acaba de crear. |
+| modificado `<computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. |
+| /u `<domain\user>` | Ejecuta el comando con los permisos de cuenta del usuario especificado por `<user>` o `<domain\user>` . El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
+| /p `<password>` | Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . |
+| l `{APPLICATION | SYSTEM}` | Especifica el nombre del registro de eventos donde se creará el evento. Los nombres de registro válidos son **aplicación** o **sistema**. |
+| /so `<srcname>` | Especifica el origen que se va a usar para el evento. Un origen válido puede ser cualquier cadena y debe representar la aplicación o el componente que está generando el evento. |
+| /t `{ERROR | WARNING | INFORMATION | SUCCESSAUDIT | FAILUREAUDIT}` | Especifica el tipo de evento que se va a crear. Los tipos válidos son **error**, **Warning**, **Information**, **SUCCESSAUDIT**y **FAILUREAUDIT**. |
+| /ID `<eventID>` | Especifica el identificador del evento. Un identificador válido es cualquier número comprendido entre 1 y 1000. |
+| /d. `<description>` | Especifica la descripción que se va a usar para el evento que se acaba de crear. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 ### <a name="examples"></a>Ejemplos

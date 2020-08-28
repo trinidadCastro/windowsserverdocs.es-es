@@ -1,18 +1,18 @@
 ---
 title: qappsrv
 description: Artículo de referencia para el comando qappsrv, que muestra una lista de todos los servidores host de sesión de Escritorio remoto en la red.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7df68283-2484-418c-a8f0-d273884919ad
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c0bbc1988f41840c1a39b3d67f219f591fc04840
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 91a178ceef700bb58a78743a88b3fde530e9ff59
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884557"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028133"
 ---
 # <a name="qappsrv"></a>qappsrv
 

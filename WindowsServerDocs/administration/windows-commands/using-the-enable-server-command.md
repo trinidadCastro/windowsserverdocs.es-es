@@ -1,18 +1,18 @@
 ---
 title: 'habilitar: servidor'
 description: Artículo de referencia para Enable-Server, que habilita todos los servicios para servicios de implementación de Windows.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 939ffbfb-cf3c-4310-9627-6e7e0c0644d6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 04884c4f4648db4ff78446048f34ea1ec609d154
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8fdf1863fbf3136b6326db0f391a969b78d74fa7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896543"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023349"
 ---
 # <a name="enable-server"></a>habilitar: servidor
 
