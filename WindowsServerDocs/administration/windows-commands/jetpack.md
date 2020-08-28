@@ -1,18 +1,18 @@
 ---
 title: jetpack
 description: Artículo de referencia del comando jetpack, que compacta una base de datos del servicio de nombres Internet de Windows (WINS) o del Protocolo de configuración dinámica de host (DHCP).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 82a2b7ef-0db5-4575-a028-8acb0bf6c7ba
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6850c7d00f11278bbc904f7ad7d2e7edaf30d229
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bf2664c142a169982acc0d11c34a53aea193d030
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888193"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035423"
 ---
 # <a name="jetpack"></a>jetpack
 

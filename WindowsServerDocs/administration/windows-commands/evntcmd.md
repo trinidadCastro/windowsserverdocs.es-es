@@ -1,18 +1,18 @@
 ---
 title: evntcmd
 description: Artículo de referencia para el comando evntcmd, que configura la traducción de eventos a capturas, destinos de captura o ambos según la información de un archivo de configuración.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9610608000ce106ec321f721a4181658453d6348
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 173cb9c2f1528748986daf753a9d213c5060e5d4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890541"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035873"
 ---
 # <a name="evntcmd"></a>evntcmd
 
@@ -30,8 +30,8 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| modificado`<computername>` | Especifica, por nombre, el equipo en el que desea configurar la traducción de eventos a capturas, destinos de captura o ambos. Si no especifica un equipo, la configuración se produce en el equipo local. |
-| /v`<verbositylevel>` | Especifica los tipos de mensajes de estado que aparecen como capturas y se configuran los destinos de captura. Este parámetro debe ser un entero comprendido entre 0 y 10. Si especifica 10, aparecerán todos los tipos de mensajes, incluidos los mensajes de seguimiento y las advertencias sobre si la configuración de la captura fue correcta. Si especifica 0, no aparece ningún mensaje. |
+| modificado `<computername>` | Especifica, por nombre, el equipo en el que desea configurar la traducción de eventos a capturas, destinos de captura o ambos. Si no especifica un equipo, la configuración se produce en el equipo local. |
+| /v `<verbositylevel>` | Especifica los tipos de mensajes de estado que aparecen como capturas y se configuran los destinos de captura. Este parámetro debe ser un entero comprendido entre 0 y 10. Si especifica 10, aparecerán todos los tipos de mensajes, incluidos los mensajes de seguimiento y las advertencias sobre si la configuración de la captura fue correcta. Si especifica 0, no aparece ningún mensaje. |
 | /n | Especifica que el servicio SNMP no debe reiniciarse si este equipo recibe cambios de configuración de captura. |
 | `<filename>` | Especifica, por nombre, el archivo de configuración que contiene información sobre la traducción de eventos a capturas y destinos de captura que desea configurar. |
 | /? | Muestra la ayuda en el símbolo del sistema. |

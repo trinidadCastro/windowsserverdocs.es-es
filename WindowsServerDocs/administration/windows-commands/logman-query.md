@@ -1,18 +1,18 @@
 ---
 title: logman query
 description: Artículo de referencia para el comando Logman Query, que consulta las propiedades del recopilador de datos o del conjunto de recopiladores de datos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1116a0f0-5415-4369-a045-12f79f8f66de
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2cb324651001f071e45acf0821f402458ed838d8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e7d3d9da5b5885c15135b764454bd68818c4aded
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887283"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023789"
 ---
 # <a name="logman-query"></a>logman query
 
@@ -31,8 +31,8 @@ logman query [providers|Data Collector Set name] [options]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | -s `<computer name>` | Ejecute el comando en el equipo remoto especificado. |
-| -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
-| [-n]`<name>` | Nombre del objeto de destino. |
+| -config `<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
+| [-n] `<name>` | Nombre del objeto de destino. |
 | -ETS | Envía comandos a sesiones de seguimiento de eventos directamente sin guardar o programar. |
 | /? | Muestra la ayuda contextual. |
 

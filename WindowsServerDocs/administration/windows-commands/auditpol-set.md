@@ -1,18 +1,18 @@
 ---
 title: auditpol set
 description: Artículo de referencia del comando Auditpol Set, que establece la Directiva de auditoría por usuario, la Directiva de auditoría del sistema o las opciones de auditoría.
-ms.topic: article
+ms.topic: reference
 ms.assetid: f4947486-87bd-48cb-ba81-7230c8e70895
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 06dcac123a56adbab93aab4dfa44fcc47d26220d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 674de256eba3ee4b55f2b889717b7c2ed2defa3d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895327"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028973"
 ---
 # <a name="auditpol-set"></a>auditpol set
 

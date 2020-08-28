@@ -1,18 +1,18 @@
 ---
 title: winsat mem
 description: Artículo de referencia de la memoria de WinSAT, que prueba el ancho de banda de la memoria del sistema de forma que se refleje la memoria grande en las copias de búfer de memoria, como se usa en el procesamiento multimedia.
-winms.topic: article
+winms.topic: reference
 ms.assetid: cda017bf-6193-43c1-b71f-e379c23e1152
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 928c0b7389af4c2417fe62af1aeae4f9a90856a4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0ba9896b6c07d412e00209e708b4b10e6421907e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896485"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035883"
 ---
 # <a name="winsat-mem"></a>winsat mem
 
@@ -35,12 +35,12 @@ winsat mem <parameters>
 |-arriba|Fuerce la prueba de memoria con un solo subproceso. El valor predeterminado es ejecutar un subproceso por CPU física o núcleo.|
 |-RN|Especifica que los subprocesos de la evaluación deben ejecutarse con prioridad normal. El valor predeterminado es ejecutar con la prioridad 15.|
 |-NC|Especifique que la evaluación debe asignar memoria y marcarla como sin almacenamiento en caché. Esto significa que las cachés del procesador se omitirán para las operaciones de copia. El valor predeterminado es ejecutar en el espacio en caché.|
-|-do\<n>|Especifica la distancia, en bytes, entre el final del búfer de origen y el inicio del búfer de destino. El valor predeterminado es 64 bytes. El desplazamiento de destino máximo permitido es de 16 MB. Si se especifica un desplazamiento de destino no válido, se producirá un error.</br>Nota: cero es un valor válido para **\<n>** , pero no números negativos.|
-|-menta\<n>|Especifique el tiempo de ejecución mínimo en segundos para la evaluación. El valor predeterminado es 2,0. El valor mínimo es 1,0. El valor máximo es 30,0.</br>Nota: si se especifica un valor **-menta** mayor que el valor **-maxt** cuando los dos parámetros se usan en combinación, se producirá un error.|
-|-maxt\<n>|Especifique el tiempo de ejecución máximo en segundos para la evaluación. El valor predeterminado es 5,0. El valor mínimo es 1,0. El valor máximo es 30,0. Si se usa en combinación con el parámetro **-menta** , la evaluación comenzará a realizar comprobaciones estadísticas periódicas de los resultados después del período de tiempo especificado en **-menta**. Si se superan las comprobaciones estadísticas, la evaluación finalizará antes de que transcurra el período de tiempo especificado en **-maxt** . Si la evaluación se ejecuta durante el período de tiempo especificado en **-maxt** sin satisfacer las comprobaciones estadísticas, la evaluación finalizará en ese momento y devolverá los resultados que ha recopilado.|
-|-buffersize\<n>|Especifique el tamaño de búfer que debe usar la prueba de copia de memoria. Dos veces esta cantidad se asignará por CPU, lo que determina la cantidad de datos copiados de un búfer a otro. El valor predeterminado es 16 MB. Este valor se redondea al límite de 4 KB más próximo. El valor máximo es 32 MB. El valor mínimo es 4 KB. Si se especifica un tamaño de búfer no válido, se producirá un error.|
+|-do \<n>|Especifica la distancia, en bytes, entre el final del búfer de origen y el inicio del búfer de destino. El valor predeterminado es 64 bytes. El desplazamiento de destino máximo permitido es de 16 MB. Si se especifica un desplazamiento de destino no válido, se producirá un error.</br>Nota: cero es un valor válido para **\<n>** , pero no números negativos.|
+|-menta \<n>|Especifique el tiempo de ejecución mínimo en segundos para la evaluación. El valor predeterminado es 2,0. El valor mínimo es 1,0. El valor máximo es 30,0.</br>Nota: si se especifica un valor **-menta** mayor que el valor **-maxt** cuando los dos parámetros se usan en combinación, se producirá un error.|
+|-maxt \<n>|Especifique el tiempo de ejecución máximo en segundos para la evaluación. El valor predeterminado es 5,0. El valor mínimo es 1,0. El valor máximo es 30,0. Si se usa en combinación con el parámetro **-menta** , la evaluación comenzará a realizar comprobaciones estadísticas periódicas de los resultados después del período de tiempo especificado en **-menta**. Si se superan las comprobaciones estadísticas, la evaluación finalizará antes de que transcurra el período de tiempo especificado en **-maxt** . Si la evaluación se ejecuta durante el período de tiempo especificado en **-maxt** sin satisfacer las comprobaciones estadísticas, la evaluación finalizará en ese momento y devolverá los resultados que ha recopilado.|
+|-buffersize \<n>|Especifique el tamaño de búfer que debe usar la prueba de copia de memoria. Dos veces esta cantidad se asignará por CPU, lo que determina la cantidad de datos copiados de un búfer a otro. El valor predeterminado es 16 MB. Este valor se redondea al límite de 4 KB más próximo. El valor máximo es 32 MB. El valor mínimo es 4 KB. Si se especifica un tamaño de búfer no válido, se producirá un error.|
 |-v|Envíe una salida detallada a STDOUT, incluida la información de estado y de progreso. Los errores también se escribirán en la ventana de comandos.|
-|-XML\<file name>|Guarde el resultado de la evaluación como el archivo XML especificado. Si el archivo especificado existe, se sobrescribirá.|
+|-XML \<file name>|Guarde el resultado de la evaluación como el archivo XML especificado. Si el archivo especificado existe, se sobrescribirá.|
 |-idiskinfo|Guarde la información sobre los volúmenes físicos y los discos lógicos como parte de la **\<SystemConfig>** sección de la salida XML.|
 |-iguid|Cree un identificador único global (GUID) en el archivo de salida XML.|
 |-Nota texto de nota|Agregue el texto de la nota a la **\<note>** sección del archivo de salida XML.|

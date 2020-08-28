@@ -1,18 +1,18 @@
 ---
 title: logman delete
 description: Artículo de referencia para el comando Logman Delete, que elimina un recopilador de datos existente.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8f3b2422-3dce-4fb4-adbb-8536b1d7da2b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f83e903d6e9c3b9679f736bdba309498473ce52
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dbcae06f149f0ea1c443f91fec45d87b5a358136
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887316"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023809"
 ---
 # <a name="logman-delete"></a>logman delete
 
@@ -31,10 +31,10 @@ logman delete <[-n] <name>> [options]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | -s `<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
-| -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
-| [-n]`<name>` | Nombre del objeto de destino. |
+| -config `<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
+| [-n] `<name>` | Nombre del objeto de destino. |
 | -ETS | Envía comandos a sesiones de seguimiento de eventos directamente sin guardar o programar. |
-| -[-] u`<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
+| -[-] u `<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
 | /? | Muestra la ayuda contextual. |
 
 ### <a name="examples"></a>Ejemplos

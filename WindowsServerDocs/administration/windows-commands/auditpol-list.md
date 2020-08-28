@@ -1,18 +1,18 @@
 ---
 title: auditpol list
 description: Artículo de referencia del comando de lista Auditpol, que enumera las categorías y subcategorías de la Directiva de auditoría, o enumera los usuarios para los que se define una directiva de auditoría por usuario.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 45502abe-3d6e-4e13-94f0-8e6fcb6db860
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5047708056e4e926dc917b80b4b0a41ce5f9d773
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b49b138de8f25f25b00e593d6bd02620a3f2f624
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895426"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029083"
 ---
 # <a name="auditpol-list"></a>auditpol list
 

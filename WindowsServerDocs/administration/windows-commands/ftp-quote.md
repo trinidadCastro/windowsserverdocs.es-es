@@ -1,18 +1,18 @@
 ---
 title: ftp quote
 description: Artículo de referencia para el comando presupuesto de FTP, que envía argumentos textuales al servidor FTP remoto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4500a1d3-c091-42c7-a909-f61df7f2e993
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f4fb1f8edeacd3d17fc1b54b357bf609cd8d704
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5e70c93e7a8fe5c32038eec08c7115aa1fec80bf
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889119"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035803"
 ---
 # <a name="ftp-quote"></a>ftp quote
 

@@ -1,18 +1,18 @@
 ---
 title: detalles
 description: Artículo de referencia para el comando Detail, que muestra información sobre el disco, la partición, el volumen o el disco duro virtual (VHD) seleccionados.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 305755bd-1a51-486b-8515-62d3f227c291
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23768b86f0ac3885b0cae92b62d06b830b893a8d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a63af5f137cb7456d73a1c9b9e03552eafd53b35
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891245"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024039"
 ---
 # <a name="detail"></a>detalles
 

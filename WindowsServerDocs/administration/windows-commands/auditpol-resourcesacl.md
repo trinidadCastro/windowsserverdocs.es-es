@@ -1,18 +1,18 @@
 ---
 title: AuditPol resourceSACL
 description: Artículo de referencia para el comando Auditpol resourceSACL, que configura las listas de control de acceso (SACL) del sistema de recursos globales.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 28771ba7-967a-45e9-9bf0-b2a2673070f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b20c97fce42bb57613ac421eabc5ac7acf7a921d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 408dadfd29fb1dd6227d4d27651da400d1ede333
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895352"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029004"
 ---
 # <a name="auditpol-resourcesacl"></a>AuditPol resourceSACL
 

@@ -1,18 +1,18 @@
 ---
 title: ftp rename
 description: Artículo de referencia del comando Rename de FTP, que cambia el nombre de los archivos remotos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 977b7c95-6428-4980-80ec-79c3ae7e8c4d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c85903987be9df566f4c07bc7fb5b96e76b0aa43
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a722605e451fff3ea8d4a758434a7509deaf355c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888982"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035743"
 ---
 # <a name="ftp-rename"></a>ftp rename
 

@@ -1,18 +1,18 @@
 ---
 title: exit
 description: Artículo de referencia para Exit, que sale del intérprete de comandos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: d3cee4a2-6210-46f0-b8e4-7381c3c4e530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 058e41d49ece470421fbd2b160037885b92c1bed
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9e065a25f339a093492a05102b10455b11da5ecb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890469"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035863"
 ---
 # <a name="exit"></a>exit
 

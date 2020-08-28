@@ -1,18 +1,18 @@
 ---
 title: auditpol clear
 description: Artículo de referencia del comando Auditpol Clear, que elimina la Directiva de auditoría por usuario para todos los usuarios, restablece (deshabilita) la Directiva de auditoría del sistema para todas las subcategorías y establece todas las opciones de auditoría en deshabilitado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 05bfa218-2434-4ad1-b33c-e6fcfb2b4f67
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2cdb55633e15484f8ca98432fbe8bc28b5f59fd0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ba2a4759d5c1aacdf6fae27e00a9a2e74b4597dc
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895452"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029113"
 ---
 # <a name="auditpol-clear"></a>auditpol clear
 

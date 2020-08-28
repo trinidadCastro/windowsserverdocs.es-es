@@ -1,18 +1,18 @@
 ---
 title: ftp type
 description: Artículo de referencia del comando FTP Type, que establece o muestra el tipo de transferencia de archivos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6e96dcd4-08f8-4e7b-90b7-1e1761fea4c7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2188c6114b708845486dd091ff222d2d46ece075
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f97c7959fcc0788298055b989433eec572d61584
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888808"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035693"
 ---
 # <a name="ftp-type"></a>ftp type
 

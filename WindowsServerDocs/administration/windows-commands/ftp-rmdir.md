@@ -1,18 +1,18 @@
 ---
 title: ftp rmdir
 description: Artículo de referencia para el comando de FTP rmdir, que elimina un directorio raíz.
-ms.topic: article
+ms.topic: reference
 ms.assetid: cf4778a4-9534-49c7-a061-850dc3504a67
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dfdb8f8638d12a70e526e7165367807260a4ca8f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6a9989a8d0c26820eb92c9f5794b4c877fe1efa8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888957"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035753"
 ---
 # <a name="ftp-rmdir"></a>ftp rmdir
 

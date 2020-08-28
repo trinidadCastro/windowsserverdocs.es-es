@@ -1,18 +1,18 @@
 ---
 title: ftp status
 description: Artículo de referencia del comando FTP status, que muestra el estado actual de las conexiones FTP.
-ms.topic: article
+ms.topic: reference
 ms.assetid: d78c5629-6f73-4587-af0b-bd3cc3af5225
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 070c68ab9ab0c557b32ed4d6064f4c4aa74256d1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e066e221e737a17319e893c8dff956185eb3b8d7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888904"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035703"
 ---
 # <a name="ftp-status"></a>ftp status
 

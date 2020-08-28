@@ -1,18 +1,18 @@
 ---
 title: autoconv
 description: Artículo de referencia para el comando autoconv, que convierte volúmenes de tabla de asignación de archivos (FAT) y FAT32 en el sistema de archivos NTFS.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 17281e54-0b18-4e84-94ac-24586c82df4e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f4c7ed1a2c370de46e02130fd06e1b9326207e9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3d69d70200b4885404486bc4956903a17b329630
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895268"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028943"
 ---
 # <a name="autoconv"></a>autoconv
 

@@ -1,18 +1,18 @@
 ---
 title: ipconfig
 description: Artículo de referencia para el comando ipconfig, que muestra todos los valores de configuración de red TCP/IP actuales y actualiza la configuración del Protocolo de configuración dinámica de host (DHCP) y el sistema de nombres de dominio (DNS).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 15071c2c-4815-4893-93b2-ab30232e312e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a0cff8ef691eb9b7adf04b9928a962cda760fdf9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d683053c1a696ec2aa0f0f2441fdde22eccb479d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888259"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035453"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -32,12 +32,12 @@ ipconfig [/allcompartments] [/all] [/renew [<adapter>]] [/release [<adapter>]] [
 | comando/displaydns | Muestra el contenido de la memoria caché de la resolución del cliente DNS, que incluye las entradas cargadas previamente desde el archivo de hosts local y los registros de recursos que se han obtenido recientemente para las consultas de nombres resueltas por el equipo. El servicio cliente DNS usa esta información para resolver rápidamente los nombres consultados con frecuencia, antes de consultar sus servidores DNS configurados. |
 | /flushdns | Vacía y restablece el contenido de la memoria caché de la resolución del cliente DNS. Durante la solución de problemas de DNS, puede usar este procedimiento para descartar las entradas de caché negativas de la memoria caché, así como cualquier otra entrada que se haya agregado dinámicamente. |
 | /registerdns | Inicia el registro dinámico manual de los nombres DNS y las direcciones IP que se configuran en un equipo. Puede usar este parámetro para solucionar un error de registro de nombres DNS o resolver un problema de actualización dinámica entre un cliente y el servidor DNS sin reiniciar el equipo cliente. La configuración de DNS en las propiedades avanzadas del protocolo TCP/IP determina los nombres que se registran en DNS. |
-| /Release`[<adapter>]` | Envía un mensaje DHCPRELEASE al servidor DHCP para liberar la configuración actual de DHCP y descartar la configuración de la dirección IP para todos los adaptadores (si no se especifica un adaptador) o para un adaptador específico, si se incluye el parámetro *adaptador* . Este parámetro deshabilita TCP/IP para los adaptadores configurados para obtener una dirección IP automáticamente. Para especificar un nombre de adaptador, escriba el nombre del adaptador que aparece cuando se usa **ipconfig** sin parámetros. |
+| /Release `[<adapter>]` | Envía un mensaje DHCPRELEASE al servidor DHCP para liberar la configuración actual de DHCP y descartar la configuración de la dirección IP para todos los adaptadores (si no se especifica un adaptador) o para un adaptador específico, si se incluye el parámetro *adaptador* . Este parámetro deshabilita TCP/IP para los adaptadores configurados para obtener una dirección IP automáticamente. Para especificar un nombre de adaptador, escriba el nombre del adaptador que aparece cuando se usa **ipconfig** sin parámetros. |
 | /release6`[<adapter>]` | Envía un mensaje DHCPRELEASE al servidor DHCPv6 para liberar la configuración actual de DHCP y descartar la configuración de la dirección IPv6 para todos los adaptadores (si no se especifica un adaptador) o para un adaptador específico, si se incluye el parámetro *Adapter* . Este parámetro deshabilita TCP/IP para los adaptadores configurados para obtener una dirección IP automáticamente. Para especificar un nombre de adaptador, escriba el nombre del adaptador que aparece cuando se usa **ipconfig** sin parámetros. |
-| /Renew`[<adapter>]` | Renueva la configuración de DHCP para todos los adaptadores (si no se especifica un adaptador) o para un adaptador específico si se incluye el parámetro de *adaptador* . Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IP automáticamente. Para especificar un nombre de adaptador, escriba el nombre del adaptador que aparece cuando se usa **ipconfig** sin parámetros. |
-| /renew6`[<adapter>]` | Renueva la configuración de DHCPv6 para todos los adaptadores (si no se especifica un adaptador) o para un adaptador específico si se incluye el parámetro de *adaptador* . Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IPv6 automáticamente. Para especificar un nombre de adaptador, escriba el nombre del adaptador que aparece cuando se usa **ipconfig** sin parámetros. |
-| /setclassid`<adapter>[<classID>]` | Configura el identificador de clase DHCP para un adaptador especificado. Para establecer el identificador de clase de DHCP para todos los adaptadores, use el carácter comodín de asterisco (**&#42;**) en lugar del *adaptador*. Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IP automáticamente. Si no se especifica un identificador de clase DHCP, se quita el ID. de clase actual. |
-| /showclassid`<adapter>` | Muestra el identificador de clase DHCP de un adaptador especificado. Para ver el identificador de clase de DHCP para todos los adaptadores, use el carácter comodín de asterisco (**&#42;**) en lugar del *adaptador*. Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IP automáticamente. |
+| /Renew `[<adapter>]` | Renueva la configuración de DHCP para todos los adaptadores (si no se especifica un adaptador) o para un adaptador específico si se incluye el parámetro de *adaptador* . Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IP automáticamente. Para especificar un nombre de adaptador, escriba el nombre del adaptador que aparece cuando se usa **ipconfig** sin parámetros. |
+| /renew6 `[<adapter>]` | Renueva la configuración de DHCPv6 para todos los adaptadores (si no se especifica un adaptador) o para un adaptador específico si se incluye el parámetro de *adaptador* . Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IPv6 automáticamente. Para especificar un nombre de adaptador, escriba el nombre del adaptador que aparece cuando se usa **ipconfig** sin parámetros. |
+| /setclassid `<adapter>[<classID>]` | Configura el identificador de clase DHCP para un adaptador especificado. Para establecer el identificador de clase de DHCP para todos los adaptadores, use el carácter comodín de asterisco (**&#42;**) en lugar del *adaptador*. Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IP automáticamente. Si no se especifica un identificador de clase DHCP, se quita el ID. de clase actual. |
+| /showclassid `<adapter>` | Muestra el identificador de clase DHCP de un adaptador especificado. Para ver el identificador de clase de DHCP para todos los adaptadores, use el carácter comodín de asterisco (**&#42;**) en lugar del *adaptador*. Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IP automáticamente. |
 | /? | Muestra la Ayuda en el símbolo del sistema. |
 
 #### <a name="remarks"></a>Observaciones

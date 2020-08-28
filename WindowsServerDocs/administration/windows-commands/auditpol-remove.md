@@ -1,18 +1,18 @@
 ---
 title: auditpol remove
 description: Artículo de referencia del comando Auditpol Remove, que quita la Directiva de auditoría por usuario para una cuenta especificada o todas las cuentas.
-ms.topic: article
+ms.topic: reference
 ms.assetid: be42ec55-235c-44f7-9abd-ed1cf3f5b1f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8560f1c9d951f7c2c0cfd93638a85d9e43880da5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: eee48822a082c3e7f5aa37cbd09a24059c94624e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895375"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029033"
 ---
 # <a name="auditpol-remove"></a>auditpol remove
 

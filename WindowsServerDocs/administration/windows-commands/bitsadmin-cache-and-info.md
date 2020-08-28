@@ -1,18 +1,18 @@
 ---
 title: bitsadmin cache e info
 description: Artículo de referencia para el comando bitsadmin cache y info, que vuelca una entrada específica de la memoria caché.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 15975cbf-dba6-49ca-a725-d15ce1952de5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 537c6173718d8c7deb421915b2ef9697472600a2
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cce96d25b3968c1f975b6426ce8c25e7420f7bd3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894795"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028893"
 ---
 # <a name="bitsadmin-cache-and-info"></a>bitsadmin cache e info
 

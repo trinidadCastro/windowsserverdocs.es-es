@@ -1,18 +1,18 @@
 ---
 title: logman update api
 description: Artículo de referencia del comando Logman Update API, que actualiza las propiedades de un recopilador de datos de seguimiento de API existente.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eaa66a05fa6f47fc17990d1f84223c2e2a8086c3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9b95c69b4e4b334155c1a22327b1acb8f756c7cd
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887248"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035343"
 ---
 # <a name="logman-update-api"></a>logman update api
 
@@ -31,30 +31,30 @@ logman update api <[-n] <name>> [options]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | -s `<computer name>` | Ejecuta el comando en el equipo remoto especificado. |
-| -config`<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
-| [-n]`<name>` | Nombre del objeto de destino. |
-| -f`<bin|bincirc>` | Especifica el formato del registro del recopilador de datos. |
-| -[-] u`<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un `*` para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
+| -config `<value>` | Especifica el archivo de configuración que contiene opciones de comando. |
+| [-n] `<name>` | Nombre del objeto de destino. |
+| -f `<bin|bincirc>` | Especifica el formato del registro del recopilador de datos. |
+| -[-] u `<user [password]>` | Especifica el usuario que se va a ejecutar como. Al escribir un `*` para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en la solicitud de contraseña. |
 | -m `<[start] [stop] [[start] [stop] [...]]>` | Se ha cambiado a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada. |
-| -RF`<[[hh:]mm:]ss>` | Ejecute el recopilador de datos durante el período de tiempo especificado. |
-| -b`<M/d/yyyy h:mm:ss[AM|PM]>` | Comienza a recopilar datos en el momento especificado. |
+| -RF `<[[hh:]mm:]ss>` | Ejecute el recopilador de datos durante el período de tiempo especificado. |
+| -b `<M/d/yyyy h:mm:ss[AM|PM]>` | Comienza a recopilar datos en el momento especificado. |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | Finaliza la recopilación de datos en el momento especificado. |
-| -Si`<[[hh:]mm:]ss>` | Especifica el intervalo de ejemplo para los recopiladores de datos del contador de rendimiento. |
-| -o`<path|dsn!log>` | Especifica el archivo de registro de salida o el DSN y el nombre del conjunto de registros en una base de datos SQL. |
+| -Si `<[[hh:]mm:]ss>` | Especifica el intervalo de ejemplo para los recopiladores de datos del contador de rendimiento. |
+| -o `<path|dsn!log>` | Especifica el archivo de registro de salida o el DSN y el nombre del conjunto de registros en una base de datos SQL. |
 | -[-] r | Repetir el recopilador de datos diariamente en las horas de inicio y finalización especificadas. |
 | -[-] a | Anexar un archivo de registro existente. |
 | -[-] permitir | Sobrescribir un archivo de registro existente. |
-| -[-] v`<nnnnnn|mmddhhmm>` | Adjunta información de versión del archivo al final del nombre del archivo de registro. |
-| -[-] RC`<task>` | Ejecute el comando especificado cada vez que se cierre el registro. |
-| -[-] máx.`<value>` | Tamaño máximo del archivo de registro en MB o número máximo de registros para los registros de SQL. |
-| -[-] CNF`<[[hh:]mm:]ss>` | Cuando se especifica Time, crea un nuevo archivo cuando ha transcurrido el tiempo especificado. Cuando no se especifica Time, crea un archivo nuevo cuando se supera el tamaño máximo. |
+| -[-] v `<nnnnnn|mmddhhmm>` | Adjunta información de versión del archivo al final del nombre del archivo de registro. |
+| -[-] RC `<task>` | Ejecute el comando especificado cada vez que se cierre el registro. |
+| -[-] máx. `<value>` | Tamaño máximo del archivo de registro en MB o número máximo de registros para los registros de SQL. |
+| -[-] CNF `<[[hh:]mm:]ss>` | Cuando se especifica Time, crea un nuevo archivo cuando ha transcurrido el tiempo especificado. Cuando no se especifica Time, crea un archivo nuevo cuando se supera el tamaño máximo. |
 | -y | Responda sí a todas las preguntas sin preguntar. |
-| -mods`<path [path [...]]>` | Especifica la lista de módulos de los que se van a registrar las llamadas API. |
+| -mods `<path [path [...]]>` | Especifica la lista de módulos de los que se van a registrar las llamadas API. |
 | -INAPI` <module!api [module!api [...]]>` | Especifica la lista de llamadas API que se van a incluir en el registro. |
-| -exapi`<module!api [module!api [...]]>` | Especifica la lista de llamadas API que se van a excluir del registro. |
+| -exapi `<module!api [module!api [...]]>` | Especifica la lista de llamadas API que se van a excluir del registro. |
 | -[-] ano | Log (-ano) nombres de API solamente o no registran los nombres de API (-ano). |
 | -[-] recursivo | Log (-Recursive) o no registra (-recursivo) API de forma recursiva más allá de la primera capa. |
-| -exe`<value>` | Especifica la ruta de acceso completa a un archivo ejecutable para el seguimiento de la API. |
+| -exe `<value>` | Especifica la ruta de acceso completa a un archivo ejecutable para el seguimiento de la API. |
 | /? | Muestra la ayuda contextual. |
 
 #### <a name="remarks"></a>Observaciones
