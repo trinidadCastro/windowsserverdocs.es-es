@@ -1,18 +1,18 @@
 ---
 title: cambiar
 description: Artículo de referencia para el comando cambiar, que cambia Escritorio remoto configuración del servidor host de sesión para los inicios de sesión, las asignaciones de puertos COM y el modo de instalación.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 90012116-0fb3-4f34-a819-cf4d4b4f8981
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 733ef9fba0a546cd844121899840f592bd2b3118
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f1dc7af27d1ada36013e5d8d44237a1d2b07f926
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892835"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031143"
 ---
 # <a name="change"></a>cambiar
 
@@ -21,7 +21,7 @@ ms.locfileid: "87892835"
 Cambia Escritorio remoto configuración del servidor host de sesión para los inicios de sesión, las asignaciones de puertos COM y el modo de instalación.
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxis
 

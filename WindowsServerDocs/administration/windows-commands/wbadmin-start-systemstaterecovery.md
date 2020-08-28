@@ -1,18 +1,18 @@
 ---
 title: wbadmin start systemstaterecovery
 description: Artículo de referencia de Wbadmin Start systemstaterecovery, que realiza una recuperación de estado del sistema en una ubicación y, a partir de una copia de seguridad, que especifique.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 208b1be9-3452-4aba-bb49-46bc587fca96
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f77b3d91172ccf5c01abf18ac1beb5269933b27c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: da4ed85bbeddc6434f5f5d9fbf0f078b70a13e2d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879578"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031843"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 

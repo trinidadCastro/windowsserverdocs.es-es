@@ -1,20 +1,20 @@
 ---
-title: uniqueid
+title: UniqueID
 description: Artículo de referencia de UniqueID, que muestra o establece el identificador de la tabla de particiones GUID (GPT) o la firma del registro de arranque maestro (MBR) del disco que tiene el foco.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 64235a4a-b91c-46da-b9b0-68ee90571c2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef76189e3377ecdb11605acf449ba68424d1588f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 42b3bcc50ad5f13a941a0ff81a7c74f40b45b48d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897059"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032200"
 ---
-# <a name="uniqueid"></a>uniqueid
+# <a name="uniqueid"></a>UniqueID
 
 Muestra o establece el identificador de la tabla de particiones GUID (GPT) o la firma del registro de arranque maestro (MBR) del disco que tiene el foco.
 

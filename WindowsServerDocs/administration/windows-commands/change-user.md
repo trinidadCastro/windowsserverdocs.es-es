@@ -1,18 +1,18 @@
 ---
 title: change user
 description: Artículo de referencia del comando Change User, que cambia el modo de instalación del servidor host de sesión Escritorio remoto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6202f024-8cf5-411e-89b1-ee37ff46499d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca78126095b11ca7bf900d10c253cd7ad19fcc12
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7c473349b75a5963cb66997ea568f5634eea194d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892894"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031153"
 ---
 # <a name="change-user"></a>change user
 
@@ -21,7 +21,7 @@ ms.locfileid: "87892894"
 Cambia el modo de instalación del servidor host de sesión Escritorio remoto.
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxis
 

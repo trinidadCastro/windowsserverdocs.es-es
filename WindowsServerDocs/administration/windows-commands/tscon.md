@@ -1,18 +1,18 @@
 ---
 title: tscon
 description: Artículo de referencia de tscon, que se conecta a otra sesión en un servidor de host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 315a9793-cd10-4987-bb68-89a9d13f7fce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96f23a310d1cf9b1843194ee233b84f69c84bb0c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d0acb75411cae8c4d844e8ff2b113c6a9c638a9b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897084"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026883"
 ---
 # <a name="tscon"></a>tscon
 
@@ -23,7 +23,7 @@ Se conecta a otra sesión en un servidor host de sesión Escritorio remoto.
 
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) en la biblioteca de TechNet de Windows Server.
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) en la biblioteca de TechNet de Windows Server.
 
 ## <a name="syntax"></a>Sintaxis
 ```

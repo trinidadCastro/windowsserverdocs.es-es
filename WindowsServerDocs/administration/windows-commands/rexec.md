@@ -1,23 +1,22 @@
 ---
 title: rexec
-description: Artículo de referencia de * * * *-
-ms.topic: article
+description: Artículo de referencia para el comando REXEC, que ejecuta un comando especificado en un host remoto. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
+ms.topic: reference
 ms.assetid: 7c637fb3-c92f-40bf-ad06-6330daaa3b5f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1cddd1d1b8f1a9b891004c66caae378cd172451a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 56a2e96b7c5b8b87895554ffdcc54c634931653f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883592"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027253"
 ---
 # <a name="rexec"></a>rexec
 
+Ejecuta un comando especificado en un host remoto. El host remoto debe ejecutar un servicio (o demonio) rexecd para que REXEC se conecte a.
 
-
-REXEC está en desuso y no se garantiza que se admita en versiones futuras de Windows.
-
-Esta herramienta se incluye en Windows Server 2003. Para obtener más información, consulte [REXEC](/previous-versions/orphan-topics/ws.10/cc755410(v=ws.10)).
+> [!IMPORTANT]
+> El comando **REXEC** está en desuso y no se garantiza que sea compatible con Windows.

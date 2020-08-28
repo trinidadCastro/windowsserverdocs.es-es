@@ -1,18 +1,18 @@
 ---
 title: mmc
 description: Artículo de referencia del comando MMC, que le permite abrir una consola MMC específica, abrir MMC en el modo de autor o especificar que se abra la versión de 32 bits o 64 bits de MMC.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7bfa4030-ce42-40fb-922f-2f5145a80872
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f118259bde62d6a9cc193c7451489aebd709d884
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8705cf2e2cd7eced344bcc412283dc88c829849a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886427"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037813"
 ---
 # <a name="mmc"></a>mmc
 

@@ -1,18 +1,18 @@
 ---
 title: systeminfo
 description: Artículo de referencia de SystemInfo, que muestra información de configuración detallada sobre un equipo y su sistema operativo, incluida la configuración del sistema operativo, la información de seguridad, el ID. de producto y las propiedades de hardware (como la RAM, el espacio en disco y las tarjetas de red).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 39954968-3c2e-4d3e-9d89-c9c43347461e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b34e92a5035360cb600bfe73b405f0a7033b6196
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 40bb15fc79be45874b0047f1755259be34bccb2b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881901"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027213"
 ---
 # <a name="systeminfo"></a>systeminfo
 
@@ -30,10 +30,10 @@ Systeminfo [/s <Computer> [/u <Domain>\<UserName> [/p <Password>]]] [/fo {TABLE 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|modificado\<Computer>|Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local.|
-|/u\<Domain>\<UserName>|Ejecuta el comando con los permisos de cuenta de la cuenta de usuario especificada. Si no se especifica **/u** , este comando usa los permisos del usuario que ha iniciado sesión actualmente en el equipo que emite el comando.|
-|/p\<Password>|Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .|
-|/FO\<Format>|Especifica el formato de salida con uno de los siguientes valores:</br>TABLA: muestra la salida en una tabla.</br>LIST: muestra la salida en una lista.</br>CSV: muestra la salida en formato de valores separados por comas.|
+|modificado \<Computer>|Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local.|
+|/u \<Domain>\<UserName>|Ejecuta el comando con los permisos de cuenta de la cuenta de usuario especificada. Si no se especifica **/u** , este comando usa los permisos del usuario que ha iniciado sesión actualmente en el equipo que emite el comando.|
+|/p \<Password>|Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .|
+|/FO \<Format>|Especifica el formato de salida con uno de los siguientes valores:</br>TABLA: muestra la salida en una tabla.</br>LIST: muestra la salida en una lista.</br>CSV: muestra la salida en formato de valores separados por comas.|
 |/NH|Suprime los encabezados de columna en la salida. Válido cuando el parámetro **/FO** está establecido en Table o CSV.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 

@@ -1,18 +1,18 @@
 ---
 title: tracerpt
 description: Artículo de referencia de tracerpt, que analiza los registros de seguimiento de eventos, los archivos de registro generados por el monitor de rendimiento y los proveedores de seguimiento de eventos en tiempo real.
-ms.topic: article
+ms.topic: reference
 ms.assetid: cb9eaf86-0ef6-4197-b6c8-9cca8a1d723c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 657a0ff1df856bf605c31d260a77bc266909485d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 250c938963342ca46308f601b00d44773638a4ad
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897119"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026953"
 ---
 # <a name="tracerpt"></a>tracerpt
 
@@ -29,17 +29,17 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |              Marca de opción               |                                                                    Descripción                                                                    |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 |                   -?                   |                                                         Muestra la ayuda contextual.                                                          |
-|          -config\<filename>           |                                                 Carga un archivo de configuración que contiene opciones de comando.                                                  |
+|          -config \<filename>           |                                                 Carga un archivo de configuración que contiene opciones de comando.                                                  |
 |                   -y                   |                                                  Responda sí a todas las preguntas sin preguntar.                                                   |
-|            -f\<XML\|HTML>             |                                                                  Formato del informe.                                                                   |
-|         -de\<CSV\|EVTX\|XML>          |                                                         El formato de volcado, el valor predeterminado es XML.                                                          |
-|            -DF\<filename>             |                                            Cree un archivo de esquema de recuento o informes específico de Microsoft.                                            |
-|            -int\<filename>            |                                            Vuelca la estructura de eventos interpretada en el archivo especificado.                                            |
+|            -f \<XML\|HTML>             |                                                                  Formato del informe.                                                                   |
+|         -de \<CSV\|EVTX\|XML>          |                                                         El formato de volcado, el valor predeterminado es XML.                                                          |
+|            -DF \<filename>             |                                            Cree un archivo de esquema de recuento o informes específico de Microsoft.                                            |
+|            -int \<filename>            |                                            Vuelca la estructura de eventos interpretada en el archivo especificado.                                            |
 |                  -RTS                  |                        Notificar marca de tiempo sin formato en el encabezado de seguimiento de eventos. Solo se puede usar con-o, no con informe o-Resumen.                         |
-|            -tmf\<filename>            |                                                  Especifique un archivo de definición de formato de mensaje de seguimiento.                                                  |
-|              -TP\<value>              |                            Especifique la ruta de búsqueda de archivos TMF. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;).                            |
-|              -i\<value>               | Especifique la ruta de acceso de la imagen del proveedor. El archivo PDB correspondiente se ubicará en el servidor de símbolos. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;). |
-|             -PDB\<value>              |                             Especifique la ruta de acceso del servidor de símbolos. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;).                             |
+|            -tmf \<filename>            |                                                  Especifique un archivo de definición de formato de mensaje de seguimiento.                                                  |
+|              -TP \<value>              |                            Especifique la ruta de búsqueda de archivos TMF. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;).                            |
+|              -i \<value>               | Especifique la ruta de acceso de la imagen del proveedor. El archivo PDB correspondiente se ubicará en el servidor de símbolos. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;). |
+|             -PDB \<value>              |                             Especifique la ruta de acceso del servidor de símbolos. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;).                             |
 |                  -GMT                  |                                              Convierte las marcas de tiempo de carga de WPP en la hora del meridiano de Greenwich.                                               |
 |              -rl \<value>              |                                               Defina el nivel de informe del sistema de 1 a 5. El valor predeterminado es 1.                                               |
 |          -Summary [nombre de archivo]           |                                  Generar un archivo de texto de informe de resumen. FILENAME si no se especifica, se summary.txt.                                   |
@@ -47,8 +47,8 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |           -Report [nombre de archivo]           |                                  Generar un archivo de informe de salida de texto. FILENAME si no se especifica, se workload.xml.                                   |
 |                  -LR                   |                        Especifique menos restrictivo. Esto utiliza los mejores esfuerzos para los eventos que no coinciden con el esquema de eventos.                         |
 |           -Export [nombre de archivo]           |                                  Generar un archivo de exportación del esquema de eventos. FILENAME si no se especifica es Schema. Man.                                   |
-|       [-l]\<value [value […]]>        |                                                   Especifique el archivo de registro de seguimiento de eventos que se va a procesar.                                                    |
-| -RT\<session_name [session_name […]]> |                                                Especifique orígenes de datos de sesión de seguimiento de eventos en tiempo real.                                                |
+|       [-l] \<value [value […]]>        |                                                   Especifique el archivo de registro de seguimiento de eventos que se va a procesar.                                                    |
+| -RT \<session_name [session_name […]]> |                                                Especifique orígenes de datos de sesión de seguimiento de eventos en tiempo real.                                                |
 
 ## <a name="examples"></a>Ejemplos
 

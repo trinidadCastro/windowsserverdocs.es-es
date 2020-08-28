@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setclientcertificatebyname
 description: Artículo de referencia para el comando bitsadmin setclientcertificatebyname, que especifica el nombre de sujeto del certificado de cliente que se va a usar para la autenticación de cliente en una solicitud HTTPS (SSL).
-ms.topic: article
+ms.topic: reference
 ms.assetid: f308a6d9-d0da-48be-ae41-eced14b3cccb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d51924153af90991c9417307d1f57e5d745dfa3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ac3a05733f10853074d111c8995879922440f833
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893253"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031333"
 ---
 # <a name="bitsadmin-setclientcertificatebyname"></a>bitsadmin setclientcertificatebyname
 

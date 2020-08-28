@@ -1,17 +1,17 @@
 ---
 title: tpmtool
 description: Artículo de referencia de tpmtool, que obtiene información sobre el Módulo de plataforma segura.
-ms.topic: article
+ms.topic: reference
 author: ashleytqy
 ms.author: ashleytqy
 manager: ronaldai
 ms.date: 05/07/2019
-ms.openlocfilehash: f34e577a87acd79f343f06bb81486d50339cdb54
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b0f234755eefdca15f214dad428f02631592e8c2
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897137"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027003"
 ---
 # <a name="tpmtool"></a>tpmtool
 

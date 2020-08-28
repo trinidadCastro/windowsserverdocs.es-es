@@ -1,18 +1,18 @@
 ---
 title: telnet close
 description: Artículo de referencia para el cierre de Telnet, que cierra la conexión de Telnet actual.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9330a5e0-bdb5-446b-8c25-c2c460df8b6b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8952a846bd757406f4242de1f3d0813e606c651e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6585c27a7247d901beefe24b66706522a2fd8209
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881731"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027083"
 ---
 # <a name="telnet-close"></a>Telnet: cerrar
 
@@ -25,7 +25,7 @@ Cierra la conexión actual.
 c[lose]
 ```
 #### <a name="parameters"></a>Parámetros
-ninguno
+None
 ## <a name="examples"></a>Ejemplos
 Cierre la conexión actual.
 ```

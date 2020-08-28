@@ -1,18 +1,18 @@
 ---
 title: ksetup addkpasswd
 description: Artículo de referencia para el comando ksetup addkpasswd, que agrega una dirección de servidor de contraseña Kerberos (Kpasswd) para un dominio Kerberos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: d3196995-1b38-48ff-ba08-911cfab77317
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96dd96b3f66a41d75b943fd74ea9fb674f393d09
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 62123fc8a04006078c42894ee53f11346dec0e59
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888120"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037953"
 ---
 # <a name="ksetup-addkpasswd"></a>ksetup addkpasswd
 

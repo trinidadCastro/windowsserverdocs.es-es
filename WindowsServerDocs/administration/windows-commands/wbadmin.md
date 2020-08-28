@@ -1,18 +1,18 @@
 ---
 title: wbadmin
 description: Artículo de referencia de Wbadmin, que permite realizar copias de seguridad y restaurar el sistema operativo, los volúmenes, los archivos, las carpetas y las aplicaciones desde un símbolo del sistema.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4b0b3f32-d21f-4861-84bb-b2eadbf1e7b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3739695a805534d47500380a76951405af7c7f1b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9eef9eb53c38d97f4ab69268632f642583aa8acf
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879548"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031793"
 ---
 # <a name="wbadmin"></a>wbadmin
 

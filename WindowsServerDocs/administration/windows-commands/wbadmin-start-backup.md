@@ -1,18 +1,18 @@
 ---
 title: wbadmin start backup
 description: Artículo de referencia de Wbadmin Start Backup, que crea una copia de seguridad con los parámetros especificados.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 56f3e752-d99a-4c3d-8e97-10303c37dd78
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b8ef64e00f8361a2f006944be65977c3d70769df
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4ee8b52ef7a84b53f07e6ff9ada6e49addbebdf9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891681"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031923"
 ---
 # <a name="wbadmin-start-backup"></a>wbadmin start backup
 

@@ -1,18 +1,18 @@
 ---
 title: icacls
 description: Artículo de referencia del comando icacls, que muestra o modifica las listas de control de acceso discrecional (DACL) en los archivos especificados y aplica las DACL almacenadas a los archivos de los directorios especificados.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 5bb8842cdc91823a83d1b8ccfa305c6393433901
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7b6d045b26adcbee31447e950533b1013288a910
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888408"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038023"
 ---
 # <a name="icacls"></a>icacls
 

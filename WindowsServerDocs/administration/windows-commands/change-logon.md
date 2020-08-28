@@ -1,18 +1,18 @@
 ---
 title: change logon
 description: Artículo de referencia del comando Change Logon, que habilita o deshabilita los inicios de sesión de las sesiones de cliente, o muestra el estado de inicio de sesión actual.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 41466260-aee9-4333-bcb6-178112c22afd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1196ec063ce6ab6d2ede64d58d22608e2e76c48
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 67f6a5b93fbe5ec16c4cece1c5c8429de06ce494
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880271"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031173"
 ---
 # <a name="change-logon"></a>change logon
 
@@ -21,7 +21,7 @@ ms.locfileid: "87880271"
 Habilita o deshabilita los inicios de sesión de las sesiones de cliente o muestra el estado de inicio de sesión actual. Esta utilidad es útil para el mantenimiento del sistema. Debe ser un administrador para ejecutar este comando.
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxis
 

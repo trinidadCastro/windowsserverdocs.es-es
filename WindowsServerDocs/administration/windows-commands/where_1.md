@@ -1,20 +1,20 @@
 ---
-title: ', donde'
+title: where
 description: Artículo de referencia de Where, que muestra la ubicación de los archivos que coinciden con el patrón de búsqueda especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0b3486a5-896b-4d92-84b8-e463a0b76487
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8f54309035f017c193638d6d6c59ce6a337c04f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 58fa70d1635035321a7ffac1779dc3ad02e0a35d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896503"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031723"
 ---
-# <a name="where"></a>, donde
+# <a name="where"></a>where
 
 
 
@@ -32,7 +32,7 @@ where [/r <Dir>] [/q] [/f] [/t] [$<ENV>:|<Path>:]<Pattern>[ ...]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/r\<Dir>|Indica una búsqueda recursiva, empezando por el directorio especificado.|
+|/r \<Dir>|Indica una búsqueda recursiva, empezando por el directorio especificado.|
 |/q|Devuelve un código de salida (**0** para Success, **1** para error) sin mostrar la lista de archivos coincidentes.|
 |/f|Muestra los resultados del comando **Where** entre comillas.|
 |/t|Muestra el tamaño del archivo y la fecha y hora de la última modificación de cada archivo coincidente.|

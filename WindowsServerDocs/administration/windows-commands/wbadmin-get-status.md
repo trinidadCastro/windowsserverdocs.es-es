@@ -1,18 +1,18 @@
 ---
 title: wbadmin get status
 description: Artículo de referencia de Wbadmin get status, que informa del estado de la operación de copia de seguridad o recuperación que se está ejecutando actualmente.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2911b944-7b95-46aa-8c1e-1d55a2fcc94c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 124323829f82bea0826ee7d4c526af964492488b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3245a6c92bf8a3ebde070f2f85e484dc9a317ce1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896882"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031993"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin get status
 

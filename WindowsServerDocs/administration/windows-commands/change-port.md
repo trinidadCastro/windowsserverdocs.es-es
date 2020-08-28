@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64c0d012d8106d99f1d7a167dd8f2d1d9107150b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8014ba67b2c4383aa56a6fce5eb486bbccfba7e7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880261"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031163"
 ---
 # <a name="change-port"></a>change port
 
@@ -21,7 +21,7 @@ ms.locfileid: "87880261"
 Enumera o cambia las asignaciones de puertos COM para que sean compatibles con las aplicaciones de MS-DOS.
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -33,8 +33,8 @@ change port [<portX>=<portY| /d <portX | /query]
 
 | Parámetro | Descripción |
 |-----------------|----------------------------------------|
-| <portX>=<portY> | Asigna COM `<*portX*>` a`<*portY*>` |
-| /d.<portX> | Elimina la asignación para COM`<*portX*>` |
+| <portX>=<portY> | Asigna COM `<*portX*>` a `<*portY*>` |
+| /d. <portX> | Elimina la asignación para COM `<*portX*>` |
 | /Query | Muestra las asignaciones de puerto actuales. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 

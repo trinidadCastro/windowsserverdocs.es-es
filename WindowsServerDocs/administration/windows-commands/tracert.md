@@ -1,18 +1,18 @@
 ---
 title: tracert
 description: Artículo de referencia de tracert, que determina la ruta de acceso tomada a un destino, mediante el envío de solicitudes de eco del Protocolo de mensajes de control de Internet (ICMP) o mensajes ICMPv6 al destino con valores de campo de período de vida (TTL) que aumentan incrementalmente.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9032a032-2e5e-49d4-9e86-f821600e4ba6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f73c9df4a72b0c28976e25bc2970da372275ea8b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7316daf691ff6f95ca4eb1608caea382885024ce
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897102"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026903"
 ---
 # <a name="tracert"></a>tracert
 
@@ -32,11 +32,11 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 |Parámetro|Descripción|
 |-------|--------|
 |/d|Impide que **tracert** intente resolver las direcciones IP de los enrutadores intermedios en sus nombres. Esto puede acelerar la presentación de los resultados de **tracert** .|
-|/h\<MaximumHops>|Especifica el número máximo de saltos en la ruta de acceso para buscar el destino (destino). El valor predeterminado es 30 saltos.|
-|/j\<Hostlist>|Especifica que los mensajes de solicitud de eco usan la opción de ruta de origen flexible del encabezado IP con el conjunto de destinos intermedios especificados en *hostlist*. Con el enrutamiento de origen suelto, los destinos intermedios sucesivos pueden estar separados por uno o varios enrutadores. El número máximo de direcciones o nombres en la lista de hosts es 9. *Hostlist* es una serie de direcciones IP (en notación decimal con puntos) separadas por espacios. Use este parámetro solo cuando se realice un seguimiento de las direcciones IPv4.|
-|/w\<timeout>|Especifica la cantidad de tiempo en milisegundos que se debe esperar a que se reciba el mensaje de tiempo de ICMP superado o de respuesta de eco correspondiente a un mensaje de solicitud de eco determinado. Si no se recibe en el tiempo de espera, se muestra un asterisco (*). El tiempo de espera predeterminado es 4000 (4 segundos).|
+|/h \<MaximumHops>|Especifica el número máximo de saltos en la ruta de acceso para buscar el destino (destino). El valor predeterminado es 30 saltos.|
+|/j \<Hostlist>|Especifica que los mensajes de solicitud de eco usan la opción de ruta de origen flexible del encabezado IP con el conjunto de destinos intermedios especificados en *hostlist*. Con el enrutamiento de origen suelto, los destinos intermedios sucesivos pueden estar separados por uno o varios enrutadores. El número máximo de direcciones o nombres en la lista de hosts es 9. *Hostlist* es una serie de direcciones IP (en notación decimal con puntos) separadas por espacios. Use este parámetro solo cuando se realice un seguimiento de las direcciones IPv4.|
+|/w \<timeout>|Especifica la cantidad de tiempo en milisegundos que se debe esperar a que se reciba el mensaje de tiempo de ICMP superado o de respuesta de eco correspondiente a un mensaje de solicitud de eco determinado. Si no se recibe en el tiempo de espera, se muestra un asterisco (*). El tiempo de espera predeterminado es 4000 (4 segundos).|
 |/R|Especifica que el encabezado de extensión de enrutamiento IPv6 se utiliza para enviar un mensaje de solicitud de eco al host local, utilizando el destino como un destino intermedio y probando la ruta inversa.|
-|Modificado\<Srcaddr>|Especifica la dirección de origen que se va a usar en los mensajes de solicitud de eco. Use este parámetro solo cuando se realice el seguimiento de direcciones IPv6.|
+|Modificado \<Srcaddr>|Especifica la dirección de origen que se va a usar en los mensajes de solicitud de eco. Use este parámetro solo cuando se realice el seguimiento de direcciones IPv6.|
 |/4|Especifica que tracert.exe solo puede usar IPv4 para este seguimiento.|
 |/6|Especifica que tracert.exe solo puede utilizar IPv6 para este seguimiento.|
 |\<TargetName>|Especifica el destino, identificado por la dirección IP o el nombre de host.|

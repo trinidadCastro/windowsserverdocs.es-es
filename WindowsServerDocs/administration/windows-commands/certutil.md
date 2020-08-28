@@ -1,18 +1,18 @@
 ---
 title: certutil
 description: Artículo de referencia para el comando certutil, que es un programa de línea de comandos que vuelca y muestra la información de configuración de la entidad de certificación (CA), configura servicios de Certificate Server, copia de seguridad y restauración de componentes de CA y comprueba certificados, pares de claves y cadenas de certificados.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afaf0c75350cfb4121d0ebc664469f4494afe8c7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 99c9d0ddca6ce1b91d86733995c30c46b747b7af
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992947"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031213"
 ---
 # <a name="certutil"></a>certutil
 
@@ -128,7 +128,7 @@ Donde:
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Los nombres y los valores deben estar separados por dos puntos, mientras que los pares de nombre y valor deben estar separados por una línea nueva. Por ejemplo: `CertificateTemplate:User\nEMail:User@Domain.com` donde la `\n` secuencia se convierte en un separador de nueva línea.
 
@@ -146,13 +146,13 @@ Donde:
 
 - **extensionname** es la cadena objectId para la extensión.
 
-- **Flags** establece la prioridad de la extensión. `0`se recomienda, mientras `1` que la extensión se establece en Critical, se `2` deshabilita la extensión y `3` realiza ambas tareas.
+- **Flags** establece la prioridad de la extensión. `0` se recomienda, mientras `1` que la extensión se establece en Critical, se `2` deshabilita la extensión y `3` realiza ambas tareas.
 
 ```
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si el último parámetro es numérico, se toma como un **valor Long**.
 
@@ -517,19 +517,19 @@ Donde:
 [-silent] [-split] [-config Machine\CAName] [-restrict RestrictionList] [-out ColumnList]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
-- Para mostrar la columna **StatusCode** para todas las entradas, escriba`-out StatusCode`
+- Para mostrar la columna **StatusCode** para todas las entradas, escriba `-out StatusCode`
 
-- Para mostrar todas las columnas de la última entrada, escriba:`-restrict RequestId==$`
+- Para mostrar todas las columnas de la última entrada, escriba: `-restrict RequestId==$`
 
-- Para mostrar el **RequestId** y la **disposición** de tres solicitudes, escriba:`-restrict requestID>37,requestID<40 -out requestID,disposition`
+- Para mostrar el **RequestId** y la **disposición** de tres solicitudes, escriba: `-restrict requestID>37,requestID<40 -out requestID,disposition`
 
-- Para mostrar los identificadores de**fila** y **los números de CRL** de los identificadores de fila de todas las CRL base, escriba:`-restrict crlminbase=0 -out crlrowID,crlnumber crl`
+- Para mostrar los identificadores de**fila** y **los números de CRL** de los identificadores de fila de todas las CRL base, escriba: `-restrict crlminbase=0 -out crlrowID,crlnumber crl`
 
-- Para mostrar, escriba:`-v -restrict crlminbase=0,crlnumber=3 -out crlrawcrl crl`
+- Para mostrar, escriba: `-v -restrict crlminbase=0,crlnumber=3 -out crlrawcrl crl`
 
-- Para mostrar toda la tabla de CRL, escriba:`CRL`
+- Para mostrar toda la tabla de CRL, escriba: `CRL`
 
 - Se usa `Date[+|-dd:hh]` para las restricciones de fecha.
 
@@ -573,13 +573,13 @@ Donde:
 
 #### <a name="examples"></a>Ejemplos
 
-- Para eliminar las solicitudes con error y pendientes enviadas el 22 de enero de 2001, escriba:`1/22/2001 request`
+- Para eliminar las solicitudes con error y pendientes enviadas el 22 de enero de 2001, escriba: `1/22/2001 request`
 
-- Para eliminar todos los certificados que han expirado el 22 de enero de 2001, escriba:`1/22/2001 cert`
+- Para eliminar todos los certificados que han expirado el 22 de enero de 2001, escriba: `1/22/2001 cert`
 
-- Para eliminar la fila, los atributos y las extensiones del certificado para RequestID 37, escriba:`37`
+- Para eliminar la fila, los atributos y las extensiones del certificado para RequestID 37, escriba: `37`
 
-- Para eliminar las CRL que expiraron el 22 de enero de 2001, escriba:`1/22/2001 crl`
+- Para eliminar las CRL que expiraron el 22 de enero de 2001, escriba: `1/22/2001 crl`
 
 ### <a name="-backup"></a>-backup
 
@@ -719,7 +719,7 @@ Donde:
 [-f] [-user] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El valor predeterminado es el almacén del equipo personal.
 
@@ -1094,7 +1094,7 @@ Donde:
 [-f] [-config Machine\CAName] [-dc DCName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - La `-config` opción tiene como destino una sola entidad de certificación (el valor predeterminado es todas las CA).
 
@@ -1283,7 +1283,7 @@ certutil [options] -DCInfo [domain] [verify | deletebad | deleteall]
 > [!TIP]
 > La capacidad de especificar un dominio de Active Directory Domain Services (AD DS) **[dominio]** y para especificar un controlador de dominio (**-DC**) se ha agregado en Windows Server 2012. Para ejecutar correctamente el comando, debe usar una cuenta que sea miembro del grupo **Admins** . del dominio o **administradores de organización**. Las modificaciones de comportamiento de este comando son las siguientes:<ol><li>1. Si no se especifica un dominio y no se especifica un controlador de dominio específico, esta opción devuelve una lista de controladores de dominio que se van a procesar desde el controlador de dominio predeterminado.</li><li>2. Si no se especifica un dominio, pero se especifica un controlador de dominio, se genera un informe de los certificados en el controlador de dominio especificado.</li><li>3. Si se especifica un dominio, pero no se especifica un controlador de dominio, se genera una lista de controladores de dominio junto con los informes de los certificados de cada controlador de dominio de la lista.</li><li>4. Si se especifican el dominio y el controlador de dominio, se genera una lista de controladores de dominio desde el controlador de dominio de destino. También se genera un informe de los certificados para cada controlador de dominio de la lista.</li></ol>
 >
->Por ejemplo, supongamos que hay un dominio denominado CPANDL con un controlador de dominio denominado CPANDL-DC1. Puede ejecutar el siguiente comando para recuperar una lista de controladores de dominio y sus certificados de CPANDL-DC1:`certutil -dc cpandl-dc1 -DCInfo cpandl`
+>Por ejemplo, supongamos que hay un dominio denominado CPANDL con un controlador de dominio denominado CPANDL-DC1. Puede ejecutar el siguiente comando para recuperar una lista de controladores de dominio y sus certificados de CPANDL-DC1: `certutil -dc cpandl-dc1 -DCInfo cpandl`
 
 ### <a name="-entinfo"></a>-entinfo
 
@@ -1358,7 +1358,7 @@ Donde:
 [-f] [-user] [-silent] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si no se especifica ningún argumento, se comprueba la clave privada de cada certificado de entidad de certificación de firma.
 
@@ -1397,13 +1397,13 @@ Donde:
 [-f] [-enterprise] [-user] [-silent] [-split] [-urlfetch] [-t timeout]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - El uso de **applicationpolicylist** restringe la creación de cadenas solo a las cadenas válidas para las directivas de aplicación especificadas.
 
 - El uso de **issuancepolicylist** restringe la creación de cadenas solo a las cadenas válidas para las directivas de emisión especificadas.
 
-- El uso de **cacertfile** comprueba los campos en el archivo con **CERTFILE** o **CRLfile**.
+- El uso de **cacertfile**  comprueba los campos en el archivo con **CERTFILE** o **CRLfile**.
 
 - El uso de **issuedcertfile** comprueba los campos del archivo con respecto a **CRLfile**.
 
@@ -1491,7 +1491,7 @@ Donde:
 [-nullsign] [-f] [-silent] [-cert certID]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Al usar el signo menos (-), se quitan los números de serie y las extensiones.
 
@@ -1631,13 +1631,13 @@ Donde:
 
 - **Type** es el tipo de objeto DS que se va a crear, incluido:
 
-  - `1`-Plantilla (valor predeterminado)
+  - `1` -Plantilla (valor predeterminado)
 
-  - `2`-Directiva de emisión
+  - `2` -Directiva de emisión
 
-  - `3`-Directiva de aplicación
+  - `3` -Directiva de aplicación
 
-- `-f`crea un objeto DS.
+- `-f` crea un objeto DS.
 
 ### <a name="-error"></a>-error
 
@@ -1683,7 +1683,7 @@ Donde:
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si un valor de cadena comienza con `+` o `-` , y el valor existente es un `REG_MULTI_SZ` valor, la cadena se agrega o se quita del valor del registro existente. Para forzar la creación de un `REG_MULTI_SZ` valor, agregue `\n` al final del valor de la cadena.
 
@@ -1727,7 +1727,7 @@ Donde:
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si un valor de cadena comienza con `+` o `-` , y el valor existente es un `REG_MULTI_SZ` valor, la cadena se agrega o se quita del valor del registro existente. Para forzar la creación de un `REG_MULTI_SZ` valor, agregue `\n` al final del valor de la cadena.
 
@@ -1771,7 +1771,7 @@ Donde:
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - Si un valor de cadena comienza con `+` o `-` , y el valor existente es un `REG_MULTI_SZ` valor, la cadena se agrega o se quita del valor del registro existente. Para forzar la creación de un `REG_MULTI_SZ` valor, agregue `\n` al final del valor de la cadena.
 
@@ -1797,7 +1797,7 @@ Donde:
 
 - certID es un token de coincidencia de certificado de descifrado de archivos de exportación de KMS. Para obtener más información, consulte el `-store` parámetro de este artículo.
 
-- `-f`importa certificados no emitidos por la entidad de certificación.
+- `-f` importa certificados no emitidos por la entidad de certificación.
 
 ```
 [-f] [-silent] [-split] [-config Machine\CAName] [-p password] [-symkeyalg symmetrickeyalgorithm[,keylength]]
@@ -1815,13 +1815,13 @@ Donde:
 
 - **existingrow** importa el certificado en lugar de una solicitud pendiente para la misma clave.
 
-- `-f`importa certificados no emitidos por la entidad de certificación.
+- `-f` importa certificados no emitidos por la entidad de certificación.
 
 ```
 [-f] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 Es posible que la entidad de certificación también deba configurarse para admitir certificados externos. Para ello, escriba `import - certutil -setreg ca\KRAFlags +KRAF_ENABLEFOREIGN` .
 
@@ -1899,7 +1899,7 @@ Donde:
 [-f] [-user] [-split] [-p password] [-protectto SAMnameAndSIDlist] [-csp provider]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - La contraseña especificada en la línea de comandos debe ser una lista de contraseñas separadas por comas.
 
@@ -1934,7 +1934,7 @@ Donde:
 [-f] [-silent] [-split] [-dc DCName] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 - La contraseña especificada en la línea de comandos debe ser una lista de contraseñas separadas por comas.
 
@@ -1982,7 +1982,7 @@ En esta sección se definen todas las opciones que se pueden especificar, basán
 | anclar PIN | PIN de tarjeta inteligente. |
 | -urlfetch | Recupere y compruebe los certificados AIA y las CRL de CDP. |
 | -config Machine\CAName | Cadena de nombre de equipo y entidad de certificación. |
-| -policyserver URLorID | IDENTIFICADOR o dirección URL del servidor de directivas. Para la selección U/I, use `-policyserver` . Para todos los servidores de directivas, use`-policyserver *`|
+| -policyserver URLorID | IDENTIFICADOR o dirección URL del servidor de directivas. Para la selección U/I, use `-policyserver` . Para todos los servidores de directivas, use `-policyserver *`|
 | -anónimo | Usar credenciales SSL anónimas. |
 | -Kerberos | Usar credenciales SSL de Kerberos. |
 | -ClientCertificate clientcertID | Use las credenciales SSL del certificado X. 509. Para la selección U/I, use `-clientcertificate` . |

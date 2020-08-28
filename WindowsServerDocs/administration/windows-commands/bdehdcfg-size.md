@@ -1,18 +1,18 @@
 ---
 title: bdehdcfg size
 description: Artículo de referencia para el comando bdehdcfg size, que especifica el tamaño de la partición del sistema cuando se crea una nueva unidad del sistema.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 80f55b1d-a28d-4edf-9997-1fb918b7b5a1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc511f72e721561ce27e20b55ceda2e10bb0fdf4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f4aaedbbac5783fdf54814d7cf97ef9c70c9d346
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895076"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031483"
 ---
 # <a name="bdehdcfg-size"></a>bdehdcfg: tamaño
 

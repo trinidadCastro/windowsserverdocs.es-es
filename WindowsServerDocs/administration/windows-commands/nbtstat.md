@@ -1,18 +1,18 @@
 ---
 title: nbtstat
 description: Artículo de referencia del comando nbtstat, que muestra las estadísticas de protocolo de NetBIOS a través de TCP/IP (NetBT), las tablas de nombre NetBIOS para el equipo local y los equipos remotos, y la caché de nombres NetBIOS.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1d2ea99e-72f1-471f-9525-d2c49bf3be82
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3367190fb751a0cb5081724c6ea8ad2b7f2c95ff
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 273aaadcf537864512d6dc7aedff0c9872c3cd05
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886112"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037803"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -32,8 +32,8 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| /a`<remotename>` | Muestra la tabla de nombres NetBIOS de un equipo remoto, donde *remotename* es el nombre de equipo NetBIOS del equipo remoto. La tabla de nombres NetBIOS es la lista de nombres NetBIOS que corresponde a las aplicaciones NetBIOS que se ejecutan en ese equipo. |
-| /A`<IPaddress>` | Muestra la tabla de nombres NetBIOS de un equipo remoto, especificada por la dirección IP (en notación decimal con puntos) del equipo remoto. |
+| /a `<remotename>` | Muestra la tabla de nombres NetBIOS de un equipo remoto, donde *remotename* es el nombre de equipo NetBIOS del equipo remoto. La tabla de nombres NetBIOS es la lista de nombres NetBIOS que corresponde a las aplicaciones NetBIOS que se ejecutan en ese equipo. |
+| /A `<IPaddress>` | Muestra la tabla de nombres NetBIOS de un equipo remoto, especificada por la dirección IP (en notación decimal con puntos) del equipo remoto. |
 | /C | Muestra el contenido de la caché de nombres NetBIOS, la tabla de nombres NetBIOS y sus direcciones IP resueltas. |
 | /n | Muestra la tabla de nombres NetBIOS del equipo local. El estado **registrado** indica que el nombre se registra mediante difusión o con un servidor WINS. |
 | /r | Muestra las estadísticas de resolución de nombres NetBIOS. |
@@ -73,8 +73,8 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | Connecting | Una sesión se encuentra en la fase de conexión y se está resolviendo la asignación de nombre a dirección IP del destino. |
     | Aceptar | Una sesión entrante se está aceptando actualmente y se conectará en breve. |
     | Reconexión | Una sesión está intentando volver a conectarse (no se pudo conectar en el primer intento). |
-    | Salida | Una sesión se encuentra en la fase de conexión y la conexión TCP se está creando actualmente. |
-    | Entrada | Una sesión entrante está en la fase de conexión. |
+    | Saliente | Una sesión se encuentra en la fase de conexión y la conexión TCP se está creando actualmente. |
+    | Entrante | Una sesión entrante está en la fase de conexión. |
     | Desconectando | Una sesión se encuentra en el proceso de desconexión. |
     | Escenario desconectado | El equipo local ha emitido una desconexión y está esperando la confirmación del sistema remoto. |
 

@@ -1,18 +1,18 @@
 ---
 title: list
 description: Artículo de referencia del comando lista, que muestra una lista de discos, de particiones en un disco, de volúmenes de un disco o de discos duros virtuales (VHD).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 69b105a1-9710-4a06-8102-38cc9e475ca5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: be7a4e3fee5a572b87b11caf3f57d1842c454b9f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 30b5efc309e5da9aac6817c9eef8dd74f6f1df71
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887526"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037903"
 ---
 # <a name="list"></a>list
 

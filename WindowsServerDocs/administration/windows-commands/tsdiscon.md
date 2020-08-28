@@ -1,18 +1,18 @@
 ---
 title: tsdiscon
 description: Artículo de referencia de tsdiscon, que desconecta una sesión de un servidor host de sesión de escritorio remoto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 13139674-7dee-4965-8cac-32f4928e8b9a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e81a1c7f68af0bb1d16ce64bb4985e3ddb8d18f2
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9fd0292ab1bd53a424c0acaa4b6a2dc98cb1f0a0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897077"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026863"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -23,7 +23,7 @@ Desconecta una sesión de un servidor host de sesión de Escritorio remoto.
 
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) en la biblioteca de TechNet de Windows Server.
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) en la biblioteca de TechNet de Windows Server.
 
 ## <a name="syntax"></a>Sintaxis
 ```

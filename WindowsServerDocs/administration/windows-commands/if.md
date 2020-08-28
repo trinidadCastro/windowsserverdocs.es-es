@@ -1,18 +1,18 @@
 ---
 title: if
 description: Artículo de referencia del comando if, que realiza el procesamiento condicional en los programas por lotes.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 698b3fb9-532b-4c2b-af7f-179f8dc57131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3644c64d4159d9232ec58e747efc542dd903791e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ea7b823c0060b1fb9ff474ae0330eb789a1da0d1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888371"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038013"
 ---
 # <a name="if"></a>if
 
@@ -39,13 +39,13 @@ if defined <variable> <command> [else <expression>]
 | Parámetro | Descripción |
 | --------- |------------ |
 | not | Especifica que el comando solo se debe llevar a cabo si la condición es falsa. |
-| ERRORLEVEL`<number>` | Especifica una condición verdadera solo si el programa anterior ejecutado por Cmd.exe devolvió un código de salida igual o mayor que el *número*. |
+| ERRORLEVEL `<number>` | Especifica una condición verdadera solo si el programa anterior ejecutado por Cmd.exe devolvió un código de salida igual o mayor que el *número*. |
 | `<command>` | Especifica el comando que debe realizarse si se cumple la condición anterior. |
 | `<string1>==<string2>` | Especifica una condición verdadera solo si *string1* y *String2* son iguales. Estos valores pueden ser cadenas literales o variables por lotes (por ejemplo, `%1` ). No es necesario incluir cadenas literales entre comillas. |
-| existe`<filename>` | Especifica una condición verdadera si el nombre de archivo especificado existe. |
+| existe `<filename>` | Especifica una condición verdadera si el nombre de archivo especificado existe. |
 | `<compareop>` | Especifica un operador de comparación de tres letras, incluido:<ul><li>**Equ** : igual a</li><li>**Neq** : no es igual a</li><li>**LSS** : menor que</li><li>**Leq** : menor o igual que</li><li>**GTR** : mayor que</li><li>**GEQ** : mayor o igual que</li></ul> |
 | /i | Fuerza que las comparaciones de cadenas omitan mayúsculas y minúsculas. Puede usar **/i** en el `string1==string2` formulario de **si**. Estas comparaciones son genéricas, en el caso de que *string1* y *String2* solo consten de dígitos numéricos, las cadenas se convierten en números y se realiza una comparación numérica. |
-| cmdextversion`<number>` | Especifica una condición verdadera solo si el número de versión interno asociado a la característica de extensiones de comando de Cmd.exe es igual o mayor que el número especificado. La primera versión es 1. Aumenta en incrementos de uno cuando se agregan mejoras significativas a las extensiones de comando. El condicional **cmdextversion** nunca es true cuando las extensiones de comando están deshabilitadas (de forma predeterminada, las extensiones de comando están habilitadas). |
+| cmdextversion `<number>` | Especifica una condición verdadera solo si el número de versión interno asociado a la característica de extensiones de comando de Cmd.exe es igual o mayor que el número especificado. La primera versión es 1. Aumenta en incrementos de uno cuando se agregan mejoras significativas a las extensiones de comando. El condicional **cmdextversion** nunca es true cuando las extensiones de comando están deshabilitadas (de forma predeterminada, las extensiones de comando están habilitadas). |
 | defined `<variable>` | Especifica una condición verdadera si se define la *variable* . |
 | `<expression>` | Especifica un comando de línea de comandos y los parámetros que se van a pasar al comando en una cláusula **else** . |
 | /? | Muestra la ayuda en el símbolo del sistema. |

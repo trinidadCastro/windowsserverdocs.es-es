@@ -1,18 +1,18 @@
 ---
 title: taskkill
 description: Artículo de referencia de Taskkill, que finaliza una o más tareas o procesos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2b71e792-08b6-46d4-95a5-cb6336a79524
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a89aa5a3014168aa9d2bd69b9197c899e02a186d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b3b0a2727116ca2a073e5ad5b17c4fe065453ab6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881832"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027123"
 ---
 # <a name="taskkill"></a>taskkill
 
@@ -32,12 +32,12 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 
 |         Parámetro         |                                                                                                                                        Descripción                                                                                                                                        |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      modificado\<computer>       |                                                                                    Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local.                                                                                     |
-| /u\<Domain>\\\<UserName> | Ejecuta el comando con los permisos de cuenta del usuario que se especifica mediante *el nombre de usuario o el* *dominio* \\ *nombreDeUsuario*. **/u** solo se puede especificar si se especifica **/s** . El valor predeterminado son los permisos del usuario que ha iniciado sesión actualmente en el equipo que emite el comando. |
-|      /p\<Password>       |                                                                                                   Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                   |
-|       /fi\<Filter>       |          Aplica un filtro para seleccionar un conjunto de tareas. Puede usar más de un filtro o usar el carácter comodín ( **\\** \* ) para especificar todas las tareas o los nombres de las imágenes. Vea la tabla siguiente para ver los nombres de filtro, los operadores y los valores [válidos](#filter-names-operators-and-values).           |
-|     /PID\<ProcessID>     |                                                                                                                 Especifica el identificador de proceso del proceso que se va a terminar.                                                                                                                 |
-|     /im\<ImageName>      |                                                                                Especifica el nombre de la imagen del proceso que se va a terminar. Use el carácter comodín ( **\\** \* ) para especificar todos los nombres de imagen.                                                                                |
+|      modificado \<computer>       |                                                                                    Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local.                                                                                     |
+| /u \<Domain>\\\<UserName> | Ejecuta el comando con los permisos de cuenta del usuario que se especifica mediante *el nombre de usuario o el* *dominio* \\ *nombreDeUsuario*. **/u** solo se puede especificar si se especifica **/s** . El valor predeterminado son los permisos del usuario que ha iniciado sesión actualmente en el equipo que emite el comando. |
+|      /p \<Password>       |                                                                                                   Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                   |
+|       /fi \<Filter>       |          Aplica un filtro para seleccionar un conjunto de tareas. Puede usar más de un filtro o usar el carácter comodín ( **\\** \* ) para especificar todas las tareas o los nombres de las imágenes. Vea la tabla siguiente para ver los nombres de filtro, los operadores y los valores [válidos](#filter-names-operators-and-values).           |
+|     /PID \<ProcessID>     |                                                                                                                 Especifica el identificador de proceso del proceso que se va a terminar.                                                                                                                 |
+|     /im \<ImageName>      |                                                                                Especifica el nombre de la imagen del proceso que se va a terminar. Use el carácter comodín ( **\\** \* ) para especificar todos los nombres de imagen.                                                                                |
 |            /f             |                                                                    Especifica que los procesos se terminan forzosamente. Este parámetro se omite para los procesos remotos; todos los procesos remotos se terminan forzosamente.                                                                     |
 |            /t             |                                                                                                          Finaliza el proceso especificado y los procesos secundarios iniciados por él.                                                                                                          |
 
@@ -52,7 +52,7 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 |   CPUtime   | eq, ne, gt, lt, ge, le | Tiempo de CPU con el formato <em>HH</em>**:**<em>mm</em>**:**<em>SS</em>, donde *mm* y *SS* están entre 0 y 59 y *HH* es cualquier número sin signo. |
 |  MEMUSAGE   | eq, ne, gt, lt, ge, le |                                                              Uso de memoria en KB                                                              |
 |  USERNAME   |         eq, ne         |                                               Cualquier nombre de usuario válido *(usuario o* usuario de *dominio* \\ *User*)                                               |
-|  Server   |         eq, ne         |                                                                 Nombre de servicio                                                                 |
+|  Server   |         eq, ne         |                                                                 Nombre del servicio                                                                 |
 | WINDOWTITLE |         eq, ne         |                                                                 Título de la ventana                                                                 |
 |   ADICIONALES   |         eq, ne         |                                                                   Nombre de DLL                                                                   |
 

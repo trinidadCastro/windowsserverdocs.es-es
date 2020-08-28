@@ -1,18 +1,18 @@
 ---
 title: remove
 description: Artículo de referencia del comando Remove, que quita una letra de unidad o un punto de montaje de un volumen.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b0886140-da8b-4231-8cb2-f280874d99c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 469b3ac1783dfff5228778d11532448bee49346c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5b8e2fc967a4ebe22ba1f7932be9d14a00511ddb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883838"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027323"
 ---
 # <a name="remove"></a>remove
 

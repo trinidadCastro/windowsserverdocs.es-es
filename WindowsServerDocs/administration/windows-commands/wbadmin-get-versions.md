@@ -1,18 +1,18 @@
 ---
 title: wbadmin get versions
 description: Artículo de referencia de las versiones de Wbadmin get, que muestra detalles sobre las copias de seguridad disponibles almacenadas en el equipo local o en otro equipo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b986acc4-d083-4d32-9434-862314ed5e97
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 209244f18758a13838a27ffd2f44e871cf5971c1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 390d9152b53578ef26ff978d9cdcf43ac8f5f64e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891725"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031943"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get versions
 

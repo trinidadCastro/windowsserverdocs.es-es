@@ -1,18 +1,18 @@
 ---
 title: tcmsetup
 description: Obtenga información acerca de cómo configurar y deshabilitar el cliente TAPI.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 15e0c10f-996f-4301-92e5-943f7ee8212d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e078439fcb9889f075efd364ea9530bdfb8db26a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b2d148a273aaf6de917cec546f487fab5e8ebea0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881800"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027093"
 ---
 # <a name="tcmsetup"></a>tcmsetup
 

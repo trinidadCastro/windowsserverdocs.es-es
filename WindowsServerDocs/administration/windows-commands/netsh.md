@@ -1,18 +1,18 @@
 ---
 title: netsh
 description: Artículo de referencia para el comando netsh, que es una utilidad de scripting de línea de comandos que le permite, ya sea de forma local o remota, mostrar o modificar la configuración de red de un equipo actualmente en ejecución.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 96fc069d-53c0-4d0a-9f7f-f9f3d49a02bd carmonmills
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 366c7a21f44dc6545de7ba81cba8fe152c245b6b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fc8f6aff94494422150643fed6ce6681dfe54036
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886033"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037783"
 ---
 # <a name="netsh"></a>netsh
 
@@ -32,11 +32,11 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 | --------- | ----------- |
 | -a `<Aliasfile>` | Especifica que se devuelva al símbolo del sistema de Netsh después de ejecutar Aliasfile y el nombre del archivo de texto que contiene uno o más comandos Netsh. |
 | -c `<Context>` | Especifica que netsh entra en el contexto de Netsh especificado y en el contexto de Netsh que se va a escribir. |
-| -r`<Remotecomputer>` | Especifica el equipo remoto que se va a configurar.<p>**Importante:** Si usa este parámetro, debe asegurarse de que el servicio de registro remoto se está ejecutando en el equipo remoto. Si no se está ejecutando, Windows muestra un mensaje de error "ruta de acceso de red no encontrada". |
-| -u`<domainname>\<username>` | Especifica el dominio y el nombre de la cuenta de usuario que se utilizará al ejecutar el comando netsh en una cuenta de usuario. Si omite el dominio, se utiliza el dominio local de forma predeterminada. |
-| -p`<Password>` | Especifica la contraseña de la cuenta de usuario especificada por el `-u <username>` parámetro. |
+| -r `<Remotecomputer>` | Especifica el equipo remoto que se va a configurar.<p>**Importante:** Si usa este parámetro, debe asegurarse de que el servicio de registro remoto se está ejecutando en el equipo remoto. Si no se está ejecutando, Windows muestra un mensaje de error "ruta de acceso de red no encontrada". |
+| -u `<domainname>\<username>` | Especifica el dominio y el nombre de la cuenta de usuario que se utilizará al ejecutar el comando netsh en una cuenta de usuario. Si omite el dominio, se utiliza el dominio local de forma predeterminada. |
+| -p `<Password>` | Especifica la contraseña de la cuenta de usuario especificada por el `-u <username>` parámetro. |
 | `<NetshCommand>` | Especifica el comando netsh que se va a ejecutar. |
-| -f`<scriptfile>` | Sale del comando netsh después de ejecutar el archivo de script especificado. |
+| -f `<scriptfile>` | Sale del comando netsh después de ejecutar el archivo de script especificado. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 #### <a name="remarks"></a>Observaciones

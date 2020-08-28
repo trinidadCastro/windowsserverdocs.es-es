@@ -1,18 +1,18 @@
 ---
 title: pubprn
 description: Artículo de referencia del comando Pubprn, que publica una impresora en el Active Directory Domain Services.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0bc7f7e3-84e1-4359-b477-7b1a1a0bd639
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 33905fbfe06887ee8b8721ed9c91eed5701ed3f5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 969c8ab91e954db869560e4d5e4fb6fc4345b26f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884607"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032385"
 ---
 # <a name="pubprn"></a>pubprn
 
