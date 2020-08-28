@@ -1,18 +1,18 @@
 ---
 title: Get-MulticastTransmission
 description: Artículo de referencia de Get-MulticastTransmission, que muestra información sobre la transmisión por multidifusión para una imagen especificada.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b733737b-1e81-43d4-a058-d6985a613bef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 883bfb0d462ab87162d6e849947334eae010b0b1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9c5ac51a3ae3d17f21e15dafb940df8c020b221e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896946"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029533"
 ---
 # <a name="get-multicasttransmission"></a>Get-MulticastTransmission
 

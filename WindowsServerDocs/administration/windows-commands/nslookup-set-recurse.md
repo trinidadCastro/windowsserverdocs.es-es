@@ -1,18 +1,18 @@
 ---
 title: nslookup set recurse
 description: Artículo de referencia del comando Nslookup set recurse, que indica al servidor de nombres del sistema de nombres de dominio (DNS) que consulte a otros servidores si no encuentra la información en el servidor especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: d1b7a93f-dfb0-4ccd-b230-e0953057fada
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 26a98e646f0915a684129d4b0205384f10c31d49
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 57c881dc101df2ebf8d659f29340a9fcb574cce6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885573"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025209"
 ---
 # <a name="nslookup-set-recurse"></a>nslookup set recurse
 

@@ -1,18 +1,18 @@
 ---
 title: Get-namespace
 description: Artículo de referencia de Get-namespace, que muestra información sobre un espacio de nombres personalizado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ea641bab-e97b-4909-918e-447730027dc1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e998334b8297b06bf5eb23b9106acd3770504ffb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1fddc140936643b32bbb27ff82578a01b8b7c893
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896936"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029513"
 ---
 # <a name="get-namespace"></a>Get-namespace
 
@@ -43,8 +43,8 @@ Para ver información acerca de un espacio de nombres, escriba:
 wdsutil /Get-Namespace /Namespace:Custom Auto 1
 ```
 Para ver información acerca de un espacio de nombres y los clientes que están conectados, escriba uno de los siguientes:
-- Windows Server 2008:`wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /Show:Clients`
-- Windows Server 2008 R2:`wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /details:Clients`
+- Windows Server 2008: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /Show:Clients`
+- Windows Server 2008 R2: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /details:Clients`
   ## <a name="additional-references"></a>Referencias adicionales
   - Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
    [Usar el comando](using-the-get-allnamespaces-command.md) 

@@ -1,18 +1,18 @@
 ---
 title: desplazamiento
 description: Artículo de referencia para Shift, que cambia la posición de los parámetros de lote en un archivo por lotes.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b56574e8-570a-4cc9-bbac-1b94fbf6a47a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 985c1271a1da8f486e2313ba9aeb266803664b93
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 21e27db00b76945fa24b4e46e4f08c74d090d49f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882395"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024809"
 ---
 # <a name="shift"></a>desplazamiento
 
@@ -30,7 +30,7 @@ shift [/n <N>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/n\<N>|Especifica que se inicie el desplazamiento en el argumento *n*, donde *N* es cualquier valor de 0 a 8. Requiere extensiones de comando, que están habilitadas de forma predeterminada.|
+|/n \<N>|Especifica que se inicie el desplazamiento en el argumento *n*, donde *N* es cualquier valor de 0 a 8. Requiere extensiones de comando, que están habilitadas de forma predeterminada.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Observaciones

@@ -1,18 +1,18 @@
 ---
 title: nslookup set vc
 description: Artículo de referencia del comando Nslookup Set VC, que especifica si se debe usar un circuito virtual al enviar solicitudes al servidor.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e9232c92-cd8d-4eff-8ae5-0647bd03bdcb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed8c20785bc97afa7028185597e79bca02262af5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fa0f441dea0301f9d7b18b818c65452f013e66fc
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885449"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025119"
 ---
 # <a name="nslookup-set-vc"></a>nslookup set vc
 

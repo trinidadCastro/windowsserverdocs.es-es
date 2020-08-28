@@ -1,18 +1,18 @@
 ---
 title: arp
 description: Artículo de referencia del comando ARP, que muestra y modifica las entradas de la caché del Protocolo de resolución de direcciones (ARP) que se usa para almacenar las direcciones IP y sus direcciones físicas resueltas.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 827e96eb-1945-483f-980f-714703456f7c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3e44d471fc31b14bf37b1c4911c0f465e31b3ac
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b97c285f36bac3fd8587abddaf0a70423eb26155
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895561"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029393"
 ---
 # <a name="arp"></a>arp
 

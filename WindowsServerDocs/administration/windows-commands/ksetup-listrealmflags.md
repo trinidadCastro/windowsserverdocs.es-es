@@ -1,18 +1,18 @@
 ---
 title: ksetup listrealmflags
 description: Artículo de referencia del comando ksetup listrealmflags, en el que se enumeran las marcas de dominio Kerberos disponibles que puede informar de ksetup.
-ms.topic: article
+ms.topic: reference
 ms.assetid: aa96e4da-6b98-4c05-bccf-73cbf33258c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e69b91c8fe5ca7bddecb12a72a1e8ef31bec3dd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d7c522449053a18cdd1e2a9e533dbce5d6e9f17c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887854"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025479"
 ---
 # <a name="ksetup-listrealmflags"></a>ksetup listrealmflags
 
@@ -30,7 +30,7 @@ ksetup /listrealmflags
 
 | Valor | Marca de dominio Kerberos | Descripción |
 | ----- | ---------- | ----------- |
-| 0xF | Todas | Se establecen todas las marcas de dominio Kerberos. |
+| 0xF | All | Se establecen todas las marcas de dominio Kerberos. |
 | 0x00 | None | No se establecen marcas de dominio Kerberos y no se habilitan características adicionales. |
 | 0x01 | sendaddress | La dirección IP se incluirá en los vales de concesión de vales. |
 | 0x02 | tcpsupported | El protocolo de control de transmisión (TCP) y el protocolo de datagramas de usuario (UDP) se admiten en este dominio Kerberos. |

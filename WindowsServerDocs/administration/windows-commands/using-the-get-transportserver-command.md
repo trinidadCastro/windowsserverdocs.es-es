@@ -1,18 +1,18 @@
 ---
 title: Get-TransportServer
 description: Artículo de referencia de Get-TransportServer, que muestra información sobre un servidor de transporte especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: de634123-0179-41b2-9c6f-726508130ff5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bebe03058544591d98dd827325b9740fb0fa65df
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 83b79c689e16af16e0a6ca253dd9dce6afb1fa35
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896378"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029493"
 ---
 # <a name="get-transportserver"></a>Get-TransportServer
 

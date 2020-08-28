@@ -1,17 +1,17 @@
 ---
 title: type
 description: Artículo de referencia para el tipo, que muestra el contenido de un archivo de texto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 1cb4e28a079c39aaadd85267c004781cc9c84f3c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a7e188ec816b4ad16d86018bf7fe92954e778cbf
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896653"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036083"
 ---
 # <a name="type"></a>type
 

@@ -1,18 +1,18 @@
 ---
 title: san
 description: Artículo de referencia de * * * *-
-ms.topic: article
+ms.topic: reference
 ms.assetid: d57c2df1-eb82-4b81-b8cd-e30564c6a929
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d47c3a58d0397db4262b4df5e7d2fc047d770d5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c047dc99ac8c1584ce92ea5b8ab1367c298b0900
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883318"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036203"
 ---
 # <a name="san"></a>san
 

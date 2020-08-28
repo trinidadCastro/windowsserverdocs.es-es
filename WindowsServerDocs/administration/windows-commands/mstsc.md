@@ -1,18 +1,18 @@
 ---
 title: mstsc
 description: Artículo de referencia del comando mstsc, que crea conexiones a Escritorio remoto servidores host de sesión o a otros equipos remotos, edita un archivo de configuración existente de Conexión a Escritorio remoto (. RDP) y migra los archivos de conexión heredados que se crearon con el administrador de conexiones de cliente a los nuevos archivos de conexión. RDP.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: abf4824c50b931944c96307f6c9df42e6924b638
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 684ab29a9e1ded85443a2ec2d05ad4f55ec2cd5c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886151"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025219"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -40,7 +40,7 @@ mstsc.exe /migrate
 | /h`<height>` | Especifica el alto de la ventana Conexión a Escritorio remoto. |
 | /public | Ejecuta Escritorio remoto en modo público. En modo público, las contraseñas y los mapas de bits no se almacenan en caché. |
 | /span | Coincide con el ancho y el alto de Escritorio remoto con el escritorio virtual local, lo que abarca varios monitores si es necesario. |
-| /Edit`<connectionfile>` | Abre el archivo. RDP especificado para su edición. |
+| /Edit `<connectionfile>` | Abre el archivo. RDP especificado para su edición. |
 | /migrate | Migra los archivos de conexión heredados que se crearon con el administrador de conexiones de cliente a los nuevos archivos de conexión. RDP. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 

@@ -1,18 +1,18 @@
 ---
 title: shutdown
 description: Artículo de referencia para el apagado, que permite apagar o reiniciar equipos locales o remotos de uno en uno.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c432f5cf-c5aa-4665-83af-0ec52c87112e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8dff8150cb6ccfea24238567581320a9b11650d3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 44ee776ec2ec199fe39cfd17a05dfc3b8ba4502c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882360"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036453"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -39,16 +39,16 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/h|Pone el equipo local en hibernación si está habilitada la hibernación. Puede usar **/h** solo con **/f**.|
 |/e|Permite documentar el motivo del apagado inesperado en el equipo de destino.|
 |/f|Obliga a las aplicaciones en ejecución a cerrarse sin avisar a los usuarios.</br>PRECAUCIÓN: el uso de la opción **/f** podría provocar la pérdida de datos no guardados.|
-|/m\\\\\<ComputerName>|Especifica el equipo de destino. No se puede usar con la opción **/l** .|
-|/t\<XXX>|Establece el período de tiempo de espera o el retraso en *XXX* segundos antes de un reinicio o apagado. Esto hace que se muestre una advertencia en la consola local. Puede especificar 0-600 segundos. Si no usa **/t**, el período de tiempo de espera es de 30 segundos de forma predeterminada.|
+|/m \\\\\<ComputerName>|Especifica el equipo de destino. No se puede usar con la opción **/l** .|
+|/t \<XXX>|Establece el período de tiempo de espera o el retraso en *XXX* segundos antes de un reinicio o apagado. Esto hace que se muestre una advertencia en la consola local. Puede especificar 0-600 segundos. Si no usa **/t**, el período de tiempo de espera es de 30 segundos de forma predeterminada.|
 |/d [p \| u:] \<XX> :\<YY>|Muestra el motivo del reinicio o apagado del sistema. Estos son los valores de parámetro:</br>**p** indica que el reinicio o el apagado están planeados.</br>**u** indica que el motivo es definido por el usuario.</br>Nota: Si no se especifican **p** o **u** , el reinicio o el apagado no están planeados.</br>*XX* especifica el número de motivo principal (entero positivo inferior a 256).</br>*AA* Especifica el número de motivo secundario (entero positivo inferior a 65536).|
-|/c\<Comment>|Le permite comentar con detalle el motivo del apagado. Primero debe proporcionar un motivo mediante la opción **/d** . Los comentarios deben ir entre comillas. Puede utilizar 511 caracteres como máximo.|
+|/c \<Comment>|Le permite comentar con detalle el motivo del apagado. Primero debe proporcionar un motivo mediante la opción **/d** . Los comentarios deben ir entre comillas. Puede utilizar 511 caracteres como máximo.|
 |/?|Muestra la ayuda en el símbolo del sistema, incluida una lista de las razones principales y secundarias que se definen en el equipo local.|
 
 ## <a name="remarks"></a>Observaciones
 
 -   Los usuarios deben tener asignado el derecho de usuario **apagar el sistema** para apagar un equipo administrado de forma remota o local que use el comando **Shutdown** .
--   Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para obtener más información, consulte:
+-   Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para más información, consulte:
     -   [Grupos locales predeterminados](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
     -   [Grupos predeterminados](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
 -   Si desea apagar más de un equipo a la vez, puede llamar a **Shutdown** para cada equipo mediante un script, o bien puede usar **Shutdown** **/i** para mostrar el cuadro de diálogo apagado remoto.

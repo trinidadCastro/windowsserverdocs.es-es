@@ -1,18 +1,18 @@
 ---
 title: rmdir
 description: Artículo de referencia del comando rmdir, que elimina un directorio.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e4d7162b-7132-413c-a416-6eb3dc032a26
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2351014e07d79baa0e8e5ec07b31f04c9226613e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d67c0bb16ad47457cfb6eb927ba9dc5cf167b20c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883501"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036243"
 ---
 # <a name="rmdir"></a>rmdir
 
@@ -52,7 +52,7 @@ rmdir [<drive>:]<path> [/s [/q]]
 
     Si recibe este mensaje de error, debe cambiar a un directorio diferente (no un subdirectorio del directorio actual) e intentarlo de nuevo.
 
-### <a name="examples"></a>Ejemplos
+## <a name="examples"></a>Ejemplos
 
 Para cambiar al directorio principal de modo que pueda quitar de forma segura el directorio deseado, escriba:
 

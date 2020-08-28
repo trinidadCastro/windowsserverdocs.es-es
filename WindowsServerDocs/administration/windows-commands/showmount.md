@@ -1,18 +1,18 @@
 ---
 title: showmount
 description: Artículo de referencia para showmount, que muestra los directorios montados.
-ms.topic: article
+ms.topic: reference
 ms.assetid: a6dd562e-e3bd-4ee6-be3b-6d29e29fd20e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0be623eadd56a55a87f2df57fec9b4c6558770c9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ba118e711af040bba7dd6c1e63a14405b3116743
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882408"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024799"
 ---
 # <a name="showmount"></a>showmount
 

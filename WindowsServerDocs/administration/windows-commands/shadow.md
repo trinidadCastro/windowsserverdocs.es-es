@@ -1,18 +1,18 @@
 ---
 title: shadow
 description: Artículo de referencia sobre Shadow, que permite controlar de forma remota una sesión activa de otro usuario en un servidor host de sesión Escritorio remoto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: f81d9717-6883-4e14-9508-4b2a87e48ea7 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 225d85d777c7c6785d2d07916aef1b7d88b6ae53
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0db1150ac8e0b6382e07e032f780a9cab28bf870
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882461"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024869"
 ---
 # <a name="shadow"></a>shadow
 

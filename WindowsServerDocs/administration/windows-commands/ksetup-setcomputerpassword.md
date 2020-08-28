@@ -1,18 +1,18 @@
 ---
 title: ksetup setcomputerpassword
 description: Artículo de referencia para el comando ksetup setcomputerpassword, que establece la contraseña para el equipo local.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e307d8f6-3b93-4c24-ac04-f31549f7dc7d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d9dba34490616b07671ada16e0c76f0122c3d6a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bdddfa424b1f34e084c9e03cb441759a64b903c1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887777"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025379"
 ---
 # <a name="ksetup-setcomputerpassword"></a>ksetup setcomputerpassword
 

@@ -1,18 +1,18 @@
 ---
 title: en
 description: Artículo de referencia del comando AT, que programa comandos y programas para que se ejecuten en un equipo a una hora y fecha especificadas.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ff18fd16-9437-4c53-8794-bfc67f5256b3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8bd4ba389d072ca1f8054d9f691f434063a8df4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 017e6bb59b891fddfff9e695f8e3040f678bd611
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895549"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029293"
 ---
 # <a name="at"></a>en
 
@@ -39,7 +39,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 | interactiva | Permite que el *comando* interactúe con el escritorio del usuario que ha iniciado sesión en el momento en que se ejecuta el *comando* . |
 | siempre | Ejecuta el *comando* en cada día o días de la semana o mes especificados (por ejemplo, cada jueves o el tercer día de cada mes). |
 | `<date>` | Especifica la fecha en la que desea ejecutar el comando. Puede especificar uno o varios días de la semana (es decir, el tipo **M**,**T**,**W**,**TH**,**F**,**S**,**su**) o uno o varios días del mes (es decir, el tipo 1 a 31). Separe varias entradas de fecha con comas. Si se omite la *fecha*, **en** utiliza el día actual del mes. |
-| Nueva | Ejecuta el *comando* en la siguiente repetición del día (por ejemplo, el jueves siguiente). |
+| Nueva | Ejecuta el *comando*  en la siguiente repetición del día (por ejemplo, el jueves siguiente). |
 | `<command>` | Especifica el comando de Windows, el programa (es decir, el archivo. exe o. com) o el programa de Batch (es decir, el archivo. bat o. cmd) que desea ejecutar. Cuando el comando requiere una ruta de acceso como argumento, utilice la ruta de acceso absoluta (es decir, toda la ruta de acceso que comienza con la letra de unidad). Si el comando se encuentra en un equipo remoto, especifique la notación de Convención de nomenclatura universal (UNC) para el servidor y el nombre del recurso compartido, en lugar de una letra de unidad remota. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
@@ -107,7 +107,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
     1. Inicie el editor del registro (regedit.exe).
 
-    2. Busque y haga clic en la clave siguiente en el registro:`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Schedule`
+    2. Busque y haga clic en la clave siguiente en el registro: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Schedule`
 
     3. En el menú **edición** , haga clic en **Agregar valor**y, a continuación, agregue los siguientes valores del registro:
 

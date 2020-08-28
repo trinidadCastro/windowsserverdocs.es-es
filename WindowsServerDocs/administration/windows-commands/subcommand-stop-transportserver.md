@@ -1,18 +1,18 @@
 ---
 title: Subcomando STOP-TransportServer
 description: Artículo de referencia para STOP-TransportServer
-ms.topic: article
+ms.topic: reference
 ms.assetid: dc1b1eec-6893-445e-81dc-16b3fae287fa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 49e7c0c61a110fc7a7aa687ff30d60eb8f51a543
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2981743f422e7d5e8442f26935dbb4afdc97b923
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881963"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024639"
 ---
 # <a name="subcommand-stop-transportserver"></a>Subcomando: Stop-TransportServer
 

@@ -1,18 +1,18 @@
 ---
 title: Get-Image
 description: Artículo de referencia de Get-Image, que recupera información acerca de una imagen.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0ecaa999-72ad-4191-adb5-a418de42a001
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b97e13441d883a683515222774194c1fb75ecbc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9c3e8a25725f939c6a7a7692d192b63bac9ffd41
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879367"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029624"
 ---
 # <a name="get-image"></a>Get-Image
 

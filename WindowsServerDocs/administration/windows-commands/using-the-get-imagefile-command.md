@@ -1,18 +1,18 @@
 ---
 title: Get-ImageFile
 description: Artículo de referencia de Get-ImageFile, que recupera información sobre las imágenes contenidas en un archivo de imagen de Windows (. wim).
-ms.topic: article
+ms.topic: reference
 ms.assetid: e1e296fb-20cf-4a60-9db4-4cbac7d4dab5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 10b86929366cc8734a5ff155200fb3078f0cd5d4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 69696786ee0fe46cf06173f685d462724136cd4b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879372"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029613"
 ---
 # <a name="get-imagefile"></a>Get-ImageFile
 

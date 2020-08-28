@@ -1,18 +1,18 @@
 ---
 title: setx
 description: Artículo de referencia de setx, que crea o modifica variables de entorno en el entorno de usuario o del sistema, sin necesidad de programación o scripting.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0edab4ce56d3e43e26c1d14b32403a2954cbbce6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 256f19453edd0c211215a0e161d7d60098ae9cc9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882521"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024899"
 ---
 # <a name="setx"></a>setx
 
@@ -32,18 +32,18 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 |         Parámetro          |                                                                                                                                              Descripción                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       modificado\<Computer>       |                                                                                  Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el nombre del equipo local.                                                                                  |
+|       modificado \<Computer>       |                                                                                  Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el nombre del equipo local.                                                                                  |
 | 5.50\<Domain>\]<User name> |                                                                                           Ejecuta el script con las credenciales de la cuenta de usuario especificada. El valor predeterminado es los permisos del sistema.                                                                                            |
 |      /p [ \<Password> ]      |                                                                                                         Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                         |
 |        \<Variable>         |                                                                                                                 Especifica el nombre de la variable de entorno que desea establecer.                                                                                                                  |
 |          \<Value>          |                                                                                                                Especifica el valor en el que desea establecer la variable de entorno.                                                                                                                 |
-|         /k\<Path>         | Especifica que la variable se establece basándose en la información de una clave del registro. La*gistro* p usa la siguiente sintaxis:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por ejemplo, puede especificar la ruta de acceso siguiente:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|         /k \<Path>         | Especifica que la variable se establece basándose en la información de una clave del registro. La*gistro* p usa la siguiente sintaxis:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por ejemplo, puede especificar la ruta de acceso siguiente:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
 |      /f \<File name>       |                                                                                                                               Especifica el archivo que desea usar.                                                                                                                                |
 |        /a \<X> ,<Y>         |                                                                                                                    Especifica las coordenadas absolutas y el desplazamiento como parámetros de búsqueda.                                                                                                                    |
 |   /r \<X> , <Y><String>   |                                                                                                            Especifica las coordenadas relativas y el desplazamiento de la **cadena** como parámetros de búsqueda.                                                                                                            |
 |             /m             |                                                                                                Especifica que se establezca la variable en el entorno del sistema. La configuración predeterminada es el entorno local.                                                                                                 |
 |             /x             |                                                                                                       Muestra las coordenadas del archivo, pasando por alto las opciones de la línea de comandos **/a**, **/r**y **/d** .                                                                                                        |
-|      /d.\<Delimiters>      |                    Especifica los delimitadores como **,** o **\\** que se van a usar además de los cuatro delimitadores integrados: espacio, tabulación, entrada y avance de barra. Entre los delimitadores válidos se incluyen los caracteres ASCII. El número máximo de delimitadores es 15, incluidos los delimitadores integrados.                    |
+|      /d. \<Delimiters>      |                    Especifica los delimitadores como **,** o **\\** que se van a usar además de los cuatro delimitadores integrados: espacio, tabulación, entrada y avance de barra. Entre los delimitadores válidos se incluyen los caracteres ASCII. El número máximo de delimitadores es 15, incluidos los delimitadores integrados.                    |
 |             /?             |                                                                                                                                 Muestra la ayuda en el símbolo del sistema.                                                                                                                                  |
 
 ## <a name="remarks"></a>Observaciones
