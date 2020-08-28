@@ -1,18 +1,18 @@
 ---
 title: bitsadmin getcompletiontime
 description: Artículo de referencia para el comando bitsadmin getcompletiontime, que recupera la hora en que el trabajo terminó de transferir los datos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7a4b3c1c-9832-4724-86b2-cce3c01bfa28
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a242ec3689bef6e4ecd2bb961f532efbb874e98c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d79fbf49aa4ec9cea60829a3b0859887da0e5dd5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894475"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033683"
 ---
 # <a name="bitsadmin-getcompletiontime"></a>bitsadmin getcompletiontime
 

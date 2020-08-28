@@ -1,18 +1,18 @@
 ---
 title: Manage-BDE changepin
 description: Artículo de referencia para el comando Manage-BDE changepin, que modifica el PIN de una unidad del sistema operativo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c85aa1c7-3485-4839-a292-99dfcd6db252
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b71c0087583732e638e0b6de9558e5c1c0655c9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 001f934e55e8b78cae5800dda59ec5d5a12fb606
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886898"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033983"
 ---
 # <a name="manage-bde-changepin"></a>Manage-BDE changepin
 

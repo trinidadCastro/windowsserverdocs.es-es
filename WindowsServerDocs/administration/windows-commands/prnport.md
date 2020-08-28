@@ -1,18 +1,18 @@
 ---
 title: prnport
 description: Artículo de referencia del comando prnport, que crea, elimina y enumera los puertos de impresora TCP/IP estándar, además de mostrar y cambiar la configuración del puerto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6a0ec638-a21e-4a34-be5c-bd0f7ca89ffe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8aa1729c84b54393a6154dd5fc4ba5a5e6834fc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4723d266ed70c7e9bf56fd65216dcce0bab1188c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884706"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033893"
 ---
 # <a name="prnport"></a>prnport
 
@@ -35,16 +35,16 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <portname>] [-s <Servername>] 
 | -l | Enumera todos los puertos de impresora TCP/IP estándar en el equipo especificado por el parámetro **-s** . |
 | -g | Muestra la configuración de un puerto de impresora TCP/IP estándar. |
 | -T | Configura los valores de puerto para un puerto de impresora TCP/IP estándar. |
-| -r`<portname>` | Especifica el puerto al que está conectada la impresora. |
+| -r `<portname>` | Especifica el puerto al que está conectada la impresora. |
 | -s `<Servername>` | Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local. |
-| -u `<Username>` -w`<password>` | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
-| -o`{raw|lpr}` | Especifica el protocolo que usa el puerto: TCP RAW o TCP LPR. El protocolo TCP RAW es un protocolo de mayor rendimiento en Windows que el protocolo LPR. Si usa TCP RAW, opcionalmente puede especificar el número de puerto mediante el parámetro **-n** . El número de puerto predeterminado es 9100. |
-| -h`<Hostaddress>` | Especifica (por dirección IP) la impresora para la que desea configurar el puerto. |
-| -q`<Queuename>` | Especifica el nombre de la cola para un puerto TCP sin formato. |
-| -n`<portnumber>` | Especifica el número de puerto para un puerto TCP sin formato. El número de puerto predeterminado es 9100. |
+| -u `<Username>` -w `<password>` | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
+| -o `{raw|lpr}` | Especifica el protocolo que usa el puerto: TCP RAW o TCP LPR. El protocolo TCP RAW es un protocolo de mayor rendimiento en Windows que el protocolo LPR. Si usa TCP RAW, opcionalmente puede especificar el número de puerto mediante el parámetro **-n** . El número de puerto predeterminado es 9100. |
+| -h `<Hostaddress>` | Especifica (por dirección IP) la impresora para la que desea configurar el puerto. |
+| -q `<Queuename>` | Especifica el nombre de la cola para un puerto TCP sin formato. |
+| -n `<portnumber>` | Especifica el número de puerto para un puerto TCP sin formato. El número de puerto predeterminado es 9100. |
 | -m`{e|d}` | Especifica si SNMP está habilitado. El parámetro **e** habilita SNMP. El parámetro **d** deshabilita SNMP. |
-| -i`<SNMPindex` | Especifica el índice SNMP, si SNMP está habilitado. Para obtener más información, consulte **rfc 1759** en el [sitio web del editor RFC](https://www.ietf.org/rfc/rfc1759.txt?number=1759). |
-| -y`<communityname>` | Especifica el nombre de la comunidad SNMP, si SNMP está habilitado. |
+| -i `<SNMPindex` | Especifica el índice SNMP, si SNMP está habilitado. Para obtener más información, consulte **rfc 1759** en el [sitio web del editor RFC](https://www.ietf.org/rfc/rfc1759.txt?number=1759). |
+| -y `<communityname>` | Especifica el nombre de la comunidad SNMP, si SNMP está habilitado. |
 | -2`{e|-d}` | Especifica si las colas de impresión dobles (también conocidas como rebobinar) están habilitadas para los puertos TCP LPR. Las colas de impresión dobles son necesarias porque TCP LPR debe incluir un recuento exacto de bytes en el archivo de control que se envía a la impresora, pero el Protocolo no puede obtener el recuento del proveedor de impresión local. Por lo tanto, cuando un archivo se pone en cola en una cola de impresión lpr de TCP, también se pone en cola como un archivo temporal en el directorio system32. TCP LPR determina el tamaño del archivo temporal y envía el tamaño al servidor que ejecuta LPD. El parámetro **e** habilita las colas dobles. El parámetro **d** deshabilita las colas de impresión dobles. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 

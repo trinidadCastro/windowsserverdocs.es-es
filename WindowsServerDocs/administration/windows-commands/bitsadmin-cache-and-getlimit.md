@@ -1,18 +1,18 @@
 ---
 title: bitsadmin cache y getlimit
 description: Artículo de referencia de la memoria caché de bitsadmin y el comando getlimit, que recupera el límite de caché.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2f3e9912-928c-483b-9acb-55fa5fc975a0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5cf8bb988cad7f6c29942167d0ccdbaf4e7b94b4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0f166763409e0a73cb0d79c5bb65a8b18ab6ebdf
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894770"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027843"
 ---
 # <a name="bitsadmin-cache-and-getlimit"></a>bitsadmin cache y getlimit
 

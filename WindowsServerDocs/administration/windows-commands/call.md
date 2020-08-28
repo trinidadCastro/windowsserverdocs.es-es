@@ -1,18 +1,18 @@
 ---
 title: llamada
 description: Artículo de referencia del comando call, que llama a un programa por lotes desde otro sin detener el programa de Batch primario.
-ms.topic: article
+ms.topic: reference
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 7ff402f159dc69d683ad5c568ca2d31d753eb77c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 749f073fa3f96f51aec5bf47e4e09ce7263d3205
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880398"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034263"
 ---
 # <a name="call"></a>llamada
 
@@ -90,7 +90,7 @@ En los ejemplos anteriores, **%1** y path se pueden reemplazar por otros valores
 
 - Trabajar con extensiones de comandos
 
-    Si las extensiones de comando están habilitadas, **llamar a** acepta `<label>` como destino de la llamada. La sintaxis correcta es`call :<label> <arguments>`
+    Si las extensiones de comando están habilitadas, **llamar a** acepta `<label>` como destino de la llamada. La sintaxis correcta es `call :<label> <arguments>`
 
 ## <a name="examples"></a>Ejemplos
 

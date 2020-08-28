@@ -1,18 +1,18 @@
 ---
 title: getmac
 description: Artículo de referencia para el comando getmac, que devuelve la dirección Media Access Control (MAC) y la lista de protocolos de red asociados a cada uno de ellos, de forma local o a través de una red.
-ms.topic: article
+ms.topic: reference
 ms.assetid: a749a348-7cd1-4336-9f33-bb42dd0e31e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ffc11e4aad7336e11cf65f8e51cdc155703c2dc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 901777744b98095e4e19ff39d9965d144ee1f1c8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888633"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034083"
 ---
 # <a name="getmac"></a>getmac
 
@@ -30,9 +30,9 @@ getmac[.exe][/s <computer> [/u <domain\<user> [/p <password>]]][/fo {table | lis
 
 | Parámetro | Descripción |
 | --------- |------------ |
-| modificado`<computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. |
-| /u`<domain>\<user>` | Ejecuta el comando con los permisos de cuenta del usuario especificado por *User* o *dominio\usuario*. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
-| /p`<password>` | Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . |
+| modificado `<computer>` | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local. |
+| /u `<domain>\<user>` | Ejecuta el comando con los permisos de cuenta del usuario especificado por *User* o *dominio\usuario*. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
+| /p `<password>` | Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . |
 | /FO {Table | list | CVS | Especifica el formato que se va a usar para los resultados de la consulta. Los valores válidos son **TABLE**, **List**y **CSV**. El formato predeterminado de la salida es **TABLE**. |
 | /NH | Suprime el encabezado de columna en la salida. Válido cuando el parámetro **/FO** está establecido en **TABLE** o **CSV**. |
 | /v | Especifica que el resultado muestra información detallada. |

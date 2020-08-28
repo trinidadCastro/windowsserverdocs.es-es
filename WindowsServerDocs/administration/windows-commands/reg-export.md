@@ -1,18 +1,18 @@
 ---
 title: reg export
 description: Artículo de referencia para el comando reg Export, que copia las subclaves, entradas y valores especificados del equipo local en un archivo para su transferencia a otros servidores.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0ad9526f-1e29-4fa5-9d2d-feaa92f12d7c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 31f59aca51b74150682a5ba3085b7ffcef058d29
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 258fde37c886335073c7eac660297e1dcce083c0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884134"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028063"
 ---
 # <a name="reg-export"></a>reg export
 

@@ -1,18 +1,18 @@
 ---
 title: bitsadmin addfilewithranges
 description: Artículo de referencia para el comando bitsadmin addfilewithranges, que agrega un archivo al trabajo especificado. BITS descarga los intervalos especificados del archivo remoto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: df0ce0bf-dff1-4a48-a16f-fd2f4d5f7189
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c19c6dfec23cf012f42ab7d10b1d3df90ca957ff
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 08f9031ebd6ffe2e1480e59e5e357a33b9895766
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894877"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027853"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 

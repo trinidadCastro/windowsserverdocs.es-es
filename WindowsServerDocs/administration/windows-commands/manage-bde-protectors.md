@@ -1,18 +1,18 @@
 ---
 title: protectores de Manage-BDE
 description: Artículo de referencia para el comando Manage-BDE protecters, que administra los métodos de protección usados para la clave de cifrado de BitLocker.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1f9b22c5-cc93-45df-9165-bedee94998da
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 445f87435a97173192976f195478f9c92e109032
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0461edcb2e1177f1a72ec7e4a1c893c80cd70698
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886756"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027573"
 ---
 # <a name="manage-bde-protectors"></a>protectores de Manage-BDE
 
@@ -97,7 +97,7 @@ manage-bde -protectors -delete <drive> [-type {recoverypassword|externalkey|cert
 | tpmandpin | Especifica que se deben eliminar los protectores de clave basados en TPM y en el PIN asociados a la unidad. |
 | tpmandpinandstartupkey | Especifica que se deben eliminar los protectores de clave basados en el TPM, el PIN y la clave de inicio asociados con la unidad. |
 | password | Especifica que se deben eliminar todos los protectores de clave de contraseña asociados a la unidad. |
-| identidad | Especifica que se deben eliminar todos los protectores de clave de identidad asociados a la unidad. |
+| identity | Especifica que se deben eliminar todos los protectores de clave de identidad asociados a la unidad. |
 | -ID | Identifica el protector de clave que se va a eliminar mediante el identificador de clave. Este parámetro es una opción alternativa al parámetro **-Type** . |
 | `<keyprotectorID>` | Identifica un protector de clave individual en la unidad que se va a eliminar. Los identificadores de protector de clave se pueden mostrar con el comando **Manage-BDE-protectors-Get** . |
 | -COMPUTERNAME | Especifica que se utilizará manage-bde.exe para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |

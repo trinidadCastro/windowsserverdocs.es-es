@@ -1,18 +1,18 @@
 ---
 title: resume de Manage-BDE
 description: Artículo de referencia para el comando Manage-BDE resume, que reanuda el cifrado o descifrado de BitLocker después de que se haya pausado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ca3cd1ca-6f2c-4190-b68f-27816635facb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76eca472da7068511497a797aa31f91adad423ea
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 57f12ad478e565fa8edbeed0818e83b62c2d17fb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886746"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027503"
 ---
 # <a name="manage-bde-resume"></a>resume de Manage-BDE
 

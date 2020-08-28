@@ -1,17 +1,17 @@
 ---
 title: Vssadmin eliminar sombras
 description: Descripción del comando vssadmin Delete Shadows.
-ms.topic: article
+ms.topic: reference
 author: JasonGerend
 ms.author: jgerend
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 884407cee82926b3b258afba5ab2e47dc640e10f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 667aaa7477666c6128aaed4ddb10a9f3695e571a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891803"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022869"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin eliminar sombras
 

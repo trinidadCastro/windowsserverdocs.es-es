@@ -1,18 +1,18 @@
 ---
 title: select partition
 description: Artículo de referencia de * * * *-
-ms.topic: article
+ms.topic: reference
 ms.assetid: 25f70083-b8f7-4a8e-9b34-4b3ffbe06670
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c144bc3271fa4d10dfc006d8c08e1a737f763fe
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 816a235f7ba83320828a5dc72c9f2558c27b2ed8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882849"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027913"
 ---
 # <a name="select-partition"></a>select partition
 

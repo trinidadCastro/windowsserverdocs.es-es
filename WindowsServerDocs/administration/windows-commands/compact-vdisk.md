@@ -1,18 +1,18 @@
 ---
 title: compact vdisk
 description: Artículo de referencia para el comando Compact vDisk, que reduce el tamaño físico de un archivo de disco duro virtual (VHD) de expansión dinámica.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 40ca0820-67de-4160-b62a-e9bf63fe2790
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e8f29cf7188d2630f15bee9bde2910c64f325b5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 505d04cea68a3b005490a264c8c9e77f60e22a35
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892629"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027753"
 ---
 # <a name="compact-vdisk"></a>compact vdisk
 

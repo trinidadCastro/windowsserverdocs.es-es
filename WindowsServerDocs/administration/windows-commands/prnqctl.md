@@ -1,18 +1,18 @@
 ---
 title: prnqctl
 description: Artículo de referencia para el comando prnqctl, que imprime una página de prueba, y pausa o reanuda una impresora.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8df9dfa7-984c-4276-bb7d-e7675e7c399e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 9ab7c6e8302ebd2c94daee98d8bbef87ecfd4854
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fd5eb91f280df80685d07c0b809e16edeae3d893
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884693"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033863"
 ---
 # <a name="prnqctl"></a>prnqctl
 
@@ -35,8 +35,8 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <Servername>] [-p <Printername>] [-
 | -E | Imprime una página de prueba en la impresora especificada por el parámetro **-p** . |
 | -X | Cancela todos los trabajos de impresión en la impresora especificada por el parámetro **-p** . |
 | -s `<Servername>` | Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local. |
-| -p`<Printername>` | Necesario. Especifica el nombre de la impresora que desea administrar. |
-| -u `<Username>` -w`<password>` | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
+| -p `<Printername>` | Necesario. Especifica el nombre de la impresora que desea administrar. |
+| -u `<Username>` -w `<password>` | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
 #### <a name="remarks"></a>Observaciones

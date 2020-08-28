@@ -1,20 +1,20 @@
 ---
-title: para
+title: for
 description: Artículo de referencia del comando for, que ejecuta un comando especificado para cada archivo, dentro de un conjunto de archivos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e275726c-035f-4a74-8062-013c37f5ded1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e964c502d012648f6633b099688781a8d4f22cf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7120ed613595b5b90334e49b0865c3e598f3cabb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890175"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027643"
 ---
-# <a name="for"></a>para
+# <a name="for"></a>for
 
 Ejecuta un comando especificado para cada archivo, dentro de un conjunto de archivos.
 
@@ -143,7 +143,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
     Mediante el uso de nombres de variables en mayúsculas como `%I` , puede hacer que el código sea más legible y evitar la confusión con los modificadores, que no distinguen mayúsculas de minúsculas.
 
-- **Analizar una cadena:** Puede usar la `for /f` lógica de análisis en una cadena inmediata ajustando `<literalstring>` : comillas dobles (*sin* usebackq) o entre comillas simples (*con* usebackq) (por ejemplo, (String) o (' String '). `<literalstring>`se trata como una sola línea de entrada de un archivo. Al analizar `<literalstring>` entre comillas dobles, los símbolos de comandos (como, `\ & | > < ^` ) se tratan como caracteres ordinarios.
+- **Analizar una cadena:** Puede usar la `for /f` lógica de análisis en una cadena inmediata ajustando `<literalstring>` : comillas dobles (*sin* usebackq) o entre comillas simples (*con* usebackq) (por ejemplo, (String) o (' String '). `<literalstring>` se trata como una sola línea de entrada de un archivo. Al analizar `<literalstring>` entre comillas dobles, los símbolos de comandos (como, `\ & | > < ^` ) se tratan como caracteres ordinarios.
 
 - **Resultado del análisis:** Puede usar el `for /f` comando para analizar la salida de un comando colocando una entre comillas `<command>` entre paréntesis. Se trata como una línea de comandos, que se pasa a un Cmd.exe secundario. La salida se captura en la memoria y se analiza como si se tratase de un archivo.
 

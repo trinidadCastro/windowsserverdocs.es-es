@@ -1,18 +1,18 @@
 ---
 title: 'secedit: Validate'
 description: Artículo de referencia de * * * *-
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9fb06354-f55a-4ca4-9fbc-9a872eb9b9cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30bb02f0d7947aa77f7ac41d5f7b179ca8fd236b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 47c0ec78cb49da3ce256e7a74ce8be003b0db85b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882933"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027983"
 ---
 # <a name="seceditvalidate"></a>secedit: Validate
 

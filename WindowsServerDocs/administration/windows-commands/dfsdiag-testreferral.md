@@ -1,18 +1,18 @@
 ---
 title: dfsdiag testreferral
 description: Artículo de referencia para el comando dfsdiag testreferral, que comprueba las referencias Sistema de archivos distribuido (DFS).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 877c60dc-e993-4bd5-87dd-e892e3f98a1a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21ed7a6dd56fda0a6185f3f5aaa2a15d9d6fb565
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 245238c83a9795dd4976836bae612f5e00a25a5b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891122"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034183"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag testreferral
 
@@ -40,7 +40,7 @@ dfsdiag /testreferral /DFSpath:<DFS path to get referrals> [/full]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| /DFSpath:`<path to get referrals>` | Puede ser uno de los siguientes:<ul><li>**En blanco:** Solo comprueba dominios de confianza.</li><li>`\\Domain:`Comprueba solo las referencias del controlador de dominio.</li><li>`\\Domain\SYSvol:`Comprueba solo las referencias de SYSvol.</li><li>`\\Domain\NETLOGON:`Comprueba solo las referencias de NETLOGON.</li><li>`\\<domain or server>\<namespace root>:`Solo comprueba las referencias a la raíz del espacio de nombres.</li><li>`\\<domain or server>\<namespace root>\<DFS folder>:`Comprueba solo las referencias a la carpeta DFS (vínculo).</li></ul> |
+| /DFSpath:`<path to get referrals>` | Puede ser uno de los siguientes:<ul><li>**En blanco:** Solo comprueba dominios de confianza.</li><li>`\\Domain:` Comprueba solo las referencias del controlador de dominio.</li><li>`\\Domain\SYSvol:` Comprueba solo las referencias de SYSvol.</li><li>`\\Domain\NETLOGON:` Comprueba solo las referencias de NETLOGON.</li><li>`\\<domain or server>\<namespace root>:` Solo comprueba las referencias a la raíz del espacio de nombres.</li><li>`\\<domain or server>\<namespace root>\<DFS folder>:` Comprueba solo las referencias a la carpeta DFS (vínculo).</li></ul> |
 | /Full | Solo se aplica a las referencias de dominio y raíz. Comprueba la coherencia de la información de asociación del sitio entre el registro y los servicios de dominio de Active Directory (AD DS). |
 
 ## <a name="examples"></a>Ejemplos

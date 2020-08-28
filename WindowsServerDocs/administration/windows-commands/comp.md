@@ -1,18 +1,18 @@
 ---
 title: comp
 description: Artículo de referencia para el comando COMP, que compara el contenido de dos archivos o conjuntos de archivos byte a byte.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 40319d23-704d-4da1-be93-8259547275d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 18bd39483957959c746913a4ee18014be40c9eaa
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bd796aef8ef5794e4d8c09a995cb39a9756fb444
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880031"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027783"
 ---
 # <a name="comp"></a>comp
 

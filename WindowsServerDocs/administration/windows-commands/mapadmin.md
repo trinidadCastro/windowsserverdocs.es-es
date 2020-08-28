@@ -1,18 +1,18 @@
 ---
 title: mapadmin
 description: Artículo de referencia para el comando mapadmin, que administra Asignación de nombres de usuario para los servicios de Microsoft para Network File System.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b17332c7-8622-4223-9c43-2fb9cf4d992d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3334ae31b3abb85dcc3df046d8199c9b72ea3944
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8b62e31dbe53c5e2b16093bb222b8129d3cca087
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886572"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033953"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -43,8 +43,8 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 | Parámetro | Descripción |
 | --------- | ----------- |
 | `<computer>` | Especifica el equipo remoto que ejecuta el servicio Asignación de nombres de usuario que desea administrar. Puede especificar el equipo con un nombre de servicio de nombres Internet de Windows (WINS) o un nombre de sistema de nombres de dominio (DNS), o bien mediante la dirección del Protocolo de Internet (IP). |
-| -u`<user>` | Especifica el nombre del usuario cuyas credenciales se van a usar. Puede que sea necesario agregar el nombre de dominio al nombre de usuario con el formato *dominio\nombredeusuario*. |
-| -p`<password>` | Especifica la contraseña del usuario. Si se especifica la opción **-u** pero se omite la opción **-p** , se le solicitará la contraseña del usuario. |
+| -u `<user>` | Especifica el nombre del usuario cuyas credenciales se van a usar. Puede que sea necesario agregar el nombre de dominio al nombre de usuario con el formato *dominio\nombredeusuario*. |
+| -p `<password>` | Especifica la contraseña del usuario. Si se especifica la opción **-u** pero se omite la opción **-p** , se le solicitará la contraseña del usuario. |
 | `start | stop` | Inicia o detiene el servicio Asignación de nombres de usuario. |
 | config | Especifica la configuración general para Asignación de nombres de usuario. Las siguientes opciones están disponibles con este parámetro:<ul><li>**-r `<dddd>:<hh>:<mm>` :** especifica el intervalo de actualización para la actualización de las bases de datos de Windows y NIS en días, horas y minutos. El intervalo mínimo es de 5 minutos.</li><li>**-i `{yes | no}` : activa la** asignación simple en (**sí**) o desactivada (**no**). De forma predeterminada, la asignación está activada.</li></ul> |
 | add | Crea una nueva asignación para un usuario o grupo. Las siguientes opciones están disponibles con este parámetro:<ul><li>**-Wu `<name>` :** especifica el nombre del usuario de Windows para el que se crea una nueva asignación.</li><li>**-UU `<name>` :** especifica el nombre del usuario de UNIX para el que se crea una nueva asignación.</li><li>**-WG `<group>` :** especifica el nombre del grupo de Windows para el que se crea una nueva asignación.</li><li>**-UG `<group>` :** especifica el nombre del grupo de UNIX para el que se crea una nueva asignación.</li><li>**-setprimary:** Especifica que la nueva asignación es la asignación principal.</li></ul> |
@@ -63,13 +63,13 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 - Para todas las opciones que especifican un nombre de usuario o grupo, se pueden usar los siguientes formatos:
 
-    - En el caso de los usuarios de Windows, use los formatos: `<domain>\<username>` , `\\<computer>\<username>` , `\<computer>\<username>` o.`<computer>\<username>`
+    - En el caso de los usuarios de Windows, use los formatos: `<domain>\<username>` , `\\<computer>\<username>` , `\<computer>\<username>` o. `<computer>\<username>`
 
-    - En el caso de los grupos de Windows, use los formatos: `<domain>\<groupname>` , `\\<computer>\<groupname>` , `\<computer>\<groupname>` o.`<computer>\<groupname>`
+    - En el caso de los grupos de Windows, use los formatos: `<domain>\<groupname>` , `\\<computer>\<groupname>` , `\<computer>\<groupname>` o. `<computer>\<groupname>`
 
-    - En el caso de los usuarios de UNIX, use los formatos: `<NISdomain>\<username>` , `<username>@<NISdomain>` , `<username>@PCNFS` o.`PCNFS\<username>`
+    - En el caso de los usuarios de UNIX, use los formatos: `<NISdomain>\<username>` , `<username>@<NISdomain>` , `<username>@PCNFS` o. `PCNFS\<username>`
 
-    - En el caso de los grupos de UNIX, use los formatos: `<NISdomain>\<groupname>` , `<groupname>@<NISdomain>` , `<groupname>@PCNFS` o.`PCNFS\<groupname>`
+    - En el caso de los grupos de UNIX, use los formatos: `<NISdomain>\<groupname>` , `<groupname>@<NISdomain>` , `<groupname>@PCNFS` o. `PCNFS\<groupname>`
 
 ## <a name="additional-references"></a>Referencias adicionales
 

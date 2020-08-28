@@ -1,18 +1,18 @@
 ---
 title: Manage-BDE setidentifier
 description: Artículo de referencia para el comando Manage-BDE setidentifier, que establece el campo de identificador de unidad de la unidad en el valor especificado en la opción proporcionar los identificadores únicos de la organización directiva de grupo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7092d18f-4ac9-4c73-a20f-1246ca60e75e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 836f8a0cb1842dcae276ccd8c2cca8f831056099
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f790efb56ddb3c8785d89930069c5be42e7a5b0c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886700"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027493"
 ---
 # <a name="manage-bde-setidentifier"></a>Manage-BDE setidentifier
 

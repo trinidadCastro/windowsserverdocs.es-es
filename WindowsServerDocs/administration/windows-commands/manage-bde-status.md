@@ -1,18 +1,18 @@
 ---
 title: 'administrar: estado de BDE'
 description: Artículo de referencia para el comando Manage-BDE status, que proporciona información acerca de todas las unidades del equipo, independientemente de si están protegidas con BitLocker.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1444a360-fabf-4dd3-b67f-188e6ea3fa5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cab8f552cd633e5e71a13993fd2223062125f02f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 632e286b15d65c066a6f2229b98e12a23014f998
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886691"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027483"
 ---
 # <a name="manage-bde-status"></a>administrar: estado de BDE
 

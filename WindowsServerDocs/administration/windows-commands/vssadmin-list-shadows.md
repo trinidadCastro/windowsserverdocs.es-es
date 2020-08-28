@@ -1,17 +1,17 @@
 ---
 title: Vssadmin List Shadows
 description: Una descripción del comando vssadmin List Shadows.
-ms.topic: article
+ms.topic: reference
 author: JasonGerend
 ms.author: jgerend
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d3616902fa0b971969e5e906d6dbb200c633d15a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ee35fd65a6fdab68b8f4e4155d52182980b2d0c9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891793"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022918"
 ---
 # <a name="vssadmin-list-shadows"></a>Vssadmin List Shadows
 

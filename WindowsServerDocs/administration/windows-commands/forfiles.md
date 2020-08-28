@@ -1,18 +1,18 @@
 ---
 title: forfiles
 description: Artículo de referencia para el comando forfiles, que selecciona y ejecuta un comando en un archivo o conjunto de archivos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 004c27b841629e18eac4d94f7fe0816b42762107
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c79aeddec4a2ea74eb79c7d807428b6bc5955ce2
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890141"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027633"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -28,11 +28,11 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| /P`<pathname>` | Especifica la ruta de acceso desde la que se va a iniciar la búsqueda. De forma predeterminada, la búsqueda se inicia en el directorio de trabajo actual. |
-| /M`<searchmask>` | Busca archivos según la máscara de búsqueda especificada. El valor predeterminado de searchmask es `*` . |
+| /P `<pathname>` | Especifica la ruta de acceso desde la que se va a iniciar la búsqueda. De forma predeterminada, la búsqueda se inicia en el directorio de trabajo actual. |
+| /M `<searchmask>` | Busca archivos según la máscara de búsqueda especificada. El valor predeterminado de searchmask es `*` . |
 | /S | Indica al comando **forfiles** que busque en subdirectorios de forma recursiva. |
-| /C`<command>` | Ejecuta el comando especificado en cada archivo. Las cadenas de comandos se deben incluir entre comillas dobles. El comando predeterminado es `"cmd /c echo @file"` . |
-| /D.`[{+\|-}][{<date> | <days>}]` | Selecciona los archivos con una fecha de última modificación dentro del período de tiempo especificado:<ul><li>Selecciona los archivos con una fecha de última modificación posterior o igual a ( **+** ) o anterior o igual a ( **-** ) la fecha especificada, donde la *fecha* tiene el formato mm/dd/aaaa.</li><li>Selecciona los archivos con una fecha de última modificación posterior o igual a ( **+** ) la fecha actual más el número de días especificado, o anterior o igual a ( **-** ) la fecha actual menos el número de días especificado.</li><li>Los valores válidos para los *días* incluyen cualquier número en el intervalo comprendido entre 0 y 32768. Si no se especifica ningún signo, **+** se usa de forma predeterminada.</li></ul> |
+| /C `<command>` | Ejecuta el comando especificado en cada archivo. Las cadenas de comandos se deben incluir entre comillas dobles. El comando predeterminado es `"cmd /c echo @file"` . |
+| /D. `[{+\|-}][{<date> | <days>}]` | Selecciona los archivos con una fecha de última modificación dentro del período de tiempo especificado:<ul><li>Selecciona los archivos con una fecha de última modificación posterior o igual a ( **+** ) o anterior o igual a ( **-** ) la fecha especificada, donde la *fecha* tiene el formato mm/dd/aaaa.</li><li>Selecciona los archivos con una fecha de última modificación posterior o igual a ( **+** ) la fecha actual más el número de días especificado, o anterior o igual a ( **-** ) la fecha actual menos el número de días especificado.</li><li>Los valores válidos para los *días* incluyen cualquier número en el intervalo comprendido entre 0 y 32768. Si no se especifica ningún signo, **+** se usa de forma predeterminada.</li></ul> |
 | /? | Muestra el texto de ayuda en la ventana cmd. |
 
 #### <a name="remarks"></a>Observaciones
