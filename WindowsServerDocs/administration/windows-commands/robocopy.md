@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: b149294436c78c3c9c223973fb3e9b423ff3dfd0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 48d9d564c7badf8ea34c77ce7004d0ce642b78cb
+ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036213"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89057587"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -44,7 +44,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 | Opción | Descripción |
 |--|--|
 | /s | Copia subdirectorios. Esta opción excluye automáticamente los directorios vacíos. |
-| /e | Copia subdirectorios. Esta opción excluye automáticamente los directorios vacíos. |
+| /e | Copia subdirectorios. Esta opción incluye automáticamente directorios vacíos. |
 | nivel`<n>` | Copia solo los *n* niveles principales del árbol de directorio de origen. |
 | /z | Copia los archivos en modo reiniciable. |
 | /b | Copia los archivos en modo de copia de seguridad. |
