@@ -6,14 +6,14 @@ ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/06/2020
+ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 524b90965ca1dfca726294d4518fcefa4a470cf2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a44926d50fae9dea38e3f5c46db423991a414a87
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970112"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941515"
 ---
 # <a name="compare-the-clients"></a>Comparación de los clientes
 
@@ -34,7 +34,7 @@ Si lo haces de forma remota en tu escritorio personal, hay redireccionamientos a
 | Keyboard    | X                         | X                           | X             | X       | X   | X     | X             |
 | Mouse       | X                         | X                           | X             | X       | X\* | X     | X             |
 | Tocar       | X                         | X                           | X             | X       | X   |       | X (excepto Internet Explorer) |
-| Lápiz         | X                         | X                           |               |         |     |       |               |
+| Lápiz         | X                         | X                           |               | X (como táctil) |  X (como táctil)  |       |               |
 
 *Consulta la [lista de dispositivos de entrada compatibles para el cliente de iOS de Escritorio remoto](remote-desktop-ios.md#supported-input-devices).
 
@@ -51,7 +51,7 @@ Cuando se habilita el redireccionamiento del puerto USB, los dispositivos USB co
 
 | Redireccionamiento         | Bandeja de entrada de Windows</br>(MSTSC) | Escritorio de Windows</br>(MSRDC) | Tienda Windows | Android | iOS         | macOS                           | Cliente web    |
 |---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
-| Cámaras             | X                         | X                           |               |         |   X         | X                               |               |
+| Cámaras             | X                         | X                           |               |     X    |   X         | X                               |               |
 | Portapapeles           | X                         | X                           | X             | Texto    | Texto, imágenes | X                               | texto          |
 | Unidad o almacenamiento local | X                         | X                           |               | X       |   X        | X                               |               |
 | Ubicación            | X                         | X                           |               |         |             |                                 |               |

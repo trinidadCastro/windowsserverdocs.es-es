@@ -8,12 +8,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f509a7bcea56c0791ef649f341e7b4b11c7c6e3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: afadca07931284e975aaf18192664fa1ed81e184
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967882"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033743"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>Notas de la versión: Problemas importantes en Windows Server, versión 1709
 
@@ -29,7 +29,7 @@ Espacios de almacenamiento directo no se incluye en Windows Server, versión 1
 
 Tampoco es compatible para presentar servidores que ejecutan Windows Server, versión 1709 en una implementación de Espacios de almacenamiento directo de Windows Server 2016.
 
-El modelo de lanzamiento de Windows Server ofrece una nueva opción para alinearse con modelos de mantenimiento y lanzamiento similares para [Windows 10](/windows/deployment/update/waas-overview) y [Office 365 ProPlus](https://support.office.com/article/Overview-of-the-upcoming-changes-to-Office-365-ProPlus-update-management-78b33779-9356-4cdf-9d2c-08350ef05cca?ui=en-US&rs=en-US&ad=US). Los lanzamientos del Canal semianual ofrecen nuevas funciones para los clientes que quieren mover a un ritmo rápido y tendrán novedades disponibles dos veces al año, en primavera y en otoño.
+El modelo de lanzamiento de Windows Server ofrece una nueva opción para alinearse con modelos de mantenimiento y lanzamiento similares para [Windows 10](/windows/deployment/update/waas-overview) y [Microsoft 365 Apps](https://docs.microsoft.com/DeployOffice/overview-update-channels). Los lanzamientos del Canal semianual ofrecen nuevas funciones para los clientes que quieren mover a un ritmo rápido y tendrán novedades disponibles dos veces al año, en primavera y en otoño.
 
 El Canal semianual de Windows Server se centra en contenedores y escenarios de aplicación que se benefician de una innovación más rápida; consulta este [blog](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update) para más información. Los clientes que buscan roles de infraestructura, como Espacios de almacenamiento directo, deben usar versiones del Canal de mantenimiento a largo plazo como Windows Server 2016 (disponible ahora) y [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview) (que se publicará este año). Estamos comprometidos a crear la mejor plataforma para la infraestructura hiperconvergida y seguimos desarrollando nuevas características y mejorando las existentes según tus comentarios.
 

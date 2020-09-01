@@ -7,12 +7,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: c74c8a278612d2ca47346ad95105f1258761494a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f405486c5ea34b26f23a16552c24527939ca1fd4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990480"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024569"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Uso de las actualizaciones de seguridad extendidas (ESU) de Windows Server 2008 y 2008 R2
 
@@ -44,6 +44,9 @@ Para más información, consulte [Preguntas más frecuentes sobre las Actualizac
 ## <a name="how-to-use-extended-security-updates"></a>Cómo usar las actualizaciones de seguridad extendidas
 
 Si ejecutas máquinas virtuales de Windows Server 2008 o 2008 R2 en Azure, estas se habilitan automáticamente para las actualizaciones de seguridad extendidas. No es necesario realizar ninguna configuración y no se aplica ningún cargo adicional por el uso de las actualizaciones de seguridad extendidas con las máquinas virtuales de Azure. Las actualizaciones de seguridad extendidas se entregan automáticamente a las máquinas virtuales de Azure si están configuradas para recibir actualizaciones.
+
+> [!NOTE]
+> Las VM Microsoft.ClassicCompute requieren una configuración adicional para la implementación de actualizaciones de seguridad ampliada, ya que no tienen acceso a [Instance Metadata Service de Azure](https://docs.microsoft.com/azure/virtual-machines/windows/instance-metadata-service), lo que determina la idoneidad de las actualizaciones de seguridad ampliada. Póngase en contacto con el [soporte técnico de Microsoft](https://support.microsoft.com/contactus?PID=17336) para obtener más ayuda.
 
 En el caso de otros entornos, como las máquinas virtuales locales o los servidores físicos, debes solicitar y configurar manualmente las actualizaciones de seguridad extendidas. Puedes adquirir actualizaciones de seguridad extendidas a través de programas de licencias por volumen, como Contrato Enterprise (EA), Contrato Enterprise Subscription (EAS), Enrollment for Education Solutions (EES) o Inscripción del servidor y la nube (SCE).
 

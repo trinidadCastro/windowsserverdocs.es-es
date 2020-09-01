@@ -6,12 +6,12 @@ ms.author: jaimeo, robsmi
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: e7bd68264f60b61a5c1063a51217bedb0c6c80ec
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eb222547518dc0ee13e2c7a47037ffae74fee1fa
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989834"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036773"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1803, para un rol de infraestructura de escritorio virtual (VDI)
 
@@ -566,7 +566,7 @@ Es muy importante que tengas en cuenta las actualizaciones de seguridad para las
 En cuanto a Windows Defender, es mejor permitir que se realicen las actualizaciones, incluso en VDI no persistente. Las actualizaciones se aplicarán a casi todas las sesiones de inicio de sesión, pero recuerda que estas son pequeñas y no deberían suponer un problema. Además, la VM no se retrasará en las actualizaciones porque solo se aplicará la última disponible. Lo mismo podría aplicarse en los archivos de definición que no sean de Microsoft.
 
 > [!NOTE]
-> Las aplicaciones de Store (aplicaciones UWP) se actualizan a través de Microsoft Store. Igualmente, las versiones modernas de Office, como Office 365, se actualizan a través de sus propios mecanismos cuando se conectan directamente a Internet o a través de tecnologías de administración cuando no lo están.
+> Las aplicaciones de Store (aplicaciones UWP) se actualizan a través de Microsoft Store. Las versiones modernas de Office, como Microsoft 365, se actualizan a través de sus propios mecanismos cuando se conectan directamente a Internet o a través de tecnologías de administración cuando no lo hacen.
 
 ### <a name="windows-defender-optimization-with-vdi"></a>Optimización de Windows Defender con VDI
 

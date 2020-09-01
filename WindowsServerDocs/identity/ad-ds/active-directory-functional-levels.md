@@ -1,19 +1,19 @@
 ---
 ms.assetid: f964d056-11bf-4d9b-b5ab-dceaad8bfbc3
 title: Niveles funcionales de Windows Server 2016
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
-ms.date: 10/29/2018
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
+ms.date: 08/25/2020
 ms.topic: article
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.openlocfilehash: 75ba30502c7de1b0a88886f42c3a8ef9a84a7e18
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e82dccb79a4fc3452d528581beb43ef32d52ecfc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938634"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940945"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de bosque y dominio
 
@@ -23,9 +23,9 @@ Los niveles funcionales determinan las funcionalidades disponibles de dominio o 
 
 Cuando implementes AD DS, establece los niveles funcionales de dominio y bosque en el valor más alto que admite el entorno. De esta manera, podrás usar el mayor número posible de características de AD DS. Al implementar un bosque nuevo, se te pide que establezcas el nivel funcional del bosque y, después, el nivel funcional del dominio. Puedes establecer el nivel funcional del dominio en un valor que sea superior al nivel funcional del bosque, pero no puedes establecerlo en un valor que sea inferior al nivel funcional del bosque.
 
-Con el fin del ciclo de vida de Windows 2003, los controladores de dominio (DC) de Windows 2003 deben actualizarse a Windows Server 2008, 2008R2, 2012, 2012R2, 2016 o 2019. Como resultado, todos los controladores de dominio que ejecuten Windows Server 2003 deben quitarse del dominio.
+Con el fin del ciclo de vida de Windows Server 2003, 2008 y 2008 R2, los controladores de dominio (DC) deben actualizarse a Windows Server 2012, 2012 R2, 2016 o 2019. Como resultado, todos los controladores de dominio que ejecuten Windows Server 2008 R2 y anteriores deben quitarse del dominio.
 
-En los niveles funcionales de dominio de Windows Server 2008 y superior, se usa la Replicación del sistema de archivos distribuido (DFS) para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si creas un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o superior, se usa automáticamente Replicación DFS para replicar SYSVOL. Si has creado el dominio en un nivel funcional inferior, tendrás que migrar del uso de FRS a la replicación DFS para SYSVOL. En el caso de los pasos de migración, puedes seguir los [procedimientos de TechNet](../../storage/dfs-replication/migrate-sysvol-to-dfsr.md) o puedes consultar el [conjunto de pasos simplificado en el blog de contenedor de archivos del equipo de almacenamiento](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
+En los niveles funcionales de dominio de Windows Server 2008 y superior, se usa la Replicación del sistema de archivos distribuido (DFS) para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si creas un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o superior, se usa automáticamente Replicación DFS para replicar SYSVOL. Si has creado el dominio en un nivel funcional inferior, tendrás que migrar del uso de FRS a la replicación DFS para SYSVOL. En el caso de los pasos de migración, puedes seguir los [procedimientos de TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) o puedes consultar el [conjunto de pasos simplificado en el blog de contenedor de archivos del equipo de almacenamiento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx). Windows Server 2016 RS1 es la última versión de Windows Server que incluye FRS.
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -162,6 +162,7 @@ Sistema operativo de controlador de dominio admitido:
 
 Sistema operativo de controlador de dominio admitido:
 
+* Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2

@@ -5,18 +5,18 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/20/2020
+ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b23c19304aa7773dbb3c4e1406e065fb68947c5d
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: 4ce718db142ac34a51642e1ed2128899a0e77dbf
+ms.sourcegitcommit: 47dc2671330c2ecc56cce39ef006cbfe108b4759
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702844"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88821338"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
-Puedes obtener más información detallada sobre el cliente de escritorio de Windows en [Introducción al cliente de escritorio de Windows](windowsdesktop.md). A continuación, encontrarás las actualizaciones más recientes del cliente.
+Puedes obtener más información detallada sobre el cliente de escritorio de Windows en [Introducción al cliente de escritorio de Windows](windowsdesktop.md). En este artículo, encontrará las actualizaciones más recientes del cliente.
 
 ## <a name="latest-client-versions"></a>Versiones más recientes del cliente
 
@@ -24,12 +24,12 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |Version  |
 |-----------|---------|
-|Público     |1.2.1186 |
+|Público     |1.2.1272 |
 |Insider    |1.2.1272 |
 
-## <a name="updates-for-version-121272-insider"></a>Actualizaciones de la versión 1.2.1272 [INSIDER]
+## <a name="updates-for-version-121272"></a>Actualizaciones para la versión 1.2.1272
 
-*Fecha de publicación: 11/08/2020*
+*Fecha de publicación: 25/08/2020*
 
 Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D7LK), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D5aF), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Dan3)
 

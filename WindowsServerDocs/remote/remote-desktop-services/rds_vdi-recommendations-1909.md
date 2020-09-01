@@ -7,12 +7,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 7b9500c11ca5dba7ed2f51d1d6b32b7cf689f070
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eeadbdea10f08372cd927808b4b433d8ba7ee85f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997131"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037833"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1909, para un rol de Infraestructura de escritorio virtual (VDI)
 
@@ -666,7 +666,7 @@ Es muy importante que tengas en cuenta las actualizaciones de seguridad para las
 En cuanto a Windows Defender, es mejor permitir que se realicen las actualizaciones, incluso en VDI no persistente. Las actualizaciones se aplicarán a casi todas las sesiones de inicio de sesión, pero recuerda que estas son pequeñas y no deberían suponer un problema. Además, la VM no se retrasará en las actualizaciones porque solo se aplicarán las más recientes disponibles. Lo mismo podría aplicarse en los archivos de definición de terceros.
 
 > [!NOTE]
-> Las aplicaciones de Store (aplicaciones UWP) se actualizan a través de Microsoft Store. Igualmente, las versiones modernas de Office, como Office 365, se actualizan a través de sus propios mecanismos cuando se conectan directamente a Internet o a través de tecnologías de administración cuando no lo están.
+> Las aplicaciones de Store (aplicaciones UWP) se actualizan a través de Microsoft Store. Las versiones modernas de Office, como Microsoft 365, se actualizan a través de sus propios mecanismos cuando se conectan directamente a Internet o a través de tecnologías de administración cuando no lo hacen.
 
 ### <a name="windows-system-startup-event-traces"></a>Seguimientos de eventos de inicio del sistema Windows
 
