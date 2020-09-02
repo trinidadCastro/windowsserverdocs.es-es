@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 91e14b5ac023f6726ffc508f945567b83311d7a4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b4d7d039c775b85321d168f8de7415de6b92e784
+ms.sourcegitcommit: 97a65d8f52514848963e8917021bd9a1f6ee3b19
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997017"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89287827"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conocidos del centro de administración de Windows
 
@@ -19,7 +19,7 @@ ms.locfileid: "87997017"
 
 Si encuentra un problema que no se describe en esta página, [háganoslo saber](https://aka.ms/WACfeedback).
 
-## <a name="installer"></a>Instalador
+## <a name="installer"></a>Installer
 
 - Al instalar el centro de administración de Windows con su propio certificado, tenga en cuenta que si copia la huella digital desde la herramienta MMC del administrador de certificados, contendrá [un carácter no válido al principio.](https://support.microsoft.com/help/2023835/certificate-thumbprint-displayed-in-mmc-certificate-snap-in-has-extra) Como solución alternativa, escriba el primer carácter de la huella digital y copie y pegue el resto.
 
@@ -96,13 +96,13 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.micros
 
 - No se puede importar. Certificado cifrado PFX en el almacén del usuario actual. [11818622]
 
-### <a name="events"></a>Events
+### <a name="events"></a>Eventos
 
 - Los eventos se aplican a [la compatibilidad de WebSocket cuando se usa un servicio de proxy.](#websocket-compatibility-when-using-a-proxy-service)
 
 - Es posible que reciba un error que haga referencia a "tamaño de paquete" al exportar archivos de registro de gran tamaño.
 
-  - Para resolver este error, use el siguiente comando en un símbolo del sistema con privilegios elevados en el equipo de puerta de enlace:```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - Para resolver este error, use el siguiente comando en un símbolo del sistema con privilegios elevados en el equipo de puerta de enlace: ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
 ### <a name="files"></a>Archivos
 
@@ -130,7 +130,7 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.micros
 
 - Al usar el Escritorio remoto para conectarse a un equipo que no está unido a un dominio, debe especificar su cuenta en el ```MACHINENAME\USERNAME``` formato.
 
-- Algunas configuraciones pueden bloquear el cliente de escritorio remoto del centro de administración de Windows con la Directiva de grupo. Si encuentra esto, habilítelo ```Allow users to connect remotely by using Remote Desktop Services``` en```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- Algunas configuraciones pueden bloquear el cliente de escritorio remoto del centro de administración de Windows con la Directiva de grupo. Si encuentra esto, habilítelo ```Allow users to connect remotely by using Remote Desktop Services``` en ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
 - Escritorio remoto se ve afectado por la [compatibilidad de WebSocket.](#websocket-compatibility-when-using-a-proxy-service)
 
@@ -210,7 +210,7 @@ Hyper-V debe instalarse en máquinas virtuales que ejecuten el sistema operativo
 Para instalar Hyper-V en máquinas virtuales que ejecutan el sistema operativo de Azure Stack HCI, ejecute el siguiente comando:
 
 ```PowerShell
-Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v
+Enable-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Hyper-V'
 ```
 
 ### <a name="step-17"></a>Paso 1,7
