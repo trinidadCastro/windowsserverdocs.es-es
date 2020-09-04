@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 0f9499402a5788cd3dc9ad9cd262d65636f9284c
-ms.sourcegitcommit: 076504a92cddbd4b84bfcd89da1bf1c8c9e79495
+ms.openlocfilehash: 392065ac9fe9e32e84550e14cd9ef39349ac8d67
+ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89427497"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89472025"
 ---
 # <a name="obtain-certificates-for-hgs"></a>Obtener certificados para HGS
 
@@ -59,15 +59,23 @@ Recibirá una advertencia al importar la información del certificado en el Asis
 Para crear certificados autofirmados y exportarlos a un archivo PFX, ejecute los siguientes comandos en PowerShell:
 
 ```powershell
-$certificatePassword = Read-Host -AsSecureString -Prompt "Enter a password for the PFX file"
+$certificatePassword = Read-Host -AsSecureString -Prompt 'Enter a password for the PFX file'
 
-$signCert = New-SelfSignedCertificate -Subject "CN=HGS Signing Certificate" -KeyUsage DataEncipherment, DigitalSignature
-Export-PfxCertificate -FilePath .\signCert.pfx -Password $certificatePassword -Cert $signCert
+$signCert = New-SelfSignedCertificate -Subject 'CN=HGS Signing Certificate' -KeyUsage DataEncipherment, DigitalSignature
+Export-PfxCertificate -FilePath '.\signCert.pfx' -Password $certificatePassword -Cert $signCert
+
+# Remove the certificate from "Personal" container
 Remove-Item $signCert.PSPath
+# Remove the certificate from "Intermediate certification authorities" container
+Remove-Item -Path "Cert:\LocalMachine\CA\$($signCert.Thumbprint)"
 
-$encCert = New-SelfSignedCertificate -Subject "CN=HGS Encryption Certificate" -KeyUsage DataEncipherment, DigitalSignature
-Export-PfxCertificate -FilePath .\encCert.pfx -Password $certificatePassword -Cert $encCert
+$encCert = New-SelfSignedCertificate -Subject 'CN=HGS Encryption Certificate' -KeyUsage DataEncipherment, DigitalSignature
+Export-PfxCertificate -FilePath '.\encCert.pfx' -Password $certificatePassword -Cert $encCert
+
+# Remove the certificate from "Personal" container
 Remove-Item $encCert.PSPath
+# Remove the certificate from "Intermediate certification authorities" container
+Remove-Item -Path "Cert:\LocalMachine\CA\$($encCert.Thumbprint)"
 ```
 
 ## <a name="request-an-ssl-certificate"></a>Solicitar un certificado SSL
@@ -79,8 +87,8 @@ Tanto los hosts de Hyper-V como los nodos HGS deben confiar en el certificado SS
 
 Propiedad de certificado SSL | Valor requerido
 -------------------------|---------------
-Nombre de sujeto             | Nombre del clúster de HGS (conocido como nombre de red distribuida o FQDN de objeto de equipo virtual). Esta será la concatenación del nombre del servicio HGS proporcionada a `Initialize-HgsServer` y el nombre de dominio de HGS.
-Nombre alternativo del firmante | Si va a usar un nombre DNS diferente para llegar al clúster de HGS (por ejemplo, si se encuentra detrás de un equilibrador de carga), asegúrese de incluir esos nombres DNS en el campo SAN de la solicitud de certificado.
+Nombre de sujeto             | Dirección en la que los clientes HGS (es decir, hosts de Guraded) usarán para acceder al servidor de HGS. Esta suele ser la dirección DNS del clúster de HGS, conocido como el nombre de red distribuida o el objeto de equipo virtual (VCO). Esta será la concatenación del nombre del servicio HGS proporcionada a `Initialize-HgsServer` y el nombre de dominio de HGS.
+Nombre alternativo del firmante | Si va a usar un nombre DNS diferente para llegar al clúster de HGS (por ejemplo, si está detrás de un equilibrador de carga o si usa direcciones diferentes para un subconjunto de nodos en una topología compleja), asegúrese de incluir esos nombres DNS en el campo SAN de la solicitud de certificado. Tenga en cuenta que si se rellena la extensión SAN, se omite el nombre de sujeto y, por lo tanto, SAN debe incluir todos los valores, incluido el que normalmente se pondría en el nombre de sujeto.
 
 Las opciones para especificar este certificado al inicializar el servidor HGS se describen en [configuración del primer nodo HGS](guarded-fabric-initialize-hgs.md).
 También puede Agregar o cambiar el certificado SSL en otro momento con el cmdlet [set-HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps) .
