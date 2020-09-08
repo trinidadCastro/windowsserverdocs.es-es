@@ -6,12 +6,12 @@ ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
-ms.openlocfilehash: d7e655ba001f72bb6c2a5e68db8032520232bf8d
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.openlocfilehash: b4a5056bdd5324e46cf5973d7b04cb51394e7100
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838124"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554378"
 ---
 # <a name="whats-new-in-windows-server-2019-essentials"></a>Novedades de Windows Server 2019 Essentials
 
@@ -28,7 +28,7 @@ Con el desuso de los roles de experiencia con Server Essentials, las siguientes 
 
 ## <a name="microsoft-365-business-the-modern-small-business-solution"></a>Microsoft 365 Empresa: la solución moderna de pequeña empresa
 
-A lo largo de los años desde que se lanzó Windows Server 2016 Essentials, nos hemos trabajado mucho en la siguiente solución para empresas grandes y pequeñas: Microsoft 365. Se recomienda encarecidamente Microsoft 365 para los clientes de pequeñas empresas como sustituto de todas las versiones de Windows Server Essentials. Microsoft 365 es una solución moderna para el uso compartido y la colaboración de archivos, e incluye Office 365, Windows 10 y Enterprise Mobility + Security.
+A lo largo de los años desde que se lanzó Windows Server 2016 Essentials, nos hemos trabajado mucho en la siguiente solución para empresas grandes y pequeñas: Microsoft 365. Se recomienda encarecidamente Microsoft 365 para los clientes de pequeñas empresas como sustituto de todas las versiones de Windows Server Essentials. Microsoft 365 es una solución moderna para el uso compartido y la colaboración de archivos, e incluye Microsoft 365, Windows 10 y Enterprise Mobility + Security.
 
 Desarrolle su negocio con [Microsoft 365 empresa](https://www.microsoft.com/microsoft-365/business), que incluye incluso más características de Office, como el correo electrónico y el calendario, el almacenamiento de archivos en la nube, la protección de datos, etc. Microsoft 365 Empresa ayudará a su pequeña empresa a alcanzar nuevos niveles de productividad.
 

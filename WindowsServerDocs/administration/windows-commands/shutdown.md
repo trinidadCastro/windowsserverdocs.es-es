@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44ee776ec2ec199fe39cfd17a05dfc3b8ba4502c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f83788b4d8e8f92ea1375b9a0f245f9bfa63bc85
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036453"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554388"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -23,7 +23,7 @@ Permite apagar o reiniciar los equipos locales o remotos de uno en uno.
 ## <a name="syntax"></a>Sintaxis
 
 ```
-shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c comment]]
+shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c "descriptive comment"]]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -47,23 +47,23 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 ## <a name="remarks"></a>Observaciones
 
--   Los usuarios deben tener asignado el derecho de usuario **apagar el sistema** para apagar un equipo administrado de forma remota o local que use el comando **Shutdown** .
--   Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para más información, consulte:
-    -   [Grupos locales predeterminados](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
-    -   [Grupos predeterminados](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
--   Si desea apagar más de un equipo a la vez, puede llamar a **Shutdown** para cada equipo mediante un script, o bien puede usar **Shutdown** **/i** para mostrar el cuadro de diálogo apagado remoto.
--   Si especifica códigos de motivo principales y secundarios, primero debe definir estos códigos de motivo en cada equipo en el que vaya a usar los motivos. Si los códigos de motivo no están definidos en el equipo de destino, el rastreador de eventos de apagado no puede registrar el texto de motivo correcto.
--   Recuerde indicar que se ha planeado un apagado mediante el parámetro **p:** . La omisión de **p:** indica que un cierre no está planeado. Si escribe **p:** seguido del código de motivo para un apagado no planeado, el comando no llevará a cabo el cierre. Por el contrario, si se omite **p:** y se escribe el código de motivo para un cierre planeado, el comando no llevará a cabo el cierre.
+- Los usuarios deben tener asignado el derecho de usuario **apagar el sistema** para apagar un equipo administrado de forma remota o local que use el comando **Shutdown** .
+- Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para obtener más información, consulte:
+    - [Grupos locales predeterminados](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
+    - [Grupos predeterminados](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
+- Si desea apagar más de un equipo a la vez, puede llamar a **Shutdown** para cada equipo mediante un script, o bien puede usar **Shutdown** **/i** para mostrar el cuadro de diálogo apagado remoto.
+- Si especifica códigos de motivo principales y secundarios, primero debe definir estos códigos de motivo en cada equipo en el que vaya a usar los motivos. Si los códigos de motivo no están definidos en el equipo de destino, el rastreador de eventos de apagado no puede registrar el texto de motivo correcto.
+- Recuerde indicar que se ha planeado un apagado mediante el parámetro **p:** . La omisión de **p:** indica que un cierre no está planeado. Si escribe **p:** seguido del código de motivo para un apagado no planeado, el comando no llevará a cabo el cierre. Por el contrario, si se omite **p:** y se escribe el código de motivo para un cierre planeado, el comando no llevará a cabo el cierre.
 
 ## <a name="examples"></a>Ejemplos
 
 Para forzar que las aplicaciones cierren y reinicien el equipo local después de un retraso de un minuto con el motivo aplicación: mantenimiento (planeado) y el comentario reconfigurando myapp.exe tipo:
 ```
-shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
+shutdown /r /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```
 Para reiniciar el equipo remoto \\ \\ ServerName con los mismos parámetros, escriba:
 ```
-shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
+shutdown /r /m \\servername /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

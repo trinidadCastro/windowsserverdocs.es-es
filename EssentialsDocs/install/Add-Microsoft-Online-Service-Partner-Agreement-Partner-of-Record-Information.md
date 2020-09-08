@@ -7,19 +7,19 @@ ms.assetid: 9bd191d6-ecc5-4230-a88e-f3fc281cb956
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c1d6d9b056c4ccc5b6961023e1f0c22034321960
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 807aacc5039bf90ea4dd7c7859c232d8c8b3011a
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181581"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554348"
 ---
 # <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>Agregar información de socio de registro del contrato de socio del servicio en línea de Microsoft
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_3rdLevelDomanNames"></a>
- Si es socio del acuerdo de socio de servicio en línea de Microsoft (MOSPA) para Office 365, para asegurarse de que está correctamente compensada cuando una solicitud de suscripción se origina en Windows Server Essentials a través del módulo de integración de Office 365, debe crear una clave del registro que contenga su identificación de socio de registro (por identificador). La siguiente información se lee y se pasa al proveedor de servicios a través de las direcciones URL de suscripción a Office 365.
+ Si es un asociado del acuerdo de asociado de servicio en línea de Microsoft (MOSPA) para Microsoft 365, para asegurarse de que está correctamente compensada cuando una solicitud de suscripción se origina en Windows Server Essentials a través del módulo de integración de Microsoft 365, debe crear una clave del registro que contenga su identificación de socio de registro (por identificador). La siguiente información se lee y se pasa al proveedor de servicios a través de las direcciones URL de registro de Microsoft 365.
 
 -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO
 

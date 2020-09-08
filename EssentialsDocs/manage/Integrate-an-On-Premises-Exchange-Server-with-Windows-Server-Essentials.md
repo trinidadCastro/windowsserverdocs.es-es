@@ -7,12 +7,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cef547570c58c405ac563a1c2215feda120350f4
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.openlocfilehash: 7975f70d75a33549d0a3c7616b5260064d5cb323
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837884"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554428"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar un servidor local de Exchange Server con Windows Server Essentials
 
@@ -25,7 +25,7 @@ Esta guía proporciona información e instrucciones básicas que le ayudarán a 
 > [!NOTE]
 >  Exchange Server 2010 no permite la instalación de equipos que ejecutan Windows Server 2012.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
  Antes de instalar Exchange Server en una red de Windows Server Essentials, asegúrese de completar las tareas descritas en esta sección.
 
 -   [Configurar un servidor que ejecuta Windows Server Essentials](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)
@@ -34,10 +34,10 @@ Esta guía proporciona información e instrucciones básicas que le ayudarán a 
 
 -   [Configurar su nombre de dominio de Internet](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_DomainNames)
 
-###  <a name="set-up-a-server-that-is-running-windows-server-essentials"></a><a name="BKMK_SetUpSBS8"></a>Configurar un servidor que ejecute Windows Server Essentials
+###  <a name="set-up-a-server-that-is-running-windows-server-essentials"></a><a name="BKMK_SetUpSBS8"></a> Configurar un servidor que ejecute Windows Server Essentials
  Debe haber configurado un servidor que ejecuta Windows Server Essentials. Este será el controlador de dominio para el servidor que ejecuta Exchange Server. Para obtener información acerca de cómo configurar Windows Server Essentials, vea [Instalar Windows Server Essentials](../install/Install-Windows-Server-Essentials.md).
 
-###  <a name="prepare-a-second-server-on-which-to-install-exchange-server"></a><a name="BKMK_SecondServer"></a>Preparar un segundo servidor en el que instalar Exchange Server
+###  <a name="prepare-a-second-server-on-which-to-install-exchange-server"></a><a name="BKMK_SecondServer"></a> Preparar un segundo servidor en el que instalar Exchange Server
  Debe instalar Exchange Server en un segundo servidor que ejecute una versión del sistema operativo Windows Server que admita oficialmente Exchange Server 2010 o Exchange Server 2013. Después, debe unir el segundo servidor al dominio de Windows Server Essentials.
 
  Para obtener información sobre cómo unir un segundo servidor al dominio de Windows Server Essentials, consulte unir un segundo servidor a la red en [conectarse](../use/Get-Connected-in-Windows-Server-Essentials.md).
@@ -45,7 +45,7 @@ Esta guía proporciona información e instrucciones básicas que le ayudarán a 
 > [!NOTE]
 >  Microsoft no admite la instalación de Exchange Server en un servidor que ejecute Windows Server Essentials.
 
-###  <a name="configure-your-internet-domain-name"></a><a name="BKMK_DomainNames"></a>Configurar el nombre de dominio de Internet
+###  <a name="configure-your-internet-domain-name"></a><a name="BKMK_DomainNames"></a> Configurar el nombre de dominio de Internet
  Para integrar un servidor local que ejecuta Exchange Server con Windows Server Essentials, debe haber registrado un nombre de dominio de Internet válido para su empresa (por ejemplo, *contoso.com*). También debe trabajar con su proveedor de nombres de dominio para crear los registros de recursos DNS que Exchange Server necesita.
 
  Por ejemplo, si el nombre de dominio de Internet de su compañía es contoso.com y quiere usar el nombre completo (FQDN) de *mail.contoso.com* para hacer referencia al servidor local que ejecuta Exchange Server, trabaje con su proveedor de nombres de dominio para crear los registros de recursos DNS de la siguiente tabla.
@@ -426,7 +426,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
  Si deshabilita la integración con un servidor local de Exchange ya no podrá usar el panel de Windows Server Essentials para ver, crear o administrar buzones de correo de Exchange Server.
 
 ### <a name="what-do-i-need-to-know-about-email-accounts"></a>¿Qué debo saber acerca de las cuentas de correo electrónico?
- Hay una solución de correo electrónico hospedado configurada en el servidor. Una solución de un proveedor de correo electrónico hospedado, como Microsoft Office 365, puede proporcionar cuentas de correo electrónico individuales para los usuarios de la red. Al ejecutar el asistente para agregar cuentas de usuario en Windows Server Essentials, el asistente intenta agregar la cuenta de usuario a la solución disponible de correo electrónico hospedado. Al mismo tiempo, el asistente asigna un nombre de correo electrónico (alias) al usuario y establece el tamaño máximo del buzón (cuota). El tamaño máximo del buzón varía en función del proveedor de correo electrónico que use. Después de agregar la cuenta de usuario puede seguir administrando la información del alias y la cuota de buzón desde la página de propiedades del usuario. Para tener una administración completa de las cuentas de usuario y el proveedor de correo electrónico hospedado, use la consola de administración de su proveedor hospedado. En función del proveedor, puede tener acceso a su consola de administración desde un portal basado en web o desde una pestaña en el panel del servidor.
+ Hay una solución de correo electrónico hospedado configurada en el servidor. Una solución de un proveedor de correo electrónico hospedado, como Microsoft 365, puede proporcionar cuentas de correo electrónico individuales para los usuarios de la red. Al ejecutar el asistente para agregar cuentas de usuario en Windows Server Essentials, el asistente intenta agregar la cuenta de usuario a la solución disponible de correo electrónico hospedado. Al mismo tiempo, el asistente asigna un nombre de correo electrónico (alias) al usuario y establece el tamaño máximo del buzón (cuota). El tamaño máximo del buzón varía en función del proveedor de correo electrónico que use. Después de agregar la cuenta de usuario puede seguir administrando la información del alias y la cuota de buzón desde la página de propiedades del usuario. Para tener una administración completa de las cuentas de usuario y el proveedor de correo electrónico hospedado, use la consola de administración de su proveedor hospedado. En función del proveedor, puede tener acceso a su consola de administración desde un portal basado en web o desde una pestaña en el panel del servidor.
 
  Se envía el alias proporcionado al ejecutar el asistente para agregar cuentas de usuario al proveedor de correo electrónico hospedado como nombre sugerido para el alias del usuario. Por ejemplo, si el alias de usuario es *FrankM*, la dirección de correo electrónico del usuario podría ser <em>FrankM@Contoso.com</em> .
 

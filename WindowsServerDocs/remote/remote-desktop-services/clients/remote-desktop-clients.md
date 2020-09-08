@@ -8,12 +8,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 01/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e453e6e65dc0850b7e872f655eda28a6e319c5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a51e21877cc0e0e066765d9f73e74103f3a96245
+ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958053"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89282097"
 ---
 # <a name="remote-desktop-clients"></a>Clientes de Escritorio remoto
 

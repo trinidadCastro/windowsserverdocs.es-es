@@ -6,13 +6,13 @@ ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
-ms.date: 04/08/2020
-ms.openlocfilehash: 88d5659bb4732c82cc7ecc5e4a5e806f4b984739
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/29/2020
+ms.openlocfilehash: 5bd5f7a129cbc5c69bc6b909e292c096a3812af1
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989318"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554558"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Máquinas virtuales de Ubuntu admitidas en Hyper-V
 
@@ -28,10 +28,10 @@ El siguiente mapa de distribución de características indica las característic
 
 * (*en blanco*): característica no disponible
 
-|**Característica**|**Versión del sistema operativo Windows Server**|**19,10**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
+|**Característica**|**Versión del sistema operativo Windows Server**|**20.04 LTS**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
 |-|-|-|-|-|-|
 |**Disponibilidad**||Integrada|Integrada|Integrada|Integrada|
-|**[Principal](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 hora precisa|2019, 2016|&#10004;|&#10004;|&#10004;||
 |**[Redes](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
 |Tramas gigantes|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -44,26 +44,26 @@ El siguiente mapa de distribución de características indica las característic
 |**[Storage](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||
 |Cambiar el tamaño de VHDX|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Canal de fibra virtual|2019, 2016, 2012 R2|&#10004; Nota 2|&#10004; Nota 2|&#10004; Nota 2|&#10004; Nota 2|
-|Copia de seguridad de máquinas virtuales en vivo|2019, 2016, 2012 R2|&#10004; Nota 3, 4, 6|&#10004; Nota 3, 4, 5|&#10004; Nota 3, 4, 5|&#10004; Nota 3, 4, 5|
+|Copia de seguridad de máquinas virtuales en vivo|2019, 2016, 2012 R2|&#10004; Nota 3, 4, 5|&#10004; Nota 3, 4, 5|&#10004; Nota 3, 4, 5|&#10004; Nota 3, 4, 5|
 |Compatibilidad con TRIM|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |WWN SCSI|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
+|**[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
 |Compatibilidad con el kernel PAE|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Configuración de la brecha de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|Memoria dinámica: agregar en caliente|2019, 2016, 2012 R2|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|
-|Memoria dinámica: globos|2019, 2016, 2012 R2|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|&#10004; Nota 7, 8, 9|
+|Memoria dinámica: agregar en caliente|2019, 2016, 2012 R2|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|
+|Memoria dinámica: globos|2019, 2016, 2012 R2|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|
 |Tamaño de memoria en tiempo de ejecución|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[Cámara](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
+|**[Vídeos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
 |Dispositivo de vídeo específico de Hyper-V|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
-|Par clave-valor|2019, 2016, 2012 R2|&#10004; Nota 6, 10|Nota &#10004; 5, 10|Nota &#10004; 5, 10|Nota &#10004; 5, 10|
+|Par clave-valor|2019, 2016, 2012 R2|Nota &#10004; 5, 9|Nota &#10004; 5, 9|Nota &#10004; 5, 9|Nota &#10004; 5, 9|
 |Interrupción no enmascarable|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Copia de archivos de host a invitado|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |comando lsvmbus|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|Sockets de Hyper-V|2019, 2016|||||
+|Sockets de Hyper-V|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
 |Acceso directo/DDA de PCI|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[Máquinas virtuales de generación 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||
-|Arranque mediante UEFI|2019, 2016, 2012 R2|&#10004; Nota 11, 12|&#10004; Nota 11, 12|&#10004; Nota 11, 12|&#10004; Nota 11, 12|
+|Arranque mediante UEFI|2019, 2016, 2012 R2|&#10004; Nota 10, 11|&#10004; Nota 10, 11|&#10004; Nota 10, 11|&#10004; Nota 10, 11|
 |Arranque seguro|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
 
 ## <a name="notes"></a>Notas
@@ -78,43 +78,31 @@ El siguiente mapa de distribución de características indica las característic
 
 5. En las versiones de compatibilidad a largo plazo (LTS), se usa el kernel de habilitación de hardware virtual (HWE) más reciente para la Integration Services de Linux actualizada.
 
-   Para instalar el kernel optimizado para Azure en 14,04, 16,04 y 18,04, ejecute los siguientes comandos como raíz (o sudo):
+   Para instalar el kernel optimizado para Azure en 16,04, 18,04 y 20,04, ejecute los siguientes comandos como raíz (o sudo):
 
    ```bash
    # apt-get update
    # apt-get install linux-azure
    ```
+6. La compatibilidad con memoria dinámica solo está disponible en las máquinas virtuales de 64 bits.
 
-6. En Ubuntu 19,10, use el kernel virtual más reciente para tener funciones de Hyper-V actualizadas.
-
-   Para instalar el kernel virtual en 19,10, ejecute los siguientes comandos como root (o sudo):
-
-   ```bash
-   # apt-get update
-   # apt-get install linux-azure
-   ```
-
-   Cada vez que se actualiza el kernel, es necesario reiniciar la máquina virtual para usarla.
-
-7. La compatibilidad con memoria dinámica solo está disponible en las máquinas virtuales de 64 bits.
-
-8. Memoria dinámica operaciones pueden producir un error si el sistema operativo invitado se está ejecutando demasiado bajo en la memoria. A continuación se indican algunas prácticas recomendadas:
+7. Memoria dinámica operaciones pueden producir un error si el sistema operativo invitado se está ejecutando demasiado bajo en la memoria. A continuación se indican algunas prácticas recomendadas:
 
    * La memoria de inicio y la memoria mínima deben ser iguales o mayores que la cantidad de memoria que el proveedor de distribución recomienda.
 
    * Las aplicaciones que tienden a consumir toda la memoria disponible en un sistema se limitan a consumir hasta el 80 por ciento de la RAM disponible.
 
-9. Si usa Memoria dinámica en los sistemas operativos Windows Server 2019, Windows Server 2016 o Windows Server 2012/2012 R2, especifique la **memoria de inicio**, la **memoria mínima**y los parámetros de **memoria máxima** en múltiplos de 128 megabytes (MB). Si no lo hace, pueden producirse errores de adición en caliente y es posible que no vea ningún aumento de la memoria en un sistema operativo invitado.
+8. Si usa Memoria dinámica en los sistemas operativos Windows Server 2019, Windows Server 2016 o Windows Server 2012/2012 R2, especifique la **memoria de inicio**, la **memoria mínima**y los parámetros de **memoria máxima** en múltiplos de 128 megabytes (MB). Si no lo hace, pueden producirse errores de adición en caliente y es posible que no vea ningún aumento de la memoria en un sistema operativo invitado.
 
-10. En Windows Server 2019, Windows Server 2016 o Windows Server 2012 R2, es posible que la infraestructura de pares clave-valor no funcione correctamente sin una actualización de software de Linux. Póngase en contacto con el proveedor de distribución para obtener la actualización de software en caso de que vea problemas con esta característica.
+9. En Windows Server 2019, Windows Server 2016 o Windows Server 2012 R2, es posible que la infraestructura de pares clave-valor no funcione correctamente sin una actualización de software de Linux. Póngase en contacto con el proveedor de distribución para obtener la actualización de software en caso de que vea problemas con esta característica.
 
-11. En Windows Server 2012 R2, las máquinas virtuales de generación 2 tienen el arranque seguro habilitado de forma predeterminada y algunas máquinas virtuales Linux no se iniciarán a menos que se deshabilite la opción de arranque seguro. Puede deshabilitar el arranque seguro en la sección **firmware** de la configuración de la máquina virtual en el **Administrador de Hyper-V** o puede deshabilitarla mediante PowerShell:
+10. En Windows Server 2012 R2, las máquinas virtuales de generación 2 tienen el arranque seguro habilitado de forma predeterminada y algunas máquinas virtuales Linux no se iniciarán a menos que se deshabilite la opción de arranque seguro. Puede deshabilitar el arranque seguro en la sección **firmware** de la configuración de la máquina virtual en el **Administrador de Hyper-V** o puede deshabilitarla mediante PowerShell:
 
     ```Powershell
     Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
     ```
 
-12. Antes de intentar copiar el VHD de una máquina virtual VHD de generación 2 existente para crear nuevas máquinas virtuales de segunda generación, siga estos pasos:
+11. Antes de intentar copiar el VHD de una máquina virtual VHD de generación 2 existente para crear nuevas máquinas virtuales de segunda generación, siga estos pasos:
 
     1. Inicie sesión en la máquina virtual de generación 2 existente.
 
