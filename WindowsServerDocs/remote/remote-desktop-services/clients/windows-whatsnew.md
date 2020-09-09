@@ -7,14 +7,14 @@ manager: lizross
 ms.author: helohr
 ms.date: 08/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 56e2a5f91983f8fe64382e162ecf18b30e75b41d
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: f33c60cb318466b6dbbff2edb3ab8efa7bb4be78
+ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938795"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89282107"
 ---
-# <a name="whats-new-in-the-windows-store-client"></a>Novedades del cliente de Microsoft Store
+# <a name="whats-new-in-the-microsoft-store-client"></a>Novedades del cliente de Microsoft Store
 
 El [cliente de Microsoft Store](windows.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 

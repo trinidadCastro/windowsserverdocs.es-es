@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 11/15/2019
+ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 80663da151137d093634c36a25d4d061c8038e60
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 18142988108e1eafe59ca7fd83a29dd4dfb87720
+ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961869"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89472035"
 ---
 # <a name="whats-new-in-the-web-client"></a>Novedades del cliente web
 
@@ -20,6 +20,17 @@ El [cliente web de Escritorio remoto](remote-desktop-web-client.md) se actualiza
 
 > [!NOTE]
 > Cambiamos el sistema de control de versiones del cliente web. A partir de la versión 1.0.18.0, todas las versiones del cliente web incluirán números (con el formato "W.X.Y.Z"). Los números de versión del cliente web de Escritorio remoto siempre terminarán en 0 (por ejemplo, W.X.Y.0). Cada versión del cliente web de Windows Virtual Desktop cambiará el último dígito hasta la próxima versión del cliente web de Escritorio remoto (por ejemplo, 1.0.18.1).
+
+## <a name="updates-for-10220"></a>Actualizaciones de la versión 1.0.22.0
+*Fecha de publicación: 2/9/2020*
+
+- Los usuarios ahora pueden mover el menú minimizado.
+- Se ha mejorado la compatibilidad con monitores 4K y ultraanchos, y se ha corregido un problema en que la copia de grandes cantidades de datos provocaba el bloqueo de las sesiones.
+- Se ha mejorado la compatibilidad para usar un editor de métodos de entrada (IME) en la sesión remota. Para obtener más información sobre el uso de un editor de métodos de entrada con el cliente web, consulte [Conexión a Windows Virtual Desktop con el cliente web](/azure-docs/articles/virtual-desktop/connect-web.md).
+- Se ha cambiado la interfaz de usuario de la página **Todos los recursos**.
+- Se han corregido varios errores de secuencia de conexión en los que el cliente web devolvía un *error de protocolo general*.
+- Se han corregido problemas de entrada de teclado en los que secuencias de teclas específicas no se controlaban correctamente.
+- Mejoras de accesibilidad.
 
 ## <a name="updates-for-version-10210"></a>Actualizaciones de la versión 1.0.21.0
 *Fecha de publicación: 15/11/2019*
