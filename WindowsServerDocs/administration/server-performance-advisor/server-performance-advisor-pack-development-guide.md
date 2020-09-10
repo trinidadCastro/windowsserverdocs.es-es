@@ -870,7 +870,7 @@ Todos los datos recopilados se importan en las siguientes tablas correspondiente
 
 * ETW
 
-    * \#Eventos
+    * \#Ceso
 
     * \#EventProperties
 
