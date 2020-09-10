@@ -2,16 +2,16 @@
 title: bitsadmin sethelpertokenflags
 description: Artículo de referencia para el comando bitsadmin sethelpertokenflags, que establece las marcas de uso de un token auxiliar que está asociado a un trabajo de transferencia de BITS.
 ms.topic: reference
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 03/01/2019
-ms.openlocfilehash: 9cb562debae43be41ba1c126b0270ffbcf1e4f25
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 23a2626fcd1eb92c388ea1dc24682526bac59af5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028523"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630880"
 ---
 # <a name="bitsadmin-sethelpertokenflags"></a>bitsadmin sethelpertokenflags
 

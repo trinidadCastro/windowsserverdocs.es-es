@@ -3,16 +3,16 @@ title: bitsadmin setminretrydelay
 description: Artículo de referencia para el comando bitsadmin setminretrydelay, que establece el tiempo mínimo, en segundos, que BITS espera después de encontrar un error transitorio antes de intentar transferir el archivo.
 ms.topic: reference
 ms.assetid: ce8674ca-6cc5-4bb2-8dda-7dfbb1cd6830
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ef8ed52e991ae9c2d1807ade604cc0cab066743
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7ddce1aea607ed279aaa6c582ddc1661d269204e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031273"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630819"
 ---
 # <a name="bitsadmin-setminretrydelay"></a>bitsadmin setminretrydelay
 

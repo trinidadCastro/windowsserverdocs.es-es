@@ -3,16 +3,16 @@ title: bitsadmin peercaching y setconfigurationflags
 description: Artículo de referencia del comando bitsadmin y setconfigurationflags, que establece las marcas de configuración que determinan si el equipo puede servir contenido a los equipos del mismo nivel y si puede descargar contenido de los equipos del mismo nivel.
 ms.topic: reference
 ms.assetid: ff0a2b49-66e3-4d40-824c-6a3816055d2e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0027fa5c926f09b95541906f168e852292b19aaf
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 73daad6a915ee39f166d54efd79290ce92df60db
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026532"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631344"
 ---
 # <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>bitsadmin peercaching y setconfigurationflags
 
@@ -29,7 +29,7 @@ bitsadmin /peercaching /setconfigurationflags <job> <value>
 | Parámetro | Descripción |
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
-| value | Entero sin signo con la siguiente interpretación de los bits en la representación binaria:<ul><li>Para permitir que los datos del trabajo se descarguen de un elemento del mismo nivel, establezca el bit menos significativo.</li><li>Para permitir que los datos del trabajo se atiendan a los elementos del mismo nivel, establezca el segundo bit de la derecha.</li></ul>|
+| valor | Entero sin signo con la siguiente interpretación de los bits en la representación binaria:<ul><li>Para permitir que los datos del trabajo se descarguen de un elemento del mismo nivel, establezca el bit menos significativo.</li><li>Para permitir que los datos del trabajo se atiendan a los elementos del mismo nivel, establezca el segundo bit de la derecha.</li></ul>|
 
 ## <a name="examples"></a>Ejemplos
 

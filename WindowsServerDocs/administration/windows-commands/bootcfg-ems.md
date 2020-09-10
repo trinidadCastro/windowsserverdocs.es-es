@@ -3,16 +3,16 @@ title: bootcfg ems
 description: Artículo de referencia del comando bootcfg EMS, que permite al usuario agregar o cambiar la configuración para la redirección de la consola de servicios de administración de emergencia a un equipo remoto.
 ms.topic: reference
 ms.assetid: 57abdc50-c64a-45f1-8470-3f8c3a51f743
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: da374cc5b901be72c8ef3fed2a16d7d56c5d53fe
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f88e4c6efd887a0c4b657a04dc977599689a6655
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034463"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630208"
 ---
 # <a name="bootcfg-ems"></a>bootcfg ems
 

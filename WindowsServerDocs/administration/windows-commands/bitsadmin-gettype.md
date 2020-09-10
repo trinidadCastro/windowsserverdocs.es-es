@@ -3,16 +3,16 @@ title: bitsadmin gettype
 description: Artículo de referencia del comando bitsadmin GetType, que recupera el tipo de trabajo del trabajo especificado.
 ms.topic: reference
 ms.assetid: bec16f04-3e95-4587-889e-3de6ad03c9c8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6edd13a6647852fd9491254864199895a07ce1f0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ccb938e1fe67164567bbe8d6c87d87423026db96
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024399"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631563"
 ---
 # <a name="bitsadmin-gettype"></a>bitsadmin gettype
 
@@ -30,7 +30,7 @@ bitsadmin /gettype <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-#### <a name="output"></a>Output
+#### <a name="output"></a>Resultados
 
 Los valores de salida devueltos pueden ser:
 

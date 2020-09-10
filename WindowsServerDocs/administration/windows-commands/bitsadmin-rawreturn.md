@@ -3,16 +3,16 @@ title: bitsadmin rawreturn
 description: Artículo de referencia para el comando bitsadmin rawreturn, que devuelve los datos adecuados para el análisis.
 ms.topic: reference
 ms.assetid: bbe97130-26f6-4cdd-84f1-baf530ce38b7
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d2be3712e4faf4803683ef32a10031894a913bd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 286e84c16087cc000a6af29b3be53d529425dfde
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026443"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631209"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 

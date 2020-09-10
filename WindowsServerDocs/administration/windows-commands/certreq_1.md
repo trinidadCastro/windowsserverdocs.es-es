@@ -3,16 +3,16 @@ title: certreq
 description: Artículo de referencia para el comando CertReq, que solicita certificados de una entidad de certificación (CA), recupera una respuesta a una solicitud anterior de una CA, crea una nueva solicitud a partir de un archivo. inf, acepta e instala una respuesta a una solicitud, construye una solicitud de certificación cruzada o de subordinación completa desde un certificado o una solicitud de CA existente y firma una solicitud de certificación cruzada o de subordinación completa.
 ms.topic: reference
 ms.assetid: 7a04e51f-f395-4bff-b57a-0e9efcadf973
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: eb910415c46a57353eeffe7168ce71c055d82eca
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1f2cdc1123595dae9c0c72bcdc77c2f55382c760
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031253"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629942"
 ---
 # <a name="certreq"></a>certreq
 
@@ -101,7 +101,7 @@ Esta área del archivo INF es obligatoria para todas las plantillas de solicitud
 
 | Clave<sup>1</sup> | Descripción | Valor<sup>2</sup> | Ejemplo |
 | --- | ---------- | ----- | ------- |
-| Contenido | Varias aplicaciones se basan en la información del firmante de un certificado. Se recomienda especificar un valor para esta clave. Si el asunto no se establece aquí, se recomienda incluir un nombre de sujeto como parte de la extensión de certificado de nombre alternativo del firmante. | Valores de cadena de nombre distintivo relativo | Subject = CN = Equipo1. contoso. com subject = CN = John Smith, CN = users, DC = Contoso, DC = com |
+| Firmante | Varias aplicaciones se basan en la información del firmante de un certificado. Se recomienda especificar un valor para esta clave. Si el asunto no se establece aquí, se recomienda incluir un nombre de sujeto como parte de la extensión de certificado de nombre alternativo del firmante. | Valores de cadena de nombre distintivo relativo | Subject = CN = Equipo1. contoso. com subject = CN = John Smith, CN = users, DC = Contoso, DC = com |
 | Exportable | Si se establece en TRUE, la clave privada se puede exportar con el certificado. Para garantizar un alto nivel de seguridad, las claves privadas no deben ser exportables; sin embargo, en algunos casos, podría ser necesario si varios equipos o usuarios deben compartir la misma clave privada. | `true | false` | `Exportable = TRUE`. Las claves CNG pueden distinguir entre este y el texto sin formato exportable. No se pueden CAPI1 claves. |
 | ExportableEncrypted | Especifica si la clave privada debe configurarse para ser exportable. | `true | false` | `ExportableEncrypted = true`<p>**Sugerencia:** No todos los tamaños y algoritmos de clave pública funcionarán con todos los algoritmos hash. El CSP especificado también debe admitir el algoritmo hash especificado. Para ver la lista de algoritmos hash admitidos, puede ejecutar el comando: `certutil -oid 1 | findstr pwszCNGAlgid | findstr /v CryptOIDInfo` |
 | HashAlgorithm | Algoritmo hash que se va a usar para esta solicitud. | `Sha256, sha384, sha512, sha1, md5, md4, md2` | `HashAlgorithm = sha1`. Para ver la lista de algoritmos hash admitidos, use: certutil-OID 1 | Findstr pwszCNGAlgid | Findstr/v CryptOIDInfo|
@@ -130,7 +130,7 @@ Esta área del archivo INF es obligatoria para todas las plantillas de solicitud
 | KeyProtection | Especifica un valor que indica cómo se protege una clave privada antes de su uso. | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | Especifica un valor booleano que indica si las extensiones y atributos predeterminados se incluyen en la solicitud. Los valores predeterminados se representan mediante sus identificadores de objeto (OID). | `true | false` | `SuppressDefaults = true` |
 | FriendlyName | Un nombre descriptivo para el nuevo certificado. | Texto | `FriendlyName = Server1` |
-| ValidityPeriodUnits | Especifica el número de unidades que se va a utilizar con ValidityPeriod. Nota: solo se usa cuando el `request type=cert` . | Numeric | `ValidityPeriodUnits = 3` |
+| ValidityPeriodUnits | Especifica el número de unidades que se va a utilizar con ValidityPeriod. Nota: solo se usa cuando el `request type=cert` . | Numérico | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod debe ser un período de tiempo plural del Inglés de EE. UU. Nota: solo se usa cuando el tipo de solicitud = cert. | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup> A la izquierda del signo igual (=)

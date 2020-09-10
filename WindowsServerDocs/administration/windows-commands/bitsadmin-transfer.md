@@ -3,16 +3,16 @@ title: bitsadmin transfer
 description: Artículo de referencia del comando bitsadmin Transfer, que transfiere uno o varios archivos.
 ms.topic: reference
 ms.assetid: fe302141-b33a-4a05-835e-dc4fc4db7d5a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 989c2ace5aa8cb0f123dec6f2ad490c1c8c778cd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6f4171e5544b468012e308910b4601cd9bde1406
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033353"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630554"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin transfer
 

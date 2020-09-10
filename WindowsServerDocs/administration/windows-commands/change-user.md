@@ -3,16 +3,16 @@ title: change user
 description: Artículo de referencia del comando Change User, que cambia el modo de instalación del servidor host de sesión Escritorio remoto.
 ms.topic: reference
 ms.assetid: 6202f024-8cf5-411e-89b1-ee37ff46499d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c473349b75a5963cb66997ea568f5634eea194d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 59e290b3c80bfb85e5cef9ae3cffb20c121f71b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031153"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629849"
 ---
 # <a name="change-user"></a>change user
 
@@ -33,7 +33,7 @@ change user {/execute | /install | /query}
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| /Execute | Habilita la asignación de archivos. ini en el directorio particular. Esta es la configuración predeterminada. |
+| /Execute | Habilita la asignación de archivos. ini en el directorio particular. Ésta es la configuración predeterminada. |
 | /install | Deshabilita la asignación de archivos. ini en el directorio particular. Todos los archivos. ini se leen y se escriben en el directorio del sistema. Debe deshabilitar la asignación de archivos. ini al instalar aplicaciones en un servidor host de sesión de Escritorio remoto. |
 | /Query | Muestra la configuración actual para la asignación de archivos. ini. |
 | /? | Muestra la ayuda en el símbolo del sistema. |

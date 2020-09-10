@@ -3,16 +3,16 @@ title: llamada
 description: Artículo de referencia del comando call, que llama a un programa por lotes desde otro sin detener el programa de Batch primario.
 ms.topic: reference
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 06/05/2018
-ms.openlocfilehash: 749f073fa3f96f51aec5bf47e4e09ce7263d3205
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ff00048be6cc44b91d2a2a67bd186a39b13e2ac7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034263"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630011"
 ---
 # <a name="call"></a>llamada
 

@@ -3,16 +3,16 @@ title: bitsadmin setdisplayname
 description: Artículo de referencia para el comando bitsadmin setDisplayName, que establece el nombre para mostrar del trabajo especificado.
 ms.topic: reference
 ms.assetid: 13706c53-fb5f-4879-b5ca-82531361d6e1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4726d4d1dec867e72ab542222a71289994ed12fd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 57a72d198b7d262f3a7958920e5d54955f8b6270
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028543"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630938"
 ---
 # <a name="bitsadmin-setdisplayname"></a>bitsadmin setdisplayname
 

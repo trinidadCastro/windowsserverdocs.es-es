@@ -3,16 +3,16 @@ title: bitsadmin gettemporaryname
 description: Artículo de referencia del comando bitsadmin gettemporaryname, que notifica el nombre de archivo temporal del archivo especificado en el trabajo.
 ms.topic: reference
 ms.assetid: 68925edc-a801-4292-a812-7471c4f60fdd
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d9e03b00fa1885b89f25dab2781ce988aa0c5df8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9eeaf3c1093cf147c945bb029e5652db1819003c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034813"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631591"
 ---
 # <a name="bitsadmin-gettemporaryname"></a>bitsadmin gettemporaryname
 

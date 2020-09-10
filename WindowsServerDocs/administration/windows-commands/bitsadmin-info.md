@@ -3,16 +3,16 @@ title: bitsadmin info
 description: Artículo de referencia del comando bitsadmin info, que muestra información de resumen sobre el trabajo especificado.
 ms.topic: reference
 ms.assetid: 5c306677-0d64-41c0-8276-5bba7750cecb
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a909655215d73b1fd197155810b980d5aaa04eab
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 815fdc719d584f7d25f88705056e4d5c0c3405aa
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028573"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631533"
 ---
 # <a name="bitsadmin-info"></a>bitsadmin info
 

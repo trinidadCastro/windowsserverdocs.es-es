@@ -2,16 +2,16 @@
 title: bitsadmin getpriority
 description: Artículo de referencia para el comando bitsadmin GetPriority (, que recupera la prioridad del trabajo especificado.
 ms.topic: reference
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 03/01/2019
-ms.openlocfilehash: 2aeff973b0ca285cc8c9852f284e314879f8de02
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 397a762a210aeae7a02e49283330a2d4214876e6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028703"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631759"
 ---
 # <a name="bitsadmin-getpriority"></a>bitsadmin getpriority
 
@@ -29,7 +29,7 @@ bitsadmin /getpriority <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-#### <a name="output"></a>Output
+#### <a name="output"></a>Resultados
 
 La prioridad devuelta para este comando puede ser:
 

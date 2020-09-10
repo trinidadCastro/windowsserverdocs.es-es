@@ -3,16 +3,16 @@ title: interrumpir (volumen de instantánea)
 description: Artículo de referencia para el comando break, que desasocia un volumen de instantáneas de VSS y hace que sea accesible como volumen normal.
 ms.topic: reference
 ms.assetid: de2b6c95-1c2e-4a43-bec5-341a9014371b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d94275b83ad65f70db4bd1850f55ea527292d1bc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fa698a91ec7ddcabba7bcaaa6a80dac0831312af
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034313"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630038"
 ---
 # <a name="break-shadow-copy-volume"></a>interrumpir (volumen de instantánea)
 

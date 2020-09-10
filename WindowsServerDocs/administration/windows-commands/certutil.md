@@ -3,16 +3,16 @@ title: certutil
 description: Artículo de referencia para el comando certutil, que es un programa de línea de comandos que vuelca y muestra la información de configuración de la entidad de certificación (CA), configura servicios de Certificate Server, copia de seguridad y restauración de componentes de CA y comprueba certificados, pares de claves y cadenas de certificados.
 ms.topic: reference
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 99c9d0ddca6ce1b91d86733995c30c46b747b7af
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fc1065ab3853f6098c725f4ccaaafc483cb6015d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031213"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629910"
 ---
 # <a name="certutil"></a>certutil
 

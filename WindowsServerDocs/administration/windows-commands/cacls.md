@@ -3,16 +3,16 @@ title: cacls
 description: Artículo de referencia para el comando cacls. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
 ms.topic: reference
 ms.assetid: b5bdbaaa-4557-48b8-80df-e75ee0d2f27d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8261e9711cee85ad1d59ff71f9cd8ac55e63fab8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 32be46658f47b534c80a9d9a712914aa6d878792
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034283"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630028"
 ---
 # <a name="cacls"></a>cacls
 
@@ -46,7 +46,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 
 #### <a name="sample-output"></a>Salida de ejemplo
 
-| Output | Entrada de control de acceso (ACE) se aplica a |
+| Resultados | Entrada de control de acceso (ACE) se aplica a |
 -------- | ------------------------------------- |
 | OI | Herencia de objeto. Esta carpeta y archivos. |
 | CI | Herencia del contenedor. Esta carpeta y sus subcarpetas. |

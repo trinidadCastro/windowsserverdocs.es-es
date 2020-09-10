@@ -3,16 +3,16 @@ title: bitsadmin nowrap
 description: Artículo de referencia del comando bitsadmin NoWrap, que trunca cualquier línea de texto de salida que se extienda más allá del borde derecho de la ventana de comandos.
 ms.topic: reference
 ms.assetid: 85a47b90-783a-41e4-96f2-81f26ae8ca93
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d2d0afe483a48e4e699c506c650cdec61076643b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2e5724f3dedb808898cd070026e2e4a944d4731b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026643"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631428"
 ---
 # <a name="bitsadmin-nowrap"></a>bitsadmin nowrap
 
