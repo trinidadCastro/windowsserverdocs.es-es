@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 5b183ef2900d1ced267e991f43827438b57fb728
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 96d99bb41a528a3a2f86be2d876df6e777e4b790
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181011"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623147"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Administrar dispositivos en Windows Server Essentials
 
@@ -32,7 +32,7 @@ ms.locfileid: "87181011"
 
 -   [Ver las propiedades del equipo](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)
 
-##  <a name="manage-devices-by-using-the-dashboard"></a><a name="BKMK_1"></a>Administrar dispositivos mediante el panel
+##  <a name="manage-devices-by-using-the-dashboard"></a><a name="BKMK_1"></a> Administrar dispositivos mediante el panel
  Windows Server Essentials permite realizar tareas administrativas comunes mediante su panel. En la página **Dispositivos** del panel encontrará lo siguiente:
 
 -   Una lista de equipos de la red, que muestra:
@@ -69,7 +69,7 @@ ms.locfileid: "87181011"
 
 ### <a name="computer-tasks-in-the-dashboard"></a>Tareas de equipo en el panel
 
-|Nombre de la tarea|Description|
+|Nombre de la tarea|Descripción|
 |---------------|-----------------|
 |Ver las propiedades del equipo|Se muestra información general del equipo seleccionado y se le permite ver los detalles de las copias de seguridad del equipo.|
 |Configurar las copias de seguridad de este equipo|Se ejecuta el asistente para la configuración de copias de seguridad.|
@@ -84,7 +84,7 @@ ms.locfileid: "87181011"
 |¿Cómo conecto equipos al servidor?|Se abre un tema de ayuda que describen los pasos necesarios para realizar para unir un equipo a la red.|
 |Implementar la directiva de grupo|Se aplica la configuración de directiva a los equipos de Windows 8 y Windows 7 que están unidos al dominio.|
 
-##  <a name="assign-user-accounts-permission-to-log-on-to-specific-network-computers"></a><a name="BKMK_2"></a>Asignar permisos de cuentas de usuario para iniciar sesión en equipos de red específicos
+##  <a name="assign-user-accounts-permission-to-log-on-to-specific-network-computers"></a><a name="BKMK_2"></a> Asignar permisos de cuentas de usuario para iniciar sesión en equipos de red específicos
  Puede asignar permisos a las cuentas de usuario para que los usuarios inicien sesión en solo determinados equipos de la red al obtener acceso a la red de Windows Server Essentials desde una ubicación remota.
 
 #### <a name="to-change-the-computer-access-for-a-user-account"></a>Para cambiar el acceso al equipo de una cuenta de usuario
@@ -99,7 +99,7 @@ ms.locfileid: "87181011"
 
 5.  En la pestaña **Acceso al equipo**, seleccione el equipo al que este usuario puede acceder de forma remota y, a continuación, haga clic en **Aceptar**.
 
-##  <a name="remove-a-computer-from-the-server"></a><a name="BKMK_3"></a>Quitar un equipo del servidor
+##  <a name="remove-a-computer-from-the-server"></a><a name="BKMK_3"></a> Quitar un equipo del servidor
  Al quitar un equipo de un servidor que ejecuta Windows Server Essentials utilizando el panel, el servidor deja de administrar el equipo. Por lo tanto, el servidor detendrá la creación de copias de seguridad del equipo o supervisará su estado después de quitarse de la red.
 
 > [!NOTE]
@@ -113,7 +113,7 @@ ms.locfileid: "87181011"
 
 3.  En la lista de equipos, haga clic en el equipo que quiera quitar de la red y, a continuación, haga clic en **Quitar el equipo**.
 
-##  <a name="configure-group-policy-settings-for-folder-redirection-and-security"></a><a name="BKMK_5"></a>Configuración de directiva de grupo para la redirección de carpetas y la seguridad
+##  <a name="configure-group-policy-settings-for-folder-redirection-and-security"></a><a name="BKMK_5"></a> Configuración de directiva de grupo para la redirección de carpetas y la seguridad
  Puede configurar la directiva de grupo e implementarla en los equipos de la red de Windows Server Essentials utilizando el panel de Windows Server Essentials. La directiva de grupo en Windows Server Essentials incluye la configuración de seguridad y redirección de carpetas que afecta a Windows Update, Windows Defender y al firewall de red.
 
 #### <a name="to-configure-group-policy-in-windows-server-essentials"></a>Para configurar la directiva de grupo en Windows Server Essentials
@@ -134,7 +134,7 @@ ms.locfileid: "87181011"
 
 7.  Haga clic en **Finalizar** para implementar la configuración de directiva de grupo.
 
-##  <a name="connect-to-a-network-computer-by-using-a-remote-desktop-session"></a><a name="BKMK_7"></a>Conexión a un equipo de red mediante una sesión de Escritorio remoto
+##  <a name="connect-to-a-network-computer-by-using-a-remote-desktop-session"></a><a name="BKMK_7"></a> Conexión a un equipo de red mediante una sesión de Escritorio remoto
  Para acceder de forma remota al equipo de red de Windows Server Essentials cuando esté fuera de la oficina, use el explorador Web para iniciar sesión en el sitio web de acceso Web remoto de su organización y, en la pestaña **equipos** , haga clic en el nombre del equipo.
 
  La columna **Estado** indica si puede conectarse a un equipo en la red, y puede incluir los siguientes valores:
@@ -155,7 +155,7 @@ ms.locfileid: "87181011"
 
      La conexión del equipo está bloqueada por un firewall o el escritorio remoto está deshabilitado en el equipo o por la directiva de grupo. Este estado puede tardar hasta 6 horas en actualizarse en el servidor si se produce algún cambio.
 
-##  <a name="view-computer-properties"></a><a name="BKMK_8"></a>Ver las propiedades del equipo
+##  <a name="view-computer-properties"></a><a name="BKMK_8"></a> Ver las propiedades del equipo
  La sección **Dispositivos** del panel de Windows Server Essentials muestra una lista de equipos de red. La lista también proporciona información adicional sobre cada equipo.
 
 #### <a name="to-view-a-list-of-computers"></a>Para ver una lista de equipos

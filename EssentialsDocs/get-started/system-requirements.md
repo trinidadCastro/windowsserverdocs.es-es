@@ -5,14 +5,14 @@ ms.date: 10/31/2013
 ms.topic: article
 ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 9e730ea3fe0deeca84759c546e3f4afa76e5c7d8
-ms.sourcegitcommit: 1eaad076ea74e72b36e8893aaa15f3e5f4237bd6
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 39b74722b9f3036bab5face5d48c9a5a5af3da90
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88659380"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622398"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Requisitos del sistema para Windows Server Essentials
 
@@ -38,7 +38,7 @@ ms.locfileid: "88659380"
 |Adaptador de red|Adaptador Ethernet Gigabit (10/100/1000baseT PHY/MAC)|
 |Internet|Para algunas funciones puede ser necesario tener acceso a Internet (es posible que se apliquen costes adicionales) o una cuenta de Microsoft.|
 |Sistemas operativos de cliente compatibles| Windows 10, Windows 8.1, Windows 8, Windows 7, Macintosh OS X versiones 10,5 a 10,8.<br /><br /> **Nota:** Algunas características requieren ediciones Professional o superior.<br /><br /> 1 GB de espacio disponible en disco (se liberará una parte del disco después de la instalación)|
-|Router|Un enrutador o firewall compatible con IPv4 NAT o IPv6|
+|Enrutador|Un enrutador o firewall compatible con IPv4 NAT o IPv6|
 |Requisitos adicionales|Unidad de DVD-ROM|
 
  Los requisitos necesarios variarán según la configuración del sistema y las aplicaciones y características que instale. El rendimiento del procesador depende no solo de la frecuencia del reloj de este, sino también del número de núcleos y del tamaño de la memoria caché del procesador. Los requisitos de espacio en disco para la partición del sistema son aproximados. Es posible que sea necesario disponer de espacio adicional si se realiza la instalación a través de la red.

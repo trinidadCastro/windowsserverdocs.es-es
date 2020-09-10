@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: c648ab5921d50a2b1178b44104977b8bb3abd692
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c20fd35a1a90e6d635891cd2257913c669273735
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180841"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623010"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Introducción al Launchpad en Windows Server Essentials
 
@@ -39,7 +39,7 @@ Launchpad de Windows Server Essentials es una pequeña aplicación que se instal
 
 - [Uso de Launchpad con un equipo Mac](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)
 
-##  <a name="use-the-launchpad"></a><a name="BKMK_Launchpad"></a>Uso de Launchpad
+##  <a name="use-the-launchpad"></a><a name="BKMK_Launchpad"></a> Uso de Launchpad
  La información y los vínculos siguientes están disponibles en Launchpad de Windows Server Essentials.
 
 ### <a name="backup"></a>Copia de seguridad
@@ -65,13 +65,13 @@ Launchpad de Windows Server Essentials es una pequeña aplicación que se instal
 > [!NOTE]
 >  Para usar esta característica debe tener el acceso o los permisos adecuados para iniciar sesión en el servidor.
 
-### <a name="microsoft-office-365"></a>Microsoft Office 365
- El vínculo **Microsoft Office 365** solo aparece en Launchpad si el usuario tiene una cuenta de Office 365. Haga clic en  **Microsoft Office 365** para obtener acceso a vínculos adicionales a los recursos de Office 365. Para obtener más información, vea [Guía de inicio rápido para usar Microsoft Office 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md).
+### <a name="microsoft-365"></a>Microsoft 365
+ El vínculo **Microsoft 365** solo aparece en Launchpad si el usuario tiene una cuenta Microsoft 365. Haga clic en  **Microsoft 365** para tener acceso a vínculos adicionales a los recursos de Microsoft 365. Para obtener más información, vea [Guía de inicio rápido para usar Microsoft 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md).
 
 ### <a name="computer-health-alerts"></a>Alertas de estado del equipo
  Las alertas que aparecen en Launchpad proporcionan un estado rápido en cuanto al mantenimiento inmediato del equipo. Para ver la información sobre una alerta de estado haga clic en un indicador de alerta para abrir el visor de alertas. Las alertas de estado aparecen en el visor en función del nivel de gravedad. Las alertas más graves aparecen en primer lugar en la lista; las alertas menos graves aparecen a continuación. Para obtener más información acerca de las alertas de estado del equipo, consulte [Manage System Health](Manage-System-Health-in-Windows-Server-Essentials.md).
 
-##  <a name="use-the-launchpad-with-a-mac-computer"></a><a name="BKMK_Mac"></a>Uso de Launchpad con un equipo Mac
+##  <a name="use-the-launchpad-with-a-mac-computer"></a><a name="BKMK_Mac"></a> Uso de Launchpad con un equipo Mac
  Puede conectar un equipo Mac &reg; que ejecute Mac OS X &reg; 10,5 o posterior a Windows Server Essentials, Windows Server Essentials o windows Server 2012 R2 o descargando e instalando el software del conector. Cuando haya terminado de instalar el software del conector podrá iniciar automáticamente Launchpad en el inicio.
 
  Launchpad es una pequeña aplicación que proporciona a los usuarios autenticados acceso a las características clave del servidor, entre ellas los archivos y los elementos multimedia compartidos, los complementos y Acceso Web remoto. Launchpad también proporciona información en tiempo real y notificaciones sobre el estado del equipo.

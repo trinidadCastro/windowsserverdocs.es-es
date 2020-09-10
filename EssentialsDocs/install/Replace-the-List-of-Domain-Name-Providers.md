@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 104d0412-2d77-4cd4-99f7-65a885522850
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 736d7c2271752c79678c2d332ed450e6ba35b299
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 74509a7d64e718fe1d2b62f806306235e7d827e4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181111"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623366"
 ---
 # <a name="replace-the-list-of-domain-name-providers"></a>Sustituir la lista de proveedores de nombre de dominio
 
@@ -30,7 +30,7 @@ Para sustituir la lista de proveedores de nombres de dominio que aparece en el A
 -   [Agregue una entrada al registro en el equipo de referencia](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)
 
 
-###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a>Crear los archivos de servicio de referencia
+###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a> Crear los archivos de servicio de referencia
  La Herramienta de administración de servicios de referencia crea una conjunto de archivos que se utilizan para definir la lista de proveedores de nombres de dominio que aparece en el Asistente de configuración de nombre de dominio. Se crea un archivo con formato XML por cada región del mundo con información de los proveedores de nombres de dominio que haya especificado en la herramienta. Deberá copiar los archivos creados por la herramienta en una carpeta accesible mediante una conexión segura (HTTPS) que administre en Internet.
 
 ##### <a name="to-create-the-referral-files"></a>Para crear los archivos de referencia
@@ -57,7 +57,7 @@ Para sustituir la lista de proveedores de nombres de dominio que aparece en el A
 
 11. Haga clic en **Generar archivos en el sistema de archivos**.
 
-###  <a name="add-an-entry-to-the-registry-on-the-reference-computer"></a><a name="BKMK_AddRegistry"></a>Agregar una entrada al registro en el equipo de referencia
+###  <a name="add-an-entry-to-the-registry-on-the-reference-computer"></a><a name="BKMK_AddRegistry"></a> Agregar una entrada al registro en el equipo de referencia
  Deberá agregar una entrada de registro para especificar la ubicación donde el sistema operativo pueda encontrar los archivos de servicio.
 
 ##### <a name="to-add-a-key-to-the-registry"></a>Para agregar una clave al registro
@@ -83,12 +83,12 @@ Para sustituir la lista de proveedores de nombres de dominio que aparece en el A
 >  A slash (/) is required at the end of the URL.
 ~~~
 
-###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a>Problemas de estado de nombre de dominio
+###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a> Problemas de estado de nombre de dominio
  Si un asociado agrega proveedores de nombres de dominio y usa una interfaz de programación de aplicaciones (API) en el SDK de Windows Server Essentials para establecer los Estados Unknown, failed y CertificateRequestNotSubmitted del certificado, el cliente recibe un mensaje y un resultado de configuración incorrectos. Esto se debe a que los casos los tratan las excepciones, en lugar de devolver un estado.
 
  Los siguientes estados de dominio son errores y deben notificarse como tales:
 
-- Con error
+- Failed
 
 - PendingCustomerInterventionRequired
 

@@ -1,29 +1,29 @@
 ---
-title: Reemplazar la dirección URL de punto de conexión de compra/prueba del módulo de integración de O365 en cumplimiento del contrato de revendedor de servicio en línea de Microsoft
+title: Reemplace Microsoft 365 módulo de integración compre-try dirección URL del punto de conexión en soporte del acuerdo de revendedor de Microsoft Online Services.
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9860a6b9-baea-4bf0-9a9f-6f1a288f996e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 12f4013f84c9fbfe8fc9529ea90b62f5fc5416d5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: a8a5cf91c6de2971bc8270cc3c7ea92327b71224
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181131"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623379"
 ---
-# <a name="replace-o365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>Reemplazar la dirección URL de punto de conexión de compra/prueba del módulo de integración de O365 en cumplimiento del contrato de revendedor de servicio en línea de Microsoft
+# <a name="replace-microsoft-365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>Reemplace Microsoft 365 módulo de integración compre-try dirección URL del punto de conexión en soporte del acuerdo de revendedor de Microsoft Online Services.
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_O365"></a>
- Si es socio comercial del acuerdo de revendedor de servicios en línea de Microsoft (MOSRA), para asegurarse de que las transacciones de suscripción de clientes se procesan a través de su portal, deberá reemplazar las direcciones URL de extremo que usa el módulo de integración de Office 365 de Windows Server Essentials.
+ Si es socio comercial del acuerdo de revendedor de servicios en línea de Microsoft (MOSRA), para asegurarse de que las transacciones de suscripción de clientes se procesan a través de su portal, deberá reemplazar las direcciones URL de extremo que usa el módulo de integración de Microsoft 365 de Windows Server Essentials.
 
  El módulo de integración utiliza las cuatro direcciones URL de extremo siguientes:
 
-1.  Un extremo de adquisición de suscripciones de Office 365 Enterprise.
+1.  Un extremo de compra de suscripción de Microsoft 365 Enterprise.
 
     -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\
 
@@ -31,9 +31,9 @@ ms.locfileid: "87181131"
 
     -   Nombre de clave = MOSRASTDBUY
 
-    -   Valor = *xxxxx*, donde xxxxx es la dirección URL de compra de suscripciones de la empresa. Por ejemplo, valor =http://syndicatepartner.office365.com/enterprisebuy.html
+    -   Valor = *xxxxx*, donde xxxxx es la dirección URL de compra de suscripciones de la empresa. Por ejemplo, valor = http://syndicatepartner.office365.com/enterprisebuy.html
 
-2.  Un extremo de prueba de suscripciones de Office 365 Enterprise.
+2.  Un punto de conexión de prueba de suscripción Microsoft 365 Enterprise.
 
     -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\
 
@@ -41,9 +41,9 @@ ms.locfileid: "87181131"
 
     -   Nombre de clave = MOSRASTDTRY
 
-    -   Valor = *xxxxx*, donde xxxxx es la dirección URL de compra de suscripciones de la empresa. Por ejemplo, valor =http://syndicatepartner.office365.com/enterprisetry.html
+    -   Valor = *xxxxx*, donde xxxxx es la dirección URL de compra de suscripciones de la empresa. Por ejemplo, valor = http://syndicatepartner.office365.com/enterprisetry.html
 
-3.  Un punto de conexión de compra de suscripción de Office 365 de pequeña empresa Premium.
+3.  Un punto de conexión de compra de suscripción de Microsoft 365 pequeña empresa Premium.
 
     -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\
 
@@ -51,9 +51,9 @@ ms.locfileid: "87181131"
 
     -   Nombre de clave = MOSRALITEBUY
 
-    -   Valor = *xxxxx*, donde xxxxx es la dirección URL de compra de suscripciones de la empresa. Por ejemplo, valor =http://syndicatepartner.office365.com/smallbizbuy.html
+    -   Valor = *xxxxx*, donde xxxxx es la dirección URL de compra de suscripciones de la empresa. Por ejemplo, valor = http://syndicatepartner.office365.com/smallbizbuy.html
 
-4.  Un punto de conexión de evaluación de la suscripción de Office 365 de pequeña empresa Premium.
+4.  Un punto de conexión de prueba de suscripción de Microsoft 365 Small Business Premium.
 
     -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\
 
@@ -61,7 +61,7 @@ ms.locfileid: "87181131"
 
     -   Nombre de clave = MOSRALITETRY
 
-    -   Valor = *xxxxx*, donde xxxxx es la dirección URL de compra de suscripciones de la empresa. Por ejemplo, valor =http://syndicatepartner.office365.com/smallbiztry.html
+    -   Valor = *xxxxx*, donde xxxxx es la dirección URL de compra de suscripciones de la empresa. Por ejemplo, valor = http://syndicatepartner.office365.com/smallbiztry.html
 
 #### <a name="to-add-an-endpoint-url-key-to-the-registry"></a>Para agregar una clave de dirección URL de extremo al Registro
 

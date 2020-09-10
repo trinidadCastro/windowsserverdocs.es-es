@@ -3,16 +3,16 @@ title: ksetup removerealm
 description: Artículo de referencia para el comando ksetup removerealm, que elimina toda la información del territorio especificado del registro.
 ms.topic: reference
 ms.assetid: 39f0c6f0-4c50-4781-941e-0893495405e8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 801ef79449cabed4718e417cac9aba9173dd07fb
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 324eb79fee80e53da4dd1bc331e5af49c64c1574
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025459"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622760"
 ---
 # <a name="ksetup-removerealm"></a>ksetup removerealm
 

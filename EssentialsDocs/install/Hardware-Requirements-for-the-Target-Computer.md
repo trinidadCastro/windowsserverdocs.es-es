@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 9cb68b88bc19b8f0f62c5586e39e010d9caad151
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 1672c8168dd206c166ca44392ca290ebb311dcc6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181241"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623510"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>Requisitos de hardware para el equipo de destino
 
@@ -28,7 +28,7 @@ En esta sección se proporcionan los requisitos de hardware para Windows Server 
 |Componente|Mínima|Recomendado*|Máxima|
 |---------------|-------------|-------------------|-------------|
 |Socket de la CPU|1,4 GHz (procesador de 64 bits) o superior en el caso de un núcleo único<br /><br /> 1,3 GHz (procesador de 64 bits) o superior en el caso de varios núcleos|3,1 GHz (procesador de 64 bits) o superior en el caso de varios núcleos|2 zócalos|
-|Memoria (RAM)|2 GB|16 GB|64 GB|
+|Memoria (RAM)|2 GB|16 GB|64 GB|
 |Unidades de disco duro y espacio de almacenamiento disponible|Unidad de disco duro de 160 GB con una partición de sistema de 60 GB||Sin límite|
 
  * Requisitos de hardware recomendados para admitir el límite máximo de usuarios y dispositivos de Windows Server Essentials.

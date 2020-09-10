@@ -5,14 +5,14 @@ ms.date: 10/01/2016
 ms.topic: article
 ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 7c30d99bd1a0019130f7e39f70b289effd6935c4
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: aa84ae8f3d11631b76d2e85e6a50f309eb83dd74
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838254"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622580"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Integración de los servicios de Azure Site Recovery
 
@@ -62,6 +62,6 @@ En cualquiera de los tres casos anteriores, cuando una máquina virtual conmute 
 
 ![Captura de pantalla que muestra la página recuperación de Azure del panel de Windows Server Essentials. La replicación en Azure se ha habilitado para un host denominado Essentials y una máquina virtual denominada Essentials-test que se ejecuta en Azure indica que el host se ha conmutado por error a Azure.](media/azure-site-recovery-8.PNG)
 
-<a name="see-also"></a>Vea también
+<a name="see-also"></a>Consulte también
 --------
 [Introducción a Windows Server Essentials](get-started.md)

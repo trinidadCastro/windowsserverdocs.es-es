@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 8342c542861598411570c4e702aea5a94f992c79
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 464b30d610dcf25dc53c12bf38f8ec3da8691e2a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180811"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622940"
 ---
 # <a name="set-up-or-customize-server-backup"></a>Configurar o personalizar la copia de seguridad del servidor
 
@@ -30,7 +30,7 @@ ms.locfileid: "87180811"
 
 -   [Elementos para la copia de seguridad](Set-up-or-customize-server-backup.md#BKMK_4)
 
-##  <a name="set-up-or-change-server-backup-settings"></a><a name="BKMK_1"></a>Configurar o cambiar la configuración de copia de seguridad del servidor
+##  <a name="set-up-or-change-server-backup-settings"></a><a name="BKMK_1"></a> Configurar o cambiar la configuración de copia de seguridad del servidor
 
 #### <a name="to-set-up-or-change-server-backup-settings"></a>Para configurar o cambiar la configuración de copia de seguridad del servidor
 
@@ -57,10 +57,10 @@ ms.locfileid: "87180811"
 >    4. En la página **Optimizar unidades**, seleccione una unidad y haga clic en **Cambiar la configuración**.
 >    5. En la ventana **Programación de la optimización**, desactive la casilla **Ejecución programada (recomendado)** y, a continuación, haga clic en **Aceptar** para guardar el cambio.
 
-##  <a name="server-backup-schedule"></a><a name="BKMK_2"></a>Programación de copias de seguridad del servidor
+##  <a name="server-backup-schedule"></a><a name="BKMK_2"></a> Programación de copias de seguridad del servidor
  Al usar el asistente Configurar copias de seguridad del servidor o el Asistente Personalizar copias de seguridad del servidor, puede optar por hacer una copia de seguridad de los datos del servidor varias veces durante el día. Dado que los asistentes programan copias de seguridad incrementales, las copias de seguridad se ejecutan rápidamente y el rendimiento del servidor apenas se ve afectado. De manera predeterminada, los asistentes programan una copia de seguridad para que se ejecute cada día a las 12:00 y las 23:00. Sin embargo, puede ajustar la programación de copias de seguridad según las necesidades de su organización. De vez en cuando debe evaluar la eficacia de su plan de copia de seguridad y cambiar el plan si es necesario.
 
-##  <a name="backup-target-drive"></a><a name="BKMK_Target"></a>Unidad de destino de copia de seguridad
+##  <a name="backup-target-drive"></a><a name="BKMK_Target"></a> Unidad de destino de copia de seguridad
  Puede usar varias unidades de almacenamiento externo para efectuar las copias de seguridad y puede rotar las unidades entre ubicaciones de almacenamiento en el sitio y fuera del sitio. Esto puede mejorar la planificación de preparación ante desastres ayudando a recuperar los datos si se producen daños físicos en el hardware de las instalaciones.
 
  Al elegir una unidad de almacenamiento para la copia de seguridad del servidor, tenga en cuenta los siguientes aspectos:
@@ -112,7 +112,7 @@ ms.locfileid: "87180811"
 >
 >    La unidad aparecerá inmediatamente en el panel.
 
-##  <a name="items-to-be-backed-up"></a><a name="BKMK_4"></a>Elementos de los que se va a hacer una copia de seguridad
+##  <a name="items-to-be-backed-up"></a><a name="BKMK_4"></a> Elementos de los que se va a hacer una copia de seguridad
  Puede elegir hacer una copia de seguridad de todas las unidades, archivos y carpetas del servidor, o seleccionar únicamente determinadas unidades, archivos o carpetas para la copia de seguridad.
 
  Al agregar o quitar una unidad, o agregar o quitar carpetas y archivos compartidos, debe revisar la configuración de copia de seguridad del servidor para asegurarse de que se han agregado o quitado estos elementos de la configuración de copia de seguridad. Para agregar o quitar elementos de la copia de seguridad, realice una de las acciones siguientes:

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 885a10ee9b5a684c385de9baa0ebcdfac61f2c0e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6b93e0e31c592a11d44aca74029012a1b6229227
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180831"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622985"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>Restauración completa del sistema desde una copia de seguridad existente del equipo cliente
 
@@ -32,7 +32,7 @@ ms.locfileid: "87180831"
 
 -   [¿Dónde puedo encontrar los controladores del hardware?](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers)
 
-##  <a name="what-is-computer-full-system-restore"></a><a name="BKMK_WhatIs"></a>¿Qué es la restauración completa del sistema de equipos?
+##  <a name="what-is-computer-full-system-restore"></a><a name="BKMK_WhatIs"></a> ¿Qué es la restauración completa del sistema de equipos?
  En el caso de sustitución de una unidad de disco duro o si el equipo falla hasta el punto en que no se puede utilizar o no se inicia, puede restaurar el sistema a una copia de seguridad anterior del equipo. Una restauración completa del sistema devuelve el sistema al estado en el que estaba en el momento de la copia de seguridad.
 
 > [!IMPORTANT]
@@ -85,7 +85,7 @@ ms.locfileid: "87180831"
 ### <a name="raid-and-dynamic-disks"></a>Discos RAID y dinámicos
  La copia de seguridad de matrices redundantes de discos independientes (RAID) y discos dinámicos no es compatible.
 
-##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a>¿Cómo funciona el entorno de restauración del sistema?
+##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a> ¿Cómo funciona el entorno de restauración del sistema?
  Los medios de restauración del sistema suministrados con Windows Server &reg; 2012 Essentials instalan entorno de preinstalación de Windows (Windows PE) en el equipo. Windows PE sustituye el entorno de MS-DOS y contiene los archivos de programa principales para Windows. En Windows Server Essentials, existen dos formas admitidas para restaurar un sistema: mediante el servicio de restauración de cliente, que usa una red y no se basa en medios, o en el uso de la unidad flash USB.
 
 > [!NOTE]
@@ -97,7 +97,7 @@ ms.locfileid: "87180831"
 
  En la mayoría de los casos, los archivos de programa y controladores contenidos en el entorno de restauración del sistema son todos los que se necesitan para reiniciar el equipo nuevo o restaurado. Dependiendo del hardware del equipo nuevo o restaurado, es posible que el entorno de restauración del sistema no incluya todos los controladores del adaptador de red y de almacenamiento necesarios para reiniciar el equipo restaurado. El Asistente para restauración completa del sistema le dará la oportunidad de instalar los controladores, si es necesario. Para obtener más información sobre cómo encontrar los controladores de hardware, consulte [¿Dónde puedo encontrar los controladores del hardware?](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers). Para obtener información sobre cómo usar los medios de restauración del sistema, vea [Uso del Asistente para restauración completa del sistema](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_Using).
 
-##  <a name="create-a-bootable-usb-flash-drive-to-restore-a-client-computer"></a><a name="BKMK_CreateBootable"></a>Creación de una unidad flash USB de arranque para restaurar un equipo cliente
+##  <a name="create-a-bootable-usb-flash-drive-to-restore-a-client-computer"></a><a name="BKMK_CreateBootable"></a> Creación de una unidad flash USB de arranque para restaurar un equipo cliente
  Si necesita restaurar un equipo cliente a partir de una copia de seguridad existente pero no encuentra el CD de restauración incluido en el servidor (en Windows Server Essentials) o no desea configurar el servicio de restauración de cliente en el servidor (en Windows Server Essentials), puede crear una unidad flash USB de arranque. A continuación, puede utilizar la unidad flash USB para iniciar el equipo cliente y restaurar el sistema. La unidad flash USB que utilice debe tener una capacidad de al menos 1 GB o más.
 
 #### <a name="to-create-a-bootable-usb-flash-drive"></a>Para crear una unidad flash USB de arranque
@@ -118,7 +118,7 @@ ms.locfileid: "87180831"
     > [!CAUTION]
     >  Se eliminarán todos los datos de la unidad flash USB.
 
-##  <a name="using-the-full-system-restore-wizard"></a><a name="BKMK_Using"></a>Usar el Asistente para restauración completa del sistema
+##  <a name="using-the-full-system-restore-wizard"></a><a name="BKMK_Using"></a> Usar el Asistente para restauración completa del sistema
  Después de usar correctamente el medio de restauración, el servicio de restauración de cliente o la unidad flash USB para iniciar su equipo y comprobar que se han cargado todos los controladores en el equipo cliente nuevo o restaurado, se abrirá el Asistente para restauración completa del sistema. Este asistente le permite acceder al servidor, la copia de seguridad del equipo y los volúmenes de origen que desee restaurar en el equipo y ejecuta el proceso de restauración en sí.
 
 > [!NOTE]
@@ -144,7 +144,7 @@ ms.locfileid: "87180831"
 
 #### <a name="to-use-the-full-system-restore-wizard"></a>Para usar el Asistente para restauración completa del sistema
 
-1. Lleve a cabo una de las siguientes acciones:
+1. Realice una de las siguientes acciones:
 
    -   Windows Server Essentials: Encienda el equipo cliente que desee restaurar, inserte el medio de restauración y, a continuación, apague el equipo.
 
@@ -161,7 +161,7 @@ ms.locfileid: "87180831"
 
 3. En la ventana **Asistente para restauración completa del sistema** elija su idioma preferido y, a continuación, haga clic en la flecha.
 
-4. Seleccione el **Formato de hora y moneda**, y **Teclado o método de entrada** adecuados para el equipo. Haga clic en **Continue**.
+4. Seleccione el **Formato de hora y moneda**, y **Teclado o método de entrada** adecuados para el equipo. Haga clic en **Continuar**.
 
 5. Si faltan controladores, el mensaje del proceso de restauración no puede comprobar que se muestran los controladores. Haga clic en **Cerrar** y a continuación, en el cuadro de diálogo Bienvenida, seleccione **Cargar controladores**.
 
@@ -268,7 +268,7 @@ ms.locfileid: "87180831"
     > [!IMPORTANT]
     >  Si ha habilitado el Cifrado de unidad BitLocker antes de la restauración, deberá habilitar BitLocker manualmente cuando se reinicie el equipo.
 
-##  <a name="where-can-i-find-the-drivers-for-my-hardware"></a><a name="BKMK_FindDrivers"></a>¿Dónde puedo encontrar los controladores del hardware?
+##  <a name="where-can-i-find-the-drivers-for-my-hardware"></a><a name="BKMK_FindDrivers"></a> ¿Dónde puedo encontrar los controladores del hardware?
  Dependiendo del hardware del equipo nuevo o restaurado, es posible que el medio de restauración no incluya todos los controladores del adaptador de red y de almacenamiento necesarios para reiniciar el equipo restaurado. Debe determinar qué controladores faltan, ubicarlos en un medio existente o en el sitio web del fabricante, copiarlos en una unidad flash y, a continuación, copiarlos de la unidad flash al equipo nuevo o restaurado al ejecutar el Asistente para restauración completa del sistema.
 
  Al realizar una copia de seguridad de un equipo, los controladores del equipo se guardan en la copia de seguridad. Si el medio de recuperación no incluye todas las unidades que necesite, puede abrir una copia de seguridad del equipo y copiar los controladores a una unidad flash USB.

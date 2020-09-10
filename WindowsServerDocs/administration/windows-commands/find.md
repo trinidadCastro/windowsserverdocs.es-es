@@ -3,16 +3,16 @@ title: find
 description: Artículo de referencia para el comando Buscar, que busca una cadena de texto en archivos y muestra la cadena de texto especificada en el archivo.
 ms.topic: reference
 ms.assetid: 2ca66b22-3b7c-4166-8503-eb75fc53ab46
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 34eb1f1cf3071147878f421307a91de921678cfc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b0317e856153c014df2656f0a98452b0c6428e82
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036543"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622377"
 ---
 # <a name="find"></a>find
 

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 1b4776e8-9504-4b98-ae80-11da797d9819
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ba0c7a6e9adf4700754d01800ec80a805e10c9d5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c743e0a30796eac374052787f7c47b0af6e656b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181021"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623163"
 ---
 # <a name="manage-client-computer-backup-in-windows-server-essentials"></a>Administrar copias de seguridad del equipo cliente en Windows Server Essentials
 
@@ -56,7 +56,7 @@ ms.locfileid: "87181021"
 
 -   [Información sobre el Historial de archivos](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_FileHistory)
 
-##  <a name="how-the-repair-the-backup-database-wizard-works"></a><a name="BKMK_1"></a>Cómo funciona el Asistente para reparar bases de datos de copia de seguridad
+##  <a name="how-the-repair-the-backup-database-wizard-works"></a><a name="BKMK_1"></a> Cómo funciona el Asistente para reparar bases de datos de copia de seguridad
  Si Windows Server Essentials detecta errores en la base de datos de copias de seguridad, envía una notificación de mantenimiento y el estado de alerta cambia a rojo, lo que indica una condición crítica.
 
  En el panel de Windows Server Essentials, haga clic en el icono de estado de alerta para ver la notificación de error de la base de datos de copias de seguridad. La notificación incluye un botón **Reparar** que inicia el asistente de reparación de bases de datos de copias de seguridad. El asistente puede tardar varias horas en finalizar.
@@ -66,7 +66,7 @@ ms.locfileid: "87181021"
 > [!CAUTION]
 >  Debe hacer una copia de seguridad de la base de datos antes de tratar de repararla. Según el tipo de errores encontrados en la base de datos de copias de seguridad, es posible que el asistente no pueda recuperar algunas copias de seguridad o que algunas o todas ellas se pierdan de forma permanente.
 
-##  <a name="understand-the-computer-backup-settings"></a><a name="BKMK_2"></a>Descripción de la configuración de copia de seguridad del equipo
+##  <a name="understand-the-computer-backup-settings"></a><a name="BKMK_2"></a> Descripción de la configuración de copia de seguridad del equipo
  Después de configurar la copia de seguridad de los equipos cliente, puede especificar un espacio diferente de tiempo en el que se hará la copia de seguridad. De forma similar, puede especificar un tiempo de retención de copias de seguridad mayor o menor que el valor predeterminado.
 
  La opción **Restaurar valores predeterminados** permite restablecer los valores predeterminados de espacio de tiempo y directiva de retención de copias de seguridad que se proporcionan durante la configuración inicial.
@@ -81,7 +81,7 @@ ms.locfileid: "87181021"
 |Retener copias de seguridad semanales|4 semanas|Especifica el número de semanas que se retiene la última copia de seguridad de la semana. Por ejemplo, con la configuración predeterminada, las copias de seguridad se retienen 4 semanas. En la quinta semana y en cada semana posterior, se elimina la copia de seguridad semanal más antigua.|
 |Retener copias de seguridad mensuales|6 meses|Especifica el número de meses que se retiene la última copia de seguridad del mes. Por ejemplo, con la configuración predeterminada, las copias de seguridad se retienen 6 meses. En el séptimo mes y en cada mes posterior, se elimina la copia de seguridad mensual más antigua.|
 
-##  <a name="set-up-backup-for-a-client-computer"></a><a name="BKMK_3"></a>Configurar la copia de seguridad de un equipo cliente
+##  <a name="set-up-backup-for-a-client-computer"></a><a name="BKMK_3"></a> Configurar la copia de seguridad de un equipo cliente
  Si está deshabilitada, puede configurar la copia de seguridad del equipo desde el panel. Al configurar copias de seguridad de un equipo, puede optar por hacer una copia de seguridad de todo el contenido del equipo o seleccionar los volúmenes y las carpetas de los que quiere hacer una copia.
 
 > [!NOTE]
@@ -129,7 +129,7 @@ ms.locfileid: "87181021"
 > [!IMPORTANT]
 >  El Servicio de instantáneas de volumen (VSS) no admite la creación de una instantánea de un volumen virtual y del volumen del host en el mismo conjunto de instantáneas. VSS admite la creación de instantáneas de volúmenes en un disco duro virtual (VHD) si es necesario hacer una copia de seguridad del volumen virtual. Para obtener más información, consulte [Servicing and Backing Up Virtual Hard Disks (Mantenimiento y seguridad de los discos duros virtuales)](https://go.microsoft.com/fwlink/p/?LinkId=256577).
 
-##  <a name="change-the-time-that-backup-is-scheduled-to-run"></a><a name="BKMK_4"></a>Cambiar el tiempo durante el que está programada la ejecución de la copia de seguridad
+##  <a name="change-the-time-that-backup-is-scheduled-to-run"></a><a name="BKMK_4"></a> Cambiar el tiempo durante el que está programada la ejecución de la copia de seguridad
  El proceso de copia de seguridad debe programarse para una hora en la que haya el menor número de personas posible usando sus equipos conectados en red. Esto es generalmente durante la noche o a primera hora de la mañana. La hora predeterminada para hacer copias de seguridad es de las 6:00 p. m. a las 9:00 a. m. El servidor intenta hacer copias de seguridad de los equipos cliente solo durante el espacio de tiempo programado.
 
  Sin embargo, si su empresa tiene actividad durante estas horas que suelen quedar fuera del horario laboral, tal vez quiera cambiar la configuración predeterminada.
@@ -147,7 +147,7 @@ ms.locfileid: "87181021"
 
 4.  Haga clic en **Aplicar** y en **Aceptar**.
 
-##  <a name="change-the-computer-backup-retention-policy"></a><a name="BKMK_5"></a>Cambiar la Directiva de retención de copias de seguridad de equipos
+##  <a name="change-the-computer-backup-retention-policy"></a><a name="BKMK_5"></a> Cambiar la Directiva de retención de copias de seguridad de equipos
  Las copias de seguridad diarias de todos los equipos se acumulan en el servidor con el tiempo. Para administrar estas copias de seguridad, Windows Server Essentials puede ayudarle a administrar la base de datos de copias de seguridad de los equipos. Puede configurar el número de copias de seguridad que se mantendrán para todos los equipos.
 
  La directiva de retención de copias de seguridad determina el tiempo que se conserva una copia de seguridad antes de eliminarla durante el proceso de limpieza de copias de seguridad. La limpieza de copias de seguridad se hace cada sábado a las 11:59 p. m. y elimina todas las copias de seguridad que se encuentran fuera del ámbito de la directiva de retención de copias de seguridad. Los valores predeterminados de la directiva de retención de copias de seguridad son:
@@ -176,7 +176,7 @@ ms.locfileid: "87181021"
     > [!NOTE]
     >  La directiva de retención actualizada se aplica a todos los equipos cliente de la red que estén configurados para hacer copias de seguridad.
 
-##  <a name="reset-backup-to-default-settings"></a><a name="BKMK_6"></a>Restablecer la configuración predeterminada de la copia de seguridad
+##  <a name="reset-backup-to-default-settings"></a><a name="BKMK_6"></a> Restablecer la configuración predeterminada de la copia de seguridad
  Después de configurar las copias de seguridad de los equipos cliente, es posible que el administrador de red haya especificado un espacio de tiempo diferente. De forma similar, puede que el administrador haya especificado un tiempo de retención de copias de seguridad mayor o menor que el valor predeterminado. El botón **Restaurar valores predeterminados** permite restablecer los valores predeterminados de espacio de tiempo y directiva de retención de copias de seguridad que se proporcionan durante la configuración inicial.
 
  Los valores predeterminados son:
@@ -207,7 +207,7 @@ ms.locfileid: "87181021"
 
 4.  Haga clic en **Aplicar** y en **Aceptar**.
 
-##  <a name="use-repair-and-recovery-tools"></a><a name="BKMK_7"></a>Usar herramientas de reparación y recuperación
+##  <a name="use-repair-and-recovery-tools"></a><a name="BKMK_7"></a> Usar herramientas de reparación y recuperación
  **Reparar copias de seguridad:** si la base de datos de copias de seguridad de equipos resulta dañada o inutilizable por cualquier motivo, puede tratar de repararla mediante el asistente para la reparación de bases de datos de copias de seguridad. El asistente analiza los archivos de copias de seguridad para determinar si hay problemas que se puedan reparar y luego trata de corregir los problemas encontrados.
 
 > [!WARNING]
@@ -215,7 +215,7 @@ ms.locfileid: "87181021"
 
  **Recuperación de equipo:** puede crear una unidad flash USB de arranque que se usará para restaurar un equipo desde una copia de seguridad existente. Debe usar una unidad flash USB de 1 GB o más. Después de crear la unidad flash USB de arranque, insértela en el equipo que quiera restaurar y después inícielo desde dicha unidad flash USB para iniciar el proceso de restauración completa del sistema.
 
-##  <a name="repair-the-backup-database"></a><a name="BKMK_8"></a>Reparar la base de datos de copia de seguridad
+##  <a name="repair-the-backup-database"></a><a name="BKMK_8"></a> Reparar la base de datos de copia de seguridad
  Si recibe una alerta que le indica que la base de datos de copias de seguridad de equipos tiene problemas, puede tratar de repararla.
 
 #### <a name="to-repair-the-backup-database"></a>Para reparar la base de datos de copias de seguridad
@@ -255,7 +255,7 @@ ms.locfileid: "87181021"
 
 5.  Los resultados se muestran en la sección **Reparar copias de seguridad**.
 
-##  <a name="disable-backup-for-a-computer"></a><a name="BKMK_9"></a>Deshabilitar la copia de seguridad de un equipo
+##  <a name="disable-backup-for-a-computer"></a><a name="BKMK_9"></a> Deshabilitar la copia de seguridad de un equipo
  Use el panel para deshabilitar rápidamente las copias de seguridad de equipos de la red.
 
 #### <a name="to-disable-backup-for-a-computer"></a>Para deshabilitar la copia de seguridad de un equipo
@@ -274,7 +274,7 @@ ms.locfileid: "87181021"
 
    Para información sobre cómo habilitar la copia de seguridad de un equipo después de haberla deshabilitado, vea [Configurar la copia de seguridad de un equipo cliente](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_3).
 
-##  <a name="run-the-backup-cleanup-task"></a><a name="BKMK_10"></a>Ejecutar la tarea de limpieza de copia de seguridad
+##  <a name="run-the-backup-cleanup-task"></a><a name="BKMK_10"></a> Ejecutar la tarea de limpieza de copia de seguridad
  La tarea de limpieza de copias de seguridad del equipo cliente está programada para ejecutarse cada sábado a las 11:59 p. m. después de haberse completado todas las copias de seguridad. La tarea de limpieza elimina las copias de seguridad de la base de datos de copias de seguridad del equipo cliente según la directiva de retención de copias de seguridad. Los valores predeterminados de la directiva de retención de copias de seguridad son:
 
 - Número de días que se conservan las copias de seguridad diarias: 5 días
@@ -295,7 +295,7 @@ ms.locfileid: "87181021"
 
 4.  Haga clic en la tarea **Limpieza de copias de seguridad** y después, en **Ejecutar** en el panel **Acciones**. El estado cambia a **En ejecución** hasta que se complete la tarea.
 
-##  <a name="view-alerts-in-the-task-bar-on-a-client-computer"></a><a name="BKMK_11"></a>Ver alertas en la barra de tareas de un equipo cliente
+##  <a name="view-alerts-in-the-task-bar-on-a-client-computer"></a><a name="BKMK_11"></a> Ver alertas en la barra de tareas de un equipo cliente
  Puede recibir un aviso de copia de seguridad en la barra de tareas del equipo por los siguientes motivos:
 
 -   Se ha iniciado una copia de seguridad.
@@ -306,7 +306,7 @@ ms.locfileid: "87181021"
 
 -    Solo Windows Server Essentials: se agrega un nuevo volumen al equipo. La persona que administra la red debe ejecutar el asistente para personalizar las copias de seguridad de modo que incluya o excluya el volumen para futuras copias de seguridad.
 
-##  <a name="view-backup-status-from-the-launchpad"></a><a name="BKMK_12"></a>Ver el estado de la copia de seguridad desde Launchpad
+##  <a name="view-backup-status-from-the-launchpad"></a><a name="BKMK_12"></a> Ver el estado de la copia de seguridad desde Launchpad
  Use Launchpad para ver el estado rápido de copia de seguridad del equipo.
 
 > [!TIP]
@@ -343,7 +343,7 @@ ms.locfileid: "87181021"
 
 4.  Haga clic en **Aceptar** para cerrar el cuadro de diálogo **Propiedades de la copia de seguridad**.
 
-##  <a name="stop-a-backup-in-progress-from-the-launchpad"></a><a name="BKMK_13"></a>Detener una copia de seguridad en curso desde Launchpad
+##  <a name="stop-a-backup-in-progress-from-the-launchpad"></a><a name="BKMK_13"></a> Detener una copia de seguridad en curso desde Launchpad
  Puede detener fácilmente una copia de seguridad que está en curso.
 
 #### <a name="to-stop-a-backup-in-progress"></a>Para detener una copia de seguridad en curso
@@ -361,7 +361,7 @@ ms.locfileid: "87181021"
 
 5.  Haga clic en **Aceptar** para cerrar el cuadro de diálogo **Propiedades de la copia de seguridad**.
 
-##  <a name="start-a-backup-from-the-launchpad"></a><a name="BKMK_14"></a>Inicio de una copia de seguridad desde Launchpad
+##  <a name="start-a-backup-from-the-launchpad"></a><a name="BKMK_14"></a> Inicio de una copia de seguridad desde Launchpad
  Es posible que a veces quiera hacer una copia de seguridad de los archivos y carpetas antes de la hora programada de copia de seguridad configurada en el servidor. Launchpad le permite iniciar manualmente la copia de seguridad de su equipo.
 
 #### <a name="to-start-a-backup"></a>Para iniciar una copia de seguridad
@@ -383,7 +383,7 @@ ms.locfileid: "87181021"
 
 7.  Haga clic en **Aceptar** para cerrar el cuadro de diálogo **Propiedades de la copia de seguridad**.
 
-##  <a name="how-computer-backup-works"></a><a name="BKMK_15"></a>Cómo funciona la copia de seguridad del equipo
+##  <a name="how-computer-backup-works"></a><a name="BKMK_15"></a> Cómo funciona la copia de seguridad del equipo
  Al hacer la copia de seguridad cada día, ocurrirá lo siguiente:
 
 -   Se hace la copia de seguridad de los equipos de red uno tras otro.
@@ -397,7 +397,7 @@ ms.locfileid: "87181021"
 > [!IMPORTANT]
 >  El Servicio de instantáneas de volumen (VSS) no admite la creación de una instantánea de un volumen virtual y del volumen del host en el mismo conjunto de instantáneas. VSS admite la creación de instantáneas de volúmenes en un disco duro virtual (VHD) si es necesario hacer una copia de seguridad del volumen virtual. Para obtener más información, consulte [Servicing and Backing Up Virtual Hard Disks (Mantenimiento y seguridad de los discos duros virtuales)](https://go.microsoft.com/fwlink/p/?LinkId=256577).
 
-##  <a name="tips-to-help-prevent-data-loss-due-to-corruption-of-the-client-backup-database"></a><a name="BKMK_16"></a>Sugerencias para ayudar a evitar la pérdida de datos debido a daños en la base de datos de copias de seguridad del cliente
+##  <a name="tips-to-help-prevent-data-loss-due-to-corruption-of-the-client-backup-database"></a><a name="BKMK_16"></a> Sugerencias para ayudar a evitar la pérdida de datos debido a daños en la base de datos de copias de seguridad del cliente
  Si la base de datos de copias de seguridad del cliente se daña, puede perder datos críticos.
 
  Para evitar la pérdida de datos por daños en la base de datos de copias de seguridad del cliente, considere las siguientes opciones:
@@ -417,7 +417,7 @@ ms.locfileid: "87181021"
 
      Después de completar la operación de restauración, reinicie el servicio.
 
-##  <a name="restore-files-or-folders-from-a-client-computer-backup"></a><a name="BKMK_17"></a>Restaurar archivos o carpetas desde una copia de seguridad del equipo cliente
+##  <a name="restore-files-or-folders-from-a-client-computer-backup"></a><a name="BKMK_17"></a> Restaurar archivos o carpetas desde una copia de seguridad del equipo cliente
  Puede examinar y restaurar archivos y carpetas individuales desde una copia de seguridad.
 
 > [!NOTE]
@@ -436,7 +436,7 @@ ms.locfileid: "87181021"
 
 4.  Siga las instrucciones del asistente.
 
-##  <a name="understanding-file-history"></a><a name="BKMK_FileHistory"></a>Información sobre el historial de archivos
+##  <a name="understanding-file-history"></a><a name="BKMK_FileHistory"></a> Información sobre el historial de archivos
  La característica de Historial de archivos de Windows Server Essentials hace automáticamente copias de seguridad de los archivos que se encuentran en las carpetas Bibliotecas, Contactos, Escritorio y Favoritos de los equipos de red que tienen la función de Historial de archivos. Si los originales se pierden, se dañan o se eliminan, puede restaurarlos. También puede encontrar diferentes versiones de los archivos desde un punto específico en el tiempo. Con el tiempo, tendrá un historial completo de los archivos.
 
  En Windows Server Essentials, puede personalizar la configuración del historial de archivos desde la página **historial de archivos** de **configuración y herramientas de copia de seguridad de equipos cliente**.

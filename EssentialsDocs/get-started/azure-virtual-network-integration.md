@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d7d38505-cff5-4f15-9fd5-ae6dba15ce88
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 5ff685960c5690e1bdda47742d81ec44a38aeb8b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 15a4c28c192ed93c18ad9ac515bdccda24293c6e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181681"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622553"
 ---
 # <a name="azure-virtual-network-integration"></a>Integración de Azure Virtual Network
 
@@ -66,6 +66,6 @@ En el panel de tareas del lado derecho del panel se encuentran las diversas tare
 
 -   **Más información acerca de la red virtual de Azure** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/) .
 
-<a name="see-also"></a>Consulta también
+<a name="see-also"></a>Consulte también
 --------
 [Introducción a Windows Server Essentials](get-started.md)

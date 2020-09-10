@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 4c35d230-02ec-4374-b4c5-2da19fe151ee
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f78c211cc227b753af63c4e15884f3bb760a1c0a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 4eefd2a041943b35c5e4ad9b484aa13ead47d111
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180991"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623095"
 ---
 # <a name="manage-email-service-integration-in-windows-server-essentials"></a>Administrar la integración del servicio de correo electrónico en Windows Server Essentials
 
@@ -26,8 +26,8 @@ Use el tema siguiente para configurar una solución de correo electrónico para 
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Administrar Office 365](Manage-Office-365-in-Windows-Server-Essentials.md)
+-   [Administrar Microsoft 365](Manage-Office-365-in-Windows-Server-Essentials.md)
 
--   [Guía de inicio rápido de Microsoft Office 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)
+-   [Guía de inicio rápido a usar Microsoft 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)
 
 -   [Administrar Windows Server Essentials](Manage-Windows-Server-Essentials.md)

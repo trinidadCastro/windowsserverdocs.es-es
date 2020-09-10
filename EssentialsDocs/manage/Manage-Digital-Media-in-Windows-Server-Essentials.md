@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: c59fd121fdf628fc0943214b699599f2f20625b3
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: b5788495a2d622a74d5099d3e7c91e62c8d84a6f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837834"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623129"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>Administración de medios digitales en Windows Server Essentials
 
@@ -45,7 +45,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 
 -   [Problemas conocidos de los tipos de archivos multimedia](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_KnownIssues)
 
-##  <a name="digital-media-overview"></a><a name="BKMK_1"></a>Información general de los medios digitales
+##  <a name="digital-media-overview"></a><a name="BKMK_1"></a> Información general de los medios digitales
  Por medios digitales se hace referencia al audio, vídeo y contenido de fotos que se han codificado (comprimido digitalmente). La codificación de contenido implica convertir la entrada de audio y vídeo a un archivo de medios digitales, como por ejemplo un archivo de Windows Media. Una vez codificados los medios digitales, estos pueden manipularse, distribuirse y reproducirse en equipos con facilidad, y se transmiten fácilmente a través de redes de equipos.
 
  Ejemplos de tipos de medios digitales: Windows Media Audio (WMA), Windows Media Video (WMV), MP3, JPEG y AVI. Para obtener información acerca de los tipos de medios digitales compatibles con el Reproductor de Windows Media, consulte [Tipos de archivos compatibles con el Reproductor de Windows Media](https://support.microsoft.com/kb/316992).
@@ -59,12 +59,12 @@ En los siguientes temas se abordan las características de transmisión por secu
 
 -   **Mostrar presentaciones fotográficas**. Puede almacenar fotos digitales en la carpeta compartida **Fotos** en el servidor y acceder a ellas desde cualquier equipo o desde una Xbox 360 que esté conectada a un televisor de su casa u oficina. Puede ver presentaciones fotográficas, que es como activar el televisor en un gran marco de fotos.
 
-###  <a name="sharing-copy-protected-media"></a><a name="BKMK_1.5"></a>Uso compartido de medios protegidos contra copia
+###  <a name="sharing-copy-protected-media"></a><a name="BKMK_1.5"></a> Uso compartido de medios protegidos contra copia
   Windows Server Essentials no admite el uso compartido de medios protegidos contra copia. Esto incluye la música adquirida a través de una tienda de música en línea.
 
  Los medios protegidos contra copia solo se pueden reproducir en el equipo o dispositivo que ha usado para comprarlos. La protección contra copia impide reproducir archivos multimedia en más de un equipo o dispositivo, incluso si copia los medios al servidor y los reproduce desde allí. Sin embargo, puede almacenar los medios protegidos contra copia en Windows Server Essentials y seguir reproduciendo el medio en el equipo o dispositivo que usó para comprarlo.
 
-##  <a name="manage-media-server-using-the-dashboard"></a><a name="BKMK_2"></a>Administrar el servidor multimedia mediante el panel
+##  <a name="manage-media-server-using-the-dashboard"></a><a name="BKMK_2"></a> Administrar el servidor multimedia mediante el panel
   Windows Server Essentials permite realizar tareas administrativas comunes mediante el panel de Windows Server Essentials. En el panel, la pestaña **Multimedia** de la página **Configuración** del servidor ofrece las siguientes funciones:
 
 |Sección|Funcionalidad|
@@ -75,7 +75,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 
  Para obtener más información, vea [Permitir o restringir el acceso a una biblioteca multimedia en el servidor](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6) y [Compartir medios protegidos contra copia](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1.5).
 
-##  <a name="how-media-streaming-works"></a><a name="BKMK_3"></a>Cómo funciona la transmisión por secuencias de multimedia
+##  <a name="how-media-streaming-works"></a><a name="BKMK_3"></a> Cómo funciona la transmisión por secuencias de multimedia
  La característica de transmisión por secuencias de multimedia de Windows Server Essentials permite que los equipos conectados en red y algunos dispositivos de medios digitales en red puedan reproducir archivos multimedia digitales que se almacenan en el servidor.
 
  Al activar el servidor multimedia, el contenido que comparta en las bibliotecas multimedia podrán reproducirse en los dispositivos de la red que puedan recibir medios de transmisión desde el servidor. Puede transmitir la mayoría de los tipos de archivos multimedia digitales. Algunos de los tipos de archivos más habituales que puede transmitir son:
@@ -100,7 +100,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 
   Para obtener más información, vea [activar o desactivar la transmisión por secuencias de multimedia](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4).
 
-##  <a name="turn-media-streaming-on-or-off"></a><a name="BKMK_4"></a>Activar o desactivar la transmisión por secuencias de multimedia
+##  <a name="turn-media-streaming-on-or-off"></a><a name="BKMK_4"></a> Activar o desactivar la transmisión por secuencias de multimedia
  Puede compartir música, vídeos e imágenes de Windows Server Essentials mediante el streaming de archivos en cualquier receptor de medios digitales (DMR) admitido, como equipos, teléfonos móviles, televisores, receptores de medios digitales, extensores para Windows Media Center (incluido Xbox 360) y otros dispositivos electrónicos personales.
 
  Para obtener una lista actualizada de los dispositivos de medios digitales compatibles con Windows Server Essentials, vea el [centro de compatibilidad de Windows](https://www.microsoft.com/windows/compatibility/CompatCenter/Home).
@@ -108,7 +108,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 ### <a name="enabling-media-sharing"></a>Habilitar el uso compartido de multimedia
  Para compartir los medios que se almacenan en Windows Server Essentials, debe activar la transmisión por secuencias de multimedia. La transmisión por secuencias de multimedia está desactivada de manera predeterminada.
 
-####  <a name="to-turn-media-streaming-on-or-off"></a><a name="BKMK_2.5"></a>Para activar o desactivar la transmisión por secuencias de multimedia
+####  <a name="to-turn-media-streaming-on-or-off"></a><a name="BKMK_2.5"></a> Para activar o desactivar la transmisión por secuencias de multimedia
 
 1. Abra el panel de Windows Server Essentials.
 
@@ -126,7 +126,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 
    Para obtener más información, vea [Permitir o restringir el acceso a una biblioteca multimedia en el servidor](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6).
 
-##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_5"></a>Agregar archivos multimedia digitales al servidor
+##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_5"></a> Agregar archivos multimedia digitales al servidor
  El administrador del servidor puede agregar medios digitales a las carpetas compartidas en la biblioteca multimedia accediendo directamente al servidor o usando el sitio de acceso Web remoto para iniciar sesión en el panel. Otros usuarios pueden agregar archivos multimedia al servidor mediante la conexión de **carpetas compartidas** del Launchpad, mediante el sitio de acceso Web remoto o mediante la aplicación my server para Windows Phone. Para obtener información acerca de la reproducción de medios, vea [reproducir medios digitales](../use/Play-Digital-Media-in-Windows-Server-Essentials.md).
 
 > [!NOTE]
@@ -144,7 +144,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 
 3.  Copie y pegue o arrastre y coloque los archivos multimedia que quiere agregar a la carpeta compartida adecuada del servidor.
 
-##  <a name="allow-or-restrict-access-to-a-media-library-on-the-server"></a><a name="BKMK_6"></a>Permitir o restringir el acceso a una biblioteca multimedia en el servidor
+##  <a name="allow-or-restrict-access-to-a-media-library-on-the-server"></a><a name="BKMK_6"></a> Permitir o restringir el acceso a una biblioteca multimedia en el servidor
 
 -   Al activar el uso compartido de multimedia se crean cuatro carpetas predefinidas: Música, imágenes, vídeos y TV grabada. Si cualquiera de estas carpetas ya existe en el servidor, se volverá a usar la carpeta existente como carpeta compartida para el uso compartido de multimedia. Se conservan todos los permisos de usuario y el contenido multimedia de la carpeta existente, y se comparten con todos los usuarios de la red.
 
@@ -152,7 +152,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 
 -   Si activa el uso compartido de la biblioteca multimedia para una carpeta compartida, cualquier reproductor multimedia digital o DMR admitido que pueda tener acceso a la red de Windows Server Essentials también podrá tener acceso a los medios digitales de esa carpeta compartida. Por ejemplo, si tiene una red inalámbrica y no está protegida, cualquier usuario dentro del alcance de su red inalámbrica podrá tener acceso a sus medios digitales de esa carpeta. Antes de activar el uso compartido de la biblioteca multimedia, asegúrese de que su red inalámbrica esté protegida. Para obtener más información, vea la documentación del punto de acceso inalámbrico.
 
-##  <a name="rename-the-media-library"></a><a name="BKMK_8"></a>Cambiar el nombre de la biblioteca multimedia
+##  <a name="rename-the-media-library"></a><a name="BKMK_8"></a> Cambiar el nombre de la biblioteca multimedia
  El nombre predeterminado de la biblioteca multimedia es **Servidor de medios digitales**. Se crea al activar el streaming multimedia en Windows Server Essentials. Para obtener más información acerca de cómo activar la transmisión por secuencias de multimedia, consulte [activar o desactivar la transmisión por secuencias de multimedia](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.5). Puede modificar el nombre de la biblioteca multimedia en cualquier momento con el panel del servidor.
 
 #### <a name="to-rename-the-media-library"></a>Para cambiar el nombre de la biblioteca multimedia
@@ -167,7 +167,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 
 5.  En el cuadro de diálogo **Cambiar el nombre de la biblioteca multimedia**, escriba un nombre nuevo para la biblioteca multimedia y, a continuación, haga clic en **Aceptar**.
 
-##  <a name="stop-sharing-digital-media"></a><a name="BKMK_9"></a>Detener el uso compartido de medios digitales
+##  <a name="stop-sharing-digital-media"></a><a name="BKMK_9"></a> Detener el uso compartido de medios digitales
  El administrador del servidor puede detener el uso compartido de los medios digitales que se almacenan en carpetas compartidas en un servidor que ejecuta Windows Server Essentials.
 
 #### <a name="to-stop-sharing-media-in-shared-folders"></a>Para detener el uso compartido de multimedia en las carpetas compartidas
@@ -184,13 +184,13 @@ En los siguientes temas se abordan las características de transmisión por secu
 
 4.  Haga clic en **Aplicar** o en **Aceptar** para guardar los cambios.
 
-##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a>Habilitar dispositivos multimedia que usan el protocolo de bloque de mensajes del servidor (SMB) para tener acceso a los archivos compartidos en el servidor
+##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a> Habilitar dispositivos multimedia que usan el protocolo de bloque de mensajes del servidor (SMB) para tener acceso a los archivos compartidos en el servidor
  Los dispositivos que usan el bloque de mensajes del servidor (SMB) para tener acceso a archivos y recursos compartidos de red en lugar de DLNA (para la transmisión por secuencias de multimedia) requieren que se active la cuenta Invitado. Esto permite que cualquier dispositivo o usuario de la red pueda ver el contenido de las carpetas compartidas sin autenticación.
 
 > [!CAUTION]
 >  Al habilitar la cuenta Invitado, cualquier usuario puede tener acceso a los recursos compartidos del servidor de manera predeterminada.
 
-##  <a name="common-processors-and-the-video-profiles-they-support"></a><a name="BKMK_CommonProcessors"></a>Procesadores comunes y perfiles de vídeo que admiten
+##  <a name="common-processors-and-the-video-profiles-they-support"></a><a name="BKMK_CommonProcessors"></a> Procesadores comunes y perfiles de vídeo que admiten
  Para transmitir multimedia desde el servidor de Windows Server Essentials, puede usar un equipo que ejecute el sistema operativo Windows 7 o Windows 8 u otros dispositivos en red (como reproductores multimedia digitales) o Media Center Extender (como Xbox 360). Cuando esté fuera de la red puede usar el reproductor multimedia de Acceso Web remoto para reproducir archivos almacenados en el servidor.
 
  Necesita una velocidad de transferencia de datos de entre 200 KBps y 10 MBps. Debe usar formatos multimedia que el equipo y los dispositivos puedan reconocer y reproducir. No todos los dispositivos admiten los mismos formatos multimedia, por lo que debe haber un método para que el equipo y los dispositivos puedan reproducir sus archivos multimedia.
@@ -218,7 +218,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 > [!NOTE]
 >  Para transmitir vídeos de alta definición a través de Acceso Web remoto necesita un procesador con una puntuación de al menos 6,0.
 
-##  <a name="known-issues-with-media-file-types"></a><a name="BKMK_KnownIssues"></a>Problemas conocidos de los tipos de archivos multimedia
+##  <a name="known-issues-with-media-file-types"></a><a name="BKMK_KnownIssues"></a> Problemas conocidos de los tipos de archivos multimedia
  La característica de transmisión por secuencias de multimedia de Acceso Web remoto usa el servicio de uso compartido de red de Windows Media Player 12. La transmisión por secuencias de multimedia de Acceso Web remoto admite los tipos de archivo de audio, vídeo e imagen compatibles con Windows Media Player 12 y Silverlight 4.
 
  En la siguiente tabla se enumeran los tipos de archivo (formatos) compatibles con la transmisión por secuencias de multimedia de Acceso Web remoto. Si hay tipos de archivo multimedia en el servidor que no se incluyen en la tabla, no podrá transmitirlos mediante la transmisión por secuencias de Acceso Web remoto.

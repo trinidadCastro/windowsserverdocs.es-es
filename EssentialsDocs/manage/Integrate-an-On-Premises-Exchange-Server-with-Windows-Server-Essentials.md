@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 7975f70d75a33549d0a3c7616b5260064d5cb323
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: a0dd4b7469aa44773d978da7d5afd68eac57bff3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554428"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623309"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar un servidor local de Exchange Server con Windows Server Essentials
 
@@ -25,7 +25,7 @@ Esta guía proporciona información e instrucciones básicas que le ayudarán a 
 > [!NOTE]
 >  Exchange Server 2010 no permite la instalación de equipos que ejecutan Windows Server 2012.
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
  Antes de instalar Exchange Server en una red de Windows Server Essentials, asegúrese de completar las tareas descritas en esta sección.
 
 -   [Configurar un servidor que ejecuta Windows Server Essentials](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)

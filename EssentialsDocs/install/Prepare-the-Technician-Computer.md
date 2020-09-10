@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 8841c3aa-7aaa-4cc0-b1e1-ab0643f29586
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 4556a58e87f4ec57271979be0e00ada9f04a9f5b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 8f25b7834cfd5752a556f537f6ced487142563a7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181141"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623418"
 ---
 # <a name="prepare-the-technician-computer"></a>Preparar el equipo del técnico
 

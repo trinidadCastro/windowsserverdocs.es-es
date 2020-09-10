@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 7f83d595b56c1c6e2ae0e2565dd607a403b429b0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 30b8dfa2087e76cc80011eb359715c95564ec1b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181051"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623277"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Administrar aplicaciones en Windows Server Essentials
 
@@ -24,7 +24,7 @@ ms.locfileid: "87181051"
 
 -   [Instalar o quitar complementos mediante el panel](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_2)
 
-##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a>Tareas de administración de aplicaciones en el panel
+##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a> Tareas de administración de aplicaciones en el panel
  En la página de administración **Aplicaciones** del panel encontrará lo siguiente:
 
 - Una lista de complementos instalados, que muestra:
@@ -53,7 +53,7 @@ ms.locfileid: "87181051"
 |Leer la declaración de privacidad para el complemento|Se abre un sitio web en el explorador en el que podrá leer la declaración de privacidad.|
 |¿Cómo instalo o quito complementos?|Abre una página web en el explorador que muestra el tema de ayuda correspondiente.|
 
-##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a>Instalar o quitar complementos mediante el panel
+##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a> Instalar o quitar complementos mediante el panel
  Un complemento es una aplicación de software que ofrece características adicionales y funciones para servidores. Hay cada vez más complementos de Microsoft y de otros proveedores de software independientes (ISV).
 
  Para aprovechar las funciones extendidas de un complemento, debe instalar el complemento en el servidor.
