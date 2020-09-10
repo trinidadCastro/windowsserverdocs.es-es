@@ -3,16 +3,16 @@ title: Remove-MulticastTransmission
 description: Artículo de referencia de Remove-MulticastTransmission, que deshabilita la transmisión por multidifusión para una imagen.
 ms.topic: reference
 ms.assetid: 9a7f5c31-bfbf-425d-9129-a6f9173fe83d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: cfb3a83c975aa14752e2a9538079f67a5dd94b8e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 680894f9a8f5d73d4bc71511ce006f82f04d0b5c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023129"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636407"
 ---
 # <a name="using-the-remove-multicasttransmission-command"></a>Usar el comando Remove-MulticastTransmission
 
@@ -20,7 +20,7 @@ ms.locfileid: "89023129"
 
 Deshabilita la transmisión por multidifusión para una imagen. A menos que especifique **/Force**, los clientes existentes completarán la transferencia de imágenes, pero no se permitirá que se unan a los clientes nuevos.
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 **Windows Server 2008**
 ```
 wdsutil /remove-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image Group>] [/Filename:<File name>] [/force]

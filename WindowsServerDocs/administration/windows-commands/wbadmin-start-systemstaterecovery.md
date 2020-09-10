@@ -3,16 +3,16 @@ title: wbadmin start systemstaterecovery
 description: Artículo de referencia de Wbadmin Start systemstaterecovery, que realiza una recuperación de estado del sistema en una ubicación y, a partir de una copia de seguridad, que especifique.
 ms.topic: reference
 ms.assetid: 208b1be9-3452-4aba-bb49-46bc587fca96
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: da4ed85bbeddc6434f5f5d9fbf0f078b70a13e2d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5f3a19dac5ad6ef340889e6e6e7c07b5ced79f0c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031843"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637573"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -27,7 +27,7 @@ Para realizar una recuperación del estado del sistema con este subcomando, debe
 
 
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 
 Sintaxis para Windows Server 2008:
 ```

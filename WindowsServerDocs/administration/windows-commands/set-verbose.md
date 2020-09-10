@@ -3,16 +3,16 @@ title: Establecer detallado
 description: Artículo de referencia para Set verbose, que especifica si se proporciona una salida detallada durante la creación de la instantánea.
 ms.topic: reference
 ms.assetid: 93cb93c9-666f-4c74-814b-1c404a949935
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 823c43e1ee6f42b36a922473b870c80d392e1f6c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f0b1bbc08cffac858cdb26d69984d66e80531fe1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024909"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637640"
 ---
 # <a name="set-verbose"></a>Establecer detallado
 

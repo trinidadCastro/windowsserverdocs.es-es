@@ -3,16 +3,16 @@ title: mapadmin
 description: Artículo de referencia para el comando mapadmin, que administra Asignación de nombres de usuario para los servicios de Microsoft para Network File System.
 ms.topic: reference
 ms.assetid: b17332c7-8622-4223-9c43-2fb9cf4d992d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b62e31dbe53c5e2b16093bb222b8129d3cca087
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 561215bbffc12c725e82a066824206131f4859da
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033953"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636533"
 ---
 # <a name="mapadmin"></a>mapadmin
 

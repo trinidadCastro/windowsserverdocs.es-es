@@ -3,16 +3,16 @@ title: findstr
 description: Artículo de referencia del comando findstr, que busca patrones de texto en archivos.
 ms.topic: reference
 ms.assetid: c2d803fb-4cd2-46a1-a1b7-6f5e0249c418
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: bdd268c3b2ddde1b42527968252770e6903bacc4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 65223132d4577a5e90929073cb964851f1ab67ce
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035133"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637551"
 ---
 # <a name="findstr"></a>findstr
 
@@ -31,7 +31,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 | /b | Coincide con el patrón de texto si está al principio de una línea. |
 | /e | Coincide con el patrón de texto si está al final de una línea. |
 | /l | Procesa literalmente las cadenas de búsqueda. |
-| /r | Procesa las cadenas de búsqueda como expresiones regulares. Esta es la configuración predeterminada. |
+| /r | Procesa las cadenas de búsqueda como expresiones regulares. Ésta es la configuración predeterminada. |
 | /s | Busca en el directorio actual y en todos los subdirectorios. |
 | /i | Omite el uso de mayúsculas y minúsculas en los caracteres al buscar la cadena. |
 | /x | Imprime las líneas que coinciden exactamente. |
@@ -62,7 +62,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 
     Los metacaracteres aceptados son:
 
-    | Metacarácter | Valor |
+    | Metacarácter | Value |
     | -------------- | ----- |
     | `.` | Carácter **comodín** : cualquier carácter |
     | `*` | **REPEAT** : cero o más apariciones del carácter o la clase anterior. |

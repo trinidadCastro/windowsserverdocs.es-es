@@ -1,17 +1,17 @@
 ---
 title: PASO 8 configurar INET1
 description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess para Windows Server 2016'
-manager: brianlic
 ms.topic: article
 ms.assetid: 693acb5c-dffc-4484-8286-163bb67724c9
-ms.author: coreyp
-author: coreyp-at-msft
-ms.openlocfilehash: 2e53eb8af7327932123fde8eb138611e5ae65242
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.author: lizross
+author: eross-msft
+manager: mtillman
+ms.openlocfilehash: eed2aef3cf1104d070feb43c37243a92e48e5206
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953681"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636768"
 ---
 # <a name="step-8-configure-inet1"></a>PASO 8: Configurar INET1
 

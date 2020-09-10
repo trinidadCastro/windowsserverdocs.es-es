@@ -3,16 +3,16 @@ title: telnet open
 description: Artículo de referencia para telnet Open, que se conecta a un servidor Telnet.
 s.topic: article
 ms.assetid: e30ad68c-2366-4754-ac36-311a2392902a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 11498b2d2f38b96725608e6e72d30d0d563fd88a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 892d797c4b56acb46e8119237fd38296e4ae411c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881707"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636782"
 ---
 # <a name="telnet-open"></a>Telnet: abierto
 

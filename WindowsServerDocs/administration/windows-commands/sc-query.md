@@ -3,16 +3,16 @@ title: Sc.exe consulta
 description: Obtenga información acerca de cómo obtener información acerca de los servicios, los controladores, el tipo de servicios o el tipo de controladores mediante la utilidad sc.exe
 ms.topic: reference
 ms.assetid: ac365f89-4b20-4de6-a582-b204c5e7d0eb
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b3d7967597724dfae4ab5a12ecee9698a43236f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e961badf867237c0725441e138bf4f0ea948155f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037533"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637040"
 ---
 # <a name="scexe-query"></a>Sc.exe consulta
 

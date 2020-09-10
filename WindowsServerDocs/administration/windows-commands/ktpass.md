@@ -3,16 +3,16 @@ title: ktpass
 description: Artículo de referencia para el comando ktpass, que configura el nombre de la entidad de seguridad del servidor para el host o el servicio en AD DS y genera un archivo. de claves de claves que contiene la clave secreta compartida del servicio.
 ms.topic: reference
 ms.assetid: 47087676-311e-41f1-8414-199740d01444
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ef7e2ba1aa84faa44cf4bf77e842e8d3bcdc235
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 65ec74f1e89cd20973d4418659eb3c8de6a5bf93
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028243"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636599"
 ---
 # <a name="ktpass"></a>ktpass
 

@@ -3,16 +3,16 @@ title: schtasks
 description: Artículo de referencia de * * * *-
 ms.topic: reference
 ms.assetid: 2e713203-3dd8-491b-b9e1-9423618dc7e8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d83211a0933e6dea38b099798ad5cb51db2868c5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9710e0b8156ae6a09302c3ffdeaea3e48e7953d1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037523"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637038"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -123,7 +123,7 @@ Los parámetros **/u** y **/p** solo son válidos para programar una tarea en un
 Ejecuta la tarea con los permisos de la cuenta de usuario especificada. De forma predeterminada, la tarea se ejecuta con los permisos del usuario actual del equipo local o con el permiso del usuario especificado mediante el parámetro **/u** , si se incluye uno. El parámetro **/RU** es válido cuando se programan tareas en equipos locales o remotos.
 
 
-|       Valor        |                                                    Descripción                                                    |
+|       Value        |                                                    Descripción                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------|
 | [\<Domain>\]<User> |                                       Especifica una cuenta de usuario alternativa.                                        |
 |    Sistema o     | Especifica la cuenta de sistema local, una cuenta con privilegios elevados usada por el sistema operativo y los servicios del sistema. |
@@ -209,7 +209,7 @@ El formato de *startDate* varía según la configuración regional seleccionada 
 En la tabla siguiente se enumeran los formatos de fecha válidos. Use el formato más similar al formato seleccionado en **fecha corta** en **configuración regional y de idioma** del **Panel de control** del equipo local.
 
 
-|       Valor       |                                        Descripción                                         |
+|       Value       |                                        Descripción                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM>/<DD>/<YYYY> | Se usa para los formatos de primer mes, como **Inglés (Estados Unidos)** y **Español (Panamá)**. |
 | \<DD>/<MM>/<YYYY> |       Se usa para los formatos de primer día, como **búlgaro** y **holandés (Países Bajos)**.        |
@@ -224,7 +224,7 @@ El formato de *EndDate* varía según la configuración regional seleccionada pa
 En la tabla siguiente se enumeran los formatos de fecha válidos. Use el formato más similar al formato seleccionado en **fecha corta** en **configuración regional y de idioma** del **Panel de control** del equipo local.
 
 
-|       Valor       |                                        Descripción                                         |
+|       Value       |                                        Descripción                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM>/<DD>/<YYYY> | Se usa para los formatos de primer mes, como **Inglés (Estados Unidos)** y **Español (Panamá)**. |
 | \<DD>/<MM>/<YYYY> |       Se usa para los formatos de primer día, como **búlgaro** y **holandés (Países Bajos)**.        |

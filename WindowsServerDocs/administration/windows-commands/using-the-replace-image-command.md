@@ -3,23 +3,23 @@ title: reemplazar-imagen
 description: Artículo de referencia de Replace-Image, que reemplaza a una imagen existente por una nueva versión de la imagen.
 ms.topic: reference
 ms.assetid: 68ded3df-e309-420f-9f5d-caeb609385a5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 405a8465c043250ee3177febc2ceab9b50b924b4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0b6abc378f133670e33898693bb2b9f8b149a097
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023069"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636342"
 ---
 # <a name="using-the-replace-image-command"></a>Usar el comando Replace-Image
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Reemplaza una imagen existente por una nueva versión de la imagen.
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 para imágenes de arranque:
 ```
 wdsutil [Options] /replace-Imagmedia:<Image name> [/Server:<Server name>]

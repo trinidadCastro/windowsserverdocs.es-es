@@ -3,16 +3,16 @@ title: Información general de TLS/SSL (Schannel SSP)
 description: Seguridad de Windows Server
 ms.topic: article
 ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 05/16/2018
-ms.openlocfilehash: 512dd20e658f610ac9de7247380eed5d2aed54f6
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 21ad7977039eda311dd6f093fc53c09c08cf0317
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989473"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637845"
 ---
 # <a name="tlsssl-overview-schannel-ssp"></a>Información general de TLS/SSL (Schannel SSP)
 
@@ -27,7 +27,7 @@ La interfaz del proveedor de compatibilidad para seguridad (SSPI) es una API que
 
 Las versiones de TLS 1,0, 1,1 y 1,2, las versiones de SSL 2,0 y 3,0, así como el protocolo DTLS de seguridad de la capa de transporte de datagramas \( \) versión 1,0, y el protocolo PCT de transporte de comunicaciones privadas \( \) se basan en la criptografía de clave pública. El conjunto de protocolos de autenticación de SChannel ofrece estos protocolos. Todos los protocolos de Schannel usan un modelo cliente/servidor.
 
-## <a name="applications"></a><a name="BKMK_APP"></a>Programas
+## <a name="applications"></a><a name="BKMK_APP"></a>APLICACIONES
 Uno de los problemas existentes a la hora de administrar una red es el de proteger los datos que se envían entre las aplicaciones a través de una red que no es de confianza. Puede usar TLS y SSL para autenticar servidores y equipos cliente y, a continuación, usar el protocolo para cifrar los mensajes entre las partes autenticadas.
 
 Por ejemplo, puede usar TLS/SSL para:

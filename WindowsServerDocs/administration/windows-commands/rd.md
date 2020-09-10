@@ -3,16 +3,16 @@ title: rd
 description: Artículo de referencia para el comando Rd, que elimina un directorio.
 ms.topic: reference
 ms.assetid: 42e672f6-5bc2-4c16-af25-18e7ed2dd555
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 360283cbc71e2d9e78acddb4e529c66535f8aa7d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 41e5b22d089a07f5248bece208b04a123a3f3f17
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037193"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637358"
 ---
 # <a name="rd"></a>rd
 

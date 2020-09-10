@@ -3,16 +3,16 @@ title: Opción SET
 description: Artículo de referencia de la opción set, que establece las opciones para la creación de instantáneas.
 ms.topic: reference
 ms.assetid: 4d8d4921-9fdd-4a3c-bb0f-9df5458c4b84
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0569e93ee5c732369b9bc07e4452d27558412b81
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 143530ce3f781b7635cd596a376c5bea71994bf4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036513"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637695"
 ---
 # <a name="set-option"></a>Opción SET
 
