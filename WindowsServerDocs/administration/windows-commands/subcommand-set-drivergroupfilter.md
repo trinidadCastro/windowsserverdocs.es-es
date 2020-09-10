@@ -3,16 +3,16 @@ title: Subcomando set-DriverGroupFilter
 description: Artículo de referencia para el subcomando set-DriverGroupFilter, que agrega o quita un filtro de grupo de controladores existente de un grupo de controladores.
 ms.topic: reference
 ms.assetid: 829ab1f0-4514-421e-9cc0-767b238da69c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b480542a59f1c12858d0a133a778748411992827
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a27795fb6a4f6851a8b114f3ce1f91560df9ce76
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036873"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640892"
 ---
 # <a name="subcommand-set-drivergroupfilter"></a>Subcomando: set-DriverGroupFilter
 

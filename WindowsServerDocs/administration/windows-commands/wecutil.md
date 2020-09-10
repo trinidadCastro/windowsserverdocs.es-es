@@ -3,15 +3,15 @@ title: wecutil
 description: Artículo de referencia de wecutil, que le permite crear y administrar suscripciones a eventos que se reenvían desde equipos remotos.
 ms.topic: reference
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dansimps
-ms.openlocfilehash: e7cfa4a093277afece0722538ca33914d1609ec1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.author: lizross
+author: eross-msft
+manager: mtillman
+ms.openlocfilehash: fbf236082b710ef5f4319b1924856fe98784b1ce
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031743"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641247"
 ---
 # <a name="wecutil"></a>wecutil
 

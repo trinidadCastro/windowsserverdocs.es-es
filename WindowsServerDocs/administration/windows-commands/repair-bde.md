@@ -3,16 +3,16 @@ title: repair-bde
 description: Artículo de referencia para el comando repair-BDE, que puede intentar reconstruir partes críticas de una unidad gravemente dañada y salvar los datos recuperables si la unidad se cifró mediante BitLocker.
 ms.topic: reference
 ms.assetid: 534dca1a-05f7-4ea8-ac24-4fe5f14f988a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a5154a88778dbc3877e3075c813dae06937c1322
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e7ebf0f2923e565e16e546a7804ee42771eec83d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038363"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640635"
 ---
 # <a name="repair-bde"></a>repair-bde
 

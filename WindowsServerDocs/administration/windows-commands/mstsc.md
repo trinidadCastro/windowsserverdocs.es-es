@@ -3,16 +3,16 @@ title: mstsc
 description: Artículo de referencia del comando mstsc, que crea conexiones a Escritorio remoto servidores host de sesión o a otros equipos remotos, edita un archivo de configuración existente de Conexión a Escritorio remoto (. RDP) y migra los archivos de conexión heredados que se crearon con el administrador de conexiones de cliente a los nuevos archivos de conexión. RDP.
 ms.topic: reference
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a9c1eb46e2d6802c50dfc89e4a3085e6a6afca2
-ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
+ms.openlocfilehash: f47a8ad0db569c82d64e74b10c30bec9aca958ab
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89057567"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640542"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -59,7 +59,7 @@ Para conectarse a una sesión en modo de pantalla completa, escriba:
 ```
 mstsc /f
 ```
-o
+or
 ```
 mstsc /v:computer1 /f
 ```

@@ -3,16 +3,16 @@ title: setx
 description: Artículo de referencia de setx, que crea o modifica variables de entorno en el entorno de usuario o del sistema, sin necesidad de programación o scripting.
 ms.topic: reference
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 256f19453edd0c211215a0e161d7d60098ae9cc9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 56d2e1deb629c262eb97939885e7e475dcec85be
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024899"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641005"
 ---
 # <a name="setx"></a>setx
 

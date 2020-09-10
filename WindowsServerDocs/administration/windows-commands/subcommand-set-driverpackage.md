@@ -3,16 +3,16 @@ title: Subcomando set-DriverPackage
 description: Artículo de referencia para el subcomando set-DriverPackage, que cambia el nombre de un paquete de controladores o lo habilita o deshabilita en un servidor.
 ms.topic: reference
 ms.assetid: 11804bb6-ca29-4461-8c63-5131748cd742
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: dcbad64bd5324dbb3e096db98eacc7cdcf15f1b0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a4b0b3154f6cc7cee34e6fdcc91f332295164541
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036843"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640861"
 ---
 # <a name="subcommand-set-driverpackage"></a>Subcomando: set-DriverPackage
 

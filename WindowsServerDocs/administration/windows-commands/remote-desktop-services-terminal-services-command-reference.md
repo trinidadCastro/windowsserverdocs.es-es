@@ -3,16 +3,16 @@ title: Referencia de herramientas de línea de comandos de Servicios de Escritor
 description: Artículo de referencia de las herramientas de línea de comandos de Servicios de Escritorio remoto (RDS).
 ms.topic: reference
 ms.assetid: 2f371848-5c48-470c-908c-afbc95d3a805
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5657ab1d0018f7bc854ebfa5dbd2985f8399d1af
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3c857345e196d2ea4c3389fc9c97b620d20cd642
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027363"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641048"
 ---
 # <a name="remote-desktop-services-terminal-services-command-line-tools-reference"></a>Referencia de herramientas de línea de comandos de Servicios de Escritorio remoto (Terminal Services)
 
@@ -23,7 +23,7 @@ Obtenga información sobre las herramientas de línea de comandos de Servicios d
 > [!NOTE]
 > Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
-| Comando | Descripción |
+| Get-Help | Descripción |
 |--|--|--|
 | [change](change.md) | Cambia la configuración del servidor host de sesión Escritorio remoto para el inicio de sesión, las asignaciones de puerto COM y el modo de instalación. |
 | [change logon](change-logon.md) | Habilita o deshabilita los inicios de sesión de las sesiones de cliente en un servidor host de sesión de Escritorio remoto o muestra el estado de inicio de sesión actual. |

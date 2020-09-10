@@ -3,16 +3,16 @@ title: wbadmin start backup
 description: Artículo de referencia de Wbadmin Start Backup, que crea una copia de seguridad con los parámetros especificados.
 ms.topic: reference
 ms.assetid: 56f3e752-d99a-4c3d-8e97-10303c37dd78
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ee8b52ef7a84b53f07e6ff9ada6e49addbebdf9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: cc59c24e84d7dd5eb4455df656ee1bb3193c6af5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031923"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640263"
 ---
 # <a name="wbadmin-start-backup"></a>wbadmin start backup
 
@@ -20,7 +20,7 @@ Crea una copia de seguridad con los parámetros especificados. Si no se especifi
 
 Para crear una copia de seguridad única con este subcomando, debe ser miembro del grupo operadores de **copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados. Además, debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema** y haga clic en **Ejecutar como administrador**).
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 
 Sintaxis para Windows ° Vista y Windows Server 2008:
 ```

@@ -3,16 +3,16 @@ title: wbadmin delete systemstatebackup
 description: Artículo de referencia de Wbadmin Delete systemstatebackup, que elimina las copias de seguridad de estado del sistema que especifique.
 ms.topic: reference
 ms.assetid: 707d37cb-448d-4542-b6ac-1fc89e749788
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c54fa768251ecc450e36e65bc845067c3b96115b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 439268af61b3e7477711ce6402cce2470eea01cf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022939"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640766"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>wbadmin delete systemstatebackup
 
@@ -25,7 +25,7 @@ Elimina las copias de seguridad de estado del sistema que especifique. Si el vol
 Para eliminar una copia de seguridad de estado del sistema con este subcomando, debe ser miembro del grupo **operadores de copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados. Además, debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**).
 
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 
 ```
 wbadmin delete systemstatebackup

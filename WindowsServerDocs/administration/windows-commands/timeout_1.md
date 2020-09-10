@@ -3,16 +3,16 @@ title: timeout
 description: Artículo de referencia para el tiempo de espera, que detiene el procesador de comandos durante el número de segundos especificado.
 ms.topic: reference
 ms.assetid: e26b4a84-0e30-46e1-aa10-0667b7d3cb4c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4905eaadc745fc5499cb393b1808794e2f803361
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9a4a1a0a352361e901a7344baeb2c92f36e41870
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038263"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640433"
 ---
 # <a name="timeout"></a>timeout
 

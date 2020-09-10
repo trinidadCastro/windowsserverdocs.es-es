@@ -3,16 +3,16 @@ title: telnet set
 description: Artículo de referencia para telnet Set, que establece opciones.
 ms.topic: reference
 ms.assetid: 67316b5f-9c6f-43e3-86d5-dcff9ae2ac3e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 90b25b24da8af743d6e027bd26c2de7f155544b6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 858a73e8f4a379361ac7158b70d0718abc800410
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038362"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640837"
 ---
 # <a name="telnet-set"></a>Telnet: establecer
 
@@ -34,7 +34,7 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 |                salida <Character>                | Establece el carácter de escape que se usa para especificar el símbolo del sistema del cliente Telnet. El carácter de escape puede ser un carácter único, o puede ser una combinación de la tecla **Ctrl** más un carácter. Para establecer una combinación de teclas de control, mantenga presionada la tecla **Ctrl** mientras escribe el carácter que desea asignar. |
 |                    localecho                     |                                                                                                                                         Activa el eco local.                                                                                                                                          |
 |                MSDTC <FileName>                |                                                                                               Registra la sesión de Telnet actual en el archivo local. El registro se iniciará automáticamente al establecer esta opción.                                                                                               |
-|                     el registro                      |                                                                                                                  Activa el registro. Si no se establece ningún archivo de registro, aparece un mensaje de error.                                                                                                                   |
+|                     logging                      |                                                                                                                  Activa el registro. Si no se establece ningún archivo de registro, aparece un mensaje de error.                                                                                                                   |
 |           modo {pantalla de &#124; de consola}           |                                                                                                                                       Establece el modo de operación.                                                                                                                                        |
 |                       ntlm                       |                                                                                                                                     Activa la autenticación NTLM.                                                                                                                                     |
 | término {ANSI &#124; VT100 &#124; vt52 &#124; VTNT} |                                                                                                                                        Establece el tipo de terminal.                                                                                                                                        |

@@ -3,16 +3,16 @@ title: Procesos de las credenciales en la autenticación de Windows
 description: Seguridad de Windows Server
 ms.topic: article
 ms.assetid: 48c60816-fb8b-447c-9c8e-800c2e05b14f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: c4c9554c7c5d34513ddf848989681d81e100f108
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 3d2948c632697e6278b716784f68c7a0085eab07
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989427"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640081"
 ---
 # <a name="credentials-processes-in-windows-authentication"></a>Procesos de las credenciales en la autenticación de Windows
 
@@ -43,7 +43,7 @@ En la tabla siguiente se describen los componentes que administran las credencia
 |Proveedores de compatibilidad para seguridad|Un conjunto de proveedores que pueden invocar individualmente uno o más protocolos de autenticación. El conjunto predeterminado de proveedores puede cambiar con cada versión del sistema operativo Windows y se pueden escribir proveedores personalizados.|
 |Netlogon.dll|Los servicios que realiza el servicio Inicio de sesión de red son los siguientes:<p>-Mantiene el canal seguro del equipo (no debe confundirse con Schannel) con un controlador de dominio.<br />: Pasa las credenciales del usuario a través de un canal seguro al controlador de dominio y devuelve los identificadores de seguridad (SID) del dominio y los derechos de usuario para el usuario.<br />-Publica registros de recursos de servicio en el sistema de nombres de dominio (DNS) y usa DNS para resolver nombres en las direcciones de protocolo de Internet (IP) de los controladores de dominio.<br />-Implementa el protocolo de replicación basado en llamada a procedimiento remoto (RPC) para sincronizar los controladores de dominio principal (PDC) y los controladores de dominio de reserva (BDC).|
 |Samsrv.dll|El administrador de cuentas de seguridad (SAM), que almacena las cuentas de seguridad locales, aplica las directivas almacenadas localmente y admite las API.|
-|Registro del sistema|El registro contiene una copia de la base de datos SAM, la configuración de la Directiva de seguridad local, los valores de seguridad predeterminados y la información de la cuenta a la que solo puede tener acceso el sistema.|
+|Registro|El registro contiene una copia de la base de datos SAM, la configuración de la Directiva de seguridad local, los valores de seguridad predeterminados y la información de la cuenta a la que solo puede tener acceso el sistema.|
 
 Este tema contiene las siguientes secciones:
 

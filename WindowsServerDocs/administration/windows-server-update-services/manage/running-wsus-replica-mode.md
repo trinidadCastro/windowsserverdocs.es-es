@@ -3,16 +3,16 @@ title: Ejecución del modo de réplica de WSUS
 description: 'Tema de Windows Server Update Service (WSUS): Cómo configurar el modo de réplica'
 ms.topic: article
 ms.assetid: d218cd6b-3b6b-4429-913b-31d412ce3356
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6075ac4b141292d1159d109f4d3b92225632c959
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a2d16ddfbd563ae8ef1abf3829849b81e867972
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879233"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641205"
 ---
 # <a name="running-wsus-replica-mode"></a>Ejecución del modo de réplica de WSUS
 

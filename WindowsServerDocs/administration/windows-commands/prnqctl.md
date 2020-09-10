@@ -3,16 +3,16 @@ title: prnqctl
 description: Artículo de referencia para el comando prnqctl, que imprime una página de prueba, y pausa o reanuda una impresora.
 ms.topic: reference
 ms.assetid: 8df9dfa7-984c-4276-bb7d-e7675e7c399e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: fd5eb91f280df80685d07c0b809e16edeae3d893
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bf828a346a8cc4a8987f4171f087e6ee0f08d7c4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033863"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641057"
 ---
 # <a name="prnqctl"></a>prnqctl
 

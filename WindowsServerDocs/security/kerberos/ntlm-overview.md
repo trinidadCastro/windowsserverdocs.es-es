@@ -3,16 +3,16 @@ title: NTLM Overview
 description: Seguridad de Windows Server
 ms.topic: article
 ms.assetid: 773909fd-c0bc-498a-95fc-bb452ec04d90
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: b81d59a350f5549cdb83af7299b8636fb917cc24
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b7597e5c7cea656bd1c1e4edf8ed9c8ef3f0436a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996091"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641072"
 ---
 # <a name="ntlm-overview"></a>NTLM Overview
 

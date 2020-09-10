@@ -3,16 +3,16 @@ title: prnjobs
 description: Artículo de referencia para el comando prnjobs, que pone en pausa, reanuda, cancela y enumera los trabajos de impresión.
 ms.topic: reference
 ms.assetid: 5ad34199-7a5a-40c1-8053-bccd5929df43
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: d25a6d5e6163465cf20304b0651e842afb77458f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 884b8befadf599f1e3e3641dac6bbd384adab16b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038716"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640774"
 ---
 # <a name="prnjobs"></a>prnjobs
 

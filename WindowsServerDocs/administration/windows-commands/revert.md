@@ -3,16 +3,16 @@ title: revertir
 description: Artículo de referencia para el comando Revert, que revierte un volumen a una instantánea especificada.
 ms.topic: reference
 ms.assetid: 75ad40e4-502a-401e-b11e-8b31e00424b5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: cc80890604b5ad1a308d1cd4df9cd23465c970d2
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3c909cec1e503552f68cad55489529585a5eaf51
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027283"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640630"
 ---
 # <a name="revert"></a>revertir
 

@@ -3,16 +3,16 @@ title: reg save
 description: Artículo de referencia para el comando reg Save, que guarda una copia de las subclaves, entradas y valores especificados del registro en un archivo especificado.
 ms.topic: reference
 ms.assetid: b326482b-c8af-467d-a20c-0481eeda3d5c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 17c1bd3439d98ee2e0aa64cb3000f94dfbab41f4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f75aedc391eec495a82fe2ea674164552ef66e80
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025009"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640315"
 ---
 # <a name="reg-save"></a>reg save
 
@@ -39,7 +39,7 @@ reg save <keyname> <filename> [/y]
 
 - Los valores devueltos para la operación de **Guardar reg** son:
 
-    | Valor | Descripción |
+    | Value | Descripción |
     |--|--|
     | 0 | Correcto |
     | 1 | Error |

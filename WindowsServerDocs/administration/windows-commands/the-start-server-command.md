@@ -3,16 +3,16 @@ title: 'Inicio: servidor'
 description: Artículo de referencia para Start-Server, que inicia la transmisión de multidifusión, el espacio de nombres, el servidor de transporte o todos los servicios en el servidor de servicios de implementación de Windows.
 ms.topic: reference
 ms.assetid: 7bbb68e0-1275-4c5f-b276-383a5be4534b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: afbd60679081ffc460b492bd4e5bb548636a5792
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 231f690889d4c60a801cb2a8d4337ab4024cfc9e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036153"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640493"
 ---
 # <a name="start-server"></a>Inicio: servidor
 

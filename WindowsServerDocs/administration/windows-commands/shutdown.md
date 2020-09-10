@@ -3,16 +3,16 @@ title: shutdown
 description: Artículo de referencia para el apagado, que permite apagar o reiniciar equipos locales o remotos de uno en uno.
 ms.topic: reference
 ms.assetid: c432f5cf-c5aa-4665-83af-0ec52c87112e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f83788b4d8e8f92ea1375b9a0f245f9bfa63bc85
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.openlocfilehash: 362bec4106fadc0f68973bec9a128313b0039b43
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554388"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640942"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -48,7 +48,7 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 ## <a name="remarks"></a>Observaciones
 
 - Los usuarios deben tener asignado el derecho de usuario **apagar el sistema** para apagar un equipo administrado de forma remota o local que use el comando **Shutdown** .
-- Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para obtener más información, consulte:
+- Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para más información, consulte:
     - [Grupos locales predeterminados](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
     - [Grupos predeterminados](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
 - Si desea apagar más de un equipo a la vez, puede llamar a **Shutdown** para cada equipo mediante un script, o bien puede usar **Shutdown** **/i** para mostrar el cuadro de diálogo apagado remoto.

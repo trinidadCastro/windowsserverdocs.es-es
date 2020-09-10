@@ -3,16 +3,16 @@ title: logman update counter
 description: Artículo de referencia del comando Logman Update Counter, que actualiza las propiedades de un recopilador de datos de contador existente.
 ms.topic: reference
 ms.assetid: 607df6d5-876c-428d-a0b3-f59cb244e2ce
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9bf7563e0f6dd225057fe0db909bbde99e951554
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c164fdaf8e9a22b6072555a893fb6c41c69f177b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035013"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640363"
 ---
 # <a name="logman-update-counter"></a>logman update counter
 
