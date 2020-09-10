@@ -3,16 +3,16 @@ title: bitsadmin getnoprogresstimeout
 description: Artículo de referencia del comando bitsadmin getnoprogresstimeout, que recupera el período de tiempo, en segundos, que el servicio intentará transferir el archivo después de que se produzca un error transitorio.
 ms.topic: reference
 ms.assetid: 9cd9b19b-cbb4-4352-8419-978080f016b6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 51a8327669bdadbebec28329e0c6b11cc32e672b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a7f5a84b90f124cb172ad551b196cac152a332a8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033523"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631912"
 ---
 # <a name="bitsadmin-getnoprogresstimeout"></a>bitsadmin getnoprogresstimeout
 

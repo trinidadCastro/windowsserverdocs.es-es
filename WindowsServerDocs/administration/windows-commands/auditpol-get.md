@@ -3,16 +3,16 @@ title: auditpol get
 description: Artículo de referencia del comando Auditpol get, que recupera la Directiva del sistema, la Directiva por usuario, las opciones de auditoría y el objeto de descriptor de seguridad de auditoría.
 ms.topic: reference
 ms.assetid: fe13de4e-836c-4207-b47c-64b6272d6c41
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 23de44ebc9bc91ad4db52ee7362b14d9c93648d8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 309e54170b7a154629a17e5fde1ed4943d0b180c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029093"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633238"
 ---
 # <a name="auditpol-get"></a>auditpol get
 

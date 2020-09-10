@@ -3,16 +3,16 @@ title: attributes volume
 description: Artículo de referencia para el comando de volumen Attributes, que muestra, establece o borra los atributos de un volumen.
 ms.topic: reference
 ms.assetid: e40e8284-3d57-4de8-a46c-e4ade34a0d53
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 71f11eb692676cec4121e2ea24aed123f6a7d7d5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: dd651732dbf537da31ae5f5343c687868ffb2741
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029193"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633283"
 ---
 # <a name="attributes-volume"></a>attributes volume
 

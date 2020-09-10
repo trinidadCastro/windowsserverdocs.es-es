@@ -3,16 +3,16 @@ title: wbadmin stop job
 description: Artículo de referencia para el trabajo de detención de Wbadmin, que cancela la operación de copia de seguridad o recuperación que se está ejecutando actualmente. Las operaciones canceladas no se pueden reiniciar; debe volver a ejecutar una copia de seguridad o una operación de recuperación cancelada desde el principio.
 ms.topic: reference
 ms.assetid: 3b83b398-39c7-4410-bf17-5c1fb1a4f46d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a0ca6fca8dda7c741a9ad9c52a7b6ec0f5e75dea
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7060fcac4c7a712695800534a23eddbcd043a4f8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031833"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633643"
 ---
 # <a name="wbadmin-stop-job"></a>wbadmin stop job
 

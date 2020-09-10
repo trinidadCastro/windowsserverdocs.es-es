@@ -3,16 +3,16 @@ title: bitsadmin cancel
 description: Artículo de referencia del comando bitsadmin CANCEL, que quita el trabajo de la cola de transferencia y elimina todos los archivos temporales asociados con el trabajo.
 ms.topic: reference
 ms.assetid: 7374b544-6a16-4d3e-872c-dcf4c02ad89d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: da7a858603875affc7acc8bcb60d02451a641690
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4ef8810b04141b41851f029f6cde4586b89a90d4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024439"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632421"
 ---
 # <a name="bitsadmin-cancel"></a>bitsadmin cancel
 

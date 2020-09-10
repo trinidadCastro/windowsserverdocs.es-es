@@ -3,16 +3,16 @@ title: Subcomando Start-TransportServer
 description: Artículo de referencia para el subcomando Start-TransportServer, que inicia todos los servicios de un servidor de transporte.
 ms.topic: reference
 ms.assetid: 0e93bc84-5b9e-4f9d-8cf0-1634417da0f6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: af74aedd80a9102edccff53d92037e4826750b74
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 635013a5f45d1014c24074728c5ecb951d5dccb2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024689"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633877"
 ---
 # <a name="subcommand-start-transportserver"></a>Subcomando: Start-TransportServer
 

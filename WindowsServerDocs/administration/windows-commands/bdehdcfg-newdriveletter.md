@@ -3,16 +3,16 @@ title: bdehdcfg newdriveletter
 description: Artículo de referencia para el comando bdehdcfg newdriveletter, que asigna una nueva letra de unidad a la parte de una unidad utilizada como unidad del sistema.
 ms.topic: reference
 ms.assetid: f1f200a0-6850-4f0d-9047-f9f982a590f8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: cf3cf52bfd23db5aadd82170de2bf20c8e602573
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5ac14224b55782e8e36cfe156a900e1614bd118d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031553"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632887"
 ---
 # <a name="bdehdcfg-newdriveletter"></a>bdehdcfg: newdriveletter
 

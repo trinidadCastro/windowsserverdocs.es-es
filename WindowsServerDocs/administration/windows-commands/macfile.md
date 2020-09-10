@@ -3,16 +3,16 @@ title: macfile
 description: Artículo de referencia del comando MacFile, que administra el servidor de archivos para servidores, volúmenes, directorios y archivos de Macintosh.
 ms.topic: reference
 ms.assetid: e2ce586c-b316-41d3-90f8-4be0d074cc0e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 06095d99c6cfbdc51fd28f51f9bc06f08d959edf
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6ed5af42108d56016a4b5793993cf19c80a87ff3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023699"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633838"
 ---
 # <a name="macfile"></a>macfile
 
