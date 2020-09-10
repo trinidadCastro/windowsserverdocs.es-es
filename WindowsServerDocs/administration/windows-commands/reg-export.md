@@ -3,16 +3,16 @@ title: reg export
 description: Artículo de referencia para el comando reg Export, que copia las subclaves, entradas y valores especificados del equipo local en un archivo para su transferencia a otros servidores.
 ms.topic: reference
 ms.assetid: 0ad9526f-1e29-4fa5-9d2d-feaa92f12d7c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 258fde37c886335073c7eac660297e1dcce083c0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a7bf8abe5dd97463202a024da90523a52020a986
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028063"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627050"
 ---
 # <a name="reg-export"></a>reg export
 
@@ -37,7 +37,7 @@ reg export <keyname> <filename> [/y]
 
 - Los valores devueltos para la operación de **exportación del registro** son:
 
-    | Valor | Descripción |
+    | Value | Descripción |
     |--|--|
     | 0 | Correcto |
     | 1 | Error |

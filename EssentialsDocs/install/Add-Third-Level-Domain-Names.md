@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 48bfc36ba6f3fa369b694b2e160a5ee1282517f2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: dd68308646eba5fba2f79593cba82de467c1888b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181571"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626359"
 ---
 # <a name="add-third-level-domain-names"></a>Agregar nombres de dominio de tercer nivel
 
@@ -33,7 +33,7 @@ Para habilitar la solicitud de nombres de dominio de tercer nivel por parte de l
 
 -   [Reinicie el servicio Gestión de nombre de dominio de Windows Server](Add-Third-Level-Domain-Names.md#BKMK_RestartService)
 
-###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a>Agregar una implementación de la interfaz IDomainSignupProvider al ensamblado
+###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a> Agregar una implementación de la interfaz IDomainSignupProvider al ensamblado
  La interfaz de IDomainSignupProvider se utiliza para agregar ofertas de dominios al asistente.
 
 ##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>Para agregar el código de IDomainSignupProvider al ensamblado
@@ -273,7 +273,7 @@ Para habilitar la solicitud de nombres de dominio de tercer nivel por parte de l
 
 21. Guarde el proyecto y no lo cierre, ya que lo agregará en el procedimiento siguiente. No podrá generar el proyecto hasta que complete el procedimiento siguiente.
 
-###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a>Agregar una implementación de la interfaz IDomainMaintenanceProvider al ensamblado
+###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a> Agregar una implementación de la interfaz IDomainMaintenanceProvider al ensamblado
  IDomainMaintenanceProvider se utiliza para mantener el dominio después de su creación.
 
 ##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>Para agregar el código de IDomainMaintenanceProvider al ensamblado
@@ -512,10 +512,10 @@ Para habilitar la solicitud de nombres de dominio de tercer nivel por parte de l
 
 14. Guarde y genere la solución.
 
-###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>Firmar el ensamblado con una firma Authenticode
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a> Firmar el ensamblado con una firma Authenticode
  Para poder utilizar el ensamblado en el sistema operativo es necesario firmarlo mediante Authenticode. Para obtener más información acerca de cómo firmar el ensamblado, consulte [Signing and Checking Code with Authenticode (Firma y comprobación de código con Authenticode)](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).
 
-###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>Instalar el ensamblado en el equipo de referencia
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a> Instalar el ensamblado en el equipo de referencia
  Coloque el ensamblado en un equipo de referencia. Anote la ruta de la carpeta, ya que deberá introducirla en el registro en el paso siguiente.
 
 ### <a name="add-a-key-to-the-registry"></a>Agregue una clave al registro
@@ -555,7 +555,7 @@ Para habilitar la solicitud de nombres de dominio de tercer nivel por parte de l
 
 16. Escriba el nombre de clase completo del proveedor que se haya definido en el ensamblado y a continuación haga clic en **Aceptar**.
 
-###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a>Reiniciar el servicio de administración de nombres de dominio de Windows Server
+###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a> Reiniciar el servicio de administración de nombres de dominio de Windows Server
  Deberá reiniciar el Servicio Windows Server Domain Management para que el proveedor esté disponible en el sistema operativo.
 
 ##### <a name="restart-the-service"></a>Reinicie el servicio.

@@ -2,17 +2,17 @@
 title: Microsoft Server Performance Advisor
 description: Microsoft Server Performance Advisor
 ms.assetid: 468ebcb3-9eaf-477c-ab10-e3f1b3ce63dc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
 ms.topic: article
-ms.openlocfilehash: 4ec0190c97c5afc761c27c7c3156380441951544
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bd359e71cfb48ecd8aab24a8538369622dd1d271
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895685"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627699"
 ---
 # <a name="microsoft-server-performance-advisor"></a>Microsoft Server Performance Advisor
 
@@ -69,9 +69,9 @@ Use los vínculos siguientes para descargar Server Performance Advisor para Wind
 
 Puede extraer los archivos del archivo. CAB mediante los siguientes comandos:
 
--   para la versión x86:`extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_x86.cab`
+-   para la versión x86: `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_x86.cab`
 
--   para la versión x64:`extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_amd64.cab`
+-   para la versión x64: `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_amd64.cab`
 
 **PRECAUCIÓN** Al extraer el archivo. cab, SPA debe conservar la estructura de directorios jerárquica para que funcione correctamente. En función de las herramientas de archivo. CAB instaladas en el servidor, la extracción puede dar lugar a una estructura de directorios no operativa. Para conservar la estructura de directorios jerárquica, puede utilizar una herramienta de utilidad de extracción de archivos. CAB que extrae una estructura de directorio de archivos.
 

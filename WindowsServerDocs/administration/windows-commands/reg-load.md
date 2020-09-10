@@ -3,16 +3,16 @@ title: reg load
 description: Artículo de referencia para el comando reg Load, que escribe las subclaves y entradas guardadas en una subclave diferente del registro.
 ms.topic: reference
 ms.assetid: 3b0b2b1b-f510-4108-9e9d-7057e924aa6e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8647b417999459b210986187bd523b3953a8b2d6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 31b0baf4f4c6e903c7dc9716f8a9dc47d29227b5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028033"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627067"
 ---
 # <a name="reg-load"></a>reg load
 
@@ -36,7 +36,7 @@ reg load <keyname> <filename>
 
 - Los valores devueltos para la operación de **carga del registro** son:
 
-    | Valor | Descripción |
+    | Value | Descripción |
     |--|--|
     | 0 | Correcto |
     | 1 | Error |

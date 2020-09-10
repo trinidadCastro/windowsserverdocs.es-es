@@ -3,16 +3,16 @@ title: Usar el comando enable
 description: Artículo de referencia para habilitar, que habilita todos los servicios para servicios de implementación de Windows.
 ms.topic: reference
 ms.assetid: aafebfb2-fff0-41c9-a095-8884acf49f50
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: cd2e1bfe6f8f64e88bee8475734d327d487d7295
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 27352cc8156f503053836a69bc8e359923aa08a6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024519"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626487"
 ---
 # <a name="using-the-enable-command"></a>Usar el comando enable
 

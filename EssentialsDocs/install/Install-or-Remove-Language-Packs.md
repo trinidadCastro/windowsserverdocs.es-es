@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 9999b78b1b0a4b1823162158b95d175f9c159091
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 50fd17a057e15661ed6c3440bdea8f22bea1bada
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837934"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626201"
 ---
 # <a name="install-or-remove-language-packs"></a>Instalar o quitar paquetes de idiomas
 

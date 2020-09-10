@@ -3,16 +3,16 @@ title: Get-AllImageGroups
 description: Artículo de referencia de Get-AllImageGroups, que recupera información sobre todos los grupos de imágenes de un servidor y todas las imágenes de esos grupos de imágenes.
 ms.topic: reference
 ms.assetid: 2ca06533-bcf5-4590-ac8e-263d6c9874f8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f472a1907e07e08ae646d9c454125dfb64ff54df
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b69375cff867d317c3ac6c83ec1c75358455ac03
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036013"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626429"
 ---
 # <a name="get-allimagegroups"></a>Get-AllImageGroups
 

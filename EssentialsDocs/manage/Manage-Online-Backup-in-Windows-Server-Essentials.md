@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: e5c8a274a8e012ffd24ce6c6c819fa240c9f1095
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: fd43b528c9528f531d2de72b0c401358019e2216
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837894"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626160"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>Administrar copias de seguridad en línea en Windows Server Essentials
 
@@ -52,7 +52,7 @@ ms.locfileid: "87837894"
 
 -   [Anulación del registro del servidor](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_6)
 
-###  <a name="upload-a-certificate-to-the-azure-backup-vault"></a><a name="BKMK_1"></a>Carga de un certificado en el almacén de Azure Backup
+###  <a name="upload-a-certificate-to-the-azure-backup-vault"></a><a name="BKMK_1"></a> Carga de un certificado en el almacén de Azure Backup
  Antes de poder usar Azure Backup para las copias de seguridad en línea en Windows Server Essentials, debe cargar un certificado público para registrarlo en el almacén de copia de seguridad. El certificado se usa para autenticar la implementación de Azure Backup (el agente), actuando en nombre del propietario de la suscripción de Microsoft Online Services para administrar los recursos asociados a la suscripción.
 
 > [!NOTE]
@@ -96,7 +96,7 @@ ms.locfileid: "87837894"
 
 10. Configure las copias de seguridad en línea del servidor. Para obtener más información, vea cómo [configurar las copias de seguridad en línea](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).
 
-###  <a name="configure-online-backup"></a><a name="BKMK_2"></a>Configurar copia de seguridad en línea
+###  <a name="configure-online-backup"></a><a name="BKMK_2"></a> Configurar copia de seguridad en línea
  Después de registrar el servidor con Azure Backup, puede establecer la configuración de copia de seguridad en línea en Windows Server Essentials.
 
 ##### <a name="to-configure-online-backup"></a>Para configurar la copia de seguridad en línea
@@ -131,7 +131,7 @@ ms.locfileid: "87837894"
     > [!TIP]
     >  Después de configurar la copia de seguridad, la página **Copia de seguridad en línea** muestra el estado de la última copia de seguridad en línea y la cantidad de espacio de almacenamiento utilizado en el almacén de copias de seguridad. Para ver el estado de las copias de seguridad anteriores, haga clic en **Historial de copias de seguridad**.
 
-###  <a name="start-an-online-backup"></a><a name="BKMK_3"></a>Iniciar una copia de seguridad en línea
+###  <a name="start-an-online-backup"></a><a name="BKMK_3"></a> Iniciar una copia de seguridad en línea
 
 > [!NOTE]
 >  Antes de iniciar una copia de seguridad en línea, debe [registrar este servidor para realizar copias de seguridad](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5) y, a continuación, [configurar la copia de seguridad en línea](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).
@@ -144,7 +144,7 @@ ms.locfileid: "87837894"
 
 3.  En el panel **Tareas de copia de seguridad en línea**, haga clic en **Iniciar copia de seguridad ahora**.
 
-###  <a name="restore-files-and-folders-from-an-online-backup"></a><a name="BKMK_4"></a>Restaurar archivos y carpetas desde una copia de seguridad en línea
+###  <a name="restore-files-and-folders-from-an-online-backup"></a><a name="BKMK_4"></a> Restaurar archivos y carpetas desde una copia de seguridad en línea
  El Asistente de restauración de archivos y carpetas le ayuda a localizar, seleccionar y restaurar los archivos y las carpetas que se copian en línea. En los pasos del asistente, realizará las tareas siguientes:
 
 1.  **Elegir una copia de seguridad en línea desde la que restaurar archivos y carpetas**
@@ -177,7 +177,7 @@ ms.locfileid: "87837894"
 
      La página **Confirmar la información de restauración** proporciona un resumen de las instrucciones de restauración que ha especificado. Para continuar con la restauración de archivos, debe escribir la frase de contraseña correcta de la cuenta de copia de seguridad en línea.
 
-###  <a name="register-this-server-for-backup"></a><a name="BKMK_5"></a>Registrar este servidor para copia de seguridad
+###  <a name="register-this-server-for-backup"></a><a name="BKMK_5"></a> Registrar este servidor para copia de seguridad
  Para realizar una copia de seguridad o restaurar los archivos, las carpetas y el historial de archivos del servidor de Windows Server Essentials en Azure Backup, primero debe registrar el servidor con el servicio Microsoft Azure Backup.
 
 > [!NOTE]
@@ -195,7 +195,7 @@ ms.locfileid: "87837894"
 
 5.  Siga las instrucciones del asistente para crear una frase de contraseña y, a continuación, completar el registro.
 
-###  <a name="unregister-server"></a><a name="BKMK_6"></a>Anular el registro del servidor
+###  <a name="unregister-server"></a><a name="BKMK_6"></a> Anular el registro del servidor
 
 > [!CAUTION]
 >  Si anula el registro del servidor de Windows Server Essentials desde el servicio de Microsoft Azure Backup, Azure Backup ya no podrá hacer una copia de seguridad del servidor. Además, se borrarán los datos del servidor que se hayan cargado antes. Para reanudar las copias de seguridad en línea, debe registrar el servidor de nuevo.
@@ -240,7 +240,7 @@ ms.locfileid: "87837894"
 
 -   [Historial de copias de seguridad en línea en Windows Server Essentials](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_19)
 
-###  <a name="change-the-online-backup-policy"></a><a name="BKMK_7"></a>Cambiar la Directiva de copias de seguridad en línea
+###  <a name="change-the-online-backup-policy"></a><a name="BKMK_7"></a> Cambiar la Directiva de copias de seguridad en línea
  Es fácil realizar cambios en la directiva de copias de seguridad en línea con el panel de Windows Server Essentials.
 
 ##### <a name="to-change-the-online-backup-policy"></a>Para cambiar la directiva de copias de seguridad en línea
@@ -255,7 +255,7 @@ ms.locfileid: "87837894"
 
    Para obtener más información sobre las opciones de configuración que pueden personalizarse, vea el tema sobre la [configuración de copias de seguridad en línea](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).
 
-###  <a name="view-online-backup-storage-usage"></a><a name="BKMK_8"></a>Ver el uso del almacenamiento de copia de seguridad en línea
+###  <a name="view-online-backup-storage-usage"></a><a name="BKMK_8"></a> Ver el uso del almacenamiento de copia de seguridad en línea
 
 ##### <a name="to-view-the-amount-of-storage-space-that-online-backup-uses"></a>Para ver la cantidad de espacio de almacenamiento que usa la copia de seguridad en línea
 
@@ -265,7 +265,7 @@ ms.locfileid: "87837894"
 
 3.  En la pestaña **Copia de seguridad en línea**, aparece el **Estado del almacenamiento** en el panel de información.
 
-###  <a name="include-a-new-folder-in-online-backup"></a><a name="BKMK_9"></a>Incluir una carpeta nueva en la copia de seguridad en línea
+###  <a name="include-a-new-folder-in-online-backup"></a><a name="BKMK_9"></a> Incluir una carpeta nueva en la copia de seguridad en línea
 
 ##### <a name="to-include-a-new-folder-in-the-online-backup-policy"></a>Para incluir una carpeta nueva en la directiva de copias de seguridad en línea
 
@@ -287,7 +287,7 @@ ms.locfileid: "87837894"
 
    Para obtener más información acerca de otras opciones de configuración que se pueden personalizar, vea cómo [configurar las copias de seguridad en línea](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).
 
-###  <a name="remove-or-exclude-file-history-backups-from-the-online-backup-policy"></a><a name="BKMK_10"></a>Quitar o excluir copias de seguridad del historial de archivos de la Directiva de copias de seguridad en línea
+###  <a name="remove-or-exclude-file-history-backups-from-the-online-backup-policy"></a><a name="BKMK_10"></a> Quitar o excluir copias de seguridad del historial de archivos de la Directiva de copias de seguridad en línea
 
 ##### <a name="to-remove-or-exclude-a-folder-from-the-online-backup-policy"></a>Para quitar o excluir una carpeta de la directiva de copias de seguridad en línea
 
@@ -299,12 +299,12 @@ ms.locfileid: "87837894"
 
 4.  Seleccione la carpeta que desea excluir de la directiva de copias de seguridad en línea y, después, en el panel de tareas, haga clic en **Quitar la carpeta de la copia de seguridad en línea**.
 
-###  <a name="disable-or-re-enable-online-server-backup"></a><a name="BKMK_11"></a>Deshabilitar o volver a habilitar la copia de seguridad del servidor en línea
+###  <a name="disable-or-re-enable-online-server-backup"></a><a name="BKMK_11"></a> Deshabilitar o volver a habilitar la copia de seguridad del servidor en línea
  Para obtener instrucciones sobre cómo usar Azure Backup para realizar copias de seguridad o restaurar datos del servidor, consulte [registrar este servidor para la copia de](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5)seguridad.
 
  Para obtener instrucciones sobre cómo dejar de usar Azure Backup para realizar una copia de seguridad o restaurar los datos del servidor, consulte [anulación del registro del servidor](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_6).
 
-###  <a name="stop-an-online-server-backup-in-progress"></a><a name="BKMK_12"></a>Detener una copia de seguridad en curso del servidor en línea
+###  <a name="stop-an-online-server-backup-in-progress"></a><a name="BKMK_12"></a> Detener una copia de seguridad en curso del servidor en línea
 
 ##### <a name="to-stop-an-online-server-backup-in-progress"></a>Para detener una copia de seguridad en curso del servidor en línea
 
@@ -316,7 +316,7 @@ ms.locfileid: "87837894"
 
      Después de detener la copia de seguridad, aparece el estado **Cancelada** en la lista **Historial de copias de seguridad**.
 
-###  <a name="view-online-backup-status"></a><a name="BKMK_13"></a>Ver estado de copia de seguridad en línea
+###  <a name="view-online-backup-status"></a><a name="BKMK_13"></a> Ver estado de copia de seguridad en línea
 
 ##### <a name="to-view-the-backup-status"></a>Para ver el estado de la copia de seguridad
 
@@ -326,14 +326,14 @@ ms.locfileid: "87837894"
 
 3.  Haga clic en la pestaña **historial de copias de seguridad** . La vista de lista muestra el estado de cada trabajo de copia de seguridad. Seleccione una tarea de copia de seguridad para ver información adicional sobre esa tarea concreta.
 
-###  <a name="view-and-manage-online-backup-alerts"></a><a name="BKMK_14"></a>Ver y administrar alertas de copias de seguridad en línea
+###  <a name="view-and-manage-online-backup-alerts"></a><a name="BKMK_14"></a> Ver y administrar alertas de copias de seguridad en línea
  Al igual que muchas otras alertas, las alertas de Azure Backup se muestran en el visor de alertas.
 
 ##### <a name="to-view-online-backup-alerts-in-the-alert-viewer"></a>Para ver las alertas de copia de seguridad en línea en el Visor de alertas
 
 1. Abra el Panel.
 
-2. Lleve a cabo una de las siguientes acciones:
+2. Realice una de las siguientes acciones:
 
      Windows Server Essentials: en el panel de navegación, haga clic en el icono de alertas \( puede ser crítico, ADVERTENCIA o informativo \) . Se abrirá el Visor de alertas.
 
@@ -343,10 +343,10 @@ ms.locfileid: "87837894"
 
    Para obtener más información sobre cómo usar el visor de alertas o la pestaña seguimiento de estado para administrar las alertas, consulte [Administración del mantenimiento del sistema](Manage-System-Health-in-Windows-Server-Essentials.md).
 
-###  <a name="reset-online-backup-to-default-settings"></a><a name="BKMK_15"></a>Restablecer la configuración predeterminada de copia de seguridad en línea
+###  <a name="reset-online-backup-to-default-settings"></a><a name="BKMK_15"></a> Restablecer la configuración predeterminada de copia de seguridad en línea
  Windows Server Essentials proporciona un asistente que ayuda a configurar las opciones de copia de seguridad en línea. Si desea restaurar la configuración predeterminada, ejecute la tarea **Configurar copia de seguridad en línea** y luego seleccione la opción **Quitar la directiva de Copia de seguridad en línea**. A continuación, ejecute la tarea **Configurar copia de seguridad en línea** de nuevo. Los datos cargados anteriormente no cambiarán.
 
-###  <a name="sign-up-for-azure-backup-service"></a><a name="BKMK_16"></a>Regístrese en el servicio de Azure Backup
+###  <a name="sign-up-for-azure-backup-service"></a><a name="BKMK_16"></a> Regístrese en el servicio de Azure Backup
  Para preparar la integración de Microsoft Azure Backup con Windows Server Essentials, inicie sesión en Azure Portal de administración con la cuenta de Microsoft Online Services y, después, cree un almacén de copia de seguridad para almacenar las copias de seguridad en línea en Azure. A continuación, descargará el módulo de integración de Azure Backup y usará el archivo descargado para instalar el complemento de Azure Backup en el servidor de Windows Server Essentials. Si no tiene una cuenta de Microsoft, puede registrarse para usar una versión de prueba gratuita.
 
  Para realizar esta configuración, complete las siguientes tareas:
@@ -359,7 +359,7 @@ ms.locfileid: "87837894"
 
 4.  Instale el complemento de Azure Backup en el servidor.
 
-####  <a name="sign-up-for-a-microsoft-online-services-account-and-the-backup-preview"></a><a name="BKMK_SignupforaMicrosoftOnlineServiceAccount"></a>Regístrese para obtener una cuenta de Microsoft Online Services y la vista previa de copia de seguridad
+####  <a name="sign-up-for-a-microsoft-online-services-account-and-the-backup-preview"></a><a name="BKMK_SignupforaMicrosoftOnlineServiceAccount"></a> Regístrese para obtener una cuenta de Microsoft Online Services y la vista previa de copia de seguridad
 
 1.  Inicie sesión en el panel de Windows Server Essentials.
 
@@ -373,7 +373,7 @@ ms.locfileid: "87837894"
 
 5.  En la página Portal de administración de Azure, verá **Recovery Services** en el panel izquierdo. Aquí es donde administrará los almacenes de copia de seguridad que almacenan las copias de seguridad en línea de Windows Server Essentials.
 
-####  <a name="create-a-backup-vault-to-store-online-backups"></a><a name="BKMK_Createabackupvaulttostoreonlinebackups"></a>Crear un almacén de copia de seguridad para almacenar copias de seguridad en línea
+####  <a name="create-a-backup-vault-to-store-online-backups"></a><a name="BKMK_Createabackupvaulttostoreonlinebackups"></a> Crear un almacén de copia de seguridad para almacenar copias de seguridad en línea
 
 1.  Inicie sesión en el [portal de administración de Azure](https://manage.windowsazure.com)desde el explorador web en el servidor de Windows Server Essentials.
 
@@ -383,13 +383,13 @@ ms.locfileid: "87837894"
 
      Se abrirá la sección **Recovery Services** mostrando el nuevo almacén.
 
-####  <a name="download-the-azure-backup-agent"></a><a name="BKMK_DownloadtheWindowsAzureBackupAgent"></a>Descargar el agente de Azure Backup
+####  <a name="download-the-azure-backup-agent"></a><a name="BKMK_DownloadtheWindowsAzureBackupAgent"></a> Descargar el agente de Azure Backup
 
 1.  Abra el panel de Windows Server Essentials.
 
 2.  En la **Página principal**, haga clic en la pestaña **Comenzar** y luego en la categoría **Complementos**, en **Integrar con Copia de seguridad de Azure** y en **Haga clic para descargar el módulo de integración de Windows Azure Backup**.
 
-####  <a name="install-the-azure-backup-add-in-on-the-server"></a><a name="BKMK_InstalltheWindowsAzureBackupAddIn"></a>Instalar el complemento de Azure Backup en el servidor
+####  <a name="install-the-azure-backup-add-in-on-the-server"></a><a name="BKMK_InstalltheWindowsAzureBackupAddIn"></a> Instalar el complemento de Azure Backup en el servidor
 
 1. Inicie sesión en el servidor con una cuenta de administrador y, a continuación, ejecute el archivo **OnlineBackupAddin.wssx** descargado en el paso anterior.
 
@@ -416,7 +416,7 @@ ms.locfileid: "87837894"
 
 8. Configure las copias de seguridad en línea del servidor. Para obtener más información, vea cómo [configurar las copias de seguridad en línea](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).
 
-###  <a name="integrate-azure-backup-with-windows-server-essentials"></a><a name="BKMK_17"></a>Integrar Azure Backup con Windows Server Essentials
+###  <a name="integrate-azure-backup-with-windows-server-essentials"></a><a name="BKMK_17"></a> Integrar Azure Backup con Windows Server Essentials
  El módulo de integración de Microsoft Azure Backup es una nueva característica de Windows Server Essentials que le permite cifrar y realizar copias de seguridad de archivos y carpetas del servidor en un sistema de almacenamiento hospedado en Azure proporcionado por Microsoft. Al usar Azure Backup para cifrar y realizar copias de seguridad de los datos en el servidor, puede ayudar a evitar la pérdida catastrófica de datos empresariales críticos debido a incendios, inundaciones, robos u otros desastres. Cuando se usa Azure Backup para hacer copias de seguridad de los datos del servidor, la información se cifra con la frase de contraseña antes de cargarse en un centro de datos seguro de Internet. Para acceder a los datos de una copia de seguridad en línea, debe tener un servidor que se autentique mediante un certificado. Además, debe proporcionar la frase de contraseña.
 
  Después de integrar y registrar el servidor con Azure Backup, puede configurar las opciones de copia de seguridad en línea para realizar copias de seguridad programadas periódicamente. También puede iniciar una copia de seguridad en línea en cualquier momento haciendo clic en la tarea **Iniciar copia de seguridad ahora** en el panel de copia de seguridad en línea.
@@ -434,7 +434,7 @@ ms.locfileid: "87837894"
 > [!NOTE]
 >   Azure Backup usa la frase de contraseña para cifrar archivos y carpetas para la copia de seguridad en línea. Cambiar la frase de contraseña de cifrado reemplazará la frase de contraseña que especificó al registrar el servidor. La frase de contraseña acepta únicamente caracteres codificados en ASCII.
 
-###  <a name="protect-folders-for-online-backup-in-windows-server-essentials"></a><a name="BKMK_18"></a>Proteger carpetas para copias de seguridad en línea en Windows Server Essentials
+###  <a name="protect-folders-for-online-backup-in-windows-server-essentials"></a><a name="BKMK_18"></a> Proteger carpetas para copias de seguridad en línea en Windows Server Essentials
  En la subsección **Carpetas protegidas** de la sección de copias de seguridad en línea del panel aparece una lista de todas las carpetas compartidas en el servidor. En la tabla siguiente se describe la información incluida en la lista.
 
 |Columna|Descripción|
@@ -443,7 +443,7 @@ ms.locfileid: "87837894"
 |**Ruta de acceso de la carpeta:**|La ubicación de la carpeta.|
 |**Estado:**|Hay tres tipos de estado: **protegido**, **sin protección**y **desconocido**.|
 
-###  <a name="online-backup-history-in-windows-server-essentials"></a><a name="BKMK_19"></a>Historial de copias de seguridad en línea en Windows Server Essentials
+###  <a name="online-backup-history-in-windows-server-essentials"></a><a name="BKMK_19"></a> Historial de copias de seguridad en línea en Windows Server Essentials
  En la subsección **Historial de copias de seguridad** de la sección de copias de seguridad en línea del panel aparece una lista de las copias de seguridad en línea más recientes. Puede usar copias de seguridad correctas para restaurar archivos y carpetas. En la tabla siguiente se describe la información incluida en la lista.
 
 |Columna|Descripción|

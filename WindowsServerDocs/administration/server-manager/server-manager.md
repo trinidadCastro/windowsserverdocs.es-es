@@ -3,16 +3,16 @@ title: Administrador de servidores
 description: Administrador de servidores
 ms.topic: article
 ms.assetid: d996ef40-8bcc-42b0-b6ae-806b828223f6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fbe1a6f787bcc2704ae1fa8dd00e43c406624fa0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c02ba333fb37d150dae08fd83ec8883a83d3fdb5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895726"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627794"
 ---
 # <a name="server-manager"></a>Administrador de servidores
 

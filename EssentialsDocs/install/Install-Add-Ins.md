@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e62e4f07-c2ba-4c5e-b30c-bdc287cd654e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 12bdaa86cf102ac85d2d2d8f2f2caf492f465dec
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 32bb6be1ff24823d628e23945849b5030d6e0723
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181211"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626320"
 ---
 # <a name="install-add-ins"></a>Instalar complementos
 

@@ -3,16 +3,16 @@ title: Diskraid
 description: Artículo de referencia de la herramienta de línea de comandos Diskraid, que permite configurar y administrar matrices redundantes de subsistemas de almacenamiento de discos independientes (o económicos) (RAID).
 ms.topic: reference
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b153d0ab1ec52f023c12b240518c6304d76e9093
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 49d190f257c93a026f29188fa26af7409c611f44
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030923"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627161"
 ---
 # <a name="diskraid"></a>Diskraid
 
@@ -242,7 +242,7 @@ detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 Establece la lista especificada de puertos de controlador como inactivo para el LUN seleccionado actualmente (otros puertos de controlador no se ven afectados) o desasocia la lista especificada de destinos iSCSI para el LUN seleccionado actualmente.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 dissociate controllers <n> [,<n> [,...]]
@@ -283,7 +283,7 @@ Controller port associations changed.
 
 Sale de Diskraid.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 exit
@@ -311,7 +311,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 Borra la memoria caché del controlador seleccionado actualmente.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 flushcache controller
@@ -321,7 +321,7 @@ flushcache controller
 
 Muestra una lista de todos los comandos de Diskraid.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 help
@@ -331,7 +331,7 @@ help
 
 Recupera o establece el destino de importación de Servicio de instantáneas de volumen (VSS) actual que se establece para el subsistema seleccionado actualmente.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 importtarget subsystem [set target]
@@ -347,7 +347,7 @@ importtarget subsystem [set target]
 
 Recupera información sobre el iniciador iSCSI local.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 initiator
@@ -357,7 +357,7 @@ initiator
 
 Invalida la caché en el controlador seleccionado actualmente.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 invalidatecache controller
@@ -468,7 +468,7 @@ maintenance <object operation> [count=<iteration>]
 
 Establece el nombre descriptivo del subsistema, LUN o destino iSCSI seleccionado actualmente en el nombre especificado.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 name {subsystem | lun | target} [<name>]
@@ -484,7 +484,7 @@ name {subsystem | lun | target} [<name>]
 
 Establece el estado del objeto actualmente seleccionado del tipo especificado en **offline**.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 offline <object>
@@ -500,7 +500,7 @@ offline <object>
 
 Establece el estado del objeto seleccionado del tipo especificado en **online**. Si el objeto es **hbaport**, cambia el estado de las rutas de acceso al puerto HBA seleccionado actualmente a **en línea**.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 online <object>
@@ -516,7 +516,7 @@ online <object>
 
 Realiza las operaciones necesarias, como la resincronización o el reemplazo activo, para reparar el LUN tolerante a errores seleccionado actualmente. Por ejemplo, la recuperación puede hacer que una reserva activa se enlace a un conjunto RAID que tenga un disco con errores u otra reasignación de la extensión de disco.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 recover <lun>
@@ -543,7 +543,7 @@ reenumerate {subsystems | drives}
 
 Actualiza los datos internos para el proveedor seleccionado actualmente.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 refresh provider
@@ -553,7 +553,7 @@ refresh provider
 
 Se usa para comentar scripts.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 Rem <comment>
@@ -563,7 +563,7 @@ Rem <comment>
 
 Quita el portal de destino iSCSI especificado del grupo de portal de destino seleccionado actualmente.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 remove tpgroup tportal=<tportal> [noerr]
@@ -580,7 +580,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 Reemplaza la unidad especificada por la unidad seleccionada actualmente. Es posible que la unidad especificada no sea la unidad seleccionada actualmente.
 
-#### <a name="syntax"></a>Sintaxis
+#### <a name="syntax"></a>Syntax
 
 ```
 replace drive=<drive_number>

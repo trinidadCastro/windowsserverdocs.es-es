@@ -3,16 +3,16 @@ title: logman update trace
 description: Artículo de referencia del comando Logman Update Trace, que actualiza las propiedades de un recopilador de datos de seguimiento de eventos existente.
 ms.topic: reference
 ms.assetid: b7111f7f-4162-4d1a-8e53-d766db0ede1f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 17a63116408458edaf11c2ff44ccf2c1a978cea0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: cb17630384e4daf2371a6f67ea20fc2b25ef61ec
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036353"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627545"
 ---
 # <a name="logman-update-trace"></a>logman update trace
 

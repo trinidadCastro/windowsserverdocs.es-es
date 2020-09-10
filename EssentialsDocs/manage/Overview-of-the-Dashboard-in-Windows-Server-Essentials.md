@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f1d9beed01d17abfd88a135fb5ade48d0b6178ab
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 50f610bec8573916edffd3efb5e551a45fc6e72a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554518"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625952"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Introducción al panel en Windows Server Essentials
 
@@ -93,8 +93,8 @@ ms.locfileid: "89554518"
 |Grupos de distribución|**Nota:** Esta característica solo está disponible en Windows Server Essentials y Windows Server 2012 R2 Standard con el rol experiencia con Windows Server Essentials habilitado. Esta pestaña solo se muestra cuando Windows Server Essentials está integrado con Microsoft 365.<br /><br /> Tareas que puede llevar a cabo en esta página:<br /><br /> : Ver una lista de grupos de distribución.<br /><br /> -Agregar o quitar grupos de distribución.|
 |Dispositivos|Después de conectar los equipos a la red de Windows Server Essentials puede administrarlos desde la página **Dispositivos** del panel. Tareas que puede llevar a cabo en esta página:<br /><br /> -Ver una lista de los equipos que están Unidos a la red.<br /><br /> -Administrar dispositivos móviles aprovechando la capacidad de administración de dispositivos móviles Microsoft 365.<br /><br /> **Nota:** Esta característica solo está disponible en Windows Server Essentials y Windows Server 2012 R2 Standard con el rol experiencia con Windows Server Essentials habilitado.<br /><br /> -Ver las propiedades del equipo y las alertas de estado de cada equipo.<br /><br /> -Configurar y administrar copias de seguridad del equipo.<br /><br /> -Restaurar archivos y carpetas en los equipos.<br /><br /> -Establecer una conexión de Escritorio remoto a un equipo<br /><br /> -Personalizar la configuración de copia de seguridad del equipo y del historial de archivos<br /><br /> Para obtener información acerca de la administración de equipos y copias de seguridad, consulte [administrar dispositivos](Manage-Devices-in-Windows-Server-Essentials.md).|
 |Storage|En función de la versión de Windows Server Essentials que ejecute, la sección **Almacenamiento** del panel contendrá las siguientes secciones de manera predeterminada.<br /><br /> -La subsección **carpetas del servidor** incluye tareas que le ayudan a ver y administrar las propiedades de las carpetas del servidor. La página también incluye tareas para abrir y agregar carpetas del servidor.<br /><br /> -La página **discos duros** incluye tareas que le ayudan a ver y comprobar el estado de las unidades conectadas al servidor.<br /><br /> -En Windows Server Essentials y Windows Server 2012 R2 Standard con el rol experiencia con Windows Server Essentials habilitado, la página **bibliotecas de SharePoint** incluye tareas que le ayudan a administrar las bibliotecas de sharepoint en Microsoft 365 servicio.<br /><br /> Para obtener información acerca de la administración de carpetas de servidor, consulte [Manage Server folders](Manage-Server-Folders-in-Windows-Server-Essentials.md).<br /><br /> Para obtener información acerca de cómo administrar unidades de disco duro, consulte [Manage Server Storage](Manage-Server-Storage-in-Windows-Server-Essentials.md).|
-|Aplicaciones|-La sección **aplicaciones** del panel de Windows Server Essentials contiene dos subsecciones de forma predeterminada.<br /><br /> Para obtener información acerca de cómo administrar aplicaciones de complementos, consulte [Manage Applications](Manage-Applications-in-Windows-Server-Essentials.md).<br /><br /> -La subsección **Complementos** muestra una lista de complementos instalados y proporciona tareas que le permiten quitar un complemento, así como obtener acceso a información adicional sobre el complemento seleccionado.<br /><br /> -En la subsección **Microsoft Pinpoint** se muestra una lista de las aplicaciones que están disponibles en Microsoft Pinpoint.|
-|Office 365|La pestaña **Office 365** solo se muestra cuando Windows Server Essentials está integrado con Microsoft 365. Esta sección contiene información de la cuenta de administrador y de la suscripción a Office 365.|
+|APLICACIONES|-La sección **aplicaciones** del panel de Windows Server Essentials contiene dos subsecciones de forma predeterminada.<br /><br /> Para obtener información acerca de cómo administrar aplicaciones de complementos, consulte [Manage Applications](Manage-Applications-in-Windows-Server-Essentials.md).<br /><br /> -La subsección **Complementos** muestra una lista de complementos instalados y proporciona tareas que le permiten quitar un complemento, así como obtener acceso a información adicional sobre el complemento seleccionado.<br /><br /> -En la subsección **Microsoft Pinpoint** se muestra una lista de las aplicaciones que están disponibles en Microsoft Pinpoint.|
+|Microsoft 365|La pestaña **Microsoft 365** solo se muestra cuando Windows Server Essentials está integrado con Microsoft 365. Esta sección contiene Microsoft 365 información de la cuenta de administrador y la suscripción.|
 
 > [!NOTE]
 >  Si instala un complemento para el panel de Windows Server Essentials, el complemento puede crear secciones administrativas adicionales. Estas secciones pueden aparecer en la barra de navegación principal o en una pestaña de subsección.

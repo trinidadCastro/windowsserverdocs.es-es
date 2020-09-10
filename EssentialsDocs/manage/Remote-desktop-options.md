@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 51076946-ea9b-4ac7-9a6e-d6023816b97d
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 7de65cdbed7fc1995f6729a49e9398ce948a63c6
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: f4603adb7da1df0853b4c816254241d21b969fc5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409535"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625921"
 ---
 # <a name="remote-desktop-options"></a>Opciones de escritorio remoto
 

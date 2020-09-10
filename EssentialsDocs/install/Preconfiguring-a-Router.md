@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 275024e1c3209e33edda79a685b9d45002369398
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 79ffa14cfabc26afd87c0771f7412c98e661421d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181151"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626150"
 ---
 # <a name="preconfiguring-a-router"></a>Configuración previa del enrutador
 

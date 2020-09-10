@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f748ca62062de616be7c6e2ee495a508d0e38646
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: e901038a2a4e294184241b4d35797347a5910026
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180921"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626124"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>Administrar carpetas de servidor en Windows Server Essentials
 
@@ -34,7 +34,7 @@ ms.locfileid: "87180921"
 
 -   [Información sobre las instantáneas](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_Shadow)
 
-##  <a name="manage-server-folders-using-the-dashboard"></a><a name="BKMK_2"></a>Administrar carpetas de servidor mediante el panel
+##  <a name="manage-server-folders-using-the-dashboard"></a><a name="BKMK_2"></a> Administrar carpetas de servidor mediante el panel
  Windows Server Essentials permite realizar tareas administrativas comunes desde el panel. La página **Carpetas del servidor** del panel contiene los elementos siguientes:
 
 - Una lista de las carpetas del servidor, que muestra:
@@ -57,7 +57,7 @@ ms.locfileid: "87180921"
 
 ### <a name="server-folder-tasks-on-the-dashboard"></a>Tareas de carpeta del servidor en el panel
 
-|Nombre de la tarea|Description|
+|Nombre de la tarea|Descripción|
 |---------------|-----------------|
 |Abrir la carpeta|Muestra el contenido de la carpeta seleccionada en el Explorador de archivos (denominado Explorador de Windows en las versiones anteriores de Windows).|
 |Eliminar la carpeta|Permite eliminar una carpeta creada por el usuario. Esta tarea no está disponible para las carpetas predeterminadas que crea la instalación del servidor.|
@@ -67,7 +67,7 @@ ms.locfileid: "87180921"
 |Agregar una carpeta|Ayuda a crear una nueva carpeta del servidor y asignar el nivel de acceso permitido a cada cuenta de usuario.|
 |Información acerca de las carpetas del servidor|Abre un tema de Ayuda en Internet que describe el uso y la funcionalidad de las carpetas del servidor.|
 
-##  <a name="manage-access-to-server-folders"></a><a name="BKMK_1"></a>Administrar el acceso a las carpetas del servidor
+##  <a name="manage-access-to-server-folders"></a><a name="BKMK_1"></a> Administrar el acceso a las carpetas del servidor
  Windows Server Essentials permite almacenar los archivos de los equipos cliente en una ubicación central mediante las carpetas del servidor. Al almacenar los archivos en carpetas del servidor, se garantiza que se mantendrán en un lugar al que se podrá acceder de forma segura en todo momento desde los distintos clientes.
 
  Si almacena los archivos en las carpetas del servidor, podrá:
@@ -80,7 +80,7 @@ ms.locfileid: "87180921"
 
   Puede administrar el acceso a cualquier carpeta del servidor desde el propio servidor, con las tareas de la pestaña **Carpetas del servidor** del panel. La tabla siguiente enumera las carpetas del servidor que se crean de forma predeterminada al instalar Windows Server Essentials o activar el streaming en el servidor.
 
-|Nombre de la carpeta del servidor|Description|
+|Nombre de la carpeta del servidor|Descripción|
 |------------------------|-----------------|
 |Copias de seguridad de equipos cliente|De forma predeterminada, Windows Server Essentials crea copias de seguridad de equipos cliente que se almacenan en esta carpeta. El administrador de red puede modificar la configuración de Copias de seguridad de equipos cliente.|
 |Compañía|Se usa para que los usuarios de red almacenen y accedan a documentos relacionados con la organización.|
@@ -100,7 +100,7 @@ ms.locfileid: "87180921"
 
 -   [Ver o modificar las propiedades de las carpetas del servidor](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_10)
 
-###  <a name="hide-server-folders"></a><a name="BKMK_Hide"></a>Ocultar carpetas del servidor
+###  <a name="hide-server-folders"></a><a name="BKMK_Hide"></a> Ocultar carpetas del servidor
  Como administrador de red, puede ocultar cualquiera de estas carpetas del servidor e impedir que aparezcan en el sitio web de acceso Web remoto o en aplicaciones de servicio Web.
 
 > [!NOTE]
@@ -118,7 +118,7 @@ ms.locfileid: "87180921"
 
 5.  En **<\> propiedades de nombreDeCarpeta**, haga clic en **compartir**, seleccione **ocultar esta carpeta en aplicaciones de acceso Web remoto y servicio Web**y, a continuación, haga clic en **aplicar**.
 
-###  <a name="set-permissions-to-server-folders"></a><a name="BKMK_Perms"></a>Establecer permisos para las carpetas del servidor
+###  <a name="set-permissions-to-server-folders"></a><a name="BKMK_Perms"></a> Establecer permisos para las carpetas del servidor
  Para cualquier carpeta del servidor adicional que desee agregar a este desde el panel, puede elegir tres configuraciones de acceso diferentes:
 
 -   **Lectura/escritura**
@@ -157,7 +157,7 @@ ms.locfileid: "87180921"
 > [!NOTE]
 >  No puede modificar los permisos de uso compartido de las carpetas del servidor **Copias de seguridad del Historial de archivos**, **Redirección de carpetas** y **Usuarios**. Por tanto, las propiedades de carpeta de estas carpetas del servidor no incluyen la pestaña **Uso compartido**.
 
-###  <a name="view-or-modify-server-folder-properties"></a><a name="BKMK_10"></a>Ver o modificar las propiedades de la carpeta del servidor
+###  <a name="view-or-modify-server-folder-properties"></a><a name="BKMK_10"></a> Ver o modificar las propiedades de la carpeta del servidor
  Puede modificar el nombre de la carpeta del servidor y su descripción, y definir las cuentas de usuario que tienen acceso a una carpeta del servidor, con la tarea **Ver las propiedades de la carpeta** de la pestaña **Carpetas del servidor** del panel.
 
 > [!NOTE]
@@ -178,7 +178,7 @@ ms.locfileid: "87180921"
     > [!NOTE]
     >  En Windows Server Essentials y Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado, también puede modificar la cuota de carpeta que emite un mensaje de advertencia cuando una carpeta del servidor alcanza el tamaño especificado.
 
-##  <a name="add-or-move-a-server-folder"></a><a name="BKMK_5"></a>Agregar o quitar una carpeta de servidor
+##  <a name="add-or-move-a-server-folder"></a><a name="BKMK_5"></a> Agregar o quitar una carpeta de servidor
  Puede **agregar más carpetas del servidor** para almacenar los archivos en el servidor, además de las carpetas del servidor predeterminadas que se crean durante la instalación. Con Windows Server Essentials, puede agregar carpetas del servidor en el servidor principal o en un servidor miembro.
 
  Con el asistente para mover carpetas, si es preciso puede **mover una carpeta del servidor** que se encuentre en el servidor principal, ejecute Windows Server Essentials y se muestre en la pestaña **Carpetas del servidor** del panel, a otra unidad de disco duro. Puede mover una carpeta del servidor a otra dirección de ubicación de la unidad de disco duro si:
@@ -221,7 +221,7 @@ ms.locfileid: "87180921"
 
 - Cuotas
 
-###  <a name="where-to-add-or-move-a-server-folder"></a><a name="BKMK_6"></a>Dónde agregar o quitar una carpeta de servidor
+###  <a name="where-to-add-or-move-a-server-folder"></a><a name="BKMK_6"></a> Dónde agregar o quitar una carpeta de servidor
  Por lo general, debe agregar o mover las carpetas del servidor a unidades de disco duro con la máxima cantidad de espacio libre. Si es posible, evite agregar o mover una carpeta compartida a la unidad de sistema (por ejemplo, C:). Puede consumir el espacio de unidad necesario para el sistema operativo y sus actualizaciones. Además, evite agregar o mover las carpetas del servidor a una unidad de disco duro externa, porque pueden desconectarse fácilmente y, en ese caso, no podría acceder a los archivos. En su lugar, se recomienda crear la carpeta en una unidad interna.
 
  Las carpetas del servidor no se pueden agregar o mover a las siguientes ubicaciones (se produciría un error si se seleccionara cualquiera de ellas para agregar o mover elementos):
@@ -273,7 +273,7 @@ ms.locfileid: "87180921"
 
 5.  Siga las instrucciones para completar el asistente.
 
-##  <a name="add-a-missing-server-folder"></a><a name="BKMK_9"></a>Agregar una carpeta de servidor que falta
+##  <a name="add-a-missing-server-folder"></a><a name="BKMK_9"></a> Agregar una carpeta de servidor que falta
  ¿Cuándo detecta el servidor una carpeta de servidor predefinida? La compañía, los usuarios, las copias de seguridad de los equipos cliente, la copia de seguridad del historial de archivos o la redirección de carpetas ya no se comparten (por alguna razón u otra), se genera una alerta para guiar al usuario para resolver este problema. Se recomienda intentar restaurar la carpeta de la copia de seguridad del servidor. Sin embargo, si no ha creado la copia de seguridad en el servidor, seleccione la carpeta que falta y haga clic en **Vuelva a crear la carpeta que falta** para configurar de nuevo la ubicación de la carpeta del servidor.
 
 > [!NOTE]
@@ -283,10 +283,10 @@ ms.locfileid: "87180921"
 
  Para obtener información acerca de cómo restaurar archivos de copias de seguridad del servidor, consulte la sección más información sobre la restauración de archivos y carpetas en el tema [administrar copias de seguridad y restauración](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md).
 
-##  <a name="understand-shared-folders"></a><a name="BKMK_11"></a>Comprender las carpetas compartidas
+##  <a name="understand-shared-folders"></a><a name="BKMK_11"></a> Comprender las carpetas compartidas
  Desde un dispositivo conectado al servidor, puede acceder a las carpetas compartidas en Windows Server Essentials de varias maneras. Para obtener más información, vea el tema [uso de carpetas compartidas](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md).
 
-##  <a name="understand-shadow-copies"></a><a name="BKMK_Shadow"></a>Descripción de las instantáneas
+##  <a name="understand-shadow-copies"></a><a name="BKMK_Shadow"></a> Descripción de las instantáneas
  Con las instantáneas de servidor, los usuarios pueden ver carpetas y archivos compartidos tal como eran en determinados momentos del pasado. El acceso a las versiones anteriores de los archivos (o instantáneas) es útil porque los usuarios pueden:
 
 1. **Recuperar archivos eliminados de forma accidental**. Si elimina accidentalmente un archivo, puede abrir una versión anterior y copiarla en una ubicación segura.

@@ -3,16 +3,16 @@ title: Ver y configurar los datos de servicio y de eventos de rendimiento
 description: Administrador de servidores
 ms.topic: article
 ms.assetid: ccd59c35-4dbf-48e7-88a4-c519c00184d1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e7fbf4c96213d7db042143c1da8065f87e642f47
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8489c50c66bdba84078c7e5d75338af3eeeea56f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993171"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627761"
 ---
 # <a name="view-and-configure-performance-event-and-service-data"></a>View and Configure Performance, Event, and Service Data
 
@@ -48,7 +48,7 @@ La miniatura muestra una vista rápida del estado y la capacidad de administraci
 |Fila de la miniatura|Descripción|
 |---------|--------|
 |Facilidad de uso|La capacidad de administración de un servidor de incluye varias medidas: Si el servidor está en línea o sin conexión, si es accesible e informa de los datos de Administrador del servidor, si el usuario que ha iniciado sesión en el equipo local tiene derechos de usuario adecuados para obtener acceso al servidor remoto o administrarlo, si el servidor remoto está ejecutando todo el software necesario para administrarlo de forma remota. o si el servidor está configurado de forma que permita consultarlo y administrarlo mediante Administrador del servidor. Los únicos datos de capacidad de administración que Administrador del servidor puede recopilar de un servidor que ejecuta Windows Server 2003 es si el servidor está en línea o sin conexión. Para obtener información detallada sobre los errores de estado de capacidad de administración y cómo resolverlos, consulte el [Foro de administrador del servidor](/answers/topics/windows-server-manager.html).|
-|Events|Puede configurar la fila **Eventos** de una miniatura para mostrar las alertas cuando se registren eventos que coincidan con los niveles de gravedad, las fuentes, los períodos de tiempo o los identificadores de eventos especificados. Para ver detalles acerca de los eventos y cambiar las alertas que desea ver, haga clic en la fila **eventos** y abra el cuadro de diálogo **vista de detalles de eventos** del rol o grupo de servidores.|
+|Eventos|Puede configurar la fila **Eventos** de una miniatura para mostrar las alertas cuando se registren eventos que coincidan con los niveles de gravedad, las fuentes, los períodos de tiempo o los identificadores de eventos especificados. Para ver detalles acerca de los eventos y cambiar las alertas que desea ver, haga clic en la fila **eventos** y abra el cuadro de diálogo **vista de detalles de eventos** del rol o grupo de servidores.|
 |Servicios|Puede configurar la fila **servicios** para mostrar alertas cuando se encuentren servicios en un rol o grupo de servidores que coincidan con los tipos de inicio, el estado del servicio, los nombres de servicio y los servidores que especifique en el cuadro de diálogo **vista de detalles de servicios** .<p>Después de agregar un servidor al grupo de servidores de Administrador del servidor, se pueden mostrar alertas de servicio sobre el servicio detección de hardware Shell si no hay usuarios con sesión iniciada en el servidor administrado. Esto sucede porque el servicio Detección de hardware shell se ejecuta solo cuando los usuarios han iniciado sesión en el servidor administrado o cuando están conectados a una sesión de Escritorio remoto en el servidor administrado. Para no ver las alertas del servicio Detección de hardware shell en este caso, haga clic en **Servicios** en las miniaturas para grupos de servidores, incluido el grupo **Todos los servidores**. En el cuadro de diálogo **vista de detalles de servicios** , en la lista desplegable **servicios** , desactive la casilla de **detección de hardware Shell**y, a continuación, haga clic en **Aceptar**.|
 |Rendimiento|Puede configurar la fila **rendimiento** para mostrar las alertas de un rol o grupo de servidores cuando se produzcan alertas de rendimiento que coincidan con los tipos de recursos, los servidores o los períodos de tiempo que especifique en el cuadro de diálogo **vista de detalles de rendimiento** .<p>De manera predeterminada, los contadores de rendimiento están desactivados. Los servidores administrados que ejecutan sistemas operativos posteriores a Windows Server 2003 y cuyos contadores de rendimiento no se han iniciado, normalmente muestran errores de estado de capacidad de administración de **contadores de rendimiento en línea no iniciados** en el icono **servidores** de páginas de roles o grupos. Para activar los contadores de rendimiento en los servidores administrados, en la página **todos los servidores** , haga clic con el botón secundario en entradas en el icono **rendimiento** que muestran un valor de **Estado de contador** de **desactivado**y, a continuación, haga clic en **iniciar contadores de rendimiento**. También puede iniciar los contadores de rendimiento haciendo clic con el botón secundario en entradas para servidores en el icono **servidores** de las páginas de roles o grupos y, a continuación, haciendo clic en **iniciar contadores de rendimiento**.|
 |Resultados BPA|Puede configurar la fila de **resultados de BPA** para mostrar las alertas de un rol o grupo de servidores cuando se encuentren resultados de análisis BPA que coincidan con los niveles de gravedad, los servidores o las categorías de BPA que especifique en el cuadro de diálogo vista de detalles de resultados de **BPA** .|
@@ -121,7 +121,7 @@ De manera predeterminada, los contadores de rendimiento están desactivados. Los
 
 5.  Especifique la memoria disponible restante, en megabytes, que deben tener los servidores antes de que se recopilen las alertas del contador de rendimiento. El valor predeterminado es 2 MB.
 
-6.  Especifique un período de tiempo que mostrarán los gráficos de los recursos **Uso de CPU** y **Memoria disponible** en el icono **Rendimiento** de la página seleccionada. El período predeterminado es un día. Haga clic en **Guardar**.
+6.  Especifique un período de tiempo que mostrarán los gráficos de los recursos **Uso de CPU** y **Memoria disponible** en el icono **Rendimiento** de la página seleccionada. El período predeterminado es un día. Haga clic en **Save**(Guardar).
 
     Tenga en cuenta que el número de alertas de rendimiento en el icono **Rendimiento** y la asignación de las alertas con el transcurso del tiempo que muestra el gráfico pueden cambiar al hacer clic en **Guardar**.
 

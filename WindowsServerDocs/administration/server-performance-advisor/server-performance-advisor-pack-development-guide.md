@@ -1,16 +1,16 @@
 ---
 title: Guía de desarrollo de Server Performance Advisor Pack
 description: Guía de desarrollo de Server Performance Advisor Pack
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 46daa58e6a13f0cf0f71131b05def481f42a594c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7f3174e203aca130b06b410066ec714254a7f125
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993096"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627745"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>Guía de desarrollo de Server Performance Advisor Pack
 
@@ -259,7 +259,7 @@ Ejemplo 2: devuelve todos los pares clave-valor en esta ruta de acceso:
 
 Todos los datos recopilados se importarán en una tabla temporal denominada ** \# registryKeys** antes de que se ejecute un script de informe de SQL. En la tabla siguiente se muestran los resultados del ejemplo 2:
 
-KeyName | KeytypeId | Valor
+KeyName | KeytypeId | Value
 ------ | ----- | -------
 HKEY_LOCAL_MACHINE. ..\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
 \db310065-829b-4671-9647-2261c00e86ef\Description | 2 | |
@@ -269,11 +269,11 @@ HKEY_LOCAL_MACHINE. ..\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
 
 El esquema de la tabla **#registryKeys** es el siguiente:
 
-Nombre de la columna | Tipo de datos de SQL | Descripción
+Nombre de columna | Tipo de datos de SQL | Descripción
 -------- | -------- | --------
 KeyName | Nvarchar (300) NOT NULL | Nombre de la ruta de acceso completa de la clave del registro
 KeytypeId | Smallint NOT NULL | Identificador de tipo interno
-Valor | Nvarchar (4000) NOT NULL | Todos los valores
+Value | Nvarchar (4000) NOT NULL | Todos los valores
 
 La columna **KeytypeID** puede tener uno de los siguientes tipos:
 
@@ -284,7 +284,7 @@ ID | Tipo
 3 | Binary
 4 | DWord
 5 | DWordBigEndian
-6 | Link
+6 | Vínculo
 7 | MultipleString
 8 | Resourcelist
 9 | FullResourceDescriptor
@@ -327,7 +327,7 @@ ID | Query
 
 **\#Esquema de la tabla WmiObjects**
 
-Nombre de la columna | Tipo de datos de SQL | Descripción
+Nombre de columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 SequenceId | Int NOT NULL | Correlacionar la fila y sus propiedades
 Espacio de nombres | Nvarchar (200) NOT NULL | Espacio de nombres WMI
@@ -337,15 +337,15 @@ WmiqueryId | Int NOT NULL | Correlacionar la clave de #WmiQueries
 
 **\#Esquema de la tabla WmiObjectProperties**
 
-Nombre de la columna | Tipo de datos de SQL | Descripción
+Nombre de columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 SequenceId | Int NOT NULL | Correlacionar la fila y sus propiedades
 Nombre | Nvarchar (1000) NOT NULL | Nombre de propiedad
-Valor | Nvarchar (4000) NULL | Valor de la propiedad actual.
+Value | Nvarchar (4000) NULL | Valor de la propiedad actual.
 
 **\#Esquema de la tabla WmiQueries**
 
-Nombre de la columna | Tipo de datos de SQL | Descripción
+Nombre de columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 Identificador | Int NOT NULL | IDENTIFICADOR único de la consulta >
 Query | Nvarchar (4000) NOT NULL | Cadena de consulta original en los metadatos de aprovisionamiento
@@ -375,7 +375,7 @@ timestamp | nombreDeCategoría | CounterName | Valor de instancia de _Total | Va
 
 Para importar los datos en la base de datos, los datos se normalizarán en una tabla denominada ** \# PerformanceCounters**.
 
-CategoryDisplayName | InstanceName | CounterdisplayName | Valor
+CategoryDisplayName | InstanceName | CounterdisplayName | Value
 ---- | ---- | ---- | ----
 Disco físico | _Total | Prom. Segundos de disco/transferencias | 0.00100008362473995
 Disco físico | 0 C: D: | Prom. Segundos de disco/transferencias | 0.00100008362473995
@@ -390,7 +390,7 @@ Disco físico | 0 C: D: | Prom. Segundos de disco/transferencias | 0.00093329760
 
 Esquema de la tabla ** \# PerformanceCounters**
 
-Nombre de la columna | Tipo de datos de SQL | Descripción
+Nombre de columna | Tipo de datos de SQL | Descripción
 ---- | ---- | ---- | ----
 timestamp | datetime2 (3) NOT NULL | Fecha y hora de recopilación en UNC
 nombreDeCategoría | Nvarchar (200) NOT NULL | Nombre de la categoría
@@ -398,7 +398,7 @@ CategoryDisplayName | Nvarchar (200) NOT NULL | Nombre de categoría localizado
 InstanceName | Nvarchar (200) NULL | Nombre de instancia
 CounterName | Nvarchar (200) NOT NULL | Nombre del contador
 CounterdisplayName | Nvarchar (200) NOT NULL | Nombre de contador localizado
-Valor | Float NOT NULL | Valor recopilado
+Value | Float NOT NULL | Valor recopilado
 
 ### <a name="collect-files"></a>Recopilar archivos
 
@@ -414,19 +414,19 @@ Este es un ejemplo que consulta el archivo **applicationHost.config** :
 
 Los resultados se pueden encontrar en una tabla denominada ** \# archivos**, por ejemplo:
 
-querypath | FullPath | Parentpath | FileName | Contenido
+querypath | FullPath | Parentpath | FileName | Content
 ----- | ----- | ----- | ----- | -----
 % WINDIR% \...\applicationHost.config |C:\Windows<br>\...\applicationHost.config | C:\Windows<br>\... \CONFIG | applicationHost. confi | 0x3C3F78
 
 **\#Esquema de tabla de archivos**
 
-Nombre de la columna | Tipo de datos de SQL | Descripción
+Nombre de columna | Tipo de datos de SQL | Descripción
 ---- | ---- | ----
 querypath | Nvarchar (300) NOT NULL | Instrucción de consulta original
 FullPath | Nvarchar (300) NOT NULL | Ruta de acceso de archivo absoluta y nombre de archivo
 Parentpath | Nvarchar (300) NOT NULL | Ruta de acceso del archivo
 FileName | Nvarchar (300) NOT NULL | Nombre de archivo
-Contenido | Varbinary (MAX) NULL | Contenido de archivo en binario
+Content | Varbinary (MAX) NULL | Contenido de archivo en binario
 
 ### <a name="defining-rules"></a>Definición de reglas
 
@@ -516,7 +516,7 @@ Una vez definidas las reglas, los administradores del sistema pueden ver el resu
 
 Siguiendo con el ejemplo anterior, el usuario sabe si hay suficiente espacio libre en disco en la unidad del sistema. Los usuarios también pueden estar interesados en el tamaño real del espacio libre. Se usa un único grupo de valores para almacenar y mostrar estos resultados. Se pueden agrupar y mostrar varios valores únicos en una tabla en la consola de SPA. La tabla solo tiene dos columnas, nombre y valor, como se muestra aquí.
 
-Nombre | Valor
+Nombre | Value
 ---- | ----
 Tamaño de disco libre en la unidad del sistema (GB) | 100
 Tamaño total del disco instalado (GB) | 500 
@@ -673,7 +673,7 @@ Puede definir un tipo de datos para cada valor único. La entrada permitida para
 
 **Hechos**
 
-Nombre | Valor
+Nombre | Value
 --- | ---
 Sistema operativo | &lt;_un valor se establecerá mediante el script de informe_&gt;
 Versión del SO | &lt;_un valor se establecerá mediante el script de informe_&gt;
@@ -697,7 +697,7 @@ Definir un valor de lista es igual que definir una tabla.
 
 El nombre del valor de la lista debe ser único globalmente. Este nombre se convertirá en el nombre de una tabla temporal. En el ejemplo anterior, la tabla denominada \# NetworkAdapterInformation se creará en la fase de inicialización del entorno de ejecución, que contiene todas las columnas que se describen. De forma similar a un nombre de valor único, un nombre de valor de lista también se usa como parte del nombre de vista personalizado, por ejemplo, vwNetworkAdapterInformation.
 
-@typede &lt; columna/ &gt; se define mediante &lt; DataType/&gt;
+@type de &lt; columna/ &gt; se define mediante &lt; DataType/&gt;
 
 La interfaz de usuario ficticia del informe final podría tener el aspecto siguiente:
 
@@ -767,7 +767,7 @@ Al mismo tiempo, el marco de SPA genera dos claves de estadística. Uno es para 
 
 Como se indica en el ejemplo siguiente, se admiten varias columnas de **valor** con varias columnas de **clave** .
 
-CounterName | InstanceName | Promedio | Sum
+CounterName | InstanceName | Media | Sum
 --- | :---: | :---: | :---:
 % de tiempo de procesador | _Total | 10 | 20
 % de tiempo de procesador | CPU0 | 20 | 30 
@@ -866,11 +866,11 @@ Todos los datos recopilados se importan en las siguientes tablas correspondiente
 
 * Archivo
 
-    * \#Ficheros
+    * \#Archivos
 
 * ETW
 
-    * \#Events
+    * \#Eventos
 
     * \#EventProperties
 
@@ -878,9 +878,9 @@ Todos los datos recopilados se importan en las siguientes tablas correspondiente
 
 \[DBO \] . \[ \]La API de SetNotification establece el estado de la regla, por lo que puede ver un icono de **éxito** o de **ADVERTENCIA** en la interfaz de usuario.
 
-* @ruleNamenvarchar (50)
+* @ruleName nvarchar (50)
 
-* @adviceNamenvarchar (50)
+* @adviceName nvarchar (50)
 
 Los mensajes de alerta y recomendación se almacenan en el archivo XML de metadatos de aprovisionamiento. Esto hace que el script del informe sea más fácil de administrar.
 
@@ -912,9 +912,9 @@ END
 
 \[DBO \] . \[ \]La API de GetThreshold obtiene los umbrales:
 
-* @keynvarchar (50)
+* @key nvarchar (50)
 
-* @valuesalida Float
+* @value salida Float
 
 > [!NOTE]
 > Los umbrales son pares nombre-valor, y se puede hacer referencia a ellos en cualquier regla. Los administradores del sistema pueden usar la consola de SPA para ajustar los umbrales.
@@ -949,7 +949,7 @@ if (@freediskSizeInGB < @freediskSize)
 
 \[DBO \] . \[ \]La API de SetSingleValue establece el valor único:
 
-* @keynvarchar (50)
+* @key nvarchar (50)
 
 * @value\_variante SQL
 
@@ -975,7 +975,7 @@ exec dbo.SetSingleValue N OsLocation ,  c:\
 
 En raras ocasiones, puede que desee quitar el resultado que estableció anteriormente mediante \[ DBO \] . \[ API de removeSingleValue \] .
 
-* @keynvarchar (50)
+* @key nvarchar (50)
 
 Puede usar el siguiente script para quitar el valor establecido anteriormente.
 
@@ -987,7 +987,7 @@ exec dbo.removeSingleValue N Osversion
 
 \[DBO \] . \[ \]La API de GetDuration obtiene la duración designada por el usuario en segundos para la recopilación de datos:
 
-* @durationsalida int
+* @duration salida int
 
 Aquí se muestra un script de informe de ejemplo:
 
@@ -998,7 +998,7 @@ exec dbo.GetDuration @duration output
 
 \[DBO \] . \[ \]La API de GetInternal obtiene el intervalo de un contador de rendimiento. Podría devolver NULL si el informe actual no tiene información de contador de rendimiento.
 
-* @intervalsalida int
+* @interval salida int
 
 Aquí se muestra un script de informe de ejemplo:
 
@@ -1278,7 +1278,7 @@ Origen de datos | Formato | Ejemplo
 WMI | WMI: &lt; &gt; / &lt; campo WMIClass&gt; | WMI: Win32_OperatingSystem/Caption
 Contador de rendimiento | PerfCounter: &lt; NombreCategoría &gt; / &lt; nombreDeInstancia&gt; | PerfCounter: proceso/% de tiempo de procesador
 Registro | registro: &lt; registerKey&gt; | registro: Hklm\software\microsoft.<br>\\ASP.NET \\ Rootver
-Archivo de configuración | ConfigFile: &lt; filePath &gt; \[ ; XPath: &lt; XPath&gt;\]<br>**Note**<br>XPath es opcional y solo es válido cuando el archivo es un archivo XML. | ConfigFile: WINDIR% \\ system32 \\ inetsrv\config \\applicationHost.config<br>XPath: Configuration &frasl; System. WebServer<br>&frasl;httpProtocol&frasl;@allowKeepAlive
+Archivo de configuración | ConfigFile: &lt; filePath &gt; \[ ; XPath: &lt; XPath&gt;\]<br>**Nota**<br>XPath es opcional y solo es válido cuando el archivo es un archivo XML. | ConfigFile: WINDIR% \\ system32 \\ inetsrv\config \\applicationHost.config<br>XPath: Configuration &frasl; System. WebServer<br>&frasl;httpProtocol&frasl;@allowKeepAlive
 ETW | ETW: &lt; Provider/ &gt; (palabras clave) | ETW: seguimiento del kernel de Windows (proceso, neto)
 
 ### <a name="table-collation"></a>Intercalación de tabla
@@ -1329,7 +1329,7 @@ Hay dos tablas de salida, como se muestra aquí.
 
 **\#Esquema de la tabla Events**
 
-Nombre de la columna | Tipo de datos de SQL | Descripción
+Nombre de columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 SequenceID | Int NOT NULL | IDENTIFICADOR de secuencia de correlación
 EventtypeId | Int NOT NULL | IDENTIFICADOR de tipo de evento (consulte [dbo]. [ Eventtypes])
@@ -1341,11 +1341,11 @@ Usertime | BigInt no NULL | Tiempo de usuario
 
 **\#Esquema de la tabla EventProperties**
 
-Nombre de la columna | Tipo de datos de SQL | Descripción
+Nombre de columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 SequenceID | Int NOT NULL | IDENTIFICADOR de secuencia de correlación
 Nombre | Nvarchar (100) | Nombre de propiedad
-Valor | Nvarchar(4000) | Valor
+Value | Nvarchar(4000) | Value
 
 ### <a name="etw-schema"></a>Esquema ETW
 
