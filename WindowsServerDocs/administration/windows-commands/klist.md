@@ -3,16 +3,16 @@ title: klist
 description: Artículo de referencia para el comando klist, que muestra una lista de vales de Kerberos en caché actualmente.
 ms.topic: reference
 ms.assetid: 4689b4a9-1740-47dd-9240-02105efca428
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d5284feae5da9c8c7fcdab90dd34ce7855128d5f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: abb088230e37eb2806380ec65e12bd3b5017e5a2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037723"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639778"
 ---
 # <a name="klist"></a>klist
 
@@ -34,7 +34,7 @@ klist [-lh <logonID.highpart>] [-li <logonID.lowpart>] tickets | tgt | purge | s
 | -LH | Denota la parte alta del identificador local único (LUID) del usuario, expresada en formato hexadecimal. Si no hay ninguna **– LH** ni **– Li** , el comando toma como valor predeterminado el LUID del usuario que ha iniciado sesión actualmente. |
 | -Li | Denota la parte baja del identificador local único (LUID) del usuario, expresada en formato hexadecimal. Si no hay ninguna **– LH** ni **– Li** , el comando toma como valor predeterminado el LUID del usuario que ha iniciado sesión actualmente. |
 | vales | Enumera los vales de concesión de vales (TGT) almacenados en caché y los vales de servicio de la sesión de inicio de sesión especificada. Ésta es la opción predeterminada. |
-| TGT | Muestra el TGT inicial de Kerberos. |
+| tgt | Muestra el TGT inicial de Kerberos. |
 | purga | Permite eliminar todos los vales de la sesión de inicio de sesión especificada. |
 | sesiones | Muestra una lista de sesiones de inicio de sesión en este equipo. |
 | kcd_cache | Muestra la información de la caché de delegación restringida de Kerberos. |

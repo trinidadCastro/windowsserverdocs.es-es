@@ -3,16 +3,16 @@ title: prncnfg
 description: Artículo de referencia del comando prncnfg, que configura o muestra información de configuración sobre una impresora.
 ms.topic: reference
 ms.assetid: 38a4e8fa-3122-495b-a125-35b926bc6415
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: ba5d465a46a23261942428761d11ef279b78a62e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2b72f453b016428537800997fc0a7056c211a3b2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038726"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638359"
 ---
 # <a name="prncnfg"></a>prncnfg
 
@@ -50,7 +50,7 @@ cscript prncnfg {-g | -t | -x | -?} [-S <Servername>] [-P <Printername>] [-z <ne
 | `{+|-}`recurso | Especifica si esta impresora se comparte en la red. |
 | `{+|-}`directo | Especifica si el documento se debe enviar directamente a la impresora sin ser puesto en cola. |
 | `{+|-}`sin | Especifica si esta impresora debe publicarse en Active Directory. Si publica la impresora, otros usuarios pueden buscarla en función de su ubicación y capacidades (como la impresión en color y el grapado). |
-| `{+|-}`plusvalía | Función reservada. |
+| `{+|-}`hidden | Función reservada. |
 | `{+|-}`rawonly | Especifica si solo se pueden poner en cola los trabajos de impresión de datos sin procesar en esta cola. |
 | `{+|-}`} en cola | Especifica que la impresora no debe empezar a imprimir hasta que no se haya puesto en cola la última página del documento. El programa de impresión no está disponible hasta que el documento ha finalizado la impresión. Sin embargo, el uso de este parámetro garantiza que todo el documento esté disponible en la impresora. |
 | `{+|-}`keepprintedjobs | Especifica si el administrador de trabajos de impresión debe conservar los documentos después de imprimirlos. Al habilitar esta opción, el usuario puede volver a enviar un documento a la impresora desde la cola de impresión en lugar de desde el programa de impresión. |

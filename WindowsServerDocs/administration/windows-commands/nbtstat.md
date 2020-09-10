@@ -3,16 +3,16 @@ title: nbtstat
 description: Artículo de referencia del comando nbtstat, que muestra las estadísticas de protocolo de NetBIOS a través de TCP/IP (NetBT), las tablas de nombre NetBIOS para el equipo local y los equipos remotos, y la caché de nombres NetBIOS.
 ms.topic: reference
 ms.assetid: 1d2ea99e-72f1-471f-9525-d2c49bf3be82
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 273aaadcf537864512d6dc7aedff0c9872c3cd05
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f56068baab8832cb25f62e43f550fdcf7c4e1092
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037803"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637970"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -53,14 +53,14 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | Dirección | Descripción |
     | ------- | ----------- |
     | Entrada | Número de bytes recibidos. |
-    | Output | Número de bytes enviados. |
+    | Resultados | Número de bytes enviados. |
     | Dentro/fuera | Si la conexión procede del equipo (saliente) o de otro equipo al equipo local (entrante). |
     | Life | La hora a la que se activará una entrada de la caché de tabla de nombres antes de que se purgue. |
     | Nombre local | Nombre NetBIOS local asociado a la conexión. |
     | Host remoto | El nombre o la dirección IP asociada al equipo remoto. |
     | `<03>` | El último byte de un nombre NetBIOS convertido en hexadecimal. Cada nombre NetBIOS tiene una longitud de 16 caracteres. Este último byte suele tener una importancia especial, ya que el mismo nombre puede estar presente varias veces en un equipo, que solo difiere en el último byte. Por ejemplo, `<20>` es un espacio en texto ASCII. |
     | type | Tipo de nombre. Un nombre puede ser un nombre único o un nombre de grupo. |
-    | Estado | Si el servicio NetBIOS del equipo remoto se está ejecutando (registrado) o un nombre de equipo duplicado ha registrado el mismo servicio (conflicto). |
+    | Status | Si el servicio NetBIOS del equipo remoto se está ejecutando (registrado) o un nombre de equipo duplicado ha registrado el mismo servicio (conflicto). |
     | State | El estado de las conexiones NetBIOS. |
 
 - Los posibles estados de conexión NetBIOS incluyen:
@@ -73,8 +73,8 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | Connecting | Una sesión se encuentra en la fase de conexión y se está resolviendo la asignación de nombre a dirección IP del destino. |
     | Aceptar | Una sesión entrante se está aceptando actualmente y se conectará en breve. |
     | Reconexión | Una sesión está intentando volver a conectarse (no se pudo conectar en el primer intento). |
-    | Saliente | Una sesión se encuentra en la fase de conexión y la conexión TCP se está creando actualmente. |
-    | Entrante | Una sesión entrante está en la fase de conexión. |
+    | Salida | Una sesión se encuentra en la fase de conexión y la conexión TCP se está creando actualmente. |
+    | Entrada | Una sesión entrante está en la fase de conexión. |
     | Desconectando | Una sesión se encuentra en el proceso de desconexión. |
     | Escenario desconectado | El equipo local ha emitido una desconexión y está esperando la confirmación del sistema remoto. |
 

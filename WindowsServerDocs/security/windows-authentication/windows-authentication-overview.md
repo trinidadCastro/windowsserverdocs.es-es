@@ -3,16 +3,16 @@ title: Información general de la autenticación de Windows
 description: Seguridad de Windows Server
 ms.topic: article
 ms.assetid: 485a0774-0785-457f-a964-0e9403c12bb1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: bb35516e16e4b7d27ab2a5b68c61fce69a0e7670
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4a2b5e6b48a56a1a2148df262d2785640ac6054d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989968"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638700"
 ---
 # <a name="windows-authentication-overview"></a>Información general de la autenticación de Windows
 

@@ -3,16 +3,16 @@ title: ftp cd
 description: Artículo de referencia del comando FTP CD, que cambia el directorio de trabajo en el equipo remoto.
 ms.topic: reference
 ms.assetid: a574855a-31b4-45c6-bce2-581c7231c99b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ab8992bfcbd10d487b5a460ecd25a0dad349ffc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f315fea0d7fea0f894921d5e2b0a8d1b5cea39e6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037313"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638523"
 ---
 # <a name="ftp-cd"></a>ftp cd
 

@@ -3,16 +3,16 @@ title: Getting Started with Group Managed Service Accounts
 description: Seguridad de Windows Server
 ms.topic: article
 ms.assetid: 7130ad73-9688-4f64-aca1-46a9187a46cf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 979a6cf1e0b5e2d68c05f6285a9d745eabe41fa4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 19da2b6ec2a7a3ca31c479388c087850c77d9c23
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991517"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638058"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -52,12 +52,12 @@ Los servicios tienen las siguientes entidades de seguridad entre las que pueden 
 
 |Principals|Ámbito|Servicios admitidos|Administración de contraseñas|
 |-------|-----|-----------|------------|
-|Cuenta de equipo del sistema de Windows|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
-|Cuenta de equipo sin sistema de Windows|Dominio|Cualquier servidor unido a un dominio|Ninguno|
+|Cuenta de equipo del sistema de Windows|Domain|Limitado a un servidor unido a un dominio|El equipo administra|
+|Cuenta de equipo sin sistema de Windows|Domain|Cualquier servidor unido a un dominio|None|
 |Cuenta virtual|Local|Limitado a un servidor|El equipo administra|
-|Cuenta de servicio administrada independiente de Windows 7|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
-|Cuenta de usuario|Dominio|Cualquier servidor unido a un dominio|Ninguno|
-|Cuenta de servicio administrada de grupo|Dominio|Cualquier servidor unido a un dominio de Windows Server 2012|El controlador de dominio administra y el host recupera|
+|Cuenta de servicio administrada independiente de Windows 7|Domain|Limitado a un servidor unido a un dominio|El equipo administra|
+|Cuenta de usuario|Domain|Cualquier servidor unido a un dominio|None|
+|Cuenta de servicio administrada de grupo|Domain|Cualquier servidor unido a un dominio de Windows Server 2012|El controlador de dominio administra y el host recupera|
 
 No se pueden compartir entre varios sistemas las cuentas de equipo de Windows, las cuentas de servicio administradas independientes (sMSA) de Windows 7 ni las cuentas virtuales. Si configuras una cuenta para que la compartan los servicios de las granjas de servidores, tendrás que elegir una cuenta de usuario o una cuenta de equipo aparte de un sistema de Windows. En cualquiera de estos dos casos, las cuentas no tienen la funcionalidad de administrar contraseñas con un solo punto de control. Esto genera un problema: cada organización se ve obligada a crear una solución costosa para actualizar las claves del servicio en Active Directory y, luego, distribuir las claves a todas las instancias de esos servicios.
 
@@ -76,7 +76,7 @@ En la siguiente tabla, se indican los requisitos del sistema operativo que se de
 
 Para ejecutar los comandos de Windows PowerShell que se usan para administrar cuentas de servicio administradas de grupo, se necesita una arquitectura de 64 bits.
 
-**Requisitos del sistema operativo**
+**Requisitos de sistema operativo**
 
 |Elemento|Requisito|Sistema operativo|
 |------|--------|----------|

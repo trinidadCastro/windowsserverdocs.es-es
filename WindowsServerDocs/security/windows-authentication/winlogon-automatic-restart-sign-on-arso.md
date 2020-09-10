@@ -2,16 +2,16 @@
 title: Inicio de sesión con reinicio automático de Winlogon (ARSO)
 ms.topic: article
 ms.assetid: 15cddcfa-8a8e-45e4-bb76-b8e1a14ceac0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: ee6e5817564389c1870e72543a0c073dd40df4db
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 450c57fae13dc4a970c047cceb356a8fab227066
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989063"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638735"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Inicio de sesión con reinicio automático de Winlogon (ARSO)
 
@@ -22,7 +22,7 @@ ms.locfileid: "87989063"
 > [!NOTE]
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 Windows 8 presentó aplicaciones de pantalla de bloqueo.  Estas son las aplicaciones que ejecutan y muestran las notificaciones mientras la sesión del usuario está bloqueada (citas del calendario, correo electrónico y mensajes, etc.).  Los dispositivos que se reinician debido al proceso de Windows Update no pueden mostrar estas notificaciones de la pantalla de bloqueo tras el reinicio.  Algunos usuarios dependen de estas aplicaciones de pantalla de bloqueo.
 
 ## <a name="whats-changed"></a>¿Qué es lo que ha cambiado?

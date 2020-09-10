@@ -1,16 +1,16 @@
 ---
 title: Cómo configurar cuentas protegidas
 ms.topic: article
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 319f6b167ff16ea53250c549bd6f8d94b5c8f37b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f50e5494210c349a1438570140d6733dce17dcb9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991827"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639031"
 ---
 # <a name="how-to-configure-protected-accounts"></a>Cómo configurar cuentas protegidas
 
@@ -150,7 +150,7 @@ El intercambio AP se produce con la misma frecuencia que los datos dentro del pr
 
 Para obtener información más detallada, consulte [Cómo funciona el protocolo de autenticación Kerberos versión 5](/previous-versions/windows/it-pro/windows-server-2003/cc772815(v=ws.10)).
 
-### <a name="overview"></a>Introducción
+### <a name="overview"></a>Información general
 Las directivas de autenticación complementan el grupo de usuarios protegidos porque proporcionan una manera de aplicar restricciones configurables a las cuentas, además de restricciones a las cuentas de servicios y equipos. Las directivas de autenticación se aplican durante el intercambio AS o el intercambio TGS.
 
 Puedes configura lo siguiente para limitar la autenticación inicial o el intercambio AS:

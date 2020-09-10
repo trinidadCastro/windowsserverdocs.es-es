@@ -3,16 +3,16 @@ title: Información general de Windows Defender para Windows Server
 description: Seguridad de Windows Server
 ms.topic: article
 ms.assetid: 751efb33-a08e-4e90-9208-6f2bc319e029
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: af8ce405409c36f517dd8cc7ab2bc98184eababc
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4ed6a8f9fc9618156963bd2b3c51e4819d8adb36
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989781"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638649"
 ---
 # <a name="windows-defender-antivirus-for-windows-server"></a>Antivirus de Windows Defender para Windows Server
 

@@ -3,16 +3,16 @@ title: ksetup addkdc
 description: Artículo de referencia para el comando ksetup addkdc, que incluye una dirección Centro de distribución de claves (KDC) para el dominio Kerberos determinado.
 ms.topic: reference
 ms.assetid: 98bfc23a-14c4-401c-bcb3-9903c5cdde64
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 79f279ddaa32c0b3411ca024b5d0b7f6d511d132
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d86c494f3326f2d1fbc74eb81670b791004669fc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034053"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639745"
 ---
 # <a name="ksetup-addkdc"></a>ksetup addkdc
 

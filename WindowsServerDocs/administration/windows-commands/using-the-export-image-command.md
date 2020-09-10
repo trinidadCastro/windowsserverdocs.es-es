@@ -3,16 +3,16 @@ title: Exportar-imagen
 description: Artículo de referencia de Export-Image, que exporta una imagen existente del almacén de imágenes a otro archivo de imagen de Windows (. wim).
 ms.topic: reference
 ms.assetid: a9b8b467-0f2d-4754-8998-55503a262778
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f31159d0cfaeb135bf1e5db6f1dec48352fbcf48
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fb7cb7d955d507c6c4a3bd4ddb7434123f37b296
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026783"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638348"
 ---
 # <a name="export-image"></a>Exportar-imagen
 
@@ -20,7 +20,7 @@ ms.locfileid: "89026783"
 
 Exporta una imagen existente del almacén de imágenes a otro archivo de imagen de Windows (. wim).
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 para imágenes de arranque:
 ```
 wdsutil [Options] /Export-Imagmedia:<Image name> [/Server:<Server name>]

@@ -3,16 +3,16 @@ title: tracert
 description: Artículo de referencia de tracert, que determina la ruta de acceso tomada a un destino, mediante el envío de solicitudes de eco del Protocolo de mensajes de control de Internet (ICMP) o mensajes ICMPv6 al destino con valores de campo de período de vida (TTL) que aumentan incrementalmente.
 ms.topic: reference
 ms.assetid: 9032a032-2e5e-49d4-9e86-f821600e4ba6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7316daf691ff6f95ca4eb1608caea382885024ce
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c5a3cce92d5745ac3ef8dcb50d49012f5909a537
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026903"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638331"
 ---
 # <a name="tracert"></a>tracert
 

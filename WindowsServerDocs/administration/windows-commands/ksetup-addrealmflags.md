@@ -3,16 +3,16 @@ title: ksetup addrealmflags
 description: Artículo de referencia para el comando ksetup addrealmflags, que agrega marcas de dominio Kerberos adicionales al dominio Kerberos especificado.
 ms.topic: reference
 ms.assetid: 80ca1e16-8871-494b-b9be-6bc9d63de860
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 34f9067e95a0632fd1f22de604545fe2a5417727
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 44d03abea67011e7ef5544def8cb26655b4b41d1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037963"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639729"
 ---
 # <a name="ksetup-addrealmflags"></a>ksetup addrealmflags
 
@@ -34,7 +34,7 @@ ksetup /addrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 - Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos que no se basan en el sistema operativo Windows Server. Los equipos que ejecutan Windows Server pueden usar un servidor Kerberos para administrar la autenticación en el dominio Kerberos, en lugar de usar un dominio que ejecute un sistema operativo Windows Server. Esta entrada establece las características del dominio Kerberos y son las siguientes:
 
-| Valor | Marca de dominio Kerberos | Descripción |
+| Value | Marca de dominio Kerberos | Descripción |
 | ----- | ---------- | ----------- |
 | 0xF | All | Se establecen todas las marcas de dominio Kerberos. |
 | 0x00 | None | No se establecen marcas de dominio Kerberos y no se habilitan características adicionales. |

@@ -3,16 +3,16 @@ title: Introducción a Control de cuentas de usuario
 description: Seguridad de Windows Server
 ms.topic: article
 ms.assetid: 1b7a39cd-fc10-4408-befd-4b2c45806732
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 67739307d85e9d9dd83690dfef36aa65bfd21d02
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2729bafe910db6814479464a007ce0e49f8b3205
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936571"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638855"
 ---
 # <a name="user-account-control-overview"></a>Introducción a Control de cuentas de usuario
 Control de cuentas \( de usuario UAC \) es un componente fundamental de la visión general de la seguridad de Microsoft.  UAC ayuda a atenuar los efectos de un programa malintencionado.

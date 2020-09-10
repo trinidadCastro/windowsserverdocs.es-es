@@ -3,16 +3,16 @@ title: Grupo de seguridad de usuarios protegidos
 description: Seguridad de Windows Server
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f296
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: fb8fef4b954416e7ed284db9cf57b77f5a84c594
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: ba53c87119e798c3d3346b8fc245ffcc4e092a4d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995811"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639806"
 ---
 # <a name="protected-users-security-group"></a>Grupo de seguridad de usuarios protegidos
 
@@ -56,13 +56,13 @@ El grupo de usuarios protegidos se puede crear [transfiriendo el rol de emulador
 
 En la siguiente tabla se especifican las propiedades del grupo de usuarios protegidos.
 
-|Atributo|Valor|
+|Atributo|Value|
 |-------|-----|
 |SID/RID conocido|S-1-5-21-<domain>-525|
 |Tipo|Global de dominio|
 |Contenedor predeterminado|CN=Usuarios, DC=<domain>, DC=|
-|Miembros predeterminados|Ninguno|
-|Miembro predeterminado de|Ninguno|
+|Miembros predeterminados|None|
+|Miembro predeterminado de|None|
 |¿Protegido por ADMINSDHOLDER?|No|
 |¿Es seguro sacarlo del contenedor predeterminado?|Sí|
 |¿Es seguro delegar la administración de este grupo en administradores que no son de servicio?|No|

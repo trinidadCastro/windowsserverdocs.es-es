@@ -3,16 +3,16 @@ title: Usar el comando Add
 description: Artículo de referencia para los diversos comandos Add.
 ms.topic: reference
 ms.assetid: 6fcdd154-baaf-4288-a355-2a95a3028bce
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0eaeac06ccbd01ee551808f6fcb0b95af7d8d6ee
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6369d3f1bc7e532efd4f4974a0d2d69271cfa688
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032180"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638324"
 ---
 # <a name="using-the-add-command"></a>Usar el comando Add
 

@@ -3,16 +3,16 @@ title: Get-AllDriverGroups
 description: Artículo de referencia de Get-AllDriverGroups, que muestra información acerca de todos los grupos de controladores de un servidor.
 ms.topic: reference
 ms.assetid: f245ba53-f150-41b1-8418-38dcf0410a05
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ed6c58a07d9a9efc5cebea64409a2566b3c0aa04
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bb3c8c79e95bc5617e2eff0c168b54ba039a5c14
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026763"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638194"
 ---
 # <a name="get-alldrivergroups"></a>Get-AllDriverGroups
 
