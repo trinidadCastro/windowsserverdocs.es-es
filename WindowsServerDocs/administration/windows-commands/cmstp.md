@@ -3,16 +3,16 @@ title: cmstp
 description: Artículo de referencia de cmstp, que instala o quita un perfil de servicio de administrador de conexiones.
 ms.topic: reference
 ms.assetid: 34aad544-11c3-4e85-8bbf-5bc5a971da93
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 99e5e3d81855069b8a4465d554e7d9699c4bc08e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 72c874597bfcb92dfe26ee300621dcac435b5081
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030963"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629520"
 ---
 # <a name="cmstp"></a>cmstp
 
@@ -20,7 +20,7 @@ ms.locfileid: "89030963"
 
 Instala o quita un perfil de servicio de administrador de conexiones. Si se usa sin parámetros opcionales, **cmstp** instala un perfil de servicio con la configuración predeterminada adecuada para el sistema operativo y los permisos del usuario.
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 
 Sintaxis 1: se trata de la sintaxis típica usada en una aplicación de instalación personalizada. Para usar esta sintaxis, debe ejecutar **cmstp** desde el directorio que contiene el `<serviceprofilefilename>.exe` archivo.
 

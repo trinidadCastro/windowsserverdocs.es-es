@@ -4,15 +4,15 @@ description: Describe cómo instalar y empezar a usar el registro de inventario 
 ms.topic: article
 ms.assetid: ed51c13c-7cbf-4144-a675-011fd29379d4
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a8584b5e2cf1048e0bba5c217aa3e6031600839a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 76a8f0c55a604fd3f17963ec18df31ed6faf340a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993047"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628270"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>Introducción al registro de inventario de software
 

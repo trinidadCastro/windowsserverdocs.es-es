@@ -3,16 +3,16 @@ title: delete shadows
 description: Artículo de referencia para el comando eliminar sombras, que elimina las instantáneas.
 ms.topic: reference
 ms.assetid: e29a84d2-04d1-4eb1-910a-5a47bddbc24d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d2613fc978db8c8e5b323df142b204a7270f6bad
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f8fe95ac21c36f4605a544c97036c0a02bddaf42
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024209"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628850"
 ---
 # <a name="delete-shadows"></a>delete shadows
 

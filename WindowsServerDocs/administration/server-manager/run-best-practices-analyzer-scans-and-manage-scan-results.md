@@ -3,16 +3,16 @@ title: Ejecutar análisis y administrar Analizador de procedimientos recomendado
 description: Administrador de servidores
 ms.topic: article
 ms.assetid: 232f1c80-88ef-4a39-8014-14be788c2766
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f8c0440da49e6e78afece1af3ee8357ddf846e7e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8b8ef48e81daa9c673f42d43b2f95abadec619a8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895738"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627800"
 ---
 # <a name="run-best-practices-analyzer-scans-and-manage-scan-results"></a>Ejecución de análisis del Analizador de procedimientos recomendados y administración de los resultados de los análisis
 

@@ -3,16 +3,16 @@ title: cmd
 description: Artículo de referencia para el comando cmd, que inicia una nueva instancia del intérprete de comandos, Cmd.exe.
 ms.topic: reference
 ms.assetid: 6ec588db-31a9-4a73-a970-65a2c6f4abbe
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b782a93d4c61f43bbe45497871fe66f29ef972a4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 96af9d997d9163631f3da364d960a83edb7bfe5a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030983"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629591"
 ---
 # <a name="cmd"></a>cmd
 
@@ -47,13 +47,13 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
 En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede usar como valores para `<b>` y `<f>` :
 
-| Valor | Color |
+| Value | Color |
 | ----- | ----- |
 | 0 | Negro |
 | 1 | Azul |
 | 2 | Verde |
 | 3 | Aqua |
-| 4 | Red |
+| 4 | Rojo |
 | 5 | Púrpura |
 | 6 | Amarillo |
 | 7 | Blanco |

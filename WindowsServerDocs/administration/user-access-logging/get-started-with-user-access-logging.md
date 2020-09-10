@@ -4,15 +4,15 @@ desctription: Describes the User Access Logging feature and how to start using i
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: da8bb60ea455578eff96aed6173e4662fffd6ade
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 24471aca151a59306e8bf51119232f08dacdc606
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991758"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628158"
 ---
 # <a name="get-started-with-user-access-logging"></a>Introducción al registro de acceso de usuarios
 
@@ -89,7 +89,7 @@ UAL admite los siguientes roles de servidor y servicios:
 ## <a name="important-functionality"></a><a name="BKMK_NEW"></a>Funcionalidad importante
 En la tabla siguiente se describen las funciones clave de UAL y sus valores posibles.
 
-|Funcionalidad|Valor|
+|Funcionalidad|Value|
 |-----------------|---------|
 |Recopilar y agregar los datos de eventos de solicitud de cliente prácticamente en tiempo real.|Se pueden guardar hasta tres años de datos. **Importante:** Los administradores necesitan exigir el cumplimiento de los datos recopilados y los períodos de retención de datos con la Directiva de privacidad de la organización y la normativa local.|
 |Consulte UAL mediante interfaces WMI o Windows PowerShell para recuperar datos de solicitud de cliente en un servidor local o remoto.|UAL permite una sola vista de datos de uso continuo. Los administradores de servidor y de organización pueden recuperar estos datos y coordinarse con los administradores empresariales para optimizar el uso de sus licencias por volumen de software.|
@@ -104,7 +104,7 @@ Los siguientes datos relacionados con el usuario se registran con UAL.
 |**ActivityCount**|Número de veces que un usuario determinado ha tenido acceso a un rol o servicio.|
 |**FirstSeen**|Fecha y hora de la primera vez que un usuario tuvo acceso a un rol o servicio.|
 |**LastSeen**|Fecha y hora de la última vez que un usuario tuvo acceso a un rol o servicio.|
-|**NombreDeProducto**|Nombre del producto principal de software, como puede ser Windows, que proporciona datos de UAL.|
+|**ProductName**|Nombre del producto principal de software, como puede ser Windows, que proporciona datos de UAL.|
 |**RoleGUID**|GUID asignado o registrado por UAL que representa el rol de servidor o el producto instalado.|
 |**RoleName**|Nombre del rol, componente o subproducto que está proporcionando los datos de UAL. Esto también está asociado con un ProductName y un RoleGUID.|
 |**TenantIdentifier**|GUID único para un cliente inquilino de un rol instalado o para un producto que acompaña a los datos de UAL, si procede.|
@@ -117,7 +117,7 @@ Los siguientes datos relacionados con el dispositivo se registran con UAL.
 |**ActivityCount**|Número de veces que un dispositivo determinado ha tenido acceso a un rol o servicio.|
 |**FirstSeen**|Fecha y hora de la primera vez que se usó una dirección IP para tener acceso a un rol o un servicio.|
 |**LastSeen**|Fecha y hora de la última vez que se usó una dirección IP para tener acceso a un rol o un servicio.|
-|**NombreDeProducto**|Nombre del producto principal de software, como puede ser Windows, que proporciona datos de UAL.|
+|**ProductName**|Nombre del producto principal de software, como puede ser Windows, que proporciona datos de UAL.|
 |**RoleGUID**|GUID asignado o registrado por UAL que representa el rol de servidor o el producto instalado.|
 |**RoleName**|Nombre del rol, componente o subproducto que está proporcionando los datos de UAL. Esto también está asociado con un ProductName y un RoleGUID.|
 |**TenantIdentifier**|GUID único para un cliente inquilino de un rol instalado o para un producto que acompaña a los datos de UAL, si procede.|

@@ -2,17 +2,17 @@
 title: Guía de usuario de Server Performance Advisor
 description: Guía de usuario de Server Performance Advisor
 ms.assetid: be99a5a9-b9c0-436b-912c-e5c5839a533d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
 ms.topic: article
-ms.openlocfilehash: 1a7ea3b902793f281156930a8e666c1d32d05cbe
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e09f4cbdd30aed8f14be449ed98fbc649ca58888
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993121"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628323"
 ---
 # <a name="server-performance-advisor-users-guide"></a>Guía de usuario de Server Performance Advisor
 

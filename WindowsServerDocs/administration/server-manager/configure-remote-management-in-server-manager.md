@@ -3,16 +3,16 @@ title: Configurar la administración remota en Administrador del servidor
 description: Administrador de servidores
 ms.topic: article
 ms.assetid: 509182ed-c37d-4b81-84bc-aee43d006873
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a39eaaff5497ee85cb823907cd8b57f1888dd08
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 6f709a30a571a43e6c299dabbfa006c12660fb92
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991874"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628351"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>Configurar la administración remota en Administrador del servidor
 
@@ -95,7 +95,7 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
     **% WINDIR% \system32\Configure-SMremoting.exe**
 
-3.  Lleve a cabo una de las siguientes acciones:
+3.  Realice una de las siguientes acciones:
 
     -   Para deshabilitar la administración remota, escriba **Configure-SMremoting.exe-Disable**y, a continuación, presione **entrar**.
 
@@ -105,7 +105,7 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
 ### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>Para habilitar la administración remota de Windows PowerShell y el Administrador del servidor en versiones anteriores de Windows Server
 
--   Lleve a cabo una de las siguientes acciones:
+-   Realice una de las siguientes acciones:
 
     -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2012, consulte [para habilitar la administración remota de administrador del servidor mediante la interfaz de Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface) en este tema.
 

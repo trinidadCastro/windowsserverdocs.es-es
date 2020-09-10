@@ -3,16 +3,16 @@ title: delete partition
 description: Artículo de referencia del comando DELETE Partition, que elimina la partición que tiene el foco.
 ms.topic: reference
 ms.assetid: 65752312-cb16-46f6-870f-1b95c507b101
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a3b0f6b57f700201c05bd81c706d07de589e9f7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2833039c9237a271910c43ff8acb7b8fb94828f1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027743"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628834"
 ---
 # <a name="delete-partition"></a>delete partition
 

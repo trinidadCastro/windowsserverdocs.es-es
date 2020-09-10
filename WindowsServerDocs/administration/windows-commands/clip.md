@@ -3,16 +3,16 @@ title: clip
 description: Artículo de referencia del comando clip, que redirige la salida del comando desde la línea de comandos al portapapeles de Windows.
 ms.topic: reference
 ms.assetid: 85322d85-3376-4806-845b-93ac77fe27bf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a94003a700f3dc08d97a78911f844adcbbfe646a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9f6820d60a8c94ed07bbb23bbbd86be3f1f289b7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025969"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629622"
 ---
 # <a name="clip"></a>clip
 

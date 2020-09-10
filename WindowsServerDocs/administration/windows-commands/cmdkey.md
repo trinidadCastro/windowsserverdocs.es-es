@@ -3,16 +3,16 @@ title: cmdkey
 description: Artículo de referencia para el comando cmdkey, que crea, enumera y elimina nombres de usuario y contraseñas almacenados, o credenciales.
 ms.topic: reference
 ms.assetid: 5fcd68ee-a14a-4b71-9300-c3f5c5d31e8e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ead7a9c3b5168789136c895c6cc6febcbb486f1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fb96624ee45e2b526ed2092c0593451d0492bf74
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030973"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629548"
 ---
 # <a name="cmdkey"></a>cmdkey
 

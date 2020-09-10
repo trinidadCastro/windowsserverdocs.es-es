@@ -3,16 +3,16 @@ title: New-namespace
 description: Artículo de referencia sobre New-namespace, que crea y configura un espacio de nombres nuevo.
 ms.topic: reference
 ms.assetid: 6df60703-30bd-4d59-a8d9-9fe3efe96add
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e9bcece219117c559c298bb97726d60c11faa44
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b841176439bd9b91e21877bfd4e870f1e1d0c4fc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038143"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627919"
 ---
 # <a name="new-namespace"></a>New-namespace
 

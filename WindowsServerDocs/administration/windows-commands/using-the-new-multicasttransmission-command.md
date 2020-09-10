@@ -3,23 +3,23 @@ title: New-MulticastTransmission
 description: Artículo de referencia sobre New-MulticastTransmission, que crea una nueva transmisión de multidifusión para una imagen.
 ms.topic: reference
 ms.assetid: c1f1dc46-dd50-4eb9-9f72-cf0e5d71bd3d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 30988ad23151f12533b75323f9376859a4c5d2a5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ae5c3056fb6a5d2259a630c114ec7a24fc8d0b71
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038153"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627937"
 ---
 # <a name="new-multicasttransmission"></a>New-MulticastTransmission
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Crea una nueva transmisión de multidifusión para una imagen. Este comando es equivalente a crear una transmisión mediante el complemento MMC de servicios de implementación de Windows (haga clic con el botón secundario en el nodo **transmisiones** de multidifusión y, a continuación, haga clic en **crear transmisión por multidifusión**). Debe utilizar este comando cuando tenga instalado el servicio de rol servidor de implementación y el servicio de función servidor de transporte (que es la instalación predeterminada). Si solo tiene instalado el servicio de función servidor de transporte, use [el comando New-namespace](using-the-new-namespace-command.md).
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 para las transmisiones de imágenes de instalación:
 ```
 wdsutil [Options] /New-MulticastTransmissiomedia:<Image name>

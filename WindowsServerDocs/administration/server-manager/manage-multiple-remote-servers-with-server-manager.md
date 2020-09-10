@@ -3,16 +3,16 @@ title: Administrar varios servidores remotos con Administrador del servidor
 description: Administrador de servidores
 ms.topic: article
 ms.assetid: 3a17e686-e7f2-47e2-b7af-733777c38b5f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 480b03f49b806ca0096c64d824679473b02695c5
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c85e9bd4525cc40ddc7e5c77aacb9fd2ab9cf124
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991848"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627837"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>Administrar varios servidores remotos con Administrador del servidor
 
@@ -68,7 +68,7 @@ La consola de Administrador del servidor se incluye con [herramientas de adminis
 
 |Administrador del servidor sistema operativo de origen|Destinado a Windows Server 2012 R2 |Destinado a Windows Server 2012 |Destinado a Windows Server 2008 R2 o Windows Server 2008 |Dirigido a Windows Server 2003|
 |-------------------------------|---------------------------------------|------------------------------------|-----------------------------------------------------------------------|------------------|
-|Windows 8 o Windows Server 2012 |No compatibles|Compatibilidad completa|Tras cumplir los [requisitos de software y configuración](#BKMK_softconfig), puede realizar la mayoría de las tareas de administración, pero no puede instalar ni desinstalar roles o características.|Compatibilidad limitada; solo estados con y sin conexión|
+|Windows 8 o Windows Server 2012 |No compatible|Compatibilidad completa|Tras cumplir los [requisitos de software y configuración](#BKMK_softconfig), puede realizar la mayoría de las tareas de administración, pero no puede instalar ni desinstalar roles o características.|Compatibilidad limitada; solo estados con y sin conexión|
 |Windows 8.1 o Windows Server 2012 R2 |Compatibilidad completa|Compatibilidad completa|Tras cumplir los [requisitos de software y configuración](#BKMK_softconfig), puede realizar la mayoría de las tareas de administración, pero no puede instalar ni desinstalar roles o características.|Compatibilidad limitada; solo estados con y sin conexión|
 
 ###### <a name="to-start-server-manager-on-a-client-computer"></a>Para iniciar el Administrador del servidor en un equipo cliente
@@ -175,7 +175,7 @@ Administrador del servidor se inicia automáticamente de forma predeterminada en
 
 1.  En la consola de Administrador del servidor, en el menú **administrar** , haga clic en **propiedades de administrador del servidor**.
 
-2.  En el cuadro de diálogo **Propiedades del Administrador del servidor**, active la casilla de **No iniciar el Administrador del servidor automáticamente al iniciar sesión**. Haga clic en **Aceptar**.
+2.  En el cuadro de diálogo **Propiedades del Administrador del servidor**, active la casilla de **No iniciar el Administrador del servidor automáticamente al iniciar sesión**. Haga clic en **OK**.
 
 3.  Como alternativa, puede impedir que Administrador del servidor se inicie automáticamente si habilita la configuración de directiva de grupo, **no inicia administrador del servidor automáticamente al iniciar sesión**. La ruta de acceso a esta configuración de Directiva, en la consola del editor de directiva de grupo local, es configuración del Equipo\plantillas Administrativas\sistema\administrador del servidor Manager.
 

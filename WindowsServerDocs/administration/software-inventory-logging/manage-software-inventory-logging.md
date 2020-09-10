@@ -4,15 +4,15 @@ description: Describe cómo administrar el registro de inventario de software
 ms.topic: article
 ms.assetid: 812173d1-2904-42f4-a9e2-de19effec201
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 548158fd1df4ee4fbd8d6f1bcee28693961c8d79
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: dba46b75da685f5b2cb74e8e08c53db9aa643aba
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991858"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628267"
 ---
 # <a name="manage-software-inventory-logging"></a>Administrar el Registro de inventario de software
 

@@ -3,16 +3,16 @@ title: Filtrar, ordenar y consultar sobre datos en las ventanas del Administrado
 description: Administrador de servidores
 ms.topic: article
 ms.assetid: 8786f791-73e5-4c75-8d12-46e88a196976
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b41dd1dc2ad0da3a4eec6105105ab5ada5469dc7
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0ddaaadbda28b5494ce5ab0a053b70abd5882591
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895782"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628306"
 ---
 # <a name="filter-sort-and-query-data-in-server-manager-tiles"></a>Filtrar, ordenar y consultar sobre datos en las ventanas del Administrador del servidor
 

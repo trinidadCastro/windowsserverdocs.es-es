@@ -3,16 +3,16 @@ title: pathping
 description: Artículo de referencia para el comando pathping, que obtiene información sobre la latencia de red y la pérdida de red en saltos intermedios entre un origen y un destino.
 ms.topic: reference
 ms.assetid: ec430125-b1dc-4aad-a7c9-b70f486d9e3c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: 3ae867d0b4ea53aaa807fb461f7a32726efefc2e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ed63467c8eba2d65a6408e08762357275dfef7f8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032492"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628630"
 ---
 # <a name="pathping"></a>pathping
 

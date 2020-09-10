@@ -3,16 +3,16 @@ title: defrag
 description: Artículo de referencia para el comando Defrag, que busca y consolida archivos fragmentados en volúmenes locales para mejorar el rendimiento del sistema.
 ms.topic: reference
 ms.assetid: aaf1d1ac-996a-4282-9b4d-1e8245ff162c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 45bf8f07a44432eac45f4a5ccaf43697c5de17fe
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 81f6aba6dce5bce28311a789f803ac2c7117fd0f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024239"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628908"
 ---
 # <a name="defrag"></a>defrag
 

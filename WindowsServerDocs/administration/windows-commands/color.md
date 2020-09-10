@@ -3,16 +3,16 @@ title: color
 description: Artículo de referencia del comando color, que cambia los colores de primer plano y de fondo de la ventana del símbolo del sistema para la sesión actual.
 ms.topic: reference
 ms.assetid: f5b67131-d196-45ec-a3f9-b5d9f091fd86
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ce7aa8e927e3796917d2720495f394636d9c240
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: feb4d4a2de9491636a1c96b7a16c80e2e18f5865
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028463"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629503"
 ---
 # <a name="color"></a>color
 
@@ -36,13 +36,13 @@ Donde:
 
 En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede usar como valores para `<b>` y `<f>` :
 
-| Valor | Color |
+| Value | Color |
 | ----- | ----- |
 | 0 | Negro |
 | 1 | Azul |
 | 2 | Verde |
 | 3 | Aqua |
-| 4 | Red |
+| 4 | Rojo |
 | 5 | Púrpura |
 | 6 | Amarillo |
 | 7 | Blanco |

@@ -4,15 +4,15 @@ description: Describe cómo instalar y administrar el agregador de registro de i
 ms.topic: article
 ms.assetid: e4230a75-6bcd-47d9-ba92-a052a90a6abc
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f8e7743e51a5316df474ad97768cf01292db668
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: d533480c18919933d3581901dd8377556c6571c7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991915"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628227"
 ---
 # <a name="software-inventory-logging-aggregator"></a>Agregador de Registro de inventario de software
 
@@ -123,7 +123,7 @@ En un host de Windows Server que quiera configurar para el sondeo por el agregad
 
 9. Agregue el grupo **Usuarios de administración remota** con el formato **machinename\nombre de grupo**
 
-10. Haga clic en **Aceptar**.
+10. Haga clic en **OK**.
 
 11. De nuevo en la ventana de seguridad para **root\cimv2**, seleccione **Usuarios de administración remota**.
 
@@ -233,11 +233,11 @@ Una vez que tenga instalado el agregador de Registro de inventario de software e
 
 -   En el agregador de SIL:
 
-    -   Mediante la ejecución de `Start-SilAggregator`.
+    -   Ejecute `Start-SilAggregator`:
 
         Esto es necesario para que el agregador reciba activamente los datos que se le reenvían por HTTPS desde los servidores que tiene (o que tendrá) configurados para realizar su inventario. Tenga en cuenta que aunque primero haya habilitado los servidores para reenviar datos a este agregador, no pasa nada, dado que almacenarán en caché sus cargas de datos de forma local durante 30 días. Una vez que el agregador, su "TargetUri" esté en funcionamiento, todos los datos almacenados en caché se reenviarán a la vez al agregador y se procesarán todos los datos.
 
-    -   Mediante la ejecución de `Add-SilVMHost`.
+    -   Ejecute `Add-SilVMHost`:
 
         Ejemplo: `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
@@ -253,7 +253,7 @@ Una vez que tenga instalado el agregador de Registro de inventario de software e
 
 -   En los servidores de Windows de los que se va a realizar un inventario, abra PowerShell como administrador y ejecute estos comandos:
 
-    -   Mediante la ejecución de `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`.
+    -   Ejecute `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`:
 
         -   Esto indicará a SIL en Windows Server adónde enviar los datos de inventario y qué certificado utilizar para la autenticación.
 
@@ -265,11 +265,11 @@ Una vez que tenga instalado el agregador de Registro de inventario de software e
             > [!IMPORTANT]
             > Si estos valores no son correctos, o si el certificado no está instalado en el almacén correcto (o no es válido), los reenvíos al destino darán error cuando se inicie el registro de SIL. Los datos se almacenarán en caché de manera local durante 30 días.
 
-    -   Mediante la ejecución de `Start-SilLogging`.
+    -   Ejecute `Start-SilLogging`:
 
         Esto inicia el registro de SIL. Cada hora, a intervalos aleatorios de una hora, SIL reenvía sus datos de inventario al agregador especificado con el parámetro `–targeturi` . El primer reenvío será un conjunto completo de datos. Cada reenvío posterior será más de un "latido" con solo identificar los datos que no ha cambiado nada. Si hay algún cambio en el conjunto de datos, se reenviará otro conjunto completo de datos.
 
-    -   Mediante la ejecución de `Publish-SilData`.
+    -   Ejecute `Publish-SilData`:
 
         -   La primera vez que SIL se habilita para el registro, este paso es opcional.
 
@@ -502,7 +502,7 @@ Con el cmdlet `Set-SilAggregator`, puede:
 
     -   Asegúrese de que el **TargetUri** tiene **https://** en la entrada.
 
-    -   Asegúrese de que están instaladas todas las actualizaciones necesarias para Windows Server (consulte los requisitos previos para SIL).  Una forma rápida de comprobarlo es buscarlos mediante el siguiente cmdlet:`Get-SilWindowsUpdate *3060*, *3000*`
+    -   Asegúrese de que están instaladas todas las actualizaciones necesarias para Windows Server (consulte los requisitos previos para SIL).  Una forma rápida de comprobarlo es buscarlos mediante el siguiente cmdlet:   `Get-SilWindowsUpdate *3060*, *3000*`
 
     -   Asegúrese de que el certificado que se usa para autenticarse con el agregador esté instalado en el almacén correcto en el servidor local del que se va a realizar el inventario con SilLogging (consulte la sección de introducción).
 
