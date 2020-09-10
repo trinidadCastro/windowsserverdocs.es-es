@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: aac6b7f3-9020-46c3-a83f-b81542300385
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d974f4dc53b9ce389254b162a3305b277181ceed
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 17f2d7c8a409ed49ea0f9bfa50952467e4694243
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181541"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623989"
 ---
 # <a name="add-a-tab-to-settings"></a>Agregar una pestaña a Configuración
 
@@ -29,7 +29,7 @@ Puede agregar una ficha a Configuración en el Panel; para ello, cree e instale 
 
 -   [Instale el ensamblado en el equipo de referencia](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly).
 
-###  <a name="add-an-implementation-of-the-isettingsdata-interface-to-the-assembly"></a><a name="BKMK_ISettingsData"></a>Agregar una implementación de la interfaz ISettingsData al ensamblado
+###  <a name="add-an-implementation-of-the-isettingsdata-interface-to-the-assembly"></a><a name="BKMK_ISettingsData"></a> Agregar una implementación de la interfaz ISettingsData al ensamblado
  La interfaz de ISettingsData está incluida en el espacio de nombres de Microsoft.WindowsServerSolutions.Settings del ensamblado AdminCommon.dll que se encuentra en \Archivos de programa\Windows Server\Bin.
 
 ##### <a name="to-add-the-isettingsdata-code-to-the-assembly"></a>Para agregar el código ISettingsData al ensamblado
@@ -144,10 +144,10 @@ Puede agregar una ficha a Configuración en el Panel; para ello, cree e instale 
 
 16. Guarde y genere la solución.
 
-###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>Firmar el ensamblado con una firma Authenticode
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a> Firmar el ensamblado con una firma Authenticode
  Para poder utilizar el ensamblado en el sistema operativo es necesario firmarlo mediante Authenticode. Para obtener más información acerca de cómo firmar el ensamblado, consulte [Signing and Checking Code with Authenticode (Firma y comprobación de código con Authenticode)](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).
 
-###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>Instalar el ensamblado en el equipo de referencia
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a> Instalar el ensamblado en el equipo de referencia
  Después de crear correctamente la solución, coloque una copia del archivo DashboardSettingsPage.dll en la siguiente carpeta del equipo de referencia:
 
  **%Programfiles%\Windows Server\Bin\OEM**

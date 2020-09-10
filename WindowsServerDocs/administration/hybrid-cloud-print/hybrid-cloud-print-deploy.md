@@ -4,15 +4,15 @@ description: Cómo configurar la impresión en la nube híbrida de Microsoft
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247c5e9
 ms.topic: how-to
 author: msjimwu
-ms.author: coreyp
-manager: dongill
+ms.author: jimwu
+manager: mtillman
 ms.date: 3/15/2018
-ms.openlocfilehash: 253cf78e39809473fc865de90915b6a9f870d098
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 769e9db9be5121b47c72b076bba3a78be841c5de
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992771"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625151"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Implementar la impresión en la nube híbrida de Windows Server
 
@@ -181,7 +181,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 2. Instale los módulos de PowerShell de impresión en la nube híbrida.
     - Ejecute los siguientes comandos desde un símbolo del sistema de PowerShell con privilegios elevados:
 
-        `find-module -Name PublishCloudPrinter`para confirmar que el equipo puede tener acceso al Galería de PowerShell (PSGallery)
+        `find-module -Name PublishCloudPrinter` para confirmar que el equipo puede tener acceso al Galería de PowerShell (PSGallery)
 
         `install-module -Name PublishCloudPrinter`
 
@@ -210,7 +210,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
     ![Implementación de impresión en la nube del servidor de impresión](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
-    - Compruebe el archivo de registro para ver si hay algún error:`C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
+    - Compruebe el archivo de registro para ver si hay algún error: `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
 4. Ejecute **RegitEdit** en un símbolo del sistema con privilegios elevados. Vaya a equipo \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService.
     - Asegúrese de que AzureAudience está establecido en el URI del ID. de aplicación de la aplicación de impresión en la nube de la empresa.
@@ -361,9 +361,9 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
 - Valores de OMA-URI
   - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
-    - Valor =`https://login.microsoftonline.com/<Azure AD Directory ID>`
+    - Valor = `https://login.microsoftonline.com/<Azure AD Directory ID>`
   - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
-    - Valor =`<Azure AD Native App's Application ID>`
+    - Valor = `<Azure AD Native App's Application ID>`
   - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
     - Valor = dirección URL externa de la aplicación de servicio de detección Mopria (debe ser exactamente el mismo pero sin el final `/` )
   - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
@@ -381,8 +381,8 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 4. Guarde los cambios y cierre la ventana Propiedades de la impresora.
 5. Preparar una actualización de Windows 10 Fall Creator o un equipo posterior. Una el equipo a Azure AD e inicie sesión como un usuario que esté sincronizado con Active Directory local y se le haya concedido el permiso adecuado para el archivo MopriaDeviceDb. dB.
 6. En el equipo con Windows 10, abra un símbolo del sistema de Windows PowerShell con privilegios elevados.
-    - Ejecute los comandos siguientes.
-        - `find-module -Name PublishCloudPrinter`para confirmar que el equipo puede tener acceso al Galería de PowerShell (PSGallery)
+    - Ejecute los comandos siguientes:
+        - `find-module -Name PublishCloudPrinter` para confirmar que el equipo puede tener acceso al Galería de PowerShell (PSGallery)
         - `install-module -Name PublishCloudPrinter`
 
             > Nota: es posible que vea un mensaje que indica que "PSGallery" es un repositorio que no es de confianza.  Escriba "y" para continuar con la instalación.
@@ -407,7 +407,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
         - AzureTenantGuid = ID. de directorio del inquilino de Azure AD.
         - DiscoveryResourceId = URI de ID. de aplicación de la aplicación de servicio de detección Mopria.
 
-    - También puede especificar todos los valores de parámetro necesarios en la línea de comandos. La sintaxis es la siguiente:
+    - También puede especificar todos los valores de parámetro necesarios en la línea de comandos. La sintaxis es:
 
         `Publish-CloudPrinter -Printer <string> -Manufacturer <string> -Model <string> -OrgLocation <string> -Sddl <string> -DiscoveryEndpoint <string> -PrintServerEndpoint <string> -AzureClientId <string> -AzureTenantGuid <string> -DiscoveryResourceId <string>`
 

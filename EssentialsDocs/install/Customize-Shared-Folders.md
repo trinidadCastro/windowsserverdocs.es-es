@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f6b5de8ea45ea219f55b04ef675a3853b403fafb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c1a6276199964ac7fd2eb3953cb3fac828063dfc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181321"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623672"
 ---
 # <a name="customize-shared-folders"></a>Personalizar carpetas compartidas
 
@@ -48,7 +48,7 @@ De forma predeterminada, las carpetas del servidor se crean en la última partic
 
    Los asociados tienen la opción de mantener las carpetas de datos en la unidad C. Esto permite que el usuario final o el revendedor determine el diseño de las carpetas de datos en las unidades de datos.
 
-###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a>Ejemplo 1: crear una carpeta personalizada y trasladar las carpetas predeterminadas a una nueva ubicación desde Postic. cmd mediante Windows PowerShell
+###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a> Ejemplo 1: crear una carpeta personalizada y trasladar las carpetas predeterminadas a una nueva ubicación desde Postic. cmd mediante Windows PowerShell
 
 1.  Cree un archivo PostIC.cmd para ejecutar tareas de configuración inicial, tal y como se describe en la sección [Cómo crear el archivo PostIC.cmd para ejecutar tareas posteriores a la configuración inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md).
 
@@ -94,7 +94,7 @@ De forma predeterminada, las carpetas del servidor se crean en la última partic
     Set ERRORLEVEL=%error_level%
     ```
 
-###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a>Ejemplo 2: crear una carpeta personalizada y desplace una carpeta existente mediante el SDK de soluciones de Windows Server
+###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a> Ejemplo 2: crear una carpeta personalizada y desplace una carpeta existente mediante el SDK de soluciones de Windows Server
  El código que cree puede ser considerado como un ejecutable y posteriormente llamado desde el archivo PostIC.cmd o directamente desde un complemento instalado.
 
 ```

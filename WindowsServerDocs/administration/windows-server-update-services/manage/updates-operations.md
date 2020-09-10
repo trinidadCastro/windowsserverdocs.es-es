@@ -3,16 +3,16 @@ title: Operaciones de actualizaciones
 description: 'Tema de Windows Server Update Service (WSUS): Cómo administrar actualizaciones, incluido el proceso de aprobación'
 ms.topic: article
 ms.assetid: 4cb7ff54-3014-4e91-842a-a7b831ea59ff
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 32e6aa39dec354aeb7b3277d68c3bf07ef8a0161
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f4ce19a8cfcfdb427cb332daf95b43feb157abba
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896806"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624324"
 ---
 # <a name="updates-operations"></a>Operaciones de actualizaciones
 
@@ -131,7 +131,7 @@ Es importante mencionar que no todas las actualizaciones admiten la eliminación
 6.  Si desea quitar una actualización tan pronto como los equipos cliente se pongan en contacto con el servidor, haga clic en **personalizada**y establezca una fecha en el pasado.
 
 ## <a name="approving-updates-automatically"></a>Aprobar actualizaciones automáticamente
-Puede configurar el servidor WSUS para la aprobación automática de determinadas actualizaciones. También puede especificar la aprobación automática de las revisiones de las actualizaciones existentes a medida que estén disponibles. Esta opción está activada de forma predeterminada. Una revisión es una versión de una actualización en la que se han realizado cambios (por ejemplo, podría haber expirado o haber cambiado sus reglas de aplicabilidad). Si no decide aprobar la versión revisada de una actualización automáticamente, WSUS usará la versión anterior y debe aprobar manualmente la revisión de la actualización.
+Puede configurar el servidor WSUS para la aprobación automática de determinadas actualizaciones. También puede especificar la aprobación automática de las revisiones de las actualizaciones existentes a medida que estén disponibles. Esta opción está seleccionada de forma predeterminada. Una revisión es una versión de una actualización en la que se han realizado cambios (por ejemplo, podría haber expirado o haber cambiado sus reglas de aplicabilidad). Si no decide aprobar la versión revisada de una actualización automáticamente, WSUS usará la versión anterior y debe aprobar manualmente la revisión de la actualización.
 
 Puede crear reglas que el servidor WSUS aplicará automáticamente durante la sincronización. Especifique qué actualizaciones desea aprobar automáticamente para la instalación, por clasificación de actualizaciones, por producto y por grupo de equipos. Esto solo se aplica a las nuevas actualizaciones, en lugar de a las actualizaciones revisadas. También puede especificar una fecha límite de aprobación de la actualización, que establece un número de días y una hora específica de la oferta antes de que la actualización aprobada tenga la fecha límite: instalada. Estas opciones están disponibles en el panel **Opciones** , en **aprobaciones automáticas**.
 

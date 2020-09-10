@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: dec690d2-f80c-4b09-99d6-3bba41331972
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 5001d16a3bcdfbb02e7578c61298108ef84c8536
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 041a7f53b02d9b6b6368bd2b2f4ac991a14a61fa
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181481"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623886"
 ---
 # <a name="change-media-streaming-settings"></a>Cambiar la configuración de transmisión por secuencias
 
@@ -28,7 +28,7 @@ Existen varias opciones para cambiar la configuración de la transmisión por se
 
 -   [Habilitar o deshabilitar la transmisión por secuencias de multimedia mediante programación](Change-Media-Streaming-Settings.md#BKMK_Program)
 
-##  <a name="hide-remote-media-streaming-add-in"></a><a name="BKMK_DisableRemote"></a>Ocultar el complemento de transmisión por secuencias de multimedia remoto
+##  <a name="hide-remote-media-streaming-add-in"></a><a name="BKMK_DisableRemote"></a> Ocultar el complemento de transmisión por secuencias de multimedia remoto
  La transmisión por secuencias de multimedia se puede ocultar de manera remota agregando una entrada al Registro.
 
 #### <a name="to-hide-the-remote-media-streaming-add-in"></a>Para ocultar el complemento de transmisión por secuencias de multimedia de manera remota
@@ -49,7 +49,7 @@ Existen varias opciones para cambiar la configuración de la transmisión por se
 
 7.  Escriba **1** en los datos de valor y, a continuación, haga clic en **Aceptar**.
 
-##  <a name="set-the-media-library-name"></a><a name="BKMK_LibraryName"></a>Establecer el nombre de la biblioteca multimedia
+##  <a name="set-the-media-library-name"></a><a name="BKMK_LibraryName"></a> Establecer el nombre de la biblioteca multimedia
  Para establecer el nombre de la biblioteca multimedia, puede usar una clase de SDK de Soluciones de Windows Server. Para establecer el nombre de la biblioteca multimedia puede usar el método **SetMediaLibraryName** de la clase **MediaStreamingManager** del espacio de nombres **Microsoft.WindowsServerSolutions.MediaStreaming**. En el siguiente ejemplo se muestra cómo configurar el nombre de la biblioteca multimedia:
 
 ```c#
@@ -62,10 +62,10 @@ mediaStreamingManager.SetMediaLibraryName(mediaLibraryName);
 
  Para obtener más información, consulte el [SDK de Soluciones de Windows Server](https://go.microsoft.com/fwlink/?LinkID=248648).
 
-##  <a name="set-video-streaming-quality"></a><a name="BKMK_StreamingQuality"></a>Establecer calidad de streaming de vídeo
+##  <a name="set-video-streaming-quality"></a><a name="BKMK_StreamingQuality"></a> Establecer calidad de streaming de vídeo
  Para establecer la calidad de transmisión por secuencias de vídeo, obtenga los resultados de la CPU de WinSAT y, a continuación, instale el archivo .xml que contenga la información sobre los resultados de WinSAT. Si el archivo .xml que contiene la información sobre los resultados de WinSAT se instala antes de que se ejecute la configuración inicial, el cliente no verá la interfaz de usuario para configurar la calidad del vídeo. Para obtener más información, consulte [Configurar los resultados de WinSAT en el servidor](Set-the-WinSAT-Score-on-the-Server.md).
 
-##  <a name="programmatically-enable-or-disable-media-streaming"></a><a name="BKMK_Program"></a>Habilitar o deshabilitar la transmisión por secuencias de multimedia mediante programación
+##  <a name="programmatically-enable-or-disable-media-streaming"></a><a name="BKMK_Program"></a> Habilitar o deshabilitar la transmisión por secuencias de multimedia mediante programación
  Para habilitar o deshabilitar la transmisión por secuencias de multimedia mediante programación, puede usar una clase de SDK de Soluciones de Windows Server. Para habilitar o deshabilitar la transmisión por secuencias de multimedia puede usar el método **SetMediaStreamingEnabled** de la clase **MediaStreamingManager** del espacio de nombres **Microsoft.WindowsServerSolutions.MediaStreaming**. En el ejemplo de código siguiente se muestra cómo habilitar la transmisión por secuencias de multimedia:
 
 ```c#

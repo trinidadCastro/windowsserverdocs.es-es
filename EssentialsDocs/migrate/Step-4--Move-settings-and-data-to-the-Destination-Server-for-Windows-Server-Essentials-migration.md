@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 73a2d714b80a414fbe6c3716d8e73393877a7aa4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 888ecc5c5ab8fd609264f0f184686a144e2f8ce8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180461"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625477"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Paso 4: Mover la configuración y los datos al servidor de destino para la migración a Windows Server Essentials
 
@@ -26,7 +26,7 @@ Esta sección proporciona información sobre cómo migrar los datos y la configu
 
 -   [Asignar los equipos permitidos a cuentas de usuario](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)
 
-##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a>Copiar datos en el servidor de destino
+##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a> Copiar datos en el servidor de destino
  Antes de copiar los datos del servidor de origen en el servidor de destino, realice las siguientes tareas:
 
 -   Revise la lista de carpetas compartidas en el servidor de origen, incluidos los permisos para cada carpeta. Cree o personalice las carpetas en el servidor de destino para que coincidan con la estructura de carpetas que va a migrar desde el servidor de origen.
@@ -53,7 +53,7 @@ Esta sección proporciona información sobre cómo migrar los datos y la configu
 
    - \<SharedSourceFolderName\> es el nombre de la carpeta compartida en el servidor de origen.
 
-   - \<PathOfTheDestination\>es la ruta de acceso absoluta a la que desea desplace la carpeta
+   - \<PathOfTheDestination\> es la ruta de acceso absoluta a la que desea desplace la carpeta
 
    - \<SharedDestinationFolderName\> es la carpeta del servidor de destino en la que se copiarán los datos.
 
@@ -65,7 +65,7 @@ Esta sección proporciona información sobre cómo migrar los datos y la configu
 
 4. Repita este proceso para cada una de las carpetas compartidas que desee migrar desde el servidor de origen.
 
-##  <a name="configure-the-network"></a><a name="BKMK_Network"></a>Configurar la red
+##  <a name="configure-the-network"></a><a name="BKMK_Network"></a> Configurar la red
 
 #### <a name="to-configure-the-network"></a>Para configurar la red
 
@@ -84,7 +84,7 @@ Esta sección proporciona información sobre cómo migrar los datos y la configu
 > [!NOTE]
 >  Si desea configurar un nombre de dominio público en el servidor de destino, libere el nombre de dominio desde el servidor de origen para evitar la competición en la actualización dinámica de DNS.
 
-##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a>Asignar equipos permitidos a cuentas de usuario
+##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a> Asignar equipos permitidos a cuentas de usuario
  Todas las cuentas de usuario que se migran desde las versiones anteriores de Windows Small Business Server o Windows Server Essentials deben asignarse a uno o varios equipos.
 
 #### <a name="to-map-user-accounts-to-computers"></a>Para asignar las cuentas de usuario a equipos:

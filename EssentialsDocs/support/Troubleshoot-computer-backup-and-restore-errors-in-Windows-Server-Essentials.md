@@ -5,14 +5,14 @@ ms.date: 06/25/2013
 ms.topic: article
 ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 933dab3e0471ef4b9d8e4f603a1c177ecc6fc70c
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: ce2d6d51f230d4a06f2e1b9acfd378d61bfaf863
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838294"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625100"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Solucionar errores de copias de seguridad del equipo y restauración en Windows Server Essentials
 
@@ -27,7 +27,7 @@ Use estos procedimientos para solucionar problemas de copias de seguridad del eq
 
 Use estos procedimientos para solucionar problemas relacionados con las configuraciones de copia de seguridad de los equipos en los que se efectúan copias de seguridad en el servidor de Windows Server Essentials.
 
-### <a name="errors"></a>Errors
+### <a name="errors"></a>Errores
 
 - La configuración de copia de seguridad no se ha completado correctamente
 
@@ -73,7 +73,7 @@ Use estos procedimientos para solucionar problemas relacionados con las configur
 
 Cuando una copia de seguridad tiene el estado Incorrecto, la copia de seguridad no se ha hecho correctamente y no hay datos disponibles para ser restaurados. Sin embargo, cuando una copia de seguridad tiene el estado Incompleto no se hace una copia de seguridad de todos los elementos especificados en la configuración de copia de seguridad, pero es posible que haya algunos datos disponibles para ser restaurados.
 
-### <a name="errors"></a>Errors
+### <a name="errors"></a>Errores
 
 - La copia de seguridad es incompleta
 
@@ -131,7 +131,7 @@ Cuando una copia de seguridad tiene el estado Incorrecto, la copia de seguridad 
 
 ## <a name="troubleshoot-backup-health-alert-issues"></a>Solucionar problemas de alertas de mantenimiento de la copia de seguridad
 
-### <a name="errors"></a>Errors
+### <a name="errors"></a>Errores
 
 - El servicio de proveedor de copias de seguridad del equipo de Soluciones de Windows Server ha dejado de funcionar
 
@@ -174,7 +174,7 @@ Cuando una copia de seguridad tiene el estado Incorrecto, la copia de seguridad 
 
 ## <a name="troubleshoot-a-file-or-folder-restore"></a>Solución de problemas de restauración de un archivo o carpeta
 
-### <a name="errors"></a>Errors
+### <a name="errors"></a>Errores
 
 - La restauración de archivos o carpetas no se ha completado correctamente.
 
@@ -222,7 +222,7 @@ Cuando una copia de seguridad tiene el estado Incorrecto, la copia de seguridad 
 
 ## <a name="troubleshoot-a-full-system-restore"></a>Solucionar problemas de una restauración completa del sistema
 
-### <a name="errors"></a>Errors
+### <a name="errors"></a>Errores
 
 - No se puede iniciar sesión en el equipo cliente después de una restauración completa del sistema.
 

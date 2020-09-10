@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: fe7bcc54ab342ae1df4299db9585e0656a7ba5c8
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: b8abf96a5d07d3bcda3cfc43c4e0e960a38e465b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181601"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624080"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>Agregar entradas a CONFIGURAR, COMPLEMENTOS, ESTADO RÁPIDO Y VÍNCULOS DE AYUDA
 
@@ -105,7 +105,7 @@ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **
    |exelocation|La ruta a la aplicación asociada con la tarea. Este atributo solo se utiliza con las tareas **exe**.|
    |replaceid|El identificador de la tarea que es sustituida por esta tarea.|
    |ensamblado|AssemblyName del conjunto que proporciona la clase para implementar la consulta de estado rápido. El ensamblado debe encontrarse en archivos de programa \ Windows Server\Bin. \\ .|
-   |class|Nombre de la clase que implementa la consulta de estado rápido. La clase debe implementar la interfaz **ITaskStatusQuery**.|
+   |clase|Nombre de la clase que implementa la consulta de estado rápido. La clase debe implementar la interfaz **ITaskStatusQuery**.|
    |Título (vínculo)|El texto del enlace. Si crea un archivo de recursos incrustado, el valor de este atributo será el recurso de cadena.|
    |Descripción (vínculo)|La descripción del destino del enlace. Si crea un archivo de recursos incrustado, el valor de este atributo será el recurso de cadena.|
    |ShellExecPath|La ruta a la aplicación o la dirección URL.<br /><br /> **Nota:** Las variables de entorno se admiten en el atributo ShellExecPath.|
@@ -196,7 +196,7 @@ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **
 
 5.  Guarde el archivo OEMHomePageContent.home.resx y genere la solución.
 
-#####  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>Firmar el ensamblado con una firma Authenticode
+#####  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a> Firmar el ensamblado con una firma Authenticode
  Para poder utilizar el ensamblado en el sistema operativo es necesario firmarlo mediante Authenticode. Para obtener más información acerca de cómo firmar el ensamblado, consulte [Signing and Checking Code with Authenticode (Firma y comprobación de código con Authenticode)](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).
 
 ##### <a name="install-the-task-files"></a>Instale los archivos de tareas

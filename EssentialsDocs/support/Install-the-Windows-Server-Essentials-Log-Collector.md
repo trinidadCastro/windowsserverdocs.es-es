@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ead1f75ce459523fbb2678ed369949f679fb3124
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 7e10da0d87b98ef84f8b8b7ea2ec74bdd02a909e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180371"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625321"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>Instalación del compilador de registros de Windows Server Essentials
 
@@ -20,7 +20,7 @@ ms.locfileid: "87180371"
 
 El Asistente para la instalación del recopilador de registros de Windows Server Essentials instala el compilador de registros como un complemento de Launchpad. Puede instalar y usar el Compilador de registros en los equipos de la red, del servidor o de ambos. Después de la instalación, el Compilador de registros aparecerá en el panel.
 
-###  <a name="to-install-the-log-collector"></a><a name="BKMK_ToInstall"></a>Para instalar el recopilador de registros
+###  <a name="to-install-the-log-collector"></a><a name="BKMK_ToInstall"></a> Para instalar el recopilador de registros
 
 1.  Descargue el paquete de instalación del Compilador de registros en cualquier servidor o equipo de la red.
 
@@ -37,7 +37,7 @@ El Asistente para la instalación del recopilador de registros de Windows Server
 
 6.  Haga clic en **Instalar el complemento**.
 
-###  <a name="reinstalling-the-log-collector"></a><a name="BKMK_Reinstall"></a>Reinstalación del compilador de registros
+###  <a name="reinstalling-the-log-collector"></a><a name="BKMK_Reinstall"></a> Reinstalación del compilador de registros
  Si fuera necesario reinstalar el Compilador de registros, debe desinstalar y reinstalarlo en el servidor y en los equipos de la red. Al desinstalar el Compilador de registros en el servidor desde el panel, todos los equipos de red desinstalarán automáticamente el Compilador de registros.
 
 ##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>Para desinstalar y reinstalar el Compilador de registros

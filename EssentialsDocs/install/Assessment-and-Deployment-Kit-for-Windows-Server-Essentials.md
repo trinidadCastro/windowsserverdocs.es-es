@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 2ac063330cc1ae99bfd7d0d65950ba17ad815c87
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6198e8d8e06a76b9768f5c1166b438639d2ffca2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181521"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623974"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Kit de evaluación e implementación para Windows Server Essentials
 
@@ -71,7 +71,7 @@ Windows Server &reg; 2012 Essentials Assessment and Deployment Kit (ADK) es una 
 
     -   [Agregar información de socio de registro del contrato de socio de servicio en línea de Microsoft](Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)
 
-    -   [Reemplazar la dirección URL de punto de conexión de compra/prueba del módulo de integración de O365 en cumplimiento del contrato de revendedor de servicio en línea de Microsoft](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
+    -   [Reemplace Microsoft 365 módulo de integración compre-try dirección URL del punto de conexión en soporte del acuerdo de revendedor de Microsoft Online Services.](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
 
     -   [Crear un DVD de recuperación del servidor para servidores administrados de forma remota](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)
 
@@ -83,8 +83,8 @@ Windows Server &reg; 2012 Essentials Assessment and Deployment Kit (ADK) es una 
 
 
 ## <a name="copyright-information"></a>Información sobre copyright
- Este documento se proporciona tal cual. La información y las vistas expresadas en este documento, incluidas las direcciones URL y otras referencias a sitios web de Internet, pueden cambiar sin previo aviso. Algunos ejemplos descritos aquí se proporcionan únicamente con fines ilustrativos y son ficticios. No debe deducirse ninguna asociación ni conexión reales. Este documento no le proporciona derechos legales sobre ninguna propiedad intelectual en ningún producto de Microsoft. Puede copiar y usar este documento para su referencia interna.
+ Este documento se proporciona tal cual. La información y las vistas expresadas en este documento, incluidas las direcciones URL y otras referencias a sitios web de Internet, pueden cambiar sin previo aviso. Algunos ejemplos descritos aquí se proporcionan únicamente con fines ilustrativos y son ficticios. No debe deducirse ninguna asociación ni conexión reales. Este documento no le proporciona ningún derecho legal sobre ninguna propiedad intelectual de ningún producto de Microsoft. Puede copiar y usar este documento para su uso interno de referencia.
 
  Active Directory, Microsoft, Windows Live, Windows PowerShell, Windows y Windows Server son marcas comerciales del grupo de empresas de Microsoft. Las demás marcas comerciales pertenecen a sus respectivos propietarios.
 
- &copy;2012 Microsoft. Todos los derechos reservados.
+ &copy; 2012 Microsoft. Todos los derechos reservados.

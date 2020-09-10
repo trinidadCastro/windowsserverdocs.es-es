@@ -5,20 +5,20 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 6141fa69-5952-4e3c-a868-40ef3f4badd2
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 3f9bfeb2dbadd4d3d6cadd0200f05759d75f5519
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: fda6cf3ef25a2127aa0982674ff0f7d0960bfb08
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409555"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623841"
 ---
 # <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a>Crear un DVD de recuperación del servidor para servidores administrados de forma remota
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a><a name="BKMK_HeadlessRecovery"></a>Crear un DVD de recuperación del servidor para servidores administrados de forma remota
+##  <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a><a name="BKMK_HeadlessRecovery"></a> Crear un DVD de recuperación del servidor para servidores administrados de forma remota
  Hay dos modelos de restablecimiento de fábrica y recuperación del servidor, y se usa uno u otro en función del hardware que el cliente haya recibido.
 
  **Servidor administrado de forma remota**
@@ -70,12 +70,12 @@ ms.locfileid: "87409555"
 
 6.  [Probar el DVD de recuperación](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Testing)
 
-####  <a name="step-1-optional-update-winpe"></a><a name="BKMK_Updating"></a>Paso 1: (opcional) actualizar WinPE
+####  <a name="step-1-optional-update-winpe"></a><a name="BKMK_Updating"></a> Paso 1: (opcional) actualizar WinPE
  El Kit de evaluación e implementación (ADK) incluye una copia personalizada de Windows PE. Al arrancar esta imagen, se inicia automáticamente la señalización que la aplicación de recuperación del cliente usa para conectarse a un servidor en modo de recuperación.
 
  Windows PE debe personalizarse aún más mediante la incorporación de controladores específicos de hardware (por ejemplo, controladores de la red o de la controladora de disco). Después de arrancar desde WinPE, los discos duros del sistema deben ser reconocibles y la red debe funcionar.
 
-####  <a name="step-2-collect-the-factory-reset-images-and-xml-files"></a><a name="BKMK_Collecting"></a>Paso 2: recopilar las imágenes de restablecimiento de fábrica y los archivos XML
+####  <a name="step-2-collect-the-factory-reset-images-and-xml-files"></a><a name="BKMK_Collecting"></a> Paso 2: recopilar las imágenes de restablecimiento de fábrica y los archivos XML
  Para restablecer un servidor a sus valores predeterminados de fábrica, es necesario capturar las dos imágenes siguientes:
 
 - La imagen de la unidad del sistema
@@ -91,7 +91,7 @@ ms.locfileid: "87409555"
     > [!NOTE]
     >  El archivo .wim del sistema se dividirá para que el tamaño supere 4 GB, con el fin de cumplir el requisito de FAT32. Durante el proceso, la capacidad requerida del destino utilizado para capturar los archivos .wim debe ser superior a 8 GB para permitir el proceso de división.
 
-####  <a name="step-3-create-the-server-recovery-dvd"></a><a name="BKMK_Creating"></a>Paso 3: crear el DVD de recuperación del servidor
+####  <a name="step-3-create-the-server-recovery-dvd"></a><a name="BKMK_Creating"></a> Paso 3: crear el DVD de recuperación del servidor
  Cada uno de los servidores enviados de fábrica debe ir acompañado de un DVD de recuperación del servidor. El DVD con herramientas del Kit de evaluación e implementación (ADK) incluye los archivos necesarios para crear el DVD.
 
 ##### <a name="to-create-the-server-recovery-dvd"></a>Para crear un DVD de recuperación del servidor:
@@ -106,7 +106,7 @@ ms.locfileid: "87409555"
 
 5.  Quite GenDiskXML.exe de la carpeta. Sólo se usa en la fábrica y no debe incluirse en el DVD que se envía al cliente.
 
-####  <a name="step-4-customize-the-wizard"></a><a name="BKMK_Customizing"></a>Paso 4: personalizar el asistente
+####  <a name="step-4-customize-the-wizard"></a><a name="BKMK_Customizing"></a> Paso 4: personalizar el asistente
  La aplicación de recuperación del servidor debe personalizarse con una imagen del dispositivo y con texto que describa cómo iniciar el dispositivo en modo de recuperación. Dado que esta página del Asistente para la restauración de archivos y carpetas es específica del hardware, los pasos para iniciar el servidor en modo de recuperación variarán.
 
 > [!NOTE]
@@ -156,10 +156,10 @@ ms.locfileid: "87409555"
    - zh-HK
    - zh-TW
 
-####  <a name="step-5-create-the-iso-file"></a><a name="BKMK_CreatingISO"></a>Paso 5: creación del archivo ISO
+####  <a name="step-5-create-the-iso-file"></a><a name="BKMK_CreatingISO"></a> Paso 5: creación del archivo ISO
  Tanto la carpeta que se creó como todo el contenido de la misma se pueden grabar en un DVD. Este es el DVD que se suministrará a los clientes con el nuevo servidor.
 
-####  <a name="step-6-test-the-recovery-dvd"></a><a name="BKMK_Testing"></a>Paso 6: probar el DVD de recuperación
+####  <a name="step-6-test-the-recovery-dvd"></a><a name="BKMK_Testing"></a> Paso 6: probar el DVD de recuperación
  Tras finalizar la instalación del servidor, configure la copia de seguridad del servidor, ejecute una copia de seguridad del mismo y, a continuación, pruebe el DVD de recuperación.
 
 ###### <a name="to-configure-and-run-a-server-backup"></a>Para configurar y ejecutar una copia de seguridad del servidor

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 4950469d-d800-430d-8d10-53bafc4a9932
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 5f9d240bb7467c0248b69bc65d7f26a66ecec038
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: a05a91fa6ad3ed2ac15daaff204990fdad688284
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180581"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625706"
 ---
 # <a name="move-windows-sbs-2008-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover la configuración y los datos de Windows SBS 2008 al servidor de destino para la migración a Windows Server Essentials
 
@@ -52,8 +52,8 @@ Antes de copiar los datos del servidor de origen en el servidor de destino, real
  Donde:
  - \<SourceServerName\> es el nombre del servidor de origen.
  - \<SharedSourceFolderName\> es el nombre de la carpeta compartida en el servidor de origen.
- - \<DestinationServerName\>es el nombre del servidor de destino.
- - \<SharedDestinationFolderName\>es la carpeta compartida en el servidor de destino en la que se copiarán los datos.
+ - \<DestinationServerName\> es el nombre del servidor de destino.
+ - \<SharedDestinationFolderName\> es la carpeta compartida en el servidor de destino en la que se copiarán los datos.
 
 3. Repita el paso anterior para cada carpeta compartida que vaya a migrar desde el servidor de origen.
 

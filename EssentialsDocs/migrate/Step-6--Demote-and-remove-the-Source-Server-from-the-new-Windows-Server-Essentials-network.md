@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 955da6c37bd57711529de02277d10f4627851715
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6c4410cb94f79be291984a92a2b788e3ae984a4f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838344"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625427"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>Paso 6: Disminución de nivel y eliminación del servidor de origen de la nueva red de Windows Server Essentials
 
@@ -28,7 +28,7 @@ Después de finalizar la instalación de Windows Server Essentials y completar l
 
 4.  [Quitar y reasignar el servidor de origen](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)
 
-##  <a name="remove-active-directory-certificate-services"></a><a name="BKMK_ADCS"></a>Quitar Active Directory servicios de Certificate Server
+##  <a name="remove-active-directory-certificate-services"></a><a name="BKMK_ADCS"></a> Quitar Active Directory servicios de Certificate Server
  El procedimiento es ligeramente distinto si tiene varios servicios de rol de servicios de certificados de Active Directory (AD CS) instalados en un solo servidor. Con el procedimiento siguiente puede desinstalar un servicio de rol de AD CS y conservar los demás.
 
  Para completar este procedimiento, inicie sesión con los mismos permisos que el usuario que ha instalado la entidad de certificación (CA). Para desinstalar una CA empresarial, el requisito mínimo es pertenecer al grupo Administradores de organización o equivalente.
@@ -60,10 +60,10 @@ Después de finalizar la instalación de Windows Server Essentials y completar l
     > [!IMPORTANT]
     >  Reinicie el servidor aunque no se le solicite.
 
-##  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a>Desconectar las impresoras conectadas directamente al servidor de origen
+##  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a> Desconectar las impresoras conectadas directamente al servidor de origen
  Antes de disminuir de nivel el servidor de origen, desconecte físicamente las impresoras que están conectadas directamente a este y se comparten a través de él. Asegúrese de que no haya ningún objeto de Active Directory en las impresoras que estaban conectadas directamente al servidor de origen. Las impresoras pueden conectarse directamente al servidor de destino y compartirse con Windows Server Essentials.
 
-##  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a>Disminuir de nivel el servidor de origen
+##  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a> Disminuir de nivel el servidor de origen
  Antes de disminuir de nivel el servidor de origen (desde el rol del controlador de dominio de AD DS hasta el rol de un servidor miembro de dominio), asegúrese de que la configuración de directiva de grupo se aplica a todos los equipos cliente, tal como se describe en el procedimiento siguiente.
 
 > [!IMPORTANT]
@@ -93,7 +93,7 @@ Después de finalizar la instalación de Windows Server Essentials y completar l
 
 4.  Compruebe que el servidor de origen no aparece en la lista y cierre **Usuarios y equipos de Active Directory**.
 
-##  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a>Quitar y reasignar el servidor de origen
+##  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a> Quitar y reasignar el servidor de origen
  Desactive el servidor de origen y desconéctelo de la red. Se recomienda no volver a formatear el servidor de origen durante al menos una semana para asegurar que todos los datos necesarios se migren al servidor de destino. Después de comprobar que ha migrado todos los datos, puede reinstalar este servidor en la red como servidor secundario para otras tareas si es necesario.
 
 > [!NOTE]

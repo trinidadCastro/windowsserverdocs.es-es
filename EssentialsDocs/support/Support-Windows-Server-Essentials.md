@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d09b5a6425c2921bf2ad3cae57aecad9e4f35098
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 45a81150168e0b1f21a39b8d773872a1d5daef6b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838334"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625278"
 ---
 # <a name="support-windows-server-essentials"></a>Soporte técnico de Windows Server Essentials
 
@@ -36,7 +36,7 @@ En este tema se proporciona soporte técnico y solución de problemas para Windo
 
 - [Revisión: no se puede habilitar el rol de Windows Server Update Services en Windows Server Essentials](https://support.microsoft.com/kb/2762663) (2013 de febrero)
 
-## <a name="troubleshoot"></a>Solucionar problemas
+## <a name="troubleshoot"></a>Solución de problemas
 
 Esta sección proporciona información para ayudarle a solucionar problemas comunes que pueden surgir al usar Windows Server Essentials. La información de solución de problemas está organizada en áreas lógicas que corresponden a las características clave del producto.
 

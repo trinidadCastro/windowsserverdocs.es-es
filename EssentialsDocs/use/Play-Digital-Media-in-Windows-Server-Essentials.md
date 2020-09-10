@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 1ce7359929cb1658cc84418231fb7d65efce8692
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 77246642e7f011768742a30ed517d63b12c47ee4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838224"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624943"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Reproducción de medios digitales en Windows Server Essentials
 
@@ -38,7 +38,7 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 -   [Ver y examinar medios digitales compartidos](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_7)
 
 
-##  <a name="digital-media-overview"></a><a name="BKMK_1"></a>Información general de los medios digitales
+##  <a name="digital-media-overview"></a><a name="BKMK_1"></a> Información general de los medios digitales
  Por medios digitales se hace referencia al audio, vídeo y contenido de fotos que se han codificado (comprimido digitalmente). La codificación de contenido implica convertir la entrada de audio y vídeo a un archivo de medios digitales, como por ejemplo un archivo de Windows Media. Una vez codificados los medios digitales, estos pueden manipularse, distribuirse y reproducirse en equipos con facilidad, y se transmiten fácilmente a través de redes de equipos.
 
  Ejemplos de tipos de medios digitales: Windows Media Audio (WMA), Windows Media Video (WMV), MP3, JPEG y AVI. Para obtener información acerca de los tipos de medios digitales compatibles con el Reproductor de Windows Media, consulte [Tipos de archivos compatibles con el Reproductor de Windows Media](https://support.microsoft.com/kb/316992).
@@ -57,7 +57,7 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 
  Los medios protegidos contra copia solo se pueden reproducir en el equipo o dispositivo que ha usado para comprarlos. La protección contra copia impide reproducir archivos multimedia en más de un equipo o dispositivo, incluso si copia los medios al servidor y los reproduce desde allí. Sin embargo, puede almacenar los medios protegidos contra copia en Windows Server Essentials y seguir reproduciendo el medio en el equipo o dispositivo que usó para comprarlo.
 
-##  <a name="play-and-share-digital-media"></a><a name="BKMK_2"></a>Reproducir y compartir medios digitales
+##  <a name="play-and-share-digital-media"></a><a name="BKMK_2"></a> Reproducir y compartir medios digitales
  Después de configurar la red y de conectar correctamente los equipos y los dispositivos multimedia a la red del servidor, puede buscar los archivos de medios digitales que almacena y comparte en el servidor.
 
 > [!NOTE]
@@ -70,7 +70,7 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 -   [Enviar archivos multimedia en Windows Server Essentials a Windows Media Player, Xbox 360 o a un reproductor multimedia digital en red en la red](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)
 
 
-###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a>Buscar y reproducir archivos multimedia en Windows Server Essentials desde un equipo o reproductor multimedia digital en la red
+###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a> Buscar y reproducir archivos multimedia en Windows Server Essentials desde un equipo o reproductor multimedia digital en la red
  Cuando el dispositivo se une a la red de Windows Server Essentials, puede buscar y reproducir archivos multimedia digitales de cualquiera de las maneras siguientes:
 
 
@@ -87,7 +87,7 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 -   [Buscar y reproducir archivos multimedia compartidos mediante Acceso Web remoto](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)
 
 
-####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a>Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows Media Center
+####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a> Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows Media Center
 
 1.  Haga clic en **Inicio**, en **Todos los programas** y, a continuación, haga clic en **Windows Media Center**.
 
@@ -97,14 +97,14 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 
 4.  Haga clic en la imagen del archivo multimedia para ver o reproducir el archivo.
 
-####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-by-using-windows-media-player"></a><a name="BKMK_MWP"></a>Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows mediante Windows Media Player
+####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-by-using-windows-media-player"></a><a name="BKMK_MWP"></a> Buscar y reproducir archivos multimedia desde un equipo que ejecuta Windows mediante Windows Media Player
 
 -   En el equipo o dispositivo multimedia, abra el **Reproductor de Windows Media** y busque la biblioteca multimedia.
 
     > [!NOTE]
     >  Los pasos de búsqueda pueden variar en función de la versión del Reproductor de Windows Media utilizada. Para obtener información detallada, vea la ayuda de la versión.
 
-####  <a name="search-for-and-play-media-files-by-using-xbox-360"></a><a name="BKMK_Xbox"></a>Buscar y reproducir archivos multimedia con Xbox 360
+####  <a name="search-for-and-play-media-files-by-using-xbox-360"></a><a name="BKMK_Xbox"></a> Buscar y reproducir archivos multimedia con Xbox 360
 
 1.  Conecte la consola Xbox 360 a la red doméstica mediante una conexión por cable o inalámbrica.
 
@@ -121,13 +121,13 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 
     3.  Busque en la lista de archivos y seleccione el elemento que quiere reproducir.
 
-####  <a name="search-for-and-play-media-files-by-using-other-digital-media-players-or-receivers-that-are-compatible-with-windows-server-essentials"></a><a name="BKMK_Other"></a>Buscar y reproducir archivos multimedia con otros reproductores de medios digitales o receptores compatibles con Windows Server Essentials
+####  <a name="search-for-and-play-media-files-by-using-other-digital-media-players-or-receivers-that-are-compatible-with-windows-server-essentials"></a><a name="BKMK_Other"></a> Buscar y reproducir archivos multimedia con otros reproductores de medios digitales o receptores compatibles con Windows Server Essentials
 
 1.  Vaya al [Centro de compatibilidad de Windows](https://www.microsoft.com/windows/compatibility/CompatCenter/Home) y asegúrese de que el reproductor o el receptor de medios digitales aparezca en la lista de dispositivos compatibles.
 
 2.  Dado que los pasos de búsqueda pueden variar en función del reproductor multimedia utilizado, vea la ayuda de su dispositivo para obtener instrucciones detalladas.
 
-####  <a name="search-for-and-play-media-files-by-using-the-shared-folders-feature-of-the-launchpad"></a><a name="BKMK_SharedFolders"></a>Buscar y reproducir archivos multimedia mediante la característica carpetas compartidas de Launchpad
+####  <a name="search-for-and-play-media-files-by-using-the-shared-folders-feature-of-the-launchpad"></a><a name="BKMK_SharedFolders"></a> Buscar y reproducir archivos multimedia mediante la característica carpetas compartidas de Launchpad
 
 1.  Inicie sesión en el Launchpad de Windows Server Essentials.
 
@@ -138,7 +138,7 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
     > [!NOTE]
     >  Como opción, puede hacer doble clic en una carpeta compartida para examinar el contenido de la carpeta.
 
-####  <a name="search-for-and-play-shared-media-by-using-remote-web-access"></a><a name="BKMK_RWA2"></a>Buscar y reproducir archivos multimedia compartidos mediante acceso Web remoto
+####  <a name="search-for-and-play-shared-media-by-using-remote-web-access"></a><a name="BKMK_RWA2"></a> Buscar y reproducir archivos multimedia compartidos mediante acceso Web remoto
 
 1.  Inicie sesión en Acceso Web remoto.
 
@@ -146,10 +146,10 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 
 3.  Haga doble clic en una carpeta para ver el contenido de la carpeta.
 
-###  <a name="send-media-files-on-windows-server-essentials-to-windows-media-player-xbox-360-or-to-a-networked-digital-media-player-in-the-network"></a><a name="BKMK_SendToDevice"></a>Enviar archivos multimedia en Windows Server Essentials a Windows Media Player, Xbox 360 o a un reproductor multimedia digital en red en la red
+###  <a name="send-media-files-on-windows-server-essentials-to-windows-media-player-xbox-360-or-to-a-networked-digital-media-player-in-the-network"></a><a name="BKMK_SendToDevice"></a> Enviar archivos multimedia en Windows Server Essentials a Windows Media Player, Xbox 360 o a un reproductor multimedia digital en red en la red
  Use el **Reproductor de Windows Media** para buscar el archivo multimedia deseado. Haga clic con el botón derecho en el archivo multimedia y, a continuación, haga clic en **Reproducir en** para enviar el archivo multimedia a un dispositivo multimedia en red.
 
-##  <a name="play-shared-digital-media-files-from-a-remote-location"></a><a name="BKMK_3"></a>Reproducir archivos multimedia digitales compartidos desde una ubicación remota
+##  <a name="play-shared-digital-media-files-from-a-remote-location"></a><a name="BKMK_3"></a> Reproducir archivos multimedia digitales compartidos desde una ubicación remota
  Puede reproducir los archivos multimedia cuando esté fuera de la red de Windows Server Essentials mediante el acceso Web remoto. Puede usar un teléfono móvil, un equipo remoto o un reproductor multimedia digital para buscar y reproducir los archivos multimedia compartidos que almacena en el servidor.
 
 #### <a name="to-play-shared-media-files-when-you-are-away-from-the-network"></a>Para reproducir archivos multimedia compartidos cuando está fuera de la red
@@ -174,7 +174,7 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 
 5. Cuando aparezca el nombre del archivo multimedia, haga clic en el nombre para reproducir el medio.
 
-##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_4"></a>Agregar archivos multimedia digitales al servidor
+##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_4"></a> Agregar archivos multimedia digitales al servidor
 
  El administrador del servidor puede agregar medios digitales a las carpetas compartidas en la biblioteca multimedia accediendo directamente al servidor o usando el sitio de acceso Web remoto para iniciar sesión en el panel. Otros usuarios pueden agregar archivos multimedia al servidor mediante la conexión de **carpetas compartidas** del Launchpad, mediante el sitio de acceso Web remoto o mediante la aplicación my server para Windows Phone. Para obtener información acerca de la reproducción de medios, vea [Reproducir y compartir medios digitales](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2).
 
@@ -200,7 +200,7 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 
 3.  Copie y pegue o arrastre y coloque los archivos multimedia que quiere agregar a la carpeta compartida adecuada del servidor.
 
-##  <a name="download-format-options"></a><a name="BKMK_5"></a>Opciones de formato de descarga
+##  <a name="download-format-options"></a><a name="BKMK_5"></a> Opciones de formato de descarga
  Hay dos opciones para descargar archivos. Estas opciones solo están disponibles cuando va a descargar varios archivos o una carpeta en un equipo basado en Windows.
 
  Elija la opción que mejor se adapte a sus necesidades relativas a las descargas:
@@ -221,10 +221,10 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 
   Antes de que comience la descarga real se crea el archivo .exe o .zip. En función del número de archivos y del tamaño total de los archivos que se van a descargar, esta acción puede tardar varios minutos. Después de crearse el archivo de descarga, la descarga del archivo tiene lugar en segundo plano. Esto le permite seguir trabajando mientras se completa el proceso de descarga.
 
-##  <a name="easy-file-upload-tool"></a><a name="BKMK_6"></a>Herramienta de carga fácil de archivos
+##  <a name="easy-file-upload-tool"></a><a name="BKMK_6"></a> Herramienta de carga fácil de archivos
  La herramienta de carga fácil de archivos simplifica el proceso de carga de archivos en el servidor de Windows Server Essentials. Puede agregar tantos archivos como desee a la herramienta de carga fácil de archivos y, después, cargarlos en las carpetas compartidas del servidor de Windows Server Essentials en un solo lote. Para obtener más información, consulte la entrada de blog sobre la [descripción del uso compartido de archivos en Acceso Web remoto](/archive/blogs/sbs/understanding-remote-web-access-file-sharing).
 
-##  <a name="view-and-browse-shared-digital-media"></a><a name="BKMK_7"></a>Ver y examinar medios digitales compartidos
+##  <a name="view-and-browse-shared-digital-media"></a><a name="BKMK_7"></a> Ver y examinar medios digitales compartidos
  Puede ver o examinar los recursos mediante el panel, Launchpad, el sitio web de Acceso Web remoto o la aplicación My Server para Windows Phone.
 
 #### <a name="to-view-and-browse-shared-media-from-the-dashboard"></a>Para ver y examinar elementos multimedia compartidos desde el panel

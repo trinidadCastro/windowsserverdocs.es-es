@@ -3,16 +3,16 @@ title: Migración de la base de datos de WSUS desde WID de (Windows Internal Dat
 description: 'Tema de Windows Server Update Service (WSUS): Cómo migrar la base de datos de WSUS (SUSDB) de una instancia de Windows Internal Database a una instancia local o remota de SQL Server.'
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09g7dr
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dougkim
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/25/2018
-ms.openlocfilehash: 7a5102ab622d051e87ca735e5a03f131d583838a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 54f7eb0464d4454bd2929aace44eb37567973154
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991132"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624468"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>Migración de la base de datos de WSUS de WID a SQL
 
@@ -145,8 +145,8 @@ Se debe mostrar la cuenta **NT Authority\Network Service** .
     > ![imagen11](images/image11.png)
 
 4. En la página **asignación de usuarios** , seleccione la base de datos **SUSDB** en **usuarios asignados a este inicio de sesión** .
-5. Active **WebService** en la **pertenencia al rol de la base de datos para: SUSDB**: ![ IMAGE12](images/image12.png)
-6. Haga clic en **Aceptar** para guardar la configuración.
+5. Active **WebService** en la **pertenencia al rol de la base de datos para: SUSDB**:  ![ IMAGE12](images/image12.png)
+6. Haga clic en  **Aceptar** para guardar la configuración.
     > [!NOTE]
     > Es posible que tenga que reiniciar el servicio SQL para que los cambios surtan efecto.
 

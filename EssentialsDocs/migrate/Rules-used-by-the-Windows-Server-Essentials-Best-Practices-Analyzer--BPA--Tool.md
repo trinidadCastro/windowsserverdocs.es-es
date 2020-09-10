@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 37e1dae7-586c-4dd7-bf83-7e14a9567c8f
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: eea437a5867a602a84483a41fe129d64425bcb88
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 231fad84ecb5ac5831d4d638af7bd8fbe0281b04
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838444"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625546"
 ---
 # <a name="rules-used-by-the-windows-server-essentials-best-practices-analyzer-bpa-tool"></a>Reglas que usa la herramienta Analizador de procedimientos recomendados (BPA) de Windows Server Essentials
 
@@ -40,7 +40,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:** Si está habilitado el filtrado de IP, es posible que se bloquee el tráfico de red.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-disable-ip-filtering"></a>Para deshabilitar el filtrado de IP
 
@@ -59,7 +59,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:** El servicio MSDTC podría no iniciarse automáticamente cuando se inicie el servidor. Si el servicio está detenido, algunas funciones de SQL Server o COM pueden producir un error. Como resultado, las aplicaciones que usan las funciones de Microsoft SQL Server o COM podrían no funcionar correctamente.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-msdtc-service-to-start-automatically"></a>Para configurar el servicio MSDTC de modo que se inicie automáticamente
 
@@ -74,7 +74,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio NetLogon no se inicie automáticamente cuando se inicie el servidor. Si el servicio está detenido, el servidor podría no autenticar a los usuarios y los servicios.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-netlogon-service-to-start-automatically"></a>Para configurar el servicio de Net Logon para que se inicie automáticamente
 
@@ -89,7 +89,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio cliente DNS no se inicie automáticamente cuando se inicie el servidor. Si este servicio está detenido, el servidor podría no resolver nombres DNS.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-dns-client-service-to-start-automatically"></a>Para configurar el servicio Cliente DNS para que se inicie automáticamente
 
@@ -104,7 +104,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  El servicio servidor DNS podría no iniciarse automáticamente cuando se inicie el servidor. Si este servicio está detenido, no se producirán actualizaciones de DNS.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-dns-server-service-to-start-automatically"></a>Para configurar el servicio Servidor DNS para que se inicie automáticamente
 
@@ -119,7 +119,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Active Directory Web Services (ADWS) no se establece en el modo de inicio predeterminado automático. Si ADWS está detenido o deshabilitado en el servidor, las aplicaciones cliente, como el módulo de Active Directory para Windows PowerShell o el Centro de administración de Active Directory, no pueden acceder a las instancias del servicio de directorio que se ejecutan en este servidor, ni tampoco administrarlas. Para obtener más información, vea [novedades de AD DS: Active Directory Web Services](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) ( https://technet.microsoft.com/library/dd391908(WS.10).aspx) en la biblioteca técnica de Windows Server).
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-active-directory-web-services-service-to-start-automatically"></a>Para configurar Servicios web de Active Directory para que se inicie automáticamente
 
@@ -134,7 +134,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  El servicio cliente DHCP no se iniciará automáticamente cuando se inicie el servidor. Si este servicio está detenido, los equipos cliente no pueden recibir una dirección IP del servidor.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-dhcp-client-service-to-start-automatically"></a>Para configurar el servicio Cliente DHCP para que se inicie automáticamente
 
@@ -149,7 +149,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:** El servicio de administración de IIS no se iniciará automáticamente cuando se inicie el servidor. Si este servicio está detenido, podría no tener acceso a sitios web que se ejecutan en el servidor, como el acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-iis-admin-service-to-start-automatically"></a>Para configurar el Servicio de administración IIS para que se inicie automáticamente
 
@@ -164,7 +164,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  El servicio de publicación de World Wide Web podría no iniciarse automáticamente cuando se inicie el servidor. Si este servicio está detenido, podría no tener acceso a sitios web que se ejecutan en el servidor, como el acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-world-wide-web-publishing-service-to-start-automatically"></a>Para configurar el servicio de publicación World Wide Web para que se inicie automáticamente
 
@@ -181,7 +181,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  El servicio de Registro remoto podría no iniciarse automáticamente cuando se inicia el servidor. Si este servicio está detenido, es posible que no pueda realizar algunas operaciones de red de forma remota.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-remote-registry-service-to-start-automatically"></a>Para configurar el servicio de Registro remoto para que se inicie automáticamente
 
@@ -196,7 +196,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si se detiene este servicio, es posible que los usuarios no puedan tener acceso a los equipos mediante el acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-remote-desktop-gateway-service-to-start-automatically"></a>Para configurar el servicio Puerta de enlace de Escritorio remoto para que se inicie automáticamente
 
@@ -211,7 +211,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si se detiene este servicio, la sincronización de datos y hora no estará disponible.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-windows-time-service-to-start-automatically"></a>Para configurar el servicio Hora de Windows para que se inicie automáticamente
 
@@ -226,7 +226,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si se detiene este servicio, es posible que se produzcan errores en algunas funciones SQL Server o COM. Como resultado, las aplicaciones que usan las funciones de Microsoft SQL Server o COM podrían no funcionar correctamente.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-distributed-transaction-coordinator-service"></a>Para iniciar el servicio Coordinador de transacciones distribuidas
 
@@ -239,7 +239,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si no se inicia este servicio, es posible que el servidor no autentique usuarios y servicios.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-netlogon-service"></a>Para iniciar el servicio de Net Logon
 
@@ -252,7 +252,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si no se inicia este servicio, es posible que el servidor no pueda resolver nombres DNS.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-dns-client-service"></a>Para iniciar el servicio Cliente DNS
 
@@ -265,7 +265,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si no se inicia el servicio servidor DNS, puede que no se produzcan actualizaciones de DNS.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-dns-server-service"></a>Para iniciar el servicio Servidor DNS
 
@@ -278,7 +278,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  No se ha iniciado Active Directory servicios web (ADWS). Si ADWS está detenido o deshabilitado en el servidor, las aplicaciones cliente, como el módulo de Active Directory para Windows PowerShell o el Centro de administración de Active Directory, no pueden acceder a las instancias del servicio de directorio que se ejecutan en este servidor, ni tampoco administrarlas. Para obtener más información, vea [novedades de AD DS: Active Directory Web Services](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) ( https://technet.microsoft.com/library/dd391908(WS.10).aspx) en la biblioteca técnica de Windows Server).
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-active-directory-web-services-service"></a>Para iniciar el servicio Servicios web de Active Directory
 
@@ -291,7 +291,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si se detiene este servicio, los equipos cliente no pueden recibir una dirección IP del servidor.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-dhcp-client-service"></a>Para iniciar el servicio Cliente DHCP
 
@@ -304,7 +304,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si este servicio se detiene, es posible que no pueda acceder a sitios web que se ejecutan en el servidor, como el acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-iis-admin-service"></a>Para iniciar el Servicio de administración IIS
 
@@ -317,7 +317,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si este servicio se detiene, es posible que no pueda acceder a sitios web que se ejecutan en el servidor, como el acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-world-wide-web-publishing-service"></a>Para iniciar el servicio de publicación World Wide Web
 
@@ -330,7 +330,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si se detiene este servicio, es posible que los usuarios no puedan tener acceso a los equipos mediante el acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-remote-desktop-gateway-service"></a>Para iniciar el servicio de puerta de enlace de Escritorio remoto
 
@@ -343,7 +343,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si se detiene este servicio, la sincronización de datos y hora no estará disponible.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-windows-time-service"></a>Para iniciar el servicio de hora de Windows
 
@@ -356,7 +356,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio no tenga los permisos necesarios para funcionar según lo previsto. Como resultado, las aplicaciones que usan las funciones de SQL Server o COM podrían no funcionar correctamente.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-logon-account-for-the-service"></a>Para cambiar la cuenta de inicio de sesión del servicio
 
@@ -371,7 +371,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio no tenga los permisos necesarios para funcionar según lo previsto. Como resultado, el servidor podría no autenticar a los usuarios y los servicios.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-netlogon-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio de Net Logon
 
@@ -386,7 +386,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio no tenga los permisos necesarios para funcionar según lo previsto. Como resultado, el servidor podría no resolver nombres DNS.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-dns-client-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Cliente DNS
 
@@ -401,7 +401,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio no tenga los permisos necesarios para funcionar según lo previsto. Como resultado, podrían no producirse las actualizaciones de DNS.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-dns-server-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Servidor DNS
 
@@ -416,7 +416,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  No se ha iniciado Active Directory servicios web (ADWS). Si ADWS está detenido o deshabilitado en el servidor, las aplicaciones cliente, como el módulo de Active Directory para Windows PowerShell o el Centro de administración de Active Directory, no pueden acceder a las instancias del servicio de directorio que se ejecutan en este servidor, ni tampoco administrarlas. Para obtener más información, vea [novedades de AD DS: Active Directory Web Services](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) ( https://technet.microsoft.com/library/dd391908(WS.10).aspx) en la biblioteca técnica de Windows Server).
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-active-directory-web-services-logon-account"></a>Para cambiar la cuenta de inicio de sesión de Servicios web de Active Directory
 
@@ -435,7 +435,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio no tenga los permisos necesarios para funcionar según lo previsto. Como resultado, es posible que el servidor no reciba actualizaciones automáticas.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-windows-update-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Windows Update
 
@@ -450,7 +450,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio no tenga los permisos necesarios para funcionar según lo previsto. Como resultado, el equipo cliente no recibirá direcciones IP del servidor.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-dhcp-client-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Cliente DHCP
 
@@ -465,7 +465,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio no tenga los permisos necesarios para funcionar según lo previsto. Como resultado, podría no tener acceso a sitios web que se ejecutan en el servidor, como el acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio
 
@@ -480,7 +480,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio no tenga los permisos necesarios para funcionar según lo previsto. Como resultado, podría no tener acceso a sitios web que se ejecutan en el servidor, como el acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-world-wide-web-publishing-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio de publicación World Wide Web
 
@@ -495,7 +495,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio no tenga los permisos adecuados para funcionar según lo previsto. Como resultado, los usuarios podrían no tener acceso a los equipos mediante el acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-remote-desktop-gateway-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Puerta de enlace de Escritorio remoto
 
@@ -510,7 +510,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que el servicio no tenga los permisos adecuados para funcionar según lo previsto. Como resultado, la sincronización de fecha y hora podría no estar disponible.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-windows-time-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Hora de Windows
 
@@ -532,7 +532,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  En función de la configuración del firewall, el Firewall de Windows puede ayudar a proteger el servidor y la red de actividades malintencionadas mediante el bloqueo de la información que pasa por el servidor.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-turn-on-windows-firewall-on-the-server"></a>Para activar Firewall de Windows en el servidor
 
@@ -561,7 +561,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Cuando se habilitan las actualizaciones dinámicas seguras, solo los usuarios y hosts autorizados pueden realizar cambios en los registros.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-forward-lookup-zone-for-your-active-directory-domain"></a>Para configurar la zona de búsqueda directa de su dominio de Active Directory
 
@@ -576,7 +576,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Cuando se habilitan las actualizaciones dinámicas seguras, solo los usuarios y hosts autorizados pueden realizar cambios en los registros de la zona msdcs. *.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-allow-secure-updates-in-the-_msdcs-zone"></a>Para permitir actualizaciones seguras en la zona _msdcs
 
@@ -591,7 +591,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si configuración de seguridad mejorada de Internet Explorer no está habilitada para el grupo de administradores, su servidor e Internet Explorer han aumentado la exposición a ataques malintencionados que pueden producirse a través de contenido web y scripts de aplicación.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-enable-internet-explorer-enhanced-security-configuration"></a>Para habilitar la Configuración de seguridad mejorada de Internet Explorer
 
@@ -604,7 +604,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si configuración de seguridad mejorada de Internet Explorer no está habilitada para el grupo de usuarios, su servidor e Internet Explorer han aumentado la exposición a ataques malintencionados que pueden producirse a través de contenido web y scripts de aplicación.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-enable-internet-explorer-enhanced-security-configuration"></a>Para habilitar la Configuración de seguridad mejorada de Internet Explorer
 
@@ -631,7 +631,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  La Directiva de dominio predeterminada es necesaria para las funciones de dominio apropiadas.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-restore-a-missing-group-policy"></a>Para restaurar una directiva de grupo que falta
 
@@ -646,7 +646,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si no existe ningún registro de recursos del servidor de nombres (NS) DNS en la zona de búsqueda directa para el dominio Active Directory, es posible que los usuarios no puedan tener acceso a los recursos de la red o de Internet.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-restore-missing-dns-name-server-resource-records"></a>Para restaurar los registros de recursos del servidor de nombres DNS que faltan
 
@@ -663,7 +663,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si no existe ningún registro de recursos del servidor de nombres (NS) DNS en la zona de _msdcs para el dominio de Active Directory, es posible que los usuarios no puedan tener acceso a los recursos de la red o de Internet.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-restore-missing-dns-name-server-records"></a>Para restaurar los registros del servidor de nombres DNS que faltan
 
@@ -680,7 +680,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si no existe ningún registro de recursos del servidor de nombres DNS (NS) para la zona de búsqueda directa _msdcs delegada, el servicio servidor DNS no puede resolver los registros de recursos DNS para el dominio y no se iniciará.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-reconfigure-missing-dns-name-server-records"></a>Para reconfigurar los registros del servidor de nombres DNS que faltan
 
@@ -701,7 +701,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el grupo de usuarios autenticados integrado no es miembro del grupo de acceso compatible con versiones anteriores a Windows 2000, los usuarios de la red pueden encontrar errores de "acceso denegado".
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-add-authenticated-users-to-the-pre-windows-2000-compatible-access-group"></a>Para agregar Usuarios autenticados al grupo de acceso compatible con versiones anteriores a Windows 2000
 
@@ -716,7 +716,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el cliente DNS no está configurado para que solo apunte a la dirección IP interna del servidor, se puede producir un error en la resolución de nombres DNS.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-dns-to-point-only-to-the-server-s-internal-ip-address"></a>Para configurar DNS de forma que solo apunte a la dirección IP interna del servidor
 
@@ -729,7 +729,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que los usuarios no puedan conectarse a los servicios basados en Web de Windows Small Business Server.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-reset-maximum-worker-processes-for-the-default-application-pool"></a>Para restablecer el número máximo de procesos de trabajo del grupo de aplicaciones predeterminado
 
@@ -748,7 +748,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que los usuarios de red no puedan tener acceso al sitio web de acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-reset-the-remote-application-pool-to-use-the-default-account"></a>Para restablecer el grupo de aplicaciones remotas para que use la cuenta predeterminada
 
@@ -767,7 +767,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Es posible que los usuarios de red no puedan tener acceso al sitio web de acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-change-the-net-framework-version-used-by-the-remoteapppool"></a>Para cambiar la versión de .NET Framework usada por RemoteAppPool
 
@@ -800,7 +800,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si SSL no está enlazado a todas las direcciones IP del servidor, algunos sitios web no estarán disponibles para los usuarios.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-bind-ssl-to-all-ip-addresses-on-the-server"></a>Para enlazar SSL a todas las direcciones IP del servidor
 
@@ -823,7 +823,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si SSL no está enlazado al sitio web predeterminado, es posible que algunos sitios web no estén disponibles para los usuarios.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-bind-ssl-to-the-default-website"></a>Para enlazar SSL al sitio web predeterminado
 
@@ -884,7 +884,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**   Las aplicaciones Web de Windows Server Essentials requieren el uso del sitio web predeterminado. Si no se está ejecutando el sitio web predeterminado, el acceso Web remoto y otras aplicaciones no estarán disponibles para los usuarios.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-default-website"></a>Para iniciar el sitio web predeterminado
 
@@ -899,7 +899,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si los permisos Leer y script del directorio virtual/Remote son incorrectos, los usuarios no pueden usar el acceso Web remoto. Al intentar usar el acceso Web remoto para explorar Internet, pueden aparecer el error "HTTP error 403,1 prohibido".
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-assign-read-and-script-permissions-to-the-remote-directory"></a>Para asignar permisos Lectura y Script al directorio /Remoto
 
@@ -920,7 +920,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el atributo de redirección HTTP se establece en el directorio virtual/Remote, el lugar de trabajo remoto Web no funcionará correctamente.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-remove-the-http-redirect-attribute"></a>Para quitar el atributo Redirección HTTP
 
@@ -939,7 +939,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si se asigna un nombre de host para el puerto 80 en el sitio web predeterminado, es posible que no pueda conectarse a algunas aplicaciones Web de Windows Server Essentials. Un nombre de host no es necesario y no se recomienda en esta situación.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-clear-the-host-name-entry-for-port-80-on-the-default-website"></a>Para borrar la entrada del nombre de host del puerto 80 en el sitio web predeterminado
 
@@ -972,7 +972,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el servicio de replicación de archivos no se está ejecutando, el controlador de dominio podría dejar de anunciar sus servicios. Esto puede provocar otros problemas, como errores de inicio de sesión y errores de directiva de grupo.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-file-replication-service-for-automatic-startup"></a>Para configurar el servicio de replicación de archivos para el inicio automático
 
@@ -987,7 +987,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el servicio de replicación de archivos no se está ejecutando, el controlador de dominio podría dejar de anunciar sus servicios. Este comportamiento puede provocar otros problemas, como errores de inicio de sesión y errores de directiva de grupo.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-file-replication-service"></a>Para iniciar el servicio de replicación de archivos
 
@@ -1002,7 +1002,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el servicio de replicación de archivos no usa el sistema local como cuenta de inicio de sesión predeterminada, pueden producirse errores relacionados con los permisos. Estos errores pueden desencadenar otros errores y podrían hacer que el controlador de dominio dejase de anunciar sus servicios.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-local-system-as-the-default-logon-account-for-file-replication"></a>Para configurar la cuenta de sistema local como cuenta de inicio de sesión predeterminada para la replicación de archivos
 
@@ -1021,7 +1021,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el servicio Replicación DFS no se está ejecutando, el controlador de dominio podría dejar de anunciar sus servicios. Esto puede provocar otros problemas, como errores de inicio de sesión y errores de directiva de grupo.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-dfs-replication-service-for-automatic-startup"></a>Para configurar el servicio de replicación DFS para el inicio automático
 
@@ -1036,7 +1036,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el servicio Replicación DFS no se está ejecutando, el controlador de dominio podría dejar de anunciar sus servicios. Este comportamiento puede provocar otros problemas, como errores de inicio de sesión y errores de directiva de grupo.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-start-the-dfs-replication-service"></a>Para iniciar el servicio de replicación DFS
 
@@ -1051,7 +1051,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el servicio Replicación DFS no usa el sistema local como cuenta de inicio de sesión predeterminada, pueden producirse errores relacionados con los permisos. Estos errores pueden desencadenar otros errores y podrían hacer que el controlador de dominio dejase de anunciar sus servicios.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-dfs-replication-to-use-local-system-as-the-default-logon-account"></a>Para configurar la replicación DFS para que use la cuenta de sistema local como cuenta de inicio de sesión predeterminada
 
@@ -1065,18 +1065,18 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
 5.  Reinicie el servicio.
 
-### <a name="the-windows-server-office-365-integration-service-is-not-set-to-use-the-local-system-account"></a>El Servicio de integración de Windows Server Office 365 no está configurado para usar la cuenta de sistema local
- **Problema:**  El servicio de integración de Windows Server Office 365 no está configurado para usar la cuenta de sistema local como cuenta de inicio de sesión predeterminada.
+### <a name="the-windows-server-microsoft-365-integration-service-is-not-set-to-use-the-local-system-account"></a>El servicio de integración de Microsoft 365 de Windows Server no está configurado para usar la cuenta de sistema local
+ **Problema:**  El servicio de integración de Windows Server Microsoft 365 no está configurado para usar la cuenta de sistema local como cuenta de inicio de sesión predeterminada.
 
- **Impacto:**  Si el servicio de integración de Windows Server Office 365 no usa el sistema local como cuenta de inicio de sesión predeterminada, es posible que algunas características de Office 365 no funcionen correctamente. También podría encontrarse con errores relacionados con los permisos.
+ **Impacto:**  Si el servicio de integración de Windows Server Microsoft 365 no usa el sistema local como cuenta de inicio de sesión predeterminada, es posible que algunas características de Microsoft 365 no funcionen correctamente. También podría encontrarse con errores relacionados con los permisos.
 
- **Resolución:**
+ **Solución:**
 
-##### <a name="to-configure-the-office-365-integration-service-to-use-local-system-as-the-default-logon-account"></a>Para configurar el servicio de integración de Office 365 para que use la cuenta de sistema local como cuenta de inicio de sesión predeterminada
+##### <a name="to-configure-the-microsoft-365-integration-service-to-use-local-system-as-the-default-logon-account"></a>Para configurar el servicio de integración de Microsoft 365 para usar el sistema local como cuenta de inicio de sesión predeterminada
 
 1.  Abra la consola Servicios.
 
-2.  En la lista de servicios, haga doble clic en **Servicio de integración de Windows Server Office 365**.
+2.  En la lista de servicios, haga doble clic en **Windows Server Microsoft 365 Integration Service**.
 
 3.  En la página **Propiedades del servicio**, haga clic en la pestaña **Iniciar sesión**.
 
@@ -1084,33 +1084,33 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
 5.  Reinicie el servicio.
 
-### <a name="the-windows-server-office-365-integration-service-is-not-running"></a>El servicio de integración de Windows Server Office 365 no se está ejecutando
- **Problema:**  El servicio de integración de Windows Server Office 365 no se está ejecutando actualmente.
+### <a name="the-windows-server-microsoft-365-integration-service-is-not-running"></a>El servicio de integración de Microsoft 365 de Windows Server no se está ejecutando
+ **Problema:**  El servicio de integración de Microsoft 365 de Windows Server no se está ejecutando actualmente.
 
- **Impacto:**  Si el servicio de integración de Windows Server Office 365 no se está ejecutando, las características basadas en la nube de Office 365 no estarán disponibles.
+ **Impacto:**  Si el servicio de integración de Microsoft 365 de Windows Server no se está ejecutando, no estarán disponibles las características basadas en la nube de Microsoft 365.
 
- **Resolución:**
+ **Solución:**
 
-##### <a name="to-start-the-windows-server-office-365-integration-service"></a>Para iniciar el servicio de integración de Windows Server Office 365
+##### <a name="to-start-the-windows-server-microsoft-365-integration-service"></a>Para iniciar el servicio de integración de Microsoft 365 de Windows Server
 
 1.  Abra la consola Servicios.
 
-2.  En la lista de servicios, haga doble clic en **Servicio de integración de Windows Server Office 365**.
+2.  En la lista de servicios, haga doble clic en **Windows Server Microsoft 365 Integration Service**.
 
 3.  Haga clic en **Iniciar**.
 
-### <a name="the-startup-type-for-the-windows-server-office-365-integration-service-is-not-set-to-automatic"></a>El tipo de inicio del servicio de integración de Windows Server Office 365 no está establecido en automático
- **Problema:**  El servicio de integración de Windows Server Office 365 podría no iniciarse si el tipo de inicio no se establece en el valor predeterminado de automático.
+### <a name="the-startup-type-for-the-windows-server-microsoft-365-integration-service-is-not-set-to-automatic"></a>El tipo de inicio para el servicio de integración de Microsoft 365 de Windows Server no está establecido en automático
+ **Problema:**  El servicio de integración de Windows Server Microsoft 365 podría no iniciarse si el tipo de inicio no se establece en el valor predeterminado de automático.
 
- **Impacto:**  Si el servicio de integración de Windows Server Office 365 no se está ejecutando, las características basadas en la nube de Office 365 no estarán disponibles.
+ **Impacto:**  Si el servicio de integración de Microsoft 365 de Windows Server no se está ejecutando, no estarán disponibles las características basadas en la nube de Microsoft 365.
 
- **Resolución:**
+ **Solución:**
 
-##### <a name="to-configure-the-office-365-integration-service-for-automatic-startup"></a>Para configurar el servicio de integración de Office 365 para el inicio automático
+##### <a name="to-configure-the-microsoft-365-integration-service-for-automatic-startup"></a>Para configurar el servicio de integración de Microsoft 365 para el inicio automático
 
 1.  Abra la consola Servicios.
 
-2.  En la lista de servicios, haga doble clic en **Servicio de integración de Windows Server Office 365**.
+2.  En la lista de servicios, haga doble clic en **Windows Server Microsoft 365 Integration Service**.
 
 3.  En **Tipo de inicio**, seleccione **Automático** y, a continuación, haga clic en **Aplicar**.
 
@@ -1119,7 +1119,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si la clave del registro RPCProxy no está establecida correctamente, es posible que reciba un mensaje de error similar al siguiente: "el equipo no se puede conectar al equipo remoto porque el servidor de puerta de enlace de Escritorio remoto no está disponible temporalmente. Intente conectarse de nuevo más tarde o póngase en contacto con el administrador de red para obtener ayuda”.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-correct-the-registry-setting"></a>Para corregir la configuración del Registro
 
@@ -1140,7 +1140,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  El servicio del motor de copia de seguridad a nivel de bloque podría no iniciarse si el tipo de inicio no se establece en manual. Este problema: puede provocar errores en los trabajos Copias de seguridad de Windows Server.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-block-level-backup-engine-service-for-manual-startup"></a>Para configurar el Servicio del módulo de copia de seguridad a nivel de bloque para que se inicie manualmente
 
@@ -1155,7 +1155,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el servicio del motor de copia de seguridad a nivel de bloque no usa el sistema local como cuenta de inicio de sesión predeterminada, pueden producirse errores relacionados con los permisos. Estos errores pueden impedir que los trabajos de Copias de seguridad de Windows Server se completen correctamente.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-the-block-level-backup-engine-service-to-use-local-system-as-the-default-logon-account"></a>Para configurar el Servicio del módulo de copia de seguridad a nivel de bloque para que use la cuenta de sistema local como cuenta de inicio de sesión predeterminada
 
@@ -1174,7 +1174,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si enlaza un certificado no válido al sitio web del servicio Web de certificado de WSS, es posible que el Asistente para conexión no funcione correctamente.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-configure-a-valid-certificate-for-the-wss-certificate-web-service"></a>Para configurar un certificado válido para el WSS Certificate Web Service
 
@@ -1195,7 +1195,7 @@ En este artículo se describen las reglas que usa el Analizador de procedimiento
 
  **Impacto:**  Si el certificado para el servicio de puerta de enlace de Escritorio remoto no está configurado correctamente, los usuarios no podrán conectarse al acceso Web remoto.
 
- **Resolución:**
+ **Solución:**
 
 ##### <a name="to-fix-the-binding-for-the-remote-desktop-gateway-service"></a>Para corregir el enlace del servicio de Puerta de enlace de Escritorio remoto
 

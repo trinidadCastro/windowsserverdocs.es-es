@@ -3,16 +3,16 @@ title: Sugerencias para solucionar problemas y mensajes WSUS
 description: 'Tema de Windows Server Update Service (WSUS): solución de problemas con mensajes de WSUS'
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: cf3d0337dfa7360bdf8304c587c4ea31b7607e27
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8abb77727139652f7d3d1ef2e4ce8dd8320db47a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990959"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624231"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>Sugerencias para solucionar problemas y mensajes WSUS
 
@@ -71,7 +71,7 @@ Para resolver este problema, conceda permisos de administrador del sistema a una
 
 - **Selfupdate:** Consulte [actualizaciones automáticas se debe actualizar](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708554(v=ws.10)) para obtener información acerca de la solución de problemas del servicio selfupdate.
 
-- **WSSUService.exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceda a WSUSService.exe haciendo clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque **Windows Server Update Service** en la lista de servicios. Haga lo siguiente:
+- **WSSUService.exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceda a WSUSService.exe haciendo clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque **Windows Server Update Service** en la lista de servicios. Siga estos pasos:
 
     -   Compruebe que este servicio se está ejecutando. Haga clic en **iniciar** si se detiene o en **reiniciar** para actualizar el servicio.
 

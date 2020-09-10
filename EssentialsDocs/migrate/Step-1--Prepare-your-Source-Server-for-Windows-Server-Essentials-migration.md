@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: c2007160c294074287437bedb7e94b318432a9b4
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 2be09665c0a2361938226b10be0ef058b8aa0ee6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838354"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625507"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>Paso 1: Preparación del servidor de origen para la migración a Windows Server Essentials
 
@@ -33,7 +33,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 5.  [Planear la migración de las aplicaciones de línea de negocio](Step-1--Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_MigrateLOB)
 
-###  <a name="back-up-your-source-server"></a><a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>Hacer una copia de seguridad del servidor de origen
+###  <a name="back-up-your-source-server"></a><a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a> Hacer una copia de seguridad del servidor de origen
  Haga una copia de seguridad del servidor de origen antes de iniciar el proceso de migración. Esto ayudará a proteger los datos de una pérdida accidental si se produce un error irrecuperable durante la migración.
 
 ##### <a name="to-back-up-the-source-server"></a>Para realizar copias de seguridad del servidor de origen
@@ -51,10 +51,10 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
    |Windows Small Business Server 2011 Standard|[Administrar copias de seguridad del servidor](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc527488(v=ws.11))
    |Windows Server Essentials|[Administrar copias de seguridad y restaurar en Windows Server Essentials](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))
 
-###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>Instalar los Service Packs más recientes
+###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a> Instalar los Service Packs más recientes
  Debe instalar las actualizaciones y Service Packs más recientes en el servidor de origen antes de la migración.
 
-###  <a name="delete-the-log-on-as-a-service-account-setting"></a><a name="BKMK_DeleteSvcAcctSetting"></a>Eliminar la configuración de cuenta de inicio de sesión como servicio
+###  <a name="delete-the-log-on-as-a-service-account-setting"></a><a name="BKMK_DeleteSvcAcctSetting"></a> Eliminar la configuración de cuenta de inicio de sesión como servicio
  Si efectúa una migración desde Windows Small Business Server 2003 o Windows Server 2003, elimine la configuración de cuenta **Iniciar sesión como servicio** de la directiva de grupo.
 
 ##### <a name="to-delete-the-log-on-as-a-service-account-setting"></a>Para eliminar la configuración de cuenta de inicio de sesión como servicio
@@ -71,7 +71,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 6.  Elimine \\ \localhost\SYSVOL \\<domainname \>\scripts\SBS_LOGIN_SCRIPT.bat.
 
-###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a>Evaluar el estado del servidor de origen
+###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a> Evaluar el estado del servidor de origen
  Es importante evaluar el estado de su servidor de origen antes de empezar la migración. Use los siguientes procedimientos para asegurarse de que las actualizaciones están actualizadas, para generar un informe de mantenimiento del sistema y para ejecutar el Analizador de procedimientos recomendados (BPA) de Soluciones de Windows Server.
 
 #### <a name="download-and-install-critical-and-security-updates"></a>Descargar e instalar actualizaciones críticas y de seguridad
@@ -92,7 +92,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 -   El Registro
 
--   Internet Information Services (IIS)
+-   Servicios de Internet Information Server (IIS)
 
 ###### <a name="to-use-the-bpa-to-analyze-your-source-server"></a>Para usar el BPA para analizar el servidor de origen
 
@@ -135,7 +135,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 Para ver la descripción y las soluciones para un problema, haga clic en el problema en el informe. No todos los problemas notificados por la herramienta BPA afectan a la migración, pero debe resolver todos los problemas posibles para asegurarse de que la migración se realice correctamente.
 
-####  <a name="synchronize-the-source-server-time-with-an-external-time-source"></a><a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>Sincronizar la hora del servidor de origen con un origen de hora externo
+####  <a name="synchronize-the-source-server-time-with-an-external-time-source"></a><a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a> Sincronizar la hora del servidor de origen con un origen de hora externo
  La hora del servidor de origen no debe tener una diferencia mayor a cinco minutos con la hora del servidor de destino, y la fecha y la zona horaria deben coincidir en los dos servidores. Si el servidor de origen se está ejecutando en una máquina virtual, la fecha, la hora y la zona horaria en el servidor host deben coincidir con las del servidor de origen y el servidor de destino. Para asegurarse de que Windows Server Essentials se instala correctamente, debe sincronizar la hora del servidor de origen con el servidor NTP (Protocolo de tiempo de red) en Internet.
 
 ###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>Para sincronizar la hora del servidor de origen con el servidor NTP
@@ -153,7 +153,7 @@ Para ver la descripción y las soluciones para un problema, haga clic en el prob
 > [!IMPORTANT]
 >  Durante la instalación de Windows Server Essentials, tiene la oportunidad de comprobar la hora en el servidor de destino y cambiarla si es necesario. Asegúrese de que la diferencia de hora es inferior a cinco minutos respecto a la hora establecida en el servidor de origen. Una vez terminada la instalación, el servidor de destino se sincroniza con el NTP. Todos los equipos unidos a dominio, incluido el servidor de origen, se sincronizan con el servidor de destino, que asume el rol de maestro emulador de controlador de dominio principal (PDC).
 
-###  <a name="create-a-plan-to-migrate-line-of-business-applications"></a><a name="BKMK_MigrateLOB"></a>Crear un plan para migrar aplicaciones de línea de negocio
+###  <a name="create-a-plan-to-migrate-line-of-business-applications"></a><a name="BKMK_MigrateLOB"></a> Crear un plan para migrar aplicaciones de línea de negocio
  Una aplicación de línea de negocio (LOB) es una aplicación informática crítica y fundamental para dirigir un negocio. Las aplicaciones LOB incluyen aplicaciones contables, de administración de la cadena de suministro y de planificación de recursos.
 
  Al planificar la migración de aplicaciones LOB, consulte a los proveedores de aplicaciones LOB para determinar el método adecuado para la migración de cada aplicación. También debe ubicar los medios que se usan para instalar las aplicaciones LOB en el servidor de destino.
@@ -168,16 +168,16 @@ Para ver la descripción y las soluciones para un problema, haga clic en el prob
 > [!NOTE]
 >  Después de actualizar y preparar el servidor de origen para la migración, se recomienda crear una copia de seguridad del servidor actualizado antes de continuar el proceso de migración.
 
-#### <a name="migrate-email-to-microsoft-office-365"></a>Migrar el correo electrónico a Microsoft Office 365
- Si eligió usar Microsoft Office 365 como solución de correo electrónico para su dominio, siga las instrucciones de [Migrar todos los buzones de correo a la nube con una migración total de Exchange](https://help.outlook.com/140/ms.exch.ecp.emailmigrationwizardexchangelearnmore.aspx) para comenzar la migración del correo electrónico a Office 365. Se recomienda completar la migración de correo electrónico antes de instalar Windows Server Essentials.
+#### <a name="migrate-email-to-microsoft-365"></a>Migrar el correo electrónico a Microsoft 365
+ Si ha elegido usar Microsoft 365 como solución de correo electrónico para su dominio, siga las instrucciones de [migrar todos los buzones a la nube con una migración de Exchange](https://help.outlook.com/140/ms.exch.ecp.emailmigrationwizardexchangelearnmore.aspx) para iniciar la migración de correo electrónico a Microsoft 365. Se recomienda completar la migración de correo electrónico antes de instalar Windows Server Essentials.
 
 > [!NOTE]
->  El paso para quitar el servidor local de Exchange Server en el servidor de origen es obligatorio si tiene previsto integrar Windows Server Essentials con Office 365. Para obtener información acerca de cómo migrar carpetas públicas de Exchange Server a Office 365, consulte la entrada de blog sobre los [scripts de migración de carpetas públicas de Microsoft Exchange 2013 para Office 365](/archive/blogs/fmustafa/microsoft-exchange-2013-public-folders-migration-scripts-for-office-365).
+>  El paso para quitar el servidor local de Exchange Server en el servidor de origen es obligatorio si tiene previsto integrar Windows Server Essentials con Microsoft 365. Para obtener información acerca de cómo migrar carpetas públicas de Exchange Server a Microsoft 365, consulte la entrada de blog sobre los [scripts de migración de carpetas públicas de Microsoft exchange 2013 para Microsoft 365](/archive/blogs/fmustafa/microsoft-exchange-2013-public-folders-migration-scripts-for-office-365).
 >
->  Después de completar la instalación, debe activar la característica de integración de Office 365 en Windows Server Essentials mediante la ejecución de la tarea **integrar con Microsoft Office 365** .
+>  Después de completar la instalación, debe activar la característica de integración de Microsoft 365 en Windows Server Essentials mediante la ejecución de la tarea **integrar con Microsoft 365** .
 
 > [!IMPORTANT]
->  Para que la herramienta de migración de Office 365 pueda conectar con el servidor de Exchange Server que se ejecuta en el servidor de origen, debe habilitar RPC a través de HTTP en el servidor de origen. Para obtener más información sobre cómo habilitar RPC a través de HTTP, consulte [Cómo implementar RPC a través de HTTP por primera vez en Small Business Server 2003 (Standard o Premium)](/previous-versions/tn-archive/bb123622(v=exchg.65)). Si no puede ejecutar correctamente la herramienta de migración de Office 365 después de habilitar RPC a través de HTTP, vea la opción **ValidPorts** del Registro en HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy y asegúrese de que aparezca el nombre completo (FQDN) del servidor de origen. Si no aparece el nombre completo, agréguelo como en el ejemplo siguiente:
+>  Para permitir que la herramienta de migración de Microsoft 365 se conecte al servidor de Exchange Server que se está ejecutando en el servidor de origen, debe habilitar RPC a través de HTTP en el servidor de origen. Para obtener más información sobre cómo habilitar RPC a través de HTTP, consulte [Cómo implementar RPC a través de HTTP por primera vez en Small Business Server 2003 (Standard o Premium)](/previous-versions/tn-archive/bb123622(v=exchg.65)). Si no puede ejecutar correctamente la herramienta de migración de Microsoft 365 después de habilitar RPC a través de HTTP, vea la opción **ValidPorts** del registro en HKEY_LOCAL_MACHINE \software\microsoft\rpc\rpcproxy y asegúrese de que aparece el nombre de dominio completo (FQDN) para el servidor de origen. Si no aparece el nombre completo, agréguelo como en el ejemplo siguiente:
 >
 >  remote. *contoso*.com:6001-6002;remote. *contoso*.com:6004 (reemplace *contoso* por el nombre de su dominio).
 

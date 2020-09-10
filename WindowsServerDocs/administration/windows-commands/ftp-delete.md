@@ -3,16 +3,16 @@ title: ftp delete
 description: Artículo de referencia del comando FTP Delete, que elimina archivos en equipos remotos.
 ms.topic: reference
 ms.assetid: 067c45f3-e4e8-4450-b8b6-836994f6adfe
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ebf1a770144409dca91ddea0a18a85536e05b926
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7a09e9abbe23582a2b5f2ba197a1877ffc62c7cc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038063"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624796"
 ---
 # <a name="ftp-delete"></a>ftp delete
 

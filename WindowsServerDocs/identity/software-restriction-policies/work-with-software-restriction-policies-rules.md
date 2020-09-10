@@ -3,16 +3,16 @@ title: Trabajo con reglas de directivas de restricción de software
 description: Seguridad de Windows Server
 ms.topic: article
 ms.assetid: 4a8047d5-9bb9-4bed-bc8f-583a237731e2
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 619564d618ba542e915f19ba69884a48652c8bbc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 883788eb2966a2f5e108b912f087abd4e601ea0b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952981"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624214"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>Trabajo con reglas de directivas de restricción de software
 

@@ -3,16 +3,16 @@ title: Visualización y administración de actualizaciones
 description: 'Tema de Windows Server Update Service (WSUS): visualización y administración de actualizaciones en la consola de WSUS'
 ms.topic: article
 ms.assetid: ac70192b-0309-4385-b697-2e8eda51911c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8da092fc64b46a192dd9f40816721d639af795cb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ded1b6741829fb74d3be9b33828c89b8091faf1a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896797"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624388"
 ---
 # <a name="viewing-and-managing-updates"></a>Visualización y administración de actualizaciones
 
@@ -174,14 +174,14 @@ Para ver estos iconos, debe habilitar la columna sustitución en la consola de U
 
  **Preocupaciones operativas:**
 
- No hay ningún preocupaciones operacionales.
+ No existe ninguna preocupación operativa.
 
 ### <a name="superseding-icon"></a>Icono de sustitución
  ![icon](../../media/wsus/wsus-superseding.png) Esta actualización sustituye a otras actualizaciones.
 
  **Preocupaciones operativas:**
 
- No hay ningún preocupaciones operacionales.
+ No existe ninguna preocupación operativa.
 
 ### <a name="superseded--superseding-icon"></a>Icono de sustitución de & reemplazado
  ![icon](../../media/wsus/wsus-superseded.png) Esta actualización se sustituye por otra actualización y sustituye a otras actualizaciones.

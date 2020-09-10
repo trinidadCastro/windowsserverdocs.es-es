@@ -5,14 +5,14 @@ ms.date: 05/07/2016
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: c1dafb9fb89109a16f2f28662464494691a2f2f0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: ef0cdcffb90ba14eca6ccff50e4a297662bd61c6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179951"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624969"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>Conéctese en Windows Server Essentials
 
@@ -36,7 +36,7 @@ ms.locfileid: "87179951"
 -   [Uso de Launchpad](Get-Connected-in-Windows-Server-Essentials.md#BKMK_C)
 
 
-##  <a name="prepare-to-connect-computers-to-the-server"></a><a name="BKMK_A"></a>Preparar la conexión de equipos al servidor
+##  <a name="prepare-to-connect-computers-to-the-server"></a><a name="BKMK_A"></a> Preparar la conexión de equipos al servidor
  En esta sección se describe el software del Conector, los sistemas operativos que son compatibles con Windows Server Essentials, las tareas de requisitos previos que deben completarse antes de conectar los equipos al servidor y los cambios que realiza el servidor a los equipos al ejecutar el software del Conector.
 
 
@@ -56,7 +56,7 @@ ms.locfileid: "87179951"
 
 -   [Quitar un equipo de un dominio de Windows](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)
 
-###  <a name="connector-software-overview"></a><a name="BKMK_1"></a>Información general del software del conector
+###  <a name="connector-software-overview"></a><a name="BKMK_1"></a> Información general del software del conector
  El software del Conector para el sistema operativo Windows Server Essentials conecta a los equipos de la red al servidor de Windows Server Essentials. Al conectar equipos al servidor, el software del Conector le permite hacer automáticamente una copia de seguridad de los equipos y supervisar su mantenimiento. El software del Conector también permite configurar y administrar de forma remota el servidor de Windows Server Essentials. El software del Conector se instala al conectar un equipo cliente al servidor. Para instrucciones sobre cómo conectar equipos cliente al servidor de Windows Server Essentials, vea [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9) más adelante en este tema.
 
 -   [Información general sobre el software del Conector](Get-Connected-in-Windows-Server-Essentials.md#BKMK_1)
@@ -75,11 +75,11 @@ ms.locfileid: "87179951"
 
 -   [Quitar un equipo de un dominio de Windows](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)
 
-###  <a name="connector-software-overview"></a><a name="BKMK_1"></a>Información general del software del conector
+###  <a name="connector-software-overview"></a><a name="BKMK_1"></a> Información general del software del conector
  El software del Conector para el sistema operativo Windows Server Essentials conecta a los equipos de la red al servidor de Windows Server Essentials. Al conectar equipos al servidor, el software del Conector le permite hacer automáticamente una copia de seguridad de los equipos y supervisar su mantenimiento. El software del Conector también permite configurar y administrar de forma remota el servidor de Windows Server Essentials. El software del Conector se instala al conectar un equipo cliente al servidor. Para instrucciones sobre cómo conectar equipos cliente al servidor de Windows Server Essentials, vea [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9) más adelante en este tema.
 
 
-###  <a name="prerequisites-for-connecting-a-computer-to-the-server"></a><a name="BKMK_2"></a>Requisitos previos para conectar un equipo al servidor
+###  <a name="prerequisites-for-connecting-a-computer-to-the-server"></a><a name="BKMK_2"></a> Requisitos previos para conectar un equipo al servidor
  Antes de conectar un equipo a la red, deben cumplirse los siguientes requisitos:
 
 -   La instalación de Windows Server Essentials se ha completado y el servidor se está ejecutando. El software del Conector finalizará la instalación si no puede comunicarse con el servidor.
@@ -125,7 +125,7 @@ ms.locfileid: "87179951"
  Para instrucciones detalladas sobre cómo conectar un equipo al servidor que ejecuta Windows Server Essentials, vea [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
 
 
-###  <a name="prerequisites-for-connecting-a-mac-computer-to-the-network"></a><a name="BKMK_3"></a>Requisitos previos para conectar un equipo Mac a la red
+###  <a name="prerequisites-for-connecting-a-mac-computer-to-the-network"></a><a name="BKMK_3"></a> Requisitos previos para conectar un equipo Mac a la red
  Antes de conectar un equipo Mac a la red, deben cumplirse los siguientes requisitos:
 
 -   La instalación del sistema operativo del servidor se ha completado y el servidor se está ejecutando. El software del Conector no se instalará si no se puede comunicar con el servidor.
@@ -146,7 +146,7 @@ ms.locfileid: "87179951"
 
 -   Un equipo cliente puede estar conectado a un solo servidor en cualquier momento.
 
-###  <a name="supported-operating-systems-for-client-computers"></a><a name="BKMK_4"></a>Sistemas operativos compatibles para equipos cliente
+###  <a name="supported-operating-systems-for-client-computers"></a><a name="BKMK_4"></a> Sistemas operativos compatibles para equipos cliente
  Windows Server Essentials ofrece el mismo conjunto de características para todos los equipos cliente compatibles. Estas características incluyen la unión al dominio, Launchpad y notificaciones de estado del cliente.
 
 > [!IMPORTANT]
@@ -254,7 +254,7 @@ ms.locfileid: "87179951"
 > [!NOTE]
 >  Puede ver el estado de mantenimiento y de copia de seguridad de un equipo Mac desde el panel de Windows Server Essentials. Sin embargo, no se puede configurar la copia de seguridad del equipo ni iniciar una copia de seguridad desde el panel. Además, tampoco puede usar el acceso web remoto para conectarse a un equipo Mac.
 
-###  <a name="changes-the-server-makes-to-a-client-computer"></a><a name="BKMK_5"></a>Cambios que realiza el servidor en un equipo cliente
+###  <a name="changes-the-server-makes-to-a-client-computer"></a><a name="BKMK_5"></a> Cambios que realiza el servidor en un equipo cliente
  Cuando se conecta un equipo al servidor, el software de Windows Server Essentials realiza una serie de cambios en el equipo para que el equipo y el servidor puedan funcionar juntos.
 
  El software hace lo siguiente:
@@ -292,16 +292,16 @@ ms.locfileid: "87179951"
 
  Para información sobre cómo conectar el equipo al servidor, vea [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
 
-###  <a name="network-user-name-and-password-information"></a><a name="BKMK_6"></a>Información de nombre de usuario y contraseña de red
+###  <a name="network-user-name-and-password-information"></a><a name="BKMK_6"></a> Información de nombre de usuario y contraseña de red
  Puede obtener la información de nombre de usuario y contraseña de red de la persona que administra el servidor. Puede usar estas credenciales para conectar el equipo al servidor y acceder a información ubicada en él.
 
-###  <a name="network-user-name-and-password-information"></a><a name="BKMK_6"></a>Información de nombre de usuario y contraseña de red
+###  <a name="network-user-name-and-password-information"></a><a name="BKMK_6"></a> Información de nombre de usuario y contraseña de red
  Puede obtener la información de nombre de usuario y contraseña de red de la persona que administra el servidor. Puede usar estas credenciales para conectar el equipo al servidor y acceder a información ubicada en él.
 
 
  Si es el administrador del servidor, puede crear las credenciales de red agregando una cuenta de usuario desde la pestaña **Usuarios** del panel. Para más información sobre las cuentas de usuario, vea [Administrar cuentas de usuario mediante el panel](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8).
 
-###  <a name="server-administrators-account"></a><a name="BKMK_7"></a>Cuenta del administrador del servidor
+###  <a name="server-administrators-account"></a><a name="BKMK_7"></a> Cuenta del administrador del servidor
  Debe poder dar un nombre de cuenta de administrador de red y una contraseña para instalar el software del Conector. Una cuenta de administrador de red permite al usuario administrar la red de área local para su organización y le ayuda a administrar y mantener los dispositivos de red, como los conmutadores y enrutadores.
 
  Entre las tareas que se pueden realizar mediante una cuenta de administrador de red se incluyen:
@@ -318,7 +318,7 @@ ms.locfileid: "87179951"
 
   En Windows Server Essentials, Windows Server Essentials y Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado, puede asignar el nivel de acceso de administrador de red a cualquier cuenta de usuario. Esto otorga los permisos necesarios para realizar tareas de administrador de red. Cuando a un usuario se le asigna el nivel de acceso de administrador de red, se abre el mensaje del sistema **Access Control de usuario** para cualquier tarea que requiera permisos de administrador.
 
-###  <a name="remove-a-computer-from-a-windows-domain"></a><a name="BKMK_8"></a>Quitar un equipo de un dominio de Windows
+###  <a name="remove-a-computer-from-a-windows-domain"></a><a name="BKMK_8"></a> Quitar un equipo de un dominio de Windows
  Para quitar un equipo de su dominio, se le pedirá el nombre de usuario y la contraseña de la cuenta de dominio.
 
 ##### <a name="to-remove-a-computer-from-a-windows-domain"></a>Para quitar un equipo de un dominio de Windows
@@ -341,7 +341,7 @@ ms.locfileid: "87179951"
         > [!NOTE]
         >  El equipo se quitará del dominio y la cuenta de equipo de ese dominio se deshabilitará.
 
-##  <a name="connect-computers-to-the-server-by-using-the-connector-software"></a><a name="BKMK_B"></a>Conectar equipos al servidor mediante el software del conector
+##  <a name="connect-computers-to-the-server-by-using-the-connector-software"></a><a name="BKMK_B"></a> Conectar equipos al servidor mediante el software del conector
  En esta sección se da acceso a procedimientos e información que le ayudarán a instalar el software del Conector, conectar el equipo al servidor y solucionar problemas que surgen al conectar equipos al servidor.
 
 
@@ -362,7 +362,7 @@ ms.locfileid: "87179951"
 -   [Cómo funciona la copia de seguridad con los modos de suspensión e hibernación](Get-Connected-in-Windows-Server-Essentials.md#BKMK_Sleep)
 
 
-###  <a name="connect-computers-to-the-server"></a><a name="BKMK_9"></a>Conectar equipos al servidor
+###  <a name="connect-computers-to-the-server"></a><a name="BKMK_9"></a> Conectar equipos al servidor
  Cuando conecte un equipo a un servidor que ejecute Windows Server Essentials o Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado, asegúrese de que el equipo cliente tenga una conexión válida a Internet.
 
  Realice el procedimiento siguiente en todos los equipos cliente para conectarlos al servidor.
@@ -394,7 +394,7 @@ ms.locfileid: "87179951"
     > [!NOTE]
     >  Si el equipo está en una ubicación remota fuera de la red de Windows Server Essentials, para ejecutar el Asistente para conectar un equipo al servidor, escriba **http://<nombreDeDominio \> /Connect** en la barra de direcciones del explorador web (donde <dominio \> es el nombre de dominio de su organización). El administrador de red puede proporcionarle la información del nombre de dominio.
 
-4.  Aparecerá la página **Conecte el equipo al servidor**. Lleve a cabo una de las siguientes acciones:
+4.  Aparecerá la página **Conecte el equipo al servidor**. Realice una de las siguientes acciones:
 
     -   En un equipo con el sistema operativo Windows, haga clic en **Descargar software para Windows**.
 
@@ -435,7 +435,7 @@ ms.locfileid: "87179951"
 
     -   Desde el vínculo del **Panel**, puede administrar el servidor.
 
-###  <a name="connect-computers-to-a-windows-server-essentials-server-without-joining-the-domain"></a><a name="BKMK_10"></a>Conectar equipos a un servidor de Windows Server Essentials sin unirse al dominio
+###  <a name="connect-computers-to-a-windows-server-essentials-server-without-joining-the-domain"></a><a name="BKMK_10"></a> Conectar equipos a un servidor de Windows Server Essentials sin unirse al dominio
  En este tema se describe cómo agregar un equipo con Windows 7, Windows 8, Windows 8.1 o Windows 10 a una red de Windows Server Essentials sin unir el equipo al dominio de Windows Server Essentials en una implementación de cliente local. Este método de conexión se admite en Windows Server Essentials y Windows Server Essentials.
 
  Esto es una alternativa al método habitual, que requiere unir el equipo al dominio de Windows Server Essentials. Con ese método, si el equipo está en otro dominio, debe quitarse del dominio antes de que pueda agregarse al dominio de Windows Server Essentials.
@@ -449,7 +449,7 @@ ms.locfileid: "87179951"
 
 -   Este método no puede usarse para conectar un equipo remoto al servidor.
 
-#### <a name="prerequisites"></a>Prerrequisitos
+#### <a name="prerequisites"></a>Requisitos previos
 
 -   El equipo debe tener una conexión física a la red local.
 
@@ -498,7 +498,7 @@ ms.locfileid: "87179951"
 4.  Complete los pasos de [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
 
 
-####  <a name="join-a-second-server-to-the-network"></a><a name="BKMK_SecondServer"></a>Unir un segundo servidor a la red
+####  <a name="join-a-second-server-to-the-network"></a><a name="BKMK_SecondServer"></a> Unir un segundo servidor a la red
 
 ###### <a name="to-join-a-second-server-to-the-network"></a>Para unir un segundo servidor a la red
 
@@ -560,7 +560,7 @@ ms.locfileid: "87179951"
 
 - El estado directiva de grupo del segundo servidor se muestra como **no aplicable**.
 
-###  <a name="install-the-connector-software"></a><a name="BKMK_11"></a>Instalar el software del conector
+###  <a name="install-the-connector-software"></a><a name="BKMK_11"></a> Instalar el software del conector
  El software del Conector de Windows Server Essentials se instala cuando conecta un equipo al servidor mediante el asistente para conectar un equipo al servidor. Puede iniciar este asistente escribiendo **http://<ServerName \> /Connect** en la barra de direcciones del explorador web (donde *<ServerName \> * es el nombre del servidor).
 
 > [!NOTE]
@@ -580,17 +580,17 @@ ms.locfileid: "87179951"
  Para instrucciones detalladas sobre cómo conectar un equipo al servidor de Windows Server Essentials, vea [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
 
 
-###  <a name="move-computer-data-and-settings-manually"></a><a name="BKMK_12"></a>Traslado manual de los datos y la configuración del equipo
+###  <a name="move-computer-data-and-settings-manually"></a><a name="BKMK_12"></a> Traslado manual de los datos y la configuración del equipo
   Windows Server Essentials y Windows Server Essentials solo admiten la migración de perfiles de usuario para equipos cliente que ejecutan el sistema operativo Windows 7. Cuando se conecta un equipo basado en Windows 7 al servidor, el asistente para conectar un equipo al servidor puede migrar automáticamente el perfil de usuario.
 
  El perfil de usuario no se puede transferir automáticamente al conectar un equipo con Windows 8, Windows 8.1 o Windows 10 al servidor. Sin embargo, en un equipo con Windows 8, puede usar Windows Easy Transfer para transferir los datos y la configuración del usuario local original en el equipo unido al dominio. Para hacerlo, debe ser un administrador del equipo de origen y de destino con Windows 8. Para obtener información sobre cómo usar Windows Easy Transfer para transferir archivos y opciones de configuración, consulte el [artículo 2735227](https://support.microsoft.com/kb/2735227) en Microsoft Knowledge Base.
 
-###  <a name="transfer-multiple-user-profiles-during-computer-deployment"></a><a name="BKMK_Transfer"></a>Transferir varios perfiles de usuario durante la implementación del equipo
+###  <a name="transfer-multiple-user-profiles-during-computer-deployment"></a><a name="BKMK_Transfer"></a> Transferir varios perfiles de usuario durante la implementación del equipo
  Antes de conectar un equipo que usa el sistema operativo Windows 7 o Windows 7 SP1 al servidor de Windows Server Essentials, primero debe crear las cuentas de usuario de red correspondientes en el servidor para transferir varios perfiles de usuario local. Para más información sobre cómo crear cuentas de usuario de red, vea [Agregar una cuenta de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1).
 
  La migración de perfiles de usuario solo se admite en un equipo que ejecute Windows 7 (para Windows Server Essentials) o Windows 7 SP1 (para Windows Server Essentials). Cuando conecta un equipo al servidor de Windows Server Essentials mediante el asistente para conectar un equipo al servidor, se le ofrece la opción de mover los datos y la configuración de usuario de las cuentas de usuario locales anteriores a las nuevas cuentas de usuario de red. Para hacerlo, en la página **Mover datos de usuario y configuración existentes** del asistente, asigne las cuentas de usuario de red a las cuentas de usuario local que existen en el equipo para transferir varios perfiles de usuario que se encuentran en el equipo cliente.
 
-###  <a name="uninstall-the-connector-software"></a><a name="BKMK_13"></a>Desinstalar el software del conector
+###  <a name="uninstall-the-connector-software"></a><a name="BKMK_13"></a> Desinstalar el software del conector
  Puede desinstalar el software del Conector desde un equipo mediante el Panel de control. Normalmente se hace esto si hay un problema con el software del Conector o si necesita instalar una versión más reciente del software del Conector. Debe haber iniciado sesión en el equipo como administrador para completar este procedimiento.
 
 > [!IMPORTANT]
@@ -617,7 +617,7 @@ ms.locfileid: "87179951"
 > -   Al desinstalar el software del Conector, no se separa el equipo del dominio original. El equipo debe separarse manualmente del dominio. Para instrucciones, vea [Quitar un equipo de un dominio de Windows](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8).
 
 
-###  <a name="disconnect-your-computer-from-or-reconnect-your-computer-to-the-server"></a><a name="BKMK_14"></a>Desconectar el equipo o volver a conectar el equipo al servidor
+###  <a name="disconnect-your-computer-from-or-reconnect-your-computer-to-the-server"></a><a name="BKMK_14"></a> Desconectar el equipo o volver a conectar el equipo al servidor
  Para desconectar un equipo desde el servidor, debe completar los siguientes pasos:
 
 
@@ -637,10 +637,10 @@ ms.locfileid: "87179951"
 
 6. Conecte el equipo al servidor mediante el Asistente para conectar equipos. Para instrucciones detalladas, vea [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)
 
-###  <a name="how-backup-works-with-sleep-and-hibernate-modes"></a><a name="BKMK_Sleep"></a>Cómo funciona la copia de seguridad con los modos de suspensión e hibernación
+###  <a name="how-backup-works-with-sleep-and-hibernate-modes"></a><a name="BKMK_Sleep"></a> Cómo funciona la copia de seguridad con los modos de suspensión e hibernación
  Si selecciona la opción **Reactivar este equipo para copia de seguridad** al conectar un equipo al servidor, el equipo se reactiva automáticamente desde el modo de suspensión o hibernación a diario tal como se especifica en la programación de copia de seguridad para que se puedan hacer copias de seguridad. Una vez finalizada la copia de seguridad, el equipo vuelve al modo de suspensión o hibernación, en función de la configuración de administración de energía. Si no se selecciona esta opción, el servidor no hace ninguna copia de seguridad de un equipo si el equipo está en modo de suspensión o hibernación. Para obtener más información, vea [Manage Client backup](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md).
 
-##  <a name="use-the-launchpad"></a><a name="BKMK_C"></a>Uso de Launchpad
+##  <a name="use-the-launchpad"></a><a name="BKMK_C"></a> Uso de Launchpad
  Puede usar Launchpad para tener acceso a los recursos compartidos del servidor de Windows Server Essentials, hacer copias de seguridad del equipo y responder a las alertas de mantenimiento del sistema.
 
 -   [Introducción a Launchpad](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)

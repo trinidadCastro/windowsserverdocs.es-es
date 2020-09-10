@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: fa2e1685-31c0-4d4f-a10a-6c8885dfc493
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 36c8143883667896c3ecdb3aa4b09d3c474537d2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6f8318b6a6b711c6041a9227cd2d207470233dab
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180301"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625134"
 ---
 # <a name="troubleshoot-windows-server-essentials-log-collector-errors"></a>Solución de problemas del compilador de registros de Windows Server Essentials
 
@@ -23,17 +23,17 @@ Al ejecutar el Compilador de registros, puede encontrar uno de los siguientes er
 > [!NOTE]
 > En este documento, los equipos de la red que no sean el servidor, se denominan equipos de red.
 
-###  <a name="the-destination-folder-is-not-valid"></a><a name="BKMK_TheDestinationFolderIsNotValid"></a>La carpeta de destino no es válida
+###  <a name="the-destination-folder-is-not-valid"></a><a name="BKMK_TheDestinationFolderIsNotValid"></a> La carpeta de destino no es válida
  **Causa:** la carpeta donde está intentando copiar los archivos de registro no existe o no tiene suficiente espacio para almacenar los archivos.
 
  **Solución:** compruebe que exista la carpeta seleccionada y que haya suficiente espacio libre disponible en la unidad para los archivos. También debe asegurarse de que haya suficiente espacio libre restante en la carpeta temporal de la unidad.
 
-###  <a name="a-network-error-has-occurred"></a><a name="BKMK_ANetworkErrorHasOccurred"></a>Se ha producido un error de red
+###  <a name="a-network-error-has-occurred"></a><a name="BKMK_ANetworkErrorHasOccurred"></a> Se ha producido un error de red
  **Causa:** puede haber un problema relacionado con la red en el equipo de red o el servidor.
 
  **Solución:** asegúrese de que todos los equipos y dispositivos de red estén encendidos y conectados a la red. Si no puede resolver el problema, póngase en contacto con la persona que mantiene la red para obtener ayuda.
 
-###  <a name="cannot-collect-log-files-for-the-computer"></a><a name="BKMK_CannotCollectLogFiles"></a>No se pueden recopilar archivos de registro para el equipo
+###  <a name="cannot-collect-log-files-for-the-computer"></a><a name="BKMK_CannotCollectLogFiles"></a> No se pueden recopilar archivos de registro para el equipo
  **Causa:** es posible que el Compilador de registros no pueda instalarse en el equipo porque el equipo no se conectó correctamente al servidor mediante el asistente de conexión del equipo al servidor.
 
  **Solución:** Para obtener información sobre cómo resolver problemas relacionados con las conexiones con el servidor, consulte [solucionar problemas de conexión de equipos al servidor](https://go.microsoft.com/fwlink/p/?LinkID=241492).
@@ -42,17 +42,17 @@ Al ejecutar el Compilador de registros, puede encontrar uno de los siguientes er
 
 -   Para los equipos cliente que ejecutan Windows 7, Windows 8 o Windows Multipoint Server, puede copiar la carpeta **Logs** ubicada en **%sysdir%\programdata\Microsoft\Windows Server**.
 
-###  <a name="you-do-not-have-permission-to-save-the-log-files-to-the-selected-folder"></a><a name="BKMK_YouDoNotHavePermission"></a>No tiene permiso para guardar los archivos de registro en la carpeta seleccionada
+###  <a name="you-do-not-have-permission-to-save-the-log-files-to-the-selected-folder"></a><a name="BKMK_YouDoNotHavePermission"></a> No tiene permiso para guardar los archivos de registro en la carpeta seleccionada
  **Causa:** es posible que no tenga permisos de escritura en la carpeta que ha seleccionado para guardar los archivos de registro.
 
  **Solución:** Si usa la ruta de acceso predeterminada para guardar los archivos de registro, asegúrese de que tiene permiso de escritura para la carpeta compartida ** \\ \\<ServerName \> \Logs**. Si va a almacenar los registros en un equipo de red, asegúrese de tener permiso de escritura para la carpeta que ha seleccionado para guardar los archivos de registro.
 
-###  <a name="the-computer-is-not-configured-properly-to-collect-the-log-files"></a><a name="BKMK_TheComputerIsNotConfiguredProperly"></a>El equipo no está configurado correctamente para recopilar los archivos de registro
+###  <a name="the-computer-is-not-configured-properly-to-collect-the-log-files"></a><a name="BKMK_TheComputerIsNotConfiguredProperly"></a> El equipo no está configurado correctamente para recopilar los archivos de registro
  **Causa:** el equipo no se ha configurado correctamente para el Compilador de registros.
 
  **Solución:** reinstale el Compilador de registros. Consulte cómo [reinstalar el Compilador de registros](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_Reinstall).
 
-###  <a name="an-unknown-error-occurred"></a><a name="BKMK_AnUnknownErrorOccurred"></a>Se produjo un error desconocido
+###  <a name="an-unknown-error-occurred"></a><a name="BKMK_AnUnknownErrorOccurred"></a> Se produjo un error desconocido
  **Causa:** desconocida.
 
  **Solución 1:** vuelva a ejecutar el Compilador de registros. Si el error se produce de nuevo, asegúrese de que no haya ningún problema de conectividad. También puede intentar reinstalar el Compilador de registros. Consulte cómo [reinstalar el Compilador de registros](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_Reinstall). Si no puede resolver el problema, póngase en contacto con la persona que mantiene la red para obtener ayuda.

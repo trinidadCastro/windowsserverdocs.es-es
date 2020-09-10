@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ebb256876114c9c3260311fa09eb30f3067905b8
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: fc51555f680126cbd1b6e9fe2c672cbcbc5da7e9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180321"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625141"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Solucionar los problemas de conectividad del acceso Web remoto en Windows Server Essentials
 
@@ -52,7 +52,7 @@ ms.locfileid: "87180321"
 
   - Configure el enrutamiento de puerto en el enrutador para los puertos siguientes:
 
-    |Servicio o protocolo|Port|
+    |Servicio o protocolo|Puerto|
     |-------------------------|----------|
     |HTTP|TCP 80|
     |HTTPS|TCP 443|

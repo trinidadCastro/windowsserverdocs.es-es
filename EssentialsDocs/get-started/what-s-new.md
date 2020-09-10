@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 504e81abb6822fca59eb15afe895c2345cc34f5d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: baf674b75f9476b65ba508f2841e0973783f1b9a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181621"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624177"
 ---
 # <a name="whats-new-in-windows-server-2016-essentials"></a>Novedades de Windows Server 2016 Essentials
 
@@ -44,7 +44,7 @@ Algunas pequeñas empresas más grandes necesitan más funcionalidad y capacidad
  - capacidad para especificar un controlador de dominio designado
 
 
-<a name="see-also"></a>Consulta también
+<a name="see-also"></a>Consulte también
 --------
 
 [Introducción a Windows Server Essentials](get-started.md)&copy;&reg;

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ecf19216-7aac-4aca-839a-342ac28f5329
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 4afba33d105f0348aaf7c130ccbe5a3b87fc1cb2
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: d46e760fd168d44cb8f036d6b1b28180db2ffce2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838314"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625114"
 ---
 # <a name="troubleshoot-windows-server-essentials-installation"></a>Solucionar problemas en la instalación de Windows Server Essentials
 
@@ -33,7 +33,7 @@ En este tema se proporciona información para solucionar los problemas que se pr
 > [!NOTE]
 >  Para obtener la información más reciente sobre la solución de problemas de la comunidad de Windows Server Essentials, se recomienda visitar el [Foro de Windows Server Essentials](/answers/topics/windows-server-essentials.html/threads). El foro de Windows Server Essentials es un buen lugar para buscar ayuda o realizar una pregunta.
 
-##  <a name="general-troubleshooting-steps"></a><a name="BKMK_GeneralTroubleshootingSteps"></a>Pasos generales para la solución de problemas
+##  <a name="general-troubleshooting-steps"></a><a name="BKMK_GeneralTroubleshootingSteps"></a> Pasos generales para la solución de problemas
  Si se produce un error en la instalación de Windows Server Essentials, siga estos pasos para ayudar a identificar el problema que causó el error.
 
 > [!IMPORTANT]
@@ -56,12 +56,12 @@ En este tema se proporciona información para solucionar los problemas que se pr
 
 6.  Si recibe el mensaje de error que indica que se ha producido un error al configurar el servidor durante la instalación, use el DVD de recuperación del servidor y las instrucciones proporcionadas por el fabricante del hardware para restaurar el servidor a la configuración predeterminada de fábrica.
 
-##  <a name="troubleshoot-driver-issues"></a><a name="BKMK_TroubleshootDrivers"></a>Solucionar problemas de controladores
+##  <a name="troubleshoot-driver-issues"></a><a name="BKMK_TroubleshootDrivers"></a> Solucionar problemas de controladores
  El problema más común al instalar Windows Server Essentials son los controladores de almacenamiento que necesitan tener controladores instalados manualmente. Windows incluye controladores para muchos controladores de almacenamiento, pero podría no incluir controladores para su hardware en concreto.
 
  También podría tener que instalar manualmente los controladores de tarjeta de red de su hardware en concreto.
 
-###  <a name="adding-drivers-for-storage-controllers"></a><a name="BKMK_StorageDrivers"></a>Agregar controladores para controladores de almacenamiento
+###  <a name="adding-drivers-for-storage-controllers"></a><a name="BKMK_StorageDrivers"></a> Agregar controladores para controladores de almacenamiento
  Si el hardware requiere controladores de almacenamiento que no están incluidos en Windows Server Essentials, use la siguiente información para completar la instalación.
 
  Si ve el mensaje siguiente durante la instalación, deberá agregar manualmente controladores para el controlador de almacenamiento:
@@ -95,7 +95,7 @@ En este tema se proporciona información para solucionar los problemas que se pr
 
    La instalación debería proseguir con normalidad.
 
-###  <a name="adding-drivers-for-network-adapters"></a><a name="BKMK_AddingNICdrivers"></a>Agregar controladores para adaptadores de red
+###  <a name="adding-drivers-for-network-adapters"></a><a name="BKMK_AddingNICdrivers"></a> Agregar controladores para adaptadores de red
  Si Windows Server Essentials no admite un adaptador de red en el equipo, el servidor no tendrá conectividad de red una vez completada la instalación y no podrá conectar equipos al servidor.
 
  Al final de la instalación de Windows Server Essentials, se le informará si un controlador de adaptador de red no se instaló automáticamente. También puede usar **Conexiones de red** en el Panel de control para comprobar si falta un controlador de adaptador de red. Si no ve una conexión de red asociada al adaptador de red en el servidor, deberá instalar un controlador.

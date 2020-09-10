@@ -3,16 +3,16 @@ title: WSUS y el sitio del catálogo
 description: 'Tema de Windows Server Update Service (WSUS): Cómo importar revisiones en WSUS accediendo al sitio del catálogo de Microsoft Update'
 ms.topic: article
 ms.assetid: f19a8659-5a96-4fdd-a052-29e4547fe51a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 25a9852935c47e0c005d78ae7ea24d14c7c1a546
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7e0d3c76e66275fe052d5d337dd30c67d7980638
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896790"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624271"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS y el sitio del catálogo
 
@@ -25,7 +25,7 @@ Para importar revisiones en WSUS, debe tener acceso al sitio del catálogo de Mi
 
 #### <a name="to-access-the-microsoft-update-catalog-site"></a>Para tener acceso al sitio del catálogo de Microsoft Update
 
-1.  En la consola de administración de WSUS, seleccione el nodo de servidor superior o **actualizaciones**y, en el panel **acciones** , haga clic en **importar actualizaciones**. Se abrirá una ventana del explorador en el sitio web del catálogo de Microsoft Update.
+1.  En la consola de administración de WSUS, seleccione el nodo de servidor superior o  **actualizaciones**y, en el panel **acciones** , haga clic en **importar actualizaciones**. Se abrirá una ventana del explorador en el sitio web del catálogo de Microsoft Update.
 
 2.  Para obtener acceso a las actualizaciones en este sitio, debe instalar el control activeX del catálogo de Microsoft Update.
 
