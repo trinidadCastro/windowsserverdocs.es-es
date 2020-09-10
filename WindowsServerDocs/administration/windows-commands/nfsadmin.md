@@ -3,16 +3,16 @@ title: nfsadmin
 description: Artículo de referencia para el comando nfsadmin, que administra servidor para NFS y cliente para NFS.
 ms.topic: reference
 ms.assetid: 7375b2cf-c6b8-45b5-abf6-6c10e462defd
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e7329b26b201bd99a71bb30f50e9f5ba95953846
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2c5cb4ba3b90542688fd3a7ea894a2039a10cafd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023649"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634111"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -20,7 +20,7 @@ ms.locfileid: "89023649"
 
 Utilidad de línea de comandos que administra servidor para NFS o cliente para NFS en el equipo local o remoto que ejecuta servicios de Microsoft para Network File System (NFS). Si se usa sin parámetros, nfsadmin Server muestra las opciones de configuración de servidor para NFS actuales y nfsadmin Client muestra la configuración actual de cliente para NFS.
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 
 ```
 nfsadmin server [computername] [-u Username [-p Password]] -l

@@ -3,16 +3,16 @@ title: Dfsutil
 description: Artículo de referencia para el comando Dfsutil, que administra los espacios de nombres DFS, los servidores y los clientes.
 ms.topic: reference
 ms.assetid: ef5093a4-0d24-4b21-9d04-59933ad98e2c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a622a9647b438ed2748ed42b28395bebe361f50b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9fb3883403dd0f4a88b612655247c4f4a2df7de7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028373"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635048"
 ---
 # <a name="dfsutil"></a>Dfsutil
 

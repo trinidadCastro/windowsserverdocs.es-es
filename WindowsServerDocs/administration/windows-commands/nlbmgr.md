@@ -3,16 +3,16 @@ title: nlbmgr
 description: Artículo de referencia del comando nlbmgr, que le ayuda a configurar y administrar los clústeres de equilibrio de carga de red y todos los hosts del clúster desde un solo equipo, mediante el administrador de equilibrio de carga de red.
 ms.topic: reference
 ms.assetid: 89cb8590-b7cf-4a27-89fa-0fa62ea1a1ca
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e9036a5fc4a0941445be4c9e9cf11c8064caa08
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: dc3f1af169fc9510d95c348436a43036eee8cbb2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023589"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635751"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 

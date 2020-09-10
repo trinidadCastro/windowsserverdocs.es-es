@@ -3,16 +3,16 @@ title: gpresult
 description: Artículo de referencia del comando Gpresult, que muestra la información del conjunto resultante de directivas (RSoP) para un usuario y un equipo remotos.
 ms.topic: reference
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ef5de0c8e4e4c4f75d8ccd680e20b8cf00385f5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a608f94a0239dd2e2d7eff2cc5aba5bfc7e918e8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025679"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634740"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -20,7 +20,7 @@ ms.locfileid: "89025679"
 
 Muestra la información del conjunto resultante de directivas (RSoP) para un usuario y un equipo remotos. Para usar informes de RSoP para equipos de destino remotos a través del firewall, debe tener reglas de firewall que permitan el tráfico de red de entrada en los puertos.
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 
 ```
 gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\]<targetuser>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <filename> [/f] | /?}

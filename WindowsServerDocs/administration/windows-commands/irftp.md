@@ -3,16 +3,16 @@ title: irftp
 description: Artículo de referencia del comando irftp, que envía archivos a través de un vínculo de infrarrojos.
 ms.topic: reference
 ms.assetid: e15c60a7-546d-4e9f-9871-43aaa1b569d6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c9d135dd0bb16f10e99fd7916a0965c0542f862
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c9546dad7bcba60ab73a9bef50c8d4347ef6dc97
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035433"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634418"
 ---
 # <a name="irftp"></a>irftp
 

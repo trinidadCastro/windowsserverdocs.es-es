@@ -3,16 +3,16 @@ title: ksetup setenctypeattr
 description: Artículo de referencia para el comando ksetup setenctypeattr, que establece el atributo de tipo de cifrado para el dominio.
 ms.topic: reference
 ms.assetid: 88fb913e-6b57-48d9-8c16-a035ab2977ac
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 99a05954a2682ff8cdc4f5bb66e49d68fdf132eb
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9027197817b2fa738726fd0d0feeeeadc5aac0b2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037923"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634122"
 ---
 # <a name="ksetup-setenctypeattr"></a>ksetup setenctypeattr
 

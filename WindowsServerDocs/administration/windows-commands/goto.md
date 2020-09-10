@@ -3,16 +3,16 @@ title: goto
 description: Artículo de referencia para el comando Goto, que dirige cmd.exe a una línea etiquetada en un programa por lotes.
 ms.topic: reference
 ms.assetid: e0de1458-1f78-48ff-a746-c285a945a510
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f99a0c438f66e243a310cc715f12cab1543f41a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 537026fc2b4faafa57b7a4f2842d79775759cdc9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038886"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634804"
 ---
 # <a name="goto"></a>goto
 

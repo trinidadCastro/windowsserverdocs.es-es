@@ -3,16 +3,16 @@ title: nslookup set port
 description: Artículo de referencia del comando Nslookup Set Port, que cambia el puerto del servidor de nombres del sistema de nombres de dominio (DNS) TCP/UDP predeterminado al valor especificado.
 ms.topic: reference
 ms.assetid: 4dab7a09-d400-4062-b863-2d32c191c3bd
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 095603291283df329559751e26b177dd74e6ac8b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2352bfcfd73ef3a3d8f41fdddde77324c2452785
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036323"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633936"
 ---
 # <a name="nslookup-set-port"></a>nslookup set port
 
