@@ -2,15 +2,15 @@
 title: Optimización del rendimiento para servidores de Active Directory
 description: Optimización del rendimiento para servidores de Active Directory
 ms.topic: landing-page
-ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab; v-tea
+ms.author: timwi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a50fb23a0567ec14b3b9a83b93253ba79ec02a9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0ef7a9006ea2ad54eefad3c461ee10f8cc55b2eb
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896233"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077343"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Optimización del rendimiento para servidores de Active Directory
 

@@ -3,16 +3,16 @@ title: Optimización del rendimiento de servidores de archivos
 description: Optimización del rendimiento de servidores de archivos que ejecutan Windows Server
 ms.topic: article
 author: phstee
-ms.author: nedpyle; danlo; dkruse; v-tea
+ms.author: nedpyle
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: ecbd1bc751f133b80cf1d9cb264cf70a4ac4f47c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 3884d3d2bffe719975e642dc0fe2f5b66e223a2d
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992202"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077232"
 ---
 # <a name="performance-tuning-for-file-servers"></a>Optimización del rendimiento de servidores de archivos
 

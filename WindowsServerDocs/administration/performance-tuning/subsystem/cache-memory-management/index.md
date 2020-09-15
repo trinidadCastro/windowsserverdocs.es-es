@@ -2,15 +2,15 @@
 title: Optimización del rendimiento para la memoria caché y los subsistemas de administración de memoria
 description: Optimización del rendimiento para la memoria caché y los subsistemas de administración de memoria
 ms.topic: landing-page
-ms.author: pavel; atales
+ms.author: pavel
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 07a8b12b9d4be5f9105baefaae0ef4030e02f69f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8c5800dc0f4d55d7cb240496a304dd56b97077f1
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993326"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078022"
 ---
 # <a name="performance-tuning-cache-and-memory-manager"></a>Optimización del rendimiento de la memoria caché y el Administrador de memoria
 
