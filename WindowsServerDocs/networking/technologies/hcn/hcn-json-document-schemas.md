@@ -1,18 +1,19 @@
 ---
 title: Esquemas de documentos JSON de host de proceso de red (HCN)
-ms.author: jmesser
-author: jmesser81
+description: Información sobre los esquemas de documentos JSON de HCN.
+ms.author: daschott
+author: daschott
 ms.date: 11/05/2018
-ms.openlocfilehash: 0a5eabc04cfd00103eafdbc6c35a190b616d192d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 16d74002fc73c2d1b5467f7f9a4c5f94cc76a989
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955692"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083756"
 ---
 # <a name="hcn-json-document-schemas"></a>Esquemas de documentos HCN JSON
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019
 
 ## <a name="hcn-schema"></a>Esquema HCN
 
@@ -116,7 +117,6 @@ ms.locfileid: "87955692"
         "NextHop" : <ip address of the next hop gateway>,
         "DestinationPrefix" : <ip prefix in cidr>,
         "Metric" : <route metric in uint8>,
-
     } ],
 }
 ```
@@ -129,7 +129,6 @@ ms.locfileid: "87955692"
     "Type" : "VLAN",
     "IsolationId" : <uint32>,
 }
-
 // PortMappingPolicy
 {
     "Type" : "PortMapping",
@@ -235,4 +234,3 @@ ms.locfileid: "87955692"
     "Success" : <bool>,
 }
 ```
-

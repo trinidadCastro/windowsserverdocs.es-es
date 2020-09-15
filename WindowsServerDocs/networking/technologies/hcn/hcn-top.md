@@ -1,19 +1,19 @@
 ---
 title: API de servicio de Compute Network (HCN) para máquinas virtuales y contenedores
 description: La API de servicio de proceso de host (HCN) es una API de Win32 orientada al público que proporciona acceso de nivel de plataforma para administrar las redes virtuales, los puntos de conexión de la red virtual y las directivas asociadas. Juntos, proporciona conectividad y seguridad para máquinas virtuales (VM) y contenedores que se ejecutan en un host de Windows.
-ms.author: jmesser
-author: jmesser81
+ms.author: daschott
+author: daschott
 ms.date: 11/05/2018
-ms.openlocfilehash: 8e83af4ea54d2fcc75ff8ff054f4ad253a5422ea
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5f30dfe4c7a373459b8b8ea3915eaaafa9bf517e
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955671"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083636"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>API de servicio de Compute Network (HCN) para máquinas virtuales y contenedores
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019
 
 La API de servicio de proceso de host (HCN) es una API de Win32 orientada al público que proporciona acceso de nivel de plataforma para administrar las redes virtuales, los puntos de conexión de la red virtual y las directivas asociadas. Juntos, proporciona conectividad y seguridad para máquinas virtuales (VM) y contenedores que se ejecutan en un host de Windows.
 
@@ -32,7 +32,6 @@ Los desarrolladores usan la API del servicio HCN para administrar las redes de l
 
 >[!TIP]
 >La API del servicio HCN se admite en las tareas en segundo plano y en las ventanas que no son de primer plano.
-
 ## <a name="terminology-host-vs-compute"></a>Terminología: host frente a proceso
 El servicio de proceso de host permite a los autores de llamadas crear y administrar máquinas virtuales y contenedores en un solo equipo físico. Se denomina para seguir la terminología del sector.
 
@@ -65,55 +64,45 @@ enum IpamType
     [NewIn("2.0")] Static,
     [NewIn("2.0")] Dhcp,
 };
-
 class Ipam
 {
     // Type : dhcp
     [NewIn("2.0"),OmitEmpty] IpamType   Type;
     [NewIn("2.0"),OmitEmpty] Subnet     Subnets[];
 };
-
 class Subnet : HCN.Schema.Common.Base
 {
     [NewIn("2.0"),OmitEmpty] string         IpAddressPrefix;
     [NewIn("2.0"),OmitEmpty] SubnetPolicy   Policies[];
     [NewIn("2.0"),OmitEmpty] Route          Routes[];
 };
-
-
 enum SubnetPolicyType
 {
     [NewIn("2.0")] VLAN
 };
-
 class SubnetPolicy
 {
     [NewIn("2.0"),OmitEmpty] SubnetPolicyType                 Type;
     [NewIn("2.0"),OmitEmpty] HCN.Schema.Common.PolicySettings Data;
 };
-
 class PolicySettings
 {
     [NewIn("2.0"),OmitEmpty]  string      Name;
 };
-
 class VlanPolicy : HCN.Schema.Common.PolicySettings
 {
     [NewIn("2.0")] uint32 IsolationId;
 };
-
 class Route
 {
     [NewIn("2.0"),OmitEmpty] string NextHop;
     [NewIn("2.0"),OmitEmpty] string DestinationPrefix;
     [NewIn("2.0"),OmitEmpty] uint16 Metric;
 };
-
 ```
 
 >[!TIP]
 >Las anotaciones [NewIn ("2.0") forman parte de la compatibilidad de control de versiones de las definiciones de esquema.
-
 A partir de esta definición interna, se generan las especificaciones de OpenAPI para el esquema:
 
 ```
@@ -247,7 +236,6 @@ class HostComputeNetwork : HCN.Schema.Common.Base
     [NewIn("2.0"),OmitEmpty] HCN.Schema.Network.DNS                  Dns;
     [NewIn("2.0"),OmitEmpty] HCN.Schema.Network.Ipam                 Ipams[];
 };
-
 class HostComputeEndpoint : HCN.Schema.Common.Base
 {
     [NewIn("2.0"),OmitEmpty] string                                     HostComputeNetwork;
@@ -257,7 +245,6 @@ class HostComputeEndpoint : HCN.Schema.Common.Base
     [NewIn("2.0"),OmitEmpty] HCN.Schema.Network.Route                   Routes[];
     [NewIn("2.0"),OmitEmpty] string                                     MacAddress;
 };
-
 class HostComputeNamespace : HCN.Schema.Common.Base
 {
     [NewIn("2.0"),OmitEmpty] uint32                                    NamespaceId;
@@ -265,7 +252,6 @@ class HostComputeNamespace : HCN.Schema.Common.Base
     [NewIn("2.0"),OmitEmpty] HCN.Schema.Namespace.NamespaceType        Type;
     [NewIn("2.0"),OmitEmpty] HCN.Schema.Namespace.NamespaceResource    Resources[];
 };
-
 class HostComputeLoadBalancer : HCN.Schema.Common.Base
 {
     [NewIn("2.0"), OmitEmpty] string                                               HostComputeEndpoints[];

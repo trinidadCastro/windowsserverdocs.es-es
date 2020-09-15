@@ -6,12 +6,12 @@ author: iangpgh
 ms.author: jgerend
 manager: daveba
 ms.date: 06/20/2019
-ms.openlocfilehash: c0b1cb2ff31bbf3fa25d5ac5e4be0e4b35260019
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 81a9283ef75ef76b14a8ee8a5ecc3ab225207560
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880199"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083666"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -29,9 +29,9 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| /d.`<driveletter>` | Especifica la unidad que desea que limpie el liberador de espacio en disco.<p>**Nota:** La opción **/d** no se emplea con `/sagerun:n` . |
-| /sageset: n | Muestra el cuadro de diálogo **configuración de limpieza de disco** y también crea una clave del registro para almacenar la configuración seleccionada. El `n` valor, que se almacena en el registro, le permite especificar las tareas para que se ejecute el liberador de espacio en disco. El `n` valor puede ser cualquier valor entero comprendido entre 0 y 65535. |
-| /sagerun: n | Ejecuta las tareas especificadas que se asignan al valor n si se utiliza la opción **\sageset** . Se enumeran todas las unidades del equipo y se ejecuta el perfil seleccionado en cada unidad. |
+| /d. `<driveletter>` | Especifica la unidad que desea que limpie el liberador de espacio en disco.<p>**Nota:** La opción **/d** no se emplea con `/sagerun:n` . |
+| /sageset: n | Muestra el cuadro de diálogo **configuración de limpieza de disco** y también crea una clave del registro para almacenar la configuración seleccionada. El `n` valor, que se almacena en el registro, le permite especificar las tareas para que se ejecute el liberador de espacio en disco. El `n` valor puede ser cualquier valor entero comprendido entre 0 y 9999. |
+| /sagerun: n | Ejecuta las tareas especificadas que se asignan al valor n si se utiliza la opción **/sageset** . Se enumeran todas las unidades del equipo y se ejecuta el perfil seleccionado en cada unidad. |
 | /TuneUp: n | Ejecute **/sageset** y **/sagerun** para el mismo `n` . |
 | /lowdisk | Ejecute con la configuración predeterminada. |
 | /verylowdisk | Ejecute con la configuración predeterminada, sin mensajes de usuario. |

@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 40ab29a115735e6c37bb7c7449980b94090565f3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f96302242eca58d589586fa44e6e7cd04ef98cc1
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961077"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083646"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>Detección, habilitación y deshabilitación de SMBv1, SMBv2 y SMBv3 en Windows
 
@@ -66,7 +66,7 @@ Para obtener más información sobre las funcionalidades de las capacidades de S
 - Determinar 
 
   ```PowerShell
-  Get-WindowsFeature FS-SMB1
+  Get-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
 - Activa 
