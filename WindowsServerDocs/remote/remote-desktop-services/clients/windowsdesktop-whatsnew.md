@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/25/2020
+ms.date: 09/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ce718db142ac34a51642e1ed2128899a0e77dbf
-ms.sourcegitcommit: 47dc2671330c2ecc56cce39ef006cbfe108b4759
+ms.openlocfilehash: 8f0b5453265bc96cdeb7ba02795da8fa0f39ba1c
+ms.sourcegitcommit: 0407bd30eaf06358257cf88c3969a2cd8b77dca4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821338"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027170"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -25,19 +25,28 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 |Grupo de usuarios |Version  |
 |-----------|---------|
 |Público     |1.2.1272 |
-|Insider    |1.2.1272 |
+|Insider    |1.2.1357 |
 
-## <a name="updates-for-version-121272"></a>Actualizaciones para la versión 1.2.1272
+## <a name="updates-for-version-121357-insiders"></a>Actualizaciones de la versión 1.2.1357 (Insider)
+
+*Fecha de publicación: 09/09/2020*
+
+Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- Se corrigió un problema por el que el inicio de sesión seguro (SSO) no funcionaba en Windows 7.
+
+## <a name="updates-for-version-121275"></a>Actualizaciones de la versión 1.2.1275
 
 *Fecha de publicación: 25/08/2020*
 
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D7LK), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D5aF), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Dan3)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYR), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYS), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Fg3H)
 
 - Se agregó la funcionalidad para detectar automáticamente las nubes soberanas a partir de la identidad del usuario.
 - Se agregó la funcionalidad para habilitar las suscripciones de URL personalizadas para todos los usuarios.
 - Se corrigió un problema de anclaje de aplicaciones en la barra de tareas de la fuente.
 - Se corrigió un bloqueo al suscribirse con una dirección URL.
 - Se mejoró la experiencia al arrastrar ventanas de aplicaciones remotas con la función táctil o el lápiz.
+- Se corrigió un problema con la localización.
 
 ## <a name="updates-for-version-121186"></a>Actualizaciones para la versión 1.2.1186
 
@@ -55,8 +64,6 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 
 *Fecha de publicación: 23/06/2020*
 
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
-
 - Se actualizó la lógica de detección automática para la opción **Subscribir** para admitir la versión integrada en Azure Resource Manager de Windows Virtual Desktop. Los clientes con solo recursos de Windows Virtual Desktop ya no tienen que proporcionar consentimiento para Windows Virtual Desktop (clásico).
 - Se mejoró la compatibilidad para dispositivos con valores altos de PPP con un factor de escala de hasta un 400 %.
 - Se corrigió un problema en el que el cuadro de diálogo de desconexión no aparecía.
@@ -67,8 +74,6 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 ## <a name="updates-for-version-121026"></a>Actualizaciones para la versión 1.2.1026
 
 *Fecha de publicación: 27/05/2020*
-
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
 - Al suscribirte, ahora puedes elegir tu cuenta en lugar de escribir tu dirección de correo electrónico.
 - Se agregó una nueva opción **Subscribe with URL** (Suscribirse con dirección URL) que te permite especificar la dirección URL del área de trabajo a la que te vas a suscribir, o aprovechar la [detección de correo electrónico](../rds-email-discovery.md) cuando esté disponible en los casos en los que tus recursos no se encuentren automáticamente. Esto es similar al proceso de suscripción en el resto de los clientes de Escritorio remoto. Se puede usar para suscribirse directamente a las áreas de trabajo de Windows Virtual Desktop.
@@ -88,8 +93,6 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 ## <a name="updates-for-version-12945"></a>Actualizaciones de la versión 1.2.945
 
 *Fecha de publicación: 28/04/2020*
-
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNM), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNO), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vuSV)
 
 - Se han agregado nuevas opciones de configuración de pantalla para las conexiones de escritorio disponibles al hacer clic con el botón derecho en un icono de escritorio del centro de conexiones.
   - Ahora hay tres opciones de configuración de pantalla: **todas las pantallas**, **pantalla única** y **pantallas seleccionadas**.

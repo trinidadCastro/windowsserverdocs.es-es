@@ -6,14 +6,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 06/01/2020
+ms.date: 09/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c28ccbe0cfd49f1cf774031b002bf7b6142d0a00
-ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
+ms.openlocfilehash: 9bad174ad596ffc0262947464f2353b91a92872c
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89282117"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554537"
 ---
 # <a name="get-started-with-the-microsoft-store-client"></a>Introducción al cliente de Microsoft Store
 
@@ -198,7 +198,16 @@ Existen dos modos de ratón para interactuar con la sesión.
 | Puntero | Haga clic con el botón secundario en          | Pulsar con dos dedos                                                          |
 | Puntero | Clic con el botón derecho y arrastrar | Pulsar dos veces con dos dedos y mantener pulsado y, a continuación, arrastrar                              |
 | Puntero | Rueda del ratón          | Mantener pulsado con dos dedos y, a continuación, arrastrar hacia arriba o hacia abajo.                          |
-| Puntero | Zoom                 | Con dos dedos, acérquelos para acercar el zoom y sepárelos para alejar. |
+| Puntero | Zoom                 | Con dos dedos, acérquelos para alejar el zoom y sepárelos para acercar. |
 
-> [!TIP]
-> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, si publica solicitudes de soporte técnico o comentarios sobre el producto en la sección Comentarios de este artículo, no podremos responder a sus comentarios. Si necesita ayuda o quiere solucionar problemas con su cliente, le recomendamos que vaya al [foro de clientes de Escritorio remoto](/answers/topics/windows-remote-desktop-client.html) e inicie una nueva conversación. Si tiene alguna sugerencia de características, puede indicárnosla mediante el [Centro de opiniones](feedback-hub://?tabid=2&contextid=605).
+## <a name="give-us-feedback"></a>Envíenos sus comentarios.
+
+¿Tienes alguna sugerencia de característica o quieres informar de un problema? Para indicárnoslo, utilice el [Centro de opiniones](https://aka.ms/rdstorefeedback).
+
+También puede enviarnos sus comentarios seleccionando el botón de puntos suspensivos ( **...** ) en la aplicación cliente y luego seleccionando **Comentarios**, tal como se muestra en la siguiente imagen.
+
+> [!div class="mx-imgBorder"]
+> ![Captura de pantalla que muestra el botón de puntos suspensivos resaltado en rojo. Se abre un menú desplegable debajo del botón y la opción "Comentarios" también se resalta en rojo.](../media/ellipsis-icon.png)
+
+>[!NOTE]
+>Para que podamos ayudarle mejor, es necesario que nos proporcione la información más detallada posible sobre el problema. Por ejemplo, puede incluir capturas de pantallas o un registro de las acciones que le han conducido al problema. Para más sugerencias sobre cómo proporcionar comentarios útiles, vea [Comentarios](/windows-insider/at-home/feedback#add-new-feedback).

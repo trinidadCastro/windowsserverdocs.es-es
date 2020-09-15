@@ -4,12 +4,12 @@ ms.date: 07/02/2012
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 6e022e4fdae631199bacca5f67c7953125ddd141
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d4c34484f7eb12b9876dcca7809a31c0c291bcce
+ms.sourcegitcommit: 3da6fcf4d853f6ff24b785b87787d0677b878253
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950739"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90044832"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>Migración de la replicación de SYSVOL a la replicación DFS
 
@@ -68,16 +68,16 @@ En este documento se supone que tienes un conocimiento básico de Active Directo
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Serie sobre los estados de la migración SYSVOL: Parte 1: introducción al proceso de migración SYSVOL](https://go.microsoft.com/fwlink/?linkid=121756)
+[Serie sobre los estados de la migración SYSVOL: Parte 1: introducción al proceso de migración SYSVOL](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-1-8211-introduction-to-the-sysvol/ba-p/423456)
 
-[Serie sobre los estados de la migración SYSVOL: Parte 2: Dfsrmig.exe: la herramientas de migración SYSVOL](https://go.microsoft.com/fwlink/?linkid=121757)
+[Serie sobre los estados de la migración SYSVOL: Parte 2: Dfsrmig.exe: la herramientas de migración SYSVOL](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-2-8211-dfsrmig-exe-the-sysvol/ba-p/423470)
 
-[Serie sobre los estados de la migración SYSVOL: Parte 3: migración al estado "PREPARED"](https://go.microsoft.com/fwlink/?linkid=121758)
+[Serie sobre los estados de la migración SYSVOL: Parte 3: migración al estado "PREPARED"](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-3-migrating-to-the-prepared-state/ba-p/423503)
 
-[Serie sobre los estados de la migración SYSVOL: Parte 4: migración al estado "REDIRECTED"](https://go.microsoft.com/fwlink/?linkid=121759)
+[Serie sobre los estados de la migración SYSVOL: Parte 4: migración al estado "REDIRECTED"](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-4-8211-migrating-to-the-8216/ba-p/423514)
 
-[Serie sobre los estados de la migración SYSVOL: Parte 5: migración al estado "ELIMINATED"](https://go.microsoft.com/fwlink/?linkid=121760)
+[Serie sobre los estados de la migración SYSVOL: Parte 5: migración al estado "ELIMINATED"](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-5-8211-migrating-to-the-8216/ba-p/423516)
 
-[Guía paso a paso para sistemas de archivos distribuidos en Windows Server 2008](https://go.microsoft.com/fwlink/?linkid=85231)
+[Guía paso a paso para sistemas de archivos distribuidos para Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732863(v=ws.10))
 
-[Referencia técnica de FRS](https://go.microsoft.com/fwlink/?linkid=121764)
+[Referencia técnica de FRS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759297(v=ws.10))

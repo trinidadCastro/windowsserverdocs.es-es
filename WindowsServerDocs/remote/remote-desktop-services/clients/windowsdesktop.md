@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/20/2020
+ms.date: 09/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bd3e1d5f06e5c415b4f300d9a2c8a9b390e5051
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: cb1c519e6da55bb6ee8187db4b388870f1d4b42f
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702834"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554477"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introducción al cliente de escritorio de Windows
 
@@ -132,18 +132,17 @@ El cliente usará las opciones que configuró el administrador, a menos que se d
 - La opción **Resolución** te permite especificar la resolución del escritorio remoto. La sesión conservará esta resolución durante toda la duración. Esta opción solo está disponible en el modo **Single display** (Pantalla única) y cuando **Update the resolution on resize** (Actualizar la resolución al cambiar de tamaño) está deshabilitada.
 - La opción **Change the size of the text and apps** (Cambiar el tamaño del texto y las aplicaciones) especifica el tamaño del contenido de la sesión. Esta configuración solo se aplica al conectarse con Windows 8.1 y versiones posteriores o Windows Server 2012 R2 y versiones posteriores. Esta opción solo está disponible en el modo **Single display** (Pantalla única) y cuando **Update the resolution on resize** (Actualizar la resolución al cambiar de tamaño) está deshabilitada.
 
-## <a name="provide-feedback"></a>Proporciona comentarios
+## <a name="give-us-feedback"></a>Envíenos sus comentarios.
 
-¿Tienes alguna sugerencia de característica o quieres informar de un problema? Para indicárnoslo, utiliza el [Centro de opiniones](feedback-hub://?tabid=2&contextid=883). También puedes acceder al Centro de opiniones a través del cliente:
+¿Tienes alguna sugerencia de característica o quieres informar de un problema? Para indicárnoslo, utilice el [Centro de opiniones](https://aka.ms/rddesktopfeedback).
 
-1. En el Centro de conexión, pulsa la opción **Enviar comentarios** de la barra de comandos en la parte superior del cliente para abrir la aplicación Centro de opiniones.
-2. Escribe la información necesaria en los campos **Resumen** y **Detalles**. Cuando termines, pulsa **Siguiente**.
-3. Selecciona **Problema** o **Sugerencia**, según corresponda.
-4. Comprueba si la categoría está en **Aplicaciones** > **Escritorio remoto**. Si es así, pulsa **Siguiente**.
-5. Revisa los comentarios existentes para ver si otra persona ha comunicado el mismo problema. Si no es así, selecciona **Crear un nuevo error** y, a continuación, pulsa **Siguiente**.
-6. En la página siguiente, puedes proporcionarnos más información para que podamos ayudarte a resolver el problema. Puedes escribir información más detallada, enviar capturas de pantalla e incluso realizar una grabación del problema para mostrarnos lo que ha sucedido. Para realizar una grabación, selecciona **Iniciar grabación** y, después, repite lo que hiciste hasta que se produjo el problema. Cuando termines, vuelve al Centro de opiniones y selecciona **Detener grabación**.
-7. Cuando estés satisfecho con la información, pulsa **Enviar**.
-8. En la página "Gracias por tus comentarios", pulsa **Share my feedback** (Compartir mis comentarios) para generar un vínculo a tus comentarios que puedas compartir con otros usuarios cuando sea necesario.
+También puede enviarnos sus comentarios seleccionando el botón que se parece a un emoticono de cara sonriente en la aplicación cliente, tal como se muestra en la siguiente imagen:
+
+> [!div class="mx-imgBorder"]
+> ![Captura de pantalla del icono de cara sonriente que le lleva al centro de opiniones.](../media/smiley-face-icon.png)
+
+>[!NOTE]
+>Para que podamos ayudarle mejor, es necesario que nos proporcione la información más detallada posible sobre el problema. Por ejemplo, puede incluir capturas de pantallas o un registro de las acciones que le han conducido al problema. Para más sugerencias sobre cómo proporcionar comentarios útiles, vea [Comentarios](/windows-insider/at-home/feedback#add-new-feedback).
 
 ### <a name="access-client-logs"></a>Acceder a los registros de cliente
 
