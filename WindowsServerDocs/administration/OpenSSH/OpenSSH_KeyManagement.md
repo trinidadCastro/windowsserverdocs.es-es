@@ -3,14 +3,14 @@ title: Administración de claves de OpenSSH para Windows
 description: Administración de claves del servidor de OpenSSH para Windows con las herramientas de Windows o PowerShell.
 ms.date: 09/27/2018
 ms.topic: conceptual
-contributor: maertendMSFT
+ms.author: damaerte
 author: maertendmsft
-ms.openlocfilehash: 42298fb065e388b5d2d9ff098b6adc124b3ddee4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cb17f4289483a76efaa3f848477f47edcf4a85b3
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879503"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078402"
 ---
 # <a name="openssh-key-management"></a>Administración de claves de OpenSSH
 

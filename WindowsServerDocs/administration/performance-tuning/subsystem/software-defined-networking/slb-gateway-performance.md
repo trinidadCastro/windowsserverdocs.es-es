@@ -2,15 +2,15 @@
 title: Ajuste del rendimiento de puerta de enlace de SLB en redes definidas por software
 description: Directrices para la optimización del rendimiento de puerta de enlace de SLB en redes SDN
 ms.topic: article
-ms.author: grcusanz; anpaul
+ms.author: grcusanz
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 64d045a270b8762d0d269055c8c65d1e40a71d63
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d45a5f585c7da30e4d9bdd4c8ec3c2e2003b7ea0
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895938"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077922"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>Ajuste del rendimiento de puerta de enlace de SLB en redes definidas por software
 
@@ -26,7 +26,7 @@ Una conexión individual a una IP virtual (VIP) siempre se enviará al mismo MUX
 
 En algunos casos, cuando el origen de la solicitud se origina en un host de SDN que se agrega a la misma controladora de red que administra la VIP, también se realiza una optimización adicional de la ruta de acceso entrante para la solicitud, lo que permite que la mayoría de los paquetes viajen directamente desde el cliente al servidor, omitiendo la máquina virtual de MUX por completo.  No es necesario realizar ninguna configuración adicional para que esta optimización tenga lugar.
 
-Cada máquina virtual MUX de SLB debe tener el tamaño de acuerdo con las instrucciones proporcionadas en la sección requisitos del rol de máquina virtual de infraestructura de SDN del tema [planear una infraestructura de red definida por software](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md) .
+Cada máquina virtual MUX de SLB debe tener el tamaño de acuerdo con las instrucciones proporcionadas en la sección requisitos del rol de máquina virtual de infraestructura de SDN del tema  [planear una infraestructura de red definida por software](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md) .
 
 ## <a name="single-root-io-virtualization-sr-iov"></a>Virtualización de e/s de raíz única (SR-IOV)
 

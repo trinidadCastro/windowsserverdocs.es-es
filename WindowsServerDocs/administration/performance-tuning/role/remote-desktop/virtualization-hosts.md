@@ -2,15 +2,15 @@
 title: Optimización del rendimiento Escritorio remoto hosts de virtualización
 description: Optimización del rendimiento para hosts de virtualización de Escritorio remoto
 ms.topic: article
-ms.author: hammadbu; vladmis; denisgun
+ms.author: hammadbu
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 235dd0209030854f1fc883f52ab41550ab693dc5
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b9a634ddf8e2f90e3a61db7aad691ea22ec03fed
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992073"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078142"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de virtualización
 
@@ -39,7 +39,7 @@ Enable-DedupVolume <volume> -UsageType HyperV
 > [!NOTE]
 > La optimización de desduplicación de datos de archivos abiertos solo se admite en escenarios de VDI con Hyper-V mediante el almacenamiento remoto a través de SMB 3,0.
 
-### <a name="memory"></a>Memory
+### <a name="memory"></a>Memoria
 
 El uso de memoria del servidor está controlado por tres factores principales:
 

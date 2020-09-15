@@ -2,15 +2,15 @@
 title: Terminología de Hyper-V
 description: Terminología de Hyper-v útil en el ajuste del rendimiento de Hyper-V
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 78552615dd67d79b8c0f4f700068fd302256a567
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: eeadf37e002b99eed16ee1691f7a5066735d9aab
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896069"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078212"
 ---
 # <a name="hyper-v-terminology"></a>Terminología de Hyper-V
 En esta sección se resume la terminología clave específica de la tecnología de máquina virtual que se usa a lo largo de este tema de optimización del rendimiento:

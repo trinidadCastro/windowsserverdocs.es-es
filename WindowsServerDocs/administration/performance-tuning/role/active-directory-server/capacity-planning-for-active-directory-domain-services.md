@@ -2,15 +2,15 @@
 title: Planeación de la capacidad para Active Directory Domain Services
 description: Explicación detallada de los factores que se deben tener en cuenta durante el planeamiento de la capacidad de AD DS.
 ms.topic: article
-ms.author: v-tea; kenbrunf
+ms.author: v-tea
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 2067f3dd8c07190c7f52eb75229f08e080ae0208
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 67b98988866fdc7a35e35ae353b7e37f3a13e083
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992305"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077682"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planeación de la capacidad para Active Directory Domain Services
 
@@ -280,7 +280,7 @@ En un escenario en el que se asignan varios archivos de disco duro virtual (VHD)
 
 #### <a name="calculation-summary-example"></a>Ejemplo de Resumen de cálculo
 
-| Datos recopilados de la fase de evaluación | Size |
+| Datos recopilados de la fase de evaluación | Tamaño |
 |--|--|
 | Tamaño de NTDS. dit | 35 GB |
 | Modificador para permitir la desfragmentación sin conexión | 2,1 GB |
@@ -353,7 +353,7 @@ Determinar la cantidad de e/s necesaria para un sistema en buen estado en condic
 - Para determinar la cantidad de e/s necesaria para el almacenamiento donde se supera la capacidad del almacenamiento subyacente:
   >*IOPS necesarios* = (LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg en segundos de disco/lectura &divide; *\<Target Avg Disk sec/Read\>* ) &times; LogicalDisk ( *\<NTDS Database Drive\>* ) \ lectura/s
 
-| Contador | Valor |
+| Contador | Value |
 |--|--|
 | Disco lógico ( *\<NTDS Database Drive\>* ) \Avg real en segundos/transferencia | .02 segundos (20 milisegundos) |
 | Target LogicalDisk ( *\<NTDS Database Drive\>* ) \Avg Disk sec/Transfer | .01 segundos |
@@ -572,7 +572,7 @@ Para este sistema durante este período de tiempo, los valores predeterminados s
 
 En este artículo, se ha explicado que la planeación y el escalado van hacia los objetivos de uso. Este es un gráfico de Resumen de los umbrales recomendados que deben supervisarse para asegurarse de que los sistemas funcionan con los umbrales de capacidad adecuados. Tenga en cuenta que estos no son umbrales de rendimiento, sino umbrales de planeamiento de capacidad. Un servidor que opere en exceso de estos umbrales funcionará, pero es el momento de iniciar la validación de que todas las aplicaciones están bien compartidas. Si estas aplicaciones están bien compartidas, es el momento de empezar a evaluar las actualizaciones de hardware u otros cambios de configuración.
 
-| Categoría | Contador de rendimiento | Intervalo/muestreo | Destino | Advertencia |
+| Category | Contador de rendimiento | Intervalo/muestreo | Destino | Advertencia |
 |--|--|--|--|--|
 | Procesador | Información del procesador (_Total) \\ % utilidad del procesador | 60 min | 40% | 60 % |
 | RAM (Windows Server 2008 R2 o versiones anteriores) | Memoria\mbytes MB | < 100 MB | N/D | < 100 MB |
@@ -701,7 +701,7 @@ Para ajustar las estimaciones de los distintos procesadores, solía ser seguro, 
     1. En **solicitud simple**, escriba los criterios de búsqueda para el procesador de destino; por ejemplo, el **procesador coincide con E5-2630 (baselinetarget)** y el **procesador coincide con E5-2650 (línea de base)**.
     1. Busque la configuración del servidor y del procesador que se va a usar (o algo más cercano, si no hay ninguna coincidencia exacta) y anote el valor de las columnas **resultado** y **# cores** .
 1. Para determinar el modificador, use la siguiente ecuación:
-   >((*Valor de puntuación de plataforma de destino por núcleo*) &times; (*MHz por núcleo de plataforma de línea de base*)) &divide;((*Valor de puntuación por núcleo de base*) &times; (*MHz por núcleo de plataforma de destino*))
+   >((*Valor de puntuación de plataforma de destino por núcleo*) &times; (*MHz por núcleo de plataforma de línea de base*)) &divide; ((*Valor de puntuación por núcleo de base*) &times; (*MHz por núcleo de plataforma de destino*))
 
     Con el ejemplo anterior:
    >(35,83 &times; 2000) &divide; (33,75 &times; 2300) = 0,92
@@ -767,7 +767,7 @@ Una vez identificados los componentes, una idea de la cantidad de datos que pued
 
   | E/s compatible con el bus SCSI por tamaño de bloque | tamaño de bloque de 2 KB | tamaño de bloque de 8 KB (AD jet) (SQL Server 7.0/SQL Server 2000) |
   |--|--|--|
-  | 20 MB/s | 10 000 | 2500 |
+  | 20 MB/s | 10 000 | 2,500 |
   | 40 MB/s | 20.000 | 5\.000 |
   | 128 MB/s | 65 536 | 16 384 |
   | 320 MB/s | 160 000 | 40.000 |

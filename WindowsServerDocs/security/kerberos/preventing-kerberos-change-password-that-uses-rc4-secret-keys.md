@@ -2,15 +2,15 @@
 title: Impedir el cambio de contraseña de Kerberos que usa claves secretas RC4
 ms.topic: article
 ms.assetid: de207d55-aa3d-4c16-bd3b-496db43663a4
-manager: alanth
 author: justinha
+ms.author: Justinha
 ms.date: 11/09/2016
-ms.openlocfilehash: 4069d88c6c46415417cb3e0e03a539e5b7118f33
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a98e5e6ed62f4a43ca5e36af7051e9ece106c074
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968742"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078562"
 ---
 # <a name="preventing-kerberos-change-password-that-uses-rc4-secret-keys"></a>Impedir que Kerberos cambie la contraseña que usa claves secretas RC4
 

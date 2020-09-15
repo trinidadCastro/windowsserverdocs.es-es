@@ -3,16 +3,16 @@ title: Administrar Server Core
 description: Obtener información sobre cómo administrar una instalación Server Core de Windows Server
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
-ms.author: elizapo
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: 8eba1e081c57c1c668a4e52ecb85fb4716a36fdc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 089d6437bd8c246bae3da5898870ea9cdd442656
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895905"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077872"
 ---
 # <a name="administer-a-server-core-server"></a>Administrar un servidor Server Core
 
@@ -113,9 +113,9 @@ Use la siguiente información de referencia para realizar tareas administrativas
 |             Establecer la contraseña administrativa local             |                                                                                                                                                                                                      **Administrador de usuarios de red**\*                                                                                                                                                                                                      |
 |                  Unir un equipo a un dominio                  |                                                                                                                                                       **netdom join% COMPUTERNAME%** **/Domain: \<domain\> /userd: \<domain\\username\> /passwordd:**\* <br> Reinicie el equipo.                                                                                                                                                        |
 |              Confirmar que el dominio ha cambiado              |                                                                                                                                                                                                                 **set**                                                                                                                                                                                                                 |
-|                Quitar un equipo de un dominio                |                                                                                                                                                                                                   **Netdom Remove\<computername\>**                                                                                                                                                                                                    |
-|         Agregar un usuario al grupo local Administradores          |                                                                                                                                                                                       **Administradores de net localgroup/Add\<domain\\username\>**                                                                                                                                                                                       |
-|       Quitar un usuario del grupo Administradores local       |                                                                                                                                                                                     **Administradores de net localgroup/Delete\<domain\\username\>**                                                                                                                                                                                      |
+|                Quitar un equipo de un dominio                |                                                                                                                                                                                                   **Netdom Remove \<computername\>**                                                                                                                                                                                                    |
+|         Agregar un usuario al grupo local Administradores          |                                                                                                                                                                                       **Administradores de net localgroup/Add \<domain\\username\>**                                                                                                                                                                                       |
+|       Quitar un usuario del grupo Administradores local       |                                                                                                                                                                                     **Administradores de net localgroup/Delete \<domain\\username\>**                                                                                                                                                                                      |
 |               Agregar un usuario al equipo local                |                                                                                                                                                                                                **net user \<domain\username\> \* /Add**                                                                                                                                                                                                 |
 |               Agregar un grupo al equipo local               |                                                                                                                                                                                                 **net localgroup \<group name\> /Add**                                                                                                                                                                                                  |
 |          Cambiar el nombre de un equipo unido a un dominio          |                                                                                                                                                           **netdom renamecomputer% COMPUTERNAME%/NewName: \<new computer name\> /userd: \<domain\\username\> /passwordd:**\*                                                                                                                                                            |
@@ -126,9 +126,9 @@ Use la siguiente información de referencia para realizar tareas administrativas
 |                 Cambiar a una dirección IP estática                 | **ipconfig/all** <br>Grabe la información relevante o redirijala a un archivo de texto (**ipconfig/all >ipconfig.txt**).<br>**netsh interface IPv4 show interfaces**<br>Compruebe que haya una lista de interfaces.<br>**netsh interface IPv4 Set Address \<Name ID from interface list\> source = static Address = \<preferred IP address\> Gateway =\<gateway address\>**<br>Ejecute **ipconfig/all** para comprobar que DHCP habilitado está establecido en **no**. |
 |                   Establezca una dirección DNS estática.                   |   <strong>netsh interface IPv4 Add dnsserver name = \<name or ID of the network interface card\> Address = \<IP address of the primary DNS server\> index = 1 <br></strong>netsh interface IPv4 Add dnsserver name = \<name of secondary DNS server\> Address = \<IP address of the secondary DNS server\> index = 2\*\* <br> Repita los pasos necesarios para agregar más servidores.<br>Ejecute **ipconfig/all** para comprobar que las direcciones son correctas.   |
 | Cambiar una dirección IP estática por una dirección IP proporcionada por DHCP |                                                                                                                                      **netsh interface IPv4 Set Address name = \<IP address of local system\> source = DHCP** <br>Ejecute **ipconfig/all** para comprobar que DCHP habilitado está establecido en **sí**.                                                                                                                                      |
-|                      Especificación de una clave de producto                      |                                                                                                                                                                                                   **slmgr. vbs: IPK\<product key\>**                                                                                                                                                                                                    |
+|                      Especificación de una clave de producto                      |                                                                                                                                                                                                   **slmgr. vbs: IPK \<product key\>**                                                                                                                                                                                                    |
 |                  Activar el servidor de forma local                  |                                                                                                                                                                                                           **slmgr. vbs-ATO**                                                                                                                                                                                                            |
-|                 Activar el servidor de forma remota                  |                                            **cscript slmgr. vbs – IPK\<product key\>\<server name\>\<username\>\<password\>** <br>**cscript slmgr. vbs-ATO \<servername\> \<username\>\<password\>** <br>Obtener el GUID del equipo mediante la ejecución de **cscript slmgr. vbs-DID** <br> Ejecutar **cscript slmgr. vbs-DLI \<GUID\> ** <br>Compruebe que el estado de la licencia está establecido en con **licencia (activada)**.                                             |
+|                 Activar el servidor de forma remota                  |                                            **cscript slmgr. vbs – IPK \<product key\>\<server name\>\<username\>\<password\>** <br>**cscript slmgr. vbs-ATO \<servername\> \<username\>\<password\>** <br>Obtener el GUID del equipo mediante la ejecución de **cscript slmgr. vbs-DID** <br> Ejecutar **cscript slmgr. vbs-DLI \<GUID\> ** <br>Compruebe que el estado de la licencia está establecido en con **licencia (activada)**.                                             |
 
 ### <a name="networking-and-firewall"></a>Funciones de red y firewall
 
@@ -176,9 +176,9 @@ Use la siguiente información de referencia para realizar tareas administrativas
 |Tarea|Get-Help|
 |----|-------|
 |Enumerar registros de eventos|**wevtutil el**|
-|Consultar eventos en un registro especificado|**wevtutil qe/f: texto\<log name\>**|
-|Exportar un registro de eventos|**wevtutil EPL\<log name\>**|
-|Borrar un registro de eventos|**wevtutil cl\<log name\>**|
+|Consultar eventos en un registro especificado|**wevtutil qe/f: texto \<log name\>**|
+|Exportar un registro de eventos|**wevtutil EPL \<log name\>**|
+|Borrar un registro de eventos|**wevtutil cl \<log name\>**|
 
 
 ### <a name="disk-and-file-system"></a>Disco y sistema de archivos

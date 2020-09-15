@@ -3,15 +3,16 @@ title: Configurar archivos de volcado de memoria para la instalación Server Cor
 description: Obtenga información acerca de cómo configurar archivos de volcado de memoria para una instalación Server Core de Windows Server
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: d01757fcf1539e41db866b46cdf9eba60a59fc04
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e3ef6076465bc7d165b58f1205ff8d0cf25014b7
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993203"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077782"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar archivos de volcado de memoria para la instalación Server Core
 
@@ -23,7 +24,7 @@ Siga estos pasos para configurar un volcado de memoria para la instalación Serv
 
 El primer paso consiste en configurar manualmente las opciones de recuperación y los errores del sistema. Esto es necesario para completar los pasos restantes.
 
-Ejecute el comando siguiente:
+Ejecute el siguiente comando:
 
 ```
 wmic computersystem set AutomaticManagedPagefile=False
@@ -84,7 +85,7 @@ Para cambiar el tipo de volcado de memoria actual, ejecute el siguiente comando:
 wmic RECOVEROS set DebugInfoType = <Value>
 ```
 
-\<Value\>puede ser 0, 1, 2 o 3, tal y como se define a continuación.
+\<Value\> puede ser 0, 1, 2 o 3, tal y como se define a continuación.
 
 - 0: deshabilitar la eliminación de un volcado de memoria.
 - 1: volcado de memoria completo. Registra todo el contenido de la memoria del sistema cuando el equipo se detiene de forma inesperada. Un volcado de memoria completo puede contener datos de los procesos que se estaban ejecutando cuando se recopiló el volcado de memoria.

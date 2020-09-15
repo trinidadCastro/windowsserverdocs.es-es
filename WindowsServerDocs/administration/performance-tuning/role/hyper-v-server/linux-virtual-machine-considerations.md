@@ -2,15 +2,15 @@
 title: Consideraciones sobre máquinas virtuales Linux
 description: Máquina virtual Linux y BSD
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b1616af3cfc1f14c534392c7f083b333b4744ef3
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: be9d2f0d758f6f59282c770ef1a48d71a947ba00
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993351"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078292"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Consideraciones sobre máquinas virtuales Linux
 

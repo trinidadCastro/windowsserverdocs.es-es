@@ -2,15 +2,15 @@
 title: Configuración de Hyper-V
 description: Consideraciones de configuración de Hyper-V para el ajuste del rendimiento
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 42e95662cd2177b37fef1b47f0a51989ab964168
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: a7779b882fe6a704dcf12819ad91042c20381eba
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992155"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077222"
 ---
 # <a name="hyper-v-configuration"></a>Configuración de Hyper-V
 
@@ -22,7 +22,7 @@ Las consideraciones de hardware para los servidores que ejecutan Hyper-V suelen 
 
     Hyper-V en Windows Server 2016 presenta los procesadores lógicos como uno o más procesadores virtuales para cada máquina virtual activa. Hyper-V requiere ahora procesadores que admiten tecnologías de traducción de direcciones de segundo nivel (SLAT), como tablas de páginas extendidas (EPT) o tablas de páginas anidadas (NPT).
 
--   **Caché**
+-   **Memoria caché**
 
     Hyper-V puede beneficiarse de cachés de procesador más grandes, especialmente para cargas que tienen un gran espacio de trabajo en la memoria y en configuraciones de máquinas virtuales en las que la proporción de procesadores virtuales a procesadores lógicos es alta.
 

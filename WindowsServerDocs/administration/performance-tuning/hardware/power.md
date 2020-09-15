@@ -2,15 +2,15 @@
 title: Consideraciones sobre la energía de hardware de Windows Server
 description: Consideraciones acerca de la energía de hardware de Windows Server.
 ms.topic: conceptual
-ms.author: qizha;tristanb
+ms.author: qizha
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ee380937e54faa77ec17f8ae47445089ba1eece8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fe316dd1f21d3f5e151cef60f63c3644ad1af06d
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896725"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077637"
 ---
 # <a name="server-hardware-power-considerations"></a>Server Hardware Power Considerations (Consideraciones de alimentación del hardware de servidor)
 

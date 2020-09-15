@@ -3,15 +3,16 @@ title: 'Roles, servicios de rol y características no en los contenedores Server
 description: Obtenga información sobre los roles y las características que se han quitado de la imagen de contenedor Server Core para Windows Server.
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 05/07/2018
-ms.openlocfilehash: 2092e330af479ae0cbdb1da88ba87cf233307b59
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8b81ae6dc86ad9fd3a8650ca22ba9f3a42af4d3f
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993259"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077862"
 ---
 # <a name="roles-role-services-and-features-not-in-server-core-containers---windows-server-version-1803"></a>Roles, servicios de rol y características no en los contenedores Server Core: Windows Server, versión 1803
 
@@ -37,7 +38,7 @@ Esta es la lista completa de las características y los roles que se han quitado
 <br>CertificateEnrollmentServer
 <br>CertificateServices
 <br>Infraestructura de ClientForNFS
-<br>Containers
+<br>Contenedores
 <br>CoreFileServer
 <br>DataCenterBridging-LLDP-herramientas
 <br>DataCenterBridging

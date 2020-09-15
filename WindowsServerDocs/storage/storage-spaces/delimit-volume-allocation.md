@@ -1,16 +1,16 @@
 ---
 title: Delimite la asignación de volúmenes en Espacios de almacenamiento directo
-ms.author: cosmosdarwin
 manager: eldenc
 ms.topic: article
 author: cosmosdarwin
+ms.author: cosdar
 ms.date: 03/29/2018
-ms.openlocfilehash: 6dac775d3e92a0f7a076800d5c07af2776720c1d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 394d9dbb41f502fe9be273e97177237dea79fde7
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960958"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078500"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimite la asignación de volúmenes en Espacios de almacenamiento directo
 > Se aplica a: Windows Server 2019
@@ -20,7 +20,7 @@ Windows Server 2019 presenta una opción para delimitar manualmente la asignaci�
    > [!IMPORTANT]
    > Esta característica es nueva en Windows Server 2019. No está disponible en Windows Server 2016.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 
 ### <a name="green-checkmark-icon-consider-using-this-option-if"></a>![Icono de marca de verificación verde.](media/delimit-volume-allocation/supported.png) Considere la posibilidad de usar esta opción si:
 
@@ -61,7 +61,7 @@ Con la asignación de ejemplo, es probable que el volumen sobreviva a tres error
 
 La probabilidad de supervivencia depende del número de servidores y otros factores; consulte [análisis](#analysis) para obtener más información.
 
-#### <a name="disadvantages"></a>Desventajas
+#### <a name="disadvantages"></a>Inconvenientes
 
 La asignación delimitada impone algunas consideraciones y complejidad de administración agregadas:
 

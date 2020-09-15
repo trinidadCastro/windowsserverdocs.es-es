@@ -2,15 +2,15 @@
 title: Optimización de la administración de energía del procesador (PPM) para el plan de energía del equilibrio de Windows Server
 description: Optimización de la administración de energía del procesador (PPM) para el plan de energía del equilibrio de Windows Server
 ms.topic: conceptual
-ms.author: qizha;tristanb
+ms.author: qizha
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fcc21df93d9963ee83159c1df2fcf918ddbbfba
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: fd6b67aabcfe737e9fe0922801175e78a4c79360
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992373"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077627"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Optimización de la administración de energía del procesador (PPM) para el plan de energía del equilibrio de Windows Server
 

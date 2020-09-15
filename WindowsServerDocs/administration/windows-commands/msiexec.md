@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 93ce1de1f75ff03bc7bb5f79d2046502c2d81bc4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: a59e48a4c368a33e0d0e751b9b818f263b470b90
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89639611"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078442"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -211,7 +211,7 @@ msiexec.exe [/f{p|o|e|d|c|a|u|m|s|v}] <product_code>
 | /Fu | Repara todas las entradas del registro específicas del usuario necesarias. |
 | /FM | Repara todas las entradas del registro específicas del equipo necesarias. |
 | /FS | Repara todos los accesos directos existentes. |
-| /fc | Se ejecuta desde el origen y vuelve a almacenar en caché el paquete local. |
+| /fv | Se ejecuta desde el origen y vuelve a almacenar en caché el paquete local. |
 
 #### <a name="examples"></a>Ejemplos
 

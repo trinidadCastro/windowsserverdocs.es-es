@@ -3,15 +3,16 @@ title: Roles, servicios de rol y características incluidos en Windows Server-Se
 description: ¿Qué roles y características se incluyen en la opción de instalación Server Core de Windows Server?
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: 1569feb27a75815771cf84317bebb2fde9d83dfa
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ded40a119d0d1ae759ec0b29ce9ee4808653ea50
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895866"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077762"
 ---
 # <a name="roles-role-services-and-features-included-in-windows-server---server-core"></a>Roles, servicios de rol y características incluidos en Windows Server-Server Core
 
@@ -26,7 +27,7 @@ Recuerde que siempre puede [Ver](server-core-removed-roles.md) lo que *no* se in
 ## <a name="roles-included-in-server-core"></a>Roles incluidos en Server Core
 La opción de instalación Server Core incluye los siguientes roles de servidor.
 
-| Role                                            | Nombre                           | ¿Está instalado de forma predeterminada? |
+| Rol                                            | NOMBRE                           | ¿Está instalado de forma predeterminada? |
 |-------------------------------------------------|--------------------------------|-----------------------|
 | Servicios de certificados de Active Directory           | AD-Certificate                 | N                     |
 | Active Directory Domain Services                | AD-Domain-Services             | N                     |
@@ -36,7 +37,7 @@ La opción de instalación Server Core incluye los siguientes roles de servidor.
 | Atestación de estado de dispositivo                       | DeviceHealthAttestationService | N                     |
 | Servidor DHCP                                     | DHCP                           | N                     |
 | Servidor DNS                                      | DNS                            | N                     |
-| Servicios de archivos y almacenamiento                       | FileAndStorage-servicios        | Y                     |
+| Servicios de archivos y almacenamiento                       | FileAndStorage-servicios        | esté                     |
 | Servicio de protección de host                           | HostGuardianServiceRole        | N                     |
 | Hyper-V                                         | Hyper-V                        | N                     |
 | Servicios de impresión y documentos                     | Print-Services                 | N                     |
@@ -50,7 +51,7 @@ La opción de instalación Server Core incluye los siguientes roles de servidor.
 ## <a name="role-services-included-in-server-core"></a>Servicios de rol incluidos en Server Core
 La opción de instalación Server Core incluye los siguientes servicios de rol.
 
-| Role                                  | Servicio de rol                                                   | Nombre                    | ¿Está instalado de forma predeterminada? |
+| Rol                                  | Servicio de rol                                                   | NOMBRE                    | ¿Está instalado de forma predeterminada? |
 |---------------------------------------|----------------------------------------------------------------|-------------------------|-----------------------|
 | Servicios de certificados de Active Directory | Entidad de certificación                                        | ADCS-Cert-Authority     | N                     |
 |                                       | Servicio web de directivas de inscripción de certificados                      | ADCS-ENROLL-web-Pol     | N                     |
@@ -72,7 +73,7 @@ La opción de instalación Server Core incluye los siguientes servicios de rol.
 |                                       | Proveedor de almacenamiento del destino iSCSI (proveedores de hardware de VDS y VSS) | iSCSITarget-VSS-VDS     | N                     |
 |                                       | Servidor para NFS                                                 | FS-NFS-servicio          | N                     |
 |                                       | Carpetas de trabajo                                                   | FS-SyncShareService     | N                     |
-|                                       | Servicios de almacenamiento                                               | Servicios de almacenamiento        | Y                     |
+|                                       | Servicios de almacenamiento                                               | Servicios de almacenamiento        | esté                     |
 | Servicios de impresión y documentos           | Servidor de impresión                                                   | Print-Server            | N                     |
 |                                       | Servicio LPD                                                    | Print-LPD-Service       | N                     |
 | Acceso remoto                         | DirectAccess y VPN (RAS)                                     | DirectAccess: VPN        | N                     |
@@ -90,7 +91,7 @@ La opción de instalación Server Core incluye los siguientes servicios de rol.
 |                                       | Redireccionamiento HTTP                                               | Web-Http-Redirect       | N                     |
 |                                       | Publicación en WebDAV                                              | Publicación en Web-DAV      | N                     |
 |                                       | Estado y diagnóstico                                         | Web-Health              | N                     |
-|                                       | Registrar HTTP                                                   | Web-Http-Logging        | N                     |
+|                                       | Registro HTTP                                                   | Web-Http-Logging        | N                     |
 |                                       | Registro personalizado                                                 | Web-Custom-Logging      | N                     |
 |                                       | Herramientas de registro                                                  | Web-Log-Libraries       | N                     |
 |                                       | Registro ODBC                                                   | Web-ODBC-Logging        | N                     |
@@ -100,7 +101,7 @@ La opción de instalación Server Core incluye los siguientes servicios de rol.
 |                                       | Compresión de contenido estático                                     | Web-Stat-Compression    | N                     |
 |                                       | compresión de contenido dinámico                                    | Web-Dyn-Compression     | N                     |
 |                                       | Seguridad                                                       | Web-Security            | N                     |
-|                                       | Filtro de solicitudes                                              | Web-Filtering           | N                     |
+|                                       | Filtrado de solicitudes                                              | Web-Filtering           | N                     |
 |                                       | Autenticación básica                                           | Web-Basic-Auth          | N                     |
 |                                       | compatibilidad centralizada con los certificados SSL                            | Web-CertProvider        | N                     |
 |                                       | Autenticación de asignaciones de certificados de clientes                      | Web-Client-Auth         | N                     |
@@ -138,21 +139,21 @@ La opción de instalación Server Core incluye los siguientes servicios de rol.
 ## <a name="features-included-in-server-core"></a>Características incluidas en Server Core
 La opción de instalación Server Core incluye las siguientes características.
 
-| Característica                                                | Nombre                               | ¿Está instalado de forma predeterminada? |
+| Característica                                                | NOMBRE                               | ¿Está instalado de forma predeterminada? |
 |--------------------------------------------------------|------------------------------------|-----------------------|
 | Características de .NET Framework 3.5                            | Características de .NET Framework             | N                     |
 | .NET Framework 3,5 (incluye .NET 2,0 y 3,0)       | NET-Framework-Core                 | (se ha quitado)             |
 | Activación HTTP                                        | NET-HTTP-Activation                | N                     |
 | Activación no HTTP                                    | NET-Non-HTTP-Activ                 | N                     |
-| .NET Framework características 4,6                            | NET-Framework-45-características          | Y                     |
-| .NET Framework 4.6                                     | NET-Framework-45-Core              | Y                     |
+| .NET Framework características 4,6                            | NET-Framework-45-características          | esté                     |
+| .NET Framework 4.6                                     | NET-Framework-45-Core              | esté                     |
 | ASP.NET 4,6                                            | NET-Framework-45-ASPNET            | N                     |
-| WCF Services                                           | NET-WCF-Services45                 | Y                     |
+| WCF Services                                           | NET-WCF-Services45                 | esté                     |
 | Activación HTTP                                        | NET-WCF-HTTP-Activation45          | N                     |
 | Activación de Message Queuing (MSMQ)                      | NET-WCF-MSMQ-Activation45          | N                     |
 | Activación de canalización con nombre                                  | NET-WCF-Pipe-Activation45          | N                     |
 | Activación de TCP                                         | NET-WCF-TCP-Activation45           | N                     |
-| Uso compartido de puertos TCP                                       | NET-WCF-TCP-PortSharing45          | Y                     |
+| Uso compartido de puertos TCP                                       | NET-WCF-TCP-PortSharing45          | esté                     |
 | Servicio de transferencia inteligente en segundo plano (BITS)         | BITS                               | N                     |
 | Servidor compacto                                         | BITS-compacto-servidor                | N                     |
 | Cifrado BitLocker de unidades                             | BitLocker                          | N                     |
@@ -214,17 +215,17 @@ La opción de instalación Server Core incluye las siguientes características.
 | Proxy RPC sobre HTTP                                    | Proxy RPC a través de HTTP                | N                     |
 | Recopilación de eventos de configuración y arranque                        | Setup-and-boot-Event-Collection    | N                     |
 | Servicios simples de TCP/IP                                 | Simple-TCPIP                       | N                     |
-| Compatibilidad con el protocolo para compartir archivos SMB 1.0/CIFS                      | FS-SMB1                            | Y                     |
+| Compatibilidad con el protocolo para compartir archivos SMB 1.0/CIFS                      | FS-SMB1                            | esté                     |
 | Límite de ancho de banda SMB                                    | FS-SMBBW                           | N                     |
 | Servicio SNMP                                           | SNMP-Service                       | N                     |
 | Proveedor WMI de SNMP                                      | SNMP-WMI-Provider                  | N                     |
 | Cliente Telnet                                          | Telnet-Client                      | N                     |
 | Herramientas de blindaje de máquinas virtuales para la administración de tejidos               | FabricShieldedTools                | N                     |
-| Características de Windows Defender                              | Características de Windows-Defender          | Y                     |
-| Windows Defender                                       | Windows-Defender                   | Y                     |
+| Características de Windows Defender                              | Características de Windows-Defender          | esté                     |
+| Windows Defender                                       | Windows-Defender                   | esté                     |
 | Windows Internal Database                              | Windows-Internal-Database          | N                     |
-| Windows PowerShell                                     | PowerShellRoot                     | Y                     |
-| Windows PowerShell 5.1                                 | PowerShell                         | Y                     |
+| Windows PowerShell                                     | PowerShellRoot                     | esté                     |
+| Windows PowerShell 5.1                                 | PowerShell                         | esté                     |
 | Motor 2,0 de Windows PowerShell                          | PowerShell-V2                      | (se ha quitado)             |
 | Servicio de configuración de estado deseado de Windows PowerShell | Servicio DSC                        | N                     |
 | Windows PowerShell Web Access                          | WindowsPowerShellWebAccess         | N                     |
@@ -237,5 +238,5 @@ La opción de instalación Server Core incluye las siguientes características.
 | Administración de almacenamiento basada en estándares de Windows             | WindowsStorageManagementService    | N                     |
 | Extensión WinRM de IIS                                    | WinRM-IIS-ext                      | N                     |
 | Servidor WINS                                            | WINS                               | N                     |
-| Compatibilidad con WoW64                                          | Compatibilidad con WoW64                      | Y                     |
+| Compatibilidad con WoW64                                          | Compatibilidad con WoW64                      | esté                     |
 |                                                        |                                    |                       |

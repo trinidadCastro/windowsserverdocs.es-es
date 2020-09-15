@@ -2,16 +2,16 @@
 title: Compatibilidad de ISV de actualización Delta mensual sin WSUS
 description: 'Tema de Windows Server Update Services (WSUS): cómo los fabricantes de software independientes (ISV) pueden usar temporalmente la actualización mensual Delta en lugar de la entrega de actualizaciones Express de WSUS para reducir el tamaño de los paquetes'
 ms.topic: get-started article
-author: sakitong
-ms.author: coreyp
-manager: dougkim
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 103e52d140ee70ff2ee6ac7817371c9b80d037ca
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2b983b06a9f8bf4c2a6d5c72aef13689a72b3684
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991003"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624472"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>Compatibilidad de ISV de actualización Delta mensual sin WSUS
 

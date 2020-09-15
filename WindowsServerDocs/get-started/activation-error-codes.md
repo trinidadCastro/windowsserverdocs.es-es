@@ -4,18 +4,18 @@ description: Aprenda a solucionar problemas de códigos de error de activación.
 ms.topic: troubleshooting
 ms.date: 9/18/2019
 author: kaushika-msft
-ms.author: kaushika-msft; v-tea
+ms.author: kaushika
 ms.localizationpriority: medium
 ms.custom:
 - CI ID 116803
 - CSSTroubleshoot
 manager: dcscontentpm
-ms.openlocfilehash: 375c028acc0a972fcc1ca02e840075cdafd7369e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 40de898aa7627f092c179d7dc9e88e366e01ebab
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941797"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078552"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Resolver códigos de error de activación de Windows
 

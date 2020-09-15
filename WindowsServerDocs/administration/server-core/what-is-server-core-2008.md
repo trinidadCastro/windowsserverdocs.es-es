@@ -1,16 +1,16 @@
 ---
 title: ¿Qué es Server Core 2008?
 description: Obtener información acerca de la opción de instalación Server Core en Windows Server 2008
-ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
-author: heidilohr
-ms.openlocfilehash: fb3e0b60787cb12c3401a14a54aebf4809c61b45
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+author: pronichkin
+ms.author: artemp
+ms.openlocfilehash: 443c0307529a21a6a23da996486a2e6c40894af1
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993231"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077792"
 ---
 # <a name="what-is-server-core-2008"></a>¿Qué es Server Core 2008?
 >Se aplica a: Windows Server 2008
@@ -103,7 +103,7 @@ Una instalación Server Core solo incluye un número limitado de roles de servid
 | ------------- | :-------------: | :------------: |
 | Active Directory Certificate Services (AD CS)  | X |  |
 | Active Directory Domain Services (AD DS)  | X  | X |
-| Servicios de federación de Active Directory (AD FS)  | X  |  |
+| Active Directory Federation Services (AD FS)  | X  |  |
 | Active Directory Lightweight Directory Services (AD LDS)  | X  | X |
 | Active Directory Rights Management Services (AD RMS)  | X  |  |
 | Servidor de aplicaciones  | X  |  |

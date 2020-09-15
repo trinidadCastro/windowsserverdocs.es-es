@@ -1,18 +1,17 @@
 ---
 title: Repositorio de software de Linux para productos de Microsoft
 description: En este documento se describe cómo usar e instalar paquetes de software de Linux para productos de Microsoft.
-manager: szark
 ms.topic: article
 ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
-author: szarkos
-ms.author: szark
+author: victorcheng7
+ms.author: vichen
 ms.date: 08/14/2020
-ms.openlocfilehash: 421518ffceb2fb5cab0ed84e9299004084311924
-ms.sourcegitcommit: b18effcba95c85d6e08e7d29808b576491a5352e
+ms.openlocfilehash: dffd07d74e11253457f893d563c0b05272138f41
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88243187"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078428"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>Repositorio de software de Linux para productos de Microsoft
 

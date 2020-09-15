@@ -4,16 +4,17 @@ description: Obtén artículos técnicos de Windows Server de la versión actual
 ms.topic: article
 ms.date: 01/17/2018
 ms.assetid: 0c3dc323-8beb-4d7d-a2e0-12bda848ddcb
+ms.prod: windows-server
 author: lizap
 ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: f11f63dd05676fd0f16a1c0d71db9482ca1b86fc
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 53542ba4a9f54b6455ed283cd5776fe6b54c30a1
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992498"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078452"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server: contenido para administradores de TI de la versión actual y las anteriores
 

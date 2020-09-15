@@ -3,15 +3,16 @@ title: ¿Qué es Server Core?
 description: Más información acerca de la opción de instalación Server Core en Windows Server
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 02/20/2018
-ms.openlocfilehash: 01cf2568df3651e5f52649b04aa9d10b9690d597
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 42a016a95d24f6ec0abc560a54f8589ab4c65ab1
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895831"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077552"
 ---
 # <a name="what-is-the-server-core-installation-option-in-windows-server"></a>¿Qué es la opción de instalación Server Core en Windows Server?
 
@@ -48,7 +49,7 @@ En la tabla siguiente se muestran las aplicaciones que están disponibles *local
 > Esta lista está pensada para una referencia rápida: no pretende ser una lista completa.
 
 
-| Aplicación                        | Server Core     | Servidor con experiencia de escritorio |
+| Application                        | Server Core     | Servidor con experiencia de escritorio |
 |------------------------------------|-----------------|--------------------------------|
 | Símbolo del sistema                     | disponible       | disponible                      |
 | Windows PowerShell/Microsoft .NET | disponible       | disponible                      |
@@ -87,7 +88,7 @@ En la tabla siguiente se muestran las aplicaciones que están disponibles *local
 
 Para obtener más información acerca de lo que *se* incluye en Server Core, vea [roles, servicios de rol y características incluidos en Windows Server-Server Core](server-core-roles-and-services.md). Y para obtener información sobre lo que *no se* incluye en Server Core, vea [roles, servicios de rol y características que no se incluyen en Server Core](server-core-removed-roles.md)
 
-\*Que se va a leer. Archivos RTF almacenados localmente en una SKU de Server Core, los usuarios pueden copiar los archivos en un equipo de Windows diferente en el que esté presente WordPad.
+\* Que se va a leer. Archivos RTF almacenados localmente en una SKU de Server Core, los usuarios pueden copiar los archivos en un equipo de Windows diferente en el que esté presente WordPad.
 
 ## <a name="get-started-using-server-core"></a>Introducción al uso de Server Core
 

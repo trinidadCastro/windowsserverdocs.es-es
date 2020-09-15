@@ -3,17 +3,17 @@ title: Cargar una imagen especializada de Windows Server 2008/2008 R2 en Azure
 description: Windows Server 2008 y 2008 R2 están acercándose al final de servicio. Aprende a subir y moverte a Azure, alojando Windows Server en la nube.
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: mikeblodge
-ms.author: mikeblodge
+author: eross-msft
+ms.author: thierryp
 ms.date: 07/11/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 094ebc114d2620fa3808389d84129de5ba70e0e0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 759827d870b4573fc519f85ff890c48be9a28b5e
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967872"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078612"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Cargar una imagen especializada de Windows Server 2008/2008 R2 en Azure
 

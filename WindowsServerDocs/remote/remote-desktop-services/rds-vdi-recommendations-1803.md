@@ -1,17 +1,15 @@
 ---
 title: Optimización de Windows 10, versión 1803, para un rol de infraestructura de escritorio virtual (VDI)
 description: Configuración y opciones de configuración recomendadas para minimizar la sobrecarga de los escritorios Windows 10, versión 1803 que se usan como imágenes VDI
-ms.reviewer: robsmi
-ms.author: jaimeo, robsmi
+ms.author: robsmi
 ms.topic: article
 author: jaimeo
-manager: dougkim
-ms.openlocfilehash: eb222547518dc0ee13e2c7a47037ffae74fee1fa
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4ba432e13785694844229a41f2966eb7cf65fa7e
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036773"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078642"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1803, para un rol de infraestructura de escritorio virtual (VDI)
 

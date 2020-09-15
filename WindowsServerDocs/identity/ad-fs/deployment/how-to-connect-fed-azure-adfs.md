@@ -6,14 +6,13 @@ manager: mtillman
 ms.assetid: 692a188c-badc-44aa-ba86-71c0e8074510
 ms.topic: get-started-article
 ms.date: 10/28/2018
-ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 5db03a2d275dc4a02295c588bd0789fa757b8503
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3a53e8bb9e06e51627d14f6e5e3b918f58102478
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956227"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078682"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implementación de Active Directory Federation Services en Azure
 AD FS proporciona funcionalidades de una federación de identidades simplificada y protegida, así como de inicio de sesión único (SSO) web. La federación con Azure AD u Office 365 permite a los usuarios autenticarse con credenciales locales y acceder a todos los recursos en la nube. Por tanto, es importante disponer de una infraestructura de AD FS de alta disponibilidad para garantizar el acceso a los recursos locales y en la nube. La implementación de AD FS en Azure puede ayudar a lograr la alta disponibilidad necesaria con el mínimo esfuerzo.
@@ -22,7 +21,7 @@ La implementación de AD FS en Azure tiene varias ventajas; a continuación se e
 * **Alta disponibilidad** : con la potencia de Conjuntos de disponibilidad de Azure, se asegura una infraestructura de alta disponibilidad.
 * **Fácil de escalar** : ¿necesita más rendimiento? Migre fácilmente a máquinas más eficaces con solo unos clics en Azure.
 * **Redundancia geográfica cruzada** : con la redundancia geográfica de Azure puede estar seguro de que su infraestructura tiene alta disponibilidad en todo el mundo.
-* **Fácil de administrar** : con opciones de administración muy simplificadas en Azure Portal, administrar su infraestructura es muy fácil y sin complicaciones. 
+* **Fácil de administrar** : con opciones de administración muy simplificadas en Azure Portal, administrar su infraestructura es muy fácil y sin complicaciones.
 
 ## <a name="design-principles"></a>Principios de diseño
 ![Diseño de la implementación](./media/how-to-connect-fed-azure-adfs/deployment.png)
@@ -75,7 +74,7 @@ Después de crear los NSG, asocie NSG_INT a la subred INT y NSG_DMZ a la subred 
 ![Configuración de NSG](./media/how-to-connect-fed-azure-adfs/nsgconfigure1.png)
 
 * Haga clic en Subredes para abrir el panel Subredes.
-* Seleccione la subred que se asociará al NSG. 
+* Seleccione la subred que se asociará al NSG.
 
 Después de la configuración, el panel Subredes debe ser similar al siguiente:
 
@@ -98,7 +97,8 @@ Para mantener la alta disponibilidad y evitar la dependencia de una sola cuenta 
 ![Creación de cuentas de almacenamiento](./media/how-to-connect-fed-azure-adfs/storageaccount1.png)
 
 ### <a name="3-create-availability-sets"></a>3. crear conjuntos de disponibilidad
-Para cada rol (DC/AD FS y WAP), cree conjuntos de disponibilidad que contengan dos máquinas como mínimo. Esto le ayudará a lograr una mayor disponibilidad para cada rol. Al crear los conjuntos de disponibilidad, es esencial decidir lo siguiente:
+Para cada rol (DC/AD FS y WAP), cree conjuntos de disponibilidad que contengan dos máquinas como mínimo. Esto le ayudará a lograr una mayor disponibilidad para cada rol.
+Al crear los conjuntos de disponibilidad, es esencial decidir lo siguiente:
 
 * **Dominios de error**: máquinas virtuales en el mismo dominio de error comparten la misma fuente de alimentación y el conmutador de red física. Se recomienda un mínimo de dos dominios de error. El valor predeterminado es tres, y puede dejarlo así para esta implementación.
 * **Dominios de actualización**: las máquinas que pertenecen al mismo dominio de actualización se reinician juntas durante una actualización. Conviene tener como mínimo dos dominios de actualización. El valor predeterminado es cinco y puede dejarlo así para esta implementación.
@@ -107,7 +107,7 @@ Para cada rol (DC/AD FS y WAP), cree conjuntos de disponibilidad que contengan d
 
 Creación de los siguientes conjuntos de disponibilidad
 
-| Conjunto de disponibilidad | Role | Dominios de error | Dominios de actualización |
+| Conjunto de disponibilidad | Rol | Dominios de error | Dominios de actualización |
 |:---:|:---:|:---:|:--- |
 | contosodcset |DC/ADFS |3 |5 |
 | contosowapset |WAP |3 |5 |
@@ -115,7 +115,7 @@ Creación de los siguientes conjuntos de disponibilidad
 ### <a name="4-deploy-virtual-machines"></a>4. implementación de máquinas virtuales
 El siguiente paso es implementar las máquinas virtuales que hospedarán los distintos roles en su infraestructura. Se recomienda un mínimo de dos máquinas en cada conjunto de disponibilidad. Cree cuatro máquinas virtuales para la implementación básica.
 
-| Máquina | Role | Subnet | Conjunto de disponibilidad | Cuenta de almacenamiento | Dirección IP |
+| Máquina | Rol | Subnet | Conjunto de disponibilidad | Cuenta de almacenamiento | Dirección IP |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | contosodc1 |DC/ADFS |INT |contosodcset |contososac1 |estática |
 | contosodc2 |DC/ADFS |INT |contosodcset |contososac2 |estática |
@@ -131,7 +131,7 @@ Una vez completada la implementación, el panel Máquinas virtuales debe ser sim
 ### <a name="5-configuring-the-domain-controller--ad-fs-servers"></a>5. configurar el controlador de dominio o los servidores de AD FS
  Para autenticar cualquier solicitud entrante, AD FS deberá ponerse en contacto con el controlador de dominio. Para evitar el costoso recorrido de Azure a controlador de dominio local para la autenticación, se recomienda implementar una réplica del controlador de dominio en Azure. Para lograr una alta disponibilidad, se recomienda crear un conjunto de disponibilidad con al menos dos de controladores de dominio.
 
-| Controlador de dominio | Role | Cuenta de almacenamiento |
+| Controlador de dominio | Rol | Cuenta de almacenamiento |
 |:---:|:---:|:---:|
 | contosodc1 |Réplica |contososac1 |
 | contosodc2 |Réplica |contososac2 |
@@ -146,8 +146,8 @@ Para implementar un ILB, seleccione Equilibradores de carga en Azure Portal y ha
 
 > [!NOTE]
 > Si no ve **Equilibradores de carga** en el menú, haga clic en **Examinar** en la parte inferior izquierda del portal y desplácese hasta que vea **Equilibradores de carga**.  A continuación, haga clic en la estrella amarilla para agregarlo al menú. Ahora, seleccione el nuevo icono del equilibrador de carga para abrir el panel y empezar a configurar el equilibrador de carga.
-> 
-> 
+>
+>
 
 ![Examinar el equilibrador de carga](./media/how-to-connect-fed-azure-adfs/browseloadbalancer.png)
 
@@ -167,7 +167,7 @@ El siguiente paso es configurar el grupo back-end y el sondeo de back-end.
 
 **6.2. Configuración del grupo back-end del ILB**
 
-Seleccione el ILB recién creado en el panel Equilibradores de carga. Se abrirá el panel de configuración. 
+Seleccione el ILB recién creado en el panel Equilibradores de carga. Se abrirá el panel de configuración.
 
 1. Seleccione los grupos back-end en el panel de configuración.
 2. En el panel Agregar grupo back-end, haga clic en Agregar máquina virtual.
@@ -181,37 +181,25 @@ Seleccione el ILB recién creado en el panel Equilibradores de carga. Se abrirá
 En el panel de configuración del ILB, seleccione Sondeos de estado.
 
 1. Haga clic en Agregar.
-2. Proporcionar detalles para el sondeo  
-   a. **Nombre**: nombre de sondeo  
-   b. **Protocolo**: HTTP  
-   c. **Puerto**: 80 (http)  
-   d. **Ruta de acceso**:/ADFS/Probe   
-   e. **Intervalo**: 5 (valor predeterminado): este es el intervalo en el que ILB sondeará las máquinas en el grupo de back-end.  
-   f. **Umbral incorrecto**: 2 (valor predeterminado). Umbral de errores de sondeo consecutivos después del cual el ILB declara que una máquina del grupo back-end no responde y dejará de enviarle tráfico.
+2. Proporcione la información para el sondeo a. **Nombre**: nombre del sondeo b. **Protocolo**: HTTP c. **Puerto**: 80 (HTTP) d. **Ruta de acceso**: /adfs/probe e. **Intervalo**: 5 (valor predeterminado). Este es el intervalo en el que el ILB comprobará las máquinas en el grupo back-end f. **Umbral incorrecto**: 2 (valor predeterminado). Umbral de errores de sondeo consecutivos después del cual el ILB declara que una máquina del grupo back-end no responde y dejará de enviarle tráfico.
 
 
 Estamos usando el punto de conexión/adfs/probe creado explícitamente para las comprobaciones de estado en un entorno de AD FS donde no se puede producir una comprobación de ruta de acceso completa de HTTPS.  Esto es mucho mejor que una comprobación básica del puerto 443, que no refleja con precisión el estado de una implementación de AD FS moderna.  Puede encontrar más información sobre esto en https://blogs.technet.microsoft.com/applicationproxyblog/2014/10/17/hardware-load-balancer-health-checks-and-web-application-proxy-ad-fs-2012-r2/.
 
 **6.4. Creación de reglas de equilibrio de carga**
 
-Con el fin de equilibrar el tráfico de forma eficaz, el ILB debe configurarse con reglas de equilibrio de carga. Para crear una regla de equilibrio de carga: 
+Con el fin de equilibrar el tráfico de forma eficaz, el ILB debe configurarse con reglas de equilibrio de carga. Para crear una regla de equilibrio de carga:
 
 1. Seleccione Reglas de equilibrio de carga en el panel de configuración del ILB
 2. Haga clic en Agregar en el panel Reglas de equilibrio de carga.
-3. En el panel Agregar regla de equilibrio de carga  
-   a. **Nombre**: proporcione un nombre para la regla.  
-   b. **Protocolo**: seleccionar TCP  
-   c. **Puerto**: 443  
-   d. **Puerto de back-end**: 443  
-   e. **Grupo de back-end**: seleccione el grupo que ha creado para el clúster de AD FS anterior  
-   f. **Sondeo**: seleccione el sondeo que creó antes para los servidores AD FS.
+3. En el panel Agregar regla de equilibrio de carga a. **Nombre**: escriba un nombre para la regla b. **Protocolo**: seleccione TCP c. **Puerto**: 443 d. **Puerto back-end**: 443 e. **Grupo back-end**: seleccione el grupo que creó antes para el clúster de AD FS f. **Sondeo**: seleccione el sondeo que creó antes para los servidores AD FS.
 
 ![Configuración de las reglas de equilibrio de carga](./media/how-to-connect-fed-azure-adfs/ilbdeployment5.png)
 
 **6.5. Actualización de DNS con el ILB**
 
 Con el servidor DNS interno, cree un registro A para el ILB. El registro A debe ser para el servicio de Federación con la dirección IP que apunta a la dirección IP del ILB. Por ejemplo, si la dirección IP de ILB es 10.3.0.8 y el servicio de Federación instalado es fs.contoso.com, cree un registro d para fs.contoso.com que apunte a 10.3.0.8.
-Esto garantizará que todos los trasmitted de datos que fs.contoso.com terminen en el ILB y se enruten correctamente. 
+Esto garantizará que todos los trasmitted de datos que fs.contoso.com terminen en el ILB y se enruten correctamente.
 
 > [!WARNING]
 > Si usa WID (Windows Internal Database) para la base de datos de AD FS, este valor debe establecerse temporalmente para que apunte al servidor de AD FS principal o el proxy de aplicación web producirá un error enrollement. Después de inscribir correctamente todos los servidores proxy de Application Web, cambie esta entrada DNS para que apunte al equilibrador de carga.
@@ -231,7 +219,8 @@ Con el fin de garantizar que los servidores proxy de aplicación web puedan lleg
 
 **7.2. Instalación del rol de proxy de aplicación web**
 
-Después de asegurarse de que los servidores proxy de aplicación web pueden acceder a los servidores AD FS detrás del ILB puede instalar los servidores proxy de aplicación web. Los servidores proxy de aplicación web no tienen que unirse al dominio. Instale los roles de proxy de aplicación web en los dos servidores proxy de aplicación web seleccionando el rol de acceso remoto. El administrador del servidor le guiará para completar la instalación de WAP.
+Después de asegurarse de que los servidores proxy de aplicación web pueden acceder a los servidores AD FS detrás del ILB puede instalar los servidores proxy de aplicación web.
+Los servidores proxy de aplicación web no tienen que unirse al dominio. Instale los roles de proxy de aplicación web en los dos servidores proxy de aplicación web seleccionando el rol de acceso remoto. El administrador del servidor le guiará para completar la instalación de WAP.
 Para más información sobre cómo implementar WAP, lea [Instalar y configurar el servidor de Proxy de aplicación web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383662(v=ws.11)).
 
 ### <a name="8--deploying-the-internet-facing-public-load-balancer"></a>8. implementación del Load Balancer accesible desde Internet (público)
@@ -257,11 +246,11 @@ Haga clic en la entrada del equilibrador de carga recién creada en el panel Equ
 2. Haga clic en Configuración.
 3. Proporcione una etiqueta DNS. Esta etiqueta se convertirá en la etiqueta DNS pública a la que puede acceder desde cualquier lugar; por ejemplo, contosofs.westus.cloudapp.azure.com. Puede agregar una entrada en el DNS externo para el servicio de federación (como fs.contoso.com) que se resuelve en la etiqueta DNS del equilibrador de carga externo (contosofs.westus.cloudapp.azure.com).
 
-![Configuración del equilibrador de carga accesible desde Internet](./media/how-to-connect-fed-azure-adfs/elbdeployment3.png) 
+![Configuración del equilibrador de carga accesible desde Internet](./media/how-to-connect-fed-azure-adfs/elbdeployment3.png)
 
 ![Configuración del equilibrador de carga accesible desde Internet (DNS)](./media/how-to-connect-fed-azure-adfs/elbdeployment4.png)
 
-**8.3. Configuración de un grupo back-end para el equilibrador de carga accesible desde Internet (público)** 
+**8.3. Configuración de un grupo back-end para el equilibrador de carga accesible desde Internet (público)**
 
 Siga los mismos pasos que al crear el equilibrador de carga interno para configurar el grupo back-end para el equilibrador de carga accesible desde Internet (público) como el conjunto de disponibilidad para los servidores WAP. Por ejemplo, contosowapset.
 
@@ -286,7 +275,7 @@ En general, necesita las siguientes reglas para proteger eficazmente la subred i
 
 | Regla | Descripción | Flujo |
 |:--- |:--- |:---:|
-| AllowHTTPSFromDMZ |Permitir la comunicación HTTPS desde la red perimetral |Entrada |
+| AllowHTTPSFromDMZ |Permitir la comunicación HTTPS desde la red perimetral |Entrante |
 | DenyInternetOutbound |Sin acceso a Internet |Salida |
 
 ![Reglas de acceso INT (entrantes)](./media/how-to-connect-fed-azure-adfs/nsg_int.png)
@@ -295,22 +284,22 @@ En general, necesita las siguientes reglas para proteger eficazmente la subred i
 
 | Regla | Descripción | Flujo |
 |:--- |:--- |:---:|
-| AllowHTTPSFromInternet |Permite HTTPS de Internet a la red perimetral |Entrada |
+| AllowHTTPSFromInternet |Permite HTTPS de Internet a la red perimetral |Entrante |
 | DenyInternetOutbound |No se bloquea nada, excepto HTTPS a Internet |Salida |
 
 ![Reglas de acceso EXT (entrantes)](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
 
 > [!NOTE]
 > Si se requiere la autenticación de certificados de usuario de cliente (autenticación clientTLS mediante certificados de usuario X. 509), AD FS requiere que el puerto TCP 49443 esté habilitado para el acceso de entrada.
-> 
-> 
+>
+>
 
 ### <a name="10-test-the-ad-fs-sign-in"></a>10. probar el inicio de sesión AD FS
 La forma más sencilla es probar AD FS mediante la página IdpInitiatedSignon.aspx. Para poder hacerlo, es necesario habilitar IdpInitiatedSignOn en las propiedades de AD FS. Siga estos pasos para comprobar la configuración de AD FS.
 
 1. Ejecute el siguiente cmdlet en el servidor AD FS, con PowerShell, para habilitarlo.
-   Set-AdfsProperties -EnableIdPInitiatedSignonPage $true 
-2. Desde cualquier máquina externa acceda a https:\//adfs-server.contoso.com/adfs/ls/IdpInitiatedSignon.aspx.  
+   Set-AdfsProperties -EnableIdPInitiatedSignonPage $true
+2. Desde cualquier máquina externa acceda a https:\//adfs-server.contoso.com/adfs/ls/IdpInitiatedSignon.aspx.
 3. Debería ver la página de AD FS como aparece a continuación:
 
 ![Prueba de la página de inicio de sesión](./media/how-to-connect-fed-azure-adfs/test1.png)
@@ -324,7 +313,7 @@ La plantilla implementa una instalación de 6 equipos para controladores de domi
 
 [Plantilla de implementación de AD FS en Azure](https://github.com/paulomarquesc/adfs-6vms-regular-template-based)
 
-Puede usar una red virtual existente o crear una nueva red virtual durante la implementación de esta plantilla. A continuación se enumeran los distintos parámetros disponibles para personalizar la implementación con la descripción del uso del parámetro en el proceso de implementación. 
+Puede usar una red virtual existente o crear una nueva red virtual durante la implementación de esta plantilla. A continuación se enumeran los distintos parámetros disponibles para personalizar la implementación con la descripción del uso del parámetro en el proceso de implementación.
 
 | Parámetro | Descripción |
 |:--- |:--- |
@@ -355,13 +344,13 @@ Puede usar una red virtual existente o crear una nueva red virtual durante la im
 | AdminPassword |La contraseña de la cuenta del administrador local de las máquinas virtuales |
 
 ## <a name="additional-resources"></a>Recursos adicionales
-* [Conjuntos de disponibilidad](https://aka.ms/Azure/Availability) 
+* [Conjuntos de disponibilidad](https://aka.ms/Azure/Availability)
 * [Equilibrador de carga de Azure](https://aka.ms/Azure/ILB)
-* [Load Balancer interno](https://aka.ms/Azure/ILB/Internal)
+* [Equilibrador de carga interno](https://aka.ms/Azure/ILB/Internal)
 * [Equilibrador de carga accesible desde Internet](https://aka.ms/Azure/ILB/Internet)
 * [Cuentas de almacenamiento](https://aka.ms/Azure/Storage)
 * [Azure Virtual Network](https://aka.ms/Azure/VNet)
-* [AD FS y vínculos de proxy de aplicación web](https://aka.ms/ADFSLinks) 
+* [AD FS y vínculos de proxy de aplicación web](https://aka.ms/ADFSLinks)
 
 ## <a name="next-steps"></a>Pasos siguientes
 * [Integración de las identidades locales con Azure Active Directory](/azure/active-directory/hybrid/whatis-hybrid-identity)

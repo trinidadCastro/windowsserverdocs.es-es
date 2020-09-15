@@ -3,15 +3,16 @@ title: Revisión de Server Core
 description: Obtener información sobre cómo actualizar una instalación Server Core de Windows Server
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: eb444dd05359f033bec8b45aa9ed53a6ed5096c6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7e84d4fa90cc6e95435d2f0e48efd3ac44ccaebe
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895860"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077752"
 ---
 # <a name="patch-a-server-core-installation"></a>Revisión de una instalación Server Core
 

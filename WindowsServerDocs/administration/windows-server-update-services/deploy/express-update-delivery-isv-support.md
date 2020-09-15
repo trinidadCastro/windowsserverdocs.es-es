@@ -2,16 +2,16 @@
 title: Compatibilidad con ISV de entrega de actualizaciones Express
 description: 'Tema de Windows Server Update Services (WSUS): cómo los fabricantes de software independientes (ISV) pueden configurar la entrega de actualizaciones Express con WSUS'
 ms.topic: get-started article
-author: sakitong
-ms.author: coreyp
-manager: lizapo
+author: brentfor
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c56c9ac0f2899f03ce1b32b699b577c2dc3de0c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: a94ac8d85d8a86bb834f56a445bebf888fde71e0
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991083"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624514"
 ---
 # <a name="express-update-delivery-isv-support"></a>Compatibilidad con ISV de entrega de actualizaciones Express
 

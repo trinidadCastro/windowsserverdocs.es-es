@@ -3,17 +3,18 @@ title: Crear una cuenta de usuario estándar
 description: Creación de una cuenta de usuario básica para Multipoint Services
 ms.topic: article
 ms.assetid: 1e113666-e45f-48b6-aad8-42c361c9046d
-author: lizap
-manager: dongill
-ms.openlocfilehash: 80137fda9838400034348e62f91798bfb2a09ed7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+author: evaseydl
+manager: scottman
+ms.author: evas
+ms.openlocfilehash: f6f4a7b6b59dc78e7670084912f2cb6939036022
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944325"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077572"
 ---
 # <a name="create-a-standard-user-account"></a>Crear una cuenta de usuario estándar
-Cree *cuentas de usuario estándar* para los usuarios que obtienen acceso a menudo a las estaciones, pero que no administran el sistema MultiPoint Services. Los usuarios con cuentas de usuario estándar pueden ejecutar la mayoría de las aplicaciones y guardar archivos, pero no pueden ejecutar Multipoint Manager. Para ver quién tiene acceso de usuario estándar, en Multipoint Manager, haga clic en la pestaña **usuarios** . las cuentas de usuario estándar se muestran en la columna **tipo de cuenta** como **estándar**.
+Cree *cuentas de usuario estándar* para los usuarios que obtienen acceso a menudo a las estaciones, pero que no administran el sistema MultiPoint Services. Los usuarios con cuentas de usuario estándar pueden ejecutar la mayoría de las aplicaciones y guardar archivos, pero no pueden ejecutar Multipoint Manager. Para ver quién tiene acceso de usuario estándar, en Multipoint Manager, haga clic en la pestaña **usuarios** . Las cuentas de usuario estándar se muestran en la columna **tipo de cuenta** como **estándar**.
 
 Si los usuarios de MultiPoint Services van a almacenar documentos privados en Windows, deberían iniciar sesión en el sistema MultiPoint Services con un nombre de usuario y contraseña únicos.
 

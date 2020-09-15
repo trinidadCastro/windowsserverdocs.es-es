@@ -3,14 +3,14 @@ title: Optimización del rendimiento para servidores de archivos SMB
 description: Optimización del rendimiento para servidores de archivos SMB
 ms.topic: article
 author: phstee
-ms.author: nedpyle; danlo; dkruse
+ms.author: nedpyle
 ms.date: 4/14/2017
-ms.openlocfilehash: 4a1fd4036e20e4cbb5b137832297daca99e9f5cc
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2515f400f746c5e256a168d191efa842d4ba50fd
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992164"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077212"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>Optimización del rendimiento para servidores de archivos SMB
 
