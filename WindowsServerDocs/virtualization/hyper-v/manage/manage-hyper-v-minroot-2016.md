@@ -1,15 +1,16 @@
 ---
 title: Minroot
 description: Configuración de controles de recursos de CPU del host
-author: allenma
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 12/15/2017
 ms.topic: article
-ms.openlocfilehash: fc65159474f9b1cd8bf282acf00ff06f4727673b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4a222151a9236fb19ef98eda2526524f2d113094
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994055"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746590"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Administración de recursos de CPU del host de Hyper-V
 
@@ -19,7 +20,7 @@ Esto puede separar el trabajo realizado en un host de Hyper-V de las cargas de t
 
 Para obtener más información sobre el hardware de los hosts de Hyper-V, consulte [requisitos del sistema de Hyper-v de Windows 10](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements).
 
-## <a name="background"></a>Información previa
+## <a name="background"></a>Fondo
 
 Antes de establecer los controles para los recursos de CPU del host de Hyper-V, resulta útil revisar los conceptos básicos de la arquitectura de Hyper-V.
 Puede encontrar un resumen general en la sección [arquitectura de Hyper-V](../../../administration/performance-tuning/role/hyper-v-server/architecture.md) .

@@ -1,18 +1,17 @@
 ---
 title: Windows 10 debe configurarse con la cantidad de memoria recomendada
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0c810b82-b06a-4382-b598-5c642e8534be
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: be11fb86ab27ab7f393ec9a89a9e3780f3701d04
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 80bfdff229cbb70f54464a304b4d803bcba75368
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991216"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747150"
 ---
 # <a name="windows-10-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 10 debe configurarse con la cantidad de memoria recomendada
 
@@ -37,7 +36,7 @@ En las secciones siguientes se proporcionan detalles sobre el problema específi
 ```
 <list of virtual machines>
 ```
-## <a name="resolution"></a>**Resolución**
+## <a name="resolution"></a>**Solución**
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual a 1 GB como mínimo.*
 
 #### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumentar la memoria mediante el administrador de Hyper-V

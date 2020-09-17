@@ -1,18 +1,18 @@
 ---
 title: Descripción y uso de los tipos de programador de hipervisor de Hyper-V
 description: Proporciona información para los administradores de hosts de Hyper-V sobre el uso de los modos de programador de Hyper-V.
-author: allenma
-ms.author: allenma
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: a1f53dba659af7d5ac0efff2e72bd168523bde0c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 1aa270adc30f72f8efcdbbea2162e3c6b925dade
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995626"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746430"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Administrar tipos de programador de hipervisor de Hyper-V
 
@@ -23,7 +23,7 @@ En este artículo se describen los nuevos modos de la lógica de programación d
 > [!NOTE]
 > Las actualizaciones son necesarias para usar las características del programador de hipervisor descritas en este documento. Para obtener más información, consulte [actualizaciones necesarias](#required-updates).
 
-## <a name="background"></a>Información previa
+## <a name="background"></a>Fondo
 
 Antes de analizar la lógica y los controles que hay detrás de la programación del procesador virtual de Hyper-V, resulta útil revisar los conceptos básicos que se tratan en este artículo.
 

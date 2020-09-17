@@ -1,17 +1,16 @@
 ---
 title: Un servidor réplica debe estar configurado para aceptar solicitudes de replicación
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 027b9df0bad5e37e0a6e2f2d9c44dde1a3e79127
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 941eccbafb7b84caf161f68b022c9a93fffd4f5f
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960748"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746390"
 ---
 # <a name="a-replica-server-must-be-configured-to-accept-replication-requests"></a>Un servidor réplica debe estar configurado para aceptar solicitudes de replicación
 
@@ -28,13 +27,13 @@ Para más información sobre los análisis y los procedimientos recomendados, ve
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 *Este equipo se designa como un servidor de réplica de Hyper-V, pero no está configurado para aceptar los datos de replicación entrantes de los servidores principales.*
 
 ## <a name="impact"></a>Impacto
 *Este servidor no puede aceptar el tráfico de replicación de los servidores principales.*
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 *Use el administrador de Hyper-V para especificar de qué servidores principales deben aceptar este servidor réplica los datos de replicación.*
 
 #### <a name="create-authorization-entries-using-hyper-v-manager"></a>Crear entradas de autorización mediante el administrador de Hyper-V

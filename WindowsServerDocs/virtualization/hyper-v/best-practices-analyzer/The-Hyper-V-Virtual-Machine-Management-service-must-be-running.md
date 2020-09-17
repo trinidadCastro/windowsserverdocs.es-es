@@ -1,18 +1,17 @@
 ---
 title: El servicio de administración de máquinas virtuales de Hyper-V debe estar en ejecución
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: f44d6887-6458-4438-9d93-574587e3f7d1
-author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: 889529d8920f9ae0c9e6d431ae1e4cd2c3b75172
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6fe2f95821b23f98931b7cecc3c59dc58f0f5e37
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960498"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746240"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-must-be-running"></a>El servicio de administración de máquinas virtuales de Hyper-V debe estar en ejecución
 
@@ -29,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *El servicio necesario para administrar máquinas virtuales no se está ejecutando.*
 
@@ -39,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 Las máquinas virtuales que se están ejecutando seguirán ejecutándose. Sin embargo, no podrá administrar máquinas virtuales ni crearlas o eliminarlas hasta que se ejecute el servicio.
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Use el complemento servicios o la herramienta de línea de comandos SC config para volver a configurar el servicio para que se inicie automáticamente.*
 

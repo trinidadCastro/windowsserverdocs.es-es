@@ -1,18 +1,17 @@
 ---
 title: Máquinas virtuales de SUSE compatibles en Hyper-V
 description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
-manager: dongill
 ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: 4e2948bdb07ecefc0cbb46553aeaece3efd914c2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 92dd65669a537d619d9104378adae26c91878dca
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989295"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746740"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Máquinas virtuales de SUSE compatibles en Hyper-V
 
@@ -51,13 +50,13 @@ SLES12 + es solo 64 bits.
 |Copia de seguridad de máquinas virtuales en vivo|2019, 2016, 2012 R2|&#10004; Nota 2, 3, 8|&#10004;Nota 2, 3, 8|&#10004; Nota 2, 3, 8|&#10004; Nota 2, 3, 8|&#10004; Nota 2, 3, 8|&#10004; Nota 2, 3, 8|&#10004; Nota 2, 3, 8|
 |Compatibilidad con TRIM|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |WWN SCSI|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
-|**[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
+|**[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
 |Compatibilidad con el kernel PAE|2019, 2016, 2012 R2|N/D|N/D|N/D|N/D|N/D|&#10004;|&#10004;|
 |Configuración de la brecha de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Memoria dinámica: agregar en caliente|2019, 2016, 2012 R2|&#10004; Nota 6|&#10004;Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 4, 5, 6|&#10004; Nota 4, 5, 6|
 |Memoria dinámica: globos|2019, 2016, 2012 R2|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 4, 5, 6|&#10004; Nota 4, 5, 6|
 |Tamaño de memoria en tiempo de ejecución|2019, 2016|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6||||
-|**[Cámara](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
+|**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
 |Dispositivo de vídeo específico de Hyper-V|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
 |Par clave-valor|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|Nota de &#10004; 7|Nota de &#10004; 7|

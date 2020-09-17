@@ -1,18 +1,17 @@
 ---
 title: El número de máquinas virtuales en ejecución o configuradas debe estar dentro de los límites admitidos
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 9d3c4aa3-8416-46ec-a253-26dc98088d7b
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0bf7dcf854eea7c8cfe3e65fe7aee2a2d6cc5e14
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f97ca9ad38bfdeee7e6d543a32f62f7a5344e700
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990240"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746830"
 ---
 # <a name="the-number-of-running-or-configured-virtual-machines-must-be-within-supported-limits"></a>El número de máquinas virtuales en ejecución o configuradas debe estar dentro de los límites admitidos
 
@@ -29,13 +28,13 @@ Para más información sobre los análisis y los procedimientos recomendados, ve
 
 En las secciones siguientes, cursiva indica el texto que aparece en la herramienta Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 *Hay más máquinas virtuales en ejecución o configuradas que se admiten.*
 
 ## <a name="impact"></a>Impacto
 *Microsoft no admite el número actual de máquinas virtuales que se ejecutan o se configuran en este servidor.*
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 *Mueva una o más máquinas virtuales a otro servidor.*
 
 Para obtener más información acerca de las configuraciones máximas admitidas para Hyper-V, como el número de máquinas virtuales en ejecución, consulte [planear la escalabilidad de Hyper-v en Windows Server 2016](../plan/plan-hyper-v-scalability-in-windows-server.md).

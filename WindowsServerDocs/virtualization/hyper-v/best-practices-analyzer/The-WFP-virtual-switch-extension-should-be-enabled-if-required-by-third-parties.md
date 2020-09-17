@@ -1,18 +1,17 @@
 ---
 title: La extensión de conmutador virtual de WFP debe habilitarse si así lo requieren las extensiones de terceros
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 628f58ef57e6a461791cd9641d043acfbfd79129
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b6099410d4d5e043387594022e8bb376d5fb52f7
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993447"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746680"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>La extensión de conmutador virtual de WFP debe habilitarse si así lo requieren las extensiones de terceros
 
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Resolución**
+## <a name="resolution"></a>**Solución**
 *Use el cmdlet de Windows PowerShell, enable-VMSwitchExtension, para habilitar la plataforma de filtrado de Windows si es necesaria para las extensiones de terceros.*
 
 ### <a name="enable-the-windows-filtering-platform-using-windows-powershell"></a>Habilitar la plataforma de filtrado de Windows mediante Windows PowerShell

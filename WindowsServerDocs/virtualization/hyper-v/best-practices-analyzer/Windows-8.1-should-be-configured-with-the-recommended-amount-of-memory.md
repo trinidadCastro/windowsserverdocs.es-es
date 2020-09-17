@@ -1,18 +1,17 @@
 ---
 title: Windows 8.1 debe configurarse con la cantidad de memoria recomendada
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 4972101a-c266-4045-bdd6-4e75a9cd750e
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: c827ab02889f4ffed847903d62e88450450ef2c7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c83d52107077608a331bbbb8034a3369ea6b1dc0
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993625"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746560"
 ---
 # <a name="windows-81-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 8.1 debe configurarse con la cantidad de memoria recomendada
 
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 ```
 <list of virtual machines>
 ```
-## <a name="resolution"></a>**Resolución**
+## <a name="resolution"></a>**Solución**
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual a 1 GB como mínimo.*
 
 #### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumentar la memoria mediante el administrador de Hyper-V

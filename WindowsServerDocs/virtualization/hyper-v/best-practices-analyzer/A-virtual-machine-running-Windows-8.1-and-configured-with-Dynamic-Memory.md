@@ -1,18 +1,17 @@
 ---
 title: Una máquina virtual que ejecuta Windows 8.1 y se configura con Memoria dinámica debe utilizar los valores recomendados para la configuración de memoria
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b9a14f85-326f-4916-9278-2c8d39a32848
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: ba32e3dc40022539c4205e55e74deab8ba619d0b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7ad74e982ad75a7763c37ad28599642c593b5612
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954512"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746340"
 ---
 # <a name="a-virtual-machine-running-windows-81-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>Una máquina virtual que ejecuta Windows 8.1 y se configura con Memoria dinámica debe utilizar los valores recomendados para la configuración de memoria
 
@@ -38,7 +37,7 @@ Es posible que el sistema operativo invitado de las siguientes máquinas virtual
 \<list of virtual machines>
 
 
-## <a name="resolution"></a>**Resolución**
+## <a name="resolution"></a>**Solución**
 *Use el administrador de Hyper-V para aumentar la cantidad mínima de memoria hasta 256 MB, la memoria de inicio en al menos 512 MB y la memoria máxima de al menos 1 GB para esta máquina virtual.*
 
 #### <a name="increase-memory-using-hyper-v-manager"></a>Aumentar la memoria con el administrador de Hyper-V

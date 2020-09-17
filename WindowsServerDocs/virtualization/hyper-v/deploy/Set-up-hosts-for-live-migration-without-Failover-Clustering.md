@@ -1,18 +1,17 @@
 ---
 title: Configurar hosts para la migración en vivo sin clústeres de conmutación por error
 description: Proporciona instrucciones para configurar la migración en vivo en un entorno no en clúster.
-manager: dongill
 ms.topic: article
 ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 9/30/2016
-ms.openlocfilehash: e07910b6f822ca29769fb398434f83272867dbe7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 98a7dbdfa0bb89ba8c857e171b513c00ba297896
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992708"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746070"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>Configurar hosts para la migración en vivo sin clústeres de conmutación por error
 

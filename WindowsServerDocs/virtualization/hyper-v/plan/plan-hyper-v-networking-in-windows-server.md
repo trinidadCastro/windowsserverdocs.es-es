@@ -1,17 +1,16 @@
 ---
 title: Planear la red de Hyper-V en Windows Server
 description: Describe lo que se necesita para la red básica en Hyper-V y proporciona vínculos a instrucciones.
-manager: dongill
 ms.topic: article
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: b31d942e8d7890a8f699f743bcd24953d2a3e760
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e36ebb6d90dcb4fc05e05c135a49f84e850249b2
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996063"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745940"
 ---
 # <a name="plan-for-hyper-v-networking-in-windows-server"></a>Planear la red de Hyper-V en Windows Server
 
@@ -26,7 +25,7 @@ La forma más fácil de establecer una red básica es crear un conmutador virtua
 
 Para controlar los distintos tipos de redes, puede Agregar conmutadores virtuales y adaptadores de red virtuales. Todos los conmutadores forman parte del host de Hyper-V, pero cada adaptador de red virtual pertenece a una sola máquina virtual.
 
-El conmutador virtual es un conmutador de red Ethernet de nivel 2 basado en software. Proporciona características integradas para supervisar, controlar y segmentar el tráfico, así como la seguridad y los diagnósticos.  Puede Agregar al conjunto de características integradas instalando complementos, también denominados *extensiones*. Están disponibles en proveedores de software independientes. Para obtener más información sobre el conmutador y las extensiones, consulte [conmutador virtual de Hyper-V](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).
+El conmutador virtual es un conmutador de red Ethernet de nivel 2 basado en software. Proporciona características integradas para supervisar, controlar y segmentar el tráfico, así como la seguridad y los diagnósticos.  Puede Agregar al conjunto de características integradas instalando complementos, también denominados  *extensiones*. Están disponibles en proveedores de software independientes. Para obtener más información sobre el conmutador y las extensiones, consulte [conmutador virtual de Hyper-V](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).
 
 ### <a name="switch-and-network-adapter-choices"></a>Opciones de conmutadores y adaptadores de red
 Hyper-V ofrece tres tipos de conmutadores virtuales y dos tipos de adaptadores de red virtual. Elegirá cuál de cada uno de ellos desea cuando lo cree. Puede usar el administrador de Hyper-V o el módulo de Hyper-V para Windows PowerShell para crear y administrar conmutadores virtuales y adaptadores de red virtuales. Algunas capacidades de red avanzadas, como las listas de control de acceso (ACL) de Puerto extendido, solo se pueden administrar mediante cmdlets en el módulo de Hyper-V.

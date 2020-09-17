@@ -3,18 +3,15 @@ title: Crear archivos de conjunto de VHD de Hyper-V
 description: Pasos para crear un archivo VHDset en Hyper-v 2016
 author: jiwool
 ms.author: jiwool
-manager: senthilr
 ms.date: 01/26/2017
 ms.topic: article
 ms.assetid: 444e1496-9e5a-41cf-bfbc-306e2ed8e00a
-audience: IT Pros
-ms.reviewer: kathydav
-ms.openlocfilehash: a2c4b2ff3ca4dda2cb2989c629c5dac5f529cac0
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7e2c287666115b9a81c6ab5585187f26dad7a5e3
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991450"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746470"
 ---
 # <a name="create-hyper-v-vhd-set-files"></a>Crear archivos de conjunto de VHD de Hyper-V
 Los archivos de VHD Set son un nuevo modelo de discos virtuales compartidos para los clústeres invitados en Windows Server 2016. Los archivos de VHD Set admiten el cambio de tamaño en línea de los discos virtuales compartidos, admiten la réplica de Hyper-V y pueden incluirse en los puntos de comprobación coherentes con la aplicación.

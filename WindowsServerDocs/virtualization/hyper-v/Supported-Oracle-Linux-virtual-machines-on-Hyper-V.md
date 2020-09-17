@@ -1,18 +1,17 @@
 ---
 title: Oracle Linux compatibles con máquinas virtuales en Hyper-V
 description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
-manager: dongill
 ms.topic: article
 ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 06/05/2020
-ms.openlocfilehash: 0e9a11fbff5015037bffa1cad14e70d629fef94b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7c1029f31abe70b09bddc83f928ee492be18ef2b
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989308"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746400"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Oracle Linux compatibles con máquinas virtuales en Hyper-V
 
@@ -60,13 +59,13 @@ En esta sección:
 |       Copia de seguridad de máquinas virtuales en vivo  | 2019, 2016, 2012 R2 | Nota &#10004; 5 |
 |       Compatibilidad con TRIM | 2019, 2016, 2012 R2 | &#10004;  |
 |       WWN SCSI | 2019, 2016, 2012 R2 | &#10004;  |
-|       **[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |
+|       **[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |
 |       Compatibilidad con el kernel PAE  | 2019, 2016, 2012 R2 |  N/D |
 |       Configuración de la brecha de MMIO  | 2019, 2016, 2012 R2 | &#10004; |
 |       Memoria dinámica: agregar en caliente | 2019, 2016, 2012 R2  | &#10004; Nota 7, 8, 9 |
 |       Memoria dinámica: globos | 2019, 2016, 2012 R2 | &#10004; Nota 7, 8, 9 |
 |       Tamaño de memoria en tiempo de ejecución | 2019, 2016  | &#10004;  |
-|       **[Cámara](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | |
+|       **[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | |
 |       Dispositivo de vídeo específico de Hyper-V | 2019, 2016, 2012 R2 | &#10004;   |
 |       **[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | |
 |       Par clave-valor  | 2019, 2016, 2012 R2 | &#10004;   |
@@ -680,7 +679,7 @@ WWN SCSI
 <tr height="50px">
 <td width="20%">
 
-**[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**
+**[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**
 </td>
 <td width="20%">
 
@@ -877,7 +876,7 @@ Tamaño de memoria en tiempo de ejecución
 <tr height="50px">
 <td width="20%">
 
-**[Cámara](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**
+**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**
 </td>
 <td width="20%">
 
@@ -1287,13 +1286,13 @@ Esta serie solo tiene kernels de 64 bits.
 |       Copia de seguridad de máquinas virtuales en vivo  | 2019, 2016, 2012 R2 | Nota &#10004; 5 | Nota &#10004; 5|
 |       Compatibilidad con TRIM | 2019, 2016, 2012 R2 | &#10004;  | &#10004; |
 |       WWN SCSI | 2019, 2016, 2012 R2 | &#10004;  | &#10004; |
-|       **[Memory](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |  |
+|       **[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |  |
 |       Compatibilidad con el kernel PAE  | 2019, 2016, 2012 R2 |  N/D | N/D
 |       Configuración de la brecha de MMIO  | 2019, 2016, 2012 R2 | &#10004; | &#10004;  |
 |       Memoria dinámica: agregar en caliente | 2019, 2016, 2012 R2  | &#10004; Nota 6, 8, 9 | &#10004; Nota 6, 8, 9 |
 |       Memoria dinámica: globos | 2019, 2016, 2012 R2 | &#10004; Nota 6, 8, 9 | &#10004; Nota 6, 8, 9 |
 |       Tamaño de memoria en tiempo de ejecución | 2019, 2016  |  | |
-|       **[Cámara](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | | |
+|       **[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | | |
 |       Dispositivo de vídeo específico de Hyper-V | 2019, 2016, 2012 R2 | &#10004;   | &#10004; |
 |       **[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | | |
 |       Par clave-valor  | 2019, 2016, 2012 R2 | &#10004; Nota 10, 11   | &#10004; Nota 10, 11  |
@@ -1326,7 +1325,7 @@ Esta serie solo tiene kernels de 64 bits.
 
    1. Cree un archivo **/etc/udev/rules.d/100-Balloon.rules**. Puede usar cualquier otro nombre que desee para el archivo.
 
-   2. Agregue el siguiente contenido al archivo:`SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
+   2. Agregue el siguiente contenido al archivo: `SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
 
    3. Reinicie el sistema para habilitar la compatibilidad con la adición en caliente.
 

@@ -1,18 +1,17 @@
 ---
 title: Windows Vista debe configurarse con la cantidad de memoria recomendada
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 64f4e53b-4adb-4e1d-bc48-c24f5f9d222f
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: edfc39153785b9926a39032520082329ad37d830
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: bd9c645dd1649ad23a37fda1727bfd9678097d51
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989771"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746170"
 ---
 # <a name="windows-vista-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Vista debe configurarse con la cantidad de memoria recomendada
 
@@ -29,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Una máquina virtual que ejecuta Windows Vista está configurada con menos de la cantidad de RAM recomendada, que es 1 GB.*
 
@@ -39,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machine names>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual a 1 GB como mínimo.*
 

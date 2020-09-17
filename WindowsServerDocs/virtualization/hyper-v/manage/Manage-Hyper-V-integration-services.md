@@ -1,18 +1,17 @@
 ---
 title: Administrar Integration Services de Hyper-V
 description: Describe cómo activar y desactivar los servicios de integración e instalarlos si es necesario.
-author: kbdazure
-ms.author: kathydav
-manager: dongill
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 12/20/2016
 ms.topic: article
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 5d5f69e1c71df9746421329d8fdf11a9786a948b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9056beec7d07d1657ece3703f461ecfe5d9cd0fc
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996757"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746450"
 ---
 # <a name="manage-hyper-v-integration-services"></a>Administrar Integration Services de Hyper-V
 
@@ -45,7 +44,7 @@ En los siguientes ejemplos se muestra cómo activar y desactivar el servicio de 
     Get-VMIntegrationService -VMName "DemoVM"
     ```
 
-1. La salida debe ser similar a esta:
+1. El resultado debe ser similar al siguiente:
 
     ``` PowerShell
    VMName      Name                    Enabled PrimaryStatusDescription SecondaryStatusDescription
@@ -247,7 +246,7 @@ Se recomienda mantener actualizados los servicios de integración para obtener e
 | - | | |
 | Invitados Linux | administrador de paquetes | Integration Services para Linux está integrado en el distribución, pero puede que haya actualizaciones opcionales disponibles. ******** |
 
-\*Si no se puede habilitar el servicio de integración de intercambio de datos, los servicios de integración de estos invitados están disponibles en el [centro de descarga](https://support.microsoft.com/kb/3071740) como un archivo contenedor (CAB). Las instrucciones para aplicar un archivo. cab están disponibles en esta [entrada de blog](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247).
+\* Si no se puede habilitar el servicio de integración de intercambio de datos, los servicios de integración de estos invitados están disponibles en el [centro de descarga](https://support.microsoft.com/kb/3071740) como un archivo contenedor (CAB). Las instrucciones para aplicar un archivo. cab están disponibles en esta [entrada de blog](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247).
 
 **En el caso de las máquinas virtuales que se ejecutan en hosts de Windows 8.1/Windows Server 2012R2:**
 

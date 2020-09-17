@@ -1,18 +1,18 @@
 ---
 title: Acerca de la selección del tipo de programador de hipervisor de Hyper-V
 description: Proporciona información para los administradores de hosts de Hyper-V sobre el uso de los modos de programador de Hyper-V.
-author: allenma
-ms.author: allenma
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 332ec3a31d8a442fada7f01d30c5cb7d44965238
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9c41dfb5bad28122f8c2a6b06ff6574acd89a9ec
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994105"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746630"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>Acerca de la selección del tipo de programador de hipervisor de Hyper-V
 
@@ -20,7 +20,7 @@ Se aplica a:
 
 * Windows Server 2016
 * Windows Server, versión 1709
-* Windows Server, versión 1803
+* Windows Server, versión 1803
 * Windows Server 2019
 
 En este documento se describen los cambios importantes en el uso predeterminado y recomendado de Hyper-V de los tipos de programador de hipervisor. Estos cambios afectan tanto al rendimiento de virtualización como a la seguridad del sistema. Los administradores del host de virtualización deben revisar y comprender los cambios y las implicaciones que se describen en este documento y evaluar cuidadosamente los impactos, la guía de implementación sugerida y los factores de riesgo implicados para comprender mejor cómo implementar y administrar los hosts de Hyper-V en el panorama de la seguridad que cambia rápidamente.
@@ -28,7 +28,7 @@ En este documento se describen los cambios importantes en el uso predeterminado 
 >[!IMPORTANT]
 >En la actualidad, las vulnerabilidades de seguridad de canal lateral conocidas en varias arquitecturas de procesador podrían ser aprovechadas por una máquina virtual invitada malintencionada a través del comportamiento de programación del tipo de programador clásico de hipervisor heredado cuando se ejecutan en hosts con multithreading (SMT) simultáneo habilitado.  Si se aprovecha correctamente, una carga de trabajo malintencionada podría observar los datos fuera del límite de la partición. Esta clase de ataques se puede mitigar configurando el hipervisor de Hyper-V para usar el tipo de programador Core del hipervisor y volver a configurar las máquinas virtuales invitadas. Con el programador principal, el hipervisor restringe la VPs de una máquina virtual invitada para que se ejecute en el mismo núcleo del procesador físico, con lo que se aísla fuertemente la capacidad de la máquina virtual para acceder a los datos a los límites del núcleo físico en el que se ejecuta.  Se trata de una mitigación muy eficaz contra estos ataques de canal secundario, lo que impide que la máquina virtual Observe los artefactos de otras particiones, ya sea la raíz u otra partición invitada.  Por lo tanto, Microsoft está cambiando la configuración predeterminada y recomendada para los hosts de virtualización y las máquinas virtuales invitadas.
 
-## <a name="background"></a>Información previa
+## <a name="background"></a>Fondo
 
 A partir de Windows Server 2016, Hyper-V admite varios métodos de programación y administración de procesadores virtuales, denominados tipos de programador de hipervisor.  Puede encontrar una descripción detallada de todos los tipos de programador de hipervisor en [comprender y usar los tipos de programador de hipervisor de Hyper-V](./manage-hyper-v-scheduler-types.md).
 

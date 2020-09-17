@@ -1,18 +1,17 @@
 ---
 title: Hyper-V debe ser el único rol habilitado
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 5a0ed176-048f-40b1-b56c-8391b805fd37
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 2e2c392ad75f4f0c84216db637a0106be8821b41
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a59f4ebd1bf3ce7ce93d2eb098302b5bd2c42cce
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968342"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746840"
 ---
 # <a name="hyper-v-should-be-the-only-enabled-role"></a>Hyper-V debe ser el único rol habilitado
 
@@ -29,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Los roles distintos de Hyper-V están habilitados en este servidor.*
 
@@ -41,7 +40,7 @@ En la mayoría de los casos, no es una buena idea instalar otros roles en un ser
 
 Este procedimiento recomendado ayuda a mantener el sistema operativo host libre de roles, características y aplicaciones que no son necesarios para ejecutar Hyper-V. Seguir este procedimiento recomendado y ejecutar Hyper-V en nano Server ayuda a reducir el número de actualizaciones que necesitará, ya que solo nano Server, los componentes del servicio Hyper-V y el hipervisor de Windows estarán sujetos a actualizaciones de software.
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Use Administrador del servidor para quitar todos los roles excepto Hyper-V.*
 

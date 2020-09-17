@@ -1,18 +1,17 @@
 ---
 title: Descripciones de características de máquinas virtuales Linux y FreeBSD en Hyper-V
 description: Describe las características que afectan a los componentes principales como redes, almacenamiento y memoria cuando se usa Linux y FreeBSD en una máquina virtual.
-manager: dongill
 ms.topic: article
 ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/03/2016
-ms.openlocfilehash: b5ffb10feaa32b7dce2c491d2e7bdd1d467818fa
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eb4c17917e098bebad51b36e6f0c91d9d5b5f3c9
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989091"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747130"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Descripciones de características de máquinas virtuales Linux y FreeBSD en Hyper-V
 
@@ -56,7 +55,7 @@ En este artículo se describen las características disponibles en componentes c
 |Compatibilidad con TRIM|Las sugerencias de recorte notifican a la unidad que ciertos sectores asignados previamente ya no son necesarios para la aplicación y se pueden purgar. Este proceso se suele usar cuando una aplicación realiza asignaciones de espacio grande a través de un archivo y, a continuación, administra automáticamente las asignaciones en el archivo, por ejemplo, en los archivos de disco duro virtual.|
 |WWN SCSI|El controlador storvsc extrae la información del nombre World Wide Name (WWN) del puerto y el nodo de los dispositivos conectados a la máquina virtual y crea los archivos sysfs adecuados. |
 
-## <a name="memory"></a>Memory
+## <a name="memory"></a>Memoria
 
 |**Característica**|**Descripción**|
 |-|-|

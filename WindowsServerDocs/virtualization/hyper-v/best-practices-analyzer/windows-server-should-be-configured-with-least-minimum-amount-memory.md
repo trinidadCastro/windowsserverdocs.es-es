@@ -1,18 +1,17 @@
 ---
 title: Windows Server 2016 debe configurarse con al menos la cantidad mínima de memoria
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d324af73-af73-40b0-bd5b-8003ba3e921b
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f382b4725ec76802da36a83d8388445691990707
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7b1aeb2a8fcc6ac499946a5c9364775222b34d26
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997162"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746110"
 ---
 # <a name="windows-server-2016-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2016 debe configurarse con al menos la cantidad mínima de memoria
 
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Resolución**
+## <a name="resolution"></a>**Solución**
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual al menos 512 MB.*
 
 #### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumentar la memoria mediante el administrador de Hyper-V

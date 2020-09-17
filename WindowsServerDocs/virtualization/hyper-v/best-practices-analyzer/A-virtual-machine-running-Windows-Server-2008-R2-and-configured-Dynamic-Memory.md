@@ -1,18 +1,17 @@
 ---
 title: Una máquina virtual que ejecute Windows Server 2008 R2 y que esté configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 81b5034a-31ea-4397-bcd0-7b9ef50beb94
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: b926c534d831ef58cd85755c3b9ff3339110c10b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c92989ee8816c5315af85d106aa7a761881f2420
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971042"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746330"
 ---
 # <a name="a-virtual-machine-running-windows-server-2008-r2-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>Una máquina virtual que ejecute Windows Server 2008 R2 y que esté configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
 
@@ -29,7 +28,7 @@ Para más información sobre los análisis y los procedimientos recomendados, ve
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 *Una o varias máquinas virtuales están configuradas para usar Memoria dinámica con menos de la cantidad de memoria recomendada para Windows Server 2008 R2.*
 
 ## <a name="impact"></a>Impacto
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 *Use el administrador de Hyper-V o Windows PowerShell para aumentar la cantidad mínima de memoria hasta 256 MB, la memoria de inicio en al menos 512 MB y la memoria máxima de al menos 2 GB.*
 
 #### <a name="increase-memory-using-hyper-v-manager"></a>Aumentar la memoria con el administrador de Hyper-V

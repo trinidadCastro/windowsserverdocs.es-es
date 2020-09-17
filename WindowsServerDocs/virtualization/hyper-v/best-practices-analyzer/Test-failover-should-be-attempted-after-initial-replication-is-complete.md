@@ -1,18 +1,17 @@
 ---
 title: La conmutación por error de prueba debe intentarse una vez completada la replicación inicial
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: cea7eeaa-c1a7-4f87-89be-d4e1208c546f
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 52b69c2e483e8f3b07d64a1a4ccf579018e1a3db
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b41cd79ccbf0d04825d077da34e894fc9a17b10d
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960548"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746700"
 ---
 # <a name="test-failover-should-be-attempted-after-initial-replication-is-complete"></a>La conmutación por error de prueba debe intentarse una vez completada la replicación inicial
 
@@ -25,7 +24,7 @@ Para más información sobre los análisis y los procedimientos recomendados, ve
 |**Sistema operativo**|Windows Server 2016|
 |**Producto/Característica**|Hyper-V|
 |**Gravedad**|Advertencia|
-|**Categoría**|Operaciones|
+|**Categoría**|Operations|
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 *Use el administrador de Hyper-V para realizar una conmutación por error de prueba.*
 
 

@@ -1,18 +1,17 @@
 ---
 title: Windows Server 2008 R2 debe configurarse con la cantidad de memoria recomendada
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 26872519-ccf0-4757-827f-8df2a7a2b9f9
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 7ce1c5a2f37a82ed4c09ab8afbbdce4ffded0d9d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 70efebe89677f905c1f36e723bcf57fa3b584ccd
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994877"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746670"
 ---
 # <a name="windows-server-2008-r2-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2008 R2 debe configurarse con la cantidad de memoria recomendada
 
@@ -29,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Una máquina virtual que ejecuta Windows Server 2008 R2 está configurada con menos de la cantidad de RAM recomendada, que es 2 GB.*
 
@@ -39,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machine names>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual a 2 GB como mínimo.*
 

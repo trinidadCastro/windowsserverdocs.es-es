@@ -1,18 +1,17 @@
 ---
 title: Windows 10 debe configurarse con al menos la cantidad mínima de memoria
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: e4f5bd2f-b5be-4d43-80e0-0cf198182791
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: cd72b99ec7e609079e5a3b1e1a1c0ac92bfa9881
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 3383991c575fc5f84d9186ecebded39f5374709c
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991284"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746690"
 ---
 # <a name="windows-10-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 10 debe configurarse con al menos la cantidad mínima de memoria
 
@@ -37,7 +36,7 @@ En las secciones siguientes se proporcionan detalles sobre el problema específi
 ```
 <list of virtual machines>
 ```
-## <a name="resolution"></a>**Resolución**
+## <a name="resolution"></a>**Solución**
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual al menos 512 MB.*
 
 #### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumentar la memoria mediante el administrador de Hyper-V

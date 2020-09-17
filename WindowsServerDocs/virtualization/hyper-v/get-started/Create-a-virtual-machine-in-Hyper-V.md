@@ -1,18 +1,17 @@
 ---
 title: Crear una máquina virtual en Hyper-V
 description: Proporciona instrucciones para crear una máquina virtual mediante el administrador de Hyper-V o Windows PowerShell.
-manager: dongill
 ms.topic: get-started-article
 ms.assetid: 59297022-a898-456c-b299-d79cd5860238
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: 22dc2e83f1c7370bfd6f97d821a83041a9c528fe
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9d48020603e8e729c9493d7b01fbc08882b72471
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996612"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746060"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>Crear una máquina virtual en Hyper-V
 
@@ -51,7 +50,7 @@ Obtenga información sobre cómo crear una máquina virtual mediante el administ
 4. Use el cmdlet [New-VM](/powershell/module/hyper-v/new-vm?view=win10-ps) para crear la máquina virtual.  Vea los ejemplos siguientes:
 
    > [!NOTE]
-   > Si puede trasladar esta máquina virtual a un host de Hyper-V que ejecuta Windows Server 2012 R2, use el parámetro-version con [New-VM](/powershell/module/hyper-v/new-vm?view=win10-ps) para establecer la versión de configuración de la máquina virtual en 5. La versión de configuración de máquina virtual predeterminada para Windows Server 2016 no es compatible con Windows Server 2012 R2 o versiones anteriores. No se puede cambiar la versión de configuración de la máquina virtual después de crear la máquina virtual. Para obtener más información, consulte [versiones de configuración de máquina virtual admitidas](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions).
+   > Si puede trasladar esta máquina virtual a un host de Hyper-V que ejecuta Windows Server 2012 R2, use el parámetro-version con  [New-VM](/powershell/module/hyper-v/new-vm?view=win10-ps) para establecer la versión de configuración de la máquina virtual en 5. La versión de configuración de máquina virtual predeterminada para Windows Server 2016 no es compatible con Windows Server 2012 R2 o versiones anteriores. No se puede cambiar la versión de configuración de la máquina virtual después de crear la máquina virtual. Para obtener más información, consulte [versiones de configuración de máquina virtual admitidas](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions).
 
    - **Disco duro virtual existente** : para crear una máquina virtual con un disco duro virtual existente, puede usar el siguiente comando, donde,
      - **-Name** es el nombre que se proporciona para la máquina virtual que se va a crear.
@@ -74,7 +73,7 @@ Obtenga información sobre cómo crear una máquina virtual mediante el administ
 
        Esto crea una máquina virtual de generación 2 denominada Win10VM con 4 GB de memoria. Se inicia desde la carpeta VMs\Win10.vhdx en el directorio actual y usa el conmutador virtual denominado ExternalSwitch. Los archivos de configuración de la máquina virtual se almacenan en la carpeta VMData.
 
-   - **Nuevo disco duro virtual** : para crear una máquina virtual con un nuevo disco duro virtual, reemplace el parámetro **-VHDPath** del ejemplo anterior por **-NewVHDPath** y agregue el parámetro **-NewVHDSizeBytes** . Por ejemplo,
+   - **Nuevo disco duro virtual** : para crear una máquina virtual con un nuevo disco duro virtual, reemplace el parámetro **-VHDPath** del ejemplo anterior por  **-NewVHDPath** y agregue el parámetro **-NewVHDSizeBytes** . Por ejemplo,
 
      ```
      New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -NewVHDPath .\VMs\Win10.vhdx -Path .\VMData -NewVHDSizeBytes 20GB -Generation 2 -Switch ExternalSwitch

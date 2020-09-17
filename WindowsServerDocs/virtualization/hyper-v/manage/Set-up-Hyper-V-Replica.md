@@ -1,18 +1,17 @@
 ---
 title: Configuración de la réplica de Hyper-V
 description: Proporciona instrucciones para configurar la réplica, probar la conmutación por error y realizar una primera replicación.
-manager: dongill
 ms.topic: article
 ms.assetid: eea9e996-bfec-4065-b70b-d8f66e7134ac
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/10/2016
-ms.openlocfilehash: 24fce3e0ebbfc51167a7e6e390de092433cceaff
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cfa21867503c091da42866aba4c9bc51050200ae
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941853"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746650"
 ---
 # <a name="set-up-hyper-v-replica"></a>Configuración de la réplica de Hyper-V
 
@@ -81,9 +80,9 @@ Para permitir la replicación entre los servidores principal y secundario, el tr
 
 -  Para habilitar las reglas en un clúster de Hyper-V, abra una sesión de Windows PowerShell con **Ejecutar como administrador**y luego ejecute uno de estos comandos:
 
-    -   Para HTTP:`get-clusternode | ForEach-Object  {Invoke-command -computername $_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}`
+    -   Para HTTP:  `get-clusternode | ForEach-Object  {Invoke-command -computername $_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}`
 
-    -   Para HTTPS:`get-clusternode | ForEach-Object  {Invoke-command -computername $_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}`
+    -   Para HTTPS: `get-clusternode | ForEach-Object  {Invoke-command -computername $_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}`
 
 ### <a name="enable-virtual-machine-replication"></a>Habilitar la replicación de máquinas virtuales
 Haga lo siguiente en cada máquina virtual que quiera replicar:
@@ -93,7 +92,7 @@ Haga lo siguiente en cada máquina virtual que quiera replicar:
 
 2.  En la página **Antes de comenzar**, haga clic en **Siguiente**.
 
-3.  En la página **especificar servidor de réplicas** , en el cuadro servidor de réplicas, escriba el nombre NetBIOS o el FQDN del servidor réplica. Si el servidor réplica forma parte de un clúster de conmutación por error, escriba el nombre del agente de réplicas de Hyper-V. Haga clic en **Next**.
+3.  En la página **especificar servidor de réplicas** , en el cuadro servidor de réplicas, escriba el nombre NetBIOS o el FQDN del servidor réplica. Si el servidor réplica forma parte de un clúster de conmutación por error, escriba el nombre del agente de réplicas de Hyper-V. Haga clic en **Siguiente**.
 
 4.  En la página **especificar parámetros de conexión** , réplica de Hyper-V recupera automáticamente la configuración de autenticación y puerto que configuró para el servidor réplica. Si los valores no se recuperan, compruebe que el servidor está configurado como un servidor de réplicas y que está registrado en DNS. Si es necesario, escriba manualmente la configuración.
 
@@ -103,7 +102,7 @@ Haga lo siguiente en cada máquina virtual que quiera replicar:
 
 7.  En la página **configurar puntos de recuperación adicionales** , seleccione si desea mantener solo el punto de recuperación más reciente o crear puntos adicionales.    Si desea recuperar de forma coherente aplicaciones y cargas de trabajo que tienen sus propios escritores de VSS, le recomendamos que seleccione **servicio de instantáneas de volumen (VSS) frequenc**y y especifique la frecuencia de creación de instantáneas coherentes con la aplicación. Tenga en cuenta que el servicio de solicitante de VMM de Hyper-V debe ejecutarse en los servidores de Hyper-V principal y secundario. A continuación, haga clic en **Siguiente**.
 
-8.  En la página **elegir la replicación inicial** , seleccione el método de replicación inicial que se va a usar.  La configuración predeterminada para enviar copia inicial a través de la red copiará el archivo de configuración de la máquina virtual principal (VMCX) y los archivos de disco duro virtual (VHDX y VHD) seleccionados a través de la conexión de red. Compruebe la disponibilidad del ancho de banda de red si va a usar esta opción. Si la máquina virtual principal ya está configurada en el sitio secundario como una máquina virtual de replicación, puede ser útil seleccionar **usar una máquina virtual existente en el servidor de replicación como copia inicial**. Puede usar la exportación de Hyper-V para exportar la máquina virtual principal e importarla como una máquina virtual de réplica en el servidor secundario. En el caso de las máquinas virtuales más grandes o el ancho de banda limitado, puede elegir que la replicación inicial a través de la red se realice más tarde y, a continuación, configurar las horas de poca actividad, o bien enviar la información de replicación inicial como medio sin conexión.
+8.  En la página **elegir la replicación inicial** , seleccione el método de replicación inicial que se va a usar.  La configuración predeterminada para enviar copia inicial a través de la red copiará el archivo de configuración de la máquina virtual principal (VMCX) y los archivos de disco duro virtual (VHDX y VHD) seleccionados a través de la conexión de red. Compruebe la disponibilidad del ancho de banda de red si va a usar esta opción. Si la máquina virtual principal ya está configurada en el sitio secundario como una máquina virtual de replicación, puede ser útil seleccionar  **usar una máquina virtual existente en el servidor de replicación como copia inicial**. Puede usar la exportación de Hyper-V para exportar la máquina virtual principal e importarla como una máquina virtual de réplica en el servidor secundario. En el caso de las máquinas virtuales más grandes o el ancho de banda limitado, puede elegir que la replicación inicial a través de la red se realice más tarde y, a continuación, configurar las horas de poca actividad, o bien enviar la información de replicación inicial como medio sin conexión.
 
     Si realiza la replicación sin conexión, transportará la copia inicial en el servidor secundario mediante un medio de almacenamiento externo, como un disco duro o una unidad USB. Para ello, necesitará conectar el almacenamiento externo al servidor principal (o al nodo propietario de un clúster) y, a continuación, al seleccionar enviar copia inicial mediante medios externos, puede especificar una ubicación localmente o en el medio externo donde se puede almacenar la copia inicial.  Se crea una máquina virtual de marcador de posición en el sitio de réplica. Una vez completada la replicación inicial, se puede enviar el almacenamiento externo al sitio de réplica. Allí conectará el medio externo al servidor secundario o al nodo propietario del clúster secundario. A continuación, importará la réplica inicial en una ubicación especificada y la combinará en la máquina virtual del marcador de posición.
 
@@ -114,8 +113,8 @@ Haga lo siguiente en cada máquina virtual que quiera replicar:
 ## <a name="run-a-failover"></a>Ejecución de la conmutación por error
 Después de completar estos pasos de implementación, el entorno replicado está en funcionamiento. Ahora puede ejecutar conmutaciones por error según sea necesario.
 
-**Conmutación por error de prueba**: Si desea ejecutar una conmutación por error de prueba, haga clic con el **Replication**botón derecho en la máquina virtual principal y seleccione  >  **conmutación por error de prueba**de replicación. Seleccione el punto de recuperación más reciente u otro punto de recuperación si está configurado. Se creará una nueva máquina virtual de prueba y se iniciará en el sitio secundario. Una vez finalizada la prueba, seleccione **detener conmutación por error de prueba** en la máquina virtual de réplica para limpiarla. Tenga en cuenta que para una máquina virtual solo puede ejecutar una conmutación por error de prueba a la vez. [Más información](https://blogs.technet.com/b/virtualization/archive/2012/07/26/types-of-failover-operations-in-hyper-v-replica.aspx).
+**Conmutación por error de prueba**: Si desea ejecutar una conmutación por error de prueba, haga clic con el **Replication**botón derecho en la máquina virtual principal y seleccione  >  **conmutación por error de prueba**de replicación. Seleccione el punto de recuperación más reciente u otro punto de recuperación si está configurado. Se creará una nueva máquina virtual de prueba y se iniciará en el sitio secundario. Una vez finalizada la prueba, seleccione  **detener conmutación por error de prueba** en la máquina virtual de réplica para limpiarla. Tenga en cuenta que para una máquina virtual solo puede ejecutar una conmutación por error de prueba a la vez. [Obtenga más información](https://blogs.technet.com/b/virtualization/archive/2012/07/26/types-of-failover-operations-in-hyper-v-replica.aspx).
 
-**Conmutación por error planeada**: para ejecutar una conmutación por error planeada haga clic con **Replication**el botón derecho en la máquina virtual principal y seleccione  >  **conmutación por error planeada**de replicación. La conmutación por error planeada realiza comprobaciones de requisitos previos para garantizar que no se produzca ninguna pérdida de datos. Comprueba que la máquina virtual principal está apagada antes de comenzar la conmutación por error. Una vez realizada la conmutación por error de la máquina virtual, comienza a replicar los cambios de nuevo en el sitio primario cuando está disponible. Tenga en cuenta que para que funcione el servidor principal, debe configurarse para recepción la replicación desde el servidor secundario o desde el agente de réplicas de Hyper-V en el caso de un clúster principal. La conmutación por error planeada envía el último conjunto de cambios sometidos a seguimiento. [Más información](https://blogs.technet.com/b/virtualization/archive/2012/07/31/types-of-failover-operations-in-hyper-v-replica-part-ii-planned-failover.aspx).
+**Conmutación por error planeada**: para ejecutar una conmutación por error planeada haga clic con **Replication**el botón derecho en la máquina virtual principal y seleccione  >  **conmutación por error planeada**de replicación. La conmutación por error planeada realiza comprobaciones de requisitos previos para garantizar que no se produzca ninguna pérdida de datos. Comprueba que la máquina virtual principal está apagada antes de comenzar la conmutación por error. Una vez realizada la conmutación por error de la máquina virtual, comienza a replicar los cambios de nuevo en el sitio primario cuando está disponible. Tenga en cuenta que para que funcione el servidor principal, debe configurarse para recepción la replicación desde el servidor secundario o desde el agente de réplicas de Hyper-V en el caso de un clúster principal. La conmutación por error planeada envía el último conjunto de cambios sometidos a seguimiento. [Obtenga más información](https://blogs.technet.com/b/virtualization/archive/2012/07/31/types-of-failover-operations-in-hyper-v-replica-part-ii-planned-failover.aspx).
 
-**Conmutación por error no planeada**: para ejecutar una conmutación por error no planeada, haga clic con el botón derecho en la máquina virtual de réplica y seleccione **replicación**no  >  **planeada conmutación por error** desde el administrador de Hyper-V o el administrador de clústeres de conmutación por error. Si esta opción está habilitada, puede recuperar desde el punto de recuperación más reciente o desde puntos de recuperación anteriores. Después de la conmutación por error, compruebe que todo funciona de la forma esperada en la máquina virtual conmutada por error y, a continuación, haga clic en **completar** en la máquina virtual de réplica. [Más información](https://blogs.technet.com/b/virtualization/archive/2012/08/08/types-of-failover-operations-in-hyper-v-replica-part-iii-unplanned-failover.aspx).
+**Conmutación por error no planeada**: para ejecutar una conmutación por error no planeada, haga clic con el botón derecho en la máquina virtual de réplica y seleccione **replicación**no  >  **planeada conmutación por error** desde el administrador de Hyper-V o el administrador de clústeres de conmutación por error. Si esta opción está habilitada, puede recuperar desde el punto de recuperación más reciente o desde puntos de recuperación anteriores. Después de la conmutación por error, compruebe que todo funciona de la forma esperada en la máquina virtual conmutada por error y, a continuación, haga clic en **completar** en la máquina virtual de réplica. [Obtenga más información](https://blogs.technet.com/b/virtualization/archive/2012/08/08/types-of-failover-operations-in-hyper-v-replica-part-iii-unplanned-failover.aspx).

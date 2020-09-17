@@ -1,18 +1,17 @@
 ---
 title: Una máquina virtual que ejecuta Windows 7 y que está configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: c3a0292a-a619-4d1c-8f9d-391c741411c1
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 139853e8258a256c4f9dbc26def12f1c38689c47
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: eb27e0ed37f1699013d18b3666fd00da7e90a521
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954552"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746360"
 ---
 # <a name="a-virtual-machine-running-windows-7-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>Una máquina virtual que ejecuta Windows 7 y que está configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
 
@@ -29,7 +28,7 @@ Para más información sobre los análisis y los procedimientos recomendados, ve
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 *Una o varias máquinas virtuales están configuradas para usar Memoria dinámica con menos de la cantidad de memoria recomendada para Windows 7.*
 
 ### <a name="impact"></a>Impacto
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 *Use el administrador de Hyper-V o Windows PowerShell para aumentar la cantidad mínima de memoria hasta 256 MB y la memoria de inicio y la memoria máxima al menos 512 MB.*
 
 #### <a name="increase-memory-using-hyper-v-manager"></a>Aumentar la memoria con el administrador de Hyper-V

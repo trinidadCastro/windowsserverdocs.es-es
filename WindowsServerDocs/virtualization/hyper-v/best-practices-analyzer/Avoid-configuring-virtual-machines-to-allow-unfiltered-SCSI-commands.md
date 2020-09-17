@@ -1,18 +1,17 @@
 ---
 title: Evite configurar máquinas virtuales para permitir comandos SCSI sin filtrar
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: dd4a3d78-a77f-451e-a383-d5cf45ea17cf
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 33c211073c74da334abb8b483fa36974216a1185
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 95d7fa223371aa3dbc3b66efcfefed217eed5216
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948588"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747090"
 ---
 # <a name="avoid-configuring-virtual-machines-to-allow-unfiltered-scsi-commands"></a>Evite configurar máquinas virtuales para permitir comandos SCSI sin filtrar
 
@@ -27,11 +26,11 @@ ms.locfileid: "87948588"
 |**Sistema operativo**|Windows Server 2016|
 |**Producto/Característica**|Hyper-V|
 |**Gravedad**|Advertencia|
-|**Categoría**|Operaciones|
+|**Categoría**|Operations|
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Una máquina virtual está configurada para permitir comandos SCSI sin filtrar.*
 
@@ -41,7 +40,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machine names>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Póngase en contacto con el proveedor de almacenamiento para determinar si se requiere esta configuración. Además, si el sistema operativo de administración u otros sistemas operativos invitados están en peligro o presentan un comportamiento inusual, vuelva a configurar la máquina virtual para que bloquee los comandos.*
 

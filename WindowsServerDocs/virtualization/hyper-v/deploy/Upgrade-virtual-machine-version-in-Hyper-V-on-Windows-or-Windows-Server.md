@@ -1,18 +1,17 @@
 ---
 title: Actualización de la versión de la máquina virtual en Hyper-V en Windows 10 o Windows Server
 description: Proporciona instrucciones y consideraciones para actualizar la versión de una máquina virtual
-manager: dongill
 ms.topic: article
 ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: 24e67bd88a644c44b65d5eb8ccd3d6190737b5db
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 236e0230c30e1d0260f4a72d1735b3ba687c3fd8
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995641"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746050"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Actualización de la versión de la máquina virtual en Hyper-V en Windows 10 o Windows Server
 
@@ -90,7 +89,7 @@ En la tabla siguiente se enumeran las versiones de configuración de máquina vi
 | Windows Server, versión 1903 |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;| &#10004;|
 |Windows Server, versión 1809|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Actualización de octubre de 2018 de Windows 10 (versión 1809)|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows Server, versión 1803|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows Server, versión 1803|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Actualización de abril de 2018 de Windows 10 (versión 1803)|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows 10 Fall Creators Update (versión 1709)|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows 10 Creators Update (versión 1703)|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|

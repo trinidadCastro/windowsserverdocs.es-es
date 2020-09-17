@@ -1,18 +1,17 @@
 ---
 title: La interfaz de equipo enlazada a un conmutador virtual debe estar en el modo predeterminado
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 8c118e1e-865f-4cff-acdc-7c35e45d5da9
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: dba3c0961b98a58b693a6c8afd0bb6bf454f7d06
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1e3d701ccc0ac7a6a3765df08f6b039fbb4ca3eb
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960378"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746140"
 ---
 # <a name="the-team-interface-bound-to-a-virtual-switch-should-be-in-default-mode"></a>La interfaz de equipo enlazada a un conmutador virtual debe estar en el modo predeterminado
 
@@ -35,7 +34,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 ## <a name="impact"></a>**Impacto**
 *Los siguientes conmutadores virtuales no pueden tener acceso a todas las VLAN: \n{0}*
 
-## <a name="resolution"></a>**Resolución**
+## <a name="resolution"></a>**Solución**
 *Use Administrador del servidor o el cmdlet de Windows PowerShell Set-NetLbfoTeamNic para restablecer la interfaz de equipo en el modo predeterminado.*
 
 

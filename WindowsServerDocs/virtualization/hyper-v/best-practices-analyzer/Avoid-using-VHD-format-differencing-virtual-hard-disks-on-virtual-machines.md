@@ -1,18 +1,17 @@
 ---
 title: Evite el uso de discos duros virtuales de diferenciación con formato VHD en máquinas virtuales que ejecutan cargas de trabajo de servidor en un entorno de producción.
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 272de33d-2708-4679-8564-ee28848a2839
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: ded65ab95c4a32ae55e9270cd5f77d80a6d1f9e1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 688dd348a7b00a32a50778cf0fb6350b37232f58
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946048"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747020"
 ---
 # <a name="avoid-using-vhd-format-differencing-virtual-hard-disks-on-virtual-machines-that-run-server-workloads-in-a-production-environment"></a>Evite el uso de discos duros virtuales de diferenciación con formato VHD en máquinas virtuales que ejecutan cargas de trabajo de servidor en un entorno de producción.
 
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Resolución**
+## <a name="resolution"></a>**Solución**
 *Apague la máquina virtual y convierta la cadena de discos duros virtuales de diferenciación con formato VHD al formato VHDX o mezcle la cadena en un disco duro virtual fijo. (El formato VHDX tiene mecanismos de confiabilidad que ayudan a proteger el disco de daños debidos a errores de alimentación). Sin embargo, no convierta el disco duro virtual si es probable que se adjunte a una versión anterior de Windows en algún momento. Las versiones de Windows anteriores a Windows Server 2012 no admiten el formato VHDX.*
 
 

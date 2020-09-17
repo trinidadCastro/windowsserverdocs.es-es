@@ -1,18 +1,17 @@
 ---
 title: Configure al menos la cantidad de memoria necesaria para una máquina virtual que ejecute Windows Vista y que esté habilitada para Memoria dinámica
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d3de7614-6eee-4839-a939-d390bca9ba89
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d90b1cc42701d1e53b9418a658e4e6765496fabd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 838bd69e9bc8efd250fa1b4339b1049eb521d6c9
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965582"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746900"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-vista-and-enabled-for-dynamic-memory"></a>Configure al menos la cantidad de memoria necesaria para una máquina virtual que ejecute Windows Vista y que esté habilitada para Memoria dinámica
 
@@ -29,7 +28,7 @@ Para más información sobre los análisis y los procedimientos recomendados, ve
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 *Una o varias máquinas virtuales están configuradas para usar Memoria dinámica con menos de la cantidad de memoria necesaria para Windows Vista.*
 
 ## <a name="impact"></a>Impacto
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 *Use el administrador de Hyper-V o Windows PowerShell para aumentar la cantidad mínima de memoria hasta 256 MB y la memoria de inicio y la memoria máxima al menos 512 MB.*
 
 ### <a name="increase-memory-using-hyper-v-manager"></a>Aumentar la memoria con el administrador de Hyper-V

@@ -1,18 +1,17 @@
 ---
 title: Exportar e importar máquinas virtuales
 description: Muestra cómo exportar e importar máquinas virtuales mediante el administrador de Hyper-V o Windows PowerShell.
-author: kbdazure
-ms.author: kathydav
-manager: dongill
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: 674c1640ced07df731b8667658fdbf3e5500e28d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8e5faf0b19a4452b4841eb75ced87f76bd58b117
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87988946"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746080"
 ---
 # <a name="export-and-import-virtual-machines"></a>Exportar e importar máquinas virtuales
 
@@ -56,7 +55,7 @@ Para importar una máquina virtual:
 
 1. En el menú **acciones** del administrador de Hyper-V, haga clic en **importar máquina virtual**.
 
-2. Haga clic en **Next**.
+2. Haga clic en **Siguiente**.
 
 3. Seleccione la carpeta que contiene los archivos exportados y haga clic en **siguiente**.
 

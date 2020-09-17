@@ -1,18 +1,17 @@
 ---
 title: Evitar pausar una máquina virtual
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 930f927c-e414-4a36-9786-028941e886e4
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6799795ae383fd0522ce0b35eba0443ae536b0dd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 956ada130cea2d489545c8206ae8283041e6868f
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970002"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747040"
 ---
 # <a name="avoid-pausing-a-virtual-machine"></a>Evitar pausar una máquina virtual
 
@@ -29,7 +28,7 @@ Para más información sobre los análisis y los procedimientos recomendados, ve
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Este servidor tiene una o más máquinas virtuales en un estado de pausa.*
 
@@ -39,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 Las máquinas virtuales en pausa no liberan la memoria asignada, lo que significa que la memoria no está disponible para iniciar otras máquinas virtuales.
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Si esto es intencionado, no es necesario realizar ninguna otra acción. De lo contrario, considere la posibilidad de reanudar estas máquinas virtuales o apagarlas.*
 

@@ -1,18 +1,17 @@
 ---
 title: Plan de aceleración de GPU en Windows Server
 description: Obtenga información sobre las diferentes tecnologías de Hyper-V para la aceleración de GPU, incluido DDA y vGPU de RemoteFX
-ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: 8cba3ac4d2e4680f480ff76db12c10553c1857d3
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 0646290c2dcd6bbffe1012aee6981820d7c7b51f
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996955"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745950"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>Plan de aceleración de GPU en Windows Server
 

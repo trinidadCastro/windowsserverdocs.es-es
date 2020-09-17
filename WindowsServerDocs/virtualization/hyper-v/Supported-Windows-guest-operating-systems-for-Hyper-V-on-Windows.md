@@ -1,18 +1,17 @@
 ---
 title: Sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server
 description: Enumera los sistemas operativos de Windows que se admiten para su uso como invitado en una máquina virtual. También proporciona vínculos a artículos similares para versiones anteriores de Hyper-V.
-manager: dongill
 ms.topic: article
 ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
-author: lizap
-ms.author: elizapo
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 01/08/2019
-ms.openlocfilehash: 53036a353fa08b7be06aae6b4b70353a8a99ea0e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2e5cf6c94d0127a283c640a48aaa2fced5472e9d
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997630"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746730"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server
 
@@ -20,7 +19,7 @@ ms.locfileid: "87997630"
 
 Hyper-V admite varias versiones de distribuciones de Windows Server, Windows y Linux que se ejecutan en máquinas virtuales, como sistemas operativos invitados. En este artículo se describen los sistemas operativos invitados de Windows Server y Windows. Para distribuciones de Linux y FreeBSD, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md).
 
-Algunos sistemas operativos tienen integrado Integration Services. Otros requieren la instalación o actualización de Integration Services como paso independiente después de configurar el sistema operativo en la máquina virtual. Para obtener más información, vea las secciones siguientes y [Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services).
+Algunos sistemas operativos tienen integrado Integration Services. Otros requieren la instalación o actualización de Integration Services como paso independiente después de configurar el sistema operativo en la máquina virtual. Para obtener más información, vea las secciones siguientes y  [Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services).
 
 ## <a name="supported-windows-server-guest-operating-systems"></a>Sistemas operativos invitados de Windows Server admitidos
 
@@ -32,7 +31,7 @@ A continuación se muestran las versiones de Windows Server que se admiten como 
 |Windows Server, versión 1903 |240 para la generación 2;<br>64 para la generación 1|Integrada||
 |Windows Server, versión 1809 |240 para la generación 2;<br>64 para la generación 1|Integrada||
 |Windows Server 2019 |240 para la generación 2;<br>64 para la generación 1|Integrada||
-|Windows Server, versión 1803 |240 para la generación 2;<br>64 para la generación 1|Integrada||
+|Windows Server, versión 1803 |240 para la generación 2;<br>64 para la generación 1|Integrada||
 |Windows Server 2016 |240 para la generación 2;<br>64 para la generación 1|Integrada||
 |Windows Server 2012 R2 |64|Integrada||
 |Windows Server 2012 |64|Integrada||

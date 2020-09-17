@@ -2,15 +2,15 @@
 title: Planeación de la implementación de dispositivos mediante la asignación discreta de dispositivos
 description: Más información sobre cómo funciona DDA en Windows Server
 ms.topic: article
-author: chrishuybregts
-ms.author: chrihu
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 08/21/2019
-ms.openlocfilehash: 189a4f399ac76f1b7f30c5b45725c3a4fb6a8215
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f53cef755d52fe1fc1e1bc540f89e7c243007eb3
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989852"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745960"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>Planeación de la implementación de dispositivos mediante la asignación discreta de dispositivos
 >Se aplica a: Microsoft Hyper-V Server 2016, Windows Server 2016, Microsoft Hyper-V Server 2019, Windows Server 2019

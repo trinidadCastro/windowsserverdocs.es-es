@@ -1,18 +1,17 @@
 ---
 title: Acerca del cifrado de volcado
 description: Describe cómo cifrar archivos de volcado y solucionar problemas de cifrado.
-manager: dongill
 ms.topic: article
-author: larsiwer
+ms.author: benarm
+author: BenjaminArmstrong
 ms.asset: b78ab493-e7c3-41f5-ab36-29397f086f32
-ms.author: kathydav
 ms.date: 11/03/2016
-ms.openlocfilehash: e80af001a54d3be471b3bbcc9fde08a07556d754
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: d2258a810993ea903efe670355720a5fc65a888b
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993437"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746490"
 ---
 # <a name="about-dump-encryption"></a>Acerca del cifrado de volcado
 El cifrado de volcado se puede usar para cifrar volcados de memoria y volcados en directo generados para un sistema. Los volcados de memoria se cifran mediante una clave de cifrado simétrica que se genera para cada volcado. Esta clave se cifra a continuación con la clave pública especificada por el administrador de confianza del host (protector de la clave de cifrado de volcado). Esto garantiza que solo alguien que tenga la clave privada correspondiente puede descifrar y, por tanto, tener acceso al contenido del volcado. Esta funcionalidad se aprovecha en un tejido protegido.
@@ -20,7 +19,7 @@ Nota: Si configura el cifrado de volcado, deshabilite también Informe de errore
 
 ## <a name="configuring-dump-encryption"></a>Configuración del cifrado de volcado
 ### <a name="manual-configuration"></a>Configuración manual
-Para activar el cifrado de volcado mediante el registro, configure los siguientes valores del registro en`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
+Para activar el cifrado de volcado mediante el registro, configure los siguientes valores del registro en `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
 
 | Nombre del valor | Tipo | Valor |
 | ---------- | ---- | ----- |

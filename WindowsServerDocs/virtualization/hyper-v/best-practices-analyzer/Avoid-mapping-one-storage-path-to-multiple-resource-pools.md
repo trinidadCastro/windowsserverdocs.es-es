@@ -1,18 +1,17 @@
 ---
 title: Evite asignar una ruta de acceso de almacenamiento a varios grupos de recursos
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 24992453-762b-4892-9a50-55d237b9b7f2
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 38e0fdb5956197984a78d195ea23a7e856634575
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb2756889907dd9e268782816a9d035c9e6478d7
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942073"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747050"
 ---
 # <a name="avoid-mapping-one-storage-path-to-multiple-resource-pools"></a>Evite asignar una ruta de acceso de almacenamiento a varios grupos de recursos
 
@@ -25,7 +24,7 @@ Para más información sobre los análisis y los procedimientos recomendados, ve
 |**Sistema operativo**|Windows Server 2016|
 |**Producto/Característica**|Hyper-V|
 |**Gravedad**|Advertencia|
-|**Categoría**|Operaciones|
+|**Categoría**|Operations|
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of pools>
 
-## <a name="resolution"></a>**Resolución**
+## <a name="resolution"></a>**Solución**
 *Use Windows PowerShell para volver a configurar los grupos de recursos de almacenamiento de modo que varios grupos no usen la misma ruta de acceso de almacenamiento.*
 
 

@@ -1,18 +1,17 @@
 ---
 title: Configuración de redes de área local virtual para Hyper-V
 description: Proporciona instrucciones para configurar una red de área local virtual (VLAN) para que la usen las máquinas virtuales en un host de Hyper-V.
-manager: dongill
 ms.topic: article
 ms.assetid: 8510a709-001c-4eee-b6d6-c451e8a8a836
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/11/2016
-ms.openlocfilehash: e44a60becc84e3b376797bd64ffe433ce44b8c55
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7b756127e7396ec96e3f8e6901aaabef1d5664aa
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990360"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746030"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>Configuración de redes de área local virtual para Hyper-V
 Redes de área local virtuales las \( VLAN \) ofrecen una manera de aislar el tráfico de red. Las VLAN se configuran en conmutadores y enrutadores que admiten 802.1 q. Si configura varias VLAN y desea que se produzca la comunicación entre ellas, deberá configurar los dispositivos de red para que lo permitan.

@@ -1,18 +1,17 @@
 ---
 title: Los controladores de almacenamiento deben estar habilitados en las máquinas virtuales para proporcionar acceso al almacenamiento conectado
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 532548a1-8ffe-4b5b-902e-ed2f0819012b
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 4e5973e7decde4b2bbe2f01af248a409d6425bf2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5eb1767fd51253ed26c0a169be1043b633dbcbcd
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960568"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746200"
 ---
 # <a name="storage-controllers-should-be-enabled-in-virtual-machines-to-provide-access-to-attached-storage"></a>Los controladores de almacenamiento deben estar habilitados en las máquinas virtuales para proporcionar acceso al almacenamiento conectado
 
@@ -29,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Es posible que uno o varios controladores de almacenamiento estén deshabilitados en una máquina virtual.*
 
@@ -39,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machine names>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Use Device Manager del sistema operativo invitado para habilitar todos los controladores de almacenamiento. Si el controlador de almacenamiento no es necesario, use el administrador de Hyper-V para quitarlo de la máquina virtual.*
 

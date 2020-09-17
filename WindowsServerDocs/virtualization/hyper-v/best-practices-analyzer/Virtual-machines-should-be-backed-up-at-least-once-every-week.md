@@ -1,18 +1,17 @@
 ---
 title: Se debe realizar una copia de seguridad de las máquinas virtuales al menos una vez cada semana
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 7dbd3dfc-c873-4a77-89f7-3166e18d9531
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: fccc0bb7c46206df210f699cdda84507343c342a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3b6b515f795d6c3e85a48b0fc5e6ac5165c5b6d5
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960208"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746230"
 ---
 # <a name="virtual-machines-should-be-backed-up-at-least-once-every-week"></a>Se debe realizar una copia de seguridad de las máquinas virtuales al menos una vez cada semana
 
@@ -29,7 +28,7 @@ Para más información sobre los análisis y los procedimientos recomendados, ve
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 *No se ha realizado una copia de seguridad de una o más máquinas virtuales en la última semana.*
 
 ## <a name="impact"></a>Impacto
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 *Programe una copia de seguridad de las máquinas virtuales para que se ejecute al menos una vez a la semana. Puede omitir esta regla si esta máquina virtual es una réplica y se está realizando una copia de seguridad de su máquina virtual principal, o si se trata de la máquina virtual principal y se está realizando una copia de seguridad de su réplica.*
 
 

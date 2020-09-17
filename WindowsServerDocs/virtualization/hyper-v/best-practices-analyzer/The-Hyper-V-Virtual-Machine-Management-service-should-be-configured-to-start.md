@@ -1,18 +1,17 @@
 ---
 title: El servicio de administración de máquinas virtuales de Hyper-V debe estar configurado para iniciarse automáticamente
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 222bbe76-c514-4a3f-b61b-860a4dc2826a
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 73ef8f7de89da5a05fedd53b9b23a32fed683dbf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8245e425adb1b1187918e9ee213135c16a190cde
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960488"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746500"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-should-be-configured-to-start-automatically"></a>El servicio de administración de máquinas virtuales de Hyper-V debe estar configurado para iniciarse automáticamente
 
@@ -29,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *El servicio administración de máquinas virtuales de Hyper-V no está configurado para iniciarse automáticamente.*
 
@@ -39,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 Las máquinas virtuales que se están ejecutando seguirán ejecutándose. Sin embargo, no podrá administrar máquinas virtuales ni crearlas o eliminarlas hasta que se ejecute el servicio.
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Use el complemento servicios o la herramienta de línea de comandos SC config para volver a configurar el servicio para que se inicie automáticamente.*
 

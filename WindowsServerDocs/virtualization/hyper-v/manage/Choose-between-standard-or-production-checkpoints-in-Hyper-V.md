@@ -1,18 +1,17 @@
 ---
 title: Elección entre los puntos de control estándar o de producción en Hyper-V
 description: Proporciona instrucciones para configurar una máquina virtual para usar puntos de control estándar o de producción.
-manager: dongill
 ms.topic: article
 ms.assetid: 92bb573b-03b7-470e-b72e-e35edf52b349
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: 9aeff8371b357d9e4b063d48c310b32843dc00af
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 00a3c8d94fc18d180faa8927b33b90dc98854da0
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968162"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746480"
 ---
 # <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>Elección entre los puntos de control estándar o de producción en Hyper-V
 

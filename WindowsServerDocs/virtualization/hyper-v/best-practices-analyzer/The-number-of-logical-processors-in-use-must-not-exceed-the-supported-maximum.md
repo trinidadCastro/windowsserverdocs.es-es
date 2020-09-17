@@ -1,18 +1,17 @@
 ---
 title: El número de procesadores lógicos en uso no debe superar el máximo admitido
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 66df8b02-91d1-424b-8934-a39c214d530e
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 4a78f81fa90bc25d9ca1888d2c74d90a417f1071
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 580d04af45416e08e536d815390be0e45b760312
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993430"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746150"
 ---
 # <a name="the-number-of-logical-processors-in-use-must-not-exceed-the-supported-maximum"></a>El número de procesadores lógicos en uso no debe superar el máximo admitido
 
@@ -29,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto que aparece en la herramienta Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *El servidor está configurado con demasiados procesadores lógicos.*
 
@@ -37,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto que aparece en la herramien
 
 *Microsoft no admite la ejecución de Hyper-V en este equipo.*
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Quite algunos procesadores de este equipo o use msconfig para limitar el número de procesadores disponibles.*
 

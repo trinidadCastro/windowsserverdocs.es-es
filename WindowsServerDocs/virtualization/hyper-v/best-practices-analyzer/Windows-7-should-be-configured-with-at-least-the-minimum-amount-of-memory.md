@@ -1,18 +1,17 @@
 ---
 title: Windows 7 debe configurarse con al menos la cantidad mínima de memoria
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados ".
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 1b81ec0b-ceca-4fba-83ea-90d5f1d9bda8
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: c85b4c34141cecab842f76ea37add32fd4200b0b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2668322287b26820f2e00e67e55598812cd5d9e3
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992640"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746120"
 ---
 # <a name="windows-7-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 7 debe configurarse con al menos la cantidad mínima de memoria
 
@@ -29,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Una máquina virtual que ejecuta Windows 7 se configura con menos de la cantidad mínima de RAM, que es 512 MB.*
 
@@ -39,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 ```
 <list of virtual machine names>
 ```
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual al menos 512 MB.*
 
