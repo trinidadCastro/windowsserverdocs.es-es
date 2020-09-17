@@ -1,18 +1,17 @@
 ---
 title: Se recomienda la pertenencia al dominio para servidores que ejecutan Hyper-V
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 2f4578e5-0848-46b4-a50b-7dbd480b80bf
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d83ccf628e27595d5eb367791937b196fc708a6e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6a813af7d5064f91870652e6b0073c5c73c62604
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935487"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745670"
 ---
 # <a name="domain-membership-is-recommended-for-servers-running-hyper-v"></a>Se recomienda la pertenencia al dominio para servidores que ejecutan Hyper-V
 
@@ -31,7 +30,7 @@ ms.locfileid: "87935487"
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Este servidor es miembro de un grupo de trabajo.*
 
@@ -41,7 +40,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 Unir este equipo al dominio permite la administración centralizada a través de directivas de identidad, seguridad y auditoría.
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Si tiene un entorno de dominio disponible, únase a este servidor a ese dominio.*
 

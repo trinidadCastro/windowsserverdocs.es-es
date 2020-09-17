@@ -1,18 +1,17 @@
 ---
 title: La autenticación basada en certificados está configurada, pero el certificado especificado no está instalado en el servidor réplica ni en los nodos del clúster de conmutación por error
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 4cabbce3-9367-4ddc-a108-1e5e1ab2bcff
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 8205ea267750e3fec78a756da00b0bd063ed8baf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 545a51f110a264e1fb456039362e373a51bcb2f8
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948518"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745870"
 ---
 # <a name="certificate-based-authentication-is-configured-but-the-specified-certificate-is-not-installed-on-the-replica-server-or-failover-cluster-nodes"></a>La autenticación basada en certificados está configurada, pero el certificado especificado no está instalado en el servidor réplica ni en los nodos del clúster de conmutación por error
 
@@ -31,7 +30,7 @@ ms.locfileid: "87948518"
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *El certificado de seguridad que la réplica de Hyper-V se ha configurado para usar para proporcionar replicación basada en certificados no está instalado en el servidor réplica (o en los nodos de clúster de conmutación por error).*
 
@@ -41,7 +40,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of nodes>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Instale el certificado configurado en el servidor réplica (y todos los nodos asociados en el clúster de conmutación por error, si existe).*
 

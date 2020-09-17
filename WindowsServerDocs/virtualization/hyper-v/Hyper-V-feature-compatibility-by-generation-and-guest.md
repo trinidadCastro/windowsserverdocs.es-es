@@ -1,18 +1,17 @@
 ---
 title: Compatibilidad de las características de Hyper-V por generación e invitado
 description: Enumera las generaciones y los sistemas operativos que son compatibles con las características de Hyper-V clave
-manager: dongill
 ms.topic: article
 ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 12/05/2016
-ms.openlocfilehash: 5de7f55d9fead7b720991749dd1c83aa727636c4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e2c66cc95513cce54696f785d5016a380bc9fe98
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997027"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745900"
 ---
 # <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>Compatibilidad de las características de Hyper-V por generación e invitado
 
@@ -34,7 +33,7 @@ Agrupación en clústeres invitados | 1 y 2 | Invitados que ejecutan aplicacione
 Replicación | 1 y 2 | Cualquier invitado compatible
 Controlador de dominio | 1 y 2 | Cualquier invitado de Windows Server compatible con solo puntos de control de producción. Consulte [sistemas operativos invitados compatibles con Windows Server](./supported-windows-guest-operating-systems-for-hyper-v-on-windows.md#supported-windows-server-guest-operating-systems)
 
-## <a name="compute"></a>Proceso
+## <a name="compute"></a>Compute
 
 Característica  | Generation | Sistema operativo invitado
 ------------- | ------------- | -----------

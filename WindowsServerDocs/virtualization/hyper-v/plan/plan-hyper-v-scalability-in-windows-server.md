@@ -1,17 +1,16 @@
 ---
 title: Planear la escalabilidad de Hyper-V en Windows Server 2016 y Windows Server 2019
 description: Muestra el número máximo admitido de componentes que puede Agregar o quitar de Hyper-V y máquinas virtuales, como la cantidad de memoria y el número de procesadores virtuales.
-manager: dongill
 ms.topic: article
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 09/28/2016
-ms.openlocfilehash: bf7ad4e90f5303041153bb4f651d2f09c613da84
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2e7eecbf68a8b08caae2851bce45673ebb09bcef
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996058"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745930"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>Planear la escalabilidad de Hyper-V en Windows Server 2016 y Windows Server 2019
 
@@ -30,7 +29,7 @@ Estos valores máximos se aplican a cada máquina virtual. No todos los componen
 |Componente|Máxima|Notas|
 |-------------|-----------|---------|
 |Puntos de control|50|El número real puede ser menor, ya que depende del almacenamiento disponible. Cada punto de control se almacena como un archivo. avhd que usa el almacenamiento físico.|
-|Memory|12 TB para la generación 2; <br>1 TB para la generación 1|Revise los requisitos para el sistema operativo específico a fin de determinar las cantidades mínimas y recomendadas.|
+|Memoria|12 TB para la generación 2; <br>1 TB para la generación 1|Revise los requisitos para el sistema operativo específico a fin de determinar las cantidades mínimas y recomendadas.|
 |Puertos (COM) serie|2|Ninguno.|
 |Tamaño de los discos físicos conectados directamente a una máquina virtual|Varía|El tamaño máximo viene determinado por el sistema operativo invitado.|
 |Adaptadores de canal de fibra virtual|4|El procedimiento recomendado es conectar cada adaptador de canal de fibra virtual a una SAN virtual diferente.|
@@ -48,7 +47,7 @@ Estos valores máximos se aplican a cada host de Hyper-V.
 |Componente|Máxima|Notas|
 |-------------|-----------|---------|
 |Procesadores lógicos|512|Ambos deben estar habilitados en el firmware:<p>-Virtualización asistida por hardware<br />-Prevención de ejecución de datos (DEP) forzada por hardware<p>El sistema operativo del host (partición raíz) solo verá los procesadores lógicos 320 máximos|  
-|Memory|24 TB|Ninguno.|
+|Memoria|24 TB|Ninguno.|
 |Equipos de adaptadores de red (formación de equipos NIC)|Hyper-V no impone límites.|Para obtener más información, consulte [formación de equipos NIC](../../../networking/technologies/nic-teaming/NIC-Teaming.md).|
 |Adaptadores de red físicos|Hyper-V no impone límites.|Ninguno.|
 |Máquinas virtuales en ejecución por servidor|1024|Ninguno.|

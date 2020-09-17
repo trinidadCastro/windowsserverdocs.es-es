@@ -1,18 +1,17 @@
 ---
 title: El hipervisor de Windows debe estar en ejecución
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
-author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: aa89f3735151b2dee795c1a325e22446e3770fa0
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 75437680370672a1eef9fad2957f398ce4f267d7
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994536"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744826"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>El hipervisor de Windows debe estar en ejecución
 
@@ -27,7 +26,7 @@ ms.locfileid: "87994536"
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *El hipervisor de Windows no se está ejecutando.*
 
@@ -35,7 +34,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 *No se pueden iniciar máquinas virtuales hasta que se ejecute el hipervisor de Windows.*
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Compruebe el catálogo de Windows Server para ver si el servidor está calificado para ejecutar Hyper-V. A continuación, asegúrese de que el BIOS está habilitado para la virtualización asistida por hardware y la prevención de ejecución de datos aplicada por hardware. A continuación, compruebe el registro de eventos del hipervisor de Hyper-V.*
 
