@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a2fd0e688d33265119c8dcb915d485e953507c80
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 56d953c721fff2218b256fa99d83078485438c0f
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990487"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765976"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Administrar la infraestructura hiperconvergida con el centro de administración de Windows
 
@@ -25,7 +25,7 @@ La infraestructura hiperconvergida consolida el proceso, el almacenamiento y la 
 > ¿Desea adquirir una infraestructura hiperconvergida? Microsoft recomienda estas soluciones [definidas por software de Windows Server](https://microsoft.com/wssd) de nuestros asociados. Se diseñan, ensamblan y validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda ponerse en marcha rápidamente.
 
 > [!IMPORTANT]
-> Algunas de las características que se describen en este artículo solo están disponibles en la versión preliminar del centro de administración de Windows. [¿Cómo obtener esta versión?](https://aka.ms/windowsadmincenter)
+> Algunas de las características que se describen en este artículo solo están disponibles en la versión preliminar del centro de administración de Windows. [¿Cómo obtener esta versión?](../overview.md)
 
 ## <a name="what-is-windows-admin-center"></a>¿Qué es Windows Admin Center?
 
@@ -33,7 +33,7 @@ El [centro de administración de Windows](../overview.md) es la herramienta de a
 
 ![Panel de clúster hiperconvergido](../media/manage-hyper-converged/hci-dashboard-v1809.png)
 
-## <a name="key-features"></a>Características principales
+## <a name="key-features"></a>Principales características
 
 Los aspectos destacados del centro de administración de Windows para la infraestructura hiperconvergida incluyen:
 
@@ -44,7 +44,7 @@ Los aspectos destacados del centro de administración de Windows para la infraes
 
 Microsoft está desarrollando activamente el centro de administración de Windows para la infraestructura hiperconvergida. Recibe actualizaciones frecuentes que mejoran las características existentes y agregan nuevas características.
 
-## <a name="before-you-start"></a>Antes de comenzar
+## <a name="before-you-start"></a>Antes de empezar
 
 Para administrar el clúster como una infraestructura hiperconvergida en el centro de administración de Windows, debe ejecutar Windows Server 2016 o Windows Server 2019 y tener habilitado Hyper-V y Espacios de almacenamiento directo. Opcionalmente, también puede tener habilitadas las redes definidas por software y administradas a través del centro de administración de Windows.
 
@@ -90,13 +90,13 @@ Puede configurar la infraestructura hiperconvergida que ejecuta Windows Server 2
 
 La implementación tardará aproximadamente entre 30 y 45 minutos.
 
-## <a name="get-started"></a>Primeros pasos
+## <a name="get-started"></a>Introducción
 
 Una vez implementada la infraestructura hiperconvergida, puede administrarla mediante el centro de administración de Windows.
 
 ### <a name="install-windows-admin-center"></a>Instalación de Windows Admin Center
 
-Si todavía no lo ha hecho, descargue e instale el centro de administración de Windows. La forma más rápida de empezar a trabajar es instalarla en el equipo con Windows 10 y administrar los servidores de forma remota. Esto tarda menos de cinco minutos. [Descargue ahora](https://aka.ms/windowsadmincenter) u [Obtenga más información sobre otras opciones de instalación](../deploy/install.md).
+Si todavía no lo ha hecho, descargue e instale el centro de administración de Windows. La forma más rápida de empezar a trabajar es instalarla en el equipo con Windows 10 y administrar los servidores de forma remota. Esto tarda menos de cinco minutos. [Descargue ahora](../overview.md) u [Obtenga más información sobre otras opciones de instalación](../deploy/install.md).
 
 ### <a name="add-hyper-converged-cluster"></a>Agregar clúster hiperconvergido
 
@@ -231,7 +231,7 @@ Si acaba de empezar, estos son algunos tutoriales rápidos que le ayudarán a sa
 
 ### <a name="pause-and-safely-restart-a-server"></a>Pausar y reiniciar un servidor de forma segura
 
-1. En el **Panel**, seleccione **servidores** en la navegación en el lado izquierdo o haga clic en el vínculo **Ver servidores >** en el icono de la esquina inferior derecha del panel.
+1. En el **Panel**, seleccione **servidores** en la navegación en el lado izquierdo o haga clic en el vínculo **Ver servidores >**  en el icono de la esquina inferior derecha del panel.
 2. En la parte superior, cambie de **Resumen** a la pestaña **inventario** .
 3. Seleccione un servidor haciendo clic en su nombre para abrir la página de detalles del **servidor** .
 4. Haga clic en **pausar servidor para mantenimiento**. Si es seguro continuar, se moverán las máquinas virtuales a otros servidores del clúster. El servidor tendrá un agotamiento del estado mientras esto sucede. Si lo desea, puede ver las máquinas virtuales que se mueven en la página **máquinas virtuales > inventario** , donde su servidor host se muestra claramente en la cuadrícula. Cuando todas las máquinas virtuales se hayan cambiado, el estado del servidor será en **pausa**.
@@ -282,7 +282,7 @@ También puede configurar la red virtual al crear una máquina virtual.
 
 - [Envíe y vote solicitudes de características en UserVoice](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
 - [Únase al foro del centro de administración de Windows en Microsoft Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
-- Tweet hasta`@servermgmt`
+- Tweet hasta `@servermgmt`
 
 ### <a name="additional-references"></a>Referencias adicionales
 

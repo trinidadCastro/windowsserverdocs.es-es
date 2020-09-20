@@ -6,12 +6,12 @@ manager: dongill
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 3b1a3fa120e27439c1ec55f68521b813588d330b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b186f664411bde60351c949c0ca16e7b4d3bb40c
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965952"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766998"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Novedades de almacenamiento en Windows Server
 
@@ -126,7 +126,7 @@ Para obtener el mayor rendimiento, todos los miembros del grupo de replicación 
 
 #### <a name="test-failover"></a>Conmutación por error de prueba
 
-Ahora puede montar temporalmente una instantánea del almacenamiento replicado en un servidor de destino con fines de prueba o de copia de seguridad. Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
+Ahora puede montar temporalmente una instantánea del almacenamiento replicado en un servidor de destino con fines de prueba o de copia de seguridad. Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](./storage-replica/storage-replica-frequently-asked-questions.md).
 
 #### <a name="windows-admin-center-support"></a>Soporte técnico de Windows Admin Center
 
@@ -170,7 +170,7 @@ Para obtener más información, consulte [información general del canal semianu
 
 La protección de recuperación ante desastres agregada por réplica de almacenamiento se ha ampliado para incluir:
 
-- **Conmutación por error de prueba**: la opción para montar el almacenamiento de destino ya es posible mediante la característica Conmutación por error de prueba. Puedes montar una instantánea del almacenamiento replicado en los nodos de destino temporalmente para realizar pruebas o copias de seguridad. Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
+- **Conmutación por error de prueba**: la opción para montar el almacenamiento de destino ya es posible mediante la característica Conmutación por error de prueba. Puedes montar una instantánea del almacenamiento replicado en los nodos de destino temporalmente para realizar pruebas o copias de seguridad. Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](./storage-replica/storage-replica-frequently-asked-questions.md).
 - **Compatibilidad con el centro de administración de Windows**: la compatibilidad con la administración gráfica de la replicación ahora está disponible en el centro de administración de Windows a través de la herramienta Administrador del servidor. Esto incluye la replicación de servidor a servidor, de clúster a clúster, así como de la replicación de clúster extendido.
 
 Réplica de almacenamiento también contiene las siguientes mejoras:

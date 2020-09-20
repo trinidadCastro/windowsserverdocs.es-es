@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 381073ad383913684b1b861883b981a19583767f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4fd03195feb275bd56c6958f8436c607829c8392
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997531"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766668"
 ---
 # <a name="deploy-windows-admin-center-in-azure"></a>Implementación de Windows Admin Center en Azure
 
@@ -24,7 +24,7 @@ Puede descargar [Deploy-WACAzVM.ps1](https://aka.ms/deploy-wacazvm) que se ejecu
 ### <a name="prerequisites"></a>Requisitos previos
 
 * Configure su cuenta en [Azure Cloud Shell](https://shell.azure.com). Si esta es la primera vez que usa Cloud Shell, se le pedirá que asocie o cree una cuenta de almacenamiento de Azure con Cloud Shell.
-* En un Cloud Shell de **PowerShell** , vaya a su directorio principal:```PS Azure:\> cd ~```
+* En un Cloud Shell de **PowerShell** , vaya a su directorio principal: ```PS Azure:\> cd ~```
 * Para cargar el ```Deploy-WACAzVM.ps1``` archivo, arrástrelo y colóquelo desde el equipo local en cualquier parte de la ventana de Cloud Shell.
 
 Si especifica su propio certificado:
@@ -145,7 +145,7 @@ Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 ### <a name="requirements-for-managed-azure-vms"></a>Requisitos para máquinas virtuales de Azure administradas
 
 El puerto 5985 (WinRM sobre HTTP) debe estar abierto y tener un agente de escucha activo.
-Puede usar el código siguiente en Azure Cloud Shell para actualizar los nodos administrados. ```$ResourceGroupName```y ```$Name``` usan las mismas variables que el script de implementación, pero tendrá que usar el ```$Credential``` específico para la máquina virtual que administra.
+Puede usar el código siguiente en Azure Cloud Shell para actualizar los nodos administrados. ```$ResourceGroupName``` y ```$Name``` usan las mismas variables que el script de implementación, pero tendrá que usar el ```$Credential``` específico para la máquina virtual que administra.
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -160,7 +160,7 @@ Antes de instalar el centro de administración de Windows en la máquina virtual
 > [!NOTE]
 > Estas instrucciones son para instalar en Windows Server con experiencia de escritorio, no en una instalación Server Core.
 
-1. [Descargue el centro de administración de Windows](https://aka.ms/windowsadmincenter) en el equipo local.
+1. [Descargue el centro de administración de Windows](../overview.md) en el equipo local.
 
 2. Establezca una conexión de escritorio remoto a la máquina virtual, copie el MSI desde la máquina local y péguelo en la máquina virtual.
 
@@ -192,6 +192,6 @@ Llegados a este punto, debería poder acceder al centro de administración de Wi
 
 Al intentar obtener acceso al centro de administración de Windows, el explorador solicitará las credenciales para tener acceso a la máquina virtual en la que está instalado el centro de administración de Windows. Aquí tendrá que especificar las credenciales que se encuentran en el grupo local usuarios o administradores locales de la máquina virtual.
 
-Para agregar otras máquinas virtuales a la red virtual, asegúrese de que WinRM se ejecuta en las máquinas virtuales de destino mediante la ejecución de lo siguiente en PowerShell o el símbolo del sistema en la máquina virtual de destino:`winrm quickconfig`
+Para agregar otras máquinas virtuales a la red virtual, asegúrese de que WinRM se ejecuta en las máquinas virtuales de destino mediante la ejecución de lo siguiente en PowerShell o el símbolo del sistema en la máquina virtual de destino: `winrm quickconfig`
 
 Si no se ha unido a un dominio de la máquina virtual de Azure, la máquina virtual se comporta como un servidor en grupo de trabajo, por lo que debe asegurarse de que tiene en cuenta el [uso del centro de administración de Windows en un grupo de trabajo](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup).

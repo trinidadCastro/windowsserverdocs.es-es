@@ -7,12 +7,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 29ecf10ba0591f25cc4b24a11bb614e53cdcca22
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c5619baa5123d0cd611cb9371cd3944fdd91fb3c
+ms.sourcegitcommit: 877d6db73d9520e3a23738d6528016235493cff3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946608"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90779269"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>Paso 7.5. Creación de perfiles de VPNv2 basados en OMA-DM en dispositivos de Windows 10
 
@@ -49,7 +49,7 @@ El equipo cliente de Windows 10 ya se configuró con una conexión VPN mediante 
     <TLSExtensions xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
     ```
 
-4. Seleccione la hoja **acceso condicional** y alternancia **acceso condicional para esta conexión VPN** a **habilitado**.
+4. Seleccione la hoja **acceso condicional** y active la opción **acceso condicional para esta conexión VPN** a **habilitada**.
 
    Al habilitar esta opción, se cambia el valor ** \<DeviceCompliance> \<Enabled> true \</Enabled> ** en el perfil XML de VPNv2.
 

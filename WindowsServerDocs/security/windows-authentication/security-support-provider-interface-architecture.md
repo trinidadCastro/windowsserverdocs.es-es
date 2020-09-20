@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: aec55bca0be096a3866cc49e718743a9c32d8f6b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: da7c390427a3f0f2348d91e14d0affef905db390
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638746"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766958"
 ---
 # <a name="security-support-provider-interface-architecture"></a>Security Support Provider Interface Architecture
 
@@ -83,9 +83,9 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [Microsoft Kerberos (Windows)](/windows/win32/secauthn/microsoft-kerberos)
 
--   [\[MS-KILE \] : extensiones de protocolo Kerberos](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
+-   [\[MS-KILE \] : extensiones de protocolo Kerberos](/openspecs/windows_protocols/ms-kile/2a32282e-dd48-4ad9-a542-609804b02cc9)
 
--   [\[MS-SFU \] : extensiones de protocolo Kerberos: especificación del Protocolo de delegación limitada y de servicio para el usuario](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
+-   [\[MS-SFU \] : extensiones de protocolo Kerberos: especificación del Protocolo de delegación limitada y de servicio para el usuario](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94)
 
 -   [SSP/SSP de Kerberos (Windows)](/windows/win32/secauthn/kerberos-ssp-ap)
 
@@ -139,7 +139,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [Autenticación Microsoft Digest (Windows)](/windows/win32/secauthn/microsoft-digest-ssp)
 
--   [\[MS-DPSP \] : extensiones del protocolo Digest](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
+-   [\[MS-DPSP \] : extensiones del protocolo Digest](/openspecs/windows_protocols/ms-dpsp/3e44be62-2067-472a-9ef0-e937298b68fb)
 
 ### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>Proveedor de compatibilidad con seguridad de Schannel
 El canal seguro (Schannel) se usa para la autenticación de servidor basada en Web, como cuando un usuario intenta tener acceso a un servidor Web seguro.
@@ -177,7 +177,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [Referencia técnica de TLS/SSL](/previous-versions/windows/it-pro/windows-server-2003/cc784149(v=ws.10))
 
--   [\[MS-TLSP \] : Perfil de seguridad de la capa de transporte (TLS)](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
+-   [\[MS-TLSP \] : Perfil de seguridad de la capa de transporte (TLS)](/openspecs/windows_protocols/ms-tlsp/58aba05b-62b0-4cd1-b88b-dc8a24920346)
 
 ### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>Negociar proveedor de compatibilidad de seguridad
 El mecanismo de negociación simple y protegida de GSS-API (SPNEGO) constituye la base para negociar SSP, whichcan se puede usar para negociar un protocolo de autenticación específico. Cuando una aplicación llama en SSPI para iniciar sesión en una red, puede especificar un SSP para que procese la solicitud. Si la aplicación especifica el SSP Negotiate, analiza la solicitud y selecciona el proveedor adecuado para administrar la solicitud, en función de las directivas de seguridad configuradas por el cliente.
@@ -194,9 +194,9 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [Microsoft Negotiate (Windows)](/windows/win32/secauthn/microsoft-negotiate)
 
--   [\[MS-SPNG \] : extensiones simples y protegidas del mecanismo de negociación de API (SPNEGO)](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
+-   [\[MS-SPNG \] : extensiones simples y protegidas del mecanismo de negociación de API (SPNEGO)](/openspecs/windows_protocols/ms-spng/f377a379-c24f-4a0f-a3eb-0d835389e28a)
 
--   [\[Especificación del Protocolo de autenticación HTTP MS-N2HT \] : Negotiate y Nego2](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
+-   [\[Especificación del Protocolo de autenticación HTTP MS-N2HT \] : Negotiate y Nego2](/openspecs/windows_protocols/ms-n2ht/4b88aa77-4b12-4933-8740-0f32d8f4eacf)
 
 ### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>Proveedor de compatibilidad con seguridad de credenciales
 El proveedor de servicios de seguridad de credenciales (CredSSP) proporciona una experiencia de usuario de inicio de sesión único (SSO) al iniciar nuevas sesiones de Terminal Services y Servicios de Escritorio remoto. CredSSP permite a las aplicaciones delegar las credenciales de los usuarios desde el equipo cliente (mediante el SSP del lado cliente) al servidor de destino (a través del SSP del servidor), en función de las directivas del cliente. Las directivas CredSSP se configuran mediante directiva de grupo y la delegación de credenciales está desactivada de forma predeterminada.
@@ -207,7 +207,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 **Recursos adicionales para el SSP de credenciales**
 
--   [\[MS-CSSP \] : especificación del Protocolo de proveedor de compatibilidad para seguridad de credenciales (CredSSP)](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
+-   [\[MS-CSSP \] : especificación del Protocolo de proveedor de compatibilidad para seguridad de credenciales (CredSSP)](/openspecs/windows_protocols/ms-cssp/85f57821-40bb-46aa-bfcb-ba9590b8fc30)
 
 -   [Proveedor de servicios de seguridad de credenciales e inicio de sesión único para Terminal Services](/previous-versions/windows/it-pro/windows-vista/cc749211(v=ws.10))
 

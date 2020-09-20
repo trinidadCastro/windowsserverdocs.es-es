@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9147d88b2d31def46e7a755abf17a2cdf767f8a2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 71c719bb4c148a0ff1b287011086ba75e5a3fc69
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990691"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766578"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
 
@@ -108,7 +108,7 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 </tr>
 <tr class="odd">
 <td>Sistema de archivos</td>
-<td>Sistema de archivos resistente (<a href="https://docs.microsoft.com/windows-server/storage/refs/refs-overview">ReFS</a>)</td>
+<td>Sistema de archivos resistente (<a href="/windows-server/storage/refs/refs-overview">ReFS</a>)</td>
 <td>Recomendado con Espacios de almacenamiento directo</td>
 <td>Recomendado con Espacios de almacenamiento directo</td>
 </tr>
@@ -209,13 +209,13 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <td>No</td>
 </tr>
 <tr class="even">
-<td>Aplicaciones</td>
+<td>APLICACIONES</td>
 <td>Hyper-V</td>
 <td>No recomendado</td>
 <td>Sí</td>
 </tr>
 <tr class="odd">
-<td>Aplicaciones</td>
+<td>APLICACIONES</td>
 <td>Microsoft SQL Server</td>
 <td>No recomendado</td>
 <td>Sí</td>
@@ -223,7 +223,7 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 </tbody>
 </table>
 
-\*La redirección de carpetas, Archivos sin conexión, perfiles de usuario móviles o directorios principales generan un gran número de escrituras que se deben escribir inmediatamente en el disco (sin almacenamiento en búfer) al usar recursos compartidos de archivos disponibles continuamente, lo que reduce el rendimiento en comparación con los recursos compartidos de archivos de uso general. Los recursos compartidos de archivos disponibles continuamente también son incompatibles con el Administrador de recursos del servidor de archivos y con los equipos que ejecutan Windows XP. Además, es posible que Archivos sin conexión no pase al modo sin conexión durante 3-6 minutos después de que un usuario pierda el acceso a un recurso compartido, lo que podría frustrar a los usuarios que todavía no utilicen el modo sin conexión de Archivos sin conexión.
+\* La redirección de carpetas, Archivos sin conexión, perfiles de usuario móviles o directorios principales generan un gran número de escrituras que se deben escribir inmediatamente en el disco (sin almacenamiento en búfer) al usar recursos compartidos de archivos disponibles continuamente, lo que reduce el rendimiento en comparación con los recursos compartidos de archivos de uso general. Los recursos compartidos de archivos disponibles continuamente también son incompatibles con el Administrador de recursos del servidor de archivos y con los equipos que ejecutan Windows XP. Además, es posible que Archivos sin conexión no pase al modo sin conexión durante 3-6 minutos después de que un usuario pierda el acceso a un recurso compartido, lo que podría frustrar a los usuarios que todavía no utilicen el modo sin conexión de Archivos sin conexión.
 
 ## <a name="practical-applications"></a>Aplicaciones prácticas
 
@@ -254,7 +254,7 @@ En la tabla siguiente, se enumeran las características que forman parte de este
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="failover-clustering.md">Clústeres de conmutación por error</a></td>
+<td><a href="/windows-server/failover-clustering/failover-clustering-overview">Clústeres de conmutación por error</a></td>
 <td>Los clústeres de conmutación por error agregaron las siguientes características en Windows Server 2012 para admitir el servidor de archivos de escalabilidad horizontal: nombre de red distribuida, el tipo de recurso Servidor de archivos de escalabilidad horizontal, volúmenes compartidos de clúster (CSV) 2 y el rol de alta disponibilidad Servidor de archivos de escalabilidad horizontal. Para obtener más información acerca de estas características, vea <a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">qué&#39;s novedades en los clústeres de conmutación por error en Windows Server 2012 [Redirigido]</a>.</td>
 </tr>
 <tr class="even">

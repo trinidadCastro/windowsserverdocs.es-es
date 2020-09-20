@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: b28621b24b321cdc22f07c03e9c04f0dde22759b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d85016fd3f338ab87d6516815ee04c652875bdf5
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972022"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766768"
 ---
 # <a name="adding-and-developing-new-capabilities"></a>Adición y desarrollo de nuevas capacidades
 
@@ -31,7 +31,7 @@ Cualquier nueva funcionalidad puede integrarse con la infraestructura de System 
 Use los siguientes recursos para ayudarle a empezar a escribir sus propias funcionalidades personalizadas:
 - [Obtenga información](data-sources.md) sobre los orígenes de datos que puede recopilar.
 - [Descargue](https://www.nuget.org/packages/Microsoft.WindowsServer.SystemInsights/) el paquete NuGet de System Insights, que contiene las clases e interfaces que necesita para escribir una funcionalidad.
-- [Visite](https://aka.ms/systeminsights-api) la documentación de la API para obtener información sobre las clases e interfaces de System Insights.
+- [Visite](/dotnet/api/microsoft.systeminsights.capability) la documentación de la API para obtener información sobre las clases e interfaces de System Insights.
 - [Use](https://aka.ms/systeminsights-samplecapability) la funcionalidad de ejemplo de System Insights para ayudarle a empezar. Esto muestra cómo registrar una funcionalidad, especificar los orígenes de datos que se van a recopilar y empezar a analizar los datos del sistema.
 
 >[!NOTE]

@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 4e4bdf9c33d4511c470da50462469fadbd0641ce
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 358fae9a9ee477537d3ee929ff81920175d58298
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996238"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766418"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalación de HGS en un bosque bastión existente
 
@@ -76,7 +76,7 @@ Si usa directiva de grupo para configurar la asignación de derechos de usuario,
 
 ## <a name="jea-security-groups"></a>Grupos de seguridad de JEA
 
-Al configurar HGS, se configura un punto de conexión de PowerShell de [Administración suficiente (jea)](https://aka.ms/JEAdocs) para permitir que los administradores administren HGS sin necesidad de privilegios de administrador local completos.
+Al configurar HGS, se configura un punto de conexión de PowerShell de [Administración suficiente (jea)](/powershell/scripting/learn/remoting/jea/overview) para permitir que los administradores administren HGS sin necesidad de privilegios de administrador local completos.
 No es necesario usar JEA para administrar HGS, pero todavía debe configurarse al ejecutar Initialize-HgsServer.
 La configuración del punto de conexión de JEA consiste en designar dos grupos de seguridad que contienen los administradores de HGS y los revisores de HGS.
 Los usuarios que pertenecen al grupo de administración pueden agregar, cambiar o quitar directivas en HGS; los revisores solo pueden ver la configuración actual.

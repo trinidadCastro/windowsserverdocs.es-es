@@ -7,19 +7,19 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e7ebf0f2923e565e16e546a7804ee42771eec83d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4caa619c248a30c48cdfc291f2fde25ba51d85f7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640635"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766288"
 ---
 # <a name="repair-bde"></a>repair-bde
 
 Intenta reconstruir partes críticas de una unidad gravemente dañada y salvar los datos recuperables si la unidad se cifró mediante BitLocker y si tiene una contraseña de recuperación o una clave de recuperación válidas para el descifrado.
 
 > [!IMPORTANT]
-> Si los datos de los metadatos de BitLocker en la unidad están dañados, debe ser capaz de proporcionar un paquete de claves de copia de seguridad además de la contraseña de recuperación o la clave de recuperación. Si usó la configuración de copia de seguridad de clave predeterminada para Active Directory Domain Services, se realizará una copia de seguridad del paquete de claves. Puede usar [BitLocker: usar el visor de contraseñas de recuperación de BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-recovery-password-viewer) para obtener el paquete de claves de AD DS.
+> Si los datos de los metadatos de BitLocker en la unidad están dañados, debe ser capaz de proporcionar un paquete de claves de copia de seguridad además de la contraseña de recuperación o la clave de recuperación. Si usó la configuración de copia de seguridad de clave predeterminada para Active Directory Domain Services, se realizará una copia de seguridad del paquete de claves. Puede usar [BitLocker: usar el visor de contraseñas de recuperación de BitLocker](/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-recovery-password-viewer) para obtener el paquete de claves de AD DS.
 >
 > Con el paquete de claves y la contraseña de recuperación o la clave de recuperación, puede descifrar partes de una unidad protegida con BitLocker, incluso si el disco está dañado. Cada paquete de claves solo funciona para una unidad con el identificador de unidad correspondiente.
 

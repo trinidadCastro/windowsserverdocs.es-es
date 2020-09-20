@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: e78afb47877bb908df81876afe01d2f60b853c70
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 3f4e80136b3c70b7a121663a6defa048d2b0e852
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996712"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766228"
 ---
 # <a name="managing-capabilities"></a>Administración de funcionalidades
 
@@ -22,7 +22,7 @@ En Windows Server 2019, System Insights expone una variedad de opciones de confi
 >[!TIP]
 >También puede usar estos breves vídeos para ayudarle a empezar a trabajar y administrar con confianza System Insights: [Introducción a System Insights en 10 minutos](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
 
-Aunque en esta sección se proporcionan ejemplos de PowerShell, puede usar la [documentación de PowerShell de System Insights](https://aka.ms/systeminsightspowershell) para ver todos los cmdlets, parámetros y conjuntos de parámetros de System Insights.
+Aunque en esta sección se proporcionan ejemplos de PowerShell, puede usar la [documentación de PowerShell de System Insights](/powershell/module/systeminsights/) para ver todos los cmdlets, parámetros y conjuntos de parámetros de System Insights.
 
 ## <a name="viewing-capabilities"></a>Funciones de visualización
 

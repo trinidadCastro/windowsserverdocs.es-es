@@ -6,12 +6,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
-ms.openlocfilehash: 5510e5459c30e51bed3f4f724fe02c6a96f9fc31
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8959cde3254db31f077ae276ad72899a12f09feb
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936334"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766848"
 ---
 # <a name="data-deduplication-overview"></a>Introducción a la desduplicación de datos
 
@@ -51,7 +51,7 @@ Los ahorros de espacio que pueden obtenerse con Desduplicación de datos depende
 Los servidores de archivos de uso general son los servidores de archivos destinados a un uso general que pueden contener alguno de los siguientes tipos de recursos compartidos: <ul>
                     <li>Recursos compartidos del equipo</li>
                     <li>Carpetas particulares de usuario</li>
-                    <li><a href="https://technet.microsoft.com/library/dn265974.aspx">Carpetas de trabajo</a></li>
+                    <li><a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265974(v=ws.11)">Carpetas de trabajo</a></li>
                     <li>Recursos compartidos de desarrollo de software</li>
                 </ul>
 Los servidores de archivos de uso general son un buen candidato para Desduplicación de datos debido a que los usuarios suelen tener muchas copias o versiones del mismo archivo. Los recursos compartidos de desarrollo de software se benefician de Desduplicación de datos porque muchos de los archivos binarios permanecen sin modificarse de una compilación a otra.
@@ -61,7 +61,7 @@ Los servidores de archivos de uso general son un buen candidato para Desduplicac
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-vdi.png" alt="Illustration of VDI servers" /></td>
             <td style="vertical-align:top">
                 <b>Implementaciones de Infraestructura de escritorio virtual (VDI)</b><br />
-Los servidores VDI, como <a href="https://technet.microsoft.com/library/cc725560.aspx">Servicios de Escritorio remoto</a>, proporcionan una opción ligera para que las organizaciones aprovisionen de escritorios a los usuarios. Hay muchas razones para que una organización dependa de esa tecnología: <ul>
+Los servidores VDI, como <a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725560(v=ws.11)">Servicios de Escritorio remoto</a>, proporcionan una opción ligera para que las organizaciones aprovisionen de escritorios a los usuarios. Hay muchas razones para que una organización dependa de esa tecnología: <ul>
                     <li><b>Implementación de aplicaciones</b>: puede implementar aplicaciones rápidamente en toda la empresa. Esto es especialmente útil cuando tiene aplicaciones que se actualizan con frecuencia, se usan con poca frecuencia o son difíciles de administrar.</li>
                     <li><b>Consolidación de aplicaciones</b>: cuando se instalan y ejecutan aplicaciones desde un conjunto de máquinas virtuales administradas centralmente, se elimina la necesidad de actualizar las aplicaciones en los equipos cliente. Esta opción también reduce la cantidad de ancho de banda de red que se necesita para acceder a las aplicaciones.</li>
                     <li><b>Acceso remoto</b>: los usuarios pueden acceder a aplicaciones empresariales desde dispositivos como equipos domésticos, quioscos, hardware de baja potencia y sistemas operativos que no sean Windows.</li>
@@ -74,7 +74,7 @@ Las implementaciones de VDI son excelentes candidatas para Desduplicación de da
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-backup.png" alt="Illustration of backup applications" /></td>
             <td style="vertical-align:top">
                 <b>Destinos de copia de seguridad, como las aplicaciones de copia de seguridad virtualizadas</b><br />
-Las aplicaciones de copia de seguridad, como <a href="https://technet.microsoft.com/library/hh758173.aspx">Microsoft Data Protection Manager (DPM)</a>, son candidatas perfectas para Desduplicación de datos debido a una duplicación significativa entre las instantáneas de copia de seguridad.
+Las aplicaciones de copia de seguridad, como <a href="/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)">Microsoft Data Protection Manager (DPM)</a>, son candidatas perfectas para Desduplicación de datos debido a una duplicación significativa entre las instantáneas de copia de seguridad.
             </td>
         </tr>
         <tr>

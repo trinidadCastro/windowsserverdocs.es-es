@@ -6,12 +6,12 @@ ms.author: t-chrche
 manager: nedpyle
 ms.date: 08/31/2020
 ms.topic: article
-ms.openlocfilehash: 985fd14b7791d28246b8e9186ca83216df734875
-ms.sourcegitcommit: a640c2d7f2d21d7cd10a9be4496e1574e5e955f0
+ms.openlocfilehash: 1e886c505435976b6495e0460705821086781a62
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89448939"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766908"
 ---
 # <a name="how-cutover-works-in-storage-migration-service"></a>Cómo funciona la transferencia en el servicio de migración de almacenamiento
 
@@ -66,7 +66,7 @@ Puede realizar un seguimiento del progreso de la transferencia a través de las 
 |  Progreso | Descripción                                                                                               |  Notas |
 |:-----|:--------------------------------------------------------------------------------------------------------------------|:---|
 |  0 % | El traslado está inactivo. |   |
-| 2 %  | Conectando con el equipo de origen... |   Asegúrese de que se cumplen los [requisitos para los equipos de origen y de destino](https://docs.microsoft.com/windows-server/storage/storage-migration-service/overview#security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports) .|
+| 2 %  | Conectando con el equipo de origen... |   Asegúrese de que se cumplen los [requisitos para los equipos de origen y de destino](./overview.md#security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports) .|
 | 5 %  | Conectando con el equipo de destino... |   |
 | 6 %  | Estableciendo permisos de seguridad en el objeto de equipo en Active Directory... |   Replica los permisos de seguridad del objeto Active Directory del equipo de origen en el equipo de destino.|
 | 8 %  | Comprobando que la cuenta temporal que hemos creado se ha eliminado correctamente en el equipo de origen... |   Se asegura de que se puede crear una cuenta temporal con el mismo nombre.|
@@ -95,7 +95,7 @@ Puede realizar un seguimiento del progreso de la transferencia a través de las 
 | 52% | Esperando a que el equipo de origen responda después del primer reinicio... |   |
 | 55 % | Esperando a que el equipo de origen responda después del segundo reinicio... |   |
 | 56% | Esperando a que el equipo de origen responda después del tercer reinicio... |   |
-| 57% | Quitando nombres de equipo alternativos en el origen... |   Garantiza que el origen sea inaccesible para otros usuarios y aplicaciones. Para obtener más información, consulte [netdom computername](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)). |
+| 57% | Quitando nombres de equipo alternativos en el origen... |   Garantiza que el origen sea inaccesible para otros usuarios y aplicaciones. Para obtener más información, consulte [netdom computername](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)). |
 | 58 % | Quitando una cuenta local temporal creada en el equipo de origen... |   |
 | 61 % | Restableciendo la Directiva de filtro de token de cuenta local en el equipo de origen... |   Habilita la Directiva.|
 | 63% | Quitando el equipo de destino del dominio... |   |
@@ -119,20 +119,20 @@ Puede realizar un seguimiento del progreso de la transferencia a través de las 
 
 ### <a name="__is-domain-controller-migration-supported__"></a>__¿Se admite la migración del controlador de dominio?__
 
-No en este momento, pero consulte la [Página de preguntas más frecuentes](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#is-domain-controller-migration-supported) para obtener una solución alternativa.
+No en este momento, pero consulte la [Página de preguntas más frecuentes](./faq.md#is-domain-controller-migration-supported) para obtener una solución alternativa.
 
 
 ## <a name="known-issues"></a>Problemas conocidos
 >Asegúrese de que ha cumplido los requisitos de la [información general del servicio de migración de almacenamiento](overview.md) e instalado la última actualización de Windows en el equipo que ejecuta el servicio de migración de almacenamiento.
 
-Vea la [Página de problemas conocidos](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues) para obtener más información sobre los problemas siguientes.
-* [__Se produce el error "acceso denegado para la Directiva de filtro de tokens en el equipo de destino" del servicio de migración de almacenamiento__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer)
+Vea la [Página de problemas conocidos](./known-issues.md) para obtener más información sobre los problemas siguientes.
+* [__Se produce el error "acceso denegado para la Directiva de filtro de tokens en el equipo de destino" del servicio de migración de almacenamiento__](./known-issues.md#storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer)
 
-* [__Error "CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO error en el recurso de dirección de servidor" y se produce un error en la transferencia del clúster de Windows Server 2008 R2__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails)
+* [__Error "CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO error en el recurso de dirección de servidor" y se produce un error en la transferencia del clúster de Windows Server 2008 R2__](./known-issues.md#error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails)
 
-* [__El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." al usar direcciones IP estáticas__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips)
+* [__El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." al usar direcciones IP estáticas__](./known-issues.md#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips)
 
-* [__El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..."__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer)
+* [__El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..."__](./known-issues.md#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer)
 
 ## <a name="additional-references"></a>Referencias adicionales
 

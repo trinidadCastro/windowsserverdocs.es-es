@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 25edd2851638fec99b6afda0415fdf8e8c8f1699
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7be02bd7c513d0e7680ed70f107a34c6a9af6ed2
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997188"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765966"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Administrar servidores con el centro de administración de Windows
 
@@ -79,7 +79,7 @@ Las siguientes herramientas están disponibles para las conexiones de servidor:
 | [Máquinas virtuales](manage-virtual-machines.md) | Ver y administrar máquinas virtuales |
 | [Conmutadores virtuales](#virtual-switches) | Visualización y administración de conmutadores virtuales |
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 
 **Información general** le permite ver el estado actual de la CPU, la memoria y el rendimiento de la red, así como realizar operaciones y modificar la configuración de un equipo o servidor de destino.
 
@@ -119,7 +119,7 @@ Están disponibles las siguientes opciones de administración de Active Director
 
 [**Ver comentarios y características propuestas para Active Directory**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D).
 
-## <a name="backup"></a>Copia de seguridad
+## <a name="backup"></a>Backup
 
 La **copia de seguridad** le permite proteger su servidor de Windows frente a daños, ataques o desastres mediante la copia de seguridad del servidor directamente en Microsoft Azure.
 [Más información sobre Azure Backup.](https://aka.ms/windows-admin-center-backup)
@@ -154,7 +154,7 @@ En los certificados se admiten las siguientes características:
 
 [**Ver comentarios y características propuestas para certificados**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BCertificates%5D).
 
-## <a name="containers"></a>Containers
+## <a name="containers"></a>Contenedores
 
 Los **contenedores** permiten ver los contenedores de un host de contenedor de Windows Server. En el caso de un contenedor de Windows Server Core en ejecución, puede ver los registros de eventos y acceder a la CLI del contenedor.
 
@@ -202,7 +202,7 @@ Se admiten las siguientes características en los dispositivos:
 
 [**Ver comentarios y características propuestas para DHCP**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D).
 
-## <a name="events"></a>Events
+## <a name="events"></a>Eventos
 
 **Los eventos** permiten administrar registros de eventos en un equipo o servidor.
 
@@ -328,7 +328,7 @@ Se admiten las siguientes características en los procesos:
 
 [**Ver comentarios y características propuestas para los procesos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BProcesses%5D).
 
-## <a name="registry"></a>Registro del sistema
+## <a name="registry"></a>Registro
 
 El **registro** permite administrar valores y claves del registro en un equipo o servidor.
 
@@ -427,7 +427,7 @@ Se admiten las siguientes características en el almacenamiento:
 
 - Examinar y buscar discos existentes en un servidor
 - Ver detalles del disco
-- Creación de un volumen
+- Crear un volumen
 - Inicializar un disco
 - Crear, adjuntar y desasociar un disco duro virtual (VHD)
 - Desconectar un disco
@@ -456,7 +456,7 @@ Use **réplica de almacenamiento** para administrar la replicación de almacenam
 ## <a name="system-insights"></a>Conclusiones del sistema
 
 **System Insights** incorpora análisis predictivos de forma nativa en Windows Server para ayudarle a mejorar el funcionamiento del servidor.
-[Obtener información general de System Insights](https://aka.ms/systeminsights)
+[Obtener información general de System Insights](../../system-insights/overview.md)
 
 >[!NOTE]
 >System Insights requiere Windows Server 2019.

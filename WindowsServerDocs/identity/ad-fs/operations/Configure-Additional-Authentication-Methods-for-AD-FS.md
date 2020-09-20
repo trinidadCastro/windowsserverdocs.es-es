@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 07/26/2019
 ms.topic: article
-ms.openlocfilehash: 66ef77b46065b87e6df08c63b0fb40ca4453c45b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dd773ce7198ffd30d8269ab47ae3d3dcfa7ef7cb
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954261"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766778"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>Configurar métodos de autenticación adicionales para AD FS
 
@@ -20,7 +20,7 @@ Para habilitar la autenticación multifactor (MFA), debe seleccionar al menos un
 > [!NOTE]
 > Si selecciona la autenticación de certificado, asegúrese de que los certificados de la tarjeta inteligente se hayan aprovisionado de manera segura y que tengan requisitos de PIN.
 
-¿Sabía que Microsoft Azure proporciona una funcionalidad similar en la nube? Obtenga más información sobre las [soluciones de identidad de Microsoft Azure](https://aka.ms/m2w274).<p>Crear una solución de identidad híbrida de Microsoft Azure:<br /> - [Más información sobre Azure Multi-Factor Authentication.](https://aka.ms/ey6o9r)<br /> - [Administrar identidades para entornos híbridos de bosque único mediante la autenticación en la nube.](https://aka.ms/g1jat8)<br /> - [Administrar los riesgos con Multi-Factor Authentication adicionales para las aplicaciones confidenciales.](https://aka.ms/kt1bbm)
+¿Sabía que Microsoft Azure proporciona una funcionalidad similar en la nube? Obtenga más información sobre las [soluciones de identidad de Microsoft Azure](https://aka.ms/m2w274).<p>Crear una solución de identidad híbrida de Microsoft Azure:<br /> - [Más información sobre Azure Multi-Factor Authentication.](/azure/active-directory/authentication/concept-mfa-howitworks)<br /> - [Administrar identidades para entornos híbridos de bosque único mediante la autenticación en la nube.](/previous-versions/windows/it-pro/solutions-guidance/dn550986(v=ws.11))<br /> - [Administrar los riesgos con Multi-Factor Authentication adicionales para las aplicaciones confidenciales.](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280946(v=ws.11))
 
 ## <a name="microsoft-and-third-party-additional-authentication-methods"></a>Métodos de autenticación adicionales de Microsoft y de otros fabricantes
 También puede configurar y habilitar métodos de autenticación de Microsoft y de terceros en AD FS en Windows Server 2012 R2. Una vez instalado y registrado con AD FS, puede aplicar MFA como parte de la Directiva de autenticación global o por entidad de confianza.

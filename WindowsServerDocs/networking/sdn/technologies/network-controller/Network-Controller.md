@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 9623ce4e5e31b905c1c18e9359811389d8d75f23
-ms.sourcegitcommit: 1eaad076ea74e72b36e8893aaa15f3e5f4237bd6
+ms.openlocfilehash: 27ceace93c42ccabdb2db0208c6e3dabce41e1b0
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88659390"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766818"
 ---
 # <a name="network-controller"></a>Controladora de red
 
@@ -23,12 +23,12 @@ Con Controladora de red puede automatizar la configuración de la infraestructur
 
 > [!NOTE]
 > Además de este tema, está disponible la siguiente documentación de la controladora de red.
-> - [Alta disponibilidad de la controladora de red](network-controller-high-availability.md)
+> - [Alta disponibilidad de Controladora de red](network-controller-high-availability.md)
 > - [Requisitos de instalación y preparación para la implementación de la controladora de red](../../plan/Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)
 > - [Implementación de controladora de red con Windows PowerShell](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
 > - [Instalación del rol de servidor de Controladora de red mediante el Administrador del servidor](Install-the-Network-Controller-server-role-using-Server-Manager.md)
 > - [Pasos posteriores a la implementación de la controladora de red](post-deploy-steps-nc.md)
-> - [Cmdlets de controladora de red](https://docs.microsoft.com/powershell/module/networkcontroller/?view=win10-ps)
+> - [Cmdlets de controladora de red](/powershell/module/networkcontroller/?view=win10-ps)
 
 ## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>Resumen de Controladora de red
 
@@ -37,7 +37,7 @@ La controladora de red es un rol de servidor escalable y de alta disponibilidad,
 Puede implementar la controladora de red en entornos de dominio y que no sean de dominio. En entornos de dominio, el controlador de red autentica los usuarios y los dispositivos de red mediante Kerberos. en entornos que no son de dominio, debe implementar certificados para la autenticación.
 
 >[!IMPORTANT]
->No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \( \) que esté instalada en un host de Hyper-v. Una vez que haya instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper- \- v diferentes, debe habilitar los \- hosts de Hyper v para las redes definidas por software de \( Sdn \) agregando los hosts a la controladora de red mediante el comando de Windows PowerShell **New-NetworkControllerServer**. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
+>No implemente el rol del servidor Controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \( \) que esté instalada en un host de Hyper-v. Una vez que haya instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper- \- v diferentes, debe habilitar los \- hosts de Hyper v para las redes definidas por software de \( Sdn \) agregando los hosts a la controladora de red mediante el comando de Windows PowerShell **New-NetworkControllerServer**. Al hacerlo, permite funcionar al equilibrador de carga de las redes definidas por software. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
 
 Controladora de red se comunica con dispositivos, servicios y componentes de red mediante la API Southbound. Esta API permite a Controladora de red detectar dispositivos de red y configuraciones de servicios, así como obtener toda la información necesaria sobre la red. Además, la API Southbound ofrece un canal para enviar información a la infraestructura de red, como los cambios de configuración que se realicen.
 
@@ -72,7 +72,7 @@ Para lograr una alta disponibilidad en centros de recursos de mayor tamaño, pue
 
 Las siguientes características de Controladora de red le permiten configurar y administrar dispositivos y servicios de red físicos y virtuales.
 
--   [Administración de firewalls](#bkmk_firewall)
+-   [Administración de Firewall](#bkmk_firewall)
 
 -   [Administrador del equilibrador de carga de software](#bkmk_slb)
 
@@ -83,7 +83,7 @@ Las siguientes características de Controladora de red le permiten configurar y 
 >[!IMPORTANT]
 >La copia de seguridad y restauración de la controladora de red no está disponible actualmente en Windows Server 2016.
 
-### <a name="firewall-management"></a><a name="bkmk_firewall"></a>Administración de firewalls
+### <a name="firewall-management"></a><a name="bkmk_firewall"></a>Administración de Firewall
 
 Esta característica de Controladora de red le permite configurar y administrar reglas de Access Control (permitir/denegar) del firewall en las MV de carga de trabajo, tanto en el tráfico de red este/oeste y como en el norte/sur de su centro de datos. Las reglas de firewall se aplican en el puerto vSwitch de las MV de carga de trabajo, por lo que se distribuyen por la carga de trabajo en el centro de datos. Con la API Northbound puede definir las reglas de firewall para el tráfico entrante y saliente de la MV de carga de trabajo. También puede configurar cada regla de firewall para que registre el tráfico al que permite o deniega el paso.
 

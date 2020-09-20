@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bc1e63ff865a7eb6d4d83c75d6c2680dcf8ddb49
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e8b19df2313bd0f3f6599aae8a23a18233f469e7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996865"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766928"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Uso de la Directiva de DNS para la \- implementación de DNS de cerebro dividido
 
@@ -86,7 +86,7 @@ Puede usar el siguiente comando de ejemplo para particionar el ámbito de zona c
 
 `Add-DnsServerZoneScope -ZoneName "contoso.com" -Name "internal"`
 
-Para obtener más información, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
 
@@ -103,14 +103,14 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "10.0.0.39” -ZoneScope "internal"
 `
 
-Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
 ### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>Crear las directivas de DNS
 
 Una vez que haya identificado las interfaces de servidor para la red externa y la red interna y haya creado los ámbitos de zona, debe crear directivas DNS que conecten los ámbitos de zona externa y interna.
 
 >[!NOTE]
->En este ejemplo se usa la interfaz de servidor como criterio para diferenciar entre los clientes internos y externos. Otro método para diferenciar entre clientes externos e internos es mediante el uso de subredes de cliente como criterio. Si puede identificar las subredes a las que pertenecen los clientes internos, puede configurar la Directiva de DNS para diferenciar en función de la subred de cliente. Para obtener información sobre cómo configurar la administración del tráfico mediante los criterios de subred de cliente, consulte [uso de la Directiva de DNS para la administración del tráfico basado en la ubicación geográfica con los servidores principales](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/scenario--use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers).
+>En este ejemplo se usa la interfaz de servidor como criterio para diferenciar entre los clientes internos y externos. Otro método para diferenciar entre clientes externos e internos es mediante el uso de subredes de cliente como criterio. Si puede identificar las subredes a las que pertenecen los clientes internos, puede configurar la Directiva de DNS para diferenciar en función de la subred de cliente. Para obtener información sobre cómo configurar la administración del tráfico mediante los criterios de subred de cliente, consulte [uso de la Directiva de DNS para la administración del tráfico basado en la ubicación geográfica con los servidores principales](./primary-geo-location.md).
 
 Cuando el servidor DNS recibe una consulta en la interfaz privada, el ámbito de la zona interna devuelve la respuesta de la consulta DNS.
 

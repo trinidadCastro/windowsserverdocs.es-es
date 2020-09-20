@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/31/2019
-ms.openlocfilehash: 5dcba9b92d9c0d85f99a1d54d50bef187fd51f10
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 04776c46d321a7a5aef19edd2866637c26d79125
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997476"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766328"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Conexión de Windows Server con los servicios híbridos de Azure
 
@@ -64,7 +64,7 @@ Para obtener más información, consulta [Replicación de servidor a servidor co
 
 ### <a name="extend-storage-capacity"></a>Ampliación de la capacidad de almacenamiento
 
-- **Sincronización del servidor de archivos con la nube mediante [Azure File Sync](https://aka.ms/afs)** Sincronice archivos en este servidor con recursos compartidos de archivos de Azure. Mantén todos los archivos en un entorno local o usa la nube por niveles para liberar espacio. Así mismo, almacena en la memoria caché solo los archivos que se usen con más frecuencia en el servidor y deja en la nube los datos que se usan de forma esporádica. Se puede hacer una copia de seguridad de datos en la nube, lo que elimina la necesidad de preocuparse por la realización de copias de seguridad de los servidores locales. Además, la sincronización entre varios sitios puede mantener un conjunto de archivos sincronizados entre varios servidores.
+- **Sincronización del servidor de archivos con la nube mediante [Azure File Sync](/azure/storage/files/storage-sync-files-planning)** Sincronice archivos en este servidor con recursos compartidos de archivos de Azure. Mantén todos los archivos en un entorno local o usa la nube por niveles para liberar espacio. Así mismo, almacena en la memoria caché solo los archivos que se usen con más frecuencia en el servidor y deja en la nube los datos que se usan de forma esporádica. Se puede hacer una copia de seguridad de datos en la nube, lo que elimina la necesidad de preocuparse por la realización de copias de seguridad de los servidores locales. Además, la sincronización entre varios sitios puede mantener un conjunto de archivos sincronizados entre varios servidores.
 Para obtener más información, consulta [Sincronizar el servidor de archivos con la nube mediante Azure File Sync](azure-file-sync.md).
 
 - **Migración de almacenamiento a una VM en Azure mediante [Servicio de migración de almacenamiento](../../../storage/storage-migration-service/overview.md)** Use la herramienta paso a paso para realizar un inventario de los datos en servidores Windows y Linux y, luego, transferir los datos a una nueva VM de Azure. Windows Admin Center puede crear una nueva máquina virtual de Azure para el trabajo que tenga un tamaño adecuado y una configuración correcta para recibir los datos del servidor de origen.

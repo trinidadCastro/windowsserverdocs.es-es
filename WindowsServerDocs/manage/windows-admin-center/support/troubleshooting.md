@@ -6,19 +6,19 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 76b171b81ff01a7a16b700d720bf289fefddf0f7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 1775149495871353ef250eff3cb8f6f8cc5c22d6
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990206"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766208"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Solución de problemas de Windows Admin Center
 
 > Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
 > [!Important]
-> Esta guía le ayudará a diagnosticar y resolver los problemas que impiden el uso del centro de administración de Windows. Si tiene un problema con una herramienta específica, compruebe si está experimentando un [problema conocido.](https://aka.ms/wacknownissues)
+> Esta guía le ayudará a diagnosticar y resolver los problemas que impiden el uso del centro de administración de Windows. Si tiene un problema con una herramienta específica, compruebe si está experimentando un [problema conocido.](./known-issues.md)
 
 ## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>Error del instalador con el mensaje: ** _no se pudo cargar el módulo ' Microsoft. PowerShell. LocalAccounts '._**
 
@@ -32,7 +32,7 @@ Esto puede ocurrir si se ha modificado o quitado la ruta de acceso predeterminad
 
 ### <a name="if-youve-installed-windows-admin-center-as-an-app-on-windows-10"></a>Si ha instalado el centro de administración de Windows como una **aplicación en Windows 10**
 
-* Asegúrese de que el centro de administración de Windows se está ejecutando. Busque el icono del centro de administración ![ de Windows icono del centro ](../media/trayIcon.PNG) de administración de Windows en la bandeja del sistema o en el **escritorio/SmeDesktop.exedel centro de administración de Windows** en el administrador de tareas. Si no es así, inicie el **centro de administración de Windows** desde el menú Inicio.
+* Asegúrese de que el centro de administración de Windows se está ejecutando. Busque el icono del centro de administración ![ de Windows icono del centro ](../media/trayIcon.PNG) de administración de Windows en la bandeja del sistema o en el **escritorio/SmeDesktop.exedel centro de administración de Windows ** en el administrador de tareas. Si no es así, inicie el **centro de administración de Windows** desde el menú Inicio.
 
 > [!NOTE]
 > Después del reinicio, debe iniciar el centro de administración de Windows desde el menú Inicio.
@@ -194,7 +194,7 @@ netsh http delete urlacl url=https://+:443/
 
 Edge tiene [problemas conocidos](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge) relacionados con las zonas de seguridad que afectan al inicio de sesión de Azure en el centro de administración de Windows. Si tiene problemas con las características de Azure al usar Edge, intente agregar https://login.microsoftonline.com https://login.live.com y la dirección URL de la puerta de enlace como sitios de confianza y a sitios permitidos para la configuración del bloqueador de elementos emergentes perimetrales en el explorador del lado cliente.
 
-Para ello:
+Para ello, siga estos pasos:
 1. Buscar **Opciones de Internet** en el menú Inicio de Windows
 2. Vaya a la pestaña **seguridad** .
 3. En la opción **Sitios de confianza**, haga clic en el botón de **sitios** y agregue las direcciones URL en el cuadro de diálogo que se abrirá. Deberá agregar la dirección URL de la puerta de enlace, así como https://login.microsoftonline.com y https://login.live.com .

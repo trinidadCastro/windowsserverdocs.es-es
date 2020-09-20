@@ -6,12 +6,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 3867df04c83fe536473c227e43700a4758c1294e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3be878629d19542629cc3cbb849ac46fe14de0bd
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935862"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766838"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>Límites de escalabilidad del servidor de destino iSCSI
 
@@ -71,7 +71,7 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 <td><p>Discos virtuales montados localmente o instantáneas por dispositivo de almacenamiento</p></td>
 <td><p>32</p></td>
 <td><p>Sí</p></td>
-<td><p>Los discos virtuales montados localmente no&#39;t ofrecen ninguna funcionalidad específica de iSCSI y están en desuso. para obtener más información, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">características eliminadas o en desuso en Windows Server 2012 R2</a>.</p></td>
+<td><p>Los discos virtuales montados localmente no&#39;t ofrecen ninguna funcionalidad específica de iSCSI y están en desuso. para obtener más información, consulte <a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)">características eliminadas o en desuso en Windows Server 2012 R2</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -139,7 +139,7 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 </tr>
 <tr class="even">
 <td><p>Conversión de un servidor de destino iSCSI independiente en un servidor de destino iSCSI en clúster o viceversa</p></td>
-<td><p>No compatibles</p></td>
+<td><p>No compatible</p></td>
 <td><p>No</p></td>
 <td><p>La instancia de destino iSCSI y los datos de configuración de disco virtual, incluidos los metadatos de instantánea, se pierden durante la conversión.</p></td>
 </tr>
@@ -351,7 +351,7 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 <td><p>Reducción de unidad lógica</p></td>
 <td><p>Sí (solo Windows Server 2012 R2 y versiones más recientes)</p></td>
 <td><p>N/D</p></td>
-<td><p>Use <a href="https://docs.microsoft.com/powershell/module/iscsitarget/resize-iscsivirtualdisk">Resize-iSCSIVirtualDisk</a> para reducir un LUN.</p></td>
+<td><p>Use <a href="/powershell/module/iscsitarget/resize-iscsivirtualdisk">Resize-iSCSIVirtualDisk</a> para reducir un LUN.</p></td>
 </tr>
 <tr class="even">
 <td><p>Clonación de unidad lógica</p></td>
@@ -390,38 +390,38 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 </tr>
 <tr class="odd">
 <td><p>Instantáneas de escritura</p></td>
-<td><p>No compatibles</p></td>
+<td><p>No compatible</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Instantánea: convertir en completo</p></td>
-<td><p>No compatibles</p></td>
+<td><p>No compatible</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Instantánea: reversión en línea</p></td>
-<td><p>No compatibles</p></td>
+<td><p>No compatible</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Instantánea: convertir en grabable</p></td>
-<td><p>No compatibles</p></td>
+<td><p>No compatible</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Instantánea: redirección</p></td>
-<td><p>No compatibles</p></td>
+<td><p>No compatible</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Anclaje de instantáneas</p></td>
-<td><p>No compatibles</p></td>
+<td><p>No compatible</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Montaje local</p></td>
 <td><p>Compatible</p></td>
-<td><p>Los discos virtuales iSCSI montados localmente están en desuso. para obtener más información, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">características eliminadas o en desuso en Windows Server 2012 R2</a>. Las instantáneas de disco dinámico no se pueden montar localmente.</p></td>
+<td><p>Los discos virtuales iSCSI montados localmente están en desuso. para obtener más información, consulte <a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)">características eliminadas o en desuso en Windows Server 2012 R2</a>. Las instantáneas de disco dinámico no se pueden montar localmente.</p></td>
 </tr>
 </tbody>
 </table>
