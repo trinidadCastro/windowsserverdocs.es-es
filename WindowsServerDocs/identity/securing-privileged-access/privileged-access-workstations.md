@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 014e19088394135c00d1df63a46ba74f400fa411
-ms.sourcegitcommit: 08da40966c5d633f8748c8ae348f12656a54d3b2
+ms.openlocfilehash: 6dbaf3fe76ce6c2ac79a0c835a320241e47f4068
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88140312"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766358"
 ---
 # <a name="privileged-access-workstations"></a>Estaciones de trabajo de acceso con privilegios
 
@@ -40,7 +40,7 @@ Los controles de seguridad de PAW se centran en mitigar los riesgos de alto impa
 * **Ataques por Internet**: la mayoría de los ataques se originan directa o indirectamente en Internet y usan Internet para exfiltración y comando y control (C2). Un elemento clave para garantizar la seguridad de la PAW consiste en aislarla de la red Internet abierta.
 * **Riesgo de facilidad de uso**: si una PAW es demasiado difícil de usar para las tareas diarias, los administradores se sentirán empujados a crear soluciones para que sus trabajos sean más fáciles. Con frecuencia, estas soluciones abren las estaciones de trabajo y cuentas administrativas a riesgos de seguridad considerables. Por este motivo, es muy importante buscar la colaboración de los usuarios de PAW y autorizarles para mitigar estos problemas de facilidad de uso de forma segura. Para lograr esto, lo más habitual es escuchar sus comentarios, instalar las herramientas y los scripts necesarios para realizar sus trabajos y garantizar que todo el personal administrativo sabe por qué deben usar una PAW, qué es y cómo usarla correctamente y con éxito.
 * **Riesgos del entorno**: como muchos otros equipos y cuentas del entorno están expuestos a los riesgos de Internet bien directa o indirectamente, una PAW debe estar protegida frente a los ataques de recursos en peligro en el entorno de producción. Para ello, es necesario limitar el uso de herramientas y cuentas de administración que tengan acceso a las PAW, para proteger y supervisar estas estaciones de trabajo especializadas.
-* **Manipulación de la cadena de suministro**: aunque es imposible quitar todos los posibles riesgos de manipulación en la cadena de suministro para el hardware y el software, unas pocas acciones pueden mitigar los vectores de ataques críticos que están fácilmente disponibles para los atacantes. Esto incluye validar la integridad de todos los medios de instalación ([principio de origen limpio](https://aka.ms/cleansource)) y usar un proveedor de confianza para el hardware y el software.
+* **Manipulación de la cadena de suministro**: aunque es imposible quitar todos los posibles riesgos de manipulación en la cadena de suministro para el hardware y el software, unas pocas acciones pueden mitigar los vectores de ataques críticos que están fácilmente disponibles para los atacantes. Esto incluye validar la integridad de todos los medios de instalación ([principio de origen limpio](./securing-privileged-access-reference-material.md)) y usar un proveedor de confianza para el hardware y el software.
 * **Ataques físicos**: como las PAW se pueden mover físicamente y se usan fuera de instalaciones físicamente seguras, se deben proteger frente a ataques que aprovechan el acceso físico no autorizado al equipo.
 
 > [!NOTE]
@@ -174,7 +174,7 @@ Esta sección contiene información sobre cómo se compara con PAW la seguridad 
 
 #### <a name="credential-guard-and-windows-hello-for-business"></a>Credential Guard y Windows Hello para empresas
 
-Presentada en Windows 10, la funcionalidad [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) emplea seguridad basada en hardware y virtualización para mitigar ataques comunes de robo de credenciales, como pass-the-hash, y proteger las credenciales obtenidas. La clave privada de las credenciales que usa [Windows Hello para empresas](https://aka.ms/passport) se puede proteger también mediante el hardware de Módulo de plataforma segura (TPM).
+Presentada en Windows 10, la funcionalidad [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) emplea seguridad basada en hardware y virtualización para mitigar ataques comunes de robo de credenciales, como pass-the-hash, y proteger las credenciales obtenidas. La clave privada de las credenciales que usa [Windows Hello para empresas](/windows/security/identity-protection/hello-for-business/hello-identity-verification) se puede proteger también mediante el hardware de Módulo de plataforma segura (TPM).
 
 Aunque estas mitigaciones son eficaces, las estaciones de trabajo pueden seguir siendo vulnerables a determinados ataques a pesar de que las credenciales estén protegidas con Credential Guard o Windows Hello para empresas. Entre estos ataques están el uso indebido de privilegios y el uso de credenciales directamente de un dispositivo en peligro, la reutilización de credenciales anteriormente robadas antes de habilitar Credential Guard y el uso indebido de herramientas de administración y configuraciones de aplicaciones poco seguras en la estación de trabajo.
 
@@ -238,7 +238,7 @@ Las soluciones de administración con privilegios son aplicaciones que proporcio
 
 Estas soluciones emplean normalmente un flujo de trabajo flexible para proporcionar acceso y muchas cuentan con características y funcionalidades de seguridad adicionales, como administración de contraseñas de cuentas de servicio e integración con servidores de salto administrativos. Existen muchas soluciones en el mercado que proporcionan funcionalidades de administración de privilegios, una de las cuales es Privileged Access Management (PAM) de Microsoft Identity Manager (MIM).
 
-Microsoft recomienda el uso de una PAW para acceder a soluciones de administración con privilegios. El acceso a estas soluciones solo se debe conceder a las PAW. Microsoft no recomienda el uso de estas soluciones como sustituto de una PAW porque el acceso a privilegios mediante estas soluciones desde un escritorio de usuario posiblemente en peligro infringe el principio de [origen limpio](https://aka.ms/cleansource) que se representa en el siguiente diagrama:
+Microsoft recomienda el uso de una PAW para acceder a soluciones de administración con privilegios. El acceso a estas soluciones solo se debe conceder a las PAW. Microsoft no recomienda el uso de estas soluciones como sustituto de una PAW porque el acceso a privilegios mediante estas soluciones desde un escritorio de usuario posiblemente en peligro infringe el principio de [origen limpio](./securing-privileged-access-reference-material.md) que se representa en el siguiente diagrama:
 
 ![Diagrama que muestra por qué Microsoft no recomienda el uso de estas soluciones como sustituto de una PAW porque el acceso a privilegios mediante estas soluciones desde un escritorio de usuario posiblemente en peligro infringe el principio de origen limpio](../media/privileged-access-workstations/PAWFig7.JPG)
 
@@ -248,9 +248,9 @@ Proporcionar una PAW para acceder a estas soluciones le permite obtener las vent
 
 > [!NOTE]
 > Estos sistemas se deben clasificar en el nivel más alto del privilegio que administran y se deben proteger con ese nivel de seguridad o uno superior. Normalmente se configuran para administrar soluciones de Nivel 0 y recursos de Nivel 0 y se deben clasificar con el Nivel 0.
-> Para obtener más información sobre el modelo de niveles, consulta [https://aka.ms/tiermodel](https://aka.ms/tiermodel); para obtener más información sobre los grupos de Nivel 0, consulta la equivalencia de Nivel 0 en [Protección del material de referencia de acceso con privilegios](../securing-privileged-access/securing-privileged-access-reference-material.md).
+> Para obtener más información sobre el modelo de niveles, consulta [https://aka.ms/tiermodel](./securing-privileged-access-reference-material.md); para obtener más información sobre los grupos de Nivel 0, consulta la equivalencia de Nivel 0 en [Protección del material de referencia de acceso con privilegios](../securing-privileged-access/securing-privileged-access-reference-material.md).
 
-Para obtener más información sobre la implementación de Privileged Access Management (PAM) de Microsoft Identity Manager (MIM), consulta [https://aka.ms/mimpamdeploy](https://aka.ms/mimpamdeploy).
+Para obtener más información sobre la implementación de Privileged Access Management (PAM) de Microsoft Identity Manager (MIM), consulta [https://aka.ms/mimpamdeploy](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services).
 
 ## <a name="paw-scenarios"></a>Escenarios de PAW
 
@@ -261,7 +261,7 @@ En todos los escenarios, se puede usar protección adicional en fases posteriore
 > [!NOTE]
 > Ten en cuenta que en esta guía hay una diferenciación explícita entre necesitar acceso a servicios específicos en Internet (como los portales administrativos de Azure y Office 365) y a la opción "Internet abierto" de todos los hosts y servicios.
 
-Consulte la [página del modelo de niveles](https://aka.ms/tiermodel) para más información sobre las designaciones de nivel.
+Consulte la [página del modelo de niveles](./securing-privileged-access-reference-material.md) para más información sobre las designaciones de nivel.
 
 |**Escenarios**|**¿Vas a usar PAW?**|**Ámbito y consideraciones sobre seguridad**|
 |---------|--------|---------------------|
@@ -341,14 +341,14 @@ La Fase 1 incluye los siguientes pasos:
    >
    > Para más información sobre la importancia de la seguridad de la cadena de suministro, visite [este sitio](https://www.microsoft.com/security/cybersecurity/).
 
-4. **Compra y valida la copia de Windows 10 Enterprise Edition y el software de aplicación necesarios.** Obtenga el software necesario para PAW y valídelo con la guía de [origen limpio para medios de instalación](https://aka.ms/cleansource).
+4. **Compra y valida la copia de Windows 10 Enterprise Edition y el software de aplicación necesarios.** Obtenga el software necesario para PAW y valídelo con la guía de [origen limpio para medios de instalación](./securing-privileged-access-reference-material.md).
 
    * Windows 10 Enterprise Edition
    * [Herramientas de administración remota del servidor](https://www.microsoft.com/download/details.aspx?id=45520) para Windows 10
-   * [Líneas base de seguridad de Windows 10](https://aka.ms/win10baselines)
+   * [Líneas base de seguridad de Windows 10](/windows/security/threat-protection/windows-security-baselines)
 
       > [!NOTE]
-      > Microsoft publica hashes MD5 para todos los sistemas operativos y aplicaciones en MSDN, pero no todos los proveedores de software proporcionan documentación similar.  En esos casos, se requerirán otras estrategias.  Para más información sobre la validación de software, consulte la sección sobre el principio de [rigen limpio](https://aka.ms/cleansource) para medios de instalación.
+      > Microsoft publica hashes MD5 para todos los sistemas operativos y aplicaciones en MSDN, pero no todos los proveedores de software proporcionan documentación similar.  En esos casos, se requerirán otras estrategias.  Para más información sobre la validación de software, consulte la sección sobre el principio de [rigen limpio](./securing-privileged-access-reference-material.md) para medios de instalación.
 
 5. **Asegúrese de tener un servidor WSUS disponible en la intranet**. Necesitará un servidor WSUS en la intranet para descargar e instalar actualizaciones para PAW. Este servidor WSUS se debe configurar para aprobar automáticamente todas las actualizaciones de seguridad para Windows 10, o un personal administrativo debe ser responsable de aprobar rápidamente actualizaciones de software.
 
@@ -659,7 +659,7 @@ En esta sección, configuraremos directivas de grupo para impedir que las cuenta
    >
    > Si automatiza la implementación de la PAW, debe seguir estos pasos:
    >
-   > * Compile el sistema usando medios de instalación validados siguiendo la guía de [origen limpio para medios de instalación](https://aka.ms/cleansource).
+   > * Compile el sistema usando medios de instalación validados siguiendo la guía de [origen limpio para medios de instalación](./securing-privileged-access-reference-material.md).
    > * Asegúrese de que el sistema de implementación automatizado esté desconectado de la res durante el proceso de compilación del sistema operativo.
 
 2. Establezca una contraseña compleja única para la cuenta de administrador local.  No use una contraseña que se haya utilizado para cualquier otra cuenta en el entorno.
@@ -681,14 +681,14 @@ En esta sección, configuraremos directivas de grupo para impedir que las cuenta
    Reemplace las referencias a *Fabrikam* por su nombre de dominio, según corresponda.  Si el nombre de dominio se extiende a varios niveles (por ejemplo, child.fabrikam.com), agregue los nombres adicionales con el identificador "DC =" en el orden en que aparecen en el nombre de dominio completo del dominio.
 
    > [!NOTE]
-   > Si ha implementado un [bosque administrativo de ESAE](https://aka.ms/esae) (para administradores de Nivel 0 en la Fase 1) o [Privileged Access Management (PAM) de Microsoft Identity Manager (MIM)](https://aka.ms/mimpamdeploy) (para administradores de Nivel 1 y 2 en la Fase 2), aquí uniría la PAW al dominio en ese entorno en lugar de al dominio de producción.
+   > Si ha implementado un [bosque administrativo de ESAE](./securing-privileged-access-reference-material.md) (para administradores de Nivel 0 en la Fase 1) o [Privileged Access Management (PAM) de Microsoft Identity Manager (MIM)](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) (para administradores de Nivel 1 y 2 en la Fase 2), aquí uniría la PAW al dominio en ese entorno en lugar de al dominio de producción.
 
 7. Antes de instalar cualquier otro software (incluidas herramientas administrativas, agentes, etc.), aplique todas las actualizaciones de Windows críticas e importantes.
 8. Fuerce la aplicación de directiva de grupo.
    1. Abre un símbolo del sistema con privilegios elevados y escribe el siguiente comando: `Gpupdate /force /sync`
    2. Reinicia el equipo.
 
-9. (Opcional) Instala las herramientas necesarias adicionales para los administradores de Active Directory. Instale cualquier otra herramienta o script necesarios para desempeñar los deberes del puesto de trabajo. Asegúrese de evaluar el riesgo de la exposición de credenciales en los equipos de destino con alguna herramienta antes de agregarlas a una PAW. Acceda a [esta página](https://aka.ms/logontypes) para más información sobre la evaluación de las herramientas administrativas y los métodos de conexión para el riesgo de exposición de credenciales. Asegúrese de obtener todos los medios de instalación mediante la guía sobre el [origen limpio para medios de instalación](https://aka.ms/cleansource).
+9. (Opcional) Instala las herramientas necesarias adicionales para los administradores de Active Directory. Instale cualquier otra herramienta o script necesarios para desempeñar los deberes del puesto de trabajo. Asegúrese de evaluar el riesgo de la exposición de credenciales en los equipos de destino con alguna herramienta antes de agregarlas a una PAW. Acceda a [esta página](./securing-privileged-access-reference-material.md) para más información sobre la evaluación de las herramientas administrativas y los métodos de conexión para el riesgo de exposición de credenciales. Asegúrese de obtener todos los medios de instalación mediante la guía sobre el [origen limpio para medios de instalación](./securing-privileged-access-reference-material.md).
 
    > [!NOTE]
    > Mediante el uso de un servidor de salto en una ubicación central con estas herramientas, se puede reducir la complejidad aunque no sirva como límite de seguridad.
@@ -857,7 +857,7 @@ Habilita esta característica en los servidores y las estaciones de trabajo exis
          > [!NOTE]
          > El GPO "SCM Windows 10: Seguridad de dominio" se puede vincular al dominio con independencia de PAW, pero resultará afectado el dominio entero.
 
-6. (Opcional) Instala las herramientas necesarias adicionales para los administradores de Nivel 1. Instale cualquier otra herramienta o script necesarios para desempeñar los deberes del puesto de trabajo. Asegúrese de evaluar el riesgo de la exposición de credenciales en los equipos de destino con alguna herramienta antes de agregarlas a una PAW. Para más información sobre cómo evaluar herramientas administrativas y métodos de conexión para el riesgo de exposición de credenciales, visite [esta página](https://aka.ms/logontypes). Asegúrese de obtener todos los medios de instalación siguiendo la guía de origen limpio para medios de instalación.
+6. (Opcional) Instala las herramientas necesarias adicionales para los administradores de Nivel 1. Instale cualquier otra herramienta o script necesarios para desempeñar los deberes del puesto de trabajo. Asegúrese de evaluar el riesgo de la exposición de credenciales en los equipos de destino con alguna herramienta antes de agregarlas a una PAW. Para más información sobre cómo evaluar herramientas administrativas y métodos de conexión para el riesgo de exposición de credenciales, visite [esta página](./securing-privileged-access-reference-material.md). Asegúrese de obtener todos los medios de instalación siguiendo la guía de origen limpio para medios de instalación.
 7. Identifique y obtenga de forma segura el software y las aplicaciones necesarias para la administración.  Es parecido al trabajo realizado en la Fase 1, pero con un ámbito más amplio debido al mayor número de aplicaciones, servicios y sistemas que se van a proteger.
 
    > [!NOTE]
@@ -967,13 +967,13 @@ En esta tabla describen los diferentes enfoques que pueden usarse para administr
 
 ## <a name="operating-paws"></a>Funcionamiento de PAW
 
-La solución PAW se debe usar siguiendo los [estándares operativos](https://aka.ms/securitystandards) que se describen en el principio de origen limpio.
+La solución PAW se debe usar siguiendo los [estándares operativos](./securing-privileged-access-reference-material.md) que se describen en el principio de origen limpio.
 
 ## <a name="deploy-paws-using-a-guarded-fabric"></a>Implementación de PAW mediante un tejido protegido
 
-Se puede usar un [tejido protegido](https://aka.ms/shieldedvms) para ejecutar cargas de trabajo de PAW en la máquina virtual blindada de un equipo portátil o un servidor de salto.
+Se puede usar un [tejido protegido](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md) para ejecutar cargas de trabajo de PAW en la máquina virtual blindada de un equipo portátil o un servidor de salto.
 Si quieres usar esta opción, tendrás que usar una infraestructura y realizar pasos operativos adicionales, pero gracias a ello, puedes facilitar la reimplementación de imágenes de PAW a intervalos regulares y consolidar varias PAW en capas o clasificaciones diferentes en máquinas virtuales que se ejecuten en paralelo en un solo dispositivo.
-Para obtener una explicación completa de la topología del tejido protegido y las promesas de seguridad, consulta la [documentación del tejido protegido](https://aka.ms/shieldedvms).
+Para obtener una explicación completa de la topología del tejido protegido y las promesas de seguridad, consulta la [documentación del tejido protegido](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md).
 
 ### <a name="changes-to-the-paw-gpos"></a>Cambios en los GPO de las PAW
 

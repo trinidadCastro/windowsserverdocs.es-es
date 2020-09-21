@@ -10,12 +10,12 @@ ms.custom:
 - CI ID 116803
 - CSSTroubleshoot
 manager: dcscontentpm
-ms.openlocfilehash: 40de898aa7627f092c179d7dc9e88e366e01ebab
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: dbb660ad1ccf3b15efe8cf656ebc98a2f7f41472
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078552"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766678"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Resolver códigos de error de activación de Windows
 
@@ -26,7 +26,7 @@ En este artículo se proporciona información de solución de problemas que le a
 
 Para obtener más información sobre la activación de volumen, vea [Plan para la activación de volumen](/windows/deployment/volume-activation/plan-for-volume-activation-client).
 
-Para obtener más información acerca de la activación de volumen para las versiones actuales y recientes de Windows, consulte [Activación de volumen [cliente]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10).
+Para obtener más información acerca de la activación de volumen para las versiones actuales y recientes de Windows, consulte [Activación de volumen [cliente]](/windows/deployment/volume-activation/volume-activation-windows-10).
 
 Para obtener más información acerca de la activación de volumen para versiones anteriores de Windows, consulte KB 929712, [información de activación de volumen para Windows Vista, Windows Server 2008, Windows Server 2008 R2 y Windows 7](https://support.microsoft.com/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi).
 

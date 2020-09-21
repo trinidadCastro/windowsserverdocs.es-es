@@ -6,12 +6,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c96968f55a06c7ccffd9f7919001f21bff6a75c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 184eca56dc14e91220a7fb7eb196c48706562ff7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996989"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766718"
 ---
 # <a name="user-access-options-with-windows-admin-center"></a>Opciones de acceso de usuario con Windows Admin Center
 
@@ -58,7 +58,7 @@ Esto les permite conectarse a la máquina de forma remota y garantiza que tienen
 Sin embargo, es posible que algunos usuarios no necesiten acceso sin restricciones a la máquina para realizar sus trabajos.
 Puedes usar el **control de acceso basado en rol** en Windows Admin Center para proporcionar a estos usuarios acceso limitado a la máquina, en lugar de hacerles administradores locales completos.
 
-El control de acceso basado en rol de Windows Admin Center funciona configurando cada servidor administrado con un punto de conexión [Just Enough Administration](https://aka.ms/jeadocs) de PowerShell.
+El control de acceso basado en rol de Windows Admin Center funciona configurando cada servidor administrado con un punto de conexión [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview) de PowerShell.
 Este punto de conexión define los roles, incluidos los aspectos del sistema que cada rol puede administrar y los usuarios que están asignados al rol.
 Cuando un usuario se conecta al punto de conexión restringido, se crea una cuenta de administrador local temporal para administrar el sistema en su nombre.
 Esto garantiza que incluso las herramientas que no tienen su propio modelo de delegación se puedan administrar con Windows Admin Center.

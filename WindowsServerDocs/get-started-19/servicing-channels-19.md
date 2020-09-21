@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 49de69c5a21a9c16012d79609784ff89395358db
-ms.sourcegitcommit: 893b9a24fd2efe30f5af909e3aa1f25907a17427
+ms.openlocfilehash: 3e9ddf80c4891a621f8633df636bcc37608fd29b
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88681286"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766188"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Canales de servicio de Windows Server: LTSC y SAC
 
@@ -175,8 +175,8 @@ State   :     Installed
 
 - [Ciclo de vida de soporte técnico de Windows Server](https://support.microsoft.com/lifecycle)
 
-- [Determinar si se está ejecutando Server Core](https://msdn.microsoft.com/library/hh846315%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
+- [Determinar si se está ejecutando Server Core](/previous-versions/windows/desktop/legacy/hh846315(v=vs.85)?f=255&MSPPError=-2147217396)
 
-- [Función GetProductInfo](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
+- [Función GetProductInfo](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
 
-- [Cmdlets de registro de inventario de software](https://docs.microsoft.com/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
+- [Cmdlets de registro de inventario de software](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)

@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: a7eda2d06a91891529ebbe5c7e448c17fdb070f3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d2e7d7a064806646ccc075c96fff2ba20acfe005
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953139"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766218"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Modelo de nivel administrativo de Active Directory
 
@@ -138,7 +138,7 @@ Debido a la gran cantidad de recursos que dependen de sistemas de identidad como
 
 ![Diagrama que muestra que se debe minimizar el número de sistemas de los que Active Directory y los controladores de dominio dependen](../media/securing-privileged-access-reference-material/PAW_RM_Fig010.JPG)
 
-Para más información sobre la consolidación de los riesgos más importantes de Active Directory, consulte [esta página](https://aka.ms/hardenAD).
+Para más información sobre la consolidación de los riesgos más importantes de Active Directory, consulte [esta página](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md).
 
 ## <a name="operational-standards-based-on-clean-source-principle"></a>Estándares operativos basados en el principio de origen limpio
 
@@ -313,7 +313,7 @@ Los administradores solo pueden iniciar sesión en estaciones de trabajo de admi
 > [!NOTE]
 > Esto es necesario porque el inicio de sesión en un host concede de forma interactiva el control de las credenciales a ese host.
 >
-> Consulte la sección [Herramientas administrativas y tipos de inicio de sesión](https://aka.ms/admintoolsecurity) para más información sobre los tipos de inicio de sesión, herramientas de administración comunes y exposición de credenciales.
+> Consulte la sección [Herramientas administrativas y tipos de inicio de sesión]() para más información sobre los tipos de inicio de sesión, herramientas de administración comunes y exposición de credenciales.
 
 ##### <a name="use-of-approved-support-technology-and-methods"></a>Uso de métodos y de tecnología de soporte aprobados
 
@@ -329,7 +329,7 @@ Los administradores que admiten usuarios y sistemas remotos deben seguir estas d
 Asegúrese de que se aplican las prácticas siguientes a este escenario:
 
 - **Soporte técnico del servidor remoto**: al acceder de manera remota a un servidor, los administradores de nivel 0 deben seguir estas directrices:
-  - **Principal (herramienta)** : herramientas remotas que usan inicios de sesión de red (tipo 3). Para más información, consulte [Herramientas administrativas y tipos de inicio de sesión](https://aka.ms/admintoolsecurity).
+  - **Principal (herramienta)** : herramientas remotas que usan inicios de sesión de red (tipo 3). Para más información, consulte [Herramientas administrativas y tipos de inicio de sesión]().
   - **Principal (interactiva)** : use RDP RestrictedAdmin o una sesión RDP estándar desde una estación de trabajo de administración con una cuenta de dominio
 
     > [!NOTE]
@@ -488,7 +488,7 @@ El diseño de un bosque administrativo debe incluir las consideraciones siguient
 
 - **Sistema de protección de estación de trabajo**: cree las estaciones de trabajo administrativas mediante las [estaciones de trabajo de acceso con privilegios](../securing-privileged-access/privileged-access-workstations.md) (a través de la fase 3), pero cambie la pertenencia al dominio en el bosque administrativo en lugar de en el entorno de producción.
 - **Servidor y sistema de protección del controlador de dominio**: para todos los controladores de dominio y servidores del bosque administrativo:
-   - Asegúrese de que todos los medios se validen siguiendo la [guía de origen limpio para medios de instalación](https://aka.ms/cleansource).
+   - Asegúrese de que todos los medios se validen siguiendo la [guía de origen limpio para medios de instalación]().
    - Asegúrese de que los servidores de bosque administrativos tengan los últimos sistemas operativos instalados, aunque esto no sea posible en producción.
    - Las actualizaciones de seguridad se deben aplicar automáticamente a los hosts del bosque administrativo.
 

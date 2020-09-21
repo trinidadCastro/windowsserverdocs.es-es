@@ -4,12 +4,12 @@ ms.date: 01/30/2019
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 44f0db935e50bf7976612edc4317b4212818f84d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7bdcb67c5bcb36d2ebe5ee02d765f3cab63c7bed
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950749"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766828"
 ---
 # <a name="volume-shadow-copy-service"></a>Servicio de instantáneas de volumen
 
@@ -372,7 +372,7 @@ Para excluir archivos específicos de las instantáneas, usa la siguiente clave 
 > <UL>
 > <LI>No puede eliminar archivos de una instantánea creada en Windows Server mediante la característica Versiones anteriores.<BR><BR>
 > <LI>No puede eliminar archivos de las instantáneas para carpetas compartidas.<BR><BR>
-> <LI>Puede eliminar archivos de una instantánea creada con la utilidad <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](../../administration/windows-commands/diskshadow.md)">DiskShadow</a>, pero no de una que se haya creado con la utilidad <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](../../administration/windows-commands/vssadmin.md)">Vssadmin</a>.<BR><BR>
+> <LI>Puede eliminar archivos de una instantánea creada con la utilidad <a href="/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](../../administration/windows-commands/diskshadow.md)">DiskShadow</a>, pero no de una que se haya creado con la utilidad <a href="/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](../../administration/windows-commands/vssadmin.md)">Vssadmin</a>.<BR><BR>
 > <LI>Los archivos se eliminan de una instantánea en función de la mejor opción. Como resultado, no se garantiza que se eliminen.<BR><BR></LI></UL>
 
 

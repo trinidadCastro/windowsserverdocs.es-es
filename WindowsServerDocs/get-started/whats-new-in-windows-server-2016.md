@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: d0ba6860edd40202da3078ee0ad05eb91901e1f2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5dfed9e70e4f0406c59c31201c8d2d1a9b3caafe
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945718"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766868"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>What's New in Windows Server 2016 (Novedades en Windows Server 2016)
 
@@ -55,7 +55,7 @@ Windows Server 2016 proporciona una nueva máquina virtual blindada basada en Hy
 
 - Compatibilidad con el Servicio de protección de host para proteger el entorno existente de Active Directory: puede dirigir el Servicio de protección de host para usar un bosque existente de Active Directory como su Active Directory en lugar de crear su propia instancia de Active Directory
 
-Para obtener más detalles e instrucciones para trabajar con máquinas virtuales blindadas, consulte [Shielded VMs and Guarded Fabric Validation Guide for Windows Server 2016 (TPM)](https://aka.ms/shieldedvms) (Máquinas virtuales blindadas y guía de validación de tejido protegido para Windows Server 2016 [TPM]).
+Para obtener más detalles e instrucciones para trabajar con máquinas virtuales blindadas, consulte [Shielded VMs and Guarded Fabric Validation Guide for Windows Server 2016 (TPM)](../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md) (Máquinas virtuales blindadas y guía de validación de tejido protegido para Windows Server 2016 [TPM]).
 
 ## <a name="identity-and-access"></a>[Identidad y acceso](../identity/Identity-and-Access.yml)
 Las nuevas características de Identidad aumentan la capacidad de las organizaciones de proteger los entornos de Active Directory y les ayudan a migrar a implementaciones de solo en la nube e implementaciones híbridas, donde algunas aplicaciones y servicios se hospedan en la nube y otros se hospedan de forma local.

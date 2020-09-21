@@ -7,12 +7,12 @@ author: eross-msft
 manager: mtillman
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: 2202658da6d89d3a289e0fd1e6df07e9ba4e4544
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0e477a404e7bef9ed1e201393a95e875c308e80f
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621993"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766898"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Novedades de Windows Server, versión 1709
 
@@ -89,7 +89,7 @@ Para más información, consulta [Información general sobre máquinas virtuales
 ## <a name="storage"></a>Almacenamiento
 
 **Réplica de almacenamiento**: la protección de recuperación ante desastres agregada por Réplica de almacenamiento en Windows Server 2016 se ha expandido para incluir:
-- **Conmutación por error de prueba**: la opción para montar el almacenamiento de destino ya es posible mediante la característica Conmutación por error de prueba. Puedes montar una instantánea del almacenamiento replicado en los nodos de destino temporalmente para realizar pruebas o copias de seguridad.  Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
+- **Conmutación por error de prueba**: la opción para montar el almacenamiento de destino ya es posible mediante la característica Conmutación por error de prueba. Puedes montar una instantánea del almacenamiento replicado en los nodos de destino temporalmente para realizar pruebas o copias de seguridad.  Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](../storage/storage-replica/storage-replica-frequently-asked-questions.md).
 - **Soporte del proyecto Honolulu**: el soporte de la administración gráfica de la replicación servidor a servidor ya está disponible en el proyecto Honolulu. Esto elimina la necesidad de usar PowerShell para administrar una carga de trabajo de protección ante desastres comunes.
 
 **SMB**:

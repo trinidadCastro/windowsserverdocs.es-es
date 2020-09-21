@@ -8,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e0ce10cbdc1dfe70156d36a96978222395afaa94
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: c7d05731997aeb9fcdb1fadb73ba80f2ff6655e5
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702824"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766698"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introducción al cliente de macOS
 
@@ -159,7 +159,7 @@ Windows Server 2012 R2 introdujo la compatibilidad con un nuevo método de aut
 > [!IMPORTANT]
 > No se admiten los modelos personalizados de autenticación y autorización antes de Windows 8.1, a pesar de que se analizan en el artículo mencionado.
 
-Para más información sobre esta característica, revisa [https://aka.ms/paa-sample](https://aka.ms/paa-sample).
+Para más información sobre esta característica, revisa [https://aka.ms/paa-sample](/samples/browse/?redirectedfrom=MSDN-samples).
 
 > [!TIP]
 > Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, ve al [foro del cliente de Escritorio remoto](/answers/topics/windows-remote-desktop-client.html) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

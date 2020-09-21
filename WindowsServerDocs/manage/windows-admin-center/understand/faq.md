@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
-ms.openlocfilehash: 2b1b6c8665e289647fe793125e7cc4c5024b4135
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f33707050f6686ad285fc8ecb786456f0157fef7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993534"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90767018"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Preguntas más frecuentes acerca de Windows Admin Center
 
@@ -154,7 +154,7 @@ Windows Admin Center es el nombre oficial del producto del "Proyecto Honolulu" y
 
 ## <a name="where-can-i-learn-more-about-windows-admin-center-or-get-more-details-on-the-topics-above"></a>¿Dónde puedo obtener más información Windows Admin Center u obtener información más detallada sobre los temas anteriores?
 
-Nuestra [página de inicio](https://aka.ms/WindowsAdminCenter) es el mejor punto de partida e incluye vínculos al contenido recientemente clasificado de nuestra documentación, la ubicación de descarga, cómo proporcionar comentarios, información de referencia y otros recursos.
+Nuestra [página de inicio](../overview.md) es el mejor punto de partida e incluye vínculos al contenido recientemente clasificado de nuestra documentación, la ubicación de descarga, cómo proporcionar comentarios, información de referencia y otros recursos.
 
 ## <a name="what-is-the-version-history-of-windows-admin-center"></a>¿Qué es el historial de versiones de Windows Admin Center?
 

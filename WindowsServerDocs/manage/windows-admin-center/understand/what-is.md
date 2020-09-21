@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 3075c571fb933692745a872df138ef5cbfa6b283
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: affbc610484abc5a4e45534a7f75e4f06efc23e9
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995310"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766968"
 ---
 # <a name="what-is-windows-admin-center"></a>¿Qué es Windows Admin Center?
 
@@ -25,7 +25,7 @@ Windows Admin Center es la evolución moderna de herramientas de administración
 
 ## <a name="how-does-windows-admin-center-work"></a>¿Cómo funciona Windows Admin Center?
 
-Windows Admin Center se ejecuta en un explorador web y administra Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10, Azure Stack HCI, etc. mediante la **puerta de enlace de Windows Admin Center** instalada en Windows Server o Windows 10 unido a un dominio. La puerta de enlace administra servidores mediante PowerShell remota y WMI a través de WinRM. La puerta de enlace se incluye con Windows Admin Center en un solo paquete .msi ligero que se puede [descargar](https://aka.ms/windowsadmincenter).
+Windows Admin Center se ejecuta en un explorador web y administra Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10, Azure Stack HCI, etc. mediante la **puerta de enlace de Windows Admin Center** instalada en Windows Server o Windows 10 unido a un dominio. La puerta de enlace administra servidores mediante PowerShell remota y WMI a través de WinRM. La puerta de enlace se incluye con Windows Admin Center en un solo paquete .msi ligero que se puede [descargar](../overview.md).
 
 La puerta de enlace de Windows Admin Center, cuando se publica en DNS y se le proporciona acceso a través de los firewalls corporativos correspondientes, no solo permite conectarse de forma segura a los servidores desde cualquier lugar con Microsoft Edge o Google Chrome, sino también administrarlos.
 
@@ -70,4 +70,4 @@ Windows Admin Center ofrece la mejor experiencia para la [administración de cl�
 Windows Admin Center se creó desde el principio teniendo en mente la capacidad de ampliación, con la capacidad para que desarrolladores tanto de Microsoft como de terceros creen herramientas y soluciones que van más allá de las ofertas actuales. Microsoft ofrece un [SDK](../extend/extensibility-overview.md) que permite a los programadores crear sus propias herramientas para Windows Admin Center.
 
 > [!Tip]
-> ¿Estás listo para instalar Windows Admin Center? [Descargar ahora](https://aka.ms/windowsadmincenter)
+> ¿Estás listo para instalar Windows Admin Center? [Descargar ahora](../overview.md)

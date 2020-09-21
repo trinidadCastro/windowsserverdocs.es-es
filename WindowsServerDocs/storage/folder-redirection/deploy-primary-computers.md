@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8645373f4f8e933e0eaad8e62672ecc16518ed4d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 488a82d7ea4081acbca07f2f699e001f0945d6ce
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957613"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766658"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>Implementación de equipos principales para Redirección de carpetas y Perfiles de usuario móvil
 
@@ -39,7 +39,7 @@ El soporte de equipo principal tiene los siguientes requisitos:
 El primer paso para implementar el soporte de equipos principales es designar los equipos principales para cada usuario. Para ello, usa el Centro de administración de Active Directory para obtener el nombre distintivo de los equipos pertinentes y, a continuación, establece el atributo **msDs-PrimaryComputer**.
 
 > [!TIP]
-> Si quieres usar Windows PowerShell para trabajar con equipos principales, consulta la entrada de blog [Profundizar un poco más en el equipo principal de Windows 8](<https://blogs.technet.microsoft.com/askds/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer/>).
+> Si quieres usar Windows PowerShell para trabajar con equipos principales, consulta la entrada de blog [Profundizar un poco más en el equipo principal de Windows 8](/archive/blogs/askds/digging-a-little-deeper-into-windows-8-primary-computer).
 
 Aquí se muestra cómo especificar los equipos principales para los usuarios:
 

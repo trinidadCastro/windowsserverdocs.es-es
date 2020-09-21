@@ -8,12 +8,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 78a869f826bd9d13e627f5710cca1b3ef1cdcdc4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cb6ffed04856c1e4fe670893a2af3acedb6da012
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959633"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765956"
 ---
 # <a name="manage-nano-server"></a>Administración de Nano Server
 
@@ -212,12 +212,12 @@ Actualmente, la manera de automatizar la instalación de la actualización es co
 
 ## <a name="performance-and-event-monitoring-on-nano-server"></a>Supervisión de rendimiento y eventos en Nano Server
 [comment]: # (de Venkat Yalla.)
-Nano Server es totalmente compatible con el marco de [Seguimiento de eventos para Windows](https://aka.ms/u2pa0i) (ETW), pero algunas herramientas familiares utilizadas para administrar el seguimiento y los contadores de rendimiento no están disponibles actualmente en Nano Server. Sin embargo, Nano Server tiene herramientas y cmdlets para ejecutar los escenarios más comunes de análisis de rendimiento.
+Nano Server es totalmente compatible con el marco de [Seguimiento de eventos para Windows](/windows/win32/etw/event-tracing-portal) (ETW), pero algunas herramientas familiares utilizadas para administrar el seguimiento y los contadores de rendimiento no están disponibles actualmente en Nano Server. Sin embargo, Nano Server tiene herramientas y cmdlets para ejecutar los escenarios más comunes de análisis de rendimiento.
 
 El flujo de trabajo de alto nivel sigue siendo el mismo que en cualquier instalación de Windows Server: el seguimiento de baja sobrecarga se realiza en el equipo de destino (Nano Server), y los archivos de seguimiento resultantes y los registros se procesan posteriormente sin conexión en un equipo independiente con herramientas como [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)), [Analizador de mensajes](https://www.microsoft.com/download/details.aspx?id=44226) u otras.
 
 > [!NOTE]
-> Vea [How to copy files to and from Nano Server](https://aka.ms/nri9c8) (Copia de archivos a y desde Nano Server) para hacer un repaso sobre cómo transferir archivos mediante la comunicación remota a PowerShell.
+> Vea [How to copy files to and from Nano Server](/previous-versions/windows/desktop/legacy/mt708806(v=vs.85)) (Copia de archivos a y desde Nano Server) para hacer un repaso sobre cómo transferir archivos mediante la comunicación remota a PowerShell.
 
 En las secciones siguientes se enumeran las actividades de recopilación de datos de rendimiento más comunes junto con una forma compatible de llevarlas a cabo en Nano Server.
 
@@ -381,7 +381,7 @@ TimeCreated           Message
 9/15/2016 11:31:16 AM The Virtualization Based Security enablement policy check at phase 0 failed with status: {File...
 ```
 
-Nano Server también admite ```wevtutil.exe```, que permite recuperar información sobre los registros de eventos y publicadores. Vea la [documentación de wevtutil.exe](https://aka.ms/qvod7p) para obtener más detalles.
+Nano Server también admite ```wevtutil.exe```, que permite recuperar información sobre los registros de eventos y publicadores. Vea la [documentación de wevtutil.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) para obtener más detalles.
 
 ### <a name="graphical-interface-tools"></a>Herramientas de interfaz gráfica
 Las [herramientas de administración de servidor basadas en Web](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog) pueden usarse para administrar los destinos de Nano Server de forma remota y presentar un registro de eventos de Nano Server mediante un explorador web. Por último, el Visor de eventos como complemento de MMC (eventvwr.msc) puede utilizarse también para ver registros; simplemente ábralo en un equipo con un escritorio y remítalo a un servidor remoto de Nano Server.

@@ -8,12 +8,12 @@ ms.date: 08/25/2020
 ms.topic: article
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.openlocfilehash: e82dccb79a4fc3452d528581beb43ef32d52ecfc
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 8a990e5ab19a5f5cd30d23d0d31e28249801040b
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940945"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765946"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de bosque y dominio
 
@@ -25,7 +25,7 @@ Cuando implementes AD DS, establece los niveles funcionales de dominio y bosque
 
 Con el fin del ciclo de vida de Windows Server 2003, 2008 y 2008 R2, los controladores de dominio (DC) deben actualizarse a Windows Server 2012, 2012 R2, 2016 o 2019. Como resultado, todos los controladores de dominio que ejecuten Windows Server 2008 R2 y anteriores deben quitarse del dominio.
 
-En los niveles funcionales de dominio de Windows Server 2008 y superior, se usa la Replicación del sistema de archivos distribuido (DFS) para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si creas un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o superior, se usa automáticamente Replicación DFS para replicar SYSVOL. Si has creado el dominio en un nivel funcional inferior, tendrás que migrar del uso de FRS a la replicación DFS para SYSVOL. En el caso de los pasos de migración, puedes seguir los [procedimientos de TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) o puedes consultar el [conjunto de pasos simplificado en el blog de contenedor de archivos del equipo de almacenamiento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx). Windows Server 2016 RS1 es la última versión de Windows Server que incluye FRS.
+En los niveles funcionales de dominio de Windows Server 2008 y superior, se usa la Replicación del sistema de archivos distribuido (DFS) para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si creas un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o superior, se usa automáticamente Replicación DFS para replicar SYSVOL. Si has creado el dominio en un nivel funcional inferior, tendrás que migrar del uso de FRS a la replicación DFS para SYSVOL. En el caso de los pasos de migración, puedes seguir los [procedimientos de TechNet](../../storage/dfs-replication/migrate-sysvol-to-dfsr.md) o puedes consultar el [conjunto de pasos simplificado en el blog de contenedor de archivos del equipo de almacenamiento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx). Windows Server 2016 RS1 es la última versión de Windows Server que incluye FRS.
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
