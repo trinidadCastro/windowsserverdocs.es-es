@@ -7,12 +7,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: f405486c5ea34b26f23a16552c24527939ca1fd4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: aa528b6d3e5858cec6b55f2bcdf866dcda32eaf0
+ms.sourcegitcommit: ad8fe5bb915e616a437be60e1836d3ce891dabaa
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024569"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90813437"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Uso de las actualizaciones de seguridad extendidas (ESU) de Windows Server 2008 y 2008 R2
 
@@ -46,7 +46,7 @@ Para más información, consulte [Preguntas más frecuentes sobre las Actualizac
 Si ejecutas máquinas virtuales de Windows Server 2008 o 2008 R2 en Azure, estas se habilitan automáticamente para las actualizaciones de seguridad extendidas. No es necesario realizar ninguna configuración y no se aplica ningún cargo adicional por el uso de las actualizaciones de seguridad extendidas con las máquinas virtuales de Azure. Las actualizaciones de seguridad extendidas se entregan automáticamente a las máquinas virtuales de Azure si están configuradas para recibir actualizaciones.
 
 > [!NOTE]
-> Las VM Microsoft.ClassicCompute requieren una configuración adicional para la implementación de actualizaciones de seguridad ampliada, ya que no tienen acceso a [Instance Metadata Service de Azure](https://docs.microsoft.com/azure/virtual-machines/windows/instance-metadata-service), lo que determina la idoneidad de las actualizaciones de seguridad ampliada. Póngase en contacto con el [soporte técnico de Microsoft](https://support.microsoft.com/contactus?PID=17336) para obtener más ayuda.
+> Las VM Microsoft.ClassicCompute requieren una configuración adicional para la implementación de actualizaciones de seguridad extendida, ya que no tienen acceso a [Azure Instance Metadata Service](/azure/virtual-machines/windows/instance-metadata-service), lo que determina la idoneidad de las actualizaciones de seguridad extendida. Póngase en contacto con el [soporte técnico de Microsoft](https://support.microsoft.com/contactus?PID=17336) para obtener más ayuda.
 
 En el caso de otros entornos, como las máquinas virtuales locales o los servidores físicos, debes solicitar y configurar manualmente las actualizaciones de seguridad extendidas. Puedes adquirir actualizaciones de seguridad extendidas a través de programas de licencias por volumen, como Contrato Enterprise (EA), Contrato Enterprise Subscription (EAS), Enrollment for Education Solutions (EES) o Inscripción del servidor y la nube (SCE).
 

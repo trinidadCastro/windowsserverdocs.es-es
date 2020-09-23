@@ -8,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 672a9d1b33137d9559d88b8773d3c7ccd2493ddc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 420cedebcfc71a5ba78908d244d1f8ca651bee4c
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955062"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083680"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Preguntas más frecuentes sobre los clientes de Escritorio remoto
 
@@ -174,7 +174,7 @@ Tienes tres opciones para usar el clic con el botón derecho en una sesión abie
 
 - Mouse USB de PC estándar con dos botones.
 - Magic Mouse de Apple: Para habilitar el clic con el botón derecho, haz clic en **Preferencias del sistema** en la base de acoplamiento, haz clic en **Mouse** y habilita **Clic secundario**.
-- Magic Trackpad o MacBook Trackpad de Apple: Para habilitar el clic con el botón derecho, haz clic en **Preferencias del sistema** en la base de acoplamiento, haz clic en **Mouse** y habilita **Clic secundario**.
+- Magic Trackpad o MacBook Trackpad de Apple: Para habilitar el clic con el botón derecho, haga clic en **Preferencias del sistema** en el dock, después en **Panel táctico** y habilite **Clic secundario**.
 
 ### <a name="is-airprint-supported"></a>¿Se admite AirPrint?
 No, el cliente de Escritorio remoto no admite AirPrint. (Esto ocurre tanto en clientes Mac como iOS).

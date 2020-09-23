@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/07/2020
+ms.date: 09/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 65a2a767e89af6d64893de1b8c7949bedd9e7625
-ms.sourcegitcommit: 9f2e04cd7e52c29fa2fbc64f67dcafbd021015ab
+ms.openlocfilehash: 6524c186e42b2c1c39dae5b95f4c6657bdd9dcbf
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051849"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083746"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configuración admitida del archivo RDP de Escritorio remoto
 
@@ -58,7 +58,7 @@ En la tabla también se resalta qué configuración se admite como propiedades p
 | audiomode:i:value | Ubicación de salida.</br>Determina si el equipo local o remoto reproduce audio. | - 0: reproducir sonidos en el equipo local (Reproducir en este equipo).</br>- 1: reproducir sonidos en el equipo remoto (Reproducir en equipo remoto).</br>- 2: No reproducir sonidos (No reproducir) | 0 | Sí |
 | camerastoredirect:s:value | Redireccionamiento de la cámara.</br>Configura las cámaras que se redirigirán. Esta configuración usa una lista delimitada por signos de punto y coma de las interfaces KSCATEGORY_VIDEO_CAMERA de las cámaras habilitadas para el redireccionamiento. | - * : redirige todas las cámaras.</br> - Lista de las cámaras, como camerastoredirect:s:\\?\usb#vid_0bda&pid_58b0&mi</br>- Para excluir una cámara específica, se puede anteponer "-" a la cadena de vínculo simbólico. | No redirigir ninguna cámara. | Sí |
 | devicestoredirect:s:value | Redirección del dispositivo Plug and Play:</br>Determina qué dispositivos del equipo local se redirigirán a la sesión remota y estarán disponibles en ella. | - *: redirigir todos los dispositivos compatibles, incluidos los que se conectan posteriormente</br> - Identificador de hardware válido de uno o varios dispositivos</br> - DynamicDevices: redirige todos los dispositivos compatibles que se conectan posteriormente. | No redirigir ningún dispositivo. | Sí |
-| drivestoredirect:s:value | Redireccionamiento de unidades y almacenamiento.</br>Determina qué unidades de disco del equipo local se redirigirán a la sesión remota y estarán disponibles en ella. | - Ningún valor especificado: no redirigir ninguna unidad</br>- * : Redirigir todas las unidades de disco, incluidas las unidades que se conecten más adelante</br>- DynamicDrives: redirigir las unidades que se conecten más adelante</br>- La unidad y las etiquetas para una o más unidades, como "drivestoredirect:s:C:;E:;": redirigir las unidades especificadas | No redirigir ninguna unidad. | Sí |
+| drivestoredirect:s:value | Redireccionamiento de unidades y almacenamiento.</br>Determina qué unidades de disco del equipo local se redirigirán a la sesión remota y estarán disponibles en ella. | - Ningún valor especificado: no redirigir ninguna unidad</br>- * : Redirigir todas las unidades de disco, incluidas las unidades que se conecten más adelante</br>- DynamicDrives: redirigir las unidades que se conecten más adelante</br>- La unidad y las etiquetas para una o más unidades, como "drivestoredirect:s:C\:;E\:;": redirigir las unidades especificadas | No redirigir ninguna unidad. | Sí |
 | keyboardhook:i:value | Determina cuándo se aplican las combinaciones de la tecla Windows (tecla WIN, ALT+TAB) a la sesión remota para las conexiones de escritorio. | - 0: Las combinaciones de la tecla Windows se aplican en el equipo local.</br>- 1: Las combinaciones de la tecla Windows se aplican en el equipo remoto cuando está en foco.</br>- 2: Las combinaciones de la tecla Windows se aplican en el equipo remoto cuando está en modo de pantalla completa. | 2 | Sí |
 | redirectclipboard:i:value | Redireccionamiento del Portapapeles.</br>Determina si el redireccionamiento del Portapapeles está habilitado. | - 0: El Portapapeles del equipo local no está disponible en la sesión remota</br>- 1: El Portapapeles del equipo local está disponible en la sesión remota | 1 | Sí |
 | redirectcomports:i:value | Redireccionamiento de puertos COM:</br>Determina si los puertos COM (en serie) del equipo local se redirigirán a la sesión remota y estarán disponible allí. | - 0: Los puertos COM en el equipo local no están disponibles en la sesión remota.</br>- 1: Los puertos COM en el equipo local están disponibles en la sesión remota. | 0 | Sí |

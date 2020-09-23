@@ -72,6 +72,7 @@
 #### [Introducción al cliente de escritorio de Windows](clients/windowsdesktop.md)
 #### [Cliente de escritorio de Windows para administradores](clients/windowsdesktop-admin.md)
 #### [Novedades del cliente de escritorio de Windows](clients/windowsdesktop-whatsnew.md)
+#### [Teclas de método abreviado](/windows/win32/termserv/terminal-services-shortcut-keys)
 ### Cliente de Microsoft Store
 #### [Introducción al cliente de Microsoft Store](clients/windows.md)
 #### [Novedades del cliente de Microsoft Store](clients/windows-whatsnew.md)

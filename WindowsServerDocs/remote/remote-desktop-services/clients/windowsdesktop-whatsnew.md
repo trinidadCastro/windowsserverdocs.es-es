@@ -5,27 +5,27 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f0b5453265bc96cdeb7ba02795da8fa0f39ba1c
-ms.sourcegitcommit: 0407bd30eaf06358257cf88c3969a2cd8b77dca4
+ms.openlocfilehash: 5d45bfad559069f9652768ba7f89bbdd3521ab8a
+ms.sourcegitcommit: d04f8fd54fe9aa5703af2f66a7150f4a6fb5bb37
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027170"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90718629"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
 Puedes obtener más información detallada sobre el cliente de escritorio de Windows en [Introducción al cliente de escritorio de Windows](windowsdesktop.md). En este artículo, encontrará las actualizaciones más recientes del cliente.
 
-## <a name="latest-client-versions"></a>Versiones más recientes del cliente
+## <a name="supported-client-versions"></a>Versiones del cliente admitidas
 
 El cliente se puede configurar para distintos [grupos de usuarios](windowsdesktop-admin.md#configure-user-groups). En la tabla siguiente se enumeran las versiones actuales disponibles para cada grupo de usuarios:
 
-|Grupo de usuarios |Version  |
-|-----------|---------|
-|Público     |1.2.1272 |
-|Insider    |1.2.1357 |
+|Grupo de usuarios |La versión más reciente  |Versión mínima admitida |
+|-----------|----------------|--------------------------|
+|Público     |1.2.1272        |1.2.945                   |
+|Insider    |1.2.1357        |1.2.1357                  |
 
 ## <a name="updates-for-version-121357-insiders"></a>Actualizaciones de la versión 1.2.1357 (Insider)
 
@@ -33,7 +33,7 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139368)
 
-- Se corrigió un problema por el que el inicio de sesión seguro (SSO) no funcionaba en Windows 7.
+- Se corrigió un problema por el que el inicio de sesión único (SSO) no funcionaba en Windows 7.
 
 ## <a name="updates-for-version-121275"></a>Actualizaciones de la versión 1.2.1275
 
