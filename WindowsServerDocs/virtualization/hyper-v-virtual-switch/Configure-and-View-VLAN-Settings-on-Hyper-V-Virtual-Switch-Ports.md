@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 69e0e28a-98ae-4ade-bd27-ce2ad7eb310f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ac7d3f4ea17e35b42d974d1e29c692e8510c35ef
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 85d622094ac81aea8a2d90e4ef6eb5d226d0b290
+ms.sourcegitcommit: 50b295002d60f4183f452cc169f0768a347830ea
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995697"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91248588"
 ---
 # <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>Configuración y visualización de las opciones de VLAN en puertos de conmutador virtual de Hyper-V
 
@@ -23,11 +23,11 @@ Si desea configurar las opciones de VLAN en los puertos del conmutador virtual d
 
 Si usa VMM, VMM usa el siguiente comando de Windows PowerShell para configurar el puerto del conmutador.
 
-```
-Set-VMNetworkAdapterIsolation <VM-name|-managementOS> -IsolationMode VLAN -DefaultIsolationID <vlan-value> -AllowUntaggedTraffic $True
+```powershell
+Set-VMNetworkAdapterIsolation <VM-name|-ManagementOS -IsolationMode VLAN -DefaultIsolationID <vlan-value> -AllowUntaggedTraffic $True
 ```
 Si no usa VMM y está configurando el puerto del conmutador en Windows Server, puede usar la consola del administrador de Hyper-V o el siguiente comando de Windows PowerShell.
-```
+```powershell
 Set-VMNetworkAdapterVlan <VM-name|-managementOS> -Access -VlanID <vlan-value>
 ```
 
@@ -46,8 +46,8 @@ Para configurar y ver la configuración del puerto de conmutador de VLAN, debe h
 
 Si no sigue estas instrucciones, puede encontrar los siguientes problemas.
 
-- En los casos en los que haya implementado SDN y que use VMM, el controlador de red o los cmdlets de **VMNetworkAdapterIsolation** para configurar las opciones de VLAN en un puerto de conmutador virtual de Hyper-v: Si usa el administrador de Hyper-v o **obtiene VMNetworkAdapterVlan** para ver la configuración, la salida del comando no mostrará la configuración de VLAN. En su lugar, debe usar el cmdlet **Get-VMNetworkIsolation** para ver la configuración de la VLAN.
-- En las circunstancias en las que no ha implementado SDN y, en su lugar, use el administrador de Hyper-V o los cmdlets de **VMNetworkAdapterVlan** para configurar las opciones de VLAN en un puerto de conmutador virtual de Hyper-v: Si usa el cmdlet **Get-VMNetworkIsolation** para ver la configuración, la salida del comando no mostrará la configuración de VLAN. En su lugar, debe usar el cmdlet **Get VMNetworkAdapterVlan** para ver la configuración de la VLAN.
+- En los casos en los que haya implementado SDN y que use VMM, el controlador de red o los cmdlets de **VMNetworkAdapterIsolation** para configurar las opciones de VLAN en un puerto de conmutador virtual de Hyper-v: Si usa el administrador de Hyper-v o **obtiene VMNetworkAdapterVlan** para ver los valores de configuración, el resultado del comando no muestra la configuración de VLAN. En su lugar, debe usar el cmdlet **Get-VMNetworkIsolation** para ver la configuración de la VLAN.
+- En las circunstancias en las que no ha implementado SDN y, en su lugar, use el administrador de Hyper-V o los cmdlets de **VMNetworkAdapterVlan** para configurar las opciones de VLAN en un puerto de conmutador virtual de Hyper-v: Si usa el cmdlet **Get-VMNetworkIsolation** para ver los valores de configuración, el resultado del comando no muestra la configuración de VLAN. En su lugar, debe usar el cmdlet **Get VMNetworkAdapterVlan** para ver la configuración de la VLAN.
 
 También es importante no intentar configurar la misma configuración de VLAN del puerto del conmutador mediante los dos métodos de configuración. Si lo hace, el puerto del conmutador se configura incorrectamente y el resultado puede ser un error en la comunicación de red.
 
