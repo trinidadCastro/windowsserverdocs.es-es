@@ -1,27 +1,24 @@
 ---
 title: select vdisk
-description: Artículo de referencia de * * * *-
+description: Artículo de referencia del comando SELECT vDisk, que selecciona el disco duro virtual (VHD) especificado y desplaza el foco a él.
 ms.topic: reference
 ms.assetid: 8808872a-3523-4205-a6c6-83fa738ee37a
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: daa6d3047e28fb8f6084824fdf1557423daa52b8
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 19e842115f914711cc59cfb770ee19f732b3a388
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89639141"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91389211"
 ---
 # <a name="select-vdisk"></a>select vdisk
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-selecciona el VHD del disco duro virtual especificado \( \) y desplaza el foco a él.
-
-> [!NOTE]
-> Este comando solo es aplicable a Windows 7 y Windows Server 2008 R2.
+Selecciona el VHD del disco duro virtual especificado \( \) y desplaza el foco a él.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -31,13 +28,14 @@ select vdisk file=<full path> [noerr]
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------|--------|
-|filesystem\=<full path>|Especifica la ruta de acceso completa y el nombre de un archivo VHD existente.|
-|noerr|Se usa solo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
+| Parámetro | Descripción |
+|--|--|
+| archivo =`<full path>` | Especifica la ruta de acceso completa y el nombre de un archivo VHD existente. |
+| noerr | Se usa solo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
 ## <a name="examples"></a>Ejemplos
-Para desplazar el foco al VHD denominado test. vhd, escriba:
+
+Para desplazar el foco al VHD denominado *c:\test\test.vhd*, escriba:
 
 ```
 select vdisk file=c:\test\test.vhd
@@ -47,18 +45,22 @@ select vdisk file=c:\test\test.vhd
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
--   [attach vdisk](attach-vdisk.md)
+- [attach vdisk](attach-vdisk.md)
 
--   [compact vdisk](compact-vdisk.md)
+- [compact vdisk](compact-vdisk.md)
 
+- [detach vdisk](detach-vdisk.md)
 
+- [detail vdisk](detail-vdisk.md)
 
--   [Detach vDisk](detach-vdisk.md)
+- [expand vdisk](expand-vdisk.md)
 
--   [detail vdisk](detail-vdisk.md)
+- [merge vdisk](merge-vdisk.md)
 
--   [expand vdisk](expand-vdisk.md)
+- [list](list.md)
 
--   [Merge vDisk](merge-vdisk.md)
+- [Seleccionar disco (comando)](select-disk.md)
 
--   [list_1](./list.md)
+- [seleccionar partición (comando)](select-partition.md)
+
+- [comando Seleccionar volumen](select-volume.md)

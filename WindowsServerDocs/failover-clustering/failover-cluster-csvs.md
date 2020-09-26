@@ -1,20 +1,20 @@
 ---
-title: Usar volúmenes compartidos de clúster en un clúster de conmutación por error
+title: Uso de volúmenes compartidos de clúster en un clúster de conmutación por error
 description: Cómo usar volúmenes compartidos de clúster en un clúster de conmutación por error.
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.date: 06/07/2019
+ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1293abac44cc648442939784ed5bb2b8049e702f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 51dcf4081828407bdfafeebcd4e8acb0f0d43dd5
+ms.sourcegitcommit: 8a826e992f28a70e75137f876a5d5e61238a24e4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992865"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365348"
 ---
-# <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar volúmenes compartidos de clúster en un clúster de conmutación por error
+# <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Uso de volúmenes compartidos de clúster en un clúster de conmutación por error
 
 >Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2
 
@@ -139,7 +139,7 @@ Si agregas otra máquina virtual, siempre que sea posible, deberías organizar l
 Cuando planees la configuración del almacenamiento de un clúster de conmutación por error que use CSV, ten en cuenta las recomendaciones siguientes:
 
 - Para decidir cuántos LUN configurarás, consulta al proveedor de almacenamiento. Por ejemplo, el proveedor de almacenamiento te podría recomendar configurar cada LUN con una partición y colocar un volumen CSV en ella.
-- No hay limitaciones en cuanto a la cantidad de máquinas virtuales que se pueden admitir en un solo volumen CSV. No obstante, debes tener en cuenta la cantidad de máquinas virtuales que tienes previsto tener en el clúster y la carga de trabajo (operaciones de E/S por segundo) para cada máquina virtual. Considere los ejemplos siguientes:
+- No hay limitaciones en cuanto a la cantidad de máquinas virtuales que se pueden admitir en un solo volumen CSV. No obstante, debes tener en cuenta la cantidad de máquinas virtuales que tienes previsto tener en el clúster y la carga de trabajo (operaciones de E/S por segundo) para cada máquina virtual. Considera los ejemplos siguientes:
 
   - Una organización implementa máquinas virtuales que admitirán una infraestructura de escritorio virtual (VDI), lo que supone una carga de trabajo relativamente ligera. El clúster usa almacenamiento de alto rendimiento. El administrador del clúster, después de consultar al proveedor de almacenamiento, decide colocar una cantidad relativamente alta de máquinas virtuales por volumen CSV.
   - Otra organización implementa una gran cantidad de máquinas virtuales que admitirán una aplicación de base de datos que registra un uso muy elevado, lo cual supone una carga de trabajo más pesada. El clúster usa almacenamiento de bajo rendimiento. El administrador del clúster, después de consultar al proveedor de almacenamiento, decide colocar una cantidad relativamente baja de máquinas virtuales por volumen CSV.
@@ -197,7 +197,7 @@ La memoria caché de CSV proporciona almacenamiento en caché en el nivel de blo
 >[!NOTE]
 >Te recomendamos que habilites la memoria caché de CSV para todas las implementaciones de Hyper-V y servidor de archivos de escalabilidad horizontal en clúster.
 
-De forma predeterminada en Windows Server 2012, la memoria caché de CSV está deshabilitada. En Windows Server 2012 R2 y versiones posteriores, la caché de CSV está habilitada de forma predeterminada. No obstante, debes asignar el tamaño de la memoria caché de bloque que deseas reservar.
+En Windows Server 2019, la caché de CSV está activada de forma predeterminada con 1 Gibibyte (GiB) asignado. En Windows Server 2016 y Windows Server 2012, está desactivado de forma predeterminada. En Windows Server 2012 R2, la memoria caché de CSV está habilitada de forma predeterminada. sin embargo, debe asignar el tamaño de la memoria caché de bloque que se va a reservar.
 
 En la tabla siguiente se describen las dos opciones de configuración que controlan la memoria caché de CSV.
 

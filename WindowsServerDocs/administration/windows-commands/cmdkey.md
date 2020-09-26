@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fb96624ee45e2b526ed2092c0593451d0492bf74
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: bc4f7bbb711b40f61042a2bfbb88884529cfbb1d
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89629548"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91388069"
 ---
 # <a name="cmdkey"></a>cmdkey
 
@@ -35,7 +35,7 @@ cmdkey [{/add:<targetname>|/generic:<targetname>}] {/smartcard | /user:<username
 | /SmartCard | Recupera la credencial de una tarjeta inteligente. Si se encuentra más de una tarjeta inteligente en el sistema cuando se usa esta opción, **cmdkey** muestra información acerca de todas las tarjetas inteligentes disponibles y, a continuación, solicita al usuario que especifique cuál desea usar. |
 | /User`<username>` | Especifica el nombre de usuario o de cuenta que se va a almacenar con esta entrada. Si `<username>` no se proporciona, se le solicitará. |
 |/Pass`<password>` | Especifica la contraseña que se va a almacenar con esta entrada. Si `<password>` no se proporciona, se le solicitará. Las contraseñas no se muestran después de su almacenamiento. |
-| /delete{:`<targetname>` | acceso | Elimina un nombre de usuario y una contraseña de la lista. Si `<targetname>` se especifica, se elimina esa entrada. Si `/ras` se especifica, se elimina la entrada de acceso remoto almacenada. |
+| /delete{:`<targetname> | /ras}` | Elimina un nombre de usuario y una contraseña de la lista. Si `<targetname>` se especifica, se elimina esa entrada. Si `/ras` se especifica, se elimina la entrada de acceso remoto almacenada. |
 | /List`<targetname>` | Muestra la lista de nombres de usuario y credenciales almacenados. Si `<targetname>` no se especifica, se enumeran todos los nombres de usuario y las credenciales almacenados. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 

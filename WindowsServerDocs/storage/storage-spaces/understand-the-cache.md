@@ -5,14 +5,14 @@ ms.author: cosdar
 manager: dongill
 ms.topic: article
 author: cosmosdarwin
-ms.date: 07/17/2019
+ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 315b645cf3c2adc60bd8eeed0406e1226b2d2128
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 502b04676fcb9a9c7342e701e71be473890f9668
+ms.sourcegitcommit: 8a826e992f28a70e75137f876a5d5e61238a24e4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968852"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365358"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>Descripción de la memoria caché de Espacios de almacenamiento directo
 
@@ -28,36 +28,16 @@ El vídeo siguiente incluye detalles sobre cómo funciona el almacenamiento en c
 
 ## <a name="drive-types-and-deployment-options"></a>Tipos de unidad y opciones de implementación
 
-La característica Espacios de almacenamiento directo actualmente funciona con tres tipos de dispositivos de almacenamiento:
+Actualmente, Espacios de almacenamiento directo funciona con cuatro tipos de dispositivos de almacenamiento:
 
-<table>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/NVMe-100px.png" alt="Image of NVMe (Non-Volatile Memory Express)" >
-        </td>
-        <td style="padding: 10px; border: 0;" valign="middle">
-            NVMe (memoria no volátil exprés)
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/SSD-100px.png" alt="Image of SSD" >
-        </td>
-        <td style="padding: 10px; border: 0;" valign="middle">
-            SSD (unidad de estado sólido) SATA o SAS
-        </td>
-    </tr>
-    <tr style="border: 0;">
-        <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/HDD-100px.png"alt="Image of HDD" >
-        </td>
-        <td style="padding: 10px; border: 0;" valign="middle">
-            HDD (unidad de disco duro)
-        </td>
-    </tr>
-</table>
+| Tipo de unidad | Descripción |
+|----------------------|--------------------------|
+|![PMem](media/understand-the-cache/pmem-100px.png)|**PMem** hace referencia a la memoria persistente, un nuevo tipo de almacenamiento de baja latencia y alto rendimiento.|
+|![NVMe](media/understand-the-cache/NVMe-100px.png)|**NVMe** (memoria no volátil rápida) hace referencia a las unidades de estado sólido que se colocan directamente en el bus PCIe. Los factores de forma comunes son 2,5" U.2, AIC (Add-In Card) PCIe y M.2. NVMe ofrece mayor rendimiento de IOPS y E/S con latencia más baja que ningún otro tipo de unidad que se admita hoy en día excepto PMem.|
+|![SSD](media/understand-the-cache/SSD-100px.png)|**SSD** hace referencia a las unidades de estado sólido, que se conectan a través de un dispositivo SATA o SAS convencional.|
+|![HDD](media/understand-the-cache/HDD-100px.png)|**HDD** hace referencia a unidades de disco duro magnéticas de rotación que ofrecen gran capacidad de almacenamiento.|
 
-Estos dispositivos se pueden combinar de seis maneras, que se agrupan en dos categorías: "memoria flash" e "híbrida".
+Estos se pueden combinar de varias maneras que se agrupan en dos categorías: "todo flash" e "híbrida".
 
 ### <a name="all-flash-deployment-possibilities"></a>Posibilidades de implementación todo flash
 
@@ -169,7 +149,7 @@ Hay varias memorias caché no relacionadas en la pila de almacenamiento definida
 
 Con Espacios de almacenamiento directo, no se debería modificar el comportamiento predeterminado de la caché con reescritura de espacios de almacenamiento. Por ejemplo, no se deben usar parámetros como **-WriteCacheSize** en el cmdlet **New-Volume**.
 
-Puede optar por usar la memoria caché de CSV o no: depende de usted. Está desactivada de forma predeterminada en Espacios de almacenamiento directo, pero no entra en conflicto con la nueva caché descrita en este tema en absoluto. En algunos escenarios, puede mejorar el rendimiento significativamente. Para más información, consulte [Cómo habilitar la caché de CSV](../../failover-clustering/failover-cluster-csvs.md#enable-the-csv-cache-for-read-intensive-workloads-optional).
+Puede optar por usar la memoria caché de CSV o no: depende de usted. No entra en conflicto con la memoria caché que se describe en este tema de ningún modo. En algunos escenarios, puede mejorar el rendimiento significativamente. Para más información, consulte [Cómo habilitar la caché de CSV](../../failover-clustering/failover-cluster-csvs.md#enable-the-csv-cache-for-read-intensive-workloads-optional).
 
 ## <a name="manual-configuration"></a>Configuración manual
 
@@ -272,5 +252,5 @@ No hay ninguna regla universal, pero si faltan demasiadas lecturas en la memoria
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Elegir tipos de unidades y de resistencia](choosing-drives.md)
-- [Tolerancia a errores y eficacia del almacenamiento](storage-spaces-fault-tolerance.md)
+- [Tolerancia a errores y eficiencia del almacenamiento](storage-spaces-fault-tolerance.md)
 - [Requisitos de hardware de Espacios de almacenamiento directo](storage-spaces-direct-hardware-requirements.md)

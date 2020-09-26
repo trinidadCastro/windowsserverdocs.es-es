@@ -1,17 +1,18 @@
 ---
 title: Agregar información de host para la atestación de confianza de TPM
+description: Información sobre cómo agregar información de host para la atestación de confianza de TPM.
 ms.topic: article
 ms.assetid: f0aa575b-b34e-4f6c-8416-ed3e398e0ad2
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 06/21/2019
-ms.openlocfilehash: fc879fda0f6a708a8a1d4ebd60834f4e6543f3ba
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2f4f684b0c18c19cdbdf09e672c83e51f426ca04
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997172"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91388856"
 ---
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>Agregar información de host para la atestación de confianza de TPM
 
@@ -20,7 +21,7 @@ ms.locfileid: "87997172"
 En el modo TPM, el administrador del tejido captura tres tipos de información de host, cada una de las cuales debe agregarse a la configuración de HGS:
 
 - Un identificador de TPM (EKpub) para cada host de Hyper-V
-- Directivas de integridad de código, lista blanca de archivos binarios permitidos para los hosts de Hyper-V
+- Directivas de integridad de código, un permitidos de archivos binarios permitidos para los hosts de Hyper-V
 - Una línea de base de TPM (medidas de arranque) que representa un conjunto de hosts de Hyper-V que se ejecutan en la misma clase de hardware
 
 Una vez que el administrador del tejido Capture la información, agréguela a la configuración de HGS tal y como se describe en el procedimiento siguiente.
@@ -37,7 +38,7 @@ Una vez que el administrador del tejido Capture la información, agréguela a la
     > Puede comprobar si falta un EKCert abriendo el archivo XML en un editor como el Bloc de notas y comprobando si hay un mensaje de error que indica que no se encontró EKCert.
     > Si este es el caso y confía en que el TPM del equipo es auténtico, puede usar la `-Force` marca para invalidar esta comprobación de seguridad y agregar el identificador de host a HGS.
 
-2. Obtener la Directiva de integridad de código creada por el administrador de tejido para los hosts, en formato binario ( \* . p7b). Cópielo en un servidor HGS. A continuación, ejecute el siguiente comando.
+2. Obtener la Directiva de integridad de código creada por el administrador de tejido para los hosts, en formato binario ( \* . p7b). Cópielo en un servidor HGS. Luego, ejecute el siguiente comando.
 
     En `<PolicyName>` , especifique un nombre para la Directiva de CI que describe el tipo de host al que se aplica. Un procedimiento recomendado consiste en asignarle un nombre después de la marca y el modelo de su equipo y cualquier configuración de software especial que se ejecute en él.<br>Para `<Path>` , especifique la ruta de acceso y el nombre de archivo de la Directiva de integridad de código.
 
@@ -49,7 +50,7 @@ Una vez que el administrador del tejido Capture la información, agréguela a la
     > Si usa una directiva de integridad de código firmada, registre una copia sin firmar de la misma directiva con HGS.
     > La firma de las directivas de integridad de código se utiliza para controlar las actualizaciones de la Directiva, pero no se mide en el TPM del host y, por tanto, no se puede atestiguar en el HGS.
 
-3. Obtenga el archivo de registro de TCG que el administrador del tejido capturó de un host de referencia. Copie el archivo en un servidor HGS. A continuación, ejecute el siguiente comando. Normalmente, asignará un nombre a la Directiva después de la clase de hardware que representa (por ejemplo, "revisión del modelo del fabricante").
+3. Obtenga el archivo de registro de TCG que el administrador del tejido capturó de un host de referencia. Copie el archivo en un servidor HGS. Luego, ejecute el siguiente comando. Normalmente, asignará un nombre a la Directiva después de la clase de hardware que representa (por ejemplo, "revisión del modelo del fabricante").
 
     ```powershell
     Add-HgsAttestationTpmPolicy -Path <Filename>.tcglog -Name '<PolicyName>'
