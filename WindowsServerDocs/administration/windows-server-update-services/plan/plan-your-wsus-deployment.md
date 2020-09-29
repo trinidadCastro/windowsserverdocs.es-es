@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 05/24/2018
-ms.openlocfilehash: 1d3638b7a05c406293035c7f0a0e8854ed2ecee9
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: cac6c2af4f0cf900abcfea82f80b07e627c7e1e4
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766808"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91388429"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planear la implementación de WSUS
 
@@ -172,10 +172,10 @@ Es posible crear jerarquías complejas de servidores WSUS. Dado que los servidor
 Puede conectar servidores WSUS en modo autónomo (para una administración distribuida) o en modo de réplica (para una administración centralizada). No es necesario implementar una jerarquía de servidores en un solo modo: puede implementar una solución WSUS que use servidores WSUS en ambos modos, autónomo y de réplica.
 
 #### <a name="autonomous-mode"></a>Modo autónomo
-El modo autónomo, también denominado administración distribuida, es la opción de instalación predeterminada para WSUS. En este modo, un servidor WSUS que precede en la cadena comparte actualizaciones con los servidores que siguen en la cadena, durante la sincronización. Los servidores WSUS que siguen en la cadena se administran de forma independiente y no reciben el estado de aprobación de una actualización ni información del grupo de equipos del servidor que precede en la cadena. Al usar el modelo de administración distribuida, el administrador de cada servidor WSUS selecciona idiomas de actualización, crea grupos de equipos, asigna equipos a grupos, prueba y aprueba actualizaciones y se asegura de que las actualizaciones correctas se instalen en los grupos de equipos adecuados. La siguiente imagen muestra cómo se podrían implementar servidores WSUS autónomos en un entorno de sucursal:
+El modo autónomo, también denominado administración distribuida, es la opción de instalación predeterminada para WSUS. En este modo, un servidor WSUS que precede en la cadena comparte actualizaciones con los servidores que siguen en la cadena, durante la sincronización. Los servidores WSUS que siguen en la cadena se administran de forma independiente y no reciben el estado de aprobación de una actualización ni información del grupo de equipos del servidor que precede en la cadena. Al usar el modelo de administración distribuida, el administrador de cada servidor WSUS selecciona idiomas de actualización, crea grupos de equipos, asigna equipos a grupos, prueba y aprueba actualizaciones y se asegura de que las actualizaciones correctas se instalen en los grupos de equipos adecuados.
 
 #### <a name="replica-mode"></a>Modo de réplica
-El modo de réplica, también denominado administración centralizada, funciona con un servidor WSUS que precede en la cadena y que comparte actualizaciones, estados de aprobación y grupos de equipos con los servidores que siguen en la cadena. Los servidores de réplica heredan las aprobaciones de actualización y no pueden administrarse al margen del servidor WSUS que los precede . La siguiente imagen muestra cómo se podrían implementar servidores WSUS de réplica en un entorno de sucursal:
+El modo de réplica, también denominado administración centralizada, funciona con un servidor WSUS que precede en la cadena y que comparte actualizaciones, estados de aprobación y grupos de equipos con los servidores que siguen en la cadena. Los servidores de réplica heredan las aprobaciones de actualización y no pueden administrarse al margen del servidor WSUS que los precede .
 
 > [!NOTE]
 > Si configura varios servidores de réplica para que se conecten con un servidor WSUS único que los precede, no programe la sincronización para que se ejecute al mismo tiempo en todos los servidores de réplica. Este procedimiento evitará un repentino aumento del uso del ancho de banda.
