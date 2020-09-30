@@ -1,15 +1,16 @@
 ---
 title: Implementar la infraestructura de hiperconvergida con el centro de administración de Windows
+description: Implementar la infraestructura de hiperconvergida con el centro de administración de Windows.
 ms.topic: article
 author: cosmosdarwin
 ms.author: cosdar
 ms.date: 11/04/2019
-ms.openlocfilehash: 06062f4add54fda3ddcda4d092d6eaf1d692ebf8
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 1f8e8a5433b986333975f45009819a98d90b61fc
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993485"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517511"
 ---
 # <a name="deploy-hyperconverged-infrastructure-with-windows-admin-center"></a>Implementar la infraestructura de hiperconvergida con el centro de administración de Windows
 
@@ -17,7 +18,7 @@ ms.locfileid: "87993485"
 
 Puede usar el centro de administración de Windows [versión 1910](../overview.md) o posterior para implementar la infraestructura de hiperconvergida con dos o más servidores de Windows adecuados. Esta nueva característica adopta la forma de un flujo de trabajo de varias fases que le guía a través de la instalación de características, la configuración de redes, la creación del clúster y la implementación de Espacios de almacenamiento directo y/o redes definidas por software (SDN) si se seleccionan.
 
-A partir de la versión 2007 del centro de administración de Windows, el centro de administración de Windows es compatible con el sistema operativo HCI Azure Stack. Obtenga información sobre [cómo implementar un clúster en el centro de administración de Windows en el Azure Stack documentos de HCl](/azure-stack/hci/getting-started). Aunque esta documentación se centra en Azure Stack HCl, las instrucciones también son adecuadas para las implementaciones de Windows Server.
+A partir de la versión 2007 del centro de administración de Windows, el centro de administración de Windows es compatible con el sistema operativo HCI Azure Stack. Obtenga información sobre [cómo implementar un clúster en el centro de administración de Windows en el Azure Stack documentos de HCl](/azure-stack/hci/get-started). Aunque esta documentación se centra en Azure Stack HCl, las instrucciones también se aplican principalmente a las implementaciones de Windows Server.
 
 ## <a name="undo-and-start-over"></a>Deshacer y empezar de nuevo
 

@@ -5,14 +5,14 @@ ms.author: eldenc
 manager: eldenc
 ms.topic: article
 author: eldenchristensen
-ms.date: 07/24/2020
+ms.date: 09/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c53179f32f0e6837297859413fa0cb88d66a0d2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fcbd7a955efda11543010d3e4705bf52b7d9bdea
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961129"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517501"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
@@ -27,11 +27,11 @@ En el caso de producción, Microsoft recomienda adquirir una solución de hardwa
 
 ## <a name="base-requirements"></a>Requisitos básicos
 
-Los sistemas, los componentes, los dispositivos y los controladores deben tener **Windows server 2016 certificado** por el [Catálogo de Windows Server](https://www.windowsservercatalog.com). Además, se recomienda que los servidores, las unidades, los adaptadores de bus host y los adaptadores de red tengan el **estándar del centro de datos definido por software (SDDC)** o el **centro de datos definido por software (SDDC)** , como se muestra a continuación. Hay más de 1.000 componentes con la AQs de SDDC.
+Los sistemas, componentes, dispositivos y controladores deben estar certificados para el sistema operativo que use en el [Catálogo de Windows Server](https://www.windowsservercatalog.com). Además, se recomienda que los servidores, las unidades, los adaptadores de bus host y los adaptadores de red tengan el **estándar del centro de datos definido por software (SDDC)** o el **centro de datos definido por software (SDDC)** , como se muestra a continuación. Hay más de 1.000 componentes con la AQs de SDDC.
 
-![captura de pantalla del catálogo de Windows Server que muestra la AQs de SDDC](media/hardware-requirements/sddc-aqs.png)
+![Captura de pantalla del catálogo de Windows Server que muestra un sistema que incluye la certificación Premium del centro de datos definido por software (SDDC)](media/hardware-requirements/sddc-aqs.png)
 
-El clúster totalmente configurado (servidores, redes y almacenamiento) debe pasar todas las [pruebas de validación del clúster](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10)) por el asistente en Administrador de clústeres de conmutación por error o con el `Test-Cluster` [cmdlet](/powershell/module/failoverclusters/test-cluster?view=win10-ps) de PowerShell.
+El clúster totalmente configurado (servidores, redes y almacenamiento) debe pasar todas las [pruebas de validación del clúster](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10)) por el asistente en Administrador de clústeres de conmutación por error o con el `Test-Cluster` [cmdlet](/powershell/module/failoverclusters/test-cluster) de PowerShell.
 
 Además, se aplican los siguientes requisitos:
 
@@ -45,7 +45,7 @@ Además, se aplican los siguientes requisitos:
 - Procesador compatible con Intel Nehalem o posterior; de
 - Procesador compatible con AMD EPYC o posterior
 
-## <a name="memory"></a>Memory
+## <a name="memory"></a>Memoria
 
 - Memoria para Windows Server, máquinas virtuales y otras aplicaciones o cargas de trabajo; signos
 - 4 GB de RAM por terabyte (TB) de capacidad de la unidad de caché en cada servidor, para metadatos de Espacios de almacenamiento directo
@@ -97,7 +97,7 @@ A continuación se muestra cómo se pueden conectar las unidades de Espacios de 
 - Adaptador de bus host (HBA) SAS con unidades SATA
 - **no compatible:** Tarjetas de controlador RAID o almacenamiento SAN (Canal de fibra, iSCSI, FCoE). Las tarjetas adaptadoras de bus host (HBA) deben implementar el modo de paso a través simple.
 
-![diagrama de interconexiones de unidad compatibles](media/hardware-requirements/drive-interconnect-support-1.png)
+![Diagrama que muestra interconexiones de unidad admitidas, con tarjetas RAID no admitidas](media/hardware-requirements/drive-interconnect-support-1.png)
 
 Las unidades pueden ser internas en el servidor o en un contenedor externo que esté conectado a un solo servidor. Se requiere SCSI Enclosure Services (SES) para la asignación e identificación de ranuras. Cada contenedor externo debe presentar un identificador único.
 
@@ -105,7 +105,7 @@ Las unidades pueden ser internas en el servidor o en un contenedor externo que e
 - Unidades en un contenedor externo ("JBOD") conectadas a un servidor
 - **no compatible:** Alojamientos compartidos de SAS conectados a varios servidores o a cualquier forma de e/s de múltiples rutas (MPIO) en las que se puede tener acceso a las unidades mediante múltiples rutas.
 
-![diagrama de interconexiones de unidad compatibles](media/hardware-requirements/drive-interconnect-support-2.png)
+![Diagrama que muestra cómo se admiten las unidades internas y externas conectadas directamente a un servidor, pero las SA compartidas no](media/hardware-requirements/drive-interconnect-support-2.png)
 
 ### <a name="minimum-number-of-drives-excludes-boot-drive"></a>Número mínimo de unidades (excluye la unidad de arranque)
 

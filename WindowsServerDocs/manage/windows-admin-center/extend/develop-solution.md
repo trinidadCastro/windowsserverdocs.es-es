@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ded378a40537455423f79869dfd07dcd2ba625
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 293fa8a617d7ceb1628ec72df2f015b6b2547f16
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949600"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517591"
 ---
 # <a name="develop-a-solution-extension"></a>Desarrollar una extensión de la solución
 
@@ -74,8 +74,9 @@ Ahora que ha creado una extensión con la CLI del centro de administración de W
 - Crear un [proveedor de conexiones personalizado](guides/create-connection-provider.md)
 - Modificar el [comportamiento de navegación raíz](guides/modify-root-navigation.md)
 
-También se pueden encontrar más ejemplos en nuestro [sitio de GITHUB SDK](https://aka.ms/wacsdk):
--  [Herramientas de desarrollo](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools) es una extensión totalmente operativa que puede estar cargada en el centro de administración de Windows y contiene una amplia colección de ejemplos de herramientas y funcionalidad de ejemplo que puede examinar y usar en su propia extensión.
+Puede encontrar más ejemplos en nuestra guía del desarrollador. La guía del desarrollador es una extensión de solución totalmente funcional que puede estar cargada en el centro de administración de Windows y contiene una amplia colección de ejemplos de herramientas y funcionalidad de ejemplo que puede examinar y usar en su propia extensión. 
+
+Habilite la extensión guía del Desarrollador en la página **Opciones avanzadas** de la configuración del centro de administración de Windows. 
 
 ## <a name="build-and-side-load-your-extension"></a>Compilar y cargar la extensión
 

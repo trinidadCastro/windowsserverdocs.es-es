@@ -5,18 +5,19 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
-ms.openlocfilehash: b78a8de53e315a3a2f9f546ed49c06b4bccfc682
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9cb7624b2fb9469ecd0af93cdf5251878ecec74c
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937595"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517481"
 ---
 # <a name="windows-admin-center-release-history"></a>Historial de versiones del centro de administración de Windows
 
 Esta es una lista de las últimas características publicadas:
 
-- La versión [2007](https://aka.ms/wac2007) es la versión más reciente de GA: incluye compatibilidad con la nueva Azure Stack HCl y las nuevas características de varias herramientas.
+- La versión [2009](https://aka.ms/wac2009) es la versión más reciente de GA: incluye compatibilidad con Azure Kubernetes Service en Azure Stack HCl y las principales actualizaciones de las máquinas virtuales, los recursos compartidos de archivos y las herramientas de contenedores.
+- La versión [2007](https://aka.ms/wac2007) incluye compatibilidad con la nueva Azure Stack HCl y las nuevas características de varias herramientas.
 - La versión [1910,2](https://aka.ms/wac1910.2) incluye actualizaciones de accesibilidad de la plataforma y numerosas correcciones de errores
 - La versión [1910](https://aka.ms/wac1910) presenta varios servicios híbridos de Azure nuevos y aporta características que anteriormente estaban en versión preliminar al canal de GA.
 - En la versión [1909](https://aka.ms/wac1909) se incorpora el tipo de conexión específico de la máquina virtual de Azure y se unifican los tipos de conexión para los clústeres de conmutación por error tradicionales y los clústeres de HCI.

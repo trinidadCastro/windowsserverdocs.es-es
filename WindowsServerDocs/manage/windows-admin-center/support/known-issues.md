@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: b4d7d039c775b85321d168f8de7415de6b92e784
-ms.sourcegitcommit: 97a65d8f52514848963e8917021bd9a1f6ee3b19
+ms.openlocfilehash: c062531e96e12ca73e001018ac3f640e27fdad99
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89287827"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517561"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conocidos del centro de administración de Windows
 
@@ -19,7 +19,7 @@ ms.locfileid: "89287827"
 
 Si encuentra un problema que no se describe en esta página, [háganoslo saber](https://aka.ms/WACfeedback).
 
-## <a name="installer"></a>Installer
+## <a name="installer"></a>Instalador
 
 - Al instalar el centro de administración de Windows con su propio certificado, tenga en cuenta que si copia la huella digital desde la herramienta MMC del administrador de certificados, contendrá [un carácter no válido al principio.](https://support.microsoft.com/help/2023835/certificate-thumbprint-displayed-in-mmc-certificate-snap-in-has-extra) Como solución alternativa, escriba el primer carácter de la huella digital y copie y pegue el resto.
 
@@ -195,7 +195,7 @@ La solución Administración de equipos contiene un subconjunto de las herramien
 
   - Para habilitar la administración del cliente de Windows 10, debe emitir el comando ```Enable-PSRemoting``` desde un símbolo del sistema de PowerShell con privilegios elevados.
 
-  - También es posible que tenga que actualizar el firewall para permitir conexiones desde fuera de la subred local con ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` . Para escenarios de redes más restrictivas, consulte [esta documentación](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1).
+  - También es posible que tenga que actualizar el firewall para permitir conexiones desde fuera de la subred local con ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` . Para escenarios de redes más restrictivas, consulte [esta documentación](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1&preserve-view=true).
 
 ## <a name="cluster-deployment"></a>Implementación de clúster
 
@@ -244,7 +244,7 @@ Disable-WsmanCredSSP -Role Server
 Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
 ```
 
-3. Restablecimiento de datos de propagado de directiva de grupo mediante el comando
+3. Restablecer datos propagados por la Directiva de grupo mediante el comando
 ```Command Line
 gpupdate /force
 ```
@@ -288,6 +288,17 @@ El Asistente para la implementación de clústeres de la versión 2007 del centr
 - Algunos comandos, como **unidades-actualizar firmware**, **servidores-quitar** y **volúmenes abiertos,** están deshabilitados y no se admiten actualmente.
 
 ## <a name="azure-services"></a>Servicios de Azure
+
+### <a name="azure-login-and-gateway-registration"></a>Registro de inicio de sesión y puerta de enlace de Azure
+En la versión 2009, puede que tenga problemas para iniciar sesión en Azure o registrar la puerta de enlace del centro de administración de Windows con Azure. Las instrucciones siguientes le ayudarán a mitigar estos problemas: 
+
+* Antes de usar cualquier funcionalidad de Azure en el centro de administración de Windows, incluido el registro de la puerta de enlace, asegúrese de que ha iniciado sesión en su cuenta de Azure en otra pestaña o ventana. Se recomienda iniciar sesión a través de [Azure portal](https://portal.azure.com/).  
+
+* Si inicia sesión correctamente en Azure durante el registro de la puerta de enlace pero no ve la confirmación visual en la página de **Azure** de la configuración del centro de administración de Windows, intente desplazarse a una página diferente en configuración antes de volver a la página de **Azure** . 
+
+* La ventana emergente de inicio de sesión de Azure puede aparecer con más frecuencia en esta compilación y puede requerir que los administradores concedan permisos del centro de administración de Windows con más frecuencia. 
+
+* Si ya ha dado la aprobación de administrador para el centro de administración de Windows en Azure portal y sigue viendo un mensaje de error que indica "requerir aprobación de administrador", intente iniciar sesión en Azure con uno de los banners del centro de administración de Windows en lugar de en la página **configuración** . 
 
 ### <a name="azure-file-sync-permissions"></a>Azure File Sync permisos
 

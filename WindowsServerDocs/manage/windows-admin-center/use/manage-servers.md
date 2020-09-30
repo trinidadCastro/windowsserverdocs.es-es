@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be02bd7c513d0e7680ed70f107a34c6a9af6ed2
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 1438db87cd59e233328422b03d4d9a6a659d4960
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90765966"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517540"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Administrar servidores con el centro de administración de Windows
 
@@ -56,7 +56,7 @@ Las siguientes herramientas están disponibles para las conexiones de servidor:
 | [DHCP](#dhcp) | Ver y administrar la configuración del servidor DHCP |
 | [DNS](#dns) | Ver y administrar la configuración del servidor DNS |
 | [Eventos](#events) | Ver eventos |
-| [Archivos](#files) | Examen de archivos y carpetas |
+| [Archivos y uso compartido de archivos](#files-and-file-sharing) | Examen de archivos y carpetas |
 | [Firewall](#firewall) | Ver y modificar las reglas de Firewall |
 | [Aplicaciones instaladas](#installed-apps) | Visualización y eliminación de las aplicaciones instaladas |
 | [Usuarios y grupos locales](#local-users-and-groups) | Ver y modificar usuarios y grupos locales |
@@ -217,13 +217,13 @@ Se admiten las siguientes características en eventos:
 
 [**Ver comentarios y características propuestas para eventos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BEvents%5D).
 
-## <a name="files"></a>Archivos
+## <a name="files-and-file-sharing"></a>Archivos y uso compartido de archivos
 
-**Archivos** permite administrar archivos y carpetas en un equipo o servidor.
+**Archivos y uso compartido** de archivos permite administrar archivos y carpetas en un equipo o servidor.
 
 ### <a name="features"></a>Características
 
-Se admiten las siguientes características en los archivos:
+Se admiten las siguientes características en archivos y uso compartido de archivos:
 
 - Examen de archivos y carpetas
 - Buscar un archivo o una carpeta
@@ -237,8 +237,9 @@ Se admiten las siguientes características en los archivos:
 - Ver propiedades de archivo o carpeta
 - Agregar, editar o quitar recursos compartidos de archivos
 - Modificar permisos de usuario y de grupo en recursos compartidos de archivos
+- Modificar la seguridad del servidor de archivos
 
-[**Ver comentarios y características propuestas para los archivos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BFiles%5D).
+[**Ver comentarios y características propuestas para compartir archivos y**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BFiles%5D)archivos.
 
 ## <a name="firewall"></a>Firewall
 

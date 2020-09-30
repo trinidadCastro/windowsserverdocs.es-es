@@ -1,24 +1,24 @@
 ---
 title: Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
-description: Información general de la característica Servidor de archivos de escalabilidad horizontal para Windows Server 201 R2 y Windows Server 2012.
+description: Servidor de archivos de escalabilidad horizontal está diseñado para proporcionar recursos compartidos de archivos de escalabilidad horizontal que están disponibles continuamente para el almacenamiento de aplicaciones de servidor basado en archivos. Los recursos compartidos de archivos de escalabilidad horizontal otorgan la capacidad de compartir la misma carpeta desde varios nodos del mismo clúster. Este escenario se centra en cómo planear e implementar el Servidor de archivos de escalabilidad horizontal.
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.date: 04/26/2018
+ms.date: 09/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c719bb4c148a0ff1b287011086ba75e5a3fc69
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 5aca126d036dffc9b7463edd07e70a3dd02b7dbd
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766578"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517491"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
 
->Se aplica a: Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-El Servidor de archivos de escalabilidad horizontal es una característica que se diseñó para proporcionar recursos compartidos de archivos de escalabilidad horizontal que están disponibles continuamente para el almacenamiento de aplicaciones del servidor basado en archivos. Los recursos compartidos de archivos de escalabilidad horizontal otorgan la capacidad de compartir la misma carpeta desde varios nodos del mismo clúster. Este escenario se centra en cómo planear e implementar el Servidor de archivos de escalabilidad horizontal.
+Servidor de archivos de escalabilidad horizontal está diseñado para proporcionar recursos compartidos de archivos de escalabilidad horizontal que están disponibles continuamente para el almacenamiento de aplicaciones de servidor basado en archivos. Los recursos compartidos de archivos de escalabilidad horizontal otorgan la capacidad de compartir la misma carpeta desde varios nodos del mismo clúster. Este escenario se centra en cómo planear e implementar el Servidor de archivos de escalabilidad horizontal.
 
 Puedes implementar y configurar un servidor de archivos en clúster usando los métodos siguientes:
 
@@ -72,7 +72,7 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <tbody>
 <tr class="odd">
 <td>SMB</td>
-<td>Disponibilidad continua de SMB</td>
+<td>Disponibilidad continua de SMB (*)</td>
 <td>Sí</td>
 <td>Sí</td>
 </tr>
@@ -223,7 +223,10 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 </tbody>
 </table>
 
-\* La redirección de carpetas, Archivos sin conexión, perfiles de usuario móviles o directorios principales generan un gran número de escrituras que se deben escribir inmediatamente en el disco (sin almacenamiento en búfer) al usar recursos compartidos de archivos disponibles continuamente, lo que reduce el rendimiento en comparación con los recursos compartidos de archivos de uso general. Los recursos compartidos de archivos disponibles continuamente también son incompatibles con el Administrador de recursos del servidor de archivos y con los equipos que ejecutan Windows XP. Además, es posible que Archivos sin conexión no pase al modo sin conexión durante 3-6 minutos después de que un usuario pierda el acceso a un recurso compartido, lo que podría frustrar a los usuarios que todavía no utilicen el modo sin conexión de Archivos sin conexión.
+\*La <a href="https://docs.microsoft.com/windows-server/storage/storage-spaces/cluster-sets#scale-out-file-server-and-cluster-sets">disponibilidad continua en bucle invertido (CA) de SMB en configuraciones hiperconvergidas</a> es existen en Windows Server 2019. 
+
+>[!NOTE]
+>La redirección de carpetas, Archivos sin conexión, perfiles de usuario móviles o directorios principales generan un gran número de escrituras que se deben escribir inmediatamente en el disco (sin almacenamiento en búfer) al usar recursos compartidos de archivos disponibles continuamente, lo que reduce el rendimiento en comparación con los recursos compartidos de archivos de uso general. Los recursos compartidos de archivos disponibles continuamente también son incompatibles con el Administrador de recursos del servidor de archivos y con los equipos que ejecutan Windows XP. Además, es posible que Archivos sin conexión no pase al modo sin conexión durante 3-6 minutos después de que un usuario pierda el acceso a un recurso compartido, lo que podría frustrar a los usuarios que todavía no utilicen el modo sin conexión de Archivos sin conexión.
 
 ## <a name="practical-applications"></a>Aplicaciones prácticas
 

@@ -5,13 +5,13 @@ author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
-ms.date: 12/25/2019
-ms.openlocfilehash: f96302242eca58d589586fa44e6e7cd04ef98cc1
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.date: 09/29/2020
+ms.openlocfilehash: 9008a3381ead368afb627bcfdcd8084a389afabb
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083646"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517551"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>Detección, habilitación y deshabilitación de SMBv1, SMBv2 y SMBv3 en Windows
 
@@ -425,6 +425,30 @@ Para configurarlo mediante directiva de grupo, siga estos pasos:
    > Cuando se usa Consola de administración de directivas de grupo, no es necesario usar comillas o comas. Basta con escribir cada entrada en líneas individuales.
 
 6. Reinicie los sistemas de destino para finalizar la deshabilitación de SMB v1.
+
+### <a name="auditing-smbv1-usage"></a>Auditoría del uso de SMBv1
+
+Para determinar qué clientes están intentando conectarse a un servidor SMB con SMBv1, puede habilitar la auditoría en Windows Server 2016, Windows 10 y Windows Server 2019. También puede realizar auditorías en Windows 7 y Windows Server 2008 R2 si instalaron la actualización de mayo de 2018 mensual y en Windows 8, Windows 8.1, Windows Server 2012 y Windows Server 2012 R2 si instalaron la actualización mensual de 2017 julio. 
+
+- Habilite:
+  
+  ```PowerShell
+  Set-SmbServerConfiguration –AuditSmb1Access $true
+  ```
+
+- Activa 
+  
+  ```PowerShell
+  Set-SmbServerConfiguration –AuditSmb1Access $false
+  ```
+  
+- Determinar 
+  
+  ```PowerShell
+  Get-SmbServerConfiguration | Select AuditSmb1Access
+  ```
+
+Cuando está habilitada la auditoría SMBv1, el evento 3000 aparece en el registro de eventos "Microsoft-Windows-SMBServer\Audit", identificando cada cliente que intenta conectarse con SMBv1.
 
 ### <a name="summary"></a>Resumen
 

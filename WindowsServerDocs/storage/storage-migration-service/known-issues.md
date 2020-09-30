@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: 0c3e52c11f7771856608b86ddd778ef51c4c8516
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 6c3ca3a44665bab08c58853d569823f88c908f35
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766918"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517521"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -637,6 +637,17 @@ Guidance: Check the detailed error and make sure the inventory requirements are 
 
 Este problema se debe a un defecto de código en el servicio de migración de almacenamiento. Actualmente, la única solución es cambiar el nombre del equipo para que tenga el mismo nombre que el nombre NetBIOS y, a continuación, usar [netdom computername/Add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) para agregar un nombre de equipo alternativo que contenga el nombre más largo que estaba en uso antes de iniciar el inventario. El servicio de migración de almacenamiento admite la migración de nombres de equipo alternativos.
 
-## <a name="see-also"></a>Vea también
+## <a name="storage-migration-service-inventory-fails-with-a-parameter-cannot-be-found-that-matches-parameter-name-includedfsn"></a>Error en el inventario de Storage Migration Service con "no se encuentra un parámetro que coincida con el nombre de parámetro" IncludeDFSN "" 
+
+Cuando se usa la versión 2009 del centro de administración de Windows para administrar un orquestador de Windows Server 2019, se recibe el siguiente error al intentar inventariar un equipo de origen:
+
+```
+Remote exception : a parameter cannot be found that matches parameter name 'IncludeDFSN'" 
+```
+
+Para resolverlo, actualice la extensión del servicio de migración de almacenamiento al menos a la versión 1.113.0 del centro de administración de Windows. La actualización debe aparecer automáticamente en la fuente y solicitar la instalación.
+
+
+## <a name="see-also"></a>Consulte también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)
