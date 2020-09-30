@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 82ec683f0ed4723e7905daea759965690b8adcd5
-ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
+ms.openlocfilehash: 417a00dbb037c298784df81f9c5ed5e9c28485f8
+ms.sourcegitcommit: 881a5bd40026288afbcee5fdbf602fd55f833d47
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91388312"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586445"
 ---
 # <a name="setx"></a>setx
 
@@ -47,7 +47,7 @@ setx [/s <computer> [/u [<domain>\]<user name> [/p [<password>]]]] /f <filename>
 | /d. `<delimiters>` | Especifica los delimitadores como **,** o **\\** que se van a usar además de los cuatro delimitadores integrados: espacio, tabulación, entrada y avance de barra. Entre los delimitadores válidos se incluyen los caracteres ASCII. El número máximo de delimitadores es 15, incluidos los delimitadores integrados. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Este comando es similar a la utilidad de UNIX SETENV.
 
@@ -64,6 +64,14 @@ setx [/s <computer> [/u [<domain>\]<user name> [/p [<password>]]]] /f <filename>
 - REG_DWORD valores del registro se extraen y se usan en modo hexadecimal.
 
 - El modo de archivo solo admite el análisis de archivos de texto de retorno de carro y avance de línea (CRLF).
+
+- Al ejecutar este comando en una variable existente, se quitan las referencias a variables y se usan los valores expandidos.
+
+  Por ejemplo, si la variable% PATH% tiene una referencia a% JAVADIR% y% PATH% se manipula mediante **setx**, se expande% JAVADIR% y su valor se asigna directamente a la variable de destino% path%. Esto significa que las actualizaciones futuras de% JAVADIR% **no** se reflejarán en la variable% PATH%.
+
+- Tenga en cuenta que hay un límite de 1024 caracteres al asignar contenido a una variable mediante **setx**.
+
+  Esto significa que el contenido se recorta si pasa por encima de 1024 caracteres y que el texto recortado es lo que se aplica a la variable de destino. Si este texto recortado se aplica a una variable existente, puede provocar la pérdida de datos que la variable de destino contenía anteriormente.
 
 ## <a name="examples"></a>Ejemplos
 
