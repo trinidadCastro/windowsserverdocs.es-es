@@ -7,18 +7,18 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: eeadbdea10f08372cd927808b4b433d8ba7ee85f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b0ff8f353d4536f89d698f362e2998d9682665f2
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037833"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91389019"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1909, para un rol de Infraestructura de escritorio virtual (VDI)
 
 En este artículo podrás elegir la configuración para Windows 10, versión 1909 (compilación 18363) que debería tener el mejor rendimiento en un entorno de infraestructura de escritorio virtualizado (VDI). Todas las configuraciones de esta guía son recomendaciones a tener en cuenta y de ninguna manera son obligatorias.
 
-Los métodos clave para optimizar el rendimiento de Windows 10 en un entorno de VDI son minimizar el volver a dibujar los gráficos de la aplicación, las actividades en segundo plano que no tienen una ventaja importante para el entorno de VDI y, en general, reducir los procesos en ejecución al mínimo. Un objetivo secundario es reducir el uso del espacio en disco de la imagen base al mínimo. Con las implementaciones de VDI, el tamaño de imagen base o de tipo "gold" más pequeño posible, puede reducir ligeramente el uso de la memoria en el hipervisor, así como provocar una pequeña reducción en las operaciones de red generales necesarias para entregar la imagen de escritorio al consumidor.
+Los métodos clave para optimizar el rendimiento de Windows 10 en un entorno de VDI son minimizar el volver a dibujar los gráficos de la aplicación, las actividades en segundo plano que no tienen una ventaja importante para el entorno de VDI y, en general, reducir los procesos en ejecución al mínimo. Un objetivo secundario es reducir el uso del espacio en disco de la imagen base al mínimo. Con las implementaciones de VDI, el tamaño de imagen base o de tipo "gold" más pequeño posible puede reducir ligeramente el uso de la memoria en el hipervisor, así como provocar una pequeña reducción en las operaciones de red generales necesarias para entregar la imagen de escritorio al consumidor.
 
 > [!NOTE]
 > Esta configuración recomendada se puede aplicar a otras instalaciones de Windows 10 1909, incluidos los dispositivos físicos u otras máquinas virtuales. Ninguna recomendación de este artículo debería afectar a la compatibilidad de Windows 10 1909.
@@ -35,7 +35,7 @@ La seguridad y la estabilidad son las principales prioridades de Microsoft cuand
 
 Hay algunas configuraciones de seguridad que no son aplicables a los entornos de VDI que no están conectados a Internet y, por lo tanto, no pueden participar en la seguridad habilitada para la nube. Hay otras configuraciones que los dispositivos Windows "normales" pueden usar, como la experiencia en la nube, Microsoft Store, etc. Quitar el acceso a las características no usadas reduce la superficie, el ancho de banda de red y la superficie expuesta a ataques.
 
-En lo que respecta a las actualizaciones, Windows 10 emplea un algoritmo de actualización mensual, por lo que no es necesario que los clientes intenten actualizarse. En la mayoría de los casos, los administradores de VDI controlan el proceso de actualización a través de un proceso de apagado de máquinas virtuales basado en una imagen "maestra" o "gold", quitan el sello de la imagen, que es de solo lectura, aplican revisiones a la imagen y, a continuación, la vuelven a sellar y la devuelven a producción. Por lo tanto, no es necesario que las máquinas virtuales de VDI comprueben Windows Update. En ciertos casos, por ejemplo, máquinas virtuales de VDI persistentes, se realizan procedimientos de revisión normales. También se puede usar Windows Update o Microsoft Intune. Puede usarse System Center Configuration Manager para administrar la actualización y otras entregas de paquetes. Depende de cada organización determinar el mejor enfoque para actualizar VDI.
+En lo que respecta a las actualizaciones, Windows 10 emplea un algoritmo de actualización mensual, por lo que no es necesario que los clientes intenten actualizarse. En la mayoría de los casos, los administradores de VDI controlan el proceso de actualización a través de un proceso de apagado de VM basado en una imagen "maestra" o "gold", quitan el sello de la imagen, que es de solo lectura, aplican revisiones a la imagen y, a continuación, la vuelven a sellar y la devuelven a producción. Por lo tanto, no es necesario que las máquinas virtuales de VDI comprueben Windows Update. En ciertos casos, por ejemplo, máquinas virtuales de VDI persistentes, se realizan procedimientos de revisión normales. También se puede usar Windows Update o Microsoft Intune. Puede usarse System Center Configuration Manager para administrar la actualización y otras entregas de paquetes. Depende de cada organización determinar el mejor enfoque para actualizar VDI.
 
 > [!TIP]
 > Un script que implementa las optimizaciones discutidas en este tema, así como un archivo de exportación GPO que puedes importar con **LGPO.exe**, está disponible en [TheVDIGuys](https://github.com/TheVDIGuys) en GitHub.
@@ -113,9 +113,9 @@ En este documento se evita intencionadamente tocar los servicios del sistema, la
 
 Ten en cuenta la compatibilidad al modificar la configuración predeterminada de Windows. Pueden surgir problemas difíciles al modificar servicios del sistema, directivas o tareas programadas, en nombre de la protección, "iluminación", etc. Consulta en Microsoft Knowledge Base los problemas conocidos actuales relacionados con la modificación de la configuración predeterminada. Las instrucciones de este documento y el script asociado en GitHub se conservarán con respecto a los problemas conocidos, en caso de que surjan. Además, los problemas se pueden notificar de varias maneras a Microsoft.
 
-Puedes usar tu motor de búsqueda favorito con los términos ""start value" site:support.microsoft.com" para mostrar los problemas conocidos relacionados con los valores de inicio predeterminados de los servicios.
+Puede usar su motor de búsqueda favorito con los términos "'start value' site:support.microsoft.com" para mostrar los problemas conocidos relacionados con los valores de inicio predeterminados de los servicios.
 
-Ten en cuenta que este documento y los scripts asociados de GitHub no modifican los permisos predeterminados. Si estás interesado en aumentar la configuración de seguridad, comienza con el proyecto conocido como **AaronLocker**. Para más información, consulta [ANUNCIO: Inclusión de aplicaciones en la lista blanca con "AaronLocker"](/archive/blogs/aaron_margosis/announcing-application-whitelisting-with-aaronlocker).
+Ten en cuenta que este documento y los scripts asociados de GitHub no modifican los permisos predeterminados. Si estás interesado en aumentar la configuración de seguridad, comienza con el proyecto conocido como **AaronLocker**. Para obtener más información, vea [Información general sobre "AaronLocker"](https://github.com/microsoft/AaronLocker).
 
 #### <a name="vdi-optimization-categories"></a>Categorías de optimización de VDI
 
@@ -188,8 +188,8 @@ Remove-AppxProvisionedPackage -Online -PackageName
 
 Cada aplicación para UWP debe evaluarse para determinar su aplicabilidad en cada entorno único. Posiblemente quieras instalar una instalación predeterminada de Windows 10 1909, y luego observar qué aplicaciones se están ejecutando y cuáles están consumiendo memoria. Por ejemplo, es posible que quieras eliminar las aplicaciones que se inician automáticamente, o las aplicaciones que muestran automáticamente información en el menú Inicio (como Tiempo y Noticias), y que podrían no ser de utilidad en el entorno.
 
->[!NOTE]
->Si usas los scripts de GitHub, puedes controlar fácilmente qué aplicaciones se quitan antes de ejecutar el script. Después de descargar los archivos de script, busca el archivo "Win10_1909_AppxPackages.txt", edítalo y quita las entradas de las aplicaciones que quieres conservar, como Calculadora, Notas rápidas, etc.
+> [!NOTE]
+> Si usas los scripts de GitHub, puedes controlar fácilmente qué aplicaciones se quitan antes de ejecutar el script. Después de descargar los archivos de script, busque el archivo "AppxPackages.json", edítelo y quite las entradas de las aplicaciones que quiera conservar, como Calculadora, Notas rápidas, etc. Consulte [la sección Personalización](https://github.com/TheVDIGuys/Windows_10_VDI_Optimize#customization) para obtener más información.
 
 ### <a name="manage-windows-optional-features-using-powershell"></a>Administración de características opcionales de Windows mediante PowerShell
 
@@ -208,7 +208,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName "DirectPlay" -All
 Puedes deshabilitar características de la imagen de VDI, tal como se muestra en este ejemplo:
 
 ```powershell
-Disable-WindowsOptionalFeature -Online -FeatureName “WindowsMediaPlayer”
+Disable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer"
 ```
 
 A continuación, puedes quitar el paquete de Reproductor de Windows Media. Hay dos paquetes de Reproductor de Windows Media en Windows 10 1909:
@@ -246,7 +246,7 @@ Si quieres quitar el paquete de Reproductor de Windows Media (para liberar aprox
 ```powershell
  Remove-WindowsPackage -PackageName Microsoft-Windows-MediaPlayer-Package~31bf3856ad364e35~amd64~~10.0.18362.1 -Online
 
- Remove-WindowsPackage -PackageName Microsoft-Windows-MediaPlayer-Package~31bf3856ad364e35~amd64~~10.0.18362.1 -Online
+ Remove-WindowsPackage -PackageName Microsoft-Windows-MediaPlayer-Package~31bf3856ad364e35~amd64~~10.0.18362.449 -Online
 ```
 
 #### <a name="enable-or-disable-windows-features-using-dism"></a>Habilitación o deshabilitación de características de Windows mediante DISM
@@ -255,7 +255,7 @@ Puedes usar la herramienta integrada Dism.exe para enumerar y controlar las cara
 
 #### <a name="default-user-settings"></a>Configuración de usuario predeterminado
 
-Hay personalizaciones que se pueden realizar en un archivo de registro de Windows denominado "C:\Usuarios\Default\NTUSER.DAT". Cualquier configuración realizada en este archivo se aplicará a los perfiles de usuario posteriores creados desde un dispositivo que ejecute esta imagen. Puedes controlar la configuración que se va a aplicar al perfil de usuario predeterminado; para ello, edita el archivo "Win10_1909_DefaultUserSettings.txt". Una configuración que debes examinar detenidamente, nueva en esta iteración de recomendaciones de configuración, es la denominada **TaskbarSmallIcons**. Es posible que quieras consultar la base de usuarios antes de implementar esta configuración. **TaskbarSmallIcons** hace que la barra de tareas de Windows sea más pequeña y consuma menos espacio de la pantalla, hace que los iconos sean más compactos y minimiza la interfaz de búsqueda. En las ilustraciones siguientes se representa antes y después:
+Hay personalizaciones que se pueden realizar en un archivo de registro de Windows denominado "C:\Usuarios\Default\NTUSER.DAT". Cualquier configuración realizada en este archivo se aplicará a los perfiles de usuario posteriores creados desde un dispositivo que ejecute esta imagen. Puede controlar la configuración que se va a aplicar al perfil de usuario predeterminado; para ello, edite el archivo "DefaultUserSettings.txt". Una configuración que debes examinar detenidamente, nueva en esta iteración de recomendaciones de configuración, es la denominada **TaskbarSmallIcons**. Es posible que quieras consultar la base de usuarios antes de implementar esta configuración. **TaskbarSmallIcons** hace que la barra de tareas de Windows sea más pequeña y consuma menos espacio de la pantalla, hace que los iconos sean más compactos y minimiza la interfaz de búsqueda. En las ilustraciones siguientes se representa antes y después:
 
 Figura 1: Barra de tareas normal de Windows 10, versión 1909
 
@@ -273,41 +273,53 @@ Figura 3: Propiedades del sistema optimizado, opciones de rendimiento
 
 ![Propiedades del sistema optimizado, opciones de rendimiento](media/rds-vdi-recommendations-1909/performance-options.png)
 
-A continuación, se muestra la configuración de optimización que se aplica al subárbol del registro del perfil de usuario predeterminado para optimizar el rendimiento:
+En el caso de Windows 10, versión 1909, la siguiente es la configuración de optimización que se aplica al subárbol del registro del perfil de usuario predeterminado para optimizar el rendimiento:
 
-```
-Delete HKLM\Temp\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v OneDriveSetup /f
+```dos
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer" /v ShellState /t REG_BINARY /d 240000003C2800000000000000000000 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v IconsOnly /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ListviewAlphaSelect /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ListviewShadow /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowCompColor /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowInfoTip /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAnimations /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 3 /f
+add "HKLM\Temp\Software\Microsoft\Windows\DWM" /v EnableAeroPeek /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\DWM" /v AlwaysHiberNateThumbnails /t REG_DWORD /d 0 /f
 add "HKLM\Temp\Control Panel\Desktop" /v DragFullWindows /t REG_SZ /d 0 /f
-add "HKLM\Temp\Control Panel\Desktop" /v WallPaper /t REG_SZ /d "" /f
-add "HKLM\Temp\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\DWM /v AccentColor /t REG_DWORD /d 4292311040 /f
-add HKLM\Temp\Software\Microsoft\Windows\DWM /v ColorizationColor /t REG_DWORD /d 4292311040 /f
-add HKLM\Temp\Software\Microsoft\Windows\DWM /v AlwaysHibernateThumbnails /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\DWM /v EnableAeroPeek /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\DWM /v AlwaysHibernateThumbnails /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v AutoCheckSelect /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideIcons /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v ListviewAlphaSelect /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v ListViewShadow /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v ShowInfoTip /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v TaskbarAnimations /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v TaskbarSmallIcons /t REG_DWORD /d 1 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People /v PeopleBand /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ComboBoxAnimation /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ControlAnimations /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMAeroPeekEnabled /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMSaveThumbnailEnabled /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\MenuAnimation /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\SelectionFade /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TooltipAnimation /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v SubscribedContent-338388Enabled /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v SubscribedContent-338389Enabled /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v SystemPaneSuggestionsEnabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Control Panel\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f
+add "HKLM\Temp\Control Panel\Desktop" /v UserPreferencesMask /t REG_BINARY /d 9032078010000000 /f
+add "HKLM\Temp\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_SZ /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" /v 01 /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-338393Enabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-353694Enabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-353696Enabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-338388Enabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-338389Enabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SystemPaneSuggestionsEnabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Control Panel\International\User Profile" /v HttpAcceptLanguageOptOut /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.Windows.Photos_8wekyb3d8bbwe" /v Disabled /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.Windows.Photos_8wekyb3d8bbwe" /v DisabledByUser /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.SkypeApp_kzf8qxf38zg5c" /v Disabled /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.SkypeApp_kzf8qxf38zg5c" /v DisabledByUser /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.YourPhone_8wekyb3d8bbwe" /v Disabled /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.YourPhone_8wekyb3d8bbwe" /v DisabledByUser /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" /v Disabled /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" /v DisabledByUser /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.PPIProjection_cw5n1h2txyewy" /v Disabled /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.PPIProjection_cw5n1h2txyewy" /v DisabledByUser /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\InputPersonalization" /v RestrictImplicitInkCollection /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\InputPersonalization" /v RestrictImplicitTextCollection /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Personalization\Settings" /v AcceptedPrivacyPolicy /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\InputPersonalization\TrainedDataStore" /v HarvestContacts /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v ScoobeSystemSettingEnabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v ScoobeSystemSettingEnabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v ScoobeSystemSettingEnabled /t REG_DWORD /d 0 /f
+add "HKCU\Software\Microsoft\InputPersonalization" /v RestrictImplicitInkCollection /t REG_DWORD /d 1 /f
+add "HKCU\Software\Microsoft\InputPersonalization" /v RestrictImplicitTextCollection /t REG_DWORD /d 1 /f
 ```
 
-En la configuración de la directiva local, puedes deshabilitar las imágenes para los fondos en VDI.  Si quieres imágenes, podrías crear imágenes de fondo personalizadas con una profundidad de color reducida para limitar el ancho de banda de red usado para transmitir la información de la imagen. Si decides no especificar ninguna imagen de fondo en la directiva local, es aconsejable establecer el color de fondo antes de la directiva local, ya que, una vez establecida la directiva, el usuario no tiene forma de cambiar el color de fondo. Podría ser mejor especificar "(null)" como imagen de fondo. Existe otra configuración de directiva en la sección siguiente sobre no usar el fondo en sesiones de Protocolo de escritorio remoto.
+En la configuración de la directiva local, puedes deshabilitar las imágenes para los fondos en VDI. Si quieres imágenes, podrías crear imágenes de fondo personalizadas con una profundidad de color reducida para limitar el ancho de banda de red usado para transmitir la información de la imagen. Si decides no especificar ninguna imagen de fondo en la directiva local, es aconsejable establecer el color de fondo antes de la directiva local, ya que, una vez establecida la directiva, el usuario no tiene forma de cambiar el color de fondo. Podría ser mejor especificar "(null)" como imagen de fondo. Existe otra configuración de directiva en la sección siguiente sobre no usar el fondo en sesiones de Protocolo de escritorio remoto.
 
 ### <a name="local-policy-settings"></a>Configuración de directivas locales
 
@@ -538,17 +550,17 @@ Para obtener más información sobre el indicador de estado de conexión de red 
 
 ### <a name="system-services"></a>Servicios del sistema
 
-Si estás pensando en deshabilitar servicios del sistema para conservar recursos, asegúrate de que el servicio que quieres deshabilitar no sea un componente de otro servicio. Tenga en cuenta que algunos servicios no están en la lista porque no se pueden deshabilitar de una manera compatible.
+Si estás pensando en deshabilitar servicios del sistema para conservar recursos, asegúrate de que el servicio que quieres deshabilitar no sea un componente de otro servicio. Tenga en cuenta que algunos servicios no están en la lista porque no se pueden deshabilitar de una manera admitida.
 
 La mayoría de estas recomendaciones copian las recomendaciones para Windows Server 2016 instalado con Experiencia de escritorio de la [Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio](../../security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server.md).
 
-Muchos de los servicios que pueden parecer buenos candidatos para la deshabilitación están configurados para el tipo de inicio de servicio manual. Esto significa que el servicio no se iniciará automáticamente y no se inicia a menos que un proceso o un evento desencadene una solicitud del servicio que piensas deshabilitar. Los servicios que ya están configurados para iniciar el manual de tipo, no se enumeran aquí por lo general.
+Muchos de los servicios que pueden parecer buenos candidatos para la deshabilitación están configurados para el tipo de inicio de servicio manual. Esto significa que el servicio no se iniciará automáticamente y no se inicia a menos que un proceso o un evento desencadene una solicitud del servicio que piensas deshabilitar. Los servicios que ya están configurados para iniciar el tipo Manual, no se enumeran aquí por lo general.
 
 > [!NOTE]
 > Puedes enumerar los servicios en ejecución con este código de ejemplo de PowerShell y que se muestre solo el nombre corto del servicio:
 
 ```powershell
- Get-Service | Where-Object {$_.Status -eq "Running"} | select -ExpandProperty Name
+ Get-Service | Where-Object {$_.Status -eq "Running"} | Select-Object -ExpandProperty Name
  ```
 
 | Servicio de Windows | Elemento | Comentarios|
@@ -575,7 +587,7 @@ Los servicios por usuario son servicios que se crean cuando un usuario inicia se
 
 [Servicios por usuario en Windows 10 y Windows Server](/windows/application-management/per-user-services-in-windows)
 
-Si piensas cambiar el valor de inicio de un servicio, el método preferido es abrir un símbolo del sistema con privilegios elevados .cmd y ejecutar la herramienta Administrador de control de servicios "Sc.exe". Para más información sobre cómo utilizar "Sc.exe", consulta [Sc](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc754599(v=ws.11)).
+Si piensa cambiar el valor de inicio de un servicio, el método preferido es abrir un símbolo del sistema con privilegios elevados .cmd y ejecutar la herramienta Administrador de control de servicios "Sc.exe". Para más información sobre cómo utilizar "Sc.exe", consulte [Sc](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc754599(v=ws.11)).
 
 ### <a name="scheduled-tasks"></a>Tareas programadas
 
@@ -589,7 +601,7 @@ Puedes obtener todas las tareas programadas actuales, incluidas las descripcione
  Get-ScheduledTask | Select-Object -Property TaskPath,TaskName,State,Description
 ```
 
->[!NOTE]
+> [!NOTE]
 > Hay varias tareas que no se pueden deshabilitar mediante script, aunque estés ejecutando con privilegios elevados. Se recomienda no deshabilitar las tareas que no se pueden deshabilitar mediante script.
 
 Nombre de tarea programada:
@@ -674,7 +686,7 @@ Windows está configurado, de forma predeterminada, para recopilar y guardar dat
 
 ![Seguimientos del sistema](media/rds-vdi-recommendations-1909/system-traces.png)
 
-Algunas los seguimientos mostrados en **Sesiones de seguimiento de eventos** y **Sesiones de seguimiento de eventos de inicio** no pueden y no deben detenerse. Otras opciones, como el seguimiento de tipo "WiFiSession" se pueden detener. Para detener un seguimiento en ejecución en **Sesiones de seguimiento de eventos**, haz clic con el botón derecho en el seguimiento y luego en "Detener". Usa el siguiente procedimiento para evitar que los seguimientos se inicien automáticamente en el inicio:
+Algunas los seguimientos mostrados en **Sesiones de seguimiento de eventos** y **Sesiones de seguimiento de eventos de inicio** no pueden y no deben detenerse. Otras opciones, como el seguimiento de tipo "WiFiSession" se pueden detener. Para detener un seguimiento en ejecución en **Sesiones de seguimiento de eventos**, haga clic con el botón derecho en el seguimiento y luego en "Detener". Usa el siguiente procedimiento para evitar que los seguimientos se inicien automáticamente en el inicio:
 
 1. Haz clic en la carpeta **Sesiones de seguimiento de eventos de inicio**.
 
@@ -704,7 +716,7 @@ Los siguientes son algunos seguimientos del sistema que puedes deshabilitar en V
 
 Microsoft ha publicado recientemente documentación sobre Windows Defender en un entorno de VDI. Consulta la [Guía de implementación del Antivirus de Windows Defender en un entorno de infraestructura de escritorio virtual (VDI)](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus) para más información.
 
-En el artículo anterior verás procedimientos para el mantenimiento de la imagen de VDI de tipo "gold" y sabrás cómo mantener los clientes de VDI mientras se ejecutan. Para reducir el uso de ancho de banda de la red cuando los equipos de VDI necesiten actualizar sus firmas de Windows Defender, es recomendable escalonar los reinicios y programarlos durante tus horas libres, siempre que sea posible. Las actualizaciones de firmas de Windows Defender pueden estar en los recursos compartidos de archivos de forma interna y, cuando sean necesarios, esos archivos compartidos se encuentran en los mismos segmentos de red o en segmentos de red cercanos a las máquinas virtuales de VDI.
+En el artículo anterior verá procedimientos para el mantenimiento de la imagen de VDI de tipo "gold" y sabrá cómo mantener los clientes de VDI mientras se ejecutan. Para reducir el uso de ancho de banda de la red cuando los equipos de VDI necesiten actualizar sus firmas de Windows Defender, es recomendable escalonar los reinicios y programarlos durante tus horas libres, siempre que sea posible. Las actualizaciones de firmas de Windows Defender pueden estar en los recursos compartidos de archivos de forma interna y, cuando sean necesarios, esos archivos compartidos se encuentran en los mismos segmentos de red o en segmentos de red cercanos a las máquinas virtuales de VDI.
 
 ### <a name="client-network-performance-tuning-by-registry-settings"></a>Ajuste del rendimiento de red del cliente mediante la configuración del registro
 
@@ -749,13 +761,15 @@ Puedes configurar varias de estas opciones de SMB con los cmdlets [Set-SmbClient
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" RequireSecuritySignature -Value 0 -Force
 ```
 
-Configuración adicional de las instrucciones de línea de base de funcionalidades limitadas de tráfico restringido de Windows: Microsoft ha lanzado una línea de base que se creó con los mismos procedimientos que las [Líneas de base de seguridad de Windows](/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps), para entornos que no están conectados directamente a Internet o que deben reducir los datos enviados a Microsoft y otros servicios.
+Configuración adicional de la [línea base de funcionalidad limitada del tráfico restringido de Windows](https://docs.microsoft.com/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services).
 
-La configuración [Línea de base de funcionalidades limitadas de tráfico restringido de Windows](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services) se indica en la tabla de directivas de grupo con un asterisco.
+Microsoft ha lanzado una línea de base que se creó con los mismos procedimientos que las [Líneas de base de seguridad de Windows](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines), para entornos que no están conectados directamente a Internet o que deben reducir los datos enviados a Microsoft y otros servicios.
+
+La configuración Línea de base de funcionalidades limitadas de tráfico restringido de Windows se indica en la tabla de directivas de grupo con un asterisco.
 
 #### <a name="disk-cleanup-including-using-the-disk-cleanup-wizard"></a>Limpieza del disco (incluido el uso del Asistente para liberar espacio en disco)
 
-La limpieza del disco puede ser especialmente útil con implementaciones de VDI de imagen gold o maestra. Después de preparar, actualizar y configurar la imagen, una de las últimas tareas a realizar es la limpieza del disco. Hay una herramienta integrada denominada "Liberador de espacio en disco" que puede ayudarte a limpiar la mayoría de las áreas susceptibles a ahorrar espacio en disco. En una máquina virtual que tenga muy poco instalado, pero a la que se han aplicado todos los parches, se suelen liberar aproximadamente 4 GB de espacio en disco al ejecutar la limpieza del disco.
+La limpieza del disco puede ser especialmente útil con implementaciones de VDI de imagen gold o maestra. Después de preparar, actualizar y configurar la imagen, una de las últimas tareas a realizar es la limpieza del disco. Hay una herramienta integrada denominada "Liberador de espacio en disco" que puede ayudarle a limpiar la mayoría de las áreas susceptibles de ahorrar espacio en disco. En una máquina virtual que tenga muy poco instalado, pero a la que se han aplicado todos los parches, se suelen liberar aproximadamente 4 GB de espacio en disco al ejecutar la limpieza del disco.
 
 Igualmente, aquí tienes sugerencias para realizar varias tareas para liberar espacio en disco. Todas deben probarse antes de la implementación:
 
@@ -783,29 +797,28 @@ Igualmente, aquí tienes sugerencias para realizar varias tareas para liberar es
 
 ### <a name="remove-onedrive-components"></a>Eliminación de componentes de OneDrive
 
-Quitar OneDrive implica la eliminación del paquete, la desinstalación y la eliminación de los archivos *.lnk. El siguiente código de ejemplo de PowerShell se puede usar para ayudar a quitar OneDrive de la imagen y se incluye en los scripts de optimización de VDI de GitHub:
+Quitar OneDrive implica quitar del paquete, la desinstalación y la eliminación de los archivos \*.lnk. El siguiente código de ejemplo de PowerShell se puede usar para ayudar a quitar OneDrive de la imagen y se incluye en los scripts de optimización de VDI de GitHub:
 
 ```azurecli
+Get-Process -Name OneDrive | Stop-Process -Force -Confirm:$false
+Get-Process -Name explorer | Stop-Process -Force -Confirm:$false
+if (Test-Path "C:\\Windows\\System32\\OneDriveSetup.exe")`
+    { Start-Process "C:\\Windows\\System32\\OneDriveSetup.exe"`
+        -ArgumentList "/uninstall"`
+        -Wait }
+if (Test-Path "C:\\Windows\\SysWOW64\\OneDriveSetup.exe")`
+    { Start-Process "C:\\Windows\\SysWOW64\\OneDriveSetup.exe"`
+        -ArgumentList "/uninstall"`
+        -Wait }
+Remove-Item -Path "C:\\Windows\\ServiceProfiles\\LocalService\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\OneDrive.lnk" -Force
+Remove-Item -Path "C:\\Windows\\ServiceProfiles\\NetworkService\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\OneDrive.lnk" -Force
 
-Taskkill.exe /F /IM "OneDrive.exe"
-Taskkill.exe /F /IM "Explorer.exe"`
-    if (Test-Path "C:\\Windows\\System32\\OneDriveSetup.exe")`
-     { Start-Process "C:\\Windows\\System32\\OneDriveSetup.exe"`
-         -ArgumentList "/uninstall"`
-         -Wait }
-    if (Test-Path "C:\\Windows\\SysWOW64\\OneDriveSetup.exe")`
-     { Start-Process "C:\\Windows\\SysWOW64\\OneDriveSetup.exe"`
-         -ArgumentList "/uninstall"`
-         -Wait }
-Remove-Item -Path
-"C:\\Windows\\ServiceProfiles\\LocalService\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\OneDrive.lnk" -Force
-Remove-Item -Path "C:\\Windows\\ServiceProfiles\\NetworkService\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\OneDrive.lnk" -Force \# Remove the automatic start item for OneDrive from the default user profile registry hive
+# Remove the automatic start item for OneDrive from the default user profile registry hive
+
 Start-Process C:\\Windows\\System32\\Reg.exe -ArgumentList "Load HKLM\\Temp C:\\Users\\Default\\NTUSER.DAT" -Wait
 Start-Process C:\\Windows\\System32\\Reg.exe -ArgumentList "Delete HKLM\\Temp\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /v OneDriveSetup /f" -Wait
 Start-Process C:\\Windows\\System32\\Reg.exe -ArgumentList "Unload HKLM\\Temp" -Wait Start-Process -FilePath C:\\Windows\\Explorer.exe -Wait
 ```
-
-Si tienes cualquier pregunta o duda sobre la información de este documento, ponte en contacto con el equipo de tu cuenta de Microsoft, lee el blog de Microsoft VDI, publica un mensaje en los foros de Microsoft o ponte directamente en contacto con Microsoft.
 
 ## <a name="turn-windows-update-back-on"></a>Volver a activar Windows Update
 
@@ -825,7 +838,7 @@ Si quieres volver a activar Windows Update, como en el caso de VDI persistente, 
 
     - Directiva de equipo local\\Configuración del equipo\\Plantillas administrativas\\Componentes de Windows\\Windows Update\\Windows Update para empresas
 
-        - Selecciona cuándo quieres recibir las actualizaciones de calidad (cámbialas de "habilitado" a "no configurado").
+        - Seleccione cuándo quiere recibir las actualizaciones de calidad (cambie la opción de "habilitado" a "no configurado").
 
     -   Directiva de equipo local\\Configuración del equipo\\Plantillas administrativas\\Componentes de Windows\\Windows Update\\Windows Update para empresas
 
@@ -856,6 +869,8 @@ Si quieres volver a activar Windows Update, como en el caso de VDI persistente, 
     - Biblioteca del Programador de tareas\\Microsoft\\Windows\\InstallService\\ScanForUpdatesAsUser
 
 Para que todas estas configuraciones surtan efecto, reinicia el dispositivo. Si no quieres que este dispositivo le ofrezca actualizaciones de características, vea a Configuración\\Windows Update\\Opciones avanzadas\\Elegir cuándo se instalarán las actualizaciones y, a continuación, establece la opción manualmente, **Una actualización de características incluye mejoras y nuevas capacidades. Se puede posponer todos estos días en un valor distinto de cero, como 180, 365, etc.**
+
+Si tienes cualquier pregunta o duda sobre la información de este documento, ponte en contacto con el equipo de tu cuenta de Microsoft, lee el blog de Microsoft VDI, publica un mensaje en los foros de Microsoft o ponte directamente en contacto con Microsoft.
 
 ### <a name="references"></a>Referencias
 

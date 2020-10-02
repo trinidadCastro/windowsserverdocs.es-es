@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/16/2020
+ms.date: 09/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d45bfad559069f9652768ba7f89bbdd3521ab8a
-ms.sourcegitcommit: d04f8fd54fe9aa5703af2f66a7150f4a6fb5bb37
+ms.openlocfilehash: 4edd85e305d30cfe22480021b67f3c0213275926
+ms.sourcegitcommit: c0e0bdc9a1b28bd21951d68b5cfd2cce48a770ef
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90718629"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90999259"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -24,16 +24,20 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |La versión más reciente  |Versión mínima admitida |
 |-----------|----------------|--------------------------|
-|Público     |1.2.1272        |1.2.945                   |
-|Insider    |1.2.1357        |1.2.1357                  |
+|Público     |1.2.1364        |1.2.945                   |
+|Insider    |1.2.1364        |1.2.945                   |
 
-## <a name="updates-for-version-121357-insiders"></a>Actualizaciones de la versión 1.2.1357 (Insider)
+## <a name="updates-for-version-121364"></a>Actualizaciones de la versión 1.2.1364
 
-*Fecha de publicación: 09/09/2020*
+*Fecha de publicación: 22/09/2020*
 
-Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139368)
+Descarga: Windows de [64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139370)
 
 - Se corrigió un problema por el que el inicio de sesión único (SSO) no funcionaba en Windows 7.
+- Se corrigió el error de conexión que se producía al realizar una llamada de Teams o unirse a una mientras otra aplicación tenía una secuencia de audio abierta en modo exclusivo y estaba habilitada la optimización de medios para Teams.
+- Se corrigió un error que se producía al enumerar los dispositivos de audio o vídeo en Teams cuando estaba habilitada la optimización de medios para Teams.
+- A agregó un vínculo "¿Necesita ayuda con la configuración?" a la página de configuración del escritorio.
+- Se corrigió un problema con el botón "Suscribirse" que se producía al usar los temas oscuros de contraste alto.
 
 ## <a name="updates-for-version-121275"></a>Actualizaciones de la versión 1.2.1275
 
@@ -51,8 +55,6 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 ## <a name="updates-for-version-121186"></a>Actualizaciones para la versión 1.2.1186
 
 *Fecha de publicación: 28/07/2020*
-
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qy), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ciex), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qx)
 
 - Ahora puede suscribirse a áreas de trabajo con varias cuentas de usuario, mediante la opción ( **...** ) del menú de desbordamiento en la barra de comandos de la parte superior del cliente. Para diferenciar las áreas de trabajo, los títulos del área de trabajo ahora incluyen el nombre de usuario, al igual que todos los títulos de acceso directo de las aplicaciones.
 - Se ha agregado información adicional a los mensajes de error de suscripción para mejorar la solución de problemas.
