@@ -6,16 +6,16 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eddc639fd07516b95b23684ec4137f328b7c105
-ms.sourcegitcommit: 08da40966c5d633f8748c8ae348f12656a54d3b2
+ms.openlocfilehash: 4758cc67c1dd5dc77ecacf1a8229d59f27eac60e
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88140302"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716873"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implementar espacios de almacenamiento en un servidor independiente
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En este tema se describe cómo implementar espacios de almacenamiento en un servidor independiente. Para obtener información sobre cómo crear un espacio de almacenamiento en clúster, vea [implementar un clúster de espacios de almacenamiento en Windows Server 2012 R2](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>).
 
@@ -23,8 +23,8 @@ Para crear un espacio de almacenamiento, debes crear primero uno o varios grupos
 
 Desde un grupo de almacenamiento, puedes crear uno o varios discos virtuales. Los discos virtuales también se denominan *espacios de almacenamiento*. Un espacio de almacenamiento aparece en el sistema operativo Windows como un disco normal desde el que puedes crear volúmenes formateados. Cuando creas un disco virtual a través de la interfaz de usuario de Servicios de archivos y almacenamiento, puedes configurar el tipo de resistencia (simple, reflejo o paridad), el tipo de aprovisionamiento (fino o fijo) y el tamaño. Mediante Windows PowerShell, puedes configurar otros parámetros, como el número de columnas, el valor de intercalación y qué discos físicos del grupo deben usarse. Para obtener información sobre estos parámetros adicionales, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) y el [Foro de almacenamiento de Windows Server](/answers/topics/windows-server-storage.html).
 
->[!NOTE]
->No se puede usar un espacio de almacenamiento para hospedar el sistema operativo Windows.
+> [!NOTE]
+> No se puede usar un espacio de almacenamiento para hospedar el sistema operativo Windows.
 
 Desde un disco virtual, puedes crear uno o varios volúmenes. Al crear un volumen, puede configurar el tamaño, la letra de unidad o la carpeta, el sistema de archivos (sistema de archivos NTFS o sistema de archivos resistente (ReFS)), el tamaño de la unidad de asignación y una etiqueta de volumen opcional.
 
@@ -34,8 +34,8 @@ La siguiente figura ilustra el flujo de trabajo de los Espacios de almacenamient
 
 **Figura 1: Flujo de trabajo de Espacios de almacenamiento**
 
->[!NOTE]
->Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, vea [PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6).
+> [!NOTE]
+> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, vea [PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -46,10 +46,10 @@ Para usar espacios de almacenamiento en un servidor independiente basado en Wind
 
 |Área|Requisito|Notas|
 |---|---|---|
-|Tipos de bus de disco|-SCSI conectado en serie (SAS)<br>-Datos adjuntos de tecnología avanzada de serie (SATA)<br>-Controladores iSCSI y Canal de fibra. |También puedes usar unidades USB. Sin embargo, no es óptimo usar unidades USB en un entorno de servidor.<br>Los espacios de almacenamiento son compatibles con los controladores iSCSI y Canal de fibra (FC) siempre que los discos virtuales creados sobre ellos no sean resistentes (sencillos con cualquier número de columnas).<br>|
+|Tipos de bus de disco|- SCSI conectado en serie (SAS)<br>- Conexión en serie de tecnología avanzada (SATA)<br>- Controladores iSCSI y de Canal de fibra. |También puedes usar unidades USB. Sin embargo, no es óptimo usar unidades USB en un entorno de servidor.<br>Los espacios de almacenamiento son compatibles con los controladores iSCSI y Canal de fibra (FC) siempre que los discos virtuales creados sobre ellos no sean resistentes (sencillos con cualquier número de columnas).<br>|
 |Configuración de discos|-Los discos físicos deben ser de al menos 4 GB<br>-Los discos deben estar en blanco y no tener formato. No crees volúmenes.||
-|Consideraciones sobre HBA|-Se recomienda usar adaptadores de bus de host (HBA) simples que no admitan la funcionalidad RAID<br>-Si es compatible con RAID, los HBA deben estar en modo no RAID con todas las funciones de RAID deshabilitadas.<br>-Los adaptadores no deben abstraer los discos físicos, los datos de la memoria caché ni ocultar los dispositivos conectados. Esto incluye los servicios de contenedor proporcionados por los dispositivos de un grupo de discos (JBOD) conectados. |Los Espacios de almacenamiento son compatibles con HBA solo si se pueden deshabilitar por completo todas las funciones RAID.|
-|Contenedores JBOD|-Los contenedores JBOD son opcionales<br>-Se recomienda usar contenedores certificados de espacios de almacenamiento que se enumeran en el catálogo de Windows Server<br>-Si usa un contenedor JBOD, compruebe con el proveedor de almacenamiento que el gabinete admite espacios de almacenamiento para garantizar una funcionalidad completa.<br>-Para determinar si el contenedor JBOD es compatible con la identificación de alojamientos y ranuras, ejecute el siguiente cmdlet de Windows PowerShell:<br><br>`Get-PhysicalDisk \| ? {$_.BusType –eq "SAS"} \| fc`<br><br>Si los campos **campos EnclosureNumber** y **SlotNumber** contienen valores, el contenedor es compatible con estas características.||
+|Consideraciones sobre HBA|- Se recomienda usar adaptadores de bus de host (HBA) sencillos que no admitan la función RAID.<br>- Si es compatible con RAID, los HBA deben estar en modo no RAID con todas las funciones de RAID deshabilitadas.<br>- Los adaptadores no deben abstraer los discos físicos, los datos de la caché ni ocultar los dispositivos conectados. Esto incluye los servicios de contenedor proporcionados por los dispositivos de un grupo de discos (JBOD) conectados. |Los Espacios de almacenamiento son compatibles con HBA solo si se pueden deshabilitar por completo todas las funciones RAID.|
+|Contenedores JBOD|-Los contenedores JBOD son opcionales<br>-Se recomienda usar contenedores certificados de espacios de almacenamiento que se enumeran en el catálogo de Windows Server<br>-Si usa un contenedor JBOD, compruebe con el proveedor de almacenamiento que el gabinete admite espacios de almacenamiento para garantizar una funcionalidad completa.<br>-Para determinar si el contenedor JBOD es compatible con la identificación de alojamientos y ranuras, ejecute el siguiente cmdlet de Windows PowerShell:<br><br> ¿Get-PhysicalDisk \| ? {$_. BusType – EQ "SAS"} \| FC <br> | Si los campos **campos EnclosureNumber** y **SlotNumber** contienen valores, el contenedor es compatible con estas características.|
 
 Para planear el número de discos físicos y el tipo de resistencia deseado para una implementación de servidor independiente, usa las siguientes directrices.
 
@@ -57,7 +57,7 @@ Para planear el número de discos físicos y el tipo de resistencia deseado para
 |---|---|---|
 |**Simple**<br><br>-Secciona datos entre discos físicos<br>-Maximiza la capacidad del disco y aumenta el rendimiento<br>-Sin resistencia (no protege contra errores de disco)<br><br><br><br><br><br><br>|Necesita por lo menos un disco físico.|No debe usarse para hospedar datos irreemplazables. Los espacios simples no protegen contra errores de disco.<br><br>Se usa para hospedar datos temporales o que puedan crearse de nuevo fácilmente a bajo costo.<br><br>Adecuado para cargas de trabajo de alto rendimiento en las que no se necesita resistencia o que la aplicación ya proporciona.|
 |**Reflejo**<br><br>: Almacena dos o tres copias de los datos en el conjunto de discos físicos.<br>-Aumenta la confiabilidad, pero reduce la capacidad. Se produce duplicación con cada escritura. Un espacio de reflejo también secciona los datos en varias unidades físicas.<br>-Mayor rendimiento de datos y menor latencia de acceso que la paridad<br>-Usa el seguimiento de regiones desfasadas (DRT) para realizar el seguimiento de las modificaciones en los discos del grupo. Cuando el sistema se reanuda tras apagarse inesperadamente y los espacios vuelven a conectarse, DRT hace que los discos del grupo sean coherentes entre sí.|Necesita por lo menos dos discos físicos para proteger contra errores en uno de los discos.<br><br>Necesita por lo menos cinco discos físicos para proteger contra errores simultáneos en dos de los discos.|Se usa para la mayoría de las implementaciones. Por ejemplo, los espacios reflejados son adecuados para un recurso compartido de uso general o para una biblioteca de disco duro virtual (VHD).|
-|**Parity**<br><br>-Secciona la información de datos y de paridad entre discos físicos<br>-Aumenta la fiabilidad cuando se compara con un espacio simple, pero reduce en cierta medida la capacidad.<br>-Aumenta la resistencia a través del registro en diario. Esto ayuda a impedir la corrupción de los datos en caso de que se produzca un apagado de manera inesperada.|Necesita por lo menos tres discos físicos para proteger contra errores en uno de los discos.|Se usa para cargas de trabajo altamente secuenciales, como archivo o copia de seguridad.|
+|**Parity**<br><br>-Secciona la información de datos y de paridad entre discos físicos<br>-Aumenta la fiabilidad cuando se compara con un espacio simple, pero reduce en cierta medida la capacidad.<br>- Aumenta la resistencia a través del registro en el diario. Esto ayuda a impedir la corrupción de los datos en caso de que se produzca un apagado de manera inesperada.|Necesita por lo menos tres discos físicos para proteger contra errores en uno de los discos.|Se usa para cargas de trabajo altamente secuenciales, como archivo o copia de seguridad.|
 
 ## <a name="step-1-create-a-storage-pool"></a>Paso 1: Crear un grupo de almacenamiento
 
@@ -69,8 +69,8 @@ Primero debes agrupar los discos físicos disponibles en uno o varios grupos de 
 
     De manera predeterminada, los discos disponibles se incluyen en un grupo llamado *primordial*. Si no se muestra ningún grupo primordial en **GRUPOS DE ALMACENAMIENTO**, el almacenamiento no cumple los requisitos de los Espacios de almacenamiento. Asegúrate de que los discos cumplen los requisitos indicados en la sección Requisitos previos.
 
-    >[!TIP]
-    >Si seleccionas el grupo de almacenamiento **Primordial**, los discos físicos disponibles se muestran en **DISCOS FÍSICOS**.
+    > [!TIP]
+    > Si seleccionas el grupo de almacenamiento **Primordial**, los discos físicos disponibles se muestran en **DISCOS FÍSICOS**.
 
 3. En **grupos de almacenamiento**, seleccione la lista **tareas** y, después, seleccione **nuevo grupo de almacenamiento**. Se abrirá el Asistente para nuevo grupo de almacenamiento.
 
@@ -88,8 +88,8 @@ Primero debes agrupar los discos físicos disponibles en uno o varios grupos de 
 
 8. En la página **ver resultados** , compruebe que todas las tareas se han completado y, a continuación, seleccione **cerrar**.
 
-    >[!NOTE]
-    >Si deseas ir directamente al siguiente paso, selecciona la casilla **Crear un disco virtual cuando este asistente se cierre**.
+    > [!NOTE]
+    > Si deseas ir directamente al siguiente paso, selecciona la casilla **Crear un disco virtual cuando este asistente se cierre**.
 
 9. En **GRUPOS DE ALMACENAMIENTO**, comprueba que aparece el nuevo grupo de almacenamiento.
 
@@ -138,8 +138,8 @@ A continuación, debes crear uno o más discos virtuales desde el grupo de almac
 
 6. En la página **seleccionar la distribución de almacenamiento** , seleccione el diseño que desee y, a continuación, seleccione **siguiente**.
 
-    >[!NOTE]
-    >Si selecciona un diseño en el que no tiene suficientes discos físicos, recibirá un mensaje de error al seleccionar **siguiente**. Para obtener información acerca del diseño que se va a usar y los requisitos de disco, consulte [requisitos previos](#prerequisites).
+    > [!NOTE]
+    > Si selecciona un diseño en el que no tiene suficientes discos físicos, recibirá un mensaje de error al seleccionar **siguiente**. Para obtener información acerca del diseño que se va a usar y los requisitos de disco, consulte [requisitos previos](#prerequisites).
 
 7. Si seleccionó **reflejo** como distribución de almacenamiento y tiene cinco o más discos en el grupo, aparecerá la página **configurar las opciones de resistencia** . Seleccione una de las siguientes opciones:
 
@@ -156,8 +156,8 @@ A continuación, debes crear uno o más discos virtuales desde el grupo de almac
 
      Con el aprovisionamiento fijo, la capacidad de almacenamiento se asigna inmediatamente, cuando se crea un disco virtual. Por lo tanto, el aprovisionamiento fijo utiliza un espacio del grupo de almacenamiento que es igual al tamaño del disco virtual.
 
-     >[!TIP]
-     >Con los Espacios de almacenamiento, puedes crear discos virtuales con aprovisionamiento fino y fijo en el mismo grupo de almacenamiento. Por ejemplo, puedes usar un disco virtual con aprovisionamiento fino para hospedar una base de datos y un disco virtual con aprovisionamiento fijo para hospedar los archivos de registro asociados.
+     > [!TIP]
+     > Con los Espacios de almacenamiento, puedes crear discos virtuales con aprovisionamiento fino y fijo en el mismo grupo de almacenamiento. Por ejemplo, puedes usar un disco virtual con aprovisionamiento fino para hospedar una base de datos y un disco virtual con aprovisionamiento fijo para hospedar los archivos de registro asociados.
 
 9. En la página **Especificar el tamaño del disco virtual**, haz lo siguiente:
 
@@ -179,8 +179,8 @@ A continuación, debes crear uno o más discos virtuales desde el grupo de almac
 
 11. En la página **ver resultados** , compruebe que todas las tareas se han completado y, a continuación, seleccione **cerrar**.
 
-    >[!TIP]
-    >De manera predeterminada, está seleccionada la casilla **Crear un volumen cuando este asistente se cierre**. Esto te llevará directamente al paso siguiente.
+    > [!TIP]
+    > De manera predeterminada, está seleccionada la casilla **Crear un volumen cuando este asistente se cierre**. Esto te llevará directamente al paso siguiente.
 
 ### <a name="windows-powershell-equivalent-commands-for-creating-virtual-disks"></a>Comandos equivalentes de Windows PowerShell para crear discos virtuales
 
@@ -206,8 +206,8 @@ New-VirtualDisk –StoragePoolFriendlyName StoragePool1 –FriendlyName VirtualD
 
 En el ejemplo siguiente se crea un disco virtual denominado *VirtualDisk1* en un grupo de almacenamiento denominado *StoragePool1*. El disco virtual usa el reflejo triple y tiene un tamaño fijo de 20 GB.
 
->[!NOTE]
->Debes tener por lo menos cinco discos físicos en el grupo de almacenamiento para que este cmdlet funcione. (No se incluyen los discos asignados como reservas activas).
+> [!NOTE]
+> Debes tener por lo menos cinco discos físicos en el grupo de almacenamiento para que este cmdlet funcione. (No se incluyen los discos asignados como reservas activas).
 
 ```PowerShell
 New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1 -ResiliencySettingName Mirror -NumberOfDataCopies 3 -Size 20GB -ProvisioningType Fixed
@@ -239,8 +239,8 @@ A continuación, debes crear un volumen desde el disco virtual. Puede asignar un
 
     2. En la lista **Tamaño de unidad de asignación**, deja el valor en **Predeterminado** o establece el tamaño de la unidad de asignación.
 
-        >[!NOTE]
-        >Para más información sobre el tamaño de la unidad de asignación, consulte [Tamaño de clúster predeterminado para NTFS, FAT y exFAT](https://support.microsoft.com/help/140365/default-cluster-size-for-ntfs-fat-and-exfat).
+        > [!NOTE]
+        > Para más información sobre el tamaño de la unidad de asignación, consulte [Tamaño de clúster predeterminado para NTFS, FAT y exFAT](https://support.microsoft.com/help/140365/default-cluster-size-for-ntfs-fat-and-exfat).
 
 
     3. Opcionalmente, en el cuadro **Etiqueta de volumen**, escribe un nombre para la etiqueta de volumen, por ejemplo **Datos de RR. HH.**

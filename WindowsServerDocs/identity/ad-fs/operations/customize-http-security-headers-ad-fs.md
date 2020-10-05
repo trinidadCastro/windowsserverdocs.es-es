@@ -7,24 +7,24 @@ manager: daveba
 ms.reviewer: akgoel23
 ms.date: 02/19/2019
 ms.topic: article
-ms.openlocfilehash: 0984625564bfc6dabf8951fdcdf09fe76b0fcbdf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ecb70f0b200ee1f143219fb6c88a15c5dc58a7d9
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949709"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716926"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalización de encabezados de respuesta de seguridad HTTP con AD FS 2019
 
 Para proteger contra las vulnerabilidades de seguridad comunes y proporcionar a los administradores la posibilidad de aprovechar los últimos avances en los mecanismos de protección basados en explorador, AD FS 2019 agregó la funcionalidad para personalizar los encabezados de respuesta de seguridad HTTP enviados por AD FS. Esto se logra mediante la introducción de dos nuevos cmdlets: `Get-AdfsResponseHeaders` y `Set-AdfsResponseHeaders` .
 
->[!NOTE]
->La funcionalidad para personalizar los encabezados de respuesta de seguridad HTTP (excepto los encabezados CORS) mediante cmdlets: `Get-AdfsResponseHeaders` y `Set-AdfsResponseHeaders` se ha trasladado a AD FS 2016. Puede Agregar la funcionalidad a la AD FS 2016 mediante la instalación de [KB4493473](https://support.microsoft.com/help/4493473/windows-10-update-kb4493473) y [KB4507459](https://support.microsoft.com/help/4507459/windows-10-update-kb4507459).
+> [!NOTE]
+> La funcionalidad para personalizar los encabezados de respuesta de seguridad HTTP (excepto los encabezados CORS) mediante cmdlets: `Get-AdfsResponseHeaders` y `Set-AdfsResponseHeaders` se ha trasladado a AD FS 2016. Puede Agregar la funcionalidad a la AD FS 2016 mediante la instalación de [KB4493473](https://support.microsoft.com/help/4493473/windows-10-update-kb4493473) y [KB4507459](https://support.microsoft.com/help/4507459/windows-10-update-kb4507459).
 
 En este documento se tratarán los encabezados de respuesta de seguridad que se usan habitualmente para demostrar cómo personalizar los encabezados enviados por AD FS 2019.
 
->[!NOTE]
->En el documento se da por supuesto que se ha instalado AD FS 2019.
+> [!NOTE]
+> En el documento se da por supuesto que se ha instalado AD FS 2019.
 
 
 Antes de analizar los encabezados, echemos un vistazo a algunos escenarios para crear la necesidad de que los administradores personalicen los encabezados de seguridad.
@@ -142,8 +142,8 @@ Para comprender mejor la solicitud de CORS, veamos un escenario en el que una ap
     - Access-Control-request-Method: identifica el método HTTP (por ejemplo, DELETE) que se usará cuando se realice la solicitud real.
     - Access-Control-request-headers: identifica los encabezados HTTP que se usarán cuando se realice la solicitud real.
 
-   >[!NOTE]
-   >La solicitud de CORS se parece a una solicitud HTTP estándar, sin embargo, la presencia de un encabezado de origen indica que la solicitud entrante está relacionada con CORS.
+   > [!NOTE]
+   > La solicitud de CORS se parece a una solicitud HTTP estándar, sin embargo, la presencia de un encabezado de origen indica que la solicitud entrante está relacionada con CORS.
 3. AD FS comprueba que el origen de la API Web incluido en el encabezado aparece en la lista de orígenes de confianza configurados en AD FS (más adelante, en la sección detalles sobre cómo modificar orígenes de confianza en la personalización de CORS). A continuación, AD FS responde con los encabezados siguientes:
     - Access-Control-Allow-Origin: valor igual que en el encabezado Origin
     - Access-Control-Allow-Method – valor igual que en el encabezado Access-Control-request-Method
@@ -205,8 +205,8 @@ Se pueden definir los siguientes orígenes para la directiva predeterminada-src:
 - ' none ': si se especifica, se restringe el contenido de cualquier origen que se va a cargar.
 - datos:-especificar datos: los URI permiten a los creadores de contenido incrustar archivos pequeños insertados en los documentos. Uso no recomendado.
 
->[!NOTE]
->AD FS usa JavaScript en el proceso de autenticación y, por lo tanto, habilita JavaScript mediante la inclusión de orígenes ' Unsafe-inline ' y ' Unsafe-eval ' en la directiva predeterminada.
+> [!NOTE]
+> AD FS usa JavaScript en el proceso de autenticación y, por lo tanto, habilita JavaScript mediante la inclusión de orígenes ' Unsafe-inline ' y ' Unsafe-eval ' en la directiva predeterminada.
 
 ### <a name="custom-headers"></a>Encabezados personalizados
 Además de los encabezados de respuesta de seguridad enumerados anteriormente (HSTS, CSP, X-Frame-Options, X-XSS-Protection y CORS), AD FS 2019 proporciona la capacidad de establecer nuevos encabezados.
@@ -232,7 +232,7 @@ Utilice la tabla y los vínculos siguientes para determinar qué exploradores We
 |Uso compartido de recursos entre orígenes (CORS)|[Compatibilidad del explorador CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility)
 |Directiva de seguridad de contenido (CSP)|[Compatibilidad del explorador de CSP](https://developer.mozilla.org/docs/Web/HTTP/CSP#Browser_compatibility)
 
-## <a name="next"></a>Siguientes
+## <a name="next"></a>Siguiente
 
 - [Usar la ayuda de AD FS guías de solución de problemas](https://aka.ms/adfshelp/troubleshooting )
 - [Solución de problemas de AD FS](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)

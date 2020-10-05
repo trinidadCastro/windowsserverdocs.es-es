@@ -6,12 +6,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 73f9ce6e88fa56a645f0ffedba4f38dec87e973b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b8410cb5804e8cbac3ce03e575c2f33c2bc61388
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936384"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716866"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configuración avanzada de Desduplicación de datos
 
@@ -24,10 +24,10 @@ Las [programaciones predeterminadas de trabajos de Desduplicación de datos](und
 
 ### <a name="changing-a-data-deduplication-schedule"></a><a id="modifying-job-schedules-change-schedule"></a>Modificación de una programación de Desduplicación de datos
 Los trabajos de Desduplicación de datos se programan a través del programador de tareas de Windows y pueden verse y modificarse en la ruta de acceso Microsoft\Windows\Deduplication. Desduplicación de datos incluye varios cmdlets que facilitan la programación.
-* [`Get-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))muestra los trabajos programados actuales.
-* [`New-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))crea un nuevo trabajo programado.
-* [`Set-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))modifica un trabajo programado existente.
-* [`Remove-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))quita un trabajo programado.
+* [`Get-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/get-dedupschedule?view=win10-ps) muestra los trabajos programados actuales.
+* [`New-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/new-dedupschedule?view=win10-ps) crea un nuevo trabajo programado.
+* [`Set-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/set-dedupschedule?view=win10-ps) modifica un trabajo programado existente.
+* [`Remove-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/remove-dedupschedule?view=win10-ps) quita un trabajo programado.
 
 La razón más común para cambiar cuando se ejecutan los trabajos de Desduplicación de datos es asegurarse de que los trabajos se ejecutan fuera del horario laboral. En el siguiente ejemplo paso a paso muestra cómo modificar la programación de Desduplicación de datos para un escenario de *día soleado*: un host de Hyper-V hiperconvergido que está inactivo los fines de semana y después de las 19:00. Para cambiar la programación, ejecute los siguientes cmdlets de PowerShell en un contexto de administrador.
 
@@ -124,7 +124,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Para evitar que un trabajo se ejecute en una carga de trabajo&#39;s horas de inactividad</td>
         </tr>
         <tr>
-            <td>Habilitado</td>
+            <td>habilitado</td>
             <td>Si el trabajo se ejecuta</td>
             <td>Verdadero o falso</td>
             <td>Para deshabilitar un trabajo sin quitarlo</td>
@@ -142,7 +142,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>La limitación garantiza que los trabajos que no&#39;t interfieren con otros procesos intensivos de e/s.</td>
         </tr>
         <tr>
-            <td>Memory</td>
+            <td>Memoria</td>
             <td>El porcentaje de memoria en el sistema que debe usar un trabajo</td>
             <td>Enteros de 0 a 100 (indica un porcentaje)</td>
             <td>Para controlar qué nivel de impacto tendrá un trabajo en los recursos de memoria del sistema</td>
@@ -160,7 +160,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Quiere restaurar manualmente los archivos que residen en las secciones defectuosas del disco.</td>
         </tr>
         <tr>
-            <td>Start</td>
+            <td>Inicio</td>
             <td>Especifica la hora en la que se debe iniciar un trabajo.</td>
             <td><code>System.DateTime</code></td>
             <td>La parte de <em>fecha</em> del <code>System.Datetime</code> proporcionado para <em>iniciar</em> es irrelevante (siempre y cuando&#39;s en el pasado), pero la parte de <em>hora</em> especifica cuándo debe comenzar el trabajo.</td>
@@ -243,7 +243,7 @@ Las razones principales para modificar la configuración de volumen desde el tip
         <tr>
             <td>NoCompress</td>
             <td>Si los fragmentos se deben comprimir antes de pasar al almacén de fragmentos</td>
-            <td>Verdadero/Falso</td>
+            <td>True/False</td>
             <td>Algunos tipos de archivos, especialmente archivos multimedia y tipos de archivos ya comprimidos, pueden no comprimirse bien. Esta configuración permite desactivar la compresión para todos los archivos del volumen. Esto sería ideal si se está optimizando un conjunto de datos que tiene una gran cantidad de archivos que ya están comprimidos.</td>
         </tr>
         <tr>
@@ -265,7 +265,7 @@ Las razones principales para modificar la configuración de volumen desde el tip
             <td>Habilite a esta opción si la carga de trabajo funciona con archivos grandes, a menudo archivos modificados en los que la mayor parte del contenido del archivo está sin tocar. Si esta opción no está habilitada, estos archivos no se optimizarán nunca porque conservan los cambios, aunque la mayor parte del contenido del archivo está listo para su optimización.</td>
         </tr>
         <tr>
-            <td>Verificación</td>
+            <td>Verify</td>
             <td>Cuando se habilita, si el hash de un fragmento coincide con un fragmento que ya se encuentra en nuestro almacén de fragmentos, los fragmentos se comparan byte a byte para asegurarse de que son idénticos.</td>
             <td>Verdadero o falso</td>
             <td>Se trata de una característica de integridad que garantiza que el algoritmo hash que compara los fragmentos no comete un error al comparar dos fragmentos de datos que son realmente diferentes pero tienen el mismo valor hash. En la práctica, es muy improbable que esto ocurra. Si habilita la característica de comprobación, se agrega una sobrecarga considerable al trabajo de optimización.</td>
@@ -308,7 +308,7 @@ Por ejemplo, puede querer deshabilitar la recolección de elementos no utilizado
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>Esta opción configura el intervalo en el que trabajos de recolección normal de elementos no utilizados se convierten en <a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">trabajos de recolección completa de elementos no utilizados</a>. Un valor de n significa que cada n<sup></sup> trabajos había un trabajo de recolección completa de elementos no utilizados. Tenga en cuenta que la recolección de elementos no utilizados completa siempre está deshabilitada (independientemente del valor del registro) de los volúmenes con el <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">tipo de uso de copia de seguridad</a>. <code>Start-DedupJob -Type GarbageCollection -Full</code>se puede usar si se desea una recolección completa de elementos no utilizados en un volumen de copia de seguridad.</td>
+            <td>Esta opción configura el intervalo en el que trabajos de recolección normal de elementos no utilizados se convierten en <a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">trabajos de recolección completa de elementos no utilizados</a>. Un valor de n significa que cada n<sup></sup> trabajos había un trabajo de recolección completa de elementos no utilizados. Tenga en cuenta que la recolección de elementos no utilizados completa siempre está deshabilitada (independientemente del valor del registro) de los volúmenes con el <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">tipo de uso de copia de seguridad</a>. <code>Start-DedupJob -Type GarbageCollection -Full</code> se puede usar si se desea una recolección completa de elementos no utilizados en un volumen de copia de seguridad.</td>
             <td>Enteros (-1 indica deshabilitado)</td>
             <td>Consulte <a href="advanced-settings.md#faq-why-disable-full-gc" data-raw-source="[this frequently asked question](advanced-settings.md#faq-why-disable-full-gc)">esta pregunta frecuente</a></td>
         </tr>

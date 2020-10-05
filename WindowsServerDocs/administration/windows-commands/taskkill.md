@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f750f7487e8220c93ea30a78ee185f28a74fd512
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 71a443f4b588139a60b2330e668919a23250ba0f
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622360"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716896"
 ---
 # <a name="taskkill"></a>taskkill
 
@@ -35,9 +35,9 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 |      modificado \<computer>       |                                                                                    Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). La opción predeterminada es el equipo local.                                                                                     |
 | /u \<Domain>\\\<UserName> | Ejecuta el comando con los permisos de cuenta del usuario que se especifica mediante *el nombre de usuario o el* *dominio* \\ *nombreDeUsuario*. **/u** solo se puede especificar si se especifica **/s** . El valor predeterminado son los permisos del usuario que ha iniciado sesión actualmente en el equipo que emite el comando. |
 |      /p \<Password>       |                                                                                                   Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                   |
-|       /fi \<Filter>       |          Aplica un filtro para seleccionar un conjunto de tareas. Puede usar más de un filtro o usar el carácter comodín ( **\\** \* ) para especificar todas las tareas o los nombres de las imágenes. Vea la tabla siguiente para ver los nombres de filtro, los operadores y los valores [válidos](#filter-names-operators-and-values).           |
+|       /fi \<Filter>       |          Aplica un filtro para seleccionar un conjunto de tareas. Puede usar más de un filtro o usar el carácter comodín ( `*` ) para especificar todas las tareas o los nombres de las imágenes. Vea la tabla siguiente para ver los nombres de filtro, los operadores y los valores [válidos](#filter-names-operators-and-values).           |
 |     /PID \<ProcessID>     |                                                                                                                 Especifica el identificador de proceso del proceso que se va a terminar.                                                                                                                 |
-|     /im \<ImageName>      |                                                                                Especifica el nombre de la imagen del proceso que se va a terminar. Use el carácter comodín ( **\\** \* ) para especificar todos los nombres de imagen.                                                                                |
+|     /im \<ImageName>      |                                                                                Especifica el nombre de la imagen del proceso que se va a terminar. Use el carácter comodín ( `*` ) para especificar todos los nombres de imagen.                                                                                |
 |            /f             |                                                                    Especifica que los procesos se terminan forzosamente. Este parámetro se omite para los procesos remotos; todos los procesos remotos se terminan forzosamente.                                                                     |
 |            /t             |                                                                                                          Finaliza el proceso especificado y los procesos secundarios iniciados por él.                                                                                                          |
 
@@ -58,7 +58,7 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 
 ## <a name="remarks"></a>Observaciones
 * Los filtros WINDOWTITLE y STATUs no se admiten cuando se especifica un sistema remoto.
-* El carácter comodín ( **\\** <em>) se acepta para la opción **/im</em> * solo cuando se aplica un filtro.
+* El carácter comodín ( `*` ) se acepta para la opción **/im** solo cuando se aplica un filtro.
 * La terminación de los procesos remotos siempre se lleva a cabo forzosamente, independientemente de si se especifica la opción **/f** .
 * El suministro de un nombre de equipo al filtro hostname provoca un cierre y se detienen todos los procesos.
 * Puede usar **TaskList** para determinar el identificador de proceso (PID) del proceso que se va a finalizar.
@@ -74,25 +74,25 @@ taskkill /pid 1230 /pid 1241 /pid 1253
 Para forzar la finalización del proceso Notepad.exe si el sistema lo inició, escriba:
 
 ```
-taskkill /f /fi USERNAME eq NT AUTHORITY\SYSTEM /im notepad.exe
+taskkill /f /fi "USERNAME eq NT AUTHORITY\SYSTEM" /im notepad.exe
 ```
 
 Para finalizar todos los procesos del equipo remoto Srvmain con un nombre de imagen que empiece por Note, mientras usa las credenciales de la cuenta de usuario Hiropln, escriba:
 
 ```
-taskkill /s srvmain /u maindom\hiropln /p p@ssW23 /fi IMAGENAME eq note* /im *
+taskkill /s srvmain /u maindom\hiropln /p p@ssW23 /fi "IMAGENAME eq note*" /im *
 ```
 
 Para finalizar el proceso con el identificador de proceso 2134 y los procesos secundarios que inició, pero solo si los procesos se iniciaron con la cuenta de administrador, escribe:
 
 ```
-taskkill /pid 2134 /t /fi username eq administrator
+taskkill /pid 2134 /t /fi "username eq administrator"
 ```
 
 Para finalizar todos los procesos que tienen un identificador de proceso mayor o igual que 1000, independientemente de sus nombres de imagen, escriba:
 
 ```
-taskkill /f /fi PID ge 1000 /im *
+taskkill /f /fi "PID ge 1000" /im *
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
