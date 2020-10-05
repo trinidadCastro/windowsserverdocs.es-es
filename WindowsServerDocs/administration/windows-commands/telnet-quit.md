@@ -1,18 +1,18 @@
 ---
 title: telnet quit
-description: Artículo de referencia para telnet Quit, que sale de Telnet.
+description: Artículo de referencia para el comando telnet Quit, que sale de Telnet.
 ms.topic: reference
 ms.assetid: a6e033f2-f0c2-404c-9cb4-abd1d7af0eea
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f00ac92e94f834c82cb9489247d3afae8ff568a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: cb53a9b894fb050f51a85dbed869c1e850897bea
+ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638916"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91718002"
 ---
 # <a name="telnet-quit"></a>Telnet: salir
 
@@ -21,15 +21,19 @@ ms.locfileid: "89638916"
 Sale de Telnet.
 
 ## <a name="syntax"></a>Sintaxis
+
 ```
 q[uit]
 ```
-#### <a name="parameters"></a>Parámetros
-None
+
 ## <a name="examples"></a>Ejemplos
-salga de Telnet.
+
+Para salir de Telnet, escriba:
+
 ```
 q
 ```
+
 ## <a name="additional-references"></a>Referencias adicionales
+
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

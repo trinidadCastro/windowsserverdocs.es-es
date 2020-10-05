@@ -1,38 +1,41 @@
 ---
 title: showmount
-description: Artículo de referencia para showmount, que muestra los directorios montados.
+description: Artículo de referencia para el comando showmount, que muestra información acerca de los sistemas de archivos montados exportados por servidor para NFS en un equipo especificado.
 ms.topic: reference
 ms.assetid: a6dd562e-e3bd-4ee6-be3b-6d29e29fd20e
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e0a03c7e08c80e4cf0b99bbcb74aeff1deccdb1e
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3af87ba4ed42789cf07a2ae63ce9e720043a196e
+ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640962"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91718332"
 ---
 # <a name="showmount"></a>showmount
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Puede usar **showmount** para mostrar los directorios montados.
+Puede usar **showmount** para mostrar información acerca de los sistemas de archivos montados exportados por servidor para NFS en un equipo especificado. Si no especifica un servidor, este comando muestra información sobre el equipo en el que se ejecuta el comando **showmount** .
 
 ## <a name="syntax"></a>Sintaxis
+
 ```
-showmount {-e|-a|-d} <Server>
+showmount {-e|-a|-d} <server>
 ```
 
-## <a name="description"></a>Descripción
-La **showmount** utilidad de \- línea de comandos showmount muestra información acerca de los sistemas de archivos montados exportados por servidor para NFS en el equipo especificado por *servidor*. Si no se proporciona el *servidor* , **showmount** muestra información sobre el equipo en el que se ejecuta el comando **showmount** .
+### <a name="parameters"></a>Parámetros
 
-Debe proporcionar una de las siguientes opciones:
+| Parámetro | Descripción |
+|--|--|
+| -E | Muestra todos los sistemas de archivos exportados en el servidor. |
+| -a | Muestra todos los clientes de Network File System (NFS) y los directorios en el servidor que se han montado. |
+| -d | Muestra todos los directorios del servidor montados actualmente por clientes NFS. |
 
-- ** \- e** -muestra todos los sistemas de archivos exportados en el servidor.
-- ** \- a** : muestra todos los clientes NFS de Network File System \( \) y los directorios en el servidor que se han montado.
-- ** \- d** -muestra todos los directorios del servidor que actualmente están montados por clientes NFS.
+## <a name="additional-references"></a>Referencias adicionales
 
-## <a name="see-also"></a>Consulte también
-[Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)

@@ -1,18 +1,18 @@
 ---
 title: telnet open
-description: Artículo de referencia para telnet Open, que se conecta a un servidor Telnet.
+description: Artículo de referencia para el comando telnet Open, que se conecta a un servidor Telnet.
 s.topic: article
 ms.assetid: e30ad68c-2366-4754-ac36-311a2392902a
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 892d797c4b56acb46e8119237fd38296e4ae411c
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 6db7f428f4b8c85c6e953a8fe4a9328b965898f8
+ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89636782"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91718012"
 ---
 # <a name="telnet-open"></a>Telnet: abierto
 
@@ -21,20 +21,26 @@ ms.locfileid: "89636782"
 Se conecta a un servidor Telnet.
 
 ## <a name="syntax"></a>Sintaxis
-```
-o[pen] <hostname> [<Port>]
-```
-#### <a name="parameters"></a>Parámetros
 
-| Parámetro  |                                        Descripción                                         |
-|------------|--------------------------------------------------------------------------------------------|
-| <hostname> |                         Especifica el nombre del equipo o la dirección IP.                         |
-|  [<Port>]  | Especifica el puerto TCP en el que escucha el servidor Telnet. El valor predeterminado es el puerto TCP 23. |
+```
+o[pen] <hostname> [<port>]
+```
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+|--|--|
+| `<hostname>` | Especifica el nombre del equipo o la dirección IP. |
+| `[<port>]` | Especifica el puerto TCP en el que escucha el servidor Telnet. El valor predeterminado es el puerto TCP 23. |
 
 ## <a name="examples"></a>Ejemplos
-Conéctese a un servidor Telnet en telnet.microsoft.com.
+
+Para conectarse a un servidor Telnet en *telnet.Microsoft.com*, escriba:
+
 ```
 o telnet.microsoft.com
 ```
+
 ## <a name="additional-references"></a>Referencias adicionales
+
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
