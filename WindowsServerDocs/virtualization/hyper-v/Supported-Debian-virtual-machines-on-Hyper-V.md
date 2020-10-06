@@ -6,12 +6,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: c0ea0a8e9a030c8d35bf3042b16108523753b36b
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 440d3c0dc51cc9e7d9c4d8abe439f4adb5da07dc
+ms.sourcegitcommit: faa5db4cdba4ad2b3a65533b6b49d960080923c9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746550"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91752897"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Máquinas virtuales Debian admitidas en Hyper-V
 
@@ -30,7 +30,7 @@ El siguiente mapa de distribución de características indica las característic
 | **Característica**                                                                                                                                  | **Versión del sistema operativo Windows Server** | **10.0-10.3 (validador)** | **9.0-9.12 (Stretch)** | **8.0-8.11 (Jessie)** | **7.0-7.11 (Wheezy)** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
 | **Disponibilidad**                                                                                                                             |                                             | Integrado              | Integrado              | Integrado              | Integrado (Nota 5)     |
-| **[Principal](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019, 2016, 2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| **[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019, 2016, 2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | Windows Server 2016 hora precisa                                                                                                            | 2019, 2016                                  | &#10004; Nota 4       | &#10004; Nota 4       |                       |                       |
 | **[Redes](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
 | Tramas gigantes                                                                                                                                 | 2019, 2016, 2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
@@ -52,7 +52,7 @@ El siguiente mapa de distribución de características indica las característic
 | Memoria dinámica: agregar en caliente                                                                                                                     | 2019, 2016, 2012 R2                   | &#10004; Nota 4       | &#10004; Nota 4       |                       |                       |
 | Memoria dinámica: globos                                                                                                                  | 2019, 2016, 2012 R2                   | &#10004; Nota 4       | &#10004; Nota 4       |                       |                       |
 | Tamaño de memoria en tiempo de ejecución                                                                                                                        | 2019, 2016                                  | &#10004; Nota 4       | &#10004; Nota 4       |                       |                       |
-| **[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
+| **[Vídeos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
 | Dispositivo de vídeo específico de Hyper-V                                                                                                                | 2019, 2016, 2012 R2          | &#10004;              | &#10004;              | &#10004;              |                       |
 | **[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                             |                       |                       |                       |                       |
 | Par clave-valor                                                                                                                               | 2019, 2016, 2012 R2          | &#10004; Nota 2       | &#10004; Nota 2       | &#10004; Nota 2       |                       |
@@ -77,11 +77,11 @@ El siguiente mapa de distribución de características indica las característic
    ```Powershell
    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
    ```
-4. Las funcionalidades más recientes del kernel de nivel superior solo están disponibles mediante el uso de los [puertos de subpuertos de Debian](https://wiki.debian.org/Backports)de kernel incluidos.
+4. Las funcionalidades más recientes del kernel de nivel superior solo están disponibles mediante el uso de los kernels disponibles en el repositorio de los [transportes de Debian](https://wiki.debian.org/Backports).
 
 5. Aunque Debian 7. x no es compatible y usa un kernel anterior, el kernel incluido en los puertos de salida de Debian para Debian 7. x ha mejorado las funciones de Hyper-V.
 
-Consulte también
+## <a name="see-also"></a>Consulte también
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
