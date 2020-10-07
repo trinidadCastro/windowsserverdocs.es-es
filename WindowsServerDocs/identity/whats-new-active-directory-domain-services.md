@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 666b05d4a08ad72a62bffec05051ceed2155c36f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 727e3dde99c0c2e7d4aa8999a91a2b913d9a314b
+ms.sourcegitcommit: 1808ce451b9e37ec1110bd684e1b0d3812fc77e0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956032"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772405"
 ---
 # <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Novedades de Active Directory Domain Services para Windows Server 2016
 
@@ -67,11 +67,11 @@ Ventajas:
    - Acceso a Microsoft Store con cuenta profesional
    - Iconos dinámicos y notificaciones
 
-- **Acceder a recursos** de la organización en dispositivos móviles (teléfonos, phablets) que no se pueden unir a un dominio de Windows, tanto si son de propiedad corporativa como de BYOD
+- **Acceder a recursos** de la organización en dispositivos móviles (teléfonos, tabletas) que no se pueden unir a un dominio de Windows, tanto si son de propiedad corporativa como de BYOD.
 - **Inicio de sesión único** en Office 365 y otras aplicaciones, sitios web y recursos de la organización.
 - **En los dispositivos BYOD**, agregue una cuenta profesional (desde un dominio local o Azure ad) a un dispositivo de propiedad personal y disfrute del inicio de sesión único en los recursos de trabajo, a través de aplicaciones y en la web, de forma que ayude a garantizar el cumplimiento de nuevas capacidades, como el control de cuentas condicional y la atestación de estado del dispositivo.
 - La **integración de MDM** le permite inscribir automáticamente dispositivos en su MDM (Intune o de terceros).
-- **Configurar el modo "quiosco" y los dispositivos compartidos** para varios usuarios de la organización
+- **Configure el modo "quiosco" y los dispositivos compartidos** para varios usuarios de su organización.
 - La **experiencia del desarrollador** le permite crear aplicaciones que satisfagan los contextos empresariales y personales con una pila de programas compartida.
 - La opción de **creación de imágenes** permite elegir entre imágenes y permitir que los usuarios configuren dispositivos corporativos directamente durante la primera ejecución.
 
