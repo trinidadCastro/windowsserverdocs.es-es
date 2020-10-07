@@ -7,12 +7,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 18142988108e1eafe59ca7fd83a29dd4dfb87720
-ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
+ms.openlocfilehash: e2bf87c27e8e61fa4baba81f234381d342af1343
+ms.sourcegitcommit: ed2b98e06bf7f616432bf8b6ad96544a34d5ce5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89472035"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91625477"
 ---
 # <a name="whats-new-in-the-web-client"></a>Novedades del cliente web
 
@@ -23,6 +23,9 @@ El [cliente web de Escritorio remoto](remote-desktop-web-client.md) se actualiza
 
 ## <a name="updates-for-10220"></a>Actualizaciones de la versión 1.0.22.0
 *Fecha de publicación: 2/9/2020*
+
+> [!IMPORTANT]
+> En la versión 1.0.22.0, introdujimos una regresión que afecta a algunos sistemas operativos Chromebook. Los usuarios de los sistemas operativos afectados no podrán conectarse a una sesión remota mediante el cliente web. Actualmente, estamos investigando este problema y publicaremos una nueva versión del cliente web en cuanto corrijamos esta regresión. Mientras tanto, para evitar este problema, puede revertir a la versión 1.0.21.0. 
 
 - Los usuarios ahora pueden mover el menú minimizado.
 - Se ha mejorado la compatibilidad con monitores 4K y ultraanchos, y se ha corregido un problema en que la copia de grandes cantidades de datos provocaba el bloqueo de las sesiones.

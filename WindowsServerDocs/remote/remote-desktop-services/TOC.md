@@ -109,5 +109,6 @@
 #### [El cliente de Escritorio remoto se desconecta y no puede volver a conectarse a la misma sesión](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
 #### [Los portátiles remotos se desconectan de la red inalámbrica](troubleshoot/remote-laptop-disconnects-wireless-network.md)
 #### [Problemas de bajo rendimiento o de aplicaciones durante la conexión a escritorio remoto](troubleshoot/poor-performance-or-application-problems.md)
+#### [Problema del editor de métodos de entrada en escenarios de RemoteApp](troubleshoot/input-method-editor-error.md)
 
 ## [Recursos adicionales](rds-get-support.md)
