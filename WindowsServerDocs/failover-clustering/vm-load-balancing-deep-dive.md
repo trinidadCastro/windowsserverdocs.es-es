@@ -2,16 +2,16 @@
 ms.assetid: 5b5bab7a-727b-47ce-8efa-1d37a9639cba
 title: Análisis en profundidad de equilibrio de carga de máquinas virtuales
 ms.topic: article
-author: bhattacharyaz
 manager: eldenc
-ms.author: subhatt
+ms.author: johnmar
+author: JasonGerend
 ms.date: 09/19/2016
-ms.openlocfilehash: cebdc8c192abd737478c3b7a0c3db3e4a2bc8091
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7fc9b449b11b5faf05ac279628f093053e292e8c
+ms.sourcegitcommit: 7a8a608df059b4278a974c52ed7b865421a83aa6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957152"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91833313"
 ---
 # <a name="virtual-machine-load-balancing-deep-dive"></a>Análisis en profundidad de equilibrio de carga de máquinas virtuales
 
@@ -43,7 +43,7 @@ La agresividad del equilibrio basado en la heurística de memoria y CPU se puede
 El equilibrio de carga de máquina virtual está habilitado de forma predeterminada y, cuando se produce el equilibrio de carga, la propiedad común del clúster "AutoBalancerMode" puede configurarla. Para controlar cuándo el nodo equidad equilibra el clúster:
 
 ### <a name="using-failover-cluster-manager"></a>Usar Administrador de clústeres de conmutación por error:
-1. Haga clic con el botón derecho en el nombre del clúster y seleccione el gráfico de la opción "propiedades" ![ de seleccionar propiedad para el clúster a través de administrador de clústeres de conmutación por error](media/vm-load-balancing/detailed-VM-load-balancing-2.jpg)
+1. Haga clic con el botón derecho en el nombre del clúster y seleccione el gráfico de la opción "propiedades"  ![ de seleccionar propiedad para el clúster a través de administrador de clústeres de conmutación por error](media/vm-load-balancing/detailed-VM-load-balancing-2.jpg)
 
 2.  Seleccione el gráfico del panel "equilibrador" al ![ seleccionar la opción de equilibrador a través de administrador de clústeres de conmutación por error](media/vm-load-balancing/detailed-VM-load-balancing-3.jpg)
 
