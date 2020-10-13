@@ -5,15 +5,15 @@ ms.author: stevenek
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 07/24/2020
+ms.date: 09/09/2020
 description: Instrucciones paso a paso para implementar el almacenamiento definido por software con Espacios de almacenamiento directo en Windows Server como infraestructura hiperconvergida o infraestructura convergente (también conocida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: f0115e76ca297fa0af5fc57e197d75e428cb3e72
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c7ff6b1cf017405d90ae7e27d1d5853286a78b89
+ms.sourcegitcommit: c56e74743e5ad24b28ae81668668113d598047c6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997569"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91987315"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implementar espacios de almacenamiento directo
 
@@ -47,15 +47,15 @@ Recopile la información siguiente:
 
 ### <a name="step-11-install-the-operating-system"></a>Paso 1,1: instalar el sistema operativo
 
-El primer paso es instalar Windows Server en todos los servidores que estarán en el clúster. Espacios de almacenamiento directo requiere Windows Server 2016 Datacenter Edition. Puede usar la opción de instalación Server Core o servidor con experiencia de escritorio.
+El primer paso es instalar Windows Server en todos los servidores que estarán en el clúster. Espacios de almacenamiento directo requiere Windows Server Datacenter Edition. Puede usar la opción de instalación Server Core o servidor con experiencia de escritorio.
 
-Al instalar Windows Server mediante el Asistente para la instalación, puede elegir entre *Windows Server* (que hace referencia a Server Core) y *Windows Server (servidor con experiencia de escritorio)*, que es el equivalente de la opción de instalación *completa* disponible en Windows Server 2012 R2. Si no elige, obtendrá la opción de instalación Server Core. Para obtener más información, consulte [Opciones de instalación para Windows Server 2016](../../index.yml).
+Al instalar Windows Server mediante el Asistente para la instalación, puede elegir entre *Windows Server* (que hace referencia a Server Core) y *Windows Server (servidor con experiencia de escritorio)*, que es el equivalente de la opción de instalación *completa* disponible en Windows Server 2012 R2. Si no elige, obtendrá la opción de instalación Server Core. Para obtener más información, vea [instalación de Server Core](/windows-server/get-started/getting-started-with-server-core).
 
 ### <a name="step-12-connect-to-the-servers"></a>Paso 1,2: conexión a los servidores
 
 Esta guía se centra en la opción de instalación Server Core y en la implementación y administración de forma remota desde un sistema de administración independiente, que debe tener:
 
-- Windows Server 2016 con las mismas actualizaciones que los servidores que está administrando
+- Una versión de Windows Server o Windows 10 como mínimo como los servidores que administra y con las actualizaciones más recientes
 - Conectividad de red a los servidores que administra
 - Unido al mismo dominio o a un dominio de plena confianza
 - Herramientas de administración remota del servidor (RSAT) y módulos de PowerShell para Hyper-V y clústeres de conmutación por error. Las herramientas de RSAT y los módulos de PowerShell están disponibles en Windows Server y se pueden instalar sin necesidad de instalar otras características. También puede instalar el [herramientas de administración remota del servidor](https://www.microsoft.com/download/details.aspx?id=45520) en un equipo de administración de Windows 10.
@@ -140,18 +140,18 @@ Invoke-Command ($ServerList) {
 
 Si va a implementar Espacios de almacenamiento directo en máquinas virtuales, omita esta sección.
 
-Espacios de almacenamiento directo requiere redes de baja latencia y alto ancho de banda entre los servidores del clúster. Se requiere al menos 10 GbE redes y se recomienda el acceso directo a memoria remota (RDMA). Puede usar iWARP o RoCE, siempre y cuando tenga el logotipo de Windows Server 2016, pero normalmente es más fácil de configurar.
+Espacios de almacenamiento directo requiere redes de baja latencia y alto ancho de banda entre los servidores del clúster. Se requiere al menos 10 GbE redes y se recomienda el acceso directo a memoria remota (RDMA). Puede usar iWARP o RoCE, siempre que tenga el logotipo de Windows Server que coincida con la versión del sistema operativo, pero la configuración de iWARP suele ser más fácil.
 
 > [!Important]
 > Según el equipo de red, y especialmente con RoCE V2, es posible que se necesite cierta configuración del conmutador para parte superior del rack. La configuración del conmutador correcta es importante para garantizar la confiabilidad y el rendimiento de Espacios de almacenamiento directo.
 
-Windows Server 2016 presenta la formación de equipos incrustados en el conmutador (SET) en el conmutador virtual de Hyper-V. Esto permite que se usen los mismos puertos de NIC físicos para todo el tráfico de red mientras se usa RDMA, lo que reduce el número de puertos de NIC físicos necesarios. Switch: se recomienda la formación de equipos incrustados para Espacios de almacenamiento directo.
+Windows Server 2016 incorporó la formación de equipos incrustados (SET) en el conmutador virtual de Hyper-V. Esto permite que se usen los mismos puertos de NIC físicos para todo el tráfico de red mientras se usa RDMA, lo que reduce el número de puertos de NIC físicos necesarios. Switch: se recomienda la formación de equipos incrustados para Espacios de almacenamiento directo.
 
 Interconexiones de nodo conmutado o sin conmutador
 - Cambiado: los conmutadores de red deben estar configurados correctamente para administrar el ancho de banda y el tipo de red. Si usa RDMA que implementa el protocolo RoCE, la configuración del dispositivo y del conmutador de red es aún más importante.
 - Sin conmutador: los nodos se pueden interconectar mediante conexiones directas, evitando el uso de un modificador. Es necesario que todos los nodos tengan una conexión directa con todos los demás nodos del clúster.
 
-Para obtener instrucciones sobre cómo configurar las funciones de red para Espacios de almacenamiento directo, consulte la [Guía de implementación convergente de NIC y de Windows Server 2016](https://github.com/Microsoft/SDN/blob/master/Diagnostics/S2D%20WS2016_ConvergedNIC_Configuration.docx).
+Para obtener instrucciones sobre cómo configurar las funciones de red para Espacios de almacenamiento directo, consulte la [Guía de implementación de RDMA de Windows Server 2016 y 2019](https://github.com/Microsoft/SDN/blob/master/Diagnostics/S2D%20WS2016_ConvergedNIC_Configuration.docx).
 
 ## <a name="step-3-configure-storage-spaces-direct"></a>Paso 3: Configurar Espacios de almacenamiento directo
 
@@ -262,7 +262,7 @@ Para obtener más información, consulte [creación de volúmenes en espacios de
 
 ### <a name="step-37-optionally-enable-the-csv-cache"></a>Paso 3,7: habilitar opcionalmente la memoria caché de CSV
 
-Opcionalmente, puede habilitar la caché de volumen compartido de clúster (CSV) para usar la memoria del sistema (RAM) como una caché de nivel de bloque de escritura de las operaciones de lectura que el administrador de caché de Windows no ha almacenado en caché. Esto puede mejorar el rendimiento de aplicaciones como Hyper-V. La memoria caché de CSV puede aumentar el rendimiento de las solicitudes de lectura y también es útil para escenarios de Servidor de archivos de escalabilidad horizontal.
+Opcionalmente, puede habilitar la caché de volumen compartido de clúster (CSV) para usar la memoria del sistema (RAM) como una caché de nivel de bloque de escritura de las operaciones de lectura que el administrador de caché de Windows no ha almacenado en caché. Esto puede mejorar el rendimiento de aplicaciones como Hyper-V. La memoria caché de CSV puede aumentar el rendimiento de las solicitudes de lectura y también es útil para escenarios de servidor de archivos Scale-Out.
 
 Al habilitar la memoria caché de CSV se reduce la cantidad de memoria disponible para ejecutar máquinas virtuales en un clúster hiperconvergido, por lo que tendrá que equilibrar el rendimiento de almacenamiento con la memoria disponible para los VHD.
 
@@ -289,32 +289,32 @@ Los archivos de la máquina virtual deben almacenarse en el espacio de nombres C
 
 Puede usar herramientas integradas u otras herramientas para administrar el almacenamiento y las máquinas virtuales, como System Center Virtual Machine Manager.
 
-## <a name="step-4-deploy-scale-out-file-server-for-converged-solutions"></a>Paso 4: implementar Servidor de archivos de escalabilidad horizontal para las soluciones convergentes
+## <a name="step-4-deploy-scale-out-file-server-for-converged-solutions"></a>Paso 4: implementar Scale-Out servidor de archivos para las soluciones convergentes
 
-Si va a implementar una solución convergente, el siguiente paso es crear una instancia de Servidor de archivos de escalabilidad horizontal y configurar algunos recursos compartidos de archivos. Si va a implementar un clúster hiperconvergido, ya ha terminado y no necesita esta sección.
+Si está implementando una solución convergente, el siguiente paso es crear una Scale-Out instancia del servidor de archivos y configurar algunos recursos compartidos de archivos. Si va a implementar un clúster hiperconvergido, ya ha terminado y no necesita esta sección.
 
-### <a name="step-41-create-the-scale-out-file-server-role"></a>Paso 4,1: crear el rol de Servidor de archivos de escalabilidad horizontal
+### <a name="step-41-create-the-scale-out-file-server-role"></a>Paso 4,1: crear el rol de servidor de archivos Scale-Out
 
-El siguiente paso para configurar los servicios de clúster para el servidor de archivos es crear el rol de servidor de archivos en clúster, que es cuando se crea la instancia de Servidor de archivos de escalabilidad horizontal en la que se hospedan los recursos compartidos de archivos disponibles continuamente.
+El siguiente paso para configurar los servicios de clúster para el servidor de archivos es crear el rol de servidor de archivos en clúster, que es cuando se crea la Scale-Out instancia del servidor de archivos en la que se hospedan los recursos compartidos de archivos disponibles continuamente.
 
-#### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>Para crear un rol de Servidor de archivos de escalabilidad horizontal mediante Administrador del servidor
+#### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>Para crear un rol de servidor de archivos Scale-Out mediante Administrador del servidor
 
 1. En Administrador de clústeres de conmutación por error, seleccione el clúster, vaya a **roles**y, a continuación, haga clic en **configurar rol..**..<br>Aparece el Asistente para alta disponibilidad.
 2. En la página **Seleccionar rol** , haga clic en **servidor de archivos**.
 3. En la página **tipo de servidor de archivos** , haga clic en **servidor de archivos de escalabilidad horizontal para datos de aplicación**.
-4. En la página **punto de acceso de cliente** , escriba un nombre para el servidor de archivos de escalabilidad horizontal.
+4. En la página **punto de acceso de cliente** , escriba un nombre para el servidor de archivos Scale-Out.
 5. Para comprobar que el rol se configuró correctamente, vaya a **roles** y confirme que la columna **Estado** muestra en **ejecución** junto al rol de servidor de archivos en clúster que ha creado, tal como se muestra en la figura 1.
 
-   ![Captura de pantalla de Administrador de clústeres de conmutación por error que muestra el Servidor de archivos de escalabilidad horizontal](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Administrador de clústeres de conmutación por error que muestra el Servidor de archivos de escalabilidad horizontal")
+   ![Captura de pantalla de Administrador de clústeres de conmutación por error que muestra el servidor de archivos Scale-Out](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Administrador de clústeres de conmutación por error que muestra el servidor de archivos Scale-Out")
 
-    **Figura 1** Administrador de clústeres de conmutación por error mostrar el Servidor de archivos de escalabilidad horizontal con el estado en ejecución
+    **Figura 1** Administrador de clústeres de conmutación por error que muestra el servidor de archivos de Scale-Out con el estado en ejecución
 
 > [!NOTE]
 >  Después de crear el rol en clúster, es posible que se produzcan algunos retrasos en la propagación de red que podrían impedir la creación de recursos compartidos de archivos en él durante unos minutos, o incluso más.
 
-#### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>Para crear un rol de Servidor de archivos de escalabilidad horizontal mediante Windows PowerShell
+#### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>Para crear un rol de servidor de archivos Scale-Out mediante Windows PowerShell
 
- En una sesión de Windows PowerShell que esté conectada al clúster de servidores de archivos, escriba los siguientes comandos para crear el rol de Servidor de archivos de escalabilidad horizontal, cambiando *FSCLUSTER* para que coincida con el nombre del clúster y *sofs* para que coincida con el nombre que desea asignar al rol de servidor de archivos de escalabilidad horizontal:
+ En una sesión de Windows PowerShell que esté conectada al clúster de servidores de archivos, escriba los siguientes comandos para crear el rol de servidor de archivos Scale-Out, cambie *FSCLUSTER* para que coincida con el nombre del clúster y *sofs* para que coincida con el nombre que desea asignar al rol de servidor de archivos Scale-Out:
 
 ```PowerShell
 Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
@@ -386,7 +386,7 @@ Después de implementar el servidor de archivos en clúster, se recomienda proba
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Espacios de almacenamiento directo en Windows Server 2016](storage-spaces-direct-overview.md)
+-   [Introducción a Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 -   [Conoce la memoria caché de Espacios de almacenamiento directo](understand-the-cache.md)
 -   [Planeación de volúmenes en Espacios de almacenamiento directo](plan-volumes.md)
 -   [Tolerancia a errores de espacios de almacenamiento](storage-spaces-fault-tolerance.md)

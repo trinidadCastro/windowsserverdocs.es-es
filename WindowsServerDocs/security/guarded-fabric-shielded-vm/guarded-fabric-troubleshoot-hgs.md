@@ -4,20 +4,21 @@ ms.topic: article
 ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
+description: Soluciones a problemas comunes que se producen al implementar o operar un servidor de servicio de protección de host (HGS) en un tejido protegido.
 ms.author: ryanpu
-ms.date: 09/25/2019
-ms.openlocfilehash: fa6b0bb75752d29b4deaa510eca2293abab4a15c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 10/12/2020
+ms.openlocfilehash: 398029ed048ac835d23ffebb954baad13970b538
+ms.sourcegitcommit: c56e74743e5ad24b28ae81668668113d598047c6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995324"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91987299"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>Solución de problemas del servicio de protección de host
 
 > Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
-En este tema se describen las soluciones a problemas comunes que se producen al implementar o operar un servidor de servicio de protección de host (HGS) en un tejido protegido.
+En este artículo se describen las soluciones a problemas comunes que se producen al implementar o operar un servidor de servicio de protección de host (HGS) en un tejido protegido.
 Si no está seguro de la naturaleza del problema, primero intente ejecutar los [diagnósticos de tejido protegido](guarded-fabric-troubleshoot-diagnostics.md) en los servidores de HGS y en los hosts de Hyper-V para reducir las posibles causas.
 
 ## <a name="certificates"></a>Certificados
@@ -44,11 +45,11 @@ Si está utilizando un certificado autofirmado o un certificado emitido por una 
 
 1. Abra el administrador de certificados local (certlm. msc).
 2. Expanda **certificados de > personales** y busque el certificado de firma o cifrado que desea actualizar.
-3. Haga clic con el botón derecho en el certificado y seleccione **todas las tareas > administrar claves privadas**.
-4. Haga clic en **Agregar** para conceder a un usuario nuevo acceso a la clave privada de Certiciate.
-5. En el selector de objetos, escriba el nombre de cuenta de gMSA para HGS encontrado anteriormente y haga clic en **Aceptar**.
+3. Haga clic con el botón secundario en el certificado y seleccione **todas las tareas > administrar claves privadas**.
+4. Seleccione **Agregar** para conceder a un nuevo usuario acceso a la clave privada del certificado.
+5. En el selector de objetos, escriba el nombre de cuenta de gMSA para HGS encontrado anteriormente y, luego, haga clic en **Aceptar**.
 6. Asegúrese de que gMSA tenga acceso de **lectura** al certificado.
-7. Haga clic en **Aceptar** para cerrar la ventana de permisos.
+7. Seleccione **Aceptar** para cerrar la ventana de permisos.
 
 Si está ejecutando HGS en Server Core o administra el servidor de forma remota, no podrá administrar las claves privadas mediante el administrador de certificados local.
 En su lugar, debe descargar el módulo de [PowerShell herramientas de tejido protegido](https://www.powershellgallery.com/packages/GuardedFabricTools) , que le permitirá administrar los permisos en PowerShell.
@@ -151,7 +152,7 @@ Se recomienda no quitar las directivas que permitan a los hosts del modo de ates
 
 **Problema conocido al cambiar de TPM a modo de AD**
 
-Si ha inicializado el clúster de HGS en modo TPM y después cambia al modo Active Directory, hay un problema conocido que impedirá que otros nodos del clúster de HGS cambien al nuevo modo de atestación.
+Si ha inicializado el clúster de HGS en modo TPM y después cambia al modo Active Directory, hay un problema conocido que impide que otros nodos del clúster de HGS cambien al nuevo modo de atestación.
 Para asegurarse de que todos los servidores HGS están aplicando el modo de atestación correcto, ejecute `Set-HgsServer -TrustActiveDirectory` **en cada nodo** del clúster de HGS.
 Este problema no se aplica si va a cambiar del modo TPM al modo AD *y* el clúster se configuró originalmente en el modo ad.
 
@@ -179,3 +180,36 @@ Si el TPM debe tener un EKcert pero no se encontró ninguno en el archivo de ide
 
 Si ha recibido el error de que el EKcert no es de confianza, asegúrese de que ha [instalado el paquete de certificados raíz de TPM de confianza](guarded-fabric-install-trusted-tpm-root-certificates.md) en cada servidor de HGS y que el certificado raíz para el proveedor de TPM está presente en el almacén de ** \_ RootCA de TrustedTPM** de la máquina local. Cualquier certificado intermedio aplicable también debe instalarse en el almacén **de \_ IntermediateCA de TrustedTPM** en el equipo local.
 Después de instalar los certificados raíz e intermedios, debe ser capaz de ejecutarse `Add-HgsAttestationTpmHost` correctamente.
+
+## <a name="group-managed-service-account-gmsa-privileges"></a>Privilegios de cuenta de servicio administrada de grupo (gMSA)
+
+Se debe conceder a la cuenta de servicio de HGS (gMSA usada para el grupo de aplicaciones del servicio de protección de claves en IIS) el privilegio [generar auditorías de seguridad](/windows/security/threat-protection/security-policy-settings/generate-security-audits) , también conocido como `SeAuditPrivilege` . Si falta este privilegio, la configuración inicial del HGS se realiza correctamente y se inicia IIS, pero el servicio de protección de claves no es funcional y devuelve el error HTTP 500 _("error de servidor en la aplicación/KeyProtection")._ También puede observar los siguientes mensajes de advertencia en el registro de eventos de la aplicación.
+```
+System.ComponentModel.Win32Exception (0x80004005): A required privilege is not held by the client
+at Microsoft.Windows.KpsServer.Common.Diagnostics.Auditing.NativeUtility.RegisterAuditSource(String pszSourceName, SafeAuditProviderHandle& phAuditProvider)
+at Microsoft.Windows.KpsServer.Common.Diagnostics.Auditing.SecurityLog.RegisterAuditSource(String sourceName)
+```
+or
+```
+Failed to register the security event source.
+   at System.Web.HttpApplicationFactory.EnsureAppStartCalledForIntegratedMode(HttpContext context, HttpApplication app)
+   at System.Web.HttpApplication.RegisterEventSubscriptionsWithIIS(IntPtr appContext, HttpContext context, MethodInfo[] handlers)
+   at System.Web.HttpApplication.InitSpecial(HttpApplicationState state, MethodInfo[] handlers, IntPtr appContext, HttpContext context)
+   at System.Web.HttpApplicationFactory.GetSpecialApplicationInstance(IntPtr appContext, HttpContext context)
+   at System.Web.Hosting.PipelineRuntime.InitializeApplication(IntPtr appContext)
+
+Failed to register the security event source.
+   at Microsoft.Windows.KpsServer.Common.Diagnostics.Auditing.SecurityLog.RegisterAuditSource(String sourceName)
+   at Microsoft.Windows.KpsServer.Common.Diagnostics.Auditing.SecurityLog.ReportAudit(EventLogEntryType eventType, UInt32 eventId, Object[] os)
+   at Microsoft.Windows.KpsServer.KpsServerHttpApplication.Application_Start()
+
+A required privilege is not held by the client
+   at Microsoft.Windows.KpsServer.Common.Diagnostics.Auditing.NativeUtility.RegisterAuditSource(String pszSourceName, SafeAuditProviderHandle& phAuditProvider)
+   at Microsoft.Windows.KpsServer.Common.Diagnostics.Auditing.SecurityLog.RegisterAuditSource(String sourceName)
+```
+Además, es posible que observe que ninguno de los cmdlets del servicio de protección de claves (por ejemplo, [Get-HgsKeyProtectionCertificate](/powershell/module/hgskeyprotection/get-hgskeyprotectioncertificate)) funcionan y, en su lugar, devuelven errores.
+
+Para resolver este problema, debe conceder a gMSA el error "generar auditorías de seguridad" (SeAuditPrivilege). Para ello, puede usar la Directiva de seguridad local `SecPol.msc` en todos los nodos del clúster de HGS, o bien Directiva de grupo. Como alternativa, puede usar [SecEdit.exe](/windows-server/administration/windows-commands/secedit) herramienta para exportar la Directiva de seguridad actual, realizar los cambios necesarios en el archivo de configuración (que es texto sin formato) y, a continuación, importarlo de nuevo.
+
+> [!NOTE]
+> Al configurar esta opción, la lista de principios de seguridad definida para un privilegio invalida totalmente los valores predeterminados (no concatena). Por lo tanto, al definir esta configuración de Directiva, asegúrese de incluir los titulares predeterminados de este privilegio (servicio de red y servicio local) además de los gMSA que va a agregar.
