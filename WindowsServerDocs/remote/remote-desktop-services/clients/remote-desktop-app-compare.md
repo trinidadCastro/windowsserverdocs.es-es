@@ -6,14 +6,14 @@ ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/25/2020
+ms.date: 10/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a44926d50fae9dea38e3f5c46db423991a414a87
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 2c34ab9c769beb25437e26442d85f75d40db163e
+ms.sourcegitcommit: ed77cfe8140a480b025907716e3635d40a5e3303
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941515"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91806640"
 ---
 # <a name="compare-the-clients"></a>Comparación de los clientes
 
@@ -29,7 +29,7 @@ Si lo haces de forma remota en tu escritorio personal, hay redireccionamientos a
 
 ### <a name="input-redirection"></a>Redireccionamiento de entrada
 
-| Redireccionamiento | Bandeja de entrada de Windows</br>(MSTSC) | Escritorio de Windows</br>(MSRDC) | Tienda Windows | Android | iOS | macOS | Cliente web    |
+| Redireccionamiento | Bandeja de entrada de Windows</br>(MSTSC) | Escritorio de Windows</br>(MSRDC) | Cliente de Microsoft Store</br>(URDC) | Android | iOS | macOS | Cliente web    |
 |-------------|---------------------------|-----------------------------|---------------|---------|-----|-------|---------------|
 | Keyboard    | X                         | X                           | X             | X       | X   | X     | X             |
 | Mouse       | X                         | X                           | X             | X       | X\* | X     | X             |
@@ -40,7 +40,7 @@ Si lo haces de forma remota en tu escritorio personal, hay redireccionamientos a
 
 ### <a name="port-redirection"></a>Redireccionamiento de puertos
 
-| Redireccionamiento | Bandeja de entrada de Windows</br>(MSTSC) | Escritorio de Windows</br>(MSRDC) | Tienda Windows | Android | iOS | macOS | cliente web |
+| Redireccionamiento | Bandeja de entrada de Windows</br>(MSTSC) | Escritorio de Windows</br>(MSRDC) | Cliente de Microsoft Store</br>(URDC) | Android | iOS | macOS | cliente web |
 |-------------|---------------------------|-----------------------------|---------------|---------|-----|-------|------------|
 | Puerto serie | X                         | X                           |               |         |     |       |            |
 | USB         | X                         | X                           |               |         |     |       |            |
@@ -49,7 +49,7 @@ Cuando se habilita el redireccionamiento del puerto USB, los dispositivos USB co
 
 ### <a name="other-redirection-devices-etc"></a>Otro redireccionamiento (dispositivos, etc.)
 
-| Redireccionamiento         | Bandeja de entrada de Windows</br>(MSTSC) | Escritorio de Windows</br>(MSRDC) | Tienda Windows | Android | iOS         | macOS                           | Cliente web    |
+| Redireccionamiento         | Bandeja de entrada de Windows</br>(MSTSC) | Escritorio de Windows</br>(MSRDC) | Cliente de Microsoft Store</br>(URDC) | Android | iOS         | macOS                           | Cliente web    |
 |---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
 | Cámaras             | X                         | X                           |               |     X    |   X         | X                               |               |
 | Portapapeles           | X                         | X                           | X             | Texto    | Texto, imágenes | X                               | texto          |

@@ -7,12 +7,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: b0ff8f353d4536f89d698f362e2998d9682665f2
-ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
+ms.openlocfilehash: 2caecd2b625de8790ddd0d1ebfeeb9db24d11635
+ms.sourcegitcommit: faa5db4cdba4ad2b3a65533b6b49d960080923c9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91389019"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91752917"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1909, para un rol de Infraestructura de escritorio virtual (VDI)
 
@@ -38,7 +38,7 @@ Hay algunas configuraciones de seguridad que no son aplicables a los entornos de
 En lo que respecta a las actualizaciones, Windows 10 emplea un algoritmo de actualización mensual, por lo que no es necesario que los clientes intenten actualizarse. En la mayoría de los casos, los administradores de VDI controlan el proceso de actualización a través de un proceso de apagado de VM basado en una imagen "maestra" o "gold", quitan el sello de la imagen, que es de solo lectura, aplican revisiones a la imagen y, a continuación, la vuelven a sellar y la devuelven a producción. Por lo tanto, no es necesario que las máquinas virtuales de VDI comprueben Windows Update. En ciertos casos, por ejemplo, máquinas virtuales de VDI persistentes, se realizan procedimientos de revisión normales. También se puede usar Windows Update o Microsoft Intune. Puede usarse System Center Configuration Manager para administrar la actualización y otras entregas de paquetes. Depende de cada organización determinar el mejor enfoque para actualizar VDI.
 
 > [!TIP]
-> Un script que implementa las optimizaciones discutidas en este tema, así como un archivo de exportación GPO que puedes importar con **LGPO.exe**, está disponible en [TheVDIGuys](https://github.com/TheVDIGuys) en GitHub.
+> Puede acceder a un script que implementa las optimizaciones discutidas en este tema, así como a un archivo de exportación GPO que puede importar con **LGPO.exe**, desde [El equipo del escritorio virtual](https://github.com/The-Virtual-Desktop-Team/Virtual-Desktop-Optimization-Tool), en GitHub.
 
 Este script se diseñó para adaptarse a tu entorno y requisitos. El código principal es PowerShell y el trabajo se realiza mediante el uso de archivos de entrada (texto sin formato), con los archivos de exportación de la herramienta Objeto de directiva de grupo local (LGPO). Estos archivos contienen listas de aplicaciones que se deben quitar y servicios que se deben deshabilitar. Si no quieres quitar una aplicación determinada o deshabilitar un servicio en concreto, edita el archivo de texto correspondiente y quita el elemento. Por último, hay configuraciones de directiva local que se pueden importar al dispositivo. Es mejor tener alguna configuración dentro de la imagen base, que aplicar la configuración a través de la directiva de grupo, ya que algunas de las opciones de configuración son efectivas en el siguiente reinicio o cuando se usa por primera vez un componente.
 
@@ -86,7 +86,7 @@ Un aspecto importante de la VDI no persistente que se basa en una sola imagen es
 > Windows 10 realiza un conjunto de tareas de mantenimiento automáticamente y de forma periódica. Existe una tarea programada que está configurada para ejecutarse a las 3:00 A.M. todos los días de forma predeterminada. Esta tarea programada realiza una lista de tareas, incluida la limpieza de Windows Update. Puedes ver todas las categorías de mantenimiento que tienen lugar automáticamente con este comando de PowerShell:
 >
 >```powershell
->Get-ScheduledTask | ? {$_.Settings.MaintenanceSettings}
+>Get-ScheduledTask | Where-Object {$_.Settings.MaintenanceSettings}
 >```
 >
 
@@ -115,7 +115,7 @@ Ten en cuenta la compatibilidad al modificar la configuración predeterminada de
 
 Puede usar su motor de búsqueda favorito con los términos "'start value' site:support.microsoft.com" para mostrar los problemas conocidos relacionados con los valores de inicio predeterminados de los servicios.
 
-Ten en cuenta que este documento y los scripts asociados de GitHub no modifican los permisos predeterminados. Si estás interesado en aumentar la configuración de seguridad, comienza con el proyecto conocido como **AaronLocker**. Para obtener más información, vea [Información general sobre "AaronLocker"](https://github.com/microsoft/AaronLocker).
+Ten en cuenta que este documento y los scripts asociados de GitHub no modifican los permisos predeterminados. Si estás interesado en aumentar la configuración de seguridad, comienza con el proyecto conocido como **AaronLocker**. Para obtener más información, consulte la [información general sobre "AaronLocker"](https://github.com/microsoft/AaronLocker).
 
 #### <a name="vdi-optimization-categories"></a>Categorías de optimización de VDI
 
@@ -149,7 +149,7 @@ La conectividad y el tiempo son factores importantes cuando se trata de la limpi
 
 Si modificas el archivo .WIM base que usas para instalar Windows 10 y eliminas las aplicaciones para UWP innecesarias de .WIM antes de realizar la instalación, esas aplicaciones no se instalarán; gracias a ello, los tiempos de creación de tu perfil serán más cortos. Más adelante en esta sección, encontrarás información sobre cómo eliminar aplicaciones para UWP del archivo .WIM de instalación.
 
-Una buena estrategia para VDI es aprovisionar las aplicaciones que quieres en la imagen base y, a continuación, limitar o bloquear el acceso a Microsoft Store. Las aplicaciones de Store se actualizan periódicamente en segundo plano en equipos normales. Las aplicaciones para UWP pueden actualizarse durante la ventana de mantenimiento cuando se aplican otras actualizaciones. Para más información, consulta [Aplicaciones para la Plataforma universal de Windows](https://docs.citrix.com/citrix-virtual-apps-desktops/manage-deployment/applications-manage/universal-apps.html).
+Una buena estrategia para VDI es aprovisionar las aplicaciones que quieres en la imagen base y, a continuación, limitar o bloquear el acceso a Microsoft Store. Las aplicaciones de Store se actualizan periódicamente en segundo plano en equipos normales. Las aplicaciones para UWP pueden actualizarse durante la ventana de mantenimiento cuando se aplican otras actualizaciones. Para más información, consulta [Aplicaciones para la Plataforma universal de Windows](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/manage-deployment/applications-manage/universal-apps.html).
 
 #### <a name="delete-the-payload-of-uwp-apps"></a>Eliminar la carga útil de las aplicaciones para UWP
 
@@ -571,7 +571,7 @@ Muchos de los servicios que pueden parecer buenos candidatos para la deshabilita
 | Servicio de directivas de diagnóstico | Permite la detección, solución y resolución de problemas para componentes de Windows. Si este servicio se detiene, los diagnósticos ya no funcionarán. | |
 | Administrador de mapas descargados | Servicio de Windows para que las aplicaciones obtengan acceso a mapas descargados. Este servicio lo pide la aplicación que accederá a los mapas descargados. Si deshabilitas este servicio las aplicaciones no obtendrán acceso a los mapas. | |
 | Servicio de geolocalización | Supervisa la ubicación actual del sistema y gestiona las geovallas. | |
-| Servicio de usuario de GameDVR y difusión | Este servicio de usuario se usa en grabaciones de juegos y difusiones en directo. | Este es un servicio por usuario y, como tal, el servicio de plantillas debe estar deshabilitado. |
+| Servicio de usuario de GameDVR y difusión | Este servicio de usuario se usa en grabaciones de juegos y difusiones en directo. | Este es un servicio por usuario y, como tal, el *servicio de plantillas* debe estar deshabilitado. |
 | MessagingService | Servicio de compatibilidad con mensajes de texto y funcionalidades relacionadas. | Este es un servicio por usuario y, como tal, el *servicio de plantillas* debe estar deshabilitado. |
 | Optimizar unidades | Permite que el equipo funcione de forma más eficiente al optimizar los archivos en las unidades de almacenamiento. | Las soluciones VDI normalmente no se benefician de la optimización del disco. Estas "unidades" no son unidades tradicionales y, a menudo, son solo una asignación de almacenamiento temporal. |
 | SuperFetch | Mantiene y mejora el rendimiento del sistema a lo largo del tiempo. | En general, no mejora el rendimiento en VDI (especialmente cuando es no persistente) dado que el estado del sistema operativo se descarta en cada reinicio. |
@@ -722,7 +722,7 @@ En el artículo anterior verá procedimientos para el mantenimiento de la imagen
 
 Hay algunas configuraciones del registro que pueden aumentar el rendimiento de la red. Esto es especialmente importante en entornos donde VDI o el equipo tiene una carga de trabajo que se basa principalmente en la red. Se recomienda la configuración de esta sección para sesgar el rendimiento para favorecer las redes, configurando un búfer adicional y almacenando en caché cosas como entradas de directorio.
 
->[!NOTE]
+> [!NOTE]
 > Algunas configuraciones de esta sección se basan únicamente en el registro y deben incorporarse en la imagen base antes de implementarla para su uso en la producción.
 
 La siguiente configuración se documenta en la información que proporciona las [Directrices de optimización del rendimiento para Windows Server 2016](../../administration/performance-tuning/index.md), que publicó en Microsoft.com el grupo de productos de Windows.
