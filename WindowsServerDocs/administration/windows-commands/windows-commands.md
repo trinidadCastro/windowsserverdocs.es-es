@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
-ms.openlocfilehash: c389d0889d4dfca46472215f014e77e9b2346f87
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ad0c9b5aba9148a2763e8fde6c9ff5eb6556918f
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022859"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92155847"
 ---
 # <a name="windows-commands"></a>Comandos de Windows
 
@@ -45,7 +45,7 @@ PowerShell se diseñó para ampliar las funcionalidades del shell de comandos pa
 Para la automatización de Windows más sólida y actualizada, se recomienda usar PowerShell en lugar de comandos de Windows o Windows Script Host para la automatización de Windows.
 
 > [!NOTE]
->También puede descargar e instalar [PowerShell Core](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), la versión de código abierto de PowerShell.
+>También puede descargar e instalar [PowerShell Core](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6&preserve-view=true), la versión de código abierto de PowerShell.
 
 > [!CAUTION]
 > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar los siguientes cambios en el registro, debe realizar una copia de seguridad de los datos valiosos del equipo.
@@ -53,7 +53,7 @@ Para la automatización de Windows más sólida y actualizada, se recomienda usa
 > [!NOTE]
 > Para habilitar o deshabilitar la finalización de nombres de archivos y directorios en el shell de comandos de un equipo o una sesión de inicio de sesión de usuario, ejecute **regedit.exe** y establezca el siguiente **valor de reg_DWOrd**:
 >
-> HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
+> HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\completionChar\reg_DWOrd
 >
 > Para establecer el valor de **reg_DWOrd** , use el valor hexadecimal de un carácter de control para una función determinada (por ejemplo, **0 9** es Tab y **0 08** es el retroceso). La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
@@ -94,7 +94,7 @@ Para obtener información acerca de un comando específico, en el siguiente men�
 - [autofmt](autofmt.md)
 - [automount](automount.md)
 
-### <a name="b"></a>B
+### <a name="b"></a>N
 
 - [bcdboot](bcdboot.md)
 - [bcdedit](bcdedit.md)
@@ -769,17 +769,17 @@ Para obtener información acerca de un comando específico, en el siguiente men�
   - [telnet unset](telnet-unset.md)
 - [tftp](tftp.md)
 - [time](time.md)
-- [timeout](timeout_1.md)
-- [title](title_1.md)
+- [timeout](timeout.md)
+- [title](title.md)
 - [tlntadmn](tlntadmn.md)
 - [tpmtool](tpmtool.md)
 - [tpmvscmgr](tpmvscmgr.md)
-- [tracerpt](tracerpt_1.md)
+- [tracerpt](tracerpt.md)
 - [tracert](tracert.md)
 - [tree](tree.md)
 - [tscon](tscon.md)
 - [tsdiscon](tsdiscon.md)
-- [tsecimp](tsecimp_1.md)
+- [tsecimp](tsecimp.md)
 - [tskill](tskill.md)
 - [tsprof](tsprof.md)
 - [type](type.md)
@@ -790,13 +790,13 @@ Para obtener información acerca de un comando específico, en el siguiente men�
 
 - [unexpose](unexpose.md)
 - [uniqueid](uniqueid.md)
-- [unlodctr](unlodctr_1.md)
+- [unlodctr](unlodctr.md)
 
 ### <a name="v"></a>V
 
 - [ver](ver.md)
 - [verifier](verifier.md)
-- [verify](verify_1.md)
+- [verify](verify.md)
 - [vol](vol.md)
 - [vssadmin](vssadmin.md)
   - [vssadmin delete shadows](vssadmin-delete-shadows.md)
@@ -826,7 +826,7 @@ Para obtener información acerca de un comando específico, en el siguiente men�
 - [wdsutil](wdsutil.md)
 - [wecutil](wecutil.md)
 - [wevtutil](wevtutil.md)
-- [where](where_1.md)
+- [where](where.md)
 - [whoami](whoami.md)
 - [winnt](winnt.md)
 - [winnt32](winnt32.md)

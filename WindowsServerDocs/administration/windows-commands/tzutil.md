@@ -1,18 +1,18 @@
 ---
 title: tzutil
-description: Artículo de referencia de tzutil, que muestra la utilidad de zona horaria de Windows.
+description: Artículo de referencia del comando tzutil, que muestra la utilidad de zona horaria de Windows.
 ms.topic: reference
 ms.assetid: bcf6e007-c9b6-4df5-83c5-ed7b4b1b5913
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3640da68f48944fd9d67486dface4cfd77531d57
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 8778758c2e3b72827a7dba5844539d27519a19da
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078462"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92156336"
 ---
 # <a name="tzutil"></a>tzutil
 
@@ -35,7 +35,7 @@ tzutil [/?] [/g] [/s <timezoneID>[_dstoff]] [/l]
 | /l | Enumera todos los ID. de zona horaria y nombres para mostrar válidos. La salida aparece como:<ul><li>`<display name>`</li><li>`<time zone ID>`</li></ul> |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 Un código de salida de **0** indica que el comando se completó correctamente.
 

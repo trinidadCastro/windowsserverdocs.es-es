@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: be28e5b3b9939907398b0c245fc49fcfd6f5e49a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a9e939b4a810848e91b5d2cb8e4b878bbcf56e84
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954021"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92156463"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>Medición de salida en una red virtual
 
@@ -22,7 +22,7 @@ Un aspecto fundamental de la monetización de la red en la nube es la posibilida
 
 La medición de salida del tráfico de red de SDN en Windows Server 2019 permite ofrecer medidores de uso para las transferencias de datos de salida. El tráfico de red que deja cada red virtual, pero que permanece dentro del centro de datos, puede realizarse por separado, por lo que se puede excluir de los cálculos de facturación. Se realiza un seguimiento de los paquetes enlazados a las direcciones IP de destino que no se incluyen en uno de los intervalos de direcciones sin facturar como transferencias de datos de salida facturadas.
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>Intervalos de direcciones no facturados de red virtual (lista de permitidos de intervalos IP)
+## <a name="virtual-network-unbilled-address-ranges-allowlist-of-ip-ranges"></a>Intervalos de direcciones no facturados de red virtual (permitidos de intervalos IP)
 
 Puede encontrar intervalos de direcciones no facturados en la propiedad **UnbilledAddressRanges** de una red virtual existente. De forma predeterminada, no se han agregado intervalos de direcciones.
 

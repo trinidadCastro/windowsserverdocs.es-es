@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 04/01/2019
-ms.openlocfilehash: dedd7a3629b4381fd5f78f70a39f6906cab0573d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c1d169147c6b09c8a238163a961c192e3e483728
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995392"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92155951"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>Autorizar hosts protegidos mediante la atestación basada en TPM
 
@@ -27,7 +27,7 @@ El modo TPM usa un identificador de TPM (también denominado identificador de pl
 
     -  Esto es aplicable a todos los hosts de Hyper-V que se ejecutan en la misma clase de hardware
 
-3.  Directiva de integridad de código (una lista blanca de archivos binarios permitidos)
+3.  Directiva de integridad de código (un permitidos de archivos binarios permitidos)
 
     -  Esto es aplicable a todos los hosts de Hyper-V que comparten hardware y software común.
 
@@ -35,7 +35,7 @@ Se recomienda capturar la Directiva de línea de base y de CI desde un "host de 
 
 ## <a name="versioned-attestation-policies"></a>Directivas de atestación de versiones
 
-Windows Server 2019 presenta un nuevo método para la atestación, denominado *atestación V2*, donde debe existir un certificado TPM para agregar EKPUB a HGS. El método de atestación v1 usado en Windows Server 2016 le permitía invalidar esta comprobación de seguridad mediante la especificación de la marca-Force al ejecutar Add-HgsAttestationTpmHost u otros cmdlets de atestación de TPM para capturar los artefactos. A partir de Windows Server 2019, se usa la atestación V2 de forma predeterminada y debe especificar la marca-PolicyVersion v1 al ejecutar Add-HgsAttestationTpmHost si necesita registrar un TPM sin un certificado. La marca-Force no funciona con la atestación V2.
+Windows Server 2019 presenta un nuevo método para la atestación, denominado *atestación V2*, donde debe existir un certificado TPM para agregar EKPUB a HGS. El método de atestación v1 usado en Windows Server 2016 le permitía invalidar esta comprobación de seguridad mediante la especificación de la marca-Force al ejecutar Add-HgsAttestationTpmHost u otros cmdlets de atestación de TPM para capturar los artefactos. A partir de Windows Server 2019, se usa la atestación V2 de forma predeterminada y es necesario especificar la marca-PolicyVersion v1 al ejecutar Add-HgsAttestationTpmHost si necesita registrar un TPM sin un certificado. La marca-Force no funciona con la atestación V2.
 
 Un host solo puede atestiguar si todos los artefactos (EKPub + Directiva de línea base de TPM + Directiva de CI) usan la misma versión de atestación. La atestación V2 se prueba primero y, si se produce un error, se usa la atestación v1. Esto significa que si necesita registrar un identificador de TPM mediante la atestación v1, también debe especificar la marca-PolicyVersion V1 para usar la atestación v1 al capturar la línea base de TPM y crear la Directiva de CI. Si la base de referencia de TPM y la Directiva de CI se crearon con la atestación V2 y posteriormente necesita agregar un host protegido sin un certificado de TPM, debe volver a crear cada artefacto con la marca-PolicyVersion v1.
 

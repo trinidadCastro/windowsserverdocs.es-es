@@ -1,18 +1,18 @@
 ---
 title: tskill
-description: Artículo de referencia de tskill, que finaliza un proceso que se ejecuta en una sesión en un servidor host de sesión Escritorio remoto.
+description: Artículo de referencia del comando tskill, que finaliza un proceso que se ejecuta en una sesión en un servidor host de sesión Escritorio remoto.
 ms.topic: reference
-ms.assetid: 08986e6a-6900-4ece-85a1-8f73b14db1b3 Lizap
+ms.assetid: 08986e6a-6900-4ece-85a1-8f73b14db1b3
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 24785d10cc09d494850bad5442f72111260dd261
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b281df4852bc5fbc0756e7b052d82ea2f9bab6d5
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626712"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92156375"
 ---
 # <a name="tskill"></a>tskill
 
@@ -20,41 +20,51 @@ ms.locfileid: "89626712"
 
 Finaliza un proceso que se ejecuta en una sesión en un servidor host de sesión Escritorio remoto.
 
-
 > [!NOTE]
-> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) en la biblioteca de TechNet de Windows Server.
+> Puede usar este comando para finalizar solo los procesos que le pertenecen, a menos que sea administrador. Los administradores tienen acceso total a todas las funciones de **tskill** y pueden finalizar los procesos que se ejecutan en otras sesiones de usuario.
+>
+> Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxis
+
 ```
-tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /a] [/v]
+tskill {<processID> | <processname>} [/server:<servername>] [/id:<sessionID> | /a] [/v]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------|--------|
-|\<ProcessID>|Especifica el identificador del proceso que desea finalizar.|
-|\<ProcessName>|Especifica el nombre del proceso que desea finalizar. Este parámetro puede incluir caracteres comodín.|
-|/server:\<ServerName>|Especifica el servidor de Terminal Server que contiene el proceso que desea finalizar. Si no se especifica **/Server** , se usa el servidor host de sesión de escritorio remoto actual.|
-|/ID\<SessionID>|Finaliza el proceso que se está ejecutando en la sesión especificada.|
-|/a|Finaliza el proceso que se está ejecutando en todas las sesiones.|
-|/v|Muestra información acerca de las acciones que se llevan a cabo.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+| Parámetro | Descripción |
+|--|--|
+| `<processID>` | Especifica el identificador del proceso que desea finalizar. |
+| `<processname>` | Especifica el nombre del proceso que desea finalizar. Este parámetro puede incluir caracteres comodín. |
+| /server:`<servername>` | Especifica el servidor de Terminal Server que contiene el proceso que desea finalizar. Si no se especifica **/Server** , se usa el servidor host de sesión escritorio remoto actual. |
+| /ID`<sessionID>` | Finaliza el proceso que se está ejecutando en la sesión especificada. |
+| /a | Finaliza el proceso que se está ejecutando en todas las sesiones. |
+| /v | Muestra información acerca de las acciones que se llevan a cabo. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
-- Puede usar **tskill** para finalizar solo los procesos que le pertenecen, a menos que sea administrador. Los administradores tienen acceso total a todas las funciones de **tskill** y pueden finalizar los procesos que se ejecutan en otras sesiones de usuario.
+#### <a name="remarks"></a>Comentarios
+
 - Si se terminan todos los procesos ejecutados en una sesión, la sesión también termina.
-- Si usa los parámetros *processName* y **/Server:**<em>ServerName</em> , también debe especificar el parámetro **/ID:**<em>SessionID</em> o **/a** .
+
+- Si utiliza los `<processname>` `/server:<servername>` parámetros y, también debe especificar el `/id:<sessionID>` parámetro o **/a** .
 
 ## <a name="examples"></a>Ejemplos
-- Para finalizar el proceso 6543, escriba:
-  ```
-  tskill 6543
-  ```
-- Para finalizar el explorador de procesos que se ejecuta en la sesión 5, escriba:
-  ```
-  tskill explorer /id:5
-  ```
-  ## <a name="additional-references"></a>Referencias adicionales
-  - Clave de sintaxis [de línea de comandos](command-line-syntax-key.md) 
-   [Referencia de comandos de servicios de escritorio remoto (Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+
+Para finalizar el proceso 6543, escriba:
+
+```
+tskill 6543
+```
+
+Para finalizar el explorador de procesos que se ejecuta en la sesión 5, escriba:
+
+```
+tskill explorer /id:5
+```
+
+## <a name="additional-references"></a>Referencias adicionales
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)

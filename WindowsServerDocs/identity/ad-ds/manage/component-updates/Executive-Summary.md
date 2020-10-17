@@ -6,12 +6,12 @@ ms.author: iainfou
 manager: daveba
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: b67dbb8c22545b55b7b07565c4c92bc363070bc1
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: ffd3cf45d276445bca36f9e01651b74468446f61
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941335"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92155930"
 ---
 # <a name="executive-summary"></a>Resumen ejecutivo
 
@@ -78,7 +78,7 @@ Esta sección se centra en los controles técnicos para reducir la superficie ex
 
 - En la sección **cuentas y grupos con privilegios de Active Directory** se describen las cuentas y los grupos con privilegios más altos de Active Directory y los mecanismos por los que se protegen las cuentas con privilegios. Dentro de Active Directory, tres grupos integrados son los grupos de privilegios más altos del directorio (administradores de organización, Admins. del dominio y administradores), aunque también se debe proteger un número de grupos y cuentas adicionales.
 
-- La sección **implementación de modelos administrativos con privilegios mínimos** se centra en identificar el riesgo de que se presente el uso de cuentas con privilegios elevados para la administración diaria, además de proporcionar recomendaciones para reducir el riesgo.
+- La sección **implementación de modelos administrativos Least-Privilege** se centra en identificar el riesgo de que se presente el uso de cuentas con privilegios elevados para la administración diaria, además de proporcionar recomendaciones para reducir el riesgo.
 
 Los privilegios excesivos no se encuentran solo en Active Directory en entornos en peligro. Cuando una organización ha desarrollado el hábito de conceder más privilegios de los necesarios, normalmente se encuentra en toda la infraestructura:
 
@@ -139,11 +139,11 @@ Esta sección contiene recomendaciones que ayudarán a las organizaciones a prep
 
 - **Mantenimiento de un entorno más seguro** : contiene recomendaciones de alto nivel diseñadas para usarse como directrices para el desarrollo no solo de seguridad efectiva, sino también para una administración de ciclo de vida efectiva. En esta sección se incluyen los siguientes temas:
 
-    - La **creación de prácticas de seguridad centradas en el negocio para Active Directory** administrar de forma eficaz el ciclo de vida de los usuarios, los datos, las aplicaciones y los sistemas administrados por Active Directory, siga estos principios.
+    - La **creación de Business-Centric prácticas de seguridad para Active Directory** para administrar de forma eficaz el ciclo de vida de los usuarios, los datos, las aplicaciones y los sistemas administrados por Active Directory, siga estos principios.
 
         - **Asignar la propiedad de un negocio a Active Directory datos** : asignar la propiedad de los componentes de la infraestructura. en el caso de los datos que se agregan a Active Directory Domain Services (AD DS) para admitir la empresa, por ejemplo, nuevos empleados, nuevas aplicaciones y nuevos repositorios de información, se debe asociar a los datos una unidad de negocio o un usuario designados.
 
-        - **Implementar la administración del ciclo de vida controlado** por la empresa: la administración del ciclo de vida debe implementarse para los datos de Active Directory.
+        - **Implementación de la administración del ciclo de vida de Business-Driven** : la administración del ciclo de vida debe implementarse para los datos en Active Directory.
 
         - **Clasifique todos los Active Directory datos: los** propietarios empresariales deben proporcionar una clasificación de los datos en Active Directory. Dentro del modelo de clasificación de datos, se debe incluir la clasificación de los siguientes datos de Active Directory:
 
@@ -169,7 +169,7 @@ Las prácticas se muestran en orden aproximado de prioridad, es decir, los núme
 | Elimine la pertenencia permanente a grupos con privilegios elevados. | Táctica | Prevención |
 | Implemente controles para conceder la pertenencia temporal a grupos con privilegios cuando sea necesario. | Táctica | Prevención |
 | Implementar hosts administrativos seguros. | Táctica | Prevención |
-| Usar listas blancas de aplicaciones en controladores de dominio, hosts administrativos y otros sistemas confidenciales. | Táctica | Prevención |
+| Use la aplicación allowslists en controladores de dominio, hosts administrativos y otros sistemas confidenciales. | Táctica | Prevención |
 | Identifique los recursos críticos y priorice su seguridad y supervisión. | Táctica | Ambos |
 | Implemente controles de acceso basados en roles con privilegios mínimos para la administración del directorio, su infraestructura auxiliar y sistemas Unidos a un dominio. | Estratégico | Prevención |
 | Aísle las aplicaciones y los sistemas heredados. | Táctica | Prevención |
@@ -180,5 +180,5 @@ Las prácticas se muestran en orden aproximado de prioridad, es decir, los núme
 | Simplifique la seguridad para los usuarios finales. | Estratégico | Prevención |
 | Utilice firewalls basados en host para controlar y proteger las comunicaciones. | Táctica | Prevención |
 | Dispositivos de revisión. | Táctica | Prevención |
-| Implemente la administración del ciclo de vida centrada en el negocio para los recursos de ti. | Estratégico | N/D |
+| Implemente la administración del ciclo de vida centrada en el negocio para los recursos de ti. | Estratégico | No aplicable |
 | Crear o actualizar planes de recuperación de incidentes. | Estratégico | N/D |
