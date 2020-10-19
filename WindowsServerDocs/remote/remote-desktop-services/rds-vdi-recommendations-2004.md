@@ -9,12 +9,12 @@ ms.author: helohr
 ms.topic: article
 manager: ''
 ms.date: 09/24/2020
-ms.openlocfilehash: b39207461d9ee99a2da0bdf07a9190c769b7511f
-ms.sourcegitcommit: fa74f7297855ff1c9cb7df4b784b946cdce99e22
+ms.openlocfilehash: 129bbc8387be655cca563935cb7ff891664da357
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91206422"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92155896"
 ---
 # <a name="optimizing-windows-10-version-2004-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 2004, para un rol de Infraestructura de escritorio virtual (VDI)
 
@@ -117,7 +117,7 @@ Tenga en cuenta la compatibilidad al modificar la configuración predeterminada 
 
 Puede usar su motor de búsqueda favorito con los términos `"start value" site:support.microsoft.com` para mostrar los problemas conocidos relacionados con los valores de inicio predeterminados de los servicios.
 
-Tenga en cuenta que este documento y los scripts asociados en GitHub no modifican los permisos predeterminados. Si está interesado en incrementar la configuración de seguridad de una manera compatible y sólida, comience con el proyecto conocido como "**AaronLocker**", que puede encontrar en [Anuncio: Inclusión de aplicaciones en la lista blanca con "AaronLocker"](https://blogs.msdn.microsoft.com/aaron_margosis/2018/06/26/announcing-application-whitelisting-with-aaronlocker/).
+Ten en cuenta que este documento y los scripts asociados de GitHub no modifican los permisos predeterminados. Si estás interesado en aumentar la configuración de seguridad, comienza con el proyecto conocido como **AaronLocker**. Para obtener más información, consulte la [información general sobre "AaronLocker"](https://github.com/microsoft/AaronLocker).
 
 ### <a name="virtual-desktop-optimization-categories"></a>Categorías de optimización de escritorio virtual
 
