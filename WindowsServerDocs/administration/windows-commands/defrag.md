@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 81f6aba6dce5bce28311a789f803ac2c7117fd0f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: df9866682d96358c63b8ea708c05cdbd8216138a
+ms.sourcegitcommit: ccd38245f1b766be005d0c257962f756ff0c4e76
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628908"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92175791"
 ---
 # <a name="defrag"></a>defrag
 
@@ -53,7 +53,7 @@ defrag <volume> [<parameters>]
 | /x | Realice la consolidación de espacio libre en los volúmenes especificados. |
 | /? | Muestra esta información de ayuda. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - No se pueden desfragmentar unidades o volúmenes del sistema de archivos específicos, como:
 
@@ -66,8 +66,6 @@ defrag <volume> [<parameters>]
   - CD-ROM.
 
   - Volúmenes del sistema de archivos que no son **NTFS**, **ReFS**, **FAT** o **FAT32**.
-
-- No se puede programar para desfragmentar una unidad de estado sólido (SSD) o un volumen en un disco duro virtual (VHD) que resida en una SSD.
 
 - Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradores del equipo local o tener delegada la autoridad adecuada. Si el equipo está unido a un dominio, los miembros del grupo Administradores de dominio podrían llevar a cabo este procedimiento. Como práctica recomendada de seguridad, considere la posibilidad de usar **Ejecutar como** para realizar este procedimiento.
 
@@ -115,7 +113,7 @@ El proceso de desfragmentación ejecuta la tarea programada como una tarea de ma
 
 - Cuando se ejecuta desde la tarea programada, **Defrag** usa las siguientes directrices de directiva para SSD:
 
-  - **Procesos de optimización tradicionales**. Incluye **desfragmentación tradicional**, por ejemplo, mover archivos para que sean razonablemente contiguos y **recortar**. Esto se hace una vez al mes. Sin embargo, si se omiten la **desfragmentación tradicional** y el **recorte** , el **análisis** no se ejecuta.
+  - **Procesos de optimización tradicionales**. Incluye **desfragmentación tradicional**, por ejemplo, mover archivos para que sean razonablemente contiguos y **recortar**. Esto se hace una vez al mes. Sin embargo, si se omiten la **desfragmentación tradicional** y el **recorte** , el **análisis** no se ejecuta. Cambiar la frecuencia de la tarea programada no afecta a la cadencia de una vez al mes para las SSD.
 
   - Si ejecuta manualmente la **desfragmentación tradicional** en una SSD, entre las ejecuciones programadas normalmente, la siguiente ejecución de la tarea programada realiza el **análisis** y el **recorte**, pero omite la **desfragmentación tradicional** en esa SSD.
 
