@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 6dbaf3fe76ce6c2ac79a0c835a320241e47f4068
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: b10e9f74fa3ca78a3b35a4b2f9ee5c1448a0d2af
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766358"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92156000"
 ---
 # <a name="privileged-access-workstations"></a>Estaciones de trabajo de acceso con privilegios
 
@@ -929,7 +929,7 @@ Siga estos pasos para configurar esta fase:
       Para obtener más información sobre Windows Hello para empresas puedes leer el artículo de [Windows Hello para empresas](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
    * **Azure Multi-Factor Authentication**:  Azure Multi-Factor Authentication (MFA) proporciona la seguridad de un segundo factor de comprobación, así como protección mejorada gracias a la supervisión y al análisis basado en el aprendizaje automático.  Azure MFA puede proteger no solo a los administradores de Azure, sino también muchas otras soluciones, como aplicaciones web, Azure Active Directory y soluciones locales como acceso remoto y Escritorio remoto.  Para más información sobre la autenticación multifactor Azure, consulte [Multi-Factor Authentication](https://azure.microsoft.com/services/multi-factor-authentication).
 
-2. **Agrega aplicaciones de confianza en listas blancas mediante el Control de aplicaciones de Windows Defender o AppLocker**.  Al limitar la posibilidad de que se ejecute en una PAW código que no es de confianza o sin firmar, reduce la probabilidad aún más de actividad malintencionada y la exposición a peligros.  Windows incluye dos opciones principales para el control de aplicaciones:
+2. **Permite aplicaciones de confianza en listas blancas mediante el Control de aplicaciones de Windows Defender o AppLocker**.  Al limitar la posibilidad de que se ejecute en una PAW código que no es de confianza o sin firmar, reduce la probabilidad aún más de actividad malintencionada y la exposición a peligros.  Windows incluye dos opciones principales para el control de aplicaciones:
 
    * **AppLocker**:  AppLocker permite que los administradores controlen qué aplicaciones se pueden ejecutar en un sistema dado.  AppLocker se puede controlar centralmente mediante directivas de grupo y aplicarse a usuarios o grupos determinados (para aplicaciones que tienen como destino a usuarios de PAW).  Para más información sobre AppLocker, consulte el artículo de TechNet [Información general de AppLocker](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831440(v=ws.11)).
    * **Control de aplicaciones de Windows Defender**: esta nueva característica proporciona un control de la aplicación basado en hardware mejorado que, a diferencia de AppLocker, no se puede invalidar en el dispositivo afectado.  Al igual que AppLocker, el Control de aplicaciones de Windows Defender se puede administrar mediante directivas de grupo y va dirigido a usuarios específicos.  Para obtener más información sobre cómo restringir el uso de aplicaciones con el Control de aplicaciones de Windows Defender, consulta la [guía de implementación del Control de aplicaciones de Windows Defender](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide).

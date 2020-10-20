@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/22/2020
+ms.date: 10/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4edd85e305d30cfe22480021b67f3c0213275926
-ms.sourcegitcommit: c0e0bdc9a1b28bd21951d68b5cfd2cce48a770ef
+ms.openlocfilehash: 8708f8ab6e8fb751f0ca39238574823ae5b499c4
+ms.sourcegitcommit: 45099dfe3682df1e2bc0bd5998594a79cfff16fe
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90999259"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079844"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -25,13 +25,23 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 |Grupo de usuarios |La versión más reciente  |Versión mínima admitida |
 |-----------|----------------|--------------------------|
 |Público     |1.2.1364        |1.2.945                   |
-|Insider    |1.2.1364        |1.2.945                   |
+|Insider    |1.2.1440        |1.2.945                   |
+
+## <a name="updates-for-version-121440-insiders"></a>Actualizaciones de la versión 1.2.1440 (Insider)
+
+*Fecha de publicación: 13/10/2020*
+
+Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- El cliente ahora distingue entre fuentes diferentes del centro de conexiones.
+- Se ha corregido un problema por el que la cuenta de suscripción no coincide con la cuenta con la que el usuario inició sesión.
+- Se ha corregido un problema con la redirección de tarjetas inteligentes.
 
 ## <a name="updates-for-version-121364"></a>Actualizaciones de la versión 1.2.1364
 
 *Fecha de publicación: 22/09/2020*
 
-Descarga: Windows de [64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139370)
+Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139370)
 
 - Se corrigió un problema por el que el inicio de sesión único (SSO) no funcionaba en Windows 7.
 - Se corrigió el error de conexión que se producía al realizar una llamada de Teams o unirse a una mientras otra aplicación tenía una secuencia de audio abierta en modo exclusivo y estaba habilitada la optimización de medios para Teams.
@@ -85,7 +95,7 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 - El aviso de cancelación de suscripción ahora muestra un icono de advertencia y muestra los nombres de área de trabajo como una lista con viñetas.
 - Se ha agregado una sección de detalles a otros cuadros de diálogo de error para ayudar a diagnosticar problemas.
 - Se ha agregado una marca de tiempo a la sección de detalles de los cuadros de diálogo de error.
-- Se ha corregido un problema por el que la opción del archivo RDP **desktop size id** no funcionaba correctamente.
+- Se ha corregido un problema por el que la opción del archivo RDP **desktop size ID** no funcionaba correctamente.
 - Se ha corregido un problema por el que la opción de pantalla **Update the resolution on resize** (Actualizar la resolución al cambiar de tamaño) no se aplicaba después de iniciar la sesión.
 - Se han corregido los problemas de localización en el panel de configuración del escritorio.
 - Se ha corregido el tamaño del recuadro de enfoque al pasar con el tabulador por los controles del panel de configuración del escritorio.
