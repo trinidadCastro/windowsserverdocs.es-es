@@ -6,12 +6,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: victorcheng7
 ms.author: vichen
 ms.date: 08/14/2020
-ms.openlocfilehash: 28ce502a78c58eda74d5b412fe4e4d0d3279d442
-ms.sourcegitcommit: dac52260fdcc3721daf7e32cd45760a0ced96de7
+ms.openlocfilehash: fb03201ce4f76a25b00fb37365597147e473b306
+ms.sourcegitcommit: 3c6c257526b243e876aed59e3f2dec42697f232d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91663686"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92418159"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>Repositorio de software de Linux para productos de Microsoft
 
@@ -23,7 +23,7 @@ El repositorio de software de Linux de Microsoft consta de varios subrepositorio
 
  - Prod: el subrepositorio de producción se designa para los paquetes destinados a su uso en producción. Microsoft ofrece soporte técnico comercial a estos paquetes según los términos del contrato de soporte técnico o programa aplicable que tenga con Microsoft.
 
- - MSSQL-Server: estos repositorios contienen paquetes para Microsoft SQL Server en Linux; vea también: [SQL Server en Linux](https://www.microsoft.com/sql-server/sql-server-vnext-including-Linux).
+ - MSSQL-Server: estos repositorios contienen paquetes para Microsoft SQL Server en Linux; vea también: [SQL Server en Linux](https://docs.microsoft.com/sql/linux/sql-server-linux-overview).
 
 > [!NOTE]
 > Los paquetes de los repositorios de software de Linux están sujetos a los términos de licencia que se encuentran en los paquetes. Lea los términos de licencia antes de usar el paquete. La instalación y uso del paquete constituye la aceptación de estos términos. Si no acepta los términos de licencia, no utilice el paquete.
