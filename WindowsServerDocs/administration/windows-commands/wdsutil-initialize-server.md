@@ -7,18 +7,18 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 42d579b7139f7ff516d9ff239c535ecd2be42474
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: c61da4f608e825a7cb19c8fb80f8f4b3a5c26fed
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91730766"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524280"
 ---
 # <a name="wdsutil-initialize-server"></a>WDSUtil-inicializar-servidor
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Configura un servidor de servicios de implementación de Windows para su uso inicial una vez instalado el rol de servidor. Después de ejecutar este comando, debe usar el comando [de comando wdsutiladd-Image](wdsutil-add-image.md) para agregar imágenes al servidor.
+Configura un servidor de servicios de implementación de Windows para su uso inicial una vez instalado el rol de servidor. Después de ejecutar este comando, debe usar el comando de [comando WDSUtil Add-image](wdsutil-add-image.md) para agregar imágenes al servidor.
 ## <a name="syntax"></a>Sintaxis
 ```
 wdsutil /Initialize-Server [/Server:<Server name>] /remInst:<Full path> [/Authorize]

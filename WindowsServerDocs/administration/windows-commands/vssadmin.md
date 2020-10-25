@@ -1,17 +1,17 @@
 ---
 title: vssadmin
-description: Información general de los comandos vssadmin.
+description: Artículo de referencia para los comandos vssadmin, que muestra las copias de seguridad de instantáneas de volumen actuales y todos los escritores y proveedores de instantáneas instalados.
 ms.topic: reference
 author: JasonGerend
 ms.author: jgerend
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 575f151986ef7ae266fd773dd7a3a6b7ee292096
-ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
+ms.openlocfilehash: a8ca4a94fe7cb2651c67fab22f4894b4e08a0bdf
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92156138"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524810"
 ---
 # <a name="vssadmin"></a>vssadmin
 
@@ -19,7 +19,7 @@ ms.locfileid: "92156138"
 
 Muestra las copias de seguridad de instantáneas de volumen actuales y todos los escritores y proveedores de instantáneas instalados. Seleccione un nombre de comando en la tabla siguiente ver la sintaxis del comando.
 
-| Get-Help | Descripción | Disponibilidad |
+| Comando | Descripción | Disponibilidad |
 |--|--|--|
 | [vssadmin delete shadows](vssadmin-delete-shadows.md) | Elimina las instantáneas de volumen. | Cliente y servidor |
 | [vssadmin list shadows](vssadmin-list-shadows.md) | Muestra las instantáneas de volumen existentes. | Cliente y servidor |

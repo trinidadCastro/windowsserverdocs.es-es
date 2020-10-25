@@ -1,19 +1,16 @@
 ---
 title: Introducción a DNS de difusión por proximidad
 description: En este tema se proporciona una breve introducción a DNS de difusión por proximidad
-manager: laurawi
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: greglin
 author: greg-lindsay
-ms.openlocfilehash: f43c1978e193cbb2212966ab519b002d9fed45f5
-ms.sourcegitcommit: ccd38245f1b766be005d0c257962f756ff0c4e76
+ms.openlocfilehash: 0944b8a825d10dc1338a698d511af27b8502f776
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92175798"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524860"
 ---
 # <a name="anycast-dns-overview"></a>Introducción a DNS de difusión por proximidad
 
@@ -25,11 +22,11 @@ En este tema se proporciona información sobre cómo funciona el DNS de difusió
 
 Anycast es una tecnología que proporciona varias rutas de acceso de enrutamiento a un grupo de puntos de conexión a los que se asigna la misma dirección IP. Cada dispositivo del grupo anuncia la misma dirección en una red y los protocolos de enrutamiento se usan para elegir cuál es el mejor destino.
 
-Difusión por proximidad le permite escalar un servicio sin estado, como DNS o HTTP, colocando varios nodos detrás de la misma dirección IP y usando el enrutamiento multiruta de acceso de igual costo (ECMP) para dirigir el tráfico entre estos nodos. La difusión por proximidad es diferente de la unidifusión, en la que cada punto de conexión tiene su propia dirección IP independiente. 
+Difusión por proximidad le permite escalar un servicio sin estado, como DNS o HTTP, colocando varios nodos detrás de la misma dirección IP y usando el enrutamiento multiruta de acceso de igual costo (ECMP) para dirigir el tráfico entre estos nodos. La difusión por proximidad es diferente de la unidifusión, en la que cada punto de conexión tiene su propia dirección IP independiente.
 
 ## <a name="why-use-anycast-with-dns"></a>¿Por qué usar Anycast con DNS?
 
-Con DNS de difusión por proximidad, puede habilitar un servidor DNS, o un grupo de servidores, para responder a las consultas DNS en función de la ubicación geográfica de un cliente DNS. Esto puede mejorar el tiempo de respuesta de DNS y simplificar la configuración del cliente DNS. El DNS de difusión por proximidad también proporciona una capa adicional de redundancia y puede ayudar a protegerse frente a ataques de denegación de servicio DNS. 
+Con DNS de difusión por proximidad, puede habilitar un servidor DNS, o un grupo de servidores, para responder a las consultas DNS en función de la ubicación geográfica de un cliente DNS. Esto puede mejorar el tiempo de respuesta de DNS y simplificar la configuración del cliente DNS. El DNS de difusión por proximidad también proporciona una capa adicional de redundancia y puede ayudar a protegerse frente a ataques de denegación de servicio DNS.
 
 ### <a name="how-anycast-dns-works"></a>Cómo funciona el DNS de difusión por proximidad
 
@@ -37,15 +34,15 @@ El DNS de difusión por proximidad funciona mediante protocolos de enrutamiento 
 
 Con Anycast, los servidores que se encuentran en varias ubicaciones geográficas anuncian una única dirección IP idéntica a su puerta de enlace local (enrutador). Cuando un cliente DNS inicia una consulta a la dirección de difusión por proximidad, se evalúan las rutas disponibles y la consulta DNS se envía a la ubicación preferida. En general, se trata de la ubicación más cercana en función de la topología de red. Consulte el ejemplo siguiente.
 
-![DNS de difusión por proximidad](../../media/Anycast/anycast.png)
+![Cuatro servidores DNS, ubicados en sitios diferentes, anuncian la misma dirección IP de difusión por proximidad a la red](../../media/Anycast/anycast.png)
 
-**Figura 1**: cuatro servidores DNS ubicados en diferentes sitios de una red anuncian la misma dirección IP de difusión por proximidad (flechas negras) a la red. Un dispositivo cliente DNS envía una solicitud a la dirección IP de difusión por proximidad. Los dispositivos de red analizan las rutas disponibles y envían la consulta DNS del cliente a la ubicación más cercana (flecha azul). 
+**Figura 1**: cuatro servidores DNS ubicados en diferentes sitios de una red anuncian la misma dirección IP de difusión por proximidad (flechas negras) a la red. Un dispositivo cliente DNS envía una solicitud a la dirección IP de difusión por proximidad. Los dispositivos de red analizan las rutas disponibles y envían la consulta DNS del cliente a la ubicación más cercana (flecha azul).
 
 El DNS de difusión por proximidad se usa normalmente hoy para enrutar el tráfico DNS de muchos servicios DNS globales. Por ejemplo, el sistema del servidor DNS raíz depende en gran medida del DNS de difusión por proximidad. Anycast también funciona con una variedad de protocolos de enrutamiento y se puede usar exclusivamente en intranets.
 
 ## <a name="windows-server-native-bgp-anycast-demo"></a>Demostración de la difusión nativa de BGP en Windows Server
 
-El siguiente procedimiento muestra cómo se puede usar BGP nativo en Windows Server con DNS de difusión por proximidad.  
+El siguiente procedimiento muestra cómo se puede usar BGP nativo en Windows Server con DNS de difusión por proximidad.
 
 ### <a name="requirements"></a>Requisitos
 
@@ -109,7 +106,7 @@ Use Administrador del servidor y la consola de administración de DNS o Windows 
 
 ### <a name="configure-loopback-adapters"></a>Configuración de adaptadores de bucle invertido
 
-Escriba los siguientes comandos en un símbolo del sistema de Windows PowerShell con privilegios elevados en DC001 y DC002 para configurar los adaptadores de bucle invertido. 
+Escriba los siguientes comandos en un símbolo del sistema de Windows PowerShell con privilegios elevados en DC001 y DC002 para configurar los adaptadores de bucle invertido.
 
 > [!NOTE]
 > El comando **install-Module** requiere acceso a Internet. Esto puede realizarse mediante la asignación temporal de la máquina virtual a una red externa en Hyper-V.
@@ -168,7 +165,7 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 
 ### <a name="summary-diagram"></a>Diagrama de Resumen
 
-![DNS de difusión por proximidad](../../media/Anycast/anycast-lab.png)
+![Demostración de configuración de laboratorio para DNS de multidifusión nativa de BGP](../../media/Anycast/anycast-lab.png)
 
 **Figura 2**: demostración de la configuración de laboratorio para DNS de multidifusión nativa de BGP
 
@@ -220,8 +217,8 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
     Disable-NetAdapter ' Ethernet 2 '<br>
     [Y] sí [A] sí a todos [N] no [L] no a todas [S] suspender [?] Ayuda (el valor predeterminado es "Y"):<br>
     PS C: \> (get-NetAdapter). Estatus<br>
-    Subir<br>
-    Deshabilitada
+    Arriba<br>
+    Disabled
 
 5.  Confirme que los clientes DNS que estaban recibiendo respuestas de DC001 han cambiado a DC002.
 
@@ -250,15 +247,15 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 
 P: ¿DNS de difusión por proximidad es una buena solución para usar en un entorno DNS local?<br>
 R: DNS de difusión por proximidad funciona sin problemas con un servicio DNS local. Sin embargo, la difusión por proximidad no es *necesaria* para que el servicio DNS se escale.
- 
+
 P: ¿Cuál es el impacto de la implementación de DNS de difusión por proximidad en un entorno con un número grande (por ejemplo, >50) de controladores de dominio? <br>
 R: no hay ningún impacto directo en la funcionalidad. Si se usa un equilibrador de carga, no se requiere ninguna configuración adicional en los controladores de dominio.
- 
+
 P: ¿es una configuración de DNS de difusión por proximidad compatible con el servicio de atención al cliente de Microsoft?<br>
-R: Si usa un equilibrador de carga que no es de Microsoft para reenviar consultas DNS, Microsoft admitirá problemas relacionados con el servicio servidor DNS. Consulte al proveedor del equilibrador de carga para ver los problemas relacionados con el reenvío de DNS. 
- 
+R: Si usa un equilibrador de carga que no es de Microsoft para reenviar consultas DNS, Microsoft admitirá problemas relacionados con el servicio servidor DNS. Consulte al proveedor del equilibrador de carga para ver los problemas relacionados con el reenvío de DNS.
+
 P: ¿Cuál es el procedimiento recomendado para el DNS de difusión por proximidad con un número grande (por ejemplo, >50) de controladores de dominio?<br>
-R: el procedimiento recomendado es usar un equilibrador de carga en cada ubicación geográfica. Normalmente, un proveedor externo proporciona los equilibradores de carga. 
+R: el procedimiento recomendado es usar un equilibrador de carga en cada ubicación geográfica. Normalmente, un proveedor externo proporciona los equilibradores de carga.
 
 P: ¿los DNS de difusión por proximidad y Azure DNS tienen una funcionalidad similar?<br>
-R: Azure DNS usa la difusión por proximidad. Para usar Anycast con Azure DNS, configure el equilibrador de carga para reenviar las solicitudes al servidor de Azure DNS. 
+R: Azure DNS usa la difusión por proximidad. Para usar Anycast con Azure DNS, configure el equilibrador de carga para reenviar las solicitudes al servidor de Azure DNS.

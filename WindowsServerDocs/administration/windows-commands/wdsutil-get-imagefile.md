@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c358c490424406e6eb8d709c879f043ce017164d
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 41183f92d75736afc32dfbbee9d31871b3ef24f9
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91730790"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524340"
 ---
 # <a name="get-imagefile"></a>Get-ImageFile
 
@@ -21,7 +21,7 @@ Recupera información sobre las imágenes contenidas en un archivo de imagen de 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-WDSUTIL [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
+wdsutil [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -35,11 +35,11 @@ WDSUTIL [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
 
 Para ver información acerca de una imagen, escriba:
 ```
-WDSUTIL /Get-ImageFile /ImageFile:C:\temp\install.wim
+wdsutil /Get-ImageFile /ImageFile:C:\temp\install.wim
 ```
 Para ver información detallada, escriba:
 ```
-WDSUTIL /Verbose /Get-ImageFile /ImageFile:\\Server\Share\My Folder \install.wim /Detailed
+wdsutil /Verbose /Get-ImageFile /ImageFile:\\Server\Share\My Folder \install.wim /Detailed
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

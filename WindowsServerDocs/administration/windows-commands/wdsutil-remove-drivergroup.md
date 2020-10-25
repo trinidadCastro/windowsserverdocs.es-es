@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 55cb50d43bf433d5421f4152053844f89d45f379
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 9bfec1636594f69ed9ea173cd2a0fcb95415296f
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91730701"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524330"
 ---
 # <a name="remove-drivergroup"></a>Remove-DriverGroup
 
@@ -21,7 +21,7 @@ Quita un grupo de controladores de un servidor.
 ## <a name="syntax"></a>Sintaxis
 
 ```
-WDSUTIL /Remove-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
+wdsutil /Remove-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -35,10 +35,10 @@ WDSUTIL /Remove-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
 
 Para quitar un grupo de controladores, escriba uno de los siguientes:
 ```
-WDSUTIL /Remove-DriverGroup /DriverGroup:PrinterDrivers
+wdsutil /Remove-DriverGroup /DriverGroup:PrinterDrivers
 ```
 ```
-WDSUTIL /Remove-DriverGroup /DriverGroup:PrinterDrivers /Server:MyWdsServer
+wdsutil /Remove-DriverGroup /DriverGroup:PrinterDrivers /Server:MyWdsServer
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
