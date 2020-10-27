@@ -1,23 +1,25 @@
 ---
-title: Novedades de Windows Server, versión 2004
-description: Nuevas características de Windows Server, versión 2004
+title: Novedades de Windows Server, versiones 2004 20H2
+description: Nuevas características de Windows Server, versiones 2004 y 20H2.
 ms.topic: article
 author: Heidilohr
 ms.author: helohr
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 210aa06711c67af46d35a38fe4308bc4060691e8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f44dcc7a1c7fab2d99f0358794bd5b2aedb87b75
+ms.sourcegitcommit: b82dfbfdc5df1327feb8be053a760739b01e3031
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957012"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92255872"
 ---
-# <a name="whats-new-in-windows-server-version-2004"></a>Novedades de Windows Server, versión 2004
+# <a name="whats-new-in-windows-server-version-2004-and-20h2"></a>Novedades de Windows Server, versiones 2004 y 20H2
 
 >Se aplica a: Windows Server (Canal semianual)
 
-Para obtener información sobre las características más recientes de Windows, consulta [Novedades de Windows Server](whats-new-in-windows-server.md). En este tema se describen algunas de las nuevas características de Windows Server, versión 2004.
+Para obtener información sobre las características más recientes de Windows, consulta [Novedades de Windows Server](whats-new-in-windows-server.md). En este tema se describen algunas de las nuevas características de Windows Server, versión 2004 y 20H2.
+
+La versión 20H2 de Windows Server es la siguiente versión del canal semianual de Windows Server, versión 2004. Esta versión se centra en la confiabilidad, el rendimiento y otras mejoras generales, pero no tiene características nuevas. Al igual que otras versiones del Canal semianual, tendrá soporte técnico durante 18 meses a partir de su lanzamiento. Para obtener más información sobre las fechas de soporte técnico de las versiones del Canal semianual, consulte [Información de la versión de Windows Server](windows-server-release-info.md).
 
 ## <a name="server-core-container-improvements"></a>Mejoras de contenedor de Server Core
 
