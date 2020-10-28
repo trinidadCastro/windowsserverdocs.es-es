@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 266559ba8da3add8920861f910f061d8b2994d53
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 069b07f3d678c879e1f2d06ac9b08ba01fa69372
+ms.sourcegitcommit: 92e46b11154bab929e2c622d759ef62ec264c4e6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992885"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92734722"
 ---
 # <a name="create-a-failover-cluster"></a>Crear un clúster de conmutación por error
 
@@ -47,7 +47,7 @@ Además, comprueba los siguientes requisitos de la cuenta:
 - Asegúrate de que la cuenta que deseas usar para crear el clúster sea un usuario de dominio con derechos de administrador en todos los servidores que quieres agregar como nodos de clúster.
 - Asegúrese de que se cumple alguna de las siguientes condiciones:
     - El usuario que crea el clúster tiene el permiso **Crear objetos de equipo** en la OU o el contenedor donde residen los servidores que conformarán el clúster.
-    - Si el usuario no tiene el permiso **Crear objetos de equipo**, solicita a un administrador de dominio que preconfigure un objeto de equipo de clúster para el clúster. Para obtener más información, consulta [Preconfigurar objetos de equipo de clúster en Active Directory Domain Services](prestage-cluster-adds.md).
+    - Si el usuario no tiene el permiso **Crear objetos de equipo** , solicita a un administrador de dominio que preconfigure un objeto de equipo de clúster para el clúster. Para obtener más información, consulta [Preconfigurar objetos de equipo de clúster en Active Directory Domain Services](prestage-cluster-adds.md).
 
 > [!NOTE]
 > Este requisito no se aplica si desea crear un clúster desconectado Active Directory en Windows Server 2012 R2. Para obtener más información, consulta [Implementar un clúster desconectado de Active Directory](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11)).
@@ -59,17 +59,17 @@ Debes instalar la característica de clúster de conmutación por error en todos
 ### <a name="install-the-failover-clustering-feature"></a>Instalar la característica de clúster de conmutación por error
 
 1. Inicie el Administrador del servidor.
-2. En el menú **administrar** , seleccione **Agregar roles y características**.
-3. En la página **antes de comenzar** , seleccione **siguiente**.
-4. En la página **Seleccionar tipo de instalación** , seleccione Instalación basada en **características o en roles**y, a continuación, seleccione **siguiente**.
-5. En la página **Seleccionar servidor de destino** , seleccione el servidor en el que desea instalar la característica y, a continuación, seleccione **siguiente**.
-6. En la pantalla **Seleccionar roles de servidor**, selecciona **Siguiente**.
-7. En la página **Seleccionar características**, activa la casilla **Clúster de conmutación por error**.
-8. Para instalar las herramientas de administración del clúster de conmutación por error, seleccione **Agregar características**y, a continuación, seleccione **siguiente**.
-9. En la página **confirmar selecciones de instalación** , seleccione **instalar**.
+2. En el menú **administrar** , seleccione **Agregar roles y características** .
+3. En la página **antes de comenzar** , seleccione **siguiente** .
+4. En la página **Seleccionar tipo de instalación** , seleccione Instalación basada en **características o en roles** y, a continuación, seleccione **siguiente** .
+5. En la página **Seleccionar servidor de destino** , seleccione el servidor en el que desea instalar la característica y, a continuación, seleccione **siguiente** .
+6. En la pantalla **Seleccionar roles de servidor** , selecciona **Siguiente** .
+7. En la página **Seleccionar características** , activa la casilla **Clúster de conmutación por error** .
+8. Para instalar las herramientas de administración del clúster de conmutación por error, seleccione **Agregar características** y, a continuación, seleccione **siguiente** .
+9. En la página **confirmar selecciones de instalación** , seleccione **instalar** .
 <br>La característica de clústeres de conmutación por error no requiere reiniciar el servidor.
 
-10. Una vez completada la instalación, seleccione **cerrar**.
+10. Una vez completada la instalación, seleccione **cerrar** .
 11. Repite este procedimiento en todos los servidores que desees incluir como nodo de clúster de conmutación por error.
 
 > [!NOTE]
@@ -84,17 +84,17 @@ Antes de crear el clúster de conmutación por error, recomendamos encarecidamen
 
 ### <a name="run-cluster-validation-tests"></a>Ejecutar pruebas de validación de clústeres
 
-1. En un equipo que tenga las Herramientas de administración de clústeres de conmutación por error instaladas desde las Herramientas de administración remota del servidor, o en un servidor donde hayas instalado la característica de clústeres de conmutación por error, inicia el Administrador de clústeres de conmutación por error. Para hacer esto en un servidor, inicie Administrador del servidor y, a continuación, en el menú **herramientas** , seleccione **Administrador de clústeres de conmutación por error**.
-2. En el panel **Administrador de clústeres de conmutación por error** , en **Administración**, seleccione **validar configuración**.
-3. En la página **Antes de empezar**, seleccione **Siguiente**.
-4. En la página **seleccionar servidores o un clúster** , en el cuadro **escribir nombre** , escriba el nombre NetBIOS o el nombre de dominio completo de un servidor que vaya a agregar como nodo de clúster de conmutación por error y, a continuación, seleccione **Agregar**. Repite este paso para todos los servidores que quieras agregar. Para agregar varios servidores al mismo tiempo, separa los nombres con una coma o un punto y coma. Por ejemplo, escriba los nombres con el formato `server1.contoso.com, server2.contoso.com` . Cuando haya terminado, seleccione **Siguiente**.
-5. En la página **Opciones de prueba** , seleccione **ejecutar todas las pruebas (recomendado)** y, a continuación, seleccione **siguiente**.
-6. En la página **confirmación** , seleccione **siguiente**.
+1. En un equipo que tenga las Herramientas de administración de clústeres de conmutación por error instaladas desde las Herramientas de administración remota del servidor, o en un servidor donde hayas instalado la característica de clústeres de conmutación por error, inicia el Administrador de clústeres de conmutación por error. Para hacer esto en un servidor, inicie Administrador del servidor y, a continuación, en el menú **herramientas** , seleccione **Administrador de clústeres de conmutación por error** .
+2. En el panel **Administrador de clústeres de conmutación por error** , en **Administración** , seleccione **validar configuración** .
+3. En la página **Antes de empezar** , seleccione **Siguiente** .
+4. En la página **seleccionar servidores o un clúster** , en el cuadro **escribir nombre** , escriba el nombre NetBIOS o el nombre de dominio completo de un servidor que vaya a agregar como nodo de clúster de conmutación por error y, a continuación, seleccione **Agregar** . Repite este paso para todos los servidores que quieras agregar. Para agregar varios servidores al mismo tiempo, separa los nombres con una coma o un punto y coma. Por ejemplo, escriba los nombres con el formato `server1.contoso.com, server2.contoso.com` . Cuando haya terminado, seleccione **Siguiente** .
+5. En la página **Opciones de prueba** , seleccione **ejecutar todas las pruebas (recomendado)** y, a continuación, seleccione **siguiente** .
+6. En la página **confirmación** , seleccione **siguiente** .
 
     La página Validación muestra el estado de las pruebas en ejecución.
-7. En la página **Resumen**, realiza una de las acciones siguientes:
+7. En la página **Resumen** , realiza una de las acciones siguientes:
 
-      - Si los resultados indican que las pruebas se completaron correctamente y la configuración es adecuada para la agrupación en clústeres y desea crear el clúster inmediatamente, asegúrese de que la casilla **crear el clúster ahora con los nodos validados** esté activada y, a continuación, seleccione **Finalizar**. Después, continúa con el paso 4 del procedimiento [Crear el clúster de conmutación por error](#create-the-failover-cluster).
+      - Si los resultados indican que las pruebas se completaron correctamente y la configuración es adecuada para la agrupación en clústeres y desea crear el clúster inmediatamente, asegúrese de que la casilla **crear el clúster ahora con los nodos validados** esté activada y, a continuación, seleccione **Finalizar** . Después, continúa con el paso 4 del procedimiento [Crear el clúster de conmutación por error](#create-the-failover-cluster).
       - Si los resultados indican que había advertencias o errores, seleccione **Ver informe** para ver los detalles y determinar qué problemas deben corregirse. Ten en cuenta que una advertencia sobre una prueba de validación en particular indica que ese aspecto del clúster de conmutación por error puede ser compatible, pero podría no cumplir los procedimientos recomendados.
 
         > [!NOTE]
@@ -107,38 +107,38 @@ Para obtener más información acerca de las pruebas de validación de hardware,
 Para completar este paso, asegúrate de que la cuenta de usuario con la que inicias sesión cumpla los requisitos indicados en la sección [Comprobar los requisitos previos](#verify-the-prerequisites) de este tema.
 
 1. Inicie el Administrador del servidor.
-2. En el menú **herramientas** , seleccione **Administrador de clústeres de conmutación por error**.
-3. En el panel **Administrador de clústeres de conmutación por error** , en **Administración**, seleccione **crear clúster**.
+2. En el menú **herramientas** , seleccione **Administrador de clústeres de conmutación por error** .
+3. En el panel **Administrador de clústeres de conmutación por error** , en **Administración** , seleccione **crear clúster** .
 
     Se abre el Asistente para crear clúster.
-4. En la página **Antes de empezar**, seleccione **Siguiente**.
-5. Si aparece la página **seleccionar servidores** , en el cuadro **escribir nombre** , escriba el nombre NetBIOS o el nombre de dominio completo de un servidor que vaya a agregar como nodo de clúster de conmutación por error y, a continuación, seleccione **Agregar**. Repite este paso para todos los servidores que quieras agregar. Para agregar varios servidores al mismo tiempo, separa los nombres con una coma o un punto y coma. Por ejemplo, escribe los nombres con el formato *server1.contoso.com; server2.contoso.com*. Cuando haya terminado, seleccione **Siguiente**.
+4. En la página **Antes de empezar** , seleccione **Siguiente** .
+5. Si aparece la página **seleccionar servidores** , en el cuadro **escribir nombre** , escriba el nombre NetBIOS o el nombre de dominio completo de un servidor que vaya a agregar como nodo de clúster de conmutación por error y, a continuación, seleccione **Agregar** . Repite este paso para todos los servidores que quieras agregar. Para agregar varios servidores al mismo tiempo, separa los nombres con una coma o un punto y coma. Por ejemplo, escribe los nombres con el formato *server1.contoso.com; server2.contoso.com* . Cuando haya terminado, seleccione **Siguiente** .
 
     > [!NOTE]
     > Si decide crear el clúster inmediatamente después de ejecutar la validación en el [procedimiento de validación](#validate-the-configuration)de la configuración, no verá la página **seleccionar servidores** . Los nodos que se validaron se agregan automáticamente al Asistente para crear clúster, de modo que no tengas que introducirlos de nuevo.
-6. Si antes omitiste la validación, aparecerá la página **Advertencia de validación**. Recomendamos encarecidamente ejecutar la validación de clústeres. Solo los clústeres que superan todas las pruebas de validación son compatibles con Microsoft. Para ejecutar las pruebas de validación, seleccione **sí**y, a continuación, seleccione **siguiente**. Complete el Asistente para validar una configuración tal y como se describe en [validación de la configuración](#validate-the-configuration).
-7. En la página **Punto de acceso para administrar el clúster**, haz lo siguiente:
+6. Si antes omitiste la validación, aparecerá la página **Advertencia de validación** . Recomendamos encarecidamente ejecutar la validación de clústeres. Solo los clústeres que superan todas las pruebas de validación son compatibles con Microsoft. Para ejecutar las pruebas de validación, seleccione **sí** y, a continuación, seleccione **siguiente** . Complete el Asistente para validar una configuración tal y como se describe en [validación de la configuración](#validate-the-configuration).
+7. En la página **Punto de acceso para administrar el clúster** , haz lo siguiente:
 
-    1. En el cuadro **Nombre de clúster**, escribe el nombre que deseas utilizar para administrar el clúster. Antes de hacerlo, revisa la siguiente información:
+    1. En el cuadro **Nombre de clúster** , escribe el nombre que deseas utilizar para administrar el clúster. Antes de hacerlo, revisa la siguiente información:
 
-          - Durante la creación del clúster, este nombre se registra como el objeto de equipo de clúster (también llamado *objeto de nombre de clúster* o *CNO*) en AD DS. Si especificas un nombre NetBIOS para el clúster, el CNO se crea en la misma ubicación en la que residen los objetos de equipo para los nodos de clúster. Puede ser el contenedor Equipos predeterminado o una OU.
-          - Para especificar una ubicación diferente para el CNO, escribe el nombre distintivo de una OU en el cuadro **Nombre de clúster**. Por ejemplo: *CN=ClusterName, OU=Clusters, DC=Contoso, DC=com*.
+          - Durante la creación del clúster, este nombre se registra como el objeto de equipo de clúster (también llamado *objeto de nombre de clúster* o *CNO* ) en AD DS. Si especificas un nombre NetBIOS para el clúster, el CNO se crea en la misma ubicación en la que residen los objetos de equipo para los nodos de clúster. Puede ser el contenedor Equipos predeterminado o una OU.
+          - Para especificar una ubicación diferente para el CNO, escribe el nombre distintivo de una OU en el cuadro **Nombre de clúster** . Por ejemplo: *CN=ClusterName, OU=Clusters, DC=Contoso, DC=com* .
           - Si un administrador de dominio ha preconfigurado el CNO en una OU diferente de donde residen los nodos de clúster, especifica el nombre distintivo que te proporcione el administrador de dominio.
     2. Si el servidor no tiene ningún adaptador de red configurado para usar DHCP, debes configurar una o varias direcciones IP estáticas para el clúster de conmutación por error. Selecciona la casilla situada junto a cada red que desees utilizar para la administración de clústeres. Seleccione el campo **Dirección** situado junto a una red seleccionada y, a continuación, escriba la dirección IP que desea asignar al clúster. Esta dirección o direcciones IP se asociarán al nombre del clúster en el Sistema de nombres de dominio (DNS).
 
       >[!NOTE]
       > Si usa Windows Server 2019, tiene la opción de usar un nombre de red distribuida para el clúster. Un nombre de red distribuida utiliza las direcciones IP de los servidores miembro en lugar de requerir una dirección IP dedicada para el clúster. De forma predeterminada, Windows usa un nombre de red distribuida si detecta que está creando el clúster en Azure (por lo que no tiene que crear un equilibrador de carga interno para el clúster) o una dirección IP o estática normal si ejecuta de forma local. Para obtener más información, consulte [nombre de red distribuida](https://blogs.windows.com/windowsexperience/2018/08/14/announcing-windows-server-2019-insider-preview-build-17733/#W0YAxO8BfwBRbkzG.97).
 
-    3. Cuando haya terminado, seleccione **Siguiente**.
-8. En la página **Confirmación**, revisa la configuración. De manera predeterminada, la casilla **Agregar todo el almacenamiento apto al clúster** está seleccionada. Desactiva esta casilla si deseas realizar una de las siguientes acciones:
+    3. Cuando haya terminado, seleccione **Siguiente** .
+8. En la página **Confirmación** , revisa la configuración. De manera predeterminada, la casilla **Agregar todo el almacenamiento apto al clúster** está seleccionada. Desactiva esta casilla si deseas realizar una de las siguientes acciones:
 
       - Deseas configurar el almacenamiento más adelante.
       - Tienes previsto crear espacios de almacenamiento en clúster mediante el Administrador de clústeres de conmutación por error o mediante los cmdlets de Windows PowerShell de clústeres de conmutación por error, y todavía no has creado espacios de almacenamiento en los Servicios de archivos y almacenamiento. Para obtener más información, consulta [Implementar espacios de almacenamiento en clúster](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>).
 9. Seleccione **siguiente** para crear el clúster de conmutación por error.
-10. En la página **Resumen**, confirma que el clúster de conmutación por error se ha creado correctamente. Si hay advertencias o errores, vea la salida de resumen o seleccione **Ver informe** para ver el informe completo. Seleccione **Finalizar**.
-11. Para confirmar que se ha creado el clúster, comprueba que su nombre aparece en el **Administrador de clústeres de conmutación por error**, en el árbol de navegación. Puede expandir el nombre del clúster y seleccionar elementos en **nodos**, **almacenamiento** o **redes** para ver los recursos asociados.
+10. En la página **Resumen** , confirma que el clúster de conmutación por error se ha creado correctamente. Si hay advertencias o errores, vea la salida de resumen o seleccione **Ver informe** para ver el informe completo. Seleccione **Finalizar** .
+11. Para confirmar que se ha creado el clúster, comprueba que su nombre aparece en el **Administrador de clústeres de conmutación por error** , en el árbol de navegación. Puede expandir el nombre del clúster y seleccionar elementos en **nodos** , **almacenamiento** o **redes** para ver los recursos asociados.
 
-    Ten en cuenta que el nombre del clúster podría tardar un poco en replicarse correctamente en DNS. Después de que el registro y la replicación de DNS se hayan realizado correctamente, si selecciona **todos los servidores** en Administrador del servidor, el nombre del clúster debe aparecer como servidor con el estado de **manejabilidad** de **en línea**.
+    Ten en cuenta que el nombre del clúster podría tardar un poco en replicarse correctamente en DNS. Después de que el registro y la replicación de DNS se hayan realizado correctamente, si selecciona **todos los servidores** en Administrador del servidor, el nombre del clúster debe aparecer como servidor con el estado de **manejabilidad** de **en línea** .
 
 Una vez creado el clúster, puedes realizar acciones como comprobar la configuración de quórum del clúster y, opcionalmente, crear volúmenes compartidos de clúster (CSV). Para obtener más información, consulte [Descripción del cuórum en espacios de almacenamiento directo](../storage/storage-spaces/understand-quorum.md) y [uso de volúmenes compartidos de clúster en un clúster de conmutación por error](failover-cluster-csvs.md).
 
@@ -159,7 +159,7 @@ Aquí se muestra cómo crear un rol en clúster:
    | ---------       | ---------                    |
    | Servidor de espacio de nombres     |   Espacios de nombres (parte del rol de servidor de archivos)       |
    | Servidor de espacios de nombres DFS     |  Rol de Servidor DHCP       |
-   | Coordinador de transacciones distribuidas (DTC)     | Ninguno        |
+   | Coordinador de transacciones distribuidas (DTC)     | None        |
    | Servidor de archivos     |  Rol de Servidor de archivos       |
    | Aplicación genérica     |  No aplicable       |
    | Script genérico     |   No aplicable      |
@@ -168,13 +168,13 @@ Aquí se muestra cómo crear un rol en clúster:
    | iSCSI Target Server     |    Servidor de destino iSCSI (parte del rol de Servidor de archivos)     |
    | Servidor iSNS     |  Característica Servicio de servidor iSNS       |
    | Message Queue Server     |  Característica Servicios de Message Queue Server       |
-   | Otro servidor     |  Ninguno       |
+   | Otro servidor     |  None       |
    | Máquina virtual     |  Rol de Hyper-V       |
    | Servidor WINS     |   Característica Servidor WINS      |
 
-2. En Administrador de clústeres de conmutación por error, expanda el nombre del clúster, haga clic con el botón secundario en **roles**y, a continuación, seleccione **configurar rol**.
+2. En Administrador de clústeres de conmutación por error, expanda el nombre del clúster, haga clic con el botón secundario en **roles** y, a continuación, seleccione **configurar rol** .
 3. Sigue los pasos del Asistente para alta disponibilidad para crear el rol en clúster.
-4. Para comprobar que se ha creado el rol en clúster, en el panel **Roles**, asegúrate de que el rol tenga el estado **En ejecución**. El panel Roles también indica el nodo propietario. Para probar la conmutación por error, haga clic con el botón secundario en el rol, seleccione **movimiento**y, a continuación, seleccione **seleccionar nodo**. En el cuadro de diálogo de **movimiento del rol en clúster** , seleccione el nodo de clúster deseado y, después, haga clic en **Aceptar**. En la columna **Nodo propietario**, comprueba que el nodo propietario ha cambiado.
+4. Para comprobar que se ha creado el rol en clúster, en el panel **Roles** , asegúrate de que el rol tenga el estado **En ejecución** . El panel Roles también indica el nodo propietario. Para probar la conmutación por error, haga clic con el botón secundario en el rol, seleccione **movimiento** y, a continuación, seleccione **seleccionar nodo** . En el cuadro de diálogo de **movimiento del rol en clúster** , seleccione el nodo de clúster deseado y, después, haga clic en **Aceptar** . En la columna **Nodo propietario** , comprueba que el nodo propietario ha cambiado.
 
 ## <a name="create-a-failover-cluster-by-using-windows-powershell"></a>Crear un clúster de conmutación por error a través de Windows PowerShell
 
@@ -189,7 +189,7 @@ El siguiente ejemplo instala la característica Clústeres de conmutación por e
 Install-WindowsFeature –Name Failover-Clustering –IncludeManagementTools
 ```
 
-El siguiente ejemplo ejecuta todas las pruebas de validación de clústeres en los equipos llamados *Server1* y *Server2*.
+El siguiente ejemplo ejecuta todas las pruebas de validación de clústeres en los equipos llamados *Server1* y *Server2* .
 
 ```PowerShell
 Test-Cluster –Node Server1, Server2
@@ -198,7 +198,7 @@ Test-Cluster –Node Server1, Server2
 > [!NOTE]
 > El cmdlet **Test-Cluster** genera los resultados en un archivo de registro en el directorio de trabajo actual. Por ejemplo: C:\Users \<username> \AppData\Local\Temp.
 
-El siguiente ejemplo crea un clúster de conmutación por error llamado *MyCluster* con los nodos *Server1* y *Server2*, asigna la dirección IP estática *192.168.1.12* y agrega todo el almacenamiento apto al clúster de conmutación por error.
+El siguiente ejemplo crea un clúster de conmutación por error llamado *MyCluster* con los nodos *Server1* y *Server2* , asigna la dirección IP estática *192.168.1.12* y agrega todo el almacenamiento apto al clúster de conmutación por error.
 
 ```PowerShell
 New-Cluster –Name MyCluster –Node Server1, Server2 –StaticAddress 192.168.1.12
@@ -210,13 +210,15 @@ El siguiente ejemplo crea el mismo clúster de conmutación por error que el eje
 New-Cluster –Name MyCluster –Node Server1, Server2 –StaticAddress 192.168.1.12 -NoStorage
 ```
 
-El siguiente ejemplo crea un clúster llamado *MyCluster* en la OU *Cluster* del dominio *Contoso.com*.
+El siguiente ejemplo crea un clúster llamado *MyCluster* en la OU *Cluster* del dominio *Contoso.com* .
 
 ```PowerShell
 New-Cluster -Name CN=MyCluster,OU=Cluster,DC=Contoso,DC=com -Node Server1, Server2
 ```
 
 Para obtener ejemplos de cómo agregar roles en clúster, consulta temas como [Add-ClusterFileServerRole](/powershell/module/failoverclusters/add-clusterfileserverrole?view=win10-ps) y [Add-ClusterGenericApplicationRole](/powershell/module/failoverclusters/add-clustergenericapplicationrole?view=win10-ps).
+
+Una vez creado el clúster de conmutación por error desasociado de AD, realice una copia de seguridad de la opción certificado con clave privada exportable. Abra MMC = =>File = =>Add Remove Snap in = =>Certificates = =>Services accounts = =>Next = =>equipo local = =>Cluster Service = =>Certificates = =>Clussvc\Personal = =>seleccionar certificado derecho clic = =>Export = =>Next = =>Yes Export The Private Key = =>PfX Format = =>Choose password o puede Agregar Group = =>Next = =>seleccione path donde quiera almacenar Certificate = =>Next = =>Finish. "Se han documentado más detalles en el artículo interno https://internal.support.services.microsoft.com/en-US/help/4569891 "
 
 ## <a name="more-information"></a>Más información
 

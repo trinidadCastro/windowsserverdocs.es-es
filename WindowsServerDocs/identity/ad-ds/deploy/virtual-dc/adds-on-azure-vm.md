@@ -6,12 +6,12 @@ ms.author: iainfou
 manager: daveba
 ms.date: 04/11/2019
 ms.topic: article
-ms.openlocfilehash: 98725e194226f048de5bc8332c02ec54c7525ee1
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: e95aea80bea16322f66a14c12b0a1388897c1b11
+ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940125"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793592"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>Install a new Active Directory forest using Azure CLI (Instalación de un nuevo bosque de Active Directory en la CLI de Azure)
 
@@ -148,7 +148,6 @@ az vm create \
     --data-disk-caching None \
     --nsg $NetworkSecurityGroup \
     --private-ip-address $DC2IP
-
 ```
 
 ## <a name="dns-and-active-directory"></a>DNS y Active Directory
@@ -161,7 +160,7 @@ Puede encontrar información sobre cómo extender una red local a Azure en el ar
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>Configurar las máquinas virtuales e instalar Active Directory Domain Services
 
-Una vez completado el script, busque el [Azure portal](https://portal.azure.com)y, a continuación, **máquinas virtuales**.
+Una vez completado el script, busque el [Azure portal](https://portal.azure.com)y, a continuación, **máquinas virtuales** .
 
 ### <a name="configure-the-first-domain-controller"></a>Configuración del primer controlador de dominio
 
@@ -193,6 +192,10 @@ Cuando se haya completado el reinicio de la máquina virtual, vuelva a iniciar s
 
 Las [redes virtuales de Azure ahora admiten IPv6](/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) , pero en caso de que quiera configurar las máquinas virtuales para que prefieran IPv4 a través de IPv6, puede encontrar información sobre cómo completar esta tarea en el artículo de Knowledge base [Guía para configurar IPv6 en Windows para usuarios avanzados](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users).
 
+### <a name="configure-dns"></a>Configurar el DNS
+
+Después de promocionar el primer servidor en Azure, los servidores deberán establecerse en los servidores DNS principal y secundario de la red virtual, y los servidores DNS locales se degradarán a terciario y más. Puede encontrar más información sobre cómo cambiar los servidores DNS en el artículo [creación, cambio o eliminación de una red virtual](/azure/virtual-network/manage-virtual-network#change-dns-servers).
+
 ### <a name="configure-the-second-domain-controller"></a>Configurar el segundo controlador de dominio
 
 Conéctese a AZDC02 con las credenciales que proporcionó en el script.
@@ -220,11 +223,7 @@ Cuando el asistente complete el proceso de instalación, se reiniciará la máqu
 
 Cuando se haya completado el reinicio de la máquina virtual, vuelva a iniciar sesión con las credenciales usadas antes, pero esta vez como miembro del dominio CONTOSO.com
 
-Las [redes virtuales de Azure ahora admiten IPv6](/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6) , pero en caso de que quiera configurar las máquinas virtuales para que prefieran IPv4 a través de IPv6, puede encontrar información sobre cómo completar esta tarea en el artículo de Knowledge base [Guía para configurar IPv6 en Windows para usuarios avanzados](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users).
-
-### <a name="configure-dns"></a>Configurar el DNS
-
-Después de promocionar los nuevos controladores de dominio en Azure, tendrán que establecerse en los servidores DNS principal y secundario de la red virtual, y los servidores DNS locales se degradarán a terciario y más. Puede encontrar más información sobre cómo cambiar los servidores DNS en el artículo [creación, cambio o eliminación de una red virtual](/azure/virtual-network/manage-virtual-network#change-dns-servers).
+Las [redes virtuales de Azure ahora admiten IPv6](/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6), pero en caso de que quiera configurar las máquinas virtuales para que prefieran IPv4 a través de IPv6, puede encontrar información sobre cómo completar esta tarea en el artículo de Knowledge base [Guía para configurar IPv6 en Windows para usuarios avanzados](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users).
 
 ### <a name="wrap-up"></a>Encapsulado
 
@@ -236,7 +235,7 @@ Para quitar el entorno, cuando haya completado las pruebas, se puede eliminar el
 
 ### <a name="remove-using-the-azure-portal"></a>Quitar mediante el Azure Portal
 
-En el Azure Portal, vaya a **grupos de recursos** y elija el grupo de recursos que hemos creado (en este ejemplo, ADonAzureVMs) y, luego, seleccione **Eliminar grupo de recursos**. El proceso solicita confirmación antes de eliminar todos los recursos incluidos en el grupo de recursos.
+En el Azure Portal, vaya a **grupos de recursos** y elija el grupo de recursos que hemos creado (en este ejemplo, ADonAzureVMs) y, luego, seleccione **Eliminar grupo de recursos** . El proceso solicita confirmación antes de eliminar todos los recursos incluidos en el grupo de recursos.
 
 ### <a name="remove-using-the-azure-cli"></a>Quitar mediante el CLI de Azure
 

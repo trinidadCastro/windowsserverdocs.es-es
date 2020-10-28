@@ -5,12 +5,12 @@ manager: mchad
 ms.topic: article
 author: gawatu
 ms.date: 06/29/2019
-ms.openlocfilehash: 668ee7a0c9e948c12140d3e25309a68ad3b2148b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 65ae84f354f535ba94a7331680234b3ad32d230d
+ms.sourcegitcommit: 92e46b11154bab929e2c622d759ef62ec264c4e6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957272"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92734739"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Información general del Sistema de archivos resistente (ReFS)
 
@@ -25,9 +25,9 @@ El Sistema de archivos resistente (ReFS) es el nuevo sistema de archivos de Micr
 ReFS presenta nuevas características que pueden detectar daños con precisión y también solucionarlos mientras aún está en línea, que te ayudarán a proporcionar una mayor integridad y disponibilidad para tus datos:
 
 - **Secuencias de integridad** -ReFS usa sumas de comprobación para los metadatos y, opcionalmente, para datos de archivos, lo que da ReFS la capacidad de detectar daños de manera confiable.
-- **Integración de espacios de almacenamiento**: Cuando se usa junto a un espacio de reflejo o de paridad, ReFS puede reparar automáticamente daños detectados usando la copia alternativa de los datos proporcionados por los espacios de almacenamiento. Los procesos de reparación se localizan en el área del daño y se ejecuta en línea, por lo que no se requiere tiempo de inactividad de los volúmenes.
-- **Recuperación de datos**: Si se produce algún tipo de daño en un volumen y no existe una versión alternativa de los datos dañados, ReFS elimina los datos dañados del espacio de nombres. ReFS mantiene el volumen en línea mientras se ocupa de la mayoría de los daños que no pueden corregirse, pero existen algunos casos excepcionales en los que ReFS tiene que ocuparse de este volumen en modo sin conexión.
-- **Corrección de errores proactiva**: Además de validar datos antes de las lecturas y escrituras, ReFS presenta un escáner de integridad de datos, conocido como <i>limpieza</i>. Esta limpieza escanea el volumen de manera periódica, identificando los daños latentes y desencadenando de manera proactiva una reparación de los datos dañados.
+- **Integración de espacios de almacenamiento** : Cuando se usa junto a un espacio de reflejo o de paridad, ReFS puede reparar automáticamente daños detectados usando la copia alternativa de los datos proporcionados por los espacios de almacenamiento. Los procesos de reparación se localizan en el área del daño y se ejecuta en línea, por lo que no se requiere tiempo de inactividad de los volúmenes.
+- **Recuperación de datos** : Si se produce algún tipo de daño en un volumen y no existe una versión alternativa de los datos dañados, ReFS elimina los datos dañados del espacio de nombres. ReFS mantiene el volumen en línea mientras se ocupa de la mayoría de los daños que no pueden corregirse, pero existen algunos casos excepcionales en los que ReFS tiene que ocuparse de este volumen en modo sin conexión.
+- **Corrección de errores proactiva** : Además de validar datos antes de las lecturas y escrituras, ReFS presenta un escáner de integridad de datos, conocido como <i>limpieza</i>. Esta limpieza escanea el volumen de manera periódica, identificando los daños latentes y desencadenando de manera proactiva una reparación de los datos dañados.
 
 ### <a name="performance"></a>Rendimiento
 
@@ -50,7 +50,7 @@ Además de proporcionar mejoras de resistencia, ReFS presenta nuevas caracterís
 > [!NOTE]
 > En el caso de las implementaciones de servidor, la paridad con aceleración de reflejo solo se admite en [espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md). Se recomienda usar la paridad acelerada para reflejo solo con cargas de trabajo de archivado y copia de seguridad. En el caso de cargas de trabajo aleatorias virtualizadas y otras de alto rendimiento, se recomienda utilizar reflejos triples para mejorar el rendimiento.
 
-- **Operaciones de VM con aceleración**: ReFS presenta nuevas funcionalidades especialmente dirigidas a mejorar el rendimiento de las cargas de trabajo virtualizadas:
+- **Operaciones de VM con aceleración** : ReFS presenta nuevas funcionalidades especialmente dirigidas a mejorar el rendimiento de las cargas de trabajo virtualizadas:
     - [Bloque de clonación](./block-cloning.md): El bloque de clonación acelera las operaciones de copia, habilitando rápidas operaciones de fusión de punto de control con una VM de bajo impacto.
     - VDL disperso - El VDL disperso permite a ReFS eliminar los archivos rápidamente, reduciendo el tiempo necesario para crear VHD solucionados de 10 segundos de minutos a tan solo unos segundos.
 
@@ -67,7 +67,7 @@ Microsoft ha desarrollado NTFS específicamente para uso general con una amplia 
 > [!NOTE]
 > Todas las configuraciones compatibles con ReFS deben usar hardware certificado con el [Catálogo de Windows Server](https://www.WindowsServerCatalog.com) y cumplir los requisitos de la aplicación.
 
-### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directos
+### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directo
 
 Se recomienda implementar ReFS en Espacios de almacenamiento directo para cargas de trabajo virtualizadas o almacenamiento conectado a la red:
 - La paridad con aceleración de reflejo y [la memoria caché en espacios de almacenamiento directo](../storage-spaces/understand-the-cache.md) proporcionan un almacenamiento de alto rendimiento y con una capacidad eficaz.
@@ -89,6 +89,10 @@ Se recomienda implementar ReFS en Espacios de almacenamiento directo para cargas
 La implementación de ReFS en discos básicos es más adecuada para las aplicaciones que implementan sus propias soluciones de disponibilidad y resistencia de software.
 - Las aplicaciones que presentan sus propias soluciones de software de disponibilidad y resistencia pueden aprovechar las secuencias de integridad, la clonación de bloques y la capacidad de escalar y admitir grandes conjuntos de datos.
 
+> [!IMPORTANT]
+> Si tiene previsto usar ReFS para CSV (volúmenes compartidos de clúster), tenga en cuenta las limitaciones para dar formato previamente a los volúmenes CSV posteriores con ReFS.
+> Para CSV: NTFS se debe usar para las redes San tradicionales. ReFS se debe usar en la parte superior de S2D.
+
 > [!NOTE]
 > Los discos básicos incluyen conexión directa no extraíble local a través de BusTypes SATA, SAS, NVME o RAID. Los discos básicos no incluyen espacios de almacenamiento.
 
@@ -102,7 +106,7 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 
 ## <a name="feature-comparison"></a>Comparación de características
 
-### <a name="limits"></a>límites
+### <a name="limits"></a>Límites
 
 | Característica       | ReFS                                        | NTFS |
 |----------------|------------------------------------------------|-----------------------|
@@ -119,7 +123,7 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 |---------------------------|------------------|-----------------------|
 | Cifrado de BitLocker | Sí | Sí |
 | Desduplicación de datos | Sí<sup>1</sup> | Sí |
-| Compatibilidad con volumen compartido en clúster (CSV) | Sí<sup>2</sup> | Sí |
+| Compatibilidad con volumen compartido en clúster (CSV) | Sí<sup>2</sup> <sup>4</sup> | Sí |
 | Enlaces simbólicos | Sí | Sí |
 | Compatibilidad con clústeres de conmutación por error | Sí | Sí |
 | Listas de control de acceso | Sí | Sí |
@@ -135,9 +139,10 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 | Secuencias con nombre | Sí | Sí |
 | Aprovisionamiento fino | Sí<sup>3</sup> | Sí |
 | Recortar/desasignar | Sí<sup>3</sup> | Sí |
-1. Disponible en Windows Server, versión 1709 y versiones posteriores.
+1. Disponible en Windows Server, versión 1709 y versiones posteriores, Windows Server 2019 (1809) LTSC o posterior.
 2. Disponible en Windows Server 2012 R2 y versiones posteriores.
 3. Solo espacios de almacenamiento
+4. CSV no usará e/s directa en unión con el espacio de almacenamiento, Espacios de almacenamiento directo (S2D) o SAN
 
 #### <a name="the-following-features-are-only-available-on-refs"></a>Las siguientes características solo están disponibles en ReFS:
 
@@ -154,7 +159,7 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 | Compresión de sistema de archivos | No | Sí |
 | Cifrado de sistema de archivos | No | Sí |
 | Transacciones | No | Sí |
-| Vínculos físicos | No | Sí |
+| Vínculos físicos | Sí<sup>1</sup> | Sí |
 | Id. de objeto | No | Sí |
 | Transferencia de datos descargados (ODX) | No | Sí |
 | Nombres cortos | No | Sí |
@@ -164,6 +169,8 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 | Compatibilidad con archivos de paginación | No | Sí |
 | Compatible con medios extraíbles | No | Sí |
 
+1. Version ReFS 3,5 con formato de Windows 10 Enterprise Insider Preview compilación 19536. Se agregó compatibilidad con hardlink si el **volumen tiene un formato nuevo. No se puede usar hardlink si se actualiza desde la versión anterior**
+
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Recomendaciones de tamaño de clúster para ReFS y NTFS](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
@@ -171,3 +178,5 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 - [Clonación de bloques de ReFS](block-cloning.md)
 - [Flujos de integridad de ReFS](integrity-streams.md)
 - [Solución de problemas de ReFS con ReFSUtil](../../administration/windows-commands/refsutil.md)
+- [Uso de ReFS con volúmenes Cluster-Shared](../../failover-clustering/failover-cluster-csvs.md)
+- [Matriz de compatibilidad y versiones de ReFS](https://gist.github.com/0xbadfca11/da0598e47dd643d933dc)
