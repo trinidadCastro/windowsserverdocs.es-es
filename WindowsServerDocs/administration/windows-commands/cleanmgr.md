@@ -2,16 +2,16 @@
 title: cleanmgr
 description: Configure la herramienta liberador de espacio en disco (Cleanmgr.exe) para limpiar automáticamente determinados archivos.
 ms.reviewer: cosmosdarwin
-author: iangpgh
+author: JasonGerend
 ms.author: jgerend
 manager: daveba
 ms.date: 06/20/2019
-ms.openlocfilehash: 81a9283ef75ef76b14a8ee8a5ecc3ab225207560
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.openlocfilehash: dd8a015ff27809d0ef960241ce9221b4215c20aa
+ms.sourcegitcommit: 7499749ce7baaf58a523cae2dd46737d635475ce
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083666"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93043883"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -27,7 +27,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 ### <a name="parameters"></a>Parámetros
 
-| Parámetro | Descripción |
+| Parámetro | Description |
 | --------- | ----------- |
 | /d. `<driveletter>` | Especifica la unidad que desea que limpie el liberador de espacio en disco.<p>**Nota:** La opción **/d** no se emplea con `/sagerun:n` . |
 | /sageset: n | Muestra el cuadro de diálogo **configuración de limpieza de disco** y también crea una clave del registro para almacenar la configuración seleccionada. El `n` valor, que se almacena en el registro, le permite especificar las tareas para que se ejecute el liberador de espacio en disco. El `n` valor puede ser cualquier valor entero comprendido entre 0 y 9999. |
@@ -66,7 +66,7 @@ Las opciones de los archivos que puede especificar para el liberador de espacio 
 
 ## <a name="examples"></a>Ejemplos
 
-Para ejecutar la aplicación liberador de espacio en disco para que pueda usar su cuadro de diálogo para especificar opciones para su uso posterior, guardando la configuración en el conjunto **1**, escriba lo siguiente:
+Para ejecutar la aplicación liberador de espacio en disco para que pueda usar su cuadro de diálogo para especificar opciones para su uso posterior, guardando la configuración en el conjunto **1** , escriba lo siguiente:
 
 ```
 cleanmgr /sageset:1
