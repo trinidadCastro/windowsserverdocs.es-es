@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: siroy
 ms.date: 06/02/2020
 ms.topic: article
-ms.openlocfilehash: e8e327fcf2f9173c7fb571580280ba4d5b7389fe
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c59be01c856cac27f4372291b52bd43419c9ac46
+ms.sourcegitcommit: 65eef102021ed2b5abd73dca8a0ffd6eb174d705
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997494"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035781"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)
 
@@ -53,18 +53,18 @@ El servicio de migración de almacenamiento migra todas las marcas, la configura
 - Estado compartido
 - Tipo de disponibilidad
 - Tipo de recurso compartido
-- Modo de enumeración *de carpetas (también conocido como enumeración basada en el acceso o Abe)*
+- Modo de enumeración *de carpetas (también conocido como Access-Based enumeración o Abe)*
 - Modo de almacenamiento en caché
 - Modo de concesión
 - Instancia de SMB
 - Tiempo de espera de CA
 - Límite de usuarios simultáneos
 - Disponible continuamente
-- Descripción
+- Description
 - Cifrar datos
 - Comunicación remota de identidad
 - Infraestructura
-- Nombre
+- Name
 - Ruta de acceso
 - Con ámbito
 - Nombre de ámbito
@@ -90,6 +90,8 @@ La versión del servicio de migración de almacenamiento incluida en Windows Ser
 El servicio de migración de almacenamiento contiene un motor de lectura y copia multiproceso denominado servicio de proxy de migración de almacenamiento que se ha diseñado para que sea rápido y, además, ofrece una fidelidad de datos perfecta que carece de muchas herramientas de copia de archivos. Aunque la configuración predeterminada será óptima para muchos clientes, hay formas de mejorar el rendimiento de SMS durante el inventario y la transferencia.
 
 - **Use Windows Server 2019 para el sistema operativo de destino.** Windows Server 2019 contiene el servicio de proxy del servicio de migración de almacenamiento. Al instalar esta característica y migrar a destinos de Windows Server 2019, todas las transferencias funcionan como línea directa de visión entre el origen y el destino. Este servicio se ejecuta en el orquestador durante la transferencia si los equipos de destino son Windows Server 2012 R2 o Windows Server 2016, lo que significa que las transferencias de doble salto y serán mucho más lentas. Si hay varios trabajos que se ejecutan con los destinos Windows Server 2012 R2 o Windows Server 2016, el orquestador se convertirá en un cuello de botella.
+
+- **Instale la última actualización acumulativa mensual.** Hemos mejorado el servicio del proxy del servicio de migración de almacenamiento en varias actualizaciones para mejorar el rendimiento de las transferencias y retransferencias, así como el rendimiento del inventario. Instale la [actualización acumulativa de KB4580390 de octubre de 2020](https://support.microsoft.com/help/4580390/windows-10-update-kb4580390) o una versión posterior para obtener mejoras de velocidad significativas.
 
 - **Modifique los subprocesos de transferencia predeterminados.** El servicio del proxy del servicio de migración de almacenamiento copia ocho archivos simultáneamente en un trabajo determinado. Puede aumentar el número de subprocesos de copia simultáneos si ajusta el siguiente registro REG_DWORD nombre de valor en decimal en cada nodo que ejecute el proxy del servicio de migración de almacenamiento:
 
@@ -118,7 +120,7 @@ El servicio de migración de almacenamiento contiene un motor de lectura y copia
 - **Use SMB 3 multicanal.** Si se transfiere desde un equipo de origen con Windows Server 2012 o posterior, SMB 3. x admite copias multicanal que pueden mejorar considerablemente el rendimiento de la copia de archivos. Esta característica funciona automáticamente siempre y cuando el origen y el destino tengan:
 
    - Adaptadores de red múltiples
-   - Uno o más adaptadores de red que admiten el ajuste de escala en lado de recepción (RSS)
+   - Uno o más adaptadores de red que admitan el ajuste de escala en lado de recepción (RSS)
    - Uno o más adaptadores de red que se configuran mediante la formación de equipos NIC
    - Un adaptador de red o más que admita RDMA
 
@@ -164,7 +166,7 @@ Al realizar una transferencia, el servicio de migración de almacenamiento busca
 
 La mayoría de los errores encontrados en el archivo CSV de transferencia son códigos de error del sistema de Windows. Puede averiguar lo que significa cada error revisando la documentación de los [códigos de error de Win32](/windows/win32/debug/system-error-codes).
 
-## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a>¿Cuáles son mis opciones para proporcionar comentarios, errores de archivos u obtener soporte técnico?
+## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a> ¿Cuáles son mis opciones para proporcionar comentarios, errores de archivos u obtener soporte técnico?
 
 Para proporcionar comentarios sobre el servicio de migración de almacenamiento:
 
