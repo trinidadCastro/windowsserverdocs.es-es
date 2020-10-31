@@ -2,16 +2,16 @@
 ms.assetid: eeb919de-e21e-48d8-8186-e42adec6933f
 title: Diseño de la topología de sitio
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: dac3976a71b27f75cee5a2d4640282819bdfe75e
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 663b25631d1df81cceb5c25fc33bb7081ae350ae
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939445"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069297"
 ---
 # <a name="designing-the-site-topology"></a>Diseño de la topología de sitio
 

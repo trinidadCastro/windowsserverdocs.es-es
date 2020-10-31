@@ -2,16 +2,16 @@
 ms.assetid: e3ea1f67-60d4-4566-b24c-37faa95c3b2a
 title: Determinar el costo
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: acf68e45a1d914bcbf5e780f51d2455fe43ab3e3
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 9da1c4f247a1acfe982a2d5444fc3385806ce039
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939415"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069207"
 ---
 # <a name="determining-the-cost"></a>Determinar el costo
 
@@ -35,7 +35,7 @@ En la tabla siguiente se enumeran las velocidades de los distintos tipos de rede
 |T3|45 MBps|
 |10Baset|10 Mbps|
 |Modo de transferencia asincrónico (ATM)|Velocidad variable, normalmente entre 155 Mbps y 622 Mbps|
-|100Baset|100 Mbps|
+|100Baset|100 Mbps|
 |Gigabit Ethernet|1 gigabit por segundo (Gbps)|
 
 Use la tabla siguiente para calcular el costo de cada vínculo a sitio basado en la velocidad de vínculo de la velocidad de red de área extensa (WAN). Para la velocidad de vínculo WAN que no aparece en la tabla, puede calcular un factor de costo relativo dividiendo 1.024 por el registro del ancho de banda disponible, medido en kbps.

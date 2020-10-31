@@ -2,16 +2,16 @@
 ms.assetid: 8b900c2b-35b1-4c95-a73d-e5f2e9cf0adb
 title: Búsqueda de recursos adicionales para el diseño de la estructura lógica
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 25fdb357ae4be103a6c543a6969f72f1a5df91e1
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: c2b445661fb10e03a3d764611a1a3e213613b69e
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939145"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068577"
 ---
 # <a name="finding-additional-resources-for-logical-structure-design"></a>Búsqueda de recursos adicionales para el diseño de la estructura lógica
 
@@ -53,8 +53,8 @@ Puede encontrar recursos adicionales para el diseño de la estructura lógica en
 
 - Para obtener más información acerca de la infraestructura de directiva de grupo, consulte [diseño de una infraestructura de directiva de grupo](/previous-versions/windows/it-pro/windows-server-2003/cc786524(v=ws.10)).
 
-- Para obtener más información acerca de los controladores de dominio de solo lectura (RODC), consulte [AD DS: Controladores de dominio de solo lectura](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10)).
+- Para obtener más información acerca de los controladores de dominio de solo lectura (RODC), consulte [AD DS: Read-Only controladores de dominio](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10)).
 
-- Para obtener más información sobre las directivas de bloqueo de cuenta y contraseña específica, consulte la [Guía paso a paso](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770842(v=ws.10))de la Directiva de bloqueo de cuentas y contraseña específica de AD DS.
+- Para obtener más información sobre las directivas de bloqueo de cuentas y contraseñas específicas, consulte la [Guía paso a paso de la Directiva de bloqueo de cuentas y contraseñas de AD DS Fine-Grained](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770842(v=ws.10)).
 
 - Para obtener más información acerca de las convenciones de nomenclatura en AD DS, consulte el artículo 909264 de Microsoft Knowledge base, [convenciones de nomenclatura en Active Directory para equipos, dominios, sitios y unidades organizativas](https://support.microsoft.com/help/909264/).

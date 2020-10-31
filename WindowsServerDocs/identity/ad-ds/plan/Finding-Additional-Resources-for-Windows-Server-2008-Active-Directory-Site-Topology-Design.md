@@ -2,16 +2,16 @@
 ms.assetid: eca5bbf0-088e-4753-bf49-4d6c1125f689
 title: Búsqueda de recursos adicionales para el diseño de la topología de sitio de Active Directory para Windows Server 2008
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: f4e444eec232bb6dabfd4acfdce9f4cc7e007bf8
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: b5edda407ce85ec8024f6cc1c9a6e9ec463e7618
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939105"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068576"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Búsqueda de recursos adicionales para el diseño de la topología de sitio de Active Directory para Windows Server 2008
 
@@ -25,7 +25,7 @@ Puede encontrar la siguiente documentación sobre Active Directory Domain Servic
 
 - Para obtener más información sobre la expansión de árboles y Active Directory topología de replicación, consulte [Active Directory referencia técnica](/previous-versions/windows/it-pro/windows-server-2003/cc755326(v=ws.10))de la topología de replicación.
 
-- Para obtener más información sobre el uso de Adlb.exe y la administración de entornos que tienen 100 o más sitios de sucursal, consulte [revisión del equilibrio de carga del servidor de cabeza de puente con Windows Server 2008 RODC](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd735927(v%3dws.10)).
+- Para obtener más información sobre el uso de Adlb.exe y la administración de entornos que tienen 100 o más sitios de sucursal, consulte [revisión de Load-Balancing de servidores cabeza de puente con Windows Server 2008 RODC](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd735927(v%3dws.10)).
 
 - Para obtener información sobre la instalación de Monitor de red, consulte [supervisión del tráfico de red](/previous-versions/windows/it-pro/windows-server-2003/cc783075(v=ws.10)).
 
@@ -49,6 +49,6 @@ Puede encontrar la siguiente documentación sobre Active Directory Domain Servic
 
 - Para obtener información sobre la administración de la replicación a través de firewalls, consulte [Active Directory en redes segmentadas por firewalls](https://microsoft.com/download/details.aspx?familyid=c2ef3846-43f0-4caf-9767-a9166368434e).
 
-- Para obtener más información acerca de las características del controlador de dominio de solo lectura (RODC), vea [AD DS: Controladores de dominio de solo lectura](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10)).
+- Para obtener más información acerca de las características del controlador de dominio de solo lectura (RODC), consulte [AD DS: Read-Only controladores de dominio](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10)).
 
 - Para obtener información sobre cómo implementar un RODC, vea la [Guía paso a paso de controladores de dominio de solo lectura](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772234(v=ws.10)).

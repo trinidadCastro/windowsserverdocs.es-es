@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación de bosque de AD: realizar la recuperación inicial'
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 1b63d2dc379ae4e218bca9f39aab92eb74d6f5e5
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 8b0498b30966c22ec8dca267988e109d976f6b69
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939505"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93067747"
 ---
 # <a name="perform-initial-recovery"></a>Realizar la recuperación inicial
 
@@ -50,7 +50,7 @@ Después, lleve a cabo los siguiente pasos. Los procedimientos para realizar det
 
       **HKLM\System\CurrentControlSet\Services\NTDS\Parameters\Repl realizar sincronizaciones iniciales**
 
-      Cree la entrada con el tipo de datos **REG_DWORD** y un valor de **0**. Después de que el bosque se recupere por completo, puede restablecer el valor de esta entrada en **1**, que requiere un controlador de dominio que se reinicie y conserve que los roles de maestro de operaciones tengan éxito AD DS la replicación entrante y saliente con sus asociados de réplica conocidos antes de que se anuncie como controlador de dominio y empiece a proporcionar servicios a los clientes. Para obtener más información sobre los requisitos de sincronización inicial, consulte el artículo de KB [305476](https://support.microsoft.com/kb/305476).
+      Cree la entrada con el tipo de datos **REG_DWORD** y un valor de **0** . Después de que el bosque se recupere por completo, puede restablecer el valor de esta entrada en **1** , que requiere un controlador de dominio que se reinicie y conserve que los roles de maestro de operaciones tengan éxito AD DS la replicación entrante y saliente con sus asociados de réplica conocidos antes de que se anuncie como controlador de dominio y empiece a proporcionar servicios a los clientes. Para obtener más información sobre los requisitos de sincronización inicial, consulte el artículo de KB [305476](https://support.microsoft.com/kb/305476).
 
       Continúe con los pasos siguientes solo después de restaurar y comprobar los datos y antes de unir este equipo a la red de producción.
 
@@ -123,7 +123,7 @@ Después de la validación, una los controladores de red a la red de producción
 
 - Para corregir la resolución de nombres, cree registros de delegación DNS y configure los reenvíos de DNS y las sugerencias de raíz según sea necesario. Ejecute **repadmin/replsum** para comprobar la replicación entre controladores de DC.
 - Si los DC restaurados no son asociados de replicación directos, la recuperación de la replicación será mucho más rápida mediante la creación de objetos de conexión temporales entre ellos.
-- Para validar la limpieza de metadatos, ejecute **repadmin/viewlist \\ *** para obtener una lista de todos los controladores de DC del bosque. Ejecute **NLTEST/DCList:** *<dominio \> * para obtener una lista de todos los controladores de dominio del dominio.
+- Para validar la limpieza de metadatos, ejecute **repadmin/viewlist \\** _ para obtener una lista de todos los controladores de DC del bosque. Ejecute _ *NLTEST/DCList:* *  *<dominio \>* para obtener una lista de todos los controladores de dominio del dominio.
 - Para comprobar el estado de los controladores de dominio y DNS, ejecute DCDiag/v para notificar los errores en todos los controladores de dominio del bosque.
 
 ## <a name="add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain"></a>Agregar el catálogo global a un controlador de dominio en el dominio raíz del bosque

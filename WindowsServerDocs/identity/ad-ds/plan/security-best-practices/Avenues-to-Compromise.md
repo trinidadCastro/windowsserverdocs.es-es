@@ -2,16 +2,16 @@
 ms.assetid: d7a4d2e1-217d-4ffc-93f0-817149bd9e7f
 title: Vías de compromiso
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 31d936647be758c3f9cf2cd6d922f00ec5554e98
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 58578d96f3a66177f858f78861cb93be51df3a1e
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938215"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069687"
 ---
 # <a name="avenues-to-compromise"></a>Vías de compromiso
 
@@ -122,14 +122,14 @@ Si la cuenta de administrador local tiene el mismo valor en todos los servidores
 Siempre que otro equipo tenga una cuenta local con el mismo nombre de usuario y contraseña (o hash de contraseña) que las credenciales de cuenta que se van a presentar, el intento de inicio de sesión se realiza correctamente y el atacante obtiene acceso con privilegios al equipo de destino. En las versiones actuales de Windows, la cuenta predefinida Administrador está [deshabilitada de forma predeterminada](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753450(v=ws.11)), pero en los sistemas operativos heredados, la cuenta está habilitada de forma predeterminada.
 
 > [!NOTE]
-> Algunas organizaciones han configurado intencionadamente cuentas de administrador local para que se habiliten en la creencia de que esto proporciona una "failsafe" en caso de que todas las demás cuentas con privilegios se bloqueen fuera de un sistema. Sin embargo, incluso si la cuenta de administrador local está deshabilitada y no hay ninguna otra cuenta disponible que pueda habilitar la cuenta o iniciar sesión en el sistema con privilegios de administrador, el sistema se puede arrancar en modo seguro y la cuenta de administrador local integrada se puede volver a habilitar, como se describe en [soporte técnico de Microsoft artículo 814777](https://support.microsoft.com/kb/814777). Además, si el sistema sigue aplicando correctamente los GPO, un GPO se puede modificar para volver a habilitar (temporalmente) la cuenta de administrador o se pueden configurar grupos restringidos para agregar una cuenta basada en dominio al grupo de administradores local. Se pueden realizar reparaciones y se puede volver a deshabilitar la cuenta de administrador. Para evitar de forma eficaz un compromiso lateral que use las credenciales de la cuenta de administrador local integrada, los nombres de usuario y contraseñas únicos deben configurarse para las cuentas de administrador local. Para implementar contraseñas únicas para cuentas de administrador local a través de un GPO, consulte [solución para la administración de la contraseña de la cuenta de administrador integrada a través de GPO](/previous-versions/mt227395(v=msdn.10)) en TechNet.  
+> Algunas organizaciones han configurado intencionadamente cuentas de administrador local para que se habiliten en la creencia de que esto proporciona una "failsafe" en caso de que todas las demás cuentas con privilegios se bloqueen fuera de un sistema. Sin embargo, incluso si la cuenta de administrador local está deshabilitada y no hay ninguna otra cuenta disponible que pueda habilitar la cuenta o iniciar sesión en el sistema con privilegios de administrador, el sistema se puede arrancar en modo seguro y la cuenta de administrador local integrada se puede volver a habilitar, como se describe en [soporte técnico de Microsoft artículo 814777](https://support.microsoft.com/kb/814777). Además, si el sistema sigue aplicando correctamente los GPO, un GPO se puede modificar para volver a habilitar (temporalmente) la cuenta de administrador o se pueden configurar grupos restringidos para agregar una cuenta basada en dominio al grupo de administradores local. Se pueden realizar reparaciones y se puede volver a deshabilitar la cuenta de administrador. Para evitar de forma eficaz un compromiso lateral que use las credenciales de la cuenta de administrador local integrada, los nombres de usuario y contraseñas únicos deben configurarse para las cuentas de administrador local. Para implementar contraseñas únicas para cuentas de administrador local a través de un GPO, consulte [solución para la administración de la contraseña de la cuenta de administrador integrada a través de GPO](/previous-versions/mt227395(v=msdn.10)) en TechNet.  
 
 ##### <a name="permitting-installation-of-unauthorized-applications"></a>Permitir la instalación de aplicaciones no autorizadas
 *Número de la ley: Si un usuario no válido puede persuadirle para que ejecute su programa en el equipo, ya no es el equipo.* - [Diez leyes inmutables de seguridad (versión 2,0)](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 Si una organización implementa una configuración de línea de base coherente entre servidores, no se debe permitir la instalación de aplicaciones que no formen parte de un rol definido por el servidor. Al permitir que se instale software que no forma parte de la funcionalidad designada del servidor, los servidores se exponen a una instalación accidental o malintencionada del software que aumenta la superficie expuesta a ataques del servidor, presenta vulnerabilidades de la aplicación o provoca inestabilidad en el sistema.
 
-#### <a name="applications"></a>Aplicaciones
+#### <a name="applications"></a>APLICACIONES
 Tal y como se ha descrito anteriormente, las aplicaciones se instalan y configuran a menudo para usar cuentas a las que se les concede más privilegios de los que realmente requiere la aplicación. En algunos casos, la documentación de la aplicación especifica que las cuentas de servicio deben ser miembros del grupo de administradores locales de un servidor o que se deben configurar para que se ejecuten en el contexto de LocalSystem. Esto no suele ser debido a que la aplicación requiere esos derechos, pero dado que determinar qué derechos y permisos necesitan las cuentas de servicio de una aplicación, requiere una inversión en tiempo y esfuerzo adicionales. Si una aplicación no se instala con los privilegios mínimos necesarios para que la aplicación y sus características configuradas funcionen, el sistema se expone a los ataques que aprovechan los privilegios de aplicación sin que se produzca ningún ataque contra el propio sistema operativo.
 
 ### <a name="lack-of-secure-application-development-practices"></a>Falta de prácticas de desarrollo de aplicaciones seguras

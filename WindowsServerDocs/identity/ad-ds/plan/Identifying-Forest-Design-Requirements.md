@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7d957ebb-3476-49d8-b00b-6e93b4a94778
 title: Identificar los requisitos de diseño de bosque
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 9c5278fa01d34b5ed0bf77153dce1575ee6ac509
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 0a94f1ce10ec1574fda6776fac85bf80db75f749
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939085"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068448"
 ---
 # <a name="identifying-forest-design-requirements"></a>Identificar los requisitos de diseño de bosque
 
@@ -23,9 +23,9 @@ Active Directory Domain Services (AD DS) permite diseñar una infraestructura de
 
 Los grupos de su organización pueden tener algunos de los siguientes tipos de requisitos:
 
-- **Requisitos de la estructura organizativa**. Las partes de una organización pueden participar en una infraestructura compartida para ahorrar costos, pero requieren la capacidad de operar de forma independiente del resto de la organización. Por ejemplo, un grupo de investigación dentro de una organización grande podría necesitar mantener el control sobre todos sus datos de investigación.
+- **Requisitos de la estructura organizativa** . Las partes de una organización pueden participar en una infraestructura compartida para ahorrar costos, pero requieren la capacidad de operar de forma independiente del resto de la organización. Por ejemplo, un grupo de investigación dentro de una organización grande podría necesitar mantener el control sobre todos sus datos de investigación.
 
-- **Requisitos operativos**. Una parte de una organización puede realizar restricciones únicas en la configuración del servicio de directorio, la disponibilidad o la seguridad, o bien usar aplicaciones que colocan restricciones únicas en el directorio. Por ejemplo, las unidades de negocio individuales dentro de una organización pueden implementar aplicaciones habilitadas para el directorio que modifican el esquema de directorio que no están implementadas por otras unidades de negocio. Dado que el esquema de directorio se comparte entre todos los dominios del bosque, la creación de varios bosques es una solución para este tipo de escenario. Otros ejemplos se encuentran en las siguientes organizaciones y escenarios:
+- **Requisitos operativos** . Una parte de una organización puede realizar restricciones únicas en la configuración del servicio de directorio, la disponibilidad o la seguridad, o bien usar aplicaciones que colocan restricciones únicas en el directorio. Por ejemplo, las unidades de negocio individuales dentro de una organización pueden implementar aplicaciones habilitadas para el directorio que modifican el esquema de directorio que no están implementadas por otras unidades de negocio. Dado que el esquema de directorio se comparte entre todos los dominios del bosque, la creación de varios bosques es una solución para este tipo de escenario. Otros ejemplos se encuentran en las siguientes organizaciones y escenarios:
 
     - Organizaciones militares
 
@@ -33,7 +33,7 @@ Los grupos de su organización pueden tener algunos de los siguientes tipos de r
 
     - Organizaciones que mantienen un directorio disponible tanto interna como externamente (por ejemplo, los usuarios a los que se puede tener acceso públicamente en Internet)
 
-- **Requisitos legales**. Algunas organizaciones tienen requisitos legales para operar de una manera determinada, por ejemplo, restringir el acceso a cierta información, tal como se especifica en un contrato de negocio. Algunas organizaciones tienen requisitos de seguridad para operar en redes internas aisladas. Si no se cumplen estos requisitos, se puede producir la pérdida del contrato y, posiblemente, de una acción legal.
+- **Requisitos legales** . Algunas organizaciones tienen requisitos legales para operar de una manera determinada, por ejemplo, restringir el acceso a cierta información, tal como se especifica en un contrato de negocio. Algunas organizaciones tienen requisitos de seguridad para operar en redes internas aisladas. Si no se cumplen estos requisitos, se puede producir la pérdida del contrato y, posiblemente, de una acción legal.
 
 Parte de la identificación de los requisitos de diseño de bosque implica la identificación del grado en que los grupos de su organización pueden confiar en los posibles propietarios de bosque y sus administradores de servicios, e identificar los requisitos de aislamiento y autonomía para cada grupo de la organización.
 

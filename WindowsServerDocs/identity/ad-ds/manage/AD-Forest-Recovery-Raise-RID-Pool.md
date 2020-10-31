@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación de bosque de AD: generación de grupos de RID'
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: c37bc129-a5e0-4219-9ba7-b4cf3a9fc9a4
-ms.openlocfilehash: 96e27aac4f63008c2ae694c2fe365d6391d3c949
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 618bef60e4f432cda70daeeeeabd8da7c858950a
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941565"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93067827"
 ---
 # <a name="ad-forest-recovery---raising-the-value-of-available-rid-pools"></a>Recuperación del bosque de AD: aumentar el valor de los grupos de RID disponibles
 
@@ -21,7 +21,7 @@ Utilice el siguiente procedimiento para elevar el valor de los grupos de IDENTIF
 
 ## <a name="about-active-directory-rid-pools-and-ridavailablepool"></a>Acerca de los grupos de RID de Active Directory y rIDAvailablePool
 
-Cada dominio tiene un objeto **CN = RID Manager $, CN = System, DC** =< *domain_name*>. Este objeto tiene un atributo denominado **rIDAvailablePool**. Este valor de atributo mantiene el espacio global de RID para un dominio completo. El valor es un entero grande con las partes superior e inferior. La parte superior define el número de entidades de seguridad que se pueden asignar para cada dominio (0x3FFFFFFF o simplemente en 1 mil millones). La parte inferior es el número de RID que se han asignado en el dominio.
+Cada dominio tiene un objeto **CN = RID Manager $, CN = System, DC** =< *domain_name* >. Este objeto tiene un atributo denominado **rIDAvailablePool** . Este valor de atributo mantiene el espacio global de RID para un dominio completo. El valor es un entero grande con las partes superior e inferior. La parte superior define el número de entidades de seguridad que se pueden asignar para cada dominio (0x3FFFFFFF o simplemente en 1 mil millones). La parte inferior es el número de RID que se han asignado en el dominio.
 
 > [!NOTE]
 > En Windows Server 2016 y 2012, el número de entidades de seguridad que se pueden asignar aumenta a más de 2 mil millones. Para obtener más información, consulte Administración de la [emisión de RID](./managing-rid-issuance.md).
@@ -34,15 +34,15 @@ Al aumentar el valor del entero grande, se aumenta el valor de la parte baja. Po
 
 ### <a name="to-raise-the-value-of-available-rid-pools-using-adsiedit-and-the-calculator"></a>Para elevar el valor de los grupos de RID disponibles mediante ADSIEdit y la calculadora
 
-1. Abra Administrador del servidor, haga clic en **herramientas** y en **Editor ADSI**.
-2. Haga clic con el botón secundario en, seleccione **conectar con** y conecte el contexto de nomenclatura predeterminado y haga clic en **Aceptar**.
+1. Abra Administrador del servidor, haga clic en **herramientas** y en **Editor ADSI** .
+2. Haga clic con el botón secundario en, seleccione **conectar con** y conecte el contexto de nomenclatura predeterminado y haga clic en **Aceptar** .
    ![Editor ADSI](media/AD-Forest-Recovery-Raise-RID-Pool/adsi1.png)
-3. Vaya a la siguiente ruta de acceso de nombre distintivo: **CN = RID Manager $, CN = System <domain name> , DC =**.
+3. Vaya a la siguiente ruta de acceso de nombre distintivo: **CN = RID Manager $, CN = System <domain name> , DC =** .
    ![Editor ADSI](media/AD-Forest-Recovery-Raise-RID-Pool/adsi2.png)
 3. Haga clic con el botón derecho y seleccione las propiedades de CN = RID Manager $.
-4. Seleccione el atributo **rIDAvailablePool**, haga clic en **Editar**y, a continuación, copie el valor entero grande en el portapapeles.
+4. Seleccione el atributo **rIDAvailablePool** , haga clic en **Editar** y, a continuación, copie el valor entero grande en el portapapeles.
    ![Editor ADSI](media/AD-Forest-Recovery-Raise-RID-Pool/adsi3.png)
-5. Inicie Calculator y, en el menú **Ver** , seleccione **modo científico**.
+5. Inicie Calculator y, en el menú **Ver** , seleccione **modo científico** .
 6. Agregue 100.000 al valor actual.
    ![Editor ADSI](media/AD-Forest-Recovery-Raise-RID-Pool/adsi4.png)
 7. Con Ctrl-c o el comando **copiar** del menú **edición** , copie el valor en el portapapeles.
@@ -53,21 +53,21 @@ Al aumentar el valor del entero grande, se aumenta el valor de la parte baja. Po
 ### <a name="to-raise-the-value-of-available-rid-pools-using-ldp"></a>Para elevar el valor de los grupos de RID disponibles mediante LDP
 
 1. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: **LDP**
-2. Haga clic en **conexión**, haga clic en **conectar**, escriba el nombre del administrador de RID y, a continuación, haga clic en **Aceptar**.
-   ![LPD](media/AD-Forest-Recovery-Raise-RID-Pool/ldp1.png)
-3. Haga clic en **conexión**, haga clic en **enlazar**, seleccione **enlazar con credenciales** , escriba sus credenciales administrativas y, a continuación, haga clic en **Aceptar**.
-   ![LPD](media/AD-Forest-Recovery-Raise-RID-Pool/ldp2.png)
-4. Haga clic en **Ver**, haga clic en **árbol** y escriba la siguiente ruta de acceso distintivo: CN = RID Manager $, CN = System, DC =*Domain Name* 
+2. Haga clic en **conexión** , haga clic en **conectar** , escriba el nombre del administrador de RID y, a continuación, haga clic en **Aceptar** .
+   ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp1.png)
+3. Haga clic en **conexión** , haga clic en **enlazar** , seleccione **enlazar con credenciales** , escriba sus credenciales administrativas y, a continuación, haga clic en **Aceptar** .
+   ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp2.png)
+4. Haga clic en **Ver** , haga clic en **árbol** y escriba la siguiente ruta de acceso distintivo: CN = RID Manager $, CN = System, DC = *Domain Name* 
     ![ LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp3.png)
-5. Haga clic en **examinar**y, a continuación, en **modificar**.
-6. Agregue 100.000 al valor actual de **rIDAvailablePool** y, a continuación, escriba la suma en **los valores**.
-7. En **DN**, escriba `cn=RID Manager$,cn=System,dc=` *<nombre \> de dominio*.
-8. En **Editar atributo de entrada**, escriba `rIDAvailablePool` .
-9. Seleccione **reemplazar** como la operación y, a continuación, haga clic en **entrar**.
-   ![LPD](media/AD-Forest-Recovery-Raise-RID-Pool/ldp4.png)
-10. Haga clic en **Ejecutar** para ejecutar la operación. Haga clic en **Cerrar**.
-11. Para validar el cambio, haga clic en **Ver**, en **árbol**y escriba la siguiente ruta de acceso de nombre distintivo: CN = RID Manager $, CN = System, DC =*Domain Name*.   Compruebe el atributo **rIDAvailablePool** .
-   ![LPD](media/AD-Forest-Recovery-Raise-RID-Pool/ldp5.png)
+5. Haga clic en **examinar** y, a continuación, en **modificar** .
+6. Agregue 100.000 al valor actual de **rIDAvailablePool** y, a continuación, escriba la suma en **los valores** .
+7. En **DN** , escriba `cn=RID Manager$,cn=System,dc=` *<nombre \> de dominio* .
+8. En **Editar atributo de entrada** , escriba `rIDAvailablePool` .
+9. Seleccione **reemplazar** como la operación y, a continuación, haga clic en **entrar** .
+   ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp4.png)
+10. Haga clic en **Ejecutar** para ejecutar la operación. Haga clic en **Cerrar** .
+11. Para validar el cambio, haga clic en **Ver** , en **árbol** y escriba la siguiente ruta de acceso de nombre distintivo: CN = RID Manager $, CN = System, DC = *Domain Name* .   Compruebe el atributo **rIDAvailablePool** .
+   ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp5.png)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

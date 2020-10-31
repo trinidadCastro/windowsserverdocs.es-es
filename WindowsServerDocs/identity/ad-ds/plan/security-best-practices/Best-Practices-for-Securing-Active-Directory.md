@@ -2,16 +2,16 @@
 ms.assetid: e2651dc8-4b31-4cd8-a400-3b8123890210
 title: Procedimientos recomendados para proteger Active Directory
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 444ba28da788ca5986b49eaf84675c1eacfe5522
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 79279cb5392234ad6516e9592e87356637782169
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941545"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069657"
 ---
 # <a name="best-practices-for-securing-active-directory"></a>Procedimientos recomendados para proteger Active Directory
 
@@ -29,7 +29,7 @@ En este documento se proporciona la perspectiva de un profesional y contiene un 
 
 -   [Reducción de la superficie expuesta a ataques de Active Directory](../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)
 
--   [Implementación de modelos administrativos con privilegios mínimos](../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)
+-   [Implementación de Least-Privilege modelos administrativos](../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)
 
 -   [Implementación de hosts administrativos seguros](../../../ad-ds/plan/security-best-practices/Implementing-Secure-Administrative-Hosts.md)
 

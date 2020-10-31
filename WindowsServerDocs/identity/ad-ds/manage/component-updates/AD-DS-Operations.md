@@ -1,17 +1,17 @@
 ---
 ms.assetid: 560dfa18-0398-4186-ba91-da03ab72c2d5
 title: Operaciones de AD DS
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: d48537f4b022b4e2e77a9c0bb5ff1a4cb684c762
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: d15fb4bf7454dae9baf87fbe24611e21eff37ad9
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940475"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93067537"
 ---
 # <a name="ad-ds-operations"></a>Operaciones de AD DS
 

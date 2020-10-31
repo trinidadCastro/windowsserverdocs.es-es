@@ -2,16 +2,16 @@
 ms.assetid: 6f50476c-a1f1-48fb-999b-76c4c3816496
 title: Planeación de compromiso
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 9be3768f4ac0f95c1c268d9a4efb55af3f74d304
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: b4cdd6d9383a27b97d3368903fed4b41fe5b5952
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941405"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069577"
 ---
 # <a name="planning-for-compromise"></a>Planeación de compromiso
 
@@ -92,7 +92,7 @@ Independientemente de si el bosque original contiene una serie de usuarios y sis
 
 5.  No permita la instalación de sistemas operativos o aplicaciones heredados en el bosque original. Si una aplicación no se puede actualizar y instalar de nuevo, déjela en el bosque heredado y considere la destrucción creativa para reemplazar la funcionalidad de la aplicación.
 
-### <a name="defining-a-limited-risk-based-migration-plan"></a>Definición de un plan de migración limitado y basado en riesgos
+### <a name="defining-a-limited-risk-based-migration-plan"></a>Definición de un plan de migración limitado Risk-Based
 La creación de un plan de migración limitado y basado en riesgos simplemente significa que, al decidir qué usuarios, aplicaciones y datos migrar a su bosque original, debe identificar los objetivos de migración en función del grado de riesgo al que se expone la organización si uno de los usuarios o sistemas está en peligro. Los usuarios VIP cuyas cuentas tengan más probabilidades de ser objetivo de los atacantes deben estar alojadas en el bosque original. Las aplicaciones que proporcionan funciones empresariales esenciales deben instalarse en servidores recién creados en el bosque original, y los datos altamente confidenciales se deben migrar a servidores protegidos en el bosque original.
 
 Si aún no tiene una imagen clara de la mayoría de los usuarios, sistemas, aplicaciones y datos críticos para la empresa en su entorno de Active Directory, trabaje con las unidades de negocio para identificarlas. Se debe identificar cualquier aplicación necesaria para que funcione la empresa, como si se hubiera almacenado algún servidor en el que se ejecuten aplicaciones críticas o datos críticos. Mediante la identificación de los usuarios y recursos necesarios para que la organización siga funcionando, debe crear una colección de activos con prioridades de forma natural en la que centrar los esfuerzos.
@@ -116,7 +116,7 @@ Para proporcionar a las nuevas cuentas de usuario acceso a los recursos del bosq
 ### <a name="servers-and-workstations"></a>Servidores y estaciones de trabajo
 En una migración tradicional de un bosque Active Directory a otro, la migración de equipos suele ser relativamente simple en comparación con la migración de usuarios, grupos y aplicaciones. En función del rol de equipo, la migración a un nuevo bosque puede ser tan simple como separar un dominio antiguo y unirse a uno nuevo. Sin embargo, la migración de cuentas de equipo intactas en un bosque puro anula el propósito de crear un nuevo entorno. En lugar de migrar cuentas de equipo (potencialmente en peligro, mal configuradas o no actualizadas) a un nuevo bosque, debe instalar los servidores y las estaciones de trabajo en el nuevo entorno. Puede migrar datos de sistemas del bosque heredado a sistemas del bosque original, pero no a los sistemas que hospedan los datos.
 
-### <a name="applications"></a>Aplicaciones
+### <a name="applications"></a>APLICACIONES
 
 Las aplicaciones pueden presentar el mayor desafío en cualquier migración de un bosque a otro, pero en el caso de una migración "no migratoria", uno de los principios más básicos que debe aplicar es que las aplicaciones del bosque original deben estar actualizadas, admitidas y actualizadas. Los datos se pueden migrar desde instancias de aplicación en el bosque anterior siempre que sea posible. En situaciones en las que una aplicación no se puede "volver a crear" en el bosque original, debería considerar métodos como la destrucción creativa o el aislamiento de aplicaciones heredadas, como se describe en la sección siguiente.
 

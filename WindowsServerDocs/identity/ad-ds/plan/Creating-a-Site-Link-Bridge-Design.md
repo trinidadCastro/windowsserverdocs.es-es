@@ -1,17 +1,17 @@
 ---
 ms.assetid: 64142026-07b5-4601-840a-c8dcf6ab9814
 title: Crear un diseño de puente vínculo de sitio
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: d4b4047ccdbe32a40f512c42182d15a41709db3d
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 190ded76c03c9f38edb0a2a0400a04b3adc69179
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941135"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069127"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>Crear un diseño de puente vínculo de sitio
 
@@ -21,7 +21,7 @@ Un puente de vínculo a sitios conecta dos o más vínculos a sitios y permite l
 
 De forma predeterminada, todos los vínculos a sitios son transitivos. Se recomienda mantener la transitividad habilitada si no se cambia el valor predeterminado de **enlazar todos los vínculos a sitios** (habilitado de forma predeterminada). Sin embargo, tendrá que deshabilitar **Bridge todos los vínculos a sitios** y completar un diseño de puente de vínculo a sitios si:
 
-- La red IP no está enrutada por completo. Cuando se deshabilita el **puente de todos los vínculos a sitios**, todos los vínculos a sitios se consideran no transitivos y se pueden crear y configurar objetos de puente de vínculos a sitios para modelar el comportamiento de enrutamiento real de la red.
+- La red IP no está enrutada por completo. Cuando se deshabilita el **puente de todos los vínculos a sitios** , todos los vínculos a sitios se consideran no transitivos y se pueden crear y configurar objetos de puente de vínculos a sitios para modelar el comportamiento de enrutamiento real de la red.
 - Debe controlar el flujo de replicación de los cambios realizados en Active Directory Domain Services (AD DS). Al deshabilitar **Bridge todos los vínculos a sitios** para el transporte IP de vínculo a sitios y configurar un puente de vínculo a sitios, el puente de vínculo a sitios se convierte en el equivalente de una red separada. Todos los vínculos a sitios dentro del puente de vínculos a sitios pueden enrutarse de manera transitiva, pero no se enrutan fuera del puente de vínculos a sitios.
 
 Para obtener más información sobre cómo usar el complemento sitios y servicios de Active Directory para deshabilitar la configuración **enlazar todos los vínculos a sitios** , consulte el artículo [habilitar o deshabilitar puentes de vínculos a sitios](/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10)).

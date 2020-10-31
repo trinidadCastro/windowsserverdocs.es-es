@@ -2,16 +2,16 @@
 ms.assetid: 8f994e2e-6c07-43f0-aef4-75f8b2c9a144
 title: Mantenimiento de un entorno más seguro
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7cde4344a28888c997cfb751b2943429fbc4e686
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 14cbe8a6610a370e20e338f3a09ab24f21334169
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941415"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069587"
 ---
 # <a name="maintaining-a-more-secure-environment"></a>Mantenimiento de un entorno más seguro
 
@@ -23,7 +23,7 @@ Cuando haya creado un entorno seguro y administrable para sus activos empresaria
 
 En algunos casos, es posible que la organización de ti ya tenga una estrecha relación de trabajo con las unidades de negocio, lo que facilitará la implementación de estas recomendaciones. En las organizaciones en las que los departamentos de ti y las unidades de negocio no están estrechamente vinculados, es posible que tenga que obtener primero el patrocinio ejecutivo de esfuerzos para falsificar una relación más estrecha entre ti y las unidades de negocio. El [Resumen Ejecutivo](../../../ad-ds/manage/component-updates/Executive-Summary.md) está pensado para ser útil como documento independiente para la revisión Ejecutiva y se puede difundir a los responsables de toma de decisiones de su organización.
 
-## <a name="creating-business-centric-security-practices-for-active-directory"></a>Creación de prácticas de seguridad centradas en el negocio para Active Directory
+## <a name="creating-business-centric-security-practices-for-active-directory"></a>Creación de Business-Centric prácticas de seguridad para Active Directory
 En el pasado, la tecnología de la información dentro de muchas organizaciones se veía como una estructura de soporte técnico y un centro de costos. Los departamentos de ti a menudo se segregan de usuarios empresariales y las interacciones están limitadas a un modelo de solicitud-respuesta en el que el negocio solicitó recursos y respondió.
 
 A medida que la tecnología ha evolucionado y proliferado, la visión de "un equipo en cada escritorio" ha ido pasando de forma eficaz para gran parte del mundo e incluso ha sido Eclipse en la amplia gama de tecnologías de fácil acceso disponibles hoy en día. La tecnología de la información ya no es una función de soporte técnico, sino que es una función empresarial principal. Si su organización no puede continuar funcionando si todos los servicios de ti no estuvieran disponibles, el negocio de su organización es, al menos, en la tecnología de la información.
@@ -39,7 +39,7 @@ Los datos de Active Directory deben tener un propietario empresarial identificad
 
 Si usa Active Directory para registrar la propiedad de los datos en el directorio o si implementa una base de datos independiente para el seguimiento de los recursos de ti, no se debe crear ninguna cuenta de usuario, no se debe instalar ningún servidor o estación de trabajo, y no se debe implementar ninguna aplicación sin un propietario designado de registro. El intento de establecer la propiedad de los sistemas una vez que se han implementado en producción puede ser un desafío lo mejor posible e imposible en algunos casos. Por lo tanto, se debe establecer la propiedad en el momento en que se introducen los datos en Active Directory.
 
-### <a name="implement-business-driven-lifecycle-management"></a>Implementación de la administración del ciclo de vida basado en negocios
+### <a name="implement-business-driven-lifecycle-management"></a>Implementación de la administración del ciclo de vida de Business-Driven
 La administración del ciclo de vida debe implementarse para todos los datos de Active Directory. Por ejemplo, cuando se introduce una nueva aplicación en un dominio de Active Directory, se espera que el propietario empresarial de la aplicación dé fe del uso continuado de la aplicación. Cuando se publica una nueva versión de una aplicación, se debe informar al propietario del negocio de la aplicación y decidir si se implementará la nueva versión.
 
 Si el propietario de una empresa decide no aprobar la implementación de una nueva versión de una aplicación, también debe recibir una notificación de la fecha en la que ya no se admitirá la versión actual y debe ser responsable de determinar si la aplicación se va a retirar o reemplazar. Mantener las aplicaciones heredadas en ejecución y no compatibles no debe ser una opción.
@@ -60,7 +60,7 @@ Dentro del modelo de clasificación de datos, debe incluir la clasificación de 
 ### <a name="systems"></a>Sistemas
 No solo se deben clasificar los datos, sino también sus rellenados de servidor. Para cada servidor, debe saber qué sistema operativo está instalado, qué roles generales proporciona el servidor, qué aplicaciones se están ejecutando en el servidor, el propietario de TI del registro y el propietario empresarial del registro, si procede. En el caso de todos los datos o aplicaciones que se ejecutan en el servidor, debe requerir la clasificación y el servidor debe protegerse según los requisitos de las cargas de trabajo que admite y las clasificaciones aplicadas al sistema y a los datos. También puede agrupar los servidores según la clasificación de sus cargas de trabajo, lo que le permite identificar rápidamente los servidores que deben ser los más supervisados y configurados de forma más rigurosa.
 
-### <a name="applications"></a>Aplicaciones
+### <a name="applications"></a>APLICACIONES
 Debe clasificar las aplicaciones por funcionalidad (lo que hacen), usuario base (que usa las aplicaciones) y el sistema operativo en el que se ejecutan. Debe mantener registros que contengan información de versión, estado de revisión y cualquier otra información pertinente. También debe clasificar las aplicaciones por los tipos de datos que administran, como se ha descrito anteriormente.
 
 ### <a name="users"></a>Usuarios

@@ -2,16 +2,16 @@
 ms.assetid: 0abe0976-4b49-45d6-a7b3-81d28bdb8210
 title: Recomendaciones de la directiva de auditoría
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 33ce3713f95b995fdab63b9e3bd27650fae58347
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 98751ae022d1915f5363e2ead110511bbb482f90
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938235"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069707"
 ---
 # <a name="audit-policy-recommendations"></a>Recomendaciones de la directiva de auditoría
 
@@ -35,7 +35,7 @@ Esta sección contiene tablas que enumeran las recomendaciones de configuración
 
 - Windows Server 2012
 
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 
 - Windows Server 2008
 
@@ -111,12 +111,12 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 | Auditar almacenamiento extraíble |  |  |  |
 | Auditar SAM |  |  |  |
 | Auditar almacenamiento provisional de directiva de acceso central |  |  |  |
-| **Cambio de directiva** |  |  |  |
+| **Cambio de Directiva** |  |  |  |
 | Auditar cambio de directiva de auditoría | Sí no | Sí sí | Sí sí |
 | Auditar cambio de directiva de autenticación | Sí no | Sí no | Sí sí |
 | Auditar cambio de directiva de autorización |  |  |  |
 | Auditar cambio de directiva de Plataforma de filtrado |  |  |  |
-| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Sí |
+| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Yes |
 | Auditar otros eventos de cambio de directiva |  |  |  |
 | **Uso de privilegios** |  |  |  |
 | Auditar uso de privilegios no confidenciales |  |  |  |
@@ -189,12 +189,12 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 | Auditar almacenamiento extraíble |  |  |  |
 | Auditar SAM |  |  |  |
 | Auditar almacenamiento provisional de directiva de acceso central |  |  |  |
-| **Cambio de directiva** |  |  |  |
+| **Cambio de Directiva** |  |  |  |
 | Auditar cambio de directiva de auditoría | Sí no | Sí sí | Sí sí |
 | Auditar cambio de directiva de autenticación | Sí no | Sí no | Sí sí |
 | Auditar cambio de directiva de autorización |  |  |  |
 | Auditar cambio de directiva de Plataforma de filtrado |  |  |  |
-| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Sí |
+| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Yes |
 | Auditar otros eventos de cambio de directiva |  |  |  |
 | **Uso de privilegios** |  |  |  |
 | Auditar uso de privilegios no confidenciales |  |  |  |

@@ -2,22 +2,22 @@
 ms.assetid: ac6604b0-7459-4ff3-af1c-4936897f5d14
 title: Delegar la administración de unidades organizativas y contenedores predeterminados
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 0ddd4e6853dfaf08cb04157554209f6725b79936
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 8f52ca20cce86c869f66ea9d0e2e795956a0c75f
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941465"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069417"
 ---
 # <a name="delegating-administration-of-default-containers-and-ous"></a>Delegar la administración de unidades organizativas y contenedores predeterminados
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Cada dominio de Active Directory contiene un conjunto estándar de contenedores y unidades organizativas (OU) que se crean durante la instalación de Active Directory Domain Services (AD DS). Entre ellas, figuran:
+Cada dominio de Active Directory contiene un conjunto estándar de contenedores y unidades organizativas (OU) que se crean durante la instalación de Active Directory Domain Services (AD DS). Entre ellas, se incluyen las siguientes:
 
 -   Contenedor de dominio, que actúa como contenedor raíz en la jerarquía
 

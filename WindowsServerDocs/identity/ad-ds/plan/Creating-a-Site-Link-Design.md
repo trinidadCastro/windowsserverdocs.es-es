@@ -1,17 +1,17 @@
 ---
 ms.assetid: 206b8072-1d0c-4a0b-ba8a-35a868d67b4c
 title: Crear un diseño de vínculo de sitio
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 881ca5f2d932a8e13aaa7467179360ca8bb4af66
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 390cc0d69fa4d43a957500c0078d53dcdc69c10c
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941145"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068777"
 ---
 # <a name="creating-a-site-link-design"></a>Crear un diseño de vínculo de sitio
 
@@ -21,7 +21,7 @@ Cree un diseño de vínculo de sitio para conectar sus sitios con vínculos a si
 
 ## <a name="connecting-sites-with-site-links"></a>Conexión de sitios con vínculos a sitios
 
-Para conectar sitios con vínculos a sitios, identifique los sitios miembro que desea conectar con el vínculo a sitios, cree un objeto de vínculo a sitios en el contenedor de transportes entre sitios correspondiente y, a continuación, asigne un nombre al vínculo de sitio. Después de crear el vínculo a sitios, puede continuar para establecer las propiedades de vínculo a sitio.
+Para conectar sitios con vínculos a sitios, identifique los sitios miembro que desea conectar con el vínculo a sitios, cree un objeto de vínculo a sitios en el contenedor de transportes correspondiente Inter-Site y, a continuación, asigne un nombre al vínculo a sitios. Después de crear el vínculo a sitios, puede continuar para establecer las propiedades de vínculo a sitio.
 
 Al crear vínculos a sitios, asegúrese de que todos los sitios se incluyen en un vínculo a sitios. Además, asegúrese de que todos los sitios estén conectados entre sí a través de otros vínculos a sitios para que los cambios se puedan replicar desde los controladores de dominio de cualquier sitio a todos los demás sitios. Si no lo hace, se genera un mensaje de error en el registro del servicio de directorio en Visor de eventos en el que se indica que la topología del sitio no está conectada.
 
@@ -29,12 +29,12 @@ Siempre que agregue sitios a un vínculo a sitios recién creado, determine si e
 
 Para identificar los sitios miembro que desea conectar con un vínculo a sitios, use la lista de ubicaciones y ubicaciones vinculadas que registró en la hoja de cálculo "ubicaciones geográficas y vínculos de comunicación" (DSSTOPO_1.doc). Si varios sitios tienen la misma conectividad y disponibilidad entre sí, puede conectarlos con el mismo vínculo a sitios.
 
-El contenedor de transportes entre sitios proporciona los medios para asignar vínculos de sitio al transporte que utiliza el vínculo. Cuando se crea un objeto de vínculo a sitios, se crea en el contenedor de IP, que asocia el vínculo a sitios con la llamada a procedimiento remoto (RPC) a través de un transporte IP o el contenedor de Protocolo simple de transferencia de correo (SMTP), que asocia el vínculo a sitios con el transporte SMTP.
+El contenedor de Inter-Site transportes proporciona los medios para asignar vínculos de sitio al transporte que utiliza el vínculo. Cuando se crea un objeto de vínculo a sitios, se crea en el contenedor de IP, que asocia el vínculo a sitios con la llamada a procedimiento remoto (RPC) a través de un transporte IP o el contenedor de Protocolo simple de transferencia de correo (SMTP), que asocia el vínculo a sitios con el transporte SMTP.
 
 > [!NOTE]
 > La replicación SMTP no se admitirá en versiones futuras de Active Directory Domain Services (AD DS); por lo tanto, no se recomienda crear objetos de vínculos de sitio en el contenedor de SMTP.
 
-Al crear un objeto de vínculo a sitios en el contenedor de transportes entre sitios correspondiente, AD DS usa RPC a través de IP para transferir la replicación entre sitios y entre los controladores de dominio. Para mantener los datos seguros mientras están en tránsito, la replicación de RPC sobre IP usa tanto el protocolo de autenticación Kerberos como el cifrado de datos.
+Cuando se crea un objeto de vínculo a sitios en el contenedor de transportes respectivo Inter-Site, AD DS utiliza RPC sobre IP para transferir la replicación entre sitios y entre los controladores de dominio. Para mantener los datos seguros mientras están en tránsito, la replicación de RPC sobre IP usa tanto el protocolo de autenticación Kerberos como el cifrado de datos.
 
 Cuando no hay disponible una conexión IP directa, puede configurar la replicación entre sitios para usar SMTP. Sin embargo, la funcionalidad de replicación de SMTP está limitada y requiere una entidad de certificación (CA) empresarial. SMTP solo puede replicar la configuración, el esquema y las particiones de directorio de aplicaciones, y no admite la replicación de particiones de directorio de dominio.
 

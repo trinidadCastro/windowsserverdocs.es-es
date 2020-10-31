@@ -1,17 +1,17 @@
 ---
 ms.assetid: 093ef1ae-ebc1-490f-9fb1-2c000ce89eb6
 title: Usar el modelo de bosque de dominio de la organización
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: a464d455712a5796844d5946cc9f6598bee9397e
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 8300633d39e8ba7e5b19bfe8703d0cd9357423b4
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940405"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069147"
 ---
 # <a name="using-the-organizational-domain-forest-model"></a>Usar el modelo de bosque de dominio de la organización
 
@@ -55,4 +55,4 @@ Tenga en cuenta que si un propietario del bosque delega la administración de se
 Todos los propietarios de dominios deben tener en cuenta que, si alguna de estas condiciones cambia en el futuro, podría ser necesario trasladar los dominios de la organización a una implementación de varios bosques.
 
 > [!NOTE]
-> Otra manera de minimizar los riesgos de seguridad en un dominio de Active Directory de Windows Server 2008 es emplear la separación de roles de administrador, que requiere la implementación de un controlador de dominio de solo lectura (RODC) en la infraestructura de Active Directory. Un RODC es un nuevo tipo de controlador de dominio en el sistema operativo Windows Server 2008 que hospeda particiones de solo lectura de la base de datos de Active Directory. Antes del lanzamiento de Windows Server 2008, cualquier trabajo de mantenimiento del servidor en un controlador de dominio debía ser realizado por un administrador de dominio. En Windows Server 2008, puede delegar permisos administrativos locales para un RODC a cualquier usuario del dominio sin conceder a ese usuario ningún derecho administrativo para el dominio u otros controladores de dominio. Esto permite que el usuario delegado inicie sesión en un RODC y realice el trabajo de mantenimiento, como la actualización de un controlador, en el servidor. Sin embargo, este usuario delegado no puede iniciar sesión en ningún otro controlador de dominio ni realizar ninguna otra tarea administrativa en el dominio. De esta manera, se puede delegar a cualquier usuario de confianza la capacidad de administrar de forma eficaz el RODC sin poner en peligro la seguridad del resto del dominio. Para obtener más información acerca de los RODC, vea [AD DS: Controladores de dominio de solo lectura](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10)).
+> Otra manera de minimizar los riesgos de seguridad en un dominio de Active Directory de Windows Server 2008 es emplear la separación de roles de administrador, que requiere la implementación de un controlador de dominio de solo lectura (RODC) en la infraestructura de Active Directory. Un RODC es un nuevo tipo de controlador de dominio en el sistema operativo Windows Server 2008 que hospeda particiones de solo lectura de la base de datos de Active Directory. Antes del lanzamiento de Windows Server 2008, cualquier trabajo de mantenimiento del servidor en un controlador de dominio debía ser realizado por un administrador de dominio. En Windows Server 2008, puede delegar permisos administrativos locales para un RODC a cualquier usuario del dominio sin conceder a ese usuario ningún derecho administrativo para el dominio u otros controladores de dominio. Esto permite que el usuario delegado inicie sesión en un RODC y realice el trabajo de mantenimiento, como la actualización de un controlador, en el servidor. Sin embargo, este usuario delegado no puede iniciar sesión en ningún otro controlador de dominio ni realizar ninguna otra tarea administrativa en el dominio. De esta manera, se puede delegar a cualquier usuario de confianza la capacidad de administrar de forma eficaz el RODC sin poner en peligro la seguridad del resto del dominio. Para obtener más información acerca de los RODC, vea [AD DS: Read-Only controladores de dominio](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10)).

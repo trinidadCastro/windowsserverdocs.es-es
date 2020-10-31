@@ -2,16 +2,16 @@
 ms.assetid: a7ef2fba-b05c-4be2-93b2-b9456244c3ad
 title: Supervisión de Active Directory en busca de indicios de riesgo
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 9b7aafb92b354181957c6c304ad9b366b4413e65
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: fb688e49e0c3a498ee3b5a2ed25801ea01bc37eb
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941425"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93069647"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Supervisión de Active Directory en busca de indicios de riesgo
 
@@ -88,7 +88,7 @@ Hay docenas de derechos de usuario y permisos en Windows (por ejemplo, iniciar s
 ##### <a name="audit-process-tracking"></a>Auditar el seguimiento de procesos
 Esta configuración de directiva determina si se debe auditar información detallada de seguimiento de procesos para eventos como la activación de programas, la salida de procesos, la duplicación de identificadores y el acceso a objetos indirectos. Resulta útil para realizar el seguimiento de usuarios malintencionados y los programas que usan.
 
-Al habilitar el seguimiento de procesos de auditoría, se genera un gran número de eventos, por lo que normalmente se establece en **sin auditoría**. Sin embargo, esta configuración puede proporcionar una gran ventaja durante una respuesta a un incidente desde el registro detallado de los procesos iniciados y el momento en que se iniciaron. En el caso de los controladores de dominio y otros servidores de infraestructura de rol único, esta categoría se puede activar de forma segura en todo momento. Los servidores de rol único no generan mucho tráfico de seguimiento de procesos durante el curso normal de sus tareas. Como tal, se pueden habilitar para capturar eventos no autorizados si se producen.
+Al habilitar el seguimiento de procesos de auditoría, se genera un gran número de eventos, por lo que normalmente se establece en **sin auditoría** . Sin embargo, esta configuración puede proporcionar una gran ventaja durante una respuesta a un incidente desde el registro detallado de los procesos iniciados y el momento en que se iniciaron. En el caso de los controladores de dominio y otros servidores de infraestructura de rol único, esta categoría se puede activar de forma segura en todo momento. Los servidores de rol único no generan mucho tráfico de seguimiento de procesos durante el curso normal de sus tareas. Como tal, se pueden habilitar para capturar eventos no autorizados si se producen.
 
 ##### <a name="system-events-audit"></a>Auditoría de eventos del sistema
 
@@ -195,11 +195,11 @@ Esta subcategoría informa de información detallada acerca de la información r
 
 #### <a name="logonlogoff"></a>Inicio/cierre de sesión
 
-##### <a name="logon"></a>Iniciar sesión
-Esta subcategoría informa cuando un usuario intenta iniciar sesión en el sistema. Estos eventos se producen en el equipo al que se accede. En el caso de los inicios de sesión interactivos, la generación de estos eventos se produce en el equipo en el que se ha iniciado sesión. Si se produce un inicio de sesión de red para tener acceso a un recurso compartido, estos eventos se generan en el equipo que hospeda el recurso al que se accede. Si esta opción se configura como **sin auditoría**, es difícil o imposible determinar qué usuario ha tenido acceso o ha intentado tener acceso a los equipos de la organización.
+##### <a name="logon"></a>Inicio de sesión
+Esta subcategoría informa cuando un usuario intenta iniciar sesión en el sistema. Estos eventos se producen en el equipo al que se accede. En el caso de los inicios de sesión interactivos, la generación de estos eventos se produce en el equipo en el que se ha iniciado sesión. Si se produce un inicio de sesión de red para tener acceso a un recurso compartido, estos eventos se generan en el equipo que hospeda el recurso al que se accede. Si esta opción se configura como **sin auditoría** , es difícil o imposible determinar qué usuario ha tenido acceso o ha intentado tener acceso a los equipos de la organización.
 
 ##### <a name="network-policy-server"></a>Servidor de directivas de redes
-Esta subcategoría informa de los eventos generados por las solicitudes de acceso de usuario de RADIUS (IAS) y protección de acceso a redes (NAP). Estas solicitudes se pueden **conceder**, **denegar**, **descartar**, **poner en cuarentena**, **bloquear**y **desbloquear**. La auditoría de esta configuración dará como resultado un volumen medio o alto de registros en los servidores NPS e IAS.
+Esta subcategoría informa de los eventos generados por las solicitudes de acceso de usuario de RADIUS (IAS) y protección de acceso a redes (NAP). Estas solicitudes se pueden **conceder** , **denegar** , **descartar** , **poner en cuarentena** , **bloquear** y **desbloquear** . La auditoría de esta configuración dará como resultado un volumen medio o alto de registros en los servidores NPS e IAS.
 
 ##### <a name="ipsec-main-mode"></a>Modo principal de IPsec
 Esta subcategoría informa de los resultados del protocolo Intercambio de claves por red (IKE) y protocolo de Internet autenticado (AuthIP) durante las negociaciones de modo principal.
@@ -211,7 +211,7 @@ Esta subcategoría informa de los resultados de AuthIP durante las negociaciones
 Esta subcategoría informa de otros eventos relacionados con el inicio de sesión y el cierre de sesión, como Servicios de Escritorio remoto sesión se desconecta y se vuelve a conectar, mediante runas para ejecutar procesos en una cuenta diferente y bloquear y desbloquear una estación de trabajo.
 
 ##### <a name="logoff"></a>La opción de cierre de sesión
-Esta subcategoría informa cuando un usuario cierra la sesión del sistema. Estos eventos se producen en el equipo al que se accede. En el caso de los inicios de sesión interactivos, la generación de estos eventos se produce en el equipo en el que se ha iniciado sesión. Si se produce un inicio de sesión de red para tener acceso a un recurso compartido, estos eventos se generan en el equipo que hospeda el recurso al que se accede. Si esta opción se configura como **sin auditoría**, es difícil o imposible determinar qué usuario ha tenido acceso o ha intentado tener acceso a los equipos de la organización.
+Esta subcategoría informa cuando un usuario cierra la sesión del sistema. Estos eventos se producen en el equipo al que se accede. En el caso de los inicios de sesión interactivos, la generación de estos eventos se produce en el equipo en el que se ha iniciado sesión. Si se produce un inicio de sesión de red para tener acceso a un recurso compartido, estos eventos se generan en el equipo que hospeda el recurso al que se accede. Si esta opción se configura como **sin auditoría** , es difícil o imposible determinar qué usuario ha tenido acceso o ha intentado tener acceso a los equipos de la organización.
 
 ##### <a name="account-lockout"></a>Bloqueo de cuenta
 Esta subcategoría informa cuando se bloquea la cuenta de un usuario como resultado de demasiados intentos de inicio de sesión incorrectos.
@@ -233,8 +233,8 @@ Esta subcategoría informa de los cambios en la Directiva de autenticación.
 ##### <a name="authorization-policy-change"></a>Cambio de directiva de autorización
 Esta subcategoría informa de los cambios en la Directiva de autorización, incluidos los cambios de permisos (DACL).
 
-##### <a name="mpssvc-rule-level-policy-change"></a>Cambio de directiva de nivel de regla de MPSSVC
-Esta subcategoría informa de los cambios en las reglas de directiva usadas por el servicio de protección de Microsoft (MPSSVC.exe). El Firewall de Windows usa este servicio.
+##### <a name="mpssvc-rule-level-policy-change"></a>Cambio de directiva de Rule-Level de MPSSVC
+Esta subcategoría informa de los cambios en las reglas de directiva usadas por el servicio de protección de Microsoft (MPSSVC.exe). Firewall de Windows usa este servicio.
 
 ##### <a name="filtering-platform-policy-change"></a>Filtrar cambio de directiva de plataforma
 Esta subcategoría informa de la adición y eliminación de objetos de WFP, incluidos los filtros de inicio. Estos eventos pueden ser muy altos en el volumen.
@@ -258,7 +258,7 @@ Esta configuración de directiva de seguridad no se usa actualmente.
 ##### <a name="file-system"></a>Sistema de archivos
 Esta subcategoría informa de Cuándo se tiene acceso a los objetos del sistema de archivos. Solo los objetos del sistema de archivos con SACL provocan que se generen eventos de auditoría y solo cuando se tiene acceso a ellos de forma que coincidan con sus entradas SACL. Por sí solo, esta configuración de Directiva no provocará la auditoría de ningún evento. Determina si se debe auditar el evento de un usuario que tiene acceso a un objeto del sistema de archivos que tiene una lista de control de acceso de sistema (SACL) especificada, lo que permite que se realice la auditoría.
 
-Si el valor auditar el acceso a objetos se configura como **correcto**, se genera una entrada de auditoría cada vez que un usuario obtiene acceso correctamente a un objeto con una SACL especificada. Si esta configuración de Directiva se configura como **error**, se genera una entrada de auditoría cada vez que un usuario produce un error al intentar obtener acceso a un objeto con una SACL especificada.
+Si el valor auditar el acceso a objetos se configura como **correcto** , se genera una entrada de auditoría cada vez que un usuario obtiene acceso correctamente a un objeto con una SACL especificada. Si esta configuración de Directiva se configura como **error** , se genera una entrada de auditoría cada vez que un usuario produce un error al intentar obtener acceso a un objeto con una SACL especificada.
 
 ##### <a name="registry"></a>Registro
 Esta subcategoría informa cuando se tiene acceso a los objetos del registro. Solo los objetos del registro con SACL provocan que se generen eventos de auditoría y solo cuando se tiene acceso a ellos de forma que coincidan con sus entradas SACL. Por sí solo, esta configuración de Directiva no provocará la auditoría de ningún evento.
@@ -321,11 +321,11 @@ La Directiva de auditoría de Windows se puede establecer mediante directivas de
 
 ### <a name="setting-windows-audit-policy-by-using-group-policy"></a>Configuración de la Directiva de auditoría de Windows mediante directiva de grupo
 
-Para establecer la Directiva de auditoría mediante directivas de grupo, configure las categorías de auditoría adecuadas que se encuentran en configuración de equipo \ configuración de seguridad\Directivas **Locales\directiva Directiva** (consulte la siguiente captura de pantalla para obtener un ejemplo del editor de directivas de grupo local (gpedit. msc)). Cada categoría de directiva de auditoría se puede habilitar para eventos **correctos**, **erróneos**, o **correctos** y erróneos.
+Para establecer la Directiva de auditoría mediante directivas de grupo, configure las categorías de auditoría adecuadas que se encuentran en configuración de equipo \ configuración de seguridad\Directivas **Locales\directiva Directiva** (consulte la siguiente captura de pantalla para obtener un ejemplo del editor de directivas de grupo local (gpedit. msc)). Cada categoría de directiva de auditoría se puede habilitar para eventos **correctos** , **erróneos** , o **correctos** y erróneos.
 
 ![supervisar AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_6.gif)
 
-La Directiva de auditoría avanzada se puede establecer mediante el Active Directory o las directivas de grupo local. Para establecer la Directiva de auditoría avanzada, configure las subcategorías adecuadas que se encuentran en configuración de equipo \ \ \ \ \ **Directiva de auditoría de seguridad\directiva** (consulte la siguiente captura de pantalla para obtener un ejemplo del editor de directivas de grupo local (gpedit. msc)). Cada subcategoría de directiva de auditoría se puede habilitar para eventos **correctos**, **erróneos**, o **correctos** y **erróneos** .
+La Directiva de auditoría avanzada se puede establecer mediante el Active Directory o las directivas de grupo local. Para establecer la Directiva de auditoría avanzada, configure las subcategorías adecuadas que se encuentran en configuración de equipo \ \ \ \ \ **Directiva de auditoría de seguridad\directiva** (consulte la siguiente captura de pantalla para obtener un ejemplo del editor de directivas de grupo local (gpedit. msc)). Cada subcategoría de directiva de auditoría se puede habilitar para eventos **correctos** , **erróneos** , o **correctos** y **erróneos** .
 
 ![supervisar AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)
 
@@ -364,13 +364,13 @@ Auditpol.exe se puede usar para guardar y restaurar una directiva de auditoría 
 
 `auditpol /restore /file:<filename>` : Se usa para importar un archivo de directiva de auditoría guardado previamente en una directiva de auditoría local.
 
-`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>` -Si esta configuración de directiva de auditoría está habilitada, hace que el sistema se detenga inmediatamente (con STOP: C0000244 {Audit FAIL} Message) si no se puede registrar una auditoría de seguridad por alguna razón. Normalmente, un evento no se registra cuando el registro de auditoría de seguridad está lleno y el método de retención especificado para el registro de seguridad **no sobrescribe eventos** o **sobrescribe eventos por días**. Normalmente solo lo habilitan los entornos que necesitan una mayor garantía de que el registro de seguridad está registrando. Si está habilitada, los administradores deben observar atentamente el tamaño del registro de seguridad y girar los registros según sea necesario. También se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: apagar el sistema inmediatamente si no se pueden registrar las auditorías de seguridad** (valor predeterminado = deshabilitado).
+`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>` -Si esta configuración de directiva de auditoría está habilitada, hace que el sistema se detenga inmediatamente (con STOP: C0000244 {Audit FAIL} Message) si no se puede registrar una auditoría de seguridad por alguna razón. Normalmente, un evento no se registra cuando el registro de auditoría de seguridad está lleno y el método de retención especificado para el registro de seguridad **no sobrescribe eventos** o **sobrescribe eventos por días** . Normalmente solo lo habilitan los entornos que necesitan una mayor garantía de que el registro de seguridad está registrando. Si está habilitada, los administradores deben observar atentamente el tamaño del registro de seguridad y girar los registros según sea necesario. También se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: apagar el sistema inmediatamente si no se pueden registrar las auditorías de seguridad** (valor predeterminado = deshabilitado).
 
 `auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>` : Esta configuración de directiva de auditoría determina si se debe auditar el acceso de los objetos globales del sistema. Si esta directiva está habilitada, hace que los objetos del sistema, como exclusiones mutuas, eventos, semáforos y dispositivos DOS, se creen con una lista de control de acceso de sistema (SACL) predeterminada. La mayoría de los administradores consideran que las auditorías de objetos globales del sistema son demasiado "ruidosos" y solo lo habilitan si se sospecha de ataques malintencionados. Solo se proporciona una SACL a los objetos con nombre. Si la Directiva auditar el acceso a objetos (o la subcategoría de auditoría de objetos de kernel) también está habilitada, se audita el acceso a estos objetos del sistema. Al configurar esta configuración de seguridad, los cambios no surtirán efecto hasta que reinicie Windows. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad auditar el acceso de objetos globales del sistema (valor predeterminado = deshabilitado).
 
 `auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>` : Esta configuración de directiva de auditoría especifica que los objetos de kernel con nombre (como exclusiones mutuas y semáforos) deben recibir las SACL cuando se crean. AuditBaseDirectories afecta a los objetos de contenedor, mientras que AuditBaseObjects afecta a objetos que no pueden contener otros objetos.
 
-`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>` : Esta configuración de directiva de auditoría especifica si el cliente genera un evento cuando uno o varios de estos privilegios se asignan a un token de seguridad de usuario: AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege, TakeOwnershipPrivilege y TcbPrivilege. Si esta opción no está habilitada (valor predeterminado = deshabilitado), los privilegios BackupPrivilege y RestorePrivilege no se registran. La habilitación de esta opción puede hacer que el registro de seguridad sea extremadamente ruidoso (a veces cientos de eventos por segundo) durante una operación de copia de seguridad. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: auditar el uso de los privilegios de copia de seguridad y restauración**.
+`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>` : Esta configuración de directiva de auditoría especifica si el cliente genera un evento cuando uno o varios de estos privilegios se asignan a un token de seguridad de usuario: AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege, TakeOwnershipPrivilege y TcbPrivilege. Si esta opción no está habilitada (valor predeterminado = deshabilitado), los privilegios BackupPrivilege y RestorePrivilege no se registran. La habilitación de esta opción puede hacer que el registro de seguridad sea extremadamente ruidoso (a veces cientos de eventos por segundo) durante una operación de copia de seguridad. Esta Directiva también se puede establecer con directiva de grupo modificando la opción de seguridad **Auditoría: auditar el uso de los privilegios de copia de seguridad y restauración** .
 
 > [!NOTE]
 > La información que se proporciona aquí se tomó del [tipo de opción de auditoría](/openspecs/windows_protocols/ms-gpac/262a2bed-93d4-4c04-abec-cf06e9ec72fd) de Microsoft y de la herramienta SCM de Microsoft.
@@ -379,7 +379,7 @@ Auditpol.exe se puede usar para guardar y restaurar una directiva de auditoría 
 
 En Windows Server 2012, Windows Server 2008 R2, Windows Server 2008, Windows 8, Windows 7 y Windows Vista, los administradores pueden optar por habilitar las nueve categorías tradicionales o usar las subcategorías. Se trata de una elección binaria que debe realizarse en cada sistema de Windows. Puede habilitar las categorías principales o el subcategoriesit no puede ser ambos.
 
-Para evitar que la Directiva de categoría tradicional heredada sobrescriba las subcategorías de la Directiva de auditoría, debe habilitar la configuración de la **Subcategoría forzar Directiva de auditoría (Windows Vista o posterior) para invalidar** la configuración de la categoría configuración de categorías de directiva de auditoría ubicada en configuración del equipo \ configuración de seguridad\Directivas **locales\Opciones**de directivas.
+Para evitar que la Directiva de categoría tradicional heredada sobrescriba las subcategorías de la Directiva de auditoría, debe habilitar la configuración de la **Subcategoría forzar Directiva de auditoría (Windows Vista o posterior) para invalidar** la configuración de la categoría configuración de categorías de directiva de auditoría ubicada en configuración del equipo \ configuración de seguridad\Directivas **locales\Opciones** de directivas.
 
 Se recomienda que las subcategorías estén habilitadas y configuradas en lugar de las nueve categorías principales. Esto requiere que se habilite una configuración de directiva de grupo (para permitir que las subcategorías invaliden las categorías de auditoría) junto con la configuración de las diferentes subcategorías que admiten las directivas de auditoría.
 

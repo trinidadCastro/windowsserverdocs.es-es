@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación del bosque de AD: agregar el GC'
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 00a95269891074f95184c52f5244176f18de7b37
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 91f638c5a73b334c63a1ce765aaf0fb776806d5d
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939945"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93067997"
 ---
 # <a name="ad-forest-recovery---adding-the-gc"></a>Recuperación del bosque de AD: agregar el GC
 
@@ -21,10 +21,10 @@ Utilice el procedimiento siguiente para agregar el catálogo global a un control
 
 ## <a name="to-add-the-global-catalog"></a>Para agregar el catálogo global
 
-1. Haga clic en **Inicio**, seleccione **todos los programas**, seleccione **herramientas administrativas**y, a continuación, haga clic en **Active Directory sitios y servicios**.
+1. Haga clic en **Inicio** , seleccione **todos los programas** , seleccione **herramientas administrativas** y, a continuación, haga clic en **Active Directory sitios y servicios** .
 2. En el árbol de consola, expanda el contenedor **sitios** y, a continuación, seleccione el sitio adecuado que contiene el servidor de destino.
 3. Expanda el contenedor **servidores** y, a continuación, expanda el objeto de servidor del controlador de dominio al que desea agregar el catálogo global.
-4. Haga clic con el botón secundario en **configuración NTDS**y, a continuación, haga clic en **propiedades**.
+4. Haga clic con el botón secundario en **configuración NTDS** y, a continuación, haga clic en **propiedades** .
 5. Active la casilla **catálogo global** .
 ![Agregar GC](media/AD-Forest-Recovery-Add-GC/addgc1.png)
 
@@ -47,7 +47,7 @@ Las siguientes son formas de acelerar el proceso de agregar el catálogo global 
    ```
 
    ```
-   repadmin /options DSA -Disable_NTDSCONN_XLATE
+   repadmin /options DSA -Disable_NTDSCONN_XLATE
    ```
 
    El formato de *SourceDomainControllerCNAME* es:
