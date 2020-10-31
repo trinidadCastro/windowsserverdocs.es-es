@@ -2,22 +2,22 @@
 ms.assetid: 40bc24b1-2e7d-4e77-bd0f-794743250888
 title: Unicidad de SPN y UPN
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: cafbc577bd025fc30f409385f51f6981fb3ab81d
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: c41b532b6be241a937500485aca723e391ff9210
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941385"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070727"
 ---
 # <a name="spn-and-upn-uniqueness"></a>Unicidad de SPN y UPN
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-**Autor**: Diego Turner, Ingeniero de soporte técnico de nivel superior con el grupo de Windows
+**Autor** : Diego Turner, Ingeniero de soporte técnico de nivel superior con el grupo de Windows
 
 > [!NOTE]
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.
@@ -179,11 +179,11 @@ DN: CN=Dianne Hunt2\0ADEL:dd3ab8a4-3005-4f2f-814f-d6fc54a1a1c0,CN=Deleted Object
 
 -   Seleccione el botón de radio **convertir en LDAP**
 
--   Tipo **(userPrincipalName =*ConflictingUPN*)**
+-   Tipo **(userPrincipalName = *ConflictingUPN* )**
 
-    -   Reemplace ***ConflictingUPN*** por el UPN real que está en conflicto.
+    -   Reemplace * *_ConflictingUPN_* _ por el UPN real que está en conflicto.
 
--   Seleccione **aplicar**
+-   Seleccionar _ *aplicar**
 
 ![Unicidad de SPN y UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig13_GlobalSearch.gif)
 
@@ -209,7 +209,7 @@ Para anular el atributo UserPrincipalName mediante Windows PowerShell:
 
 **Figura SEQ figura el \\ \* mensaje de error árabe 8 mostrado en ADSIEdit cuando se ha bloqueado la adición del SPN duplicado**
 
-Registrado en el registro de eventos de servicios de directorio es un **ACTIVEDIRECTORY_DOMAINSERVICE** ID. de evento **2974**.
+Registrado en el registro de eventos de servicios de directorio es un **ACTIVEDIRECTORY_DOMAINSERVICE** ID. de evento **2974** .
 
 ```
 Operation failed. Error code: 0x21c7
@@ -229,9 +229,9 @@ servicePrincipalName Value=<SPN>
 
     -   No se requiere ninguna llamada a offbox, la consulta se puede satisfacer localmente
 
-    -   ***Caso de UPN***
+    -   **_Caso de UPN_* _
 
-        -   Consulta el índice UPN de todo el bosque local para el UPN proporcionado (*userPrincipalName; índice global*)
+        -   Consulta el índice UPN de todo el bosque local para el UPN proporcionado (_userPrincipalName; un índice global *)
 
             -   Si las entradas devueltas = = 0-> escritura continúa
 
@@ -245,9 +245,9 @@ servicePrincipalName Value=<SPN>
 
                         *ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST*
 
-    -   ***Caso de SPN***
+    -   ***Caso de SPN** _
 
-        -   Consulta el índice de SPN para todo el bosque local para el SPN proporcionado (*ServicePrincipalName; un índice global*)
+        -   Consulta el índice de SPN para todo el bosque local para el SPN proporcionado (_servicePrincipalName; un índice global *)
 
             -   Si las entradas devueltas = = 0-> escritura continúa
 
@@ -269,9 +269,9 @@ servicePrincipalName Value=<SPN>
 
         -   Evento registrado para indicar
 
-    -   ***Caso de UPN***
+    -   **_Caso de UPN_* _
 
-        -   ¿Enviar consulta LDAP al catálogo global más cercano? consultar el índice UPN de todo el bosque de GC para el UPN proporcionado (*userPrincipalName; índice global*)
+        -   ¿Enviar consulta LDAP al catálogo global más cercano? consultar el índice UPN de todo el bosque de GC para el UPN proporcionado (_userPrincipalName; un índice global *)
 
             -   Si las entradas devueltas = = 0-> escritura continúa
 
@@ -285,9 +285,9 @@ servicePrincipalName Value=<SPN>
 
                         *ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST*
 
-    -   ***Caso de SPN***
+    -   ***Caso de SPN** _
 
-        -   ¿Enviar consulta LDAP al catálogo global más cercano? consultar el índice de SPN para todo el bosque de GC para el SPN proporcionado (*ServicePrincipalName; un índice global*)
+        -   ¿Enviar consulta LDAP al catálogo global más cercano? consultar el índice de SPN para todo el bosque de GC para el SPN proporcionado (_servicePrincipalName; un índice global *)
 
             -   Si las entradas devueltas = = 0-> escritura continúa
 
@@ -320,10 +320,10 @@ Cuando se vuelven a animar los objetos eliminados, se comprueba la unicidad de l
 Si alguno de los nuevos valores de SPN es un duplicado, se producirá un error en la modificación. En la lista anterior, los atributos importantes son ATT_DNS_HOST_NAME (nombre del equipo) y ATT_SAM_ACCOUNT_NAME (nombre de cuenta SAM).
 
 ### <a name="try-this-exploring-spn-and-upn-uniqueness"></a>Pruebe lo siguiente: explorar la unicidad de SPN y UPN
-Esta es la primera de varias actividades "**pruebe esto**" en el módulo.  No hay ninguna guía de laboratorio independiente para este módulo.  La **prueba de estas** actividades es esencialmente actividades de forma libre que le permiten explorar el material de la lección en el entorno de laboratorio.  Tiene la opción de seguir el símbolo del sistema o salir del script y obtener su propia actividad.
+Esta es la primera de varias actividades " **pruebe esto** " en el módulo.  No hay ninguna guía de laboratorio independiente para este módulo.  La **prueba de estas** actividades es esencialmente actividades de forma libre que le permiten explorar el material de la lección en el entorno de laboratorio.  Tiene la opción de seguir el símbolo del sistema o salir del script y obtener su propia actividad.
 
 > [!NOTE]
-> -   Esta es la primera de varias actividades "**pruebe esto**".
+> -   Esta es la primera de varias actividades " **pruebe esto** ".
 > -   No hay ninguna guía de laboratorio independiente para este módulo.
 > -   La **prueba de estas** actividades es esencialmente actividades de forma libre que le permiten explorar el material de la lección en el entorno de laboratorio.
 > -   Tiene la opción de seguir el símbolo del sistema o salir del script y obtener su propia actividad.

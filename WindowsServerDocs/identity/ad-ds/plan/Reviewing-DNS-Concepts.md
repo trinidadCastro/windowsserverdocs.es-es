@@ -1,17 +1,17 @@
 ---
 ms.assetid: 133474ee-316d-4b1c-acc6-ad5434a064d5
 title: Revisar los conceptos de DNS
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 20192d56aded75f5a178a600067b26c8c23286fb
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 2b657660fbdba7f3f0750f4376f5f5c698b279a2
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938585"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070067"
 ---
 # <a name="reviewing-dns-concepts"></a>Revisar los conceptos de DNS
 

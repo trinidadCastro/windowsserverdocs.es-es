@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación de bosque de AD: volver a implementar los controladores de DC restantes'
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: d75a379ea9e413bd0555e1bee81b4bbe0c201650
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: d3d826e0ec587289671723a4bd78d0d669189428
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938915"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070817"
 ---
 # <a name="ad-forest-recovery---redeploy-remaining-dcs"></a>Recuperación de bosque de AD: volver a implementar los controladores de DC restantes
 
@@ -38,7 +38,7 @@ Tenga en cuenta los siguientes puntos adicionales para cada DC de réplica recup
 - No hay ninguna restricción en el nombre de host del controlador de dominio virtualizado clonado o del servidor en el que desea instalar AD DS. Puede usar un nuevo nombre de host o el nombre de host que estaba en uso previamente. Para obtener más información acerca de la sintaxis de nombre de host DNS, vea [crear nombres de equipos DNS](/previous-versions/windows/it-pro/windows-server-2003/cc785282(v=ws.10)) ( [https://go.microsoft.com/fwlink/?LinkId=74564](https://go.microsoft.com/fwlink/?LinkId=74564) ).
 - Configure cada servidor con el primer servidor DNS del bosque (el primer DC que se restauró en el dominio raíz) como servidor DNS preferido en las propiedades TCP/IP de su adaptador de red. Para obtener más información, vea [configurar TCP/IP para utilizar DNS](/previous-versions/windows/it-pro/windows-server-2003/cc779282(v=ws.10)).
 - Vuelva a implementar todos los RODC en el dominio, ya sea mediante la clonación de DC virtualizado si se implementan varios RODC en una ubicación central, o mediante el método tradicional de regenerarlos quitando y reinstalando AD DS si se implementan de forma individual en ubicaciones aisladas, como las sucursales.
-   - La regeneración de los RODC garantiza que no contengan objetos persistentes y puede ayudar a evitar que se produzcan conflictos de replicación posteriormente. Cuando quite AD DS de un RODC, *Elija la opción para conservar los metadatos de DC*. El uso de esta opción conserva la cuenta krbtgt del RODC y conserva los permisos de la cuenta de administrador de RODC delegada y el Directiva de replicación de contraseñas (PRP), y evita tener que usar credenciales de administrador de dominio para quitar y volver a instalar AD DS en un RODC. También conserva los roles de servidor DNS y catálogo global si están instalados en el RODC originalmente.
+   - La regeneración de los RODC garantiza que no contengan objetos persistentes y puede ayudar a evitar que se produzcan conflictos de replicación posteriormente. Cuando quite AD DS de un RODC, *Elija la opción para conservar los metadatos de DC* . El uso de esta opción conserva la cuenta krbtgt del RODC y conserva los permisos de la cuenta de administrador de RODC delegada y el Directiva de replicación de contraseñas (PRP), y evita tener que usar credenciales de administrador de dominio para quitar y volver a instalar AD DS en un RODC. También conserva los roles de servidor DNS y catálogo global si están instalados en el RODC originalmente.
    - Al volver a generar los controladores de DC (RODC o DC grabables), es posible que haya aumentado el tráfico de replicación durante la reinstalación. Para ayudar a reducir el impacto, puede escalonar la programación de las instalaciones del RODC y puede usar la opción instalar desde medios (IFM). Si usa la opción IFM, ejecute el comando **Ntdsutil IFM** en un controlador de dominio grabable en el que confíe para que esté libre de datos dañados. Esto ayuda a evitar que aparezcan posibles daños en el RODC una vez completada la reinstalación de AD DS. Para obtener más información acerca de IFM, consulte [instalación de AD DS desde un medio](./managing-rid-issuance.md).
    - Para obtener más información acerca de cómo volver a generar los RODC, consulte [eliminación y reinstalación de RODC](/previous-versions/windows/it-pro/windows-server-2003/cc779282(v=ws.10)).
 - Si un controlador de dominio estaba ejecutando el servicio servidor DNS antes de que el bosque funcione correctamente, instale y configure el servicio servidor DNS durante la instalación de AD DS. De lo contrario, configure los clientes DNS anteriores con otros servidores DNS.

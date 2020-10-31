@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: f81e77b0de231a03bcaa0cfe6877b1e67dd081db
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 62098234f75a35d5c7ab4d386e5d2ce41aaa3641
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989570"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071147"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Información general sobre máquinas virtuales blindadas y tejido protegido
 
@@ -34,7 +34,7 @@ Cuando un inquilino crea máquinas virtuales blindadas que se ejecutan en un tej
 
 ## <a name="video-introduction-to-shielded-virtual-machines"></a>Vídeo: Introducción a las máquinas virtuales blindadas
 
-> [!VIDEO https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016]
+> [!VIDEO https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016/player]
 
 ## <a name="attestation-modes-in-the-guarded-fabric-solution"></a>Modos de atestación de la solución de tejido protegido
 
@@ -104,8 +104,8 @@ En la tabla siguiente se resumen las diferencias entre las máquinas virtuales b
 |Cifrar el estado de la máquina virtual y tráfico de migración en vivo | Sí, necesario pero configurable |  Sí, necesario y exigido  |
 |Componentes de integración | Configurable por el administrador de tejido      | Algunos componentes de integración bloqueados (por ejemplo, intercambio de datos, PowerShell Direct) |
 |Conexión a máquina virtual (consola), dispositivos HID (por ejemplo, teclado, mouse) | Activado, no se puede deshabilitar | Habilitada en hosts a partir de la versión 1803 de Windows Server; Deshabilitado en hosts anteriores |
-|Puertos COM/serie   | Compatible                             | Deshabilitado (no se puede habilitar) |
-|Asociar un depurador (al proceso de la máquina virtual)<sup>1</sup>| Compatible          | Deshabilitado (no se puede habilitar) |
+|Puertos COM/serie   | Compatible.                             | Deshabilitado (no se puede habilitar) |
+|Asociar un depurador (al proceso de la máquina virtual)<sup>1</sup>| Compatible.          | Deshabilitado (no se puede habilitar) |
 
 <sup>1</sup> los depuradores tradicionales que se asocian directamente a un proceso, como WinDbg.exe, están bloqueados para las máquinas virtuales blindadas porque el proceso de trabajo de la máquina virtual (VMWP.exe) es una luz de proceso protegido (PPL).
 Las técnicas de depuración alternativas, como las utilizadas por LiveKd.exe, no se bloquean.
@@ -121,16 +121,16 @@ Tanto las máquinas virtuales blindadas como las máquinas virtuales que admiten
 
 2. **El host solicita atestación.** El host protegido solicita atestación. El modo de atestación viene determinado por el Servicio de protección de host:
 
-    - **Atestación de confianza de TPM**: el host de Hyper-V envía información que incluye:
+    - **Atestación de confianza de TPM** : el host de Hyper-V envía información que incluye:
       - Información de identificación de TPM (su clave de aprobación)
       - Información sobre los procesos que se iniciaron durante la secuencia de arranque más reciente (el registro TCG)
       - Información sobre la Directiva de integridad de código (CI) que se aplicó en el host.
 
         La atestación ocurre cuando el host se inicia y cada 8 horas después. Si por algún motivo un host no tiene un certificado de atestación cuando una máquina virtual intenta iniciarse, también desencadena la atestación.
 
-    - **Atestación de clave de host**: el host de Hyper-V envía la mitad pública del par de claves. HGS valida que la clave de host está registrada.
+    - **Atestación de clave de host** : el host de Hyper-V envía la mitad pública del par de claves. HGS valida que la clave de host está registrada.
 
-    - **Atestación de administrador de confianza**: el host de Hyper-V envía un vale de Kerberos, que identifica los grupos de seguridad en los que se encuentra el host. HGS valida que el host pertenezca a un grupo de seguridad que se configuró anteriormente en el administrador de HGS de confianza.
+    - **Atestación de administrador de confianza** : el host de Hyper-V envía un vale de Kerberos, que identifica los grupos de seguridad en los que se encuentra el host. HGS valida que el host pertenezca a un grupo de seguridad que se configuró anteriormente en el administrador de HGS de confianza.
 
 3. **La atestación se realiza correctamente (o se produce un error).** El modo de atestación determina qué comprobaciones son necesarias para atestiguar correctamente que el host es correcto. Con la atestación de confianza de TPM, se validan la identidad de TPM, las medidas de arranque y la Directiva de integridad de código del host. Con la atestación de clave de host, solo se valida el registro de la clave de host.
 

@@ -2,16 +2,16 @@
 ms.assetid: 87196b65-a356-409f-9af0-b5950797d668
 title: 'Apéndice A: revisar los términos de la clave AD DS'
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2e899b3f61a23e29a3ecd6a312e50b596ce4e172
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 4f8f9d0b89868ccdc795740ecadb00b979dbc066
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941245"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071187"
 ---
 # <a name="appendix-a-reviewing-key-ad-ds-terms"></a>Anexo A: revisión de términos de clave de AD DS
 
@@ -22,15 +22,15 @@ Los siguientes términos son relevantes para el proceso de implementación de Wi
 ## <a name="active-directory-domain"></a>Dominio de Active Directory
 Una unidad administrativa en una red de equipos que, para facilitar la administración, agrupa varias funcionalidades, entre las que se incluyen las siguientes:
 
--   **Identidad de usuario en toda la red**. En los dominios, las identidades de usuario se pueden crear una vez y después se hace referencia a ellas en cualquier equipo que esté unido al bosque en el que se encuentra el dominio. Controladores de dominio que componen las cuentas de usuario y las credenciales de usuario del almacén de dominio, como contraseñas o certificados, de forma segura.
+-   **Identidad de usuario en toda la red** . En los dominios, las identidades de usuario se pueden crear una vez y después se hace referencia a ellas en cualquier equipo que esté unido al bosque en el que se encuentra el dominio. Controladores de dominio que componen las cuentas de usuario y las credenciales de usuario del almacén de dominio, como contraseñas o certificados, de forma segura.
 
--   **Autenticación**. Los controladores de dominio proporcionan servicios de autenticación para los usuarios. También proporcionan datos de autorización adicionales, como la pertenencia a grupos de usuarios. Los administradores pueden usar estos servicios para controlar el acceso a los recursos de la red.
+-   **Autenticación** . Los controladores de dominio proporcionan servicios de autenticación para los usuarios. También proporcionan datos de autorización adicionales, como la pertenencia a grupos de usuarios. Los administradores pueden usar estos servicios para controlar el acceso a los recursos de la red.
 
--   **Relaciones de confianza**. Los dominios extienden los servicios de autenticación a los usuarios de otros dominios de su propio bosque mediante confianzas bidireccionales automáticas. Los dominios también extienden los servicios de autenticación a los usuarios de dominios de otros bosques mediante confianzas de bosque o confianzas externas creadas manualmente.
+-   **Relaciones de confianza** . Los dominios extienden los servicios de autenticación a los usuarios de otros dominios de su propio bosque mediante confianzas bidireccionales automáticas. Los dominios también extienden los servicios de autenticación a los usuarios de dominios de otros bosques mediante confianzas de bosque o confianzas externas creadas manualmente.
 
--   **Administración de directivas**. Un dominio es un ámbito de directivas administrativas, como la complejidad de la contraseña y las reglas de reutilización de contraseñas.
+-   **Administración de directivas** . Un dominio es un ámbito de directivas administrativas, como la complejidad de la contraseña y las reglas de reutilización de contraseñas.
 
--   **Replicación**. Un dominio define una partición del árbol de directorios que proporciona los datos adecuados para proporcionar los servicios necesarios y que se replican entre los controladores de dominio. De esta manera, todos los controladores de dominio son del mismo nivel en un dominio y se administran como una unidad.
+-   **Replicación** . Un dominio define una partición del árbol de directorios que proporciona los datos adecuados para proporcionar los servicios necesarios y que se replican entre los controladores de dominio. De esta manera, todos los controladores de dominio son del mismo nivel en un dominio y se administran como una unidad.
 
 ## <a name="active-directory-forest"></a>Bosque de Active Directory
 Colección de uno o más dominios de Active Directory que comparten una estructura lógica común, un esquema de directorio y una configuración de red, así como relaciones de confianza transitivas, bidireccionales y automáticas. Cada bosque es una instancia única del directorio y define un límite de seguridad.

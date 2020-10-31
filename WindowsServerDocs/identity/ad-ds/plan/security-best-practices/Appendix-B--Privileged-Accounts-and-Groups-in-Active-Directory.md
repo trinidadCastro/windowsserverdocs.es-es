@@ -2,16 +2,16 @@
 ms.assetid: 79b9c912-ea3e-4679-ab41-893e096c4d09
 title: Apéndice B cuentas y grupos con privilegios en Active Directory
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 22bcea1426502af83fdeeecb0005324de2d54e64
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 2f720c09ee59544376693cdb97ecf7af54e308bd
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941575"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070477"
 ---
 # <a name="appendix-b-privileged-accounts-and-groups-in-active-directory"></a>Anexo B: cuentas con privilegios y grupos de Active Directory
 
@@ -27,7 +27,7 @@ También se proporciona información sobre cuentas y grupos integrados y predete
 Las diferencias entre los derechos, los permisos y los privilegios pueden ser confusas y contradictorias, incluso en la documentación de Microsoft. En esta sección se describen algunas de las características de cada una de las que se usan en este documento. Estas descripciones no se deben considerar autoritativas para otra documentación de Microsoft, ya que puede usar estos términos de manera diferente.
 
 #### <a name="rights-and-privileges"></a>Derechos y privilegios
-Los derechos y privilegios son, de hecho, las mismas funcionalidades para todo el sistema que se conceden a las entidades de seguridad como usuarios, servicios, equipos o grupos. En las interfaces utilizadas normalmente por los profesionales de ti, normalmente se denominan "derechos" o "derechos de usuario", y a menudo se asignan mediante directiva de grupo objetos. En la captura de pantalla siguiente se muestran algunos de los derechos de usuario más comunes que se pueden asignar a las entidades de seguridad (que representa el GPO de controladores de dominio predeterminados en un dominio de Windows Server 2012). Algunos de estos derechos se aplican a Active Directory, como el derecho de usuario **habilitar las cuentas de equipo y de usuario para la delegación** , mientras que otros derechos se aplican al sistema operativo Windows, como **cambiar la hora del sistema**.
+Los derechos y privilegios son, de hecho, las mismas funcionalidades para todo el sistema que se conceden a las entidades de seguridad como usuarios, servicios, equipos o grupos. En las interfaces utilizadas normalmente por los profesionales de ti, normalmente se denominan "derechos" o "derechos de usuario", y a menudo se asignan mediante directiva de grupo objetos. En la captura de pantalla siguiente se muestran algunos de los derechos de usuario más comunes que se pueden asignar a las entidades de seguridad (que representa el GPO de controladores de dominio predeterminados en un dominio de Windows Server 2012). Algunos de estos derechos se aplican a Active Directory, como el derecho de usuario **habilitar las cuentas de equipo y de usuario para la delegación** , mientras que otros derechos se aplican al sistema operativo Windows, como **cambiar la hora del sistema** .
 
 ![cuentas y grupos con privilegios](media/Appendix-B--Privileged-Accounts-and-Groups-in-Active-Directory/SAD_8.gif)
 
@@ -49,34 +49,34 @@ Para obtener más información acerca de cada uno de los derechos de usuario que
 |[Ajustar las cuotas de memoria de un proceso](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_5)|SeIncreaseQuotaPrivilege|
 |[Permitir el inicio de sesión local](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_6)|SeInteractiveLogonRight|
 |[Permitir el inicio de sesión mediante Terminal Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_7)|SeRemoteInteractiveLogonRight|
-|[Hacer copias de seguridad de archivos y directorios](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_8)|SeBackupPrivilege|
+|[Copia de seguridad de archivos y directorios](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_8)|SeBackupPrivilege|
 |[Omisión de la comprobación transversal](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_9)|SeChangeNotifyPrivilege|
 |[Cambiar la hora del sistema](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_10)|SeSystemtimePrivilege|
 |[Cambiar la zona horaria](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_11)|SeTimeZonePrivilege|
 |[Crear un archivo de paginación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_12)|SeCreatePagefilePrivilege|
-|[Crear un objeto token](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_13)|SeCreateTokenPrivilege|
+|[Crear un objeto de token](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_13)|SeCreateTokenPrivilege|
 |[Crear objetos globales](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_14)|SeCreateGlobalPrivilege|
 |[Crear objetos compartidos permanentes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_15)|SeCreatePermanentPrivilege|
 |[Crear vínculos simbólicos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_16)|SeCreateSymbolicLinkPrivilege|
-|[Programas de depuración](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_17)|SeDebugPrivilege|
+|[Depurar programas](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_17)|SeDebugPrivilege|
 |[Denegar el acceso desde la red a este equipo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_18)|SeDenyNetworkLogonRight|
 |[Denegar el inicio de sesión como un trabajo por lotes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_18a)|SeDenyBatchLogonRight|
 |[Denegar el inicio de sesión como servicio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_19)|SeDenyServiceLogonRight|
 |[Denegar el inicio de sesión localmente](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_20)|SeDenyInteractiveLogonRight|
 |[Denegar el inicio de sesión a través de Terminal Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_21)|SeDenyRemoteInteractiveLogonRight|
-|[Habilitar confianza con las cuentas de usuario y de equipo para delegación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_22)|SeEnableDelegationPrivilege|
+|[Habilitar la confianza en las cuentas de equipo y de usuario para la delegación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_22)|SeEnableDelegationPrivilege|
 |[Forzar cierre desde un sistema remoto](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_23)|SeRemoteShutdownPrivilege|
 |[Generar auditorías de seguridad](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_24)|SeAuditPrivilege|
-|[Suplantar un cliente después de autenticación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_25)|SeImpersonatePrivilege|
+|[Suplantar a un cliente tras la autenticación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_25)|SeImpersonatePrivilege|
 |[Aumentar el espacio de trabajo de un proceso](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_26)|SeIncreaseWorkingSetPrivilege|
 |[Aumentar prioridad de programación](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_27)|SeIncreaseBasePriorityPrivilege|
 |[Cargar y descargar controladores de dispositivo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_28)|SeLoadDriverPrivilege|
 |[Bloquear páginas en memoria](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_29)|SeLockMemoryPrivilege|
 |[Iniciar sesión como un trabajo por lotes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_30)|SeBatchLogonRight|
 |[Iniciar sesión como servicio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_31)|SeServiceLogonRight|
-|[Administrar la auditoría y el registro de seguridad](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_32)|SeSecurityPrivilege|
+|[Administrar registro de seguridad y auditoría](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_32)|SeSecurityPrivilege|
 |[Modificar la etiqueta de un objeto](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_33)|SeRelabelPrivilege|
-|[Modificar valores de entorno firmware](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_34)|SeSystemEnvironmentPrivilege|
+|[Modificar valores de entorno de firmware](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_34)|SeSystemEnvironmentPrivilege|
 |[Realizar tareas de mantenimiento del volumen](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_35)|SeManageVolumePrivilege|
 |[Analizar un solo proceso](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_36)|SeProfileSingleProcessPrivilege|
 |[Analizar el rendimiento del sistema](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_37)|SeSystemProfilePrivilege|
@@ -85,7 +85,7 @@ Para obtener más información acerca de cada uno de los derechos de usuario que
 |[Restaurar archivos y directorios](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_40)|SeRestorePrivilege|
 |[Apagar el sistema](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_41)|SeShutdownPrivilege|
 |[Sincronizar los datos del servicio de directorio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_42)|SeSyncAgentPrivilege|
-|[Tomar posesión de archivos y otros objetos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_43)|SeTakeOwnershipPrivilege|
+|[Tomar posesión de archivos u otros objetos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_43)|SeTakeOwnershipPrivilege|
 
 #### <a name="permissions"></a>Permisos
 Los permisos son controles de acceso que se aplican a objetos protegibles, como el sistema de archivos, el registro, el servicio y los objetos de Active Directory. Cada objeto protegible tiene una lista de control de acceso (ACL) asociada, que contiene entradas de control de acceso (ACE) que conceden o deniegan las entidades de seguridad (usuarios, servicios, equipos o grupos) la capacidad de realizar diversas operaciones en el objeto. Por ejemplo, las ACL de muchos objetos de Active Directory contienen ACE que permiten a los usuarios autenticados leer información general sobre los objetos, pero no les conceden la posibilidad de leer información confidencial o de cambiar los objetos.

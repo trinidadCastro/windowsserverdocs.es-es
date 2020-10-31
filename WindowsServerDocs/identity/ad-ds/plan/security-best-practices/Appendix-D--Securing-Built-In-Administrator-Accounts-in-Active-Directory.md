@@ -1,17 +1,17 @@
 ---
 ms.assetid: 11f36f2b-9981-4da0-9e7c-4eca78035f37
-title: 'Apéndice D: protección de cuentas de administrador integradas en Active Directory'
+title: 'Apéndice D: protección de cuentas de administrador de Built-In en Active Directory'
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: efd0ac56d3e9f0480ed59e50d42f7e99d416f22d
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 10251bb37e68165c1e2573d41fc7d24a91b66aa6
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941635"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070587"
 ---
 # <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Anexo D: protección de cuentas de administrador integradas en Active Directory
 
@@ -36,7 +36,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
 -   Configure los GPO para restringir el uso de la cuenta de administrador en sistemas Unidos a un dominio:
 
-    -   En uno o más GPO creados y vinculados a las unidades organizativas de estaciones de trabajo y servidores miembro de cada dominio, agregue la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el **equipo \ configuración**de seguridad\Directivas locales\Opciones de trabajo \ asignaciones de derechos:
+    -   En uno o más GPO creados y vinculados a las unidades organizativas de estaciones de trabajo y servidores miembro de cada dominio, agregue la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el **equipo \ configuración** de seguridad\Directivas locales\Opciones de trabajo \ asignaciones de derechos:
 
         -   Denegar el acceso desde la red a este equipo
 
@@ -55,7 +55,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_23.gif)
 
 -   Configurar GPO para restringir cuentas de administrador en controladores de dominio
-    -   En cada dominio del bosque, el GPO de controladores de dominio predeterminados o una directiva vinculada a la unidad organizativa controladores de dominio debe modificarse para agregar la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el **equipo \ \ configuración de Seguridad\directivas \ configuración de Seguridad\directivas \ asignaciones de derechos**:
+    -   En cada dominio del bosque, el GPO de controladores de dominio predeterminados o una directiva vinculada a la unidad organizativa controladores de dominio debe modificarse para agregar la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el **equipo \ \ configuración de Seguridad\directivas \ configuración de Seguridad\directivas \ asignaciones de derechos** :
         -   Denegar el acceso desde la red a este equipo
 
         -   Denegar el inicio de sesión como trabajo por lotes
@@ -73,38 +73,38 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
 #### <a name="step-by-step-instructions-to-secure-built-in-administrator-accounts-in-active-directory"></a>Instrucciones paso a paso para proteger las cuentas de administrador integradas en Active Directory
 
-1.  En **Administrador del servidor**, haga clic en **herramientas**y en **Active Directory usuarios y equipos**.
+1.  En **Administrador del servidor** , haga clic en **herramientas** y en **Active Directory usuarios y equipos** .
 
 2.  Para evitar que los ataques que aprovechan la delegación usen las credenciales de la cuenta en otros sistemas, realice los pasos siguientes:
 
-    1.  Haga clic con el botón secundario en la cuenta de **Administrador** y haga clic en **propiedades**.
+    1.  Haga clic con el botón secundario en la cuenta de **Administrador** y haga clic en **propiedades** .
 
     2.  Haga clic en la pestaña **Account** (Cuenta).
 
-    3.  En **Opciones de cuenta**, seleccione la opción la **cuenta es importante y no se puede delegar** , como se indica en la siguiente captura de pantalla, y haga clic en **Aceptar**.
+    3.  En **Opciones de cuenta** , seleccione la opción la **cuenta es importante y no se puede delegar** , como se indica en la siguiente captura de pantalla, y haga clic en **Aceptar** .
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_24.gif)
 
 3.  Para habilitar la **tarjeta inteligente es necesaria para** la marca de inicio de sesión interactivo en la cuenta, realice los pasos siguientes:
 
-    1.  Haga clic con el botón secundario en la cuenta de **Administrador** y seleccione **propiedades**.
+    1.  Haga clic con el botón secundario en la cuenta de **Administrador** y seleccione **propiedades** .
 
     2.  Haga clic en la pestaña **Account** (Cuenta).
 
-    3.  En opciones de **cuenta** , seleccione la **tarjeta inteligente es necesaria para la marca de inicio de sesión interactivo** , como se indica en la siguiente captura de pantalla, y haga clic en **Aceptar**.
+    3.  En opciones de **cuenta** , seleccione la **tarjeta inteligente es necesaria para la marca de inicio de sesión interactivo** , como se indica en la siguiente captura de pantalla, y haga clic en **Aceptar** .
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_25.gif)
 
-##### <a name="configuring-gpos-to-restrict-administrator-accounts-at-the-domain-level"></a>Configuración de GPO para restringir las cuentas de administrador en el nivel de dominio
+##### <a name="configuring-gpos-to-restrict-administrator-accounts-at-the-domain-level"></a>Configuración de GPO para restringir las cuentas de administrador en el Domain-Level
 
 > [!WARNING]
 > Este GPO nunca debe estar vinculado en el nivel de dominio, ya que puede hacer que la cuenta de administrador integrada sea inutilizable, incluso en escenarios de recuperación ante desastres.
 
-1.  En **Administrador del servidor**, haga clic en **herramientas**y en **Administración de directiva de grupo**.
+1.  En **Administrador del servidor** , haga clic en **herramientas** y en **Administración de directiva de grupo** .
 
 2.  En el árbol de consola, expanda <Forest> \Domains y \\ <Domain> , a continuación, **Directiva de grupo objetos** (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea crear el Directiva de grupo).
 
-3.  En el árbol de consola, haga clic con el botón secundario en **Directiva de grupo objetos**y haga clic en **nuevo**.
+3.  En el árbol de consola, haga clic con el botón secundario en **Directiva de grupo objetos** y haga clic en **nuevo** .
 
     ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_27.gif)
 
@@ -112,71 +112,71 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_28.gif)
 
-5.  En el panel de detalles, haga clic con el botón secundario <GPO Name> y haga clic en **Editar**.
+5.  En el panel de detalles, haga clic con el botón secundario <GPO Name> y haga clic en **Editar** .
 
-6.  Vaya a **equipo \ configuración de Seguridad\directivas \ directivas de seguridad\Directivas**y haga clic en **asignación de derechos de usuario**.
+6.  Vaya a **equipo \ configuración de Seguridad\directivas \ directivas de seguridad\Directivas** y haga clic en **asignación de derechos de usuario** .
 
     ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_29.gif)
 
 7.  Configure los derechos de usuario para impedir que la cuenta de administrador tenga acceso a los servidores y estaciones de trabajo de los miembros a través de la red haciendo lo siguiente:
 
-    1.  Haga doble clic en **denegar el acceso a este equipo desde la red** y seleccione **definir esta configuración de directiva**.
+    1.  Haga doble clic en **denegar el acceso a este equipo desde la red** y seleccione **definir esta configuración de directiva** .
 
-    2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar**.
+    2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar** .
 
-    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
+    3.  Escriba **Administrador** , haga clic en **Comprobar nombres** y haga clic en **Aceptar** . Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_30.gif)
 
-    4.  Haga clic en **Aceptar**y en **Aceptar** de nuevo.
+    4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
 8.  Configure los derechos de usuario para impedir que la cuenta de administrador inicie sesión como un trabajo por lotes haciendo lo siguiente:
 
-    1.  Haga doble clic en **denegar el inicio de sesión como trabajo por lotes** y seleccione **definir esta configuración de directiva**.
+    1.  Haga doble clic en **denegar el inicio de sesión como trabajo por lotes** y seleccione **definir esta configuración de directiva** .
 
-    2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar**.
+    2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar** .
 
-    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
+    3.  Escriba **Administrador** , haga clic en **Comprobar nombres** y haga clic en **Aceptar** . Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_31.gif)
 
-    4.  Haga clic en **Aceptar**y en **Aceptar** de nuevo.
+    4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
 9. Configure los derechos de usuario para impedir que la cuenta de administrador inicie sesión como servicio haciendo lo siguiente:
 
-    1.  Haga doble clic en **denegar el inicio de sesión como servicio** y seleccione **definir esta configuración de directiva**.
+    1.  Haga doble clic en **denegar el inicio de sesión como servicio** y seleccione **definir esta configuración de directiva** .
 
-    2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar**.
+    2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar** .
 
-    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
+    3.  Escriba **Administrador** , haga clic en **Comprobar nombres** y haga clic en **Aceptar** . Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_32.gif)
 
-    4.  Haga clic en **Aceptar**y en **Aceptar** de nuevo.
+    4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
 10. Configure los derechos de usuario para impedir que la cuenta de BA tenga acceso a los servidores y las estaciones de trabajo miembro a través de Servicios de Escritorio remoto haciendo lo siguiente:
 
-    1.  Haga doble clic en **denegar inicio de sesión a través de servicios de escritorio remoto** y seleccione **definir esta configuración de directiva**.
+    1.  Haga doble clic en **denegar inicio de sesión a través de servicios de escritorio remoto** y seleccione **definir esta configuración de directiva** .
 
-    2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar**.
+    2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar** .
 
-    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
+    3.  Escriba **Administrador** , haga clic en **Comprobar nombres** y haga clic en **Aceptar** . Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_33.gif)
 
-    4.  Haga clic en **Aceptar**y en **Aceptar** de nuevo.
+    4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
-11. Para salir **Editor de administración de directivas de grupo**, haga clic en **archivo**y, a continuación, en **salir**.
+11. Para salir **Editor de administración de directivas de grupo** , haga clic en **archivo** y, a continuación, en **salir** .
 
-12. En **Administración de directiva de grupo**, VINCULE el GPO al servidor miembro y las unidades organizativas de la estación de trabajo haciendo lo siguiente:
+12. En **Administración de directiva de grupo** , VINCULE el GPO al servidor miembro y las unidades organizativas de la estación de trabajo haciendo lo siguiente:
 
     1.  Navegue hasta <Forest> \Domains \\ <Domain> (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer el Directiva de grupo).
 
-    2.  Haga clic con el botón secundario en la unidad organizativa a la que se aplicará el GPO y haga clic en **vincular un GPO existente**.
+    2.  Haga clic con el botón secundario en la unidad organizativa a la que se aplicará el GPO y haga clic en **vincular un GPO existente** .
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_34.gif)
 
-    3.  Seleccione el GPO que ha creado y haga clic en **Aceptar**.
+    3.  Seleccione el GPO que ha creado y haga clic en **Aceptar** .
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_35.gif)
 
@@ -207,15 +207,15 @@ Desde cualquier servidor miembro o estación de trabajo que no se vea afectado p
 
 1.  Inicie sesión en el dominio con la cuenta de administrador integrada del dominio.
 
-2.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar**.
+2.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar** .
 
-3.  En el cuadro de **búsqueda** , escriba **símbolo del sistema**, haga clic con el botón secundario en símbolo del **sistema**y, a continuación, haga clic en **Ejecutar como administrador** para abrir un símbolo del sistema con privilegios elevados.
+3.  En el cuadro de **búsqueda** , escriba **símbolo del sistema** , haga clic con el botón secundario en símbolo del **sistema** y, a continuación, haga clic en **Ejecutar como administrador** para abrir un símbolo del sistema con privilegios elevados.
 
-4.  Cuando se le pida que apruebe la elevación, haga clic en **sí**.
+4.  Cuando se le pida que apruebe la elevación, haga clic en **sí** .
 
     ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_38.gif)
 
-5.  En la ventana del **símbolo del sistema** , escriba **net use \\ \\ \<Server Name\> \c $**, donde \<Server Name\> es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.
+5.  En la ventana del **símbolo del sistema** , escriba **net use \\ \\ \<Server Name\> \c $** , donde \<Server Name\> es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.
 
 6.  En la captura de pantalla siguiente se muestra el mensaje de error que debe aparecer.
 
@@ -227,50 +227,50 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 ###### <a name="create-a-batch-file"></a>Crear un archivo por lotes
 
-1.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar**.
+1.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar** .
 
-2.  En el cuadro de **búsqueda** , escriba **Notepad**y haga clic en **Bloc de notas**.
+2.  En el cuadro de **búsqueda** , escriba **Notepad** y haga clic en **Bloc de notas** .
 
-3.  En **el Bloc de notas**, escriba **dir c:**.
+3.  En **el Bloc de notas** , escriba **dir c:** .
 
-4.  Haga clic en **archivo** y en **Guardar como**.
+4.  Haga clic en **archivo** y en **Guardar como** .
 
-5.  En el campo **nombre de archivo** , escriba ** <Filename> . bat** (donde <Filename> es el nombre del nuevo archivo por lotes).
+5.  En el campo **nombre de archivo** , escriba **<Filename> . bat** (donde <Filename> es el nombre del nuevo archivo por lotes).
 
 ###### <a name="schedule-a-task"></a>Programar una tarea
 
-1.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar**.
+1.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar** .
 
-2.  En el cuadro de **búsqueda** , escriba **programador de tareas**y haga clic en **programador de tareas**.
+2.  En el cuadro de **búsqueda** , escriba **programador de tareas** y haga clic en **programador de tareas** .
 
     > [!NOTE]
-    > En equipos que ejecutan Windows 8, en el cuadro de búsqueda, escriba **programar tareas**y haga clic en **programar tareas**.
+    > En equipos que ejecutan Windows 8, en el cuadro de búsqueda, escriba **programar tareas** y haga clic en **programar tareas** .
 
-3.  En **programador de tareas**, haga clic en **acción**y en **crear tarea**.
+3.  En **programador de tareas** , haga clic en **acción** y en **crear tarea** .
 
 4.  En el cuadro de diálogo **crear tarea** , escriba **<Task Name>** (donde **<Task Name>** es el nombre de la nueva tarea).
 
-5.  Haga clic en la pestaña **acciones** y en **nuevo**.
+5.  Haga clic en la pestaña **acciones** y en **nuevo** .
 
-6.  En **acción:**, seleccione **iniciar un programa**.
+6.  En **acción:** , seleccione **iniciar un programa** .
 
-7.  En **programa/script:**, haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección "crear un archivo por lotes" y haga clic en **abrir**.
+7.  En **programa/script:** , haga clic en **examinar** , busque y seleccione el archivo por lotes creado en la sección "crear un archivo por lotes" y haga clic en **abrir** .
 
-8.  Haga clic en **OK**.
+8.  Haga clic en **Aceptar** .
 
-9. Haga clic en la pestaña **General**.
+9. Haga clic en la pestaña **General** .
 
-10. En opciones de **seguridad** , haga clic en **cambiar usuario o grupo**.
+10. En opciones de **seguridad** , haga clic en **cambiar usuario o grupo** .
 
-11. Escriba el nombre de la cuenta de BA en el nivel de dominio, haga clic en **Comprobar nombres**y haga clic en **Aceptar**.
+11. Escriba el nombre de la cuenta de BA en el nivel de dominio, haga clic en **Comprobar nombres** y haga clic en **Aceptar** .
 
-12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y no **almacena la contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.
+12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y no **almacena la contraseña** . La tarea solo tendrá acceso a los recursos del equipo local.
 
-13. Haga clic en **OK**.
+13. Haga clic en **Aceptar** .
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.
 
-15. Después de escribir las credenciales, haga clic en **Aceptar**.
+15. Después de escribir las credenciales, haga clic en **Aceptar** .
 
 16. Debería aparecer un cuadro de diálogo similar al siguiente.
 
@@ -280,23 +280,23 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 1.  Desde cualquier servidor miembro o estación de trabajo afectada por los cambios de GPO, inicie sesión localmente.
 
-2.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar**.
+2.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar** .
 
-3.  En el cuadro de **búsqueda** , escriba **servicios**y haga clic en **servicios**.
+3.  En el cuadro de **búsqueda** , escriba **servicios** y haga clic en **servicios** .
 
-4.  Busque y haga doble clic en **Administrador de trabajos de impresión**.
+4.  Busque y haga doble clic en **Administrador de trabajos de impresión** .
 
-5.  Haga clic en la ficha **Iniciar sesión**.
+5.  Haga clic en la ficha **Iniciar sesión** .
 
-6.  En **iniciar sesión como:**, seleccione **esta cuenta**.
+6.  En **iniciar sesión como:** , seleccione **esta cuenta** .
 
-7.  Haga clic en **examinar**, escriba el nombre de la cuenta de BA en el nivel de dominio, haga clic en **Comprobar nombres**y haga clic en **Aceptar**.
+7.  Haga clic en **examinar** , escriba el nombre de la cuenta de BA en el nivel de dominio, haga clic en **Comprobar nombres** y haga clic en **Aceptar** .
 
-8.  En **contraseña:** y **Confirmar contraseña:**, escriba la contraseña de la cuenta de administrador y haga clic en **Aceptar**.
+8.  En **contraseña:** y **Confirmar contraseña:** , escriba la contraseña de la cuenta de administrador y haga clic en **Aceptar** .
 
 9. Haga clic en **Aceptar** tres veces más.
 
-10. Haga clic con el botón secundario en el **servicio Administrador de trabajos de impresión** y seleccione **reiniciar**.
+10. Haga clic con el botón secundario en el **servicio Administrador de trabajos de impresión** y seleccione **reiniciar** .
 
 11. Cuando se reinicia el servicio, debe aparecer un cuadro de diálogo similar al siguiente.
 
@@ -306,23 +306,23 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 1.  Desde cualquier servidor miembro o estación de trabajo afectada por los cambios de GPO, inicie sesión localmente.
 
-2.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar**.
+2.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar** .
 
-3.  En el cuadro de **búsqueda** , escriba **servicios**y haga clic en **servicios**.
+3.  En el cuadro de **búsqueda** , escriba **servicios** y haga clic en **servicios** .
 
-4.  Busque y haga doble clic en **Administrador de trabajos de impresión**.
+4.  Busque y haga doble clic en **Administrador de trabajos de impresión** .
 
-5.  Haga clic en la ficha **Iniciar sesión**.
+5.  Haga clic en la ficha **Iniciar sesión** .
 
-6.  En **iniciar sesión como:**, seleccione la cuenta de **sistema local** y haga clic en **Aceptar**.
+6.  En **iniciar sesión como:** , seleccione la cuenta de **sistema local** y haga clic en **Aceptar** .
 
 ##### <a name="verify-deny-log-on-through-remote-desktop-services-gpo-settings"></a>Comprobar la configuración del GPO "denegar el inicio de sesión a través de Servicios de Escritorio remoto"
 
-1.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar**.
+1.  Con el mouse, mueva el puntero a la esquina superior derecha o inferior derecha de la pantalla. Cuando aparezca la barra de **accesos** , haga clic en **Buscar** .
 
-2.  En el cuadro de **búsqueda** , escriba **conexión a escritorio remoto**y haga clic en **conexión a escritorio remoto**.
+2.  En el cuadro de **búsqueda** , escriba **conexión a escritorio remoto** y haga clic en **conexión a escritorio remoto** .
 
-3.  En el campo **equipo** , escriba el nombre del equipo al que desea conectarse y haga clic en **conectar**. (También puede escribir la dirección IP en lugar del nombre del equipo).
+3.  En el campo **equipo** , escriba el nombre del equipo al que desea conectarse y haga clic en **conectar** . (También puede escribir la dirección IP en lugar del nombre del equipo).
 
 4.  Cuando se le solicite, proporcione las credenciales del nombre de la cuenta de BA en el nivel de dominio.
 

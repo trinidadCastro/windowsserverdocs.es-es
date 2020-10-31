@@ -1,23 +1,23 @@
 ---
 title: 'Recuperación de bosque de AD: comprobar la replicación'
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 302e522a-fb40-43bc-bc63-83dcc87ebde5
-ms.openlocfilehash: beb7968dee3b2948aed695864015a02f0aa3b47e
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 6f08871e3ffa27f3bfc063c5962437ae65f8f667
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938155"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070787"
 ---
 # <a name="resources-to-verify-replication-is-working"></a>Recursos para comprobar que la replicación funciona
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 y 2012 R2, Windows Server 2008 y 2008 R2
 
-Después de restaurar o volver a instalar todos los controladores de sesión, puede comprobar que AD DS y SYSVOL se recuperan y se replican correctamente mediante **repadmin/replsum**, que se ejecuta en cualquier versión de Windows Server.
+Después de restaurar o volver a instalar todos los controladores de sesión, puede comprobar que AD DS y SYSVOL se recuperan y se replican correctamente mediante **repadmin/replsum** , que se ejecuta en cualquier versión de Windows Server.
 
 > [!TIP]
 > También puede descargar y ejecutar la [herramienta de Active Directory Replication status](https://www.microsoft.com/download/details.aspx?id=30005) (ADReplStatus), una herramienta gratuita que supervisa el estado de replicación de los controladores de servicio y los errores de informes. ADReplStatus requiere .NET Framework 4, que se instalará si aún no está presente.

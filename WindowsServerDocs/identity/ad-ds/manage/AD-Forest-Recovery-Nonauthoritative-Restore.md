@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación de bosque de AD: restauración no autoritativa'
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: e4ce1d18-d346-492a-8bca-f85513aa3ac1
-ms.openlocfilehash: c46eb76f707b7285e06c01fef14534163df00823
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 9924b7498bde45f07df9c0078ff45fce84807680
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939655"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071277"
 ---
 # <a name="performing-a-nonauthoritative-restore-of-active-directory-domain-services"></a>Realizar una restauración no autoritativa de Active Directory Domain Services
 

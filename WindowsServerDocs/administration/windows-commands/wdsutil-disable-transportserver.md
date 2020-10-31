@@ -1,18 +1,18 @@
 ---
 title: WDSUtil Disable-TransportServer
-description: Artículo de referencia para WDSUtil Disable-TransportServer, que deshabilita todos los servicios de un servidor de transporte.
+description: Artículo de referencia para el comando WDSUtil Disable-TransportServer, que deshabilita todos los servicios de un servidor de transporte.
 ms.topic: reference
 ms.assetid: a009706b-8e89-486b-8e3d-512cd9f4de74
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d404c8f16e876a15e4b683dd3cceef60804fbdb
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 4bbb177897e3a779de275957949b0dcf62e53478
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91730981"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070357"
 ---
 # <a name="wdsutil-disable-transportserver"></a>WDSUtil Disable-TransportServer
 
@@ -21,23 +21,41 @@ ms.locfileid: "91730981"
 Deshabilita todos los servicios de un servidor de transporte.
 
 ## <a name="syntax"></a>Sintaxis
+
 ```
-wdsutil [Options] /Disable-TransportServer [/Server:<Server name>]
+wdsutil [Options] /Disable-TransportServer [/Server:<Servername>]
 ```
+
 ### <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
+
+|Parámetro|Description|
 |-------|--------|
-|[/Server:<Server name>]|Especifica el nombre del servidor de transporte que se va a deshabilitar. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor de transporte, se usará el servidor local.|
+|[/Server:`<Servername>`]|Especifica el nombre del servidor de transporte que se va a deshabilitar. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor de transporte, se usará el servidor local.|
+
 ## <a name="examples"></a>Ejemplos
+
 Para deshabilitar el servidor, escriba:
+
 ```
 wdsutil /Disable-TransportServer
+```
+
+```
 wdsutil /verbose /Disable-TransportServer /Server:MyWDSServer
 ```
+
 ## <a name="additional-references"></a>Referencias adicionales
+
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
 - [WDSUtil enable-TransportServer (comando)](wdsutil-enable-transportserver.md)
+
 - [WDSUtil Get-TransportServer (comando)](wdsutil-get-transportserver.md)
+
 - [WDSUtil Set-TransportServer (comando)](wdsutil-set-transportserver.md)
+
 - [WDSUtil Start-TransportServer (comando)](wdsutil-start-transportserver.md)
+
 - [WDSUtil STOP-TransportServer (comando)](wdsutil-stop-transportserver.md)
+
+- [Cmdlets de servicios de implementación de Windows](/powershell/module/wds)

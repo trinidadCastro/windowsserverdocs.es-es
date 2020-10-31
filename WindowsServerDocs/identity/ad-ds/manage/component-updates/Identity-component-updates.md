@@ -2,16 +2,16 @@
 ms.assetid: 7e87ce2b-062e-479f-bcf2-585b6c42026a
 title: Actualizaciones de componentes de identidad
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 0a10e39b6bbf2fcefc57cbd7e3566db74bef52e3
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 8187be75c8f7ab537e6ae6e140d099c8f2a95d9b
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941315"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070677"
 ---
 # <a name="identity-component-updates"></a>Actualizaciones de componentes de identidad
 
@@ -28,7 +28,7 @@ Después de completar esta lección, podrá:
 
     -   [Unicidad de SPN y UPN](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)
 
-    -   [Inicio de sesión con reinicio automático de Winlogon &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)
+    -   [Reinicio automático de Winlogon Sign-On &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)
 
     -   [Atestación de clave de TPM](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)
 
@@ -38,7 +38,7 @@ Después de completar esta lección, podrá:
 
     -   [Protección y administración de credenciales](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408190(v=ws.11))
 
-**Autor**: Diego Turner, Ingeniero de soporte técnico de nivel superior con el grupo de Windows
+**Autor** : Diego Turner, Ingeniero de soporte técnico de nivel superior con el grupo de Windows
 
 > [!NOTE]
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.

@@ -2,17 +2,17 @@
 ms.assetid: 680e05ac-f9be-4b07-a9f4-cd6da5835952
 title: Guía de recuperación de Active Directory bosque
 description: En esta guía se proporcionan instrucciones sobre la copia de seguridad, la restauración y la recuperación ante desastres de Active Directory.
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 94f6235c06e89d506f24b71d7f086c8ca007d7b3
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 68acf07288ffb444dca9ca4e0edb661d41f2065c
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939685"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071317"
 ---
 # <a name="active-directory-forest-recovery-guide"></a>Guía de recuperación de Active Directory bosque
 

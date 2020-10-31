@@ -2,16 +2,16 @@
 ms.assetid: 85ca191c-0cc7-4453-a72c-42060ddf2ea2
 title: Resumen ejecutivo
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: ffd3cf45d276445bca36f9e01651b74468446f61
-ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
+ms.openlocfilehash: 6259883f5aaba6869c6643b30995a51f1e9df422
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92155930"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070697"
 ---
 # <a name="executive-summary"></a>Resumen ejecutivo
 
@@ -180,5 +180,5 @@ Las prácticas se muestran en orden aproximado de prioridad, es decir, los núme
 | Simplifique la seguridad para los usuarios finales. | Estratégico | Prevención |
 | Utilice firewalls basados en host para controlar y proteger las comunicaciones. | Táctica | Prevención |
 | Dispositivos de revisión. | Táctica | Prevención |
-| Implemente la administración del ciclo de vida centrada en el negocio para los recursos de ti. | Estratégico | No aplicable |
+| Implemente la administración del ciclo de vida centrada en el negocio para los recursos de ti. | Estratégico | N/D |
 | Crear o actualizar planes de recuperación de incidentes. | Estratégico | N/D |

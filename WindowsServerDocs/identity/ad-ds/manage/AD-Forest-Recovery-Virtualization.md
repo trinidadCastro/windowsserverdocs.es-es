@@ -1,17 +1,17 @@
 ---
 title: Virtualización de recuperación de bosque de AD
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
-ms.openlocfilehash: aa6598c2a033147928d05c8175886c1c2425b4cd
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 61c28bf5edce2855320669f446e0ade559d10716
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938055"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070777"
 ---
 # <a name="active-directory-forest-recovery-virtualization"></a>Virtualización de recuperación de bosque de Active Directory
 
@@ -25,7 +25,7 @@ La clonación de controladores de dominio virtualizados (DC) simplifica y agiliz
 
 Los requisitos para la clonación de controladores de dominio virtualizados son:
 
-- El hipervisor debe ser compatible con VM-GenerationID. Hyper-V en Windows Server 2016, 2012 y Windows 8 es un ejemplo de un hipervisor que admite VM-GenerationID. Consulte con el proveedor del hipervisor si se admite VM-GenerationID.
+- El hipervisor debe ser compatible con VM-GenerationID. Hyper-V en Windows Server 2016, 2012 y Windows 8 es un ejemplo de un hipervisor que admite VM-GenerationID. Compruebe con el proveedor del hipervisor si se admite VM-GenerationID.
 - El controlador de dominio virtualizado que se usa como origen para la clonación debe ejecutar Windows Server 2016 o 2012 y ser miembro del grupo controladores de dominio clonables.
 - El emulador de PDC debe ejecutar Windows Server 2016 o 2012. Puede clonar el emulador de PDC si está virtualizado.
 

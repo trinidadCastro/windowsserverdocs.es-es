@@ -2,16 +2,16 @@
 ms.assetid: 73a4deba-7da6-4eae-8fdd-2a4d369f9cbb
 title: Apéndice de la referencia técnica de controladores de dominio virtualizados
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6387abbe150630d2fd8f6f14724618a6ab32b94a
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: f387fd0e87887ea8e69732efa405299fb18fe800
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940285"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070907"
 ---
 # <a name="virtualized-domain-controller-technical-reference-appendix"></a>Apéndice de la referencia técnica de controladores de dominio virtualizados
 
@@ -33,11 +33,11 @@ En este tema se explica:
 
 -   **Disco de diferenciación** : una copia de una máquina virtual que comparte discos virtuales con la máquina virtual principal de manera continua. Normalmente, esto ahorra espacio en disco y permite que varias máquinas virtuales usen la misma instalación de software.
 
--   **Copia de máquina virtual**: una copia del sistema de archivos de todos los archivos y carpetas relacionados de una máquina virtual.
+-   **Copia de máquina virtual** : una copia del sistema de archivos de todos los archivos y carpetas relacionados de una máquina virtual.
 
 -   **Copia de archivo VHD** : una copia del VHD de una máquina virtual
 
--   **Identificador de generación de VM** : entero de 128 bits proporcionado a la máquina virtual por el hipervisor. Este identificador se almacena en memoria y se restablece cada vez que se aplica una instantánea. El diseño usa un mecanismo independiente del hipervisor para exponer el identificador de generación de VM en la máquina virtual. La implementación de Hyper-V expone el identificador en la tabla ACPI de la máquina virtual.
+-   **Identificador de generación de VM** : entero de 128 bits proporcionado a la máquina virtual por el hipervisor. Este identificador se almacena en memoria y se restablece cada vez que se aplica una instantánea. El diseño utiliza un mecanismo independiente del hipervisor para exponer el identificador de VM-Generation en la máquina virtual. La implementación de Hyper-V expone el identificador en la tabla ACPI de la máquina virtual.
 
 -   **Import/Export** : una característica de Hyper-V que permite al usuario guardar la máquina virtual completa (archivos de VM, VHD y la configuración de la máquina). Después, permite a los usuarios usar ese conjunto de archivos para volver a poner la máquina en el mismo equipo que la misma máquina virtual (restauración), en otro equipo como la misma máquina virtual (movimiento) o en una nueva máquina virtual (copiar).
 

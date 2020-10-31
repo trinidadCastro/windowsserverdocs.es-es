@@ -1,17 +1,17 @@
 ---
 title: 'Recuperación del bosque de AD: determinar cómo recuperar el bosque'
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: dda621c8b567822a882e8230aba604ce0a115835
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 2cf48d391e675507d3fc227efc4ab691b10234bb
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88939795"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93071347"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>Determinar cómo recuperar el bosque
 
@@ -87,7 +87,7 @@ Determinar la estructura del bosque actual identificando todos los dominios del 
 
 Prepare una tabla que muestre las funciones de cada DC del dominio, tal como se muestra en el ejemplo siguiente. Esto le ayudará a volver a la configuración de error previa del bosque después de la recuperación.
 
-|Nombre del controlador de dominio|Sistema operativo|FSMO|GC|RODC|Backup|DNS|Server Core|máquina virtual|VM: genio|
+|Nombre del controlador de dominio|Sistema operativo|FSMO|GC|RODC|Backup|DNS|Server Core|máquina virtual|VM-GenID|
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|
 |DC_1|Windows Server 2012|Maestro de esquema, maestro de nomenclatura de dominios|Sí|No|Sí|No|No|Sí|Sí|
 |DC_2|Windows Server 2012|Ninguno|Sí|No|Sí|Sí|No|Sí|Sí|
@@ -95,7 +95,7 @@ Prepare una tabla que muestre las funciones de cada DC del dominio, tal como se 
 |DC_4|Windows Server 2012|Emulador de PDC, maestro RID|Sí|No|No|No|No|Sí|No|
 |DC_5|Windows Server 2012|Ninguno|No|No|Sí|Sí|No|Sí|Sí|
 |RODC_1|Windows Server 2008 R2|Ninguno|Sí|Sí|Sí|Sí|Sí|Sí|No|
-|RODC_2|Windows Server 2008|Ninguno|Sí|Sí|No|Sí|Sí|Sí|No|
+|RODC_2|Windows Server 2008|Ninguno|Sí|Sí|No|Sí|Sí|Sí|No|
 
 Para cada dominio del bosque, identifique un solo DC grabable que tenga una copia de seguridad de confianza de la base de datos de Active Directory para ese dominio. Tenga cuidado al elegir una copia de seguridad para restaurar un controlador de dominio. Si el día y la causa del error son aproximadamente conocidos, la recomendación general es usar una copia de seguridad que se haya realizado unos días antes de esa fecha.
 

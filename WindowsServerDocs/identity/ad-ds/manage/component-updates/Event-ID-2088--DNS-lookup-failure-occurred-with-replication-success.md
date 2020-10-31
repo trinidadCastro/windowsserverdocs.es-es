@@ -2,16 +2,16 @@
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
 title: ID. de evento 2088-error de búsqueda de DNS con replicación correcta
 author: iainfoulds
-ms.author: iainfou
+ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a6e78c458f92e477ddeaf156370f5e254caf4679
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 41ab450c98dd607c3c849fb94a1adbb9f1708375
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941345"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93070717"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>Id. de evento 2088: se produjo un error de búsqueda de DNS con replicación correcta
 
@@ -39,7 +39,7 @@ La configuración de DNS no válida puede afectar a otras operaciones esenciales
 
 Debes resolver inmediatamente este error de configuración de DNS para que este controlador de dominio pueda resolver la dirección IP del controlador de dominio de origen mediante DNS.
 
-Nombre de servidor alternativo: error de DC1 nombre de host DNS: 4a8717eb-8e58-456c-995a-c92e4add7e8e. _msdcs. contoso. com
+Nombre de servidor alternativo: error de DC1 nombre de host DNS: 4a8717eb-8e58-456c-995a-c92e4add7e8e._msdcs. contoso. com
 
 Nota: de forma predeterminada, solo se muestran hasta 10 errores de DNS durante un período de 12 horas determinado, incluso si se producen más de 10 errores.  Para registrar todos los eventos de error individuales, establezca el siguiente valor del registro de diagnóstico en 1:
 
@@ -69,7 +69,7 @@ Valor de error de datos adicionales: 11004 el nombre solicitado es válido, pero
     </content>
   </section>
   <section>
-    <title>Solución</title>
+    <title>Resolución</title>
     <content>
       <para>Continúe con las pruebas de DNS tal y como se describe en ID. de &quot; <link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">evento 2087: error de búsqueda DNS que provocó un error en la replicación</link>.&quot;</para>
     </content>
