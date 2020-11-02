@@ -1,19 +1,19 @@
 ---
 ms.assetid: f964d056-11bf-4d9b-b5ab-dceaad8bfbc3
 title: Niveles funcionales de Windows Server 2016
-ms.author: iainfou
+ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/25/2020
 ms.topic: article
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.openlocfilehash: 8a990e5ab19a5f5cd30d23d0d31e28249801040b
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: b74bb786b3d1a6ec8a1f96054b2d74ca93bd9bcf
+ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90765946"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93068379"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de bosque y dominio
 
@@ -105,7 +105,7 @@ Sistema operativo de controlador de dominio admitido:
 * Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
-* Windows Server 2008 R2
+* Windows Server 2008 R2
 
 ### <a name="windows-server-2008r2-forest-functional-level-features"></a>Características del nivel funcional de bosque de Windows Server 2008R2
 
@@ -127,7 +127,7 @@ Sistema operativo de controlador de dominio admitido:
 * Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
-* Windows Server 2008
+* Windows Server 2008
 
 ### <a name="windows-server-2008-forest-functional-level-features"></a>Características del nivel funcional de bosque de Windows Server 2008
 
@@ -166,8 +166,8 @@ Sistema operativo de controlador de dominio admitido:
 * Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
-* Windows Server 2008
-* Windows Server 2003
+* Windows Server 2008
+* Windows Server 2003
 
 ### <a name="windows-server-2003-forest-functional-level-features"></a>Características del nivel funcional de bosque de Windows Server 2003
 
@@ -180,7 +180,7 @@ Sistema operativo de controlador de dominio admitido:
    * Mejora en la escalabilidad y los algoritmos del comprobador de coherencia de la información (KCC)
       - El generador de topología entre sitios (ISTG) usa algoritmos mejorados que se escalan para admitir bosques con un número mayor de sitios del que AD DS puede admitir en el nivel funcional del bosque de Windows 2000. El algoritmo mejorado de elección del ISTG es un mecanismo menos intrusivo para elegir el ISTG en el nivel funcional del bosque de Windows 2000.
    * La capacidad de crear instancias de la clase auxiliar dinámica denominada **dynamicObject** en una partición de directorio de dominio.
-   * La capacidad de convertir una instancia de un objeto **inetOrgPerson** en una instancia de un objeto **User**, y para completar la conversión en la dirección opuesta.
+   * La capacidad de convertir una instancia de un objeto **inetOrgPerson** en una instancia de un objeto **User** , y para completar la conversión en la dirección opuesta.
    * La capacidad de crear instancias de nuevos tipos de grupos para admitir la autorización basada en roles.
       - Estos tipos se denominan grupos básicos de aplicación y grupos de consulta LDAP.
    * Desactivación y nueva definición de atributos y clases en el esquema. Se pueden reutilizar los siguientes atributos: ldapDisplayName, schemaIdGuid, OID y mapiID.
@@ -207,8 +207,8 @@ Sistema operativo de controlador de dominio admitido:
 Sistema operativo de controlador de dominio admitido:
 
 * Windows Server 2008 R2
-* Windows Server 2008
-* Windows Server 2003
+* Windows Server 2008
+* Windows Server 2003
 * Windows 2000
 
 ### <a name="windows-2000-native-forest-functional-level-features"></a>Características del nivel funcional de bosque de Windows Server 2000
