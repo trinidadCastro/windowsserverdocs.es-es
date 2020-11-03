@@ -7,16 +7,16 @@ ms.author: jgerend
 manager: lizross
 ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 28cc760972123c67fea2d6db56dbfaf971b0cd16
-ms.sourcegitcommit: 92e46b11154bab929e2c622d759ef62ec264c4e6
+ms.openlocfilehash: c8d7b45b14cd7124af9862666d232ba1beb44b6b
+ms.sourcegitcommit: 3416acf0c04f9db61759f99071fa81f554728180
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92734732"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93243874"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Uso de volúmenes compartidos de clúster en un clúster de conmutación por error
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2
 
 Los volúmenes compartidos de clúster (CSV) permiten a varios nodos de un clúster de conmutación por error tener simultáneamente acceso de lectura y escritura al mismo LUN (disco) que se aprovisiona como volumen NTFS. (En Windows Server 2012 R2, el disco se puede aprovisionar como NTFS o sistema de archivos resistente (ReFS)). Con CSV, los roles en clúster pueden conmutar por error rápidamente de un nodo a otro sin necesidad de un cambio en la propiedad de la unidad o de desmontar y volver a montar un volumen. CSV también puede ayudar a simplificar la administración de una cantidad potencialmente grande de LUN en un clúster de conmutación por error.
 
@@ -33,7 +33,7 @@ En Windows Server 2012, la funcionalidad de CSV se mejoró considerablemente. Po
 Windows Server 2012 R2 incorpora funcionalidad adicional, como la propiedad de CSV distribuida, el aumento de la resistencia a través de la disponibilidad del servicio de servidor, mayor flexibilidad en la cantidad de memoria física que se puede asignar a la caché de CSV, una mejor capacidad y una interoperabilidad mejorada que incluye compatibilidad con ReFS y desduplicación. Para obtener más información, consulte [novedades de los clústeres de conmutación por error](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
 
 > [!NOTE]
-> Para obtener información acerca del uso de desduplicación de datos en CSV para escenarios de infraestructura de Escritorio Virtual (VDI), consulte las publicaciones del blog [Implementar la desduplicación de datos para el almacenamiento VDI en Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) y [Ampliación de desduplicación de datos para nuevas cargas de trabajo en Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx).
+> Para obtener información acerca del uso de desduplicación de datos en CSV para escenarios de infraestructura de Escritorio Virtual (VDI), consulte las publicaciones del blog [Implementar la desduplicación de datos para el almacenamiento VDI en Windows Server 2012 R2](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deploying-data-deduplication-for-vdi-storage-in-windows-server/ba-p/424777) y [Ampliación de desduplicación de datos para nuevas cargas de trabajo en Windows Server 2012 R2](https://techcommunity.microsoft.com/t5/storage-at-microsoft/extending-data-deduplication-to-new-workloads-in-windows-server/ba-p/424787).
 
 ## <a name="review-requirements-and-considerations-for-using-csv-in-a-failover-cluster"></a>Revisar los requisitos y las consideraciones para usar CSV en un clúster de conmutación por error
 
@@ -50,8 +50,8 @@ Ten en cuenta lo siguiente al configurar las redes compatibles con CSV.
 
   - **Cliente para redes Microsoft** y **Compartir impresoras y archivos para redes Microsoft** . Estas opciones de configuración son compatibles con la versión 3.0 del Bloque de mensajes del servidor (SMB), que se usa de manera predeterminada para transportar el tráfico de CSV entre nodos. Para habilitar SMB, asegúrate también de que los servicios Servidor y Estación de trabajo se estén ejecutando y que estén configurados para iniciarse automáticamente en cada nodo del clúster.
 
-    >[!NOTE]
-    >En Windows Server 2012 R2, hay varias instancias del servicio servidor por nodo de clúster de conmutación por error. Tenemos la instancia predeterminada que se encarga del tráfico entrante de los clientes SMB que tienen acceso a recursos compartidos de archivos normales y una segunda instancia de CSV que solo se encarga del tráfico CSV entre nodos. Además, si el servicio Servidor de un nodo tiene un estado incorrecto, la propiedad de CSV pasa automáticamente a otro nodo.
+    > [!NOTE]
+    > En Windows Server 2012 R2, hay varias instancias del servicio servidor por nodo de clúster de conmutación por error. Tenemos la instancia predeterminada que se encarga del tráfico entrante de los clientes SMB que tienen acceso a recursos compartidos de archivos normales y una segunda instancia de CSV que solo se encarga del tráfico CSV entre nodos. Además, si el servicio Servidor de un nodo tiene un estado incorrecto, la propiedad de CSV pasa automáticamente a otro nodo.
 
     SMB 3.0 incluye las características SMB multicanal y SMB directo, lo que permite que el tráfico de CSV se transmita en secuencias entre varias redes del clúster y que se aprovechen los adaptadores de red compatibles con el acceso directo a memoria remota (RDMA). De manera predeterminada, SMB multicanal se usa para el tráfico de CSV. Para obtener más información, consulta [Información general de Bloque de mensajes del servidor](../storage/file-server/file-server-smb-overview.md).
   - **Filtro de rendimiento del adaptador virtual de clúster de conmutación por error de Microsoft** . Esta opción de configuración mejora la capacidad de los nodos de realizar la redirección de E/S cuando es necesaria para comunicarse con CSV, por ejemplo, cuando un error de conectividad impide a un nodo conectarse directamente al disco CSV. Para obtener más información, vea acerca de la [sincronización de e/s y la redirección de e/s en la comunicación de CSV](#about-io-synchronization-and-io-redirection-in-csv-communication) más adelante en este tema.
@@ -66,8 +66,8 @@ Para obtener información general sobre los requisitos de hardware, red y almace
 
 - **Sincronización de e/s** : CSV permite que varios nodos tengan acceso de lectura y escritura simultáneo al mismo almacenamiento compartido. Cuando un nodo realiza tareas de entrada/salida (E/S) de disco en un volumen CSV, el nodo se comunica directamente con el almacenamiento, por ejemplo, por medio de una red de área de almacenamiento (SAN). Sin embargo, en cualquier momento, un solo nodo (denominado el nodo Coordinador) "posee" el recurso de disco físico que está asociado con el LUN. El nodo coordinador de un volumen CSV se muestra en el Administrador de clústeres de conmutación por error como **Nodo propietario** en **Discos** . También aparece en la salida del cmdlet [Get-ClusterSharedVolume](/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) de Windows PowerShell.
 
-  >[!NOTE]
-  >En Windows Server 2012 R2, la propiedad de CSV se distribuye uniformemente entre los nodos de clúster de conmutación por error en función del número de volúmenes CSV que posee cada nodo. Además, la propiedad se reequilibra automáticamente cuando hay condiciones como la conmutación por error de CSV, un nodo que se vuelve a unir al clúster, la adición de un nodo nuevo al clúster, el reinicio de un nodo del clúster o el inicio del clúster de conmutación por error después de que se haya apagado.
+  > [!NOTE]
+  > En Windows Server 2012 R2, la propiedad de CSV se distribuye uniformemente entre los nodos de clúster de conmutación por error en función del número de volúmenes CSV que posee cada nodo. Además, la propiedad se reequilibra automáticamente cuando hay condiciones como la conmutación por error de CSV, un nodo que se vuelve a unir al clúster, la adición de un nodo nuevo al clúster, el reinicio de un nodo del clúster o el inicio del clúster de conmutación por error después de que se haya apagado.
 
   Cuando se producen ciertos pequeños cambios en el sistema de archivos de un volumen CSV, estos metadatos se deben sincronizar en cada uno de los nodos físicos que obtienen acceso al LUN, no solo en el nodo coordinador. Por ejemplo, cuando se inicia, se crea o se elimina una máquina virtual en un volumen CSV o cuando se migra una máquina virtual, esta información se debe sincronizar en cada uno de los nodos físicos que tienen acceso a la máquina virtual. Estas operaciones de actualización de metadatos se producen en paralelo en las redes en clúster mediante SMB 3.0. Estas operaciones no requieren que todos los nodos físicos se comuniquen con el almacenamiento compartido.
 
@@ -183,10 +183,10 @@ Get-ClusterAvailableDisk | Add-ClusterDisk
 1. En Administrador de clústeres de conmutación por error, en el árbol de consola, expanda el nombre del clúster, expanda **almacenamiento** y, a continuación, seleccione **discos** .
 2. Seleccione uno o varios discos asignados a **almacenamiento disponible** , haga clic con el botón derecho en la selección y, a continuación, seleccione **Agregar a volúmenes compartidos de clúster** .
 
-    Los discos se asignan al grupo **Volumen compartido de clúster** del clúster. Los discos se muestran en cada nodo del clúster como volúmenes numerados (puntos de montaje), en la carpeta %SystemDisk%ClusterStorage. Los volúmenes aparecen en el sistema de archivos CSVFS.
+    Los discos se asignan al grupo **Volumen compartido de clúster** del clúster. Los discos se exponen a cada nodo del clúster como volúmenes numerados (puntos de montaje) en la carpeta% SystemDrive% ClusterStorage Los volúmenes aparecen en el sistema de archivos CSVFS.
 
->[!NOTE]
->Puedes cambiar los nombres de los volúmenes CSV en la carpeta %SystemDisk%ClusterStorage.
+> [!NOTE]
+> Puede cambiar el nombre de los volúmenes CSV en la carpeta% SystemDrive% ClusterStorage
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-csv"></a>Comandos equivalentes de Windows PowerShell (agregar un disco a CSV)
 
@@ -202,8 +202,8 @@ Add-ClusterSharedVolume –Name "Cluster Disk 1"
 
 La memoria caché de CSV proporciona almacenamiento en caché en el nivel de bloque de operaciones de E/S no almacenadas en búfer de solo lectura por medio de la asignación de memoria del sistema (RAM) como caché de escritura a través. (El administrador de caché no almacena en caché las operaciones de e/s no almacenadas en búfer). Esto puede mejorar el rendimiento de aplicaciones como Hyper-V, que realiza operaciones de e/s no almacenadas en búfer al obtener acceso a un disco duro virtual. La memoria caché de CSV puede mejorar el rendimiento de las solicitudes de lectura sin almacenar en caché las solicitudes de escritura. Habilitar la memoria caché de CSV también es útil para escenarios de servidor de archivos de escalabilidad horizontal.
 
->[!NOTE]
->Te recomendamos que habilites la memoria caché de CSV para todas las implementaciones de Hyper-V y servidor de archivos de escalabilidad horizontal en clúster.
+> [!NOTE]
+> Te recomendamos que habilites la memoria caché de CSV para todas las implementaciones de Hyper-V y servidor de archivos de escalabilidad horizontal en clúster.
 
 En Windows Server 2019, la caché de CSV está activada de forma predeterminada con 1 Gibibyte (GiB) asignado. En Windows Server 2016 y Windows Server 2012, está desactivado de forma predeterminada. En Windows Server 2012 R2, la memoria caché de CSV está habilitada de forma predeterminada. sin embargo, debe asignar el tamaño de la memoria caché de bloque que se va a reservar.
 
@@ -238,11 +238,11 @@ Puedes supervisar la memoria caché de CSV en el monitor de rendimiento si agreg
     Get-ClusterSharedVolume "Cluster Disk 1" | Set-ClusterParameter CsvEnableBlockCache 1
     ```
 
->[!NOTE]
+> [!NOTE]
 > * En Windows Server 2012, solo puede asignar el 20% del total de RAM física a la caché de CSV. En Windows Server 2012 R2 y versiones posteriores, puede asignar hasta el 80%. Como los servidores de archivos de escalabilidad horizontal no suelen tener restricciones de memoria, puedes aumentar significativamente el rendimiento si usas la memoria adicional para la memoria caché de CSV.
 > * Para evitar la contención de recursos, debe reiniciar cada nodo del clúster después de modificar la memoria asignada a la memoria caché de CSV. En Windows Server 2012 R2 y versiones posteriores, ya no se requiere un reinicio.
 > * Después de habilitar o deshabilitar la caché de CSV en un disco individual, para que la configuración surta efecto, debes dejar el recurso de disco físico sin conexión y volver a conectarlo en línea. (De forma predeterminada, en Windows Server 2012 R2 y versiones posteriores, la memoria caché de CSV está habilitada).
-> * Para obtener más información sobre la caché de CSV que incluye información sobre los contadores de rendimiento, consulte la entrada del blog [Cómo habilitar la memoria caché de CSV](https://blogs.msdn.microsoft.com/clustering/2013/07/19/how-to-enable-csv-cache/).
+> * Para obtener más información sobre la caché de CSV que incluye información sobre los contadores de rendimiento, consulte la entrada del blog [Cómo habilitar la memoria caché de CSV](https://techcommunity.microsoft.com/t5/failover-clustering/how-to-enable-csv-cache/ba-p/371854).
 
 ## <a name="backing-up-csvs"></a>Copia de seguridad de CSV
 
@@ -253,11 +253,11 @@ Debes tener en cuenta los siguientes factores al seleccionar una aplicación de 
 - La copia de seguridad de nivel de volumen de un volumen CSV se puede ejecutar desde cualquier nodo que se conecte al volumen CSV.
 - La aplicación de copia de seguridad puede usar instantáneas de software o de hardware. Si la aplicación de copia de seguridad lo permite, las copias de seguridad pueden usar instantáneas del Servicio de instantáneas de volumen (VSS) coherentes con la aplicación y preparadas para bloqueos.
 - Si haces una copia de seguridad de un CSV con varias máquinas virtuales en ejecución, por lo general deberías elegir un método de copia de seguridad basado en un sistema operativo de administración. Si la aplicación de copia de seguridad lo admite, se puede hacer copia de seguridad de varias máquinas virtuales simultáneamente.
-- CSV admite los solicitantes de copia de seguridad que ejecutan copia de seguridad de Windows Server 2012 R2, copia de seguridad de Windows Server 2012 o copia de seguridad de Windows Server 2008 R2. No obstante, por lo general, Copias de seguridad de Windows Server solo proporciona una solución de copia de seguridad básica que es posible que no sea apta para organizaciones con clústeres grandes. Copias de seguridad de Windows Server no admite la copia de seguridad de máquinas virtuales coherente con la aplicación en CSV. Solo admite copias de seguridad de nivel de volumen preparadas para bloqueos. (Si restaura una copia de seguridad coherente con el bloqueo, la máquina virtual estará en el mismo estado que tenía si la máquina virtual se hubiera bloqueado en el momento exacto en que se realizó la copia de seguridad). Una copia de seguridad de una máquina virtual en un volumen CSV se realizará correctamente, pero se registrará un evento de error que indica que no se admite.
+- CSV admite los solicitantes de copia de seguridad que ejecuten copia de seguridad de Windows Server 2012 R2, copia de seguridad de Windows Server 2012 o copia de seguridad de Windows Server 2008 R2. No obstante, por lo general, Copias de seguridad de Windows Server solo proporciona una solución de copia de seguridad básica que es posible que no sea apta para organizaciones con clústeres grandes. Copias de seguridad de Windows Server no admite la copia de seguridad de máquinas virtuales coherente con la aplicación en CSV. Solo admite copias de seguridad de nivel de volumen preparadas para bloqueos. (Si restaura una copia de seguridad coherente con el bloqueo, la máquina virtual estará en el mismo estado que tenía si la máquina virtual se hubiera bloqueado en el momento exacto en que se realizó la copia de seguridad). Una copia de seguridad de una máquina virtual en un volumen CSV se realizará correctamente, pero se registrará un evento de error que indica que no se admite.
 - Es posible que necesites credenciales administrativas al hacer una copia de seguridad de un clúster de conmutación por error.
 
 > [!IMPORTANT]
->Asegúrate de revisar detenidamente los datos que la aplicación de copia de seguridad incluye en la copia de seguridad y restaura, qué características de CSV admite y cuáles son los requisitos de recursos para la aplicación en cada nodo del clúster.
+> Asegúrate de revisar detenidamente los datos que la aplicación de copia de seguridad incluye en la copia de seguridad y restaura, qué características de CSV admite y cuáles son los requisitos de recursos para la aplicación en cada nodo del clúster.
 
 > [!WARNING]
 > Si necesitas restaurar los datos de la copia de seguridad a un volumen CSV, ten en cuenta las capacidades y limitaciones de la aplicación de copia de seguridad para mantener y restaurar datos coherentes con la aplicación en los nodos del clúster. Por ejemplo, con algunas aplicaciones, si el volumen CSV se restaura en un nodo distinto del nodo del que se obtuvo su copia de seguridad, es posible que sobrescribas sin darte cuenta datos importantes sobre el estado de la aplicación en el nodo en el que se realiza la restauración.

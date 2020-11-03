@@ -7,12 +7,12 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 1aa270adc30f72f8efcdbbea2162e3c6b925dade
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 8dc2fec785771db4ccefb08e2359506932e11620
+ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746430"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93235872"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Administrar tipos de programador de hipervisor de Hyper-V
 
@@ -23,7 +23,7 @@ En este artículo se describen los nuevos modos de la lógica de programación d
 > [!NOTE]
 > Las actualizaciones son necesarias para usar las características del programador de hipervisor descritas en este documento. Para obtener más información, consulte [actualizaciones necesarias](#required-updates).
 
-## <a name="background"></a>Fondo
+## <a name="background"></a>Información previa
 
 Antes de analizar la lógica y los controles que hay detrás de la programación del procesador virtual de Hyper-V, resulta útil revisar los conceptos básicos que se tratan en este artículo.
 
@@ -34,7 +34,7 @@ Los procesadores que admiten SMT están disponibles en Intel y AMD. Intel hace r
 
 Para los fines de este artículo, las descripciones de SMT y cómo las utiliza Hyper-V se aplican igualmente a los sistemas Intel y AMD.
 
-* Para obtener más información sobre la tecnología Intel HT, consulte [tecnología Hyper-Threading de Intel](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) .
+* Para obtener más información sobre la tecnología Intel HT, consulte [tecnología intel Hyper-Threading](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html) .
 
 * Para obtener más información sobre AMD SMT, consulte [la arquitectura básica de "Zen"](https://www.amd.com/en/technologies/zen-core)
 
@@ -135,7 +135,7 @@ Windows Server 2016 Hyper-V usa el modelo de programador de hipervisor clásico 
 
 ## <a name="windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler"></a>Windows Server 2019, de forma predeterminada, Hyper-V usa el programador principal
 
-Para ayudar a garantizar que los hosts de Hyper-V se implementan en la configuración de seguridad óptima, Windows Server 2019 Hyper-V ahora usa el modelo de programador del hipervisor principal de forma predeterminada. Opcionalmente, el administrador del host puede configurar el host para usar el programador clásico heredado. Los administradores deben leer detenidamente, comprender y considerar los efectos que cada tipo de programador tiene en la seguridad y el rendimiento de los hosts de virtualización antes de invalidar la configuración predeterminada del tipo de programador.  Consulte [Descripción de la selección del tipo de programador de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection) para obtener más información.
+Para ayudar a garantizar que los hosts de Hyper-V se implementan en la configuración de seguridad óptima, Windows Server 2019 Hyper-V ahora usa el modelo de programador del hipervisor principal de forma predeterminada. Opcionalmente, el administrador del host puede configurar el host para usar el programador clásico heredado. Los administradores deben leer detenidamente, comprender y considerar los efectos que cada tipo de programador tiene en la seguridad y el rendimiento de los hosts de virtualización antes de invalidar la configuración predeterminada del tipo de programador. Para obtener más información, vea [acerca de la selección del tipo de programador del hipervisor de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/about-hyper-v-scheduler-type-selection) .
 
 ### <a name="required-updates"></a>Actualizaciones necesarias
 
@@ -162,7 +162,7 @@ bcdedit /set hypervisorschedulertype type
 Donde `type` es uno de los siguientes:
 
 * Clásico
-* Principal
+* Core
 * Root
 
 El sistema debe reiniciarse para que los cambios en el tipo de programador del hipervisor surtan efecto.

@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 19da2b6ec2a7a3ca31c479388c087850c77d9c23
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8a6e0ff7e0ba412ff3f8241465a71ab8b81f7d80
+ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638058"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93235852"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -52,12 +52,12 @@ Los servicios tienen las siguientes entidades de seguridad entre las que pueden 
 
 |Principals|Ámbito|Servicios admitidos|Administración de contraseñas|
 |-------|-----|-----------|------------|
-|Cuenta de equipo del sistema de Windows|Domain|Limitado a un servidor unido a un dominio|El equipo administra|
-|Cuenta de equipo sin sistema de Windows|Domain|Cualquier servidor unido a un dominio|None|
+|Cuenta de equipo del sistema de Windows|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
+|Cuenta de equipo sin sistema de Windows|Dominio|Cualquier servidor unido a un dominio|None|
 |Cuenta virtual|Local|Limitado a un servidor|El equipo administra|
-|Cuenta de servicio administrada independiente de Windows 7|Domain|Limitado a un servidor unido a un dominio|El equipo administra|
-|Cuenta de usuario|Domain|Cualquier servidor unido a un dominio|None|
-|Cuenta de servicio administrada de grupo|Domain|Cualquier servidor unido a un dominio de Windows Server 2012|El controlador de dominio administra y el host recupera|
+|Cuenta de servicio administrada independiente de Windows 7|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
+|Cuenta de usuario|Dominio|Cualquier servidor unido a un dominio|None|
+|Cuenta de servicio administrada de grupo|Dominio|Cualquier servidor unido a un dominio de Windows Server 2012|El controlador de dominio administra y el host recupera|
 
 No se pueden compartir entre varios sistemas las cuentas de equipo de Windows, las cuentas de servicio administradas independientes (sMSA) de Windows 7 ni las cuentas virtuales. Si configuras una cuenta para que la compartan los servicios de las granjas de servidores, tendrás que elegir una cuenta de usuario o una cuenta de equipo aparte de un sistema de Windows. En cualquiera de estos dos casos, las cuentas no tienen la funcionalidad de administrar contraseñas con un solo punto de control. Esto genera un problema: cada organización se ve obligada a crear una solución costosa para actualizar las claves del servicio en Active Directory y, luego, distribuir las claves a todas las instancias de esos servicios.
 
@@ -139,7 +139,7 @@ Al implementar una nueva granja de servidores, el administrador de servicios ten
 ### <a name="step-1-provisioning-group-managed-service-accounts"></a><a name="BKMK_Step1"></a>Paso 1: Aprovisionamiento de cuentas de servicio administradas de grupo
 Solo puede crear una gMSA si el esquema del bosque se ha actualizado a Windows Server 2012, se ha implementado la clave raíz maestra de Active Directory y hay al menos un DC de Windows Server 2012 en el dominio en el que se creará el gMSA.
 
-Para completar los siguientes procedimientos, el requisito mínimo es ser miembro de **Admins. del dominio** u **Opers. de cuentas** o poder crear objetos msDS-GroupManagedServiceAccount.
+El requisito mínimo para completar los siguientes procedimientos es la pertenencia al grupo **Admins** . del dominio o la posibilidad de crear objetos MsDS-GroupManagedServiceAccount.
 
 > [!NOTE]
 > Siempre se requiere un valor para el parámetro-name (si se especifica-Name o not), con-DNSHostName,-RestrictToSingleComputer y-RestrictToOutboundAuthentication son requisitos secundarios para los tres escenarios de implementación.
@@ -345,10 +345,10 @@ El requisito mínimo para completar estos procedimientos es pertenecer al grupo 
     Uninstall-ADServiceAccount ITFarm1
     ```
 
-Para obtener más información sobre el cmdlet Uninstall-ADServiceAccount, en el símbolo del sistema del módulo de Active Directory para Windows PowerShell, escriba **Get-Help Uninstall-ADServiceAccount**y presione ENTRAR o consulte la información de la web de TechNet en [Uninstall-ADServiceAccount](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617202(v=technet.10)).
+Para obtener más información sobre el cmdlet Uninstall-ADServiceAccount, en el símbolo del sistema del módulo de Active Directory para Windows PowerShell, escriba **Get-Help Uninstall-ADServiceAccount** y presione ENTRAR o consulte la información de la web de TechNet en [Uninstall-ADServiceAccount](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617202(v=technet.10)).
 
 
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 -   [Introducción a las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
