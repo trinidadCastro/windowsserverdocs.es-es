@@ -4,12 +4,12 @@ ms.date: 01/30/2019
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 7bdcb67c5bcb36d2ebe5ee02d765f3cab63c7bed
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 0a8015096d22cfb384815f1e5b8c5b9c9c248922
+ms.sourcegitcommit: 7499749ce7baaf58a523cae2dd46737d635475ce
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766828"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93043913"
 ---
 # <a name="volume-shadow-copy-service"></a>Servicio de instantáneas de volumen
 
@@ -31,7 +31,7 @@ VSS coordina las acciones necesarias para crear una instantánea coherente (tamb
 
   - Vas a realizar copias de seguridad de disco a disco.
 
-  - Necesitas recuperarte rápidamente de una pérdida de datos mediante la restauración de los datos en el LUN original o en un LUN completamente nuevo que reemplace al LUN original que produjo el error.
+  - Necesitas recuperarte rápidamente de una pérdida de datos mediante la restauración de los datos en el número de unidad lógica (LUN) original o en un LUN completamente nuevo que reemplace al LUN original que produjo el error.
 
 
 Entre las características y aplicaciones de Windows que usan VSS, se incluyen las siguientes:
@@ -49,19 +49,19 @@ Entre las características y aplicaciones de Windows que usan VSS, se incluyen l
 
 Una solución completa de VSS requiere todos los elementos básicos a continuación:
 
-**Servicio VSS**   parte del sistema operativo Windows que garantiza que los demás componentes pueden comunicarse entre sí correctamente y funcionar juntos.
+**Servicio VSS** : parte del sistema operativo Windows que garantiza que los demás componentes pueden comunicarse entre sí correctamente y funcionar juntos.
 
-**Solicitante de VSS**   software que solicita realmente la creación de instantáneas (u otras operaciones de alto nivel, como su importación o eliminación). Normalmente, se trata de la aplicación de copia de seguridad. La utilidad Copias de seguridad de Windows Server y la aplicación System Center Data Protection Manager son solicitantes de VSS. Entre los solicitantes de VSS que no son de Microsoft® se incluye casi todo el software de copia de seguridad que se ejecuta en Windows.
+**Solicitante de VSS** : software que solicita realmente la creación de instantáneas (u otras operaciones de alto nivel, como su importación o eliminación). Normalmente, se trata de la aplicación de copia de seguridad. La utilidad Copias de seguridad de Windows Server y la aplicación System Center Data Protection Manager son solicitantes de VSS. Entre los solicitantes de VSS que no son de Microsoft® se incluye casi todo el software de copia de seguridad que se ejecuta en Windows.
 
-**VSS Writer**   componente que garantiza que existe un conjunto de datos coherente para realizar la copia de seguridad. Normalmente, se proporciona como parte de una aplicación de línea de negocio, como SQL Server® o Exchange Server. Las instancias de VSS Writer para varios componentes de Windows, como el registro, se incluyen con el sistema operativo Windows. Las instancias de VSS Writer que no son de Microsoft se incluyen con muchas aplicaciones para Windows que necesitan garantizar la coherencia de los datos durante la copia de seguridad.
+**VSS Writer** : componente que garantiza que existe un conjunto de datos coherente para realizar la copia de seguridad. Normalmente, se proporciona como parte de una aplicación de línea de negocio, como SQL Server® o Exchange Server. Las instancias de VSS Writer para varios componentes de Windows, como el registro, se incluyen con el sistema operativo Windows. Las instancias de VSS Writer que no son de Microsoft se incluyen con muchas aplicaciones para Windows que necesitan garantizar la coherencia de los datos durante la copia de seguridad.
 
-**Proveedor de VSS**   componente que crea y mantiene las instantáneas. Puede tener lugar en el software o en el hardware. El sistema operativo Windows incluye un proveedor de VSS que usa la operación de copia en escritura. Si utilizas una red de área de almacenamiento (SAN), es importante que instales el proveedor de hardware de VSS para la SAN, si se proporciona uno. Un proveedor de hardware retira la tarea de creación y mantenimiento de una instantánea del sistema operativo host.
+**Proveedor de VSS** : componente que crea y mantiene las instantáneas. Puede tener lugar en el software o en el hardware. El sistema operativo Windows incluye un proveedor de VSS que usa la operación de copia en escritura. Si utilizas una red de área de almacenamiento (SAN), es importante que instales el proveedor de hardware de VSS para la SAN, si se proporciona uno. Un proveedor de hardware retira la tarea de creación y mantenimiento de una instantánea del sistema operativo host.
 
 En el diagrama siguiente se ilustra cómo el servicio VSS se coordina con solicitantes, escritores y proveedores para crear la instantánea de un volumen.
 
 ![Diagrama arquitectónico del Servicio de instantáneas de volumen](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
 
-**Figura 1**   diagrama arquitectónico del Servicio de instantáneas de volumen
+**Figura 1** Diagrama arquitectónico del Servicio de instantáneas de volumen
 
 ### <a name="how-a-shadow-copy-is-created"></a>Creación de una instantánea
 
@@ -103,11 +103,11 @@ Para crear una instantánea, el solicitante, el escritor y el proveedor realizan
 
 Un proveedor de instantáneas de hardware o software usa alguno de los métodos siguientes para crear una instantánea:
 
-**Copia completa**   este método realiza una copia completa (denominada "clon") del volumen original en un momento específico. Esta copia es de solo lectura.
+**Copia completa** : este método realiza una copia completa (denominada "clon") del volumen original en un momento específico. Esta copia es de solo lectura.
 
-**Copia en escritura**   este método no copia el volumen original. En su lugar, realiza una copia diferencial al copiar todos los cambios (solicitudes de E/S de escritura completadas) que se realizan en el volumen después de un momento específico.
+**Copia en escritura** : este método no copia el volumen original. En su lugar, realiza una copia diferencial al copiar todos los cambios (solicitudes de E/S de escritura completadas) que se realizan en el volumen después de un momento específico.
 
-**Redirección en escritura**   este método no copia el volumen original y no realiza ningún cambio en el volumen original después de un momento específico. En su lugar, realiza una copia diferencial al redirigir todos los cambios a un volumen diferente.
+**Redirección en escritura** : este método no copia el volumen original ni realiza ningún cambio en el volumen original después de un momento específico. En su lugar, realiza una copia diferencial al redirigir todos los cambios a un volumen diferente.
 
 ## <a name="complete-copy"></a>Copia completa
 
@@ -157,7 +157,7 @@ En el método de copia en escritura, cuando se produce un cambio en el volumen o
 </tbody>
 </table>
 
-**Tabla 1**   Método de copia en escritura para la creación de instantáneas
+**Tabla 1** Método de copia en escritura para la creación de instantáneas
 
 El método de copia en escritura es un método rápido para crear una instantánea, ya que solo copia los datos que se han modificado. Los bloques copiados en el área de diferencia se pueden combinar con los datos modificados en el volumen original para restaurar el volumen al estado anterior a los cambios realizados. Si hay muchos cambios, el método de copia en escritura puede resultar costoso.
 
@@ -198,7 +198,7 @@ En el método de redirección en escritura, siempre que el volumen original reci
 </tbody>
 </table>
 
-**Tabla 2**   Método de redirección en escritura para la creación de instantáneas
+**Tabla 2** Método de redirección en escritura para la creación de instantáneas
 
 Al igual que el método de copia en escritura, el método de redirección en escritura es un método rápido para crear una instantánea, ya que solo copia las modificaciones de los datos. Los bloques copiados en el área de diferencia se pueden combinar con los datos sin modificar en el volumen original para crear una copia completa y actualizada de los datos. Si hay muchas solicitudes de E/S de lectura, el método de redirección en escritura puede resultar costoso.
 
@@ -308,7 +308,7 @@ Con el Servicio de instantáneas de volumen y una matriz de almacenamiento con u
 
 ![Diagrama de cómo transportar una instantánea entre dos servidores](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
 
-**Figura 3**   Creación y transporte de instantáneas entre dos servidores
+**Figura 3** Creación y transporte de instantáneas entre dos servidores
 
 
 > [!NOTE]
@@ -338,13 +338,13 @@ Cuando se copian datos de la instantánea a una cinta u otro medio extraíble, e
 
 El Servicio de instantáneas de volumen admite un tamaño de volumen de hasta 64 TB.
 
-### <a name="i-made-a-backup-on-windows-server2008-can-i-restore-it-on-windows-server2008r2"></a>Realicé una copia de seguridad en Windows Server 2008. ¿Puedo restaurarla en Windows Server 2008 R2?
+### <a name="i-made-a-backup-on-windows-server-2008-can-i-restore-it-on-windows-server-2008-r2"></a>Realicé una copia de seguridad en Windows Server 2008. ¿Puedo restaurarla en Windows Server 2008 R2?
 
 Depende del software de copia de seguridad que hayas usado. La mayoría de los programas de copia de seguridad admiten este escenario para los datos, pero no para las copias de seguridad del estado del sistema.
 
 Las instantáneas creadas en cualquiera de estas versiones de Windows se pueden usar en la otra.
 
-### <a name="i-made-a-backup-on-windows-server2003-can-i-restore-it-on-windows-server2008"></a>Realicé una copia de seguridad en Windows Server 2003. ¿Puedo restaurarla en Windows Server 2008?
+### <a name="i-made-a-backup-on-windows-server-2003-can-i-restore-it-on-windows-server-2008"></a>Realicé una copia de seguridad en Windows Server 2003. ¿Puedo restaurarla en Windows Server 2008?
 
 Depende del software de copia de seguridad que usaste. Si creas una instantánea en Windows Server 2003, no podrás usarla en Windows Server 2008. Además, si creas una instantánea en Windows Server 2008, no podrás restaurarla en Windows Server 2003.
 
@@ -442,15 +442,15 @@ El sistema operativo Windows proporciona las siguientes herramientas para trabaj
 
 DiskShadow es un solicitante de VSS que puedes usar para administrar todas las instantáneas de hardware y software que se pueden tener en un sistema. DiskShadow incluye comandos como los siguientes:
 
-  - **list**: enumera los escritores y proveedores de VSS, además de las instantáneas.
+  - **list** : enumera los escritores y proveedores de VSS, además de las instantáneas.
 
-  - **create**: crea una nueva instantánea.
+  - **create** : crea una nueva instantánea.
 
-  - **import**: importa una instantánea transportable.
+  - **import** : importa una instantánea transportable.
 
-  - **expose**: expone una instantánea persistente (como una letra de unidad, por ejemplo).
+  - **expose** : expone una instantánea persistente (como una letra de unidad, por ejemplo).
 
-  - **revert**: revierte un volumen a una instantánea especificada.
+  - **revert** : revierte un volumen a una instantánea especificada.
 
 
 Esta herramienta está pensada para que la usen los profesionales de TI, aunque también puede resultar útil para los desarrolladores cuando realizan pruebas para VSS Writer o un proveedor de VSS.
@@ -463,15 +463,15 @@ VssAdmin se usa para crear, eliminar y mostrar información sobre las instantán
 
 VssAdmin incluye comandos como los siguientes:
 
-  - **create shadow**: crea una nueva instantánea.
+  - **create shadow** : crea una nueva instantánea.
 
-  - **delete shadows**: elimina las instantáneas.
+  - **delete shadows** : elimina las instantáneas.
 
-  - **list providers**: enumera todos los proveedores de VSS registrados.
+  - **list providers** : enumera todos los proveedores de VSS registrados.
 
-  - **list writers**: enumera todos los VSS Writer suscritos.
+  - **list writers** : enumera todos los VSS Writer suscritos.
 
-  - **resize shadowstorage**: cambia el tamaño máximo del área de almacenamiento de instantáneas.
+  - **resize shadowstorage** : cambia el tamaño máximo del área de almacenamiento de instantáneas.
 
 
 VssAdmin solo se puede usar para administrar las instantáneas creadas por el proveedor de software del sistema.
@@ -538,7 +538,7 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas co
 <tr class="odd">
 <td><p>Resincronización de LUN</p></td>
 <td><p>No se admite ninguno</p></td>
-<td><p>Windows Server 2008 R2</p></td>
+<td><p>Windows Server 2008 R2</p></td>
 </tr>
 <tr class="even">
 <td><p>Clave del registro <strong>FilesNotToSnapshot</strong></p></td>
@@ -548,22 +548,22 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas co
 <tr class="odd">
 <td><p>Instantáneas transportables</p></td>
 <td><p>No se admite ninguno</p></td>
-<td><p>Windows Server 2003 con SP1</p></td>
+<td><p>Windows Server 2003 con SP1</p></td>
 </tr>
 <tr class="even">
 <td><p>Instantáneas de hardware</p></td>
 <td><p>No se admite ninguno</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
 <td><p>Versiones anteriores de Windows Server</p></td>
 <td><p>Windows Vista</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="even">
 <td><p>Recuperación rápida mediante intercambios de LUN</p></td>
 <td><p>No se admite ninguno</p></td>
-<td><p>Windows Server 2003 con SP1</p></td>
+<td><p>Windows Server 2003 con SP1</p></td>
 </tr>
 <tr class="odd">
 <td><p>Varias importaciones para instantáneas de hardware</p>
@@ -592,7 +592,7 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas co
 <tr class="even">
 <td><p>Instantáneas para carpetas compartidas</p></td>
 <td><p>No se admite ninguno</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
 <td><p>Instantáneas con recuperación automática transportables</p></td>
@@ -602,7 +602,7 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas co
 <tr class="even">
 <td><p>Sesiones de copia de seguridad simultáneas (hasta 64)</p></td>
 <td><p>Windows XP</p></td>
-<td><p>Windows Server 2003</p></td>
+<td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
 <td><p>Sesión de restauración única simultánea con las copias de seguridad</p></td>
@@ -612,7 +612,7 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas co
 <tr class="even">
 <td><p>Hasta 8 sesiones de restauración simultáneas con las copias de seguridad</p></td>
 <td><p>Windows 7</p></td>
-<td><p>Windows Server 2003 R2</p></td>
+<td><p>Windows Server 2003 R2</p></td>
 </tr>
 </tbody>
 </table>

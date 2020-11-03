@@ -7,12 +7,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6524c186e42b2c1c39dae5b95f4c6657bdd9dcbf
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.openlocfilehash: 00bda15c409f5323a96dcbf48bc2dd130ec6368b
+ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083746"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793602"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configuración admitida del archivo RDP de Escritorio remoto
 
@@ -43,8 +43,8 @@ En la tabla también se resalta qué configuración se admite como propiedades p
 | Configuración de RDP                        | Descripción            | Valores                 | Valor predeterminado          | Soporte técnico de Windows Virtual Desktop |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|
 | autoreconnection enabled:i:value | Determina si el cliente intentará automáticamente volver a conectarse al equipo remoto si se interrumpe la conexión, como cuando hay una interrupción en la conectividad de red. | - 0: el equipo cliente no intenta volver a conectarse automáticamente.</br>- 1: el equipo cliente intenta volver a conectarse automáticamente. | 1 | Sí |
-| bandwidthautodetect:i:value | Determina si la detección automática del tipo de red está habilitada | - 0: Deshabilitar la detección automática del tipo de red</br>- 1: Habilitar la detección automática del tipo de red | 1 | Sí |
-| networkautodetect:i:value | Establece si se usa la detección automática de ancho de banda de red o no. Requiere que bandwidthautodetect se establezca en 1. | - 0: No usar la detección automática de ancho de banda de red</br> - 1: Usar la detección automática de ancho de banda de red | 1 | Sí |
+| bandwidthautodetect:i:value | Establece si se usa la detección automática de ancho de banda de red o no. Requiere que bandwidthautodetect se establezca en 1. | - 0: Deshabilitar la detección automática del tipo de red</br>- 1: Habilitar la detección automática del tipo de red | 1 | Sí |
+| networkautodetect:i:value | Determina si la detección automática del tipo de red está habilitada | - 0: No usar la detección automática de ancho de banda de red</br> - 1: Usar la detección automática de ancho de banda de red | 1 | Sí |
 | compression:i:value | Determina si la compresión masiva está habilitada cuando RDP la transmite al equipo local.|- 0: Deshabilitar la compresión masiva de RDP</br>- 1: Habilitar la compresión masiva de RDP | 1 | Sí |
 | videoplaybackmode:i:value| Determina si la conexión usará streaming multimedia eficaz para RDP para la reproducción de vídeo.|- 0: No usar streaming multimedia eficaz para RDP para la reproducción de vídeo</br>- 1: Usar streaming multimedia eficaz para RDP para la reproducción de vídeo cuando sea posible | 1 | Sí |
 

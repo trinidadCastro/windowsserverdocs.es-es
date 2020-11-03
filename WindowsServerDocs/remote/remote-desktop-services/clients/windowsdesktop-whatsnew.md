@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 10/14/2020
+ms.date: 10/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8708f8ab6e8fb751f0ca39238574823ae5b499c4
-ms.sourcegitcommit: 45099dfe3682df1e2bc0bd5998594a79cfff16fe
+ms.openlocfilehash: 9f14d93176fd1bd7b97d90550701f79b55774297
+ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92079844"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92793612"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -24,24 +24,26 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |La versión más reciente  |Versión mínima admitida |
 |-----------|----------------|--------------------------|
-|Público     |1.2.1364        |1.2.945                   |
-|Insider    |1.2.1440        |1.2.945                   |
+|Público     |1.2.1446        |1.2.945                   |
+|Insider    |1.2.1446        |1.2.945                   |
 
-## <a name="updates-for-version-121440-insiders"></a>Actualizaciones de la versión 1.2.1440 (Insider)
+## <a name="updates-for-version-121446"></a>Actualizaciones para la versión 1.2.1446
 
-*Fecha de publicación: 13/10/2020*
+*Fecha de publicación: 27/10/2020*
 
-Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139368)
+Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139370)
 
+- Se ha agregado la característica de actualización automática, que permite al cliente instalar automáticamente las actualizaciones más recientes.
 - El cliente ahora distingue entre fuentes diferentes del centro de conexiones.
 - Se ha corregido un problema por el que la cuenta de suscripción no coincide con la cuenta con la que el usuario inició sesión.
+- Se ha corregido un problema que impedía a algunos usuarios acceder a las aplicaciones remotas a través de un archivo descargado.
 - Se ha corregido un problema con la redirección de tarjetas inteligentes.
 
 ## <a name="updates-for-version-121364"></a>Actualizaciones de la versión 1.2.1364
 
 *Fecha de publicación: 22/09/2020*
 
-Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139370)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FTMK), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4G1t9), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FTMI)
 
 - Se corrigió un problema por el que el inicio de sesión único (SSO) no funcionaba en Windows 7.
 - Se corrigió el error de conexión que se producía al realizar una llamada de Teams o unirse a una mientras otra aplicación tenía una secuencia de audio abierta en modo exclusivo y estaba habilitada la optimización de medios para Teams.
@@ -52,8 +54,6 @@ Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139369),
 ## <a name="updates-for-version-121275"></a>Actualizaciones de la versión 1.2.1275
 
 *Fecha de publicación: 25/08/2020*
-
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYR), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYS), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Fg3H)
 
 - Se agregó la funcionalidad para detectar automáticamente las nubes soberanas a partir de la identidad del usuario.
 - Se agregó la funcionalidad para habilitar las suscripciones de URL personalizadas para todos los usuarios.
@@ -107,7 +107,7 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 *Fecha de publicación: 28/04/2020*
 
 - Se han agregado nuevas opciones de configuración de pantalla para las conexiones de escritorio disponibles al hacer clic con el botón derecho en un icono de escritorio del centro de conexiones.
-  - Ahora hay tres opciones de configuración de pantalla: **todas las pantallas**, **pantalla única** y **pantallas seleccionadas**.
+  - Ahora hay tres opciones de configuración de pantalla: **todas las pantallas** , **pantalla única** y **pantallas seleccionadas**.
   - Ahora solo se muestra la configuración disponible cuando se selecciona una configuración de pantalla.
   - En el modo de pantallas seleccionadas, la nueva opción **Maximize to current displays** (Maximizar a las pantallas actuales) te permite cambiar dinámicamente las pantallas que se usan para la sesión sin necesidad de volver a conectar. Cuando está habilitada, al maximizar la sesión, se activa la pantalla completa en todas las pantallas que toca la ventana de sesión.
   - Se ha agregado la nueva opción **Single display when windowed** (Pantalla única para varias ventanas) para los modos de todas las pantallas y pantallas seleccionadas. Esta opción cambia la sesión automáticamente a una pantalla única al salir del modo de pantalla completa y vuelve automáticamente a varias pantallas al maximizar la ventana.
