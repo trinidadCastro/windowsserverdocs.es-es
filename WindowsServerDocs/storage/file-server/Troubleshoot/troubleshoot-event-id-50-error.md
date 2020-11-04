@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 7ce3551b60450a3720c9350b5c55f396368490c1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 930a503f756bf2005e26ac227565b42b627ee11a
+ms.sourcegitcommit: 39d55b5a0006aceac6281e8cdb61fc79a209ce1b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815238"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93328135"
 ---
 # <a name="troubleshoot-the-event-id-50-error-message"></a>Solución de problemas del mensaje de error 50 de ID. de evento
 
@@ -65,13 +65,13 @@ Al descodificar la sección de datos del ejemplo de un mensaje con el identifica
 
 En la tabla siguiente se describe lo que representa cada desplazamiento de este mensaje: 
 
-|OffsetLengthValues|Duración|Valores|
+|OffsetLengthValues|Length|Valores|
 |-----------|------------|---------|
 |0x00|2|No se utiliza|
 |0x02|2|Tamaño de los datos de volcado = 0x0004|
 |0x04|2|Número de cadenas = 0x0002|
 |0x06|2|Desplazamiento a las cadenas|
-|0x08|2|Categoría de evento|
+|0x08|2|Categoría de eventos|
 |0x0c|4|Código de error NTSTATUS = 0x80040032 = IO_LOST_DELAYED_WRITE|
 |0x10|8|No se utiliza|
 |0x18|8|No se utiliza|
@@ -86,7 +86,7 @@ En el ejemplo de la sección "Resumen", el código de error se muestra en la seg
 
 **El disco de destino**
 
-Puede identificar el disco al que se estaba intentando escribir mediante el vínculo simbólico que aparece en la unidad en la sección "Descripción" del mensaje de ID. de evento, por ejemplo: \Device\HarddiskVolume4. Para obtener más información acerca de cómo identificar la unidad, haga clic en el número de artículo siguiente para ver el artículo en Microsoft Knowledge Base: [159865](/EN-US/help/159865) cómo distinguir un dispositivo de disco físico de un mensaje de evento
+Puede identificar el disco al que se estaba intentando escribir mediante el vínculo simbólico que aparece en la unidad en la sección "Descripción" del mensaje de ID. de evento, por ejemplo: \Device\HarddiskVolume4.
 
 **Código de estado final**
 
@@ -98,7 +98,7 @@ El código de estado final es la parte más importante de la información en un 
 
 En este caso, el estado final es igual a 0x80000011. Este código de estado se asigna a STATUS_DEVICE_BUSY e implica que el dispositivo está ocupado actualmente.
 
->[!NOTE] 
+> [!NOTE] 
 > Cuando convierta los datos hexadecimales en el mensaje con el identificador de evento 50 en el código de estado, recuerde que los valores se representan en el formato Little-Endian. Dado que el código de estado es el único elemento de información que le interesa, puede ser más fácil ver los datos en formato de palabras en lugar de en BYTEs. Si lo hace, los bytes tendrán el formato correcto y es posible que los datos sean más fáciles de interpretar rápidamente.
 
 Para ello, haga clic en **palabras** en la ventana **propiedades del evento** . En la vista de palabras de datos, el ejemplo de la sección "síntomas" se leerá de la siguiente manera: Data: 
