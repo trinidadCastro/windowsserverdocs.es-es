@@ -6,16 +6,16 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 98751ae022d1915f5363e2ead110511bbb482f90
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 54935edd51c7eb5ee351aa0a2c1582c8c85c4e46
+ms.sourcegitcommit: f25662b5840a75aae3b0b953acb11caecd4c2fbd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069707"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93295423"
 ---
 # <a name="audit-policy-recommendations"></a>Recomendaciones de la directiva de auditoría
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10, Windows 8.1, Windows 7
+> Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10, Windows 8.1, Windows 7
 
 En esta sección se trata la configuración de directiva de auditoría predeterminada de Windows, la configuración de directiva de auditoría recomendada de línea de base y las recomendaciones más agresivas de Microsoft para los productos de servidor y estación de trabajo.
 
@@ -32,17 +32,11 @@ Se recomienda la siguiente configuración de la Directiva de auditoría de líne
 Esta sección contiene tablas que enumeran las recomendaciones de configuración de auditoría que se aplican a los siguientes sistemas operativos:
 
 - Windows Server 2016
-
 - Windows Server 2012
-
-- Windows Server 2012 R2
-
+- Windows Server 2012 R2
 - Windows Server 2008
-
 - Windows 10
-
 - Windows 8.1
-
 - Windows 7
 
 Estas tablas contienen la configuración predeterminada de Windows, las recomendaciones de línea base y las recomendaciones más seguras para estos sistemas operativos.
@@ -50,7 +44,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 **Leyenda de tablas de directivas de auditoría**
 
 |**Notación**|**Recomendación**|
-|--|--|
+|:--:|---|
 |SÍ|Habilitar en escenarios generales|
 |No|**No** habilitar en escenarios generales|
 |IF|Habilitar si es necesario para un escenario concreto, o si se instala en el equipo un rol o característica para el que se desea la auditoría|
@@ -62,40 +56,60 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 **Directiva de auditoría**
 
 | Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
-|--|--|--|--|
+|---|:--:|:--:|:--:|
 | **Inicio de sesión de la cuenta** |  |  |  |
-| Auditar validación de credenciales | No no | Sí no | Sí sí |
-| Auditar servicio de autenticación Kerberos |  |  | Sí sí |
-| Auditar operaciones de vales de servicio Kerberos |  |  | Sí sí |
-| Auditar otros eventos de inicio de sesión de cuentas |  |  | Sí sí |
+| Auditar validación de credenciales | `No  \|  No` | `Yes  \|  No` | `Yes  \|  Yes` |
+| Auditar servicio de autenticación Kerberos |  |  | `Yes  \|  Yes` |
+| Auditar operaciones de vales de servicio Kerberos |  |  | `Yes  \|  Yes` |
+| Auditar otros eventos de inicio de sesión de cuentas |  |  | `Yes  \|  Yes` |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Administración de cuentas** |  |  |  |
 | Auditar administración de grupos de aplicaciones |  |  |  |
-| Auditar administración de cuentas de equipo |  | Sí no | Sí sí |
+| Auditar administración de cuentas de equipo |  | `Yes  \|  No` | `Yes  \|  Yes` |
 | Auditar administración de grupos de distribución |  |  |  |
-| Auditar otros eventos de administración de cuentas |  | Sí no | Sí sí |
-| Auditar administración de grupos de seguridad |  | Sí no | Sí sí |
-| Auditar administración de cuentas de usuario | Sí no | Sí no | Sí sí |
+| Auditar otros eventos de administración de cuentas |  | `Yes  \|  No` | `Yes  \|  Yes` |
+| Auditar administración de grupos de seguridad |  | `Yes  \|  No` | `Yes  \|  Yes` |
+| Auditar administración de cuentas de usuario | `Yes  \|  No` | `Yes  \|  No` | `Yes  \|  Yes` |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Seguimiento detallado** |  |  |  |
-| Auditar actividad DPAPI |  |  | Sí sí |
-| Auditar creación de procesos |  | Sí no | Sí sí |
+| Auditar actividad DPAPI |  |  | `Yes  \|  Yes` |
+| Auditar creación de procesos |  | `Yes  \|  No` | `Yes  \|  Yes` |
 | Auditar finalización de procesos |  |  |  |
 | Auditar eventos de RPC |  |  |  |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Acceso DS** |  |  |  |
 | Auditar replicación de servicio de directorio detallada |  |  |  |
 | Auditar el acceso del servicio de directorio |  |  |  |
 | Auditar cambios de servicio de directorio |  |  |  |
 | Auditar replicación de servicio de directorio |  |  |  |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Inicio y cierre de sesión** |  |  |  |
-| Auditar bloqueo de cuentas | Sí no |  | Sí no |
+| Auditar bloqueo de cuentas | `Yes  \|  No` |  | `Yes  \|  No` |
 | Auditar reclamaciones de usuario o dispositivo |  |  |  |
 | Auditar modo extendido de IPsec |  |  |  |
-| Auditar modo principal de IPsec |  |  | SI ES |
+| Auditar modo principal de IPsec |  |  | `IF  \|  IF` |
 | Auditar modo rápido de IPsec |  |  |  |
-| Auditar cierre de sesión | Sí no | Sí no | Sí no |
-| Auditar inicio de sesión <sup>1</sup> | Sí sí | Sí sí | Sí sí |
-| Auditar Servidor de directivas de redes | Sí sí |  |  |
+| Auditar cierre de sesión | `Yes  \|  No` | `Yes  \|  No` | `Yes  \|  No` |
+| Auditar inicio de sesión <sup>1</sup> | `Yes  \|  Yes` | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar Servidor de directivas de redes | `Yes  \|  Yes` |  |  |
 | Auditar otros eventos de inicio y cierre de sesión |  |  |  |
-| Auditar inicio de sesión especial | Sí no | Sí no | Sí sí |
+| Auditar inicio de sesión especial | `Yes  \|  No` | `Yes  \|  No` | `Yes  \|  Yes` |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Acceso a objetos** |  |  |  |
 | Auditar aplicación generada |  |  |  |
 | Auditar servicios de certificación |  |  |  |
@@ -111,23 +125,39 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 | Auditar almacenamiento extraíble |  |  |  |
 | Auditar SAM |  |  |  |
 | Auditar almacenamiento provisional de directiva de acceso central |  |  |  |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Cambio de Directiva** |  |  |  |
-| Auditar cambio de directiva de auditoría | Sí no | Sí sí | Sí sí |
-| Auditar cambio de directiva de autenticación | Sí no | Sí no | Sí sí |
+| Auditar cambio de directiva de auditoría | `Yes  \|  No` | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar cambio de directiva de autenticación | `Yes  \|  No` | `Yes  \|  No` | `Yes  \|  Yes` |
 | Auditar cambio de directiva de autorización |  |  |  |
 | Auditar cambio de directiva de Plataforma de filtrado |  |  |  |
-| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Yes |
+| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Sí |
 | Auditar otros eventos de cambio de directiva |  |  |  |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Uso de privilegios** |  |  |  |
 | Auditar uso de privilegios no confidenciales |  |  |  |
 | Auditar otros eventos de uso de privilegios |  |  |  |
 | Auditar uso de privilegios confidenciales |  |  |  |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Sistema** |  |  |  |
-| Auditar controlador IPsec |  | Sí sí | Sí sí |
-| Auditar otros eventos del sistema | Sí sí |  |  |
-| Auditar cambio de estado de seguridad | Sí no | Sí sí | Sí sí |
-| Auditar extensión del sistema de seguridad |  | Sí sí | Sí sí |
-| Auditar integridad del sistema | Sí sí | Sí sí | Sí sí |
+| Auditar controlador IPsec |  | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar otros eventos del sistema | `Yes  \|  Yes` |  |  |
+| Auditar cambio de estado de seguridad | `Yes  \|  No` | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar extensión del sistema de seguridad |  | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar integridad del sistema | `Yes  \|  Yes` | `Yes  \|  Yes` | `Yes  \|  Yes` |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Auditoría de acceso a objetos global** |  |  |  |
 | Auditar controlador IPsec |  |  |  |
 | Auditar otros eventos del sistema |  |  |  |
@@ -137,43 +167,64 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 
 <sup>1</sup> a partir de la versión 1809 de Windows 10, el inicio de sesión de auditoría está habilitado de forma predeterminada tanto para correcto como para error. En versiones anteriores de Windows, solo se habilitaba correctamente de forma predeterminada.
 
+
 **Recomendaciones de configuración de auditoría de Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008**
 
 | Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
-|--|--|--|--|
+|---|:--:|:--:|:--:|
 | **Inicio de sesión de la cuenta** |  |  |  |
-| Auditar validación de credenciales | No no | Sí sí | Sí sí |
-| Auditar servicio de autenticación Kerberos |  |  | Sí sí |
-| Auditar operaciones de vales de servicio Kerberos |  |  | Sí sí |
-| Auditar otros eventos de inicio de sesión de cuentas |  |  | Sí sí |
+| Auditar validación de credenciales | `No  \|  No` | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar servicio de autenticación Kerberos |  |  | `Yes  \|  Yes` |
+| Auditar operaciones de vales de servicio Kerberos |  |  | `Yes  \|  Yes` |
+| Auditar otros eventos de inicio de sesión de cuentas |  |  | `Yes  \|  Yes` |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Administración de cuentas** |  |  |  |
 | Auditar administración de grupos de aplicaciones |  |  |  |
-| Auditar administración de cuentas de equipo |  | Sí DC | Sí sí |
+| Auditar administración de cuentas de equipo |  | `Yes  \|  DC` | `Yes  \|  Yes` |
 | Auditar administración de grupos de distribución |  |  |  |
-| Auditar otros eventos de administración de cuentas |  | Sí sí | Sí sí |
-| Auditar administración de grupos de seguridad |  | Sí sí | Sí sí |
-| Auditar administración de cuentas de usuario | Sí no | Sí sí | Sí sí |
+| Auditar otros eventos de administración de cuentas |  | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar administración de grupos de seguridad |  | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar administración de cuentas de usuario | `Yes  \|  No` | `Yes  \|  Yes` | `Yes  \|  Yes` |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Seguimiento detallado** |  |  |  |
-| Auditar actividad DPAPI |  |  | Sí sí |
-| Auditar creación de procesos |  | Sí no | Sí sí |
+| Auditar actividad DPAPI |  |  | `Yes  \|  Yes` |
+| Auditar creación de procesos |  | `Yes  \|  No` | `Yes  \|  Yes` |
 | Auditar finalización de procesos |  |  |  |
 | Auditar eventos de RPC |  |  |  |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Acceso DS** |  |  |  |
 | Auditar replicación de servicio de directorio detallada |  |  |  |
-| Auditar el acceso del servicio de directorio |  | DC DC | DC DC |
-| Auditar cambios de servicio de directorio |  | DC DC | DC DC |
+| Auditar el acceso del servicio de directorio |  | `DC  \|  DC` | `DC  \|  DC` |
+| Auditar cambios de servicio de directorio |  | `DC  \|  DC` | `DC  \|  DC` |
 | Auditar replicación de servicio de directorio |  |  |  |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Inicio y cierre de sesión** |  |  |  |
-| Auditar bloqueo de cuentas | Sí no |  | Sí no |
+| Auditar bloqueo de cuentas | `Yes  \|  No` |  | `Yes  \|  No` |
 | Auditar reclamaciones de usuario o dispositivo |  |  |  |
 | Auditar modo extendido de IPsec |  |  |  |
-| Auditar modo principal de IPsec |  |  | SI ES |
+| Auditar modo principal de IPsec |  |  | `IF  \|  IF` |
 | Auditar modo rápido de IPsec |  |  |  |
-| Auditar cierre de sesión | Sí no | Sí no | Sí no |
-| Auditar inicio de sesión | Sí sí | Sí sí | Sí sí |
-| Auditar Servidor de directivas de redes | Sí sí |  |  |
-| Auditar otros eventos de inicio y cierre de sesión |  |  | Sí sí |
-| Auditar inicio de sesión especial | Sí no | Sí no | Sí sí |
+| Auditar cierre de sesión | `Yes  \|  No` | `Yes  \|  No` | `Yes  \|  No` |
+| Auditar inicio de sesión | `Yes  \|  Yes` | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar Servidor de directivas de redes | `Yes  \|  Yes` |  |  |
+| Auditar otros eventos de inicio y cierre de sesión |  |  | `Yes  \|  Yes` |
+| Auditar inicio de sesión especial | `Yes  \|  No` | `Yes  \|  No` | `Yes  \|  Yes` |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Acceso a objetos** |  |  |  |
 | Auditar aplicación generada |  |  |  |
 | Auditar servicios de certificación |  |  |  |
@@ -189,23 +240,39 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 | Auditar almacenamiento extraíble |  |  |  |
 | Auditar SAM |  |  |  |
 | Auditar almacenamiento provisional de directiva de acceso central |  |  |  |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Cambio de Directiva** |  |  |  |
-| Auditar cambio de directiva de auditoría | Sí no | Sí sí | Sí sí |
-| Auditar cambio de directiva de autenticación | Sí no | Sí no | Sí sí |
+| Auditar cambio de directiva de auditoría | `Yes  \|  No` | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar cambio de directiva de autenticación | `Yes  \|  No` | `Yes  \|  No` | `Yes  \|  Yes` |
 | Auditar cambio de directiva de autorización |  |  |  |
 | Auditar cambio de directiva de Plataforma de filtrado |  |  |  |
-| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Yes |
+| Auditar cambio de directiva del nivel de reglas de MPSSVC |  |  | Sí |
 | Auditar otros eventos de cambio de directiva |  |  |  |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Uso de privilegios** |  |  |  |
 | Auditar uso de privilegios no confidenciales |  |  |  |
 | Auditar otros eventos de uso de privilegios |  |  |  |
 | Auditar uso de privilegios confidenciales |  |  |  |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Sistema** |  |  |  |
-| Auditar controlador IPsec |  | Sí sí | Sí sí |
-| Auditar otros eventos del sistema | Sí sí |  |  |
-| Auditar cambio de estado de seguridad | Sí no | Sí sí | Sí sí |
-| Auditar extensión del sistema de seguridad |  | Sí sí | Sí sí |
-| Auditar integridad del sistema | Sí sí | Sí sí | Sí sí |
+| Auditar controlador IPsec |  | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar otros eventos del sistema | `Yes  \|  Yes` |  |  |
+| Auditar cambio de estado de seguridad | `Yes  \|  No` | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar extensión del sistema de seguridad |  | `Yes  \|  Yes` | `Yes  \|  Yes` |
+| Auditar integridad del sistema | `Yes  \|  Yes` | `Yes  \|  Yes` | `Yes  \|  Yes` |
+
+
+| Categoría o subcategoría de directiva de auditoría | Predeterminado de Windows<p>Error de operación correcta | Recomendación de línea de base<p>Error de operación correcta | Recomendación más fuerte<p>Error de operación correcta |
+|---|:--:|:--:|:--:|
 | **Auditoría de acceso a objetos global** |  |  |  |
 | Auditar controlador IPsec |  |  |  |
 | Auditar otros eventos del sistema |  |  |  |
@@ -229,9 +296,9 @@ Un identificador de evento perfecto para generar una alerta de seguridad debe co
 
 Se deben supervisar y alertar dos tipos de eventos:
 
-1.  Los eventos en los que incluso una única repetición indica actividad no autorizada.
+1. Los eventos en los que incluso una única repetición indica actividad no autorizada.
 
-2.  Una acumulación de eventos por encima de un punto de referencia esperado y aceptado.
+2. Una acumulación de eventos por encima de un punto de referencia esperado y aceptado.
 
 Un ejemplo del primer evento es:
 
