@@ -6,16 +6,16 @@ ms.date: 04/10/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: d5e69c35baf9f74542a85041b95808bc823b746a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1e33017eb7d105a9d53d9e34f828a953d8c527fa
+ms.sourcegitcommit: 39d55b5a0006aceac6281e8cdb61fc79a209ce1b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961799"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93328125"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>Adición del servidor de Agente de conexión a Escritorio remoto para la implementación y la configuración de alta disponibilidad
 
->Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
 Puedes implementar un clúster de Agente de conexión a Escritorio remoto (Agente de conexión a RD) para mejorar la disponibilidad y la escala de la infraestructura de los servicios de Escritorio remoto.
 
@@ -34,27 +34,27 @@ Configura una base de datos para el agente de conexión. Puedes usar una instanc
     4. Copia la cadena de conexión de **ODBC (incluye Node.js)** , que debería tener el siguiente aspecto:
 
         ```
-        Driver={SQL Server Native Client 13.0};Server=tcp:cb-sqls1.database.windows.net,1433;Database=CB-DB1;Uid=sqladmin@contoso;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+        Driver={ODBC Driver 13 for SQL Server};Server=tcp:cb-sqls1.database.windows.net,1433;Database=CB-DB1;Uid=sqladmin@contoso;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
         ```
 
     5. Reemplaza "your_password_here" con la contraseña real. Recuerda que usarás esta cadena completa, con su contraseña incluida, cuando te conectes a la base de datos.
 2. Instala el controlador ODBC en el nuevo Agente de conexión:
-   1. Si estás usando una máquina virtual para el Agente de conexión, crea una dirección IP pública para el primer Agente de conexión de Escritorio remoto. (Solo tienes que hacer esto si la máquina virtual RDMS aún no tiene una dirección IP pública para permitir conexiones RDP).
-       1. En Azure Portal, haz clic en **Examinar** > **Grupos de recursos**, haz clic en el grupo de recursos de la implementación y luego en la primera máquina virtual del Agente de conexión a Escritorio remoto (por ejemplo, Contoso-Cb1).
-       2. Haz clic en **Configuración > Interfaces de red** y luego en la interfaz de red correspondiente.
-       3. Haz clic en **Configuración> Dirección IP**.
-       4. Para la **dirección IP pública**, selecciona **Habilitado** y haz clic en **Dirección IP**.
-       5. Si tienes una dirección IP pública existente que quieras usar, selecciónala de la lista. De lo contrario, haz clic en **Crear nuevo**, escribe un nombre y haz clic en **Aceptar** y **Guardar**.
-   2. Conéctate al primer Agente de conexión de Escritorio remoto:
-       1. En Azure Portal, haz clic en **Examinar** > **Grupos de recursos**, haz clic en el grupo de recursos de la implementación y luego en la primera máquina virtual del Agente de conexión a Escritorio remoto (por ejemplo, Contoso-Cb1).
-       2. Haz clic en **Conectar > Abrir** para abrir el cliente de Escritorio remoto.
-       3. En el cliente, haz clic en **Conectar** y, a continuación, en **Usar otra cuenta de usuario**. Escribe el nombre de usuario y la contraseña de una cuenta de administrador de dominio.
-       4. Haz clic en **Sí** cuando se te avise sobre el certificado.
-   3. Descarga el [controlador ODBC para SQL Server](https://www.microsoft.com/download/confirmation.aspx?id=50420) que coincida con la versión en la cadena de conexión ODBC. En cuanto a la cadena del ejemplo anterior, necesitas instalar la versión 13 del controlador ODBC.
-   4. Copia el archivo sqlincli.msi en el primer servidor de Agente de conexión a Escritorio remoto.
-   5. Abre el archivo sqlincli.msi e instala el cliente nativo.
-   6. Repite los pasos del 1 al 5 para cada Agente de conexión a Escritorio remoto adicional (por ejemplo, Contoso-Cb2).
-   7. Instala el controlador ODBC en cada servidor que ejecutará el agente de conexión.
+    1. Si estás usando una máquina virtual para el Agente de conexión, crea una dirección IP pública para el primer Agente de conexión de Escritorio remoto. (Solo tienes que hacer esto si la máquina virtual RDMS aún no tiene una dirección IP pública para permitir conexiones RDP).
+        1. En Azure Portal, haz clic en **Examinar** > **Grupos de recursos** , haz clic en el grupo de recursos de la implementación y luego en la primera máquina virtual del Agente de conexión a Escritorio remoto (por ejemplo, Contoso-Cb1).
+        2. Haz clic en **Configuración > Interfaces de red** y luego en la interfaz de red correspondiente.
+        3. Haz clic en **Configuración> Dirección IP**.
+        4. Para la **dirección IP pública** , selecciona **Habilitado** y haz clic en **Dirección IP**.
+        5. Si tienes una dirección IP pública existente que quieras usar, selecciónala de la lista. De lo contrario, haz clic en **Crear nuevo** , escribe un nombre y haz clic en **Aceptar** y **Guardar**.
+    2. Conéctate al primer Agente de conexión de Escritorio remoto:
+        1. En Azure Portal, haz clic en **Examinar** > **Grupos de recursos** , haz clic en el grupo de recursos de la implementación y luego en la primera máquina virtual del Agente de conexión a Escritorio remoto (por ejemplo, Contoso-Cb1).
+        2. Haz clic en **Conectar > Abrir** para abrir el cliente de Escritorio remoto.
+        3. En el cliente, haz clic en **Conectar** y, a continuación, en **Usar otra cuenta de usuario**. Escribe el nombre de usuario y la contraseña de una cuenta de administrador de dominio.
+        4. Haz clic en **Sí** cuando se te avise sobre el certificado.
+    3. Descarga el [controlador ODBC para SQL Server](https://www.microsoft.com/download/confirmation.aspx?id=50420) que coincida con la versión en la cadena de conexión ODBC. En cuanto a la cadena del ejemplo anterior, necesitas instalar la versión 13 del controlador ODBC.
+    4. Copia el archivo sqlincli.msi en el primer servidor de Agente de conexión a Escritorio remoto.
+    5. Abre el archivo sqlincli.msi e instala el cliente nativo.
+    6. Repite los pasos del 1 al 5 para cada Agente de conexión a Escritorio remoto adicional (por ejemplo, Contoso-Cb2).
+    7. Instala el controlador ODBC en cada servidor que ejecutará el agente de conexión.
 
 ## <a name="step-2-configure-load-balancing-on-the-rd-connection-brokers"></a>Paso 2: Configurar el equilibrio de carga en los Agentes de conexión a Escritorio remoto
 
@@ -62,30 +62,30 @@ Si estás usando la infraestructura de Azure, puedes crear un [equilibrador de c
 
 ### <a name="create-a-load-balancer"></a>Crear un equilibrador de carga
 1. Crear un equilibrador de carga de Azure
-      1. En Azure Portal, haz clic en **Examinar > Equilibradores de carga> Agregar**.
-      2. Escribe un nombre para el nuevo equilibrador de carga (por ejemplo, hacb).
-      3. Selecciona **Interno** en las opciones **Esquema** y **Red virtual** para la implementación (por ejemplo, Contoso-VNet) y la **Subred** con todos tus recursos (por ejemplo, el valor predeterminado).
-      4. Selecciona **Estática** en la **asignación de dirección IP** y escribe una **dirección IP privada** que no esté actualmente en uso (por ejemplo, 10.0.0.32).
-      5. Selecciona la **suscripción** apropiada, el **grupo de recursos** con todos tus recursos y la **ubicación** correspondiente.
-      6. Selecciona **Crear**.
+    1. En Azure Portal, haz clic en **Examinar > Equilibradores de carga> Agregar**.
+    2. Escribe un nombre para el nuevo equilibrador de carga (por ejemplo, hacb).
+    3. Selecciona **Interno** en las opciones **Esquema** y **Red virtual** para la implementación (por ejemplo, Contoso-VNet) y la **Subred** con todos tus recursos (por ejemplo, el valor predeterminado).
+    4. Selecciona **Estática** en la **asignación de dirección IP** y escribe una **dirección IP privada** que no esté actualmente en uso (por ejemplo, 10.0.0.32).
+    5. Selecciona la **suscripción** apropiada, el **grupo de recursos** con todos tus recursos y la **ubicación** correspondiente.
+    6. Selecciona **Crear**.
 2. Crea un [sondeo](/azure/load-balancer/load-balancer-custom-probe-overview) para supervisar qué servidores están activos:
-      1. En Azure Portal, haz clic en  **Examinar> Equilibradores de carga** y en el equilibrador de carga que acabas de crear (por ejemplo, CBLB). Haga clic en **Configuración**.
-      2. Haga clic en **Sondeos > Agregar**.
-      3. Escribe un nombre para el sondeo (por ejemplo, **RDP**), selecciona **TCP** como **protocolo**, escribe **3389** en el **puerto** y haz clic en **Aceptar**.
+    1. En Azure Portal, haz clic en  **Examinar> Equilibradores de carga** y en el equilibrador de carga que acabas de crear (por ejemplo, CBLB). Haga clic en **Configuración**.
+    2. Haga clic en **Sondeos > Agregar**.
+    3. Escribe un nombre para el sondeo (por ejemplo, **RDP** ), selecciona **TCP** como **protocolo** , escribe **3389** en el **puerto** y haz clic en **Aceptar**.
 3. Crea el grupo de back-end de los agentes de conexión:
-      1. En **Configuración**, haz clic en **Grupos de direcciones de back-end > Agregar**.
-      2. Escribe un nombre (por ejemplo, CBBackendPool) y haz clic en **Agregar una máquina virtual**.
-      3. Elige un conjunto de disponibilidad (por ejemplo, CbAvSet) y haz clic en **Aceptar**.
-      3. Haz clic en **Elegir las máquinas virtuales**, selecciona cada máquina virtual y haz clic en **Seleccionar > Aceptar > Aceptar**.
+    1. En **Configuración** , haz clic en **Grupos de direcciones de back-end > Agregar**.
+    2. Escribe un nombre (por ejemplo, CBBackendPool) y haz clic en **Agregar una máquina virtual**.
+    3. Elige un conjunto de disponibilidad (por ejemplo, CbAvSet) y haz clic en **Aceptar**.
+    3. Haz clic en **Elegir las máquinas virtuales** , selecciona cada máquina virtual y haz clic en **Seleccionar > Aceptar > Aceptar**.
 4. Crea la regla de equilibrio de carga RDP:
-      1. En **Configuración**, haz clic en **Reglas de equilibrio de carga** y en **Agregar**.
-      2. Escribe un nombre (por ejemplo, RDP), selecciona **TCP** para el **protocolo**, escribe **3389** en el **puerto** y el **puerto de back-end** y haz clic en **Aceptar**.
+    1. En **Configuración** , haz clic en **Reglas de equilibrio de carga** y en **Agregar**.
+    2. Escribe un nombre (por ejemplo, RDP), selecciona **TCP** para el **protocolo** , escribe **3389** en el **puerto** y el **puerto de back-end** y haz clic en **Aceptar**.
 5. Agrega un registro DNS para el equilibrador de carga:
-      1. Conéctate a la máquina virtual del servidor RDMS (por ejemplo, Contoso-CB1). Consulta el artículo [Prepare the RD Connection Broker VM](./rds-prepare-vms.md) (Preparación de la VM del Agente de conexión a Escritorio remoto) para conocer los pasos sobre cómo te puedes conectar a la VM.
-      2. En el Administrador del servidor, haz clic en **Herramientas > DNS**.
-      3. En el panel de la izquierda, expande **DNS**, haz clic en la máquina DNS, en **Zonas de búsqueda directa** y, a continuación, haz clic en tu nombre de dominio (por ejemplo, Contoso.com). (Te puede llevar unos segundos procesar la consulta al servidor DNS para obtener la información).
-      4. Haz clic en **Acción> Nuevo host (A o AAAA)** .
-      9. Escribe el nombre (por ejemplo, hacb) y la dirección IP especificada anteriormente (por ejemplo, 10.0.0.32).
+    1. Conéctate a la máquina virtual del servidor RDMS (por ejemplo, Contoso-CB1). Consulta el artículo [Prepare the RD Connection Broker VM](./rds-prepare-vms.md) (Preparación de la VM del Agente de conexión a Escritorio remoto) para conocer los pasos sobre cómo te puedes conectar a la VM.
+    2. En el Administrador del servidor, haz clic en **Herramientas > DNS**.
+    3. En el panel de la izquierda, expande **DNS** , haz clic en la máquina DNS, en **Zonas de búsqueda directa** y, a continuación, haz clic en tu nombre de dominio (por ejemplo, Contoso.com). (Te puede llevar unos segundos procesar la consulta al servidor DNS para obtener la información).
+    4. Haz clic en **Acción> Nuevo host (A o AAAA)** .
+    9. Escribe el nombre (por ejemplo, hacb) y la dirección IP especificada anteriormente (por ejemplo, 10.0.0.32).
 
 ### <a name="configure-dns-round-robin"></a>Configurar round robin DNS
 
@@ -93,32 +93,32 @@ En los siguientes pasos se indica un modo alternativo a la creación de un equil
 
 1. Conéctate al servidor RDMS en Azure Portal. usa el cliente de Conexión a Escritorio remoto
 2. Crea registros de DNS:
-      1. En el Administrador del servidor, haz clic en **Herramientas > DNS**.
-      2. En el panel de la izquierda, expande **DNS**, haz clic en la máquina DNS, en **Zonas de búsqueda directa** y, a continuación, haz clic en tu nombre de dominio (por ejemplo, Contoso.com). (Te puede llevar unos segundos procesar la consulta al servidor DNS para obtener la información).
-      3. Haz clic en **Acción** y en **Nuevo host (A o AAAA)** .
-      4. Escribe el **nombre de DNS** para el clúster del Agente de conexión a Escritorio remoto (por ejemplo, hacb), y escribe la **dirección IP** del primer Agente de conexión a Escritorio remoto.
-      5. Repite los pasos 3-4 para cada Agente de conexión a Escritorio remoto adicional y proporciona la dirección IP única de cada registro adicional.
+    1. En el Administrador del servidor, haz clic en **Herramientas > DNS**.
+    2. En el panel de la izquierda, expande **DNS** , haz clic en la máquina DNS, en **Zonas de búsqueda directa** y, a continuación, haz clic en tu nombre de dominio (por ejemplo, Contoso.com). (Te puede llevar unos segundos procesar la consulta al servidor DNS para obtener la información).
+    3. Haz clic en **Acción** y en **Nuevo host (A o AAAA)** .
+    4. Escribe el **nombre de DNS** para el clúster del Agente de conexión a Escritorio remoto (por ejemplo, hacb), y escribe la **dirección IP** del primer Agente de conexión a Escritorio remoto.
+    5. Repite los pasos 3-4 para cada Agente de conexión a Escritorio remoto adicional y proporciona la dirección IP única de cada registro adicional.
 
 
 Por ejemplo, si las direcciones IP de las dos máquinas virtuales del Agente de conexión a Escritorio remoto son 10.0.0.8 y 10.0.0.9, crearás dos registros de host DNS:
- - Nombre de host: hacb.contoso.com, dirección IP: 10.0.0.8
- - Nombre de host: hacb.contoso.com, dirección IP: 10.0.0.9
+- Nombre de host: hacb.contoso.com, dirección IP: 10.0.0.8
+- Nombre de host: hacb.contoso.com, dirección IP: 10.0.0.9
 
 ## <a name="step-3-configure-the-connection-brokers-for-high-availability"></a>Paso 3: Configurar los agentes de conexión para lograr alta disponibilidad
 
 1. Agrega el nuevo servidor del Agente de conexión a Escritorio remoto al Administrador del servidor:
-   1. En el Administrador del servidor, haz clic en **Administrar > Agregar servidores**.
-   2. Haz clic en **Buscar ahora**.
-   3. Haz clic en el servidor del Agente de conexión a Escritorio remoto que creaste recientemente (por ejemplo, Contoso-Cb2) y haz clic en **Aceptar**.
+    1. En el Administrador del servidor, haz clic en **Administrar > Agregar servidores**.
+    2. Haz clic en **Buscar ahora**.
+    3. Haz clic en el servidor del Agente de conexión a Escritorio remoto que creaste recientemente (por ejemplo, Contoso-Cb2) y haz clic en **Aceptar**.
 2. Configura la alta disponibilidad del Agente de conexión a Escritorio remoto:
-   1. En el Administrador del servidor, haz clic en **Servicios de Escritorio remoto > Información general**.
-   2. Haz clic con el botón derecho en **Agente de conexión a Escritorio remoto** y luego en **Configurar alta disponibilidad**.
-   3. Realiza los pasos del asistente hasta que llegues a la sección Tipo de configuración. Selecciona **Servidor de base de datos compartido** y haz clic en **Siguiente**.
-   4. Escribe el nombre DNS del clúster del Agente de conexión a Escritorio remoto.
-   5. Asimismo, debes escribir la cadena de conexión para SQL Database y, a continuación, usa el asistente para establecer una alta disponibilidad.
+    1. En el Administrador del servidor, haz clic en **Servicios de Escritorio remoto > Información general**.
+    2. Haz clic con el botón derecho en **Agente de conexión a Escritorio remoto** y luego en **Configurar alta disponibilidad**.
+    3. Realiza los pasos del asistente hasta que llegues a la sección Tipo de configuración. Selecciona **Servidor de base de datos compartido** y haz clic en **Siguiente**.
+    4. Escribe el nombre DNS del clúster del Agente de conexión a Escritorio remoto.
+    5. Asimismo, debes escribir la cadena de conexión para SQL Database y, a continuación, usa el asistente para establecer una alta disponibilidad.
 3. Agregar el nuevo Agente de conexión a Escritorio remoto a la implementación
-   1. En el Administrador del servidor, haz clic en **Servicios de Escritorio remoto > Información general**.
-   2. Haz clic con el botón derecho en el Agente de conexión a Escritorio remoto y luego en **Agregar servidor del Agente de conexión a Escritorio remoto**.
-   3. Realiza los pasos del asistente hasta que llegues a la opción de selección del servidor y selecciona el servidor del Agente de conexión a Escritorio remoto que creaste recientemente (por ejemplo, Contoso-CB2).
-   4. Completa el asistente, aceptando los valores predeterminados.
+    1. En el Administrador del servidor, haz clic en **Servicios de Escritorio remoto > Información general**.
+    2. Haz clic con el botón derecho en el Agente de conexión a Escritorio remoto y luego en **Agregar servidor del Agente de conexión a Escritorio remoto**.
+    3. Realiza los pasos del asistente hasta que llegues a la opción de selección del servidor y selecciona el servidor del Agente de conexión a Escritorio remoto que creaste recientemente (por ejemplo, Contoso-CB2).
+    4. Completa el asistente, aceptando los valores predeterminados.
 4. Configuración de certificados de confianza en clientes y servidores de Agente de conexión a Escritorio remoto.
