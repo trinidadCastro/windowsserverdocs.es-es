@@ -6,12 +6,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b5edda407ce85ec8024f6cc1c9a6e9ec463e7618
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: d7342c7af0ed3c9045fe337162d0903977857177
+ms.sourcegitcommit: b39ea3b83280f00e5bb100df0dc8beaf1fb55be2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068576"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94520488"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Búsqueda de recursos adicionales para el diseño de la topología de sitio de Active Directory para Windows Server 2008
 
@@ -46,8 +46,6 @@ Puede encontrar la siguiente documentación sobre Active Directory Domain Servic
 - Para obtener más información sobre cómo crear objetos de subred, vea [crear una subred](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770372(v=ws.11)).
 
 - Para obtener más información acerca de cómo usar el complemento sitios y servicios de Active Directory para deshabilitar la configuración de **enlazar todos los vínculos** a sitios, consulte [habilitar o deshabilitar puentes de vínculos a sitios](/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10)).
-
-- Para obtener información sobre la administración de la replicación a través de firewalls, consulte [Active Directory en redes segmentadas por firewalls](https://microsoft.com/download/details.aspx?familyid=c2ef3846-43f0-4caf-9767-a9166368434e).
 
 - Para obtener más información acerca de las características del controlador de dominio de solo lectura (RODC), consulte [AD DS: Read-Only controladores de dominio](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10)).
 
