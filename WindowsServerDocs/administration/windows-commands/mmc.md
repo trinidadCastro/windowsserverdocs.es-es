@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a2a342e0a72835ac16130ddf54a16e2333ed73c1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ac3ad08c59f384c23f916b824d8f80fff1378e8d
+ms.sourcegitcommit: 429b7f14666642d0a3f7a48e5c5a0b0b145c8c23
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89634204"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94482073"
 ---
 # <a name="mmc"></a>mmc
 
@@ -34,11 +34,10 @@ mmc <path>\<filename>.msc [/a] [/64] [/32]
 | /a | Abre una consola guardada en el modo de autor.  Se usa para realizar cambios en las consolas guardadas. |
 | /64 | Abre la versión de 64 bits de **MMC** (mmc64). Utilice esta opción sólo si ejecuta un sistema operativo de Microsoft de 64 bits y desea utilizar un complemento de 64 bits. |
 | /32 | Abre la versión de 32 bits de **MMC** (mmc32). Al ejecutar un sistema operativo de Microsoft 64 bits, puede ejecutar complementos de 32 bits si abre MMC con esta opción de línea de comandos cuando tiene solo complementos de 32 bits. |
-| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
-- Puede usar variables de entorno para crear líneas de comandos o accesos directos que no dependan de la ubicación explícita de los archivos de consola. Por ejemplo, si la ruta de acceso a un archivo de consola está en la carpeta del sistema (por ejemplo, **MMC c:\winnt\system32\ console_name. msc**), puede usar la cadena de datos expansibles **% systemroot%** para especificar la ubicación (**mmc% systemroot% \ system32 \ console_name. msc**). Esto puede resultar útil si está delegando tareas a personas de la organización que trabajan en equipos diferentes.
+- Puede usar variables de entorno para crear líneas de comandos o accesos directos que no dependan de la ubicación explícita de los archivos de consola. Por ejemplo, si la ruta de acceso a un archivo de consola está en la carpeta del sistema (por ejemplo, **MMC c:\winnt\system32\ console_name. msc** ), puede usar la cadena de datos expansibles **% systemroot%** para especificar la ubicación ( **mmc% systemroot% \ system32 \ console_name. msc** ). Esto puede resultar útil si está delegando tareas a personas de la organización que trabajan en equipos diferentes.
 
 - Cuando las consolas se abren con la opción **/a** , se abren en el modo de autor, independientemente de su modo predeterminado. Esto no cambia de forma permanente la configuración de modo predeterminado de los archivos; Cuando se omite esta opción, MMC abre los archivos de consola según su configuración de modo predeterminado.
 
