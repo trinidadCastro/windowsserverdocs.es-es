@@ -5,12 +5,12 @@ ms.date: 09/27/2018
 ms.topic: conceptual
 ms.author: damaerte
 author: maertendmsft
-ms.openlocfilehash: e24ba7d0cef92d700b9078422069c8c0461cf516
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 99947390b698da22d4ab2ba497ae02222b523eb7
+ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078332"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93235802"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Configuración del servidor de OpenSSH para Windows 10, 1809 y Windows Server 2019
 
@@ -108,7 +108,7 @@ No se aplica en Windows. Para evitar el inicio de sesión de administrador, usa 
 ### <a name="syslogfacility"></a>SyslogFacility
 
 Si necesitas un registro basado en archivos, usa LOCAL0. Los registros se generan en %programdata%\ssh\logs.
-Cualquier otro valor, incluido el valor predeterminado AUTH, dirige los registros a ETW. Para obtener más información, consulta Instalaciones de registro en Windows.
+Para cualquier otro valor, incluido el valor predeterminado, AUTH dirige los registros a ETW. Para obtener más información, consulte [Instalaciones de registro en Windows](https://github.com/PowerShell/Win32-OpenSSH/wiki/Logging-Facilities).
 
 ### <a name="not-supported"></a>Incompatible
 

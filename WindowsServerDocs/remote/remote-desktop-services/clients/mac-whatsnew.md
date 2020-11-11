@@ -5,20 +5,37 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/19/2020
+ms.date: 11/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 72d828099d8dfe29639789f526533a7bb1ba159d
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: b53046f493fca630b24f31818ae724403ffc3c53
+ms.sourcegitcommit: 5fc77b4325a18d8c22385d899b14fe724a662347
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702864"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94361162"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 
 El [cliente de Escritorio remoto para macOS](remote-desktop-mac.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 
 Si tienes algún problema, puedes ponerte en contacto con nosotros a través **Ayuda** > **Notificar un problema**.
+
+## <a name="updates-for-version-1041"></a>Actualizaciones para la versión 10.4.1
+
+*Fecha de publicación: 06/11/2020*
+
+Agrupamos algunas correcciones de errores y actualizaciones de características menores para esta versión 10.4.1. Estas son las novedades:
+
+- Se solucionaron varios problemas de confiabilidad identificados en informes de bloqueos.
+- Se corrigieron errores de accesibilidad relacionados con el teclado y VoiceOver.
+- Se corrigió un problema en que el cliente se bloqueaba al volver a conectarse después de la reanudación desde el modo de suspensión.
+- Se corrigió un artefacto de audio que se oía al reproducir el primer fragmento de una secuencia de audio redirigida.
+- Se solucionó un problema en que el cliente notificaba un mensaje de error 0x5000007 al conectarse mediante un servidor de puerta de enlace de Escritorio remoto.
+- Se corrigió la relación de aspecto de las miniaturas del equipo mostradas en el centro de conexiones.
+- Se mejoró la heurística de redirección de tarjetas inteligentes para gestionar mejor las transacciones anidadas.
+- Se corrigió un error que impedía la exportación de marcadores si el nombre para mostrar del marcador contenía el carácter "/".
+- Se resolvió un problema que causaba un error de protocolo 0xD06 al ejecutar Outlook como una aplicación remota.
+- Se agregó compatibilidad con una nueva propiedad de archivo RDP entero (ForceHiDpiOptimizations) para habilitar la optimización de la pantalla de retina.
 
 ## <a name="updates-for-version-1040"></a>Actualizaciones para la versión 10.4.0
 
@@ -315,7 +332,7 @@ Han pasado algunas semanas desde la última actualización, pero estamos trabaja
 - Se corrigió un error que provocaba que las miniaturas consumieran demasiado almacenamiento en disco en macOS 10.14.
 - Se agregó compatibilidad para aplicar las directivas de redirección de dispositivos para Puerta de enlace de Escritorio remoto.
 - Se corrigió un problema que impedía que las ventanas de sesión se cerraran al desconectarse de una conexión con la Puerta de enlace de Escritorio remoto.
-- Si el servidor no exige la Autenticación a nivel de red (NLA), ahora se te enrutará a la pantalla de inicio de sesión si la contraseña ha expirado.
+- Si el servidor no exige la Autenticación a nivel de red (NLA), ahora se le enrutará a la pantalla de inicio de sesión si la contraseña ha expirado.
 - Se corrigieron problemas de rendimiento que aparecían cuando se transferían grandes cantidades de datos a través de la red.
 - Correcciones de redirección de tarjetas inteligentes.
 - Compatibilidad para todos los valores posibles de las opciones "Nivel de autenticación" y "EnableCredSspSupport" del archivo de RDP si la clave predeterminada de usuario ClientSettings.EnforceCredSSPSupport (en el dominio com.microsoft.rdc.macos) está establecida en 0.
@@ -327,7 +344,7 @@ Han pasado algunas semanas desde la última actualización, pero estamos trabaja
 
 *Fecha de publicación: 06/08/2018*
 
-- Se habilitó la conectividad equipos unidos a Azure Active Directory (AAD). Para conectarse a un equipo unido a AAD, el nombre de usuario debe tener uno de los siguientes formatos: "AzureAD\usuario" o "AzureAD\user@domain".
+- Se habilitó la conectividad para los equipos unidos a Azure Active Directory (Azure AD). Para conectarse a un equipo unido a Azure AD, el nombre de usuario debe tener uno de los siguientes formatos: "AzureAD\usuario" o "AzureAD\user@domain".
 - Se abordaron algunos errores al usar tarjetas inteligentes en una sesión remota.
 
 ## <a name="updates-for-version-1020"></a>Actualizaciones de la versión 10.2.0
@@ -347,7 +364,7 @@ Han pasado algunas semanas desde la última actualización, pero estamos trabaja
 - La forma del cursor del mouse ahora se actualiza correctamente al salir de una sesión o una ventana de RemoteApp.
 - Se corrigió un error de redirección de carpeta que causaba la pérdida de datos al copiar y pegar carpetas.
 - Se corrigió un problema de redirección de carpeta que provocaba informes incorrectos de los tamaños de las carpetas.
-- Se corrigió una regresión que impedía iniciar sesión en un equipo unido a AAD mediante una cuenta local.
+- Se corrigió una regresión que impedía iniciar sesión en una máquina unida a Azure AD mediante una cuenta local.
 - Se corrigieron errores que provocaban que el contenido de la ventana de la sesión se recortara.
 - Se agregó compatibilidad para los certificados de punto de conexión de Escritorio remoto que contienen claves asimétricas de curva elíptica.
 - Se corrigió un error que impedía la descarga de recursos administrados en algunos escenarios.
@@ -378,7 +395,7 @@ Han pasado algunas semanas desde la última actualización, pero estamos trabaja
 - Ahora puedes iniciar una conexión presionando ENTRAR en un icono del escritorio.
 - Cuando está en la vista de pantalla completa, Cmd + M ahora se asigna correctamente a WIN + M.
 - Las ventanas Centro de conexiones, Preferencias y Acerca de ahora responden a Cmd + M.
-- Ahora puedes comenzar a detectar fuentes al presionar ENTRAR en la página **Adición de recursos remotos*.
+- Ahora puedes comenzar a detectar fuentes al presionar ENTRAR en la página * *Adición de recursos remotos*.
 - Se corrigió un problema donde una nueva fuente de los recursos remotos aparecía vacía en el centro de conexiones hasta después de actualizar.
 
 ## <a name="updates-for-version-1016"></a>Actualizaciones de la versión 10.1.6
