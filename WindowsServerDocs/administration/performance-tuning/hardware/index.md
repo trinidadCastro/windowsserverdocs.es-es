@@ -5,12 +5,12 @@ ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
-ms.openlocfilehash: bac2aa367cc9a8d736fd83f7aeed3e467aeddb54
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 43203e4ff1095cc06be970a46a1f500bfb25ab88
+ms.sourcegitcommit: a7fb96c0b1d186baeb29349befbbd6bd3b955813
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896746"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94522518"
 ---
 # <a name="server-hardware-performance-considerations"></a>Consideraciones de rendimiento del hardware de servidor
 
@@ -46,7 +46,7 @@ Cuando el equipo se queda sin memoria y necesita más de forma inmediata, Window
 Puede optimizar la paginación si usa estas instrucciones para la ubicación del archivo de paginación:
 - Aísle el archivo de paginación en su propio dispositivo de almacenamiento o al menos asegúrese de que no comparte los mismos dispositivos de almacenamiento que otros archivos a los que se tiene acceso con frecuencia. Por ejemplo, coloque el archivo de paginación y los archivos del sistema operativo en unidades de disco físicas independientes.
 
-- Coloque el archivo de paginación en una unidad que no tolere errores. Si se produce un error en el disco, es probable que el sistema se bloquee. Si pone el archivo de paginación en una unidad con tolerancia a errores, recuerde que los sistemas que toleran errores suelen ser más lentos para escribir datos, porque los escriben en distintas ubicaciones.
+- Coloque el archivo de paginación en una unidad que tolere errores. Si se produce un error en un disco que no tolera errores, es probable que el sistema se bloquee. Si pone el archivo de paginación en una unidad con tolerancia a errores, recuerde que los sistemas que toleran errores suelen ser más lentos para escribir datos, porque los escriben en distintas ubicaciones.
 
 - Use varios discos o una matriz de discos si necesita ancho de banda de disco adicional para la paginación. No coloque varios archivos de paginación en particiones distintas de la misma unidad de disco físico.
 
