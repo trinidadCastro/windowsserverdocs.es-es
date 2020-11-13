@@ -4,14 +4,14 @@ description: Problemas conocidos y solución de problemas para el servicio de mi
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 10/23/2020
+ms.date: 11/12/2020
 ms.topic: article
-ms.openlocfilehash: 25d0c6666e0706b1c772957d9328db43ecfc5b18
-ms.sourcegitcommit: 1b214ca5030c77900f095d77c73cedc6381eb0e4
+ms.openlocfilehash: 41cfbc5b5a8f91e97af330243015ecc1fcf749f6
+ms.sourcegitcommit: 6a245fefdf958bfc0aeb69f7a887d11a07bdcd23
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92639048"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94570330"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -612,7 +612,7 @@ Este problema se debe a un defecto de código en el servicio de migración de al
 
 ## <a name="inventory-fails-with-element-not-found"></a>Se produce un error de inventario con "elemento no encontrado"
 
-Considere el siguiente escenario:
+Considere el caso siguiente:
 
 Tiene un servidor de origen con un nombre de host DNS y Active Directory nombre de más de 15 caracteres Unicode, como "iamaverylongcomputername". Por diseño, Windows no le permitió establecer el nombre NetBIOS heredado para que se establezca durante este tiempo y se advierte cuando el servidor tenía el nombre de que el nombre NetBIOS se truncaría en 15 caracteres anchos Unicode (por ejemplo: "iamaverylongcom"). Al intentar inventariar este equipo, recibirá en el centro de administración de Windows y en el registro de eventos:
 
@@ -653,6 +653,18 @@ Remote exception : a parameter cannot be found that matches parameter name 'Incl
 
 Para resolverlo, actualice la extensión del servicio de migración de almacenamiento al menos a la versión 1.113.0 del centro de administración de Windows. La actualización debe aparecer automáticamente en la fuente y solicitar la instalación.
 
+## <a name="storage-migration-service-transfer-validation-returns-error-hresult-e_fail-has-been-returned-from-a-call-to-a-com-component"></a>La validación de transferencia del servicio de migración de almacenamiento devuelve ' error HRESULT E_FAIL se ha devuelto desde una llamada a un componente COM '
+
+Después de instalar la actualización acumulativa de noviembre de Windows Server 2019 [KB4586793](https://support.microsoft.com/office/november-10-2020%E2%80%94kb4586793-os-build-17763-1577-e6a24f90-5659-8b80-5a50-8752de3d90b7), es posible que se produzcan errores en algunas validaciones de transferencia:
+
+```
+Error HRESULT E_FAIL has been returned from a call to a COM component
+```
+
+Esto no ocurre necesariamente en todos los equipos de origen. Estamos trabajando para diagnosticar este problema. Como solución alternativa, busque una actualización de la herramienta Storage Migration Service en el centro de administración de Windows en breve. La actualización debe aparecer automáticamente en la fuente del centro de administración de Windows y solicitar la instalación, y le permitirá omitir este error y continuar.
+
+> [!IMPORTANT]
+> No desinstale [KB4586793](https://support.microsoft.com/office/november-10-2020%E2%80%94kb4586793-os-build-17763-1577-e6a24f90-5659-8b80-5a50-8752de3d90b7). Esta actualización actualiza la base de datos del servicio de migración de almacenamiento y la eliminación de la actualización requiere que se elimine la base de datos.
 
 ## <a name="see-also"></a>Consulte también
 

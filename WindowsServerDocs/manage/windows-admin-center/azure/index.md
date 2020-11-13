@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/31/2019
-ms.openlocfilehash: 04776c46d321a7a5aef19edd2866637c26d79125
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: eb53a01d4b82bd800b6cc87d2f5d3c36bfa7ff85
+ms.sourcegitcommit: 01b3140f79f5614ce566e8036474feefafbeddc3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766328"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94581439"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Conexión de Windows Server con los servicios híbridos de Azure
 
@@ -47,7 +47,7 @@ Desde la herramienta Azure Hybrid Services se pueden realizar las siguientes o
 - Aplicar directivas de gobernanza a los servidores locales a través de Azure Policy con [Azure Arc para servidores](/azure/azure-arc/servers/overview)
 - Proteger tus servidores y obtener protección contra amenazas avanzada con [Azure Security Center](/azure/security-center/windows-admin-center-integration)
 - Conectar los servidores de locales a Azure Virtual Network con el [adaptador de red de Azure](https://aka.ms/WACNetworkAdapter)
-- Hacer que el aspecto de las máquinas virtuales de Azure sea similar al de la red local con la [red extendida de Azure](https://go.microsoft.com/fwlink/?linkid=2109517&clcid=0x409)
+- Hacer que el aspecto de las máquinas virtuales de Azure sea similar al de la red local con la [red extendida de Azure](https://docs.microsoft.com/azure/virtual-network/subnet-extension#extend-your-subnet-to-azure)
 
 ## <a name="back-up-and-protect-your-on-premises-servers-and-vms"></a>Copia de seguridad y protección de las máquinas virtuales y los servidores locales
 
@@ -81,7 +81,7 @@ Para más información, vea [Deploy a Cloud Witness for a Failover Cluster](../.
 
 - **Conexión de los servidores locales a una instancia de Azure Virtual Network con [Adaptador de red de Azure](https://aka.ms/WACNetworkAdapter)** Deje que el Centro de administración de Windows simplifique la configuración de una VPN de punto a sitio desde un servidor local en una red virtual de Azure.
 
-- **Haga que las VM de Azure se parezcan a su red local con la [red extendida de Azure](https://go.microsoft.com/fwlink/?linkid=2109517&clcid=0x409)** El Centro de administración de Windows puede configurar una VPN de sitio a sitio y ampliar las direcciones IP locales a la red virtual de Azure para que pueda migrar las cargas de trabajo a Azure con más facilidad sin interrumpir las dependencias de las direcciones IP.
+- **Haga que las VM de Azure se parezcan a su red local con la [red extendida de Azure](https://docs.microsoft.com/azure/virtual-network/subnet-extension#extend-your-subnet-to-azure)** El Centro de administración de Windows puede configurar una VPN de sitio a sitio y ampliar las direcciones IP locales a la red virtual de Azure para que pueda migrar las cargas de trabajo a Azure con más facilidad sin interrumpir las dependencias de las direcciones IP.
 
 ## <a name="centrally-manage-your-hybrid-environment-from-azure"></a>Administración centralizada de tu entorno híbrido desde Azure
 
@@ -115,7 +115,7 @@ Esta es la lista completa de servicios de Azure que proporcionan funcionalidad a
 - Aplicar directivas de gobernanza a los servidores locales a través de Azure Policy con [Azure Arc para servidores](/azure/azure-arc/servers/overview)
 - Proteger tus servidores y obtener protección contra amenazas avanzada con [Azure Security Center](/azure/security-center/windows-admin-center-integration)
 - Conectar los servidores de locales a Azure Virtual Network con el [adaptador de red de Azure](https://aka.ms/WACNetworkAdapter)
-- Hacer que el aspecto de las máquinas virtuales de Azure sea similar al de la red local con la [red extendida de Azure](https://go.microsoft.com/fwlink/?linkid=2109517&clcid=0x409)
+- Hacer que el aspecto de las máquinas virtuales de Azure sea similar al de la red local con la [red extendida de Azure](https://docs.microsoft.com/azure/virtual-network/subnet-extension#extend-your-subnet-to-azure)
 
 ### <a name="services-for-clusters"></a>Servicios para clústeres
 

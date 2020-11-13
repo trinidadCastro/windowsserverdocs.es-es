@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e7875f8aa2320d7292b314cb18f3e17894e76fa0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 06331c23730cfdbf1752961f7867b0bebf45cacb
+ms.sourcegitcommit: 01b3140f79f5614ce566e8036474feefafbeddc3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945048"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94581419"
 ---
 # <a name="add-a-module-to-a-tool-extension"></a>Agregar un módulo a una extensión de herramienta
 
@@ -25,16 +25,16 @@ Si todavía no lo ha hecho, siga las instrucciones de desarrollo de una extensi�
 
 ## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>Uso de la CLI de angular para crear un módulo (y componente)
 
-Si no está familiarizado con angular, se recomienda encarecidamente que lea la documentación del sitio web de Angular.Io para obtener información acerca de angular y NgModule. Para obtener más información sobre NgModule, vaya aquí:https://angular.io/guide/ngmodule
+Si no está familiarizado con angular, se recomienda encarecidamente que lea la documentación del sitio web de Angular.Io para obtener información acerca de angular y NgModule. Para obtener más información sobre NgModule, vaya aquí: https://angular.io/guide/ngmodule
 
-* Más información sobre cómo generar un nuevo módulo en la CLI de angular:https://github.com/angular/angular-cli/wiki/generate-module
-* Más información sobre la generación de un nuevo componente en la CLI de angular:https://github.com/angular/angular-cli/wiki/generate-component
+* Más información sobre cómo generar un nuevo módulo en la CLI de angular: https://github.com/angular/angular-cli/wiki/generate-module
+* Más información sobre la generación de un nuevo componente en la CLI de angular: https://github.com/angular/angular-cli/wiki/generate-component
 
 
-Abra un símbolo del sistema, cambie el directorio a \src\app en el proyecto y, a continuación, ejecute los siguientes comandos, reemplazando ```{!ModuleName}``` por el nombre del módulo (espacios quitados):
+Abra un símbolo del sistema, cambie el directorio a .\src\app en el proyecto y, a continuación, ejecute los siguientes comandos, reemplazando ```{!ModuleName}``` por el nombre del módulo (espacios quitados):
 
 ```
-cd \src\app
+cd .\src\app
 ng generate module {!ModuleName}
 ng generate component {!ModuleName}
 ```
@@ -45,7 +45,7 @@ ng generate component {!ModuleName}
 
 Ejemplo de uso:
 ```
-cd \src\app
+cd .\src\app
 ng generate module ManageFooWorksPortal
 ng generate component ManageFooWorksPortal
 ```
@@ -53,13 +53,13 @@ ng generate component ManageFooWorksPortal
 
 ## <a name="add-routing-information"></a>Agregar información de enrutamiento
 
-Si no está familiarizado con angular, se recomienda encarecidamente obtener información sobre el enrutamiento y la navegación de angular. En las secciones siguientes se definen los elementos de enrutamiento necesarios que permiten al centro de administración de Windows navegar a la extensión y entre las vistas de la extensión en respuesta a la actividad del usuario. Para obtener más información, vaya aquí:https://angular.io/guide/router
+Si no está familiarizado con angular, se recomienda encarecidamente obtener información sobre el enrutamiento y la navegación de angular. En las secciones siguientes se definen los elementos de enrutamiento necesarios que permiten al centro de administración de Windows navegar a la extensión y entre las vistas de la extensión en respuesta a la actividad del usuario. Para obtener más información, vaya aquí: https://angular.io/guide/router
 
 Use el mismo nombre de módulo que usó en el paso anterior.
 
 ### <a name="add-content-to-new-routing-file"></a>Agregar contenido al nuevo archivo de enrutamiento
 
-* Vaya a la carpeta del módulo que creó ``` ng generate ``` en el paso anterior.
+* Vaya a la carpeta del módulo que creó  ``` ng generate ``` en el paso anterior.
 
 * Cree un nuevo archivo ```{!module-name}.routing.ts``` , siguiendo esta Convención de nomenclatura:
 
@@ -155,7 +155,7 @@ public ngOnInit() {
 ```
 ### <a name="update-app-routingmodulets"></a>Actualizar App-Routing. Module. ts
 
-Abra archivo ```app-routing.module.ts``` y modifique la ruta de acceso predeterminada para que cargue el nuevo módulo que acaba de crear.  Busque la entrada para ```path: ''``` , y actualice ```loadChildren``` para cargar el módulo en lugar del módulo predeterminado:
+Abra archivo ```app-routing.module.ts``` y modifique la ruta de acceso predeterminada para que cargue el nuevo módulo que acaba de crear.  Busque la entrada para ```path: ''``` , y actualice  ```loadChildren``` para cargar el módulo en lugar del módulo predeterminado:
 
 | Value | Explicación | Ejemplo |
 | ----- | ----------- | ------- |
