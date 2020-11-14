@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 11/12/2020
 ms.topic: article
-ms.openlocfilehash: 41cfbc5b5a8f91e97af330243015ecc1fcf749f6
-ms.sourcegitcommit: 6a245fefdf958bfc0aeb69f7a887d11a07bdcd23
+ms.openlocfilehash: 84a531b1026215484619bc5bc9fbb3ce74899bea
+ms.sourcegitcommit: de207e887575757f3389ccf940c2e0ad2dc70bd3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94570330"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94617196"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -661,7 +661,11 @@ Después de instalar la actualización acumulativa de noviembre de Windows Serve
 Error HRESULT E_FAIL has been returned from a call to a COM component
 ```
 
-Esto no ocurre necesariamente en todos los equipos de origen. Estamos trabajando para diagnosticar este problema. Como solución alternativa, busque una actualización de la herramienta Storage Migration Service en el centro de administración de Windows en breve. La actualización debe aparecer automáticamente en la fuente del centro de administración de Windows y solicitar la instalación, y le permitirá omitir este error y continuar.
+Esto no ocurre necesariamente en todos los equipos de origen. Estamos trabajando para diagnosticar este problema. Como alternativa, instale la herramienta de migración de almacenamiento 1,115 o posterior en el centro de administración de Windows. La actualización debe aparecer automáticamente en la fuente del centro de administración de Windows y solicitar la instalación, y le permitirá omitir este error. Para workarond:
+
+1. Navegue hasta el paso "ajustar configuración" de la fase de transferencia. 
+2. Habilitar "invalidar validación de transferencia"
+3. Continúe con la transferencia, ya sea sin ejecutar "Validate" o ejecutando y omitiendo el error de E_FAIL.
 
 > [!IMPORTANT]
 > No desinstale [KB4586793](https://support.microsoft.com/office/november-10-2020%E2%80%94kb4586793-os-build-17763-1577-e6a24f90-5659-8b80-5a50-8752de3d90b7). Esta actualización actualiza la base de datos del servicio de migración de almacenamiento y la eliminación de la actualización requiere que se elimine la base de datos.

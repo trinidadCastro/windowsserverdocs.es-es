@@ -1,15 +1,16 @@
 ---
 title: diskpart
 description: Artículo de referencia para el intérprete de comandos Diskpart, que le ayuda a administrar las unidades del equipo.
+ms.topic: reference
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 627f9254606b1ed70b198f6dd0096ccbff424c45
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1d2f4cc814dad4313e7eb0925b60f44ec0348a30
+ms.sourcegitcommit: de207e887575757f3389ccf940c2e0ad2dc70bd3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890923"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94617205"
 ---
 # <a name="diskpart"></a>diskpart
 
@@ -23,13 +24,13 @@ Antes de poder usar comandos de **DiskPart** , primero debe enumerar y, a contin
 
 Puede enumerar los objetos disponibles y determinar el número o la letra de unidad de un objeto mediante:
 
-- `list disk`-Muestra todos los discos del equipo.
+- `list disk` -Muestra todos los discos del equipo.
 
-- `list volume`-Muestra todos los volúmenes del equipo.
+- `list volume` -Muestra todos los volúmenes del equipo.
 
-- `list partition`-Muestra las particiones en el disco que tiene el foco en el equipo.
+- `list partition` -Muestra las particiones en el disco que tiene el foco en el equipo.
 
-- `list vdisk`-Muestra todos los discos virtuales del equipo.
+- `list vdisk` -Muestra todos los discos virtuales del equipo.
 
 Después de ejecutar los comandos de **lista** , aparecerá un asterisco (*) junto al objeto con el foco.
 
@@ -41,7 +42,7 @@ Algunos comandos cambian automáticamente el foco. Por ejemplo, al crear una nue
 
 Solo puede dar el foco a una partición en el disco seleccionado. Después de que una partición tenga el foco, el volumen relacionado (si existe) también tiene el foco. Una vez que un volumen tiene el foco, el disco y la partición relacionados también tienen el foco si el volumen se asigna a una única partición específica. Si no es así, se perderá el foco en el disco y la partición.
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 
 Para iniciar el intérprete de comandos Diskpart, en el símbolo del sistema, escriba:
 
@@ -56,7 +57,7 @@ diskpart <parameter>
 
 Puede ejecutar los siguientes comandos desde el intérprete de comandos de Diskpart:
 
-| Get-Help | Descripción |
+| Get-Help | Description |
 | ------- | ----------- |
 | [active](active.md) | Marca la partición del disco con el foco, como activa. |
 | [add](add.md) | Refleja el volumen simple que tiene el foco en el disco especificado. |
@@ -68,7 +69,7 @@ Puede ejecutar los siguientes comandos desde el intérprete de comandos de Diskp
 | [clean](clean.md) | Quita todo el formato de particiones o volúmenes del disco que tiene el foco. |
 | [compact vdisk](compact-vdisk.md) | Reduce el tamaño físico de un archivo de disco duro virtual (VHD) de expansión dinámica. |
 | [convert](convert.md) | Convierte los volúmenes de tabla de asignación de archivos (FAT) y FAT32 en el sistema de archivos NTFS, lo que deja intactos los archivos y directorios existentes. |
-| [create](create.md) | Crea una partición en un disco, un volumen en uno o varios discos o un disco duro virtual (VHD). |
+| [crear](create.md) | Crea una partición en un disco, un volumen en uno o varios discos o un disco duro virtual (VHD). |
 | [delete](delete.md) | Elimina una partición o un volumen. |
 | [detach vdisk](detach-vdisk.md) | Detiene el disco duro virtual (VHD) seleccionado para que no aparezca como una unidad de disco duro local en el equipo host. |
 | [detail](detail.md) | Muestra información sobre el disco, la partición, el volumen o el disco duro virtual (VHD) seleccionado. |
@@ -81,7 +82,7 @@ Puede ejecutar los siguientes comandos desde el intérprete de comandos de Diskp
 | [help](help.md) | Muestra una lista de los comandos disponibles o información de ayuda detallada sobre un comando especificado. |
 | [import](import.md) | Importa un grupo de discos externos en el grupo de discos del equipo local. |
 | [inactive](inactive.md) | Marca la partición del sistema o la partición de arranque con el foco como inactivo en discos básicos de registro de arranque maestro (MBR). |
-| [list](list.md) | Muestra una lista de discos, de particiones en un disco, de volúmenes de un disco o de discos duros virtuales (VHD). |
+| [lista](list.md) | Muestra una lista de discos, de particiones en un disco, de volúmenes de un disco o de discos duros virtuales (VHD). |
 | [merge vdisk](merge-vdisk.md) | Combina un disco duro virtual (VHD) de diferenciación con su VHD primario correspondiente. |
 | [offline](offline.md) | Toma un disco o volumen en línea en el estado sin conexión. |
 | [online](online.md) | Toma un disco o volumen sin conexión al estado en línea. |
