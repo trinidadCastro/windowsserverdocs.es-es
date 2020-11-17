@@ -5,12 +5,12 @@ author: dahavey
 ms.author: dahavey
 ms.date: 10/17/2018
 ms.topic: article
-ms.openlocfilehash: f7593b085dd07694bf7d51d2712501bea612e9af
-ms.sourcegitcommit: b5b040a47cf48c94852de9aad8b91475f891d2f7
+ms.openlocfilehash: a09022cf1ad2929dfdffa244b86c211970b53aae
+ms.sourcegitcommit: a7fb96c0b1d186baeb29349befbbd6bd3b955813
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88563405"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94522528"
 ---
 # <a name="time-accuracy-improvements-for-windows-server-2016"></a>Mejoras en la precisión temporal para Windows Server 2016
 
@@ -52,13 +52,13 @@ A continuación, se describen los cambios en la configuración predeterminada en
 | |Frecuencia de sondeo|64 - 1024 segundos|N/D|Una vez a la semana|
 | |Frecuencia de actualización del reloj|Una vez por segundo|N/D|Una vez a la hora|
 |**Cliente independiente**||||
-| |Servidor horario|N/D|time.windows.com|time.windows.com|
-| |Frecuencia de sondeo|N/D|Una vez al día|Una vez a la semana|
-| |Frecuencia de actualización del reloj|N/D|Una vez al día|Una vez a la semana|
+| |*Servidor horario*|N/D|time.windows.com|time.windows.com|
+| |*Frecuencia de sondeo*|N/D|Una vez al día|Una vez a la semana|
+| |*Frecuencia de actualización del reloj*|N/D|Una vez al día|Una vez a la hora|
 |**Controlador de dominio**||||
-| |Servidor horario|PDC/GTIMESERV|N/D|PDC/GTIMESERV|
-| |Frecuencia de sondeo|64 -1024 segundos|N/D|1024 - 32 768 segundos|
-| |Frecuencia de actualización del reloj|Una vez al día|N/D|Una vez a la semana|
+| |*Servidor horario*|PDC/GTIMESERV|N/D|PDC/GTIMESERV|
+| |*Frecuencia de sondeo*|64 -1024 segundos|N/D|1024 - 32 768 segundos|
+| |*Frecuencia de actualización del reloj*|Una vez por segundo|N/D|Una vez a la hora|
 |**Servidor miembro de dominio**||||
 | |Servidor horario|DC|N/D|DC|
 | |Frecuencia de sondeo|64 -1024 segundos|N/D|1024 - 32 768 segundos|
@@ -361,7 +361,7 @@ Y, al igual que cualquier contador de rendimiento, puedes supervisarlos de forma
 ### <a name="windows-traceability-example"></a>Ejemplo de rastreabilidad de Windows
 En los archivos de registro W32tm, te recomendamos que valides dos fragmentos de información. El primero es una indicación de que el archivo de registro actualmente es el reloj de condición. Esto demuestra que el reloj estaba condicionado por el servicio de hora de Windows en el momento conflictivo.
 
- 151802 20:18:32.9821765s - ClockDispln Discipline: *SKEW*TIME* - PhCRR:223 CR:156250 UI:100 phcT:65 KPhO:14307 151802 20:18:33.9898460s - ClockDispln Discipline: *SKEW*TIME* - PhCRR:1 CR:156250 UI:100 phcT:64 KPhO:41 151802 20:18:44.1090410s - ClockDispln Discipline: *SKEW*TIME* - PhCRR:1 CR:156250 UI:100 phcT:65 KPhO:38
+ 151802 20:18:32.9821765s - ClockDispln Discipline: *SKEW* TIME* - PhCRR:223 CR:156250 UI:100 phcT:65 KPhO:14307 151802 20:18:33.9898460s - ClockDispln Discipline: *SKEW* TIME* - PhCRR:1 CR:156250 UI:100 phcT:64 KPhO:41 151802 20:18:44.1090410s - ClockDispln Discipline: *SKEW* TIME* - PhCRR:1 CR:156250 UI:100 phcT:65 KPhO:38
 
 El punto principal es que los mensajes se ven precedidos por la disciplina de ClockDispln, que es la prueba de que W32Time interactúa con el reloj del sistema.
 

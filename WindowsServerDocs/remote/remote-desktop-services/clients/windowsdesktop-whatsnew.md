@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 10/27/2020
+ms.date: 11/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f14d93176fd1bd7b97d90550701f79b55774297
-ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
+ms.openlocfilehash: b5ee2f76acad471533c615ef2e5c68e7f827dbf6
+ms.sourcegitcommit: 7420c7c2ef14154f27e5bb810e774783a594b8e8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793612"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94497420"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -25,7 +25,16 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 |Grupo de usuarios |La versión más reciente  |Versión mínima admitida |
 |-----------|----------------|--------------------------|
 |Público     |1.2.1446        |1.2.945                   |
-|Insider    |1.2.1446        |1.2.945                   |
+|Insider    |1.2.1520        |1.2.945                   |
+
+## <a name="updates-for-version-121520-insider"></a>Actualizaciones de la versión 1.2.1520 (Insider)
+
+*Fecha de publicación: 10/11/2020*
+
+Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- Se ha creado una vista de lista de las aplicaciones remotas para que los nombres de aplicación más largos sean legibles.
+- Se ha cambiado el icono que aparece cuando hay disponible una actualización para el cliente.
 
 ## <a name="updates-for-version-121446"></a>Actualizaciones para la versión 1.2.1446
 
@@ -107,7 +116,7 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 *Fecha de publicación: 28/04/2020*
 
 - Se han agregado nuevas opciones de configuración de pantalla para las conexiones de escritorio disponibles al hacer clic con el botón derecho en un icono de escritorio del centro de conexiones.
-  - Ahora hay tres opciones de configuración de pantalla: **todas las pantallas** , **pantalla única** y **pantallas seleccionadas**.
+  - Ahora hay tres opciones de configuración de pantalla: **todas las pantallas**, **pantalla única** y **pantallas seleccionadas**.
   - Ahora solo se muestra la configuración disponible cuando se selecciona una configuración de pantalla.
   - En el modo de pantallas seleccionadas, la nueva opción **Maximize to current displays** (Maximizar a las pantallas actuales) te permite cambiar dinámicamente las pantallas que se usan para la sesión sin necesidad de volver a conectar. Cuando está habilitada, al maximizar la sesión, se activa la pantalla completa en todas las pantallas que toca la ventana de sesión.
   - Se ha agregado la nueva opción **Single display when windowed** (Pantalla única para varias ventanas) para los modos de todas las pantallas y pantallas seleccionadas. Esta opción cambia la sesión automáticamente a una pantalla única al salir del modo de pantalla completa y vuelve automáticamente a varias pantallas al maximizar la ventana.

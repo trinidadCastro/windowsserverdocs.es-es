@@ -168,7 +168,7 @@ Puedes guardar las cuentas de usuario para usarlas cuando te conectes a un escri
 
 Para guardar una cuenta de usuario:
 
-1. En el Centro de conexión, pulsa **Configuración**y luego pulsa  **Cuenta de usuario**.
+1. En el Centro de conexión, pulsa **Configuración** y luego pulsa  **Cuenta de usuario**.
 2. Pulsa **+** para agregar una cuenta de usuario nueva.
 3. Escribe la siguiente información:
    - El **nombre de usuario** que se guarda para usarlo con una conexión remota. El nombre de usuario se puede escribir en cualquiera de los siguientes formatos: nombre_de_usuario, dominio\nombre_de_usuario o user_name@domain.com.
@@ -177,7 +177,7 @@ Para guardar una cuenta de usuario:
 
 Para eliminar una cuenta de usuario guardada:
 
-1. En el Centro de conexión, pulsa **Configuración**y luego pulsa  **Cuenta de usuario**.
+1. En el Centro de conexión, pulsa **Configuración** y luego pulsa  **Cuenta de usuario**.
 2. Mantén pulsada una cuenta de usuario en la lista para seleccionarla. Puedes seleccionar varios usuarios a la vez.
 3. Pulsa la Papelera para eliminar el usuario seleccionado.
 

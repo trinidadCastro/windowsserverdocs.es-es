@@ -7,12 +7,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e2bf87c27e8e61fa4baba81f234381d342af1343
-ms.sourcegitcommit: ed2b98e06bf7f616432bf8b6ad96544a34d5ce5c
+ms.openlocfilehash: 8519d69c39cb86f10c66b3c28410a285ca06252d
+ms.sourcegitcommit: 14c9526b1c74821341d4b66de92adce9bee92f10
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91625477"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94558282"
 ---
 # <a name="whats-new-in-the-web-client"></a>Novedades del cliente web
 
@@ -29,7 +29,7 @@ El [cliente web de Escritorio remoto](remote-desktop-web-client.md) se actualiza
 
 - Los usuarios ahora pueden mover el menú minimizado.
 - Se ha mejorado la compatibilidad con monitores 4K y ultraanchos, y se ha corregido un problema en que la copia de grandes cantidades de datos provocaba el bloqueo de las sesiones.
-- Se ha mejorado la compatibilidad para usar un editor de métodos de entrada (IME) en la sesión remota. Para obtener más información sobre el uso de un editor de métodos de entrada con el cliente web, consulte [Conexión a Windows Virtual Desktop con el cliente web](/azure-docs/articles/virtual-desktop/connect-web.md).
+- Se ha mejorado la compatibilidad para usar un editor de métodos de entrada (IME) en la sesión remota. Para obtener más información sobre el uso de un editor de métodos de entrada con el cliente web, consulte [Conexión a Windows Virtual Desktop con el cliente web](/azure/virtual-desktop/connect-web.md).
 - Se ha cambiado la interfaz de usuario de la página **Todos los recursos**.
 - Se han corregido varios errores de secuencia de conexión en los que el cliente web devolvía un *error de protocolo general*.
 - Se han corregido problemas de entrada de teclado en los que secuencias de teclas específicas no se controlaban correctamente.
