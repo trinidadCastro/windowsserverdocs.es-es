@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d94b6a2211cd9fbaefb8318ebdcc4eb52ba9ba1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bfed6f0c22a4949291d12cc417a15d0aa435ae00
+ms.sourcegitcommit: b39ea3b83280f00e5bb100df0dc8beaf1fb55be2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963307"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94520518"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>Solución de problemas generales de conexión con Escritorio remoto
 
@@ -31,13 +31,13 @@ Para comprobar y cambiar el estado de RDP en un equipo local, consulta [Cómo ha
 ### <a name="check-the-status-of-the-rdp-protocol-on-a-remote-computer"></a>Comprobación del estado de RDP en un equipo remoto
 
 > [!IMPORTANT]  
-> Sigue detenidamente las instrucciones de esta sección. Se pueden producir problemas graves si el Registro se modifica de forma incorrecta. Antes de empezar a modificar el Registro, [haz una copia de seguridad del Registro](https://support.microsoft.com/help/322756) para poder restaurarlo en caso de que se produzca algún error.
+> Sigue detenidamente las instrucciones de esta sección. Se pueden producir problemas graves si el Registro se modifica de forma incorrecta. Antes de empezar a modificar el Registro, [haga una copia de seguridad del Registro](https://support.microsoft.com/help/322756) para poder restaurarlo en caso de que se produzca algún error.
 
 Para comprobar el estado de RDP en un equipo remoto y cambiarlo usa una conexión del registro de red:
 
 1. En primer lugar, vete al menú **Inicio** y selecciona **Ejecutar**. En el cuadro de texto que aparece, escribe **regedt32**.
 2. En el Editor del Registro, selecciona **Archivo** y después **Conectar al Registro de red**.
-3. En el cuadro de diálogo **Seleccionar Equipo**, escriba el nombre del equipo remoto, seleccione **Comprobar nombres**y, después, selecciona **Aceptar**.
+3. En el cuadro de diálogo **Seleccionar Equipo**, escriba el nombre del equipo remoto, seleccione **Comprobar nombres** y, después, selecciona **Aceptar**.
 4. Vete a **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server**.  
    ![Editor del Registro, que muestra la entrada fDenyTSConnections](../media/troubleshoot-remote-desktop-connections/RegEntry_fDenyTSConnections.png)
    - Si el valor de la clave **fDenyTSConnections** es **0**, RDP está habilitado.
@@ -121,7 +121,7 @@ Para este procedimiento, usa una instancia de PowerShell que tenga permisos admi
     1. Inicia sesión en un equipo que tenga la misma versión del sistema operativo que el equipo afectado y accede al Registro de dicho equipo (por ejemplo, mediante el Editor del Registro).
     2. Vete a la siguiente entrada del Registro:  
         **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\RDP-Tcp**
-    3. Exporta la entrada a un archivo. reg. Por ejemplo, en el Editor del registro, haz clic con el botón derecho en la entrada, selecciona **Exportar**y escriba un nombre de archivo para la configuración exportada.
+    3. Exporta la entrada a un archivo. reg. Por ejemplo, en el Editor del registro, haz clic con el botón derecho en la entrada, selecciona **Exportar** y escriba un nombre de archivo para la configuración exportada.
     4. Copia el archivo .reg exportado en el equipo afectado.
 5. Para importar la configuración del cliente de escucha de RDP, abre una ventana de PowerShell que tenga permisos administrativos en el equipo afectado (o abre la ventana de PowerShell y conéctate de forma remota al equipo afectado).
    1. Para realizar una copia de seguridad de la entrada del Registro existente, escribe el cmdlet siguiente:  
@@ -151,7 +151,7 @@ Para este procedimiento, usa una instancia de PowerShell que tenga permisos admi
 
 ### <a name="check-the-status-of-the-rdp-self-signed-certificate"></a>Comprobación del estado del certificado autofirmado de RDP
 
-1. Si sigues sin poder conectarte, abre el complemento MMC Certificados. Cuando se te pida que selecciones el almacén de certificados que deseas administrar, selecciona **Cuenta de equipo**y, después, selecciona el equipo afectado.
+1. Si sigues sin poder conectarte, abre el complemento MMC Certificados. Cuando se te pida que selecciones el almacén de certificados que deseas administrar, selecciona **Cuenta de equipo** y, después, selecciona el equipo afectado.
 2. En la carpeta **Certificates** de **Remote Desktop**, elimina el certificado autofirmado de RDP. 
     ![Certificados de Escritorio remoto en el complemento MMC Certificados.](../media/troubleshoot-remote-desktop-connections/MMCCert_Delete.png)
 3. En el equipo afectado, reinicia el servicio Servicios de Escritorio remoto.
@@ -161,7 +161,7 @@ Para este procedimiento, usa una instancia de PowerShell que tenga permisos admi
 ### <a name="check-the-permissions-of-the-machinekeys-folder"></a>Comprobación de los permisos de la carpeta MachineKeys
 
 1. En el equipo afectado, abre el explorador y vete a **C:\\ProgramData\\Microsoft\\Crypto\\RSA\\** .
-2. Haz clic en **MachineKeys**, selecciona **Propiedades**, **Seguridad**y, después, selecciona **Avanzadas**.
+2. Haz clic en **MachineKeys**, selecciona **Propiedades**, **Seguridad** y, después, selecciona **Avanzadas**.
 3. Asegúrate de que están configurados los siguientes permisos:
       - Builtin\\administradores: Control total
       - Todos: Lectura y escritura
@@ -176,8 +176,8 @@ El cliente de escucha de RDP debería escuchar en el puerto 3389 tanto en el equ
 Para comprobar o cambiar el puerto de RDP, usa el Editor del Registro:
 
 1. En el menú Inicio, selecciona **Ejecutar** y, después, escribe **regedt32** en el cuadro de texto que aparece.
-      - Para establecer una conexión con un equipo remoto, selecciona **Archivo**y, después, selecciona **Conectar al Registro de red**.
-      - En el cuadro de diálogo **Seleccionar Equipo**, escriba el nombre del equipo remoto, seleccione **Comprobar nombres**y, después, selecciona **Aceptar**.
+      - Para establecer una conexión con un equipo remoto, selecciona **Archivo** y, después, selecciona **Conectar al Registro de red**.
+      - En el cuadro de diálogo **Seleccionar Equipo**, escriba el nombre del equipo remoto, seleccione **Comprobar nombres** y, después, selecciona **Aceptar**.
 2. Abra el registro y vaya a **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<listener\>** . 
     ![La subclave PortNumber de RDP.](../media/troubleshoot-remote-desktop-connections/RegEntry_PortNumber.png)
 3. Si el valor de **PortNumber** no es **3389**, cámbialo a **3389**. 

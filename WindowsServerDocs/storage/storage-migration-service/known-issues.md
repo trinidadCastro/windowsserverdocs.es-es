@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 11/12/2020
 ms.topic: article
-ms.openlocfilehash: 84a531b1026215484619bc5bc9fbb3ce74899bea
-ms.sourcegitcommit: de207e887575757f3389ccf940c2e0ad2dc70bd3
+ms.openlocfilehash: bc23bdefe1f6b852dc057debd53e1a66c300f592
+ms.sourcegitcommit: adfc886dd7d3513820ac7569b68e50ee8bc51945
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94617196"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94785921"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -661,10 +661,10 @@ Después de instalar la actualización acumulativa de noviembre de Windows Serve
 Error HRESULT E_FAIL has been returned from a call to a COM component
 ```
 
-Esto no ocurre necesariamente en todos los equipos de origen. Estamos trabajando para diagnosticar este problema. Como alternativa, instale la herramienta de migración de almacenamiento 1,115 o posterior en el centro de administración de Windows. La actualización debe aparecer automáticamente en la fuente del centro de administración de Windows y solicitar la instalación, y le permitirá omitir este error. Para workarond:
+Esto no ocurre necesariamente en todos los equipos de origen. Estamos trabajando para diagnosticar este problema. Como alternativa, instale la herramienta de migración de almacenamiento 1,115 o posterior en el centro de administración de Windows. La actualización debe aparecer automáticamente en la fuente del centro de administración de Windows y solicitar la instalación, y le permitirá omitir este error. Para solucionarlo:
 
-1. Navegue hasta el paso "ajustar configuración" de la fase de transferencia. 
-2. Habilitar "invalidar validación de transferencia"
+1. Navegue hasta el paso "ajustar configuración" de la fase de transferencia.
+2. Habilite "invalidar validación de transferencia".
 3. Continúe con la transferencia, ya sea sin ejecutar "Validate" o ejecutando y omitiendo el error de E_FAIL.
 
 > [!IMPORTANT]

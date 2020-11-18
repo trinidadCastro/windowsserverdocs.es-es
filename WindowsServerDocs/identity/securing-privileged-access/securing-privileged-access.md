@@ -8,18 +8,18 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 23b7322b76eb60c0ae19d3aa0e9e826998a92c77
-ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
+ms.openlocfilehash: a9664d11e61d69faab87f351ae5f9915afd47f98
+ms.sourcegitcommit: 094482d0e7a8a9688790af06968d68f0294b78df
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93235882"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94550738"
 ---
 # <a name="securing-privileged-access"></a>Protección del acceso con privilegios
 
->Se aplica a: Windows Server
+> Se aplica a: Windows Server
 
-La protección del acceso con privilegios es un primer paso crítico para establecer controles de seguridad para los recursos empresariales de una organización moderna. La seguridad de la mayoría, si no todos, los recursos empresariales de una organización de TI depende de la integridad de las cuentas con privilegios que realizan tareas de administración, gestión y desarrollo. Normalmente, a esas cuentas y otros elementos de acceso con privilegios se dirigen los ciberatacantes para obtener acceso a datos y sistemas mediante ataques de robo de credenciales como [pass-the-hash y pass-the-ticket](https://www.microsoft.com/pth).
+La protección del acceso con privilegios es un primer paso crítico para establecer controles de seguridad para los recursos empresariales de una organización moderna. La seguridad de la mayoría, si no todos, los recursos empresariales de una organización de TI depende de la integridad de las cuentas con privilegios que realizan tareas de administración, gestión y desarrollo. Normalmente, los ciberatacantes se dirigen a esas cuentas y a otros elementos de acceso con privilegios para obtener acceso a datos y sistemas mediante ataques de robo de credenciales como [Pass-the-hash y Pass-the-ticket](https://www.microsoft.com/pth).
 
 La protección del acceso con privilegios contra determinados adversarios requiere la adopción de un enfoque completo y meditado para aislar estos sistemas frente a los riesgos.
 
@@ -27,16 +27,16 @@ La protección del acceso con privilegios contra determinados adversarios requie
 
 Antes de hablar acerca de cómo protegerlas, debemos definir las cuentas con privilegios.
 
-Las cuentas con privilegios, como los administradores de Active Directory Domain Services, tienen acceso directo o indirecto a la mayoría, si no a todos, los recursos de una organización de TI, por lo que estas cuentas representan un riesgo empresarial significativo.
+Las cuentas con privilegios, como los administradores de Active Directory Domain Services, tienen acceso directo o indirecto a la mayoría, sino a todos, los recursos de una organización de TI, por lo que estas cuentas representan un riesgo empresarial significativo.
 
-## <a name="why-securing-privileged-access-is-important"></a>¿Por qué es importante proteger el acceso con privilegios?
+## <a name="why-is-securing-privileged-access-important"></a>¿Por qué es importante proteger el acceso con privilegios?
 
 Los ciberatacantes se centran en el acceso con privilegios a sistemas como Active Directory (AD) a fin de conseguir acceso rápido a todos los datos específicos de las organizaciones. Los enfoques tradicionales sobre seguridad se han centrado en la red y los firewalls como el perímetro de seguridad principal, pero la efectividad de la seguridad de red se ha reducido considerablemente a dos tendencias:
 
 * Las organizaciones que hospedan datos y recursos fuera de los límites de red tradicionales en equipos de empresa móviles, dispositivos como teléfonos móviles y tabletas, servicios en la nube y dispositivos del tipo Bring Your Own Devices (BYOD).
 * Los adversarios han demostrado una habilidad constante y sistemática para obtener acceso a estaciones de trabajo dentro de los límites de red por medio de ataques de suplantación de identidad (phishing) y otros ataques web y de correo electrónico.
 
-Estos factores requieren la creación de un perímetro de seguridad moderno distintos de los controles de identidad de autenticación y autorización, además de la estrategia de perímetro de red tradicional. Aquí se define un perímetro de seguridad como un conjunto coherente de controles entre los recursos y las amenazas que implican. Las cuentas con privilegios están al mando de este nuevo perímetro de seguridad de forma efectiva, así que es esencial proteger el acceso con privilegios.
+Estos factores requieren la creación de un perímetro de seguridad moderno distintos de los controles de identidad de autenticación y autorización, además de la estrategia de perímetro de red tradicional. Aquí se define un perímetro de seguridad como un conjunto coherente de controles entre los recursos y las amenazas que implican. Las cuentas con privilegios tienen el control efectivo de este nuevo perímetro de seguridad, así que es esencial proteger el acceso con privilegios.
 
 ![Diagrama que muestra la capa de identidad de la organización](../media/securing-privileged-access/PAW_LP_Fig2.JPG)
 
@@ -46,7 +46,7 @@ Un atacante que toma el control de una cuenta administrativa puede usar esos pri
 
 En la ilustración siguiente se muestran dos rutas de acceso:
 
-* Una ruta de acceso "azul" donde se usa una cuenta de usuario estándar para el acceso sin privilegios a recursos como el correo electrónico, la exploración web y el trabajo cotidiano.
+* Una ruta de acceso "azul" donde se usa una cuenta de usuario estándar para el acceso sin privilegios a recursos como el correo electrónico y la exploración web, y donde se realiza el trabajo cotidiano.
 
    > [!NOTE]
    > Los elementos de la ruta de acceso azul descritos más adelante indican amplias protecciones del entorno que se extienden más allá de las cuentas administrativas.
@@ -68,9 +68,9 @@ El mapa de ruta de recomendaciones de Microsoft se divide en 3 fases:
 * [Fase 3: En curso](#phase-3-security-improvement-and-sustainment)
    * Mejora de la seguridad y sostenimiento.
 
-El mapa de ruta está clasificado en orden de prioridad para programar las implementaciones más rápidas y efectivas primero en función de nuestras experiencias con estos ataques y la implementación de soluciones.
+En el mapa de ruta se prioriza la programación de las implementaciones más rápidas y efectivas primero, en función de nuestras experiencias con estos ataques y la implementación de soluciones.
 
-Microsoft recomienda seguir este plan de ruta para proteger el acceso con privilegios frente a determinados adversarios. Este plan se puede ajustar para adaptarlo a las funcionalidades existentes y los requisitos específicos de su organización.
+Microsoft recomienda seguir este mapa de ruta para proteger el acceso con privilegios frente a determinados adversarios. Este plan se puede ajustar para adaptarlo a las funcionalidades existentes y los requisitos específicos de su organización.
 
 > [!NOTE]
 > Para proteger el acceso con privilegios se requiere una amplia variedad de elementos, como componentes técnicos (defensas de host, protecciones de cuentas, administración de identidades, etc.), así como cambios en los procesos, las prácticas y el conocimiento en materia de administración. Las escalas de tiempo del mapa de ruta son aproximadas y se basan en nuestra experiencia con las implementaciones de clientes. La duración variará en cada organización según la complejidad del entorno y los procesos de administración de cambios.
@@ -89,9 +89,9 @@ Sigue las instrucciones del artículo [Administración de cuentas de acceso de e
 
 ### <a name="2-just-in-time-local-admin-passwords"></a>2. Contraseñas de administrador local Just-in-Time
 
-Para mitigar el riesgo de que un adversario robe un hash de contraseña de la cuenta de administrador local desde la base de datos SAM local y lo use para atacar a otros equipos, las organizaciones deben asegurarse de que cada equipo tenga una contraseña de administrador local única. La herramienta de la solución de contraseñas de administrador local (LAPS) puede configurar contraseñas aleatorias únicas en cada estación de trabajo y almacenarlas en un servidor de Active Directory (AD) protegido mediante una ACL. Solo los usuarios autorizados válidos pueden leer o solicitar el restablecimiento de estas contraseñas de cuenta de administrador local. Puedes obtener la solución de contraseñas de administrador local para su uso en estaciones de trabajo y servidores desde el [Centro de descarga de Microsoft](https://aka.ms/LAPS).
+Para mitigar el riesgo de que un adversario robe un hash de contraseña de la cuenta de administrador local desde la base de datos SAM local y lo use para atacar a otros equipos, las organizaciones deben asegurarse de que cada equipo tenga una contraseña de administrador local única. La herramienta Solución de contraseñas de administrador local (LAPS) puede configurar contraseñas aleatorias únicas en cada estación de trabajo y servidor, y almacenarlas en Active Directory (AD) protegido mediante una ACL. Solo los usuarios autorizados válidos pueden leer o solicitar el restablecimiento de estas contraseñas de cuenta de administrador local. Puedes obtener la solución de contraseñas de administrador local para su uso en estaciones de trabajo y servidores desde el [Centro de descarga de Microsoft](https://aka.ms/LAPS).
 
-Puedes consultar instrucciones adicionales sobre el funcionamiento de un entorno con LAPS y PAW en la sección [Estándares operativos basados en el principio de origen limpio](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle).
+Puede consultar instrucciones adicionales sobre el funcionamiento de un entorno con LAPS y PAW (estación de trabajo de acceso con privilegios) en la sección [Estándares operativos basados en el principio de origen limpio](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle).
 
 ### <a name="3-administrative-workstations"></a>3. Estaciones de trabajo administrativas
 
@@ -109,20 +109,20 @@ La fase 2 se basa en el trabajo realizado en la fase 1 y se diseñó para comple
 
 ### <a name="1-require-windows-hello-for-business-and-mfa"></a>1. Solicitud de Windows Hello para empresas y MFA
 
-Los administradores pueden beneficiarse de lo fácil que es usar Windows Hello para empresas. Pueden reemplazar las contraseñas complejas con una autenticación en dos fases sólida en sus equipos. Un atacante debe obtener tanto el dispositivo como los datos biométricos o PIN correspondientes, por lo que es mucho más difícil conseguir acceso sin que lo sepa el empleado. Puedes encontrar más información acerca de Windows Hello para empresas y la ruta de acceso para la implementación en el artículo [Información general de Windows Hello para empresas](/windows/security/identity-protection/hello-for-business/hello-overview).
+Los administradores pueden beneficiarse de lo fácil que es usar Windows Hello para empresas. Pueden reemplazar las contraseñas complejas con una autenticación en dos fases sólida en sus equipos. Un atacante debe disponer tanto del dispositivo como de los datos biométricos o PIN, por lo que es mucho más difícil conseguir el acceso sin que lo sepa el empleado. Puede encontrar más información acerca de Windows Hello para empresas y la ruta de acceso para la implementación en el artículo [Información general de Windows Hello para empresas](/windows/security/identity-protection/hello-for-business/hello-overview).
 
-Habilita la autenticación multifactor (MFA) para las cuentas de administrador en Azure AD con Azure MFA. Como mínimo, habilita la [directiva de acceso condicional para protección de base de referencia](/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins). Puedes encontrar más información sobre Azure Multi-Factor Authentication en el artículo [Implementación de una instancia de Azure Multi-Factor Authentication basada en la nube](/azure/active-directory/authentication/howto-mfa-getstarted).
+Habilita la autenticación multifactor (MFA) para las cuentas de administrador en Azure AD con Azure MFA. Como mínimo, habilite la [directiva de acceso condicional de protección de base de referencia](/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins). Puede encontrar más información sobre Azure Multi-Factor Authentication en el artículo [Implementación de una instancia de Azure Multi-Factor Authentication basada en la nube](/azure/active-directory/authentication/howto-mfa-getstarted).
 
 ### <a name="2-deploy-paw-to-all-privileged-identity-access-account-holders"></a>2. Implementación de PAW para todos los titulares de cuentas con privilegios de acceso a identidad
 
-Para continuar con el proceso de separar las cuentas con privilegios de las amenazas que se encuentran en el correo electrónico, la navegación web y otras tareas no administrativas, debes implementar estaciones de trabajo de acceso con privilegios (PAW) dedicadas para todo el personal que tiene acceso con privilegios a los sistemas de información de la organización. Puedes encontrar más información sobre la implementación de PAW en el artículo [Estaciones de trabajo de acceso con privilegios](privileged-access-workstations.md#paw-phased-implementation).
+Para continuar con el proceso de separar las cuentas con privilegios de las amenazas que se encuentran en el correo electrónico, la navegación web y otras tareas no administrativas, debe implementar estaciones de trabajo de acceso con privilegios (PAW) dedicadas para todo el personal que tiene acceso con privilegios a los sistemas de información de la organización. Puedes encontrar más información sobre la implementación de PAW en el artículo [Estaciones de trabajo de acceso con privilegios](privileged-access-workstations.md#paw-phased-implementation).
 
 ### <a name="3-just-in-time-privileges"></a>3. Privilegios Just-In-Time
 
-Para reducir el tiempo de exposición de los privilegios y aumentar la visibilidad de su uso, proporciona privilegios Just-In-Time (JIT) con una solución adecuada, como las que se indican a continuación u otras soluciones de terceros:
+Para reducir el tiempo de exposición de los privilegios y aumentar la visibilidad de su uso, proporcione privilegios Just-In-Time (JIT) con una solución adecuada, como las que se indican a continuación u otras soluciones de terceros:
 
-* Para Servicios de dominio de Active Directory (AD DS), use la funcionalidad [Privileged Access Manager (PAM)](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) de Microsoft Identity Manager (MIM).
-* Para Azure Active Directory, use la funcionalidad [Azure AD Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-deployment-plan).
+* Para Active Directory Domain Services (AD DS), use la funcionalidad [Privileged Access Manager (PAM)](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) de Microsoft Identity Manager (MIM).
+* Para Azure Active Directory, use la funcionalidad [Azure AD Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-deployment-plan).
 
 ### <a name="4-enable-windows-defender-credential-guard"></a>4. Habilitación de Credential Guard de Windows Defender
 
@@ -132,11 +132,11 @@ La activación de Credential Guard ayuda a proteger los hash de contraseña NTLM
 
 "Todos los días, Microsoft analiza más de 6,5 billones de señales con el fin de identificar las amenazas emergentes y proteger a los clientes": [Microsoft en cifras](https://news.microsoft.com/bythenumbers/cyber-attacks).
 
-Habilita Microsoft Azure AD Identity Protection para recibir informes sobre los usuarios con credenciales filtradas para que puedas corregirlo. Puedes aprovechar [Azure AD Identity Protection](/azure/active-directory/identity-protection/index) para ayudar a que la organización proteja de amenazas a los entornos híbridos y en la nube.
+Habilite Microsoft Azure AD Identity Protection para crear informes sobre los usuarios con credenciales filtradas para que pueda corregirlas. Puedes aprovechar [Azure AD Identity Protection](/azure/active-directory/identity-protection/index) para ayudar a que la organización proteja de amenazas a los entornos híbridos y en la nube.
 
 ### <a name="6-azure-atp-lateral-movement-paths"></a>6. Rutas de desplazamiento lateral de Azure ATP
 
-Asegúrate de que los titulares de las cuentas de acceso con privilegios usan su PAW para administración únicamente para que las cuentas sin privilegios en riesgo no puedan obtener acceso a una cuenta con privilegios a través de ataques de robo de credenciales, como Pass-The-Hash o Pass-The-Ticket. Las [rutas de desplazamiento lateral (LMP) de Azure ATP](/azure-advanced-threat-protection/use-case-lateral-movement-path) proporcionan informes fáciles de entender para identificar dónde pueden estar expuestas a riesgos las cuentas con privilegios.
+Asegúrese de que los titulares de la cuenta de acceso con privilegios usan su PAW para administración únicamente a fin de minimizar el riesgo de que las cuentas sin privilegios en riesgo puedan obtener acceso a una cuenta con privilegios a través de ataques de robo de credenciales, como Pass-The-Hash o Pass-The-Ticket. Las [rutas de desplazamiento lateral (LMP) de Azure ATP](/azure-advanced-threat-protection/use-case-lateral-movement-path) proporcionan informes fáciles de entender para identificar dónde pueden estar expuestas a riesgos las cuentas con privilegios.
 
 ## <a name="phase-3-security-improvement-and-sustainment"></a>Fase 3: Mejora de la seguridad y sostenimiento
 
@@ -144,15 +144,15 @@ La fase 3 del mapa de ruta se basa en los pasos realizados en las fases 1 y 2 pa
 
 ![Fase 3: 1. Revisión de RBAC, 2. Reducción de superficies de ataque, 3. Integración de registros con SEIM, 4. Automatización de credenciales filtradas](../media/securing-privileged-access/PAW_LP_Fig8.JPG)
 
-Estas funcionalidades se basarán en las fases anteriores y trasladarán las defensas a una postura más proactiva. Esta fase no tiene una línea de tiempo específica y puede tardar más en implementarse en función de tu organización específica.
+Estas funcionalidades se basarán en las fases anteriores y trasladarán las defensas a una postura más proactiva. Esta fase no tiene una línea de tiempo específica y puede tardar más en implementarse en función de la organización específica.
 
 ### <a name="1-review-role-based-access-control"></a>1. Revisión del control de acceso basado en roles
 
-Con el modelo de tres niveles descrito en el artículo [Modelo de nivel administrativo de Active Directory](securing-privileged-access-reference-material.md), revisa y asegúrate de que los administradores de nivel inferior no tienen acceso administrativo a recursos de nivel superior (pertenencias a grupos, ACL en las cuentas de usuario, etc.).
+Con el modelo de tres niveles descrito en el artículo [Modelo de nivel administrativo de Active Directory](securing-privileged-access-reference-material.md), revise y asegúrese de que los administradores de nivel inferior no tienen acceso administrativo a recursos de nivel superior (pertenencias a grupos, ACL en las cuentas de usuario, etc.).
 
 ### <a name="2-reduce-attack-surfaces"></a>2. Reducción de superficies de ataque
 
-Protege las cargas de trabajo de identidad, incluidos los dominios, los controladores de dominio, ADFS y Azure AD Connect, ya que poner en peligro uno de estos sistemas podría afectar otros sistemas de la organización. Los artículos [Reducción de la superficie de ataque de Active Directory](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md) y [Cinco pasos para asegurar la infraestructura de identidad](/azure/security/azure-ad-secure-steps) proporcionan instrucciones para proteger los entornos de identidad locales e híbridos.
+Protege las cargas de trabajo de identidad, incluidos los dominios, los controladores de dominio, ADFS y Azure AD Connect, ya que poner en peligro uno de estos sistemas podría afectar a otros sistemas de la organización. Los artículos [Reducción de la superficie de ataque de Active Directory](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md) y [Cinco pasos para asegurar la infraestructura de identidad](/azure/security/azure-ad-secure-steps) proporcionan instrucciones para proteger los entornos de identidad locales e híbridos.
 
 ### <a name="3-integrate-logs-with-siem"></a>3. Integración de registros con SIEM
 
@@ -168,6 +168,6 @@ Mejora aún más tu postura de seguridad al habilitar Azure AD Identity Protecti
 
 La respuesta breve es no.
 
-Los delincuentes nunca descansan, así que tú tampoco deberías. Este mapa de ruta puede ayudar a que tu organización se proteja de amenazas conocidas actualmente, ya que los atacantes evolucionan y cambian constantemente. Se recomienda que consideres la seguridad como un proceso continuado centrado en aumentar el costo y reducir el índice de éxito de los ataques de los adversarios hacia tu entorno.
+Los delincuentes nunca descansan, así que tú tampoco deberías. Este mapa de ruta puede ayudar a que su organización se proteja frente a amenazas conocidas actualmente, ya que los atacantes evolucionan y cambian constantemente. Se recomienda que consideres la seguridad como un proceso continuado, centrado en aumentar el costo y reducir el índice de éxito de los ataques de los adversarios dirigidos a su entorno.
 
 Aunque no es la única parte del programa de seguridad de la organización, la protección del acceso con privilegios es un componente esencial de la estrategia de seguridad.
