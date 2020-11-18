@@ -7,12 +7,12 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: d3fd3e1c6ca9a7493ac0bcdc809f68fe22f8fa67
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1190028ce94b8ecb37d188e5571443f55d6e12d1
+ms.sourcegitcommit: 7f859d8ec86664fdedd05901ac3714f84e7868b5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971092"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94703781"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Desconectar un servidor de Espacios de almacenamiento directo para su mantenimiento
 
@@ -25,7 +25,7 @@ Con Espacios de almacenamiento directo, desconectar un servidor (detenerlo) tamb
 Use los procedimientos siguientes para pausar correctamente un servidor en un clúster de Espacios de almacenamiento directo antes de desconectarlo.
 
    > [!IMPORTANT]
-   > Para instalar actualizaciones en un clúster de Espacios de almacenamiento directo, use la actualización compatible con clústeres (CAU), que realiza automáticamente los procedimientos de este tema para que no tenga que hacerlo al instalar las actualizaciones. Para obtener más información, consulte [actualización compatible con clústeres (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11)).
+   > Para instalar actualizaciones en un clúster de Espacios de almacenamiento directo, use la actualización de Cluster-Aware (CAU), que realiza automáticamente los procedimientos de este tema para que no tenga que hacerlo al instalar las actualizaciones. Para obtener más información, consulte [actualización compatible con clústeres (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11)).
 
 ## <a name="verifying-its-safe-to-take-the-server-offline"></a>Comprobando que es seguro desconectar el servidor
 
@@ -37,7 +37,7 @@ Para ello, abra una sesión de PowerShell con permisos de administrador y, despu
 Get-VirtualDisk
 ```
 
-Este es un ejemplo del aspecto que podría tener la salida:
+El ejemplo siguiente muestra el aspecto que podría tener la salida:
 ```
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
 ------------ --------------------- ----------------- ------------ -------------- ----
@@ -48,7 +48,7 @@ MyVolume3    Mirror                OK                Healthy      True          
 
 Compruebe que la propiedad **HealthStatus** para cada volumen (disco virtual) sea **correcta**.
 
-Para hacer esto en Administrador de clústeres de conmutación por error, vaya a **Storage**  >  **discos**de almacenamiento.
+Para hacer esto en Administrador de clústeres de conmutación por error, vaya a **Storage**  >  **discos** de almacenamiento.
 
 Compruebe que en la columna **Estado** de cada volumen (disco virtual) aparece **en línea**.
 
@@ -67,14 +67,14 @@ Suspend-ClusterNode -Drain
 
 Para hacer esto en Administrador de clústeres de conmutación por error, vaya a **nodos**, haga clic con el botón secundario en el nodo y seleccione **pausar**  >  **roles de purga**.
 
-![Pausar-Drain](media/maintain-servers/pause-drain.png)
+![Pause-Drain](media/maintain-servers/pause-drain.png)
 
 Todas las máquinas virtuales comenzarán a migrar en vivo a otros servidores del clúster. Esta operación puede tardar unos minutos.
 
    > [!NOTE]
-   > Cuando pausa y purga el nodo de clúster correctamente, Windows realiza una comprobación de seguridad automática para asegurarse de que es seguro continuar. Si hay volúmenes en mal estado, se detendrán y le avisarán de que no es seguro continuar.
+   > Cuando pausa y purga el nodo de clúster correctamente, Windows realiza una comprobación de seguridad automática para asegurarse de que es seguro continuar. Si hay volúmenes en mal estado, se detendrá y le avisará de que no es seguro continuar.
 
-![Comprobación de seguridad](media/maintain-servers/safety-check.png)
+![Safety-Check](media/maintain-servers/safety-check.png)
 
 ## <a name="shutting-down-the-server"></a>Apagar el servidor
 
@@ -82,7 +82,7 @@ Una vez que se haya agotado el servidor, se mostrará en **pausa** en Administra
 
 ![En pausa](media/maintain-servers/paused.png)
 
-Ahora puede reiniciarse o cerrarse de forma segura, tal como lo haría normalmente (por ejemplo, mediante los cmdlets de PowerShell restart-Computer o STOP-Computer).
+Ahora puede reiniciarse o cerrarse de forma segura, tal como lo haría normalmente (por ejemplo, mediante el uso de los cmdlets de PowerShell Restart-Computer o Stop-Computer).
 
 ```PowerShell
 Get-VirtualDisk
@@ -114,7 +114,7 @@ Resume-ClusterNode –Failback Immediate
 
 Para hacer esto en Administrador de clústeres de conmutación por error, vaya a **nodos**, haga clic con el botón secundario en el nodo y, después, seleccione **reanudar**  >  **errores de roles de nuevo**.
 
-![Reanudar: conmutación por recuperación](media/maintain-servers/resume-failback.png)
+![Resume-Failback](media/maintain-servers/resume-failback.png)
 
 ## <a name="waiting-for-storage-to-resync"></a>Esperando a que se resincronice el almacenamiento
 
@@ -152,7 +152,7 @@ MyVolume2    Mirror                InService         Warning      True          
 MyVolume3    Mirror                InService         Warning      True           1 TB
 ```
 
-Una vez completados los trabajos, compruebe que los volúmenes vuelvan a funcionar **correctamente** mediante el `Get-VirtualDisk` cmdlet. A continuación se muestra una salida de ejemplo:
+Una vez finalizados los trabajos, compruebe que los volúmenes muestran **Healthy** de nuevo mediante el cmdlet `Get-VirtualDisk`. A continuación se muestra una salida de ejemplo:
 
 ```
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
@@ -165,20 +165,20 @@ MyVolume3    Mirror                OK                Healthy      True          
 Ahora es seguro pausar y reiniciar otros servidores del clúster.
 
 ## <a name="how-to-update-storage-spaces-direct-nodes-offline"></a>Actualización de nodos de Espacios de almacenamiento directo sin conexión
-Siga estos pasos para realizar una ruta de acceso al sistema de Espacios de almacenamiento directo rápidamente. Implica la programación de una ventana de mantenimiento y la desactivación del sistema para la revisión. Si hay una actualización de seguridad crítica que necesita aplicar rápidamente o quizás necesite asegurarse de que la revisión se completa en la ventana de mantenimiento, este método puede ser para usted. Este proceso desconecta el clúster de Espacios de almacenamiento directo, lo revisa y lo vuelve a poner en marcha. La desventaja es el tiempo de inactividad de los recursos hospedados.
+Siga estos pasos para actualizar rápidamente el sistema Espacios de almacenamiento directo. Implica la programación de una ventana de mantenimiento y la desactivación del sistema para su actualización. Si hay una actualización de seguridad crítica que necesita aplicar rápidamente o quizás necesite asegurarse de que la actualización se complete en la ventana de mantenimiento, este método puede ser para usted. Este proceso desconectará el clúster de Espacios de almacenamiento directo, lo actualizará y lo volverá a poner en marcha. La desventaja es el tiempo de inactividad de los recursos hospedados.
 
 1. Planee la ventana de mantenimiento.
 2. Desconecte los discos virtuales.
-3. Detenga el clúster para desconectar el bloque de almacenamiento. Ejecute el cmdlet **Stop-Cluster** o use administrador de clústeres de conmutación por error para detener el clúster.
+3. Detenga el clúster para desconectar el bloque de almacenamiento. Ejecute el cmdlet  **Stop-Cluster** o use administrador de clústeres de conmutación por error para detener el clúster.
 4. Establezca el servicio de clúster en **deshabilitado** en Services. msc en cada nodo. Esto evita que se inicie el servicio de clúster mientras se aplica la revisión.
 5. Aplique la actualización acumulativa de Windows Server y cualquier actualización de pila de mantenimiento necesaria a todos los nodos. (Puede actualizar todos los nodos al mismo tiempo, sin necesidad de esperar, ya que el clúster está inactivo).
 6. Reinicie los nodos y asegúrese de que todo es correcto.
 7. Vuelva a establecer el servicio de clúster en **automático** en cada nodo.
 8. Inicie el clúster. Ejecute el cmdlet **Start-Cluster** o use administrador de clústeres de conmutación por error.
 
-   Asígnele unos minutos.  Asegúrese de que el grupo de almacenamiento esté en buen estado.
+   Espere unos minutos.  Asegúrese de que el estado del bloque de almacenamiento es correcto.
 9. Vuelva a poner en línea los discos virtuales.
-10. Supervise el estado de los discos virtuales mediante la ejecución de los cmdlets **Get-Volume** y **Get-VirtualDisk** .
+10. Para supervisar el estado de los discos virtuales ejecute los cmdlets **Get-Volume** y **Get-VirtualDisk**.
 
 
 ## <a name="additional-references"></a>Referencias adicionales
