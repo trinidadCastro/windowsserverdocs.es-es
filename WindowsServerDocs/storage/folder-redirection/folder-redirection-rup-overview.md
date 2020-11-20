@@ -67,7 +67,7 @@ Antes de Windows 8 y Windows Server 2012, los usuarios cambiaban entre los mod
 
 Con el modo Siempre sin conexión, los equipos hacen la transición al modo En línea cuando se aplica la configuración de la directiva de grupo **Configurar el modo de vínculo de baja velocidad** y el parámetro del umbral de **Latencia** se establece en 1 milisegundo. Los cambios se sincronizan en segundo plano cada 120 minutos de manera predeterminada, pero la sincronización se puede definir mediante la configuración de directiva de grupo **Configure Background Sync** .
 
-Para obtener más información, consulte [Enable the Always Offline Mode to Provide Faster Access to Files](enable-always-offline.md).
+Para obtener más información, consulte [Habilitar el modo siempre sin conexión para proporcionar un acceso más rápido a los archivos](enable-always-offline.md).
 
 ## <a name="cost-aware-synchronization"></a>Sincronización con control costo
 
