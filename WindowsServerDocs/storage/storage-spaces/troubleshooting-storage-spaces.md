@@ -6,12 +6,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 525db4b22e0408847e4a52659d06ecddf5b1df8f
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: aeb8161ec5250856cb932035cc1acc28a9e9baf6
+ms.sourcegitcommit: 6d720d4ddaf6362fad1ab04364563cfa6590e3af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078672"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96332095"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solucionar problemas Espacios de almacenamiento directo
 
@@ -33,12 +33,12 @@ Si sigue teniendo problemas, revise los escenarios siguientes.
 ## <a name="virtual-disk-resources-are-in-no-redundancy-state"></a>Los recursos de disco virtual no están en estado de redundancia
 Los nodos de un Espacios de almacenamiento directo reiniciar el sistema de forma inesperada debido a un error de alimentación o de bloqueo. Después, es posible que uno o varios de los discos virtuales no se conecten y vea la descripción "no hay suficiente información de redundancia".
 
-|FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|Tamaño| PSComputerName|
+|FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|Size| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| Reflejo| Aceptar|  Correcto| Verdadero|  10 TB|  Node-01. cont...|
-|Disk3         |Reflejo                 |Aceptar                          |Correcto       |Verdadero            |10 TB | Node-01. cont...|
-|Disk2         |Reflejo                 |Sin redundancia               |Incorrecto     |Verdadero            |10 TB | Node-01. cont...|
-|Disk1         |Reflejo                 |{Sin redundancia, inservicio}  |Incorrecto     |Verdadero            |10 TB | Node-01. cont...|
+|Disk4| Reflejo| Aceptar|  Healthy| Verdadero|  10 TB|  Node-01. cont...|
+|Disk3         |Reflejo                 |Aceptar                          |Healthy       |Verdadero            |10 TB | Node-01. cont...|
+|Disk2         |Reflejo                 |Sin redundancia               |Unhealthy (Incorrecto)     |Verdadero            |10 TB | Node-01. cont...|
+|Disk1         |Reflejo                 |{Sin redundancia, inservicio}  |Unhealthy (Incorrecto)     |Verdadero            |10 TB | Node-01. cont...|
 
 Además, después de intentar conectar el disco virtual, se registra la siguiente información en el registro del clúster (DiskRecoveryAction).
 
@@ -96,12 +96,12 @@ Al ejecutar el cmdlet **Get-VirtualDisk** , el OperationalStatus de uno o más d
 
 A continuación se muestra un ejemplo de la salida del cmdlet **Get-VirtualDisk** .
 
-|FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  Tamaño|   PSComputerName|
+|FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  Size|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         Reflejo|                 Aceptar|                  Correcto|       Verdadero|            10 TB|  Node-01. cont...|
-|Disk3|         Reflejo|                 Aceptar|                  Correcto|       Verdadero|            10 TB|  Node-01. cont...|
-|Disk2|         Reflejo|                 Separada|            Unknown|       Verdadero|            10 TB|  Node-01. cont...|
-|Disk1|         Reflejo|                 Separada|            Unknown|       Verdadero|            10 TB|  Node-01. cont...|
+|Disk4|         Reflejo|                 Aceptar|                  Healthy|       Verdadero|            10 TB|  Node-01. cont...|
+|Disk3|         Reflejo|                 Aceptar|                  Healthy|       Verdadero|            10 TB|  Node-01. cont...|
+|Disk2|         Reflejo|                 Separada|            Desconocido|       Verdadero|            10 TB|  Node-01. cont...|
+|Disk1|         Reflejo|                 Separada|            Desconocido|       Verdadero|            10 TB|  Node-01. cont...|
 
 
 Además, los siguientes eventos se pueden registrar en los nodos:
@@ -326,23 +326,23 @@ Hay dos maneras de comprobar:
     {d543f90c-798b-d2fe-7f0a-cb226c77eeed},10,false,false,1,20,{00000000-0000-0000-0000-000000000000},CacheDiskStateIneligibleDataPartition,0,0,0,false,false,NVMe    ,INTEL SSDPE7KX02,  PHLF7330004V2P0LGN,0170,{79b4d631-976f-4c94-a783-df950389fd38},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0],
     ```
 2. Usar Get-PhysicalDisk.xml de SDDCDiagnosticInfo
-    1. Abra el archivo XML mediante "$d = Import-Clixml GetPhysicalDisk.XML"
+    1. Abra el archivo XML con "$d = Import-Clixml GetPhysicalDisk.XML"
     2. Ejecutar "almacenamiento de IPMO"
     3. Ejecute "$d". Tenga en cuenta que el uso se realiza de forma automática, no del diario. verá un resultado similar al siguiente:
 
-   |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| Uso| Tamaño|
+   |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| Uso| Size|
    |-----------|------------|---------| -------| -----------------| ------------| -----| ----|
-   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| Falso|   Aceptar|                Correcto|      Selección automática 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  Falso|    Aceptar|                Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  Falso|  Aceptar|                Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| Falso| Aceptar|    Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| Falso|Aceptar|       Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| Falso| Aceptar|      Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| Falso| Aceptar|      Correcto|Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| Falso| Aceptar|  Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| Falso| Aceptar| Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| Falso| Aceptar|Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| Falso| Aceptar| Correcto| Selección automática |1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| Falso|   Aceptar|                Healthy|      Selección automática 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  Falso|    Aceptar|                Healthy| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  Falso|  Aceptar|                Healthy| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| Falso| Aceptar|    Healthy| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| Falso|Aceptar|       Healthy| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| Falso| Aceptar|      Healthy| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| Falso| Aceptar|      Healthy|Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| Falso| Aceptar|  Healthy| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| Falso| Aceptar| Healthy| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| Falso| Aceptar|Healthy| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| Falso| Aceptar| Healthy| Selección automática |1,82 TB|
 
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>Cómo destruir un clúster existente para que pueda volver a usar los mismos discos
 
@@ -355,27 +355,27 @@ El siguiente paso consiste en quitar el grupo de almacenamiento fantasma:
 
 Ahora, si ejecuta **Get-PhysicalDisk** en cualquiera de los nodos, verá todos los discos que se encontraban en el grupo. Por ejemplo, en un laboratorio con un clúster de 4 nodos con 4 discos SAS, 100 GB cada uno se presentó a cada nodo. En ese caso, después de que el espacio de almacenamiento directo esté deshabilitado, lo que quita el SBL (capa de bus de almacenamiento) pero deja el filtro, si ejecuta **Get-PhysicalDisk**, debe notificar 4 discos, excepto el disco del sistema operativo local. En su lugar, se ha indicado 16 en su lugar. Esto es lo mismo para todos los nodos del clúster. Al ejecutar un comando **Get-Disk** , verá los discos conectados localmente numerados como 0, 1, 2, etc., tal como se muestra en este resultado de ejemplo:
 
-|Number| Nombre descriptivo| Número de serie|HealthStatus|OperationalStatus|Tamaño total| Estilo de partición|
+|Número| Nombre descriptivo| Número de serie|HealthStatus|OperationalStatus|Tamaño total| Estilo de partición|
 |-|-|-|-|-|-|-|-|
-|0|Msft Virtu...  ||Correcto | En línea|  127 GB| GPT|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-|1|Msft Virtu...||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-|2|Msft Virtu...||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-|4|Msft Virtu...||Correcto| Sin conexión| 100 GB| RAW|
-|3|Msft Virtu...||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
+|0|Msft Virtu...  ||Healthy | En línea|  127 GB| GPT|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+|1|Msft Virtu...||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+|2|Msft Virtu...||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+|4|Msft Virtu...||Healthy| Sin conexión| 100 GB| RAW|
+|3|Msft Virtu...||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
+||Msft Virtu... ||Healthy| Sin conexión| 100 GB| RAW|
 
-## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>Mensaje de error sobre "tipo de medio no admitido" al crear un clúster de Espacios de almacenamiento directo con enable-ClusterS2D
+## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>Mensaje de error sobre el "tipo de medio no admitido" al crear un clúster de Espacios de almacenamiento directo con Enable-ClusterS2D
 
 Es posible que vea errores similares a este al ejecutar el cmdlet **enable-ClusterS2D** :
 
@@ -395,7 +395,7 @@ El problema es con la tarjeta de expansión de SAS de HPE que se encuentra entre
 Es posible que aparezca un problema en el que un dispositivo de la serie P4600 de DC de Intel SSD está informando de un NGUID de 16 bytes similar para varios espacios de nombres como 0100000001000000E4D25C000014E214 o 0100000001000000E4D25C0000EEE214 en el ejemplo siguiente.
 
 
-|               UniqueID               | deviceid | MediaType | BusType |               SerialNumber               |      tamaño      | canpool | FriendlyName | OperationalStatus |
+|               uniqueid               | deviceid | MediaType | BusType |               SerialNumber               |      tamaño      | canpool | FriendlyName | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
 |           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  Falso  |     HGST     |  HUH721010AL4200  |
 | EUI. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  Verdadero   |    PROCESADOR     |   SSDPE2KE016T7   |
@@ -415,6 +415,7 @@ En un clúster de Espacios de almacenamiento directo de Windows Server 2016, pod
 "Quitar del grupo" es un intento establecido cuando se llama a **Remove-PhysicalDisk** pero se almacena en estado para mantener el estado y permitir la recuperación si se produce un error en la operación de eliminación. Puede cambiar manualmente el OperationalStatus a correcto con uno de los métodos siguientes:
 
 - Quite el disco físico del grupo y, a continuación, agréguelo de nuevo.
+- Import-Module Clear-PhysicalDiskHealthData.ps1
 - Ejecute el [ scriptClear-PhysicalDiskHealthData.ps1](https://go.microsoft.com/fwlink/?linkid=2034205) para borrar el intento. (Disponible para su descarga como un. Archivo TXT. Tendrá que guardarlo como un. Archivo PS1 antes de poder ejecutarlo).
 
 Estos son algunos ejemplos en los que se muestra cómo ejecutar el script:
