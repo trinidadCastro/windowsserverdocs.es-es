@@ -1,16 +1,16 @@
 ---
-title: Monitor de paquetes (Pktmon)
+title: Supervisión de paquetes (Pktmon)
 description: En este tema se proporciona información general sobre la herramienta de diagnóstico de red del monitor de paquetes (Pktmon).
 ms.topic: overview
 author: khdownie
 ms.author: v-kedow
 ms.date: 11/12/2020
-ms.openlocfilehash: 3db2bcf2719c3cfb5430d8feb8fcac1684578452
-ms.sourcegitcommit: 8808f871c8cf131f819ef5540286218bd425da96
+ms.openlocfilehash: cab9de79c1d53b505acb61020c71472365ded348
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94632655"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330497"
 ---
 # <a name="packet-monitor-pktmon"></a>Monitor de paquetes \( Pktmon\)
 
@@ -44,21 +44,30 @@ El monitor de paquetes intercepta los paquetes en varias ubicaciones de la pila 
 
 </center>
 
+## <a name="best-practices"></a>Prácticas recomendadas
+
+Siga estas prácticas recomendadas para optimizar el análisis de la red.
+
+- Consulte la ayuda de la línea de comandos para obtener argumentos y capacidades (por ejemplo, pktmon Start Help).
+- Configurar filtros de paquetes que coincidan con el escenario (pktmon filtro Add).
+- Compruebe los contadores de paquetes durante el experimento para ver la vista de alto nivel (contadores de pktmon).
+- Busque en el registro el análisis detallado (pktmon Format pktmon. ETL).
+
 ## <a name="functionality"></a>Funcionalidad
 
 La funcionalidad del monitor de paquetes ha evolucionado a través de las versiones de Windows. En la tabla siguiente se muestran sus principales capacidades y su versión de Windows correspondiente.
 
-| Capacidad                                                                  | RS5 (17763) | 19H1 (18362) | Vibranium (19041) |
-|:---------------------------------------------------------------------------:|:-----------:|:------------:|:-----------------:|
-| Supervisión y recuento de paquetes en varias ubicaciones a través de la pila de red | &#x2611;    | &#x2611;     | &#x2611;          |
-| Detección de paquetes descartados en varias ubicaciones de la pila                          | &#x2611;    | &#x2611;     | &#x2611;          |
-| Filtrado flexible de paquetes en tiempo de ejecución                                           | &#x2611;    | &#x2611;     | &#x2611;          |
-| Compatibilidad con la encapsulación                                                       | &#x2610;    | &#x2611;     | &#x2611;          |
-| Análisis de red basado en el análisis de paquetes TcpDump                            | &#x2610;    | &#x2611;     | &#x2611;          |
-| Análisis de metadatos de paquetes (OOB)                                              | &#x2610;    | &#x2610;     | &#x2611;          |
-| Supervisión de paquetes en pantalla en tiempo real                                       | &#x2610;    | &#x2610;     | &#x2611;          |
-| Registro de gran volumen en memoria                                               | &#x2610;    | &#x2610;     | &#x2611;          |
-| Compatibilidad con los formatos Wireshark y Monitor de red                                | &#x2610;    | &#x2610;     | &#x2611;          |
+| Capacidad                                                                  | V 1809 (B:17763) | V 1903 (B:18362) | V 2004 (B:19041) |
+|:---------------------------------------------------------------------------:|:----------------:|:----------------:|:----------------:|
+| Supervisión y recuento de paquetes en varias ubicaciones a través de la pila de red | &#x2611;         | &#x2611;         | &#x2611;         |
+| Detección de paquetes descartados en varias ubicaciones de la pila                          | &#x2611;         | &#x2611;         | &#x2611;         |
+| Filtrado flexible de paquetes en tiempo de ejecución                                           | &#x2611;         | &#x2611;         | &#x2611;         |
+| Compatibilidad con la encapsulación                                                       | &#x2610;         | &#x2611;         | &#x2611;         |
+| Análisis de red basado en el análisis de paquetes TcpDump                            | &#x2610;         | &#x2611;         | &#x2611;         |
+| Análisis de metadatos de paquetes (OOB)                                              | &#x2610;         | &#x2610;         | &#x2611;         |
+| Supervisión de paquetes en pantalla en tiempo real                                       | &#x2610;         | &#x2610;         | &#x2611;         |
+| Registro de gran volumen en memoria                                               | &#x2610;         | &#x2610;         | &#x2611;         |
+| Compatibilidad con los formatos Wireshark y Monitor de red                                | &#x2610;         | &#x2610;         | &#x2611;         |
 
 >[!NOTE]
 >Azure Stack los clientes de HCl y Azure Stack Hub deben esperar la funcionalidad de vibranium.
@@ -67,9 +76,8 @@ La funcionalidad del monitor de paquetes ha evolucionado a través de las versio
 
 A continuación se muestran algunas de las limitaciones más significativas del monitor de paquetes.
 
-- La compatibilidad con medios inalámbricos solo está disponible en las compilaciones de hierro
-- Sin integración de Firewall
-- Drop Reporting solo está disponible para componentes integrados
+- Ahora solo se admite el tráfico Ethernet. La compatibilidad con el tráfico inalámbrico se agregará en versiones posteriores.
+- Las caídas de paquetes del firewall de Windows no son visibles en el monitor de paquetes todavía. 
 
 ## <a name="get-started-with-packet-monitor"></a>Introducción al monitor de paquetes
 
@@ -79,7 +87,7 @@ Los siguientes recursos están disponibles para ayudarle a empezar a usar el mon
 
 El monitor de paquetes está disponible en la caja a través de pktmon.exe comando en vibranium OS (compilación 19041). Puede [usar este tema](pktmon-syntax.md) para aprender a entender la sintaxis, los comandos, el formato y la salida de pktmon.
 
-### <a name="packet-monitoring-extension-in-windows-admin-center"></a>[Extensión de supervisión de paquetes en el centro de administración de Windows](pktmon-wac-extension.md)
+### <a name="packet-monitoring-extension-in-windows-admin-center"></a>[Extensión de la supervisión de paquetes en Windows Admin Center](pktmon-wac-extension.md)
 
 La extensión de supervisión de paquetes le permite trabajar y consumir el monitor de paquetes a través del centro de administración de Windows. La extensión le ayuda a diagnosticar la red mediante la captura y visualización del tráfico de red a través de la pila de red en un registro que es fácil de seguir y manipular. Puede [usar este tema](pktmon-wac-extension.md) para obtener información sobre cómo usar la herramienta y entender su resultado.
 
@@ -87,11 +95,11 @@ La extensión de supervisión de paquetes le permite trabajar y consumir el moni
 
 El diagnóstico de rutas de acceso de datos de SDN es una herramienta dentro de la extensión de supervisión de SDN del centro de administración de Windows. La herramienta automatiza las capturas de paquetes basadas en el monitor de paquetes según los distintos escenarios de SDN y presenta el resultado en una sola vista que es fácil de seguir y manipular. Puede [usar este tema](pktmon-sdn-data-path-wac-extension.md) para obtener información sobre cómo usar la herramienta y entender su resultado.
 
-### <a name="microsoft-network-monitor-netmon-support"></a>[Compatibilidad con Monitor de red de Microsoft (Netmon)](pktmon-netmon-support.md)
+### <a name="microsoft-network-monitor-netmon-support"></a>[Soporte técnico del Monitor de red de Microsoft (Netmon)](pktmon-netmon-support.md)
 
 El monitor de paquetes genera registros en formato ETL. Estos registros se pueden analizar mediante el Monitor de red de Microsoft (Netmon) mediante analizadores especiales. En [este tema](pktmon-netmon-support.md) se explica cómo analizar archivos ETL generados por el monitor de paquetes en Netmon.
 
-### <a name="wireshark-pcapng-format-support"></a>[Compatibilidad con Wireshark (formato pcapng)](pktmon-pcapng-support.md)
+### <a name="wireshark-pcapng-format-support"></a>[Soporte técnico de Wireshark (formato pcapng)](pktmon-pcapng-support.md)
 
 El monitor de paquetes puede convertir registros al formato pcapng. Estos registros se pueden analizar mediante Wireshark (o cualquier analizador de pcapng). En [este tema](pktmon-pcapng-support.md) se explican los resultados esperados y cómo aprovecharlos.
 

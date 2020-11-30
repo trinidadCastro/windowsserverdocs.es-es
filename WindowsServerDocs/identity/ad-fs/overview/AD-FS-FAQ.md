@@ -5,14 +5,14 @@ description: Preguntas más frecuentes sobre AD FS
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/29/2020
+ms.date: 11/02/2020
 ms.topic: article
-ms.openlocfilehash: 50767d5b1941e397583f6c2bfa1d6b2ae3f253cf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d4b1130de67d4e4d7f57065dac307cddc0aef369
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949689"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330487"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Preguntas más frecuentes (P+F) sobre AD FS
 
@@ -87,6 +87,7 @@ Sí, los proxies de terceros se pueden colocar delante de AD FS, pero cualquier
 A continuación, se muestra una lista de los proveedores de terceros que conocemos.  Puede que siempre haya proveedores disponibles que no conozcamos y actualizaremos la lista a medida que los descubramos.
 
 - [Administrador de directivas de acceso de F5](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-third-party-integration-13-1-0/12.html#guid-1ee8fbb3-1b33-4982-8bb3-05ae6868d9ee)
+- [Controlador de entrega de aplicaciones (ADC) de Citrix](https://docs.citrix.com/en-us/citrix-adc/current-release/aaa-tm/adfs-proxy-wsfed.html)
 
 
 ### <a name="where-is-the-capacity-planning-sizing-spreadsheet-for-ad-fs-2016"></a>¿Dónde está la hoja de cálculo de tamaño de planeamiento de capacidad para AD FS 2016?

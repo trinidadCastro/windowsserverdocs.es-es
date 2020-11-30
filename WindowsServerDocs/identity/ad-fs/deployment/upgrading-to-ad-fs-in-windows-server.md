@@ -6,12 +6,12 @@ manager: femila
 ms.date: 04/09/2018
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: cf8a12957621ce86492cc4216c56d9a159f1ee5c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 683a9ce88c9809dfecf5669b41758187504634b9
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940571"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330517"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Actualización a AD FS en Windows Server 2016 mediante una base de datos WID
 
@@ -93,7 +93,7 @@ Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN}
 
 ![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
 
-Una vez que se complete la ejecución`adprep/domainprep`
+Una vez que se complete la ejecución `adprep /domainprep`
 
 > [!NOTE]
 > Antes de ejecutar el paso siguiente, asegúrese de que Windows Server esté actualizado ejecutando Windows Update desde la configuración. Continúe con este proceso hasta que no se necesiten más actualizaciones.
@@ -120,7 +120,7 @@ Invoke-AdfsFarmBehaviorLevelRaise
 
 ![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
 
-11. Del mismo modo, puede usar el cmdlet de PowerShell: `Get-AdfsFarmInformation` para mostrar el FBL actual.
+11. Del mismo modo, puede usar el cmdlet de PowerShell:  `Get-AdfsFarmInformation` para mostrar el FBL actual.
 
 ![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
 

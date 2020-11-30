@@ -7,15 +7,15 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 07/23/2019
-ms.openlocfilehash: 55d08b426ace5cf6cd0dfc0a0928536bfb751124
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 754211824208e582382cb9c6ad196483c6506708
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077822"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330387"
 ---
 # <a name="manage-a-server-core-server"></a>Administrar un servidor Server Core
- 
+ 
 > Se aplica a: Windows Server 2019, Windows Server 2016 y Windows Server (canal semianual)
 
 Puede administrar un servidor Server Core de las siguientes maneras:
@@ -30,12 +30,12 @@ También puede agregar hardware y administrar controladores de forma local, siem
 
 Hay algunas limitaciones y sugerencias importantes que se deben tener en cuenta al trabajar con Server Core:
 
-- Si cierra todas las ventanas del símbolo del sistema y desea abrir una nueva ventana del símbolo del sistema, puede hacerlo desde el administrador de tareas. Presione **Ctrl \+ ALT \+ Supr**, haga clic en **iniciar el administrador de tareas**, haga clic en **más detalles > archivo > ejecutar**y, a continuación, escriba **cmd.exe**. (Escriba **Powershell.exe** para abrir una ventana de comandos de PowerShell). También puede cerrar la sesión y volver a iniciarla.
+- Si cierra todas las ventanas del símbolo del sistema y desea abrir una nueva ventana del símbolo del sistema, puede hacerlo desde el administrador de tareas. Presione **Ctrl \+ ALT \+ Supr**, haga clic en **iniciar el administrador de tareas**, haga clic en **más detalles > archivo > ejecutar** y, a continuación, escriba **cmd.exe**. (Escriba **Powershell.exe** para abrir una ventana de comandos de PowerShell). También puede cerrar la sesión y volver a iniciarla.
 - Ningún comando o herramienta que intente iniciar el Explorador de Windows funcionará. Por ejemplo, ejecutar **Start.** desde un símbolo del sistema, no funcionará.
 - No se admite la representación en HTML ni la ayuda HTML en Server Core.
 - Server Core admite Windows Installer en modo silencioso, por lo que puede instalar herramientas y utilidades desde archivos Windows Installer. Al instalar Windows Installer paquetes en Server Core, use la opción **/qb** para mostrar la interfaz de usuario básica.
 - Para cambiar la zona horaria, ejecute **set-date**.
-- Para cambiar la configuración internacional, ejecute el **intl.cplde control **.
+- Para cambiar la configuración internacional, ejecute el **intl.cplde control**.
 - **Control.exe** no se ejecutará por sí mismo. Debe ejecutarlo con **Timedate.cpl** o **Intl.cpl**.
 - **Winver.exe** no está disponible en Server Core. Para obtener información de versión, use **Systeminfo.exe**.
 
@@ -78,7 +78,7 @@ Para usar un complemento MMC para administrar un servidor Server Core que *no* s
 Para permitir que todos los complementos MMC se conecten, ejecute el siguiente comando:
 
 ```PowerShell
-Enable-NetFirewallRule -DisplayGroup "Remote Administration"
+Enable-NetFirewallRule -DisplayGroup "Windows Remote Management"
 ```
 
 Para permitir que solo se conecten determinados complementos de MMC, ejecute lo siguiente:
@@ -105,7 +105,7 @@ Donde *rulegroup* es uno de los siguientes, en función del complemento que dese
 > Además, ciertos complementos requieren una mayor configuración antes de poder conectarse a través del Firewall de Windows:
 >
 > - Administración de discos. Primero debe iniciar el Servicio de disco virtual (VDS) en el equipo Server Core. También debe configurar las reglas de Administración de discos de forma adecuada en el equipo que ejecuta el complemento MMC.
-> - Monitor de seguridad IP. Primero debe habilitar la administración remota de este complemento. Para ello, en un símbolo del sistema, escriba **cscript \windows\system32\scregedit.wsf/im 1**
+> - Monitor de seguridad IP. Primero debe habilitar la administración remota de este complemento. Para ello, en un símbolo del sistema, escriba **cscript c:\windows\system32\scregedit.wsf/im 1**
 > - Confiabilidad y rendimiento. El complemento no requiere ninguna configuración adicional, pero cuando lo use para supervisar un equipo Server Core, solo podrá supervisar datos de rendimiento. Los datos de confiabilidad no están disponibles.
 
 ## <a name="managing-with-remote-desktop-services"></a>Administrar con Servicios de Escritorio remoto

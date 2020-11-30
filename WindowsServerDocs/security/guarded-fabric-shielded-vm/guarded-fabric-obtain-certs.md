@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 392065ac9fe9e32e84550e14cd9ef39349ac8d67
-ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
+ms.openlocfilehash: 43762e34e2987473954e3f9408ddd6e74b0de3cb
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89472025"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330369"
 ---
 # <a name="obtain-certificates-for-hgs"></a>Obtener certificados para HGS
 
@@ -81,13 +81,13 @@ Remove-Item -Path "Cert:\LocalMachine\CA\$($encCert.Thumbprint)"
 ## <a name="request-an-ssl-certificate"></a>Solicitar un certificado SSL
 
 Todas las claves y la información confidencial transmitida entre los hosts de Hyper-V y HGS se cifran en el nivel de mensaje; es decir, la información se cifra con claves conocidas para HGS o Hyper-V, lo que impide que alguien examine el tráfico de red y robe claves a las máquinas virtuales.
-Sin embargo, si tiene reqiurements de cumplimiento o simplemente prefiere cifrar todas las comunicaciones entre Hyper-V y HGS, puede configurar HGS con un certificado SSL que cifrará todos los datos en el nivel de transporte.
+Sin embargo, si tiene requisitos de cumplimiento o simplemente prefiere cifrar todas las comunicaciones entre Hyper-V y HGS, puede configurar HGS con un certificado SSL que cifrará todos los datos en el nivel de transporte.
 
 Tanto los hosts de Hyper-V como los nodos HGS deben confiar en el certificado SSL que proporcione, por lo que se recomienda que solicite el certificado SSL de la entidad de certificación de la empresa. Al solicitar el certificado, asegúrese de especificar lo siguiente:
 
 Propiedad de certificado SSL | Valor requerido
 -------------------------|---------------
-Nombre de sujeto             | Dirección en la que los clientes HGS (es decir, hosts de Guraded) usarán para acceder al servidor de HGS. Esta suele ser la dirección DNS del clúster de HGS, conocido como el nombre de red distribuida o el objeto de equipo virtual (VCO). Esta será la concatenación del nombre del servicio HGS proporcionada a `Initialize-HgsServer` y el nombre de dominio de HGS.
+Nombre de sujeto             | Dirección en la que los clientes HGS (es decir, hosts protegidos) usarán para acceder al servidor HGS. Esta suele ser la dirección DNS del clúster de HGS, conocido como el nombre de red distribuida o el objeto de equipo virtual (VCO). Esta será la concatenación del nombre del servicio HGS proporcionada a `Initialize-HgsServer` y el nombre de dominio de HGS.
 Nombre alternativo del firmante | Si va a usar un nombre DNS diferente para llegar al clúster de HGS (por ejemplo, si está detrás de un equilibrador de carga o si usa direcciones diferentes para un subconjunto de nodos en una topología compleja), asegúrese de incluir esos nombres DNS en el campo SAN de la solicitud de certificado. Tenga en cuenta que si se rellena la extensión SAN, se omite el nombre de sujeto y, por lo tanto, SAN debe incluir todos los valores, incluido el que normalmente se pondría en el nombre de sujeto.
 
 Las opciones para especificar este certificado al inicializar el servidor HGS se describen en [configuración del primer nodo HGS](guarded-fabric-initialize-hgs.md).
