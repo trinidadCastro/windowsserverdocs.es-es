@@ -2,15 +2,16 @@
 ms.assetid: 6086947f-f9ef-4e18-9f07-6c7c81d7002c
 title: Configuración y herramientas del servicio de hora de Windows
 author: Teresa-Motiv
+description: Describe la configuración que hay disponible para el servicio de hora de Windows (W32Time) y las herramientas que puede usar para establecerla.
 ms.author: v-tea
-ms.date: 02/24/2020
+ms.date: 11/20/2020
 ms.topic: article
-ms.openlocfilehash: 60aae8d96107b45ca3ef101780a3f1fec9c5f364
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 3a9f079160f3af2b175b16654ce5aa77b4dd323e
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766588"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330507"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Configuración y herramientas del servicio de hora de Windows
 
@@ -55,7 +56,7 @@ En las tablas siguientes se describen los parámetros que se pueden usar con W32
 |**w32tm /?** |Muestra la ayuda de la línea de comandos de W32tm. |
 |**w32tm /register** |Registra el servicio de hora para que se ejecute como un servicio y agrega la información de configuración predeterminada al Registro. |
 |**w32tm /unregister** |Anula el registro del servicio de hora y quita toda su información de configuración del Registro. |
-|**w32tm /monitor [/domain:\<*domain name*>] [/computers:\<*name*>[,\<*name*>[,\<*name*>...]]] [/threads:\<*num*>]** |Supervisa el servicio de hora de Windows.<p>**/domain**: especifica el dominio que se va a supervisar. Si no se proporciona ningún nombre de dominio o no se especifican las opciones **/domain** ni **/computers**, se usa el dominio predeterminado. Esta opción se puede usar más de una vez.<p>**/computers**: supervisa la lista de equipos especificada. Los nombres de los equipos se separan con comas, no con espacios. Si un nombre tiene el prefijo **\*** , se trata como un PDC. Esta opción se puede usar más de una vez.<p>**/threads**: especifica el número de equipos que se van a analizar simultáneamente. El valor predeterminado es tres. El intervalo permitido es de 1-50. |
+|**w32tm /monitor [/domain:\<*domain name*>] [/computers:\<*name*>[,\<*name*>[,\<*name*>...]]] [/threads:\<*num*>]** |Supervisa el servicio de hora de Windows.<p>**/domain**: especifica el dominio que se va a supervisar. Si no se proporciona ningún nombre de dominio o no se especifican las opciones **/domain** ni **/computers**, se usa el dominio predeterminado. Esta opción se puede usar más de una vez.<p>**/computers**: supervisa la lista de equipos especificada. Los nombres de los equipos se separan con comas, no con espacios. Si un nombre tiene el prefijo **\**_, se trata como un PDC. Esta opción se puede usar más de una vez.<p>_*/threads**: especifica el número de equipos que se van a analizar simultáneamente. El valor predeterminado es tres. El intervalo permitido es de 1-50. |
 |**w32tm /ntte \<NT *time epoch*>** |Convierte una hora del sistema Windows NT (medida en intervalos de 10<sup>-7</sup> segundos desde 0h 1 ene 1601) en un formato legible. |
 |**w32tm /ntpte \<NTP *time epoch*>** |Convierte una hora NTP (medida en intervalos de 2<sup>-32</sup> segundos desde 0h 1 ene 1900) en un formato legible. |
 |**w32tm /resync [/computer:\<*computer*>] [/nowait] [/rediscover] [/soft]** |Indica a un equipo que debe volver a sincronizar el reloj lo antes posible y genera todas las estadísticas de error acumuladas.<p>**/computer:\<*computer*>** : especifica el equipo que debe volver a sincronizarse. Si no se especifica, se volverá a sincronizar el equipo local.<p>**/nowait**: no esperes a que se produzca la resincronización; vuelve inmediatamente. De lo contrario, espera a que la resincronización se complete antes de volver.<p>**/rediscover**: vuelve a detectar la configuración de red y los orígenes de red; a continuación, vuelve realizar la sincronización.<p>**/soft**: vuelve a realizar la sincronización con las estadísticas de error existentes. No es útil, se proporciona con fines de compatibilidad. |
@@ -75,8 +76,6 @@ Si quieres establecer el cliente de hora de Windows local para que apunte a dos 
 ```cmd
 w32tm /config /manualpeerlist:"ntpserver.contoso.com clock.adatum.com" /syncfromflags:manual /update
 ```
-
-Para obtener una lista de servidores NTP válidos que están disponibles en Internet para la sincronización de hora externa, consulta [Una lista de los servidores horarios que utilizan el Protocolo simple de tiempo de redes (SNTP) y que están disponibles en Internet](https://go.microsoft.com/fwlink/?linkid=60401).
 
 Si quieres comprobar la configuración del cliente de hora de Windows desde un equipo cliente basado en Windows que tiene el nombre de host CONTOSOW1, ejecuta el siguiente comando:
 
@@ -295,7 +294,7 @@ En las tablas siguientes, "Todas las versiones" hace referencia a las versiones 
 | Entrada del Registro | Versiones | Descripción |
 | --- | --- | --- |
 |**AllowNonstandardModeCombinations** |Todas las versiones |Indica que se permiten combinaciones de modos no estándar en la sincronización entre elementos del mismo nivel. El valor predeterminado para los miembros del dominio es **1**. El valor predeterminado para los servidores y clientes independientes es **1**. |
-|**NtpServer** |Todas las versiones |Especifica una lista delimitada por espacios de los elementos del mismo nivel de los que un equipo obtiene las marcas de tiempo, que consta de uno o varios nombres DNS o direcciones IP por línea. Cada nombre DNS o dirección IP de la lista debe ser único. Los equipos conectados a un dominio deben sincronizarse con un origen de hora más confiable, como el reloj oficial de la hora de los EE. UU.  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 SymmetricActive: para obtener más información sobre este modo, consulta el artículo sobre los [modos de funcionamiento del servidor de Hora de Windows](https://go.microsoft.com/fwlink/?LinkId=208012) (en inglés).</li><li>0x08 Client</li></ul><br />No hay ningún valor predeterminado para esta entrada del Registro en los miembros del dominio. El valor predeterminado en los servidores y clientes independientes es time.windows.com,0x1.<p>**Note**<br />Para más información sobre los servidores NTP disponibles, consulta KB 262680 [Una lista de los servidores horarios que utilizan el Protocolo simple de tiempo de redes (SNTP) y que están disponibles en Internet](https://support.microsoft.com/help/262680/a-list-of-the-simple-network-time-protocol-sntp-time-servers-that-are). |
+|**NtpServer** |Todas las versiones |Especifica una lista delimitada por espacios de los elementos del mismo nivel de los que un equipo obtiene las marcas de tiempo, que consta de uno o varios nombres DNS o direcciones IP por línea. Cada nombre DNS o dirección IP de la lista debe ser único. Los equipos conectados a un dominio deben sincronizarse con un origen de hora más confiable, como el reloj oficial de la hora de los EE. UU.  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 SymmetricActive: para obtener más información sobre este modo, consulta el artículo sobre los [modos de funcionamiento del servidor de Hora de Windows](https://go.microsoft.com/fwlink/?LinkId=208012) (en inglés).</li><li>0x08 Client</li></ul><br />No hay ningún valor predeterminado para esta entrada del Registro en los miembros del dominio. El valor predeterminado en los servidores y clientes independientes es **time.windows.com,0x1**. |
 |**ServiceDll** |Todas las versiones |W32Time la mantiene. Contiene datos reservados que se usan en el sistema operativo Windows y los cambios que se realicen en esta configuración pueden producir resultados imprevisibles. La ubicación predeterminada de este archivo DLL en los miembros del dominio y en los servidores y clientes independientes es %windir%\System32\W32Time.dll. |
 |**ServiceMain** |Todas las versiones |W32Time la mantiene. Contiene datos reservados que se usan en el sistema operativo Windows y los cambios que se realicen en esta configuración pueden producir resultados imprevisibles. El valor predeterminado en los miembros del dominio es **SvchostEntry_W32Time**. El valor predeterminado en los servidores y clientes independientes es **SvchostEntry_W32Time**. |
 |**Type** |Todas las versiones |Indica desde qué elementos del mismo nivel se aceptará la sincronización:  <ul><li>**NoSync**. El servicio de hora no se sincroniza con otros orígenes.</li><li>**NTP**. El servicio de hora se sincroniza desde los servidores especificados en la entrada del Registro **NtpServer** Entrada del Registro.</li><li>**NT5DS**. El servicio de hora se sincroniza desde la jerarquía de dominios.  </li><li>**AllSync**. El servicio de hora usa todos los mecanismos de sincronización disponibles.  </li></ul>El valor predeterminado en los miembros del dominio es **NT5DS**. El valor predeterminado en los servidores y clientes independientes es **NTP**. |

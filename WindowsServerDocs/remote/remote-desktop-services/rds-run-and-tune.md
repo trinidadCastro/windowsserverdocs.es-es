@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 79909767-a4c3-4ecf-8d3f-77d37a663153
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 2b7443255f5490a0b67633abbc9ea5bbb6a5bb82
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5a68569943ac540204fd3538719c2a0ef6c4c979
+ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954892"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96330437"
 ---
 # <a name="run-and-tune-your-remote-desktop-services-environment"></a>Ejecución y ajuste del entorno de Servicios de Escritorio remoto
 
@@ -22,7 +22,7 @@ Es recomendable evaluar continuamente las métricas y el equilibrio en comparaci
 
 ## <a name="management-and-monitoring"></a>Administración y supervisión
 
-Consulta [Administración de usuarios de la colección de RDS](rds-user-management.md) para obtener información sobre cómo administrar el acceso a recursos remotos y escritorios.
+Consulte el artículo [Administración de usuarios de la colección de RDS](rds-user-management.md) para obtener información sobre cómo administrar el acceso a recursos remotos y escritorios.
 
 Usa **Microsoft Operations Management Suite (OMS)** para supervisar las implementaciones de Escritorio remoto y detectar posibles cuellos de botella, y administrarlas mediante una de las siguientes maneras:
 
