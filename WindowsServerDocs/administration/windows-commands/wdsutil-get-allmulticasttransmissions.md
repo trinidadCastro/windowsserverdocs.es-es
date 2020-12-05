@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 273581e02784f5a8678be09aaf94a4e380940ea1
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 39405952aac938a7d02ff0f4d1d0c3593df88326
+ms.sourcegitcommit: 28b5ab74cb0b40539ccc1a83998d6391e87fe51f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91730893"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96614857"
 ---
 # <a name="wdsutil-get-allmulticasttransmissions"></a>WDSUtil Get-allmulticasttransmissions
 
@@ -20,7 +20,7 @@ ms.locfileid: "91730893"
 
 Muestra información acerca de todas las transmisiones de multidifusión en un servidor.
 
-## <a name="syntax"></a>Sintaxis
+## <a name="syntax"></a>Syntax
 para Windows Server 2008:
 ```
 wdsutil /Get-AllMulticastTransmissions [/Server:<Server name>] [/Show:Clients] [/ExcludedeletePending]
@@ -31,13 +31,13 @@ wdsutil /Get-AllMulticastTransmissions [/Server:<Server name>] [/Show:{Boot | In
 ```
 ### <a name="parameters"></a>Parámetros
 
-|        Parámetro        |                                                                                                                                                                                                                                                                   Explicación                                                                                                                                                                                                                                                                    |
-|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/Server:<Server name>] |                                                                                                                                                                                 Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.                                                                                                                                                                                  |
-|         /Show         | **Windows Server 2008**<p>/Show: clients: muestra información acerca de los equipos cliente que están conectados a las transmisiones de multidifusión.<p>**Windows Server 2008 R2**<p>Mostrar: {arranque &#124; instalar &#124; todos}-el tipo de imagen que se va a devolver.                                El **arranque** solo devuelve transmisiones de imagen de arranque.                                  La **instalación** solo devuelve transmisiones de imagen de instalación. **All** devuelve ambos tipos de imagen. |
-|                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|    /Details: clientes     |                                                                                                                                                                                              Solo se admite para Windows Server 2008 R2. Si está presente, se mostrarán los clientes que están conectados a la transmisión.                                                                                                                                                                                               |
-| [/ExcludedeletePending] |                                                                                                                                                                                                                                              Excluye cualquier transmisión desactivada de la lista.                                                                                                                                                                                                                                               |
+| Parámetro | Explicación |
+|--|--|
+| [/Server:<Server name>] | Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local. |
+| /Show | **Windows Server 2008**<p>/Show: clients: muestra información acerca de los equipos cliente que están conectados a las transmisiones de multidifusión.<p>**Windows Server 2008 R2**<p>Mostrar: {arranque &#124; instalar &#124; todos}-el tipo de imagen que se va a devolver.                                El **arranque** solo devuelve transmisiones de imagen de arranque.                                  La **instalación** solo devuelve transmisiones de imagen de instalación. **All** devuelve ambos tipos de imagen. |
+|  |  |
+| /Details: clientes | Solo se admite para Windows Server 2008 R2. Si está presente, se mostrarán los clientes que están conectados a la transmisión. |
+| [/ExcludedeletePending] | Excluye cualquier transmisión desactivada de la lista. |
 
 ## <a name="examples"></a>Ejemplos
 Para ver información acerca de todas las transmisiones, escriba:

@@ -1,5 +1,5 @@
 ---
-title: Requisitos para implementar la controladora de red
+title: Requisitos de implementación de Controladora de red
 description: Prepare su centro de información para la implementación de la controladora de red, que requiere uno o varios equipos o máquinas virtuales, y un equipo o máquina virtual. Para poder implementar la controladora de red, debe configurar los grupos de seguridad, las ubicaciones de los archivos de registro (si es necesario) y el registro de DNS dinámico.
 manager: grcusanz
 ms.topic: get-started-article
@@ -7,28 +7,26 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 051518873bd028e8b1253b9bf7cb17dcff344d0d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8339987e1862272d7254d94e403fc10e4827596b
+ms.sourcegitcommit: 28b5ab74cb0b40539ccc1a83998d6391e87fe51f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996593"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96614897"
 ---
-# <a name="requirements-for-deploying-network-controller"></a>Requisitos para implementar la controladora de red
+# <a name="requirements-for-deploying-network-controller"></a>Requisitos de implementación de Controladora de red
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 Prepare su centro de información para la implementación de la controladora de red, que requiere uno o varios equipos o máquinas virtuales, y un equipo o máquina virtual. Para poder implementar la controladora de red, debe configurar los grupos de seguridad, las ubicaciones de los archivos de registro (si es necesario) y el registro de DNS dinámico.
 
-
-## <a name="network-controller-requirements"></a>Requisitos de la controladora de red
+## <a name="network-controller-requirements"></a>Requisitos de Controladora de red
 
 La implementación de la controladora de red requiere uno o varios equipos o máquinas virtuales que actúan como controladora de red y un equipo o una máquina virtual para servir como cliente de administración para la controladora de red.
 
 - Todas las máquinas virtuales y los equipos planeados como nodos de controladora de red deben ejecutar Windows Server 2016 Datacenter Edition.
 - Cualquier equipo o máquina virtual (VM) en la que instale la controladora de red debe ejecutar la edición Datacenter de Windows Server 2016.
 - El equipo o la máquina virtual del cliente de administración de la controladora de red deben ejecutar Windows 10.
-
 
 ## <a name="configuration-requirements"></a>Requisitos de configuración
 
@@ -41,30 +39,26 @@ Lo primero que desea hacer es crear dos grupos de seguridad para la autenticaci�
 Cree grupos para los usuarios que tienen permiso para:
 
 1. Configurar controladora de red<p>Puede asignar un nombre a este grupo administradores de la controladora de red, por ejemplo.
-2.  Configuración y administración de la red mediante el uso de la controladora de red<p>Puede asignar a este grupo el nombre usuarios de la controladora de red, por ejemplo. Use la transferencia de estado representacional (REST) para configurar y administrar la controladora de red.
+2. Configuración y administración de la red mediante el uso de la controladora de red<p>Puede asignar a este grupo el nombre usuarios de la controladora de red, por ejemplo. Use la transferencia de estado representacional (REST) para configurar y administrar la controladora de red.
 
->[!NOTE]
->Todos los usuarios que agregue deben ser miembros del grupo usuarios del dominio en Active Directory usuarios y equipos.
+> [!NOTE]
+> Todos los usuarios que agregue deben ser miembros del grupo usuarios del dominio en Active Directory usuarios y equipos.
 
-### <a name="step-2-configure-log-file-locations-if-needed"></a>Paso 2. Configurar las ubicaciones del archivo de registro si es necesario
+### <a name="step-2-configure-log-file-locations-if-needed"></a>Paso 2. Configurar las ubicaciones del archivo de registro si es necesario
 
 Lo siguiente que desea hacer es configurar las ubicaciones de archivo para almacenar los registros de depuración de la controladora de red en el equipo o la máquina virtual de la controladora de red o en un recurso compartido de archivos remoto.
 
->[!NOTE]
->Si almacena los registros en un recurso compartido de archivos remoto, asegúrese de que el recurso compartido es accesible desde el controlador de red.
+> [!NOTE]
+> Si almacena los registros en un recurso compartido de archivos remoto, asegúrese de que el recurso compartido es accesible desde el controlador de red.
 
-
-### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>Paso 3. Configurar el registro de DNS dinámico para la controladora de red
+### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>Paso 3. Configurar el registro de DNS dinámico para la controladora de red
 
 Por último, lo siguiente que desea hacer es implementar nodos de clúster de controladora de red en la misma subred o en subredes diferentes.
 
-
-|         Si...         |                                                                                                                                                         En ese caso...                                                                                                                                                         |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  En la misma subred,  |                                                                                                                                Debe proporcionar la dirección IP de REST de la controladora de red.                                                                                                                                 |
+| Si... | En ese caso... |
+|--|--|
+| En la misma subred, | Debe proporcionar la dirección IP de REST de la controladora de red. |
 | En subredes diferentes, | Debe proporcionar el nombre DNS de REST de la controladora de red, que se crea durante el proceso de implementación. También debe hacer lo siguiente:<ul><li>Configure las actualizaciones dinámicas de DNS para el nombre DNS de la controladora de red en el servidor DNS.</li><li>Restrinja las actualizaciones dinámicas de DNS solo a los nodos de la controladora de red.</li></ul> |
-
----
 
 > [!NOTE]
 > El requisito mínimo para realizar estos procedimientos es la pertenencia al grupo **Admins**. del dominio o un grupo equivalente.
@@ -87,7 +81,7 @@ Por último, lo siguiente que desea hacer es implementar nodos de clúster de co
 
    d. En el cuadro de diálogo **Seleccionar usuarios, equipos, cuentas de servicio o grupos** , haga clic en **tipos de objeto**.
 
-   e. En **tipos de objeto**, seleccione **equipos**y, a continuación, haga clic en **Aceptar**.
+   e. En **tipos de objeto**, seleccione **equipos** y, a continuación, haga clic en **Aceptar**.
 
    f. En el cuadro de diálogo **Seleccionar usuario, equipo, cuenta de servicio o grupo** , escriba el nombre NetBIOS de uno de los nodos de la controladora de red de la implementación y, a continuación, haga clic en **Aceptar**.
 
@@ -96,7 +90,7 @@ Por último, lo siguiente que desea hacer es implementar nodos de clúster de co
       - **Tipo** = permitir
       - **Se aplica a** = este objeto y todos los descendientes
 
-   h. En **permisos**, seleccione **escribir todas las propiedades** y **eliminar**y, a continuación, haga clic en **Aceptar**.
+   h. En **permisos**, seleccione **escribir todas las propiedades** y **eliminar** y, a continuación, haga clic en **Aceptar**.
 
 3. Repita el procedimiento para todos los equipos y máquinas virtuales del clúster de controladora de red.
 
@@ -110,29 +104,33 @@ Si la controladora de red usa la autenticación basada en Kerberos para la comun
 
 La configuración tiene alta disponibilidad con tres nodos de controlador de red configurados en máquinas virtuales. También se muestra que dos inquilinos con la red virtual del inquilino 2 se dividen en dos subredes virtuales para simular un nivel Web y un nivel de base de datos.
 
-![Planeación de SDN de SDN](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-NC-Planning.png)
+![Implementación de controladora de red](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-NC-Planning.png)
 
 ### <a name="network-controller-and-software-load-balancer-deployment"></a>Implementación de la controladora de red y del equilibrador de carga de software
 
 Para lograr una alta disponibilidad, hay dos o más nodos SLB/MUX.
 
-![Planeación de SDN de SDN](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-SLB-Deployment.png)
+![Implementación de la controladora de red y del equilibrador de carga de software](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-SLB-Deployment.png)
 
 ### <a name="network-controller-software-load-balancer-and-ras-gateway-deployment"></a>Implementación de controladora de red, Load Balancer de software y puerta de enlace RAS
 
 Hay tres máquinas virtuales de puerta de enlace; dos están activos y uno es redundante.
 
-![Planeación de SDN de SDN](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)
+![Implementación de controladora de red, Load Balancer de software y puerta de enlace RAS](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)
 
->[!IMPORTANT]
->Si implementa con VMM, asegúrese de que las máquinas virtuales de infraestructura (servidor VMM, AD/DNS, SQL Server, etc.) no se hospedan en ninguno de los cuatro hosts mostrados en los diagramas.
-
+> [!IMPORTANT]
+> Si implementa con VMM, asegúrese de que las máquinas virtuales de infraestructura (servidor VMM, AD/DNS, SQL Server, etc.) no se hospedan en ninguno de los cuatro hosts mostrados en los diagramas.
 
 ## <a name="next-steps"></a>Pasos siguientes
+
 [Planear una infraestructura de red definida por software](./plan-a-software-defined-network-infrastructure.md).
 
 ## <a name="related-topics"></a>Temas relacionados
+
 - [Controladora de red](../technologies/network-controller/Network-Controller.md)
-- [Alta disponibilidad de la controladora de red](../technologies/network-controller/network-controller-high-availability.md)
+
+- [Alta disponibilidad de Controladora de red](../technologies/network-controller/network-controller-high-availability.md)
+
 - [Implementación de controladora de red con Windows PowerShell](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
+
 - [Instalación del rol de servidor de Controladora de red mediante el Administrador del servidor](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)

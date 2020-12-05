@@ -7,22 +7,22 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7516eea3d6edd013b3f507671e6b219da7dfd632
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 4dd16c79291c50137039a80a230ba75ae1de8217
+ms.sourcegitcommit: 28b5ab74cb0b40539ccc1a83998d6391e87fe51f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91718372"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96614887"
 ---
 # <a name="wdsutil"></a>wdsutil
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-WDSUtil es una utilidad de línea de comandos que se usa para administrar el servidor de servicios de implementación de Windows. Para ejecutar estos comandos, haga clic en **Inicio**, haga clic con el botón secundario en **símbolo del sistema**y haga clic en **Ejecutar como administrador**.
+WDSUtil es una utilidad de línea de comandos que se usa para administrar el servidor de servicios de implementación de Windows. Para ejecutar estos comandos, haga clic en **Inicio**, haga clic con el botón secundario en **símbolo del sistema** y haga clic en **Ejecutar como administrador**.
 
-## <a name="commands"></a>Comandos:
+## <a name="commands"></a>Comandos
 
-|Get-Help|Descripción|
+|Comando|Descripción|
 |------|--------|
 |[WDSUtil-agregar comando](wdsutil-add.md)|Agrega objetos o preconfigura equipos.|
 |[WDSUtil APPROVE-AutoAddDevices (comando)](wdsutil-approve-autoadddevices.md)|Aprueba los equipos que están pendientes de aprobación del administrador.|
