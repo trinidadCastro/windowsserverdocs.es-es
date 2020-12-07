@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d5c7b971d2ca77308c24210ee50c17c4b3a0c95
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: dd605283396757f1ef0de05d620583c895f71f1a
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640348"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755312"
 ---
 # <a name="mklink"></a>mklink
 
@@ -37,7 +37,7 @@ mklink [[/d] | [/h] | [/j]] <link> <target>
 
 ### <a name="examples"></a>Ejemplos
 
-Para crear y quitar un vínculo simbólico denominado, carpeta y archivo. File, desde el directorio raíz al directorio \Users\User1\Documents y un archivo example ubicado en el directorio, escriba:
+Para crear y quitar un vínculo simbólico denominado mi carpeta desde el directorio raíz al directorio \Users\User1\Documents y un vínculo físico denominado archivo. archivo al archivo example. File ubicado en el directorio, escriba:
 
 ```
 mklink /d \MyFolder \Users\User1\Documents

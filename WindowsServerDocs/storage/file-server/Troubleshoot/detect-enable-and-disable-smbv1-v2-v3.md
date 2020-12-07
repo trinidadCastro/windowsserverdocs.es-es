@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.author: delhan
 ms.date: 10/29/2020
 ms.custom: contperfq2
-ms.openlocfilehash: e38bbc5a80f80747ae3cb90c91123d91ed4e5e25
-ms.sourcegitcommit: 28b5ab74cb0b40539ccc1a83998d6391e87fe51f
+ms.openlocfilehash: a465a7e777dae0473966b6185470dbb6d563e2b7
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96614957"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755402"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>Detección, habilitación y deshabilitación de SMBv1, SMBv2 y SMBv3 en Windows
 
@@ -94,7 +94,7 @@ Aquí se muestra cómo quitar SMBv1 en Windows 10, Windows 8.1, Windows Server 2
 - Determinar
 
   ```PowerShell
-  Get-WindowsOptionalFeature –Online –FeatureName SMB1Protocol
+  Get-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
 - Activa
@@ -120,13 +120,13 @@ Aquí se muestra cómo quitar SMBv1 en Windows 10, Windows 8.1, Windows Server 2
 - Activa
 
   ```PowerShell
-  Set-SmbServerConfiguration –EnableSMB2Protocol $false
+  Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
 - Habilite:
 
   ```PowerShell
-  Set-SmbServerConfiguration –EnableSMB2Protocol $true
+  Set-SmbServerConfiguration -EnableSMB2Protocol $true
   ```
 
 #### <a name="windows-81-and-windows-10-add-or-remove-programs-method"></a>Windows 8.1 y Windows 10: método para agregar o quitar programas
@@ -206,13 +206,13 @@ Configuración predeterminada = habilitada (no se crea ninguna clave de registro
 Activa
 
 ```PowerShell
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 –Force
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 -Force
 ```
 
 Habilite:
 
 ```PowerShell
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 -Force
 ```
 
 **Nota:** Debe reiniciar el equipo después de realizar estos cambios.
@@ -228,13 +228,13 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters
 Activa
 
 ```PowerShell
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 –Force
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 -Force
 ```
 
 Habilite:
 
 ```PowerShell
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 –Force
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 -Force
 ```
 
 > [!NOTE]
@@ -434,13 +434,13 @@ Para determinar qué clientes están intentando conectarse a un servidor SMB con
 - Habilite:
 
   ```PowerShell
-  Set-SmbServerConfiguration –AuditSmb1Access $true
+  Set-SmbServerConfiguration -AuditSmb1Access $true
   ```
 
 - Activa
 
   ```PowerShell
-  Set-SmbServerConfiguration –AuditSmb1Access $false
+  Set-SmbServerConfiguration -AuditSmb1Access $false
   ```
 
 - Determinar

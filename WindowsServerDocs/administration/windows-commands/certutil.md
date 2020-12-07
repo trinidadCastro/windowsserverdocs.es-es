@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fc1065ab3853f6098c725f4ccaaafc483cb6015d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3cd3c5f73a6642ed4ce754cb8529ae3e1e990c75
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89629910"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755372"
 ---
 # <a name="certutil"></a>certutil
 
@@ -128,7 +128,7 @@ Donde:
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Los nombres y los valores deben estar separados por dos puntos, mientras que los pares de nombre y valor deben estar separados por una línea nueva. Por ejemplo: `CertificateTemplate:User\nEMail:User@Domain.com` donde la `\n` secuencia se convierte en un separador de nueva línea.
 
@@ -152,7 +152,7 @@ Donde:
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si el último parámetro es numérico, se toma como un **valor Long**.
 
@@ -256,7 +256,7 @@ Donde:
 
   - **exitcount** : número de módulos de salida
 
-  - **salir `[index]` ** de -Descripción del módulo de salida
+  - **salir `[index]`** de -Descripción del módulo de salida
 
   - **Directiva** : Descripción del módulo de directivas
 
@@ -288,45 +288,45 @@ Donde:
 
   - **propidmax** -longitud máxima de CA PropId
 
-  - **certstate `[index]` ** -Certificado de CA
+  - **certstate `[index]`** -Certificado de CA
 
-  - **certversion `[index]` ** -Versión de certificado de CA
+  - **certversion `[index]`** -Versión de certificado de CA
 
-  - **certstatuscode `[index]` ** -Estado de comprobación de certificado de CA
+  - **certstatuscode `[index]`** -Estado de comprobación de certificado de CA
 
-  - **crlstate `[index]` ** -CRL
+  - **crlstate `[index]`** -CRL
 
-  - **krastate `[index]` ** -Certificado KRA
+  - **krastate `[index]`** -Certificado KRA
 
-  - **crossstate + `[index]` ** -Certificado cruzado directo
+  - **crossstate + `[index]`** -Certificado cruzado directo
 
-  - **crossstate- `[index]` ** -Certificado cruzado hacia atrás
+  - **crossstate- `[index]`** -Certificado cruzado hacia atrás
 
-  - **certificado `[index]` ** de -Certificado de CA
+  - **certificado `[index]`** de -Certificado de CA
 
-  - **certchain `[index]` ** -Cadena de certificados de CA
+  - **certchain `[index]`** -Cadena de certificados de CA
 
-  - **certcrlchain `[index]` ** -Cadena de certificados de CA con CRL
+  - **certcrlchain `[index]`** -Cadena de certificados de CA con CRL
 
-  - **xchg `[index]` ** -Certificado de intercambio de CA
+  - **xchg `[index]`** -Certificado de intercambio de CA
 
-  - **xchgchain `[index]` ** -Cadena de certificados de intercambio de CA
+  - **xchgchain `[index]`** -Cadena de certificados de intercambio de CA
 
-  - **xchgcrlchain `[index]` ** -Cadena de certificados de intercambio de CA con CRL
+  - **xchgcrlchain `[index]`** -Cadena de certificados de intercambio de CA con CRL
 
-  - **Kra `[index]` ** -Certificado KRA
+  - **Kra `[index]`** -Certificado KRA
 
-  - **entre + `[index]` ** -Certificado cruzado directo
+  - **entre + `[index]`** -Certificado cruzado directo
 
-  - **entre `[index]` ** -Certificado cruzado hacia atrás
+  - **entre `[index]`** -Certificado cruzado hacia atrás
 
-  - **CRL `[index]` ** de -CRL base
+  - **CRL `[index]`** de -CRL base
 
-  - **deltacrl `[index]` ** -Diferencia CRL
+  - **deltacrl `[index]`** -Diferencia CRL
 
-  - **crlstatus `[index]` ** -Estado de publicación de CRL
+  - **crlstatus `[index]`** -Estado de publicación de CRL
 
-  - **deltacrlstatus `[index]` ** -Estado de publicación de diferencias CRL
+  - **deltacrlstatus `[index]`** -Estado de publicación de diferencias CRL
 
   - **DNS** : nombre DNS
 
@@ -336,11 +336,11 @@ Donde:
 
   - **plantillas** : plantillas
 
-  - **CSP `[index]` ** de -Direcciones URL de OCSP
+  - **CSP `[index]`** de -Direcciones URL de OCSP
 
-  - **AIA `[index]` ** -Direcciones URL de AIA
+  - **AIA `[index]`** -Direcciones URL de AIA
 
-  - **CDP `[index]` ** de -Direcciones URL de CDP
+  - **CDP `[index]`** de -Direcciones URL de CDP
 
   - **localename** : nombre de configuración regional de la entidad de certificación
 
@@ -396,7 +396,9 @@ Donde:
 
 Obtiene una lista de revocación de certificados (CRL).
 
-certutil [opciones]-getcrl OUTFILE [index] [Delta]
+```
+certutil [options] -getcrl outfile [index] [delta]
+```
 
 Donde:
 
@@ -517,7 +519,7 @@ Donde:
 [-silent] [-split] [-config Machine\CAName] [-restrict RestrictionList] [-out ColumnList]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Para mostrar la columna **StatusCode** para todas las entradas, escriba `-out StatusCode`
 
@@ -525,7 +527,7 @@ Donde:
 
 - Para mostrar el **RequestId** y la **disposición** de tres solicitudes, escriba: `-restrict requestID>37,requestID<40 -out requestID,disposition`
 
-- Para mostrar los identificadores de**fila** y **los números de CRL** de los identificadores de fila de todas las CRL base, escriba: `-restrict crlminbase=0 -out crlrowID,crlnumber crl`
+- Para mostrar los identificadores de **fila** y **los números de CRL** de los identificadores de fila de todas las CRL base, escriba: `-restrict crlminbase=0 -out crlrowID,crlnumber crl`
 
 - Para mostrar, escriba: `-v -restrict crlminbase=0,crlnumber=3 -out crlrawcrl crl`
 
@@ -719,7 +721,7 @@ Donde:
 [-f] [-user] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - El valor predeterminado es el almacén del equipo personal.
 
@@ -1094,7 +1096,7 @@ Donde:
 [-f] [-config Machine\CAName] [-dc DCName]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - La `-config` opción tiene como destino una sola entidad de certificación (el valor predeterminado es todas las CA).
 
@@ -1358,7 +1360,7 @@ Donde:
 [-f] [-user] [-silent] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si no se especifica ningún argumento, se comprueba la clave privada de cada certificado de entidad de certificación de firma.
 
@@ -1397,7 +1399,7 @@ Donde:
 [-f] [-enterprise] [-user] [-silent] [-split] [-urlfetch] [-t timeout]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - El uso de **applicationpolicylist** restringe la creación de cadenas solo a las cadenas válidas para las directivas de aplicación especificadas.
 
@@ -1474,7 +1476,7 @@ Donde:
 
 - **objectIDlist** es la lista de objectId de la extensión separada por comas de los archivos que se van a quitar.
 
-- ** \@ extensionfile** es el archivo INF que contiene las extensiones que se van a actualizar o quitar. Por ejemplo:
+- **\@ extensionfile** es el archivo INF que contiene las extensiones que se van a actualizar o quitar. Por ejemplo:
 
   ```
   [Extensions]
@@ -1491,7 +1493,7 @@ Donde:
 [-nullsign] [-f] [-silent] [-cert certID]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Al usar el signo menos (-), se quitan los números de serie y las extensiones.
 
@@ -1589,7 +1591,9 @@ Donde:
 
 Elimina una aplicación de servidor de directivas y un grupo de aplicaciones, si es necesario. Este comando no quita archivos binarios ni paquetes.
 
-certutil [opciones]-deletePolicyServer Kerberos | nombre de usuario | ClientCertificate [keybasedrenewal]
+```
+certutil [options] -deletePolicyServer kerberos | username | clientcertificate [keybasedrenewal]
+```
 
 Donde:
 
@@ -1683,7 +1687,7 @@ Donde:
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si un valor de cadena comienza con `+` o `-` , y el valor existente es un `REG_MULTI_SZ` valor, la cadena se agrega o se quita del valor del registro existente. Para forzar la creación de un `REG_MULTI_SZ` valor, agregue `\n` al final del valor de la cadena.
 
@@ -1727,7 +1731,7 @@ Donde:
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si un valor de cadena comienza con `+` o `-` , y el valor existente es un `REG_MULTI_SZ` valor, la cadena se agrega o se quita del valor del registro existente. Para forzar la creación de un `REG_MULTI_SZ` valor, agregue `\n` al final del valor de la cadena.
 
@@ -1771,7 +1775,7 @@ Donde:
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si un valor de cadena comienza con `+` o `-` , y el valor existente es un `REG_MULTI_SZ` valor, la cadena se agrega o se quita del valor del registro existente. Para forzar la creación de un `REG_MULTI_SZ` valor, agregue `\n` al final del valor de la cadena.
 
@@ -1821,7 +1825,7 @@ Donde:
 [-f] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 Es posible que la entidad de certificación también deba configurarse para admitir certificados externos. Para ello, escriba `import - certutil -setreg ca\KRAFlags +KRAF_ENABLEFOREIGN` .
 
@@ -1899,7 +1903,7 @@ Donde:
 [-f] [-user] [-split] [-p password] [-protectto SAMnameAndSIDlist] [-csp provider]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - La contraseña especificada en la línea de comandos debe ser una lista de contraseñas separadas por comas.
 
@@ -1934,7 +1938,7 @@ Donde:
 [-f] [-silent] [-split] [-dc DCName] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - La contraseña especificada en la línea de comandos debe ser una lista de contraseñas separadas por comas.
 

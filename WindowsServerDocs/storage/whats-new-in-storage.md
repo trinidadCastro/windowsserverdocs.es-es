@@ -6,18 +6,18 @@ manager: dongill
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: b186f664411bde60351c949c0ca16e7b4d3bb40c
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: e7f41e134908d1d9dc7773cf5f1af91e1910089a
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766998"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755382"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Novedades de almacenamiento en Windows Server
 
 >Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
-En este tema se explica la funcionalidad nueva y modificada del almacenamiento en Windows Server 2019, Windows Server 2016 y las versiones de canal semianual de Windows Server.
+En este tema se explica la funcionalidad nueva y modificada del almacenamiento en Windows Server 2019, Windows Server 2016 y Windows Server Semi-Annual versiones de canal.
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1903"></a>Novedades de Storage en Windows Server, versión 1903
 
@@ -65,7 +65,7 @@ Servicio de migración de almacenamiento es una nueva tecnología que facilita m
 
 ### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>Espacios de almacenamiento directo (solo Windows Server 2019)
 
-Hay una serie de mejoras en Espacios de almacenamiento directo en Windows Server 2019 (Espacios de almacenamiento directo no se incluye en Windows Server, canal semianual):
+Hay una serie de mejoras en Espacios de almacenamiento directo en Windows Server 2019 (Espacios de almacenamiento directo no se incluye en Windows Server, Semi-Annual canal):
 
 - **Desduplicación y compresión de volúmenes ReFS**
 
@@ -81,7 +81,7 @@ Hay una serie de mejoras en Espacios de almacenamiento directo en Windows Server
 
 - **Clústeres de dos servidores usando una unidad flash USB como testigo**
 
-    Use una unidad flash USB de bajo costo conectada en el enrutador para que actúe como testigo en los clústeres de dos servidores. Si un servidor deja de funcionar y, a continuación, realiza una copia de seguridad, el clúster de unidad USB sabe qué servidor tiene los datos más actualizados. Para obtener más información, consulte el [blog de Storage en Microsoft](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
+    Use una unidad flash USB de bajo costo conectada en el enrutador para que actúe como testigo en los clústeres de dos servidores. Si un servidor deja de funcionar y, a continuación, realiza una copia de seguridad, el clúster de unidad USB sabe qué servidor tiene los datos más actualizados. Para obtener más información, consulte el [blog de Storage en Microsoft](https://techcommunity.microsoft.com/t5/storage-at-microsoft/here-s-what-you-missed-8211-five-big-announcements-for-storage/ba-p/428257) y [documentación sobre cómo implementar un testigo de recurso compartido de archivos](../failover-clustering/file-share-witness.md#creating-a-file-share-witness-on-a-router-with-a-usb-device).
 
 - **Windows Admin Center**
 
@@ -132,7 +132,7 @@ Ahora puede montar temporalmente una instantánea del almacenamiento replicado e
 
 La compatibilidad con la administración gráfica de la replicación ahora está disponible en el centro de administración de Windows a través de la herramienta Administrador del servidor. Esto incluye la replicación de servidor a servidor, de clúster a clúster, así como de la replicación de clúster extendido.
 
-#### <a name="miscellaneous-improvements"></a>Mejoras misceláneas
+#### <a name="miscellaneous-improvements"></a>Otras mejoras
 
 Réplica de almacenamiento también contiene las siguientes mejoras:
 
@@ -141,7 +141,7 @@ Réplica de almacenamiento también contiene las siguientes mejoras:
 
 ### <a name="smb"></a>SMB
 
-- **SMB1 y eliminación**de la autenticación de invitado: Windows Server ya no instala el cliente y el servidor de smb1 de forma predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de manera predeterminada. Para más información, revisa [SMBv1 no está instalado de manera predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server).
+- **SMB1 y eliminación** de la autenticación de invitado: Windows Server ya no instala el cliente y el servidor de smb1 de forma predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de manera predeterminada. Para más información, revisa [SMBv1 no está instalado de manera predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server).
 
 - **Compatibilidad y seguridad de SMB2/SMB3**: se agregaron opciones adicionales de compatibilidad de seguridad y aplicaciones, incluida la capacidad de desactivar bloqueos oportunistas en SMB2+ para aplicaciones heredadas, además de requerir inicio de sesión o cifrado en función de la base por conexión de un cliente. Para más información, revisa la Ayuda del módulo de SMBShare de PowerShell.
 
@@ -162,7 +162,7 @@ Windows Server, versión 1803 incluye la posibilidad de impedir que el servidor 
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>Novedades de Storage en Windows Server, versión 1709
 
-Windows Server, versión 1709 es la primera versión de Windows Server en el canal semianual. El canal semianual es una ventaja de software Assurance y se admite totalmente en producción durante 18 meses, con una versión nueva cada seis meses.
+Windows Server, versión 1709 es la primera versión de Windows Server del canal Semi-Annual. El canal de Semi-Annual es una ventaja de software Assurance y se admite totalmente en producción durante 18 meses, con una versión nueva cada seis meses.
 
 Para obtener más información, consulte [información general del canal semianual de Windows Server](../get-started-19/servicing-channels-19.md).
 
