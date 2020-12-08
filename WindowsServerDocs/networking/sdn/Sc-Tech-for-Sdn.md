@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: f66ee49a-1fd3-4927-a813-64a15017b63b
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 4896b7d5c4a1c555c431e42b597d1c43a02ec71b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 679eead1bbdf8f9abee089ff5b3ff035d6641edf
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995253"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864004"
 ---
 # <a name="system-center-technologies-for-sdn"></a>Tecnologías de System Center para SDN
 
@@ -40,4 +40,4 @@ Con System Center 2016 Virtual Machine Manager (VMM), puede:
 - Ayuda a controlar el flujo de tráfico entre redes virtuales, incluida la capacidad de definir el ancho de banda garantizado para las aplicaciones y cargas de trabajo críticas.
 
 
-Para obtener más información, consulte [configuración de una infraestructura de red definida por software (SDN) en el tejido de VMM](/system-center/vmm/deploy-sdn?view=sc-vmm-2019).
+Para obtener más información, consulte [configuración de una infraestructura de red definida por software (SDN) en el tejido de VMM](/system-center/vmm/deploy-sdn).
