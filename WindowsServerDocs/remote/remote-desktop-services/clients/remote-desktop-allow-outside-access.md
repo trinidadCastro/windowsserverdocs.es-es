@@ -7,12 +7,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 109f60ec099606dfc031fc07a8f457287f8fb50d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a9cf5f32a2cffb52b56e619e42b22483e7cbe48a
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946438"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755392"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>Escritorio remoto: permitir el acceso a tu PC desde fuera de la red del equipo
 
@@ -45,7 +45,7 @@ Recuerda que la dirección IP del enrutador puede cambiar: tu proveedor de acces
 
 Con la mayoría de los enrutadores, puedes definir qué IP de origen o red de origen puede usar la asignación de puertos. Por lo tanto, si sabes que solo vas a conectarte desde el trabajo, puedes agregar la dirección IP de la red del trabajo; gracias a ello, no tendrás que abrir el puerto a todo Internet. Si el host que estás usando para conectarte usa una dirección IP dinámica, configura la restricción de origen para permitir el acceso desde todo el rango de ese ISP en particular.
 
-También puedes configurar una [dirección IP estática](/windows-hardware/customize/mobile/mcsf/enable-static-ip) en tu PC para que la dirección IP interna no cambie. Si lo haces, el enrutamiento de puerto del enrutador siempre apuntará a la dirección IP correcta.
+También puedes configurar una dirección IP estática en tu PC para que la dirección IP interna no cambie. Si lo haces, el enrutamiento de puerto del enrutador siempre apuntará a la dirección IP correcta.
 
 
 ## <a name="use-a-vpn"></a>Usar una VPN
