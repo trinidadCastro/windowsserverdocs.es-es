@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 02/15/2019
-ms.openlocfilehash: e5ea882347a0605d814682b50c2ec71e24047472
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 11cfe250bd08a04f1577a5537389885718a755a3
+ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766978"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96787904"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introducción al centro de administración de Windows
 
@@ -42,7 +42,7 @@ En Microsoft Edge, cuando se le pregunte con este cuadro de diálogo:
 
 3. Asegúrese de que la opción **permitir el acceso siempre** está seleccionada y haga clic en **permitir** .
 
-    ! Credencial requerida (cuadro de diálogo)] (.. launch-cert-3.png/media/)
+    ![Cuadro de diálogo credencial requerida](../media/launch-cert-3.png)
 
 ## <a name="connecting-to-managed-nodes-and-clusters"></a>Conectarse a clústeres y nodos administrados
 

@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 manager: lizross
 ms.date: 01/14/2020
-ms.openlocfilehash: 17d61291822586013fa77bb1c7c399ab87dfef17
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 83d422ba603173a24667f848398c1c5bc3b4034b
+ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957162"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788054"
 ---
 # <a name="failover-clustering-system-log-events"></a>Eventos de registro del sistema de clústeres de conmutación por error
 
@@ -710,7 +710,7 @@ No se pudo agregar la dirección IP ' %2 ' para el recurso de dirección IP sepa
 
 ### <a name="event-1664-cluster_upgrade_incomplete"></a>Evento 1664: CLUSTER_UPGRADE_INCOMPLETE
 
-No se pudo actualizar el nivel funcional del clúster. Compruebe que todos los nodos del clúster se estén ejecutando actualmente y que tengan la misma versión de Windows Server y, a continuación, vuelva a ejecutar el cmdlet Update-ClusterFunctionalLevel de Windows PowerShell.
+No se pudo actualizar el nivel funcional del clúster. Compruebe que todos los nodos del clúster se estén ejecutando actualmente y que tengan la misma versión de Windows Server y, a continuación, ejecute de nuevo el cmdlet de Windows PowerShell Update-ClusterFunctionalLevel.
 
 ### <a name="event-1676-event_local_node_quarantined"></a>Evento 1676: EVENT_LOCAL_NODE_QUARANTINED
 
@@ -1024,7 +1024,7 @@ Se ha cancelado la operación de copia de seguridad de los datos de configuraci�
 
 ### <a name="event-1548-service_connect_version_compatible"></a>Evento 1548: SERVICE_CONNECT_VERSION_COMPATIBLE
 
-El nodo ' %1 ' estableció comunicación con el nodo ' %2 ' y detectó que está ejecutando una versión diferente, pero compatible, del sistema operativo. Se recomienda que todos los nodos ejecuten la misma versión del sistema operativo. Una vez actualizados todos los nodos, ejecute el cmdlet Update-ClusterFunctionalLevel de Windows PowerShell para completar la actualización del clúster.
+El nodo ' %1 ' estableció comunicación con el nodo ' %2 ' y detectó que está ejecutando una versión diferente, pero compatible, del sistema operativo. Se recomienda que todos los nodos ejecuten la misma versión del sistema operativo. Una vez actualizados todos los nodos, ejecute el cmdlet de Windows PowerShell Update-ClusterFunctionalLevel para completar la actualización del clúster.
 
 ### <a name="event-1550-service_connect_novercheck"></a>Evento 1550: SERVICE_CONNECT_NOVERCHECK
 

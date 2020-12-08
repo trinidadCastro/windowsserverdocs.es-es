@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/29/2019
-ms.openlocfilehash: c52581eda53c595c45fb906fabf8d147bdc0562f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 713f52a935f59ca1fea35ce386ab29adb4b64080
+ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996281"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788098"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Creación de un disco de plantilla de máquina virtual blindada con Windows
 
@@ -95,7 +95,7 @@ Si usa VMM, siga los pasos descritos en las secciones restantes de este tema par
 
 Si usa VMM, después de crear un disco de plantilla, debe copiarlo en un recurso compartido de biblioteca VMM para que los hosts puedan descargar y usar el disco al aprovisionar nuevas máquinas virtuales. Use el procedimiento siguiente para copiar el disco de plantilla en la biblioteca VMM y, a continuación, actualice la biblioteca.
 
-1. Copie el archivo VHDX en la carpeta de recursos compartidos de biblioteca de VMM. Si usó la configuración predeterminada de VMM, copie el disco de plantilla en _ \\ <vmmserver> \MSSCVMMLibrary\VHDs_.
+1. Copie el archivo VHDX en la carpeta de recursos compartidos de biblioteca de VMM. Si usó la configuración predeterminada de VMM, copie el disco de plantilla en _\\ <vmmserver> \MSSCVMMLibrary\VHDs_.
 
 2. Actualice el servidor de biblioteca. Abra el área de trabajo **biblioteca** , expanda **servidores de biblioteca**, haga clic con el botón secundario en el servidor de biblioteca que desee actualizar y haga clic en **Actualizar**.
 
@@ -138,8 +138,7 @@ Una vez creada la plantilla, los inquilinos pueden usarla para crear nuevas máq
 
 ## <a name="prepare-and-protect-the-vhdx-using-powershell"></a>Preparación y protección del VHDX con PowerShell
 
-Como alternativa a la ejecución del Asistente para crear un disco de plantilla, puede copiar el disco de plantilla y el certificado en un equipo que ejecute RSAT y ejecutar [Protect-TemplateDisk](/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps
-) para iniciar el proceso de firma.
+Como alternativa a la ejecución del Asistente para crear un disco de plantilla, puede copiar el disco de plantilla y el certificado en un equipo que ejecute RSAT y ejecutar [Protect-TemplateDisk](/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps) para iniciar el proceso de firma.
 En el ejemplo siguiente se usa el nombre y la información de versión especificados por los parámetros _TemplateName_ y _version_ .
 El VHDX que proporcione al `-Path` parámetro se sobrescribirá con el disco de plantilla actualizado, por lo que debe asegurarse de realizar una copia antes de ejecutar el comando.
 
