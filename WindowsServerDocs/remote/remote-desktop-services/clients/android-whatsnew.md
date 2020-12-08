@@ -5,18 +5,31 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/24/2020
+ms.date: 12/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 740d1ef70134269bb03be1c04143f0871c4aa400
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 19e2162caff3ee41fd7a96cf2b31a4f15dd13bbb
+ms.sourcegitcommit: dce404a0a4500a693e294e0431c93f0ae90f8b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961949"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96563815"
 ---
 # <a name="whats-new-in-the-android-client"></a>Novedades del cliente de Android
 
 El [cliente de Escritorio remoto para Android](remote-desktop-android.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
+
+## <a name="updates-for-version-1008"></a>Actualizaciones para la versión 10.0.8
+
+*Fecha de publicación: 04/12/2020*
+
+- El cliente ahora admite la redirección del micrófono.
+- Nueva interfaz de usuario para suscribirse a áreas de trabajo y editarlas.
+- Se ha limpiado la interfaz de usuario existente en todo el cliente.
+- Se ha corregido la entrada de teclado de Samsung DeX.
+- Se solucionó un problema debido al cual el cliente notificaba un error 0x5000007 al conectarse mediante un servidor de puerta de enlace de Escritorio remoto.
+- Se solucionaron varios problemas de confiabilidad que identificaron los usuarios en los informes de bloqueos.
+- La versión mínima requerida de Android es ahora Android 6.
+- Se corrigió un problema por el que el cliente dejó de responder al guardar un archivo en el almacenamiento redirigido.
 
 ## <a name="updates-for-version-1007"></a>Actualizaciones de la versión 10.0.7
 

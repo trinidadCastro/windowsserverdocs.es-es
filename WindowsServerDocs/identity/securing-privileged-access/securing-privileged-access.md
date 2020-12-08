@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: a9664d11e61d69faab87f351ae5f9915afd47f98
-ms.sourcegitcommit: 094482d0e7a8a9688790af06968d68f0294b78df
+ms.openlocfilehash: 076bc138620cb3babe2fbd08253577f3f740d976
+ms.sourcegitcommit: f18097c21e50a09aef2f1937f52608b0042ef0e1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550738"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755412"
 ---
 # <a name="securing-privileged-access"></a>Protección del acceso con privilegios
 
@@ -99,7 +99,7 @@ Como medida de seguridad inicial para los usuarios con Azure Active Directory y 
 
 ### <a name="4-identity-attack-detection"></a>4. Detección de ataques de identidad
 
-[Azure Advanced Threat Protection (ATP)](/azure-advanced-threat-protection/what-is-atp) es una solución de seguridad basada en la nube que identifica, detecta y ayuda a investigar amenazas avanzadas, identidades en peligro y acciones de infiltrado malintencionadas dirigidas al entorno local de Active Directory.
+[Microsoft Defender for Identity](https://docs.microsoft.com/defender-for-identity/what-is) es una solución de seguridad basada en la nube que identifica, detecta y ayuda a investigar amenazas avanzadas, identidades en peligro y acciones de infiltración malintencionadas dirigidas al entorno local de Active Directory.
 
 ## <a name="phase-2-significant-incremental-improvements"></a>Fase 2: Mejoras incrementales significativas
 
@@ -134,9 +134,9 @@ La activación de Credential Guard ayuda a proteger los hash de contraseña NTLM
 
 Habilite Microsoft Azure AD Identity Protection para crear informes sobre los usuarios con credenciales filtradas para que pueda corregirlas. Puedes aprovechar [Azure AD Identity Protection](/azure/active-directory/identity-protection/index) para ayudar a que la organización proteja de amenazas a los entornos híbridos y en la nube.
 
-### <a name="6-azure-atp-lateral-movement-paths"></a>6. Rutas de desplazamiento lateral de Azure ATP
+### <a name="6-microsoft-defender-for-identity-lateral-movement-paths"></a>6. Rutas de desplazamiento lateral de Microsoft Defender for Identity
 
-Asegúrese de que los titulares de la cuenta de acceso con privilegios usan su PAW para administración únicamente a fin de minimizar el riesgo de que las cuentas sin privilegios en riesgo puedan obtener acceso a una cuenta con privilegios a través de ataques de robo de credenciales, como Pass-The-Hash o Pass-The-Ticket. Las [rutas de desplazamiento lateral (LMP) de Azure ATP](/azure-advanced-threat-protection/use-case-lateral-movement-path) proporcionan informes fáciles de entender para identificar dónde pueden estar expuestas a riesgos las cuentas con privilegios.
+Asegúrese de que los titulares de la cuenta de acceso con privilegios usan su PAW para administración únicamente a fin de minimizar el riesgo de que las cuentas sin privilegios en riesgo puedan obtener acceso a una cuenta con privilegios a través de ataques de robo de credenciales, como Pass-The-Hash o Pass-The-Ticket. Las [rutas de desplazamiento lateral (LMP) de Microsoft Defender for Identity](https://docs.microsoft.com/defender-for-identity/use-case-lateral-movement-path) proporcionan informes fáciles de entender para identificar dónde pueden estar expuestas a riesgos las cuentas con privilegios.
 
 ## <a name="phase-3-security-improvement-and-sustainment"></a>Fase 3: Mejora de la seguridad y sostenimiento
 
@@ -158,7 +158,7 @@ Protege las cargas de trabajo de identidad, incluidos los dominios, los controla
 
 La integración del inicio de sesión en una herramienta SIEM centralizada puede ayudar a la organización a analizar, detectar y responder a eventos de seguridad. Los artículos [Supervisión de Active Directory en busca de indicios de riesgo](../ad-ds/plan/security-best-practices/monitoring-active-directory-for-signs-of-compromise.md) y [Apéndice L: Eventos para supervisar](../ad-ds/plan/appendix-l--events-to-monitor.md) proporcionan instrucciones sobre los eventos que se deben supervisar en el entorno.
 
-Esto forma parte del plan futuro, ya que la agregación, creación y optimización de alertas en una administración de eventos e información de seguridad (SIEM) requiere de analistas especializados (a diferencia de Azure ATP en el plan de 30 días, que incluye alertas listas para usarse).
+Esto forma parte de un plan futuro, ya que la agregación, creación y optimización de alertas en una administración de eventos e información de seguridad (SIEM) requiere de analistas especializados (a diferencia de Microsoft Defender for Identity en el plan de 30 días, que incluye alertas listas para usarse).
 
 ### <a name="4-leaked-credentials---force-password-reset"></a>4. Credenciales filtradas: forzar el restablecimiento de contraseña
 

@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 11/10/2020
+ms.date: 12/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b5ee2f76acad471533c615ef2e5c68e7f827dbf6
-ms.sourcegitcommit: 7420c7c2ef14154f27e5bb810e774783a594b8e8
+ms.openlocfilehash: a9d10b23da6dc5fcd414bdab05afc20e15273763
+ms.sourcegitcommit: 090be8d858a830e46e1a9097afafd9c4275477b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94497420"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96578438"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -24,23 +24,23 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |La versión más reciente  |Versión mínima admitida |
 |-----------|----------------|--------------------------|
-|Público     |1.2.1446        |1.2.945                   |
-|Insider    |1.2.1520        |1.2.945                   |
+|Público     |1.2.1524        |1.2.945                   |
+|Insider    |1.2.1524        |1.2.945                   |
 
-## <a name="updates-for-version-121520-insider"></a>Actualizaciones de la versión 1.2.1520 (Insider)
+## <a name="updates-for-version-121524"></a>Actualizaciones para la versión 1.2.1524
 
-*Fecha de publicación: 10/11/2020*
+*Fecha de publicación: 01/12/2020*
 
-Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139368)
+Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139370)
 
-- Se ha creado una vista de lista de las aplicaciones remotas para que los nombres de aplicación más largos sean legibles.
-- Se ha cambiado el icono que aparece cuando hay disponible una actualización para el cliente.
+- Se ha agregado la vista de lista de los recursos remotos, para que los nombres de aplicación más largos sean legibles.
+- Se ha agregado el icono de notificación que aparece cuando hay disponible una actualización para el cliente.
 
 ## <a name="updates-for-version-121446"></a>Actualizaciones para la versión 1.2.1446
 
 *Fecha de publicación: 27/10/2020*
 
-Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139370)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Hq7C), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4HvgF), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ho64)
 
 - Se ha agregado la característica de actualización automática, que permite al cliente instalar automáticamente las actualizaciones más recientes.
 - El cliente ahora distingue entre fuentes diferentes del centro de conexiones.
@@ -51,8 +51,6 @@ Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139369),
 ## <a name="updates-for-version-121364"></a>Actualizaciones de la versión 1.2.1364
 
 *Fecha de publicación: 22/09/2020*
-
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FTMK), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4G1t9), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FTMI)
 
 - Se corrigió un problema por el que el inicio de sesión único (SSO) no funcionaba en Windows 7.
 - Se corrigió el error de conexión que se producía al realizar una llamada de Teams o unirse a una mientras otra aplicación tenía una secuencia de audio abierta en modo exclusivo y estaba habilitada la optimización de medios para Teams.

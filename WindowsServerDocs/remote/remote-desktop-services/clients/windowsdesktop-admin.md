@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/16/2019
+ms.date: 12/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 12e2535092b2842cf23fcc573b417f7520e99504
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fe553c03e85f3cb68f76b1a8d27e1da93bf9d9a3
+ms.sourcegitcommit: dce404a0a4500a693e294e0431c93f0ae90f8b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961839"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96563785"
 ---
 # <a name="windows-desktop-client-for-admins"></a>Cliente de escritorio de Windows para administradores
 
@@ -42,12 +42,14 @@ En esta sección se describen las nuevas opciones de configuración para este cl
 
 ### <a name="configure-update-notifications"></a>Configuración de las notificaciones de actualización
 
-De manera predeterminada, el cliente te envía una notificación cada vez que hay una actualización. Para desactivar las notificaciones, configura la siguiente información del registro:
+De forma predeterminada, el cliente le envía una notificación cada vez que hay una actualización, y la realiza automáticamente cuando el cliente está cerrado y no tiene conexiones activas. Incluso sin conexiones activas, el proceso msrdc.exe se ejecuta en segundo plano para que pueda volver a conectarse rápidamente cuando vuelva a abrir el cliente. Para detener msrdc.exe, haga clic con el botón derecho en el icono de Windows Virtual Desktop que está en el área de la bandeja del sistema; a continuación, seleccione **Desconectar todas las sesiones** en el menú desplegable.
+
+Para desactivar las notificaciones, configura la siguiente información del registro:
 
 - **Clave:** HKLM\Software\Microsoft\MSRDC\Policies
 - **Tipo:** REG_DWORD
 - **Nombre:** AutomaticUpdates
-- **Datos:** 0 = deshabilitar las notificaciones; 1 = mostrar las notificaciones.
+- **Datos:** 0 = deshabilitar las notificaciones; 1 = mostrar las notificaciones. 2 = mostrar notificaciones y actualizar automáticamente al cerrar.
 
 ### <a name="configure-user-groups"></a>Configuración de grupos de usuarios
 

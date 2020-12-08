@@ -6,21 +6,20 @@ ms.topic: article
 author: eross-msft
 ms.author: chrisrin
 ms.localizationpriority: high
-ms.openlocfilehash: 7ad0b2e2d45a0bd74484c253cb0f92a7b5e491f3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a997f60d4b36d85a895dedd567560be4edcd4d98
+ms.sourcegitcommit: fa325ef993e62fba59de803d8998922db1cb1dc8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972342"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96482586"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Ventaja híbrida de Azure para Windows Server
 
->Se aplica a: Windows Server
+> Se aplica a: Windows Server 2019, Windows Server 2016 R2, Windows Server 2012
 
 ## <a name="benefit-description-rules-and-use-cases"></a>Descripción de la ventaja, las reglas y los casos de uso
 
-La Ventaja híbrida de Azure para Windows Server te permite ahorrar hasta un 40 % en VM de Windows Server en Azure, mediante el uso tus licencias locales de Windows Server con Software Assurance.  Con esta ventaja, los clientes solo tienen que pagar los costos de infraestructura de la máquina virtual, porque la licencia de Windows Server viene cubierta por la ventaja de Software Assurance.  La ventaja es aplicable a las ediciones Standard y Datacenter de Windows Server para las versiones 2008R2, 2012, 2012R2 y 2016.  Esta ventaja está disponible en todas las regiones y nubes soberanas.
-
+La Ventaja híbrida de Azure para Windows Server te permite ahorrar hasta un 40 % en VM de Windows Server en Azure, mediante el uso tus licencias locales de Windows Server con Software Assurance.  Con esta ventaja, los clientes solo tienen que pagar los costos de infraestructura de la máquina virtual, porque la licencia de Windows Server viene cubierta por la ventaja de Software Assurance.  La ventaja es aplicable a las ediciones Standard y Datacenter de Windows Server para las versiones de Windows Server 2012 R2, Windows Server 2016 y Windows Server 2019. Esta ventaja está disponible en todas las regiones y nubes soberanas.
 
 ![imagen 1](media/ahb01.png)
 

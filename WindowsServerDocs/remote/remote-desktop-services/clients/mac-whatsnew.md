@@ -5,20 +5,38 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 11/06/2020
+ms.date: 12/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b53046f493fca630b24f31818ae724403ffc3c53
-ms.sourcegitcommit: 5fc77b4325a18d8c22385d899b14fe724a662347
+ms.openlocfilehash: b9b811f3a0beb71461f868c61f0508566136a5d8
+ms.sourcegitcommit: dce404a0a4500a693e294e0431c93f0ae90f8b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361162"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96563825"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 
 El [cliente de Escritorio remoto para macOS](remote-desktop-mac.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 
 Si tienes algún problema, puedes ponerte en contacto con nosotros a través **Ayuda** > **Notificar un problema**.
+
+## <a name="updates-for-version-1050"></a>Actualizaciones para la versión 10.5.0
+
+*Fecha de publicación: 02/12/2020*
+
+Es el momento de otra actualización. Les damos las gracias a todos los usuarios que comunicaron errores y trabajaron con nosotros para ayudarnos a diagnosticar y solucionar problemas. En esta versión, hemos realizado los siguientes cambios:
+
+- Ya puede editar la configuración de la pantalla, el dispositivo y la redirección de carpetas de las conexiones de equipo publicadas.
+- Las ventanas de las aplicaciones remotas se reducen al dock cuando se minimizan.
+- Se ha agregado un cuadro de diálogo de información de conexión que muestra el ancho de banda actual y el tiempo de ida y vuelta.
+- Se ha agregado compatibilidad con los mensajes de administrador y consentimiento de la Puerta de enlace de Escritorio remoto.
+- Se ha corregido un problema debido al cual un archivo RDP que especificaba un valor de gatewayusagemethod de 0 o 4 se importó de forma incorrecta.
+- La hoja para editar el área de trabajo muestra la hora exacta en la que se actualizó por última vez el área de trabajo.
+- Se quitó la salida de seguimiento que se generó al usar el parámetro *--script*.
+- Se ha solucionado un problema debido al cual el cliente devolvía un error 0x30000066 al conectarse mediante un servidor de puerta de enlace de Escritorio remoto.
+- Se ha corregido un problema debido al cual se solicitaban varias veces las credenciales a los usuarios, si la protección ampliada para la autenticación se había establecido en el servidor.
+- Se han solucionado varios problemas de confiabilidad que los usuarios han identificado en informes de bloqueos.
+- Se corrigieron errores de accesibilidad relacionados con el teclado y VoiceOver.
 
 ## <a name="updates-for-version-1041"></a>Actualizaciones para la versión 10.4.1
 
@@ -395,7 +413,7 @@ Han pasado algunas semanas desde la última actualización, pero estamos trabaja
 - Ahora puedes iniciar una conexión presionando ENTRAR en un icono del escritorio.
 - Cuando está en la vista de pantalla completa, Cmd + M ahora se asigna correctamente a WIN + M.
 - Las ventanas Centro de conexiones, Preferencias y Acerca de ahora responden a Cmd + M.
-- Ahora puedes comenzar a detectar fuentes al presionar ENTRAR en la página * *Adición de recursos remotos*.
+- Ahora puedes comenzar a detectar fuentes al presionar ENTRAR en la página **Adición de recursos remotos*.
 - Se corrigió un problema donde una nueva fuente de los recursos remotos aparecía vacía en el centro de conexiones hasta después de actualizar.
 
 ## <a name="updates-for-version-1016"></a>Actualizaciones de la versión 10.1.6

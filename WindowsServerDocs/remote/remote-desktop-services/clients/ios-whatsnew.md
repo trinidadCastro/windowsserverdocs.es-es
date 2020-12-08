@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 11/06/2020
+ms.date: 12/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: beb97113165127c50c815ccca8a667a1654215fa
-ms.sourcegitcommit: 5fc77b4325a18d8c22385d899b14fe724a662347
+ms.openlocfilehash: ab03feb27e2f03f8765cd42b8acaec6b61836d3b
+ms.sourcegitcommit: dce404a0a4500a693e294e0431c93f0ae90f8b13
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94361172"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96563835"
 ---
 # <a name="whats-new-in-the-ios-client"></a>Novedades del cliente de iOS
 
@@ -21,6 +21,21 @@ El [cliente de Escritorio remoto para iOS](remote-desktop-ios.md) se actualiza p
 ## <a name="how-to-report-issues"></a>Notificación de problemas
 
 Nos comprometemos a hacer que esta aplicación sea el mejor cliente posible de Escritorio remoto para iOS y, por ello, apreciamos tus comentarios. Puedes notificar cualquier problema en **Ayuda** > **Notificar un problema**.
+
+## <a name="updates-for-version-1022"></a>Actualizaciones de la versión 10.2.2
+
+*Fecha de publicación: 23/11/2020*
+
+En esta versión hemos solucionado algunos errores que afectan a los usuarios que ejecutan iOS 14 y iPadOS 14.
+
+## <a name="updates-for-version-1021"></a>Actualizaciones de la versión 10.2.1
+
+*Fecha de publicación: 11/11/2020*
+
+Es el momento de una actualización rápida. En esta versión se han realizado las siguientes correcciones:
+
+- Se ha agregado la compatibilidad para dispositivos iPhone y iPad recién comercializados.
+- Se ha solucionado un problema debido al cual el cliente devolvía un error 0x30000066 al conectarse mediante un servidor de puerta de enlace de Escritorio remoto.
 
 ## <a name="updates-for-version-1020"></a>Actualizaciones de la versión 10.2.0
 
@@ -150,9 +165,9 @@ Agrupamos algunas correcciones de errores y actualizaciones de características 
 - Se corrigió un error en el reconocedor de gestos que hacía que el cliente dejara de responder al conectarse a una sesión remota.
 - Ahora puedes entrar en el modo Cambio de aplicación con un solo deslizamiento rápido hacia arriba (excepto cuando estás en modo Táctil con la sesión extendida en el área del indicador de inicio).
 - El indicador de inicio se ocultará automáticamente cuando te conectes a una sesión remota y volverá a aparecer cuando puntees en la pantalla.
-- Se agregó un método abreviado de teclado para acceder a la configuración de la aplicación en el centro de conexiones ( **comando +,** ).
-- Se agregó un método abreviado de teclado para actualizar todas las áreas de trabajo en el centro de conexiones ( **comando + R** ).
-- Se enlazó el método abreviado de teclado del sistema para Escape al conectarse a una sesión remota ( **comando + .** ).
+- Se agregó un método abreviado de teclado para acceder a la configuración de la aplicación en el centro de conexiones (**comando +,** ).
+- Se agregó un método abreviado de teclado para actualizar todas las áreas de trabajo en el centro de conexiones (**comando + R**).
+- Se enlazó el método abreviado de teclado del sistema para Escape al conectarse a una sesión remota (**comando + .** ).
 - Se corrigieron los escenarios en los que el teclado en pantalla de Windows en la sesión remota era demasiado pequeño.
 - Se implementó el foco de teclado automático en todo el centro de conexiones para que la entrada de datos sea más fluida.
 - Al presionar **Entrar** en una solicitud de credenciales, el mensaje se descarta y se reanuda el flujo actual.
